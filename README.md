@@ -3,12 +3,10 @@
 
 # 使用方法
 
-1️⃣分流 引用 http://limbopro.xyz/adsblock4porn.list 
-2️⃣重写 引用 http://limbopro.xyz/adsblock4porn.conf
-
-3️⃣然后配置好证书📄（如已配置可忽略）
-
-✅可去除以下6个视频网站广告(内页广告以及播放前广告跳过
+1️⃣ 分流 引用 http://limbopro.xyz/adsblock4porn.list 
+2️⃣ 重写 引用 http://limbopro.xyz/adsblock4porn.conf
+3️⃣ 然后配置好证书📄（如已配置可忽略）
+✅ 可去除以下6个视频网站广告(内页广告以及播放前广告跳过
 
 https://jable.tv/ NSFW
 https://netflav.com/ NSFW

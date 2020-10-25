@@ -1,5 +1,5 @@
 # Adblock4limbo
-毒奶去广告计划（稳定版）For QuantumultX（10.25.2020）
+毒奶去广告计划（稳定版）For QuantumultX（10.25.2020），本计划会长期更新，以适应未来更多需要；
 
 ## 使用方法
 

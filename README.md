@@ -1,12 +1,12 @@
 # Adblock4limbo
-毒奶去广告计划（稳定版）
+毒奶去广告计划（稳定版）For QuantumultX（10.25.2020）
 
 # 使用方法
 
-1️⃣ 分流 引用 http://limbopro.xyz/adsblock4porn.list 
-2️⃣ 重写 引用 http://limbopro.xyz/adsblock4porn.conf
-3️⃣ 然后配置好证书📄（如已配置可忽略）
-✅ 可去除以下6个视频网站广告(内页广告以及播放前广告跳过
+1. 分流引用 http://limbopro.xyz/adsblock4porn.list 
+2. 重写引用 http://limbopro.xyz/adsblock4porn.conf
+3. 然后配置好证书📄（如已配置可忽略）
+4. 可去除以下6个视频网站广告(内页广告以及播放前广告跳过
 
 https://jable.tv/ NSFW
 https://netflav.com/ NSFW

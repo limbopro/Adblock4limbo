@@ -24,6 +24,9 @@
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)
 4. [毒奶预配置文件 For Quantumult X](https://github.com/limbopro/Profiles/tree/master/limbopro/Gift/Without/unzip)
 
+## 我们的其他项目
+1. [机场专线-适用于机场的专属分流规则](https://github.com/limbopro/Profiles/tree/master/limbopro)；
+
 ## 取得联系
 
 - 如有疑问或有效反馈可联系  [@limboprobot](https://t.me/limboprobot)

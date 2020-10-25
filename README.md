@@ -22,7 +22,7 @@
 2. [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)
 
-##取得联系
+## 取得联系
 
 - 如有疑问可联系  [@limboprobot](https://t.me/limboprobot)
 - 部分分规则有参考Adguard 中文过滤器 https://adguard.com/zh_cn/blog/adguard-filters.html (强大如斯

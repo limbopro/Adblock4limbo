@@ -25,7 +25,7 @@
 4. [毒奶预配置文件 For Quantumult X](https://github.com/limbopro/Profiles/tree/master/limbopro/Gift/Without/unzip)
 
 ## 我们的其他项目
-1. [机场专线-适用于机场的专属分流规则](https://github.com/limbopro/Profiles/tree/master/limbopro)；
+1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles/tree/master/limbopro)；
 
 ## 取得联系
 

@@ -21,6 +21,7 @@
 1. [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html)
 2. [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)
+4. [毒奶预配置文件 For Quantumult X](https://github.com/limbopro/Profiles/tree/master/limbopro/Gift/Without/unzip)
 
 ## 取得联系
 

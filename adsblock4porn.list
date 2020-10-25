@@ -1,0 +1,32 @@
+#####Jable.tv av吃到饱
+DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
+DOMAIN-SUFFIX, uus52.com, reject
+DOMAIN-SUFFIX, uus58.com, reject
+DOMAIN-SUFFIX, ddmax20.xyz, reject
+
+######m.pianku.me/ 手机片库网
+DOMAIN-SUFFIX, xn--2qux23c9ziyrq.club, reject
+DOMAIN-SUFFIX, ddmax20.xyz, reject
+DOMAIN-SUFFIX, www.avple.video, reject
+
+#####netflav.com Netflav
+DOMAIN-KEYWORD, wine-api.net, reject
+#DOMAIN-KEYWORD, wixsite.com, reject
+DOMAIN-SUFFIX, exosrv.com, reject
+DOMAIN-SUFFIX, juicyads.com, reject
+#DOMAIN-SUFFIX, wixstatic.com, reject
+DOMAIN-SUFFIX, thumb.fvs.io, reject
+DOMAIN-SUFFIX, itnuzleafan.com, reject
+DOMAIN-SUFFIX, oawhaursaith.com, reject
+DOMAIN-SUFFIX, unreshiramor.com, reject
+
+#####avgle.me
+DOMAIN-SUFFIX, jads.co, reject
+DOMAIN-SUFFIX, adxadserv.com, reject
+DOMAIN-SUFFIX, moatads.com, reject
+DOMAIN-SUFFIX, juicyads.in, reject
+DOMAIN-SUFFIX, dtscout.com, reject
+
+#####dilili.tv
+DOMAIN-SUFFIX, 51.la, reject
+DOMAIN-SUFFIX, 51daeka.com, reject

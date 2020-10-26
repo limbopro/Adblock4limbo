@@ -1,4 +1,4 @@
-#####Jable.tv av吃到饱
+#####Jable.tv av 吃到饱
 DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
 DOMAIN-SUFFIX, uus52.com, reject
 DOMAIN-SUFFIX, uus58.com, reject
@@ -26,7 +26,7 @@ DOMAIN-SUFFIX, adxadserv.com, reject
 DOMAIN-SUFFIX, moatads.com, reject
 DOMAIN-SUFFIX, juicyads.in, reject
 DOMAIN-SUFFIX, dtscout.com, reject
-
-#####dilili.tv
+ 
+#####dilili.tv 嘀哩哩
 DOMAIN-SUFFIX, 51.la, reject
 DOMAIN-SUFFIX, 51daeka.com, reject

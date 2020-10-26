@@ -10,7 +10,7 @@
 
 **去广告效果可参阅**：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
 
-- https://jable.tv/ NSFW
+- https://jable.tv/ NSFW Gif广告以及页面非法跳转均已去除
 - https://netflav.com/ NSFW
 - https://ddrk.me/ 低端影视(完美
 - https://www.nfmovies.com/ 奈菲影视（完美

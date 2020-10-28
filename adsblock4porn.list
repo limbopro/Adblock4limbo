@@ -1,16 +1,31 @@
-#####Jable.tv av 吃到饱
+#####Jable.tv av吃到饱
 DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
 DOMAIN-SUFFIX, uus52.com, reject
 DOMAIN-SUFFIX, uus58.com, reject
 DOMAIN-SUFFIX, ddmax20.xyz, reject
+DOMAIN-SUFFIX, ads.exosrv.com, reject
+DOMAIN-KEYWORD, exosrv, reject
+DOMAIN-KEYWORD, asewlfjqwlflkew, reject
+DOMAIN-SUFFIX, tyrantdb.com, reject
+
+#####nfmovies.com 奈菲影视
+DOMAIN-SUFFIX, s96.cnzz.com, reject
+#DOMAIN-SUFFIX, yabo729.com, reject
 
 ######m.pianku.me/ 手机片库网
+#DOMAIN-KEYWORD, xn--2qux23c9ziyrq, reject
+DOMAIN-SUFFIX, xn--3bs795g.zone, reject
+DOMAIN-SUFFIX, xn--2qux23c9ziyrq.plus, reject
 DOMAIN-SUFFIX, xn--2qux23c9ziyrq.club, reject
 DOMAIN-SUFFIX, ddmax20.xyz, reject
 DOMAIN-SUFFIX, www.avple.video, reject
 
 #####netflav.com Netflav
-DOMAIN-KEYWORD, wine-api.net, reject
+DOMAIN-SUFFIX, yandex.ru, reject
+DOMAIN-SUFFIX, awaitcola.com, reject
+#DOMAIN-SUFFIX, jsdelivr.net, reject
+#DOMAIN-SUFFIX, asianclub.tv, reject
+DOMAIN-SUFFIX, wine-api.net, reject
 #DOMAIN-KEYWORD, wixsite.com, reject
 DOMAIN-SUFFIX, exosrv.com, reject
 DOMAIN-SUFFIX, juicyads.com, reject
@@ -26,7 +41,10 @@ DOMAIN-SUFFIX, adxadserv.com, reject
 DOMAIN-SUFFIX, moatads.com, reject
 DOMAIN-SUFFIX, juicyads.in, reject
 DOMAIN-SUFFIX, dtscout.com, reject
- 
-#####dilili.tv 嘀哩哩
+
+#####dilili.tv
 DOMAIN-SUFFIX, 51.la, reject
 DOMAIN-SUFFIX, 51daeka.com, reject
+
+######porn
+DOMAIN-SUFFIX, trafficjunky.com, reject

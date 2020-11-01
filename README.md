@@ -1,6 +1,9 @@
 # Adblock4limbo
 毒奶去广告计划（稳定版）For QuantumultX（10.25.2020），本计划会长期更新，以适应未来更多需要；
 
+## 群组
+https://t.me/Adblock4limbo 加入群组，讨论交流，为我们贡献你的力量；
+
 ## 使用方法
 
 1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 

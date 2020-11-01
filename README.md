@@ -62,6 +62,11 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 ## 我们的其他项目
 1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles/tree/master/limbopro)；
 
+## 进阶资料
+ EasyList China
+ [已知的 Adblock Plus 過濾條件集](https://adblockplus.org/zh_TW/subscriptions)
+ [AdGuard 过滤器](https://adguard.com/zh_cn/blog/adguard-filters.html)
+
 ## 取得联系
 
 - 如有疑问或有效反馈可联系  [@limboprobot](https://t.me/limboprobot)

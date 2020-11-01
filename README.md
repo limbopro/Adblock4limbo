@@ -15,11 +15,11 @@
 3. 然后配置好证书📄（如已配置可忽略）
 4. 如仍有广告请清除浏览器缓存后重试
 
-## 目前可去除以下6个视频网站广告(内页悬浮广告及片头广告
+## 目前可去除以下7个视频网站广告(内页悬浮广告及片头广告
 
 **去广告效果可参阅**：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
 
-- https://www.pornhub.com/ NSFW （完美屏蔽
+- https://www.pornhub.com/ NSFW （完美屏蔽 11.01.2020
 - https://jable.tv/ NSFW Gif广告以及页面非法跳转均已去除
 - https://netflav.com/ NSFW
 - https://ddrk.me/ 低端影视(完美

@@ -19,6 +19,7 @@
 
 **去广告效果可参阅**：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
 
+- https://www.xvideos.com/ NSFW （完美屏蔽 11.01.2020
 - https://www.pornhub.com/ NSFW （完美屏蔽 11.01.2020
 - https://jable.tv/ NSFW Gif广告以及页面非法跳转均已去除
 - https://netflav.com/ NSFW

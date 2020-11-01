@@ -1,8 +1,8 @@
 # Adblock4limbo
 毒奶去广告计划（稳定版）For QuantumultX（10.25.2020），本计划会长期更新，以适应未来更多需要；
 
-## 群组
-https://t.me/Adblock4limbo 加入群组，讨论交流，为我们贡献你的力量；
+## 电报讨论群组
+加入[群组](https://t.me/Adblock4limbo)，讨论交流，为我们贡献你的力量；
 
 1. 哪些网站**价值很大广告也很多**，请告诉我们；
 2. 帮助我们测试**新的去广告规则**是否普适有效；
@@ -24,6 +24,30 @@ https://t.me/Adblock4limbo 加入群组，讨论交流，为我们贡献你的�
 - https://www.nfmovies.com/ 奈菲影视（完美
 - https://www.dililitv.com/ 嘀哩哩 （完美
 - https://m.pianku.me/ 片库网（完美
+
+## 相关屏蔽广告分流/重写
+
+1. [NobyDa](https://github.com/NobyDa)
+2. [DivineEngine](https://github.com/DivineEngine)
+3. [lhie1](https://github.com/lhie1/Rules)
+
+```
+[filter_remote]
+https://raw.githubusercontent.com/limbopro/Profiles/master/limbopro/airports.list, tag=机场专线, force-policy=✈️ 机场专线, enabled=true
+http://limbopro.xyz/Adblock4limbo.list, tag=毒奶特供, force-policy=🛑 广告拦截, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=野比（稳定版）, force-policy=🛑 广告拦截, enabled=true
+https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt, tag=野比(4W+), force-policy=🛑 广告拦截, enabled=true
+https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=野比(6W+), force-policy=🛑 广告拦截, enabled=true
+
+[rewrite_remote]
+http://limbopro.xyz/Adblock4limbo.conf, tag=毒奶特供, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivineEngine (Advertising), enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NoByDa（lhie1 Rewrite）, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=NoByDa（NoByDa Rewrite）, enabled=true
+
+```
+
 
 ## 我们同样出了教程
 

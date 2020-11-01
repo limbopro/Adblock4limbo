@@ -12,6 +12,8 @@ https://t.me/Adblock4limbo 加入群组，讨论交流，为我们贡献你的�
 1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 
 2. 重写引用 http://limbopro.xyz/Adblock4limbo.conf
 3. 然后配置好证书📄（如已配置可忽略）
+4. 如仍有广告请清除浏览器缓存后重试
+
 ## 目前可去除以下6个视频网站广告(内页悬浮广告及片头广告
 
 **去广告效果可参阅**：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；

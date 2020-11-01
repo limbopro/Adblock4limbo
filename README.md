@@ -4,6 +4,9 @@
 ## 群组
 https://t.me/Adblock4limbo 加入群组，讨论交流，为我们贡献你的力量；
 
+1. 哪些网站**价值很大广告也很多**，请告诉我们；
+2. 帮助我们测试**新的去广告规则**是否普适有效；
+
 ## 使用方法
 
 1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 

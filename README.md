@@ -3,8 +3,8 @@
 
 ## 使用方法
 
-1. 分流引用 http://limbopro.xyz/adsblock4porn.list 
-2. 重写引用 http://limbopro.xyz/adsblock4porn.conf
+1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 
+2. 重写引用 http://limbopro.xyz/Adblock4limbo.conf
 3. 然后配置好证书📄（如已配置可忽略）
 ## 目前可去除以下6个视频网站广告(内页悬浮广告及片头广告
 

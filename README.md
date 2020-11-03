@@ -59,7 +59,7 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 1. [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html)
 2. [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)
-4. [毒奶预配置文件 For Quantumult X](https://github.com/limbopro/Profiles4limbo)
+4. [毒奶预配置文件 For Quantumult X (懒人一键配置)](https://github.com/limbopro/Profiles4limbo)
 5. [Tiktok 免拔卡解锁](https://limbopro.xyz/archives/3629.html)
 
 ## 我们的其他项目

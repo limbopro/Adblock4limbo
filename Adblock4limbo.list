@@ -1,4 +1,4 @@
-#####Jable.tv av
+#####Jable.tv av吃到饱
 DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
 DOMAIN-SUFFIX, uus52.com, reject
 DOMAIN-SUFFIX, uus58.com, reject
@@ -7,12 +7,13 @@ DOMAIN-SUFFIX, ads.exosrv.com, reject
 DOMAIN-KEYWORD, exosrv, reject
 DOMAIN-KEYWORD, asewlfjqwlflkew, reject
 DOMAIN-SUFFIX, tyrantdb.com, reject
+DOMAIN-SUFFIX, adserve.work, reject
 
-#####nfmovies.com
+#####nfmovies.com 奈菲影视
 DOMAIN-SUFFIX, s96.cnzz.com, reject
 #DOMAIN-SUFFIX, yabo729.com, reject
 
-######m.pianku.me
+######m.pianku.me/ 手机片库网
 #DOMAIN-KEYWORD, xn--2qux23c9ziyrq, reject
 DOMAIN-SUFFIX, xn--3bs795g.zone, reject
 DOMAIN-SUFFIX, xn--2qux23c9ziyrq.plus, reject
@@ -51,7 +52,16 @@ DOMAIN-SUFFIX, trafficjunky.com, reject
 
 #####xvideos
 
+
 ##### ja.nyahentai.com
 DOMAIN-SUFFIX, adserver.juicyads.com, reject
 DOMAIN-SUFFIX, poweredby.jads.co, reject
 DOMAIN-SUFFIX, jads.co, reject
+
+##### www.cocomanhua.com
+DOMAIN-SUFFIX, exdynsrv.com, reject
+DOMAIN-SUFFIX, cloudfront.net, reject
+DOMAIN-SUFFIX, d227cncaprzd7y.cloudfront.net, reject
+
+##### www.mfkhm.com
+DOMAIN-SUFFIX, new.xiongzhangad.com, reject

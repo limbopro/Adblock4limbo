@@ -37,16 +37,23 @@
 
 ## 相关屏蔽广告分流/重写
 
-1. [NobyDa](https://github.com/NobyDa)
-2. [DivineEngine](https://github.com/DivineEngine)
-3. [lhie1](https://github.com/lhie1/Rules)
+
+0. 在此毒奶对大家的付出表示感谢
+1. [NobyDa](https://github.com/NobyDa/Script/tree/master) 脚本仓库（*如删库可替换 NobyDa 为 limbopro，其他同理）
+2. [NobyDa-AD](https://github.com/NobyDa/ND-AD) 野比去广告分流；（10w+）
+2. [ConnersHua](https://github.com/ConnersHua/Profiles/tree/master) 神机规则（停止更新）
+3. [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master) 神机规则（更新中）
+3. [limbopro](https://github.com/limbopro/Profiles/tree/master/limbopro) 机场专线
+4. [Qure](https://github.com/Koolson/Qure/tree/master/IconSet) 开源图标
+5. [chavyleung](https://github.com/chavyleung/scripts) 签到脚本
+
 
 ```
 [filter_remote]
 https://raw.githubusercontent.com/limbopro/Profiles/master/limbopro/airports.list, tag=机场专线, force-policy=PROXY, enabled=true
 http://limbopro.xyz/Adblock4limbo.list, tag=毒奶特供, force-policy=reject, enabled=true
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=野比（稳定版）, force-policy=reject, enabled=true
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt, tag=野比(4W+), force-policy=reject, enabled=true
+#https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=野比（稳定版）, force-policy=reject, enabled=false
+#https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt, tag=野比(4W+), force-policy=reject, enabled=false
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=野比(6W+), force-policy=reject, enabled=true
 
 [rewrite_remote]

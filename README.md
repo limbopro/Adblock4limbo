@@ -20,6 +20,8 @@
 
 去广告效果可参阅：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
 
+<details>
+<summary>展开查看</summary>
 
 |    类型    |    网站名称     |          网站地址           |        备注         |
 | :--------: | :-------------: | :-------------------------: | :-----------------: |
@@ -34,6 +36,7 @@
 |     H      |     Netflav     |    https://netflav.com/     | 完美屏蔽广告/无弹窗 |
 |     H      |      NSFW       |      https://jable.tv/      | 完美屏蔽广告/无弹窗 |
 
+</details>
 
 ## 相关屏蔽广告分流/重写
 

@@ -25,7 +25,7 @@
 |  在线影视  |     片库网      |    https://m.pianku.me/     | 完美屏蔽广告/无弹窗 |
 |  在线影视  |     嘀哩哩      |  https://www.dililitv.com/  | 完美屏蔽广告/无弹窗 |
 |  在线漫画  |   COCOMANHUA    | https://www.cocomanhua.com/ |    无广告/有弹窗    |
-| H漫画/连载 | 喵紳士NyaHentai |  https://zh.nyahentai.me/   |    无广告/有弹窗    |
+| H漫画/连载 | 喵紳士NyaHentai |  https://zh.nyahentai.me/   |    完美屏蔽广告/无弹窗   |
 |  在线动漫  |    樱花动漫     |      http://m.yhdm.io/      | 完美屏蔽广告/无弹窗 |
 |     H      |     Pornhub     |  https://www.pornhub.com/   | 完美屏蔽广告/无弹窗 |
 |     H      |     Netflav     |    https://netflav.com/     | 完美屏蔽广告/无弹窗 |

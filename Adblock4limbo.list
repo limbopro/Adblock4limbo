@@ -1,3 +1,7 @@
+# limbopro.xyz
+# 11.10.2020
+# https://t.me/Adblock4limbo
+
 #####Jable.tv av吃到饱
 DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
 DOMAIN-SUFFIX, uus52.com, reject
@@ -60,8 +64,13 @@ DOMAIN-SUFFIX, jads.co, reject
 
 ##### www.cocomanhua.com
 DOMAIN-SUFFIX, exdynsrv.com, reject
-DOMAIN-SUFFIX, cloudfront.net, reject
+#DOMAIN-SUFFIX, cloudfront.net, reject
 DOMAIN-SUFFIX, d227cncaprzd7y.cloudfront.net, reject
+DOMAIN-SUFFIX, d10lumateci472.cloudfront.net, reject
 
 ##### www.mfkhm.com
 DOMAIN-SUFFIX, new.xiongzhangad.com, reject
+
+##### m.yhdm.io
+DOMAIN-SUFFIX, dvzk66.cn, reject
+DOMAIN-SUFFIX, pu0glv.cn, reject

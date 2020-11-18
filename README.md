@@ -26,7 +26,7 @@
 如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流规则，请务必添加（本计划基于此前提进行完善）；
 
 <details>
-<summary>点击查看分流引用的正确排序</summary>
+<summary>点此查看分流-引用的正确排序</summary>
 
 ![分流引用排序示例][1]
 

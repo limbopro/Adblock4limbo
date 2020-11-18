@@ -10,6 +10,8 @@
 
 ## 使用方法
 
+✅ 毒奶去广告计划分流与重写；
+
 1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 
 2. 重写引用 http://limbopro.xyz/Adblock4limbo.conf
 3. 然后配置好证书📄（如已配置可忽略）
@@ -17,17 +19,18 @@
 
 ⚠️ NobyDa 去广告分流；
 
-- 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
-- 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
+1. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
+2. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
 
 如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流，请务必添加；
 
-<detail>
+<details>
+<summary>点击展开查看分流正确排序示例</summary>
 
-<summary>点击查看分流排序示例</summary> 
-查看
+![分流引用排序示例][1]
 
-</detail>
+</details>
+
 
 ## 去广告列表
 
@@ -105,4 +108,6 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 - 如有疑问或有效反馈可联系  [@limboprobot](https://t.me/limboprobot)
 - 部分分规则有参考Adguard 中文过滤器 https://adguard.com/zh_cn/blog/adguard-filters.html (强大如斯
+
+[1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
 

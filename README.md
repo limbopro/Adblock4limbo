@@ -22,7 +22,7 @@
 1. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
 2. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
 
-如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流，请务必添加；
+如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流规则，请务必添加（本计划基于此前提进行完善）；
 
 <details>
 <summary>点击查看分流引用的正确排序</summary>

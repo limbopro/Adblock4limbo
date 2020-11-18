@@ -25,9 +25,11 @@
 如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流，请务必添加；
 
 <details>
-<summary>点击展开查看分流正确排序示例</summary>
+<summary>点击查看分流引用的正确排序</summary>
 
 ![分流引用排序示例][1]
+
+✅ Quantumult X 遵循从上至下的读写顺序，所以去广告分流规则应排在前，其他需进行代理的分流规则紧随其后，之后在到大陆的分流规则，Final 兜底；
 
 </details>
 

@@ -17,13 +17,16 @@
 
 ⚠️ NobyDa 去广告分流；
 
-分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
-分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
+- 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
+- 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
 
 如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流，请务必添加；
 
 <detail>
+
 <summary>点击查看分流排序示例</summary> 
+查看
+
 </detail>
 
 ## 去广告列表

@@ -76,7 +76,8 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)
 4. [毒奶预配置文件 For Quantumult X (懒人一键配置)](https://github.com/limbopro/Profiles4limbo)
 5. [Mac/Windows 都适用的Adguard - 世界上最高级的广告拦截程序！（屏蔽广告、跟踪器以及安装油猴脚本)](https://limbopro.xyz/archives/adguard.html)
-5. [Tiktok 免拔卡解锁](https://limbopro.xyz/archives/3629.html)
+6. [订阅转换 - API - 让你的 Surge/ClashX 重新焕发生机](https://limbopro.xyz/archives/subconverter.html)
+7. [Tiktok 免拔卡解锁](https://limbopro.xyz/archives/3629.html)
 
 ## 我们的其他项目
 1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles/tree/master/limbopro)；

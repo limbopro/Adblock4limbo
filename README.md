@@ -23,10 +23,7 @@
 如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流，请务必添加；
 
 <detail>
-<summary>点击查看分流排序示例</summary>
-
-![Quantumult X 去广告分流排序][https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg]
- 
+<summary>点击查看分流排序示例</summary> 
 </detail>
 
 ## 去广告列表

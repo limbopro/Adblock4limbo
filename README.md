@@ -15,6 +15,20 @@
 3. 然后配置好证书📄（如已配置可忽略）
 4. 如仍有广告请清除浏览器缓存后重试
 
+⚠️ NobyDa 去广告分流；
+
+分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
+分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
+
+如之前尚未添加[野比去广告](https://github.com/NobyDa/ND-AD)分流，请务必添加；
+
+<detail>
+<summary>点击查看分流排序示例</summary>
+
+![Quantumult X 去广告分流排序][https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg]
+ 
+</detail>
+
 ## 去广告列表
 
 **列表最后更新时间**：11.18.2020 ，请及时更新分流和重写；

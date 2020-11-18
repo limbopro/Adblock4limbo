@@ -1,5 +1,5 @@
 # Adblock4limbo
-计划始于 11.01.2020；毒奶去广告计划（稳定版）For QuantumultX），仅针对iOS浏览器（Chrome/Safari等）广告；本计划会长期更新，以适应未来更多需要；
+计划始于 11.01.2020；毒奶去广告计划（稳定版）For QuantumultX），仅针对iOS浏览器（Chrome/Safari等）网页广告（弹窗横幅等），如Pornhub，奈菲影视，低端影视等，提升观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；
 
 ## 电报讨论群组
 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；

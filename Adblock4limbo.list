@@ -1,143 +1,77 @@
 # limbopro.xyz
-# 11.18.2020
+# 11.10.2020
 # https://t.me/Adblock4limbo
 
-hostname = cloudrls.com, javtsunami.com, *.cloudfront.net, 91porny.com, cdn.jsdelivr.net, s3.amazonaws.com, static.nyahentai.pw, zh.nyahentai.me, m.yhdm.io, k.wudejia.com, www.mfkhm.com, www.cocomanhua.com, fans.91p20.space, www.91porn.com, *.xvideos-cdn.com, www.xvideos.com, *.realsrv.com, *.nyahentai.com, gum.criteo.com, rt.gsspat.jp, *.nyahentai.pw, rt.gsspat.jp, img.gsspat.jp, *.phncdn.com, www.pornhub.com, cn.pornhub.com, *.pornhub.com, *.ddmax20.*, asianclub.tv, *.yabo.*, *.yabo729.com, *.wine-api.net, *.wixsite.com, *.wixstatic.com, *.dilidd.com, *.alicdn.com, *.dililitv.com, *.netflav.*, *.netflav.com, www.avple.video, *.imgur.*, *.pianku.*, *.xn--2qux23c9ziyrq.club, *.naifei.shop, *.nfmovies.com,*.yb463.app, *.yabet.*, *.yabet1477.*, ddrk.me, *.ddrk.me, poweredbyliquidfire.mobi, *.poweredbyliquidfire.mobi, avgle.com, *.avgle.com, *.juicyads.com, *.jads.co, jable.tv, *.jable.tv, *.ackcdn.net, *.trwl1.*, *.trwl1.com, *.o333o.com, *.exosrv.com, asewlfjqwlflkew.com, *.asewlfjqwlflkew.com, *.tsyndicate.com, tsyndicate.com, *.uus58.com, asewlfjqwlflkew.com, *.uus58.*
+#####Jable.tv av吃到饱
+DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
+DOMAIN-SUFFIX, uus52.com, reject
+DOMAIN-SUFFIX, uus58.com, reject
+DOMAIN-SUFFIX, ddmax20.xyz, reject
+DOMAIN-SUFFIX, ads.exosrv.com, reject
+DOMAIN-KEYWORD, exosrv, reject
+DOMAIN-KEYWORD, asewlfjqwlflkew, reject
+DOMAIN-SUFFIX, tyrantdb.com, reject
+DOMAIN-SUFFIX, adserve.work, reject
 
-#####Jable.tv Start#####
-# Jable gif
-^https?:\/.jable\.tv/\bassets\b.*\b.gif url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-^https:/?.*\.jable\.tv\b.*\.gif$ url 302 https://limbopro.xyz/usr/uploads/2020/03/1938474618.jpg
-\b.*\.ackcdn\.net/\blibrary\b.*\b.jpg url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-^https:?/\/\b.*\btsyndicate\b.*.gif url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
+#####nfmovies.com 奈菲影视
+DOMAIN-SUFFIX, s96.cnzz.com, reject
+#DOMAIN-SUFFIX, yabo729.com, reject
 
-# Jable.tv ads Rewrite
-^https:/?.*\.trwl1\b.* url 302 https://limbopro.xyz/865.html
-^https:/?.*\.trwl1\b.*?\SC$ url 302 https://limbopro.xyz/865.html
-^a.\bo333o\b.*\=1$ url 302 https://limbopro.xyz
-^<a\sclass\b.*uu-ads\b.*\</a>$ url 302 https://limbopro.xyz
+######m.pianku.me/ 手机片库网
+#DOMAIN-KEYWORD, xn--2qux23c9ziyrq, reject
+DOMAIN-SUFFIX, xn--3bs795g.zone, reject
+DOMAIN-SUFFIX, xn--2qux23c9ziyrq.plus, reject
+DOMAIN-SUFFIX, xn--2qux23c9ziyrq.club, reject
+DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i, reject
+DOMAIN-SUFFIX, ddmax20.xyz, reject
+#DOMAIN-SUFFIX, www.avple.video, reject
 
-# Jable.tv av
-\b.*\btsyndicate\b.*\.js url reject
-^https:?\b.*\bgtm.js url reject
-^https?:\/\/ads.\b.*\.js$ url reject
-^https:?\b.*ads.exosrv.com/\b.*.js url reject
-asewlfjqwlflkew url reject
+#####netflav.com Netflav
+DOMAIN-SUFFIX, ad.pornimg.xyz, reject
+DOMAIN-SUFFIX, yandex.ru, reject
+DOMAIN-SUFFIX, awaitcola.com, reject
+#DOMAIN-SUFFIX, jsdelivr.net, reject
+DOMAIN-SUFFIX, wine-api.net, reject
+#DOMAIN-KEYWORD, wixsite.com, reject
+DOMAIN-SUFFIX, exosrv.com, reject
+DOMAIN-SUFFIX, juicyads.com, reject
+#DOMAIN-SUFFIX, wixstatic.com, reject
+DOMAIN-SUFFIX, thumb.fvs.io, reject
+DOMAIN-SUFFIX, itnuzleafan.com, reject
+DOMAIN-SUFFIX, oawhaursaith.com, reject
+DOMAIN-SUFFIX, unreshiramor.com, reject
 
+#####avgle.me
+DOMAIN-SUFFIX, jads.co, reject
+DOMAIN-SUFFIX, adxadserv.com, reject
+DOMAIN-SUFFIX, moatads.com, reject
+DOMAIN-SUFFIX, juicyads.in, reject
+DOMAIN-SUFFIX, dtscout.com, reject
 
-# Jable.tv av
-o333o url reject
-https:?/\/jable\.tv\/.?\b.*&action=js_stats&\b.* url reject
-https?:\/.jable\.tv\b.* url response-body <iframe .*?blank.*?</iframe>|<section.*?_blank.*?img.*?</section>|height="250"|<script data-cfasync="false"\s\b.*\.*?asewlfjqwlflkew\b.*?</script>|<div class="text-center mb-e-30"><\b.*?</iframe></div>|<a href="\b.*3_SC\b.*?</a>|<p class="sub-title">\n\W.*\n</p>|<a class="uu-ads"\s\b.*?</a> response-body <meta name="author" content="毒奶">
-https:?/\/jable\.tv\/.?\b.*&action=js_stats&rand=\d{1,13} url 302 https://jable.tv/
-https?:\/.jable\.tv/videos/\w{3,5}\-\d{3,4} url response-body http:?//\w{1,10}.\w{1,10} response-body https://limbopro.xyz
-#跳转 ^https:?/\/jable\.tv/$ url 302 https://jable.tv/new-release/ 
+#####dilili.tv
+DOMAIN-SUFFIX, 51.la, reject
+DOMAIN-SUFFIX, 51daeka.com, reject
 
-#####Avgle.com av
-https://avgle.com/avideos.js(\?.*|) url reject
-https://avgle.com/images.php url reject
-#https://adserver.juicyads.com/js/jads.js url reject
-#https://poweredby.jads.co/js/jads.js url reject
-^https+:\/.avgle\.com url response-body 500px response-body 0px
-^https+:\/.avgle\.com url response-body 750px response-body 0px
-poweredbyliquidfire url reject
-https://avgle.com/images.php url reject
+######porn
+DOMAIN-SUFFIX, trafficjunky.com, reject
 
-#####ddrk.me 
-yb463.app url reject
-https\b.*yabet\w.*\.com url 302 https://limbopro.xyz/
-#https:?/\/ddrk.me/\b.*\bclose.png url 302 https://limbopro.xyz/favicon.ico
-https:?/\/ddrk.me/\b.*\b(jpg|png|gif) url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-https:?/\/ddrk.me url response-body width: 150px !important; response-body width: 0px !important;
-https:?/\/ddrk.me url response-body document.getElementById\S"\w{6,7}"\S response-body 0
-https:?/\/ddrk.me/\b.*\b(jpg|png|gif) url reject
-\bhttps://\b.*yabet1477.\w{2,3} url 302 https://limbopro.xyz
-
-#####nfmovies.com adsblock
-https:?/\/www.nfmovies.com\b.* url response-body 76px|60px|chanceAd = 1;|timerAdCountdownCount > 5 response-body 000px
-https:?/\/www\.nfmovies\.com\/static\/\w{6}-\d\.(jpg|gif) url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-https:?/\/www\.nfmovies\.com\/static\/2020\w.*\.jpg url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-https:?/\/www\.nfmovies\.com\/static\/\d{1,4}.jpg url 302 https://limbopro.xyz/usr/uploads/2019/11/3141795768.jpg
-https:?/\/www\.nfmovies\.com\/static\/1.jpg url 302 https://limbopro.xyz/usr/uploads/2019/11/3141795768.jpg
-https\b.*\bbanner.jpg url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-https\b.*\bbanner\b.*\.jpg url reject
-https://\b.*\bnaifei\b.*/\?sid=\w{1,6} url 302 https://limbopro.xyz
-http.*yabo729.\b.* url 302 https://limbopro.xyz
-http.*yabo.\b.* url 302 https://limbopro.xyz
-
-#####www.pianku.me adsblock
-^https:?/\/\b..+pianku.\w{2,3}\b.* url response-body var pycount=10 response-body var pycount=0
-
-#####dilili.tv adsblock
-https:?/\/.*?dililitv\b.* url response-body (<div class="wapbox imgs_m"\s\b.*</li></ul></div>) response-body dunai
-https://img.alicdn.com/imgextra\b.*gif url reject-img
-https:?/\/.*?dililitv\b.*.php\?ad.* url reject
-https:?/\/.*?dilidd\..*top.php url reject
-
-#####netflav.com Netflav adsblock
-^https:?\//d1fs2ef81chg3.cloudfront.net/\?fesfd=907279.* url reject
-^https:?//asianclub.tv/asset/bann.js.* url reject
-^https:?//.*?\bavple\.video\/.*?\/bann.js\b.* url reject
-
-https://i.imgur.com/AwTXfrw.gif url reject-img
-https://i.imgur.com/ksaMK3K.gif url reject-img
-
-#####netflav.com Netflav rewrite
-https://\b.*wixstatic\b.*?gif url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-^https://\b.*wixsite\b.*?feijibei url 302 https://bit.ly/39oJwJE
-^https:?/\/.*wine-api.* url 302 https://bit.ly/39oJwJE
-
-
-##### pornhub.hub
-^https://\b((?!cn\.)\w{2,3})\.pornhub\.com(.*) url 302 https://cn.pornhub.com/
-^https:?/\/.*?\.pornhub\.com\/.*/ads.*?ads.* url reject
-^https:?/\/.*?\.pornhub\.com\/js/ht.js.* url reject
-^https:?/\/.*?\.phncdn\.com.*?\/js\/vmobile/atatus.js\?.* url reject
-^https:?/\/.*?\.phncdn\.com.*?\/js\/vmobile/flipbook.js\?.* url reject
-^https:?/\/.*?\.phncdn\.com.*?\/js\/.*?\/premium/premium-modals.js\?.* url reject
-^https:?/\/.*?\.phncdn\.com.*?\/js\/.*?\/premium/slider.js\?.* url reject
-^https:?/\/.*?\.pornhub\.com.* url response-body  <div class="to0pAdContainter">.*?(\n.*?){0,100}.*?</button>.*?(\n.*?){0,5}.*?</div>(\n.*){0,5}</div>|<div class="adContainer.*(\n.*?){1,10}.*?</button>.*?(\n.*?){0,3}.*?</div>(\n.*){0,5}</div>|<ins.*?adsbytrafficjunky.*?</ins>|<div.*ad-link.*?</div> response-body <meta name="author" content="毒奶">
-
-#^https:?/\/.*?\.pornhub\.com.* url response-body 12000 response-body 0 页面跳转倒计时
-
-#### www.xvideos.com
-^https:/?\/.*?.xvideos-cdn.com.*?\/js\/.*?\/header\/.*?.js url reject
-^https:/?\/.*?.xvideos.com.* url response-body <div id="ad-header-mobile-contener">.*?</div></div> response-body <meta name="author" content="毒奶">
+#####xvideos
 
 
 ##### ja.nyahentai.com
-https://img.gsspat.jp/e/142f0528ca05d54cac0e1fa6559b94c4/337d15b53b19e7639c326b5f0ac7744c.gif url reject
-^https:?/\/static.nyahentai.pw.*?ads.*?.js url reject
-^https:?/\/static.nyahentai.pw.*?check_cat*?.js.* url reject
-^https:/?\/rt.gsspat.jp.* url reject
-^https:/?\/gum.criteo.com.* url reject
-^https:/?\/rt.gsspat.jp.* url reject
-^https:/?\/a.realsrv.com.*?ads-.*?.js url reject
-
-##### www.91porn.com
-^https:/?\/.*?.91porn.com.* url response-body href=.*?(http://|https://)(\d{1,10}|\w{1,20}).(\w{1,20}.\w{1,30}|\w{1,30}).*?" response-body href="https://limbopro.xyz"
-https:/?\/fans.91p20.space\/fans/.*?.gif url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
+DOMAIN-SUFFIX, adserver.juicyads.com, reject
+DOMAIN-SUFFIX, poweredby.jads.co, reject
+DOMAIN-SUFFIX, jads.co, reject
 
 ##### www.cocomanhua.com
-#https://www.cocomanhua.com/js/ad_/ad1.js url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-^https:?/\/www\.cocomanhua\.com.* url response-body <script>__cad.cpcvm_bottom();</script>|<script.*?data-ad_frequency.*?</script>|<script type="application/javascript">(\n.*){20,30}.*?</script>|<noscript>.*?(\n.*){1,5}.*?</noscript> response-body <meta name="author" content="毒奶">
-https://s3.amazonaws.com/9e27c0d6ac7a738463aebb2faadfdc48c0de202b9fa570955c943.* url reject
-https://www.cocomanhua.com/sw.js url reject-200
+DOMAIN-SUFFIX, exdynsrv.com, reject
+#DOMAIN-SUFFIX, cloudfront.net, reject
+DOMAIN-SUFFIX, d227cncaprzd7y.cloudfront.net, reject
+DOMAIN-SUFFIX, d10lumateci472.cloudfront.net, reject
 
 ##### www.mfkhm.com
-^https:?/\/.*?wudejia.com/.*?php.* url reject
+DOMAIN-SUFFIX, new.xiongzhangad.com, reject
 
 ##### m.yhdm.io
-http://m.yhdm.io/bar/yfgg.js url reject
-
-##### zh.nyahentai.me
-^https:/?\/zh\.nyahentai\.me.* url response-body  <script type="application/javascript">.*?(\n.*){1,30}.*?</script> response-body <meta name="author" content="毒奶">
-
-##### 91porny.com
-^https:/?\/91porny\.com.* url response-body <tbody>.*?(\n.*){5,15}.*?</tbody>|<div class="container-fluid mb-3 p-0">.*?(\n.*){35,40}.*</div>|<div class="adv adv-g1 mb-0">.*?(\n.*){20,27}.*?</div> response-body <meta name="author" content="毒奶">
-^https:/?\/cdn\.jsdelivr\.net.*\/ad\/.*gif url 302 https://limbopro.xyz/usr/uploads/2020/10/2091577197.png
-
-##### javtsunami.com
-^https:/?\/javtsunami\.com/steep-heart-ac21.* url reject
-^https:/?\/javtsunami\.com.* url response-body <style type="text/css".*?(ad.*?){160,200}.*?(\n.*){50,150}.*?</style> response-body <meta name="author" content="毒奶">
-^https:?/\/cloudrls\.com\/asset\/bann\.js.* url reject
+DOMAIN-SUFFIX, dvzk66.cn, reject
+DOMAIN-SUFFIX, pu0glv.cn, reject

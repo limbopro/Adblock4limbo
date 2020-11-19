@@ -34,15 +34,15 @@
 
 </details>
 
-🙆 神机去Youtube App 播放广告；（由花姐维护）
+✅ 神机规则 去Youtube App 播放广告；（由花姐维护）
 
 1. 重写引用 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf
-2. 来自神机的仓库库 DivineEngine https://github.com/DivineEngine/Profiles/tree/master 
+2. 此重写规则来自神机的仓库 [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)
 
 
 ## 去广告列表
 
-**列表最后更新时间**：11.18.2020 ，请及时更新分流和重写；
+毒奶去广告计划之 **去广告列表最后更新时间**：11.18.2020 ，请及时更新分流和重写；
 
 ⚠️ 如需影视搜索欢迎使用[毒奶搜索](https://limbopro.xyz/search.html);
 

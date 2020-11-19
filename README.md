@@ -38,6 +38,7 @@
 
 1. 重写引用 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf
 2. 此重写规则来自神机的仓库 [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)
+3. 如何验证去广告重写是否生效；[参考此处](https://limbopro.xyz/archives/12727.html#操作步骤)；
 
 
 ## 去广告列表

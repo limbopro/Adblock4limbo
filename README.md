@@ -11,14 +11,14 @@
 
 ## 使用方法
 
-✅ 毒奶去广告计划分流与重写；
+✅ 毒奶去广告计划分流与重写；（由毒奶博主维护）
 
 1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 
 2. 重写引用 http://limbopro.xyz/Adblock4limbo.conf
 3. 然后配置好证书📄（如已配置可忽略）
 4. 如仍有广告请清除浏览器缓存后重试
 
-⚠️ NobyDa 去广告分流；
+⚠️ NobyDa 去广告分流；（由NobyDa维护）
 
 1. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
 2. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
@@ -33,6 +33,11 @@
 ✅ Quantumult X 遵循从上至下的读写顺序，所以去广告分流规则应排在前，其他需进行代理的分流规则紧随其后，之后在到大陆的分流规则，Final 兜底；
 
 </details>
+
+🙆 神机去Youtube App 播放广告；（由花姐维护）
+
+1. 重写引用 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf
+2. 来自神机的仓库库 DivineEngine https://github.com/DivineEngine/Profiles/tree/master 
 
 
 ## 去广告列表

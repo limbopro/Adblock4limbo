@@ -66,8 +66,8 @@
 |     H      |      NSFW       |   https://javtsunami.com    | 完美屏蔽广告/无弹窗 |
 |     H      |      NSFW       |  https://www.porntrex.com   | 完美屏蔽广告/无弹窗 |
 
-> 如有特别棒的网站需要去广告，请加[群组](https://t.me/Adblock4limbo)与我们反馈；
-正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；
+
+> 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；
 
 ## 相关屏蔽广告分流/重写
 

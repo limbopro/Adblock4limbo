@@ -110,7 +110,7 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 7. [Tiktok 免拔卡解锁](https://limbopro.xyz/archives/3629.html)
 
 ## 我们的其他项目
-1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles/tree/master/limbopro)；
+1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles4limbo)；
 
 ## 进阶资料
  EasyList China

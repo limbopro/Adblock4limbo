@@ -15,8 +15,8 @@
 
 ✅ 毒奶去广告计划分流与重写；（由毒奶博主维护）
 
-1. 分流引用 http://limbopro.xyz/Adblock4limbo.list 
-2. 重写引用 http://limbopro.xyz/Adblock4limbo.conf
+1. 分流引用 https://limbopro.xyz/Adblock4limbo.list 
+2. 重写引用 https://limbopro.xyz/Adblock4limbo.conf
 3. 然后配置好证书📄（如已配置可忽略）
 4. 如仍有广告请清除浏览器缓存后重试
 

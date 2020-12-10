@@ -49,7 +49,8 @@
 
 ⚠️ 如需影视搜索欢迎使用[毒奶搜索](https://limbopro.xyz/search.html);
 
-**目前可去除以下13个视频/动漫/漫画网站广告(内页悬浮广告及片头广告**，请重写更新`重写`/`分流规则`后食用；去广告效果可参阅：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
+**目前可去除以下14个视频/动漫/NSFW/BT/漫画网站广告(内页悬浮广告及片头广告**，请重写更新`重写`/`分流规则`后食用；去广告效果可参阅：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
+
 
 
 |    类型    |    网站名称     |          网站地址           |        备注         | 推荐   |
@@ -67,6 +68,8 @@
 |     H      |      NSFW       |      https://jable.tv/      | 完美屏蔽广告/无弹窗 | 四颗星 |
 |     H      |      NSFW       |   https://javtsunami.com    | 完美屏蔽广告/无弹窗 | 两颗星 |
 |     H      |      NSFW       |  https://www.porntrex.com   | 完美屏蔽广告/无弹窗 | 两颗星 |
+|     H      |      NSFW       |     https://javbus.com      | 完美屏蔽广告/无弹窗 | 三颗星 |
+
 
 
 > 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；

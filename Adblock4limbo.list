@@ -1,5 +1,5 @@
 # limbopro.xyz
-# 11.10.2020
+# 12.08.2020
 # https://t.me/Adblock4limbo
 
 #####Jable.tv av吃到饱
@@ -25,6 +25,7 @@ DOMAIN-SUFFIX, xn--2qux23c9ziyrq.club, reject
 DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i, reject
 DOMAIN-SUFFIX, ddmax20.xyz, reject
 #DOMAIN-SUFFIX, www.avple.video, reject
+DOMAIN-SUFFIX, xn--3bs795g.link, reject
 
 #####netflav.com Netflav
 DOMAIN-SUFFIX, ad.pornimg.xyz, reject
@@ -75,3 +76,11 @@ DOMAIN-SUFFIX, new.xiongzhangad.com, reject
 ##### m.yhdm.io
 DOMAIN-SUFFIX, dvzk66.cn, reject
 DOMAIN-SUFFIX, pu0glv.cn, reject
+
+##### www.porntrex.com/
+#DOMAIN-SUFFIX, ads.bullionyield.com, reject
+
+##### https://www.zhenbuka.com/
+DOMAIN, 2785.dlads.cn, reject
+DOMAIN, dagonghuzhu.com, reject
+#DOMAIN-SUFFIX, byteimg.com, reject

@@ -1,5 +1,5 @@
 # limbopro.xyz
-# 12.08.2020
+# 02.20.2021
 # https://t.me/Adblock4limbo
 
 #####Jable.tv av吃到饱
@@ -18,6 +18,7 @@ DOMAIN-SUFFIX, s96.cnzz.com, reject
 #DOMAIN-SUFFIX, yabo729.com, reject
 
 ######m.pianku.me/ 手机片库网
+DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i:4443, reject
 #DOMAIN-KEYWORD, xn--2qux23c9ziyrq, reject
 DOMAIN-SUFFIX, xn--3bs795g.zone, reject
 DOMAIN-SUFFIX, xn--2qux23c9ziyrq.plus, reject
@@ -28,6 +29,8 @@ DOMAIN-SUFFIX, ddmax20.xyz, reject
 DOMAIN-SUFFIX, xn--3bs795g.link, reject
 
 #####netflav.com Netflav
+DOMAIN-SUFFIX, maphuahin.com, reject
+DOMAIN-SUFFIX, ggsfq.com, reject
 DOMAIN-SUFFIX, ad.pornimg.xyz, reject
 DOMAIN-SUFFIX, yandex.ru, reject
 DOMAIN-SUFFIX, awaitcola.com, reject

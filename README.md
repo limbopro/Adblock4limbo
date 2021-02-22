@@ -57,22 +57,23 @@
 
 
 
-|    类型    |    网站名称     |          网站地址           |        备注         | 推荐   |
-| :--------: | :-------------: | :-------------------------: | :-----------------: | ------ |
-|  在线影视  |    奈菲影视     |  https://www.nfmovies.com/  | 完美屏蔽广告/无弹窗 | 四颗星 |
-|  在线影视  |    低端影视     |      https://ddrk.me/       | 完美屏蔽广告/无弹窗 | 四颗星 |
-|  在线影视  |     片库网      |    https://m.pianku.me/     | 完美屏蔽广告/无弹窗 | 四颗星 |
-|  在线影视  |     嘀哩哩      |  https://www.dililitv.com/  | 完美屏蔽广告/无弹窗 | 三颗星 |
-|  在线影视  |     真不卡      |  https://www.zhenbuka.com/  | 完美屏蔽广告/无弹窗 | 三颗星 |
-|  在线漫画  |   COCOMANHUA    | https://www.cocomanhua.com/ |    无广告/有弹窗    | 两颗星 |
-| H漫画/连载 | 喵紳士NyaHentai |  https://zh.nyahentai.me/   | 完美屏蔽广告/无弹窗 | 四颗星 |
-|  在线动漫  |    樱花动漫     |      http://m.yhdm.io/      | 完美屏蔽广告/无弹窗 | 三颗星 |
-|     H      |     Pornhub     |  https://www.pornhub.com/   | 完美屏蔽广告/无弹窗 | 三颗星 |
-|     H      |     Netflav     |    https://netflav.com/     | 完美屏蔽广告/无弹窗 | 三颗星 |
-|     H      |      NSFW       |      https://jable.tv/      | 完美屏蔽广告/无弹窗 | 四颗星 |
-|     H      |      NSFW       |   https://javtsunami.com    | 完美屏蔽广告/无弹窗 | 两颗星 |
-|     H      |      NSFW       |  https://www.porntrex.com   | 完美屏蔽广告/无弹窗 | 两颗星 |
-|     H      |      NSFW       |     https://javbus.com      | 完美屏蔽广告/无弹窗 | 三颗星 |
+|    类型    |    网站名称     |          网站地址           |        备注         | 推荐指数       |
+| :--------: | :-------------: | :-------------------------: | :-----------------: | ---------- |
+|  在线影视  |    奈菲影视     |  https://www.nfmovies.com/  | 完美屏蔽广告/无弹窗 | 四颗星     |
+|  在线影视  |    低端影视     |      https://ddrk.me/       | 完美屏蔽广告/无弹窗 | 四颗星     |
+|  在线影视  |     片库网      |    https://m.pianku.me/     | 完美屏蔽广告/无弹窗 | 四颗星     |
+|  在线影视  |     嘀哩哩      |  https://www.dililitv.com/  | 完美屏蔽广告/无弹窗 | 三颗星     |
+|  在线影视  |     真不卡      |  https://www.zhenbuka.com/  | 完美屏蔽广告/无弹窗 | 三颗星     |
+|  在线漫画  |   COCOMANHUA    | https://www.cocomanhua.com/ |    无广告/有弹窗    | 两颗星     |
+| H漫画/连载 | 喵紳士NyaHentai |  https://zh.nyahentai.me/   | 完美屏蔽广告/无弹窗 | 四颗星     |
+| H韩漫/连载 |    第一韩漫     |   https://www.hptoon.com    | 完美屏蔽广告/无弹窗 | 三点五颗星 |
+|  在线动漫  |    樱花动漫     |      http://m.yhdm.io/      | 完美屏蔽广告/无弹窗 | 三颗星     |
+|     H      |     Pornhub     |  https://www.pornhub.com/   | 完美屏蔽广告/无弹窗 | 三颗星     |
+|     H      |     Netflav     |    https://netflav.com/     | 完美屏蔽广告/无弹窗 | 三颗星     |
+|     H      |      NSFW       |      https://jable.tv/      | 完美屏蔽广告/无弹窗 | 四颗星     |
+|     H      |      NSFW       |   https://javtsunami.com    | 完美屏蔽广告/无弹窗 | 两颗星     |
+|     H      |      NSFW       |  https://www.porntrex.com   | 完美屏蔽广告/无弹窗 | 两颗星     |
+|     H      |      NSFW       |     https://javbus.com      | 完美屏蔽广告/无弹窗 | 三颗星     |
 
 
 

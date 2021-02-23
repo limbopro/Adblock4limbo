@@ -34,6 +34,11 @@ Adguard For Mac/Windows 用户往下看，且以 https://www.nfmovies.com/ 举�
 
 3.分别打开两个URL，并复制其内容，依次命名为 `nfmovies.js` 和 `user-script.js`；
 
+```
+raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/nfmovies.js
+raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/user-script.js
+```
+
 ## 制作QuantumultX Adguard.conf 文件（重写引用）
 
 ```

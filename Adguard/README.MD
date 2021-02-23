@@ -34,7 +34,7 @@ Adguard For Mac/Windows 用户往下看，且以 https://www.nfmovies.com/ 举�
 
 3.分别打开两个URL，并复制其内容，依次命名为 `nfmovies.js` 和 `user-script.js`；
 
-4.制作QuantumultX 重写.conf 文件
+## 制作QuantumultX Adguard.conf 文件（重写引用）
 
 ```
 hostname = www.nfmovies.com
@@ -42,6 +42,12 @@ hostname = www.nfmovies.com
 #www.nfmovies.com adsblock
 ^https:?/\/www.nfmovies.com.* url response-body <head> response-body <head><script type="text/javascript" nonce="7575a050f63648a69e15f9694a7" src="//raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/nfmovies.js"></script><script type="text/javascript" nonce="7575a050f63648a69e15f9694a7" src="//raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/user-script.js"></script>
 ```
+
+## 引用Adguard.conf
+
+打开 Quantumult X  - 点击右下角三菱按钮 - 找到 重写 - 点击 引用 ，粘贴以下 URL；
+
+https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adguard.conf
 
 以上。
 

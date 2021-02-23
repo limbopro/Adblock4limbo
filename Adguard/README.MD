@@ -50,9 +50,13 @@ hostname = www.nfmovies.com
 
 ## 引用Adguard.conf
 
-打开 Quantumult X  - 点击右下角三菱按钮 - 找到 重写 - 点击 引用 ，粘贴以下 URL；
+1.打开 Quantumult X  - 点击右下角三菱按钮 - 找到 重写 - 点击 引用 ，粘贴以下 URL；
 
 https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adguard.conf
+
+2.开启重写按钮/MITM按钮，配置下证书，食用；
+
+3.去广告效果参考：https://t.me/limboprossr/2222
 
 以上。
 

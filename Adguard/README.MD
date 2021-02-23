@@ -5,7 +5,7 @@
 ## 如何提取 Adguard 的JavaScript文件
 Adguard For Mac/Windows 用户往下看，且以 https://www.nfmovies.com/ 举例；
 
-1.谷歌浏览器打开 https://www.nfmovies.com/ ，右键显示网页源代码；
+1.谷歌浏览器打开 https://www.nfmovies.com/ ，右键选择`显示网页源代码`（当然也可以在开发者工具内查看），可看到如下HTML文档；
 
 ```
 <!DOCTYPE html>

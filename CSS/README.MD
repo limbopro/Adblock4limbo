@@ -19,6 +19,9 @@ https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/CSS/Adblock4limbo.
 .myui-ra-container {display: none !important;}
 #aaaDiv2 {width: 0% !important;}
 #aaaDiv {width: 0% !important;}
+#alqZmizfYfnG {display: none !important;}
+#arqZmizfYfnG {display: none !important;}
+img {display: none !important;}
 ```
 
 ## 制作QuantumultX css.adblock.conf 文件（重写引用）

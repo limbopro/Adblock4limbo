@@ -1,6 +1,6 @@
 
 
-## 使用开发者工具找到相关CSS
+## 使用开发者工具找到相关CSS名称
 ### 参考资料
 - CSS是啥子：https://developer.mozilla.org/zh-CN/docs/Web/CSS
 - 谷歌浏览器开发者工具：https://developers.google.com/web/tools/chrome-devtools/css?hl=zh-cn

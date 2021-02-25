@@ -2,10 +2,10 @@
 
 ## 使用开发者工具找到相关CSS名称
 ### 参考资料
-- CSS是啥子：https://developer.mozilla.org/zh-CN/docs/Web/CSS
-- 谷歌浏览器开发者工具：https://developers.google.com/web/tools/chrome-devtools/css?hl=zh-cn
-- CSS 隐藏元素的八种方法：https://juejin.cn/post/6844903456545701901
-- CSS（层叠样式表）：https://developer.mozilla.org/zh-CN/docs/Web/CSS
+1. CSS是啥子：https://developer.mozilla.org/zh-CN/docs/Web/CSS
+2. 谷歌浏览器开发者工具：https://developers.google.com/web/tools/chrome-devtools/
+3. CSS 隐藏元素的八种方法：https://juejin.cn/post/6844903456545701901
+4. CSS（层叠样式表）：https://developer.mozilla.org/zh-CN/docs/Web/CSS
 
 ## 制作CSS文件
 

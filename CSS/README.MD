@@ -6,6 +6,8 @@
 2. 谷歌浏览器开发者工具：https://developers.google.com/web/tools/chrome-devtools/
 3. CSS 隐藏元素的八种方法：https://juejin.cn/post/6844903456545701901
 4. CSS（层叠样式表）：https://developer.mozilla.org/zh-CN/docs/Web/CSS
+5. 使用谷歌浏览器开发者工具调整网页CSS样式以屏蔽广告（视频）
+：https://www.youtube.com/watch?v=uObW0Gr9QfA
 
 ## 制作CSS文件
 

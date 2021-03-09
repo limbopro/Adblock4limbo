@@ -80,9 +80,9 @@
 
 
 > 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；
+> 在毒奶去广告计划的基础上，博主推荐大家安装 Safari 内容拦截器，可以屏蔽绝大多数网页广告（for Safari）；[iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.xyz/archives/safari-content-blocker.html)
 
 ## 相关屏蔽广告分流/重写
-
 
 0. 在此毒奶对大家的付出表示感谢
 1. [NobyDa](https://github.com/NobyDa/Script/tree/master) 脚本仓库（*如删库可替换 NobyDa 为 limbopro，其他同理）

@@ -112,7 +112,7 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 
 ## 其他系列教程（或参考）
-
+0. [iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.xyz/archives/safari-content-blocker.html)
 1. [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html)
 2. [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)

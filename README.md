@@ -1,4 +1,12 @@
 # Adblock4limbo
+
+## 一些建议
+
+- 如果你是 Safari（iOS） 用户，建议安装 内容拦截器，拦截效率也挺高的，转为Safari设计；参阅 https://limbopro.xyz/archives/safari-content-blocker.html
+- 如果你是 Windows/Mac 用户，建议安装 AdGuard 浏览器扩展；参阅 https://limbopro.xyz/archives/adguard.html
+- 以上，如果你爱折腾也喜欢用 Chrome（iOS），毒奶计划适合你；
+- 你也可以根据 [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
+
 ## 毒奶去广告计划
 毒奶去广告计划始于 11.01.2020；
 

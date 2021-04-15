@@ -75,8 +75,9 @@
 |  在线影视  |    哔嘀影视     |      https://bde4.cc/       | 完美屏蔽广告/无弹窗 | 三颗星     |
 |  在线影视  |    奈飞影视     |     https://nfstar.net/     | 完美屏蔽广告/无弹窗 | 三点五颗星 |
 |  在线美剧  |    91美剧网     |     https://91mjw.com/      | 完美屏蔽广告/无弹窗 | 三点五颗星 |
-|  在线漫画  |   COCOMANHUA    | https://www.cocomanhua.com/ |    无广告/有弹窗    | 两颗星     |
+|  在线漫画  |   COCOMANHUA    | https://www.cocomanhua.com/ |    无广告/有弹窗    | 一点五颗星 |
 | H漫画/连载 | 喵紳士NyaHentai |  https://zh.nyahentai.me/   | 完美屏蔽广告/无弹窗 | 四颗星     |
+| H漫画/连载 |    绅士漫画     |     https://wnacg.org/      | 完美屏蔽广告/无弹窗 | 三颗星     |
 | H韩漫/连载 |    第一韩漫     |   https://www.hptoon.com    | 完美屏蔽广告/无弹窗 | 三点五颗星 |
 |  在线动漫  |    樱花动漫     |      http://m.yhdm.io/      | 完美屏蔽广告/无弹窗 | 三颗星     |
 |     H      |     Pornhub     |  https://www.pornhub.com/   | 完美屏蔽广告/无弹窗 | 三颗星     |
@@ -86,6 +87,7 @@
 |     H      |      NSFW       |  https://www.porntrex.com   | 完美屏蔽广告/无弹窗 | 两颗星     |
 |     H      |      NSFW       |     https://javbus.com      | 完美屏蔽广告/无弹窗 | 三颗星     |
 |     H      |      NSFW       |     https://91porn.com/     | 完美屏蔽广告/无弹窗 | 二颗星     |
+
 
 
 > 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；

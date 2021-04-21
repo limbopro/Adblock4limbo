@@ -1,6 +1,5 @@
 (function() {
-	// Based on uAssets
-	// License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
+	
 	var z = window.setInterval,
 		needle = '{{1}}',
 		delay = parseInt('{{2}}', 10),
@@ -45,3 +44,7 @@ var ExtendedCss=function(){"use strict";function e(t){return(e="function"==typeo
 function H(){var a=x.g;if(a)try{eval(u.createScript(a))}catch(b){d(b)}};function I(){10>document.documentMode||document.addEventListener("click",function(a){try{if(2!==a.button){var b=a.target;if(b instanceof Node){for(a=b;a&&!(a instanceof HTMLAnchorElement);)a=a.parentNode;var c=a}else c=void 0;if(c){a:{try{if(w.isSubscriptionIntercept){if("http:"===c.protocol||"https:"===c.protocol){if("subscribe.adblockplus.org"!==c.host||"/"!==c.pathname){var e=void 0;break a}}else if(!c.href||-1===c.href.indexOf("abp:subscribe")){e=void 0;break a}e=c.search?"adguard:subscribe"+
 c.search:c.href.replace("abp:subscribe","adguard:subscribe");break a}}catch(f){d(f)}e=void 0}if(e)c.href=e;else{a:{try{if(w.isUserscriptIntercept&&("http:"===c.protocol||"https:"===c.protocol)&&-1!==c.pathname.indexOf(".user.js")&&c.pathname.endsWith(".user.js")){var k=c.href;c.search&&(k=k.replace(c.search,""));var g="adguard:userscript?location="+k;break a}}catch(f){d(f)}g=void 0}g&&(c.href=g)}}}}catch(f){d(f)}})};var J=!0,K=!0,L=!0,M=-1!==["mail.yahoo.com","map.baidu.com"].indexOf(document.location.hostname),N=-1!==["muve.pl"].indexOf(document.location.hostname);window!==window.top&&(J=1E5<Math.max(document.documentElement.clientHeight,window.innerHeight||0)*Math.max(document.documentElement.clientWidth,window.innerWidth||0),x.a&&x.a.hasOwnProperty("isReferrerRuleElemhide")&&x.a.hasOwnProperty("isReferrerRuleJsInject")&&(K=x.a.isReferrerRuleElemhide,L=x.a.isReferrerRuleJsInject));var O=v||"adgRunId";
 if(!document[O]){document[O]=!0;if(K){M||(J&&x.b&&D(x.b),D(x.h));var P=x.c;P&&!r&&(new ExtendedCss({styleSheet:P,i:C})).apply()}L&&H();(w.isSubscriptionIntercept||w.isUserscriptIntercept)&&I();N||y()}delete x.b;delete x.h;delete x.c;delete x.g;delete x.a;delete x.f;n.removeChild(h);})();
+
+// Based on uAssets
+// License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
+// https://firmware.koolshare.cn/binary/swf/

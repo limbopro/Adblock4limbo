@@ -1,0 +1,3 @@
+div[id*="sjtb"] {display:none!important}
+iframe[src*="jianxin"] {display:none!important}
+div[id*=HMRichBox]{display:none!important}

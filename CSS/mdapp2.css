@@ -1,0 +1,11 @@
+.ads {display: none !important;}
+.col-sm-12 {display: none !important;}
+@media (min-width: 768px).col-sm-12 {display: none !important;}
+.col.col-12.col-sm-12 {display: none !important;}
+.bottom {display: none !important;}
+.leftd {display: none !important;}
+.rightd {display: none !important;}
+.closebox1 {display: none !important;}
+.closebox2 {display: none !important;}
+.closebox3 {display: none !important;}
+.res-search {display: none !important;}

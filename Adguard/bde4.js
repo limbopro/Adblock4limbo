@@ -1,5 +1,4 @@
 (function() {
-	
 	var z = window.setInterval,
 		needle = '{{1}}',
 		delay = parseInt('{{2}}', 10),

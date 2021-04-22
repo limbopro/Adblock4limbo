@@ -35,3 +35,4 @@
 
 //A much higher accuracy timer object that makes use of the node.js hrtime function call.
 //The nanotimer recreates the internal javascript timing functions with higher resolution.
+

@@ -1,5 +1,4 @@
 // 视频播放页广告倒计时加速脚本
-
 (function() {
     var z = window.setInterval,
         needle = '{{1}}',

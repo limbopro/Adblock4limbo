@@ -27,6 +27,8 @@ DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i, reject
 DOMAIN-SUFFIX, ddmax20.xyz, reject
 #DOMAIN-SUFFIX, www.avple.video, reject
 DOMAIN-SUFFIX, xn--3bs795g.link, reject
+DOMAIN-SUFFIX, show.suning.beer, reject
+DOMAIN-SUFFIX, www.govshenzhen.cn, reject
 
 #####netflav.com Netflav
 DOMAIN-SUFFIX, maphuahin.com, reject
@@ -87,3 +89,22 @@ DOMAIN-SUFFIX, pu0glv.cn, reject
 DOMAIN, 2785.dlads.cn, reject
 DOMAIN, dagonghuzhu.com, reject
 #DOMAIN-SUFFIX, byteimg.com, reject
+
+##### www.hptoon.com
+DOMAIN-SUFFIX, imgxxx.shunxincar.cn, reject
+DOMAIN-SUFFIX, cc58.oss-cn-beijing.aliyuncs.com, reject
+DOMAIN-SUFFIX, oss-accelerate.aliyuncs.com, reject
+DOMAIN-SUFFIX, kk.braincf.com, reject
+DOMAIN-SUFFIX, run.haireig.com, reject
+DOMAIN-SUFFIX, d.zxptw.cn, reject
+DOMAIN-SUFFIX, new.xiongzhangad.com, reject
+DOMAIN-SUFFIX, js.users.51.la, reject
+DOMAIN-SUFFIX, maxwellsery.com, reject
+DOMAIN-SUFFIX, annabelleabe.com, reject
+
+##### https://91mjw.com/
+DOMAIN-SUFFIX, jianxinshanghai.com, reject
+
+##### https://m.biquge.com.cn/
+DOMAIN-SUFFIX, bizhixiang.cn, reject
+DOMAIN-SUFFIX, jspassport.ssl.qhimg.com, reject

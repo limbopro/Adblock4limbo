@@ -1,4 +1,3 @@
-// 视频播放页广告倒计时加速脚本
 (function() {
     var z = window.setInterval,
         needle = '{{1}}',
@@ -32,7 +31,7 @@
     }.bind(window);
 })();
 
-// 图片广告隐藏
+
 var newstyle="div.myui-ra-container.container,[src*='banner'],div[id*=al],div>img,body>div#playerCnt{display:none !important;}";
 var creatcss=document.createElement("style");
 creatcss.innerHTML=newstyle;

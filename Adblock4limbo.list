@@ -1,5 +1,5 @@
 # limbopro.xyz
-# 02.20.2021
+# 04.26.2021
 # https://t.me/Adblock4limbo
 
 #####Jable.tv av吃到饱
@@ -108,3 +108,6 @@ DOMAIN-SUFFIX, jianxinshanghai.com, reject
 ##### https://m.biquge.com.cn/
 DOMAIN-SUFFIX, bizhixiang.cn, reject
 DOMAIN-SUFFIX, jspassport.ssl.qhimg.com, reject
+
+##### https://gimy.tv/ 剧迷tv
+DOMAIN-SUFFIX, ads.superad.cc, reject

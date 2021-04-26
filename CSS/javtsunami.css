@@ -1,0 +1,4 @@
+div.happy-header-mobile,div.happy-under-player-mobile {display: none! important;}
+div[id*=exo] {display: none! important;}
+a[href*=realsrv] {display: none! important;}
+img[src*=ackcdn] {display: none! important;}

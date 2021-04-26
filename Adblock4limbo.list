@@ -119,3 +119,7 @@ DOMAIN-SUFFIX, boost-next.co.jp, reject
 DOMAIN-SUFFIX, ad-nex.com, reject
 DOMAIN-SUFFIX, aaacompany.net, reject
 DOMAIN-SUFFIX, d24ak3f2b.top, reject
+DOMAIN-SUFFIX, blastcahs.com, reject
+
+##### javtsunami.com
+DOMAIN-SUFFIX, alexametrics.com, reject

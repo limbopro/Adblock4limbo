@@ -1,0 +1,3 @@
+div[style*="height: 250px"] {display:none !important}
+#is_w_area {display:none !important}
+.inv_scroll_cancel {overflow:auto;height:100% !important;}

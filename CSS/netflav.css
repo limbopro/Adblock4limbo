@@ -1,2 +1,2 @@
-a[target*=blank] {display:none !important}
+/* a[target*=blank] {display:none !important} */
 a[href*="register"][target="_blank"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}

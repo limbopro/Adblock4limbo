@@ -112,3 +112,9 @@ DOMAIN-SUFFIX, jspassport.ssl.qhimg.com, reject
 
 ##### https://gimy.tv/ 剧迷tv
 DOMAIN-SUFFIX, ads.superad.cc, reject
+
+##### https://javfan.one/ JAVFAN
+DOMAIN-SUFFIX, isboost.co.jp, reject
+DOMAIN-SUFFIX, boost-next.co.jp, reject
+DOMAIN-SUFFIX, ad-nex.com, reject
+DOMAIN-SUFFIX, aaacompany.net, reject

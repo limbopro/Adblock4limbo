@@ -1,0 +1,6 @@
+a[href*="register"][target="_blank"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}
+div[class*=-ad],div[class*=single-vad],div[class*=featuread]  {display:none !important;}
+.video-boxad {display:none !important;}
+/*div.pop-skip {display:none !important;}*/
+img[src*=gif] {visibility:hidden;}
+a[target*=_blank] {visibility:hidden;}

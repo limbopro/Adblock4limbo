@@ -128,3 +128,6 @@ DOMAIN-SUFFIX, alexametrics.com, reject
 DOMAIN-SUFFIX, wpncdn.com, reject
 DOMAIN-SUFFIX, exosrv.com, reject
 DOMAIN-SUFFIX, jads.co, reject
+DOMAIN-KEYWORD, toateeli, reject
+DOMAIN-KEYWORD, greenplasticdua, reject
+DOMAIN-KEYWORD, highwebmedia, reject

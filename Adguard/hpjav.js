@@ -6,6 +6,10 @@ hpjav[2].remove();
 var hpjavbox = document.querySelectorAll("div.home-img-box");
 hpjavbox[1].style.display = "none";
 
+var newstyle="[class*=ad],#preroll_ads {display:none !important;}";
+var netflavcss=document.createElement("style");
+netflavcss.innerHTML=newstyle;
+document.getElementsByTagName('head')[0].appendChild(netflavcss)
 /*
 var target = document.querySelectorAll("[target*=_blank]");
 var i;

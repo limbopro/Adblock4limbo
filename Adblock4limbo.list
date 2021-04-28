@@ -125,7 +125,16 @@ DOMAIN-SUFFIX, blastcahs.com, reject
 DOMAIN-SUFFIX, alexametrics.com, reject
 
 ##### https://hpjav.tv/ JAVFAN #NSFW
+DOMAIN-SUFFIX, wpncdn.com, reject
 DOMAIN-SUFFIX, exosrv.com, reject
 DOMAIN-SUFFIX, jads.co, reject
 DOMAIN-KEYWORD, toateeli, reject
 DOMAIN-KEYWORD, greenplasticdua, reject
+DOMAIN-KEYWORD, bongacash, reject
+DOMAIN-KEYWORD, bngpt, reject
+DOMAIN-KEYWORD, stunninglover, reject
+DOMAIN-KEYWORD, highwebmedia, reject
+DOMAIN-KEYWORD, jads, reject
+DOMAIN-KEYWORD, trwl1, reject
+#DOMAIN-KEYWORD, vidoza, reject
+DOMAIN-KEYWORD, o333o, reject

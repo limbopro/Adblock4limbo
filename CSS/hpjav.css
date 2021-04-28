@@ -8,31 +8,12 @@
 */
 /*a[target*=_blank] {display:none !important;}*/
 
-
-        #player {
-            max-width: 100vw;
-            width: 100vw !important;
-            height: 100vh !important;
-        }
-
-
-        #app {
-            min-height: 0px !important;
-        }
-
-        .video-js .vjs-volume-panel .vjs-volume-level:before {
-            top: -0.60em !important;
-        }
-
-        .jw-logo-button {
-            width: 80px !important;
-        }
-
-        .jw-logo-button>div {
-            width: 100% !important;
-        }
-
-        @media  only screen and (max-width: 500px) {
-            .jw-logo-button {
-                width: 50px !important;
-            }
+.poplayer, #preroll, .pop-wrap, .pop-main, .pop-html, .pop-skip {display:none !important;} /* 播放页广告去除 */
+.home-img-box {margin: 0 !important;} 
+.video-box-ad {display:none !important;}
+.bottom-ad,.center-ad,.home-featured-ad {display:none !important;}
+.home-ad {height: 1px !important;}
+.video-boxad {display:none !important;}
+.featuredad1, featuredad2 {display:none !important;}
+.single-vad.container {display:none !important;}
+/*a[target*="_blank"] {display:none !important;}*/

@@ -1,37 +1,9 @@
-(function() {
-	// Based on uAssets
-	// License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
-	var z = window.setInterval,
-		needle = '{{1}}',
-		delay = parseInt('{{2}}', 10),
-		boost = parseFloat('{{3}}');
-	if ( needle === '' || needle === '{{1}}' ) {
-		needle = '.?';
-	} else if ( needle.charAt(0) === '/' && needle.slice(-1) === '/' ) {
-		needle = needle.slice(1, -1);
-	} else {
-		needle = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-	}
-	needle = new RegExp(needle);
-	if ( isNaN(delay) || !isFinite(delay) ) {
-		delay = 1000;
-	}
-	if ( isNaN(boost) || !isFinite(boost) ) {
-		boost = 0.05;
-	}
-	if ( boost < 0.02 ) {
-		boost = 0.02;
-	}
-	if ( boost > 50 ) {
-		boost = 50;
-	}
-	window.setInterval = function(a, b) {
-		if ( b === delay && needle.test(a.toString()) ) {
-			b *= boost;
-		}
-		return z.apply(this, arguments);
-	}.bind(window);
-})();
+/* 禁止新页面跳转 */
+var _blank = document.querySelectorAll("a");
+var i;
+for (i = 0; i < _blank.length; i++) {
+_blank[i].target = "_self";
+}
 
 /** content-script - v1.1.23 - 12/14/2020 */
 (function(){function d(a){"undefined"!==typeof console&&console.error&&(console.error("Error in AdGuard script"),console.error(a))}var h,l=document.currentScript;if(!l){var m=document.getElementsByTagName("script");l=m[m.length-1]}h=l;

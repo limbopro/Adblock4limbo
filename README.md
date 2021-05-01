@@ -12,6 +12,16 @@
 
 原理大抵相通的，重在理解；
 
+## 原理悉知
+
+i> 通过 QuantumultX 提供的重写类型（QX-重写），如 reject / 302 / 307 / request-header / response-body / 实现对网页（HTML）的匹配，替换，插入，删除各类元素；本仓库提供大量的实例参考；
+
+**你可能需要了解到的知识：**
+
+1.[**正则表达式**：](https://limbopro.xyz/archives/Regular_Expressions.html)
+2.[重写类型response-body的用法丨利用 Quantumult X 替换网页元素实现去广告（正则表达式以及开发者工具、调试）](https://limbopro.xyz/archives/12782.html)
+3.[前端三剑客学习手记 - HTML/CSS/JavaScript](https://limbopro.xyz/archives/15067.html)
+
 ## 毒奶去广告计划
 毒奶去广告计划始于 11.01.2020；
 

@@ -5,15 +5,11 @@
 <details>
 <summary>Safari爱好者/Windows/Mac用户去广告建议</summary>
 
-如果你是 Safari（iOS） 用户，建议安装 [Safari-内容拦截器](https://limbopro.xyz/archives/safari-content-blocker.html)，拦截效率也挺高的，专为Safari设计且维护良好；
-
-如果你是 Windows/Mac 用户，建议安装 [AdGuard/Adblock 浏览器扩展](https://limbopro.xyz/archives/adguard.html)；
-
-如果你爱折腾也喜欢用 Chrome（iOS），毒奶去计划（本计划）非常适合你；
-
-同时你也可以根据 [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
-
-原理大抵相通的，重在理解；
+- 如果你是 Safari（iOS） 用户，建议安装 [Safari-内容拦截器](https://limbopro.xyz/archives/safari-content-blocker.html)；
+- 如果你是 Windows/Mac 用户，建议安装 [AdGuard/Adblock 浏览器扩展](https://limbopro.xyz/archives/adguard.html)；
+- 如果你爱折腾也喜欢用 Chrome（iOS），且拥有QuantumultX，那么毒奶去计划（本计划）非常适合你；
+- 同时你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
+- 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
 
 </details>
 

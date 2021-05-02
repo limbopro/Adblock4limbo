@@ -2,41 +2,37 @@
 
 ## 一些建议
 
-<details>
-<summary>Safari爱好者/Windows/Mac用户去广告建议</summary>
+> **Safari爱好者/Windows/Mac用户去广告建议：**
+>> - 如果你是 Safari（iOS） 用户，建议安装 [Safari-内容拦截器](https://limbopro.xyz/archives/safari-content-blocker.html)；
+>> - 如果你是 Windows/Mac 用户，建议安装 [AdGuard/Adblock 浏览器扩展](https://limbopro.xyz/archives/adguard.html)；
+>> - 如果你爱折腾也喜欢用 Chrome（iOS），且拥有QuantumultX，那么毒奶去计划（本计划）非常适合你；
+>> - 同时你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
+>> - 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
 
-- 如果你是 Safari（iOS） 用户，建议安装 [Safari-内容拦截器](https://limbopro.xyz/archives/safari-content-blocker.html)；
-- 如果你是 Windows/Mac 用户，建议安装 [AdGuard/Adblock 浏览器扩展](https://limbopro.xyz/archives/adguard.html)；
-- 如果你爱折腾也喜欢用 Chrome（iOS），且拥有QuantumultX，那么毒奶去计划（本计划）非常适合你；
-- 同时你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
-- 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
-
-</details>
 
 ## 去广告原理悉知
 
-通过 QuantumultX 提供的重写类型（QX-重写），如 reject / 302 / 307 / request-header / response-body / 实现对网页（HTML）各元素、资源的匹配，禁止加载，替换，插入，删除各类元素；本仓库提供大量的实例参考；
+> 通过 QuantumultX 提供的重写类型（QX-重写），如 reject / 302 / 307 / request-header / response-body / 实现对网页（HTML）各元素、资源的匹配，禁止加载，替换，插入，删除各类元素；本仓库提供大量的实例参考；
 
-**你可能需要了解到的知识：**
-
-1. [**正则表达式**：](https://limbopro.xyz/archives/Regular_Expressions.html)
-2. [重写类型response-body的用法丨利用 Quantumult X 替换网页元素实现去广告（正则表达式以及开发者工具、调试）](https://limbopro.xyz/archives/12782.html)
-3. [前端三剑客学习手记 - HTML/CSS/JavaScript](https://limbopro.xyz/archives/15067.html)
+> **你可能需要了解到的知识：**
+>> 1. [**正则表达式**：](https://limbopro.xyz/archives/Regular_Expressions.html)
+>> 2. [重写类型response-body的用法丨利用 Quantumult X 替换网页元素实现去广告（正则表达式以及开发者工具、调试）](https://limbopro.xyz/archives/12782.html)
+>> 3. [前端三剑客学习手记 - HTML/CSS/JavaScript](https://limbopro.xyz/archives/15067.html)
 
 ## 毒奶去广告计划
 毒奶去广告计划始于 11.01.2020；
 
-✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX），仅针对iOS浏览器（Chrome/Safari等）网页广告（Javascript 弹窗横幅等），如Pornhub，奈菲影视，低端影视、真不卡、91美剧网、Jable等，提升观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；如需反馈问题请加入我们的电报讨论组或提交issue；
+>> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX），仅针对iOS浏览器（Chrome/Safari等）网页广告（Javascript 弹窗横幅等），如Pornhub，奈菲影视，低端影视、真不卡、91美剧网、Jable等，提升观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；如需反馈问题请加入我们的电报讨论组或提交issue；
 
-⚠️ **注意事项**！为应对广告屏蔽插件如Adguard等插件浏览器扩展对网站广告的屏蔽，大多数网站都会不定期更新网站页面结构包括但不限于DIV元素位置，类，内容等等；而这些更新极有可能会导出本计划部分屏蔽规则失效，这也正是本计划持续更新的原因，所以请大家务必加入电报讨论群组，适时为我们提供使用反馈；
+>> ⚠️ **注意事项**！为应对广告屏蔽插件如Adguard等插件浏览器扩展对网站广告的屏蔽，大多数网站都会不定期更新网站页面结构包括但不限于DIV元素位置，类，内容等等；而这些更新极有可能会导出本计划部分屏蔽规则失效，这也正是本计划持续更新的原因，所以请大家务必加入电报讨论群组，适时为我们提供使用反馈；
 
-🈲️ 另外，按教程配置好后，如若仍发现广告，请按以下方式进行重试：1.在无痕模式下打开该页面，如若仍有广告请进群组反馈（附上该页面截图和链接）；2.请确保你的浏览器没有自带广告屏蔽功能（如Alook浏览器），其内置的过滤器将导致一些冲突；3.建议使用谷歌浏览器，Safari；
+>> 🈲️ 另外，按教程配置好后，如若仍发现广告，请按以下方式进行重试：1.在无痕模式下打开该页面，如若仍有广告请进群组反馈（附上该页面截图和链接）；2.请确保你的浏览器没有自带广告屏蔽功能（如Alook浏览器），其内置的过滤器将导致一些冲突；3.建议使用谷歌浏览器，Safari；
 
 ## 电报讨论群组
-1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
-2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；
-3. 帮助我们测试**新的去广告规则**是否普适有效，如某个网站失效页面出现广告请把该页面的链接，页面的截图反馈到群组；
-4. 如有任何关于本去广告计划的疑问请在本群反馈；
+>> 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
+>> 2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；
+>> 3. 帮助我们测试**新的去广告规则**是否普适有效，如某个网站失效页面出现广告请把该页面的链接，页面的截图反馈到群组；
+>> 4. 如有任何关于本去广告计划的疑问请在本群反馈；
 
 ## 毒奶去广告使用方法（配置步骤）
 

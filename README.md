@@ -2,9 +2,7 @@
 
 ## 一些建议
 
-如果你是 Safari（iOS） 用户，建议安装 内容拦截器，拦截效率也挺高的，专为Safari设计且维护良好；参阅 https://limbopro.xyz/archives/safari-content-blocker.html ；如果你是 Windows/Mac 用户，建议安装 AdGuard/Adblock 浏览器扩展；参阅 https://limbopro.xyz/archives/adguard.html ；以上，如果你爱折腾也喜欢用 Chrome（iOS），毒奶计划非常适合你；
-
-你也可以根据 [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
+如果你是 Safari（iOS） 用户，建议安装 内容拦截器，拦截效率也挺高的，专为Safari设计且维护良好；参阅 https://limbopro.xyz/archives/safari-content-blocker.html ；如果你是 Windows/Mac 用户，建议安装 AdGuard/Adblock 浏览器扩展；参阅 https://limbopro.xyz/archives/adguard.html ；以上，如果你爱折腾也喜欢用 Chrome（iOS），毒奶计划非常适合你；你也可以根据 [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html) 教程学习进行去网页广告作业；
 
 原理大抵相通的，重在理解；
 

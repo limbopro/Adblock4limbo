@@ -12,9 +12,9 @@
 
 原理大抵相通的，重在理解；
 
-## 原理悉知
+## 去广告原理悉知
 
-通过 QuantumultX 提供的重写类型（QX-重写），如 reject / 302 / 307 / request-header / response-body / 实现对网页（HTML）的匹配，替换，插入，删除各类元素；本仓库提供大量的实例参考；
+通过 QuantumultX 提供的重写类型（QX-重写），如 reject / 302 / 307 / request-header / response-body / 实现对网页（HTML）各元素、资源的匹配，禁止加载，替换，插入，删除各类元素；本仓库提供大量的实例参考；
 
 **你可能需要了解到的知识：**
 

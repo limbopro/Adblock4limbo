@@ -1,0 +1,1 @@
+document.body.innerHTML = document.body.innerHTML.replace(/15000/gi, "100");

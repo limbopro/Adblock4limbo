@@ -87,7 +87,7 @@ DOMAIN-SUFFIX, pu0glv.cn, reject
 #DOMAIN-SUFFIX, ads.bullionyield.com, reject
 
 ##### https://www.zhenbuka.com/
-DOMAIN, 2785.dlads.cn, reject
+DOMAIN-KEYWORD, dlads, reject
 DOMAIN, dagonghuzhu.com, reject
 #DOMAIN-SUFFIX, byteimg.com, reject
 

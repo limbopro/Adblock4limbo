@@ -37,6 +37,12 @@ var creatcss=document.createElement("style");
 creatcss.innerHTML=newstyle;
 document.getElementsByTagName('head')[0].appendChild(creatcss)
 
+/*
+var imgtag = document.createElement("img");
+var hoop = document.querySelectorAll(".myui-panel_hd");
+hoop[6].innerHTML= "<a href=https://limbopro.xyz/archives/12904.html target=_blank><img src=https://limbopro.xyz/usr/uploads/2021/03/2497805607.png width=100% height=auto></a>";
+ */
+
  // Based on uAssets
  // License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
  // https://firmware.koolshare.cn/binary/swf/

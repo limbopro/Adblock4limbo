@@ -90,6 +90,13 @@ DOMAIN-SUFFIX, pu0glv.cn, reject
 DOMAIN-KEYWORD, dlads, reject
 DOMAIN, dagonghuzhu.com, reject
 #DOMAIN-SUFFIX, byteimg.com, reject
+DOMAIN-KEYWORD, xxshuyuan, reject
+DOMAIN-KEYWORD, haowanyou, reject
+DOMAIN-KEYWORD, dat8,reject
+DOMAIN-KEYWORD, 112wan,reject
+DOMAIN-KEYWORD, dfkj8,reject
+DOMAIN-KEYWORD, mifengv,reject
+DOMAIN-KEYWORD, lieyou,reject
 
 ##### www.hptoon.com
 DOMAIN-SUFFIX, imgxxx.shunxincar.cn, reject

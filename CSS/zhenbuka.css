@@ -1,6 +1,6 @@
 #md112,#yb112,#ad01  {display: none! important;}
 .marquee_outer {display: none! important;}
-a[target="_blank"] {display: none! important;}
+a[target*=_blank] {display: none! important;}
 iframe{display: none! important;}
 img[src*=ykimg]{display: none! important;}
 .layui-layer.layui-layer-dialog {display: none! important;}

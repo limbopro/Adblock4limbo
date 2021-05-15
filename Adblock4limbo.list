@@ -97,6 +97,10 @@ DOMAIN-KEYWORD, 112wan,reject
 DOMAIN-KEYWORD, dfkj8,reject
 DOMAIN-KEYWORD, mifengv,reject
 DOMAIN-KEYWORD, lieyou,reject
+DOMAIN-KEYWORD, 789htbet,reject
+DOMAIN-KEYWORD, mdapp09,reject
+DOMAIN-KEYWORD, juruigj,reject
+#DOMAIN-KEYWORD, mmiyue,reject
 
 ##### www.hptoon.com
 DOMAIN-SUFFIX, imgxxx.shunxincar.cn, reject
@@ -145,3 +149,8 @@ DOMAIN-KEYWORD, jads, reject
 DOMAIN-KEYWORD, trwl1, reject
 #DOMAIN-KEYWORD, vidoza, reject
 DOMAIN-KEYWORD, o333o, reject
+
+##### https://javgg.net/
+DOMAIN-SUFFIX, x2sfa.javgg.eu, reject
+DOMAIN-SUFFIX, xd3r.javgg.eu, reject
+DOMAIN-SUFFIX, p242.plainwrk.name, reject

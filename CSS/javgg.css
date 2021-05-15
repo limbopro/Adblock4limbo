@@ -1,0 +1,4 @@
+[target*=_blank]{display:none!important}
+[id*=ads],[id*=Ads],[id*=Ad],[id*=ad] {display:none!important} 
+[class*=ads],[class*=ad],[class*=Ads],[class*=Ad]{display:none!important}
+.video-fake {display:none!important}

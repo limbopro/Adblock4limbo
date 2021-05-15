@@ -10,3 +10,4 @@ div#sponsorAdDiv2 {display: none !important;}
 div.hy-layout.clearfix {display: none !important;}
 div[id*="ar"] span {display:none!important} 
 div[id*="al"] span {display:none!important} 
+a[href*=shop] {display:none!important} 

@@ -1,4 +1,12 @@
-  /* 视频页广告加速 */
+setTimeout(()=>{
+var newstyle="a[href*=aiyou] {display:none !important;}";
+var creatcss=document.createElement("style");
+creatcss.innerHTML=newstyle;
+document.getElementsByTagName('head')[0].appendChild(creatcss)
+},1);
+
+
+/* 视频页广告加速 */
 (function() {
 	// Based on uAssets
 	// License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE

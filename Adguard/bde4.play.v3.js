@@ -4,7 +4,7 @@ var newstyle="a[href*=aiyou] {display:none !important;}";
 var creatcss=document.createElement("style");
 creatcss.innerHTML=newstyle;
 document.getElementsByTagName('head')[0].appendChild(creatcss)
-},1);
+},1000);
 
 
 /* 视频页广告加速 */

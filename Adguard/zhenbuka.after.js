@@ -1,4 +1,3 @@
-
 setTimeout(()=>{
 var newstyle="#ad_id,[src*=gif],img,#md112,#yb112,#ad01 {display:none !important;}";
 var creatcss=document.createElement("style");

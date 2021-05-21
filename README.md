@@ -68,6 +68,7 @@
 2. 此重写规则来自神机的仓库 [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)
 3. 如何验证去广告重写是否生效；[参考此处](https://limbopro.xyz/archives/12727.html#操作步骤)；
 
+⚠️ 更多去广告项目：https://github.com/privacy-protection-tools/anti-AD （分流去广告：基于广告资源（URL）所属的完整域名/域名后缀/域名关键字的相关请求进行 Reject），此项目类似 NobyDa 去广告分流项目；可能会有少许冲突，请自行斟酌使用；
 
 ## 毒奶去广告计划列表
 

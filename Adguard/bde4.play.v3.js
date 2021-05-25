@@ -1,6 +1,6 @@
 /* 延迟1秒中清除广告元素以此避免bde4反屏蔽检测 */
 setTimeout(()=>{
-var newstyle="a[href*=aiyou] {display:none !important;}";
+var newstyle="a[href*=aiyou],a[target*=_new] {display:none !important;}";
 var creatcss=document.createElement("style");
 creatcss.innerHTML=newstyle;
 document.getElementsByTagName('head')[0].appendChild(creatcss)

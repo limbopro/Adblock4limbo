@@ -154,6 +154,7 @@ DOMAIN-KEYWORD, jads, reject
 DOMAIN-KEYWORD, trwl1, reject
 #DOMAIN-KEYWORD, vidoza, reject
 DOMAIN-KEYWORD, o333o, reject
+DOMAIN-SUFFIX, ad.pornimg.xyz, reject
 
 ##### https://javgg.net/
 DOMAIN-SUFFIX, x2sfa.javgg.eu, reject

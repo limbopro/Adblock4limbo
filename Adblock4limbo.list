@@ -29,6 +29,9 @@ DOMAIN-SUFFIX, ddmax20.xyz, reject
 DOMAIN-SUFFIX, xn--3bs795g.link, reject
 DOMAIN-SUFFIX, show.suning.beer, reject
 DOMAIN-SUFFIX, www.govshenzhen.cn, reject
+DOMAIN-SUFFIX, mm9842.com, reject
+DOMAIN-KEYWORD, e2wysbacctt1, reject
+#DOMAIN-SUFFIX, streamtape.com,reject
 
 #####netflav.com Netflav
 DOMAIN-SUFFIX, maphuahin.com, reject
@@ -47,6 +50,8 @@ DOMAIN-SUFFIX, itnuzleafan.com, reject
 DOMAIN-SUFFIX, oawhaursaith.com, reject
 DOMAIN-SUFFIX, unreshiramor.com, reject
 DOMAIN-SUFFIX, regulationprivilegescan.top, reject
+DOMAIN-SUFFIX, in-page-push.com, reject
+DOMAIN-SUFFIX, farmcrapsubsist.com, reject
 
 #####avgle.me
 DOMAIN-SUFFIX, jads.co, reject

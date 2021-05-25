@@ -121,6 +121,7 @@ DOMAIN-SUFFIX, annabelleabe.com, reject
 
 ##### https://91mjw.com/
 DOMAIN-SUFFIX, jianxinshanghai.com, reject
+DOMAIN-SUFFIX, js.51toubu.com, reject
 
 ##### https://m.biquge.com.cn/
 DOMAIN-SUFFIX, bizhixiang.cn, reject

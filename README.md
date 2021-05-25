@@ -36,7 +36,7 @@
 
 ## 毒奶去广告使用方法（配置步骤）
 
-✅ 毒奶去广告计划分流与重写；（由毒奶博主维护）
+### 毒奶去广告计划分流与重写；（由毒奶博主维护）
 
 1. 分流引用 https://limbopro.xyz/Adblock4limbo.list （为最新发布，请放置于**分流引用列表**的顶部）
 
@@ -46,7 +46,7 @@
 
 4. 如仍有广告请清除浏览器缓存后重试
 
-⚠️ NobyDa 去广告分流；（由NobyDa维护）
+### NobyDa 去广告分流；（由NobyDa维护）
 
 1. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
 2. 分流引用 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
@@ -62,7 +62,7 @@
 
 </details>
 
-✅ 神机规则 去Youtube App 播放广告；（由花姐维护）
+### 神机规则 去Youtube App 播放广告；（由花姐维护）
 
 1. 重写引用 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf
 2. 此重写规则来自神机的仓库 [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)

@@ -14,6 +14,8 @@ DOMAIN-SUFFIX, tyrantdb.com, reject
 DOMAIN-SUFFIX, adserve.work, reject
 
 #####nfmovies.com 奈菲影视
+DOMAIN-SUFFIX, brushshopy, reject
+DOMAIN-SUFFIX, onenews, reject
 DOMAIN-SUFFIX, s96.cnzz.com, reject
 #DOMAIN-SUFFIX, yabo729.com, reject
 

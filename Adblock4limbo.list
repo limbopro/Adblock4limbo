@@ -173,3 +173,8 @@ DOMAIN-KEYWORD, mathtag, reject
 DOMAIN-KEYWORD, pagespeed-mod, reject
 DOMAIN-KEYWORD, in-page-push, reject
 
+#### disqus ads
+DOMAIN-SUFFIX,viglink.com,REJECT
+DOMAIN-SUFFIX,api.viglink.com,REJECT
+DOMAIN-SUFFIX,cdn.viglink.com,REJECT
+

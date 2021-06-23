@@ -1,5 +1,5 @@
 # limbopro.xyz
-# 06.20.2021
+# 04.26.2021
 # https://t.me/Adblock4limbo
 
 #####Jable.tv av吃到饱
@@ -14,8 +14,8 @@ DOMAIN-SUFFIX, tyrantdb.com, reject
 DOMAIN-SUFFIX, adserve.work, reject
 
 #####nfmovies.com 奈菲影视
-DOMAIN-SUFFIX, brushshopy, reject
-DOMAIN-SUFFIX, onenews, reject
+DOMAIN-KEYWORD, brushshopy, reject
+DOMAIN-KEYWORD, onenews, reject
 DOMAIN-SUFFIX, s96.cnzz.com, reject
 #DOMAIN-SUFFIX, yabo729.com, reject
 
@@ -173,8 +173,18 @@ DOMAIN-KEYWORD, mathtag, reject
 DOMAIN-KEYWORD, pagespeed-mod, reject
 DOMAIN-KEYWORD, in-page-push, reject
 
-#### disqus ads
-DOMAIN-SUFFIX,viglink.com,REJECT
-DOMAIN-SUFFIX,api.viglink.com,REJECT
+#### disqus
+DOMAIN-SUFFIX,referrer.disqus.com,REJECT
+DOMAIN-SUFFIX,links.services.disqus.com,REJECT
+DOMAIN-SUFFIX,disqusads.com,REJECT
+DOMAIN,glitter.services.disqus.com,REJECT
+DOMAIN,juggler.services.disqus.com,REJECT
+DOMAIN,tempest.services.disqus.com,REJECT
+DOMAIN,mc.viglink.com,REJECT
+DOMAIN,qa.viglink.com,REJECT
+DOMAIN,ns4.viglink.com,REJECT
+DOMAIN,ns2.viglink.com,REJECT
+DOMAIN,ns3.viglink.com,REJECT
+DOMAIN,apicdn.viglink.com,REJECT
 DOMAIN-SUFFIX,cdn.viglink.com,REJECT
 

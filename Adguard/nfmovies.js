@@ -1,5 +1,6 @@
 /*document.cookie = "PHPSESSID=eboatb1p7smvr6ktp7blvflmc1";*/
 
+
 (function() {
     var z = window.setInterval,
         needle = '{{1}}',
@@ -32,6 +33,7 @@
         return z.apply(this, arguments);
     }.bind(window);
 })();
+
 
 
 var newstyle="div.myui-ra-container.container,[src*='banner'],div[id*=al],div>img,body>div#playerCnt{display:none !important;}";

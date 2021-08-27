@@ -72,6 +72,8 @@
 
 ## 毒奶去广告计划列表
 
+### 08.28.2021
+
 毒奶去广告计划之 **去广告列表最后更新时间**：08.28.2021 ，请及时更新分流和重写；
 
 ⚠️ 如需影视搜索欢迎使用[毒奶搜索](https://limbopro.xyz/search.html) ，如需站点导航欢迎使用[毒奶导航](https://limbopro.xyz/daohang/#);
@@ -88,7 +90,7 @@
 |  在线影视  |     嘀哩哩      |   https://www.dililitv.com/   | 完美屏蔽广告/无弹窗 | 一般     |
 |  在线影视  |   ~~真不卡~~    | ~~https://www.zhenbuka.com/~~ | 完美屏蔽广告/无弹窗 | ~~一般~~ |
 |  在线影视  |    哔嘀影视     |       https://bde4.cc/        | 完美屏蔽广告/无弹窗 | 较好     |
-|  在线影视  |   奈飞星影视    |      https://nfstar.net/      | 完美屏蔽广告/无弹窗 | 一般     |
+|  在线影视  |   奈飞星影视    |      https://nfxhd.com/       | 完美屏蔽广告/无弹窗 | 一般     |
 |  在线美剧  |    91美剧网     |      https://91mjw.com/       | 完美屏蔽广告/无弹窗 | 一般     |
 |  在线影视  |     剧迷网      |       https://gimy.tv/        | 完美屏蔽广告/无弹窗 | 较好     |
 |  在线影视  |     韩迷TV      |     https://www.hmtv.me/      | 完美屏蔽广告/无弹窗 | 一般     |
@@ -108,6 +110,8 @@
 |     H      |      NSFW       |   https://www.porntrex.com    | 完美屏蔽广告/无弹窗 | 较次     |
 |     H      |      NSFW       |      https://javbus.com       | 完美屏蔽广告/无弹窗 | 一般     |
 |     H      |      NSFW       |      https://91porn.com/      | 完美屏蔽广告/无弹窗 | 较次     |
+
+
 
 
 

@@ -1,3 +1,6 @@
 div[id*="sjtb"] {display:none!important}
 iframe[src*="jianxin"] {display:none!important}
 div[id*=HMRichBox]{display:none!important}
+div#adsbox{display:none!important}
+a[target*="_blank"]{display:none!important}
+a[title*="2021"]{display:none!important}

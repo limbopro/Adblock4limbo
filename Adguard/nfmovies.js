@@ -34,8 +34,6 @@
     }.bind(window);
 })();
 
-
-
 var newstyle="div.myui-ra-container.container,[src*='banner'],div[id*=al],div>img,body>div#playerCnt{display:none !important;}";
 var creatcss=document.createElement("style");
 creatcss.innerHTML=newstyle;

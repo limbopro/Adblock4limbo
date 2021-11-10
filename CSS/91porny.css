@@ -1,0 +1,7 @@
+.container-fluid.mb-3.p-0 {display: none! important;}
+.need_grid_img {display: none! important;}
+.container-fluid.mb-0.p-m {display: none! important;}
+.container-fluid.mb-0.p-0 {display: none! important;}
+a[target*="_blank"] {display: none! important;}
+img[src*=".gif"] {display: none! important;}
+.jsv.jsv-g1.mb-0 {display: none! important;}

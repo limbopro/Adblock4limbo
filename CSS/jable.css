@@ -5,3 +5,4 @@ div[class*="col-6 col-sm-4 col-lg-3"] div {display:none !important}
 a[target*="_blank"] {display:none !important}
 a[href*="trwl1"] {display:none !important}
 div.text-center.mb-e-30 {display:none !important}
+div[data-width="300"] {display:none !important}

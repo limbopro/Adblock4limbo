@@ -1,11 +1,12 @@
 # limbopro.xyz
-# 11.09.2021
+# 11.16.2021
 # https://t.me/Adblock4limbo
 
 ##### missav.com 
-
+DOMAIN-SUFFIX, phloxsub73ulata.com, reject
 DOMAIN-SUFFIX, xxxjmp.com, reject
 DOMAIN-SUFFIX, pitrespite.com, reject
+DOMAIN-SUFFIX, alexametrics.com, reject
 
 #####Jable.tv av吃到饱
 DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject

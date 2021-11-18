@@ -8,4 +8,7 @@ iframe[frameborder*="no"] {display:none!important}
 img[style*="position:fixed"] {display:none!important}
 a[class*="calb"] {display:none!important}
 [src*=".gif"] {display:none!important}
-*::after {display:none!important}
+iframe[id*="iframeid"] {display:none!important}
+img[style*="position:fixed"] {display:none!important}
+[class*="swiper-slide"] {display:none!important}
+[class*="swiper-container"] {display:none!important}

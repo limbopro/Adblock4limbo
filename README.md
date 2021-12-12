@@ -66,7 +66,7 @@
 
 1. 重写引用 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf
 2. 此重写规则来自神机的仓库 [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)
-3. 如何验证去广告重写是否生效；[参考此处](https://limbopro.xyz/archives/12727.html#操作步骤)；
+3. 如何验证去广告重写是否生效；[参考此处](https://limbopro.com/archives/12727.html#操作步骤)；
 
 ⚠️ 更多去广告项目：https://github.com/privacy-protection-tools/anti-AD （分流去广告：基于广告资源（URL）所属的完整域名/域名后缀/域名关键字的相关请求进行 Reject），此项目类似 NobyDa 去广告分流项目；可能会有少许冲突，请自行斟酌使用；
 
@@ -76,7 +76,7 @@
 
 毒奶去广告计划之 **去广告列表最后更新时间**：11.25.2021 ，请及时更新分流和重写；
 
-⚠️ 如需影视搜索欢迎使用[毒奶搜索](https://limbopro.xyz/search.html) ，如需站点导航欢迎使用[毒奶导航](https://limbopro.xyz/daohang/#);
+⚠️ 如需影视搜索欢迎使用[毒奶搜索](https://limbopro.com/search.html) ，如需站点导航欢迎使用[毒奶导航](https://limbopro.com/daohang/#);
 
 **目前可去除以下25个视频/动漫/NSFW/BT/漫画网站广告(内页悬浮广告及片头广告**，请重写更新`重写`/`分流规则`后食用；去广告效果可参阅：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
 
@@ -120,7 +120,7 @@
 
 
 > 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；
-> 在毒奶去广告计划的基础上，博主推荐大家安装 Safari 内容拦截器，可以屏蔽绝大多数网页广告（for Safari）；[iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.xyz/archives/safari-content-blocker.html)
+> 在毒奶去广告计划的基础上，博主推荐大家安装 Safari 内容拦截器，可以屏蔽绝大多数网页广告（for Safari）；[iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.com/archives/safari-content-blocker.html)
 
 ## 相关屏蔽广告分流/重写
 
@@ -137,12 +137,12 @@
 ```
 [filter_remote]
 https://raw.githubusercontent.com/limbopro/Profiles/master/limbopro/airports.list, tag=机场专线, force-policy=PROXY, enabled=true
-http://limbopro.xyz/Adblock4limbo.list, tag=毒奶特供, force-policy=reject, enabled=true
+http://limbopro.com/Adblock4limbo.list, tag=毒奶特供, force-policy=reject, enabled=true
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt, tag=野比(4W+), force-policy=reject, enabled=false
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=野比(6W+), force-policy=reject, enabled=true
 
 [rewrite_remote]
-http://limbopro.xyz/Adblock4limbo.conf, tag=毒奶特供, enabled=true
+http://limbopro.com/Adblock4limbo.conf, tag=毒奶特供, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivineEngine (Advertising), enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NoByDa（lhie1 Rewrite）, enabled=true
@@ -152,15 +152,15 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 
 ## 其他系列教程（或参考）
-0. [iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.xyz/archives/safari-content-blocker.html)
-1. [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.xyz/archives/12782.html)
+0. [iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.com/archives/safari-content-blocker.html)
+1. [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.com/archives/12782.html)
 2. [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
 3. [在线正则表达式测试](https://tool.oschina.net/regex/)
 4. [毒奶预配置文件 For Quantumult X (懒人一键配置)](https://github.com/limbopro/Profiles4limbo)
-5. [Mac/Windows 都适用的Adguard - 世界上最高级的广告拦截程序！（屏蔽广告、跟踪器以及安装油猴脚本)](https://limbopro.xyz/archives/adguard.html)
-6. [订阅转换 - API - 让你的 Surge/ClashX 重新焕发生机](https://limbopro.xyz/archives/subconverter.html)
-7. [Tiktok 免拔卡解锁](https://limbopro.xyz/archives/3629.html)
-8. [Jable/Pornhub 视频下载（M3U8）](https://limbopro.xyz/archives/M3U8-Downloader.html)
+5. [Mac/Windows 都适用的Adguard - 世界上最高级的广告拦截程序！（屏蔽广告、跟踪器以及安装油猴脚本)](https://limbopro.com/archives/adguard.html)
+6. [订阅转换 - API - 让你的 Surge/ClashX 重新焕发生机](https://limbopro.com/archives/subconverter.html)
+7. [Tiktok 免拔卡解锁](https://limbopro.com/archives/3629.html)
+8. [Jable/Pornhub 视频下载（M3U8）](https://limbopro.com/archives/M3U8-Downloader.html)
 
 ## 我们的其他项目
 1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles4limbo)；
@@ -176,4 +176,3 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 - 部分分规则有参考Adguard 中文过滤器 https://adguard.com/zh_cn/blog/adguard-filters.html (强大如斯
 
 [1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
-

@@ -1,3 +1,4 @@
 a[target*="_blank"] {display:none !important}
 iframe[allow*="autoplay"]  {display:none !important}
 div[data-width="300"] {display:none !important}
+section[class*="justify"] {display: none! important;}

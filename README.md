@@ -94,7 +94,7 @@
 |  在线影视  |    哔嘀影视     |       https://bde4.cc/        | 完美屏蔽广告/无弹窗 | 较好             |
 |  在线影视  |   奈飞星影视    |      https://nfxhd.com/       | 完美屏蔽广告/无弹窗 | 一般             |
 |  在线美剧  |    91美剧网     |      https://91mjw.com/       | 完美屏蔽广告/无弹窗 | 一般             |
-|  在线影视  |     剧迷网      |       https://gimy.tv/        | 完美屏蔽广告/无弹窗 | 较好             |
+|  在线影视  |     剧迷网      |       https://gimytv.com/        | 完美屏蔽广告/无弹窗 | 较好             |
 |  在线影视  |     韩迷TV      |     https://www.hmtv.me/      | 完美屏蔽广告/无弹窗 | 一般             |
 |  在线影视  |     日剧TV      |     https://www.riju.tv/      | 完美屏蔽广告/无弹窗 | 一般             |
 |  在线漫画  |   COCOMANHUA    |  https://www.cocomanhua.com/  |    无广告/有弹窗    | 较次             |
@@ -176,3 +176,4 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 - 部分分规则有参考Adguard 中文过滤器 https://adguard.com/zh_cn/blog/adguard-filters.html (强大如斯
 
 [1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
+

@@ -1,3 +1,5 @@
+![Quantumult X 去网页广告效果][2]
+
 # Adblock4limbo
 
 ## 一些建议
@@ -176,4 +178,5 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 - 部分分规则有参考Adguard 中文过滤器 https://adguard.com/zh_cn/blog/adguard-filters.html (强大如斯
 
 [1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
+[2]: https://limbopro.com/usr/uploads/2021/08/3373964069.jpg
 

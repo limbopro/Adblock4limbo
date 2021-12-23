@@ -90,7 +90,7 @@
 |  在线影视  |     片库网      |     https://m.pianku.li/      | 完美屏蔽广告/无弹窗 | 优质             |
 |  在线影视  |   ~~嘀哩哩~~    | ~~https://www.dililitv.com/~~ | 完美屏蔽广告/无弹窗 | 一般             |
 |  在线影视  |   ~~真不卡~~    | ~~https://www.zhenbuka.com/~~ | 完美屏蔽广告/无弹窗 | ~~一般~~         |
-|  在线影视  |    哔嘀影视     |       https://bde4.cc/        | 完美屏蔽广告/无弹窗 | 较好             |
+|  在线影视  |    哔嘀影视     |    https://www.btbdys.com/    | 完美屏蔽广告/无弹窗 | 较好             |
 |  在线影视  | ~~奈飞星影视~~  |    ~~https://nfxhd.com/~~     | 完美屏蔽广告/无弹窗 | 一般             |
 |  在线美剧  |    91美剧网     |      https://91mjw.com/       | 完美屏蔽广告/无弹窗 | 一般             |
 |  在线影视  |     剧迷网      |      https://gimytv.com/      | 完美屏蔽广告/无弹窗 | 较好             |
@@ -112,6 +112,7 @@
 |     H      |      NSFW       |   https://www.porntrex.com    | 完美屏蔽广告/无弹窗 | 较次             |
 |     H      |      NSFW       |      https://javbus.com       | 完美屏蔽广告/无弹窗 | 一般             |
 |     H      |      NSFW       |      https://91porn.com/      | 完美屏蔽广告/无弹窗 | 较次             |
+
 
 
 > 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；

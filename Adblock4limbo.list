@@ -1,5 +1,5 @@
-# limbopro.xyz
-# 11.16.2021
+# limbopro.com
+# 12.23.2021
 # https://t.me/Adblock4limbo
 
 ##### missav.com 
@@ -129,6 +129,14 @@ DOMAIN-SUFFIX, maxwellsery.com, reject
 DOMAIN-SUFFIX, annabelleabe.com, reject
 
 ##### https://91mjw.com/
+DOMAIN-SUFFIX,jidukeji.com,REJECT
+DOMAIN-SUFFIX,atmib.com,REJECT
+DOMAIN-SUFFIX,bjzysd.net,REJECT
+DOMAIN-SUFFIX,iycwl.com,REJECT
+DOMAIN-SUFFIX,haoyundm.com,REJECT
+DOMAIN-SUFFIX,qqq123987.site,REJECT
+DOMAIN-SUFFIX,qweewq2021.online,REJECT
+DOMAIN-SUFFIX, qqq123987.site, reject
 DOMAIN-SUFFIX, jianxinshanghai.com, reject
 DOMAIN-SUFFIX, js.51toubu.com, reject
 DOMAIN-SUFFIX, img.hylmxing.com, reject

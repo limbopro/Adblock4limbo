@@ -116,6 +116,9 @@ DOMAIN-KEYWORD, mdapp09,reject
 DOMAIN-KEYWORD, juruigj,reject
 #DOMAIN-KEYWORD, mmiyue,reject
 
+##### pornhub.com
+DOMAIN-SUFFIX, etahub.com, reject
+
 ##### www.hptoon.com
 DOMAIN-SUFFIX, 22c.in,reject
 DOMAIN-SUFFIX, imgxxx.shunxincar.cn, reject

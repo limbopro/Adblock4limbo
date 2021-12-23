@@ -1,3 +1,11 @@
 div.topAdContainter {display: none !important;}
 .adContainer.clearfix {display: none !important;}
 div#adSpot {display: none !important;}
+a[href^="http://ads.trafficjunky.net/"] {display: none !important;}
+.video-wrapper > #player + [class] {display: none !important;}
+.underplayerAd {display: none !important;}
+.realsex {display: none !important;}
+.adsbytrafficjunky {display: none !important;}
+.adLink {display: none !important;}
+.ad-link {display: none !important;}
+#pb_template {display: none !important;}

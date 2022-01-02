@@ -97,6 +97,9 @@ DOMAIN-SUFFIX, new.xiongzhangad.com, reject
 DOMAIN-SUFFIX, dvzk66.cn, reject
 DOMAIN-SUFFIX, pu0glv.cn, reject
 
+##### hmtv.me
+DOMAIN-SUFFIX, sentry.io, reject
+
 ##### www.porntrex.com/
 #DOMAIN-SUFFIX, ads.bullionyield.com, reject
 

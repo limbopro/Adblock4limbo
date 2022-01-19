@@ -4,3 +4,6 @@ a[target*=_blank] {display: none! important;}
 iframe{display: none! important;}
 img[src*=ykimg]{display: none! important;}
 .layui-layer.layui-layer-dialog {display: none! important;}
+#adsbox, img[onclick*="/statics/js/"] {display: none! important;}
+[src*=gif] {display: none! important;}
+iframe  {display: none! important;}

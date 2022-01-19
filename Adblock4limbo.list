@@ -1,5 +1,5 @@
 # limbopro.com
-# 12.23.2021
+# 01.19.2022
 # https://t.me/Adblock4limbo
 
 ##### missav.com 
@@ -125,8 +125,8 @@ DOMAIN-SUFFIX, etahub.com, reject
 ##### www.hptoon.com
 DOMAIN-SUFFIX, 22c.in,reject
 DOMAIN-SUFFIX, imgxxx.shunxincar.cn, reject
-DOMAIN-SUFFIX, cc58.oss-cn-beijing.aliyuncs.com, reject
-DOMAIN-SUFFIX, oss-accelerate.aliyuncs.com, reject
+#DOMAIN-SUFFIX, cc58.oss-cn-beijing.aliyuncs.com, reject
+#DOMAIN-SUFFIX, oss-accelerate.aliyuncs.com, reject
 DOMAIN-SUFFIX, kk.braincf.com, reject
 DOMAIN-SUFFIX, run.haireig.com, reject
 DOMAIN-SUFFIX, d.zxptw.cn, reject

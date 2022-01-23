@@ -9,7 +9,7 @@ const webList = [
 for (l = 0; l < webList.length; l++) {
 const webSelectors = "a[href*='" + webList[l] + "']";
 
-var huge = document.querySelectorAll( "[data-sokoban-grid]" );
+var huge = document.querySelectorAll( "[data-sokoban-grid],[class][data-hveid]" );
 var i;
 for (i=0; i< huge.length; i++){
 

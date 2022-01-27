@@ -2,16 +2,16 @@
 "whatthefuck.wtf"
 ];
 
-for (l = 0; l < webList.length; l++) {
-var webSelectors = "[href*='" + webList[l] + "']";
+for (l = 0; l < contentFarm_Domains.length; l++) {
+var webSelectors = "[href*='" + contentFarm_Domains[l] + "']";
 
 var google_cssSelectors = ["[data-sokoban-grid],[class][data-hveid],[data-hveid]>[class]"];
-var google_contentFarm = document.querySelectorAll( google_cssSelectors );
+var contentFarm_Block = document.querySelectorAll( google_cssSelectors );
 var i;
 
-for (i=0; i< google_contentFarm.length; i++){
-if (google_contentFarm[i].querySelectorAll( webSelectors ).length  > 0) {
-google_contentFarm[i].style.display = "none";
+for (i=0; i< contentFarm_Block.length; i++){
+if (contentFarm_Block[i].querySelectorAll( webSelectors ).length  > 0) {
+contentFarm_Block[i].style.display = "none";
 }
 }
 

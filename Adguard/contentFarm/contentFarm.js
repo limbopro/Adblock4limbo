@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm-Quantumultx.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 28/1月/2022/00:17
+Last updated at 28/1月/2022/00:29
 */
 
 
@@ -22,7 +22,7 @@ ads_List[ads_Block].style.display = "none";
 content farm domains list.
 */
 
-var webList = [
+var contentFarm_Domains = [
 "005i.com",
 "01-123.com",
 "01-800.cn",
@@ -4644,16 +4644,16 @@ var webList = [
 "whatthefuck.wtf"
 ];
 
-for (l = 0; l < webList.length; l++) {
-var webSelectors = "[href*='" + webList[l] + "']";
+for (l = 0; l < contentFarm_Domains.length; l++) {
+var webSelectors = "[href*='" + contentFarm_Domains[l] + "']";
 
 var google_cssSelectors = ["[data-sokoban-grid],[class][data-hveid],[data-hveid]>[class]"];
-var google_contentFarm = document.querySelectorAll( google_cssSelectors );
+var contentFarm_Block = document.querySelectorAll( google_cssSelectors );
 var i;
 
-for (i=0; i< google_contentFarm.length; i++){
-if (google_contentFarm[i].querySelectorAll( webSelectors ).length  > 0) {
-google_contentFarm[i].style.display = "none";
+for (i=0; i< contentFarm_Block.length; i++){
+if (contentFarm_Block[i].querySelectorAll( webSelectors ).length  > 0) {
+contentFarm_Block[i].style.display = "none";
 }
 }
 

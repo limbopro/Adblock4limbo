@@ -22,7 +22,7 @@ web_num=$(grep -c "" ./contentFarm.block.list);
 cat ./contentFarm.Head.example > ./contentFarm.js
 echo -e "There are $web_num content farm domains in total until now.\nLast updated at $date\n*/\n" >> ./contentFarm.js
 cat ./contentFarm.Ads.example >> ./contentFarm.js
-echo -e "\nvar webList = [" >> ./contentFarm.js
+echo -e "\nvar contentFarm_Domains = [" >> ./contentFarm.js
 cat ./contentFarm.block.list >> ./contentFarm.js
 cat ./contentFarm.End.example >> ./contentFarm.js
 cp -rf ./contentFarm.js /home/typecho/Adguard/

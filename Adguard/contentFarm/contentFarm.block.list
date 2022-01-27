@@ -1,28 +1,3 @@
-/*
-Written by limbopro
-https://limbopro.com/archives/block-contentfarm-Quantumultx.html
-https://t.me/Adblock4limbo
-There are 4618 content farm domains in total until now.
-Last updated at 28/1月/2022/00:03
-*/
-
-
-/*
-Google TxT Ads block 
-*/
-
-var ads_cssSelectors = ["[data-text-ad],#tvcap"];
-var ads_List = document.querySelectorAll( ads_cssSelectors );
-var ads_Block;
-for (ads_Block = 0; ads_Block < ads_List.length; ads_Block++){
-ads_List[ads_Block].style.display = "none";
-}
-
-/*
-content farm domains list.
-*/
-
-var webList = [
 "005i.com",
 "01-123.com",
 "01-800.cn",
@@ -4641,20 +4616,3 @@ var webList = [
 "zzphomme.com",
 "zzstoo.com",
 "zztzv.com",
-"whatthefuck.wtf"
-];
-
-for (l = 0; l < webList.length; l++) {
-var webSelectors = "[href*='" + webList[l] + "']";
-
-var google_cssSelectors = ["[data-sokoban-grid],[class][data-hveid],[data-hveid]>[class]"];
-var huge = document.querySelectorAll( google_cssSelectors );
-var i;
-
-for (i=0; i< huge.length; i++){
-if (huge[i].querySelectorAll( webSelectors ).length  > 0) {
-huge[i].style.display = "none";
-}
-}
-
-}

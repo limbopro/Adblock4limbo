@@ -1,0 +1,18 @@
+
+"whatthefuck.wtf"
+];
+
+for (l = 0; l < webList.length; l++) {
+var webSelectors = "[href*='" + webList[l] + "']";
+
+var google_cssSelectors = ["[data-sokoban-grid],[class][data-hveid],[data-hveid]>[class]"];
+var huge = document.querySelectorAll( google_cssSelectors );
+var i;
+
+for (i=0; i< huge.length; i++){
+if (huge[i].querySelectorAll( webSelectors ).length  > 0) {
+huge[i].style.display = "none";
+}
+}
+
+}

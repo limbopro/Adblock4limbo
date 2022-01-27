@@ -1,0 +1,15 @@
+
+/*
+Google TxT Ads block 
+*/
+
+var ads_cssSelectors = ["[data-text-ad],#tvcap"];
+var ads_List = document.querySelectorAll( ads_cssSelectors );
+var ads_Block;
+for (ads_Block = 0; ads_Block < ads_List.length; ads_Block++){
+ads_List[ads_Block].style.display = "none";
+}
+
+/*
+content farm domains list.
+*/

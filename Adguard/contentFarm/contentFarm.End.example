@@ -2,6 +2,7 @@
 "whatthefuck.wtf"
 ];
 
+var l;
 for (l = 0; l < contentFarm_Domains.length; l++) {
 var Domains_Selectors = "[href*='" + contentFarm_Domains[l] + "']";
 

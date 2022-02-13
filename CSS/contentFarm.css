@@ -1,4 +1,2 @@
-/*[href*="csdn"] {display: none! important;}*/
 [data-text-ad] {display: none! important;}
-#tvcap {display:none!important}
-[data-text-ad] {display:none!important}
+#tads[aria-label] {display: none! important;}

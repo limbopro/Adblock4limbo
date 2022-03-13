@@ -83,6 +83,9 @@
 **目前可去除以下25个视频/动漫/NSFW/BT/漫画网站广告(内页悬浮广告及片头广告**，请重写更新`重写`/`分流规则`后食用；去广告效果可参阅：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
 
 
+所有在维护的网站可参阅（即时更新）：https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.conf ；
+
+
 |    类型    |    网站名称     |           网站地址            |        备注         | 推荐指数         |
 | :--------: | :-------------: | :---------------------------: | :-----------------: | ---------------- |
 |  在线影视  |    奈菲影视     |   https://www.nfmovies.com/   | 完美屏蔽广告/无弹窗 | 优质，需直连访问 |

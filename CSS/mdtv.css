@@ -1,0 +1,6 @@
+.col-sm-12 > .container {display: none! important;}
+.closebox2 {display: none! important;}
+.closebox3 {display: none! important;}
+.closebox1 {display: none! important;}
+.theme-Headline > div {display: none! important;}
+[class*=closebox] {display: none! important;}

@@ -1,0 +1,5 @@
+#adsbox {display: none! important;}
+.wrap + #midBox {display: none! important;}
+.wrap + #btmBox {display: none! important;}
+script[src="/static/base.js"] + #couplet {display: none! important;}
+.search + #midBox {display: none! important;}

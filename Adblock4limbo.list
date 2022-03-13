@@ -1,6 +1,11 @@
 # limbopro.com
-# 01.19.2022
+# 03.13.2022
 # https://t.me/Adblock4limbo
+
+
+##### https://www.tvn.cc/ 韩剧TV
+DOMAIN-SUFFIX, qw2v.changshuohr.net, reject
+DOMAIN-SUFFIX, wss.haoyundmn.com, reject
 
 ##### missav.com 
 DOMAIN-SUFFIX, ingest.sentry, reject

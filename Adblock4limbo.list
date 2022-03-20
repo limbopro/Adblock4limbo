@@ -1,5 +1,5 @@
 # limbopro.com
-# 03.13.2022
+# 03.20.2022
 # https://t.me/Adblock4limbo
 
 
@@ -15,6 +15,7 @@ DOMAIN-SUFFIX, pitrespite.com, reject
 DOMAIN-SUFFIX, alexametrics.com, reject
 
 #####Jable.tv av吃到饱
+DOMAIN-SUFFIX, realsrv.com, reject
 DOMAIN-SUFFIX, asewlfjqwlflkew.com, reject
 DOMAIN-SUFFIX, uus52.com, reject
 DOMAIN-SUFFIX, uus58.com, reject

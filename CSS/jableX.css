@@ -2,3 +2,10 @@ a[target*="_blank"] {display:none !important}
 iframe[allow*="autoplay"]  {display:none !important}
 div[data-width="300"] {display:none !important}
 section[class*="justify"] {display: none! important;}
+/*03.22.2022*/
+iframe[width="728"][height="90"] {display: none! important;}
+#site-content > div.container > section.pb-3.pb-e-lg-40.text-center {display: none! important;}
+.text-center > a[target="_blank"] > img {display: none! important;}
+a[href*="?banner="] {display: none! important;}
+.badge  {display: none! important;}
+a[href="http://uus52.com/"] {display: none! important;}

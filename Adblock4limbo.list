@@ -8,6 +8,7 @@ DOMAIN-SUFFIX, qw2v.changshuohr.net, reject
 DOMAIN-SUFFIX, wss.haoyundmn.com, reject
 
 ##### missav.com 
+DOMAIN-SUFFIX, cashewsforlife208.com, reject
 DOMAIN-SUFFIX, ingest.sentry, reject
 DOMAIN-SUFFIX, phloxsub73ulata.com, reject
 DOMAIN-SUFFIX, xxxjmp.com, reject

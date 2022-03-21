@@ -1,3 +1,5 @@
 a[target*="_blank"] {display:none!important}
 div[style*="position:fixed"]  {display:none!important}
-#adsbox{display:none!important}
+#adsbox {display:none!important}
+.under_player {display:none!important}
+.m-auto {display:none!important}

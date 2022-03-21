@@ -59,7 +59,7 @@ https://limbopro.com/Adblock4limbo.sgmodule
 **分流引用**：
 
 ```
-https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.list
+https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surge.list
 ```
 
 模块引用后记得更新外部资源，并开启 Rewrite、MitM 开关，脚本开关，配置并信任证书；

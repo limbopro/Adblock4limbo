@@ -4,9 +4,6 @@ document.cookie = "ts_popunder=1";
 
 var webList = [
 'r.trwl1.com', 
-'kknews.cc',
-'021shfx.com',
-'024ksm.com',
 '025pc.cn'
 ];
 

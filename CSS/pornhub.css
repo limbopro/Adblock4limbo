@@ -1,7 +1,10 @@
+.topAdContainter {display: none !important;}
 div.topAdContainter {display: none !important;}
 .adContainer.clearfix {display: none !important;}
+.adContainer {display: none !important;}
 div#adSpot {display: none !important;}
 a[href^="http://ads.trafficjunky.net/"] {display: none !important;}
+a[href^="https://ads.trafficjunky.net/"] {display: none !important;}
 .video-wrapper > #player + [class] {display: none !important;}
 .underplayerAd {display: none !important;}
 .realsex {display: none !important;}

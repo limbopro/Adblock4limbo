@@ -6,13 +6,9 @@
 [Script]
 
 内容农场 = type=http-response,pattern="google(\.\w{2,4}){1,2}\/search\?.*",requires-body=1,max-size=-1,script-path=https://limbopro.com/Adguard/contentFarm/contentFarm_surge.js,script-update-interval=0
-
 禁漫天堂 = type=http-response,pattern=(18comic)(?!.*?(\.css|\.js|\.jpeg|\.jpg|\.png|\.php|\.gif|\.ico|\.mp4|\.mp3)).*,requires-body=1,max-size=-1,script-path=https://limbopro.com/Adguard/18comic_surge.js,script-update-interval=0
-
 低端影视 = type=http-response,pattern=(ddrk\.me)(?!.*?(\.css|\.js|\.jpeg|\.jpg|\.png|\.php|\.gif|\.ico|\.mp4|\.mp3)).*,requires-body=1,max-size=-1,script-path=https://limbopro.com/Adguard/ddrk_surge.js,script-update-interval=0
-
 jable.tv = type=http-response,pattern=(jable\.tv)(?!.*?(\.css|\.js|\.jpeg|\.jpg|\.png|\.php|\.gif|\.ico|\.mp4|\.mp3)).*,requires-body=1,max-size=-1,script-path=https://limbopro.com/Adguard/jableX_surge.js,script-update-interval=0
-
 韩剧Tv = type=http-response,pattern=(tvn\.cc)(?!.*?(\.css|\.js|\.jpeg|\.jpg|\.png|\.php|\.gif|\.ico|\.mp4|\.mp3)).*,requires-body=1,max-size=-1,script-path=https://limbopro.com/Adguard/tvn_surge.js,script-update-interval=0
 
 

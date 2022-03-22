@@ -12,3 +12,9 @@ a[href^="https://ads.trafficjunky.net/"] {display: none !important;}
 .adLink {display: none !important;}
 .ad-link {display: none !important;}
 #pb_template {display: none !important;}
+#main-container > .abovePlayer {display: none !important;}
+.sponsor-text {display: none !important;}
+a[href^="https://landing.brazzersnetwork.com/"] {display: none !important;}
+.video-wrapper > div#player~div[class$=" hd clear"] {display: none !important;}
+#hd-rightColVideoPage > .clearfix:first-child {display: none !important;}
+.playerFlvContainer > div#pb_template[style] {display: none !important;}

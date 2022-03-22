@@ -5,6 +5,14 @@
 ##### https://avple.tv/  
 DOMAIN-SUFFIX, tapioni.com, reject
 DOMAIN-SUFFIX, 107iwh.cn:4032, reject
+DOMAIN-SUFFIX, qinhemuye.com:443, reject
+DOMAIN-SUFFIX, 107iwh.cn, reject
+DOMAIN-SUFFIX, hbhuatie.com, reject
+DOMAIN-SUFFIX, qinzhihao.com, reject
+DOMAIN-SUFFIX, nby360.com, reject
+DOMAIN-SUFFIX, tfosrv.com, reject
+DOMAIN-SUFFIX, trafforsrv.com, reject
+DOMAIN-SUFFIX, trafficforce.com, reject
 
 ##### https://www.tvn.cc/ 韩剧TV  
 DOMAIN-SUFFIX, qw2v.changshuohr.net, reject

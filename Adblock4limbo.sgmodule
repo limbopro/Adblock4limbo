@@ -5,19 +5,22 @@
 
 [Script]
 
-内容农场 = type=http-response,pattern="google(\.\w{2,4}){1,2}\/search\?.*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm/surge_contentFarm.js,script-update-interval=0
+内容农场 = type=http-response,pattern="google(\.\w{2,4}){1,2}\/search\?(?!.*?(apps=)).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm/surge_contentFarm.js,script-update-interval=0
 禁漫天堂 = type=http-response,pattern=(18comic)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_18comic.js,script-update-interval=0
 剧迷网 = type=http-response,pattern=(gimy)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_gimy.js,script-update-interval=0
 低端影视 = type=http-response,pattern=(ddrk)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_ddrk.js,script-update-interval=0
+哔嘀影视播放页 = type=http-response,pattern="(btbdys).*?\/play\/.*?\.htm.*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_btbdys_v.js,script-update-interval=0
+哔嘀影视展示页 = type=http-response,pattern=(btbdys)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_btbdys.js,script-update-interval=0
 独播库 = type=http-response,pattern=(duboku)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_duboku.js,script-update-interval=0
+javbus = type=http-response,pattern=(javbus)(?!.*?(\.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_javbus.js,script-update-interval=0
 avple = type=http-response,pattern=(avple)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_avple.js,script-update-interval=0
 jable.tv = type=http-response,pattern=(jable)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_jableX.js,script-update-interval=0
 missAV = type=http-response,pattern=(missav)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_missav.js,script-update-interval=0
 4hu = type=http-response,pattern=(4hu)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_4hu.js,script-update-interval=0
-Pornhub = type=http-response,pattern=(pornhub)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js,script-update-interval=0
+Pornhub = type=http-response,pattern=(pornhub)(?!.*?(\.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js,script-update-interval=0
 libvio = type=http-response,pattern=(libvio)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_libvio.js,script-update-interval=0
 韩剧Tv = type=http-response,pattern=(tvn)(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4))).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_tvn.js,script-update-interval=0
 
 
 [MITM]
-hostname = %APPEND% jable.tv, *.tvn.cc, ddrk.me, 18comic.*, *.google.*, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv
+hostname = %APPEND% jable.tv, *.tvn.cc, ddrk.me, 18comic.*, *.google.*, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*

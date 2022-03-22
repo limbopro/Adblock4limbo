@@ -122,6 +122,7 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 
 所有还在维护的网站可参阅（即时更新）：https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
 
+**讨论群组**：https://t.me/Adblock4limbo 反馈问题/提交你认为有价值的新网站
 
 |    类型    |    网站名称     |           网站地址            |        备注         | 推荐指数         |
 | :--------: | :-------------: | :---------------------------: | :-----------------: | ---------------- |

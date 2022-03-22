@@ -11,6 +11,7 @@ document.getElementsByTagName('head')[0].appendChild(creatcss)
 (function() {
 	// Based on uAssets
 	// License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
+	//  nano-setTimeout-booster.js
 	var z = window.setInterval,
 		needle = '{{1}}',
 		delay = parseInt('{{2}}', 10),

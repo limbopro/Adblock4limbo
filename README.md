@@ -120,7 +120,7 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 
 ## 正在维护的网站目录
 
-所有还在维护的网站可参阅（即时更新）：https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.conf ；
+所有还在维护的网站可参阅（即时更新）：https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
 
 
 |    类型    |    网站名称     |           网站地址            |        备注         | 推荐指数         |

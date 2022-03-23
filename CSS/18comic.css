@@ -1,6 +1,6 @@
 .modal-backdrop {display: none !important;}
 div[data-height="250"][data-width="300"]  {display: none !important;}
-a[href^="http"]:not([href*="18comic."]) > img  {display: none !important;}
+*a[href^="http"]:not([href*="18comic."]) > img  {display: none !important;}*/
 #adsbox  {display: none !important;}
 a[target="_blank"][rel*="nofollow"] > img[src*=".gif"]  {display: none !important;}
 #guide-modal  {display: none !important;}

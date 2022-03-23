@@ -6,7 +6,7 @@ var l;
 for (l = 0; l < contentFarm_Domains.length; l++) {
 var Domains_Selectors = "[href*='" + contentFarm_Domains[l] + "']";
 
-var google_cssSelectors = ["[data-sokoban-grid],[class][data-hveid],[data-hveid]>[class]"];
+var google_cssSelectors = ["[data-sokoban-container],div[class][data-hveid]"];
 var contentFarm_Block = document.querySelectorAll( google_cssSelectors );
 var i;
 

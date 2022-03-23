@@ -1,4 +1,8 @@
 /*img[src*="YtKOt"] {display:none !important;}
 a[href*=aiyou] {display:none !important;}*/
-div[style*="position"] {display:none !important;}
+/*div[style*="position"] {display:none !important;}*/
 #ad-index {display:none !important;}
+.ayx[style^="position: fixed;bottom"] {display:none !important;}
+.ayx[style="display:block;"] {display:none !important;}
+#adsbox {display:none !important;}
+div.page-wrapper {overflow-x:hidden !important;}

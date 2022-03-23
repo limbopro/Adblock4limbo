@@ -1,5 +1,5 @@
 #!name=毒奶特供
-#!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable/Netflav/HPjav等视频网站广告或其他ACG网站网页广告；
+#!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable/Netflav/HPjav等视频网站广告或其他ACG网站网页广告；
 
 #!system=ios
 
@@ -27,4 +27,4 @@ cn.pornhub.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(pornh
 
 
 [MITM]
-hostname = %APPEND% jable.tv, *.tvn.cc, ddrk.me, 18comic.*, *.google.*, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, -www.baidu.com
+hostname = %APPEND% jable.tv, *.tvn.cc, ddrk.me, 18comic.*, *.google.*, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com

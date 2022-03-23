@@ -1,1 +1,1 @@
-/** content-script - v1.1.23 - 12/14/2020 */
+document.cookie = "cover=1";

@@ -1,0 +1,6 @@
+.ec_ad_results {display:none !important;}
+/*
+ec_wise_ad {display:none !important;}
+#results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result):not(.hint-unsafe) {display:none !important;}
+div[class*="fc-"][tplid] {display:none !important;}
+*/

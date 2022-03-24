@@ -1,13 +1,23 @@
 #!name=毒奶特供
-#!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable/Netflav/HPjav等视频网站广告或其他ACG网站网页广告；
+#!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable/Netflav/HPjav等视频网站广告或其他ACG网站网页广告/防止知乎网页跳转App客户端（特指谷歌搜索结果中的知乎链接）；
 
 #!system=ios
 
 [URL Rewrite]
 
+https://(www|i)\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
+https://(www|i)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
+#https://(www|i)\.zhihu\.com/api/v4/hot_recommendation - reject
+https://(www|i)\.zhihu\.com/commercial_api/banners_v3/mobile_banner - reject
+https://(zhuanlan|zl|i)\.zhihu\.com/api/articles/\d+/recommendation - reject
+
+i.zhihu.com www.zhihu.com header
+zl.zhihu.com zhuanlan.zhihu.com header
+
 [Header Rewrite]
 
 [Script]
+#搜索广告(zhihu) = type=http-response,pattern="^https?:\/\/(www)\.zhihu\.com",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_zhihu.js,script-update-interval=0
 搜索广告(baidu) = type=http-response,pattern="^https?:\/\/www\.baidu\.com(\/s\?word.*|\/from.*?\/s\?word.*)",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.js,script-update-interval=0
 内容农场(google) = type=http-response,pattern="^https?:\/\/(www\.google)(\.\w{2,4}){1,2}\/search\?(?!.*?(apps=)).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm/surge_contentFarm.js,script-update-interval=0
 禁漫天堂(18comic.org) = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(18comic)(\.)\w{0,3})(?!.*?(/(cdn-cgi|onclick)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_18comic.js,script-update-interval=0
@@ -27,4 +37,4 @@ cn.pornhub.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(pornh
 
 
 [MITM]
-hostname = %APPEND% jable.tv, *.tvn.cc, ddrk.me, 18comic.*, *.google.*, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com
+hostname = %APPEND% i.zhihu.com, zl.zhihu.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, 18comic.*, *.google.*, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com

@@ -2,7 +2,6 @@
 
 cd /home/typecho/
 rm surge_Adblock4limbo.list
-rm surge_Adblock4limbo.list.x
 cp Adblock4limbo.list surge_Adblock4limbo.list
 sed -i s/reject/''/g `grep reject -rl --include="surge_Adblock4limbo.list" ./*` 
 sed 's/.$//' surge_Adblock4limbo.list >> surge_Adblock4limbo.list.x

@@ -1,9 +1,9 @@
 
-let OldStyle = '<head>'
-let NewStyle = '<head><link rel=\"stylesheet\" href=\"https://limbopro.com/CSS/jableX.css\" type=\"text/css\">'
-var OldJavaScript = '</body>'
-var NewJavaScript = '<script type=\"text/javascript\" src=\"//limbopro.com/Adguard/jableX.js\"></script></body>'
+let rHead = '<head>'
+let newStyle = '<head><link rel=\"stylesheet\" href=\"https://limbopro.com/CSS/jableX.css\" type=\"text/css\">'
+var rBody = '</body>'
+var newJavaScript = '<script type=\"text/javascript\" src=\"//limbopro.com/Adguard/jableX.js\"></script></body>'
 let body = $response.body
-.replace(OldStyle, NewStyle)
-.replace(OldJavaScript, NewJavaScript);
+.replace(rHead, newStyle)
+.replace(rBody, newJavaScript);
 $done({body});

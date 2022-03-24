@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm-Quantumultx.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 23/3月/2022/23:40
+Last updated at 24/3月/2022/21:35
 */
 
 
@@ -4660,4 +4660,12 @@ contentFarm_Block[i].style.display = "none";
 }
 }
 
+}
+
+/* 禁止新页面跳转 */
+
+var _blank = document.querySelectorAll("a");
+var i;
+for (i = 0; i < _blank.length; i++) {
+_blank[i].target = "_self";
 }

@@ -33,7 +33,9 @@
 
 ### 目前在维护的网站目录
 
+**所有还在维护的网站可参阅（即时更新）：**
 
+https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
 
 ## 电报讨论群组
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
@@ -42,8 +44,6 @@
 > 4. 如有任何关于本去广告计划的疑问请在本群反馈；
 
 ## 毒奶去广告使用方法（配置步骤）
-
-所有还在维护的网站可参阅（即时更新）：https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
 
 ### 毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）
 

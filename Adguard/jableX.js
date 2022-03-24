@@ -1,4 +1,4 @@
-
+// Cookie 设定及注入
 document.cookie = "zone-cap-3403709=1";
 document.cookie = "kt_tcookie=1";
 document.cookie = "ts_popunder=1";
@@ -24,4 +24,16 @@ huge[i].style.display = "none";
 }
 }
 
+}
+
+// Cloudflare recaptcha 绕过
+var rTitle = document.title;
+var rKeyword = "Attention";
+var rKeyword2 = "Cloudflare";
+var rValues = rTitle.search(rKeyword);
+var rValues2 = rTitle.search(rKeyword2);
+var rFalse = "0";
+if ( rValues >= rFalse || rValues2 >= rFalse )
+{
+window.location.reload(); 
 }

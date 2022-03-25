@@ -14,7 +14,7 @@ let jZhihu2 = 'zhuanlan.zhihu.com';
 let xZhihu1 = 'i.zhihu.com';
 let xZhihu2 = 'zl.zhihu.com';
 let body = $response.body
-    .replace(/(www\.zhihu\.com)/g, xZhihu1)
-    .replace(/jZhihu2/g, xZhihu2);
+.replace(/(www\.zhihu\.com)/g, xZhihu1)
+.replace(/jZhihu2/g, xZhihu2);
 $done({body});
 */

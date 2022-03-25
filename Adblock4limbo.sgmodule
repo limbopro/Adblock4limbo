@@ -1,7 +1,6 @@
 #!name=毒奶特供（03.26.2022更新）
 #!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable/Netflav/HPjav等视频网站广告或其他ACG网站网页广告/防止知乎网页跳转App客户端（特指谷歌搜索结果中的知乎链接）；
 
-#!system=ios
 
 [URL Rewrite]
 
@@ -12,10 +11,6 @@ https://(www|zhuanlan)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
 https://(www|zhuanlan)\.zhihu\.com/commercial_api/banners_v3/(mobile_banner|mobile_question) - reject
 https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 
-# 重写URL
-# ^https?:\/\/(mt.zhihu.com/)(topix)(/.*) https?:\/\/www.zhihu.com/topic$3 header
-# ^https?:\/\/(mt.zhihu.com/)(q)(/.*) https?:\/\/www.zhihu.com/question$3 header
-# ^https?:\/\/(zl.zhihu.com/)(x)(/.*) https?:\/\/zhuanlan.zhihu.com/p$3 header
 
 [Header Rewrite]
 

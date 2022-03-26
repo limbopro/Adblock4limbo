@@ -1,9 +1,7 @@
 #!name=NobyDa
-#!desc=改写自 NobyDa Script；扫描全能王 pro / 去微博应用内广告 / Netflix评分 / VSCO会员解锁等 / 禁止知乎网页跳转至App
+#!desc=改写自 NobyDa Script（Quantumult X）；扫描全能王 pro / 去微博应用内广告 / Netflix评分 / VSCO会员解锁等 
 #!https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf
 #!https://github.com/NobyDa/Script
-
-#!system=ios
 
 [URL Rewrite]
 
@@ -14,7 +12,7 @@ https://www\.zhihu\.com/commercial_api/banners_v3/mobile_banner - reject
 https://zhuanlan\.zhihu\.com/api/articles/\d+/recommendation - reject
 
 [Header Rewrite]
-^https:\/\/www\.zhihu\.com\/ header-replace User-Agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+#^https:\/\/www\.zhihu\.com\/ header-replace User-Agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
 
 [Script]
 VSCO滤镜VIP = type=http-response,pattern="^https:\/\/(api\.revenuecat\.com\/v\d\/subscribers|vsco\.co\/api\/subscriptions\/\d\.\d\/user-subscriptions)\/",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js,script-update-interval=0
@@ -27,4 +25,4 @@ Netflix评分 (yichahucha) = type=http-response,pattern="^https?://ios[-\w]*\.pr
 #知乎防跳转App = type=http-response,pattern="^https://zhuanlan\.zhihu\.com/p/",requires-body=1,max-size=1,https://raw.githubusercontent.com/id77/QuantumultX/master/Script/zhihu.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% zl.zhihu.com, i.zhihu.com, zhuanlan.zhihu.com, oia.zhihu.com, link.zhihu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, www.zhihu.com, api.zhihu.com, vsco.co, api.meiease.c*, ios*.prod.ftl.netflix.com, api.revenuecat.com
+hostname = %APPEND% zhuanlan.zhihu.com, oia.zhihu.com, link.zhihu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, www.zhihu.com, api.zhihu.com, vsco.co, api.meiease.c*, ios*.prod.ftl.netflix.com, api.revenuecat.com

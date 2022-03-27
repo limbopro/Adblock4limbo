@@ -1,10 +1,4 @@
-div#iaujwnefhw {display: none! important;}
-div#sajdhfbjwhe {height: 10px;}
-div#kasjbgih {visibility: hidden;}
-#fkasjgf {display: none! important;}
-#adsbox {display: none! important;}
-[id*=sidebar] {display: none! important;}
-[target="_blank"] {display: none! important;}
-a[href^="javascript"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"])  {display: none! important;}
-a[href="###"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"])  {display: none! important;}
-a[href*="/kst6632.com/"] > img { width: 0 !important; }
+/*
+[target*='_blank'] {display: none!important;}
+[href*='###']  {display: none!important;}
+*/

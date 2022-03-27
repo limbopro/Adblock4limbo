@@ -7,10 +7,10 @@ $done({body});
 */
 
 let rHead = '<head>'
-let newStyle = '<head><link rel=\"stylesheet\" href=\"https://limbopro.com/CSS/baidu.css\" type=\"text/css\">'
+let newStyle = '<head><link rel=\"stylesheet\" href=\"https://limbopro.com/CSS/baidu.index.css\" type=\"text/css\">'
 var rBody = '</body>'
 var newJavaScript = '<script type="text/javascript" src="//limbopro.com/Adguard/baidu.js"></script>'
 let body = $response.body
-.replace(rHead, newStyle)
-.replace(rBody, newJavaScript);
+.replace(rHead, newStyle);
+//.replace(rBody, newJavaScript);
 $done({body});

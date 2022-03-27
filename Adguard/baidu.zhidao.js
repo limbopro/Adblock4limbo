@@ -17,7 +17,3 @@ creatcss.innerHTML=newstyle;
 document.getElementsByTagName('head')[0].appendChild(creatcss)
 },500);
 */
-
-var str = document.getElementById("respect-footer").innerHTML; 
-var strreplace = str.replace( "https://itunes.apple.com/cn/app/bai-du-zhi-dao-yu-yin-wen-da/id465885800?mt=8","zhidao.baidu.com");
-document.getElementById("respect-footer").innerHTML = strreplace;

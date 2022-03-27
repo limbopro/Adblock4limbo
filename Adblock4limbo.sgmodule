@@ -4,6 +4,9 @@
 
 [URL Rewrite]
 
+# 百度网页跳转至手机网页版本
+www.baidu.com m.baidu.com 302
+
 # 禁知乎网页广告
 https://(www|zhuanlan)\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
 https://(www|zhuanlan)\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
@@ -16,9 +19,8 @@ https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 #!^https?:\/\/(\w{0,3}(\.){0,1}(ddrk)(\.)\w{0,3})(?!.*?(\.webmanifest|/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* header-replace User-Agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.83 Safari/537.36"
 
 [Script]
-知道首页广告(baidu) = type=http-response,pattern="^https?:\/\/(zhidao)\.baidu\.com\/$",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.zhidao.js,script-update-interval=0
 知道搜索广告(baidu) = type=http-response,pattern="^https?:\/\/(zhidao)\.baidu\.com\/(question|index)\/.*",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.zhidao.js,script-update-interval=0
-搜索首页广告(baidu) = type=http-response,pattern="^https?:\/\/(www|m)\.baidu\.com\/$",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.index.js,script-update-interval=0
+搜索首页广告(baidu) = type=http-response,pattern="^https?:\/\/(www|m)\.baidu\.com(/|\/\?ref.*)$",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.index.js,script-update-interval=0
 搜索结果广告(baidu) = type=http-response,pattern="^https?:\/\/(www|m)\.baidu\.com(\/s\?word.*|\/from.*?\/s\?word.*|\/from.*?word=.*)",requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.js,script-update-interval=0
 内容农场(google) = type=http-response,pattern="^https?:\/\/(www\.google)(\.\w{2,4}){1,2}\/search\?(?!.*?(apps=)).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm/surge_contentFarm.js,script-update-interval=0
 禁漫天堂(18comic.org) = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(18comic)(\.)\w{0,3})(?!.*?(/(cdn-cgi|onclick)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_18comic.js,script-update-interval=0

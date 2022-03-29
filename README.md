@@ -22,7 +22,7 @@
 
 ## 毒奶去广告计划
 
-毒奶去广告计划始于 11.01.2020；
+**毒奶去广告计划始于 11.01.2020**，原文：https://limbopro.com/archives/12904.html ；
 
 > ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge），仅针对iOS浏览器（Chrome/Safari等）网页广告（Javascript 弹窗横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，提升iPhone或iPad端浏览器观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；如需反馈问题请加入我们的电报讨论组或提交issue；
 
@@ -109,7 +109,9 @@ https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.
 
 </details>
 
-### 神机规则 去Youtube App 播放广告；（由花姐维护）
+## 神机规则 去Youtube App 播放广告；（由花姐维护）
+
+### QuantumultX YouTube App 去广告重写配置步骤
 
 **1.重写引用**
 
@@ -121,9 +123,21 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 > 如何验证去广告重写是否生效；[参考此处](https://limbopro.com/archives/12727.html#操作步骤)；
 > 更多去广告项目：https://github.com/privacy-protection-tools/anti-AD （分流去广告：基于广告资源（URL）所属的完整域名/域名后缀/域名关键字的相关请求进行 Reject），此项目类似 NobyDa 去广告分流项目；可能会有少许冲突，请自行斟酌使用；
 
+### Surge YouTube App 去广告重写配置步骤
+
+```
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/YouTubeAds.sgmodule
+```
+
+1.复制上面 Surge **去YouTube App视频广告模块**的链接（文件以.sgmodule为后缀）；
+2.打开 Surge - 首页 - 下滑至底部 - 找到模块 - 点击模块 - 安装新模块；
+3.粘贴刚刚复制的 模块的链接；
+4.安装并信任证书；
+5.Over；
+
 ## 毒奶去网站广告计划列表
 
-### 03.22.2022
+### 03.29.2022
 
 毒奶去广告计划之 **去广告列表最后更新时间**：03.22.2022 ，请及时更新分流和重写；
 

@@ -2,3 +2,16 @@
 [target*='_blank'] {display: none!important;}
 [href*='###']  {display: none!important;}
 */
+
+.entry { padding: 0px !important ; margin: 0%; }
+
+[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, img,[href*='kst'],[href*='###']
+{
+visibility: hidden !important;
+width: 1px !important;
+height:1px !important; 
+opacity:0 !important;
+cursor: pointer;
+pointer-events:none !important;
+z-index: -999;
+}

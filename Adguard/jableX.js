@@ -37,3 +37,20 @@ if ( rValues >= rFalse || rValues2 >= rFalse )
 {
 window.location.reload(); 
 }
+
+/* 自动播放
+*/
+
+function auto_play () {
+var first_Ele = ["video[class*='poster'],video[id='player'],video[id='vjsp_html5_api']"];
+var first_Ele_Catch = document.querySelectorAll( first_Ele );
+first_Ele_Catch[0].play()
+}
+
+setTimeout(function (){ 
+auto_play() 
+},1000); 
+
+
+/*
+*/

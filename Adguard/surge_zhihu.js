@@ -1,7 +1,7 @@
 let rHead = '<head>'
 let newStyle = '<head><link rel="stylesheet" href="https://limbopro.com/CSS/zhihu.css" type="text/css">'
 let rBody = '</body>'
-let newJavaScript = '<script type="text/javascript" src="//limbopro.com/Adguard/zhihu.js"></script></body>';
+let newJavaScript = '<script type="text/javascript" async="async" src="//limbopro.com/Adguard/zhihu.js"></script></body>';
 let body = $response.body
 .replace(rHead, newStyle)
 .replace(rBody, newJavaScript);

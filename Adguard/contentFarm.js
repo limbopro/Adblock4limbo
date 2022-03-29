@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm-Quantumultx.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 27/3月/2022/13:50
+Last updated at 29/3月/2022/08:49
 */
 
 
@@ -24,7 +24,7 @@ ads_List[ads_Block].style.display = "none";
 content farm domains list.
 */
 
-var contentFarm_Domains = [
+var ads_host = [
 "005i.com",
 "01-123.com",
 "01-800.cn",
@@ -4646,20 +4646,20 @@ var contentFarm_Domains = [
 "whatthefuck.wtf"
 ];
 
-var l;
-for (l = 0; l < contentFarm_Domains.length; l++) {
-var Domains_Selectors = "[href*='" + contentFarm_Domains[l] + "']";
+var search_results_css = [ // 这里是放CSS选择器的
+"[data-sokoban-grid]",
+"[class][data-hveid]",
+"li[class*='b_algo']" // 最后一个选择器也不需要逗号结尾
+]
 
-var google_cssSelectors = ["[data-sokoban-container],div[class][data-hveid]"];
-var contentFarm_Block = document.querySelectorAll( google_cssSelectors );
-var i;
-
-for (i=0; i< contentFarm_Block.length; i++){
-if (contentFarm_Block[i].querySelectorAll( Domains_Selectors ).length  > 0) {
-contentFarm_Block[i].style.display = "none";
+for (i = 0; i < ads_host.length; i++) {
+var ads_host_css = "[href*='" + ads_host[i] + "']";
+var ads_remove = document.querySelectorAll( search_results_css );
+for (x=0; x < ads_remove.length; x++){
+if (ads_remove[x].querySelectorAll( ads_host_css ).length > 0){
+ads_remove[x].style.display = "none";
 }
 }
-
 }
 
 /* 禁止新页面跳转 */

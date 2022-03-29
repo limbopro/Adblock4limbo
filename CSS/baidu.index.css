@@ -1,4 +1,11 @@
-div[style*='overflow'] {display:none !important;}
-article {display:none !important;}
-.rn-container {display:none !important;}
+/*div[style*='overflow'],
+[class*="ad"]  
+*/
+
+#foot,
+.recordcode,
+.index-copyright,
+div[style*='overflow'],
+article ,
+.rn-container,
 .s-loading-frame.bottom {display:none !important;}

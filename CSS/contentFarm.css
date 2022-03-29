@@ -1,4 +1,16 @@
-[data-text-ad] {display: none! important;}
-#tads[aria-label] {display: none! important;}
-.adDDi {display: none! important;}
+/* Google 搜索广告 */
+
+[data-text-ad] ,
+#tads[aria-label],
+.adDDi,
 #tvcap {display: none! important;}
+
+/*
+.xSQxL.HDOrGf,.HK0d3e,img,a{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+}
+*/

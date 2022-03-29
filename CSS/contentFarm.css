@@ -1,8 +1,6 @@
 /* Google 搜索广告 */
 
 [data-text-ad] ,
-#tads[aria-label],
-.adDDi,
 #tvcap {display: none! important;}
 
 /*

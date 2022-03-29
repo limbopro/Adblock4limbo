@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm-Quantumultx.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 29/3月/2022/08:49
+Last updated at 29/3月/2022/19:31
 */
 
 
@@ -12,6 +12,20 @@ Google TxT Ads block
 */
 
 /*
+var ads_cssSelectors = [
+"[data-text-ad]",
+"#tvcap"
+];
+
+var ads_List = document.querySelectorAll( ads_cssSelectors );
+if (ads_List.length >0) {
+for (xyz = 0; xyz < ads_List.length; xyz++){
+ads_List[xyz].style.display = "none";
+}
+}
+*/
+
+/* 
 var ads_cssSelectors = ["[data-text-ad],#tvcap"];
 var ads_List = document.querySelectorAll( ads_cssSelectors );
 var ads_Block;
@@ -23,6 +37,7 @@ ads_List[ads_Block].style.display = "none";
 /*
 content farm domains list.
 */
+
 
 var ads_host = [
 "005i.com",
@@ -4642,15 +4657,28 @@ var ads_host = [
 "zyplf.com",
 "zzphomme.com",
 "zzstoo.com",
-"zztzv.com",
-"whatthefuck.wtf"
+"zztzv.com","whatthefuck.wtf"
 ];
 
 var search_results_css = [ // 这里是放CSS选择器的
-"[data-sokoban-grid]",
-"[class][data-hveid]",
-"li[class*='b_algo']" // 最后一个选择器也不需要逗号结尾
+"div[data-sokoban-grid]",
+"div[class][data-hveid]",
+"div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
 ]
+
+for (i = 0; i < ads_host.length; i++) {
+    var ads_css = "[href*='" + ads_host[i] + "']";
+    var ads_check = document.querySelectorAll( ads_css );
+    if (ads_check.length > 0){
+    var search_results = document.querySelectorAll( search_results_css )
+    for (x=0; x < search_results.length; x++){
+    if (search_results[x].querySelectorAll( ads_css ).length > 0)
+    search_results[x].style.display = "none";
+    }
+    }
+}
+
+/*
 
 for (i = 0; i < ads_host.length; i++) {
 var ads_host_css = "[href*='" + ads_host[i] + "']";
@@ -4662,10 +4690,14 @@ ads_remove[x].style.display = "none";
 }
 }
 
-/* 禁止新页面跳转 */
+*/
+
+/* 禁止新页面跳转 
 
 var _blank = document.querySelectorAll("a");
 var i;
 for (i = 0; i < _blank.length; i++) {
 _blank[i].target = "_self";
 }
+
+*/

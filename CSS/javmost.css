@@ -1,0 +1,57 @@
+/*
+img[src*='16-overplay'],
+#adsbox ,
+.adsbyexoclick,
+div[style*="2147483647"],
+div[style*="300000"],
+.adsbyexoclick,
+[href*=".zlinkm.com/"] {
+pointer-events:none !important; 
+width: 0px !important;
+height:0px !important; 
+z-index: -333333333 !important; }
+
+#page-container {overflow-x:hidden !important;}
+center > div {display:none !important;}
+#preroll, #poster {
+visibility: hidden !important;
+width: 1px !important;
+height:1px !important; 
+opacity:0 !important;
+cursor: pointer;
+pointer-events:none !important;
+z-index: -999;
+}
+*/
+
+#page-container .adsbyexoclick #poster #preroll {overflow-x:hidden !important;}
+center > div {display:none !important;}
+iframe[src*='exosrv']  {display:none !important;}
+
+div.col-md-4.ui-sortable {
+     min-height: 50px;
+     padding: 0 !important;
+}
+
+.card-img {
+    border-radius: 20px;
+    max-width: 100%;
+    padding: 10px !important;
+    background-color: transparent !important;
+    padding: 1;
+}
+
+.card {
+    position: relative;
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: transparent !important;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 0px !important;
+    padding: 10px !important;
+}

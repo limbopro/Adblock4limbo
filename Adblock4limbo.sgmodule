@@ -1,4 +1,4 @@
-#!name=毒奶特供（03.29.2022更新）
+#!name=毒奶特供（03.30.2022更新）
 #!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场（）/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable/Netflav/HPjav等视频网站广告或其他ACG网站网页广告/百度知道广告；
 
 
@@ -32,6 +32,8 @@ https://(www|zhuanlan)\.zhihu\.com/api/articles/\d+/recommendation - reject
 独播库(www.duboku.tv) = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(duboku)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8|ddr))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_duboku.js,script-update-interval=0
 韩剧TV(www.tvn.cc) = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(tvn)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_tvn.js,script-update-interval=0
 梨播(www.libvio.com) = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(libvio)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_libvio.js,script-update-interval=0
+netflav.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(netflav)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_netflav.js,script-update-interval=0
+javmost.xyz = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(javmost)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_javmost.js,script-update-interval=0
 www.javbus.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(javbus)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_javbus.js,script-update-interval=0
 avple.tv = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(avple)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_avple.js,script-update-interval=0
 jable.tv = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(jable)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_jableX.js,script-update-interval=0
@@ -41,4 +43,4 @@ cn.pornhub.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(pornh
 
 
 [MITM]
-hostname = %APPEND% www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, 18comic.*, www.google.com, www.google.com.hk, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com
+hostname = %APPEND% netflav.com, www.javmost.xyz, javmost.xyz, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, 18comic.*, www.google.com, www.google.com.hk, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com

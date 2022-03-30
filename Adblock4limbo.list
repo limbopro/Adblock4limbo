@@ -1,6 +1,24 @@
-# limbopro.com  
-# 03.22.2022  
-# https://t.me/Adblock4limbo  
+## /*  
+## Written by limbopro  
+## https://limbopro.com/archives/block-contentfarm.html  
+## https://t.me/Adblock4limbo  
+## Last updated at 30/3月/2022/00:00  
+## */  
+
+##### https://javmost.xyz/  
+#DOMAIN,delivery-node-aziz.voe-network.net, reject
+#DOMAIN,inspiringaccurate.com, reject
+#DOMAIN,track.aso1.net, reject
+DOMAIN-SUFFIX, v3.fstats.xyz, reject
+DOMAIN-SUFFIX, wpadmngr.com, reject
+DOMAIN-SUFFIX, histats.com, reject
+DOMAIN-SUFFIX, son-in-lawmorbid.com, reject
+DOMAIN-SUFFIX, mc.yandex.ru, reject
+DOMAIN-SUFFIX, amung.us, reject
+DOMAIN-SUFFIX, widgets.amung.us, reject
+DOMAIN-SUFFIX, s10.histats.com, reject
+#DOMAIN-SUFFIX, js.wpadmngr.com, reject
+#DOMAIN-SUFFIX, suzihaza.com, reject
 
 ##### https://avple.tv/  
 DOMAIN-SUFFIX, tapioni.com, reject
@@ -230,4 +248,3 @@ DOMAIN,ns2.viglink.com, reject
 DOMAIN,ns3.viglink.com, reject
 DOMAIN,apicdn.viglink.com, reject
 DOMAIN-SUFFIX,cdn.viglink.com, reject
-

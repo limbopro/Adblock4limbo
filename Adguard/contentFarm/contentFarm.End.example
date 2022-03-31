@@ -1,0 +1,44 @@
+"whatthefuck.wtf"
+];
+
+var search_results_css = [ // 这里是放CSS选择器的
+"div[data-sokoban-grid]",
+"div[class][data-hveid]",
+"div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
+]
+
+for (i = 0; i < ads_host.length; i++) {
+    var ads_css = "[href*='" + ads_host[i] + "']";
+    var ads_check = document.querySelectorAll( ads_css );
+    if (ads_check.length > 0){
+    var search_results = document.querySelectorAll( search_results_css )
+    for (x=0; x < search_results.length; x++){
+    if (search_results[x].querySelectorAll( ads_css ).length > 0)
+    search_results[x].style.display = "none";
+    }
+    }
+}
+
+/*
+
+for (i = 0; i < ads_host.length; i++) {
+var ads_host_css = "[href*='" + ads_host[i] + "']";
+var ads_remove = document.querySelectorAll( search_results_css );
+for (x=0; x < ads_remove.length; x++){
+if (ads_remove[x].querySelectorAll( ads_host_css ).length > 0){
+ads_remove[x].style.display = "none";
+}
+}
+}
+
+*/
+
+/* 禁止新页面跳转 
+
+var _blank = document.querySelectorAll("a");
+var i;
+for (i = 0; i < _blank.length; i++) {
+_blank[i].target = "_self";
+}
+
+*/

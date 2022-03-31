@@ -1,0 +1,32 @@
+
+/*
+Google TxT Ads block 
+*/
+
+/*
+var ads_cssSelectors = [
+"[data-text-ad]",
+"#tvcap"
+];
+
+var ads_List = document.querySelectorAll( ads_cssSelectors );
+if (ads_List.length >0) {
+for (xyz = 0; xyz < ads_List.length; xyz++){
+ads_List[xyz].style.display = "none";
+}
+}
+*/
+
+/* 
+var ads_cssSelectors = ["[data-text-ad],#tvcap"];
+var ads_List = document.querySelectorAll( ads_cssSelectors );
+var ads_Block;
+for (ads_Block = 0; ads_Block < ads_List.length; ads_Block++){
+ads_List[ads_Block].style.display = "none";
+}
+*/
+
+/*
+content farm domains list.
+*/
+

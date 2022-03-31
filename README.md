@@ -4,21 +4,21 @@
 
 ## 一些建议
 
-> **Safari爱好者/Windows/Mac用户去广告建议：**
->> 1. Safari（iOS） 用户，建议安装 [Safari-内容拦截器](https://limbopro.com/archives/safari-content-blocker.html)；
->> 2. Windows/Mac 用户，建议安装 [AdGuard/Adblock 浏览器扩展](https://limbopro.com/archives/adguard.html)；
->> 3. 喜欢用 Chrome（iOS），且拥有 QuantumultX/Surge，那么毒奶去计划（本计划）会非常适合你；
->> 4. 你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.com/archives/12782.html) 教程学习进行去网页广告作业；
->> 5. 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
+ **Safari爱好者/Windows/Mac用户去广告建议：**
+> 1. Safari（iOS） 用户，建议安装 [Safari-内容拦截器](https://limbopro.com/archives/safari-content-blocker.html)；
+> 2. Windows/Mac 用户，建议安装 [AdGuard/Adblock 浏览器扩展](https://limbopro.com/archives/adguard.html)；
+> 3. 喜欢用 Chrome（iOS），且拥有 QuantumultX/Surge，那么毒奶去计划（本计划）会非常适合你；
+> 4. 你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.com/archives/12782.html) 教程学习进行去网页广告作业；
+> 5. 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
 
 ## 去广告原理悉知
 
 > 通过 QuantumultX / Surge 提供的 Rewrite 重写类型，如 reject / 302(重定向） / 307(重定向） / request-header（请求头） / response-body（请求头） / http-response / 实现对网页（HTML）各元素、资源的匹配，禁止加载，替换，插入，删除各类元素；本仓库提供大量的实例参考；
 
-> **你可能需要了解到的知识：**
->> 1. [**正则表达式**：](https://limbopro.com/archives/Regular_Expressions.html)
->> 2. [重写类型response-body的用法丨利用 Quantumult X 替换网页元素实现去广告（正则表达式以及开发者工具、调试）](https://limbopro.com/archives/12782.html)
->> 3. [前端三剑客学习手记 - HTML/CSS/JavaScript](https://limbopro.com/archives/15067.html)
+ **你可能需要了解到的知识：**
+> 1. [**正则表达式**：](https://limbopro.com/archives/Regular_Expressions.html)
+> 2. [重写类型response-body的用法丨利用 Quantumult X 替换网页元素实现去广告（正则表达式以及开发者工具、调试）](https://limbopro.com/archives/12782.html)
+> 3. [前端三剑客学习手记 - HTML/CSS/JavaScript](https://limbopro.com/archives/15067.html)
 
 ## 毒奶去广告计划
 

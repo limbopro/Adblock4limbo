@@ -18,3 +18,4 @@ a[href^="https://landing.brazzersnetwork.com/"] {display: none !important;}
 .video-wrapper > div#player~div[class$=" hd clear"] {display: none !important;}
 #hd-rightColVideoPage > .clearfix:first-child {display: none !important;}
 .playerFlvContainer > div#pb_template[style] {display: none !important;}
+a[href*='livehd']  {display: none !important;}

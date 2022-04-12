@@ -52,4 +52,4 @@ const href = exist[1].href;
 
 setTimeout(function (){
 ele_skip()
-},1000);
+},500);

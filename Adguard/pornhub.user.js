@@ -12,7 +12,7 @@
 // ==/UserScript==
 
 
-// 移除带广告脚本
+// 移除带广告脚本（P.S.不会产生实质性作用）
 var i;
 var script = document.getElementsByTagName("script");
 for (i=0; i<script.length; i++){

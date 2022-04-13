@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo_adsRemoveProject
 // @namespace    https://limbopro.com/
-// @version      0.1.6
+// @version      0.1.8
 // @license  CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除 Pornhub /低端影视/Jable/哔滴影视等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -111,8 +111,8 @@ function pornhub_skipAds(){
 // 隐藏广告样式
 function ddrk_css_catch(){
     setTimeout(()=>{
-    const newstyle = ".entry { padding: 0px !important ; margin: 0%; }"+
-    "[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###']{"+
+    const newstyle = ".entry { padding: 0px !important ; margin: 0%;}"+
+    "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###']{"+
     "visibility: hidden !important;"+
     "width: 1px !important;"+
     "height:1px !important; "+

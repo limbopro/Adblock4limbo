@@ -4,9 +4,7 @@
 */
 
 .entry { padding: 0px !important ; margin: 0%; }
-
-[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, img,[href*='kst'],[href*='###']
-{
+[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, img,[href*='kst'],[href*='###']{
 visibility: hidden !important;
 width: 1px !important;
 height:1px !important; 

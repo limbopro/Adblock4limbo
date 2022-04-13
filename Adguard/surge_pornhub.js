@@ -1,5 +1,5 @@
-let Oldone = '<head>'
-let Newone = '<head><link rel="stylesheet" href="https://limbopro.com/CSS/pornhub.css" type="text/css"><script type="text/javascript" src="//limbopro.com/Adguard/pornhub_v.js"></script>';
+let ele = '<head>'
+let replace = '<head><script type="text/javascript" src="//limbopro.com/Adguard/pornhubX.user.js"></script>';
 let body = $response.body
-.replace(Oldone, Newone);
+.replace(ele, replace);
 $done({body});

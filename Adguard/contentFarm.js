@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at  1/4月/2022/18:35
+Last updated at 13/4月/2022/14:50
 */
 
 
@@ -11,7 +11,7 @@ Last updated at  1/4月/2022/18:35
 Google TxT Ads block 
 */
 
-/*
+
 var ads_cssSelectors = [
 "[data-text-ad]",
 "#tvcap"
@@ -23,7 +23,7 @@ for (xyz = 0; xyz < ads_List.length; xyz++){
 ads_List[xyz].style.display = "none";
 }
 }
-*/
+
 
 /* 
 var ads_cssSelectors = ["[data-text-ad],#tvcap"];
@@ -4657,11 +4657,14 @@ var ads_host = [
 "zyplf.com",
 "zzphomme.com",
 "zzstoo.com",
-"zztzv.com","whatthefuck.wtf"
+"zztzv.com","zditect.com",
+"whatthefuck.wtf"
 ];
 
 var search_results_css = [ // 这里是放CSS选择器的
-"div[data-sokoban-grid]",
+"li.b_algo.b_nav", // bing
+"li.b_algo", // bing
+"div[data-sokoban-grid]", // Google
 "div[class='g'][data-hveid]",
 "div[class='mnr-c g'][data-hveid]",
 "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾

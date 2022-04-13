@@ -110,6 +110,7 @@ function pornhub_skipAds(){
 
 // 隐藏广告样式
 function ddrk_css_catch(){
+    setTimeout(()=>{
     const newstyle = ".entry { padding: 0px !important ; margin: 0%; }"+
     "[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###']{"+
     "visibility: hidden !important;"+
@@ -123,6 +124,7 @@ function ddrk_css_catch(){
     const creatcss = document.createElement("style"); // 新建style tag
 creatcss.innerHTML=newstyle; // 插入样式文本
 document.getElementsByTagName('head')[0].appendChild(creatcss) // 追加新Style至第一个 head 标签后
+},500);
 }
 
 // 隐藏广告样式

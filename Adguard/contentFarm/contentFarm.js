@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 13/4月/2022/20:08
+Last updated at 13/4月/2022/22:57
 */
 
 
@@ -11,6 +11,7 @@ Last updated at 13/4月/2022/20:08
 Google TxT Ads block 
 */
 
+function contentFarm_AdsRemove_Auto(){
 
 var ads_cssSelectors = [
 "[data-text-ad]",
@@ -4657,51 +4658,35 @@ var ads_host = [
 "zyplf.com",
 "zzphomme.com",
 "zzstoo.com",
-"zztzv.com","zditect.com",
+"zztzv.com",
+"zditect.com",
 "whatthefuck.wtf"
 ];
 
-var search_results_css = [ // 这里是放CSS选择器的
-"li.b_algo.b_nav", // bing
-"li.b_algo", // bing
-"div[data-sokoban-grid]", // Google
-"div[class='g'][data-hveid]",
-"div[class='mnr-c g'][data-hveid]",
-"div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
-]
+var search_results_css = [
+        "li.b_algo", // bing 搜索结果样式
+        "div[data-sokoban-grid]", // 通用
+        "div[class='g'][data-hveid]", // 这是谷歌PC端搜索结果页的 style
+        "div[class='mnr-c g'][data-hveid]", // 这是谷歌手机端搜索结果页的 style
+        "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
+    ]
 
-for (i = 0; i < ads_host.length; i++) {
-    var ads_css = "[href*='" + ads_host[i] + "']";
-    var ads_check = document.querySelectorAll( ads_css );
-    if (ads_check.length > 0){
-    var search_results = document.querySelectorAll( search_results_css )
-    for (x=0; x < search_results.length; x++){
-    if (search_results[x].querySelectorAll( ads_css ).length > 0)
-    search_results[x].style.display = "none";
-    }
-    }
+    var i,x;
+        for (i = 0; i < ads_host.length; i++){
+        var ads_host_css = "[href*='" + ads_host[i] + "']";
+        var huge = document.querySelectorAll( search_results_css );
+        for (x = 0; x < huge.length; x++){
+            if (huge[x].querySelectorAll( ads_host_css ).length > 0){
+                huge[x].style.display = "none";
+                console.log("自动化进行中，内容农场还在清理中!")} else {
+                console.log("自动化进行中，内容农场清理完毕!")
+                }
+            }
+        }
+    //},time);
 }
 
-/*
+//setTimeout(()=>{
+var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
+//},500);
 
-for (i = 0; i < ads_host.length; i++) {
-var ads_host_css = "[href*='" + ads_host[i] + "']";
-var ads_remove = document.querySelectorAll( search_results_css );
-for (x=0; x < ads_remove.length; x++){
-if (ads_remove[x].querySelectorAll( ads_host_css ).length > 0){
-ads_remove[x].style.display = "none";
-}
-}
-}
-
-*/
-
-/* 禁止新页面跳转 
-
-var _blank = document.querySelectorAll("a");
-var i;
-for (i = 0; i < _blank.length; i++) {
-_blank[i].target = "_self";
-}
-
-*/

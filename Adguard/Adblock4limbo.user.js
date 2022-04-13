@@ -111,7 +111,7 @@ function pornhub_skipAds(){
 // 隐藏广告样式
 function ddrk_css_catch(){
     const newstyle = ".entry { padding: 0px !important ; margin: 0%; }"+
-    "[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, img,[href*='kst'],[href*='###']{"+
+    "[id*='afc_sidebar'], #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###']{"+
     "visibility: hidden !important;"+
     "width: 1px !important;"+
     "height:1px !important; "+

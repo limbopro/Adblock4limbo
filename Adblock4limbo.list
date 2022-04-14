@@ -156,6 +156,7 @@ DOMAIN-KEYWORD, juruigj, reject
 
 ##### pornhub.com  
 DOMAIN-SUFFIX, etahub.com, reject
+DOMAIN-SUFFIX, evtubescms.phncdn.com, reject
 
 ##### www.hptoon.com  
 DOMAIN-SUFFIX, 22c.in, reject

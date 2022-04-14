@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 13/4月/2022/22:57
+Last updated at 14/4月/2022/23:04
 */
 
 
@@ -13,17 +13,17 @@ Google TxT Ads block
 
 function contentFarm_AdsRemove_Auto(){
 
-var ads_cssSelectors = [
-"[data-text-ad]",
-"#tvcap"
-];
+//var ads_cssSelectors = [
+//"[data-text-ad]",
+//"#tvcap"
+//];
 
-var ads_List = document.querySelectorAll( ads_cssSelectors );
-if (ads_List.length >0) {
-for (xyz = 0; xyz < ads_List.length; xyz++){
-ads_List[xyz].style.display = "none";
-}
-}
+//var ads_List = document.querySelectorAll( ads_cssSelectors );
+//if (ads_List.length >0) {
+//for (xyz = 0; xyz < ads_List.length; xyz++){
+//ads_List[xyz].style.display = "none";
+//}
+//}
 
 
 /* 
@@ -4660,33 +4660,32 @@ var ads_host = [
 "zzstoo.com",
 "zztzv.com",
 "zditect.com",
-"whatthefuck.wtf"
+"whatthefuck.wtf",
+"csdn"
 ];
 
 var search_results_css = [
-        "li.b_algo", // bing 搜索结果样式
-        "div[data-sokoban-grid]", // 通用
-        "div[class='g'][data-hveid]", // 这是谷歌PC端搜索结果页的 style
-        "div[class='mnr-c g'][data-hveid]", // 这是谷歌手机端搜索结果页的 style
-        "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
-    ]
+    "li.b_algo", // bing 搜索结果样式
+    ".mnr-c.xpd.O9g5cc.uUPGi", // Google 富文本搜索结果 style
+    "div[data-sokoban-grid]", // 通用
+    "div.g", // Google PC 搜索结果样式
+    "div[class='g'][data-hveid]", // 这是谷歌PC端搜索结果页的 style
+    "div[class='mnr-c g'][data-hveid]", // 这是谷歌手机端搜索结果页的 style
+    "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
+]
 
-    var i,x;
-        for (i = 0; i < ads_host.length; i++){
-        var ads_host_css = "[href*='" + ads_host[i] + "']";
-        var huge = document.querySelectorAll( search_results_css );
+var i,x;
+    for (i = 0; i < ads_host.length; i++){
+    var ads_host_css = "[href*='" + ads_host[i] + "']";
+    var huge = document.querySelectorAll( search_results_css );
         for (x = 0; x < huge.length; x++){
-            if (huge[x].querySelectorAll( ads_host_css ).length > 0){
-                huge[x].style.display = "none";
-                console.log("自动化进行中，内容农场还在清理中!")} else {
-                console.log("自动化进行中，内容农场清理完毕!")
-                }
+            if (huge[x].querySelectorAll( ads_host_css ).length){
+                huge[x].remove();
             }
         }
-    //},time);
+    }
 }
 
-//setTimeout(()=>{
-var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
-//},500);
+contentFarm_AdsRemove_Auto()
+//var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
 

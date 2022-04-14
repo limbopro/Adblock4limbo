@@ -229,12 +229,7 @@ function jable_adsRemove() { // Cookie 设定及注入
 // Cloudflare recaptcha 绕过
 function cloudflare_recaptchaPass() {
     var title = document.title;
-    var key = "Attention";
-    var key_2 = "Cloudflare";
-    var values = title.search(key);
-    var values_2 = title.search(key_2);
-    var failed = "0";
-    if (values >= failed || values_2 >= failed) {
+    if (title.search("Attention") >= 0 || title.search("Cloudflare") >= 0) {
         window.location.reload();
     }
 }

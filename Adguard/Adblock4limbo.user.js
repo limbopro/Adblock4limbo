@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.35
+// @version      0.1.36
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎内容农场结果清除/低端影视/Jable/哔滴影视等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -11,6 +11,7 @@
 // @match        https://cn.pornhub.com/*
 // @match        https://missav.com/*
 // @match        https://18comic.org/*
+// @match        https://18comic.vip/*
 // @match        https://www.google.com/search*
 // @match        https://www.google.com.hk/search*
 // @match        https://www.bing.com/*
@@ -54,7 +55,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub.com':
             pornhub_interstitialPass();
-            pornhub_adsRemoveByJavaScript();
+            pornhub_adsRemove();
             css_dynamicAppend(pornhub_css(), 0)
             button_dynamicAppend("div.videoSubscribeButton", "跳过广告", "video_delayPlay(1000)", "position:relative;")
             break;
@@ -64,14 +65,14 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case '18comic':
             css_dynamicAppend(_18comic_css(), 0)
-            _18comic_adsRemoveByJavaScript();
+            _18comic_adsRemove();
             break;
         case 'ddrk.me':
             css_dynamicAppend(ddrk_css(), 500)
             break;
         case 'jable.tv':
             css_dynamicAppend(jable_css(), 0)
-            jable_adsRemoveByJavaScript();
+            jable_adsRemove();
             cloudflare_recaptchaPass();
             button_dynamicAppend("div.my-3", "点此获取M3U8文件", "regexpx.forEach(m3u8_tempt)", "position:absolute; right:0px;");
             video_delayPlay(1000);
@@ -83,10 +84,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             hrefAttribute_set();
             break;
         case 'google.com':
-            contentFarm_adsRemoveByJavaScript();
+            contentFarm_adsRemove();
             break;
         case 'www.bing.com':
-            contentFarm_adsRemoveByJavaScript();
+            contentFarm_adsRemove();
             break;
         default:
             console.log("Catch Nothing!")
@@ -98,7 +99,7 @@ adsDomain_switch(values()) // 动手吧
 // 无数函数及方法的组合使脚本更灵活
 // 移除带广告脚本
 
-function pornhub_adsRemoveByJavaScript() {
+function pornhub_adsRemove() {
     var i;
     var script = document.getElementsByTagName("script");
     for (i = 0; i < script.length; i++) {
@@ -135,21 +136,32 @@ function pornhub_interstitialPass() {
     }
 }
 
-// 设置 cookie
-function _18comic_adsRemoveByJavaScript() {
+// 设置 cookie // 18comic Javascript 
+function _18comic_adsRemove() {
     document.cookie = "cover=1";
     document.cookie = "shunt=1";
+    document.cookie = "guide=1";
 }
 
 // 隐藏广告样式
 function _18comic_css() {
-    const newstyle = ".modal-backdrop," +
-        "div[data-height=\"250\"][data-width=\"300\"] ," +
-        "*a[href^=\"http\"]:not([href*=\"18comic.\"]) > img ,*/" +
+    const newstyle =
+        ".modal-backdrop," +
+        "[data-height*='90']," +
+        "div[data-height='250'][data-width='300']," +
+        "a[href^='http']:not([href*='18comic.']) > img ," +
         "#adsbox ," +
-        "a[target=\"_blank\"][rel*=\"nofollow\"] > img[src*=\".gif\"] ," +
+        "a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ," +
         "#guide-modal ," +
-        "iframe[width=\"300\"][height=\"250\"] ," +
+        "iframe[width='300'][height='250'] ," +
+        ".modal-body > ul.pop-list," +
+        ".adsbyexoclick," +
+        "div[data-group^='skyscraper_']," +
+        ".bot-per," +
+        ".top-a2db," +
+        "a[href*='.taobao.com']," +
+        "div[data-height='264'][data-width='956']," +
+        "div[style^='position: fixed; top:']," +
         ".bot-per.visible-xs.visible-sm  {display: none !important;}"
     return newstyle;
 }
@@ -193,7 +205,7 @@ function jable_css() {
 }
 
 // 设置 cookie
-function jable_adsRemoveByJavaScript() { // Cookie 设定及注入
+function jable_adsRemove() { // Cookie 设定及注入
     document.cookie = "ts_popunder=1";
 
     var adsDomain = [
@@ -330,7 +342,7 @@ function videoAds_accelerateSkip() {
 };
 
 // 内容农场清除
-function contentFarm_adsRemoveByJavaScript() {
+function contentFarm_adsRemove() {
     var javascript = document.createElement("script");
     javascript.src = 'https://limbopro.com/Adguard/contentFarm/contentFarm.js';
     document.body.appendChild(javascript);

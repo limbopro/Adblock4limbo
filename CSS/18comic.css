@@ -1,8 +1,18 @@
-.modal-backdrop {display: none !important;}
-div[data-height="250"][data-width="300"]  {display: none !important;}
-*a[href^="http"]:not([href*="18comic."]) > img  {display: none !important;}*/
-#adsbox  {display: none !important;}
-a[target="_blank"][rel*="nofollow"] > img[src*=".gif"]  {display: none !important;}
-#guide-modal  {display: none !important;}
-iframe[width="300"][height="250"]  {display: none !important;}
-.bot-per.visible-xs.visible-sm {display: none !important;}
+.modal-backdrop,
+div[data-height='250'][data-width='300'] ,
+*a[href^='http']:not([href*='18comic.']) > img ,*/
+#adsbox ,
+a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,
+#guide-modal ,
+iframe[width='300'][height='250'] ,
+.modal-body > ul.pop-list,
+.adsbyexoclick,
+div[data-group^='skyscraper_'],
+.bot-per,
+.top-a2db,
+a[href*='.taobao.com'],
+div[data-height='264'][data-width='956'],
+div[style^='position: fixed; top:'],
+.bot-per-context,
+.bot-per-times,
+.bot-per.visible-xs.visible-sm  {display: none !important;}

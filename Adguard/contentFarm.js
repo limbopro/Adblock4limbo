@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm.html
 https://t.me/Adblock4limbo
 There are 4618 content farm domains in total until now.
-Last updated at 15/4月/2022/01:55
+Last updated at 15/4月/2022/13:02
 */
 
 
@@ -4659,33 +4659,39 @@ var ads_host = [
 "zzphomme.com",
 "zzstoo.com",
 "zztzv.com",
-"zditect.com",
-"whatthefuck.wtf",
-"csdn"
-];
+        "zditect.com",
+        "whatthefuck.wtf",  
+        "csdn"
+    ];
 
-var search_results_css = [
-    "li.b_algo", // bing 搜索结果样式
-    ".mnr-c.xpd.O9g5cc.uUPGi", // Google 富文本搜索结果 style
-    "div[data-sokoban-grid]", // 通用
-    "div.g", // Google PC 搜索结果样式
-    "div[class='g'][data-hveid]", // 这是谷歌PC端搜索结果页的 style
-    "div[class='mnr-c g'][data-hveid]", // 这是谷歌手机端搜索结果页的 style
-    "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
-]
+    var search_results_css = [
+        "li.b_algo", // bing 搜索结果样式
+        ".mnr-c.xpd.O9g5cc.uUPGi", // Google 富文本搜索结果 style
+        "div[data-sokoban-grid]", // 通用
+        "div.g", // Google PC 搜索结果样式
+        "div[class='g'][data-hveid]", // 这是谷歌PC端搜索结果页的 style
+        "div[class='mnr-c g'][data-hveid]", // 这是谷歌手机端搜索结果页的 style
+        "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
+    ]
 
-var i,x;
-    for (i = 0; i < ads_host.length; i++){
-    var ads_host_css = "[href*='" + ads_host[i] + "']";
-    var huge = document.querySelectorAll( search_results_css );
-        for (x = 0; x < huge.length; x++){
-            if (huge[x].querySelectorAll( ads_host_css ).length){
+    var i, x;
+    for (i = 0; i < ads_host.length; i++) {
+        var ads_host_css = "[href*='" + ads_host[i] + "']";
+        var huge = document.querySelectorAll(search_results_css);
+        for (x = 0; x < huge.length; x++) {
+            if (huge[x].querySelectorAll(ads_host_css).length) {
                 huge[x].remove();
             }
         }
     }
+    timecount +=1;
+    console.log("循环第" + timecount + "次")
+    if (timecount === 30) {
+        clearInterval(id);
+        console.log("循环结束！")
+    }
 }
 
+let timecount = 0;
+var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
 contentFarm_AdsRemove_Auto()
-//var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
-

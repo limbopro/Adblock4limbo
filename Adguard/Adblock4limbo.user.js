@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.36
+// @version      0.1.39
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎内容农场结果清除/低端影视/Jable/哔滴影视等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
+// @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/哔滴影视（加速跳过视频广告/避免反查）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://jable.tv/*
@@ -85,6 +85,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'google.com':
             contentFarm_adsRemove();
+            css_dynamicAppend(contentFarm_css(), 0)
             break;
         case 'www.bing.com':
             contentFarm_adsRemove();
@@ -136,7 +137,7 @@ function pornhub_interstitialPass() {
     }
 }
 
-// 设置 cookie // 18comic Javascript 
+// 设置 cookie // 18comic Javascript
 function _18comic_adsRemove() {
     document.cookie = "cover=1";
     document.cookie = "shunt=1";
@@ -239,7 +240,10 @@ function video_loopPlay() {
     setInterval(function () {
         var ele = ["video[preload='none'],video#player"];
         var ele_catch = document.querySelector(ele);
-        ele_catch.play()
+        if (ele_catch) {
+            ele_catch.play()
+            console.log("视频已开启循环播放；")
+        }
     }, 1000)
 }
 
@@ -248,7 +252,10 @@ function video_delayPlay(time) {
     setTimeout(function () {
         var ele = ["video[preload='none'],video#player"];
         var ele_catch = document.querySelector(ele);
-        ele_catch.play()
+        if (ele_catch) {
+            ele_catch.play()
+            console.log("视频已延后播放；")
+        }
     }, time)
 }
 
@@ -256,8 +263,11 @@ function video_delayPlay(time) {
 function hrefAttribute_set() {
     var href = document.querySelectorAll("a");
     var i;
-    for (i = 0; i < href.length; i++) {
-        href[i].target = "_self";
+    if (href.length > 0) {
+        console.log("hrefAttribute_set done.")
+        for (i = 0; i < href.length; i++) {
+            href[i].target = "_self";
+        }
     }
 }
 
@@ -295,7 +305,10 @@ function button_dynamicAppend(ele, text, onclick, position) {
         "text-align: right !important;"
     button.setAttribute("style", button_style_values);
     var here = document.querySelectorAll(ele);
-    here[0].appendChild(button);
+    if (here.length > 0) {
+        here[0].appendChild(button);
+        console.log("按钮已添加；")
+    }
 }
 
 // 动态创建引用外部js JavaScript
@@ -341,4 +354,10 @@ function contentFarm_adsRemove() {
     var javascript = document.createElement("script");
     javascript.src = 'https://limbopro.com/Adguard/contentFarm/contentFarm.js';
     document.body.appendChild(javascript);
+}
+
+// 动态创建引用外部css Cascading Style Sheets
+function contentFarm_css() {
+    const newstyle = "#tvcap,[data-text-ad] {display:none !important}"
+    return newstyle;
 }

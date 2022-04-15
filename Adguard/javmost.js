@@ -1,57 +1,29 @@
-function remove_ads () {
-
-// 视频播放
-var init_start_Ele = ["[href*='javascript:void(0)']"];
-var init_start_Ele_Catch = document.querySelectorAll( init_start_Ele );
-init_start_Ele_Catch[0].onclick()
-
-/* 精准删除 */
-var panel_ele = "div.panel.panel-inverse"
-var panel_ele_Catch = document.querySelectorAll( panel_ele );
-panel_ele_Catch[2].style.display = "none";   
-
-var col_sm_4_ele = "div.col-sm-4";
-var col_sm_4_ele_catch = document.querySelectorAll( col_sm_4_ele );
-col_sm_4_ele_catch[1].style.display = "none";   
-
-var exosrc_Ele = [
-"iframe[src*='exosrv']",
-"div.text-center"
-]
-
-var exosrc_Ele_Catch = document.querySelectorAll( exosrc_Ele );
-console.log(exosrc_Ele.length)
-for (exosrc = 0; exosrc < exosrc_Ele_Catch.length; exosrc++ ){
-exosrc_Ele_Catch[exosrc].style.display = "none";
-}
-
-// 片头广告
-var i;
-var _xcss = [
-"div[style*='2147483647']",
-"div[style*='300000']",
-//"img",
-"a[style*='display:block']",
-"a[target*='_blank']"
-];
-
-var x_catch = document.querySelectorAll( _xcss );
-for (i=0; i < x_catch.length; i++){
-var remove_css = [
-"style"
-];
-x_catch[i].setAttribute( remove_css, "height:0px" );
-}
-
-}
-
-var button = document.createElement("button");
-button.innerHTML = "移除广告";
-button.setAttribute("onclick","remove_ads ()");
-button.setAttribute("style","z-index:99999999");
-
-var _css = "h1,div.container-fluid";
-var _button = document.querySelectorAll(_css);
-_button[0].appendChild(button);
-
-
+(function() {
+	var magic = String.fromCharCode(Date.now() % 26 + 97) +
+				Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+	var prop = '{{1}}',
+		owner = window,
+		pos;
+	for (;;) {
+		pos = prop.indexOf('.');
+		if ( pos === -1 ) { break; }
+		owner = owner[prop.slice(0, pos)];
+		if ( owner instanceof Object === false ) { return; }
+		prop = prop.slice(pos + 1);
+	}
+	delete owner[prop];
+	Object.defineProperty(owner, prop, {
+		set: function() {
+			throw new ReferenceError(magic);
+		}
+	});
+	var oe = window.onerror;
+	window.onerror = function(msg, src, line, col, error) {
+		if ( typeof msg === 'string' && msg.indexOf(magic) !== -1 ) {
+			return true;
+		}
+		if ( oe instanceof Function ) {
+			return oe(msg, src, line, col, error);
+		}
+	}.bind();
+})();

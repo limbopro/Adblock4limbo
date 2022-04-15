@@ -19,6 +19,7 @@ DOMAIN-SUFFIX, widgets.amung.us, reject
 DOMAIN-SUFFIX, s10.histats.com, reject
 #DOMAIN-SUFFIX, js.wpadmngr.com, reject
 #DOMAIN-SUFFIX, suzihaza.com, reject
+DOMAIN-SUFFIX, eyebrowscrambledlater.com, reject
 
 ##### https://avple.tv/  
 DOMAIN-SUFFIX, tapioni.com, reject

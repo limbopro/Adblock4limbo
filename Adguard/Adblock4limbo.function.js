@@ -27,7 +27,10 @@ function video_loopPlay() {
     setInterval(function () {
         var ele = ["video[preload='none'],video#player"];
         var ele_catch = document.querySelector(ele);
-        ele_catch.play()
+        if (ele_catch) {
+            ele_catch.play()
+            console.log("视频已开启循环播放；")
+        }
     }, 1000)
 }
 
@@ -36,6 +39,9 @@ function video_delayPlay(time) {
     setTimeout(function () {
         var ele = ["video[preload='none'],video#player"];
         var ele_catch = document.querySelector(ele);
-        ele_catch.play()
+        if (ele_catch) {
+            ele_catch.play()
+            console.log("视频已延后播放；")
+        }
     }, time)
 }

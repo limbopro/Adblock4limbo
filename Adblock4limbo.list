@@ -20,6 +20,13 @@ DOMAIN-SUFFIX, s10.histats.com, reject
 #DOMAIN-SUFFIX, js.wpadmngr.com, reject
 #DOMAIN-SUFFIX, suzihaza.com, reject
 DOMAIN-SUFFIX, eyebrowscrambledlater.com, reject
+DOMAIN-SUFFIX, a.realsrv.com, reject
+DOMAIN-SUFFIX, media.aso1.net, reject
+DOMAIN-SUFFIX, js.wpshsdk.com, reject
+DOMAIN-SUFFIX, js.wpushsdk.com, reject
+DOMAIN-SUFFIX, 9e77b6e6e2.2e3f31faae.com, reject
+DOMAIN-SUFFIX, playersb.com, reject
+#DOMAIN-SUFFIX, dood.la, reject
 
 ##### https://avple.tv/  
 DOMAIN-SUFFIX, tapioni.com, reject

@@ -6,6 +6,9 @@
 # Pornhub 视频广告
 ^https:\/\/cn\.pornhub\.com\/_xa\/ads.* - reject
 
+# javmost 播放页弹窗广告
+^https:\/\/suzihaza\.com\/asset\/jquery\/slim-3\.2\.min\.js.* - reject
+
 # 百度网页跳转至手机网页版本
 www.baidu.com(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))) m.baidu.com 302
 
@@ -46,4 +49,4 @@ cn.pornhub.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(pornh
 
 
 [MITM]
-hostname = %APPEND% 91porn.com, netflav.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com
+hostname = %APPEND% suzihaza.com, 91porn.com, netflav.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, avple.tv, *.btbdys.*, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com

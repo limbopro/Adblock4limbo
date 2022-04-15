@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.39
+// @version      0.1.40
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/哔滴影视（加速跳过视频广告/避免反查）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -57,7 +57,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             pornhub_interstitialPass();
             pornhub_adsRemove();
             css_dynamicAppend(pornhub_css(), 0)
-            button_dynamicAppend("div.videoSubscribeButton", "跳过广告", "video_delayPlay(1000)", "position:relative;")
+            //button_dynamicAppend("div.videoSubscribeButton", "跳过广告", "video_delayPlay(1000)", "position:relative;")
             break;
         case 'missav':
             button_dynamicAppend(".items-start", "禁止暂停", "video_loopPlay()", "position:fixed;");
@@ -80,7 +80,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'www.btbdys.com':
             css_dynamicAppend(btbdys_css(), 0);
             css_dynamicAppend(btbdys_css_delay(), 500);
-            videoAds_accelerateSkip();
+            videoAds_accelerateSkip(0.1);
             hrefAttribute_set();
             break;
         case 'google.com':
@@ -147,6 +147,7 @@ function _18comic_adsRemove() {
 // 隐藏广告样式
 function _18comic_css() {
     const newstyle =
+        "[target='_blank']," +
         ".modal-backdrop," +
         "[data-height*='90']," +
         "div[data-height='250'][data-width='300']," +
@@ -264,7 +265,7 @@ function hrefAttribute_set() {
     var href = document.querySelectorAll("a");
     var i;
     if (href.length > 0) {
-        console.log("hrefAttribute_set done.")
+        console.log("新标签页打开链接已被禁止；")
         for (i = 0; i < href.length; i++) {
             href[i].target = "_self";
         }
@@ -328,25 +329,42 @@ function css_dynamicAppend(newstyle, time) {
 }
 
 /* 视频页广告加速跳过 */
-function videoAds_accelerateSkip() {
-    // Based on uAssets
-    // License: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
-    //  nano-setTimeout-booster.js
-    var z = window.setInterval,
-        needle = '{{1}}',
-        delay = parseInt('{{2}}', 10),
-        boost = parseFloat('{{3}}');
-    if (needle === '' || needle === '{{1}}') { needle = '.?'; }
-    else if (needle.charAt(0) === '/' && needle.slice(-1) === '/') { needle = needle.slice(1, -1); }
-    else { needle = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
-    needle = new RegExp(needle);
-    if (isNaN(delay) || !isFinite(delay)) { delay = 1000; }
-    if (isNaN(boost) || !isFinite(boost)) { boost = 0.05; }
-    if (boost < 0.02) { boost = 0.02; } if (boost > 50) { boost = 50; }
-    window.setInterval = function (a, b) {
-        if (b === delay && needle.test(a.toString())) { b *= boost; }
-        return z.apply(this, arguments);
-    }.bind(window);
+function videoAds_accelerateSkip(fasterx) {
+    // https://github.com/gorhill/uBlock/wiki
+    /// nano-setInterval-booster.js
+    /// alias nano-sib.js
+    let needleArg = '{{1}}';
+    if (needleArg === '{{1}}') { needleArg = ''; }
+    let delayArg = '{{2}}';
+    if (delayArg === '{{2}}') { delayArg = ''; }
+    let boostArg = '{{3}}';
+    if (boostArg === '{{3}}') { boostArg = ''; }
+    if (needleArg === '') {
+        needleArg = '.?';
+    } else if (needleArg.charAt(0) === '/' && needleArg.slice(-1) === '/') {
+        needleArg = needleArg.slice(1, -1);
+    } else {
+        needleArg = needleArg.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    const reNeedle = new RegExp(needleArg);
+    let delay = delayArg !== '*' ? parseInt(delayArg, 10) : -1;
+    if (isNaN(delay) || isFinite(delay) === false) { delay = 1000; }
+    let boost = parseFloat(boostArg);
+    boost = isNaN(boost) === false && isFinite(boost)
+        ? Math.min(Math.max(boost, fasterx), 50)
+        : fasterx;
+    self.setInterval = new Proxy(self.setInterval, {
+        apply: function (target, thisArg, args) {
+            const [a, b] = args;
+            if (
+                (delay === -1 || b === delay) &&
+                reNeedle.test(a.toString())
+            ) {
+                args[1] = b * boost;
+            }
+            return target.apply(thisArg, args);
+        }
+    });
 };
 
 // 内容农场清除

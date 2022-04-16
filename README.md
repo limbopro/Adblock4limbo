@@ -1,9 +1,9 @@
-![commit](https://img.shields.io/github/commit-activity/m/limbopro/Adblock4limbo?label=Commits)
-![Issues](https://img.shields.io/github/issues/limbopro/Adblock4limbo)
-![Forl](https://img.shields.io/github/forks/limbopro/Adblock4limbo)
-![Stars](https://img.shields.io/github/stars/limbopro/Adblock4limbo)
-![License](https://img.shields.io/github/license/limbopro/Adblock4limbo)
-![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Flimboprossr)
+[![Fork](https://img.shields.io/github/forks/limbopro/Adblock4limbo)](https://github.com/limbopro/Adblock4limbo/network/members)
+[![Stars](https://img.shields.io/github/stars/limbopro/Adblock4limbo)](https://github.com/limbopro/Adblock4limbo/stargazers)
+[![Commit](https://img.shields.io/github/commit-activity/m/limbopro/Adblock4limbo?label=Commits)](https://github.com/limbopro/Adblock4limbo/commits/main)
+[![Issues](https://img.shields.io/github/issues/limbopro/Adblock4limbo)](https://github.com/limbopro/Adblock4limbo/issues)
+[![License](https://img.shields.io/github/license/limbopro/Adblock4limbo)](https://github.com/limbopro/Adblock4limbo/blob/main/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Flimboprossr)](https://twitter.com/limboprossr)
 
 ---
 

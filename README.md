@@ -12,9 +12,6 @@
   - [神机规则 去Youtube App 播放广告；（由花姐维护）](#神机规则-去youtube-app-播放广告由花姐维护)
     - [QuantumultX YouTube App 去广告重写配置步骤](#quantumultx-youtube-app-去广告重写配置步骤)
     - [Surge YouTube App 去广告重写配置步骤](#surge-youtube-app-去广告重写配置步骤)
-  - [毒奶去网站广告计划列表](#毒奶去网站广告计划列表)
-    - [03.29.2022](#03292022)
-  - [正在维护的网站目录](#正在维护的网站目录)
   - [相关屏蔽广告分流/重写](#相关屏蔽广告分流重写)
   - [其他系列教程（或参考）](#其他系列教程或参考)
   - [我们的其他项目](#我们的其他项目)
@@ -160,44 +157,6 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Bloc
 3.粘贴刚刚复制的 模块的链接；
 4.安装并信任证书；
 5.Over；
-
-## 毒奶去网站广告计划列表
-
-### 03.29.2022
-
-毒奶去广告计划之 **去广告列表最后更新时间**：03.22.2022 ，请及时更新分流和重写；
-
-> 如需影视搜索欢迎使用[毒奶搜索](https://limbopro.com/search.html) ，如需站点导航欢迎使用[毒奶导航](https://limbopro.com/daohang/#);
-> **目前可去除以下25个视频/动漫/NSFW/BT/漫画网站广告(内页悬浮广告及片头广告**，请重写更新`重写`/`分流规则`后食用；去广告效果可参阅：[我的Twitter](https://twitter.com/limboprossr/status/1319882990197960704)；
-
-## 正在维护的网站目录
-
-所有还在维护的网站可参阅（即时更新）：https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
-
-**讨论群组**：https://t.me/Adblock4limbo 反馈问题/提交你认为有价值的新网站
-
-|    类型    | 网站名称 |        网站地址         |        备注         | 推荐指数         |
-| :--------: | :------: | :---------------------: | :-----------------: | ---------------- |
-|  在线影视  | 低端影视 |    https://ddrk.me/     | 完美屏蔽广告/无弹窗 | 优质             |
-|  在线影视  |  剧迷网  |    https://gimy.app/    | 完美屏蔽广告/无弹窗 | 优质             |
-|  在线影视  | 韩剧TVN  |   https://www.tvn.cc/   | 完美屏蔽广告/无弹窗 | 优质             |
-|  在线影视  |  独播库  | https://www.duboku.tv/  | 完美屏蔽广告/无弹窗 | 优质             |
-|  在线影视  | 哔嘀影视 | https://www.btbdys.com/ | 完美屏蔽广告/无弹窗 | 较好             |
-|  在线影视  |   梨播   | https://www.libvio.com/ | 完美屏蔽广告/无弹窗 | 较好             |
-| H漫画/连载 | 禁漫天堂 |  https://18comic.vip/   | 完美屏蔽广告/无弹窗 | 较好             |
-|     H      |   NSFW   |    https://jable.tv/    | 完美屏蔽广告/无弹窗 | 优质/全面/全高清 |
-|     H      |   NSFW   |   https://missav.com/   | 完美屏蔽广告/无弹窗 | 优质/全面/分厂商 |
-|     H      |   NSFW   |   https://javbus.com    | 完美屏蔽广告/无弹窗 | 一般             |
-|     H      | Pornhub  | https://cn.pornhub.com/ | 完美屏蔽广告/无弹窗 | 一般             |
-|     H      |   4虎    |     https://4hu.tv/     | 完美屏蔽广告/无弹窗 | 一般             |
-| H漫画/连载 | 绅士漫画 |   https://wnacg.org/    | 完美屏蔽广告/无弹窗 | 一般             |
-|  在线影视  |  无名网  | https://www.btnull.org/ | 完美屏蔽广告/无弹窗 | 一般             |
-|     H      |   NSFW   |   https://91porn.com/   | 完美屏蔽广告/无弹窗 | 较次             |
-
-
-
-> 如有特别棒的网站需要去广告，请加入电报[群组](https://t.me/Adblock4limbo)与我们反馈；⚠️务必正确提供网站域名及广告出现页面完整截图（如页面内出现漏点或NSFW请适当打码）；
-> 在毒奶去广告计划的基础上，博主推荐大家安装 Safari 内容拦截器，可以屏蔽绝大多数网页广告（for Safari）；[iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.com/archives/safari-content-blocker.html)
 
 ## 相关屏蔽广告分流/重写
 

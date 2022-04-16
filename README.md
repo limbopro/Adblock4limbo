@@ -1,23 +1,3 @@
-- [Adblock4limbo](#adblock4limbo)
-  - [一些建议](#一些建议)
-  - [电报讨论群组](#电报讨论群组)
-  - [去广告原理悉知](#去广告原理悉知)
-  - [毒奶去广告计划介绍](#毒奶去广告计划介绍)
-    - [目前在维护的网站目录](#目前在维护的网站目录)
-  - [毒奶去广告使用方法（配置步骤）](#毒奶去广告使用方法配置步骤)
-    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）](#毒奶去广告计划分流与重写由毒奶博主维护-for-quantumultx)
-    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for Surge）](#毒奶去广告计划分流与重写由毒奶博主维护-for-surge)
-    - [毒奶去广告计划油猴脚本版；（由毒奶博主维护 for userscript）](#毒奶去广告计划油猴脚本版由毒奶博主维护-for-userscript)
-    - [NobyDa 去广告分流；（由NobyDa维护）](#nobyda-去广告分流由nobyda维护)
-  - [神机规则 去Youtube App 播放广告；（由花姐维护）](#神机规则-去youtube-app-播放广告由花姐维护)
-    - [QuantumultX YouTube App 去广告重写配置步骤](#quantumultx-youtube-app-去广告重写配置步骤)
-    - [Surge YouTube App 去广告重写配置步骤](#surge-youtube-app-去广告重写配置步骤)
-  - [相关屏蔽广告分流/重写](#相关屏蔽广告分流重写)
-  - [其他系列教程（或参考）](#其他系列教程或参考)
-  - [我们的其他项目](#我们的其他项目)
-  - [进阶资料](#进阶资料)
-  - [取得联系](#取得联系)
-
 ![Quantumult X 去网页广告效果][2]
 
 # Adblock4limbo
@@ -186,7 +166,6 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 ```
 
-
 ## 其他系列教程（或参考）
 0. [iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.com/archives/safari-content-blocker.html)
 1. [自己动手利用QuantumultX 屏蔽任意网站广告](https://limbopro.com/archives/12782.html)
@@ -213,3 +192,23 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 [1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
 [2]: https://limbopro.com/usr/uploads/2021/08/3373964069.jpg
+
+- [Adblock4limbo](#adblock4limbo)
+  - [一些建议](#一些建议)
+  - [电报讨论群组](#电报讨论群组)
+  - [去广告原理悉知](#去广告原理悉知)
+  - [毒奶去广告计划介绍](#毒奶去广告计划介绍)
+    - [目前在维护的网站目录](#目前在维护的网站目录)
+  - [毒奶去广告使用方法（配置步骤）](#毒奶去广告使用方法配置步骤)
+    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）](#毒奶去广告计划分流与重写由毒奶博主维护-for-quantumultx)
+    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for Surge）](#毒奶去广告计划分流与重写由毒奶博主维护-for-surge)
+    - [毒奶去广告计划油猴脚本版；（由毒奶博主维护 for userscript）](#毒奶去广告计划油猴脚本版由毒奶博主维护-for-userscript)
+    - [NobyDa 去广告分流；（由NobyDa维护）](#nobyda-去广告分流由nobyda维护)
+  - [神机规则 去Youtube App 播放广告；（由花姐维护）](#神机规则-去youtube-app-播放广告由花姐维护)
+    - [QuantumultX YouTube App 去广告重写配置步骤](#quantumultx-youtube-app-去广告重写配置步骤)
+    - [Surge YouTube App 去广告重写配置步骤](#surge-youtube-app-去广告重写配置步骤)
+  - [相关屏蔽广告分流/重写](#相关屏蔽广告分流重写)
+  - [其他系列教程（或参考）](#其他系列教程或参考)
+  - [我们的其他项目](#我们的其他项目)
+  - [进阶资料](#进阶资料)
+  - [取得联系](#取得联系)

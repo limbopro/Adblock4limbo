@@ -1,3 +1,26 @@
+- [Adblock4limbo](#adblock4limbo)
+  - [一些建议](#一些建议)
+  - [电报讨论群组](#电报讨论群组)
+  - [去广告原理悉知](#去广告原理悉知)
+  - [毒奶去广告计划介绍](#毒奶去广告计划介绍)
+    - [目前在维护的网站目录](#目前在维护的网站目录)
+  - [毒奶去广告使用方法（配置步骤）](#毒奶去广告使用方法配置步骤)
+    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）](#毒奶去广告计划分流与重写由毒奶博主维护-for-quantumultx)
+    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for Surge）](#毒奶去广告计划分流与重写由毒奶博主维护-for-surge)
+    - [毒奶去广告计划油猴脚本版；（由毒奶博主维护 for userscript）](#毒奶去广告计划油猴脚本版由毒奶博主维护-for-userscript)
+    - [NobyDa 去广告分流；（由NobyDa维护）](#nobyda-去广告分流由nobyda维护)
+  - [神机规则 去Youtube App 播放广告；（由花姐维护）](#神机规则-去youtube-app-播放广告由花姐维护)
+    - [QuantumultX YouTube App 去广告重写配置步骤](#quantumultx-youtube-app-去广告重写配置步骤)
+    - [Surge YouTube App 去广告重写配置步骤](#surge-youtube-app-去广告重写配置步骤)
+  - [毒奶去网站广告计划列表](#毒奶去网站广告计划列表)
+    - [03.29.2022](#03292022)
+  - [正在维护的网站目录](#正在维护的网站目录)
+  - [相关屏蔽广告分流/重写](#相关屏蔽广告分流重写)
+  - [其他系列教程（或参考）](#其他系列教程或参考)
+  - [我们的其他项目](#我们的其他项目)
+  - [进阶资料](#进阶资料)
+  - [取得联系](#取得联系)
+
 ![Quantumult X 去网页广告效果][2]
 
 # Adblock4limbo
@@ -11,6 +34,13 @@
 > 4. 你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.com/archives/12782.html) 教程学习进行去网页广告作业；
 > 5. 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
 
+## 电报讨论群组
+> 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
+> 2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；
+> 3. 帮助我们测试**新的去广告规则**是否普适有效，如某个网站失效页面出现广告请把该页面的链接，页面的截图反馈到群组；
+> 4. 如有任何关于本去广告计划的疑问请在本群反馈；
+
+
 ## 去广告原理悉知
 
 > 通过 QuantumultX / Surge 提供的 Rewrite 重写类型，如 reject / 302(重定向） / 307(重定向） / request-header（请求头） / response-body（请求头） / http-response / 实现对网页（HTML）各元素、资源的匹配，禁止加载，替换，插入，删除各类元素；本仓库提供大量的实例参考；
@@ -20,7 +50,7 @@
 > 2. [重写类型response-body的用法丨利用 Quantumult X 替换网页元素实现去广告（正则表达式以及开发者工具、调试）](https://limbopro.com/archives/12782.html)
 > 3. [前端三剑客学习手记 - HTML/CSS/JavaScript](https://limbopro.com/archives/15067.html)
 
-## 毒奶去广告计划
+## 毒奶去广告计划介绍
 
 **毒奶去广告计划始于 11.01.2020**，原文：https://limbopro.com/archives/12904.html ；
 
@@ -32,16 +62,9 @@
 
 ### 目前在维护的网站目录
 
-
 **所有还在维护的网站可参阅（即时更新）：**
 
 https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
-
-## 电报讨论群组
-> 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
-> 2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；
-> 3. 帮助我们测试**新的去广告规则**是否普适有效，如某个网站失效页面出现广告请把该页面的链接，页面的截图反馈到群组；
-> 4. 如有任何关于本去广告计划的疑问请在本群反馈；
 
 ## 毒奶去广告使用方法（配置步骤）
 
@@ -231,4 +254,3 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 [1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
 [2]: https://limbopro.com/usr/uploads/2021/08/3373964069.jpg
-

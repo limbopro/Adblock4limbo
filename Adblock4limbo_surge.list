@@ -1,14 +1,14 @@
 ## /*
 ## Written by limbopro
-## https://limbopro.com/archives/block-contentfarm.html
+## https://limbopro.com/archives/12904.htm
 ## https://t.me/Adblock4limbo
-## Last updated at 30/3月/2022/00:00
+## Last updated at 04.17.20
 ## */
 
 ##### https://javmost.xyz/
-#DOMAIN,delivery-node-aziz.voe-network.net
-#DOMAIN,inspiringaccurate.com
-#DOMAIN,track.aso1.net
+#DOMAIN, delivery-node-aziz.voe-network.net
+#DOMAIN, inspiringaccurate.com
+#DOMAIN, track.aso1.net
 DOMAIN-SUFFIX, v3.fstats.xyz
 DOMAIN-SUFFIX, wpadmngr.com
 DOMAIN-SUFFIX, histats.com
@@ -28,6 +28,12 @@ DOMAIN-SUFFIX, 9e77b6e6e2.2e3f31faae.com
 DOMAIN-SUFFIX, playersb.com
 #DOMAIN-SUFFIX, dood.la
 
+##### https://www.tvc.cc/
+DOMAIN-SUFFIX, 42yenxh.cn
+DOMAIN-SUFFIX, dwyhup.cn
+DOMAIN-SUFFIX, netdjs.net
+DOMAIN-SUFFIX, pc.stgowan.com
+
 ##### https://avple.tv/
 DOMAIN-SUFFIX, tapioni.com
 DOMAIN-SUFFIX, 107iwh.cn:4032
@@ -39,6 +45,7 @@ DOMAIN-SUFFIX, nby360.com
 DOMAIN-SUFFIX, tfosrv.com
 DOMAIN-SUFFIX, trafforsrv.com
 DOMAIN-SUFFIX, trafficforce.com
+DOMAIN-SUFFIX, s.csyfe.com
 
 ##### https://www.tvn.cc/ 韩剧TV
 DOMAIN-SUFFIX, qw2v.changshuohr.net
@@ -180,13 +187,13 @@ DOMAIN-SUFFIX, maxwellsery.com
 DOMAIN-SUFFIX, annabelleabe.com
 
 ##### https://91mjw.com/
-DOMAIN-SUFFIX,jidukeji.com
-DOMAIN-SUFFIX,atmib.com
-DOMAIN-SUFFIX,bjzysd.net
-DOMAIN-SUFFIX,iycwl.com
-DOMAIN-SUFFIX,haoyundm.com
-DOMAIN-SUFFIX,qqq123987.site
-DOMAIN-SUFFIX,qweewq2021.online
+DOMAIN-SUFFIX, jidukeji.com
+DOMAIN-SUFFIX, atmib.com
+DOMAIN-SUFFIX, bjzysd.net
+DOMAIN-SUFFIX, iycwl.com
+DOMAIN-SUFFIX, haoyundm.com
+DOMAIN-SUFFIX, qqq123987.site
+DOMAIN-SUFFIX, qweewq2021.online
 DOMAIN-SUFFIX, qqq123987.site
 DOMAIN-SUFFIX, jianxinshanghai.com
 DOMAIN-SUFFIX, js.51toubu.com
@@ -244,16 +251,16 @@ DOMAIN-KEYWORD, pagespeed-mod
 DOMAIN-KEYWORD, in-page-push
 
 #### disqus
-DOMAIN-SUFFIX,referrer.disqus.com
-DOMAIN-SUFFIX,links.services.disqus.com
-DOMAIN-SUFFIX,disqusads.com
-DOMAIN,glitter.services.disqus.com
-DOMAIN,juggler.services.disqus.com
-DOMAIN,tempest.services.disqus.com
-DOMAIN,mc.viglink.com
-DOMAIN,qa.viglink.com
-DOMAIN,ns4.viglink.com
-DOMAIN,ns2.viglink.com
-DOMAIN,ns3.viglink.com
-DOMAIN,apicdn.viglink.com
-DOMAIN-SUFFIX,cdn.viglink.com
+DOMAIN-SUFFIX, referrer.disqus.com
+DOMAIN-SUFFIX, links.services.disqus.com
+DOMAIN-SUFFIX, disqusads.com
+DOMAIN, glitter.services.disqus.com
+DOMAIN, juggler.services.disqus.com
+DOMAIN, tempest.services.disqus.com
+DOMAIN, mc.viglink.com
+DOMAIN, qa.viglink.com
+DOMAIN, ns4.viglink.com
+DOMAIN, ns2.viglink.com
+DOMAIN, ns3.viglink.com
+DOMAIN, apicdn.viglink.com
+DOMAIN-SUFFIX, cdn.viglink.com

@@ -1,2 +1,6 @@
-#adsbox {display:none!important}
-#qnnnd0 {display:none!important}
+/*
+iframe,
+[style*='relative'],
+#adsbox,
+#qnnnd0 {display:none !important}
+*/

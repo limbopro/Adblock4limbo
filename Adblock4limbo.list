@@ -1,14 +1,14 @@
 ## /*  
 ## Written by limbopro  
-## https://limbopro.com/archives/block-contentfarm.html  
+## https://limbopro.com/archives/12904.html 
 ## https://t.me/Adblock4limbo  
-## Last updated at 30/3月/2022/00:00  
+## Last updated at 04.17.2022
 ## */  
 
 ##### https://javmost.xyz/  
-#DOMAIN,delivery-node-aziz.voe-network.net, reject
-#DOMAIN,inspiringaccurate.com, reject
-#DOMAIN,track.aso1.net, reject
+#DOMAIN, delivery-node-aziz.voe-network.net, reject
+#DOMAIN, inspiringaccurate.com, reject
+#DOMAIN, track.aso1.net, reject
 DOMAIN-SUFFIX, v3.fstats.xyz, reject
 DOMAIN-SUFFIX, wpadmngr.com, reject
 DOMAIN-SUFFIX, histats.com, reject
@@ -28,6 +28,12 @@ DOMAIN-SUFFIX, 9e77b6e6e2.2e3f31faae.com, reject
 DOMAIN-SUFFIX, playersb.com, reject
 #DOMAIN-SUFFIX, dood.la, reject
 
+##### https://www.tvc.cc/  
+DOMAIN-SUFFIX, 42yenxh.cn, reject
+DOMAIN-SUFFIX, dwyhup.cn, reject
+DOMAIN-SUFFIX, netdjs.net, reject
+DOMAIN-SUFFIX, pc.stgowan.com, reject
+
 ##### https://avple.tv/  
 DOMAIN-SUFFIX, tapioni.com, reject
 DOMAIN-SUFFIX, 107iwh.cn:4032, reject
@@ -39,6 +45,7 @@ DOMAIN-SUFFIX, nby360.com, reject
 DOMAIN-SUFFIX, tfosrv.com, reject
 DOMAIN-SUFFIX, trafforsrv.com, reject
 DOMAIN-SUFFIX, trafficforce.com, reject
+DOMAIN-SUFFIX, s.csyfe.com, reject
 
 ##### https://www.tvn.cc/ 韩剧TV  
 DOMAIN-SUFFIX, qw2v.changshuohr.net, reject
@@ -180,13 +187,13 @@ DOMAIN-SUFFIX, maxwellsery.com, reject
 DOMAIN-SUFFIX, annabelleabe.com, reject
 
 ##### https://91mjw.com/  
-DOMAIN-SUFFIX,jidukeji.com, reject
-DOMAIN-SUFFIX,atmib.com, reject
-DOMAIN-SUFFIX,bjzysd.net, reject
-DOMAIN-SUFFIX,iycwl.com, reject
-DOMAIN-SUFFIX,haoyundm.com, reject
-DOMAIN-SUFFIX,qqq123987.site, reject
-DOMAIN-SUFFIX,qweewq2021.online, reject
+DOMAIN-SUFFIX, jidukeji.com, reject
+DOMAIN-SUFFIX, atmib.com, reject
+DOMAIN-SUFFIX, bjzysd.net, reject
+DOMAIN-SUFFIX, iycwl.com, reject
+DOMAIN-SUFFIX, haoyundm.com, reject
+DOMAIN-SUFFIX, qqq123987.site, reject
+DOMAIN-SUFFIX, qweewq2021.online, reject
 DOMAIN-SUFFIX, qqq123987.site, reject
 DOMAIN-SUFFIX, jianxinshanghai.com, reject
 DOMAIN-SUFFIX, js.51toubu.com, reject
@@ -244,16 +251,16 @@ DOMAIN-KEYWORD, pagespeed-mod, reject
 DOMAIN-KEYWORD, in-page-push, reject
 
 #### disqus  
-DOMAIN-SUFFIX,referrer.disqus.com, reject
-DOMAIN-SUFFIX,links.services.disqus.com, reject
-DOMAIN-SUFFIX,disqusads.com, reject
-DOMAIN,glitter.services.disqus.com, reject
-DOMAIN,juggler.services.disqus.com, reject
-DOMAIN,tempest.services.disqus.com, reject
-DOMAIN,mc.viglink.com, reject
-DOMAIN,qa.viglink.com, reject
-DOMAIN,ns4.viglink.com, reject
-DOMAIN,ns2.viglink.com, reject
-DOMAIN,ns3.viglink.com, reject
-DOMAIN,apicdn.viglink.com, reject
-DOMAIN-SUFFIX,cdn.viglink.com, reject
+DOMAIN-SUFFIX, referrer.disqus.com, reject
+DOMAIN-SUFFIX, links.services.disqus.com, reject
+DOMAIN-SUFFIX, disqusads.com, reject
+DOMAIN, glitter.services.disqus.com, reject
+DOMAIN, juggler.services.disqus.com, reject
+DOMAIN, tempest.services.disqus.com, reject
+DOMAIN, mc.viglink.com, reject
+DOMAIN, qa.viglink.com, reject
+DOMAIN, ns4.viglink.com, reject
+DOMAIN, ns2.viglink.com, reject
+DOMAIN, ns3.viglink.com, reject
+DOMAIN, apicdn.viglink.com, reject
+DOMAIN-SUFFIX, cdn.viglink.com, reject

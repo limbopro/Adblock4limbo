@@ -1,7 +1,7 @@
 // 各种 function 的集合
 // 获取M3U8文件资源链接
 
-const regexpx = [
+const repeat_regex = [
     "https:?\/\/.*?hls.*?\.m3u8",
     "https:?\/\/.*?phncdn.*?hls.*?\.m3u8"
 ]

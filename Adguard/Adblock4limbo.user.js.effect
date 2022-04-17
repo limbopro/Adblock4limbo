@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.48
+// @version      0.1.47
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -72,20 +72,23 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             pornhub_interstitialPass();
             tag_dynamicRemove("script", "ads_batch");
             css_style_adsRemove(pornhub_css(), 0);
+            //button_dynamicAppend("div.videoSubscribeButton", "跳过广告", "video_delayPlay(1000)", "position:relative;")
             break;
         case 'missav':
-            cloudflare_captchaBypass();
             button_dynamicAppend(".items-start", "禁止暂停", "video_loopPlay()", "position:fixed;");
+            cloudflare_recaptchaPass();
             break;
         case '91porn':
-            cloudflare_captchaBypass();
             css_style_adsRemove(_91porn_css(), 0);
+            cloudflare_recaptchaPass();
+            //overridePropertyRead("player.preroll", "noopFunc")
             break;
         case 'avple':
-            cloudflare_captchaBypass();
             css_style_adsRemove(avple_css(), 0);
+            //avple_adsRemove();
             var url_avple = "https://limbopro.com/Adguard/avple.js";
             javascript_dynamicAppend(url_avple);
+            cloudflare_recaptchaPass();
             break;
         case '18comic':
             css_style_adsRemove(_18comic_css(), 0)
@@ -96,7 +99,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_ele_adsRemove(css_wnacg);
             break;
         case 'ddrk.me':
-            css_style_adsRemove(ddrk_css(), 500);
+            css_style_adsRemove(ddrk_css(), 500)
             break;
         case 'duboku':
             var url_duboku = "https://limbopro.com/Adguard/duboku.js";
@@ -108,9 +111,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'tvn':
             break;
         case 'jable.tv':
-            cloudflare_captchaBypass();
             css_style_adsRemove(jable_css(), 0)
             jable_adsRemove();
+            cloudflare_recaptchaPass();
             button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:0px;");
             video_delayPlay(1000);
             break;
@@ -363,26 +366,11 @@ function button_dynamicAppend(ele, text, onclick, position) {
 }
 
 // Cloudflare recaptcha 绕过
-function cloudflare_captchaBypass() {
+function cloudflare_recaptchaPass() {
     var title = document.title;
-    if (title.search("Cloudflare") >= 0 || title.search("Attention") >= 0) {
+    if (title.search("Attention") >= 0 || title.search("Cloudflare") >= 0) {
         window.location.reload();
-    };
-}
-
-function jsSubmit(url, params, method = "post") {
-    var form = $("<form></form>");
-    form.attr({ "method": method, "action": url });
-
-    for (p in params) {
-        var input = $("<input type='hidden'>");
-        input.attr("name", p);
-        input.val(params[p]);
-        form.append(input);
     }
-
-    $("html").append(form);
-    form.submit();
 }
 
 /* 循环播放 */

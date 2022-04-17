@@ -16,6 +16,7 @@
 // @match        https://18comic.org/*
 // @match        https://18comic.vip/*
 // @match        https://www.wnacg.com/*
+// @match        https://www.wnacg.org/*
 // @match        https://w.duboku.io/*
 // @match        https://www.duboku.tv/*
 // @match        https://www.libvio.com/*
@@ -368,21 +369,6 @@ function cloudflare_captchaBypass() {
     if (title.search("Cloudflare") >= 0 || title.search("Attention") >= 0) {
         window.location.reload();
     };
-}
-
-function jsSubmit(url, params, method = "post") {
-    var form = $("<form></form>");
-    form.attr({ "method": method, "action": url });
-
-    for (p in params) {
-        var input = $("<input type='hidden'>");
-        input.attr("name", p);
-        input.val(params[p]);
-        form.append(input);
-    }
-
-    $("html").append(form);
-    form.submit();
 }
 
 /* 循环播放 */

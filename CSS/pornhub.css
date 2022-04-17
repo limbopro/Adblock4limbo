@@ -1,21 +1,21 @@
-.topAdContainter
-div.topAdContainter
-.adContainer.clearfix
-.adContainer
-div#adSpot
-a[href^="http://ads.trafficjunky.net/"]
-a[href^="https://ads.trafficjunky.net/"]
-.video-wrapper > #player + [class]
-.underplayerAd
-.realsex
-.adsbytrafficjunky
-.adLink
-.ad-link
-#pb_template
-#main-container > .abovePlayer
-.sponsor-text
-a[href^="https://landing.brazzersnetwork.com/"]
-.video-wrapper > div#player~div[class$=" hd clear"]
-#hd-rightColVideoPage > .clearfix:first-child
-.playerFlvContainer > div#pb_template[style]
+.topAdContainter,
+div.topAdContainter,
+.adContainer.clearfix,
+.adContainer,
+div#adSpot,
+a[href^="http://ads.trafficjunky.net/"],
+a[href^="https://ads.trafficjunky.net/"],
+.video-wrapper > #player + [class],
+.underplayerAd,
+.realsex,
+.adsbytrafficjunky,
+.adLink,
+.ad-link,
+#pb_template,
+#main-container > .abovePlayer,
+.sponsor-text,
+a[href^="https://landing.brazzersnetwork.com/"],
+.video-wrapper > div#player~div[class$=" hd clear"],
+#hd-rightColVideoPage > .clearfix:first-child,
+.playerFlvContainer > div#pb_template[style],
 a[href*='livehd']  {display: none !important;}

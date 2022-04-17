@@ -1,9 +1,7 @@
-let css = '<head>'
-let css_X = '<head><link rel=\"stylesheet\" href=\"https://limbopro.com/CSS/Adblock4limbo.user.css\" type=\"text/css\">'
-var js = '</body>'
-//var js_X = '<script type=\"text/javascript\"  async="async" src=\"https://limbopro.com/Adguard/Adblock4limbo.user.js\"></script></body>'
-var js_X = '<script type=\"text/javascript\" src=\"https://limbopro.com/Adguard/Adblock4limbo.user.js\"></script></body>'
+let ele = '<head>';
+let replacex = '<head><link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" /><script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>'
+let ele_1 = '<script>';
+let replacey = '<script type="text/javascript" src="//limbopro.com/Adguard/Adblock4limbo.user.js"></script><script>'
 let body = $response.body
-.replace(css, css_X)
-.replace(js, js_X);
+.replace(ele, replacex)
 $done({body});

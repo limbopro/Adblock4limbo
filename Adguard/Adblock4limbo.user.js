@@ -53,8 +53,8 @@ const imax = {
         goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: ".ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
-        ddrkhidden: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: none !important; opacity: 0!important; pointer-events: none!important;}", // 低端影视
-        ddrkcheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block !important; opacity: 1!important; pointer-events: auto!important;}", // 低端影视
+        ddrk_hidden: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: none !important; opacity: 0!important; pointer-events: none!important;}", // 低端影视
+        ddrk_cheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block !important; opacity: 1!important; pointer-events: auto!important;}", // 低端影视
         jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none!important; pointer-events: none!important;}", // Jable.tv
         test: "img {display: none!important}",
         comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none!important; pointer-events: none!important;}", // 555电影网
@@ -136,7 +136,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.wnacg);
             break;
         case 'ddrk':
-            css_adsRemove(imax.css.ddrkhidden, 50);
+            css_adsRemove(imax.css.ddrk_hidden, 50);
             const ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist,img"
             addListener(ddrk_selector,cheat);
             break;
@@ -303,9 +303,9 @@ function addListener(selector,func) {
 
 /* 是否显示图像 */
 function cheat() {
-    css_adsRemove(imax.css.ddrkcheat);
+    css_adsRemove(imax.css.ddrk_cheat);
     setTimeout(() => {
-        css_adsRemove(imax.css.ddrkhidden);
+        css_adsRemove(imax.css.ddrk_hidden);
     }, 150);
 }
 

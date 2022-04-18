@@ -136,7 +136,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.wnacg);
             break;
         case 'ddrk':
-            css_adsRemove(imax.css.ddrk_hidden, 50);
+            css_adsRemove(imax.css.ddrk_hidden, 150);
             const ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist,img"
             addListener(ddrk_selector,cheat);
             break;

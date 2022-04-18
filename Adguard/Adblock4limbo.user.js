@@ -40,34 +40,34 @@
 /// 一起用 香喷喷
 
 // 一些常量
-const iMax = {
+const imax = {
     js: {
-        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js",
+        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
         avple: "https://limbopro.com/Adguard/avple.js", // avple
         contentFarm: "https://limbopro.com/Adguard/contentFarm/contentFarm.js", // 内容农场
     },
     css: {
+        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.css", // 全局样式表
         libvio: ".hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
         goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: ".ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
-        ddrk: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###']{display:none!important;}", // 低端影视
-        jable: "iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display:none !important;}", // Jable.tv
-        comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important;}", // 555电影网
-        555: "img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
+        ddrkhidden: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: none !important; opacity: 0!important; pointer-events: none!important;}", // 低端影视
+        ddrkcheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block !important; opacity: 1!important; pointer-events: auto!important;}", // 低端影视
+        jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none!important; pointer-events: none!important;}", // Jable.tv
+        test: "img {display: none!important}",
+        comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none!important; pointer-events: none!important;}", // 555电影网
+        dy555: "img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none!important}", // 绅士漫画
         missav: "div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important}", //  MissAV
-        91: "iframe,img.ad_img {display:none!important}", // 91porn
+        porn91: "iframe,img.ad_img {display:none!important}", // 91porn
         pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link" // pornhub
     }
 }
 
-js_adsRemove(iMax.js.functionx);
-// 一些方法
-//iMax.js.functionx.forEach(js_adsRemove);
-//iMax.js.slice(0, 1).forEach(js_adsRemove);
-//iMax.js.forEach(js_adsRemove);
+//tagName_appendChild("link", imax.css.functionx, "head"); // css 外部引用 标签 <link>
+tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
 
 function values() {
     var adsDomain = [
@@ -77,11 +77,11 @@ function values() {
         "avple",
         "18comic",
         "wnacg",
-        "ddrk.me",
+        "ddrk",
         "jable",
         "btbdys",
-        "google.com",
-        "www.bing.com",
+        "google",
+        "bing",
         "duboku",
         "libvio",
         "tvn",
@@ -105,66 +105,67 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
             pornhub_interstitialPass();
-            css_adsRemove(iMax.css.pornhubx, 0);
-            ele_adsRemove(iMax.css.pornhubx)
+            ele_adsRemove(imax.css.pornhubx)
             tag_adsRemove("script", "ads_batch");
             break;
         case 'missav':
             cloudflare_captchaBypass();
-            css_adsRemove(iMax.css.missav);
+            css_adsRemove(imax.css.missav);
             button_dynamicAppend("div.justify-between.items-start", "视频不要停！", "video_loopPlay()", "position:fixed;")
             break;
         case '91porn':
             cloudflare_captchaBypass();
-            css_adsRemove(iMax.css[91], 0);
+            css_adsRemove(imax.css.porn91);
             break;
         case 'avple':
             cloudflare_captchaBypass();
-            css_adsRemove(iMax.css.avple, 0);
-            js_adsRemove(iMax.js.avple);
+            css_adsRemove(imax.css.avple);
+            tagName_appendChild("script", imax.js.avple, "body")
             break;
         case '18comic':
-            css_adsRemove(iMax.css.comic_18, 0)
+            css_adsRemove(imax.css.comic_18)
             _18comic_adsRemove();
             break;
         case 'www.5dy':
-            css_adsRemove(iMax.css[555], 0);
+            css_adsRemove(imax.css.dy555);
             break;
         case 'o8tv':
-            css_adsRemove(iMax.css[555], 0);
+            css_adsRemove(imax.css.dy555);
             break;
         case 'wnacg':
-            css_adsRemove(iMax.css.wnacg, 0);
+            css_adsRemove(imax.css.wnacg);
             break;
-        case 'ddrk.me':
-            css_adsRemove(iMax.css.ddrk, 500);
+        case 'ddrk':
+            css_adsRemove(imax.css.ddrkhidden, 50);
+            const ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist,img"
+            addListener(ddrk_selector,cheat);
             break;
         case 'duboku':
-            js_adsRemove(iMax.js.duboku);
+            tagName_appendChild("script", imax.js.duboku, "body")
             break;
         case 'libvio':
-            css_adsRemove(iMax.css.libvio, 0)
+            css_adsRemove(imax.css.libvio)
             break;
         case 'tvn':
             break;
         case 'jable':
             cloudflare_captchaBypass();
-            css_adsRemove(iMax.css.jable, 0);
+            css_adsRemove(imax.css.jable);
             jable_adsRemove();
             button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:0px;");
             video_delayPlay(1000);
             break;
         case 'btbdys':
-            css_adsRemove(iMax.css.btbdys, 500);
+            css_adsRemove(imax.css.btbdys, 500);
             videoAds_accelerateSkip(0.1);
             hrefAttribute_set();
             break;
-        case 'google.com':
-            js_adsRemove(iMax.js.contentFarm);
-            css_adsRemove(iMax.css.goole, 0);
+        case 'google':
+            js_adsRemove(imax.js.contentFarm);
+            css_adsRemove(imax.css.goole);
             break;
-        case 'www.bing.com':
-            js_adsRemove(iMax.js.contentFarm);
+        case 'bing':
+            js_adsRemove(imax.js.contentFarm);
             break;
         default:
             console.log("Catch Nothing!")
@@ -204,6 +205,8 @@ function ele_adsRemove(selector) {
 // 设置 cookie 并移除特定元素
 function jable_adsRemove() { // Cookie 设定及注入
     document.cookie = "ts_popunder=1";
+    document.cookie = "kt_tcookie=1";
+    document.cookie = "asgsc262182=2";
     var adsDomain = [
         'r.trwl1.com',
         'r.www.com'
@@ -222,7 +225,7 @@ function jable_adsRemove() { // Cookie 设定及注入
     }
 }
 
-// 移除tag标签
+// 移除 某个 tag标签
 function tag_adsRemove(tagname, ele) {
     var i;
     var script = document.getElementsByTagName(tagname);
@@ -290,6 +293,22 @@ function video_delayPlay(time) {
     }, time)
 }
 
+/* 添加监听器 */
+function addListener(selector,func) {
+    var a = document.querySelectorAll(selector);
+    for (let index = 0; index < a.length; index++) {
+        a[index].addEventListener("click", func);
+    }
+}
+
+/* 是否显示图像 */
+function cheat() {
+    css_adsRemove(imax.css.ddrkcheat);
+    setTimeout(() => {
+        css_adsRemove(imax.css.ddrkhidden);
+    }, 150);
+}
+
 // 禁止新页面跳转
 function hrefAttribute_set() {
     var href = document.querySelectorAll("a");
@@ -308,16 +327,30 @@ function js_adsRemove(url) {
     script.src = url;
     document.body.appendChild(script);
     console.log("JavaScript脚本新增完毕！");
-    //document.getElementsByTagName("head")[0].appendChild(script)
 }
 
-// 动态创建引用外部css Cascading Style Sheets
+// 动态创建并引用外部资源 外部样式表 外部脚本
+function tagName_appendChild(tagname, url, where) {
+    var eleCreate = document.createElement(tagname);
+    if (tagname == "script") {
+        eleCreate.src = url;
+    } else if (tagname == "link") {
+        eleCreate.href = url;
+    }
+    if (where == "body") {
+        document.body.appendChild(eleCreate);
+    } else if (where == "head") {
+        document.head.appendChild(eleCreate);
+    }
+}
+
+// 动态创建引用内部资源 内嵌式样式 内嵌式脚本
 function css_adsRemove(newstyle, time) {
     setTimeout(() => {
         var creatcss = document.createElement("style");
         creatcss.innerHTML = newstyle;
         document.getElementsByTagName('head')[0].appendChild(creatcss)
-        //console.log("CSS样式新增完毕！");
+        console.log("CSS样式新增完毕！");
     }, time);
 }
 

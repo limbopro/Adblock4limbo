@@ -4,7 +4,7 @@
 
 [URL Rewrite]
 # missav 播放页弹窗
-^https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8}$ - reject
+https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} - reject
 
 # Avple 弹窗跳转
 ^https?:\/\/assert\.avple\.tv\/file\/avple-images\/ad\.js - reject

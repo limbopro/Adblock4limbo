@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.48
+// @version      0.1.50
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -54,19 +54,19 @@ const imax = {
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: ".ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         ddrk_hidden: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: none !important; opacity: 0!important; pointer-events: none!important;}", // 低端影视
-        ddrk_cheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block !important; opacity: 1!important; pointer-events: auto!important;}", // 低端影视
+        ddrk_cheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block;}", // 低端影视
         jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none!important; pointer-events: none!important;}", // Jable.tv
-        test: "img {display: none!important}",
+        test: "div,img {display: none!important}",
         comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none!important; pointer-events: none!important;}", // 555电影网
         dy555: "img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none!important}", // 绅士漫画
         missav: "div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important}", //  MissAV
         porn91: "iframe,img.ad_img {display:none!important}", // 91porn
-        pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link" // pornhub
+        pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']" // pornhub
     }
 }
 
-//tagName_appendChild("link", imax.css.functionx, "head"); // css 外部引用 标签 <link>
+tagName_appendChild("link", imax.css.functionx, "head"); // css 外部引用 标签 <link>
 tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
 
 function values() {
@@ -136,9 +136,18 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.wnacg);
             break;
         case 'ddrk':
-            css_adsRemove(imax.css.ddrk_hidden, 150);
-            const ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist,img"
-            addListener(ddrk_selector,cheat);
+            var ddrk_url = document.location.href;
+            var regex = /^https:\/\/ddrk.me\/$/g
+            console.log(ddrk_url);
+            if (ddrk_url.indexOf("category") !== -1 || ddrk_url.indexOf("tag") !== -1 || ddrk_url.search(regex) !== -1) {
+                css_adsRemove(imax.css.ddrk_hidden, 100, "holyx");
+                console.log("Category or !index");
+            } else {
+                css_adsRemove(imax.css.ddrk_hidden, 1000, "holyx");
+                var ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist";
+                addListener(ddrk_selector, cheat);
+                console.log("play !video");
+            }
             break;
         case 'duboku':
             tagName_appendChild("script", imax.js.duboku, "body")
@@ -163,6 +172,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'google':
             js_adsRemove(imax.js.contentFarm);
             css_adsRemove(imax.css.goole);
+            var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
+            setAttribute_after(goole_selector);
             break;
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
@@ -226,15 +237,15 @@ function jable_adsRemove() { // Cookie 设定及注入
 }
 
 // 移除 某个 tag标签
-function tag_adsRemove(tagname, ele) {
+function tag_adsRemove(tagname, keyword) {
     var i;
-    var script = document.getElementsByTagName(tagname);
-    for (i = 0; i < script.length; i++) {
-        if (script[i].src.indexOf(ele) !== -1) {
-            script[i].remove()
+    var tag = document.getElementsByTagName(tagname);
+    for (i = 0; i < tag.length; i++) {
+        if (tag[i].src.indexOf(keyword) !== -1) {
+            tag[i].remove()
         }
-        if (script[i].innerHTML.indexOf(ele) !== -1) {
-            script[i].remove()
+        if (tag[i].innerHTML.indexOf(keyword) !== -1) {
+            tag[i].remove()
         }
     }
 }
@@ -294,18 +305,31 @@ function video_delayPlay(time) {
 }
 
 /* 添加监听器 */
-function addListener(selector,func) {
-    var a = document.querySelectorAll(selector);
-    for (let index = 0; index < a.length; index++) {
-        a[index].addEventListener("click", func);
+function addListener(selector, func) {
+    var ele = document.querySelectorAll(selector);
+    for (let index = 0; index < ele.length; index++) {
+        ele[index].addEventListener("click", func);
+        console.log("监听器添加中...")
     }
 }
 
-/* 是否显示图像 */
+/* 添加属性 */
+function setAttribute_after(x) {
+    var index;
+    var ele = document.querySelectorAll(x)
+    for (index = 0; index < ele.length; index++) {
+        ele[index].setAttribute("onclick", "contentFarm_AdsRemove_Auto()");
+        console.log("属性设置中...");
+    }
+}
+
+/* 低端影视是否显示图像 */
 function cheat() {
-    css_adsRemove(imax.css.ddrk_cheat);
+    var ele = document.getElementById("holyx");
+    ele.innerHTML = imax.css.ddrk_cheat;
+    //alert("we r here");
     setTimeout(() => {
-        css_adsRemove(imax.css.ddrk_hidden);
+        ele.innerHTML = imax.css.ddrk_hidden;
     }, 150);
 }
 
@@ -345,9 +369,10 @@ function tagName_appendChild(tagname, url, where) {
 }
 
 // 动态创建引用内部资源 内嵌式样式 内嵌式脚本
-function css_adsRemove(newstyle, time) {
+function css_adsRemove(newstyle, time, id) {
     setTimeout(() => {
         var creatcss = document.createElement("style");
+        creatcss.id = id;
         creatcss.innerHTML = newstyle;
         document.getElementsByTagName('head')[0].appendChild(creatcss)
         console.log("CSS样式新增完毕！");

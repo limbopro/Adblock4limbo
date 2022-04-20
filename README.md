@@ -45,8 +45,6 @@
 
 > S:surge; Q:Quantumultx; T:油猴脚本支持；
 
-**所有还在维护的网站可参阅（即时更新）：** https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
-
 ## 电报讨论群组
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
 > 2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；

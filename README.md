@@ -45,18 +45,19 @@
 
 > S:surge; Q:Quantumultx; T:油猴脚本支持；
 
-## 电报讨论群组及issue
+## 电报讨论群组及 issue
+
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
 > 2. 如你在使用过程中遇到什么问题或有网站需要移除广告，可通过 [issues](https://github.com/limbopro/Adblock4limbo/issues) 提交；
 
-### 格式
+### 提交 issue 格式
 
-> 网站：
-> 对应网页：
-> 出现广告位置的截图：
-> 使用的软件：Chrome/Safari/
-> 做过哪些尝试：
-> 一些细节说明：
+> 1. 网站：
+> 2. 对应网页：
+> 3. 出现广告位置的截图：
+> 4. 使用的软件：Chrome/Safari/
+> 5. 做过哪些尝试：
+> 6. 一些细节说明：
 
 ## 毒奶去广告使用方法（配置步骤）
 

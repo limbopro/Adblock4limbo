@@ -23,9 +23,29 @@
 
 ### 目前在维护的网站目录
 
-**所有还在维护的网站可参阅（即时更新）：**
+|     网站      | 支持软件 |                广告类型                 |
+| :-----------: | :------: | :-------------------------------------: |
+|   低端影视    |  S/Q/T   |         图片/跳过视频广告倒计时         |
+|   哔嘀影视    |  S/Q/T   |         图片/跳过视频广告倒计时         |
+|    独播库     |  S/Q/T   |                  图片                   |
+|    555影院    |  S/Q/T   |                  图片                   |
+|    libvio     |   S/Q    |                  图片                   |
+|    韩剧TV     |  S/Q/T   |        图片（需配合去广告分流）         |
+|  Google/Bing  |  S/Q/T   | 屏蔽搜索结果页的内容农场结果/文字及图片 |
+| 百度搜索/知道 |   S/Q    |                  图片                   |
+|     Jable     |  S/Q/T   |         图片/弹窗/M3U8文件提取          |
+|    MissAV     |  S/Q/T   |    图片/弹窗/离开页面后正常播放视频     |
+|    Pornhub    |  S/Q/T   |    图片/视频广告（需配合去广告分流）    |
+|    Javbus     |   S/Q    |                  图片                   |
+|      91       |  S/Q/T   |    图片/视频广告（需配合去广告分流）    |
+|      4hu      |   S/Q    |                图片/弹窗                |
+|   绅士漫画    |  S/Q/T   |                  图片                   |
+|   禁漫天堂    |  S/Q/T   |                  图片                   |
 
-https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
+
+> S:surge; Q:Quantumultx; T:油猴脚本支持；
+
+**所有还在维护的网站可参阅（即时更新）：** https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
 
 ## 电报讨论群组
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；

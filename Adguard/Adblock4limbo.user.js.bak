@@ -54,7 +54,6 @@ const imax = {
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: ".ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         ddrk_hidden: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: none !important; opacity: 0!important; pointer-events: none!important;}", // 低端影视
-        ddrk_quick: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {opacity: 0!important; pointer-events: none!important;}", // 低端影视
         ddrk_cheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block;}", // 低端影视
         jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none!important; pointer-events: none!important;}", // Jable.tv
         test: "div,img {display: none!important}",
@@ -142,16 +141,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             console.log(ddrk_url);
             if (ddrk_url.indexOf("category") !== -1 || ddrk_url.indexOf("tag") !== -1 || ddrk_url.search(regex) !== -1) {
                 css_adsRemove(imax.css.ddrk_hidden, 100, "holyx");
-                console.log("目前处于主页或分类、标签页面；");
+                console.log("Category or !index");
             } else {
-                css_adsRemove(imax.css.ddrk_quick, 0, "holyx");
-                setTimeout(() => {
-                    var ele_ddrk = document.getElementById("holyx");
-                    ele_ddrk.innerHTML = imax.css.ddrk_hidden;
-                }, 1000);
+                css_adsRemove(imax.css.ddrk_hidden, 1000, "holyx");
                 var ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist";
                 addListener(ddrk_selector, cheat);
-                console.log("目前处于视频播放页面；");
+                console.log("play !video");
             }
             break;
         case 'duboku':
@@ -332,9 +327,9 @@ function setAttribute_after(x) {
 function cheat() {
     var ele = document.getElementById("holyx");
     ele.innerHTML = imax.css.ddrk_cheat;
+    //alert("we r here");
     setTimeout(() => {
         ele.innerHTML = imax.css.ddrk_hidden;
-        console.log("正在切换剧集；")
     }, 150);
 }
 

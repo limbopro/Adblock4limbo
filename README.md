@@ -27,6 +27,12 @@
 
 https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo.sgmodule （以此为准） ；
 
+## 电报讨论群组
+> 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
+> 2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；
+> 3. 帮助我们测试**新的去广告规则**是否普适有效，如某个网站失效页面出现广告请把该页面的链接，页面的截图反馈到群组；
+> 4. 如有任何关于本去广告计划的疑问请在本群反馈；
+
 ## 毒奶去广告使用方法（配置步骤）
 
 ### 毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）
@@ -182,12 +188,6 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 > 3. 喜欢用 Chrome（iOS），且拥有 QuantumultX/Surge，那么毒奶去计划（本计划）会非常适合你；
 > 4. 你也可以根据 [自己动手利用QuantumultX 屏蔽任意网页广告](https://limbopro.com/archives/12782.html) 教程学习进行去网页广告作业；
 > 5. 跟AdGuard浏览器扩展等去广告原理大抵相通的，重在理解；
-
-## 电报讨论群组
-> 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
-> 2. 哪些网站**价值很大广告也很多且实际已影响到了观影体验**（播放按钮遮挡，弹窗，悬浮GIF等等），请务必告诉我们；
-> 3. 帮助我们测试**新的去广告规则**是否普适有效，如某个网站失效页面出现广告请把该页面的链接，页面的截图反馈到群组；
-> 4. 如有任何关于本去广告计划的疑问请在本群反馈；
 
 
 ## 去广告原理悉知

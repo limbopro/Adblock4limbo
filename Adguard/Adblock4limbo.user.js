@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.50
+// @version      0.1.51
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -53,9 +53,7 @@ const imax = {
         goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: ".ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
-        ddrk_hidden: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: none !important; opacity: 0!important; pointer-events: none!important;}", // 低端影视
-        ddrk_quick: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {opacity: 0!important; pointer-events: none!important;}", // 低端影视
-        ddrk_cheat: "[id*='afc_sidebar'], #iaujwnefhw, #fkasjgf, #sajdhfbjwhe, [href*='kst'],[href*='###'] {display: block;}", // 低端影视
+        ddrk: "a[href*=\"/kst6632.com/\"] { pointer-events: none !important; } a[href*=\"/kst6632.com/\"] > img { width: 1px !important; } a[onclick^=\"ClickobayST();\"] {display: none !important} a[href=\"###\"] img:not(#trk_hcaptcha):not([src^=\"https://captcha.su.baidu.com\"]) {display: none !important} a[href^=\"javascript\"] img:not(#trk_hcaptcha):not([src^=\"https://captcha.su.baidu.com\"]) {display: none !important}",
         jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none!important; pointer-events: none!important;}", // Jable.tv
         test: "div,img {display: none!important}",
         comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none!important; pointer-events: none!important;}", // 555电影网
@@ -67,7 +65,7 @@ const imax = {
     }
 }
 
-tagName_appendChild("link", imax.css.functionx, "head"); // css 外部引用 标签 <link>
+//tagName_appendChild("link", imax.css.functionx, "head"); // css 外部引用 标签 <link>
 tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
 
 function values() {
@@ -137,22 +135,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.wnacg);
             break;
         case 'ddrk':
-            var ddrk_url = document.location.href;
-            var regex = /^https:\/\/ddrk.me\/$/g
-            console.log(ddrk_url);
-            if (ddrk_url.indexOf("category") !== -1 || ddrk_url.indexOf("tag") !== -1 || ddrk_url.search(regex) !== -1) {
-                css_adsRemove(imax.css.ddrk_hidden, 100, "holyx");
-                console.log("目前处于主页或分类、标签页面；");
-            } else {
-                css_adsRemove(imax.css.ddrk_quick, 0, "holyx");
-                setTimeout(() => {
-                    var ele_ddrk = document.getElementById("holyx");
-                    ele_ddrk.innerHTML = imax.css.ddrk_hidden;
-                }, 1000);
-                var ddrk_selector = "div.wp-playlist.wp-video-playlist.wp-playlist-light.wpse-playlist";
-                addListener(ddrk_selector, cheat);
-                console.log("目前处于视频播放页面；");
-            }
+            css_adsRemove(imax.css.ddrk);
             break;
         case 'duboku':
             tagName_appendChild("script", imax.js.duboku, "body")

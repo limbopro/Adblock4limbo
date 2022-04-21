@@ -1,1 +1,19 @@
-a[href*="/kst6632.com/"] { pointer-events: none !important; } a[href*="/kst6632.com/"] > img { width: 1px !important; } a[onclick^="ClickobayST();"] {display: none !important} a[href="###"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"]) {display: none !important} a[href^="javascript"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"]) {display: none !important}
+a[href*="/kst6632.com/"] {
+    pointer-events: none !important;
+}
+
+a[href*="/kst6632.com/"]>img {
+    width: 1px !important;
+}
+
+a[onclick^="ClickobayST();"] {
+    display: none !important
+}
+
+a[href="###"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"]) {
+    display: none !important
+}
+
+a[href^="javascript"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"]) {
+    display: none !important
+}

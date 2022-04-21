@@ -10,9 +10,9 @@ _blank[i].target = "_self";
 
 // 禁止跳转商店
 
-var str = document.getElementById("respect-footer").innerHTML; 
+var str = document.getElementById("respect-footer").innerHTML;
 var regx = /https?:\/\/.*?itunes.*?\?mt=8/g
-var strreplace = str.replace( regx , "https://zhihu.baidu.com");
+var strreplace = str.replace(regx, "https://zhihu.baidu.com");
 document.getElementById("respect-footer").innerHTML = strreplace;
 
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.51
+// @version      0.1.53
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！
 // @author       limbopro
@@ -104,7 +104,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
             pornhub_interstitialPass();
-            ele_adsRemove(imax.css.pornhubx)
+            ele_adsRemove(imax.css.pornhubx,0)
             tag_adsRemove("script", "ads_batch");
             break;
         case 'missav':
@@ -136,6 +136,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'ddrk':
             css_adsRemove(imax.css.ddrk);
+            ele_adsRemove("#sajdhfbjwhe",150)
             break;
         case 'duboku':
             tagName_appendChild("script", imax.js.duboku, "body")
@@ -193,12 +194,14 @@ function _18comic_adsRemove() {
 }
 
 // 隐藏广告样式
-function ele_adsRemove(selector) {
+function ele_adsRemove(selector,time) {
     var i;
-    var href_blank = document.querySelectorAll(selector)
-    for (i = 0; i < href_blank.length; i++) {
-        href_blank[i].remove()
-    }
+    setTimeout(() => {
+        var href_blank = document.querySelectorAll(selector)
+        for (i = 0; i < href_blank.length; i++) {
+            href_blank[i].remove()
+        }
+    }, time)
 }
 
 // 设置 cookie 并移除特定元素

@@ -1,9 +1,11 @@
+/* ddrk.me */
 a[href*="/kst6632.com/"] {
     pointer-events: none !important;
 }
 
 a[href*="/kst6632.com/"]>img {
-    width: 1px !important;
+    /*width: 1px !important;*/
+    display: none !important;
 }
 
 a[onclick^="ClickobayST();"] {
@@ -15,5 +17,15 @@ a[href="###"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"]) 
 }
 
 a[href^="javascript"] img:not(#trk_hcaptcha):not([src^="https://captcha.su.baidu.com"]) {
+    display: none !important
+}
+
+/* cn.pornhub.com */
+[rel*='noopener nofollow'],
+a[href^="http: //ads.trafficjunky.net/"],
+.topAdContainter,
+.adsbytrafficjunky,
+.ad-link
+/*a[target='_blank']*/ {
     display: none !important
 }

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.60
+// @version      0.1.64
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -63,6 +63,7 @@ const imax = {
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none!important}", // 绅士漫画
         missav: "div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important}", //  MissAV
         porn91: "iframe,img.ad_img {display:none!important}", // 91porn
+        zhihuAds: "[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
         pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']" // pornhub
     }
 }
@@ -114,7 +115,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             cloudflare_captchaBypass();
             css_adsRemove(imax.css.missav);
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-            button_dynamicAppend("div.justify-between.items-start", "视频不要停！", "video_loopPlay()", "position:fixed;")
+            button_dynamicAppend("div.justify-between.items-start", "视频不要停！", "video_loopPlay()", "position:fixed;", "missavX")
             break;
         case '91porn':
             cloudflare_captchaBypass();
@@ -155,7 +156,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-            button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:0px;");
+            button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:0px;", "jablex");
             video_delayPlay(1000);
             break;
         case 'btbdys':
@@ -167,26 +168,51 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             js_adsRemove(imax.js.contentFarm);
             css_adsRemove(imax.css.goole);
             var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
-            setAttribute_after(goole_selector);
+            setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
             break;
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
             break;
         case 'zhihu':
-            var selector_zhihu = "[class='Button Modal-closeButton Button--plain']";
-            loop_removeButton(selector_zhihu, 10);
-            skipLoggin();
-            href_attributeSet(1000,10);
+            var zhihu_id = "zhihux"
+            button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);
+            button_dynamicAppend("header[role='banner']", "清理中! ♻️", "undefined", "position:fixed; right:0px;", zhihu_id);
+            css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
+            indexLogin();
+            window.onload = href_attributeSet(500, zhihu_id);
+            window.onload = addListener("a[class*='css-'],button[class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']", () => { href_attributeSet(500, zhihu_id) });
+            // 循环判定整个页面 scrollHeight 是否变化
+            var body_scrollHeightCheck = setInterval(() => {
+                var body_then = document.body.scrollHeight;
+                setTimeout(() => {
+                    var body_now = document.body.scrollHeight;
+                    if (body_now > body_then) {
+                        href_attributeSet(500, zhihu_id);
+                    }
+                }, 500);
+            }, 500);
+            // 循环判定评论框是否存在且 scrollHeight 是否有变化
+            var comment_scrollHeightCheck = setInterval(() => {
+                let comment = document.querySelectorAll("div.CommentListV2");
+                if (comment.length > 0) {
+                    var comment_then = comment[0].scrollHeight;
+                    setTimeout(() => {
+                        var comment_now = comment[0].scrollHeight;
+                        if (comment_now > comment_then) {
+                            href_attributeSet(500, zhihu_id);
+                        }
+                    }, 500)
+                }
+            }, 500)
             break;
         default:
-            console.log("Catch Nothing!")
+            console.log("Catch Nothing!");
     }
 }
 
 adsDomain_switch(values()) // 动手吧
 
 // 无数函数及方法的组合使脚本更灵活
-
 // 自动跳过 pornhub interstitial 插页式广告
 function pornhub_interstitialPass() {
     const ele_skip = "[onclick*='clearModalCookie']"
@@ -210,7 +236,8 @@ function ele_adsRemove(selector, time) {
     setTimeout(() => {
         var href_blank = document.querySelectorAll(selector)
         for (i = 0; i < href_blank.length; i++) {
-            href_blank[i].remove()
+            href_blank[i].remove();
+            href_blank[i].style = "display:none ! important; pointer-events: none;"
         }
     }, time)
 }
@@ -253,10 +280,11 @@ function tag_adsRemove(tagname, keyword) {
 }
 
 // 在页面动态插入按钮并赋予 onclick 属性
-function button_dynamicAppend(ele, text, onclick, position) {
+function button_dynamicAppend(ele, text, onclick, position, id) {
     var button = document.createElement("button");
     button.innerHTML = text;
     button.setAttribute("onclick", onclick);
+    button.setAttribute("id", id);
     var button_style_values = position + "padding: 6px 6px 6px 6px; display: inline-block; " +
         "font-size: 15px; color:white; z-index:114154; border-right: 6px solid #38a3fd !important; " +
         "border-left: #292f33 !important; border-top: #292f33 !important; " +
@@ -267,7 +295,8 @@ function button_dynamicAppend(ele, text, onclick, position) {
     button.setAttribute("style", button_style_values);
     var here = document.querySelectorAll(ele);
     if (here.length > 0) {
-        here[0].appendChild(button);
+        here[0].insertBefore(button, here[0].childNodes[3])
+        //here[0].appendChild(button);
         console.log("按钮已添加；")
     }
 }
@@ -307,20 +336,25 @@ function video_delayPlay(time) {
 }
 
 /* 添加监听器 */
-function addListener(selector, func) {
-    var ele = document.querySelectorAll(selector);
-    for (let index = 0; index < ele.length; index++) {
-        ele[index].addEventListener("click", func);
-        console.log("监听器添加中...")
-    }
+function addListener(selector, funx) {
+    setTimeout(() => {
+        var ele = document.querySelectorAll(selector);
+        for (let index = 0; index < ele.length; index++) {
+            ele[index].addEventListener("click", funx, false)
+        }
+    }, 1000)
+}
+
+function loopq() {
+    alert("Got it!")
 }
 
 /* 添加属性 */
-function setAttribute_after(x) {
+function setAttribute_after(x, y) {
     var index;
     var ele = document.querySelectorAll(x)
     for (index = 0; index < ele.length; index++) {
-        ele[index].setAttribute("onclick", "contentFarm_AdsRemove_Auto()");
+        ele[index].setAttribute("onclick", y);
         console.log("属性设置中...");
     }
 }
@@ -347,22 +381,37 @@ function hrefAttribute_set() {
     }
 }
 
-
-function href_attributeSet(time,times) {
-    var initCount = 0;
-    var loop_href = setInterval(() => {
-        setTimeout(() => {
-            var href = document.querySelectorAll("a");
-            var i;
+// 禁止新页面跳转另一种实现 循环
+function href_attributeSet(time, id) {
+    document.getElementById(id).style.background = "black";
+    document.getElementById(id).innerHTML = "清理中! ♻️";
+    setTimeout(() => {
+        // 监控页面是否有新的 button
+        let selector = "button[class*='Button PaginationButton']";
+        let ele_button = document.querySelectorAll(selector);
+        if (ele_button.length > 0) {
+            window.onload = addListener(selector, () => { href_attributeSet(time, id) });
+        }
+        let times = 0;
+        let loop = setInterval(() => {
+            // 修改属性
+            times += 1;
+            let href = document.querySelectorAll("a");
+            let i;
             for (i = 0; i < href.length; i++) {
                 if (href[i].target == "_blank") {
-                    href[i].setAttribute("target", "_self")
+                    href[i].setAttribute("target", "_self");
                 }
             }
-            initCount += 1;
-            if (initCount == times) {
-                clearInterval(loop_href);
-                console.log("清除循环 loop_href")
+            let href_Length = document.querySelectorAll("a[target='_blank']").length;
+            if (href_Length === 0 && times >= 2) {
+                clearInterval(loop);
+                if (document.getElementById(id)) {
+                    document.getElementById(id).innerHTML = "100%! ♻️";
+                    document.getElementById(id).style.background = "green";
+                    console.log("循环第" + times + "遍；")
+                    console.log("清理完毕!");
+                }
             }
         }, time)
     }, time)
@@ -392,18 +441,18 @@ function tagName_appendChild(tagname, url, where) {
 }
 
 // 动态创建引用内部资源 内嵌式样式 内嵌式脚本
-function css_adsRemove(newstyle, time, id) {
+function css_adsRemove(newstyle, delaytime, id) {
     setTimeout(() => {
         var creatcss = document.createElement("style");
         creatcss.id = id;
         creatcss.innerHTML = newstyle;
         document.getElementsByTagName('head')[0].appendChild(creatcss)
         console.log("CSS样式新增完毕！");
-    }, time);
+    }, delaytime);
 }
 
 // 循环模拟模拟点击
-function loop_removeButton(selector, times) {
+function button_dynamicRemove(selector, times) {
     var initCount = 0;
     var loop = setInterval(() => {
         var ele = document.querySelectorAll(selector);
@@ -413,19 +462,21 @@ function loop_removeButton(selector, times) {
         initCount += 1;
         if (initCount == times) {
             clearInterval(loop);
-            console.log("清除循环 loop")
         }
-    }, 500)
+    }, 0)
 }
 
 // 知乎循环跳转绕过登录页
-function skipLoggin() { // 跳转至热门话题 Explore
+function indexLogin() { // 跳转至热门话题 Explore 或 随机
     var url = document.location.href;
-    var explore = "https://www.zhihu.com/explore";
-    var hotTopic = "https://www.zhihu.com/knowledge-plan/hot-question/hot/";
+    var url_list = [
+        "https://www.zhihu.com/knowledge-plan/hot-question/hot/",
+    ]
+    var rand = Math.floor(Math.random() * url_list.length);
+    var url_random = url_list[rand];
     var reg = /^https:\/\/www.zhihu.com\/signin.*/gi;
     if (url.search(reg) !== -1) {
-        window.location = hotTopic;
+        window.location = url_random;
     }
 }
 

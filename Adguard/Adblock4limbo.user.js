@@ -183,10 +183,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window.onload = addListener("a[class*='css-'],button[class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']", () => { href_attributeSet(500, zhihu_id) });
             // 循环判定整个页面 scrollHeight 是否变化
             var body_scrollHeightCheck = setInterval(() => {
-                var body_then = document.body.scrollHeight;
+                var body_scrollHeight_then = document.body.scrollHeight;
                 setTimeout(() => {
-                    var body_now = document.body.scrollHeight;
-                    if (body_now > body_then) {
+                    var body_scrollHeight_now = document.body.scrollHeight;
+                    if (body_scrollHeight_now > body_scrollHeight_then) {
                         href_attributeSet(500, zhihu_id);
                     }
                 }, 500);
@@ -195,10 +195,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             var comment_scrollHeightCheck = setInterval(() => {
                 let comment = document.querySelectorAll("div.CommentListV2");
                 if (comment.length > 0) {
-                    var comment_then = comment[0].scrollHeight;
+                    var comment_scrollHeight_then = comment[0].scrollHeight;
                     setTimeout(() => {
-                        var comment_now = comment[0].scrollHeight;
-                        if (comment_now > comment_then) {
+                        var comment_scrollHeight_now = comment[0].scrollHeight;
+                        if (comment_scrollHeight_now > comment_scrollHeight_then) {
                             href_attributeSet(500, zhihu_id);
                         }
                     }, 500)

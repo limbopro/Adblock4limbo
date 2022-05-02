@@ -37,7 +37,7 @@ DOMAIN-SUFFIX, pc.stgowan.com, reject
 ##### https://avple.tv/  
 DOMAIN-SUFFIX, tapioni.com, reject
 #DOMAIN-SUFFIX, 107iwh.cn:4032, reject
-DOMAIN-SUFFIX, qinhemuye.com:443, reject
+#DOMAIN-SUFFIX, qinhemuye.com:443, reject
 DOMAIN-SUFFIX, 107iwh.cn, reject
 DOMAIN-SUFFIX, hbhuatie.com, reject
 DOMAIN-SUFFIX, qinzhihao.com, reject

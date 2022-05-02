@@ -37,7 +37,7 @@ DOMAIN-SUFFIX, pc.stgowan.com
 ##### https://avple.tv/
 DOMAIN-SUFFIX, tapioni.com
 #DOMAIN-SUFFIX, 107iwh.cn:4032
-DOMAIN-SUFFIX, qinhemuye.com:443
+#DOMAIN-SUFFIX, qinhemuye.com:443
 DOMAIN-SUFFIX, 107iwh.cn
 DOMAIN-SUFFIX, hbhuatie.com
 DOMAIN-SUFFIX, qinzhihao.com

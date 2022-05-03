@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.69
+// @version      0.1.70
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -179,9 +179,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'zhihu':
             var zhihu_id = "zhihux"
             button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);
-            button_dynamicAppend("header[role='banner']", "清理中! ♻️", "undefined", "position:fixed; right:0px;", zhihu_id, 3);
+            //button_dynamicAppend("header[role='banner']", "清理中! ♻️", "undefined", "position:fixed; right:0px;", zhihu_id, 3);
             css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
             indexLogin();
+ 
+            /*
             window.onload = href_attributeSet(500, zhihu_id);
             window.onload = addListener("a[class*='css-'],button[class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']", () => { href_attributeSet(500, zhihu_id) });
             // 循环判定整个页面 scrollHeight 是否变化
@@ -207,6 +209,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 500)
                 }
             }, 500)
+            */
+ 
             break;
         default:
             console.log("Catch Nothing!");

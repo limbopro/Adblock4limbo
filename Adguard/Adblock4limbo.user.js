@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.70
+// @version      0.1.71
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -37,11 +37,11 @@
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
- 
+
 //// 有使用 QuantumultX 和 surge 等代理工具的用户
 // 请参阅 https://limbopro.com/archives/12904.html 配置去广告分流
 /// 一起用 香喷喷
- 
+
 // 一些常量
 const imax = {
     js: {
@@ -68,10 +68,10 @@ const imax = {
         pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']" // pornhub
     }
 }
- 
+
 //tagName_appendChild("link", imax.css.globalcss, "head"); // css 外部引用 标签 <link>
 //tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
- 
+
 function values() {
     var adsDomain = [
         "pornhub",
@@ -92,7 +92,7 @@ function values() {
         "o8tv",
         "zhihu"
     ]
- 
+
     var url = document.location.href;
     console.log("URL : " + url); // 看看当前 URL
     var i;
@@ -104,7 +104,7 @@ function values() {
     }
     return values;
 }
- 
+
 function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
@@ -129,7 +129,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case '18comic':
             css_adsRemove(imax.css.comic_18);
-            button_dynamicRemove("#chk_cover",200);
+            button_dynamicRemove("#chk_cover", 200);
             _18comic_adsRemove();
             break;
         case 'www.5dy':
@@ -154,12 +154,18 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'tvn':
             break;
         case 'jable':
+            var ua = navigator.userAgent.toLowerCase();
+            var mobile = "mobile";
             cloudflare_captchaBypass();
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-            button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
-            button_dynamicAppend("div.my-3", "如何使用?", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
+            if (ua.indexOf(mobile) === -1) {
+                button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
+                button_dynamicAppend("div.my-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
+            } else if (ua.indexOf(mobile) > -1) {
+                button_dynamicAppend("div.my-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: purple !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
+            }
             video_delayPlay(1000);
             break;
         case 'btbdys':
@@ -182,7 +188,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //button_dynamicAppend("header[role='banner']", "清理中! ♻️", "undefined", "position:fixed; right:0px;", zhihu_id, 3);
             css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
             indexLogin();
- 
+
             /*
             window.onload = href_attributeSet(500, zhihu_id);
             window.onload = addListener("a[class*='css-'],button[class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']", () => { href_attributeSet(500, zhihu_id) });
@@ -210,15 +216,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }
             }, 500)
             */
- 
+
             break;
         default:
             console.log("Catch Nothing!");
     }
 }
- 
+
 adsDomain_switch(values()) // 动手吧
- 
+
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告
 function pornhub_interstitialPass() {
@@ -229,14 +235,14 @@ function pornhub_interstitialPass() {
         window.location = href;
     }
 }
- 
+
 // 设置 cookie // 18comic Javascript
 function _18comic_adsRemove() {
     document.cookie = "cover=1";
     document.cookie = "shunt=1";
     document.cookie = "guide=1";
 }
- 
+
 // 隐藏广告样式
 function ele_adsRemove(selector, time) {
     var i;
@@ -248,7 +254,7 @@ function ele_adsRemove(selector, time) {
         }
     }, time)
 }
- 
+
 // 设置 cookie 并移除特定元素
 function jable_adsRemove() { // Cookie 设定及注入
     document.cookie = "ts_popunder=1";
@@ -258,7 +264,7 @@ function jable_adsRemove() { // Cookie 设定及注入
         'r.trwl1.com',
         'r.www.com'
     ];
- 
+
     var i, l;
     for (l = 0; l < adsDomain.length; l++) {
         var css_sel = "a[href*='" + adsDomain[l] + "']";
@@ -271,7 +277,7 @@ function jable_adsRemove() { // Cookie 设定及注入
         }
     }
 }
- 
+
 // 移除 某个 tag标签
 function tag_adsRemove(tagname, keyword) {
     var i;
@@ -285,7 +291,7 @@ function tag_adsRemove(tagname, keyword) {
         }
     }
 }
- 
+
 // 在页面动态插入按钮并赋予 onclick 属性
 function button_dynamicAppend(ele, text, onclick, position, id, array) {
     var button = document.createElement("button");
@@ -307,7 +313,7 @@ function button_dynamicAppend(ele, text, onclick, position, id, array) {
         console.log("按钮已添加；")
     }
 }
- 
+
 // Cloudflare recaptcha 绕过
 function cloudflare_captchaBypass() {
     var title = document.title;
@@ -316,7 +322,7 @@ function cloudflare_captchaBypass() {
         console.log("captchaBypass done;")
     };
 }
- 
+
 /* 循环播放 */
 function video_loopPlay() {
     setInterval(function () {
@@ -329,7 +335,7 @@ function video_loopPlay() {
         }
     }, 1000)
 }
- 
+
 /* 延后播放 */
 function video_delayPlay(time) {
     setTimeout(function () {
@@ -341,7 +347,7 @@ function video_delayPlay(time) {
         }
     }, time)
 }
- 
+
 /* 添加监听器 */
 function addListener(selector, funx) {
     setTimeout(() => {
@@ -351,11 +357,11 @@ function addListener(selector, funx) {
         }
     }, 1000)
 }
- 
+
 function loopq() {
     alert("Got it!")
 }
- 
+
 /* 添加属性 */
 function setAttribute_after(x, y) {
     var index;
@@ -365,7 +371,7 @@ function setAttribute_after(x, y) {
         console.log("属性设置中...");
     }
 }
- 
+
 /* 低端影视是否显示图像 */
 function cheat() {
     var ele = document.getElementById("holyx");
@@ -375,7 +381,7 @@ function cheat() {
         console.log("正在切换剧集；")
     }, 150);
 }
- 
+
 // 禁止新页面跳转
 function hrefAttribute_set() {
     var href = document.querySelectorAll("a");
@@ -387,7 +393,7 @@ function hrefAttribute_set() {
         }
     }
 }
- 
+
 // 禁止新页面跳转另一种实现 循环
 function href_attributeSet(time, id) {
     document.getElementById(id).style.background = "black";
@@ -423,7 +429,7 @@ function href_attributeSet(time, id) {
         }, time)
     }, time)
 }
- 
+
 // 动态创建引用外部js JavaScript
 function js_adsRemove(url) {
     var script = document.createElement("script");
@@ -431,7 +437,7 @@ function js_adsRemove(url) {
     document.body.appendChild(script);
     console.log("JavaScript脚本新增完毕！");
 }
- 
+
 // 动态创建并引用外部资源 外部样式表 外部脚本
 function tagName_appendChild(tagname, url, where) {
     var eleCreate = document.createElement(tagname);
@@ -446,7 +452,7 @@ function tagName_appendChild(tagname, url, where) {
         document.head.appendChild(eleCreate);
     }
 }
- 
+
 // 动态创建引用内部资源 内嵌式样式 内嵌式脚本
 function css_adsRemove(newstyle, delaytime, id) {
     setTimeout(() => {
@@ -457,7 +463,7 @@ function css_adsRemove(newstyle, delaytime, id) {
         console.log("CSS样式新增完毕！");
     }, delaytime);
 }
- 
+
 // 循环模拟模拟点击
 function button_dynamicRemove(selector, times) {
     var initCount = 0;
@@ -472,7 +478,7 @@ function button_dynamicRemove(selector, times) {
         }
     }, 0)
 }
- 
+
 // 知乎循环跳转绕过登录页
 function indexLogin() { // 跳转至热门话题 Explore 或 随机
     let url = document.location.href;
@@ -502,7 +508,7 @@ function indexLogin() { // 跳转至热门话题 Explore 或 随机
     }
     */
 }
- 
+
 /* 视频页广告加速跳过 */
 function videoAds_accelerateSkip(fasterx) {
     // https://github.com/gorhill/uBlock/wiki
@@ -541,6 +547,6 @@ function videoAds_accelerateSkip(fasterx) {
         }
     });
 };
- 
+
 // overridePropertyRead 覆盖属性读取
 /// https://github.com/AdguardTeam/Scriptlets/blob/master/wiki/about-scriptlets.md#set-constant

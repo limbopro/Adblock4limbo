@@ -164,6 +164,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
                 button_dynamicAppend("div.my-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
             } else if (ua.indexOf(mobile) > -1) {
+                button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
                 button_dynamicAppend("div.my-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: purple !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
             }
             video_delayPlay(1000);

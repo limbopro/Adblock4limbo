@@ -2,7 +2,7 @@
 ## Written by limbopro  
 ## https://limbopro.com/archives/12904.html 
 ## https://t.me/Adblock4limbo  
-## Last updated at 05.22.2022
+## Last updated at 06.25.2022
 ## */  
 
 ##### https://javmost.xyz/  
@@ -58,6 +58,10 @@ DOMAIN-SUFFIX, phloxsub73ulata.com, reject
 DOMAIN-SUFFIX, xxxjmp.com, reject
 DOMAIN-SUFFIX, pitrespite.com, reject
 DOMAIN-SUFFIX, alexametrics.com, reject
+DOMAIN-SUFFIX, designslicensedeep.com, reject
+DOMAIN-SUFFIX, a.bestcontentfood.top, reject
+DOMAIN-SUFFIX, tsyndicate.com, reject
+DOMAIN-SUFFIX, cashewsforlife208.com, reject
 
 #####Jable.tv av吃到饱  
 DOMAIN-SUFFIX, a.shukriya90.com, reject

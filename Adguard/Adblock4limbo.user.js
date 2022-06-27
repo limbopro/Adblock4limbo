@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.74
+// @version      0.1.78
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -33,6 +33,8 @@
 // @match        https://www.bing.com/*
 // @match        https://zhuanlan.zhihu.com/*
 // @match        https://www.zhihu.com/*
+// @match        https://www.instagram.com/*
+// @match        https://www.ttsp.tv/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -64,8 +66,10 @@ const imax = {
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none!important}", // 绅士漫画
         missav: "ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important}", //  MissAV
         porn91: "iframe,img.ad_img {display:none!important}", // 91porn
-        zhihuAds: "[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
-        pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']" // pornhub
+        zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
+        pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']", // pornhub
+        instagram: "div._aagw {display:none!important}",
+        ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none!important}"
     }
 }
 
@@ -90,6 +94,8 @@ function values() {
         "tvn",
         "www.5dy",
         "o8tv",
+        "instagram",
+        "ttsp",
         "zhihu"
     ]
 
@@ -119,10 +125,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.missav);
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             if (ua_missav.indexOf(mobile_missav) === -1) {
-            button_dynamicAppend(".space-y-4.my-4", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
-            button_dynamicAppend(".space-y-4.my-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend(".space-y-4.my-4", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
+                button_dynamicAppend(".space-y-4.my-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
-            button_dynamicAppend(".space-y-4.my-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend(".space-y-4.my-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
             }
             break;
         case '91porn':
@@ -181,6 +187,14 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             videoAds_accelerateSkip(0.1);
             hrefAttribute_set();
             break;
+        case 'instagram':
+            // 解除 Instagram 桌面浏览器版禁用右键复制图片
+            css_adsRemove(imax.css.instagram);
+            break;
+        case 'ttsp':
+            css_adsRemove(imax.css.ttsp);
+
+            break;
         case 'google':
             js_adsRemove(imax.js.contentFarm);
             css_adsRemove(imax.css.goole);
@@ -196,6 +210,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //button_dynamicAppend("header[role='banner']", "清理中! ♻️", "undefined", "position:fixed; right:0px;", zhihu_id, 3);
             css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
             indexLogin();
+            addListener("div.TopNavBar-tab-d8yaD", () => { indexLogin() });
 
             /*
             window.onload = href_attributeSet(500, zhihu_id);
@@ -490,19 +505,23 @@ function button_dynamicRemove(selector, times) {
 // 知乎循环跳转绕过登录页
 function indexLogin() { // 跳转至热门话题 Explore 或 随机
     let url = document.location.href;
-    let cssSelector = "a[href='//www.zhihu.com/'],a[href='//www.zhihu.com']";
+    let cssSelector = "a[href='//www.zhihu.com/'],a[href='//www.zhihu.com'],a[href='https://www.zhihu.com']";
     let rewrite_url = "https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour";
     let reg = /^https:\/\/www.zhihu.com\/signin/gi;
     if (url.search(reg) !== -1) {
         window.location = rewrite_url;
     }
-    var ele = document.querySelectorAll(cssSelector)
-    if (ele.length > 0) {
-        let i;
-        for (i = 0; i < ele.length; i++) {
-            ele[i].href = rewrite_url;
+
+    setTimeout(() => { // 延时执行函数优化
+        var ele = document.querySelectorAll(cssSelector)
+        if (ele.length > 0) {
+            let i;
+            for (i = 0; i < ele.length; i++) {
+                ele[i].href = rewrite_url;
+            }
         }
-    }
+    }, 300);
+
     /*
     var url = document.location.href;
     var url_list = [

@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.81
+// @version      0.1.82
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
+// @match        https://ddys.tv/*
 // @match        https://jable.tv/*
 // @match        https://www.btbdys.com/*
 // @match        https://cn.pornhub.com/*
@@ -84,7 +85,7 @@ function values() {
         "avple",
         "18comic",
         "wnacg",
-        "ddrk",
+        "ddys",
         "jable",
         "btbdys",
         "google",
@@ -154,7 +155,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'wnacg':
             css_adsRemove(imax.css.wnacg);
             break;
-        case 'ddrk':
+        case 'ddys':
             css_adsRemove(imax.css.ddrk);
             ele_adsRemove("#sajdhfbjwhe,#kasjbgih", 0)
             break;

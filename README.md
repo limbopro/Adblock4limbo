@@ -48,6 +48,7 @@
 
 
 > S:surge; Q:Quantumultx; T:油猴脚本支持；
+> FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）
 
 ## 电报讨论群组及 issue
 

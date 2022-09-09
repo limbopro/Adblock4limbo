@@ -41,7 +41,7 @@ content farm domains list.
 
 
 var ads_host = [
-"bajiaoyingshi.com",
+"www.bajiaoyingshi.com",
 "005i.com",
 "01-123.com",
 "01-800.cn",

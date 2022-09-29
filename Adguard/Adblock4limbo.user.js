@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.82
+// @version      0.1.85
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -9,6 +9,7 @@
 // @match        https://ddys.tv/*
 // @match        https://jable.tv/*
 // @match        https://www.btbdys.com/*
+// @match        https://www.bdys01.com/*
 // @match        https://cn.pornhub.com/*
 // @match        https://www.pornhub.com/*
 // @match        https://missav.com/*
@@ -35,6 +36,7 @@
 // @match        https://zhuanlan.zhihu.com/*
 // @match        https://www.zhihu.com/*
 // @match        https://www.instagram.com/*
+// @match        https://www.nbys.tv/*
 // @match        https://www.ttsp.tv/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
@@ -69,8 +71,9 @@ const imax = {
         porn91: "iframe,img.ad_img {display:none!important}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
         pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']", // pornhub
-        instagram: "div._aagw {display:none!important}",
-        ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none!important}"
+        instagram: "div._aagw {display:none!important}", // 网页版Instagram不能复制图片的问题
+        ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none!important}",
+        nbys: "#adltop {display:none!important}" // 泥巴影视视频左上角水印贴片
     }
 }
 
@@ -87,7 +90,7 @@ function values() {
         "wnacg",
         "ddys",
         "jable",
-        "btbdys",
+        "bdys",
         "google",
         "bing",
         "duboku",
@@ -97,6 +100,7 @@ function values() {
         "o8tv",
         "instagram",
         "ttsp",
+        "nbys",
         "zhihu"
     ]
 
@@ -126,10 +130,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.missav);
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             if (ua_missav.indexOf(mobile_missav) === -1) {
-                button_dynamicAppend(".space-y-4.mt-4.mb-1", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
-                button_dynamicAppend(".space-y-4.mt-4.mb-1", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
+                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
-                button_dynamicAppend(".space-y-4.mt-4.mb-1", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "免广告播放", "video_Play()", "position:fixed; top:60px;", "missavX", 2);
+                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "暂停", "video_pause()", "position:fixed; top:100px;", "missavJ", 3);
+                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
             }
             break;
         case '91porn':
@@ -157,6 +163,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'ddys':
             css_adsRemove(imax.css.ddrk);
+            //ele_adsRemove("#sajdhfbjwhe,#kasjbgih,.hthb-row", 0)
             ele_adsRemove("#sajdhfbjwhe,#kasjbgih", 0)
             break;
         case 'duboku':
@@ -164,6 +171,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'libvio':
             css_adsRemove(imax.css.libvio)
+            break;
+        case 'nbys':
+            css_adsRemove(imax.css.nbys)
             break;
         case 'tvn':
             break;
@@ -183,7 +193,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
             video_delayPlay(1000);
             break;
-        case 'btbdys':
+        case 'bdys':
             css_adsRemove(imax.css.btbdys, 500);
             videoAds_accelerateSkip(0.1);
             hrefAttribute_set();
@@ -358,6 +368,32 @@ function video_loopPlay() {
             console.log("视频已开启循环播放；")
         }
     }, 1000)
+}
+
+/* 播放 */
+function video_Play() {
+    //setInterval(function () {
+        var ele = ["video[preload='none'],video#player"];
+        var ele_catch = document.querySelectorAll(ele);
+        if (ele_catch.length > 0) {
+            ele_catch[0].play();
+            ele_catch[1].play();
+            console.log("视频已开始播放；")
+        }
+    //}, 1000)
+}
+
+/* 暂停 */
+function video_pause() {
+    //setInterval(function () {
+        var ele = ["video[preload='none'],video#player"];
+        var ele_catch = document.querySelectorAll(ele);
+        if (ele_catch.length > 0) {
+            ele_catch[0].pause();
+            ele_catch[1].pause();
+            console.log("视频已暂停；")
+        }
+    //}, 1000)
 }
 
 /* 延后播放 */

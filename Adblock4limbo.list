@@ -51,7 +51,8 @@ DOMAIN-SUFFIX, s.csyfe.com, reject
 DOMAIN-SUFFIX, qw2v.changshuohr.net, reject
 DOMAIN-SUFFIX, wss.haoyundmn.com, reject
 
-##### missav.com  
+##### missav.com
+DOMAIN-SUFFIX, creative.live.missav.com, reject
 DOMAIN-SUFFIX, cashewsforlife208.com, reject
 DOMAIN-SUFFIX, ingest.sentry, reject
 DOMAIN-SUFFIX, phloxsub73ulata.com, reject
@@ -62,6 +63,12 @@ DOMAIN-SUFFIX, designslicensedeep.com, reject
 DOMAIN-SUFFIX, a.bestcontentfood.top, reject
 DOMAIN-SUFFIX, tsyndicate.com, reject
 DOMAIN-SUFFIX, cashewsforlife208.com, reject
+DOMAIN-SUFFIX, mc7clurd09pla4nrtat7ion.com, reject
+DOMAIN-SUFFIX, e67repidwnfu7gcha.com, reject
+DOMAIN-SUFFIX, mc7clurd09pla4nrtat7ion.com, reject
+DOMAIN-SUFFIX, e67repidwnfu7gcha.com, reject
+DOMAIN-SUFFIX, wuzbhjpvsf.com, reject
+DOMAIN-SUFFIX, a.realsrv.com, reject
 
 #####Jable.tv av吃到饱  
 DOMAIN-SUFFIX, a.shukriya90.com, reject

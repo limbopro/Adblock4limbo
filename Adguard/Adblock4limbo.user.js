@@ -130,12 +130,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.missav);
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             if (ua_missav.indexOf(mobile_missav) === -1) {
-                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
-                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend(".mt-4.mb-3", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
+                button_dynamicAppend(".mt-4.mb-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
-                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "免广告播放", "video_Play()", "position:fixed; top:60px;", "missavX", 2);
-                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "暂停", "video_pause()", "position:fixed; top:100px;", "missavJ", 3);
-                button_dynamicAppend("div.space-y-4.mt-4.mb-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend(".mt-4.mb-3", "免广告播放", "video_Play()", "position:fixed; top:60px;", "missavX", 2);
+                button_dynamicAppend(".mt-4.mb-3", "暂停", "video_pause()", "position:fixed; top:100px;", "missavJ", 3);
+                button_dynamicAppend(".mt-4.mb-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
             }
             break;
         case '91porn':

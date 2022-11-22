@@ -67,7 +67,7 @@ const imax = {
         comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none!important; pointer-events: none!important;}", // 555电影网
         dy555: ".playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none!important}", // 绅士漫画
-        missav: "#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important; pointer-events:none;}", //  MissAV
+        missav: "iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important; pointer-events:none;}", //  MissAV
         porn91: "iframe,img.ad_img {display:none!important}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
         pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']", // pornhub
@@ -131,6 +131,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             if (ua_missav.indexOf(mobile_missav) === -1) {
                 button_dynamicAppend("div.mt-4", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
+                //button_dynamicAppend("div.mt-4", "进入全屏", "fullscreen()", "position:fixed; top:100px;", "missavJ", 3);
                 button_dynamicAppend("div.mt-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
                 button_dynamicAppend("div.mt-4", "免广告播放", "video_Play()", "position:fixed; top:60px;", "missavX", 2);
@@ -138,6 +139,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 button_dynamicAppend("div.mt-4", "暂停", "video_pause()", "position:fixed; top:140px;", "missavJ", 4);
                 button_dynamicAppend("div.mt-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
             }
+            set_cookie("_gat_UA-177787578-7", "")
             break;
         case '91porn':
             cloudflare_captchaBypass();
@@ -189,7 +191,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
                 button_dynamicAppend("div.my-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
             } else if (ua.indexOf(mobile) > -1) {
-                button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
+                //button_dynamicAppend("div.my-3", "点此获取M3U8文件", "repeat_regex.forEach(m3u8_tempt)", "position:absolute; right:92px;", "jablex", 1);
                 button_dynamicAppend("div.my-3", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: purple !important; position:absolute; right:0px; border-right: 6px solid #ffc107 !important;", "how", 2);
             }
             video_delayPlay(1000);
@@ -276,6 +278,11 @@ function _18comic_adsRemove() {
     document.cookie = "cover=1";
     document.cookie = "shunt=1";
     document.cookie = "guide=1";
+}
+
+// 设置 Cookie // 任意
+function set_cookie(name, value) {
+    document.cookie = name + '=' + value + '; Path=/;';
 }
 
 // 隐藏广告样式
@@ -374,39 +381,39 @@ function video_loopPlay() {
 /* 播放 */
 function video_Play() {
     //setInterval(function () {
-        var ele = ["video[preload='none'],video#player"];
-        var ele_catch = document.querySelectorAll(ele);
-        if (ele_catch.length > 0) {
-            ele_catch[0].play();
-            ele_catch[1].play();
-            console.log("视频已开始播放；")
-        }
+    var ele = ["video[preload='none'],video#player"];
+    var ele_catch = document.querySelectorAll(ele);
+    if (ele_catch.length > 0) {
+        ele_catch[0].play();
+        ele_catch[1].play();
+        console.log("视频已开始播放；")
+    }
     //}, 1000)
 }
 
 /* 全屏 */
 function fullscreen() {
     //setInterval(function () {
-        var ele = [".plyr--fullscreen-enabled [data-plyr=fullscreen]"];
-        var ele_catch = document.querySelectorAll(ele);
-        if (ele_catch.length > 0) {
-            ele_catch[0].click();
-            ele_catch[1].click();
-            console.log("视频已全屏；")
-        }
+    var ele = [".plyr--fullscreen-enabled [data-plyr=fullscreen]"];
+    var ele_catch = document.querySelectorAll(ele);
+    if (ele_catch.length > 0) {
+        ele_catch[0].click();
+        //ele_catch[1].click();
+        console.log("视频已全屏；")
+    }
     //}, 1000)
 }
 
 /* 暂停 */
 function video_pause() {
     //setInterval(function () {
-        var ele = ["video[preload='none'],video#player"];
-        var ele_catch = document.querySelectorAll(ele);
-        if (ele_catch.length > 0) {
-            ele_catch[0].pause();
-            ele_catch[1].pause();
-            console.log("视频已暂停；")
-        }
+    var ele = ["video[preload='none'],video#player"];
+    var ele_catch = document.querySelectorAll(ele);
+    if (ele_catch.length > 0) {
+        ele_catch[0].pause();
+        ele_catch[1].pause();
+        console.log("视频已暂停；")
+    }
     //}, 1000)
 }
 

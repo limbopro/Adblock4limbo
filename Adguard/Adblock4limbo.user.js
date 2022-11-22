@@ -131,7 +131,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             if (ua_missav.indexOf(mobile_missav) === -1) {
                 button_dynamicAppend("div.mt-4", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
-                //button_dynamicAppend("div.mt-4", "进入全屏", "fullscreen()", "position:fixed; top:100px;", "missavJ", 3);
                 button_dynamicAppend("div.mt-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
                 button_dynamicAppend("div.mt-4", "免广告播放", "video_Play()", "position:fixed; top:60px;", "missavX", 2);
@@ -139,7 +138,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 button_dynamicAppend("div.mt-4", "暂停", "video_pause()", "position:fixed; top:140px;", "missavJ", 4);
                 button_dynamicAppend("div.mt-4", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; border-right: 6px solid #ffc107 !important;", "how", 3);
             }
-            set_cookie("_gat_UA-177787578-7", "")
+            //missAv_adsRemove();
             break;
         case '91porn':
             cloudflare_captchaBypass();
@@ -278,6 +277,11 @@ function _18comic_adsRemove() {
     document.cookie = "cover=1";
     document.cookie = "shunt=1";
     document.cookie = "guide=1";
+}
+
+// 设置 cookie // missAv Javascript
+function missAv_adsRemove() {
+    document.cookie = "_gat_UA-177787578-7; expires=Thu, 01 Jan 1970 00:00:00 GMT";
 }
 
 // 设置 Cookie // 任意

@@ -383,6 +383,11 @@ function video_loopPlay() {
 }
 
 /* 播放 */
+function window_play() {
+    window.player.play()
+}
+
+/* 播放 */
 function video_Play() {
     //setInterval(function () {
     var ele = ["video[preload='none'],video#player"];
@@ -397,6 +402,15 @@ function video_Play() {
 
 /* 全屏 */
 function fullscreen() {
+    const fullScreen = document.querySelector('button[data-plyr=\'fullscreen\']');
+    fullScreen.click()
+    //fullScreen.requestFullscreen();
+    //const fullScreen = document.querySelector('div.plyr__video-wrapper');
+    //fullScreen.requestFullscreen();
+}
+
+/* 全屏 */
+function fullscreen_backup() {
     //setInterval(function () {
     var ele = [".plyr--fullscreen-enabled [data-plyr=fullscreen]"];
     var ele_catch = document.querySelectorAll(ele);
@@ -406,6 +420,11 @@ function fullscreen() {
         console.log("视频已全屏；")
     }
     //}, 1000)
+}
+
+/* 暂停 */
+function window_pause() {
+    window.player.pause()
 }
 
 /* 暂停 */

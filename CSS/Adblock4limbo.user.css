@@ -1,3 +1,15 @@
+/* 暂时性添加 11.30.2022  */
+/* 
+img,header,a[style*='image'] {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -webkit-filter: grayscale(1);
+}
+*/
+
 /* ddrk.me */
 a[href*="/kst6632.com/"] {
     pointer-events: none !important;
@@ -26,6 +38,8 @@ a[href^="http: //ads.trafficjunky.net/"],
 .topAdContainter,
 .adsbytrafficjunky,
 .ad-link
-/*a[target='_blank']*/ {
+
+/*a[target='_blank']*/
+    {
     display: none !important
 }

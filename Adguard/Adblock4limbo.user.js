@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.91
+// @version      0.1.92
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
+// @match        https://ddys.art/*
 // @match        https://ddys2.me/*
 // @match        https://jable.tv/*
 // @match        https://www.btbdys.com/*
@@ -43,6 +44,10 @@
 // @match        https://www.instagram.com/*
 // @match        https://www.nbys.tv/*
 // @match        https://www.ttsp.tv/*
+// @require      https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.function.js
+// @require      https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/duboku.js
+// @require      https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/avple.js
+// @require      https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -55,10 +60,10 @@
 // 一些常量
 const imax = {
     js: {
-        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
-        duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
-        avple: "https://limbopro.com/Adguard/avple.js", // avple
-        contentFarm: "https://limbopro.com/Adguard/contentFarm/contentFarm.js", // 内容农场
+        functionx: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.function.js", // 全局js
+        duboku: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/duboku.js", // 独播库
+        avple: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/avple.js", // avple
+        contentFarm: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm.js", // 内容农场
     },
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局

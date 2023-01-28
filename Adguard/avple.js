@@ -24,12 +24,12 @@ let total = strx + timex;
 document.cookie = total;
 
 // Cloudflare recaptcha 绕过
-var rTitle = document.title;
-var rKeyword = "Attention";
-var rKeyword2 = "Cloudflare";
-var rValues = rTitle.search(rKeyword);
-var rValues2 = rTitle.search(rKeyword2);
-var rFalse = "0";
-if (rValues >= rFalse || rValues2 >= rFalse) {
+var websiteTitle = document.title;
+var keyword_1 = "Attention";
+var keyword_2 = "Cloudflare";
+var results_1 = websiteTitle.search(keyword_1);
+var results_2 = websiteTitle.search(keyword_2);
+var reference_0 = "0";
+if (results_1 >= reference_0 || results_2 >= reference_0) {
     window.location.reload();
 }

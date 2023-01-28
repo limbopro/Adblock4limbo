@@ -1,7 +1,7 @@
 // 各种 function 的集合
 // 获取M3U8文件资源链接
 
-const repeat_regex = [
+var repeat_regex = [
     "https:?\/\/.*?hls.*?\.m3u8",
     "https:?\/\/.*?phncdn.*?hls.*?\.m3u8"
 ]
@@ -9,11 +9,11 @@ const repeat_regex = [
 function m3u8_tempt(x) {
     var i, url_result;
     var url_regex = new RegExp(x, "gi")
-    const ele = [
+    var ele = [
         "script",
         "a"
     ]
-    const ele_catch = document.querySelectorAll(ele)
+    var ele_catch = document.querySelectorAll(ele)
     for (i = 0; i < ele_catch.length; i++) {
         while ((url_result = url_regex.exec(ele_catch[i].innerHTML)) != null) {
             console.log("Catch it")

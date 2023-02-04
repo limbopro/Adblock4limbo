@@ -76,7 +76,7 @@ const imax = {
         missav: "img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none!important; pointer-events:none;}", //  MissAV
         porn91: "iframe,img.ad_img {display:none!important}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
-        pornhubx: "[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']", // pornhub
+        pornhubx: ".abAlertShown,.abAlertInner,div.abovePlayer,[rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"],.topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank']", // pornhub
         instagram: "div._aagw {display:none!important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none!important}",
         nbys: "#adltop {display:none!important}" // 泥巴影视视频左上角水印贴片
@@ -127,8 +127,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
             pornhub_interstitialPass();
-            ele_adsRemove(imax.css.pornhubx, 0)
+            ele_adsRemove(imax.css.pornhubx, 500)
             tag_adsRemove("script", "ads_batch");
+            button_dynamicAppend("h1.floatLeft,div.title-container.translate", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; border-right: 6px solid #ffc107 !important;", "how", 3);
             break;
         case 'missav':
             //let url = document.location.href;
@@ -138,8 +139,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.missav);
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             if (ua_missav.indexOf(mobile_missav) === -1) {
-                button_dynamicAppend("div[class*=px-3]", "离开页面视频继续播放", "video_loopPlay()", "position:fixed; top:60px;", "missavX", 2);
-                button_dynamicAppend("div[class*=px-3]", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:fixed; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
+                button_dynamicAppend("div[class*=px-3]", "离开页面视频继续播放", "video_loopPlay()", "position:absolute; top:60px;", "missavX", 2);
+                button_dynamicAppend("div[class*=px-3]", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; top:100px; border-right: 6px solid #ffc107 !important;", "how", 3);
                 // 添加监听器
                 addListenerById("missavX", () => { video_loopPlay() });
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
@@ -167,15 +168,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             function current() {
 
                 var d = new Date(),
-                    ear = d.getFullYear(); //获取当前年份 
-                onth = d.getMonth(); //获取当前月份（0——11） 
-                atex = d.getDate(); //获取当前日期（1——31） 
+                    ear = d.getFullYear(); //获取当前年份
+                onth = d.getMonth(); //获取当前月份（0——11）
+                atex = d.getDate(); //获取当前日期（1——31）
 
                 if (d.getHours() < 10) {
                     ours = "0" + d.getHours()
                 }
                 else {
-                    ours = d.getHours(); //获取当前时间（0——23） 
+                    ours = d.getHours(); //获取当前时间（0——23）
                 }
 
                 inutes = d.getMinutes(); //获取当前分钟（0——59）
@@ -734,7 +735,7 @@ function m3u8_tempt(x) {
 }
 
 
-// Google 内容农场 // 
+// Google 内容农场 //
 
 /*
 Written by limbopro
@@ -746,7 +747,7 @@ Last updated at 28/1月/2023/00:00
 
 
 /*
-Google TxT Ads block 
+Google TxT Ads block
 */
 
 function contentFarm_AdsRemove_Auto() {
@@ -764,7 +765,7 @@ function contentFarm_AdsRemove_Auto() {
     //}
 
 
-    /* 
+    /*
     var ads_cssSelectors = ["[data-text-ad],#tvcap"];
     var ads_List = document.querySelectorAll( ads_cssSelectors );
     var ads_Block;

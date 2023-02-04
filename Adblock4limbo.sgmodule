@@ -1,4 +1,4 @@
-#!name=毒奶特供（12.07.2022更新）
+#!name=毒奶特供（02.04.2023更新）
 #!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable等视频网站广告或其他ACG网站网页广告/百度知道广告；
 
 
@@ -63,4 +63,4 @@ cn.pornhub.com = type=http-response,pattern="^https?:\/\/(\w{0,3}(\.){0,1}(pornh
 ttsp = type=http-response,pattern="^https?:\/\/(www.ttsp.tv)(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).*",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% www.ttsp.tv, *.cloudfront.net, www.o8tv.com, www.555dd*.com, www.5dy*, *.tvn.cc, www.wnacg.com, www.wnacg.org, suzihaza.com, 91porn.com, netflav.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, ddys.tv, ddys2.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, assert.avple.tv, avple.tv, *.btbdys.*, www.bdys01.com, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com
+hostname = %APPEND% www.ttsp.tv, *.cloudfront.net, www.o8tv.com, www.555dd*.com, www.5dy*, *.tvn.cc, www.wnacg.com, www.wnacg.org, suzihaza.com, 91porn.com, netflav.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, ddys.tv, ddys.art, ddys2.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, www.pornhub.com, cn.pornhub.com, missav.com, www.libvio.com, 4hu.*, *.gimy.*, *.duboku.*, assert.avple.tv, avple.tv, *.btbdys.*, www.bdys01.com, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com

@@ -1,3 +1,5 @@
+/*
 img[class*="ad_img"] {display: none!important;}
 iframe[src*="ads"] {display: none!important;}
 img[href*='.gif'] {display: none!important;}
+*/

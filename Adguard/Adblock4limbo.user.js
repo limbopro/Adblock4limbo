@@ -44,6 +44,7 @@
 // @match        https://www.instagram.com/*
 // @match        https://www.nbys.tv/*
 // @match        https://www.ttsp.tv/*
+// @match        http://www.tz659.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
@@ -57,10 +58,10 @@
 // 一些常量
 const imax = {
     js: {
-        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
-        duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
-        avple: "https://limbopro.com/Adguard/avple.js", // avple
-        contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
+        //functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
+        //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
+        //avple: "https://limbopro.com/Adguard/avple.js", // avple
+        //contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
     },
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
@@ -80,6 +81,7 @@ const imax = {
         pornhubx: "#header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank'] {height:0px !important; display:none!important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none!important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none!important}",
+        tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none!important}",
         nbys: "#adltop {display:none!important}" // 泥巴影视视频左上角水印贴片
     }
 }
@@ -108,6 +110,7 @@ function values() {
         "o8tv",
         "instagram",
         "ttsp",
+        "tz659",
         "nbys",
         "zhihu"
     ]
@@ -131,7 +134,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.pornhubx, 50, "limbopro");
             tag_adsRemove("script", "ads_batch");
             button_dynamicAppend("h1.floatLeft,div.title-container.translate", "下载视频", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "background: red !important; position:absolute; border-right: 6px solid #ffc107 !important;", "how", 3);
-            pornhub_sidebar_ads()
+            pornhub_sidebar_ads();
             break;
         case 'missav':
             //let url = document.location.href;
@@ -160,6 +163,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case '91porn':
             cloudflare_captchaBypass();
             css_adsRemove(imax.css.porn91);
+            _91porn_videoplay_ads();
             break;
         case 'avple':
             cloudflare_captchaBypass();
@@ -230,7 +234,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'ttsp':
             css_adsRemove(imax.css.ttsp);
-
+            break;
+        case 'tz659':
+            css_adsRemove(imax.css.tz659);
+            //tag_ads_traversal("body", 0)
             break;
         case 'google':
             js_adsRemove(imax.js.contentFarm);
@@ -492,7 +499,7 @@ function addListenerById(id, funx) {
     setTimeout(() => {
         var ele = document.getElementById(id);
         ele.addEventListener("click", funx, false)
-    }, 1000)
+    }, 2000)
 }
 
 
@@ -729,4 +736,30 @@ function pornhub_sidebar_ads() {
             }
         }
     }, 500);
+}
+
+function _91porn_videoplay_ads() {
+    //setTimeout(() => {
+    var ele_parent = ["div"];
+    var ele_children = ["a[target=\"_blank\"]  > img[src*=\".gif\"]"];
+    var i;
+
+    const css_Selctors = document.querySelectorAll(ele_parent);
+
+    for (i = 0; i < css_Selctors.length; i++) {
+        if (css_Selctors[i].querySelectorAll(ele_children).length !== 0) {
+            if (css_Selctors[i].attributes.length == 0) {
+                if (css_Selctors[i].children.length == 9) {
+                    console.log(css_Selctors[i])
+                    css_Selctors[i].style.display = "none";
+                }
+            }
+        }
+    }
+    //}, 500);
+}
+
+function tag_ads_traversal(selector, i) {
+    const css_Selctors = document.querySelectorAll(selector)
+    css_Selctors[i].style.display = "none";
 }

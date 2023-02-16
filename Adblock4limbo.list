@@ -2,7 +2,7 @@
 ## Written by limbopro  
 ## https://limbopro.com/archives/12904.html 
 ## https://t.me/Adblock4limbo  
-## Last updated at 01.06.2023
+## Last updated at 02.08.2023
 ## */  
 
 ##### https://javmost.xyz/  
@@ -276,3 +276,13 @@ DOMAIN, ns2.viglink.com, reject
 DOMAIN, ns3.viglink.com, reject
 DOMAIN, apicdn.viglink.com, reject
 DOMAIN-SUFFIX, cdn.viglink.com, reject
+
+#### www.tz659.com
+host, nggfe.fdgem.com, reject
+host, rthmnj.xyz, reject
+host-suffix, jknmthwd.xyz, reject
+host, koprtgh.omhoa.com, reject
+host, hbftgh.ibjkqnhjwd.xyz, reject
+host, kmopoer.jkbuymjhp.xyz, reject
+host, kmef.ikjwmfeds.xyz, reject
+host, hnrtg.iujkegbpo.xyz, reject

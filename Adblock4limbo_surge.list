@@ -2,287 +2,285 @@
 ## Written by limbopro
 ## https://limbopro.com/archives/12904.htm
 ## https://t.me/Adblock4limbo
-## Last updated at 02.08.20
+## Last updated at 02.18.20
 ## */
 
 ##### https://javmost.xyz/
-#DOMAIN, delivery-node-aziz.voe-network.net
-#DOMAIN, inspiringaccurate.com
-#DOMAIN, track.aso1.net
-DOMAIN-SUFFIX, v3.fstats.xyz
-DOMAIN-SUFFIX, wpadmngr.com
-DOMAIN-SUFFIX, histats.com
-DOMAIN-SUFFIX, son-in-lawmorbid.com
-DOMAIN-SUFFIX, mc.yandex.ru
-DOMAIN-SUFFIX, amung.us
-DOMAIN-SUFFIX, widgets.amung.us
-DOMAIN-SUFFIX, s10.histats.com
-#DOMAIN-SUFFIX, js.wpadmngr.com
-#DOMAIN-SUFFIX, suzihaza.com
-DOMAIN-SUFFIX, eyebrowscrambledlater.com
-DOMAIN-SUFFIX, a.realsrv.com
-DOMAIN-SUFFIX, media.aso1.net
-DOMAIN-SUFFIX, js.wpshsdk.com
-DOMAIN-SUFFIX, js.wpushsdk.com
-DOMAIN-SUFFIX, 9e77b6e6e2.2e3f31faae.com
-DOMAIN-SUFFIX, playersb.com
-#DOMAIN-SUFFIX, dood.la
+#DOMAIN,delivery-node-aziz.voe-network.net
+#DOMAIN,inspiringaccurate.com
+#DOMAIN,track.aso1.net
+DOMAIN-SUFFIX,v3.fstats.xyz
+DOMAIN-SUFFIX,wpadmngr.com
+DOMAIN-SUFFIX,histats.com
+DOMAIN-SUFFIX,son-in-lawmorbid.com
+DOMAIN-SUFFIX,mc.yandex.ru
+DOMAIN-SUFFIX,amung.us
+DOMAIN-SUFFIX,widgets.amung.us
+DOMAIN-SUFFIX,s10.histats.com
+#DOMAIN-SUFFIX,js.wpadmngr.com
+#DOMAIN-SUFFIX,suzihaza.com
+DOMAIN-SUFFIX,eyebrowscrambledlater.com
+DOMAIN-SUFFIX,a.realsrv.com
+DOMAIN-SUFFIX,media.aso1.net
+DOMAIN-SUFFIX,js.wpshsdk.com
+DOMAIN-SUFFIX,js.wpushsdk.com
+DOMAIN-SUFFIX,9e77b6e6e2.2e3f31faae.com
+DOMAIN-SUFFIX,playersb.com
+#DOMAIN-SUFFIX,dood.la
 
 ##### https://www.tvc.cc/
-DOMAIN-SUFFIX, 42yenxh.cn
-DOMAIN-SUFFIX, dwyhup.cn
-DOMAIN-SUFFIX, netdjs.net
-DOMAIN-SUFFIX, pc.stgowan.com
+DOMAIN-SUFFIX,42yenxh.cn
+DOMAIN-SUFFIX,dwyhup.cn
+DOMAIN-SUFFIX,netdjs.net
+DOMAIN-SUFFIX,pc.stgowan.com
 
 ##### https://avple.tv/
-DOMAIN-SUFFIX, tapioni.com
-#DOMAIN-SUFFIX, 107iwh.cn:4032
-#DOMAIN-SUFFIX, qinhemuye.com:443
-DOMAIN-SUFFIX, 107iwh.cn
-DOMAIN-SUFFIX, hbhuatie.com
-DOMAIN-SUFFIX, qinzhihao.com
-DOMAIN-SUFFIX, nby360.com
-DOMAIN-SUFFIX, tfosrv.com
-DOMAIN-SUFFIX, trafforsrv.com
-DOMAIN-SUFFIX, trafficforce.com
-DOMAIN-SUFFIX, s.csyfe.com
+DOMAIN-SUFFIX,tapioni.com
+#DOMAIN-SUFFIX,107iwh.cn:4032
+#DOMAIN-SUFFIX,qinhemuye.com:443
+DOMAIN-SUFFIX,107iwh.cn
+DOMAIN-SUFFIX,hbhuatie.com
+DOMAIN-SUFFIX,qinzhihao.com
+DOMAIN-SUFFIX,nby360.com
+DOMAIN-SUFFIX,tfosrv.com
+DOMAIN-SUFFIX,trafforsrv.com
+DOMAIN-SUFFIX,trafficforce.com
+DOMAIN-SUFFIX,s.csyfe.com
 
 ##### https://www.tvn.cc/ 韩剧TV
-DOMAIN-SUFFIX, qw2v.changshuohr.net
-DOMAIN-SUFFIX, wss.haoyundmn.com
+DOMAIN-SUFFIX,qw2v.changshuohr.net
+DOMAIN-SUFFIX,wss.haoyundmn.com
 
-##### missav.c
-DOMAIN-SUFFIX, creative.live.missav.com
-DOMAIN-SUFFIX, cashewsforlife208.com
-DOMAIN-SUFFIX, ingest.sentry
-DOMAIN-SUFFIX, phloxsub73ulata.com
-DOMAIN-SUFFIX, xxxjmp.com
-DOMAIN-SUFFIX, pitrespite.com
-DOMAIN-SUFFIX, alexametrics.com
-DOMAIN-SUFFIX, designslicensedeep.com
-DOMAIN-SUFFIX, a.bestcontentfood.top
-DOMAIN-SUFFIX, tsyndicate.com
-DOMAIN-SUFFIX, cashewsforlife208.com
-DOMAIN-SUFFIX, e67repidwnfu7gcha.com
-DOMAIN-SUFFIX, mc7clurd09pla4nrtat7ion.com
-DOMAIN-SUFFIX, e67repidwnfu7gcha.com
-DOMAIN-SUFFIX, wuzbhjpvsf.com
-DOMAIN-SUFFIX, a.realsrv.com
+##### missav.com
+DOMAIN-SUFFIX,creative.live.missav.com
+DOMAIN-SUFFIX,cashewsforlife208.com
+DOMAIN-SUFFIX,ingest.sentry
+DOMAIN-SUFFIX,phloxsub73ulata.com
+DOMAIN-SUFFIX,xxxjmp.com
+DOMAIN-SUFFIX,pitrespite.com
+DOMAIN-SUFFIX,alexametrics.com
+DOMAIN-SUFFIX,designslicensedeep.com
+DOMAIN-SUFFIX,a.bestcontentfood.top
+DOMAIN-SUFFIX,tsyndicate.com
+DOMAIN-SUFFIX,cashewsforlife208.com
+DOMAIN-SUFFIX,e67repidwnfu7gcha.com
+DOMAIN-SUFFIX,mc7clurd09pla4nrtat7ion.com
+DOMAIN-SUFFIX,e67repidwnfu7gcha.com
+DOMAIN-SUFFIX,wuzbhjpvsf.com
+DOMAIN-SUFFIX,a.realsrv.com
 
-#####Jable.tv av吃到饱
-DOMAIN-SUFFIX, a.shukriya90.com
-DOMAIN-SUFFIX, a.shukriya90.com
-DOMAIN-SUFFIX, creative.xlviirdr.com
-DOMAIN-SUFFIX, realsrv.com
-DOMAIN-SUFFIX, asewlfjqwlflkew.com
-DOMAIN-SUFFIX, uus52.com
-DOMAIN-SUFFIX, uus58.com
-DOMAIN-SUFFIX, ddmax20.xyz
-DOMAIN-SUFFIX, ads.exosrv.com
-DOMAIN-KEYWORD, exosrv
-DOMAIN-KEYWORD, asewlfjqwlflkew
-DOMAIN-SUFFIX, tyrantdb.com
-DOMAIN-SUFFIX, adserve.work
+##### Jable.tv av吃到饱
+DOMAIN-SUFFIX,a.shukriya90.com
+DOMAIN-SUFFIX,a.shukriya90.com
+DOMAIN-SUFFIX,creative.xlviirdr.com
+DOMAIN-SUFFIX,realsrv.com
+DOMAIN-SUFFIX,asewlfjqwlflkew.com
+DOMAIN-SUFFIX,uus52.com
+DOMAIN-SUFFIX,uus58.com
+DOMAIN-SUFFIX,ddmax20.xyz
+DOMAIN-SUFFIX,ads.exosrv.com
+DOMAIN-KEYWORD,exosrv
+DOMAIN-KEYWORD,asewlfjqwlflkew
+DOMAIN-SUFFIX,tyrantdb.com
+DOMAIN-SUFFIX,adserve.work
 
-#####nfmovies.com 奈菲影视
-DOMAIN-KEYWORD, brushshopy
-DOMAIN-KEYWORD, onenews
-DOMAIN-SUFFIX, s96.cnzz.com
-#DOMAIN-SUFFIX, yabo729.com
+##### nfmovies.com 奈菲影视
+DOMAIN-KEYWORD,brushshopy
+DOMAIN-KEYWORD,onenews
+DOMAIN-SUFFIX,s96.cnzz.com
+#DOMAIN-SUFFIX,yabo729.com
 
-######m.pianku.me/ 手机片库网
-#DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i:4443
-#DOMAIN-KEYWORD, xn--2qux23c9ziyrq
-DOMAIN-SUFFIX, xn--3bs795g.zone
-DOMAIN-SUFFIX, xn--2qux23c9ziyrq.plus
-DOMAIN-SUFFIX, xn--2qux23c9ziyrq.club
-DOMAIN-SUFFIX, xn--xhq9mt12cf5v.xn--io0a7i
-DOMAIN-SUFFIX, ddmax20.xyz
-#DOMAIN-SUFFIX, www.avple.video
-DOMAIN-SUFFIX, xn--3bs795g.link
-DOMAIN-SUFFIX, show.suning.beer
-DOMAIN-SUFFIX, www.govshenzhen.cn
-DOMAIN-SUFFIX, mm9842.com
-DOMAIN-KEYWORD, e2wysbacctt1
-#DOMAIN-SUFFIX, streamtape.com
+###### m.pianku.me/ 手机片库网
+#DOMAIN-SUFFIX,xn--xhq9mt12cf5v.xn--io0a7i:4443
+#DOMAIN-KEYWORD,xn--2qux23c9ziyrq
+DOMAIN-SUFFIX,xn--3bs795g.zone
+DOMAIN-SUFFIX,xn--2qux23c9ziyrq.plus
+DOMAIN-SUFFIX,xn--2qux23c9ziyrq.club
+DOMAIN-SUFFIX,xn--xhq9mt12cf5v.xn--io0a7i
+DOMAIN-SUFFIX,ddmax20.xyz
+#DOMAIN-SUFFIX,www.avple.video
+DOMAIN-SUFFIX,xn--3bs795g.link
+DOMAIN-SUFFIX,show.suning.beer
+DOMAIN-SUFFIX,www.govshenzhen.cn
+DOMAIN-SUFFIX,mm9842.com
+DOMAIN-KEYWORD,e2wysbacctt1
+#DOMAIN-SUFFIX,streamtape.com
 
-#####netflav.com Netflav
-DOMAIN-SUFFIX, maphuahin.com
-DOMAIN-SUFFIX, ggsfq.com
-DOMAIN-SUFFIX, ad.pornimg.xyz
-DOMAIN-SUFFIX, yandex.ru
-DOMAIN-SUFFIX, awaitcola.com
-#DOMAIN-SUFFIX, jsdelivr.net
-DOMAIN-SUFFIX, wine-api.net
-#DOMAIN-KEYWORD, wixsite.com
-DOMAIN-SUFFIX, exosrv.com
-DOMAIN-SUFFIX, juicyads.com
-#DOMAIN-SUFFIX, wixstatic.com
-DOMAIN-SUFFIX, thumb.fvs.io
-DOMAIN-SUFFIX, itnuzleafan.com
-DOMAIN-SUFFIX, oawhaursaith.com
-DOMAIN-SUFFIX, unreshiramor.com
-DOMAIN-SUFFIX, regulationprivilegescan.top
-DOMAIN-SUFFIX, in-page-push.com
-DOMAIN-SUFFIX, farmcrapsubsist.com
+##### netflav.com Netflav
+DOMAIN-SUFFIX,maphuahin.com
+DOMAIN-SUFFIX,ggsfq.com
+DOMAIN-SUFFIX,ad.pornimg.xyz
+DOMAIN-SUFFIX,yandex.ru
+DOMAIN-SUFFIX,awaitcola.com
+#DOMAIN-SUFFIX,jsdelivr.net
+DOMAIN-SUFFIX,wine-api.net
+#DOMAIN-KEYWORD,wixsite.com
+DOMAIN-SUFFIX,exosrv.com
+DOMAIN-SUFFIX,juicyads.com
+#DOMAIN-SUFFIX,wixstatic.com
+DOMAIN-SUFFIX,thumb.fvs.io
+DOMAIN-SUFFIX,itnuzleafan.com
+DOMAIN-SUFFIX,oawhaursaith.com
+DOMAIN-SUFFIX,unreshiramor.com
+DOMAIN-SUFFIX,regulationprivilegescan.top
+DOMAIN-SUFFIX,in-page-push.com
+DOMAIN-SUFFIX,farmcrapsubsist.com
 
-#####avgle.me
-DOMAIN-SUFFIX, jads.co
-DOMAIN-SUFFIX, adxadserv.com
-DOMAIN-SUFFIX, moatads.com
-DOMAIN-SUFFIX, juicyads.in
-DOMAIN-SUFFIX, dtscout.com
+##### avgle.me
+DOMAIN-SUFFIX,jads.co
+DOMAIN-SUFFIX,adxadserv.com
+DOMAIN-SUFFIX,moatads.com
+DOMAIN-SUFFIX,juicyads.in
+DOMAIN-SUFFIX,dtscout.com
 
-#####dilili.tv
-DOMAIN-SUFFIX, 51.la
-DOMAIN-SUFFIX, 51daeka.com
+##### dilili.tv
+DOMAIN-SUFFIX,51.la
+DOMAIN-SUFFIX,51daeka.com
 
-######porn
-DOMAIN-SUFFIX, trafficjunky.com
-
-#####xvideos
+###### porn
+DOMAIN-SUFFIX,trafficjunky.com
 
 ##### ja.nyahentai.com
-DOMAIN-SUFFIX, adserver.juicyads.com
-DOMAIN-SUFFIX, poweredby.jads.co
-DOMAIN-SUFFIX, jads.co
+DOMAIN-SUFFIX,adserver.juicyads.com
+DOMAIN-SUFFIX,poweredby.jads.co
+DOMAIN-SUFFIX,jads.co
 
 ##### www.cocomanhua.com
-DOMAIN-SUFFIX, exdynsrv.com
-#DOMAIN-SUFFIX, cloudfront.net
-DOMAIN-SUFFIX, d227cncaprzd7y.cloudfront.net
-DOMAIN-SUFFIX, d10lumateci472.cloudfront.net
+DOMAIN-SUFFIX,exdynsrv.com
+#DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,d227cncaprzd7y.cloudfront.net
+DOMAIN-SUFFIX,d10lumateci472.cloudfront.net
 
 ##### www.mfkhm.com
-DOMAIN-SUFFIX, new.xiongzhangad.com
+DOMAIN-SUFFIX,new.xiongzhangad.com
 
 ##### m.yhdm.io
-DOMAIN-SUFFIX, dvzk66.cn
-DOMAIN-SUFFIX, pu0glv.cn
+DOMAIN-SUFFIX,dvzk66.cn
+DOMAIN-SUFFIX,pu0glv.cn
 
 ##### hmtv.me
-DOMAIN-SUFFIX, sentry.io
+DOMAIN-SUFFIX,sentry.io
 
 ##### www.porntrex.com/
-#DOMAIN-SUFFIX, ads.bullionyield.com
+#DOMAIN-SUFFIX,ads.bullionyield.com
 
 ##### https://www.zhenbuka.com/
-DOMAIN-KEYWORD, dlads
-DOMAIN, dagonghuzhu.com
-#DOMAIN-SUFFIX, byteimg.com
-DOMAIN-KEYWORD, xxshuyuan
-DOMAIN-KEYWORD, haowanyou
-DOMAIN-KEYWORD, dat8
-DOMAIN-KEYWORD, 112wan
-DOMAIN-KEYWORD, dfkj8
-DOMAIN-KEYWORD, mifengv
-DOMAIN-KEYWORD, lieyou
-DOMAIN-KEYWORD, 789htbet
-DOMAIN-KEYWORD, mdapp09
-DOMAIN-KEYWORD, juruigj
-#DOMAIN-KEYWORD, mmiyue
+DOMAIN-KEYWORD,dlads
+DOMAIN,dagonghuzhu.com
+#DOMAIN-SUFFIX,byteimg.com
+DOMAIN-KEYWORD,xxshuyuan
+DOMAIN-KEYWORD,haowanyou
+DOMAIN-KEYWORD,dat8
+DOMAIN-KEYWORD,112wan
+DOMAIN-KEYWORD,dfkj8
+DOMAIN-KEYWORD,mifengv
+DOMAIN-KEYWORD,lieyou
+DOMAIN-KEYWORD,789htbet
+DOMAIN-KEYWORD,mdapp09
+DOMAIN-KEYWORD,juruigj
+#DOMAIN-KEYWORD,mmiyue
 
 ##### pornhub.com
-DOMAIN-SUFFIX, etahub.com
-DOMAIN-SUFFIX, evtubescms.phncdn.com
+DOMAIN-SUFFIX,etahub.com
+DOMAIN-SUFFIX,evtubescms.phncdn.com
 
 ##### www.hptoon.com
-DOMAIN-SUFFIX, 22c.in
-DOMAIN-SUFFIX, imgxxx.shunxincar.cn
-#DOMAIN-SUFFIX, cc58.oss-cn-beijing.aliyuncs.com
-#DOMAIN-SUFFIX, oss-accelerate.aliyuncs.com
-DOMAIN-SUFFIX, kk.braincf.com
-DOMAIN-SUFFIX, run.haireig.com
-DOMAIN-SUFFIX, d.zxptw.cn
-DOMAIN-SUFFIX, new.xiongzhangad.com
-DOMAIN-SUFFIX, js.users.51.la
-DOMAIN-SUFFIX, maxwellsery.com
-DOMAIN-SUFFIX, annabelleabe.com
+DOMAIN-SUFFIX,22c.in
+DOMAIN-SUFFIX,imgxxx.shunxincar.cn
+#DOMAIN-SUFFIX,cc58.oss-cn-beijing.aliyuncs.com
+#DOMAIN-SUFFIX,oss-accelerate.aliyuncs.com
+DOMAIN-SUFFIX,kk.braincf.com
+DOMAIN-SUFFIX,run.haireig.com
+DOMAIN-SUFFIX,d.zxptw.cn
+DOMAIN-SUFFIX,new.xiongzhangad.com
+DOMAIN-SUFFIX,js.users.51.la
+DOMAIN-SUFFIX,maxwellsery.com
+DOMAIN-SUFFIX,annabelleabe.com
 
 ##### https://91mjw.com/
-DOMAIN-SUFFIX, jidukeji.com
-DOMAIN-SUFFIX, atmib.com
-DOMAIN-SUFFIX, bjzysd.net
-DOMAIN-SUFFIX, iycwl.com
-DOMAIN-SUFFIX, haoyundm.com
-DOMAIN-SUFFIX, qqq123987.site
-DOMAIN-SUFFIX, qweewq2021.online
-DOMAIN-SUFFIX, qqq123987.site
-DOMAIN-SUFFIX, jianxinshanghai.com
-DOMAIN-SUFFIX, js.51toubu.com
-DOMAIN-SUFFIX, img.hylmxing.com
-DOMAIN-SUFFIX, 777.000123456789.space
-DOMAIN-SUFFIX, bhichong.com
-DOMAIN-SUFFIX, tskdfjksldk.sdhsgcj.com
-DOMAIN-SUFFIX, haoyuntj.com
+DOMAIN-SUFFIX,jidukeji.com
+DOMAIN-SUFFIX,atmib.com
+DOMAIN-SUFFIX,bjzysd.net
+DOMAIN-SUFFIX,iycwl.com
+DOMAIN-SUFFIX,haoyundm.com
+DOMAIN-SUFFIX,qqq123987.site
+DOMAIN-SUFFIX,qweewq2021.online
+DOMAIN-SUFFIX,qqq123987.site
+DOMAIN-SUFFIX,jianxinshanghai.com
+DOMAIN-SUFFIX,js.51toubu.com
+DOMAIN-SUFFIX,img.hylmxing.com
+DOMAIN-SUFFIX,777.000123456789.space
+DOMAIN-SUFFIX,bhichong.com
+DOMAIN-SUFFIX,tskdfjksldk.sdhsgcj.com
+DOMAIN-SUFFIX,haoyuntj.com
 
 ##### https://m.biquge.com.cn/
-DOMAIN-SUFFIX, bizhixiang.cn
-DOMAIN-SUFFIX, jspassport.ssl.qhimg.com
+DOMAIN-SUFFIX,bizhixiang.cn
+DOMAIN-SUFFIX,jspassport.ssl.qhimg.com
 
 ##### https://gimy.tv/ 剧迷tv
-DOMAIN-SUFFIX, ads.superad.cc
+DOMAIN-SUFFIX,ads.superad.cc
 
-##### https://javfan.one/ JAVF
-DOMAIN-SUFFIX, isboost.co.jp
-DOMAIN-SUFFIX, boost-next.co.jp
-DOMAIN-SUFFIX, ad-nex.com
-DOMAIN-SUFFIX, aaacompany.net
-DOMAIN-SUFFIX, d24ak3f2b.top
-DOMAIN-SUFFIX, blastcahs.com
+##### https://javfan.one/ JAVFAN
+DOMAIN-SUFFIX,isboost.co.jp
+DOMAIN-SUFFIX,boost-next.co.jp
+DOMAIN-SUFFIX,ad-nex.com
+DOMAIN-SUFFIX,aaacompany.net
+DOMAIN-SUFFIX,d24ak3f2b.top
+DOMAIN-SUFFIX,blastcahs.com
 
 ##### javtsunami.com
-DOMAIN-SUFFIX, alexametrics.com
+DOMAIN-SUFFIX,alexametrics.com
 
 ##### https://hpjav.tv/ JAVFAN #NSFW
-DOMAIN-SUFFIX, wpncdn.com
-DOMAIN-SUFFIX, exosrv.com
-DOMAIN-SUFFIX, jads.co
-DOMAIN-KEYWORD, toateeli
-DOMAIN-KEYWORD, greenplasticdua
-DOMAIN-KEYWORD, bongacash
-DOMAIN-KEYWORD, bngpt
-DOMAIN-KEYWORD, stunninglover
-DOMAIN-KEYWORD, jads
-DOMAIN-KEYWORD, trwl1
-#DOMAIN-KEYWORD, vidoza
-DOMAIN-KEYWORD, o333o
-DOMAIN-SUFFIX, ad.pornimg.xyz
+DOMAIN-SUFFIX,wpncdn.com
+DOMAIN-SUFFIX,exosrv.com
+DOMAIN-SUFFIX,jads.co
+DOMAIN-KEYWORD,toateeli
+DOMAIN-KEYWORD,greenplasticdua
+DOMAIN-KEYWORD,bongacash
+DOMAIN-KEYWORD,bngpt
+DOMAIN-KEYWORD,stunninglover
+DOMAIN-KEYWORD,jads
+DOMAIN-KEYWORD,trwl1
+#DOMAIN-KEYWORD,vidoza
+DOMAIN-KEYWORD,o333o
+DOMAIN-SUFFIX,ad.pornimg.xyz
 
 ##### https://javgg.net/
-DOMAIN-SUFFIX, x2sfa.javgg.eu
-DOMAIN-SUFFIX, xd3r.javgg.eu
-DOMAIN-SUFFIX, p242.plainwrk.name
+DOMAIN-SUFFIX,x2sfa.javgg.eu
+DOMAIN-SUFFIX,xd3r.javgg.eu
+DOMAIN-SUFFIX,p242.plainwrk.name
 
 ##### https://www5.javmost.com/
-DOMAIN-KEYWORD, histats
-DOMAIN-KEYWORD, dtscout
-DOMAIN-KEYWORD, adform
-DOMAIN-KEYWORD, mathtag
-DOMAIN-KEYWORD, pagespeed-mod
-DOMAIN-KEYWORD, in-page-push
+DOMAIN-KEYWORD,histats
+DOMAIN-KEYWORD,dtscout
+DOMAIN-KEYWORD,adform
+DOMAIN-KEYWORD,mathtag
+DOMAIN-KEYWORD,pagespeed-mod
+DOMAIN-KEYWORD,in-page-push
 
 #### disqus
-DOMAIN-SUFFIX, referrer.disqus.com
-DOMAIN-SUFFIX, links.services.disqus.com
-DOMAIN-SUFFIX, disqusads.com
-DOMAIN, glitter.services.disqus.com
-DOMAIN, juggler.services.disqus.com
-DOMAIN, tempest.services.disqus.com
-DOMAIN, mc.viglink.com
-DOMAIN, qa.viglink.com
-DOMAIN, ns4.viglink.com
-DOMAIN, ns2.viglink.com
-DOMAIN, ns3.viglink.com
-DOMAIN, apicdn.viglink.com
-DOMAIN-SUFFIX, cdn.viglink.com
+DOMAIN-SUFFIX,referrer.disqus.com
+DOMAIN-SUFFIX,links.services.disqus.com
+DOMAIN-SUFFIX,disqusads.com
+DOMAIN,glitter.services.disqus.com
+DOMAIN,juggler.services.disqus.com
+DOMAIN,tempest.services.disqus.com
+DOMAIN,mc.viglink.com
+DOMAIN,qa.viglink.com
+DOMAIN,ns4.viglink.com
+DOMAIN,ns2.viglink.com
+DOMAIN,ns3.viglink.com
+DOMAIN,apicdn.viglink.com
+DOMAIN-SUFFIX,cdn.viglink.com
 
-#### www.tz659.c
-host, nggfe.fdgem.com
-host, rthmnj.xyz
-host-suffix, jknmthwd.xyz
-host, koprtgh.omhoa.com
-host, hbftgh.ibjkqnhjwd.xyz
-host, kmopoer.jkbuymjhp.xyz
-host, kmef.ikjwmfeds.xyz
-host, hnrtg.iujkegbpo.xyz
+#### www.tz659.com
+DOMAIN,nggfe.fdgem.com
+DOMAIN,rthmnj.xyz
+DOMAIN-SUFFIX, jknmthwd.xyz
+DOMAIN,koprtgh.omhoa.com
+DOMAIN,hbftgh.ibjkqnhjwd.xyz
+DOMAIN,kmopoer.jkbuymjhp.xyz
+DOMAIN,kmef.ikjwmfeds.xyz
+DOMAIN,hnrtg.iujkegbpo.xyz

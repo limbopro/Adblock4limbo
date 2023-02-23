@@ -2,7 +2,7 @@
 ## Written by limbopro  
 ## https://limbopro.com/archives/12904.html 
 ## https://t.me/Adblock4limbo  
-## Last updated at 02.18.2023
+## Last updated at 02.23.2023
 ## */  
 
 ##### https://javmost.xyz/  
@@ -284,3 +284,16 @@ DOMAIN,hbftgh.ibjkqnhjwd.xyz, reject
 DOMAIN,kmopoer.jkbuymjhp.xyz, reject
 DOMAIN,kmef.ikjwmfeds.xyz, reject
 DOMAIN,hnrtg.iujkegbpo.xyz, reject
+DOMAIN-SUFFIX,tcc.qscvli.com, reject
+DOMAIN,fg.knlk2md.cn, reject
+DOMAIN,tg.gtlpaj.com, reject
+DOMAIN-SUFFIX,gtlpaj.com, reject
+DOMAIN-SUFFIX,knlk2md.cn, reject
+DOMAIN-SUFFIX,7tad.cn, reject
+DOMAIN,tc.vpubmi.com, reject
+DOMAIN-SUFFIX,qoiw1xw.cn, reject
+DOMAIN-SUFFIX,purpleads.io, reject
+
+#### m.yhpdm.com
+DOMAIN-SUFFIX, fg.knlk2md.cn, reject
+DOMAIN-SUFFIX, tg.gtlpaj.com, reject

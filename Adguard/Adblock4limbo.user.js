@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.1.98
+// @version      0.1.99
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -75,7 +75,7 @@ const imax = {
         btbdys: "a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         ddrk: "a[href*=\"/kst6632.com/\"] { pointer-events: none !important; } a[href*=\"/kst6632.com/\"] > img { width: 1px !important; } a[onclick^=\"ClickobayST();\"] {display: none !important} a[href=\"###\"] img:not(#trk_hcaptcha):not([src^=\"https://captcha.su.baidu.com\"]) {display: none !important} a[href^=\"javascript\"] img:not(#trk_hcaptcha):not([src^=\"https://captcha.su.baidu.com\"]) {display: none !important}",
         jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
-        test: "div,img {display: none !important}",
+        test: "*, div,img {display: none !important}",
         comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important; pointer-events: none !important;}", // 555电影网
         dy555: "a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
@@ -198,8 +198,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'ddys':
             css_adsRemove(imax.css.ddrk);
-            //ele_adsRemove("#sajdhfbjwhe,#kasjbgih,.hthb-row", 0)
-            ele_adsRemove("#sajdhfbjwhe,#kasjbgih", 0)
+            //selector_adsRemove("#sajdhfbjwhe,#kasjbgih,.hthb-row", 0)
+            selector_adsRemove("#sajdhfbjwhe,#kasjbgih", 0)
             break;
         case 'duboku':
             tagName_appendChild("script", imax.js.duboku, "body")
@@ -233,9 +233,20 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             video_delayPlay(1000);
             break;
         case 'bdys':
-            css_adsRemove(imax.css.btbdys, 500);
+            css_adsRemove(imax.css.btbdys, 0);
             videoAds_accelerateSkip(0.1);
             hrefAttribute_set();
+            let url = document.location.href;
+            if (url == "https://www.bdys01.com/") {
+                if (!document.getElementById("bdys")) {
+                    button_dynamicAppend("div.container-xl", "隐藏公告", "", "position:inherit; right:92px;", "bdys", 1);
+                    addListenerById("bdys", () => { notice_hidden("div.col-12") });
+                }
+                if (getCookie("hidden") == 1) {
+                    notice_hidden("div.col-12");
+                }
+            }
+
             break;
         case 'instagram':
             // 解除 Instagram 桌面浏览器版禁用右键复制图片
@@ -338,17 +349,18 @@ function set_cookie(name, value) {
     document.cookie = name + '=' + value + '; Path=/;';
 }
 
-// 隐藏广告样式
-function ele_adsRemove(selector, time) {
+// 通过CSS选择器隐藏广告样式
+function selector_adsRemove(selector, time) {
     var i;
     setTimeout(() => {
-        var href_blank = document.querySelectorAll(selector)
-        for (i = 0; i < href_blank.length; i++) {
-            href_blank[i].remove();
-            href_blank[i].style = "display:none ! important; pointer-events: none;"
+        var nodelists = document.querySelectorAll(selector)
+        for (i = 0; i < nodelists.length; i++) {
+            //nodelists[i].remove();
+            nodelists[i].style = "display:none ! important;"
         }
     }, time)
 }
+
 
 // 设置 cookie 并移除特定元素
 function jable_adsRemove() { // Cookie 设定及注入
@@ -364,10 +376,10 @@ function jable_adsRemove() { // Cookie 设定及注入
     for (l = 0; l < adsDomain.length; l++) {
         var css_sel = "a[href*='" + adsDomain[l] + "']";
         var css_catch = [".video-img-box.mb-e-20,.col-6.col-sm-4.col-lg-3"];
-        var huge = document.querySelectorAll(css_catch);
-        for (i = 0; i < huge.length; i++) {
-            if (huge[i].querySelectorAll(css_sel).length > 0) {
-                huge[i].style.display = "none";
+        var nodelists = document.querySelectorAll(css_catch);
+        for (i = 0; i < nodelists.length; i++) {
+            if (nodelists[i].querySelectorAll(css_sel).length > 0) {
+                nodelists[i].style.display = "none";
             }
         }
     }
@@ -780,4 +792,30 @@ function _91porn_videoplay_ads() {
 function tag_ads_traversal(selector, i) {
     const css_Selctors = document.querySelectorAll(selector)
     css_Selctors[i].style.display = "none";
+}
+
+// Get Cookies 获取指定命名的cookie 的值
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+// 哔滴影视隐藏公告广告
+function notice_hidden(selector) { // bdys
+    selector_adsRemove(selector, 0)
+    document.cookie = "hidden=1";
+    console.log("公告状态：已关闭")
+    document.getElementById("bdys").innerHTML = "查看公告";
+    addListenerById("bdys", notice_show);
+}
+
+// 哔滴影视展示公告
+function notice_show() {
+    document.cookie = "hidden=0";
+    location.reload();
 }

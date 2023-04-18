@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.2.3
+// @version      0.2.7
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
+// @match        https://ddys.pro/*
 // @match        https://ddys.art/*
 // @match        https://ddys2.me/*
 // @match        https://jable.tv/*
@@ -51,9 +52,12 @@
 // @match        https://m.yhdmp.cc/*
 // @match        https://m.yhdmp.com/*
 // @match        https://m.yhpdm.com/*
+// @match        https://www.nivod4.tv/*
+// @match        https://m.nivod4.tv/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
-// @run-at       document-end
+// @require https://greasyfork.org/scripts/462993-%E6%B3%A5%E5%B7%B4%E5%BD%B1%E8%A7%86%E5%8E%BB%E5%B9%BF%E5%91%8A-nbys-nivod/code/%E6%B3%A5%E5%B7%B4%E5%BD%B1%E8%A7%86%E5%8E%BB%E5%B9%BF%E5%91%8A(nbysnivod).user.js
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
+// @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
@@ -77,7 +81,6 @@ const imax = {
         btbdys: "a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "#fkasjgf {display: none !important}",
-        //ddrk: "a[href*=\"/kst6632.com/\"] { pointer-events: none !important; } a[href*=\"/kst6632.com/\"] > img { width: 1px !important; } a[onclick^=\"ClickobayST();\"]  #fkasjgf {display: none !important} a[href=\"###\"] img:not(#trk_hcaptcha):not([src^=\"https://captcha.su.baidu.com\"]) {display: none !important} a[href^=\"javascript\"] img:not(#trk_hcaptcha):not([src^=\"https://captcha.su.baidu.com\"]) {display: none !important}",
         jable: "div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
         test: "*, div,img {display: none !important}",
         comic_18: "[target='_blank'],.modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important; pointer-events: none !important;}", // 555电影网
@@ -92,7 +95,7 @@ const imax = {
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
         anime: "div[id*=ad] {display:none !important}",
         yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
-        nbys: "#adltop {display:none !important}", // 泥巴影视视频左上角水印贴片
+        nivod: "#adsbox,.video-ad,#ad,img[src*=download],#adltop,.nav-ads,#adDiv {display:none !important}", // 泥巴影视视频左上角水印贴片 nivod
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -128,6 +131,7 @@ function values() {
         "anime1",
         "yhpdm",
         "yhdmp",
+        "nivod",
         "zhihu"
     ]
 
@@ -216,7 +220,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.libvio)
             break;
         case 'nbys':
-            css_adsRemove(imax.css.nbys)
+            css_adsRemove(imax.css.nivod)
             break;
         case 'tvn':
             break;
@@ -282,10 +286,14 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
             break;
+        case 'nivod': // nbys 泥巴影视
+            videoAds_accelerateSkip(0.1);
+            setConstant('detailParams.is_ad_play', 'false');
+            css_adsRemove(imax.css.nivod);
+            break;
         case 'zhihu':
             var zhihu_id = "zhihux"
             button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);
-            //ele_dynamicAppend("header[role='banner']", "清理中! ♻️", "undefined", "position:fixed; right:0px;", zhihu_id, 3);
             css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
             indexLogin();
             addListener("div.TopNavBar-tab-d8yaD", () => { indexLogin() });
@@ -956,3 +964,163 @@ function window_open_defuser() {
         }
     });
 };
+
+/* 广告视频加速 */
+function setConstant(
+    chain = '',
+    cValue = ''
+) {
+    if (typeof chain !== 'string') { return; }
+    if (chain === '') { return; }
+    const trappedProp = (() => {
+        const pos = chain.lastIndexOf('.');
+        if (pos === -1) { return chain; }
+        return chain.slice(pos + 1);
+    })();
+    if (trappedProp === '') { return; }
+    const thisScript = document.currentScript;
+    const objectDefineProperty = Object.defineProperty.bind(Object);
+    const cloakFunc = fn => {
+        objectDefineProperty(fn, 'name', { value: trappedProp });
+        const proxy = new Proxy(fn, {
+            defineProperty(target, prop) {
+                if (prop !== 'toString') {
+                    return Reflect.deleteProperty(...arguments);
+                }
+                return true;
+            },
+            deleteProperty(target, prop) {
+                if (prop !== 'toString') {
+                    return Reflect.deleteProperty(...arguments);
+                }
+                return true;
+            },
+            get(target, prop) {
+                if (prop === 'toString') {
+                    return function () {
+                        return `function ${trappedProp}() { [native code] }`;
+                    }.bind(null);
+                }
+                return Reflect.get(...arguments);
+            },
+        });
+        return proxy;
+    };
+    if (cValue === 'undefined') {
+        cValue = undefined;
+    } else if (cValue === 'false') {
+        cValue = false;
+    } else if (cValue === 'true') {
+        cValue = true;
+    } else if (cValue === 'null') {
+        cValue = null;
+    } else if (cValue === "''") {
+        cValue = '';
+    } else if (cValue === '[]') {
+        cValue = [];
+    } else if (cValue === '{}') {
+        cValue = {};
+    } else if (cValue === 'noopFunc') {
+        cValue = cloakFunc(function () { });
+    } else if (cValue === 'trueFunc') {
+        cValue = cloakFunc(function () { return true; });
+    } else if (cValue === 'falseFunc') {
+        cValue = cloakFunc(function () { return false; });
+    } else if (/^\d+$/.test(cValue)) {
+        cValue = parseFloat(cValue);
+        if (isNaN(cValue)) { return; }
+        if (Math.abs(cValue) > 0x7FFF) { return; }
+    } else {
+        return;
+    }
+    let aborted = false;
+    const mustAbort = function (v) {
+        if (aborted) { return true; }
+        aborted =
+            (v !== undefined && v !== null) &&
+            (cValue !== undefined && cValue !== null) &&
+            (typeof v !== typeof cValue);
+        return aborted;
+    };
+    // https://github.com/uBlockOrigin/uBlock-issues/issues/156
+    //   Support multiple trappers for the same property.
+    const trapProp = function (owner, prop, configurable, handler) {
+        if (handler.init(owner[prop]) === false) { return; }
+        const odesc = Object.getOwnPropertyDescriptor(owner, prop);
+        let prevGetter, prevSetter;
+        if (odesc instanceof Object) {
+            owner[prop] = cValue;
+            if (odesc.get instanceof Function) {
+                prevGetter = odesc.get;
+            }
+            if (odesc.set instanceof Function) {
+                prevSetter = odesc.set;
+            }
+        }
+        try {
+            objectDefineProperty(owner, prop, {
+                configurable,
+                get() {
+                    if (prevGetter !== undefined) {
+                        prevGetter();
+                    }
+                    return handler.getter(); // cValue
+                },
+                set(a) {
+                    if (prevSetter !== undefined) {
+                        prevSetter(a);
+                    }
+                    handler.setter(a);
+                }
+            });
+        } catch (ex) {
+        }
+    };
+    const trapChain = function (owner, chain) {
+        const pos = chain.indexOf('.');
+        if (pos === -1) {
+            trapProp(owner, chain, false, {
+                v: undefined,
+                init: function (v) {
+                    if (mustAbort(v)) { return false; }
+                    this.v = v;
+                    return true;
+                },
+                getter: function () {
+                    return document.currentScript === thisScript
+                        ? this.v
+                        : cValue;
+                },
+                setter: function (a) {
+                    if (mustAbort(a) === false) { return; }
+                    cValue = a;
+                }
+            });
+            return;
+        }
+        const prop = chain.slice(0, pos);
+        const v = owner[prop];
+        chain = chain.slice(pos + 1);
+        if (v instanceof Object || typeof v === 'object' && v !== null) {
+            trapChain(v, chain);
+            return;
+        }
+        trapProp(owner, prop, true, {
+            v: undefined,
+            init: function (v) {
+                this.v = v;
+                return true;
+            },
+            getter: function () {
+                return this.v;
+            },
+            setter: function (a) {
+                this.v = a;
+                if (a instanceof Object) {
+                    trapChain(a, chain);
+                }
+            }
+        });
+    };
+    trapChain(window, chain);
+}

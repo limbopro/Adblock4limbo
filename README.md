@@ -51,6 +51,8 @@
 
 > FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）
 
+@> Surge 用户如需访问 Pornhub ，请直接访问 cn.pxxxn.com （即中文版），访问 www.pxxxn.com 或会失败；
+
 ## 电报讨论群组及 issue
 
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；

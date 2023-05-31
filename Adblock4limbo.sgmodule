@@ -1,4 +1,4 @@
-#!name=毒奶特供（04.18.2023更新）
+#!name=毒奶特供（06.01.2023更新）
 #!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X ；如去内容农场/百度与谷歌搜索结果页面广告/禁漫天堂/低端影视/片库网/Gimy剧迷网/Pornhub/Jable等视频网站广告或其他ACG网站网页广告/百度知道广告；
 
 
@@ -13,6 +13,9 @@ https?:\/\/[0-9a-zA-Z]{10,16}\.cloudfront\.net\/\?[a-z]{3,7}=\d{4,8} - reject
 
 # Pornhub 视频广告
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
+
+# Pornhub 跳转
+(^https?:\/\/www\.pornhub\.com)(.*) https://cn.pornhub.com$2 307
 
 # javmost 播放页弹窗广告
 ^https:\/\/suzihaza\.com\/asset\/jquery\/slim-3\.2\.min\.js.* - reject

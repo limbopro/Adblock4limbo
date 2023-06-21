@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.3.0
+// @version      0.3.2
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -15,6 +15,7 @@
 // @match        https://www.bdys01.com/*
 // @match        https://www.bdys02.com/*
 // @match        https://www.bdys03.com/*
+// @match        https://www.bdys10.com/*
 // @match        https://cn.pornhub.com/*
 // @match        https://www.pornhub.com/*
 // @match        https://missav.com/*
@@ -157,7 +158,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             pornhub_sidebar_ads();
             break;
         case 'missav':
-            setTimeout(() => {
                 window_open_defuser(); // 打断 window.open 施法
                 var ua_missav = navigator.userAgent.toLowerCase();
                 var mobile_missav = "mobile";
@@ -181,7 +181,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     addListenerById("missavPause", () => { video_pause() }, 1000);
                 }
                 //missAv_adsRemove();
-            }, 2000);
             break;
         case '91porn':
             cloudflare_captchaBypass();
@@ -212,7 +211,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'ddys':
             css_adsRemove(imax.css.ddrk);
-            selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 100)
+            selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 1000)
             break;
         case 'duboku':
             tagName_appendChild("script", imax.js.duboku, "body")
@@ -248,7 +247,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             videoAds_accelerateSkip(0.1);
             hrefAttribute_set();
             var url = document.location.href;
-            if (url == "https://www.bdys01.com/" || url == "https://www.bdys03.com/") {
+            if (url == "https://www.bdys10.com/" || url == "https://www.bdys03.com/") {
                 if (!document.getElementById("bdys")) {
                     ele_dynamicAppend("div.container-xl", "隐藏公告", "position:inherit; right:92px;" + imax.css.button_common, "", "bdys", 1, "button");
                     addListenerById("bdys", () => { notice_hidden("div.col-12") }, 2000);

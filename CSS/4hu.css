@@ -3,3 +3,5 @@
 .wrap + #btmBox {display: none! important;}
 script[src="/static/base.js"] + #couplet {display: none! important;}
 .search + #midBox {display: none! important;}
+.mod.clearfix {display: none! important;}
+dl#randomBox {display: none! important;}

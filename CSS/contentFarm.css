@@ -1,7 +1,5 @@
 /* Google 搜索广告 */
-
-[data-text-ad] ,
-#tvcap {display: none! important;}
+#tvcap,[data-text-ad] {display:none !important} 
 
 /*
 .xSQxL.HDOrGf,.HK0d3e,img,a{

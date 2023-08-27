@@ -76,7 +76,7 @@ const imax = {
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
         libvio: ".hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
-        goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
+        goole: "*, #tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: "a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
@@ -281,7 +281,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             js_adsRemove(imax.js.contentFarm);
             css_adsRemove(imax.css.goole);
             var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
-            setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
+            //setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
             break;
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
@@ -289,14 +289,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'nivod4': // nbys 泥巴影视 
             css_adsRemove(imax.css.nivod);
             hrefAttribute_set();
-            //setConstant('detailParams.is_ad_play', false)
-            //evaldataPrune('entity.commercial')
-            //setConstant('pageData.__banners.0.commercial.mediaUrl', '')
-            //setConstant('pageData.__banners.0.commercial.jumpUrl', '')
-            //setConstant('pageData.__banners.0.commercial.title', '')
-            //setConstant('pageData.__banners.1.commercial.mediaUrl', '')
-            //setConstant('pageData.__banners.1.commercial.jumpUrl', '')
-            //setConstant('pageData.__banners.1.commercial.title', '')
             videoAds_accelerateSkip(0.1);
             break;
         case 'zhihu':

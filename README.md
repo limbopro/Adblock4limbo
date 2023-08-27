@@ -111,6 +111,10 @@ https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surg
 
 > **如何更新模块与外部资源（脚本/分流/重写等）**：模块安装好后，可点击 - **模块** - 找到 **安装的模块** ，左滑 想要更新的模块 - 点击 **更新** ；返回 Surge - **首页** - 点击左上角的 **配置文件名称** - 找到 **编辑** - **外部资源** - **全部更新**； 
 
+### 毒奶去广告计划（for Shadowrocket）
+
+参阅原文：https://limbopro.com/archives/12904.html 在此不再列出；
+
 ### 毒奶去广告计划油猴脚本版；（由毒奶博主维护 for userscript）
 
 特指 Safari for iOS and userscript ；详情参阅：https://limbopro.com/archives/userscripts.html

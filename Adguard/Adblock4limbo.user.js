@@ -95,7 +95,7 @@ const imax = {
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
         anime: "div[id*=ad] {display:none !important}",
         yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
-        nivod: "#adsbox,.video-ad,#ad,img[src*=download],#adltop,.nav-ads,#adDiv {display:none !important}", // 泥巴影视视频左上角水印贴片 nivod
+        nivod: "img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -131,7 +131,7 @@ function values() {
         "anime1",
         "yhpdm",
         "yhdmp",
-        "nivod",
+        "nivod4",
         "zhihu"
     ]
 
@@ -158,29 +158,29 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             pornhub_sidebar_ads();
             break;
         case 'missav':
-                window_open_defuser(); // 打断 window.open 施法
-                var ua_missav = navigator.userAgent.toLowerCase();
-                var mobile_missav = "mobile";
-                cloudflare_captchaBypass();
-                css_adsRemove(imax.css.missav);
-                tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-                let custom_style_values_miss = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;";
-                if (ua_missav.indexOf(mobile_missav) === -1) {
-                    ele_dynamicAppend("div.mt-4", "离开页面视频继续播放", custom_style_values_miss + imax.css.button_common, "video_loopPlay()", "missavX", 2, "button");
-                    ele_dynamicAppend("div.mt-4", "如何下载视频", custom_style_values_miss + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 3, "button");
-                    // 添加监听器
-                    addListenerById("missavX", () => { video_loopPlay() }, 1000);
-                } else if (ua_missav.indexOf(mobile_missav) > -1) {
-                    ele_dynamicAppend("div.mt-4", "免广告播放", custom_style_values_miss + imax.css.button_common, "video_Play()", "missavX", 0, "button");
-                    ele_dynamicAppend("div.mt-4", "进入全屏", custom_style_values_miss + imax.css.button_common, "fullscreen()", "missavFullScreen", 2, "button");
-                    ele_dynamicAppend("div.mt-4", "暂停", custom_style_values_miss + imax.css.button_common, "video_pause()", "missavPause", 1, "button");
-                    ele_dynamicAppend("div.mt-4", "如何下载视频", custom_style_values_miss + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 3, "button");
-                    // 添加监听器
-                    addListenerById("missavX", () => { video_Play() }, 1000);
-                    addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
-                    addListenerById("missavPause", () => { video_pause() }, 1000);
-                }
-                //missAv_adsRemove();
+            window_open_defuser(); // 打断 window.open 施法
+            var ua_missav = navigator.userAgent.toLowerCase();
+            var mobile_missav = "mobile";
+            cloudflare_captchaBypass();
+            css_adsRemove(imax.css.missav);
+            tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
+            let custom_style_values_miss = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;";
+            if (ua_missav.indexOf(mobile_missav) === -1) {
+                ele_dynamicAppend("div.mt-4", "离开页面视频继续播放", custom_style_values_miss + imax.css.button_common, "video_loopPlay()", "missavX", 2, "button");
+                ele_dynamicAppend("div.mt-4", "如何下载视频", custom_style_values_miss + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 3, "button");
+                // 添加监听器
+                addListenerById("missavX", () => { video_loopPlay() }, 1000);
+            } else if (ua_missav.indexOf(mobile_missav) > -1) {
+                ele_dynamicAppend("div.mt-4", "免广告播放", custom_style_values_miss + imax.css.button_common, "video_Play()", "missavX", 0, "button");
+                ele_dynamicAppend("div.mt-4", "进入全屏", custom_style_values_miss + imax.css.button_common, "fullscreen()", "missavFullScreen", 2, "button");
+                ele_dynamicAppend("div.mt-4", "暂停", custom_style_values_miss + imax.css.button_common, "video_pause()", "missavPause", 1, "button");
+                ele_dynamicAppend("div.mt-4", "如何下载视频", custom_style_values_miss + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 3, "button");
+                // 添加监听器
+                addListenerById("missavX", () => { video_Play() }, 1000);
+                addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
+                addListenerById("missavPause", () => { video_pause() }, 1000);
+            }
+            //missAv_adsRemove();
             break;
         case '91porn':
             cloudflare_captchaBypass();
@@ -286,10 +286,18 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
             break;
-        case 'nivod': // nbys 泥巴影视
-            videoAds_accelerateSkip(0.1);
-            setConstant('detailParams.is_ad_play', 'false');
+        case 'nivod4': // nbys 泥巴影视 
             css_adsRemove(imax.css.nivod);
+            hrefAttribute_set();
+            //setConstant('detailParams.is_ad_play', false)
+            //evaldataPrune('entity.commercial')
+            //setConstant('pageData.__banners.0.commercial.mediaUrl', '')
+            //setConstant('pageData.__banners.0.commercial.jumpUrl', '')
+            //setConstant('pageData.__banners.0.commercial.title', '')
+            //setConstant('pageData.__banners.1.commercial.mediaUrl', '')
+            //setConstant('pageData.__banners.1.commercial.jumpUrl', '')
+            //setConstant('pageData.__banners.1.commercial.title', '')
+            videoAds_accelerateSkip(0.1);
             break;
         case 'zhihu':
             var zhihu_id = "zhihux"
@@ -1123,4 +1131,21 @@ function setConstant(
         });
     };
     trapChain(window, chain);
+}
+
+// evaldataPrune
+// https://github.com/gorhill/uBlock/blob/f3b720d532c7a42a6ad5167e3b6f860004b4c2b6/assets/resources/scriptlets.js#L1039
+function evaldataPrune(
+    rawPrunePaths = '',
+    rawNeedlePaths = ''
+) {
+    self.eval = new Proxy(self.eval, {
+        apply(target, thisArg, args) {
+            let data = Reflect.apply(target, thisArg, args);
+            if (typeof data === 'object') {
+                data = objectPrune(data, rawPrunePaths, rawNeedlePaths);
+            }
+            return data;
+        }
+    });
 }

@@ -5,3 +5,4 @@ script[src="/static/base.js"] + #couplet {display: none! important;}
 .search + #midBox {display: none! important;}
 .mod.clearfix {display: none! important;}
 dl#randomBox {display: none! important;}
+dl#listwoBox ,body[ontouchstart] > #topBox, .wrap + #midBox, .wrap + #btmBox, .clearfix.col5.row > #listBox {display: none! important;}

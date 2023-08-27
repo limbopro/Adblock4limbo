@@ -17,8 +17,6 @@ DOMAIN-SUFFIX,mc.yandex.ru, reject
 DOMAIN-SUFFIX,amung.us, reject
 DOMAIN-SUFFIX,widgets.amung.us, reject
 DOMAIN-SUFFIX,s10.histats.com, reject
-#DOMAIN-SUFFIX,js.wpadmngr.com, reject
-#DOMAIN-SUFFIX,suzihaza.com, reject
 DOMAIN-SUFFIX,eyebrowscrambledlater.com, reject
 DOMAIN-SUFFIX,a.realsrv.com, reject
 DOMAIN-SUFFIX,media.aso1.net, reject

@@ -43,7 +43,7 @@
 | 绅士漫画 | S/Q/T/X | 图片  |
 | 禁漫天堂 | S/Q/T/X | 图片  |
 | 知乎  | T/X | PC端未登录状态浏览知乎体验优化 |
-| 泥巴影视 | S/Q/T/X | 仅限PC/Mac/iPad端浏览器食用，未适配手机端浏览器 |
+| 泥巴影视 | S/Q/T/X | 播放页20秒广告加速移除 |
 
 
 > S:surge; Q:Quantumultx; T:油猴脚本支持；X:Shadowrocket支持；

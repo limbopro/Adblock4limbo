@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.3.3
+// @version      0.3.4
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -76,7 +76,7 @@ const imax = {
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
         libvio: ".hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
-        goole: "*, #tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
+        goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: "a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
@@ -289,7 +289,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'nivod4': // nbys 泥巴影视 
             css_adsRemove(imax.css.nivod);
             hrefAttribute_set();
-            videoAds_accelerateSkip(0.1);
+            setConstant('detailParams.is_ad_play', 'false'); // 泥巴影视PC版播放页视频广告加速
+            evaldataPrune(); // 泥巴影视移动版播放页视频广告加速
+            css_adsRemove(imax.css.nbys); // 网页图片广告
+
             break;
         case 'zhihu':
             var zhihu_id = "zhihux"
@@ -1141,3 +1144,15 @@ function evaldataPrune(
         }
     });
 }
+
+// 泥巴影视手机版视频播放前20秒广告跳过
+// https://github.com/AdguardTeam/AdguardFilters/issues/146359
+
+function evaldataPrune() {
+    window.eval = new Proxy(eval, {
+        apply: (a, b, c) => {
+            if (c[0] && c[0].includes("commercial") && c[0].startsWith("(") && c[0].endsWith(")")) { let a = c[0].slice(1).slice(0, -1), b = JSON.parse(a); b.entity?.commercial && (b.entity.commercial = void 0), c[0] = `(${JSON.stringify(b)})` }
+            return Reflect.apply(a, b, c)
+        }
+    })
+};

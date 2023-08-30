@@ -45,6 +45,7 @@
 | 知乎  | T/X | PC端未登录状态浏览知乎体验优化 |
 | 泥巴影视 | S/Q/T/X | 播放页20秒广告加速移除 |
 
+> **完整网站目录及网址**：https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist
 
 > S:surge; Q:Quantumultx; T:油猴脚本支持；X:Shadowrocket支持；
 

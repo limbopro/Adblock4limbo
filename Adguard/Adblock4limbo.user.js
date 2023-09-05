@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.3.4
+// @version      0.3.5
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -55,6 +55,7 @@
 // @match        https://m.yhpdm.com/*
 // @match        https://www.nivod4.tv/*
 // @match        https://m.nivod4.tv/*
+// @match        https://cn1.91short.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
 // @run-at       document-end
@@ -87,7 +88,7 @@ const imax = {
         dy555: "a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         missav: "a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;}", //  MissAV
-        porn91: "img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none ! important; pointer-events: none !important;}", // 91porn
+        porn91: ".ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none ! important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
         pornhubx: "#header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank'] {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
@@ -96,6 +97,7 @@ const imax = {
         anime: "div[id*=ad] {display:none !important}",
         yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
         nivod: "img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
+        _91short: "a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important}",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -132,6 +134,7 @@ function values() {
         "yhpdm",
         "yhdmp",
         "nivod4",
+        "91short",
         "zhihu"
     ]
 
@@ -163,13 +166,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             var mobile_missav = "mobile";
             cloudflare_captchaBypass();
             css_adsRemove(imax.css.missav);
+            //abortCurrentInlineScript('document.createElement','htmlAds');
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             let custom_style_values_miss = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;";
             if (ua_missav.indexOf(mobile_missav) === -1) {
-                ele_dynamicAppend("div.mt-4", "离开页面视频继续播放", custom_style_values_miss + imax.css.button_common, "video_loopPlay()", "missavX", 2, "button");
-                ele_dynamicAppend("div.mt-4", "如何下载视频", custom_style_values_miss + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 3, "button");
+                ele_dynamicAppend("div.mt-4", "离开页面视频继续播放", custom_style_values_miss + imax.css.button_common, "", "missavX", 2, "button");
+                ele_dynamicAppend("div.mt-4", "暂停", custom_style_values_miss + imax.css.button_common, "", "missavP", 3, "button");
+                ele_dynamicAppend("div.mt-4", "如何下载视频", custom_style_values_miss + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 4, "button");
                 // 添加监听器
-                addListenerById("missavX", () => { video_loopPlay() }, 1000);
+                addListenerById("missavX", () => { video_loopPlay('loop') }, 1000);
+                addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
             } else if (ua_missav.indexOf(mobile_missav) > -1) {
                 ele_dynamicAppend("div.mt-4", "免广告播放", custom_style_values_miss + imax.css.button_common, "video_Play()", "missavX", 0, "button");
                 ele_dynamicAppend("div.mt-4", "进入全屏", custom_style_values_miss + imax.css.button_common, "fullscreen()", "missavFullScreen", 2, "button");
@@ -292,6 +298,21 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             setConstant('detailParams.is_ad_play', 'false'); // 泥巴影视PC版播放页视频广告加速
             evaldataPrune(); // 泥巴影视移动版播放页视频广告加速
             css_adsRemove(imax.css.nbys); // 网页图片广告
+            break;
+        case '91short':
+            css_adsRemove(imax.css._91short);
+
+            // 播放页GIF动图广告
+            const player_info = document.querySelectorAll("div.player-info,li.nav-menu-item")
+            for (i = 0; i < player_info.length; i++) {
+                const selector = ['div > a[href][target=_blank]','a[href*=kyty]']
+                if (player_info[i].querySelectorAll(selector).length >= 1) {
+                    player_info[i].style = "display:none ! important;";
+                }
+            }
+
+            // 多余的高
+            document.querySelector("div.highlight-box").style = "display:none ! important;";
 
             break;
         case 'zhihu':
@@ -388,15 +409,11 @@ function jable_adsRemove() { // Cookie 设定及注入
         'r.www.com'
     ];
 
-    var i, l;
-    for (l = 0; l < adsDomain.length; l++) {
-        var css_sel = "a[href*='" + adsDomain[l] + "']";
-        var css_catch = [".video-img-box.mb-e-20,.col-6.col-sm-4.col-lg-3"];
-        var nodelists = document.querySelectorAll(css_catch);
-        for (i = 0; i < nodelists.length; i++) {
-            if (nodelists[i].querySelectorAll(css_sel).length > 0) {
-                nodelists[i].style.display = "none";
-            }
+
+    const div = document.querySelectorAll("div.col-6.col-sm-4.col-lg-3, div.col-6.col-sm-4.col-xl-3, div.col-6.col-sm-4.col-lg-12")
+    for (x = 0; x < div.length; x++) {
+        if (div[x].querySelectorAll("script, a[href*=trackwilltrk]").length >= 1) {
+            div[x].style = "display:none ! important;"
         }
     }
 }
@@ -478,18 +495,34 @@ function cloudflare_captchaBypass() {
     };
 }
 
-/* 循环播放 */
-function video_loopPlay() {
-    setInterval(function () {
-        var ele = ["video[preload='none'],video#player"];
-        var ele_catch = document.querySelectorAll(ele);
-        if (ele_catch.length > 0) {
-            ele_catch[0].play();
-            ele_catch[1].play();
-            console.log("视频已开启循环播放；")
+/* 循环播放 missAV */
+
+var timer = null;
+var timerlist = [];
+
+function video_loopPlay(x) {
+    if (x === 'loop') {
+        intval = window.setInterval(missAv_playbutton, 1000)
+    } else if (x === 'pause') {
+        if (intval) {
+            timerlist.forEach((item, index) => {
+                clearInterval(item);
+            })
+            video_pause();
         }
-    }, 1000)
+    }
 }
+
+function missAv_playbutton() {
+    timerlist.push(intval);
+    var ele_catch = document.querySelectorAll("video[preload='none'],video#player");
+    if (ele_catch.length > 0) {
+        ele_catch[0].play();
+        //ele_catch[1].play();
+        console.log("视频已开启循环播放；")
+    }
+}
+
 
 /* 播放 */
 function window_play() {
@@ -1128,24 +1161,7 @@ function setConstant(
     trapChain(window, chain);
 }
 
-// evaldataPrune
-// https://github.com/gorhill/uBlock/blob/f3b720d532c7a42a6ad5167e3b6f860004b4c2b6/assets/resources/scriptlets.js#L1039
-function evaldataPrune(
-    rawPrunePaths = '',
-    rawNeedlePaths = ''
-) {
-    self.eval = new Proxy(self.eval, {
-        apply(target, thisArg, args) {
-            let data = Reflect.apply(target, thisArg, args);
-            if (typeof data === 'object') {
-                data = objectPrune(data, rawPrunePaths, rawNeedlePaths);
-            }
-            return data;
-        }
-    });
-}
-
-// 泥巴影视手机版视频播放前20秒广告跳过
+// 泥巴影视手机版视频播放前20秒广告跳过 nbys nivod4
 // https://github.com/AdguardTeam/AdguardFilters/issues/146359
 
 function evaldataPrune() {
@@ -1156,3 +1172,140 @@ function evaldataPrune() {
         }
     })
 };
+
+/// abort-current-script.js
+/// alias acs.js
+/// alias abort-current-inline-script.js
+/// alias acis.js
+
+function abortCurrentInlineScript(source, property, search) {
+    const searchRegexp = toRegExp(search);
+    const rid = randomId();
+
+    const SRC_DATA_MARKER = 'data:text/javascript;base64,';
+
+    const getCurrentScript = () => {
+        if ('currentScript' in document) {
+            return document.currentScript;
+        }
+        const scripts = document.getElementsByTagName('script');
+        return scripts[scripts.length - 1];
+    };
+
+    const ourScript = getCurrentScript();
+
+    const abort = () => {
+        const scriptEl = getCurrentScript();
+        if (!scriptEl) {
+            return;
+        }
+        let content = scriptEl.textContent;
+
+        // We are using Node.prototype.textContent property descriptor
+        // to get the real script content
+        // even when document.currentScript.textContent is replaced.
+        // https://github.com/AdguardTeam/Scriptlets/issues/57#issuecomment-593638991
+
+        try {
+            const textContentGetter = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent').get;
+            content = textContentGetter.call(scriptEl);
+        } catch (e) { } // eslint-disable-line no-empty
+
+        // https://github.com/AdguardTeam/Scriptlets/issues/130
+        if (content.length === 0
+            && typeof scriptEl.src !== 'undefined'
+            && scriptEl.src?.startsWith(SRC_DATA_MARKER)) {
+            const encodedContent = scriptEl.src.slice(SRC_DATA_MARKER.length);
+            content = window.atob(encodedContent);
+        }
+
+        if (scriptEl instanceof HTMLScriptElement
+            && content.length > 0
+            && scriptEl !== ourScript
+            && searchRegexp.test(content)) {
+            hit(source);
+            throw new ReferenceError(rid);
+        }
+    };
+
+    const setChainPropAccess = (owner, property) => {
+        const chainInfo = getPropertyInChain(owner, property);
+        let { base } = chainInfo;
+        const { prop, chain } = chainInfo;
+
+        // The scriptlet might be executed before the chain property has been created
+        // (for instance, document.body before the HTML body was loaded).
+        // In this case we're checking whether the base element exists or not
+        // and if not, we simply exit without overriding anything.
+        // e.g. https://github.com/AdguardTeam/Scriptlets/issues/57#issuecomment-575841092
+
+        if (base instanceof Object === false && base === null) {
+            const props = property.split('.');
+            const propIndex = props.indexOf(prop);
+            const baseName = props[propIndex - 1];
+
+            const message = `The scriptlet had been executed before the ${baseName} was loaded.`;
+            logMessage(source, message);
+            return;
+        }
+
+        if (chain) {
+            const setter = (a) => {
+                base = a;
+                if (a instanceof Object) {
+                    setChainPropAccess(a, chain);
+                }
+            };
+            Object.defineProperty(owner, prop, {
+                get: () => base,
+                set: setter,
+            });
+            return;
+        }
+
+        let currentValue = base[prop];
+        let origDescriptor = Object.getOwnPropertyDescriptor(base, prop);
+        if (origDescriptor instanceof Object === false
+            || origDescriptor.get instanceof Function === false) {
+            currentValue = base[prop];
+            origDescriptor = undefined;
+        }
+
+        const descriptorWrapper = Object.assign(getDescriptorAddon(), {
+            currentValue,
+            get() {
+                if (!this.isAbortingSuspended) {
+                    this.isolateCallback(abort);
+                }
+                if (origDescriptor instanceof Object) {
+                    return origDescriptor.get.call(base);
+                }
+                return this.currentValue;
+            },
+            set(newValue) {
+                if (!this.isAbortingSuspended) {
+                    this.isolateCallback(abort);
+                }
+                if (origDescriptor instanceof Object) {
+                    origDescriptor.set.call(base, newValue);
+                } else {
+                    this.currentValue = newValue;
+                }
+            },
+        });
+
+        setPropertyAccess(base, prop, {
+            // Call wrapped getter and setter to keep isAbortingSuspended & isolateCallback values
+            get() {
+                return descriptorWrapper.get.call(descriptorWrapper);
+            },
+            set(newValue) {
+                descriptorWrapper.set.call(descriptorWrapper, newValue);
+            },
+        });
+    };
+
+    setChainPropAccess(window, property);
+
+    window.onerror = createOnErrorHandler(rid).bind();
+}

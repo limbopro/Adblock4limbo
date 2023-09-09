@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.3.5
+// @version      0.3.6
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -97,7 +97,7 @@ const imax = {
         anime: "div[id*=ad] {display:none !important}",
         yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
         nivod: "img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
-        _91short: "a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important}",
+        _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -305,7 +305,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             // 播放页GIF动图广告
             const player_info = document.querySelectorAll("div.player-info,li.nav-menu-item")
             for (i = 0; i < player_info.length; i++) {
-                const selector = ['div > a[href][target=_blank]','a[href*=kyty]']
+                const selector = ['div > a[href][target=_blank]', 'a[href*=kyty]']
                 if (player_info[i].querySelectorAll(selector).length >= 1) {
                     player_info[i].style = "display:none ! important;";
                 }
@@ -313,6 +313,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             // 多余的高
             document.querySelector("div.highlight-box").style = "display:none ! important;";
+            addEventListener_defuser("touchend"); // 打断监听器
 
             break;
         case 'zhihu':
@@ -1309,3 +1310,46 @@ function abortCurrentInlineScript(source, property, search) {
 
     window.onerror = createOnErrorHandler(rid).bind();
 }
+
+
+
+// https://github.com/gorhill/uBlock/wiki/Resources-Library#addeventlistener-defuserjs-
+function addEventListener_defuser() {
+    let needle1 = '{{1}}';
+    if (needle1 === '' || needle1 === '{{1}}') {
+        needle1 = '.?';
+    } else if (/^\/.+\/$/.test(needle1)) {
+        needle1 = needle1.slice(1, -1);
+    } else {
+        needle1 = needle1.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    needle1 = new RegExp(needle1);
+    let needle2 = '{{2}}';
+    if (needle2 === '' || needle2 === '{{2}}') {
+        needle2 = '.?';
+    } else if (/^\/.+\/$/.test(needle2)) {
+        needle2 = needle2.slice(1, -1);
+    } else {
+        needle2 = needle2.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    needle2 = new RegExp(needle2);
+    self.EventTarget.prototype.addEventListener = new Proxy(
+        self.EventTarget.prototype.addEventListener,
+        {
+            apply: function (target, thisArg, args) {
+                let type, handler;
+                try {
+                    type = String(args[0]);
+                    handler = String(args[1]);
+                } catch (ex) {
+                }
+                if (
+                    needle1.test(type) === false ||
+                    needle2.test(handler) === false
+                ) {
+                    return target.apply(thisArg, args);
+                }
+            }
+        }
+    );
+};

@@ -56,6 +56,7 @@
 // @match        https://www.nivod4.tv/*
 // @match        https://m.nivod4.tv/*
 // @match        https://cn1.91short.com/*
+// @match        https://xiaobaotv.net/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
 // @run-at       document-end
@@ -98,6 +99,7 @@ const imax = {
         yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
         nivod: "img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
+        xiaobaotv: "",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -135,6 +137,7 @@ function values() {
         "yhdmp",
         "nivod4",
         "91short",
+        "xiaobaotv",
         "zhihu"
     ]
 
@@ -316,6 +319,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             addEventListener_defuser("touchend"); // 打断监听器
 
             break;
+
+        case 'xiaobaotv':
+            // nothing to do.
+            break;
+
         case 'zhihu':
             var zhihu_id = "zhihux"
             button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);

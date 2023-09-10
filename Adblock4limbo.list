@@ -2,7 +2,7 @@
 ## Written by limbopro  
 ## https://limbopro.com/archives/12904.html 
 ## https://t.me/Adblock4limbo  
-## Last updated at 09.09.2023
+## Last updated at 09.10.2023
 ## */  
 
 ##### https://javmost.xyz/  
@@ -302,6 +302,11 @@ DOMAIN-SUFFIX, dghhot.com, reject
 DOMAIN-SUFFIX, tarqk5.com, reject
 DOMAIN-SUFFIX, lhiefl.com, reject
 DOMAIN-SUFFIX, ioacfu.com, reject
+
+#### https://xiaobaotv.net/
+DOMAIN-SUFFIX, exemptambientcream.com, reject
+DOMAIN-SUFFIX, catdomepimyth.com, reject
+
 
 #### Guard Advertising.list 神机
 #### https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list

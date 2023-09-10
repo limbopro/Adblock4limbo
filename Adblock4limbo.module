@@ -1,6 +1,6 @@
-#!name=毒奶特供（09.05.2023更新）
+#!name=毒奶特供（09.10.2023更新）
 #!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X / Shadowrocket/ 油猴 - Tampermonkey ；如去内容农场/泥巴影视/低端影视/哔滴影视/Jable/Missav/Pornhub/91../禁漫天堂/百度与谷歌搜索结果页面广告/片库网/Gimy剧迷网等视频网站广告或其他ACG网站网页广告/百度知道广告；
-#!重写配置最后更新于 09.05.2023；
+#!重写配置最后更新于 09.10.2023；
 #!讨论组 https://t.me/Adblock4limbo ；
 #!毒奶博客 https://limbopro.com；
 #!仅供个人及极小部分QX/Surge/Shadowrocket用户使用；
@@ -44,6 +44,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js reject
 
 [Script]
 
+小宝影视(xiaobaotv.net) = type=http-response , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , pattern=^https?:\/\/(xiaobaotv\.(net|com))(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* , max-size=-1 , requires-body=true , timeout=10 , script-update-interval=0 , enable=true
 91short(cn1.91short.com) = type=http-response , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , pattern=^https?:\/\/(cn1|www)\.(91short\.com)(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* , max-size=-1 , requires-body=true , timeout=10 , script-update-interval=0 , enable=true
 泥巴影视(Nivod4.tv) = type=http-response , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , pattern=^https?:\/\/(www|m)\.(nivod4\.tv)(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|php|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* , max-size=-1 , requires-body=true , timeout=10 , script-update-interval=0 , enable=true
 知道搜索广告(zhidao.baidu.com) = type=http-response , script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_baidu.zhidao.js , pattern=^https?:\/\/(zhidao)\.baidu\.com\/(question|index|\?fr|\?word) , max-size=-1 , requires-body=true , timeout=10 , script-update-interval=0 , enable=true
@@ -76,4 +77,4 @@ anime1(anime1.me) = type=http-response , script-path=https://limbopro.com/Adguar
 yhdmp(m.yhdmp.com) = type=http-response , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , pattern=^https?://m.yhpdm.com.* , max-size=0 , requires-body=true , timeout=10 , script-update-interval=0 , enable=true
 
 [MITM]
-hostname = %APPEND% cn1.91short.com, img.killcovid2021.com, m.nivod4.tv, www.nivod4.tv, m.yhpdm.com, m.yhdmp.cc, m.yhdmp.com, anime1.me, www.tz659.com, www.ttsp.tv, *.cloudfront.net, www.o8tv.com, www.555dd*.com, www.5dy*, *.tvn.cc, www.wnacg.com, www.wnacg.org, suzihaza.com, 91porn.com, netflav.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, ddys.pro, ddys.tv, ddys.art, ddys2.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, www.pornhub.com, cn.pornhub.com, missav.com, www.libvio.com, www.libvio.la, 4hu.*, *.gimy.*, *.duboku.*, assert.avple.tv, avple.tv, *.btbdys.*, www.bdys01.com, www.bdys02.com, www.bdys03.com, www.bdys10.com, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com
+hostname = %APPEND% xiaobaotv.net, cn1.91short.com, img.killcovid2021.com, m.nivod4.tv, www.nivod4.tv, m.yhpdm.com, m.yhdmp.cc, m.yhdmp.com, anime1.me, www.tz659.com, www.ttsp.tv, *.cloudfront.net, www.o8tv.com, www.555dd*.com, www.5dy*, *.tvn.cc, www.wnacg.com, www.wnacg.org, suzihaza.com, 91porn.com, netflav.com, www.javmost.xyz, javmost.xyz, www5.javmost.xyz, www5.javmost.com, www.bing.com, zhuanlan.zhihu.com, www.zhihu.com, jable.tv, *.tvn.cc, ddrk.me, ddys.pro, ddys.tv, ddys.art, ddys2.me, 18comic.org, 18comic.vip, www.google.com, www.google.com.hk, www.pornhub.com, cn.pornhub.com, missav.com, www.libvio.com, www.libvio.la, 4hu.*, *.gimy.*, *.duboku.*, assert.avple.tv, avple.tv, *.btbdys.*, www.bdys01.com, www.bdys02.com, www.bdys03.com, www.bdys10.com, *.javbus.*, www.baidu.com, m.baidu.com, zhidao.baidu.com

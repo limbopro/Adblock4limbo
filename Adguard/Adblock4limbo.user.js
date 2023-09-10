@@ -20,6 +20,7 @@
 // @match        https://www.pornhub.com/*
 // @match        https://missav.com/*
 // @match        https://91porn.com/*
+// @match        https://www.91porn.com/*
 // @match        https://avple.tv/*
 // @match        https://18comic.org/*
 // @match        https://18comic.vip/*
@@ -57,6 +58,8 @@
 // @match        https://m.nivod4.tv/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
+// @match        https://javday.tv/*
+// @match        https://www.xvideos.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
 // @run-at       document-end
@@ -89,7 +92,7 @@ const imax = {
         dy555: "a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         missav: "a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;}", //  MissAV
-        porn91: ".ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none ! important; pointer-events: none !important;}", // 91porn
+        porn91: "br, .ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none ! important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none ! important; pointer-events: none !important;}",
         pornhubx: "#header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank'] {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
@@ -100,6 +103,8 @@ const imax = {
         nivod: "img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
+        javday: "",
+        xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos 
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -138,6 +143,8 @@ function values() {
         "nivod4",
         "91short",
         "xiaobaotv",
+        "javday",
+        "xvideos",
         "zhihu"
     ]
 
@@ -195,6 +202,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             cloudflare_captchaBypass();
             css_adsRemove(imax.css.porn91);
             _91porn_videoplay_ads();
+
+            // 播放页空白
+            const empty_div = document.querySelectorAll("div");
+            for (i = 0; i < empty_div.length; i++) {
+                console.log(empty_div[i].querySelectorAll("br").length);
+                if (empty_div[i].querySelectorAll('br').length == 6 && empty_div[i].querySelectorAll('a').length === 2) {
+                    empty_div[i].style = "display:none ! important;";
+                }
+            }
+
             break;
         case 'avple':
             cloudflare_captchaBypass();
@@ -322,6 +339,19 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
         case 'xiaobaotv':
             // nothing to do.
+            break;
+
+        case 'javday':
+            // nothing to do.
+            break;
+
+        case 'xvideos':
+            setInterval(() => {
+                if (!document.getElementById('xvideos_t')) {
+                    css_adsRemove(imax.css.xvideos, 100, "xvideos_t");
+                    noWindowOpenIf();
+                } else { noWindowOpenIf(); }
+            }, 1000)
             break;
 
         case 'zhihu':
@@ -1361,3 +1391,81 @@ function addEventListener_defuser() {
         }
     );
 };
+
+
+// noWindowOpenIf
+// https://github.com/gorhill/uBlock/wiki/Resources-Library#no-window-open-ifjs-
+function noWindowOpenIf(
+    pattern = '',
+    delay = '',
+    decoy = ''
+) {
+    const safe = safeSelf();
+    const targetMatchResult = pattern.startsWith('!') === false;
+    if (targetMatchResult === false) {
+        pattern = pattern.slice(1);
+    }
+    const rePattern = safe.patternToRegex(pattern);
+    let autoRemoveAfter = parseInt(delay);
+    if (isNaN(autoRemoveAfter)) {
+        autoRemoveAfter = -1;
+    }
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    const logLevel = shouldLog(extraArgs);
+    const createDecoy = function (tag, urlProp, url) {
+        const decoyElem = document.createElement(tag);
+        decoyElem[urlProp] = url;
+        decoyElem.style.setProperty('height', '1px', 'important');
+        decoyElem.style.setProperty('position', 'fixed', 'important');
+        decoyElem.style.setProperty('top', '-1px', 'important');
+        decoyElem.style.setProperty('width', '1px', 'important');
+        document.body.appendChild(decoyElem);
+        setTimeout(() => { decoyElem.remove(); }, autoRemoveAfter * 1000);
+        return decoyElem;
+    };
+    window.open = new Proxy(window.open, {
+        apply: function (target, thisArg, args) {
+            const haystack = args.join(' ');
+            if (logLevel) {
+                safe.uboLog('window.open:', haystack);
+            }
+            if (rePattern.test(haystack) !== targetMatchResult) {
+                return Reflect.apply(target, thisArg, args);
+            }
+            if (autoRemoveAfter < 0) { return null; }
+            const decoyElem = decoy === 'obj'
+                ? createDecoy('object', 'data', ...args)
+                : createDecoy('iframe', 'src', ...args);
+            let popup = decoyElem.contentWindow;
+            if (typeof popup === 'object' && popup !== null) {
+                Object.defineProperty(popup, 'closed', { value: false });
+            } else {
+                const noopFunc = (function () { }).bind(self);
+                popup = new Proxy(self, {
+                    get: function (target, prop) {
+                        if (prop === 'closed') { return false; }
+                        const r = Reflect.get(...arguments);
+                        if (typeof r === 'function') { return noopFunc; }
+                        return target[prop];
+                    },
+                    set: function () {
+                        return Reflect.set(...arguments);
+                    },
+                });
+            }
+            if (logLevel) {
+                popup = new Proxy(popup, {
+                    get: function (target, prop) {
+                        safe.uboLog('window.open / get', prop, '===', target[prop]);
+                        return Reflect.get(...arguments);
+                    },
+                    set: function (target, prop, value) {
+                        safe.uboLog('window.open / set', prop, '=', value);
+                        return Reflect.set(...arguments);
+                    },
+                });
+            }
+            return popup;
+        }
+    });
+}

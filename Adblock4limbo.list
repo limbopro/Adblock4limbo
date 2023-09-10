@@ -303,10 +303,12 @@ DOMAIN-SUFFIX, tarqk5.com, reject
 DOMAIN-SUFFIX, lhiefl.com, reject
 DOMAIN-SUFFIX, ioacfu.com, reject
 
-#### https://xiaobaotv.net/
+#### xiaobaotv.net
 DOMAIN-SUFFIX, exemptambientcream.com, reject
 DOMAIN-SUFFIX, catdomepimyth.com, reject
 
+#### javday.tv
+DOMAIN-SUFFIX, farwine.com, reject
 
 #### Guard Advertising.list 神机
 #### https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list

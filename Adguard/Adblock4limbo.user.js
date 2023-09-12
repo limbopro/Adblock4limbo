@@ -77,6 +77,7 @@ const imax = {
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
         //vple: "https://limbopro.com/Adguard/avple.js", // avple
         //contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
+        contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
     },
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局

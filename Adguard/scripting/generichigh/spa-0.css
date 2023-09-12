@@ -1,0 +1,40 @@
+/*******************************************************************************
+
+    uBlock Origin - a browser extension to block requests.
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* spa-0 */
+
+a[href*=".kfiopkln.com/"],
+a[href*="://adpv.com/?idpartner="],
+a[href*="://mobidea.com/?r="],
+a[href*="://yllix.com/publishers/"],
+a[href*="aclaritics.info/"],
+a[href^="://popads.net/users/refer/"],
+a[href^="://seedingup.es/afiliados.html?id="],
+a[href^="http://wlx-secure.com/"],
+a[href^="http://www.amigos.com/go/"],
+a[href^="https://go.betobet.online/"],
+a[href^="https://startgaming.net/tienda/"][href*="?offer_id="],
+adsenseintermedioleft,
+adsenseintermedioright,
+div[class^="publicHoriz"],
+div[id^="M"][id*="Composite"] {
+    display: none !important;
+}

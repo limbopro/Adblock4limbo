@@ -1,0 +1,73 @@
+/*******************************************************************************
+
+    uBlock Origin - a browser extension to block requests.
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* pol-0 */
+
+A[href*="/emisja.contentstream.pl/_/ctr/"],
+A[href*="beaffiliates.com/processing/clickthrgh.asp"],
+IMG[src^="http://www.audiostereo.pl/banery/"],
+IMG[title^="Sponsorowan"],
+TopTextAd,
+[class^="ADbox"],
+[class^="adSrodek"],
+[class^="sponsorowany"],
+[href*=".novem.pl/"],
+[href*=".smartadserver.com"],
+[href*="://affiliates-solutions.com/click/"],
+[href*="://clickserve.dartsearch.net/link/click"],
+[href*="://clkpl.tradedoubler.com/"],
+[href^="//ro88qcuy.com/"],
+[href^="http://adserwer."],
+[href^="https://ad-server.kei.pl/"],
+[href^="https://aff.sendhub.pl/"],
+[id*="-billboard-advert"],
+[id*="nokaut_ads_"],
+[id^="AdsDetailsTop"],
+[id^="ad_box"],
+[id^="ad_iframe"],
+[id^="banner_900x"],
+[id^="boxRegioPromoTab"],
+[id^="bunyad_ads_widget"],
+[id^="ceneoaffcontainer"],
+[id^="componentsPromotionsOffers"],
+[id^="giercowniaAd"],
+[id^="pianoMediaBoxInfo"],
+[id^="slot_ad_billboard"],
+[id^="sponsorowany"],
+a[href*="://tracking.linktogame.com/aff_c"],
+a[href*="adnow.com/click"],
+a[href*="bbelements.com/please/"],
+a[href*="techmaniak.pl/www/gact/ckk.php"],
+a[href="http://upfiles.net/ref/"],
+a[href="http://www.likeplus.eu/clickback"],
+a[href="http://www.livelooker.com"],
+a[href^="http://advmanager.techfun.pl/redirect/"],
+a[href^="http://affiliates.bet-at-home.com/processing/clickthrgh.asp"],
+a[href^="http://delivery.clickonometrics.pl/campaign="],
+a[href^="http://www.trizer.pl/?utm_source"],
+a[href^="https://ad.zanox.com/ppc/"],
+a[href^="https://affiliate.bitbay.net/"],
+a[href^="https://gamehag.com/r/"],
+a[href^="https://www.solutions4ad.com/partner/scripts/click.php"],
+ads-top-layer,
+img[alt="reklama"] {
+    display: none !important;
+}

@@ -1,0 +1,93 @@
+/*******************************************************************************
+
+    uBlock Origin - a browser extension to block requests.
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* kor-1 */
+
+[id^="div-gpt-ad"],
+a[href*="//ad-api.enuri.info/"],
+a[href*="//ad.planbplus.co.kr/"],
+a[href*="//adv.imadrep.co.kr/"],
+a[href*="//click.soonwe.com/"],
+div[class^="__staxbn"],
+div[id^="div-gpt-"],
+div[id^="google_ads_iframe_"],
+div[id^="targetpushAd_"],
+iframe[src*=".clickmon.co.kr/"],
+iframe[src*=".contentsfeed.com/RealMedia/ads/"],
+iframe[src*="//ad.3dpop.kr/"],
+iframe[src*="//ad.a-ads.com/"],
+iframe[src*="//ad.aceplanet.co.kr/"],
+iframe[src*="//ad.ad4989.co.kr/"],
+iframe[src*="//ad.adinc.kr/"],
+iframe[src*="//ad.ajitad.co.kr/"],
+iframe[src*="//ad.linkprice.com/"],
+iframe[src*="//ad.phaserep.com/"],
+iframe[src*="//ad.planbplus.co.kr/"],
+iframe[src*="//ad.reople.co.kr/"],
+iframe[src*="//adad.z00.kr/"],
+iframe[src*="//adex.ednplus.com/"],
+iframe[src*="//ads.mncmedia.co.kr/"],
+iframe[src*="//ads.mobitree.co.kr/"],
+iframe[src*="//ads.mtgroup.kr/"],
+iframe[src*="//ads.priel.co.kr/"],
+iframe[src*="//adsrv-up.mcrony.com/"],
+iframe[src*="//adv.imadrep.co.kr/"],
+iframe[src*="//ai.onepx.kr/"],
+iframe[src*="//api.ezadsystem.com/"],
+iframe[src*="//api.linkmine.co.kr/"],
+iframe[src*="//burgeon.co.kr/mad/"],
+iframe[src*="//cdn.interworksmedia.co.kr/"],
+iframe[src*="//coupa.ng/"],
+iframe[src*="//deepdive.zum.com/widget/"],
+iframe[src*="//displayad.zum.com/"],
+iframe[src*="//img.mrep.kr/"],
+iframe[src*="//io.smartmyd.com/"],
+iframe[src*="//io1.innorame.com/"],
+iframe[src*="//js.newsmobile.co.kr/"],
+iframe[src*="//kitweb.tadapi.info/"],
+iframe[src*="//mediaindex.co.kr/DABanner.php"],
+iframe[src*="//minishop.linkprice.com/"],
+iframe[src*="//shoppingbox.zum.com/"],
+iframe[src*="//stt.pltapad.com/"],
+iframe[src*="//vod.shoppingcall.me/ad_shoppingCallme.php"],
+iframe[src*="//www.bodnara.co.kr/advert/advert.php"],
+iframe[src*="//www.kodcad.kr/"],
+iframe[src*="//www.mediabp.kr/"],
+iframe[src*="//www.mediacategory.com/servlet/"],
+iframe[src*="//www.mobwithad.com/"],
+iframe[src*="/ad.bidrich.com/"],
+iframe[src*="://ad.ad4989.co.kr/"],
+iframe[src*="https://media.adpnut.com/"],
+iframe[src*="veta.naver.com/fxshow?"],
+iframe[src^="https://ads-partners.coupang.com/"],
+iframe[src^="https://api.dable.io/"],
+iframe[src^="https://googleads.g.doubleclick.net/"],
+iframe[src^="https://realdsp.realclick.co.kr"],
+iframe[src^="https://was.livere.me/ad"],
+img[src*="//ad-api.enuri.info/"],
+img[src*="//ads.priel.co.kr/"],
+img[src*="//static.stax.kr/resource/banner/"],
+img[src^="/bannerpop/"],
+ins[class^="MediaIndex_AD_"],
+ins[data-aiinad-inv],
+tenping[tenping-ad-display-type] {
+    display: none !important;
+}

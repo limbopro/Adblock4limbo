@@ -1,0 +1,86 @@
+/*******************************************************************************
+
+    uBlock Origin - a browser extension to block requests.
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* tur-0 */
+
+a[href*="//track.bcvc.mobi/earn.php"],
+a[href*="/earn.php?zone"][target="_blank"] > img,
+a[href*="admost.com/adx/"],
+a[href*="adsrv.eacdn.com"][rel="nofollow"],
+a[href*="bbelements.com/please/track/adClick/"],
+a[href*="canlisexsohbeti.org"] > img,
+a[href*="dotabet"][href*=".com"] > img,
+a[href*="downads.com/yeni/roketindir.php"],
+a[href*="med4ad.com/adv/"],
+a[href*="megabatorturkiyebay"] > img,
+a[href*="penisbuyutucu"] > img,
+a[href*="penisserumuanabayi"] > img,
+a[href*="realistikmankensatisi"] > img,
+a[href*="seriouslove.club"] > img,
+a[href*="sporx.com/rdrct.php"][target="_blank"],
+a[href*="whatsapp-sohbet"] > img,
+a[href^="http://ad.donanimhaber.com"],
+a[href^="http://adserv.ontek.com.tr/"],
+a[href^="http://adserver.advrstcdn.com/getad.php"],
+a[href^="http://izlenzi.com/campaign/"],
+a[href^="http://myjigolo."] > img,
+a[href^="http://partneriste.net/"] > img,
+a[href^="http://peniserumbuyutucu"] > img,
+a[href^="http://realistikmanken"] > img,
+a[href^="http://record.commissionlounge.com"],
+a[href^="http://sicakarkadas.org"] > img,
+a[href^="http://tfp.sapphirum.com/ref?"],
+a[href^="http://www.installads.net/"],
+a[href^="http://www.installadz.com/indir.php"],
+a[href^="https://kingredirect.com/redirect/v2/?ads="],
+a[href^="https://kingyonlendir.link/redirect/v2/?ads="],
+a[href^="https://record.commissionlounge.com/"],
+a[href^="tel:00"] > img,
+a[href^="tel:00"][style*="color:"][rel="nofollow"],
+a[target="_blank"] > img[alt="asd"],
+a[target="_blank"] > img[alt="bsd"],
+a[target="_blank"] > img[alt^="banner"][src*=".gif"],
+amp-img[width="728"][height="90"],
+body > a[style*="width: 100%;font-weight: bold;float: left;margin-bottom:"],
+body > div[class="toolbar"][style],
+body > div[class^="item"] > a[target="_blank"][style^="padding: 4px 1px;text-align: center;"],
+body > div[id="toolbar"][style],
+div[class^="ad-1000x"],
+div[class^="bireklam"],
+div[class^="gogads"],
+div[class^="reklam_"],
+div[class^="sag-reklam"],
+div[class^="vSagReklam-"],
+div[data-fr33-b4nn3r],
+div[data-splsh-dsktp-cntnr],
+div[id^="b-banner"],
+div[id^="floatLayer"],
+div[id^="kayan_reklam"],
+div[id^="toolbarr"],
+img[alt="jigolo"],
+img[alt="seks shop"],
+img[src][alt="bazuka"],
+img[title="similars powered by maxad"],
+pjsdiv[style*="top: 17px; opacity:"][style*="font-size: 14px; line-height: 1em;"],
+pjsdiv[style*="top: 17px; opacity:"][style*="font-size: 14px; line-height: 1em;"] + pjsdiv[style*="opacity:"][style*="font-size: 14px; line-height: 1em;"],
+pjsdiv[style*="top: 378px; opacity:"][style*="font-size: 14px; line-height: 1em;"] {
+    display: none !important;
+}

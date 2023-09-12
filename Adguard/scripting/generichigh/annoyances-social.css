@@ -1,0 +1,111 @@
+/*******************************************************************************
+
+    uBlock Origin - a browser extension to block requests.
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* annoyances-social */
+
+[data-elfsight-social-share-buttons-options],
+[id^="gigya_inline_share_"],
+[id^="social-button-"],
+[title="Share on LinkedIn"],
+[title="Share on Reddit"],
+[title="Share on Tumblr"],
+a[href*="//line.me/R/msg/text/?"],
+a[href*="//timeline.line.me/social-plugin/share?url="],
+a[href="http://del.icio.us/post"],
+a[href^="//connect.mail.ru/share"],
+a[href^="//telegram.me/share/url?"],
+a[href^="//www.linkedin.com/shareArticle?"],
+a[href^="//www.stumbleupon.com/submit?url="],
+a[href^="http://connect.mail.ru/share"],
+a[href^="http://line.me/R/msg/text?"],
+a[href^="http://m.facebook.com/sharer.php"],
+a[href^="http://mixi.jp/share.pl?"],
+a[href^="http://odnoklassniki.ru/dk?st.cmd=addShare"],
+a[href^="http://www.odnoklassniki.ru/dk?st.cmd=addShare"],
+a[href^="https://connect.mail.ru/share"],
+a[href^="https://connect.ok.ru/dk?st.cmd="][href*="WidgetSharePreview"],
+a[href^="https://gab.com/compose?url="],
+a[href^="https://line.me/R/msg/text/"],
+a[href^="https://note.mu/intent/post"],
+a[href^="https://parler.com/new-post?"],
+a[href^="https://share.flipboard.com/bookmarklet/"],
+a[href^="https://social-plugins.line.me/lineit/share?url="],
+a[href^="https://t.me/share/url?"],
+a[href^="https://t.me/share?"],
+a[href^="https://telegram.me/share/url?"],
+a[href^="https://wa.me/?text="],
+a[href^="https://www.addtoany.com/add_to/"],
+a[href^="https://www.buttons.social/share/"],
+a[href^="https://www.facebook.com/v2.8/dialog/share?"],
+a[href^="https://www.kooapp.com/create?title="],
+a[href^="https://www.linkedin.com/cws/share?"],
+a[href^="https://www.linkedin.com/sharing/"],
+a[href^="https://www.tumblr.com/widgets/share/"],
+a[href^="https://www.xing-share.com/app/user?op=share;"],
+a[href^="https://www.xing.com/social/share/spi?"],
+a[href^="https://www.xing.com/social_plugins/share"],
+a[href^="https://www.xing.com/spi/shares/new?url="],
+a[href^="javascript:window.open('http://www.facebook.com/sharer.php"],
+a[href^="line://msg/"],
+a[href^="viber://forward?text="],
+a[onclick*="https://www.facebook.com/sharer/"],
+a[onclick^="SNSButtonSYG."],
+a[onclick^="ShareOn"],
+a[onclick^="window.open('//twitter.com/intent/tweet?url="],
+a[onclick^="window.open('http://reddit.com/submit?"],
+a[onclick^="window.open('http://twitter.com/share"],
+a[onclick^="window.open('http://v.t.sina.com.cn/share/share.php?"],
+a[onclick^="window.open('http://www.facebook.com/sharer.php"],
+a[onclick^="window.open('http://www.odnoklassniki.ru/dk?st.cmd=addShare"],
+a[onclick^="window.open('https://connect.ok.ru/"][title^="Share"],
+a[onclick^="window.open('https://www.linkedin.com/sharing/"],
+a[target="socialbookmark"],
+a[title="Pin it on Pinterest"],
+a[title="Share by Email"],
+a[title="Share on Google Plus"],
+a[title="Share on LinkedIn"],
+a[title="Share on Pinterest"],
+a[title="share on Facebook"],
+a[title="share on Twitter"],
+amp-addthis,
+amp-facebook-like,
+amp-social-share,
+button[aria-label="Share on Facebook"],
+button[aria-label="Share on Twitter"],
+button[title="Share on Facebook"],
+button[title="Share on Twitter"],
+div[class^="juiz_sps_"],
+div[class^="share42init"],
+div[data-testid="prism-share"],
+div[data-widget-definition="share_page"],
+div[id^="___plus_"],
+div[id^="___plusone_"],
+div[id^="gigya_share_button"],
+div[id^="ok_group_widget"],
+div[id^="twitter-follow-button-"],
+div[title="Share on Twitter"],
+ebayShare_2,
+span[data-link="#share-facebook"],
+span[data-link="#share-telegram"],
+span[data-link="#share-twitter"],
+span[data-link="#share-vk"] {
+    display: none !important;
+}

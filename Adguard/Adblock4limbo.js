@@ -1,37 +1,20 @@
-/*
-let reg = '<head>';
-let str = '<head>\
+// 定义请求体
+const modifiedHeaders = $request.headers;
+modifiedHeaders['User-Agent'] = 'Mozilla/6.0 (iPhone 15; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/116.0.5845.118 Mobile/15E148 Safari/604.1';
+modifiedHeaders['user-agent'] = 'Mozilla/6.0 (iPhone 15; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/116.0.5845.118 Mobile/15E148 Safari/604.1';
+
+// 定义 CSS/JS
+const regex = '<head>';
+const replace_str = '<head>\
+<meta http-equiv="Content-Security-Policy" content="*">\
 <link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
 <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>'
-let body = $response.body.replace(reg, str)
-let headers = $response.headers;
-headers['Content-Security-Policy'] = '';
-$done({ headers, body })
-*/
 
-let url = $request.url;
-if (url.indexOf("missav") != -1) {
+// 定义响应体
+const body = $response.body.replace(regex, replace_str);
 
-    let window_open_reg = 'window.open';
-    let window_open_str = '';
-    let reg = '<head>';
-    let str = '<head>\
-    <link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
-    <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>'
-    let body = $response.body.replace(reg, str).replace(window_open_reg, window_open_str);
-    let headers = $response.headers;
-    headers['Content-Security-Policy'] = "child-src	'self'";
-    $done({ headers, body, url })
+// 定义响应头
+const headers = $response.headers;
+headers['Content-Security-Policy'] = '*';
 
-} else {
-
-    let reg = '<head>';
-    let str = '<head>\
-    <link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
-    <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>'
-    let body = $response.body.replace(reg, str);
-    let headers = $response.headers;
-    headers['Content-Security-Policy'] = '';
-    $done({ headers, body, url })
-
-}
+$done({ headers: modifiedHeaders, headers: headers, body: body })

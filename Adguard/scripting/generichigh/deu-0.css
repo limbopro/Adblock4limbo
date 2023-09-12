@@ -1,0 +1,59 @@
+/*******************************************************************************
+
+    uBlock Origin - a browser extension to block requests.
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* deu-0 */
+
+a[aria-label="Werbelink"],
+a[href*=".prodtraff.com/"],
+a[href="https://www.focus.de/deal/focus-online-deal-mit-weltsparen-setzen-sie-jetzt-auf-zinserhoehungen-weltsparen-schenkt-ihnen-dafuer-150-euro_id_11868745.html"] > img,
+a[href^="http://landing.fickzeit.com/?ag="],
+a[href^="http://landing.parkplatzkartei.com/?ag="],
+a[href^="http://partners.adklick.de/tracking.php?"],
+a[href^="http://wittered-mainging.com/"],
+a[href^="http://www.deinfickdate.com/?wm="],
+a[href^="http://www.deinsexdate.com/?wm="],
+a[href^="http://www.eis.de/index.phtml?refid="],
+a[href^="http://www.heutenochficken.com/?wm="],
+a[href^="http://www.hw-area.com/?dp="],
+a[href^="http://www.ichwuerde.com/?ref="],
+a[href^="http://www.kontakt-vermittler.de/?wm="],
+a[href^="http://www.rastplatzsex.com/?wm="],
+a[href^="http://www.rotlichtkartei.com/?sc="],
+a[href^="http://www.sexkontaktportal.com/?wm="],
+a[href^="https://ads.sunmaker.com/tracking.php?"],
+a[href^="https://bd742.com/"],
+a[href^="https://clicks.imaxcash.com/?aff_"],
+a[href^="https://dpm.affaire18.com/click.php?dp="],
+a[href^="https://dpm.jungekontakte.com/click.php?dp="],
+a[href^="https://feed.solads.media/"],
+a[href^="https://maidings-mectland.com/"],
+a[href^="https://marketing.net.brillen.de/"],
+a[href^="https://media.datingpartner.com/click.php?dp="],
+a[href^="https://ofrbpu.smartbroker.de/"],
+a[href^="https://stream.justhdfilme.com/kkiste-kinox/"],
+a[href^="https://t.trafai.com/"],
+a[href^="https://trk.imobtrk.com/"],
+a[href^="https://www.handy-sextreffen.info/?c="],
+a[href^="https://www.tik-tok-date.com/"],
+a[href^="https://www.tipico.com/?affiliateId="],
+a[href^="https://www.vavoo.tv/promo/"] > img {
+    display: none !important;
+}

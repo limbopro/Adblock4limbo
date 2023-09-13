@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Adblock4limbo
+// @name         Adblock4limbo.X
 // @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.3.6
+// @version      0.3.6.1
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去广告计划油猴脚本版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
+// @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
@@ -60,17 +60,73 @@
 // @match        https://xiaobaotv.net/*
 // @match        https://javday.tv/*
 // @match        https://www.xvideos.com/*
+// @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
-//// 有使用 QuantumultX 和 surge 等代理工具的用户
+//// 有使用 QuantumultX / Shadowrocket/ Surge / Clash 等代理工具的用户
 // 请参阅 https://limbopro.com/archives/12904.html 配置去广告分流
 /// 一起用 香喷喷
 
 // 一些常量
+
+const uBlockOrigin = { 
+    
+    // uBlockOrigin 默认脚本
+    // https://github.com/uBlockOrigin/uBOL-home/tree/main/chromium/rulesets/scripting/scriptlet
+    // uBO Lite (uBOL), a permission-less MV3 API-based content blocker.
+    // uBOL is entirely declarative, meaning there is no need for a permanent uBOL process for the filtering to occur, and CSS/JS injection-based content filtering is performed reliably by the browser itself rather than by the extension. This means that uBOL itself does not consume CPU/memory resources while content blocking is ongoing -- uBOL's service worker process is required only when you interact with the popup panel or the option pages.
+    // uBOL does not require broad "read/modify data" permission at install time, hence its limited capabilities out of the box compared to uBlock Origin or other content blockers requiring broad "read/modify data" permissions at install time.
+    
+    /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
+     这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
+    */ 
+    
+     chn0abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
+    chn0setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
+    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
+    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
+    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
+    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
+    abortonpropertyread: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-read.js", // default.abort-on-property-read.js
+    abortonpropertywrite: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-write.js", // default.abort-on-property-write.js
+    abortonstacktrace: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-stack-trace.js", // abort-on-stack-trace.js
+    addEventListenerdefuser: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.addEventListener-defuser.js", // default.addEventListener-defuser.js
+    alertbuster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.alert-buster.js", // default.alert-buster.js
+    cookieremover: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.cookie-remover.js", // default.cookie-remover.js
+    disablenewtablinks: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.disable-newtab-links.js", // default.disable-newtab-links.js
+    evaldataprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.evaldata-prune.js", // default.evaldata-prune.js
+    jsonprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.json-prune.js", // default.json-prune.js
+    m3uprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.m3u-prune.js", // default.m3u-prune.js
+    nanosetIntervalbooster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nano-setInterval-booster.js", // default.nano-setInterval-booster.js
+    nanosetTimeoutbooster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nano-setTimeout-booster.js", // default.nano-setTimeout-booster.js
+    noevalif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.noeval-if.js", // default.noeval-if.js
+    nofetchif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-fetch-if.js", // default.no-fetch-if.js
+    norequestAnimationFrameif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-requestAnimationFrame-if.js", // default.no-requestAnimationFrame-if.js
+    nosetIntervalif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-setInterval-if.js", // default.no-setInterval-if.js
+    nosetTimeoutif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-setTimeout-if.js", // default.no-setTimeout-if.js
+    nowebrtc: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nowebrtc.js", // default.nowebrtc.js
+    nowindowopenif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-window-open-if.js", // default.no-window-open-if.js
+    noxhrif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-xhr-if.js", // default.no-xhr-if.js
+    refreshdefuser: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.refresh-defuser.js", // default.refresh-defuser.js
+    removeattr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-attr.js", // default.remove-attr.js
+    removeclass: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-class.js", // default.remove-class.js
+    removenodetext: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-node-text.js", // default.remove-node-text.js
+    replacenodetext: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.replace-node-text.js", // default.replace-node-text.js
+    setattr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-attr.js", // default.set-attr.js
+    setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-constant.js", // default.set-constant.js
+    setcookie: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-cookie.js", // default.set-cookie.js
+    setlocalstorageitem: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-local-storage-item.js", // set-local-storage-item.js
+    spoofcss: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.spoof-css.js", // default.spoof-css.js
+    trustedsetconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.trusted-set-constant.js", // default.trusted-set-constant.js
+    trustedsetcookie: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.trusted-set-cookie.js", // default.trusted-set-cookie.js
+    windowcloseif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.window-close-if.js", // default.window-close-if.js
+    xmlprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.xml-prune.js", // default.xml-prune.js
+}
+
 const imax = {
     js: {
         //functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
@@ -171,7 +227,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             ele_dynamicAppend("h1.floatLeft,div.title-container.translate", "如何下载视频", custom_style_values_pb + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "download_pornhub", 2, "button")
             pornhub_sidebar_ads();
             break;
-        case 'missav':
+        case 'missxav':
             window_open_defuser(); // 打断 window.open 施法
             var ua_missav = navigator.userAgent.toLowerCase();
             var mobile_missav = "mobile";
@@ -392,11 +448,59 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             break;
         default:
+            uBlockOrigin_add();
             console.log("Catch Nothing!");
     }
 }
 
+
 adsDomain_switch(values()) // 动手吧
+
+
+// uBlock Origin 脚本添加
+function uBlockOrigin_add() {
+    js_adsRemove(uBlockOrigin.chn0abortcurrentscript);
+    js_adsRemove(uBlockOrigin.chn0setconstant);
+    js_adsRemove(uBlockOrigin.abortcurrentscript);
+    js_adsRemove(uBlockOrigin.abortcurrentscript);
+    js_adsRemove(uBlockOrigin.abortcurrentscript);
+    js_adsRemove(uBlockOrigin.abortcurrentscript);
+    js_adsRemove(uBlockOrigin.abortonpropertyread);
+    js_adsRemove(uBlockOrigin.abortonpropertywrite);
+    js_adsRemove(uBlockOrigin.abortonstacktrace);
+    js_adsRemove(uBlockOrigin.addEventListenerdefuser);
+    js_adsRemove(uBlockOrigin.alertbuster);
+    js_adsRemove(uBlockOrigin.cookieremover);
+    js_adsRemove(uBlockOrigin.disablenewtablinks);
+    js_adsRemove(uBlockOrigin.evaldataprune);
+    js_adsRemove(uBlockOrigin.jsonprune);
+    js_adsRemove(uBlockOrigin.m3uprune);
+    js_adsRemove(uBlockOrigin.nanosetIntervalbooster);
+    js_adsRemove(uBlockOrigin.nanosetTimeoutbooster);
+    js_adsRemove(uBlockOrigin.noevalif);
+    js_adsRemove(uBlockOrigin.nofetchif);
+    js_adsRemove(uBlockOrigin.norequestAnimationFrameif);
+    js_adsRemove(uBlockOrigin.nosetIntervalif);
+    js_adsRemove(uBlockOrigin.nosetTimeoutif);
+    js_adsRemove(uBlockOrigin.nowebrtc);
+    js_adsRemove(uBlockOrigin.nowindowopenif);
+    js_adsRemove(uBlockOrigin.noxhrif);
+    js_adsRemove(uBlockOrigin.refreshdefuser);
+    js_adsRemove(uBlockOrigin.removeattr);
+    js_adsRemove(uBlockOrigin.removeclass);
+    js_adsRemove(uBlockOrigin.removenodetext);
+    js_adsRemove(uBlockOrigin.replacenodetext);
+    js_adsRemove(uBlockOrigin.setattr);
+    js_adsRemove(uBlockOrigin.setconstant);
+    js_adsRemove(uBlockOrigin.setcookie);
+    js_adsRemove(uBlockOrigin.setlocalstorageitem);
+    js_adsRemove(uBlockOrigin.spoofcss);
+    js_adsRemove(uBlockOrigin.trustedsetconstant);
+    js_adsRemove(uBlockOrigin.trustedsetcookie);
+    js_adsRemove(uBlockOrigin.windowcloseif);
+    js_adsRemove(uBlockOrigin.xmlprune);
+}
+
 
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告

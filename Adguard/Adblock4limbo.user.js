@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
-// @namespace    https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo-adsremoveproject
-// @version      0.3.6.1
+// @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
+// @version      0.3.6.2
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -67,25 +67,30 @@
 // @grant        none
 // ==/UserScript==
 
-//// 有使用 QuantumultX / Shadowrocket/ Surge / Clash 等代理工具的用户
-// 请参阅 https://limbopro.com/archives/12904.html 配置去广告分流
-/// 一起用 香喷喷
+/**
+ * ---------------------------
+ * Author: limbopro
+ * View: https://limbopro.com/archives/12904.html
+ * ---------------------------
+ */
 
 // 一些常量
 
-const uBlockOrigin = { 
-    
+/* Start */
+
+const uBlockOrigin = {
+
     // uBlockOrigin 默认脚本
     // https://github.com/uBlockOrigin/uBOL-home/tree/main/chromium/rulesets/scripting/scriptlet
     // uBO Lite (uBOL), a permission-less MV3 API-based content blocker.
     // uBOL is entirely declarative, meaning there is no need for a permanent uBOL process for the filtering to occur, and CSS/JS injection-based content filtering is performed reliably by the browser itself rather than by the extension. This means that uBOL itself does not consume CPU/memory resources while content blocking is ongoing -- uBOL's service worker process is required only when you interact with the popup panel or the option pages.
     // uBOL does not require broad "read/modify data" permission at install time, hence its limited capabilities out of the box compared to uBlock Origin or other content blockers requiring broad "read/modify data" permissions at install time.
-    
+
     /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
      这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
-    */ 
-    
-     chn0abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
+    */
+
+    chn0abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
     chn0setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
     abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
     abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
@@ -127,6 +132,18 @@ const uBlockOrigin = {
     xmlprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.xml-prune.js", // default.xml-prune.js
 }
 
+const css_common = {
+    //General element hiding rules
+    /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
+     这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
+    */
+    gehr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/CSS/Adblock4limbo.user.css"
+}
+
+tagName_appendChild('link', css_common.gehr, 'head')
+
+/* End */ 
+
 const imax = {
     js: {
         //functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
@@ -167,9 +184,6 @@ const imax = {
     function: {
     }
 }
-
-//tagName_appendChild("link", imax.css.globalcss, "head"); // css 外部引用 标签 <link>
-//tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
 
 function values() {
     var adsDomain = [
@@ -837,18 +851,25 @@ function js_adsRemove(url) {
     console.log("JavaScript脚本新增完毕！");
 }
 
+
 // 动态创建并引用外部资源 外部样式表 外部脚本
 function tagName_appendChild(tagname, url, where) {
-    var eleCreate = document.createElement(tagname);
+    const ele_New = document.createElement(tagname);
+    // script
     if (tagname == "script") {
-        eleCreate.src = url;
+        ele_New.type = "text/javascript";
+        ele_New.src = url;
+        ele_New.setAttribute('async', '')
+        // link
     } else if (tagname == "link") {
-        eleCreate.href = url;
+        ele_New.rel = "stylesheet";
+        ele_New.type = "text/css";
+        ele_New.href = url;
     }
     if (where == "body") {
-        document.body.appendChild(eleCreate);
+        document.body.appendChild(ele_New);
     } else if (where == "head") {
-        document.head.appendChild(eleCreate);
+        document.head.appendChild(ele_New);
     }
 }
 

@@ -6,14 +6,14 @@
 ## Peter Lowe’s Ad and tracking server list： 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList： 32517 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy： 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China： 5571 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China： 5573 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD： 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计：68254 Domains/IP/Others (非去重统计)
-## 以上共计：65898 Domains/IP/Others (已去重统计)
-## 涉及重复项：共计 1918 Domains/IP/Others
+## 以上共计：68256 Domains/IP/Others (非去重统计)
+## 以上共计：65900 Domains/IP/Others (已去重统计)
+## 涉及重复项共计： 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
-## 涉及重复项于去重后在 Adblock4limbo.list / Adblock4limbo_surge.list 文件末尾列出
-## Last updated at 15/9月/2023/20:35
+## 涉及重复项于去重后移至 Adblock4limbo.list / Adblock4limbo_surge.list 文件末尾...
+## Last updated at 16/9月/2023/00:37
 ## */
 
 
@@ -2656,9 +2656,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn, reject
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309151217
+## ! Version: 202309151248
 ## ! Title: EasyList
-## ! Last modified: 15 Sep 2023 12:17 UTC
+## ! Last modified: 15 Sep 2023 12:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -34320,9 +34320,9 @@ DOMAIN-SUFFIX,tldw.me, reject
 
 
 ## [Adblock Plus 1.1]
-## ! Version: 202309151217
+## ! Version: 202309151248
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Sep 2023 12:17 UTC
+## ! Last modified: 15 Sep 2023 12:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -58511,6 +58511,8 @@ DOMAIN-SUFFIX,1267a.xyz, reject
 DOMAIN-SUFFIX,126ccb.xyz, reject
 DOMAIN-SUFFIX,1378a.xyz, reject
 DOMAIN-SUFFIX,1379a.xyz, reject
+DOMAIN-SUFFIX,155zn.com, reject
+DOMAIN-SUFFIX,1jc5t.xyz, reject
 DOMAIN-SUFFIX,1u5gy.xyz, reject
 DOMAIN-SUFFIX,23dhj4q.com, reject
 DOMAIN-SUFFIX,3337126.com, reject
@@ -58527,10 +58529,13 @@ DOMAIN-SUFFIX,3er88wn.com, reject
 DOMAIN-SUFFIX,4asfgyx.com, reject
 DOMAIN-SUFFIX,52acc.cn, reject
 DOMAIN-SUFFIX,52kuwang.cn, reject
+DOMAIN-SUFFIX,54dbg.xyz, reject
 DOMAIN-SUFFIX,5gg17gm.com, reject
 DOMAIN-SUFFIX,5ggj5cp.com, reject
 DOMAIN-SUFFIX,5lfgdju.com, reject
 DOMAIN-SUFFIX,777aa999aa.com, reject
+DOMAIN-SUFFIX,777zz777zz.com, reject
+DOMAIN-SUFFIX,789peizi.com, reject
 DOMAIN-SUFFIX,7xixi.site, reject
 DOMAIN-SUFFIX,81wx.info, reject
 DOMAIN-SUFFIX,8861198.com, reject
@@ -58551,6 +58556,7 @@ DOMAIN-SUFFIX,ajcode.co, reject
 DOMAIN-SUFFIX,ajkjbcjbaaaed.com, reject
 DOMAIN-SUFFIX,ajtdumo.cn, reject
 DOMAIN-SUFFIX,akdie.xyz, reject
+DOMAIN-SUFFIX,alemu4s.com, reject
 DOMAIN-SUFFIX,allcp.xyz, reject
 DOMAIN-SUFFIX,amerzbj.cn, reject
 DOMAIN-SUFFIX,anwqj0i.xyz, reject
@@ -58627,6 +58633,7 @@ DOMAIN-SUFFIX,cao-gao.xyz, reject
 DOMAIN-SUFFIX,ccnim.xyz, reject
 DOMAIN-SUFFIX,cdmjur.xyz, reject
 DOMAIN-SUFFIX,cdncloud.asia, reject
+DOMAIN-SUFFIX,ceshi1.ink, reject
 DOMAIN-SUFFIX,cfdns.vip, reject
 DOMAIN-SUFFIX,cheda1.icu, reject
 DOMAIN-SUFFIX,cheda10.icu, reject
@@ -58664,6 +58671,7 @@ DOMAIN-SUFFIX,dd778899dd.com, reject
 DOMAIN-SUFFIX,ddush.xyz, reject
 DOMAIN-SUFFIX,degjidp.icu, reject
 DOMAIN-SUFFIX,dehaer.site, reject
+DOMAIN-SUFFIX,dektcvna.icu, reject
 DOMAIN-SUFFIX,derew6xbsc.xyz, reject
 DOMAIN-SUFFIX,desac10.icu, reject
 DOMAIN-SUFFIX,desac7.icu, reject
@@ -58677,6 +58685,7 @@ DOMAIN-SUFFIX,dghhot.com, reject
 DOMAIN-SUFFIX,dghkpp.xyz, reject
 DOMAIN-SUFFIX,dhjrvj.xyz, reject
 DOMAIN-SUFFIX,dhkipdsc.xyz, reject
+DOMAIN-SUFFIX,diouy9cvtx.xyz, reject
 DOMAIN-SUFFIX,dmvckj.icu, reject
 DOMAIN-SUFFIX,dnceqzz.icu, reject
 DOMAIN-SUFFIX,dnightwish.xyz, reject
@@ -58718,6 +58727,7 @@ DOMAIN-SUFFIX,esgher.site, reject
 DOMAIN-SUFFIX,eslbahw.top, reject
 DOMAIN-SUFFIX,etienlw.top, reject
 DOMAIN-SUFFIX,euitx.cn, reject
+DOMAIN-SUFFIX,evb0gxo.icu, reject
 DOMAIN-SUFFIX,evidhjksdtgyxrh.xyz, reject
 DOMAIN-SUFFIX,ewfsef.com, reject
 DOMAIN-SUFFIX,eyq3nog.icu, reject
@@ -58742,12 +58752,14 @@ DOMAIN-SUFFIX,fqpxzr.xyz, reject
 DOMAIN-SUFFIX,frrhdl.xyz, reject
 DOMAIN-SUFFIX,frsejhged.xyz, reject
 DOMAIN-SUFFIX,fsjjrbz.cn, reject
+DOMAIN-SUFFIX,fsmhub.icu, reject
 DOMAIN-SUFFIX,fszpzd.xyz, reject
 DOMAIN-SUFFIX,fuliwang.cc, reject
 DOMAIN-SUFFIX,fvxlhn.xyz, reject
 DOMAIN-SUFFIX,fwepd.xyz, reject
 DOMAIN-SUFFIX,fwzvlp.xyz, reject
 DOMAIN-SUFFIX,fxeaobv.icu, reject
+DOMAIN-SUFFIX,gcbflvx.cn, reject
 DOMAIN-SUFFIX,gdjme27.com, reject
 DOMAIN-SUFFIX,ggdrfh5.com, reject
 DOMAIN-SUFFIX,ggdumze.cn, reject
@@ -58860,6 +58872,7 @@ DOMAIN-SUFFIX,jjklrcw.com, reject
 DOMAIN-SUFFIX,jjztrz.xyz, reject
 DOMAIN-SUFFIX,jklhs7u.com, reject
 DOMAIN-SUFFIX,jknnjk.com, reject
+DOMAIN-SUFFIX,jkzbjv.xyz, reject
 DOMAIN-SUFFIX,jmbluyxkl.xyz, reject
 DOMAIN-SUFFIX,jnhgm.com, reject
 DOMAIN-SUFFIX,jnp0kmm.icu, reject
@@ -58932,6 +58945,7 @@ DOMAIN-SUFFIX,legdeh.fun, reject
 DOMAIN-SUFFIX,legopq.site, reject
 DOMAIN-SUFFIX,lestv1.icu, reject
 DOMAIN-SUFFIX,lestv10.icu, reject
+DOMAIN-SUFFIX,lestv7.icu, reject
 DOMAIN-SUFFIX,lfjtiuy.cn, reject
 DOMAIN-SUFFIX,lgoewtd.icu, reject
 DOMAIN-SUFFIX,lgohse.fun, reject
@@ -59181,6 +59195,7 @@ DOMAIN-SUFFIX,tseda6.icu, reject
 DOMAIN-SUFFIX,tslbahi.top, reject
 DOMAIN-SUFFIX,ttienli.top, reject
 DOMAIN-SUFFIX,ttykabh.icu, reject
+DOMAIN-SUFFIX,tuhzjrr.cn, reject
 DOMAIN-SUFFIX,tuplzt.xyz, reject
 DOMAIN-SUFFIX,tushwjp.icu, reject
 DOMAIN-SUFFIX,tuyyex.icu, reject
@@ -59218,6 +59233,7 @@ DOMAIN-SUFFIX,vhutitpu.icu, reject
 DOMAIN-SUFFIX,victoriajumpc.com, reject
 DOMAIN-SUFFIX,vihppjk.cn, reject
 DOMAIN-SUFFIX,vkjsnvk.com, reject
+DOMAIN-SUFFIX,vktztp.xyz, reject
 DOMAIN-SUFFIX,vlgkotr.cn, reject
 DOMAIN-SUFFIX,vlujojf.icu, reject
 DOMAIN-SUFFIX,vmdlxj.xyz, reject
@@ -59287,6 +59303,7 @@ DOMAIN-SUFFIX,xwlyfl.xyz, reject
 DOMAIN-SUFFIX,xwqtatnw.icu, reject
 DOMAIN-SUFFIX,xwsqtngwa.xyz, reject
 DOMAIN-SUFFIX,xxniln.xyz, reject
+DOMAIN-SUFFIX,xybnfn.xyz, reject
 DOMAIN-SUFFIX,yac5t.cn, reject
 DOMAIN-SUFFIX,yasg114.com, reject
 DOMAIN-SUFFIX,ybcnvqf.cn, reject
@@ -59300,12 +59317,14 @@ DOMAIN-SUFFIX,yjnhndt.com, reject
 DOMAIN-SUFFIX,yjnkas.com, reject
 DOMAIN-SUFFIX,ykkbwdf.cn, reject
 DOMAIN-SUFFIX,ymhyw6.lol, reject
+DOMAIN-SUFFIX,ynfxxbp.xyz, reject
 DOMAIN-SUFFIX,yofprpv.cn, reject
 DOMAIN-SUFFIX,yruws6.com, reject
 DOMAIN-SUFFIX,yuanmengbi.com, reject
 DOMAIN-SUFFIX,yuanxiang19.fun, reject
 DOMAIN-SUFFIX,yuifgh.fun, reject
 DOMAIN-SUFFIX,yunliunet.com, reject
+DOMAIN-SUFFIX,ywkkmze.cn, reject
 DOMAIN-SUFFIX,yxvoud.com, reject
 DOMAIN-SUFFIX,yyefao.com, reject
 DOMAIN-SUFFIX,yyuivw6.com, reject
@@ -59348,23 +59367,6 @@ DOMAIN-SUFFIX,zvasuzb.icu, reject
 DOMAIN-SUFFIX,zwfkxb.xyz, reject
 DOMAIN-SUFFIX,zxrcfw.com, reject
 DOMAIN-SUFFIX,zypzzv.xyz, reject
-DOMAIN-SUFFIX,diouy9cvtx.xyz, reject
-DOMAIN-SUFFIX,54dbg.xyz, reject
-DOMAIN-SUFFIX,xybnfn.xyz, reject
-DOMAIN-SUFFIX,1jc5t.xyz, reject
-DOMAIN-SUFFIX,tuhzjrr.cn, reject
-DOMAIN-SUFFIX,lestv7.icu, reject
-DOMAIN-SUFFIX,fsmhub.icu, reject
-DOMAIN-SUFFIX,dektcvna.icu, reject
-DOMAIN-SUFFIX,jkzbjv.xyz, reject
-DOMAIN-SUFFIX,ceshi1.ink, reject
-DOMAIN-SUFFIX,789peizi.com, reject
-DOMAIN-SUFFIX,vktztp.xyz, reject
-DOMAIN-SUFFIX,evb0gxo.icu, reject
-DOMAIN-SUFFIX,alemu4s.com, reject
-DOMAIN-SUFFIX,ynfxxbp.xyz, reject
-DOMAIN-SUFFIX,gcbflvx.cn, reject
-DOMAIN-SUFFIX,777zz777zz.com, reject
 DOMAIN-SUFFIX,zzisnvb.cn, reject
 DOMAIN-SUFFIX,002777.xyz, reject
 DOMAIN-SUFFIX,01v62.xyz, reject
@@ -64359,14 +64361,14 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com, reject
 ## Peter Lowe’s Ad and tracking server list：3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList：32517 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy：25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China：5571 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China：5573 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD：591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计：68254 Domains/IP/Others (非去重统计)
-## 以上共计：65898 Domains/IP/Others (已去重统计)
-## 涉及重复项：共计 1918 Domains/IP/Others
+## 以上共计：68256 Domains/IP/Others (非去重统计)
+## 以上共计：65900 Domains/IP/Others (已去重统计)
+## 涉及重复项共计： 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 重复项如下所示：
-## Last updated at 15/9月/2023/20:36
+## Last updated at 16/9月/2023/00:38
 ## */
 
 

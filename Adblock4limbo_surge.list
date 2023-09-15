@@ -6,14 +6,14 @@
 ## Peter Lowe’s Ad and tracking server list： 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList： 32517 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy： 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China： 5571 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China： 5573 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD： 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计：68254 Domains/IP/Others (非去重统计)
-## 以上共计：65898 Domains/IP/Others (已去重统计)
-## 涉及重复项：共计 1918 Domains/IP/Others
+## 以上共计：68256 Domains/IP/Others (非去重统计)
+## 以上共计：65900 Domains/IP/Others (已去重统计)
+## 涉及重复项共计： 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
-## 涉及重复项于去重后在 Adblock4limbo.list / Adblock4limbo_surge.list 文件末尾列出
-## Last updated at 15/9月/2023/20:35
+## 涉及重复项于去重后移至 Adblock4limbo.list / Adblock4limbo_surge.list 文件末尾...
+## Last updated at 16/9月/2023/00:37
 ## */
 
 
@@ -2656,9 +2656,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309151217
+## ! Version: 202309151248
 ## ! Title: EasyList
-## ! Last modified: 15 Sep 2023 12:17 UTC
+## ! Last modified: 15 Sep 2023 12:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -34320,9 +34320,9 @@ DOMAIN-SUFFIX,tldw.me
 
 
 ## [Adblock Plus 1.1]
-## ! Version: 202309151217
+## ! Version: 202309151248
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Sep 2023 12:17 UTC
+## ! Last modified: 15 Sep 2023 12:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -58511,6 +58511,8 @@ DOMAIN-SUFFIX,1267a.xyz
 DOMAIN-SUFFIX,126ccb.xyz
 DOMAIN-SUFFIX,1378a.xyz
 DOMAIN-SUFFIX,1379a.xyz
+DOMAIN-SUFFIX,155zn.com
+DOMAIN-SUFFIX,1jc5t.xyz
 DOMAIN-SUFFIX,1u5gy.xyz
 DOMAIN-SUFFIX,23dhj4q.com
 DOMAIN-SUFFIX,3337126.com
@@ -58527,10 +58529,13 @@ DOMAIN-SUFFIX,3er88wn.com
 DOMAIN-SUFFIX,4asfgyx.com
 DOMAIN-SUFFIX,52acc.cn
 DOMAIN-SUFFIX,52kuwang.cn
+DOMAIN-SUFFIX,54dbg.xyz
 DOMAIN-SUFFIX,5gg17gm.com
 DOMAIN-SUFFIX,5ggj5cp.com
 DOMAIN-SUFFIX,5lfgdju.com
 DOMAIN-SUFFIX,777aa999aa.com
+DOMAIN-SUFFIX,777zz777zz.com
+DOMAIN-SUFFIX,789peizi.com
 DOMAIN-SUFFIX,7xixi.site
 DOMAIN-SUFFIX,81wx.info
 DOMAIN-SUFFIX,8861198.com
@@ -58551,6 +58556,7 @@ DOMAIN-SUFFIX,ajcode.co
 DOMAIN-SUFFIX,ajkjbcjbaaaed.com
 DOMAIN-SUFFIX,ajtdumo.cn
 DOMAIN-SUFFIX,akdie.xyz
+DOMAIN-SUFFIX,alemu4s.com
 DOMAIN-SUFFIX,allcp.xyz
 DOMAIN-SUFFIX,amerzbj.cn
 DOMAIN-SUFFIX,anwqj0i.xyz
@@ -58627,6 +58633,7 @@ DOMAIN-SUFFIX,cao-gao.xyz
 DOMAIN-SUFFIX,ccnim.xyz
 DOMAIN-SUFFIX,cdmjur.xyz
 DOMAIN-SUFFIX,cdncloud.asia
+DOMAIN-SUFFIX,ceshi1.ink
 DOMAIN-SUFFIX,cfdns.vip
 DOMAIN-SUFFIX,cheda1.icu
 DOMAIN-SUFFIX,cheda10.icu
@@ -58664,6 +58671,7 @@ DOMAIN-SUFFIX,dd778899dd.com
 DOMAIN-SUFFIX,ddush.xyz
 DOMAIN-SUFFIX,degjidp.icu
 DOMAIN-SUFFIX,dehaer.site
+DOMAIN-SUFFIX,dektcvna.icu
 DOMAIN-SUFFIX,derew6xbsc.xyz
 DOMAIN-SUFFIX,desac10.icu
 DOMAIN-SUFFIX,desac7.icu
@@ -58677,6 +58685,7 @@ DOMAIN-SUFFIX,dghhot.com
 DOMAIN-SUFFIX,dghkpp.xyz
 DOMAIN-SUFFIX,dhjrvj.xyz
 DOMAIN-SUFFIX,dhkipdsc.xyz
+DOMAIN-SUFFIX,diouy9cvtx.xyz
 DOMAIN-SUFFIX,dmvckj.icu
 DOMAIN-SUFFIX,dnceqzz.icu
 DOMAIN-SUFFIX,dnightwish.xyz
@@ -58718,6 +58727,7 @@ DOMAIN-SUFFIX,esgher.site
 DOMAIN-SUFFIX,eslbahw.top
 DOMAIN-SUFFIX,etienlw.top
 DOMAIN-SUFFIX,euitx.cn
+DOMAIN-SUFFIX,evb0gxo.icu
 DOMAIN-SUFFIX,evidhjksdtgyxrh.xyz
 DOMAIN-SUFFIX,ewfsef.com
 DOMAIN-SUFFIX,eyq3nog.icu
@@ -58742,12 +58752,14 @@ DOMAIN-SUFFIX,fqpxzr.xyz
 DOMAIN-SUFFIX,frrhdl.xyz
 DOMAIN-SUFFIX,frsejhged.xyz
 DOMAIN-SUFFIX,fsjjrbz.cn
+DOMAIN-SUFFIX,fsmhub.icu
 DOMAIN-SUFFIX,fszpzd.xyz
 DOMAIN-SUFFIX,fuliwang.cc
 DOMAIN-SUFFIX,fvxlhn.xyz
 DOMAIN-SUFFIX,fwepd.xyz
 DOMAIN-SUFFIX,fwzvlp.xyz
 DOMAIN-SUFFIX,fxeaobv.icu
+DOMAIN-SUFFIX,gcbflvx.cn
 DOMAIN-SUFFIX,gdjme27.com
 DOMAIN-SUFFIX,ggdrfh5.com
 DOMAIN-SUFFIX,ggdumze.cn
@@ -58860,6 +58872,7 @@ DOMAIN-SUFFIX,jjklrcw.com
 DOMAIN-SUFFIX,jjztrz.xyz
 DOMAIN-SUFFIX,jklhs7u.com
 DOMAIN-SUFFIX,jknnjk.com
+DOMAIN-SUFFIX,jkzbjv.xyz
 DOMAIN-SUFFIX,jmbluyxkl.xyz
 DOMAIN-SUFFIX,jnhgm.com
 DOMAIN-SUFFIX,jnp0kmm.icu
@@ -58932,6 +58945,7 @@ DOMAIN-SUFFIX,legdeh.fun
 DOMAIN-SUFFIX,legopq.site
 DOMAIN-SUFFIX,lestv1.icu
 DOMAIN-SUFFIX,lestv10.icu
+DOMAIN-SUFFIX,lestv7.icu
 DOMAIN-SUFFIX,lfjtiuy.cn
 DOMAIN-SUFFIX,lgoewtd.icu
 DOMAIN-SUFFIX,lgohse.fun
@@ -59181,6 +59195,7 @@ DOMAIN-SUFFIX,tseda6.icu
 DOMAIN-SUFFIX,tslbahi.top
 DOMAIN-SUFFIX,ttienli.top
 DOMAIN-SUFFIX,ttykabh.icu
+DOMAIN-SUFFIX,tuhzjrr.cn
 DOMAIN-SUFFIX,tuplzt.xyz
 DOMAIN-SUFFIX,tushwjp.icu
 DOMAIN-SUFFIX,tuyyex.icu
@@ -59218,6 +59233,7 @@ DOMAIN-SUFFIX,vhutitpu.icu
 DOMAIN-SUFFIX,victoriajumpc.com
 DOMAIN-SUFFIX,vihppjk.cn
 DOMAIN-SUFFIX,vkjsnvk.com
+DOMAIN-SUFFIX,vktztp.xyz
 DOMAIN-SUFFIX,vlgkotr.cn
 DOMAIN-SUFFIX,vlujojf.icu
 DOMAIN-SUFFIX,vmdlxj.xyz
@@ -59287,6 +59303,7 @@ DOMAIN-SUFFIX,xwlyfl.xyz
 DOMAIN-SUFFIX,xwqtatnw.icu
 DOMAIN-SUFFIX,xwsqtngwa.xyz
 DOMAIN-SUFFIX,xxniln.xyz
+DOMAIN-SUFFIX,xybnfn.xyz
 DOMAIN-SUFFIX,yac5t.cn
 DOMAIN-SUFFIX,yasg114.com
 DOMAIN-SUFFIX,ybcnvqf.cn
@@ -59300,12 +59317,14 @@ DOMAIN-SUFFIX,yjnhndt.com
 DOMAIN-SUFFIX,yjnkas.com
 DOMAIN-SUFFIX,ykkbwdf.cn
 DOMAIN-SUFFIX,ymhyw6.lol
+DOMAIN-SUFFIX,ynfxxbp.xyz
 DOMAIN-SUFFIX,yofprpv.cn
 DOMAIN-SUFFIX,yruws6.com
 DOMAIN-SUFFIX,yuanmengbi.com
 DOMAIN-SUFFIX,yuanxiang19.fun
 DOMAIN-SUFFIX,yuifgh.fun
 DOMAIN-SUFFIX,yunliunet.com
+DOMAIN-SUFFIX,ywkkmze.cn
 DOMAIN-SUFFIX,yxvoud.com
 DOMAIN-SUFFIX,yyefao.com
 DOMAIN-SUFFIX,yyuivw6.com
@@ -59348,23 +59367,6 @@ DOMAIN-SUFFIX,zvasuzb.icu
 DOMAIN-SUFFIX,zwfkxb.xyz
 DOMAIN-SUFFIX,zxrcfw.com
 DOMAIN-SUFFIX,zypzzv.xyz
-DOMAIN-SUFFIX,diouy9cvtx.xyz
-DOMAIN-SUFFIX,54dbg.xyz
-DOMAIN-SUFFIX,xybnfn.xyz
-DOMAIN-SUFFIX,1jc5t.xyz
-DOMAIN-SUFFIX,tuhzjrr.cn
-DOMAIN-SUFFIX,lestv7.icu
-DOMAIN-SUFFIX,fsmhub.icu
-DOMAIN-SUFFIX,dektcvna.icu
-DOMAIN-SUFFIX,jkzbjv.xyz
-DOMAIN-SUFFIX,ceshi1.ink
-DOMAIN-SUFFIX,789peizi.com
-DOMAIN-SUFFIX,vktztp.xyz
-DOMAIN-SUFFIX,evb0gxo.icu
-DOMAIN-SUFFIX,alemu4s.com
-DOMAIN-SUFFIX,ynfxxbp.xyz
-DOMAIN-SUFFIX,gcbflvx.cn
-DOMAIN-SUFFIX,777zz777zz.com
 DOMAIN-SUFFIX,zzisnvb.cn
 DOMAIN-SUFFIX,002777.xyz
 DOMAIN-SUFFIX,01v62.xyz
@@ -64349,6 +64351,8 @@ DOMAIN-SUFFIX,hivedata.cc
 DOMAIN-SUFFIX,navi.gd.chinamobile.com
 
 
+
+
 ## /*
 ## Written by limbopro
 ## 原文参阅 https://limbopro.com/archives/12904.html
@@ -64357,14 +64361,14 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com
 ## Peter Lowe’s Ad and tracking server list：3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList：32517 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy：25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China：5571 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China：5573 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD：591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计：68254 Domains/IP/Others (非去重统计)
-## 以上共计：65898 Domains/IP/Others (已去重统计)
-## 涉及重复项：共计 1918 Domains/IP/Others
+## 以上共计：68256 Domains/IP/Others (非去重统计)
+## 以上共计：65900 Domains/IP/Others (已去重统计)
+## 涉及重复项共计： 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 重复项如下所示：
-## Last updated at 15/9月/2023/20:36
+## Last updated at 16/9月/2023/00:38
 ## */
 
 

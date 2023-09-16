@@ -241,7 +241,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             ele_dynamicAppend("h1.floatLeft,div.title-container.translate", "如何下载视频", custom_style_values_pb + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "download_pornhub", 2, "button")
             pornhub_sidebar_ads();
             break;
-        case 'missxav':
+        case 'missav':
             window_open_defuser(); // 打断 window.open 施法
             var ua_missav = navigator.userAgent.toLowerCase();
             var mobile_missav = "mobile";
@@ -337,9 +337,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 video_delayPlay(1000);
                 setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 1000);
                 //addEventListener_defuser("touchend"); // 打断监听器
-            }
-            else {
-                addEventListener_defuser("touchend"); // 打断监听器
             }
             break;
         case 'bdys':

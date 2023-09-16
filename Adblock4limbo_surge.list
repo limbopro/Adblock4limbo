@@ -2,18 +2,18 @@
 ## Written by limbopro
 ## 原文参阅 https://limbopro.com/archives/12904.html
 ## 电报群组 https://t.me/Adblock4limbo  
-## Adblock4limbo： 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
-## Peter Lowe’s Ad and tracking server list： 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList： 32517 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy： 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China： 5573 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
-## ACL4SSR BadAD： 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计：68256 Domains/IP/Others (非去重统计)
-## 以上共计：65900 Domains/IP/Others (已去重统计)
-## 涉及重复项共计： 1918 Domains/IP/Others
-## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
-## 涉及重复项于去重后移至 Adblock4limbo.list / Adblock4limbo_surge.list 文件末尾...
-## Last updated at 16/9月/2023/00:37
+## Repo: https://github.com/limbopro/Adblock4limbo  
+## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
+## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
+## EasyList: 32534 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5578 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+## 以上共计: 68278 Domains/IP/Others (非去重统计)
+## 以上共计: 65922 Domains/IP/Others (已去重统计)
+## 涉及重复项共计: 1918 Domains/IP/Others
+## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
+## Last updated at 16/9月/2023/09:49
 ## */
 
 
@@ -221,6 +221,7 @@ DOMAIN-SUFFIX, exemptambientcream.com
 #### javday.tv
 DOMAIN-SUFFIX, farwine.com
 
+ 
 #### Guard Advertising.list 神机规则
 ## 参阅 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list
 
@@ -562,6 +563,7 @@ DOMAIN,118.89.204.198
 DOMAIN,apppv.zol.com.cn
 DOMAIN,pvnapp.zol.com.cn
 
+ 
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
@@ -2656,9 +2658,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309151248
+## ! Version: 202309160127
 ## ! Title: EasyList
-## ! Last modified: 15 Sep 2023 12:48 UTC
+## ! Last modified: 16 Sep 2023 01:27 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -5813,6 +5815,7 @@ DOMAIN-SUFFIX,atableofcup.com
 DOMAIN-SUFFIX,atadserver.com
 DOMAIN-SUFFIX,atala-apw.com
 DOMAIN-SUFFIX,atcelebitor.com
+DOMAIN-SUFFIX,atchshipsmoter.com
 DOMAIN-SUFFIX,atchshipsmotor.com
 DOMAIN-SUFFIX,atcoordinate.com
 DOMAIN-SUFFIX,atdeerlinga.com
@@ -7489,6 +7492,7 @@ DOMAIN-SUFFIX,brattyogor.com
 DOMAIN-SUFFIX,bravelyplainsprowl.com
 DOMAIN-SUFFIX,braveryinherited.com
 DOMAIN-SUFFIX,braveteam.info
+DOMAIN-SUFFIX,bravetense.com
 DOMAIN-SUFFIX,bravotrk.com
 DOMAIN-SUFFIX,brazenwholly.com
 DOMAIN-SUFFIX,brbupali.com
@@ -8539,6 +8543,7 @@ DOMAIN-SUFFIX,chrif8kdstie.com
 DOMAIN-SUFFIX,chrigh.com
 DOMAIN-SUFFIX,chrisrespectivelynostrils.com
 DOMAIN-SUFFIX,christingera.site
+DOMAIN-SUFFIX,chrolal.com
 DOMAIN-SUFFIX,chromessolacer.com
 DOMAIN-SUFFIX,chronicads.com
 DOMAIN-SUFFIX,chrysostrck.com
@@ -11706,6 +11711,7 @@ DOMAIN-SUFFIX,enniced.com
 DOMAIN-SUFFIX,enochiccroatan.guru
 DOMAIN-SUFFIX,enodiarahnthedon.com
 DOMAIN-SUFFIX,enolizekibsey.uno
+DOMAIN-SUFFIX,enormous-society.pro
 DOMAIN-SUFFIX,enormous-use.pro
 DOMAIN-SUFFIX,enoskees.space
 DOMAIN-SUFFIX,enoughts.info
@@ -11987,6 +11993,7 @@ DOMAIN-SUFFIX,eventsbands.com
 DOMAIN-SUFFIX,eventucker.com
 DOMAIN-SUFFIX,evenuewasadi.xyz
 DOMAIN-SUFFIX,ever8trk.com
+DOMAIN-SUFFIX,everalmefarketing.info
 DOMAIN-SUFFIX,everausterity.com
 DOMAIN-SUFFIX,everdreamsofc.info
 DOMAIN-SUFFIX,everprobation.com
@@ -12173,6 +12180,7 @@ DOMAIN-SUFFIX,eypeole.com
 DOMAIN-SUFFIX,eyquvllh.com
 DOMAIN-SUFFIX,eyrarbuggers.com
 DOMAIN-SUFFIX,eyrasmamluks.space
+DOMAIN-SUFFIX,eytheed.com
 DOMAIN-SUFFIX,ezaicmee.xyz
 DOMAIN-SUFFIX,ezcgojaamg.com
 DOMAIN-SUFFIX,ezenxathyim.hair
@@ -15518,6 +15526,7 @@ DOMAIN-SUFFIX,imnpkbxrf.xyz
 DOMAIN-SUFFIX,imobljkhqw.com
 DOMAIN-SUFFIX,imoniummusicry.com
 DOMAIN-SUFFIX,imp2aff.com
+DOMAIN-SUFFIX,impact-betegy.com
 DOMAIN-SUFFIX,impactradius-go.com
 DOMAIN-SUFFIX,impactradius.com
 DOMAIN-SUFFIX,impactserving.com
@@ -18816,6 +18825,7 @@ DOMAIN-SUFFIX,mitaxsodwrfu.com
 DOMAIN-SUFFIX,miteredgasbags.com
 DOMAIN-SUFFIX,mittenheatdied.com
 DOMAIN-SUFFIX,mittylargen.com
+DOMAIN-SUFFIX,miveci.uno
 DOMAIN-SUFFIX,miwhethi.xyz
 DOMAIN-SUFFIX,mixandfun.com
 DOMAIN-SUFFIX,mixeavocat.com
@@ -18876,6 +18886,7 @@ DOMAIN-SUFFIX,mnoglcfv.com
 DOMAIN-SUFFIX,mnpvdtywjtupl.com
 DOMAIN-SUFFIX,mntdwztuzq.com
 DOMAIN-SUFFIX,mntzr11.net
+DOMAIN-SUFFIX,mnwjxqwt.xyz
 DOMAIN-SUFFIX,mo3i5n46.de
 DOMAIN-SUFFIX,moaglail.xyz
 DOMAIN-SUFFIX,moaihkbrogywwiw.xyz
@@ -20412,6 +20423,7 @@ DOMAIN-SUFFIX,ohhonkowjag.com
 DOMAIN-SUFFIX,ohibal.com
 DOMAIN-SUFFIX,ohkdsplu.com
 DOMAIN-SUFFIX,ohktpaajnzk.com
+DOMAIN-SUFFIX,ohkvifgino.com
 DOMAIN-SUFFIX,ohkyxnjj.com
 DOMAIN-SUFFIX,ohlattice.com
 DOMAIN-SUFFIX,ohldsplu.com
@@ -21572,6 +21584,7 @@ DOMAIN-SUFFIX,pedestrianneighbourly.com
 DOMAIN-SUFFIX,peecht.com
 DOMAIN-SUFFIX,peecoubo.net
 DOMAIN-SUFFIX,peefeehu.com
+DOMAIN-SUFFIX,peekaure.xyz
 DOMAIN-SUFFIX,peekipaiw.com
 DOMAIN-SUFFIX,peeksdragoncontinually.com
 DOMAIN-SUFFIX,peekslap.com
@@ -25189,6 +25202,7 @@ DOMAIN-SUFFIX,semifiboolongs.com
 DOMAIN-SUFFIX,semigh.com
 DOMAIN-SUFFIX,semiglorifyseek.com
 DOMAIN-SUFFIX,semirawbatter.com
+DOMAIN-SUFFIX,semqraso.net
 DOMAIN-SUFFIX,semsicou.net
 DOMAIN-SUFFIX,semupgrjbnlhi.com
 DOMAIN-SUFFIX,semwtaanx.xyz
@@ -25721,6 +25735,7 @@ DOMAIN-SUFFIX,skiddyteapots.com
 DOMAIN-SUFFIX,skidgleambrand.com
 DOMAIN-SUFFIX,skierscarletconsensus.com
 DOMAIN-SUFFIX,skierseatmileage.com
+DOMAIN-SUFFIX,skiingclefts.life
 DOMAIN-SUFFIX,skiingsettling.com
 DOMAIN-SUFFIX,skilfuljealousygeoffrey.com
 DOMAIN-SUFFIX,skilleadservices.com
@@ -28787,6 +28802,7 @@ DOMAIN-SUFFIX,universal.wgplayer.com
 DOMAIN-SUFFIX,universalflaskshrimp.com
 DOMAIN-SUFFIX,universityeminenceloosen.com
 DOMAIN-SUFFIX,universityofinternetscience.com
+DOMAIN-SUFFIX,unjftcut.com
 DOMAIN-SUFFIX,unjoincaper.com
 DOMAIN-SUFFIX,unjointbobbed.com
 DOMAIN-SUFFIX,unkemptsodio.digital
@@ -29395,6 +29411,7 @@ DOMAIN-SUFFIX,viciousdepartment.com
 DOMAIN-SUFFIX,viciousdiplomaroller.com
 DOMAIN-SUFFIX,victorious-shock.pro
 DOMAIN-SUFFIX,victoriousagency.pro
+DOMAIN-SUFFIX,victory-vids.online
 DOMAIN-SUFFIX,victoryslam.com
 DOMAIN-SUFFIX,vid-caps.online
 DOMAIN-SUFFIX,vid-clips.space
@@ -31443,6 +31460,7 @@ DOMAIN-SUFFIX,zirdrax.com
 DOMAIN-SUFFIX,zirgogoo.xyz
 DOMAIN-SUFFIX,zisboombah.net
 DOMAIN-SUFFIX,zitaptugo.com
+DOMAIN-SUFFIX,ziwane.uno
 DOMAIN-SUFFIX,ziwyduke.xyz
 DOMAIN-SUFFIX,zixuyi.xyz
 DOMAIN-SUFFIX,zizoxozoox.com
@@ -32694,6 +32712,7 @@ DOMAIN-SUFFIX,ad.pornutopia.org
 DOMAIN-SUFFIX,adf.uhn.cx
 DOMAIN-SUFFIX,affiliates.goodvibes.com
 DOMAIN-SUFFIX,cams.imgtaxi.com
+DOMAIN-SUFFIX,capetown.xhamster.com
 DOMAIN-SUFFIX,creative.live.javhdporn.net
 DOMAIN-SUFFIX,creative.live.javmix.tv
 DOMAIN-SUFFIX,creative.live.tktube.com
@@ -34320,9 +34339,9 @@ DOMAIN-SUFFIX,tldw.me
 
 
 ## [Adblock Plus 1.1]
-## ! Version: 202309151248
+## ! Version: 202309160127
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Sep 2023 12:48 UTC
+## ! Last modified: 16 Sep 2023 01:27 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -59367,6 +59386,11 @@ DOMAIN-SUFFIX,zvasuzb.icu
 DOMAIN-SUFFIX,zwfkxb.xyz
 DOMAIN-SUFFIX,zxrcfw.com
 DOMAIN-SUFFIX,zypzzv.xyz
+DOMAIN-SUFFIX,vmbzhfh.cn
+DOMAIN-SUFFIX,jcwtml.icu
+DOMAIN-SUFFIX,kfjpren.xyz
+DOMAIN-SUFFIX,cheda8.icu
+DOMAIN-SUFFIX,vuvxpf.xyz
 DOMAIN-SUFFIX,zzisnvb.cn
 DOMAIN-SUFFIX,002777.xyz
 DOMAIN-SUFFIX,01v62.xyz
@@ -63973,7 +63997,7 @@ DOMAIN-SUFFIX,zxw51.com
 
 
 #### https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## ACL4SSR BadAD： 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 # 本碎片只包含常见广告关键字、广告联盟。无副作用，放心使用
 
 # 广告关键词
@@ -64357,18 +64381,19 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com
 ## Written by limbopro
 ## 原文参阅 https://limbopro.com/archives/12904.html
 ## 电报群组 https://t.me/Adblock4limbo  
-## Adblock4limbo：477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
-## Peter Lowe’s Ad and tracking server list：3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList：32517 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy：25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China：5573 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
-## ACL4SSR BadAD：591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计：68256 Domains/IP/Others (非去重统计)
-## 以上共计：65900 Domains/IP/Others (已去重统计)
-## 涉及重复项共计： 1918 Domains/IP/Others
+## Repo: https://github.com/limbopro/Adblock4limbo  
+## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
+## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
+## EasyList: 32534 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5578 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+## 以上共计: 68278 Domains/IP/Others (非去重统计)
+## 以上共计: 65922 Domains/IP/Others (已去重统计)
+## 涉及重复项共计: 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
-## 重复项如下所示：
-## Last updated at 16/9月/2023/00:38
+## 其中涉及的重复项如下所示：
+## Last updated at 16/9月/2023/09:50
 ## */
 
 

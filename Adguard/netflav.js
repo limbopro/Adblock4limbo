@@ -43,3 +43,5 @@ setInterval(function () {
 }, 1000)
 
 
+
+remove_ads()

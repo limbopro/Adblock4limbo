@@ -39,6 +39,7 @@
 // @match        https://w.duboku.io/*
 // @match        https://www.duboku.tv/*
 // @match        https://www.libvio.com/*
+// @match        https://www.libvio.top/*
 // @match        https://www.tvn.cc/*
 // @match        https://m.tvn.cc/*
 // @match        https://www.google.com/search*
@@ -56,10 +57,14 @@
 // @match        https://m.yhpdm.com/*
 // @match        https://www.nivod4.tv/*
 // @match        https://m.nivod4.tv/*
+// @match        https://www.javbus.com/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
 // @match        https://javday.tv/*
 // @match        https://www.xvideos.com/*
+// @match        https://4hu.tv/*
+// @match        https://netflav.com/*
+// @match        https://filemoon.sx/*
 // @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
@@ -92,9 +97,6 @@ const uBlockOrigin = {
 
     chn0abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
     chn0setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
-    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
-    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
-    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
     abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
     abortonpropertyread: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-read.js", // default.abort-on-property-read.js
     abortonpropertywrite: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-write.js", // default.abort-on-property-write.js
@@ -179,6 +181,9 @@ const imax = {
         xiaobaotv: "",
         javday: "",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos 
+        javbus: ".ad-item,.ad-box {display:none !important}",
+        _4hu: "#adsbox,.wrap + #midBox ,.wrap + #btmBox,script[src=\"/static/base.js\"] + #couplet ,.search + #midBox,.mod.clearfix,dl#randomBox,dl#listwoBox ,body[ontouchstart] > #topBox, .wrap + #midBox, .wrap + #btmBox, .clearfix.col5.row > #listBox {display: none! important;}",
+        netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -216,6 +221,10 @@ function values() {
         "xiaobaotv",
         "javday",
         "xvideos",
+        "javbus",
+        "4hu",
+        "netflav",
+        "filemoon.",
         "zhihu"
     ]
 
@@ -426,6 +435,20 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }, 1000)
             break;
 
+        case 'javbus':
+            css_adsRemove(imax.css.javbus, 0, "javbus");
+            break;
+        case "4hu":
+            css_adsRemove(imax.css._4hu, 0, "4hu");
+            hrefAttribute_set();
+            break;
+        case "netflav":
+            //addEventListener_defuser("touchend");
+            css_adsRemove(imax.css.netflav, 0, "4hu");
+            break;
+        case "filemoon":
+            //nowindowopenif();
+            break;
         case 'zhihu':
             var zhihu_id = "zhihux"
             button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);
@@ -1013,6 +1036,8 @@ function pornhub_sidebar_ads() {
         }
     }, 500);
 }
+
+
 
 function _91porn_videoplay_ads() {
     //setTimeout(() => {

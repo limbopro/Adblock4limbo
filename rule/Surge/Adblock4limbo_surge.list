@@ -13,7 +13,7 @@
 ## 以上共计: 65924 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
-## Last updated at 16/9月/2023/19:55
+## Last updated at 16/9月/2023/20:29
 ## */
 
 
@@ -2660,9 +2660,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309161040
+## ! Version: 202309161221
 ## ! Title: EasyList
-## ! Last modified: 16 Sep 2023 10:40 UTC
+## ! Last modified: 16 Sep 2023 12:21 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -64399,7 +64399,7 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 其中涉及的重复项如下所示：
-## Last updated at 16/9月/2023/19:56
+## Last updated at 16/9月/2023/20:30
 ## */
 
 

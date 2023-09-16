@@ -6,14 +6,14 @@
 ## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 32534 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyPrivacy: 25376 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
 ## EasyList China: 5580 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 68280 Domains/IP/Others (非去重统计)
+## 以上共计: 68278 Domains/IP/Others (非去重统计)
 ## 以上共计: 65924 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
-## Last updated at 16/9月/2023/16:30
+## Last updated at 16/9月/2023/19:00
 ## */
 
 
@@ -562,6 +562,8 @@ DOMAIN,118.89.204.198, reject
 # > ZOL
 DOMAIN,apppv.zol.com.cn, reject
 DOMAIN,pvnapp.zol.com.cn, reject
+
+
 
  
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
@@ -2658,9 +2660,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn, reject
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309160742
+## ! Version: 202309161040
 ## ! Title: EasyList
-## ! Last modified: 16 Sep 2023 07:42 UTC
+## ! Last modified: 16 Sep 2023 10:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -34338,10 +34340,12 @@ DOMAIN-SUFFIX,playoncenter.com, reject
 DOMAIN-SUFFIX,tldw.me, reject
 
 
+
+
 ## [Adblock Plus 1.1]
-## ! Version: 202309160742
+## ! Version: 202309161040
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Sep 2023 07:42 UTC
+## ! Last modified: 16 Sep 2023 10:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -58496,6 +58500,8 @@ DOMAIN-SUFFIX,vizzit.se, reject
 DOMAIN-SUFFIX,wl.jd.com, reject
 
 
+
+
 ## [Adblock Plus 2.0]
 ## ! Title: EasyList China
 ## ! Chinese supplement for the EasyList filters
@@ -64385,15 +64391,15 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com, reject
 ## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 32534 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyPrivacy: 25376 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
 ## EasyList China: 5580 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 68280 Domains/IP/Others (非去重统计)
+## 以上共计: 68278 Domains/IP/Others (非去重统计)
 ## 以上共计: 65924 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 其中涉及的重复项如下所示：
-## Last updated at 16/9月/2023/16:31
+## Last updated at 16/9月/2023/19:01
 ## */
 
 

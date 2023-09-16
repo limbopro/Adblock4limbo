@@ -1,0 +1,28 @@
+#!name=NobyDa
+#!desc=改写自 NobyDa Script（Quantumult X）；扫描全能王 pro / 去微博应用内广告 / Netflix评分 / VSCO会员解锁等 
+#!https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf
+#!https://github.com/NobyDa/Script
+
+[URL Rewrite]
+
+https://www\.zhihu\.com/api/v4/questions/\d+/related-readings - reject
+https://www\.zhihu\.com/api/v4/answers/\d+/related-readings - reject
+#https://www\.zhihu\.com/api/v4/hot_recommendation - reject
+https://www\.zhihu\.com/commercial_api/banners_v3/mobile_banner - reject
+https://zhuanlan\.zhihu\.com/api/articles/\d+/recommendation - reject
+
+[Header Rewrite]
+#^https:\/\/www\.zhihu\.com\/ header-replace User-Agent "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+
+[Script]
+VSCO滤镜VIP = type=http-response,pattern="^https:\/\/(api\.revenuecat\.com\/v\d\/subscribers|vsco\.co\/api\/subscriptions\/\d\.\d\/user-subscriptions)\/",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js,script-update-interval=0
+扫描全能王 pro = type=http-response,pattern="^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js,script-update-interval=0
+去微博应用内广告 (yichahucha) = type=http-response,pattern="^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua)",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
+去微博应用内广告 (yichahucha) = type=http-response,pattern="^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count)",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,script-update-interval=0
+Netflix评分 (yichahucha) = type=http-request,pattern="^https?://ios[-\w]*\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D",requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,script-update-interval=0
+Netflix评分 (yichahucha) = type=http-response,pattern="^https?://ios[-\w]*\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D",requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,script-update-interval=0
+#知乎防跳转App = type=http-response,pattern="^https://www\.zhihu\.com/question/",requires-body=1,max-size=1,https://raw.githubusercontent.com/id77/QuantumultX/master/Script/zhihu.js,script-update-interval=0
+#知乎防跳转App = type=http-response,pattern="^https://zhuanlan\.zhihu\.com/p/",requires-body=1,max-size=1,https://raw.githubusercontent.com/id77/QuantumultX/master/Script/zhihu.js,script-update-interval=0
+
+[MITM]
+hostname = %APPEND% zhuanlan.zhihu.com, oia.zhihu.com, link.zhihu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, www.zhihu.com, api.zhihu.com, vsco.co, api.meiease.c*, ios*.prod.ftl.netflix.com, api.revenuecat.com

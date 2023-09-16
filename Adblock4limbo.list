@@ -7,13 +7,13 @@
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 32534 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy: 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5578 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China: 5580 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 68278 Domains/IP/Others (非去重统计)
-## 以上共计: 65922 Domains/IP/Others (已去重统计)
+## 以上共计: 68280 Domains/IP/Others (非去重统计)
+## 以上共计: 65924 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
-## Last updated at 16/9月/2023/09:49
+## Last updated at 16/9月/2023/16:30
 ## */
 
 
@@ -2658,9 +2658,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn, reject
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309160127
+## ! Version: 202309160742
 ## ! Title: EasyList
-## ! Last modified: 16 Sep 2023 01:27 UTC
+## ! Last modified: 16 Sep 2023 07:42 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -34339,9 +34339,9 @@ DOMAIN-SUFFIX,tldw.me, reject
 
 
 ## [Adblock Plus 1.1]
-## ! Version: 202309160127
+## ! Version: 202309160742
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Sep 2023 01:27 UTC
+## ! Last modified: 16 Sep 2023 07:42 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -42727,7 +42727,6 @@ DOMAIN-SUFFIX,smetrics.tcs.com, reject
 DOMAIN-SUFFIX,smetrics.tdworld.com, reject
 DOMAIN-SUFFIX,smetrics.te.com, reject
 DOMAIN-SUFFIX,smetrics.teachforamerica.org, reject
-DOMAIN-SUFFIX,smetrics.teambeachbody.com, reject.com^
 DOMAIN-SUFFIX,smetrics.tecentriq-hcp.com, reject
 DOMAIN-SUFFIX,smetrics.tecoloco.co.cr, reject
 DOMAIN-SUFFIX,smetrics.tedbaker.com, reject
@@ -52137,7 +52136,6 @@ DOMAIN-SUFFIX,app-test.nala.money, reject
 DOMAIN-SUFFIX,app-test.planstr.com, reject
 DOMAIN-SUFFIX,app-test.playtally.com, reject
 DOMAIN-SUFFIX,app-test.thestaxapp.com, reject
-DOMAIN-SUFFIX,app-uat.latrobehealth.com.au, rejectpredirect.snapdeal.com^
 DOMAIN-SUFFIX,app.brain.ly, reject
 DOMAIN-SUFFIX,app.dafiti.com.br, reject
 DOMAIN-SUFFIX,app.dickssportinggoods.com, reject
@@ -59391,6 +59389,7 @@ DOMAIN-SUFFIX,jcwtml.icu, reject
 DOMAIN-SUFFIX,kfjpren.xyz, reject
 DOMAIN-SUFFIX,cheda8.icu, reject
 DOMAIN-SUFFIX,vuvxpf.xyz, reject
+DOMAIN-SUFFIX,btienlv.top, reject
 DOMAIN-SUFFIX,zzisnvb.cn, reject
 DOMAIN-SUFFIX,002777.xyz, reject
 DOMAIN-SUFFIX,01v62.xyz, reject
@@ -63030,6 +63029,7 @@ DOMAIN-SUFFIX,yktj.yzz.cn, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
+DOMAIN-SUFFIX,cc.8181zx.com, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject
@@ -64386,14 +64386,14 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com, reject
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 32534 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy: 25378 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5578 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China: 5580 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 68278 Domains/IP/Others (非去重统计)
-## 以上共计: 65922 Domains/IP/Others (已去重统计)
+## 以上共计: 68280 Domains/IP/Others (非去重统计)
+## 以上共计: 65924 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 其中涉及的重复项如下所示：
-## Last updated at 16/9月/2023/09:50
+## Last updated at 16/9月/2023/16:31
 ## */
 
 

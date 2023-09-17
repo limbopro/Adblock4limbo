@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.6.5
+// @version      0.3.6.6
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -258,7 +258,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             var ua_missav = navigator.userAgent.toLowerCase();
             var mobile_missav = "mobile";
-            cloudflare_captchaBypass();
+            //cloudflare_captchaBypass();
             css_adsRemove(imax.css.missav);
             //abortCurrentInlineScript('document.createElement','htmlAds');
             tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
@@ -283,7 +283,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //missAv_adsRemove();
             break;
         case '91porn':
-            cloudflare_captchaBypass();
+            //cloudflare_captchaBypass();
             css_adsRemove(imax.css.porn91);
             _91porn_videoplay_ads();
 
@@ -298,7 +298,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             break;
         case 'avple':
-            cloudflare_captchaBypass();
+            //cloudflare_captchaBypass();
             css_adsRemove(imax.css.avple);
             tagName_appendChild("script", imax.js.avple, "body")
             break;
@@ -335,7 +335,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'tvn':
             break;
         case 'jable':
-            cloudflare_captchaBypass();
+            //cloudflare_captchaBypass();
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             const url_jable = document.location.href;
@@ -682,7 +682,7 @@ function copyText(id1, id2, Text) { // 复制文本按钮
 // Cloudflare recaptcha 绕过
 function cloudflare_captchaBypass() {
     var title = document.title;
-    if (title.search("Cloudflare") >= 0 || title.search("Attention") >= 0) {
+    if (title.search("Cloudflare") !== -1 || title.search("Attention") !== -1) {
         window.location.reload();
         console.log("captchaBypass done;")
     };

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.6.6
+// @version      0.3.6.7
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -67,6 +67,7 @@
 // @match        https://filemoon.sx/*
 // @match        https://embedrise.com*
 // @match        https://mmfl02.com/*
+// @match        https://supjav.com/*
 // @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @require https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
@@ -186,6 +187,7 @@ const imax = {
         javbus: ".ad-item,.ad-box {display:none !important}",
         _4hu: "#adsbox,.wrap + #midBox ,.wrap + #btmBox,script[src=\"/static/base.js\"] + #couplet ,.search + #midBox,.mod.clearfix,dl#randomBox,dl#listwoBox ,body[ontouchstart] > #topBox, .wrap + #midBox, .wrap + #btmBox, .clearfix.col5.row > #listBox {display: none! important;}",
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
+        supjav: ".movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -229,6 +231,7 @@ function values() {
         "filemoon",
         "embedrise",
         "mmfl02",
+        "supjav",
         "zhihu"
     ]
 
@@ -458,6 +461,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             break;
         case "mmfl02":
+            window_open_defuser(); // 打断 window.open 施法
+            break;
+        case "supjav":
+            css_adsRemove(imax.css.supjav, 0, "superjav");
             window_open_defuser(); // 打断 window.open 施法
             break;
         case 'zhihu':

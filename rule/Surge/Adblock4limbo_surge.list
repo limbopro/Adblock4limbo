@@ -7,13 +7,13 @@
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 30737 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy: 21517 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5351 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China: 5352 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 62393 Domains/IP/Others (非去重统计)
+## 以上共计: 62394 Domains/IP/Others (非去重统计)
 ## 以上共计: 60807 Domains/IP/Others (已去重统计)
-## 涉及重复项共计: 1332 Domains/IP/Others
+## 涉及重复项共计: 1333 Domains/IP/Others
 ## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
-## Last updated at 17/9月/2023/21:56
+## Last updated at 17/9月/2023/23:12
 ## */
 
 
@@ -54989,7 +54989,6 @@ DOMAIN-SUFFIX,zwfkxb.xyz
 DOMAIN-SUFFIX,zxrcfw.com
 DOMAIN-SUFFIX,zypzzv.xyz
 DOMAIN-SUFFIX,bxjhlhk.xyz
-DOMAIN-SUFFIX,dexylv.xyz
 DOMAIN-SUFFIX,iyybqzv.cn
 DOMAIN-SUFFIX,cnied.xyz
 DOMAIN-SUFFIX,bnets1.icu
@@ -59860,14 +59859,14 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 30737 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy: 21517 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5351 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China: 5352 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 62393 Domains/IP/Others (非去重统计)
+## 以上共计: 62394 Domains/IP/Others (非去重统计)
 ## 以上共计: 60807 Domains/IP/Others (已去重统计)
-## 涉及重复项共计: 1332 Domains/IP/Others
+## 涉及重复项共计: 1333 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 其中涉及的重复项如下所示：
-## Last updated at 17/9月/2023/21:56
+## Last updated at 17/9月/2023/23:13
 ## */
 
 
@@ -60316,6 +60315,7 @@ DOMAIN-SUFFIX,detailedglue.com
 DOMAIN-SUFFIX,detailedgovernment.com
 DOMAIN-SUFFIX,detectdiscovery.com
 DOMAIN-SUFFIX,devofei.xyz
+DOMAIN-SUFFIX,dexylv.xyz
 DOMAIN-SUFFIX,directaclick.com
 DOMAIN-SUFFIX,direct-events-collector.spot.im
 DOMAIN-SUFFIX,directleads.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309161507
+## ! Version: 202309170812
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Sep 2023 15:07 UTC
+## ! Last modified: 17 Sep 2023 08:12 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2437,6 +2437,7 @@ DOMAIN-SUFFIX,i.viafoura.co, reject
 DOMAIN-SUFFIX,iabusprivacy.pmc.com, reject
 DOMAIN-SUFFIX,icu.getstorybox.com, reject
 DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net, reject
+DOMAIN-SUFFIX,identification.hotmart.com, reject
 DOMAIN-SUFFIX,imp.pvnsolutions.com, reject
 DOMAIN-SUFFIX,impress.vcita.com, reject
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co, reject
@@ -2919,6 +2920,7 @@ DOMAIN-SUFFIX,tracker.wpserveur.net, reject
 DOMAIN-SUFFIX,tracker.xgen.dev, reject
 DOMAIN-SUFFIX,trackerapi.truste.com, reject
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app, reject
+DOMAIN-SUFFIX,tracking-api.hotmart.com, reject
 DOMAIN-SUFFIX,tracking.adalyser.com, reject
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com, reject
 DOMAIN-SUFFIX,tracking.aegpresents.com, reject
@@ -3704,6 +3706,7 @@ DOMAIN-SUFFIX,analytics.vedantu.com, reject
 DOMAIN-SUFFIX,analytics.wavebox.io, reject
 DOMAIN-SUFFIX,analytics.yugen.to, reject
 DOMAIN-SUFFIX,anon-stats.eff.org, reject
+DOMAIN-SUFFIX,api-hotmart-tracking-manager.hotmart.com, reject
 DOMAIN-SUFFIX,api-js.mixpanel.com, reject
 DOMAIN-SUFFIX,api.privacyguides.net, reject
 DOMAIN-SUFFIX,appanalysis.banggood.com, reject
@@ -21440,6 +21443,7 @@ DOMAIN-SUFFIX,geoip.ativo.com, reject
 DOMAIN-SUFFIX,globo-ab.globo.com, reject
 DOMAIN-SUFFIX,hits.letras.mus.br, reject
 DOMAIN-SUFFIX,horizon.globo.com, reject
+DOMAIN-SUFFIX,log-ads.r7.com, reject
 DOMAIN-SUFFIX,logger.rm.uol.com.br, reject
 DOMAIN-SUFFIX,logger.uol.com.br, reject
 DOMAIN-SUFFIX,matt.mercadolivre.com.br, reject

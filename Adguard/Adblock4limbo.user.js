@@ -152,7 +152,7 @@ const imax = {
     js: {
         //functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
-        //vple: "https://limbopro.com/Adguard/avple.js", // avple
+        vple: "https://limbopro.com/Adguard/avple.js", // avple
         //contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
         contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
     },
@@ -161,7 +161,7 @@ const imax = {
         libvio: ".hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
         goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
-        btbdys: "a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
+        btbdys: ".artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "#fkasjgf {display: none !important}",
         jable: ".text-center > a[target=\"_blank\"] > img, div.asg-interstitial,div.asg-interstitial__mask,iframe,div[class*=\"exo\"], .exo-native-widget-outer-container,a[target*=\"_blank\"],a[href*=\"trwl1\"],div[data-width=\"300\"],div.text-center.mb-e-30,div[data-width*=\"300\"],div[style*=\"300px\"],section[class*=\"justify\"],iframe[width=\"728\"][height=\"90\"],#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,.text-center > a[target=\"_blank\"] > img,a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
@@ -355,7 +355,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'bdys':
             css_adsRemove(imax.css.btbdys, 0, "siwtch_button");
             css_adsRemove(imax.css.switch, 0, "switch_class")
-            videoAds_accelerateSkip(0.1);
+            //videoAds_accelerateSkip(0.1); // 视频广告加速
+            //setConstant(); // 视频广告加速
             hrefAttribute_set();
             var url = document.location.href;
             if (url == "https://www.bdys10.com/" || url == "https://www.bdys03.com/") {
@@ -452,7 +453,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case "filemoon":
             window_open_defuser(); // 打断 window.open 施法
-            //nowindowopenif();
             break;
         case "embedrise":
             window_open_defuser(); // 打断 window.open 施法
@@ -497,6 +497,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             break;
         default:
+            window_open_defuser(); // 打断 window.open 施法
             uBlockOrigin_add();
             console.log("Catch Nothing!");
     }

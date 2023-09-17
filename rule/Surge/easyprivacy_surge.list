@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309161507
+## ! Version: 202309170812
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Sep 2023 15:07 UTC
+## ! Last modified: 17 Sep 2023 08:12 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2437,6 +2437,7 @@ DOMAIN-SUFFIX,i.viafoura.co
 DOMAIN-SUFFIX,iabusprivacy.pmc.com
 DOMAIN-SUFFIX,icu.getstorybox.com
 DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net
+DOMAIN-SUFFIX,identification.hotmart.com
 DOMAIN-SUFFIX,imp.pvnsolutions.com
 DOMAIN-SUFFIX,impress.vcita.com
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co
@@ -2919,6 +2920,7 @@ DOMAIN-SUFFIX,tracker.wpserveur.net
 DOMAIN-SUFFIX,tracker.xgen.dev
 DOMAIN-SUFFIX,trackerapi.truste.com
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app
+DOMAIN-SUFFIX,tracking-api.hotmart.com
 DOMAIN-SUFFIX,tracking.adalyser.com
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com
 DOMAIN-SUFFIX,tracking.aegpresents.com
@@ -3704,6 +3706,7 @@ DOMAIN-SUFFIX,analytics.vedantu.com
 DOMAIN-SUFFIX,analytics.wavebox.io
 DOMAIN-SUFFIX,analytics.yugen.to
 DOMAIN-SUFFIX,anon-stats.eff.org
+DOMAIN-SUFFIX,api-hotmart-tracking-manager.hotmart.com
 DOMAIN-SUFFIX,api-js.mixpanel.com
 DOMAIN-SUFFIX,api.privacyguides.net
 DOMAIN-SUFFIX,appanalysis.banggood.com
@@ -21440,6 +21443,7 @@ DOMAIN-SUFFIX,geoip.ativo.com
 DOMAIN-SUFFIX,globo-ab.globo.com
 DOMAIN-SUFFIX,hits.letras.mus.br
 DOMAIN-SUFFIX,horizon.globo.com
+DOMAIN-SUFFIX,log-ads.r7.com
 DOMAIN-SUFFIX,logger.rm.uol.com.br
 DOMAIN-SUFFIX,logger.uol.com.br
 DOMAIN-SUFFIX,matt.mercadolivre.com.br

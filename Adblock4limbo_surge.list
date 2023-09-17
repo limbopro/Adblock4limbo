@@ -5,15 +5,15 @@
 ## Repo: https://github.com/limbopro/Adblock4limbo  
 ## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList: 32552 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 25376 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5583 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList: 32558 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 25380 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5590 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 68299 Domains/IP/Others (非去重统计)
-## 以上共计: 65945 Domains/IP/Others (已去重统计)
+## 以上共计: 68316 Domains/IP/Others (非去重统计)
+## 以上共计: 65962 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
-## Last updated at 16/9月/2023/23:59
+## Last updated at 17/9月/2023/16:25
 ## */
 
 
@@ -2660,9 +2660,9 @@ DOMAIN-SUFFIX,zzhc.vnet.cn
 
 
 ## [Adblock Plus 2.0]
-## ! Version: 202309161507
+## ! Version: 202309170802
 ## ! Title: EasyList
-## ! Last modified: 16 Sep 2023 15:07 UTC
+## ! Last modified: 17 Sep 2023 08:02 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3758,6 +3758,7 @@ DOMAIN-SUFFIX,abluentshinny.com
 DOMAIN-SUFFIX,abluvdiscr.com
 DOMAIN-SUFFIX,ablybeastssarcastic.com
 DOMAIN-SUFFIX,ablyfought.com
+DOMAIN-SUFFIX,abmunnaa.com
 DOMAIN-SUFFIX,abnegationbanquet.com
 DOMAIN-SUFFIX,abnegationsnuff.com
 DOMAIN-SUFFIX,abnetfriths.com
@@ -4802,6 +4803,7 @@ DOMAIN-SUFFIX,ajestigie.com
 DOMAIN-SUFFIX,ajflwavi.com
 DOMAIN-SUFFIX,ajfnee.com
 DOMAIN-SUFFIX,ajillionmax.com
+DOMAIN-SUFFIX,ajiwqmnh.com
 DOMAIN-SUFFIX,ajjhtetv87.com
 DOMAIN-SUFFIX,ajkcmuazxf.com
 DOMAIN-SUFFIX,ajkzd9h.com
@@ -6159,6 +6161,7 @@ DOMAIN-SUFFIX,axcmaxacghp.com
 DOMAIN-SUFFIX,axeldivision.com
 DOMAIN-SUFFIX,axelsermit.com
 DOMAIN-SUFFIX,axesequelplant.com
+DOMAIN-SUFFIX,axhpkbvibdn.com
 DOMAIN-SUFFIX,axill.com
 DOMAIN-SUFFIX,axillovely.com
 DOMAIN-SUFFIX,axingectal.com
@@ -25401,6 +25404,7 @@ DOMAIN-SUFFIX,sharieta.com
 DOMAIN-SUFFIX,sharkbiz.lol
 DOMAIN-SUFFIX,sharkflowing.com
 DOMAIN-SUFFIX,sharpofferlinks.com
+DOMAIN-SUFFIX,sharpphysicallyupcoming.com
 DOMAIN-SUFFIX,sharpsharkteeth.com
 DOMAIN-SUFFIX,sharpycurvet.com
 DOMAIN-SUFFIX,sharragsferics.store
@@ -27763,6 +27767,7 @@ DOMAIN-SUFFIX,titsandtits.com
 DOMAIN-SUFFIX,tittyptinoid.com
 DOMAIN-SUFFIX,titvrbob.xyz
 DOMAIN-SUFFIX,tiwhaiph.net
+DOMAIN-SUFFIX,tiwouboa.com
 DOMAIN-SUFFIX,tizadumbed.com
 DOMAIN-SUFFIX,tjavravj.com
 DOMAIN-SUFFIX,tjgpeswdkrym.com
@@ -31797,6 +31802,7 @@ DOMAIN-SUFFIX,gfxa.sheetmusicplus.com
 DOMAIN-SUFFIX,gg.caixin.com
 DOMAIN-SUFFIX,go.bloxplay.com
 DOMAIN-SUFFIX,go.ezodn.com
+DOMAIN-SUFFIX,hb.yahoo.net
 DOMAIN-SUFFIX,hbid.ams3.cdn.digitaloceanspaces.com
 DOMAIN-SUFFIX,ipp.littlecdn.com
 DOMAIN-SUFFIX,js.phoenixmanga.com
@@ -34361,9 +34367,9 @@ DOMAIN-SUFFIX,tldw.me
 
 
 ## [Adblock Plus 1.1]
-## ! Version: 202309161507
+## ! Version: 202309170812
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Sep 2023 15:07 UTC
+## ! Last modified: 17 Sep 2023 08:12 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -36135,6 +36141,7 @@ DOMAIN-SUFFIX,i.viafoura.co
 DOMAIN-SUFFIX,iabusprivacy.pmc.com
 DOMAIN-SUFFIX,icu.getstorybox.com
 DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net
+DOMAIN-SUFFIX,identification.hotmart.com
 DOMAIN-SUFFIX,imp.pvnsolutions.com
 DOMAIN-SUFFIX,impress.vcita.com
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co
@@ -36586,6 +36593,7 @@ DOMAIN-SUFFIX,tracker.wpserveur.net
 DOMAIN-SUFFIX,tracker.xgen.dev
 DOMAIN-SUFFIX,trackerapi.truste.com
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app
+DOMAIN-SUFFIX,tracking-api.hotmart.com
 DOMAIN-SUFFIX,tracking.adalyser.com
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com
 DOMAIN-SUFFIX,tracking.aegpresents.com
@@ -37321,6 +37329,7 @@ DOMAIN-SUFFIX,analytics.vedantu.com
 DOMAIN-SUFFIX,analytics.wavebox.io
 DOMAIN-SUFFIX,analytics.yugen.to
 DOMAIN-SUFFIX,anon-stats.eff.org
+DOMAIN-SUFFIX,api-hotmart-tracking-manager.hotmart.com
 DOMAIN-SUFFIX,api.privacyguides.net
 DOMAIN-SUFFIX,appanalysis.banggood.com
 DOMAIN-SUFFIX,assets.instacart.com
@@ -54989,6 +54998,7 @@ DOMAIN-SUFFIX,geoip.ativo.com
 DOMAIN-SUFFIX,globo-ab.globo.com
 DOMAIN-SUFFIX,hits.letras.mus.br
 DOMAIN-SUFFIX,horizon.globo.com
+DOMAIN-SUFFIX,log-ads.r7.com
 DOMAIN-SUFFIX,logger.rm.uol.com.br
 DOMAIN-SUFFIX,logger.uol.com.br
 DOMAIN-SUFFIX,matt.mercadolivre.com.br
@@ -59417,6 +59427,13 @@ DOMAIN-SUFFIX,zvasuzb.icu
 DOMAIN-SUFFIX,zwfkxb.xyz
 DOMAIN-SUFFIX,zxrcfw.com
 DOMAIN-SUFFIX,zypzzv.xyz
+DOMAIN-SUFFIX,bxjhlhk.xyz
+DOMAIN-SUFFIX,dexylv.xyz
+DOMAIN-SUFFIX,iyybqzv.cn
+DOMAIN-SUFFIX,cnied.xyz
+DOMAIN-SUFFIX,bnets1.icu
+DOMAIN-SUFFIX,nmlfev.icu
+DOMAIN-SUFFIX,szn0ehq.icu
 DOMAIN-SUFFIX,zzisnvb.cn
 DOMAIN-SUFFIX,002777.xyz
 DOMAIN-SUFFIX,01v62.xyz
@@ -64411,16 +64428,16 @@ DOMAIN-SUFFIX,navi.gd.chinamobile.com
 ## Repo: https://github.com/limbopro/Adblock4limbo  
 ## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList: 32552 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 25376 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5583 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList: 32558 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 25380 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5590 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 68299 Domains/IP/Others (非去重统计)
-## 以上共计: 65945 Domains/IP/Others (已去重统计)
+## 以上共计: 68316 Domains/IP/Others (非去重统计)
+## 以上共计: 65962 Domains/IP/Others (已去重统计)
 ## 涉及重复项共计: 1918 Domains/IP/Others
 ## 最终已去重合并至 Adblock4limbo.list / Adblock4limbo_surge.list
 ## 其中涉及的重复项如下所示：
-## Last updated at 17/9月/2023/00:00
+## Last updated at 17/9月/2023/16:25
 ## */
 
 

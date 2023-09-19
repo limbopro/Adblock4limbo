@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.6.7
+// @version      0.3.6.8
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -33,6 +33,10 @@
 // @match        https://www.555dd6.com/*
 // @match        https://www.555dd7.com/*
 // @match        https://www.555dd8.com/*
+// @match        https://555dyx1.com/*
+// @match        https://555dyx3.com/*
+// @match        https://555dyx4.com/*
+// @match        https://555dyx5.com/*
 // @match        https://o8tv.com/*
 // @match        https://www.wnacg.com/*
 // @match        https://www.wnacg.org/*
@@ -213,6 +217,7 @@ function values() {
         "www.5dy",
         "www.555dd",
         "o8tv",
+        "555dyx",
         "instagram",
         "ttsp",
         "tz659",
@@ -311,13 +316,17 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             _18comic_adsRemove();
             break;
         case 'www.5dy':
-            css_adsRemove(imax.css.dy555);
+            adsDomain_switch("555dyx")
             break;
         case 'o8tv':
-            css_adsRemove(imax.css.dy555);
+            adsDomain_switch("555dyx")
             break;
         case 'www.555dd':
-            css_adsRemove(imax.css.dy555);
+            adsDomain_switch("555dyx")
+            break;
+        case "555dyx":
+            css_adsRemove(imax.css.dy555, 0, "555dy")
+            document.querySelectorAll('.popup-btn.close-pop')[0].click() //模拟点击
             break;
         case 'wnacg':
             css_adsRemove(imax.css.wnacg);

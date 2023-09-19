@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309171342
+## ! Version: 202309191443
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 Sep 2023 13:42 UTC
+## ! Last modified: 19 Sep 2023 14:43 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -15,6 +15,11 @@
 ## ! GitHub pull requests: https://github.com/easylist/easylist/pulls
 
 
+/clickheat
+/dynaTraceMonitor
+/log/ux_analytics
+/swell-ct-pv
+/traffic/track
 DOMAIN-SUFFIX,00px.net
 DOMAIN-SUFFIX,1cros.net
 DOMAIN-SUFFIX,2022welcome.com
@@ -48,6 +53,7 @@ DOMAIN-SUFFIX,anonstat.pw
 DOMAIN-SUFFIX,apeagle.io
 DOMAIN-SUFFIX,apenterprise.io
 DOMAIN-SUFFIX,apxl.io
+DOMAIN-SUFFIX,as3.io
 DOMAIN-SUFFIX,awmonitor.com
 DOMAIN-SUFFIX,ayc0zsm69431gfebd.info
 DOMAIN-SUFFIX,bfmio.com
@@ -350,6 +356,7 @@ DOMAIN-SUFFIX,videoplayerhub.com
 DOMAIN-SUFFIX,vkanalytics.net
 DOMAIN-SUFFIX,vpdcp.com
 DOMAIN-SUFFIX,vstats.me
+DOMAIN-SUFFIX,walkerllaw.org
 DOMAIN-SUFFIX,wct-2.com
 DOMAIN-SUFFIX,whale3.io
 DOMAIN-SUFFIX,widgetbe.com
@@ -2384,7 +2391,6 @@ DOMAIN-SUFFIX,f-log-at.grammarly.io
 DOMAIN-SUFFIX,f-log-test.grammarly.io
 DOMAIN-SUFFIX,fcmatch.google.com
 DOMAIN-SUFFIX,fcmatch.youtube.com
-DOMAIN-SUFFIX,fenix.walkerllaw.org
 DOMAIN-SUFFIX,filament-stats.herokuapp.com
 DOMAIN-SUFFIX,fingerprinter-production.herokuapp.com
 DOMAIN-SUFFIX,firebaselogging-pa.googleapis.com
@@ -2821,6 +2827,7 @@ DOMAIN-SUFFIX,tagger.opecloud.com
 DOMAIN-SUFFIX,tags.catapultx.com
 DOMAIN-SUFFIX,tags.cdn.circlesix.co
 DOMAIN-SUFFIX,tags.clickagy.com
+DOMAIN-SUFFIX,tags.dxmdp.com
 DOMAIN-SUFFIX,tags.fullcontact.com
 DOMAIN-SUFFIX,tags.master-perf-tools.com
 DOMAIN-SUFFIX,tags.refinery89.com
@@ -2960,6 +2967,7 @@ DOMAIN-SUFFIX,tracking.quisma.com
 DOMAIN-SUFFIX,tracking.rapidape.com
 DOMAIN-SUFFIX,tracking.scenepass.com
 DOMAIN-SUFFIX,tracking.searchmarketing.com
+DOMAIN-SUFFIX,tracking.server.bytecon.com
 DOMAIN-SUFFIX,tracking.sexcash.com
 DOMAIN-SUFFIX,tracking.sezzle.com
 DOMAIN-SUFFIX,tracking.sharplink.us
@@ -3150,6 +3158,22 @@ DOMAIN-SUFFIX,du8783wkf05yr.cloudfront.net
 DOMAIN-SUFFIX,duu8lzqdm8tsz.cloudfront.net
 DOMAIN-SUFFIX,dy2xcjk8s1dbz.cloudfront.net
 DOMAIN-SUFFIX,dyv1bugovvq1g.cloudfront.net
+! DOMAIN-SUFFIX,cefgo.com
+! DOMAIN-SUFFIX,domaincontrol.com
+! DOMAIN-SUFFIX,fbi.com
+! DOMAIN-SUFFIX,lacolhost.com
+! DOMAIN-SUFFIX,local.computer
+! DOMAIN-SUFFIX,local.qinlili.bid
+! DOMAIN-SUFFIX,local.sisteminha.com
+! DOMAIN-SUFFIX,localho.st
+! !DOMAIN-SUFFIX,localhost.direct
+! DOMAIN-SUFFIX,localtest.me
+! DOMAIN-SUFFIX,lvh.me
+! DOMAIN-SUFFIX,netfinity.hostedrmm.com
+! DOMAIN-SUFFIX,ssh.town
+! DOMAIN-SUFFIX,supercalifragilisticexpialidocious.co.uk
+! DOMAIN-SUFFIX,xip.io
+! DOMAIN-SUFFIX,yoogle.com
 DOMAIN-SUFFIX,am-vid-events.taboola.com
 DOMAIN-SUFFIX,convsgmp.taboola.com
 DOMAIN-SUFFIX,la-sync.taboola.com
@@ -3290,6 +3314,7 @@ DOMAIN-SUFFIX,trk.adbutter.net
 DOMAIN-SUFFIX,visitping.rossel.be
 DOMAIN-SUFFIX,ws3.smartp.com
 DOMAIN-SUFFIX,aff*.kolektiva.net
+-logging.nextmedia.com
 DOMAIN-SUFFIX,adv-sv-stat.focus.cn
 DOMAIN-SUFFIX,analytics.meituan.net
 DOMAIN-SUFFIX,atanx.alicdn.com
@@ -3715,6 +3740,7 @@ DOMAIN-SUFFIX,assets.instacart.com
 DOMAIN-SUFFIX,atrack.allposters.com
 DOMAIN-SUFFIX,ats.alot.com
 DOMAIN-SUFFIX,aurum.tirto.id
+DOMAIN-SUFFIX,b629.electronicdesign.com
 DOMAIN-SUFFIX,barnes.send.cm
 DOMAIN-SUFFIX,bat.maydream.com
 DOMAIN-SUFFIX,bats.video.yahoo.com
@@ -3912,6 +3938,7 @@ DOMAIN-SUFFIX,mcs-va.tiktokv.com
 DOMAIN-SUFFIX,mcs.us.tiktokv.com
 DOMAIN-SUFFIX,metrics.audius.co
 DOMAIN-SUFFIX,metrics.bangbros.com
+DOMAIN-SUFFIX,metrics.camsoda.com
 DOMAIN-SUFFIX,metrics.freemake.com
 DOMAIN-SUFFIX,metrics.hackerrank.com
 DOMAIN-SUFFIX,metrics.onewegg.com
@@ -4214,6 +4241,18 @@ DOMAIN-SUFFIX,sourcepoint-mms.history.com
 DOMAIN-SUFFIX,sourcepoint-mms.mylifetime.com
 DOMAIN-SUFFIX,vg247-p2.vg247.com
 DOMAIN-SUFFIX,vg247-uk.vg247.com
+! DOMAIN-SUFFIX,cart.matsuzaka-steak.com
+! DOMAIN-SUFFIX,form.ict-toshiba.jp
+! DOMAIN-SUFFIX,contactforms.53.com
+! DOMAIN-SUFFIX,clickmail.stubhub.com
+! DOMAIN-SUFFIX,go.fvtc.edu
+! DOMAIN-SUFFIX,links.strava.com
+! DOMAIN-SUFFIX,wl.spotify.com
+! DOMAIN-SUFFIX,digital.att.com
+! DOMAIN-SUFFIX,connect.telstrawholesale.com
+! DOMAIN-SUFFIX,form.info-morimoto-real.jp
+! DOMAIN-SUFFIX,hfd.bridgetowermedia.com
+! DOMAIN-SUFFIX,seek.intel.com
 DOMAIN-SUFFIX,primate.dmarcdigests.com
 DOMAIN-SUFFIX,0d8is908gby1.www.terraform.com.ar
 DOMAIN-SUFFIX,10ro53kulyb.groove.so
@@ -6432,6 +6471,7 @@ DOMAIN-SUFFIX,tdep.suncamp.de
 DOMAIN-SUFFIX,tdep.suncamp.nl
 DOMAIN-SUFFIX,tdep.suncamp.pl
 DOMAIN-SUFFIX,tdep.teamnijhuis.com
+|71efe2183b8663ad5bf9d7a9320aeb48.leboncoin.fr
 DOMAIN-SUFFIX,a.20minutes.fr
 DOMAIN-SUFFIX,a.hellowork.com
 DOMAIN-SUFFIX,a.pourquoidocteur.fr
@@ -9984,6 +10024,7 @@ DOMAIN-SUFFIX,www91.intel.la
 DOMAIN-SUFFIX,www91.intel.pl
 DOMAIN-SUFFIX,www91.intel.ru
 DOMAIN-SUFFIX,y.ksl.com
+arketing.indianadunes.com
 DOMAIN-SUFFIX,12build.actonservice.com
 DOMAIN-SUFFIX,2.ed.west.com
 DOMAIN-SUFFIX,3347.wolf-gordon.com
@@ -21423,6 +21464,7 @@ DOMAIN-SUFFIX,stats.tunt.lv
 DOMAIN-SUFFIX,click.vgnett.no
 DOMAIN-SUFFIX,data.nrk.no
 DOMAIN-SUFFIX,stats.proff.no
+|http://x.o2.pl
 DOMAIN-SUFFIX,analytics.gazeta.pl
 DOMAIN-SUFFIX,collect.state.centrum24.pl
 DOMAIN-SUFFIX,entryhit.wp.pl
@@ -21523,6 +21565,8 @@ DOMAIN-SUFFIX,d.haberler.com
 DOMAIN-SUFFIX,d.sondakika.com
 DOMAIN-SUFFIX,hstats.hepsiburada.com
 DOMAIN-SUFFIX,stats.birgun.net
+|http://r.i.ua
+|https://r.i.ua
 DOMAIN-SUFFIX,counter.nv.ua
 DOMAIN-SUFFIX,counter.ukr.net
 DOMAIN-SUFFIX,remp.nv.ua
@@ -21532,3 +21576,5 @@ DOMAIN-SUFFIX,log.ttbc-hcm.gov.vn
 DOMAIN-SUFFIX,logsbin.dantri.com.vn
 DOMAIN-SUFFIX,pixel.coccoc.com
 DOMAIN-SUFFIX,track-srv.vietnamnet.vn
+@@DOMAIN-SUFFIX,cbsi.map.fastly.net
+@@DOMAIN-SUFFIX,wwwimage-tve.cbsstatic.com

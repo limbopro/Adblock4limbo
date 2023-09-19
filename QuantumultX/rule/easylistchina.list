@@ -11,6 +11,7 @@
 ## ! or via e-mail (easylist.china@gmail.com).
 
 
+/cpmShopAds, reject
 DOMAIN-SUFFIX,asd8900.oss-*.aliyuncs.com, reject
 DOMAIN-SUFFIX,tupian888.*.bcebos.com, reject
 DOMAIN-SUFFIX,vns86.oss-*.aliyuncs.com, reject
@@ -34,6 +35,7 @@ DOMAIN-SUFFIX,155zn.com, reject
 DOMAIN-SUFFIX,1jc5t.xyz, reject
 DOMAIN-SUFFIX,1u5gy.xyz, reject
 DOMAIN-SUFFIX,23dhj4q.com, reject
+DOMAIN-SUFFIX,32ycta.xyz, reject
 DOMAIN-SUFFIX,3337126.com, reject
 DOMAIN-SUFFIX,3338637.com, reject
 DOMAIN-SUFFIX,3338652.com, reject
@@ -46,6 +48,7 @@ DOMAIN-SUFFIX,39mydp.xyz, reject
 DOMAIN-SUFFIX,3ad5iot.com, reject
 DOMAIN-SUFFIX,3er88wn.com, reject
 DOMAIN-SUFFIX,4asfgyx.com, reject
+DOMAIN-SUFFIX,4l903.com, reject
 DOMAIN-SUFFIX,52acc.cn, reject
 DOMAIN-SUFFIX,52kuwang.cn, reject
 DOMAIN-SUFFIX,54dbg.xyz, reject
@@ -124,6 +127,7 @@ DOMAIN-SUFFIX,bnds4.site, reject
 DOMAIN-SUFFIX,bnds6.site, reject
 DOMAIN-SUFFIX,bnds7.site, reject
 DOMAIN-SUFFIX,bnds8.site, reject
+DOMAIN-SUFFIX,bnets1.icu, reject
 DOMAIN-SUFFIX,bnfyzszm.icu, reject
 DOMAIN-SUFFIX,bnrdnx.xyz, reject
 DOMAIN-SUFFIX,boats8.top, reject
@@ -142,6 +146,7 @@ DOMAIN-SUFFIX,btsvad8.com, reject
 DOMAIN-SUFFIX,bttazsyk.icu, reject
 DOMAIN-SUFFIX,bupidt.xyz, reject
 DOMAIN-SUFFIX,bxackzj.icu, reject
+DOMAIN-SUFFIX,bxjhlhk.xyz, reject
 DOMAIN-SUFFIX,byvlph.xyz, reject
 DOMAIN-SUFFIX,bzxvtj.xyz, reject
 DOMAIN-SUFFIX,c4d4.cn, reject
@@ -164,6 +169,7 @@ DOMAIN-SUFFIX,chiese.site, reject
 DOMAIN-SUFFIX,chozarpeases.com, reject
 DOMAIN-SUFFIX,ciadre.fun, reject
 DOMAIN-SUFFIX,cix0wk.com, reject
+DOMAIN-SUFFIX,cnied.xyz, reject
 DOMAIN-SUFFIX,cocloud.site, reject
 DOMAIN-SUFFIX,connectreadoasis.com, reject
 DOMAIN-SUFFIX,cqtlimi.cn, reject
@@ -198,6 +204,7 @@ DOMAIN-SUFFIX,derew6xbsc.xyz, reject
 DOMAIN-SUFFIX,desac10.icu, reject
 DOMAIN-SUFFIX,desac7.icu, reject
 DOMAIN-SUFFIX,destc8.icu, reject
+DOMAIN-SUFFIX,dexylv.xyz, reject
 DOMAIN-SUFFIX,dffrahax.com, reject
 DOMAIN-SUFFIX,dfgpifa.com, reject
 DOMAIN-SUFFIX,dfgwer.com, reject
@@ -211,9 +218,11 @@ DOMAIN-SUFFIX,diouy9cvtx.xyz, reject
 DOMAIN-SUFFIX,dmvckj.icu, reject
 DOMAIN-SUFFIX,dnceqzz.icu, reject
 DOMAIN-SUFFIX,dnightwish.xyz, reject
+DOMAIN-SUFFIX,dniwe.xyz, reject
 DOMAIN-SUFFIX,dojyiu8.com, reject
 DOMAIN-SUFFIX,donchen501.cn, reject
 DOMAIN-SUFFIX,dosre12.xyz, reject
+DOMAIN-SUFFIX,dozwjl.xyz, reject
 DOMAIN-SUFFIX,dpbgnf.xyz, reject
 DOMAIN-SUFFIX,dqjojx.xyz, reject
 DOMAIN-SUFFIX,dsbjdeh.cn, reject
@@ -380,6 +389,8 @@ DOMAIN-SUFFIX,iqede.xyz, reject
 DOMAIN-SUFFIX,iqgoukn.cn, reject
 DOMAIN-SUFFIX,islbaho.top, reject
 DOMAIN-SUFFIX,itienlo.top, reject
+DOMAIN-SUFFIX,ixxoo.asia, reject
+DOMAIN-SUFFIX,iyybqzv.cn, reject
 DOMAIN-SUFFIX,j7ifivzy.icu, reject
 DOMAIN-SUFFIX,jakid.xyz, reject
 DOMAIN-SUFFIX,janwzsqi.icu, reject
@@ -546,12 +557,14 @@ DOMAIN-SUFFIX,njogejt.icu, reject
 DOMAIN-SUFFIX,nlvgxr.xyz, reject
 DOMAIN-SUFFIX,nmdotj.xyz, reject
 DOMAIN-SUFFIX,nmkghh.com, reject
+DOMAIN-SUFFIX,nmlfev.icu, reject
 DOMAIN-SUFFIX,nmssdbgmf.xyz, reject
 DOMAIN-SUFFIX,nndzsw.com, reject
 DOMAIN-SUFFIX,nndzsw1.com, reject
 DOMAIN-SUFFIX,nnfyxd.xyz, reject
 DOMAIN-SUFFIX,nnqwe.xyz, reject
 DOMAIN-SUFFIX,northcookie.xyz, reject
+DOMAIN-SUFFIX,npnzfri.xyz, reject
 DOMAIN-SUFFIX,nqdufv.xyz, reject
 DOMAIN-SUFFIX,nqoxurf.icu, reject
 DOMAIN-SUFFIX,nryqr.cn, reject
@@ -589,6 +602,7 @@ DOMAIN-SUFFIX,pdjjrh.xyz, reject
 DOMAIN-SUFFIX,pfhj89w.com, reject
 DOMAIN-SUFFIX,pfqwbqs.cn, reject
 DOMAIN-SUFFIX,pgght17.com, reject
+DOMAIN-SUFFIX,pgpufyzi.xyz, reject
 DOMAIN-SUFFIX,piqtpbxo.icu, reject
 DOMAIN-SUFFIX,pirxzl.xyz, reject
 DOMAIN-SUFFIX,pjsbuhl.icu, reject
@@ -624,6 +638,7 @@ DOMAIN-SUFFIX,qrirud.xyz, reject
 DOMAIN-SUFFIX,qselic.top, reject
 DOMAIN-SUFFIX,qslbahy.top, reject
 DOMAIN-SUFFIX,qtienly.top, reject
+DOMAIN-SUFFIX,qu96.com, reject
 DOMAIN-SUFFIX,qucncfo.cn, reject
 DOMAIN-SUFFIX,qwdbsjnql.com, reject
 DOMAIN-SUFFIX,qxakzox.cn, reject
@@ -647,6 +662,7 @@ DOMAIN-SUFFIX,rifyeldz.top, reject
 DOMAIN-SUFFIX,rilwzsit.icu, reject
 DOMAIN-SUFFIX,riqmqrd.icu, reject
 DOMAIN-SUFFIX,rixgpx.xyz, reject
+DOMAIN-SUFFIX,rixqlvd.cn, reject
 DOMAIN-SUFFIX,rjzqtz.xyz, reject
 DOMAIN-SUFFIX,rlqoyht.icu, reject
 DOMAIN-SUFFIX,ronbbf.xyz, reject
@@ -658,6 +674,7 @@ DOMAIN-SUFFIX,rtborp.xyz, reject
 DOMAIN-SUFFIX,rtumdhdk.xyz, reject
 DOMAIN-SUFFIX,rtumwzp.icu, reject
 DOMAIN-SUFFIX,rvzlobj.cn, reject
+DOMAIN-SUFFIX,rwarwf.icu, reject
 DOMAIN-SUFFIX,rznscya.cn, reject
 DOMAIN-SUFFIX,s2dcm.com, reject
 DOMAIN-SUFFIX,sa8zdui.com, reject
@@ -674,6 +691,7 @@ DOMAIN-SUFFIX,sdfyiu.com, reject
 DOMAIN-SUFFIX,sdvfvgj.cn, reject
 DOMAIN-SUFFIX,sensifyfugged.com, reject
 DOMAIN-SUFFIX,sfg11rr.com, reject
+DOMAIN-SUFFIX,sgeth1.icu, reject
 DOMAIN-SUFFIX,sgeth7.icu, reject
 DOMAIN-SUFFIX,shulsbs.cn, reject
 DOMAIN-SUFFIX,simblotusitate.com, reject
@@ -691,6 +709,7 @@ DOMAIN-SUFFIX,suy5x8.com, reject
 DOMAIN-SUFFIX,svarub.xyz, reject
 DOMAIN-SUFFIX,svvev3.com, reject
 DOMAIN-SUFFIX,sxundrh.cn, reject
+DOMAIN-SUFFIX,szn0ehq.icu, reject
 DOMAIN-SUFFIX,t2zfyxjj.icu, reject
 DOMAIN-SUFFIX,tarqk5.com, reject
 DOMAIN-SUFFIX,tbb0001.top, reject
@@ -789,6 +808,7 @@ DOMAIN-SUFFIX,vzvvifw.cn, reject
 DOMAIN-SUFFIX,wcv68kw.com, reject
 DOMAIN-SUFFIX,wddsva0.com, reject
 DOMAIN-SUFFIX,whe0nqk.icu, reject
+DOMAIN-SUFFIX,whjding.cn, reject
 DOMAIN-SUFFIX,wlgxaij.cn, reject
 DOMAIN-SUFFIX,wnzle.com, reject
 DOMAIN-SUFFIX,wpoarjokzgi.com, reject
@@ -855,6 +875,7 @@ DOMAIN-SUFFIX,ykkbwdf.cn, reject
 DOMAIN-SUFFIX,ymhyw6.lol, reject
 DOMAIN-SUFFIX,ynfxxbp.xyz, reject
 DOMAIN-SUFFIX,yofprpv.cn, reject
+DOMAIN-SUFFIX,ypvtw.com, reject
 DOMAIN-SUFFIX,yruws6.com, reject
 DOMAIN-SUFFIX,yuanmengbi.com, reject
 DOMAIN-SUFFIX,yuanxiang19.fun, reject
@@ -903,16 +924,17 @@ DOMAIN-SUFFIX,zvasuzb.icu, reject
 DOMAIN-SUFFIX,zwfkxb.xyz, reject
 DOMAIN-SUFFIX,zxrcfw.com, reject
 DOMAIN-SUFFIX,zypzzv.xyz, reject
-DOMAIN-SUFFIX,bxjhlhk.xyz, reject
-DOMAIN-SUFFIX,dexylv.xyz, reject
-DOMAIN-SUFFIX,iyybqzv.cn, reject
-DOMAIN-SUFFIX,cnied.xyz, reject
-DOMAIN-SUFFIX,bnets1.icu, reject
-DOMAIN-SUFFIX,nmlfev.icu, reject
-DOMAIN-SUFFIX,szn0ehq.icu, reject
-DOMAIN-SUFFIX,ixxoo.asia, reject
-DOMAIN-SUFFIX,dexylv.xyz, reject
 DOMAIN-SUFFIX,zzisnvb.cn, reject
+DOMAIN-SUFFIX,zents5.top, reject
+DOMAIN-SUFFIX,zhrrzug.xyz, reject
+DOMAIN-SUFFIX,vakdop.icu, reject
+DOMAIN-SUFFIX,lybxft.xyz, reject
+DOMAIN-SUFFIX,ecami.xyz, reject
+DOMAIN-SUFFIX,jtwewpi.cn, reject
+DOMAIN-SUFFIX,unmsrvh.cn, reject
+DOMAIN-SUFFIX,analystrati.com, reject
+DOMAIN-SUFFIX,bwdiy.cn, reject
+DOMAIN-SUFFIX,vghkncbu.xyz, reject
 DOMAIN-SUFFIX,002777.xyz, reject
 DOMAIN-SUFFIX,01v62.xyz, reject
 DOMAIN-SUFFIX,0272aa.com, reject
@@ -4344,6 +4366,8 @@ DOMAIN-SUFFIX,xiaoshuoyun.cn, reject
 DOMAIN-SUFFIX,xpj08.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,ys2000.cdn.bcebos.com, reject
 DOMAIN-SUFFIX,zgm1.com, reject
+/vmind.qqvideo.tc.qq.com, reject
+_vmind.qqvideo.tc.qq.com, reject
 DOMAIN-SUFFIX,1.hao123.com, reject
 DOMAIN-SUFFIX,1.i999d.cn, reject
 DOMAIN-SUFFIX,100.admin5.com, reject
@@ -4607,6 +4631,17 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
+@@DOMAIN-SUFFIX,ad.10010.com, reject
+@@DOMAIN-SUFFIX,ad.abchina.com, reject
+@@DOMAIN-SUFFIX,ad.kazakinfo.com, reject
+@@DOMAIN-SUFFIX,ad.ourgame.com, reject
+@@DOMAIN-SUFFIX,adcdn.pingan.com, reject
+@@DOMAIN-SUFFIX,advert.kf5.com, reject
+@@DOMAIN-SUFFIX,api.ads.tvb.com, reject
+@@DOMAIN-SUFFIX,app-advertise.zhihuishu.com, reject
+@@DOMAIN-SUFFIX,buyad.bi-xenon.cn, reject
+@@DOMAIN-SUFFIX,captcha.su.baidu.com, reject
+@@DOMAIN-SUFFIX,img.ads.tvb.com, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject
@@ -5354,6 +5389,16 @@ DOMAIN-SUFFIX,zq.lansedir.com, reject
 DOMAIN-SUFFIX,zsjxwj.com, reject
 DOMAIN-SUFFIX,zuowen.hydcd.com, reject
 DOMAIN-SUFFIX,zx.docin.com, reject
+.m.bookben.com, reject
+.m.d8qu.com, reject
+.m.fhxiaoshuo.com, reject
+.m.gxwztv.com, reject
+.m.kanshuzw.com, reject
+.m.muyuge.com, reject
+.m.qiuwu.net, reject
+.m.wenxuemi.cc, reject
+.m.zineworm.com, reject
+.wap.x4399.com, reject
 DOMAIN-SUFFIX,d3iih5w7xp5hdg.cloudfront.net, reject
 DOMAIN-SUFFIX,jpg1.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,jun01.oss-cn-beijing.aliyuncs.com, reject

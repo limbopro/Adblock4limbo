@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.createElement",".offsetHeight"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["document.onclick","window.open"],["$","#myModal"],["document.onclick","popunder"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
+const argsList = [["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
 
-const hostnamesMap = new Map([["wowturkey.com",0],["azsekerlik.blogspot.com",1],["cbdgummiesio.biz",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["mordefter.com",8],["ulketv.com.tr",9],["duslerkulup.com",10],["kenttv.net",11],["dizitube.net",12],["ulker.com.tr",13],["duzcetv.com",14],["bizimyaka.com",15]]);
+const hostnamesMap = new Map([["azsekerlik.blogspot.com",0],["cbdgummiesio.biz",0],["vknsorgula.net",0],["okultanitimi.net",1],["asyadrama.com",2],["otopark.com",3],["turkrock.com",3],["osxinfo.net",3],["hacoos.com",4],["kampanyatakip.blogspot.com",5],["iskandinavya.com",6],["mordefter.com",7],["ulketv.com.tr",8],["kenttv.net",9],["ulker.com.tr",10],["duzcetv.com",11],["bizimyaka.com",12]]);
 
 const entitiesMap = new Map([]);
 

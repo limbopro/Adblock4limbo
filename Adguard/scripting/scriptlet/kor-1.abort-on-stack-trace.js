@@ -42,9 +42,9 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["alert","chk_adBlock"]];
+const argsList = [["$.prototype.prepend","response"],["alert","chk_adBlock"]];
 
-const hostnamesMap = new Map([["errornight.com",0]]);
+const hostnamesMap = new Map([["slrclub.com",0],["errornight.com",1]]);
 
 const entitiesMap = new Map([]);
 

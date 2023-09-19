@@ -42,11 +42,11 @@ const uBOL_nanoSetIntervalBooster = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[".style.display","*","0.02"],["player","","0.02"],["Loading player","","0.02"],["Loading...","","0.02"],["adsHandle_noclick","","0.02"]];
+const argsList = [[".style.display","*","0.02"],["myInterval","*","0.001"],["player","","0.02"],["Loading player","","0.02"],["Loading...","","0.02"],["adsHandle_noclick","","0.02"]];
 
-const hostnamesMap = new Map([["olhonaviagem.com",0],["sejasaudavel.net",0],["mundotec.pro",1],["pelispedia-v2.wtf",2],["pelispedia-v1.wtf",2],["cuevana-3.wtf",3]]);
+const hostnamesMap = new Map([["olhonaviagem.com",0],["sejasaudavel.net",0],["playerflix.com",1],["mundotec.pro",2],["pelispedia-v2.wtf",3],["pelispedia-v1.wtf",3],["cuevana-3.wtf",4]]);
 
-const entitiesMap = new Map([["topflix",4]]);
+const entitiesMap = new Map([["topflix",5]]);
 
 const exceptionsMap = new Map([]);
 
@@ -64,7 +64,7 @@ function nanoSetIntervalBooster(
     if ( isNaN(delay) || isFinite(delay) === false ) { delay = 1000; }
     let boost = parseFloat(boostArg);
     boost = isNaN(boost) === false && isFinite(boost)
-        ? Math.min(Math.max(boost, 0.02), 50)
+        ? Math.min(Math.max(boost, 0.001), 50)
         : 0.05;
     self.setInterval = new Proxy(self.setInterval, {
         apply: function(target, thisArg, args) {

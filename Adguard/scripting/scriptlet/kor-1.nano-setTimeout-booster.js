@@ -42,9 +42,9 @@ const uBOL_nanoSetTimeoutBooster = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["count","","0.001"]];
+const argsList = [["closeBtn.innerHTML","","0.001"]];
 
-const hostnamesMap = new Map([["lover921.net",0],["lover922.net",0],["lover923.net",0],["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0]]);
+const hostnamesMap = new Map([["lover922.net",0],["lover923.net",0],["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -64,7 +64,7 @@ function nanoSetTimeoutBooster(
     if ( isNaN(delay) || isFinite(delay) === false ) { delay = 1000; }
     let boost = parseFloat(boostArg);
     boost = isNaN(boost) === false && isFinite(boost)
-        ? Math.min(Math.max(boost, 0.02), 50)
+        ? Math.min(Math.max(boost, 0.001), 50)
         : 0.05;
     self.setTimeout = new Proxy(self.setTimeout, {
         apply: function(target, thisArg, args) {

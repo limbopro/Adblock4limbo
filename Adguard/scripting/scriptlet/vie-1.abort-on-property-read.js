@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["parseInt"],["adsBlocked"],["document.cookie"],["Math.round"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["azrom.net",1],["cafenau.com",1],["blog.abit.vn",2],["truyensieuhay.com",2],["phimmoivn.pro",2],["tvhayb.org",2],["phimmoipro1.net",2],["quangcaoyenbai.com",2],["javnong.cc",3],["plvb.xyz",[4,5,6,7,8]],["subnhanhvl.cc",9],["subnhanh.vip",9],["phimmoi4s.com",9],["phimdinhcao.net",9],["phimlongtieng.net",9],["phimdinhcao.com",9],["ophim.vip",9],["tinsoikeo.vip",10],["viettoons.tv",11],["phimmoiaz.cc",11],["zo3x.us",11],["m.blogtruyen.vn",11],["vinaurl.net",11],["ytstv.me",12],["yts.do",12],["yts.mx",12],["yts.rs",12],["zingnews.vn",13],["zuiphim.com",14]]);
+const hostnamesMap = new Map([["aoe.vn",0],["azrom.net",1],["cafenau.com",1],["blog.abit.vn",2],["truyensieuhay.com",2],["phimmoivn.pro",2],["tvhayb.org",2],["phimmoipro1.net",2],["quangcaoyenbai.com",2],["javnong.cc",3],["plvb.xyz",[4,5,6,7,8]],["subnhanhvl.cc",9],["subnhanh.im",9],["phimmoi4s.com",9],["phimdinhcao.net",9],["phimlongtieng.net",9],["phimdinhcao.com",9],["ophim.vip",9],["tinsoikeo.vip",10],["viettoons.tv",11],["phimmoiaz.cc",11],["zo3x.us",11],["m.blogtruyen.vn",11],["vinaurl.net",11],["ytstv.me",12],["yts.do",12],["yts.mx",12],["yts.rs",12],["zingnews.vn",13],["zuiphim.com",14]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,11 +42,11 @@ const uBOL_nanoSetTimeoutBooster = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["contador","","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"]];
+const argsList = [[".html(","*","0.001"],["playFunction","*","0.001"],["atualizar","*","0.02"],[".delay","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["contador","","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"]];
 
-const hostnamesMap = new Map([["arnolds.com.br",0],["guialocaliza.club",0],["receitasoncaseiras.online",1],["automotivocarros.com",2],["portecnologia.com",2],["cartaocreditoplatinum.org",2],["criarjogosandroid.com",3],["receitastops.ga",3],["adrenalinagames.com",3],["nutricaohoje.website",4]]);
+const hostnamesMap = new Map([["sabornutritivo.com",0],["guiacripto.online",1],["modsimuladores.com",2],["assistirfilmesdaluna.com",2],["vejaideias.com.br",2],["jogoscompleto.xyz",2],["fazercurriculo.online",3],["usandoapp.com",3],["arnolds.com.br",4],["guialocaliza.club",4],["receitasoncaseiras.online",5],["automotivocarros.com",6],["portecnologia.com",6],["cartaocreditoplatinum.org",6],["criarjogosandroid.com",7],["receitastops.ga",7],["adrenalinagames.com",7],["nutricaohoje.website",8]]);
 
-const entitiesMap = new Map([["lectulandia",5]]);
+const entitiesMap = new Map([["lectulandia",9]]);
 
 const exceptionsMap = new Map([]);
 
@@ -64,7 +64,7 @@ function nanoSetTimeoutBooster(
     if ( isNaN(delay) || isFinite(delay) === false ) { delay = 1000; }
     let boost = parseFloat(boostArg);
     boost = isNaN(boost) === false && isFinite(boost)
-        ? Math.min(Math.max(boost, 0.02), 50)
+        ? Math.min(Math.max(boost, 0.001), 50)
         : 0.05;
     self.setTimeout = new Proxy(self.setTimeout, {
         apply: function(target, thisArg, args) {

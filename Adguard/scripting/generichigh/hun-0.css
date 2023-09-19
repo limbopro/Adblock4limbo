@@ -22,7 +22,6 @@
 /* hun-0 */
 
 [class*="GoogleAds"],
-[class*="overlayBg"],
 [data-campaign-name^="ads"],
 [href*="ad.adverticum.net"],
 [id*="GoogleAds"],

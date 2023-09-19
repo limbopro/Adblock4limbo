@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"]];
+const argsList = [["visited","1"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"]];
 
-const hostnamesMap = new Map([["estacio.br",0],["receitasoncaseiras.online",1],["nutricaohoje.website",1],["automotivocarros.com",2],["portecnologia.com",2],["cartaocreditoplatinum.org",2]]);
+const hostnamesMap = new Map([["sabornutritivo.com",0],["financasdeouro.com",0],["guiacripto.online",0],["1i1.in",1],["estacio.br",2],["receitasoncaseiras.online",3],["nutricaohoje.website",3],["automotivocarros.com",4],["portecnologia.com",4],["cartaocreditoplatinum.org",4]]);
 
 const entitiesMap = new Map([]);
 

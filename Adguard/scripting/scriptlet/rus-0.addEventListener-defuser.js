@@ -42,13 +42,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,10]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["softonic.ru",6],["smotrim.ru",7],["ufchgu.ru",8],["iptv.org.ua",9],["romakatya.ru",11],["overclockers.ru",12],["gazeta.ru",13],["m.lenta.ru",14],["www.vesti.ru",15],["lenta.ru",16]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,11]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["cq.ru",6],["softonic.ru",7],["smotrim.ru",8],["ufchgu.ru",9],["iptv.org.ua",10],["romakatya.ru",12],["overclockers.ru",13],["gazeta.ru",14],["m.lenta.ru",15],["www.vesti.ru",16],["lenta.ru",17]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,10]],["id.rambler.ru",[3]],["vp.rambler.ru",[3]],["player.smotrim.ru",[7]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,11]],["id.rambler.ru",[3]],["vp.rambler.ru",[3]],["player.smotrim.ru",[8]]]);
 
 /******************************************************************************/
 

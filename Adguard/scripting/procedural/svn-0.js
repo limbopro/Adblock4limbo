@@ -33,7 +33,7 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".js_article\",\"tasks\":[[\"if-not\",\":has(.strong)\"],[\"spath\",\"> .widgetWrap\"]]}"],["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"]];
+const argsList = [["{\"selector\":\".js_article\",\"tasks\":[[\"if-not\",\":has(.strong)\"],[\"spath\",\" > .widgetWrap\"]]}"],["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"]];
 
 const hostnamesMap = new Map([["siol.net",0],["monitor.si",1]]);
 

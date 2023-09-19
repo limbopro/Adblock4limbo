@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"]];
+const argsList = [["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
-const hostnamesMap = new Map([["shopping.interpark.com",0],["sbs.co.kr",[1,7]],["timecoffee.co.kr",2],["333aaa.site",2],["search.11st.co.kr",[3,4,5,6]],["domin.co.kr",8],["uwayapply.com",9],["tvchosun.com",10],["m.dcinside.com",11],["naver.com",12],["koreapas.com",13],["imbc.com",14],["meeco.kr",16],["sogirl.so",17],["tistory.com",18],["sajuplus.net",18]]);
+const hostnamesMap = new Map([["shopping.interpark.com",0],["sbs.co.kr",[1,7]],["timecoffee.co.kr",2],["333aaa.site",2],["search.11st.co.kr",[3,4,5,6]],["domin.co.kr",8],["uwayapply.com",9],["tvchosun.com",10],["m.dcinside.com",11],["naver.com",12],["koreapas.com",13],["imbc.com",14],["meeco.kr",16],["sogirl.so",17],["tistory.com",18],["sajuplus.net",18],["auto.danawa.com",19]]);
 
 const entitiesMap = new Map([]);
 

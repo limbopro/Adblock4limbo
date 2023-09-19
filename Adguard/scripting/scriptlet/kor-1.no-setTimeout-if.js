@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/[A-z0-9_]+\\(ch[0-9]+_[A-z0-9]+\\)/"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"]];
+const argsList = [["piBlock"],["/[A-z0-9_]+\\(ch[0-9]+_[A-z0-9]+\\)/"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"]];
 
-const hostnamesMap = new Map([["m.humoruniv.com",0],["filetender.com",1],["klauncher.kr",2],["iphonedev.co.kr",2],["tistory.com",2],["sysnet.pe.kr",3],["genshin.gamedot.org",4],["stockinfo7.com",5]]);
+const hostnamesMap = new Map([["moneytoring.co.kr",0],["postincome.co.kr",0],["itinformation.kr",0],["digitstar77.com",0],["m.humoruniv.com",1],["filetender.com",2],["klauncher.kr",3],["iphonedev.co.kr",3],["tistory.com",3],["sysnet.pe.kr",4],["genshin.gamedot.org",5],["stockinfo7.com",6]]);
 
 const entitiesMap = new Map([]);
 

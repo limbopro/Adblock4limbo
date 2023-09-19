@@ -404,7 +404,6 @@ script + div[id^="a-loading-"],
 script[src="/js/sy2.js"] + div[align="center"],
 span[title="neteasefooter"],
 table[style="border:#7D8C8E solid 1px;height: 30px;text-align: center;"],
-table[style="border:#e8e8e8 1px solid;"] + div[style="margin-top:5px"] > table[style="width:100%;"][cellspacing="0"][cellpadding="1"][bordercolor="#22222"][border="1"],
 vg-pause-ads {
     display: none !important;
 }

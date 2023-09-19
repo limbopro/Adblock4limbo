@@ -11,7 +11,6 @@
 ## ! or via e-mail (easylist.china@gmail.com).
 
 
-/cpmShopAds, reject
 DOMAIN-SUFFIX,asd8900.oss-*.aliyuncs.com, reject
 DOMAIN-SUFFIX,tupian888.*.bcebos.com, reject
 DOMAIN-SUFFIX,vns86.oss-*.aliyuncs.com, reject
@@ -4366,8 +4365,6 @@ DOMAIN-SUFFIX,xiaoshuoyun.cn, reject
 DOMAIN-SUFFIX,xpj08.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,ys2000.cdn.bcebos.com, reject
 DOMAIN-SUFFIX,zgm1.com, reject
-/vmind.qqvideo.tc.qq.com, reject
-_vmind.qqvideo.tc.qq.com, reject
 DOMAIN-SUFFIX,1.hao123.com, reject
 DOMAIN-SUFFIX,1.i999d.cn, reject
 DOMAIN-SUFFIX,100.admin5.com, reject
@@ -4631,17 +4628,6 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
-@@DOMAIN-SUFFIX,ad.10010.com, reject
-@@DOMAIN-SUFFIX,ad.abchina.com, reject
-@@DOMAIN-SUFFIX,ad.kazakinfo.com, reject
-@@DOMAIN-SUFFIX,ad.ourgame.com, reject
-@@DOMAIN-SUFFIX,adcdn.pingan.com, reject
-@@DOMAIN-SUFFIX,advert.kf5.com, reject
-@@DOMAIN-SUFFIX,api.ads.tvb.com, reject
-@@DOMAIN-SUFFIX,app-advertise.zhihuishu.com, reject
-@@DOMAIN-SUFFIX,buyad.bi-xenon.cn, reject
-@@DOMAIN-SUFFIX,captcha.su.baidu.com, reject
-@@DOMAIN-SUFFIX,img.ads.tvb.com, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject
@@ -5389,16 +5375,6 @@ DOMAIN-SUFFIX,zq.lansedir.com, reject
 DOMAIN-SUFFIX,zsjxwj.com, reject
 DOMAIN-SUFFIX,zuowen.hydcd.com, reject
 DOMAIN-SUFFIX,zx.docin.com, reject
-.m.bookben.com, reject
-.m.d8qu.com, reject
-.m.fhxiaoshuo.com, reject
-.m.gxwztv.com, reject
-.m.kanshuzw.com, reject
-.m.muyuge.com, reject
-.m.qiuwu.net, reject
-.m.wenxuemi.cc, reject
-.m.zineworm.com, reject
-.wap.x4399.com, reject
 DOMAIN-SUFFIX,d3iih5w7xp5hdg.cloudfront.net, reject
 DOMAIN-SUFFIX,jpg1.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,jun01.oss-cn-beijing.aliyuncs.com, reject

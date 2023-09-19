@@ -11,7 +11,6 @@
 ## ! or via e-mail (easylist.china@gmail.com).
 
 
-/cpmShopAds
 DOMAIN-SUFFIX,asd8900.oss-*.aliyuncs.com
 DOMAIN-SUFFIX,tupian888.*.bcebos.com
 DOMAIN-SUFFIX,vns86.oss-*.aliyuncs.com
@@ -4366,8 +4365,6 @@ DOMAIN-SUFFIX,xiaoshuoyun.cn
 DOMAIN-SUFFIX,xpj08.oss-cn-beijing.aliyuncs.com
 DOMAIN-SUFFIX,ys2000.cdn.bcebos.com
 DOMAIN-SUFFIX,zgm1.com
-/vmind.qqvideo.tc.qq.com
-_vmind.qqvideo.tc.qq.com
 DOMAIN-SUFFIX,1.hao123.com
 DOMAIN-SUFFIX,1.i999d.cn
 DOMAIN-SUFFIX,100.admin5.com
@@ -4631,17 +4628,6 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net
 DOMAIN-SUFFIX,z.nowscore.com
 DOMAIN-SUFFIX,zt2088.com
 DOMAIN-SUFFIX,ztyumn.ifeng.com
-@@DOMAIN-SUFFIX,ad.10010.com
-@@DOMAIN-SUFFIX,ad.abchina.com
-@@DOMAIN-SUFFIX,ad.kazakinfo.com
-@@DOMAIN-SUFFIX,ad.ourgame.com
-@@DOMAIN-SUFFIX,adcdn.pingan.com
-@@DOMAIN-SUFFIX,advert.kf5.com
-@@DOMAIN-SUFFIX,api.ads.tvb.com
-@@DOMAIN-SUFFIX,app-advertise.zhihuishu.com
-@@DOMAIN-SUFFIX,buyad.bi-xenon.cn
-@@DOMAIN-SUFFIX,captcha.su.baidu.com
-@@DOMAIN-SUFFIX,img.ads.tvb.com
 DOMAIN-SUFFIX,003store.com
 DOMAIN-SUFFIX,0941.org
 DOMAIN-SUFFIX,1.07swz.com
@@ -5389,16 +5375,6 @@ DOMAIN-SUFFIX,zq.lansedir.com
 DOMAIN-SUFFIX,zsjxwj.com
 DOMAIN-SUFFIX,zuowen.hydcd.com
 DOMAIN-SUFFIX,zx.docin.com
-.m.bookben.com
-.m.d8qu.com
-.m.fhxiaoshuo.com
-.m.gxwztv.com
-.m.kanshuzw.com
-.m.muyuge.com
-.m.qiuwu.net
-.m.wenxuemi.cc
-.m.zineworm.com
-.wap.x4399.com
 DOMAIN-SUFFIX,d3iih5w7xp5hdg.cloudfront.net
 DOMAIN-SUFFIX,jpg1.oss-cn-beijing.aliyuncs.com
 DOMAIN-SUFFIX,jun01.oss-cn-beijing.aliyuncs.com

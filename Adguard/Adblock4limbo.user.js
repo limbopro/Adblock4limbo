@@ -69,7 +69,7 @@
 // @match        https://4hu.tv/*
 // @match        https://netflav.com/*
 // @match        https://filemoon.sx/*
-// @match        https://embedrise.com*
+// @match        https://embedrise.com/*
 // @match        https://mmfl02.com/*
 // @match        https://supjav.com/*
 // @match        https://*/*
@@ -157,7 +157,7 @@ const imax = {
     js: {
         //functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
-        vple: "https://limbopro.com/Adguard/avple.js", // avple
+        avple: "https://limbopro.com/Adguard/avple.js", // avple 同步至 Greasy 时需注释
         //contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
         contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
     },
@@ -514,13 +514,22 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         default:
             window_open_defuser(); // 打断 window.open 施法
-            uBlockOrigin_add();
+            /* Start */
+            uBlockOrigin_add(); // 同步至 Greasy 时需注释
+            /* End */
             console.log("Catch Nothing!");
     }
 }
 
 
+
+
 adsDomain_switch(values()) // 动手吧
+
+/* Start */
+/*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
+这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
+*/
 
 // uBlock Origin 脚本添加
 function uBlockOrigin_add() {
@@ -566,6 +575,7 @@ function uBlockOrigin_add() {
     js_adsRemove(uBlockOrigin.xmlprune);
 }
 
+/* End */
 
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告

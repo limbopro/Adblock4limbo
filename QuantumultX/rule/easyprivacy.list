@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309191554
+## ! Version: 202309201354
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Sep 2023 15:54 UTC
+## ! Last modified: 20 Sep 2023 13:54 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3599,6 +3599,7 @@ DOMAIN-SUFFIX,track.recreativ.ru, reject
 DOMAIN-SUFFIX,tracker.comagic.ru, reject
 DOMAIN-SUFFIX,tracking.gpm-rtv.ru, reject
 DOMAIN-SUFFIX,tracking.retailrocket.net, reject
+DOMAIN-SUFFIX,uc.xddi.ru, reject
 DOMAIN-SUFFIX,upstats.yadro.ru, reject
 DOMAIN-SUFFIX,visitor-microservice.ext.p-a.im, reject
 DOMAIN-SUFFIX,visor.sberbank.ru, reject
@@ -3674,6 +3675,7 @@ DOMAIN-SUFFIX,ampltd2.medal.tv, reject
 DOMAIN-SUFFIX,analyselog.dx.com, reject
 DOMAIN-SUFFIX,analytics-proxy.springboard.com, reject
 DOMAIN-SUFFIX,analytics-tracking.meetup.com, reject
+DOMAIN-SUFFIX,analytics-wcms.joins.net, reject
 DOMAIN-SUFFIX,analytics-zone-1.api.leadfamly.com, reject
 DOMAIN-SUFFIX,analytics.academy.com, reject
 DOMAIN-SUFFIX,analytics.adfreetime.com, reject
@@ -21195,6 +21197,7 @@ DOMAIN-SUFFIX,analytics.shop.hisense.com, reject
 DOMAIN-SUFFIX,applog.yiche.com, reject
 DOMAIN-SUFFIX,audit.qiuwen.net.cn, reject
 DOMAIN-SUFFIX,banana.le.com, reject
+DOMAIN-SUFFIX,bc.qunar.com, reject
 DOMAIN-SUFFIX,beacon.qq.com, reject
 DOMAIN-SUFFIX,cherry.le.com, reject
 DOMAIN-SUFFIX,click.gamersky.com, reject

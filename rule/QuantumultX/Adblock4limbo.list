@@ -4,14 +4,15 @@
 ## 电报群组 https://t.me/Adblock4limbo  
 ## Repo: https://github.com/limbopro/Adblock4limbo  
 ## Adblock4limbo: 477 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
+## EasyList/EasylistChina/EasyPrivacy 隐私追踪器/去广告分流规则请在Github仓库 Adblock4limbo -> rule 文件夹下查找，按需添加...
+## 仓库地址：https://github.com/limbopro/Adblock4limbo/tree/main/rule
 ## Peter Lowe’s Ad and tracking server list: 3720 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 30858 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy: 21530 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
 ## EasyList China: 5362 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 ## 以上共计: 62538 Domains/IP/Others (非去重统计)
-## 其中涉及的重复项去重后放置于 Adblock4limbo.list / Adblock4limbo_surge.list 文件末...
-## Last updated at 21/9月/2023/19:30
+## Last updated at 21/9月/2023/19:44
 ## */
 
 

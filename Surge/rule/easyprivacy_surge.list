@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309201354
+## ! Version: 202309211109
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Sep 2023 13:54 UTC
+## ! Last modified: 21 Sep 2023 11:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -69,6 +69,7 @@ DOMAIN-SUFFIX,brsrvr.com
 DOMAIN-SUFFIX,btloader.com
 DOMAIN-SUFFIX,bx-cloud.com
 DOMAIN-SUFFIX,bydst.com
+DOMAIN-SUFFIX,byspotify.com
 DOMAIN-SUFFIX,cadsuta.net
 DOMAIN-SUFFIX,captcha-display.com
 DOMAIN-SUFFIX,cbdatatracker.com
@@ -169,6 +170,7 @@ DOMAIN-SUFFIX,g990421676.co
 DOMAIN-SUFFIX,gbqofs.com
 DOMAIN-SUFFIX,geoedge.be
 DOMAIN-SUFFIX,geotargetly-api-*.com
+DOMAIN-SUFFIX,glamipixel.com
 DOMAIN-SUFFIX,glimr.io
 DOMAIN-SUFFIX,glookup.info
 DOMAIN-SUFFIX,go-mpulse.net
@@ -3352,6 +3354,7 @@ DOMAIN-SUFFIX,webtrack.pospal.cn
 DOMAIN-SUFFIX,tracking.vid4u.org
 DOMAIN-SUFFIX,a.centrum.cz
 DOMAIN-SUFFIX,bisko.mall.tv
+DOMAIN-SUFFIX,c.seznam.cz
 DOMAIN-SUFFIX,counter.cnw.cz
 DOMAIN-SUFFIX,h.imedia.cz
 DOMAIN-SUFFIX,hit.skrz.cz
@@ -3834,6 +3837,7 @@ DOMAIN-SUFFIX,f362.nola.com
 DOMAIN-SUFFIX,fathom.app.silverbeak.com
 DOMAIN-SUFFIX,fathom.status.im
 DOMAIN-SUFFIX,fathom.tdvm.net
+DOMAIN-SUFFIX,fbo-statistics-collector-tc.is.flippingbook.com
 DOMAIN-SUFFIX,fdt.kraken.com
 DOMAIN-SUFFIX,filext.com/pageview
 DOMAIN-SUFFIX,firebaselogging.googleapis.com
@@ -3904,6 +3908,7 @@ DOMAIN-SUFFIX,log.hypebeast.com
 DOMAIN-SUFFIX,log.klook.com
 DOMAIN-SUFFIX,log.quora.com
 DOMAIN-SUFFIX,log.snapdeal.com
+DOMAIN-SUFFIX,log.v.ssp.yahoo.com
 DOMAIN-SUFFIX,log.webnovel.com
 DOMAIN-SUFFIX,logger.nerdwallet.com
 DOMAIN-SUFFIX,logging.api.intuit.com

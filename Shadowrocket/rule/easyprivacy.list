@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309201354
+## ! Version: 202309211109
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Sep 2023 13:54 UTC
+## ! Last modified: 21 Sep 2023 11:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -69,6 +69,7 @@ DOMAIN-SUFFIX,brsrvr.com, reject
 DOMAIN-SUFFIX,btloader.com, reject
 DOMAIN-SUFFIX,bx-cloud.com, reject
 DOMAIN-SUFFIX,bydst.com, reject
+DOMAIN-SUFFIX,byspotify.com, reject
 DOMAIN-SUFFIX,cadsuta.net, reject
 DOMAIN-SUFFIX,captcha-display.com, reject
 DOMAIN-SUFFIX,cbdatatracker.com, reject
@@ -169,6 +170,7 @@ DOMAIN-SUFFIX,g990421676.co, reject
 DOMAIN-SUFFIX,gbqofs.com, reject
 DOMAIN-SUFFIX,geoedge.be, reject
 DOMAIN-SUFFIX,geotargetly-api-*.com, reject
+DOMAIN-SUFFIX,glamipixel.com, reject
 DOMAIN-SUFFIX,glimr.io, reject
 DOMAIN-SUFFIX,glookup.info, reject
 DOMAIN-SUFFIX,go-mpulse.net, reject
@@ -3352,6 +3354,7 @@ DOMAIN-SUFFIX,webtrack.pospal.cn, reject
 DOMAIN-SUFFIX,tracking.vid4u.org, reject
 DOMAIN-SUFFIX,a.centrum.cz, reject
 DOMAIN-SUFFIX,bisko.mall.tv, reject
+DOMAIN-SUFFIX,c.seznam.cz, reject
 DOMAIN-SUFFIX,counter.cnw.cz, reject
 DOMAIN-SUFFIX,h.imedia.cz, reject
 DOMAIN-SUFFIX,hit.skrz.cz, reject
@@ -3834,6 +3837,7 @@ DOMAIN-SUFFIX,f362.nola.com, reject
 DOMAIN-SUFFIX,fathom.app.silverbeak.com, reject
 DOMAIN-SUFFIX,fathom.status.im, reject
 DOMAIN-SUFFIX,fathom.tdvm.net, reject
+DOMAIN-SUFFIX,fbo-statistics-collector-tc.is.flippingbook.com, reject
 DOMAIN-SUFFIX,fdt.kraken.com, reject
 DOMAIN-SUFFIX,filext.com/pageview, reject
 DOMAIN-SUFFIX,firebaselogging.googleapis.com, reject
@@ -3904,6 +3908,7 @@ DOMAIN-SUFFIX,log.hypebeast.com, reject
 DOMAIN-SUFFIX,log.klook.com, reject
 DOMAIN-SUFFIX,log.quora.com, reject
 DOMAIN-SUFFIX,log.snapdeal.com, reject
+DOMAIN-SUFFIX,log.v.ssp.yahoo.com, reject
 DOMAIN-SUFFIX,log.webnovel.com, reject
 DOMAIN-SUFFIX,logger.nerdwallet.com, reject
 DOMAIN-SUFFIX,logging.api.intuit.com, reject

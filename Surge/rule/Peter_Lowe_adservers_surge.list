@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 05 Sep 2023 09:15:50 GMT
-# entries:        3720
+# last updated:   Fri, 22 Sep 2023 13:45:05 GMT
+# entries:        3718
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -439,7 +439,6 @@ DOMAIN-SUFFIX,ads.eagletribune.com
 DOMAIN-SUFFIX,ads.easy-forex.com
 DOMAIN-SUFFIX,ads.economist.com
 DOMAIN-SUFFIX,ads.edbindex.dk
-DOMAIN-SUFFIX,ads.egrana.com.br
 DOMAIN-SUFFIX,ads.elcarado.com
 DOMAIN-SUFFIX,ads.electrocelt.com
 DOMAIN-SUFFIX,ads.elitetrader.com
@@ -818,7 +817,6 @@ DOMAIN-SUFFIX,adsrv.moebelmarkt.tv
 DOMAIN-SUFFIX,adsrv2.swidnica24.pl
 DOMAIN-SUFFIX,adsrvr.org
 DOMAIN-SUFFIX,adstacks.in
-DOMAIN-SUFFIX,adstage.io
 DOMAIN-SUFFIX,adstanding.com
 DOMAIN-SUFFIX,adstat.4u.pl
 DOMAIN-SUFFIX,adstest.weather.com
@@ -1333,7 +1331,6 @@ DOMAIN-SUFFIX,centerpointmedia.com
 DOMAIN-SUFFIX,cetrk.com
 DOMAIN-SUFFIX,cgicounter.puretec.de
 DOMAIN-SUFFIX,chairscrack.com
-DOMAIN-SUFFIX,chameleon.ad
 DOMAIN-SUFFIX,channelintelligence.com
 DOMAIN-SUFFIX,chargecracker.com
 DOMAIN-SUFFIX,chart.dk
@@ -2164,7 +2161,6 @@ DOMAIN-SUFFIX,lanistaads.com
 DOMAIN-SUFFIX,larati.net
 DOMAIN-SUFFIX,largebrass.com
 DOMAIN-SUFFIX,laughablecopper.com
-DOMAIN-SUFFIX,laughcloth.com
 DOMAIN-SUFFIX,launchbit.com
 DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layer-ads.de
@@ -2229,6 +2225,7 @@ DOMAIN-SUFFIX,linkstorms.com
 DOMAIN-SUFFIX,linkswaper.com
 DOMAIN-SUFFIX,linksynergy.com
 DOMAIN-SUFFIX,linktarget.com
+DOMAIN-SUFFIX,linkvertise.com
 DOMAIN-SUFFIX,liquidad.narrowcastmedia.com
 DOMAIN-SUFFIX,litix.io
 DOMAIN-SUFFIX,liveadexchanger.com
@@ -2895,6 +2892,7 @@ DOMAIN-SUFFIX,revive.netriota.hu
 DOMAIN-SUFFIX,revive.plays.bg
 DOMAIN-SUFFIX,revlift.io
 DOMAIN-SUFFIX,revprotect.com
+DOMAIN-SUFFIX,revstats.com
 DOMAIN-SUFFIX,rexadvert.xyz
 DOMAIN-SUFFIX,reyden-x.com
 DOMAIN-SUFFIX,rhombusads.com
@@ -3355,7 +3353,6 @@ DOMAIN-SUFFIX,toplist.cz
 DOMAIN-SUFFIX,toplist.pornhost.com
 DOMAIN-SUFFIX,toplista.mw.hu
 DOMAIN-SUFFIX,toplistcity.com
-DOMAIN-SUFFIX,toprebates.com
 DOMAIN-SUFFIX,topsir.com
 DOMAIN-SUFFIX,topsite.lv
 DOMAIN-SUFFIX,topsites.com.br
@@ -3650,6 +3647,7 @@ DOMAIN-SUFFIX,wirypaste.com
 DOMAIN-SUFFIX,wisepops.com
 DOMAIN-SUFFIX,witch-counter.de
 DOMAIN-SUFFIX,wizaly.com
+DOMAIN-SUFFIX,wl.spotify.com
 DOMAIN-SUFFIX,wlmarketing.com
 DOMAIN-SUFFIX,womanear.com
 DOMAIN-SUFFIX,wonderlandads.com

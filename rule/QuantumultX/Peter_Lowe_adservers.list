@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 05 Sep 2023 09:15:50 GMT
-# entries:        3720
+# last updated:   Fri, 22 Sep 2023 13:45:05 GMT
+# entries:        3718
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -439,7 +439,6 @@ DOMAIN-SUFFIX,ads.eagletribune.com, reject
 DOMAIN-SUFFIX,ads.easy-forex.com, reject
 DOMAIN-SUFFIX,ads.economist.com, reject
 DOMAIN-SUFFIX,ads.edbindex.dk, reject
-DOMAIN-SUFFIX,ads.egrana.com.br, reject
 DOMAIN-SUFFIX,ads.elcarado.com, reject
 DOMAIN-SUFFIX,ads.electrocelt.com, reject
 DOMAIN-SUFFIX,ads.elitetrader.com, reject
@@ -818,7 +817,6 @@ DOMAIN-SUFFIX,adsrv.moebelmarkt.tv, reject
 DOMAIN-SUFFIX,adsrv2.swidnica24.pl, reject
 DOMAIN-SUFFIX,adsrvr.org, reject
 DOMAIN-SUFFIX,adstacks.in, reject
-DOMAIN-SUFFIX,adstage.io, reject
 DOMAIN-SUFFIX,adstanding.com, reject
 DOMAIN-SUFFIX,adstat.4u.pl, reject
 DOMAIN-SUFFIX,adstest.weather.com, reject
@@ -1333,7 +1331,6 @@ DOMAIN-SUFFIX,centerpointmedia.com, reject
 DOMAIN-SUFFIX,cetrk.com, reject
 DOMAIN-SUFFIX,cgicounter.puretec.de, reject
 DOMAIN-SUFFIX,chairscrack.com, reject
-DOMAIN-SUFFIX,chameleon.ad, reject
 DOMAIN-SUFFIX,channelintelligence.com, reject
 DOMAIN-SUFFIX,chargecracker.com, reject
 DOMAIN-SUFFIX,chart.dk, reject
@@ -2164,7 +2161,6 @@ DOMAIN-SUFFIX,lanistaads.com, reject
 DOMAIN-SUFFIX,larati.net, reject
 DOMAIN-SUFFIX,largebrass.com, reject
 DOMAIN-SUFFIX,laughablecopper.com, reject
-DOMAIN-SUFFIX,laughcloth.com, reject
 DOMAIN-SUFFIX,launchbit.com, reject
 DOMAIN-SUFFIX,layer-ad.de, reject
 DOMAIN-SUFFIX,layer-ads.de, reject
@@ -2229,6 +2225,7 @@ DOMAIN-SUFFIX,linkstorms.com, reject
 DOMAIN-SUFFIX,linkswaper.com, reject
 DOMAIN-SUFFIX,linksynergy.com, reject
 DOMAIN-SUFFIX,linktarget.com, reject
+DOMAIN-SUFFIX,linkvertise.com, reject
 DOMAIN-SUFFIX,liquidad.narrowcastmedia.com, reject
 DOMAIN-SUFFIX,litix.io, reject
 DOMAIN-SUFFIX,liveadexchanger.com, reject
@@ -2895,6 +2892,7 @@ DOMAIN-SUFFIX,revive.netriota.hu, reject
 DOMAIN-SUFFIX,revive.plays.bg, reject
 DOMAIN-SUFFIX,revlift.io, reject
 DOMAIN-SUFFIX,revprotect.com, reject
+DOMAIN-SUFFIX,revstats.com, reject
 DOMAIN-SUFFIX,rexadvert.xyz, reject
 DOMAIN-SUFFIX,reyden-x.com, reject
 DOMAIN-SUFFIX,rhombusads.com, reject
@@ -3355,7 +3353,6 @@ DOMAIN-SUFFIX,toplist.cz, reject
 DOMAIN-SUFFIX,toplist.pornhost.com, reject
 DOMAIN-SUFFIX,toplista.mw.hu, reject
 DOMAIN-SUFFIX,toplistcity.com, reject
-DOMAIN-SUFFIX,toprebates.com, reject
 DOMAIN-SUFFIX,topsir.com, reject
 DOMAIN-SUFFIX,topsite.lv, reject
 DOMAIN-SUFFIX,topsites.com.br, reject
@@ -3650,6 +3647,7 @@ DOMAIN-SUFFIX,wirypaste.com, reject
 DOMAIN-SUFFIX,wisepops.com, reject
 DOMAIN-SUFFIX,witch-counter.de, reject
 DOMAIN-SUFFIX,wizaly.com, reject
+DOMAIN-SUFFIX,wl.spotify.com, reject
 DOMAIN-SUFFIX,wlmarketing.com, reject
 DOMAIN-SUFFIX,womanear.com, reject
 DOMAIN-SUFFIX,wonderlandads.com, reject

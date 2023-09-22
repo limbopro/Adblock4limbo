@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309220442
+## ! Version: 202309221323
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Sep 2023 04:42 UTC
+## ! Last modified: 22 Sep 2023 13:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3758,6 +3758,7 @@ DOMAIN-SUFFIX,collect.asics.com
 DOMAIN-SUFFIX,collect.banggood.com
 DOMAIN-SUFFIX,collect.hollisterco.com
 DOMAIN-SUFFIX,collect.reagroupdata.com.au
+DOMAIN-SUFFIX,collect.stepstone.co.uk
 DOMAIN-SUFFIX,collect.thunder-io.com
 DOMAIN-SUFFIX,collections-api.realestate.com.au
 DOMAIN-SUFFIX,collector-px0py5pczn.octopart.com
@@ -4076,6 +4077,7 @@ DOMAIN-SUFFIX,t2.hulu.com
 DOMAIN-SUFFIX,tagger.ope.scmp.com
 DOMAIN-SUFFIX,tags.aljazeera.com
 DOMAIN-SUFFIX,tags.johnlewis.com
+DOMAIN-SUFFIX,tags.stepstone.com
 DOMAIN-SUFFIX,tao.barstoolsports.com
 DOMAIN-SUFFIX,target.nationwide.com
 DOMAIN-SUFFIX,target.nejm.org
@@ -4140,6 +4142,7 @@ DOMAIN-SUFFIX,usmetric.rediff.com
 DOMAIN-SUFFIX,v.adblockultimate.net
 DOMAIN-SUFFIX,v.ctrl.blog
 DOMAIN-SUFFIX,views.arabnews.com
+DOMAIN-SUFFIX,views.asura.gg
 DOMAIN-SUFFIX,vortex.hulu.com
 DOMAIN-SUFFIX,w3-reporting.reddit.com
 DOMAIN-SUFFIX,wa.gmx.co.uk

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 22 Sep 2023 13:45:05 GMT
-# entries:        3718
+# last updated:   Fri, 22 Sep 2023 19:16:51 GMT
+# entries:        3719
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3374,6 +3374,7 @@ DOMAIN-SUFFIX,track.mailalert.io
 DOMAIN-SUFFIX,track.mailerlite.com
 DOMAIN-SUFFIX,track.miro.com
 DOMAIN-SUFFIX,track.nationalgunrights.org
+DOMAIN-SUFFIX,track.privacyatclearbit.com
 DOMAIN-SUFFIX,track.segmetrics.io
 DOMAIN-SUFFIX,track.software-codes.com
 DOMAIN-SUFFIX,track.spe.schoolmessenger.com

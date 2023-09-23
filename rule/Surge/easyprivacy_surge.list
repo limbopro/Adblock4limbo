@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309221323
+## ! Version: 202309231524
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Sep 2023 13:23 UTC
+## ! Last modified: 23 Sep 2023 15:24 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2327,6 +2327,7 @@ DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com
 DOMAIN-SUFFIX,doug1izaerwt3.cloudfront.net
 DOMAIN-SUFFIX,dx.mountain.com
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com
+DOMAIN-SUFFIX,e.htplayground.com
 DOMAIN-SUFFIX,e.metarouter.io
 DOMAIN-SUFFIX,ea.youmaker.com
 DOMAIN-SUFFIX,ec.walkme.com
@@ -18919,7 +18920,6 @@ DOMAIN-SUFFIX,c4c9.pandasuite.io
 DOMAIN-SUFFIX,c917.pandasuite.io
 DOMAIN-SUFFIX,caapp.levi.com
 DOMAIN-SUFFIX,cakep.indonesiya.com
-DOMAIN-SUFFIX,calculator.maplesoft.com
 DOMAIN-SUFFIX,campaigns.impactive.io
 DOMAIN-SUFFIX,card.pingpro.com
 DOMAIN-SUFFIX,cartoon.hardalist.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202309231524
+## ! Version: 202309241026
 ## ! Title: EasyList
-## ! Last modified: 23 Sep 2023 15:24 UTC
+## ! Last modified: 24 Sep 2023 10:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -30876,7 +30876,7 @@ DOMAIN-SUFFIX,engine.fxempire.com, reject
 DOMAIN-SUFFIX,engine.laweekly.com, reject
 DOMAIN-SUFFIX,fentent.streampiay.fun, reject
 DOMAIN-SUFFIX,fentent.streampiay.me, reject
-DOMAIN-SUFFIX,filehippo.com/best-recommended-apps, reject
+
 DOMAIN-SUFFIX,fontent.powzers.lol, reject
 DOMAIN-SUFFIX,gamer.mmohuts.com, reject
 DOMAIN-SUFFIX,gentent.streampiay.fun, reject

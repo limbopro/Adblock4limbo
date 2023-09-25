@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309241421
+## ! Version: 202309251049
 ## ! Title: EasyPrivacy
-## ! Last modified: 24 Sep 2023 14:21 UTC
+## ! Last modified: 25 Sep 2023 10:49 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -15703,7 +15703,6 @@ DOMAIN-SUFFIX,solutions.risk.lexisnexis.co.uk, reject
 DOMAIN-SUFFIX,solutions.risk.lexisnexis.com, reject
 DOMAIN-SUFFIX,solutions.sabic.com, reject
 DOMAIN-SUFFIX,solutions.westrock.com, reject
-DOMAIN-SUFFIX,solutions.|pages.indigovision.com, reject
 DOMAIN-SUFFIX,solutions2.risk.lexisnexis.com, reject
 DOMAIN-SUFFIX,ssmile.dentsplysirona.com, reject
 DOMAIN-SUFFIX,start.adelaide.edu.au, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202309241421
+## ! Version: 202309251049
 ## ! Title: EasyList
-## ! Last modified: 24 Sep 2023 14:21 UTC
+## ! Last modified: 25 Sep 2023 10:49 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1633,6 +1633,7 @@ DOMAIN-SUFFIX,adsagony.com
 DOMAIN-SUFFIX,adsalo.com
 DOMAIN-SUFFIX,adsame.com
 DOMAIN-SUFFIX,adsandcomputer.com
+DOMAIN-SUFFIX,adsbar.online
 DOMAIN-SUFFIX,adsbeard.com
 DOMAIN-SUFFIX,adsblocker-ultra.com
 DOMAIN-SUFFIX,adsblockersentinel.info

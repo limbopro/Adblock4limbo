@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309251427
+## ! Version: 202309261531
 ## ! Title: EasyPrivacy
-## ! Last modified: 25 Sep 2023 14:27 UTC
+## ! Last modified: 26 Sep 2023 15:31 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2669,6 +2669,7 @@ DOMAIN-SUFFIX,rum.ingress.layer0.co
 DOMAIN-SUFFIX,rum.layer0.co
 DOMAIN-SUFFIX,rum.perfops.net
 DOMAIN-SUFFIX,rum.uptime.com
+DOMAIN-SUFFIX,rumstat.cdnvideo.ru
 DOMAIN-SUFFIX,rw.marchex.io
 DOMAIN-SUFFIX,s.autopilotapp.com
 DOMAIN-SUFFIX,s.beop.io
@@ -2748,6 +2749,7 @@ DOMAIN-SUFFIX,stats.olark.com
 DOMAIN-SUFFIX,stats.ozwebsites.biz
 DOMAIN-SUFFIX,stats.phoenix-widget.com
 DOMAIN-SUFFIX,stats.polldaddy.com
+DOMAIN-SUFFIX,stats.prebytes.com
 DOMAIN-SUFFIX,stats.pusher.com
 DOMAIN-SUFFIX,stats.sa-as.com
 DOMAIN-SUFFIX,stats.sawlive.tv

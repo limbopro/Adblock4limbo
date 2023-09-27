@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309261531
+## ! Version: 202309271512
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Sep 2023 15:31 UTC
+## ! Last modified: 27 Sep 2023 15:12 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3757,6 +3757,7 @@ DOMAIN-SUFFIX,cnt.hd21.com
 DOMAIN-SUFFIX,cnt.iceporn.com
 DOMAIN-SUFFIX,cnt.viptube.com
 DOMAIN-SUFFIX,cnt.vivatube.com
+DOMAIN-SUFFIX,cnt.xhamster.com
 DOMAIN-SUFFIX,collect.alipay.com
 DOMAIN-SUFFIX,collect.asics.com
 DOMAIN-SUFFIX,collect.banggood.com
@@ -3764,7 +3765,6 @@ DOMAIN-SUFFIX,collect.hollisterco.com
 DOMAIN-SUFFIX,collect.reagroupdata.com.au
 DOMAIN-SUFFIX,collect.stepstone.co.uk
 DOMAIN-SUFFIX,collect.thunder-io.com
-DOMAIN-SUFFIX,collections-api.realestate.com.au
 DOMAIN-SUFFIX,collector-px0py5pczn.octopart.com
 DOMAIN-SUFFIX,collector.cint.com
 DOMAIN-SUFFIX,collector.fiverr.com
@@ -21532,6 +21532,7 @@ DOMAIN-SUFFIX,d.haberler.com
 DOMAIN-SUFFIX,d.sondakika.com
 DOMAIN-SUFFIX,hstats.hepsiburada.com
 DOMAIN-SUFFIX,stats.birgun.net
+DOMAIN-SUFFIX,tracker.blutv.com
 DOMAIN-SUFFIX,counter.nv.ua
 DOMAIN-SUFFIX,counter.ukr.net
 DOMAIN-SUFFIX,remp.nv.ua

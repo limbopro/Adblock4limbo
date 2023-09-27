@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 22 Sep 2023 19:16:51 GMT
-# entries:        3719
+# last updated:   Tue, 26 Sep 2023 20:52:40 GMT
+# entries:        3720
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1372,6 +1372,7 @@ DOMAIN-SUFFIX,click.e.progressive.com, reject
 DOMAIN-SUFFIX,click.e.zoom.us, reject
 DOMAIN-SUFFIX,click.em.blizzard.com, reject
 DOMAIN-SUFFIX,click.email.bbc.com, reject
+DOMAIN-SUFFIX,click.email.microsoftemail.com, reject
 DOMAIN-SUFFIX,click.email.sonos.com, reject
 DOMAIN-SUFFIX,click.fool.com, reject
 DOMAIN-SUFFIX,click.hookupinyourcity.com, reject

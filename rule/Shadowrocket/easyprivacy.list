@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309271512
+## ! Version: 202309281525
 ## ! Title: EasyPrivacy
-## ! Last modified: 27 Sep 2023 15:12 UTC
+## ! Last modified: 28 Sep 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -222,11 +222,11 @@ DOMAIN-SUFFIX,mb-tracking.com, reject
 DOMAIN-SUFFIX,mcangelus.com, reject
 DOMAIN-SUFFIX,mdhv.io, reject
 DOMAIN-SUFFIX,mediamathrdrt.com, reject
-DOMAIN-SUFFIX,micpn.com, reject
 DOMAIN-SUFFIX,mirabelanalytics.com, reject
 DOMAIN-SUFFIX,mitour.de, reject
 DOMAIN-SUFFIX,ml-sys.xyz, reject
 DOMAIN-SUFFIX,mm-api.agency, reject
+DOMAIN-SUFFIX,mobildev.in, reject
 DOMAIN-SUFFIX,monicaatron.com, reject
 DOMAIN-SUFFIX,monu.delivery, reject
 DOMAIN-SUFFIX,mors22.com, reject
@@ -3991,6 +3991,7 @@ DOMAIN-SUFFIX,px.srvcs.tumblr.com, reject
 DOMAIN-SUFFIX,pxl.indeed.com, reject
 DOMAIN-SUFFIX,qc.vogue.com, reject
 DOMAIN-SUFFIX,qm.redbull.com, reject
+DOMAIN-SUFFIX,r.apkpure.net, reject
 DOMAIN-SUFFIX,r.bbci.co.uk, reject
 DOMAIN-SUFFIX,rankhit.china.com, reject
 DOMAIN-SUFFIX,ras.yahoo.com, reject
@@ -14779,7 +14780,6 @@ DOMAIN-SUFFIX,experience.jcu.edu.au, reject
 DOMAIN-SUFFIX,experience.limelight.com, reject
 DOMAIN-SUFFIX,experience.phenomenex.com, reject
 DOMAIN-SUFFIX,experience.rsm.com.au, reject
-DOMAIN-SUFFIX,explore.agilent.com, reject
 DOMAIN-SUFFIX,explore.att.com, reject
 DOMAIN-SUFFIX,explore.broncos.com.au, reject
 DOMAIN-SUFFIX,explore.epsilon.com, reject

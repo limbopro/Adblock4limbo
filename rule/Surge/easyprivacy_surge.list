@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309271512
+## ! Version: 202309281525
 ## ! Title: EasyPrivacy
-## ! Last modified: 27 Sep 2023 15:12 UTC
+## ! Last modified: 28 Sep 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -222,11 +222,11 @@ DOMAIN-SUFFIX,mb-tracking.com
 DOMAIN-SUFFIX,mcangelus.com
 DOMAIN-SUFFIX,mdhv.io
 DOMAIN-SUFFIX,mediamathrdrt.com
-DOMAIN-SUFFIX,micpn.com
 DOMAIN-SUFFIX,mirabelanalytics.com
 DOMAIN-SUFFIX,mitour.de
 DOMAIN-SUFFIX,ml-sys.xyz
 DOMAIN-SUFFIX,mm-api.agency
+DOMAIN-SUFFIX,mobildev.in
 DOMAIN-SUFFIX,monicaatron.com
 DOMAIN-SUFFIX,monu.delivery
 DOMAIN-SUFFIX,mors22.com
@@ -3991,6 +3991,7 @@ DOMAIN-SUFFIX,px.srvcs.tumblr.com
 DOMAIN-SUFFIX,pxl.indeed.com
 DOMAIN-SUFFIX,qc.vogue.com
 DOMAIN-SUFFIX,qm.redbull.com
+DOMAIN-SUFFIX,r.apkpure.net
 DOMAIN-SUFFIX,r.bbci.co.uk
 DOMAIN-SUFFIX,rankhit.china.com
 DOMAIN-SUFFIX,ras.yahoo.com
@@ -14779,7 +14780,6 @@ DOMAIN-SUFFIX,experience.jcu.edu.au
 DOMAIN-SUFFIX,experience.limelight.com
 DOMAIN-SUFFIX,experience.phenomenex.com
 DOMAIN-SUFFIX,experience.rsm.com.au
-DOMAIN-SUFFIX,explore.agilent.com
 DOMAIN-SUFFIX,explore.att.com
 DOMAIN-SUFFIX,explore.broncos.com.au
 DOMAIN-SUFFIX,explore.epsilon.com

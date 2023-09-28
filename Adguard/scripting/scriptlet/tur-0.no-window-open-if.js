@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[],["bit.ly"],["google.com/url?"]];
 
-const hostnamesMap = new Map([["erosfilmizle.org",0],["rcjza2fzqyr4.buzz",0],["d3xg9jm5zucs.buzz",0],["fwlcqyxc88qx.buzz",0],["lgrmdr8asu8l.buzz",0],["kc2uta38qg2t.buzz",0],["agb3nquu6rzw.buzz",0],["dizipal650.com",0],["yvt2bm7hzgtt.cloud",0],["breakingbadizle.com",0],["elzemfilm.org",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["yetiskinfilmizle.net",0],["diziwatch.net",0],["hdizlefilmleri.com",0],["4kfilmizlesene.xyz",0],["izleorg3.org",0],["youtubemp3.us",0],["hizlitv.club",0],["pchocasi.com.tr",1],["sinema.cc",2]]);
+const hostnamesMap = new Map([["erosfilmizle.org",0],["rcjza2fzqyr4.buzz",0],["d3xg9jm5zucs.buzz",0],["fwlcqyxc88qx.buzz",0],["lgrmdr8asu8l.buzz",0],["kc2uta38qg2t.buzz",0],["agb3nquu6rzw.buzz",0],["dizipal650.com",0],["yvt2bm7hzgtt.cloud",0],["breakingbadizle.com",0],["elzemfilm.org",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["diziwatch.net",0],["hdizlefilmleri.com",0],["4kfilmizlesene.xyz",0],["izleorg3.org",0],["youtubemp3.us",0],["hizlitv.club",0],["pchocasi.com.tr",1],["sinema.cc",2]]);
 
 const entitiesMap = new Map([["jetfilmizle",0],["altyazilifilm",0],["yabancidizitv",0],["hddiziport",0],["filmyani",0]]);
 

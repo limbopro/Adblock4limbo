@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ai_front"],["ipsDebug"],["adregain_wall"],["rInt"],["onPopUnderLoaded"],["window.onload"],["popcent_config"],["yeniSekmeAdresi"],["adx"]];
+const argsList = [["ipsDebug"],["adregain_wall"],["rInt"],["onPopUnderLoaded"],["window.onload"],["popcent_config"],["yeniSekmeAdresi"],["adx"]];
 
-const hostnamesMap = new Map([["okanuzun.com",0],["ipbdestek.com",1],["memoryhackers.org",2],["r10.net",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["dizilost.com",[4,5]],["xbox360torrent.com",6],["mixizle.com",7],["fullhdabifilm.com",7],["hdmixfilim.com",7],["4kfilmizlesene.xyz",8]]);
+const hostnamesMap = new Map([["ipbdestek.com",0],["memoryhackers.org",1],["r10.net",2],["birasyadizi.com",3],["seyredeger.com",3],["indirmedenfilmizle.vip",3],["dizilost.com",[3,4]],["xbox360torrent.com",5],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["4kfilmizlesene.xyz",7]]);
 
 const entitiesMap = new Map([]);
 

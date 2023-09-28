@@ -42,13 +42,13 @@ const uBOL_windowCloseIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/protect?"],["/link-"],["/telephone-service"],["/^/"]];
+const argsList = [["/protect?"],["/link-"],["/telephone-service"],["/^/"],["/soft98"]];
 
-const hostnamesMap = new Map([["norton.com",0],["soft98.ir",1],["sysban.ir",2],["smostafa.ir",3]]);
+const hostnamesMap = new Map([["norton.com",0],["soft98.ir",1],["sysban.ir",2],["smostafa.ir",3],["coffeete.ir",4]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["forum.soft98.ir",[1]]]);
+const exceptionsMap = new Map([["forum.soft98.ir",[1,1]]]);
 
 /******************************************************************************/
 

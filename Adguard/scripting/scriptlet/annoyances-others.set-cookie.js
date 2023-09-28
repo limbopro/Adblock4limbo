@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["minitvClose","1"],["aiia","true"],["_hlm_skipCounter","15"],["playvdclose","1"],["adcookie","true"],["consents_promo_dialog","1"],["promo_sidebar_dismissed","1"],["Upgrade","0"],["list-banner","true"],["NPM_POPUP","Y"],["hide_mobile_international_delivery_popup","true"],["overlay","true"]];
+const argsList = [["minitvClose","1"],["aiia","true"],["_hlm_skipCounter","15"],["playvdclose","1"],["promoBannerShow","0"],["adcookie","true"],["consents_promo_dialog","1"],["promo_sidebar_dismissed","1"],["Upgrade","0"],["list-banner","true"],["NPM_POPUP","Y"],["hide_mobile_international_delivery_popup","true"],["overlay","true"]];
 
-const hostnamesMap = new Map([["timesofindia.indiatimes.com",[0,3]],["csoonline.com",1],["livemint.com",2],["mumbaimirror.indiatimes.com",3],["fanyi.youdao.com",4],["inoreader.com",[5,6]],["watchsomuch.to",7],["mintmanga.live",8],["vibe.naver.com",9],["prom.ua",10],["vipr.im",11]]);
+const hostnamesMap = new Map([["timesofindia.indiatimes.com",[0,3]],["csoonline.com",1],["livemint.com",2],["mumbaimirror.indiatimes.com",3],["dmarket.com",4],["fanyi.youdao.com",5],["inoreader.com",[6,7]],["watchsomuch.to",8],["mintmanga.live",9],["vibe.naver.com",10],["prom.ua",11],["vipr.im",12]]);
 
 const entitiesMap = new Map([]);
 

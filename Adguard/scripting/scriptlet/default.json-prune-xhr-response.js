@@ -42,9 +42,9 @@ const uBOL_jsonPruneXhrResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["[].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots"]];
+const argsList = [["[].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots","","propsToMatch","url:/player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"]];
 
-const hostnamesMap = new Map([["youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0]]);
+const hostnamesMap = new Map([["youtube.com",0]]);
 
 const entitiesMap = new Map([]);
 

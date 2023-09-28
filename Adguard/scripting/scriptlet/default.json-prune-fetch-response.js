@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["[].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["response.ads"]];
 
-const hostnamesMap = new Map([["youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["hulu.com",[1,2]],["player.popfun.co.uk",3]]);
+const hostnamesMap = new Map([["youtube.com",0],["hulu.com",[1,2]],["player.popfun.co.uk",3]]);
 
 const entitiesMap = new Map([]);
 

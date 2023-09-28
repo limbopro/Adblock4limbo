@@ -42,13 +42,13 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
+const argsList = [["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
-const hostnamesMap = new Map([["shopping.interpark.com",0],["sbs.co.kr",[1,7]],["timecoffee.co.kr",2],["333aaa.site",2],["search.11st.co.kr",[3,4,5,6]],["domin.co.kr",8],["uwayapply.com",9],["tvchosun.com",10],["m.dcinside.com",11],["naver.com",12],["koreapas.com",13],["imbc.com",14],["meeco.kr",16],["sogirl.so",17],["tistory.com",18],["sajuplus.net",18],["auto.danawa.com",19]]);
+const hostnamesMap = new Map([["humors.zigcou.com",0],["shopping.interpark.com",1],["sbs.co.kr",[2,8]],["timecoffee.co.kr",3],["333aaa.site",3],["search.11st.co.kr",[4,5,6,7]],["domin.co.kr",9],["uwayapply.com",10],["tvchosun.com",11],["m.dcinside.com",12],["naver.com",13],["koreapas.com",14],["imbc.com",15],["meeco.kr",17],["sogirl.so",18],["tistory.com",19],["sajuplus.net",19],["auto.danawa.com",20]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["coupang.com",[15]],["coupangcdn.com",[15]]]);
+const exceptionsMap = new Map([["coupang.com",[16]],["coupangcdn.com",[16]]]);
 
 /******************************************************************************/
 

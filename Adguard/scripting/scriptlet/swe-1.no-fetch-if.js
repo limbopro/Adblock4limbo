@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: rus-0
+// ruleset: swe-1
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_setAttr = function() {
+const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#progress-value","data-timer","3"],["a[href$=\"?ref=recommended\"]","target",""]];
+const argsList = [["/cloudfront.net\\/creatives/"]];
 
-const hostnamesMap = new Map([["howdyho.net",0],["dtf.ru",1],["vc.ru",1]]);
+const hostnamesMap = new Map([["tv4play.se",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,109 +52,69 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function setAttr(
-    selector = '',
-    attr = '',
-    value = ''
+function noFetchIf(
+    arg1 = '',
 ) {
-    if ( typeof selector !== 'string' ) { return; }
-    if ( selector === '' ) { return; }
-
-    const validValues = [ '', 'false', 'true' ];
-    let copyFrom = '';
-
-    if ( validValues.includes(value.toLowerCase()) === false ) {
-        if ( /^\d+$/.test(value) ) {
-            const n = parseInt(value, 10);
-            if ( n >= 32768 ) { return; }
-            value = `${n}`;
-        } else if ( /^\[.+\]$/.test(value) ) {
-            copyFrom = value.slice(1, -1);
-        } else {
-            return;
-        }
-    }
-
-    const extractValue = elem => {
-        if ( copyFrom !== '' ) {
-            return elem.getAttribute(copyFrom) || '';
-        }
-        return value;
-    };
-
-    const applySetAttr = ( ) => {
-        const elems = [];
-        try {
-            elems.push(...document.querySelectorAll(selector));
-        }
-        catch(ex) {
-            return false;
-        }
-        for ( const elem of elems ) {
-            const before = elem.getAttribute(attr);
-            const after = extractValue(elem);
-            if ( after === before ) { continue; }
-            elem.setAttribute(attr, after);
-        }
-        return true;
-    };
-    let observer, timer;
-    const onDomChanged = mutations => {
-        if ( timer !== undefined ) { return; }
-        let shouldWork = false;
-        for ( const mutation of mutations ) {
-            if ( mutation.addedNodes.length === 0 ) { continue; }
-            for ( const node of mutation.addedNodes ) {
-                if ( node.nodeType !== 1 ) { continue; }
-                shouldWork = true;
-                break;
-            }
-            if ( shouldWork ) { break; }
-        }
-        if ( shouldWork === false ) { return; }
-        timer = self.requestAnimationFrame(( ) => {
-            timer = undefined;
-            applySetAttr();
-        });
-    };
-    const start = ( ) => {
-        if ( applySetAttr() === false ) { return; }
-        observer = new MutationObserver(onDomChanged);
-        observer.observe(document.body, {
-            subtree: true,
-            childList: true,
-        });
-    };
-    runAt(( ) => { start(); }, 'idle');
-}
-
-function runAt(fn, when) {
-    const intFromReadyState = state => {
-        const targets = {
-            'loading': 1,
-            'interactive': 2, 'end': 2, '2': 2,
-            'complete': 3, 'idle': 3, '3': 3,
-        };
-        const tokens = Array.isArray(state) ? state : [ state ];
-        for ( const token of tokens ) {
-            const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
-            return targets[prop];
-        }
-        return 0;
-    };
-    const runAt = intFromReadyState(when);
-    if ( intFromReadyState(document.readyState) >= runAt ) {
-        fn(); return;
-    }
-    const onStateChange = ( ) => {
-        if ( intFromReadyState(document.readyState) < runAt ) { return; }
-        fn();
-        safe.removeEventListener.apply(document, args);
-    };
+    if ( typeof arg1 !== 'string' ) { return; }
     const safe = safeSelf();
-    const args = [ 'readystatechange', onStateChange, { capture: true } ];
-    safe.addEventListener.apply(document, args);
+    const needles = [];
+    for ( const condition of arg1.split(/\s+/) ) {
+        if ( condition === '' ) { continue; }
+        const pos = condition.indexOf(':');
+        let key, value;
+        if ( pos !== -1 ) {
+            key = condition.slice(0, pos);
+            value = condition.slice(pos + 1);
+        } else {
+            key = 'url';
+            value = condition;
+        }
+        needles.push({ key, re: safe.patternToRegex(value) });
+    }
+    const log = needles.length === 0 ? console.log.bind(console) : undefined;
+    self.fetch = new Proxy(self.fetch, {
+        apply: function(target, thisArg, args) {
+            let proceed = true;
+            try {
+                let details;
+                if ( args[0] instanceof self.Request ) {
+                    details = args[0];
+                } else {
+                    details = Object.assign({ url: args[0] }, args[1]);
+                }
+                const props = new Map();
+                for ( const prop in details ) {
+                    let v = details[prop];
+                    if ( typeof v !== 'string' ) {
+                        try { v = JSON.stringify(v); }
+                        catch(ex) { }
+                    }
+                    if ( typeof v !== 'string' ) { continue; }
+                    props.set(prop, v);
+                }
+                if ( log !== undefined ) {
+                    const out = Array.from(props)
+                                     .map(a => `${a[0]}:${a[1]}`)
+                                     .join(' ');
+                    log(`uBO: fetch(${out})`);
+                }
+                proceed = needles.length === 0;
+                for ( const { key, re } of needles ) {
+                    if (
+                        props.has(key) === false ||
+                        re.test(props.get(key)) === false
+                    ) {
+                        proceed = true;
+                        break;
+                    }
+                }
+            } catch(ex) {
+            }
+            return proceed
+                ? Reflect.apply(target, thisArg, args)
+                : Promise.resolve(new Response());
+        }
+    });
 }
 
 function safeSelf() {
@@ -303,7 +263,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { setAttr(...argsList[i]); }
+    try { noFetchIf(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -323,7 +283,7 @@ argsList.length = 0;
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' ) {
-    return uBOL_setAttr();
+    return uBOL_noFetchIf();
 }
 
 // Firefox
@@ -331,11 +291,11 @@ if ( typeof wrappedJSObject !== 'object' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_setAttr = cloneInto([
-            [ '(', uBOL_setAttr.toString(), ')();' ],
+        page.uBOL_noFetchIf = cloneInto([
+            [ '(', uBOL_noFetchIf.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_setAttr);
+        const blob = new page.Blob(...page.uBOL_noFetchIf);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -349,7 +309,7 @@ if ( typeof wrappedJSObject !== 'object' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_setAttr;
+    delete page.uBOL_noFetchIf;
 }
 
 /******************************************************************************/

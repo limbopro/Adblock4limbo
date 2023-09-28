@@ -33,7 +33,7 @@
 
 // annoyances-others
 
-const toImport = [[2405678,".arcontactus-message-button"],[10086587,".arcontactus-prompt"],[16353464,".hs-sosyal"],[4132883,".sosyal:not(body):not(html)"],[10996345,".td_block_social_counter"],[5186751,".canvas__header > .banner[data-google-analytics-payload]"]];
+const toImport = [[7056900,".gliaplayer-container"],[2405678,".arcontactus-message-button"],[10086587,".arcontactus-prompt"],[16353464,".hs-sosyal"],[4132883,".sosyal:not(body):not(html)"],[10996345,".td_block_social_counter"],[5186751,".canvas__header > .banner[data-google-analytics-payload]"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

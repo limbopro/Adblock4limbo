@@ -42,11 +42,11 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["cJsEdge"],["_pop"],["lolaop"],["adk_pdisp"],["__clientAHV"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"]];
+const argsList = [["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["cJsEdge"],["_pop"],["lolaop"],["adk_pdisp"],["__clientAHV"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"]];
 
-const hostnamesMap = new Map([["pcworld.es",0],["tunovelaligera.com",1],["20minutos.es",2],["comando.to",3],["porno-japones.top",4],["tvplusgratis.com",5],["hobbugs.com",5],["seriesretro.com",6],["cozinha.minhasdelicias.com",7],["diariodegoias.com.br",8],["outerspace.com.br",8],["1f1.in",9],["1i1.in",9],["cuevana.biz",10],["cuevana.run",10],["repelispluss.tv",11],["fiuxy2.com",12],["pelispop.me",13],["pelisplus.icu",14],["baixartorrents.org",[15,16]],["pctmix1.com",17],["aquariumgays.com",17],["allfeeds.live",18],["grantorrent.nl",21],["hentaistube.com",22],["libertinga.net",23],["mrpiracy.top",24],["seireshd.com",25],["cinetux.to",[26,27]],["holanime.com",28],["pirlotv.es",29],["repelisplus.vip",30],["descargaranimehentai.com",31],["tuhentaionline.com",32]]);
+const hostnamesMap = new Map([["hinatasoul.com",0],["pcworld.es",1],["tunovelaligera.com",2],["20minutos.es",3],["comando.to",4],["porno-japones.top",5],["tvplusgratis.com",6],["hobbugs.com",6],["seriesretro.com",7],["cozinha.minhasdelicias.com",8],["diariodegoias.com.br",9],["outerspace.com.br",9],["1f1.in",10],["1i1.in",10],["cuevana.biz",11],["cuevana.run",11],["repelispluss.tv",12],["fiuxy2.com",13],["pelispop.me",14],["pelisplus.icu",15],["baixartorrents.org",[16,17]],["pctmix1.com",18],["aquariumgays.com",18],["allfeeds.live",19],["grantorrent.nl",22],["hentaistube.com",23],["libertinga.net",24],["mrpiracy.top",25],["seireshd.com",26],["cinetux.to",[27,28]],["holanime.com",29],["pirlotv.es",30],["repelisplus.vip",31],["descargaranimehentai.com",32],["tuhentaionline.com",33]]);
 
-const entitiesMap = new Map([["cinecalidad2",19],["cine-calidad",20]]);
+const entitiesMap = new Map([["cinecalidad2",20],["cine-calidad",21]]);
 
 const exceptionsMap = new Map([]);
 

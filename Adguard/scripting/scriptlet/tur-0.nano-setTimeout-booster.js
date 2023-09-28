@@ -42,9 +42,9 @@ const uBOL_nanoSetTimeoutBooster = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/HivePlayer|grounderstext/","*","0.02"],["ifsrc","2000","0.02"],["redirectToMain","*","0.02"]];
+const argsList = [["ifsrc","2000","0.02"],["redirectToMain","*","0.02"]];
 
-const hostnamesMap = new Map([["buzfilmizle1.com",0],["onlinedizi.cc",1],["gazeterize.com",2]]);
+const hostnamesMap = new Map([["onlinedizi.cc",0],["gazeterize.com",1]]);
 
 const entitiesMap = new Map([]);
 

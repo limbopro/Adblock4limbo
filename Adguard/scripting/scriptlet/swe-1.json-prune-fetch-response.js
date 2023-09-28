@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_jsonPrune = function() {
+const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["autoplay"],["autoplay players.*.ga acl.ads players.*.autoplay"],["payload.ads campaigns.*"],["analytics googleAnalytics theme.siteOptions.ad_links.* theme.siteOptions.casino_page_description theme.siteOptions.casino_page_partner"]];
+const argsList = [["bumpers","","propsToMatch","url:/playback2.a2d.tv\\/play/"]];
 
-const hostnamesMap = new Map([["alekuriren.se",0],["allas.se",0],["alltforforaldrar.se",0],["baaam.se",0],["babyhjalp.se",0],["barometern.se",0],["blt.se",0],["bt.se",0],["byrum.se",0],["cafe.se",0],["corren.se",0],["di.se",0],["ekuriren.se",0],["elle.se",0],["eposten.se",0],["expressen.se",0],["familjeliv.se",0],["femina.se",0],["folkbladet.nu",0],["folkbladet.se",0],["fragbite.se",0],["frida.se",0],["golfing.se",0],["gotlandjustnu.se",0],["hant.se",0],["helagotland.se",0],["ibnytt.se",0],["idrottensaffarer.se",0],["kalmarposten.se",0],["kindaposten.se",0],["kingmagazine.se",0],["kkuriren.se",0],["klt.nu",0],["kristianstadsbladet.se",0],["kuriren.nu",0],["lchfarkivet.se",0],["lokalti.se",0],["lokaltidningen.nu",0],["mabra.com",0],["mellanbygden.nu",0],["meraosterlen.se",0],["mestmotor.se",0],["mitti.se",0],["motherhood.se",0],["mvt.se",0],["nordsverige.se",0],["norrahalland.se",0],["norran.se",0],["nsd.se",0],["nsk.se",0],["nt.se",0],["nvp.se",0],["nyheter24.se",0],["olandsbladet.se",0],["praktisktbatagande.se",0],["pt.se",0],["realtid.se",0],["recept.se",0],["residencemagazine.se",0],["skd.se",0],["smp.se",0],["sn.se",0],["strengnastidning.se",0],["svenskdam.se",0],["svenskgolf.se",0],["sverigespringer.se",0],["sydostran.se",0],["thelocal.se",0],["trelleborgsallehanda.se",0],["unt.se",0],["ut.se",0],["vasterastidning.se",0],["vasterbottningen.se",0],["vaxjobladet.se",0],["viivilla.se",0],["vimmerbytidning.se",0],["vk.se",0],["vt.se",0],["vxonews.se",0],["youplay.se",0],["ystadsallehanda.se",0],["alingsastidning.se",1],["bohuslaningen.se",1],["gp.se",1],["hallandsposten.se",1],["harrydaposten.se",1],["hn.se",1],["kungalvsposten.se",1],["kungsbackaposten.se",1],["lwcdn.com",1],["markposten.se",1],["molndalsposten.se",1],["partilletidning.se",1],["stromstadstidning.se",1],["sttidningen.se",1],["ttela.se",1],["matspar.se",2],["samnytt.se",3]]);
+const hostnamesMap = new Map([["tv4play.se",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,26 +52,74 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function jsonPrune(
+function jsonPruneFetchResponse(
     rawPrunePaths = '',
-    rawNeedlePaths = '',
-    stackNeedle = ''
+    rawNeedlePaths = ''
 ) {
     const safe = safeSelf();
-    const stackNeedleDetails = safe.initPattern(stackNeedle, { canNegate: true });
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    JSON.parse = new Proxy(JSON.parse, {
-        apply: function(target, thisArg, args) {
-            const objBefore = Reflect.apply(target, thisArg, args);
-            const objAfter = objectPrune(
-                objBefore,
-                rawPrunePaths,
-                rawNeedlePaths,
-                stackNeedleDetails,
-                extraArgs
-           );
-           return objAfter || objBefore;
-        },
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    const logLevel = shouldLog({ log: rawPrunePaths === '' || extraArgs.log, });
+    const log = logLevel ? ((...args) => { safe.uboLog(...args); }) : (( ) => { }); 
+    const propNeedles = parsePropertiesToMatch(extraArgs.propsToMatch, 'url');
+    const applyHandler = function(target, thisArg, args) {
+        const fetchPromise = Reflect.apply(target, thisArg, args);
+        if ( logLevel === true ) {
+            log('json-prune-fetch-response:', JSON.stringify(Array.from(args)).slice(1,-1));
+        }
+        if ( rawPrunePaths === '' ) { return fetchPromise; }
+        let outcome = 'match';
+        if ( propNeedles.size !== 0 ) {
+            const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
+            if ( args[1] instanceof Object ) {
+                objs.push(args[1]);
+            }
+            if ( matchObjectProperties(propNeedles, ...objs) === false ) {
+                outcome = 'nomatch';
+            }
+            if ( outcome === logLevel || logLevel === 'all' ) {
+                log(
+                    `json-prune-fetch-response (${outcome})`,
+                    `\n\tfetchPropsToMatch: ${JSON.stringify(Array.from(propNeedles)).slice(1,-1)}`,
+                    '\n\tprops:', ...args,
+                );
+            }
+        }
+        if ( outcome === 'nomatch' ) { return fetchPromise; }
+        return fetchPromise.then(responseBefore => {
+            const response = responseBefore.clone();
+            return response.json().then(objBefore => {
+                if ( typeof objBefore !== 'object' ) { return responseBefore; }
+                const objAfter = objectPrune(
+                    objBefore,
+                    rawPrunePaths,
+                    rawNeedlePaths,
+                    { matchAll: true },
+                    extraArgs
+                );
+                if ( typeof objAfter !== 'object' ) { return responseBefore; }
+                const responseAfter = Response.json(objAfter, {
+                    status: responseBefore.status,
+                    statusText: responseBefore.statusText,
+                    headers: responseBefore.headers,
+                });
+                Object.defineProperties(responseAfter, {
+                    ok: { value: responseBefore.ok },
+                    redirected: { value: responseBefore.redirected },
+                    type: { value: responseBefore.type },
+                    url: { value: responseBefore.url },
+                });
+                return responseAfter;
+            }).catch(reason => {
+                log('json-prune-fetch-response:', reason);
+                return responseBefore;
+            });
+        }).catch(reason => {
+            log('json-prune-fetch-response:', reason);
+            return fetchPromise;
+        });
+    };
+    self.fetch = new Proxy(self.fetch, {
+        apply: applyHandler
     });
 }
 
@@ -427,7 +475,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { jsonPrune(...argsList[i]); }
+    try { jsonPruneFetchResponse(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -447,7 +495,7 @@ argsList.length = 0;
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' ) {
-    return uBOL_jsonPrune();
+    return uBOL_jsonPruneFetchResponse();
 }
 
 // Firefox
@@ -455,11 +503,11 @@ if ( typeof wrappedJSObject !== 'object' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_jsonPrune = cloneInto([
-            [ '(', uBOL_jsonPrune.toString(), ')();' ],
+        page.uBOL_jsonPruneFetchResponse = cloneInto([
+            [ '(', uBOL_jsonPruneFetchResponse.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_jsonPrune);
+        const blob = new page.Blob(...page.uBOL_jsonPruneFetchResponse);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -473,7 +521,7 @@ if ( typeof wrappedJSObject !== 'object' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_jsonPrune;
+    delete page.uBOL_jsonPruneFetchResponse;
 }
 
 /******************************************************************************/

@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: rus-0
+// ruleset: default
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_setAttr = function() {
+const uBOL_trustedReplaceFetchResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#progress-value","data-timer","3"],["a[href$=\"?ref=recommended\"]","target",""]];
+const argsList = [["/\\\"adPlacements.*?\\\"\\}\\}\\}\\],/","","player?key="],["/\\\"adSlots.*?\\}\\]\\}\\}\\],/","","player?key="],["/\\\"playerAds.*?\\}\\}\\],/","","player?key="]];
 
-const hostnamesMap = new Map([["howdyho.net",0],["dtf.ru",1],["vc.ru",1]]);
+const hostnamesMap = new Map([["youtube.com",[0,1,2]]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,109 +52,128 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function setAttr(
-    selector = '',
-    attr = '',
-    value = ''
+function trustedReplaceFetchResponse(
+    pattern = '',
+    replacement = '',
+    propsToMatch = ''
 ) {
-    if ( typeof selector !== 'string' ) { return; }
-    if ( selector === '' ) { return; }
-
-    const validValues = [ '', 'false', 'true' ];
-    let copyFrom = '';
-
-    if ( validValues.includes(value.toLowerCase()) === false ) {
-        if ( /^\d+$/.test(value) ) {
-            const n = parseInt(value, 10);
-            if ( n >= 32768 ) { return; }
-            value = `${n}`;
-        } else if ( /^\[.+\]$/.test(value) ) {
-            copyFrom = value.slice(1, -1);
-        } else {
-            return;
-        }
-    }
-
-    const extractValue = elem => {
-        if ( copyFrom !== '' ) {
-            return elem.getAttribute(copyFrom) || '';
-        }
-        return value;
-    };
-
-    const applySetAttr = ( ) => {
-        const elems = [];
-        try {
-            elems.push(...document.querySelectorAll(selector));
-        }
-        catch(ex) {
-            return false;
-        }
-        for ( const elem of elems ) {
-            const before = elem.getAttribute(attr);
-            const after = extractValue(elem);
-            if ( after === before ) { continue; }
-            elem.setAttribute(attr, after);
-        }
-        return true;
-    };
-    let observer, timer;
-    const onDomChanged = mutations => {
-        if ( timer !== undefined ) { return; }
-        let shouldWork = false;
-        for ( const mutation of mutations ) {
-            if ( mutation.addedNodes.length === 0 ) { continue; }
-            for ( const node of mutation.addedNodes ) {
-                if ( node.nodeType !== 1 ) { continue; }
-                shouldWork = true;
-                break;
+    const safe = safeSelf();
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    const logLevel = shouldLog({
+        log: pattern === '' || extraArgs.log,
+    });
+    const log = logLevel ? ((...args) => { safe.uboLog(...args); }) : (( ) => { }); 
+    if ( pattern === '*' ) { pattern = '.*'; }
+    const rePattern = safe.patternToRegex(pattern);
+    const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    self.fetch = new Proxy(self.fetch, {
+        apply: function(target, thisArg, args) {
+            if ( logLevel === true ) {
+                log('trusted-replace-fetch-response:', JSON.stringify(Array.from(args)).slice(1,-1));
             }
-            if ( shouldWork ) { break; }
+            const fetchPromise = Reflect.apply(target, thisArg, args);
+            if ( pattern === '' ) { return fetchPromise; }
+            let outcome = 'match';
+            if ( propNeedles.size !== 0 ) {
+                const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
+                if ( args[1] instanceof Object ) {
+                    objs.push(args[1]);
+                }
+                if ( matchObjectProperties(propNeedles, ...objs) === false ) {
+                    outcome = 'nomatch';
+                }
+                if ( outcome === logLevel || logLevel === 'all' ) {
+                    log(
+                        `trusted-replace-fetch-response (${outcome})`,
+                        `\n\tpropsToMatch: ${JSON.stringify(Array.from(propNeedles)).slice(1,-1)}`,
+                        '\n\tprops:', ...args,
+                    );
+                }
+            }
+            if ( outcome === 'nomatch' ) { return fetchPromise; }
+            return fetchPromise.then(responseBefore => {
+                const response = responseBefore.clone();
+                return response.text().then(textBefore => {
+                    const textAfter = textBefore.replace(rePattern, replacement);
+                    const outcome = textAfter !== textBefore ? 'match' : 'nomatch';
+                    if ( outcome === logLevel || logLevel === 'all' ) {
+                        log(
+                            `trusted-replace-fetch-response (${outcome})`,
+                            `\n\tpattern: ${pattern}`, 
+                            `\n\treplacement: ${replacement}`,
+                        );
+                    }
+                    if ( outcome === 'nomatch' ) { return responseBefore; }
+                    const responseAfter = new Response(textAfter, {
+                        status: responseBefore.status,
+                        statusText: responseBefore.statusText,
+                        headers: responseBefore.headers,
+                    });
+                    Object.defineProperties(responseAfter, {
+                        ok: { value: responseBefore.ok },
+                        redirected: { value: responseBefore.redirected },
+                        type: { value: responseBefore.type },
+                        url: { value: responseBefore.url },
+                    });
+                    return responseAfter;
+                }).catch(reason => {
+                    log('trusted-replace-fetch-response:', reason);
+                    return responseBefore;
+                });
+            }).catch(reason => {
+                log('trusted-replace-fetch-response:', reason);
+                return fetchPromise;
+            });
         }
-        if ( shouldWork === false ) { return; }
-        timer = self.requestAnimationFrame(( ) => {
-            timer = undefined;
-            applySetAttr();
-        });
-    };
-    const start = ( ) => {
-        if ( applySetAttr() === false ) { return; }
-        observer = new MutationObserver(onDomChanged);
-        observer.observe(document.body, {
-            subtree: true,
-            childList: true,
-        });
-    };
-    runAt(( ) => { start(); }, 'idle');
+    });
 }
 
-function runAt(fn, when) {
-    const intFromReadyState = state => {
-        const targets = {
-            'loading': 1,
-            'interactive': 2, 'end': 2, '2': 2,
-            'complete': 3, 'idle': 3, '3': 3,
+function matchObjectProperties(propNeedles, ...objs) {
+    if ( matchObjectProperties.extractProperties === undefined ) {
+        matchObjectProperties.extractProperties = (src, des, props) => {
+            for ( const p of props ) {
+                const v = src[p];
+                if ( v === undefined ) { continue; }
+                des[p] = src[p];
+            }
         };
-        const tokens = Array.isArray(state) ? state : [ state ];
-        for ( const token of tokens ) {
-            const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
-            return targets[prop];
-        }
-        return 0;
-    };
-    const runAt = intFromReadyState(when);
-    if ( intFromReadyState(document.readyState) >= runAt ) {
-        fn(); return;
     }
-    const onStateChange = ( ) => {
-        if ( intFromReadyState(document.readyState) < runAt ) { return; }
-        fn();
-        safe.removeEventListener.apply(document, args);
-    };
     const safe = safeSelf();
-    const args = [ 'readystatechange', onStateChange, { capture: true } ];
-    safe.addEventListener.apply(document, args);
+    const haystack = {};
+    const props = Array.from(propNeedles.keys());
+    for ( const obj of objs ) {
+        if ( obj instanceof Object === false ) { continue; }
+        matchObjectProperties.extractProperties(obj, haystack, props);
+    }
+    for ( const [ prop, details ] of propNeedles ) {
+        let value = haystack[prop];
+        if ( value === undefined ) { continue; }
+        if ( typeof value !== 'string' ) {
+            try { value = JSON.stringify(value); }
+            catch(ex) { }
+            if ( typeof value !== 'string' ) { continue; }
+        }
+        if ( safe.testPattern(details, value) ) { continue; }
+        return false;
+    }
+    return true;
+}
+
+function parsePropertiesToMatch(propsToMatch, implicit = '') {
+    const safe = safeSelf();
+    const needles = new Map();
+    if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
+    const options = { canNegate: true };
+    for ( const needle of propsToMatch.split(/\s+/) ) {
+        const [ prop, pattern ] = needle.split(':');
+        if ( prop === '' ) { continue; }
+        if ( pattern !== undefined ) {
+            needles.set(prop, safe.initPattern(pattern, options));
+        } else if ( implicit !== '' ) {
+            needles.set(implicit, safe.initPattern(prop, options));
+        }
+    }
+    return needles;
 }
 
 function safeSelf() {
@@ -243,6 +262,11 @@ function safeSelf() {
     return safe;
 }
 
+function shouldLog(details) {
+    if ( details instanceof Object === false ) { return false; }
+    return scriptletGlobals.has('canDebug') && details.log;
+}
+
 /******************************************************************************/
 
 const hnParts = [];
@@ -303,7 +327,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { setAttr(...argsList[i]); }
+    try { trustedReplaceFetchResponse(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -323,7 +347,7 @@ argsList.length = 0;
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' ) {
-    return uBOL_setAttr();
+    return uBOL_trustedReplaceFetchResponse();
 }
 
 // Firefox
@@ -331,11 +355,11 @@ if ( typeof wrappedJSObject !== 'object' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_setAttr = cloneInto([
-            [ '(', uBOL_setAttr.toString(), ')();' ],
+        page.uBOL_trustedReplaceFetchResponse = cloneInto([
+            [ '(', uBOL_trustedReplaceFetchResponse.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_setAttr);
+        const blob = new page.Blob(...page.uBOL_trustedReplaceFetchResponse);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -349,7 +373,7 @@ if ( typeof wrappedJSObject !== 'object' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_setAttr;
+    delete page.uBOL_trustedReplaceFetchResponse;
 }
 
 /******************************************************************************/

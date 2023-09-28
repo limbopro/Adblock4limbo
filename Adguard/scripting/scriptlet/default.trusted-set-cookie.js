@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["wallpaper","click"],["WPdp","lqqF1M2OyFTVgpTDxpTVkNdThICHBgVTktTN0BdWV1HQEldVV1AXCxTQFMcHlNLXV1TAQVTVkJdTgUCTktAWkhFVUdGVEdHVEBGEV1TOCFTVgpTDxpTVkBdThICHBgVTktTNyxTQFMcHlNLXV1TAQVTVkJdTgUCTktAWkhFVUdGVEdHVEBGEV1TOyE8TksKThIaTktDQFMSHwEYCFNLTipAQERdWl1JQEhdXUEsTl1TAQNTVkBdThwFTktCQFMFH1NLXUdIWEhHW0lHWklAW11TGRBTVkAMEQ=="],["WPtcs2","CPyPo8APyPo8ABIACCPLDPCgAAAAAH_AAB5YAAATFAJMNS4gC7AgZCbQMIoUQIwrCAigUAAAAkDRAQAuDAp2RgE-sBkAKEUARwQAhgBRkACAAACAJCIAJAiwQAAQCAQAAgAQCAQAEDAAKACwEAgABAdAxTCgAUCwgSICIhTAhKgSCAlsqEEoLpBXCAIssAKARGwUACIAARWAAICxcAwRICVCQQJdQbQAAEACAUSoViCT00ACgkbLUAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
 
-const hostnamesMap = new Map([["theporndude.com",0],["wp.pl",[1,2,3]],["money.pl",[1,2]],["pysznosci.pl",[1,2]],["pudelek.pl",[1,2]],["gadzetomania.pl",[1,2]],["fotoblogia.pl",[1,2]],["komorkomania.pl",[1,2]],["dobreprogramy.pl",[1,2]]]);
+const hostnamesMap = new Map([["theporndude.com",0],["wp.pl",[1,2,3]],["money.pl",[1,2]],["pysznosci.pl",[1,2,3]],["pudelek.pl",[1,2]],["gadzetomania.pl",[1,2]],["fotoblogia.pl",[1,2]],["komorkomania.pl",[1,2]],["dobreprogramy.pl",[1,2,3]],["autokult.pl",[1,2]]]);
 
 const entitiesMap = new Map([]);
 

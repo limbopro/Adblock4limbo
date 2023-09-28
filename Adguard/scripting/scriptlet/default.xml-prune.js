@@ -42,11 +42,11 @@ const uBOL_xmlPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])])","",".mpd"]];
+const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])])","",".mpd"]];
 
-const hostnamesMap = new Map([["hulu.com",0],["www.amazon.co.jp",1],["www.amazon.com",1],["vix.com",2],["go.discovery.com",3],["cbs.com",4],["paramountplus.com",4],["play.max.com",5]]);
+const hostnamesMap = new Map([["imasdk.googleapis.com",0],["hulu.com",1],["www.amazon.co.jp",2],["www.amazon.com",2],["vix.com",3],["go.discovery.com",4],["cbs.com",5],["paramountplus.com",5],["play.max.com",6]]);
 
-const entitiesMap = new Map([["discoveryplus",3]]);
+const entitiesMap = new Map([["discoveryplus",4]]);
 
 const exceptionsMap = new Map([]);
 

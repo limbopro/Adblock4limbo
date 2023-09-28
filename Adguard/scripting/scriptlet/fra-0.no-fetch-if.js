@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico method:HEAD"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
+const argsList = [["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico method:HEAD"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
 
-const hostnamesMap = new Map([["france.tv",0],["lameteoagricole.net",1],["meteo-grenoble.com",1],["signal-arnaques.com",1],["techno-science.net",1],["animationdigitalnetwork.fr",1],["animedigitalnetwork.fr",1],["malekal.com",2],["tf1.fr",[3,4]],["tf1info.fr",[3,4]]]);
+const hostnamesMap = new Map([["darkino.pro",0],["darkino.biz",0],["france.tv",1],["lameteoagricole.net",2],["meteo-grenoble.com",2],["signal-arnaques.com",2],["techno-science.net",2],["animationdigitalnetwork.fr",2],["animedigitalnetwork.fr",2],["malekal.com",3],["tf1.fr",[4,5]],["tf1info.fr",[4,5]]]);
 
 const entitiesMap = new Map([]);
 

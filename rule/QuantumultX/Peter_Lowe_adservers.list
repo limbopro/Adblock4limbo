@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 28 Sep 2023 08:27:02 GMT
-# entries:        3721
+# entries:        3718
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1008,7 +1008,6 @@ DOMAIN-SUFFIX,anrdoezrs.net, reject
 DOMAIN-SUFFIX,anstrex.com, reject
 DOMAIN-SUFFIX,anuncios.edicaoms.com.br, reject
 DOMAIN-SUFFIX,anxiousapples.com, reject
-DOMAIN-SUFFIX,apathetictheory.com, reject
 DOMAIN-SUFFIX,api.amplitude.com, reject
 DOMAIN-SUFFIX,api.eu.amplitude.com, reject
 DOMAIN-SUFFIX,api.intensifier.de, reject
@@ -1576,7 +1575,6 @@ DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
 DOMAIN-SUFFIX,deadpangate.com, reject
 DOMAIN-SUFFIX,deadpanmarble.com, reject
-DOMAIN-SUFFIX,deadpantruck.com, reject
 DOMAIN-SUFFIX,dealdotcom.com, reject
 DOMAIN-SUFFIX,debonairway.com, reject
 DOMAIN-SUFFIX,debtbusterloans.com, reject
@@ -1587,7 +1585,6 @@ DOMAIN-SUFFIX,decisiveducks.com, reject
 DOMAIN-SUFFIX,decknetwork.net, reject
 DOMAIN-SUFFIX,decoycreation.com, reject
 DOMAIN-SUFFIX,deepintent.com, reject
-DOMAIN-SUFFIX,defectivesun.com, reject
 DOMAIN-SUFFIX,delegatediscussion.com, reject
 DOMAIN-SUFFIX,deloo.de, reject
 DOMAIN-SUFFIX,deloplen.com, reject
@@ -2469,7 +2466,6 @@ DOMAIN-SUFFIX,needlessnorth.com, reject
 DOMAIN-SUFFIX,needyneedle.com, reject
 DOMAIN-SUFFIX,neighborlywatch.com, reject
 DOMAIN-SUFFIX,nend.net, reject
-DOMAIN-SUFFIX,neocounter.neoworx-blog-tools.net, reject
 DOMAIN-SUFFIX,nervoussummer.com, reject
 DOMAIN-SUFFIX,net-filter.com, reject
 DOMAIN-SUFFIX,netaffiliation.com, reject
@@ -3355,6 +3351,7 @@ DOMAIN-SUFFIX,toplist.cz, reject
 DOMAIN-SUFFIX,toplist.pornhost.com, reject
 DOMAIN-SUFFIX,toplista.mw.hu, reject
 DOMAIN-SUFFIX,toplistcity.com, reject
+DOMAIN-SUFFIX,toprebates.com, reject
 DOMAIN-SUFFIX,topsir.com, reject
 DOMAIN-SUFFIX,topsite.lv, reject
 DOMAIN-SUFFIX,topsites.com.br, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309281525
+## ! Version: 202309291537
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Sep 2023 15:25 UTC
+## ! Last modified: 29 Sep 2023 15:37 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -32,6 +32,7 @@ DOMAIN-SUFFIX,aaxwall.com
 DOMAIN-SUFFIX,acsbapp.com
 DOMAIN-SUFFIX,act-server-prod.7swnm9dm8q.eu-west-1.elasticbeanstalk.com
 DOMAIN-SUFFIX,adcontroll.com
+DOMAIN-SUFFIX,admaxium.com
 DOMAIN-SUFFIX,adnext.co
 DOMAIN-SUFFIX,adrtx.net
 DOMAIN-SUFFIX,adscore.com
@@ -321,6 +322,7 @@ DOMAIN-SUFFIX,t13.io
 DOMAIN-SUFFIX,takingbackjuly.com
 DOMAIN-SUFFIX,targetemsecure.blob.core.windows.net
 DOMAIN-SUFFIX,tatpek.com
+DOMAIN-SUFFIX,techpump.com
 DOMAIN-SUFFIX,test.vast
 DOMAIN-SUFFIX,testingmetriksbre.ru
 DOMAIN-SUFFIX,the-ozone-project.com
@@ -3536,6 +3538,7 @@ DOMAIN-SUFFIX,nctrk.abmail.com.br
 DOMAIN-SUFFIX,neurotrack.neurolake.io
 DOMAIN-SUFFIX,sat.soluall.net
 DOMAIN-SUFFIX,segmentor.snowfox-ai.com
+DOMAIN-SUFFIX,statistic.audima.co
 DOMAIN-SUFFIX,stats.gridmidia.com.br
 DOMAIN-SUFFIX,tags.cmp.tail.digital
 DOMAIN-SUFFIX,track.noddus.com
@@ -18547,7 +18550,6 @@ DOMAIN-SUFFIX,access.ipro.net
 DOMAIN-SUFFIX,access.iprolive.com
 DOMAIN-SUFFIX,access2.ipro.net
 DOMAIN-SUFFIX,accuratecraneplan-test.inthere.link
-DOMAIN-SUFFIX,acesse.tc.com.br
 DOMAIN-SUFFIX,acro.egghead.link
 DOMAIN-SUFFIX,act.wynk.in
 DOMAIN-SUFFIX,activation.depop.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309281525
+## ! Version: 202309291537
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Sep 2023 15:25 UTC
+## ! Last modified: 29 Sep 2023 15:37 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -32,6 +32,7 @@ DOMAIN-SUFFIX,aaxwall.com, reject
 DOMAIN-SUFFIX,acsbapp.com, reject
 DOMAIN-SUFFIX,act-server-prod.7swnm9dm8q.eu-west-1.elasticbeanstalk.com, reject
 DOMAIN-SUFFIX,adcontroll.com, reject
+DOMAIN-SUFFIX,admaxium.com, reject
 DOMAIN-SUFFIX,adnext.co, reject
 DOMAIN-SUFFIX,adrtx.net, reject
 DOMAIN-SUFFIX,adscore.com, reject
@@ -321,6 +322,7 @@ DOMAIN-SUFFIX,t13.io, reject
 DOMAIN-SUFFIX,takingbackjuly.com, reject
 DOMAIN-SUFFIX,targetemsecure.blob.core.windows.net, reject
 DOMAIN-SUFFIX,tatpek.com, reject
+DOMAIN-SUFFIX,techpump.com, reject
 DOMAIN-SUFFIX,test.vast, reject
 DOMAIN-SUFFIX,testingmetriksbre.ru, reject
 DOMAIN-SUFFIX,the-ozone-project.com, reject
@@ -3536,6 +3538,7 @@ DOMAIN-SUFFIX,nctrk.abmail.com.br, reject
 DOMAIN-SUFFIX,neurotrack.neurolake.io, reject
 DOMAIN-SUFFIX,sat.soluall.net, reject
 DOMAIN-SUFFIX,segmentor.snowfox-ai.com, reject
+DOMAIN-SUFFIX,statistic.audima.co, reject
 DOMAIN-SUFFIX,stats.gridmidia.com.br, reject
 DOMAIN-SUFFIX,tags.cmp.tail.digital, reject
 DOMAIN-SUFFIX,track.noddus.com, reject
@@ -18547,7 +18550,6 @@ DOMAIN-SUFFIX,access.ipro.net, reject
 DOMAIN-SUFFIX,access.iprolive.com, reject
 DOMAIN-SUFFIX,access2.ipro.net, reject
 DOMAIN-SUFFIX,accuratecraneplan-test.inthere.link, reject
-DOMAIN-SUFFIX,acesse.tc.com.br, reject
 DOMAIN-SUFFIX,acro.egghead.link, reject
 DOMAIN-SUFFIX,act.wynk.in, reject
 DOMAIN-SUFFIX,activation.depop.com, reject

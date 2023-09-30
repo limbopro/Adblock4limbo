@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 28 Sep 2023 08:27:02 GMT
-# entries:        3718
+# last updated:   Sat, 30 Sep 2023 15:25:13 GMT
+# entries:        3720
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2734,6 +2734,7 @@ DOMAIN-SUFFIX,proper.io
 DOMAIN-SUFFIX,props.id
 DOMAIN-SUFFIX,prosper.on-line-casino.ca
 DOMAIN-SUFFIX,protectcrev.com
+DOMAIN-SUFFIX,protectivemetrics.com
 DOMAIN-SUFFIX,protectsubrev.com
 DOMAIN-SUFFIX,protestcopy.com
 DOMAIN-SUFFIX,proton-tm.com
@@ -2942,6 +2943,7 @@ DOMAIN-SUFFIX,s20dh7e9dh.com
 DOMAIN-SUFFIX,s2d6.com
 DOMAIN-SUFFIX,sabio.us
 DOMAIN-SUFFIX,sadloaf.com
+DOMAIN-SUFFIX,safeanalytics.net
 DOMAIN-SUFFIX,sail-horizon.com
 DOMAIN-SUFFIX,samsungacr.com
 DOMAIN-SUFFIX,samsungads.com

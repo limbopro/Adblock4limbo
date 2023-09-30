@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309291537
+## ! Version: 202309301522
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Sep 2023 15:37 UTC
+## ! Last modified: 30 Sep 2023 15:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -347,6 +347,7 @@ DOMAIN-SUFFIX,tvpixel.com, reject
 DOMAIN-SUFFIX,tw.cx, reject
 DOMAIN-SUFFIX,tzegilo.com, reject
 DOMAIN-SUFFIX,ugdturner.com, reject
+DOMAIN-SUFFIX,uidapi.com, reject
 DOMAIN-SUFFIX,uqd.io, reject
 DOMAIN-SUFFIX,ustat.info, reject
 DOMAIN-SUFFIX,venusrevival.com, reject
@@ -3680,6 +3681,7 @@ DOMAIN-SUFFIX,amethyst.zappos.com, reject
 DOMAIN-SUFFIX,ampltd.top.gg, reject
 DOMAIN-SUFFIX,ampltd2.medal.tv, reject
 DOMAIN-SUFFIX,analyselog.dx.com, reject
+DOMAIN-SUFFIX,analytics-batch.blitz.gg, reject
 DOMAIN-SUFFIX,analytics-proxy.springboard.com, reject
 DOMAIN-SUFFIX,analytics-tracking.meetup.com, reject
 DOMAIN-SUFFIX,analytics-wcms.joins.net, reject
@@ -19413,7 +19415,6 @@ DOMAIN-SUFFIX,get.sakay.ph, reject
 DOMAIN-SUFFIX,get.schoolbuddy.app, reject
 DOMAIN-SUFFIX,get.seedly.sg, reject
 DOMAIN-SUFFIX,get.sidekick.health, reject
-DOMAIN-SUFFIX,get.smart-guide.org, reject
 DOMAIN-SUFFIX,get.snapask.com, reject
 DOMAIN-SUFFIX,get.somontreal.ca, reject
 DOMAIN-SUFFIX,get.speaky.com, reject

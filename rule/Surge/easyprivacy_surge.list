@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202309291537
+## ! Version: 202309301522
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Sep 2023 15:37 UTC
+## ! Last modified: 30 Sep 2023 15:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -347,6 +347,7 @@ DOMAIN-SUFFIX,tvpixel.com
 DOMAIN-SUFFIX,tw.cx
 DOMAIN-SUFFIX,tzegilo.com
 DOMAIN-SUFFIX,ugdturner.com
+DOMAIN-SUFFIX,uidapi.com
 DOMAIN-SUFFIX,uqd.io
 DOMAIN-SUFFIX,ustat.info
 DOMAIN-SUFFIX,venusrevival.com
@@ -3680,6 +3681,7 @@ DOMAIN-SUFFIX,amethyst.zappos.com
 DOMAIN-SUFFIX,ampltd.top.gg
 DOMAIN-SUFFIX,ampltd2.medal.tv
 DOMAIN-SUFFIX,analyselog.dx.com
+DOMAIN-SUFFIX,analytics-batch.blitz.gg
 DOMAIN-SUFFIX,analytics-proxy.springboard.com
 DOMAIN-SUFFIX,analytics-tracking.meetup.com
 DOMAIN-SUFFIX,analytics-wcms.joins.net
@@ -19413,7 +19415,6 @@ DOMAIN-SUFFIX,get.sakay.ph
 DOMAIN-SUFFIX,get.schoolbuddy.app
 DOMAIN-SUFFIX,get.seedly.sg
 DOMAIN-SUFFIX,get.sidekick.health
-DOMAIN-SUFFIX,get.smart-guide.org
 DOMAIN-SUFFIX,get.snapask.com
 DOMAIN-SUFFIX,get.somontreal.ca
 DOMAIN-SUFFIX,get.speaky.com

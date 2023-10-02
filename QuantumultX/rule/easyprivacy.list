@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310011507
+## ! Version: 202310021531
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Oct 2023 15:07 UTC
+## ! Last modified: 02 Oct 2023 15:31 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -70,7 +70,6 @@ DOMAIN-SUFFIX,brsrvr.com, reject
 DOMAIN-SUFFIX,btloader.com, reject
 DOMAIN-SUFFIX,bx-cloud.com, reject
 DOMAIN-SUFFIX,bydst.com, reject
-DOMAIN-SUFFIX,byspotify.com, reject
 DOMAIN-SUFFIX,cadsuta.net, reject
 DOMAIN-SUFFIX,captcha-display.com, reject
 DOMAIN-SUFFIX,cbdatatracker.com, reject
@@ -2597,6 +2596,7 @@ DOMAIN-SUFFIX,pixel-a.basis.net, reject
 DOMAIN-SUFFIX,pixel.ampry.com, reject
 DOMAIN-SUFFIX,pixel.archipro.co.nz, reject
 DOMAIN-SUFFIX,pixel.blivenyc.com, reject
+DOMAIN-SUFFIX,pixel.byspotify.com, reject
 DOMAIN-SUFFIX,pixel.condenastdigital.com, reject
 DOMAIN-SUFFIX,pixel.inforsea.com, reject
 DOMAIN-SUFFIX,pixel.lilystyle.ai, reject
@@ -3696,6 +3696,7 @@ DOMAIN-SUFFIX,analytics.designspiration.com, reject
 DOMAIN-SUFFIX,analytics.faceitanalytics.com, reject
 DOMAIN-SUFFIX,analytics.footballdb.com, reject
 DOMAIN-SUFFIX,analytics.freemake.com, reject
+DOMAIN-SUFFIX,analytics.gamesdrive.net, reject
 DOMAIN-SUFFIX,analytics.getshogun.com, reject
 DOMAIN-SUFFIX,analytics.global.sky.com, reject
 DOMAIN-SUFFIX,analytics.hashnode.com, reject
@@ -21301,6 +21302,7 @@ DOMAIN-SUFFIX,ylog.huya.com, reject
 DOMAIN-SUFFIX,zhihu-web-analytics.zhihu.com, reject
 DOMAIN-SUFFIX,zio.xcar.com.cn, reject
 DOMAIN-SUFFIX,zz.bdstatic.com, reject
+DOMAIN-SUFFIX,cc.dalten.cz, reject
 DOMAIN-SUFFIX,jslog.post.cz, reject
 DOMAIN-SUFFIX,report.novinky.cz, reject
 DOMAIN-SUFFIX,stat.super.cz, reject

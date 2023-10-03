@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","script"],["$","PopUnder"],["encodeURIComponent","popunder"],["jQuery","popurl"],["i6H","Math"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["$","btpop"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
+const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","script"],["$","PopUnder"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["$","btpop"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenus.com",[2,25]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["ios.codevn.net",6],["khoaiphim.com",[7,8]],["khohieu.com",9],["linkneverdie.net",[10,11]],["lxmanga.net",12],["nguontv.live",13],["phimgigi.net",14],["ophimhdvn2.net",14],["mephimnhez.net",14],["phimlau.online",15],["phimmoipro1.net",16],["plus.gtv.vn",17],["protruyen.xyz",18],["animevietsub.fan",18],["rphang.me",19],["mrcong.com",19],["tinsoikeo.vip",20],["truyen2u.net",21],["truyen35.vn",22],["truyengihotday.net",23],["truyentuan.com",24],["viet69.tube",25],["ungtycomicsvip.com",25],["vlxx.moe",25],["yurineko.net",25],["vungoctuan.vn",26],["xnxx-sex-videos.com",27],["xoilac84.tv",28]]);
+const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenus.com",[2,24]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["ios.codevn.net",6],["khoaiphim.com",[7,8]],["khohieu.com",9],["linkneverdie.net",[10,11]],["lxmanga.net",12],["nguontv.live",13],["phimgigi.net",14],["ophimhdvn2.net",14],["mephimnhez.net",14],["phimmoipro1.net",15],["plus.gtv.vn",16],["protruyen.xyz",17],["animevietsub.fan",17],["rphang.me",18],["mrcong.com",18],["tinsoikeo.vip",19],["truyen2u.net",20],["truyen35.vn",21],["truyengihotday.net",22],["truyentuan.com",23],["viet69.tube",24],["ungtycomicsvip.com",24],["vlxx.moe",24],["yurineko.net",24],["vungoctuan.vn",25],["xnxx-sex-videos.com",26],["xoilac85.tv",27]]);
 
 const entitiesMap = new Map([]);
 
@@ -208,7 +208,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

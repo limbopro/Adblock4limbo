@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
+const argsList = [["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
 
-const hostnamesMap = new Map([["search.shopping.naver.com",0],["comic.naver.com",1],["enuri.com",2],["shoppinghow.kakao.com",3]]);
+const hostnamesMap = new Map([["msearch.shopping.naver.com",0],["search.shopping.naver.com",1],["comic.naver.com",2],["enuri.com",3],["shoppinghow.kakao.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -245,7 +245,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

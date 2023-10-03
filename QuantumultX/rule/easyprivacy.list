@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310021531
+## ! Version: 202310031520
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Oct 2023 15:31 UTC
+## ! Last modified: 03 Oct 2023 15:20 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -96,6 +96,7 @@ DOMAIN-SUFFIX,cxt.ms, reject
 DOMAIN-SUFFIX,cybba.solutions, reject
 DOMAIN-SUFFIX,czx5eyk0exbhwp43ya.biz, reject
 DOMAIN-SUFFIX,da29e6b8-f018-490f-b25f-39a887fc95e7.xyz, reject
+DOMAIN-SUFFIX,dataofpages.com, reject
 DOMAIN-SUFFIX,datatechonert.com, reject
 DOMAIN-SUFFIX,demdex.net, reject
 DOMAIN-SUFFIX,digi-ping.com, reject
@@ -367,6 +368,7 @@ DOMAIN-SUFFIX,wlt-jupiter.de, reject
 DOMAIN-SUFFIX,wmgroup.us, reject
 DOMAIN-SUFFIX,woodpeckerlog.com, reject
 DOMAIN-SUFFIX,yardianalytics.com, reject
+DOMAIN-SUFFIX,yndhi.com, reject
 DOMAIN-SUFFIX,yottlyscript.com, reject
 DOMAIN-SUFFIX,youborafds01.com, reject
 DOMAIN-SUFFIX,youboranqs01.com, reject
@@ -2860,6 +2862,7 @@ DOMAIN-SUFFIX,tr.snapchat.com, reject
 DOMAIN-SUFFIX,tr.vitals.co, reject
 DOMAIN-SUFFIX,tr.webantenna.info, reject
 DOMAIN-SUFFIX,traccoon.intellectsoft.net, reject
+DOMAIN-SUFFIX,trace.swaven.com, reject
 DOMAIN-SUFFIX,track-dark-bz.b-cdn.net, reject
 DOMAIN-SUFFIX,track.360playvid.info, reject
 DOMAIN-SUFFIX,track.91app.io, reject
@@ -2993,6 +2996,7 @@ DOMAIN-SUFFIX,triggers.wfxtriggers.com, reject
 DOMAIN-SUFFIX,trk.clinch.co, reject
 DOMAIN-SUFFIX,trk.storyly.io, reject
 DOMAIN-SUFFIX,trk.techtarget.com, reject
+DOMAIN-SUFFIX,trk2-wtb.swaven.com, reject
 DOMAIN-SUFFIX,trx-cdn.zip.co, reject
 DOMAIN-SUFFIX,trx.zip.co, reject
 DOMAIN-SUFFIX,try.abtasty.com, reject

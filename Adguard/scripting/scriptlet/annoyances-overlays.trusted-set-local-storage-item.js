@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["lo-non-moc-membership-upsell|dismissed-at","$now$"]];
 
-const hostnamesMap = new Map([["medium.com",0]]);
+const hostnamesMap = new Map([["medium.com",0],["proandroiddev.com",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
+const argsList = [["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["document.createElement","adsbygoogle.js"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
 
-const hostnamesMap = new Map([["azsekerlik.blogspot.com",0],["cbdgummiesio.biz",0],["vknsorgula.net",0],["okultanitimi.net",1],["asyadrama.com",2],["otopark.com",3],["turkrock.com",3],["osxinfo.net",3],["hacoos.com",4],["kampanyatakip.blogspot.com",5],["iskandinavya.com",6],["mordefter.com",7],["ulketv.com.tr",8],["kenttv.net",9],["ulker.com.tr",10],["duzcetv.com",11],["bizimyaka.com",12]]);
+const hostnamesMap = new Map([["azsekerlik.blogspot.com",0],["cbdgummiesio.biz",0],["vknsorgula.net",0],["okultanitimi.net",1],["asyadrama.com",2],["otopark.com",3],["turkrock.com",3],["osxinfo.net",3],["hacoos.com",4],["kampanyatakip.blogspot.com",5],["iskandinavya.com",6],["tekniknot.com",7],["mordefter.com",8],["ulketv.com.tr",9],["kenttv.net",10],["ulker.com.tr",11],["duzcetv.com",12],["bizimyaka.com",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -208,7 +208,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

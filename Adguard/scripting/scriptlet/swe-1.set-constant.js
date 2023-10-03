@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["mi_track_user","false"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYin","noopFunc"],["checkYinPlaus","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["detect","noopFunc"]];
 
-const hostnamesMap = new Map([["boktugg.se",0],["dinbyggare.se",0],["ettgottskratt.se",0],["humorbibeln.se",0],["lakartidningen.se",0],["matsafari.nu",0],["newsner.com",0],["sportbibeln.se",0],["trafiksakerhet.se",0],["villalivet.se",0],["zeinaskitchen.se",0],["di.se",1],["elevspel.se",2],["feber.se",[3,4,5,6]],["tjock.se",[3,4,5,6]],["findit.se",7],["fssweden.se",8],["fz.se",8],["gamereactor.se",9],["heleneholmsif.se",[10,11]],["melodifestivalklubben.se",[10,11]],["morotsliv.com",[10,11]],["thorengruppen.se",[10,11]],["trafikskola.se",[10,11]],["utslappsratt.se",[10,11]],["kamrat.com",[12,13]],["kritiker.se",[14,15,16]],["mitti.se",17],["mobilanyheter.net",18],["ordbokpro.se",19],["spray.se",[20,21]],["swedroid.se",22],["thatsup.se",23],["www.expressen.se",24]]);
+const hostnamesMap = new Map([["boktugg.se",0],["dinbyggare.se",0],["ettgottskratt.se",0],["humorbibeln.se",0],["lakartidningen.se",0],["matsafari.nu",0],["newsner.com",0],["sportbibeln.se",0],["trafiksakerhet.se",0],["villalivet.se",0],["zeinaskitchen.se",0],["di.se",1],["elevspel.se",2],["feber.se",[3,4,5,6]],["tjock.se",[3,4,5,6]],["findit.se",7],["fssweden.se",8],["fz.se",8],["gamereactor.se",9],["heleneholmsif.se",[10,11]],["melodifestivalklubben.se",[10,11]],["morotsliv.com",[10,11]],["thorengruppen.se",[10,11]],["trafikskola.se",[10,11]],["utslappsratt.se",[10,11]],["kamrat.com",[12,13]],["kritiker.se",[14,15,16]],["mitti.se",17],["mobilanyheter.net",18],["ordbokpro.se",19],["spray.se",[20,21]],["vinochmatguiden.se",21],["swedroid.se",22],["thatsup.se",23],["www.expressen.se",24]]);
 
 const entitiesMap = new Map([]);
 
@@ -295,7 +295,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

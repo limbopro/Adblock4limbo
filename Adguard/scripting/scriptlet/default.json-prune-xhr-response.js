@@ -85,9 +85,12 @@ function jsonPruneXhrResponse(
             if ( xhrDetails === undefined ) {
                 return innerResponse;
             }
-            if ( xhrDetails.latestResponseLength != innerResponse.length ) {
+            const responseLength = typeof innerResponse === 'string'
+                ? innerResponse.length
+                : undefined;
+            if ( xhrDetails.lastResponseLength !== responseLength ) {
                 xhrDetails.response = undefined;
-                xhrDetails.latestResponseLength = innerResponse.length;
+                xhrDetails.lastResponseLength = responseLength;
             }
             if ( xhrDetails.response !== undefined ) {
                 return xhrDetails.response;
@@ -298,7 +301,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

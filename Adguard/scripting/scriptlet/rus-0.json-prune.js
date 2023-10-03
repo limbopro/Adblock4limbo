@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["documents","get_arguments"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].slot"]];
 
-const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,5]],["1plus1.video",3],["sports.ru",4],["igromania.ru",6],["kanobu.ru",6],["znanija.com",7],["ashdi.vip",8],["tortuga.wtf",8],["touch.mail.ru",9],["e.mail.ru",10]]);
+const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,5]],["1plus1.video",3],["sports.ru",4],["igromania.ru",6],["kanobu.ru",6],["znanija.com",7],["ashdi.vip",8],["tortuga.wtf",8],["ok.ru",9],["touch.mail.ru",9],["e.mail.ru",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -245,7 +245,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

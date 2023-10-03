@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310021531
+## ! Version: 202310031520
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Oct 2023 15:31 UTC
+## ! Last modified: 03 Oct 2023 15:20 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -96,6 +96,7 @@ DOMAIN-SUFFIX,cxt.ms
 DOMAIN-SUFFIX,cybba.solutions
 DOMAIN-SUFFIX,czx5eyk0exbhwp43ya.biz
 DOMAIN-SUFFIX,da29e6b8-f018-490f-b25f-39a887fc95e7.xyz
+DOMAIN-SUFFIX,dataofpages.com
 DOMAIN-SUFFIX,datatechonert.com
 DOMAIN-SUFFIX,demdex.net
 DOMAIN-SUFFIX,digi-ping.com
@@ -367,6 +368,7 @@ DOMAIN-SUFFIX,wlt-jupiter.de
 DOMAIN-SUFFIX,wmgroup.us
 DOMAIN-SUFFIX,woodpeckerlog.com
 DOMAIN-SUFFIX,yardianalytics.com
+DOMAIN-SUFFIX,yndhi.com
 DOMAIN-SUFFIX,yottlyscript.com
 DOMAIN-SUFFIX,youborafds01.com
 DOMAIN-SUFFIX,youboranqs01.com
@@ -2860,6 +2862,7 @@ DOMAIN-SUFFIX,tr.snapchat.com
 DOMAIN-SUFFIX,tr.vitals.co
 DOMAIN-SUFFIX,tr.webantenna.info
 DOMAIN-SUFFIX,traccoon.intellectsoft.net
+DOMAIN-SUFFIX,trace.swaven.com
 DOMAIN-SUFFIX,track-dark-bz.b-cdn.net
 DOMAIN-SUFFIX,track.360playvid.info
 DOMAIN-SUFFIX,track.91app.io
@@ -2993,6 +2996,7 @@ DOMAIN-SUFFIX,triggers.wfxtriggers.com
 DOMAIN-SUFFIX,trk.clinch.co
 DOMAIN-SUFFIX,trk.storyly.io
 DOMAIN-SUFFIX,trk.techtarget.com
+DOMAIN-SUFFIX,trk2-wtb.swaven.com
 DOMAIN-SUFFIX,trx-cdn.zip.co
 DOMAIN-SUFFIX,trx.zip.co
 DOMAIN-SUFFIX,try.abtasty.com

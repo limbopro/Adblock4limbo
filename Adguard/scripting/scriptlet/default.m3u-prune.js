@@ -42,9 +42,9 @@ const uBOL_m3uPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm",".m3u8"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"]];
+const argsList = [["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm",".m3u8"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/[a-z0-9]{13}o.*\\.ts|adjump/",".m3u8"]];
 
-const hostnamesMap = new Map([["10play.com.au",0],["fox.com",1],["foxsports.com",1],["mephimtv.cc",2],["player.theplatform.com",3]]);
+const hostnamesMap = new Map([["10play.com.au",0],["fox.com",1],["foxsports.com",1],["mephimtv.cc",2],["player.theplatform.com",3],["yhmgo.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -226,7 +226,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

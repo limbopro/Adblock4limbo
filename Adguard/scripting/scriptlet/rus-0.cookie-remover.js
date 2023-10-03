@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["/^bda|^bltsr/"],["/^bltsr$|^JPIqApiY$|^specific$|^substantial$/"],["/adblock_/"],["isab"],["jtnews_a_template"],["yadb"]];
 
-const hostnamesMap = new Map([["kufar.by",0],["relax-fm.ru",0],["rg.ru",0],["sm.news",0],["ura.news",0],["yandex.by",1],["yandex.kz",1],["yandex.ru",1],["yandex.uz",1],["yapx.ru",2],["24smi.org",3],["www.e1.ru",4],["kakprosto.ru",5]]);
+const hostnamesMap = new Map([["comedy-radio.ru",0],["kufar.by",0],["radioromantika.ru",0],["relax-fm.ru",0],["rg.ru",0],["sm.news",0],["ura.news",0],["veseloeradio.ru",0],["yandex.by",1],["yandex.kz",1],["yandex.ru",1],["yandex.uz",1],["yapx.ru",2],["24smi.org",3],["www.e1.ru",4],["kakprosto.ru",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -124,7 +124,7 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }

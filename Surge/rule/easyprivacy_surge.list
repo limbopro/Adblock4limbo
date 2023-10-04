@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310031520
+## ! Version: 202310040622
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Oct 2023 15:20 UTC
+## ! Last modified: 04 Oct 2023 06:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3412,6 +3412,7 @@ DOMAIN-SUFFIX,evnt.iol.it
 DOMAIN-SUFFIX,fb_servpub-a.akamaihd.net
 DOMAIN-SUFFIX,limone.iltrovatore.it
 DOMAIN-SUFFIX,livestats.matrix.it
+DOMAIN-SUFFIX,log.edidomus.it
 DOMAIN-SUFFIX,logger.kataweb.it
 DOMAIN-SUFFIX,nanostats.nanopress.it
 DOMAIN-SUFFIX,plausible.citynews.ovh
@@ -21473,6 +21474,7 @@ DOMAIN-SUFFIX,tags.globo.com
 DOMAIN-SUFFIX,tm.jsuol.com.br
 DOMAIN-SUFFIX,tm.uol.com.br
 DOMAIN-SUFFIX,track.exame.com
+DOMAIN-SUFFIX,track.olx.com.br
 DOMAIN-SUFFIX,tracker.bt.uol.com.br
 DOMAIN-SUFFIX,tracker.publico.pt
 DOMAIN-SUFFIX,analytics.okazii.ro

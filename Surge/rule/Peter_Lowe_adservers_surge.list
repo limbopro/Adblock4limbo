@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 30 Sep 2023 15:25:13 GMT
-# entries:        3720
+# last updated:   Fri, 06 Oct 2023 08:05:20 GMT
+# entries:        3717
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -910,7 +910,6 @@ DOMAIN-SUFFIX,affili.net
 DOMAIN-SUFFIX,affiliate.1800flowers.com
 DOMAIN-SUFFIX,affiliate.dtiserv.com
 DOMAIN-SUFFIX,affiliate.gamestop.com
-DOMAIN-SUFFIX,affiliate.mogs.com
 DOMAIN-SUFFIX,affiliate.rusvpn.com
 DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
@@ -927,7 +926,6 @@ DOMAIN-SUFFIX,affiliates.ultrahosting.com
 DOMAIN-SUFFIX,affiliatetracking.com
 DOMAIN-SUFFIX,affiliatetracking.net
 DOMAIN-SUFFIX,affiliatewindow.com
-DOMAIN-SUFFIX,affiliation-france.com
 DOMAIN-SUFFIX,afftracking.justanswer.com
 DOMAIN-SUFFIX,afraidlanguage.com
 DOMAIN-SUFFIX,agkn.com
@@ -1736,6 +1734,7 @@ DOMAIN-SUFFIX,euros4click.de
 DOMAIN-SUFFIX,eusta.de
 DOMAIN-SUFFIX,evadav.com
 DOMAIN-SUFFIX,evadavdsp.pro
+DOMAIN-SUFFIX,eventexistence.com
 DOMAIN-SUFFIX,events-eu.freshsuccess.com
 DOMAIN-SUFFIX,events-us.freshsuccess.com
 DOMAIN-SUFFIX,everestads.net
@@ -2160,6 +2159,7 @@ DOMAIN-SUFFIX,lanistaads.com
 DOMAIN-SUFFIX,larati.net
 DOMAIN-SUFFIX,largebrass.com
 DOMAIN-SUFFIX,laughablecopper.com
+DOMAIN-SUFFIX,laughcloth.com
 DOMAIN-SUFFIX,launchbit.com
 DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layer-ads.de
@@ -2814,7 +2814,6 @@ DOMAIN-SUFFIX,railwayrainstorm.com
 DOMAIN-SUFFIX,railwayreason.com
 DOMAIN-SUFFIX,rambunctiousflock.com
 DOMAIN-SUFFIX,rampidads.com
-DOMAIN-SUFFIX,rank-master.com
 DOMAIN-SUFFIX,rankchamp.de
 DOMAIN-SUFFIX,ranking-charts.de
 DOMAIN-SUFFIX,ranking-hits.de
@@ -2872,7 +2871,6 @@ DOMAIN-SUFFIX,relmaxtop.com
 DOMAIN-SUFFIX,remox.com
 DOMAIN-SUFFIX,republika.onet.pl
 DOMAIN-SUFFIX,resalag.com
-DOMAIN-SUFFIX,research.de.com
 DOMAIN-SUFFIX,resolutekey.com
 DOMAIN-SUFFIX,resonantbrush.com
 DOMAIN-SUFFIX,resonate.com
@@ -3340,7 +3338,6 @@ DOMAIN-SUFFIX,tntclix.co.uk
 DOMAIN-SUFFIX,toecircle.com
 DOMAIN-SUFFIX,toothbrushnote.com
 DOMAIN-SUFFIX,top-casting-termine.de
-DOMAIN-SUFFIX,top-site-list.com
 DOMAIN-SUFFIX,top.list.ru
 DOMAIN-SUFFIX,top.mail.ru
 DOMAIN-SUFFIX,top100-images.rambler.ru
@@ -3360,7 +3357,6 @@ DOMAIN-SUFFIX,topsites.com.br
 DOMAIN-SUFFIX,topstats.com
 DOMAIN-SUFFIX,totemcash.com
 DOMAIN-SUFFIX,touchclarity.com
-DOMAIN-SUFFIX,touchclarity.natwest.com
 DOMAIN-SUFFIX,tour.brazzers.com
 DOMAIN-SUFFIX,track.adform.net
 DOMAIN-SUFFIX,track.anchorfree.com
@@ -3425,6 +3421,7 @@ DOMAIN-SUFFIX,tracking.playerobjectwordingbasinbank.makeup
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.theoceanac.online
 DOMAIN-SUFFIX,tracking.thinkabt.com
+DOMAIN-SUFFIX,tracking.utlservice.com
 DOMAIN-SUFFIX,tracking.vagueunlikecowerscreamforbid.hair
 DOMAIN-SUFFIX,tracking.wetter.at
 DOMAIN-SUFFIX,tracking01.walmart.com

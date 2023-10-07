@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 06 Oct 2023 08:05:20 GMT
-# entries:        3717
+# last updated:   Sat, 07 Oct 2023 10:07:38 GMT
+# entries:        3718
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2956,6 +2956,7 @@ DOMAIN-SUFFIX,scambiobanner.aruba.it, reject
 DOMAIN-SUFFIX,scanscout.com, reject
 DOMAIN-SUFFIX,scarcesign.com, reject
 DOMAIN-SUFFIX,scaredsnakes.com, reject
+DOMAIN-SUFFIX,scaredsong.com, reject
 DOMAIN-SUFFIX,scaredswing.com, reject
 DOMAIN-SUFFIX,scarfsmash.com, reject
 DOMAIN-SUFFIX,scatteredheat.com, reject

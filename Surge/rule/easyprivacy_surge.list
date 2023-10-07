@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310061435
+## ! Version: 202310071539
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Oct 2023 14:35 UTC
+## ! Last modified: 07 Oct 2023 15:39 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1542,6 +1542,7 @@ DOMAIN-SUFFIX,scaredfarm.com
 DOMAIN-SUFFIX,scaredsidewalk.com
 DOMAIN-SUFFIX,scaredsnake.com
 DOMAIN-SUFFIX,scaredsnakes.com
+DOMAIN-SUFFIX,scaredsong.com
 DOMAIN-SUFFIX,scaredstory.com
 DOMAIN-SUFFIX,scaredswing.com
 DOMAIN-SUFFIX,scarfsmash.com
@@ -3751,6 +3752,7 @@ DOMAIN-SUFFIX,binocule21c.merriam-webster.com
 DOMAIN-SUFFIX,blitz-analytics-batch-server.blitz.gg
 DOMAIN-SUFFIX,boomerang.dell.com
 DOMAIN-SUFFIX,c.fingerprint.com
+DOMAIN-SUFFIX,c.newyorker.com
 DOMAIN-SUFFIX,c.thredup.com
 DOMAIN-SUFFIX,c.vogue.com
 DOMAIN-SUFFIX,c.wort-suche.com
@@ -4001,6 +4003,7 @@ DOMAIN-SUFFIX,pulse.delta.com
 DOMAIN-SUFFIX,pumpkin.abine.com
 DOMAIN-SUFFIX,px.srvcs.tumblr.com
 DOMAIN-SUFFIX,pxl.indeed.com
+DOMAIN-SUFFIX,qc.newyorker.com
 DOMAIN-SUFFIX,qc.vogue.com
 DOMAIN-SUFFIX,qm.redbull.com
 DOMAIN-SUFFIX,r.apkpure.net

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310061435
+## ! Version: 202310071539
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Oct 2023 14:35 UTC
+## ! Last modified: 07 Oct 2023 15:39 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1542,6 +1542,7 @@ DOMAIN-SUFFIX,scaredfarm.com, reject
 DOMAIN-SUFFIX,scaredsidewalk.com, reject
 DOMAIN-SUFFIX,scaredsnake.com, reject
 DOMAIN-SUFFIX,scaredsnakes.com, reject
+DOMAIN-SUFFIX,scaredsong.com, reject
 DOMAIN-SUFFIX,scaredstory.com, reject
 DOMAIN-SUFFIX,scaredswing.com, reject
 DOMAIN-SUFFIX,scarfsmash.com, reject
@@ -3751,6 +3752,7 @@ DOMAIN-SUFFIX,binocule21c.merriam-webster.com, reject
 DOMAIN-SUFFIX,blitz-analytics-batch-server.blitz.gg, reject
 DOMAIN-SUFFIX,boomerang.dell.com, reject
 DOMAIN-SUFFIX,c.fingerprint.com, reject
+DOMAIN-SUFFIX,c.newyorker.com, reject
 DOMAIN-SUFFIX,c.thredup.com, reject
 DOMAIN-SUFFIX,c.vogue.com, reject
 DOMAIN-SUFFIX,c.wort-suche.com, reject
@@ -4001,6 +4003,7 @@ DOMAIN-SUFFIX,pulse.delta.com, reject
 DOMAIN-SUFFIX,pumpkin.abine.com, reject
 DOMAIN-SUFFIX,px.srvcs.tumblr.com, reject
 DOMAIN-SUFFIX,pxl.indeed.com, reject
+DOMAIN-SUFFIX,qc.newyorker.com, reject
 DOMAIN-SUFFIX,qc.vogue.com, reject
 DOMAIN-SUFFIX,qm.redbull.com, reject
 DOMAIN-SUFFIX,r.apkpure.net, reject

@@ -479,6 +479,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case "hanime1":
             css_adsRemove(imax.css.hanime1);
+            const div = document.querySelectorAll('div.hidden-xs.hidden-sm')
+            // PC 端div元素广告移除
+            for (i = 0; i < div.length; i++) {
+                if (div[i].querySelectorAll('iframe').length > 0) {
+                    div[i].style = "display:none ! important;";
+                }
+            }
             break;
         case 'zhihu':
             var zhihu_id = "zhihux"

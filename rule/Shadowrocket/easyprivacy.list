@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310091450
+## ! Version: 202310101309
 ## ! Title: EasyPrivacy
-## ! Last modified: 09 Oct 2023 14:50 UTC
+## ! Last modified: 10 Oct 2023 13:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1795,6 +1795,7 @@ DOMAIN-SUFFIX,superficialeyes.com, reject
 DOMAIN-SUFFIX,superficialspring.com, reject
 DOMAIN-SUFFIX,superficialsquare.com, reject
 DOMAIN-SUFFIX,supervisegoldfish.com, reject
+DOMAIN-SUFFIX,suspectmark.com, reject
 DOMAIN-SUFFIX,suspendseed.com, reject
 DOMAIN-SUFFIX,swankysquare.com, reject
 DOMAIN-SUFFIX,sweepsheep.com, reject

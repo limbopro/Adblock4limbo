@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 07 Oct 2023 10:07:38 GMT
-# entries:        3718
+# last updated:   Tue, 10 Oct 2023 09:27:54 GMT
+# entries:        3719
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2936,6 +2936,7 @@ DOMAIN-SUFFIX,rundsp.com
 DOMAIN-SUFFIX,ruralrobin.com
 DOMAIN-SUFFIX,ruthlessrobin.com
 DOMAIN-SUFFIX,s.adroll.com
+DOMAIN-SUFFIX,s.dmmew.com
 DOMAIN-SUFFIX,s1-adfly.com
 DOMAIN-SUFFIX,s20dh7e9dh.com
 DOMAIN-SUFFIX,s2d6.com

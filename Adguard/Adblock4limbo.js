@@ -9,7 +9,7 @@ const replace_str = '<head>\
 <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>'
 
 // 定义响应体
-const body = $response.body.replace(regex, replace_str);
+if ($response.body) { var body = $response.body.replace(regex, replace_str) }
 
 // 定义响应头
 const headers = $response.headers;

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 10 Oct 2023 09:27:54 GMT
-# entries:        3719
+# last updated:   Wed, 11 Oct 2023 08:14:14 GMT
+# entries:        3722
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1584,6 +1584,7 @@ DOMAIN-SUFFIX,decknetwork.net, reject
 DOMAIN-SUFFIX,decoycreation.com, reject
 DOMAIN-SUFFIX,deepintent.com, reject
 DOMAIN-SUFFIX,delegatediscussion.com, reject
+DOMAIN-SUFFIX,delicatecascade.com, reject
 DOMAIN-SUFFIX,deloo.de, reject
 DOMAIN-SUFFIX,deloplen.com, reject
 DOMAIN-SUFFIX,deloton.com, reject
@@ -2983,6 +2984,7 @@ DOMAIN-SUFFIX,secretivecub.com, reject
 DOMAIN-SUFFIX,secretspiders.com, reject
 DOMAIN-SUFFIX,secure.webconnect.net, reject
 DOMAIN-SUFFIX,securedopen-bp.com, reject
+DOMAIN-SUFFIX,securely-protectsoft.com, reject
 DOMAIN-SUFFIX,securemetrics.apple.com, reject
 DOMAIN-SUFFIX,sedoparking.com, reject
 DOMAIN-SUFFIX,sedotracker.com, reject
@@ -3633,6 +3635,7 @@ DOMAIN-SUFFIX,whirlwealth.com, reject
 DOMAIN-SUFFIX,whiskyqueue.com, reject
 DOMAIN-SUFFIX,whispa.com, reject
 DOMAIN-SUFFIX,whisperingcrib.com, reject
+DOMAIN-SUFFIX,whisperingsummit.com, reject
 DOMAIN-SUFFIX,whoisonline.net, reject
 DOMAIN-SUFFIX,wickedreports.com, reject
 DOMAIN-SUFFIX,widespace.com, reject

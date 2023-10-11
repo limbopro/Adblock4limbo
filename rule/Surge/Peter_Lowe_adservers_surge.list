@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 10 Oct 2023 09:27:54 GMT
-# entries:        3719
+# last updated:   Wed, 11 Oct 2023 08:14:14 GMT
+# entries:        3722
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1584,6 +1584,7 @@ DOMAIN-SUFFIX,decknetwork.net
 DOMAIN-SUFFIX,decoycreation.com
 DOMAIN-SUFFIX,deepintent.com
 DOMAIN-SUFFIX,delegatediscussion.com
+DOMAIN-SUFFIX,delicatecascade.com
 DOMAIN-SUFFIX,deloo.de
 DOMAIN-SUFFIX,deloplen.com
 DOMAIN-SUFFIX,deloton.com
@@ -2983,6 +2984,7 @@ DOMAIN-SUFFIX,secretivecub.com
 DOMAIN-SUFFIX,secretspiders.com
 DOMAIN-SUFFIX,secure.webconnect.net
 DOMAIN-SUFFIX,securedopen-bp.com
+DOMAIN-SUFFIX,securely-protectsoft.com
 DOMAIN-SUFFIX,securemetrics.apple.com
 DOMAIN-SUFFIX,sedoparking.com
 DOMAIN-SUFFIX,sedotracker.com
@@ -3633,6 +3635,7 @@ DOMAIN-SUFFIX,whirlwealth.com
 DOMAIN-SUFFIX,whiskyqueue.com
 DOMAIN-SUFFIX,whispa.com
 DOMAIN-SUFFIX,whisperingcrib.com
+DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whoisonline.net
 DOMAIN-SUFFIX,wickedreports.com
 DOMAIN-SUFFIX,widespace.com

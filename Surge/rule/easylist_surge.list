@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310101522
+## ! Version: 202310111523
 ## ! Title: EasyList
-## ! Last modified: 10 Oct 2023 15:22 UTC
+## ! Last modified: 11 Oct 2023 15:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1017,6 +1017,9 @@ DOMAIN-SUFFIX,a5ca949458.com
 DOMAIN-SUFFIX,a5e04df959f1af34.com
 DOMAIN-SUFFIX,a5ff528ff9.com
 DOMAIN-SUFFIX,a5g.oves.biz
+DOMAIN-SUFFIX,a5game.win
+DOMAIN-SUFFIX,a5jogo.biz
+DOMAIN-SUFFIX,a5jogo.club
 DOMAIN-SUFFIX,a6436650df.com
 DOMAIN-SUFFIX,a64x.com
 DOMAIN-SUFFIX,a67z.com
@@ -9699,6 +9702,7 @@ DOMAIN-SUFFIX,evemasoil.com
 DOMAIN-SUFFIX,evencontinuallyclaim.com
 DOMAIN-SUFFIX,eveningproclamationarched.com
 DOMAIN-SUFFIX,eveningsfleawhatsoever.com
+DOMAIN-SUFFIX,eventbr.xyz
 DOMAIN-SUFFIX,eventhenherthis.info
 DOMAIN-SUFFIX,eventhenherthisi.com
 DOMAIN-SUFFIX,eventrhina.com
@@ -11799,6 +11803,7 @@ DOMAIN-SUFFIX,goodsscoop.com
 DOMAIN-SUFFIX,goodweet.xyz
 DOMAIN-SUFFIX,goodyflicks.digital
 DOMAIN-SUFFIX,googleapi.club
+DOMAIN-SUFFIX,googleseo.life
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,goohimom.net
 DOMAIN-SUFFIX,goomaphy.com
@@ -11973,6 +11978,7 @@ DOMAIN-SUFFIX,greenpaperlist.com
 DOMAIN-SUFFIX,greenplasticdua.com
 DOMAIN-SUFFIX,greeter.me
 DOMAIN-SUFFIX,greetpanda.org
+DOMAIN-SUFFIX,greewaih.xyz
 DOMAIN-SUFFIX,greewepi.net
 DOMAIN-SUFFIX,greezoob.net
 DOMAIN-SUFFIX,grefutiwhe.com
@@ -12421,6 +12427,7 @@ DOMAIN-SUFFIX,hdbcome.com
 DOMAIN-SUFFIX,hdbkell.com
 DOMAIN-SUFFIX,hdbkome.com
 DOMAIN-SUFFIX,hditers.com
+DOMAIN-SUFFIX,hdjfeed.top
 DOMAIN-SUFFIX,hdpreview.com
 DOMAIN-SUFFIX,hdsqvypdt.com
 DOMAIN-SUFFIX,hdvcode.com
@@ -13357,6 +13364,7 @@ DOMAIN-SUFFIX,imatue.com
 DOMAIN-SUFFIX,imbalmenvy.website
 DOMAIN-SUFFIX,imbalmscashews.com
 DOMAIN-SUFFIX,imblic.com
+DOMAIN-SUFFIX,imbolexabc.top
 DOMAIN-SUFFIX,imemediatesuper.info
 DOMAIN-SUFFIX,imgfeedget.com
 DOMAIN-SUFFIX,imghst-de.com
@@ -17265,6 +17273,7 @@ DOMAIN-SUFFIX,mugwumprelume.top
 DOMAIN-SUFFIX,muhobbab.com
 DOMAIN-SUFFIX,muirpekvl.com
 DOMAIN-SUFFIX,mujilora.com
+DOMAIN-SUFFIX,mukhtarproving.com
 DOMAIN-SUFFIX,mulesto.com
 DOMAIN-SUFFIX,muletatyphic.com
 DOMAIN-SUFFIX,mulserebush.digital
@@ -21148,6 +21157,7 @@ DOMAIN-SUFFIX,ptp22.com
 DOMAIN-SUFFIX,ptp24.com
 DOMAIN-SUFFIX,ptpfict.space
 DOMAIN-SUFFIX,pttsite.com
+DOMAIN-SUFFIX,ptufihie.net
 DOMAIN-SUFFIX,ptuglupyli.com
 DOMAIN-SUFFIX,ptugneez.net
 DOMAIN-SUFFIX,ptugnins.net
@@ -25651,6 +25661,7 @@ DOMAIN-SUFFIX,telwrite.com
 DOMAIN-SUFFIX,tembetachasmic.guru
 DOMAIN-SUFFIX,tembetanymil.com
 DOMAIN-SUFFIX,tempbugs.com
+DOMAIN-SUFFIX,tempeorek.org
 DOMAIN-SUFFIX,temperacaimans.com
 DOMAIN-SUFFIX,tempergleefulvariability.com
 DOMAIN-SUFFIX,temperrunnersdale.com
@@ -30040,6 +30051,7 @@ DOMAIN-SUFFIX,zlinkm.com
 DOMAIN-SUFFIX,zljwhbuagdvl.com
 DOMAIN-SUFFIX,zlx.com.br
 DOMAIN-SUFFIX,zm232.com
+DOMAIN-SUFFIX,zmdesf.cn
 DOMAIN-SUFFIX,zmenmuol.com
 DOMAIN-SUFFIX,zmivcara.com
 DOMAIN-SUFFIX,zmjagawa.com
@@ -30390,6 +30402,7 @@ DOMAIN-SUFFIX,bidder.criteo.com
 DOMAIN-SUFFIX,bidder.newspassid.com
 DOMAIN-SUFFIX,bids.concert.io
 DOMAIN-SUFFIX,bl.wavecdn.de
+DOMAIN-SUFFIX,br.coe777.com
 DOMAIN-SUFFIX,btr.domywife.com
 DOMAIN-SUFFIX,c.bannerflow.net
 DOMAIN-SUFFIX,c2shb.pubgw.yahoo.com
@@ -31366,6 +31379,7 @@ DOMAIN-SUFFIX,imp.accesstra.de
 DOMAIN-SUFFIX,japfg-trending-content.uc.r.appspot.com
 DOMAIN-SUFFIX,jentent.streampiay.fun
 DOMAIN-SUFFIX,js.mangajp.top
+DOMAIN-SUFFIX,kentent.streampiay.fun
 DOMAIN-SUFFIX,kta.etherscan.com
 DOMAIN-SUFFIX,lw.musictarget.com
 DOMAIN-SUFFIX,mafvertizing.crazygames.com

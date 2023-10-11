@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310101522
+## ! Version: 202310111523
 ## ! Title: EasyList
-## ! Last modified: 10 Oct 2023 15:22 UTC
+## ! Last modified: 11 Oct 2023 15:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1017,6 +1017,9 @@ DOMAIN-SUFFIX,a5ca949458.com, reject
 DOMAIN-SUFFIX,a5e04df959f1af34.com, reject
 DOMAIN-SUFFIX,a5ff528ff9.com, reject
 DOMAIN-SUFFIX,a5g.oves.biz, reject
+DOMAIN-SUFFIX,a5game.win, reject
+DOMAIN-SUFFIX,a5jogo.biz, reject
+DOMAIN-SUFFIX,a5jogo.club, reject
 DOMAIN-SUFFIX,a6436650df.com, reject
 DOMAIN-SUFFIX,a64x.com, reject
 DOMAIN-SUFFIX,a67z.com, reject
@@ -9699,6 +9702,7 @@ DOMAIN-SUFFIX,evemasoil.com, reject
 DOMAIN-SUFFIX,evencontinuallyclaim.com, reject
 DOMAIN-SUFFIX,eveningproclamationarched.com, reject
 DOMAIN-SUFFIX,eveningsfleawhatsoever.com, reject
+DOMAIN-SUFFIX,eventbr.xyz, reject
 DOMAIN-SUFFIX,eventhenherthis.info, reject
 DOMAIN-SUFFIX,eventhenherthisi.com, reject
 DOMAIN-SUFFIX,eventrhina.com, reject
@@ -11799,6 +11803,7 @@ DOMAIN-SUFFIX,goodsscoop.com, reject
 DOMAIN-SUFFIX,goodweet.xyz, reject
 DOMAIN-SUFFIX,goodyflicks.digital, reject
 DOMAIN-SUFFIX,googleapi.club, reject
+DOMAIN-SUFFIX,googleseo.life, reject
 DOMAIN-SUFFIX,googletagservices.com, reject
 DOMAIN-SUFFIX,goohimom.net, reject
 DOMAIN-SUFFIX,goomaphy.com, reject
@@ -11973,6 +11978,7 @@ DOMAIN-SUFFIX,greenpaperlist.com, reject
 DOMAIN-SUFFIX,greenplasticdua.com, reject
 DOMAIN-SUFFIX,greeter.me, reject
 DOMAIN-SUFFIX,greetpanda.org, reject
+DOMAIN-SUFFIX,greewaih.xyz, reject
 DOMAIN-SUFFIX,greewepi.net, reject
 DOMAIN-SUFFIX,greezoob.net, reject
 DOMAIN-SUFFIX,grefutiwhe.com, reject
@@ -12421,6 +12427,7 @@ DOMAIN-SUFFIX,hdbcome.com, reject
 DOMAIN-SUFFIX,hdbkell.com, reject
 DOMAIN-SUFFIX,hdbkome.com, reject
 DOMAIN-SUFFIX,hditers.com, reject
+DOMAIN-SUFFIX,hdjfeed.top, reject
 DOMAIN-SUFFIX,hdpreview.com, reject
 DOMAIN-SUFFIX,hdsqvypdt.com, reject
 DOMAIN-SUFFIX,hdvcode.com, reject
@@ -13357,6 +13364,7 @@ DOMAIN-SUFFIX,imatue.com, reject
 DOMAIN-SUFFIX,imbalmenvy.website, reject
 DOMAIN-SUFFIX,imbalmscashews.com, reject
 DOMAIN-SUFFIX,imblic.com, reject
+DOMAIN-SUFFIX,imbolexabc.top, reject
 DOMAIN-SUFFIX,imemediatesuper.info, reject
 DOMAIN-SUFFIX,imgfeedget.com, reject
 DOMAIN-SUFFIX,imghst-de.com, reject
@@ -17265,6 +17273,7 @@ DOMAIN-SUFFIX,mugwumprelume.top, reject
 DOMAIN-SUFFIX,muhobbab.com, reject
 DOMAIN-SUFFIX,muirpekvl.com, reject
 DOMAIN-SUFFIX,mujilora.com, reject
+DOMAIN-SUFFIX,mukhtarproving.com, reject
 DOMAIN-SUFFIX,mulesto.com, reject
 DOMAIN-SUFFIX,muletatyphic.com, reject
 DOMAIN-SUFFIX,mulserebush.digital, reject
@@ -21148,6 +21157,7 @@ DOMAIN-SUFFIX,ptp22.com, reject
 DOMAIN-SUFFIX,ptp24.com, reject
 DOMAIN-SUFFIX,ptpfict.space, reject
 DOMAIN-SUFFIX,pttsite.com, reject
+DOMAIN-SUFFIX,ptufihie.net, reject
 DOMAIN-SUFFIX,ptuglupyli.com, reject
 DOMAIN-SUFFIX,ptugneez.net, reject
 DOMAIN-SUFFIX,ptugnins.net, reject
@@ -25651,6 +25661,7 @@ DOMAIN-SUFFIX,telwrite.com, reject
 DOMAIN-SUFFIX,tembetachasmic.guru, reject
 DOMAIN-SUFFIX,tembetanymil.com, reject
 DOMAIN-SUFFIX,tempbugs.com, reject
+DOMAIN-SUFFIX,tempeorek.org, reject
 DOMAIN-SUFFIX,temperacaimans.com, reject
 DOMAIN-SUFFIX,tempergleefulvariability.com, reject
 DOMAIN-SUFFIX,temperrunnersdale.com, reject
@@ -30040,6 +30051,7 @@ DOMAIN-SUFFIX,zlinkm.com, reject
 DOMAIN-SUFFIX,zljwhbuagdvl.com, reject
 DOMAIN-SUFFIX,zlx.com.br, reject
 DOMAIN-SUFFIX,zm232.com, reject
+DOMAIN-SUFFIX,zmdesf.cn, reject
 DOMAIN-SUFFIX,zmenmuol.com, reject
 DOMAIN-SUFFIX,zmivcara.com, reject
 DOMAIN-SUFFIX,zmjagawa.com, reject
@@ -30390,6 +30402,7 @@ DOMAIN-SUFFIX,bidder.criteo.com, reject
 DOMAIN-SUFFIX,bidder.newspassid.com, reject
 DOMAIN-SUFFIX,bids.concert.io, reject
 DOMAIN-SUFFIX,bl.wavecdn.de, reject
+DOMAIN-SUFFIX,br.coe777.com, reject
 DOMAIN-SUFFIX,btr.domywife.com, reject
 DOMAIN-SUFFIX,c.bannerflow.net, reject
 DOMAIN-SUFFIX,c2shb.pubgw.yahoo.com, reject
@@ -31366,6 +31379,7 @@ DOMAIN-SUFFIX,imp.accesstra.de, reject
 DOMAIN-SUFFIX,japfg-trending-content.uc.r.appspot.com, reject
 DOMAIN-SUFFIX,jentent.streampiay.fun, reject
 DOMAIN-SUFFIX,js.mangajp.top, reject
+DOMAIN-SUFFIX,kentent.streampiay.fun, reject
 DOMAIN-SUFFIX,kta.etherscan.com, reject
 DOMAIN-SUFFIX,lw.musictarget.com, reject
 DOMAIN-SUFFIX,mafvertizing.crazygames.com, reject

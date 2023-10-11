@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310101522
+## ! Version: 202310111523
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Oct 2023 15:22 UTC
+## ! Last modified: 11 Oct 2023 15:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -833,6 +833,7 @@ DOMAIN-SUFFIX,defectivedress.com
 DOMAIN-SUFFIX,defectivesun.com
 DOMAIN-SUFFIX,defiantrice.com
 DOMAIN-SUFFIX,delegatediscussion.com
+DOMAIN-SUFFIX,delicatecascade.com
 DOMAIN-SUFFIX,delicateducks.com
 DOMAIN-SUFFIX,delightfulhour.com
 DOMAIN-SUFFIX,desertedbreath.com
@@ -1961,6 +1962,7 @@ DOMAIN-SUFFIX,whirlwealth.com
 DOMAIN-SUFFIX,whiskyqueue.com
 DOMAIN-SUFFIX,whisperingbadge.com
 DOMAIN-SUFFIX,whisperingcrib.com
+DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whispermeeting.com
 DOMAIN-SUFFIX,wigglygeese.com
 DOMAIN-SUFFIX,wigglyindustry.com
@@ -3926,6 +3928,7 @@ DOMAIN-SUFFIX,log.snapdeal.com
 DOMAIN-SUFFIX,log.v.ssp.yahoo.com
 DOMAIN-SUFFIX,log.webnovel.com
 DOMAIN-SUFFIX,logger.nerdwallet.com
+DOMAIN-SUFFIX,logger007.cam4.com
 DOMAIN-SUFFIX,logging.api.intuit.com
 DOMAIN-SUFFIX,loglady.kiwi.com
 DOMAIN-SUFFIX,logs.hotstar.com

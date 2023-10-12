@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["artmusics.top",0],["musicpars3.ir",0],["musicguitars.ir",0],["subf2m.ir",0],["zeemusic.ir",0],["najiremix.ir",0],["musichi.ir",0],["getandroid.ir",0],["musickhone.com",0],["naslmusic.ir",0],["power-music.ir",0],["uploadgoogle.ir",0],["uptrack.ir",0]]);
+const hostnamesMap = new Map([["artmusics.top",0],["musicpars3.ir",0],["musicguitars.ir",0],["subf2m.ir",0],["zeemusic.ir",0],["najiremix.ir",0],["musichi.ir",0],["likeemusic.ir",0],["getandroid.ir",0],["musickhone.com",0],["naslmusic.ir",0],["power-music.ir",0],["uploadgoogle.ir",0],["uptrack.ir",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -134,10 +134,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

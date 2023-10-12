@@ -62,6 +62,7 @@ function jsonPruneXhrResponse(
     const logLevel = shouldLog({ log: rawPrunePaths === '' || extraArgs.log, });
     const log = logLevel ? ((...args) => { safe.uboLog(...args); }) : (( ) => { }); 
     const propNeedles = parsePropertiesToMatch(extraArgs.propsToMatch, 'url');
+    const stackNeedle = safe.initPattern(extraArgs.stackToMatch || '', { canNegate: true });
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
         open(method, url, ...args) {
             const xhrDetails = { method, url };
@@ -109,7 +110,7 @@ function jsonPruneXhrResponse(
                 objBefore,
                 rawPrunePaths,
                 rawNeedlePaths,
-                { matchAll: true },
+                stackNeedle,
                 extraArgs
             );
             let outerResponse;
@@ -281,10 +282,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -410,9 +414,10 @@ function matchesStackTrace(
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }

@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.getElementById","AAdsspaCe"],["document.getElementById",".style.display="],["fuckAdBlock","undefined"],["String.prototype.charCodeAt","ai_"]];
+const argsList = [["document.getElementById","AAdsspaCe"],["fuckAdBlock","undefined"],["String.prototype.charCodeAt","ai_"]];
 
-const hostnamesMap = new Map([["notebookcheck.nl",0],["looopings.nl",1],["gratisaftehalen.nl",2],["icttipsandtricks.nl",3]]);
+const hostnamesMap = new Map([["notebookcheck.nl",0],["gratisaftehalen.nl",1],["icttipsandtricks.nl",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -168,9 +168,10 @@ function runAtHtmlElement(fn) {
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -188,10 +189,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -42,7 +42,7 @@ const uBOL_trustedReplaceFetchResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/\\\"adPlacements.*?\\\"\\}\\}\\}\\],/","","player?key="],["/\\\"adSlots.*?\\}\\]\\}\\}\\],/","","player?key="],["/\\\"playerAds.*?\\}\\}\\],/","","player?key="]];
+const argsList = [["/\"adSlots.*?SLOT_TRIGGER_EVENT_BEFORE_CONTENT.*?\\}\\]\\}\\}\\],/","","url:player?key="],["/\"adPlacements.*?AD_PLACEMENT_KIND_END.*?\\\"\\}\\}\\}\\],/","","url:player?key="],["/\"playerAds.*?gutParams\":\\{\"tag\":\"\\\\.*?\\}\\}\\],/","","url:player?key="]];
 
 const hostnamesMap = new Map([["youtube.com",[0,1,2]]]);
 
@@ -52,13 +52,19 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function trustedReplaceFetchResponse(
+function trustedReplaceFetchResponse(...args) {
+    replaceFetchResponseFn(true, ...args);
+}
+
+function replaceFetchResponseFn(
+    trusted = false,
     pattern = '',
     replacement = '',
     propsToMatch = ''
 ) {
+    if ( trusted !== true ) { return; }
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
     const logLevel = shouldLog({
         log: pattern === '' || extraArgs.log,
     });
@@ -69,13 +75,16 @@ function trustedReplaceFetchResponse(
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
             if ( logLevel === true ) {
-                log('trusted-replace-fetch-response:', JSON.stringify(Array.from(args)).slice(1,-1));
+                log('replace-fetch-response:', JSON.stringify(Array.from(args)).slice(1,-1));
             }
             const fetchPromise = Reflect.apply(target, thisArg, args);
             if ( pattern === '' ) { return fetchPromise; }
             let outcome = 'match';
             if ( propNeedles.size !== 0 ) {
                 const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
+                if ( extraArgs.version === 2 && objs[0] instanceof Request ) {
+                    try { objs[0] = safe.Request_clone.call(objs[0]); } catch(ex) {}
+                }
                 if ( args[1] instanceof Object ) {
                     objs.push(args[1]);
                 }
@@ -84,7 +93,7 @@ function trustedReplaceFetchResponse(
                 }
                 if ( outcome === logLevel || logLevel === 'all' ) {
                     log(
-                        `trusted-replace-fetch-response (${outcome})`,
+                        `replace-fetch-response (${outcome})`,
                         `\n\tpropsToMatch: ${JSON.stringify(Array.from(propNeedles)).slice(1,-1)}`,
                         '\n\tprops:', ...args,
                     );
@@ -98,7 +107,7 @@ function trustedReplaceFetchResponse(
                     const outcome = textAfter !== textBefore ? 'match' : 'nomatch';
                     if ( outcome === logLevel || logLevel === 'all' ) {
                         log(
-                            `trusted-replace-fetch-response (${outcome})`,
+                            `replace-fetch-response (${outcome})`,
                             `\n\tpattern: ${pattern}`, 
                             `\n\treplacement: ${replacement}`,
                         );
@@ -117,11 +126,11 @@ function trustedReplaceFetchResponse(
                     });
                     return responseAfter;
                 }).catch(reason => {
-                    log('trusted-replace-fetch-response:', reason);
+                    log('replace-fetch-response:', reason);
                     return responseBefore;
                 });
             }).catch(reason => {
-                log('trusted-replace-fetch-response:', reason);
+                log('replace-fetch-response:', reason);
                 return fetchPromise;
             });
         }
@@ -183,10 +192,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

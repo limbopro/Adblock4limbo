@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["jQuery","adblockdetect"],["monsterinsights_frontend"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["jQuery","wizard_accordion"],["b2a"],["Di","initAds"],["disableEnterKey"],["document.ondragstart"],["DN","initAds"],["$","banner_loader"],["showConsentDlg"],["$",".modal"],["advads_passive_placements"],["document.oncontextmenu"],["show_msg"],["$","shuffle"],["$","e.preventDefault"],["checkCampaignCookie"],["setTimeout","test"],["Bau","preloadAds"]];
+const argsList = [["jQuery","adblockdetect"],["monsterinsights_frontend"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["jQuery","wizard_accordion"],["b2a"],["Di","initAds"],["disableEnterKey"],["document.ondragstart"],["DN","initAds"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["document.oncontextmenu"],["show_msg"],["$","shuffle"],["$","e.preventDefault"],["checkCampaignCookie"],["setTimeout","test"],["Bau","preloadAds"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["boktugg.se",1],["dinbyggare.se",1],["ettgottskratt.se",1],["humorbibeln.se",1],["lakartidningen.se",1],["matsafari.nu",1],["newsner.com",1],["sportbibeln.se",1],["trafiksakerhet.se",1],["villalivet.se",1],["zeinaskitchen.se",1],["byggipedia.se",[2,3,4,5,6,7]],["byggvarlden.se",7],["cannabis.se",7],["egoinas.se",7],["enkelteknik.se",7],["hamnen.se",7],["influens.se",7],["tidningen.djurskyddet.se",7],["vegomagasinet.se",7],["di.se",8],["discoveringtheplanet.com",[9,10]],["dn.se",11],["evertiq.se",12],["folkhalsasverige.se",13],["foretagsverige.se",13],["forskningsverige.se",13],["grillbibeln.se",13],["hallbarhetsverige.se",13],["kampenmotcancer.se",13],["motorbibeln.se",13],["tillvaxtsverige.se",13],["fuska.se",14],["hejaolika.se",15],["husbilsplats.se",16],["spelhubben.se",16],["medibok.se",17],["nasdaqomxnordic.com",18],["norpan.se",19],["skrattsajten.com",19],["sakochliv.se",20],["svensktgolfforum.se",21],["www.expressen.se",22]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["boktugg.se",1],["dinbyggare.se",1],["ettgottskratt.se",1],["humorbibeln.se",1],["lakartidningen.se",1],["matsafari.nu",1],["newsner.com",1],["sportbibeln.se",1],["trafiksakerhet.se",1],["villalivet.se",1],["zeinaskitchen.se",1],["byggipedia.se",[2,3,4,5,6,7]],["byggvarlden.se",7],["cannabis.se",7],["egoinas.se",7],["enkelteknik.se",7],["hamnen.se",7],["influens.se",7],["tidningen.djurskyddet.se",7],["vegomagasinet.se",7],["di.se",8],["discoveringtheplanet.com",[9,10]],["dn.se",11],["evertiq.se",12],["folkhalsasverige.se",13],["foretagsverige.se",13],["forskningsverige.se",13],["grillbibeln.se",13],["hallbarhetsverige.se",13],["kampenmotcancer.se",13],["motorbibeln.se",13],["tillvaxtsverige.se",13],["hejaolika.se",14],["husbilsplats.se",15],["spelhubben.se",15],["medibok.se",16],["nasdaqomxnordic.com",17],["norpan.se",18],["skrattsajten.com",18],["sakochliv.se",19],["svensktgolfforum.se",20],["www.expressen.se",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -168,9 +168,10 @@ function runAtHtmlElement(fn) {
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -188,10 +189,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["japaneseasmr.top",0],["kokeshi-doll.com",0],["uraaka-joshi.com",0],["oppaideippai.net",0],["trendynailwraps.com",0],["mm9845.com",0],["filemoon.sx",0],["7mmtv.sx",0],["embed.share-videos.se",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0]]);
+const hostnamesMap = new Map([["japaneseasmr.top",0],["kokeshi-doll.com",0],["uraaka-joshi.com",0],["oppaideippai.net",0],["trendynailwraps.com",0],["embed.share-videos.se",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -134,10 +134,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -1,0 +1,2 @@
+// 动态引入 crisp 聊天系统
+window.$crisp = []; window.CRISP_WEBSITE_ID = "c6676a05-9c7c-4272-be79-c1818f47ad91"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();

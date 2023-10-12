@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 11 Oct 2023 08:14:14 GMT
-# entries:        3722
+# last updated:   Thu, 12 Oct 2023 08:55:19 GMT
+# entries:        3726
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -215,6 +215,7 @@ DOMAIN-SUFFIX,adcell.de, reject
 DOMAIN-SUFFIX,adcenter.net, reject
 DOMAIN-SUFFIX,adclick.com, reject
 DOMAIN-SUFFIX,adclient1.tucows.com, reject
+DOMAIN-SUFFIX,adclixx.net, reject
 DOMAIN-SUFFIX,adcolony.com, reject
 DOMAIN-SUFFIX,adcomplete.com, reject
 DOMAIN-SUFFIX,adconion.com, reject
@@ -315,6 +316,7 @@ DOMAIN-SUFFIX,adnet.asahi.com, reject
 DOMAIN-SUFFIX,adnet.biz, reject
 DOMAIN-SUFFIX,adnet.de, reject
 DOMAIN-SUFFIX,adnet.ru, reject
+DOMAIN-SUFFIX,adnetasia.com, reject
 DOMAIN-SUFFIX,adnetwork.net, reject
 DOMAIN-SUFFIX,adnetworkperformance.com, reject
 DOMAIN-SUFFIX,adnews.maddog2000.de, reject
@@ -1505,6 +1507,7 @@ DOMAIN-SUFFIX,counter.snackly.co, reject
 DOMAIN-SUFFIX,counting.kmindex.ru, reject
 DOMAIN-SUFFIX,coupling-media.de, reject
 DOMAIN-SUFFIX,coxmt.com, reject
+DOMAIN-SUFFIX,cozyhillside.com, reject
 DOMAIN-SUFFIX,cpalead.com, reject
 DOMAIN-SUFFIX,cpays.com, reject
 DOMAIN-SUFFIX,cpmstar.com, reject
@@ -3634,6 +3637,7 @@ DOMAIN-SUFFIX,wheredoyoucomefrom.ovh, reject
 DOMAIN-SUFFIX,whirlwealth.com, reject
 DOMAIN-SUFFIX,whiskyqueue.com, reject
 DOMAIN-SUFFIX,whispa.com, reject
+DOMAIN-SUFFIX,whisperingcascade.com, reject
 DOMAIN-SUFFIX,whisperingcrib.com, reject
 DOMAIN-SUFFIX,whisperingsummit.com, reject
 DOMAIN-SUFFIX,whoisonline.net, reject

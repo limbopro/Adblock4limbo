@@ -35,7 +35,7 @@
 
 const argsList = [["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto!important\"]}"],["{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"]];
 
-const hostnamesMap = new Map([["cakhiav.com",0],["bongcam.live",0],["khomuc9.live",0],["vebot.live",0],["thapcam.net",0],["vebo3.org",0],["90phutc.tv",0],["mitomt.tv",0],["xoilac85.tv",0],["chotlo.me",1],["saostar.vn",2]]);
+const hostnamesMap = new Map([["bongcam.live",0],["cakhiav.live",0],["khomuc9.live",0],["vebov.live",0],["thapcam.net",0],["vebo3.org",0],["90phutk.tv",0],["mitomv.tv",0],["xoilac87.tv",0],["chotlo.me",1],["saostar.vn",2]]);
 
 const entitiesMap = new Map(undefined);
 

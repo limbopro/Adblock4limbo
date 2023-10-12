@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["method:GET"],["strm.yandex.ru/get/"]];
 
-const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["sm.news",5],["dzen.ru",6]]);
+const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["sm.news",5],["dzen.ru",6],["frontend.vh.yandex.ru",6],["widgets.kinopoisk.ru",6],["www.kinopoisk.ru",6],["yastatic.net",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -64,7 +64,7 @@ function noXhrIf(
     const warOrigin = scriptletGlobals.get('warOrigin');
     const generateRandomString = len => {
             let s = '';
-            do { s += Math.random().toString(36).slice(2); }
+            do { s += safe.Math_random().toString(36).slice(2); }
             while ( s.length < 10 );
             return s.slice(0, len);
     };
@@ -231,10 +231,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

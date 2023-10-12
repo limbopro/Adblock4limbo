@@ -33,7 +33,7 @@
 
 // ltu-0
 
-const toImport = [[7054973,"#delfi-front-right-column"],[14552029,".baneriai"],[11006813,".reklamos_nuorodos"],[5359179,".reklamos_tarpas"],[14351896,".top_reklama"]];
+const toImport = [[14552029,".baneriai"],[11006813,".reklamos_nuorodos"],[5359179,".reklamos_tarpas"],[14351896,".top_reklama"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

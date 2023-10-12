@@ -64,7 +64,7 @@ function noXhrIf(
     const warOrigin = scriptletGlobals.get('warOrigin');
     const generateRandomString = len => {
             let s = '';
-            do { s += Math.random().toString(36).slice(2); }
+            do { s += safe.Math_random().toString(36).slice(2); }
             while ( s.length < 10 );
             return s.slice(0, len);
     };
@@ -231,10 +231,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

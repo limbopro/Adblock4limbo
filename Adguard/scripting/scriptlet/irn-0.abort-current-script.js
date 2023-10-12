@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["vc_url"],["watermarkAdData"],["document.onclick","checkCookie"],["disableSelection","reEnable"],["eif"],["document.onclick","Hamisheonlinepaps"],["jQuery","Drupal"],["jQuery","contextmenu"],["reEnable"],["document.oncontextmenu"],["jQuery","wccp_pro"],["clear_body_at_all_for_extentions"],["pa_vc_url"],["document.oncontextmenu","","/^data:/"],["document.write","renderAds"],["document.getElementById","ad"]];
+const argsList = [["vc_url"],["watermarkAdData"],["document.onclick","checkCookie"],["disableSelection","reEnable"],["eif"],["document.onclick","Hamisheonlinepaps"],["jQuery","Drupal"],["jQuery","contextmenu"],["reEnable"],["document.oncontextmenu"],["jQuery","wccp_pro"],["clear_body_at_all_for_extentions"],["pa_vc_url"],["document.write","renderAds"],["document.getElementById","ad"]];
 
-const hostnamesMap = new Map([["androidparsi.ir",0],["dailymobile.ir",0],["tarfandha.org",0],["alaatv.com",1],["bandmoviez.one",2],["coffeeapps.ir",3],["farnet.io",4],["hamisheonline.com",5],["iranstar.com",6],["itarfand.com",7],["jafekri.com",[8,9,10,11]],["jeyran.net",9],["searchline.ir",9],["takmili.com",9],["vakil.net",9],["mybia4music.com",12],["public-psychology.ir",13],["sclinic.ir",3],["tabnak.ir",14],["tgju.org",15]]);
+const hostnamesMap = new Map([["androidparsi.ir",0],["dailymobile.ir",0],["tarfandha.org",0],["alaatv.com",1],["bandmoviez.one",2],["coffeeapps.ir",3],["farnet.io",4],["hamisheonline.com",5],["iranstar.com",6],["itarfand.com",7],["jafekri.com",[8,9,10,11]],["jeyran.net",9],["searchline.ir",9],["takmili.com",9],["vakil.net",9],["mybia4music.com",12],["sclinic.ir",3],["tabnak.ir",13],["tgju.org",14]]);
 
 const entitiesMap = new Map([]);
 
@@ -168,9 +168,10 @@ function runAtHtmlElement(fn) {
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -188,10 +189,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

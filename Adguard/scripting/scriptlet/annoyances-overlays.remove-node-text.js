@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","copyprotect"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"]];
+const argsList = [["script","copyprotect"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","/,\\'gger\\',/"]];
 
-const hostnamesMap = new Map([["skidrowreloaded.com",0],["jpost.com",1],["teamkong.tk",2],["sekaikomik.bio",2],["moviesapi.club",3],["animesaga.in",3],["camcaps.io",4],["nicekkk.com",4],["seriesperu.com",5],["klartext-ne.de",5],["sbot.cf",6],["fjordd.com",8],["playertv.net",10],["warungkomik.com",11],["themeslide.com",11],["terramirabilis.ro",12],["161.97.70.5",13],["gdrivedescarga.com",14],["audiologyresearch.org",15],["zipcode.com.ng",16]]);
+const hostnamesMap = new Map([["skidrowreloaded.com",0],["jpost.com",1],["teamkong.tk",2],["sekaikomik.bio",2],["moviesapi.club",3],["animesaga.in",3],["camcaps.io",4],["nicekkk.com",4],["seriesperu.com",5],["klartext-ne.de",5],["sbot.cf",6],["fjordd.com",8],["playertv.net",10],["warungkomik.com",11],["themeslide.com",11],["terramirabilis.ro",12],["161.97.70.5",13],["gdrivedescarga.com",14],["audiologyresearch.org",15],["zipcode.com.ng",16],["thejakartapost.com",17],["djxmaza.in",18],["miuiflash.com",18],["thecubexguide.com",18]]);
 
 const entitiesMap = new Map([["vidmoly",3],["oploverz",[5,9]],["tvhay",7],["bg-gledai",15]]);
 
@@ -171,10 +171,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

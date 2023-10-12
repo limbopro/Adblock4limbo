@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["parseInt"],["adsBlocked"],["document.cookie"],["Math.round"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["document.cookie"],["Math.round"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["azrom.net",1],["cafenau.com",1],["blog.abit.vn",2],["truyensieuhay.com",2],["phimmoivn.pro",2],["tvhayb.org",2],["phimmoipro1.net",2],["quangcaoyenbai.com",2],["javnong.cc",3],["plvb.xyz",[4,5,6,7,8]],["subnhanhvl.cc",9],["subnhanh.im",9],["phimmoi4s.com",9],["phimdinhcao.net",9],["phimlongtieng.net",9],["phimdinhcao.com",9],["ophim.vip",9],["tinsoikeo.vip",10],["viettoons.tv",11],["phimmoiaz.cc",11],["zo3x.us",11],["m.blogtruyen.vn",11],["vinaurl.net",11],["ytstv.me",12],["yts.do",12],["yts.mx",12],["yts.rs",12],["zingnews.vn",13],["zuiphim.com",14]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimmoivn.pro",3],["tvhayb.org",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimmoi.im",3],["javnong.cc",4],["plvb.xyz",[5,6,7,8,9]],["subnhanhvl.cc",10],["subnhanh.im",10],["phimmoi4s.com",10],["phimdinhcao.net",10],["phimlongtieng.net",10],["phimdinhcao.com",10],["ophim.vip",10],["tinsoikeo.vip",11],["viettoons.tv",12],["phimmoiaz.cc",12],["zo3x.us",12],["m.blogtruyen.vn",12],["vinaurl.net",12],["animet.net",12],["ytstv.me",13],["yts.do",13],["yts.mx",13],["yts.rs",13],["zingnews.vn",14],["zuiphim.com",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -97,9 +97,10 @@ function abortOnPropertyRead(
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -108,6 +109,95 @@ function getExceptionToken() {
         }
     }.bind();
     return token;
+}
+
+function safeSelf() {
+    if ( scriptletGlobals.has('safeSelf') ) {
+        return scriptletGlobals.get('safeSelf');
+    }
+    const self = globalThis;
+    const safe = {
+        'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
+        'Object_defineProperty': Object.defineProperty.bind(Object),
+        'RegExp': self.RegExp,
+        'RegExp_test': self.RegExp.prototype.test,
+        'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
+        'XMLHttpRequest': self.XMLHttpRequest,
+        'addEventListener': self.EventTarget.prototype.addEventListener,
+        'removeEventListener': self.EventTarget.prototype.removeEventListener,
+        'fetch': self.fetch,
+        'jsonParse': self.JSON.parse.bind(self.JSON),
+        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'log': console.log.bind(console),
+        uboLog(...args) {
+            if ( args.length === 0 ) { return; }
+            if ( `${args[0]}` === '' ) { return; }
+            this.log('[uBO]', ...args);
+        },
+        initPattern(pattern, options = {}) {
+            if ( pattern === '' ) {
+                return { matchAll: true };
+            }
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
+            if ( expect === false ) {
+                pattern = pattern.slice(1);
+            }
+            const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
+            if ( match !== null ) {
+                return {
+                    pattern,
+                    re: new this.RegExp(
+                        match[1],
+                        match[2] || options.flags
+                    ),
+                    expect,
+                };
+            }
+            return {
+                pattern,
+                re: new this.RegExp(pattern.replace(
+                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    options.flags
+                ),
+                expect,
+            };
+        },
+        testPattern(details, haystack) {
+            if ( details.matchAll ) { return true; }
+            return this.RegExp_test.call(details.re, haystack) === details.expect;
+        },
+        patternToRegex(pattern, flags = undefined) {
+            if ( pattern === '' ) { return /^/; }
+            const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
+            if ( match === null ) {
+                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+            }
+            try {
+                return new RegExp(match[1], match[2] || flags);
+            }
+            catch(ex) {
+            }
+            return /^/;
+        },
+        getExtraArgs(args, offset = 0) {
+            const entries = args.slice(offset).reduce((out, v, i, a) => {
+                if ( (i & 1) === 0 ) {
+                    const rawValue = a[i+1];
+                    const value = /^\d+$/.test(rawValue)
+                        ? parseInt(rawValue, 10)
+                        : rawValue;
+                    out.push([ a[i], value ]);
+                }
+                return out;
+            }, []);
+            return Object.fromEntries(entries);
+        },
+    };
+    scriptletGlobals.set('safeSelf', safe);
+    return safe;
 }
 
 /******************************************************************************/

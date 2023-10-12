@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["[].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots","","propsToMatch","url:player?key="],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["response.ads"]];
+const argsList = [["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["response.ads"]];
 
-const hostnamesMap = new Map([["youtube.com",0],["hulu.com",[1,2]],["player.popfun.co.uk",3]]);
+const hostnamesMap = new Map([["hulu.com",[0,1]],["player.pop.co.uk",2],["player.popfun.co.uk",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,7 +52,11 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function jsonPruneFetchResponse(
+function jsonPruneFetchResponse(...args) {
+    jsonPruneFetchResponseFn(...args);
+}
+
+function jsonPruneFetchResponseFn(
     rawPrunePaths = '',
     rawNeedlePaths = ''
 ) {
@@ -61,6 +65,7 @@ function jsonPruneFetchResponse(
     const logLevel = shouldLog({ log: rawPrunePaths === '' || extraArgs.log, });
     const log = logLevel ? ((...args) => { safe.uboLog(...args); }) : (( ) => { }); 
     const propNeedles = parsePropertiesToMatch(extraArgs.propsToMatch, 'url');
+    const stackNeedle = safe.initPattern(extraArgs.stackToMatch || '', { canNegate: true });
     const applyHandler = function(target, thisArg, args) {
         const fetchPromise = Reflect.apply(target, thisArg, args);
         if ( logLevel === true ) {
@@ -70,6 +75,9 @@ function jsonPruneFetchResponse(
         let outcome = 'match';
         if ( propNeedles.size !== 0 ) {
             const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
+            if ( extraArgs.version === 2 && objs[0] instanceof Request ) {
+                try { objs[0] = safe.Request_clone.call(objs[0]); } catch(ex) {}
+            }
             if ( args[1] instanceof Object ) {
                 objs.push(args[1]);
             }
@@ -93,7 +101,7 @@ function jsonPruneFetchResponse(
                     objBefore,
                     rawPrunePaths,
                     rawNeedlePaths,
-                    { matchAll: true },
+                    stackNeedle,
                     extraArgs
                 );
                 if ( typeof objAfter !== 'object' ) { return responseBefore; }
@@ -273,10 +281,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -402,9 +413,10 @@ function matchesStackTrace(
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }

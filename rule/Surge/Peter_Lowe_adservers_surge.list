@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 11 Oct 2023 08:14:14 GMT
-# entries:        3722
+# last updated:   Thu, 12 Oct 2023 08:55:19 GMT
+# entries:        3726
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -215,6 +215,7 @@ DOMAIN-SUFFIX,adcell.de
 DOMAIN-SUFFIX,adcenter.net
 DOMAIN-SUFFIX,adclick.com
 DOMAIN-SUFFIX,adclient1.tucows.com
+DOMAIN-SUFFIX,adclixx.net
 DOMAIN-SUFFIX,adcolony.com
 DOMAIN-SUFFIX,adcomplete.com
 DOMAIN-SUFFIX,adconion.com
@@ -315,6 +316,7 @@ DOMAIN-SUFFIX,adnet.asahi.com
 DOMAIN-SUFFIX,adnet.biz
 DOMAIN-SUFFIX,adnet.de
 DOMAIN-SUFFIX,adnet.ru
+DOMAIN-SUFFIX,adnetasia.com
 DOMAIN-SUFFIX,adnetwork.net
 DOMAIN-SUFFIX,adnetworkperformance.com
 DOMAIN-SUFFIX,adnews.maddog2000.de
@@ -1505,6 +1507,7 @@ DOMAIN-SUFFIX,counter.snackly.co
 DOMAIN-SUFFIX,counting.kmindex.ru
 DOMAIN-SUFFIX,coupling-media.de
 DOMAIN-SUFFIX,coxmt.com
+DOMAIN-SUFFIX,cozyhillside.com
 DOMAIN-SUFFIX,cpalead.com
 DOMAIN-SUFFIX,cpays.com
 DOMAIN-SUFFIX,cpmstar.com
@@ -3634,6 +3637,7 @@ DOMAIN-SUFFIX,wheredoyoucomefrom.ovh
 DOMAIN-SUFFIX,whirlwealth.com
 DOMAIN-SUFFIX,whiskyqueue.com
 DOMAIN-SUFFIX,whispa.com
+DOMAIN-SUFFIX,whisperingcascade.com
 DOMAIN-SUFFIX,whisperingcrib.com
 DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whoisonline.net

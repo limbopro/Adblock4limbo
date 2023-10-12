@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["adBlockWallEnabled"],["0"],["adtagparameter","enabled"],["adEnabled"],["Playlist.ContentBreaks"],["adRenderers"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.device.adSponsorshipTemplate data.device.adsParams"],["data.[].vast_url"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["vastUrl"],["adReinsertion"],["enabled","testhide"],["adParam"],["adProvider"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["*","ad_unit_path"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["ads"],["ssaiInfo fallback.ssaiInfo"],["result.ads"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"]];
 
-const hostnamesMap = new Map([["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["bild.de",2],["video.gjirafa.com",3],["winfuture.de",4],["popcornflix.com",5],["itv.com",6],["funimation.com",7],["hulu.com",[9,10]],["www.amazon.co.jp",11],["www.amazon.com",11],["crunchyroll.com",12],["crackle.com",13],["vvvvid.it",14],["linkvertise.com",15],["welt.de",16],["plus.rtl.de",17],["tv2.no",18],["doomovie-hd.com",19],["sonyliv.com",20],["tvn24.pl",21],["art19.com",22],["domoplus.pl",23],["kuchniaplus.pl",23],["miniminiplus.pl",23],["teletoonplus.pl",23],["vix.com",24],["citytv.com",25],["vlive.tv",27],["go.discovery.com",29],["tvn.pl",30],["10play.com.au",31],["player.stv.tv",32],["fox.com",33],["foxsports.com",33],["play.max.com",34],["sportstiger.com",35],["disneyplus.com",[36,37,38,39,40]],["colearn.id",41],["hotmediahub.com",42],["terabox.fun",42],["hotstar.com",43],["nbc.com",44],["play.history.com",45],["eu-proxy.startpage.com",46],["player.popfun.co.uk",47],["www.reddit.com",[48,49]],["nypost.com",50],["pagesix.com",50],["stories.los40.com",51]]);
+const hostnamesMap = new Map([["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["bild.de",2],["video.gjirafa.com",3],["winfuture.de",4],["popcornflix.com",5],["itv.com",6],["funimation.com",7],["hulu.com",[9,10]],["www.amazon.co.jp",11],["www.amazon.com",11],["crunchyroll.com",12],["crackle.com",13],["vvvvid.it",14],["linkvertise.com",15],["welt.de",16],["plus.rtl.de",17],["tv2.no",18],["doomovie-hd.com",19],["sonyliv.com",20],["tvn24.pl",21],["art19.com",22],["domoplus.pl",23],["kuchniaplus.pl",23],["miniminiplus.pl",23],["teletoonplus.pl",23],["vix.com",24],["citytv.com",25],["vlive.tv",27],["go.discovery.com",29],["tvn.pl",30],["10play.com.au",31],["player.stv.tv",32],["fox.com",33],["foxsports.com",33],["play.max.com",34],["sportstiger.com",35],["disneyplus.com",[36,37,38,39,40]],["colearn.id",41],["hotmediahub.com",42],["terabox.fun",42],["hotstar.com",43],["nbc.com",44],["play.history.com",45],["eu-proxy.startpage.com",46],["player.pop.co.uk",47],["player.popfun.co.uk",47],["www.reddit.com",[48,49]],["nypost.com",50],["pagesix.com",50],["stories.los40.com",51]]);
 
 const entitiesMap = new Map([["elixx",8],["shorttey",26],["discoveryplus",[28,29]]]);
 
@@ -225,10 +225,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -354,9 +357,10 @@ function matchesStackTrace(
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }

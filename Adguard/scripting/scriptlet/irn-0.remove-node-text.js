@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","document.oncontextmenu="],["script","window.location="],["script","document.oncontextmenu ="]];
+const argsList = [["script","document.oncontextmenu ="],["script","document.oncontextmenu="],["script","window.location="]];
 
-const hostnamesMap = new Map([["kihanb.ir",0],["najiremix.ir",1],["sclinic.ir",2]]);
+const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["kihanb.ir",1],["najiremix.ir",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -171,10 +171,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

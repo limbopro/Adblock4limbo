@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310111523
+## ! Version: 202310121259
 ## ! Title: EasyList
-## ! Last modified: 11 Oct 2023 15:23 UTC
+## ! Last modified: 12 Oct 2023 12:59 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -7326,45 +7326,17 @@ DOMAIN-SUFFIX,d0efb7d9aeb478d.com, reject
 DOMAIN-SUFFIX,d0f85db8ee56f5c6.com, reject
 DOMAIN-SUFFIX,d0main.ru, reject
 DOMAIN-SUFFIX,d13babd868.com, reject
-DOMAIN-SUFFIX,d13j11nqjt0s84.cloudfront.net, reject
-DOMAIN-SUFFIX,d15mt77nzagpnx.cloudfront.net, reject
-DOMAIN-SUFFIX,d17c5vf4t6okfg.cloudfront.net, reject
-DOMAIN-SUFFIX,d1856n6bep9gel.cloudfront.net, reject
-DOMAIN-SUFFIX,d199kwgcer5a6q.cloudfront.net, reject
 DOMAIN-SUFFIX,d1bcb5ca9f.com, reject
-DOMAIN-SUFFIX,d1f9tkqiyb5a97.cloudfront.net, reject
-DOMAIN-SUFFIX,d1g8forfjnu2jh.cloudfront.net, reject
-DOMAIN-SUFFIX,d1i11ea1m0er9t.cloudfront.net, reject
-DOMAIN-SUFFIX,d1j818d3wapogd.cloudfront.net, reject
-DOMAIN-SUFFIX,d1lo4oi08ke2ex.cloudfront.net, reject
-DOMAIN-SUFFIX,d1ol7fsyj96wwo.cloudfront.net, reject
-DOMAIN-SUFFIX,d1sfclevshpbro.cloudfront.net, reject
-DOMAIN-SUFFIX,d1spc7iz1ls2b1.cloudfront.net, reject
-DOMAIN-SUFFIX,d1xdxiqs8w12la.cloudfront.net, reject
-DOMAIN-SUFFIX,d1xo0f2fdn5no0.cloudfront.net, reject
-DOMAIN-SUFFIX,d1yeqwgi8897el.cloudfront.net, reject
-DOMAIN-SUFFIX,d1z58p17sqvg6o.cloudfront.net, reject
 DOMAIN-SUFFIX,d24ak3f2b.top, reject
 DOMAIN-SUFFIX,d25ee3531d.com, reject
 DOMAIN-SUFFIX,d28dc30335.com, reject
 DOMAIN-SUFFIX,d29gqcij.com, reject
 DOMAIN-SUFFIX,d2af63b326.com, reject
 DOMAIN-SUFFIX,d2d7bba154.com, reject
-DOMAIN-SUFFIX,d2ele6m9umnaue.cloudfront.net, reject
-DOMAIN-SUFFIX,d2elslrg1qbcem.cloudfront.net, reject
-DOMAIN-SUFFIX,d2jgbcah46jjed.cloudfront.net, reject
-DOMAIN-SUFFIX,d2ob4whwpjvvpa.cloudfront.net, reject
-DOMAIN-SUFFIX,d2ohmkyg5w2c18.cloudfront.net, reject
 DOMAIN-SUFFIX,d2ship.com, reject
-DOMAIN-SUFFIX,d2vwsmst56j4zq.cloudfront.net, reject
-DOMAIN-SUFFIX,d31m6w8i2nx65e.cloudfront.net, reject
 DOMAIN-SUFFIX,d37aacdbcc.com, reject
 DOMAIN-SUFFIX,d3d98dc11c.com, reject
-DOMAIN-SUFFIX,d3d9gb3ic8fsgg.cloudfront.net, reject
 DOMAIN-SUFFIX,d3da127b69.com, reject
-DOMAIN-SUFFIX,d3sof4x9nlmbgy.cloudfront.net, reject
-DOMAIN-SUFFIX,d3tnmn8yxiwfkj.cloudfront.net, reject
-DOMAIN-SUFFIX,d3uvwdhukmp6v9.cloudfront.net, reject
 DOMAIN-SUFFIX,d4d48974197052ea.com, reject
 DOMAIN-SUFFIX,d5390684c4.com, reject
 DOMAIN-SUFFIX,d576de5d7d.com, reject
@@ -7373,15 +7345,12 @@ DOMAIN-SUFFIX,d65948f49b.com, reject
 DOMAIN-SUFFIX,d6b13de038.com, reject
 DOMAIN-SUFFIX,d6f8c08166.com, reject
 DOMAIN-SUFFIX,d6jfiirio372.com, reject
-DOMAIN-SUFFIX,d6l5p6w9iib9r.cloudfront.net, reject
 DOMAIN-SUFFIX,d71022cc68.com, reject
 DOMAIN-SUFFIX,d71e6dd31a026d45.com, reject
 DOMAIN-SUFFIX,d72gb9oukw3j.com, reject
 DOMAIN-SUFFIX,d75c13e04d.com, reject
 DOMAIN-SUFFIX,d7c01d241b.com, reject
 DOMAIN-SUFFIX,d7d38597d6.com, reject
-DOMAIN-SUFFIX,d7jpk19dne0nn.cloudfront.net, reject
-DOMAIN-SUFFIX,d7tst6bnt99p2.cloudfront.net, reject
 DOMAIN-SUFFIX,d869381a42af33b.com, reject
 DOMAIN-SUFFIX,d8b805b9a9.com, reject
 DOMAIN-SUFFIX,d90be87e47.com, reject
@@ -7564,7 +7533,6 @@ DOMAIN-SUFFIX,dbclix.com, reject
 DOMAIN-SUFFIX,dberthformtte.xyz, reject
 DOMAIN-SUFFIX,dberthformttete.com, reject
 DOMAIN-SUFFIX,dbf36eaddd.com, reject
-DOMAIN-SUFFIX,dbfv8ylr8ykfg.cloudfront.net, reject
 DOMAIN-SUFFIX,dbgsfyxtfyh.xyz, reject
 DOMAIN-SUFFIX,dbizrrslifc.com, reject
 DOMAIN-SUFFIX,dblchymhlbcvot.xyz, reject
@@ -7592,7 +7560,6 @@ DOMAIN-SUFFIX,dcsv33.com, reject
 DOMAIN-SUFFIX,dcuonsugikrma.com, reject
 DOMAIN-SUFFIX,dcynwezfon.com, reject
 DOMAIN-SUFFIX,dcypikothwab.com, reject
-DOMAIN-SUFFIX,dczhbhtz52fpi.cloudfront.net, reject
 DOMAIN-SUFFIX,dd9l0474.de, reject
 DOMAIN-SUFFIX,ddaqwhdlhor.com, reject
 DOMAIN-SUFFIX,ddcawywdbdjj.xyz, reject
@@ -8275,7 +8242,6 @@ DOMAIN-SUFFIX,dlhqffirehv.com, reject
 DOMAIN-SUFFIX,dlmewheniyv.xyz, reject
 DOMAIN-SUFFIX,dlqxdonofwsfes.xyz, reject
 DOMAIN-SUFFIX,dlski.space, reject
-DOMAIN-SUFFIX,dltvkwr7nbdlj.cloudfront.net, reject
 DOMAIN-SUFFIX,dmakingbyth.com, reject
 DOMAIN-SUFFIX,dmayindallmypi.com, reject
 DOMAIN-SUFFIX,dmeukeuktyoue.info, reject
@@ -8625,7 +8591,6 @@ DOMAIN-SUFFIX,dtoottuleringv.com.ua, reject
 DOMAIN-SUFFIX,dtoottuleringwe.xyz, reject
 DOMAIN-SUFFIX,dtothdgemano.xyz, reject
 DOMAIN-SUFFIX,dtprofit.com, reject
-DOMAIN-SUFFIX,dtq9oy2ckjhxu.cloudfront.net, reject
 DOMAIN-SUFFIX,dtscdn.com, reject
 DOMAIN-SUFFIX,dtscout.com, reject
 DOMAIN-SUFFIX,dtsedge.com, reject
@@ -8764,7 +8729,6 @@ DOMAIN-SUFFIX,dyckwtcmyb.xyz, reject
 DOMAIN-SUFFIX,dyeingjaun.com, reject
 DOMAIN-SUFFIX,dyetqkaxmlnqlqe.xyz, reject
 DOMAIN-SUFFIX,dyingconjunction.com, reject
-DOMAIN-SUFFIX,dykwdhfiuha6l.cloudfront.net, reject
 DOMAIN-SUFFIX,dylbqnfhikdd.com, reject
 DOMAIN-SUFFIX,dymfodqwwtrw.xyz, reject
 DOMAIN-SUFFIX,dynamicadx.com, reject
@@ -30521,6 +30485,7 @@ DOMAIN-SUFFIX,d12t7h1bsbq1cs.cloudfront.net, reject
 DOMAIN-SUFFIX,d12tu1kocp8e8u.cloudfront.net, reject
 DOMAIN-SUFFIX,d12ylqdkzgcup5.cloudfront.net, reject
 DOMAIN-SUFFIX,d13gni3sfor862.cloudfront.net, reject
+DOMAIN-SUFFIX,d13j11nqjt0s84.cloudfront.net, reject
 DOMAIN-SUFFIX,d13k7prax1yi04.cloudfront.net, reject
 DOMAIN-SUFFIX,d13pxqgp3ixdbh.cloudfront.net, reject
 DOMAIN-SUFFIX,d13vul5n9pqibl.cloudfront.net, reject
@@ -30536,10 +30501,13 @@ DOMAIN-SUFFIX,d15gt9gwxw5wu0.cloudfront.net, reject
 DOMAIN-SUFFIX,d15jg7068qz6nm.cloudfront.net, reject
 DOMAIN-SUFFIX,d15kdpgjg3unno.cloudfront.net, reject
 DOMAIN-SUFFIX,d15kuuu3jqrln7.cloudfront.net, reject
+DOMAIN-SUFFIX,d15mt77nzagpnx.cloudfront.net, reject
 DOMAIN-SUFFIX,d162nnmwf9bggr.cloudfront.net, reject
 DOMAIN-SUFFIX,d16saj1xvba76n.cloudfront.net, reject
 DOMAIN-SUFFIX,d175dtblugd1dn.cloudfront.net, reject
+DOMAIN-SUFFIX,d17c5vf4t6okfg.cloudfront.net, reject
 DOMAIN-SUFFIX,d183xvcith22ty.cloudfront.net, reject
+DOMAIN-SUFFIX,d1856n6bep9gel.cloudfront.net, reject
 DOMAIN-SUFFIX,d188elxamt3utn.cloudfront.net, reject
 DOMAIN-SUFFIX,d188m5xxcpvuue.cloudfront.net, reject
 DOMAIN-SUFFIX,d18b5y9gp0lr93.cloudfront.net, reject
@@ -30551,6 +30519,7 @@ DOMAIN-SUFFIX,d18myvrsrzjrd7.cloudfront.net, reject
 DOMAIN-SUFFIX,d18t35yyry2k49.cloudfront.net, reject
 DOMAIN-SUFFIX,d192g7g8iuw79c.cloudfront.net, reject
 DOMAIN-SUFFIX,d192r5l88wrng7.cloudfront.net, reject
+DOMAIN-SUFFIX,d199kwgcer5a6q.cloudfront.net, reject
 DOMAIN-SUFFIX,d19bpqj0yivlb3.cloudfront.net, reject
 DOMAIN-SUFFIX,d19gkl2iaav80x.cloudfront.net, reject
 DOMAIN-SUFFIX,d19y03yc9s7c1c.cloudfront.net, reject
@@ -30592,14 +30561,17 @@ DOMAIN-SUFFIX,d1ev866ubw90c6.cloudfront.net, reject
 DOMAIN-SUFFIX,d1ezlc9vy4yc7g.cloudfront.net, reject
 DOMAIN-SUFFIX,d1f05vr3sjsuy7.cloudfront.net, reject
 DOMAIN-SUFFIX,d1f52ha44xvggk.cloudfront.net, reject
+DOMAIN-SUFFIX,d1f9tkqiyb5a97.cloudfront.net, reject
 DOMAIN-SUFFIX,d1fs2ef81chg3.cloudfront.net, reject
 DOMAIN-SUFFIX,d1g2nud28z4vph.cloudfront.net, reject
 DOMAIN-SUFFIX,d1g4493j0tcwvt.cloudfront.net, reject
 DOMAIN-SUFFIX,d1g4xgvlcsj49g.cloudfront.net, reject
+DOMAIN-SUFFIX,d1g8forfjnu2jh.cloudfront.net, reject
 DOMAIN-SUFFIX,d1ha41wacubcnb.cloudfront.net, reject
 DOMAIN-SUFFIX,d1hgdmbgioknig.cloudfront.net, reject
 DOMAIN-SUFFIX,d1hnmxbg6rp2o6.cloudfront.net, reject
 DOMAIN-SUFFIX,d1hogxc58mhzo9.cloudfront.net, reject
+DOMAIN-SUFFIX,d1i11ea1m0er9t.cloudfront.net, reject
 DOMAIN-SUFFIX,d1i3h541wbnrfi.cloudfront.net, reject
 DOMAIN-SUFFIX,d1igvjcl1gjs62.cloudfront.net, reject
 DOMAIN-SUFFIX,d1ilwohzbe4ao6.cloudfront.net, reject
@@ -30608,6 +30580,7 @@ DOMAIN-SUFFIX,d1j1m9awq6n3x3.cloudfront.net, reject
 DOMAIN-SUFFIX,d1j2jv7bvcsxqg.cloudfront.net, reject
 DOMAIN-SUFFIX,d1j47wsepxe9u2.cloudfront.net, reject
 DOMAIN-SUFFIX,d1j6limf657foe.cloudfront.net, reject
+DOMAIN-SUFFIX,d1j818d3wapogd.cloudfront.net, reject
 DOMAIN-SUFFIX,d1j9qsxe04m2ki.cloudfront.net, reject
 DOMAIN-SUFFIX,d1jcj9gy98l90g.cloudfront.net, reject
 DOMAIN-SUFFIX,d1jnvfp2m6fzvq.cloudfront.net, reject
@@ -30622,6 +30595,7 @@ DOMAIN-SUFFIX,d1l906mtvq85kd.cloudfront.net, reject
 DOMAIN-SUFFIX,d1lihuem8ojqxz.cloudfront.net, reject
 DOMAIN-SUFFIX,d1lky2ntb9ztpd.cloudfront.net, reject
 DOMAIN-SUFFIX,d1lnjzqqshwcwg.cloudfront.net, reject
+DOMAIN-SUFFIX,d1lo4oi08ke2ex.cloudfront.net, reject
 DOMAIN-SUFFIX,d1lxhc4jvstzrp.cloudfront.net, reject
 DOMAIN-SUFFIX,d1mar6i7bkj1lr.cloudfront.net, reject
 DOMAIN-SUFFIX,d1mbgf0ge24riu.cloudfront.net, reject
@@ -30645,6 +30619,7 @@ DOMAIN-SUFFIX,d1nx2jii03b4ju.cloudfront.net, reject
 DOMAIN-SUFFIX,d1o1guzowlqlts.cloudfront.net, reject
 DOMAIN-SUFFIX,d1of5w8unlzqtg.cloudfront.net, reject
 DOMAIN-SUFFIX,d1okyw2ay5msiy.cloudfront.net, reject
+DOMAIN-SUFFIX,d1ol7fsyj96wwo.cloudfront.net, reject
 DOMAIN-SUFFIX,d1or04kku1mxl9.cloudfront.net, reject
 DOMAIN-SUFFIX,d1oykxszdrgjgl.cloudfront.net, reject
 DOMAIN-SUFFIX,d1p0vowokmovqz.cloudfront.net, reject
@@ -30665,6 +30640,7 @@ DOMAIN-SUFFIX,d1rp4yowwe587e.cloudfront.net, reject
 DOMAIN-SUFFIX,d1rsh847opos9y.cloudfront.net, reject
 DOMAIN-SUFFIX,d1s4mby8domwt9.cloudfront.net, reject
 DOMAIN-SUFFIX,d1sboz88tkttfp.cloudfront.net, reject
+DOMAIN-SUFFIX,d1sfclevshpbro.cloudfront.net, reject
 DOMAIN-SUFFIX,d1sjz3r2x2vk2u.cloudfront.net, reject
 DOMAIN-SUFFIX,d1sowp9ayjro6j.cloudfront.net, reject
 DOMAIN-SUFFIX,d1spc7iz1ls2b1.cloudfront.net, reject
@@ -30693,15 +30669,19 @@ DOMAIN-SUFFIX,d1wd81rzdci3ru.cloudfront.net, reject
 DOMAIN-SUFFIX,d1wi563t0137vz.cloudfront.net, reject
 DOMAIN-SUFFIX,d1wjz6mrey9f5v.cloudfront.net, reject
 DOMAIN-SUFFIX,d1wv5x2u0qrvjw.cloudfront.net, reject
+DOMAIN-SUFFIX,d1xdxiqs8w12la.cloudfront.net, reject
 DOMAIN-SUFFIX,d1xkyo9j4r7vnn.cloudfront.net, reject
+DOMAIN-SUFFIX,d1xo0f2fdn5no0.cloudfront.net, reject
 DOMAIN-SUFFIX,d1xw8yqtkk9ae5.cloudfront.net, reject
 DOMAIN-SUFFIX,d1y3xnqdd6pdbo.cloudfront.net, reject
 DOMAIN-SUFFIX,d1yaf4htak1xfg.cloudfront.net, reject
 DOMAIN-SUFFIX,d1ybdlg8aoufn.cloudfront.net, reject
+DOMAIN-SUFFIX,d1yeqwgi8897el.cloudfront.net, reject
 DOMAIN-SUFFIX,d1ytalcrl612d7.cloudfront.net, reject
 DOMAIN-SUFFIX,d1yyhdmsmo3k5p.cloudfront.net, reject
 DOMAIN-SUFFIX,d1z1vj4sd251u9.cloudfront.net, reject
 DOMAIN-SUFFIX,d1z2jf7jlzjs58.cloudfront.net, reject
+DOMAIN-SUFFIX,d1z58p17sqvg6o.cloudfront.net, reject
 DOMAIN-SUFFIX,d1zjpzpoh45wtm.cloudfront.net, reject
 DOMAIN-SUFFIX,d1zjr9cc2zx7cg.cloudfront.net, reject
 DOMAIN-SUFFIX,d1zrs4deyai5xm.cloudfront.net, reject
@@ -30782,6 +30762,8 @@ DOMAIN-SUFFIX,d2e30rravz97d4.cloudfront.net, reject
 DOMAIN-SUFFIX,d2e7rsjh22yn3g.cloudfront.net, reject
 DOMAIN-SUFFIX,d2edfzx4ay42og.cloudfront.net, reject
 DOMAIN-SUFFIX,d2ei3pn5qbemvt.cloudfront.net, reject
+DOMAIN-SUFFIX,d2ele6m9umnaue.cloudfront.net, reject
+DOMAIN-SUFFIX,d2elslrg1qbcem.cloudfront.net, reject
 DOMAIN-SUFFIX,d2enprlhqqv4jf.cloudfront.net, reject
 DOMAIN-SUFFIX,d2er1uyk6qcknh.cloudfront.net, reject
 DOMAIN-SUFFIX,d2ers4gi7coxau.cloudfront.net, reject
@@ -30809,6 +30791,7 @@ DOMAIN-SUFFIX,d2i55s0cnk529c.cloudfront.net, reject
 DOMAIN-SUFFIX,d2it3a9l98tmsr.cloudfront.net, reject
 DOMAIN-SUFFIX,d2j042cj1421wi.cloudfront.net, reject
 DOMAIN-SUFFIX,d2j71mqxljhlck.cloudfront.net, reject
+DOMAIN-SUFFIX,d2jgbcah46jjed.cloudfront.net, reject
 DOMAIN-SUFFIX,d2jgp81mjwggyr.cloudfront.net, reject
 DOMAIN-SUFFIX,d2jp0uspx797vc.cloudfront.net, reject
 DOMAIN-SUFFIX,d2jp87c2eoduan.cloudfront.net, reject
@@ -30842,6 +30825,7 @@ DOMAIN-SUFFIX,d2nlytvx51ywh9.cloudfront.net, reject
 DOMAIN-SUFFIX,d2nz8k4xyoudsx.cloudfront.net, reject
 DOMAIN-SUFFIX,d2o03z2xnyxlz5.cloudfront.net, reject
 DOMAIN-SUFFIX,d2o51l6pktevii.cloudfront.net, reject
+DOMAIN-SUFFIX,d2ob4whwpjvvpa.cloudfront.net, reject
 DOMAIN-SUFFIX,d2ohmkyg5w2c18.cloudfront.net, reject
 DOMAIN-SUFFIX,d2ojfulajn60p5.cloudfront.net, reject
 DOMAIN-SUFFIX,d2ov8ip31qpxly.cloudfront.net, reject
@@ -30888,6 +30872,7 @@ DOMAIN-SUFFIX,d2vmavw0uawm2t.cloudfront.net, reject
 DOMAIN-SUFFIX,d2vorijeeka2cf.cloudfront.net, reject
 DOMAIN-SUFFIX,d2vvyk8pqw001z.cloudfront.net, reject
 DOMAIN-SUFFIX,d2vwl2vhlatm2f.cloudfront.net, reject
+DOMAIN-SUFFIX,d2vwsmst56j4zq.cloudfront.net, reject
 DOMAIN-SUFFIX,d2w92zbcg4cwxr.cloudfront.net, reject
 DOMAIN-SUFFIX,d2werg7o2mztut.cloudfront.net, reject
 DOMAIN-SUFFIX,d2x0u7rtw4p89p.cloudfront.net, reject
@@ -30910,6 +30895,7 @@ DOMAIN-SUFFIX,d30tme16wdjle5.cloudfront.net, reject
 DOMAIN-SUFFIX,d30ts2zph80iw7.cloudfront.net, reject
 DOMAIN-SUFFIX,d30yd3ryh0wmud.cloudfront.net, reject
 DOMAIN-SUFFIX,d313lzv9559yp9.cloudfront.net, reject
+DOMAIN-SUFFIX,d31m6w8i2nx65e.cloudfront.net, reject
 DOMAIN-SUFFIX,d31mxuhvwrofft.cloudfront.net, reject
 DOMAIN-SUFFIX,d31o2k8hutiibd.cloudfront.net, reject
 DOMAIN-SUFFIX,d31ph8fftb4r3x.cloudfront.net, reject
@@ -30979,6 +30965,7 @@ DOMAIN-SUFFIX,d3cpib6kv2rja7.cloudfront.net, reject
 DOMAIN-SUFFIX,d3cynajatn2qbc.cloudfront.net, reject
 DOMAIN-SUFFIX,d3d0wndor0l4xe.cloudfront.net, reject
 DOMAIN-SUFFIX,d3d54j7si4woql.cloudfront.net, reject
+DOMAIN-SUFFIX,d3d9gb3ic8fsgg.cloudfront.net, reject
 DOMAIN-SUFFIX,d3d9pt4go32tk8.cloudfront.net, reject
 DOMAIN-SUFFIX,d3dq1nh1l1pzqy.cloudfront.net, reject
 DOMAIN-SUFFIX,d3ec0pbimicc4r.cloudfront.net, reject
@@ -31058,6 +31045,7 @@ DOMAIN-SUFFIX,d3rr3d0n31t48m.cloudfront.net, reject
 DOMAIN-SUFFIX,d3rxqouo2bn71j.cloudfront.net, reject
 DOMAIN-SUFFIX,d3sdg6egu48sqx.cloudfront.net, reject
 DOMAIN-SUFFIX,d3skqyr7uryv9z.cloudfront.net, reject
+DOMAIN-SUFFIX,d3sof4x9nlmbgy.cloudfront.net, reject
 DOMAIN-SUFFIX,d3t16rotvvsanj.cloudfront.net, reject
 DOMAIN-SUFFIX,d3t3bxixsojwre.cloudfront.net, reject
 DOMAIN-SUFFIX,d3t3lxfqz2g5hs.cloudfront.net, reject
@@ -31067,6 +31055,7 @@ DOMAIN-SUFFIX,d3t87ooo0697p8.cloudfront.net, reject
 DOMAIN-SUFFIX,d3tfeohk35h2ye.cloudfront.net, reject
 DOMAIN-SUFFIX,d3tfz9q9zlwk84.cloudfront.net, reject
 DOMAIN-SUFFIX,d3tjml0i5ek35w.cloudfront.net, reject
+DOMAIN-SUFFIX,d3tnmn8yxiwfkj.cloudfront.net, reject
 DOMAIN-SUFFIX,d3tozt7si7bmf7.cloudfront.net, reject
 DOMAIN-SUFFIX,d3tu4h3aa52h5s.cloudfront.net, reject
 DOMAIN-SUFFIX,d3u43fn5cywbyv.cloudfront.net, reject
@@ -31075,6 +31064,7 @@ DOMAIN-SUFFIX,d3ubdcv1nz4dub.cloudfront.net, reject
 DOMAIN-SUFFIX,d3ud741uvs727m.cloudfront.net, reject
 DOMAIN-SUFFIX,d3ugwbjwrb0qbd.cloudfront.net, reject
 DOMAIN-SUFFIX,d3uqm14ppr8tkw.cloudfront.net, reject
+DOMAIN-SUFFIX,d3uvwdhukmp6v9.cloudfront.net, reject
 DOMAIN-SUFFIX,d3v3bqdndm4erx.cloudfront.net, reject
 DOMAIN-SUFFIX,d3vnm1492fpnm2.cloudfront.net, reject
 DOMAIN-SUFFIX,d3vp85u5z4wlqf.cloudfront.net, reject
@@ -31092,12 +31082,15 @@ DOMAIN-SUFFIX,d5wxfe8ietrpg.cloudfront.net, reject
 DOMAIN-SUFFIX,d63a3au5lqmtu.cloudfront.net, reject
 DOMAIN-SUFFIX,d6cto2pyf2ks.cloudfront.net, reject
 DOMAIN-SUFFIX,d6deij4k3ikap.cloudfront.net, reject
+DOMAIN-SUFFIX,d6l5p6w9iib9r.cloudfront.net, reject
 DOMAIN-SUFFIX,d6sav80kktzcx.cloudfront.net, reject
 DOMAIN-SUFFIX,d6wzv57amlrv3.cloudfront.net, reject
 DOMAIN-SUFFIX,d7016uqa4s0lw.cloudfront.net, reject
 DOMAIN-SUFFIX,d7dza8s7j2am6.cloudfront.net, reject
 DOMAIN-SUFFIX,d7gse3go4026a.cloudfront.net, reject
+DOMAIN-SUFFIX,d7jpk19dne0nn.cloudfront.net, reject
 DOMAIN-SUFFIX,d7po8h5dek3wm.cloudfront.net, reject
+DOMAIN-SUFFIX,d7tst6bnt99p2.cloudfront.net, reject
 DOMAIN-SUFFIX,d8a69dni6x2i5.cloudfront.net, reject
 DOMAIN-SUFFIX,d8cxnvx3e75nn.cloudfront.net, reject
 DOMAIN-SUFFIX,d8dcj5iif1uz.cloudfront.net, reject
@@ -31116,11 +31109,13 @@ DOMAIN-SUFFIX,db033pq6bj64g.cloudfront.net, reject
 DOMAIN-SUFFIX,db4zl9wffwnmb.cloudfront.net, reject
 DOMAIN-SUFFIX,dba9ytko5p72r.cloudfront.net, reject
 DOMAIN-SUFFIX,dbcdqp72lzmvj.cloudfront.net, reject
+DOMAIN-SUFFIX,dbfv8ylr8ykfg.cloudfront.net, reject
 DOMAIN-SUFFIX,dbujksp6lhljo.cloudfront.net, reject
 DOMAIN-SUFFIX,dby7kx9z9yzse.cloudfront.net, reject
 DOMAIN-SUFFIX,dc08i221b0n8a.cloudfront.net, reject
 DOMAIN-SUFFIX,dc5k8fg5ioc8s.cloudfront.net, reject
 DOMAIN-SUFFIX,dcai7bdiz5toz.cloudfront.net, reject
+DOMAIN-SUFFIX,dczhbhtz52fpi.cloudfront.net, reject
 DOMAIN-SUFFIX,ddlh1467paih3.cloudfront.net, reject
 DOMAIN-SUFFIX,ddmuiijrdvv0s.cloudfront.net, reject
 DOMAIN-SUFFIX,ddrvjrfwnij7n.cloudfront.net, reject
@@ -31168,6 +31163,7 @@ DOMAIN-SUFFIX,dlne6myudrxi1.cloudfront.net, reject
 DOMAIN-SUFFIX,dlooqrhebkjoh.cloudfront.net, reject
 DOMAIN-SUFFIX,dlrioxg1637dk.cloudfront.net, reject
 DOMAIN-SUFFIX,dltqxz76sim1s.cloudfront.net, reject
+DOMAIN-SUFFIX,dltvkwr7nbdlj.cloudfront.net, reject
 DOMAIN-SUFFIX,dlvds9i67c60j.cloudfront.net, reject
 DOMAIN-SUFFIX,dlxk2dj1h3e83.cloudfront.net, reject
 DOMAIN-SUFFIX,dm0acvguygm9h.cloudfront.net, reject
@@ -31220,6 +31216,7 @@ DOMAIN-SUFFIX,dsnymrk0k4p3v.cloudfront.net, reject
 DOMAIN-SUFFIX,dsuyzexj3sqn9.cloudfront.net, reject
 DOMAIN-SUFFIX,dtakdb1z5gq7e.cloudfront.net, reject
 DOMAIN-SUFFIX,dtmm9h2satghl.cloudfront.net, reject
+DOMAIN-SUFFIX,dtq9oy2ckjhxu.cloudfront.net, reject
 DOMAIN-SUFFIX,dtu2kitmpserg.cloudfront.net, reject
 DOMAIN-SUFFIX,dtv5loup63fac.cloudfront.net, reject
 DOMAIN-SUFFIX,dtv5ske218f44.cloudfront.net, reject
@@ -31255,6 +31252,7 @@ DOMAIN-SUFFIX,dy5t1b0a29j1v.cloudfront.net, reject
 DOMAIN-SUFFIX,dybxezbel1g44.cloudfront.net, reject
 DOMAIN-SUFFIX,dyh1wzegu1j6z.cloudfront.net, reject
 DOMAIN-SUFFIX,dyj8pbcnat4xv.cloudfront.net, reject
+DOMAIN-SUFFIX,dykwdhfiuha6l.cloudfront.net, reject
 DOMAIN-SUFFIX,dyodrs1kxvg6o.cloudfront.net, reject
 DOMAIN-SUFFIX,dyrfxuvraq0fk.cloudfront.net, reject
 DOMAIN-SUFFIX,dyv1bugovvq1g.cloudfront.net, reject

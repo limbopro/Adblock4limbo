@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["documents","get_arguments"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].slot"]];
+const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].slot"]];
 
-const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,5]],["1plus1.video",3],["sports.ru",4],["igromania.ru",6],["kanobu.ru",6],["znanija.com",7],["ashdi.vip",8],["tortuga.wtf",8],["ok.ru",9],["touch.mail.ru",9],["e.mail.ru",10]]);
+const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,4]],["1plus1.video",3],["igromania.ru",5],["kanobu.ru",5],["znanija.com",6],["ashdi.vip",7],["tortuga.wtf",7],["ok.ru",8],["touch.mail.ru",8],["e.mail.ru",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -225,10 +225,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -354,9 +357,10 @@ function matchesStackTrace(
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }

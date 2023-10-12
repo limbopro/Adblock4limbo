@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","script"],["$","PopUnder"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["$","btpop"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
+const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","script"],["$","PopUnder"],["document.addEventListener","popupOpened"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenus.com",[2,24]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["ios.codevn.net",6],["khoaiphim.com",[7,8]],["khohieu.com",9],["linkneverdie.net",[10,11]],["lxmanga.net",12],["nguontv.live",13],["phimgigi.net",14],["ophimhdvn2.net",14],["mephimnhez.net",14],["phimmoipro1.net",15],["plus.gtv.vn",16],["protruyen.xyz",17],["animevietsub.fan",17],["rphang.me",18],["mrcong.com",18],["tinsoikeo.vip",19],["truyen2u.net",20],["truyen35.vn",21],["truyengihotday.net",22],["truyentuan.com",23],["viet69.tube",24],["ungtycomicsvip.com",24],["vlxx.moe",24],["yurineko.net",24],["vungoctuan.vn",25],["xnxx-sex-videos.com",26],["xoilac85.tv",27]]);
+const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenpk.com",[2,29]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["ios.codevn.net",6],["khoaiphim.com",[7,8]],["khohieu.com",9],["linkneverdie.net",[10,11]],["lxmanga.net",12],["motphim3s.com",13],["nguontv.live",14],["phimgigi.net",15],["ophimhdvn2.net",15],["mephimnhez.net",15],["phimmoipro2.net",16],["plus.gtv.vn",17],["protruyen.xyz",18],["animevietsub.fan",18],["rphang.me",19],["mrcong.com",19],["tctruyen.com",20],["tctruyen.net",20],["tinsoikeo.vip",21],["toptruyenne.com",22],["truyen2u.net",23],["truyen35.vn",24],["truyengihotday.net",25],["truyenqqvn.com",26],["truyentuan.com",27],["vailonxx.com",28],["viet69.tube",29],["ungtycomicsvip.com",29],["vlxx.moe",29],["yurineko.net",29],["vlxyz.tv",29],["javhay.media",29],["phimsexhay669.co",29],["cliphot69.biz",29],["doctruyen3qmax.com",29],["hentaizz.vip",29],["vungoctuan.vn",30],["xnxx-sex-videos.com",31],["xoilac87.tv",32]]);
 
 const entitiesMap = new Map([]);
 
@@ -168,9 +168,10 @@ function runAtHtmlElement(fn) {
 }
 
 function getExceptionToken() {
+    const safe = safeSelf();
     const token =
         String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -188,10 +189,13 @@ function safeSelf() {
     const self = globalThis;
     const safe = {
         'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

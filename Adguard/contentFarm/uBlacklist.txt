@@ -5750,6 +5750,7 @@
 *://*.tgoykuq.cn/*
 *://*.tgwlcg.com/*
 *://*.th2p.com/*
+*://*.thaicarvingknife.com/*
 *://*.thcc.cc/*
 *://*.thebmovierats.buzz/*
 *://*.thegymcam.buzz/*

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.10.12
+// @version      0.3.10.13
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -142,7 +142,7 @@ const uBlockOrigin = {
 }
 
 const js_common = {
-    crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统
+    crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统 chat
 }
 
 const css_common = {
@@ -153,9 +153,11 @@ const css_common = {
     gehr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/CSS/Adblock4limbo.user.css"
 }
 
-tagName_appendChild('link', css_common.gehr, 'head'); // 动态引入 ublcok origin 通用去广告样式
+tagName_appendChild('link', css_common.gehr, 'head'); // 动态引入 ublcok origin 通用去广告样式；
 
-tagName_appendChild("script", js_common.crisp, "head"); // 动态引入 crisp 聊天系统
+// tagName_appendChild("script", js_common.crisp, "head"); // 动态引入 crisp 聊天系统；
+// 油猴用户（桌面浏览器用户）可通过 // 注释上述代码来禁用Crisp；
+// Qx/Shadrowrocket/Surge/Loon 等代理软件用户可通过添加分流来禁用Crisp；（分流类型选择 host-keyword, crisp, reject）;
 
 /* End */
 
@@ -600,6 +602,62 @@ function uBlockOrigin_add() {
 }
 
 /* End */
+
+
+function adblock4limbo() { // tgChat
+
+    // 新建 newbody
+    let new_body = document.createElement('body');
+    new_body.id = 'newbody';
+
+    let body = document.body;
+    document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
+    //document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
+
+    // 定义按钮
+    let new_a = document.createElement('a')
+    new_a.id = "new_a";
+    new_a.href = "https://t.me/Adblock4limbo/21";
+    
+    var origin = '\
+    transition-property: height;\
+    opacity: 1;\
+    width: 45px;\
+    height: 45px;\
+    top: 35%;\
+    right: 3.5%;\
+    position: fixed;\
+    z-index: 114154;\
+    border: aliceblue;\
+    background-color: transparent;\
+    background-image: url("https://limbopro.com/Adblock4limbo.svg") !important;\
+    background-size: 100% !important;\
+    background-repeat: no-repeat;\
+'
+
+    new_a.style = origin;
+    document.getElementById('newbody').appendChild(new_a); // 在 newbody 下添加按钮
+}
+
+adblock4limbo() // 调用 tgchat
+
+function hidden_adblock4limbo() { // 隐藏 tgchat
+    let last_known_scroll_position = window.scrollY;
+    setTimeout(() => {
+        if (last_known_scroll_position !== window.scrollY) {
+            document.getElementById('new_a').style.height = '45px'; 
+            console.log("还在滑动...");
+        } else {
+            document.getElementById('new_a').style.height = '0px'; 
+            console.log("即将隐藏...");
+        }
+    }, 1000)
+}
+
+setInterval(() => {
+    hidden_adblock4limbo();
+}, 1500)
+
 
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告

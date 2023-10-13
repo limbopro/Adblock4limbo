@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310121259
+## ! Version: 202310130924
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Oct 2023 12:59 UTC
+## ! Last modified: 13 Oct 2023 09:24 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1167,6 +1167,7 @@ DOMAIN-SUFFIX,jamexistence.com
 DOMAIN-SUFFIX,jimny.pro
 DOMAIN-SUFFIX,joblessdrum.com
 DOMAIN-SUFFIX,joyoussurprise.com
+DOMAIN-SUFFIX,jubilantcanyon.com
 DOMAIN-SUFFIX,justicejudo.com
 DOMAIN-SUFFIX,k54nw.pw
 DOMAIN-SUFFIX,kitesquirrel.com
@@ -1423,6 +1424,7 @@ DOMAIN-SUFFIX,protestcopy.com
 DOMAIN-SUFFIX,proudprose.com
 DOMAIN-SUFFIX,psychedelicarithmetic.com
 DOMAIN-SUFFIX,psychedelicchess.com
+DOMAIN-SUFFIX,pubimgs.com
 DOMAIN-SUFFIX,puffyloss.com
 DOMAIN-SUFFIX,puffypaste.com
 DOMAIN-SUFFIX,puffypull.com
@@ -1962,6 +1964,7 @@ DOMAIN-SUFFIX,whineattempt.com
 DOMAIN-SUFFIX,whirlwealth.com
 DOMAIN-SUFFIX,whiskyqueue.com
 DOMAIN-SUFFIX,whisperingbadge.com
+DOMAIN-SUFFIX,whisperingcascade.com
 DOMAIN-SUFFIX,whisperingcrib.com
 DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whispermeeting.com

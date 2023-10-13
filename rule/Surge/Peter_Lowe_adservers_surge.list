@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 12 Oct 2023 08:55:19 GMT
-# entries:        3726
+# entries:        3724
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,6 +17,7 @@ DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
 DOMAIN-SUFFIX,180searchassistant.com
+DOMAIN-SUFFIX,1link2020.com
 DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
@@ -49,7 +50,6 @@ DOMAIN-SUFFIX,82o9v830.com
 DOMAIN-SUFFIX,a-ads.com
 DOMAIN-SUFFIX,a.mktw.net
 DOMAIN-SUFFIX,a.muloqot.uz
-DOMAIN-SUFFIX,a.sakh.com
 DOMAIN-SUFFIX,a.ucoz.net
 DOMAIN-SUFFIX,a.ucoz.ru
 DOMAIN-SUFFIX,a.vartoken.com
@@ -1183,7 +1183,6 @@ DOMAIN-SUFFIX,berp.com
 DOMAIN-SUFFIX,bespoke.iln8.net
 DOMAIN-SUFFIX,bestboundary.com
 DOMAIN-SUFFIX,bestbuy.7tiv.net
-DOMAIN-SUFFIX,bestsearch.net
 DOMAIN-SUFFIX,bewilderedblade.com
 DOMAIN-SUFFIX,bfmio.com
 DOMAIN-SUFFIX,bhcumsc.com
@@ -1200,7 +1199,6 @@ DOMAIN-SUFFIX,bigbangmedia.com
 DOMAIN-SUFFIX,bigclicks.com
 DOMAIN-SUFFIX,bigreal.org
 DOMAIN-SUFFIX,billboard.cz
-DOMAIN-SUFFIX,biosda.com
 DOMAIN-SUFFIX,bitmedianetwork.com
 DOMAIN-SUFFIX,bizible.com
 DOMAIN-SUFFIX,bizographics.com
@@ -1769,7 +1767,6 @@ DOMAIN-SUFFIX,extreme-dm.com
 DOMAIN-SUFFIX,extremetracking.com
 DOMAIN-SUFFIX,eyeblaster.com
 DOMAIN-SUFFIX,eyeota.net
-DOMAIN-SUFFIX,eyereturn.com
 DOMAIN-SUFFIX,eyeviewads.com
 DOMAIN-SUFFIX,eyewonder.com
 DOMAIN-SUFFIX,ezula.com
@@ -3345,6 +3342,7 @@ DOMAIN-SUFFIX,tntclix.co.uk
 DOMAIN-SUFFIX,toecircle.com
 DOMAIN-SUFFIX,toothbrushnote.com
 DOMAIN-SUFFIX,top-casting-termine.de
+DOMAIN-SUFFIX,top-site-list.com
 DOMAIN-SUFFIX,top.list.ru
 DOMAIN-SUFFIX,top.mail.ru
 DOMAIN-SUFFIX,top100-images.rambler.ru

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310121259
+## ! Version: 202310130924
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Oct 2023 12:59 UTC
+## ! Last modified: 13 Oct 2023 09:24 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1167,6 +1167,7 @@ DOMAIN-SUFFIX,jamexistence.com, reject
 DOMAIN-SUFFIX,jimny.pro, reject
 DOMAIN-SUFFIX,joblessdrum.com, reject
 DOMAIN-SUFFIX,joyoussurprise.com, reject
+DOMAIN-SUFFIX,jubilantcanyon.com, reject
 DOMAIN-SUFFIX,justicejudo.com, reject
 DOMAIN-SUFFIX,k54nw.pw, reject
 DOMAIN-SUFFIX,kitesquirrel.com, reject
@@ -1423,6 +1424,7 @@ DOMAIN-SUFFIX,protestcopy.com, reject
 DOMAIN-SUFFIX,proudprose.com, reject
 DOMAIN-SUFFIX,psychedelicarithmetic.com, reject
 DOMAIN-SUFFIX,psychedelicchess.com, reject
+DOMAIN-SUFFIX,pubimgs.com, reject
 DOMAIN-SUFFIX,puffyloss.com, reject
 DOMAIN-SUFFIX,puffypaste.com, reject
 DOMAIN-SUFFIX,puffypull.com, reject
@@ -1962,6 +1964,7 @@ DOMAIN-SUFFIX,whineattempt.com, reject
 DOMAIN-SUFFIX,whirlwealth.com, reject
 DOMAIN-SUFFIX,whiskyqueue.com, reject
 DOMAIN-SUFFIX,whisperingbadge.com, reject
+DOMAIN-SUFFIX,whisperingcascade.com, reject
 DOMAIN-SUFFIX,whisperingcrib.com, reject
 DOMAIN-SUFFIX,whisperingsummit.com, reject
 DOMAIN-SUFFIX,whispermeeting.com, reject

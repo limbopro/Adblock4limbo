@@ -7,9 +7,10 @@ const regex = '<head>';
 const replace_str = '<head>\
 <link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
 <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>\
-<script type="text/javascript" async="async" src="https://limbopro.com/Adguard/crisp.js"></script>\
-' // 后面这一段 script 为引入 Cript 聊天系统；
+'
 
+//<script type="text/javascript" async="async" src="https://limbopro.com/Adguard/crisp.js"></script>\
+//' // 后面这一段 script 为引入 Cript 聊天系统；
 
 // 定义响应体
 if ($response.body) {

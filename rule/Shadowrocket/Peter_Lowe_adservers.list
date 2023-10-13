@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 12 Oct 2023 08:55:19 GMT
-# entries:        3726
+# entries:        3724
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,6 +17,7 @@ DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
 DOMAIN-SUFFIX,180searchassistant.com, reject
+DOMAIN-SUFFIX,1link2020.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
@@ -49,7 +50,6 @@ DOMAIN-SUFFIX,82o9v830.com, reject
 DOMAIN-SUFFIX,a-ads.com, reject
 DOMAIN-SUFFIX,a.mktw.net, reject
 DOMAIN-SUFFIX,a.muloqot.uz, reject
-DOMAIN-SUFFIX,a.sakh.com, reject
 DOMAIN-SUFFIX,a.ucoz.net, reject
 DOMAIN-SUFFIX,a.ucoz.ru, reject
 DOMAIN-SUFFIX,a.vartoken.com, reject
@@ -1183,7 +1183,6 @@ DOMAIN-SUFFIX,berp.com, reject
 DOMAIN-SUFFIX,bespoke.iln8.net, reject
 DOMAIN-SUFFIX,bestboundary.com, reject
 DOMAIN-SUFFIX,bestbuy.7tiv.net, reject
-DOMAIN-SUFFIX,bestsearch.net, reject
 DOMAIN-SUFFIX,bewilderedblade.com, reject
 DOMAIN-SUFFIX,bfmio.com, reject
 DOMAIN-SUFFIX,bhcumsc.com, reject
@@ -1200,7 +1199,6 @@ DOMAIN-SUFFIX,bigbangmedia.com, reject
 DOMAIN-SUFFIX,bigclicks.com, reject
 DOMAIN-SUFFIX,bigreal.org, reject
 DOMAIN-SUFFIX,billboard.cz, reject
-DOMAIN-SUFFIX,biosda.com, reject
 DOMAIN-SUFFIX,bitmedianetwork.com, reject
 DOMAIN-SUFFIX,bizible.com, reject
 DOMAIN-SUFFIX,bizographics.com, reject
@@ -1769,7 +1767,6 @@ DOMAIN-SUFFIX,extreme-dm.com, reject
 DOMAIN-SUFFIX,extremetracking.com, reject
 DOMAIN-SUFFIX,eyeblaster.com, reject
 DOMAIN-SUFFIX,eyeota.net, reject
-DOMAIN-SUFFIX,eyereturn.com, reject
 DOMAIN-SUFFIX,eyeviewads.com, reject
 DOMAIN-SUFFIX,eyewonder.com, reject
 DOMAIN-SUFFIX,ezula.com, reject
@@ -3345,6 +3342,7 @@ DOMAIN-SUFFIX,tntclix.co.uk, reject
 DOMAIN-SUFFIX,toecircle.com, reject
 DOMAIN-SUFFIX,toothbrushnote.com, reject
 DOMAIN-SUFFIX,top-casting-termine.de, reject
+DOMAIN-SUFFIX,top-site-list.com, reject
 DOMAIN-SUFFIX,top.list.ru, reject
 DOMAIN-SUFFIX,top.mail.ru, reject
 DOMAIN-SUFFIX,top100-images.rambler.ru, reject

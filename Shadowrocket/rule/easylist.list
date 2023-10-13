@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310130924
+## ! Version: 202310131328
 ## ! Title: EasyList
-## ! Last modified: 13 Oct 2023 09:24 UTC
+## ! Last modified: 13 Oct 2023 13:28 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3837,6 +3837,7 @@ DOMAIN-SUFFIX,badslopes.com, reject
 DOMAIN-SUFFIX,badspads.com, reject
 DOMAIN-SUFFIX,badtopwitch.work, reject
 DOMAIN-SUFFIX,badubaho.com, reject
+DOMAIN-SUFFIX,badujaub.xyz, reject
 DOMAIN-SUFFIX,badword.xyz, reject
 DOMAIN-SUFFIX,baect.com, reject
 DOMAIN-SUFFIX,baelungilt.guru, reject
@@ -12377,6 +12378,7 @@ DOMAIN-SUFFIX,hazelhannahfruit.com, reject
 DOMAIN-SUFFIX,hazelmutenessorchard.com, reject
 DOMAIN-SUFFIX,hazelnutshighs.com, reject
 DOMAIN-SUFFIX,hazicu.hothomefuck.com, reject
+DOMAIN-SUFFIX,hazoopso.net, reject
 DOMAIN-SUFFIX,hazydespise.com, reject
 DOMAIN-SUFFIX,hazymarvellous.com, reject
 DOMAIN-SUFFIX,hb-247.com, reject
@@ -26859,6 +26861,7 @@ DOMAIN-SUFFIX,tvbxrr4ym3.click, reject
 DOMAIN-SUFFIX,tvprocessing.com, reject
 DOMAIN-SUFFIX,tvqqrycnutpp.com, reject
 DOMAIN-SUFFIX,tvxetxjvobm.com, reject
+DOMAIN-SUFFIX,tvxrpdfgitlbsb.xyz, reject
 DOMAIN-SUFFIX,twaonhcjwoaouj.com, reject
 DOMAIN-SUFFIX,twazzyoidwlfe.com, reject
 DOMAIN-SUFFIX,tweenydone.website, reject

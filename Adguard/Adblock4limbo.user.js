@@ -606,28 +606,29 @@ function uBlockOrigin_add() {
 
 function adblock4limbo() { // tgChat
 
-    // 新建 newbody
-    let new_body = document.createElement('body');
-    new_body.id = 'newbody';
+    // 新建 newdiv
+    let new_body = document.createElement('div'); // body 换为 div
+    new_body.id = 'newdiv';
 
     let body = document.body;
-    document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
-    //document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
+    //document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
+    document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
 
     // 定义按钮
     let new_a = document.createElement('a')
     new_a.id = "new_a";
     new_a.href = "https://t.me/Adblock4limbo/21";
-    
+
     var origin = '\
+    transition-duration: 666ms;\
     transition-property: height;\
+    z-index: 114154;\
     opacity: 1;\
     width: 45px;\
     height: 45px;\
     top: 35%;\
     right: 3.5%;\
     position: fixed;\
-    z-index: 114154;\
     border: aliceblue;\
     background-color: transparent;\
     background-image: url("https://limbopro.com/Adblock4limbo.svg") !important;\
@@ -636,27 +637,60 @@ function adblock4limbo() { // tgChat
 '
 
     new_a.style = origin;
-    document.getElementById('newbody').appendChild(new_a); // 在 newbody 下添加按钮
+    document.getElementById('newdiv').appendChild(new_a); // 在 newdiv 下添加按钮
 }
 
-adblock4limbo() // 调用 tgchat
-
-function hidden_adblock4limbo() { // 隐藏 tgchat
+// 自动隐藏 chat 按钮
+function hidden_adblock4limbo() { 
     let last_known_scroll_position = window.scrollY;
     setTimeout(() => {
         if (last_known_scroll_position !== window.scrollY) {
-            document.getElementById('new_a').style.height = '45px'; 
-            console.log("还在滑动...");
+            document.getElementById('new_a').style.height = '45px';
+            document.getElementById('newdiv').style.zIndex = '114154';
+            console.log("页面还在滑动...");
         } else {
-            document.getElementById('new_a').style.height = '0px'; 
-            console.log("即将隐藏...");
+            document.getElementById('new_a').style.height = '0px';
+            document.getElementById('newdiv').style.zIndex = '-1';
+            console.log("按钮即将隐藏...");
         }
     }, 1000)
 }
 
+
+adblock4limbo(); // 插入 chat 聊天按钮
+
 setInterval(() => {
     hidden_adblock4limbo();
 }, 1500)
+
+/* 
+如不想显示 chat 聊天按钮 
+可使用双斜杠 // 注释上述函数调用代码；
+举例如下：
+
+// adblock4limbo();
+// hidden_adblock4limbo();
+
+*/
+
+
+// 当鼠标🖱靠近时显示按钮
+function newdiv_show() { // 显示按钮
+    document.getElementById('new_a').style.height = '45px';
+    document.getElementById('newdiv').style.zIndex = '114154';
+}
+
+onload = () => {
+    const mousemove_element = document.querySelectorAll('body')[0];
+    // 绑定鼠标移动事件
+    mousemove_element.addEventListener('mousemove', e => {
+        console.log("鼠标在移动");
+        if (e.offsetX > 1080) {
+            newdiv_show();
+            console.log(e.offsetX);
+        }
+    });
+}
 
 
 // 无数函数及方法的组合使脚本更灵活

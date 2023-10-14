@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310131328
+## ! Version: 202310140236
 ## ! Title: EasyPrivacy
-## ! Last modified: 13 Oct 2023 13:28 UTC
+## ! Last modified: 14 Oct 2023 02:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -314,6 +314,7 @@ DOMAIN-SUFFIX,speedyrhino.co
 DOMAIN-SUFFIX,spinnaker-js.com
 DOMAIN-SUFFIX,stack-sonar.com
 DOMAIN-SUFFIX,stat.ovh
+DOMAIN-SUFFIX,statisticsplatform.com
 DOMAIN-SUFFIX,statsbox.info
 DOMAIN-SUFFIX,stpmgo.com
 DOMAIN-SUFFIX,summerhamster.com
@@ -780,9 +781,11 @@ DOMAIN-SUFFIX,cratecamera.com
 DOMAIN-SUFFIX,crawlclocks.com
 DOMAIN-SUFFIX,crayoncompetition.com
 DOMAIN-SUFFIX,creditcreature.com
+DOMAIN-SUFFIX,crimsonmeadow.com
 DOMAIN-SUFFIX,critictruck.com
 DOMAIN-SUFFIX,crookedcreature.com
 DOMAIN-SUFFIX,crowdedmass.com
+DOMAIN-SUFFIX,crystalboulevard.com
 DOMAIN-SUFFIX,cubchannel.com
 DOMAIN-SUFFIX,cuddlycake.com
 DOMAIN-SUFFIX,culturedcamera.com
@@ -1661,6 +1664,7 @@ DOMAIN-SUFFIX,snoresmile.com
 DOMAIN-SUFFIX,soaprange.com
 DOMAIN-SUFFIX,soapsmoke.com
 DOMAIN-SUFFIX,soggysponge.com
+DOMAIN-SUFFIX,solarislabyrinth.com
 DOMAIN-SUFFIX,somberattack.com
 DOMAIN-SUFFIX,somberscarecrow.com
 DOMAIN-SUFFIX,sombersea.com
@@ -3367,9 +3371,11 @@ DOMAIN-SUFFIX,track.storm.mg
 DOMAIN-SUFFIX,track.tomwx.net
 DOMAIN-SUFFIX,track.unidata.ai
 DOMAIN-SUFFIX,tracking.cat898.com
+DOMAIN-SUFFIX,trail.71baomu.com
 DOMAIN-SUFFIX,videostats.kakao.com
 DOMAIN-SUFFIX,web-trace.ksapisrv.com
 DOMAIN-SUFFIX,webtrack.pospal.cn
+DOMAIN-SUFFIX,wlog.kuaishou.com
 DOMAIN-SUFFIX,tracking.vid4u.org
 DOMAIN-SUFFIX,a.centrum.cz
 DOMAIN-SUFFIX,bisko.mall.tv
@@ -3539,6 +3545,7 @@ DOMAIN-SUFFIX,stats.asp24.pl
 DOMAIN-SUFFIX,stats.media.onet.pl
 DOMAIN-SUFFIX,stats.ulixes.pl
 DOMAIN-SUFFIX,statystyki.panelek.com
+DOMAIN-SUFFIX,tp.convertiser.com
 DOMAIN-SUFFIX,tracking.novem.pl
 DOMAIN-SUFFIX,trc.gpcdn.pl
 DOMAIN-SUFFIX,ad-tracker-api.luizalabs.com
@@ -4148,6 +4155,7 @@ DOMAIN-SUFFIX,tracker.affiliate.iqbroker.com
 DOMAIN-SUFFIX,tracker.nbcuas.com
 DOMAIN-SUFFIX,tracker.ranker.com
 DOMAIN-SUFFIX,tracker.shopclues.com
+DOMAIN-SUFFIX,tracking.bloomberg.com
 DOMAIN-SUFFIX,tracking.carsales.com.au
 DOMAIN-SUFFIX,tracking.christianpost.com
 DOMAIN-SUFFIX,tracking.digitalocean.com
@@ -21212,6 +21220,7 @@ DOMAIN-SUFFIX,tags.aljazeera.net
 DOMAIN-SUFFIX,insight.olx.ba
 DOMAIN-SUFFIX,4399stat.5054399.com
 DOMAIN-SUFFIX,a.itsmore.cn
+DOMAIN-SUFFIX,accwww9.53kf.com
 DOMAIN-SUFFIX,adstats.tencentmusic.com
 DOMAIN-SUFFIX,al.autohome.com.cn
 DOMAIN-SUFFIX,ams.lelong.com.my
@@ -21221,6 +21230,8 @@ DOMAIN-SUFFIX,analytics.163.com
 DOMAIN-SUFFIX,analytics.cnblogs.com
 DOMAIN-SUFFIX,analytics.oceanengine.com
 DOMAIN-SUFFIX,analytics.shop.hisense.com
+DOMAIN-SUFFIX,apilog-web.acfun.cn
+DOMAIN-SUFFIX,apiwmda.58.com.cn
 DOMAIN-SUFFIX,applog.yiche.com
 DOMAIN-SUFFIX,audit.qiuwen.net.cn
 DOMAIN-SUFFIX,banana.le.com
@@ -21271,6 +21282,7 @@ DOMAIN-SUFFIX,pb.i.sogou.com
 DOMAIN-SUFFIX,phpstat.cntcm.com.cn
 DOMAIN-SUFFIX,pingjs.qq.com
 DOMAIN-SUFFIX,pixel.kknews.cc
+DOMAIN-SUFFIX,poro.58.com
 DOMAIN-SUFFIX,pv.ltn.com.tw
 DOMAIN-SUFFIX,pv.xcar.com.cn
 DOMAIN-SUFFIX,pvx.xcar.com.cn
@@ -21288,6 +21300,7 @@ DOMAIN-SUFFIX,sngmta.qq.com
 DOMAIN-SUFFIX,sofire.bdstatic.com
 DOMAIN-SUFFIX,ssp.hinet.net
 DOMAIN-SUFFIX,stadig.ifeng.com
+DOMAIN-SUFFIX,stat-58home.58che.com
 DOMAIN-SUFFIX,stat.*.v-56.com
 DOMAIN-SUFFIX,stat.caijing.com.cn
 DOMAIN-SUFFIX,stat.funshion.net
@@ -21310,6 +21323,7 @@ DOMAIN-SUFFIX,track.tom.com
 DOMAIN-SUFFIX,trackcommon.hujiang.com
 DOMAIN-SUFFIX,tracker.ai.xiaomi.com
 DOMAIN-SUFFIX,trackjay.cool3c.com
+DOMAIN-SUFFIX,trail.53kf.com
 DOMAIN-SUFFIX,uestat.video.qiyi.com
 DOMAIN-SUFFIX,utrack.hexun.com
 DOMAIN-SUFFIX,vatrack.hinet.net
@@ -21433,6 +21447,7 @@ DOMAIN-SUFFIX,view.fujitv.co.jp
 DOMAIN-SUFFIX,x.allabout.co.jp
 DOMAIN-SUFFIX,yjtag.yahoo.co.jp
 DOMAIN-SUFFIX,ad-log.dable.io
+DOMAIN-SUFFIX,adoffice.11st.co.kr
 DOMAIN-SUFFIX,aem-collector.daumkakao.io
 DOMAIN-SUFFIX,count.munhwa.com
 DOMAIN-SUFFIX,hits.zdnet.co.kr
@@ -21441,6 +21456,7 @@ DOMAIN-SUFFIX,l.m.naver.com
 DOMAIN-SUFFIX,log.etoday.co.kr
 DOMAIN-SUFFIX,log.zdnet.co.kr
 DOMAIN-SUFFIX,nil.naver.com
+DOMAIN-SUFFIX,rake.11st.co.kr
 DOMAIN-SUFFIX,sp.naver.com
 DOMAIN-SUFFIX,stat.i3.dmm.com
 DOMAIN-SUFFIX,stat.tiara.daum.net

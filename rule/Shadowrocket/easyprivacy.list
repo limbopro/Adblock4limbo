@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310131328
+## ! Version: 202310140236
 ## ! Title: EasyPrivacy
-## ! Last modified: 13 Oct 2023 13:28 UTC
+## ! Last modified: 14 Oct 2023 02:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -314,6 +314,7 @@ DOMAIN-SUFFIX,speedyrhino.co, reject
 DOMAIN-SUFFIX,spinnaker-js.com, reject
 DOMAIN-SUFFIX,stack-sonar.com, reject
 DOMAIN-SUFFIX,stat.ovh, reject
+DOMAIN-SUFFIX,statisticsplatform.com, reject
 DOMAIN-SUFFIX,statsbox.info, reject
 DOMAIN-SUFFIX,stpmgo.com, reject
 DOMAIN-SUFFIX,summerhamster.com, reject
@@ -780,9 +781,11 @@ DOMAIN-SUFFIX,cratecamera.com, reject
 DOMAIN-SUFFIX,crawlclocks.com, reject
 DOMAIN-SUFFIX,crayoncompetition.com, reject
 DOMAIN-SUFFIX,creditcreature.com, reject
+DOMAIN-SUFFIX,crimsonmeadow.com, reject
 DOMAIN-SUFFIX,critictruck.com, reject
 DOMAIN-SUFFIX,crookedcreature.com, reject
 DOMAIN-SUFFIX,crowdedmass.com, reject
+DOMAIN-SUFFIX,crystalboulevard.com, reject
 DOMAIN-SUFFIX,cubchannel.com, reject
 DOMAIN-SUFFIX,cuddlycake.com, reject
 DOMAIN-SUFFIX,culturedcamera.com, reject
@@ -1661,6 +1664,7 @@ DOMAIN-SUFFIX,snoresmile.com, reject
 DOMAIN-SUFFIX,soaprange.com, reject
 DOMAIN-SUFFIX,soapsmoke.com, reject
 DOMAIN-SUFFIX,soggysponge.com, reject
+DOMAIN-SUFFIX,solarislabyrinth.com, reject
 DOMAIN-SUFFIX,somberattack.com, reject
 DOMAIN-SUFFIX,somberscarecrow.com, reject
 DOMAIN-SUFFIX,sombersea.com, reject
@@ -3367,9 +3371,11 @@ DOMAIN-SUFFIX,track.storm.mg, reject
 DOMAIN-SUFFIX,track.tomwx.net, reject
 DOMAIN-SUFFIX,track.unidata.ai, reject
 DOMAIN-SUFFIX,tracking.cat898.com, reject
+DOMAIN-SUFFIX,trail.71baomu.com, reject
 DOMAIN-SUFFIX,videostats.kakao.com, reject
 DOMAIN-SUFFIX,web-trace.ksapisrv.com, reject
 DOMAIN-SUFFIX,webtrack.pospal.cn, reject
+DOMAIN-SUFFIX,wlog.kuaishou.com, reject
 DOMAIN-SUFFIX,tracking.vid4u.org, reject
 DOMAIN-SUFFIX,a.centrum.cz, reject
 DOMAIN-SUFFIX,bisko.mall.tv, reject
@@ -3539,6 +3545,7 @@ DOMAIN-SUFFIX,stats.asp24.pl, reject
 DOMAIN-SUFFIX,stats.media.onet.pl, reject
 DOMAIN-SUFFIX,stats.ulixes.pl, reject
 DOMAIN-SUFFIX,statystyki.panelek.com, reject
+DOMAIN-SUFFIX,tp.convertiser.com, reject
 DOMAIN-SUFFIX,tracking.novem.pl, reject
 DOMAIN-SUFFIX,trc.gpcdn.pl, reject
 DOMAIN-SUFFIX,ad-tracker-api.luizalabs.com, reject
@@ -4148,6 +4155,7 @@ DOMAIN-SUFFIX,tracker.affiliate.iqbroker.com, reject
 DOMAIN-SUFFIX,tracker.nbcuas.com, reject
 DOMAIN-SUFFIX,tracker.ranker.com, reject
 DOMAIN-SUFFIX,tracker.shopclues.com, reject
+DOMAIN-SUFFIX,tracking.bloomberg.com, reject
 DOMAIN-SUFFIX,tracking.carsales.com.au, reject
 DOMAIN-SUFFIX,tracking.christianpost.com, reject
 DOMAIN-SUFFIX,tracking.digitalocean.com, reject
@@ -21212,6 +21220,7 @@ DOMAIN-SUFFIX,tags.aljazeera.net, reject
 DOMAIN-SUFFIX,insight.olx.ba, reject
 DOMAIN-SUFFIX,4399stat.5054399.com, reject
 DOMAIN-SUFFIX,a.itsmore.cn, reject
+DOMAIN-SUFFIX,accwww9.53kf.com, reject
 DOMAIN-SUFFIX,adstats.tencentmusic.com, reject
 DOMAIN-SUFFIX,al.autohome.com.cn, reject
 DOMAIN-SUFFIX,ams.lelong.com.my, reject
@@ -21221,6 +21230,8 @@ DOMAIN-SUFFIX,analytics.163.com, reject
 DOMAIN-SUFFIX,analytics.cnblogs.com, reject
 DOMAIN-SUFFIX,analytics.oceanengine.com, reject
 DOMAIN-SUFFIX,analytics.shop.hisense.com, reject
+DOMAIN-SUFFIX,apilog-web.acfun.cn, reject
+DOMAIN-SUFFIX,apiwmda.58.com.cn, reject
 DOMAIN-SUFFIX,applog.yiche.com, reject
 DOMAIN-SUFFIX,audit.qiuwen.net.cn, reject
 DOMAIN-SUFFIX,banana.le.com, reject
@@ -21271,6 +21282,7 @@ DOMAIN-SUFFIX,pb.i.sogou.com, reject
 DOMAIN-SUFFIX,phpstat.cntcm.com.cn, reject
 DOMAIN-SUFFIX,pingjs.qq.com, reject
 DOMAIN-SUFFIX,pixel.kknews.cc, reject
+DOMAIN-SUFFIX,poro.58.com, reject
 DOMAIN-SUFFIX,pv.ltn.com.tw, reject
 DOMAIN-SUFFIX,pv.xcar.com.cn, reject
 DOMAIN-SUFFIX,pvx.xcar.com.cn, reject
@@ -21288,6 +21300,7 @@ DOMAIN-SUFFIX,sngmta.qq.com, reject
 DOMAIN-SUFFIX,sofire.bdstatic.com, reject
 DOMAIN-SUFFIX,ssp.hinet.net, reject
 DOMAIN-SUFFIX,stadig.ifeng.com, reject
+DOMAIN-SUFFIX,stat-58home.58che.com, reject
 DOMAIN-SUFFIX,stat.*.v-56.com, reject
 DOMAIN-SUFFIX,stat.caijing.com.cn, reject
 DOMAIN-SUFFIX,stat.funshion.net, reject
@@ -21310,6 +21323,7 @@ DOMAIN-SUFFIX,track.tom.com, reject
 DOMAIN-SUFFIX,trackcommon.hujiang.com, reject
 DOMAIN-SUFFIX,tracker.ai.xiaomi.com, reject
 DOMAIN-SUFFIX,trackjay.cool3c.com, reject
+DOMAIN-SUFFIX,trail.53kf.com, reject
 DOMAIN-SUFFIX,uestat.video.qiyi.com, reject
 DOMAIN-SUFFIX,utrack.hexun.com, reject
 DOMAIN-SUFFIX,vatrack.hinet.net, reject
@@ -21433,6 +21447,7 @@ DOMAIN-SUFFIX,view.fujitv.co.jp, reject
 DOMAIN-SUFFIX,x.allabout.co.jp, reject
 DOMAIN-SUFFIX,yjtag.yahoo.co.jp, reject
 DOMAIN-SUFFIX,ad-log.dable.io, reject
+DOMAIN-SUFFIX,adoffice.11st.co.kr, reject
 DOMAIN-SUFFIX,aem-collector.daumkakao.io, reject
 DOMAIN-SUFFIX,count.munhwa.com, reject
 DOMAIN-SUFFIX,hits.zdnet.co.kr, reject
@@ -21441,6 +21456,7 @@ DOMAIN-SUFFIX,l.m.naver.com, reject
 DOMAIN-SUFFIX,log.etoday.co.kr, reject
 DOMAIN-SUFFIX,log.zdnet.co.kr, reject
 DOMAIN-SUFFIX,nil.naver.com, reject
+DOMAIN-SUFFIX,rake.11st.co.kr, reject
 DOMAIN-SUFFIX,sp.naver.com, reject
 DOMAIN-SUFFIX,stat.i3.dmm.com, reject
 DOMAIN-SUFFIX,stat.tiara.daum.net, reject

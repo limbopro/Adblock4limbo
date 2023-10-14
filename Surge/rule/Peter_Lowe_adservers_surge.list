@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 12 Oct 2023 08:55:19 GMT
-# entries:        3724
+# last updated:   Fri, 13 Oct 2023 21:36:50 GMT
+# entries:        3729
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1525,6 +1525,7 @@ DOMAIN-SUFFIX,crawlclocks.com
 DOMAIN-SUFFIX,crazyegg.com
 DOMAIN-SUFFIX,crazypopups.com
 DOMAIN-SUFFIX,creatives.livejasmin.com
+DOMAIN-SUFFIX,crimsonmeadow.com
 DOMAIN-SUFFIX,criteo.com
 DOMAIN-SUFFIX,criteo.net
 DOMAIN-SUFFIX,critictruck.com
@@ -1535,6 +1536,7 @@ DOMAIN-SUFFIX,crta.dailymail.co.uk
 DOMAIN-SUFFIX,crtv.mate1.com
 DOMAIN-SUFFIX,crwdcntrl.net
 DOMAIN-SUFFIX,crypto-loot.org
+DOMAIN-SUFFIX,crystalboulevard.com
 DOMAIN-SUFFIX,cs.co
 DOMAIN-SUFFIX,ctnetwork.hu
 DOMAIN-SUFFIX,culturedcrayon.com
@@ -2505,6 +2507,8 @@ DOMAIN-SUFFIX,nothingunit.com
 DOMAIN-SUFFIX,novem.pl
 DOMAIN-SUFFIX,npttech.com
 DOMAIN-SUFFIX,nr-data.net
+DOMAIN-SUFFIX,nr.mmcdn.com
+DOMAIN-SUFFIX,nr.static.mmcdn.com
 DOMAIN-SUFFIX,ns1p.net
 DOMAIN-SUFFIX,ntv.io
 DOMAIN-SUFFIX,ntvk1.ru
@@ -3455,6 +3459,7 @@ DOMAIN-SUFFIX,traffiq.com
 DOMAIN-SUFFIX,trafic.ro
 DOMAIN-SUFFIX,traildelsfars.com
 DOMAIN-SUFFIX,traktrafficflow.com
+DOMAIN-SUFFIX,tranquilcanyon.com
 DOMAIN-SUFFIX,tranquilside.com
 DOMAIN-SUFFIX,travis.bosscasinos.com
 DOMAIN-SUFFIX,traytouch.com

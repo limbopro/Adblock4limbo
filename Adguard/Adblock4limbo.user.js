@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.10.13
+// @version      0.3.10.14
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -194,7 +194,7 @@ const imax = {
         nivod: "iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
-        javday: "",
+        javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos 
         javbus: ".ad-item,.ad-box {display:none !important}",
         _4hu: "#adsbox,.wrap + #midBox ,.wrap + #btmBox,script[src=\"/static/base.js\"] + #couplet ,.search + #midBox,.mod.clearfix,dl#randomBox,dl#listwoBox ,body[ontouchstart] > #topBox, .wrap + #midBox, .wrap + #btmBox, .clearfix.col5.row > #listBox {display: none! important;}",
@@ -275,6 +275,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             pornhub_sidebar_ads();
             break;
         case 'missav':
+            div_ad_missav(); // 广告空白高度 height 调制0；
             window_open_defuser(); // 打断 window.open 施法
             var ua_missav = navigator.userAgent.toLowerCase();
             var mobile_missav = "mobile";
@@ -455,6 +456,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
         case 'javday':
             // nothing to do.
+            css_adsRemove(imax.css.javday, 0, 'javday')
             break;
 
         case 'xvideos':
@@ -604,7 +606,7 @@ function uBlockOrigin_add() {
 /* End */
 
 
-function adblock4limbo() { // tgChat
+function adblock4limbo(x) { // tgChat
 
     // 新建 newdiv
     let new_body = document.createElement('div'); // body 换为 div
@@ -624,10 +626,8 @@ function adblock4limbo() { // tgChat
     transition-property: height;\
     z-index: 114154;\
     opacity: 1;\
-    width: 45px;\
-    height: 45px;\
-    top: 35%;\
-    right: 3.5%;\
+    bottom: 15%;\
+    right: 2.5%;\
     position: fixed;\
     border: aliceblue;\
     background-color: transparent;\
@@ -635,33 +635,47 @@ function adblock4limbo() { // tgChat
     background-size: 100% !important;\
     background-repeat: no-repeat;\
 '
-
     new_a.style = origin;
     document.getElementById('newdiv').appendChild(new_a); // 在 newdiv 下添加按钮
+    document.getElementById('new_a').style.height = x;
+    document.getElementById('new_a').style.width = x;
+}
+
+// 定义按钮尺寸
+function adblock4limbo_svg_switch_by_ua() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (/\b(android|iphone|ipad|ipod)\b/i.test(userAgent)) {
+        var size = '54px';
+        return size;
+    } else {
+        var size = '75px';
+        return size;
+    }
 }
 
 // 自动隐藏 chat 按钮
-function hidden_adblock4limbo() { 
+function hidden_adblock4limbo() {
     let last_known_scroll_position = window.scrollY;
     setTimeout(() => {
+        const new_a = document.getElementById('new_a'); const new_div = document.getElementById('newdiv');
         if (last_known_scroll_position !== window.scrollY) {
-            document.getElementById('new_a').style.height = '45px';
-            document.getElementById('newdiv').style.zIndex = '114154';
+            new_a.style.height = adblock4limbo_svg_switch_by_ua();
+            new_a.style.zIndex = '114154';
             console.log("页面还在滑动...");
         } else {
-            document.getElementById('new_a').style.height = '0px';
-            document.getElementById('newdiv').style.zIndex = '-1';
+            new_a.style.height = '0px';
+            new_div.style.zIndex = '-1';
             console.log("按钮即将隐藏...");
         }
-    }, 1000)
+    }, 1500)
 }
 
 
-adblock4limbo(); // 插入 chat 聊天按钮
+adblock4limbo(adblock4limbo_svg_switch_by_ua()); // 插入 chat 聊天按钮
 
 setInterval(() => {
     hidden_adblock4limbo();
-}, 1500)
+}, 2500)
 
 /* 
 如不想显示 chat 聊天按钮 
@@ -673,10 +687,9 @@ setInterval(() => {
 
 */
 
-
 // 当鼠标🖱靠近时显示按钮
 function newdiv_show() { // 显示按钮
-    document.getElementById('new_a').style.height = '45px';
+    document.getElementById('new_a').style.height = adblock4limbo_svg_switch_by_ua();
     document.getElementById('newdiv').style.zIndex = '114154';
 }
 
@@ -828,6 +841,17 @@ function cloudflare_captchaBypass() {
         window.location.reload();
         console.log("captchaBypass done;")
     };
+}
+
+
+// missav 广告移除后导致的空白
+function div_ad_missav() {
+    let div_ad = document.querySelectorAll('div.mx-auto[style]')
+    for (i = 0; i < div_ad.length; i++) {
+        if (div_ad[i].querySelectorAll('[target=\'_blank\']').length >= 1) {
+            div_ad[i].style.height = '0px'
+        }
+    }
 }
 
 /* 循环播放 missAV */

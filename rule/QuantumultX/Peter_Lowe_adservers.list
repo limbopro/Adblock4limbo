@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 12 Oct 2023 08:55:19 GMT
-# entries:        3724
+# last updated:   Fri, 13 Oct 2023 21:36:50 GMT
+# entries:        3729
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1525,6 +1525,7 @@ DOMAIN-SUFFIX,crawlclocks.com, reject
 DOMAIN-SUFFIX,crazyegg.com, reject
 DOMAIN-SUFFIX,crazypopups.com, reject
 DOMAIN-SUFFIX,creatives.livejasmin.com, reject
+DOMAIN-SUFFIX,crimsonmeadow.com, reject
 DOMAIN-SUFFIX,criteo.com, reject
 DOMAIN-SUFFIX,criteo.net, reject
 DOMAIN-SUFFIX,critictruck.com, reject
@@ -1535,6 +1536,7 @@ DOMAIN-SUFFIX,crta.dailymail.co.uk, reject
 DOMAIN-SUFFIX,crtv.mate1.com, reject
 DOMAIN-SUFFIX,crwdcntrl.net, reject
 DOMAIN-SUFFIX,crypto-loot.org, reject
+DOMAIN-SUFFIX,crystalboulevard.com, reject
 DOMAIN-SUFFIX,cs.co, reject
 DOMAIN-SUFFIX,ctnetwork.hu, reject
 DOMAIN-SUFFIX,culturedcrayon.com, reject
@@ -2505,6 +2507,8 @@ DOMAIN-SUFFIX,nothingunit.com, reject
 DOMAIN-SUFFIX,novem.pl, reject
 DOMAIN-SUFFIX,npttech.com, reject
 DOMAIN-SUFFIX,nr-data.net, reject
+DOMAIN-SUFFIX,nr.mmcdn.com, reject
+DOMAIN-SUFFIX,nr.static.mmcdn.com, reject
 DOMAIN-SUFFIX,ns1p.net, reject
 DOMAIN-SUFFIX,ntv.io, reject
 DOMAIN-SUFFIX,ntvk1.ru, reject
@@ -3455,6 +3459,7 @@ DOMAIN-SUFFIX,traffiq.com, reject
 DOMAIN-SUFFIX,trafic.ro, reject
 DOMAIN-SUFFIX,traildelsfars.com, reject
 DOMAIN-SUFFIX,traktrafficflow.com, reject
+DOMAIN-SUFFIX,tranquilcanyon.com, reject
 DOMAIN-SUFFIX,tranquilside.com, reject
 DOMAIN-SUFFIX,travis.bosscasinos.com, reject
 DOMAIN-SUFFIX,traytouch.com, reject

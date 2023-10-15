@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310141533
+## ! Version: 202310151115
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Oct 2023 15:33 UTC
+## ! Last modified: 15 Oct 2023 11:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -177,6 +177,7 @@ DOMAIN-SUFFIX,glookup.info, reject
 DOMAIN-SUFFIX,go-mpulse.net, reject
 DOMAIN-SUFFIX,googleoptimize.com, reject
 DOMAIN-SUFFIX,googletagmanager.com, reject
+DOMAIN-SUFFIX,gw-dv.vip, reject
 DOMAIN-SUFFIX,hdmtools.com, reject
 DOMAIN-SUFFIX,hs-analytics.net, reject
 DOMAIN-SUFFIX,hsadspixel.net, reject
@@ -2745,6 +2746,7 @@ DOMAIN-SUFFIX,stats-newyork1.bloxcms.com, reject
 DOMAIN-SUFFIX,stats.big-boards.com, reject
 DOMAIN-SUFFIX,stats.bitgravity.com, reject
 DOMAIN-SUFFIX,stats.bluebillywig.com, reject
+DOMAIN-SUFFIX,stats.bradmax.com, reject
 DOMAIN-SUFFIX,stats.callnowbutton.com, reject
 DOMAIN-SUFFIX,stats.cmcigroup.com, reject
 DOMAIN-SUFFIX,stats.curds.io, reject
@@ -3816,6 +3818,7 @@ DOMAIN-SUFFIX,crta.metro.co.uk, reject
 DOMAIN-SUFFIX,crumbs.robinhood.com, reject
 DOMAIN-SUFFIX,cryo.socialblade.com, reject
 DOMAIN-SUFFIX,cstats.sankakucomplex.com, reject
+DOMAIN-SUFFIX,cwt.citywire.info, reject
 DOMAIN-SUFFIX,d.skk.moe, reject
 DOMAIN-SUFFIX,data.allstate.com, reject
 DOMAIN-SUFFIX,data.guide.photobucket.com, reject
@@ -4090,6 +4093,7 @@ DOMAIN-SUFFIX,stats.wwitv.com, reject
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv, reject
 DOMAIN-SUFFIX,t.3hentai.net, reject
 DOMAIN-SUFFIX,t.9gag.com, reject
+DOMAIN-SUFFIX,t.airasia.com, reject
 DOMAIN-SUFFIX,t.allmodern.com, reject
 DOMAIN-SUFFIX,t.appsflyer.com, reject
 DOMAIN-SUFFIX,t.av.st, reject
@@ -21518,6 +21522,7 @@ DOMAIN-SUFFIX,counter.drom.ru, reject
 DOMAIN-SUFFIX,counter.sibnet.ru, reject
 DOMAIN-SUFFIX,cvt1.sibnet.ru, reject
 DOMAIN-SUFFIX,data.glamour.ru, reject
+DOMAIN-SUFFIX,goya.rutube.ru, reject
 DOMAIN-SUFFIX,link.subscribe.ru, reject
 DOMAIN-SUFFIX,log.ren.tv, reject
 DOMAIN-SUFFIX,log.rutube.ru, reject

@@ -188,7 +188,7 @@ const imax = {
         missav: "a[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         porn91: "br, .ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
-        pornhubx: "iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
+        pornhubx: "iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank'] {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none !important}",
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
@@ -631,7 +631,7 @@ function adblock4limbo(x) { // tgChat
     // 定义按钮
     let x4Home = document.createElement('button')
     x4Home.id = "x4Home";
-    x4Home.setAttribute('onclick', "x4Daohang_create_show('1')")
+    x4Home.setAttribute('onclick', "x4Daohang_show('1')")
     //x4Home.onclick = 'xNav("x4Daohang", "webChat")';
     //x4Home.href = "https://t.me/Adblock4limbo/21";
     //x4Home.target = "_blank";
@@ -684,7 +684,7 @@ function hidden_adblock4limbo() {
             } else {
                 x4Div_show('0');
             }
-        }, 3500)
+        }, 1500)
     } else {
         console.log("x4Home 不存在") // 不存在 啥也不做
     }
@@ -692,7 +692,7 @@ function hidden_adblock4limbo() {
 
 setInterval(() => {
     hidden_adblock4limbo();
-}, 1000)
+}, 2500)
 
 // 判断是否切换显示
 function x4Div_show(x) { // 显示按钮

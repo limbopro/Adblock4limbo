@@ -76,7 +76,6 @@
 // @match        https://mmfl02.com/*
 // @match        https://supjav.com/*
 // @match        https://hanime1.me/*
-// @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -166,7 +165,7 @@ tagName_appendChild('link', css_common.gehr, 'head'); // 动态引入 ublcok ori
 
 const imax = {
     js: {
-        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
+        //functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
         avple: "https://limbopro.com/Adguard/avple.js", // avple 同步至 Greasy 时需注释
         //contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
@@ -188,7 +187,7 @@ const imax = {
         missav: "a[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         porn91: "br, .ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
-        pornhubx: "iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
+        pornhubx: "iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link,a[target='_blank'] {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none !important}",
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
@@ -619,22 +618,22 @@ function uBlockOrigin_add() {
 
 /* End */
 
+
 function adblock4limbo(x) { // tgChat
-    // 新建 x4Div
+
+    // 新建 newdiv
     let new_body = document.createElement('div'); // body 换为 div
-    new_body.id = 'x4Div';
+    new_body.id = 'newdiv';
 
     let body = document.body;
     //document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
     document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
 
     // 定义按钮
-    let x4Home = document.createElement('button')
-    x4Home.id = "x4Home";
-    x4Home.setAttribute('onclick', "x4Daohang_create_show('1')")
-    //x4Home.onclick = 'xNav("x4Daohang", "webChat")';
-    //x4Home.href = "https://t.me/Adblock4limbo/21";
-    //x4Home.target = "_blank";
+    let new_a = document.createElement('a')
+    new_a.id = "new_a";
+    new_a.href = "https://t.me/Adblock4limbo/21";
+    new_a.target = "_blank";
 
     var origin = '\
     transition-duration: 666ms;\
@@ -644,17 +643,16 @@ function adblock4limbo(x) { // tgChat
     bottom: 15%;\
     right: 0.5%;\
     position: fixed;\
-    border: transparent;\
+    border: aliceblue;\
     background-color: transparent;\
     background-image: url("https://limbopro.com/Adblock4limbo.svg") !important;\
     background-size: 100% !important;\
     background-repeat: no-repeat;\
 '
-    x4Home.style = origin;
-    document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
-    document.getElementById('x4Home').style.height = x;
-    document.getElementById('x4Home').style.width = x;
-
+    new_a.style = origin;
+    document.getElementById('newdiv').appendChild(new_a); // 在 newdiv 下添加按钮
+    document.getElementById('new_a').style.height = x;
+    document.getElementById('new_a').style.width = x;
 }
 
 // 定义按钮尺寸
@@ -671,43 +669,69 @@ function adblock4limbo_svg_switch_by_width() {
     }
 }
 
+/*
+
+window.innerWidth
+window.innerHeight
+
+*/
+
+
 // 自动隐藏 chat 按钮
 function hidden_adblock4limbo() {
-    if (document.getElementById('x4Home')) {
-        console.log("x4Home 存在") // 存在
+    if (document.getElementById('new_a')) {
+        console.log("new_a 存在") // 存在
         let last_known_scroll_position = window.scrollY;
-        const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
+        const new_a = document.getElementById('new_a'); const new_div = document.getElementById('newdiv');
         setTimeout(() => {
             if (last_known_scroll_position !== window.scrollY) {
                 console.log("页面还在滑动...");
-                x4Div_show('1');
+                newdiv_show('1');
             } else {
-                x4Div_show('0');
+                newdiv_show('0');
             }
-        }, 3500)
+        }, 1500)
     } else {
-        console.log("x4Home 不存在") // 不存在 啥也不做
+        console.log("new_a 不存在") // 不存在 啥也不做
     }
 }
+
+
+const url_now = window.location.href.toLowerCase();
+if (/\b(google|bing)\b/i.test(url_now)) {
+    console.log("当前地址不执行 chat 聊天按钮插入")  // 如果当前 url 带有 google/bing 则不执行按钮插入
+} else {
+    adblock4limbo(adblock4limbo_svg_switch_by_width());
+} // 插入 chat 聊天按钮
 
 setInterval(() => {
     hidden_adblock4limbo();
-}, 1000)
+}, 2500)
 
-// 判断是否切换显示
-function x4Div_show(x) { // 显示按钮
-    const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
+
+/* 
+如不想显示 chat 聊天按钮 
+可使用双斜杠 // 注释上述函数调用代码；
+举例如下：
+
+// adblock4limbo();
+// hidden_adblock4limbo();
+
+*/
+
+// 当鼠标🖱靠近时显示按钮
+function newdiv_show(x) { // 显示按钮
+    const new_a = document.getElementById('new_a'); const new_div = document.getElementById('newdiv');
     if (x == 1) {
-        x4Home.style.height = adblock4limbo_svg_switch_by_width();
-        x4Home.style.width = adblock4limbo_svg_switch_by_width();
+        new_a.style.height = adblock4limbo_svg_switch_by_width();
+        new_a.style.width = adblock4limbo_svg_switch_by_width();
         new_div.style.zIndex = '114154';
     } else {
-        x4Home.style.height = '0%';
-        //x4Home.style.zIndex = '-114154';
+        new_a.style.height = '0px';
+        new_div.style.zIndex = '-1';
     }
 }
 
-// 当鼠标🖱靠近时显示按钮
 //onload = () => {
 const mousemove_element = document.querySelectorAll('body')[0];
 // 绑定鼠标移动事件
@@ -715,7 +739,7 @@ mousemove_element.addEventListener('mousemove', e => {
     //console.log("鼠标在移动");
     if (document.body.clientWidth) {
         if (e.offsetX >= 0.65 * document.body.clientWidth) {
-            x4Div_show('1');
+            newdiv_show('1');
             //console.log("鼠标移动位置为" + e.offsetX);
             //console.log("当前视宽为" + document.body.clientWidth);
         }
@@ -723,23 +747,6 @@ mousemove_element.addEventListener('mousemove', e => {
 });
 //}
 
-const url_now = window.location.href.toLowerCase();
-if (/\b(google|bing)\b/i.test(url_now)) {
-    console.log("当前地址不执行 chat 聊天按钮插入")  // 如果当前 url 带有 google/bing 则不执行按钮插入
-} else {
-    adblock4limbo(adblock4limbo_svg_switch_by_width()); // 插入 chat 聊天按钮
-    tagName_appendChild("script", imax.js.functionx, "head"); // js 外部引用 标签 <script>
-}
-
-/* 
-如不想显示 chat 聊天按钮 
-可使用双斜杠 // 注释上述函数调用代码；
-举例如下：
- 
-// adblock4limbo();
-// hidden_adblock4limbo();
- 
-*/
 
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告

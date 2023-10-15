@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310141533
+## ! Version: 202310151115
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Oct 2023 15:33 UTC
+## ! Last modified: 15 Oct 2023 11:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -177,6 +177,7 @@ DOMAIN-SUFFIX,glookup.info
 DOMAIN-SUFFIX,go-mpulse.net
 DOMAIN-SUFFIX,googleoptimize.com
 DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,gw-dv.vip
 DOMAIN-SUFFIX,hdmtools.com
 DOMAIN-SUFFIX,hs-analytics.net
 DOMAIN-SUFFIX,hsadspixel.net
@@ -2745,6 +2746,7 @@ DOMAIN-SUFFIX,stats-newyork1.bloxcms.com
 DOMAIN-SUFFIX,stats.big-boards.com
 DOMAIN-SUFFIX,stats.bitgravity.com
 DOMAIN-SUFFIX,stats.bluebillywig.com
+DOMAIN-SUFFIX,stats.bradmax.com
 DOMAIN-SUFFIX,stats.callnowbutton.com
 DOMAIN-SUFFIX,stats.cmcigroup.com
 DOMAIN-SUFFIX,stats.curds.io
@@ -3816,6 +3818,7 @@ DOMAIN-SUFFIX,crta.metro.co.uk
 DOMAIN-SUFFIX,crumbs.robinhood.com
 DOMAIN-SUFFIX,cryo.socialblade.com
 DOMAIN-SUFFIX,cstats.sankakucomplex.com
+DOMAIN-SUFFIX,cwt.citywire.info
 DOMAIN-SUFFIX,d.skk.moe
 DOMAIN-SUFFIX,data.allstate.com
 DOMAIN-SUFFIX,data.guide.photobucket.com
@@ -4090,6 +4093,7 @@ DOMAIN-SUFFIX,stats.wwitv.com
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv
 DOMAIN-SUFFIX,t.3hentai.net
 DOMAIN-SUFFIX,t.9gag.com
+DOMAIN-SUFFIX,t.airasia.com
 DOMAIN-SUFFIX,t.allmodern.com
 DOMAIN-SUFFIX,t.appsflyer.com
 DOMAIN-SUFFIX,t.av.st
@@ -21518,6 +21522,7 @@ DOMAIN-SUFFIX,counter.drom.ru
 DOMAIN-SUFFIX,counter.sibnet.ru
 DOMAIN-SUFFIX,cvt1.sibnet.ru
 DOMAIN-SUFFIX,data.glamour.ru
+DOMAIN-SUFFIX,goya.rutube.ru
 DOMAIN-SUFFIX,link.subscribe.ru
 DOMAIN-SUFFIX,log.ren.tv
 DOMAIN-SUFFIX,log.rutube.ru

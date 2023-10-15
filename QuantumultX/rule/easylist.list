@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310141533
+## ! Version: 202310151115
 ## ! Title: EasyList
-## ! Last modified: 14 Oct 2023 15:33 UTC
+## ! Last modified: 15 Oct 2023 11:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -14716,6 +14716,7 @@ DOMAIN-SUFFIX,kettlewharves.com, reject
 DOMAIN-SUFFIX,keuktyouexpe.info, reject
 DOMAIN-SUFFIX,kevelandean.com, reject
 DOMAIN-SUFFIX,kewhulawi.com, reject
+DOMAIN-SUFFIX,kexojito.com, reject
 DOMAIN-SUFFIX,keydawnawe.com, reject
 DOMAIN-SUFFIX,keypush.net, reject
 DOMAIN-SUFFIX,keyrolan.com, reject
@@ -27017,6 +27018,7 @@ DOMAIN-SUFFIX,udpauawx.xyz, reject
 DOMAIN-SUFFIX,udraokrou.com, reject
 DOMAIN-SUFFIX,uduhytyllobm.com, reject
 DOMAIN-SUFFIX,udwgzninhil.com, reject
+DOMAIN-SUFFIX,ueaynogiwgqr.com, reject
 DOMAIN-SUFFIX,uejntsxdffp.com, reject
 DOMAIN-SUFFIX,uekish.com, reject
 DOMAIN-SUFFIX,uel-uel-fie.com, reject

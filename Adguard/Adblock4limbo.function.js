@@ -59,16 +59,20 @@ function xNav(father, son) {
 
     let ele_innerHTML = '\
         <div class="ellFeedback">\
-        <div class="bigger">反馈/建议</div>\
-        <button class="xButton" onclick="x()" id="webChat">在线反馈</button>\
+        <div class="bigger">反馈/建议//</div>\
+        <button class="xButton" onclick="crisp_active()" id="webChat">在线反馈</button>\
+        <a class="xButton" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues"\
+        target="_blank">Github提交issue</a>\
+        <a class="xButton" id="issue" href="https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js"\
+        target="_blank">查看源码</a>\
         <a class="xButton" id="tgGroup" href="https://t.me/Adblock4limbo/21"\
         target="_blank">电报群组</a>\
-        <a class="xButton" id="issue" href="https://limbopro.com/daohang/"\
+        <a class="xButton" id="daohang" href="https://limbopro.com/daohang/"\
         target="_blank">毒奶导航</a>\
         </div>\
         \
         <div class="ellMovie">\
-        <div class="bigger">在线影视</div>\
+        <div class="bigger">在线影视//</div>\
         <a class="xButton" id="nbys" href="https://www.nivod4.tv/"\
         target="_blank">泥巴影视</a>\
         <a class="xButton" id="ddrk" href="https://ddys.pro/"\
@@ -81,8 +85,6 @@ function xNav(father, son) {
         target="_blank">独播库</a>\
         <a class="xButton" id="ttsp" href="https://www.ttsp.tv/"\
         target="_blank">天天视频</a>\
-        <a class="xButton" id="hjtv" href="https://www.tvn.cc/"\
-        target="_blank">韩剧TV</a>\
         <a class="xButton" id="555dy" href="https://555dyx3.com/"\
         target="_blank">555电影网</a>\
         <a class="xButton" id="libvio" href="https://libvio.top/"\
@@ -90,7 +92,7 @@ function xNav(father, son) {
         </div>\
         \
         <div class="ellPorn">\
-        <div class="bigger">午夜惊魂</div>\
+        <div class="bigger">午夜惊魂//</div>\
         <a class="xButton" id="Pornhub" href="https://cn.pornhub.com/"\
         target="_blank">Pornhub</a>\
         <a class="xButton" id="Xvideos" href="https://www.xvideos.com/"\
@@ -117,7 +119,7 @@ function xNav(father, son) {
     x4Daohang_parents.innerHTML = ele_innerHTML;
 
     let css_innerHTML = '\
-    xButton_close {margin:0px} .bigger{font-size: small; color: black; padding-left: 4px; padding-bottom: 2px;} .ellFeedback{ padding-top: 47px; margin:0; margin-bottom:15px; padding-left:15px;}  .ellMovie{ margin:0; margin-bottom:15px; padding-left:15px;} .ellPorn{ margin:0;margin-bottom:15px;padding-left:15px;} .ellClose{ margin:0;margin-bottom:15px;padding-left:15px;} #x4Daohang{background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg"); background-size:100% !important;background-repeat:no-repeat; margin:auto;overflow-y:scroll;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.xButton{color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;} .xButton_close{color:white !important;box-shadow:black;background:red;background-color:red;border-radius:17px;margin:1px;border:0px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.xButton:active{position:relative;top:1px;}\
+    xButton_close {margin:0px} .bigger{font-size: initial; margin-bottom: 5px; font-weight:lighter; color: black; padding-left: 4px; padding-bottom: 2px;} .ellFeedback{ padding-top: 47px; margin:0; margin-bottom:15px; padding-left:15px;}  .ellMovie{ margin:0; margin-bottom:15px; padding-left:15px;} .ellPorn{ margin:0;margin-bottom:15px;padding-left:15px;} .ellClose{ margin:0;margin-bottom:15px;padding-left:15px;} #x4Daohang{background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg"); background-size:100% !important;background-repeat:no-repeat; margin:auto;overflow-y:scroll;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.xButton{color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;} .xButton_close{color:white !important;box-shadow:black;background:red;background-color:red;border-radius:17px;margin:1px;border:0px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.xButton:active{position:relative;top:1px;}\
     '
 
     let css_x4Daohang = document.createElement('style');
@@ -223,8 +225,14 @@ function tagName_appendChild_fx(tagname, url, where) {
     }
 }
 
-function x() {
+function crisp_active() {
     tagName_appendChild_fx("script", "https://limbopro.com/Adguard/crisp.js", "head")
+    let crisp_check = setInterval(() => {
+        if (document.querySelector("span[data-has-unread]")) {
+            document.querySelector("span[data-has-unread]").click();
+            clearTimeout(crisp_check);
+        }
+    }, 1000)
 }
 
 

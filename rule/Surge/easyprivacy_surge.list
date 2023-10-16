@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310151115
+## ! Version: 202310161258
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Oct 2023 11:15 UTC
+## ! Last modified: 16 Oct 2023 12:58 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2058,6 +2058,7 @@ DOMAIN-SUFFIX,analytics.dev.htmedia.in
 DOMAIN-SUFFIX,analytics.dev.springboardvideo.com
 DOMAIN-SUFFIX,analytics.developer.riotgames.com
 DOMAIN-SUFFIX,analytics.digitalpfizer.com
+DOMAIN-SUFFIX,analytics.disney.go.com
 DOMAIN-SUFFIX,analytics.disneyinternational.com
 DOMAIN-SUFFIX,analytics.dvidshub.net
 DOMAIN-SUFFIX,analytics.edgekey.net
@@ -2234,6 +2235,7 @@ DOMAIN-SUFFIX,clicks.dealer.com
 DOMAIN-SUFFIX,clicks.tyuwq.com
 DOMAIN-SUFFIX,clicktracker.iscan.nl
 DOMAIN-SUFFIX,client-analytics.braintreegateway.com
+DOMAIN-SUFFIX,client-logger.beta.salemove.com
 DOMAIN-SUFFIX,client-logger.salemove.com
 DOMAIN-SUFFIX,clouderrorreporting.googleapis.com
 DOMAIN-SUFFIX,cloudfront-labs.amazonaws.com
@@ -2949,6 +2951,7 @@ DOMAIN-SUFFIX,tracker.xgen.dev
 DOMAIN-SUFFIX,trackerapi.truste.com
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app
 DOMAIN-SUFFIX,tracking-api.hotmart.com
+DOMAIN-SUFFIX,tracking-api.mangopulse.net
 DOMAIN-SUFFIX,tracking.adalyser.com
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com
 DOMAIN-SUFFIX,tracking.aegpresents.com
@@ -3143,6 +3146,7 @@ DOMAIN-SUFFIX,d3iouejux1os58.cloudfront.net
 DOMAIN-SUFFIX,d3j1weegxvu8ns.cloudfront.net
 DOMAIN-SUFFIX,d3kyk5bao1crtw.cloudfront.net
 DOMAIN-SUFFIX,d3l3lkinz3f56t.cloudfront.net
+DOMAIN-SUFFIX,d3lqotgbn3npr.cloudfront.net
 DOMAIN-SUFFIX,d3m6sept6cnil5.cloudfront.net
 DOMAIN-SUFFIX,d3mskfhorhi2fb.cloudfront.net
 DOMAIN-SUFFIX,d3n6i6eorggdxk.cloudfront.net
@@ -3180,6 +3184,7 @@ DOMAIN-SUFFIX,du8783wkf05yr.cloudfront.net
 DOMAIN-SUFFIX,duu8lzqdm8tsz.cloudfront.net
 DOMAIN-SUFFIX,dy2xcjk8s1dbz.cloudfront.net
 DOMAIN-SUFFIX,dyv1bugovvq1g.cloudfront.net
+DOMAIN-SUFFIX,dzgwautxzdtn9.cloudfront.net
 DOMAIN-SUFFIX,am-vid-events.taboola.com
 DOMAIN-SUFFIX,convsgmp.taboola.com
 DOMAIN-SUFFIX,la-sync.taboola.com
@@ -4043,6 +4048,7 @@ DOMAIN-SUFFIX,rta.dailymail.co.uk
 DOMAIN-SUFFIX,rta2.inews.co.uk
 DOMAIN-SUFFIX,rta2.metro.co.uk
 DOMAIN-SUFFIX,rta2.newzit.com
+DOMAIN-SUFFIX,rtds.progressive.com
 DOMAIN-SUFFIX,rum.api.intuit.com
 DOMAIN-SUFFIX,rum.condenastdigital.com
 DOMAIN-SUFFIX,rum.kobo.com
@@ -21520,6 +21526,7 @@ DOMAIN-SUFFIX,analytics.carambatv.ru
 DOMAIN-SUFFIX,c.sibnet.ru
 DOMAIN-SUFFIX,counter.drom.ru
 DOMAIN-SUFFIX,counter.sibnet.ru
+DOMAIN-SUFFIX,cs42.pikabu.ru
 DOMAIN-SUFFIX,cvt1.sibnet.ru
 DOMAIN-SUFFIX,data.glamour.ru
 DOMAIN-SUFFIX,goya.rutube.ru
@@ -21572,9 +21579,11 @@ DOMAIN-SUFFIX,gx.idg.se
 DOMAIN-SUFFIX,stat.nyheter24.se
 DOMAIN-SUFFIX,scribe.wongnai.com
 DOMAIN-SUFFIX,ta.sanook.com
+DOMAIN-SUFFIX,athena-event-provider.n11.com
 DOMAIN-SUFFIX,c.gazetevatan.com
 DOMAIN-SUFFIX,d.haberler.com
 DOMAIN-SUFFIX,d.sondakika.com
+DOMAIN-SUFFIX,h.n11.com
 DOMAIN-SUFFIX,hstats.hepsiburada.com
 DOMAIN-SUFFIX,stats.birgun.net
 DOMAIN-SUFFIX,tracker.blutv.com

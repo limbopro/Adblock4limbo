@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310151115
+## ! Version: 202310161258
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Oct 2023 11:15 UTC
+## ! Last modified: 16 Oct 2023 12:58 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2058,6 +2058,7 @@ DOMAIN-SUFFIX,analytics.dev.htmedia.in, reject
 DOMAIN-SUFFIX,analytics.dev.springboardvideo.com, reject
 DOMAIN-SUFFIX,analytics.developer.riotgames.com, reject
 DOMAIN-SUFFIX,analytics.digitalpfizer.com, reject
+DOMAIN-SUFFIX,analytics.disney.go.com, reject
 DOMAIN-SUFFIX,analytics.disneyinternational.com, reject
 DOMAIN-SUFFIX,analytics.dvidshub.net, reject
 DOMAIN-SUFFIX,analytics.edgekey.net, reject
@@ -2234,6 +2235,7 @@ DOMAIN-SUFFIX,clicks.dealer.com, reject
 DOMAIN-SUFFIX,clicks.tyuwq.com, reject
 DOMAIN-SUFFIX,clicktracker.iscan.nl, reject
 DOMAIN-SUFFIX,client-analytics.braintreegateway.com, reject
+DOMAIN-SUFFIX,client-logger.beta.salemove.com, reject
 DOMAIN-SUFFIX,client-logger.salemove.com, reject
 DOMAIN-SUFFIX,clouderrorreporting.googleapis.com, reject
 DOMAIN-SUFFIX,cloudfront-labs.amazonaws.com, reject
@@ -2949,6 +2951,7 @@ DOMAIN-SUFFIX,tracker.xgen.dev, reject
 DOMAIN-SUFFIX,trackerapi.truste.com, reject
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app, reject
 DOMAIN-SUFFIX,tracking-api.hotmart.com, reject
+DOMAIN-SUFFIX,tracking-api.mangopulse.net, reject
 DOMAIN-SUFFIX,tracking.adalyser.com, reject
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com, reject
 DOMAIN-SUFFIX,tracking.aegpresents.com, reject
@@ -3143,6 +3146,7 @@ DOMAIN-SUFFIX,d3iouejux1os58.cloudfront.net, reject
 DOMAIN-SUFFIX,d3j1weegxvu8ns.cloudfront.net, reject
 DOMAIN-SUFFIX,d3kyk5bao1crtw.cloudfront.net, reject
 DOMAIN-SUFFIX,d3l3lkinz3f56t.cloudfront.net, reject
+DOMAIN-SUFFIX,d3lqotgbn3npr.cloudfront.net, reject
 DOMAIN-SUFFIX,d3m6sept6cnil5.cloudfront.net, reject
 DOMAIN-SUFFIX,d3mskfhorhi2fb.cloudfront.net, reject
 DOMAIN-SUFFIX,d3n6i6eorggdxk.cloudfront.net, reject
@@ -3180,6 +3184,7 @@ DOMAIN-SUFFIX,du8783wkf05yr.cloudfront.net, reject
 DOMAIN-SUFFIX,duu8lzqdm8tsz.cloudfront.net, reject
 DOMAIN-SUFFIX,dy2xcjk8s1dbz.cloudfront.net, reject
 DOMAIN-SUFFIX,dyv1bugovvq1g.cloudfront.net, reject
+DOMAIN-SUFFIX,dzgwautxzdtn9.cloudfront.net, reject
 DOMAIN-SUFFIX,am-vid-events.taboola.com, reject
 DOMAIN-SUFFIX,convsgmp.taboola.com, reject
 DOMAIN-SUFFIX,la-sync.taboola.com, reject
@@ -4043,6 +4048,7 @@ DOMAIN-SUFFIX,rta.dailymail.co.uk, reject
 DOMAIN-SUFFIX,rta2.inews.co.uk, reject
 DOMAIN-SUFFIX,rta2.metro.co.uk, reject
 DOMAIN-SUFFIX,rta2.newzit.com, reject
+DOMAIN-SUFFIX,rtds.progressive.com, reject
 DOMAIN-SUFFIX,rum.api.intuit.com, reject
 DOMAIN-SUFFIX,rum.condenastdigital.com, reject
 DOMAIN-SUFFIX,rum.kobo.com, reject
@@ -21520,6 +21526,7 @@ DOMAIN-SUFFIX,analytics.carambatv.ru, reject
 DOMAIN-SUFFIX,c.sibnet.ru, reject
 DOMAIN-SUFFIX,counter.drom.ru, reject
 DOMAIN-SUFFIX,counter.sibnet.ru, reject
+DOMAIN-SUFFIX,cs42.pikabu.ru, reject
 DOMAIN-SUFFIX,cvt1.sibnet.ru, reject
 DOMAIN-SUFFIX,data.glamour.ru, reject
 DOMAIN-SUFFIX,goya.rutube.ru, reject
@@ -21572,9 +21579,11 @@ DOMAIN-SUFFIX,gx.idg.se, reject
 DOMAIN-SUFFIX,stat.nyheter24.se, reject
 DOMAIN-SUFFIX,scribe.wongnai.com, reject
 DOMAIN-SUFFIX,ta.sanook.com, reject
+DOMAIN-SUFFIX,athena-event-provider.n11.com, reject
 DOMAIN-SUFFIX,c.gazetevatan.com, reject
 DOMAIN-SUFFIX,d.haberler.com, reject
 DOMAIN-SUFFIX,d.sondakika.com, reject
+DOMAIN-SUFFIX,h.n11.com, reject
 DOMAIN-SUFFIX,hstats.hepsiburada.com, reject
 DOMAIN-SUFFIX,stats.birgun.net, reject
 DOMAIN-SUFFIX,tracker.blutv.com, reject

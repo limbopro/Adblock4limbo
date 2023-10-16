@@ -282,7 +282,7 @@ function x4Daohang_create(father, son) {
         <div class="ellFeedback">\
         <div class="bigger">反馈/建议//</div>\
         <ul class="xul">\
-        <li class="xli"><button class="xButton" onclick="crisp_active(\'1\')" id="webChat">在线反馈</button></li>\
+        <li class="xli"><button style="background:#70997b; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="xButton" onclick="crisp_active(\'1\')" id="webChat">在线反馈</button></li>\
         <li class="xli"><a class="xButton" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues" \
         target="_blank">提交issue</a></li>\
         <li class="xli"><a class="xButton" id="issue" href="https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user." \
@@ -303,12 +303,33 @@ function x4Daohang_create(father, son) {
         target="_blank">Github</a></li>\
         <li class="xli"><a class="xButton" id="GreasyFork" href="https://sleazyfork.org/zh-CN/users/893587-limbopro" \
         target="_blank">GreasyFork</a></li>\
-        <li class="xli"><a class="xButton" id="Twitter" href="https://twitter.com/limboprossr" \
+        <li class="xli"><a class="xButton" id="GreasyFork" href="https://t.me/limboprossr" \
+        target="_blank">电报频道</a></li>\
+        <li class="xli"><a class="xButton" id="limboprossr" href="https://twitter.com/limboprossr" \
         target="_blank">Twitter</a></li>\
         <li class="xli"><a class="xButton" id="YouTube" href="https://m.youtube.com/@limboprossr/featured" \
         target="_blank">YouTube</a></li>\
+        \
+        </ul>\
+        </div>\
+        \
+        <div class="ellGlobal">\
+        <div class="bigger">工具箱//</div>\
+        <ul class="xul">\
+        <li class="xli"><a class="xButton" id="yhlxj" href="https://limbopro.com/archives/25524.html" \
+        target="_blank">流媒体合租</a></li>\
+        <li class="xli"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="xButton" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" \
+        target="_blank">去网页广告</a></li>\
+        <li class="xli"><a class="xButton" id="software_skills" href="https://limbopro.com/category/software-skills/" \
+        target="_blank">软件百科</a></li>\
+        <li class="xli"><a class="xButton" id="website_builder" href="https://limbopro.com/category/builder/" \
+        target="_blank">博客优化</a></li>\
+        <li class="xli"><a class="xButton" id="search" href="https://limbopro.com/search.html" \
+        target="_blank">毒奶搜索</a></li>\
         <li class="xli"><a class="xButton" id="daohang" href="https://limbopro.com/daohang/" \
         target="_blank">毒奶导航</a></li>\
+        <li class="xli"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="xButton" id="index" href="https://limbopro.com/" \
+        target="_blank">毒奶博客</a></li>\
         \
         </ul>\
         </div>\
@@ -370,7 +391,7 @@ function x4Daohang_create(father, son) {
     x4Daohang_parents.innerHTML = ele_innerHTML;
 
     let css_innerHTML = '\
-    div > button {background-image:url("https://limbopro.com/Adblock4limbo_close.svg"); transition-property:opacity;transition-duration: 666ms;background-color:#542c3e;color:#ffffff;opacity:0.5;border:0px;margin:0px;width:108px;height:108px;border-radius:50%;} div > button:hover {background-color:red;opacity:1} div > button:active {background-color:red;}div .xClose{z-index:-1;margin:0px;position:absolute;right:-72px;top:3px;}; span#nspan {margin:0px;font-weight:bolder !important;color:black !important;} div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;} .echo{font-size:15px;padding-top:27px;padding-bottom:47px;margin:0px;text-align:right;width:auto;text-align:inherit;position:absolute;margin-left:25px;margin-right:25px;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;}ul > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.xli{list-style:none;width:112px;height:31px;}.xul{padding:0px;fontsize:15px !important;height:275px;margin:0px;overflow:auto;width:auto;}.bigger{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;}.ellFeedback{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellMovie{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellPorn{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellGlobal{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#x4Daohang{overflow:visible;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.xButton{color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton_close{color:white !important;box-shadow:black;background:red;background-color:red;border-radius:17px;margin:1px;border:0px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.xButton:active{position:relative;top:1px;}\
+    div > button {background-image:url("https://limbopro.com/Adblock4limbo_close.svg"); transition-property:opacity;transition-duration: 666ms;background-color:#542c3e;color:#ffffff;opacity:0.5;border:0px;margin:0px;width:108px;height:108px;border-radius:50%;} div > button:hover {background-color:red;opacity:1} div > button:active {background-color:red;}div .xClose{z-index:-1;margin:0px;position:absolute;right:-72px;top:3px;}; span#nspan {margin:0px;font-weight:bolder !important;color:black !important;} div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;} .echo{font-size:15px;padding-top:27px;padding-bottom:47px;margin:0px;text-align:right;width:auto;text-align:inherit;position:absolute;margin-left:25px;margin-right:25px;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;}ul > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.xli{list-style:none;width:112px;height:31px;}.xul{padding:0px;fontsize:15px !important;height:275px;margin:0px;overflow:auto;width:auto;}.bigger{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;}.ellFeedback{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellMovie{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellPorn{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellGlobal{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#x4Daohang{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.xButton{color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton_close{color:white !important;box-shadow:black;background:red;background-color:red;border-radius:17px;margin:1px;border:0px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.xButton:active{position:relative;top:1px;}\
     '
 
     let css_x4Daohang = document.createElement('style');
@@ -502,7 +523,7 @@ function crisp_active(x) {
             } else if (document.querySelector("span[data-id=\"chat_opened\"]")) {
                 document.querySelector("span[data-id=\"chat_opened\"]").click();
                 clearTimeout(crisp_check);
-            } 
+            }
             if (document.querySelector("span[data-id=\"chat_closed\"]")) {
                 document.querySelector("span[data-id=\"chat_closed\"]").style = "height:60px !important"
             } if (document.querySelector("span[data-id=\"chat_opened\"]")) {

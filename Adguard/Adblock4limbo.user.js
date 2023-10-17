@@ -77,6 +77,12 @@
 // @match        https://mmfl02.com/*
 // @match        https://supjav.com/*
 // @match        https://hanime1.me/*
+// @match        https://wangdoc.com/*
+// @match        https://developer.mozilla.org/*
+// @match        https://zh.javascript.info/*
+// @match        https://deerchao.cn/*
+// @match        https://gimy.ai/*
+// @match        https://t.me/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -198,6 +204,7 @@ const imax = {
         nivod: "iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
+        google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos 
         javbus: ".ad-item,.ad-box {display:none !important}",
@@ -440,7 +447,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.yhdmp);
             break;
         case 'google':
-            js_adsRemove(imax.js.contentFarm);
+            css_adsRemove(imax.css.google);
+            // 暂时 js_adsRemove(imax.js.contentFarm);
+            var userAgent = navigator.userAgent.toLowerCase();
+            if (/\b(mobile)\b/i.test(userAgent)) {
+                js_adsRemove(imax.js.contentFarm);
+                console.log("getYou") // 手机用户 特别是苹果用户会正常加载内容农场脚本
+            } else {
+                console.log("PC端") // 啥也不做
+            }
             css_adsRemove(imax.css.goole);
             var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
             //setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
@@ -639,11 +654,11 @@ function uBlockOrigin_add() {
 // | document.querySelectorAll("script[src*='function.js']").length >= 1
 
 //let x4Home_check = setInterval(() => {
-    if (!document.querySelectorAll("button#x4Home").length >= 1 ) {
-        tagName_appendChild("script", imax.js.functionx, "head"); // js 外部引用 标签 <script>
-    } else {
-  //      clearTimeout(x4Home_check);
-    }
+if (!document.querySelectorAll("button#x4Home").length >= 1) {
+    tagName_appendChild("script", imax.js.functionx, "head"); // js 外部引用 标签 <script>
+} else {
+    //      clearTimeout(x4Home_check);
+}
 //}, 1000)
 
 // 无数函数及方法的组合使脚本更灵活

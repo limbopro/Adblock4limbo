@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310181541
+## ! Version: 202310181622
 ## ! Title: EasyList
-## ! Last modified: 18 Oct 2023 15:41 UTC
+## ! Last modified: 18 Oct 2023 16:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -5553,6 +5553,7 @@ DOMAIN-SUFFIX,cantilyza.website, reject
 DOMAIN-SUFFIX,canvassblanketjar.com, reject
 DOMAIN-SUFFIX,canzonicassons.com, reject
 DOMAIN-SUFFIX,canzoscomply.com, reject
+DOMAIN-SUFFIX,canzosswager.com, reject
 DOMAIN-SUFFIX,cap-cap-pop.com, reject
 DOMAIN-SUFFIX,capableimpregnablehazy.com, reject
 DOMAIN-SUFFIX,capaciouslistless.com, reject
@@ -13630,6 +13631,7 @@ DOMAIN-SUFFIX,injurg.com, reject
 DOMAIN-SUFFIX,injurytomatoesputrefy.com, reject
 DOMAIN-SUFFIX,injusticeamend.com, reject
 DOMAIN-SUFFIX,inkestyle.net, reject
+DOMAIN-SUFFIX,inkfeedmausoleum.com, reject
 DOMAIN-SUFFIX,inkingleran.com, reject
 DOMAIN-SUFFIX,inklestutted.com, reject
 DOMAIN-SUFFIX,inklinkor.com, reject
@@ -15081,6 +15083,7 @@ DOMAIN-SUFFIX,kvjkkwyomjrx.com, reject
 DOMAIN-SUFFIX,kvkfxrrdjgq.xyz, reject
 DOMAIN-SUFFIX,kw3y5otoeuniv7e9rsi.com, reject
 DOMAIN-SUFFIX,kwaznkureluct.digital, reject
+DOMAIN-SUFFIX,kwbmkwej.com, reject
 DOMAIN-SUFFIX,kwhenspokento.info, reject
 DOMAIN-SUFFIX,kwkkxztnjbr.com, reject
 DOMAIN-SUFFIX,kwnmhplnqnfxh.xyz, reject
@@ -17967,6 +17970,7 @@ DOMAIN-SUFFIX,noearon.click, reject
 DOMAIN-SUFFIX,noelsdoc.cam, reject
 DOMAIN-SUFFIX,noerwe5gianfor19e4st.com, reject
 DOMAIN-SUFFIX,nofashot.com, reject
+DOMAIN-SUFFIX,nofidroa.xyz, reject
 DOMAIN-SUFFIX,nogqyqhpoybm.xyz, reject
 DOMAIN-SUFFIX,nohezu.xyz, reject
 DOMAIN-SUFFIX,noiseeastern.com, reject
@@ -20438,6 +20442,7 @@ DOMAIN-SUFFIX,polarbearyulia.com, reject
 DOMAIN-SUFFIX,polarcdn-terrax.com, reject
 DOMAIN-SUFFIX,polardemeanour.com, reject
 DOMAIN-SUFFIX,polaritypresentimentasterisk.com, reject
+DOMAIN-SUFFIX,polarlootstairwell.com, reject
 DOMAIN-SUFFIX,polarmobile.com, reject
 DOMAIN-SUFFIX,poleaxefoamers.com, reject
 DOMAIN-SUFFIX,poleonaryprac.com, reject
@@ -20651,6 +20656,7 @@ DOMAIN-SUFFIX,powjoui.com, reject
 DOMAIN-SUFFIX,powrpvuruejv.com, reject
 DOMAIN-SUFFIX,poxa.xyz, reject
 DOMAIN-SUFFIX,poxaharap.com, reject
+DOMAIN-SUFFIX,poxykhakis.com, reject
 DOMAIN-SUFFIX,pp2ppsch1hount1hf.com, reject
 DOMAIN-SUFFIX,pp98trk.com, reject
 DOMAIN-SUFFIX,ppbihtwyapucgkg.xyz, reject
@@ -27535,6 +27541,7 @@ DOMAIN-SUFFIX,urotoxykerch.com, reject
 DOMAIN-SUFFIX,urryjgwqjo.com, reject
 DOMAIN-SUFFIX,ursonewry.com, reject
 DOMAIN-SUFFIX,urswellsgrp.xyz, reject
+DOMAIN-SUFFIX,urthdtcg.com, reject
 DOMAIN-SUFFIX,urtirepor.com, reject
 DOMAIN-SUFFIX,uruswan.com, reject
 DOMAIN-SUFFIX,urutricae.com, reject
@@ -30395,6 +30402,7 @@ DOMAIN-SUFFIX,jav-7mmtv.top, reject
 DOMAIN-SUFFIX,kinkadservercdn.com, reject
 DOMAIN-SUFFIX,ohmygosh.info, reject
 DOMAIN-SUFFIX,1048284882.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1052706846.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1063072263.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1064075587.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1080749118.rsc.cdn77.org, reject
@@ -30403,6 +30411,7 @@ DOMAIN-SUFFIX,10945-5.s.cdn15.com, reject
 DOMAIN-SUFFIX,1133256755.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1164507919.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1187531871.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1191084008.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1207639218.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1235113489.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1254021819.rsc.cdn77.org, reject

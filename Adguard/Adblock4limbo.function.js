@@ -252,12 +252,6 @@ mousemove_element.addEventListener('mousemove', e => {
 //}
 
 
-
-// 初始判断
-let str_ua = navigator.userAgent.toLowerCase();
-let regexp = /(.*)(iphone\sos\s)(\d{2})(.*)/;
-let ios_version = str_ua.replace(regexp, '$3');
-
 // 为按钮添加监听事件 防止被破坏
 
 function _onclick_button() {
@@ -266,14 +260,21 @@ function _onclick_button() {
     }) //
 
     setTimeout(() => {
-        document.querySelector('div.ellCloseX').addEventListener("click", function () {
-            body_build('false'); // 添加监听事件
-        })
+        if (document.querySelector('div.ellCloseX') || !val === document.querySelector('div.ellCloseX')) {
+            document.querySelector('div.ellCloseX').addEventListener("click", function () {
+                body_build('false'); // 添加监听事件
+            })
+        }
     }, 3000)
 }
 
+// 初始判断
+let str_ua = navigator.userAgent.toLowerCase();
+let regexp = /(.*)(iphone\sos\s)(\d{2})(.*)/;
+let ios_version = str_ua.replace(regexp, '$3');
+
 const url_now = window.location.href.toLowerCase();
-if (/\b(google|bing)\b/i.test(url_now) && ios_version < 17) {
+if (/\b(google|bing)\b/i.test(url_now) && ios_version < 16) {
     adblock4limbo(x4Home_button_width()); // 插入右下角按钮
     // 如果当前 url 带有 google/bing 且iOS版本小于 17的用户 则不执行按钮插入
 } else {
@@ -469,6 +470,7 @@ function x4Daohang_body_pre() {
         \
         </div>\
         \
+        <div class="footer closeevil"style="height:20px">TEST</div>\
         <div class="footer" style="color:black!important;">当前网页已在<a href="https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist" target="_self" >去广告计划</a>范围，如在此页面发现广告请及时反馈。<div>\
         \
 '
@@ -609,13 +611,18 @@ function echo_align() {
         body_align("x4Daohang");
         document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - (112 * echo_ell_length + 0 * echo_ell_overlay_length)) / 2 + "px";
         document.querySelector('div.ellCloseX').style.zIndex = "-1"; // 确保关闭按钮可见可点击
-        document.querySelector('div.closeX_Z').className = "closeX_W"
+        if (document.querySelector('div.closeX_Z') || !val === document.querySelector('div.closeX_Z')) {
+            document.querySelector('div.closeX_Z').className = "closeX_W";
+        }
         //document.querySelector('div.ellCloseX').style.position = "initial"; // 确保关闭按钮可见可点击
     } else {
         console.log("正在检查是否属于小尺寸...")
         body_align("x4Daohang");
         document.querySelector(selector.body_css_real).style.paddingLeft = ((window.innerWidth % 112 - 8 * 0) / 2) + "px"; // 当 ellCloseX position 为 initial 时 
-        document.querySelector('div.closeX_W').className("closeX_Z");
+
+        if (document.querySelector('div.closeX_W') || !val === document.querySelector('div.closeX_W')) {
+            document.querySelector('div.closeX_W').className = ("closeX_Z");
+        }
     }
 }
 
@@ -779,8 +786,10 @@ function crisp_window_remove(x) {
             document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
             console.log("有未读消息，执行显示Crisp成功...")
         } else {
-            document.querySelector('[aria-live=polite].crisp-client').classList.remove('active');
-            console.log("执行隐藏Crisp成功...")
+            if (document.querySelector('[aria-live=polite].crisp-client') || !val === document.querySelector('[aria-live=polite].crisp-client')) {
+                document.querySelector('[aria-live=polite].crisp-client').classList.remove('active');
+                console.log("执行隐藏Crisp成功...")
+            }
         }
     } else if (x == 1) {
         document.querySelector('[aria-live=polite].crisp-client').classList.add('active');

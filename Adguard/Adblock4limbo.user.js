@@ -83,6 +83,7 @@
 // @match        https://deerchao.cn/*
 // @match        https://gimy.ai/*
 // @match        https://t.me/*
+// @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -92,14 +93,23 @@
  * ---------------------------
  * Author: limbopro
  * View: https://limbopro.com/archives/12904.html
+ * 电报群组：https://t.me/Adblock4limbo
+ * Github：https://github.com/limbopro/Adblock4limbo
  * ---------------------------
  */
 
-// 一些常量
+/**
+ * 为网页增加导航按钮，将位于页面右下角呈现；
+ * 如需取消该按钮，请将如上调用代码注释；
+*/
 
+daohang_build(); // 为页面增加导航按钮
+
+
+// 一些常量
 /* Start */
 
-const uBlockOrigin = {
+var uBlockOrigin = {
 
     // uBlockOrigin 默认脚本
     // https://github.com/uBlockOrigin/uBOL-home/tree/main/chromium/rulesets/scripting/scriptlet
@@ -150,11 +160,11 @@ const uBlockOrigin = {
     xmlprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.xml-prune.js", // default.xml-prune.js
 }
 
-const js_common = {
+var js_common = {
     crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统 chat
 }
 
-const css_common = {
+var css_common = {
     //General element hiding rules
     /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
      这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
@@ -162,15 +172,14 @@ const css_common = {
     gehr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/CSS/Adblock4limbo.user.css"
 }
 
-// 暂时 tagName_appendChild('link', css_common.gehr, 'head'); // 动态引入 ublcok origin 通用去广告样式；
-
-// tagName_appendChild("script", js_common.crisp, "head"); // 动态引入 crisp 聊天系统；
+// 暂时 thrd_party_file_X('link', css_common.gehr, 'head'); // 动态引入 ublcok origin 通用去广告样式；
+// thrd_party_file_X("script", js_common.crisp, "head"); // 动态引入 crisp 聊天系统；
 // 油猴用户（桌面浏览器用户）可通过 // 注释上述代码来禁用Crisp；
 // Qx/Shadrowrocket/Surge/Loon 等代理软件用户可通过添加分流来禁用Crisp；（分流类型选择 host-keyword, crisp, reject）;
 
 /* End */
 
-const imax = {
+var imax = {
     js: {
         functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
@@ -300,7 +309,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.missav);
             //abortCurrentInlineScript('document.createElement','htmlAds');
-            //tagName_appendChild("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
+            //thrd_party_file_X("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
             let custom_style_values_miss = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;";
             if (ua_missav.indexOf(mobile_missav) === -1) {
                 ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", custom_style_values_miss + imax.css.button_common, "", "missavX", 2, "button");
@@ -352,7 +361,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'avple':
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.avple);
-            tagName_appendChild("script", imax.js.avple, "body")
+            thrd_party_file_X("script", imax.js.avple, "body")
             break;
         case '18comic':
             css_adsRemove(imax.css.comic_18);
@@ -380,7 +389,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 500)
             break;
         case 'duboku':
-            tagName_appendChild("script", imax.js.duboku, "body")
+            thrd_party_file_X("script", imax.js.duboku, "body")
             break;
         case 'libvio':
             css_adsRemove(imax.css.libvio)
@@ -454,6 +463,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 js_adsRemove(imax.js.contentFarm);
                 console.log("getYou") // 手机用户 特别是苹果用户会正常加载内容农场脚本
             } else {
+                js_adsRemove(imax.js.contentFarm);
                 console.log("PC端") // 啥也不做
             }
             css_adsRemove(imax.css.goole);
@@ -595,9 +605,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     }
 }
 
-
-
-
 adsDomain_switch(values()) // 动手吧
 
 /* Start */
@@ -651,15 +658,16 @@ function uBlockOrigin_add() {
 
 /* End */
 
-// | document.querySelectorAll("script[src*='function.js']").length >= 1
 
-//let x4Home_check = setInterval(() => {
-if (!document.querySelectorAll("button#x4Home").length >= 1) {
-    tagName_appendChild("script", imax.js.functionx, "head"); // js 外部引用 标签 <script>
-} else {
-    //      clearTimeout(x4Home_check);
+function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建; 
+    let daohang = setInterval(() => {
+        if (!document.querySelectorAll("button#x4Home").length >= 1 && !document.querySelectorAll("script[src*='Adblock4limbo.function.js']").length >= 1) {
+            thrd_party_file_X("script", "https://limbopro.com/Adguard/Adblock4limbo.function.js", "body"); // js 外部引用 标签 <script>
+        } else if (document.querySelectorAll("button#x4Home").length >= 1) {
+            clearInterval(daohang);
+        }
+    }, 3000);
 }
-//}, 1000)
 
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告
@@ -1010,7 +1018,7 @@ function js_adsRemove(url) {
 
 
 // 动态创建并引用外部资源 外部样式表 外部脚本
-function tagName_appendChild(tagname, url, where) {
+function thrd_party_file_X(tagname, url, where) {
     const ele_New = document.createElement(tagname);
     // script
     if (tagname == "script") {

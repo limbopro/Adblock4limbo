@@ -119,7 +119,7 @@ function m3u8_tempt(x) {
 /* 循环播放 */
 function video_loopPlay() {
     setInterval(function () {
-        var ele = ["video[preload='none', 'common'],video#player"];
+        var ele = ["video[preload='none'],video#player"];
         var ele_catch = document.querySelector(ele);
         if (ele_catch) {
             ele_catch.play()
@@ -131,7 +131,7 @@ function video_loopPlay() {
 /* 延后播放 */
 function video_delayPlay(time) {
     setTimeout(function () {
-        var ele = ["video[preload='none', 'common'],video#player"];
+        var ele = ["video[preload='none'],video#player"];
         var ele_catch = document.querySelector(ele);
         if (ele_catch) {
             ele_catch.play()
@@ -165,7 +165,7 @@ function adblock4limbo(x) {
     position: fixed;\
     border: transparent;\
     background-color: transparent;\
-    background-image: url("https://limbopro.com/Adblock4limbo.png") !important;\
+    background-image: url("https://limbopro.com/Adblock4limbo.svg") !important;\
     background-size: 100% !important;\
     background-repeat: no-repeat;\
 '
@@ -329,7 +329,7 @@ function x4Daohang_body_pre() {
         target="_blank">电报联系</a></li>\
         <li class="xli"><a class="xButton" id="tgGroup" href="https://t.me/Adblock4limbo/21" \
         target="_blank">电报群组</a></li>\
-        <div class="fbt">新网站收录、当前网页广告问题反馈，其他建议或意见，请通过<span style="color:black;font-weight:bolder;">以上方式</span>告知我们...P.S. 该 Feature 持续增加/完善中，欢迎大家为之添砖加瓦！</div>\
+        <div class="fbt">新网站收录、当前网页广告问题反馈，其他建议或意见，请通过<span style="color:black;font-weight:bolder;">以上方式</span>告知我们...</div>\
         </ul>\
         </div>\
         \
@@ -343,7 +343,7 @@ function x4Daohang_body_pre() {
         target="_blank">GreasyFork</a></li>\
         <li class="xli"><a class="xButton" id="limboprossr" href="https://t.me/limboprossr" \
         target="_blank">博客频道</a></li>\
-        <li class="xli"><a class="xButton special" id="SecretGarden" href="https://t.me/+dQ-tZYqhSDEwNTk1" \
+        <li class="xli"><a class="xButton" id="SecretGarden" href="https://t.me/+dQ-tZYqhSDEwNTk1" \
         target="_blank">春潮频道</a></li>\
         <li class="xli"><a class="xButton" id="limboprossr" href="https://twitter.com/limboprossr" \
         target="_blank">Twitter</a></li>\
@@ -359,7 +359,7 @@ function x4Daohang_body_pre() {
         <li class="xli"><a class="xButton" id="yhlxj" href="https://limbopro.com/archives/25524.html" \
         target="_self">流媒体合租</a></li>\
         <li class="xli"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="xButton" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" \
-        target="_self">广告拦截大全</a></li>\
+        target="_self">去网页广告</a></li>\
         <li class="xli"><a class="xButton" id="software_skills" href="https://limbopro.com/category/software-skills/" \
         target="_self">软件百科</a></li>\
         <li class="xli"><a class="xButton" id="website_builder" href="https://limbopro.com/category/builder/" \
@@ -368,10 +368,8 @@ function x4Daohang_body_pre() {
         target="_self">毒奶搜索</a></li>\
         <li class="xli"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="xButton" id="index" href="https://limbopro.com/" \
         target="_self">毒奶博客</a></li>\
-        <li class="xli"><a class="xButton" id="jichangtuijian" href="https://limbopro.com/865.html" \
-        target="_self">机场推荐</a></li>\
-        <li class="xli"><a class="xButton" id="hezu" href="https://limbopro.com/archives/25524.html" \
-        target="_self">流媒体合租</a></li>\
+        <li class="xli"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="xButton" id="Google" href="https://www.google.com/search?q=%E6%AF%92%E5%A5%B6" \
+        target="_self">Google</a></li>\
         </ul>\
         </div>\
         \
@@ -379,7 +377,7 @@ function x4Daohang_body_pre() {
         <div class="ellGlobal speedtest">\
         <div class="bigger">测速工具//</div>\
         <ul class="xul">\
-        <li class="xli"><a class="xButton" id="common" id="CloudflareSpeedtest" href="https://speed.cloudflare.com/"\
+        <li class="xli"><a class="xButton" id="Cloudflare Speedtest" href="https://speed.cloudflare.com/"\
         target="_blank">Cloudflare</a></li>\
         <li class="xli"><a class="xButton" id="Speedtest" href="https://www.speedtest.net/zh-Hans"\
         target="_blank">Speedtest</a></li>\
@@ -391,7 +389,7 @@ function x4Daohang_body_pre() {
         <div class="ellGlobal ipcheck">\
         <div class="bigger">网络连通检测//</div>\
         <ul class="xul">\
-        <li class="xli"><a class="xButton special" id="Sukka" href="https://ip.skk.moe/"\
+        <li class="xli"><a class="xButton" id="Sukka" href="https://ip.skk.moe/"\
         target="_blank">ip地址查询</a></li>\
         <li class="xli"><a class="xButton" id="checkgfw" href="https://www.checkgfw.com/"\
         target="_blank">域名被墙检测</a></li>\
@@ -431,9 +429,9 @@ function x4Daohang_body_pre() {
         <ul class="xul">\
         <li class="xli"><a class="xButton" id="nbys" href="https://www.nivod4.tv/"\
         target="_self">泥巴影视</a></li>\
-        <li class="xli"><a class="xButton better" id="common" href="https://ddys.pro/"\
+        <li class="xli"><a class="xButton" id="ddrk" href="https://ddys.pro/"\
         target="_self">低端影视</a></li>\
-        <li class="xli"><a class="xButton" id="common" href="https://xiaobaotv.net/"\
+        <li class="xli"><a class="xButton" id="xbys" href="https://xiaobaotv.net/"\
         target="_self">小宝影视</a></li>\
         <li class="xli"><a class="xButton" id="xbys" href="https://gimy.ai/"\
         target="_self">剧迷网</a></li>\
@@ -466,13 +464,17 @@ function x4Daohang_body_pre() {
 '
     let x4Daohang_parents = document.getElementById('x4Daohang');
     x4Daohang_parents.innerHTML = ele_innerHTML;
+
+    //let xButton = document.querySelectorAll('.xButton');
 }
 
 function css_add() { // 优先追加style元素
     // css style 创建
+    //document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
+    //document.querySelector('[aria-live=polite].crisp-client').classList.remove('active');
     let body = document.body;
     let css_innerHTML = '\
-    a.xButton.better{background:#2e64bb!important;box-shadow:inset 0px 0px 15px 3px #10336d;} a.xButton.special{background:#3764ac;},a.xButton#CloudflareSpeedtest{} a.xButton#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.xButton#common {background:#3764ac}.xButton.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154; pointer-events:auto !important; opacity:1 !important;} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.xButton.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.xButton.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#x4Daohang.x4Daohang_css{top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important}div#x4Daohang.x4Daohang_css_0{transition-duration:0ms !important;margin:0px !important}div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.xul > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.xli{min-height:31px;font-size:medium;list-style:none;width:112px;}.xul{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;}.bigger{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;}.ellGlobal{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#x4Daohang{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.xButton{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.xButton:active{position:relative;top:1px;}\
+    .xButton.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-1141541; opacity:0;} .active { z-index:1141541; pointer-events:auto !important; opacity:1 !important;} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.xButton.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.xButton.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#x4Daohang.x4Daohang_css{top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important}div#x4Daohang.x4Daohang_css_0{transition-duration:0ms !important;margin:0px !important}div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.xul > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.xli{min-height:31px;font-size:medium;list-style:none;width:112px;}.xul{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;}.bigger{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;}.ellGlobal{text-align:center;float:left;padding-top:15px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#x4Daohang{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.xButton{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.xButton:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.xButton:active{position:relative;top:1px;}\
     '
     let css_x4Daohang = document.createElement('style');
     css_x4Daohang.id = 'css_x4Daohang';
@@ -493,20 +495,11 @@ function scroll_innerHTML() {
                 scroll_innerHTML.textContent = '*可向上滑动查看更多';
                 scroll_innerHTML.className = "scroll";
                 document.querySelectorAll("div.ellGlobal")[i].appendChild(scroll_innerHTML);
-                console.log("// scroll_innerHTML() 正在执行插入 // 子元素较多");
+                console.log("// scroll_innerHTML() 正在执行插入");
                 clearInterval(scroll_check);
-            } else if (ellGlobal[i].querySelectorAll('ul > div.fbt')[0]) {
-                if ((ellGlobal[i].querySelectorAll('ul > div.fbt')[0].clientHeight + ellGlobal[i].querySelectorAll('li').length * 31) > 325.5) {
-                    let scroll_innerHTML = document.createElement('div');
-                    scroll_innerHTML.textContent = '*可向上滑动查看更多';
-                    scroll_innerHTML.className = "scroll";
-                    document.querySelectorAll("div.ellGlobal")[i].appendChild(scroll_innerHTML);
-                    console.log("// scroll_innerHTML() 正在执行插入 // 尾巴较长");
-                    clearInterval(scroll_check);
-                }
+                //clearInterval(scroll);
             }
         }
-
     }, 1000)
 }
 
@@ -532,9 +525,9 @@ function xXX() {
 }
 
 var selector = { // css 定义选择器
-    body_css_real: ["div.x4Daohang_css", 'common'],
-    body_css: ["div#x4Daohang.x4Daohang_css", 'common'],
-    footer: ["div._footer", 'common'],
+    body_css_real: ["div.x4Daohang_css"],
+    body_css: ["div#x4Daohang.x4Daohang_css"],
+    footer: ["div._footer"],
 }
 
 function all(opacity, zIndex, switchX) {
@@ -550,9 +543,6 @@ function all(opacity, zIndex, switchX) {
         //child_push(".ellGlobal.pornMaker > ul", "100", "", "porn", "0");// 自动化生成内容
         scroll_check(); // 如果每个类别子项目超过一定数目则提示可上滑动查看更多
         echo_check_switch(switchX); // 监控导航大小变化
-        setTimeout(() => {
-            document.querySelector('div#x4Daohang[style]').style.zIndex = document.querySelector('div#x4Daohang[style]').style.zIndex + 1
-        }, 3000);
     }
 }
 
@@ -654,7 +644,7 @@ function _blank() {
     const url_now = window.location.href.toLowerCase();
     if (/\b(limbopro)\b/i.test(url_now)) {
         document.querySelectorAll('div.echo a').forEach((x) => {
-            x.target = "_blank";
+            x.target = "_blank"
             // 将当前页面链接 target 设置为 _blank
             console.log("// _blank() 将当前页面链接 target 设置为 _blank...");
         })
@@ -666,84 +656,70 @@ function _blank() {
 // 超棒自动化
 // 在尾部追加子元素
 
-var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0', 'common'],
-['SpeedTest', 'https://www.speedtest.net/', '_blank', '0', 'common'],
-['溜池ゴロー', 'https://www.tameikegoro.jp/top/', '_blank', 'porn', 'common'],
-['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn', 'common'],
-['レズ・素人ナンパを中心', 'https://deeps.net/', '_blank', 'porn', 'common'],
-['肉感あふれる女優', 'https://www.fitch-av.com/top/', '_blank', 'porn', 'common'],
-['タカラ映像 TAKARA', 'https://www.takara-tv.jp/', '_blank', 'porn', 'common'],
-['MOODYZー', 'https://www.moodyz.com/top/', '_blank', 'porn', 'common'],
-['s1s1s1 S1/エスワンー', 'https://www.s1s1s1.com/top/', '_blank', 'porn', 'common'],
-['PRESTIGE(プレステージ)', 'https://www.prestige-av.com/', '_blank', 'porn', 'common'],
-['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'poxrn', 'common'],
-['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'common'],
-['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'common'],
-['PREMIUM（プレミアム', 'https://www.premium-beauty.com/top/', '_blank', 'porn', 'common'],
-['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn', 'common'],
-['IDEAPOCKET (アイデアポケット）', 'https://www.ideapocket.com/top/', '_blank', 'porn', 'porn', 'common'],
-['ATTACKERS（アタッカーズ）', 'https://www.attackers.net/top/', '_blank', 'porn', 'common'],
-['トップページ - AVメーカー【ダスッ！】公式サイト', 'https://www.dasdas.jp/top/', '_blank', 'porn', 'common'],
-['OPPAI（おっぱい）', 'https://www.oppai-av.com/', '_blank', 'porn', 'common'],
-['【kawaii*】公式サイト', 'https://www.kawaiikawaii.jp/top/', '_blank', 'porn', 'common'],
-['変態紳士倶楽部】公式サイト', 'https://www.to-satsu.com/top/', '_blank', 'porn', 'common'],
-['wanzfactory（ワンズファクトリー）', 'https://www.wanz-factory.com/top/', '_blank', 'porn', 'common'],
-['【E-BODY（イーボディ）】公式サイト', 'https://www.av-e-body.com/top/', '_blank', 'porn', 'common'],
-['MGS動画は', 'https://www.mgstage.com/', '_blank', 'porn', 'common'],
-['ABC/妄想族(1302本)', 'https://www.mousouzoku-av.com/top/', '_blank', 'porn', 'common'],
-['JET「卍GROUP」のトップページです', 'https://manji-group.com/top/', '_blank', 'porn', 'common'],
-['!! ROCKET', 'https://www.rocket-inc.net/top.php', '_blank', 'porn', 'common'],
-['FANZA通販-アダルト通販ショッピング', 'https://www.dmm.co.jp/mono/', '_blank', 'porn', 'common'],
-['【無垢】公式サイトトーップページ | AVメーカ', 'https://www.muku.tv/top/', '_blank', 'porn', 'common'],
-['Github', "https://github.com/", "_blank", "Tech", 'common'],
-['Wikipedia', "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5", "_blank", "Tech", 'common'],
-["Reddit", "https://www.reddit.com/", "_blank", "Social", 'special'],
-["Quora", "https://www.quora.com/", "_blank", "Social", 'common'],
-["Twitter", "https://twitter.com/", "_blank", "Social", 'special'],
-["Instagram", "https://www.instagram.com/", "_blank", "Social", 'common'],
-["Tiktok", "https://www.tiktok.com/", "_blank", "Social", 'common'],
-["Youtube", "https://m.youtube.com/", "_blank", "Media", 'special'],
-["Netflix", "https://www.netflix.com/browse", "_blank", "Media", 'special'],
-["HBO", "https://www.hbo.com/", "_blank", "Media", 'common'],
-["Disney+", "https://www.disneyplus.com/en-hk", "_blank", "Media", 'common'],
-["Amazon Prime Video", "https://www.primevideo.com/", "_blank", "Media", 'common'],
-["Pexels", "https://www.pexels.com/", "_blank", "IMages", 'common'],
-["Pixbay", "https://pixabay.com/", "_blank", "IMages", 'common'],
-['Stack Overflow', 'https://stackoverflow.com/', '_blank', 'Developer', 'common'],
-['Github', 'https://github.com/', '_blank', 'Developer', 'special'],
-['掘金','https://juejin.cn/','_blank','Developer','special'],
-['v2ex','https://www.v2ex.com/','_blank','Developer'],
-['MDN', 'https://developer.mozilla.org/zh-CN/', '_blank', 'Developer', 'common'],
-['w3schools', 'https://w3schools.cn/', '_blank', 'Developer', 'common'],
-['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'special'],
-['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'special'],
-['Njav', 'https://njav.tv/zh/', '_blank', 'xOnline', 'common'],
-['Javday', 'https://javday.tv/', '_blank', 'xOnline', 'common'],
-['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
-['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'common'],
-['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'common'],
-['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'common'],
-['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
-['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
-['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],
-['BGP Toolkit ', 'https://bgp.he.net/', '_blank', 'ipcheck', 'common'],
-['Google', 'https://www.google.com/', '_blank', 'search', 'special'],
-['Bing', 'https://www.bing.com/', '_blank', 'search', 'common'],
-['DuckDuckGo', 'https://duckduckgo.com/', '_blank', 'search', 'common'],
-['Yahoo!）', 'https://hk.yahoo.com/?p=us', '_blank', 'search', 'common'],
-['搜狗搜索', 'https://www.sogou.com/', '_blank', 'search', 'common'],
-['Baidu', 'https://www.baidu.com/', '_blank', 'search', 'common'],
-['Baidu', 'https://www.baidu.com/', '_blank', 'ipcheck', 'common'],
-['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AI', 'common'],
-['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AI', 'common'],
-['Claude.ai', 'https://claude.ai/', '_blank', 'AI', 'common'],
-['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AI', 'common'],
-['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AI', 'common'],
+var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'],
+['SpeedTest', 'https://www.speedtest.net/', '_blank', '0'],
+['溜池ゴロー', 'https://www.tameikegoro.jp/top/', '_blank', 'porn'],
+['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn'],
+['レズ・素人ナンパを中心', 'https://deeps.net/', '_blank', 'porn'],
+['肉感あふれる女優', 'https://www.fitch-av.com/top/', '_blank', 'porn'],
+['タカラ映像 TAKARA', 'https://www.takara-tv.jp/', '_blank', 'porn'],
+['MOODYZー', 'https://www.moodyz.com/top/', '_blank', 'porn'],
+['s1s1s1 S1/エスワンー', 'https://www.s1s1s1.com/top/', '_blank', 'porn'],
+['PRESTIGE(プレステージ)', 'https://www.prestige-av.com/', '_blank', 'porn'],
+['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'poxrn'],
+['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn'],
+['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn'],
+['PREMIUM（プレミアム', 'https://www.premium-beauty.com/top/', '_blank', 'porn'],
+['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn'],
+['IDEAPOCKET (アイデアポケット）', 'https://www.ideapocket.com/top/', '_blank', 'porn', 'porn'],
+['ATTACKERS（アタッカーズ）', 'https://www.attackers.net/top/', '_blank', 'porn'],
+['トップページ - AVメーカー【ダスッ！】公式サイト', 'https://www.dasdas.jp/top/', '_blank', 'porn'],
+['OPPAI（おっぱい）', 'https://www.oppai-av.com/', '_blank', 'porn'],
+['【kawaii*】公式サイト', 'https://www.kawaiikawaii.jp/top/', '_blank', 'porn'],
+['変態紳士倶楽部】公式サイト', 'https://www.to-satsu.com/top/', '_blank', 'porn'],
+['wanzfactory（ワンズファクトリー）', 'https://www.wanz-factory.com/top/', '_blank', 'porn'],
+['【E-BODY（イーボディ）】公式サイト', 'https://www.av-e-body.com/top/', '_blank', 'porn'],
+['MGS動画は', 'https://www.mgstage.com/', '_blank', 'porn'],
+['ABC/妄想族(1302本)', 'https://www.mousouzoku-av.com/top/', '_blank', 'porn'],
+['JET「卍GROUP」のトップページです', 'https://manji-group.com/top/', '_blank', 'porn'],
+['!! ROCKET', 'https://www.rocket-inc.net/top.php', '_blank', 'porn'],
+['FANZA通販-アダルト通販ショッピング', 'https://www.dmm.co.jp/mono/', '_blank', 'porn'],
+['【無垢】公式サイトトーップページ | AVメーカ', 'https://www.muku.tv/top/', '_blank', 'porn'],
+['Github', "https://github.com/", "_blank", "Tech"],
+['Wikipedia', "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5", "_blank", "Tech"],
+["Reddit", "https://www.reddit.com/", "_blank", "Social"],
+["Quora", "https://www.quora.com/", "_blank", "Social"],
+["Twitter", "https://twitter.com/", "_blank", "Social"],
+["Instagram", "https://www.instagram.com/", "_blank", "Social"],
+["Tiktok", "https://www.tiktok.com/", "_blank", "Social"],
+["Youtube", "https://m.youtube.com/", "_blank", "Media"],
+["Netflix", "https://www.netflix.com/browse", "_blank", "Media"],
+["HBO", "https://www.hbo.com/", "_blank", "Media"],
+["Disney+", "https://www.disneyplus.com/en-hk", "_blank", "Media"],
+["Amazon Prime Video", "https://www.primevideo.com/", "_blank", "Media"],
+["Pexels", "https://www.pexels.com/", "_blank", "IMages"],
+["Pixbay", "https://pixabay.com/", "_blank", "IMages"],
+['Stack Overflow', 'https://stackoverflow.com/', '_blank', 'Developer'],
+['Github', 'https://github.com/', '_blank', 'Developer'],
+['MDN', 'https://developer.mozilla.org/zh-CN/', '_blank', 'Developer'],
+['w3schools', 'https://w3schools.cn/', '_blank', 'Developer'],
+['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'porn'],
+['Missav', 'https://missav.com/cn/', '_blank', 'xOnline'],
+['Njav', 'https://njav.tv/zh/', '_blank', 'xOnline'],
+['Javday', 'https://javday.tv/', '_blank', 'xOnline'],
+['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline'],
+['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline'],
+['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline'],
+['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline'],
+['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge'],
+['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end'],
+['IP.SB','https://ip.sb/','_blank','ipcheck'],
+['BGP Toolkit ','https://bgp.he.net/','_blank','ipcheck']
 ];
 
 
 
-var echo_ell_length = 17; // 总共导航类目数量
+var echo_ell_length = 16; // 总共导航类目数量
 var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
 
 function parentElement_check() {
@@ -754,9 +730,7 @@ function parentElement_check() {
          */
         console.log("\\ parentElement_check() 类目自动化生成检测... ")
         if (document.querySelector('div#x4Daohang[style]')) {
-            parentElement_X(".echo", 'AI', 4, '智能AI//', 'AI')
-            parentElement_X(".echo", 'Search', 4, '搜索引擎//', 'search')
-            parentElement_X(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
+            parentElement_X(".echo", 'DeverloperX', 4, '开发者//', 'Developer')
             parentElement_X(".echo", 'Images', 4, '免费商用图片', 'IMages')
             parentElement_X('.echo', 'Social', 4, '社交媒体//', 'Social')
             parentElement_X('.echo', 'Media', 4, '娱乐媒体//', 'Media')
@@ -827,9 +801,7 @@ function parentElement_push(parentNode, category, child_css_change) {
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].textContent = arrayXP[i][0];
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].href = arrayXP[i][1];
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].target = arrayXP[i][2];
-                document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].id = arrayXP[i][3];
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].classList.add(arrayXP[i][3]);
-                document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
                 var bb = ++bb;
                 // 元素新建成功，开始执行元素重写
                 console.log('// 元素新建成功，开始执行元素重写');
@@ -845,9 +817,7 @@ function parentElement_push(parentNode, category, child_css_change) {
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].textContent = arrayXP[i][0];
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].href = arrayXP[i][1];
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].target = arrayXP[i][2];
-                document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].id = arrayXP[i][3];
                 document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].classList.add(arrayXP[i][3]);
-                document.querySelector(parentNode).lastElementChild.querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
                 var bb = ++bb;
             }
         }

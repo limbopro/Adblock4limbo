@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310181622
+## ! Version: 202310191449
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Oct 2023 16:22 UTC
+## ! Last modified: 19 Oct 2023 14:49 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -187,6 +187,7 @@ DOMAIN-SUFFIX,i218435.net
 DOMAIN-SUFFIX,ia-dmp.com
 DOMAIN-SUFFIX,iconmediapixel.com
 DOMAIN-SUFFIX,iconnode.com
+DOMAIN-SUFFIX,id-ward.com
 DOMAIN-SUFFIX,id5-sync.com
 DOMAIN-SUFFIX,idx.lat
 DOMAIN-SUFFIX,impactcdn.com
@@ -352,6 +353,7 @@ DOMAIN-SUFFIX,ugdturner.com
 DOMAIN-SUFFIX,uidapi.com
 DOMAIN-SUFFIX,uqd.io
 DOMAIN-SUFFIX,ustat.info
+DOMAIN-SUFFIX,venture-365-inspired.com
 DOMAIN-SUFFIX,venusrevival.com
 DOMAIN-SUFFIX,vfgte.com
 DOMAIN-SUFFIX,videoplayerhub.com
@@ -2557,6 +2559,7 @@ DOMAIN-SUFFIX,metrics.onshape.com
 DOMAIN-SUFFIX,metrics.pico.tools
 DOMAIN-SUFFIX,metrics.scribblelive.com
 DOMAIN-SUFFIX,metrics.userguiding.com
+DOMAIN-SUFFIX,metrika.cdn112.com
 DOMAIN-SUFFIX,metrix.emagister.com
 DOMAIN-SUFFIX,mj-snowplow-static-js.s3.amazonaws.com
 DOMAIN-SUFFIX,mlweb.dmlab.hu
@@ -3175,7 +3178,6 @@ DOMAIN-SUFFIX,dl1d2m8ri9v3j.cloudfront.net
 DOMAIN-SUFFIX,dn34cbtcv9mef.cloudfront.net
 DOMAIN-SUFFIX,dnn506yrbagrg.cloudfront.net
 DOMAIN-SUFFIX,dnxlgencstz4.cloudfront.net
-DOMAIN-SUFFIX,dp64mxip2za0c.cloudfront.net
 DOMAIN-SUFFIX,dr3fr5q4g2ul9.cloudfront.net
 DOMAIN-SUFFIX,drlimmode9ddd.cloudfront.net
 DOMAIN-SUFFIX,dsbahmgppc0j4.cloudfront.net
@@ -3520,6 +3522,7 @@ DOMAIN-SUFFIX,webbc.fivecdm.com
 DOMAIN-SUFFIX,x9.shinobi.jp
 DOMAIN-SUFFIX,acelogger.heraldcorp.com
 DOMAIN-SUFFIX,cm-exchange.toast.com
+DOMAIN-SUFFIX,event.hackle.io
 DOMAIN-SUFFIX,log.adplex.co.kr
 DOMAIN-SUFFIX,log.cizion.com
 DOMAIN-SUFFIX,log.mofa.go.kr
@@ -3770,6 +3773,7 @@ DOMAIN-SUFFIX,beacon.shutterfly.com
 DOMAIN-SUFFIX,beacon.walmart.com
 DOMAIN-SUFFIX,beacon.wikia-services.com
 DOMAIN-SUFFIX,bfp.capitalone.com
+DOMAIN-SUFFIX,bi.banggood.com
 DOMAIN-SUFFIX,binocule21c.merriam-webster.com
 DOMAIN-SUFFIX,blitz-analytics-batch-server.blitz.gg
 DOMAIN-SUFFIX,boomerang.dell.com
@@ -3871,6 +3875,7 @@ DOMAIN-SUFFIX,events.redditmedia.com
 DOMAIN-SUFFIX,events.santander.co.uk
 DOMAIN-SUFFIX,events.squarespace.com
 DOMAIN-SUFFIX,events.turbosquid.com
+DOMAIN-SUFFIX,events2.www.edenfantasys.com
 DOMAIN-SUFFIX,exr-mms.expertreviews.co.uk
 DOMAIN-SUFFIX,f362.nola.com
 DOMAIN-SUFFIX,fathom.app.silverbeak.com
@@ -4034,6 +4039,7 @@ DOMAIN-SUFFIX,r.apkpure.net
 DOMAIN-SUFFIX,r.bbci.co.uk
 DOMAIN-SUFFIX,rankhit.china.com
 DOMAIN-SUFFIX,ras.yahoo.com
+DOMAIN-SUFFIX,rec.banggood.com
 DOMAIN-SUFFIX,relay.fiverr.com
 DOMAIN-SUFFIX,reports.tunein.com
 DOMAIN-SUFFIX,rfk.biglots.com
@@ -4193,7 +4199,11 @@ DOMAIN-SUFFIX,views.arabnews.com
 DOMAIN-SUFFIX,views.asura.gg
 DOMAIN-SUFFIX,vortex.hulu.com
 DOMAIN-SUFFIX,w3-reporting.reddit.com
+DOMAIN-SUFFIX,wa.childrensplace.com
 DOMAIN-SUFFIX,wa.gmx.co.uk
+DOMAIN-SUFFIX,wa.gymboree.com
+DOMAIN-SUFFIX,wa.pjplace.com
+DOMAIN-SUFFIX,wa.sugarandjade.com
 DOMAIN-SUFFIX,wal.wolfram.com
 DOMAIN-SUFFIX,weblog.flyasiana.com
 DOMAIN-SUFFIX,wh.ipaddress.com
@@ -21264,10 +21274,13 @@ DOMAIN-SUFFIX,event.csdn.net
 DOMAIN-SUFFIX,fclog.baidu.com
 DOMAIN-SUFFIX,flog.pressplay.cc
 DOMAIN-SUFFIX,frog.yuanfudao.com
+DOMAIN-SUFFIX,ftwo-feedback.autohome.com.cn
+DOMAIN-SUFFIX,ftwo-receiver.autohome.com.cn
 DOMAIN-SUFFIX,gentian-frd.hjapi.com
 DOMAIN-SUFFIX,gia.jd.com
 DOMAIN-SUFFIX,gk.sina.cn
 DOMAIN-SUFFIX,h5log.zongheng.com
+DOMAIN-SUFFIX,idm.api.autohome.com.cn
 DOMAIN-SUFFIX,imgstat.baidu.com
 DOMAIN-SUFFIX,improving.wuzhuiso.com
 DOMAIN-SUFFIX,jcmonitor.xcar.com.cn
@@ -21459,23 +21472,28 @@ DOMAIN-SUFFIX,yjtag.yahoo.co.jp
 DOMAIN-SUFFIX,ad-log.dable.io
 DOMAIN-SUFFIX,adoffice.11st.co.kr
 DOMAIN-SUFFIX,aem-collector.daumkakao.io
+DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com
 DOMAIN-SUFFIX,count.munhwa.com
+DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr
 DOMAIN-SUFFIX,hits.zdnet.co.kr
 DOMAIN-SUFFIX,kyson.kakao.com
 DOMAIN-SUFFIX,l.m.naver.com
 DOMAIN-SUFFIX,log.etoday.co.kr
 DOMAIN-SUFFIX,log.zdnet.co.kr
 DOMAIN-SUFFIX,nil.naver.com
+DOMAIN-SUFFIX,pds.auction.co.kr
 DOMAIN-SUFFIX,rake.11st.co.kr
 DOMAIN-SUFFIX,sp.naver.com
 DOMAIN-SUFFIX,stat.i3.dmm.com
 DOMAIN-SUFFIX,stat.tiara.daum.net
 DOMAIN-SUFFIX,stat.tiara.kakao.com
 DOMAIN-SUFFIX,stat.tiara.tistory.com
+DOMAIN-SUFFIX,stat.wanted.jobs
 DOMAIN-SUFFIX,track.tiara.daum.net
 DOMAIN-SUFFIX,track.tiara.kakao.com
 DOMAIN-SUFFIX,tracker.cauly.co.kr
 DOMAIN-SUFFIX,uts.auction.co.kr
+DOMAIN-SUFFIX,utsssl.auction.co.kr
 DOMAIN-SUFFIX,wcs.naver.com
 DOMAIN-SUFFIX,weblog.eseoul.go.kr
 DOMAIN-SUFFIX,weblog2.eseoul.go.kr

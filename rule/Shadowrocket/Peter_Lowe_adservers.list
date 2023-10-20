@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 13 Oct 2023 21:36:50 GMT
-# entries:        3729
+# entries:        3724
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -50,6 +50,7 @@ DOMAIN-SUFFIX,82o9v830.com, reject
 DOMAIN-SUFFIX,a-ads.com, reject
 DOMAIN-SUFFIX,a.mktw.net, reject
 DOMAIN-SUFFIX,a.muloqot.uz, reject
+DOMAIN-SUFFIX,a.sakh.com, reject
 DOMAIN-SUFFIX,a.ucoz.net, reject
 DOMAIN-SUFFIX,a.ucoz.ru, reject
 DOMAIN-SUFFIX,a.vartoken.com, reject
@@ -541,7 +542,6 @@ DOMAIN-SUFFIX,ads.muslimehelfen.org, reject
 DOMAIN-SUFFIX,ads.mvscoelho.com, reject
 DOMAIN-SUFFIX,ads.myadv.org, reject
 DOMAIN-SUFFIX,ads.nccwebs.com, reject
-DOMAIN-SUFFIX,ads.ndtv1.com, reject
 DOMAIN-SUFFIX,ads.networksolutions.com, reject
 DOMAIN-SUFFIX,ads.newgrounds.com, reject
 DOMAIN-SUFFIX,ads.newmedia.cz, reject
@@ -3359,7 +3359,6 @@ DOMAIN-SUFFIX,toplist.cz, reject
 DOMAIN-SUFFIX,toplist.pornhost.com, reject
 DOMAIN-SUFFIX,toplista.mw.hu, reject
 DOMAIN-SUFFIX,toplistcity.com, reject
-DOMAIN-SUFFIX,toprebates.com, reject
 DOMAIN-SUFFIX,topsir.com, reject
 DOMAIN-SUFFIX,topsite.lv, reject
 DOMAIN-SUFFIX,topsites.com.br, reject
@@ -3408,8 +3407,6 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk, reject
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk, reject
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk, reject
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk, reject
-DOMAIN-SUFFIX,tracking.baypacketaddressepisode.makeup, reject
-DOMAIN-SUFFIX,tracking.concedehousingstrainnotice.hair, reject
 DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com, reject
 DOMAIN-SUFFIX,tracking.epicgames.com, reject
 DOMAIN-SUFFIX,tracking.exipure.com, reject
@@ -3421,23 +3418,21 @@ DOMAIN-SUFFIX,tracking.intl.miui.com, reject
 DOMAIN-SUFFIX,tracking.jiffyworld.com, reject
 DOMAIN-SUFFIX,tracking.markethero.io, reject
 DOMAIN-SUFFIX,tracking.miui.com, reject
-DOMAIN-SUFFIX,tracking.namerealopendrawflesh.makeup, reject
 DOMAIN-SUFFIX,tracking.netalerts.io, reject
 DOMAIN-SUFFIX,tracking.olx-st.com, reject
 DOMAIN-SUFFIX,tracking.orixa-media.com, reject
 DOMAIN-SUFFIX,tracking.pastapplauddeterseminarproof.makeup, reject
-DOMAIN-SUFFIX,tracking.playerobjectwordingbasinbank.makeup, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject
 DOMAIN-SUFFIX,tracking.theoceanac.online, reject
 DOMAIN-SUFFIX,tracking.thinkabt.com, reject
 DOMAIN-SUFFIX,tracking.utlservice.com, reject
-DOMAIN-SUFFIX,tracking.vagueunlikecowerscreamforbid.hair, reject
 DOMAIN-SUFFIX,tracking.wetter.at, reject
 DOMAIN-SUFFIX,tracking01.walmart.com, reject
 DOMAIN-SUFFIX,tracking101.com, reject
 DOMAIN-SUFFIX,tracking22.com, reject
 DOMAIN-SUFFIX,trackingsoft.com, reject
 DOMAIN-SUFFIX,trackmysales.com, reject
+DOMAIN-SUFFIX,trackuhub.com, reject
 DOMAIN-SUFFIX,tradeadexchange.com, reject
 DOMAIN-SUFFIX,tradedoubler.com, reject
 DOMAIN-SUFFIX,traffic-exchange.com, reject

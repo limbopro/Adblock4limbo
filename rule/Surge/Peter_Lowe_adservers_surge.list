@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 13 Oct 2023 21:36:50 GMT
-# entries:        3729
+# entries:        3724
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -50,6 +50,7 @@ DOMAIN-SUFFIX,82o9v830.com
 DOMAIN-SUFFIX,a-ads.com
 DOMAIN-SUFFIX,a.mktw.net
 DOMAIN-SUFFIX,a.muloqot.uz
+DOMAIN-SUFFIX,a.sakh.com
 DOMAIN-SUFFIX,a.ucoz.net
 DOMAIN-SUFFIX,a.ucoz.ru
 DOMAIN-SUFFIX,a.vartoken.com
@@ -541,7 +542,6 @@ DOMAIN-SUFFIX,ads.muslimehelfen.org
 DOMAIN-SUFFIX,ads.mvscoelho.com
 DOMAIN-SUFFIX,ads.myadv.org
 DOMAIN-SUFFIX,ads.nccwebs.com
-DOMAIN-SUFFIX,ads.ndtv1.com
 DOMAIN-SUFFIX,ads.networksolutions.com
 DOMAIN-SUFFIX,ads.newgrounds.com
 DOMAIN-SUFFIX,ads.newmedia.cz
@@ -3359,7 +3359,6 @@ DOMAIN-SUFFIX,toplist.cz
 DOMAIN-SUFFIX,toplist.pornhost.com
 DOMAIN-SUFFIX,toplista.mw.hu
 DOMAIN-SUFFIX,toplistcity.com
-DOMAIN-SUFFIX,toprebates.com
 DOMAIN-SUFFIX,topsir.com
 DOMAIN-SUFFIX,topsite.lv
 DOMAIN-SUFFIX,topsites.com.br
@@ -3408,8 +3407,6 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk
-DOMAIN-SUFFIX,tracking.baypacketaddressepisode.makeup
-DOMAIN-SUFFIX,tracking.concedehousingstrainnotice.hair
 DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com
 DOMAIN-SUFFIX,tracking.epicgames.com
 DOMAIN-SUFFIX,tracking.exipure.com
@@ -3421,23 +3418,21 @@ DOMAIN-SUFFIX,tracking.intl.miui.com
 DOMAIN-SUFFIX,tracking.jiffyworld.com
 DOMAIN-SUFFIX,tracking.markethero.io
 DOMAIN-SUFFIX,tracking.miui.com
-DOMAIN-SUFFIX,tracking.namerealopendrawflesh.makeup
 DOMAIN-SUFFIX,tracking.netalerts.io
 DOMAIN-SUFFIX,tracking.olx-st.com
 DOMAIN-SUFFIX,tracking.orixa-media.com
 DOMAIN-SUFFIX,tracking.pastapplauddeterseminarproof.makeup
-DOMAIN-SUFFIX,tracking.playerobjectwordingbasinbank.makeup
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.theoceanac.online
 DOMAIN-SUFFIX,tracking.thinkabt.com
 DOMAIN-SUFFIX,tracking.utlservice.com
-DOMAIN-SUFFIX,tracking.vagueunlikecowerscreamforbid.hair
 DOMAIN-SUFFIX,tracking.wetter.at
 DOMAIN-SUFFIX,tracking01.walmart.com
 DOMAIN-SUFFIX,tracking101.com
 DOMAIN-SUFFIX,tracking22.com
 DOMAIN-SUFFIX,trackingsoft.com
 DOMAIN-SUFFIX,trackmysales.com
+DOMAIN-SUFFIX,trackuhub.com
 DOMAIN-SUFFIX,tradeadexchange.com
 DOMAIN-SUFFIX,tradedoubler.com
 DOMAIN-SUFFIX,traffic-exchange.com

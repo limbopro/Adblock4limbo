@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310191449
+## ! Version: 202310201423
 ## ! Title: EasyList
-## ! Last modified: 19 Oct 2023 14:49 UTC
+## ! Last modified: 20 Oct 2023 14:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2618,6 +2618,7 @@ DOMAIN-SUFFIX,amused-ground.com, reject
 DOMAIN-SUFFIX,amuseglide.com, reject
 DOMAIN-SUFFIX,amusingsnow.pro, reject
 DOMAIN-SUFFIX,amuyonpastour.top, reject
+DOMAIN-SUFFIX,amvmzbmzaryya.top, reject
 DOMAIN-SUFFIX,amwoukrks.autos, reject
 DOMAIN-SUFFIX,amwswkqh.com, reject
 DOMAIN-SUFFIX,amyeubhbnugjum.xyz, reject
@@ -5721,6 +5722,7 @@ DOMAIN-SUFFIX,cca63f7d30.com, reject
 DOMAIN-SUFFIX,ccaahdancza.com, reject
 DOMAIN-SUFFIX,ccdneniusruhebl.com, reject
 DOMAIN-SUFFIX,ccgkudwutf.com, reject
+DOMAIN-SUFFIX,ccgzcavzbmztk.com, reject
 DOMAIN-SUFFIX,ccieoqej.xyz, reject
 DOMAIN-SUFFIX,ccjzuavqrh.com, reject
 DOMAIN-SUFFIX,ccmdcinut.com, reject
@@ -5925,6 +5927,7 @@ DOMAIN-SUFFIX,champedhyps.com, reject
 DOMAIN-SUFFIX,chancellorharrowbelieving.com, reject
 DOMAIN-SUFFIX,chandoowitumki.guru, reject
 DOMAIN-SUFFIX,changarreviver.com, reject
+DOMAIN-SUFFIX,changerwauking.com, reject
 DOMAIN-SUFFIX,changesshortly.com, reject
 DOMAIN-SUFFIX,channelvids.online, reject
 DOMAIN-SUFFIX,channelvids.space, reject
@@ -8946,6 +8949,7 @@ DOMAIN-SUFFIX,echskbpghlc.com, reject
 DOMAIN-SUFFIX,ecipientconcertain.info, reject
 DOMAIN-SUFFIX,ecityalittl.buzz, reject
 DOMAIN-SUFFIX,eclatedpewy.com, reject
+DOMAIN-SUFFIX,eclebgjz.com, reject
 DOMAIN-SUFFIX,eclkmpbn.com, reject
 DOMAIN-SUFFIX,eclkmpsa.com, reject
 DOMAIN-SUFFIX,eclogicmeows.com, reject
@@ -14491,6 +14495,7 @@ DOMAIN-SUFFIX,jujabxlusgag.com, reject
 DOMAIN-SUFFIX,jujaufur.net, reject
 DOMAIN-SUFFIX,jujwhjmtidgp.com, reject
 DOMAIN-SUFFIX,julia-liz.com, reject
+DOMAIN-SUFFIX,julidanroebuck.com, reject
 DOMAIN-SUFFIX,julkkoazfkh.com, reject
 DOMAIN-SUFFIX,jullyambery.net, reject
 DOMAIN-SUFFIX,julolecalve.website, reject
@@ -14932,6 +14937,7 @@ DOMAIN-SUFFIX,knubbyripens.uno, reject
 DOMAIN-SUFFIX,knucklecivichereafter.com, reject
 DOMAIN-SUFFIX,knurryaikuchi.guru, reject
 DOMAIN-SUFFIX,knutenegros.pro, reject
+DOMAIN-SUFFIX,knvjwrwvaqvll.top, reject
 DOMAIN-SUFFIX,knziesxepvaina.com, reject
 DOMAIN-SUFFIX,koabouch.net, reject
 DOMAIN-SUFFIX,koabukedosi.com, reject
@@ -18471,6 +18477,7 @@ DOMAIN-SUFFIX,ocuuqdqupbpvp.com, reject
 DOMAIN-SUFFIX,ocuwyfarlvbq.com, reject
 DOMAIN-SUFFIX,ocwagmlizb.com, reject
 DOMAIN-SUFFIX,odbjmugzoq.com, reject
+DOMAIN-SUFFIX,odbxgdxgvo.com, reject
 DOMAIN-SUFFIX,oddauthorscreative.com, reject
 DOMAIN-SUFFIX,oddlyogeed.com, reject
 DOMAIN-SUFFIX,oddsserve.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310191449
+## ! Version: 202310201423
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Oct 2023 14:49 UTC
+## ! Last modified: 20 Oct 2023 14:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -693,6 +693,7 @@ DOMAIN-SUFFIX,cautiouscrate.com
 DOMAIN-SUFFIX,cautiouscredit.com
 DOMAIN-SUFFIX,cavecurtain.com
 DOMAIN-SUFFIX,cdnral.com
+DOMAIN-SUFFIX,ceciliavenus.com
 DOMAIN-SUFFIX,celestialspectra.com
 DOMAIN-SUFFIX,chairscrack.com
 DOMAIN-SUFFIX,chalkoil.com
@@ -821,6 +822,7 @@ DOMAIN-SUFFIX,dapperfloor.com
 DOMAIN-SUFFIX,dashingdirt.com
 DOMAIN-SUFFIX,dashingdrop.com
 DOMAIN-SUFFIX,dashingsweater.com
+DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dazzlingbook.com
 DOMAIN-SUFFIX,deadpanmarble.com
 DOMAIN-SUFFIX,deadpantruck.com
@@ -1758,6 +1760,7 @@ DOMAIN-SUFFIX,stickssheep.com
 DOMAIN-SUFFIX,stickysheet.com
 DOMAIN-SUFFIX,stiffgame.com
 DOMAIN-SUFFIX,stiffstem.com
+DOMAIN-SUFFIX,stimulatingsneeze.com
 DOMAIN-SUFFIX,stingsquirrel.com
 DOMAIN-SUFFIX,stingycrush.com
 DOMAIN-SUFFIX,stockingsneeze.com
@@ -2580,6 +2583,7 @@ DOMAIN-SUFFIX,ninja.onap.io
 DOMAIN-SUFFIX,noflake-aggregator-http.narvar.com
 DOMAIN-SUFFIX,nol.yahoo.com
 DOMAIN-SUFFIX,nova.dice.net
+DOMAIN-SUFFIX,nr.static.mmcdn.com
 DOMAIN-SUFFIX,ns.rvmkitt.com
 DOMAIN-SUFFIX,observer.ip-label.net
 DOMAIN-SUFFIX,oda.markitondemand.com
@@ -3014,6 +3018,7 @@ DOMAIN-SUFFIX,trap.skype.com
 DOMAIN-SUFFIX,traxex.gannettdigital.com
 DOMAIN-SUFFIX,trends.newsmaxwidget.com
 DOMAIN-SUFFIX,triggers.wfxtriggers.com
+DOMAIN-SUFFIX,triplewhale-pixel.web.app
 DOMAIN-SUFFIX,trk.clinch.co
 DOMAIN-SUFFIX,trk.storyly.io
 DOMAIN-SUFFIX,trk.techtarget.com
@@ -4103,6 +4108,7 @@ DOMAIN-SUFFIX,stats.vk-portal.net
 DOMAIN-SUFFIX,stats.wordpress.com
 DOMAIN-SUFFIX,stats.wwitv.com
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv
+DOMAIN-SUFFIX,szrpr.raen.com
 DOMAIN-SUFFIX,t.3hentai.net
 DOMAIN-SUFFIX,t.9gag.com
 DOMAIN-SUFFIX,t.airasia.com
@@ -21215,6 +21221,7 @@ DOMAIN-SUFFIX,fsm.lapresse.ca
 DOMAIN-SUFFIX,hits.porn.fr
 DOMAIN-SUFFIX,hlms.ecologie.gouv.fr
 DOMAIN-SUFFIX,insights.decathlon.net
+DOMAIN-SUFFIX,kwgs.letudiant.fr
 DOMAIN-SUFFIX,logstash-3.radio-canada.ca
 DOMAIN-SUFFIX,p.pagesjaunes.fr
 DOMAIN-SUFFIX,pixel.dugwood.com
@@ -21222,6 +21229,7 @@ DOMAIN-SUFFIX,pixel.ionos.fr
 DOMAIN-SUFFIX,pt.legalstart.fr
 DOMAIN-SUFFIX,res.paruvendu.fr
 DOMAIN-SUFFIX,s5.charliehebdo.fr
+DOMAIN-SUFFIX,serv.letudiant.fr
 DOMAIN-SUFFIX,stat.ouedkniss.com
 DOMAIN-SUFFIX,stats*.credit-cooperatif.coop
 DOMAIN-SUFFIX,stats.sexemodel.com
@@ -21280,6 +21288,7 @@ DOMAIN-SUFFIX,gentian-frd.hjapi.com
 DOMAIN-SUFFIX,gia.jd.com
 DOMAIN-SUFFIX,gk.sina.cn
 DOMAIN-SUFFIX,h5log.zongheng.com
+DOMAIN-SUFFIX,huaxiang.eastmoney.com
 DOMAIN-SUFFIX,idm.api.autohome.com.cn
 DOMAIN-SUFFIX,imgstat.baidu.com
 DOMAIN-SUFFIX,improving.wuzhuiso.com
@@ -21544,6 +21553,7 @@ DOMAIN-SUFFIX,analytics.carambatv.ru
 DOMAIN-SUFFIX,c.sibnet.ru
 DOMAIN-SUFFIX,counter.drom.ru
 DOMAIN-SUFFIX,counter.sibnet.ru
+DOMAIN-SUFFIX,cpa.hh.ru
 DOMAIN-SUFFIX,cs42.pikabu.ru
 DOMAIN-SUFFIX,cvt1.sibnet.ru
 DOMAIN-SUFFIX,data.glamour.ru

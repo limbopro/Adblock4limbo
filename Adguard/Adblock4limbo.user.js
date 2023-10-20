@@ -83,6 +83,7 @@
 // @match        https://deerchao.cn/*
 // @match        https://gimy.ai/*
 // @match        https://t.me/*
+// @match        https://www.javlibrary.com/*
 // @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
@@ -221,6 +222,7 @@ var imax = {
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         supjav: ".movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
         hanime1: "iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
+        javlibrary: "div#content {width:auto !important} body.main {width:auto !important} iframe,img[src*='gif'],a[target='_blank']{display:none!important;pointer-events: none !important;}",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -267,6 +269,7 @@ function values() {
         "mmfl02",
         "supjav",
         "hanime1",
+        "javlibrary",
         "zhihu"
     ]
 
@@ -559,6 +562,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
             break;
 
+        case "javlibrary":
+
+            //abortCurrentInlineScript("document.write", '/getCookie[\s\S]*?\("\\x/)');
+
+            break;
         case 'zhihu':
             var zhihu_id = "zhihux"
             button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);

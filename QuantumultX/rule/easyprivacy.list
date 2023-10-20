@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310191449
+## ! Version: 202310201423
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Oct 2023 14:49 UTC
+## ! Last modified: 20 Oct 2023 14:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -693,6 +693,7 @@ DOMAIN-SUFFIX,cautiouscrate.com, reject
 DOMAIN-SUFFIX,cautiouscredit.com, reject
 DOMAIN-SUFFIX,cavecurtain.com, reject
 DOMAIN-SUFFIX,cdnral.com, reject
+DOMAIN-SUFFIX,ceciliavenus.com, reject
 DOMAIN-SUFFIX,celestialspectra.com, reject
 DOMAIN-SUFFIX,chairscrack.com, reject
 DOMAIN-SUFFIX,chalkoil.com, reject
@@ -821,6 +822,7 @@ DOMAIN-SUFFIX,dapperfloor.com, reject
 DOMAIN-SUFFIX,dashingdirt.com, reject
 DOMAIN-SUFFIX,dashingdrop.com, reject
 DOMAIN-SUFFIX,dashingsweater.com, reject
+DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dazzlingbook.com, reject
 DOMAIN-SUFFIX,deadpanmarble.com, reject
 DOMAIN-SUFFIX,deadpantruck.com, reject
@@ -1758,6 +1760,7 @@ DOMAIN-SUFFIX,stickssheep.com, reject
 DOMAIN-SUFFIX,stickysheet.com, reject
 DOMAIN-SUFFIX,stiffgame.com, reject
 DOMAIN-SUFFIX,stiffstem.com, reject
+DOMAIN-SUFFIX,stimulatingsneeze.com, reject
 DOMAIN-SUFFIX,stingsquirrel.com, reject
 DOMAIN-SUFFIX,stingycrush.com, reject
 DOMAIN-SUFFIX,stockingsneeze.com, reject
@@ -2580,6 +2583,7 @@ DOMAIN-SUFFIX,ninja.onap.io, reject
 DOMAIN-SUFFIX,noflake-aggregator-http.narvar.com, reject
 DOMAIN-SUFFIX,nol.yahoo.com, reject
 DOMAIN-SUFFIX,nova.dice.net, reject
+DOMAIN-SUFFIX,nr.static.mmcdn.com, reject
 DOMAIN-SUFFIX,ns.rvmkitt.com, reject
 DOMAIN-SUFFIX,observer.ip-label.net, reject
 DOMAIN-SUFFIX,oda.markitondemand.com, reject
@@ -3014,6 +3018,7 @@ DOMAIN-SUFFIX,trap.skype.com, reject
 DOMAIN-SUFFIX,traxex.gannettdigital.com, reject
 DOMAIN-SUFFIX,trends.newsmaxwidget.com, reject
 DOMAIN-SUFFIX,triggers.wfxtriggers.com, reject
+DOMAIN-SUFFIX,triplewhale-pixel.web.app, reject
 DOMAIN-SUFFIX,trk.clinch.co, reject
 DOMAIN-SUFFIX,trk.storyly.io, reject
 DOMAIN-SUFFIX,trk.techtarget.com, reject
@@ -4103,6 +4108,7 @@ DOMAIN-SUFFIX,stats.vk-portal.net, reject
 DOMAIN-SUFFIX,stats.wordpress.com, reject
 DOMAIN-SUFFIX,stats.wwitv.com, reject
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv, reject
+DOMAIN-SUFFIX,szrpr.raen.com, reject
 DOMAIN-SUFFIX,t.3hentai.net, reject
 DOMAIN-SUFFIX,t.9gag.com, reject
 DOMAIN-SUFFIX,t.airasia.com, reject
@@ -21215,6 +21221,7 @@ DOMAIN-SUFFIX,fsm.lapresse.ca, reject
 DOMAIN-SUFFIX,hits.porn.fr, reject
 DOMAIN-SUFFIX,hlms.ecologie.gouv.fr, reject
 DOMAIN-SUFFIX,insights.decathlon.net, reject
+DOMAIN-SUFFIX,kwgs.letudiant.fr, reject
 DOMAIN-SUFFIX,logstash-3.radio-canada.ca, reject
 DOMAIN-SUFFIX,p.pagesjaunes.fr, reject
 DOMAIN-SUFFIX,pixel.dugwood.com, reject
@@ -21222,6 +21229,7 @@ DOMAIN-SUFFIX,pixel.ionos.fr, reject
 DOMAIN-SUFFIX,pt.legalstart.fr, reject
 DOMAIN-SUFFIX,res.paruvendu.fr, reject
 DOMAIN-SUFFIX,s5.charliehebdo.fr, reject
+DOMAIN-SUFFIX,serv.letudiant.fr, reject
 DOMAIN-SUFFIX,stat.ouedkniss.com, reject
 DOMAIN-SUFFIX,stats*.credit-cooperatif.coop, reject
 DOMAIN-SUFFIX,stats.sexemodel.com, reject
@@ -21280,6 +21288,7 @@ DOMAIN-SUFFIX,gentian-frd.hjapi.com, reject
 DOMAIN-SUFFIX,gia.jd.com, reject
 DOMAIN-SUFFIX,gk.sina.cn, reject
 DOMAIN-SUFFIX,h5log.zongheng.com, reject
+DOMAIN-SUFFIX,huaxiang.eastmoney.com, reject
 DOMAIN-SUFFIX,idm.api.autohome.com.cn, reject
 DOMAIN-SUFFIX,imgstat.baidu.com, reject
 DOMAIN-SUFFIX,improving.wuzhuiso.com, reject
@@ -21544,6 +21553,7 @@ DOMAIN-SUFFIX,analytics.carambatv.ru, reject
 DOMAIN-SUFFIX,c.sibnet.ru, reject
 DOMAIN-SUFFIX,counter.drom.ru, reject
 DOMAIN-SUFFIX,counter.sibnet.ru, reject
+DOMAIN-SUFFIX,cpa.hh.ru, reject
 DOMAIN-SUFFIX,cs42.pikabu.ru, reject
 DOMAIN-SUFFIX,cvt1.sibnet.ru, reject
 DOMAIN-SUFFIX,data.glamour.ru, reject

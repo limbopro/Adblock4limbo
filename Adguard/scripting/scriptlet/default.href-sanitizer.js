@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://app.adjust.com/\"][href*=\"?redirect=\"]","?redirect"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"http://go.redirectingat.com\"][href*=\"&url=\"]","?url"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"]];
+const argsList = [["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://app.adjust.com/\"][href*=\"?redirect=\"]","?redirect"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"http://go.redirectingat.com\"][href*=\"&url=\"]","?url"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://disq.us/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["taisachonthi.com",1],["kazefuri.net",2],["lite.duckduckgo.com",3],["androidauthority.com",4],["mozilla.org",5],["pcgamingwiki.com",[6,7]],["starstyle.com",8],["insidehook.com",[9,10,11]],["nowinstock.net",[9,11,13]],["fap18.net",12],["paypal.com",14],["elotrolado.net",15],["tube188.com",16],["tomshardware.com",17],["disqus.com",18],["steamcommunity.com",19]]);
+const hostnamesMap = new Map([["azrom.net",0],["taisachonthi.com",1],["kazefuri.net",2],["lite.duckduckgo.com",3],["androidauthority.com",4],["mozilla.org",5],["pcgamingwiki.com",[6,7]],["starstyle.com",8],["insidehook.com",[9,10,11]],["nowinstock.net",[9,11,13]],["fap18.net",12],["paypal.com",14],["elotrolado.net",15],["tube188.com",16],["tomshardware.com",17],["disqus.com",[18,19]],["steamcommunity.com",20]]);
 
 const entitiesMap = new Map([]);
 
@@ -186,6 +186,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -198,10 +199,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -238,11 +240,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -347,8 +350,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_hrefSanitizer();
 }
 

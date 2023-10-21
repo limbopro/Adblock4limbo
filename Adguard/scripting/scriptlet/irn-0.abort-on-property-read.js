@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["nocontext"],["faPa"],["vc_url"],["show_wpcp_message"],["SGPB_POPUP_PARAMS"],["needpop"],["banner"],["window.LOCO_DATA.copyrightTranslation"]];
+const argsList = [["nocontext"],["faPa"],["vc_url"],["show_wpcp_message"],["tinPa"],["SGPB_POPUP_PARAMS"],["needpop"],["banner"],["window.LOCO_DATA.copyrightTranslation"]];
 
-const hostnamesMap = new Map([["coffeeapps.ir",0],["sclinic.ir",0],["farsroid.com",1],["nab-music.com",2],["shahanmusic.ir",3],["tak3da.com",4],["yeknet.ir",5],["zoomg.ir",6],["oila.tj",7]]);
+const hostnamesMap = new Map([["coffeeapps.ir",0],["sclinic.ir",0],["farsroid.com",1],["nab-music.com",2],["shahanmusic.ir",3],["tinroid.ir",4],["tak3da.com",5],["yeknet.ir",6],["zoomg.ir",7],["oila.tj",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -117,6 +117,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -129,10 +130,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -169,11 +171,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -278,8 +281,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_abortOnPropertyRead();
 }
 

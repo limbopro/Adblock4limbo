@@ -42,18 +42,18 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["onload","google_esf"],["setTimeout","AdContainer"],["atob","/documentEl[\\s\\S]*?_0x/"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["onload","ad"],["jQuery","decodeURIComponent"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["document.write","sitejack"],["__htapop"]];
+const argsList = [["onload","google_esf"],["setTimeout","AdContainer"],["atob","/documentEl[\\s\\S]*?_0x/"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["onload","ad"],["jQuery","decodeURIComponent"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["document.write","sitejack"],["__htapop"]];
 
-const hostnamesMap = new Map([["qa.crefan.jp",0],["gamemod.blog.fc2.com",1],["ssbsblg.blogspot.com",2],["blog-and-destroy.com",3],["musenboya.com",4],["kledgeb.blogspot.com",5],["h-ken.net",7],["connect.coron.tech",8],["h1g.jp",9],["russianbeauties.jp",10],["agora-web.jp",11],["kijomatomelog.com",12],["gundamlog.com",12],["doorblog.jp",12],["digital-thread.com",12],["livedoor.blog",12],["blog.jp",12],["blog.livedoor.jp",[12,15,17]],["majikichi.com",13],["xn--gmq92kd2rm1kx34a.com",14],["dtiblog.com",15],["momoiroadult.com",16],["avgle.com",18]]);
+const hostnamesMap = new Map([["qa.crefan.jp",0],["gamemod.blog.fc2.com",1],["ssbsblg.blogspot.com",2],["blog-and-destroy.com",3],["musenboya.com",4],["kledgeb.blogspot.com",5],["h-ken.net",7],["connect.coron.tech",8],["javple.com",9],["h1g.jp",10],["russianbeauties.jp",11],["agora-web.jp",12],["kijomatomelog.com",13],["gundamlog.com",13],["doorblog.jp",13],["digital-thread.com",13],["livedoor.blog",13],["blog.jp",13],["blog.livedoor.jp",[13,16,18]],["majikichi.com",14],["xn--gmq92kd2rm1kx34a.com",15],["dtiblog.com",16],["momoiroadult.com",17],["avgle.com",19]]);
 
-const entitiesMap = new Map([["manga1001",6],["javmix",14]]);
+const entitiesMap = new Map([["manga1001",6],["javmix",15]]);
 
 const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
 function abortCurrentScript(...args) {
-    runAtHtmlElement(( ) => {
+    runAtHtmlElementFn(( ) => {
         abortCurrentScriptCore(...args);
     });
 }
@@ -155,7 +155,7 @@ function abortCurrentScriptCore(
     }
 }
 
-function runAtHtmlElement(fn) {
+function runAtHtmlElementFn(fn) {
     if ( document.documentElement ) {
         fn();
         return;
@@ -188,6 +188,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -200,10 +201,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -240,11 +242,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -359,8 +362,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_abortCurrentScript();
 }
 

@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["pagead2.googlesyndication.com"],["ads_block.txt"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"]];
+const argsList = [["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["pagead2.googlesyndication.com"],["ads_block.txt"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"]];
 
-const hostnamesMap = new Map([["alarmadefraude.com",0],["sabornutritivo.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,5]],["puromarketing.com",[0,5]],["todostartups.com",[0,5]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["yesmangas1.com",0],["mangahost4.com",0],["mangahosted.com",0],["mangahost2.com",0],["mangahost1.com",0],["mangahostbr.net",0],["mangahostbr.com",0],["modescanlator.com",1],["qwanturankpro.com",2],["desbloquea.me",2],["mega-enlace.com",2],["enlacito.com",2],["acortame-esto.com",2],["netcine.to",2],["repretel.com",3],["redbolivision.tv.bo",3],["independentespanol.com",3],["downloads.sayrodigital.com",4],["teleculinaria.pt",4],["nptmedia.tv",6],["suaads.com",7],["reidoplacar.com",7],["suaurl.com",7],["costumbresmexico.com",8],["desbloqueador.site",8],["notipostingt.com",9],["tivify.tv",10],["netmovies.com.br",11]]);
+const hostnamesMap = new Map([["peliculas8k.com",0],["alarmadefraude.com",1],["sabornutritivo.com",1],["animeszone.net",1],["megacanaisonline.me",1],["animesonline.nz",1],["los40.com",1],["negociosecommerce.com",[1,6]],["puromarketing.com",[1,6]],["todostartups.com",[1,6]],["pobre.wtf",1],["acortalo.net",1],["link-descarga.site",1],["meutimao.com.br",1],["discografias.net",1],["listas.pro",1],["emperorscan.com",1],["lawebdelprogramador.com",1],["dicasgostosas.com",1],["yesmangas1.com",1],["mangahost4.com",1],["mangahosted.com",1],["mangahost2.com",1],["mangahost1.com",1],["mangahostbr.net",1],["mangahostbr.com",1],["modescanlator.com",2],["qwanturankpro.com",3],["desbloquea.me",3],["mega-enlace.com",3],["enlacito.com",3],["acortame-esto.com",3],["netcine.to",3],["repretel.com",4],["redbolivision.tv.bo",4],["independentespanol.com",4],["downloads.sayrodigital.com",5],["teleculinaria.pt",5],["nptmedia.tv",7],["suaads.com",8],["reidoplacar.com",8],["suaurl.com",8],["costumbresmexico.com",9],["desbloqueador.site",9],["notipostingt.com",10],["tivify.tv",11],["netmovies.com.br",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -123,6 +123,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -135,10 +136,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -175,11 +177,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -284,8 +287,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_noFetchIf();
 }
 

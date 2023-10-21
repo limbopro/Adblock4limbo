@@ -42,11 +42,11 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"]];
+const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["adsbygoogle"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"]];
 
-const hostnamesMap = new Map([["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["morlevha.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["intekno.net",1],["kuponuna148.com",2],["kuponuna149.com",2],["kuponuna150.com",2],["kuponuna151.com",2],["kuponuna152.com",2],["kuponuna153.com",2],["kuponuna154.com",2],["kuponuna155.com",2],["kuponuna156.com",2],["kuponuna157.com",2],["kuponuna158.com",2],["kuponuna159.com",2],["kuponuna160.com",2],["kuponuna161.com",2],["kuponuna162.com",2],["kuponuna163.com",2],["kuponuna164.com",2],["kuponuna165.com",2],["kuponuna166.com",2],["kuponuna167.com",2],["kuponuna168.com",2],["kuponuna169.com",2],["kuponuna170.com",2],["veryansintv.com",3],["filmizletv2.com",4],["filmizletv3.com",4],["filmizletv4.com",4],["filmizletv5.com",4],["filmizletv6.com",4],["filmizletv7.com",4],["filmizletv8.com",4],["filmizletv9.com",4],["filmizletv10.com",4],["filmizletv11.com",4],["filmizletv12.com",4],["filmizletv13.com",4],["filmizletv14.com",4],["filmizletv15.com",4],["filmizletv16.com",4],["filmizletv17.com",4],["filmizletv18.com",4],["filmizletv19.com",4],["filmizletv20.com",4],["eksisozluk1923.com",5]]);
+const hostnamesMap = new Map([["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["morlevha.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["intekno.net",1],["kuponuna148.com",2],["kuponuna149.com",2],["kuponuna150.com",2],["kuponuna151.com",2],["kuponuna152.com",2],["kuponuna153.com",2],["kuponuna154.com",2],["kuponuna155.com",2],["kuponuna156.com",2],["kuponuna157.com",2],["kuponuna158.com",2],["kuponuna159.com",2],["kuponuna160.com",2],["kuponuna161.com",2],["kuponuna162.com",2],["kuponuna163.com",2],["kuponuna164.com",2],["kuponuna165.com",2],["kuponuna166.com",2],["kuponuna167.com",2],["kuponuna168.com",2],["kuponuna169.com",2],["kuponuna170.com",2],["veryansintv.com",3],["tekniknot.com",4],["filmizletv2.com",5],["filmizletv3.com",5],["filmizletv4.com",5],["filmizletv5.com",5],["filmizletv6.com",5],["filmizletv7.com",5],["filmizletv8.com",5],["filmizletv9.com",5],["filmizletv10.com",5],["filmizletv11.com",5],["filmizletv12.com",5],["filmizletv13.com",5],["filmizletv14.com",5],["filmizletv15.com",5],["filmizletv16.com",5],["filmizletv17.com",5],["filmizletv18.com",5],["filmizletv19.com",5],["filmizletv20.com",5],["eksisozluk1923.com",6]]);
 
-const entitiesMap = new Map([["filmizletv",4]]);
+const entitiesMap = new Map([["filmizletv",5]]);
 
 const exceptionsMap = new Map([]);
 
@@ -106,6 +106,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -118,10 +119,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -158,11 +160,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -267,8 +270,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_noSetTimeoutIf();
 }
 

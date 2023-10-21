@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","/gtag\\('event'/"],["script","AdBlocker"],["script","message_ads"],["script","tick"],["style","/body[\\s]{1}{[\\s][\\t][\\t]*background-color:|body{background-color:/"],["script","\"Shadow"]];
+const argsList = [["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["style","/body[\\s]{1}{[\\s][\\t][\\t]*background-color:|body{background-color:/"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["inforesist.org",[0,5]],["sports.ru",1],["gsm.in.ua",2],["game4you.top",3],["games-pc.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["root-nation.com",4],["avtovod.com.ua",5],["bigmir.net",5],["buhgalter.com.ua",5],["buhgalter911.com",5],["censor.net",5],["dengi.ua",5],["ditey.com",5],["epravda.com.ua",5],["eurointegration.com.ua",5],["facenews.ua",5],["gazeta.ua",5],["gorod.dp.ua",5],["hvylya.net",5],["i.ua",5],["isport.ua",5],["ivona.ua",5],["kolobok.ua",5],["kriminal.tv",5],["meteo.ua",5],["meteofor.com.ua",5],["nnovosti.info",5],["nv.ua",5],["panno4ka.net",5],["pogodaua.com",5],["pravda.com.ua",5],["real-vin.com",5],["smak.ua",5],["stravy.net",5],["tochka.net",5],["tv.ua",5],["viva.ua",5],["vsetv.com",5],["www.ukr.net",5]]);
+const hostnamesMap = new Map([["inforesist.org",[0,6]],["sports.ru",1],["pikabu.ru",2],["gsm.in.ua",3],["game4you.top",4],["games-pc.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["root-nation.com",5],["avtovod.com.ua",6],["bigmir.net",6],["buhgalter.com.ua",6],["buhgalter911.com",6],["censor.net",6],["dengi.ua",6],["ditey.com",6],["epravda.com.ua",6],["eurointegration.com.ua",6],["facenews.ua",6],["gazeta.ua",6],["gorod.dp.ua",6],["hvylya.net",6],["i.ua",6],["isport.ua",6],["ivona.ua",6],["kolobok.ua",6],["kriminal.tv",6],["meteo.ua",6],["meteofor.com.ua",6],["nnovosti.info",6],["nv.ua",6],["panno4ka.net",6],["pogodaua.com",6],["pravda.com.ua",6],["real-vin.com",6],["smak.ua",6],["stravy.net",6],["tochka.net",6],["tv.ua",6],["viva.ua",6],["vsetv.com",6],["www.ukr.net",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -57,16 +57,16 @@ function removeNodeText(
     condition,
     ...extraArgs
 ) {
-    replaceNodeTextCore(nodeName, '', '', 'condition', condition || '', ...extraArgs);
+    replaceNodeTextFn(nodeName, '', '', 'condition', condition || '', ...extraArgs);
 }
 
-function replaceNodeTextCore(
+function replaceNodeTextFn(
     nodeName = '',
     pattern = '',
     replacement = ''
 ) {
     const safe = safeSelf();
-    const reNodeName = safe.patternToRegex(nodeName, 'i');
+    const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     const shouldLog = scriptletGlobals.has('canDebug') && extraArgs.log || 0;
@@ -90,8 +90,8 @@ function replaceNodeTextCore(
             : replacement;
         node.textContent = after;
         if ( shouldLog !== 0 ) {
-            safe.uboLog('replace-node-text-core.fn before:\n', before);
-            safe.uboLog('replace-node-text-core.fn after:\n', after);
+            safe.uboLog('replace-node-text.fn before:\n', before);
+            safe.uboLog('replace-node-text.fn after:\n', after);
         }
         return sedCount === 0 || (sedCount -= 1) !== 0;
     };
@@ -170,6 +170,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -182,10 +183,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -222,11 +224,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -331,8 +334,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_removeNodeText();
 }
 

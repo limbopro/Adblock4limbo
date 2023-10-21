@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["document.cookie"],["Math.round"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimmoivn.pro",3],["tvhayb.org",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimmoi.im",3],["javnong.cc",4],["plvb.xyz",[5,6,7,8,9]],["subnhanhvl.cc",10],["subnhanh.im",10],["phimmoi4s.com",10],["phimdinhcao.net",10],["phimlongtieng.net",10],["phimdinhcao.com",10],["ophim.vip",10],["tinsoikeo.vip",11],["viettoons.tv",12],["phimmoiaz.cc",12],["zo3x.us",12],["m.blogtruyen.vn",12],["vinaurl.net",12],["animet.net",12],["ytstv.me",13],["yts.do",13],["yts.mx",13],["yts.rs",13],["zingnews.vn",14],["zuiphim.com",15]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimmoivn.pro",3],["tvhayt.org",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimbom.net",3],["phimmoi.im",3],["javnong.cc",4],["plvb.xyz",[5,6,7,8,9]],["subnhanhvl.cc",10],["subnhanh.im",10],["phimmoi4s.com",10],["phimdinhcao.net",10],["phimlongtieng.net",10],["phimdinhcao.com",10],["ophim.vip",10],["tinsoikeo.vip",11],["viettoons.tv",12],["phimmoiaz.cc",12],["m.blogtruyen.vn",12],["vinaurl.net",12],["animet.net",12],["ytstv.me",13],["yts.do",13],["yts.mx",13],["yts.rs",13],["zingnews.vn",14],["zuiphim.com",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -117,6 +117,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -129,10 +130,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -169,11 +171,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -278,8 +281,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_abortOnPropertyRead();
 }
 

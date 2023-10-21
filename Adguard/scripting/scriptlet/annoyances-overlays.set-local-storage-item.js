@@ -42,21 +42,21 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["sports:views:anti-adblock:shower","null"],["adsok","true"],["ignoring_adblock","1"],["adbViews","0"],["altses","false"],["firstFirebaseModalShow","true"],["emailLightBox","false"],["SIGN_UP_BONUS_MODAL_SHOWN","true"],["exit_attempt","true"],["barchart.bcFreeAccountModal","true"],["barchart.bcIsEvenLoggingModal","true"],["ONBOARDING_MODAL_DISPLAYED","true"],["firstEnter","false"],["showModal","true"],["dontShow","true"],["video_muted","true"],["music-announce-showed","true"],["msgads","true"],["entd:newsletter-layer","emptyObj"],["hasSeenAddToChromeNudge","1"],["announcement","1"],["IsModalShown","true"],["hasShownWelcome","true"],["sub_telegram","true"],["hide-airtime-blue-header","true"],["storeToolTipSeen","1"],["__iberion__publisherPromptSeen","3"],["alreadySawHomepageModal","true"],["has_popout_notification_dialog_recently","1"],["notifModal","true"],["homeExpressEmailSignupExitIntentModal","1"],["Visitundefined","1"],["MCPopUp","true"],["detailedview-clicks","5"],["isNotificationsReleaseModalVisible","false"],["newsletterAdvise","1"],["newsletter-flyout","1"],["lp.message.wall.active","$remove$"]];
+const argsList = [["sports:views:anti-adblock:shower","null"],["adsok","true"],["ignoring_adblock","1"],["adbViews","0"],["qset_vc","$remove$"],["altses","false"],["firstFirebaseModalShow","true"],["emailLightBox","false"],["SIGN_UP_BONUS_MODAL_SHOWN","true"],["exit_attempt","true"],["barchart.bcFreeAccountModal","true"],["barchart.bcIsEvenLoggingModal","true"],["ONBOARDING_MODAL_DISPLAYED","true"],["firstEnter","false"],["showModal","true"],["dontShow","true"],["video_muted","true"],["music-announce-showed","true"],["msgads","true"],["entd:newsletter-layer","emptyObj"],["hasSeenAddToChromeNudge","1"],["announcement","1"],["IsModalShown","true"],["hasShownWelcome","true"],["sub_telegram","true"],["hide-airtime-blue-header","true"],["storeToolTipSeen","1"],["__iberion__publisherPromptSeen","3"],["alreadySawHomepageModal","true"],["has_popout_notification_dialog_recently","1"],["notifModal","true"],["homeExpressEmailSignupExitIntentModal","1"],["Visitundefined","1"],["MCPopUp","true"],["detailedview-clicks","5"],["isNotificationsReleaseModalVisible","false"],["newsletterAdvise","1"],["newsletter-flyout","1"],["lp.message.wall.active","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"]];
 
-const hostnamesMap = new Map([["sports.ru",0],["craftpip.github.io",1],["luscious.net",2],["duellinksmeta.com",3],["masterduelmeta.com",3],["makemytrip.com",4],["ensonhaber.com",5],["1800petmeds.com",6],["emusic.com",7],["znanierussia.ru",8],["barchart.com",[9,10]],["calendar.com",11],["map.baidu.com",12],["freevpnplanet.com",13],["imgcreator.zmo.ai",14],["masterclass.com",15],["coub.com",16],["empire-streaming.co",17],["babista.de",18],["you.com",19],["smartnator.com",20],["imovelguide.com.br",21],["thirdweb.com",22],["series.az",23],["peervideo.club",24],["peterengland.com",25],["biznesinfo.pl",26],["rolnikinfo.pl",26],["wawainfo.pl",26],["wtv.pl",26],["turysci.pl",26],["pacjenci.pl",26],["swiatsportu.pl",26],["swiatgwiazd.pl",26],["swiatzwierzat.pl",26],["techgame.pl",26],["domekiogrodek.pl",26],["goniec.pl",26],["zdrogi.pl",26],["diffchecker.com",27],["mildom.com",28],["afkgaming.com",29],["instacart.ca",30],["instacart.com",30],["bonprix.com.br",31],["mercatoemcasa.com.br",32],["context.reverso.net",33],["otodom.pl",34],["dgbrechtsschutz.de",35],["moses-verlag.de",36],["lapresse.ca",37]]);
+const hostnamesMap = new Map([["sports.ru",0],["craftpip.github.io",1],["luscious.net",2],["duellinksmeta.com",3],["masterduelmeta.com",3],["healthtap.com",4],["makemytrip.com",5],["ensonhaber.com",6],["1800petmeds.com",7],["emusic.com",8],["znanierussia.ru",9],["barchart.com",[10,11]],["calendar.com",12],["map.baidu.com",13],["freevpnplanet.com",14],["imgcreator.zmo.ai",15],["masterclass.com",16],["coub.com",17],["empire-streaming.co",18],["babista.de",19],["you.com",20],["smartnator.com",21],["imovelguide.com.br",22],["thirdweb.com",23],["series.az",24],["peervideo.club",25],["peterengland.com",26],["biznesinfo.pl",27],["rolnikinfo.pl",27],["wawainfo.pl",27],["wtv.pl",27],["turysci.pl",27],["pacjenci.pl",27],["swiatsportu.pl",27],["swiatgwiazd.pl",27],["swiatzwierzat.pl",27],["techgame.pl",27],["domekiogrodek.pl",27],["goniec.pl",27],["zdrogi.pl",27],["diffchecker.com",28],["mildom.com",29],["afkgaming.com",30],["instacart.ca",31],["instacart.com",31],["bonprix.com.br",32],["mercatoemcasa.com.br",33],["context.reverso.net",34],["otodom.pl",35],["dgbrechtsschutz.de",36],["moses-verlag.de",37],["lapresse.ca",38],["www.watermarkremover.io",40]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["brainly",39]]);
 
 const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
 function setLocalStorageItem(key = '', value = '') {
-    setLocalStorageItemCore('local', false, key, value);
+    setLocalStorageItemFn('local', false, key, value);
 }
 
-function setLocalStorageItemCore(
+function setLocalStorageItemFn(
     which = 'local',
     trusted = false,
     key = '',
@@ -68,6 +68,7 @@ function setLocalStorageItemCore(
         '',
         'undefined', 'null',
         'false', 'true',
+        'on', 'off',
         'yes', 'no',
         '{}', '[]', '""',
         '$remove$',
@@ -90,14 +91,115 @@ function setLocalStorageItemCore(
     }
 
     try {
-        const storage = `${which}Storage`;
+        const storage = self[`${which}Storage`];
         if ( value === '$remove$' ) {
-            self[storage].removeItem(key);
+            const safe = safeSelf();
+            const pattern = safe.patternToRegex(key, undefined, true );
+            const toRemove = [];
+            for ( let i = 0, n = storage.length; i < n; i++ ) {
+                const key = storage.key(i);
+                if ( pattern.test(key) ) { toRemove.push(key); }
+            }
+            for ( const key of toRemove ) {
+                storage.removeItem(key);
+            }
         } else {
-            self[storage].setItem(key, `${value}`);
+            storage.setItem(key, `${value}`);
         }
     } catch(ex) {
     }
+}
+
+function safeSelf() {
+    if ( scriptletGlobals.has('safeSelf') ) {
+        return scriptletGlobals.get('safeSelf');
+    }
+    const self = globalThis;
+    const safe = {
+        'Array_from': Array.from,
+        'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
+        'Object_defineProperty': Object.defineProperty.bind(Object),
+        'RegExp': self.RegExp,
+        'RegExp_test': self.RegExp.prototype.test,
+        'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
+        'XMLHttpRequest': self.XMLHttpRequest,
+        'addEventListener': self.EventTarget.prototype.addEventListener,
+        'removeEventListener': self.EventTarget.prototype.removeEventListener,
+        'fetch': self.fetch,
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'log': console.log.bind(console),
+        uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
+            if ( args.length === 0 ) { return; }
+            if ( `${args[0]}` === '' ) { return; }
+            this.log('[uBO]', ...args);
+        },
+        initPattern(pattern, options = {}) {
+            if ( pattern === '' ) {
+                return { matchAll: true };
+            }
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
+            if ( expect === false ) {
+                pattern = pattern.slice(1);
+            }
+            const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
+            if ( match !== null ) {
+                return {
+                    pattern,
+                    re: new this.RegExp(
+                        match[1],
+                        match[2] || options.flags
+                    ),
+                    expect,
+                };
+            }
+            return {
+                pattern,
+                re: new this.RegExp(pattern.replace(
+                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    options.flags
+                ),
+                expect,
+            };
+        },
+        testPattern(details, haystack) {
+            if ( details.matchAll ) { return true; }
+            return this.RegExp_test.call(details.re, haystack) === details.expect;
+        },
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
+            if ( pattern === '' ) { return /^/; }
+            const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
+            if ( match === null ) {
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
+            }
+            try {
+                return new RegExp(match[1], match[2] || flags);
+            }
+            catch(ex) {
+            }
+            return /^/;
+        },
+        getExtraArgs(args, offset = 0) {
+            const entries = args.slice(offset).reduce((out, v, i, a) => {
+                if ( (i & 1) === 0 ) {
+                    const rawValue = a[i+1];
+                    const value = /^\d+$/.test(rawValue)
+                        ? parseInt(rawValue, 10)
+                        : rawValue;
+                    out.push([ a[i], value ]);
+                }
+                return out;
+            }, []);
+            return Object.fromEntries(entries);
+        },
+    };
+    scriptletGlobals.set('safeSelf', safe);
+    return safe;
 }
 
 /******************************************************************************/
@@ -178,8 +280,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_setLocalStorageItem();
 }
 

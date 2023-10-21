@@ -42,13 +42,13 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["adBlockWallEnabled"],["0"],["adtagparameter","enabled"],["adEnabled"],["Playlist.ContentBreaks"],["adRenderers"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.device.adSponsorshipTemplate data.device.adsParams"],["data.[].vast_url"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["vastUrl"],["adReinsertion"],["enabled","testhide"],["adParam"],["adProvider"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["*","ad_unit_path"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["ads"],["ssaiInfo fallback.ssaiInfo"],["result.ads"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"]];
+const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["adBlockWallEnabled"],["adtagparameter","enabled"],["adEnabled"],["Playlist.ContentBreaks"],["adRenderers"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.device.adSponsorshipTemplate data.device.adsParams"],["data.[].vast_url"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["vastUrl"],["adReinsertion"],["enabled","testhide"],["adParam"],["adProvider"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["*","ad_unit_path"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["ads"],["ssaiInfo fallback.ssaiInfo"],["result.ads"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"]];
 
-const hostnamesMap = new Map([["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["bild.de",2],["video.gjirafa.com",3],["winfuture.de",4],["popcornflix.com",5],["itv.com",6],["funimation.com",7],["hulu.com",[9,10]],["www.amazon.co.jp",11],["www.amazon.com",11],["crunchyroll.com",12],["crackle.com",13],["vvvvid.it",14],["linkvertise.com",15],["welt.de",16],["plus.rtl.de",17],["tv2.no",18],["doomovie-hd.com",19],["sonyliv.com",20],["tvn24.pl",21],["art19.com",22],["domoplus.pl",23],["kuchniaplus.pl",23],["miniminiplus.pl",23],["teletoonplus.pl",23],["vix.com",24],["citytv.com",25],["vlive.tv",27],["go.discovery.com",29],["tvn.pl",30],["10play.com.au",31],["player.stv.tv",32],["fox.com",33],["foxsports.com",33],["play.max.com",34],["sportstiger.com",35],["disneyplus.com",[36,37,38,39,40]],["colearn.id",41],["hotmediahub.com",42],["terabox.fun",42],["hotstar.com",43],["nbc.com",44],["play.history.com",45],["eu-proxy.startpage.com",46],["player.pop.co.uk",47],["player.popfun.co.uk",47],["www.reddit.com",[48,49]],["nypost.com",50],["pagesix.com",50],["stories.los40.com",51]]);
+const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["bild.de",2],["winfuture.de",3],["popcornflix.com",4],["itv.com",5],["funimation.com",6],["hulu.com",[8,9]],["www.amazon.co.jp",10],["www.amazon.com",10],["crunchyroll.com",11],["crackle.com",12],["vvvvid.it",13],["linkvertise.com",14],["welt.de",15],["plus.rtl.de",16],["tv2.no",17],["doomovie-hd.com",18],["sonyliv.com",19],["tvn24.pl",20],["art19.com",21],["domoplus.pl",22],["kuchniaplus.pl",22],["miniminiplus.pl",22],["teletoonplus.pl",22],["vix.com",23],["citytv.com",24],["vlive.tv",26],["go.discovery.com",28],["tvn.pl",29],["10play.com.au",30],["player.stv.tv",31],["fox.com",32],["foxsports.com",32],["play.max.com",33],["sportstiger.com",34],["disneyplus.com",[35,36,37,38,39]],["colearn.id",40],["hotmediahub.com",41],["terabox.fun",41],["hotstar.com",42],["nbc.com",43],["play.history.com",44],["eu-proxy.startpage.com",45],["player.pop.co.uk",46],["player.popfun.co.uk",46],["www.reddit.com",[47,48]],["nypost.com",49],["pagesix.com",49],["stories.los40.com",50]]);
 
-const entitiesMap = new Map([["elixx",8],["shorttey",26],["discoveryplus",[28,29]]]);
+const entitiesMap = new Map([["elixx",7],["shorttey",25],["discoveryplus",[27,28]]]);
 
-const exceptionsMap = new Map([["dutyfarm.welt.de",[16]]]);
+const exceptionsMap = new Map([["dutyfarm.welt.de",[15]]]);
 
 /******************************************************************************/
 
@@ -63,7 +63,7 @@ function jsonPrune(
     JSON.parse = new Proxy(JSON.parse, {
         apply: function(target, thisArg, args) {
             const objBefore = Reflect.apply(target, thisArg, args);
-            const objAfter = objectPrune(
+            const objAfter = objectPruneFn(
                 objBefore,
                 rawPrunePaths,
                 rawNeedlePaths,
@@ -75,38 +75,7 @@ function jsonPrune(
     });
 }
 
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
-            }
-        };
-    }
-    const safe = safeSelf();
-    const haystack = {};
-    const props = Array.from(propNeedles.keys());
-    for ( const obj of objs ) {
-        if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = JSON.stringify(value); }
-            catch(ex) { }
-            if ( typeof value !== 'string' ) { continue; }
-        }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
-    }
-    return true;
-}
-
-function objectPrune(
+function objectPruneFn(
     obj,
     rawPrunePaths,
     rawNeedlePaths,
@@ -128,8 +97,8 @@ function objectPrune(
             return;
         }
     }
-    if ( objectPrune.findOwner === undefined ) {
-        objectPrune.findOwner = (root, path, prune = false) => {
+    if ( objectPruneFn.findOwner === undefined ) {
+        objectPruneFn.findOwner = (root, path, prune = false) => {
             let owner = root;
             let chain = path;
             for (;;) {
@@ -160,7 +129,7 @@ function objectPrune(
                     const next = chain.slice(pos + 1);
                     let found = false;
                     for ( const key of Object.keys(owner) ) {
-                        found = objectPrune.findOwner(owner[key], next, prune) || found;
+                        found = objectPruneFn.findOwner(owner[key], next, prune) || found;
                     }
                     return found;
                 }
@@ -169,53 +138,36 @@ function objectPrune(
                 chain = chain.slice(pos + 1);
             }
         };
-        objectPrune.mustProcess = (root, needlePaths) => {
+        objectPruneFn.mustProcess = (root, needlePaths) => {
             for ( const needlePath of needlePaths ) {
-                if ( objectPrune.findOwner(root, needlePath) === false ) {
+                if ( objectPruneFn.findOwner(root, needlePath) === false ) {
                     return false;
                 }
             }
             return true;
         };
-        objectPrune.logJson = (json, msg, reNeedle) => {
+        objectPruneFn.logJson = (json, msg, reNeedle) => {
             if ( reNeedle.test(json) === false ) { return; }
             safeSelf().uboLog(`objectPrune()`, msg, location.hostname, json);
         };
     }
-    const jsonBefore = logLevel ? JSON.stringify(obj, null, 2) : '';
+    const jsonBefore = logLevel ? safe.JSON_stringify(obj, null, 2) : '';
     if ( logLevel === true || logLevel === 'all' ) {
-        objectPrune.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
+        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( prunePaths.length === 0 ) { return; }
     let outcome = 'nomatch';
-    if ( objectPrune.mustProcess(obj, needlePaths) ) {
+    if ( objectPruneFn.mustProcess(obj, needlePaths) ) {
         for ( const path of prunePaths ) {
-            if ( objectPrune.findOwner(obj, path, true) ) {
+            if ( objectPruneFn.findOwner(obj, path, true) ) {
                 outcome = 'match';
             }
         }
     }
     if ( logLevel === outcome ) {
-        objectPrune.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
+        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( outcome === 'match' ) { return obj; }
-}
-
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
-    const safe = safeSelf();
-    const needles = new Map();
-    if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
-    const options = { canNegate: true };
-    for ( const needle of propsToMatch.split(/\s+/) ) {
-        const [ prop, pattern ] = needle.split(':');
-        if ( prop === '' ) { continue; }
-        if ( pattern !== undefined ) {
-            needles.set(prop, safe.initPattern(pattern, options));
-        } else if ( implicit !== '' ) {
-            needles.set(implicit, safe.initPattern(prop, options));
-        }
-    }
-    return needles;
 }
 
 function safeSelf() {
@@ -224,6 +176,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -236,10 +189,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -276,11 +230,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -305,11 +260,6 @@ function safeSelf() {
     };
     scriptletGlobals.set('safeSelf', safe);
     return safe;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 function matchesStackTrace(
@@ -354,6 +304,11 @@ function matchesStackTrace(
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }
     return r;
+}
+
+function shouldLog(details) {
+    if ( details instanceof Object === false ) { return false; }
+    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 function getExceptionToken() {
@@ -449,8 +404,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_jsonPrune();
 }
 

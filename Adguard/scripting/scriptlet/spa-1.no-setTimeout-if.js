@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/adBlock|\\.height\\(\\)/"],["placebo"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["window.location.href"],["adsdirect"]];
+const argsList = [["placebo.height()"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["placebo"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["window.location.href"],["adsdirect"]];
 
-const hostnamesMap = new Map([["guiacripto.online",0],["verasoul.com",1],["zona-leros.com",2],["xerifetech.com",3],["suaads.com",4],["reidoplacar.com",4],["suaurl.com",[4,13]],["guianoticiario.net",5],["resenhasglobais.com",6],["tecword.info",6],["smartdoing.tech",6],["vivercomsaude.online",6],["escplus.es",7],["genshinpro.com.br",8],["it-swarm-es.com",8],["manchetehoje.xyz",9],["unsurcoenlasombra.com",10],["hartico.com",11],["seriesdonghua.com",12],["mundodonghua.com",12],["seriesgratis.biz",14]]);
+const hostnamesMap = new Map([["sempreupdate.com.br",0],["peliculas8k.com",1],["guiacripto.online",2],["verasoul.com",3],["zona-leros.com",4],["xerifetech.com",5],["suaads.com",6],["reidoplacar.com",6],["suaurl.com",[6,15]],["guianoticiario.net",7],["resenhasglobais.com",8],["tecword.info",8],["smartdoing.tech",8],["vivercomsaude.online",8],["escplus.es",9],["genshinpro.com.br",10],["it-swarm-es.com",10],["manchetehoje.xyz",11],["unsurcoenlasombra.com",12],["hartico.com",13],["seriesdonghua.com",14],["mundodonghua.com",14],["seriesgratis.biz",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -106,6 +106,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -118,10 +119,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -158,11 +160,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -267,8 +270,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_noSetTimeoutIf();
 }
 

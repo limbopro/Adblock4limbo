@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["mi_track_user","false"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYin","noopFunc"],["checkYinPlaus","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["detect","noopFunc"]];
+const argsList = [["mi_track_user","false"],["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYin","noopFunc"],["checkYinPlaus","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["detect","noopFunc"]];
 
-const hostnamesMap = new Map([["boktugg.se",0],["dinbyggare.se",0],["ettgottskratt.se",0],["humorbibeln.se",0],["lakartidningen.se",0],["matsafari.nu",0],["newsner.com",0],["sportbibeln.se",0],["trafiksakerhet.se",0],["villalivet.se",0],["zeinaskitchen.se",0],["di.se",1],["elevspel.se",2],["feber.se",[3,4,5,6]],["tjock.se",[3,4,5,6]],["findit.se",7],["fssweden.se",8],["fz.se",8],["gamereactor.se",9],["heleneholmsif.se",[10,11]],["melodifestivalklubben.se",[10,11]],["morotsliv.com",[10,11]],["thorengruppen.se",[10,11]],["trafikskola.se",[10,11]],["utslappsratt.se",[10,11]],["kamrat.com",[12,13]],["kritiker.se",[14,15,16]],["mitti.se",17],["mobilanyheter.net",18],["ordbokpro.se",19],["spray.se",[20,21]],["vinochmatguiden.se",21],["swedroid.se",22],["thatsup.se",23],["www.expressen.se",24]]);
+const hostnamesMap = new Map([["boktugg.se",0],["dinbyggare.se",0],["ettgottskratt.se",0],["humorbibeln.se",0],["lakartidningen.se",0],["matsafari.nu",0],["newsner.com",0],["sportbibeln.se",0],["trafiksakerhet.se",0],["villalivet.se",0],["zeinaskitchen.se",0],["conpot.se",[1,2]],["di.se",3],["elevspel.se",4],["feber.se",[5,6,7,8]],["tjock.se",[5,6,7,8]],["findit.se",9],["fssweden.se",10],["fz.se",10],["gamereactor.se",11],["heleneholmsif.se",[12,13]],["melodifestivalklubben.se",[12,13]],["morotsliv.com",[12,13]],["thorengruppen.se",[12,13]],["trafikskola.se",[12,13]],["utslappsratt.se",[12,13]],["kamrat.com",[14,15]],["kritiker.se",[16,17,18]],["mitti.se",19],["mobilanyheter.net",20],["ordbokpro.se",21],["spray.se",[22,23]],["vinochmatguiden.se",23],["swedroid.se",24],["thatsup.se",25],["www.expressen.se",26]]);
 
 const entitiesMap = new Map([]);
 
@@ -126,7 +126,7 @@ function setConstantCore(
             if ( Math.abs(cValue) > 0x7FFF ) { return; }
         } else if ( trusted ) {
             if ( cValue.startsWith('{') && cValue.endsWith('}') ) {
-                try { cValue = safe.jsonParse(cValue).value; } catch(ex) { return; }
+                try { cValue = safe.JSON_parse(cValue).value; } catch(ex) { return; }
             }
         } else {
             return;
@@ -274,6 +274,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -286,10 +287,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -326,11 +328,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -435,8 +438,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_setConstant();
 }
 

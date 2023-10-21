@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"metromode.se/bouncer\"]","?url"]];
+const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/idg.digidip.net/\"]","?url"],["a[href*=\"metromode.se/bouncer\"]","?url"]];
 
-const hostnamesMap = new Map([["aftonbladet.se",0],["byggahus.se",0],["elle.se",[0,1]],["expressen.se",0],["galamagasin.se",0],["godare.se",0],["livsstil.se",0],["svenskdam.se",[0,1]],["allas.se",1],["baaam.se",1],["femina.se",1],["hant.se",1],["mabra.com",1],["motherhood.se",1],["residencemagazine.se",1],["metromode.se",2]]);
+const hostnamesMap = new Map([["aftonbladet.se",0],["byggahus.se",0],["elle.se",[0,1]],["expressen.se",0],["galamagasin.se",0],["godare.se",0],["livsstil.se",0],["svenskdam.se",[0,1]],["allas.se",1],["baaam.se",1],["femina.se",1],["hant.se",1],["mabra.com",1],["motherhood.se",1],["residencemagazine.se",1],["m3.se",2],["macworld.se",2],["pcforalla.se",2],["metromode.se",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -186,6 +186,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -198,10 +199,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -238,11 +240,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -347,8 +350,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_hrefSanitizer();
 }
 

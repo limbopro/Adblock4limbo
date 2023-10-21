@@ -48,7 +48,7 @@ const hostnamesMap = new Map([["116.ru",0],["14.ru",0],["161.ru",0],["164.ru",0]
 
 const entitiesMap = new Map([["hdrezka",69],["rezka",69],["mult-porno",70],["sex-studentki",70],["cosplay-porn",70]]);
 
-const exceptionsMap = new Map([["1yar.tv",[19]],["m.vk.com",[60]],["3igames.mail.ru",[74,83,84]],["auto.mail.ru",[74,83,84]],["biz.mail.ru",[74,83,84]],["bonus.mail.ru",[74,83,84]],["calendar.mail.ru",[74,83,84]],["calls.mail.ru",[74,77,83,84]],["cloud.mail.ru",[74,83,84]],["deti.mail.ru",[74,83,84]],["dobro.mail.ru",[74,83,84]],["e.mail.ru",[74,77,83,84]],["esports.mail.ru",[74,83,84]],["games.mail.ru",[74,83,84]],["gibdd.mail.ru",[74,83,84]],["go.mail.ru",[74,83,84]],["health.mail.ru",[74,83,84]],["help.mail.ru",[74,83,84]],["hi-tech.mail.ru",[74,83,84]],["horo.mail.ru",[74,83,84]],["kino.mail.ru",[74,83,84]],["lady.mail.ru",[74,83,84]],["love.mail.ru",[74,83,84]],["mailblog.mail.ru",[74,83,84]],["mcs.mail.ru",[74,83,84]],["minigames.mail.ru",[74,83,84]],["my.mail.ru",[74,77,83,84]],["news.mail.ru",[74,83,84]],["octavius.mail.ru",[74,77,83,84]],["okminigames.mail.ru",[74,83,84]],["otvet.mail.ru",[74,83,84]],["pets.mail.ru",[74,83,84]],["player-smotri.mail.ru",[74,83,84]],["pogoda.mail.ru",[74,83,84]],["top.mail.ru",[74,83,84]],["touch.mail.ru",[74,77,83,84]],["tv.mail.ru",[74,83,84]]]);
+const exceptionsMap = new Map([["1yar.tv",[19]],["m.vk.com",[60]],["3igames.mail.ru",[74,83,84]],["auto.mail.ru",[74,83,84]],["biz.mail.ru",[74,83,84]],["bonus.mail.ru",[74,83,84]],["calendar.mail.ru",[74,83,84]],["calls.mail.ru",[74,77,83,84]],["cloud.mail.ru",[74,83,84]],["deti.mail.ru",[74,83,84]],["dobro.mail.ru",[74,83,84]],["e.mail.ru",[74,77,83,84]],["esports.mail.ru",[74,83,84]],["games.mail.ru",[74,83,84]],["gibdd.mail.ru",[74,83,84]],["health.mail.ru",[74,83,84]],["help.mail.ru",[74,83,84]],["hi-tech.mail.ru",[74,83,84]],["horo.mail.ru",[74,83,84]],["kino.mail.ru",[74,83,84]],["lady.mail.ru",[74,83,84]],["love.mail.ru",[74,83,84]],["mailblog.mail.ru",[74,83,84]],["mcs.mail.ru",[74,83,84]],["minigames.mail.ru",[74,83,84]],["my.mail.ru",[74,77,83,84]],["news.mail.ru",[74,83,84]],["octavius.mail.ru",[74,77,83,84]],["okminigames.mail.ru",[74,83,84]],["otvet.mail.ru",[74,83,84]],["pets.mail.ru",[74,83,84]],["player-smotri.mail.ru",[74,83,84]],["pogoda.mail.ru",[74,83,84]],["top.mail.ru",[74,83,84]],["touch.mail.ru",[74,77,83,84]],["tv.mail.ru",[74,83,84]]]);
 
 /******************************************************************************/
 
@@ -126,7 +126,7 @@ function setConstantCore(
             if ( Math.abs(cValue) > 0x7FFF ) { return; }
         } else if ( trusted ) {
             if ( cValue.startsWith('{') && cValue.endsWith('}') ) {
-                try { cValue = safe.jsonParse(cValue).value; } catch(ex) { return; }
+                try { cValue = safe.JSON_parse(cValue).value; } catch(ex) { return; }
             }
         } else {
             return;
@@ -274,6 +274,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -286,10 +287,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -326,11 +328,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -435,8 +438,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_setConstant();
 }
 

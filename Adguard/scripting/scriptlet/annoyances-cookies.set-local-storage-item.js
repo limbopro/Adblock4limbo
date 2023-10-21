@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookie_consent","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["analytics","false"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"]];
+const argsList = [["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookie_consent","false"],["privacy-policy-accepted","true"],["cookie-closed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["allowCookies","true"]];
 
-const hostnamesMap = new Map([["betterprogramming.pub",0],["medium.com",0],["500ish.com",0],["gitconnected.com",0],["bettermarketing.pub",0],["diylifetech.com",0],["thebolditalic.com",0],["writingcooperative.com",0],["fanfare.pub",0],["betterhumans.pub",0],["kick.com",1],["happiful.com",2],["sneakerfreaker.com",3],["walmart.ca",4],["flyingblue.com",5],["byfood.com",6],["andsafe.de",7],["edostavka.by",8],["emall.by",8],["eezy.nrw",9],["bahnland-bayern.de",9],["evropochta.by",[10,11]],["hitado.de",12],["inselberlin.de",13],["gronkh.tv",14],["parrotsec.org",15],["adfilteringdevsummit.com",16],["learngerman.dw.com",17],["gostanford.com",18],["namensetiketten.de",19],["drafthound.com",[20,21]],["wokularach.pl",22],["bidup.amtrak.com",23],["eschuhe.de",24],["revanced.app",25],["flyingpapers.com",26],["beta.character.ai",[27,28]]]);
+const hostnamesMap = new Map([["betterprogramming.pub",0],["medium.com",0],["500ish.com",0],["gitconnected.com",0],["bettermarketing.pub",0],["diylifetech.com",0],["thebolditalic.com",0],["writingcooperative.com",0],["fanfare.pub",0],["betterhumans.pub",0],["kick.com",1],["happiful.com",2],["geotastic.net",3],["everest-24.pl",[4,5]],["sneakerfreaker.com",6],["walmart.ca",7],["flyingblue.com",8],["byfood.com",9],["andsafe.de",10],["edostavka.by",11],["emall.by",11],["onexstore.pl",[12,13,14]],["revanced.app",14],["eezy.nrw",15],["bahnland-bayern.de",15],["evropochta.by",[16,17]],["hitado.de",18],["inselberlin.de",19],["gronkh.tv",20],["parrotsec.org",21],["adfilteringdevsummit.com",22],["learngerman.dw.com",23],["gostanford.com",24],["namensetiketten.de",25],["drafthound.com",[26,27]],["wokularach.pl",28],["bidup.amtrak.com",29],["eschuhe.de",30],["flyingpapers.com",31],["beta.character.ai",[32,33]],["mediathekviewweb.de",34]]);
 
 const entitiesMap = new Map([]);
 
@@ -53,10 +53,10 @@ const exceptionsMap = new Map([]);
 /******************************************************************************/
 
 function setLocalStorageItem(key = '', value = '') {
-    setLocalStorageItemCore('local', false, key, value);
+    setLocalStorageItemFn('local', false, key, value);
 }
 
-function setLocalStorageItemCore(
+function setLocalStorageItemFn(
     which = 'local',
     trusted = false,
     key = '',
@@ -68,6 +68,7 @@ function setLocalStorageItemCore(
         '',
         'undefined', 'null',
         'false', 'true',
+        'on', 'off',
         'yes', 'no',
         '{}', '[]', '""',
         '$remove$',
@@ -90,14 +91,115 @@ function setLocalStorageItemCore(
     }
 
     try {
-        const storage = `${which}Storage`;
+        const storage = self[`${which}Storage`];
         if ( value === '$remove$' ) {
-            self[storage].removeItem(key);
+            const safe = safeSelf();
+            const pattern = safe.patternToRegex(key, undefined, true );
+            const toRemove = [];
+            for ( let i = 0, n = storage.length; i < n; i++ ) {
+                const key = storage.key(i);
+                if ( pattern.test(key) ) { toRemove.push(key); }
+            }
+            for ( const key of toRemove ) {
+                storage.removeItem(key);
+            }
         } else {
-            self[storage].setItem(key, `${value}`);
+            storage.setItem(key, `${value}`);
         }
     } catch(ex) {
     }
+}
+
+function safeSelf() {
+    if ( scriptletGlobals.has('safeSelf') ) {
+        return scriptletGlobals.get('safeSelf');
+    }
+    const self = globalThis;
+    const safe = {
+        'Array_from': Array.from,
+        'Error': self.Error,
+        'Math_floor': Math.floor,
+        'Math_random': Math.random,
+        'Object_defineProperty': Object.defineProperty.bind(Object),
+        'RegExp': self.RegExp,
+        'RegExp_test': self.RegExp.prototype.test,
+        'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
+        'XMLHttpRequest': self.XMLHttpRequest,
+        'addEventListener': self.EventTarget.prototype.addEventListener,
+        'removeEventListener': self.EventTarget.prototype.removeEventListener,
+        'fetch': self.fetch,
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'log': console.log.bind(console),
+        uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
+            if ( args.length === 0 ) { return; }
+            if ( `${args[0]}` === '' ) { return; }
+            this.log('[uBO]', ...args);
+        },
+        initPattern(pattern, options = {}) {
+            if ( pattern === '' ) {
+                return { matchAll: true };
+            }
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
+            if ( expect === false ) {
+                pattern = pattern.slice(1);
+            }
+            const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
+            if ( match !== null ) {
+                return {
+                    pattern,
+                    re: new this.RegExp(
+                        match[1],
+                        match[2] || options.flags
+                    ),
+                    expect,
+                };
+            }
+            return {
+                pattern,
+                re: new this.RegExp(pattern.replace(
+                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    options.flags
+                ),
+                expect,
+            };
+        },
+        testPattern(details, haystack) {
+            if ( details.matchAll ) { return true; }
+            return this.RegExp_test.call(details.re, haystack) === details.expect;
+        },
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
+            if ( pattern === '' ) { return /^/; }
+            const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
+            if ( match === null ) {
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
+            }
+            try {
+                return new RegExp(match[1], match[2] || flags);
+            }
+            catch(ex) {
+            }
+            return /^/;
+        },
+        getExtraArgs(args, offset = 0) {
+            const entries = args.slice(offset).reduce((out, v, i, a) => {
+                if ( (i & 1) === 0 ) {
+                    const rawValue = a[i+1];
+                    const value = /^\d+$/.test(rawValue)
+                        ? parseInt(rawValue, 10)
+                        : rawValue;
+                    out.push([ a[i], value ]);
+                }
+                return out;
+            }, []);
+            return Object.fromEntries(entries);
+        },
+    };
+    scriptletGlobals.set('safeSelf', safe);
+    return safe;
 }
 
 /******************************************************************************/
@@ -178,8 +280,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_setLocalStorageItem();
 }
 

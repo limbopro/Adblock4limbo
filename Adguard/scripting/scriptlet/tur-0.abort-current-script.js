@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["document.createElement","adsbygoogle.js"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
+const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["onload","google-auto-placed"],["document.createElement","adsbygoogle.js"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
 
-const hostnamesMap = new Map([["azsekerlik.blogspot.com",0],["cbdgummiesio.biz",0],["vknsorgula.net",0],["okultanitimi.net",1],["asyadrama.com",2],["otopark.com",3],["turkrock.com",3],["osxinfo.net",3],["hacoos.com",4],["kampanyatakip.blogspot.com",5],["iskandinavya.com",6],["tekniknot.com",7],["mordefter.com",8],["ulketv.com.tr",9],["kenttv.net",10],["ulker.com.tr",11],["duzcetv.com",12],["bizimyaka.com",13]]);
+const hostnamesMap = new Map([["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["cbdgummiesio.biz",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["tekniknot.com",[8,9]],["mordefter.com",10],["ulketv.com.tr",11],["kenttv.net",12],["ulker.com.tr",13],["duzcetv.com",14],["bizimyaka.com",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -53,7 +53,7 @@ const exceptionsMap = new Map([]);
 /******************************************************************************/
 
 function abortCurrentScript(...args) {
-    runAtHtmlElement(( ) => {
+    runAtHtmlElementFn(( ) => {
         abortCurrentScriptCore(...args);
     });
 }
@@ -155,7 +155,7 @@ function abortCurrentScriptCore(
     }
 }
 
-function runAtHtmlElement(fn) {
+function runAtHtmlElementFn(fn) {
     if ( document.documentElement ) {
         fn();
         return;
@@ -188,6 +188,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -200,10 +201,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -240,11 +242,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -359,8 +362,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_abortCurrentScript();
 }
 

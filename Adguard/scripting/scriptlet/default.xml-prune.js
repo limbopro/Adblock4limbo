@@ -42,9 +42,9 @@ const uBOL_xmlPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])])","",".mpd"]];
+const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])])","",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'adease')]])","",".mpd"]];
 
-const hostnamesMap = new Map([["imasdk.googleapis.com",0],["hulu.com",1],["www.amazon.co.jp",2],["www.amazon.com",2],["vix.com",3],["go.discovery.com",4],["cbs.com",5],["paramountplus.com",5],["play.max.com",6]]);
+const hostnamesMap = new Map([["imasdk.googleapis.com",0],["hulu.com",1],["www.amazon.co.jp",2],["www.amazon.com",2],["vix.com",3],["go.discovery.com",4],["go.tlc.com",4],["cbs.com",5],["paramountplus.com",5],["play.max.com",6],["foxtel.com.au",7]]);
 
 const entitiesMap = new Map([["discoveryplus",4]]);
 
@@ -191,6 +191,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -203,10 +204,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -243,11 +245,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -357,8 +360,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_xmlPrune();
 }
 

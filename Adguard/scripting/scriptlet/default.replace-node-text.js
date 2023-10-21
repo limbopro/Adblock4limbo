@@ -42,11 +42,11 @@ const uBOL_replaceNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","popunder","","condition","popunder","stay","1"],["script","popunder","p"],["script",".css('display') == 'none'",".css('display') == 'block'"],["script",".is(':visible')"],["script","/\\\"homad\\\",/"],["script","/\\\"homad\\\":\\{\\\"state\\\":\\\"enabled\\\"\\}/","\"homad\":{\"state\":\"disabled\"}"],["script","\"isAdBlockerEnabled\":true","\"isAdBlockerEnabled\":false"],["script","/protect_block.*?,/"],["script","(isAdblock)","(false)"],["script","/web_hide_epik_param_in_promoted_urls.*?enabled\"/","web_hide_epik_param_in_promoted_urls\":\"disabled\""],["script","/.*adConfig.*frequency_period.*/","(async () => {const a=location.href;if(!a.includes(\"/download?link=\"))return;const b=new URL(a),c=b.searchParams.get(\"link\");try{location.assign(`${location.protocol}//${c}`)}catch(a){}} )();"],["script","/^window\\.location\\.href.*\\'$/"],["script","({});","({}); function showHideElements(t,e){$(t).hide(),$(e).show()}function disableBtnclc(){let t=document.querySelector(\".submit-captcha\");t.disabled=!0,t.innerHTML=\"Loading...\"}function refreshButton(){$(\".refresh-capthca-btn\").addClass(\"disabled\")}function copyInput(){let t=document.querySelectorAll(\".copy-input\");t.forEach(t=>{navigator.clipboard.writeText(t.value)}),Materialize.toast(\"Copied!\",2e3)}function imgOnError(){$(\".ua-check\").html(window.atob(\"PGRpdiBjbGFzcz0idGV4dC1kYW5nZXIgZm9udC13ZWlnaHQtYm9sZCBoNSBtdC0xIj5DYXB0Y2hhIGltYWdlIGZhaWxlZCB0byBsb2FkLjxicj48YSBvbmNsaWNrPSJsb2NhdGlvbi5yZWxvYWQoKSIgc3R5bGU9ImNvbG9yOiM2MjcwZGE7Y3Vyc29yOnBvaW50ZXIiIGNsYXNzPSJ0ZXh0LWRlY29yYXRpb25lLW5vbmUiPlBsZWFzZSByZWZyZXNoIHRoZSBwYWdlLiA8aSBjbGFzcz0iZmEgZmEtcmVmcmVzaCI+PC9pPjwvYT48L2Rpdj4=\"))}$(window).on(\"load\",function(){$(\"body\").addClass(\"loaded\")}),window.history.replaceState&&window.history.replaceState(null,null,window.location.href),$(\".remove-spaces\").on(\"input\",function(){this.value=this.value.replace(/\\s/g,\"\")}),$(document).on(\"click\",\"#toast-container .toast\",function(){$(this).fadeOut(function(){$(this).remove()})}),$(\".tktemizle\").on(\"input propertychange\",function(){let t=$(this).val().match(\"access_token=(.*?)&\");t&&$(\".tktemizle\").val(t[1])}),$(document).ready(function(){let t=[{button:$(\".t-followers-button\"),menu:$(\".t-followers-menu\")},{button:$(\".t-hearts-button\"),menu:$(\".t-hearts-menu\")},{button:$(\".t-chearts-button\"),menu:$(\".t-chearts-menu\")},{button:$(\".t-views-button\"),menu:$(\".t-views-menu\")},{button:$(\".t-shares-button\"),menu:$(\".t-shares-menu\")},{button:$(\".t-favorites-button\"),menu:$(\".t-favorites-menu\")},{button:$(\".t-livestream-button\"),menu:$(\".t-livestream-menu\")},{button:$(\".ig-followers-button\"),menu:$(\".ig-followers-menu\")},{button:$(\".ig-likes-button\"),menu:$(\".ig-likes-menu\")}];$.each(t,function(t,e){e.button.click(function(){$(\".colsmenu\").addClass(\"nonec\"),e.menu.removeClass(\"nonec\")})})});"],["script","/.*atOptions.*/","var AG_onLoad=function(func){if(document.readyState===\"complete\"||document.readyState===\"interactive\")func();else if(document.addEventListener)document.addEventListener(\"DOMContentLoaded\",func);else if(document.attachEvent)document.attachEvent(\"DOMContentLoaded\",func)}; AG_onLoad((function(){const t=document.querySelector(\"script\");t&&t.classList.add(\"atScript_0\")}))"],["script","/devtoolsDetector\\.launch\\(\\)\\;/"],["script","/data: \\[.*\\],/","data: [],","condition","ads_num"],["script","/document\\.querySelector\\('div\\.textads\\.banner-ads.banner_ads\\.ad-unit\\.ad-zone\\.ad-space\\.adsbox'\\)/","document"],["script","/try.*finally.*?}/"],["script","!await","await"],["script","rek","r","condition","preroll"],["script","/\\$\\(\\S+?:\\(/","("],["script","adv_","","condition","flashvars"],["script","self.location.href;","self.location.href; document.addEventListener('DOMContentLoaded',()=>{const button=document.querySelector('form > input#method_free');if(button){button.click()}});","sedCount","1"],["script","//$('#btn_download').click();","$('#btn_download').click();","sedCount","1"],["script","checkAB(true)","checkAB(false)"],["script","timeout = 5","timeout = 0"],["script","IFRAME","BODY"],["script","outboundUrl","outbound"],["script","/window\\.dataLayer.+?(location\\.replace\\(\\S+?\\)).*/","$1"],["script","/\\/\\*.*?\\*\\//"],["script","}else{","}if(true){"],["script",".push({});",".push({}); document.getElementById(\"mokuai-search-id\").innerHTML = \"<form role=\\\"search\\\" method=\\\"get\\\" class=\\\"search-form\\\" action=\\\"https://www.rjno1.com/\\\" itemprop=\\\"potentialAction\\\" itemscope itemtype=\\\"http://schema.org/SearchAction\\\">  <meta itemprop=\\\"target\\\" content=\\\"https://www.rjno1.com/?s=search%20\\\"/>  <span class=\\\"screen-reader-text\\\">搜索：</span> <i class=\\\"fa fa-search\\\"></i>  <input type=\\\"search\\\" class=\\\"search-field\\\" placeholder=\\\"搜索 &hellip;\\\" value=\\\"\\\" name=\\\"s\\\" title=\\\"Search\\\" required itemprop=\\\"query-input\\\">  <button type=\\\"submit\\\" class=\\\"search-submit\\\"> <span >搜索</span> </button></form>\";window.setTimeout(function() { document.getElementById(\"dl-buttom-id-for-js\").innerHTML = \"<a href=\\\"https://www.rjno1.com/\" + document.location.href.replace(\"https://www.rjno1.com/\", \"\") + \"download-\" + document.location.href.replace(\"https://www.rjno1.com/\", \"\") + \"\\\" class=\\\"post-download-address-button\\\"><i class=\\\"fa fa-download-button\\\"></i><span class=\\\"screen-reader-text\\\">下载地址</span>Download</a><div class=\\\"clear\\\"></div>\";}, 2000)"],["script","\").removeClass('","\").addClass('","condition","adsbygoogle"],["script","\").removeClass(`","\").addClass(`","condition","adsbygoogle"],["script",").fadeIn().removeClass(",").addClass(","condition","adsbygoogle"],["style","display:block!important","display:none!important"],["style","{display:block;}","{display:none!important;}"],["style","{display:block}","{display:none!important;}","condition","grammarDisplay"]];
+const argsList = [["script","popunder","","condition","popunder","stay","1"],["script","popunder","p"],["script",".css('display') == 'none'",".css('display') == 'block'"],["script",".is(':visible')"],["script","/\\\"homad\\\",/"],["script","/\\\"homad\\\":\\{\\\"state\\\":\\\"enabled\\\"\\}/","\"homad\":{\"state\":\"disabled\"}"],["script","\"isAdBlockerEnabled\":true","\"isAdBlockerEnabled\":false"],["script","/protect_block.*?,/"],["script","counter_value\":\"5\"","counter_value\":\"7\""],["script","_blank","_self"],["script","(isAdblock)","(false)"],["script","/web_hide_epik_param_in_promoted_urls.*?enabled\"/","web_hide_epik_param_in_promoted_urls\":\"disabled\""],["script","/.*adConfig.*frequency_period.*/","(async () => {const a=location.href;if(!a.includes(\"/download?link=\"))return;const b=new URL(a),c=b.searchParams.get(\"link\");try{location.assign(`${location.protocol}//${c}`)}catch(a){}} )();"],["script","/^window\\.location\\.href.*\\'$/"],["script","({});","({}); function showHideElements(t,e){$(t).hide(),$(e).show()}function disableBtnclc(){let t=document.querySelector(\".submit-captcha\");t.disabled=!0,t.innerHTML=\"Loading...\"}function refreshButton(){$(\".refresh-capthca-btn\").addClass(\"disabled\")}function copyInput(){let t=document.querySelectorAll(\".copy-input\");t.forEach(t=>{navigator.clipboard.writeText(t.value)}),Materialize.toast(\"Copied!\",2e3)}function imgOnError(){$(\".ua-check\").html(window.atob(\"PGRpdiBjbGFzcz0idGV4dC1kYW5nZXIgZm9udC13ZWlnaHQtYm9sZCBoNSBtdC0xIj5DYXB0Y2hhIGltYWdlIGZhaWxlZCB0byBsb2FkLjxicj48YSBvbmNsaWNrPSJsb2NhdGlvbi5yZWxvYWQoKSIgc3R5bGU9ImNvbG9yOiM2MjcwZGE7Y3Vyc29yOnBvaW50ZXIiIGNsYXNzPSJ0ZXh0LWRlY29yYXRpb25lLW5vbmUiPlBsZWFzZSByZWZyZXNoIHRoZSBwYWdlLiA8aSBjbGFzcz0iZmEgZmEtcmVmcmVzaCI+PC9pPjwvYT48L2Rpdj4=\"))}$(window).on(\"load\",function(){$(\"body\").addClass(\"loaded\")}),window.history.replaceState&&window.history.replaceState(null,null,window.location.href),$(\".remove-spaces\").on(\"input\",function(){this.value=this.value.replace(/\\s/g,\"\")}),$(document).on(\"click\",\"#toast-container .toast\",function(){$(this).fadeOut(function(){$(this).remove()})}),$(\".tktemizle\").on(\"input propertychange\",function(){let t=$(this).val().match(\"access_token=(.*?)&\");t&&$(\".tktemizle\").val(t[1])}),$(document).ready(function(){let t=[{button:$(\".t-followers-button\"),menu:$(\".t-followers-menu\")},{button:$(\".t-hearts-button\"),menu:$(\".t-hearts-menu\")},{button:$(\".t-chearts-button\"),menu:$(\".t-chearts-menu\")},{button:$(\".t-views-button\"),menu:$(\".t-views-menu\")},{button:$(\".t-shares-button\"),menu:$(\".t-shares-menu\")},{button:$(\".t-favorites-button\"),menu:$(\".t-favorites-menu\")},{button:$(\".t-livestream-button\"),menu:$(\".t-livestream-menu\")},{button:$(\".ig-followers-button\"),menu:$(\".ig-followers-menu\")},{button:$(\".ig-likes-button\"),menu:$(\".ig-likes-menu\")}];$.each(t,function(t,e){e.button.click(function(){$(\".colsmenu\").addClass(\"nonec\"),e.menu.removeClass(\"nonec\")})})});"],["script","/.*atOptions.*/","var AG_onLoad=function(func){if(document.readyState===\"complete\"||document.readyState===\"interactive\")func();else if(document.addEventListener)document.addEventListener(\"DOMContentLoaded\",func);else if(document.attachEvent)document.attachEvent(\"DOMContentLoaded\",func)}; AG_onLoad((function(){const t=document.querySelector(\"script\");t&&t.classList.add(\"atScript_0\")}))"],["script","/devtoolsDetector\\.launch\\(\\)\\;/"],["script","/data: \\[.*\\],/","data: [],","condition","ads_num"],["script","/document\\.querySelector\\('div\\.textads\\.banner-ads.banner_ads\\.ad-unit\\.ad-zone\\.ad-space\\.adsbox'\\)/","document"],["script","/try.*finally.*?}/"],["script","!await","await"],["script","rek","r","condition","preroll"],["script","/;\\$.+?\\):/",";"],["script","adv_","","condition","flashvars"],["script","self.location.href;","self.location.href; document.addEventListener('DOMContentLoaded',()=>{const button=document.querySelector('form > input#method_free');if(button){button.click()}});","sedCount","1"],["script","//$('#btn_download').click();","$('#btn_download').click();","sedCount","1"],["script","checkAB(true)","checkAB(false)"],["script","timeout = 5","timeout = 0"],["script","IFRAME","BODY"],["script","(hasBlocker)","(false)"],["P","/\\.[^.]+(1Password password manager|download 1Password)[^.]+/"],["script","outboundUrl","outbound"],["script","/window\\.dataLayer.+?(location\\.replace\\(\\S+?\\)).*/","$1"],["script","\").removeClass('","\").addClass('","condition","adsbygoogle"],["script","\").removeClass(`","\").addClass(`","condition","adsbygoogle"],["script",").fadeIn().removeClass(",").addClass(","condition","adsbygoogle"],["style","display:block!important","display:none!important"],["style","{display:block;}","{display:none!important;}"],["style","{display:block}","{display:none!important;}","condition","grammarDisplay"]];
 
-const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["nhentai.net",1],["smallseotools.com",[2,3]],["giga.de",4],["kino.de",4],["spieletipps.de",4],["t-online.de",5],["games.metro.us",6],["arcade.dailygazette.com",6],["games.dailymail.co.uk",6],["bussyhunter.com",7],["codingnepalweb.com",8],["jpvhub.com",10],["gyanitheme.com",11],["hipsonyc.com",11],["zefoy.com",12],["reshare.pm",13],["idoitmyself.xyz",14],["suaurl.com",16],["foodxor.com",17],["perchance.org",18],["drawer-opportunity-i-243.site",19],["megaup.net",20],["adultdeepfakes.com",21],["uploadboy.com",[22,23]],["nexusmods.com",[24,25]],["comidacaseira.me",26],["www.reddit.com",27],["api.dock.agacad.com",28],["rjno1.com",[29,30,31]],["plagiarismchecker.co",[32,33,34,35,36,37]]]);
+const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["nhentai.net",1],["smallseotools.com",[2,3]],["giga.de",4],["kino.de",4],["spieletipps.de",4],["t-online.de",5],["games.metro.us",6],["arcade.dailygazette.com",6],["games.dailymail.co.uk",6],["bussyhunter.com",7],["shrinkforearn.in",8],["viralsbaba1.blogspot.com",9],["codingnepalweb.com",10],["jpvhub.com",12],["gyanitheme.com",13],["hipsonyc.com",13],["zefoy.com",14],["reshare.pm",15],["idoitmyself.xyz",16],["suaurl.com",18],["foodxor.com",19],["perchance.org",20],["drawer-opportunity-i-243.site",21],["megaup.net",22],["adultdeepfakes.com",23],["uploadboy.com",[24,25]],["nexusmods.com",[26,27]],["comidacaseira.me",28],["tvbanywherena.com",29],["haveibeenpwned.com",30],["www.reddit.com",31],["api.dock.agacad.com",32],["plagiarismchecker.co",[33,34,35,36,37,38]]]);
 
-const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0],["pinterest",9],["empire-stream",15],["empire-streaming",15]]);
+const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0],["pinterest",11],["empire-stream",17],["empire-streaming",17]]);
 
 const exceptionsMap = new Map([]);
 
@@ -58,16 +58,16 @@ function replaceNodeText(
     replacement,
     ...extraArgs
 ) {
-    replaceNodeTextCore(nodeName, pattern, replacement, ...extraArgs);
+    replaceNodeTextFn(nodeName, pattern, replacement, ...extraArgs);
 }
 
-function replaceNodeTextCore(
+function replaceNodeTextFn(
     nodeName = '',
     pattern = '',
     replacement = ''
 ) {
     const safe = safeSelf();
-    const reNodeName = safe.patternToRegex(nodeName, 'i');
+    const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     const shouldLog = scriptletGlobals.has('canDebug') && extraArgs.log || 0;
@@ -91,8 +91,8 @@ function replaceNodeTextCore(
             : replacement;
         node.textContent = after;
         if ( shouldLog !== 0 ) {
-            safe.uboLog('replace-node-text-core.fn before:\n', before);
-            safe.uboLog('replace-node-text-core.fn after:\n', after);
+            safe.uboLog('replace-node-text.fn before:\n', before);
+            safe.uboLog('replace-node-text.fn after:\n', after);
         }
         return sedCount === 0 || (sedCount -= 1) !== 0;
     };
@@ -171,6 +171,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -183,10 +184,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -223,11 +225,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -332,8 +335,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_replaceNodeText();
 }
 

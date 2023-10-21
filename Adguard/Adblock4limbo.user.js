@@ -114,6 +114,7 @@ daohang_build(); // 为页面增加导航按钮
 
 var uBlockOrigin = {
 
+
     // uBlockOrigin 默认脚本
     // https://github.com/uBlockOrigin/uBOL-home/tree/main/chromium/rulesets/scripting/scriptlet
     // uBO Lite (uBOL), a permission-less MV3 API-based content blocker.
@@ -479,6 +480,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             js_adsRemove(imax.js.contentFarm);
             break;
         case 'nivod4': // nbys 泥巴影视 
+
             css_adsRemove(imax.css.nivod);
             hrefAttribute_set();
             setConstant('detailParams.is_ad_play', 'false'); // 泥巴影视PC版播放页视频广告加速
@@ -489,6 +491,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             remove_parentElement_by_child('.qy20-h-carousel__ul', "span[style*='d92ea585-0']");
             remove_parentElement_by_child("li.qy20-h-carousel__li", "span[style*='0891']");
             remove_parentElement_by_child("li.qy20-h-carousel__li", "span[style*='1a2d']");
+            //addEventListener_defuser(""); // 打断监听器
+            noWindowOpenIf('bty563')
+            //window_open_defuser('window.open*bty'); // 打断 window.open 施法
+
             break;
         case '91short':
             css_adsRemove(imax.css._91short);
@@ -684,13 +690,14 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
 function remove_parentElement_by_child(parentElement, child) {
     let remove_parentElement_by_child_interval = setInterval(() => {
         if (document.querySelector(parentElement + ">" + child)) {
+            //document.querySelectorAll(parentElement)[0].querySelector(child).style.backgroundImage = 'url("https://limbopro.com/Adblock4limbo_powered.jpg")';
+            //document.querySelectorAll(parentElement)[1].querySelector(child).style.backgroundImage = 'url("https://limbopro.com/Adblock4limbo_powered.jpg")';
             document.querySelectorAll(parentElement).forEach((x) => {
                 if (x.querySelector(child)) {
                     x.remove();
                     //x.style.opacity = '0';
-                    x.pointerEvents = 'none';
-                    //document.querySelector(parentElement + ">" + child).style.backgroundImage = 'https://limbopro.com/Adblock4limbo_powered.jpg'
-                    clearInterval(remove_parentElement_by_child_interval)
+                    //x.pointerEvents = 'none';
+                    //clearInterval(remove_parentElement_by_child_interval)
                 }
             })
         }
@@ -1242,6 +1249,7 @@ function notice_show(selector) {
 }
 
 
+
 // window.open-defuser.js
 // https://github.com/gorhill/uBlock/wiki/Resources-Library#windowopen-defuserjs-
 
@@ -1648,7 +1656,6 @@ function abortCurrentInlineScript(source, property, search) {
 
     window.onerror = createOnErrorHandler(rid).bind();
 }
-
 
 
 // https://github.com/gorhill/uBlock/wiki/Resources-Library#addeventlistener-defuserjs-

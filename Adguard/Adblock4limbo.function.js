@@ -802,7 +802,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
 ['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'common'],
 ['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'common'],
-['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'common'],
+['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'special'],
 ['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'common'],
 ['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
 ['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
@@ -1131,7 +1131,6 @@ function crisp_active(x) {
     }
 }
 
-
 function crisp_auto_hidden() {
     val = null
     ////console.log(val === document.querySelector(selector.body_css));
@@ -1152,3 +1151,20 @@ function testx() {
     css_url_add('https://limbopro.com/CSS/Adblock4limbo.user.css', 'Global adCSS');
     body_build('false');
 }
+
+function url_check(parentElement, child) { // 2333
+    const url_now = window.location.href.toLowerCase();
+    if (/\b(nivod4)\b/i.test(url_now)) {
+
+        let parentNode_ads = document.querySelectorAll(parentElement);
+        parentNode_ads[0].querySelector(child).style.backgroundImage = 'url("https://limbopro.com/Adblock4limbo_powered.jpg")';
+        parentNode_ads[1].querySelector(child).style.backgroundImage = 'url("https://limbopro.com/Adblock4limbo_powered.jpg")';
+        /*document.querySelectorAll(parentElement).forEach((x) => {
+            //x.remove()
+            x.querySelector(child).style.backgroundImage = 'url("https://limbopro.com/Adblock4limbo_powered.jpg")'
+        })*/
+
+    }
+}
+
+//url_check('.qy20-h-carousel__li', 'span.qy20-h-carousel__a');

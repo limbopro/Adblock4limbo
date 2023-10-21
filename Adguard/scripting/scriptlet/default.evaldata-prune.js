@@ -60,7 +60,7 @@ function evaldataPrune(
         apply(target, thisArg, args) {
             const before = Reflect.apply(target, thisArg, args);
             if ( typeof before === 'object' ) {
-                const after = objectPrune(before, rawPrunePaths, rawNeedlePaths);
+                const after = objectPruneFn(before, rawPrunePaths, rawNeedlePaths);
                 return after || before;
             }
             return before;
@@ -68,7 +68,7 @@ function evaldataPrune(
     });
 }
 
-function objectPrune(
+function objectPruneFn(
     obj,
     rawPrunePaths,
     rawNeedlePaths,
@@ -90,8 +90,8 @@ function objectPrune(
             return;
         }
     }
-    if ( objectPrune.findOwner === undefined ) {
-        objectPrune.findOwner = (root, path, prune = false) => {
+    if ( objectPruneFn.findOwner === undefined ) {
+        objectPruneFn.findOwner = (root, path, prune = false) => {
             let owner = root;
             let chain = path;
             for (;;) {
@@ -122,7 +122,7 @@ function objectPrune(
                     const next = chain.slice(pos + 1);
                     let found = false;
                     for ( const key of Object.keys(owner) ) {
-                        found = objectPrune.findOwner(owner[key], next, prune) || found;
+                        found = objectPruneFn.findOwner(owner[key], next, prune) || found;
                     }
                     return found;
                 }
@@ -131,34 +131,34 @@ function objectPrune(
                 chain = chain.slice(pos + 1);
             }
         };
-        objectPrune.mustProcess = (root, needlePaths) => {
+        objectPruneFn.mustProcess = (root, needlePaths) => {
             for ( const needlePath of needlePaths ) {
-                if ( objectPrune.findOwner(root, needlePath) === false ) {
+                if ( objectPruneFn.findOwner(root, needlePath) === false ) {
                     return false;
                 }
             }
             return true;
         };
-        objectPrune.logJson = (json, msg, reNeedle) => {
+        objectPruneFn.logJson = (json, msg, reNeedle) => {
             if ( reNeedle.test(json) === false ) { return; }
             safeSelf().uboLog(`objectPrune()`, msg, location.hostname, json);
         };
     }
-    const jsonBefore = logLevel ? JSON.stringify(obj, null, 2) : '';
+    const jsonBefore = logLevel ? safe.JSON_stringify(obj, null, 2) : '';
     if ( logLevel === true || logLevel === 'all' ) {
-        objectPrune.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
+        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( prunePaths.length === 0 ) { return; }
     let outcome = 'nomatch';
-    if ( objectPrune.mustProcess(obj, needlePaths) ) {
+    if ( objectPruneFn.mustProcess(obj, needlePaths) ) {
         for ( const path of prunePaths ) {
-            if ( objectPrune.findOwner(obj, path, true) ) {
+            if ( objectPruneFn.findOwner(obj, path, true) ) {
                 outcome = 'match';
             }
         }
     }
     if ( logLevel === outcome ) {
-        objectPrune.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
+        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( outcome === 'match' ) { return obj; }
 }
@@ -213,6 +213,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -225,10 +226,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -265,11 +267,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -294,6 +297,11 @@ function safeSelf() {
     };
     scriptletGlobals.set('safeSelf', safe);
     return safe;
+}
+
+function shouldLog(details) {
+    if ( details instanceof Object === false ) { return false; }
+    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 function getExceptionToken() {
@@ -389,8 +397,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_evaldataPrune();
 }
 

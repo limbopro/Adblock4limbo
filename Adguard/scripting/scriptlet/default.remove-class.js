@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["disabled","#skip-btn"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["disabled",".get-link"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
+const argsList = [["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["disabled",".get-link"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
 
-const hostnamesMap = new Map([["apps2app.com",0],["appsmodz.com",0],["xda-developers.com",1],["paid4.link",2],["go.gets4link.com",3],["quizlet.com",[4,5,6]],["funker530.com",7],["tinyurl.is",8],["av01.tv",9],["so1.asia",10],["top1iq.com",11],["freebrightsoft.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15],["sinonimos.de",16]]);
+const hostnamesMap = new Map([["apps2app.com",0],["appsmodz.com",0],["xda-developers.com",1],["paid4.link",2],["go.gets4link.com",3],["quizlet.com",[4,5,6]],["funker530.com",7],["av01.tv",8],["so1.asia",9],["top1iq.com",10],["freebrightsoft.com",11],["artribune.com",12],["bestfonts.pro",13],["falatron.com",14],["sinonimos.de",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -144,6 +144,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -156,10 +157,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -196,11 +198,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -305,8 +308,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'ISOLATED';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_removeClass();
 }
 

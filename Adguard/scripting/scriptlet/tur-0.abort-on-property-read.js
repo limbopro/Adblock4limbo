@@ -44,9 +44,9 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["detectedAdBlock"],["adblockmesaj"],["detectAdBlock"],["adsBlocked"],["rTargets"],["initPu"],["initAd"],["initPop"],["oV1"],["pop_status"],["sagAltReklamListesi"],["openpop"],["initDizi"],["check_target"],["wpsite_clickable_data"],["jsPopunder"]];
 
-const hostnamesMap = new Map([["sozcu.com.tr",0],["mangawt.com",1],["gsmturkey.net",1],["vidtekno.com",1],["telegramgruplari.com",2],["kanalmaras.com",3],["r10.net",4],["guneykoresinemasi.com",5],["jetfilmizletv.com",5],["dizipall.org",5],["dizimax2.com",5],["dizimax3.com",5],["dizimax4.com",5],["dizimax5.com",5],["dizimax6.com",5],["dizimax7.com",5],["dizimax8.com",5],["dizimax9.com",5],["dizimax10.com",5],["dizimax11.com",5],["dizimax12.com",5],["dizimax13.com",5],["dizimax14.com",5],["dizimax15.com",5],["dizimax16.com",5],["dizimax17.com",5],["dizimax18.com",5],["yenierotikfilm.xyz",5],["breakingbadizle.com",5],["diziday1.com",5],["zipfilmizle.com",5],["bamfilmizle.com",5],["sinemadafilm.com",5],["netflixcehennemi.com",5],["diziizles.com",5],["hdizlefilmleri.com",5],["filmmoduu.com",5],["abifilmizle.org",5],["filmla.org",5],["trfilm.net",5],["dolufilm.org",5],["netflix-izle.com",5],["turkifsaalemi.com",5],["netfilmtvizle.com",5],["kuponuna148.com",5],["kuponuna149.com",5],["kuponuna150.com",5],["kuponuna151.com",5],["kuponuna152.com",5],["kuponuna153.com",5],["kuponuna154.com",5],["kuponuna155.com",5],["kuponuna156.com",5],["kuponuna157.com",5],["kuponuna158.com",5],["kuponuna159.com",5],["kuponuna160.com",5],["kuponuna161.com",5],["kuponuna162.com",5],["kuponuna163.com",5],["kuponuna164.com",5],["kuponuna165.com",5],["kuponuna166.com",5],["kuponuna167.com",5],["kuponuna168.com",5],["kuponuna169.com",5],["kuponuna170.com",5],["sinemakolik.net",6],["hdsinemax.com",6],["diziyo.cx",6],["fullhdabifilm.com",6],["bettercallsaulizle.com",6],["superfilmgeldi.net",6],["fullhdfilmizlett1.com",6],["fullhdfilmcibaba2.com",6],["filmsezonu.com",6],["fullhdfilmizleabi.com",6],["hdfreeizle.com",6],["erotikfilmsitesi.net",6],["hdrealfilmizle.com",6],["hdmixfilim.com",[6,9]],["fullhdfilmizlepala.com",6],["fullfilmcidayi4.com",6],["fullfilmcidayi5.com",6],["fullfilmcidayi6.com",6],["fullfilmcidayi7.com",6],["fullfilmcidayi8.com",6],["fullfilmcidayi9.com",6],["fullfilmcidayi10.com",6],["fullfilmcidayi11.com",6],["fullfilmcidayi12.com",6],["fullfilmcidayi13.com",6],["fullfilmcidayi14.com",6],["fullfilmcidayi15.com",6],["fullfilmcidayi16.com",6],["fullfilmcidayi17.com",6],["fullfilmcidayi18.com",6],["fullfilmcidayi19.com",6],["fullfilmcidayi20.com",6],["fullfilmcidayi21.com",6],["fullfilmcidayi22.com",6],["fullfilmcidayi23.com",6],["fullfilmcidayi24.com",6],["fullfilmcidayi25.com",6],["fullfilmcidayi26.com",6],["fullfilmcidayi27.com",6],["fullfilmcidayi28.com",6],["fullfilmcidayi29.com",6],["fullfilmcidayi30.com",6],["dizivex.com",7],["dizimini.com",7],["roketdizi.co",7],["1080hdfilmizle.com",7],["shirl.club",8],["altporno.xyz",8],["ovpvideo.com",8],["goodfilmizle.com",10],["dizikorea.org",11],["diziyou.co",12],["technopat.net",14]]);
+const hostnamesMap = new Map([["sozcu.com.tr",0],["mangawt.com",1],["gsmturkey.net",1],["vidtekno.com",1],["telegramgruplari.com",2],["kanalmaras.com",3],["r10.net",4],["guneykoresinemasi.com",5],["jetfilmizletv.com",5],["dizipall.org",5],["dizimax2.com",5],["dizimax3.com",5],["dizimax4.com",5],["dizimax5.com",5],["dizimax6.com",5],["dizimax7.com",5],["dizimax8.com",5],["dizimax9.com",5],["dizimax10.com",5],["dizimax11.com",5],["dizimax12.com",5],["dizimax13.com",5],["dizimax14.com",5],["dizimax15.com",5],["dizimax16.com",5],["dizimax17.com",5],["dizimax18.com",5],["yenierotikfilm.xyz",5],["breakingbadizle.com",5],["diziday1.com",5],["zipfilmizle.com",5],["bamfilmizle.com",5],["sinemadafilm.com",5],["netflixcehennemi.com",5],["diziizles.com",5],["hdizlefilmleri.com",5],["filmmoduu.com",5],["abifilmizle.org",5],["filmla.org",5],["trfilm.net",5],["dolufilm.org",5],["netflix-izle.com",5],["turkifsaalemi.com",5],["netfilmtvizle.com",5],["kuponuna148.com",5],["kuponuna149.com",5],["kuponuna150.com",5],["kuponuna151.com",5],["kuponuna152.com",5],["kuponuna153.com",5],["kuponuna154.com",5],["kuponuna155.com",5],["kuponuna156.com",5],["kuponuna157.com",5],["kuponuna158.com",5],["kuponuna159.com",5],["kuponuna160.com",5],["kuponuna161.com",5],["kuponuna162.com",5],["kuponuna163.com",5],["kuponuna164.com",5],["kuponuna165.com",5],["kuponuna166.com",5],["kuponuna167.com",5],["kuponuna168.com",5],["kuponuna169.com",5],["kuponuna170.com",5],["sinemakolik.net",6],["hdsinemax.com",6],["fullhdabifilm.com",6],["bettercallsaulizle.com",6],["superfilmgeldi.net",6],["fullhdfilmizlett1.com",6],["fullhdfilmcibaba2.com",6],["filmsezonu.com",6],["fullhdfilmizleabi.com",6],["hdfreeizle.com",6],["erotikfilmsitesi.net",6],["hdrealfilmizle.com",6],["hdmixfilim.com",[6,9]],["fullhdfilmizlepala.com",6],["fullfilmcidayi4.com",6],["fullfilmcidayi5.com",6],["fullfilmcidayi6.com",6],["fullfilmcidayi7.com",6],["fullfilmcidayi8.com",6],["fullfilmcidayi9.com",6],["fullfilmcidayi10.com",6],["fullfilmcidayi11.com",6],["fullfilmcidayi12.com",6],["fullfilmcidayi13.com",6],["fullfilmcidayi14.com",6],["fullfilmcidayi15.com",6],["fullfilmcidayi16.com",6],["fullfilmcidayi17.com",6],["fullfilmcidayi18.com",6],["fullfilmcidayi19.com",6],["fullfilmcidayi20.com",6],["fullfilmcidayi21.com",6],["fullfilmcidayi22.com",6],["fullfilmcidayi23.com",6],["fullfilmcidayi24.com",6],["fullfilmcidayi25.com",6],["fullfilmcidayi26.com",6],["fullfilmcidayi27.com",6],["fullfilmcidayi28.com",6],["fullfilmcidayi29.com",6],["fullfilmcidayi30.com",6],["dizivex.com",7],["dizimini.com",7],["roketdizi.co",7],["1080hdfilmizle.com",7],["shirl.club",8],["altporno.xyz",8],["ovpvideo.com",8],["goodfilmizle.com",10],["dizikorea.org",11],["diziyou.co",12],["technopat.net",14]]);
 
-const entitiesMap = new Map([["yabancidiziizlesene",7],["dizisup",7],["torrentarsivi",13],["tranimeizle",15]]);
+const entitiesMap = new Map([["diziyo",6],["yabancidiziizlesene",7],["dizisup",7],["torrentarsivi",13],["tranimeizle",15]]);
 
 const exceptionsMap = new Map([]);
 
@@ -117,6 +117,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -129,10 +130,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -169,11 +171,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -278,8 +281,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_abortOnPropertyRead();
 }
 

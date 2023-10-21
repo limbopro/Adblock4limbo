@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310211432
+## ! Version: 202310211551
 ## ! Title: EasyList
-## ! Last modified: 21 Oct 2023 14:32 UTC
+## ! Last modified: 21 Oct 2023 15:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4971,6 +4971,7 @@ DOMAIN-SUFFIX,bowells.com, reject
 DOMAIN-SUFFIX,bowerspollees.com, reject
 DOMAIN-SUFFIX,bowerywill.com, reject
 DOMAIN-SUFFIX,boweve.com, reject
+DOMAIN-SUFFIX,bowldescended.com, reject
 DOMAIN-SUFFIX,bowlersoceloid.com, reject
 DOMAIN-SUFFIX,bowlsolicitor.com, reject
 DOMAIN-SUFFIX,bowmoolog.com, reject
@@ -8258,6 +8259,7 @@ DOMAIN-SUFFIX,djfiln.com, reject
 DOMAIN-SUFFIX,djfuieotdlo.com, reject
 DOMAIN-SUFFIX,djldrhxb.com, reject
 DOMAIN-SUFFIX,djmaza.in, reject
+DOMAIN-SUFFIX,djqacscl.com, reject
 DOMAIN-SUFFIX,djxfar6.com, reject
 DOMAIN-SUFFIX,dk4ywix.com, reject
 DOMAIN-SUFFIX,dkohudoflh.com, reject
@@ -8274,6 +8276,7 @@ DOMAIN-SUFFIX,dlfvgndsdfsn.com, reject
 DOMAIN-SUFFIX,dlgoliqqxpegmyw.xyz, reject
 DOMAIN-SUFFIX,dlhqffirehv.com, reject
 DOMAIN-SUFFIX,dlmewheniyv.xyz, reject
+DOMAIN-SUFFIX,dlqfkzykxqicn.com, reject
 DOMAIN-SUFFIX,dlqxdonofwsfes.xyz, reject
 DOMAIN-SUFFIX,dlski.space, reject
 DOMAIN-SUFFIX,dmakingbyth.com, reject
@@ -10871,6 +10874,7 @@ DOMAIN-SUFFIX,frangh.com, reject
 DOMAIN-SUFFIX,franklyatmosphericanniversary.com, reject
 DOMAIN-SUFFIX,frap.site, reject
 DOMAIN-SUFFIX,frapsguardo.com, reject
+DOMAIN-SUFFIX,frarybjrbnlfd.com, reject
 DOMAIN-SUFFIX,frauck.com, reject
 DOMAIN-SUFFIX,fraudclatterflying.com, reject
 DOMAIN-SUFFIX,fraudholdingpeas.com, reject
@@ -20663,6 +20667,7 @@ DOMAIN-SUFFIX,potsaglu.net, reject
 DOMAIN-SUFFIX,potshumiliationremnant.com, reject
 DOMAIN-SUFFIX,potskolu.net, reject
 DOMAIN-SUFFIX,potslascivious.com, reject
+DOMAIN-SUFFIX,potterystabilityassassination.com, reject
 DOMAIN-SUFFIX,potwm.com, reject
 DOMAIN-SUFFIX,pouchclockwise.com, reject
 DOMAIN-SUFFIX,poufaini.com, reject
@@ -27671,6 +27676,7 @@ DOMAIN-SUFFIX,utterlyfunding.com, reject
 DOMAIN-SUFFIX,utubepwhml.com, reject
 DOMAIN-SUFFIX,uuboos.com, reject
 DOMAIN-SUFFIX,uudzfbzthj.com, reject
+DOMAIN-SUFFIX,uuhptejwmvn.com, reject
 DOMAIN-SUFFIX,uuidksinc.net, reject
 DOMAIN-SUFFIX,uuuwhrxqnf.com, reject
 DOMAIN-SUFFIX,uuzlytbpmmhfm.com, reject
@@ -29222,6 +29228,7 @@ DOMAIN-SUFFIX,worriesteapotairborne.com, reject
 DOMAIN-SUFFIX,worrycrevicewholly.com, reject
 DOMAIN-SUFFIX,worseobscureplastic.com, reject
 DOMAIN-SUFFIX,worshipstubborn.com, reject
+DOMAIN-SUFFIX,worstideatum.com, reject
 DOMAIN-SUFFIX,worstnumidae.com, reject
 DOMAIN-SUFFIX,worthconesquadron.com, reject
 DOMAIN-SUFFIX,worthless-living.pro, reject
@@ -30457,11 +30464,13 @@ DOMAIN-SUFFIX,1064075587.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1080749118.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1080872514.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,10945-5.s.cdn15.com, reject
+DOMAIN-SUFFIX,1096118648.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1133256755.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1164507919.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1187531871.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1191084008.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1207639218.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1231108909.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1235113489.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1254021819.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1263063334.rsc.cdn77.org, reject
@@ -30493,6 +30502,7 @@ DOMAIN-SUFFIX,1917697853.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1922803716.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1942213827.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1944696125.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1946856060.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1949800833.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,a-delivery.rmbl.ws, reject
 DOMAIN-SUFFIX,a.ucoz.net, reject

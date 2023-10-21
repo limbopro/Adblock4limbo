@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["adsBlocked"],["/chp_?ad/"]];
 
-const hostnamesMap = new Map([["aimsolutions.nl",0],["112amersfoort.nl",1],["112amsterdam.nl",1],["112apeldoorn.nl",1],["112arnhem.nl",1],["112assen.nl",1],["112barneveld.nl",1],["112bunschoten.nl",1],["112doetinchem.nl",1],["112drenthe.nl",1],["112ede.nl",1],["112eindhoven.nl",1],["112emmen.nl",1],["112flevoland.nl",1],["112harderwijk.nl",1],["112hilversum.nl",1],["112inbeeld.nl",1],["112lelystad.nl",1],["112meppel.nl",1],["112nijkerk.nl",1],["112overijsel.nl",1],["112ridderkerk.nl",1],["112rotterdam.nl",1],["112scherpenzeel.nl",1],["112schiedam.nl",1],["112vallei.nl",1],["112vechtdal.nl",1],["112veenendaal.nl",1],["112wageningen.nl",1],["112zeewolde.nl",1],["112zwolle.nl",1]]);
+const hostnamesMap = new Map([["aimsolutions.nl",0],["112amersfoort.nl",1],["112amsterdam.nl",1],["112apeldoorn.nl",1],["112arnhem.nl",1],["112assen.nl",1],["112barneveld.nl",1],["112bunschoten.nl",1],["112doetinchem.nl",1],["112drenthe.nl",1],["112ede.nl",1],["112eindhoven.nl",1],["112emmen.nl",1],["112flevoland.nl",1],["112harderwijk.nl",1],["112hilversum.nl",1],["112inbeeld.nl",1],["112lelystad.nl",1],["112meppel.nl",1],["112nijkerk.nl",1],["112overijsel.nl",1],["112ridderkerk.nl",1],["112rotterdam.nl",1],["112scherpenzeel.nl",1],["112schiedam.nl",1],["112vallei.nl",1],["112vechtdal.nl",1],["112veenendaal.nl",1],["112wageningen.nl",1],["112zeewolde.nl",1],["112zwolle.nl",1],["vrides.nl",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -73,6 +73,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -85,10 +86,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -125,11 +127,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -234,8 +237,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_noEvalIf();
 }
 

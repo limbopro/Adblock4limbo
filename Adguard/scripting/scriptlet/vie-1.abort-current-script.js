@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","script"],["$","PopUnder"],["document.addEventListener","popupOpened"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
+const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","script"],["$","PopUnder"],["document.addEventListener","popupOpened"],["Promise","break;case"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenpk.com",[2,29]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["ios.codevn.net",6],["khoaiphim.com",[7,8]],["khohieu.com",9],["linkneverdie.net",[10,11]],["lxmanga.net",12],["motphim3s.com",13],["nguontv.live",14],["phimgigi.net",15],["ophimhdvn2.net",15],["mephimnhez.net",15],["phimmoipro2.net",16],["plus.gtv.vn",17],["protruyen.xyz",18],["animevietsub.fan",18],["rphang.me",19],["mrcong.com",19],["tctruyen.com",20],["tctruyen.net",20],["tinsoikeo.vip",21],["toptruyenne.com",22],["truyen2u.net",23],["truyen35.vn",24],["truyengihotday.net",25],["truyenqqvn.com",26],["truyentuan.com",27],["vailonxx.com",28],["viet69.tube",29],["ungtycomicsvip.com",29],["vlxx.moe",29],["yurineko.net",29],["vlxyz.tv",29],["javhay.media",29],["phimsexhay669.co",29],["cliphot69.biz",29],["doctruyen3qmax.com",29],["hentaizz.vip",29],["vungoctuan.vn",30],["xnxx-sex-videos.com",31],["xoilac87.tv",32]]);
+const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenpk.com",[2,31]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["holyphim.com",6],["ios.codevn.net",7],["khoaiphim.com",[8,9]],["khohieu.com",10],["linkneverdie.net",[11,12]],["lxmanga.net",13],["motphim3s.com",14],["nettruyenai.com",15],["nguontv.live",16],["phimgigi.net",17],["ophimhdvn2.net",17],["mephimnhez.net",17],["phimmoipro2.net",18],["plus.gtv.vn",19],["protruyen.xyz",20],["animevietsub.fan",20],["rphang.me",21],["mrcong.com",21],["tctruyen.com",22],["tctruyen.net",22],["tinsoikeo.vip",23],["toptruyenne.com",24],["truyen2u.net",25],["truyen35.vn",26],["truyengihotday.net",27],["truyenqqvn.com",28],["truyentuan.com",29],["vailonxx.com",30],["viet69.tube",31],["ungtycomicsvip.com",31],["vlxx.moe",31],["yurineko.net",31],["vlxyz.tv",31],["javhay.media",31],["phimsexhay669.co",31],["cliphot69.biz",31],["doctruyen3qmax.com",31],["hentaizz.vip",31],["vl2.xvideos98.pro",31],["vungoctuan.vn",32],["xnxx-sex-videos.com",33],["xoilac87.tv",34]]);
 
 const entitiesMap = new Map([]);
 
@@ -53,7 +53,7 @@ const exceptionsMap = new Map([]);
 /******************************************************************************/
 
 function abortCurrentScript(...args) {
-    runAtHtmlElement(( ) => {
+    runAtHtmlElementFn(( ) => {
         abortCurrentScriptCore(...args);
     });
 }
@@ -155,7 +155,7 @@ function abortCurrentScriptCore(
     }
 }
 
-function runAtHtmlElement(fn) {
+function runAtHtmlElementFn(fn) {
     if ( document.documentElement ) {
         fn();
         return;
@@ -188,6 +188,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -200,10 +201,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -240,11 +242,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -359,8 +362,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_abortCurrentScript();
 }
 

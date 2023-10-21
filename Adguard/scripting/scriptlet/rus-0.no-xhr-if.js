@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["method:GET"],["strm.yandex.ru/get/"]];
+const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["livejournal.com/video/check?recordId="],["method:GET"],["strm.yandex.ru/get/"]];
 
-const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["sm.news",5],["dzen.ru",6],["frontend.vh.yandex.ru",6],["widgets.kinopoisk.ru",6],["www.kinopoisk.ru",6],["yastatic.net",6]]);
+const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["livejournal.com",5],["sm.news",6],["dzen.ru",7],["frontend.vh.yandex.ru",7],["widgets.kinopoisk.ru",7],["www.kinopoisk.ru",7],["yastatic.net",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -188,7 +188,7 @@ function matchObjectProperties(propNeedles, ...objs) {
     }
     const safe = safeSelf();
     const haystack = {};
-    const props = Array.from(propNeedles.keys());
+    const props = safe.Array_from(propNeedles.keys());
     for ( const obj of objs ) {
         if ( obj instanceof Object === false ) { continue; }
         matchObjectProperties.extractProperties(obj, haystack, props);
@@ -230,6 +230,7 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
         'Math_floor': Math.floor,
         'Math_random': Math.random,
@@ -242,10 +243,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON_parse': self.JSON.parse.bind(self.JSON),
+        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -282,11 +284,12 @@ function safeSelf() {
             if ( details.matchAll ) { return true; }
             return this.RegExp_test.call(details.re, haystack) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
                 return new RegExp(match[1], match[2] || flags);
@@ -391,8 +394,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_noXhrIf();
 }
 

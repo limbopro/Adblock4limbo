@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310201423
+## ! Version: 202310211432
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Oct 2023 14:23 UTC
+## ! Last modified: 21 Oct 2023 14:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3360,6 +3360,8 @@ DOMAIN-SUFFIX,imp.go.sohu.com, reject
 DOMAIN-SUFFIX,imp.optaim.com, reject
 DOMAIN-SUFFIX,log.hiiir.com, reject
 DOMAIN-SUFFIX,log.tagtic.cn, reject
+DOMAIN-SUFFIX,mcs.zijieapi.com, reject
+DOMAIN-SUFFIX,mon.zijieapi.com, reject
 DOMAIN-SUFFIX,msg.71.am, reject
 DOMAIN-SUFFIX,p.aty.sohu.com, reject
 DOMAIN-SUFFIX,p.tencentmind.com, reject
@@ -3388,6 +3390,7 @@ DOMAIN-SUFFIX,tracking.cat898.com, reject
 DOMAIN-SUFFIX,trail.71baomu.com, reject
 DOMAIN-SUFFIX,videostats.kakao.com, reject
 DOMAIN-SUFFIX,web-trace.ksapisrv.com, reject
+DOMAIN-SUFFIX,webstat.qiumibao.com, reject
 DOMAIN-SUFFIX,webtrack.pospal.cn, reject
 DOMAIN-SUFFIX,wlog.kuaishou.com, reject
 DOMAIN-SUFFIX,tracking.vid4u.org, reject
@@ -3538,6 +3541,7 @@ DOMAIN-SUFFIX,megadata.co.kr, reject
 DOMAIN-SUFFIX,mtag.mman.kr, reject
 DOMAIN-SUFFIX,ngc1.nsm-corp.com, reject
 DOMAIN-SUFFIX,performanceplay.co.kr, reject
+DOMAIN-SUFFIX,saluton.cizion.com, reject
 DOMAIN-SUFFIX,sas.nsm-corp.com, reject
 DOMAIN-SUFFIX,teralog.techhub.co.kr, reject
 DOMAIN-SUFFIX,tracker.adbinead.com, reject
@@ -3668,6 +3672,8 @@ DOMAIN-SUFFIX,g-stats.openhost.es, reject
 DOMAIN-SUFFIX,mat.socy.es, reject
 DOMAIN-SUFFIX,mtm.qdqmedia.com, reject
 DOMAIN-SUFFIX,pub.servidoresge.com, reject
+DOMAIN-SUFFIX,report.botm.transparentedge.io, reject
+DOMAIN-SUFFIX,rt.cdnmedia.tv, reject
 DOMAIN-SUFFIX,sp.vtex.com, reject
 DOMAIN-SUFFIX,stats.administrarweb.es, reject
 DOMAIN-SUFFIX,stats.miarroba.info, reject
@@ -3695,8 +3701,11 @@ DOMAIN-SUFFIX,webvitals.luxnet.ua, reject
 DOMAIN-SUFFIX,analytics.yomedia.vn, reject
 DOMAIN-SUFFIX,countervov.emitech.vn, reject
 DOMAIN-SUFFIX,f-emc.ngsp.gov.vn, reject
+DOMAIN-SUFFIX,px.dmp.zaloapp.com, reject
+DOMAIN-SUFFIX,st-a.cdp.asia, reject
 DOMAIN-SUFFIX,tracking.aita.gov.vn, reject
 DOMAIN-SUFFIX,tracking3.vnncdn.net, reject
+DOMAIN-SUFFIX,za.zalo.me, reject
 DOMAIN-SUFFIX,za.zdn.vn, reject
 DOMAIN-SUFFIX,a-reporting.nytimes.com, reject
 DOMAIN-SUFFIX,a.electerious.com, reject
@@ -4003,6 +4012,7 @@ DOMAIN-SUFFIX,pac.thescottishsun.co.uk, reject
 DOMAIN-SUFFIX,pac.thesun.co.uk, reject
 DOMAIN-SUFFIX,pappagallu.onefootball.com, reject
 DOMAIN-SUFFIX,perf.mouser.com, reject
+DOMAIN-SUFFIX,perr.hola.org, reject
 DOMAIN-SUFFIX,pf.newegg.com, reject
 DOMAIN-SUFFIX,ph.thenextweb.com, reject
 DOMAIN-SUFFIX,ping.hungama.com, reject
@@ -21324,6 +21334,7 @@ DOMAIN-SUFFIX,referer.pixplug.in, reject
 DOMAIN-SUFFIX,reportsk.web.sdo.com, reject
 DOMAIN-SUFFIX,retcode.taobao.com, reject
 DOMAIN-SUFFIX,rlogs.youdao.com, reject
+DOMAIN-SUFFIX,ro.aiwan4399.com, reject
 DOMAIN-SUFFIX,s.360.cn, reject
 DOMAIN-SUFFIX,sbeacon.sina.com.cn, reject
 DOMAIN-SUFFIX,sfp.safe.baidu.com, reject
@@ -21344,6 +21355,7 @@ DOMAIN-SUFFIX,stat.zol.com.cn, reject
 DOMAIN-SUFFIX,statistic.qzone.qq.com, reject
 DOMAIN-SUFFIX,sugar.zhihu.com, reject
 DOMAIN-SUFFIX,tf.360.cn, reject
+DOMAIN-SUFFIX,tj.img4399.com, reject
 DOMAIN-SUFFIX,tongji.mafengwo.cn, reject
 DOMAIN-SUFFIX,tongji.xinmin.cn, reject
 DOMAIN-SUFFIX,tr.discuss.com.hk, reject
@@ -21482,6 +21494,7 @@ DOMAIN-SUFFIX,ad-log.dable.io, reject
 DOMAIN-SUFFIX,adoffice.11st.co.kr, reject
 DOMAIN-SUFFIX,aem-collector.daumkakao.io, reject
 DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com, reject
+DOMAIN-SUFFIX,cdp.yna.co.kr, reject
 DOMAIN-SUFFIX,count.munhwa.com, reject
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr, reject
 DOMAIN-SUFFIX,hits.zdnet.co.kr, reject

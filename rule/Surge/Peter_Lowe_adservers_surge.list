@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 13 Oct 2023 21:36:50 GMT
-# entries:        3724
+# last updated:   Fri, 20 Oct 2023 22:48:29 GMT
+# entries:        3727
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1322,6 +1322,7 @@ DOMAIN-SUFFIX,cdn.onesignal.com
 DOMAIN-SUFFIX,cdn.scarabresearch.com
 DOMAIN-SUFFIX,cdn.segment.com
 DOMAIN-SUFFIX,cdnondemand.org
+DOMAIN-SUFFIX,ceciliavenus.com
 DOMAIN-SUFFIX,cedato.com
 DOMAIN-SUFFIX,celtra.com
 DOMAIN-SUFFIX,centerpointmedia.com
@@ -1571,6 +1572,7 @@ DOMAIN-SUFFIX,dashingdirt.com
 DOMAIN-SUFFIX,dashingsweater.com
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
 DOMAIN-SUFFIX,data8a8altrk.com
+DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dbbsrv.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
@@ -3193,6 +3195,7 @@ DOMAIN-SUFFIX,stepplane.com
 DOMAIN-SUFFIX,stickssheep.com
 DOMAIN-SUFFIX,stickyadstv.com
 DOMAIN-SUFFIX,stiffgame.com
+DOMAIN-SUFFIX,stimulatingsneeze.com
 DOMAIN-SUFFIX,stomachscience.com
 DOMAIN-SUFFIX,storesurprise.com
 DOMAIN-SUFFIX,storetail.io

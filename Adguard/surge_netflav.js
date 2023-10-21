@@ -5,7 +5,7 @@
 // 定义 CSS/JS
 const ads_ = 'replace';
 const limboproX = 'limbopro';
-const ads_1 = 'window\.open';
+const ads_1 = 'window.open';
 const ads_2 = 'labadena';
 
 const regex = '<head>';
@@ -14,7 +14,8 @@ const replace_str = '<head>\
 <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>'
 
 // 定义响应体
-const body = $response.body.replace(regex, replace_str).replace(ads_, limboproX).replace(ads_1, limboproX).replace(ads_2, limboproX);
+const body = $response.body.replace(regex, replace_str).replace(ads_1, limboproX).replace(ads_2, limboproX).replace(ads_, limboproX).replace('setTimeout','xxx')
+//const body = $response.body.replace('window.open','openwhat')
 
 // 定义响应头
 const headers = $response.headers;

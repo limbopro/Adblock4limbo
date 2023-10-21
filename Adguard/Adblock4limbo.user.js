@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.10.16
+// @version      0.3.10.21
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -44,6 +44,7 @@
 // @match        https://w.duboku.io/*
 // @match        https://www.duboku.tv/*
 // @match        https://www.libvio.com/*
+// @match        https://www.libvio.pro/*
 // @match        https://www.libvio.top/*
 // @match        https://www.libvio.me/*
 // @match        https://www.tvn.cc/*
@@ -73,6 +74,7 @@
 // @match        https://4hu.tv/*
 // @match        https://netflav.com/*
 // @match        https://filemoon.sx/*
+// @match        https://emturbovid.com/*
 // @match        https://embedrise.com/*
 // @match        https://mmfl02.com/*
 // @match        https://supjav.com/*
@@ -83,8 +85,8 @@
 // @match        https://deerchao.cn/*
 // @match        https://gimy.ai/*
 // @match        https://t.me/*
-// @match        https://www.javlibrary.com/*
 // @match        https://*/*
+// @match        https://www.javlibrary.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -190,7 +192,7 @@ var imax = {
     },
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
-        libvio: ".hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
+        libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
         goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
         avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
         btbdys: ".artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
@@ -211,7 +213,7 @@ var imax = {
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
         anime: "div[id*=ad] {display:none !important}",
         yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
-        nivod: "iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important}", // 泥巴影视视频左上角水印贴片 nivod
+        nivod: ".qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
@@ -220,7 +222,7 @@ var imax = {
         javbus: ".ad-item,.ad-box {display:none !important}",
         _4hu: "#adsbox,.wrap + #midBox ,.wrap + #btmBox,script[src=\"/static/base.js\"] + #couplet ,.search + #midBox,.mod.clearfix,dl#randomBox,dl#listwoBox ,body[ontouchstart] > #topBox, .wrap + #midBox, .wrap + #btmBox, .clearfix.col5.row > #listBox {display: none! important;}",
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
-        supjav: ".movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
+        supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
         hanime1: "iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
         javlibrary: "div#content {width:auto !important} body.main {width:auto !important} iframe,img[src*='gif'],a[target='_blank']{display:none!important;pointer-events: none !important;}",
         button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
@@ -270,6 +272,7 @@ function values() {
         "supjav",
         "hanime1",
         "javlibrary",
+        "emturbovid",
         "zhihu"
     ]
 
@@ -349,16 +352,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case '91porn':
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.porn91);
-            _91porn_videoplay_ads();
+            //_91porn_videoplay_ads();
 
             // 播放页空白
-            const empty_div = document.querySelectorAll("div");
-            for (i = 0; i < empty_div.length; i++) {
-                console.log(empty_div[i].querySelectorAll("br").length);
-                if (empty_div[i].querySelectorAll('br').length == 6 && empty_div[i].querySelectorAll('a').length === 2) {
-                    empty_div[i].style = "display: none !important;";
+
+            document.querySelectorAll("br").forEach((x) => {
+                if (x.clientHeight = 0) {
+                    x.remove()
                 }
-            }
+            })
 
             break;
         case 'avple':
@@ -398,7 +400,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.libvio)
             break;
         case 'nbys':
-            css_adsRemove(imax.css.nivod)
+            css_adsRemove(imax.css.nivod);
             break;
         case 'tvn':
             css_adsRemove(imax.css.tvn)
@@ -482,6 +484,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             setConstant('detailParams.is_ad_play', 'false'); // 泥巴影视PC版播放页视频广告加速
             evaldataPrune(); // 泥巴影视移动版播放页视频广告加速
             css_adsRemove(imax.css.nbys); // 网页图片广告
+            remove_parentElement_by_child('view.nut-swiper-item.slider-item', "img[src*='1a732eeb1adb']");
+            remove_parentElement_by_child('view.nut-swiper-item.slider-item', "img[src*='49e8abd32d13']");
+            remove_parentElement_by_child('.qy20-h-carousel__ul', "span[style*='d92ea585-0']");
+            remove_parentElement_by_child("li.qy20-h-carousel__li", "span[style*='0891']");
+            remove_parentElement_by_child("li.qy20-h-carousel__li", "span[style*='1a2d']");
             break;
         case '91short':
             css_adsRemove(imax.css._91short);
@@ -508,7 +515,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             // nothing to do.
             css_adsRemove(imax.css.javday, 0, 'javday')
             break;
-
         case 'xvideos':
             setInterval(() => {
                 if (!document.getElementById('xvideos_t')) {
@@ -523,34 +529,31 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'javbus':
             css_adsRemove(imax.css.javbus, 0, "javbus");
             break;
-
         case "4hu":
             css_adsRemove(imax.css._4hu, 0, "4hu");
             hrefAttribute_set();
             break;
-
         case "netflav":
             window_open_defuser(); // 打断 window.open 施法
             css_adsRemove(imax.css.netflav, 0, "4hu");
             break;
-
         case "filemoon":
             window_open_defuser(); // 打断 window.open 施法
             break;
-
         case "embedrise":
             window_open_defuser(); // 打断 window.open 施法
             break;
-
         case "mmfl02":
             window_open_defuser(); // 打断 window.open 施法
             break;
-
-        case "supjav":
-            css_adsRemove(imax.css.supjav, 0, "superjav");
+        case "emturbovid":
             window_open_defuser(); // 打断 window.open 施法
             break;
-
+        case "supjav":
+            noWindowOpenIf('window.open')
+            noWindowOpenIf('touchend')
+            css_adsRemove(imax.css.supjav, 0, "superjav");
+            break;
         case "hanime1":
             css_adsRemove(imax.css.hanime1);
             const div = document.querySelectorAll('div.hidden-xs.hidden-sm')
@@ -675,6 +678,23 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
             clearInterval(daohang);
         }
     }, 3000);
+}
+
+// 按根据父元素是否包含子元素而删除父元素
+function remove_parentElement_by_child(parentElement, child) {
+    let remove_parentElement_by_child_interval = setInterval(() => {
+        if (document.querySelector(parentElement + ">" + child)) {
+            document.querySelectorAll(parentElement).forEach((x) => {
+                if (x.querySelector(child)) {
+                    x.remove();
+                    //x.style.opacity = '0';
+                    x.pointerEvents = 'none';
+                    //document.querySelector(parentElement + ">" + child).style.backgroundImage = 'https://limbopro.com/Adblock4limbo_powered.jpg'
+                    clearInterval(remove_parentElement_by_child_interval)
+                }
+            })
+        }
+    })
 }
 
 // 无数函数及方法的组合使脚本更灵活
@@ -1188,28 +1208,6 @@ function pornhub_sidebar_ads() {
     }, 500);
 }
 
-
-
-function _91porn_videoplay_ads() {
-    //setTimeout(() => {
-    var ele_parent = ["div"];
-    var ele_children = ["a[target=\"_blank\"]  > img[src*=\".gif\"]"];
-    var i;
-
-    const css_Selctors = document.querySelectorAll(ele_parent);
-
-    for (i = 0; i < css_Selctors.length; i++) {
-        if (css_Selctors[i].querySelectorAll(ele_children).length !== 0) {
-            if (css_Selctors[i].attributes.length == 0) {
-                if (css_Selctors[i].children.length == 9) {
-                    console.log(css_Selctors[i])
-                    css_Selctors[i].style.display = "none";
-                }
-            }
-        }
-    }
-    //}, 500);
-}
 
 function tag_ads_traversal(selector, i) {
     const css_Selctors = document.querySelectorAll(selector)

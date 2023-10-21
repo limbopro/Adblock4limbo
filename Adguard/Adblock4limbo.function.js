@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         functionx4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.10.12
+// @version      0.1.10.21
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -109,12 +109,13 @@ function m3u8_tempt(x) {
     var ele_catch = document.querySelectorAll(ele)
     for (i = 0; i < ele_catch.length; i++) {
         while ((url_result = url_regex.exec(ele_catch[i].innerHTML)) != null) {
-            console.log("Catch it")
+            //console.log("Catch it")
             alert(url_result)
         }
     }
 }
 */
+
 
 /* 循环播放 */
 function video_loopPlay() {
@@ -123,7 +124,7 @@ function video_loopPlay() {
         var ele_catch = document.querySelector(ele);
         if (ele_catch) {
             ele_catch.play()
-            console.log("视频已开启循环播放；")
+            //console.log("视频已开启循环播放；")
         }
     }, 1000)
 }
@@ -135,7 +136,7 @@ function video_delayPlay(time) {
         var ele_catch = document.querySelector(ele);
         if (ele_catch) {
             ele_catch.play()
-            console.log("视频已延后播放；")
+            //console.log("视频已延后播放；")
         }
     }, time)
 }
@@ -153,7 +154,7 @@ function adblock4limbo(x) {
     let x4Home = document.createElement('button')
     x4Home.id = "x4Home";
     x4Home.setAttribute("class", "cms");
-    x4Home.setAttribute('onclick', "body_build('true')")
+    x4Home.setAttribute('onclick', "body_build('true');")
 
     var origin = '\
     padding:0px;\
@@ -165,7 +166,7 @@ function adblock4limbo(x) {
     position: fixed;\
     border: transparent;\
     background-color: transparent;\
-    background-image: url("https://limbopro.com/Adblock4limbo.png") !important;\
+    background-image: url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/uploads/imgs/Adblock4limbo.svg") !important;\
     background-size: 100% !important;\
     background-repeat: no-repeat;\
 '
@@ -194,20 +195,20 @@ function x4Home_button_width() {
 // 自动隐藏按钮
 function hidden_adblock4limbo() {
     if (document.getElementById('x4Home')) {
-        //console.log("// hidden_adblock4limbo() 按钮存在") // 存在
+        ////console.log("// hidden_adblock4limbo() 按钮存在") // 存在
         let last_known_scroll_position = window.scrollY;
         const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
         setTimeout(() => {
             if (last_known_scroll_position !== window.scrollY) {
-                //console.log("// hidden_adblock4limbo() 按钮存在，且页面还在滑动...");
+                ////console.log("// hidden_adblock4limbo() 按钮存在，且页面还在滑动...");
                 x4Home_button('1');
             } else {
                 x4Home_button('0');
-                //console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
+                ////console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
             }
         }, 1000)
     } else {
-        //console.log("// hidden_adblock4limbo() 按钮存在，但已隐藏...");
+        ////console.log("// hidden_adblock4limbo() 按钮存在，但已隐藏...");
     }
 }
 
@@ -219,7 +220,6 @@ setInterval(() => {
 let crisp_auto_hiddenX = setInterval(() => {
     crisp_auto_hidden(); // 默认隐藏 crisp 聊天窗口
 }, 3000)
-
 
 
 // 长时间不动则隐藏按钮
@@ -246,8 +246,8 @@ function x4Home_button(x) { // 显示按钮
 const mousemove_element = document.querySelectorAll('body')[0];
 // 绑定鼠标移动事件
 mousemove_element.addEventListener('mousemove', e => {
-    //console.log("// mousemove_element 鼠标所在位置：" + e.offsetX);
-    //console.log("// mousemove_element 要触发位置为：" + Math.floor(0.55 * window.innerWidth));
+    ////console.log("// mousemove_element 鼠标所在位置：" + e.offsetX);
+    ////console.log("// mousemove_element 要触发位置为：" + Math.floor(0.55 * window.innerWidth));
     if (document.body.clientWidth) {
         if (e.offsetX >= 0.55 * window.innerWidth) {
             x4Home_button('1'); // 2333
@@ -279,9 +279,9 @@ let regexp = /(.*)(iphone\sos\s)(\d{2})(.*)/;
 let ios_version = str_ua.replace(regexp, '$3');
 
 const url_now = window.location.href.toLowerCase();
-if (/\b(google|bing)\b/i.test(url_now) || ios_version < 13) {
-    adblock4limbo(x4Home_button_width()); // 插入右下角按钮
-    _onclick_button();
+if (/\b(google|bing)\b/i.test(url_now)) {
+    //adblock4limbo(x4Home_button_width()); // 插入右下角按钮
+    //_onclick_button();
     // 如果当前 url 带有 google/bing 且iOS版本小于 17的用户 则不执行按钮插入
 } else {
     adblock4limbo(x4Home_button_width()); // 插入右下角按钮
@@ -318,11 +318,12 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global feedback">\
-        <div class="title">反馈/建议//</div>\
+        <div class="title_global">反馈/建议//</div>\
         <ul class="ul_global">\
         <li class="li_global"><button style="background:#70997b; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="crisp_active(\'1\')" id="webChat">现在聊聊</button></li>\
-        <li class="li_global"><button style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="hide_button_switch(\'1\')" id="webChat">隐藏按钮</button></li>\
-        <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues" \
+        <li class="li_global"><button style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="hide_button_switch(\'1\')" id="webChat">隐藏导航</button></li>\
+        <li class="li_global"><button style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="document.querySelector(\'div#vserver.play-button\').paly()" id="TESTX">TESTX</button></li>\
+        <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues/new/choose" \
         target="_blank">提交issue</a></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.function.js" \
         target="_blank">查看源码</a></li>\
@@ -336,7 +337,7 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global gkd">\
-        <div class="title">关注博主//</div>\
+        <div class="title_global">关注博主//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global" id="Github" href="https://github.com/limbopro" \
         target="_blank">Github</a></li>\
@@ -355,30 +356,30 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global magicbox">\
-        <div class="title">工具箱//</div>\
+        <div class="title_global">工具箱//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global" id="yhlxj" href="https://limbopro.com/archives/25524.html" \
-        target="_self">流媒体合租</a></li>\
+        target="_blank">流媒体合租</a></li>\
         <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" \
-        target="_self">广告拦截大全</a></li>\
+        target="_blank">广告拦截大全</a></li>\
         <li class="li_global"><a class="a_global" id="software_skills" href="https://limbopro.com/category/software-skills/" \
-        target="_self">软件百科</a></li>\
+        target="_blank">软件百科</a></li>\
         <li class="li_global"><a class="a_global" id="website_builder" href="https://limbopro.com/category/builder/" \
-        target="_self">博客优化</a></li>\
+        target="_blank">博客优化</a></li>\
         <li class="li_global"><a class="a_global" id="search" href="https://limbopro.com/search.html" \
-        target="_self">毒奶搜索</a></li>\
+        target="_blank">毒奶搜索</a></li>\
         <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="index" href="https://limbopro.com/" \
-        target="_self">毒奶博客</a></li>\
+        target="_blank">毒奶博客</a></li>\
         <li class="li_global"><a class="a_global" id="jichangtuijian" href="https://limbopro.com/865.html" \
-        target="_self">机场推荐</a></li>\
+        target="_blank">机场推荐</a></li>\
         <li class="li_global"><a class="a_global" id="hezu" href="https://limbopro.com/archives/25524.html" \
-        target="_self">流媒体合租</a></li>\
+        target="_blank">流媒体合租</a></li>\
         </ul>\
         </div>\
         \
         \
         <div class="div_global speedtest">\
-        <div class="title">测速工具//</div>\
+        <div class="title_global">测速工具//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global" id="common" id="CloudflareSpeedtest" href="https://speed.cloudflare.com/"\
         target="_blank">Cloudflare</a></li>\
@@ -390,7 +391,7 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global ipcheck">\
-        <div class="title">网络连通检测//</div>\
+        <div class="title_global">网络连通检测//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global special" id="Sukka" href="https://ip.skk.moe/"\
         target="_blank">ip地址查询</a></li>\
@@ -402,7 +403,7 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global front">\
-        <div class="title">前端入门//</div>\
+        <div class="title_global">前端入门//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global" id="wangdoc" href="https://wangdoc.com/" \
         target="_blank">网道</a></li>\
@@ -416,7 +417,7 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global boysshouldread">\
-        <div class="title">男孩子读物//</div>\
+        <div class="title_global">男孩子读物//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global" id="regex" href="https://deerchao.cn/tutorials/regex/regex.htm" \
         target="_blank">正则表达式</a></li>\
@@ -428,35 +429,24 @@ function navigation_body_pre() {
         \
         \
         <div class="div_global onlinemovies">\
-        <div class="title">在线影视//</div>\
+        <div class="title_global">在线影视//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global" id="nbys" href="https://www.nivod4.tv/"\
-        target="_self">泥巴影视</a></li>\
+        target="_blank">泥巴影视</a></li>\
         <li class="li_global"><a class="a_global better" id="common" href="https://ddys.pro/"\
-        target="_self">低端影视</a></li>\
+        target="_blank">低端影视</a></li>\
         <li class="li_global"><a class="a_global" id="common" href="https://xiaobaotv.net/"\
-        target="_self">小宝影视</a></li>\
+        target="_blank">小宝影视</a></li>\
         <li class="li_global"><a class="a_global" id="xbys" href="https://gimy.ai/"\
-        target="_self">剧迷网</a></li>\
+        target="_blank">剧迷网</a></li>\
         <li class="li_global"><a class="a_global" id="duboku" href="https://www.duboku.tv/"\
-        target="_self">独播库</a></li>\
+        target="_blank">独播库</a></li>\
         <li class="li_global"><a class="a_global" id="ttsp" href="https://www.ttsp.tv/"\
-        target="_self">天天视频</a></li>\
+        target="_blank">天天视频</a></li>\
         <li class="li_global"><a class="a_global" id="555dy" href="https://555dyx3.com/"\
-        target="_self">555电影网</a></li>\
+        target="_blank">555电影网</a></li>\
         <li class="li_global"><a class="a_global" id="libvio" href="https://libvio.top/"\
-        target="_self">libvio梨</a></li>\
-        </ul>\
-        </div>\
-        \
-        \
-        <div class="div_global agc">\
-        <div class="title">漫画//</div>\
-        <ul class="ul_global">\
-        <li class="li_global"><a class="a_global comics" id="18comic" href="https://18comic.vip/"\
-        target="_self">禁漫天堂</a></li>\
-        <li class="li_global"><a class="a_global comics" id="wnacg" href="https://www.wnacg.com/"\
-        target="_self">绅士漫画</a></li>\
+        target="_blank">libvio梨</a></li>\
         </ul>\
         </div>\
         \
@@ -476,7 +466,7 @@ var file = {
     \
     ",
     global_css: '\
-    .div_global.feedback{background:transparent;} a.a_global.better{background:#2e64bb!important;box-shadow:inset 0px 0px 15px 3px #10336d;} a.a_global.special{background:#3764ac;},a.a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154; pointer-events:auto !important; opacity:1 !important;} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important}div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;}.title{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;}.div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+    .div_global.feedback{background:transparent;} a.a_global.better{background:#2e64bb!important;box-shadow:inset 0px 0px 15px 3px #10336d;} a.a_global.special{background:#3764ac;},a.a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154; pointer-events:auto !important; opacity:1 !important;} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important}div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
     '
 }
 
@@ -489,14 +479,19 @@ function css_add(css, here_write_css_name_you_want) { // 优先追加style元素
     document.querySelector('html').insertBefore(css_name_x, body);
 }
 
+function css_url_add(css_url, here_write_css_name_you_want) { // 优先追加style元素
+    // css file 创建
+    let head = document.querySelectorAll('head')[0];
+    var css_name_y = document.createElement('link');
+    css_name_y.id = here_write_css_name_you_want;
+    css_name_y.href = css_url;
+    css_name_y.type = 'text/css';
+    css_name_y.rel = 'stylesheet';
+    head.appendChild(css_name_y);
+}
+
 css_add(file.global_css, 'navigation_style'); // 在body后面插入 css 
-css_add(file.javlibrary, 'mayi'); // 在body后面插入 css 
-
-
-// https://www.javlibrary.com/js/bnnr_huath
-// https://www.javlibrary.com/js/bnnr_huath_2.js?1697709600
-// https://www.javlibrary.com/js/bnnr_yueyupp_3.js?1697709600
-
+//css_add(file.javlibrary, 'mayi'); // 在body后面插入 css 
 
 function insertBefore_that_element_xx(x) {
     let parentElement = document.querySelector('div#rightcolumn')
@@ -509,9 +504,6 @@ function insertBefore_that_element_xx(x) {
     }
 }
 
-insertBefore_that_element_xx("table tbody > tr > td +  td > div[style]");
-
-
 // 新建一个独立的 div 元素 用作sample
 function div_sample(echo_selector, insertBefore_that_element, switchX, child_css_change) {
     let target = document.querySelector(echo_selector);
@@ -519,7 +511,7 @@ function div_sample(echo_selector, insertBefore_that_element, switchX, child_css
     div_global_x.className = "div_global " + child_css_change;
     let div_title = document.createElement('div');
     div_title.textContent = 'sample';
-    div_title.className = 'title';
+    div_title.className = 'title_global'; // 全局
     let ul_ul_global = document.createElement('ul');
     ul_ul_global.className = 'ul_global';
     let li_li_global = document.createElement('li');
@@ -572,34 +564,28 @@ function li_sample(div_global_selector, insertBefore_that_element, switchX) {
 // .div_global.DeverloperX
 
 
-
-
 // 可向上滑动判断
-function scroll_innerHTML() {
-    let scroll_check = setInterval(() => {
-        var div_global = document.querySelectorAll('.div_global');
-        console.log("// scroll_innerHTML() 查看子元素数量是否超出设定");
-        for (i = 0; i < div_global.length; i++) {
-            if (div_global[i].querySelectorAll('li').length > 8) {
-                let scroll_innerHTML = document.createElement('div');
-                scroll_innerHTML.textContent = '*可向上滑动查看更多';
-                scroll_innerHTML.className = "scroll";
-                document.querySelectorAll("div.div_global")[i].appendChild(scroll_innerHTML);
-                console.log("// scroll_innerHTML() 正在执行插入 // 子元素较多");
-                clearInterval(scroll_check);
-            } else if (div_global[i].querySelectorAll('ul > div.fbt')[0]) {
-                if ((div_global[i].querySelectorAll('ul > div.fbt')[0].clientHeight + div_global[i].querySelectorAll('li').length * 31) > 325.5) {
-                    let scroll_innerHTML = document.createElement('div');
-                    scroll_innerHTML.textContent = '*可向上滑动查看更多';
-                    scroll_innerHTML.className = "scroll";
-                    document.querySelectorAll("div.div_global")[i].appendChild(scroll_innerHTML);
-                    console.log("// scroll_innerHTML() 正在执行插入 // 尾巴较长");
-                    clearInterval(scroll_check);
-                }
-            }
-        }
+function scroll_switch() {
+    //let scroll_check = setInterval(() => {
+    var div_global = document.querySelectorAll('.div_global');
+    ////console.log("// scroll_switch() 查看子元素数量是否超出设定");
+    for (i = 0; i < div_global.length; i++) {
 
-    }, 1000)
+        if (div_global[i].querySelector('div.fbt')) {
+            var fbt = div_global[i].querySelector('div.fbt').clientHeight
+        } else { var fbt = 0 }
+
+        if (div_global[i].querySelectorAll('li').length * 31 + fbt > 8 * 31) {
+            let scroll_innerHTML = document.createElement('div');
+            scroll_innerHTML.textContent = '*可向上滑动查看更多';
+            scroll_innerHTML.className = "scroll";
+            document.querySelectorAll("div.div_global")[i].appendChild(scroll_innerHTML);
+            ////console.log("// scroll_switch() 正在执行插入 // 子元素较多");
+            ////clearInterval(scroll_check);
+        }
+    }
+
+    //}, 1000)
 }
 
 //document.querySelectorAll('.div_global')[3].querySelectorAll("li").length * 31
@@ -614,7 +600,7 @@ function xXX() {
     }
     var a_length = document.querySelectorAll('.div_global')[3].querySelectorAll("li").length;
     for (i = 0; i < a_length; i++) {
-        console.log(document.querySelectorAll('.div_global')[3].querySelectorAll("a")[i].clientHeight);
+        //console.log(document.querySelectorAll('.div_global')[3].querySelectorAll("a")[i].clientHeight);
         if (document.querySelectorAll('.div_global')[3].querySelectorAll("a")[i].clientHeight > 27) {
             let scroll_innerHTML = document.createElement('div');
             scroll_innerHTML.textContent = '*可向上滑动查看更多';
@@ -630,7 +616,7 @@ var selector = { // css 定义选择器
 }
 
 function all(opacity, zIndex, switchX) {
-    console.log("// body_build() 输入为 true，开始创建导航...")
+    //console.log("// body_build() 输入为 true，开始创建导航..." + " 透明度为 " + opacity + " 层级数目为 " + zIndex)
     if (!document.querySelector('div#navigation[style]')) { // 如果导航不存在则生成
         navigation_body_pre(); // 生成导航
         let parentElement = document.getElementById('navigation');
@@ -640,20 +626,23 @@ function all(opacity, zIndex, switchX) {
         body_bgp_switch(); // 设置背景图片
         echo_align(); // 导航居中
         //child_push(".div_global.pornMaker > ul", "100", "", "porn", "0");// 自动化生成内容
-        scroll_check(); // 如果每个类别子项目超过一定数目则提示可上滑动查看更多
+        //scroll_switch();
+        //scroll_check(); // 如果每个类别子项目超过一定数目则提示可上滑动查看更多
         echo_check_switch(switchX); // 监控导航大小变化
-        setTimeout(() => {
-            document.querySelector('div#navigation[style]').style.zIndex = document.querySelector('div#navigation[style]').style.zIndex + 1
-        }, 3000);
+        //setTimeout(() => {
+        //  document.querySelector('div#navigation[style]').style.zIndex = document.querySelector('div#navigation[style]').style.zIndex + 1
+        //}, 3000);
     }
 }
+
+
 
 /* Start 判断是否显示导航 可不删 */
 function body_build(x) { // 判断导航显示与否
     if (x == "true") {
         //all(0, 114154, 1)
-        scroll_innerHTML();
-        //console.log("// body_build() 输入为 true，开始创建导航...")
+        //scroll_switch();
+        ////console.log("// body_build() 输入为 true，开始创建导航...")
         all(1, 114154, 1)
         if (!document.querySelector('div#navigation[style]')) { // 如果导航不存在则生成
             navigation_body_pre(); // 生成导航
@@ -665,9 +654,9 @@ function body_build(x) { // 判断导航显示与否
             echo_align(); // 导航居中
             //child_push(".div_global.pornMaker > ul", "100", "", "porn", "0");// 自动化生成内容
             echo_check_switch('1'); // 监控导航大小变化
-            //scroll_innerHTML(); // 类目下子元素超过长度检测
+            //scroll_switch(); // 类目下子元素超过长度检测
         } else {
-            console.log("// body_build() 输入为 true，导航显示...")
+            //console.log("// body_build() 输入为 true，导航显示...")
             if (document.querySelector(selector.body_css)) {
                 document.querySelector(selector.body_css).style.opacity = "1";
                 document.querySelector(selector.body_css).style.zIndex = "114154";
@@ -677,7 +666,7 @@ function body_build(x) { // 判断导航显示与否
             }
         }
     } else if (x == "false") {
-        console.log("// body_build() 输入为 false，导航隐藏...")
+        //console.log("// body_build() 输入为 false，导航隐藏...")
         if (document.querySelector(selector.body_css)) {
             document.querySelector(selector.body_css).style.opacity = "0";
             document.querySelector(selector.body_css).style.zIndex = "-114154";
@@ -685,11 +674,11 @@ function body_build(x) { // 判断导航显示与否
             echo_check_switch('0'); // 监控导航大小变化
         }
         x4Home_button("1"); // 显示按钮
-        console.log("// body_build() 导航已隐藏，右下角按钮浮现...");
+        //console.log("// body_build() 导航已隐藏，右下角按钮浮现...");
     }
-    setTimeout(() => {
-        _blank(); // 如果导航于博客页面生成 则将其 target 设置为 _blank
-    }, 3000)
+    //setTimeout(() => {
+    //  _blank(); // 如果导航于博客页面生成 则将其 target 设置为 _blank
+    //}, 3000)
 }
 
 // 设置导航初始大小 初始DaoHang 大小
@@ -721,7 +710,7 @@ function echo_align() {
 
     //var echo_ell_length = document.querySelectorAll('div.div_global').length; // 总共导航类目数量
     if (window.innerWidth > (112 * echo_ell_length)) { // 当屏幕宽度大于 452px
-        console.log("正在检查是否属于大尺寸...")
+        //console.log("正在检查是否属于大尺寸...")
         body_align("navigation");
         document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - (112 * echo_ell_length + 8 * echo_ell_overlay_length)) / 2 + "px";
         document.querySelector(selector.footer).style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
@@ -731,7 +720,7 @@ function echo_align() {
         }
         //document.querySelector('div.ellCloseX').style.position = "initial"; // 确保关闭按钮可见可点击
     } else {
-        console.log("// echo_align() 正在检查是否属于小尺寸...");
+        //console.log("// echo_align() 正在检查是否属于小尺寸...");
         document.querySelector(selector.footer).style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
         body_align("navigation");
         document.querySelector(selector.body_css_real).style.paddingLeft = ((window.innerWidth % 112 - 8 * echo_ell_overlay_length) / 2) + "px"; // 当 ellCloseX position 为 initial 时 
@@ -747,10 +736,10 @@ function _blank() {
         document.querySelectorAll('div.echo a').forEach((x) => {
             x.target = "_blank";
             // 将当前页面链接 target 设置为 _blank
-            console.log("// _blank() 将当前页面链接 target 设置为 _blank...");
+            //console.log("// _blank() 将当前页面链接 target 设置为 _blank...");
         })
     } else {
-        console.log("// _blank() 判断当前非博客页面，它是" + url_now);
+        //console.log("// _blank() 判断当前非博客页面，它是" + url_now);
     }
 }
 
@@ -813,6 +802,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
 ['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'common'],
 ['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'common'],
+['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'common'],
 ['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'common'],
 ['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
 ['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
@@ -830,39 +820,48 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Claude.ai', 'https://claude.ai/', '_blank', 'AI', 'common'],
 ['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AI', 'common'],
 ['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AI', 'common'],
+["在线正则表达式测试", 'https://tool.oschina.net/regex/', '_blanl', 'Tools', 'special'],
+['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
+['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
 ];
 
 
+var adblock4limbo_list = ['ddys', 'ddrk', '91porn', '18comic', 'avple', 'wnacg', 'libvio', 'anime1', 'javbu', 'xiaobaotv', 'xvideos', 'netflav']
 
 var echo_ell_length = 17; // 总共导航类目数量
 var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
 
-function parentElement_check() {
-    //all(0, -114154, 1);
+function parentElement_add() {
+    all(0, -114154, 1);
+    body_build('false');
     var parentElementX = setInterval(() => { //
         /**
          *  child_push(".div_global.pornMaker > ul", "100", "", "porn", "0");// 自动化生成内容
          */
-        console.log("\\ parentElement_check() 类目自动化生成检测... ")
+        body_build('')
+        //console.log("\\ parentElement_add() 类目自动化生成检测... ")
         if (document.querySelector('div#navigation[style]')) {
-            parentElement_X(".echo", 'AI', 4, '智能AI//', 'AI')
-            parentElement_X(".echo", 'Search', 4, '搜索引擎//', 'search')
-            parentElement_X(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
-            parentElement_X(".echo", 'Images', 4, '免费商用图片', 'IMages')
-            parentElement_X('.echo', 'Social', 4, '社交媒体//', 'Social')
-            parentElement_X('.echo', 'Media', 4, '娱乐媒体//', 'Media')
-            parentElement_X('.echo', 'PornMaker', 4, '著名片商//', 'porn')
-            parentElement_X('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
+            parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
+            parent_push(".echo", 'AI', 4, '智能AI//', 'AI')
+            parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
+            parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
+            parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
+            parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
+            parent_push('.echo', 'Media', 4, '娱乐媒体//', 'Media')
+            parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
+            parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
+            parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
             child_push('.div_global.front > ul', '', "", 'front-end', 0)
             child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0)
             child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1)
-            console.log("// parentElement_check() 生成检测...");
+            //console.log("// parentElement_add() 生成检测...");
+            scroll_switch();
             clearInterval(parentElementX);
         }
-    }, 1000)
+    }, 5000)
 }
 
-parentElement_check();
+parentElement_add();
 
 // 设置 cookie 饼
 function setCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; " + expires; }
@@ -892,7 +891,7 @@ if (button_switch == 'True') {
 
 // 复制父元素下指定位置子元素 
 function parentElement_build(parentNode, i) {
-    console.log("// parentElement_build(() 正在复制" + parentNode + "下的父元素，并追加到" + parentNode + "后");
+    //console.log("// parentElement_build(() 正在复制" + parentNode + "下的父元素，并追加到" + parentNode + "后");
     if (document.querySelectorAll(parentNode)[0]) {
         let parentElement = document.querySelectorAll(parentNode)[0]; // 抓住老番茄
         let node = document.querySelectorAll(parentNode)[0].children[i]; // 取出
@@ -903,7 +902,7 @@ function parentElement_build(parentNode, i) {
 
 // 替换父元素的内容
 function parentElement_inner(parentNode, Headline_css, Headreplace_str, child_css_change) {
-    console.log("// parentElement_inner() 正在替换" + parentNode + "下的最后一个元素的标题及相关属性");
+    //console.log("// parentElement_inner() 正在替换" + parentNode + "下的最后一个元素的标题及相关属性");
     document.querySelector(".div_global." + child_css_change).querySelector(Headline_css).textContent = Headreplace_str;
 } // parentElement_inner('.echo','.title','社交媒体//','Social')
 
@@ -917,19 +916,21 @@ function parentElement_push(parentNode, category, child_css_change, insertBefore
     for (i = 0; i < arrayXP.length; i++) {
         if (arrayXP[i][3] == category) {
             var number = ++valid;
-            console.log("// parentElement_push() 匹配到的内容为" + arrayXP[i][0]);
+            ////console.log("// parentElement_push() 匹配到的内容为" + arrayXP[i][0]);
         }
     }
 
-    console.log("// parentElement_push() 匹配到符合" + category + "的数量为" + number);
-    console.log("// parentElement_push() .div_global." + child_css_change + " > ul");
+
+
+    //console.log("// parentElement_push() 匹配到符合" + category + "的数量为" + number);
+    //console.log("// parentElement_push() .div_global." + child_css_change + " > ul");
 
     // part 2
     var real_length = document.querySelector(".div_global." + child_css_change + " > ul").querySelectorAll('li').length
-    console.log("// 被复制子元素个数为" + real_length + category + "类目下符合要求的元素个数为" + number)
+    //console.log("// 被复制子元素个数为" + real_length + category + "类目下符合要求的元素个数为" + number)
     if (number > real_length) {
         var lenth_now = number - real_length;
-        console.log("// parentElement_push() 开始新建元素...")
+        //console.log("// parentElement_push() 开始新建元素...")
         for (i = 0; i < lenth_now; i++) {
             li_sample(".div_global." + child_css_change + " > ul", insertBefore_that_element, switchX);
             //child_build(".div_global." + child_css_change + " > ul")
@@ -947,7 +948,7 @@ function parentElement_push(parentNode, category, child_css_change, insertBefore
                 document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
                 var bb = ++bb;
                 // 元素新建成功，开始执行元素重写
-                console.log('// 元素新建成功，开始执行元素重写');
+                ////console.log('// 元素新建成功，开始执行元素重写');
             }
         }
     }
@@ -955,7 +956,7 @@ function parentElement_push(parentNode, category, child_css_change, insertBefore
         // Part 4
         var bb = 0;
         for (i = 0; i < arrayXP.length; i++) {
-            console.log("// 无需新建元素，开始执行元素重写...")
+            //console.log("// 无需新建元素，开始执行元素重写...")
             if (arrayXP[i][3] == category) {
                 document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].textContent = arrayXP[i][0];
                 document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].href = arrayXP[i][1];
@@ -970,10 +971,10 @@ function parentElement_push(parentNode, category, child_css_change, insertBefore
 }
 
 
-function parentElement_X(parentNode, child_css_change, childPosition, title, category, insertBefore_that_element, switchX) {
+function parent_push(parentNode, child_css_change, childPosition, title, category, insertBefore_that_element, switchX) {
     //parentElement_build(parentNode, childPosition)
     div_sample(parentNode, insertBefore_that_element, switchX, child_css_change);
-    parentElement_inner(parentNode, '.title', title, child_css_change); // 该标题改属性
+    parentElement_inner(parentNode, '.title_global', title, child_css_change); // 该标题改属性
     parentElement_push(parentNode, category, child_css_change, insertBefore_that_element, switchX)
 }
 
@@ -987,7 +988,7 @@ function parentElement_X(parentNode, child_css_change, childPosition, title, cat
 
 
 function child_build(div_global_selector) { // 复制父元素下最后一个子元素
-    console.log("// child_build() 正在复制 " + div_global_selector + " 下的元素并追加到自身身后...");
+    //console.log("// child_build() 正在复制 " + div_global_selector + " 下的元素并追加到自身身后...");
     if (document.querySelector(div_global_selector)) {
         let parentElement = document.querySelector(div_global_selector); // 抓住老番茄
         let node = document.querySelector(div_global_selector).lastElementChild; // 取出
@@ -1018,39 +1019,12 @@ function child_push(div_global_selector, length, array, category, insertBefore_t
 // child_push(".div_global.pornMaker > ul","10","")
 // child_push(".div_global.pornMaker > ul","10","","porn")
 
-// 收集链接数据
-function url_slice(i) {
-    console.log([].slice.call(document.querySelectorAll('a'))[i].href)
+let ads_css = '.ad_img {display:none! important; pointer-events: none !important;}\
+'
+function ads_remove(selector) {
+    document.querySelectorAll(selector).forEach((x) => { x.remove() })
+    css_add(ads_css, "fuckads")
 }
-
-function url_push() {
-    let length = [].slice.call(document.querySelectorAll('a')).length
-    for (i = 0; i < length; i++) {
-        url_slice(i)
-    }
-}
-
-//url_push()
-
-
-// 收集链接数据2
-function url_push_method() {
-    let body = document.body.innerHTML
-    //let regexpx = /(.*)(https:\/\/)(.*)/;
-    console.log(body.replace(regexpx, '$2'))
-
-    let length = document.querySelectorAll(".col-sm-3").length;
-    //let regexpx = /(.*)(https:\/\/limbopro.com)(.*)/;
-    for (i = 0; i < length; i++) {
-        console.log(document.querySelectorAll(".col-sm-3")[i].innerHTML.replace(regexpx, '$2'))
-    }
-
-    let regexpx = /(.*)(https:\/\/limbopro.com)(.*)/;
-    console.log(document.querySelectorAll(".col-sm-3")[0].innerHTML.replace(regexpx, '$2'))
-    document.querySelectorAll(".xe-widget.xe-conversations.box2.label-info")[0].onclick
-}
-
-
 
 // 自动调整导航宽度及高度
 
@@ -1064,16 +1038,16 @@ function echo_check_switch(x) {
                     if (document.querySelector("#navigation[style]").style.opacity == 1) {
                         if (widthX != window.innerWidth | heightX != window.innerHeight) {
                             body_build('true');
-                            console.log("// echo_check_switch() 捕捉到导航变动...，且导航处于显示状态...")
+                            //console.log("// echo_check_switch() 捕捉到导航变动...，且导航处于显示状态...")
                         }
                     }
                 } else {
-                    console.log("未捕捉到导航...，且导航处于未显示状态...")
+                    //console.log("未捕捉到导航...，且导航处于未显示状态...")
                 }
             }, 1000)
         }, 500)
     } else if (x == 0) {
-        console.log("// echo_check_switch() 导航已关闭，清理导航大小变化监控循环...")
+        //console.log("// echo_check_switch() 导航已关闭，清理导航大小变化监控循环...")
         clearInterval(echo_check) // 清理循环
     }
 }
@@ -1105,7 +1079,7 @@ function thrd_party_file(tagname, url, where) {
 }
 
 function crisp_window_switch() {
-    console.log("// crisp_window_switch() 于导航页面手动开启Crisp聊天窗口...")
+    //console.log("// crisp_window_switch() 于导航页面手动开启Crisp聊天窗口...")
     let crisp_check = setInterval(() => {
         if (document.querySelector("span[data-id]")) {
             document.querySelector("span[data-id]").click();
@@ -1130,23 +1104,23 @@ function crisp_window_remove(x) {
     if (x == 0) {
         if (document.querySelector("[data-for-id=new_messages]")) { // 如果有未读消息则强制显示
             document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
-            console.log("// crisp_window_remove() 有未读消息，执行显示Crisp成功...")
+            //console.log("// crisp_window_remove() 有未读消息，执行显示Crisp成功...")
         } else {
             if (document.querySelector('[aria-live=polite].crisp-client')) {
                 document.querySelector('[aria-live=polite].crisp-client').classList.remove('active');
-                console.log("// crisp_window_remove() 执行隐藏Crisp成功...")
+                ////console.log("// crisp_window_remove() 执行隐藏Crisp成功...")
             }
         }
     } else if (x == 1) {
         document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
-        console.log("// crisp_window_remove() 手动打开，执行显示Crisp成功...")
+        //console.log("// crisp_window_remove() 手动打开，执行显示Crisp成功...")
     }
 }
 
 function crisp_active(x) {
     if (x == 1) {
         if (!document.querySelector("script[src*='crisp']")) {
-            console.log("// crisp_active() 插入 crisp 系统脚本...")
+            //console.log("// crisp_active() 插入 crisp 系统脚本...")
             thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head");
             crisp_window_remove('1');
             crisp_window_switch();
@@ -1160,16 +1134,21 @@ function crisp_active(x) {
 
 function crisp_auto_hidden() {
     val = null
-    //console.log(val === document.querySelector(selector.body_css));
+    ////console.log(val === document.querySelector(selector.body_css));
     if (val === document.querySelector(selector.body_css) && val === document.querySelector("[data-for-id=new_messages]") && val === document.querySelector('.cc-1hqb[data-visible=true]')) {
         crisp_window_remove('0'); // 隐藏crisp按钮
-        console.log("// crisp_auto_hidden()执行隐藏Crisp...")
+        ////console.log("// crisp_auto_hidden()执行隐藏Crisp...")
     } else {
         if (document.querySelector("[data-for-id=new_messages]")) { // 如果有未读消息则强制显示
             crisp_window_remove('1');
-            console.log("/ crisp_auto_hidden() 执行显示Crisp...")
+            ////console.log("/ crisp_auto_hidden() 执行显示Crisp...")
         }
     }
 }
 
 thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head"); // 默认加载 Crisp 脚本 但不显示对话框
+
+function testx() {
+    css_url_add('https://limbopro.com/CSS/Adblock4limbo.user.css', 'Global adCSS');
+    body_build('false');
+}

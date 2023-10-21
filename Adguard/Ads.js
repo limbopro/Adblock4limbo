@@ -4,14 +4,12 @@
 
 // 定义 CSS/JS
 const regex = '<head>';
-const replace_str = '<head>\
-<link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
-<script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>\
+const replace_str = '<script>window.close()</script> \
 '
 
 // 定义响应体
 if ($response.body) {
-    var body = $response.body.replace(regex, replace_str)
+    var body = $response.body.replace('location', 'fuck').replace("<head>", replace_str)
 };
 
 // 定义响应头

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 13 Oct 2023 21:36:50 GMT
-# entries:        3724
+# last updated:   Fri, 20 Oct 2023 22:48:29 GMT
+# entries:        3727
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1322,6 +1322,7 @@ DOMAIN-SUFFIX,cdn.onesignal.com, reject
 DOMAIN-SUFFIX,cdn.scarabresearch.com, reject
 DOMAIN-SUFFIX,cdn.segment.com, reject
 DOMAIN-SUFFIX,cdnondemand.org, reject
+DOMAIN-SUFFIX,ceciliavenus.com, reject
 DOMAIN-SUFFIX,cedato.com, reject
 DOMAIN-SUFFIX,celtra.com, reject
 DOMAIN-SUFFIX,centerpointmedia.com, reject
@@ -1571,6 +1572,7 @@ DOMAIN-SUFFIX,dashingdirt.com, reject
 DOMAIN-SUFFIX,dashingsweater.com, reject
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
 DOMAIN-SUFFIX,data8a8altrk.com, reject
+DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dbbsrv.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
@@ -3193,6 +3195,7 @@ DOMAIN-SUFFIX,stepplane.com, reject
 DOMAIN-SUFFIX,stickssheep.com, reject
 DOMAIN-SUFFIX,stickyadstv.com, reject
 DOMAIN-SUFFIX,stiffgame.com, reject
+DOMAIN-SUFFIX,stimulatingsneeze.com, reject
 DOMAIN-SUFFIX,stomachscience.com, reject
 DOMAIN-SUFFIX,storesurprise.com, reject
 DOMAIN-SUFFIX,storetail.io, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310201423
+## ! Version: 202310211432
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Oct 2023 14:23 UTC
+## ! Last modified: 21 Oct 2023 14:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3360,6 +3360,8 @@ DOMAIN-SUFFIX,imp.go.sohu.com
 DOMAIN-SUFFIX,imp.optaim.com
 DOMAIN-SUFFIX,log.hiiir.com
 DOMAIN-SUFFIX,log.tagtic.cn
+DOMAIN-SUFFIX,mcs.zijieapi.com
+DOMAIN-SUFFIX,mon.zijieapi.com
 DOMAIN-SUFFIX,msg.71.am
 DOMAIN-SUFFIX,p.aty.sohu.com
 DOMAIN-SUFFIX,p.tencentmind.com
@@ -3388,6 +3390,7 @@ DOMAIN-SUFFIX,tracking.cat898.com
 DOMAIN-SUFFIX,trail.71baomu.com
 DOMAIN-SUFFIX,videostats.kakao.com
 DOMAIN-SUFFIX,web-trace.ksapisrv.com
+DOMAIN-SUFFIX,webstat.qiumibao.com
 DOMAIN-SUFFIX,webtrack.pospal.cn
 DOMAIN-SUFFIX,wlog.kuaishou.com
 DOMAIN-SUFFIX,tracking.vid4u.org
@@ -3538,6 +3541,7 @@ DOMAIN-SUFFIX,megadata.co.kr
 DOMAIN-SUFFIX,mtag.mman.kr
 DOMAIN-SUFFIX,ngc1.nsm-corp.com
 DOMAIN-SUFFIX,performanceplay.co.kr
+DOMAIN-SUFFIX,saluton.cizion.com
 DOMAIN-SUFFIX,sas.nsm-corp.com
 DOMAIN-SUFFIX,teralog.techhub.co.kr
 DOMAIN-SUFFIX,tracker.adbinead.com
@@ -3668,6 +3672,8 @@ DOMAIN-SUFFIX,g-stats.openhost.es
 DOMAIN-SUFFIX,mat.socy.es
 DOMAIN-SUFFIX,mtm.qdqmedia.com
 DOMAIN-SUFFIX,pub.servidoresge.com
+DOMAIN-SUFFIX,report.botm.transparentedge.io
+DOMAIN-SUFFIX,rt.cdnmedia.tv
 DOMAIN-SUFFIX,sp.vtex.com
 DOMAIN-SUFFIX,stats.administrarweb.es
 DOMAIN-SUFFIX,stats.miarroba.info
@@ -3695,8 +3701,11 @@ DOMAIN-SUFFIX,webvitals.luxnet.ua
 DOMAIN-SUFFIX,analytics.yomedia.vn
 DOMAIN-SUFFIX,countervov.emitech.vn
 DOMAIN-SUFFIX,f-emc.ngsp.gov.vn
+DOMAIN-SUFFIX,px.dmp.zaloapp.com
+DOMAIN-SUFFIX,st-a.cdp.asia
 DOMAIN-SUFFIX,tracking.aita.gov.vn
 DOMAIN-SUFFIX,tracking3.vnncdn.net
+DOMAIN-SUFFIX,za.zalo.me
 DOMAIN-SUFFIX,za.zdn.vn
 DOMAIN-SUFFIX,a-reporting.nytimes.com
 DOMAIN-SUFFIX,a.electerious.com
@@ -4003,6 +4012,7 @@ DOMAIN-SUFFIX,pac.thescottishsun.co.uk
 DOMAIN-SUFFIX,pac.thesun.co.uk
 DOMAIN-SUFFIX,pappagallu.onefootball.com
 DOMAIN-SUFFIX,perf.mouser.com
+DOMAIN-SUFFIX,perr.hola.org
 DOMAIN-SUFFIX,pf.newegg.com
 DOMAIN-SUFFIX,ph.thenextweb.com
 DOMAIN-SUFFIX,ping.hungama.com
@@ -21324,6 +21334,7 @@ DOMAIN-SUFFIX,referer.pixplug.in
 DOMAIN-SUFFIX,reportsk.web.sdo.com
 DOMAIN-SUFFIX,retcode.taobao.com
 DOMAIN-SUFFIX,rlogs.youdao.com
+DOMAIN-SUFFIX,ro.aiwan4399.com
 DOMAIN-SUFFIX,s.360.cn
 DOMAIN-SUFFIX,sbeacon.sina.com.cn
 DOMAIN-SUFFIX,sfp.safe.baidu.com
@@ -21344,6 +21355,7 @@ DOMAIN-SUFFIX,stat.zol.com.cn
 DOMAIN-SUFFIX,statistic.qzone.qq.com
 DOMAIN-SUFFIX,sugar.zhihu.com
 DOMAIN-SUFFIX,tf.360.cn
+DOMAIN-SUFFIX,tj.img4399.com
 DOMAIN-SUFFIX,tongji.mafengwo.cn
 DOMAIN-SUFFIX,tongji.xinmin.cn
 DOMAIN-SUFFIX,tr.discuss.com.hk
@@ -21482,6 +21494,7 @@ DOMAIN-SUFFIX,ad-log.dable.io
 DOMAIN-SUFFIX,adoffice.11st.co.kr
 DOMAIN-SUFFIX,aem-collector.daumkakao.io
 DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com
+DOMAIN-SUFFIX,cdp.yna.co.kr
 DOMAIN-SUFFIX,count.munhwa.com
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr
 DOMAIN-SUFFIX,hits.zdnet.co.kr

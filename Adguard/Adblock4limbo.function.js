@@ -267,6 +267,7 @@ mousemove_element.addEventListener('mousemove', e => {
 // 为按钮添加监听事件 防止被破坏
 
 function _onclick_button() {
+
     document.getElementById('x4Div').addEventListener("click", function () {
         body_build('true'); // 添加监听事件
     }) //
@@ -332,7 +333,8 @@ function navigation_body_pre() {
         <li class="li_global"><button style="background:#70997b; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="crisp_active(\'1\')" id="webChat">现在聊聊</button></li>\
         <li class="li_global"><button style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="hide_button_switch(\'1\')" id="webChat">隐藏导航</button></li>\
         <li class="li_global"><a style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;" href="https://t.me/Adblock4limbo/21" target="_blank" class="a_global" id="FAQ">常见FAQ</a></li>\
-        <li class="li_global"><button style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" onclick="testx()" id="TESTX">TESTX</button></li>\
+        <li class="li_global"><button class="a_global" onclick="testx()" id="TESTX">TESTX</button></li>\
+        <li class="li_global"><button  class="a_global" onclick="testy()" id="TESTY">TESTY</button></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues/new/choose" \
         target="_blank">提交issue</a></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.function.js" \
@@ -382,8 +384,7 @@ function navigation_body_pre() {
         target="_blank">毒奶博客</a></li>\
         <li class="li_global"><a class="a_global" id="jichangtuijian" href="https://limbopro.com/865.html" \
         target="_blank">机场推荐</a></li>\
-        <li class="li_global"><a class="a_global" id="hezu" href="https://limbopro.com/archives/25524.html" \
-        target="_blank">流媒体合租</a></li>\
+        <li class="li_global"><a class="a_global special " onclick="googlesearch()" id="lsj">番号搜索</a></li>\
         </ul>\
         </div>\
         \
@@ -478,7 +479,7 @@ var file = {
     \
     ",
     global_css: '\
-    .div_global.feedback{background:transparent;} a.a_global.better{background:#2e64bb!important;box-shadow:inset 0px 0px 15px 3px #10336d;} a.a_global.special{background:#3764ac;},a.a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important}div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+    .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button {position:fixed;width:64px;height:64px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;} .div_global.feedback{background:transparent;} a.a_global.better{background:#2e64bb!important;box-shadow:inset 0px 0px 15px 3px #10336d;} a.a_global.special{background:#3764ac;},a.a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important}div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://limbopro.com/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:0px;margin:1px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
     '
 }
 
@@ -1111,7 +1112,7 @@ function crisp_window_remove(x) {
         } else {
             if (document.querySelector('[aria-live=polite].crisp-client')) {
                 document.querySelector('[aria-live=polite].crisp-client').classList.remove('active');
-                console.log("// crisp_window_remove() 执行隐藏Crisp成功...")
+                //console.log("// crisp_window_remove() 执行隐藏Crisp成功...")
             }
         }
     } else if (x == 1) {
@@ -1139,7 +1140,7 @@ function crisp_auto_hidden() {
     ////console.log(val === document.querySelector(selector.body_css));
     if (!document.querySelector("[data-for-id=new_messages]") && val == document.querySelector('.cc-1hqb[data-visible=true]')) {
         crisp_window_remove('0'); // 隐藏crisp按钮
-        console.log("// crisp_auto_hidden()执行隐藏Crisp...")
+        //console.log("// crisp_auto_hidden()执行隐藏Crisp...")
     } else {
         if (document.querySelector("[data-for-id=new_messages]")) { // 如果有未读消息则强制显示
             crisp_window_remove('0');
@@ -1160,3 +1161,84 @@ function testx() {
     }
 }
 
+function googlesearch() {
+    alert('功能呈现页尚处于优化中...')
+    if (document.querySelector('#searchbyGoogle')) {
+        document.querySelector('#searchbyGoogle').style.zIndex = '1141541';
+        document.querySelector('#searchbyGoogle').style.opacity = '1';
+        body_build('false');
+        document.querySelector('#x4Home').style.bottom = '30%';
+    } else {
+
+        // 创建一个搜索框
+        document.querySelector('#x4Home').style.bottom = '30%'; // 先把导航按钮提高一个度
+        let new_b = document.createElement('body')
+        let new_div_search = document.createElement('div')
+        new_div_search.className = "new_div_search"
+        new_b.id = 'searchbyGoogle'
+        new_b.style.zIndex = 1141541;
+        new_b.style.bottom = '0%';
+        new_b.style.position = 'absolute';
+        let old_b = document.body;
+        new_b.appendChild(new_div_search)
+        old_b.appendChild(new_b);
+        let googlesearch = document.createElement('div');
+        googlesearch.className = 'gcse-search';
+        new_div_search.appendChild(googlesearch);
+        setTimeout(() => {
+            let new_s = document.createElement('script');
+            new_s.src = 'https://cse.google.com/cse.js?cx=a897efc85ee66bfdd';
+            new_b.appendChild(new_s);
+            body_build('false');
+        }, 500)
+
+        // 创建一个关闭搜索的按钮
+        let close_search_button = document.createElement('button')
+        close_search_button.id = 'close_search_button';
+        //close_search_button.textContent = "关闭🔍"
+        //close_search_button.style.position = 'fixed';
+        close_search_button.style.bottom = '15%';
+        close_search_button.style.right = '3%';
+        close_search_button.className = 'close_search_button';
+        close_search_button.setAttribute('onclick', 'close_search_iframe()');
+        document.querySelector('#searchbyGoogle').appendChild(close_search_button)
+
+        var google_check = setInterval(() => {
+            if (document.querySelectorAll("div[class*='gs']")[0]) {
+                setTimeout(() => {
+                    if (document.querySelectorAll("a")[0]) {
+                        let a_ = document.querySelectorAll("a");
+                        var aa = 0;
+                        for (i = 0; i < a_.length; i++) {
+                            a_[i].target = '_blank'
+                            var aa = ++aa;
+                            console.log('当前aa的值为' + aa)
+                            console.log('正在设置谷歌搜索结果链接 target 为 _blank ' + a_[i])
+                            if (aa + 2 > a_.length) {
+                                // 清理完毕
+                                console.log('链接设置完毕...')
+                                clearInterval(google_check)
+                            }
+                        }
+                    }
+                }, 1000)
+            }
+        }, 2500)
+
+    }
+}
+
+function close_search_iframe() {
+    //clearInterval(google_check);
+    console.log('谷歌搜索已关闭...')
+    if (document.querySelector('#searchbyGoogle')) {
+        document.querySelector('#searchbyGoogle').style.zIndex = '-11415411'
+        document.querySelector('#searchbyGoogle').style.opacity = '0'
+        document.querySelector('#x4Home').style.bottom = '15%';  // 搜索隐藏后把导航按钮降低一个度
+    }
+}
+
+
+function testy() {
+    alert('在做了(0%)')
+}

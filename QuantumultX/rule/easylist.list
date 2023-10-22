@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310221126
+## ! Version: 202310221411
 ## ! Title: EasyList
-## ! Last modified: 22 Oct 2023 11:26 UTC
+## ! Last modified: 22 Oct 2023 14:11 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -425,6 +425,7 @@ DOMAIN-SUFFIX,33sjhdfjsdf33.monster, reject
 DOMAIN-SUFFIX,341073be6e9db7d2.com, reject
 DOMAIN-SUFFIX,341k4gu76ywe.top, reject
 DOMAIN-SUFFIX,345f780221.com, reject
+DOMAIN-SUFFIX,34710af267.com, reject
 DOMAIN-SUFFIX,349c3c0859.com, reject
 DOMAIN-SUFFIX,34e224a3bf.com, reject
 DOMAIN-SUFFIX,34pavouhj7.com, reject
@@ -2748,6 +2749,7 @@ DOMAIN-SUFFIX,anorrecenturybr.com, reject
 DOMAIN-SUFFIX,another-surprise.pro, reject
 DOMAIN-SUFFIX,anpjcoapgd.com, reject
 DOMAIN-SUFFIX,anpnipbfaxr.com, reject
+DOMAIN-SUFFIX,anpptedtah.com, reject
 DOMAIN-SUFFIX,ansf.shop, reject
 DOMAIN-SUFFIX,anspeechless.com, reject
 DOMAIN-SUFFIX,anssigia.xyz, reject
@@ -12737,6 +12739,7 @@ DOMAIN-SUFFIX,hipersushiads.com, reject
 DOMAIN-SUFFIX,hiphoapt.xyz, reject
 DOMAIN-SUFFIX,hippchapter.com, reject
 DOMAIN-SUFFIX,hippostravois.store, reject
+DOMAIN-SUFFIX,hippusanglist.com, reject
 DOMAIN-SUFFIX,hiprofitnetworks.com, reject
 DOMAIN-SUFFIX,hipstertinta.space, reject
 DOMAIN-SUFFIX,hipunaux.com, reject
@@ -14609,6 +14612,7 @@ DOMAIN-SUFFIX,k5zoom.com, reject
 DOMAIN-SUFFIX,k68tkg.com, reject
 DOMAIN-SUFFIX,kaayqbkwnbqja.top, reject
 DOMAIN-SUFFIX,kablic.com, reject
+DOMAIN-SUFFIX,kabscarbide.com, reject
 DOMAIN-SUFFIX,kabuut.com, reject
 DOMAIN-SUFFIX,kadggriffshoyv.com, reject
 DOMAIN-SUFFIX,kadniltuwsu.com, reject
@@ -27234,6 +27238,7 @@ DOMAIN-SUFFIX,uloadeeksurvey.space, reject
 DOMAIN-SUFFIX,uloaludu.xyz, reject
 DOMAIN-SUFFIX,ulourgaz.net, reject
 DOMAIN-SUFFIX,ulrzovfukgkljw.com, reject
+DOMAIN-SUFFIX,ulseugnrmnrww.com, reject
 DOMAIN-SUFFIX,ultimatumloftyharvest.com, reject
 DOMAIN-SUFFIX,ultimumflyers.uno, reject
 DOMAIN-SUFFIX,ultrabetas.com, reject
@@ -29387,6 +29392,7 @@ DOMAIN-SUFFIX,wuzbhjpvsf.com, reject
 DOMAIN-SUFFIX,wvhba6470p.com, reject
 DOMAIN-SUFFIX,wvjzbijwbsegqq.com, reject
 DOMAIN-SUFFIX,wvnuubmothth.com, reject
+DOMAIN-SUFFIX,wvpfumotgpsfy.com, reject
 DOMAIN-SUFFIX,wvwxjfjjytaf.com, reject
 DOMAIN-SUFFIX,wvxcdtuhcagistb.xyz, reject
 DOMAIN-SUFFIX,ww2.imgadult.com, reject
@@ -30496,6 +30502,7 @@ DOMAIN-SUFFIX,1331665238.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1348457791.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1356894170.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1409674995.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1423653471.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1431327521.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1436653548.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1437953666.rsc.cdn77.org, reject
@@ -30513,6 +30520,7 @@ DOMAIN-SUFFIX,1757151194.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1786830340.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1806217162.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1809442125.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1819289999.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1857169728.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1871869301.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1917697853.rsc.cdn77.org, reject

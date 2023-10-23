@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310221411
+## ! Version: 202310231051
 ## ! Title: EasyList
-## ! Last modified: 22 Oct 2023 14:11 UTC
+## ! Last modified: 23 Oct 2023 10:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -16901,6 +16901,7 @@ DOMAIN-SUFFIX,miseryclevernessusage.com
 DOMAIN-SUFFIX,misfields.com
 DOMAIN-SUFFIX,misfortunedelirium.com
 DOMAIN-SUFFIX,misfortunemerrimentmouth.com
+DOMAIN-SUFFIX,misgala.com
 DOMAIN-SUFFIX,mishapideal.com
 DOMAIN-SUFFIX,miskoru.com
 DOMAIN-SUFFIX,mislaer.com
@@ -20425,6 +20426,7 @@ DOMAIN-SUFFIX,plywoodenchant.com
 DOMAIN-SUFFIX,plywoodfact.com
 DOMAIN-SUFFIX,pmaosrgeieft.com
 DOMAIN-SUFFIX,pmc1201.com
+DOMAIN-SUFFIX,pmdnditvte.com
 DOMAIN-SUFFIX,pmetorealiukze.xyz
 DOMAIN-SUFFIX,pmieprlpq.com
 DOMAIN-SUFFIX,pmimdcjx.com
@@ -25015,6 +25017,7 @@ DOMAIN-SUFFIX,stimulatemosque.com
 DOMAIN-SUFFIX,stingeantonia.com
 DOMAIN-SUFFIX,stinglackingrent.com
 DOMAIN-SUFFIX,stingystoopedsuccession.com
+DOMAIN-SUFFIX,stinicf.com
 DOMAIN-SUFFIX,stinkcomedian.com
 DOMAIN-SUFFIX,stinkyloadeddoctor.com
 DOMAIN-SUFFIX,stinkyrepetition.com
@@ -29950,6 +29953,7 @@ DOMAIN-SUFFIX,yqragd.com
 DOMAIN-SUFFIX,yqszaqtw.com
 DOMAIN-SUFFIX,yqxhslsqaqkbd.com
 DOMAIN-SUFFIX,yr9n47004g.com
+DOMAIN-SUFFIX,yrcpsfqoyi.com
 DOMAIN-SUFFIX,yresumeform.autos
 DOMAIN-SUFFIX,yrfowbaldjrxr.xyz
 DOMAIN-SUFFIX,yrinpvfw.com
@@ -30255,6 +30259,7 @@ DOMAIN-SUFFIX,zprelandappslab.com
 DOMAIN-SUFFIX,zprelanding.com
 DOMAIN-SUFFIX,zprelandings.com
 DOMAIN-SUFFIX,zqfcndk.com
+DOMAIN-SUFFIX,zqksqsjupnb.com
 DOMAIN-SUFFIX,zquent.com
 DOMAIN-SUFFIX,zqwe.ru
 DOMAIN-SUFFIX,zrav2wkbrs.com
@@ -30487,6 +30492,7 @@ DOMAIN-SUFFIX,1080749118.rsc.cdn77.org
 DOMAIN-SUFFIX,1080872514.rsc.cdn77.org
 DOMAIN-SUFFIX,10945-5.s.cdn15.com
 DOMAIN-SUFFIX,1096118648.rsc.cdn77.org
+DOMAIN-SUFFIX,1125096520.rsc.cdn77.org
 DOMAIN-SUFFIX,1133256755.rsc.cdn77.org
 DOMAIN-SUFFIX,1164507919.rsc.cdn77.org
 DOMAIN-SUFFIX,1187531871.rsc.cdn77.org
@@ -30516,11 +30522,13 @@ DOMAIN-SUFFIX,1675450967.rsc.cdn77.org
 DOMAIN-SUFFIX,1683367939.rsc.cdn77.org
 DOMAIN-SUFFIX,1708712734.rsc.cdn77.org
 DOMAIN-SUFFIX,1736253261.rsc.cdn77.org
+DOMAIN-SUFFIX,1750802139.rsc.cdn77.org
 DOMAIN-SUFFIX,1757151194.rsc.cdn77.org
 DOMAIN-SUFFIX,1786830340.rsc.cdn77.org
 DOMAIN-SUFFIX,1806217162.rsc.cdn77.org
 DOMAIN-SUFFIX,1809442125.rsc.cdn77.org
 DOMAIN-SUFFIX,1819289999.rsc.cdn77.org
+DOMAIN-SUFFIX,1834979659.rsc.cdn77.org
 DOMAIN-SUFFIX,1857169728.rsc.cdn77.org
 DOMAIN-SUFFIX,1871869301.rsc.cdn77.org
 DOMAIN-SUFFIX,1917697853.rsc.cdn77.org

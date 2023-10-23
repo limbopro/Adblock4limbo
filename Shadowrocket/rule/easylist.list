@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310221411
+## ! Version: 202310231051
 ## ! Title: EasyList
-## ! Last modified: 22 Oct 2023 14:11 UTC
+## ! Last modified: 23 Oct 2023 10:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -16901,6 +16901,7 @@ DOMAIN-SUFFIX,miseryclevernessusage.com, reject
 DOMAIN-SUFFIX,misfields.com, reject
 DOMAIN-SUFFIX,misfortunedelirium.com, reject
 DOMAIN-SUFFIX,misfortunemerrimentmouth.com, reject
+DOMAIN-SUFFIX,misgala.com, reject
 DOMAIN-SUFFIX,mishapideal.com, reject
 DOMAIN-SUFFIX,miskoru.com, reject
 DOMAIN-SUFFIX,mislaer.com, reject
@@ -20425,6 +20426,7 @@ DOMAIN-SUFFIX,plywoodenchant.com, reject
 DOMAIN-SUFFIX,plywoodfact.com, reject
 DOMAIN-SUFFIX,pmaosrgeieft.com, reject
 DOMAIN-SUFFIX,pmc1201.com, reject
+DOMAIN-SUFFIX,pmdnditvte.com, reject
 DOMAIN-SUFFIX,pmetorealiukze.xyz, reject
 DOMAIN-SUFFIX,pmieprlpq.com, reject
 DOMAIN-SUFFIX,pmimdcjx.com, reject
@@ -25015,6 +25017,7 @@ DOMAIN-SUFFIX,stimulatemosque.com, reject
 DOMAIN-SUFFIX,stingeantonia.com, reject
 DOMAIN-SUFFIX,stinglackingrent.com, reject
 DOMAIN-SUFFIX,stingystoopedsuccession.com, reject
+DOMAIN-SUFFIX,stinicf.com, reject
 DOMAIN-SUFFIX,stinkcomedian.com, reject
 DOMAIN-SUFFIX,stinkyloadeddoctor.com, reject
 DOMAIN-SUFFIX,stinkyrepetition.com, reject
@@ -29950,6 +29953,7 @@ DOMAIN-SUFFIX,yqragd.com, reject
 DOMAIN-SUFFIX,yqszaqtw.com, reject
 DOMAIN-SUFFIX,yqxhslsqaqkbd.com, reject
 DOMAIN-SUFFIX,yr9n47004g.com, reject
+DOMAIN-SUFFIX,yrcpsfqoyi.com, reject
 DOMAIN-SUFFIX,yresumeform.autos, reject
 DOMAIN-SUFFIX,yrfowbaldjrxr.xyz, reject
 DOMAIN-SUFFIX,yrinpvfw.com, reject
@@ -30255,6 +30259,7 @@ DOMAIN-SUFFIX,zprelandappslab.com, reject
 DOMAIN-SUFFIX,zprelanding.com, reject
 DOMAIN-SUFFIX,zprelandings.com, reject
 DOMAIN-SUFFIX,zqfcndk.com, reject
+DOMAIN-SUFFIX,zqksqsjupnb.com, reject
 DOMAIN-SUFFIX,zquent.com, reject
 DOMAIN-SUFFIX,zqwe.ru, reject
 DOMAIN-SUFFIX,zrav2wkbrs.com, reject
@@ -30487,6 +30492,7 @@ DOMAIN-SUFFIX,1080749118.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1080872514.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,10945-5.s.cdn15.com, reject
 DOMAIN-SUFFIX,1096118648.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1125096520.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1133256755.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1164507919.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1187531871.rsc.cdn77.org, reject
@@ -30516,11 +30522,13 @@ DOMAIN-SUFFIX,1675450967.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1683367939.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1708712734.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1736253261.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1750802139.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1757151194.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1786830340.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1806217162.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1809442125.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1819289999.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1834979659.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1857169728.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1871869301.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1917697853.rsc.cdn77.org, reject

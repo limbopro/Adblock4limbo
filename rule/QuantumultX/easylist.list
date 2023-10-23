@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310231051
+## ! Version: 202310231546
 ## ! Title: EasyList
-## ! Last modified: 23 Oct 2023 10:51 UTC
+## ! Last modified: 23 Oct 2023 15:46 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -789,6 +789,7 @@ DOMAIN-SUFFIX,7a07c25a29.com, reject
 DOMAIN-SUFFIX,7a6a4e9e27.com, reject
 DOMAIN-SUFFIX,7a75ebcbd7.com, reject
 DOMAIN-SUFFIX,7a7f07591f.com, reject
+DOMAIN-SUFFIX,7abf0af03c.com, reject
 DOMAIN-SUFFIX,7anfpatlo8lwmb.com, reject
 DOMAIN-SUFFIX,7b3937119b.com, reject
 DOMAIN-SUFFIX,7b763dbdf3.com, reject
@@ -4599,6 +4600,7 @@ DOMAIN-SUFFIX,bjbjrlnakwvz.top, reject
 DOMAIN-SUFFIX,bjjnovsnejwm.com, reject
 DOMAIN-SUFFIX,bjornecoydog.com, reject
 DOMAIN-SUFFIX,bjqug.xyz, reject
+DOMAIN-SUFFIX,bjwqqohwtgbbs.com, reject
 DOMAIN-SUFFIX,bjxiangcao.com, reject
 DOMAIN-SUFFIX,bkbrmmlyyvekz.top, reject
 DOMAIN-SUFFIX,bkbrmmlyyvlyk.top, reject
@@ -5211,6 +5213,7 @@ DOMAIN-SUFFIX,buccingiddap.digital, reject
 DOMAIN-SUFFIX,buchumilit.website, reject
 DOMAIN-SUFFIX,buckeyekantars.com, reject
 DOMAIN-SUFFIX,buckonealodies.com, reject
+DOMAIN-SUFFIX,bucojjqcica.com, reject
 DOMAIN-SUFFIX,budapebluest.com, reject
 DOMAIN-SUFFIX,buddedpetrie.space, reject
 DOMAIN-SUFFIX,buddhamoduli.com, reject
@@ -20324,6 +20327,7 @@ DOMAIN-SUFFIX,planet-vids.online, reject
 DOMAIN-SUFFIX,planet7links.com, reject
 DOMAIN-SUFFIX,planetarium-planet.com, reject
 DOMAIN-SUFFIX,planetconstituent.com, reject
+DOMAIN-SUFFIX,planetvids.online, reject
 DOMAIN-SUFFIX,plankbritish.com, reject
 DOMAIN-SUFFIX,planktab.com, reject
 DOMAIN-SUFFIX,planmybackup.co, reject
@@ -20884,6 +20888,7 @@ DOMAIN-SUFFIX,princefruitlessfencing.com, reject
 DOMAIN-SUFFIX,princesinistervirus.com, reject
 DOMAIN-SUFFIX,princessallotgather.com, reject
 DOMAIN-SUFFIX,principlede.info, reject
+DOMAIN-SUFFIX,principledecliner.info, reject
 DOMAIN-SUFFIX,principlessilas.com, reject
 DOMAIN-SUFFIX,pringed.space, reject
 DOMAIN-SUFFIX,prinkedgigtree.tech, reject
@@ -20899,6 +20904,7 @@ DOMAIN-SUFFIX,privacycounter.com, reject
 DOMAIN-SUFFIX,privacysearching.com, reject
 DOMAIN-SUFFIX,privacywithholdrepose.com, reject
 DOMAIN-SUFFIX,privatediamond.pro, reject
+DOMAIN-SUFFIX,privatedqualizebrui.info, reject
 DOMAIN-SUFFIX,privateleaflet.com, reject
 DOMAIN-SUFFIX,privatelookhack.com, reject
 DOMAIN-SUFFIX,privatrac.com, reject
@@ -23487,6 +23493,7 @@ DOMAIN-SUFFIX,scruis.com, reject
 DOMAIN-SUFFIX,scubaenterdane.com, reject
 DOMAIN-SUFFIX,scuddedsisals.com, reject
 DOMAIN-SUFFIX,scudspulsedrail.com, reject
+DOMAIN-SUFFIX,scullerropeman.digital, reject
 DOMAIN-SUFFIX,sculpedmanky.uno, reject
 DOMAIN-SUFFIX,sculpturelooking.com, reject
 DOMAIN-SUFFIX,scutesneatest.com, reject
@@ -31346,6 +31353,7 @@ DOMAIN-SUFFIX,dfiqvf0syzl54.cloudfront.net, reject
 DOMAIN-SUFFIX,dfqcp2awt0947.cloudfront.net, reject
 DOMAIN-SUFFIX,dfwbfr2blhmr5.cloudfront.net, reject
 DOMAIN-SUFFIX,dg0hrtzcus4q4.cloudfront.net, reject
+DOMAIN-SUFFIX,dg6gu9iqplusg.cloudfront.net, reject
 DOMAIN-SUFFIX,dgw7ae5vrovs7.cloudfront.net, reject
 DOMAIN-SUFFIX,dgyrizngtcfck.cloudfront.net, reject
 DOMAIN-SUFFIX,dh6dm31izb875.cloudfront.net, reject

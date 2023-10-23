@@ -160,7 +160,7 @@ function adblock4limbo(x) {
     padding:0px;\
     transition-duration: 666ms;\
     transition-property: height;\
-    z-index: 114154;\
+    z-index: 1141541;\
     bottom: 15%;\
     right: 0.5%;\
     position: fixed;\
@@ -168,7 +168,7 @@ function adblock4limbo(x) {
     background-color: transparent;\
     background-image: url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/uploads/imgs/Adblock4limbo.svg") !important;\
     background-size: 100% !important;\
-    background-repeat: no-repeat;\
+    background-repeat: round;\
 '
     x4Home.style = origin;
     document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
@@ -238,6 +238,7 @@ function x4Home_button(x) { // 显示导航按钮
         new_div.style.zIndex = '114154';
     } else {
         if ((x4Home.style.height == "0%")) {
+            // do nothing
         } else {
             setTimeout(() => {
                 x4Home.style.height = '0%';
@@ -278,7 +279,6 @@ function _onclick_button() {
         }
     }, 3000)
 }
-
 
 
 // 判断是否需要在当前页面插入导航按钮
@@ -619,6 +619,7 @@ var selector = { // css 定义选择器
 }
 
 function all(opacity, zIndex, switchX, pointevents = '') {
+    //if (!document.querySelector('#searchbyGoogle') || document.querySelector('#searchbyGoogle').style.zIndex < 1) {
     //console.log("// body_build() 输入为 true，开始创建导航..." + " 透明度为 " + opacity + " 层级数目为 " + zIndex)
     if (!document.querySelector('div#navigation[style]')) { // 如果导航不存在则生成
         navigation_body_pre(); // 生成导航
@@ -646,6 +647,7 @@ function all(opacity, zIndex, switchX, pointevents = '') {
     if (opacity == 0) {
         crisp_window_remove('0');
     }
+    // } //alert('请先关闭搜索!')
 }
 
 // 按钮闪烁提示
@@ -677,9 +679,11 @@ function body_build(x) { // 判断导航显示与否
     if (x == "true") {
         ////console.log("// body_build() 输入为 true，开始创建导航...")
         all(1, 114154, 1, 'auto')
+        limbopro_url_check_search(); // 本地check limbopro ;
     } else if (x == "false") {
         all(0, -114154, 1, 'none')
         x4Home_button("1"); // 显示导航按钮
+        limbopro_url_check_daohang(); // 本地check limbopro ;
         //console.log("// body_build() 导航已隐藏，右下角按钮浮现...");
     }
 }
@@ -958,9 +962,9 @@ function nsfw_content_hidden(x) { // nsfw 网站模糊
 
 
             if (window.innerWidth < window.innerHeight) {
-                var innerHTML_echo = '<div id="nsfw_echo"><img class="nsfw" src="https://limbopro.com/Ad_swipe_mobile.png"></div>'
+                var innerHTML_echo = '<div id="nsfw_echo"><img class="nsfw" src="https://limbopro.com/Ad_swipe_mobile_1.png"></div>'
             } else {
-                var innerHTML_echo = '<div id="nsfw_echo"><img class="nsfw" src="https://limbopro.com/Ad_swipe_pc.png"></div>'
+                var innerHTML_echo = '<div id="nsfw_echo"><img class="nsfw" src="https://limbopro.com/Ad_swipe_pc_1.png"></div>'
             }
 
             nsfw_frame_blur.innerHTML = innerHTML_echo;
@@ -991,7 +995,6 @@ function visibility() {
 
 // 取消模糊 监听
 function visibility_switch() {
-
     document.querySelector("img.nsfw").addEventListener("click", znsh_unlock);
     let last_known_scroll_position = window.scrollY;
     setTimeout(() => {
@@ -1338,7 +1341,7 @@ if (getCookie('googlesearch') == 'True') {
 }
 
 function open_googlesearch_iframe() {
-
+    body_build('false');
     setCookie('googlesearch', 'True', 7);
     if (document.cookie.indexOf("alert") == -1) {
         //alert('cookie 不存在')
@@ -1347,7 +1350,7 @@ function open_googlesearch_iframe() {
     }
 
     if (document.querySelector('#searchbyGoogle')) {
-        document.querySelector('#searchbyGoogle').style.zIndex = '1141541';
+        document.querySelector('#searchbyGoogle').style.zIndex = '114154';
         document.querySelector('#searchbyGoogle').style.opacity = '1';
         body_build('false');
         document.querySelector('#x4Home').style.bottom = '30%';
@@ -1371,7 +1374,7 @@ function open_googlesearch_iframe() {
         let new_div_search = document.createElement('div')
         new_div_search.className = "new_div_search"
         new_b.id = 'searchbyGoogle'
-        new_b.style.zIndex = 1141541;
+        new_b.style.zIndex = 114154;
         new_b.style.bottom = '0%';
         new_b.style.position = 'absolute';
         let old_b = document.body;
@@ -1404,7 +1407,7 @@ function open_googlesearch_iframe() {
 function googlesearch_blank() {
     var googlesearch_blank_check = setInterval(() => { // 重新设置 谷歌搜索结果页面 target 为 _blank 的链接
 
-        if (document.querySelector("body#searchbyGoogle").style.zIndex == -11415411) {
+        if (document.querySelector("body#searchbyGoogle").style.zIndex == -114154) {
             console.log("搜索按钮关闭，清除计时器...");
             for (i = 1; i <= googlesearch_blank_check; i++) {
                 clearInterval(i);
@@ -1436,16 +1439,31 @@ function close_googlesearch_iframe() {
         if (document.querySelectorAll("div[class*='gsc-results-close-btn']")[0]) {
             document.querySelectorAll("div[class*='gsc-results-close-btn']")[0].click();
         }
-
     } else { // 在关闭搜索框
         console.log('谷歌搜索已关闭...')
         setCookie('googlesearch', 'False');
         x4Home_button("1"); // 显示导航按钮;
         if (document.querySelector('#searchbyGoogle')) {
-            document.querySelector('#searchbyGoogle').style.zIndex = '-11415411'
+            document.querySelector('#searchbyGoogle').style.zIndex = '-114154'
             document.querySelector('#searchbyGoogle').style.opacity = '0'
             document.querySelector('#x4Home').style.bottom = '15%';  // 搜索隐藏后把导航按钮降低一个度
+            limbopro_url_check_search();
+            // limbopro_url_check('googlesearch');
         }
+    }
+}
+
+function limbopro_url_check_search() {  // daohang.html 页面判断
+    const url_now2 = window.location.href.toLowerCase();
+    if (/\b(limbopro\.com\/daohang\.html)\b/i.test(url_now2)) {
+        body_build('true');
+    }
+}
+
+function limbopro_url_check_daohang() { // daohang.html 页面判断
+    const url_now2 = window.location.href.toLowerCase();
+    if (/\b(limbopro\.com\/daohang\.html)\b/i.test(url_now2)) {
+        open_googlesearch_iframe();
     }
 }
 

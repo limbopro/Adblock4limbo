@@ -743,36 +743,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             addListener("div.TopNavBar-tab-d8yaD", () => { indexLogin() });
             break;
         default:
-
-            document.querySelectorAll('p').forEach((x) => {
-                if (x.textContent) {
-                    // console.log(x.textContent);
-                    if (!(x.textContent.search(/\w{3,4}\d{3,4}/i) == -1)) {
-                        console.log(x.textContent);
-                    }
+            
+            // 修正 case 中 default 的匹配规则  10.25.203 
+            if (/\b(netflav|missav)\b/i.test(window.location.href.toLowerCase())) {
+                if (document.querySelector('video')) {
+                    abort_on_property_read('__Y');
+                    window_open_defuser(); // 打断 window.open 施法
                 }
-            })
-
-            if (document.querySelector('video')) {
-                abort_on_property_read('__Y');
-                window_open_defuser(); // 打断 window.open 施法
             }
 
-
-            //addEventListener_defuser();
-            /* Start */
-            //uBlockOrigin_add(); // 同步至 Greasy 时需注释
-            /* End */
-            /*
-            if (navigator.userAgent.indexOf("firefox") !== -1 || navigator.userAgent.indexOf("Chrome") !== -1) {
-                window.location.href = "about:blank";
-                window.close();
-            } else {
-                window.opener = null;
-                window.open("", "_self");
-                window.close();
-            }
-            */
             console.log("Catch Nothing!");
         //alert('DEFAULT!CATCH!')
     }

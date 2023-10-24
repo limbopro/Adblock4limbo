@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310241047
+## ! Version: 202310241234
 ## ! Title: EasyList
-## ! Last modified: 24 Oct 2023 10:47 UTC
+## ! Last modified: 24 Oct 2023 12:34 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -495,6 +495,7 @@ DOMAIN-SUFFIX,4-interads.com, reject
 DOMAIN-SUFFIX,4030b44c32.com, reject
 DOMAIN-SUFFIX,4073284684.com, reject
 DOMAIN-SUFFIX,407433bfc441.com, reject
+DOMAIN-SUFFIX,4087aa0dc1.com, reject
 DOMAIN-SUFFIX,40ceexln7929.com, reject
 DOMAIN-SUFFIX,40e82f6c27.com, reject
 DOMAIN-SUFFIX,40f380afa3.com, reject
@@ -5131,6 +5132,7 @@ DOMAIN-SUFFIX,brojwaozvgib.com, reject
 DOMAIN-SUFFIX,brokeloy.com, reject
 DOMAIN-SUFFIX,brokerspock.com, reject
 DOMAIN-SUFFIX,brominewf.guru, reject
+DOMAIN-SUFFIX,bromisescapose.com, reject
 DOMAIN-SUFFIX,bromoilnapalms.com, reject
 DOMAIN-SUFFIX,bromusic.site, reject
 DOMAIN-SUFFIX,broochambitioncopies.com, reject
@@ -14104,6 +14106,7 @@ DOMAIN-SUFFIX,jacnrobv.com, reject
 DOMAIN-SUFFIX,jacobsyrma.live, reject
 DOMAIN-SUFFIX,jacragatztit.com, reject
 DOMAIN-SUFFIX,jacsmuvkymw.com, reject
+DOMAIN-SUFFIX,jactantsplodgy.com, reject
 DOMAIN-SUFFIX,jadcenter.com, reject
 DOMAIN-SUFFIX,jadedhide.pro, reject
 DOMAIN-SUFFIX,jadqoc.xyz, reject
@@ -16715,6 +16718,7 @@ DOMAIN-SUFFIX,merelysqueak.com, reject
 DOMAIN-SUFFIX,mergaksi.net, reject
 DOMAIN-SUFFIX,mergedlava.com, reject
 DOMAIN-SUFFIX,mergerpep.com, reject
+DOMAIN-SUFFIX,mergessidi.com, reject
 DOMAIN-SUFFIX,meritedgasser.com, reject
 DOMAIN-SUFFIX,merligopotlid.com, reject
 DOMAIN-SUFFIX,mermaidcontemplateadjoining.com, reject
@@ -31619,6 +31623,7 @@ DOMAIN-SUFFIX,fentent.streampiay.me, reject
 DOMAIN-SUFFIX,fontent.powzers.lol, reject
 DOMAIN-SUFFIX,gamer.mmohuts.com, reject
 DOMAIN-SUFFIX,gentent.streampiay.fun, reject
+DOMAIN-SUFFIX,gontent.powzers.lol, reject
 DOMAIN-SUFFIX,hentent.streampiay.fun, reject
 DOMAIN-SUFFIX,ientent.streampiay.fun, reject
 DOMAIN-SUFFIX,ih1.fileforums.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310241047
+## ! Version: 202310241234
 ## ! Title: EasyList
-## ! Last modified: 24 Oct 2023 10:47 UTC
+## ! Last modified: 24 Oct 2023 12:34 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -495,6 +495,7 @@ DOMAIN-SUFFIX,4-interads.com
 DOMAIN-SUFFIX,4030b44c32.com
 DOMAIN-SUFFIX,4073284684.com
 DOMAIN-SUFFIX,407433bfc441.com
+DOMAIN-SUFFIX,4087aa0dc1.com
 DOMAIN-SUFFIX,40ceexln7929.com
 DOMAIN-SUFFIX,40e82f6c27.com
 DOMAIN-SUFFIX,40f380afa3.com
@@ -5131,6 +5132,7 @@ DOMAIN-SUFFIX,brojwaozvgib.com
 DOMAIN-SUFFIX,brokeloy.com
 DOMAIN-SUFFIX,brokerspock.com
 DOMAIN-SUFFIX,brominewf.guru
+DOMAIN-SUFFIX,bromisescapose.com
 DOMAIN-SUFFIX,bromoilnapalms.com
 DOMAIN-SUFFIX,bromusic.site
 DOMAIN-SUFFIX,broochambitioncopies.com
@@ -14104,6 +14106,7 @@ DOMAIN-SUFFIX,jacnrobv.com
 DOMAIN-SUFFIX,jacobsyrma.live
 DOMAIN-SUFFIX,jacragatztit.com
 DOMAIN-SUFFIX,jacsmuvkymw.com
+DOMAIN-SUFFIX,jactantsplodgy.com
 DOMAIN-SUFFIX,jadcenter.com
 DOMAIN-SUFFIX,jadedhide.pro
 DOMAIN-SUFFIX,jadqoc.xyz
@@ -16715,6 +16718,7 @@ DOMAIN-SUFFIX,merelysqueak.com
 DOMAIN-SUFFIX,mergaksi.net
 DOMAIN-SUFFIX,mergedlava.com
 DOMAIN-SUFFIX,mergerpep.com
+DOMAIN-SUFFIX,mergessidi.com
 DOMAIN-SUFFIX,meritedgasser.com
 DOMAIN-SUFFIX,merligopotlid.com
 DOMAIN-SUFFIX,mermaidcontemplateadjoining.com
@@ -31619,6 +31623,7 @@ DOMAIN-SUFFIX,fentent.streampiay.me
 DOMAIN-SUFFIX,fontent.powzers.lol
 DOMAIN-SUFFIX,gamer.mmohuts.com
 DOMAIN-SUFFIX,gentent.streampiay.fun
+DOMAIN-SUFFIX,gontent.powzers.lol
 DOMAIN-SUFFIX,hentent.streampiay.fun
 DOMAIN-SUFFIX,ientent.streampiay.fun
 DOMAIN-SUFFIX,ih1.fileforums.com

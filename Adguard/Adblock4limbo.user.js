@@ -191,6 +191,7 @@ var css_common = {
 
 var imax = {
     js: {
+        //functionx: "https://greasyfork.org/scripts/477474-functionx4limbo-x/code/functionx4limboX.user.js",
         functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
         avple: "https://limbopro.com/Adguard/avple.js", // avple 同步至 Greasy 时需注释
@@ -232,7 +233,7 @@ var imax = {
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
         hanime1: "iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
-        javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect']{display:none!important}#toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
+        javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
         douban: "*{display:none!important}",
         //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
@@ -610,7 +611,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
             break;
         case "javlibrary":
+
             css_adsRemove(imax.css.javlibrary)
+            window_open_defuser(); // 打断 window.open 施法
 
             function javlibrary() {
                 // '#topmenu', 'div.menutext', '.searchbar', 
@@ -626,12 +629,20 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                     target_.forEach(ifAdd);
                     if (document.querySelector('div#rightcolumn')) {
-                        let parentElement = document.querySelector('div#rightcolumn')
-                        let child = document.querySelectorAll("td[style='vertical-align: top;']")[1];
-                        let insertBeforethisgay = document.querySelector('div.socialmedia');
-                        parentElement.insertBefore(child, insertBeforethisgay)
+                        var parentElement = document.querySelector('div#rightcolumn')
+                        if (document.querySelectorAll("td[style='vertical-align: top;']")[1]) {
+                            var child = document.querySelectorAll("td[style='vertical-align: top;']")[1];
+                        }
+                        if (document.querySelector('div.socialmedia')) {
+                            var insertBeforethisgay = document.querySelector('div.socialmedia');
+                        }
+
+                        if ((child) && (parentElement) && (insertBeforethisgay)) {
+                            parentElement.insertBefore(child, insertBeforethisgay)
+                        }
                         document.querySelectorAll('td.t>div').forEach((x) => {
                             x.style.width = 'auto';
+
                         })
                     }
 
@@ -639,7 +650,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         document.querySelector('#rightcolumn').style.width = window.innerWidth - 90 + "px"
                         document.querySelector('div#video_favorite_edit').style.width = '250px'
                     }
-
                 } else {
                     console.log("现在执行扩大任务")
                     if (document.querySelector('div#video_title')) {
@@ -653,47 +663,69 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                     target_.forEach(ifRemove);
                 }
-
             }
 
-            javlibrary();
-            setTimeout(() => {
-                javlibrary();
-                // 2333
-                var code = document.querySelector('tr td.text').textContent;
-                ele_dynamicAppend("#video_id > table > tbody", "onclick", "复制番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibraryx", 3, "button")
-                ele_dynamicAppend("#video_id > table > tbody", "target", "搜索番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibrarysearch", 4, "a")
-                ele_dynamicAppend("#video_id > table > tbody", "onclick", "", "", "", "copy", 2, "input");
-                document.getElementById('copy').value = code;
-                document.getElementById('javlibraryx').addEventListener('click', () => {
-                    copyText("copy", "javlibraryx", "复制番号")
-                })
+            javlibrary(); // 2333
 
-                // 为番号搜索添加素材
+            zjpl()
+            function zjpl() {
+                setTimeout(() => { // 最佳评论页 调换位置
+                    javlibrary();
+                    if (document.querySelectorAll('td.info')[0]) {
+                        document.querySelectorAll('td.info').forEach((x) => {
+                            x.style.width = "60px"
+                            x.querySelectorAll('*').forEach((y) => {
+                                //     y.style.width = "60px"
+                            })
+                        })
 
-                document.querySelector("#javlibrarysearch").addEventListener('click', () => {
-                    if (document.querySelector("#searchbyGoogle") || null === document.querySelector("#searchbyGoogle")) {
-                        open_googlesearch_iframe();
+                        var ff = document.querySelectorAll("table.comment > tbody > tr");
+                        for (i = 0; i < ff.length; i++) {
+                            ff[i].insertBefore(ff[i].querySelectorAll('td')[1], ff[i].querySelectorAll('td')[0])
+                        }
                     }
-                })
+                }, 1500)
+            }
 
-                if ((/\b(gsc.tab)\b/i.test(document.location.href.toLowerCase()))) {
-                    var jav_url = document.location.href.toLowerCase();
-                    var regexp_jav = /(.*)(#gsc.*)/;
-                    var jav_url_right = jav_url.replace(regexp_jav, '$1' + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=");
-                    document.querySelector('#javlibrarysearch').href = jav_url_right;
-                    document.querySelector('#javlibrarysearch').target = '_self'
-                    console.log(jav_url_right)
-                } else {
-                    var jav_url = document.location.href.toLowerCase();
-                    var jav_url_right = jav_url + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=";
-                    document.querySelector('#javlibrarysearch').href = jav_url_right;
-                    document.querySelector('#javlibrarysearch').target = '_self'
-                    console.log(jav_url_right)
-                }
+            xqy();
+            function xqy() {
+                setTimeout(() => { // 番号详情页添加番号搜索等操作
+                    javlibrary();
+                    if (document.querySelector('tr td.text')) {
+                        var code = document.querySelector('tr td.text').textContent;
+                        ele_dynamicAppend("#video_id > table > tbody", "onclick", "复制番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibraryx", 3, "button")
+                        ele_dynamicAppend("#video_id > table > tbody", "target", "搜索番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibrarysearch", 4, "a")
+                        ele_dynamicAppend("#video_id > table > tbody", "onclick", "", "", "", "copy", 2, "input");
+                        document.getElementById('copy').value = code;
+                        document.getElementById('javlibraryx').addEventListener('click', () => {
+                            copyText("copy", "javlibraryx", "复制番号")
+                        })
 
+                        // 为番号搜索添加素材
 
-            }, 1000)
+                        document.querySelector("#javlibrarysearch").addEventListener('click', () => {
+                            if (document.querySelector("#searchbyGoogle") || null === document.querySelector("#searchbyGoogle")) {
+                                open_googlesearch_iframe();
+                            }
+                        })
+
+                        if ((/\b(gsc.tab)\b/i.test(document.location.href.toLowerCase()))) {
+                            var jav_url = document.location.href.toLowerCase();
+                            var regexp_jav = /(.*)(#gsc.*)/;
+                            var jav_url_right = jav_url.replace(regexp_jav, '$1' + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=");
+                            document.querySelector('#javlibrarysearch').href = jav_url_right;
+                            document.querySelector('#javlibrarysearch').target = '_self'
+                            console.log(jav_url_right)
+                        } else {
+                            var jav_url = document.location.href.toLowerCase();
+                            var jav_url_right = jav_url + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=";
+                            document.querySelector('#javlibrarysearch').href = jav_url_right;
+                            document.querySelector('#javlibrarysearch').target = '_self'
+                            console.log(jav_url_right)
+                        }
+                    }
+                }, 1000)
+            }
 
         case 'douban':
             if (document.querySelectorAll('a.Ims1t')[0]) {
@@ -709,50 +741,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
             indexLogin();
             addListener("div.TopNavBar-tab-d8yaD", () => { indexLogin() });
-
-            /*
-            window.onload = href_attributeSet(500, zhihu_id);
-            window.onload = addListener("a[class*='css-'],button[class='Button ContentItem-action Button--plain Button--withIcon Button--withLabel']", () => { href_attributeSet(500, zhihu_id) });
-            // 循环判定整个页面 scrollHeight 是否变化
-            var body_scrollHeightCheck = setInterval(() => {
-                var body_scrollHeight_then = document.body.scrollHeight;
-                setTimeout(() => {
-                    var body_scrollHeight_now = document.body.scrollHeight;
-                    if (body_scrollHeight_now > body_scrollHeight_then) {
-                        href_attributeSet(500, zhihu_id);
-                    }
-                }, 500);
-            }, 500);
-            // 循环判定评论框是否存在且 scrollHeight 是否有变化
-            var comment_scrollHeightCheck = setInterval(() => {
-                let comment = document.querySelectorAll("div.CommentListV2");
-                if (comment.length > 0) {
-                    var comment_scrollHeight_then = comment[0].scrollHeight;
-                    setTimeout(() => {
-                        var comment_scrollHeight_now = comment[0].scrollHeight;
-                        if (comment_scrollHeight_now > comment_scrollHeight_then) {
-                            href_attributeSet(500, zhihu_id);
-                        }
-                    }, 500)
-                }
-            }, 500)
-            */
-
             break;
         default:
-
-            /*
-                if (/\b(s1s1s1|tameikegoro)\b/i.test(window.location.href.toLowerCase())) {
-                    document.querySelectorAll("div.item").forEach((x) => {
-                        if (x.querySelectorAll(".item.-minW").length >= 1) {
-                            x.querySelectorAll(".item.-minW")[2].querySelector('p').textContent
-                        }
-                    })
-                }
-                */
-
-            //if (title.search("Cloudflare") !== -1 || title.search("Attention") !== -1) {
-
 
             document.querySelectorAll('p').forEach((x) => {
                 if (x.textContent) {

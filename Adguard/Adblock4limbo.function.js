@@ -221,7 +221,7 @@ function hidden_adblock4limbo() {
                 }
                 ////console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
             }
-            console.log("现在导航按钮显示次数比隐藏次数多了" + click_dont_move_and_click + "次");
+            //console.log("现在导航按钮显示次数比隐藏次数多了" + click_dont_move_and_click + "次");
         }, 1000)
     } else {
         ////console.log("// hidden_adblock4limbo() 按钮存在，但已隐藏...");
@@ -875,17 +875,15 @@ document.addEventListener("keydown", function (event) {
         // 执行你想要的操作
         // 监听键盘事件 ESC
 
-        if (document.querySelector('div[data-chat-status="ongoing"]')) {
-            if (document.querySelector('div[data-chat-status="ongoing"]').getAttribute('data-visible') == 'true') {
-                crisp_active('1');
-            }
-        }
-        else if (typeof body_build == 'function' && document.querySelector("#navigation").style.zIndex > 0) {
+        if ((document.querySelector('div[data-chat-status="ongoing"]') && (document.querySelector('div[data-chat-status="ongoing"]').getAttribute('data-visible') == 'true')) || document.querySelector('div[data-chat-status="initial"]') && (document.querySelector('div[data-chat-status="initial"]').getAttribute('data-visible') == 'true')) {
+            crisp_active('1');
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation").style.zIndex > 0) {
             body_build('false');
             znsh_unlock();
         } else if (typeof close_googlesearch_iframe == 'function') {
             close_googlesearch_iframe();
         }
+
     }
 
     if (event.code === 'KeyG') {

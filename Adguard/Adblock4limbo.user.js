@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.10.23
+// @version      0.3.10.24
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -86,7 +86,10 @@
 // @match        https://zh.javascript.info/*
 // @match        https://deerchao.cn/*
 // @match        https://gimy.ai/*
+// @match        https://douban.com/*
+// @match        https://m.douban.com/*
 // @match        https://t.me/*
+// @match        https://tameikegoro.jp/
 // @match        https://*/*
 // @match        https://www.javlibrary.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
@@ -191,8 +194,8 @@ var imax = {
         functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
         //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
         avple: "https://limbopro.com/Adguard/avple.js", // avple 同步至 Greasy 时需注释
-        //contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
-        contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
+        contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
+        //contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
     },
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
@@ -211,7 +214,7 @@ var imax = {
         missav: "a[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         porn91: "br, .ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
-        pornhubx: "iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
+        pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none !important}",
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
@@ -230,7 +233,8 @@ var imax = {
         supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
         hanime1: "iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
         javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect']{display:none!important}#toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
-        button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
+        douban: "*{display:none!important}",
+        //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
     }
@@ -279,6 +283,7 @@ function values() {
         "javlibrary",
         "emturbovid",
         'fc2stream',
+        'douban',
         "zhihu"
     ]
 
@@ -298,20 +303,29 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
             pornhub_interstitialPass();
-            css_adsRemove(imax.css.pornhubx, 1000, "pornhubX");
             //tag_adsRemove("script", "ads_batch");
             const custom_style_values_pb = "right: 0px !important; padding: 0 !important; position: relative !important;"
-            ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载视频？", custom_style_values_pb + imax.css.button_common, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
-
+            css_adsRemove(imax.css.pornhubx, 500, "pornhubX");
+            setTimeout(() => {
+                setTimeout(() => {
+                    let ads_selector = [".topAdContainter", "a[href*='ads']", "a[href*='fuck']", "a[href*='ad']", "div.adContainer.clearfix.noBottom", ".adContainer.clearfix.middleVideoAdContainer"];
+                    let ads = setInterval(() => {
+                        // document.querySelectorAll(".topAdContainter, a[href*='ads'], a[href*='fuck'], a[href*='ad'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer")
+                        ads_selector.forEach((x) => { selector_one_by_one(x) })
+                        console.log("清理还在继续..." + x)
+                        if (document.querySelectorAll(ads_selector).length == 0) {
+                            clearInterval(ads)
+                            console.log("清理计时器，ads移除完毕...")
+                        }
+                    }, 1000)
+                }, 100)
+                ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载视频？", custom_style_values_pb + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
+            }, 1000)
             if (document.getElementById("download_pornhub")) {
                 document.getElementById("download_pornhub").style = "display: inline !important;";
                 document.getElementById("download_pornhub").target = "_blank !important;";
             }
-
             pornhub_sidebar_ads();
-            const html_X = document.querySelector('html').innerHTML;
-            //html_X.replace('ads_batch', 'yyds')
-            //console.log(html_X)
             break;
         case 'missav':
             div_ad_missav(); // 广告空白高度 height 调制0；
@@ -322,37 +336,39 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.missav);
             //abortCurrentInlineScript('document.createElement','htmlAds');
             //third_party_file_X("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-            let custom_style_values_miss = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;";
-            if (ua_missav.indexOf(mobile_missav) === -1) {
-                ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", custom_style_values_miss + imax.css.button_common, "", "missavX", 2, "button");
-                ele_dynamicAppend("div.mt-4", "onclick", "暂停", custom_style_values_miss + imax.css.button_common, "", "missavP", 3, "button");
-                ele_dynamicAppend("div.mt-4", "href", "如何下载视频", custom_style_values_miss + imax.css.button_common, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
+            //let "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;";
+            setTimeout(() => {
+                if (ua_missav.indexOf(mobile_missav) === -1) {
+                    ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "missavX", 2, "button");
+                    ele_dynamicAppend("div.mt-4", "onclick", "暂停", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "missavP", 3, "button");
+                    ele_dynamicAppend("div.mt-4", "href", "如何下载视频", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
 
-                if (document.getElementById("how")) {
+                    if (document.getElementById("how")) {
+                        document.getElementById("how").target = "_blank";
+                    }
+
+                    // 添加监听器
+                    if (document.getElementById("missavX")) {
+                        addListenerById("missavX", () => { video_loopPlay('loop') }, 1000);
+                    }
+
+                    if (document.getElementById("missavP")) {
+                        addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
+                    }
+
+
+                } else if (ua_missav.indexOf(mobile_missav) > -1) {
+                    ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "video_Play()", "missavX", 0, "button");
+                    ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "fullscreen()", "missavFullScreen", 2, "button");
+                    ele_dynamicAppend("div.mt-4", "onclick", "暂停", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "video_pause()", "missavPause", 1, "button");
+                    ele_dynamicAppend("div.mt-4", "href", "如何下载视频", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
+                    // 添加监听器
                     document.getElementById("how").target = "_blank";
+                    addListenerById("missavX", () => { video_Play() }, 1000);
+                    addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
+                    addListenerById("missavPause", () => { video_pause() }, 1000);
                 }
-
-                // 添加监听器
-                if (document.getElementById("missavX")) {
-                    addListenerById("missavX", () => { video_loopPlay('loop') }, 1000);
-                }
-
-                if (document.getElementById("missavP")) {
-                    addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
-                }
-
-
-            } else if (ua_missav.indexOf(mobile_missav) > -1) {
-                ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", custom_style_values_miss + imax.css.button_common, "video_Play()", "missavX", 0, "button");
-                ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", custom_style_values_miss + imax.css.button_common, "fullscreen()", "missavFullScreen", 2, "button");
-                ele_dynamicAppend("div.mt-4", "onclick", "暂停", custom_style_values_miss + imax.css.button_common, "video_pause()", "missavPause", 1, "button");
-                ele_dynamicAppend("div.mt-4", "href", "如何下载视频", custom_style_values_miss + imax.css.button_common, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
-                // 添加监听器
-                document.getElementById("how").target = "_blank";
-                addListenerById("missavX", () => { video_Play() }, 1000);
-                addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
-                addListenerById("missavPause", () => { video_pause() }, 1000);
-            }
+            }, 3000)
             //missAv_adsRemove();
             break;
         case '91porn':
@@ -426,24 +442,26 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'tvn':
             css_adsRemove(imax.css.tvn)
             break;
-        case 'jable':
-
+        case 'jable': // 2333
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             const url_jable = document.location.href;
             const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
-            const custom_style_values_jb_pc = "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;";
             if (url_jable.search(reg_videos) !== -1) {
-                ele_dynamicAppend("div h4", "onclick", "复制M3U8文件地址", custom_style_values_jb_pc + "border-right:#dc3545 !important;" + imax.css.button_common, "", "jablex", 3, "button")
-                ele_dynamicAppend("div h4", "onclick", "如何下载视频？", custom_style_values_jb_pc + imax.css.button_common, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 1, "button");
-                ele_dynamicAppend("div h4", "onclick", "", custom_style_values_jb_pc + "background:white !important; color: black! important;" + imax.css.button_common, "", "copy", 2, "input");
-                // 添加监听器
-                addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
+                setTimeout(() => {
+                    ele_dynamicAppend("div h4", "onclick", "复制M3U8文件地址", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "jablex", 3, "button")
+                    ele_dynamicAppend("div h4", "onclick", "如何下载视频？", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 1, "button");
+                    ele_dynamicAppend("div h4", "onclick", "", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "copy", 2, "input");
+                    // 添加监听器
+                    addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
+                }, 3000)
                 video_delayPlay(1000);
-                setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 1000);
+                setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 4000);
                 //addEventListener_defuser("touchend"); // 打断监听器
+
             }
+            break;
             break;
         case 'bdys':
             css_adsRemove(imax.css.btbdys, 0, "siwtch_button");
@@ -454,7 +472,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             var url = document.location.href;
             if (url == "https://www.bdys10.com/" || url == "https://www.bdys03.com/") {
                 if (!document.getElementById("bdys")) {
-                    ele_dynamicAppend("div.container-xl", "onclick", "隐藏公告", "position:inherit; right:92px;" + imax.css.button_common, "", "bdys", 1, "button");
+                    ele_dynamicAppend("div.container-xl", "onclick", "隐藏公告", "position:inherit; right:92px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "bdys", 1, "button");
                     addListenerById("bdys", () => { notice_hidden("div.col-12") }, 2000);
                 }
                 if (getCookie("hidden") == 1) {
@@ -493,8 +511,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 js_adsRemove(imax.js.contentFarm);
                 console.log("PC端") // 啥也不做
             }
-            css_adsRemove(imax.css.goole);
-            var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
+            //var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
             //setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
             break;
         case 'bing':
@@ -593,9 +610,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
             break;
         case "javlibrary":
-            //alert(window.innerHeight)
             css_adsRemove(imax.css.javlibrary)
-            //third_party_file_X('script', 'https://sleazyfork.org/scripts/25781-jav%E8%80%81%E5%8F%B8%E6%9C%BA/code/JAV%E8%80%81%E5%8F%B8%E6%9C%BA.user.js', 'head')
 
             function javlibrary() {
                 // '#topmenu', 'div.menutext', '.searchbar', 
@@ -620,9 +635,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         })
                     }
 
-                    var sexImage_width = document.querySelector('div#video_jacket img').clientWidth;
-                    var sexImage_Height = document.querySelector('div#video_jacket img').clientHeight;
-
                     if (document.querySelector('div#video_title')) {
                         document.querySelector('#rightcolumn').style.width = window.innerWidth - 90 + "px"
                         document.querySelector('div#video_favorite_edit').style.width = '250px'
@@ -630,8 +642,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
                 } else {
                     console.log("现在执行扩大任务")
-                    //document.querySelector('div#video_jacket img').style.width = sexImage_width;
-                    //document.querySelector('div#video_jacket img').style.height = sexImage_Height;
                     if (document.querySelector('div#video_title')) {
                         document.querySelector('#rightcolumn').style.width = window.innerWidth + "px"
                         document.querySelector('div#video_favorite_edit').style.width = 'auto'
@@ -647,12 +657,50 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             javlibrary();
+            setTimeout(() => {
+                javlibrary();
+                // 2333
+                var code = document.querySelector('tr td.text').textContent;
+                ele_dynamicAppend("#video_id > table > tbody", "onclick", "复制番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibraryx", 3, "button")
+                ele_dynamicAppend("#video_id > table > tbody", "target", "搜索番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibrarysearch", 4, "a")
+                ele_dynamicAppend("#video_id > table > tbody", "onclick", "", "", "", "copy", 2, "input");
+                document.getElementById('copy').value = code;
+                document.getElementById('javlibraryx').addEventListener('click', () => {
+                    copyText("copy", "javlibraryx", "复制番号")
+                })
+
+                // 为番号搜索添加素材
+
+                document.querySelector("#javlibrarysearch").addEventListener('click', () => {
+                    if (document.querySelector("#searchbyGoogle") || null === document.querySelector("#searchbyGoogle")) {
+                        open_googlesearch_iframe();
+                    }
+                })
+
+                if ((/\b(gsc.tab)\b/i.test(document.location.href.toLowerCase()))) {
+                    var jav_url = document.location.href.toLowerCase();
+                    var regexp_jav = /(.*)(#gsc.*)/;
+                    var jav_url_right = jav_url.replace(regexp_jav, '$1' + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=");
+                    document.querySelector('#javlibrarysearch').href = jav_url_right;
+                    document.querySelector('#javlibrarysearch').target = '_self'
+                    console.log(jav_url_right)
+                } else {
+                    var jav_url = document.location.href.toLowerCase();
+                    var jav_url_right = jav_url + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=";
+                    document.querySelector('#javlibrarysearch').href = jav_url_right;
+                    document.querySelector('#javlibrarysearch').target = '_self'
+                    console.log(jav_url_right)
+                }
 
 
-            setInterval(() => {
-                console.log("正在执行老司机任务...")
-                javlibrary()
             }, 1000)
+
+        case 'douban':
+            if (document.querySelectorAll('a.Ims1t')[0]) {
+                alert("首页...")
+                document.querySelectorAll('a.Ims1t').forEach((x) => { x.href = 'https://movie.douban.com/top250' })
+            }
+            break;
 
             break;
         case 'zhihu':
@@ -692,8 +740,35 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             break;
         default:
-            abort_on_property_read('__Y');
-            window_open_defuser(); // 打断 window.open 施法
+
+            /*
+                if (/\b(s1s1s1|tameikegoro)\b/i.test(window.location.href.toLowerCase())) {
+                    document.querySelectorAll("div.item").forEach((x) => {
+                        if (x.querySelectorAll(".item.-minW").length >= 1) {
+                            x.querySelectorAll(".item.-minW")[2].querySelector('p').textContent
+                        }
+                    })
+                }
+                */
+
+            //if (title.search("Cloudflare") !== -1 || title.search("Attention") !== -1) {
+
+
+            document.querySelectorAll('p').forEach((x) => {
+                if (x.textContent) {
+                    // console.log(x.textContent);
+                    if (!(x.textContent.search(/\w{3,4}\d{3,4}/i) == -1)) {
+                        console.log(x.textContent);
+                    }
+                }
+            })
+
+            if (document.querySelector('video')) {
+                abort_on_property_read('__Y');
+                window_open_defuser(); // 打断 window.open 施法
+            }
+
+
             //addEventListener_defuser();
             /* Start */
             //uBlockOrigin_add(); // 同步至 Greasy 时需注释
@@ -867,6 +942,7 @@ function tag_adsRemove(tagname, keyword) {
 }
 
 // 在页面动态插入元素并赋予相应元素
+/*
 function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag) {
     let new_ele = document.createElement(tag);
     new_ele.innerHTML = txt;
@@ -880,45 +956,7 @@ function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag
         console.log("按钮已添加；")
     }
 }
-
-// 复制 input 内容
-function copyText(id1, id2, Text) { // 复制文本按钮
-    let corlor = { // 定义常量
-        css: {
-            borderRight_copied: "6px solid white",
-            borderRight_recover: "6px solid #38a3fd",
-            backgroundColor_copied: "#00AC6A",
-            backgroundColor_recover: "#2563eb"
-        }
-    }
-
-    function border_color(ele, value) { // 制作一个循环
-        for (let i = 0; i < ele.length; i++) {
-            ele[i].style.borderRight = value
-        }
-    }
-
-    const ele_1 = document.getElementById(id1);
-    const ele_2 = document.getElementById(id2);
-    const ele_array = [ele_1, ele_2];
-
-    // 复制工作开始
-    const input = document.querySelectorAll("input#copy");
-    const range = document.createRange(); range.selectNode(input[0]); const selection = window.getSelection();
-    if (selection.rangeCount > 0) selection.removeAllRanges(); // 判断光标是否复制其他内容 如有则清除
-    selection.addRange(range); document.execCommand('copy');
-    // 复制工作结束
-
-    ele_2.innerText = "复制成功！";
-    ele_2.style.backgroundColor = corlor.css.backgroundColor_copied;
-
-    border_color(ele_array, corlor.css.borderRight_copied)
-    setTimeout(() => {
-        ele_2.innerText = Text;
-        ele_2.style.backgroundColor = corlor.css.backgroundColor_recover;
-        border_color(ele_array, corlor.css.borderRight_recover)
-    }, 3000);
-}
+*/
 
 // Cloudflare recaptcha 绕过
 function cloudflare_captchaBypass() {
@@ -964,7 +1002,7 @@ function missAv_playbutton() {
     if (ele_catch.length > 0) {
         ele_catch[0].play();
         //ele_catch[1].play();
-        console.log("视频已开启循环播放；")
+        //console.log("视频已开启循环播放；")
     }
 }
 
@@ -1841,10 +1879,14 @@ function addEventListener_defuser() {
     );
 };
 
+document.querySelectorAll('a').forEach((x) => {
+    x.innerHTML
+})
+
 
 // noWindowOpenIf
 // https://github.com/gorhill/uBlock/wiki/Resources-Library#no-window-open-ifjs-
-noWindowOpenIf()
+//noWindowOpenIf()
 function noWindowOpenIf(
     pattern = '',
     delay = '',

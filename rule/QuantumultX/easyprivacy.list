@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310231546
+## ! Version: 202310241048
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Oct 2023 15:46 UTC
+## ! Last modified: 24 Oct 2023 10:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2470,6 +2470,7 @@ DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net, reject
 DOMAIN-SUFFIX,identification.hotmart.com, reject
 DOMAIN-SUFFIX,imp.pvnsolutions.com, reject
 DOMAIN-SUFFIX,impress.vcita.com, reject
+DOMAIN-SUFFIX,impression.clickinc.com, reject
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co, reject
 DOMAIN-SUFFIX,infinityid.condenastdigital.com, reject
 DOMAIN-SUFFIX,informer.yandex.ru, reject
@@ -2706,6 +2707,7 @@ DOMAIN-SUFFIX,s.clickiocdn.com, reject
 DOMAIN-SUFFIX,s.logsss.com, reject
 DOMAIN-SUFFIX,s.srvsynd.com, reject
 DOMAIN-SUFFIX,sa.scorpion.co, reject
+DOMAIN-SUFFIX,scoopy.cdn112.com, reject
 DOMAIN-SUFFIX,scripts.psyma.com, reject
 DOMAIN-SUFFIX,sd-tagging.azurefd.net, reject
 DOMAIN-SUFFIX,sdrive.skoda-auto.com, reject
@@ -3360,6 +3362,7 @@ DOMAIN-SUFFIX,imp.ad-plus.cn, reject
 DOMAIN-SUFFIX,imp.go.sohu.com, reject
 DOMAIN-SUFFIX,imp.optaim.com, reject
 DOMAIN-SUFFIX,log.hiiir.com, reject
+DOMAIN-SUFFIX,log.qvb.qcloud.com, reject
 DOMAIN-SUFFIX,log.tagtic.cn, reject
 DOMAIN-SUFFIX,mcs.zijieapi.com, reject
 DOMAIN-SUFFIX,mon.zijieapi.com, reject
@@ -3387,6 +3390,7 @@ DOMAIN-SUFFIX,track.ra.icast.cn, reject
 DOMAIN-SUFFIX,track.storm.mg, reject
 DOMAIN-SUFFIX,track.tomwx.net, reject
 DOMAIN-SUFFIX,track.unidata.ai, reject
+DOMAIN-SUFFIX,tracker-00.qvb.qcloud.com, reject
 DOMAIN-SUFFIX,tracking.cat898.com, reject
 DOMAIN-SUFFIX,trail.71baomu.com, reject
 DOMAIN-SUFFIX,videostats.kakao.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310231546
+## ! Version: 202310241048
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Oct 2023 15:46 UTC
+## ! Last modified: 24 Oct 2023 10:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2470,6 +2470,7 @@ DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net
 DOMAIN-SUFFIX,identification.hotmart.com
 DOMAIN-SUFFIX,imp.pvnsolutions.com
 DOMAIN-SUFFIX,impress.vcita.com
+DOMAIN-SUFFIX,impression.clickinc.com
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co
 DOMAIN-SUFFIX,infinityid.condenastdigital.com
 DOMAIN-SUFFIX,informer.yandex.ru
@@ -2706,6 +2707,7 @@ DOMAIN-SUFFIX,s.clickiocdn.com
 DOMAIN-SUFFIX,s.logsss.com
 DOMAIN-SUFFIX,s.srvsynd.com
 DOMAIN-SUFFIX,sa.scorpion.co
+DOMAIN-SUFFIX,scoopy.cdn112.com
 DOMAIN-SUFFIX,scripts.psyma.com
 DOMAIN-SUFFIX,sd-tagging.azurefd.net
 DOMAIN-SUFFIX,sdrive.skoda-auto.com
@@ -3360,6 +3362,7 @@ DOMAIN-SUFFIX,imp.ad-plus.cn
 DOMAIN-SUFFIX,imp.go.sohu.com
 DOMAIN-SUFFIX,imp.optaim.com
 DOMAIN-SUFFIX,log.hiiir.com
+DOMAIN-SUFFIX,log.qvb.qcloud.com
 DOMAIN-SUFFIX,log.tagtic.cn
 DOMAIN-SUFFIX,mcs.zijieapi.com
 DOMAIN-SUFFIX,mon.zijieapi.com
@@ -3387,6 +3390,7 @@ DOMAIN-SUFFIX,track.ra.icast.cn
 DOMAIN-SUFFIX,track.storm.mg
 DOMAIN-SUFFIX,track.tomwx.net
 DOMAIN-SUFFIX,track.unidata.ai
+DOMAIN-SUFFIX,tracker-00.qvb.qcloud.com
 DOMAIN-SUFFIX,tracking.cat898.com
 DOMAIN-SUFFIX,trail.71baomu.com
 DOMAIN-SUFFIX,videostats.kakao.com

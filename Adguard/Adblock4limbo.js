@@ -11,7 +11,7 @@ const replace_str = '</title>\
 
 // 定义响应体
 if ($response.body) {
-    var body = $response.body.replaceAll('</TITLE>','</title>').replaceAll(regex, replace_str).replaceAll('ads','fuckAds').replaceAll('Ads','fuckAds').replaceAll('playAd','fuckAds').replaceAll('video_ad','fuck_videoAds')
+    var body = $response.body.replaceAll('</TITLE>', '</title>').replaceAll(regex, replace_str)
 };
 
 // 定义响应头

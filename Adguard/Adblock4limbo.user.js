@@ -760,12 +760,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 if (document.querySelectorAll('[data-testid="cellInnerDiv"]')) {
                     let article = document.querySelectorAll('[data-testid="cellInnerDiv"]')
                     for (i = 0; i < article.length; i++) {
-                        if (!article[i].querySelector('a[href*=sss]')) {
+                        if (!article[i].querySelector('a[href*=ssstwitter]')) {
                             if (article[i].querySelector('[data-testid="videoPlayer"]')) {
                                 console.log(article[i].textContent);
                                 let a = document.createElement('a')
                                 a.href = 'https://ssstwitter.com/result_various';
-                                a.className = 'dload'
+                                a.className = 'xdload'
                                 a.target = '_blank';
                                 a.zIndex = '114154';
                                 a.style = 'position:relative;left:60px;top:4px;background-color:blue;color:aquamarine;z-index:114154;'

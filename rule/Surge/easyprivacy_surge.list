@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310241501
+## ! Version: 202310251121
 ## ! Title: EasyPrivacy
-## ! Last modified: 24 Oct 2023 15:01 UTC
+## ! Last modified: 25 Oct 2023 11:21 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3935,6 +3935,7 @@ DOMAIN-SUFFIX,gurgle.spiceworks.com
 DOMAIN-SUFFIX,health-metrics-api.setapp.com
 DOMAIN-SUFFIX,heap.drop.com
 DOMAIN-SUFFIX,hits.cyberdrop.me
+DOMAIN-SUFFIX,hlogger.heraldcorp.com
 DOMAIN-SUFFIX,i.pokernews.com
 DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com
 DOMAIN-SUFFIX,iedc.fitbit.com
@@ -4187,6 +4188,7 @@ DOMAIN-SUFFIX,track.eurogirlsescort.com
 DOMAIN-SUFFIX,track.kueez.com
 DOMAIN-SUFFIX,track.mrgugu.com
 DOMAIN-SUFFIX,track.netzero.net
+DOMAIN-SUFFIX,track.sodapdf.com
 DOMAIN-SUFFIX,track.thesaurus.com
 DOMAIN-SUFFIX,track.ultimate-guitar.com
 DOMAIN-SUFFIX,tracker.affiliate.iqbroker.com

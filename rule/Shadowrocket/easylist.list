@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310241501
+## ! Version: 202310251121
 ## ! Title: EasyList
-## ! Last modified: 24 Oct 2023 15:01 UTC
+## ! Last modified: 25 Oct 2023 11:21 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -7548,6 +7548,7 @@ DOMAIN-SUFFIX,datingstyle.top, reject
 DOMAIN-SUFFIX,datingtoday.top, reject
 DOMAIN-SUFFIX,datingtopgirls.com, reject
 DOMAIN-SUFFIX,datingvr.ru, reject
+DOMAIN-SUFFIX,dattoswitches.com, reject
 DOMAIN-SUFFIX,daubierbatties.uno, reject
 DOMAIN-SUFFIX,daughterbump.com, reject
 DOMAIN-SUFFIX,daughterinlawrib.com, reject
@@ -20036,6 +20037,7 @@ DOMAIN-SUFFIX,pgmpsqoq.xyz, reject
 DOMAIN-SUFFIX,pgonews.pro, reject
 DOMAIN-SUFFIX,pgpartner.com, reject
 DOMAIN-SUFFIX,pgssl.com, reject
+DOMAIN-SUFFIX,phaglalt.com, reject
 DOMAIN-SUFFIX,phague.com, reject
 DOMAIN-SUFFIX,phaignux.xyz, reject
 DOMAIN-SUFFIX,phaikroo.net, reject
@@ -24374,6 +24376,7 @@ DOMAIN-SUFFIX,smisit.com, reject
 DOMAIN-SUFFIX,smisto.com, reject
 DOMAIN-SUFFIX,smists.com, reject
 DOMAIN-SUFFIX,smithamenamel.com, reject
+DOMAIN-SUFFIX,smithumbewreck.com, reject
 DOMAIN-SUFFIX,smitry.com, reject
 DOMAIN-SUFFIX,smjulynews.com, reject
 DOMAIN-SUFFIX,smjxarmaflpmxj.com, reject
@@ -25102,6 +25105,7 @@ DOMAIN-SUFFIX,stossfussily.com, reject
 DOMAIN-SUFFIX,stotchou.com, reject
 DOMAIN-SUFFIX,stotoowu.net, reject
 DOMAIN-SUFFIX,stougnee.com, reject
+DOMAIN-SUFFIX,stouksom.xyz, reject
 DOMAIN-SUFFIX,stoushgowds.com, reject
 DOMAIN-SUFFIX,stovearmpitagreeable.com, reject
 DOMAIN-SUFFIX,stovecharacterize.com, reject

@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.10.25
+// @version      0.1.10.26
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
 // @match        https://twitter.com/*
-// @match        https://xvideos.com/*
+// @match        https://www.xvideos.com/*
+// @match        https://www.youtube.com/*
+// @match        https://developer.mozilla.org/*
+// @match        https://venus-av.com/*
 // @exclude      https://limbopro.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
@@ -134,6 +137,8 @@ function hidden_adblock4limbo() {
         var last_known_scroll_position = window.scrollY;
         const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
         setTimeout(() => {
+            console.log("本次移动距离" + Math.abs(last_known_scroll_position - window.scrollY))
+            //if (Math.abs(last_known_scroll_position - window.scrollY) > 1000) {
             if (last_known_scroll_position !== window.scrollY) {
                 ////console.log("// hidden_adblock4limbo() 按钮存在，且页面还在滑动...");
                 if (document.querySelector("#navigation").style.zIndex > 0) {
@@ -185,7 +190,7 @@ let crisp_auto_hiddenX = setInterval(() => {
 // 长时间不动则隐藏按钮
 function x4Home_button(x) { // 显示导航按钮
     const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
-    if (x == 1) {
+    if (x == 1 && !(document.getElementById('x4Home') === null)) {
         x4Home.style.height = x4Home_button_width();
         x4Home.style.width = x4Home_button_width();
         new_div.style.zIndex = '114154';
@@ -265,6 +270,11 @@ function if_a_click_then_close_daohang() {
 }
 
 
+var nsfw_list_regex = new RegExp(/\b(missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+var csp_list_regex = new RegExp(/\b(twitter|xvideos)\b/i);
+var echo_ell_length = 21; // 总共导航类目数量
+var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
+
 // 判断是否需要在当前页面插入导航按钮
 let str_ua = navigator.userAgent.toLowerCase();
 let regexp = /(.*)(iphone\sos\s)(\d{2})(.*)/;
@@ -273,7 +283,7 @@ let ios_version = str_ua.replace(regexp, '$3');
 var csp = ['twitter', 'xvideos'];
 var number_x = 0;
 if (/\b(google|bing)\b/i.test(window.location.href.toLowerCase())) { // 谷歌和必应均不插入导航按钮
-} else if (/\b(twitter|xvideos)\b/i.test(window.location.href.toLowerCase())) { // 如果是带有CSP的网站则带上参数 csp
+} else if (csp_list_regex.test(window.location.href.toLowerCase())) { // 如果是带有CSP的网站则带上参数 csp
     adblock4limbo(x4Home_button_width(), 'csp');
     _onclick_button();
 }
@@ -410,9 +420,9 @@ function navigation_body_pre() {
         <div class="div_global boysshouldread">\
         <div class="title_global">男孩子读物//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><a class="a_global" id="regex" href="https://limbopro.com/archives/Regular_Expressions.html" \
+        <li class="li_global"><a class="a_global better" id="regex" href="https://limbopro.com/archives/Regular_Expressions.html" \
         target="_blank">正则表达式</a></li>\
-        <li class="li_global"><a class="a_global" id="Linux-Shell" href="https://t.me/limboprossr/3197" \
+        <li class="li_global"><a class="a_global special" id="Linux-Shell" href="https://t.me/limboprossr/3197" \
         target="__blank">快乐的命令行</a></li>\
         \
         </ul>\
@@ -426,7 +436,7 @@ function navigation_body_pre() {
         target="_blank">泥巴影视</a></li>\
         <li class="li_global"><a class="a_global better" id="common" href="https://ddys.pro/"\
         target="_blank">低端影视</a></li>\
-        <li class="li_global"><a class="a_global" id="common" href="https://xiaobaotv.net/"\
+        <li class="li_global"><a class="a_global special" id="common" href="https://xiaobaotv.net/"\
         target="_blank">小宝影视</a></li>\
         <li class="li_global"><a class="a_global" id="xbys" href="https://gimy.ai/"\
         target="_blank">剧迷网</a></li>\
@@ -457,7 +467,7 @@ var file = {
     \
     ",
     global_css: '\
-    img.nsfw {position:fixed;width:100%;top:0%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo {color:white;width:100%;height:100%} #nsfw { opacity:0.4; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;margin-bottom:-62px;left:0px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+    img.nsfw {position:fixed;width:100%;top:0%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo {color:white;width:100%;height:100%} #nsfw { opacity:0.4; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
     '
 }
 
@@ -561,13 +571,25 @@ function scroll_switch() {
     //let scroll_check = setInterval(() => {
     var div_global = document.querySelectorAll('.div_global');
     ////console.log("// scroll_switch() 查看子元素数量是否超出设定");
+
     for (i = 0; i < div_global.length; i++) {
 
         if (div_global[i].querySelector('div.fbt')) {
             var fbt = div_global[i].querySelector('div.fbt').clientHeight
         } else { var fbt = 0 }
 
-        if (div_global[i].querySelectorAll('li').length * 31 + fbt > 8 * 31) {
+
+        var sum = 0;
+        let li = div_global[i].querySelectorAll('li')
+        //let li = document.querySelectorAll('.div_global')[20].querySelectorAll('li')
+        for (x = 0; x < li.length; x++) {
+            sum += li[x].clientHeight;
+        }
+
+        //console.log(sum)
+
+        if (div_global[i].querySelectorAll('li').length * 31 + fbt > 8 * 31 || sum + fbt > 8 * 31) {
+            // if (sum_scroll() + fbt > 8 * 31) {
             let scroll_innerHTML = document.createElement('div');
             scroll_innerHTML.textContent = '*可向上滑动查看更多';
             scroll_innerHTML.className = "scroll";
@@ -618,6 +640,7 @@ function all(opacity, zIndex, switchX, pointevents = '') {
         body_align("navigation");// 初始化导航大小
         body_bgp_switch(); // 设置背景图片
         echo_align(); // 导航居中
+        //new_align();
         echo_check_switch(switchX); // 监控导航大小变化
         //boom();
     } else {
@@ -629,6 +652,7 @@ function all(opacity, zIndex, switchX, pointevents = '') {
         body_align("navigation");// 初始化导航大小
         body_bgp_switch(); // 设置背景图片
         echo_align(); // 导航居中
+        //new_align();
         echo_check_switch(switchX); // 监控导航大小变化
     }
 
@@ -686,7 +710,7 @@ function body_align(parentElement) {
 
 // 替换背景图片
 function body_bgp_switch() {
-    if (!(/\b(twitter|xvideos)\b/i.test(window.location.href.toLowerCase()))) {
+    if (!(csp_list_regex.test(window.location.href.toLowerCase()))) {
         let url_w = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp_w.jpg";
         let url_h = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg";
         if (window.innerWidth * 0.65 >= window.innerHeight) {
@@ -713,20 +737,23 @@ function echo_align() {
         //console.log("正在检查是否属于大尺寸...")
         body_align("navigation");
         document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - (112 * echo_ell_length + 8 * echo_ell_overlay_length)) / 2 + "px";
-        document.querySelector(selector.footer).style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
+        document.querySelector('div._footer').style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
         document.querySelector('div.ellCloseX').style.zIndex = "-1"; // 确保关闭按钮可见可点击
         if (document.querySelector('div.closeX_Z')) {
             document.querySelector('div.closeX_Z').className = "closeX_W";
         }
         //document.querySelector('div.ellCloseX').style.position = "initial"; // 确保关闭按钮可见可点击
     } else {
-        //console.log("// echo_align() 正在检查是否属于小尺寸...");
+        new_align();
+        document.querySelector('div._footer').style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
+        /*
+        console.log("// echo_align() 正在检查是否属于小尺寸...");
         document.querySelector(selector.footer).style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
         body_align("navigation");
         document.querySelector(selector.body_css_real).style.paddingLeft = ((window.innerWidth % 112 - 8 * echo_ell_overlay_length) / 2) + "px"; // 当 ellCloseX position 为 initial 时 
         if (document.querySelector('div.closeX_W')) {
             document.querySelector('div.closeX_W').className = ("closeX_Z");
-        }
+        }*/
     }
 }
 
@@ -746,17 +773,17 @@ function _blank() {
 // 超棒自动化
 // 在尾部追加子元素
 
-var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0', 'common'],
+var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0', 'better'],
 ['SpeedTest', 'https://www.speedtest.net/', '_blank', '0', 'common'],
-['溜池ゴロー', 'https://www.tameikegoro.jp/top/', '_blank', 'porn', 'common'],
-['s1s1s1 S1/エスワンー', 'https://www.s1s1s1.com/top/', '_blank', 'porn', 'common'],
-['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'common'],
-['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'common'],
+['溜池ゴロー', 'https://tameikegoro.jp/', '_blank', 'porn', 'better'],
+['s1s1s1 S1/エスワンー', 'https://s1s1s1.com/', '_blank', 'porn', 'better'],
+['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'special'],
+['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'special'],
 ['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn', 'common'],
 ['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'poxrn', 'common'],
 ['ATTACKERS（アタッカーズ）', 'https://www.attackers.net/top/', '_blank', 'porn', 'common'],
 ['PRESTIGE(プレステージ)', 'https://www.prestige-av.com/', '_blank', 'porn', 'common'],
-['PREMIUM（プレミアム', 'https://www.premium-beauty.com/top/', '_blank', 'porn', 'common'],
+['PREMIUM（プレミアム', 'https://www.premium-beauty.com/top/', '_blank', 'porn', 'special'],
 ['MOODYZー', 'https://www.moodyz.com/top/', '_blank', 'porn', 'common'],
 ['IDEAPOCKET (アイデアポケット）', 'https://www.ideapocket.com/top/', '_blank', 'porn', 'porn', 'common'],
 ['OPPAI（おっぱい）', 'https://www.oppai-av.com/', '_blank', 'porn', 'common'],
@@ -807,6 +834,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
 ['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
 ['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
+['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
 ['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],
 ['BGP Toolkit ', 'https://bgp.he.net/', '_blank', 'ipcheck', 'common'],
 ['Baidu', 'https://www.baidu.com/', '_blank', 'ipcheck', 'common'],
@@ -816,11 +844,11 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Yahoo!）', 'https://hk.yahoo.com/?p=us', '_blank', 'search', 'common'],
 ['搜狗搜索', 'https://www.sogou.com/', '_blank', 'search', 'common'],
 ['Baidu', 'https://www.baidu.com/', '_blank', 'search', 'common'],
-['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AI', 'common'],
-['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AI', 'common'],
-['Claude.ai', 'https://claude.ai/', '_blank', 'AI', 'common'],
+['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AI', 'better'],
+['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AI', 'special'],
+['Claude.ai', 'https://claude.ai/', '_blank', 'AI', 'special'],
 ['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AI', 'common'],
-['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AI', 'common'],
+['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AI', 'better'],
 ["在线正则表达式测试", 'https://tool.oschina.net/regex/', '_blanl', 'Tools', 'special'],
 ['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
 ['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
@@ -838,24 +866,26 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['More...', 'https://limbopro.com/category/downloader/', '_blank', 'dload'],
 ];
 
-
+var click_count = 0;
 document.addEventListener("keydown", function (event) {
     if (event.code === "Escape") {
+        click_count = ++click_count;
+        console.log(click_count + "次ESC点击次数");
         // 执行你想要的操作
         // 监听键盘事件 ESC
-        if (!(document.querySelector('div#nsfw') === null) && !(document.querySelector('div#nsfw').style === null) && (document.querySelector('div#nsfw').getAttribute('style').search('-114') == -1)) {
+        if (!(document.querySelector('div#nsfw') === null) && !(document.querySelector('div#nsfw').style === null) && !(document.querySelector('div#nsfw').getAttribute('style') === null) && (document.querySelector('div#nsfw').getAttribute('style').search('-114') == -1) && click_count == 1) {
             znsh_unlock();
-        } else if ((document.querySelector('div[data-chat-status="ongoing"]') && (document.querySelector('div[data-chat-status="ongoing"]').getAttribute('data-visible') == 'true')) || document.querySelector('div[data-chat-status="initial"]') && (document.querySelector('div[data-chat-status="initial"]').getAttribute('data-visible') == 'true')) {
+        } else if ((document.querySelector('div[data-chat-status="ongoing"]') && (document.querySelector('div[data-chat-status="ongoing"]').getAttribute('data-visible') == 'true')) || document.querySelector('div[data-chat-status="initial"]') && (document.querySelector('div[data-chat-status="initial"]').getAttribute('data-visible') == 'true') && click_count == 1) {
             crisp_active('1');
-        } else if (typeof body_build == 'function' && document.querySelector("#navigation").style.zIndex > 0) {
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation").style.zIndex > 0 && click_count == 1) {
             body_build('false');
-        } else if (typeof close_googlesearch_iframe == 'function' && document.querySelector("#searchbyGoogle") && (document.querySelector("#searchbyGoogle")).style.zIndex > 0) {
+        } else if (typeof close_googlesearch_iframe == 'function' && document.querySelector("#searchbyGoogle") && (document.querySelector("#searchbyGoogle")).style.zIndex > 0 && click_count == 1) {
             close_googlesearch_iframe();
-        } else if ((document.querySelector("#x4Home").style.height == "0%")) {
+        } else if ((document.querySelector("#x4Home").style.height == "0%") && click_count == 1) {
             setTimeout(() => {
                 x4Home_button('1') // 按钮出现
-            },1000)
-        } else if (typeof body_build == 'function' && document.querySelector("#navigation").style.zIndex < 0  ) {
+            }, 1000)
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation").style.zIndex < 0 && click_count >= 2) {
             body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
         }
     }
@@ -879,6 +909,11 @@ document.addEventListener("keydown", function (event) {
         // 处理空格键按下后要执行的代码
         // body_build('true');
     }
+
+    setTimeout(() => {
+        click_count = 0;
+    }, 500);
+
 });
 
 // 监听 visibility change 事件 用户离开当前页面事件
@@ -897,6 +932,45 @@ function visibility() {
     })
 };
 
+
+// 移动 echo div._footer 位置
+function _footer_move() {
+    let target = document.querySelector('.echo')
+    let child = document.querySelector('div._footer')
+    target.appendChild(child)
+}
+
+
+function new_align() {
+    if (document.querySelectorAll('div.div_global').length > 15) {
+        var category = Math.floor((window.innerWidth / 112));
+        function sum(x) {
+            console.log("每排共计" + category + "个类目...")
+            let sum = 0;
+            for (i = 0; i < x; i++) {
+                sum += document.querySelectorAll('div.div_global')[i].clientWidth;
+            }
+            return sum;
+        }
+
+        sum(category)
+
+        if (sum(category) > window.innerWidth) {
+            var category = Math.floor((window.innerWidth / 112)) - 1;
+            sum(category);
+            console.log("占据" + sum(category) + "px...")
+            document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - sum(category)) / 2 + "px"
+            console.log("判断失误...")
+            console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
+        } else {
+            console.log("判断正常...")
+        }
+        console.log("占据" + sum(category) + "px...")
+        document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - sum(category)) / 2 + "px"
+        console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
+    }
+}
+
 //visibility()
 
 // 监听键盘输入 
@@ -911,11 +985,6 @@ function logKey(e) {
 }
 */
 
-
-var adblock4limbo_list = ['ddys', 'ddrk', '91porn', '18comic', 'avple', 'wnacg', 'libvio', 'anime1', 'javbu', 'xiaobaotv', 'xvideos', 'netflav']
-var echo_ell_length = 17; // 总共导航类目数量
-var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
-
 function parentElement_add() {
     all(0, -114154, 1, 'none');
     body_build('false');
@@ -923,7 +992,8 @@ function parentElement_add() {
         //console.log("\\ parentElement_add() 类目自动化生成检测... ")
         if (document.querySelector('div#navigation[style]')) {
             const url_now = window.location.href.toLowerCase();
-            if (/\b(missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i.test(url_now)) {
+            //if (/\b\b/i.test(window.location.href.toLowerCase())) {
+            if (nsfw_list_regex.test(window.location.href.toLowerCase())) {
                 parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
@@ -942,6 +1012,8 @@ function parentElement_add() {
                 child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1)
                 scroll_switch();
                 if_a_click_then_close_daohang();
+                _footer_move(); // 最后再移动 div._footer
+                //new_align(); // 居中
                 clearInterval(parentElementX);
             } else {
                 parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
@@ -963,6 +1035,8 @@ function parentElement_add() {
                 //console.log("// parentElement_add() 生成检测...");
                 scroll_switch();
                 if_a_click_then_close_daohang();
+                _footer_move(); // 最后再移动 div._footer
+                //new_align(); // 居中
                 clearInterval(parentElementX);
             }
         }
@@ -1045,15 +1119,12 @@ setInterval(() => {
 
 */
 
-//var url = document.location.href;
-///\b(jable|missav|javlibrary|supjav|av|hanime1|xvideos|pornhub|njav)\b/i.test(url);
-
 function znsh() {
-    var url = document.location.href;
-    console.log(url)
-    if (/\b(jable|missav|javlibrary|javday|18comic|wnacg|supjav|av|hanime1|xvideos|pornhub|njav)\b/i.test(url)) {
+    //var url = document.location.href;
+    //console.log(url)
+    if (nsfw_list_regex.test(document.location.href)) {
         visibility()
-        console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
+        //console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
         setInterval(() => {
             visibility_switch(); //
         }, 1500);

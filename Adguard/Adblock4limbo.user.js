@@ -93,6 +93,11 @@
 // @match        https://tameikegoro.jp/
 // @match        https://*/*
 // @exclude      https://limbopro.com/*
+// @exclude      https://limbopro.com/*
+// @exclude      https://venus-av.com/*
+// @exclude      https://developer.mozilla.org/
+// @exclude      https://www.youtube.com/*
+// @exclude      https://www.xvideos.com/*
 // @match        https://www.javlibrary.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
@@ -469,7 +474,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     // 添加监听器
                     addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
                 }, 3000)
-                video_delayPlay(1000);
+                //video_delayPlay(3000);
                 setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 4000);
                 //addEventListener_defuser("touchend"); // 打断监听器
 
@@ -627,6 +632,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.javlibrary)
             window_open_defuser(); // 打断 window.open 施法
 
+            if (/\b(https:\/\/www.javlibrary.com\/.*?)(\/videoreviews.php)(\?.*)(&mode=2)\b/i.test(window.location.href.toLowerCase())) {
+                console.log(window.location.href.toLowerCase())
+                let url_jav_rewrite = window.location.href.toLowerCase().replace(/(videoreviews.php)/i, '').replace(/(&mode=2)/i, '')
+                console.log(url_jav_rewrite)
+                window.location.replace(url_jav_rewrite)
+            }
+
             function javlibrary() {
                 // '#topmenu', 'div.menutext', '.searchbar', 
                 css_adsRemove(imax.css.javlibrary);
@@ -699,6 +711,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }, 1500)
             }
 
+
             xqy();
             function xqy() {
                 setTimeout(() => { // 番号详情页添加番号搜索等操作
@@ -768,7 +781,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                 a.className = 'xdload'
                                 a.target = '_blank';
                                 a.zIndex = '114154';
-                                a.style = 'position:relative;left:60px;top:4px;background-color:blue;color:aquamarine;z-index:114154;'
+                                a.style = 'position:absolute;right:40px;top:20px;background-color:blue;color:aquamarine;z-index:114154;'
                                 a.textContent = "下载视频";
                                 article[i].appendChild(a)
                             }
@@ -848,16 +861,18 @@ function uBlockOrigin_add() {
 /* End */
 
 function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建; 
-    let daohang = setInterval(() => {
-        if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
-            third_party_fileX("script", "https://limbopro.com/Adguard/Adblock4limbo.function.js", "body"); // js 外部引用 标签 <script>
-            console.log('引入 // daohang & 清理循环 // daohang')
-            clearInterval(daohang);
-        } else if (document.querySelectorAll("button#x4Home").length >= 1) {
-            clearInterval(daohang);
-            console.log('清理循环 // daohang')
-        }
-    }, 500);
+    if (!(/\b(twitter|xvideos)\b/i.test(window.location.href.toLowerCase()))) {
+        let daohang = setInterval(() => {
+            if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
+                third_party_fileX("script", "https://limbopro.com/Adguard/Adblock4limbo.function.js", "body"); // js 外部引用 标签 <script>
+                console.log('引入 // daohang & 清理循环 // daohang')
+                clearInterval(daohang);
+            } else if (document.querySelectorAll("button#x4Home").length >= 1) {
+                clearInterval(daohang);
+                console.log('清理循环 // daohang')
+            }
+        }, 500);
+    }
 }
 
 // 按根据父元素是否包含子元素而删除父元素

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310251121
+## ! Version: 202310261136
 ## ! Title: EasyPrivacy
-## ! Last modified: 25 Oct 2023 11:21 UTC
+## ! Last modified: 26 Oct 2023 11:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1095,6 +1095,7 @@ DOMAIN-SUFFIX,harborcub.com
 DOMAIN-SUFFIX,hardtofindmilk.com
 DOMAIN-SUFFIX,hatefulrequest.com
 DOMAIN-SUFFIX,hauntlist.com
+DOMAIN-SUFFIX,headydegree.com
 DOMAIN-SUFFIX,headyhook.com
 DOMAIN-SUFFIX,healflowers.com
 DOMAIN-SUFFIX,hearinglizards.com
@@ -2016,6 +2017,7 @@ DOMAIN-SUFFIX,a.getflowbox.com
 DOMAIN-SUFFIX,a.hcaptcha.com
 DOMAIN-SUFFIX,a.mobify.com
 DOMAIN-SUFFIX,a.opumo.net
+DOMAIN-SUFFIX,activity-flow.vtex.com
 DOMAIN-SUFFIX,activity.wisepops.com
 DOMAIN-SUFFIX,ad.aloodo.com
 DOMAIN-SUFFIX,adfox.yandex.ru
@@ -2382,6 +2384,7 @@ DOMAIN-SUFFIX,event.syndigo.cloud
 DOMAIN-SUFFIX,event.webcollage.net
 DOMAIN-SUFFIX,eventapi.libring.com
 DOMAIN-SUFFIX,eventgateway.soundcloud.com
+DOMAIN-SUFFIX,eventlog.chatlead.com
 DOMAIN-SUFFIX,eventlog.inspsearchapi.com
 DOMAIN-SUFFIX,events.air.tv
 DOMAIN-SUFFIX,events.apester.com
@@ -2404,6 +2407,7 @@ DOMAIN-SUFFIX,events.realgravity.com
 DOMAIN-SUFFIX,events.shareably.net
 DOMAIN-SUFFIX,events.splash-screen.net
 DOMAIN-SUFFIX,events.split.io
+DOMAIN-SUFFIX,events.storifyme.com
 DOMAIN-SUFFIX,events.tubecup.org
 DOMAIN-SUFFIX,events.ubembed.com
 DOMAIN-SUFFIX,events.whisk.com
@@ -2870,6 +2874,7 @@ DOMAIN-SUFFIX,telemetry.phenixrts.com
 DOMAIN-SUFFIX,telemetry.reembed.com
 DOMAIN-SUFFIX,telemetry.soundcloud.com
 DOMAIN-SUFFIX,telemetry.tableausoftware.com
+DOMAIN-SUFFIX,telemetry.vtex.com
 DOMAIN-SUFFIX,timber.sendtonews.com
 DOMAIN-SUFFIX,timejs.game.163.com
 DOMAIN-SUFFIX,tk.storetail.io
@@ -3902,6 +3907,7 @@ DOMAIN-SUFFIX,fathom.status.im
 DOMAIN-SUFFIX,fathom.tdvm.net
 DOMAIN-SUFFIX,fbo-statistics-collector-tc.is.flippingbook.com
 DOMAIN-SUFFIX,fdt.kraken.com
+DOMAIN-SUFFIX,femetrics.grammarly.io
 DOMAIN-SUFFIX,firebaselogging.googleapis.com
 DOMAIN-SUFFIX,fp.heavybit.com
 DOMAIN-SUFFIX,fp.measure.office.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310251121
+## ! Version: 202310261136
 ## ! Title: EasyList
-## ! Last modified: 25 Oct 2023 11:21 UTC
+## ! Last modified: 26 Oct 2023 11:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -5507,6 +5507,7 @@ DOMAIN-SUFFIX,caketteemblem.uno, reject
 DOMAIN-SUFFIX,cakiglun.xyz, reject
 DOMAIN-SUFFIX,cakycalais.com, reject
 DOMAIN-SUFFIX,calamityfortuneaudio.com, reject
+DOMAIN-SUFFIX,calcpol.com, reject
 DOMAIN-SUFFIX,calexits.uno, reject
 DOMAIN-SUFFIX,calibrelugger.com, reject
 DOMAIN-SUFFIX,caliphmalign.website, reject
@@ -8957,6 +8958,7 @@ DOMAIN-SUFFIX,ebonyrecognize.com, reject
 DOMAIN-SUFFIX,ebutiseemedlikeal.xyz, reject
 DOMAIN-SUFFIX,ebuzzing.com, reject
 DOMAIN-SUFFIX,ebz.io, reject
+DOMAIN-SUFFIX,ec1e2c92b3.com, reject
 DOMAIN-SUFFIX,ec2867edc4.com, reject
 DOMAIN-SUFFIX,ec5e727d37.com, reject
 DOMAIN-SUFFIX,eca578b203.com, reject
@@ -14368,6 +14370,7 @@ DOMAIN-SUFFIX,jmrnpzbpqla.com, reject
 DOMAIN-SUFFIX,jmvscgd.com, reject
 DOMAIN-SUFFIX,jnbasajikmd.xyz, reject
 DOMAIN-SUFFIX,jnhdmksj.top, reject
+DOMAIN-SUFFIX,jnnbzmyqaekzj.top, reject
 DOMAIN-SUFFIX,jnrtavp2x66u.com, reject
 DOMAIN-SUFFIX,jnsgdaqsiqcumg.xyz, reject
 DOMAIN-SUFFIX,jnxm2.com, reject
@@ -16045,6 +16048,7 @@ DOMAIN-SUFFIX,ludocsbho.com, reject
 DOMAIN-SUFFIX,ludwigreseise.tech, reject
 DOMAIN-SUFFIX,lufbogazixz.com, reject
 DOMAIN-SUFFIX,luffic.com, reject
+DOMAIN-SUFFIX,lugajxy.com, reject
 DOMAIN-SUFFIX,luggageflinchdew.com, reject
 DOMAIN-SUFFIX,lugjdylyqc.xyz, reject
 DOMAIN-SUFFIX,lugos-ndv.com, reject
@@ -18482,6 +18486,7 @@ DOMAIN-SUFFIX,obviatemuscoid.guru, reject
 DOMAIN-SUFFIX,obvious-lesson.pro, reject
 DOMAIN-SUFFIX,obviousraiment.com, reject
 DOMAIN-SUFFIX,oc2tdxocb3ae0r.com, reject
+DOMAIN-SUFFIX,ocalqoiw.com, reject
 DOMAIN-SUFFIX,occame.com, reject
 DOMAIN-SUFFIX,occarv.com, reject
 DOMAIN-SUFFIX,occasionalstatusbella.com, reject
@@ -22444,6 +22449,7 @@ DOMAIN-SUFFIX,rerackbirma.com, reject
 DOMAIN-SUFFIX,rereddit.com, reject
 DOMAIN-SUFFIX,rergeema.com, reject
 DOMAIN-SUFFIX,reroplittrewheck.pro, reject
+DOMAIN-SUFFIX,rerpartmentm.info, reject
 DOMAIN-SUFFIX,reryn2ce.com, reject
 DOMAIN-SUFFIX,resailsgyse.com, reject
 DOMAIN-SUFFIX,resalag.com, reject
@@ -25740,6 +25746,7 @@ DOMAIN-SUFFIX,td563.com, reject
 DOMAIN-SUFFIX,td583.com, reject
 DOMAIN-SUFFIX,td5xffxsx4.com, reject
 DOMAIN-SUFFIX,tddemchenko.info, reject
+DOMAIN-SUFFIX,tdditqosnpeo.com, reject
 DOMAIN-SUFFIX,tdeogusnou.xyz, reject
 DOMAIN-SUFFIX,tdkkjueowqb.com, reject
 DOMAIN-SUFFIX,tdohrpnwzs.com, reject
@@ -27071,6 +27078,7 @@ DOMAIN-SUFFIX,twokidjay.com, reject
 DOMAIN-SUFFIX,twomughakmpi.com, reject
 DOMAIN-SUFFIX,twovqti.com, reject
 DOMAIN-SUFFIX,twpasol.com, reject
+DOMAIN-SUFFIX,twrencesprin.info, reject
 DOMAIN-SUFFIX,twtad.com, reject
 DOMAIN-SUFFIX,twvybupqup.xyz, reject
 DOMAIN-SUFFIX,twwp3.top, reject
@@ -28423,6 +28431,7 @@ DOMAIN-SUFFIX,vulgarmilletappear.com, reject
 DOMAIN-SUFFIX,vulguspyemic.com, reject
 DOMAIN-SUFFIX,vulnerableordered.com, reject
 DOMAIN-SUFFIX,vungqwclop.xyz, reject
+DOMAIN-SUFFIX,vuruzy.xyz, reject
 DOMAIN-SUFFIX,vuuwd.com, reject
 DOMAIN-SUFFIX,vuvacu.xyz, reject
 DOMAIN-SUFFIX,vuvcroguwtuk.com, reject
@@ -31586,6 +31595,7 @@ DOMAIN-SUFFIX,tm-banners.gamingadult.com, reject
 DOMAIN-SUFFIX,tm-offers.gamingadult.com, reject
 DOMAIN-SUFFIX,tool.acces-vod.com, reject
 DOMAIN-SUFFIX,widgets.comcontent.net, reject
+DOMAIN-SUFFIX,wtfdontblock.theporndudes.xyz, reject
 DOMAIN-SUFFIX,123.manga1001.top, reject
 DOMAIN-SUFFIX,ad.animehub.ac, reject
 DOMAIN-SUFFIX,ad.imp.joins.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310251121
+## ! Version: 202310261136
 ## ! Title: EasyPrivacy
-## ! Last modified: 25 Oct 2023 11:21 UTC
+## ! Last modified: 26 Oct 2023 11:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1095,6 +1095,7 @@ DOMAIN-SUFFIX,harborcub.com, reject
 DOMAIN-SUFFIX,hardtofindmilk.com, reject
 DOMAIN-SUFFIX,hatefulrequest.com, reject
 DOMAIN-SUFFIX,hauntlist.com, reject
+DOMAIN-SUFFIX,headydegree.com, reject
 DOMAIN-SUFFIX,headyhook.com, reject
 DOMAIN-SUFFIX,healflowers.com, reject
 DOMAIN-SUFFIX,hearinglizards.com, reject
@@ -2016,6 +2017,7 @@ DOMAIN-SUFFIX,a.getflowbox.com, reject
 DOMAIN-SUFFIX,a.hcaptcha.com, reject
 DOMAIN-SUFFIX,a.mobify.com, reject
 DOMAIN-SUFFIX,a.opumo.net, reject
+DOMAIN-SUFFIX,activity-flow.vtex.com, reject
 DOMAIN-SUFFIX,activity.wisepops.com, reject
 DOMAIN-SUFFIX,ad.aloodo.com, reject
 DOMAIN-SUFFIX,adfox.yandex.ru, reject
@@ -2382,6 +2384,7 @@ DOMAIN-SUFFIX,event.syndigo.cloud, reject
 DOMAIN-SUFFIX,event.webcollage.net, reject
 DOMAIN-SUFFIX,eventapi.libring.com, reject
 DOMAIN-SUFFIX,eventgateway.soundcloud.com, reject
+DOMAIN-SUFFIX,eventlog.chatlead.com, reject
 DOMAIN-SUFFIX,eventlog.inspsearchapi.com, reject
 DOMAIN-SUFFIX,events.air.tv, reject
 DOMAIN-SUFFIX,events.apester.com, reject
@@ -2404,6 +2407,7 @@ DOMAIN-SUFFIX,events.realgravity.com, reject
 DOMAIN-SUFFIX,events.shareably.net, reject
 DOMAIN-SUFFIX,events.splash-screen.net, reject
 DOMAIN-SUFFIX,events.split.io, reject
+DOMAIN-SUFFIX,events.storifyme.com, reject
 DOMAIN-SUFFIX,events.tubecup.org, reject
 DOMAIN-SUFFIX,events.ubembed.com, reject
 DOMAIN-SUFFIX,events.whisk.com, reject
@@ -2870,6 +2874,7 @@ DOMAIN-SUFFIX,telemetry.phenixrts.com, reject
 DOMAIN-SUFFIX,telemetry.reembed.com, reject
 DOMAIN-SUFFIX,telemetry.soundcloud.com, reject
 DOMAIN-SUFFIX,telemetry.tableausoftware.com, reject
+DOMAIN-SUFFIX,telemetry.vtex.com, reject
 DOMAIN-SUFFIX,timber.sendtonews.com, reject
 DOMAIN-SUFFIX,timejs.game.163.com, reject
 DOMAIN-SUFFIX,tk.storetail.io, reject
@@ -3902,6 +3907,7 @@ DOMAIN-SUFFIX,fathom.status.im, reject
 DOMAIN-SUFFIX,fathom.tdvm.net, reject
 DOMAIN-SUFFIX,fbo-statistics-collector-tc.is.flippingbook.com, reject
 DOMAIN-SUFFIX,fdt.kraken.com, reject
+DOMAIN-SUFFIX,femetrics.grammarly.io, reject
 DOMAIN-SUFFIX,firebaselogging.googleapis.com, reject
 DOMAIN-SUFFIX,fp.heavybit.com, reject
 DOMAIN-SUFFIX,fp.measure.office.com, reject

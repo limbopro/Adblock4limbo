@@ -864,6 +864,8 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Youtube 视频下载(PC网页版)', 'https://ssyoutube.com/', '_blank', 'dload'],
 ['Pornhub 视频下载(PC网页版)', 'https://www.saveporn.net/', '_blank', 'dload'],
 ['More...', 'https://limbopro.com/category/downloader/', '_blank', 'dload'],
+['Stable Diffusion入门','https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html','_blank','aigc','special'],
+['Civitai','https://civitai.com/','_blank','aigc','better']
 ];
 
 var click_count = 0;
@@ -1002,6 +1004,7 @@ function parentElement_add() {
                 parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
                 parent_push(".echo", 'AI', 4, '智能AI//', 'AI')
+                parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
                 parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
                 parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
@@ -1023,6 +1026,7 @@ function parentElement_add() {
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
                 parent_push('.echo', 'Media', 4, '娱乐媒体//', 'Media')
                 parent_push(".echo", 'AI', 4, '智能AI//', 'AI')
+                parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
                 parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')

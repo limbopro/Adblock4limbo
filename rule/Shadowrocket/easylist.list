@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310271238
+## ! Version: 202310271507
 ## ! Title: EasyList
-## ! Last modified: 27 Oct 2023 12:38 UTC
+## ! Last modified: 27 Oct 2023 15:07 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -5553,6 +5553,7 @@ DOMAIN-SUFFIX,cba-fed-igh.com, reject
 DOMAIN-SUFFIX,cbdedibles.site, reject
 DOMAIN-SUFFIX,cbilrirtqyawue.com, reject
 DOMAIN-SUFFIX,cbltndzavx.com, reject
+DOMAIN-SUFFIX,cbpslot.com, reject
 DOMAIN-SUFFIX,cbrfnitjixegplp.xyz, reject
 DOMAIN-SUFFIX,cbtmyonynqhrcdp.xyz, reject
 DOMAIN-SUFFIX,cbyiqsfp.com, reject
@@ -9197,6 +9198,7 @@ DOMAIN-SUFFIX,encroachsnortvarnish.com, reject
 DOMAIN-SUFFIX,encyclopediaaimless.com, reject
 DOMAIN-SUFFIX,encyclopediaresemblancerecant.com, reject
 DOMAIN-SUFFIX,endangersquarereducing.com, reject
+DOMAIN-SUFFIX,endeavourcounter.com, reject
 DOMAIN-SUFFIX,endingdespond.uno, reject
 DOMAIN-SUFFIX,endjcplnsweyjye.xyz, reject
 DOMAIN-SUFFIX,endjigsur.com, reject
@@ -18153,6 +18155,7 @@ DOMAIN-SUFFIX,nwehirapbk.com, reject
 DOMAIN-SUFFIX,nwejuljibczi.com, reject
 DOMAIN-SUFFIX,nwhocamewi.xyz, reject
 DOMAIN-SUFFIX,nwwais.com, reject
+DOMAIN-SUFFIX,nxdcyhmwxlqc.com, reject
 DOMAIN-SUFFIX,nxiqvhhm.com, reject
 DOMAIN-SUFFIX,nxt-psh.com, reject
 DOMAIN-SUFFIX,nxtck.com, reject
@@ -21485,6 +21488,7 @@ DOMAIN-SUFFIX,qjsknpxwlesvou.com, reject
 DOMAIN-SUFFIX,qjvtofw.com, reject
 DOMAIN-SUFFIX,qjwglnuwqvr.com, reject
 DOMAIN-SUFFIX,qkepevhlton.xyz, reject
+DOMAIN-SUFFIX,qkjjuhs.com, reject
 DOMAIN-SUFFIX,qkouawnjejedvno.xyz, reject
 DOMAIN-SUFFIX,qksrv.biz, reject
 DOMAIN-SUFFIX,qksrv.cc, reject
@@ -29193,6 +29197,7 @@ DOMAIN-SUFFIX,wqzyxxrrep.com, reject
 DOMAIN-SUFFIX,wrangleprickly.com, reject
 DOMAIN-SUFFIX,wrathful-alternative.com, reject
 DOMAIN-SUFFIX,wrathfultower.pro, reject
+DOMAIN-SUFFIX,wrdnaunq.com, reject
 DOMAIN-SUFFIX,wreaksyolkier.com, reject
 DOMAIN-SUFFIX,wreathabble.com, reject
 DOMAIN-SUFFIX,wreckergaboon.com, reject
@@ -30424,6 +30429,7 @@ DOMAIN-SUFFIX,1942213827.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1944696125.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1946856060.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1949800833.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1969082237.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,a-delivery.rmbl.ws, reject
 DOMAIN-SUFFIX,a.ucoz.net, reject
 DOMAIN-SUFFIX,ad-serve.b-cdn.net, reject

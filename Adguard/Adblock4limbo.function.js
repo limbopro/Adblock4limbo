@@ -254,12 +254,6 @@ function _onclick_button() {
             })
         }
 
-        if (document.querySelector('button#close_search_button')) {
-            document.querySelector('button#close_search_button').addEventListener('click', function () {
-                close_googlesearch_iframe(); // 添加监听事件
-            })
-        }
-
     }, 1000)
 }
 
@@ -981,7 +975,7 @@ function new_align() {
     if (document.querySelectorAll('div.div_global').length > 15) {
         var category = Math.floor((window.innerWidth / 112));
         function sum(x) {
-            console.log("每排共计" + category + "个类目...")
+            ////console.log("每排共计" + category + "个类目...")
             let sum = 0;
             for (i = 0; i < x; i++) {
                 sum += document.querySelectorAll('div.div_global')[i].clientWidth;
@@ -994,16 +988,16 @@ function new_align() {
         if (sum(category) > window.innerWidth) {
             var category = Math.floor((window.innerWidth / 112)) - 1;
             sum(category);
-            console.log("占据" + sum(category) + "px...")
+            ////console.log("占据" + sum(category) + "px...")
             document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - sum(category)) / 2 + "px"
-            console.log("判断失误...")
-            console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
+            ////console.log("判断失误...")
+            ////console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
         } else {
-            console.log("判断正常...")
+            ////console.log("判断正常...")
         }
-        console.log("占据" + sum(category) + "px...")
+        ////console.log("占据" + sum(category) + "px...")
         document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - sum(category)) / 2 + "px"
-        console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
+        ////console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
     }
 }
 
@@ -1474,6 +1468,18 @@ function testx() {
 }
 
 
+function close_googlesearch_iframe_eventlistener() {
+    let mikey = setInterval(() => {
+        if (document.querySelector('button#close_search_button') !== null) {
+            document.querySelector('button#close_search_button').addEventListener('click', function () {
+                close_googlesearch_iframe(); // 添加监听事件
+            });
+            clearInterval(mikey);
+            console.log("为谷歌搜索添加监听器成功...")
+        }
+    }, 1000)
+}
+
 if (getCookie('googlesearch') == 'True') {
     open_googlesearch_iframe();
 } else {
@@ -1481,7 +1487,6 @@ if (getCookie('googlesearch') == 'True') {
 }
 
 function open_googlesearch_iframe() {
-
     setCookie('googlesearch', 'True', 7);
     if (document.cookie.indexOf("alert") == -1) {
         //alert('cookie 不存在')
@@ -1494,7 +1499,6 @@ function open_googlesearch_iframe() {
         document.querySelector('#searchbyGoogle').style.opacity = '1';
         body_build('false');
         document.querySelector('#x4Home').style.bottom = '30%';
-
         setTimeout(() => {
             if (!document.querySelectorAll("script[src*='=a897efc85e']").length >= 1) {
                 let parentElement = document.querySelector('#searchbyGoogle');
@@ -1504,9 +1508,8 @@ function open_googlesearch_iframe() {
                 body_build('false');
             }
         }, 500);
-
+        close_googlesearch_iframe_eventlistener();
         googlesearch_blank();
-
     } else {
         // 创建一个搜索框
         document.querySelector('#x4Home').style.bottom = '30%'; // 先把导航按钮提高一个度
@@ -1542,6 +1545,7 @@ function open_googlesearch_iframe() {
             close_search_button.className = 'close_search_button';
             //// close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
             document.querySelector('#searchbyGoogle').appendChild(close_search_button);
+            close_googlesearch_iframe_eventlistener(); // 监听
             googlesearch_blank();
         } else {
             let close_search_button = document.createElement('button')
@@ -1550,6 +1554,7 @@ function open_googlesearch_iframe() {
             close_search_button.textContent = 'X';
             //// close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
             document.querySelector('#searchbyGoogle').appendChild(close_search_button);
+            close_googlesearch_iframe_eventlistener(); // 监听
             googlesearch_blank();
         }
     }

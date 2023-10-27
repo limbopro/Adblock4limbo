@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310271150
+## ! Version: 202310271238
 ## ! Title: EasyList
-## ! Last modified: 27 Oct 2023 11:50 UTC
+## ! Last modified: 27 Oct 2023 12:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -495,6 +495,7 @@ DOMAIN-SUFFIX,445c1f5df9.com, reject
 DOMAIN-SUFFIX,445d1bd01a.com, reject
 DOMAIN-SUFFIX,44a9217f10.com, reject
 DOMAIN-SUFFIX,44afd3eae5.com, reject
+DOMAIN-SUFFIX,44ffd27303.com, reject
 DOMAIN-SUFFIX,452tapgn.de, reject
 DOMAIN-SUFFIX,45a8826890.com, reject
 DOMAIN-SUFFIX,46186911.vtt, reject
@@ -13793,6 +13794,7 @@ DOMAIN-SUFFIX,ishedtotigai.info, reject
 DOMAIN-SUFFIX,isjratdcaanm.com, reject
 DOMAIN-SUFFIX,isletachoisya.cam, reject
 DOMAIN-SUFFIX,ismlks.com, reject
+DOMAIN-SUFFIX,ismscoldnesfspl.info, reject
 DOMAIN-SUFFIX,isnconcfiplu.xyz, reject
 DOMAIN-SUFFIX,isoamidlaicism.com, reject
 DOMAIN-SUFFIX,isobaresoffit.com, reject
@@ -25495,6 +25497,7 @@ DOMAIN-SUFFIX,tapingauthenticemulation.com, reject
 DOMAIN-SUFFIX,tapingdynasty.com, reject
 DOMAIN-SUFFIX,tapingfoulgos.com, reject
 DOMAIN-SUFFIX,tapinghouseworkusual.com, reject
+DOMAIN-SUFFIX,tapiocaindowed.space, reject
 DOMAIN-SUFFIX,tapioni.com, reject
 DOMAIN-SUFFIX,tapixesa.pro, reject
 DOMAIN-SUFFIX,tapjoyads.com, reject
@@ -26042,6 +26045,7 @@ DOMAIN-SUFFIX,tic-tic-bam.com, reject
 DOMAIN-SUFFIX,tic-tic-toc.com, reject
 DOMAIN-SUFFIX,ticaadjuk.xyz, reject
 DOMAIN-SUFFIX,ticaframeofm.xyz, reject
+DOMAIN-SUFFIX,ticalfelixstownru.info, reject
 DOMAIN-SUFFIX,ticalsisamine.space, reject
 DOMAIN-SUFFIX,ticalwhichhereal.info, reject
 DOMAIN-SUFFIX,tick-tock.net, reject
@@ -26442,6 +26446,7 @@ DOMAIN-SUFFIX,tpopularcldfa.co, reject
 DOMAIN-SUFFIX,tpopularcldfb.co, reject
 DOMAIN-SUFFIX,tposkglvqookv.xyz, reject
 DOMAIN-SUFFIX,tpycithabalj.com, reject
+DOMAIN-SUFFIX,tpydhykibbz.com, reject
 DOMAIN-SUFFIX,tpyshaaxps.com, reject
 DOMAIN-SUFFIX,tpyxplkcap.top, reject
 DOMAIN-SUFFIX,tqgrrfssodfo.com, reject
@@ -27908,6 +27913,7 @@ DOMAIN-SUFFIX,viaticaledged.com, reject
 DOMAIN-SUFFIX,vibmhetkcedookx.com, reject
 DOMAIN-SUFFIX,vibrateapologiesshout.com, reject
 DOMAIN-SUFFIX,vic-m.co, reject
+DOMAIN-SUFFIX,vicious-instruction.pro, reject
 DOMAIN-SUFFIX,viciousdepartment.com, reject
 DOMAIN-SUFFIX,viciousdiplomaroller.com, reject
 DOMAIN-SUFFIX,victorious-shock.pro, reject
@@ -31131,6 +31137,7 @@ DOMAIN-SUFFIX,d3plnp2f9sfye5.cloudfront.net, reject
 DOMAIN-SUFFIX,d3pvcolmug0tz6.cloudfront.net, reject
 DOMAIN-SUFFIX,d3q33rbmdkxzj.cloudfront.net, reject
 DOMAIN-SUFFIX,d3qeaw5w9eu3lm.cloudfront.net, reject
+DOMAIN-SUFFIX,d3qgd3yzs41yp.cloudfront.net, reject
 DOMAIN-SUFFIX,d3qilfrpqzfrg4.cloudfront.net, reject
 DOMAIN-SUFFIX,d3qinhqny4thfo.cloudfront.net, reject
 DOMAIN-SUFFIX,d3qttli028txpv.cloudfront.net, reject

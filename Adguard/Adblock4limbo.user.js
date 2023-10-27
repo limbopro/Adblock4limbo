@@ -95,6 +95,7 @@
 // @exclude      https://limbopro.com/*
 // @exclude      https://limbopro.com/*
 // @exclude      https://venus-av.com/*
+// @exclude      https://blue-archive.io/*
 // @exclude      https://developer.mozilla.org/
 // @exclude      https://www.youtube.com/*
 // @exclude      https://www.xvideos.com/*
@@ -120,6 +121,8 @@
 
 
 daohang_build(); // 为页面增加导航按钮
+// 如不要导航可注释该行代码 在代码前加两行斜杆 // 
+// daohang_build() 就像这样
 
 
 // 一些常量
@@ -793,7 +796,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         default:
-
             // 修正 case 中 default 的匹配规则  10.25.203 
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {
                 if (document.querySelector('video')) {

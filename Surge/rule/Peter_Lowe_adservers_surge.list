@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 20 Oct 2023 22:48:29 GMT
-# entries:        3727
+# entries:        3722
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -542,6 +542,7 @@ DOMAIN-SUFFIX,ads.muslimehelfen.org
 DOMAIN-SUFFIX,ads.mvscoelho.com
 DOMAIN-SUFFIX,ads.myadv.org
 DOMAIN-SUFFIX,ads.nccwebs.com
+DOMAIN-SUFFIX,ads.ndtv1.com
 DOMAIN-SUFFIX,ads.networksolutions.com
 DOMAIN-SUFFIX,ads.newgrounds.com
 DOMAIN-SUFFIX,ads.newmedia.cz
@@ -581,7 +582,6 @@ DOMAIN-SUFFIX,ads.printscr.com
 DOMAIN-SUFFIX,ads.prisacom.com
 DOMAIN-SUFFIX,ads.program3.com
 DOMAIN-SUFFIX,ads.psd2html.com
-DOMAIN-SUFFIX,ads.pushplay.com
 DOMAIN-SUFFIX,ads.quasaraffiliates.com
 DOMAIN-SUFFIX,ads.quoka.de
 DOMAIN-SUFFIX,ads.radialserver.com
@@ -781,7 +781,6 @@ DOMAIN-SUFFIX,adservice.google.com
 DOMAIN-SUFFIX,adservice.google.com.mt
 DOMAIN-SUFFIX,adserving.unibet.com
 DOMAIN-SUFFIX,adservingfront.com
-DOMAIN-SUFFIX,adservio.tech
 DOMAIN-SUFFIX,adservrs.com
 DOMAIN-SUFFIX,adservrs.com.edgekey.net
 DOMAIN-SUFFIX,adsfac.eu
@@ -1225,7 +1224,6 @@ DOMAIN-SUFFIX,blushingboundary.com
 DOMAIN-SUFFIX,blushingbread.com
 DOMAIN-SUFFIX,bm.annonce.cz
 DOMAIN-SUFFIX,bn.bfast.com
-DOMAIN-SUFFIX,bnnrrv.qontentum.de
 DOMAIN-SUFFIX,bnrs.ilm.ee
 DOMAIN-SUFFIX,boffoadsapi.com
 DOMAIN-SUFFIX,boilingbeetle.com
@@ -1545,7 +1543,6 @@ DOMAIN-SUFFIX,cumbersomecloud.com
 DOMAIN-SUFFIX,curtaincows.com
 DOMAIN-SUFFIX,curvedsquirrel.com
 DOMAIN-SUFFIX,cushiondrum.com
-DOMAIN-SUFFIX,custom.plausible.io
 DOMAIN-SUFFIX,customad.cnn.com
 DOMAIN-SUFFIX,customads.co
 DOMAIN-SUFFIX,customers.kameleoon.com
@@ -1995,7 +1992,6 @@ DOMAIN-SUFFIX,honorablehall.com
 DOMAIN-SUFFIX,honorableland.com
 DOMAIN-SUFFIX,hostedads.realitykings.com
 DOMAIN-SUFFIX,hotjar.com
-DOMAIN-SUFFIX,hotkeys.com
 DOMAIN-SUFFIX,hotlog.ru
 DOMAIN-SUFFIX,hotrank.com.tw
 DOMAIN-SUFFIX,hoverowl.com
@@ -2224,7 +2220,6 @@ DOMAIN-SUFFIX,linkreferral.com
 DOMAIN-SUFFIX,links-ranking.de
 DOMAIN-SUFFIX,links.email.crunchbase.com
 DOMAIN-SUFFIX,links.zoopla.co.uk
-DOMAIN-SUFFIX,linkshighway.com
 DOMAIN-SUFFIX,linkstorms.com
 DOMAIN-SUFFIX,linkswaper.com
 DOMAIN-SUFFIX,linksynergy.com

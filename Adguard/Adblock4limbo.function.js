@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.10.26
+// @version      0.1.10.27
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -254,11 +254,18 @@ function _onclick_button() {
             })
         }
 
+        if (document.querySelector('button#close_search_button')) {
+            document.querySelector('button#close_search_button').addEventListener('click', function () {
+                close_googlesearch_iframe(); // 添加监听事件
+            })
+        }
+
     }, 1000)
 }
 
 
 // 监听导航页的按钮是否被点击
+/*
 function if_a_click_then_close_daohang() {
     if (document.querySelector('div.echo')) {
         document.querySelector('div.echo').querySelectorAll('a').forEach((x) => {
@@ -268,10 +275,11 @@ function if_a_click_then_close_daohang() {
         })
     }
 }
+*/
 
 
-var nsfw_list_regex = new RegExp(/\b(missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
-var csp_list_regex = new RegExp(/\b(twitter|xvideos)\b/i);
+var nsfw_regex = new RegExp(/\b(missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
 var echo_ell_length = 21; // 总共导航类目数量
 var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
 
@@ -283,7 +291,7 @@ let ios_version = str_ua.replace(regexp, '$3');
 var csp = ['twitter', 'xvideos'];
 var number_x = 0;
 if (/\b(google|bing)\b/i.test(window.location.href.toLowerCase())) { // 谷歌和必应均不插入导航按钮
-} else if (csp_list_regex.test(window.location.href.toLowerCase())) { // 如果是带有CSP的网站则带上参数 csp
+} else if (csp_regex.test(window.location.href.toLowerCase())) { // 如果是带有CSP的网站则带上参数 csp
     adblock4limbo(x4Home_button_width(), 'csp');
     _onclick_button();
 }
@@ -292,15 +300,28 @@ else {
     _onclick_button();
 }
 
+function csp_remove() {
+    // 删除CSP模式下不可点击的按钮
+    if (csp_regex.test(window.location.href.toLowerCase())) {
+        let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
+        button.forEach((x) => { document.querySelector(x).remove() });
+        let li = document.querySelectorAll('li.li_global');
+        for (x = 0; x < li.length; x++) {
+            if ((li[x].querySelector('a') === null)) {
+                li[x].remove()
+            }
+        }
+    }
+}
 
-/* 
-如不想显示 chat 聊天按钮 
+/*
+如不想显示 chat 聊天按钮
 可使用双斜杠 // 注释上述函数调用代码；
 举例如下：
- 
+
 // adblock4limbo();
 // hidden_adblock4limbo();
- 
+
 */
 
 /* Chat and navigation End */
@@ -364,16 +385,12 @@ function navigation_body_pre() {
         <div class="div_global magicbox">\
         <div class="title_global">工具箱//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><a class="a_global" id="yhlxj" href="https://limbopro.com/archives/25524.html" \
-        target="_blank">流媒体合租</a></li>\
         <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" \
         target="_blank">广告拦截大全</a></li>\
         <li class="li_global"><a class="a_global" id="software_skills" href="https://limbopro.com/category/software-skills/" \
         target="_blank">软件百科</a></li>\
         <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="index" href="https://limbopro.com/" \
         target="_blank">毒奶博客</a></li>\
-        <li class="li_global"><a class="a_global" id="jichangtuijian" href="https://limbopro.com/865.html" \
-        target="_blank">机场推荐</a></li>\
         <li class="li_global"><a class="a_global red " style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="lsj">毒奶搜索</a></li>\
         </ul>\
         </div>\
@@ -382,8 +399,10 @@ function navigation_body_pre() {
         <div class="div_global speedtest">\
         <div class="title_global">测速工具//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><a class="a_global" id="common" id="CloudflareSpeedtest" href="https://speed.cloudflare.com/"\
+        <li class="li_global"><a class="a_global better" id="CloudflareSpeedtest" href="https://speed.cloudflare.com/"\
         target="_blank">Cloudflare</a></li>\
+        <li class="li_global"><a class="a_global special" id="StairSpeedTest" href="https://limbopro.com/archives/ssrspeed.html"\
+        target="_blank">StairSpeedTest(机场测速)</a></li>\
         <li class="li_global"><a class="a_global" id="Speedtest" href="https://www.speedtest.net/zh-Hans"\
         target="_blank">Speedtest</a></li>\
         \
@@ -467,7 +486,7 @@ var file = {
     \
     ",
     global_css: '\
-    img.nsfw {position:fixed;width:100%;top:0%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo {color:white;width:100%;height:100%} #nsfw { opacity:0.4; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+    img.nsfw {position:fixed;width:100%;top:0%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo {color:white;width:100%;height:100%} #nsfw { opacity:0.4; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button_csp{font-size:xxx-large;transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .close_search_button_csp:hover {background-color:red;opacity:1 !important;}  .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation.navigation_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation.navigation_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{word-wrap:break-word;font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-left:4px;padding-bottom:2px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
     '
 }
 
@@ -493,8 +512,8 @@ function css_url_add(css_url, here_write_css_name_you_want) {
     head.appendChild(css_name_y);
 }
 
-css_add(file.global_css, 'navigation_style'); // 在body后面插入 css 
-//css_add(file.javlibrary, 'mayi'); // 在body后面插入 css 
+css_add(file.global_css, 'navigation_style'); // 在body后面插入 css
+//css_add(file.javlibrary, 'mayi'); // 在body后面插入 css
 
 function insertBefore_that_element_xx(x) {
     let parentElement = document.querySelector('div#rightcolumn')
@@ -710,7 +729,7 @@ function body_align(parentElement) {
 
 // 替换背景图片
 function body_bgp_switch() {
-    if (!(csp_list_regex.test(window.location.href.toLowerCase()))) {
+    if (!(csp_regex.test(window.location.href.toLowerCase()))) {
         let url_w = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp_w.jpg";
         let url_h = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg";
         if (window.innerWidth * 0.65 >= window.innerHeight) {
@@ -750,7 +769,7 @@ function echo_align() {
         console.log("// echo_align() 正在检查是否属于小尺寸...");
         document.querySelector(selector.footer).style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
         body_align("navigation");
-        document.querySelector(selector.body_css_real).style.paddingLeft = ((window.innerWidth % 112 - 8 * echo_ell_overlay_length) / 2) + "px"; // 当 ellCloseX position 为 initial 时 
+        document.querySelector(selector.body_css_real).style.paddingLeft = ((window.innerWidth % 112 - 8 * echo_ell_overlay_length) / 2) + "px"; // 当 ellCloseX position 为 initial 时
         if (document.querySelector('div.closeX_W')) {
             document.querySelector('div.closeX_W').className = ("closeX_Z");
         }*/
@@ -833,8 +852,6 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Njav', 'https://njav.tv/zh/', '_blank', 'xOnline', 'common'],
 ['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
 ['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
-['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
-['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
 ['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],
 ['BGP Toolkit ', 'https://bgp.he.net/', '_blank', 'ipcheck', 'common'],
 ['Baidu', 'https://www.baidu.com/', '_blank', 'ipcheck', 'common'],
@@ -844,11 +861,11 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Yahoo!）', 'https://hk.yahoo.com/?p=us', '_blank', 'search', 'common'],
 ['搜狗搜索', 'https://www.sogou.com/', '_blank', 'search', 'common'],
 ['Baidu', 'https://www.baidu.com/', '_blank', 'search', 'common'],
-['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AI', 'better'],
-['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AI', 'special'],
-['Claude.ai', 'https://claude.ai/', '_blank', 'AI', 'special'],
-['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AI', 'common'],
-['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AI', 'better'],
+['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AICHAT', 'better'],
+['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AICHAT', 'special'],
+['Claude.ai', 'https://claude.ai/', '_blank', 'AICHAT', 'special'],
+['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AICHAT', 'common'],
+['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AICHAT', 'better'],
 ["在线正则表达式测试", 'https://tool.oschina.net/regex/', '_blanl', 'Tools', 'special'],
 ['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
 ['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
@@ -856,16 +873,33 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['博客防御', 'https://limbopro.com/tag/Cloudflare/', '_blank', 'seoandmore', 'common'],
 ['苦瓜书盘', 'https://kgbook.com/', '_blank', 'bookreadanddownload', 'common'],
 ['Library Genesis', 'https://www.libgen.is/', '_blank', 'bookreadanddownload', 'special'],
-['M3U8下载?(Porn/Jable...本地化操作，无需下载额外乱七八糟的软件...)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'special'],
-['Twitter 视频下载(PC网页版)', 'https://ssstwitter.com/result_various', '_blank', 'dload'],
+['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
+['CSS教程', 'https://www.runoob.com/css/css-tutorial.html', '_blank', 'front-end', 'common'],
+['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
+['M3U8下载?(Porn/Jable...本地化操作，无需下载额外乱七八糟的软件...)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'common'],
+['Twitter 视频下载(PC网页版)', 'https://ssstwitter.com/result_various', '_blank', 'dload', 'common'],
 ['Instagram 视频下载(电报🤖)', 'https://t.me/instasavegrambot', '_blank', 'dload', 'special'],
 ['Instagram 视频下载(捷径🤖)', 'https://limbopro.com/archives/1053.html', '_blank', 'dload', 'special'],
 ['Instagram 视频下载(PC网页版)', 'https://sssinstagram.com/', '_blank', 'dload'],
 ['Youtube 视频下载(PC网页版)', 'https://ssyoutube.com/', '_blank', 'dload'],
 ['Pornhub 视频下载(PC网页版)', 'https://www.saveporn.net/', '_blank', 'dload'],
 ['More...', 'https://limbopro.com/category/downloader/', '_blank', 'dload'],
-['Stable Diffusion入门','https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html','_blank','aigc','special'],
-['Civitai','https://civitai.com/','_blank','aigc','better']
+['Stable Diffusion入门', 'https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html', '_blank', 'aigc', 'special'],
+['Civitai', 'https://civitai.com/', '_blank', 'aigc', 'better'],
+['网易新闻', 'https://news.163.com/', '_blank', 'currentnews', 'better'],
+['谷歌新闻', 'https://news.google.com/home?hl=zh-CN&gl=CN&ceid=CN:zh-Hans', '_blank', 'currentnews', 'common'],
+['纽约时报', 'https://cn.nytimes.com/zh-hant/', '_blank', 'currentnews', 'common'],
+['华尔街日报', 'https://cn.wsj.com/', '_blank', 'currentnews', 'common'],
+['BBC News', 'https://www.bbc.com/zhongwen/simp', '_blank', 'currentnews', 'common'],
+['顶尖文案TOPYS', 'https://www.topys.cn/', '_blank', 'writer', 'better'],
+['广告门', 'https://www.adquan.com/', '_blank', 'writer', 'special'],
+['梅花网', 'https://www.meihua.info/', '_blank', 'writer', 'common'],
+['数英网', 'https://www.digitaling.com/', '_blank', 'writer', 'special'],
+['运营派', 'https://www.yunyingpai.com/', '_blank', 'writer', 'common'],
+['虎嗅', 'https://huxiu.com/', '_blank', 'technews', 'common'],
+['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
+['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
+['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
 ];
 
 var click_count = 0;
@@ -975,7 +1009,7 @@ function new_align() {
 
 //visibility()
 
-// 监听键盘输入 
+// 监听键盘输入
 /*
 document.addEventListener("keydown", logKey);
 function logKey(e) {
@@ -995,17 +1029,20 @@ function parentElement_add() {
         if (document.querySelector('div#navigation[style]')) {
             const url_now = window.location.href.toLowerCase();
             //if (/\b\b/i.test(window.location.href.toLowerCase())) {
-            if (nsfw_list_regex.test(window.location.href.toLowerCase())) {
+            if (nsfw_regex.test(window.location.href.toLowerCase())) {
                 parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
-                parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
                 parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
+                parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
+                parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
+                parent_push('.echo', 'news', '10', '时事新闻//', 'news')
+                parent_push('.echo', 'technews', '10', '科技新闻//', 'technews')
+                parent_push('.echo', 'news', '10', '广告与写作//', 'writer')
                 parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
-                parent_push(".echo", 'AI', 4, '智能AI//', 'AI')
+                parent_push(".echo", 'AI', 4, '智能AI//', 'AICHAT')
                 parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
-                parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
                 parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
@@ -1014,32 +1051,37 @@ function parentElement_add() {
                 child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0)
                 child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1)
                 scroll_switch();
-                if_a_click_then_close_daohang();
+                //if_a_click_then_close_daohang();
                 _footer_move(); // 最后再移动 div._footer
+                csp_remove(); // 删除CSP模式下不可点击的按钮
                 //new_align(); // 居中
                 clearInterval(parentElementX);
             } else {
                 parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
+                parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
+                parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
+                parent_push('.echo', 'news', '10', '时事新闻//', 'news')
+                parent_push('.echo', 'technews', '10', '科技新闻//', 'technews')
+                parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
                 parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
                 parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
                 parent_push('.echo', 'Media', 4, '娱乐媒体//', 'Media')
-                parent_push(".echo", 'AI', 4, '智能AI//', 'AI')
+                parent_push(".echo", 'AI', 4, '智能AI//', 'AIGC')
                 parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
-                parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
                 parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
-                parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
                 child_push('.div_global.front > ul', '', "", 'front-end', 0)
                 child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0)
                 child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1)
                 //console.log("// parentElement_add() 生成检测...");
                 scroll_switch();
-                if_a_click_then_close_daohang();
+                //if_a_click_then_close_daohang();
                 _footer_move(); // 最后再移动 div._footer
+                csp_remove(); // 删除CSP模式下不可点击的按钮
                 //new_align(); // 居中
                 clearInterval(parentElementX);
             }
@@ -1050,7 +1092,7 @@ function parentElement_add() {
 parentElement_add();
 
 
-// 宅男守护 
+// 宅男守护
 function nsfw_content_hidden(x) { // nsfw 网站模糊
     if (x == 'true') { // 新建背景模糊 nsfw
         if (!document.querySelector("#nsfw_echo")) {
@@ -1126,7 +1168,7 @@ setInterval(() => {
 function znsh() {
     //var url = document.location.href;
     //console.log(url)
-    if (nsfw_list_regex.test(document.location.href)) {
+    if (nsfw_regex.test(document.location.href)) {
         visibility()
         //console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
         setInterval(() => {
@@ -1163,7 +1205,7 @@ if (button_switch == 'True') {
 }
 
 
-// 复制父元素下指定位置子元素 
+// 复制父元素下指定位置子元素
 function parentElement_build(parentNode, i) {
     //console.log("// parentElement_build(() 正在复制" + parentNode + "下的父元素，并追加到" + parentNode + "后");
     if (document.querySelectorAll(parentNode)[0]) {
@@ -1209,7 +1251,7 @@ function parentElement_push(parentNode, category, child_css_change, insertBefore
             //child_build(".div_global." + child_css_change + " > ul")
         }
 
-        // Part 3 
+        // Part 3
         var bb = 0;
         for (i = 0; i < arrayXP.length; i++) {
             if (arrayXP[i][3] == category) {
@@ -1252,7 +1294,7 @@ function parent_push(parentNode, child_css_change, childPosition, title, categor
     parentElement_push(parentNode, category, child_css_change, insertBefore_that_element, switchX)
 }
 
-/** 
+/**
  * 举例//
  * parentElement_build('.echo',3)
  * parentElement_inner('.echo','.title','社交媒体//','SocialX');
@@ -1493,12 +1535,23 @@ function open_googlesearch_iframe() {
         }, 500)
 
         // 创建一个关闭搜索的按钮
-        let close_search_button = document.createElement('button')
-        close_search_button.id = 'close_search_button';
-        close_search_button.className = 'close_search_button';
-        close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
-        document.querySelector('#searchbyGoogle').appendChild(close_search_button);
-        googlesearch_blank();
+
+        if (!csp_regex.test(window.location.href.toLowerCase())) {
+            let close_search_button = document.createElement('button')
+            close_search_button.id = 'close_search_button';
+            close_search_button.className = 'close_search_button';
+            //// close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
+            document.querySelector('#searchbyGoogle').appendChild(close_search_button);
+            googlesearch_blank();
+        } else {
+            let close_search_button = document.createElement('button')
+            close_search_button.id = 'close_search_button';
+            close_search_button.className = 'close_search_button_csp';
+            close_search_button.textContent = 'X';
+            //// close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
+            document.querySelector('#searchbyGoogle').appendChild(close_search_button);
+            googlesearch_blank();
+        }
     }
 }
 

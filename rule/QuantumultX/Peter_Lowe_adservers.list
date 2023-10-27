@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 20 Oct 2023 22:48:29 GMT
-# entries:        3727
+# entries:        3722
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -542,6 +542,7 @@ DOMAIN-SUFFIX,ads.muslimehelfen.org, reject
 DOMAIN-SUFFIX,ads.mvscoelho.com, reject
 DOMAIN-SUFFIX,ads.myadv.org, reject
 DOMAIN-SUFFIX,ads.nccwebs.com, reject
+DOMAIN-SUFFIX,ads.ndtv1.com, reject
 DOMAIN-SUFFIX,ads.networksolutions.com, reject
 DOMAIN-SUFFIX,ads.newgrounds.com, reject
 DOMAIN-SUFFIX,ads.newmedia.cz, reject
@@ -581,7 +582,6 @@ DOMAIN-SUFFIX,ads.printscr.com, reject
 DOMAIN-SUFFIX,ads.prisacom.com, reject
 DOMAIN-SUFFIX,ads.program3.com, reject
 DOMAIN-SUFFIX,ads.psd2html.com, reject
-DOMAIN-SUFFIX,ads.pushplay.com, reject
 DOMAIN-SUFFIX,ads.quasaraffiliates.com, reject
 DOMAIN-SUFFIX,ads.quoka.de, reject
 DOMAIN-SUFFIX,ads.radialserver.com, reject
@@ -781,7 +781,6 @@ DOMAIN-SUFFIX,adservice.google.com, reject
 DOMAIN-SUFFIX,adservice.google.com.mt, reject
 DOMAIN-SUFFIX,adserving.unibet.com, reject
 DOMAIN-SUFFIX,adservingfront.com, reject
-DOMAIN-SUFFIX,adservio.tech, reject
 DOMAIN-SUFFIX,adservrs.com, reject
 DOMAIN-SUFFIX,adservrs.com.edgekey.net, reject
 DOMAIN-SUFFIX,adsfac.eu, reject
@@ -1225,7 +1224,6 @@ DOMAIN-SUFFIX,blushingboundary.com, reject
 DOMAIN-SUFFIX,blushingbread.com, reject
 DOMAIN-SUFFIX,bm.annonce.cz, reject
 DOMAIN-SUFFIX,bn.bfast.com, reject
-DOMAIN-SUFFIX,bnnrrv.qontentum.de, reject
 DOMAIN-SUFFIX,bnrs.ilm.ee, reject
 DOMAIN-SUFFIX,boffoadsapi.com, reject
 DOMAIN-SUFFIX,boilingbeetle.com, reject
@@ -1545,7 +1543,6 @@ DOMAIN-SUFFIX,cumbersomecloud.com, reject
 DOMAIN-SUFFIX,curtaincows.com, reject
 DOMAIN-SUFFIX,curvedsquirrel.com, reject
 DOMAIN-SUFFIX,cushiondrum.com, reject
-DOMAIN-SUFFIX,custom.plausible.io, reject
 DOMAIN-SUFFIX,customad.cnn.com, reject
 DOMAIN-SUFFIX,customads.co, reject
 DOMAIN-SUFFIX,customers.kameleoon.com, reject
@@ -1995,7 +1992,6 @@ DOMAIN-SUFFIX,honorablehall.com, reject
 DOMAIN-SUFFIX,honorableland.com, reject
 DOMAIN-SUFFIX,hostedads.realitykings.com, reject
 DOMAIN-SUFFIX,hotjar.com, reject
-DOMAIN-SUFFIX,hotkeys.com, reject
 DOMAIN-SUFFIX,hotlog.ru, reject
 DOMAIN-SUFFIX,hotrank.com.tw, reject
 DOMAIN-SUFFIX,hoverowl.com, reject
@@ -2224,7 +2220,6 @@ DOMAIN-SUFFIX,linkreferral.com, reject
 DOMAIN-SUFFIX,links-ranking.de, reject
 DOMAIN-SUFFIX,links.email.crunchbase.com, reject
 DOMAIN-SUFFIX,links.zoopla.co.uk, reject
-DOMAIN-SUFFIX,linkshighway.com, reject
 DOMAIN-SUFFIX,linkstorms.com, reject
 DOMAIN-SUFFIX,linkswaper.com, reject
 DOMAIN-SUFFIX,linksynergy.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310261545
+## ! Version: 202310271150
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Oct 2023 15:45 UTC
+## ! Last modified: 27 Oct 2023 11:50 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -316,6 +316,7 @@ DOMAIN-SUFFIX,speedyrhino.co, reject
 DOMAIN-SUFFIX,spinnaker-js.com, reject
 DOMAIN-SUFFIX,stack-sonar.com, reject
 DOMAIN-SUFFIX,stat.ovh, reject
+DOMAIN-SUFFIX,statisticplatform.com, reject
 DOMAIN-SUFFIX,statisticsplatform.com, reject
 DOMAIN-SUFFIX,statsbox.info, reject
 DOMAIN-SUFFIX,stpmgo.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202310271507
+## ! Version: 202310280906
 ## ! Title: EasyList
-## ! Last modified: 27 Oct 2023 15:07 UTC
+## ! Last modified: 28 Oct 2023 09:06 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3988,6 +3988,7 @@ DOMAIN-SUFFIX,beastintruder.com, reject
 DOMAIN-SUFFIX,beastsclassbiscuit.com, reject
 DOMAIN-SUFFIX,beastsmalefic.uno, reject
 DOMAIN-SUFFIX,beatifulapplabland.com, reject
+DOMAIN-SUFFIX,beatifulllhistory.com, reject
 DOMAIN-SUFFIX,beautifulasaweath.info, reject
 DOMAIN-SUFFIX,beaverculbert.uno, reject
 DOMAIN-SUFFIX,beavertron.com, reject

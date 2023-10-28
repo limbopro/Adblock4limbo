@@ -3,7 +3,7 @@
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
 // @version      0.3.10.27
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去广告计划油猴版；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
+// @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
@@ -95,7 +95,6 @@
 // @exclude      https://limbopro.com/*
 // @exclude      https://limbopro.com/*
 // @exclude      https://venus-av.com/*
-// @exclude      https://blue-archive.io/*
 // @exclude      https://developer.mozilla.org/
 // @exclude      https://www.youtube.com/*
 // @exclude      https://www.xvideos.com/*
@@ -110,6 +109,7 @@
  * Author: limbopro
  * View: https://limbopro.com/archives/12904.html
  * 电报群组：https://t.me/Adblock4limbo
+ * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
  * Github：https://github.com/limbopro/Adblock4limbo
  * ---------------------------
  */
@@ -123,7 +123,6 @@
 daohang_build(); // 为页面增加导航按钮
 // 如不要导航可注释该行代码 在代码前加两行斜杆 // 
 // daohang_build() 就像这样
-
 
 // 一些常量
 /* Start */
@@ -867,7 +866,7 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
     if (!(csp_regex.test(window.location.href.toLowerCase()))) {
         let daohang = setInterval(() => {
             if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
-                third_party_fileX("script", "https://limbopro.com/Adguard/Adblock4limbo.function.js", "body"); // js 外部引用 标签 <script>
+                third_party_fileX("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
                 console.log('引入 // daohang & 清理循环 // daohang')
                 clearInterval(daohang);
             } else if (document.querySelectorAll("button#x4Home").length >= 1) {

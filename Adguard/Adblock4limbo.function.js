@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.10.28
+// @version      0.1.10.29
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -878,6 +878,9 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AICHAT', 'common'],
 ['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AICHAT', 'better'],
 ["在线正则表达式测试", 'https://tool.oschina.net/regex/', '_blanl', 'Tools', 'special'],
+['在线文件格式转换器', 'https://convertio.co/zh/', '_blank', 'Tools', 'common'],
+['PDF在线转换', 'https://www.ilovepdf.com/zh-cn', '_blank', 'Tools', 'common'],
+['iconfont', 'https://www.iconfont.cn/', '_blank', 'Tools', 'common'],
 ['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
 ['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
 ['博客优化', 'https://limbopro.com/category/builder/', '_blank', 'seoandmore', 'special'],
@@ -887,7 +890,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
 ['CSS教程', 'https://www.runoob.com/css/css-tutorial.html', '_blank', 'front-end', 'common'],
 ['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
-['M3U8下载?(Porn/Jable...本地化操作，无需下载额外乱七八糟的软件...)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'common'],
+['M3U8下载?(Porn/Jable..)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'common'],
 ['Twitter 视频下载(PC网页版)', 'https://ssstwitter.com/result_various', '_blank', 'dload', 'common'],
 ['Instagram 视频下载(电报🤖)', 'https://t.me/instasavegrambot', '_blank', 'dload', 'special'],
 ['Instagram 视频下载(捷径🤖)', 'https://limbopro.com/archives/1053.html', '_blank', 'dload', 'special'],
@@ -897,6 +900,8 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['More...', 'https://limbopro.com/category/downloader/', '_blank', 'dload'],
 ['Stable Diffusion入门', 'https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html', '_blank', 'aigc', 'special'],
 ['Civitai', 'https://civitai.com/', '_blank', 'aigc', 'better'],
+['Midjourney', 'https://midjourney.com/', '_blank', 'aigc', 'better'],
+['Notion AI', 'https://www.notion.so/product/ai', '_blank', 'aigc', 'better'],
 ['网易新闻', 'https://news.163.com/', '_blank', 'currentnews', 'better'],
 ['谷歌新闻', 'https://news.google.com/home?hl=zh-CN&gl=CN&ceid=CN:zh-Hans', '_blank', 'currentnews', 'common'],
 ['纽约时报', 'https://cn.nytimes.com/zh-hant/', '_blank', 'currentnews', 'common'],
@@ -907,6 +912,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['梅花网', 'https://www.meihua.info/', '_blank', 'writer', 'common'],
 ['数英网', 'https://www.digitaling.com/', '_blank', 'writer', 'special'],
 ['运营派', 'https://www.yunyingpai.com/', '_blank', 'writer', 'common'],
+['少数派', 'https://sspai.com/', '_blank', 'technews', 'common'],
 ['虎嗅', 'https://huxiu.com/', '_blank', 'technews', 'common'],
 ['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
 ['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],

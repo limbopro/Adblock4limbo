@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310280906
+## ! Version: 202310291128
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Oct 2023 09:06 UTC
+## ! Last modified: 29 Oct 2023 11:28 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3697,6 +3697,7 @@ DOMAIN-SUFFIX,tracker.thinkindot.com, reject
 DOMAIN-SUFFIX,tracking.smartmeapp.com, reject
 DOMAIN-SUFFIX,webpixel.smartmeapp.com, reject
 DOMAIN-SUFFIX,collector.schibsted.io, reject
+DOMAIN-SUFFIX,evt-api.ntm.eu, reject
 DOMAIN-SUFFIX,pixel.smartmedia.tj, reject
 DOMAIN-SUFFIX,sal.isanook.com, reject
 DOMAIN-SUFFIX,stat.matichon.co.th, reject

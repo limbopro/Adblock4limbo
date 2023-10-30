@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310291128
+## ! Version: 202310301556
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Oct 2023 11:28 UTC
+## ! Last modified: 30 Oct 2023 15:56 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -220,6 +220,7 @@ DOMAIN-SUFFIX,loopcybersec.com
 DOMAIN-SUFFIX,lsdm.co
 DOMAIN-SUFFIX,maggieeatstheangel.com
 DOMAIN-SUFFIX,matheranalytics.com
+DOMAIN-SUFFIX,maxepv.com
 DOMAIN-SUFFIX,maxtrafixx.tech
 DOMAIN-SUFFIX,mb-tracking.com
 DOMAIN-SUFFIX,mcangelus.com
@@ -2257,6 +2258,7 @@ DOMAIN-SUFFIX,cod.bitrec.com
 DOMAIN-SUFFIX,collect-ap2.attraqt.io
 DOMAIN-SUFFIX,collect-eu.attraqt.io
 DOMAIN-SUFFIX,collect.alphastream.io
+DOMAIN-SUFFIX,collect.bannercrowd.net
 DOMAIN-SUFFIX,collect.cloudsponge.com
 DOMAIN-SUFFIX,collect.igodigital.com
 DOMAIN-SUFFIX,collect.iteam-dress.com
@@ -2463,6 +2465,7 @@ DOMAIN-SUFFIX,hello.staticstuff.net
 DOMAIN-SUFFIX,hi.hellobar.com
 DOMAIN-SUFFIX,hit.mybestpro.com
 DOMAIN-SUFFIX,hits.dealer.com
+DOMAIN-SUFFIX,hits.getelevar.com
 DOMAIN-SUFFIX,hits.informer.com
 DOMAIN-SUFFIX,hktracker.hankookilbo.com
 DOMAIN-SUFFIX,hpr.outbrain.com
@@ -2575,6 +2578,7 @@ DOMAIN-SUFFIX,mj-snowplow-static-js.s3.amazonaws.com
 DOMAIN-SUFFIX,mlweb.dmlab.hu
 DOMAIN-SUFFIX,mmi.bemobile.ua
 DOMAIN-SUFFIX,mon.domdog.io
+DOMAIN-SUFFIX,monitor-api.blackcrow.ai
 DOMAIN-SUFFIX,monitor-frontend-collector.a.bybit-aws.com
 DOMAIN-SUFFIX,monitor.azure.com
 DOMAIN-SUFFIX,monitoring.iraiser.eu
@@ -2929,6 +2933,7 @@ DOMAIN-SUFFIX,track.tcppu.com
 DOMAIN-SUFFIX,track.td3x.com
 DOMAIN-SUFFIX,track.uc.cn
 DOMAIN-SUFFIX,track.untd.com
+DOMAIN-SUFFIX,track.uppromote.com
 DOMAIN-SUFFIX,track.venatusmedia.com
 DOMAIN-SUFFIX,track.vscash.com
 DOMAIN-SUFFIX,track.yfret.com
@@ -2968,6 +2973,7 @@ DOMAIN-SUFFIX,trackerapi.truste.com
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app
 DOMAIN-SUFFIX,tracking-api.hotmart.com
 DOMAIN-SUFFIX,tracking-api.mangopulse.net
+DOMAIN-SUFFIX,tracking-na.hawksearch.com
 DOMAIN-SUFFIX,tracking.adalyser.com
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com
 DOMAIN-SUFFIX,tracking.aegpresents.com
@@ -3074,6 +3080,7 @@ DOMAIN-SUFFIX,wtbevents.pricespider.com
 DOMAIN-SUFFIX,x.babe.today
 DOMAIN-SUFFIX,x.disq.us
 DOMAIN-SUFFIX,x.weather.com
+DOMAIN-SUFFIX,xp2023-pix.s3.amazonaws.com
 DOMAIN-SUFFIX,adsdk.yandex.ru
 DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com
 DOMAIN-SUFFIX,analytics.mobile.yandex.net
@@ -3436,6 +3443,7 @@ DOMAIN-SUFFIX,trkr.shoppingminds.net
 DOMAIN-SUFFIX,dnt-userreport.com
 DOMAIN-SUFFIX,tags.op-palvelut.fi
 DOMAIN-SUFFIX,links.boom.ge
+DOMAIN-SUFFIX,analytics.skroutz.gr
 DOMAIN-SUFFIX,heartbeat.pmd.444.hu
 DOMAIN-SUFFIX,pixel.barion.com
 DOMAIN-SUFFIX,rum.marquardmedia.hu

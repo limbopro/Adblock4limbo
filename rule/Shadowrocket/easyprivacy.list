@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202310291128
+## ! Version: 202310301556
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Oct 2023 11:28 UTC
+## ! Last modified: 30 Oct 2023 15:56 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -220,6 +220,7 @@ DOMAIN-SUFFIX,loopcybersec.com, reject
 DOMAIN-SUFFIX,lsdm.co, reject
 DOMAIN-SUFFIX,maggieeatstheangel.com, reject
 DOMAIN-SUFFIX,matheranalytics.com, reject
+DOMAIN-SUFFIX,maxepv.com, reject
 DOMAIN-SUFFIX,maxtrafixx.tech, reject
 DOMAIN-SUFFIX,mb-tracking.com, reject
 DOMAIN-SUFFIX,mcangelus.com, reject
@@ -2257,6 +2258,7 @@ DOMAIN-SUFFIX,cod.bitrec.com, reject
 DOMAIN-SUFFIX,collect-ap2.attraqt.io, reject
 DOMAIN-SUFFIX,collect-eu.attraqt.io, reject
 DOMAIN-SUFFIX,collect.alphastream.io, reject
+DOMAIN-SUFFIX,collect.bannercrowd.net, reject
 DOMAIN-SUFFIX,collect.cloudsponge.com, reject
 DOMAIN-SUFFIX,collect.igodigital.com, reject
 DOMAIN-SUFFIX,collect.iteam-dress.com, reject
@@ -2463,6 +2465,7 @@ DOMAIN-SUFFIX,hello.staticstuff.net, reject
 DOMAIN-SUFFIX,hi.hellobar.com, reject
 DOMAIN-SUFFIX,hit.mybestpro.com, reject
 DOMAIN-SUFFIX,hits.dealer.com, reject
+DOMAIN-SUFFIX,hits.getelevar.com, reject
 DOMAIN-SUFFIX,hits.informer.com, reject
 DOMAIN-SUFFIX,hktracker.hankookilbo.com, reject
 DOMAIN-SUFFIX,hpr.outbrain.com, reject
@@ -2575,6 +2578,7 @@ DOMAIN-SUFFIX,mj-snowplow-static-js.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,mlweb.dmlab.hu, reject
 DOMAIN-SUFFIX,mmi.bemobile.ua, reject
 DOMAIN-SUFFIX,mon.domdog.io, reject
+DOMAIN-SUFFIX,monitor-api.blackcrow.ai, reject
 DOMAIN-SUFFIX,monitor-frontend-collector.a.bybit-aws.com, reject
 DOMAIN-SUFFIX,monitor.azure.com, reject
 DOMAIN-SUFFIX,monitoring.iraiser.eu, reject
@@ -2929,6 +2933,7 @@ DOMAIN-SUFFIX,track.tcppu.com, reject
 DOMAIN-SUFFIX,track.td3x.com, reject
 DOMAIN-SUFFIX,track.uc.cn, reject
 DOMAIN-SUFFIX,track.untd.com, reject
+DOMAIN-SUFFIX,track.uppromote.com, reject
 DOMAIN-SUFFIX,track.venatusmedia.com, reject
 DOMAIN-SUFFIX,track.vscash.com, reject
 DOMAIN-SUFFIX,track.yfret.com, reject
@@ -2968,6 +2973,7 @@ DOMAIN-SUFFIX,trackerapi.truste.com, reject
 DOMAIN-SUFFIX,tracking-api-4lasu2nlcq-ew.a.run.app, reject
 DOMAIN-SUFFIX,tracking-api.hotmart.com, reject
 DOMAIN-SUFFIX,tracking-api.mangopulse.net, reject
+DOMAIN-SUFFIX,tracking-na.hawksearch.com, reject
 DOMAIN-SUFFIX,tracking.adalyser.com, reject
 DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com, reject
 DOMAIN-SUFFIX,tracking.aegpresents.com, reject
@@ -3074,6 +3080,7 @@ DOMAIN-SUFFIX,wtbevents.pricespider.com, reject
 DOMAIN-SUFFIX,x.babe.today, reject
 DOMAIN-SUFFIX,x.disq.us, reject
 DOMAIN-SUFFIX,x.weather.com, reject
+DOMAIN-SUFFIX,xp2023-pix.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,adsdk.yandex.ru, reject
 DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com, reject
 DOMAIN-SUFFIX,analytics.mobile.yandex.net, reject
@@ -3436,6 +3443,7 @@ DOMAIN-SUFFIX,trkr.shoppingminds.net, reject
 DOMAIN-SUFFIX,dnt-userreport.com, reject
 DOMAIN-SUFFIX,tags.op-palvelut.fi, reject
 DOMAIN-SUFFIX,links.boom.ge, reject
+DOMAIN-SUFFIX,analytics.skroutz.gr, reject
 DOMAIN-SUFFIX,heartbeat.pmd.444.hu, reject
 DOMAIN-SUFFIX,pixel.barion.com, reject
 DOMAIN-SUFFIX,rum.marquardmedia.hu, reject

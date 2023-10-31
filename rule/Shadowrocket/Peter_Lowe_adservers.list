@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 20 Oct 2023 22:48:29 GMT
-# entries:        3722
+# entries:        3721
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3513,7 +3513,6 @@ DOMAIN-SUFFIX,unbecominglamp.com, reject
 DOMAIN-SUFFIX,understoodocean.com, reject
 DOMAIN-SUFFIX,undertone.com, reject
 DOMAIN-SUFFIX,unknowntray.com, reject
-DOMAIN-SUFFIX,unless.com, reject
 DOMAIN-SUFFIX,unrulymedia.com, reject
 DOMAIN-SUFFIX,untd.com, reject
 DOMAIN-SUFFIX,untidyquestion.com, reject

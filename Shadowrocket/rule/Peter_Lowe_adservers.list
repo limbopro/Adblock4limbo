@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 20 Oct 2023 22:48:29 GMT
+# last updated:   Tue, 31 Oct 2023 21:51:43 GMT
 # entries:        3721
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -1021,6 +1021,7 @@ DOMAIN-SUFFIX,app-analytics.snapchat.com, reject
 DOMAIN-SUFFIX,app-measurement.com, reject
 DOMAIN-SUFFIX,app.pendo.io, reject
 DOMAIN-SUFFIX,appboycdn.com, reject
+DOMAIN-SUFFIX,appmetrica.yandex.ru, reject
 DOMAIN-SUFFIX,appsflyer.com, reject
 DOMAIN-SUFFIX,aps.hearstnp.com, reject
 DOMAIN-SUFFIX,apsalar.com, reject
@@ -1207,7 +1208,6 @@ DOMAIN-SUFFIX,bkrtx.com, reject
 DOMAIN-SUFFIX,blingbucks.com, reject
 DOMAIN-SUFFIX,blis.com, reject
 DOMAIN-SUFFIX,blockadblock.com, reject
-DOMAIN-SUFFIX,blockthrough.com, reject
 DOMAIN-SUFFIX,blogads.com, reject
 DOMAIN-SUFFIX,blogcounter.de, reject
 DOMAIN-SUFFIX,blogherads.com, reject

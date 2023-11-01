@@ -49,7 +49,7 @@
 
 > S:surge; Q:Quantumultx; T:油猴脚本支持；X:Shadowrocket支持；
 
-> FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）
+> FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）；iOS 用户常见FAQ：https://t.me/Adblock4limbo/21 ； 油猴用户常见FAQ：https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 
 @> Surge 用户如需访问 Pornhub ，请直接访问 cn.pxxxn.com （即中文版），访问 www.pxxxn.com 或会失败；
 
@@ -70,7 +70,19 @@
 
 快来提交 [issue](https://github.com/limbopro/Adblock4limbo/issues) 吧
 
+### 💡 涉及重要脚本及其源码
+
+> 每日凌晨0点同步更新至Github仓库；
+
+- **Adblock4limbo.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.js 重写对应脚本及其对应URL路径 
+
+- **Adblock4limbo.user.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js （油猴用户优先推荐安装此版本脚本；去广告实现用户脚本及其对应URL路径；）
+
+- **Adblock4limbo.function.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.function.js 导航页扩展脚本及其对应URL路径 
+
 ## 毒奶去广告使用方法（配置步骤）
+
+完整配置教程：https://limbopro.com/archives/12904.html
 
 ### 毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）
 

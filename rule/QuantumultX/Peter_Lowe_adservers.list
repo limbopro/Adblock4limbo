@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Tue, 31 Oct 2023 21:51:43 GMT
-# entries:        3721
+# entries:        3720
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1451,7 +1451,6 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com, reject
 DOMAIN-SUFFIX,collector.cdp.cnn.com, reject
 DOMAIN-SUFFIX,colonize.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
-DOMAIN-SUFFIX,commindo-media-ressourcen.de, reject
 DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,commonswing.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
@@ -2466,6 +2465,7 @@ DOMAIN-SUFFIX,needlessnorth.com, reject
 DOMAIN-SUFFIX,needyneedle.com, reject
 DOMAIN-SUFFIX,neighborlywatch.com, reject
 DOMAIN-SUFFIX,nend.net, reject
+DOMAIN-SUFFIX,neocounter.neoworx-blog-tools.net, reject
 DOMAIN-SUFFIX,nervoussummer.com, reject
 DOMAIN-SUFFIX,net-filter.com, reject
 DOMAIN-SUFFIX,netaffiliation.com, reject
@@ -3419,7 +3419,6 @@ DOMAIN-SUFFIX,tracking.miui.com, reject
 DOMAIN-SUFFIX,tracking.netalerts.io, reject
 DOMAIN-SUFFIX,tracking.olx-st.com, reject
 DOMAIN-SUFFIX,tracking.orixa-media.com, reject
-DOMAIN-SUFFIX,tracking.pastapplauddeterseminarproof.makeup, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject
 DOMAIN-SUFFIX,tracking.theoceanac.online, reject
 DOMAIN-SUFFIX,tracking.thinkabt.com, reject

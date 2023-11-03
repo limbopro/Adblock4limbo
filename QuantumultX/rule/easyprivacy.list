@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311021140
+## ! Version: 202311031431
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Nov 2023 11:40 UTC
+## ! Last modified: 03 Nov 2023 14:31 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3896,6 +3896,7 @@ DOMAIN-SUFFIX,euclid.kuula.co, reject
 DOMAIN-SUFFIX,eurogamer-uk.eurogamer.net, reject
 DOMAIN-SUFFIX,event-api.reverb.com, reject
 DOMAIN-SUFFIX,event-collector.moviesanywhere.com, reject
+DOMAIN-SUFFIX,event.platform.tunein.com, reject
 DOMAIN-SUFFIX,eventlog.jackpot.de, reject
 DOMAIN-SUFFIX,events-prod.autolist.com, reject
 DOMAIN-SUFFIX,events-tracker.deliveroo.net, reject

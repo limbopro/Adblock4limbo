@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Tue, 31 Oct 2023 21:51:43 GMT
-# entries:        3721
+# entries:        3720
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1451,7 +1451,6 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com
 DOMAIN-SUFFIX,collector.cdp.cnn.com
 DOMAIN-SUFFIX,colonize.com
 DOMAIN-SUFFIX,comfortablecheese.com
-DOMAIN-SUFFIX,commindo-media-ressourcen.de
 DOMAIN-SUFFIX,commissionmonster.com
 DOMAIN-SUFFIX,commonswing.com
 DOMAIN-SUFFIX,communications.melitaltd.com
@@ -2466,6 +2465,7 @@ DOMAIN-SUFFIX,needlessnorth.com
 DOMAIN-SUFFIX,needyneedle.com
 DOMAIN-SUFFIX,neighborlywatch.com
 DOMAIN-SUFFIX,nend.net
+DOMAIN-SUFFIX,neocounter.neoworx-blog-tools.net
 DOMAIN-SUFFIX,nervoussummer.com
 DOMAIN-SUFFIX,net-filter.com
 DOMAIN-SUFFIX,netaffiliation.com
@@ -3419,7 +3419,6 @@ DOMAIN-SUFFIX,tracking.miui.com
 DOMAIN-SUFFIX,tracking.netalerts.io
 DOMAIN-SUFFIX,tracking.olx-st.com
 DOMAIN-SUFFIX,tracking.orixa-media.com
-DOMAIN-SUFFIX,tracking.pastapplauddeterseminarproof.makeup
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.theoceanac.online
 DOMAIN-SUFFIX,tracking.thinkabt.com

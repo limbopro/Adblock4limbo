@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["document.cookie"],["Math.round"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["document.cookie"],["Math.round"],["sp"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimmoivn.pro",3],["tvhayt.org",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimbom.net",3],["phimmoi.im",3],["javnong.cc",4],["plvb.xyz",[5,6,7,8,9]],["subnhanhvl.cc",10],["subnhanh.im",10],["phimmoi4s.com",10],["phimdinhcao.net",10],["phimlongtieng.net",10],["phimdinhcao.com",10],["ophim.vip",10],["tinsoikeo.vip",11],["viettoons.tv",12],["phimmoiaz.cc",12],["m.blogtruyen.vn",12],["vinaurl.net",12],["animet.net",12],["ytstv.me",13],["yts.do",13],["yts.mx",13],["yts.rs",13],["zingnews.vn",14],["zuiphim.com",15]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimvietsub.pro",3],["tvhayy.net",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimbom.net",3],["sieudamtv.com",3],["phimmoi.im",3],["javnong.cc",4],["nettruyenus.net",5],["plvb.xyz",[6,7,8,9,10]],["subnhanhvl.co",11],["subnhanh.im",11],["phimmoi4s.com",11],["phimdinhcao.net",11],["phimlongtieng.net",11],["phimdinhcao.com",11],["ophim.vip",11],["tinsoikeo.vip",12],["viettoons.tv",13],["phimmoiaz.cc",13],["m.blogtruyen.vn",13],["vinaurl.net",13],["animet.net",13],["ytstv.me",14],["yts.do",14],["yts.mx",14],["yts.rs",14],["zingnews.vn",15],["zuiphim.com",16]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#tp-snp2"],["button#btn-gotolink","","1000"],["#verify"],["#notarobot","","100"],[".safeb","","1500"],["a.get-link, .get-link.btn-lg.btn-success.btn","","9000"]];
+const argsList = [["#tp-snp2"],["button#btn-gotolink","","1000"],[".myButton"],["#download-button > input"],["#download"],["[value=\"Download\"]"],[".butt","","1000"],["#top_nav"],["#verify"],["#notarobot","","100"],[".safeb","","1500"],["a.get-link, .get-link.btn-lg.btn-success.btn","","9000"],[".link-button.button"],["#invisibleCaptchaShortlink"],[".get-link.link-button.button","","7500"]];
 
-const hostnamesMap = new Map([["viralxns.com",0],["wp.uploadfiles.in",0],["uploadsoon.com",0],["viralsbaba1.blogspot.com",1],["creditsalah.com",[2,3,4]],["urlking.xyz",[2,3,4]],["xpshort.com",5]]);
+const hostnamesMap = new Map([["viralxns.com",0],["wp.uploadfiles.in",0],["uploadsoon.com",0],["viralsbaba1.blogspot.com",1],["easytech24.com",2],["freethemesy.com",[3,4,5]],["httpmovies.online",6],["techyzero.com",6],["profitshort.com",7],["courselinkfree.us",7],["technorozen.com",7],["hubdrive.me",7],["bestadvise4u.com",7],["newztalkies.com",7],["10desires.org",7],["theapknews.shop",7],["aiotechnical.com",7],["cryptonewzhub.com",7],["trendzguruji.me",7],["techvybes.com",7],["wizitales.com",7],["101desires.com",7],["fullformhindime.in",[8,9,10]],["xpshort.com",11],["exeo.app",[12,13,14]]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"]];
+const argsList = [["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[jsaction=\"JIbuQc:NdGjVc(dwvGkc)\"] button"],["div[jsaction=\"JIbuQc:mZ4eAc\"] button[aria-label], div[jsaction=\"JIbuQc:T1q6Me\"] button[aria-label], form[jsaction=\"submit:ldDdv(preventDefault=true)\"] button","","50"],["[href=\"/x-set-cookie/\"]"]];
 
-const hostnamesMap = new Map([["tennisassa.fi",0]]);
+const hostnamesMap = new Map([["tennisassa.fi",0],["consent.youtube.com",[1,2]],["f1racing.pl",3]]);
 
 const entitiesMap = new Map([]);
 

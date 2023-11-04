@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311031431
+## ! Version: 202311041233
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Nov 2023 14:31 UTC
+## ! Last modified: 04 Nov 2023 12:33 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -40,6 +40,7 @@ DOMAIN-SUFFIX,adspsp.com, reject
 DOMAIN-SUFFIX,adstk.io, reject
 DOMAIN-SUFFIX,adultium.com, reject
 DOMAIN-SUFFIX,agkn.com, reject
+DOMAIN-SUFFIX,agma-analytics.de, reject
 DOMAIN-SUFFIX,allvideometrika.com, reject
 DOMAIN-SUFFIX,alpha1trk.com, reject
 DOMAIN-SUFFIX,altopd.com, reject
@@ -2243,6 +2244,7 @@ DOMAIN-SUFFIX,click.appinthestore.com, reject
 DOMAIN-SUFFIX,click360v2-ingest.azurewebsites.net, reject
 DOMAIN-SUFFIX,clicks.dealer.com, reject
 DOMAIN-SUFFIX,clicks.tyuwq.com, reject
+DOMAIN-SUFFIX,clicktalecdn.sslcs.cdngc.net, reject
 DOMAIN-SUFFIX,clicktracker.iscan.nl, reject
 DOMAIN-SUFFIX,client-analytics.braintreegateway.com, reject
 DOMAIN-SUFFIX,client-logger.beta.salemove.com, reject
@@ -2786,6 +2788,7 @@ DOMAIN-SUFFIX,stats.mituyu.com, reject
 DOMAIN-SUFFIX,stats.mpthemes.net, reject
 DOMAIN-SUFFIX,stats.nebula.fi, reject
 DOMAIN-SUFFIX,stats.netbopdev.co.uk, reject
+DOMAIN-SUFFIX,stats.netdriven.com, reject
 DOMAIN-SUFFIX,stats.olark.com, reject
 DOMAIN-SUFFIX,stats.ozwebsites.biz, reject
 DOMAIN-SUFFIX,stats.phoenix-widget.com, reject
@@ -4239,6 +4242,7 @@ DOMAIN-SUFFIX,v.adblockultimate.net, reject
 DOMAIN-SUFFIX,v.ctrl.blog, reject
 DOMAIN-SUFFIX,views.arabnews.com, reject
 DOMAIN-SUFFIX,views.asura.gg, reject
+DOMAIN-SUFFIX,views.asurascans.com, reject
 DOMAIN-SUFFIX,vortex.hulu.com, reject
 DOMAIN-SUFFIX,w3-reporting.reddit.com, reject
 DOMAIN-SUFFIX,wa.childrensplace.com, reject

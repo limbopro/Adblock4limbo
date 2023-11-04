@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["pagead2.googlesyndication.com"],["v.fwmrm.net/","true"]];
+const argsList = [["pagead2.googlesyndication.com"],["v.fwmrm.net/","true"],["/ping?token="]];
 
-const hostnamesMap = new Map([["ebookdz.com",0],["6play.fr",1]]);
+const hostnamesMap = new Map([["ebookdz.com",0],["6play.fr",1],["app.molotov.tv",2]]);
 
 const entitiesMap = new Map([["empire-streaming",0]]);
 

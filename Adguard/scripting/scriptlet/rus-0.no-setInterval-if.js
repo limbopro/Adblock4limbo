@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["clientHeight"],["debugger"],["move_string"],["replaceWith"]];
+const argsList = [["anti-adblock"],["clientHeight"],["debugger"],["move_string"],["replaceWith"]];
 
-const hostnamesMap = new Map([["fatcatslim.ru",0],["aniu.ru",1],["liveball.uno",1],["anime-chan.me",2],["volyninfo.com",3]]);
+const hostnamesMap = new Map([["howdyho.net",0],["fatcatslim.ru",1],["aniu.ru",2],["liveball.uno",2],["anime-chan.me",3],["volyninfo.com",4]]);
 
 const entitiesMap = new Map([]);
 

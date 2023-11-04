@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["load","adsCount"],["error","adscript-error"],["error","getadmiral.com"],["load","ad blocker"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
+const argsList = [["load","adsCount"],["error","adscript-error"],["load","ad blocker"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
 
-const hostnamesMap = new Map([["blog-and-destroy.com",0],["coolpan.net",1],["nordot.app",2],["ad-contents.jp",3],["anacap.doorblog.jp",4],["anianierosuki.work",5],["uraaka-joshi.com",6],["tokyomotion.net",7],["ero-video.net",8],["jp-xvideos.info",9]]);
+const hostnamesMap = new Map([["blog-and-destroy.com",0],["coolpan.net",1],["ad-contents.jp",2],["anacap.doorblog.jp",3],["anianierosuki.work",4],["uraaka-joshi.com",5],["tokyomotion.net",6],["ero-video.net",7],["jp-xvideos.info",8]]);
 
 const entitiesMap = new Map([]);
 

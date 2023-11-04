@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adf_plays","2"],["segmentDeviceId","$remove$"]];
+const argsList = [["adf_plays","2"],["adshield-analytics-uuid","$remove$"],["segmentDeviceId","$remove$"]];
 
-const hostnamesMap = new Map([["adultdeepfakes.com",0],["mindbodygreen.com",1]]);
+const hostnamesMap = new Map([["adultdeepfakes.com",0],["loawa.com",1],["ygosu.com",1],["sportalkorea.com",1],["algumon.com",1],["hancinema.net",1],["enetnews.co.kr",1],["edaily.co.kr",1],["economist.co.kr",1],["etoday.co.kr",1],["hankyung.com",1],["isplus.com",1],["hometownstation.com",1],["kagit.kr",1],["inven.co.kr",1],["viva100.com",1],["joongdo.co.kr",1],["jjang0u.com",1],["tenbizt.com",1],["tvreport.co.kr",1],["newautopost.co.kr",1],["mememedia.co.kr",1],["mobilitytv.co.kr",1],["cboard.net",1],["a-ha.io",1],["interfootball.co.kr",1],["fourfourtwo.co.kr",1],["apkmirror.com",1],["dotkeypress.kr",1],["viewcash.co.kr",1],["tripplus.co.kr",1],["enterdiary.com",1],["mtodayauto.com",1],["mindbodygreen.com",2]]);
 
 const entitiesMap = new Map([]);
 

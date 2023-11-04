@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["show"]];
+const argsList = [["show"],["DisplayBHTML","5000"],["callback","4001"]];
 
-const hostnamesMap = new Map([["gocmod.com",0]]);
+const hostnamesMap = new Map([["gocmod.com",0],["linkneverdie.net",[1,2]]]);
 
 const entitiesMap = new Map([]);
 

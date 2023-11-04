@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop1\"]}","{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop2\"]}"],["{\"selector\":\"body\",\"action\":[\"remove-class\",\"compensate-for-scrollbar\"]}"],["{\"selector\":\".col\",\"tasks\":[[\"has\",{\"selector\":\"span\",\"tasks\":[[\"has-text\",\"Tin tài trợ\"]]}]]}"]];
+const argsList = [["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"],["{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop1\"]}","{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop2\"]}"],["{\"selector\":\"body\",\"action\":[\"remove-class\",\"compensate-for-scrollbar\"]}"],["{\"selector\":\".col\",\"tasks\":[[\"has\",{\"selector\":\"span\",\"tasks\":[[\"has-text\",\"Tin tài trợ\"]]}]]}"]];
 
-const hostnamesMap = new Map([["boophim.net",0],["mephimtv.net",1],["24h.com.vn",2]]);
+const hostnamesMap = new Map([["metruyencv.com",0],["metruyencv.net",0],["boophim.net",1],["mephimtv.net",2],["24h.com.vn",3]]);
 
 const entitiesMap = new Map(undefined);
 

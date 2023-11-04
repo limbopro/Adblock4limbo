@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["countTVC","0"],["isSkipAds","true"],["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["DisplayBHTML","noopFunc"],["urlAds",""],["adsTvcs",""],["seconds","0"],["adsPlayer",""]];
+const argsList = [["countTVC","0"],["isSkipAds","true"],["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["urlAds",""],["adsTvcs",""],["seconds","0"],["adsPlayer",""]];
 
-const hostnamesMap = new Map([["bongda365c.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["linkneverdie.net",4],["phimvuihd.org",5],["vaoroi13.online",6],["xoivoa.site",[6,8]],["vndoc.com",7]]);
+const hostnamesMap = new Map([["bongda365f.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["phimvuihd.org",4],["vaoroi13.online",5],["xoivof.site",[5,7]],["vndoc.com",6]]);
 
 const entitiesMap = new Map([]);
 

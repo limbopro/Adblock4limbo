@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["initials.bannerPrefix"],["history.pushState"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
 
-const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["teammy.ru",2],["raindropteamfan.com",2],["expertology.ru",3],["electricalvoice.com",4],["shield-project.ru",5]]);
+const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["teammy.ru",2],["raindropteamfan.com",2],["expertology.ru",3],["electricalvoice.com",4],["doujindesu.tv",5],["shield-project.ru",5]]);
 
 const entitiesMap = new Map([]);
 

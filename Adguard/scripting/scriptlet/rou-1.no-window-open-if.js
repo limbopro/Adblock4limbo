@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["nosteam.ro",0],["nosteamgames.ro",0],["posturi.live",0]]);
+const hostnamesMap = new Map([["nosteam.ro",0],["nosteamgames.ro",0],["posturi.live",0],["vzlinks.com",0]]);
 
 const entitiesMap = new Map([["filmeserialegratis",0],["fsplayer",0]]);
 

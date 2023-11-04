@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["popup-closed","true"],["fs.adb.dis","1"]];
+const argsList = [["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
 
-const hostnamesMap = new Map([["makemytrip.com",0],["fantasyfootballhub.co.uk",1],["northcasino.com",2],["dream.ai",3],["imdb.com",4],["ringover.com",5],["eneba.com",6],["1mg.com",7],["flipkart.com",8],["maxicours.com",9],["270towin.com",10]]);
+const hostnamesMap = new Map([["makemytrip.com",0],["fantasyfootballhub.co.uk",1],["northcasino.com",2],["dream.ai",3],["imdb.com",4],["ringover.com",5],["eneba.com",6],["1mg.com",7],["flipkart.com",8],["selenagomez.com",9],["maxicours.com",10],["270towin.com",11],["getemoji.com",11]]);
 
 const entitiesMap = new Map([]);
 

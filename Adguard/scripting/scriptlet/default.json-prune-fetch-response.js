@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["avails"],["response.ads"]];
+const argsList = [["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["avails"],["response.ads"],["plugins.adService"]];
 
-const hostnamesMap = new Map([["hulu.com",[0,1]],["nbc.com",2],["player.pop.co.uk",3],["player.popfun.co.uk",3]]);
+const hostnamesMap = new Map([["hulu.com",[0,1]],["nbc.com",2],["player.pop.co.uk",3],["player.popfun.co.uk",3],["iprima.cz",4]]);
 
 const entitiesMap = new Map([]);
 

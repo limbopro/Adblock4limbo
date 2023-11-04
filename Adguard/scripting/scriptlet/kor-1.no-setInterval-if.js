@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["animationEffects[settings.animation.effect]"]];
 
-const hostnamesMap = new Map([["zzapflix.tv",0]]);
+const hostnamesMap = new Map([["zzzz.lol",0]]);
 
 const entitiesMap = new Map([]);
 

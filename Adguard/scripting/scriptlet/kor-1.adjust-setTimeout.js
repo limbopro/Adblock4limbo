@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["closeBtn.innerHTML","","0.001"]];
 
-const hostnamesMap = new Map([["lover922.net",0],["lover923.net",0],["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0]]);
+const hostnamesMap = new Map([["lover923.net",0],["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0],["lover932.net",0]]);
 
 const entitiesMap = new Map([]);
 

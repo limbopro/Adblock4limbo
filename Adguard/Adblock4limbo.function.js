@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.10.29
+// @version      0.1.11.04
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -853,6 +853,15 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['MDN', 'https://developer.mozilla.org/zh-CN/', '_blank', 'Developer', 'common'],
 ['w3schools', 'https://w3schools.cn/', '_blank', 'Developer', 'common'],
 ['Stack Overflow', 'https://stackoverflow.com/', '_blank', 'Developer', 'common'],
+['Typecho', 'https://typecho.org/', '_blank', 'front-build', 'special'],
+['Vercel', 'https://vercel.com/new', '_blank', 'front-build', 'special'],
+['Cloudflare Pages', 'https://pages.cloudflare.com/', '_blank', 'front-build', 'special'],
+['Gitpages', 'https://pages.github.com/', '_blank', 'front-build', 'special'],
+['Fly.io', 'https://fly.io/', '_blank', 'front-build', 'common'],
+['NameSilo', 'https://www.namesilo.com/', '_blank', 'domain-buy', 'better'],
+['Cloudflare Domain', 'https://www.cloudflare.com/products/registrar/', '_blank', 'domain-buy', 'better'],
+['NameCheap', 'https://www.namecheap.com/', '_blank', 'domain-buy', 'common'],
+['freenom', 'https://www.freenom.com/zh/freeandpaiddomains.html', '_blank', 'domain-buy', 'common'],
 ['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'special'],
 ['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'special'],
 ['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'special'],
@@ -1058,6 +1067,8 @@ function parentElement_add() {
                 parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
                 parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
+                parent_push('.echo', 'front-build', 4, "建站工具//", "front-build")
+                parent_push('.echo', 'domain-buy', 4, "域名注册商//", "domain-buy")
                 parent_push(".echo", 'AICHAT', 4, '智能AI//', 'AICHAT')
                 parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
                 parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
@@ -1082,6 +1093,8 @@ function parentElement_add() {
                 parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
                 parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
+                parent_push('.echo', 'front-build', 4, "建站工具//", "front-build")
+                parent_push('.echo', 'domain-buy', 4, "域名注册商//", "domain-buy")
                 parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
                 parent_push('.echo', 'Media', 4, '娱乐媒体//', 'Media')

@@ -42,9 +42,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.visibilityState","visible"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"]];
+const argsList = [["document.visibilityState","visible"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"]];
 
-const hostnamesMap = new Map([["dropgalaxy.com",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]]]);
+const hostnamesMap = new Map([["dropgalaxy.com",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4]]);
 
 const entitiesMap = new Map([]);
 

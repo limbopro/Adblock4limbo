@@ -33,7 +33,7 @@
 
 // hrv-0
 
-const toImport = [[12989194,".fold_home__pasica_banner:not(html, body)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body)"],[6879724,".homepage-top-google-banner:not(html, body)"],[13987257,".js-gpt-ad:not(html, body)"],[2689874,".banner-izdvojeno:not(html, body)"],[8608347,".elementor-widget-smartmag-codes:not(html, body)"],[14656153,".banner__placeholder:not(html, body)"]];
+const toImport = [[12989194,".fold_home__pasica_banner:not(html, body)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body)"],[6879724,".homepage-top-google-banner:not(html, body)"],[13987257,".js-gpt-ad:not(html, body)"],[2689874,".banner-izdvojeno:not(html, body)"],[8608347,".elementor-widget-smartmag-codes:not(html, body)"],[14656153,".banner__placeholder:not(html, body)"],[1377122,".cxenseignore:not(html, body)"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

@@ -42,7 +42,7 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#progress-value","data-timer","3"],["a[href$=\"?ref=recommended\"]","target",""]];
+const argsList = [["#progress-value","data-timer","10"],["a[href$=\"?ref=recommended\"]","target",""]];
 
 const hostnamesMap = new Map([["howdyho.net",0],["dtf.ru",1],["vc.ru",1]]);
 

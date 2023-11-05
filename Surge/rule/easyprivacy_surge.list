@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311041233
+## ! Version: 202311051420
 ## ! Title: EasyPrivacy
-## ! Last modified: 04 Nov 2023 12:33 UTC
+## ! Last modified: 05 Nov 2023 14:20 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2472,6 +2472,7 @@ DOMAIN-SUFFIX,hits.informer.com
 DOMAIN-SUFFIX,hktracker.hankookilbo.com
 DOMAIN-SUFFIX,hpr.outbrain.com
 DOMAIN-SUFFIX,hspbotdetection.azurewebsites.net
+DOMAIN-SUFFIX,hydro-ma-proxy.akamaized.net
 DOMAIN-SUFFIX,i.compendium.com
 DOMAIN-SUFFIX,i.viafoura.co
 DOMAIN-SUFFIX,iabusprivacy.pmc.com

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 31 Oct 2023 21:51:43 GMT
-# entries:        3720
+# last updated:   Sun, 05 Nov 2023 02:35:40 GMT
+# entries:        3721
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2509,6 +2509,7 @@ DOMAIN-SUFFIX,nr.static.mmcdn.com, reject
 DOMAIN-SUFFIX,ns1p.net, reject
 DOMAIN-SUFFIX,ntv.io, reject
 DOMAIN-SUFFIX,ntvk1.ru, reject
+DOMAIN-SUFFIX,nullitics.com, reject
 DOMAIN-SUFFIX,nuseek.com, reject
 DOMAIN-SUFFIX,nuttyorganization.com, reject
 DOMAIN-SUFFIX,nzaza.com, reject

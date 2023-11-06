@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311051420
+## ! Version: 202311061520
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Nov 2023 14:20 UTC
+## ! Last modified: 06 Nov 2023 15:20 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2269,6 +2269,7 @@ DOMAIN-SUFFIX,collect.rewardstyle.com
 DOMAIN-SUFFIX,collect.usefathom.com
 DOMAIN-SUFFIX,collector-*.px-client.net
 DOMAIN-SUFFIX,collector-api.99designs.com
+DOMAIN-SUFFIX,collector-api.frspecifics.com
 DOMAIN-SUFFIX,collector-soompi.viki.io
 DOMAIN-SUFFIX,collector.api.video
 DOMAIN-SUFFIX,collector.appconsent.io

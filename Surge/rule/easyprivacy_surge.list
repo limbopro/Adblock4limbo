@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311061520
+## ! Version: 202311071108
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Nov 2023 15:20 UTC
+## ! Last modified: 07 Nov 2023 11:08 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -77,6 +77,7 @@ DOMAIN-SUFFIX,cbdatatracker.com
 DOMAIN-SUFFIX,cdnhst.xyz
 DOMAIN-SUFFIX,ciqtracking.com
 DOMAIN-SUFFIX,cityrobotflower.com
+DOMAIN-SUFFIX,ck123.io
 DOMAIN-SUFFIX,ckies.net
 DOMAIN-SUFFIX,clarity.ms
 DOMAIN-SUFFIX,clearbitscripts.com
@@ -215,6 +216,7 @@ DOMAIN-SUFFIX,lite-cdn.com
 DOMAIN-SUFFIX,liveyield.com
 DOMAIN-SUFFIX,lltrck.com
 DOMAIN-SUFFIX,lmepbq.com
+DOMAIN-SUFFIX,log.dance
 DOMAIN-SUFFIX,logicanalytics.io
 DOMAIN-SUFFIX,logtail.com
 DOMAIN-SUFFIX,loopcybersec.com
@@ -2065,6 +2067,7 @@ DOMAIN-SUFFIX,analytics.cmn.com
 DOMAIN-SUFFIX,analytics.codigo.se
 DOMAIN-SUFFIX,analytics.contentexchange.me
 DOMAIN-SUFFIX,analytics.convertlanguage.com
+DOMAIN-SUFFIX,analytics.data.visenze.com
 DOMAIN-SUFFIX,analytics.dev.htmedia.in
 DOMAIN-SUFFIX,analytics.dev.springboardvideo.com
 DOMAIN-SUFFIX,analytics.developer.riotgames.com
@@ -4027,6 +4030,7 @@ DOMAIN-SUFFIX,monitor.channel4.com
 DOMAIN-SUFFIX,mr.homedepot.ca
 DOMAIN-SUFFIX,mstm.motorsport.com
 DOMAIN-SUFFIX,n26-trusted.n26.com
+DOMAIN-SUFFIX,na.groupondata.com
 DOMAIN-SUFFIX,nasi.etherscan.com
 DOMAIN-SUFFIX,net.haier.com
 DOMAIN-SUFFIX,no9pldds1lmn3.soundcloud.com

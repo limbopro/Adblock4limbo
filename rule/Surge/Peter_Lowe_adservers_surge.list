@@ -1,8 +1,10 @@
+
+
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 05 Nov 2023 02:35:40 GMT
-# entries:        3721
+# entries:        3720
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3353,7 +3355,6 @@ DOMAIN-SUFFIX,top100.mafia.ru
 DOMAIN-SUFFIX,top123.ro
 DOMAIN-SUFFIX,top20free.com
 DOMAIN-SUFFIX,topforall.com
-DOMAIN-SUFFIX,topgamesites.net
 DOMAIN-SUFFIX,toplist.cz
 DOMAIN-SUFFIX,toplist.pornhost.com
 DOMAIN-SUFFIX,toplista.mw.hu

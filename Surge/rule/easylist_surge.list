@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202311071108
+## ! Version: 202311081525
 ## ! Title: EasyList
-## ! Last modified: 07 Nov 2023 11:08 UTC
+## ! Last modified: 08 Nov 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -6841,6 +6841,7 @@ DOMAIN-SUFFIX,cpaconvtrk.net
 DOMAIN-SUFFIX,cpahmeokparn.com
 DOMAIN-SUFFIX,cpalabtracking.com
 DOMAIN-SUFFIX,cpaoffers.network
+DOMAIN-SUFFIX,cpaokhfmaccu.com
 DOMAIN-SUFFIX,cpaspeed.online
 DOMAIN-SUFFIX,cpaway.com
 DOMAIN-SUFFIX,cpays.com
@@ -10694,6 +10695,7 @@ DOMAIN-SUFFIX,frailshootingexamination.com
 DOMAIN-SUFFIX,framentyder.pro
 DOMAIN-SUFFIX,frameworkdeserve.com
 DOMAIN-SUFFIX,francetobaccotrading.com
+DOMAIN-SUFFIX,franciatirribi.com
 DOMAIN-SUFFIX,francisunbeget.com
 DOMAIN-SUFFIX,francoistsjacqu.info
 DOMAIN-SUFFIX,franecki.net
@@ -13933,6 +13935,7 @@ DOMAIN-SUFFIX,jaggedunique.pro
 DOMAIN-SUFFIX,jaggiertridii.com
 DOMAIN-SUFFIX,jagice.uno
 DOMAIN-SUFFIX,jagqrhvcvoqjw.com
+DOMAIN-SUFFIX,jaigaivi.xyz
 DOMAIN-SUFFIX,jailabridge.com
 DOMAIN-SUFFIX,jainbagong.com
 DOMAIN-SUFFIX,jaireehu.net
@@ -24546,6 +24549,7 @@ DOMAIN-SUFFIX,spinalmultiple.com
 DOMAIN-SUFFIX,spinbiased.com
 DOMAIN-SUFFIX,spinbox.net
 DOMAIN-SUFFIX,spinbox1.com
+DOMAIN-SUFFIX,spinderirpe.com
 DOMAIN-SUFFIX,spinna.online
 DOMAIN-SUFFIX,spinna.shop
 DOMAIN-SUFFIX,spinna.site
@@ -25892,6 +25896,7 @@ DOMAIN-SUFFIX,thewhizmarketing.com
 DOMAIN-SUFFIX,thewowfeed.com
 DOMAIN-SUFFIX,thewscozier.uno
 DOMAIN-SUFFIX,theyenglory.guru
+DOMAIN-SUFFIX,theyunm.com
 DOMAIN-SUFFIX,thgebtibfyry.com
 DOMAIN-SUFFIX,thick-ruin.pro
 DOMAIN-SUFFIX,thickbabysittinghandled.com
@@ -26570,6 +26575,7 @@ DOMAIN-SUFFIX,treehundredarmament.com
 DOMAIN-SUFFIX,treenghsas.com
 DOMAIN-SUFFIX,treepullmerriment.com
 DOMAIN-SUFFIX,trehtnoas.com
+DOMAIN-SUFFIX,treitrejewfish.com
 DOMAIN-SUFFIX,trekstereo.com
 DOMAIN-SUFFIX,trellian.com
 DOMAIN-SUFFIX,tremblingpitcher.com
@@ -29831,6 +29837,7 @@ DOMAIN-SUFFIX,yummiesfootle.space
 DOMAIN-SUFFIX,yummy-gap.pro
 DOMAIN-SUFFIX,yumomis.com
 DOMAIN-SUFFIX,yunded.com
+DOMAIN-SUFFIX,yunmaue.com
 DOMAIN-SUFFIX,yunshipei.com
 DOMAIN-SUFFIX,yupfiles.net
 DOMAIN-SUFFIX,yuppads.com
@@ -29906,6 +29913,7 @@ DOMAIN-SUFFIX,zationservantas.info
 DOMAIN-SUFFIX,zatloudredr.com
 DOMAIN-SUFFIX,zatnoh.com
 DOMAIN-SUFFIX,zaubanel.com
+DOMAIN-SUFFIX,zaucharo.xyz
 DOMAIN-SUFFIX,zauglomo.net
 DOMAIN-SUFFIX,zauglust.net
 DOMAIN-SUFFIX,zaumaico.com

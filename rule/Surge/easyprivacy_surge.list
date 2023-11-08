@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311071108
+## ! Version: 202311081525
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Nov 2023 11:08 UTC
+## ! Last modified: 08 Nov 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -73,6 +73,7 @@ DOMAIN-SUFFIX,bx-cloud.com
 DOMAIN-SUFFIX,bydst.com
 DOMAIN-SUFFIX,cadsuta.net
 DOMAIN-SUFFIX,captcha-display.com
+DOMAIN-SUFFIX,catsunrunjam.com
 DOMAIN-SUFFIX,cbdatatracker.com
 DOMAIN-SUFFIX,cdnhst.xyz
 DOMAIN-SUFFIX,ciqtracking.com
@@ -990,6 +991,7 @@ DOMAIN-SUFFIX,fifthborder.com
 DOMAIN-SUFFIX,finalizeforce.com
 DOMAIN-SUFFIX,financefear.com
 DOMAIN-SUFFIX,firstfrogs.com
+DOMAIN-SUFFIX,firsttexture.com
 DOMAIN-SUFFIX,flakyfeast.com
 DOMAIN-SUFFIX,flimsycircle.com
 DOMAIN-SUFFIX,flimsythought.com
@@ -1385,6 +1387,7 @@ DOMAIN-SUFFIX,placeframe.com
 DOMAIN-SUFFIX,placidperson.com
 DOMAIN-SUFFIX,plainplayground.com
 DOMAIN-SUFFIX,plainrequest.com
+DOMAIN-SUFFIX,planebasin.com
 DOMAIN-SUFFIX,planesorder.com
 DOMAIN-SUFFIX,plantdigestion.com
 DOMAIN-SUFFIX,plantpotato.com
@@ -1737,6 +1740,7 @@ DOMAIN-SUFFIX,squeakzinc.com
 DOMAIN-SUFFIX,squealingturn.com
 DOMAIN-SUFFIX,squeamishspot.com
 DOMAIN-SUFFIX,squirrelhands.com
+DOMAIN-SUFFIX,stakingbasket.com
 DOMAIN-SUFFIX,stakingscrew.com
 DOMAIN-SUFFIX,stakingslope.com
 DOMAIN-SUFFIX,stakingsmile.com
@@ -1840,6 +1844,7 @@ DOMAIN-SUFFIX,tastelesstrucks.com
 DOMAIN-SUFFIX,tastesnake.com
 DOMAIN-SUFFIX,tawdryson.com
 DOMAIN-SUFFIX,tdzvm.pw
+DOMAIN-SUFFIX,tearfulglass.com
 DOMAIN-SUFFIX,tediousticket.com
 DOMAIN-SUFFIX,tedioustooth.com
 DOMAIN-SUFFIX,teenytinycellar.com
@@ -2335,6 +2340,7 @@ DOMAIN-SUFFIX,cws.conviva.com
 DOMAIN-SUFFIX,d.shareaholic.com
 DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net
 DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net
+DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net
 DOMAIN-SUFFIX,dash.getsitecontrol.com
 DOMAIN-SUFFIX,data.circulate.com
 DOMAIN-SUFFIX,data.digitalks.az
@@ -3162,6 +3168,7 @@ DOMAIN-SUFFIX,d2t77mnxyo7adj.cloudfront.net
 DOMAIN-SUFFIX,d2tgfbvjf3q6hn.cloudfront.net
 DOMAIN-SUFFIX,d2wu036mkcz52n.cloudfront.net
 DOMAIN-SUFFIX,d2wy8f7a9ursnm.cloudfront.net
+DOMAIN-SUFFIX,d2zue0pgsssbc6.cloudfront.net
 DOMAIN-SUFFIX,d31y97ze264gaa.cloudfront.net
 DOMAIN-SUFFIX,d34ko97cxuv4p7.cloudfront.net
 DOMAIN-SUFFIX,d34qb8suadcc4g.cloudfront.net
@@ -3824,6 +3831,7 @@ DOMAIN-SUFFIX,c.fingerprint.com
 DOMAIN-SUFFIX,c.newyorker.com
 DOMAIN-SUFFIX,c.thredup.com
 DOMAIN-SUFFIX,c.vogue.com
+DOMAIN-SUFFIX,c.wired.com
 DOMAIN-SUFFIX,c.wort-suche.com
 DOMAIN-SUFFIX,c.xbox.com
 DOMAIN-SUFFIX,cl.canva.com
@@ -4082,6 +4090,7 @@ DOMAIN-SUFFIX,px.srvcs.tumblr.com
 DOMAIN-SUFFIX,pxl.indeed.com
 DOMAIN-SUFFIX,qc.newyorker.com
 DOMAIN-SUFFIX,qc.vogue.com
+DOMAIN-SUFFIX,qc.wired.com
 DOMAIN-SUFFIX,qm.redbull.com
 DOMAIN-SUFFIX,r.apkpure.net
 DOMAIN-SUFFIX,r.bbci.co.uk

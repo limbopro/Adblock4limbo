@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311071108
+## ! Version: 202311081525
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Nov 2023 11:08 UTC
+## ! Last modified: 08 Nov 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -73,6 +73,7 @@ DOMAIN-SUFFIX,bx-cloud.com, reject
 DOMAIN-SUFFIX,bydst.com, reject
 DOMAIN-SUFFIX,cadsuta.net, reject
 DOMAIN-SUFFIX,captcha-display.com, reject
+DOMAIN-SUFFIX,catsunrunjam.com, reject
 DOMAIN-SUFFIX,cbdatatracker.com, reject
 DOMAIN-SUFFIX,cdnhst.xyz, reject
 DOMAIN-SUFFIX,ciqtracking.com, reject
@@ -990,6 +991,7 @@ DOMAIN-SUFFIX,fifthborder.com, reject
 DOMAIN-SUFFIX,finalizeforce.com, reject
 DOMAIN-SUFFIX,financefear.com, reject
 DOMAIN-SUFFIX,firstfrogs.com, reject
+DOMAIN-SUFFIX,firsttexture.com, reject
 DOMAIN-SUFFIX,flakyfeast.com, reject
 DOMAIN-SUFFIX,flimsycircle.com, reject
 DOMAIN-SUFFIX,flimsythought.com, reject
@@ -1385,6 +1387,7 @@ DOMAIN-SUFFIX,placeframe.com, reject
 DOMAIN-SUFFIX,placidperson.com, reject
 DOMAIN-SUFFIX,plainplayground.com, reject
 DOMAIN-SUFFIX,plainrequest.com, reject
+DOMAIN-SUFFIX,planebasin.com, reject
 DOMAIN-SUFFIX,planesorder.com, reject
 DOMAIN-SUFFIX,plantdigestion.com, reject
 DOMAIN-SUFFIX,plantpotato.com, reject
@@ -1737,6 +1740,7 @@ DOMAIN-SUFFIX,squeakzinc.com, reject
 DOMAIN-SUFFIX,squealingturn.com, reject
 DOMAIN-SUFFIX,squeamishspot.com, reject
 DOMAIN-SUFFIX,squirrelhands.com, reject
+DOMAIN-SUFFIX,stakingbasket.com, reject
 DOMAIN-SUFFIX,stakingscrew.com, reject
 DOMAIN-SUFFIX,stakingslope.com, reject
 DOMAIN-SUFFIX,stakingsmile.com, reject
@@ -1840,6 +1844,7 @@ DOMAIN-SUFFIX,tastelesstrucks.com, reject
 DOMAIN-SUFFIX,tastesnake.com, reject
 DOMAIN-SUFFIX,tawdryson.com, reject
 DOMAIN-SUFFIX,tdzvm.pw, reject
+DOMAIN-SUFFIX,tearfulglass.com, reject
 DOMAIN-SUFFIX,tediousticket.com, reject
 DOMAIN-SUFFIX,tedioustooth.com, reject
 DOMAIN-SUFFIX,teenytinycellar.com, reject
@@ -2335,6 +2340,7 @@ DOMAIN-SUFFIX,cws.conviva.com, reject
 DOMAIN-SUFFIX,d.shareaholic.com, reject
 DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net, reject
 DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net, reject
+DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net, reject
 DOMAIN-SUFFIX,dash.getsitecontrol.com, reject
 DOMAIN-SUFFIX,data.circulate.com, reject
 DOMAIN-SUFFIX,data.digitalks.az, reject
@@ -3162,6 +3168,7 @@ DOMAIN-SUFFIX,d2t77mnxyo7adj.cloudfront.net, reject
 DOMAIN-SUFFIX,d2tgfbvjf3q6hn.cloudfront.net, reject
 DOMAIN-SUFFIX,d2wu036mkcz52n.cloudfront.net, reject
 DOMAIN-SUFFIX,d2wy8f7a9ursnm.cloudfront.net, reject
+DOMAIN-SUFFIX,d2zue0pgsssbc6.cloudfront.net, reject
 DOMAIN-SUFFIX,d31y97ze264gaa.cloudfront.net, reject
 DOMAIN-SUFFIX,d34ko97cxuv4p7.cloudfront.net, reject
 DOMAIN-SUFFIX,d34qb8suadcc4g.cloudfront.net, reject
@@ -3824,6 +3831,7 @@ DOMAIN-SUFFIX,c.fingerprint.com, reject
 DOMAIN-SUFFIX,c.newyorker.com, reject
 DOMAIN-SUFFIX,c.thredup.com, reject
 DOMAIN-SUFFIX,c.vogue.com, reject
+DOMAIN-SUFFIX,c.wired.com, reject
 DOMAIN-SUFFIX,c.wort-suche.com, reject
 DOMAIN-SUFFIX,c.xbox.com, reject
 DOMAIN-SUFFIX,cl.canva.com, reject
@@ -4082,6 +4090,7 @@ DOMAIN-SUFFIX,px.srvcs.tumblr.com, reject
 DOMAIN-SUFFIX,pxl.indeed.com, reject
 DOMAIN-SUFFIX,qc.newyorker.com, reject
 DOMAIN-SUFFIX,qc.vogue.com, reject
+DOMAIN-SUFFIX,qc.wired.com, reject
 DOMAIN-SUFFIX,qm.redbull.com, reject
 DOMAIN-SUFFIX,r.apkpure.net, reject
 DOMAIN-SUFFIX,r.bbci.co.uk, reject

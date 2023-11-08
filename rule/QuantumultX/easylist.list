@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202311071108
+## ! Version: 202311081525
 ## ! Title: EasyList
-## ! Last modified: 07 Nov 2023 11:08 UTC
+## ! Last modified: 08 Nov 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -6841,6 +6841,7 @@ DOMAIN-SUFFIX,cpaconvtrk.net, reject
 DOMAIN-SUFFIX,cpahmeokparn.com, reject
 DOMAIN-SUFFIX,cpalabtracking.com, reject
 DOMAIN-SUFFIX,cpaoffers.network, reject
+DOMAIN-SUFFIX,cpaokhfmaccu.com, reject
 DOMAIN-SUFFIX,cpaspeed.online, reject
 DOMAIN-SUFFIX,cpaway.com, reject
 DOMAIN-SUFFIX,cpays.com, reject
@@ -10694,6 +10695,7 @@ DOMAIN-SUFFIX,frailshootingexamination.com, reject
 DOMAIN-SUFFIX,framentyder.pro, reject
 DOMAIN-SUFFIX,frameworkdeserve.com, reject
 DOMAIN-SUFFIX,francetobaccotrading.com, reject
+DOMAIN-SUFFIX,franciatirribi.com, reject
 DOMAIN-SUFFIX,francisunbeget.com, reject
 DOMAIN-SUFFIX,francoistsjacqu.info, reject
 DOMAIN-SUFFIX,franecki.net, reject
@@ -13933,6 +13935,7 @@ DOMAIN-SUFFIX,jaggedunique.pro, reject
 DOMAIN-SUFFIX,jaggiertridii.com, reject
 DOMAIN-SUFFIX,jagice.uno, reject
 DOMAIN-SUFFIX,jagqrhvcvoqjw.com, reject
+DOMAIN-SUFFIX,jaigaivi.xyz, reject
 DOMAIN-SUFFIX,jailabridge.com, reject
 DOMAIN-SUFFIX,jainbagong.com, reject
 DOMAIN-SUFFIX,jaireehu.net, reject
@@ -24546,6 +24549,7 @@ DOMAIN-SUFFIX,spinalmultiple.com, reject
 DOMAIN-SUFFIX,spinbiased.com, reject
 DOMAIN-SUFFIX,spinbox.net, reject
 DOMAIN-SUFFIX,spinbox1.com, reject
+DOMAIN-SUFFIX,spinderirpe.com, reject
 DOMAIN-SUFFIX,spinna.online, reject
 DOMAIN-SUFFIX,spinna.shop, reject
 DOMAIN-SUFFIX,spinna.site, reject
@@ -25892,6 +25896,7 @@ DOMAIN-SUFFIX,thewhizmarketing.com, reject
 DOMAIN-SUFFIX,thewowfeed.com, reject
 DOMAIN-SUFFIX,thewscozier.uno, reject
 DOMAIN-SUFFIX,theyenglory.guru, reject
+DOMAIN-SUFFIX,theyunm.com, reject
 DOMAIN-SUFFIX,thgebtibfyry.com, reject
 DOMAIN-SUFFIX,thick-ruin.pro, reject
 DOMAIN-SUFFIX,thickbabysittinghandled.com, reject
@@ -26570,6 +26575,7 @@ DOMAIN-SUFFIX,treehundredarmament.com, reject
 DOMAIN-SUFFIX,treenghsas.com, reject
 DOMAIN-SUFFIX,treepullmerriment.com, reject
 DOMAIN-SUFFIX,trehtnoas.com, reject
+DOMAIN-SUFFIX,treitrejewfish.com, reject
 DOMAIN-SUFFIX,trekstereo.com, reject
 DOMAIN-SUFFIX,trellian.com, reject
 DOMAIN-SUFFIX,tremblingpitcher.com, reject
@@ -29831,6 +29837,7 @@ DOMAIN-SUFFIX,yummiesfootle.space, reject
 DOMAIN-SUFFIX,yummy-gap.pro, reject
 DOMAIN-SUFFIX,yumomis.com, reject
 DOMAIN-SUFFIX,yunded.com, reject
+DOMAIN-SUFFIX,yunmaue.com, reject
 DOMAIN-SUFFIX,yunshipei.com, reject
 DOMAIN-SUFFIX,yupfiles.net, reject
 DOMAIN-SUFFIX,yuppads.com, reject
@@ -29906,6 +29913,7 @@ DOMAIN-SUFFIX,zationservantas.info, reject
 DOMAIN-SUFFIX,zatloudredr.com, reject
 DOMAIN-SUFFIX,zatnoh.com, reject
 DOMAIN-SUFFIX,zaubanel.com, reject
+DOMAIN-SUFFIX,zaucharo.xyz, reject
 DOMAIN-SUFFIX,zauglomo.net, reject
 DOMAIN-SUFFIX,zauglust.net, reject
 DOMAIN-SUFFIX,zaumaico.com, reject

@@ -1,10 +1,8 @@
-
-
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 05 Nov 2023 02:35:40 GMT
-# entries:        3720
+# last updated:   Wed, 08 Nov 2023 16:25:07 GMT
+# entries:        3722
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1808,6 +1806,7 @@ DOMAIN-SUFFIX,fireworkadservices.com
 DOMAIN-SUFFIX,fireworkanalytics.com
 DOMAIN-SUFFIX,fireworks-advertising.com
 DOMAIN-SUFFIX,firstlightera.com
+DOMAIN-SUFFIX,firsttexture.com
 DOMAIN-SUFFIX,flairadscpc.com
 DOMAIN-SUFFIX,flakyfeast.com
 DOMAIN-SUFFIX,flashtalking.com
@@ -2209,6 +2208,7 @@ DOMAIN-SUFFIX,lightstep.medium.systems
 DOMAIN-SUFFIX,lijit.com
 DOMAIN-SUFFIX,link-booster.de
 DOMAIN-SUFFIX,link.axios.com
+DOMAIN-SUFFIX,link.email.usmagazine.com
 DOMAIN-SUFFIX,link.sbstck.com
 DOMAIN-SUFFIX,link.theatlantic.com
 DOMAIN-SUFFIX,link.uk.expediamail.com
@@ -2990,6 +2990,7 @@ DOMAIN-SUFFIX,secure.webconnect.net
 DOMAIN-SUFFIX,securedopen-bp.com
 DOMAIN-SUFFIX,securely-protectsoft.com
 DOMAIN-SUFFIX,securemetrics.apple.com
+DOMAIN-SUFFIX,securemetrics.apple.com.cn
 DOMAIN-SUFFIX,sedoparking.com
 DOMAIN-SUFFIX,sedotracker.com
 DOMAIN-SUFFIX,segment-cdn.producthunt.com
@@ -3687,7 +3688,6 @@ DOMAIN-SUFFIX,xpu.samsungelectronics.com
 DOMAIN-SUFFIX,xq1.net
 DOMAIN-SUFFIX,xtendmedia.com
 DOMAIN-SUFFIX,xtracker.logimeter.com
-DOMAIN-SUFFIX,xtremetop100.com
 DOMAIN-SUFFIX,xxxcounter.com
 DOMAIN-SUFFIX,xxxmyself.com
 DOMAIN-SUFFIX,y.ibsys.com

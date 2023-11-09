@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 05 Nov 2023 02:35:40 GMT
-# entries:        3720
+# last updated:   Wed, 08 Nov 2023 16:25:07 GMT
+# entries:        3722
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1806,6 +1806,7 @@ DOMAIN-SUFFIX,fireworkadservices.com, reject
 DOMAIN-SUFFIX,fireworkanalytics.com, reject
 DOMAIN-SUFFIX,fireworks-advertising.com, reject
 DOMAIN-SUFFIX,firstlightera.com, reject
+DOMAIN-SUFFIX,firsttexture.com, reject
 DOMAIN-SUFFIX,flairadscpc.com, reject
 DOMAIN-SUFFIX,flakyfeast.com, reject
 DOMAIN-SUFFIX,flashtalking.com, reject
@@ -2207,6 +2208,7 @@ DOMAIN-SUFFIX,lightstep.medium.systems, reject
 DOMAIN-SUFFIX,lijit.com, reject
 DOMAIN-SUFFIX,link-booster.de, reject
 DOMAIN-SUFFIX,link.axios.com, reject
+DOMAIN-SUFFIX,link.email.usmagazine.com, reject
 DOMAIN-SUFFIX,link.sbstck.com, reject
 DOMAIN-SUFFIX,link.theatlantic.com, reject
 DOMAIN-SUFFIX,link.uk.expediamail.com, reject
@@ -2988,6 +2990,7 @@ DOMAIN-SUFFIX,secure.webconnect.net, reject
 DOMAIN-SUFFIX,securedopen-bp.com, reject
 DOMAIN-SUFFIX,securely-protectsoft.com, reject
 DOMAIN-SUFFIX,securemetrics.apple.com, reject
+DOMAIN-SUFFIX,securemetrics.apple.com.cn, reject
 DOMAIN-SUFFIX,sedoparking.com, reject
 DOMAIN-SUFFIX,sedotracker.com, reject
 DOMAIN-SUFFIX,segment-cdn.producthunt.com, reject
@@ -3685,7 +3688,6 @@ DOMAIN-SUFFIX,xpu.samsungelectronics.com, reject
 DOMAIN-SUFFIX,xq1.net, reject
 DOMAIN-SUFFIX,xtendmedia.com, reject
 DOMAIN-SUFFIX,xtracker.logimeter.com, reject
-DOMAIN-SUFFIX,xtremetop100.com, reject
 DOMAIN-SUFFIX,xxxcounter.com, reject
 DOMAIN-SUFFIX,xxxmyself.com, reject
 DOMAIN-SUFFIX,y.ibsys.com, reject

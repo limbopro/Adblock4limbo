@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.11.04
+// @version      0.1.11.09
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -272,7 +272,7 @@ function if_a_click_then_close_daohang() {
 */
 
 
-var nsfw_regex = new RegExp(/\b(missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+var nsfw_regex = new RegExp(/\b(thisav|njav|missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
 var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
 var echo_ell_length = 21; // 总共导航类目数量
 var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
@@ -870,6 +870,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'common'],
 ['Javday', 'https://javday.tv/', '_blank', 'xOnline', 'common'],
 ['Njav', 'https://njav.tv/zh/', '_blank', 'xOnline', 'common'],
+['Thisav', 'https://thisav.com/', '_blank', 'xOnline', 'common'],
 ['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
 ['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
 ['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],

@@ -927,6 +927,7 @@ DOMAIN-SUFFIX,affiliates.ultrahosting.com, reject
 DOMAIN-SUFFIX,affiliatetracking.com, reject
 DOMAIN-SUFFIX,affiliatetracking.net, reject
 DOMAIN-SUFFIX,affiliatewindow.com, reject
+DOMAIN-SUFFIX,affiliation-france.com, reject
 DOMAIN-SUFFIX,afftracking.justanswer.com, reject
 DOMAIN-SUFFIX,afraidlanguage.com, reject
 DOMAIN-SUFFIX,agkn.com, reject
@@ -1569,7 +1570,6 @@ DOMAIN-SUFFIX,dashingsweater.com, reject
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
 DOMAIN-SUFFIX,data8a8altrk.com, reject
 DOMAIN-SUFFIX,daughterstone.com, reject
-DOMAIN-SUFFIX,dbbsrv.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
 DOMAIN-SUFFIX,deadpangate.com, reject

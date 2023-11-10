@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311091458
+## ! Version: 202311101543
 ## ! Title: EasyPrivacy
-## ! Last modified: 09 Nov 2023 14:58 UTC
+## ! Last modified: 10 Nov 2023 15:43 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -851,6 +851,7 @@ DOMAIN-SUFFIX,delegatediscussion.com
 DOMAIN-SUFFIX,delicatecascade.com
 DOMAIN-SUFFIX,delicateducks.com
 DOMAIN-SUFFIX,delightfulhour.com
+DOMAIN-SUFFIX,dependenttrip.com
 DOMAIN-SUFFIX,desertedbreath.com
 DOMAIN-SUFFIX,desertedrat.com
 DOMAIN-SUFFIX,desirebucket.com
@@ -1901,6 +1902,7 @@ DOMAIN-SUFFIX,topichawaii.com
 DOMAIN-SUFFIX,torpidtongue.com
 DOMAIN-SUFFIX,torpidtoothpaste.com
 DOMAIN-SUFFIX,toweringrun.com
+DOMAIN-SUFFIX,tradetooth.com
 DOMAIN-SUFFIX,tranquilside.com
 DOMAIN-SUFFIX,translateoatmeal.com
 DOMAIN-SUFFIX,trappush.com

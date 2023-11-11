@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311101543
+## ! Version: 202311111229
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Nov 2023 15:43 UTC
+## ! Last modified: 11 Nov 2023 12:29 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -572,6 +572,7 @@ DOMAIN-SUFFIX,awesomeagreement.com
 DOMAIN-SUFFIX,awesomeattack.com
 DOMAIN-SUFFIX,awzbijw.com
 DOMAIN-SUFFIX,axiomaticalley.com
+DOMAIN-SUFFIX,axiomaticanger.com
 DOMAIN-SUFFIX,azuremystique.com
 DOMAIN-SUFFIX,badgeboat.com
 DOMAIN-SUFFIX,bagbeam.com
@@ -850,6 +851,7 @@ DOMAIN-SUFFIX,defiantrice.com
 DOMAIN-SUFFIX,delegatediscussion.com
 DOMAIN-SUFFIX,delicatecascade.com
 DOMAIN-SUFFIX,delicateducks.com
+DOMAIN-SUFFIX,deliciousducks.com
 DOMAIN-SUFFIX,delightfulhour.com
 DOMAIN-SUFFIX,dependenttrip.com
 DOMAIN-SUFFIX,desertedbreath.com
@@ -994,6 +996,7 @@ DOMAIN-SUFFIX,financefear.com
 DOMAIN-SUFFIX,firstfrogs.com
 DOMAIN-SUFFIX,firsttexture.com
 DOMAIN-SUFFIX,flakyfeast.com
+DOMAIN-SUFFIX,flameuncle.com
 DOMAIN-SUFFIX,flimsycircle.com
 DOMAIN-SUFFIX,flimsythought.com
 DOMAIN-SUFFIX,flockflame.com
@@ -1353,6 +1356,7 @@ DOMAIN-SUFFIX,panickycurtain.com
 DOMAIN-SUFFIX,panickypancake.com
 DOMAIN-SUFFIX,panoramicbutter.com
 DOMAIN-SUFFIX,paradoxfactor.com
+DOMAIN-SUFFIX,parallelbulb.com
 DOMAIN-SUFFIX,parcelcreature.com
 DOMAIN-SUFFIX,parchedangle.com
 DOMAIN-SUFFIX,parchedsofa.com
@@ -1485,6 +1489,7 @@ DOMAIN-SUFFIX,readingguilt.com
 DOMAIN-SUFFIX,readingopera.com
 DOMAIN-SUFFIX,readymoon.com
 DOMAIN-SUFFIX,readysnails.com
+DOMAIN-SUFFIX,realizedoor.com
 DOMAIN-SUFFIX,realizerecess.com
 DOMAIN-SUFFIX,realizevacation.com
 DOMAIN-SUFFIX,rebelhen.com
@@ -1518,6 +1523,7 @@ DOMAIN-SUFFIX,rhetoricaltoes.com
 DOMAIN-SUFFIX,rhetoricalveil.com
 DOMAIN-SUFFIX,rhymezebra.com
 DOMAIN-SUFFIX,rhythmmoney.com
+DOMAIN-SUFFIX,rhythmrule.com
 DOMAIN-SUFFIX,richreceipt.com
 DOMAIN-SUFFIX,richstring.com
 DOMAIN-SUFFIX,righteouscrayon.com

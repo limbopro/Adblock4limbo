@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311101543
+## ! Version: 202311111229
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Nov 2023 15:43 UTC
+## ! Last modified: 11 Nov 2023 12:29 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -572,6 +572,7 @@ DOMAIN-SUFFIX,awesomeagreement.com, reject
 DOMAIN-SUFFIX,awesomeattack.com, reject
 DOMAIN-SUFFIX,awzbijw.com, reject
 DOMAIN-SUFFIX,axiomaticalley.com, reject
+DOMAIN-SUFFIX,axiomaticanger.com, reject
 DOMAIN-SUFFIX,azuremystique.com, reject
 DOMAIN-SUFFIX,badgeboat.com, reject
 DOMAIN-SUFFIX,bagbeam.com, reject
@@ -850,6 +851,7 @@ DOMAIN-SUFFIX,defiantrice.com, reject
 DOMAIN-SUFFIX,delegatediscussion.com, reject
 DOMAIN-SUFFIX,delicatecascade.com, reject
 DOMAIN-SUFFIX,delicateducks.com, reject
+DOMAIN-SUFFIX,deliciousducks.com, reject
 DOMAIN-SUFFIX,delightfulhour.com, reject
 DOMAIN-SUFFIX,dependenttrip.com, reject
 DOMAIN-SUFFIX,desertedbreath.com, reject
@@ -994,6 +996,7 @@ DOMAIN-SUFFIX,financefear.com, reject
 DOMAIN-SUFFIX,firstfrogs.com, reject
 DOMAIN-SUFFIX,firsttexture.com, reject
 DOMAIN-SUFFIX,flakyfeast.com, reject
+DOMAIN-SUFFIX,flameuncle.com, reject
 DOMAIN-SUFFIX,flimsycircle.com, reject
 DOMAIN-SUFFIX,flimsythought.com, reject
 DOMAIN-SUFFIX,flockflame.com, reject
@@ -1353,6 +1356,7 @@ DOMAIN-SUFFIX,panickycurtain.com, reject
 DOMAIN-SUFFIX,panickypancake.com, reject
 DOMAIN-SUFFIX,panoramicbutter.com, reject
 DOMAIN-SUFFIX,paradoxfactor.com, reject
+DOMAIN-SUFFIX,parallelbulb.com, reject
 DOMAIN-SUFFIX,parcelcreature.com, reject
 DOMAIN-SUFFIX,parchedangle.com, reject
 DOMAIN-SUFFIX,parchedsofa.com, reject
@@ -1485,6 +1489,7 @@ DOMAIN-SUFFIX,readingguilt.com, reject
 DOMAIN-SUFFIX,readingopera.com, reject
 DOMAIN-SUFFIX,readymoon.com, reject
 DOMAIN-SUFFIX,readysnails.com, reject
+DOMAIN-SUFFIX,realizedoor.com, reject
 DOMAIN-SUFFIX,realizerecess.com, reject
 DOMAIN-SUFFIX,realizevacation.com, reject
 DOMAIN-SUFFIX,rebelhen.com, reject
@@ -1518,6 +1523,7 @@ DOMAIN-SUFFIX,rhetoricaltoes.com, reject
 DOMAIN-SUFFIX,rhetoricalveil.com, reject
 DOMAIN-SUFFIX,rhymezebra.com, reject
 DOMAIN-SUFFIX,rhythmmoney.com, reject
+DOMAIN-SUFFIX,rhythmrule.com, reject
 DOMAIN-SUFFIX,richreceipt.com, reject
 DOMAIN-SUFFIX,richstring.com, reject
 DOMAIN-SUFFIX,righteouscrayon.com, reject

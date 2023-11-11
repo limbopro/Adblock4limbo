@@ -1,8 +1,10 @@
+
+
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 08 Nov 2023 16:25:07 GMT
-# entries:        3722
+# last updated:   Fri, 10 Nov 2023 16:38:59 GMT
+# entries:        3723
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3483,6 +3485,7 @@ DOMAIN-SUFFIX,trkoptimizer.com
 DOMAIN-SUFFIX,trkpnt.ongage.net
 DOMAIN-SUFFIX,trmit.com
 DOMAIN-SUFFIX,truckstomatoes.com
+DOMAIN-SUFFIX,truculentrate.com
 DOMAIN-SUFFIX,truehits.net
 DOMAIN-SUFFIX,truehits1.gits.net.th
 DOMAIN-SUFFIX,truehits2.gits.net.th

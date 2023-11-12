@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311111229
+## ! Version: 202311121415
 ## ! Title: EasyPrivacy
-## ! Last modified: 11 Nov 2023 12:29 UTC
+## ! Last modified: 12 Nov 2023 14:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -68,6 +68,7 @@ DOMAIN-SUFFIX,briskeagle.io
 DOMAIN-SUFFIX,briskpelican.io
 DOMAIN-SUFFIX,brontops.com
 DOMAIN-SUFFIX,brsrvr.com
+DOMAIN-SUFFIX,btdmp.com
 DOMAIN-SUFFIX,btloader.com
 DOMAIN-SUFFIX,bx-cloud.com
 DOMAIN-SUFFIX,bydst.com

@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["document.createElement","adsbygoogle.js"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["document.getElementById","block"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["onload","google_tag"],["document.querySelector","BLOQUEADOR"],["setTimeout","BLOQUEADOR"],["EventTarget.prototype.addEventListener","BLOQUEADOR"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["decodeURIComponent","0x"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""]];
+const argsList = [["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["document.createElement","adsbygoogle.js"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["document.getElementById","block"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["onload","google_tag"],["document.querySelector","BLOQUEADOR"],["setTimeout","BLOQUEADOR"],["EventTarget.prototype.addEventListener","BLOQUEADOR"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["decodeURIComponent","0x"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""]];
 
-const hostnamesMap = new Map([["animeszone.net",0],["canalnatelinhaonline.blogspot.com",1],["hinatasoul.com",2],["buscalinks.xyz",3],["gamesviatorrent.top",3],["inuyashadowns.com.br",4],["link.baixedetudo.net.br",4],["oliberal.com",5],["suaads.com",6],["reidoplacar.com",6],["suaurl.com",[6,24,25]],["gamestorrents.one",7],["csrevo.com",8],["guianoticiario.net",9],["oceans14.com.br",10],["illamadas.es",11],["audiotools.in",12],["lacalleochotv.org",13],["ecartelera.com",14],["animeshouse.net",15],["yesmangas1.com",[16,17,18,19]],["mangahost4.com",[16,17,18,19]],["mangahosted.com",[16,17,18,19]],["mangahost2.com",[16,17,18,19]],["mangahost1.com",[17,18,19]],["mangahostbr.net",[17,18,19]],["mangahostbr.com",[17,18,19]],["playpaste.com",[20,21]],["pasfox.com",[21,29]],["directvxx.com",22],["piratefilmeshd.net",23],["tiohentai.xyz",26],["palaygo.site",27],["seireshd.com",30],["hentai-id.tv",31]]);
+const hostnamesMap = new Map([["dicasdevalor.net",0],["animeszone.net",1],["canalnatelinhaonline.blogspot.com",2],["hinatasoul.com",3],["buscalinks.xyz",4],["gamesviatorrent.top",4],["inuyashadowns.com.br",5],["link.baixedetudo.net.br",5],["oliberal.com",6],["suaads.com",7],["reidoplacar.com",7],["suaurl.com",[7,25,26]],["gamestorrents.one",8],["csrevo.com",9],["guianoticiario.net",10],["oceans14.com.br",11],["illamadas.es",12],["audiotools.in",13],["lacalleochotv.org",14],["ecartelera.com",15],["animeshouse.net",16],["yesmangas1.com",[17,18,19,20]],["mangahost4.com",[17,18,19,20]],["mangahosted.com",[17,18,19,20]],["mangahost2.com",[17,18,19,20]],["mangahost1.com",[18,19,20]],["mangahostbr.net",[18,19,20]],["mangahostbr.com",[18,19,20]],["playpaste.com",[21,22]],["pasfox.com",[22,30]],["directvxx.com",23],["piratefilmeshd.net",24],["tiohentai.xyz",27],["palaygo.site",28],["seireshd.com",31],["hentai-id.tv",32]]);
 
-const entitiesMap = new Map([["movidy",28]]);
+const entitiesMap = new Map([["movidy",29]]);
 
 const exceptionsMap = new Map([]);
 
@@ -190,6 +190,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -201,8 +203,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -250,7 +255,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

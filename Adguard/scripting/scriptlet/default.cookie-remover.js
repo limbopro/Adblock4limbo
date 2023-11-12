@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["video_view_count"],["da325"],["ref_cookie"],["/^/"],["PageCount"],[],["45grw1567"],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_ips"],["kt_referer"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["/articlesRead|previousPage/"]];
+const argsList = [["video_view_count"],["da325"],["ref_cookie"],["/^/"],["PageCount"],[],["45grw1567"],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_ips"],["kt_referer"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["articlesRead"]];
 
-const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["zootube1.com",1],["subdivx.com",2],["adultasianporn.com",3],["jetpunk.com",4],["xxxxsx.com",5],["autosport.com",6],["motorsport.com",6],["sexvideos.host",7],["beaumontenterprise.com",8],["chron.com",8],["ctinsider.com",8],["ctpost.com",8],["expressnews.com",8],["houstonchronicle.com",8],["lmtonline.com",8],["middletownpress.com",8],["mrt.com",8],["newstimes.com",8],["nhregister.com",8],["registercitizen.com",8],["sfchronicle.com",8],["stamfordadvocate.com",8],["thehour.com",8],["timesunion.com",8],["heavyfetish.com",[9,10,11]],["watchporn.to",10],["columbian.com",12],["nypost.com",12],["pagesix.com",12],["factable.com",[13,14]],["bing.com",15],["msn.com",15],["makeuseof.com",16]]);
+const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["zootube1.com",1],["subdivx.com",2],["adultasianporn.com",3],["jetpunk.com",4],["xxxxsx.com",5],["autosport.com",6],["motorsport.com",6],["sexvideos.host",7],["beaumontenterprise.com",8],["chron.com",8],["ctinsider.com",8],["ctpost.com",8],["expressnews.com",8],["houstonchronicle.com",8],["lmtonline.com",8],["middletownpress.com",8],["mrt.com",8],["newstimes.com",8],["nhregister.com",8],["registercitizen.com",8],["sfchronicle.com",8],["stamfordadvocate.com",8],["thehour.com",8],["timesunion.com",8],["heavyfetish.com",[9,10,11]],["watchporn.to",10],["columbian.com",12],["nypost.com",12],["pagesix.com",12],["factable.com",[13,14]],["bing.com",15],["msn.com",15],["androidpolice.com",16],["makeuseof.com",16],["movieweb.com",16],["xda-developers.com",16]]);
 
 const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0]]);
 
@@ -105,6 +105,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -116,8 +118,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -165,7 +170,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

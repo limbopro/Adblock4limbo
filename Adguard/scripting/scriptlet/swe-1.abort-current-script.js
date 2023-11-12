@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["jQuery","adblockdetect"],["monsterinsights_frontend"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["jQuery","wizard_accordion"],["b2a"],["Di","initAds"],["disableEnterKey"],["document.ondragstart"],["DN","initAds"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["document.oncontextmenu"],["show_msg"],["$","shuffle"],["$","e.preventDefault"],["checkCampaignCookie"],["setTimeout","test"],["Bau","preloadAds"]];
+const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["jQuery","wizard_accordion"],["disableEnterKey"],["document.ondragstart"],["Di","initAds"],["DN","initAds"],["b2a"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["monsterinsights_frontend"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["setTimeout","test"],["Bau","preloadAds"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["boktugg.se",1],["dinbyggare.se",1],["ettgottskratt.se",1],["humorbibeln.se",1],["lakartidningen.se",1],["matsafari.nu",1],["newsner.com",1],["sportbibeln.se",1],["trafiksakerhet.se",1],["villalivet.se",1],["zeinaskitchen.se",1],["byggipedia.se",[2,3,4,5,6,7]],["byggvarlden.se",7],["cannabis.se",7],["egoinas.se",7],["enkelteknik.se",7],["hamnen.se",7],["influens.se",7],["tidningen.djurskyddet.se",7],["vegomagasinet.se",7],["di.se",8],["discoveringtheplanet.com",[9,10]],["dn.se",11],["evertiq.se",12],["folkhalsasverige.se",13],["foretagsverige.se",13],["forskningsverige.se",13],["grillbibeln.se",13],["hallbarhetsverige.se",13],["kampenmotcancer.se",13],["motorbibeln.se",13],["tillvaxtsverige.se",13],["hejaolika.se",14],["husbilsplats.se",15],["spelhubben.se",15],["medibok.se",16],["nasdaqomxnordic.com",17],["norpan.se",18],["skrattsajten.com",18],["sakochliv.se",19],["svensktgolfforum.se",20],["www.expressen.se",21]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4,5,10]],["discoveringtheplanet.com",[6,7]],["di.se",8],["dn.se",9],["egoinas.se",10],["enkelteknik.se",10],["hamnen.se",10],["cannabis.se",10],["tidningen.djurskyddet.se",10],["influens.se",10],["byggvarlden.se",10],["vegomagasinet.se",10],["evertiq.se",11],["folkhalsasverige.se",12],["foretagsverige.se",12],["forskningsverige.se",12],["motorbibeln.se",12],["hallbarhetsverige.se",12],["tillvaxtsverige.se",12],["grillbibeln.se",12],["kampenmotcancer.se",12],["hejaolika.se",13],["medibok.se",14],["nasdaqomxnordic.com",15],["newsner.com",16],["humorbibeln.se",16],["sportbibeln.se",16],["ettgottskratt.se",16],["zeinaskitchen.se",16],["dinbyggare.se",16],["trafiksakerhet.se",16],["boktugg.se",16],["lakartidningen.se",16],["villalivet.se",16],["matsafari.nu",16],["sakochliv.se",17],["skrattsajten.com",18],["norpan.se",18],["spelhubben.se",19],["husbilsplats.se",19],["svensktgolfforum.se",20],["www.expressen.se",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -190,6 +190,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -201,8 +203,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -250,7 +255,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["mi_track_user","false"],["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYin","noopFunc"],["checkYinPlaus","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["detect","noopFunc"]];
+const argsList = [["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYinPlaus","noopFunc"],["checkYin","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["mi_track_user","false"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"]];
 
-const hostnamesMap = new Map([["boktugg.se",0],["dinbyggare.se",0],["ettgottskratt.se",0],["humorbibeln.se",0],["lakartidningen.se",0],["matsafari.nu",0],["newsner.com",0],["sportbibeln.se",0],["trafiksakerhet.se",0],["villalivet.se",0],["zeinaskitchen.se",0],["conpot.se",[1,2]],["di.se",3],["elevspel.se",4],["feber.se",[5,6,7,8]],["tjock.se",[5,6,7,8]],["findit.se",9],["fssweden.se",10],["fz.se",10],["gamereactor.se",11],["heleneholmsif.se",[12,13]],["melodifestivalklubben.se",[12,13]],["morotsliv.com",[12,13]],["thorengruppen.se",[12,13]],["trafikskola.se",[12,13]],["utslappsratt.se",[12,13]],["kamrat.com",[14,15]],["kritiker.se",[16,17,18]],["mitti.se",19],["mobilanyheter.net",20],["ordbokpro.se",21],["spray.se",[22,23]],["vinochmatguiden.se",23],["swedroid.se",24],["thatsup.se",25],["www.expressen.se",26]]);
+const hostnamesMap = new Map([["conpot.se",[0,1]],["di.se",2],["elevspel.se",3],["feber.se",[4,5,6,7]],["tjock.se",[4,5,6,7]],["findit.se",8],["fz.se",9],["fssweden.se",9],["gamereactor.se",10],["kamrat.com",[11,12]],["kritiker.se",[13,14,15]],["mitti.se",16],["mobilanyheter.net",17],["newsner.com",18],["humorbibeln.se",18],["sportbibeln.se",18],["ettgottskratt.se",18],["zeinaskitchen.se",18],["dinbyggare.se",18],["trafiksakerhet.se",18],["boktugg.se",18],["lakartidningen.se",18],["villalivet.se",18],["matsafari.nu",18],["ordbokpro.se",19],["spray.se",[20,21]],["vinochmatguiden.se",21],["swedroid.se",22],["thatsup.se",23],["thorengruppen.se",[24,25]],["utslappsratt.se",[24,25]],["heleneholmsif.se",[24,25]],["trafikskola.se",[24,25]],["melodifestivalklubben.se",[24,25]],["morotsliv.com",[24,25]],["www.expressen.se",26]]);
 
 const entitiesMap = new Map([]);
 
@@ -276,6 +276,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -287,8 +289,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -336,7 +341,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

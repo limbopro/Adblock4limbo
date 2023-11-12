@@ -901,7 +901,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['CSS教程', 'https://www.runoob.com/css/css-tutorial.html', '_blank', 'front-end', 'common'],
 ['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
 ['M3U8下载?(Porn/Jable..)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'common'],
-['Twitter 视频下载(PC网页版)', 'https://ssstwitter.com/result_various', '_blank', 'dload', 'common'],
+['Twitter 视频下载(PC网页版)', 'https://ssstwitter.com/', '_blank', 'dload', 'common'],
 ['Instagram 视频下载(电报🤖)', 'https://t.me/instasavegrambot', '_blank', 'dload', 'special'],
 ['Instagram 视频下载(捷径🤖)', 'https://limbopro.com/archives/1053.html', '_blank', 'dload', 'special'],
 ['Instagram 视频下载(PC网页版)', 'https://sssinstagram.com/', '_blank', 'dload'],

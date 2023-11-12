@@ -42,9 +42,9 @@ const uBOL_m3uPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm",".m3u8"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/[a-z0-9]{13}o.*\\.ts|adjump/",".m3u8"]];
+const argsList = [["/redirector\\.googlevideo\\.com\\/videoplayback\\?[\\s\\S]*?dclk_video_ads/","pubads.g.doubleclick.net/ondemand/hls/"],["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm",".m3u8"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/[a-z0-9]{13}o.*\\.ts|adjump/",".m3u8"]];
 
-const hostnamesMap = new Map([["10play.com.au",0],["fox.com",1],["foxsports.com",1],["mephimtv.cc",2],["player.theplatform.com",3],["yhmgo.com",4]]);
+const hostnamesMap = new Map([["sbs.com.au",0],["10play.com.au",1],["fox.com",2],["foxsports.com",2],["mephimtv.cc",3],["player.theplatform.com",4],["yhmgo.com",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -207,6 +207,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -218,8 +220,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -267,7 +272,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

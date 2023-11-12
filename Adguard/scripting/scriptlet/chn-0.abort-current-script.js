@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
+const argsList = [["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
 
-const hostnamesMap = new Map([["1keydata.com",0],["slit.cn",1],["jkpan.cc",[2,3]],["getrelax.cc",4],["poedb.tw",5],["bingfeng.tw",6],["youranshare.com",7],["getitfree.cn",8],["pg-wuming.com",9],["pornbest.org",10],["nunuyy3.org",11],["dogfight360.com",12],["o8tv.com",13],["javlibrary.com",14],["wnacg1.cc",15],["pixnet.net",16],["ggjav.com",17],["porn87.com",17]]);
+const hostnamesMap = new Map([["h-ciyuan.com",0],["1keydata.com",1],["slit.cn",2],["jkpan.cc",[3,4]],["getrelax.cc",5],["poedb.tw",6],["bingfeng.tw",7],["youranshare.com",8],["getitfree.cn",9],["pg-wuming.com",10],["pornbest.org",11],["nunuyy3.org",12],["dogfight360.com",13],["o8tv.com",14],["javlibrary.com",15],["wnacg1.cc",16],["pixnet.net",17],["ggjav.com",18],["porn87.com",18]]);
 
-const entitiesMap = new Map([["hentaicomic",15],["wnacg",15]]);
+const entitiesMap = new Map([["hentaicomic",16],["wnacg",16]]);
 
 const exceptionsMap = new Map([]);
 
@@ -190,6 +190,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -201,8 +203,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -250,7 +255,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

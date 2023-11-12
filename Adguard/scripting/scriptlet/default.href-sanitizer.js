@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://app.adjust.com/\"][href*=\"?redirect=\"]","?redirect"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"https://drivevideo.xyz/link?link=http\"]","?link"],["a[href^=\"http://go.redirectingat.com\"][href*=\"&url=\"]","?url"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://disq.us/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"],["a[href^=\"https://colab.research.google.com/corgiredirector?site=http\"]","?site"]];
+const argsList = [["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://app.adjust.com/\"][href*=\"?redirect=\"]","?redirect"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"https://drivevideo.xyz/link?link=http\"]","?link"],["a[href^=\"http://go.redirectingat.com\"][href*=\"&url=\"]","?url"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://disq.us/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"],["a[href^=\"https://colab.research.google.com/corgiredirector?site=http\"]","?site"],["a[href^=\"https://shop-links.co/link/?\"][href*=\"&url=http\"]","?url"],["a[href^=\"http://www.jdoqocy.com/click-\"][href*=\"?URL=http\"]","?URL"],["a[href^=\"https://track.adtraction.com/t/t?\"][href*=\"&url=http\"]","?url"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["taisachonthi.com",1],["kazefuri.net",2],["lite.duckduckgo.com",3],["androidauthority.com",4],["mozilla.org",5],["pcgamingwiki.com",[6,7]],["starstyle.com",8],["insidehook.com",[9,10,11]],["nowinstock.net",[9,11,14]],["fap18.net",12],["xxxmom.net",12],["fuck55.net",12],["gofucker.com",12],["sexu.tv",12],["vid123.net",12],["babe8.net",12],["beeg.porn",12],["losporn.org",13],["streamporn.li",13],["pandamovies.org",13],["bananamovies.org",13],["xopenload.net",13],["adultdvdparadise.com",13],["speedporn.net",13],["mangoporn.net",13],["pandamovie.info",13],["mangoporn.co",13],["mangoparody.com",13],["xxxscenes.net",13],["pornkino.cc",13],["watchxxxfree.pw",13],["pandamovie.in",13],["speedporn.pw",13],["watchfreexxx.net",13],["youwatchporn.com",13],["watchpornfree.info",13],["pandamovies.me",13],["xtapes.me",13],["netflixporno.net",13],["pornwish.org",13],["freeomovie.info",13],["fullxxxmovies.me",13],["watchpornx.com",13],["xxxparodyhd.net",13],["xxxstream.me",13],["pornwatch.ws",13],["xopenload.pw",13],["onstreams.net",13],["playpornfree.xyz",13],["pandamovies.pw",13],["streamporn.pw",13],["xopenload.me",13],["paypal.com",15],["elotrolado.net",16],["tube188.com",17],["tomshardware.com",18],["disqus.com",[19,20]],["steamcommunity.com",21],["colab.research.google.com",22]]);
+const hostnamesMap = new Map([["azrom.net",0],["taisachonthi.com",1],["kazefuri.net",2],["lite.duckduckgo.com",3],["androidauthority.com",4],["mozilla.org",5],["pcgamingwiki.com",[6,7]],["starstyle.com",8],["insidehook.com",[9,10,11]],["nowinstock.net",[9,11,14]],["fap18.net",12],["xxxmom.net",12],["fuck55.net",12],["gofucker.com",12],["sexu.tv",12],["vid123.net",12],["babe8.net",12],["beeg.porn",12],["losporn.org",13],["streamporn.li",13],["pandamovies.org",13],["bananamovies.org",13],["xopenload.net",13],["adultdvdparadise.com",13],["speedporn.net",13],["mangoporn.net",13],["pandamovie.info",13],["mangoporn.co",13],["mangoparody.com",13],["xxxscenes.net",13],["pornkino.cc",13],["watchxxxfree.pw",13],["pandamovie.in",13],["speedporn.pw",13],["watchfreexxx.net",13],["youwatchporn.com",13],["watchpornfree.info",13],["pandamovies.me",13],["xtapes.me",13],["netflixporno.net",13],["pornwish.org",13],["freeomovie.info",13],["fullxxxmovies.me",13],["watchpornx.com",13],["xxxparodyhd.net",13],["xxxstream.me",13],["pornwatch.ws",13],["xopenload.pw",13],["onstreams.net",13],["playpornfree.xyz",13],["pandamovies.pw",13],["streamporn.pw",13],["xopenload.me",13],["paypal.com",15],["elotrolado.net",16],["tube188.com",17],["tomshardware.com",18],["disqus.com",[19,20]],["steamcommunity.com",21],["colab.research.google.com",22],["xda-developers.com",23],["isthereanydeal.com",[24,25]]]);
 
 const entitiesMap = new Map([]);
 
@@ -188,6 +188,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -199,8 +201,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -248,7 +253,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

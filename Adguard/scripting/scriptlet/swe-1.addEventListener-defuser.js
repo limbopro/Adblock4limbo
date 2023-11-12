@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["scroll","helpers.scroll(id)"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["contextmenu",".disabled"],["click",".preventDefault"],["contextmenu"],["/^(?:adBlocker|contextmenu)$/"],["omniPulseLoaded"],["/contextmenu|cut|copy|paste/"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
+const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["click",".preventDefault"],["/^(?:adBlocker|contextmenu)$/"],["scroll","helpers.scroll(id)"],["omniPulseLoaded"],["/contextmenu|cut|copy|paste/"],["contextmenu"],["contextmenu",".disabled"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
 
-const hostnamesMap = new Map([["allas.se",[0,1]],["baaam.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["frida.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["motherhood.se",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["barometern.se",2],["blt.se",2],["bt.se",2],["cafe.se",2],["kalmarposten.se",2],["klt.nu",2],["kristianstadsbladet.se",2],["lokalti.se",2],["meraosterlen.se",2],["mitti.se",2],["nsk.se",2],["olandsbladet.se",2],["praktisktbatagande.se",2],["smp.se",2],["sydostran.se",2],["trelleborgsallehanda.se",2],["ut.se",2],["vasterastidning.se",2],["vaxjobladet.se",2],["viivilla.se",2],["vxonews.se",2],["ystadsallehanda.se",2],["byggahus.se",3],["devote.se",4],["di.se",5],["www.expressen.se",5],["expressen.se",6],["fotosidan.se",7],["illvet.se",7],["nyan.ax",7],["spelhubben.se",7],["streamio.com",7],["varldenshistoria.se",7],["lwcdn.com",8],["omni.se",9],["omniekonomi.se",9],["sexpacket.se",10],["youplay.se",11],["affarsstaden.se",12],["boktugg.se",12],["kurera.se",12],["lundagard.se",12],["morotsliv.com",12],["nyfiknainvesterare.se",12],["home2tiny.se",13]]);
+const hostnamesMap = new Map([["allas.se",[0,1]],["baaam.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["frida.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["expressen.se",4],["lwcdn.com",5],["mitti.se",6],["vasterastidning.se",6],["barometern.se",6],["blt.se",6],["bt.se",6],["kristianstadsbladet.se",6],["olandsbladet.se",6],["smp.se",6],["sydostran.se",6],["trelleborgsallehanda.se",6],["ut.se",6],["ystadsallehanda.se",6],["kalmarposten.se",6],["meraosterlen.se",6],["vxonews.se",6],["vaxjobladet.se",6],["nsk.se",6],["klt.nu",6],["lokalti.se",6],["viivilla.se",6],["cafe.se",6],["praktisktbatagande.se",6],["omni.se",7],["omniekonomi.se",7],["sexpacket.se",8],["streamio.com",9],["nyan.ax",9],["spelhubben.se",9],["fotosidan.se",9],["illvet.se",9],["varldenshistoria.se",9],["www.expressen.se",10],["di.se",10],["youplay.se",11],["lundagard.se",12],["boktugg.se",12],["morotsliv.com",12],["affarsstaden.se",12],["kurera.se",12],["nyfiknainvesterare.se",12],["home2tiny.se",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -58,7 +58,7 @@ function addEventListenerDefuser(
 ) {
     const safe = safeSelf();
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
-    const reType = safe.patternToRegex(type);
+    const reType = safe.patternToRegex(type, undefined, true);
     const rePattern = safe.patternToRegex(pattern);
     const log = shouldLog(extraArgs);
     const debug = shouldDebug(extraArgs);
@@ -68,7 +68,9 @@ function addEventListenerDefuser(
                 let type, handler;
                 try {
                     type = String(args[0]);
-                    handler = String(args[1]);
+                    handler = args[1] instanceof Function
+                        ? String(safe.Function_toString(args[1]))
+                        : String(args[1]);
                 } catch(ex) {
                 }
                 const matchesType = safe.RegExp_test.call(reType, type);
@@ -138,6 +140,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -149,8 +153,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -198,7 +205,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["onload","google-auto-placed"],["document.createElement","adsbygoogle.js"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
 
-const hostnamesMap = new Map([["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["cbdgummiesio.biz",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["tekniknot.com",[8,9]],["mordefter.com",10],["ulketv.com.tr",11],["kenttv.net",12],["ulker.com.tr",13],["duzcetv.com",14],["bizimyaka.com",15]]);
+const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["cbdgummiesio.biz",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["tekniknot.com",[8,9]],["mordefter.com",10],["ulketv.com.tr",11],["kenttv.net",12],["ulker.com.tr",13],["duzcetv.com",14],["bizimyaka.com",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -190,6 +190,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -201,8 +203,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -250,7 +255,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

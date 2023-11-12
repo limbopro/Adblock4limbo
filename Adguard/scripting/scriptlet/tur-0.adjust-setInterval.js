@@ -42,11 +42,11 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timeleft","*","0.02"],["timer"],[],["window.money_interval"],["advert","*","0.001"]];
+const argsList = [["sec--"],["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timeleft","*","0.02"],["timer"],[],["window.money_interval"],["advert","*","0.001"]];
 
-const hostnamesMap = new Map([["hdsinemax.com",0],["elzemfilm.org",0],["tafdi3.com",1],["tafdi4.com",1],["tafdi5.com",1],["filmizletv2.com",2],["filmizletv3.com",2],["filmizletv4.com",2],["filmizletv5.com",2],["filmizletv6.com",2],["filmizletv7.com",2],["filmizletv8.com",2],["filmizletv9.com",2],["filmizletv10.com",2],["filmizletv11.com",2],["filmizletv12.com",2],["filmizletv13.com",2],["filmizletv14.com",2],["filmizletv15.com",2],["filmizletv16.com",2],["filmizletv17.com",2],["filmizletv18.com",2],["filmizletv19.com",2],["filmizletv20.com",2],["fullhdfilm.pro",3],["hdfilmifullizle.com",3],["yabancidizi.pro",4],["hdfilmfullizle.com",5],["turkturk.org",6],["turkturk.net",6],["itemci.com",8]]);
+const hostnamesMap = new Map([["gofilmizle.com",0],["hdsinemax.com",1],["elzemfilm.org",1],["tafdi3.com",2],["tafdi4.com",2],["tafdi5.com",2],["filmizletv2.com",3],["filmizletv3.com",3],["filmizletv4.com",3],["filmizletv5.com",3],["filmizletv6.com",3],["filmizletv7.com",3],["filmizletv8.com",3],["filmizletv9.com",3],["filmizletv10.com",3],["filmizletv11.com",3],["filmizletv12.com",3],["filmizletv13.com",3],["filmizletv14.com",3],["filmizletv15.com",3],["filmizletv16.com",3],["filmizletv17.com",3],["filmizletv18.com",3],["filmizletv19.com",3],["filmizletv20.com",3],["fullhdfilm.pro",4],["hdfilmifullizle.com",4],["yabancidizi.pro",5],["hdfilmfullizle.com",6],["turkturk.org",7],["turkturk.net",7],["itemci.com",9]]);
 
-const entitiesMap = new Map([["hdfilmcehennemi2",[0,7]],["filmizletv",2],["fullhdfilmizle5",3],["hdfilmcehennemi",7]]);
+const entitiesMap = new Map([["hdfilmcehennemi2",[1,8]],["filmizletv",3],["fullhdfilmizle5",4],["hdfilmcehennemi",8]]);
 
 const exceptionsMap = new Map([]);
 
@@ -88,6 +88,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -99,8 +101,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -148,7 +153,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

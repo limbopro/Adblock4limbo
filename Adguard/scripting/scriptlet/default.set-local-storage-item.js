@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adf_plays","2"],["adshield-analytics-uuid","$remove$"],["segmentDeviceId","$remove$"]];
+const argsList = [["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["segmentDeviceId","$remove$"]];
 
-const hostnamesMap = new Map([["adultdeepfakes.com",0],["loawa.com",1],["ygosu.com",1],["sportalkorea.com",1],["algumon.com",1],["hancinema.net",1],["enetnews.co.kr",1],["edaily.co.kr",1],["economist.co.kr",1],["etoday.co.kr",1],["hankyung.com",1],["isplus.com",1],["hometownstation.com",1],["kagit.kr",1],["inven.co.kr",1],["viva100.com",1],["joongdo.co.kr",1],["jjang0u.com",1],["tenbizt.com",1],["tvreport.co.kr",1],["newautopost.co.kr",1],["mememedia.co.kr",1],["mobilitytv.co.kr",1],["cboard.net",1],["a-ha.io",1],["interfootball.co.kr",1],["fourfourtwo.co.kr",1],["apkmirror.com",1],["dotkeypress.kr",1],["viewcash.co.kr",1],["tripplus.co.kr",1],["enterdiary.com",1],["mtodayauto.com",1],["mindbodygreen.com",2]]);
+const hostnamesMap = new Map([["adultdeepfakes.com",0],["freewsad.com",1],["loawa.com",2],["ygosu.com",2],["sportalkorea.com",2],["algumon.com",2],["hancinema.net",2],["enetnews.co.kr",2],["edaily.co.kr",2],["economist.co.kr",2],["etoday.co.kr",2],["hankyung.com",2],["isplus.com",2],["hometownstation.com",2],["kagit.kr",2],["inven.co.kr",2],["viva100.com",2],["joongdo.co.kr",2],["jjang0u.com",2],["tenbizt.com",2],["tvreport.co.kr",2],["newautopost.co.kr",2],["mememedia.co.kr",2],["mobilitytv.co.kr",2],["cboard.net",2],["a-ha.io",2],["interfootball.co.kr",2],["fourfourtwo.co.kr",2],["apkmirror.com",2],["dotkeypress.kr",2],["viewcash.co.kr",2],["tripplus.co.kr",2],["enterdiary.com",2],["mtodayauto.com",2],["genshinlab.com",2],["hotplacehunter.co.kr",2],["mystylezip.com",2],["majorgeeks.com",2],["mindbodygreen.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -118,6 +118,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -129,8 +131,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -178,7 +183,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

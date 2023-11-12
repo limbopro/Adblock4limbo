@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["atob","ai_block_class"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["$","open"],["document.createElement","optad"],["$","PopUnder"],["document.addEventListener","popupOpened"],["Promise","break;case"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
+const argsList = [["atob","ai_block_class"],["Object.defineProperty","ADMStorageFileCDN"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["document.createElement","optad"],["$","PopUnder"],["document.addEventListener","popupOpened"],["Promise","break;case"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["downloadsachmienphi.com",1],["dualeotruyenpk.com",[2,31]],["gametv.vn",3],["gotphim.com",4],["hh3dhay.com",5],["hh3dhay.xyz",5],["holyphim.com",6],["ios.codevn.net",7],["khoaiphim.com",[8,9]],["khohieu.com",10],["linkneverdie.net",[11,12]],["lxmanga.net",13],["motphim3s.net",14],["nettruyenai.com",15],["nguontv.live",16],["phimgichill.net",17],["ophimhdvn3.net",17],["mephimnhe1.net",17],["phimmoipro2.net",18],["plus.gtv.vn",19],["protruyen.xyz",20],["animevietsub.fan",20],["rphang.me",21],["mrcong.com",21],["tctruyen.com",22],["tctruyen.net",22],["tinsoikeo.vip",23],["toptruyenne.com",24],["truyen2u.net",25],["truyen35.vn",26],["truyengihotday.net",27],["truyenqqvn.com",28],["truyentuan.com",29],["vailonxx.com",30],["viet69.tube",31],["ungtycomicsvip.com",31],["vlxx.xxx",31],["yurineko.net",31],["vlxyz.tv",31],["javhay.media",31],["phimsexhay669.co",31],["cliphot69.biz",31],["doctruyen3qmax.com",31],["hentaizz.vip",31],["animehay.city",31],["heo69.top",31],["tuoi69.one",31],["top1sex.club",31],["lenlut.net",31],["xemsex.asia",31],["hentai-vn.com",31],["vungoctuan.vn",32],["xnxx-sex-videos.com",33],["xoilac87.tv",34]]);
+const hostnamesMap = new Map([["azrom.net",0],["cafef.vn",1],["gamek.vn",1],["genk.vn",1],["kenh14.vn",1],["soha.vn",1],["tuoitre.vn",1],["downloadsachmienphi.com",2],["dualeotruyenpk.com",[3,31]],["gametv.vn",4],["gotphim.com",5],["hh3dhay.com",6],["hh3dhay.xyz",6],["holyphim.com",7],["ios.codevn.net",8],["khoaiphim.com",[9,10]],["khohieu.com",11],["linkneverdie.net",12],["lxmanga.net",13],["motphim3s.net",14],["nettruyenai.com",15],["nguontv.live",16],["phimgichill.net",17],["ophimhdvn3.net",17],["mephimnhe1.net",17],["phimmoipro2.net",18],["plus.gtv.vn",19],["protruyen.xyz",20],["animevietsub.fan",20],["rphang.me",21],["mrcong.com",21],["tctruyen.net",22],["tinsoikeo.vip",23],["toptruyenne.com",24],["truyen2u.net",25],["truyen35.vn",26],["truyengihotday.net",27],["truyenqqvn.com",28],["truyentuan.com",29],["vailonxx.com",30],["viet69.tube",31],["ungtycomicsvip.com",31],["vlxx.xxx",31],["yurineko.net",31],["vlxyz.tv",31],["javhay.media",31],["phimsexhay669.co",31],["cliphot69.biz",31],["doctruyen3qmax.com",31],["hentaizz.vip",31],["animehay.city",31],["heo69.top",31],["tuoi69.one",31],["top1sex.club",31],["lenlut.net",31],["xemsex.asia",31],["hentai-vn.com",31],["vungoctuan.vn",32],["xnxx-sex-videos.com",33],["xoilac89.tv",34]]);
 
 const entitiesMap = new Map([]);
 
@@ -190,6 +190,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -201,8 +203,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -250,7 +255,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -42,11 +42,11 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["cJsEdge"],["_pop"],["lolaop"],["adk_pdisp"],["__clientAHV"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"]];
+const argsList = [["eazyAdUnBlockerHttp"],["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["initPu"],["cJsEdge"],["_pop"],["lolaop"],["adk_pdisp"],["__clientAHV"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"]];
 
-const hostnamesMap = new Map([["manga-crab.com",0],["hinatasoul.com",1],["pcworld.es",2],["tunovelaligera.com",3],["20minutos.es",4],["comando.to",5],["porno-japones.top",6],["tvplusgratis.com",7],["hobbugs.com",7],["seriesretro.com",8],["cozinha.minhasdelicias.com",9],["diariodegoias.com.br",10],["outerspace.com.br",10],["1f1.in",11],["1i1.in",11],["cuevana.biz",12],["cuevana.run",12],["repelispluss.tv",13],["fiuxy2.com",14],["pelispop.me",15],["pelisplus.icu",16],["baixartorrents.org",[17,18]],["pctmix1.com",19],["aquariumgays.com",19],["allfeeds.live",20],["grantorrent.nl",23],["hentaistube.com",24],["libertinga.net",25],["mrpiracy.top",26],["seireshd.com",27],["cinetux.to",[28,29]],["holanime.com",30],["pirlotv.es",31],["repelisplus.vip",32],["descargaranimehentai.com",33],["tuhentaionline.com",34]]);
+const hostnamesMap = new Map([["aquiyahorajuegos.net",0],["manga-crab.com",1],["hinatasoul.com",2],["pcworld.es",3],["tunovelaligera.com",4],["20minutos.es",5],["comando.to",6],["porno-japones.top",7],["tvplusgratis.com",8],["hobbugs.com",8],["seriesretro.com",9],["cozinha.minhasdelicias.com",10],["diariodegoias.com.br",11],["outerspace.com.br",11],["1f1.in",12],["1i1.in",12],["embedder.net",13],["cuevana.biz",14],["cuevana.run",14],["repelispluss.tv",15],["fiuxy2.com",16],["pelispop.me",17],["pelisplus.icu",18],["baixartorrents.org",[19,20]],["pctmix1.com",21],["aquariumgays.com",21],["allfeeds.live",22],["grantorrent.nl",25],["hentaistube.com",26],["libertinga.net",27],["mrpiracy.top",28],["seireshd.com",29],["cinetux.to",[30,31]],["holanime.com",32],["pirlotv.es",33],["repelisplus.vip",34],["descargaranimehentai.com",35],["tuhentaionline.com",36]]);
 
-const entitiesMap = new Map([["cinecalidad2",21],["cine-calidad",22]]);
+const entitiesMap = new Map([["cinecalidad2",23],["cine-calidad",24]]);
 
 const exceptionsMap = new Map([]);
 
@@ -119,6 +119,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -130,8 +132,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -179,7 +184,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["disabled",".get-link"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
+const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["disabled",".get-link"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
 
-const hostnamesMap = new Map([["apps2app.com",0],["appsmodz.com",0],["xda-developers.com",1],["paid4.link",2],["go.gets4link.com",3],["quizlet.com",[4,5,6]],["funker530.com",7],["av01.tv",8],["so1.asia",9],["top1iq.com",10],["freebrightsoft.com",11],["artribune.com",12],["bestfonts.pro",13],["falatron.com",14],["sinonimos.de",15]]);
+const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["xda-developers.com",2],["paid4.link",3],["go.gets4link.com",4],["quizlet.com",[5,6,7]],["funker530.com",8],["av01.tv",9],["so1.asia",10],["top1iq.com",11],["freebrightsoft.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15],["sinonimos.de",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -146,6 +146,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -157,8 +159,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -206,7 +211,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

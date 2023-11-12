@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["autoplay"],["autoplay players.*.ga acl.ads players.*.autoplay"],["payload.ads campaigns.*"],["analytics googleAnalytics theme.siteOptions.ad_links.* theme.siteOptions.casino_page_description theme.siteOptions.casino_page_partner"]];
+const argsList = [["autoplay players.*.ga acl.ads players.*.autoplay"],["payload.ads campaigns.*"],["analytics googleAnalytics theme.siteOptions.ad_links.* theme.siteOptions.casino_page_description theme.siteOptions.casino_page_partner"],["autoplay"]];
 
-const hostnamesMap = new Map([["alekuriren.se",0],["allas.se",0],["alltforforaldrar.se",0],["baaam.se",0],["babyhjalp.se",0],["barometern.se",0],["blt.se",0],["bt.se",0],["byrum.se",0],["cafe.se",0],["corren.se",0],["di.se",0],["ekuriren.se",0],["elle.se",0],["eposten.se",0],["expressen.se",0],["familjeliv.se",0],["femina.se",0],["folkbladet.nu",0],["folkbladet.se",0],["fragbite.se",0],["frida.se",0],["golfing.se",0],["gotlandjustnu.se",0],["hant.se",0],["helagotland.se",0],["ibnytt.se",0],["idrottensaffarer.se",0],["kalmarposten.se",0],["kindaposten.se",0],["kingmagazine.se",0],["kkuriren.se",0],["klt.nu",0],["kristianstadsbladet.se",0],["kuriren.nu",0],["lchfarkivet.se",0],["lokalti.se",0],["lokaltidningen.nu",0],["mabra.com",0],["mellanbygden.nu",0],["meraosterlen.se",0],["mestmotor.se",0],["mitti.se",0],["motherhood.se",0],["mvt.se",0],["nordsverige.se",0],["norrahalland.se",0],["norran.se",0],["nsd.se",0],["nsk.se",0],["nt.se",0],["nvp.se",0],["nyheter24.se",0],["olandsbladet.se",0],["praktisktbatagande.se",0],["pt.se",0],["realtid.se",0],["recept.se",0],["residencemagazine.se",0],["skd.se",0],["smp.se",0],["sn.se",0],["strengnastidning.se",0],["svenskdam.se",0],["svenskgolf.se",0],["sverigespringer.se",0],["sydostran.se",0],["thelocal.se",0],["trelleborgsallehanda.se",0],["unt.se",0],["ut.se",0],["vasterastidning.se",0],["vasterbottningen.se",0],["vaxjobladet.se",0],["viivilla.se",0],["vimmerbytidning.se",0],["vk.se",0],["vt.se",0],["vxonews.se",0],["youplay.se",0],["ystadsallehanda.se",0],["alingsastidning.se",1],["bohuslaningen.se",1],["gp.se",1],["hallandsposten.se",1],["harrydaposten.se",1],["hn.se",1],["kungalvsposten.se",1],["kungsbackaposten.se",1],["lwcdn.com",1],["markposten.se",1],["molndalsposten.se",1],["partilletidning.se",1],["stromstadstidning.se",1],["sttidningen.se",1],["ttela.se",1],["matspar.se",2],["samnytt.se",3]]);
+const hostnamesMap = new Map([["lwcdn.com",0],["alingsastidning.se",0],["bohuslaningen.se",0],["gp.se",0],["hallandsposten.se",0],["hn.se",0],["stromstadstidning.se",0],["ttela.se",0],["kungsbackaposten.se",0],["kungalvsposten.se",0],["molndalsposten.se",0],["partilletidning.se",0],["sttidningen.se",0],["markposten.se",0],["harrydaposten.se",0],["matspar.se",1],["samnytt.se",2],["youplay.se",3],["expressen.se",3],["di.se",3],["nsk.se",3],["skd.se",3],["nvp.se",3],["barometern.se",3],["blt.se",3],["bt.se",3],["kristianstadsbladet.se",3],["olandsbladet.se",3],["smp.se",3],["sydostran.se",3],["trelleborgsallehanda.se",3],["ut.se",3],["ystadsallehanda.se",3],["kalmarposten.se",3],["meraosterlen.se",3],["corren.se",3],["folkbladet.se",3],["mvt.se",3],["nt.se",3],["vt.se",3],["klt.nu",3],["vimmerbytidning.se",3],["kuriren.nu",3],["nsd.se",3],["norran.se",3],["pt.se",3],["ekuriren.se",3],["strengnastidning.se",3],["kkuriren.se",3],["sn.se",3],["eposten.se",3],["unt.se",3],["helagotland.se",3],["kindaposten.se",3],["allas.se",3],["baaam.se",3],["frida.se",3],["elle.se",3],["femina.se",3],["hant.se",3],["mabra.com",3],["residencemagazine.se",3],["svenskdam.se",3],["motherhood.se",3],["folkbladet.nu",3],["vk.se",3],["vasterbottningen.se",3],["mellanbygden.nu",3],["nordsverige.se",3],["lokaltidningen.nu",3],["vasterastidning.se",3],["mitti.se",3],["thelocal.se",3],["byrum.se",3],["sverigespringer.se",3],["recept.se",3],["viivilla.se",3],["mestmotor.se",3],["babyhjalp.se",3],["fragbite.se",3],["ibnytt.se",3],["realtid.se",3],["cafe.se",3],["kingmagazine.se",3],["vxonews.se",3],["vaxjobladet.se",3],["alekuriren.se",3],["nyheter24.se",3],["svenskgolf.se",3],["golfing.se",3],["gotlandjustnu.se",3],["familjeliv.se",3],["praktisktbatagande.se",3],["norrahalland.se",3],["lokalti.se",3],["lchfarkivet.se",3],["alltforforaldrar.se",3],["idrottensaffarer.se",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -97,50 +97,10 @@ function objectPruneFn(
             return;
         }
     }
-    if ( objectPruneFn.findOwner === undefined ) {
-        objectPruneFn.findOwner = (root, path, prune = false) => {
-            let owner = root;
-            let chain = path;
-            for (;;) {
-                if ( typeof owner !== 'object' || owner === null  ) { return false; }
-                const pos = chain.indexOf('.');
-                if ( pos === -1 ) {
-                    if ( prune === false ) {
-                        return owner.hasOwnProperty(chain);
-                    }
-                    let modified = false;
-                    if ( chain === '*' ) {
-                        for ( const key in owner ) {
-                            if ( owner.hasOwnProperty(key) === false ) { continue; }
-                            delete owner[key];
-                            modified = true;
-                        }
-                    } else if ( owner.hasOwnProperty(chain) ) {
-                        delete owner[chain];
-                        modified = true;
-                    }
-                    return modified;
-                }
-                const prop = chain.slice(0, pos);
-                if (
-                    prop === '[]' && Array.isArray(owner) ||
-                    prop === '*' && owner instanceof Object
-                ) {
-                    const next = chain.slice(pos + 1);
-                    let found = false;
-                    for ( const key of Object.keys(owner) ) {
-                        found = objectPruneFn.findOwner(owner[key], next, prune) || found;
-                    }
-                    return found;
-                }
-                if ( owner.hasOwnProperty(prop) === false ) { return false; }
-                owner = owner[prop];
-                chain = chain.slice(pos + 1);
-            }
-        };
+    if ( objectPruneFn.mustProcess === undefined ) {
         objectPruneFn.mustProcess = (root, needlePaths) => {
             for ( const needlePath of needlePaths ) {
-                if ( objectPruneFn.findOwner(root, needlePath) === false ) {
+                if ( objectFindOwnerFn(root, needlePath) === false ) {
                     return false;
                 }
             }
@@ -159,7 +119,7 @@ function objectPruneFn(
     let outcome = 'nomatch';
     if ( objectPruneFn.mustProcess(obj, needlePaths) ) {
         for ( const path of prunePaths ) {
-            if ( objectPruneFn.findOwner(obj, path, true) ) {
+            if ( objectFindOwnerFn(obj, path, true) ) {
                 outcome = 'match';
             }
         }
@@ -178,6 +138,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -189,8 +151,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -238,7 +203,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }
@@ -304,6 +269,52 @@ function matchesStackTrace(
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }
     return r;
+}
+
+function objectFindOwnerFn(
+    root,
+    path,
+    prune = false
+) {
+    let owner = root;
+    let chain = path;
+    for (;;) {
+        if ( typeof owner !== 'object' || owner === null  ) { return false; }
+        const pos = chain.indexOf('.');
+        if ( pos === -1 ) {
+            if ( prune === false ) {
+                return owner.hasOwnProperty(chain);
+            }
+            let modified = false;
+            if ( chain === '*' ) {
+                for ( const key in owner ) {
+                    if ( owner.hasOwnProperty(key) === false ) { continue; }
+                    delete owner[key];
+                    modified = true;
+                }
+            } else if ( owner.hasOwnProperty(chain) ) {
+                delete owner[chain];
+                modified = true;
+            }
+            return modified;
+        }
+        const prop = chain.slice(0, pos);
+        if (
+            prop === '[]' && Array.isArray(owner) ||
+            prop === '*' && owner instanceof Object
+        ) {
+            const next = chain.slice(pos + 1);
+            let found = false;
+            for ( const key of Object.keys(owner) ) {
+                found = objectFindOwnerFn(owner[key], next, prune) || found;
+            }
+            return found;
+        }
+        if ( owner.hasOwnProperty(prop) === false ) { return false; }
+        owner = owner[prop];
+        chain = chain.slice(pos + 1);
+    }
+    return true;
 }
 
 function shouldLog(details) {

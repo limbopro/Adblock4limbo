@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["countTVC","0"],["isSkipAds","true"],["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["urlAds",""],["adsTvcs",""],["seconds","0"],["adsPlayer",""]];
 
-const hostnamesMap = new Map([["bongda365f.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["phimvuihd.org",4],["vaoroi13.online",5],["xoivof.site",[5,7]],["vndoc.com",6]]);
+const hostnamesMap = new Map([["bongda365f.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["phimvuihd.org",4],["vaoroi13.online",5],["xoivo1.online",[5,7]],["vndoc.com",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -276,6 +276,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -287,8 +289,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -336,7 +341,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

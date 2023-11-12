@@ -42,11 +42,11 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[jsaction=\"JIbuQc:NdGjVc(dwvGkc)\"] button"],["div[jsaction=\"JIbuQc:mZ4eAc\"] button[aria-label], div[jsaction=\"JIbuQc:T1q6Me\"] button[aria-label], form[jsaction=\"submit:ldDdv(preventDefault=true)\"] button","","50"],["[href=\"/x-set-cookie/\"]"]];
+const argsList = [["button[title^=\"Consent\"]"],["button.reject-all"],["#onetrust-accept-btn-handler"],["button[title=\"Accept and continue\"]"],["button[title=\"Accept All Cookies\"]"],[".accept-all"],["#CybotCookiebotDialogBodyButtonAccept"],["button[aria-label=\"Continua senza accettare\"]"],["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[jsaction=\"JIbuQc:NdGjVc(dwvGkc)\"] button"],["div[jsaction=\"JIbuQc:mZ4eAc\"] button[aria-label], div[jsaction=\"JIbuQc:T1q6Me\"] button[aria-label], form[jsaction=\"submit:ldDdv(preventDefault=true)\"] button","","270"],["[href=\"/x-set-cookie/\"]"],["#dialogButton1"],[".call"]];
 
-const hostnamesMap = new Map([["tennisassa.fi",0],["consent.youtube.com",[1,2]],["f1racing.pl",3]]);
+const hostnamesMap = new Map([["spiegel.de",0],["consent.yahoo.com",1],["digitalfoundry.net",2],["egx.net",2],["eurogamer.it",2],["mcmcomiccon.com",2],["nintendolife.com",2],["paxsite.com",2],["purexbox.com",2],["pushsquare.com",2],["starwarscelebration.com",2],["thehaul.com",2],["timeextension.com",2],["dicebreaker.com",[3,4]],["eurogamer.cz",[3,4]],["eurogamer.es",[3,4]],["eurogamer.net",[3,4]],["eurogamer.nl",[3,4]],["eurogamer.pl",[3,4]],["eurogamer.pt",[3,4]],["gamesindustry.biz",[3,4]],["jelly.deals",[3,4]],["reedpop.com",[3,4]],["rockpapershotgun.com",[3,4]],["thepopverse.com",[3,4]],["vg247.com",[3,4]],["videogameschronicle.com",[3,4]],["eurogamer.de",5],["roadtovr.com",6],["cmp.sky.it",7],["tennisassa.fi",8],["consent.youtube.com",[9,10]],["f1racing.pl",11],["consent-pref.trustarc.com",13]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["music.amazon",12]]);
 
 const exceptionsMap = new Map([]);
 
@@ -176,6 +176,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -187,8 +189,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -236,7 +241,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

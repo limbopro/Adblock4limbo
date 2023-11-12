@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["initials.bannerPrefix"],["history.pushState"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
+const argsList = [["initials.bannerPrefix"],["history.pushState"],["nocontext"],["disableEnterKey"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
 
-const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["teammy.ru",2],["raindropteamfan.com",2],["expertology.ru",3],["electricalvoice.com",4],["doujindesu.tv",5],["shield-project.ru",5]]);
+const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["brokensilenze.net",[2,3]],["teammy.ru",4],["raindropteamfan.com",4],["expertology.ru",5],["electricalvoice.com",6],["doujindesu.tv",7],["shield-project.ru",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -97,6 +97,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -108,8 +110,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -157,7 +162,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

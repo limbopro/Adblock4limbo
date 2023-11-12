@@ -42,11 +42,11 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","copyprotect"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","/,\\'gger\\',/"],["script","disable_show_error"],["script","/nocontext|wccp/"]];
+const argsList = [["script","copyprotect"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","/,\\'gger\\',/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"]];
 
-const hostnamesMap = new Map([["skidrowreloaded.com",0],["jpost.com",1],["teamkong.tk",2],["sekaikomik.bio",2],["moviesapi.club",3],["animesaga.in",3],["camcaps.io",4],["nicekkk.com",4],["seriesperu.com",5],["klartext-ne.de",5],["sbot.cf",6],["fjordd.com",8],["playertv.net",10],["warungkomik.com",11],["themeslide.com",11],["terramirabilis.ro",12],["161.97.70.5",13],["gdrivedescarga.com",14],["audiologyresearch.org",15],["zipcode.com.ng",16],["thejakartapost.com",17],["djxmaza.in",18],["miuiflash.com",18],["thecubexguide.com",18],["mathcrave.com",19],["wikiofcelebs.com",20]]);
+const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",1],["jpost.com",2],["teamkong.tk",3],["sekaikomik.bio",3],["moviesapi.club",4],["animesaga.in",4],["camcaps.io",5],["nicekkk.com",5],["seriesperu.com",6],["klartext-ne.de",6],["sbot.cf",7],["fjordd.com",9],["playertv.net",11],["warungkomik.com",12],["themeslide.com",12],["terramirabilis.ro",13],["161.97.70.5",14],["gdrivedescarga.com",15],["audiologyresearch.org",16],["zipcode.com.ng",17],["thejakartapost.com",18],["djxmaza.in",19],["miuiflash.com",19],["thecubexguide.com",19],["mathcrave.com",20],["brokensilenze.net",[21,22]],["newsrade.com",23],["broncoshq.com",24]]);
 
-const entitiesMap = new Map([["vidmoly",3],["oploverz",[5,9]],["tvhay",7],["bg-gledai",15]]);
+const entitiesMap = new Map([["vidmoly",4],["oploverz",[6,10]],["tvhay",8],["bg-gledai",16]]);
 
 const exceptionsMap = new Map([]);
 
@@ -70,7 +70,7 @@ function replaceNodeTextFn(
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     const shouldLog = scriptletGlobals.has('canDebug') && extraArgs.log || 0;
-    const reCondition = safe.patternToRegex(extraArgs.condition || '', 'gms');
+    const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
     const stop = (takeRecord = true) => {
         if ( takeRecord ) {
             handleMutations(observer.takeRecords());
@@ -83,8 +83,11 @@ function replaceNodeTextFn(
     let sedCount = extraArgs.sedCount || 0;
     const handleNode = node => {
         const before = node.textContent;
-        if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
+        reCondition.lastIndex = 0;
         if ( safe.RegExp_test.call(reCondition, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
+        if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
         const after = pattern !== ''
             ? before.replace(rePattern, replacement)
             : replacement;
@@ -172,6 +175,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -183,8 +188,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -232,7 +240,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

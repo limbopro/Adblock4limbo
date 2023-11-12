@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["contextmenu","preventDefault"],["scroll"],["load","contextmenu"],["click","720"],["copy","[native code]"],["contextmenu"]];
+const argsList = [["contextmenu","preventDefault"],["scroll"],["contextmenu"],["load","contextmenu"],["click","720"],["copy","throw"]];
 
-const hostnamesMap = new Map([["app.blubank.com",0],["eghtesadonline.com",1],["javan-musics.com",2],["mopon.ir",3],["noorlib.ir",4],["s-moshaver.com",5]]);
+const hostnamesMap = new Map([["app.blubank.com",0],["eghtesadonline.com",1],["elmefarda.com",2],["s-moshaver.com",2],["javan-musics.com",3],["mopon.ir",4],["noorlib.ir",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -58,7 +58,7 @@ function addEventListenerDefuser(
 ) {
     const safe = safeSelf();
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
-    const reType = safe.patternToRegex(type);
+    const reType = safe.patternToRegex(type, undefined, true);
     const rePattern = safe.patternToRegex(pattern);
     const log = shouldLog(extraArgs);
     const debug = shouldDebug(extraArgs);
@@ -68,7 +68,9 @@ function addEventListenerDefuser(
                 let type, handler;
                 try {
                     type = String(args[0]);
-                    handler = String(args[1]);
+                    handler = args[1] instanceof Function
+                        ? String(safe.Function_toString(args[1]))
+                        : String(args[1]);
                 } catch(ex) {
                 }
                 const matchesType = safe.RegExp_test.call(reType, type);
@@ -138,6 +140,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -149,8 +153,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -198,7 +205,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookie_consent","false"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["SWCOOKIESACC","1"],["allowCookies","true"],["cookie_consent","1"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["cookies-selected","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["accepts-cookie-notice","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"]];
+const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["dismissedPrivacyCookieMessage","1"],["cookie_consent","false"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["SWCOOKIESACC","1"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["accepts-cookie-notice","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
 
-const hostnamesMap = new Map([["betterprogramming.pub",0],["medium.com",0],["500ish.com",0],["gitconnected.com",0],["bettermarketing.pub",0],["diylifetech.com",0],["thebolditalic.com",0],["writingcooperative.com",0],["fanfare.pub",0],["betterhumans.pub",0],["kick.com",1],["happiful.com",2],["traefik.io",3],["cityfalcon.ai",4],["digitalparking.city",5],["vitotechnology.com",6],["mediathekviewweb.de",7],["solana.com",8],["alohafromdeer.com",9],["fwd.com",[10,12]],["everywhere.game",11],["geotastic.net",13],["worstbassist.com",14],["tattoodo.com",[15,16]],["virginexperiencedays.co.uk",17],["evernote.com",18],["nordkurier.de",[19,20,21]],["everest-24.pl",[22,24]],["zave.it",23],["sneakerfreaker.com",25],["walmart.ca",26],["flyingblue.com",27],["byfood.com",28],["andsafe.de",29],["edostavka.by",30],["emall.by",30],["onexstore.pl",[31,32,33]],["revanced.app",33],["eezy.nrw",34],["bahnland-bayern.de",34],["evropochta.by",[35,36]],["hitado.de",37],["inselberlin.de",38],["gronkh.tv",39],["parrotsec.org",40],["adfilteringdevsummit.com",41],["learngerman.dw.com",42],["gostanford.com",43],["namensetiketten.de",44],["drafthound.com",[45,46]],["wokularach.pl",47],["bidup.amtrak.com",48],["eschuhe.de",49],["flyingpapers.com",50],["beta.character.ai",[51,52]],["bittimittari.fi",53]]);
+const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["betterprogramming.pub",3],["medium.com",3],["500ish.com",3],["gitconnected.com",3],["bettermarketing.pub",3],["diylifetech.com",3],["thebolditalic.com",3],["writingcooperative.com",3],["fanfare.pub",3],["betterhumans.pub",3],["kick.com",4],["jimdosite.com",5],["worstbassist.com",5],["octopusenergy.co.jp",6],["happiful.com",7],["findmcserver.com",8],["traefik.io",9],["cityfalcon.ai",10],["digitalparking.city",11],["vitotechnology.com",12],["mediathekviewweb.de",13],["solana.com",14],["ef.co.id",15],["alohafromdeer.com",16],["fwd.com",[17,19]],["everywhere.game",18],["geotastic.net",20],["tattoodo.com",[21,22]],["virginexperiencedays.co.uk",23],["evernote.com",24],["nordkurier.de",[25,26,27]],["everest-24.pl",[28,30]],["zave.it",29],["sneakerfreaker.com",31],["cryptofalka.hu",31],["walmart.ca",32],["flyingblue.com",33],["byfood.com",34],["andsafe.de",35],["edostavka.by",36],["emall.by",36],["onexstore.pl",[37,38,39]],["revanced.app",39],["eezy.nrw",40],["bahnland-bayern.de",40],["evropochta.by",[41,42]],["hitado.de",43],["inselberlin.de",44],["gronkh.tv",45],["parrotsec.org",46],["adfilteringdevsummit.com",47],["learngerman.dw.com",48],["gostanford.com",49],["namensetiketten.de",50],["drafthound.com",[51,52]],["wokularach.pl",53],["bidup.amtrak.com",54],["eschuhe.de",55],["flyingpapers.com",56],["beta.character.ai",[57,58]],["bittimittari.fi",59],["vivantis.sk",60]]);
 
 const entitiesMap = new Map([]);
 
@@ -118,6 +118,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -129,8 +131,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -178,7 +183,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["window.screen.width","0"],["window.screen.height","0"],["navigator.appVersion",""],["navigator.userAgent",""],["navigator.appName",""],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
+const argsList = [["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
 
-const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["binanews.ir",5],["1da.ir",6],["1ea.ir",6],["2ad.ir",6],["fontyab.com",[7,8]],["ketabesabz.com",9],["lahzeakhar.com",10],["my.mci.ir",[11,12,13,14,15]],["pwa.mci.ir",[11,12,13,14,15]],["msbmusic.ir",16],["myhastidl.cam",16],["netgasht.com",16],["opizo.me",17],["xip.li",17],["s-moshaver.com",18],["tamasha.com",[19,20,21]],["takmili.com",[22,23,24,25,26]],["takhfifan.com",[27,28]]]);
+const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["binanews.ir",5],["1da.ir",6],["1ea.ir",6],["2ad.ir",6],["fontyab.com",[7,8]],["fidibo.com",[9,10,11]],["my.mci.ir",[9,10,11,14,15]],["pwa.mci.ir",[9,10,11,14,15]],["ketabesabz.com",12],["lahzeakhar.com",13],["msbmusic.ir",16],["myhastidl.cam",16],["netgasht.com",16],["opizo.me",17],["xip.li",17],["s-moshaver.com",18],["tamasha.com",[19,20,21]],["takmili.com",[22,23,24,25,26]],["takhfifan.com",[27,28]]]);
 
 const entitiesMap = new Map([]);
 
@@ -276,6 +276,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -287,8 +289,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -336,7 +341,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["passeura"],["/^https?:\\/\\/movieknowing\\.com\\/$/","trueFunc"],["redirdx.in/go/"]];
 
-const hostnamesMap = new Map([["beautyskincarebrasil.com",0],["suaurl.com",0],["cuevana.biz",0],["cuevana.run",0],["geeknetic.es",0],["animeblix.com",[0,3]],["servernew.xyz",0],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["pctreload1.com",0],["deportealdia.live",0],["repelis.io",0],["verdragonball.online",0],["otakustv.com",0],["temparchive.com",0],["repelisgt.net",0],["playpaste.com",0],["atomohd.com",1],["atomtt.com",1],["maxitorrent.com",2],["movieknowing.com",4],["redirdx.in",5]]);
+const hostnamesMap = new Map([["warezstream.net",0],["beautyskincarebrasil.com",0],["suaurl.com",0],["cuevana.biz",0],["cuevana.run",0],["geeknetic.es",0],["animeblix.com",[0,3]],["servernew.xyz",0],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["pctreload1.com",0],["deportealdia.live",0],["repelis.io",0],["verdragonball.online",0],["otakustv.com",0],["temparchive.com",0],["repelisgt.net",0],["playpaste.com",0],["atomohd.com",1],["atomtt.com",1],["maxitorrent.com",2],["movieknowing.com",4],["redirdx.in",5]]);
 
 const entitiesMap = new Map([["netcine",0],["atomixhq",1]]);
 
@@ -135,6 +135,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -146,8 +148,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -195,7 +200,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

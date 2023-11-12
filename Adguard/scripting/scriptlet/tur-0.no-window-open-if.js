@@ -44,9 +44,9 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[],["bit.ly"],["google.com/url?"]];
 
-const hostnamesMap = new Map([["erosfilmizle.org",0],["rcjza2fzqyr4.buzz",0],["d3xg9jm5zucs.buzz",0],["fwlcqyxc88qx.buzz",0],["lgrmdr8asu8l.buzz",0],["kc2uta38qg2t.buzz",0],["agb3nquu6rzw.buzz",0],["dizipal650.com",0],["yvt2bm7hzgtt.cloud",0],["elzemfilm.org",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["diziwatch.net",0],["hdizlefilmleri.com",0],["4kfilmizlesene.xyz",0],["izleorg3.org",0],["youtubemp3.us",0],["hizlitv.club",0],["pchocasi.com.tr",1],["sinema.cc",2]]);
+const hostnamesMap = new Map([["rcjza2fzqyr4.buzz",0],["d3xg9jm5zucs.buzz",0],["fwlcqyxc88qx.buzz",0],["lgrmdr8asu8l.buzz",0],["kc2uta38qg2t.buzz",0],["agb3nquu6rzw.buzz",0],["dizipal650.com",0],["yvt2bm7hzgtt.cloud",0],["elzemfilm.org",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["diziwatch.net",0],["hdizlefilmleri.com",0],["4kfilmizlesene.xyz",0],["izleorg3.org",0],["youtubemp3.us",0],["hizlitv.club",0],["pchocasi.com.tr",1],["sinema.cc",2]]);
 
-const entitiesMap = new Map([["breakingbadizle",0],["jetfilmizle",0],["altyazilifilm",0],["yabancidizitv",0],["hddiziport",0],["filmyani",0]]);
+const entitiesMap = new Map([["erosfilmizle",0],["breakingbadizle",0],["jetfilmizle",0],["altyazilifilm",0],["yabancidizitv",0],["hddiziport",0],["filmyani",0]]);
 
 const exceptionsMap = new Map([]);
 
@@ -135,6 +135,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -146,8 +148,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -195,7 +200,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

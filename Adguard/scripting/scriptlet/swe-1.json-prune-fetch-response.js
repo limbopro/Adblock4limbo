@@ -185,50 +185,10 @@ function objectPruneFn(
             return;
         }
     }
-    if ( objectPruneFn.findOwner === undefined ) {
-        objectPruneFn.findOwner = (root, path, prune = false) => {
-            let owner = root;
-            let chain = path;
-            for (;;) {
-                if ( typeof owner !== 'object' || owner === null  ) { return false; }
-                const pos = chain.indexOf('.');
-                if ( pos === -1 ) {
-                    if ( prune === false ) {
-                        return owner.hasOwnProperty(chain);
-                    }
-                    let modified = false;
-                    if ( chain === '*' ) {
-                        for ( const key in owner ) {
-                            if ( owner.hasOwnProperty(key) === false ) { continue; }
-                            delete owner[key];
-                            modified = true;
-                        }
-                    } else if ( owner.hasOwnProperty(chain) ) {
-                        delete owner[chain];
-                        modified = true;
-                    }
-                    return modified;
-                }
-                const prop = chain.slice(0, pos);
-                if (
-                    prop === '[]' && Array.isArray(owner) ||
-                    prop === '*' && owner instanceof Object
-                ) {
-                    const next = chain.slice(pos + 1);
-                    let found = false;
-                    for ( const key of Object.keys(owner) ) {
-                        found = objectPruneFn.findOwner(owner[key], next, prune) || found;
-                    }
-                    return found;
-                }
-                if ( owner.hasOwnProperty(prop) === false ) { return false; }
-                owner = owner[prop];
-                chain = chain.slice(pos + 1);
-            }
-        };
+    if ( objectPruneFn.mustProcess === undefined ) {
         objectPruneFn.mustProcess = (root, needlePaths) => {
             for ( const needlePath of needlePaths ) {
-                if ( objectPruneFn.findOwner(root, needlePath) === false ) {
+                if ( objectFindOwnerFn(root, needlePath) === false ) {
                     return false;
                 }
             }
@@ -247,7 +207,7 @@ function objectPruneFn(
     let outcome = 'nomatch';
     if ( objectPruneFn.mustProcess(obj, needlePaths) ) {
         for ( const path of prunePaths ) {
-            if ( objectPruneFn.findOwner(obj, path, true) ) {
+            if ( objectFindOwnerFn(obj, path, true) ) {
                 outcome = 'match';
             }
         }
@@ -283,6 +243,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -294,8 +256,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -343,7 +308,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }
@@ -414,6 +379,52 @@ function matchesStackTrace(
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }
     return r;
+}
+
+function objectFindOwnerFn(
+    root,
+    path,
+    prune = false
+) {
+    let owner = root;
+    let chain = path;
+    for (;;) {
+        if ( typeof owner !== 'object' || owner === null  ) { return false; }
+        const pos = chain.indexOf('.');
+        if ( pos === -1 ) {
+            if ( prune === false ) {
+                return owner.hasOwnProperty(chain);
+            }
+            let modified = false;
+            if ( chain === '*' ) {
+                for ( const key in owner ) {
+                    if ( owner.hasOwnProperty(key) === false ) { continue; }
+                    delete owner[key];
+                    modified = true;
+                }
+            } else if ( owner.hasOwnProperty(chain) ) {
+                delete owner[chain];
+                modified = true;
+            }
+            return modified;
+        }
+        const prop = chain.slice(0, pos);
+        if (
+            prop === '[]' && Array.isArray(owner) ||
+            prop === '*' && owner instanceof Object
+        ) {
+            const next = chain.slice(pos + 1);
+            let found = false;
+            for ( const key of Object.keys(owner) ) {
+                found = objectFindOwnerFn(owner[key], next, prune) || found;
+            }
+            return found;
+        }
+        if ( owner.hasOwnProperty(prop) === false ) { return false; }
+        owner = owner[prop];
+        chain = chain.slice(pos + 1);
+    }
+    return true;
 }
 
 function getExceptionToken() {

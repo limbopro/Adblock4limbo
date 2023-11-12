@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["document.cookie"],["Math.round"],["sp"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["document.cookie"],["Math.round"],["pushOnPageGala"],["sp"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimvietsub.pro",3],["tvhayy.net",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimbom.net",3],["sieudamtv.com",3],["phimmoi.im",3],["javnong.cc",4],["nettruyenus.net",5],["plvb.xyz",[6,7,8,9,10]],["subnhanhvl.co",11],["subnhanh.im",11],["phimmoi4s.com",11],["phimdinhcao.net",11],["phimlongtieng.net",11],["phimdinhcao.com",11],["ophim.vip",11],["tinsoikeo.vip",12],["viettoons.tv",13],["phimmoiaz.cc",13],["m.blogtruyen.vn",13],["vinaurl.net",13],["animet.net",13],["ytstv.me",14],["yts.do",14],["yts.mx",14],["yts.rs",14],["zingnews.vn",15],["zuiphim.com",16]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["blog.abit.vn",3],["truyensieuhay.com",3],["phimvietsub.pro",3],["tvhayt.org",3],["phimmoipro2.net",3],["quangcaoyenbai.com",3],["phimbom.net",3],["sieudamtv.com",3],["phimmoi.im",3],["javnong.cc",4],["linkneverdie.net",5],["nettruyenus.net",6],["plvb.xyz",[7,8,9,10,11]],["subnhanhvl.co",12],["subnhanh.im",12],["phimmoi4s.com",12],["phimdinhcao.net",12],["phimlongtieng.net",12],["phimdinhcao.com",12],["ophim.vip",12],["tinsoikeo.vip",13],["viettoons.tv",14],["phimmoiaz.cc",14],["m.blogtruyen.vn",14],["vinaurl.net",14],["animet.net",14],["anh.moe",14],["ytstv.me",15],["yts.do",15],["yts.mx",15],["yts.rs",15],["zingnews.vn",16],["zuiphim.com",17]]);
 
 const entitiesMap = new Map([]);
 
@@ -119,6 +119,8 @@ function safeSelf() {
     const safe = {
         'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
@@ -130,8 +132,11 @@ function safeSelf() {
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'JSON_parse': self.JSON.parse.bind(self.JSON),
-        'JSON_stringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
             if ( scriptletGlobals.has('canDebug') === false ) { return; }
@@ -179,7 +184,7 @@ function safeSelf() {
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }

@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202311121415
+## ! Version: 202311131538
 ## ! Title: EasyList
-## ! Last modified: 12 Nov 2023 14:15 UTC
+## ! Last modified: 13 Nov 2023 15:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1223,6 +1223,7 @@ DOMAIN-SUFFIX,acdbidoxmfu.com, reject
 DOMAIN-SUFFIX,acdcdn.com, reject
 DOMAIN-SUFFIX,acdn01.vidox.net, reject
 DOMAIN-SUFFIX,acediscover.com, reject
+DOMAIN-SUFFIX,acedtousles.com, reject
 DOMAIN-SUFFIX,acelacien.com, reject
 DOMAIN-SUFFIX,acendantoftheq.xyz, reject
 DOMAIN-SUFFIX,aceporntube.com, reject
@@ -16113,6 +16114,7 @@ DOMAIN-SUFFIX,maibaume.com, reject
 DOMAIN-SUFFIX,maidendeprivation.com, reject
 DOMAIN-SUFFIX,maidsiowan.com, reject
 DOMAIN-SUFFIX,maiglair.net, reject
+DOMAIN-SUFFIX,maihikuh.com, reject
 DOMAIN-SUFFIX,maijauta.xyz, reject
 DOMAIN-SUFFIX,maikashu.net, reject
 DOMAIN-SUFFIX,mailboxdoablebasically.com, reject
@@ -19906,6 +19908,7 @@ DOMAIN-SUFFIX,phaisoaz.com, reject
 DOMAIN-SUFFIX,phaithoo.xyz, reject
 DOMAIN-SUFFIX,phaivais.net, reject
 DOMAIN-SUFFIX,phalingy.net, reject
+DOMAIN-SUFFIX,phamsacm.net, reject
 DOMAIN-SUFFIX,phantomattestationzillion.com, reject
 DOMAIN-SUFFIX,phantomtheft.com, reject
 DOMAIN-SUFFIX,phardain.xyz, reject
@@ -22832,6 +22835,7 @@ DOMAIN-SUFFIX,roxby.org, reject
 DOMAIN-SUFFIX,roxot-panel.com, reject
 DOMAIN-SUFFIX,roxyaffiliates.com, reject
 DOMAIN-SUFFIX,royalcactus.com, reject
+DOMAIN-SUFFIX,royallycuprene.com, reject
 DOMAIN-SUFFIX,rozamimo9za10.com, reject
 DOMAIN-SUFFIX,rpmsophiashoe.com, reject
 DOMAIN-SUFFIX,rprinc6etodn9kunjiv.com, reject
@@ -26905,6 +26909,7 @@ DOMAIN-SUFFIX,tvxrpdfgitlbsb.xyz, reject
 DOMAIN-SUFFIX,twaonhcjwoaouj.com, reject
 DOMAIN-SUFFIX,twazzyoidwlfe.com, reject
 DOMAIN-SUFFIX,tweeseconable.website, reject
+DOMAIN-SUFFIX,twelfthdistasteful.com, reject
 DOMAIN-SUFFIX,twelvethighpostal.com, reject
 DOMAIN-SUFFIX,twentiethparticipation.com, reject
 DOMAIN-SUFFIX,twentyalight.com, reject
@@ -28531,6 +28536,7 @@ DOMAIN-SUFFIX,waxapushlite.info, reject
 DOMAIN-SUFFIX,waxingequant.space, reject
 DOMAIN-SUFFIX,waxpigbaa.com, reject
 DOMAIN-SUFFIX,waxtamnit.com, reject
+DOMAIN-SUFFIX,waybillbulged.com, reject
 DOMAIN-SUFFIX,wayfarerspoutpraise.com, reject
 DOMAIN-SUFFIX,waygatecrowbar.com, reject
 DOMAIN-SUFFIX,waymarkgentiin.com, reject

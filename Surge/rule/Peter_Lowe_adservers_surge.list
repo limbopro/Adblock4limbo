@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 10 Nov 2023 16:38:59 GMT
-# entries:        3723
+# last updated:   Mon, 13 Nov 2023 17:32:55 GMT
+# entries:        3724
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2814,6 +2814,7 @@ DOMAIN-SUFFIX,rabbitrifle.com
 DOMAIN-SUFFIX,radar.cedexis.com
 DOMAIN-SUFFIX,radarurl.com
 DOMAIN-SUFFIX,radiate.com
+DOMAIN-SUFFIX,radiateprose.com
 DOMAIN-SUFFIX,rads.realadmin.pl
 DOMAIN-SUFFIX,railwayrainstorm.com
 DOMAIN-SUFFIX,railwayreason.com

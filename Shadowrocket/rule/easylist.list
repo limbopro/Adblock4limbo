@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202311131538
+## ! Version: 202311141555
 ## ! Title: EasyList
-## ! Last modified: 13 Nov 2023 15:38 UTC
+## ! Last modified: 14 Nov 2023 15:55 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -8094,6 +8094,7 @@ DOMAIN-SUFFIX,dizzy-illegal.pro, reject
 DOMAIN-SUFFIX,dizzyincome.pro, reject
 DOMAIN-SUFFIX,dizzyporno.com, reject
 DOMAIN-SUFFIX,dizzyrebozo.website, reject
+DOMAIN-SUFFIX,dizzyshe.pro, reject
 DOMAIN-SUFFIX,dj-updates.com, reject
 DOMAIN-SUFFIX,djadoc.com, reject
 DOMAIN-SUFFIX,djefosbx.com, reject
@@ -11051,6 +11052,7 @@ DOMAIN-SUFFIX,ganizationsuc.info, reject
 DOMAIN-SUFFIX,gannett.gcion.com, reject
 DOMAIN-SUFFIX,gapcask.com, reject
 DOMAIN-SUFFIX,gapscult.com, reject
+DOMAIN-SUFFIX,gaqscipubhi.com, reject
 DOMAIN-SUFFIX,gaquxe8.site, reject
 DOMAIN-SUFFIX,garagesewe.com, reject
 DOMAIN-SUFFIX,garbslens.com, reject
@@ -14280,6 +14282,7 @@ DOMAIN-SUFFIX,joyfulfearsome.com, reject
 DOMAIN-SUFFIX,joygaskin.com, reject
 DOMAIN-SUFFIX,joylessstarted.com, reject
 DOMAIN-SUFFIX,joyorators.website, reject
+DOMAIN-SUFFIX,joyous-concentrate.pro, reject
 DOMAIN-SUFFIX,joyouscreedweasel.com, reject
 DOMAIN-SUFFIX,joyrodethyme.digital, reject
 DOMAIN-SUFFIX,joyvowdig.com, reject
@@ -15891,6 +15894,7 @@ DOMAIN-SUFFIX,ludicroussignify.com, reject
 DOMAIN-SUFFIX,ludied.com, reject
 DOMAIN-SUFFIX,ludocsbho.com, reject
 DOMAIN-SUFFIX,ludwigreseise.tech, reject
+DOMAIN-SUFFIX,ludxivsakalg.com, reject
 DOMAIN-SUFFIX,lufbogazixz.com, reject
 DOMAIN-SUFFIX,luffic.com, reject
 DOMAIN-SUFFIX,lugajxy.com, reject
@@ -19055,6 +19059,7 @@ DOMAIN-SUFFIX,otiatrygetable.uno, reject
 DOMAIN-SUFFIX,otigainareput.info, reject
 DOMAIN-SUFFIX,otireofhisl.one, reject
 DOMAIN-SUFFIX,otisephie.com, reject
+DOMAIN-SUFFIX,otjawzdugg.com, reject
 DOMAIN-SUFFIX,otjccfldytgkkox.xyz, reject
 DOMAIN-SUFFIX,otjoxpacgak.com, reject
 DOMAIN-SUFFIX,otlopudpvfq.com, reject
@@ -23045,6 +23050,7 @@ DOMAIN-SUFFIX,rysheatlengthani.com.ua, reject
 DOMAIN-SUFFIX,rysheatlengthanl.xyz, reject
 DOMAIN-SUFFIX,ryyyyjfrawo.com, reject
 DOMAIN-SUFFIX,rzawugotwc.com, reject
+DOMAIN-SUFFIX,rzaxroziwozq.com, reject
 DOMAIN-SUFFIX,rzkphskfifmo.com, reject
 DOMAIN-SUFFIX,rzneekilff.com, reject
 DOMAIN-SUFFIX,rzzqhhoim.com, reject

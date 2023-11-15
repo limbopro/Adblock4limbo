@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311141453
+## ! Version: 202311151519
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Nov 2023 14:53 UTC
+## ! Last modified: 15 Nov 2023 15:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -362,6 +362,7 @@ DOMAIN-SUFFIX,uqd.io
 DOMAIN-SUFFIX,ustat.info
 DOMAIN-SUFFIX,venture-365-inspired.com
 DOMAIN-SUFFIX,venusrevival.com
+DOMAIN-SUFFIX,vfghe.com
 DOMAIN-SUFFIX,vfgte.com
 DOMAIN-SUFFIX,videoplayerhub.com
 DOMAIN-SUFFIX,vkanalytics.net
@@ -2437,6 +2438,7 @@ DOMAIN-SUFFIX,events.tubecup.org
 DOMAIN-SUFFIX,events.ubembed.com
 DOMAIN-SUFFIX,events.whisk.com
 DOMAIN-SUFFIX,events.yourcx.io
+DOMAIN-SUFFIX,eventsproxy.gargantuan.futureplc.com
 DOMAIN-SUFFIX,evt.houzz.com
 DOMAIN-SUFFIX,experience.contextly.com
 DOMAIN-SUFFIX,f-log-at.grammarly.io
@@ -2855,6 +2857,7 @@ DOMAIN-SUFFIX,t.cfjump.com
 DOMAIN-SUFFIX,t.channeladvisor.com
 DOMAIN-SUFFIX,t.clic2buy.com
 DOMAIN-SUFFIX,t.enuygun.com
+DOMAIN-SUFFIX,t.ghostboard.io
 DOMAIN-SUFFIX,t.irtyc.com
 DOMAIN-SUFFIX,t.jobsyn.org
 DOMAIN-SUFFIX,t.menepe.com
@@ -20208,7 +20211,6 @@ DOMAIN-SUFFIX,link.marketing.bleacherreport.com
 DOMAIN-SUFFIX,link.marketing.churchomeglobal.org
 DOMAIN-SUFFIX,link.mbtihell.com
 DOMAIN-SUFFIX,link.medibuddy.app
-DOMAIN-SUFFIX,link.medium.com
 DOMAIN-SUFFIX,link.metronaut.app
 DOMAIN-SUFFIX,link.meumulti.com.br
 DOMAIN-SUFFIX,link.mindsetapp.com

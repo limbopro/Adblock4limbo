@@ -782,7 +782,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             if (article[i].querySelector('[data-testid="videoPlayer"]')) {
                                 console.log(article[i].textContent);
                                 let a = document.createElement('a')
-                                a.href = 'https://ssstwitter.com/result_various';
+                                a.href = 'https://ssstwitter.com/';
                                 a.className = 'xdload'
                                 a.target = '_blank';
                                 a.zIndex = '114154';

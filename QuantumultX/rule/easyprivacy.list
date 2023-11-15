@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311141453
+## ! Version: 202311151519
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Nov 2023 14:53 UTC
+## ! Last modified: 15 Nov 2023 15:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -362,6 +362,7 @@ DOMAIN-SUFFIX,uqd.io, reject
 DOMAIN-SUFFIX,ustat.info, reject
 DOMAIN-SUFFIX,venture-365-inspired.com, reject
 DOMAIN-SUFFIX,venusrevival.com, reject
+DOMAIN-SUFFIX,vfghe.com, reject
 DOMAIN-SUFFIX,vfgte.com, reject
 DOMAIN-SUFFIX,videoplayerhub.com, reject
 DOMAIN-SUFFIX,vkanalytics.net, reject
@@ -2437,6 +2438,7 @@ DOMAIN-SUFFIX,events.tubecup.org, reject
 DOMAIN-SUFFIX,events.ubembed.com, reject
 DOMAIN-SUFFIX,events.whisk.com, reject
 DOMAIN-SUFFIX,events.yourcx.io, reject
+DOMAIN-SUFFIX,eventsproxy.gargantuan.futureplc.com, reject
 DOMAIN-SUFFIX,evt.houzz.com, reject
 DOMAIN-SUFFIX,experience.contextly.com, reject
 DOMAIN-SUFFIX,f-log-at.grammarly.io, reject
@@ -2855,6 +2857,7 @@ DOMAIN-SUFFIX,t.cfjump.com, reject
 DOMAIN-SUFFIX,t.channeladvisor.com, reject
 DOMAIN-SUFFIX,t.clic2buy.com, reject
 DOMAIN-SUFFIX,t.enuygun.com, reject
+DOMAIN-SUFFIX,t.ghostboard.io, reject
 DOMAIN-SUFFIX,t.irtyc.com, reject
 DOMAIN-SUFFIX,t.jobsyn.org, reject
 DOMAIN-SUFFIX,t.menepe.com, reject
@@ -20208,7 +20211,6 @@ DOMAIN-SUFFIX,link.marketing.bleacherreport.com, reject
 DOMAIN-SUFFIX,link.marketing.churchomeglobal.org, reject
 DOMAIN-SUFFIX,link.mbtihell.com, reject
 DOMAIN-SUFFIX,link.medibuddy.app, reject
-DOMAIN-SUFFIX,link.medium.com, reject
 DOMAIN-SUFFIX,link.metronaut.app, reject
 DOMAIN-SUFFIX,link.meumulti.com.br, reject
 DOMAIN-SUFFIX,link.mindsetapp.com, reject

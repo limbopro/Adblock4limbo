@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 13 Nov 2023 17:32:55 GMT
-# entries:        3724
+# last updated:   Wed, 15 Nov 2023 16:22:17 GMT
+# entries:        3725
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3707,6 +3707,7 @@ DOMAIN-SUFFIX,yieldoptimizer.com
 DOMAIN-SUFFIX,yieldtraffic.com
 DOMAIN-SUFFIX,yldbt.com
 DOMAIN-SUFFIX,ymetrica1.com
+DOMAIN-SUFFIX,yoads.net
 DOMAIN-SUFFIX,yoggrt.com
 DOMAIN-SUFFIX,youradexchange.com
 DOMAIN-SUFFIX,ypu.samsungelectronics.com

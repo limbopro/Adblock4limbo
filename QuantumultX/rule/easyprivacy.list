@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311151519
+## ! Version: 202311161535
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Nov 2023 15:19 UTC
+## ! Last modified: 16 Nov 2023 15:35 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -50,6 +50,7 @@ DOMAIN-SUFFIX,anonstat.pw, reject
 DOMAIN-SUFFIX,apeagle.io, reject
 DOMAIN-SUFFIX,apenterprise.io, reject
 DOMAIN-SUFFIX,apxl.io, reject
+DOMAIN-SUFFIX,arttrk.com, reject
 DOMAIN-SUFFIX,as3.io, reject
 DOMAIN-SUFFIX,awmonitor.com, reject
 DOMAIN-SUFFIX,ayc0zsm69431gfebd.info, reject
@@ -300,6 +301,7 @@ DOMAIN-SUFFIX,rkdms.com, reject
 DOMAIN-SUFFIX,rlcdn.com, reject
 DOMAIN-SUFFIX,robotflowermobile.com, reject
 DOMAIN-SUFFIX,rtactivate.com, reject
+DOMAIN-SUFFIX,rumt-sg.com, reject
 DOMAIN-SUFFIX,s-onetag.com, reject
 DOMAIN-SUFFIX,salsify-ecdn.com, reject
 DOMAIN-SUFFIX,sbgsodufuosmmvsdf.info, reject
@@ -1436,6 +1438,7 @@ DOMAIN-SUFFIX,pricklydebt.com, reject
 DOMAIN-SUFFIX,pricklyjourney.com, reject
 DOMAIN-SUFFIX,pricklypies.com, reject
 DOMAIN-SUFFIX,pricklyplastic.com, reject
+DOMAIN-SUFFIX,pricklypollution.com, reject
 DOMAIN-SUFFIX,printerplasma.com, reject
 DOMAIN-SUFFIX,producecopy.com, reject
 DOMAIN-SUFFIX,producepickle.com, reject
@@ -3982,6 +3985,7 @@ DOMAIN-SUFFIX,health-metrics-api.setapp.com, reject
 DOMAIN-SUFFIX,heap.drop.com, reject
 DOMAIN-SUFFIX,hits.cyberdrop.me, reject
 DOMAIN-SUFFIX,hlogger.heraldcorp.com, reject
+DOMAIN-SUFFIX,htrace.wetvinfo.com, reject
 DOMAIN-SUFFIX,i.pokernews.com, reject
 DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com, reject
 DOMAIN-SUFFIX,iedc.fitbit.com, reject
@@ -4212,6 +4216,7 @@ DOMAIN-SUFFIX,ted.dailymail.co.uk, reject
 DOMAIN-SUFFIX,telegraph.prd.api.max.com, reject
 DOMAIN-SUFFIX,telem.sre.gopuff.com, reject
 DOMAIN-SUFFIX,telemetry.adobe.io, reject
+DOMAIN-SUFFIX,telemetry.algolia.com, reject
 DOMAIN-SUFFIX,telemetry.api.playstation.com, reject
 DOMAIN-SUFFIX,telemetry.firez.one, reject
 DOMAIN-SUFFIX,telemetry.tradingview.com, reject

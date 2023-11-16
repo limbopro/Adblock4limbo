@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311151519
+## ! Version: 202311161535
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Nov 2023 15:19 UTC
+## ! Last modified: 16 Nov 2023 15:35 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -50,6 +50,7 @@ DOMAIN-SUFFIX,anonstat.pw
 DOMAIN-SUFFIX,apeagle.io
 DOMAIN-SUFFIX,apenterprise.io
 DOMAIN-SUFFIX,apxl.io
+DOMAIN-SUFFIX,arttrk.com
 DOMAIN-SUFFIX,as3.io
 DOMAIN-SUFFIX,awmonitor.com
 DOMAIN-SUFFIX,ayc0zsm69431gfebd.info
@@ -300,6 +301,7 @@ DOMAIN-SUFFIX,rkdms.com
 DOMAIN-SUFFIX,rlcdn.com
 DOMAIN-SUFFIX,robotflowermobile.com
 DOMAIN-SUFFIX,rtactivate.com
+DOMAIN-SUFFIX,rumt-sg.com
 DOMAIN-SUFFIX,s-onetag.com
 DOMAIN-SUFFIX,salsify-ecdn.com
 DOMAIN-SUFFIX,sbgsodufuosmmvsdf.info
@@ -1436,6 +1438,7 @@ DOMAIN-SUFFIX,pricklydebt.com
 DOMAIN-SUFFIX,pricklyjourney.com
 DOMAIN-SUFFIX,pricklypies.com
 DOMAIN-SUFFIX,pricklyplastic.com
+DOMAIN-SUFFIX,pricklypollution.com
 DOMAIN-SUFFIX,printerplasma.com
 DOMAIN-SUFFIX,producecopy.com
 DOMAIN-SUFFIX,producepickle.com
@@ -3982,6 +3985,7 @@ DOMAIN-SUFFIX,health-metrics-api.setapp.com
 DOMAIN-SUFFIX,heap.drop.com
 DOMAIN-SUFFIX,hits.cyberdrop.me
 DOMAIN-SUFFIX,hlogger.heraldcorp.com
+DOMAIN-SUFFIX,htrace.wetvinfo.com
 DOMAIN-SUFFIX,i.pokernews.com
 DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com
 DOMAIN-SUFFIX,iedc.fitbit.com
@@ -4212,6 +4216,7 @@ DOMAIN-SUFFIX,ted.dailymail.co.uk
 DOMAIN-SUFFIX,telegraph.prd.api.max.com
 DOMAIN-SUFFIX,telem.sre.gopuff.com
 DOMAIN-SUFFIX,telemetry.adobe.io
+DOMAIN-SUFFIX,telemetry.algolia.com
 DOMAIN-SUFFIX,telemetry.api.playstation.com
 DOMAIN-SUFFIX,telemetry.firez.one
 DOMAIN-SUFFIX,telemetry.tradingview.com

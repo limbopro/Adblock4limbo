@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311161535
+## ! Version: 202311170817
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Nov 2023 15:35 UTC
+## ! Last modified: 17 Nov 2023 08:17 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1263,6 +1263,7 @@ DOMAIN-SUFFIX,materialisticmoon.com
 DOMAIN-SUFFIX,materialmoon.com
 DOMAIN-SUFFIX,materialparcel.com
 DOMAIN-SUFFIX,materialplayground.com
+DOMAIN-SUFFIX,meadowlullaby.com
 DOMAIN-SUFFIX,measlymiddle.com
 DOMAIN-SUFFIX,measurecaption.com
 DOMAIN-SUFFIX,meatydime.com

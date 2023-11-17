@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 15 Nov 2023 16:22:17 GMT
-# entries:        3725
+# entries:        3715
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -12,7 +12,6 @@
 # start date:    Fri, 06 Jun 2003 00:00:00
 
 
-DOMAIN-SUFFIX,1-1ads.com, reject
 DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
@@ -22,7 +21,6 @@ DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
 DOMAIN-SUFFIX,24log.com, reject
-DOMAIN-SUFFIX,24log.de, reject
 DOMAIN-SUFFIX,24pm-affiliation.com, reject
 DOMAIN-SUFFIX,2mdn.net, reject
 DOMAIN-SUFFIX,2o7.net, reject
@@ -98,7 +96,6 @@ DOMAIN-SUFFIX,ad-balancer.at, reject
 DOMAIN-SUFFIX,ad-balancer.net, reject
 DOMAIN-SUFFIX,ad-cupid.com, reject
 DOMAIN-SUFFIX,ad-delivery.net, reject
-DOMAIN-SUFFIX,ad-pay.de, reject
 DOMAIN-SUFFIX,ad-rotator.com, reject
 DOMAIN-SUFFIX,ad-score.com, reject
 DOMAIN-SUFFIX,ad-server.gulasidorna.se, reject
@@ -672,7 +669,6 @@ DOMAIN-SUFFIX,ads1.virtual-nights.com, reject
 DOMAIN-SUFFIX,ads10.speedbit.com, reject
 DOMAIN-SUFFIX,ads180.com, reject
 DOMAIN-SUFFIX,ads2.brazzers.com, reject
-DOMAIN-SUFFIX,ads2.clearchannel.com, reject
 DOMAIN-SUFFIX,ads2.contentabc.com, reject
 DOMAIN-SUFFIX,ads2.femmefab.nl, reject
 DOMAIN-SUFFIX,ads2.gamecity.net, reject
@@ -1073,7 +1069,6 @@ DOMAIN-SUFFIX,avenuea.com, reject
 DOMAIN-SUFFIX,avocet.io, reject
 DOMAIN-SUFFIX,awakebird.com, reject
 DOMAIN-SUFFIX,awempire.com, reject
-DOMAIN-SUFFIX,awesomeagreement.com, reject
 DOMAIN-SUFFIX,awin1.com, reject
 DOMAIN-SUFFIX,awstrack.me, reject
 DOMAIN-SUFFIX,awzbijw.com, reject
@@ -1432,7 +1427,6 @@ DOMAIN-SUFFIX,clksite.com, reject
 DOMAIN-SUFFIX,cloisteredcord.com, reject
 DOMAIN-SUFFIX,cloisteredhydrant.com, reject
 DOMAIN-SUFFIX,closedcows.com, reject
-DOMAIN-SUFFIX,cloudcoins.biz, reject
 DOMAIN-SUFFIX,cloudflareinsights.com, reject
 DOMAIN-SUFFIX,cloudiq.com, reject
 DOMAIN-SUFFIX,clrstm.com, reject
@@ -2047,7 +2041,6 @@ DOMAIN-SUFFIX,impossibleexpansion.com, reject
 DOMAIN-SUFFIX,imprese.cz, reject
 DOMAIN-SUFFIX,impressionmedia.cz, reject
 DOMAIN-SUFFIX,impressionmonster.com, reject
-DOMAIN-SUFFIX,impressionz.co.uk, reject
 DOMAIN-SUFFIX,improvedigital.com, reject
 DOMAIN-SUFFIX,impulsehands.com, reject
 DOMAIN-SUFFIX,imrworldwide.com, reject
@@ -2487,8 +2480,6 @@ DOMAIN-SUFFIX,newads.bangbros.com, reject
 DOMAIN-SUFFIX,newnet.qsrch.com, reject
 DOMAIN-SUFFIX,newnudecash.com, reject
 DOMAIN-SUFFIX,newopenx.detik.com, reject
-DOMAIN-SUFFIX,newsadsppush.com, reject
-DOMAIN-SUFFIX,newsletter-link.com, reject
 DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
 DOMAIN-SUFFIX,newt1.adultworld.com, reject
@@ -3409,7 +3400,6 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk, reject
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk, reject
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk, reject
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk, reject
-DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com, reject
 DOMAIN-SUFFIX,tracking.epicgames.com, reject
 DOMAIN-SUFFIX,tracking.exipure.com, reject
 DOMAIN-SUFFIX,tracking.hyros.com, reject

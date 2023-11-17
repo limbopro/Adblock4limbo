@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 15 Nov 2023 16:22:17 GMT
-# entries:        3725
+# entries:        3715
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -12,7 +12,6 @@
 # start date:    Fri, 06 Jun 2003 00:00:00
 
 
-DOMAIN-SUFFIX,1-1ads.com
 DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
@@ -22,7 +21,6 @@ DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
-DOMAIN-SUFFIX,24log.de
 DOMAIN-SUFFIX,24pm-affiliation.com
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,2o7.net
@@ -98,7 +96,6 @@ DOMAIN-SUFFIX,ad-balancer.at
 DOMAIN-SUFFIX,ad-balancer.net
 DOMAIN-SUFFIX,ad-cupid.com
 DOMAIN-SUFFIX,ad-delivery.net
-DOMAIN-SUFFIX,ad-pay.de
 DOMAIN-SUFFIX,ad-rotator.com
 DOMAIN-SUFFIX,ad-score.com
 DOMAIN-SUFFIX,ad-server.gulasidorna.se
@@ -672,7 +669,6 @@ DOMAIN-SUFFIX,ads1.virtual-nights.com
 DOMAIN-SUFFIX,ads10.speedbit.com
 DOMAIN-SUFFIX,ads180.com
 DOMAIN-SUFFIX,ads2.brazzers.com
-DOMAIN-SUFFIX,ads2.clearchannel.com
 DOMAIN-SUFFIX,ads2.contentabc.com
 DOMAIN-SUFFIX,ads2.femmefab.nl
 DOMAIN-SUFFIX,ads2.gamecity.net
@@ -1073,7 +1069,6 @@ DOMAIN-SUFFIX,avenuea.com
 DOMAIN-SUFFIX,avocet.io
 DOMAIN-SUFFIX,awakebird.com
 DOMAIN-SUFFIX,awempire.com
-DOMAIN-SUFFIX,awesomeagreement.com
 DOMAIN-SUFFIX,awin1.com
 DOMAIN-SUFFIX,awstrack.me
 DOMAIN-SUFFIX,awzbijw.com
@@ -1432,7 +1427,6 @@ DOMAIN-SUFFIX,clksite.com
 DOMAIN-SUFFIX,cloisteredcord.com
 DOMAIN-SUFFIX,cloisteredhydrant.com
 DOMAIN-SUFFIX,closedcows.com
-DOMAIN-SUFFIX,cloudcoins.biz
 DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,cloudiq.com
 DOMAIN-SUFFIX,clrstm.com
@@ -2047,7 +2041,6 @@ DOMAIN-SUFFIX,impossibleexpansion.com
 DOMAIN-SUFFIX,imprese.cz
 DOMAIN-SUFFIX,impressionmedia.cz
 DOMAIN-SUFFIX,impressionmonster.com
-DOMAIN-SUFFIX,impressionz.co.uk
 DOMAIN-SUFFIX,improvedigital.com
 DOMAIN-SUFFIX,impulsehands.com
 DOMAIN-SUFFIX,imrworldwide.com
@@ -2487,8 +2480,6 @@ DOMAIN-SUFFIX,newads.bangbros.com
 DOMAIN-SUFFIX,newnet.qsrch.com
 DOMAIN-SUFFIX,newnudecash.com
 DOMAIN-SUFFIX,newopenx.detik.com
-DOMAIN-SUFFIX,newsadsppush.com
-DOMAIN-SUFFIX,newsletter-link.com
 DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
 DOMAIN-SUFFIX,newt1.adultworld.com
@@ -3409,7 +3400,6 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk
-DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com
 DOMAIN-SUFFIX,tracking.epicgames.com
 DOMAIN-SUFFIX,tracking.exipure.com
 DOMAIN-SUFFIX,tracking.hyros.com

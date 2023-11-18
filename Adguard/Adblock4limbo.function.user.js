@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.11.18
+// @version      0.1.11.19
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -183,7 +183,7 @@ setInterval(() => {
 
 let crisp_auto_hiddenX = setInterval(() => {
     crisp_auto_hidden(); // 默认隐藏 crisp 聊天窗口
-}, 3000)
+}, 5000)
 
 
 

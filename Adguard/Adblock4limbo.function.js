@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.11.17
+// @version      0.1.11.18
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -139,7 +139,7 @@ function hidden_adblock4limbo() {
         setTimeout(() => {
             //// console.log("本次移动距离" + Math.abs(last_known_scroll_position - window.scrollY))
             //if (Math.abs(last_known_scroll_position - window.scrollY) > 1000) {
-            if (last_known_scroll_position !== window.scrollY) {
+            if (last_known_scroll_position !== window.scrollY && document.querySelector('img.lockscreen') == null) {
                 ////console.log("// hidden_adblock4limbo() 按钮存在，且页面还在滑动...");
                 if (document.querySelector("#navigation4limbo").style.zIndex > 0) {
                     document.querySelector("#navigation4limbo").style.zIndex = ++document.querySelector("#navigation4limbo").style.zIndex;
@@ -254,9 +254,15 @@ function _onclick_button() {
             })
         }
 
-        if (document.getElementById('nsfwmodel_switch')) {
-            document.getElementById('nsfwmodel_switch').addEventListener('click', function () {
-                nsfwmodel(); // 开始或关闭成人模式
+        if (document.getElementById('nsfwmode_switch')) {
+            document.getElementById('nsfwmode_switch').addEventListener('click', function () {
+                nsfwmode(); // 开始或关闭成人模式
+            })
+        }
+
+        if (document.getElementById('lock_screen')) {
+            document.getElementById('lock_screen').addEventListener('click', function () {
+                lock_screen_switch(); // 开始或关闭锁屏
             })
         }
 
@@ -363,9 +369,10 @@ function navigation4limbo_body_pre() {
         <div class="div_global feedback">\
         <div class="title_global" >反馈/建议/功能设置//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><button style="background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">现在聊聊</button></li>\
-        <li class="li_global"><button style="background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="hidedaohang">隐藏导航</button></li>\
-        <li class="li_global"><button style="background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmodel_switch">成人保护模式(ON)</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">现在聊聊</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="hidedaohang">隐藏导航</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmode_switch">成人保护模式(ON)</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="lock_screen">锁屏! 🔐</button></li>\
         <li class="li_global"><a href="https://t.me/Adblock4limbo/21" target="_blank" class="a_global red" id="FAQ">常见FAQ</a></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues/new/choose" \
         target="_blank">提交issue</a></li>\
@@ -408,7 +415,7 @@ function navigation4limbo_body_pre() {
         target="_blank">软件百科</a></li>\
         <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="index" href="https://limbopro.com/" \
         target="_blank">毒奶博客</a></li>\
-        <li class="li_global"><a class="a_global red " style="background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="lsj">毒奶搜索</a></li>\
+        <li class="li_global"><a class="a_global red " style="border-radius:4px; background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="lsj">毒奶搜索</a></li>\
         </ul>\
         </div>\
         \
@@ -942,7 +949,7 @@ document.addEventListener("keydown", function (event) {
         console.log(click_count + "次ESC点击次数");
         // 执行你想要的操作
         // 监听键盘事件 ESC
-        if (!(document.querySelector('div#nsfw') === null) && !(document.querySelector('div#nsfw').style === null) && !(document.querySelector('div#nsfw').getAttribute('style') === null) && (document.querySelector('div#nsfw').getAttribute('style').search('-114') == -1) && click_count == 1) {
+        if (!(document.querySelector('div#nsfw') === null) && !(document.querySelector('div#nsfw').style === null) && !(document.querySelector('div#nsfw').getAttribute('style') === null) && (document.querySelector('div#nsfw').getAttribute('style').search('-114') == -1) && document.querySelector('img.lockscreen') == null && click_count == 1) {
             znsh_unlock();
         } else if ((document.querySelector('div[data-chat-status="ongoing"]') && (document.querySelector('div[data-chat-status="ongoing"]').getAttribute('data-visible') == 'true')) || document.querySelector('div[data-chat-status="initial"]') && (document.querySelector('div[data-chat-status="initial"]').getAttribute('data-visible') == 'true') && click_count == 1) {
             crisp_active('1');
@@ -954,8 +961,10 @@ document.addEventListener("keydown", function (event) {
             setTimeout(() => {
                 x4Home_button('1') // 按钮出现
             }, 1000)
-        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex < 0 && click_count >= 2) {
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex < 0 && click_count == 2) {
             body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex > 0 && click_count == 3) {
+            lock_screen_switch();
         }
     }
 
@@ -988,12 +997,12 @@ document.addEventListener("keydown", function (event) {
 
 // 监听 visibility change 事件 用户离开当前页面事件
 function visibility_() {
-    if (getCookie('nsfwmodel') !== 'false') {
+    if (getCookie('nsfwmode') !== 'false') {
         document.addEventListener('visibilitychange', function () {
             var visible = document.visibilityState;
             if (visible !== 'visible') {
                 console.log(visible)
-                document.body.style.filter = 'blur(10px)'
+                document.body.style.filter = 'blur(50px)'
             } else {
                 setTimeout(() => {
                     console.log(visible)
@@ -1162,11 +1171,11 @@ function nsfw_content_hidden(x) { // nsfw 网站模糊
 
 // 监听 visibility change 事件 用户离开当前页面事件
 function visibility() {
-    if (getCookie('nsfwmodel') !== 'false') {
+    if (getCookie('nsfwmode') !== 'false') {
         document.addEventListener('visibilitychange', function () {
             var visible = document.visibilityState;
-            if (visible !== 'visible' && getCookie('nsfwmodel') !== 'false') {
-                document.body.style.filter = 'blur(20px)';
+            if (visible !== 'visible' && getCookie('nsfwmode') !== 'false') {
+                document.body.style.filter = 'blur(50px)';
                 nsfw_content_hidden('true'); // 开启模糊
             }
         })
@@ -1178,27 +1187,43 @@ function visibility() {
 
 // 取消模糊 监听
 function visibility_switch() {
-    if (document.querySelector("div#nsfw")) {
-        document.querySelector("div#nsfw").addEventListener("click", znsh_unlock);
-        /*
-        let last_known_scroll_position = window.scrollY;
-        setTimeout(() => {
-            if (last_known_scroll_position !== window.scrollY) {
-                znsh_unlock();
-            }
-        }, 1000)
-        */
-    }
+    var znsh_setInterval = window.setInterval(() => {
+        if (document.querySelector("div#nsfw")) {
+            document.querySelector("div#nsfw").addEventListener("click", znsh_unlock);
+            clearInterval(znsh_setInterval);
+        }
+    }, 1500);
 }
 
-function znsh_unlock() {
-    if (document.querySelector("#nsfw")) {
-        document.body.style.filter = 'blur(0px)';
-        document.querySelector("#nsfw").style.zIndex = '-114154';
-        document.querySelector("#nsfw").style.opacity = 0;
-        setTimeout(() => {
-            x4Home_button('1'); // 显示导航按钮
-        }, 1000)
+function znsh_unlock(x) {
+    if (x == 'lockscreen') {
+        if (document.querySelector("#nsfw")) {
+            if (document.body.style.filter.replace(/[^0-9]/ig, "") > 10) {
+                var filter_now = document.body.style.filter.replace(/[^0-9]/ig, "");
+                document.body.style.filter = 'blur(' + (filter_now - 20) + 'px)';
+            } else {
+                document.body.style.filter = 'blur(0px)';
+                document.querySelector("#nsfw").style.zIndex = '-114154';
+                document.querySelector("#nsfw").style.opacity = 0;
+                setTimeout(() => {
+                    x4Home_button('1'); // 显示导航按钮
+                }, 1000)
+            }
+        }
+    } else if (document.querySelector('img.lockscreen') == null) {
+        if (document.querySelector("#nsfw")) {
+            if (document.body.style.filter.replace(/[^0-9]/ig, "") > 10) {
+                var filter_now = document.body.style.filter.replace(/[^0-9]/ig, "");
+                document.body.style.filter = 'blur(' + (filter_now - 20) + 'px)';
+            } else {
+                document.body.style.filter = 'blur(0px)';
+                document.querySelector("#nsfw").style.zIndex = '-114154';
+                document.querySelector("#nsfw").style.opacity = 0;
+                setTimeout(() => {
+                    x4Home_button('1'); // 显示导航按钮
+                }, 1000)
+            }
+        }
     }
 }
 /*
@@ -1216,50 +1241,54 @@ function znsh() {
     if (nsfw_regex.test(document.location.href)) {
         visibility();
         //console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
-        var znsh_setInterval = window.setInterval(() => {
-            visibility_switch(); //
-        }, 1500);
+        visibility_switch(); //
     }
 }
 
-function nsfwmodel() { // 是否开启
-    if (getCookie('nsfwmodel') == 'false') {
-        setCookie('nsfwmodel', 'true', '114154');
-        setTimeout(() => { nsfwmodel_check() }, 100)
-    } else if (getCookie('nsfwmodel') == 'true') {
-        setCookie('nsfwmodel', 'false', '114154');
+function nsfwmode(x) { // 是否开启
+    if (x == 'false') {
+        setCookie('nsfwmode', 'false', '114154');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (x == 'true') {
+        setCookie('nsfwmode', 'true', '114154');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (getCookie('nsfwmode') == 'false') {
+        setCookie('nsfwmode', 'true', '114154');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (getCookie('nsfwmode') == 'true') {
+        setCookie('nsfwmode', 'false', '114154');
         visibility('false');
-        setTimeout(() => { nsfwmodel_check() }, 100)
-    } else if (getCookie('nsfwmodel') == '') {
-        setCookie('nsfwmodel', 'false', '114154');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (getCookie('nsfwmode') == '') {
+        setCookie('nsfwmode', 'false', '114154');
         visibility('false');
-        setTimeout(() => { nsfwmodel_check() }, 100)
+        setTimeout(() => { nsfwmode_check() }, 100)
     }
 }
 
-nsfwmodel_check();
+nsfwmode_check();
 
-function nsfwmodel_check() {
-    if (getCookie('nsfwmodel') !== 'false' && nsfw_regex.test(document.location.href)) {
+function nsfwmode_check() {
+    if (getCookie('nsfwmode') !== 'false' && nsfw_regex.test(document.location.href)) {
         znsh();
-        if (document.getElementById('nsfwmodel_switch')) {
+        if (document.getElementById('nsfwmode_switch')) {
             znsh();
-            document.getElementById('nsfwmodel_switch').textContent = '成人保护模式(ON)';
+            document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
             setTimeout(() => {
                 body_build('false');
             }, 1200)
         }
-    } else if (getCookie('nsfwmodel') !== 'true' && nsfw_regex.test(document.location.href)) {
-        if (document.getElementById('nsfwmodel_switch')) {
+    } else if (getCookie('nsfwmode') !== 'true' && nsfw_regex.test(document.location.href)) {
+        if (document.getElementById('nsfwmode_switch')) {
             znsh_unlock();
-            document.getElementById('nsfwmodel_switch').textContent = '成人保护模式(OFF)';
+            document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
             setTimeout(() => {
                 body_build('false');
             }, 1200)
         }
     } else {
-        if (document.getElementById('nsfwmodel_switch')) {
-            document.getElementById('nsfwmodel_switch').textContent = '非成人网站';
+        if (document.getElementById('nsfwmode_switch')) {
+            document.getElementById('nsfwmode_switch').textContent = '非成人网站';
         }
     }
 }
@@ -1280,6 +1309,74 @@ function hide_button_switch(x) {
         x4Home_button('hidden');
     }
 }
+
+function lock_screen_setPWD(x) { // 锁屏设置
+    if (x == 'check') {
+        lock_screen_mode_check();
+    } else if (getCookie('lock_screen_pwd') == '') {
+        var password = window.prompt("请设置锁屏密码？（任意你记得住的字母/数字等符号的组合)，如忘记密码，你可通过清理浏览器 cookie 的方式重置密码。本次设置仅针对当前网站域名生效。");
+        setCookie('lock_screen_pwd', password, 114154);
+        setTimeout(() => {
+            lock_screen_setPWD();
+        }, 1000)
+    } else {
+        lock_screen_mode_check_after();
+    }
+}
+
+lock_screen_mode_check();
+
+function screen_unlock() {
+    var pwd = window.prompt("请输入密码以解锁...");
+    if (pwd == getCookie('lock_screen_pwd')) {
+        znsh_unlock('lockscreen');
+        znsh_unlock('lockscreen');
+        znsh_unlock('lockscreen');
+        nsfwmode('true');
+        document.querySelector("img.lockscreen").removeEventListener("click", screen_unlock);
+        document.querySelector('img.lockscreen').className = 'nsfw';
+        document.querySelector('img.nsfw').style = 'filter:blur(0px)'
+        document.querySelector("img.nsfw").addEventListener("click", znsh_unlock());
+        setCookie('lock_screen_mode', 'false', '114154');
+        //location.reload();
+    }
+}
+
+function lock_screen_mode_check() {
+    if (getCookie('lock_screen_mode') == 'true') {
+        nsfwmode('false');
+        lock_screen_setPWD();
+    }
+}
+
+function lock_screen_mode_check_after() {
+    if (getCookie('lock_screen_mode') == 'true') {
+        document.body.style.filter = 'blur(50px)';
+        nsfw_content_hidden('true'); // 开启模糊
+        document.querySelector('img.nsfw').className = 'lockscreen';
+        document.querySelector('img.lockscreen').style = 'filter:blur(50px)'
+        document.querySelector("img.lockscreen").addEventListener("click", screen_unlock);
+        body_build('false');
+    }
+}
+
+function lock_screen_switch() {
+    if (getCookie('lock_screen_mode') == 'false') {
+        setCookie('lock_screen_mode', 'true', '114154');
+        setTimeout(() => { lock_screen_mode_check() }, 100)
+        body_build('false');
+    } else if (getCookie('lock_screen_mode') == 'true') {
+        setCookie('lock_screen_mode', 'false', '114154');
+        //visibility('false');
+        setTimeout(() => { lock_screen_mode_check() }, 100)
+    } else if (getCookie('lock_screen_mode') == '') {
+        setCookie('lock_screen_mode', 'true', '114154');
+        //visibility('false');
+        setTimeout(() => { lock_screen_mode_check() }, 100)
+        body_build('false');
+    }
+}
+
 
 // 隐藏按钮选项 1 一天
 let button_switch = getCookie("button_switch");

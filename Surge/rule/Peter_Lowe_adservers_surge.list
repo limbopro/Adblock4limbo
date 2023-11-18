@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 15 Nov 2023 16:22:17 GMT
-# entries:        3715
+# last updated:   Fri, 17 Nov 2023 19:23:14 GMT
+# entries:        3716
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2306,6 +2306,7 @@ DOMAIN-SUFFIX,mbs.megaroticlive.com
 DOMAIN-SUFFIX,mcdlks.com
 DOMAIN-SUFFIX,mcs-va.tiktok.com
 DOMAIN-SUFFIX,mcs-va.tiktokv.com
+DOMAIN-SUFFIX,meadowlullaby.com
 DOMAIN-SUFFIX,measlymiddle.com
 DOMAIN-SUFFIX,measure.office.com
 DOMAIN-SUFFIX,measuremap.com

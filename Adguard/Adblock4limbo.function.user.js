@@ -314,7 +314,9 @@ function csp_remove() {
             // 如果引用了 Adblock4limbo.function.js 则什么也不做
         } else {
             let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
-            button.forEach((x) => { document.querySelector(x).remove() });
+            button.forEach((x) => {
+                if (document.querySelector(x)) { document.querySelector(x).remove() }
+            });
             let li = document.querySelectorAll('li.li_global');
             for (x = 0; x < li.length; x++) {
                 if ((li[x].querySelector('a') === null)) {
@@ -327,7 +329,9 @@ function csp_remove() {
             // 如果引用了 Adblock4limbo.function.js 则什么也不做
         } else {
             let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
-            button.forEach((x) => { document.querySelector(x).remove() });
+            button.forEach((x) => {
+                if (document.querySelector(x)) { document.querySelector(x).remove() }
+            });
             let li = document.querySelectorAll('li.li_global');
             for (x = 0; x < li.length; x++) {
                 if ((li[x].querySelector('a') === null)) {
@@ -514,6 +518,7 @@ var file = {
     '
 }
 
+// ::-webkit-scrollbar{width:8px;}::-webkit-scrollbar:horizontal{height:8px}::-webkit-scrollbar-track{display:none}::-webkit-scrollbar-thumb{border-radius:2px;background-color:white;} img.nsfw {position:fixed;width:100%;top:0%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo {color:white;width:100%;height:100%} #nsfw { opacity:0.4; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button_csp{font-size:xxx-large;transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .close_search_button_csp:hover {background-color:red;opacity:1 !important;}  .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.crisp-client {pointer-events:none; z-index:-114154; opacity:0;} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation4limbo.navigation4limbo_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation4limbo.navigation4limbo_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{word-wrap:break-word;font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{padding-left:2px;display:table-cell;vertical-align:bottom;width:106px;height:50px;text-align:center;font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-bottom:4px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation4limbo{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
 // 优先追加style元素 以内联样式的方式
 function css_add(css, here_write_css_name_you_want) {
     // css style 创建
@@ -849,9 +854,9 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ["Reddit", "https://www.reddit.com/", "_blank", "Social", 'special'],
 ["Quora", "https://www.quora.com/", "_blank", "Social", 'common'],
 ["Twitter", "https://twitter.com/", "_blank", "Social", 'special'],
-["Instagram", "https://www.instagram.com/", "_blank", "Social", 'common'],
+["Instagram", "https://www.instagram.com/", "_blank", "Social", 'special'],
 ["Tiktok", "https://www.tiktok.com/", "_blank", "Social", 'common'],
-["Youtube", "https://m.youtube.com/", "_blank", "Media", 'special'],
+["Youtube", "https://m.youtube.com/", "_blank", "Social", 'special'],
 ["Netflix", "https://www.netflix.com/browse", "_blank", "Media", 'special'],
 ["HBO", "https://www.hbo.com/", "_blank", "Media", 'common'],
 ["Disney+", "https://www.disneyplus.com/en-hk", "_blank", "Media", 'common'],
@@ -961,7 +966,7 @@ document.addEventListener("keydown", function (event) {
             setTimeout(() => {
                 x4Home_button('1') // 按钮出现
             }, 1000)
-        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex < 0 && click_count == 2) {
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex < 0 && click_count == 2 && (document.querySelector('div#nsfw') == null || document.querySelector('div#nsfw').style.zIndex < 0)) {
             body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
         } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex > 0 && click_count == 3) {
             lock_screen_switch();
@@ -1084,7 +1089,7 @@ function parentElement_add() {
                 parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
                 parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
-                parent_push('.echo', 'Media', 4, '娱乐媒体//', 'Media')
+                parent_push('.echo', 'Media', 4, '流媒体//', 'Media')
                 parent_push(".echo", 'AICHAT', 4, '智能AI//', 'AICHAT')
                 parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
                 parent_push('.echo', 'news', '10', '时事新闻//', 'currentnews')
@@ -1110,7 +1115,7 @@ function parentElement_add() {
                 parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
                 parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
-                parent_push('.echo', 'Media', 4, '娱乐媒体//', 'Media')
+                parent_push('.echo', 'Media', 4, '流媒体//', 'Media')
                 parent_push(".echo", 'AICHAT', 4, '智能AI//', 'AICHAT')
                 parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
                 parent_push('.echo', 'news', '10', '时事新闻//', 'currentnews')
@@ -1313,7 +1318,7 @@ function hide_button_switch(x) {
 function lock_screen_setPWD(x) { // 锁屏设置
     if (x == 'check') {
         lock_screen_mode_check();
-    } else if (getCookie('lock_screen_pwd') == '') {
+    } else if (getCookie('lock_screen_pwd') == '' || getCookie('lock_screen_pwd') == 'null') {
         var password = window.prompt("请设置锁屏密码？（任意你记得住的字母/数字等符号的组合)，如忘记密码，你可通过清理浏览器 cookie 的方式重置密码。本次设置仅针对当前网站域名生效。");
         setCookie('lock_screen_pwd', password, 114154);
         setTimeout(() => {

@@ -1141,6 +1141,8 @@ function nsfw_content_hidden(x) { // nsfw 网站模糊
         if (!document.querySelector("#nsfw_echo")) {
             let nsfw_frame_blur = document.createElement('div');
             nsfw_frame_blur.id = 'nsfw';
+            nsfw_frame_blur.style.zIndex = '114154';
+            nsfw_frame_blur.style.opacity = '0.4';
             let parentElement = document.querySelector('#x4Div') ? document.querySelector('#x4Div') : '';
             parentElement.appendChild(nsfw_frame_blur)
 

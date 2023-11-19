@@ -62,6 +62,7 @@ DOMAIN-SUFFIX,888cool.cn, reject
 DOMAIN-SUFFIX,88lajs3.com, reject
 DOMAIN-SUFFIX,88lajs4.com, reject
 DOMAIN-SUFFIX,88lajs6.com, reject
+DOMAIN-SUFFIX,8d07a.xyz, reject
 DOMAIN-SUFFIX,913mj.xyz, reject
 DOMAIN-SUFFIX,999aa666bb.com, reject
 DOMAIN-SUFFIX,a4bj6.xyz, reject
@@ -129,6 +130,7 @@ DOMAIN-SUFFIX,cjohpsc.cn, reject
 DOMAIN-SUFFIX,cklithuw.xyz, reject
 DOMAIN-SUFFIX,clcmdie.com, reject
 DOMAIN-SUFFIX,cmdcdacq.xyz, reject
+DOMAIN-SUFFIX,cnrdlpk.xyz, reject
 DOMAIN-SUFFIX,cntc8.icu, reject
 DOMAIN-SUFFIX,cojvur.icu, reject
 DOMAIN-SUFFIX,crazyit8.com, reject
@@ -172,6 +174,7 @@ DOMAIN-SUFFIX,eglizqf.cn, reject
 DOMAIN-SUFFIX,eht116.com, reject
 DOMAIN-SUFFIX,ekzzed.icu, reject
 DOMAIN-SUFFIX,elas666.pics, reject
+DOMAIN-SUFFIX,elemea.xyz, reject
 DOMAIN-SUFFIX,eqcwpeo.cn, reject
 DOMAIN-SUFFIX,erutxdk.cn, reject
 DOMAIN-SUFFIX,eshbqn.icu, reject
@@ -314,6 +317,7 @@ DOMAIN-SUFFIX,jqtkzuco.xyz, reject
 DOMAIN-SUFFIX,juljrd.xyz, reject
 DOMAIN-SUFFIX,jupeicha.cn, reject
 DOMAIN-SUFFIX,jvjmjt.xyz, reject
+DOMAIN-SUFFIX,jwxwnr.xyz, reject
 DOMAIN-SUFFIX,k6syi.space, reject
 DOMAIN-SUFFIX,kaaqgf.icu, reject
 DOMAIN-SUFFIX,kaezakkjt.com, reject
@@ -449,6 +453,7 @@ DOMAIN-SUFFIX,quzmtpxw.xyz, reject
 DOMAIN-SUFFIX,qwesaz.com, reject
 DOMAIN-SUFFIX,qwjtdcl.cn, reject
 DOMAIN-SUFFIX,qwnmfiti.xyz, reject
+DOMAIN-SUFFIX,qyoqeq.xyz, reject
 DOMAIN-SUFFIX,r9ffi.fun, reject
 DOMAIN-SUFFIX,rcnithgm.xyz, reject
 DOMAIN-SUFFIX,rcnldz.xyz, reject
@@ -462,6 +467,7 @@ DOMAIN-SUFFIX,roxewwq.cn, reject
 DOMAIN-SUFFIX,rrfccx.com, reject
 DOMAIN-SUFFIX,rslkhj.xyz, reject
 DOMAIN-SUFFIX,rvreuxi.cn, reject
+DOMAIN-SUFFIX,rvvji.online, reject
 DOMAIN-SUFFIX,rzflhxn.cn, reject
 DOMAIN-SUFFIX,scqaaf.cn, reject
 DOMAIN-SUFFIX,serda10.icu, reject
@@ -474,6 +480,7 @@ DOMAIN-SUFFIX,smlpcz.icu, reject
 DOMAIN-SUFFIX,splfnok.cn, reject
 DOMAIN-SUFFIX,sqevnrb.com, reject
 DOMAIN-SUFFIX,sregfle.cn, reject
+DOMAIN-SUFFIX,srldkqj.cn, reject
 DOMAIN-SUFFIX,srlhgo.cn, reject
 DOMAIN-SUFFIX,suzoqz.icu, reject
 DOMAIN-SUFFIX,syjkscy.cn, reject
@@ -532,8 +539,10 @@ DOMAIN-SUFFIX,vgjaxnuw.xyz, reject
 DOMAIN-SUFFIX,vhhxnb.xyz, reject
 DOMAIN-SUFFIX,virginiasibyl.com, reject
 DOMAIN-SUFFIX,vivienjumpe.com, reject
+DOMAIN-SUFFIX,vixajghi.xyz, reject
 DOMAIN-SUFFIX,vizhtd.xyz, reject
 DOMAIN-SUFFIX,vjzjpt.xyz, reject
+DOMAIN-SUFFIX,vozftn.xyz, reject
 DOMAIN-SUFFIX,vrivslffndepxqd.xyz, reject
 DOMAIN-SUFFIX,vrnrpzy.xyz, reject
 DOMAIN-SUFFIX,vttqld.xyz, reject
@@ -563,6 +572,7 @@ DOMAIN-SUFFIX,x2y22.fun, reject
 DOMAIN-SUFFIX,xcholvbc.xyz, reject
 DOMAIN-SUFFIX,xcqbbcqpl.xyz, reject
 DOMAIN-SUFFIX,xdfdqce.xyz, reject
+DOMAIN-SUFFIX,xfqrsjq.cn, reject
 DOMAIN-SUFFIX,xg6hb.xyz, reject
 DOMAIN-SUFFIX,xjxbdh.xyz, reject
 DOMAIN-SUFFIX,xkfigjh.cn, reject
@@ -616,15 +626,6 @@ DOMAIN-SUFFIX,zys15.top, reject
 DOMAIN-SUFFIX,zys16.top, reject
 DOMAIN-SUFFIX,zyzo.cn, reject
 DOMAIN-SUFFIX,zzyy17.top, reject
-DOMAIN-SUFFIX,rvvji.online, reject
-DOMAIN-SUFFIX,srldkqj.cn, reject
-DOMAIN-SUFFIX,vozftn.xyz, reject
-DOMAIN-SUFFIX,qyoqeq.xyz, reject
-DOMAIN-SUFFIX,vixajghi.xyz, reject
-DOMAIN-SUFFIX,cnrdlpk.xyz, reject
-DOMAIN-SUFFIX,jwxwnr.xyz, reject
-DOMAIN-SUFFIX,elemea.xyz, reject
-DOMAIN-SUFFIX,8d07a.xyz, reject
 DOMAIN-SUFFIX,zzyy18.top, reject
 DOMAIN-SUFFIX,zzyy19.top, reject
 DOMAIN-SUFFIX,zzyy20.top, reject

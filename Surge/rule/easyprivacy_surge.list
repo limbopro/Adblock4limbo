@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311181350
+## ! Version: 202311190232
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Nov 2023 13:50 UTC
+## ! Last modified: 19 Nov 2023 02:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -442,9 +442,6 @@ DOMAIN-SUFFIX,cloud-miner.eu
 DOMAIN-SUFFIX,de-mi-nis-ner.info
 DOMAIN-SUFFIX,de-ner-mi-nis4.info
 DOMAIN-SUFFIX,de-nis-ner-mi-5.info
-DOMAIN-SUFFIX,dnsseed.bitcoin.dashjr.org
-DOMAIN-SUFFIX,dnsseed.bluematt.me
-DOMAIN-SUFFIX,dnsseed.emzy.de
 DOMAIN-SUFFIX,f1tbit.com
 DOMAIN-SUFFIX,filmoljupci.com
 DOMAIN-SUFFIX,g1thub.com
@@ -458,11 +455,6 @@ DOMAIN-SUFFIX,minerad.com
 DOMAIN-SUFFIX,pampopholf.com
 DOMAIN-SUFFIX,rand.com.ru
 DOMAIN-SUFFIX,reauthenticator.com
-DOMAIN-SUFFIX,seed.bitcoin.sipa.be
-DOMAIN-SUFFIX,seed.bitcoin.sprovoost.nl
-DOMAIN-SUFFIX,seed.bitcoin.wiz.biz
-DOMAIN-SUFFIX,seed.bitcoinstats.com
-DOMAIN-SUFFIX,seed.btc.petertodd.org
 DOMAIN-SUFFIX,serv1swork.com
 DOMAIN-SUFFIX,statdynamic.com
 DOMAIN-SUFFIX,str1kee.com
@@ -2907,6 +2899,7 @@ DOMAIN-SUFFIX,tagtracking.vibescm.com
 DOMAIN-SUFFIX,target.mixi.media
 DOMAIN-SUFFIX,te.supportfreecontent.com
 DOMAIN-SUFFIX,telemetrics.klaviyo.com
+DOMAIN-SUFFIX,telemetry.goodlifefitness.com
 DOMAIN-SUFFIX,telemetry.phenixrts.com
 DOMAIN-SUFFIX,telemetry.reembed.com
 DOMAIN-SUFFIX,telemetry.soundcloud.com

@@ -297,7 +297,7 @@ let ios_version = str_ua.replace(regexp, '$3');
 var csp = ['twitter', 'xvideos'];
 var number_x = 0;
 if (/\b(google|bing)\b/i.test(window.location.href.toLowerCase())) { // 谷歌和必应均不插入导航按钮
-} else if (csp_regex.test(window.location.href.toLowerCase())) { // 如果是带有CSP的网站则带上参数 csp
+} else if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) { // 如果是带有CSP的网站则带上参数 csp // 2333
     adblock4limbo(x4Home_button_width(), 'csp');
     _onclick_button();
 }

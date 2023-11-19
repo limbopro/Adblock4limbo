@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 17 Nov 2023 19:23:14 GMT
-# entries:        3716
+# last updated:   Sun, 19 Nov 2023 01:36:03 GMT
+# entries:        3717
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3293,6 +3293,7 @@ DOMAIN-SUFFIX,teethfan.com, reject
 DOMAIN-SUFFIX,telaria.com, reject
 DOMAIN-SUFFIX,telemetrics.klaviyo.com, reject
 DOMAIN-SUFFIX,telemetry.dropbox.com, reject
+DOMAIN-SUFFIX,telemetry.goodlifefitness.com, reject
 DOMAIN-SUFFIX,telemetry.malwarebytes.com, reject
 DOMAIN-SUFFIX,telemetry.v.dropbox.com, reject
 DOMAIN-SUFFIX,temelio.com, reject

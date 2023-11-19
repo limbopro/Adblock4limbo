@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311181350
+## ! Version: 202311190232
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Nov 2023 13:50 UTC
+## ! Last modified: 19 Nov 2023 02:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -442,9 +442,6 @@ DOMAIN-SUFFIX,cloud-miner.eu, reject
 DOMAIN-SUFFIX,de-mi-nis-ner.info, reject
 DOMAIN-SUFFIX,de-ner-mi-nis4.info, reject
 DOMAIN-SUFFIX,de-nis-ner-mi-5.info, reject
-DOMAIN-SUFFIX,dnsseed.bitcoin.dashjr.org, reject
-DOMAIN-SUFFIX,dnsseed.bluematt.me, reject
-DOMAIN-SUFFIX,dnsseed.emzy.de, reject
 DOMAIN-SUFFIX,f1tbit.com, reject
 DOMAIN-SUFFIX,filmoljupci.com, reject
 DOMAIN-SUFFIX,g1thub.com, reject
@@ -458,11 +455,6 @@ DOMAIN-SUFFIX,minerad.com, reject
 DOMAIN-SUFFIX,pampopholf.com, reject
 DOMAIN-SUFFIX,rand.com.ru, reject
 DOMAIN-SUFFIX,reauthenticator.com, reject
-DOMAIN-SUFFIX,seed.bitcoin.sipa.be, reject
-DOMAIN-SUFFIX,seed.bitcoin.sprovoost.nl, reject
-DOMAIN-SUFFIX,seed.bitcoin.wiz.biz, reject
-DOMAIN-SUFFIX,seed.bitcoinstats.com, reject
-DOMAIN-SUFFIX,seed.btc.petertodd.org, reject
 DOMAIN-SUFFIX,serv1swork.com, reject
 DOMAIN-SUFFIX,statdynamic.com, reject
 DOMAIN-SUFFIX,str1kee.com, reject
@@ -2907,6 +2899,7 @@ DOMAIN-SUFFIX,tagtracking.vibescm.com, reject
 DOMAIN-SUFFIX,target.mixi.media, reject
 DOMAIN-SUFFIX,te.supportfreecontent.com, reject
 DOMAIN-SUFFIX,telemetrics.klaviyo.com, reject
+DOMAIN-SUFFIX,telemetry.goodlifefitness.com, reject
 DOMAIN-SUFFIX,telemetry.phenixrts.com, reject
 DOMAIN-SUFFIX,telemetry.reembed.com, reject
 DOMAIN-SUFFIX,telemetry.soundcloud.com, reject

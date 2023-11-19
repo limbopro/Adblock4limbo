@@ -1345,14 +1345,21 @@ lock_screen_mode_check();
 function screen_unlock() {
     var pwd = window.prompt("请输入密码以解锁...");
     if (pwd == getCookie('lock_screen_pwd')) {
+
         znsh_unlock('lockscreen');
         znsh_unlock('lockscreen');
-        znsh_unlock('lockscreen');
+        
+        setTimeout(() => {
+            x4Home_button('1'); // 显示导航按钮
+        }, 1000)
+
         nsfwmode('true');
         document.querySelector("button.unlock").removeEventListener("click", screen_unlock);
         document.querySelector('img.lockscreen').className = 'nsfw';
-        document.querySelector('img.nsfw').style = 'filter:blur(0px)'
-        document.querySelector("img.nsfw").addEventListener("click", znsh_unlock());
+        document.querySelector('img.nsfw').style = 'filter:blur(0px)';
+        setTimeout(() => {
+            document.querySelector("img.nsfw").addEventListener("click", znsh_unlock());
+        }, 0)
         setCookie('lock_screen_mode', 'false', '114154');
 
         // 移除解锁按钮 UNLOCK 🔓

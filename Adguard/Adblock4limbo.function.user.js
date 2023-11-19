@@ -1059,19 +1059,6 @@ function new_align() {
     }
 }
 
-//visibility()
-
-// 监听键盘输入
-/*
-document.addEventListener("keydown", logKey);
-function logKey(e) {
-    console.log(`${e.code}`)
-    if (`${e.code}` == 'KeyP') {
-        var code = 1;
-        //return 3;
-    }
-}
-*/
 
 function parentElement_add() {
     all(0, -114154, 1, 'none');
@@ -1179,15 +1166,38 @@ function visibility() {
     if (getCookie('nsfwmode') !== 'false') {
         document.addEventListener('visibilitychange', function () {
             var visible = document.visibilityState;
+            //(visible !== 'visible' && getCookie('nsfwmode') !== 'false')
             if (visible !== 'visible' && getCookie('nsfwmode') !== 'false') {
                 document.body.style.filter = 'blur(50px)';
                 nsfw_content_hidden('true'); // 开启模糊
+                setTimeout(() => { sessionX('true') }, 1000);
             }
         })
     }
 };
 
-//visibility()
+sessionX_check();
+
+function sessionX_check() {
+    if (localStorage.getItem("finalmode") !== null) {
+        document.body.style.filter = 'blur(50px)';
+        nsfw_content_hidden('true'); // 开启模糊
+    }
+}
+
+function sessionX(x) {
+    if (x == 'true') {
+        if (document.getElementById('nsfw') && document.getElementById('nsfw') !== null && document.getElementById('nsfw').style.zIndex > 0) {
+            localStorage.setItem("finalmode", "Masaka");
+            console.log('localStorage.setItem("finalmode", "Masaka");');
+        }
+    } else if (x == 'false') {
+        if (document.getElementById('nsfw') && document.getElementById('nsfw') !== null && document.getElementById('nsfw').style.zIndex < 0) {
+            localStorage.removeItem("finalmode", "Masaka");
+            console.log('localStorage.removeItem("finalmode", "Masaka");');
+        }
+    }
+}
 
 
 // 取消模糊 监听
@@ -1230,15 +1240,8 @@ function znsh_unlock(x) {
             }
         }
     }
+    setTimeout(() => { sessionX('false'); }, 1000);
 }
-/*
-
-visibility()
-setInterval(() => {
-    visibility_switch(); //
-}, 1500);
-
-*/
 
 function znsh() {
     //var url = document.location.href;

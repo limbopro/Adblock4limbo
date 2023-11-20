@@ -42,7 +42,7 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adBlockDetected"],["daau_app"],["Object.prototype.ShouldPlayAds"],["tips"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
+const argsList = [["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["tips"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
 
 const hostnamesMap = new Map([["1090ys8.com",0],["papalah.com",0],["youneed.win",1],["aiyifan.tv",2],["iyf.tv",2],["htmanga4.top",3],["goodav17.com",4],["m.86kl.com",5],["axjbt.com",6],["avcao.cc",6],["exoav.com",7]]);
 

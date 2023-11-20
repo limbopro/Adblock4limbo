@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["www3.doubleclick.net"],["pagead2.googlesyndication.com"]];
 
-const hostnamesMap = new Map([["taiwanlibrarysearch.herokuapp.com",0],["mpyit.com",1]]);
+const hostnamesMap = new Map([["taiwanlibrarysearch.herokuapp.com",0],["mpyit.com",1],["linetv.tw",1]]);
 
 const entitiesMap = new Map([]);
 

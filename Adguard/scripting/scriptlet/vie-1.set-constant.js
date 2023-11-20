@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["countTVC","0"],["isSkipAds","true"],["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["urlAds",""],["adsTvcs",""],["seconds","0"],["adsPlayer",""]];
 
-const hostnamesMap = new Map([["bongda365f.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["phimvuihd.org",4],["vaoroi13.online",5],["xoivo1.online",[5,7]],["vndoc.com",6]]);
+const hostnamesMap = new Map([["bongda365f.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["phimvuihd.org",4],["vaoroi13.online",5],["xoivo2.online",[5,7]],["vndoc.com",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

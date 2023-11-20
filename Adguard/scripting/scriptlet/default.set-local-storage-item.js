@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["segmentDeviceId","$remove$"]];
 
-const hostnamesMap = new Map([["adultdeepfakes.com",0],["freewsad.com",1],["loawa.com",2],["ygosu.com",2],["sportalkorea.com",2],["algumon.com",2],["hancinema.net",2],["enetnews.co.kr",2],["edaily.co.kr",2],["economist.co.kr",2],["etoday.co.kr",2],["hankyung.com",2],["isplus.com",2],["hometownstation.com",2],["kagit.kr",2],["inven.co.kr",2],["viva100.com",2],["joongdo.co.kr",2],["jjang0u.com",2],["tenbizt.com",2],["tvreport.co.kr",2],["newautopost.co.kr",2],["mememedia.co.kr",2],["mobilitytv.co.kr",2],["cboard.net",2],["a-ha.io",2],["interfootball.co.kr",2],["fourfourtwo.co.kr",2],["apkmirror.com",2],["dotkeypress.kr",2],["viewcash.co.kr",2],["tripplus.co.kr",2],["enterdiary.com",2],["mtodayauto.com",2],["genshinlab.com",2],["hotplacehunter.co.kr",2],["mystylezip.com",2],["majorgeeks.com",2],["mindbodygreen.com",3]]);
+const hostnamesMap = new Map([["adultdeepfakes.com",0],["freewsad.com",1],["loawa.com",2],["ygosu.com",2],["sportalkorea.com",2],["algumon.com",2],["hancinema.net",2],["enetnews.co.kr",2],["edaily.co.kr",2],["economist.co.kr",2],["etoday.co.kr",2],["hankyung.com",2],["isplus.com",2],["hometownstation.com",2],["kagit.kr",2],["inven.co.kr",2],["viva100.com",2],["joongdo.co.kr",2],["jjang0u.com",2],["tenbizt.com",2],["tvreport.co.kr",2],["newautopost.co.kr",2],["mememedia.co.kr",2],["mobilitytv.co.kr",2],["cboard.net",2],["a-ha.io",2],["interfootball.co.kr",2],["fourfourtwo.co.kr",2],["apkmirror.com",2],["dotkeypress.kr",2],["viewcash.co.kr",2],["tripplus.co.kr",2],["enterdiary.com",2],["mtodayauto.com",2],["genshinlab.com",2],["hotplacehunter.co.kr",2],["mystylezip.com",2],["majorgeeks.com",2],["poro.gg",2],["maple.gg",2],["lolchess.gg",2],["dak.gg",2],["mindbodygreen.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -63,6 +63,13 @@ function setLocalStorageItemFn(
     value = '',
 ) {
     if ( key === '' ) { return; }
+
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
+    }
 
     const trustedValues = [
         '',
@@ -83,10 +90,13 @@ function setLocalStorageItemFn(
             value = (new Date()).toISOString();
         }
     } else {
-        if ( trustedValues.includes(value.toLowerCase()) === false ) {
-            if ( /^\d+$/.test(value) === false ) { return; }
-            value = parseInt(value, 10);
-            if ( value > 32767 ) { return; }
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10);
+            if ( n > 32767 ) { return; }
         }
     }
 

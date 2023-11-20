@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311200211
+## ! Version: 202311201550
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Nov 2023 02:11 UTC
+## ! Last modified: 20 Nov 2023 15:50 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -121,12 +121,14 @@ DOMAIN-SUFFIX,dwin2.com, reject
 DOMAIN-SUFFIX,e1e.io, reject
 DOMAIN-SUFFIX,eagle-insight.com, reject
 DOMAIN-SUFFIX,easycompute.systems, reject
+DOMAIN-SUFFIX,ed-sys.net, reject
 DOMAIN-SUFFIX,efreecode.com, reject
 DOMAIN-SUFFIX,egoi.site, reject
 DOMAIN-SUFFIX,emailsnow.info, reject
 DOMAIN-SUFFIX,emycewiw.xyz, reject
 DOMAIN-SUFFIX,enthusiastgaming.net, reject
 DOMAIN-SUFFIX,envato.market, reject
+DOMAIN-SUFFIX,epsilondelta.co, reject
 DOMAIN-SUFFIX,eqy.link, reject
 DOMAIN-SUFFIX,etop.ro, reject
 DOMAIN-SUFFIX,everesttech.net, reject
@@ -1923,6 +1925,7 @@ DOMAIN-SUFFIX,tritebadge.com, reject
 DOMAIN-SUFFIX,troubledtail.com, reject
 DOMAIN-SUFFIX,troubleshade.com, reject
 DOMAIN-SUFFIX,truckstomatoes.com, reject
+DOMAIN-SUFFIX,truculentrate.com, reject
 DOMAIN-SUFFIX,tumblebirds.com, reject
 DOMAIN-SUFFIX,tumbleicicle.com, reject
 DOMAIN-SUFFIX,tutorthing.com, reject

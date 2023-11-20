@@ -42,9 +42,9 @@ const uBOL_trustedReplaceXhrResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/\"adPlacements.*?\\\"\\}\\}\\}\\],/","","/player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
+const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","/player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","/youtubei\\/v1\\/player\\/?$/"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
 
-const hostnamesMap = new Map([["www.youtube.com",0],["app.hellovaia.com",1]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1]],["app.hellovaia.com",2]]);
 
 const entitiesMap = new Map([]);
 

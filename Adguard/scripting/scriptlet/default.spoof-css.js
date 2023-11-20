@@ -42,9 +42,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds","visibility","visible"],["#featuredimage","visibility","visible"]];
+const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, .metaRedirectWrapperTopAds, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"]];
 
-const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["djxmaza.in",2],["miuiflash.com",2],["thecubexguide.com",2]]);
+const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1]]);
 
 const entitiesMap = new Map([]);
 

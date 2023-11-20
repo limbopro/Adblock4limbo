@@ -42,11 +42,11 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["navigator.brave","undefined"],["adBlocked","false"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["fabActive","false"],["integrityObserver.corrupted","false"],["dA","true"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
+const argsList = [["_client","{}"],["navigator.brave","undefined"],["adBlocked","false"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["fabActive","false"],["integrityObserver.corrupted","false"],["dA","true"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
 
-const hostnamesMap = new Map([["empire-stream.net",0],["cinefil.com",1],["signal-arnaques.com",2],["dhnet.be",3],["sudinfo.be",3],["7sur7.be",3],["rtl.be",3],["pianoweb.fr",4],["parlons-basket.com",5],["mac4ever.com",5],["jaitoutcompris.com",6],["varmatin.com",7],["nicematin.com",7],["stream-zone.fr",8],["commentcamarche.net",9],["cookomix.com",10],["20minutes.fr",11],["hollywoodpq.com",12],["jardiner-malin.fr",13],["hack-life.net",14],["jtrouver.com",15],["playtv.fr",[16,17]],["skyrock.com",18],["skyrock.fr",18],["6play.fr",[19,32,33,34,35,36]],["tf1.fr",[20,21,22,32,33,34,35,36]],["occasions.decathlon.fr",[23,24]],["e-player-stream.app",26],["femmeactuelle.fr",27],["geo.fr",27],["voici.fr",27],["programme-tv.net",27],["gala.fr",27],["capital.fr",27],["allocine.fr",28],["funradio.fr",29],["rtl2.fr",29],["rtl.fr",29],["reflectim.fr",30],["e-sushi.fr",30],["canalplus.com",31],["tf1info.fr",37]]);
+const hostnamesMap = new Map([["motdepasse.tk",0],["empire-stream.net",1],["cinefil.com",2],["signal-arnaques.com",3],["dhnet.be",4],["sudinfo.be",4],["7sur7.be",4],["rtl.be",4],["pianoweb.fr",5],["parlons-basket.com",6],["mac4ever.com",6],["jaitoutcompris.com",7],["varmatin.com",8],["nicematin.com",8],["stream-zone.fr",9],["commentcamarche.net",10],["cookomix.com",11],["20minutes.fr",12],["hollywoodpq.com",13],["jardiner-malin.fr",14],["hack-life.net",15],["jtrouver.com",16],["playtv.fr",[17,18]],["skyrock.com",19],["skyrock.fr",19],["6play.fr",[20,33,34,35,36,37]],["tf1.fr",[21,22,23,33,34,35,36,37]],["occasions.decathlon.fr",[24,25]],["e-player-stream.app",27],["femmeactuelle.fr",28],["geo.fr",28],["voici.fr",28],["programme-tv.net",28],["gala.fr",28],["capital.fr",28],["allocine.fr",29],["funradio.fr",30],["rtl2.fr",30],["rtl.fr",30],["reflectim.fr",31],["e-sushi.fr",31],["canalplus.com",32],["tf1info.fr",38]]);
 
-const entitiesMap = new Map([["empire-streaming",0],["e-player-stream",25]]);
+const entitiesMap = new Map([["empire-streaming",1],["e-player-stream",26]]);
 
 const exceptionsMap = new Map([]);
 
@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

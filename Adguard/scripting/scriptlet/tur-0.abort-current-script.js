@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["onload","google-auto-placed"],["document.createElement","adsbygoogle.js"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
+const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
 
-const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["cbdgummiesio.biz",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["tekniknot.com",[8,9]],["mordefter.com",10],["ulketv.com.tr",11],["kenttv.net",12],["ulker.com.tr",13],["duzcetv.com",14],["bizimyaka.com",15]]);
+const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["cbdgummiesio.biz",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["mordefter.com",8],["ulketv.com.tr",9],["kenttv.net",10],["ulker.com.tr",11],["duzcetv.com",12],["bizimyaka.com",13]]);
 
 const entitiesMap = new Map([]);
 

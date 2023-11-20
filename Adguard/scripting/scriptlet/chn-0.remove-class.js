@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["q-body--prevent-scroll","body"]];
+const argsList = [["publicplay","#main-player"],["q-body--prevent-scroll","body"]];
 
-const hostnamesMap = new Map([["9xav.cc",0]]);
+const hostnamesMap = new Map([["aiyifan.tv",0],["iyf.tv",0],["9xav.cc",1]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["initials.bannerPrefix"],["history.pushState"],["nocontext"],["disableEnterKey"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
+const argsList = [["initials.bannerPrefix"],["history.pushState"],["document.onkeydown"],["nocontext"],["disableEnterKey"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
 
-const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["brokensilenze.net",[2,3]],["teammy.ru",4],["raindropteamfan.com",4],["expertology.ru",5],["electricalvoice.com",6],["doujindesu.tv",7],["shield-project.ru",7]]);
+const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["guiasaude.info",2],["brokensilenze.net",[3,4]],["teammy.ru",5],["raindropteamfan.com",5],["expertology.ru",6],["electricalvoice.com",7],["doujindesu.tv",8],["shield-project.ru",8]]);
 
 const entitiesMap = new Map([]);
 

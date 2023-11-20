@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
+const argsList = [["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["runScript","false"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
 
-const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["binanews.ir",5],["1da.ir",6],["1ea.ir",6],["2ad.ir",6],["fontyab.com",[7,8]],["fidibo.com",[9,10,11]],["my.mci.ir",[9,10,11,14,15]],["pwa.mci.ir",[9,10,11,14,15]],["ketabesabz.com",12],["lahzeakhar.com",13],["msbmusic.ir",16],["myhastidl.cam",16],["netgasht.com",16],["opizo.me",17],["xip.li",17],["s-moshaver.com",18],["tamasha.com",[19,20,21]],["takmili.com",[22,23,24,25,26]],["takhfifan.com",[27,28]]]);
+const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["binanews.ir",5],["1da.ir",6],["1ea.ir",6],["2ad.ir",6],["fontyab.com",[7,8]],["fidibo.com",[9,10,11]],["my.mci.ir",[9,10,11,15,16]],["pwa.mci.ir",[9,10,11,15,16]],["ketabesabz.com",12],["lahzeakhar.com",13],["musicdel.ir",14],["msbmusic.ir",17],["myhastidl.cam",17],["netgasht.com",17],["opizo.me",18],["xip.li",18],["s-moshaver.com",19],["tamasha.com",[20,21,22]],["takmili.com",[23,24,25,26,27]],["takhfifan.com",[28,29]]]);
 
 const entitiesMap = new Map([]);
 
@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

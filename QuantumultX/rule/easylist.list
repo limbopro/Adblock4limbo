@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202311200211
+## ! Version: 202311201550
 ## ! Title: EasyList
-## ! Last modified: 20 Nov 2023 02:11 UTC
+## ! Last modified: 20 Nov 2023 15:50 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -5969,6 +5969,7 @@ DOMAIN-SUFFIX,chokedsmelt.com, reject
 DOMAIN-SUFFIX,chokedstarring.com, reject
 DOMAIN-SUFFIX,chokeweaknessheat.com, reject
 DOMAIN-SUFFIX,chokupsupto.com, reject
+DOMAIN-SUFFIX,cholatetapalos.com, reject
 DOMAIN-SUFFIX,choobinoobi.com, reject
 DOMAIN-SUFFIX,choogeet.net, reject
 DOMAIN-SUFFIX,choomsiesurvey.top, reject
@@ -7487,6 +7488,7 @@ DOMAIN-SUFFIX,dearfiring.com, reject
 DOMAIN-SUFFIX,dearlyseedsad.com, reject
 DOMAIN-SUFFIX,dearlystoop.com, reject
 DOMAIN-SUFFIX,deatchshipsmotor.com, reject
+DOMAIN-SUFFIX,deathssm.com, reject
 DOMAIN-SUFFIX,deavynuotbrohw.xyz, reject
 DOMAIN-SUFFIX,debartoloqbacademy.com, reject
 DOMAIN-SUFFIX,debatableslippers.com, reject
@@ -8403,6 +8405,7 @@ DOMAIN-SUFFIX,drawerfontactual.com, reject
 DOMAIN-SUFFIX,drawingsugarnegative.com, reject
 DOMAIN-SUFFIX,drawingwaved.com, reject
 DOMAIN-SUFFIX,drawingwheels.com, reject
+DOMAIN-SUFFIX,drawlycusec.com, reject
 DOMAIN-SUFFIX,drawnperink.com, reject
 DOMAIN-SUFFIX,drawx.xyz, reject
 DOMAIN-SUFFIX,draydaisbitch.com, reject
@@ -9930,6 +9933,7 @@ DOMAIN-SUFFIX,faithaiy.com, reject
 DOMAIN-SUFFIX,faithcollarhook.com, reject
 DOMAIN-SUFFIX,faithfulfacultativeladder.com, reject
 DOMAIN-SUFFIX,faithfullyprotectionundo.com, reject
+DOMAIN-SUFFIX,faithiqs.com, reject
 DOMAIN-SUFFIX,faitis.com, reject
 DOMAIN-SUFFIX,faiverty-station.com, reject
 DOMAIN-SUFFIX,fakeallow.com, reject
@@ -11402,6 +11406,7 @@ DOMAIN-SUFFIX,gitoku.com, reject
 DOMAIN-SUFFIX,giufjcfjdv.com, reject
 DOMAIN-SUFFIX,givemysoft.ru, reject
 DOMAIN-SUFFIX,givenconserve.com, reject
+DOMAIN-SUFFIX,givesboranes.com, reject
 DOMAIN-SUFFIX,givide.com, reject
 DOMAIN-SUFFIX,givill.com, reject
 DOMAIN-SUFFIX,giving-weird.pro, reject
@@ -19664,6 +19669,7 @@ DOMAIN-SUFFIX,paubaulo.com, reject
 DOMAIN-SUFFIX,paucityirido.space, reject
 DOMAIN-SUFFIX,pauewr4cw2xs5q.com, reject
 DOMAIN-SUFFIX,pauhoano.com, reject
+DOMAIN-SUFFIX,paujudih.xyz, reject
 DOMAIN-SUFFIX,paulinruntime.digital, reject
 DOMAIN-SUFFIX,paulty.com, reject
 DOMAIN-SUFFIX,paurozel.net, reject
@@ -21007,6 +21013,7 @@ DOMAIN-SUFFIX,prosecutorcessationdial.com, reject
 DOMAIN-SUFFIX,prosecutorcommaeligible.com, reject
 DOMAIN-SUFFIX,prosecutorkettle.com, reject
 DOMAIN-SUFFIX,proseoverlook.com, reject
+DOMAIN-SUFFIX,prositzapas.com, reject
 DOMAIN-SUFFIX,prospectconductorcheerfully.com, reject
 DOMAIN-SUFFIX,prospecttunaante.com, reject
 DOMAIN-SUFFIX,prosperent.com, reject
@@ -21649,6 +21656,7 @@ DOMAIN-SUFFIX,qppq166n.de, reject
 DOMAIN-SUFFIX,qqkcmafkxossru.com, reject
 DOMAIN-SUFFIX,qqkzjpupluv.com, reject
 DOMAIN-SUFFIX,qqlnvwjtjhve.com, reject
+DOMAIN-SUFFIX,qqmhh.com, reject
 DOMAIN-SUFFIX,qqmvwjvrlyery.top, reject
 DOMAIN-SUFFIX,qqqqbdma.com, reject
 DOMAIN-SUFFIX,qqqwes.com, reject
@@ -27944,6 +27952,7 @@ DOMAIN-SUFFIX,velopedseveralmef.info, reject
 DOMAIN-SUFFIX,velvetneutralunnatural.com, reject
 DOMAIN-SUFFIX,vemflutuartambem.com, reject
 DOMAIN-SUFFIX,vempozah.net, reject
+DOMAIN-SUFFIX,vemtecko.net, reject
 DOMAIN-SUFFIX,vemtourt.com, reject
 DOMAIN-SUFFIX,vendgrusian.com, reject
 DOMAIN-SUFFIX,vendigamus.com, reject
@@ -31539,7 +31548,9 @@ DOMAIN-SUFFIX,cams.enjoy.be, reject
 DOMAIN-SUFFIX,cash.femjoy.com, reject
 DOMAIN-SUFFIX,cdn3.hentaihand.com, reject
 DOMAIN-SUFFIX,cdn5.hentaihaven.fun, reject
+DOMAIN-SUFFIX,creative.141live.com, reject
 DOMAIN-SUFFIX,creative.favy.cam, reject
+DOMAIN-SUFFIX,creative.kbnmnl.com, reject
 DOMAIN-SUFFIX,creative.strip.chat, reject
 DOMAIN-SUFFIX,creative.stripchat.com, reject
 DOMAIN-SUFFIX,creative.stripchat.global, reject
@@ -31665,7 +31676,6 @@ DOMAIN-SUFFIX,api.fw.tv, reject
 DOMAIN-SUFFIX,dywolfer.de, reject
 DOMAIN-SUFFIX,go.trvdp.com, reject
 DOMAIN-SUFFIX,play.springboardplatform.com, reject
-DOMAIN-SUFFIX,sonar.viously.com, reject
 DOMAIN-SUFFIX,video-streaming.ezoic.com, reject
 DOMAIN-SUFFIX,vplayer.newseveryday.com, reject
 DOMAIN-SUFFIX,ab2nyv30b.xhamster.com, reject

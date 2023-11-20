@@ -42,11 +42,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["sports:views:anti-adblock:shower","null"],["adsok","true"],["ignoring_adblock","1"],["adbViews","0"],["guestBpnModalSeen","true"],["modalSignup","true"],["qset_vc","$remove$"],["altses","false"],["firstFirebaseModalShow","true"],["emailLightBox","false"],["SIGN_UP_BONUS_MODAL_SHOWN","true"],["exit_attempt","true"],["barchart.bcFreeAccountModal","true"],["barchart.bcIsEvenLoggingModal","true"],["ONBOARDING_MODAL_DISPLAYED","true"],["firstEnter","false"],["showModal","true"],["dontShow","true"],["video_muted","true"],["music-announce-showed","true"],["msgads","true"],["entd:newsletter-layer","emptyObj"],["hasSeenAddToChromeNudge","1"],["announcement","1"],["IsModalShown","true"],["hasShownWelcome","true"],["sub_telegram","true"],["hide-airtime-blue-header","true"],["storeToolTipSeen","1"],["__iberion__publisherPromptSeen","3"],["alreadySawHomepageModal","true"],["has_popout_notification_dialog_recently","1"],["notifModal","true"],["homeExpressEmailSignupExitIntentModal","1"],["Visitundefined","1"],["MCPopUp","true"],["detailedview-clicks","5"],["isNotificationsReleaseModalVisible","false"],["newsletterAdvise","1"],["newsletter-flyout","1"],["lp.message.wall.active","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"]];
+const argsList = [["sports:views:anti-adblock:shower","null"],["adsok","true"],["ignoring_adblock","1"],["adbViews","0"],["gem_tech_popup_closed","1"],["guestBpnModalSeen","true"],["modalSignup","true"],["qset_vc","$remove$"],["altses","false"],["firstFirebaseModalShow","true"],["emailLightBox","false"],["SIGN_UP_BONUS_MODAL_SHOWN","true"],["exit_attempt","true"],["barchart.bcFreeAccountModal","true"],["barchart.bcIsEvenLoggingModal","true"],["ONBOARDING_MODAL_DISPLAYED","true"],["firstEnter","false"],["showModal","true"],["dontShow","true"],["video_muted","true"],["music-announce-showed","true"],["msgads","true"],["entd:newsletter-layer","emptyObj"],["hasSeenAddToChromeNudge","1"],["announcement","1"],["IsModalShown","true"],["hasShownWelcome","true"],["sub_telegram","true"],["hide-airtime-blue-header","true"],["storeToolTipSeen","1"],["__iberion__publisherPromptSeen","3"],["alreadySawHomepageModal","true"],["has_popout_notification_dialog_recently","1"],["notifModal","true"],["homeExpressEmailSignupExitIntentModal","1"],["Visitundefined","1"],["MCPopUp","true"],["detailedview-clicks","5"],["isNotificationsReleaseModalVisible","false"],["newsletterAdvise","1"],["newsletter-flyout","1"],["lp.message.wall.active","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["201805-policy|accepted","1"]];
 
-const hostnamesMap = new Map([["sports.ru",0],["craftpip.github.io",1],["luscious.net",2],["duellinksmeta.com",3],["masterduelmeta.com",3],["mydealz.de",4],["adultdvdempire.com",5],["healthtap.com",6],["makemytrip.com",7],["ensonhaber.com",8],["1800petmeds.com",9],["emusic.com",10],["znanierussia.ru",11],["barchart.com",[12,13]],["calendar.com",14],["map.baidu.com",15],["freevpnplanet.com",16],["imgcreator.zmo.ai",17],["masterclass.com",18],["coub.com",19],["empire-streaming.co",20],["babista.de",21],["you.com",22],["smartnator.com",23],["imovelguide.com.br",24],["thirdweb.com",25],["series.az",26],["peervideo.club",27],["peterengland.com",28],["biznesinfo.pl",29],["rolnikinfo.pl",29],["wawainfo.pl",29],["wtv.pl",29],["turysci.pl",29],["pacjenci.pl",29],["swiatsportu.pl",29],["swiatgwiazd.pl",29],["swiatzwierzat.pl",29],["techgame.pl",29],["domekiogrodek.pl",29],["goniec.pl",29],["zdrogi.pl",29],["diffchecker.com",30],["mildom.com",31],["afkgaming.com",32],["instacart.ca",33],["instacart.com",33],["bonprix.com.br",34],["mercatoemcasa.com.br",35],["context.reverso.net",36],["otodom.pl",37],["dgbrechtsschutz.de",38],["moses-verlag.de",39],["lapresse.ca",40],["www.watermarkremover.io",42]]);
+const hostnamesMap = new Map([["sports.ru",0],["craftpip.github.io",1],["luscious.net",2],["duellinksmeta.com",3],["masterduelmeta.com",3],["vkplay.ru",4],["mydealz.de",5],["adultdvdempire.com",6],["healthtap.com",7],["makemytrip.com",8],["ensonhaber.com",9],["1800petmeds.com",10],["emusic.com",11],["znanierussia.ru",12],["barchart.com",[13,14]],["calendar.com",15],["map.baidu.com",16],["freevpnplanet.com",17],["imgcreator.zmo.ai",18],["masterclass.com",19],["coub.com",20],["empire-streaming.co",21],["babista.de",22],["you.com",23],["smartnator.com",24],["imovelguide.com.br",25],["thirdweb.com",26],["series.az",27],["peervideo.club",28],["peterengland.com",29],["biznesinfo.pl",30],["rolnikinfo.pl",30],["wawainfo.pl",30],["wtv.pl",30],["turysci.pl",30],["pacjenci.pl",30],["swiatsportu.pl",30],["swiatgwiazd.pl",30],["swiatzwierzat.pl",30],["techgame.pl",30],["domekiogrodek.pl",30],["goniec.pl",30],["zdrogi.pl",30],["diffchecker.com",31],["mildom.com",32],["afkgaming.com",33],["instacart.ca",34],["instacart.com",34],["bonprix.com.br",35],["mercatoemcasa.com.br",36],["context.reverso.net",37],["otodom.pl",38],["dgbrechtsschutz.de",39],["moses-verlag.de",40],["lapresse.ca",41],["www.watermarkremover.io",43],["blog.bitsrc.io",44]]);
 
-const entitiesMap = new Map([["brainly",41]]);
+const entitiesMap = new Map([["brainly",42]]);
 
 const exceptionsMap = new Map([]);
 
@@ -63,6 +63,13 @@ function setLocalStorageItemFn(
     value = '',
 ) {
     if ( key === '' ) { return; }
+
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
+    }
 
     const trustedValues = [
         '',
@@ -83,10 +90,13 @@ function setLocalStorageItemFn(
             value = (new Date()).toISOString();
         }
     } else {
-        if ( trustedValues.includes(value.toLowerCase()) === false ) {
-            if ( /^\d+$/.test(value) === false ) { return; }
-            value = parseInt(value, 10);
-            if ( value > 32767 ) { return; }
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10);
+            if ( n > 32767 ) { return; }
         }
     }
 

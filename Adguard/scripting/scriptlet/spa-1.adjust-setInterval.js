@@ -42,11 +42,11 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[".style.display","*","0.02"],["myInterval","*","0.001"],["player","","0.02"],["Loading player","","0.02"],["Loading...","","0.02"],["adsHandle_noclick","","0.02"]];
+const argsList = [[".style.display","*","0.02"],["getid","*","0.001"],["myInterval","*","0.001"],["player","","0.02"],["Loading player","","0.02"],["Loading...","","0.02"],["adsHandle_noclick","","0.02"]];
 
-const hostnamesMap = new Map([["olhonaviagem.com",0],["sejasaudavel.net",0],["playerflix.com",1],["mundotec.pro",2],["pelispedia-v2.wtf",3],["pelispedia-v1.wtf",3],["cuevana-3.wtf",4]]);
+const hostnamesMap = new Map([["olhonaviagem.com",0],["sejasaudavel.net",0],["infohojeonline.blogspot.com",1],["playerflix.com",2],["mundotec.pro",3],["pelispedia-v2.wtf",4],["pelispedia-v1.wtf",4],["cuevana-3.wtf",5]]);
 
-const entitiesMap = new Map([["topflix",5]]);
+const entitiesMap = new Map([["topflix",6]]);
 
 const exceptionsMap = new Map([]);
 

@@ -42,7 +42,7 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["canRunAds","true"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.adBlock.check","noopFunc"],["App.positions.init","noopFunc"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["useSeznamAds","false"]];
+const argsList = [["canRunAds","true"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.psts.init","noopFunc"],["App.featureTest.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["useSeznamAds","false"]];
 
 const hostnamesMap = new Map([["hokej.cz",0],["media.cms.markiza.sk",1],["media.joj.sk",[1,2]],["mobilenet.cz",[3,4]],["fzone.cz",[3,4]],["fdrive.cz",[3,4]],["podcasty.seznam.cz",[5,6]],["root.cz",7],["tn.nova.cz",8]]);
 
@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

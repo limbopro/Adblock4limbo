@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

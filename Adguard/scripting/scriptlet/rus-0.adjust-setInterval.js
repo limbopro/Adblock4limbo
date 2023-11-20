@@ -42,9 +42,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["countdown"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"]];
+const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"]];
 
-const hostnamesMap = new Map([["595.ucoz.net",0],["5mod-file.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["kinokong.pro",5],["uakino.club",5],["startgamer.ru",6],["iblitzmods.ru",7],["wowskill.ru",8],["diplomsrazu.ru",9],["igrozoom.ru",9],["ru-minecraft.ru",9],["softomania.net",9],["vip-mods.ru",9],["warezok.net",9],["windows-driver.com",9],["windows-driver.net",9],["windows-program.com",9]]);
+const hostnamesMap = new Map([["595.ucoz.net",0],["5mod-file.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.pro",6],["uakino.club",6],["startgamer.ru",7],["iblitzmods.ru",8],["wowskill.ru",9],["diplomsrazu.ru",10],["igrozoom.ru",10],["ru-minecraft.ru",10],["softomania.net",10],["vip-mods.ru",10],["warezok.net",10],["windows-driver.com",10],["windows-driver.net",10],["windows-program.com",10]]);
 
 const entitiesMap = new Map([]);
 

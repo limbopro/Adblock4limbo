@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
-const hostnamesMap = new Map([["humors.zigcou.com",0],["shopping.interpark.com",1],["sbs.co.kr",[2,8]],["timecoffee.co.kr",3],["333aaa.site",3],["search.11st.co.kr",[4,5,6,7]],["domin.co.kr",9],["uwayapply.com",10],["tvchosun.com",11],["m.dcinside.com",12],["naver.com",13],["koreapas.com",14],["imbc.com",15],["meeco.kr",17],["sogirl.so",18],["tistory.com",19],["sajuplus.net",19],["auto.danawa.com",20]]);
+const hostnamesMap = new Map([["humors.zigcou.com",0],["shopping.interpark.com",1],["sbs.co.kr",[2,8]],["fun-iyagi.co.kr",3],["timecoffee.co.kr",3],["333aaa.site",3],["search.11st.co.kr",[4,5,6,7]],["domin.co.kr",9],["uwayapply.com",10],["tvchosun.com",11],["m.dcinside.com",12],["naver.com",13],["koreapas.com",14],["imbc.com",15],["meeco.kr",17],["sogirl.so",18],["tistory.com",19],["sajuplus.net",19],["auto.danawa.com",20]]);
 
 const entitiesMap = new Map([]);
 
@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

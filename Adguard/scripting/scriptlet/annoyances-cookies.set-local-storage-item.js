@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["dismissedPrivacyCookieMessage","1"],["cookie_consent","false"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["SWCOOKIESACC","1"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["accepts-cookie-notice","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
+const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookiesAccepted","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["cookie_consent","false"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["SWCOOKIESACC","1"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
 
-const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["betterprogramming.pub",3],["medium.com",3],["500ish.com",3],["gitconnected.com",3],["bettermarketing.pub",3],["diylifetech.com",3],["thebolditalic.com",3],["writingcooperative.com",3],["fanfare.pub",3],["betterhumans.pub",3],["kick.com",4],["jimdosite.com",5],["worstbassist.com",5],["octopusenergy.co.jp",6],["happiful.com",7],["findmcserver.com",8],["traefik.io",9],["cityfalcon.ai",10],["digitalparking.city",11],["vitotechnology.com",12],["mediathekviewweb.de",13],["solana.com",14],["ef.co.id",15],["alohafromdeer.com",16],["fwd.com",[17,19]],["everywhere.game",18],["geotastic.net",20],["tattoodo.com",[21,22]],["virginexperiencedays.co.uk",23],["evernote.com",24],["nordkurier.de",[25,26,27]],["everest-24.pl",[28,30]],["zave.it",29],["sneakerfreaker.com",31],["cryptofalka.hu",31],["walmart.ca",32],["flyingblue.com",33],["byfood.com",34],["andsafe.de",35],["edostavka.by",36],["emall.by",36],["onexstore.pl",[37,38,39]],["revanced.app",39],["eezy.nrw",40],["bahnland-bayern.de",40],["evropochta.by",[41,42]],["hitado.de",43],["inselberlin.de",44],["gronkh.tv",45],["parrotsec.org",46],["adfilteringdevsummit.com",47],["learngerman.dw.com",48],["gostanford.com",49],["namensetiketten.de",50],["drafthound.com",[51,52]],["wokularach.pl",53],["bidup.amtrak.com",54],["eschuhe.de",55],["flyingpapers.com",56],["beta.character.ai",[57,58]],["bittimittari.fi",59],["vivantis.sk",60]]);
+const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["betterprogramming.pub",3],["medium.com",3],["500ish.com",3],["gitconnected.com",3],["bettermarketing.pub",3],["diylifetech.com",3],["thebolditalic.com",3],["writingcooperative.com",3],["fanfare.pub",3],["betterhumans.pub",3],["kick.com",4],["jimdosite.com",5],["worstbassist.com",5],["twitchclipsgermany.de",6],["evernote.com",[7,8]],["octopusenergy.co.jp",9],["happiful.com",10],["findmcserver.com",11],["traefik.io",12],["cityfalcon.ai",13],["digitalparking.city",14],["vitotechnology.com",15],["mediathekviewweb.de",16],["solana.com",17],["ef.co.id",18],["alohafromdeer.com",19],["fwd.com",[20,22]],["everywhere.game",21],["geotastic.net",23],["tattoodo.com",[24,25]],["virginexperiencedays.co.uk",26],["nordkurier.de",[27,28,29]],["everest-24.pl",[30,32]],["zave.it",31],["sneakerfreaker.com",33],["cryptofalka.hu",33],["walmart.ca",34],["flyingblue.com",35],["byfood.com",36],["andsafe.de",37],["edostavka.by",38],["emall.by",38],["onexstore.pl",[39,40,41]],["revanced.app",41],["eezy.nrw",42],["bahnland-bayern.de",42],["evropochta.by",[43,44]],["hitado.de",45],["inselberlin.de",46],["gronkh.tv",47],["parrotsec.org",48],["adfilteringdevsummit.com",49],["learngerman.dw.com",50],["gostanford.com",51],["namensetiketten.de",52],["drafthound.com",[53,54]],["wokularach.pl",55],["bidup.amtrak.com",56],["eschuhe.de",57],["flyingpapers.com",58],["beta.character.ai",[59,60]],["bittimittari.fi",61],["vivantis.sk",62]]);
 
 const entitiesMap = new Map([]);
 
@@ -63,6 +63,13 @@ function setLocalStorageItemFn(
     value = '',
 ) {
     if ( key === '' ) { return; }
+
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
+    }
 
     const trustedValues = [
         '',
@@ -83,10 +90,13 @@ function setLocalStorageItemFn(
             value = (new Date()).toISOString();
         }
     } else {
-        if ( trustedValues.includes(value.toLowerCase()) === false ) {
-            if ( /^\d+$/.test(value) === false ) { return; }
-            value = parseInt(value, 10);
-            if ( value > 32767 ) { return; }
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10);
+            if ( n > 32767 ) { return; }
         }
     }
 

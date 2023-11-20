@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["visited","1"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"]];
+const argsList = [["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"]];
 
-const hostnamesMap = new Map([["sabornutritivo.com",0],["financasdeouro.com",0],["guiacripto.online",0],["1i1.in",1],["estacio.br",2],["receitasoncaseiras.online",3],["nutricaohoje.website",3],["automotivocarros.com",4],["portecnologia.com",4],["cartaocreditoplatinum.org",4]]);
+const hostnamesMap = new Map([["sabornutritivo.com",0],["financasdeouro.com",0],["guiacripto.online",0],["guiasaude.info",1],["1i1.in",2],["estacio.br",3],["receitasoncaseiras.online",4],["nutricaohoje.website",4],["automotivocarros.com",5],["portecnologia.com",5],["cartaocreditoplatinum.org",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -70,15 +70,17 @@ function setCookie(
         'ok',
         'on', 'off',
         'true', 't', 'false', 'f',
-        'y', 'n',
-        'yes', 'no',
+        'yes', 'y', 'no', 'n',
+        'necessary', 'required',
     ];
-    if ( validValues.includes(value.toLowerCase()) === false ) {
-        if ( /^\d+$/.test(value) === false ) { return; }
+    const normalized = value.toLowerCase();
+    const match = /^("?)(.+)\1$/.exec(normalized);
+    const unquoted = match && match[2] || normalized;
+    if ( validValues.includes(unquoted) === false ) {
+        if ( /^\d+$/.test(unquoted) === false ) { return; }
         const n = parseInt(value, 10);
         if ( n > 15 ) { return; }
     }
-    value = encodeURIComponent(value);
 
     setCookieFn(
         false,

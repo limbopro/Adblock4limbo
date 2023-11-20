@@ -339,7 +339,6 @@ DOMAIN-SUFFIX,kvsvug.xyz, reject
 DOMAIN-SUFFIX,kwtgntyu.xyz, reject
 DOMAIN-SUFFIX,kyikdee.cn, reject
 DOMAIN-SUFFIX,kzprugp.xyz, reject
-DOMAIN-SUFFIX,l404k.com, reject
 DOMAIN-SUFFIX,l80ays.com, reject
 DOMAIN-SUFFIX,lblwhh.xyz, reject
 DOMAIN-SUFFIX,ldvnehc.xyz, reject
@@ -635,6 +634,13 @@ DOMAIN-SUFFIX,rgpujh.xyz, reject
 DOMAIN-SUFFIX,haxqxd.xyz, reject
 DOMAIN-SUFFIX,feijied.xyz, reject
 DOMAIN-SUFFIX,rett.top, reject
+DOMAIN-SUFFIX,zhangyuting04.cn, reject
+DOMAIN-SUFFIX,holdntlc.com, reject
+DOMAIN-SUFFIX,jane2.top, reject
+DOMAIN-SUFFIX,gcbtgh26.xyz, reject
+DOMAIN-SUFFIX,fwhhcpj.xyz, reject
+DOMAIN-SUFFIX,hinm.online, reject
+DOMAIN-SUFFIX,g0fc3.com, reject
 DOMAIN-SUFFIX,zzyy19.top, reject
 DOMAIN-SUFFIX,zzyy20.top, reject
 DOMAIN-SUFFIX,002777.xyz, reject
@@ -4874,6 +4880,7 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
+DOMAIN-SUFFIX,ipad.pc899.cn, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject

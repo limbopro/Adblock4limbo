@@ -42,7 +42,7 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["piBlock"],["/[A-z0-9_]+\\(ch[0-9]+_[A-z0-9]+\\)/"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["googleads"]];
+const argsList = [["piBlock"],["/[A-z0-9_]+\\(ch[0-9]+_[A-z0-9]+\\)/"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],[").offsetHeight <"]];
 
 const hostnamesMap = new Map([["moneytoring.co.kr",0],["postincome.co.kr",0],["itinformation.kr",0],["digitstar77.com",0],["m.humoruniv.com",1],["filetender.com",2],["zuzunza.com",3],["klauncher.kr",3],["iphonedev.co.kr",3],["tistory.com",3],["sysnet.pe.kr",4],["genshin.gamedot.org",5],["stockinfo7.com",6],["lover923.net",7],["lover924.net",7],["lover925.net",7],["lover926.net",7],["lover927.net",7],["lover928.net",7],["lover929.net",7],["lover930.net",7],["lover931.net",7],["lover932.net",7]]);
 

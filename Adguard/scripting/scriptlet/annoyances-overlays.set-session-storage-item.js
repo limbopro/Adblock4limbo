@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
+const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
 
-const hostnamesMap = new Map([["makemytrip.com",0],["fantasyfootballhub.co.uk",1],["northcasino.com",2],["dream.ai",3],["imdb.com",4],["ringover.com",5],["eneba.com",6],["1mg.com",7],["flipkart.com",8],["selenagomez.com",9],["maxicours.com",10],["270towin.com",11],["getemoji.com",11]]);
+const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["selenagomez.com",10],["maxicours.com",11],["270towin.com",12],["getemoji.com",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -63,6 +63,13 @@ function setLocalStorageItemFn(
     value = '',
 ) {
     if ( key === '' ) { return; }
+
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
+    }
 
     const trustedValues = [
         '',
@@ -83,10 +90,13 @@ function setLocalStorageItemFn(
             value = (new Date()).toISOString();
         }
     } else {
-        if ( trustedValues.includes(value.toLowerCase()) === false ) {
-            if ( /^\d+$/.test(value) === false ) { return; }
-            value = parseInt(value, 10);
-            if ( value > 32767 ) { return; }
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10);
+            if ( n > 32767 ) { return; }
         }
     }
 

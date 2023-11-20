@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ads time_events_url"]];
+const argsList = [["assets.preroll"],["ads time_events_url"]];
 
-const hostnamesMap = new Map([["goplay.be",0]]);
+const hostnamesMap = new Map([["npo.nl",0],["vpro.nl",0],["goplay.be",1]]);
 
 const entitiesMap = new Map([]);
 

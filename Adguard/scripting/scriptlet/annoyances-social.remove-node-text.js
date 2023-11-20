@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#text","/Поделиться\\s?$|Share report/"]];
+const argsList = [["#text","Podijeli:"],["#text","/Поделиться\\s?$|Share report/"]];
 
-const hostnamesMap = new Map([["check-host.net",0]]);
+const hostnamesMap = new Map([["glasistre.hr",0],["check-host.net",1]]);
 
 const entitiesMap = new Map([]);
 

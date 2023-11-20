@@ -42,11 +42,11 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.visibilityState","visible"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"]];
+const argsList = [["document.visibilityState","visible"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"],["window.cpexCMPVersion","2.0 TCF 2.2"]];
 
-const hostnamesMap = new Map([["dropgalaxy.com",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4]]);
+const hostnamesMap = new Map([["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4],["zive.cz",5]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["dropgalaxy",0]]);
 
 const exceptionsMap = new Map([]);
 
@@ -110,9 +110,9 @@ function setConstantCore(
             cValue = null;
         } else if ( cValue === "''" || cValue === '' ) {
             cValue = '';
-        } else if ( cValue === '[]' ) {
+        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
             cValue = [];
-        } else if ( cValue === '{}' ) {
+        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
             cValue = {};
         } else if ( cValue === 'noopFunc' ) {
             cValue = cloakFunc(function(){});
@@ -132,14 +132,15 @@ function setConstantCore(
             return;
         }
         if ( extraArgs.as !== undefined ) {
+            const value = cValue;
             if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => cValue;
+                cValue = ( ) => value;
             } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => cValue);
+                cValue = ( ) => (( ) => value);
             } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(cValue);
+                cValue = Promise.resolve(value);
             } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(cValue);
+                cValue = Promise.reject(value);
             }
         }
         let aborted = false;

@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adsbygoogle"],[".addClass('getir')"],["flipHover"]];
+const argsList = [[".addClass('getir')"],["flipHover"]];
 
-const hostnamesMap = new Map([["tekniknot.com",0],["fox.com.tr",1],["ensonhaber.com",2]]);
+const hostnamesMap = new Map([["fox.com.tr",0],["ensonhaber.com",1]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["Object.prototype.adUnits"],["ga"]];
+const argsList = [["Object.prototype.adUnits"]];
 
-const hostnamesMap = new Map([["happypancake.fi",0],["pelaaja.fi",1]]);
+const hostnamesMap = new Map([["happypancake.fi",0]]);
 
 const entitiesMap = new Map([]);
 

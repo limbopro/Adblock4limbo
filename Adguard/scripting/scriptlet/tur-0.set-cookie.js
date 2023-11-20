@@ -70,15 +70,17 @@ function setCookie(
         'ok',
         'on', 'off',
         'true', 't', 'false', 'f',
-        'y', 'n',
-        'yes', 'no',
+        'yes', 'y', 'no', 'n',
+        'necessary', 'required',
     ];
-    if ( validValues.includes(value.toLowerCase()) === false ) {
-        if ( /^\d+$/.test(value) === false ) { return; }
+    const normalized = value.toLowerCase();
+    const match = /^("?)(.+)\1$/.exec(normalized);
+    const unquoted = match && match[2] || normalized;
+    if ( validValues.includes(unquoted) === false ) {
+        if ( /^\d+$/.test(unquoted) === false ) { return; }
         const n = parseInt(value, 10);
         if ( n > 15 ) { return; }
     }
-    value = encodeURIComponent(value);
 
     setCookieFn(
         false,

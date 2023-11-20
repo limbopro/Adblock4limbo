@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
+const argsList = [["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
 
-const hostnamesMap = new Map([["h-ciyuan.com",0],["1keydata.com",1],["slit.cn",2],["jkpan.cc",[3,4]],["getrelax.cc",5],["poedb.tw",6],["bingfeng.tw",7],["youranshare.com",8],["getitfree.cn",9],["pg-wuming.com",10],["pornbest.org",11],["nunuyy3.org",12],["dogfight360.com",13],["o8tv.com",14],["javlibrary.com",15],["wnacg1.cc",16],["pixnet.net",17],["ggjav.com",18],["porn87.com",18]]);
+const hostnamesMap = new Map([["vxetable.cn",0],["h-ciyuan.com",1],["1keydata.com",2],["slit.cn",3],["jkpan.cc",[4,5]],["getrelax.cc",6],["poedb.tw",7],["bingfeng.tw",8],["youranshare.com",9],["getitfree.cn",10],["pg-wuming.com",11],["pornbest.org",12],["nunuyy3.org",13],["dogfight360.com",14],["o8tv.com",15],["javlibrary.com",16],["wnacg1.cc",17],["pixnet.net",18],["ggjav.com",19],["porn87.com",19]]);
 
-const entitiesMap = new Map([["hentaicomic",16],["wnacg",16]]);
+const entitiesMap = new Map([["hentaicomic",17],["wnacg",17]]);
 
 const exceptionsMap = new Map([]);
 

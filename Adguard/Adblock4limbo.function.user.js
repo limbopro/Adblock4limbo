@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.11.20
+// @version      0.1.11.21
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -1414,25 +1414,26 @@ function lock_screen_mode_check_after() {
 
         // 增加解锁按钮 UNLOCK 🔓
 
-        var button_echo = document.createElement('button');
+        var button_echo = document.createElement('button'); // 隐藏输入框 避免浏览器提示记住密码
         button_echo.id = 'unlock';
         button_echo.className = 'unlock';
         button_echo.style = 'border-radius:4px; font-size:medium; border-radius:26px; box-shadow:inset 0px 0px 15px 3px #16191f00; position: relative;z-index: 114155;top: 50%;width: 180px;height: 40px; font-weight:inherit; background:blue; color:white;';
         button_echo.textContent = 'UNLOCK!';
 
-        var input_echo = document.createElement('input');
+        var input_echo = document.createElement('input'); // 密码输入框
         input_echo.className = 'lockscreen';
-        input_echo.style = 'position:fixed;width:180px;height:27px;top:45%;outline-style:none;border:0px;color:black;background:aliceblue;';
-        input_echo.type = 'password';
+        input_echo.style = '-webkit-text-security:disc;z-index:114155; position:fixed;width:180px;height:27px;top:45%;outline-style:none;border:0px;color:black;background:aliceblue;auto-complete:new-password;';
+        //input_echo.type = 'password';
+        input_echo.type = 'text';
         input_echo.autocomplete = 'off';
         input_echo.placeholder = ' 在这里输入密码...';
 
         var target_echo = document.getElementById('nsfw_echo');
-        before = document.querySelector('img.lockscreen')
+        var before = document.querySelector('img.lockscreen')
         target_echo.insertBefore(button_echo, before);
         document.getElementById('nsfw').style = 'text-align:center;'
 
-        before2 = document.querySelector('button.unlock');
+        var before2 = document.querySelector('button.unlock');
         var target_echo1 = document.getElementById('nsfw_echo');
         target_echo1.insertBefore(input_echo, before2);
 

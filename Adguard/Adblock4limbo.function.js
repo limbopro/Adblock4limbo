@@ -284,7 +284,7 @@ function if_a_click_then_close_daohang() {
 */
 
 
-var nsfw_regex = new RegExp(/\b(huxiu|thisav|njav|missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+var nsfw_regex = new RegExp(/\b(thisav|njav|missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
 var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
 var echo_ell_length = 21; // 总共导航类目数量
 var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
@@ -996,6 +996,11 @@ document.addEventListener("keydown", function (event) {
         // body_build('true');
     }
 
+    if (event.code === 'Enter' && document.querySelector('input.lockscreen') !== null) {
+        screen_unlock(); // 验证密码
+    }
+
+
     setTimeout(() => {
         click_count = 0;
     }, 500);
@@ -1342,7 +1347,7 @@ function lock_screen_setPWD(x) { // 锁屏设置
     if (x == 'check') {
         lock_screen_mode_check();
     } else if (getCookie('lock_screen_pwd') == '' || getCookie('lock_screen_pwd') == 'null') {
-        var password = window.prompt("请设置锁屏密码？（任意你记得住的字母/数字等符号的组合)，如忘记密码，你可通过清理浏览器 cookie 的方式重置密码。本次设置仅针对当前网站域名生效。");
+        var password = window.prompt("请设置锁屏密码（任意你记得住的字母/数字等符号的简单组合)；如忘记密码，你可通过清理浏览器 cookie 的方式重置密码；本次设置仅针对当前网站域名生效。");
         setCookie('lock_screen_pwd', password, 114154);
         setTimeout(() => {
             lock_screen_setPWD();
@@ -1355,8 +1360,9 @@ function lock_screen_setPWD(x) { // 锁屏设置
 lock_screen_mode_check();
 
 function screen_unlock() {
-    var pwd = window.prompt("请输入密码以解锁...");
-    if (pwd == getCookie('lock_screen_pwd')) {
+    // var pwd = window.prompt("请输入密码以解锁...");
+    // if (pwd == getCookie('lock_screen_pwd')) {
+    if (document.querySelector('input.lockscreen').value == getCookie('lock_screen_pwd')) {
 
         znsh_unlock('lockscreen');
         znsh_unlock('lockscreen');
@@ -1375,11 +1381,20 @@ function screen_unlock() {
         setCookie('lock_screen_mode', 'false', '114154');
 
         // 移除解锁按钮 UNLOCK 🔓
-        document.querySelector('button.unlock').remove();
-        document.getElementById('nsfw').style = '/*text-align:center;*/'
+        if (document.querySelector('button.unlock')) {
+            document.querySelector('button.unlock').remove();
+        }
+        if (document.querySelector('input.lockscreen')) {
+            document.querySelector('input.lockscreen').remove();
+        }
+        if (document.getElementById('nsfw')) {
+            document.getElementById('nsfw').style = '/*text-align:center;*/'
+        }
         // 结束
 
         //location.reload();
+    } else {
+        alert('密码错误❌！请重新输入...')
     }
 }
 
@@ -1398,15 +1413,29 @@ function lock_screen_mode_check_after() {
         document.querySelector('img.lockscreen').style = 'filter:blur(50px)'
 
         // 增加解锁按钮 UNLOCK 🔓
+
         var button_echo = document.createElement('button');
         button_echo.id = 'unlock';
         button_echo.className = 'unlock';
         button_echo.style = 'border-radius:4px; font-size:medium; border-radius:26px; box-shadow:inset 0px 0px 15px 3px #16191f00; position: relative;z-index: 114155;top: 50%;width: 180px;height: 40px; font-weight:inherit; background:blue; color:white;';
         button_echo.textContent = 'UNLOCK!';
+
+        var input_echo = document.createElement('input');
+        input_echo.className = 'lockscreen';
+        input_echo.style = 'position:fixed;width:180px;height:27px;top:45%;outline-style:none;border:0px;color:black;background:aliceblue;';
+        input_echo.type = 'password';
+        input_echo.autocomplete = 'off';
+        input_echo.placeholder = ' 在这里输入密码...';
+
         var target_echo = document.getElementById('nsfw_echo');
         before = document.querySelector('img.lockscreen')
         target_echo.insertBefore(button_echo, before);
         document.getElementById('nsfw').style = 'text-align:center;'
+
+        before2 = document.querySelector('button.unlock');
+        var target_echo1 = document.getElementById('nsfw_echo');
+        target_echo1.insertBefore(input_echo, before2);
+
         // 结束
 
         document.querySelector("button.unlock").addEventListener("click", screen_unlock);

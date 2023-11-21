@@ -1280,7 +1280,7 @@ function znsh() {
 
 function nsfwmode(x) { // 是否开启
     if (x == 'false') {
-        setCookie('nsfwmode', 'false', '114154');
+        setCookie('nsfwmode', 'false');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (x == 'true') {
         setCookie('nsfwmode', 'true', '114154');
@@ -1289,11 +1289,11 @@ function nsfwmode(x) { // 是否开启
         setCookie('nsfwmode', 'true', '114154');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == 'true') {
-        setCookie('nsfwmode', 'false', '114154');
+        setCookie('nsfwmode', 'false');
         visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == '') {
-        setCookie('nsfwmode', 'false', '114154');
+        setCookie('nsfwmode', 'false');
         visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     }

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 19 Nov 2023 01:36:03 GMT
-# entries:        3717
+# last updated:   Mon, 20 Nov 2023 21:06:23 GMT
+# entries:        3718
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1845,6 +1845,7 @@ DOMAIN-SUFFIX,frtyj.com, reject
 DOMAIN-SUFFIX,frtyk.com, reject
 DOMAIN-SUFFIX,fullstory.com, reject
 DOMAIN-SUFFIX,functionalcrown.com, reject
+DOMAIN-SUFFIX,functionalfeather.com, reject
 DOMAIN-SUFFIX,funklicks.com, reject
 DOMAIN-SUFFIX,funnelytics.io, reject
 DOMAIN-SUFFIX,furryfork.com, reject

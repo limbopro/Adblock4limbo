@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311211509
+## ! Version: 202311221419
 ## ! Title: EasyPrivacy
-## ! Last modified: 21 Nov 2023 15:09 UTC
+## ! Last modified: 22 Nov 2023 14:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4044,6 +4044,7 @@ DOMAIN-SUFFIX,metrics.spkt.io, reject
 DOMAIN-SUFFIX,metrics.syf.com, reject
 DOMAIN-SUFFIX,metrics.ted.com, reject
 DOMAIN-SUFFIX,metricsishare.rediff.com, reject
+DOMAIN-SUFFIX,mi.grubhub.com, reject
 DOMAIN-SUFFIX,miao.baidu.com, reject
 DOMAIN-SUFFIX,midas.chase.com, reject
 DOMAIN-SUFFIX,mixpanel-proxy.ted.com, reject
@@ -4207,6 +4208,7 @@ DOMAIN-SUFFIX,tags.aljazeera.com, reject
 DOMAIN-SUFFIX,tags.johnlewis.com, reject
 DOMAIN-SUFFIX,tags.stepstone.com, reject
 DOMAIN-SUFFIX,tao.barstoolsports.com, reject
+DOMAIN-SUFFIX,taplytics-umami.grubhub.com, reject
 DOMAIN-SUFFIX,target.nationwide.com, reject
 DOMAIN-SUFFIX,target.nejm.org, reject
 DOMAIN-SUFFIX,targeting.washpost.nile.works, reject
@@ -21279,6 +21281,7 @@ DOMAIN-SUFFIX,ymprove.gmx.net, reject
 DOMAIN-SUFFIX,ymprove.web.de, reject
 DOMAIN-SUFFIX,ia.ekstrabladet.dk, reject
 DOMAIN-SUFFIX,analytics.allovoisins.com, reject
+DOMAIN-SUFFIX,analytics.clubic.com, reject
 DOMAIN-SUFFIX,bmly.impots.gouv.fr, reject
 DOMAIN-SUFFIX,cdtm.cdiscount.com, reject
 DOMAIN-SUFFIX,compteur.developpez.com, reject

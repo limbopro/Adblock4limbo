@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311211509
+## ! Version: 202311221419
 ## ! Title: EasyPrivacy
-## ! Last modified: 21 Nov 2023 15:09 UTC
+## ! Last modified: 22 Nov 2023 14:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4044,6 +4044,7 @@ DOMAIN-SUFFIX,metrics.spkt.io
 DOMAIN-SUFFIX,metrics.syf.com
 DOMAIN-SUFFIX,metrics.ted.com
 DOMAIN-SUFFIX,metricsishare.rediff.com
+DOMAIN-SUFFIX,mi.grubhub.com
 DOMAIN-SUFFIX,miao.baidu.com
 DOMAIN-SUFFIX,midas.chase.com
 DOMAIN-SUFFIX,mixpanel-proxy.ted.com
@@ -4207,6 +4208,7 @@ DOMAIN-SUFFIX,tags.aljazeera.com
 DOMAIN-SUFFIX,tags.johnlewis.com
 DOMAIN-SUFFIX,tags.stepstone.com
 DOMAIN-SUFFIX,tao.barstoolsports.com
+DOMAIN-SUFFIX,taplytics-umami.grubhub.com
 DOMAIN-SUFFIX,target.nationwide.com
 DOMAIN-SUFFIX,target.nejm.org
 DOMAIN-SUFFIX,targeting.washpost.nile.works
@@ -21279,6 +21281,7 @@ DOMAIN-SUFFIX,ymprove.gmx.net
 DOMAIN-SUFFIX,ymprove.web.de
 DOMAIN-SUFFIX,ia.ekstrabladet.dk
 DOMAIN-SUFFIX,analytics.allovoisins.com
+DOMAIN-SUFFIX,analytics.clubic.com
 DOMAIN-SUFFIX,bmly.impots.gouv.fr
 DOMAIN-SUFFIX,cdtm.cdiscount.com
 DOMAIN-SUFFIX,compteur.developpez.com

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 20 Nov 2023 21:06:23 GMT
-# entries:        3718
+# last updated:   Wed, 22 Nov 2023 15:59:29 GMT
+# entries:        3719
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1841,6 +1841,7 @@ DOMAIN-SUFFIX,freezingbuilding.com
 DOMAIN-SUFFIX,freshrelevance.com
 DOMAIN-SUFFIX,friendwool.com
 DOMAIN-SUFFIX,frightenedpotato.com
+DOMAIN-SUFFIX,fronttoad.com
 DOMAIN-SUFFIX,frtyj.com
 DOMAIN-SUFFIX,frtyk.com
 DOMAIN-SUFFIX,fullstory.com

@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 22 Nov 2023 15:59:29 GMT
-# entries:        3719
+# entries:        3717
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -574,7 +574,6 @@ DOMAIN-SUFFIX,ads.pof.com
 DOMAIN-SUFFIX,ads.powweb.com
 DOMAIN-SUFFIX,ads.ppvmedien.de
 DOMAIN-SUFFIX,ads.praguetv.cz
-DOMAIN-SUFFIX,ads.primissima.it
 DOMAIN-SUFFIX,ads.printscr.com
 DOMAIN-SUFFIX,ads.prisacom.com
 DOMAIN-SUFFIX,ads.program3.com
@@ -701,7 +700,6 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com
 DOMAIN-SUFFIX,adsbydelema.com
 DOMAIN-SUFFIX,adscale.de
 DOMAIN-SUFFIX,adscholar.com
-DOMAIN-SUFFIX,adscience.nl
 DOMAIN-SUFFIX,adsco.re
 DOMAIN-SUFFIX,adscpm.com
 DOMAIN-SUFFIX,adsdaq.com
@@ -1069,6 +1067,7 @@ DOMAIN-SUFFIX,avenuea.com
 DOMAIN-SUFFIX,avocet.io
 DOMAIN-SUFFIX,awakebird.com
 DOMAIN-SUFFIX,awempire.com
+DOMAIN-SUFFIX,awesomeagreement.com
 DOMAIN-SUFFIX,awin1.com
 DOMAIN-SUFFIX,awstrack.me
 DOMAIN-SUFFIX,awzbijw.com
@@ -1695,7 +1694,6 @@ DOMAIN-SUFFIX,emxdigital.com
 DOMAIN-SUFFIX,encouragingwilderness.com
 DOMAIN-SUFFIX,endurableshop.com
 DOMAIN-SUFFIX,energeticladybug.com
-DOMAIN-SUFFIX,engage.webshrinker.com
 DOMAIN-SUFFIX,engage.windows.com
 DOMAIN-SUFFIX,engagebdr.com
 DOMAIN-SUFFIX,engageya.com
@@ -1773,7 +1771,6 @@ DOMAIN-SUFFIX,fairfeeling.com
 DOMAIN-SUFFIX,fallaciousfifth.com
 DOMAIN-SUFFIX,fam-ad.com
 DOMAIN-SUFFIX,famousquarter.com
-DOMAIN-SUFFIX,faracoon.com
 DOMAIN-SUFFIX,farethief.com
 DOMAIN-SUFFIX,farmergoldfish.com
 DOMAIN-SUFFIX,fascinatedfeather.com
@@ -3404,6 +3401,7 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk
+DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com
 DOMAIN-SUFFIX,tracking.epicgames.com
 DOMAIN-SUFFIX,tracking.exipure.com
 DOMAIN-SUFFIX,tracking.hyros.com

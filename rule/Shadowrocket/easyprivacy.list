@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311231533
+## ! Version: 202311241426
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Nov 2023 15:33 UTC
+## ! Last modified: 24 Nov 2023 14:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2434,6 +2434,7 @@ DOMAIN-SUFFIX,distillery.wistia.com, reject
 DOMAIN-SUFFIX,dl.episerver.net, reject
 DOMAIN-SUFFIX,doppler-beacon.cbsivideo.com, reject
 DOMAIN-SUFFIX,doppler-beacons.cbsivideo.com, reject
+DOMAIN-SUFFIX,doppler-client-events.cbsivideo.com, reject
 DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com, reject
 DOMAIN-SUFFIX,doug1izaerwt3.cloudfront.net, reject
 DOMAIN-SUFFIX,dx.mountain.com, reject
@@ -3945,6 +3946,7 @@ DOMAIN-SUFFIX,console-telemetry.oci.oraclecloud.com, reject
 DOMAIN-SUFFIX,conversion.mooncard.co, reject
 DOMAIN-SUFFIX,copilot-telemetry.githubusercontent.com, reject
 DOMAIN-SUFFIX,count.rin.ru, reject
+DOMAIN-SUFFIX,counter.darkreader.app, reject
 DOMAIN-SUFFIX,cpt.itv.com, reject
 DOMAIN-SUFFIX,crayfish.thingelstad.com, reject
 DOMAIN-SUFFIX,crta.metro.co.uk, reject

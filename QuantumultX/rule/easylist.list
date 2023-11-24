@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202311231533
+## ! Version: 202311241426
 ## ! Title: EasyList
-## ! Last modified: 23 Nov 2023 15:33 UTC
+## ! Last modified: 24 Nov 2023 14:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -7209,6 +7209,7 @@ DOMAIN-SUFFIX,cybertronads.com, reject
 DOMAIN-SUFFIX,cycledaction.com, reject
 DOMAIN-SUFFIX,cyclismpeddled.cam, reject
 DOMAIN-SUFFIX,cydippeespy.com, reject
+DOMAIN-SUFFIX,cyesesprerich.com, reject
 DOMAIN-SUFFIX,cygnus.com, reject
 DOMAIN-SUFFIX,cyih0e43aty7.com, reject
 DOMAIN-SUFFIX,cyijr.com, reject
@@ -8192,6 +8193,7 @@ DOMAIN-SUFFIX,dnswinq.com, reject
 DOMAIN-SUFFIX,doaboowa.com, reject
 DOMAIN-SUFFIX,doaipomer.com, reject
 DOMAIN-SUFFIX,doaltariaer.com, reject
+DOMAIN-SUFFIX,doaphaha.net, reject
 DOMAIN-SUFFIX,doappcloud.com, reject
 DOMAIN-SUFFIX,dobnor.com, reject
 DOMAIN-SUFFIX,dochouts.net, reject
@@ -10296,6 +10298,7 @@ DOMAIN-SUFFIX,fiinann.com, reject
 DOMAIN-SUFFIX,fiinnancesur.com, reject
 DOMAIN-SUFFIX,fijekone.com, reject
 DOMAIN-SUFFIX,fijetuxa.com, reject
+DOMAIN-SUFFIX,fikedaquabib.com, reject
 DOMAIN-SUFFIX,filasseseeder.com, reject
 DOMAIN-SUFFIX,filchmadeirahotel.com, reject
 DOMAIN-SUFFIX,filesdots.com, reject
@@ -11146,6 +11149,7 @@ DOMAIN-SUFFIX,gashewasf.xyz, reject
 DOMAIN-SUFFIX,gasolineunityauspice.com, reject
 DOMAIN-SUFFIX,gaspbandy.com, reject
 DOMAIN-SUFFIX,gassingunspicy.guru, reject
+DOMAIN-SUFFIX,gastersliddry.com, reject
 DOMAIN-SUFFIX,gastingitea.com, reject
 DOMAIN-SUFFIX,gasylicyg1e8n6po.com, reject
 DOMAIN-SUFFIX,gatecitizenswindy.com, reject
@@ -11203,6 +11207,7 @@ DOMAIN-SUFFIX,gecl.xyz, reject
 DOMAIN-SUFFIX,gecpbt.com, reject
 DOMAIN-SUFFIX,geddshippy.com, reject
 DOMAIN-SUFFIX,gedspecificano.com, reject
+DOMAIN-SUFFIX,geechaid.xyz, reject
 DOMAIN-SUFFIX,geedoovu.net, reject
 DOMAIN-SUFFIX,geejooji.com, reject
 DOMAIN-SUFFIX,geeksundigne.com, reject
@@ -11636,6 +11641,7 @@ DOMAIN-SUFFIX,gnksplbu.com, reject
 DOMAIN-SUFFIX,gnojicfj.com, reject
 DOMAIN-SUFFIX,gnosticwinks.com, reject
 DOMAIN-SUFFIX,go-rillatrack.com, reject
+DOMAIN-SUFFIX,go-srv.com, reject
 DOMAIN-SUFFIX,go2.global, reject
 DOMAIN-SUFFIX,go2affise.com, reject
 DOMAIN-SUFFIX,go2app.org, reject
@@ -11648,6 +11654,7 @@ DOMAIN-SUFFIX,go2speed.org, reject
 DOMAIN-SUFFIX,go6shde9nj2itle.com, reject
 DOMAIN-SUFFIX,goaciptu.net, reject
 DOMAIN-SUFFIX,goads.pro, reject
+DOMAIN-SUFFIX,goadserver.com, reject
 DOMAIN-SUFFIX,goadx.com, reject
 DOMAIN-SUFFIX,goaffmy.com, reject
 DOMAIN-SUFFIX,goagloow.xyz, reject
@@ -12714,6 +12721,7 @@ DOMAIN-SUFFIX,hnrgmc.com, reject
 DOMAIN-SUFFIX,ho47no3iry.de, reject
 DOMAIN-SUFFIX,hoa44trk.com, reject
 DOMAIN-SUFFIX,hoabinoo.net, reject
+DOMAIN-SUFFIX,hoagiesmowed.com, reject
 DOMAIN-SUFFIX,hoakz.xyz, reject
 DOMAIN-SUFFIX,hoanaijo.com, reject
 DOMAIN-SUFFIX,hoanoola.net, reject
@@ -14925,6 +14933,7 @@ DOMAIN-SUFFIX,kobeden.com, reject
 DOMAIN-SUFFIX,kocairdo.net, reject
 DOMAIN-SUFFIX,kocaisin.xyz, reject
 DOMAIN-SUFFIX,kochov.com, reject
+DOMAIN-SUFFIX,kodagupinkoes.com, reject
 DOMAIN-SUFFIX,kofirusy.pro, reject
 DOMAIN-SUFFIX,kogutcho.net, reject
 DOMAIN-SUFFIX,koindut.com, reject
@@ -17356,6 +17365,7 @@ DOMAIN-SUFFIX,muragetunnel.com, reject
 DOMAIN-SUFFIX,muralattentive.com, reject
 DOMAIN-SUFFIX,muralshelvesdeposition.com, reject
 DOMAIN-SUFFIX,murderassuredness.com, reject
+DOMAIN-SUFFIX,muricidmartins.com, reject
 DOMAIN-SUFFIX,muriheem.net, reject
 DOMAIN-SUFFIX,murkilyergots.com, reject
 DOMAIN-SUFFIX,murkymouse.online, reject
@@ -18060,6 +18070,7 @@ DOMAIN-SUFFIX,noopaipo.com, reject
 DOMAIN-SUFFIX,nooroapo.com, reject
 DOMAIN-SUFFIX,noosersturtles.com, reject
 DOMAIN-SUFFIX,noosingimmask.com, reject
+DOMAIN-SUFFIX,nopalryyipped.com, reject
 DOMAIN-SUFFIX,nope.xn--mgbkt9eckr.net, reject
 DOMAIN-SUFFIX,nope.xn--ngbcrg3b.com, reject
 DOMAIN-SUFFIX,nope.xn--ygba1c.wtf, reject
@@ -25471,6 +25482,7 @@ DOMAIN-SUFFIX,swanbxca.com, reject
 DOMAIN-SUFFIX,swansinksnow.com, reject
 DOMAIN-SUFFIX,swarfsfitters.com, reject
 DOMAIN-SUFFIX,swarmpush.com, reject
+DOMAIN-SUFFIX,swarthymacula.com, reject
 DOMAIN-SUFFIX,swatad.com, reject
 DOMAIN-SUFFIX,swaycomplymishandle.com, reject
 DOMAIN-SUFFIX,swayersnoance.com, reject

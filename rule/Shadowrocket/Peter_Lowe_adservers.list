@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 22 Nov 2023 15:59:29 GMT
-# entries:        3719
+# entries:        3717
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -574,7 +574,6 @@ DOMAIN-SUFFIX,ads.pof.com, reject
 DOMAIN-SUFFIX,ads.powweb.com, reject
 DOMAIN-SUFFIX,ads.ppvmedien.de, reject
 DOMAIN-SUFFIX,ads.praguetv.cz, reject
-DOMAIN-SUFFIX,ads.primissima.it, reject
 DOMAIN-SUFFIX,ads.printscr.com, reject
 DOMAIN-SUFFIX,ads.prisacom.com, reject
 DOMAIN-SUFFIX,ads.program3.com, reject
@@ -701,7 +700,6 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com, reject
 DOMAIN-SUFFIX,adsbydelema.com, reject
 DOMAIN-SUFFIX,adscale.de, reject
 DOMAIN-SUFFIX,adscholar.com, reject
-DOMAIN-SUFFIX,adscience.nl, reject
 DOMAIN-SUFFIX,adsco.re, reject
 DOMAIN-SUFFIX,adscpm.com, reject
 DOMAIN-SUFFIX,adsdaq.com, reject
@@ -1069,6 +1067,7 @@ DOMAIN-SUFFIX,avenuea.com, reject
 DOMAIN-SUFFIX,avocet.io, reject
 DOMAIN-SUFFIX,awakebird.com, reject
 DOMAIN-SUFFIX,awempire.com, reject
+DOMAIN-SUFFIX,awesomeagreement.com, reject
 DOMAIN-SUFFIX,awin1.com, reject
 DOMAIN-SUFFIX,awstrack.me, reject
 DOMAIN-SUFFIX,awzbijw.com, reject
@@ -1695,7 +1694,6 @@ DOMAIN-SUFFIX,emxdigital.com, reject
 DOMAIN-SUFFIX,encouragingwilderness.com, reject
 DOMAIN-SUFFIX,endurableshop.com, reject
 DOMAIN-SUFFIX,energeticladybug.com, reject
-DOMAIN-SUFFIX,engage.webshrinker.com, reject
 DOMAIN-SUFFIX,engage.windows.com, reject
 DOMAIN-SUFFIX,engagebdr.com, reject
 DOMAIN-SUFFIX,engageya.com, reject
@@ -1773,7 +1771,6 @@ DOMAIN-SUFFIX,fairfeeling.com, reject
 DOMAIN-SUFFIX,fallaciousfifth.com, reject
 DOMAIN-SUFFIX,fam-ad.com, reject
 DOMAIN-SUFFIX,famousquarter.com, reject
-DOMAIN-SUFFIX,faracoon.com, reject
 DOMAIN-SUFFIX,farethief.com, reject
 DOMAIN-SUFFIX,farmergoldfish.com, reject
 DOMAIN-SUFFIX,fascinatedfeather.com, reject
@@ -3404,6 +3401,7 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk, reject
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk, reject
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk, reject
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk, reject
+DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com, reject
 DOMAIN-SUFFIX,tracking.epicgames.com, reject
 DOMAIN-SUFFIX,tracking.exipure.com, reject
 DOMAIN-SUFFIX,tracking.hyros.com, reject

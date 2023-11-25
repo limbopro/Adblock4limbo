@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311241426
+## ! Version: 202311251213
 ## ! Title: EasyPrivacy
-## ! Last modified: 24 Nov 2023 14:26 UTC
+## ! Last modified: 25 Nov 2023 12:13 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4002,6 +4002,7 @@ DOMAIN-SUFFIX,events.santander.co.uk
 DOMAIN-SUFFIX,events.squarespace.com
 DOMAIN-SUFFIX,events.turbosquid.com
 DOMAIN-SUFFIX,events2.www.edenfantasys.com
+DOMAIN-SUFFIX,evs.icy-lake.kickstarter.com
 DOMAIN-SUFFIX,exr-mms.expertreviews.co.uk
 DOMAIN-SUFFIX,f362.nola.com
 DOMAIN-SUFFIX,fathom.app.silverbeak.com

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.11.19
+// @version      0.3.11.25
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -124,7 +124,7 @@
 
 
 daohang_build(); // 为页面增加导航按钮
-// 如不要导航可注释该行代码 在代码前加两行斜杆 // 
+// 如不要导航可注释该行代码 在代码前加两行斜杆 //
 // daohang_build() 就像这样
 
 // 一些常量
@@ -239,7 +239,7 @@ var imax = {
         xiaobaotv: "",
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
-        xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos 
+        xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos
         javbus: ".ad-item,.ad-box {display:none !important}",
         _4hu: "#adsbox,.wrap + #midBox ,.wrap + #btmBox,script[src=\"/static/base.js\"] + #couplet ,.search + #midBox,.mod.clearfix,dl#randomBox,dl#listwoBox ,body[ontouchstart] > #topBox, .wrap + #midBox, .wrap + #btmBox, .clearfix.col5.row > #listBox {display: none! important;}",
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
@@ -477,9 +477,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
             if (url_jable.search(reg_videos) !== -1) {
                 setTimeout(() => {
-                    ele_dynamicAppend("div h4", "onclick", "复制M3U8文件地址", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "jablex", 3, "button")
-                    ele_dynamicAppend("div h4", "onclick", "如何下载视频？", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 1, "button");
-                    ele_dynamicAppend("div h4", "onclick", "", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "copy", 2, "input");
+                    ele_dynamicAppend("div.header-left > h6", "onclick", "", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "copy", 15, "input");
+                    ele_dynamicAppend("div.header-left > h6", "onclick", "复制M3U8文件地址", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "jablex", 16, "button")
+                    ele_dynamicAppend("div.header-left > h6", "onclick", "如何下载视频？", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 17, "button");
                     // 添加监听器
                     addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
                 }, 3000)
@@ -543,7 +543,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
             break;
-        case 'nivod4': // nbys 泥巴影视 
+        case 'nivod4': // nbys 泥巴影视
             css_adsRemove(imax.css.nivod);
             hrefAttribute_set();
             setConstant('detailParams.is_ad_play', 'false'); // 泥巴影视PC版播放页视频广告加速
@@ -651,7 +651,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             function javlibrary() {
-                // '#topmenu', 'div.menutext', '.searchbar', 
+                // '#topmenu', 'div.menutext', '.searchbar',
                 css_adsRemove(imax.css.javlibrary);
                 var target_ = ['#rightcolumn', '.videothumblist', '.titlebox', '.menutext']
 
@@ -809,7 +809,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         default:
-            // 修正 case 中 default 的匹配规则  10.25.203 
+            // 修正 case 中 default 的匹配规则  10.25.203
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {
                 if (document.querySelector('video')) {
                     abort_on_property_read('__Y');
@@ -875,7 +875,7 @@ function uBlockOrigin_add() {
 
 /* End */
 
-function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建; 
+function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建;
     var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
     //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
     if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {

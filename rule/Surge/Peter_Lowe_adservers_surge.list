@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 22 Nov 2023 15:59:29 GMT
-# entries:        3717
+# last updated:   Sat, 25 Nov 2023 09:44:42 GMT
+# entries:        3720
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1015,6 +1015,7 @@ DOMAIN-SUFFIX,app-analytics-v2.snapchat.com
 DOMAIN-SUFFIX,app-analytics.snapchat.com
 DOMAIN-SUFFIX,app-measurement.com
 DOMAIN-SUFFIX,app.pendo.io
+DOMAIN-SUFFIX,app2.salesmanago.pl
 DOMAIN-SUFFIX,appboycdn.com
 DOMAIN-SUFFIX,appmetrica.yandex.ru
 DOMAIN-SUFFIX,appsflyer.com
@@ -3242,6 +3243,7 @@ DOMAIN-SUFFIX,t.leady.com
 DOMAIN-SUFFIX,t.mmtrkr.com
 DOMAIN-SUFFIX,t.news.browns-restaurants.co.uk
 DOMAIN-SUFFIX,t.notif-colissimo-laposte.info
+DOMAIN-SUFFIX,t.podcast.co
 DOMAIN-SUFFIX,t.salesmatemail.com
 DOMAIN-SUFFIX,t.vacations.disneydestinations.com
 DOMAIN-SUFFIX,t.visit.disneydestinations.com
@@ -3431,6 +3433,7 @@ DOMAIN-SUFFIX,tradedoubler.com
 DOMAIN-SUFFIX,traffic-exchange.com
 DOMAIN-SUFFIX,traffic-redirecting.com
 DOMAIN-SUFFIX,traffic.focuusing.com
+DOMAIN-SUFFIX,traffic.hyteck.de
 DOMAIN-SUFFIX,trafficfactory.biz
 DOMAIN-SUFFIX,trafficforce.com
 DOMAIN-SUFFIX,trafficholder.com

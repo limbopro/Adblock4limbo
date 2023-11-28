@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adBlockerDetected","false"],["blockId","0"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["alert","noopFunc"],["adblock","false"],["ads_data","{}"],["document.write","noopFunc"],["SERVER_SIDE_URL",""],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"]];
+const argsList = [["adBlockerDetected","false"],["blockId","0"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["alert","noopFunc"],["adblock","false"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["SERVER_SIDE_URL",""],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"]];
 
-const hostnamesMap = new Map([["egotter.com",0],["bridalgown.work",1],["contents-group.work",1],["heisei-housewarming.work",1],["liquidfoundation.work",1],["nailcolor.work",1],["studioglass.work",1],["tapestry.work",1],["teaceremony.work",1],["weddinghall.work",1],["520call.me",2],["520cc.cc",2],["dropbooks.net",3],["coolpan.net",4],["g-pc.info",5],["realtime-chart.info",[5,7]],["intaa.net",6],["sekai-kabuka.com",7],["goldencocco.jp",[8,19]],["mottonoutore.jp",[8,19]],["fashionpost.jp",9],["jav380.com",10],["webdevqa.jp.net",11],["sukima.me",[12,13,14,15]],["sonae.sankei.co.jp",16],["ponta.abstractpainting.work",[17,18]],["dotti2.jp",19],["pochitto2.jp",19],["gotouchi.jp",19],["cmnw.jp",19]]);
+const hostnamesMap = new Map([["egotter.com",0],["bridalgown.work",1],["contents-group.work",1],["heisei-housewarming.work",1],["liquidfoundation.work",1],["nailcolor.work",1],["studioglass.work",1],["tapestry.work",1],["teaceremony.work",1],["weddinghall.work",1],["520call.me",2],["520cc.cc",2],["dropbooks.net",3],["coolpan.net",4],["g-pc.info",5],["realtime-chart.info",[5,7]],["intaa.net",6],["sekai-kabuka.com",7],["goldencocco.jp",[8,20]],["mottonoutore.jp",[8,20]],["pictab.art",9],["onagazou.info",9],["fashionpost.jp",10],["jav380.com",11],["webdevqa.jp.net",12],["sukima.me",[13,14,15,16]],["sonae.sankei.co.jp",17],["ponta.abstractpainting.work",[18,19]],["dotti2.jp",20],["pochitto2.jp",20],["gotouchi.jp",20],["cmnw.jp",20]]);
 
 const entitiesMap = new Map([]);
 
@@ -280,6 +280,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

@@ -42,9 +42,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.visibilityState","visible"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"],["window.cpexCMPVersion","2.0 TCF 2.2"]];
+const argsList = [["document.visibilityState","visible"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"],["window.cpexCMPVersion","2.0 TCF 2.2"],["result_status","success"],["res.result.adblocker","false"],["xhr.status","200"]];
 
-const hostnamesMap = new Map([["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4],["zive.cz",5]]);
+const hostnamesMap = new Map([["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4],["zive.cz",5],["infinityscans.xyz",[6,7,8]]]);
 
 const entitiesMap = new Map([["dropgalaxy",0]]);
 
@@ -280,6 +280,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

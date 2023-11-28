@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","/extra|window.history.pushState/"],["scroll","getBoundingClientRect"],["scroll","players"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,11]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["cq.ru",6],["softonic.ru",7],["smotrim.ru",8],["rbc.ru",9],["sportrbc.ru",9],["iptv.org.ua",10],["tva.org.ua",10],["ufchgu.ru",10],["romakatya.ru",12],["overclockers.ru",13],["gazeta.ru",14],["lenta.ru",15],["m.lenta.ru",16],["www.vesti.ru",17]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,11]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["cq.ru",6],["softonic.ru",7],["smotrim.ru",8],["rbc.ru",9],["sportrbc.ru",9],["iptv.org.ua",10],["tva.org.ua",10],["ufchgu.ru",10],["romakatya.ru",12],["overclockers.ru",13],["gazeta.ru",14],["m.lenta.ru",15],["www.vesti.ru",16],["lenta.ru",17]]);
 
 const entitiesMap = new Map([]);
 
@@ -143,6 +143,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

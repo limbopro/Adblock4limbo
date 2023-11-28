@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto!important\"]}"],["{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"]];
+const argsList = [["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto!important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important\"]}"],["{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"]];
 
-const hostnamesMap = new Map([["vebo8.link",0],["khomuc9.live",0],["vebot.live",0],["90phutx.tv",0],["mitomb.tv",0],["xoilac89.tv",0],["cakhia7.vip",0],["blog.abit.vn",0],["chotlo.me",1],["saostar.vn",2]]);
+const hostnamesMap = new Map([["mitom.bio",0],["cakhia.de",0],["vebo8.link",0],["khomuc9.live",0],["vebot.live",0],["90phutx.tv",0],["xoilac89.tv",0],["blog.abit.vn",0],["gavang1.link",1],["chotlo.me",2],["saostar.vn",3]]);
 
 const entitiesMap = new Map(undefined);
 

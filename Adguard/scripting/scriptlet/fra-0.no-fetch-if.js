@@ -44,21 +44,22 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico method:HEAD"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
 
-const hostnamesMap = new Map([["darkino.pro",0],["darkino.biz",0],["france.tv",1],["lameteoagricole.net",2],["meteo-grenoble.com",2],["signal-arnaques.com",2],["techno-science.net",2],["animationdigitalnetwork.fr",2],["animedigitalnetwork.fr",2],["malekal.com",3],["tf1.fr",[4,5]],["tf1info.fr",[4,5]]]);
+const hostnamesMap = new Map([["france.tv",1],["lameteoagricole.net",2],["meteo-grenoble.com",2],["signal-arnaques.com",2],["techno-science.net",2],["animationdigitalnetwork.fr",2],["animedigitalnetwork.fr",2],["malekal.com",3],["tf1.fr",[4,5]],["tf1info.fr",[4,5]]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["darkino",0]]);
 
 const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
 function noFetchIf(
-    arg1 = '',
+    propsToMatch = '',
+    directive = ''
 ) {
-    if ( typeof arg1 !== 'string' ) { return; }
+    if ( typeof propsToMatch !== 'string' ) { return; }
     const safe = safeSelf();
     const needles = [];
-    for ( const condition of arg1.split(/\s+/) ) {
+    for ( const condition of propsToMatch.split(/\s+/) ) {
         if ( condition === '' ) { continue; }
         const pos = condition.indexOf(':');
         let key, value;
@@ -74,14 +75,11 @@ function noFetchIf(
     const log = needles.length === 0 ? console.log.bind(console) : undefined;
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
+            const details = args[0] instanceof self.Request
+                ? args[0]
+                : Object.assign({ url: args[0] }, args[1]);
             let proceed = true;
             try {
-                let details;
-                if ( args[0] instanceof self.Request ) {
-                    details = args[0];
-                } else {
-                    details = Object.assign({ url: args[0] }, args[1]);
-                }
                 const props = new Map();
                 for ( const prop in details ) {
                     let v = details[prop];
@@ -110,11 +108,69 @@ function noFetchIf(
                 }
             } catch(ex) {
             }
-            return proceed
-                ? Reflect.apply(target, thisArg, args)
-                : Promise.resolve(new Response());
+            if ( proceed ) {
+                return Reflect.apply(target, thisArg, args);
+            }
+            return generateContentFn(directive).then(text => {
+                const response = new Response(text, {
+                    statusText: 'OK',
+                    headers: {
+                        'Content-Length': text.length,
+                    }
+                });
+                Object.defineProperty(response, 'url', {
+                    value: details.url
+                });
+                return response;
+            });
         }
     });
+}
+
+function generateContentFn(directive) {
+    const safe = safeSelf();
+    const randomize = len => {
+        const chunks = [];
+        let textSize = 0;
+        do {
+            const s = safe.Math_random().toString(36).slice(2);
+            chunks.push(s);
+            textSize += s.length;
+        }
+        while ( textSize < len );
+        return chunks.join(' ').slice(0, len);
+    };
+    if ( directive === 'true' ) {
+        return Promise.resolve(randomize(10));
+    }
+    if ( directive.startsWith('length:') ) {
+        const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
+        if ( match ) {
+            const min = parseInt(match[1], 10);
+            const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
+            const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
+            return Promise.resolve(randomize(len | 0));
+        }
+    }
+    if ( directive.startsWith('war:') && scriptletGlobals.has('warOrigin') ) {
+        return new Promise(resolve => {
+            const warOrigin = scriptletGlobals.get('warOrigin');
+            const warName = directive.slice(4);
+            const fullpath = [ warOrigin, '/', warName ];
+            const warSecret = scriptletGlobals.get('warSecret');
+            if ( warSecret !== undefined ) {
+                fullpath.push('?secret=', warSecret);
+            }
+            const warXHR = new safe.XMLHttpRequest();
+            warXHR.responseType = 'text';
+            warXHR.onloadend = ev => {
+                resolve(ev.target.responseText || '');
+            };
+            warXHR.open('GET', fullpath.join(''));
+            warXHR.send();
+        });
+    }
+    return Promise.resolve('');
 }
 
 function safeSelf() {
@@ -128,6 +184,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

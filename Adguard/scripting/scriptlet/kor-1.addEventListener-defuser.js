@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["DOMContentLoaded","link.coupang.com"]];
+const argsList = [["hashchange","#viewus-explore-more"],["DOMContentLoaded","link.coupang.com"]];
 
-const hostnamesMap = new Map([["whathappen.co.kr",0],["momkim.co.kr",0]]);
+const hostnamesMap = new Map([["youtu.co",0],["dfast.kr",0],["whathappen.co.kr",1],["momkim.co.kr",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -143,6 +143,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

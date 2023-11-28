@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: fra-0
+// ruleset: spa-1
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_abortOnPropertyRead = function() {
+const uBOL_m3uPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adsBlocked"],["ABDetector"],["Object.prototype.autoRecov"],["gothamBatAdblock"],["mdpDeBlocker"],["onload"],["adsurgeNode"],["zoneSett"],["__yget_ad_list"],["_adb"]];
+const argsList = [["type=ad",".m3u8"]];
 
-const hostnamesMap = new Map([["benjaminellisbernard.fr",0],["ebookdz.com",1],["radio.fr",2],["vostfr.stream",3],["9docu.org",3],["bleachmx.fr",4],["iphonetweak.fr",5],["iphonesoft.fr",5],["filmstreamy.com",6],["11anim.com",7],["basketusa.com",8],["lindependant.fr",9]]);
+const hostnamesMap = new Map([["vix.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,63 +52,151 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function abortOnPropertyRead(
-    chain = ''
+function m3uPrune(
+    m3uPattern = '',
+    urlPattern = ''
 ) {
-    if ( typeof chain !== 'string' ) { return; }
-    if ( chain === '' ) { return; }
-    const exceptionToken = getExceptionToken();
-    const abort = function() {
-        throw new ReferenceError(exceptionToken);
-    };
-    const makeProxy = function(owner, chain) {
-        const pos = chain.indexOf('.');
-        if ( pos === -1 ) {
-            const desc = Object.getOwnPropertyDescriptor(owner, chain);
-            if ( !desc || desc.get !== abort ) {
-                Object.defineProperty(owner, chain, {
-                    get: abort,
-                    set: function(){}
-                });
-            }
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        let v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if ( v ) {
-            makeProxy(v, chain);
-            return;
-        }
-        const desc = Object.getOwnPropertyDescriptor(owner, prop);
-        if ( desc && desc.set !== undefined ) { return; }
-        Object.defineProperty(owner, prop, {
-            get: function() { return v; },
-            set: function(a) {
-                v = a;
-                if ( a instanceof Object ) {
-                    makeProxy(a, chain);
-                }
-            }
-        });
-    };
-    const owner = window;
-    makeProxy(owner, chain);
-}
-
-function getExceptionToken() {
+    if ( typeof m3uPattern !== 'string' ) { return; }
     const safe = safeSelf();
-    const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
+    const options = safe.getExtraArgs(Array.from(arguments), 2);
+    const logLevel = shouldLog(options);
+    const uboLog = logLevel ? ((...args) => safe.uboLog(...args)) : (( ) => { });
+    const regexFromArg = arg => {
+        if ( arg === '' ) { return /^/; }
+        const match = /^\/(.+)\/([gms]*)$/.exec(arg);
+        if ( match !== null ) {
+            let flags = match[2] || '';
+            if ( flags.includes('m') ) { flags += 's'; }
+            return new RegExp(match[1], flags);
         }
-    }.bind();
-    return token;
+        return new RegExp(
+            arg.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*+/g, '.*?')
+        );
+    };
+    const reM3u = regexFromArg(m3uPattern);
+    const reUrl = regexFromArg(urlPattern);
+    const pruneSpliceoutBlock = (lines, i) => {
+        if ( lines[i].startsWith('#EXT-X-CUE:TYPE="SpliceOut"') === false ) {
+            return false;
+        }
+        uboLog('m3u-prune: discarding', `\n\t${lines[i]}`);
+        lines[i] = undefined; i += 1;
+        if ( lines[i].startsWith('#EXT-X-ASSET:CAID') ) {
+            uboLog(`\t${lines[i]}`);
+            lines[i] = undefined; i += 1;
+        }
+        if ( lines[i].startsWith('#EXT-X-SCTE35:') ) {
+            uboLog(`\t${lines[i]}`);
+            lines[i] = undefined; i += 1;
+        }
+        if ( lines[i].startsWith('#EXT-X-CUE-IN') ) {
+            uboLog(`\t${lines[i]}`);
+            lines[i] = undefined; i += 1;
+        }
+        if ( lines[i].startsWith('#EXT-X-SCTE35:') ) {
+            uboLog(`\t${lines[i]}`);
+            lines[i] = undefined; i += 1;
+        }
+        return true;
+    };
+    const pruneInfBlock = (lines, i) => {
+        if ( lines[i].startsWith('#EXTINF') === false ) { return false; }
+        if ( reM3u.test(lines[i+1]) === false ) { return false; }
+        uboLog('m3u-prune: discarding', `\n\t${lines[i]}, \n\t${lines[i+1]}`);
+        lines[i] = lines[i+1] = undefined; i += 2;
+        if ( lines[i].startsWith('#EXT-X-DISCONTINUITY') ) {
+            uboLog(`\t${lines[i]}`);
+            lines[i] = undefined; i += 1;
+        }
+        return true;
+    };
+    const pruner = text => {
+        if ( (/^\s*#EXTM3U/.test(text)) === false ) { return text; }
+        if ( reM3u.multiline ) {
+            reM3u.lastIndex = 0;
+            for (;;) {
+                const match = reM3u.exec(text);
+                if ( match === null ) { break; }
+                let discard = match[0];
+                let before = text.slice(0, match.index);
+                if (
+                    /^[\n\r]+/.test(discard) === false &&
+                    /[\n\r]+$/.test(before) === false
+                ) {
+                    const startOfLine = /[^\n\r]+$/.exec(before);
+                    if ( startOfLine !== null ) {
+                        before = before.slice(0, startOfLine.index);
+                        discard = startOfLine[0] + discard;
+                    }
+                }
+                let after = text.slice(match.index + match[0].length);
+                if (
+                    /[\n\r]+$/.test(discard) === false &&
+                    /^[\n\r]+/.test(after) === false
+                ) {
+                    const endOfLine = /^[^\n\r]+/.exec(after);
+                    if ( endOfLine !== null ) {
+                        after = after.slice(endOfLine.index);
+                        discard += discard + endOfLine[0];
+                    }
+                }
+                text = before.trim() + '\n' + after.trim();
+                reM3u.lastIndex = before.length + 1;
+                uboLog('m3u-prune: discarding\n',
+                    discard.split(/\n+/).map(s => `\t${s}`).join('\n')
+                );
+                if ( reM3u.global === false ) { break; }
+            }
+            return text;
+        }
+        const lines = text.split(/\n\r|\n|\r/);
+        for ( let i = 0; i < lines.length; i++ ) {
+            if ( lines[i] === undefined ) { continue; }
+            if ( pruneSpliceoutBlock(lines, i) ) { continue; }
+            if ( pruneInfBlock(lines, i) ) { continue; }
+        }
+        return lines.filter(l => l !== undefined).join('\n');
+    };
+    const urlFromArg = arg => {
+        if ( typeof arg === 'string' ) { return arg; }
+        if ( arg instanceof Request ) { return arg.url; }
+        return String(arg);
+    };
+    const realFetch = self.fetch;
+    self.fetch = new Proxy(self.fetch, {
+        apply: function(target, thisArg, args) {
+            if ( reUrl.test(urlFromArg(args[0])) === false ) {
+                return Reflect.apply(target, thisArg, args);
+            }
+            return realFetch(...args).then(realResponse =>
+                realResponse.text().then(text =>
+                    new Response(pruner(text), {
+                        status: realResponse.status,
+                        statusText: realResponse.statusText,
+                        headers: realResponse.headers,
+                    })
+                )
+            );
+        }
+    });
+    self.XMLHttpRequest.prototype.open = new Proxy(self.XMLHttpRequest.prototype.open, {
+        apply: async (target, thisArg, args) => {
+            if ( reUrl.test(urlFromArg(args[1])) === false ) {
+                return Reflect.apply(target, thisArg, args);
+            }
+            thisArg.addEventListener('readystatechange', function() {
+                if ( thisArg.readyState !== 4 ) { return; }
+                const type = thisArg.responseType;
+                if ( type !== '' && type !== 'text' ) { return; }
+                const textin = thisArg.responseText;
+                const textout = pruner(textin);
+                if ( textout === textin ) { return; }
+                Object.defineProperty(thisArg, 'response', { value: textout });
+                Object.defineProperty(thisArg, 'responseText', { value: textout });
+            });
+            return Reflect.apply(target, thisArg, args);
+        }
+    });
 }
 
 function safeSelf() {
@@ -210,6 +298,11 @@ function safeSelf() {
     return safe;
 }
 
+function shouldLog(details) {
+    if ( details instanceof Object === false ) { return false; }
+    return scriptletGlobals.has('canDebug') && details.log;
+}
+
 /******************************************************************************/
 
 const hnParts = [];
@@ -270,7 +363,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { abortOnPropertyRead(...argsList[i]); }
+    try { m3uPrune(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -292,7 +385,7 @@ const targetWorld = 'MAIN';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortOnPropertyRead();
+    return uBOL_m3uPrune();
 }
 
 // Firefox
@@ -300,11 +393,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_abortOnPropertyRead = cloneInto([
-            [ '(', uBOL_abortOnPropertyRead.toString(), ')();' ],
+        page.uBOL_m3uPrune = cloneInto([
+            [ '(', uBOL_m3uPrune.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_abortOnPropertyRead);
+        const blob = new page.Blob(...page.uBOL_m3uPrune);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -318,7 +411,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_abortOnPropertyRead;
+    delete page.uBOL_m3uPrune;
 }
 
 /******************************************************************************/

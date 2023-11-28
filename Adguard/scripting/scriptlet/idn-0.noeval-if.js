@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["/chp_?ad/"]];
 
-const hostnamesMap = new Map([["jenismac.com",0]]);
+const hostnamesMap = new Map([["5.253.86.213",0],["jenismac.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -78,6 +78,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

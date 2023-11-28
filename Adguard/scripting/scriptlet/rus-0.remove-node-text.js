@@ -42,13 +42,13 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","\"Shadow"]];
+const argsList = [["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","adblock_detected"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["inforesist.org",[0,5]],["sports.ru",1],["pikabu.ru",2],["gsm.in.ua",3],["game4you.top",4],["games-pc.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["avtovod.com.ua",5],["bigmir.net",5],["buhgalter.com.ua",5],["buhgalter911.com",5],["censor.net",5],["dengi.ua",5],["ditey.com",5],["epravda.com.ua",5],["eurointegration.com.ua",5],["f1analytic.com",5],["facenews.ua",5],["gazeta.ua",5],["gorod.dp.ua",5],["hvylya.net",5],["i.ua",5],["isport.ua",5],["ivona.ua",5],["kolobok.ua",5],["kriminal.tv",5],["meteo.ua",5],["meteofor.com.ua",5],["nnovosti.info",5],["nv.ua",5],["panno4ka.net",5],["pogodaua.com",5],["pravda.com.ua",5],["real-vin.com",5],["smak.ua",5],["stravy.net",5],["tochka.net",5],["tv.ua",5],["viva.ua",5],["vsetv.com",5],["www.ukr.net",5]]);
+const hostnamesMap = new Map([["inforesist.org",[0,6]],["sports.ru",1],["pikabu.ru",2],["gsm.in.ua",3],["game4you.top",4],["games-pc.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["mail.ru",5],["avtovod.com.ua",6],["bigmir.net",6],["buhgalter.com.ua",6],["buhgalter911.com",6],["censor.net",6],["dengi.ua",6],["ditey.com",6],["epravda.com.ua",6],["eurointegration.com.ua",6],["f1analytic.com",6],["facenews.ua",6],["gazeta.ua",6],["gorod.dp.ua",6],["hvylya.net",6],["i.ua",6],["isport.ua",6],["ivona.ua",6],["kolobok.ua",6],["kriminal.tv",6],["meteo.ua",6],["meteofor.com.ua",6],["nnovosti.info",6],["nv.ua",6],["panno4ka.net",6],["pogodaua.com",6],["pravda.com.ua",6],["real-vin.com",6],["smak.ua",6],["stravy.net",6],["tochka.net",6],["tv.ua",6],["viva.ua",6],["vsetv.com",6],["www.ukr.net",6]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["3igames.mail.ru",[5]],["auto.mail.ru",[5]],["biz.mail.ru",[5]],["bonus.mail.ru",[5]],["calendar.mail.ru",[5]],["calls.mail.ru",[5]],["cloud.mail.ru",[5]],["deti.mail.ru",[5]],["dobro.mail.ru",[5]],["e.mail.ru",[5]],["esports.mail.ru",[5]],["games.mail.ru",[5]],["gibdd.mail.ru",[5]],["health.mail.ru",[5]],["help.mail.ru",[5]],["hi-tech.mail.ru",[5]],["horo.mail.ru",[5]],["kino.mail.ru",[5]],["lady.mail.ru",[5]],["love.mail.ru",[5]],["mailblog.mail.ru",[5]],["mcs.mail.ru",[5]],["minigames.mail.ru",[5]],["my.mail.ru",[5]],["news.mail.ru",[5]],["o2.mail.ru",[5]],["octavius.mail.ru",[5]],["okminigames.mail.ru",[5]],["otvet.mail.ru",[5]],["pets.mail.ru",[5]],["player-smotri.mail.ru",[5]],["pogoda.mail.ru",[5]],["top.mail.ru",[5]],["touch.mail.ru",[5]],["tv.mail.ru",[5]]]);
 
 /******************************************************************************/
 
@@ -178,6 +178,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

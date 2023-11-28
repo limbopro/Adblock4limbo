@@ -42,9 +42,9 @@ const uBOL_trustedReplaceFetchResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/((?:(?:&|%26)id(?:=|%3D)o-A[A-Z]|yt_live_broadcast).*?)\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","$1","player?key="],["/(contextParams\":\"Q0F[A-Z]U.*?)\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","$1","player?key="]];
+const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","player?key="]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1]]]);
+const hostnamesMap = new Map([["www.youtube.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -197,6 +197,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

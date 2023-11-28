@@ -42,9 +42,9 @@ const uBOL_noWindowOpenIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[]];
+const argsList = [["","10","obj"],[]];
 
-const hostnamesMap = new Map([["player.filmux.to",0],["37.16.75.37",0]]);
+const hostnamesMap = new Map([["player.filmux.to",0],["37.16.75.37",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -138,6 +138,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

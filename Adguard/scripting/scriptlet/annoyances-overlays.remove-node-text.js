@@ -42,11 +42,11 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","copyprotect"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"]];
+const argsList = [["script","advert"],["script","copyprotect"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"]];
 
-const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",1],["jpost.com",2],["teamkong.tk",3],["sekaikomik.bio",3],["moviesapi.club",4],["animesaga.in",4],["camcaps.io",5],["nicekkk.com",5],["seriesperu.com",6],["klartext-ne.de",6],["sbot.cf",7],["fjordd.com",9],["playertv.net",11],["warungkomik.com",12],["themeslide.com",12],["terramirabilis.ro",13],["161.97.70.5",14],["gdrivedescarga.com",15],["audiologyresearch.org",16],["zipcode.com.ng",17],["thejakartapost.com",18],["mathcrave.com",19],["brokensilenze.net",[20,21]],["newsrade.com",22],["broncoshq.com",23],["dev.miuiflash.com",24],["djxmaza.in",24],["thecubexguide.com",24],["anascrie.ro",25]]);
+const hostnamesMap = new Map([["xanimu.com",0],["familyporner.com",0],["darknessporn.com",0],["freepublicporn.com",0],["pisshamster.com",0],["punishworld.com",0],["skidrowreloaded.com",1],["valid.x86.fr",2],["jpost.com",3],["teamkong.tk",4],["sekaikomik.bio",4],["moviesapi.club",5],["animesaga.in",5],["camcaps.io",6],["nicekkk.com",6],["seriesperu.com",7],["klartext-ne.de",7],["iptvromania.ro",7],["sbot.cf",8],["fjordd.com",10],["playertv.net",12],["warungkomik.com",13],["themeslide.com",13],["terramirabilis.ro",14],["161.97.70.5",15],["gdrivedescarga.com",16],["audiologyresearch.org",17],["zipcode.com.ng",18],["thejakartapost.com",19],["mathcrave.com",20],["brokensilenze.net",[21,22]],["newsrade.com",23],["broncoshq.com",24],["dev.miuiflash.com",25],["djxmaza.in",25],["thecubexguide.com",25],["anascrie.ro",26],["streambuddy.net",27]]);
 
-const entitiesMap = new Map([["vidmoly",4],["oploverz",[6,10]],["tvhay",8],["bg-gledai",16]]);
+const entitiesMap = new Map([["vidmoly",5],["oploverz",[7,11]],["tvhay",9],["bg-gledai",17]]);
 
 const exceptionsMap = new Map([]);
 
@@ -178,6 +178,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

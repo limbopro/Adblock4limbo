@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["articleLimitDrawerVisible"],["unauthenicatedArticleLimitReached"],["kpwc"],["search_curday"],["visit"],["pageViews"],["recipe_view_count_ru"],["recipe_view_count_es"],["recipe_view_count_uk"],["recipe_view_count_pl"]];
+const argsList = [["articleLimitDrawerVisible"],["unauthenicatedArticleLimitReached"],["kpwc"],["search_curday"],["visit"],["pageViews"],["recipe_view_count_ru"],["recipe_view_count_es"],["recipe_view_count_uk"],["recipe_view_count_pl"],["articlesRead","when","scroll keydown"]];
 
-const hostnamesMap = new Map([["cbr.com",[0,1]],["technologyreview.jp",2],["ac-illust.com",3],["photo-ac.com",3],["novagente.pt",4],["stackshare.io",5],["cookpad.es",[6,7,8,9]],["cookpad.com",[6,7,8,9]]]);
+const hostnamesMap = new Map([["cbr.com",[0,1]],["technologyreview.jp",2],["ac-illust.com",3],["photo-ac.com",3],["novagente.pt",4],["stackshare.io",5],["cookpad.es",[6,7,8,9]],["cookpad.com",[6,7,8,9]],["androidpolice.com",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -125,6 +125,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

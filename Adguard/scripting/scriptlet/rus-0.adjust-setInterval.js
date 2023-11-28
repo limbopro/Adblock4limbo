@@ -42,9 +42,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"]];
+const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["disabled"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"]];
 
-const hostnamesMap = new Map([["595.ucoz.net",0],["5mod-file.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.pro",6],["uakino.club",6],["startgamer.ru",7],["iblitzmods.ru",8],["wowskill.ru",9],["diplomsrazu.ru",10],["igrozoom.ru",10],["ru-minecraft.ru",10],["softomania.net",10],["vip-mods.ru",10],["warezok.net",10],["windows-driver.com",10],["windows-driver.net",10],["windows-program.com",10]]);
+const hostnamesMap = new Map([["595.ucoz.net",0],["5mod-file.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.pro",6],["uakino.club",6],["vgtimes.ru",7],["startgamer.ru",8],["iblitzmods.ru",9],["wowskill.ru",10],["diplomsrazu.ru",11],["igrozoom.ru",11],["ru-minecraft.ru",11],["softomania.net",11],["vip-mods.ru",11],["warezok.net",11],["windows-driver.com",11],["windows-driver.net",11],["windows-program.com",11]]);
 
 const entitiesMap = new Map([]);
 
@@ -91,6 +91,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

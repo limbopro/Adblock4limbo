@@ -42,9 +42,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#progress-value","data-timer","10"],["a[href$=\"?ref=recommended\"]","target",""]];
+const argsList = [["#progress-value","data-timer","10"],["a[href$=\"?ref=recommended\"]","target",""],["main > div:first-child:empty","class","false"]];
 
-const hostnamesMap = new Map([["howdyho.net",0],["dtf.ru",1],["vc.ru",1]]);
+const hostnamesMap = new Map([["howdyho.net",0],["dtf.ru",1],["vc.ru",1],["sdamgia.ru",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -168,6 +168,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

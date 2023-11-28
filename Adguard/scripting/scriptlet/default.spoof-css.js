@@ -42,9 +42,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, .metaRedirectWrapperTopAds, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"]];
+const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, .metaRedirectWrapperTopAds, .metaRedirectWrapperTopAd, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["#btx1, #wg-genx > .mediafire","visibility","visible"]];
 
-const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1]]);
+const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["techcyan.com",2],["kiktu.com",2],["upshrink.com",2],["trangchu.news",2],["banaraswap.in",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -153,6 +153,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

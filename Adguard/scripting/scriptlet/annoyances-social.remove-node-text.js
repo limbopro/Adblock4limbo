@@ -42,7 +42,7 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#text","Podijeli:"],["#text","/Поделиться\\s?$|Share report/"]];
+const argsList = [["#text","Podijeli:"],["#text","/Поделиться|Share/"]];
 
 const hostnamesMap = new Map([["glasistre.hr",0],["check-host.net",1]]);
 
@@ -178,6 +178,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

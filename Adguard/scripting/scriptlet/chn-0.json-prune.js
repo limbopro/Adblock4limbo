@@ -42,13 +42,13 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["*","nativeConfig"],["*","list.*.link.ad list.*.link.kicker"],["ad"]];
+const argsList = [["*","nativeConfig"],["*","list.*.link.ad list.*.link.kicker"],["ads"],["ad"]];
 
-const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",1],["qq.com",2]]);
+const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",1],["new.qq.com",2],["qq.com",3]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["work.weixin.qq.com",[2]]]);
+const exceptionsMap = new Map([["work.weixin.qq.com",[3]]]);
 
 /******************************************************************************/
 
@@ -141,6 +141,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

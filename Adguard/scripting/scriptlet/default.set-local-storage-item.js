@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["segmentDeviceId","$remove$"]];
+const argsList = [["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["as_profile_cache","$remove$"],["as_accetpable_ads_blocked_cache","$remove$"],["as_adblock_cache","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"]];
 
-const hostnamesMap = new Map([["adultdeepfakes.com",0],["freewsad.com",1],["loawa.com",2],["ygosu.com",2],["sportalkorea.com",2],["algumon.com",2],["hancinema.net",2],["enetnews.co.kr",2],["edaily.co.kr",2],["economist.co.kr",2],["etoday.co.kr",2],["hankyung.com",2],["isplus.com",2],["hometownstation.com",2],["kagit.kr",2],["inven.co.kr",2],["viva100.com",2],["joongdo.co.kr",2],["jjang0u.com",2],["tenbizt.com",2],["tvreport.co.kr",2],["newautopost.co.kr",2],["mememedia.co.kr",2],["mobilitytv.co.kr",2],["cboard.net",2],["a-ha.io",2],["interfootball.co.kr",2],["fourfourtwo.co.kr",2],["apkmirror.com",2],["dotkeypress.kr",2],["viewcash.co.kr",2],["tripplus.co.kr",2],["enterdiary.com",2],["mtodayauto.com",2],["genshinlab.com",2],["hotplacehunter.co.kr",2],["mystylezip.com",2],["majorgeeks.com",2],["poro.gg",2],["maple.gg",2],["lolchess.gg",2],["dak.gg",2],["mindbodygreen.com",3]]);
+const hostnamesMap = new Map([["adultdeepfakes.com",0],["freewsad.com",1],["loawa.com",[2,3,4,5]],["ygosu.com",[2,3,4,5]],["sportalkorea.com",[2,3,4,5]],["algumon.com",[2,3,4,5]],["hancinema.net",[2,3,4,5]],["enetnews.co.kr",[2,3,4,5]],["edaily.co.kr",[2,3,4,5]],["economist.co.kr",[2,3,4,5]],["etoday.co.kr",[2,3,4,5]],["hankyung.com",[2,3,4,5]],["isplus.com",[2,3,4,5]],["hometownstation.com",[2,3,4,5]],["kagit.kr",[2,3,4,5]],["inven.co.kr",[2,3,4,5]],["viva100.com",[2,3,4,5]],["joongdo.co.kr",[2,3,4,5]],["jjang0u.com",[2,3,4,5]],["tenbizt.com",[2,3,4,5]],["tvreport.co.kr",[2,3,4,5]],["newautopost.co.kr",[2,3,4,5]],["mememedia.co.kr",[2,3,4,5]],["mobilitytv.co.kr",[2,3,4,5]],["cboard.net",[2,3,4,5]],["a-ha.io",[2,3,4,5]],["interfootball.co.kr",[2,3,4,5]],["fourfourtwo.co.kr",[2,3,4,5]],["apkmirror.com",[2,3,4,5]],["dotkeypress.kr",[2,3,4,5]],["viewcash.co.kr",[2,3,4,5]],["tripplus.co.kr",[2,3,4,5]],["enterdiary.com",[2,3,4,5]],["mtodayauto.com",[2,3,4,5]],["genshinlab.com",[2,3,4,5]],["hotplacehunter.co.kr",[2,3,4,5]],["mystylezip.com",[2,3,4,5]],["majorgeeks.com",[2,3,4,5]],["poro.gg",[2,3,4,5]],["maple.gg",[2,3,4,5]],["lolchess.gg",[2,3,4,5]],["dak.gg",[2,3,4,5]],["newdaily.co.kr",[2,3,4,5]],["meconomynews.com",[2,3,4,5]],["brandbrief.co.kr",[2,3,4,5]],["dfast.kr",[2,3,4,5]],["thephoblographer.com",[2,3,4,5]],["dogdrip.net",[2,3,4,5]],["youtu.co",[2,3,4,5]],["honkailab.com",[2,3,4,5]],["warcraftrumbledeck.com",[2,3,4,5]],["mindbodygreen.com",6],["elevenlabs.io",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -131,6 +131,8 @@ function safeSelf() {
         'Function_toStringFn': self.Function.prototype.toString,
         'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
         'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
         'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,

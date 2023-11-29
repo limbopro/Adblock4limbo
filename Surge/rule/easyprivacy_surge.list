@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311281118
+## ! Version: 202311291401
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Nov 2023 11:18 UTC
+## ! Last modified: 29 Nov 2023 14:01 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3569,7 +3569,6 @@ DOMAIN-SUFFIX,trkr.shoppingminds.net
 DOMAIN-SUFFIX,dnt-userreport.com
 DOMAIN-SUFFIX,tags.op-palvelut.fi
 DOMAIN-SUFFIX,links.boom.ge
-DOMAIN-SUFFIX,analytics.skroutz.gr
 DOMAIN-SUFFIX,heartbeat.pmd.444.hu
 DOMAIN-SUFFIX,pixel.barion.com
 DOMAIN-SUFFIX,rum.marquardmedia.hu
@@ -4259,6 +4258,7 @@ DOMAIN-SUFFIX,stategg.cdngeek.com
 DOMAIN-SUFFIX,statistics.streamdav.com
 DOMAIN-SUFFIX,stats.aerotime.aero
 DOMAIN-SUFFIX,stats.calcalist.co.il
+DOMAIN-SUFFIX,stats.codeur.com
 DOMAIN-SUFFIX,stats.davidickedelivery.com
 DOMAIN-SUFFIX,stats.gateio.ch
 DOMAIN-SUFFIX,stats.ibtimes.co.in

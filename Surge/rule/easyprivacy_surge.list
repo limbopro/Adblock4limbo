@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311291401
+## ! Version: 202311301520
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Nov 2023 14:01 UTC
+## ! Last modified: 30 Nov 2023 15:20 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -674,6 +674,7 @@ DOMAIN-SUFFIX,bustlingbook.com
 DOMAIN-SUFFIX,butterbulb.com
 DOMAIN-SUFFIX,butterburst.com
 DOMAIN-SUFFIX,buttonladybug.com
+DOMAIN-SUFFIX,cabledemand.com
 DOMAIN-SUFFIX,calculatingcircle.com
 DOMAIN-SUFFIX,calculatingtoothbrush.com
 DOMAIN-SUFFIX,calculatorcamera.com
@@ -981,6 +982,7 @@ DOMAIN-SUFFIX,exampleshake.com
 DOMAIN-SUFFIX,exchangedetail.com
 DOMAIN-SUFFIX,excitingtub.com
 DOMAIN-SUFFIX,exclusivebrass.com
+DOMAIN-SUFFIX,exhibitsneeze.com
 DOMAIN-SUFFIX,expansioneggnog.com
 DOMAIN-SUFFIX,experienceeggs.com
 DOMAIN-SUFFIX,extractobservation.com
@@ -1076,6 +1078,7 @@ DOMAIN-SUFFIX,fuzzybasketball.com
 DOMAIN-SUFFIX,fuzzyerror.com
 DOMAIN-SUFFIX,fuzzyflavor.com
 DOMAIN-SUFFIX,fuzzyweather.com
+DOMAIN-SUFFIX,fvl1f.pw
 DOMAIN-SUFFIX,gammamaximum.com
 DOMAIN-SUFFIX,gaudybeginner.com
 DOMAIN-SUFFIX,generalprose.com
@@ -1245,6 +1248,7 @@ DOMAIN-SUFFIX,lagoonolivia.com
 DOMAIN-SUFFIX,lameletters.com
 DOMAIN-SUFFIX,lamplow.com
 DOMAIN-SUFFIX,languagelake.com
+DOMAIN-SUFFIX,largebrass.com
 DOMAIN-SUFFIX,laughablecopper.com
 DOMAIN-SUFFIX,laughablelizards.com
 DOMAIN-SUFFIX,laughcloth.com
@@ -1468,6 +1472,7 @@ DOMAIN-SUFFIX,pointlesspocket.com
 DOMAIN-SUFFIX,pointlessprofit.com
 DOMAIN-SUFFIX,pointlessrifle.com
 DOMAIN-SUFFIX,poisedpig.com
+DOMAIN-SUFFIX,polarismagnet.com
 DOMAIN-SUFFIX,politegoldfish.com
 DOMAIN-SUFFIX,politeplanes.com
 DOMAIN-SUFFIX,politicalporter.com
@@ -1654,6 +1659,7 @@ DOMAIN-SUFFIX,scientificsneeze.com
 DOMAIN-SUFFIX,scintillatingscissors.com
 DOMAIN-SUFFIX,scintillatingsilver.com
 DOMAIN-SUFFIX,scintillatingspace.com
+DOMAIN-SUFFIX,scissorsstatement.com
 DOMAIN-SUFFIX,scrapesleep.com
 DOMAIN-SUFFIX,scratchsofa.com
 DOMAIN-SUFFIX,screechingfurniture.com
@@ -1919,6 +1925,7 @@ DOMAIN-SUFFIX,swingslip.com
 DOMAIN-SUFFIX,swordgoose.com
 DOMAIN-SUFFIX,symbolizebeast.com
 DOMAIN-SUFFIX,synonymousrule.com
+DOMAIN-SUFFIX,synonymoussticks.com
 DOMAIN-SUFFIX,synthesizespoon.com
 DOMAIN-SUFFIX,systemizecoat.com
 DOMAIN-SUFFIX,talentedsteel.com
@@ -1997,6 +2004,7 @@ DOMAIN-SUFFIX,tranquilside.com
 DOMAIN-SUFFIX,translateoatmeal.com
 DOMAIN-SUFFIX,trappush.com
 DOMAIN-SUFFIX,trapteaching.com
+DOMAIN-SUFFIX,traytouch.com
 DOMAIN-SUFFIX,treadbun.com
 DOMAIN-SUFFIX,tremendousearthquake.com
 DOMAIN-SUFFIX,tremendousplastic.com
@@ -2066,6 +2074,7 @@ DOMAIN-SUFFIX,voicelessvein.com
 DOMAIN-SUFFIX,voicevegetable.com
 DOMAIN-SUFFIX,volatileprofit.com
 DOMAIN-SUFFIX,volatilerainstorm.com
+DOMAIN-SUFFIX,volatilevessel.com
 DOMAIN-SUFFIX,voraciousgrip.com
 DOMAIN-SUFFIX,voyagepotato.com
 DOMAIN-SUFFIX,vq1qi.pw
@@ -4266,6 +4275,7 @@ DOMAIN-SUFFIX,stats.ibtimes.sg
 DOMAIN-SUFFIX,stats.justpaste.it
 DOMAIN-SUFFIX,stats.newsweek.com
 DOMAIN-SUFFIX,stats.pstream.net
+DOMAIN-SUFFIX,stats.qwant.com
 DOMAIN-SUFFIX,stats.sandberg.world
 DOMAIN-SUFFIX,stats.searchftps.net
 DOMAIN-SUFFIX,stats.suenicholls.com

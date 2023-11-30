@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311291401
+## ! Version: 202311301520
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Nov 2023 14:01 UTC
+## ! Last modified: 30 Nov 2023 15:20 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -674,6 +674,7 @@ DOMAIN-SUFFIX,bustlingbook.com, reject
 DOMAIN-SUFFIX,butterbulb.com, reject
 DOMAIN-SUFFIX,butterburst.com, reject
 DOMAIN-SUFFIX,buttonladybug.com, reject
+DOMAIN-SUFFIX,cabledemand.com, reject
 DOMAIN-SUFFIX,calculatingcircle.com, reject
 DOMAIN-SUFFIX,calculatingtoothbrush.com, reject
 DOMAIN-SUFFIX,calculatorcamera.com, reject
@@ -981,6 +982,7 @@ DOMAIN-SUFFIX,exampleshake.com, reject
 DOMAIN-SUFFIX,exchangedetail.com, reject
 DOMAIN-SUFFIX,excitingtub.com, reject
 DOMAIN-SUFFIX,exclusivebrass.com, reject
+DOMAIN-SUFFIX,exhibitsneeze.com, reject
 DOMAIN-SUFFIX,expansioneggnog.com, reject
 DOMAIN-SUFFIX,experienceeggs.com, reject
 DOMAIN-SUFFIX,extractobservation.com, reject
@@ -1076,6 +1078,7 @@ DOMAIN-SUFFIX,fuzzybasketball.com, reject
 DOMAIN-SUFFIX,fuzzyerror.com, reject
 DOMAIN-SUFFIX,fuzzyflavor.com, reject
 DOMAIN-SUFFIX,fuzzyweather.com, reject
+DOMAIN-SUFFIX,fvl1f.pw, reject
 DOMAIN-SUFFIX,gammamaximum.com, reject
 DOMAIN-SUFFIX,gaudybeginner.com, reject
 DOMAIN-SUFFIX,generalprose.com, reject
@@ -1245,6 +1248,7 @@ DOMAIN-SUFFIX,lagoonolivia.com, reject
 DOMAIN-SUFFIX,lameletters.com, reject
 DOMAIN-SUFFIX,lamplow.com, reject
 DOMAIN-SUFFIX,languagelake.com, reject
+DOMAIN-SUFFIX,largebrass.com, reject
 DOMAIN-SUFFIX,laughablecopper.com, reject
 DOMAIN-SUFFIX,laughablelizards.com, reject
 DOMAIN-SUFFIX,laughcloth.com, reject
@@ -1468,6 +1472,7 @@ DOMAIN-SUFFIX,pointlesspocket.com, reject
 DOMAIN-SUFFIX,pointlessprofit.com, reject
 DOMAIN-SUFFIX,pointlessrifle.com, reject
 DOMAIN-SUFFIX,poisedpig.com, reject
+DOMAIN-SUFFIX,polarismagnet.com, reject
 DOMAIN-SUFFIX,politegoldfish.com, reject
 DOMAIN-SUFFIX,politeplanes.com, reject
 DOMAIN-SUFFIX,politicalporter.com, reject
@@ -1654,6 +1659,7 @@ DOMAIN-SUFFIX,scientificsneeze.com, reject
 DOMAIN-SUFFIX,scintillatingscissors.com, reject
 DOMAIN-SUFFIX,scintillatingsilver.com, reject
 DOMAIN-SUFFIX,scintillatingspace.com, reject
+DOMAIN-SUFFIX,scissorsstatement.com, reject
 DOMAIN-SUFFIX,scrapesleep.com, reject
 DOMAIN-SUFFIX,scratchsofa.com, reject
 DOMAIN-SUFFIX,screechingfurniture.com, reject
@@ -1919,6 +1925,7 @@ DOMAIN-SUFFIX,swingslip.com, reject
 DOMAIN-SUFFIX,swordgoose.com, reject
 DOMAIN-SUFFIX,symbolizebeast.com, reject
 DOMAIN-SUFFIX,synonymousrule.com, reject
+DOMAIN-SUFFIX,synonymoussticks.com, reject
 DOMAIN-SUFFIX,synthesizespoon.com, reject
 DOMAIN-SUFFIX,systemizecoat.com, reject
 DOMAIN-SUFFIX,talentedsteel.com, reject
@@ -1997,6 +2004,7 @@ DOMAIN-SUFFIX,tranquilside.com, reject
 DOMAIN-SUFFIX,translateoatmeal.com, reject
 DOMAIN-SUFFIX,trappush.com, reject
 DOMAIN-SUFFIX,trapteaching.com, reject
+DOMAIN-SUFFIX,traytouch.com, reject
 DOMAIN-SUFFIX,treadbun.com, reject
 DOMAIN-SUFFIX,tremendousearthquake.com, reject
 DOMAIN-SUFFIX,tremendousplastic.com, reject
@@ -2066,6 +2074,7 @@ DOMAIN-SUFFIX,voicelessvein.com, reject
 DOMAIN-SUFFIX,voicevegetable.com, reject
 DOMAIN-SUFFIX,volatileprofit.com, reject
 DOMAIN-SUFFIX,volatilerainstorm.com, reject
+DOMAIN-SUFFIX,volatilevessel.com, reject
 DOMAIN-SUFFIX,voraciousgrip.com, reject
 DOMAIN-SUFFIX,voyagepotato.com, reject
 DOMAIN-SUFFIX,vq1qi.pw, reject
@@ -4266,6 +4275,7 @@ DOMAIN-SUFFIX,stats.ibtimes.sg, reject
 DOMAIN-SUFFIX,stats.justpaste.it, reject
 DOMAIN-SUFFIX,stats.newsweek.com, reject
 DOMAIN-SUFFIX,stats.pstream.net, reject
+DOMAIN-SUFFIX,stats.qwant.com, reject
 DOMAIN-SUFFIX,stats.sandberg.world, reject
 DOMAIN-SUFFIX,stats.searchftps.net, reject
 DOMAIN-SUFFIX,stats.suenicholls.com, reject

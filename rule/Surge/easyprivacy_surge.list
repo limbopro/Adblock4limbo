@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202311301520
+## ! Version: 202312011409
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Nov 2023 15:20 UTC
+## ! Last modified: 01 Dec 2023 14:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2066,6 +2066,7 @@ DOMAIN-SUFFIX,verdantanswer.com
 DOMAIN-SUFFIX,verifyvegetable.com
 DOMAIN-SUFFIX,verseballs.com
 DOMAIN-SUFFIX,vibranthaven.com
+DOMAIN-SUFFIX,vibrantsundown.com
 DOMAIN-SUFFIX,victoriousrequest.com
 DOMAIN-SUFFIX,virgoplato.com
 DOMAIN-SUFFIX,virtualvincent.com

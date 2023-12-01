@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 30 Nov 2023 13:25:31 GMT
-# entries:        3784
+# entries:        3778
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -513,7 +513,6 @@ DOMAIN-SUFFIX,ads.kelbymediagroup.com
 DOMAIN-SUFFIX,ads.kinxxx.com
 DOMAIN-SUFFIX,ads.kompass.com
 DOMAIN-SUFFIX,ads.krawall.de
-DOMAIN-SUFFIX,ads.lapalingo.com
 DOMAIN-SUFFIX,ads.leovegas.com
 DOMAIN-SUFFIX,ads.lesbianpersonals.com
 DOMAIN-SUFFIX,ads.liberte.pl
@@ -876,7 +875,6 @@ DOMAIN-SUFFIX,advertmarket.com
 DOMAIN-SUFFIX,advertmedia.de
 DOMAIN-SUFFIX,advertpro.ya.com
 DOMAIN-SUFFIX,advertserve.com
-DOMAIN-SUFFIX,advertstream.com
 DOMAIN-SUFFIX,advertwizard.com
 DOMAIN-SUFFIX,advideo.uimserv.net
 DOMAIN-SUFFIX,adview.com
@@ -1087,7 +1085,6 @@ DOMAIN-SUFFIX,ba.afl.rakuten.co.jp
 DOMAIN-SUFFIX,backbeatmedia.com
 DOMAIN-SUFFIX,balloontexture.com
 DOMAIN-SUFFIX,banik.redigy.cz
-DOMAIN-SUFFIX,banner-exchange-24.de
 DOMAIN-SUFFIX,banner.ambercoastcasino.com
 DOMAIN-SUFFIX,banner.buempliz-online.ch
 DOMAIN-SUFFIX,banner.casino.net
@@ -1257,7 +1254,6 @@ DOMAIN-SUFFIX,brealtime.com
 DOMAIN-SUFFIX,bridgetrack.com
 DOMAIN-SUFFIX,briefstem.com
 DOMAIN-SUFFIX,brightcom.com
-DOMAIN-SUFFIX,brightinfo.com
 DOMAIN-SUFFIX,brightmountainmedia.com
 DOMAIN-SUFFIX,broadboundary.com
 DOMAIN-SUFFIX,broadcastbed.com
@@ -1457,6 +1453,7 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com
 DOMAIN-SUFFIX,collector.cdp.cnn.com
 DOMAIN-SUFFIX,colonize.com
 DOMAIN-SUFFIX,comfortablecheese.com
+DOMAIN-SUFFIX,commindo-media-ressourcen.de
 DOMAIN-SUFFIX,commissionmonster.com
 DOMAIN-SUFFIX,commonswing.com
 DOMAIN-SUFFIX,communications.melitaltd.com
@@ -2594,7 +2591,6 @@ DOMAIN-SUFFIX,openadsnetwork.com
 DOMAIN-SUFFIX,openbid.pubmatic.com
 DOMAIN-SUFFIX,openx.angelsgroup.org.uk
 DOMAIN-SUFFIX,openx.cairo360.com
-DOMAIN-SUFFIX,openx.kgmedia.eu
 DOMAIN-SUFFIX,openx.net
 DOMAIN-SUFFIX,openx.skinet.cz
 DOMAIN-SUFFIX,openx.smcaen.fr
@@ -3491,7 +3487,6 @@ DOMAIN-SUFFIX,tradeadexchange.com
 DOMAIN-SUFFIX,tradedoubler.com
 DOMAIN-SUFFIX,traffic-exchange.com
 DOMAIN-SUFFIX,traffic-redirecting.com
-DOMAIN-SUFFIX,traffic.focuusing.com
 DOMAIN-SUFFIX,traffic.hyteck.de
 DOMAIN-SUFFIX,trafficfactory.biz
 DOMAIN-SUFFIX,trafficforce.com
@@ -3702,7 +3697,6 @@ DOMAIN-SUFFIX,wickedreports.com
 DOMAIN-SUFFIX,widespace.com
 DOMAIN-SUFFIX,widget.educationdynamics.com
 DOMAIN-SUFFIX,widget.privy.com
-DOMAIN-SUFFIX,widgetbucks.com
 DOMAIN-SUFFIX,wikia-ads.wikia.com
 DOMAIN-SUFFIX,win.iqm.com
 DOMAIN-SUFFIX,window.nixnet.cz

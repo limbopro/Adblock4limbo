@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 30 Nov 2023 13:25:31 GMT
-# entries:        3784
+# entries:        3778
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -513,7 +513,6 @@ DOMAIN-SUFFIX,ads.kelbymediagroup.com, reject
 DOMAIN-SUFFIX,ads.kinxxx.com, reject
 DOMAIN-SUFFIX,ads.kompass.com, reject
 DOMAIN-SUFFIX,ads.krawall.de, reject
-DOMAIN-SUFFIX,ads.lapalingo.com, reject
 DOMAIN-SUFFIX,ads.leovegas.com, reject
 DOMAIN-SUFFIX,ads.lesbianpersonals.com, reject
 DOMAIN-SUFFIX,ads.liberte.pl, reject
@@ -876,7 +875,6 @@ DOMAIN-SUFFIX,advertmarket.com, reject
 DOMAIN-SUFFIX,advertmedia.de, reject
 DOMAIN-SUFFIX,advertpro.ya.com, reject
 DOMAIN-SUFFIX,advertserve.com, reject
-DOMAIN-SUFFIX,advertstream.com, reject
 DOMAIN-SUFFIX,advertwizard.com, reject
 DOMAIN-SUFFIX,advideo.uimserv.net, reject
 DOMAIN-SUFFIX,adview.com, reject
@@ -1087,7 +1085,6 @@ DOMAIN-SUFFIX,ba.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,backbeatmedia.com, reject
 DOMAIN-SUFFIX,balloontexture.com, reject
 DOMAIN-SUFFIX,banik.redigy.cz, reject
-DOMAIN-SUFFIX,banner-exchange-24.de, reject
 DOMAIN-SUFFIX,banner.ambercoastcasino.com, reject
 DOMAIN-SUFFIX,banner.buempliz-online.ch, reject
 DOMAIN-SUFFIX,banner.casino.net, reject
@@ -1257,7 +1254,6 @@ DOMAIN-SUFFIX,brealtime.com, reject
 DOMAIN-SUFFIX,bridgetrack.com, reject
 DOMAIN-SUFFIX,briefstem.com, reject
 DOMAIN-SUFFIX,brightcom.com, reject
-DOMAIN-SUFFIX,brightinfo.com, reject
 DOMAIN-SUFFIX,brightmountainmedia.com, reject
 DOMAIN-SUFFIX,broadboundary.com, reject
 DOMAIN-SUFFIX,broadcastbed.com, reject
@@ -1457,6 +1453,7 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com, reject
 DOMAIN-SUFFIX,collector.cdp.cnn.com, reject
 DOMAIN-SUFFIX,colonize.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
+DOMAIN-SUFFIX,commindo-media-ressourcen.de, reject
 DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,commonswing.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
@@ -2594,7 +2591,6 @@ DOMAIN-SUFFIX,openadsnetwork.com, reject
 DOMAIN-SUFFIX,openbid.pubmatic.com, reject
 DOMAIN-SUFFIX,openx.angelsgroup.org.uk, reject
 DOMAIN-SUFFIX,openx.cairo360.com, reject
-DOMAIN-SUFFIX,openx.kgmedia.eu, reject
 DOMAIN-SUFFIX,openx.net, reject
 DOMAIN-SUFFIX,openx.skinet.cz, reject
 DOMAIN-SUFFIX,openx.smcaen.fr, reject
@@ -3491,7 +3487,6 @@ DOMAIN-SUFFIX,tradeadexchange.com, reject
 DOMAIN-SUFFIX,tradedoubler.com, reject
 DOMAIN-SUFFIX,traffic-exchange.com, reject
 DOMAIN-SUFFIX,traffic-redirecting.com, reject
-DOMAIN-SUFFIX,traffic.focuusing.com, reject
 DOMAIN-SUFFIX,traffic.hyteck.de, reject
 DOMAIN-SUFFIX,trafficfactory.biz, reject
 DOMAIN-SUFFIX,trafficforce.com, reject
@@ -3702,7 +3697,6 @@ DOMAIN-SUFFIX,wickedreports.com, reject
 DOMAIN-SUFFIX,widespace.com, reject
 DOMAIN-SUFFIX,widget.educationdynamics.com, reject
 DOMAIN-SUFFIX,widget.privy.com, reject
-DOMAIN-SUFFIX,widgetbucks.com, reject
 DOMAIN-SUFFIX,wikia-ads.wikia.com, reject
 DOMAIN-SUFFIX,win.iqm.com, reject
 DOMAIN-SUFFIX,window.nixnet.cz, reject

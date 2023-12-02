@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312011409
+## ! Version: 202312021137
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Dec 2023 14:09 UTC
+## ! Last modified: 02 Dec 2023 11:37 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2583,6 +2583,7 @@ DOMAIN-SUFFIX,geoip.nekudo.com, reject
 DOMAIN-SUFFIX,geolocation.outreach.com, reject
 DOMAIN-SUFFIX,geoservice.curse.com, reject
 DOMAIN-SUFFIX,gi-client-tracking.goodgamestudios.com, reject
+DOMAIN-SUFFIX,go.activengage.com, reject
 DOMAIN-SUFFIX,green-griffin-860.appspot.com, reject
 DOMAIN-SUFFIX,gsp1.baidu.com, reject
 DOMAIN-SUFFIX,gtrk.s3.amazonaws.com, reject

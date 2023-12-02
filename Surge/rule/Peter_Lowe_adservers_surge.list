@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 30 Nov 2023 13:25:31 GMT
-# entries:        3778
+# last updated:   Fri, 01 Dec 2023 17:02:27 GMT
+# entries:        3779
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3607,6 +3607,7 @@ DOMAIN-SUFFIX,vertamedia.com
 DOMAIN-SUFFIX,verticalmass.com
 DOMAIN-SUFFIX,vervewireless.com
 DOMAIN-SUFFIX,vibrantmedia.com
+DOMAIN-SUFFIX,vibrantsundown.com
 DOMAIN-SUFFIX,vid.pubmatic.com
 DOMAIN-SUFFIX,vidcpm.com
 DOMAIN-SUFFIX,video-stats.video.google.com

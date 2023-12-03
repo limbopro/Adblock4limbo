@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202312021137
+## ! Version: 202312031309
 ## ! Title: EasyList
-## ! Last modified: 02 Dec 2023 11:37 UTC
+## ! Last modified: 03 Dec 2023 13:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -30584,6 +30584,7 @@ DOMAIN-SUFFIX,adsales.snidigital.com
 DOMAIN-SUFFIX,adserving.unibet.com
 DOMAIN-SUFFIX,adtechvideo.s3.amazonaws.com
 DOMAIN-SUFFIX,advast.sibnet.ru
+DOMAIN-SUFFIX,adx-exchange.toast.com
 DOMAIN-SUFFIX,aff.bstatic.com
 DOMAIN-SUFFIX,affiliate.heureka.cz
 DOMAIN-SUFFIX,affiliate.juno.co.uk

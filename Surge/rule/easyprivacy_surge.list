@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312021137
+## ! Version: 202312031309
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Dec 2023 11:37 UTC
+## ! Last modified: 03 Dec 2023 13:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -120,6 +120,7 @@ DOMAIN-SUFFIX,dwin2.com
 DOMAIN-SUFFIX,e1e.io
 DOMAIN-SUFFIX,eagle-insight.com
 DOMAIN-SUFFIX,easycompute.systems
+DOMAIN-SUFFIX,ecn-ldr.de
 DOMAIN-SUFFIX,ed-sys.net
 DOMAIN-SUFFIX,efreecode.com
 DOMAIN-SUFFIX,egoi.site
@@ -235,6 +236,7 @@ DOMAIN-SUFFIX,mdhv.io
 DOMAIN-SUFFIX,mediamathrdrt.com
 DOMAIN-SUFFIX,mirabelanalytics.com
 DOMAIN-SUFFIX,mitour.de
+DOMAIN-SUFFIX,mitself.net
 DOMAIN-SUFFIX,ml-sys.xyz
 DOMAIN-SUFFIX,mm-api.agency
 DOMAIN-SUFFIX,mobildev.in
@@ -1727,6 +1729,7 @@ DOMAIN-SUFFIX,silkysquirrel.com
 DOMAIN-SUFFIX,sillyscrew.com
 DOMAIN-SUFFIX,simplesidewalk.com
 DOMAIN-SUFFIX,simplisticstem.com
+DOMAIN-SUFFIX,simulateswing.com
 DOMAIN-SUFFIX,sincerebuffalo.com
 DOMAIN-SUFFIX,sincereseashore.com
 DOMAIN-SUFFIX,sinceresubstance.com
@@ -2212,6 +2215,7 @@ DOMAIN-SUFFIX,analytics.kaltura.com
 DOMAIN-SUFFIX,analytics.kapost.com
 DOMAIN-SUFFIX,analytics.klickly.com
 DOMAIN-SUFFIX,analytics.kongregate.io
+DOMAIN-SUFFIX,analytics.lemoolah.com
 DOMAIN-SUFFIX,analytics.live.com
 DOMAIN-SUFFIX,analytics.livestream.com
 DOMAIN-SUFFIX,analytics.logsss.com
@@ -3182,6 +3186,7 @@ DOMAIN-SUFFIX,uid.mediacorp.sg
 DOMAIN-SUFFIX,uim.tifbs.net
 DOMAIN-SUFFIX,units.knotch.it
 DOMAIN-SUFFIX,us-central1-markuphero.cloudfunctions.net
+DOMAIN-SUFFIX,usaoptimizedby.increasingly.co
 DOMAIN-SUFFIX,user.userguiding.com
 DOMAIN-SUFFIX,userexperience.thehut.net
 DOMAIN-SUFFIX,usersegment.wpdigital.net
@@ -3374,6 +3379,7 @@ DOMAIN-SUFFIX,trusted-web-seal.cybertrust.ne.jp
 DOMAIN-SUFFIX,advantage.digitalsunray.com
 DOMAIN-SUFFIX,analytics.audionow.de
 DOMAIN-SUFFIX,analytics.gameforge.de
+DOMAIN-SUFFIX,analytics.idfnet.net
 DOMAIN-SUFFIX,analytics.media-proweb.de
 DOMAIN-SUFFIX,artemis-cdn.ocdn.eu
 DOMAIN-SUFFIX,beagle.prod.tda.link
@@ -4067,6 +4073,7 @@ DOMAIN-SUFFIX,fpt.microsoft.com
 DOMAIN-SUFFIX,fresnel-events.vimeocdn.com
 DOMAIN-SUFFIX,g.ign.com
 DOMAIN-SUFFIX,g.mashable.com
+DOMAIN-SUFFIX,g.newtimes.com
 DOMAIN-SUFFIX,g.pcmag.com
 DOMAIN-SUFFIX,ga.dx.com
 DOMAIN-SUFFIX,ga.nsimg.net
@@ -4242,6 +4249,7 @@ DOMAIN-SUFFIX,rvo-cohesion.healthline.com
 DOMAIN-SUFFIX,s.infogram.com
 DOMAIN-SUFFIX,s.wayfair.com
 DOMAIN-SUFFIX,saa.insideedition.com
+DOMAIN-SUFFIX,sapphire-api.target.com
 DOMAIN-SUFFIX,search.anonymous.ads.brave.com
 DOMAIN-SUFFIX,shopmetric.rediff.com
 DOMAIN-SUFFIX,sid.nordstrom.com
@@ -4318,6 +4326,7 @@ DOMAIN-SUFFIX,tags.johnlewis.com
 DOMAIN-SUFFIX,tags.stepstone.com
 DOMAIN-SUFFIX,tao.barstoolsports.com
 DOMAIN-SUFFIX,taplytics-umami.grubhub.com
+DOMAIN-SUFFIX,target-us.samsung.com
 DOMAIN-SUFFIX,target.nationwide.com
 DOMAIN-SUFFIX,target.nejm.org
 DOMAIN-SUFFIX,targeting.washpost.nile.works

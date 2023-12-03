@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312021137
+## ! Version: 202312031309
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Dec 2023 11:37 UTC
+## ! Last modified: 03 Dec 2023 13:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -120,6 +120,7 @@ DOMAIN-SUFFIX,dwin2.com, reject
 DOMAIN-SUFFIX,e1e.io, reject
 DOMAIN-SUFFIX,eagle-insight.com, reject
 DOMAIN-SUFFIX,easycompute.systems, reject
+DOMAIN-SUFFIX,ecn-ldr.de, reject
 DOMAIN-SUFFIX,ed-sys.net, reject
 DOMAIN-SUFFIX,efreecode.com, reject
 DOMAIN-SUFFIX,egoi.site, reject
@@ -235,6 +236,7 @@ DOMAIN-SUFFIX,mdhv.io, reject
 DOMAIN-SUFFIX,mediamathrdrt.com, reject
 DOMAIN-SUFFIX,mirabelanalytics.com, reject
 DOMAIN-SUFFIX,mitour.de, reject
+DOMAIN-SUFFIX,mitself.net, reject
 DOMAIN-SUFFIX,ml-sys.xyz, reject
 DOMAIN-SUFFIX,mm-api.agency, reject
 DOMAIN-SUFFIX,mobildev.in, reject
@@ -1727,6 +1729,7 @@ DOMAIN-SUFFIX,silkysquirrel.com, reject
 DOMAIN-SUFFIX,sillyscrew.com, reject
 DOMAIN-SUFFIX,simplesidewalk.com, reject
 DOMAIN-SUFFIX,simplisticstem.com, reject
+DOMAIN-SUFFIX,simulateswing.com, reject
 DOMAIN-SUFFIX,sincerebuffalo.com, reject
 DOMAIN-SUFFIX,sincereseashore.com, reject
 DOMAIN-SUFFIX,sinceresubstance.com, reject
@@ -2212,6 +2215,7 @@ DOMAIN-SUFFIX,analytics.kaltura.com, reject
 DOMAIN-SUFFIX,analytics.kapost.com, reject
 DOMAIN-SUFFIX,analytics.klickly.com, reject
 DOMAIN-SUFFIX,analytics.kongregate.io, reject
+DOMAIN-SUFFIX,analytics.lemoolah.com, reject
 DOMAIN-SUFFIX,analytics.live.com, reject
 DOMAIN-SUFFIX,analytics.livestream.com, reject
 DOMAIN-SUFFIX,analytics.logsss.com, reject
@@ -3182,6 +3186,7 @@ DOMAIN-SUFFIX,uid.mediacorp.sg, reject
 DOMAIN-SUFFIX,uim.tifbs.net, reject
 DOMAIN-SUFFIX,units.knotch.it, reject
 DOMAIN-SUFFIX,us-central1-markuphero.cloudfunctions.net, reject
+DOMAIN-SUFFIX,usaoptimizedby.increasingly.co, reject
 DOMAIN-SUFFIX,user.userguiding.com, reject
 DOMAIN-SUFFIX,userexperience.thehut.net, reject
 DOMAIN-SUFFIX,usersegment.wpdigital.net, reject
@@ -3374,6 +3379,7 @@ DOMAIN-SUFFIX,trusted-web-seal.cybertrust.ne.jp, reject
 DOMAIN-SUFFIX,advantage.digitalsunray.com, reject
 DOMAIN-SUFFIX,analytics.audionow.de, reject
 DOMAIN-SUFFIX,analytics.gameforge.de, reject
+DOMAIN-SUFFIX,analytics.idfnet.net, reject
 DOMAIN-SUFFIX,analytics.media-proweb.de, reject
 DOMAIN-SUFFIX,artemis-cdn.ocdn.eu, reject
 DOMAIN-SUFFIX,beagle.prod.tda.link, reject
@@ -4067,6 +4073,7 @@ DOMAIN-SUFFIX,fpt.microsoft.com, reject
 DOMAIN-SUFFIX,fresnel-events.vimeocdn.com, reject
 DOMAIN-SUFFIX,g.ign.com, reject
 DOMAIN-SUFFIX,g.mashable.com, reject
+DOMAIN-SUFFIX,g.newtimes.com, reject
 DOMAIN-SUFFIX,g.pcmag.com, reject
 DOMAIN-SUFFIX,ga.dx.com, reject
 DOMAIN-SUFFIX,ga.nsimg.net, reject
@@ -4242,6 +4249,7 @@ DOMAIN-SUFFIX,rvo-cohesion.healthline.com, reject
 DOMAIN-SUFFIX,s.infogram.com, reject
 DOMAIN-SUFFIX,s.wayfair.com, reject
 DOMAIN-SUFFIX,saa.insideedition.com, reject
+DOMAIN-SUFFIX,sapphire-api.target.com, reject
 DOMAIN-SUFFIX,search.anonymous.ads.brave.com, reject
 DOMAIN-SUFFIX,shopmetric.rediff.com, reject
 DOMAIN-SUFFIX,sid.nordstrom.com, reject
@@ -4318,6 +4326,7 @@ DOMAIN-SUFFIX,tags.johnlewis.com, reject
 DOMAIN-SUFFIX,tags.stepstone.com, reject
 DOMAIN-SUFFIX,tao.barstoolsports.com, reject
 DOMAIN-SUFFIX,taplytics-umami.grubhub.com, reject
+DOMAIN-SUFFIX,target-us.samsung.com, reject
 DOMAIN-SUFFIX,target.nationwide.com, reject
 DOMAIN-SUFFIX,target.nejm.org, reject
 DOMAIN-SUFFIX,targeting.washpost.nile.works, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312031309
+## ! Version: 202312041447
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Dec 2023 13:09 UTC
+## ! Last modified: 04 Dec 2023 14:47 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2680,6 +2680,7 @@ DOMAIN-SUFFIX,logs.viadata.store, reject
 DOMAIN-SUFFIX,lps.qantas.com, reject
 DOMAIN-SUFFIX,lucid.mjhassoc.com, reject
 DOMAIN-SUFFIX,ma.logsss.com, reject
+DOMAIN-SUFFIX,magento-recs-sdk.adobe.net, reject
 DOMAIN-SUFFIX,martech.condenastdigital.com, reject
 DOMAIN-SUFFIX,mas.nth.ch, reject
 DOMAIN-SUFFIX,mc.webvisor.com, reject
@@ -2857,6 +2858,7 @@ DOMAIN-SUFFIX,scripts.psyma.com, reject
 DOMAIN-SUFFIX,sd-tagging.azurefd.net, reject
 DOMAIN-SUFFIX,sdrive.skoda-auto.com, reject
 DOMAIN-SUFFIX,sdtagging.azureedge.net, reject
+DOMAIN-SUFFIX,secure-stats.pingdom.com, reject
 DOMAIN-SUFFIX,secure.merchantadvantage.com, reject
 DOMAIN-SUFFIX,seg.sharethis.com, reject
 DOMAIN-SUFFIX,sentry.arc.io, reject
@@ -3343,6 +3345,7 @@ DOMAIN-SUFFIX,dnxlgencstz4.cloudfront.net, reject
 DOMAIN-SUFFIX,dr3fr5q4g2ul9.cloudfront.net, reject
 DOMAIN-SUFFIX,drlimmode9ddd.cloudfront.net, reject
 DOMAIN-SUFFIX,dsbahmgppc0j4.cloudfront.net, reject
+DOMAIN-SUFFIX,dtxtngytz5im1.cloudfront.net, reject
 DOMAIN-SUFFIX,du4rq1xqh3i1k.cloudfront.net, reject
 DOMAIN-SUFFIX,du8783wkf05yr.cloudfront.net, reject
 DOMAIN-SUFFIX,duu8lzqdm8tsz.cloudfront.net, reject
@@ -21660,6 +21663,7 @@ DOMAIN-SUFFIX,pzd.rakuten.co.jp, reject
 DOMAIN-SUFFIX,rat.rakuten.co.jp, reject
 DOMAIN-SUFFIX,recv-entry.tbs.co.jp, reject
 DOMAIN-SUFFIX,recv-jnn.tbs.co.jp, reject
+DOMAIN-SUFFIX,rtm-tracking.zozo.jp, reject
 DOMAIN-SUFFIX,scis.tbs.co.jp, reject
 DOMAIN-SUFFIX,stats.nhk.or.jp, reject
 DOMAIN-SUFFIX,sy.amebame.com, reject

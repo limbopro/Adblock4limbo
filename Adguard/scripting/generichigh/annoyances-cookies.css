@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -84,6 +84,7 @@ GDPR-NOTICE,
 [data-test-id="CookiePopup"],
 [data-test-id="check-cookie-consent"],
 [data-test-id="cookie-consent-banner"],
+[data-test-id="cookie-policy-banner"],
 [data-test="cookie-banner"],
 [data-test="cookie-policy-sheet"],
 [data-test="gdpr-cookies-popup"],

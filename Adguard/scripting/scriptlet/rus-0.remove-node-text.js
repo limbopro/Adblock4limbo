@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,13 +42,13 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","adblock_detected"],["script","\"Shadow"]];
+const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","adblock_detected"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["inforesist.org",[0,6]],["sports.ru",1],["pikabu.ru",2],["gsm.in.ua",3],["game4you.top",4],["games-pc.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["mail.ru",5],["avtovod.com.ua",6],["bigmir.net",6],["buhgalter.com.ua",6],["buhgalter911.com",6],["censor.net",6],["dengi.ua",6],["ditey.com",6],["epravda.com.ua",6],["eurointegration.com.ua",6],["f1analytic.com",6],["facenews.ua",6],["gazeta.ua",6],["gorod.dp.ua",6],["hvylya.net",6],["i.ua",6],["isport.ua",6],["ivona.ua",6],["kolobok.ua",6],["kriminal.tv",6],["meteo.ua",6],["meteofor.com.ua",6],["nnovosti.info",6],["nv.ua",6],["panno4ka.net",6],["pogodaua.com",6],["pravda.com.ua",6],["real-vin.com",6],["smak.ua",6],["stravy.net",6],["tochka.net",6],["tv.ua",6],["viva.ua",6],["vsetv.com",6],["www.ukr.net",6]]);
+const hostnamesMap = new Map([["online-fix.me",0],["inforesist.org",[1,7]],["sports.ru",2],["pikabu.ru",3],["gsm.in.ua",4],["game4you.top",5],["games-pc.top",5],["innal.top",5],["naylo.top",5],["rustorka.com",5],["rustorka.net",5],["rustorka.top",5],["rustorkacom.lib",5],["mail.ru",6],["avtovod.com.ua",7],["bigmir.net",7],["buhgalter.com.ua",7],["buhgalter911.com",7],["censor.net",7],["dengi.ua",7],["ditey.com",7],["epravda.com.ua",7],["eurointegration.com.ua",7],["f1analytic.com",7],["facenews.ua",7],["gazeta.ua",7],["gorod.dp.ua",7],["hvylya.net",7],["i.ua",7],["isport.ua",7],["ivona.ua",7],["kolobok.ua",7],["kriminal.tv",7],["meteo.ua",7],["meteofor.com.ua",7],["nnovosti.info",7],["nv.ua",7],["panno4ka.net",7],["pogodaua.com",7],["pravda.com.ua",7],["real-vin.com",7],["smak.ua",7],["stravy.net",7],["tochka.net",7],["tv.ua",7],["viva.ua",7],["vsetv.com",7],["www.ukr.net",7]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["3igames.mail.ru",[5]],["auto.mail.ru",[5]],["biz.mail.ru",[5]],["bonus.mail.ru",[5]],["calendar.mail.ru",[5]],["calls.mail.ru",[5]],["cloud.mail.ru",[5]],["deti.mail.ru",[5]],["dobro.mail.ru",[5]],["e.mail.ru",[5]],["esports.mail.ru",[5]],["games.mail.ru",[5]],["gibdd.mail.ru",[5]],["health.mail.ru",[5]],["help.mail.ru",[5]],["hi-tech.mail.ru",[5]],["horo.mail.ru",[5]],["kino.mail.ru",[5]],["lady.mail.ru",[5]],["love.mail.ru",[5]],["mailblog.mail.ru",[5]],["mcs.mail.ru",[5]],["minigames.mail.ru",[5]],["my.mail.ru",[5]],["news.mail.ru",[5]],["o2.mail.ru",[5]],["octavius.mail.ru",[5]],["okminigames.mail.ru",[5]],["otvet.mail.ru",[5]],["pets.mail.ru",[5]],["player-smotri.mail.ru",[5]],["pogoda.mail.ru",[5]],["top.mail.ru",[5]],["touch.mail.ru",[5]],["tv.mail.ru",[5]]]);
+const exceptionsMap = new Map([["3igames.mail.ru",[6]],["auto.mail.ru",[6]],["biz.mail.ru",[6]],["bonus.mail.ru",[6]],["calendar.mail.ru",[6]],["calls.mail.ru",[6]],["cloud.mail.ru",[6]],["deti.mail.ru",[6]],["dobro.mail.ru",[6]],["e.mail.ru",[6]],["esports.mail.ru",[6]],["games.mail.ru",[6]],["gibdd.mail.ru",[6]],["health.mail.ru",[6]],["help.mail.ru",[6]],["hi-tech.mail.ru",[6]],["horo.mail.ru",[6]],["kino.mail.ru",[6]],["lady.mail.ru",[6]],["love.mail.ru",[6]],["mailblog.mail.ru",[6]],["mcs.mail.ru",[6]],["minigames.mail.ru",[6]],["my.mail.ru",[6]],["news.mail.ru",[6]],["o2.mail.ru",[6]],["octavius.mail.ru",[6]],["okminigames.mail.ru",[6]],["otvet.mail.ru",[6]],["pets.mail.ru",[6]],["player-smotri.mail.ru",[6]],["pogoda.mail.ru",[6]],["top.mail.ru",[6]],["touch.mail.ru",[6]],["tv.mail.ru",[6]]]);
 
 /******************************************************************************/
 

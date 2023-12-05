@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#dle-content"],["","250"],["Adblock"],["SHOW_PUSH_MODAL"],["UnblockedBanner"],["X-Set-Adblock"],["_modal"],["adblock"],["adfoxAsyncParams"],["ai_adb"],["alert","15000"],["displayMessage"],["doAd"],["getCookie","3000"],["getElementBy"],["google_jobrunner"],["is_adblock"],["saa"],["setInterval",""],["showModal"],["sparkle"],["toUTCString"],["0x"],["NO_MIMIC_ON_"],["siteZone","100"]];
+const argsList = [["#dle-content"],["","250"],["Adblock"],["SHOW_PUSH_MODAL"],["UnblockedBanner"],["X-Set-Adblock"],["_modal"],["adblock"],["adfoxAsyncParams"],["ai_adb"],["alert","15000"],["doAd"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["google_jobrunner"],["is_adblock"],["saa"],["setInterval",""],["showModal"],["sparkle"],["toUTCString"],["0x"],["NO_MIMIC_ON_"],["siteZone","100"]];
 
-const hostnamesMap = new Map([["online-fix.me",0],["otzovik.com",1],["sibnet.ru",2],["life.ru",3],["delfi.lt",4],["razlozhi.ru",5],["allapteki.ru",6],["strategium.ru",7],["playground.ru",8],["dracon-zet.ru",[9,11]],["aqicn.org",10],["tv-kanali.online",12],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["vseprosto.top",15],["fishki.net",16],["testserver.pro",17],["websdr.space",18],["blackwot.ru",19],["anime-chan.me",20],["num-words.com",21],["softportal.com",21],["e.mail.ru",[23,24]],["octavius.mail.ru",[23,24]]]);
+const hostnamesMap = new Map([["online-fix.me",0],["otzovik.com",1],["sibnet.ru",2],["life.ru",3],["delfi.lt",4],["razlozhi.ru",5],["allapteki.ru",6],["strategium.ru",7],["playground.ru",8],["dracon-zet.ru",[9,12]],["aqicn.org",10],["tv-kanali.online",11],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["vseprosto.top",15],["fishki.net",16],["testserver.pro",17],["websdr.space",18],["blackwot.ru",19],["anime-chan.me",20],["num-words.com",21],["softportal.com",21],["e.mail.ru",[23,24]],["octavius.mail.ru",[23,24]]]);
 
 const entitiesMap = new Map([["rp5",22]]);
 

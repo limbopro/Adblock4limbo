@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["wallpaper","click"],["WPdp","gqcHFMkMCFBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSGl1BMyFBXQpBBBpBXUBPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSo+RV1BAQFBXUBPRRwRRUtSS1MOE1NZVF1BEwJBXUBUV0FWVkZWVEdVU0AeS1M0NzxBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSS1MWBlNZVgwe"],["WPtcs2","CP1ik8AP1ik8ABIACDPLAbEgAAAAAEPgAB5YAABBqhmgAIgAUABcADgAPgAoACoAFwAOQAeACAAEgALoAYABlADQANQAeAA_ACIAEcAJgAUIApACmAFWALgAugBiADMAGgAN4AegA_ACEAENAIgAiQBHACWAE0AJwAUYAwABhwDKAMsAZoA0QBsgDkAHPAO4A7wB7AD4gH2AfsA_wEAgIOAhABEQCKQEWARgAjUBHAEdAJEASUAlIBOwCfgFBgKgAqIBVwCxAFzALrAXkBegC-gGKANEAa8A2gBuADiAHHAOkAdQA7YB7QD7AH_ARMAi8BHsCRAJFASoAlYBMUCZAJlATaAnYBQ8CjwKRAUnApoCmwFPgKhgVIBUoCqgFWAK5AV2AsKBYgFigLKAWiAtQBbEC3ALdAXAAuQBdAC7QF3wLyAvMBfQC_wGCAMGAYaAxABiwDHgGQwMjAySBkwGTgMqAZYAzMBnIDPAGiANGAaaA1MBqsDVwNZAa8A2iBtwG3wN0A3UBwADggHFgOPAcnA5YDlwHPgOsAeKA8eB5IHlAPigfIB8oD6QH1wPtA-6B-wH7gQBAgIBAwCB4EEQIJgQYAg2BCECFAEK4IWghcBDECGcEOQQ6gh4CHoEPwIpgRgAjSBGsCN4EcQI6AR2Aj2BH0CP4EhAJFASNgkgCScEmASZglQCVIEsAJZwS3BLiCXQJdgS-gmACYIEwwJiwTMBM4CagE2IJtgm5BN4E3wJwhBqAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
 
-const hostnamesMap = new Map([["theporndude.com",0],["wp.pl",[1,2,3]],["money.pl",[1,2,3]],["pysznosci.pl",[1,2,3]],["pudelek.pl",[1,2,3]],["gadzetomania.pl",[1,2]],["fotoblogia.pl",[1,2]],["komorkomania.pl",[1,2]],["dobreprogramy.pl",[1,2,3]],["autokult.pl",[1,2]],["genialne.pl",[1,2]],["o2.pl",3]]);
+const hostnamesMap = new Map([["theporndude.com",0],["wp.pl",[1,2,3]],["money.pl",[1,2,3]],["pysznosci.pl",[1,2,3]],["pudelek.pl",[1,2,3]],["gadzetomania.pl",[1,2,3]],["fotoblogia.pl",[1,2,3]],["komorkomania.pl",[1,2,3]],["dobreprogramy.pl",[1,2,3]],["autokult.pl",[1,2,3]],["genialne.pl",[1,2,3]],["o2.pl",3],["parenting.pl",3],["polygamia.pl",3],["abczdrowie.pl",3],["open.fm",3],["benchmark.pl",3],["kafeteria.pl",3],["autocentrum.pl",3],["jastrzabpost.pl",3]]);
 
 const entitiesMap = new Map([]);
 

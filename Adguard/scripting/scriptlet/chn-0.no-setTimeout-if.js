@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_load_fail"],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"],["/document\\.getElementById[\\s\\S]*?\\.style\\.display\\.indexOf/"]];
+const argsList = [["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_load_fail"],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"],["/document\\.getElementById[\\s\\S]*?\\.style\\.display\\.indexOf/"]];
 
-const hostnamesMap = new Map([["itdog.cn",0],["xbeibeix.com",1],["520cc.cc",[2,18]],["colamanga.com",3],["cocomanga.com",[3,15]],["ekamus.info",4],["logi.im",4],["moeci.com",5],["tingfm.com",6],["233tw.com",7],["ruanyifeng.com",8],["t66y.com",9],["tsubasa.im",10],["zhenbuka3.com",11],["zhenbuka2.com",11],["bukaivip.com",11],["league-funny.com",12],["haoweichi.com",13],["zhenbuka.com",14],["ohmanhua.com",15],["onemanhua.com",15],["5278.cc",16],["hboav.com",16],["axutongxue.net",17],["nfmovies.com",19]]);
+const hostnamesMap = new Map([["18comic.vip",0],["itdog.cn",1],["xbeibeix.com",2],["520cc.cc",[3,19]],["colamanga.com",4],["cocomanga.com",[4,16]],["ekamus.info",5],["logi.im",5],["moeci.com",6],["tingfm.com",7],["233tw.com",8],["ruanyifeng.com",9],["t66y.com",10],["tsubasa.im",11],["zhenbuka3.com",12],["zhenbuka2.com",12],["bukaivip.com",12],["league-funny.com",13],["haoweichi.com",14],["zhenbuka.com",15],["ohmanhua.com",16],["onemanhua.com",16],["5278.cc",17],["hboav.com",17],["axutongxue.net",18],["nfmovies.com",20]]);
 
 const entitiesMap = new Map([]);
 

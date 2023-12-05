@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,7 +42,7 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, .metaRedirectWrapperTopAds, .metaRedirectWrapperTopAd, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["#btx1, #wg-genx > .mediafire","visibility","visible"]];
+const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, [class^=\"metaRedirectWrapperTopAd\"], a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
 
 const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["techcyan.com",2],["kiktu.com",2],["upshrink.com",2],["trangchu.news",2],["banaraswap.in",2]]);
 

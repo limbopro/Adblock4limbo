@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ipsDebug"],["adregain_wall"],["rInt"],["popURL"],["onPopUnderLoaded"],["window.onload"],["popcent_config"],["yeniSekmeAdresi"],["adx"]];
+const argsList = [["window.onload"],["adregain_wall"],["rInt"],["popURL"],["onPopUnderLoaded"],["popcent_config"],["yeniSekmeAdresi"],["adx"]];
 
-const hostnamesMap = new Map([["ipbdestek.com",0],["memoryhackers.org",1],["r10.net",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["dizilost.com",[4,5]],["xbox360torrent.com",6],["mixizle.com",7],["fullhdabifilm.com",7],["hdmixfilim.com",7],["4kfilmizlesene.xyz",8]]);
+const hostnamesMap = new Map([["tekniknot.com",0],["dizilost.com",[0,4]],["memoryhackers.org",1],["r10.net",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["xbox360torrent.com",5],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["4kfilmizlesene.xyz",7]]);
 
 const entitiesMap = new Map([]);
 

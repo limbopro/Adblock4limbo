@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["bidReqIdStr"],["xored"],["oncontextmenu"],["disable_copy"],["AdBlocker"],["alert"],["String.fromCharCode"]];
+const argsList = [["bidReqIdStr"],["xored"],["oncontextmenu"],["disable_copy"],["AdBlocker"],["alert"],["String.fromCharCode"],["debugger"]];
 
-const hostnamesMap = new Map([["otzovik.com",1],["runmods.com",2],["magesy.blog",3],["magesypro.pro",3],["romviet.com",4],["isekaipalace.com",5],["seriesperu.com",6]]);
+const hostnamesMap = new Map([["otzovik.com",1],["runmods.com",2],["magesy.blog",3],["magesypro.pro",3],["romviet.com",4],["isekaipalace.com",5],["seriesperu.com",6],["alexsportz.online",7],["sportea.online",7]]);
 
 const entitiesMap = new Map([["afisha.yandex",0]]);
 

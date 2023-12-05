@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["sp"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["document.cookie"],["open"],["atob"],["adtimaConfig"],["matchMedia"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["sp"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["document.cookie"],["open"],["atob"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["nettruyenus.net",5],["plvb.xyz",[6,7,8,9,10]],["subnhanhvl.co",11],["subnhanh.im",11],["phimmoi4s.com",11],["phimdinhcao.net",11],["phimlongtieng.net",11],["phimdinhcao.com",11],["ophim.vip",11],["tinsoikeo.vip",12],["truyensieuhay.com",13],["phimvietsub.pro",13],["tvhayt.org",13],["phimmoipro2.net",13],["quangcaoyenbai.com",13],["phimbom.net",13],["sieudamtv.com",13],["ephimchill.com",13],["viettoons.tv",14],["phimmoiaz.cc",14],["m.blogtruyen.vn",14],["animet.net",14],["anh.moe",14],["ytstv.me",15],["yts.do",15],["yts.mx",15],["yts.rs",15],["zingnews.vn",16],["zuiphim.com",17]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["nettruyenus.net",5],["plvb.xyz",[6,7,8,9,10]],["subnhanhvl.co",11],["subnhanh.im",11],["phimmoi4s.com",11],["phimdinhcao.net",11],["phimlongtieng.net",11],["phimdinhcao.com",11],["ophim.vip",11],["tinsoikeo.vip",12],["truyensieuhay.com",13],["phimvietsub.pro",13],["tvhaym.org",13],["phimmoipro2.net",13],["quangcaoyenbai.com",13],["phimbom.net",13],["sieudamtv.com",13],["ephimchill.com",13],["viettoons.tv",14],["phimmoiaz.cc",14],["m.blogtruyen.vn",14],["animet.net",14],["anh.moe",14],["ytstv.me",15],["yts.do",15],["yts.mx",15],["yts.rs",15],["zuiphim.com",16]]);
 
 const entitiesMap = new Map([]);
 

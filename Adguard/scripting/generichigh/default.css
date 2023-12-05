@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -231,6 +231,8 @@ a[href^="http://cam4com.go2cloud.org/aff_c?"],
 a[href^="http://click.payserve.com/"],
 a[href^="http://com-1.pro/"],
 a[href^="http://d2.zedo.com/"],
+a[href^="http://deskfrontfreely.com/"],
+a[href^="http://eighteenderived.com/"],
 a[href^="http://go.xtbaffiliates.com/"],
 a[href^="http://googleads.g.doubleclick.net/pcs/click"],
 a[href^="http://https://www.get-express-vpn.com/offer/"],
@@ -448,7 +450,10 @@ a[href^="https://syndication.dynsrvtbg.com/"],
 a[href^="https://syndication.exdynsrv.com/splash.php"],
 a[href^="https://syndication.exoclick.com/"],
 a[href^="https://syndication.optimizesrv.com/"],
+a[href^="https://t.acam.link/"],
 a[href^="https://t.adating.link/"],
+a[href^="https://t.ajrkm1.com/"],
+a[href^="https://t.ajump1.com/"],
 a[href^="https://t.aslnk.link/"],
 a[href^="https://t.grtyi.com/"],
 a[href^="https://t.hrtye.com/"],
@@ -480,7 +485,6 @@ a[href^="https://visit-website.com/"],
 a[href^="https://webroutetrk.com/"],
 a[href^="https://wirewar.website/"],
 a[href^="https://wittered-mainging.com/"],
-a[href^="https://www.5mno3.com/"],
 a[href^="https://www.adskeeper.com"],
 a[href^="https://www.adultempire.com/"][href*="?partner_id="],
 a[href^="https://www.adxsrve.com/"],

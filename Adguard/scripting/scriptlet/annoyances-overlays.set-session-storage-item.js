@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
+const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["","true"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
 
-const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["selenagomez.com",10],["maxicours.com",11],["270towin.com",12],["getemoji.com",12]]);
+const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["upbeatcode.com",10],["selenagomez.com",11],["maxicours.com",12],["270towin.com",13],["getemoji.com",13]]);
 
 const entitiesMap = new Map([]);
 

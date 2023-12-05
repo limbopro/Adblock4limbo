@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["initials.bannerPrefix"],["history.pushState"],["document.onkeydown"],["nocontext"],["disableEnterKey"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
+const argsList = [["initials.bannerPrefix"],["history.pushState"],["ConsoleBan"],["document.onkeydown"],["nocontext"],["disableEnterKey"],["nocontextmenu"],["document.oncopy"],["image_save_msg"],["document.oncontextmenu"]];
 
-const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["guiasaude.info",2],["brokensilenze.net",[3,4]],["teammy.ru",5],["raindropteamfan.com",5],["expertology.ru",6],["electricalvoice.com",7],["doujindesu.tv",8],["shield-project.ru",8]]);
+const hostnamesMap = new Map([["xhday.com",0],["megaxh.com",0],["xhwide1.com",0],["joongang.co.kr",1],["topsporter.net",2],["guiasaude.info",3],["brokensilenze.net",[4,5]],["teammy.ru",6],["raindropteamfan.com",6],["expertology.ru",7],["electricalvoice.com",8],["doujindesu.tv",9],["shield-project.ru",9]]);
 
 const entitiesMap = new Map([]);
 

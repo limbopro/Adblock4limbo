@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYinPlaus","noopFunc"],["checkYin","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["mi_track_user","false"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"]];
+const argsList = [["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYinPlaus","noopFunc"],["checkYin","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["mi_track_user","false"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"]];
 
-const hostnamesMap = new Map([["conpot.se",[0,1]],["di.se",2],["elevspel.se",3],["feber.se",[4,5,6,7]],["tjock.se",[4,5,6,7]],["findit.se",8],["fz.se",9],["fssweden.se",9],["gamereactor.se",10],["kamrat.com",[11,12]],["kritiker.se",[13,14,15]],["mitti.se",16],["mobilanyheter.net",17],["newsner.com",18],["humorbibeln.se",18],["sportbibeln.se",18],["ettgottskratt.se",18],["zeinaskitchen.se",18],["dinbyggare.se",18],["trafiksakerhet.se",18],["boktugg.se",18],["lakartidningen.se",18],["villalivet.se",18],["matsafari.nu",18],["ordbokpro.se",19],["spray.se",[20,21]],["vinochmatguiden.se",21],["swedroid.se",22],["thatsup.se",23],["thorengruppen.se",[24,25]],["utslappsratt.se",[24,25]],["heleneholmsif.se",[24,25]],["trafikskola.se",[24,25]],["melodifestivalklubben.se",[24,25]],["morotsliv.com",[24,25]],["www.expressen.se",26]]);
+const hostnamesMap = new Map([["conpot.se",[0,1]],["di.se",2],["elevspel.se",3],["feber.se",[4,5,6,7]],["tjock.se",[4,5,6,7]],["findit.se",8],["fz.se",9],["fssweden.se",9],["gamereactor.se",10],["jobsinsweden.se",11],["kamrat.com",[12,13]],["kritiker.se",[14,15,16]],["mitti.se",17],["mobilanyheter.net",18],["newsner.com",19],["humorbibeln.se",19],["sportbibeln.se",19],["ettgottskratt.se",19],["zeinaskitchen.se",19],["dinbyggare.se",19],["trafiksakerhet.se",19],["boktugg.se",19],["lakartidningen.se",19],["villalivet.se",19],["matsafari.nu",19],["ordbokpro.se",20],["spray.se",[21,22]],["vinochmatguiden.se",22],["swedroid.se",23],["thatsup.se",24],["thorengruppen.se",[25,26]],["utslappsratt.se",[25,26]],["heleneholmsif.se",[25,26]],["trafikskola.se",[25,26]],["melodifestivalklubben.se",[25,26]],["morotsliv.com",[25,26]],["www.expressen.se",27]]);
 
 const entitiesMap = new Map([]);
 

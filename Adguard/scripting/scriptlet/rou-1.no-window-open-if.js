@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_noWindowOpenIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[]];
+const argsList = [[],["","10"]];
 
-const hostnamesMap = new Map([["nosteam.ro",0],["nosteamgames.ro",0],["posturi.live",0],["vzlinks.com",0]]);
+const hostnamesMap = new Map([["nosteam.ro",0],["nosteamgames.ro",0],["posturi.live",0],["vzlinks.com",0],["onlyplay.online",1]]);
 
 const entitiesMap = new Map([["filmeserialegratis",0],["fsplayer",0]]);
 

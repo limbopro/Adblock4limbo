@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,11]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["cq.ru",6],["softonic.ru",7],["smotrim.ru",8],["rbc.ru",9],["sportrbc.ru",9],["iptv.org.ua",10],["tva.org.ua",10],["ufchgu.ru",10],["romakatya.ru",12],["overclockers.ru",13],["gazeta.ru",14],["m.lenta.ru",15],["www.vesti.ru",16],["lenta.ru",17]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,11]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["cq.ru",6],["softonic.ru",7],["smotrim.ru",8],["rbc.ru",9],["sportrbc.ru",9],["iptv.org.ua",10],["tva.org.ua",10],["ufchgu.ru",10],["romakatya.ru",12],["overclockers.ru",13],["gazeta.ru",14],["m.lenta.ru",15],["www.vesti.ru",16],["lenta.ru",17],["aida64.com.ua",18],["aida64russia.com",18]]);
 
 const entitiesMap = new Map([]);
 

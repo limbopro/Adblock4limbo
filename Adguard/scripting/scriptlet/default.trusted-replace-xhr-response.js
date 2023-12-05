@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,9 +42,9 @@ const uBOL_trustedReplaceXhrResponse = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","/player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
+const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","/player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["\"adPlacements\"","\"no_ads\"","/player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1]],["app.hellovaia.com",2]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1]],["tv.youtube.com",2],["app.hellovaia.com",3]]);
 
 const entitiesMap = new Map([]);
 

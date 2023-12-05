@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,11 +42,11 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["readystatechange","adsbygoogle"],["click","checkTarget"],["click","popundr"],["click","check_target"],["click","showPop"],["click","window.open"],["","getPopupTarget"]];
+const argsList = [["click","checkTarget"],["click","popundr"],["click","check_target"],["click","showPop"],["click","window.open"],["","getPopupTarget"]];
 
-const hostnamesMap = new Map([["tekniknot.com",0],["720pfilmizleme1.com",1],["720pfilmizletir.com",1],["1080pfilmizletir.com",1],["720pfilmizlesene.com",1],["diziwatch.net",1],["fullhd720pizle.live",1],["videoseyred.in",1],["hdfilmcehennem.live",1],["yerlifilmizletir.com",1],["720pvkizle.com",2],["eescobarvip.com",2],["cizgiromanarsivi.com",3],["dizirix.net",4],["filmizle720p.net",5]]);
+const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["diziwatch.net",0],["fullhd720pizle.live",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["yerlifilmizletir.com",0],["720pvkizle.com",1],["eescobarvip.com",1],["cizgiromanarsivi.com",2],["dizirix.net",3],["filmizle720p.net",4]]);
 
-const entitiesMap = new Map([["filmmakinesi1",1],["yabancidizitv",1],["filmizlemax",1],["torrentarsivi",6]]);
+const entitiesMap = new Map([["filmmakinesi1",0],["yabancidizitv",0],["filmizlemax",0],["torrentarsivi",5]]);
 
 const exceptionsMap = new Map([]);
 

@@ -3,16 +3,16 @@
 ## 原文参阅 https://limbopro.com/archives/12904.html
 ## 电报群组 https://t.me/Adblock4limbo  
 ## Repo: https://github.com/limbopro/Adblock4limbo  
-## Adblock4limbo: 488 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
+## Adblock4limbo: 492 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## EasyList/EasylistChina/EasyPrivacy 隐私追踪器/去广告分流规则请在Github仓库 Adblock4limbo -> rule 文件夹下查找，按需添加...
 ## 仓库地址：https://github.com/limbopro/Adblock4limbo/tree/main/rule
 ## Peter Lowe’s Ad and tracking server list: 3779 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList: 31836 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 21806 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 4992 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList: 31860 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 21810 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5001 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 63492 Domains/IP/Others (非去重统计)
-## Last updated at  5/12月/2023/00:00
+## 以上共计: 63533 Domains/IP/Others (非去重统计)
+## Last updated at  5/12月/2023/19:46
 ## */
 
 
@@ -64,6 +64,10 @@ DOMAIN-SUFFIX,qw2v.changshuohr.net
 DOMAIN-SUFFIX,wss.haoyundmn.com
 
 ##### missav.com  
+DOMAIN-SUFFIX,video.ktkjmp.com
+DOMAIN-SUFFIX,go.myavlive.com
+DOMAIN-SUFFIX,gsjln04hd.com
+DOMAIN-SUFFIX,creative.myavlive.com
 DOMAIN-SUFFIX,creative.live.missav.com
 DOMAIN-SUFFIX,cashewsforlife208.com
 DOMAIN-SUFFIX,ingest.sentry

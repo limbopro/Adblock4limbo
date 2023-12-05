@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312041447
+## ! Version: 202312051140
 ## ! Title: EasyPrivacy
-## ! Last modified: 04 Dec 2023 14:47 UTC
+## ! Last modified: 05 Dec 2023 11:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -340,6 +340,7 @@ DOMAIN-SUFFIX,tatpek.com
 DOMAIN-SUFFIX,techpump.com
 DOMAIN-SUFFIX,test.vast
 DOMAIN-SUFFIX,testingmetriksbre.ru
+DOMAIN-SUFFIX,thatmonkeybites3.com
 DOMAIN-SUFFIX,the-ozone-project.com
 DOMAIN-SUFFIX,thefontzone.com
 DOMAIN-SUFFIX,tkrconnector.com
@@ -3468,6 +3469,7 @@ DOMAIN-SUFFIX,core.unit-sense.net
 DOMAIN-SUFFIX,e.viously.com
 DOMAIN-SUFFIX,events.newsroom.bi
 DOMAIN-SUFFIX,events.sk.ht
+DOMAIN-SUFFIX,houston.advgo.net
 DOMAIN-SUFFIX,ip7prksb2muxvmmh25t6rxl2te0tfulc.lambda-url.eu-west-1.on.aws
 DOMAIN-SUFFIX,nws.naltis.com
 DOMAIN-SUFFIX,offer.slgnt.eu
@@ -21295,8 +21297,10 @@ DOMAIN-SUFFIX,as.mirapodo.de
 DOMAIN-SUFFIX,as.mytoys.de
 DOMAIN-SUFFIX,as.yomonda.de
 DOMAIN-SUFFIX,behave.sn.at
+DOMAIN-SUFFIX,bilder11.markt.de
 DOMAIN-SUFFIX,click.alternate.de
 DOMAIN-SUFFIX,cmp2.channelpartner.de
+DOMAIN-SUFFIX,cnt.wetteronline.de
 DOMAIN-SUFFIX,cpx.golem.de
 DOMAIN-SUFFIX,cpxl.golem.de
 DOMAIN-SUFFIX,d.rp-online.de

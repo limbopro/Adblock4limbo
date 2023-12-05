@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312041447
+## ! Version: 202312051140
 ## ! Title: EasyPrivacy
-## ! Last modified: 04 Dec 2023 14:47 UTC
+## ! Last modified: 05 Dec 2023 11:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -340,6 +340,7 @@ DOMAIN-SUFFIX,tatpek.com, reject
 DOMAIN-SUFFIX,techpump.com, reject
 DOMAIN-SUFFIX,test.vast, reject
 DOMAIN-SUFFIX,testingmetriksbre.ru, reject
+DOMAIN-SUFFIX,thatmonkeybites3.com, reject
 DOMAIN-SUFFIX,the-ozone-project.com, reject
 DOMAIN-SUFFIX,thefontzone.com, reject
 DOMAIN-SUFFIX,tkrconnector.com, reject
@@ -3468,6 +3469,7 @@ DOMAIN-SUFFIX,core.unit-sense.net, reject
 DOMAIN-SUFFIX,e.viously.com, reject
 DOMAIN-SUFFIX,events.newsroom.bi, reject
 DOMAIN-SUFFIX,events.sk.ht, reject
+DOMAIN-SUFFIX,houston.advgo.net, reject
 DOMAIN-SUFFIX,ip7prksb2muxvmmh25t6rxl2te0tfulc.lambda-url.eu-west-1.on.aws, reject
 DOMAIN-SUFFIX,nws.naltis.com, reject
 DOMAIN-SUFFIX,offer.slgnt.eu, reject
@@ -21295,8 +21297,10 @@ DOMAIN-SUFFIX,as.mirapodo.de, reject
 DOMAIN-SUFFIX,as.mytoys.de, reject
 DOMAIN-SUFFIX,as.yomonda.de, reject
 DOMAIN-SUFFIX,behave.sn.at, reject
+DOMAIN-SUFFIX,bilder11.markt.de, reject
 DOMAIN-SUFFIX,click.alternate.de, reject
 DOMAIN-SUFFIX,cmp2.channelpartner.de, reject
+DOMAIN-SUFFIX,cnt.wetteronline.de, reject
 DOMAIN-SUFFIX,cpx.golem.de, reject
 DOMAIN-SUFFIX,cpxl.golem.de, reject
 DOMAIN-SUFFIX,d.rp-online.de, reject

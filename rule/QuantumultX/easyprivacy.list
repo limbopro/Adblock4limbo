@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312051543
+## ! Version: 202312061441
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Dec 2023 15:43 UTC
+## ! Last modified: 06 Dec 2023 14:41 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -306,7 +306,6 @@ DOMAIN-SUFFIX,robotflowermobile.com, reject
 DOMAIN-SUFFIX,rtactivate.com, reject
 DOMAIN-SUFFIX,rumt-sg.com, reject
 DOMAIN-SUFFIX,s-onetag.com, reject
-DOMAIN-SUFFIX,salsify-ecdn.com, reject
 DOMAIN-SUFFIX,sbgsodufuosmmvsdf.info, reject
 DOMAIN-SUFFIX,sc-static.net, reject
 DOMAIN-SUFFIX,script.ac, reject
@@ -3522,6 +3521,7 @@ DOMAIN-SUFFIX,ia.51.la, reject
 DOMAIN-SUFFIX,imp.ad-plus.cn, reject
 DOMAIN-SUFFIX,imp.go.sohu.com, reject
 DOMAIN-SUFFIX,imp.optaim.com, reject
+DOMAIN-SUFFIX,log-api.cli.im, reject
 DOMAIN-SUFFIX,log.hiiir.com, reject
 DOMAIN-SUFFIX,log.qvb.qcloud.com, reject
 DOMAIN-SUFFIX,log.tagtic.cn, reject
@@ -21465,6 +21465,7 @@ DOMAIN-SUFFIX,bc.qunar.com, reject
 DOMAIN-SUFFIX,beacon.qq.com, reject
 DOMAIN-SUFFIX,cherry.le.com, reject
 DOMAIN-SUFFIX,click.gamersky.com, reject
+DOMAIN-SUFFIX,clickcount.cnool.net, reject
 DOMAIN-SUFFIX,count.candou.com, reject
 DOMAIN-SUFFIX,count5.pconline.com.cn, reject
 DOMAIN-SUFFIX,counter.people.cn, reject

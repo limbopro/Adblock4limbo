@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312051543
+## ! Version: 202312061441
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Dec 2023 15:43 UTC
+## ! Last modified: 06 Dec 2023 14:41 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -306,7 +306,6 @@ DOMAIN-SUFFIX,robotflowermobile.com
 DOMAIN-SUFFIX,rtactivate.com
 DOMAIN-SUFFIX,rumt-sg.com
 DOMAIN-SUFFIX,s-onetag.com
-DOMAIN-SUFFIX,salsify-ecdn.com
 DOMAIN-SUFFIX,sbgsodufuosmmvsdf.info
 DOMAIN-SUFFIX,sc-static.net
 DOMAIN-SUFFIX,script.ac
@@ -3522,6 +3521,7 @@ DOMAIN-SUFFIX,ia.51.la
 DOMAIN-SUFFIX,imp.ad-plus.cn
 DOMAIN-SUFFIX,imp.go.sohu.com
 DOMAIN-SUFFIX,imp.optaim.com
+DOMAIN-SUFFIX,log-api.cli.im
 DOMAIN-SUFFIX,log.hiiir.com
 DOMAIN-SUFFIX,log.qvb.qcloud.com
 DOMAIN-SUFFIX,log.tagtic.cn
@@ -21465,6 +21465,7 @@ DOMAIN-SUFFIX,bc.qunar.com
 DOMAIN-SUFFIX,beacon.qq.com
 DOMAIN-SUFFIX,cherry.le.com
 DOMAIN-SUFFIX,click.gamersky.com
+DOMAIN-SUFFIX,clickcount.cnool.net
 DOMAIN-SUFFIX,count.candou.com
 DOMAIN-SUFFIX,count5.pconline.com.cn
 DOMAIN-SUFFIX,counter.people.cn

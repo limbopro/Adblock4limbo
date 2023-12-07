@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312061441
+## ! Version: 202312071552
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Dec 2023 14:41 UTC
+## ! Last modified: 07 Dec 2023 15:52 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -488,6 +488,7 @@ DOMAIN-SUFFIX,abstractedauthority.com
 DOMAIN-SUFFIX,absurdapple.com
 DOMAIN-SUFFIX,absurdwater.com
 DOMAIN-SUFFIX,acceptableauthority.com
+DOMAIN-SUFFIX,accurateanimal.com
 DOMAIN-SUFFIX,achieverknee.com
 DOMAIN-SUFFIX,acidicstraw.com
 DOMAIN-SUFFIX,acidpigs.com
@@ -542,6 +543,7 @@ DOMAIN-SUFFIX,ancientact.com
 DOMAIN-SUFFIX,annoyedairport.com
 DOMAIN-SUFFIX,annoyedfifth.com
 DOMAIN-SUFFIX,annoyingacoustics.com
+DOMAIN-SUFFIX,annoyingclover.com
 DOMAIN-SUFFIX,anxiousapples.com
 DOMAIN-SUFFIX,apathetictheory.com
 DOMAIN-SUFFIX,apparatuslip.com
@@ -588,6 +590,7 @@ DOMAIN-SUFFIX,balancemailbox.com
 DOMAIN-SUFFIX,balloonbelieve.com
 DOMAIN-SUFFIX,balloonbit.com
 DOMAIN-SUFFIX,balloontexture.com
+DOMAIN-SUFFIX,ballsbanana.com
 DOMAIN-SUFFIX,bandborder.com
 DOMAIN-SUFFIX,barbarousbase.com
 DOMAIN-SUFFIX,barbarousnerve.com
@@ -603,6 +606,7 @@ DOMAIN-SUFFIX,bawdypets.com
 DOMAIN-SUFFIX,beadbears.com
 DOMAIN-SUFFIX,beamincrease.com
 DOMAIN-SUFFIX,beamvolcano.com
+DOMAIN-SUFFIX,beancontrol.com
 DOMAIN-SUFFIX,beastbeef.com
 DOMAIN-SUFFIX,beautifulhobbies.com
 DOMAIN-SUFFIX,bedsberry.com
@@ -639,8 +643,10 @@ DOMAIN-SUFFIX,boringberry.com
 DOMAIN-SUFFIX,boringcoat.com
 DOMAIN-SUFFIX,bouncyfront.com
 DOMAIN-SUFFIX,bouncyproperty.com
+DOMAIN-SUFFIX,boundlessargument.com
 DOMAIN-SUFFIX,boundlessbrake.com
 DOMAIN-SUFFIX,boundlessveil.com
+DOMAIN-SUFFIX,brainybasin.com
 DOMAIN-SUFFIX,brainynut.com
 DOMAIN-SUFFIX,brandybison.com
 DOMAIN-SUFFIX,brashbead.com
@@ -764,6 +770,7 @@ DOMAIN-SUFFIX,colossalcoat.com
 DOMAIN-SUFFIX,combativecar.com
 DOMAIN-SUFFIX,combativedetail.com
 DOMAIN-SUFFIX,combbit.com
+DOMAIN-SUFFIX,combcattle.com
 DOMAIN-SUFFIX,combclover.com
 DOMAIN-SUFFIX,comfortablecheese.com
 DOMAIN-SUFFIX,commonalmanac.com
@@ -823,6 +830,7 @@ DOMAIN-SUFFIX,culturedcrayon.com
 DOMAIN-SUFFIX,culturedfeather.com
 DOMAIN-SUFFIX,cumbersomecake.com
 DOMAIN-SUFFIX,cumbersomecar.com
+DOMAIN-SUFFIX,cumbersomecarpenter.com
 DOMAIN-SUFFIX,cumbersomecloud.com
 DOMAIN-SUFFIX,curiouschalk.com
 DOMAIN-SUFFIX,curlycannon.com
@@ -949,6 +957,7 @@ DOMAIN-SUFFIX,elderlyinsect.com
 DOMAIN-SUFFIX,elderlyscissors.com
 DOMAIN-SUFFIX,elderlytown.com
 DOMAIN-SUFFIX,elephantqueue.com
+DOMAIN-SUFFIX,embellishedmeadow.com
 DOMAIN-SUFFIX,embermosaic.com
 DOMAIN-SUFFIX,emptyescort.com
 DOMAIN-SUFFIX,enchantedjudge.com
@@ -960,6 +969,7 @@ DOMAIN-SUFFIX,encourageshock.com
 DOMAIN-SUFFIX,encouragingleaf.com
 DOMAIN-SUFFIX,encouragingvase.com
 DOMAIN-SUFFIX,encouragingwilderness.com
+DOMAIN-SUFFIX,endurablebulb.com
 DOMAIN-SUFFIX,endurablecrayon.com
 DOMAIN-SUFFIX,endurableshop.com
 DOMAIN-SUFFIX,energeticexample.com
@@ -971,6 +981,7 @@ DOMAIN-SUFFIX,entertainingeyes.com
 DOMAIN-SUFFIX,entertainskin.com
 DOMAIN-SUFFIX,enthusiasticdad.com
 DOMAIN-SUFFIX,enthusiasticring.com
+DOMAIN-SUFFIX,enthusiastictemper.com
 DOMAIN-SUFFIX,enviousshape.com
 DOMAIN-SUFFIX,enviousthread.com
 DOMAIN-SUFFIX,equablekettle.com
@@ -1017,6 +1028,7 @@ DOMAIN-SUFFIX,fatcoil.com
 DOMAIN-SUFFIX,faultycanvas.com
 DOMAIN-SUFFIX,faultyfowl.com
 DOMAIN-SUFFIX,fearfowl.com
+DOMAIN-SUFFIX,fearfulfear.com
 DOMAIN-SUFFIX,fearfulfish.com
 DOMAIN-SUFFIX,fearfulmint.com
 DOMAIN-SUFFIX,fearlessfaucet.com
@@ -1040,6 +1052,7 @@ DOMAIN-SUFFIX,flowerycreature.com
 DOMAIN-SUFFIX,floweryfact.com
 DOMAIN-SUFFIX,floweryflavor.com
 DOMAIN-SUFFIX,floweryoperation.com
+DOMAIN-SUFFIX,flutteringfireman.com
 DOMAIN-SUFFIX,foamyfood.com
 DOMAIN-SUFFIX,foamypain.com
 DOMAIN-SUFFIX,forecasttiger.com
@@ -1129,6 +1142,7 @@ DOMAIN-SUFFIX,guitargrandmother.com
 DOMAIN-SUFFIX,gulliblecamp.com
 DOMAIN-SUFFIX,gulliblegrip.com
 DOMAIN-SUFFIX,gullibleguitar.com
+DOMAIN-SUFFIX,gustygrandmother.com
 DOMAIN-SUFFIX,h78xb.pw
 DOMAIN-SUFFIX,habitualhumor.com
 DOMAIN-SUFFIX,hallowedinvention.com
@@ -1273,6 +1287,7 @@ DOMAIN-SUFFIX,livelyreward.com
 DOMAIN-SUFFIX,livingsleet.com
 DOMAIN-SUFFIX,lizardslaugh.com
 DOMAIN-SUFFIX,loadsurprise.com
+DOMAIN-SUFFIX,lonelyflavor.com
 DOMAIN-SUFFIX,longinglettuce.com
 DOMAIN-SUFFIX,longingtrees.com
 DOMAIN-SUFFIX,looseloaf.com
@@ -1303,6 +1318,7 @@ DOMAIN-SUFFIX,markedmeasure.com
 DOMAIN-SUFFIX,markedpail.com
 DOMAIN-SUFFIX,marketspiders.com
 DOMAIN-SUFFIX,marriedbelief.com
+DOMAIN-SUFFIX,marriedmailbox.com
 DOMAIN-SUFFIX,massivebasket.com
 DOMAIN-SUFFIX,massivemark.com
 DOMAIN-SUFFIX,materialexample.com
@@ -1338,6 +1354,7 @@ DOMAIN-SUFFIX,militaryverse.com
 DOMAIN-SUFFIX,mimosamajor.com
 DOMAIN-SUFFIX,mindlessmark.com
 DOMAIN-SUFFIX,minormeeting.com
+DOMAIN-SUFFIX,minuteburst.com
 DOMAIN-SUFFIX,minuterhythm.com
 DOMAIN-SUFFIX,miscreantmine.com
 DOMAIN-SUFFIX,miscreantmoon.com
@@ -1362,6 +1379,7 @@ DOMAIN-SUFFIX,muteknife.com
 DOMAIN-SUFFIX,mutemailbox.com
 DOMAIN-SUFFIX,muterange.com
 DOMAIN-SUFFIX,mysteriousmonth.com
+DOMAIN-SUFFIX,naivestatement.com
 DOMAIN-SUFFIX,nappyattack.com
 DOMAIN-SUFFIX,nappyneck.com
 DOMAIN-SUFFIX,necessarywax.com
@@ -1424,6 +1442,7 @@ DOMAIN-SUFFIX,parcelcreature.com
 DOMAIN-SUFFIX,parchedangle.com
 DOMAIN-SUFFIX,parchedsofa.com
 DOMAIN-SUFFIX,pardonpopular.com
+DOMAIN-SUFFIX,parentpicture.com
 DOMAIN-SUFFIX,parsimoniouspolice.com
 DOMAIN-SUFFIX,partplanes.com
 DOMAIN-SUFFIX,passengerpage.com
@@ -1432,6 +1451,8 @@ DOMAIN-SUFFIX,pastcabbage.com
 DOMAIN-SUFFIX,pastepot.com
 DOMAIN-SUFFIX,pastoralcorn.com
 DOMAIN-SUFFIX,pastoralroad.com
+DOMAIN-SUFFIX,peacefullimit.com
+DOMAIN-SUFFIX,pedromister.com
 DOMAIN-SUFFIX,pedropanther.com
 DOMAIN-SUFFIX,pegasusplate.com
 DOMAIN-SUFFIX,penspade.com
@@ -1538,6 +1559,7 @@ DOMAIN-SUFFIX,quietknowledge.com
 DOMAIN-SUFFIX,quillkick.com
 DOMAIN-SUFFIX,quirkysugar.com
 DOMAIN-SUFFIX,quixoticnebula.com
+DOMAIN-SUFFIX,quizzicalpartner.com
 DOMAIN-SUFFIX,quizzicalzephyr.com
 DOMAIN-SUFFIX,rabbitbreath.com
 DOMAIN-SUFFIX,rabbitrifle.com
@@ -1634,6 +1656,7 @@ DOMAIN-SUFFIX,sailsuit.com
 DOMAIN-SUFFIX,samesticks.com
 DOMAIN-SUFFIX,samestretch.com
 DOMAIN-SUFFIX,satisfycork.com
+DOMAIN-SUFFIX,satisfyingshirt.com
 DOMAIN-SUFFIX,satisfyingshow.com
 DOMAIN-SUFFIX,satisfyingspark.com
 DOMAIN-SUFFIX,savoryorange.com
@@ -1649,6 +1672,7 @@ DOMAIN-SUFFIX,scaredsidewalk.com
 DOMAIN-SUFFIX,scaredsnake.com
 DOMAIN-SUFFIX,scaredsnakes.com
 DOMAIN-SUFFIX,scaredsong.com
+DOMAIN-SUFFIX,scaredstomach.com
 DOMAIN-SUFFIX,scaredstory.com
 DOMAIN-SUFFIX,scaredswing.com
 DOMAIN-SUFFIX,scarefowl.com
@@ -1673,6 +1697,7 @@ DOMAIN-SUFFIX,scrubswim.com
 DOMAIN-SUFFIX,seashoresociety.com
 DOMAIN-SUFFIX,seashoreturn.com
 DOMAIN-SUFFIX,seatsmoke.com
+DOMAIN-SUFFIX,secondhandfall.com
 DOMAIN-SUFFIX,secretivecub.com
 DOMAIN-SUFFIX,secretivesheep.com
 DOMAIN-SUFFIX,secretivestick.com
@@ -1702,6 +1727,7 @@ DOMAIN-SUFFIX,shakysurprise.com
 DOMAIN-SUFFIX,shakytaste.com
 DOMAIN-SUFFIX,shallowblade.com
 DOMAIN-SUFFIX,shallowsmile.com
+DOMAIN-SUFFIX,shamerain.com
 DOMAIN-SUFFIX,shapecomb.com
 DOMAIN-SUFFIX,sharppatch.com
 DOMAIN-SUFFIX,sheltercellar.com
@@ -1758,6 +1784,7 @@ DOMAIN-SUFFIX,smilingshake.com
 DOMAIN-SUFFIX,smilingswim.com
 DOMAIN-SUFFIX,smilingwaves.com
 DOMAIN-SUFFIX,smoggysnakes.com
+DOMAIN-SUFFIX,smoggysongs.com
 DOMAIN-SUFFIX,smoggystation.com
 DOMAIN-SUFFIX,snailscart.com
 DOMAIN-SUFFIX,snailsengine.com
@@ -1879,6 +1906,7 @@ DOMAIN-SUFFIX,straightnest.com
 DOMAIN-SUFFIX,strangeclocks.com
 DOMAIN-SUFFIX,strangersponge.com
 DOMAIN-SUFFIX,strangesink.com
+DOMAIN-SUFFIX,streetsort.com
 DOMAIN-SUFFIX,stretchsister.com
 DOMAIN-SUFFIX,stretchsneeze.com
 DOMAIN-SUFFIX,stretchsquirrel.com
@@ -1981,6 +2009,7 @@ DOMAIN-SUFFIX,thomastorch.com
 DOMAIN-SUFFIX,thoughtlessknot.com
 DOMAIN-SUFFIX,threechurch.com
 DOMAIN-SUFFIX,threetruck.com
+DOMAIN-SUFFIX,thrivecover.com
 DOMAIN-SUFFIX,throattrees.com
 DOMAIN-SUFFIX,thunderingrose.com
 DOMAIN-SUFFIX,thunderingtendency.com
@@ -2023,12 +2052,15 @@ DOMAIN-SUFFIX,truculentrate.com
 DOMAIN-SUFFIX,tumblebirds.com
 DOMAIN-SUFFIX,tumbleicicle.com
 DOMAIN-SUFFIX,tutorthing.com
+DOMAIN-SUFFIX,twistloss.com
+DOMAIN-SUFFIX,twistsweater.com
 DOMAIN-SUFFIX,typicalairplane.com
 DOMAIN-SUFFIX,typicalteeth.com
 DOMAIN-SUFFIX,tzwaw.pw
 DOMAIN-SUFFIX,ubiquitousyard.com
 DOMAIN-SUFFIX,ultraoranges.com
 DOMAIN-SUFFIX,unablehope.com
+DOMAIN-SUFFIX,unaccountablecreator.com
 DOMAIN-SUFFIX,unaccountablepie.com
 DOMAIN-SUFFIX,unadvisedengine.com
 DOMAIN-SUFFIX,unarmedindustry.com
@@ -2074,6 +2106,7 @@ DOMAIN-SUFFIX,victoriousrequest.com
 DOMAIN-SUFFIX,virgoplato.com
 DOMAIN-SUFFIX,virtualvincent.com
 DOMAIN-SUFFIX,vivaciousveil.com
+DOMAIN-SUFFIX,vmundanepollution.com
 DOMAIN-SUFFIX,voicelessvein.com
 DOMAIN-SUFFIX,voicevegetable.com
 DOMAIN-SUFFIX,volatileprofit.com
@@ -2129,6 +2162,7 @@ DOMAIN-SUFFIX,youthfulnoise.com
 DOMAIN-SUFFIX,zbwp6ghm.com
 DOMAIN-SUFFIX,zealousfield.com
 DOMAIN-SUFFIX,zestycrime.com
+DOMAIN-SUFFIX,zestywire.com
 DOMAIN-SUFFIX,zipperxray.com
 DOMAIN-SUFFIX,zippywind.com
 DOMAIN-SUFFIX,zlp6s.pw

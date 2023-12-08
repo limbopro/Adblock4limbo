@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 07 Dec 2023 11:18:00 GMT
-# entries:        3780
+# last updated:   Fri, 08 Dec 2023 10:16:08 GMT
+# entries:        3776
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -472,7 +472,6 @@ DOMAIN-SUFFIX,ads.gamespyid.com
 DOMAIN-SUFFIX,ads.gamigo.de
 DOMAIN-SUFFIX,ads.gaming-universe.de
 DOMAIN-SUFFIX,ads.gaming1.com
-DOMAIN-SUFFIX,ads.gaypoint.hu
 DOMAIN-SUFFIX,ads.geekswithblogs.net
 DOMAIN-SUFFIX,ads.getlucky.com
 DOMAIN-SUFFIX,ads.gld.dk
@@ -939,7 +938,6 @@ DOMAIN-SUFFIX,alclick.com
 DOMAIN-SUFFIX,alenty.com
 DOMAIN-SUFFIX,alertafterthought.com
 DOMAIN-SUFFIX,alexa-sitestats.s3.amazonaws.com
-DOMAIN-SUFFIX,alexametrics.com
 DOMAIN-SUFFIX,algorix.co
 DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
@@ -1040,7 +1038,6 @@ DOMAIN-SUFFIX,as.webmd.com
 DOMAIN-SUFFIX,as2.adserverhd.com
 DOMAIN-SUFFIX,aserv.motorsgate.com
 DOMAIN-SUFFIX,asewlfjqwlflkew.com
-DOMAIN-SUFFIX,asia999.website
 DOMAIN-SUFFIX,aso1.net
 DOMAIN-SUFFIX,assets1.exgfnetwork.com
 DOMAIN-SUFFIX,assoc-amazon.com
@@ -1254,6 +1251,7 @@ DOMAIN-SUFFIX,brealtime.com
 DOMAIN-SUFFIX,bridgetrack.com
 DOMAIN-SUFFIX,briefstem.com
 DOMAIN-SUFFIX,brightcom.com
+DOMAIN-SUFFIX,brightinfo.com
 DOMAIN-SUFFIX,brightmountainmedia.com
 DOMAIN-SUFFIX,broadboundary.com
 DOMAIN-SUFFIX,broadcastbed.com
@@ -2175,7 +2173,6 @@ DOMAIN-SUFFIX,l1.britannica.com
 DOMAIN-SUFFIX,l6b587txj1.com
 DOMAIN-SUFFIX,lakequincy.com
 DOMAIN-SUFFIX,lameletters.com
-DOMAIN-SUFFIX,lanistaads.com
 DOMAIN-SUFFIX,larati.net
 DOMAIN-SUFFIX,largebrass.com
 DOMAIN-SUFFIX,laughablecopper.com
@@ -3419,6 +3416,7 @@ DOMAIN-SUFFIX,touchclarity.com
 DOMAIN-SUFFIX,tour.brazzers.com
 DOMAIN-SUFFIX,track.adform.net
 DOMAIN-SUFFIX,track.anchorfree.com
+DOMAIN-SUFFIX,track.canva.com
 DOMAIN-SUFFIX,track.contently.com
 DOMAIN-SUFFIX,track.effiliation.com
 DOMAIN-SUFFIX,track.flexlinks.com
@@ -3526,7 +3524,6 @@ DOMAIN-SUFFIX,trk.bad-tool-tell-doubt.xyz
 DOMAIN-SUFFIX,trk.bc.shutterfly.com
 DOMAIN-SUFFIX,trk.pinterest.com
 DOMAIN-SUFFIX,trk.techtarget.com
-DOMAIN-SUFFIX,trk.us-learn-teacher-poetry.xyz
 DOMAIN-SUFFIX,trk42.net
 DOMAIN-SUFFIX,trkn.us
 DOMAIN-SUFFIX,trknths.com
@@ -3635,7 +3632,6 @@ DOMAIN-SUFFIX,voicevegetable.com
 DOMAIN-SUFFIX,volatilevessel.com
 DOMAIN-SUFFIX,voluum.com
 DOMAIN-SUFFIX,voluumtrk2.com
-DOMAIN-SUFFIX,volvelle.tech
 DOMAIN-SUFFIX,voyagepotato.com
 DOMAIN-SUFFIX,vpon.com
 DOMAIN-SUFFIX,vrs.cz

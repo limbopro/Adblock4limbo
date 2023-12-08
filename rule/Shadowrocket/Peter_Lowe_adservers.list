@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 07 Dec 2023 11:18:00 GMT
-# entries:        3780
+# last updated:   Fri, 08 Dec 2023 10:16:08 GMT
+# entries:        3776
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -472,7 +472,6 @@ DOMAIN-SUFFIX,ads.gamespyid.com, reject
 DOMAIN-SUFFIX,ads.gamigo.de, reject
 DOMAIN-SUFFIX,ads.gaming-universe.de, reject
 DOMAIN-SUFFIX,ads.gaming1.com, reject
-DOMAIN-SUFFIX,ads.gaypoint.hu, reject
 DOMAIN-SUFFIX,ads.geekswithblogs.net, reject
 DOMAIN-SUFFIX,ads.getlucky.com, reject
 DOMAIN-SUFFIX,ads.gld.dk, reject
@@ -939,7 +938,6 @@ DOMAIN-SUFFIX,alclick.com, reject
 DOMAIN-SUFFIX,alenty.com, reject
 DOMAIN-SUFFIX,alertafterthought.com, reject
 DOMAIN-SUFFIX,alexa-sitestats.s3.amazonaws.com, reject
-DOMAIN-SUFFIX,alexametrics.com, reject
 DOMAIN-SUFFIX,algorix.co, reject
 DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
@@ -1040,7 +1038,6 @@ DOMAIN-SUFFIX,as.webmd.com, reject
 DOMAIN-SUFFIX,as2.adserverhd.com, reject
 DOMAIN-SUFFIX,aserv.motorsgate.com, reject
 DOMAIN-SUFFIX,asewlfjqwlflkew.com, reject
-DOMAIN-SUFFIX,asia999.website, reject
 DOMAIN-SUFFIX,aso1.net, reject
 DOMAIN-SUFFIX,assets1.exgfnetwork.com, reject
 DOMAIN-SUFFIX,assoc-amazon.com, reject
@@ -1254,6 +1251,7 @@ DOMAIN-SUFFIX,brealtime.com, reject
 DOMAIN-SUFFIX,bridgetrack.com, reject
 DOMAIN-SUFFIX,briefstem.com, reject
 DOMAIN-SUFFIX,brightcom.com, reject
+DOMAIN-SUFFIX,brightinfo.com, reject
 DOMAIN-SUFFIX,brightmountainmedia.com, reject
 DOMAIN-SUFFIX,broadboundary.com, reject
 DOMAIN-SUFFIX,broadcastbed.com, reject
@@ -2175,7 +2173,6 @@ DOMAIN-SUFFIX,l1.britannica.com, reject
 DOMAIN-SUFFIX,l6b587txj1.com, reject
 DOMAIN-SUFFIX,lakequincy.com, reject
 DOMAIN-SUFFIX,lameletters.com, reject
-DOMAIN-SUFFIX,lanistaads.com, reject
 DOMAIN-SUFFIX,larati.net, reject
 DOMAIN-SUFFIX,largebrass.com, reject
 DOMAIN-SUFFIX,laughablecopper.com, reject
@@ -3419,6 +3416,7 @@ DOMAIN-SUFFIX,touchclarity.com, reject
 DOMAIN-SUFFIX,tour.brazzers.com, reject
 DOMAIN-SUFFIX,track.adform.net, reject
 DOMAIN-SUFFIX,track.anchorfree.com, reject
+DOMAIN-SUFFIX,track.canva.com, reject
 DOMAIN-SUFFIX,track.contently.com, reject
 DOMAIN-SUFFIX,track.effiliation.com, reject
 DOMAIN-SUFFIX,track.flexlinks.com, reject
@@ -3526,7 +3524,6 @@ DOMAIN-SUFFIX,trk.bad-tool-tell-doubt.xyz, reject
 DOMAIN-SUFFIX,trk.bc.shutterfly.com, reject
 DOMAIN-SUFFIX,trk.pinterest.com, reject
 DOMAIN-SUFFIX,trk.techtarget.com, reject
-DOMAIN-SUFFIX,trk.us-learn-teacher-poetry.xyz, reject
 DOMAIN-SUFFIX,trk42.net, reject
 DOMAIN-SUFFIX,trkn.us, reject
 DOMAIN-SUFFIX,trknths.com, reject
@@ -3635,7 +3632,6 @@ DOMAIN-SUFFIX,voicevegetable.com, reject
 DOMAIN-SUFFIX,volatilevessel.com, reject
 DOMAIN-SUFFIX,voluum.com, reject
 DOMAIN-SUFFIX,voluumtrk2.com, reject
-DOMAIN-SUFFIX,volvelle.tech, reject
 DOMAIN-SUFFIX,voyagepotato.com, reject
 DOMAIN-SUFFIX,vpon.com, reject
 DOMAIN-SUFFIX,vrs.cz, reject

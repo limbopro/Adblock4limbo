@@ -1785,7 +1785,7 @@ function open_googlesearch_iframe() {
             if (!document.querySelectorAll("script[src*='=a897efc85e']").length >= 1) {
                 let parentElement = document.querySelector('#searchbyGoogle');
                 let new_s = document.createElement('script');
-                new_s.src = 'https://cse.google.com/cse.js?cx=a897efc85ee66bfdd';
+                new_s.src = 'https://cse.google.com/cse.js?cx=77ba49c819b1d40d7';
                 parentElement.appendChild(new_s);
                 body_build('false');
             }
@@ -1813,7 +1813,7 @@ function open_googlesearch_iframe() {
             if (!document.querySelectorAll("script[src*='=a897efc85e']").length >= 1) {
                 let parentElement = document.querySelector('#searchbyGoogle');
                 let new_s = document.createElement('script');
-                new_s.src = 'https://cse.google.com/cse.js?cx=a897efc85ee66bfdd';
+                new_s.src = 'https://cse.google.com/cse.js?cx=77ba49c819b1d40d7';
                 parentElement.appendChild(new_s);
                 body_build('false');
             }

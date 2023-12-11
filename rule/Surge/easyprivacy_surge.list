@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312101348
+## ! Version: 202312111438
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Dec 2023 13:48 UTC
+## ! Last modified: 11 Dec 2023 14:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -196,6 +196,7 @@ DOMAIN-SUFFIX,iconnode.com
 DOMAIN-SUFFIX,id-ward.com
 DOMAIN-SUFFIX,id5-sync.com
 DOMAIN-SUFFIX,idx.lat
+DOMAIN-SUFFIX,ilius.net
 DOMAIN-SUFFIX,impactcdn.com
 DOMAIN-SUFFIX,impactradius-event.com
 DOMAIN-SUFFIX,imrworldwide.com
@@ -469,6 +470,7 @@ DOMAIN-SUFFIX,6ldu6qa.com
 DOMAIN-SUFFIX,82o9v830.com
 DOMAIN-SUFFIX,abackafterthought.com
 DOMAIN-SUFFIX,abackchain.com
+DOMAIN-SUFFIX,abackframe.com
 DOMAIN-SUFFIX,abacksoda.com
 DOMAIN-SUFFIX,abandonedaction.com
 DOMAIN-SUFFIX,aboardamusement.com
@@ -547,6 +549,7 @@ DOMAIN-SUFFIX,anxiousapples.com
 DOMAIN-SUFFIX,apathetictheory.com
 DOMAIN-SUFFIX,apparatuslip.com
 DOMAIN-SUFFIX,aquaticalarm.com
+DOMAIN-SUFFIX,aquaticanswer.com
 DOMAIN-SUFFIX,aquaticowl.com
 DOMAIN-SUFFIX,ar1nvz5.com
 DOMAIN-SUFFIX,archswimming.com
@@ -682,6 +685,7 @@ DOMAIN-SUFFIX,butterbulb.com
 DOMAIN-SUFFIX,butterburst.com
 DOMAIN-SUFFIX,buttonladybug.com
 DOMAIN-SUFFIX,cabledemand.com
+DOMAIN-SUFFIX,cakesdrum.com
 DOMAIN-SUFFIX,calculatingcircle.com
 DOMAIN-SUFFIX,calculatingtoothbrush.com
 DOMAIN-SUFFIX,calculatorcamera.com
@@ -748,6 +752,7 @@ DOMAIN-SUFFIX,circlelevel.com
 DOMAIN-SUFFIX,clamcelery.com
 DOMAIN-SUFFIX,clammychicken.com
 DOMAIN-SUFFIX,clammytree.com
+DOMAIN-SUFFIX,clarifyverse.com
 DOMAIN-SUFFIX,cleanhaircut.com
 DOMAIN-SUFFIX,clearcabbage.com
 DOMAIN-SUFFIX,cloisteredcord.com
@@ -859,6 +864,7 @@ DOMAIN-SUFFIX,dashingdrop.com
 DOMAIN-SUFFIX,dashingsweater.com
 DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dazzlingbook.com
+DOMAIN-SUFFIX,deadpangate.com
 DOMAIN-SUFFIX,deadpanmarble.com
 DOMAIN-SUFFIX,deadpantruck.com
 DOMAIN-SUFFIX,deafeningdock.com
@@ -892,6 +898,7 @@ DOMAIN-SUFFIX,detailedgovernment.com
 DOMAIN-SUFFIX,detailedkitten.com
 DOMAIN-SUFFIX,detectdinner.com
 DOMAIN-SUFFIX,detectdiscovery.com
+DOMAIN-SUFFIX,dewdroplagoon.com
 DOMAIN-SUFFIX,differentcoat.com
 DOMAIN-SUFFIX,difficultfog.com
 DOMAIN-SUFFIX,digestiondrawer.com
@@ -1353,6 +1360,7 @@ DOMAIN-SUFFIX,militaryverse.com
 DOMAIN-SUFFIX,mimosamajor.com
 DOMAIN-SUFFIX,mindlessmark.com
 DOMAIN-SUFFIX,minormeeting.com
+DOMAIN-SUFFIX,minusmental.com
 DOMAIN-SUFFIX,minuteburst.com
 DOMAIN-SUFFIX,minuterhythm.com
 DOMAIN-SUFFIX,miscreantmine.com
@@ -1435,6 +1443,7 @@ DOMAIN-SUFFIX,pamelarandom.com
 DOMAIN-SUFFIX,panickycurtain.com
 DOMAIN-SUFFIX,panickypancake.com
 DOMAIN-SUFFIX,panoramicbutter.com
+DOMAIN-SUFFIX,panoramicplane.com
 DOMAIN-SUFFIX,paradoxfactor.com
 DOMAIN-SUFFIX,parallelbulb.com
 DOMAIN-SUFFIX,parcelcreature.com
@@ -1511,6 +1520,7 @@ DOMAIN-SUFFIX,preciousyoke.com
 DOMAIN-SUFFIX,predictplate.com
 DOMAIN-SUFFIX,prefixpatriot.com
 DOMAIN-SUFFIX,prepareplanes.com
+DOMAIN-SUFFIX,presentbedroom.com
 DOMAIN-SUFFIX,presetrabbits.com
 DOMAIN-SUFFIX,presssensor.com
 DOMAIN-SUFFIX,previousplayground.com
@@ -1572,6 +1582,7 @@ DOMAIN-SUFFIX,rainyhand.com
 DOMAIN-SUFFIX,rainyrule.com
 DOMAIN-SUFFIX,rainystretch.com
 DOMAIN-SUFFIX,rainyzinc.com
+DOMAIN-SUFFIX,rambunctiousflock.com
 DOMAIN-SUFFIX,rambunctiousvoyage.com
 DOMAIN-SUFFIX,rampantwork.com
 DOMAIN-SUFFIX,rangecake.com
@@ -1810,6 +1821,7 @@ DOMAIN-SUFFIX,sootheside.com
 DOMAIN-SUFFIX,sophisticatedstory.com
 DOMAIN-SUFFIX,sophisticatedstove.com
 DOMAIN-SUFFIX,sordidsmile.com
+DOMAIN-SUFFIX,sordidstation.com
 DOMAIN-SUFFIX,soresidewalk.com
 DOMAIN-SUFFIX,soresneeze.com
 DOMAIN-SUFFIX,sorethunder.com
@@ -1943,6 +1955,7 @@ DOMAIN-SUFFIX,superficialeyes.com
 DOMAIN-SUFFIX,superficialspring.com
 DOMAIN-SUFFIX,superficialsquare.com
 DOMAIN-SUFFIX,supervisegoldfish.com
+DOMAIN-SUFFIX,supportwaves.com
 DOMAIN-SUFFIX,suspectmark.com
 DOMAIN-SUFFIX,suspendseed.com
 DOMAIN-SUFFIX,swankysquare.com
@@ -2142,6 +2155,7 @@ DOMAIN-SUFFIX,wigglyindustry.com
 DOMAIN-SUFFIX,wildcommittee.com
 DOMAIN-SUFFIX,wildernesscamera.com
 DOMAIN-SUFFIX,wirecomic.com
+DOMAIN-SUFFIX,wirypaste.com
 DOMAIN-SUFFIX,wistfulflight.com
 DOMAIN-SUFFIX,wittypopcorn.com
 DOMAIN-SUFFIX,womanear.com
@@ -3625,6 +3639,7 @@ DOMAIN-SUFFIX,trkr.shoppingminds.net
 DOMAIN-SUFFIX,dnt-userreport.com
 DOMAIN-SUFFIX,tags.op-palvelut.fi
 DOMAIN-SUFFIX,links.boom.ge
+DOMAIN-SUFFIX,stats-real-clients.zentech.gr
 DOMAIN-SUFFIX,heartbeat.pmd.444.hu
 DOMAIN-SUFFIX,pixel.barion.com
 DOMAIN-SUFFIX,rum.marquardmedia.hu
@@ -3771,7 +3786,6 @@ DOMAIN-SUFFIX,ad-tracker-api.luizalabs.com
 DOMAIN-SUFFIX,analytics-coletor-site.ojc.com.br
 DOMAIN-SUFFIX,analytics-stamp.confi.com.vc
 DOMAIN-SUFFIX,analytics.spun.com.br
-DOMAIN-SUFFIX,api.nobeta.com.br
 DOMAIN-SUFFIX,collect.chaordicsystems.com
 DOMAIN-SUFFIX,events.chaordicsystems.com
 DOMAIN-SUFFIX,hitserver.ibope.com.br
@@ -4332,6 +4346,7 @@ DOMAIN-SUFFIX,stats.trimbles.ie
 DOMAIN-SUFFIX,stats.vk-portal.net
 DOMAIN-SUFFIX,stats.wordpress.com
 DOMAIN-SUFFIX,stats.wwitv.com
+DOMAIN-SUFFIX,stats2.mytuner.mobi
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv
 DOMAIN-SUFFIX,szrpr.raen.com
 DOMAIN-SUFFIX,t.3hentai.net

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 10 Dec 2023 08:55:59 GMT
-# entries:        3777
+# last updated:   Tue, 12 Dec 2023 21:48:59 GMT
+# entries:        3778
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1953,6 +1953,7 @@ DOMAIN-SUFFIX,hammerhearing.com, reject
 DOMAIN-SUFFIX,handsomehose.com, reject
 DOMAIN-SUFFIX,handyfield.com, reject
 DOMAIN-SUFFIX,handyfireman.com, reject
+DOMAIN-SUFFIX,handyincrease.com, reject
 DOMAIN-SUFFIX,hardtofindmilk.com, reject
 DOMAIN-SUFFIX,harrenmedia.com, reject
 DOMAIN-SUFFIX,harrenmedianetwork.com, reject

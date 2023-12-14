@@ -421,6 +421,7 @@ DOMAIN-SUFFIX,zhiziyun.com, reject
 DOMAIN-SUFFIX,zhjfad.com, reject
 DOMAIN-SUFFIX,zqzxz.com, reject
 DOMAIN-SUFFIX,zzsx8.com, reject
+DOMAIN-SUFFIX,wwads.cn, reject
 
 # 广告联盟-国外****************
 DOMAIN-SUFFIX,acuityplatform.com, reject

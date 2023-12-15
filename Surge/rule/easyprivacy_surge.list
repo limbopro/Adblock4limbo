@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312141552
+## ! Version: 202312151525
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Dec 2023 15:52 UTC
+## ! Last modified: 15 Dec 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -540,6 +540,7 @@ DOMAIN-SUFFIX,ambiguousquilt.com
 DOMAIN-SUFFIX,ambitiousagreement.com
 DOMAIN-SUFFIX,ambitiousanimal.com
 DOMAIN-SUFFIX,amethystzenith.com
+DOMAIN-SUFFIX,amuckafternoon.com
 DOMAIN-SUFFIX,amusedbucket.com
 DOMAIN-SUFFIX,amusementmorning.com
 DOMAIN-SUFFIX,amusinggirls.com
@@ -2591,6 +2592,7 @@ DOMAIN-SUFFIX,errors.snackly.co
 DOMAIN-SUFFIX,et.educationdynamics.com
 DOMAIN-SUFFIX,etl.springbot.com
 DOMAIN-SUFFIX,eu-mobile.events.data.microsoft.com
+DOMAIN-SUFFIX,ev.moneymade.io
 DOMAIN-SUFFIX,ev.stellarlabs.ai
 DOMAIN-SUFFIX,event-api.contactatonce.com
 DOMAIN-SUFFIX,event-api.rdstation.com.br
@@ -3644,6 +3646,7 @@ DOMAIN-SUFFIX,track.tomwx.net
 DOMAIN-SUFFIX,track.unidata.ai
 DOMAIN-SUFFIX,tracker-00.qvb.qcloud.com
 DOMAIN-SUFFIX,tracking.cat898.com
+DOMAIN-SUFFIX,tracklog.58.com
 DOMAIN-SUFFIX,trail.71baomu.com
 DOMAIN-SUFFIX,videostats.kakao.com
 DOMAIN-SUFFIX,web-trace.ksapisrv.com
@@ -3799,6 +3802,7 @@ DOMAIN-SUFFIX,megadata.co.kr
 DOMAIN-SUFFIX,mtag.mman.kr
 DOMAIN-SUFFIX,ngc1.nsm-corp.com
 DOMAIN-SUFFIX,performanceplay.co.kr
+DOMAIN-SUFFIX,pxl.retaku.net
 DOMAIN-SUFFIX,saluton.cizion.com
 DOMAIN-SUFFIX,sas.nsm-corp.com
 DOMAIN-SUFFIX,teralog.techhub.co.kr
@@ -4471,6 +4475,8 @@ DOMAIN-SUFFIX,tracking.carsales.com.au
 DOMAIN-SUFFIX,tracking.christianpost.com
 DOMAIN-SUFFIX,tracking.digitalocean.com
 DOMAIN-SUFFIX,tracking.engineering.cloud.seek.com.au
+DOMAIN-SUFFIX,tracking.epicgames.com
+DOMAIN-SUFFIX,tracking.fortnite.com
 DOMAIN-SUFFIX,tracking.hsn.com
 DOMAIN-SUFFIX,tracking.shopstyle.co.uk
 DOMAIN-SUFFIX,tracking.shopstyle.com

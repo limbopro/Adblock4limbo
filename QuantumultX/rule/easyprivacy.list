@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312141552
+## ! Version: 202312151525
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Dec 2023 15:52 UTC
+## ! Last modified: 15 Dec 2023 15:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -540,6 +540,7 @@ DOMAIN-SUFFIX,ambiguousquilt.com, reject
 DOMAIN-SUFFIX,ambitiousagreement.com, reject
 DOMAIN-SUFFIX,ambitiousanimal.com, reject
 DOMAIN-SUFFIX,amethystzenith.com, reject
+DOMAIN-SUFFIX,amuckafternoon.com, reject
 DOMAIN-SUFFIX,amusedbucket.com, reject
 DOMAIN-SUFFIX,amusementmorning.com, reject
 DOMAIN-SUFFIX,amusinggirls.com, reject
@@ -2591,6 +2592,7 @@ DOMAIN-SUFFIX,errors.snackly.co, reject
 DOMAIN-SUFFIX,et.educationdynamics.com, reject
 DOMAIN-SUFFIX,etl.springbot.com, reject
 DOMAIN-SUFFIX,eu-mobile.events.data.microsoft.com, reject
+DOMAIN-SUFFIX,ev.moneymade.io, reject
 DOMAIN-SUFFIX,ev.stellarlabs.ai, reject
 DOMAIN-SUFFIX,event-api.contactatonce.com, reject
 DOMAIN-SUFFIX,event-api.rdstation.com.br, reject
@@ -3644,6 +3646,7 @@ DOMAIN-SUFFIX,track.tomwx.net, reject
 DOMAIN-SUFFIX,track.unidata.ai, reject
 DOMAIN-SUFFIX,tracker-00.qvb.qcloud.com, reject
 DOMAIN-SUFFIX,tracking.cat898.com, reject
+DOMAIN-SUFFIX,tracklog.58.com, reject
 DOMAIN-SUFFIX,trail.71baomu.com, reject
 DOMAIN-SUFFIX,videostats.kakao.com, reject
 DOMAIN-SUFFIX,web-trace.ksapisrv.com, reject
@@ -3799,6 +3802,7 @@ DOMAIN-SUFFIX,megadata.co.kr, reject
 DOMAIN-SUFFIX,mtag.mman.kr, reject
 DOMAIN-SUFFIX,ngc1.nsm-corp.com, reject
 DOMAIN-SUFFIX,performanceplay.co.kr, reject
+DOMAIN-SUFFIX,pxl.retaku.net, reject
 DOMAIN-SUFFIX,saluton.cizion.com, reject
 DOMAIN-SUFFIX,sas.nsm-corp.com, reject
 DOMAIN-SUFFIX,teralog.techhub.co.kr, reject
@@ -4471,6 +4475,8 @@ DOMAIN-SUFFIX,tracking.carsales.com.au, reject
 DOMAIN-SUFFIX,tracking.christianpost.com, reject
 DOMAIN-SUFFIX,tracking.digitalocean.com, reject
 DOMAIN-SUFFIX,tracking.engineering.cloud.seek.com.au, reject
+DOMAIN-SUFFIX,tracking.epicgames.com, reject
+DOMAIN-SUFFIX,tracking.fortnite.com, reject
 DOMAIN-SUFFIX,tracking.hsn.com, reject
 DOMAIN-SUFFIX,tracking.shopstyle.co.uk, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject

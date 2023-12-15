@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
 DOMAIN-SUFFIX,24log.com, reject
+DOMAIN-SUFFIX,24log.de, reject
 DOMAIN-SUFFIX,24pm-affiliation.com, reject
 DOMAIN-SUFFIX,2mdn.net, reject
 DOMAIN-SUFFIX,2o7.net, reject
@@ -198,7 +199,6 @@ DOMAIN-SUFFIX,adbilty.me, reject
 DOMAIN-SUFFIX,adblade.com, reject
 DOMAIN-SUFFIX,adblade.org, reject
 DOMAIN-SUFFIX,adblockanalytics.com, reject
-DOMAIN-SUFFIX,adbooth.net, reject
 DOMAIN-SUFFIX,adbot.com, reject
 DOMAIN-SUFFIX,adbrite.com, reject
 DOMAIN-SUFFIX,adbroker.de, reject

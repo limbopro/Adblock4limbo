@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 14 Dec 2023 08:42:41 GMT
-# entries:        3780
+# last updated:   Fri, 15 Dec 2023 16:01:06 GMT
+# entries:        3781
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1892,6 +1892,7 @@ DOMAIN-SUFFIX,gaug.es, reject
 DOMAIN-SUFFIX,gavvia.com, reject
 DOMAIN-SUFFIX,gearwom.de, reject
 DOMAIN-SUFFIX,gekko.spiceworks.com, reject
+DOMAIN-SUFFIX,generateoffice.com, reject
 DOMAIN-SUFFIX,geo.digitalpoint.com, reject
 DOMAIN-SUFFIX,geobanner.adultfriendfinder.com, reject
 DOMAIN-SUFFIX,georiot.com, reject

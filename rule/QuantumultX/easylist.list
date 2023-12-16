@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202312151525
+## ! Version: 202312161552
 ## ! Title: EasyList
-## ! Last modified: 15 Dec 2023 15:25 UTC
+## ! Last modified: 16 Dec 2023 15:52 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -509,6 +509,7 @@ DOMAIN-SUFFIX,4901967b4b.com, reject
 DOMAIN-SUFFIX,493b98cce8bc1a2dd.com, reject
 DOMAIN-SUFFIX,495affa75e.com, reject
 DOMAIN-SUFFIX,49af7cee19.com, reject
+DOMAIN-SUFFIX,49b6b77e56.com, reject
 DOMAIN-SUFFIX,4a136c118e.com, reject
 DOMAIN-SUFFIX,4a167ec12d.com, reject
 DOMAIN-SUFFIX,4a623a5a49.com, reject
@@ -3430,6 +3431,7 @@ DOMAIN-SUFFIX,awsnjsduyhgpk.com, reject
 DOMAIN-SUFFIX,awstaticdn.net, reject
 DOMAIN-SUFFIX,awsurveys.com, reject
 DOMAIN-SUFFIX,awswayful.space, reject
+DOMAIN-SUFFIX,awtpguxqtf.com, reject
 DOMAIN-SUFFIX,awtqbjylk.com, reject
 DOMAIN-SUFFIX,awugxvrmsdalpx.com, reject
 DOMAIN-SUFFIX,awutohkhu.com, reject
@@ -13579,6 +13581,7 @@ DOMAIN-SUFFIX,intelligenceadx.com, reject
 DOMAIN-SUFFIX,intelligenceretarget.com, reject
 DOMAIN-SUFFIX,intellipopup.com, reject
 DOMAIN-SUFFIX,intellitxt.com, reject
+DOMAIN-SUFFIX,intelstqkt.com, reject
 DOMAIN-SUFFIX,intendedeasiestlost.com, reject
 DOMAIN-SUFFIX,intendedoutput.com, reject
 DOMAIN-SUFFIX,intentanalysis.com, reject
@@ -14427,6 +14430,7 @@ DOMAIN-SUFFIX,jvnvrqzvyvbww.top, reject
 DOMAIN-SUFFIX,jvnydntynmru.com, reject
 DOMAIN-SUFFIX,jvrawodh.com, reject
 DOMAIN-SUFFIX,jvsffrjutsax.com, reject
+DOMAIN-SUFFIX,jvydtutqrmdx.com, reject
 DOMAIN-SUFFIX,jvylyreyazmea.top, reject
 DOMAIN-SUFFIX,jvzoupeh.com, reject
 DOMAIN-SUFFIX,jwalf.com, reject
@@ -14889,6 +14893,7 @@ DOMAIN-SUFFIX,kouptufezi.com, reject
 DOMAIN-SUFFIX,koureptu.xyz, reject
 DOMAIN-SUFFIX,koustouk.net, reject
 DOMAIN-SUFFIX,koutobey.net, reject
+DOMAIN-SUFFIX,koxcsmmcealss.com, reject
 DOMAIN-SUFFIX,kpdqdbyi.com, reject
 DOMAIN-SUFFIX,kpkgkkbs.xyz, reject
 DOMAIN-SUFFIX,kqhi97lf.de, reject
@@ -17751,6 +17756,7 @@ DOMAIN-SUFFIX,next-pops.top, reject
 DOMAIN-SUFFIX,nextdark.pro, reject
 DOMAIN-SUFFIX,nextgencounter.com, reject
 DOMAIN-SUFFIX,nextpsh.top, reject
+DOMAIN-SUFFIX,neylwuhxhaek.com, reject
 DOMAIN-SUFFIX,nezuel.com, reject
 DOMAIN-SUFFIX,nezygmobha.com, reject
 DOMAIN-SUFFIX,nfctoroxi.xyz, reject
@@ -18978,6 +18984,7 @@ DOMAIN-SUFFIX,originjargon.com, reject
 DOMAIN-SUFFIX,origintube.com, reject
 DOMAIN-SUFFIX,origunix.com, reject
 DOMAIN-SUFFIX,orisow.com, reject
+DOMAIN-SUFFIX,orjfun.com, reject
 DOMAIN-SUFFIX,orkoedthroug.xyz, reject
 DOMAIN-SUFFIX,orldwhoisquite.com, reject
 DOMAIN-SUFFIX,orldwhoisquite.org, reject
@@ -21727,6 +21734,7 @@ DOMAIN-SUFFIX,qxycdoexyj.com, reject
 DOMAIN-SUFFIX,qyajwjyjnavzq.top, reject
 DOMAIN-SUFFIX,qydrwhhk.xyz, reject
 DOMAIN-SUFFIX,qyenlspei.com, reject
+DOMAIN-SUFFIX,qymdcuco.com, reject
 DOMAIN-SUFFIX,qynpfyvxkyv.com, reject
 DOMAIN-SUFFIX,qynqvkkmbzvkk.top, reject
 DOMAIN-SUFFIX,qyqkemrarznvv.top, reject
@@ -27056,6 +27064,7 @@ DOMAIN-SUFFIX,typescoordinate.com, reject
 DOMAIN-SUFFIX,typiccor.com, reject
 DOMAIN-SUFFIX,typiconrices.com, reject
 DOMAIN-SUFFIX,typierknyaz.website, reject
+DOMAIN-SUFFIX,tyqptghilt.com, reject
 DOMAIN-SUFFIX,tyract.com, reject
 DOMAIN-SUFFIX,tyranbrashore.com, reject
 DOMAIN-SUFFIX,tyrds.com, reject

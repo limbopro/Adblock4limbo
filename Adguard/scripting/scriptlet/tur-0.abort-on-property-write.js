@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["window.onload"],["adregain_wall"],["rInt"],["popURL"],["onPopUnderLoaded"],["popcent_config"],["yeniSekmeAdresi"],["adx"]];
+const argsList = [["adregain_wall"],["rInt"],["popURL"],["onPopUnderLoaded"],["window.onload"],["popcent_config"],["yeniSekmeAdresi"],["adx"]];
 
-const hostnamesMap = new Map([["tekniknot.com",0],["dizilost.com",[0,4]],["memoryhackers.org",1],["r10.net",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["xbox360torrent.com",5],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["4kfilmizlesene.xyz",7]]);
+const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["dizipia.com",2],["birasyadizi.com",3],["seyredeger.com",3],["indirmedenfilmizle.vip",3],["dizilost.com",[3,4]],["xbox360torrent.com",5],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["4kfilmizlesene.xyz",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -135,7 +135,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -143,18 +142,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

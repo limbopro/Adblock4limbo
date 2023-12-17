@@ -42,11 +42,11 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"]];
+const argsList = [["YA_SSP_ID","anonymous"],["BANNER_TYPE_FROM_NANPU","anonymous"],["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"]];
 
-const hostnamesMap = new Map([["secondlifetranslations.com",0],["waves4you.com",1],["timeshighereducation.com",2],["ilovefreesoftware.com",3],["protopage.com",4],["fantasytagtree.com",5],["jamilacuisine.ro",[6,7]],["golfdigest.com",8],["ophim.vip",10],["aniwave.to",11],["bflix.io",11],["f2movies.ru",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12]]);
+const hostnamesMap = new Map([["dzen.ru",0],["pikabu.ru",1],["secondlifetranslations.com",2],["waves4you.com",3],["timeshighereducation.com",4],["ilovefreesoftware.com",5],["protopage.com",6],["fantasytagtree.com",7],["jamilacuisine.ro",[8,9]],["golfdigest.com",10],["ophim.vip",12],["animesuge.to",13],["aniwave.to",13],["bflix.io",13],["f2movies.ru",13],["movies2watch.ru",13],["putlockernew.vc",13],["swatchseries.ru",13],["vidplay.site",13],["vidstream.pro",13],["mcloud.to",13],["team-octavi.com",14]]);
 
-const entitiesMap = new Map([["pobre",9],["flixhq",11],["fmovies",11],["fmoviesz",11]]);
+const entitiesMap = new Map([["pobre",11],["flixhq",13],["fmovies",13],["fmoviesz",13]]);
 
 const exceptionsMap = new Map([]);
 
@@ -60,6 +60,7 @@ function abortOnStackTrace(
     const safe = safeSelf();
     const needleDetails = safe.initPattern(needle, { canNegate: true });
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    if ( needle === '' ) { extraArgs.log = 'all'; }
     const makeProxy = function(owner, chain) {
         const pos = chain.indexOf('.');
         if ( pos === -1 ) {
@@ -120,7 +121,7 @@ function getExceptionToken() {
 
 function matchesStackTrace(
     needleDetails,
-    logLevel = 0
+    logLevel = ''
 ) {
     const safe = safeSelf();
     const exceptionToken = getExceptionToken();
@@ -151,11 +152,12 @@ function matchesStackTrace(
     }
     lines[0] = `stackDepth:${lines.length-1}`;
     const stack = lines.join('\t');
-    const r = safe.testPattern(needleDetails, stack);
+    const r = needleDetails.matchAll !== true &&
+        safe.testPattern(needleDetails, stack);
     if (
-        logLevel === 1 ||
-        logLevel === 2 && r ||
-        logLevel === 3 && !r
+        logLevel === 'all' ||
+        logLevel === 'match' && r ||
+        logLevel === 'nomatch' && !r
     ) {
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }
@@ -208,7 +210,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -216,18 +217,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

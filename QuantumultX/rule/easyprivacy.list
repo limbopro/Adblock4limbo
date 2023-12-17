@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312161512
+## ! Version: 202312171455
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Dec 2023 15:12 UTC
+## ! Last modified: 17 Dec 2023 14:55 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -360,7 +360,6 @@ DOMAIN-SUFFIX,turboeagle.co, reject
 DOMAIN-SUFFIX,turbolion.io, reject
 DOMAIN-SUFFIX,tvpixel.com, reject
 DOMAIN-SUFFIX,tw.cx, reject
-DOMAIN-SUFFIX,tzegilo.com, reject
 DOMAIN-SUFFIX,ugdturner.com, reject
 DOMAIN-SUFFIX,uidapi.com, reject
 DOMAIN-SUFFIX,uqd.io, reject
@@ -3704,6 +3703,7 @@ DOMAIN-SUFFIX,dmpcdn.el-mundo.net, reject
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it, reject
 DOMAIN-SUFFIX,evnt.iol.it, reject
 DOMAIN-SUFFIX,fb_servpub-a.akamaihd.net, reject
+DOMAIN-SUFFIX,heatmaps.lcisoft.it, reject
 DOMAIN-SUFFIX,limone.iltrovatore.it, reject
 DOMAIN-SUFFIX,livestats.matrix.it, reject
 DOMAIN-SUFFIX,log.edidomus.it, reject
@@ -4116,6 +4116,7 @@ DOMAIN-SUFFIX,dc.banggood.com, reject
 DOMAIN-SUFFIX,dd.auspost.com.au, reject
 DOMAIN-SUFFIX,dd.nytimes.com, reject
 DOMAIN-SUFFIX,deliver.ptgncdn.com, reject
+DOMAIN-SUFFIX,df.infra.shopee.ph, reject
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au, reject
 DOMAIN-SUFFIX,dp.shoprunner.com, reject
 DOMAIN-SUFFIX,dtag.breadfinancial.com, reject
@@ -4486,6 +4487,7 @@ DOMAIN-SUFFIX,trk.tirto.id, reject
 DOMAIN-SUFFIX,trx3.famousfix.com, reject
 DOMAIN-SUFFIX,ts.delfi.lt, reject
 DOMAIN-SUFFIX,ua.indianexpress.com, reject
+DOMAIN-SUFFIX,ubt.tracking.shopee.ph, reject
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com, reject
 DOMAIN-SUFFIX,um.contentstudio.io, reject
 DOMAIN-SUFFIX,umami.wakarimasen.moe, reject

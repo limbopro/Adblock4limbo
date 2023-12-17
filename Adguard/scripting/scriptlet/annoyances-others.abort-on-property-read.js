@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["videoIds"],["Object.prototype.autoplay_position"],["Object.prototype.videoAdvertisingMode"],["DisableDevtool"],["disable_copy"],["getSelection"],["disableSelection"],["clipboard_addLink"],["addCopy"],["wccp_pro_iscontenteditable"],["drag_off"],["UnGrabber"],["ready"],["sccopytext"],["contentprotector"],["wp_copy"],["disableselect"],["document.oncontextmenu"],["nocontext"],["clickIE4"],["copyToClipboard"],["disable_copy_ie"],["disable_hot_keys"],["mousedwn"],["stopPrntScr"],["addMultiEventListener"],["addLink"],["mousehandler"]];
 
-const hostnamesMap = new Map([["marriedgames.com.br",0],["media.eagleplatform.com",1],["dailymail.co.uk",2],["dizipub1.com",3],["dizipub2.com",3],["dizipub3.com",3],["dizipub4.com",3],["dizipub5.com",3],["dizipub6.com",3],["dizipub7.com",3],["dizipub8.com",3],["dizipub9.com",3],["dizipub10.com",3],["daotranslate.com",[4,9]],["pabrikarang.com",4],["novatoscans.top",4],["senpaiediciones.com",4],["truelovejapan.com",4],["neo-blood.co.jp",4],["machow2.com",4],["rawneix.in",4],["mangacrab.com",4],["metalnaveia66.com",4],["bollywoodhindi.in",4],["kdramasurdu.net",4],["theturtleislandnews.com",4],["audiotools.in",4],["audiobookcup.com",4],["lapandilladelarejilla.es",4],["7misr4day.com",4],["michaelemad.com",4],["lazytranslations.com",4],["wartaterkini.news",4],["foxaholic.com",4],["koreanaddict.net",4],["jstranslations1.com",4],["baltasar5010purohentai.com",4],["clockks.com",4],["iptv4best.com",4],["reinodekovel.com",4],["elektrikmen.com",4],["world4.eu",4],["activationkeys.co",4],["samuraiscan.com",4],["digitalsynopsis.com",[4,20]],["easyayurveda.com",[4,9,18,22]],["tunovelaligera.com",[4,21,22]],["fakazaduo.com",5],["sports-g.com",5],["chungnamilbo.co.kr",5],["jejusori.net",5],["incheonilbo.com",5],["ggilbo.com",5],["newsnjoy.or.kr",5],["mediaus.co.kr",5],["lec.co.kr",5],["spotvnews.co.kr",5],["ibric.org",5],["footballist.co.kr",5],["hankooki.com",5],["gametoc.hankyung.com",5],["digitaltoday.co.kr",5],["globale.co.kr",5],["veritas-a.com",5],["shinailbo.co.kr",5],["ksilbo.co.kr",5],["health.chosun.com",5],["gukjenews.com",5],["seoulfn.com",5],["labortoday.co.kr",5],["aitimes.kr",5],["salgoonews.com",5],["postshare.co.kr",5],["rbc.ru",5],["epnc.co.kr",5],["wolyo.co.kr",5],["hinfomax.co.kr",5],["outdoornews.co.kr",5],["anekdoty.ru",5],["championat.com",5],["bloombergquint.com",5],["bigcinema-online.net",5],["bigcinema-tv.club",5],["gidonline-kino.club",5],["kinogo-2017.com",5],["kinogo-720.club",5],["kinogoonline.club",5],["season-var.net",5],["topcinema.tv",5],["kino-kingdom.com",5],["hd-kinogo.co",5],["skidrowreloaded.com",[6,19]],["allaboutshaving.kr",6],["allturkserials.com",6],["victorytale.com",6],["osomatsusan.hatenablog.com",6],["iembra2or.com",[6,18]],["battle-one.com",[6,17]],["terbit21.online",6],["wizardsubs.com",[6,18]],["audio-sound-premium.com",6],["sysnettechsolutions.com",6],["mustafabukulmez.com",[6,19]],["ifdreamscametrue.com",6],["e-marineeducation.com",6],["waktusehat.xyz",[6,23]],["viralogic.xyz",[6,23]],["anisubindo.video",6],["portalwrc.pl",6],["lyrsense.com",7],["braziljournal.com",8],["humoruniv.com",10],["nullpress.net",11],["plantaomaringa.com",12],["blisseyhusband.in",[13,14]],["nubng.com",14],["blitzrechner.de",15],["theasianparent.com",16],["tutoganga.blogspot.com",16],["texte.work",16],["procrackerz.org",18],["clujust.ro",22],["secondlifetranslations.com",22],["kusonime.com",23],["exlyrics.com",24],["moviesrush.one",24],["skidrowcodex.net",24],["ahstudios.net",25],["crunchyscan.fr",25],["picallow.com",25],["thecustomrom.com",25],["muharebetarihi.com",25],["psycabi.net",26],["hatauzmani.com",27],["kurosave.com",27]]);
+const hostnamesMap = new Map([["marriedgames.com.br",0],["media.eagleplatform.com",1],["dailymail.co.uk",2],["dizipub1.com",3],["dizipub2.com",3],["dizipub3.com",3],["dizipub4.com",3],["dizipub5.com",3],["dizipub6.com",3],["dizipub7.com",3],["dizipub8.com",3],["dizipub9.com",3],["dizipub10.com",3],["daotranslate.com",[4,9]],["pabrikarang.com",4],["novatoscans.top",4],["senpaiediciones.com",4],["truelovejapan.com",4],["neo-blood.co.jp",4],["machow2.com",4],["rawneix.in",4],["mangacrab.com",4],["metalnaveia66.com",4],["bollywoodhindi.in",4],["kdramasurdu.net",4],["theturtleislandnews.com",4],["audiotools.in",4],["audiobookcup.com",4],["lapandilladelarejilla.es",4],["7misr4day.com",4],["michaelemad.com",4],["lazytranslations.com",4],["wartaterkini.news",4],["foxaholic.com",4],["koreanaddict.net",4],["jstranslations1.com",4],["baltasar5010purohentai.com",4],["clockks.com",4],["iptv4best.com",4],["reinodekovel.com",4],["elektrikmen.com",4],["world4.eu",4],["activationkeys.co",4],["samuraiscan.com",4],["filmzone.com",4],["digitalsynopsis.com",[4,20]],["easyayurveda.com",[4,9,18,22]],["tunovelaligera.com",[4,21,22]],["fakazaduo.com",5],["sports-g.com",5],["chungnamilbo.co.kr",5],["jejusori.net",5],["incheonilbo.com",5],["ggilbo.com",5],["newsnjoy.or.kr",5],["mediaus.co.kr",5],["lec.co.kr",5],["spotvnews.co.kr",5],["ibric.org",5],["footballist.co.kr",5],["hankooki.com",5],["gametoc.hankyung.com",5],["digitaltoday.co.kr",5],["globale.co.kr",5],["veritas-a.com",5],["shinailbo.co.kr",5],["ksilbo.co.kr",5],["health.chosun.com",5],["gukjenews.com",5],["seoulfn.com",5],["labortoday.co.kr",5],["aitimes.kr",5],["salgoonews.com",5],["postshare.co.kr",5],["rbc.ru",5],["epnc.co.kr",5],["wolyo.co.kr",5],["hinfomax.co.kr",5],["outdoornews.co.kr",5],["anekdoty.ru",5],["championat.com",5],["bloombergquint.com",5],["bigcinema-online.net",5],["bigcinema-tv.club",5],["gidonline-kino.club",5],["kinogo-2017.com",5],["kinogo-720.club",5],["kinogoonline.club",5],["season-var.net",5],["topcinema.tv",5],["kino-kingdom.com",5],["hd-kinogo.co",5],["skidrowreloaded.com",[6,19]],["allaboutshaving.kr",6],["allturkserials.com",6],["victorytale.com",6],["osomatsusan.hatenablog.com",6],["iembra2or.com",[6,18]],["battle-one.com",[6,17]],["terbit21.online",6],["wizardsubs.com",[6,18]],["audio-sound-premium.com",6],["sysnettechsolutions.com",6],["mustafabukulmez.com",[6,19]],["ifdreamscametrue.com",6],["e-marineeducation.com",6],["waktusehat.xyz",[6,23]],["viralogic.xyz",[6,23]],["anisubindo.video",6],["portalwrc.pl",6],["lyrsense.com",7],["braziljournal.com",8],["humoruniv.com",10],["nullpress.net",11],["plantaomaringa.com",12],["blisseyhusband.in",[13,14]],["nubng.com",14],["blitzrechner.de",15],["theasianparent.com",16],["tutoganga.blogspot.com",16],["texte.work",16],["procrackerz.org",18],["clujust.ro",22],["secondlifetranslations.com",22],["kusonime.com",23],["exlyrics.com",24],["moviesrush.one",24],["skidrowcodex.net",24],["ahstudios.net",25],["crunchyscan.fr",25],["picallow.com",25],["thecustomrom.com",25],["muharebetarihi.com",25],["psycabi.net",26],["hatauzmani.com",27],["kurosave.com",27]]);
 
 const entitiesMap = new Map([]);
 
@@ -157,7 +157,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -165,18 +164,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["","true"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
+const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["modal-newsletter","false"],["","true"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
 
-const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["upbeatcode.com",10],["selenagomez.com",11],["maxicours.com",12],["270towin.com",13],["getemoji.com",13]]);
+const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["zonealarm.com",10],["upbeatcode.com",11],["selenagomez.com",12],["maxicours.com",13],["270towin.com",14],["getemoji.com",14]]);
 
 const entitiesMap = new Map([]);
 
@@ -166,7 +166,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -174,18 +173,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

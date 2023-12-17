@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["siteParams.aabMessage"],["ads.enableAntiAdBlocking"],["ads.*.default ads.*.url ads.enableMidrolls","ads"],["applaunch.data.player.features.ad.enabled applaunch.data.player.features.ad.dai.enabled","appName"]];
+const argsList = [["siteParams.aabMessage"],["adParams siteParams.aabMessage"],["ads.enableAntiAdBlocking"],["ads.*.default ads.*.url ads.enableMidrolls","ads"],["applaunch.data.player.features.ad.enabled applaunch.data.player.features.ad.dai.enabled","appName"]];
 
-const hostnamesMap = new Map([["commentcamarche.net",0],["canalplus.com",[1,2]],["rtlplay.be",3]]);
+const hostnamesMap = new Map([["commentcamarche.net",0],["linternaute.com",1],["canalplus.com",[2,3]],["rtlplay.be",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -176,7 +176,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -184,18 +183,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
@@ -231,7 +235,7 @@ function safeSelf() {
 
 function matchesStackTrace(
     needleDetails,
-    logLevel = 0
+    logLevel = ''
 ) {
     const safe = safeSelf();
     const exceptionToken = getExceptionToken();
@@ -262,11 +266,12 @@ function matchesStackTrace(
     }
     lines[0] = `stackDepth:${lines.length-1}`;
     const stack = lines.join('\t');
-    const r = safe.testPattern(needleDetails, stack);
+    const r = needleDetails.matchAll !== true &&
+        safe.testPattern(needleDetails, stack);
     if (
-        logLevel === 1 ||
-        logLevel === 2 && r ||
-        logLevel === 3 && !r
+        logLevel === 'all' ||
+        logLevel === 'match' && r ||
+        logLevel === 'nomatch' && !r
     ) {
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["click",".preventDefault"],["/^(?:adBlocker|contextmenu)$/"],["scroll","helpers.scroll(id)"],["omniPulseLoaded"],["/contextmenu|cut|copy|paste/"],["contextmenu"],["contextmenu",".disabled"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
 
-const hostnamesMap = new Map([["allas.se",[0,1]],["baaam.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["frida.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["expressen.se",4],["lwcdn.com",5],["mitti.se",6],["vasterastidning.se",6],["barometern.se",6],["blt.se",6],["bt.se",6],["kristianstadsbladet.se",6],["olandsbladet.se",6],["smp.se",6],["sydostran.se",6],["trelleborgsallehanda.se",6],["ut.se",6],["ystadsallehanda.se",6],["kalmarposten.se",6],["meraosterlen.se",6],["vxonews.se",6],["vaxjobladet.se",6],["nsk.se",6],["klt.nu",6],["lokalti.se",6],["viivilla.se",6],["cafe.se",6],["praktisktbatagande.se",6],["omni.se",7],["omniekonomi.se",7],["sexpacket.se",8],["streamio.com",9],["nyan.ax",9],["spelhubben.se",9],["fotosidan.se",9],["illvet.se",9],["varldenshistoria.se",9],["www.expressen.se",10],["di.se",10],["youplay.se",11],["lundagard.se",12],["boktugg.se",12],["morotsliv.com",12],["affarsstaden.se",12],["kurera.se",12],["nyfiknainvesterare.se",12],["home2tiny.se",13]]);
+const hostnamesMap = new Map([["allas.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["expressen.se",4],["lwcdn.com",5],["mitti.se",6],["vasterastidning.se",6],["barometern.se",6],["blt.se",6],["bt.se",6],["kristianstadsbladet.se",6],["olandsbladet.se",6],["smp.se",6],["sydostran.se",6],["trelleborgsallehanda.se",6],["ut.se",6],["ystadsallehanda.se",6],["kalmarposten.se",6],["meraosterlen.se",6],["vxonews.se",6],["vaxjobladet.se",6],["nsk.se",6],["klt.nu",6],["lokalti.se",6],["viivilla.se",6],["cafe.se",6],["praktisktbatagande.se",6],["omni.se",7],["omniekonomi.se",7],["sexpacket.se",8],["streamio.com",9],["nyan.ax",9],["spelhubben.se",9],["fotosidan.se",9],["illvet.se",9],["varldenshistoria.se",9],["www.expressen.se",10],["di.se",10],["youplay.se",11],["lundagard.se",12],["boktugg.se",12],["morotsliv.com",12],["affarsstaden.se",12],["kurera.se",12],["nyfiknainvesterare.se",12],["home2tiny.se",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -178,7 +178,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -186,18 +185,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

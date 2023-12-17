@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["[data-automation=\"continue-to-ads-btn\"]","","2000"]];
+const argsList = [["[data-automation=\"continue-to-ads-btn\"]","","10000"]];
 
-const hostnamesMap = new Map([["m.moovitapp.com",0]]);
+const hostnamesMap = new Map([["moovitapp.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -65,10 +65,21 @@ function trustedClickElement(
         ? ((...args) => { safe.uboLog(...args); })
         : (( ) => { });
 
+    const querySelectorEx = (selector, context = document) => {
+        const pos = selector.indexOf(' >>> ');
+        if ( pos === -1 ) { return context.querySelector(selector); }
+        const outside = selector.slice(0, pos).trim();
+        const inside = selector.slice(pos + 5).trim();
+        const elem = context.querySelector(outside);
+        if ( elem === null ) { return null; }
+        const shadowRoot = elem.shadowRoot;
+        return shadowRoot && querySelectorEx(inside, shadowRoot);
+    };
+
     const selectorList = selectors.split(/\s*,\s*/)
         .filter(s => {
             try {
-                void document.querySelector(s);
+                void querySelectorEx(s);
             } catch(_) {
                 return false;
             }
@@ -142,7 +153,7 @@ function trustedClickElement(
         if ( Date.now() < tnext ) { return next(); }
         const selector = selectorList.shift();
         if ( selector === undefined ) { return terminate(); }
-        const elem = document.querySelector(selector);
+        const elem = querySelectorEx(selector);
         if ( elem === null ) {
             selectorList.unshift(selector);
             return next(true);
@@ -214,7 +225,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -222,18 +232,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

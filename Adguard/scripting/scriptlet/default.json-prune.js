@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["adBlockWallEnabled"],["adtagparameter","enabled"],["adEnabled"],["Playlist.ContentBreaks"],["adRenderers"],["ads breaks cuepoints times"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.device.adSponsorshipTemplate data.device.adsParams"],["data.[].vast_url"],["vastUrl"],["adReinsertion"],["enabled","testhide"],["adParam"],["adProvider"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["*","ad_unit_path"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["MediaContainer.Metadata.[].Ad"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["ads"],["ssaiInfo fallback.ssaiInfo"],["adtech-brightline adtech-google-pal adtech-iab-om"],["result.ads"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["data.getDetailPageContent.linkCustomAdOffers"],["data.getTaboolaAds.*"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["plugins.adService"],["session.showAds"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"]];
 
-const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["bild.de",2],["winfuture.de",3],["popcornflix.com",4],["itv.com",5],["funimation.com",6],["sbs.com.au",7],["hulu.com",[9,10]],["www.amazon.co.jp",11],["www.amazon.com",11],["www.amazon.de",11],["www.primevideo.com",11],["crunchyroll.com",12],["crackle.com",13],["vvvvid.it",14],["welt.de",15],["plus.rtl.de",16],["tv2.no",17],["doomovie-hd.com",18],["sonyliv.com",19],["tvn24.pl",20],["art19.com",21],["domoplus.pl",22],["kuchniaplus.pl",22],["miniminiplus.pl",22],["teletoonplus.pl",22],["vix.com",23],["citytv.com",24],["vlive.tv",26],["go.discovery.com",28],["investigationdiscovery.com",28],["tvn.pl",29],["app.plex.tv",30],["10play.com.au",31],["player.stv.tv",32],["fox.com",33],["foxsports.com",33],["play.max.com",[34,35]],["sportstiger.com",36],["fansonlinehub.com",37],["hotmediahub.com",37],["terabox.fun",37],["linkvertise.com",[38,39,40]],["disneyplus.com",[41,42,43,44,45]],["colearn.id",46],["hotstar.com",47],["nbc.com",48],["play.history.com",49],["eu-proxy.startpage.com",50],["player.pop.co.uk",51],["player.popfun.co.uk",51],["iprima.cz",52],["speedrun.com",53],["www.reddit.com",[54,55]],["nypost.com",56],["pagesix.com",56],["stories.los40.com",57]]);
+const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["bild.de",2],["winfuture.de",3],["popcornflix.com",4],["itv.com",5],["funimation.com",6],["sbs.com.au",7],["hulu.com",[9,10]],["www.amazon.co.jp",11],["www.amazon.com",11],["www.amazon.de",11],["www.primevideo.com",11],["crunchyroll.com",12],["crackle.com",13],["vvvvid.it",14],["welt.de",15],["plus.rtl.de",16],["tv2.no",17],["doomovie-hd.com",18],["sonyliv.com",19],["tvn24.pl",20],["art19.com",21],["domoplus.pl",22],["kuchniaplus.pl",22],["miniminiplus.pl",22],["teletoonplus.pl",22],["vix.com",23],["citytv.com",24],["vlive.tv",26],["go.discovery.com",28],["investigationdiscovery.com",28],["tvn.pl",29],["app.plex.tv",30],["10play.com.au",31],["player.stv.tv",32],["fox.com",33],["foxsports.com",33],["play.max.com",[34,35]],["sportstiger.com",36],["fansonlinehub.com",37],["hotmediahub.com",37],["terabox.fun",37],["teralink.me",37],["terashare.me",37],["teraearn.com",37],["linkvertise.com",[38,39,40]],["disneyplus.com",[41,42,43,44,45]],["colearn.id",46],["hotstar.com",47],["nbc.com",48],["play.history.com",49],["eu-proxy.startpage.com",50],["player.pop.co.uk",51],["player.popfun.co.uk",51],["iprima.cz",52],["speedrun.com",53],["www.reddit.com",[54,55]],["nypost.com",56],["pagesix.com",56],["stories.los40.com",57]]);
 
 const entitiesMap = new Map([["elixx",8],["shorttey",25],["discoveryplus",[27,28]]]);
 
@@ -176,7 +176,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -184,18 +183,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
@@ -231,7 +235,7 @@ function safeSelf() {
 
 function matchesStackTrace(
     needleDetails,
-    logLevel = 0
+    logLevel = ''
 ) {
     const safe = safeSelf();
     const exceptionToken = getExceptionToken();
@@ -262,11 +266,12 @@ function matchesStackTrace(
     }
     lines[0] = `stackDepth:${lines.length-1}`;
     const stack = lines.join('\t');
-    const r = safe.testPattern(needleDetails, stack);
+    const r = needleDetails.matchAll !== true &&
+        safe.testPattern(needleDetails, stack);
     if (
-        logLevel === 1 ||
-        logLevel === 2 && r ||
-        logLevel === 3 && !r
+        logLevel === 'all' ||
+        logLevel === 'match' && r ||
+        logLevel === 'nomatch' && !r
     ) {
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }

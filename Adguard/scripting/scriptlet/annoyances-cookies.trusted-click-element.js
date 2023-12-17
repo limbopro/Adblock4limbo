@@ -42,11 +42,11 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["form[action] button[jsname=\"tWT92d\"]"],["[title=\"Manage Cookies\"]"],["[title=\"Reject All\"]","","500"],[".sp_choice_type_12[title=\"Options\"]"],["[title=\"REJECT ALL\"]","","500"],[".sp_choice_type_12[title=\"OPTIONS\"]"],[".sp_choice_type_12[title=\"Manage or reject cookies\"]"],["[title=\"Reject all\"]","","500"],["button[title^=\"Consent\"]"],["button.reject-all"],[".cmp__dialog-footer-buttons > .is-secondary"],["button[onclick=\"IMOK()\"]","","500"],["a.btn--primary"],[".almacmp-button--settings, #purposeConsents1, #purposeConsents2, #purposeConsents3, #purposeConsents4, #purposeConsents5, #purposeConsents6, #purposeConsents7, #purposeConsents8, #purposeConsents9, #purposeConsents10, #purposeConsents11, #specialFeatureConsents1, #specialFeatureConsents2, #almacmp-save-layer2"],["#didomi-notice-agree-button"],["#onetrust-accept-btn-handler"],["button[title=\"Accept and continue\"]"],["button[title=\"Accept All Cookies\"]"],[".accept-all"],["#CybotCookiebotDialogBodyButtonAccept"],[".privacy-cp-wall #privacy-cp-wall-accept"],["button[aria-label=\"Continua senza accettare\"]"],["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[href=\"/x-set-cookie/\"]"],["#dialogButton1"],[".call"],["#cl-consent button[data-role=\"b_decline\"]"],["#privacy-cp-wall-accept"],["button[data-label=\"accept-button\"]","","1000"],["#cmp-btn-accept","","5000"],["button#pt-accept-all"],["[for=\"checkbox_niezbedne\"], [for=\"checkbox_spolecznosciowe\"], .btn-primary"],["[aria-labelledby=\"banner-title\"] > div[class^=\"buttons_\"] > button[class*=\"secondaryButton_\"] + button"],["button#minf-privacy-open-modal-btn-id, button.iubenda-cs-close-btn"],["button.iubenda-cs-accept-btn","","500"]];
+const argsList = [["form[action] button[jsname=\"tWT92d\"]"],["[title=\"Manage Cookies\"]"],["[title=\"Reject All\"]","","500"],[".sp_choice_type_12[title=\"Options\"]"],["[title=\"REJECT ALL\"]","","500"],[".sp_choice_type_12[title=\"OPTIONS\"]"],[".sp_choice_type_12[title=\"Manage or reject cookies\"]"],["[title=\"Reject all\"]","","500"],["button[title^=\"Consent\"]"],["button.reject-all"],[".cmp__dialog-footer-buttons > .is-secondary"],["button[onclick=\"IMOK()\"]","","500"],["a.btn--primary"],[".message-container.global-font button.message-button.no-children.focusable.button-font.sp_choice_type_12[title=\"MORE OPTIONS\""],["[data-choice=\"1683026410215\"]","","500"],[".almacmp-button--settings, #purposeConsents1, #purposeConsents2, #purposeConsents3, #purposeConsents4, #purposeConsents5, #purposeConsents6, #purposeConsents7, #purposeConsents8, #purposeConsents9, #purposeConsents10, #purposeConsents11, #specialFeatureConsents1, #specialFeatureConsents2, #almacmp-save-layer2"],[".sanoma-logo-container ~ .message-component.sticky-buttons button.sp_choice_type_12[title=\"Asetukset\"]"],[".sanoma-logo-container ~ .message-component.privacy-manager-tcfv2 .tcfv2-stack[title=\"Sanoman sisällönjakelukumppanit\"] button.pm-switch[aria-checked=\"false\"]"],[".sanoma-logo-container ~ .message-component.sticky-buttons button.sp_choice_type_SAVE_AND_EXIT[title=\"Tallenna\"]","","1000"],["#didomi-notice-agree-button"],["#onetrust-accept-btn-handler"],["button[title=\"Accept and continue\"]"],["button[title=\"Accept All Cookies\"]"],[".accept-all"],["#CybotCookiebotDialogBodyButtonAccept"],[".privacy-cp-wall #privacy-cp-wall-accept"],["button[aria-label=\"Continua senza accettare\"]"],["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[href=\"/x-set-cookie/\"]"],["#dialogButton1"],[".call"],["#cl-consent button[data-role=\"b_decline\"]"],["#privacy-cp-wall-accept"],["button[data-label=\"accept-button\"]","","1000"],["#cmp-btn-accept","","5000"],["button#pt-accept-all"],["[for=\"checkbox_niezbedne\"], [for=\"checkbox_spolecznosciowe\"], .btn-primary"],["[aria-labelledby=\"banner-title\"] > div[class^=\"buttons_\"] > button[class*=\"secondaryButton_\"] + button"],["button#minf-privacy-open-modal-btn-id, button.iubenda-cs-close-btn"],["button.iubenda-cs-accept-btn","","500"],["button.trustarc-agree-btn"],[".pg-configure-button[title=\"Instellen\"]","","500"],["button.message-button[title=\"Mijn instellingen beheren\"]","","500"],["button[aria-checked=\"false\"][aria-label^=\"Social\"], button.sp_choice_type_SAVE_AND_EXIT","","500"],["#pubtech-cmp #pt-close"]];
 
-const hostnamesMap = new Map([["consent.youtube.com",0],["sourcepointcmp.bloomberg.com",[1,2]],["cmpv2.independent.co.uk",[2,5]],["cmpv2.standard.co.uk",[3,4]],["sourcepoint.theguardian.com",[6,7]],["spiegel.de",8],["consent.yahoo.com",9],["tumblr.com",10],["fplstatistics.co.uk",11],["e-shop.leonidas.com",12],["ampparit.com",13],["arvopaperi.fi",13],["iltalehti.fi",13],["kauppalehti.fi",13],["mediuutiset.fi",13],["mikrobitti.fi",13],["talouselama.fi",13],["tekniikkatalous.fi",13],["tivi.fi",13],["uusisuomi.fi",13],["rfi.fr",14],["elcomercio.es",14],["france24.com",14],["digitalfoundry.net",15],["egx.net",15],["eurogamer.it",15],["mcmcomiccon.com",15],["nintendolife.com",15],["paxsite.com",15],["purexbox.com",15],["pushsquare.com",15],["starwarscelebration.com",15],["thehaul.com",15],["timeextension.com",15],["dicebreaker.com",[16,17]],["eurogamer.cz",[16,17]],["eurogamer.es",[16,17]],["eurogamer.net",[16,17]],["eurogamer.nl",[16,17]],["eurogamer.pl",[16,17]],["eurogamer.pt",[16,17]],["gamesindustry.biz",[16,17]],["jelly.deals",[16,17]],["reedpop.com",[16,17]],["rockpapershotgun.com",[16,17]],["thepopverse.com",[16,17]],["vg247.com",[16,17]],["videogameschronicle.com",[16,17]],["eurogamer.de",18],["roadtovr.com",19],["corriere.it",[20,27]],["gazzetta.it",20],["cmp.sky.it",21],["tennisassa.fi",22],["f1racing.pl",23],["consent-pref.trustarc.com",25],["highlights.legaseriea.it",26],["calciomercato.com",26],["sosfanta.com",27],["wetter.com",29],["youmath.it",30],["quotidiano.net",30],["pip.gov.pl",31],["forbes.com",32],["mediaset.it",33],["repubblica.it",34]]);
+const hostnamesMap = new Map([["consent.youtube.com",0],["sourcepointcmp.bloomberg.com",[1,2]],["sourcepointcmp.bloomberg.co.jp",[1,2]],["cmpv2.independent.co.uk",[2,5]],["cmpv2.standard.co.uk",[3,4]],["sourcepoint.theguardian.com",[6,7]],["spiegel.de",8],["consent.yahoo.com",9],["tumblr.com",10],["fplstatistics.co.uk",11],["e-shop.leonidas.com",12],["cdn.privacy-mgmt.com",[13,14,16,17,18]],["ampparit.com",15],["arvopaperi.fi",15],["iltalehti.fi",15],["kauppalehti.fi",15],["mediuutiset.fi",15],["mikrobitti.fi",15],["talouselama.fi",15],["tekniikkatalous.fi",15],["tivi.fi",15],["uusisuomi.fi",15],["rfi.fr",19],["elcomercio.es",19],["france24.com",19],["digitalfoundry.net",20],["egx.net",20],["eurogamer.it",20],["mcmcomiccon.com",20],["nintendolife.com",20],["paxsite.com",20],["purexbox.com",20],["pushsquare.com",20],["starwarscelebration.com",20],["thehaul.com",20],["timeextension.com",20],["dicebreaker.com",[21,22]],["eurogamer.cz",[21,22]],["eurogamer.es",[21,22]],["eurogamer.net",[21,22]],["eurogamer.nl",[21,22]],["eurogamer.pl",[21,22]],["eurogamer.pt",[21,22]],["gamesindustry.biz",[21,22]],["jelly.deals",[21,22]],["reedpop.com",[21,22]],["rockpapershotgun.com",[21,22]],["thepopverse.com",[21,22]],["vg247.com",[21,22]],["videogameschronicle.com",[21,22]],["eurogamer.de",23],["roadtovr.com",24],["corriere.it",[25,32]],["gazzetta.it",25],["cmp.sky.it",26],["tennisassa.fi",27],["f1racing.pl",28],["consent-pref.trustarc.com",30],["highlights.legaseriea.it",31],["calciomercato.com",31],["sosfanta.com",32],["wetter.com",34],["youmath.it",35],["quotidiano.net",35],["pip.gov.pl",36],["forbes.com",37],["mediaset.it",38],["repubblica.it",39],["fortune.com",40],["cmp.dpgmedia.nl",[41,43]],["cmp.dpgmedia.be",[41,43]],["cmp.ad.nl",[41,43]],["cmp.autoweek.nl",[41,43]],["cmp.bd.nl",[41,43]],["cmp.bndestem.nl",[41,43]],["cmp.demorgen.be",[41,43]],["cmp.deondernemer.nl",[41,43]],["cmp.destentor.nl",[41,43]],["cmp.ed.nl",[41,43]],["cmp.gaspedaal.nl",[41,43]],["cmp.gelderlander.nl",[41,43]],["cmp.hln.be",[41,43]],["cmp.humo.be",[41,43]],["cmp.margriet.nl",[41,43]],["cmp.nu.nl",[41,43]],["cmp.qmusic.nl",[41,43]],["cmp.stijlvol-wonen.com",[41,43]],["cmp.trouw.nl",[41,43]],["cmp.tubantia.nl",[41,43]],["cmp.vtwonen.be",[41,43]],["cmp.vtwonen.nl",[41,43]],["cmp.pzc.nl",[41,43]],["cmp.zozitdat.nl",[41,43]],["cmp-sp.vrt.be",42],["ilrestodelcarlino.it",44]]);
 
-const entitiesMap = new Map([["consent.google",0],["music.amazon",24],["chrono24",28]]);
+const entitiesMap = new Map([["consent.google",0],["music.amazon",29],["chrono24",33]]);
 
 const exceptionsMap = new Map([]);
 
@@ -65,10 +65,21 @@ function trustedClickElement(
         ? ((...args) => { safe.uboLog(...args); })
         : (( ) => { });
 
+    const querySelectorEx = (selector, context = document) => {
+        const pos = selector.indexOf(' >>> ');
+        if ( pos === -1 ) { return context.querySelector(selector); }
+        const outside = selector.slice(0, pos).trim();
+        const inside = selector.slice(pos + 5).trim();
+        const elem = context.querySelector(outside);
+        if ( elem === null ) { return null; }
+        const shadowRoot = elem.shadowRoot;
+        return shadowRoot && querySelectorEx(inside, shadowRoot);
+    };
+
     const selectorList = selectors.split(/\s*,\s*/)
         .filter(s => {
             try {
-                void document.querySelector(s);
+                void querySelectorEx(s);
             } catch(_) {
                 return false;
             }
@@ -142,7 +153,7 @@ function trustedClickElement(
         if ( Date.now() < tnext ) { return next(); }
         const selector = selectorList.shift();
         if ( selector === undefined ) { return terminate(); }
-        const elem = document.querySelector(selector);
+        const elem = querySelectorEx(selector);
         if ( elem === null ) {
             selectorList.unshift(selector);
             return next(true);
@@ -214,7 +225,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -222,18 +232,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

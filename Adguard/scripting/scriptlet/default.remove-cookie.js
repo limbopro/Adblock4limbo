@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["video_view_count"],["da325"],["ref_cookie"],["/^/"],["PageCount"],[],["45grw1567"],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_ips"],["kt_referer"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["/articlesRead|previousPage/"]];
 
-const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["zootube1.com",1],["subdivx.com",2],["adultasianporn.com",3],["jetpunk.com",4],["xxxxsx.com",5],["autosport.com",6],["motorsport.com",6],["sexvideos.host",7],["beaumontenterprise.com",8],["chron.com",8],["ctinsider.com",8],["ctpost.com",8],["expressnews.com",8],["houstonchronicle.com",8],["lmtonline.com",8],["middletownpress.com",8],["mrt.com",8],["newstimes.com",8],["nhregister.com",8],["registercitizen.com",8],["sfchronicle.com",8],["stamfordadvocate.com",8],["thehour.com",8],["timesunion.com",8],["heavyfetish.com",[9,10,11]],["watchporn.to",10],["columbian.com",12],["nypost.com",12],["pagesix.com",12],["factable.com",[13,14]],["bing.com",15],["msn.com",15],["androidpolice.com",16],["makeuseof.com",16],["movieweb.com",16],["xda-developers.com",16]]);
+const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["movingxh.world",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhtree.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["zootube1.com",1],["subdivx.com",2],["adultasianporn.com",3],["jetpunk.com",4],["xxxxsx.com",5],["autosport.com",6],["motorsport.com",6],["sexvideos.host",7],["beaumontenterprise.com",8],["chron.com",8],["ctinsider.com",8],["ctpost.com",8],["expressnews.com",8],["houstonchronicle.com",8],["lmtonline.com",8],["middletownpress.com",8],["mrt.com",8],["newstimes.com",8],["nhregister.com",8],["registercitizen.com",8],["sfchronicle.com",8],["stamfordadvocate.com",8],["thehour.com",8],["timesunion.com",8],["heavyfetish.com",[9,10,11]],["watchporn.to",10],["columbian.com",12],["nypost.com",12],["pagesix.com",12],["factable.com",[13,14]],["bing.com",15],["msn.com",15],["androidpolice.com",16],["makeuseof.com",16],["movieweb.com",16],["xda-developers.com",16]]);
 
 const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0]]);
 
@@ -160,7 +160,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -168,18 +167,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

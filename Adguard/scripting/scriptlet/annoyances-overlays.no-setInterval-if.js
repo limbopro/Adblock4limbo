@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[".parentNode.removeChild"],["nagScroll"],["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["potato"],["detect"],["console.clear"],["ads"]];
+const argsList = [[".parentNode.removeChild"],["nagScroll"],["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["potato"],["detect"],["console.clear"],["ads"],["devtoolsDetector"]];
 
-const hostnamesMap = new Map([["bluemoon-mcfc.co.uk",[0,7]],["kentonline.co.uk",1],["smashboards.com",2],["mobilarena.hu",3],["avdelphi.com",4],["pornhd8k.net",4],["masuit.com",4],["iphonecake.com",5],["ziperto.com",5],["compartiendofull.net",5],["themeparktourist.com",5],["magnet-novels.com",6],["bendigoadvertiser.com.au",8],["lvturbo.com",9],["sbbrisk.com",9],["sbface.com",9],["sbspeed.com",9],["streamsb.net",9],["actvid.com",9],["699pic.com",10],["thinkamericana.com",11],["menrec.com",11],["mocah.org",12],["coolwallpapers.me",13],["sflix.to",14],["freemcserver.net",15],["vgembed.com",16],["sbot.cf",17],["alfred.camera",18]]);
+const hostnamesMap = new Map([["bluemoon-mcfc.co.uk",[0,7]],["kentonline.co.uk",1],["smashboards.com",2],["mobilarena.hu",3],["avdelphi.com",4],["pornhd8k.net",4],["masuit.com",4],["iphonecake.com",5],["ziperto.com",5],["compartiendofull.net",5],["themeparktourist.com",5],["magnet-novels.com",6],["bendigoadvertiser.com.au",8],["lvturbo.com",9],["sbbrisk.com",9],["sbface.com",9],["sbspeed.com",9],["streamsb.net",9],["wouterplanet.com",9],["actvid.com",9],["699pic.com",10],["thinkamericana.com",11],["menrec.com",11],["mocah.org",12],["coolwallpapers.me",13],["sflix.to",14],["freemcserver.net",15],["vgembed.com",16],["sbot.cf",17],["alfred.camera",18],["vidstreaming.xyz",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -148,7 +148,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -156,18 +155,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

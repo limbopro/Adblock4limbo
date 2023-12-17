@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["autoplay players.*.ga acl.ads players.*.autoplay"],["payload.ads campaigns.*"],["autoplay"]];
 
-const hostnamesMap = new Map([["lwcdn.com",0],["alingsastidning.se",0],["bohuslaningen.se",0],["gp.se",0],["hallandsposten.se",0],["hn.se",0],["stromstadstidning.se",0],["ttela.se",0],["kungsbackaposten.se",0],["kungalvsposten.se",0],["molndalsposten.se",0],["partilletidning.se",0],["sttidningen.se",0],["markposten.se",0],["harrydaposten.se",0],["matspar.se",1],["youplay.se",2],["expressen.se",2],["di.se",2],["nsk.se",2],["skd.se",2],["nvp.se",2],["barometern.se",2],["blt.se",2],["bt.se",2],["kristianstadsbladet.se",2],["olandsbladet.se",2],["smp.se",2],["sydostran.se",2],["trelleborgsallehanda.se",2],["ut.se",2],["ystadsallehanda.se",2],["kalmarposten.se",2],["meraosterlen.se",2],["corren.se",2],["folkbladet.se",2],["mvt.se",2],["nt.se",2],["vt.se",2],["klt.nu",2],["vimmerbytidning.se",2],["kuriren.nu",2],["nsd.se",2],["norran.se",2],["pt.se",2],["ekuriren.se",2],["strengnastidning.se",2],["kkuriren.se",2],["sn.se",2],["eposten.se",2],["unt.se",2],["helagotland.se",2],["kindaposten.se",2],["allas.se",2],["baaam.se",2],["frida.se",2],["elle.se",2],["femina.se",2],["hant.se",2],["mabra.com",2],["residencemagazine.se",2],["svenskdam.se",2],["motherhood.se",2],["folkbladet.nu",2],["vk.se",2],["vasterbottningen.se",2],["mellanbygden.nu",2],["nordsverige.se",2],["lokaltidningen.nu",2],["vasterastidning.se",2],["mitti.se",2],["thelocal.se",2],["byrum.se",2],["sverigespringer.se",2],["recept.se",2],["viivilla.se",2],["mestmotor.se",2],["babyhjalp.se",2],["fragbite.se",2],["ibnytt.se",2],["realtid.se",2],["cafe.se",2],["kingmagazine.se",2],["vxonews.se",2],["vaxjobladet.se",2],["alekuriren.se",2],["nyheter24.se",2],["svenskgolf.se",2],["golfing.se",2],["gotlandjustnu.se",2],["familjeliv.se",2],["praktisktbatagande.se",2],["norrahalland.se",2],["lokalti.se",2],["lchfarkivet.se",2],["alltforforaldrar.se",2],["idrottensaffarer.se",2]]);
+const hostnamesMap = new Map([["lwcdn.com",0],["alingsastidning.se",0],["bohuslaningen.se",0],["gp.se",0],["hallandsposten.se",0],["hn.se",0],["stromstadstidning.se",0],["ttela.se",0],["kungsbackaposten.se",0],["kungalvsposten.se",0],["molndalsposten.se",0],["partilletidning.se",0],["sttidningen.se",0],["markposten.se",0],["harrydaposten.se",0],["matspar.se",1],["youplay.se",2],["expressen.se",2],["di.se",2],["nsk.se",2],["skd.se",2],["nvp.se",2],["barometern.se",2],["blt.se",2],["bt.se",2],["kristianstadsbladet.se",2],["olandsbladet.se",2],["smp.se",2],["sydostran.se",2],["trelleborgsallehanda.se",2],["ut.se",2],["ystadsallehanda.se",2],["kalmarposten.se",2],["meraosterlen.se",2],["corren.se",2],["folkbladet.se",2],["mvt.se",2],["nt.se",2],["vt.se",2],["klt.nu",2],["vimmerbytidning.se",2],["kuriren.nu",2],["nsd.se",2],["norran.se",2],["pt.se",2],["ekuriren.se",2],["strengnastidning.se",2],["kkuriren.se",2],["sn.se",2],["eposten.se",2],["unt.se",2],["helagotland.se",2],["kindaposten.se",2],["allas.se",2],["elle.se",2],["femina.se",2],["hant.se",2],["mabra.com",2],["residencemagazine.se",2],["svenskdam.se",2],["motherhood.se",2],["folkbladet.nu",2],["vk.se",2],["vasterbottningen.se",2],["mellanbygden.nu",2],["nordsverige.se",2],["lokaltidningen.nu",2],["vasterastidning.se",2],["mitti.se",2],["thelocal.se",2],["byrum.se",2],["sverigespringer.se",2],["recept.se",2],["viivilla.se",2],["mestmotor.se",2],["babyhjalp.se",2],["fragbite.se",2],["ibnytt.se",2],["realtid.se",2],["cafe.se",2],["kingmagazine.se",2],["vxonews.se",2],["vaxjobladet.se",2],["alekuriren.se",2],["nyheter24.se",2],["svenskgolf.se",2],["golfing.se",2],["gotlandjustnu.se",2],["familjeliv.se",2],["praktisktbatagande.se",2],["norrahalland.se",2],["lokalti.se",2],["lchfarkivet.se",2],["alltforforaldrar.se",2],["idrottensaffarer.se",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -176,7 +176,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -184,18 +183,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
@@ -231,7 +235,7 @@ function safeSelf() {
 
 function matchesStackTrace(
     needleDetails,
-    logLevel = 0
+    logLevel = ''
 ) {
     const safe = safeSelf();
     const exceptionToken = getExceptionToken();
@@ -262,11 +266,12 @@ function matchesStackTrace(
     }
     lines[0] = `stackDepth:${lines.length-1}`;
     const stack = lines.join('\t');
-    const r = safe.testPattern(needleDetails, stack);
+    const r = needleDetails.matchAll !== true &&
+        safe.testPattern(needleDetails, stack);
     if (
-        logLevel === 1 ||
-        logLevel === 2 && r ||
-        logLevel === 3 && !r
+        logLevel === 'all' ||
+        logLevel === 'match' && r ||
+        logLevel === 'nomatch' && !r
     ) {
         safe.uboLog(stack.replace(/\t/g, '\n'));
     }

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
 
-const hostnamesMap = new Map([["betweenjpandkr.blog",0],["dvdrev.com",1],["fm.sekkaku.net",2],["lifematome.blog",3],["free-avx.jp",4],["tcg-bloglife.com",5],["ch-review.net",5],["gametohkenranbu.sakuraweb.com",5],["jisakuhibi.jp",5],["rank1-media.com",5],["resizer.myct.jp",5]]);
+const hostnamesMap = new Map([["betweenjpandkr.blog",0],["dvdrev.com",1],["fm.sekkaku.net",2],["lifematome.blog",3],["free-avx.jp",4],["seikeidouga.blog.jp",5],["tcg-bloglife.com",5],["ch-review.net",5],["gametohkenranbu.sakuraweb.com",5],["jisakuhibi.jp",5],["rank1-media.com",5],["resizer.myct.jp",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -213,7 +213,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -221,18 +220,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

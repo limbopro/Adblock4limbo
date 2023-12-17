@@ -42,9 +42,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, [class^=\"metaRedirectWrapperTopAd\"], a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
+const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, [class*=\"metaReedirectWrapperTopAd\"], a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["body > div[id]:not(#download) a","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
 
-const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["techcyan.com",2],["kiktu.com",2],["upshrink.com",2],["trangchu.news",2],["banaraswap.in",2]]);
+const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["download.megaup.net",2],["techcyan.com",3],["kiktu.com",3],["upshrink.com",3],["trangchu.news",3],["banaraswap.in",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -188,7 +188,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -196,18 +195,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

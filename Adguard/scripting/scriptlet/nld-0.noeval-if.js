@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["adsBlocked"],["/chp_?ad/"]];
 
-const hostnamesMap = new Map([["aimsolutions.nl",0],["112amersfoort.nl",1],["112amsterdam.nl",1],["112apeldoorn.nl",1],["112arnhem.nl",1],["112assen.nl",1],["112barneveld.nl",1],["112bunschoten.nl",1],["112doetinchem.nl",1],["112drenthe.nl",1],["112ede.nl",1],["112eindhoven.nl",1],["112emmen.nl",1],["112flevoland.nl",1],["112harderwijk.nl",1],["112hilversum.nl",1],["112inbeeld.nl",1],["112lelystad.nl",1],["112meppel.nl",1],["112nijkerk.nl",1],["112overijsel.nl",1],["112ridderkerk.nl",1],["112rotterdam.nl",1],["112scherpenzeel.nl",1],["112schiedam.nl",1],["112vallei.nl",1],["112vechtdal.nl",1],["112veenendaal.nl",1],["112wageningen.nl",1],["112zeewolde.nl",1],["112zwolle.nl",1],["vrides.nl",1]]);
+const hostnamesMap = new Map([["aimsolutions.nl",0],["112amersfoort.nl",1],["112amsterdam.nl",1],["112apeldoorn.nl",1],["112arnhem.nl",1],["112assen.nl",1],["112barneveld.nl",1],["112bunschoten.nl",1],["112doetinchem.nl",1],["112drenthe.nl",1],["112ede.nl",1],["112eindhoven.nl",1],["112emmen.nl",1],["112flevoland.nl",1],["112harderwijk.nl",1],["112hilversum.nl",1],["112inbeeld.nl",1],["112lelystad.nl",1],["112meppel.nl",1],["112nijkerk.nl",1],["112overijssel.nl",1],["112ridderkerk.nl",1],["112rotterdam.nl",1],["112scherpenzeel.nl",1],["112schiedam.nl",1],["112vallei.nl",1],["112vechtdal.nl",1],["112veenendaal.nl",1],["112wageningen.nl",1],["112zeewolde.nl",1],["112zwolle.nl",1],["vrides.nl",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -113,7 +113,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -121,18 +120,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

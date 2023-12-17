@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["pagead2.googlesyndication.com"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["ads_block.txt"],["imasdk.googleapis.com"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"]];
 
-const hostnamesMap = new Map([["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,7]],["puromarketing.com",[0,7]],["todostartups.com",[0,7]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["yesmangas1.com",0],["mangahost4.com",0],["mangahosted.com",0],["mangahost2.com",0],["mangahost1.com",0],["mangahostbr.net",0],["mangahostbr.com",0],["peliculas8k.com",1],["modescanlator.com",2],["southparkstudios.com.br",3],["southpark.lat",3],["qwanturankpro.com",4],["desbloquea.me",4],["mega-enlace.com",4],["enlacito.com",4],["acortame-esto.com",4],["netcine.to",4],["repretel.com",5],["redbolivision.tv.bo",5],["independentespanol.com",5],["downloads.sayrodigital.com",6],["teleculinaria.pt",6],["nptmedia.tv",8],["suaads.com",9],["reidoplacar.com",9],["suaurl.com",9],["costumbresmexico.com",10],["desbloqueador.site",10],["notipostingt.com",11],["tivify.tv",12],["netmovies.com.br",13]]);
+const hostnamesMap = new Map([["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,7]],["puromarketing.com",[0,7]],["todostartups.com",[0,7]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["peliculas8k.com",1],["modescanlator.com",2],["southparkstudios.com.br",3],["southpark.lat",3],["qwanturankpro.com",4],["desbloquea.me",4],["mega-enlace.com",4],["enlacito.com",4],["acortame-esto.com",4],["netcine.to",4],["repretel.com",5],["redbolivision.tv.bo",5],["independentespanol.com",5],["downloads.sayrodigital.com",6],["teleculinaria.pt",6],["nptmedia.tv",8],["suaads.com",9],["reidoplacar.com",9],["suaurl.com",9],["costumbresmexico.com",10],["desbloqueador.site",10],["notipostingt.com",11],["tivify.tv",12],["netmovies.com.br",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -219,7 +219,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -227,18 +226,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

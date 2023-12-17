@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
+const argsList = [["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
 
-const hostnamesMap = new Map([["vxetable.cn",0],["h-ciyuan.com",1],["1keydata.com",2],["slit.cn",3],["jkpan.cc",[4,5]],["getrelax.cc",6],["poedb.tw",7],["bingfeng.tw",8],["youranshare.com",9],["getitfree.cn",10],["pg-wuming.com",11],["pornbest.org",12],["nunuyy3.org",13],["dogfight360.com",14],["o8tv.com",15],["javlibrary.com",16],["wnacg1.cc",17],["pixnet.net",18],["ggjav.com",19],["porn87.com",19]]);
+const hostnamesMap = new Map([["18comic.org",0],["18comic.vip",0],["18-comic.work",0],["vxetable.cn",1],["h-ciyuan.com",2],["1keydata.com",3],["slit.cn",4],["jkpan.cc",[5,6]],["getrelax.cc",7],["poedb.tw",8],["bingfeng.tw",9],["youranshare.com",10],["getitfree.cn",11],["pg-wuming.com",12],["m.lwxs.com",[13,14]],["pornbest.org",15],["nunuyy3.org",16],["dogfight360.com",17],["o8tv.com",18],["javlibrary.com",19],["wnacg1.cc",20],["pixnet.net",21],["ggjav.com",22],["porn87.com",22]]);
 
-const entitiesMap = new Map([["hentaicomic",17],["wnacg",17]]);
+const entitiesMap = new Map([["hentaicomic",20],["wnacg",20]]);
 
 const exceptionsMap = new Map([]);
 
@@ -228,7 +228,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -236,18 +235,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

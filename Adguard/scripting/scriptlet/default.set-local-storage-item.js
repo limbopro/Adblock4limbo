@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["as_profile_cache","$remove$"],["as_accetpable_ads_blocked_cache","$remove$"],["as_adblock_cache","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"]];
+const argsList = [["PageCount","$remove$"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["as_profile_cache","$remove$"],["as_accetpable_ads_blocked_cache","$remove$"],["as_adblock_cache","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"]];
 
-const hostnamesMap = new Map([["adultdeepfakes.com",0],["freewsad.com",1],["loawa.com",[2,3,4,5]],["ygosu.com",[2,3,4,5]],["sportalkorea.com",[2,3,4,5]],["algumon.com",[2,3,4,5]],["hancinema.net",[2,3,4,5]],["enetnews.co.kr",[2,3,4,5]],["edaily.co.kr",[2,3,4,5]],["economist.co.kr",[2,3,4,5]],["etoday.co.kr",[2,3,4,5]],["hankyung.com",[2,3,4,5]],["isplus.com",[2,3,4,5]],["hometownstation.com",[2,3,4,5]],["kagit.kr",[2,3,4,5]],["inven.co.kr",[2,3,4,5]],["viva100.com",[2,3,4,5]],["joongdo.co.kr",[2,3,4,5]],["jjang0u.com",[2,3,4,5]],["tenbizt.com",[2,3,4,5]],["tvreport.co.kr",[2,3,4,5]],["newautopost.co.kr",[2,3,4,5]],["mememedia.co.kr",[2,3,4,5]],["mobilitytv.co.kr",[2,3,4,5]],["cboard.net",[2,3,4,5]],["a-ha.io",[2,3,4,5]],["interfootball.co.kr",[2,3,4,5]],["fourfourtwo.co.kr",[2,3,4,5]],["apkmirror.com",[2,3,4,5]],["dotkeypress.kr",[2,3,4,5]],["viewcash.co.kr",[2,3,4,5]],["tripplus.co.kr",[2,3,4,5]],["enterdiary.com",[2,3,4,5]],["mtodayauto.com",[2,3,4,5]],["genshinlab.com",[2,3,4,5]],["hotplacehunter.co.kr",[2,3,4,5]],["mystylezip.com",[2,3,4,5]],["majorgeeks.com",[2,3,4,5]],["poro.gg",[2,3,4,5]],["maple.gg",[2,3,4,5]],["lolchess.gg",[2,3,4,5]],["dak.gg",[2,3,4,5]],["newdaily.co.kr",[2,3,4,5]],["meconomynews.com",[2,3,4,5]],["brandbrief.co.kr",[2,3,4,5]],["dfast.kr",[2,3,4,5]],["thephoblographer.com",[2,3,4,5]],["dogdrip.net",[2,3,4,5]],["youtu.co",[2,3,4,5]],["honkailab.com",[2,3,4,5]],["warcraftrumbledeck.com",[2,3,4,5]],["golf-live.at",[2,3,4,5]],["mlbpark.donga.com",[2,3,4,5]],["gamingdeputy.com",[2,3,4,5]],["thestockmarketwatch.com",[2,3,4,5]],["capress.kr",[2,3,4,5]],["carandmore.co.kr",[2,3,4,5]],["maxmovie.kr",[2,3,4,5]],["motorgraph.com",[2,3,4,5]],["newsbell.co.kr",[2,3,4,5]],["tminews.co.kr",[2,3,4,5]],["thehousemagazine.kr",[2,3,4,5]],["hardreset.info",[2,3,4,5]],["metabattle.com",[2,3,4,5]],["mindbodygreen.com",6],["elevenlabs.io",7]]);
+const hostnamesMap = new Map([["jetpunk.com",0],["adultdeepfakes.com",1],["freewsad.com",2],["loawa.com",[3,4,5,6]],["ygosu.com",[3,4,5,6]],["sportalkorea.com",[3,4,5,6]],["algumon.com",[3,4,5,6]],["hancinema.net",[3,4,5,6]],["enetnews.co.kr",[3,4,5,6]],["edaily.co.kr",[3,4,5,6]],["economist.co.kr",[3,4,5,6]],["etoday.co.kr",[3,4,5,6]],["hankyung.com",[3,4,5,6]],["isplus.com",[3,4,5,6]],["hometownstation.com",[3,4,5,6]],["kagit.kr",[3,4,5,6]],["inven.co.kr",[3,4,5,6]],["viva100.com",[3,4,5,6]],["joongdo.co.kr",[3,4,5,6]],["jjang0u.com",[3,4,5,6]],["tenbizt.com",[3,4,5,6]],["tvreport.co.kr",[3,4,5,6]],["newautopost.co.kr",[3,4,5,6]],["mememedia.co.kr",[3,4,5,6]],["mobilitytv.co.kr",[3,4,5,6]],["cboard.net",[3,4,5,6]],["a-ha.io",[3,4,5,6]],["interfootball.co.kr",[3,4,5,6]],["fourfourtwo.co.kr",[3,4,5,6]],["apkmirror.com",[3,4,5,6]],["dotkeypress.kr",[3,4,5,6]],["viewcash.co.kr",[3,4,5,6]],["tripplus.co.kr",[3,4,5,6]],["enterdiary.com",[3,4,5,6]],["mtodayauto.com",[3,4,5,6]],["genshinlab.com",[3,4,5,6]],["hotplacehunter.co.kr",[3,4,5,6]],["mystylezip.com",[3,4,5,6]],["majorgeeks.com",[3,4,5,6]],["poro.gg",[3,4,5,6]],["maple.gg",[3,4,5,6]],["lolchess.gg",[3,4,5,6]],["dak.gg",[3,4,5,6]],["newdaily.co.kr",[3,4,5,6]],["meconomynews.com",[3,4,5,6]],["brandbrief.co.kr",[3,4,5,6]],["dfast.kr",[3,4,5,6]],["thephoblographer.com",[3,4,5,6]],["dogdrip.net",[3,4,5,6]],["youtu.co",[3,4,5,6]],["honkailab.com",[3,4,5,6]],["warcraftrumbledeck.com",[3,4,5,6]],["golf-live.at",[3,4,5,6]],["mlbpark.donga.com",[3,4,5,6]],["gamingdeputy.com",[3,4,5,6]],["thestockmarketwatch.com",[3,4,5,6]],["capress.kr",[3,4,5,6]],["carandmore.co.kr",[3,4,5,6]],["maxmovie.kr",[3,4,5,6]],["motorgraph.com",[3,4,5,6]],["newsbell.co.kr",[3,4,5,6]],["tminews.co.kr",[3,4,5,6]],["thehousemagazine.kr",[3,4,5,6]],["hardreset.info",[3,4,5,6]],["metabattle.com",[3,4,5,6]],["thesaurus.net",[3,4,5,6]],["mindbodygreen.com",7],["elevenlabs.io",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -166,7 +166,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -174,18 +173,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

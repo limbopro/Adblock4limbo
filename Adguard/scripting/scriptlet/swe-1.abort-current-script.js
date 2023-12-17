@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["jQuery","wizard_accordion"],["disableEnterKey"],["document.ondragstart"],["Di","initAds"],["DN","initAds"],["b2a"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["monsterinsights_frontend"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["setTimeout","test"],["Bau","preloadAds"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4,5,10]],["discoveringtheplanet.com",[6,7]],["di.se",8],["dn.se",9],["egoinas.se",10],["enkelteknik.se",10],["hamnen.se",10],["cannabis.se",10],["tidningen.djurskyddet.se",10],["influens.se",10],["byggvarlden.se",10],["vegomagasinet.se",10],["evertiq.se",11],["folkhalsasverige.se",12],["foretagsverige.se",12],["forskningsverige.se",12],["motorbibeln.se",12],["hallbarhetsverige.se",12],["tillvaxtsverige.se",12],["grillbibeln.se",12],["kampenmotcancer.se",12],["hejaolika.se",13],["medibok.se",14],["nasdaqomxnordic.com",15],["newsner.com",16],["humorbibeln.se",16],["sportbibeln.se",16],["ettgottskratt.se",16],["zeinaskitchen.se",16],["dinbyggare.se",16],["trafiksakerhet.se",16],["boktugg.se",16],["lakartidningen.se",16],["villalivet.se",16],["matsafari.nu",16],["sakochliv.se",17],["skrattsajten.com",18],["norpan.se",18],["spelhubben.se",19],["husbilsplats.se",19],["svensktgolfforum.se",20],["www.expressen.se",21]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4,5,10]],["discoveringtheplanet.com",[6,7]],["di.se",8],["dn.se",9],["egoinas.se",10],["enkelteknik.se",10],["hamnen.se",10],["cannabis.se",10],["tidningen.djurskyddet.se",10],["influens.se",10],["byggvarlden.se",10],["vegomagasinet.se",10],["golflivet.se",10],["evertiq.se",11],["folkhalsasverige.se",12],["foretagsverige.se",12],["forskningsverige.se",12],["motorbibeln.se",12],["hallbarhetsverige.se",12],["tillvaxtsverige.se",12],["grillbibeln.se",12],["kampenmotcancer.se",12],["hejaolika.se",13],["medibok.se",14],["nasdaqomxnordic.com",15],["newsner.com",16],["humorbibeln.se",16],["sportbibeln.se",16],["ettgottskratt.se",16],["zeinaskitchen.se",16],["dinbyggare.se",16],["trafiksakerhet.se",16],["boktugg.se",16],["lakartidningen.se",16],["villalivet.se",16],["matsafari.nu",16],["sakochliv.se",17],["skrattsajten.com",18],["norpan.se",18],["spelhubben.se",19],["husbilsplats.se",19],["svensktgolfforum.se",20],["www.expressen.se",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -228,7 +228,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -236,18 +235,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

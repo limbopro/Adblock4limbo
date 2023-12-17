@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["onload","adsbygoogle"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
+const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["jQuery","ai_front"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"]];
 
-const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["tekniknot.com",8],["mordefter.com",9],["ulketv.com.tr",10],["kenttv.net",11],["ulker.com.tr",12],["duzcetv.com",13],["bizimyaka.com",14]]);
+const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["iskandinavya.com",7],["mordefter.com",8],["ulketv.com.tr",9],["kenttv.net",10],["ulker.com.tr",11],["duzcetv.com",12],["bizimyaka.com",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -228,7 +228,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -236,18 +235,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

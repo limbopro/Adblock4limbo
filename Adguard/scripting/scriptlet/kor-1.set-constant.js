@@ -42,13 +42,13 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
+const argsList = [["list_end_run","noopFunc"],["FastClick.attach","noopFunc"],["FastClick","noopFunc"],["Math.uuid","","","asFunction"],["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["searchDataFactory.rcmdPrdList","{}"],["searchDataFactory.focusPrdList","{}"],["searchDataFactory.powerPrdList","{}"],["searchDataFactory.plusPrdList","{}"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
-const hostnamesMap = new Map([["mememedia.co.kr",0],["humors.zigcou.com",1],["shopping.interpark.com",2],["sbs.co.kr",[3,9]],["fun-iyagi.co.kr",4],["timecoffee.co.kr",4],["333aaa.site",4],["search.11st.co.kr",[5,6,7,8]],["domin.co.kr",10],["uwayapply.com",11],["tvchosun.com",12],["m.dcinside.com",13],["naver.com",14],["koreapas.com",15],["imbc.com",16],["meeco.kr",18],["sogirl.so",19],["tistory.com",20],["sajuplus.net",20],["auto.danawa.com",21]]);
+const hostnamesMap = new Map([["m.humoruniv.com",0],["m.shop.interpark.com",[1,2]],["hub.zum.com",3],["mememedia.co.kr",4],["humors.zigcou.com",5],["shopping.interpark.com",6],["sbs.co.kr",[7,13]],["fun-iyagi.co.kr",8],["timecoffee.co.kr",8],["333aaa.site",8],["search.11st.co.kr",[9,10,11,12]],["domin.co.kr",14],["uwayapply.com",15],["tvchosun.com",16],["m.dcinside.com",17],["naver.com",18],["koreapas.com",19],["imbc.com",20],["meeco.kr",22],["sogirl.so",23],["tistory.com",24],["sajuplus.net",24],["auto.danawa.com",25]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["coupang.com",[17]],["coupangcdn.com",[17]]]);
+const exceptionsMap = new Map([["coupang.com",[21]],["coupangcdn.com",[21]]]);
 
 /******************************************************************************/
 
@@ -315,7 +315,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -323,18 +322,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

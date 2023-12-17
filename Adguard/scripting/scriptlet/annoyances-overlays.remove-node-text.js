@@ -42,11 +42,11 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","advert"],["script","copyprotect"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","Interstitial"]];
+const argsList = [["script","check()&&xray.send(\"ad"],["script","advert"],["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","Interstitial"],["script","onerror"],["script","devtools"],["script","while(!![]){try{var"]];
 
-const hostnamesMap = new Map([["xanimu.com",0],["familyporner.com",0],["darknessporn.com",0],["freepublicporn.com",0],["pisshamster.com",0],["punishworld.com",0],["skidrowreloaded.com",1],["valid.x86.fr",2],["jpost.com",3],["teamkong.tk",4],["sekaikomik.bio",4],["moviesapi.club",5],["bestx.stream",5],["watchx.top",5],["animesaga.in",5],["camcaps.io",6],["nicekkk.com",6],["streamvid.net",6],["seriesperu.com",7],["klartext-ne.de",7],["iptvromania.ro",7],["sbot.cf",8],["fjordd.com",10],["playertv.net",12],["warungkomik.com",13],["themeslide.com",13],["terramirabilis.ro",14],["161.97.70.5",15],["gdrivedescarga.com",16],["audiologyresearch.org",17],["zipcode.com.ng",18],["thejakartapost.com",19],["mathcrave.com",20],["brokensilenze.net",[21,22]],["newsrade.com",23],["broncoshq.com",24],["dev.miuiflash.com",25],["djxmaza.in",25],["thecubexguide.com",25],["anascrie.ro",26],["streambuddy.net",27],["smartkhabrinews.com",28],["cheersandgears.com",29],["m.moovitapp.com",30]]);
+const hostnamesMap = new Map([["mail.ru",0],["xanimu.com",1],["familyporner.com",1],["darknessporn.com",1],["freepublicporn.com",1],["pisshamster.com",1],["punishworld.com",1],["skidrowreloaded.com",2],["valid.x86.fr",4],["jpost.com",5],["teamkong.tk",6],["sekaikomik.bio",6],["moviesapi.club",7],["bestx.stream",7],["watchx.top",7],["animesaga.in",7],["camcaps.io",8],["nicekkk.com",8],["streamvid.net",8],["tips97tech.blogspot.com",8],["seriesperu.com",9],["klartext-ne.de",9],["iptvromania.ro",9],["cespun.eu",9],["sbot.cf",10],["fjordd.com",12],["playertv.net",14],["warungkomik.com",15],["themeslide.com",15],["terramirabilis.ro",16],["161.97.70.5",17],["gdrivedescarga.com",18],["audiologyresearch.org",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["newsrade.com",25],["broncoshq.com",26],["dev.miuiflash.com",27],["djxmaza.in",27],["thecubexguide.com",27],["anascrie.ro",28],["streambuddy.net",29],["smartkhabrinews.com",30],["cheersandgears.com",31],["moovitapp.com",32],["arras.io",33],["arras.netlify.app",33],["arrax.io",33],["stblion.xyz",35]]);
 
-const entitiesMap = new Map([["vidmoly",5],["oploverz",[7,11]],["tvhay",9],["bg-gledai",17]]);
+const entitiesMap = new Map([["streamtape",3],["vidmoly",7],["oploverz",[9,13]],["tvhay",11],["bg-gledai",19],["vembed",34]]);
 
 const exceptionsMap = new Map([]);
 
@@ -213,7 +213,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -221,18 +220,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

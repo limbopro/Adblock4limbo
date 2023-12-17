@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["atob","ai_block_class"],["Object.defineProperty","ADMStorageFileCDN"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["document.createElement","optad"],["$","PopUnder"],["document.addEventListener","popupOpened"],["Promise","break;case"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","urlAdsMbIntro"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
+const argsList = [["atob","ai_block_class"],["Object.defineProperty","ADMStorageFileCDN"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["document.createElement","optad"],["$","PopUnder"],["Promise","break;case"],["encodeURIComponent","popunder"],["jQuery","popurl"],["$","youtube-modal"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.createElement","checkIntersection"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["$","urlAdsMbIntro"],["document.write","snow"],["setTimeout","window.location"],["jQuery","overlay"]];
 
-const hostnamesMap = new Map([["azrom.net",0],["cafef.vn",1],["gamek.vn",1],["genk.vn",1],["kenh14.vn",1],["soha.vn",1],["tuoitre.vn",1],["downloadsachmienphi.com",2],["dualeotruyenww.com",[3,31]],["gametv.vn",4],["gotphim.com",5],["hh3dhay.com",6],["hh3dhay.xyz",6],["holyphim.com",7],["ios.codevn.net",8],["khoaiphim.com",[9,10]],["khohieu.com",11],["linkneverdie.net",12],["lxmanga.net",13],["motphim3s.net",14],["nettruyenair.com",15],["nguontv.biz",16],["phimgichill.net",17],["ophimhdvn3.net",17],["mephimnhe1.net",17],["phimmoipro2.net",18],["plus.gtv.vn",19],["protruyen.xyz",20],["animevietsub.fan",20],["rphang.me",21],["mrcong.com",21],["tctruyen.net",22],["tinsoikeo.vip",23],["toptruyenne.com",24],["truyen2u.net",25],["truyen35.vn",26],["truyengihotmoi.net",27],["truyenqqvn.com",28],["truyentuan.com",29],["vailonxx.com",30],["phimlongtieng.com",30],["phimlongtieng.net",30],["viet69.tube",31],["ungtycomicsvip.com",31],["vlxx.xxx",31],["yurineko.net",31],["vlxyz.tv",31],["javhay.media",31],["phimsexhay669.co",31],["cliphot69.biz",31],["doctruyen3qvn.com",31],["hentaizz.vip",31],["animehay.city",31],["heo69.top",31],["tuoi69.one",31],["top1sex.club",31],["lenlut.net",31],["xemsex.asia",31],["hentai-vn.com",31],["web11.sexphim1.com",31],["cdn.streamvl.sbs",31],["buomtv.tv",31],["vungoctuan.vn",32],["xnxx-sex-videos.com",33],["xoilac87.tv",34]]);
+const hostnamesMap = new Map([["azrom.net",0],["cafef.vn",1],["gamek.vn",1],["genk.vn",1],["kenh14.vn",1],["soha.vn",1],["tuoitre.vn",1],["downloadsachmienphi.com",2],["dualeotruyenww.com",[3,29]],["gametv.vn",4],["gotphim.com",5],["hh3dhay.com",6],["hh3dhay.xyz",6],["holyphim.com",7],["ios.codevn.net",8],["khoaiphim.com",[9,10]],["khohieu.com",11],["linkneverdie.net",12],["lxmanga.net",13],["nettruyenair.com",14],["nguontv.biz",15],["phimgichill.net",16],["ophimhdvn3.net",16],["mephimnhe1.net",16],["plus.gtv.vn",17],["protruyen.xyz",18],["animevietsub.fan",18],["rphang.me",19],["misskon.com",19],["tctruyen.net",20],["tinsoikeo.vip",21],["toptruyenne.com",22],["truyen2u.net",23],["truyen35.vn",24],["truyengihotmoi.net",25],["truyenqqvn.com",26],["truyentuan.com",27],["vailonxx.com",28],["phimlongtieng.com",28],["phimlongtieng.net",28],["viet69.tube",29],["ungtycomicsvip.com",29],["vlxx.xxx",29],["yurineko.net",29],["vlxyz.tv",29],["javhay.media",29],["phimsexhay669.co",29],["cliphot69.biz",29],["doctruyen3qvn.com",29],["hentaizz.vip",29],["animehay.city",29],["heo69.top",29],["tuoi69.one",29],["top1sex.club",29],["lenlut.net",29],["xemsex.asia",29],["hentai-vn.com",29],["web11.sexphim1.com",29],["cdn.streamvl.sbs",29],["buomtv.tv",29],["vuaphimmoi.net",30],["vungoctuan.vn",31],["xnxx-sex-videos.com",32],["xoilac87.net",33]]);
 
 const entitiesMap = new Map([]);
 
@@ -228,7 +228,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -236,18 +235,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

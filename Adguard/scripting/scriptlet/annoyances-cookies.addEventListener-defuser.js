@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["DOMContentLoaded","js-revoke-cookie-manager"],["load","consentDialog"],["load","function(){if(s.readyState==XMLHttpRequest.DONE"],["wheel","preventDefault"],["touchmove","preventDefault"],["scroll","innerHeight"]];
+const argsList = [["DOMContentLoaded","js-revoke-cookie-manager"],["load","consentDialog"],["load","function(){if(s.readyState==XMLHttpRequest.DONE"],["scroll","innerHeight"]];
 
-const hostnamesMap = new Map([["ubuntu.com",0],["finna.fi",1],["sss.fi",2],["vr.fi",[3,4]],["akaanseutu.fi",5],["alueviesti.fi",5],["kiuruvesilehti.fi",5],["lempaala.ideapark.fi",5],["lvs.fi",5],["olutposti.fi",5],["orivedensanomat.fi",5],["pirmediat.fi",5],["radiosun.fi",5],["shl.fi",5],["urjalansanomat.fi",5],["ylojarvenuutiset.fi",5]]);
+const hostnamesMap = new Map([["ubuntu.com",0],["finna.fi",1],["sss.fi",2],["akaanseutu.fi",3],["alueviesti.fi",3],["kiuruvesilehti.fi",3],["lempaala.ideapark.fi",3],["lvs.fi",3],["olutposti.fi",3],["orivedensanomat.fi",3],["pirmediat.fi",3],["radiosun.fi",3],["shl.fi",3],["urjalansanomat.fi",3],["ylojarvenuutiset.fi",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -178,7 +178,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -186,18 +185,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

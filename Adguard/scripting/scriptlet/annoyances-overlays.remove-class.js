@@ -42,11 +42,11 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["cookie-paywall-visible","article"],["floating",".hero-video"],["normal-hasActivity-nav-page",".install-pages"],["hasActivityNavTop","#pageNav"],["stuck",".video-page__player > div.sinparty-player > div"],["oxy-modal-active","body"],["md:pt-[54px]",".z-50.overflow-hidden:not(.group)"],["pt-[64px]",".z-50.overflow-hidden:not(.group)"],["video-flyout--fixed",".video-flyout"],["jw-flag-floating|jw-flag-small-player"],["show",".widget-mini-player"],["StickyVideoPlayer",".OTVVideoPlayer"],["mfp-popup-exit-quiz-v2","body"],["header-infobar-active","body"],["is-benefit","div#homepagePage"],["js-main-header",".header"],["vlog-sticky-video",".video.vlog-sticky-video"],["fancybox-lock","html"],["jw-flag-floating",".jwplayer.jw-flag-floating"],["with-ticker","body"],["randomplayer--fixed",".randomplayer.randomplayer--fixed"],["State--CountrySelectorModal","html"],["tos-opened","body.tos-opened"],["hustle-no-scroll","html"],["open-popup","body.open-popup"],["popup-active","body[class=\"popup-active\"]"],["js_show-android",".wrapper"],["tp-modal-open","body"],["frozen-mobile-body","body"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
+const argsList = [["cookie-paywall-visible","article"],["c-avLazyStickyVideo-sticky",".c-avLazyStickyVideo-container"],["promo-above","body.promo-above"],["floating",".hero-video"],["normal-hasActivity-nav-page",".install-pages"],["hasActivityNavTop","#pageNav"],["stuck",".video-page__player > div.sinparty-player > div"],["oxy-modal-active","body"],["md:pt-[54px]",".z-50.overflow-hidden:not(.group)"],["pt-[64px]",".z-50.overflow-hidden:not(.group)"],["video-flyout--fixed",".video-flyout"],["jw-flag-floating|jw-flag-small-player"],["show",".widget-mini-player"],["StickyVideoPlayer",".OTVVideoPlayer"],["mfp-popup-exit-quiz-v2","body"],["header-infobar-active","body"],["is-benefit","div#homepagePage"],["js-main-header",".header"],["vlog-sticky-video",".video.vlog-sticky-video"],["fancybox-lock","html"],["jw-flag-floating",".jwplayer.jw-flag-floating"],["with-ticker","body"],["randomplayer--fixed",".randomplayer.randomplayer--fixed"],["State--CountrySelectorModal","html"],["tos-opened","body.tos-opened"],["hustle-no-scroll","html"],["open-popup","body.open-popup"],["popup-active","body[class=\"popup-active\"]"],["js_show-android",".wrapper"],["tp-modal-open","body"],["frozen-mobile-body","body"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
 
-const hostnamesMap = new Map([["postimees.ee",0],["pluska.sk",1],["keepstreams.com",[2,3]],["sinparty.com",4],["gamberorosso.it",5],["internxt.com",[6,7]],["nbcnewyork.com",8],["healthline.com",9],["haberturk.com",10],["abc7.com",11],["neilpatel.com",12],["teknosa.com",13],["rogervivier.com",14],["kino.tricolor.tv",15],["whatifshow.com",16],["thestreet.com",17],["qa.opensooq.com",17],["komandacard.ru",17],["dailystar.co.uk",18],["spiegel.de",18],["besthealthmag.ca",18],["videosxgays.com",19],["sportowefakty.wp.pl",20],["hamamatsu.com",21],["autostrada-a4.com.pl",22],["fastbikesmag.com",23],["hindustantimes.com",24],["medobr.com",25],["mycredit.ua",26],["bloomberglinea.com",[27,28]],["bloomberglinea.com.br",[27,28]],["novelza.com",30],["postype.com",31]]);
+const hostnamesMap = new Map([["postimees.ee",0],["cnet.com",1],["emsisoft.com",2],["pluska.sk",3],["keepstreams.com",[4,5]],["sinparty.com",6],["gamberorosso.it",7],["internxt.com",[8,9]],["nbcnewyork.com",10],["healthline.com",11],["haberturk.com",12],["abc7.com",13],["neilpatel.com",14],["teknosa.com",15],["rogervivier.com",16],["kino.tricolor.tv",17],["whatifshow.com",18],["thestreet.com",19],["qa.opensooq.com",19],["komandacard.ru",19],["dailystar.co.uk",20],["spiegel.de",20],["besthealthmag.ca",20],["videosxgays.com",21],["sportowefakty.wp.pl",22],["hamamatsu.com",23],["autostrada-a4.com.pl",24],["fastbikesmag.com",25],["hindustantimes.com",26],["medobr.com",27],["mycredit.ua",28],["bloomberglinea.com",[29,30]],["bloomberglinea.com.br",[29,30]],["novelza.com",32],["postype.com",33]]);
 
-const entitiesMap = new Map([["pornhub",29]]);
+const entitiesMap = new Map([["pornhub",31]]);
 
 const exceptionsMap = new Map([]);
 
@@ -184,7 +184,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -192,18 +191,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

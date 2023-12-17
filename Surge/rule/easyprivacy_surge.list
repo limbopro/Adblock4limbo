@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312161512
+## ! Version: 202312171455
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Dec 2023 15:12 UTC
+## ! Last modified: 17 Dec 2023 14:55 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -360,7 +360,6 @@ DOMAIN-SUFFIX,turboeagle.co
 DOMAIN-SUFFIX,turbolion.io
 DOMAIN-SUFFIX,tvpixel.com
 DOMAIN-SUFFIX,tw.cx
-DOMAIN-SUFFIX,tzegilo.com
 DOMAIN-SUFFIX,ugdturner.com
 DOMAIN-SUFFIX,uidapi.com
 DOMAIN-SUFFIX,uqd.io
@@ -3704,6 +3703,7 @@ DOMAIN-SUFFIX,dmpcdn.el-mundo.net
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it
 DOMAIN-SUFFIX,evnt.iol.it
 DOMAIN-SUFFIX,fb_servpub-a.akamaihd.net
+DOMAIN-SUFFIX,heatmaps.lcisoft.it
 DOMAIN-SUFFIX,limone.iltrovatore.it
 DOMAIN-SUFFIX,livestats.matrix.it
 DOMAIN-SUFFIX,log.edidomus.it
@@ -4116,6 +4116,7 @@ DOMAIN-SUFFIX,dc.banggood.com
 DOMAIN-SUFFIX,dd.auspost.com.au
 DOMAIN-SUFFIX,dd.nytimes.com
 DOMAIN-SUFFIX,deliver.ptgncdn.com
+DOMAIN-SUFFIX,df.infra.shopee.ph
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au
 DOMAIN-SUFFIX,dp.shoprunner.com
 DOMAIN-SUFFIX,dtag.breadfinancial.com
@@ -4486,6 +4487,7 @@ DOMAIN-SUFFIX,trk.tirto.id
 DOMAIN-SUFFIX,trx3.famousfix.com
 DOMAIN-SUFFIX,ts.delfi.lt
 DOMAIN-SUFFIX,ua.indianexpress.com
+DOMAIN-SUFFIX,ubt.tracking.shopee.ph
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com
 DOMAIN-SUFFIX,um.contentstudio.io
 DOMAIN-SUFFIX,umami.wakarimasen.moe

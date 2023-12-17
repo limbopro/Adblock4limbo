@@ -42,11 +42,11 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico method:HEAD"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
+const argsList = [["/www3\\.doubleclick\\.net|tagger\\.opecloud\\.com/"],["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico method:HEAD"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
 
-const hostnamesMap = new Map([["france.tv",1],["lameteoagricole.net",2],["meteo-grenoble.com",2],["signal-arnaques.com",2],["techno-science.net",2],["animationdigitalnetwork.fr",2],["animedigitalnetwork.fr",2],["malekal.com",3],["tf1.fr",[4,5]],["tf1info.fr",[4,5]]]);
+const hostnamesMap = new Map([["rmcbfmplay.com",0],["france.tv",2],["lameteoagricole.net",3],["meteo-grenoble.com",3],["signal-arnaques.com",3],["techno-science.net",3],["animationdigitalnetwork.fr",3],["animedigitalnetwork.fr",3],["malekal.com",4],["tf1.fr",[5,6]],["tf1info.fr",[5,6]]]);
 
-const entitiesMap = new Map([["darkino",0]]);
+const entitiesMap = new Map([["darkino",1]]);
 
 const exceptionsMap = new Map([]);
 
@@ -219,7 +219,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -227,18 +226,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

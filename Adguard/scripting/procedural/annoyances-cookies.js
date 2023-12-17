@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#CookieWrapper\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\"#ask-consent\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\".gb_g\",\"tasks\":[[\"has-text\",\"cookie\"]]}"],["{\"selector\":\"#moduleCookies\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\".hasParental.cookies-modal\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\"dialog\",\"action\":[\"remove\",\"\"]}"]];
+const argsList = [["{\"selector\":\"#CookieWrapper\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\"#ask-consent\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\".gb_g\",\"tasks\":[[\"has-text\",\"cookie\"]]}"],["{\"selector\":\".sanoma-logo-container ~ .message-component.privacy-manager-tcfv2 .tcfv2-stack:not([title=\\\"Sanoman sisällönjakelukumppanit\\\"]) button.pm-switch.checked\",\"action\":[\"remove-class\",\"checked\"]}"],["{\"selector\":\"#moduleCookies\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\".hasParental.cookies-modal\",\"action\":[\"remove\",\"\"]}"],["{\"selector\":\"dialog\",\"action\":[\"remove\",\"\"]}"]];
 
-const hostnamesMap = new Map([["schwarzenbacher-kundl.at",0],["e-comas.com",1],["play.google.com",2],["topographic-map.com",3],["xhamster.com",4],["xhamster2.com",4],["xhamster3.com",4],["xhamster18.desi",4],["computerbase.de",5]]);
+const hostnamesMap = new Map([["schwarzenbacher-kundl.at",0],["e-comas.com",1],["play.google.com",2],["cdn.privacy-mgmt.com",3],["topographic-map.com",4],["xhamster.com",5],["xhamster2.com",5],["xhamster3.com",5],["xhamster18.desi",5],["computerbase.de",6]]);
 
 const entitiesMap = new Map(undefined);
 

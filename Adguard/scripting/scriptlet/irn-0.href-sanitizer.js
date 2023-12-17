@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["a[href^=\"https://hamtamovie.im/dl/?url=\"]","?url"]];
+const argsList = [["a[href^=\"https://hamtamovie.im/dl/?url=\"]","?url"],["a[href^=\"https://l.vrgl.ir/r?\"][href*=\"&l=http\"]","?l"]];
 
-const hostnamesMap = new Map([]);
+const hostnamesMap = new Map([["virgool.io",1]]);
 
 const entitiesMap = new Map([["hamtamovie",0]]);
 
@@ -226,7 +226,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -234,18 +233,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

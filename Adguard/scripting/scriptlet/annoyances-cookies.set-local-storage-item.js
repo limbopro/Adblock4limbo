@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["QMOptIn","false"],["cookie_banner:hidden","true"],["cookiesAccepted","false"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookiesAccepted","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["cookie_consent","false"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["SWCOOKIESACC","1"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
+const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["makerz_allow_consentmgr","0"],["cookie_consent","false"],["cookiesAgree","true"],["ytsc_accepted_cookies","true"],["safe-storage/v1/tracking-consent/trackingConsentMarketingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAdvertisingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey","false"],["agreeToCookie","false"],["AI Alliance_ReactCookieAcceptance_hasSetCookies","true"],["cookie_prompt_times","1"],["cookie-ack-2","true"],["firstVisit","false"],["2020-04-05","1"],["dismissed","true"],["SET_COOKIES_APPROVED","true"],["hasAcceptedCookies","true"],["isCookiesNotificationHidden","true"],["agreed-cookies","true"],["consentCookie","true"],["SWCOOKIESACC","1"],["hasAcceptedCookieNotice","true"],["fb-cookies-accepted","false"],["is_accept_cookie","true"],["accept-jove-cookie","1"],["cookie_consent_bar_value","true"],["pxdn_cookie_consent","true"],["akasha__cookiePolicy","true"],["QMOptIn","false"],["isCookiesAccepted","true"],["safe.global","false"],["cookie_banner:hidden","true"],["cookiesAccepted","false"],["accept_cookie_policy","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookiesAccepted","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["cookiePolicy","true"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["contao-privacy-center.hidden","1"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","true"],["cookieConsent","false"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
 
-const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["ashleyfurniture.com",3],["jibjab.com",4],["filmzie.com",5],["betterprogramming.pub",6],["medium.com",6],["500ish.com",6],["gitconnected.com",6],["bettermarketing.pub",6],["diylifetech.com",6],["thebolditalic.com",6],["writingcooperative.com",6],["fanfare.pub",6],["betterhumans.pub",6],["kick.com",7],["jimdosite.com",8],["worstbassist.com",8],["twitchclipsgermany.de",9],["evernote.com",[10,11]],["octopusenergy.co.jp",12],["happiful.com",13],["findmcserver.com",14],["traefik.io",15],["cityfalcon.ai",16],["digitalparking.city",17],["vitotechnology.com",18],["mediathekviewweb.de",19],["solana.com",20],["ef.co.id",21],["alohafromdeer.com",22],["fwd.com",[23,25]],["everywhere.game",24],["geotastic.net",26],["tattoodo.com",[27,28]],["virginexperiencedays.co.uk",29],["nordkurier.de",[30,31,32]],["everest-24.pl",[33,35]],["zave.it",34],["sneakerfreaker.com",36],["cryptofalka.hu",36],["walmart.ca",37],["flyingblue.com",38],["byfood.com",39],["andsafe.de",40],["edostavka.by",41],["emall.by",41],["onexstore.pl",[42,43,44]],["revanced.app",44],["eezy.nrw",45],["bahnland-bayern.de",45],["evropochta.by",[46,47]],["hitado.de",48],["inselberlin.de",49],["gronkh.tv",50],["parrotsec.org",51],["adfilteringdevsummit.com",52],["learngerman.dw.com",53],["gostanford.com",54],["namensetiketten.de",55],["drafthound.com",[56,57]],["wokularach.pl",58],["bidup.amtrak.com",59],["eschuhe.de",60],["flyingpapers.com",61],["beta.character.ai",[62,63]],["bittimittari.fi",64],["vivantis.sk",65]]);
+const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["makerz.me",3],["go.bkk.hu",4],["happiful.com",4],["bazaartracker.com",5],["subscribercounter.com",6],["app.klarna.com",[7,8,9]],["instantspoursoi.fr",10],["thealliance.ai",11],["temu.com",12],["vivenu.com",13],["librumreader.com",14],["visnos.com",15],["polypane.app",16],["changelly.com",17],["glose.com",18],["yellow.systems",19],["renebieder.com",20],["goodram.com",21],["starwalk.space",22],["vitotechnology.com",22],["codedead.com",23],["studiofabiobiesel.com",24],["fydeos.com",25],["fydeos.io",25],["jove.com",26],["argent.xyz",27],["pixeden.com",28],["akasha.org",29],["ashleyfurniture.com",30],["5sim.net",31],["safe.global",32],["jibjab.com",33],["filmzie.com",34],["vietjetair.com",35],["betterprogramming.pub",36],["medium.com",36],["500ish.com",36],["gitconnected.com",36],["bettermarketing.pub",36],["diylifetech.com",36],["thebolditalic.com",36],["writingcooperative.com",36],["fanfare.pub",36],["betterhumans.pub",36],["kick.com",37],["jimdosite.com",38],["worstbassist.com",38],["twitchclipsgermany.de",39],["evernote.com",[40,41]],["octopusenergy.co.jp",42],["plente.com",43],["findmcserver.com",44],["traefik.io",45],["cityfalcon.ai",46],["digitalparking.city",47],["mediathekviewweb.de",48],["solana.com",49],["ef.co.id",50],["alohafromdeer.com",51],["fwd.com",[52,54]],["everywhere.game",53],["geotastic.net",55],["tattoodo.com",[56,57]],["virginexperiencedays.co.uk",58],["nordkurier.de",[59,60,61]],["everest-24.pl",[62,64]],["zave.it",63],["sneakerfreaker.com",65],["cryptofalka.hu",65],["walmart.ca",66],["flyingblue.com",67],["byfood.com",68],["andsafe.de",69],["edostavka.by",70],["emall.by",70],["onexstore.pl",[71,72,73]],["revanced.app",73],["eezy.nrw",74],["bahnland-bayern.de",74],["evropochta.by",[75,76]],["hitado.de",77],["inselberlin.de",78],["gronkh.tv",79],["parrotsec.org",80],["dorkgpt.com",81],["adfilteringdevsummit.com",82],["learngerman.dw.com",83],["gostanford.com",84],["namensetiketten.de",85],["drafthound.com",[86,87]],["wokularach.pl",88],["bidup.amtrak.com",89],["eschuhe.de",90],["flyingpapers.com",91],["beta.character.ai",[92,93]],["bittimittari.fi",94],["vivantis.sk",95]]);
 
 const entitiesMap = new Map([]);
 
@@ -166,7 +166,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -174,18 +173,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

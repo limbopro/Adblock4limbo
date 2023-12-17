@@ -33,7 +33,7 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#secondary > aside\",\"tasks\":[[\"has\",{\"selector\":\"> div.widget-header > h3\",\"tasks\":[[\"has-text\",\"/Marketing|Sponzorisano/\"]]}]]}"],["{\"selector\":\".elementor-column-gap-default\",\"tasks\":[[\"has-text\",\"/^SERVIS/\"]]}"]];
+const argsList = [["{\"selector\":\"#secondary > aside\",\"tasks\":[[\"has\",{\"selector\":\"> div.widget-header > h3\",\"tasks\":[[\"has-text\",\"/Marketing|Sponzor\\\\isano/\"]]}]]}"],["{\"selector\":\".elementor-column-gap-default\",\"tasks\":[[\"has-text\",\"/^SERV\\\\IS/\"]]}"]];
 
 const hostnamesMap = new Map([["sveopoznatima.com",0],["ul-info.com",1]]);
 

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["pagead2.googlesyndication.com"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["googletag"],["ad.php"],["cloudflareinsights.com"]];
 
-const hostnamesMap = new Map([["automoto.it",0],["moto.it",0],["calcmaps.com",0],["thejakartapost.com",0],["crdroid.net",0],["maxedtech.com",0],["dizipal1000.com",0],["slazag.pl",0],["bytomski.pl",0],["piekary.info",0],["twojknurow.pl",0],["nowinytyskie.pl",0],["ngs24.pl",0],["24kato.pl",0],["rudzianin.pl",0],["zabrzenews.pl",0],["chorzowski.pl",0],["tarnowskiegory.info",0],["24zaglebie.pl",0],["insidermonkey.com",0],["poedb.tw",0],["stakingrewards.com",0],["udocz.com",0],["graphicget.com",1],["udemy-downloader.com",1],["bypass.city",[2,9,11]],["gamebrew.org",3],["photosonic.writesonic.com",5],["maxroll.gg",5],["tuttoandroid.net",5],["psy.pl",5],["koty.pl",5],["intibia.com",5],["simkl.com",6],["xhamster20.desi",7],["xhwebsite2.com",[7,12]],["xhamster18.desi",7],["xhadult3.com",[7,12]],["xhadult2.com",[7,12]],["xhmoon5.com",[7,12]],["xhwide1.com",[7,12]],["xhwide8.com",[7,12]],["xhamster3.com",7],["xhplanet2.com",[7,12]],["xhtab2.com",[7,12]],["xhamster5.desi",7],["xhamster9.com",7],["xhamster.desi",7],["xhamster.one",7],["xhamster.com",7],["weather.com",8],["socialcounts.org",9],["theonegenerator.com",10],["fullxh.com",12],["megaxh.com",12],["unlockxh4.com",12],["xhadult4.com",12],["xhadult5.com",12],["xhamster46.com",12],["xhday.com",12],["xhday1.com",12],["xhplanet1.com",12],["xhreal2.com",12],["xhreal3.com",12],["xhvictory.com",12],["xhwebsite.com",12],["amtraker.com",13]]);
+const hostnamesMap = new Map([["everyeye.it",0],["automoto.it",0],["moto.it",0],["calcmaps.com",0],["thejakartapost.com",0],["crdroid.net",0],["maxedtech.com",0],["dizipal1000.com",0],["slazag.pl",0],["bytomski.pl",0],["piekary.info",0],["twojknurow.pl",0],["nowinytyskie.pl",0],["ngs24.pl",0],["24kato.pl",0],["rudzianin.pl",0],["zabrzenews.pl",0],["chorzowski.pl",0],["tarnowskiegory.info",0],["24zaglebie.pl",0],["insidermonkey.com",0],["poedb.tw",0],["stakingrewards.com",0],["udocz.com",0],["graphicget.com",1],["udemy-downloader.com",1],["bypass.city",[2,9,11]],["gamebrew.org",3],["photosonic.writesonic.com",5],["maxroll.gg",5],["tuttoandroid.net",5],["psy.pl",5],["koty.pl",5],["intibia.com",5],["simkl.com",6],["xhamster20.desi",7],["xhwebsite2.com",[7,12]],["xhamster18.desi",7],["xhadult3.com",[7,12]],["xhadult2.com",[7,12]],["xhmoon5.com",[7,12]],["xhwide1.com",[7,12]],["xhwide8.com",[7,12]],["xhamster3.com",7],["xhplanet2.com",[7,12]],["xhtab2.com",[7,12]],["xhamster5.desi",7],["xhamster9.com",7],["xhamster.desi",7],["xhamster.one",7],["xhamster.com",7],["weather.com",8],["socialcounts.org",9],["theonegenerator.com",10],["fullxh.com",12],["megaxh.com",12],["unlockxh4.com",12],["xhadult4.com",12],["xhadult5.com",12],["xhamster46.com",12],["xhday.com",12],["xhday1.com",12],["xhplanet1.com",12],["xhreal2.com",12],["xhreal3.com",12],["xhvictory.com",12],["xhwebsite.com",12],["amtraker.com",13]]);
 
 const entitiesMap = new Map([["ddys",4],["xhamster18",[7,12]],["xhamster17",[7,12]],["hamsterix",[7,12]],["xhamster13",[7,12]],["xhamster",12],["xhamster1",12],["xhamster10",12],["xhamster11",12],["xhamster12",12],["xhamster14",12],["xhamster15",12],["xhamster16",12],["xhamster19",12],["xhamster20",12],["xhamster2",12],["xhamster3",12],["xhamster4",12],["xhamster5",12],["xhamster7",12],["xhamster8",12]]);
 
@@ -219,7 +219,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -227,18 +226,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

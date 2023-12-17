@@ -42,11 +42,11 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["possivelAdblockDetectado"],["eazyAdUnBlockerHttp"],["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["initPu"],["cJsEdge"],["_pop"],["lolaop"],["adk_pdisp"],["__clientAHV"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"]];
+const argsList = [["setNptTechAdblockerCookie"],["possivelAdblockDetectado"],["eazyAdUnBlockerHttp"],["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["initPu"],["cJsEdge"],["_pop"],["lolaop"],["adk_pdisp"],["__clientAHV"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"]];
 
-const hostnamesMap = new Map([["mundodevalor.me",0],["aquiyahorajuegos.net",1],["manga-crab.com",2],["hinatasoul.com",3],["pcworld.es",4],["tunovelaligera.com",5],["20minutos.es",6],["comando.to",7],["porno-japones.top",8],["tvplusgratis.com",9],["hobbugs.com",9],["seriesretro.com",10],["cozinha.minhasdelicias.com",11],["diariodegoias.com.br",12],["outerspace.com.br",12],["1f1.in",13],["1i1.in",13],["embedder.net",14],["cuevana.biz",15],["cuevana.run",15],["repelispluss.tv",16],["fiuxy2.com",17],["pelispop.me",18],["pelisplus.icu",19],["baixartorrents.org",[20,21]],["pctmix1.com",22],["aquariumgays.com",22],["allfeeds.live",23],["grantorrent.nl",26],["hentaistube.com",27],["libertinga.net",28],["mrpiracy.top",29],["seireshd.com",30],["cinetux.to",[31,32]],["holanime.com",33],["pirlotv.es",34],["repelisplus.vip",35],["descargaranimehentai.com",36],["tuhentaionline.com",37]]);
+const hostnamesMap = new Map([["elespanol.com",0],["mundodevalor.me",1],["aquiyahorajuegos.net",2],["manga-crab.com",3],["hinatasoul.com",4],["pcworld.es",5],["tunovelaligera.com",6],["20minutos.es",7],["comando.to",8],["porno-japones.top",9],["tvplusgratis.com",10],["hobbugs.com",10],["seriesretro.com",11],["cozinha.minhasdelicias.com",12],["diariodegoias.com.br",13],["outerspace.com.br",13],["1f1.in",14],["1i1.in",14],["embedder.net",15],["cuevana.biz",16],["cuevana.run",16],["repelispluss.tv",17],["fiuxy2.com",18],["pelispop.me",19],["pelisplus.icu",20],["baixartorrents.org",[21,22]],["pctmix1.com",23],["aquariumgays.com",23],["allfeeds.live",24],["grantorrent.nl",27],["hentaistube.com",28],["libertinga.net",29],["mrpiracy.top",30],["seireshd.com",31],["cinetux.to",[32,33]],["holanime.com",34],["pirlotv.es",35],["repelisplus.vip",36],["descargaranimehentai.com",37],["tuhentaionline.com",38]]);
 
-const entitiesMap = new Map([["cinecalidad2",24],["cine-calidad",25]]);
+const entitiesMap = new Map([["cinecalidad2",25],["cine-calidad",26]]);
 
 const exceptionsMap = new Map([]);
 
@@ -157,7 +157,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -165,18 +164,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

@@ -42,11 +42,11 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["#dle-content"],["","250"],["Adblock"],["SHOW_PUSH_MODAL"],["UnblockedBanner"],["X-Set-Adblock"],["_modal"],["adblock"],["adfoxAsyncParams"],["ai_adb"],["alert","15000"],["doAd"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["google_jobrunner"],["is_adblock"],["saa"],["setInterval",""],["showModal"],["sparkle"],["toUTCString"],["0x"],["NO_MIMIC_ON_"],["siteZone","100"]];
+const argsList = [["","250"],["Adblock"],["SHOW_PUSH_MODAL"],["UnblockedBanner"],["X-Set-Adblock"],["_modal"],["adblock"],["adfoxAsyncParams"],["ai_adb"],["alert","15000"],["doAd"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["google_jobrunner"],["is_adblock"],["saa"],["setInterval",""],["showModal"],["sparkle"],["toUTCString"],["0x"],["NO_MIMIC_ON_"],["siteZone","100"]];
 
-const hostnamesMap = new Map([["online-fix.me",0],["otzovik.com",1],["sibnet.ru",2],["life.ru",3],["delfi.lt",4],["razlozhi.ru",5],["allapteki.ru",6],["strategium.ru",7],["playground.ru",8],["dracon-zet.ru",[9,12]],["aqicn.org",10],["tv-kanali.online",11],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["vseprosto.top",15],["fishki.net",16],["testserver.pro",17],["websdr.space",18],["blackwot.ru",19],["anime-chan.me",20],["num-words.com",21],["softportal.com",21],["e.mail.ru",[23,24]],["octavius.mail.ru",[23,24]]]);
+const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["life.ru",2],["delfi.lt",3],["razlozhi.ru",4],["allapteki.ru",5],["strategium.ru",6],["playground.ru",7],["dracon-zet.ru",[8,11]],["aqicn.org",9],["tv-kanali.online",10],["hdkinoteatr.com",12],["ferr-um.ucoz.ru",13],["stalker-2-2012.ucoz.net",13],["vseprosto.top",14],["fishki.net",15],["testserver.pro",16],["websdr.space",17],["blackwot.ru",18],["anime-chan.me",19],["num-words.com",20],["softportal.com",20],["e.mail.ru",[22,23]],["octavius.mail.ru",[22,23]]]);
 
-const entitiesMap = new Map([["rp5",22]]);
+const entitiesMap = new Map([["rp5",21]]);
 
 const exceptionsMap = new Map([]);
 
@@ -148,7 +148,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -156,18 +155,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

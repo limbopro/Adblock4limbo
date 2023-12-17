@@ -42,11 +42,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["sports:views:anti-adblock:shower","null"],["adsok","true"],["ignoring_adblock","1"],["adbViews","0"],["next_optin_check_time","false"],["tsg_announcement_seen","true"],["gem_tech_popup_closed","1"],["guestBpnModalSeen","true"],["modalSignup","true"],["qset_vc","$remove$"],["altses","false"],["firstFirebaseModalShow","true"],["emailLightBox","false"],["SIGN_UP_BONUS_MODAL_SHOWN","true"],["exit_attempt","true"],["barchart.bcFreeAccountModal","true"],["barchart.bcIsEvenLoggingModal","true"],["ONBOARDING_MODAL_DISPLAYED","true"],["firstEnter","false"],["showModal","true"],["dontShow","true"],["video_muted","true"],["music-announce-showed","true"],["msgads","true"],["entd:newsletter-layer","emptyObj"],["hasSeenAddToChromeNudge","1"],["announcement","1"],["IsModalShown","true"],["hasShownWelcome","true"],["sub_telegram","true"],["hide-airtime-blue-header","true"],["storeToolTipSeen","1"],["__iberion__publisherPromptSeen","3"],["alreadySawHomepageModal","true"],["has_popout_notification_dialog_recently","1"],["notifModal","true"],["homeExpressEmailSignupExitIntentModal","1"],["Visitundefined","1"],["MCPopUp","true"],["detailedview-clicks","5"],["isNotificationsReleaseModalVisible","false"],["newsletterAdvise","1"],["newsletter-flyout","1"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"]];
+const argsList = [["sports:views:anti-adblock:shower","null"],["adsok","true"],["ignoring_adblock","1"],["adbViews","0"],["next_optin_check_time","false"],["tsg_announcement_seen","true"],["gem_tech_popup_closed","1"],["guestBpnModalSeen","true"],["modalSignup","true"],["qset_vc","$remove$"],["altses","false"],["firstFirebaseModalShow","true"],["emailLightBox","false"],["SIGN_UP_BONUS_MODAL_SHOWN","true"],["exit_attempt","true"],["barchart.bcFreeAccountModal","true"],["barchart.bcIsEvenLoggingModal","true"],["ONBOARDING_MODAL_DISPLAYED","true"],["firstEnter","false"],["showModal","true"],["dontShow","true"],["video_muted","true"],["music-announce-showed","true"],["msgads","true"],["entd:newsletter-layer","emptyObj"],["hasSeenAddToChromeNudge","1"],["announcement","1"],["IsModalShown","true"],["hasShownWelcome","true"],["sub_telegram","true"],["hide-airtime-blue-header","true"],["storeToolTipSeen","1"],["__iberion__publisherPromptSeen","3"],["alreadySawHomepageModal","true"],["has_popout_notification_dialog_recently","1"],["notifModal","true"],["homeExpressEmailSignupExitIntentModal","1"],["Visitundefined","1"],["MCPopUp","true"],["detailedview-clicks","5"],["isNotificationsReleaseModalVisible","false"],["newsletterAdvise","1"],["newsletter-flyout","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
 
-const hostnamesMap = new Map([["sports.ru",0],["craftpip.github.io",1],["luscious.net",2],["duellinksmeta.com",3],["masterduelmeta.com",3],["qiita.com",4],["thatgamecompany.com",5],["vkplay.ru",6],["mydealz.de",7],["adultdvdempire.com",8],["healthtap.com",9],["makemytrip.com",10],["ensonhaber.com",11],["1800petmeds.com",12],["emusic.com",13],["znanierussia.ru",14],["barchart.com",[15,16]],["calendar.com",17],["map.baidu.com",18],["freevpnplanet.com",19],["imgcreator.zmo.ai",20],["masterclass.com",21],["coub.com",22],["empire-streaming.co",23],["babista.de",24],["you.com",25],["smartnator.com",26],["imovelguide.com.br",27],["thirdweb.com",28],["series.az",29],["peervideo.club",30],["peterengland.com",31],["biznesinfo.pl",32],["rolnikinfo.pl",32],["wawainfo.pl",32],["wtv.pl",32],["turysci.pl",32],["pacjenci.pl",32],["swiatsportu.pl",32],["swiatgwiazd.pl",32],["swiatzwierzat.pl",32],["techgame.pl",32],["domekiogrodek.pl",32],["goniec.pl",32],["zdrogi.pl",32],["diffchecker.com",33],["mildom.com",34],["afkgaming.com",35],["instacart.ca",36],["instacart.com",36],["bonprix.com.br",37],["mercatoemcasa.com.br",38],["context.reverso.net",39],["otodom.pl",40],["dgbrechtsschutz.de",41],["moses-verlag.de",42],["www.watermarkremover.io",44]]);
+const hostnamesMap = new Map([["sports.ru",0],["craftpip.github.io",1],["luscious.net",2],["duellinksmeta.com",3],["masterduelmeta.com",3],["qiita.com",4],["thatgamecompany.com",5],["vkplay.ru",6],["mydealz.de",7],["adultdvdempire.com",8],["healthtap.com",9],["makemytrip.com",10],["ensonhaber.com",11],["1800petmeds.com",12],["emusic.com",13],["znanierussia.ru",14],["barchart.com",[15,16]],["calendar.com",17],["map.baidu.com",18],["freevpnplanet.com",19],["imgcreator.zmo.ai",20],["masterclass.com",21],["coub.com",22],["empire-streaming.co",23],["babista.de",24],["you.com",25],["smartnator.com",26],["imovelguide.com.br",27],["thirdweb.com",28],["series.az",29],["peervideo.club",30],["peterengland.com",31],["biznesinfo.pl",32],["rolnikinfo.pl",32],["wawainfo.pl",32],["wtv.pl",32],["turysci.pl",32],["pacjenci.pl",32],["swiatsportu.pl",32],["swiatgwiazd.pl",32],["swiatzwierzat.pl",32],["techgame.pl",32],["domekiogrodek.pl",32],["goniec.pl",32],["zdrogi.pl",32],["diffchecker.com",33],["mildom.com",34],["afkgaming.com",35],["instacart.ca",36],["instacart.com",36],["bonprix.com.br",37],["mercatoemcasa.com.br",38],["context.reverso.net",39],["otodom.pl",40],["dgbrechtsschutz.de",41],["moses-verlag.de",42],["realpython.com",43],["www.watermarkremover.io",45],["scenexe.io",46]]);
 
-const entitiesMap = new Map([["brainly",43]]);
+const entitiesMap = new Map([["brainly",44]]);
 
 const exceptionsMap = new Map([]);
 
@@ -166,7 +166,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -174,18 +173,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

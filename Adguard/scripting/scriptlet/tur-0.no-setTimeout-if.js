@@ -42,11 +42,11 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["AdBlock"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"]];
+const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["AdBlock"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["t.open(\\'\\x"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"]];
 
-const hostnamesMap = new Map([["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["morlevha.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["sinnerclownceviri.com",1],["intekno.net",2],["kuponuna148.com",3],["kuponuna149.com",3],["kuponuna150.com",3],["kuponuna151.com",3],["kuponuna152.com",3],["kuponuna153.com",3],["kuponuna154.com",3],["kuponuna155.com",3],["kuponuna156.com",3],["kuponuna157.com",3],["kuponuna158.com",3],["kuponuna159.com",3],["kuponuna160.com",3],["kuponuna161.com",3],["kuponuna162.com",3],["kuponuna163.com",3],["kuponuna164.com",3],["kuponuna165.com",3],["kuponuna166.com",3],["kuponuna167.com",3],["kuponuna168.com",3],["kuponuna169.com",3],["kuponuna170.com",3],["veryansintv.com",4],["filmizletv2.com",5],["filmizletv3.com",5],["filmizletv4.com",5],["filmizletv5.com",5],["filmizletv6.com",5],["filmizletv7.com",5],["filmizletv8.com",5],["filmizletv9.com",5],["filmizletv10.com",5],["filmizletv11.com",5],["filmizletv12.com",5],["filmizletv13.com",5],["filmizletv14.com",5],["filmizletv15.com",5],["filmizletv16.com",5],["filmizletv17.com",5],["filmizletv18.com",5],["filmizletv19.com",5],["filmizletv20.com",5],["eksisozluk1923.com",6]]);
+const hostnamesMap = new Map([["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["morlevha.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["sinnerclownceviri.com",1],["intekno.net",2],["kuponuna148.com",3],["kuponuna149.com",3],["kuponuna150.com",3],["kuponuna151.com",3],["kuponuna152.com",3],["kuponuna153.com",3],["kuponuna154.com",3],["kuponuna155.com",3],["kuponuna156.com",3],["kuponuna157.com",3],["kuponuna158.com",3],["kuponuna159.com",3],["kuponuna160.com",3],["kuponuna161.com",3],["kuponuna162.com",3],["kuponuna163.com",3],["kuponuna164.com",3],["kuponuna165.com",3],["kuponuna166.com",3],["kuponuna167.com",3],["kuponuna168.com",3],["kuponuna169.com",3],["kuponuna170.com",3],["veryansintv.com",4],["tekniknot.com",5],["filmizletv2.com",6],["filmizletv3.com",6],["filmizletv4.com",6],["filmizletv5.com",6],["filmizletv6.com",6],["filmizletv7.com",6],["filmizletv8.com",6],["filmizletv9.com",6],["filmizletv10.com",6],["filmizletv11.com",6],["filmizletv12.com",6],["filmizletv13.com",6],["filmizletv14.com",6],["filmizletv15.com",6],["filmizletv16.com",6],["filmizletv17.com",6],["filmizletv18.com",6],["filmizletv19.com",6],["filmizletv20.com",6],["eksisozluk1999.com",7],["eksisozluk1923.com",7]]);
 
-const entitiesMap = new Map([["filmizletv",5]]);
+const entitiesMap = new Map([["filmizletv",6]]);
 
 const exceptionsMap = new Map([]);
 
@@ -148,7 +148,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -156,18 +155,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

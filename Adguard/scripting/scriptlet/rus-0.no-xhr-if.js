@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["exchange.buzzoola.com"],["livejournal.com/video/check?recordId="],["method:GET"],["strm.yandex.ru/get/"]];
 
-const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["anidub.vip",5],["anidubonline.com",5],["loveanime.live",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8]]);
+const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["anidub.vip",5],["anidubonline.com",5],["loveanime.live",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -61,12 +61,18 @@ function noXhrIf(
     const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
     const log = propNeedles.size === 0 ? console.log.bind(console) : undefined;
     const warOrigin = scriptletGlobals.get('warOrigin');
+    const headers = {
+        'date': '',
+        'content-type': '',
+        'content-length': '',
+    };
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
         open(method, url, ...args) {
             if ( log !== undefined ) {
                 log(`uBO: xhr.open(${method}, ${url}, ${args.join(', ')})`);
                 return super.open(method, url, ...args);
             }
+            xhrInstances.delete(this);
             if ( warOrigin !== undefined && url.startsWith(warOrigin) ) {
                 return super.open(method, url, ...args);
             }
@@ -74,6 +80,7 @@ function noXhrIf(
             if ( matchObjectProperties(propNeedles, haystack) ) {
                 xhrInstances.set(this, haystack);
             }
+            haystack.headers = Object.assign({}, headers);
             return super.open(method, url, ...args);
         }
         send(...args) {
@@ -81,6 +88,7 @@ function noXhrIf(
             if ( haystack === undefined ) {
                 return super.send(...args);
             }
+            haystack.headers['date'] = (new Date()).toUTCString();
             let promise = Promise.resolve({
                 xhr: this,
                 directive,
@@ -95,52 +103,80 @@ function noXhrIf(
                 },
             });
             switch ( this.responseType ) {
-                case 'arraybuffer':
-                    promise = promise.then(details => {
-                        details.props.response.value = new ArrayBuffer(0);
+            case 'arraybuffer':
+                promise = promise.then(details => {
+                    details.props.response.value = new ArrayBuffer(0);
+                    return details;
+                });
+                haystack.headers['content-type'] = 'application/octet-stream';
+                break;
+            case 'blob':
+                promise = promise.then(details => {
+                    details.props.response.value = new Blob([]);
+                    return details;
+                });
+                haystack.headers['content-type'] = 'application/octet-stream';
+                break;
+            case 'document': {
+                promise = promise.then(details => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString('', 'text/html');
+                    details.props.response.value = doc;
+                    details.props.responseXML.value = doc;
+                    return details;
+                });
+                haystack.headers['content-type'] = 'text/html';
+                break;
+            }
+            case 'json':
+                promise = promise.then(details => {
+                    details.props.response.value = {};
+                    details.props.responseText.value = '{}';
+                    return details;
+                });
+                haystack.headers['content-type'] = 'application/json';
+                break;
+            default:
+                if ( directive === '' ) { break; }
+                promise = promise.then(details => {
+                    return generateContentFn(details.directive).then(text => {
+                        details.props.response.value = text;
+                        details.props.responseText.value = text;
                         return details;
                     });
-                    break;
-                case 'blob':
-                    promise = promise.then(details => {
-                        details.props.response.value = new Blob([]);
-                        return details;
-                    });
-                    break;
-                case 'document': {
-                    promise = promise.then(details => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString('', 'text/html');
-                        details.props.response.value = doc;
-                        details.props.responseXML.value = doc;
-                        return details;
-                    });
-                    break;
-                }
-                case 'json':
-                    promise = promise.then(details => {
-                        details.props.response.value = {};
-                        details.props.responseText.value = '{}';
-                        return details;
-                    });
-                    break;
-                default:
-                    if ( directive === '' ) { break; }
-                    promise = promise.then(details => {
-                        return generateContentFn(details.directive).then(text => {
-                            details.props.response.value = text;
-                            details.props.responseText.value = text;
-                            return details;
-                        });
-                    });
-                    break;
+                });
+                haystack.headers['content-type'] = 'text/plain';
+                break;
             }
             promise.then(details => {
+                haystack.headers['content-length'] = `${details.props.response.value}`.length;
                 Object.defineProperties(details.xhr, details.props);
                 details.xhr.dispatchEvent(new Event('readystatechange'));
                 details.xhr.dispatchEvent(new Event('load'));
                 details.xhr.dispatchEvent(new Event('loadend'));
             });
+        }
+        getResponseHeader(headerName) {
+            const haystack = xhrInstances.get(this);
+            if ( haystack === undefined || this.readyState < this.HEADERS_RECEIVED ) {
+                return super.getResponseHeader(headerName);
+            }
+            const value = haystack.headers[headerName.toLowerCase()];
+            if ( value !== undefined && value !== '' ) { return value; }
+            return null;
+        }
+        getAllResponseHeaders() {
+            const haystack = xhrInstances.get(this);
+            if ( haystack === undefined || this.readyState < this.HEADERS_RECEIVED ) {
+                return super.getAllResponseHeaders();
+            }
+            const out = [];
+            for ( const [ name, value ] of Object.entries(haystack.headers) ) {
+                if ( !value ) { continue; }
+                out.push(`${name}: ${value}`);
+            }
+            if ( out.length !== 0 ) { out.push(''); }
+            return out.join('\r\n');
         }
     };
 }
@@ -285,7 +321,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -293,18 +328,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

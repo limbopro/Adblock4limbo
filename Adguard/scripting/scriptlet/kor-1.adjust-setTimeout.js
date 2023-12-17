@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["closeBtn.innerHTML","","0.001"]];
 
-const hostnamesMap = new Map([["lover923.net",0],["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0],["lover932.net",0]]);
+const hostnamesMap = new Map([["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0],["lover932.net",0],["lover933.net",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -126,7 +126,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -134,18 +133,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

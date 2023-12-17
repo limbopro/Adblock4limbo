@@ -42,13 +42,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,11]],["biqle.org",2],["biqle.ru",2],["rambler.ru",3],["sibnet.ru",4],["sports.ru",5],["cq.ru",6],["softonic.ru",7],["smotrim.ru",8],["rbc.ru",9],["sportrbc.ru",9],["iptv.org.ua",10],["tva.org.ua",10],["ufchgu.ru",10],["romakatya.ru",12],["overclockers.ru",13],["gazeta.ru",14],["m.lenta.ru",15],["www.vesti.ru",16],["lenta.ru",17],["aida64.com.ua",18],["aida64russia.com",18]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,12]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["rambler.ru",4],["sibnet.ru",5],["sports.ru",6],["cq.ru",7],["softonic.ru",8],["smotrim.ru",9],["rbc.ru",10],["sportrbc.ru",10],["iptv.org.ua",11],["tva.org.ua",11],["ufchgu.ru",11],["romakatya.ru",13],["overclockers.ru",14],["gazeta.ru",15],["m.lenta.ru",16],["www.vesti.ru",17],["lenta.ru",18],["aida64.com.ua",19],["aida64russia.com",19]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,11]],["id.rambler.ru",[3]],["vp.rambler.ru",[3]],["player.smotrim.ru",[8]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,12]],["id.rambler.ru",[4]],["vp.rambler.ru",[4]],["player.smotrim.ru",[9]]]);
 
 /******************************************************************************/
 
@@ -178,7 +178,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -186,18 +185,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["piBlock"],["/[A-z0-9_]+\\(ch[0-9]+_[A-z0-9]+\\)/"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],[").offsetHeight <"]];
+const argsList = [["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
 
-const hostnamesMap = new Map([["moneytoring.co.kr",0],["postincome.co.kr",0],["itinformation.kr",0],["digitstar77.com",0],["m.humoruniv.com",1],["filetender.com",2],["zuzunza.com",3],["klauncher.kr",3],["iphonedev.co.kr",3],["tistory.com",3],["sysnet.pe.kr",4],["genshin.gamedot.org",5],["stockinfo7.com",6],["lover923.net",7],["lover924.net",7],["lover925.net",7],["lover926.net",7],["lover927.net",7],["lover928.net",7],["lover929.net",7],["lover930.net",7],["lover931.net",7],["lover932.net",7]]);
+const hostnamesMap = new Map([["moneytoring.co.kr",0],["postincome.co.kr",0],["itinformation.kr",0],["digitstar77.com",0],["filetender.com",1],["zuzunza.com",2],["klauncher.kr",2],["iphonedev.co.kr",2],["tistory.com",2],["sysnet.pe.kr",3],["genshin.gamedot.org",4],["stockinfo7.com",5],["lover924.net",6],["lover925.net",6],["lover926.net",6],["lover927.net",6],["lover928.net",6],["lover929.net",6],["lover930.net",6],["lover931.net",6],["lover932.net",6],["lover933.net",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -148,7 +148,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -156,18 +155,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

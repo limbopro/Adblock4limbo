@@ -42,11 +42,11 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["antiAdBlockerStyle","noopFunc"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["goog_pvsid","1"],["Goog_Osd_UnloadAdBlock","1"],["google_osd_loaded","1"],["stopMan","false"],["google_unique_id","1"],["googleIMState","{}"],["runningAdsAllowed","true"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","undefined"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["_mvnxp","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["clicked","true"],["eClicked","true"],["number","0"],["sync","true"],["a_consola","noopFunc"]];
+const argsList = [["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["antiAdBlockerStyle","noopFunc"],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","undefined"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["_mvnxp","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["clicked","true"],["eClicked","true"],["number","0"],["sync","true"],["a_consola","noopFunc"]];
 
-const hostnamesMap = new Map([["financasdeouro.com",0],["animeszone.net",1],["repretel.com",2],["redbolivision.tv.bo",2],["animesonline.nz",3],["mdr.ar",4],["impactoespananoticias.com",4],["skynovels.net",4],["botinnifit.com",4],["minhasdelicias.com",4],["luchaonline.com",4],["meocloud.pt",5],["fichajes.com",6],["niusdiario.es",[7,39]],["xerifetech.com",8],["pobre.wtf",[9,40]],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,41]],["legendei.net",11],["mangacrab.com",12],["cadenaser.com",13],["texto.kom.gt",14],["infojobs.com.br",15],["maringapost.com.br",16],["bandab.com.br",16],["ouniversodatv.com",17],["tribunaavila.com",18],["deportealdia.live",19],["elquintobeatle.com",20],["empregoestagios.com",20],["satcesc.com",20],["applesfera.com",21],["bebesymas.com",21],["compradiccion.com",21],["diariodelviajero.com",21],["directoalpaladar.com",21],["elblogsalmon.com",21],["espinof.com",21],["genbeta.com",21],["motorpasion.com",21],["motorpasionmoto.com",21],["pymesyautonomos.com",21],["trendencias.com",21],["trendenciashombre.com",21],["vidaextra.com",21],["vitonica.com",21],["xataka.com",21],["xatakaciencia.com",21],["xatakafoto.com",21],["xatakahome.com",21],["xatakamovil.com",21],["xatakandroid.com",21],["xatakawindows.com",21],["docer.com.ar",22],["doceru.com",22],["docero.com.br",22],["comandotorrents.org",23],["adslayuda.com",24],["outerspace.com.br",25],["doramasmp4.com",26],["file4go.net",28],["seriesdonghua.com",29],["mundodonghua.com",29],["yesmangas1.com",[30,31,32,33,34,35]],["mangahost4.com",[30,31,32,33,34,35]],["mangahosted.com",[30,31,32,33,34,35]],["mangahost2.com",[30,31,32,33,34,35]],["mangahost1.com",35],["mangahostbr.net",35],["mangahostbr.com",35],["playview.io",36],["megafire.net",37],["elmundo.es",38],["adclicker.info",42],["adclicker.io",42],["safepc.online",42],["solopc.net",42],["player.hentaistube.com",43],["playnewserie.xyz",44],["vizer.vip",45],["tiohentai.xyz",46],["otakustv.com",[47,48]],["pornolandia.xxx",49],["hentaiporno.xxx",50],["megadescarga.net",[51,52,53,54]],["fakings.com",55]]);
+const hostnamesMap = new Map([["financasdeouro.com",0],["animeszone.net",1],["repretel.com",2],["redbolivision.tv.bo",2],["animesonline.nz",3],["mdr.ar",4],["impactoespananoticias.com",4],["skynovels.net",4],["botinnifit.com",4],["minhasdelicias.com",4],["luchaonline.com",4],["meocloud.pt",5],["fichajes.com",6],["niusdiario.es",[7,34]],["xerifetech.com",8],["pobre.wtf",[9,35]],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,36]],["legendei.net",11],["mangacrab.com",12],["documaniatv.com",13],["cadenaser.com",14],["texto.kom.gt",15],["infojobs.com.br",16],["maringapost.com.br",17],["bandab.com.br",17],["ouniversodatv.com",18],["tribunaavila.com",19],["deportealdia.live",20],["elquintobeatle.com",21],["empregoestagios.com",21],["satcesc.com",21],["applesfera.com",22],["bebesymas.com",22],["compradiccion.com",22],["diariodelviajero.com",22],["directoalpaladar.com",22],["elblogsalmon.com",22],["espinof.com",22],["genbeta.com",22],["motorpasion.com",22],["motorpasionmoto.com",22],["pymesyautonomos.com",22],["trendencias.com",22],["trendenciashombre.com",22],["vidaextra.com",22],["vitonica.com",22],["xataka.com",22],["xatakaciencia.com",22],["xatakafoto.com",22],["xatakahome.com",22],["xatakamovil.com",22],["xatakandroid.com",22],["xatakawindows.com",22],["docer.com.ar",23],["doceru.com",23],["docero.com.br",23],["comandotorrents.org",24],["adslayuda.com",25],["outerspace.com.br",26],["doramasmp4.com",27],["file4go.net",29],["seriesdonghua.com",30],["mundodonghua.com",30],["playview.io",31],["megafire.net",32],["elmundo.es",33],["adclicker.info",37],["adclicker.io",37],["safepc.online",37],["solopc.net",37],["player.hentaistube.com",38],["playnewserie.xyz",39],["vizer.vip",40],["tiohentai.xyz",41],["otakustv.com",[42,43]],["pornolandia.xxx",44],["hentaiporno.xxx",45],["megadescarga.net",[46,47,48,49]],["fakings.com",50]]);
 
-const entitiesMap = new Map([["anitube",27]]);
+const entitiesMap = new Map([["anitube",28]]);
 
 const exceptionsMap = new Map([]);
 
@@ -315,7 +315,6 @@ function safeSelf() {
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -323,18 +322,23 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
         patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }

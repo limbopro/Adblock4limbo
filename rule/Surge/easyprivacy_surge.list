@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312181344
+## ! Version: 202312191408
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Dec 2023 13:44 UTC
+## ! Last modified: 19 Dec 2023 14:08 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,2smt6mfgo.de
 DOMAIN-SUFFIX,31daa5lnq.de
 DOMAIN-SUFFIX,34.215.155.61
 DOMAIN-SUFFIX,3gl.net
+DOMAIN-SUFFIX,4251.tech
 DOMAIN-SUFFIX,44.228.85.26
 DOMAIN-SUFFIX,520886.xyz
 DOMAIN-SUFFIX,a1webstrategy.com
@@ -3112,6 +3113,7 @@ DOMAIN-SUFFIX,telemetry.reembed.com
 DOMAIN-SUFFIX,telemetry.soundcloud.com
 DOMAIN-SUFFIX,telemetry.tableausoftware.com
 DOMAIN-SUFFIX,telemetry.vtex.com
+DOMAIN-SUFFIX,test.takedwn.ws
 DOMAIN-SUFFIX,timber.sendtonews.com
 DOMAIN-SUFFIX,timejs.game.163.com
 DOMAIN-SUFFIX,tk.storetail.io
@@ -4109,6 +4111,7 @@ DOMAIN-SUFFIX,cwt.citywire.info
 DOMAIN-SUFFIX,d.skk.moe
 DOMAIN-SUFFIX,data.allstate.com
 DOMAIN-SUFFIX,data.guide.photobucket.com
+DOMAIN-SUFFIX,data.torry.io
 DOMAIN-SUFFIX,data.younow.com
 DOMAIN-SUFFIX,datadome.patreon.com
 DOMAIN-SUFFIX,dbhsejcg-meetup-com.cdnjs.network
@@ -21803,6 +21806,7 @@ DOMAIN-SUFFIX,tracker.cauly.co.kr
 DOMAIN-SUFFIX,uts.auction.co.kr
 DOMAIN-SUFFIX,utsssl.auction.co.kr
 DOMAIN-SUFFIX,wcs.naver.com
+DOMAIN-SUFFIX,weblog.coupang.com
 DOMAIN-SUFFIX,weblog.eseoul.go.kr
 DOMAIN-SUFFIX,weblog2.eseoul.go.kr
 DOMAIN-SUFFIX,stats.tunt.lv

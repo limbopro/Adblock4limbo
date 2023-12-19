@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312181344
+## ! Version: 202312191408
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Dec 2023 13:44 UTC
+## ! Last modified: 19 Dec 2023 14:08 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,2smt6mfgo.de, reject
 DOMAIN-SUFFIX,31daa5lnq.de, reject
 DOMAIN-SUFFIX,34.215.155.61, reject
 DOMAIN-SUFFIX,3gl.net, reject
+DOMAIN-SUFFIX,4251.tech, reject
 DOMAIN-SUFFIX,44.228.85.26, reject
 DOMAIN-SUFFIX,520886.xyz, reject
 DOMAIN-SUFFIX,a1webstrategy.com, reject
@@ -3112,6 +3113,7 @@ DOMAIN-SUFFIX,telemetry.reembed.com, reject
 DOMAIN-SUFFIX,telemetry.soundcloud.com, reject
 DOMAIN-SUFFIX,telemetry.tableausoftware.com, reject
 DOMAIN-SUFFIX,telemetry.vtex.com, reject
+DOMAIN-SUFFIX,test.takedwn.ws, reject
 DOMAIN-SUFFIX,timber.sendtonews.com, reject
 DOMAIN-SUFFIX,timejs.game.163.com, reject
 DOMAIN-SUFFIX,tk.storetail.io, reject
@@ -4109,6 +4111,7 @@ DOMAIN-SUFFIX,cwt.citywire.info, reject
 DOMAIN-SUFFIX,d.skk.moe, reject
 DOMAIN-SUFFIX,data.allstate.com, reject
 DOMAIN-SUFFIX,data.guide.photobucket.com, reject
+DOMAIN-SUFFIX,data.torry.io, reject
 DOMAIN-SUFFIX,data.younow.com, reject
 DOMAIN-SUFFIX,datadome.patreon.com, reject
 DOMAIN-SUFFIX,dbhsejcg-meetup-com.cdnjs.network, reject
@@ -21803,6 +21806,7 @@ DOMAIN-SUFFIX,tracker.cauly.co.kr, reject
 DOMAIN-SUFFIX,uts.auction.co.kr, reject
 DOMAIN-SUFFIX,utsssl.auction.co.kr, reject
 DOMAIN-SUFFIX,wcs.naver.com, reject
+DOMAIN-SUFFIX,weblog.coupang.com, reject
 DOMAIN-SUFFIX,weblog.eseoul.go.kr, reject
 DOMAIN-SUFFIX,weblog2.eseoul.go.kr, reject
 DOMAIN-SUFFIX,stats.tunt.lv, reject

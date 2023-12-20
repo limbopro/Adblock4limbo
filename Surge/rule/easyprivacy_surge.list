@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312191408
+## ! Version: 202312201408
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Dec 2023 14:08 UTC
+## ! Last modified: 20 Dec 2023 14:08 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1722,6 +1722,7 @@ DOMAIN-SUFFIX,scarefowl.com
 DOMAIN-SUFFIX,scarfsmash.com
 DOMAIN-SUFFIX,scarfthought.com
 DOMAIN-SUFFIX,scatteredheat.com
+DOMAIN-SUFFIX,scatteredquiver.com
 DOMAIN-SUFFIX,scatteredstream.com
 DOMAIN-SUFFIX,scientificshirt.com
 DOMAIN-SUFFIX,scientificsneeze.com
@@ -4072,6 +4073,7 @@ DOMAIN-SUFFIX,client-metrics.chess.com
 DOMAIN-SUFFIX,clp-mms.cloudpro.co.uk
 DOMAIN-SUFFIX,cm-mms.coachmag.co.uk
 DOMAIN-SUFFIX,cm.nordvpn.com
+DOMAIN-SUFFIX,cmpworker.dotesports.com
 DOMAIN-SUFFIX,cnt.hd21.com
 DOMAIN-SUFFIX,cnt.iceporn.com
 DOMAIN-SUFFIX,cnt.viptube.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312201408
+## ! Version: 202312211348
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Dec 2023 14:08 UTC
+## ! Last modified: 21 Dec 2023 13:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -185,7 +185,9 @@ DOMAIN-SUFFIX,go-mpulse.net
 DOMAIN-SUFFIX,googleoptimize.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,gw-dv.vip
+DOMAIN-SUFFIX,hbiq.net
 DOMAIN-SUFFIX,hdmtools.com
+DOMAIN-SUFFIX,herbgreencolumn.com
 DOMAIN-SUFFIX,hs-analytics.net
 DOMAIN-SUFFIX,hsadspixel.net
 DOMAIN-SUFFIX,hsleadflows.net
@@ -853,6 +855,7 @@ DOMAIN-SUFFIX,curvycord.com
 DOMAIN-SUFFIX,curvycry.com
 DOMAIN-SUFFIX,cushiondrum.com
 DOMAIN-SUFFIX,cushionpig.com
+DOMAIN-SUFFIX,cutcurrent.com
 DOMAIN-SUFFIX,cutecalculator.com
 DOMAIN-SUFFIX,cutechin.com
 DOMAIN-SUFFIX,cutecushion.com
@@ -2251,6 +2254,7 @@ DOMAIN-SUFFIX,analyse.bcovery.com
 DOMAIN-SUFFIX,analytic.rollout.io
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com
 DOMAIN-SUFFIX,analytics-1.cavai.com
+DOMAIN-SUFFIX,analytics-api.klickly.com
 DOMAIN-SUFFIX,analytics-cms.whitebeard.me
 DOMAIN-SUFFIX,analytics-consent-manager-v2-prod.azureedge.net
 DOMAIN-SUFFIX,analytics-production.hapyak.com
@@ -4074,6 +4078,7 @@ DOMAIN-SUFFIX,clp-mms.cloudpro.co.uk
 DOMAIN-SUFFIX,cm-mms.coachmag.co.uk
 DOMAIN-SUFFIX,cm.nordvpn.com
 DOMAIN-SUFFIX,cmpworker.dotesports.com
+DOMAIN-SUFFIX,cmpworker.primagames.com
 DOMAIN-SUFFIX,cnt.hd21.com
 DOMAIN-SUFFIX,cnt.iceporn.com
 DOMAIN-SUFFIX,cnt.viptube.com

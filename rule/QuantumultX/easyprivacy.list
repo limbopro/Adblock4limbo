@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312201408
+## ! Version: 202312211348
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Dec 2023 14:08 UTC
+## ! Last modified: 21 Dec 2023 13:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -185,7 +185,9 @@ DOMAIN-SUFFIX,go-mpulse.net, reject
 DOMAIN-SUFFIX,googleoptimize.com, reject
 DOMAIN-SUFFIX,googletagmanager.com, reject
 DOMAIN-SUFFIX,gw-dv.vip, reject
+DOMAIN-SUFFIX,hbiq.net, reject
 DOMAIN-SUFFIX,hdmtools.com, reject
+DOMAIN-SUFFIX,herbgreencolumn.com, reject
 DOMAIN-SUFFIX,hs-analytics.net, reject
 DOMAIN-SUFFIX,hsadspixel.net, reject
 DOMAIN-SUFFIX,hsleadflows.net, reject
@@ -853,6 +855,7 @@ DOMAIN-SUFFIX,curvycord.com, reject
 DOMAIN-SUFFIX,curvycry.com, reject
 DOMAIN-SUFFIX,cushiondrum.com, reject
 DOMAIN-SUFFIX,cushionpig.com, reject
+DOMAIN-SUFFIX,cutcurrent.com, reject
 DOMAIN-SUFFIX,cutecalculator.com, reject
 DOMAIN-SUFFIX,cutechin.com, reject
 DOMAIN-SUFFIX,cutecushion.com, reject
@@ -2251,6 +2254,7 @@ DOMAIN-SUFFIX,analyse.bcovery.com, reject
 DOMAIN-SUFFIX,analytic.rollout.io, reject
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com, reject
 DOMAIN-SUFFIX,analytics-1.cavai.com, reject
+DOMAIN-SUFFIX,analytics-api.klickly.com, reject
 DOMAIN-SUFFIX,analytics-cms.whitebeard.me, reject
 DOMAIN-SUFFIX,analytics-consent-manager-v2-prod.azureedge.net, reject
 DOMAIN-SUFFIX,analytics-production.hapyak.com, reject
@@ -4074,6 +4078,7 @@ DOMAIN-SUFFIX,clp-mms.cloudpro.co.uk, reject
 DOMAIN-SUFFIX,cm-mms.coachmag.co.uk, reject
 DOMAIN-SUFFIX,cm.nordvpn.com, reject
 DOMAIN-SUFFIX,cmpworker.dotesports.com, reject
+DOMAIN-SUFFIX,cmpworker.primagames.com, reject
 DOMAIN-SUFFIX,cnt.hd21.com, reject
 DOMAIN-SUFFIX,cnt.iceporn.com, reject
 DOMAIN-SUFFIX,cnt.viptube.com, reject

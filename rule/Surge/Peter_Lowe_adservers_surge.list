@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 20 Dec 2023 12:32:03 GMT
-# entries:        3782
+# last updated:   Thu, 21 Dec 2023 14:03:25 GMT
+# entries:        3785
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1550,11 +1550,14 @@ DOMAIN-SUFFIX,cushiondrum.com
 DOMAIN-SUFFIX,customad.cnn.com
 DOMAIN-SUFFIX,customads.co
 DOMAIN-SUFFIX,customers.kameleoon.com
+DOMAIN-SUFFIX,cutcurrent.com
 DOMAIN-SUFFIX,cutechin.com
 DOMAIN-SUFFIX,cutecushion.com
 DOMAIN-SUFFIX,cuteturkey.com
 DOMAIN-SUFFIX,cxense.com
 DOMAIN-SUFFIX,cyberbounty.com
+DOMAIN-SUFFIX,d-collect.jennifersoft.com
+DOMAIN-SUFFIX,d-collector.jennifersoft.com
 DOMAIN-SUFFIX,d.adroll.com
 DOMAIN-SUFFIX,d1f0tbk1v3e25u.cloudfront.net
 DOMAIN-SUFFIX,d2cmedia.ca

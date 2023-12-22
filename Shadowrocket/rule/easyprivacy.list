@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312211348
+## ! Version: 202312221339
 ## ! Title: EasyPrivacy
-## ! Last modified: 21 Dec 2023 13:48 UTC
+## ! Last modified: 22 Dec 2023 13:39 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3056,6 +3056,7 @@ DOMAIN-SUFFIX,t.360playvid.info, reject
 DOMAIN-SUFFIX,t.91syun.com, reject
 DOMAIN-SUFFIX,t.a3cloud.net, reject
 DOMAIN-SUFFIX,t.adx.opera.com, reject
+DOMAIN-SUFFIX,t.arcade.show, reject
 DOMAIN-SUFFIX,t.auditedmedia.org.au, reject
 DOMAIN-SUFFIX,t.beop.io, reject
 DOMAIN-SUFFIX,t.bimvid.com, reject
@@ -4257,6 +4258,7 @@ DOMAIN-SUFFIX,ma.redhat.com, reject
 DOMAIN-SUFFIX,marketing.alibaba.com, reject
 DOMAIN-SUFFIX,mcc-tags.cisco.com, reject
 DOMAIN-SUFFIX,mcs-va.tiktokv.com, reject
+DOMAIN-SUFFIX,mcs.tiktokv.us, reject
 DOMAIN-SUFFIX,mcs.us.tiktokv.com, reject
 DOMAIN-SUFFIX,metrics.audius.co, reject
 DOMAIN-SUFFIX,metrics.bangbros.com, reject

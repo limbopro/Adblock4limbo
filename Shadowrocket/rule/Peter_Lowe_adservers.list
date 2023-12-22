@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 21 Dec 2023 14:03:25 GMT
-# entries:        3785
+# entries:        3787
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -12,6 +12,7 @@
 # start date:    Fri, 06 Jun 2003 00:00:00
 
 
+DOMAIN-SUFFIX,1-1ads.com, reject
 DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
@@ -99,6 +100,7 @@ DOMAIN-SUFFIX,ad-balancer.at, reject
 DOMAIN-SUFFIX,ad-balancer.net, reject
 DOMAIN-SUFFIX,ad-cupid.com, reject
 DOMAIN-SUFFIX,ad-delivery.net, reject
+DOMAIN-SUFFIX,ad-pay.de, reject
 DOMAIN-SUFFIX,ad-rotator.com, reject
 DOMAIN-SUFFIX,ad-score.com, reject
 DOMAIN-SUFFIX,ad-server.gulasidorna.se, reject
@@ -199,6 +201,7 @@ DOMAIN-SUFFIX,adbilty.me, reject
 DOMAIN-SUFFIX,adblade.com, reject
 DOMAIN-SUFFIX,adblade.org, reject
 DOMAIN-SUFFIX,adblockanalytics.com, reject
+DOMAIN-SUFFIX,adbooth.net, reject
 DOMAIN-SUFFIX,adbot.com, reject
 DOMAIN-SUFFIX,adbrite.com, reject
 DOMAIN-SUFFIX,adbroker.de, reject
@@ -942,7 +945,6 @@ DOMAIN-SUFFIX,algorix.co, reject
 DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
 DOMAIN-SUFFIX,alipromo.com, reject
-DOMAIN-SUFFIX,all4spy.com, reject
 DOMAIN-SUFFIX,allosponsor.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
 DOMAIN-SUFFIX,aloofmetal.com, reject

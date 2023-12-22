@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 21 Dec 2023 14:03:25 GMT
-# entries:        3785
+# entries:        3787
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -12,6 +12,7 @@
 # start date:    Fri, 06 Jun 2003 00:00:00
 
 
+DOMAIN-SUFFIX,1-1ads.com
 DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
@@ -99,6 +100,7 @@ DOMAIN-SUFFIX,ad-balancer.at
 DOMAIN-SUFFIX,ad-balancer.net
 DOMAIN-SUFFIX,ad-cupid.com
 DOMAIN-SUFFIX,ad-delivery.net
+DOMAIN-SUFFIX,ad-pay.de
 DOMAIN-SUFFIX,ad-rotator.com
 DOMAIN-SUFFIX,ad-score.com
 DOMAIN-SUFFIX,ad-server.gulasidorna.se
@@ -199,6 +201,7 @@ DOMAIN-SUFFIX,adbilty.me
 DOMAIN-SUFFIX,adblade.com
 DOMAIN-SUFFIX,adblade.org
 DOMAIN-SUFFIX,adblockanalytics.com
+DOMAIN-SUFFIX,adbooth.net
 DOMAIN-SUFFIX,adbot.com
 DOMAIN-SUFFIX,adbrite.com
 DOMAIN-SUFFIX,adbroker.de
@@ -942,7 +945,6 @@ DOMAIN-SUFFIX,algorix.co
 DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
 DOMAIN-SUFFIX,alipromo.com
-DOMAIN-SUFFIX,all4spy.com
 DOMAIN-SUFFIX,allosponsor.com
 DOMAIN-SUFFIX,alluringbucket.com
 DOMAIN-SUFFIX,aloofmetal.com

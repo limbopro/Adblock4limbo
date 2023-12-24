@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312231526
+## ! Version: 202312241442
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Dec 2023 15:26 UTC
+## ! Last modified: 24 Dec 2023 14:42 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2230,6 +2230,7 @@ DOMAIN-SUFFIX,analytics.rechtslupe.org
 DOMAIN-SUFFIX,tracking.wlscripts.net
 DOMAIN-SUFFIX,naanalle.pl
 DOMAIN-SUFFIX,1558334541.rsc.cdn77.org
+DOMAIN-SUFFIX,3j0pw4ed7uac-a.akamaihd.net
 DOMAIN-SUFFIX,3p-geo.yahoo.com
 DOMAIN-SUFFIX,3p-udc.yahoo.com
 DOMAIN-SUFFIX,9w2zed1szg.execute-api.us-east-1.amazonaws.com
@@ -3565,6 +3566,7 @@ DOMAIN-SUFFIX,capping.sirius.press
 DOMAIN-SUFFIX,collect-v6.51.la
 DOMAIN-SUFFIX,compteur.websiteout.net
 DOMAIN-SUFFIX,core.unit-sense.net
+DOMAIN-SUFFIX,dsj4qf77pyncykf2dki6isfcuy0orwhc.lambda-url.eu-west-1.on.aws
 DOMAIN-SUFFIX,e.viously.com
 DOMAIN-SUFFIX,events.newsroom.bi
 DOMAIN-SUFFIX,events.sk.ht

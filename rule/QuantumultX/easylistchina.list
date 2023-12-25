@@ -1133,6 +1133,19 @@ DOMAIN-SUFFIX,zzbmxl.xyz, reject
 DOMAIN-SUFFIX,zzyy17.top, reject
 DOMAIN-SUFFIX,zzyy18.top, reject
 DOMAIN-SUFFIX,zzyy19.top, reject
+DOMAIN-SUFFIX,kjappzvz.xyz, reject
+DOMAIN-SUFFIX,hapqncfg.xyz, reject
+DOMAIN-SUFFIX,zd0.top, reject
+DOMAIN-SUFFIX,bqxexj.xyz, reject
+DOMAIN-SUFFIX,3hufi.site, reject
+DOMAIN-SUFFIX,owyame.xyz, reject
+DOMAIN-SUFFIX,arhnuin.xyz, reject
+DOMAIN-SUFFIX,ujappzvz.xyz, reject
+DOMAIN-SUFFIX,tipl.top, reject
+DOMAIN-SUFFIX,bjappzvz.xyz, reject
+DOMAIN-SUFFIX,xjappzvz.xyz, reject
+DOMAIN-SUFFIX,tjappzvz.xyz, reject
+DOMAIN-SUFFIX,mjappzvz.xyz, reject
 DOMAIN-SUFFIX,zzyy20.top, reject
 DOMAIN-SUFFIX,002777.xyz, reject
 DOMAIN-SUFFIX,01v62.xyz, reject
@@ -4541,6 +4554,7 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
+DOMAIN-SUFFIX,domcwlxin.360doc.cn, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject

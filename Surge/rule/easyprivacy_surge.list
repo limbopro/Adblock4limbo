@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312251138
+## ! Version: 202312261450
 ## ! Title: EasyPrivacy
-## ! Last modified: 25 Dec 2023 11:38 UTC
+## ! Last modified: 26 Dec 2023 14:50 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -721,6 +721,7 @@ DOMAIN-SUFFIX,carvecakes.com
 DOMAIN-SUFFIX,castcream.com
 DOMAIN-SUFFIX,catalogdiscovery.com
 DOMAIN-SUFFIX,catschickens.com
+DOMAIN-SUFFIX,cattlecommittee.com
 DOMAIN-SUFFIX,causecherry.com
 DOMAIN-SUFFIX,cautiouscamera.com
 DOMAIN-SUFFIX,cautiouscherries.com

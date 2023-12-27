@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312261450
+## ! Version: 202312271440
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Dec 2023 14:50 UTC
+## ! Last modified: 27 Dec 2023 14:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -349,6 +349,7 @@ DOMAIN-SUFFIX,tkrconnector.com, reject
 DOMAIN-SUFFIX,tncid.app, reject
 DOMAIN-SUFFIX,track-selectmedia.com, reject
 DOMAIN-SUFFIX,trackclicks.info, reject
+DOMAIN-SUFFIX,tracking24.net, reject
 DOMAIN-SUFFIX,transmapp.com, reject
 DOMAIN-SUFFIX,triplestat.online, reject
 DOMAIN-SUFFIX,trk-maiorum.com, reject
@@ -2242,6 +2243,7 @@ DOMAIN-SUFFIX,a.opumo.net, reject
 DOMAIN-SUFFIX,activity-flow.vtex.com, reject
 DOMAIN-SUFFIX,activity.wisepops.com, reject
 DOMAIN-SUFFIX,ad.aloodo.com, reject
+DOMAIN-SUFFIX,ade.googlesyndication.com, reject
 DOMAIN-SUFFIX,adfox.yandex.ru, reject
 DOMAIN-SUFFIX,adlog.com.com, reject
 DOMAIN-SUFFIX,ads-trk.vidible.tv, reject
@@ -3321,6 +3323,7 @@ DOMAIN-SUFFIX,ws.audioeye.com, reject
 DOMAIN-SUFFIX,wsmcdn.audioeye.com, reject
 DOMAIN-SUFFIX,wt.viagogo.net, reject
 DOMAIN-SUFFIX,wtbevents.pricespider.com, reject
+DOMAIN-SUFFIX,wtr-digital-analytics.ew.r.appspot.com, reject
 DOMAIN-SUFFIX,x.babe.today, reject
 DOMAIN-SUFFIX,x.disq.us, reject
 DOMAIN-SUFFIX,x.weather.com, reject
@@ -3703,6 +3706,7 @@ DOMAIN-SUFFIX,videostat-new.index.hu, reject
 DOMAIN-SUFFIX,videostat.index.hu, reject
 DOMAIN-SUFFIX,analytics.competitoor.com, reject
 DOMAIN-SUFFIX,analytics.eikondigital.it, reject
+DOMAIN-SUFFIX,analytics.gtechgroup.it, reject
 DOMAIN-SUFFIX,analytics00.meride.tv, reject
 DOMAIN-SUFFIX,analytics2-3-meride-tv.akamaized.net, reject
 DOMAIN-SUFFIX,analytics2-meride-tv.akamaized.net, reject
@@ -3712,6 +3716,7 @@ DOMAIN-SUFFIX,cnt.iol.it, reject
 DOMAIN-SUFFIX,d32hwlnfiv2gyn.cloudfront.net, reject
 DOMAIN-SUFFIX,dmpcdn.el-mundo.net, reject
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it, reject
+DOMAIN-SUFFIX,eventsink.api.redbee.live, reject
 DOMAIN-SUFFIX,evnt.iol.it, reject
 DOMAIN-SUFFIX,fb_servpub-a.akamaihd.net, reject
 DOMAIN-SUFFIX,heatmaps.lcisoft.it, reject
@@ -4105,6 +4110,7 @@ DOMAIN-SUFFIX,collector.pi.spectrum.net, reject
 DOMAIN-SUFFIX,collector.xhamster.com, reject
 DOMAIN-SUFFIX,collector.xhamster.desi, reject
 DOMAIN-SUFFIX,collector.xhamster2.com, reject
+DOMAIN-SUFFIX,collector.xhamster3.com, reject
 DOMAIN-SUFFIX,colvk.viki.io, reject
 DOMAIN-SUFFIX,confiant.msn.com, reject
 DOMAIN-SUFFIX,console-telemetry.oci.oraclecloud.com, reject

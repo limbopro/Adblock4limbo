@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312261450
+## ! Version: 202312271440
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Dec 2023 14:50 UTC
+## ! Last modified: 27 Dec 2023 14:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -349,6 +349,7 @@ DOMAIN-SUFFIX,tkrconnector.com
 DOMAIN-SUFFIX,tncid.app
 DOMAIN-SUFFIX,track-selectmedia.com
 DOMAIN-SUFFIX,trackclicks.info
+DOMAIN-SUFFIX,tracking24.net
 DOMAIN-SUFFIX,transmapp.com
 DOMAIN-SUFFIX,triplestat.online
 DOMAIN-SUFFIX,trk-maiorum.com
@@ -2242,6 +2243,7 @@ DOMAIN-SUFFIX,a.opumo.net
 DOMAIN-SUFFIX,activity-flow.vtex.com
 DOMAIN-SUFFIX,activity.wisepops.com
 DOMAIN-SUFFIX,ad.aloodo.com
+DOMAIN-SUFFIX,ade.googlesyndication.com
 DOMAIN-SUFFIX,adfox.yandex.ru
 DOMAIN-SUFFIX,adlog.com.com
 DOMAIN-SUFFIX,ads-trk.vidible.tv
@@ -3321,6 +3323,7 @@ DOMAIN-SUFFIX,ws.audioeye.com
 DOMAIN-SUFFIX,wsmcdn.audioeye.com
 DOMAIN-SUFFIX,wt.viagogo.net
 DOMAIN-SUFFIX,wtbevents.pricespider.com
+DOMAIN-SUFFIX,wtr-digital-analytics.ew.r.appspot.com
 DOMAIN-SUFFIX,x.babe.today
 DOMAIN-SUFFIX,x.disq.us
 DOMAIN-SUFFIX,x.weather.com
@@ -3703,6 +3706,7 @@ DOMAIN-SUFFIX,videostat-new.index.hu
 DOMAIN-SUFFIX,videostat.index.hu
 DOMAIN-SUFFIX,analytics.competitoor.com
 DOMAIN-SUFFIX,analytics.eikondigital.it
+DOMAIN-SUFFIX,analytics.gtechgroup.it
 DOMAIN-SUFFIX,analytics00.meride.tv
 DOMAIN-SUFFIX,analytics2-3-meride-tv.akamaized.net
 DOMAIN-SUFFIX,analytics2-meride-tv.akamaized.net
@@ -3712,6 +3716,7 @@ DOMAIN-SUFFIX,cnt.iol.it
 DOMAIN-SUFFIX,d32hwlnfiv2gyn.cloudfront.net
 DOMAIN-SUFFIX,dmpcdn.el-mundo.net
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it
+DOMAIN-SUFFIX,eventsink.api.redbee.live
 DOMAIN-SUFFIX,evnt.iol.it
 DOMAIN-SUFFIX,fb_servpub-a.akamaihd.net
 DOMAIN-SUFFIX,heatmaps.lcisoft.it
@@ -4105,6 +4110,7 @@ DOMAIN-SUFFIX,collector.pi.spectrum.net
 DOMAIN-SUFFIX,collector.xhamster.com
 DOMAIN-SUFFIX,collector.xhamster.desi
 DOMAIN-SUFFIX,collector.xhamster2.com
+DOMAIN-SUFFIX,collector.xhamster3.com
 DOMAIN-SUFFIX,colvk.viki.io
 DOMAIN-SUFFIX,confiant.msn.com
 DOMAIN-SUFFIX,console-telemetry.oci.oraclecloud.com

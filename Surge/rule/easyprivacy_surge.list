@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312271440
+## ! Version: 202312281108
 ## ! Title: EasyPrivacy
-## ! Last modified: 27 Dec 2023 14:40 UTC
+## ! Last modified: 28 Dec 2023 11:08 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1192,6 +1192,7 @@ DOMAIN-SUFFIX,handsomelyhealth.com
 DOMAIN-SUFFIX,handsomeyam.com
 DOMAIN-SUFFIX,handyfield.com
 DOMAIN-SUFFIX,handyfireman.com
+DOMAIN-SUFFIX,handyincrease.com
 DOMAIN-SUFFIX,haplessland.com
 DOMAIN-SUFFIX,happenhistory.com
 DOMAIN-SUFFIX,harborcaption.com
@@ -2695,6 +2696,7 @@ DOMAIN-SUFFIX,happen.spkt.io
 DOMAIN-SUFFIX,hb.vhsrv.com
 DOMAIN-SUFFIX,hello.staticstuff.net
 DOMAIN-SUFFIX,hi.hellobar.com
+DOMAIN-SUFFIX,highway.cablecar.sph.com.sg
 DOMAIN-SUFFIX,hit.mybestpro.com
 DOMAIN-SUFFIX,hits.dealer.com
 DOMAIN-SUFFIX,hits.getelevar.com
@@ -3051,6 +3053,7 @@ DOMAIN-SUFFIX,statscollector-1.agora.io
 DOMAIN-SUFFIX,statscollector.sd-rtn.com
 DOMAIN-SUFFIX,statt-collect.herokuapp.com
 DOMAIN-SUFFIX,stg-data-collector.playbuzz.com
+DOMAIN-SUFFIX,streams.cablecar.sph.com.sg
 DOMAIN-SUFFIX,sts.eccmp.com
 DOMAIN-SUFFIX,sunlightmetrics.b-cdn.net
 DOMAIN-SUFFIX,survey.interquest.com

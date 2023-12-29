@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 21 Dec 2023 14:03:25 GMT
-# entries:        3787
+# entries:        3784
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -66,7 +66,6 @@ DOMAIN-SUFFIX,aa-metrics.trip-ai.jp
 DOMAIN-SUFFIX,aaddzz.com
 DOMAIN-SUFFIX,aax-eu-dub.amazon.com
 DOMAIN-SUFFIX,aaxads.com
-DOMAIN-SUFFIX,aaxdetect.com
 DOMAIN-SUFFIX,abacho.net
 DOMAIN-SUFFIX,abackafterthought.com
 DOMAIN-SUFFIX,abackchain.com
@@ -576,7 +575,7 @@ DOMAIN-SUFFIX,ads.pni.com
 DOMAIN-SUFFIX,ads.pof.com
 DOMAIN-SUFFIX,ads.powweb.com
 DOMAIN-SUFFIX,ads.ppvmedien.de
-DOMAIN-SUFFIX,ads.praguetv.cz
+DOMAIN-SUFFIX,ads.primissima.it
 DOMAIN-SUFFIX,ads.printscr.com
 DOMAIN-SUFFIX,ads.prisacom.com
 DOMAIN-SUFFIX,ads.program3.com
@@ -703,6 +702,7 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com
 DOMAIN-SUFFIX,adsbydelema.com
 DOMAIN-SUFFIX,adscale.de
 DOMAIN-SUFFIX,adscholar.com
+DOMAIN-SUFFIX,adscience.nl
 DOMAIN-SUFFIX,adsco.re
 DOMAIN-SUFFIX,adscpm.com
 DOMAIN-SUFFIX,adsdaq.com
@@ -945,6 +945,7 @@ DOMAIN-SUFFIX,algorix.co
 DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
 DOMAIN-SUFFIX,alipromo.com
+DOMAIN-SUFFIX,all4spy.com
 DOMAIN-SUFFIX,allosponsor.com
 DOMAIN-SUFFIX,alluringbucket.com
 DOMAIN-SUFFIX,aloofmetal.com
@@ -1543,7 +1544,6 @@ DOMAIN-SUFFIX,crwdcntrl.net
 DOMAIN-SUFFIX,crypto-loot.org
 DOMAIN-SUFFIX,crystalboulevard.com
 DOMAIN-SUFFIX,cs.co
-DOMAIN-SUFFIX,ctnetwork.hu
 DOMAIN-SUFFIX,culturedcrayon.com
 DOMAIN-SUFFIX,cumbersomecloud.com
 DOMAIN-SUFFIX,curtaincows.com
@@ -1947,10 +1947,8 @@ DOMAIN-SUFFIX,greyinstrument.com
 DOMAIN-SUFFIX,greystripe.com
 DOMAIN-SUFFIX,groundtruth.com
 DOMAIN-SUFFIX,gscontxt.net
-DOMAIN-SUFFIX,gstaticx.com
 DOMAIN-SUFFIX,guardeddirection.com
 DOMAIN-SUFFIX,guardedschool.com
-DOMAIN-SUFFIX,guffawdecipher.com
 DOMAIN-SUFFIX,gunggo.com
 DOMAIN-SUFFIX,h-bid.com
 DOMAIN-SUFFIX,h0.t.hubspotemail.net
@@ -2519,6 +2517,8 @@ DOMAIN-SUFFIX,newads.bangbros.com
 DOMAIN-SUFFIX,newnet.qsrch.com
 DOMAIN-SUFFIX,newnudecash.com
 DOMAIN-SUFFIX,newopenx.detik.com
+DOMAIN-SUFFIX,newsadsppush.com
+DOMAIN-SUFFIX,newsletter-link.com
 DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
 DOMAIN-SUFFIX,newt1.adultworld.com
@@ -3323,7 +3323,6 @@ DOMAIN-SUFFIX,tailsweep.se
 DOMAIN-SUFFIX,takethatad.com
 DOMAIN-SUFFIX,talentedsteel.com
 DOMAIN-SUFFIX,tamgrt.com
-DOMAIN-SUFFIX,tangerinenet.biz
 DOMAIN-SUFFIX,tangibleteam.com
 DOMAIN-SUFFIX,tangyamount.com
 DOMAIN-SUFFIX,tapad.com
@@ -3365,7 +3364,6 @@ DOMAIN-SUFFIX,tendertest.com
 DOMAIN-SUFFIX,terriblethumb.com
 DOMAIN-SUFFIX,text-link-ads.com
 DOMAIN-SUFFIX,textad.sexsearch.com
-DOMAIN-SUFFIX,textads.biz
 DOMAIN-SUFFIX,textlinks.com
 DOMAIN-SUFFIX,tfag.de
 DOMAIN-SUFFIX,the-ozone-project.com
@@ -3468,7 +3466,6 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk
-DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com
 DOMAIN-SUFFIX,tracking.epicgames.com
 DOMAIN-SUFFIX,tracking.exipure.com
 DOMAIN-SUFFIX,tracking.hyros.com

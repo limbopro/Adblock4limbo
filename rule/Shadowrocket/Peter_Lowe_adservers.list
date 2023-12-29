@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 21 Dec 2023 14:03:25 GMT
-# entries:        3787
+# entries:        3784
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -66,7 +66,6 @@ DOMAIN-SUFFIX,aa-metrics.trip-ai.jp, reject
 DOMAIN-SUFFIX,aaddzz.com, reject
 DOMAIN-SUFFIX,aax-eu-dub.amazon.com, reject
 DOMAIN-SUFFIX,aaxads.com, reject
-DOMAIN-SUFFIX,aaxdetect.com, reject
 DOMAIN-SUFFIX,abacho.net, reject
 DOMAIN-SUFFIX,abackafterthought.com, reject
 DOMAIN-SUFFIX,abackchain.com, reject
@@ -576,7 +575,7 @@ DOMAIN-SUFFIX,ads.pni.com, reject
 DOMAIN-SUFFIX,ads.pof.com, reject
 DOMAIN-SUFFIX,ads.powweb.com, reject
 DOMAIN-SUFFIX,ads.ppvmedien.de, reject
-DOMAIN-SUFFIX,ads.praguetv.cz, reject
+DOMAIN-SUFFIX,ads.primissima.it, reject
 DOMAIN-SUFFIX,ads.printscr.com, reject
 DOMAIN-SUFFIX,ads.prisacom.com, reject
 DOMAIN-SUFFIX,ads.program3.com, reject
@@ -703,6 +702,7 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com, reject
 DOMAIN-SUFFIX,adsbydelema.com, reject
 DOMAIN-SUFFIX,adscale.de, reject
 DOMAIN-SUFFIX,adscholar.com, reject
+DOMAIN-SUFFIX,adscience.nl, reject
 DOMAIN-SUFFIX,adsco.re, reject
 DOMAIN-SUFFIX,adscpm.com, reject
 DOMAIN-SUFFIX,adsdaq.com, reject
@@ -945,6 +945,7 @@ DOMAIN-SUFFIX,algorix.co, reject
 DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
 DOMAIN-SUFFIX,alipromo.com, reject
+DOMAIN-SUFFIX,all4spy.com, reject
 DOMAIN-SUFFIX,allosponsor.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
 DOMAIN-SUFFIX,aloofmetal.com, reject
@@ -1543,7 +1544,6 @@ DOMAIN-SUFFIX,crwdcntrl.net, reject
 DOMAIN-SUFFIX,crypto-loot.org, reject
 DOMAIN-SUFFIX,crystalboulevard.com, reject
 DOMAIN-SUFFIX,cs.co, reject
-DOMAIN-SUFFIX,ctnetwork.hu, reject
 DOMAIN-SUFFIX,culturedcrayon.com, reject
 DOMAIN-SUFFIX,cumbersomecloud.com, reject
 DOMAIN-SUFFIX,curtaincows.com, reject
@@ -1947,10 +1947,8 @@ DOMAIN-SUFFIX,greyinstrument.com, reject
 DOMAIN-SUFFIX,greystripe.com, reject
 DOMAIN-SUFFIX,groundtruth.com, reject
 DOMAIN-SUFFIX,gscontxt.net, reject
-DOMAIN-SUFFIX,gstaticx.com, reject
 DOMAIN-SUFFIX,guardeddirection.com, reject
 DOMAIN-SUFFIX,guardedschool.com, reject
-DOMAIN-SUFFIX,guffawdecipher.com, reject
 DOMAIN-SUFFIX,gunggo.com, reject
 DOMAIN-SUFFIX,h-bid.com, reject
 DOMAIN-SUFFIX,h0.t.hubspotemail.net, reject
@@ -2519,6 +2517,8 @@ DOMAIN-SUFFIX,newads.bangbros.com, reject
 DOMAIN-SUFFIX,newnet.qsrch.com, reject
 DOMAIN-SUFFIX,newnudecash.com, reject
 DOMAIN-SUFFIX,newopenx.detik.com, reject
+DOMAIN-SUFFIX,newsadsppush.com, reject
+DOMAIN-SUFFIX,newsletter-link.com, reject
 DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
 DOMAIN-SUFFIX,newt1.adultworld.com, reject
@@ -3323,7 +3323,6 @@ DOMAIN-SUFFIX,tailsweep.se, reject
 DOMAIN-SUFFIX,takethatad.com, reject
 DOMAIN-SUFFIX,talentedsteel.com, reject
 DOMAIN-SUFFIX,tamgrt.com, reject
-DOMAIN-SUFFIX,tangerinenet.biz, reject
 DOMAIN-SUFFIX,tangibleteam.com, reject
 DOMAIN-SUFFIX,tangyamount.com, reject
 DOMAIN-SUFFIX,tapad.com, reject
@@ -3365,7 +3364,6 @@ DOMAIN-SUFFIX,tendertest.com, reject
 DOMAIN-SUFFIX,terriblethumb.com, reject
 DOMAIN-SUFFIX,text-link-ads.com, reject
 DOMAIN-SUFFIX,textad.sexsearch.com, reject
-DOMAIN-SUFFIX,textads.biz, reject
 DOMAIN-SUFFIX,textlinks.com, reject
 DOMAIN-SUFFIX,tfag.de, reject
 DOMAIN-SUFFIX,the-ozone-project.com, reject
@@ -3468,7 +3466,6 @@ DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk, reject
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk, reject
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk, reject
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk, reject
-DOMAIN-SUFFIX,tracking.emilyclarkconsulting.com, reject
 DOMAIN-SUFFIX,tracking.epicgames.com, reject
 DOMAIN-SUFFIX,tracking.exipure.com, reject
 DOMAIN-SUFFIX,tracking.hyros.com, reject

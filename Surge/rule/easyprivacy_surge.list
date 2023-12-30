@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312291533
+## ! Version: 202312301554
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Dec 2023 15:33 UTC
+## ! Last modified: 30 Dec 2023 15:54 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1193,6 +1193,7 @@ DOMAIN-SUFFIX,handsomeyam.com
 DOMAIN-SUFFIX,handyfield.com
 DOMAIN-SUFFIX,handyfireman.com
 DOMAIN-SUFFIX,handyincrease.com
+DOMAIN-SUFFIX,haplesshydrant.com
 DOMAIN-SUFFIX,haplessland.com
 DOMAIN-SUFFIX,happenhistory.com
 DOMAIN-SUFFIX,harborcaption.com
@@ -1959,6 +1960,7 @@ DOMAIN-SUFFIX,storescissors.com
 DOMAIN-SUFFIX,storeslope.com
 DOMAIN-SUFFIX,storesurprise.com
 DOMAIN-SUFFIX,stormyachiever.com
+DOMAIN-SUFFIX,stormyfold.com
 DOMAIN-SUFFIX,stoveseashore.com
 DOMAIN-SUFFIX,straightnest.com
 DOMAIN-SUFFIX,strangeclocks.com

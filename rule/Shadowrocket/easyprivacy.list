@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312301554
+## ! Version: 202312311445
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Dec 2023 15:54 UTC
+## ! Last modified: 31 Dec 2023 14:45 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2434,6 +2434,7 @@ DOMAIN-SUFFIX,beacon.viewlift.com, reject
 DOMAIN-SUFFIX,beacon2.indieclick.com, reject
 DOMAIN-SUFFIX,beacons.mediamelon.com, reject
 DOMAIN-SUFFIX,beam.mjhlifesciences.com, reject
+DOMAIN-SUFFIX,beamanalytics.b-cdn.net, reject
 DOMAIN-SUFFIX,bee.tc.easebar.com, reject
 DOMAIN-SUFFIX,behavior.tongdun.net, reject
 DOMAIN-SUFFIX,bento.agoda.com, reject
@@ -2453,6 +2454,7 @@ DOMAIN-SUFFIX,c.wen.ru, reject
 DOMAIN-SUFFIX,c3metrics.medifast1.com, reject
 DOMAIN-SUFFIX,cache2.delvenetworks.com, reject
 DOMAIN-SUFFIX,cahf4eed.mooo.com, reject
+DOMAIN-SUFFIX,calltrack.co, reject
 DOMAIN-SUFFIX,camel.headfarming.com, reject
 DOMAIN-SUFFIX,capture-api.ap3prod.com, reject
 DOMAIN-SUFFIX,capture.condenastdigital.com, reject
@@ -2778,6 +2780,7 @@ DOMAIN-SUFFIX,loggingapi.spingo.com, reject
 DOMAIN-SUFFIX,loglady.skypicker.com, reject
 DOMAIN-SUFFIX,logs-api.shoprunner.com, reject
 DOMAIN-SUFFIX,logs.animaapp.com, reject
+DOMAIN-SUFFIX,logs.mezmo.com, reject
 DOMAIN-SUFFIX,logs.spilgames.com, reject
 DOMAIN-SUFFIX,logs.thebloggernetwork.com, reject
 DOMAIN-SUFFIX,logs.viadata.store, reject
@@ -4313,6 +4316,7 @@ DOMAIN-SUFFIX,perf.mouser.com, reject
 DOMAIN-SUFFIX,performance-logger.minted.com, reject
 DOMAIN-SUFFIX,perr.hola.org, reject
 DOMAIN-SUFFIX,pf.newegg.com, reject
+DOMAIN-SUFFIX,pftk.temu.com, reject
 DOMAIN-SUFFIX,ph.thenextweb.com, reject
 DOMAIN-SUFFIX,ping.hungama.com, reject
 DOMAIN-SUFFIX,pingback.giphy.com, reject
@@ -21872,6 +21876,7 @@ DOMAIN-SUFFIX,tracker.publico.pt, reject
 DOMAIN-SUFFIX,analytics.okazii.ro, reject
 DOMAIN-SUFFIX,views.b1tv.ro, reject
 DOMAIN-SUFFIX,views.romaniatv.net, reject
+DOMAIN-SUFFIX,a.mts.ru, reject
 DOMAIN-SUFFIX,a.pikabu.ru, reject
 DOMAIN-SUFFIX,ad7.bigmir.net, reject
 DOMAIN-SUFFIX,affilate.hh.ru, reject

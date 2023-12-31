@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202312301554
+## ! Version: 202312311445
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Dec 2023 15:54 UTC
+## ! Last modified: 31 Dec 2023 14:45 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2434,6 +2434,7 @@ DOMAIN-SUFFIX,beacon.viewlift.com
 DOMAIN-SUFFIX,beacon2.indieclick.com
 DOMAIN-SUFFIX,beacons.mediamelon.com
 DOMAIN-SUFFIX,beam.mjhlifesciences.com
+DOMAIN-SUFFIX,beamanalytics.b-cdn.net
 DOMAIN-SUFFIX,bee.tc.easebar.com
 DOMAIN-SUFFIX,behavior.tongdun.net
 DOMAIN-SUFFIX,bento.agoda.com
@@ -2453,6 +2454,7 @@ DOMAIN-SUFFIX,c.wen.ru
 DOMAIN-SUFFIX,c3metrics.medifast1.com
 DOMAIN-SUFFIX,cache2.delvenetworks.com
 DOMAIN-SUFFIX,cahf4eed.mooo.com
+DOMAIN-SUFFIX,calltrack.co
 DOMAIN-SUFFIX,camel.headfarming.com
 DOMAIN-SUFFIX,capture-api.ap3prod.com
 DOMAIN-SUFFIX,capture.condenastdigital.com
@@ -2778,6 +2780,7 @@ DOMAIN-SUFFIX,loggingapi.spingo.com
 DOMAIN-SUFFIX,loglady.skypicker.com
 DOMAIN-SUFFIX,logs-api.shoprunner.com
 DOMAIN-SUFFIX,logs.animaapp.com
+DOMAIN-SUFFIX,logs.mezmo.com
 DOMAIN-SUFFIX,logs.spilgames.com
 DOMAIN-SUFFIX,logs.thebloggernetwork.com
 DOMAIN-SUFFIX,logs.viadata.store
@@ -4313,6 +4316,7 @@ DOMAIN-SUFFIX,perf.mouser.com
 DOMAIN-SUFFIX,performance-logger.minted.com
 DOMAIN-SUFFIX,perr.hola.org
 DOMAIN-SUFFIX,pf.newegg.com
+DOMAIN-SUFFIX,pftk.temu.com
 DOMAIN-SUFFIX,ph.thenextweb.com
 DOMAIN-SUFFIX,ping.hungama.com
 DOMAIN-SUFFIX,pingback.giphy.com
@@ -21872,6 +21876,7 @@ DOMAIN-SUFFIX,tracker.publico.pt
 DOMAIN-SUFFIX,analytics.okazii.ro
 DOMAIN-SUFFIX,views.b1tv.ro
 DOMAIN-SUFFIX,views.romaniatv.net
+DOMAIN-SUFFIX,a.mts.ru
 DOMAIN-SUFFIX,a.pikabu.ru
 DOMAIN-SUFFIX,ad7.bigmir.net
 DOMAIN-SUFFIX,affilate.hh.ru

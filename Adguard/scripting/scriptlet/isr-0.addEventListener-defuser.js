@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["","hblocked"]];
+const argsList = [["","hblocked"],["load","hblocked"]];
 
-const hostnamesMap = new Map([["haaretz.co.il",0],["themarker.com",0]]);
+const hostnamesMap = new Map([["haaretz.co.il",0],["themarker.com",0],["www-haaretz-co-il.eu1.proxy.openathens.net",[0,1]],["www-themarker-com.eu1.proxy.openathens.net",0]]);
 
 const entitiesMap = new Map([]);
 

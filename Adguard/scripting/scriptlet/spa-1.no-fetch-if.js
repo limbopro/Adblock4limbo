@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["pagead2.googlesyndication.com"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["ads_block.txt"],["imasdk.googleapis.com"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"]];
 
-const hostnamesMap = new Map([["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,7]],["puromarketing.com",[0,7]],["todostartups.com",[0,7]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["peliculas8k.com",1],["modescanlator.com",2],["southparkstudios.com.br",3],["southpark.lat",3],["qwanturankpro.com",4],["desbloquea.me",4],["mega-enlace.com",4],["enlacito.com",4],["acortame-esto.com",4],["netcine.to",4],["repretel.com",5],["redbolivision.tv.bo",5],["independentespanol.com",5],["downloads.sayrodigital.com",6],["teleculinaria.pt",6],["nptmedia.tv",8],["suaads.com",9],["reidoplacar.com",9],["suaurl.com",9],["costumbresmexico.com",10],["desbloqueador.site",10],["notipostingt.com",11],["tivify.tv",12],["netmovies.com.br",13]]);
+const hostnamesMap = new Map([["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,7]],["puromarketing.com",[0,7]],["todostartups.com",[0,7]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["peliculas8k.com",1],["modescanlator.com",2],["southparkstudios.com.br",3],["southpark.lat",3],["qwanturankpro.com",4],["desbloquea.me",4],["mega-enlace.com",4],["enlacito.com",4],["acortame-esto.com",4],["repretel.com",5],["redbolivision.tv.bo",5],["independentespanol.com",5],["downloads.sayrodigital.com",6],["teleculinaria.pt",6],["nptmedia.tv",8],["suaads.com",9],["reidoplacar.com",9],["suaurl.com",9],["costumbresmexico.com",10],["desbloqueador.site",10],["notipostingt.com",11],["tivify.tv",12],["netmovies.com.br",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -54,7 +54,7 @@ const exceptionsMap = new Map([]);
 
 function noFetchIf(
     propsToMatch = '',
-    directive = ''
+    responseBody = ''
 ) {
     if ( typeof propsToMatch !== 'string' ) { return; }
     const safe = safeSelf();
@@ -111,7 +111,17 @@ function noFetchIf(
             if ( proceed ) {
                 return Reflect.apply(target, thisArg, args);
             }
-            return generateContentFn(directive).then(text => {
+            let responseType = '';
+            if ( details.mode === undefined || details.mode === 'cors' ) {
+                try {
+                    const desURL = new URL(details.url);
+                    responseType = desURL.origin !== document.location.origin
+                        ? 'cors'
+                        : 'basic';
+                } catch(_) {
+                }
+            }
+            return generateContentFn(responseBody).then(text => {
                 const response = new Response(text, {
                     statusText: 'OK',
                     headers: {
@@ -121,6 +131,11 @@ function noFetchIf(
                 Object.defineProperty(response, 'url', {
                     value: details.url
                 });
+                if ( responseType !== '' ) {
+                    Object.defineProperty(response, 'type', {
+                        value: responseType
+                    });
+                }
                 return response;
             });
         }
@@ -142,6 +157,15 @@ function generateContentFn(directive) {
     };
     if ( directive === 'true' ) {
         return Promise.resolve(randomize(10));
+    }
+    if ( directive === 'emptyObj' ) {
+        return Promise.resolve('{}');
+    }
+    if ( directive === 'emptyArr' ) {
+        return Promise.resolve('[]');
+    }
+    if ( directive === 'emptyStr' ) {
+        return Promise.resolve('');
     }
     if ( directive.startsWith('length:') ) {
         const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);

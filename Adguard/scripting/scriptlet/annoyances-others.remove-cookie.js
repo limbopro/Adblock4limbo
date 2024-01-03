@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["articlesRead"]];
 
-const hostnamesMap = new Map([["thegamer.com",0],["screenrant.com",0],["makeuseof.com",0],["movieweb.com",0],["androidpolice.com",0],["xda-developers.com",0]]);
+const hostnamesMap = new Map([["howtogeek.com",0],["gamerant.com",0],["cbr.com",0],["thegamer.com",0],["screenrant.com",0],["makeuseof.com",0],["movieweb.com",0],["androidpolice.com",0],["xda-developers.com",0]]);
 
 const entitiesMap = new Map([]);
 

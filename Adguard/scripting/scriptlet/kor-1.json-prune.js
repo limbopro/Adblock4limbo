@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ads"],["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"]];
+const argsList = [["tpl apply","tpl.[].c","/fmkorea.com.[A-z]{8","}.js/"],["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
 
-const hostnamesMap = new Map([["m.fmkorea.com",0],["shoppinghow.kakao.com",0],["msearch.shopping.naver.com",1],["search.shopping.naver.com",2],["comic.naver.com",3],["enuri.com",4]]);
+const hostnamesMap = new Map([["m.fmkorea.com",0],["msearch.shopping.naver.com",1],["search.shopping.naver.com",2],["comic.naver.com",3],["enuri.com",4],["shoppinghow.kakao.com",5]]);
 
 const entitiesMap = new Map([]);
 

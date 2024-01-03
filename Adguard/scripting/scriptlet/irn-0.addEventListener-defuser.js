@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["contextmenu","preventDefault"],["scroll"],["contextmenu"],["load","contextmenu"],["click","720"],["copy","throw"]];
+const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["scroll"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["click","720"],["copy","throw"]];
 
-const hostnamesMap = new Map([["app.blubank.com",0],["eghtesadonline.com",1],["elmefarda.com",2],["s-moshaver.com",2],["javan-musics.com",3],["mopon.ir",4],["noorlib.ir",5]]);
+const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["eghtesadonline.com",2],["elmefarda.com",3],["s-moshaver.com",3],["ganjipakhsh.com",4],["javan-musics.com",5],["mopon.ir",6],["noorlib.ir",7]]);
 
 const entitiesMap = new Map([]);
 

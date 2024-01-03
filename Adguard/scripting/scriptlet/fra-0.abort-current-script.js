@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["chp_ads_blocker_detector"],["document.getElementById","Blocking Ads"],["document.addEventListener","/getComputedStyle[\\s\\S]*?_0x/"],["document.getElementById","AdBlocker"],["document.createElement","adblock"],["document.write","alert"],["setTimeout","bloqueur"],["Promise","alert"],["document.getElementById","msg_ab"],["document.querySelector","oadbActive"],["$","checkAds"],["$","!document.getElementById(btoa"],["document.getElementById","adback"],["jQuery","Ad Blocker"],["JSON.parse","document.createElement('script')"],["document.createElement","document.documentElement).appendChild"],["document.getElementById","window.open"]];
+const argsList = [["chp_ads_blocker_detector"],["document.getElementById","Blocking Ads"],["document.addEventListener","/getComputedStyle[\\s\\S]*?_0x/"],["document.createElement","adblock"],["document.write","alert"],["setTimeout","bloqueur"],["Promise","alert"],["document.getElementById","msg_ab"],["document.querySelector","oadbActive"],["$","checkAds"],["$","!document.getElementById(btoa"],["document.getElementById","adback"],["jQuery","Ad Blocker"],["JSON.parse","document.createElement('script')"],["document.createElement","document.documentElement).appendChild"],["document.getElementById","window.open"]];
 
-const hostnamesMap = new Map([["super-ethanol.com",0],["monumentum.fr",1],["japscan.lol",2],["cyclismactu.net",3],["lemanip.com",4],["crunchyscan.fr",[5,6,7]],["abcbourse.com",8],["cliqueduplateau.com",9],["monacomatin.mc",10],["leakgaming.fr",11],["recreatisse.com",12],["ultimate-catch.eu",12],["liens-telechargement.com",13],["japscan.me",[14,15]],["scan-manga.com",16]]);
+const hostnamesMap = new Map([["super-ethanol.com",0],["monumentum.fr",1],["japscan.lol",2],["lemanip.com",3],["crunchyscan.fr",[4,5,6]],["abcbourse.com",7],["cliqueduplateau.com",8],["monacomatin.mc",9],["leakgaming.fr",10],["recreatisse.com",11],["ultimate-catch.eu",11],["liens-telechargement.com",12],["japscan.me",[13,14]],["scan-manga.com",15]]);
 
 const entitiesMap = new Map([]);
 

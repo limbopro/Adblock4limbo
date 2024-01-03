@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["/daioncdn\\.net\\/.*\\/ad\\//","/daioncdn\\.net\\/.*\\.m3u8/"]];
 
-const hostnamesMap = new Map([["trtizle.com",0],["ntv.com.tr",0],["tlctv.com.tr",0],["dmax.com.tr",0],["haberturk.com",0],["bloomberght.com",0],["aspor.com.tr",0],["atv.com.tr",0],["beyaztv.com.tr",0],["kanal7.com",0],["kanald.com.tr",0],["showtv.com.tr",0],["startv.com.tr",0],["teve2.com.tr",0],["tv8.com.tr",0]]);
+const hostnamesMap = new Map([["tabii.com",0],["trtizle.com",0],["ntv.com.tr",0],["tlctv.com.tr",0],["dmax.com.tr",0],["haberturk.com",0],["bloomberght.com",0],["aspor.com.tr",0],["atv.com.tr",0],["beyaztv.com.tr",0],["kanal7.com",0],["kanald.com.tr",0],["showtv.com.tr",0],["startv.com.tr",0],["teve2.com.tr",0],["tv8.com.tr",0]]);
 
 const entitiesMap = new Map([]);
 

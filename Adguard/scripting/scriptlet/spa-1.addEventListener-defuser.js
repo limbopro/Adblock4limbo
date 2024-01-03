@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["load","detect-modal"],["","_0x"],["detectAdBlock"],["load","daadb_get_data"],["DOMContentLoaded","document.write"],["","popunder"],["click","loadXMLDoc"],["mousedown","touchend"],["load","/_0x[\\s\\S]*?parentNode[\\s\\S]*?appendChild/"],["DOMContentLoaded","videoTag"]];
+const argsList = [["load","banner-ads"],["load","detect-modal"],["","_0x"],["detectAdBlock"],["load","daadb_get_data"],["DOMContentLoaded","document.write"],["","popunder"],["click","loadXMLDoc"],["mousedown","touchend"],["load","/_0x[\\s\\S]*?parentNode[\\s\\S]*?appendChild/"],["DOMContentLoaded","videoTag"]];
 
-const hostnamesMap = new Map([["softwareany.net",0],["xerifetech.com",1],["guideautoweb.com",2],["elquintobeatle.com",3],["empregoestagios.com",3],["satcesc.com",3],["g37.com.br",4],["desenhosanimados.site",5],["descargarhentaimf.xyz",6],["superflix.net",7],["irmaosdotados.net",8],["comandotorrents.org",9],["lapumia.org",9]]);
+const hostnamesMap = new Map([["depor.com",0],["softwareany.net",1],["xerifetech.com",2],["guideautoweb.com",3],["elquintobeatle.com",4],["empregoestagios.com",4],["satcesc.com",4],["g37.com.br",5],["desenhosanimados.site",6],["descargarhentaimf.xyz",7],["superflix.net",8],["irmaosdotados.net",9],["comandotorrents.org",10],["lapumia.org",10]]);
 
 const entitiesMap = new Map([]);
 

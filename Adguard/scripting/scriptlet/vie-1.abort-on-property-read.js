@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["sp"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["localStorage"],["sessionStorage"],["document.cookie"],["open"],["atob"],["matchMedia"]];
+const argsList = [["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["localStorage"],["sessionStorage"],["document.cookie"],["open"],["adsRedirectPopups"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["nettruyenus.net",5],["plvb.xyz",[6,7,8,9,10]],["subnhanhvl.co",11],["subnhanh.im",11],["phimmoi4s.com",11],["phimdinhcao.net",11],["phimlongtieng.net",11],["phimdinhcao.com",11],["ophim.vip",11],["tinsoikeo.vip",12],["truyensieuhay.com",13],["phimvietsub.pro",13],["tvhaym.org",13],["vuaphimmoi.net",13],["quangcaoyenbai.com",13],["phimbom.online",13],["sieudamtv.com",13],["ephimchill.com",13],["motphimhan.cc",13],["maclife.io",13],["viettoons.tv",14],["phimmoiaz.cc",14],["m.blogtruyen.vn",14],["animet.net",14],["anh.moe",14],["ytstv.me",15],["yts.do",15],["yts.mx",15],["yts.rs",15],["zuiphim.com",16]]);
+const hostnamesMap = new Map([["91p.plvb.xyz",[0,1,2,3,4]],["aoe.vn",5],["audiotruyenfull.com",6],["azrom.net",7],["cafenau.com",7],["javnong.cc",8],["linkneverdie.net",9],["phimmoi4s.com",10],["phimdinhcao.net",10],["phimlongtieng.net",10],["phimdinhcao.com",10],["tinsoikeo.vip",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["tvhayh.org",12],["www2.vuaphimmoi1.net",12],["quangcaoyenbai.com",12],["sieudamtv.me",12],["ephimchill.com",12],["motphimhan.cc",12],["maclife.io",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["m.blogtruyen.vn",13],["animet.net",13],["anh.moe",13],["xoilac87.tv",14],["ytstv.me",15],["yts.do",15],["yts.mx",15],["yts.rs",15],["znews.vn",16],["zuiphim.com",17]]);
 
 const entitiesMap = new Map([]);
 

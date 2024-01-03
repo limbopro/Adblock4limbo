@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 21 Dec 2023 14:03:25 GMT
-# entries:        3784
+# last updated:   Tue, 02 Jan 2024 19:22:44 GMT
+# entries:        3787
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1310,6 +1310,7 @@ DOMAIN-SUFFIX,cashstaging.me, reject
 DOMAIN-SUFFIX,casinopays.com, reject
 DOMAIN-SUFFIX,casinorewards.com, reject
 DOMAIN-SUFFIX,casinotraffic.com, reject
+DOMAIN-SUFFIX,cattlecommittee.com, reject
 DOMAIN-SUFFIX,causecherry.com, reject
 DOMAIN-SUFFIX,cautiouscredit.com, reject
 DOMAIN-SUFFIX,cbanners.virtuagirlhd.com, reject
@@ -1960,6 +1961,7 @@ DOMAIN-SUFFIX,handsomehose.com, reject
 DOMAIN-SUFFIX,handyfield.com, reject
 DOMAIN-SUFFIX,handyfireman.com, reject
 DOMAIN-SUFFIX,handyincrease.com, reject
+DOMAIN-SUFFIX,haplesshydrant.com, reject
 DOMAIN-SUFFIX,hardtofindmilk.com, reject
 DOMAIN-SUFFIX,harrenmedia.com, reject
 DOMAIN-SUFFIX,harrenmedianetwork.com, reject
@@ -3241,6 +3243,7 @@ DOMAIN-SUFFIX,steadfastsound.com, reject
 DOMAIN-SUFFIX,steadfastsystem.com, reject
 DOMAIN-SUFFIX,steelhouse.com, reject
 DOMAIN-SUFFIX,steelhousemedia.com, reject
+DOMAIN-SUFFIX,steepscale.com, reject
 DOMAIN-SUFFIX,stepplane.com, reject
 DOMAIN-SUFFIX,stickssheep.com, reject
 DOMAIN-SUFFIX,stickyadstv.com, reject

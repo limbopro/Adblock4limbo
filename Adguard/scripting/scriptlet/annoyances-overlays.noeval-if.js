@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["bidReqIdStr"],["xored"],["oncontextmenu"],["disable_copy"],["AdBlocker"],["alert"],["String.fromCharCode"],["debugger"]];
 
-const hostnamesMap = new Map([["otzovik.com",1],["runmods.com",2],["magesy.blog",3],["magesypro.pro",3],["romviet.com",4],["isekaipalace.com",5],["seriesperu.com",6],["alexsportz.online",7],["sportea.online",7],["freetvsports.xyz",7]]);
+const hostnamesMap = new Map([["otzovik.com",1],["runmods.com",2],["magesy.blog",3],["magesypro.pro",3],["romviet.com",4],["isekaipalace.com",5],["seriesperu.com",6],["alexsportz.online",7],["sportea.online",7],["freetvsports.xyz",7],["movie-web.app",7]]);
 
 const entitiesMap = new Map([["afisha.yandex",0]]);
 

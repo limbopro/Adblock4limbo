@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["pagead2.googlesyndication.com"],["/tag.min.js"],["securepubads.g.doubleclick.net/pagead/ppub_config"]];
+const argsList = [["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"]];
 
-const hostnamesMap = new Map([["aqualapp.com",0],["netcine.to",1],["minhaconexao.com.br",2]]);
+const hostnamesMap = new Map([["aqualapp.com",0],["minhaconexao.com.br",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -196,6 +196,15 @@ function generateContentFn(directive) {
     };
     if ( directive === 'true' ) {
         return Promise.resolve(randomize(10));
+    }
+    if ( directive === 'emptyObj' ) {
+        return Promise.resolve('{}');
+    }
+    if ( directive === 'emptyArr' ) {
+        return Promise.resolve('[]');
+    }
+    if ( directive === 'emptyStr' ) {
+        return Promise.resolve('');
     }
     if ( directive.startsWith('length:') ) {
         const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);

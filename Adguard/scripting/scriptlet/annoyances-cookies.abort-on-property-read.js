@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["__cmpGdprAppliesGlobally"],["cookieconsent.Popup"],["cookieman"],["tancarModal"]];
+const argsList = [["__cmpGdprAppliesGlobally"],["cookieconsent.Popup"],["cookieman"]];
 
-const hostnamesMap = new Map([["al.com",0],["allkpop.com",0],["calendarpedia.co.uk",0],["ccn.com",0],["cinemablend.com",0],["cleveland.com",0],["comicsands.com",0],["duffelblog.com",0],["foxvalleyfoodie.com",0],["gamepur.com",0],["gamerevolution.com",0],["interestingengineering.com",0],["keengamer.com",0],["listenonrepeat.com",0],["mandatory.com",0],["merriam-webster.com",0],["mlive.com",0],["musicfeeds.com.au",0],["newatlas.com",0],["pgatour.com",0],["playstationlifestyle.net",0],["readlightnovel.org",0],["secondnexus.com",0],["sevenforums.com",0],["sport24.co.za",0],["sportsnaut.com",0],["superherohype.com",0],["thefashionspot.com",0],["theodysseyonline.com",0],["toledoblade.com",0],["totalbeauty.com",0],["westernjournal.com",0],["windows101tricks.com",0],["claritin.ca",1],["podleze-piekielko.pl",2],["deutsche-bank.es",3]]);
+const hostnamesMap = new Map([["al.com",0],["allkpop.com",0],["calendarpedia.co.uk",0],["ccn.com",0],["cinemablend.com",0],["cleveland.com",0],["comicsands.com",0],["duffelblog.com",0],["foxvalleyfoodie.com",0],["gamepur.com",0],["gamerevolution.com",0],["interestingengineering.com",0],["keengamer.com",0],["listenonrepeat.com",0],["mandatory.com",0],["merriam-webster.com",0],["mlive.com",0],["musicfeeds.com.au",0],["newatlas.com",0],["pgatour.com",0],["playstationlifestyle.net",0],["readlightnovel.org",0],["secondnexus.com",0],["sevenforums.com",0],["sport24.co.za",0],["sportsnaut.com",0],["superherohype.com",0],["thefashionspot.com",0],["theodysseyonline.com",0],["toledoblade.com",0],["totalbeauty.com",0],["westernjournal.com",0],["windows101tricks.com",0],["claritin.ca",1],["podleze-piekielko.pl",2]]);
 
 const entitiesMap = new Map([]);
 

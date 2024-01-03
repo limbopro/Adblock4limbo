@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401021545
+## ! Version: 202401031528
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Jan 2024 15:45 UTC
+## ! Last modified: 03 Jan 2024 15:28 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -538,7 +538,6 @@ DOMAIN-SUFFIX,apparatuslip.com, reject
 DOMAIN-SUFFIX,aquaticalarm.com, reject
 DOMAIN-SUFFIX,aquaticanswer.com, reject
 DOMAIN-SUFFIX,aquaticowl.com, reject
-DOMAIN-SUFFIX,ar1nvz5.com, reject
 DOMAIN-SUFFIX,archswimming.com, reject
 DOMAIN-SUFFIX,arcticamber.com, reject
 DOMAIN-SUFFIX,argyresthia.com, reject
@@ -2234,7 +2233,6 @@ DOMAIN-SUFFIX,alexandria.marfeelcdn.com, reject
 DOMAIN-SUFFIX,amp-error-reporting.appspot.com, reject
 DOMAIN-SUFFIX,amplifypixel.outbrain.com, reject
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com, reject
-DOMAIN-SUFFIX,an.yandex.ru, reject
 DOMAIN-SUFFIX,analyse.bcovery.com, reject
 DOMAIN-SUFFIX,analytic.rollout.io, reject
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com, reject
@@ -2366,7 +2364,6 @@ DOMAIN-SUFFIX,analyticsehnwe.servicebus.windows.net, reject
 DOMAIN-SUFFIX,analyticssec.overwolf.com, reject
 DOMAIN-SUFFIX,analyze.full-marke.com, reject
 DOMAIN-SUFFIX,ao-freegeoip.herokuapp.com, reject
-DOMAIN-SUFFIX,aorta.clickagy.com, reject
 DOMAIN-SUFFIX,ape-tagit.timeinc.net, reject
 DOMAIN-SUFFIX,api-analytics-prd.pelcro.com, reject
 DOMAIN-SUFFIX,api.autopilothq.com, reject
@@ -2595,7 +2592,6 @@ DOMAIN-SUFFIX,event-stream.spot.im, reject
 DOMAIN-SUFFIX,event.api.drift.com, reject
 DOMAIN-SUFFIX,event.getblue.io, reject
 DOMAIN-SUFFIX,event.instiengage.com, reject
-DOMAIN-SUFFIX,event.mrtnsvr.com, reject
 DOMAIN-SUFFIX,event.syndigo.cloud, reject
 DOMAIN-SUFFIX,event.webcollage.net, reject
 DOMAIN-SUFFIX,eventapi.libring.com, reject
@@ -2868,7 +2864,6 @@ DOMAIN-SUFFIX,pixel.safe-installation.com, reject
 DOMAIN-SUFFIX,pixel.solvemedia.com, reject
 DOMAIN-SUFFIX,pixel.sprinklr.com, reject
 DOMAIN-SUFFIX,pixel.videohub.tv, reject
-DOMAIN-SUFFIX,pixel.widgetly.com, reject
 DOMAIN-SUFFIX,pixel.wp.com, reject
 DOMAIN-SUFFIX,pixel.yabidos.com, reject
 DOMAIN-SUFFIX,pixel.yola.com, reject
@@ -2934,7 +2929,6 @@ DOMAIN-SUFFIX,rumstat.cdnvideo.ru, reject
 DOMAIN-SUFFIX,rw.marchex.io, reject
 DOMAIN-SUFFIX,s.autopilotapp.com, reject
 DOMAIN-SUFFIX,s.beop.io, reject
-DOMAIN-SUFFIX,s.clickiocdn.com, reject
 DOMAIN-SUFFIX,s.logsss.com, reject
 DOMAIN-SUFFIX,s.srvsynd.com, reject
 DOMAIN-SUFFIX,sa.scorpion.co, reject
@@ -3094,7 +3088,6 @@ DOMAIN-SUFFIX,tag.statshop.fr, reject
 DOMAIN-SUFFIX,tagger.opecloud.com, reject
 DOMAIN-SUFFIX,tags.catapultx.com, reject
 DOMAIN-SUFFIX,tags.cdn.circlesix.co, reject
-DOMAIN-SUFFIX,tags.clickagy.com, reject
 DOMAIN-SUFFIX,tags.dxmdp.com, reject
 DOMAIN-SUFFIX,tags.fullcontact.com, reject
 DOMAIN-SUFFIX,tags.master-perf-tools.com, reject
@@ -3160,7 +3153,6 @@ DOMAIN-SUFFIX,track.shop2market.com, reject
 DOMAIN-SUFFIX,track.sitetag.us, reject
 DOMAIN-SUFFIX,track.social.com, reject
 DOMAIN-SUFFIX,track.strife.com, reject
-DOMAIN-SUFFIX,track.tcppu.com, reject
 DOMAIN-SUFFIX,track.td3x.com, reject
 DOMAIN-SUFFIX,track.uc.cn, reject
 DOMAIN-SUFFIX,track.untd.com, reject
@@ -3695,7 +3687,6 @@ DOMAIN-SUFFIX,analytics2-meride-tv.akamaized.net, reject
 DOMAIN-SUFFIX,audit.shaa.it, reject
 DOMAIN-SUFFIX,click.kataweb.it, reject
 DOMAIN-SUFFIX,cnt.iol.it, reject
-DOMAIN-SUFFIX,d32hwlnfiv2gyn.cloudfront.net, reject
 DOMAIN-SUFFIX,dmpcdn.el-mundo.net, reject
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it, reject
 DOMAIN-SUFFIX,eventsink.api.redbee.live, reject

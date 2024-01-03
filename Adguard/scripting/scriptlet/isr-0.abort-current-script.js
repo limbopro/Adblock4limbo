@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.createElement","admiral"]];
+const argsList = [["document.createElement","admiral"],["$","AdBlockUtil"]];
 
-const hostnamesMap = new Map([["morfix.co.il",0]]);
+const hostnamesMap = new Map([["morfix.co.il",0],["www-haaretz-co-il.eu1.proxy.openathens.net",1]]);
 
 const entitiesMap = new Map([]);
 

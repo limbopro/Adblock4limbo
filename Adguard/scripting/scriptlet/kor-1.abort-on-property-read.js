@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["pum_popups"],["checkCookie","popup_AD"],["adBlockDetected"],["ad_blk"],["$.prototype.fadeIn"]];
+const argsList = [["pum_popups"],["adBlockDetected"],["ad_blk"],["$.prototype.fadeIn"]];
 
-const hostnamesMap = new Map([["hashnews.cafe24.com",0],["cultureland.co.kr",1],["x86.co.kr",2],["1004lucifer.blogspot.com",2],["te31.com",2],["tistory.com",2],["avdbs.com",3],["detegice.github.io",4]]);
+const hostnamesMap = new Map([["hashnews.cafe24.com",0],["x86.co.kr",1],["1004lucifer.blogspot.com",1],["te31.com",1],["tistory.com",1],["avdbs.com",2],["detegice.github.io",3]]);
 
 const entitiesMap = new Map([]);
 

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["articleLimitDrawerVisible"],["unauthenicatedArticleLimitReached"],["kpwc"],["search_curday"],["visit"],["pageViews"],["recipe_view_count_ru"],["recipe_view_count_es"],["recipe_view_count_uk"],["recipe_view_count_pl"],["articlesRead","when","scroll keydown"]];
 
-const hostnamesMap = new Map([["cbr.com",[0,1]],["technologyreview.jp",2],["ac-illust.com",3],["photo-ac.com",3],["novagente.pt",4],["stackshare.io",5],["cookpad.es",[6,7,8,9]],["cookpad.com",[6,7,8,9]],["androidpolice.com",10]]);
+const hostnamesMap = new Map([["cbr.com",[0,1,10]],["technologyreview.jp",2],["ac-illust.com",3],["photo-ac.com",3],["novagente.pt",4],["stackshare.io",5],["cookpad.es",[6,7,8,9]],["cookpad.com",[6,7,8,9]],["androidpolice.com",10],["makeuseof.com",10],["movieweb.com",10],["xda-developers.com",10],["thegamer.com",10],["gamerant.com",10],["screenrant.com",10],["howtogeek.com",10]]);
 
 const entitiesMap = new Map([]);
 

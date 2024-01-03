@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["terms-and-policy-accepted","true"],["ACCEPT_LGPD","true"],["acceptCookies","false"]];
+const argsList = [["cookieMessageDisagree","true"],["terms-and-policy-accepted","true"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
 
-const hostnamesMap = new Map([["smartwielen.lu",0],["c6bank.com.br",1],["gedik.com",2]]);
+const hostnamesMap = new Map([["erco.com",0],["smartwielen.lu",1],["c6bank.com.br",2],["gedik.com",3],["collato.com",[4,5]]]);
 
 const entitiesMap = new Map([]);
 

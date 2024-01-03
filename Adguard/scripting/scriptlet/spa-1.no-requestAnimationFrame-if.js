@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: annoyances-cookies
+// ruleset: spa-1
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_trustedSetLocalStorageItem = function() {
+const uBOL_noRequestAnimationFrameIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["CMPList","$currentDate$"],["cv:cookiesAllowed","{\"mandatoryCookies\":true,\"statsCookies\":false,\"marketingCookies\":false}"],["elementor","{\"__expiration\":{},\"pageViews\":1,\"popup_1276_times\":1}"],["dlnews:settings","{\"state\":{\"cookiesConsent\":{\"marketing\":false,\"analytical\":false},\"chartsOptions\":[{\"id\":\"defi-tvl\"},{\"id\":\"top-protocol\"},{\"id\":\"dexs-volume\"},{\"id\":\"chains-tvl-pie\"}],\"isPriceFeedPaused\":false,\"showSubscriptionModal\":false},\"version\":2}"],["kmt_config_web","{\"created_at\":\"$currentDate$\",\"anonymous\":\"\",\"gdpr_ga\":false,\"gdpr_exp\":false}"],["cookies_settings","{\"json\":{\"state\":\"only-essential\"}}"],["cookiesSettings","{\"remarketing\":false,\"personalisation\":false,\"statistics\":false}"],["acceptConsent","{\"acceptAnalysis\":false,\"acceptMarketing\":false,\"showCookie\":1}"],["cookieConsent","{\"consented\":true,\"levels\":{\"level1\":true,\"level2\":false,\"level3\":false,\"level4\":false}}"],["_cmpRepromptHash","CP20-YAP20-YAAKAyBENAfEgAAAAAAAAAAwIAAAI8gBAGfAR4AAA.YAAAAAAAAAAA.1.l4yppBwRRyXiPrnFNrkJzQ==.P21TmRP21TmRAKAaAB4AAAAA"],["noniabvendorconsent","P21TmRP21TmRAKAaAB4AAAAA"],["cookieSettings","{\"technical\":true,\"bugsnag\":false,\"adjust\":false}"],["appconsent","{\"consents\":{},\"i18n\":{},\"ui\":{},\"vendorlist\":{},\"CMP_VERSION\":10,\"xchange\":{},\"events\":[],\"client\":{\"externalIds\":{},\"floatingPurposes\":[{\"id\":\"\",\"version\":0}],\"floatingPurposesConsent\":[{\"extra_id\":\"\",\"type\":0,\"given_at\":null,\"version\":0}]},\"consentstring\":\"CPzBFAAPzBFAAACAKAFRDUCoAAAAAH_AAAqIIzNF_H_dSSNj8X5_Yft0eY1P5dAz7uQxBhaJg6QFyBLEsJwXwmAIIEnqAKgKGBIEskJAIQBlCAHABUEAYIEBISGMAEAQIQAAJiAEEEERAmJICBBJG4AgEAIQglgCABQAgAsESFsoQMhAAIAABUJAAAgggIABAgAIBDAAQAAAAAAAAgAAEAAAAAAAAAAEABBHYAkw1LiABsiAkJpAwigRAjCIICKBQAAACQMEAACQIAlBGASgwAQAgRQAEBAAAAFEAAAAAAIAEIAAgACBAABAIBAAAABAAAAAQAAAgAIAQAAAABADAEAABAAAAAAACAECEIAAIACAgAAgAEAIAAAAAAIBAIBAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAA.YAAAAAAAAAAA\",\"consentstringUpdatedAt\":{}}"],["euconsent-v2","CPzBFAAPzBFAAAHABBENDYCgAAAAAAAAAAAAJNFB_W_fD2Ni-35_avt0aQ1dwVC_6-UxDgKZB4kFyRpEMKwX3mAKKFXgpKAKGBYEsUZAIQBlHCHEDECwQIERLzHMIAEQJQIAJqJEgFERAkJQCBpZHwMACAIQgHRWATFIiB-HaBroyfhEMaC0AUBQ4AonhMTPAoSdwXCkg7uaHIgIImgFASBAIoYMEEEEBlTkFABAAAkAAABJSADAAEQUCUAGAAIgoDoAMAARBQIQAYAAiCgEgAwABEFARABgACIKAyADAAEQUA0AGAAIgoCoAMAARBQA.YAAAAAAAAAAA"],["euconsent","CP0N6vnP0N6wKA6AoBENDbCsAP_AAH_AABCYJtNV_H__bW9r8X7_aft0eY1P9_j77uQxBhfJE-4F3LvW_JwXx2E5NF36tqoKmRoEu3ZBIUNlHJHUTVmwaogVryHsakWcpTNKJ6BkkFMRM2dYCF5vm4tjeQKY5_p_d3fx2D-t_dv839zzz8VHn3c5f--0-PCdU5-9Dfn9fRfb-9IP9_78v8v8_l_rk2_eT13_pcvr_D--f_87_XW-9wTYAJMNC4gC7AgJCbQMIoEAIwrCAigUAAAAkDRAQAuDAp2BgEusBEAIEUABwQAhABRkACAAACABCIAJAigQAAQCAQAAgAQCAQAEDAAKACwEAgABAdAxTCgAUCwgSIyIhTAhCgSCAlsqEEoKhBXCAIssAKARGwUACAAARWAAICxeAwBICVCQQJdQbQAAEACAUUoVCCT0wADgkbLUHgiAAAAA.YAAAAAAAAAAA"],["fpconsent","NTglMkM0MCUyQzElMkMxNjk4MjE5MTEx|JTA2JTAxJTAxJTA1JTAxJTE2JTAxJTE1JTAxJTA0JTAxJTA4JTAx|JTAw"],["uc_user_interaction","true"],["uc_settings","uc_settings"],["acceptedCookiesAt","$now$"],["am-last-cookie-acceptance","$now$"],["cookie_setting","{\"analytical_cookies\":false,\"functional_cookies\":true}"],["cookieNotification","{\"value\":\"1\"}"]];
+const argsList = [[".clientHeight"]];
 
-const hostnamesMap = new Map([["express.co.uk",0],["carvertical.com",1],["easyfind.ch",2],["dlnews.com",3],["komoot.com",4],["komoot.de",4],["screen.studio",5],["vivantis.sk",6],["spv.no",7],["vr.fi",8],["forums.tomsguide.com",[9,10]],["app.solit-kapital.de",11],["lachainemeteo.com",12],["ledauphine.com",13],["cmpv2.fanpage.it",[14,15]],["cmpv2.geopop.it",[14,15]],["rts.ch",[16,17]],["alan.com",18],["primor.eu",19],["manta.net",20],["login.flex.paychex.com",21]]);
+const hostnamesMap = new Map([["seriesemcena.com.br",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,72 +52,32 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function trustedSetLocalStorageItem(key = '', value = '') {
-    setLocalStorageItemFn('local', true, key, value);
-}
-
-function setLocalStorageItemFn(
-    which = 'local',
-    trusted = false,
-    key = '',
-    value = '',
+function noRequestAnimationFrameIf(
+    needle = ''
 ) {
-    if ( key === '' ) { return; }
-
-    // For increased compatibility with AdGuard
-    if ( value === 'emptyArr' ) {
-        value = '[]';
-    } else if ( value === 'emptyObj' ) {
-        value = '{}';
-    }
-
-    const trustedValues = [
-        '',
-        'undefined', 'null',
-        'false', 'true',
-        'on', 'off',
-        'yes', 'no',
-        '{}', '[]', '""',
-        '$remove$',
-    ];
-
-    if ( trusted ) {
-        if ( value === '$now$' ) {
-            value = Date.now();
-        } else if ( value === '$currentDate$' ) {
-            value = `${Date()}`;
-        } else if ( value === '$currentISODate$' ) {
-            value = (new Date()).toISOString();
-        }
-    } else {
-        const normalized = value.toLowerCase();
-        const match = /^("?)(.+)\1$/.exec(normalized);
-        const unquoted = match && match[2] || normalized;
-        if ( trustedValues.includes(unquoted) === false ) {
-            if ( /^\d+$/.test(unquoted) === false ) { return; }
-            const n = parseInt(unquoted, 10);
-            if ( n > 32767 ) { return; }
-        }
-    }
-
-    try {
-        const storage = self[`${which}Storage`];
-        if ( value === '$remove$' ) {
-            const safe = safeSelf();
-            const pattern = safe.patternToRegex(key, undefined, true );
-            const toRemove = [];
-            for ( let i = 0, n = storage.length; i < n; i++ ) {
-                const key = storage.key(i);
-                if ( pattern.test(key) ) { toRemove.push(key); }
+    if ( typeof needle !== 'string' ) { return; }
+    const safe = safeSelf();
+    const needleNot = needle.charAt(0) === '!';
+    if ( needleNot ) { needle = needle.slice(1); }
+    const log = needleNot === false && needle === '' ? console.log : undefined;
+    const reNeedle = safe.patternToRegex(needle);
+    window.requestAnimationFrame = new Proxy(window.requestAnimationFrame, {
+        apply: function(target, thisArg, args) {
+            const a = args[0] instanceof Function
+                ? String(safe.Function_toString(args[0]))
+                : String(args[0]);
+            let defuse = false;
+            if ( log !== undefined ) {
+                log('uBO: requestAnimationFrame("%s")', a);
+            } else {
+                defuse = reNeedle.test(a) !== needleNot;
             }
-            for ( const key of toRemove ) {
-                storage.removeItem(key);
+            if ( defuse ) {
+                args[0] = function(){};
             }
-        } else {
-            storage.setItem(key, `${value}`);
+            return target.apply(thisArg, args);
         }
-    } catch(ex) {
-    }
+    });
 }
 
 function safeSelf() {
@@ -283,7 +243,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { trustedSetLocalStorageItem(...argsList[i]); }
+    try { noRequestAnimationFrameIf(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -301,11 +261,11 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
-const targetWorld = 'ISOLATED';
+const targetWorld = 'MAIN';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedSetLocalStorageItem();
+    return uBOL_noRequestAnimationFrameIf();
 }
 
 // Firefox
@@ -313,11 +273,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_trustedSetLocalStorageItem = cloneInto([
-            [ '(', uBOL_trustedSetLocalStorageItem.toString(), ')();' ],
+        page.uBOL_noRequestAnimationFrameIf = cloneInto([
+            [ '(', uBOL_noRequestAnimationFrameIf.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_trustedSetLocalStorageItem);
+        const blob = new page.Blob(...page.uBOL_noRequestAnimationFrameIf);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -331,7 +291,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_trustedSetLocalStorageItem;
+    delete page.uBOL_noRequestAnimationFrameIf;
 }
 
 /******************************************************************************/

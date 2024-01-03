@@ -42,9 +42,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["Math.round"]];
+const argsList = [["adbEnableForPage"],["Math.round"]];
 
-const hostnamesMap = new Map([["medibok.se",0]]);
+const hostnamesMap = new Map([["forexgruppen.se",0],["medibok.se",1]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,13 +42,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,12]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["rambler.ru",4],["sibnet.ru",5],["sports.ru",6],["cq.ru",7],["softonic.ru",8],["smotrim.ru",9],["rbc.ru",10],["sportrbc.ru",10],["iptv.org.ua",11],["tva.org.ua",11],["ufchgu.ru",11],["romakatya.ru",13],["overclockers.ru",14],["gazeta.ru",15],["m.lenta.ru",16],["www.vesti.ru",17],["lenta.ru",18],["aida64.com.ua",19],["aida64russia.com",19]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,13]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["rambler.ru",[4,10]],["sibnet.ru",5],["sports.ru",6],["cq.ru",7],["softonic.ru",8],["smotrim.ru",9],["rbc.ru",11],["sportrbc.ru",11],["iptv.org.ua",12],["tva.org.ua",12],["ufchgu.ru",12],["romakatya.ru",14],["overclockers.ru",15],["gazeta.ru",16],["m.lenta.ru",17],["www.vesti.ru",18],["lenta.ru",19],["aida64.com.ua",20],["aida64russia.com",20]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,12]],["id.rambler.ru",[4]],["vp.rambler.ru",[4]],["player.smotrim.ru",[9]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,13]],["id.rambler.ru",[4,10]],["vp.rambler.ru",[4,10]],["player.smotrim.ru",[9]],["mail.rambler.ru",[10]]]);
 
 /******************************************************************************/
 

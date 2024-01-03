@@ -42,7 +42,7 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, [class*=\"metaReedirectWrapperTopAd\"], a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["body > div[id]:not(#download) a","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
+const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, .ametaReedirectWrapperTopAdd, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["body > div[id]:not([id=\"download\"][class=\"download\"]) a","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
 
 const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["download.megaup.net",2],["techcyan.com",3],["kiktu.com",3],["upshrink.com",3],["trangchu.news",3],["banaraswap.in",3]]);
 

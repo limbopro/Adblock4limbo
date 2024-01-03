@@ -48,7 +48,7 @@ const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["game4you.top",1],["game
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["m.vk.com",[0]]]);
+const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 

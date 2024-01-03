@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401021545
+## ! Version: 202401031528
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Jan 2024 15:45 UTC
+## ! Last modified: 03 Jan 2024 15:28 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -538,7 +538,6 @@ DOMAIN-SUFFIX,apparatuslip.com
 DOMAIN-SUFFIX,aquaticalarm.com
 DOMAIN-SUFFIX,aquaticanswer.com
 DOMAIN-SUFFIX,aquaticowl.com
-DOMAIN-SUFFIX,ar1nvz5.com
 DOMAIN-SUFFIX,archswimming.com
 DOMAIN-SUFFIX,arcticamber.com
 DOMAIN-SUFFIX,argyresthia.com
@@ -2234,7 +2233,6 @@ DOMAIN-SUFFIX,alexandria.marfeelcdn.com
 DOMAIN-SUFFIX,amp-error-reporting.appspot.com
 DOMAIN-SUFFIX,amplifypixel.outbrain.com
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com
-DOMAIN-SUFFIX,an.yandex.ru
 DOMAIN-SUFFIX,analyse.bcovery.com
 DOMAIN-SUFFIX,analytic.rollout.io
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com
@@ -2366,7 +2364,6 @@ DOMAIN-SUFFIX,analyticsehnwe.servicebus.windows.net
 DOMAIN-SUFFIX,analyticssec.overwolf.com
 DOMAIN-SUFFIX,analyze.full-marke.com
 DOMAIN-SUFFIX,ao-freegeoip.herokuapp.com
-DOMAIN-SUFFIX,aorta.clickagy.com
 DOMAIN-SUFFIX,ape-tagit.timeinc.net
 DOMAIN-SUFFIX,api-analytics-prd.pelcro.com
 DOMAIN-SUFFIX,api.autopilothq.com
@@ -2595,7 +2592,6 @@ DOMAIN-SUFFIX,event-stream.spot.im
 DOMAIN-SUFFIX,event.api.drift.com
 DOMAIN-SUFFIX,event.getblue.io
 DOMAIN-SUFFIX,event.instiengage.com
-DOMAIN-SUFFIX,event.mrtnsvr.com
 DOMAIN-SUFFIX,event.syndigo.cloud
 DOMAIN-SUFFIX,event.webcollage.net
 DOMAIN-SUFFIX,eventapi.libring.com
@@ -2868,7 +2864,6 @@ DOMAIN-SUFFIX,pixel.safe-installation.com
 DOMAIN-SUFFIX,pixel.solvemedia.com
 DOMAIN-SUFFIX,pixel.sprinklr.com
 DOMAIN-SUFFIX,pixel.videohub.tv
-DOMAIN-SUFFIX,pixel.widgetly.com
 DOMAIN-SUFFIX,pixel.wp.com
 DOMAIN-SUFFIX,pixel.yabidos.com
 DOMAIN-SUFFIX,pixel.yola.com
@@ -2934,7 +2929,6 @@ DOMAIN-SUFFIX,rumstat.cdnvideo.ru
 DOMAIN-SUFFIX,rw.marchex.io
 DOMAIN-SUFFIX,s.autopilotapp.com
 DOMAIN-SUFFIX,s.beop.io
-DOMAIN-SUFFIX,s.clickiocdn.com
 DOMAIN-SUFFIX,s.logsss.com
 DOMAIN-SUFFIX,s.srvsynd.com
 DOMAIN-SUFFIX,sa.scorpion.co
@@ -3094,7 +3088,6 @@ DOMAIN-SUFFIX,tag.statshop.fr
 DOMAIN-SUFFIX,tagger.opecloud.com
 DOMAIN-SUFFIX,tags.catapultx.com
 DOMAIN-SUFFIX,tags.cdn.circlesix.co
-DOMAIN-SUFFIX,tags.clickagy.com
 DOMAIN-SUFFIX,tags.dxmdp.com
 DOMAIN-SUFFIX,tags.fullcontact.com
 DOMAIN-SUFFIX,tags.master-perf-tools.com
@@ -3160,7 +3153,6 @@ DOMAIN-SUFFIX,track.shop2market.com
 DOMAIN-SUFFIX,track.sitetag.us
 DOMAIN-SUFFIX,track.social.com
 DOMAIN-SUFFIX,track.strife.com
-DOMAIN-SUFFIX,track.tcppu.com
 DOMAIN-SUFFIX,track.td3x.com
 DOMAIN-SUFFIX,track.uc.cn
 DOMAIN-SUFFIX,track.untd.com
@@ -3695,7 +3687,6 @@ DOMAIN-SUFFIX,analytics2-meride-tv.akamaized.net
 DOMAIN-SUFFIX,audit.shaa.it
 DOMAIN-SUFFIX,click.kataweb.it
 DOMAIN-SUFFIX,cnt.iol.it
-DOMAIN-SUFFIX,d32hwlnfiv2gyn.cloudfront.net
 DOMAIN-SUFFIX,dmpcdn.el-mundo.net
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it
 DOMAIN-SUFFIX,eventsink.api.redbee.live

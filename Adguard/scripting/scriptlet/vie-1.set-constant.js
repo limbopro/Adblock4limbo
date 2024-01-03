@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["countTVC","0"],["isSkipAds","true"],["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["urlAds",""],["adsTvcs",""],["seconds","0"],["adsPlayer",""]];
+const argsList = [["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["seconds","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["bongda365g.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["gvnvh18.com",3],["phe3x.xyz",3],["sexdiaryx.us",3],["phimvuihd.org",4],["vaoroi13.online",5],["xoivo2.online",[5,7]],["vndoc.com",6]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["gvnvh18.com",1],["sexdiaryx.us",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["vndoc.com",4],["xoivo2.online",[5,6]]]);
 
 const entitiesMap = new Map([]);
 

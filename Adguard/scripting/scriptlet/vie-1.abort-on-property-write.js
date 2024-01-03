@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["AdtimaBaomoi"],["DoodPop"],["window.onclick"]];
+const argsList = [["AdtimaBaomoi"],["DoodPop"]];
 
-const hostnamesMap = new Map([["baomoi.com",0],["dood.pm",1],["metruyencv.com",2]]);
+const hostnamesMap = new Map([["baomoi.com",0],["dood.pm",1]]);
 
 const entitiesMap = new Map([]);
 

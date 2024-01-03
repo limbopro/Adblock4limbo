@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-    uBlock Origin - a browser extension to block requests.
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
     Copyright (C) 2014-present Raymond Hill
 
     This program is free software: you can redistribute it and/or modify
@@ -42,23 +42,24 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adsbygoogle"]];
+const argsList = [["/ad.mail.ru/adp/.*notgb|\\/res\\//"]];
 
-const hostnamesMap = new Map([["howdyho.net",0]]);
+const hostnamesMap = new Map([["mail.ru",0]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["3igames.mail.ru",[0]],["auto.mail.ru",[0]],["biz.mail.ru",[0]],["bonus.mail.ru",[0]],["calendar.mail.ru",[0]],["calls.mail.ru",[0]],["cloud.mail.ru",[0]],["deti.mail.ru",[0]],["dobro.mail.ru",[0]],["e.mail.ru",[0]],["esports.mail.ru",[0]],["games.mail.ru",[0]],["gibdd.mail.ru",[0]],["health.mail.ru",[0]],["help.mail.ru",[0]],["hi-tech.mail.ru",[0]],["horo.mail.ru",[0]],["kino.mail.ru",[0]],["lady.mail.ru",[0]],["love.mail.ru",[0]],["mailblog.mail.ru",[0]],["mcs.mail.ru",[0]],["minigames.mail.ru",[0]],["my.mail.ru",[0]],["news.mail.ru",[0]],["o2.mail.ru",[0]],["octavius.mail.ru",[0]],["okminigames.mail.ru",[0]],["otvet.mail.ru",[0]],["pets.mail.ru",[0]],["player-smotri.mail.ru",[0]],["pogoda.mail.ru",[0]],["top.mail.ru",[0]],["touch.mail.ru",[0]],["tv.mail.ru",[0]]]);
 
 /******************************************************************************/
 
 function noFetchIf(
-    arg1 = '',
+    propsToMatch = '',
+    responseBody = ''
 ) {
-    if ( typeof arg1 !== 'string' ) { return; }
+    if ( typeof propsToMatch !== 'string' ) { return; }
     const safe = safeSelf();
     const needles = [];
-    for ( const condition of arg1.split(/\s+/) ) {
+    for ( const condition of propsToMatch.split(/\s+/) ) {
         if ( condition === '' ) { continue; }
         const pos = condition.indexOf(':');
         let key, value;
@@ -74,14 +75,11 @@ function noFetchIf(
     const log = needles.length === 0 ? console.log.bind(console) : undefined;
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
+            const details = args[0] instanceof self.Request
+                ? args[0]
+                : Object.assign({ url: args[0] }, args[1]);
             let proceed = true;
             try {
-                let details;
-                if ( args[0] instanceof self.Request ) {
-                    details = args[0];
-                } else {
-                    details = Object.assign({ url: args[0] }, args[1]);
-                }
                 const props = new Map();
                 for ( const prop in details ) {
                     let v = details[prop];
@@ -110,11 +108,93 @@ function noFetchIf(
                 }
             } catch(ex) {
             }
-            return proceed
-                ? Reflect.apply(target, thisArg, args)
-                : Promise.resolve(new Response());
+            if ( proceed ) {
+                return Reflect.apply(target, thisArg, args);
+            }
+            let responseType = '';
+            if ( details.mode === undefined || details.mode === 'cors' ) {
+                try {
+                    const desURL = new URL(details.url);
+                    responseType = desURL.origin !== document.location.origin
+                        ? 'cors'
+                        : 'basic';
+                } catch(_) {
+                }
+            }
+            return generateContentFn(responseBody).then(text => {
+                const response = new Response(text, {
+                    statusText: 'OK',
+                    headers: {
+                        'Content-Length': text.length,
+                    }
+                });
+                Object.defineProperty(response, 'url', {
+                    value: details.url
+                });
+                if ( responseType !== '' ) {
+                    Object.defineProperty(response, 'type', {
+                        value: responseType
+                    });
+                }
+                return response;
+            });
         }
     });
+}
+
+function generateContentFn(directive) {
+    const safe = safeSelf();
+    const randomize = len => {
+        const chunks = [];
+        let textSize = 0;
+        do {
+            const s = safe.Math_random().toString(36).slice(2);
+            chunks.push(s);
+            textSize += s.length;
+        }
+        while ( textSize < len );
+        return chunks.join(' ').slice(0, len);
+    };
+    if ( directive === 'true' ) {
+        return Promise.resolve(randomize(10));
+    }
+    if ( directive === 'emptyObj' ) {
+        return Promise.resolve('{}');
+    }
+    if ( directive === 'emptyArr' ) {
+        return Promise.resolve('[]');
+    }
+    if ( directive === 'emptyStr' ) {
+        return Promise.resolve('');
+    }
+    if ( directive.startsWith('length:') ) {
+        const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
+        if ( match ) {
+            const min = parseInt(match[1], 10);
+            const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
+            const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
+            return Promise.resolve(randomize(len | 0));
+        }
+    }
+    if ( directive.startsWith('war:') && scriptletGlobals.has('warOrigin') ) {
+        return new Promise(resolve => {
+            const warOrigin = scriptletGlobals.get('warOrigin');
+            const warName = directive.slice(4);
+            const fullpath = [ warOrigin, '/', warName ];
+            const warSecret = scriptletGlobals.get('warSecret');
+            if ( warSecret !== undefined ) {
+                fullpath.push('?secret=', warSecret);
+            }
+            const warXHR = new safe.XMLHttpRequest();
+            warXHR.responseType = 'text';
+            warXHR.onloadend = ev => {
+                resolve(ev.target.responseText || '');
+            };
+            warXHR.open('GET', fullpath.join(''));
+            warXHR.send();
+        });
+    }
+    return Promise.resolve('');
 }
 
 function safeSelf() {
@@ -123,19 +203,31 @@ function safeSelf() {
     }
     const self = globalThis;
     const safe = {
+        'Array_from': Array.from,
         'Error': self.Error,
+        'Function_toStringFn': self.Function.prototype.toString,
+        'Function_toString': thisArg => safe.Function_toStringFn.call(thisArg),
+        'Math_floor': Math.floor,
+        'Math_max': Math.max,
+        'Math_min': Math.min,
+        'Math_random': Math.random,
         'Object_defineProperty': Object.defineProperty.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
+        'Request_clone': self.Request.prototype.clone,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
         'fetch': self.fetch,
-        'jsonParse': self.JSON.parse.bind(self.JSON),
-        'jsonStringify': self.JSON.stringify.bind(self.JSON),
+        'JSON': self.JSON,
+        'JSON_parseFn': self.JSON.parse,
+        'JSON_stringifyFn': self.JSON.stringify,
+        'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
+        'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
         uboLog(...args) {
+            if ( scriptletGlobals.has('canDebug') === false ) { return; }
             if ( args.length === 0 ) { return; }
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
@@ -144,14 +236,13 @@ function safeSelf() {
             if ( pattern === '' ) {
                 return { matchAll: true };
             }
-            const expect = (options.canNegate === true && pattern.startsWith('!') === false);
+            const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
                 pattern = pattern.slice(1);
             }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match !== null ) {
                 return {
-                    pattern,
                     re: new this.RegExp(
                         match[1],
                         match[2] || options.flags
@@ -159,27 +250,33 @@ function safeSelf() {
                     expect,
                 };
             }
-            return {
-                pattern,
-                re: new this.RegExp(pattern.replace(
-                    /[.*+?^${}()|[\]\\]/g, '\\$&'),
-                    options.flags
-                ),
-                expect,
-            };
+            if ( options.flags !== undefined ) {
+                return {
+                    re: new this.RegExp(pattern.replace(
+                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                        options.flags
+                    ),
+                    expect,
+                };
+            }
+            return { pattern, expect };
         },
         testPattern(details, haystack) {
             if ( details.matchAll ) { return true; }
-            return this.RegExp_test.call(details.re, haystack) === details.expect;
+            if ( details.re ) {
+                return this.RegExp_test.call(details.re, haystack) === details.expect;
+            }
+            return haystack.includes(details.pattern) === details.expect;
         },
-        patternToRegex(pattern, flags = undefined) {
+        patternToRegex(pattern, flags = undefined, verbatim = false) {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                return new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
-                return new RegExp(match[1], match[2] || flags);
+                return new RegExp(match[1], match[2] || undefined);
             }
             catch(ex) {
             }
@@ -281,8 +378,10 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
+const targetWorld = 'MAIN';
+
 // Not Firefox
-if ( typeof wrappedJSObject !== 'object' ) {
+if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     return uBOL_noFetchIf();
 }
 

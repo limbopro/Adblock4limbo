@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["*","nativeConfig"],["*","list.*.link.ad list.*.link.kicker"],["ads"],["ad"]];
 
-const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",1],["new.qq.com",2],["qq.com",3]]);
+const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",1],["v.qq.com",2],["new.qq.com",2],["qq.com",3]]);
 
 const entitiesMap = new Map([]);
 

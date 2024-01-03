@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 21 Dec 2023 14:03:25 GMT
-# entries:        3784
+# last updated:   Tue, 02 Jan 2024 19:22:44 GMT
+# entries:        3787
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1310,6 +1310,7 @@ DOMAIN-SUFFIX,cashstaging.me
 DOMAIN-SUFFIX,casinopays.com
 DOMAIN-SUFFIX,casinorewards.com
 DOMAIN-SUFFIX,casinotraffic.com
+DOMAIN-SUFFIX,cattlecommittee.com
 DOMAIN-SUFFIX,causecherry.com
 DOMAIN-SUFFIX,cautiouscredit.com
 DOMAIN-SUFFIX,cbanners.virtuagirlhd.com
@@ -1960,6 +1961,7 @@ DOMAIN-SUFFIX,handsomehose.com
 DOMAIN-SUFFIX,handyfield.com
 DOMAIN-SUFFIX,handyfireman.com
 DOMAIN-SUFFIX,handyincrease.com
+DOMAIN-SUFFIX,haplesshydrant.com
 DOMAIN-SUFFIX,hardtofindmilk.com
 DOMAIN-SUFFIX,harrenmedia.com
 DOMAIN-SUFFIX,harrenmedianetwork.com
@@ -3241,6 +3243,7 @@ DOMAIN-SUFFIX,steadfastsound.com
 DOMAIN-SUFFIX,steadfastsystem.com
 DOMAIN-SUFFIX,steelhouse.com
 DOMAIN-SUFFIX,steelhousemedia.com
+DOMAIN-SUFFIX,steepscale.com
 DOMAIN-SUFFIX,stepplane.com
 DOMAIN-SUFFIX,stickssheep.com
 DOMAIN-SUFFIX,stickyadstv.com

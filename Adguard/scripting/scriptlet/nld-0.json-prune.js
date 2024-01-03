@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["assets.preroll"],["ads time_events_url"]];
 
-const hostnamesMap = new Map([["npo.nl",0],["vpro.nl",0],["goplay.be",1]]);
+const hostnamesMap = new Map([["bnnvara.nl",0],["npo.nl",0],["vpro.nl",0],["goplay.be",1]]);
 
 const entitiesMap = new Map([]);
 

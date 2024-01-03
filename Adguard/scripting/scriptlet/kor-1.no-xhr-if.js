@@ -197,6 +197,15 @@ function generateContentFn(directive) {
     if ( directive === 'true' ) {
         return Promise.resolve(randomize(10));
     }
+    if ( directive === 'emptyObj' ) {
+        return Promise.resolve('{}');
+    }
+    if ( directive === 'emptyArr' ) {
+        return Promise.resolve('[]');
+    }
+    if ( directive === 'emptyStr' ) {
+        return Promise.resolve('');
+    }
     if ( directive.startsWith('length:') ) {
         const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
         if ( match ) {

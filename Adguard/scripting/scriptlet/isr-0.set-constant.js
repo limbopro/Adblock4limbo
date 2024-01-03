@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["showAds","true"]];
+const argsList = [["showAds","true"],["document.blocked_var","1"],["____ads_js_blocked","false"]];
 
-const hostnamesMap = new Map([["haaretz.co.il",0],["themarker.com",0]]);
+const hostnamesMap = new Map([["haaretz.co.il",0],["themarker.com",0],["www-haaretz-co-il.eu1.proxy.openathens.net",0],["www-themarker-com.eu1.proxy.openathens.net",0],["www-globes-co-il.eu1.proxy.openathens.net",[1,2]]]);
 
 const entitiesMap = new Map([]);
 

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 02 Jan 2024 19:22:44 GMT
-# entries:        3787
+# last updated:   Thu, 04 Jan 2024 11:02:22 GMT
+# entries:        3788
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3138,6 +3138,7 @@ DOMAIN-SUFFIX,snoobi.com, reject
 DOMAIN-SUFFIX,socialspark.com, reject
 DOMAIN-SUFFIX,softclick.com.br, reject
 DOMAIN-SUFFIX,soggysponge.com, reject
+DOMAIN-SUFFIX,soggyzoo.com, reject
 DOMAIN-SUFFIX,sombersea.com, reject
 DOMAIN-SUFFIX,sombersquirrel.com, reject
 DOMAIN-SUFFIX,sombersurprise.com, reject

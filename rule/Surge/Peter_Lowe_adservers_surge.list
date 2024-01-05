@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 04 Jan 2024 11:02:22 GMT
-# entries:        3788
+# last updated:   Fri, 05 Jan 2024 09:47:27 GMT
+# entries:        3784
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -219,7 +219,6 @@ DOMAIN-SUFFIX,adclick.com
 DOMAIN-SUFFIX,adclient1.tucows.com
 DOMAIN-SUFFIX,adclixx.net
 DOMAIN-SUFFIX,adcolony.com
-DOMAIN-SUFFIX,adcomplete.com
 DOMAIN-SUFFIX,adconion.com
 DOMAIN-SUFFIX,adcontent.gamespy.com
 DOMAIN-SUFFIX,adcovery.com
@@ -885,7 +884,6 @@ DOMAIN-SUFFIX,adviva.net
 DOMAIN-SUFFIX,advnt.com
 DOMAIN-SUFFIX,adwebone.com
 DOMAIN-SUFFIX,adwhirl.com
-DOMAIN-SUFFIX,adwordsecommerce.com.br
 DOMAIN-SUFFIX,adworldnetwork.com
 DOMAIN-SUFFIX,adworx.at
 DOMAIN-SUFFIX,adworx.nl
@@ -1072,7 +1070,6 @@ DOMAIN-SUFFIX,avenuea.com
 DOMAIN-SUFFIX,avocet.io
 DOMAIN-SUFFIX,awakebird.com
 DOMAIN-SUFFIX,awempire.com
-DOMAIN-SUFFIX,awesomeagreement.com
 DOMAIN-SUFFIX,awin1.com
 DOMAIN-SUFFIX,awstrack.me
 DOMAIN-SUFFIX,awzbijw.com
@@ -1477,7 +1474,6 @@ DOMAIN-SUFFIX,consciouscheese.com
 DOMAIN-SUFFIX,consensad.com
 DOMAIN-SUFFIX,consensu.org
 DOMAIN-SUFFIX,contadores.miarroba.com
-DOMAIN-SUFFIX,contaxe.de
 DOMAIN-SUFFIX,content.acc-hd.de
 DOMAIN-SUFFIX,content.ad
 DOMAIN-SUFFIX,content22.online.citi.com
@@ -2519,7 +2515,6 @@ DOMAIN-SUFFIX,newads.bangbros.com
 DOMAIN-SUFFIX,newnet.qsrch.com
 DOMAIN-SUFFIX,newnudecash.com
 DOMAIN-SUFFIX,newopenx.detik.com
-DOMAIN-SUFFIX,newsadsppush.com
 DOMAIN-SUFFIX,newsletter-link.com
 DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
@@ -2616,6 +2611,7 @@ DOMAIN-SUFFIX,optmnstr.com
 DOMAIN-SUFFIX,optmstr.com
 DOMAIN-SUFFIX,optnmstr.com
 DOMAIN-SUFFIX,optnx.com
+DOMAIN-SUFFIX,orientedargument.com
 DOMAIN-SUFFIX,orionember.com
 DOMAIN-SUFFIX,ota.cartrawler.com
 DOMAIN-SUFFIX,otto-images.developershed.com

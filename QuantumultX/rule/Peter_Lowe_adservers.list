@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 04 Jan 2024 11:02:22 GMT
-# entries:        3788
+# last updated:   Fri, 05 Jan 2024 09:47:27 GMT
+# entries:        3784
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -219,7 +219,6 @@ DOMAIN-SUFFIX,adclick.com, reject
 DOMAIN-SUFFIX,adclient1.tucows.com, reject
 DOMAIN-SUFFIX,adclixx.net, reject
 DOMAIN-SUFFIX,adcolony.com, reject
-DOMAIN-SUFFIX,adcomplete.com, reject
 DOMAIN-SUFFIX,adconion.com, reject
 DOMAIN-SUFFIX,adcontent.gamespy.com, reject
 DOMAIN-SUFFIX,adcovery.com, reject
@@ -885,7 +884,6 @@ DOMAIN-SUFFIX,adviva.net, reject
 DOMAIN-SUFFIX,advnt.com, reject
 DOMAIN-SUFFIX,adwebone.com, reject
 DOMAIN-SUFFIX,adwhirl.com, reject
-DOMAIN-SUFFIX,adwordsecommerce.com.br, reject
 DOMAIN-SUFFIX,adworldnetwork.com, reject
 DOMAIN-SUFFIX,adworx.at, reject
 DOMAIN-SUFFIX,adworx.nl, reject
@@ -1072,7 +1070,6 @@ DOMAIN-SUFFIX,avenuea.com, reject
 DOMAIN-SUFFIX,avocet.io, reject
 DOMAIN-SUFFIX,awakebird.com, reject
 DOMAIN-SUFFIX,awempire.com, reject
-DOMAIN-SUFFIX,awesomeagreement.com, reject
 DOMAIN-SUFFIX,awin1.com, reject
 DOMAIN-SUFFIX,awstrack.me, reject
 DOMAIN-SUFFIX,awzbijw.com, reject
@@ -1477,7 +1474,6 @@ DOMAIN-SUFFIX,consciouscheese.com, reject
 DOMAIN-SUFFIX,consensad.com, reject
 DOMAIN-SUFFIX,consensu.org, reject
 DOMAIN-SUFFIX,contadores.miarroba.com, reject
-DOMAIN-SUFFIX,contaxe.de, reject
 DOMAIN-SUFFIX,content.acc-hd.de, reject
 DOMAIN-SUFFIX,content.ad, reject
 DOMAIN-SUFFIX,content22.online.citi.com, reject
@@ -2519,7 +2515,6 @@ DOMAIN-SUFFIX,newads.bangbros.com, reject
 DOMAIN-SUFFIX,newnet.qsrch.com, reject
 DOMAIN-SUFFIX,newnudecash.com, reject
 DOMAIN-SUFFIX,newopenx.detik.com, reject
-DOMAIN-SUFFIX,newsadsppush.com, reject
 DOMAIN-SUFFIX,newsletter-link.com, reject
 DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
@@ -2616,6 +2611,7 @@ DOMAIN-SUFFIX,optmnstr.com, reject
 DOMAIN-SUFFIX,optmstr.com, reject
 DOMAIN-SUFFIX,optnmstr.com, reject
 DOMAIN-SUFFIX,optnx.com, reject
+DOMAIN-SUFFIX,orientedargument.com, reject
 DOMAIN-SUFFIX,orionember.com, reject
 DOMAIN-SUFFIX,ota.cartrawler.com, reject
 DOMAIN-SUFFIX,otto-images.developershed.com, reject

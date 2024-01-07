@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401061540
+## ! Version: 202401071502
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Jan 2024 15:40 UTC
+## ! Last modified: 07 Jan 2024 15:02 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2874,6 +2874,7 @@ DOMAIN-SUFFIX,pix.revjet.com, reject
 DOMAIN-SUFFIX,pix.spot.im, reject
 DOMAIN-SUFFIX,pixel-a.basis.net, reject
 DOMAIN-SUFFIX,pixel.ampry.com, reject
+DOMAIN-SUFFIX,pixel.anyclip.com, reject
 DOMAIN-SUFFIX,pixel.archipro.co.nz, reject
 DOMAIN-SUFFIX,pixel.blivenyc.com, reject
 DOMAIN-SUFFIX,pixel.byspotify.com, reject
@@ -4146,6 +4147,7 @@ DOMAIN-SUFFIX,ea.epochbase.com, reject
 DOMAIN-SUFFIX,ec.thredup.com, reject
 DOMAIN-SUFFIX,edge.staging.fullstory.com, reject
 DOMAIN-SUFFIX,eec.crunchyroll.com, reject
+DOMAIN-SUFFIX,ejlytics.editorji.com, reject
 DOMAIN-SUFFIX,engagefront.meteomedia.com, reject
 DOMAIN-SUFFIX,engagefront.theweathernetwork.com, reject
 DOMAIN-SUFFIX,engine.traceparts.com, reject
@@ -4530,6 +4532,7 @@ DOMAIN-SUFFIX,wa.gymboree.com, reject
 DOMAIN-SUFFIX,wa.pjplace.com, reject
 DOMAIN-SUFFIX,wa.sugarandjade.com, reject
 DOMAIN-SUFFIX,wal.wolfram.com, reject
+DOMAIN-SUFFIX,wapn1.flosports.tv, reject
 DOMAIN-SUFFIX,weblog.flyasiana.com, reject
 DOMAIN-SUFFIX,wh.ipaddress.com, reject
 DOMAIN-SUFFIX,wstats.e-wok.tv, reject

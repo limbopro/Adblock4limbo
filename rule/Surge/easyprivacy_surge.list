@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401061540
+## ! Version: 202401071502
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Jan 2024 15:40 UTC
+## ! Last modified: 07 Jan 2024 15:02 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2874,6 +2874,7 @@ DOMAIN-SUFFIX,pix.revjet.com
 DOMAIN-SUFFIX,pix.spot.im
 DOMAIN-SUFFIX,pixel-a.basis.net
 DOMAIN-SUFFIX,pixel.ampry.com
+DOMAIN-SUFFIX,pixel.anyclip.com
 DOMAIN-SUFFIX,pixel.archipro.co.nz
 DOMAIN-SUFFIX,pixel.blivenyc.com
 DOMAIN-SUFFIX,pixel.byspotify.com
@@ -4146,6 +4147,7 @@ DOMAIN-SUFFIX,ea.epochbase.com
 DOMAIN-SUFFIX,ec.thredup.com
 DOMAIN-SUFFIX,edge.staging.fullstory.com
 DOMAIN-SUFFIX,eec.crunchyroll.com
+DOMAIN-SUFFIX,ejlytics.editorji.com
 DOMAIN-SUFFIX,engagefront.meteomedia.com
 DOMAIN-SUFFIX,engagefront.theweathernetwork.com
 DOMAIN-SUFFIX,engine.traceparts.com
@@ -4530,6 +4532,7 @@ DOMAIN-SUFFIX,wa.gymboree.com
 DOMAIN-SUFFIX,wa.pjplace.com
 DOMAIN-SUFFIX,wa.sugarandjade.com
 DOMAIN-SUFFIX,wal.wolfram.com
+DOMAIN-SUFFIX,wapn1.flosports.tv
 DOMAIN-SUFFIX,weblog.flyasiana.com
 DOMAIN-SUFFIX,wh.ipaddress.com
 DOMAIN-SUFFIX,wstats.e-wok.tv

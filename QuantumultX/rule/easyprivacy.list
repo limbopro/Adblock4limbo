@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401071502
+## ! Version: 202401081528
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Jan 2024 15:02 UTC
+## ! Last modified: 08 Jan 2024 15:28 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3119,6 +3119,7 @@ DOMAIN-SUFFIX,tags.cdn.circlesix.co, reject
 DOMAIN-SUFFIX,tags.dxmdp.com, reject
 DOMAIN-SUFFIX,tags.fullcontact.com, reject
 DOMAIN-SUFFIX,tags.master-perf-tools.com, reject
+DOMAIN-SUFFIX,tags.newscgp.com, reject
 DOMAIN-SUFFIX,tags.refinery89.com, reject
 DOMAIN-SUFFIX,tagtracking.vibescm.com, reject
 DOMAIN-SUFFIX,target.mixi.media, reject
@@ -4222,6 +4223,7 @@ DOMAIN-SUFFIX,health-metrics-api.setapp.com, reject
 DOMAIN-SUFFIX,heap.drop.com, reject
 DOMAIN-SUFFIX,hits.cyberdrop.me, reject
 DOMAIN-SUFFIX,hlogger.heraldcorp.com, reject
+DOMAIN-SUFFIX,hn-ping*.hashnode.com, reject
 DOMAIN-SUFFIX,htrace.wetvinfo.com, reject
 DOMAIN-SUFFIX,i.pokernews.com, reject
 DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com, reject
@@ -4313,6 +4315,7 @@ DOMAIN-SUFFIX,perr.hola.org, reject
 DOMAIN-SUFFIX,pf.newegg.com, reject
 DOMAIN-SUFFIX,pftk.temu.com, reject
 DOMAIN-SUFFIX,ph.thenextweb.com, reject
+DOMAIN-SUFFIX,ping.hashnode.com, reject
 DOMAIN-SUFFIX,ping.hungama.com, reject
 DOMAIN-SUFFIX,pingback.giphy.com, reject
 DOMAIN-SUFFIX,pingback.issuu.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401071502
+## ! Version: 202401081528
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Jan 2024 15:02 UTC
+## ! Last modified: 08 Jan 2024 15:28 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3119,6 +3119,7 @@ DOMAIN-SUFFIX,tags.cdn.circlesix.co
 DOMAIN-SUFFIX,tags.dxmdp.com
 DOMAIN-SUFFIX,tags.fullcontact.com
 DOMAIN-SUFFIX,tags.master-perf-tools.com
+DOMAIN-SUFFIX,tags.newscgp.com
 DOMAIN-SUFFIX,tags.refinery89.com
 DOMAIN-SUFFIX,tagtracking.vibescm.com
 DOMAIN-SUFFIX,target.mixi.media
@@ -4222,6 +4223,7 @@ DOMAIN-SUFFIX,health-metrics-api.setapp.com
 DOMAIN-SUFFIX,heap.drop.com
 DOMAIN-SUFFIX,hits.cyberdrop.me
 DOMAIN-SUFFIX,hlogger.heraldcorp.com
+DOMAIN-SUFFIX,hn-ping*.hashnode.com
 DOMAIN-SUFFIX,htrace.wetvinfo.com
 DOMAIN-SUFFIX,i.pokernews.com
 DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com
@@ -4313,6 +4315,7 @@ DOMAIN-SUFFIX,perr.hola.org
 DOMAIN-SUFFIX,pf.newegg.com
 DOMAIN-SUFFIX,pftk.temu.com
 DOMAIN-SUFFIX,ph.thenextweb.com
+DOMAIN-SUFFIX,ping.hashnode.com
 DOMAIN-SUFFIX,ping.hungama.com
 DOMAIN-SUFFIX,pingback.giphy.com
 DOMAIN-SUFFIX,pingback.issuu.com

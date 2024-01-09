@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401081528
+## ! Version: 202401091502
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Jan 2024 15:28 UTC
+## ! Last modified: 09 Jan 2024 15:02 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2374,6 +2374,7 @@ DOMAIN-SUFFIX,analytics.urx.io, reject
 DOMAIN-SUFFIX,analytics.vanillaforums.com, reject
 DOMAIN-SUFFIX,analytics.vdo.ai, reject
 DOMAIN-SUFFIX,analytics.vendemore.com, reject
+DOMAIN-SUFFIX,analytics.vixcloud.co, reject
 DOMAIN-SUFFIX,analytics.webgains.io, reject
 DOMAIN-SUFFIX,analytics.webpushr.com, reject
 DOMAIN-SUFFIX,analytics.websolute.it, reject
@@ -2600,6 +2601,7 @@ DOMAIN-SUFFIX,ea.youmaker.com, reject
 DOMAIN-SUFFIX,ec.walkme.com, reject
 DOMAIN-SUFFIX,ecomm.events, reject
 DOMAIN-SUFFIX,ecommstats.s3.amazonaws.com, reject
+DOMAIN-SUFFIX,edge.adobedc.net, reject
 DOMAIN-SUFFIX,eel.transistor.fm, reject
 DOMAIN-SUFFIX,ele26126.jscrambler.com, reject
 DOMAIN-SUFFIX,eq.userneeds.com, reject
@@ -2739,6 +2741,7 @@ DOMAIN-SUFFIX,jly24aw29n5m-a.akamaihd.net, reject
 DOMAIN-SUFFIX,jtracking-gate.lulusoft.com, reject
 DOMAIN-SUFFIX,k.keyade.com, reject
 DOMAIN-SUFFIX,k.streamrail.com, reject
+DOMAIN-SUFFIX,k8s-tracking-tracking-6c17add7fc-253503024.eu-central-1.elb.amazonaws.com, reject
 DOMAIN-SUFFIX,kalstats.kaltura.com, reject
 DOMAIN-SUFFIX,kiwi.mdldb.net, reject
 DOMAIN-SUFFIX,l.ooyala.com, reject
@@ -30558,6 +30561,7 @@ DOMAIN-SUFFIX,link.abandonedmonkey.codes, reject
 DOMAIN-SUFFIX,link.adhdinsight.com, reject
 DOMAIN-SUFFIX,link.admin.kodakmoments.com, reject
 DOMAIN-SUFFIX,link.afterpay.com, reject
+DOMAIN-SUFFIX,link.ag.fan, reject
 DOMAIN-SUFFIX,link.alerts.busuu.app, reject
 DOMAIN-SUFFIX,link.angelstudios.com, reject
 DOMAIN-SUFFIX,link.announce.busuu.app, reject
@@ -30566,6 +30570,7 @@ DOMAIN-SUFFIX,link.carfax.com, reject
 DOMAIN-SUFFIX,link.cdl.freshly.com, reject
 DOMAIN-SUFFIX,link.cheerz.com, reject
 DOMAIN-SUFFIX,link.clickipo.com, reject
+DOMAIN-SUFFIX,link.clubmanagergame.com, reject
 DOMAIN-SUFFIX,link.cluno.com, reject
 DOMAIN-SUFFIX,link.cofyz.com, reject
 DOMAIN-SUFFIX,link.collectivebenefits.com, reject
@@ -31804,6 +31809,7 @@ DOMAIN-SUFFIX,ens.nzz.ch, reject
 DOMAIN-SUFFIX,ens.tagblatt.ch, reject
 DOMAIN-SUFFIX,epimetheus.navigator.web.de, reject
 DOMAIN-SUFFIX,event-collector.prd.data.s.joyn.de, reject
+DOMAIN-SUFFIX,events.limango.com, reject
 DOMAIN-SUFFIX,fc.vodafone.de, reject
 DOMAIN-SUFFIX,froglytics.eventfrog.ch, reject
 DOMAIN-SUFFIX,geoip.finanzen.net, reject

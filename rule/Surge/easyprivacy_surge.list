@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401081528
+## ! Version: 202401091502
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Jan 2024 15:28 UTC
+## ! Last modified: 09 Jan 2024 15:02 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2374,6 +2374,7 @@ DOMAIN-SUFFIX,analytics.urx.io
 DOMAIN-SUFFIX,analytics.vanillaforums.com
 DOMAIN-SUFFIX,analytics.vdo.ai
 DOMAIN-SUFFIX,analytics.vendemore.com
+DOMAIN-SUFFIX,analytics.vixcloud.co
 DOMAIN-SUFFIX,analytics.webgains.io
 DOMAIN-SUFFIX,analytics.webpushr.com
 DOMAIN-SUFFIX,analytics.websolute.it
@@ -2600,6 +2601,7 @@ DOMAIN-SUFFIX,ea.youmaker.com
 DOMAIN-SUFFIX,ec.walkme.com
 DOMAIN-SUFFIX,ecomm.events
 DOMAIN-SUFFIX,ecommstats.s3.amazonaws.com
+DOMAIN-SUFFIX,edge.adobedc.net
 DOMAIN-SUFFIX,eel.transistor.fm
 DOMAIN-SUFFIX,ele26126.jscrambler.com
 DOMAIN-SUFFIX,eq.userneeds.com
@@ -2739,6 +2741,7 @@ DOMAIN-SUFFIX,jly24aw29n5m-a.akamaihd.net
 DOMAIN-SUFFIX,jtracking-gate.lulusoft.com
 DOMAIN-SUFFIX,k.keyade.com
 DOMAIN-SUFFIX,k.streamrail.com
+DOMAIN-SUFFIX,k8s-tracking-tracking-6c17add7fc-253503024.eu-central-1.elb.amazonaws.com
 DOMAIN-SUFFIX,kalstats.kaltura.com
 DOMAIN-SUFFIX,kiwi.mdldb.net
 DOMAIN-SUFFIX,l.ooyala.com
@@ -30558,6 +30561,7 @@ DOMAIN-SUFFIX,link.abandonedmonkey.codes
 DOMAIN-SUFFIX,link.adhdinsight.com
 DOMAIN-SUFFIX,link.admin.kodakmoments.com
 DOMAIN-SUFFIX,link.afterpay.com
+DOMAIN-SUFFIX,link.ag.fan
 DOMAIN-SUFFIX,link.alerts.busuu.app
 DOMAIN-SUFFIX,link.angelstudios.com
 DOMAIN-SUFFIX,link.announce.busuu.app
@@ -30566,6 +30570,7 @@ DOMAIN-SUFFIX,link.carfax.com
 DOMAIN-SUFFIX,link.cdl.freshly.com
 DOMAIN-SUFFIX,link.cheerz.com
 DOMAIN-SUFFIX,link.clickipo.com
+DOMAIN-SUFFIX,link.clubmanagergame.com
 DOMAIN-SUFFIX,link.cluno.com
 DOMAIN-SUFFIX,link.cofyz.com
 DOMAIN-SUFFIX,link.collectivebenefits.com
@@ -31804,6 +31809,7 @@ DOMAIN-SUFFIX,ens.nzz.ch
 DOMAIN-SUFFIX,ens.tagblatt.ch
 DOMAIN-SUFFIX,epimetheus.navigator.web.de
 DOMAIN-SUFFIX,event-collector.prd.data.s.joyn.de
+DOMAIN-SUFFIX,events.limango.com
 DOMAIN-SUFFIX,fc.vodafone.de
 DOMAIN-SUFFIX,froglytics.eventfrog.ch
 DOMAIN-SUFFIX,geoip.finanzen.net

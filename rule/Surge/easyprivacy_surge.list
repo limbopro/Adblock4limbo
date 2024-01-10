@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401091502
+## ! Version: 202401101541
 ## ! Title: EasyPrivacy
-## ! Last modified: 09 Jan 2024 15:02 UTC
+## ! Last modified: 10 Jan 2024 15:41 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -277,6 +277,7 @@ DOMAIN-SUFFIX,pjstat.com
 DOMAIN-SUFFIX,plausiblecdn.co
 DOMAIN-SUFFIX,procroanalytics.com
 DOMAIN-SUFFIX,progmxs.com
+DOMAIN-SUFFIX,pushvisit.xyz
 DOMAIN-SUFFIX,pzapi-ij.com
 DOMAIN-SUFFIX,pzapi-kg.com
 DOMAIN-SUFFIX,pzimff.com
@@ -1722,6 +1723,7 @@ DOMAIN-SUFFIX,scrapesleep.com
 DOMAIN-SUFFIX,scratchsofa.com
 DOMAIN-SUFFIX,screechingfurniture.com
 DOMAIN-SUFFIX,screechingslip.com
+DOMAIN-SUFFIX,screechingstocking.com
 DOMAIN-SUFFIX,screechingstove.com
 DOMAIN-SUFFIX,scribblestring.com
 DOMAIN-SUFFIX,scrollservice.com
@@ -2216,6 +2218,7 @@ DOMAIN-SUFFIX,youngmarble.com
 DOMAIN-SUFFIX,youthfulnoise.com
 DOMAIN-SUFFIX,zbwp6ghm.com
 DOMAIN-SUFFIX,zealousfield.com
+DOMAIN-SUFFIX,zephyrlabyrinth.com
 DOMAIN-SUFFIX,zestycrime.com
 DOMAIN-SUFFIX,zestywire.com
 DOMAIN-SUFFIX,zipperxray.com

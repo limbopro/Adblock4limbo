@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 05 Jan 2024 09:47:27 GMT
-# entries:        3784
+# last updated:   Wed, 10 Jan 2024 12:30:02 GMT
+# entries:        3786
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3017,6 +3017,7 @@ DOMAIN-SUFFIX,scorecardresearch.com, reject
 DOMAIN-SUFFIX,scratch2cash.com, reject
 DOMAIN-SUFFIX,screechingfurniture.com, reject
 DOMAIN-SUFFIX,screechingslip.com, reject
+DOMAIN-SUFFIX,screechingstocking.com, reject
 DOMAIN-SUFFIX,screechingstove.com, reject
 DOMAIN-SUFFIX,scripte-monster.de, reject
 DOMAIN-SUFFIX,scrubswim.com, reject
@@ -3784,6 +3785,7 @@ DOMAIN-SUFFIX,zemanta.com, reject
 DOMAIN-SUFFIX,zencudo.co.uk, reject
 DOMAIN-SUFFIX,zenkreka.com, reject
 DOMAIN-SUFFIX,zenzuu.com, reject
+DOMAIN-SUFFIX,zephyrlabyrinth.com, reject
 DOMAIN-SUFFIX,zeus.developershed.com, reject
 DOMAIN-SUFFIX,zeusclicks.com, reject
 DOMAIN-SUFFIX,zion-telemetry.api.cnn.io, reject

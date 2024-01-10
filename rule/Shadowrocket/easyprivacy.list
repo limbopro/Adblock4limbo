@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401091502
+## ! Version: 202401101541
 ## ! Title: EasyPrivacy
-## ! Last modified: 09 Jan 2024 15:02 UTC
+## ! Last modified: 10 Jan 2024 15:41 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -277,6 +277,7 @@ DOMAIN-SUFFIX,pjstat.com, reject
 DOMAIN-SUFFIX,plausiblecdn.co, reject
 DOMAIN-SUFFIX,procroanalytics.com, reject
 DOMAIN-SUFFIX,progmxs.com, reject
+DOMAIN-SUFFIX,pushvisit.xyz, reject
 DOMAIN-SUFFIX,pzapi-ij.com, reject
 DOMAIN-SUFFIX,pzapi-kg.com, reject
 DOMAIN-SUFFIX,pzimff.com, reject
@@ -1722,6 +1723,7 @@ DOMAIN-SUFFIX,scrapesleep.com, reject
 DOMAIN-SUFFIX,scratchsofa.com, reject
 DOMAIN-SUFFIX,screechingfurniture.com, reject
 DOMAIN-SUFFIX,screechingslip.com, reject
+DOMAIN-SUFFIX,screechingstocking.com, reject
 DOMAIN-SUFFIX,screechingstove.com, reject
 DOMAIN-SUFFIX,scribblestring.com, reject
 DOMAIN-SUFFIX,scrollservice.com, reject
@@ -2216,6 +2218,7 @@ DOMAIN-SUFFIX,youngmarble.com, reject
 DOMAIN-SUFFIX,youthfulnoise.com, reject
 DOMAIN-SUFFIX,zbwp6ghm.com, reject
 DOMAIN-SUFFIX,zealousfield.com, reject
+DOMAIN-SUFFIX,zephyrlabyrinth.com, reject
 DOMAIN-SUFFIX,zestycrime.com, reject
 DOMAIN-SUFFIX,zestywire.com, reject
 DOMAIN-SUFFIX,zipperxray.com, reject

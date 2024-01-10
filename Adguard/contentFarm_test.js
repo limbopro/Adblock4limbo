@@ -2,8 +2,8 @@
 Written by limbopro
 https://limbopro.com/archives/block-contentfarm.html
 https://t.me/Adblock4limbo
-There are 7166 content farm domains in total until now.
-Last updated at 10/1月/2024/00:00
+There are 7179 content farm domains in total until now.
+Last updated at 11/1月/2024/00:00
 */
 
 
@@ -1136,6 +1136,7 @@ var ads_host = [
 "absolutequalitylimo.buzz",
 "abstriction.buzz",
 "academyagent.buzz",
+"acceler8x.space",
 "accentsgifts.buzz",
 "accidentlegalcenter.buzz",
 "accord-products.buzz",
@@ -1279,6 +1280,7 @@ var ads_host = [
 "androidcookie.com",
 "androidwd.cc",
 "anercn.com",
+"anewhpworld.com",
 "angelalbum.buzz",
 "anhuijuxin.com",
 "animalimmobilizer.buzz",
@@ -1380,6 +1382,7 @@ var ads_host = [
 "autonetonline.buzz",
 "autotimeit.buzz",
 "auuur.com",
+"auxilia.space",
 "avenuetosuccess.buzz",
 "avkoc33.cn",
 "avzwbiv.cn",
@@ -1673,6 +1676,7 @@ var ads_host = [
 "bush98.buzz",
 "businesstagtw.com",
 "buwoline.buzz",
+"buxcodes.org",
 "buyhomehub.cn",
 "bvmfh.top",
 "bwclkkh.cn",
@@ -1829,6 +1833,7 @@ var ads_host = [
 "chongwg4.com",
 "chq88.cn",
 "chqonline.com",
+"chromo.cfd",
 "chsou.cc",
 "chuanboye.com",
 "chuandaobj.com",
@@ -1961,6 +1966,7 @@ var ads_host = [
 "cqzxi9f.cn",
 "craftswomyn.buzz",
 "crawley-haskins.buzz",
+"creatv.cfd",
 "creditnavi.buzz",
 "crf8.cn",
 "crgsne3.cn",
@@ -2663,6 +2669,7 @@ var ads_host = [
 "gahongyun.com",
 "galleri50.com",
 "gamejs123.com",
+"gameonmac.com",
 "gamesxfp.cn",
 "ganghuajl.com",
 "ganxi318.com",
@@ -3358,6 +3365,7 @@ var ads_host = [
 "inkworker.com",
 "inndulgehotel.buzz",
 "innerloop-prod.buzz",
+"innovanti.online",
 "innxm.com",
 "int.bet",
 "integratedpaperservice.buzz",
@@ -4477,6 +4485,7 @@ var ads_host = [
 "neworldbj.com",
 "newsflashtv.buzz",
 "newyimin.com",
+"nexellia.online",
 "nextnets.buzz",
 "nf91.cn",
 "nfajasi.cn",
@@ -4721,6 +4730,7 @@ var ads_host = [
 "pashfon.cn",
 "passionss.buzz",
 "patriknorstrom.buzz",
+"pavlovadoco.com",
 "paw7c6j.cn",
 "paypernude.buzz",
 "pbcpm.com",
@@ -5194,6 +5204,7 @@ var ads_host = [
 "roism.cn",
 "roldanmc.buzz",
 "romancestop.buzz",
+"romonitorstats.com",
 "rongduansi.com",
 "ronghuipin.com",
 "rongyidagl.com",
@@ -5222,6 +5233,7 @@ var ads_host = [
 "rtg8.cn",
 "rtpslpa.cn",
 "rtr8.cn",
+"rtrack.social",
 "rtufyc.cn",
 "rtz8.cn",
 "rtzt114.cn",
@@ -5600,6 +5612,7 @@ var ads_host = [
 "stiqsxf.cn",
 "stmhxqs.com",
 "structcalc.buzz",
+"stylesprzedazy.pl",
 "subaidajs.com",
 "success666.com",
 "suchesgamountainrealestate.buzz",

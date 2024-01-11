@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 10 Jan 2024 12:30:02 GMT
-# entries:        3786
+# last updated:   Wed, 10 Jan 2024 19:29:17 GMT
+# entries:        3787
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2990,6 +2990,7 @@ DOMAIN-SUFFIX,sabio.us
 DOMAIN-SUFFIX,sadloaf.com
 DOMAIN-SUFFIX,safeanalytics.net
 DOMAIN-SUFFIX,sail-horizon.com
+DOMAIN-SUFFIX,samplesamba.com
 DOMAIN-SUFFIX,samsungacr.com
 DOMAIN-SUFFIX,samsungads.com
 DOMAIN-SUFFIX,sanalytics.disneyplus.com

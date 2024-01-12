@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401111545
+## ! Version: 202401121340
 ## ! Title: EasyPrivacy
-## ! Last modified: 11 Jan 2024 15:45 UTC
+## ! Last modified: 12 Jan 2024 13:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1154,6 +1154,7 @@ DOMAIN-SUFFIX,gullibleguitar.com
 DOMAIN-SUFFIX,gustygrandmother.com
 DOMAIN-SUFFIX,h78xb.pw
 DOMAIN-SUFFIX,habitualhumor.com
+DOMAIN-SUFFIX,halcyoncanyon.com
 DOMAIN-SUFFIX,hallowedinvention.com
 DOMAIN-SUFFIX,haltingbadge.com
 DOMAIN-SUFFIX,haltingdivision.com
@@ -1687,6 +1688,7 @@ DOMAIN-SUFFIX,saffronrefuge.com
 DOMAIN-SUFFIX,sailsuit.com
 DOMAIN-SUFFIX,samesticks.com
 DOMAIN-SUFFIX,samestretch.com
+DOMAIN-SUFFIX,samplesamba.com
 DOMAIN-SUFFIX,satisfycork.com
 DOMAIN-SUFFIX,satisfyingshirt.com
 DOMAIN-SUFFIX,satisfyingshow.com
@@ -32192,6 +32194,7 @@ DOMAIN-SUFFIX,hits.zdnet.co.kr
 DOMAIN-SUFFIX,kyson.kakao.com
 DOMAIN-SUFFIX,l.m.naver.com
 DOMAIN-SUFFIX,log.etoday.co.kr
+DOMAIN-SUFFIX,log.kinolights.com
 DOMAIN-SUFFIX,log.zdnet.co.kr
 DOMAIN-SUFFIX,nil.naver.com
 DOMAIN-SUFFIX,pds.auction.co.kr

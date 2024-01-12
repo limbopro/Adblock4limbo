@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 10 Jan 2024 19:29:17 GMT
-# entries:        3787
+# last updated:   Fri, 12 Jan 2024 09:21:05 GMT
+# entries:        3782
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -16,7 +16,6 @@ DOMAIN-SUFFIX,1-1ads.com
 DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
-DOMAIN-SUFFIX,180searchassistant.com
 DOMAIN-SUFFIX,1link2020.com
 DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
@@ -219,6 +218,7 @@ DOMAIN-SUFFIX,adclick.com
 DOMAIN-SUFFIX,adclient1.tucows.com
 DOMAIN-SUFFIX,adclixx.net
 DOMAIN-SUFFIX,adcolony.com
+DOMAIN-SUFFIX,adcomplete.com
 DOMAIN-SUFFIX,adconion.com
 DOMAIN-SUFFIX,adcontent.gamespy.com
 DOMAIN-SUFFIX,adcovery.com
@@ -574,7 +574,6 @@ DOMAIN-SUFFIX,ads.pni.com
 DOMAIN-SUFFIX,ads.pof.com
 DOMAIN-SUFFIX,ads.powweb.com
 DOMAIN-SUFFIX,ads.ppvmedien.de
-DOMAIN-SUFFIX,ads.primissima.it
 DOMAIN-SUFFIX,ads.printscr.com
 DOMAIN-SUFFIX,ads.prisacom.com
 DOMAIN-SUFFIX,ads.program3.com
@@ -851,7 +850,6 @@ DOMAIN-SUFFIX,adv.freeonline.it
 DOMAIN-SUFFIX,adv.hwupgrade.it
 DOMAIN-SUFFIX,adv.livedoor.com
 DOMAIN-SUFFIX,adv.mpvc.it
-DOMAIN-SUFFIX,adv.neverbuy.com
 DOMAIN-SUFFIX,adv.nexthardware.com
 DOMAIN-SUFFIX,adv.webmd.com
 DOMAIN-SUFFIX,adv.wp.pl
@@ -1062,7 +1060,6 @@ DOMAIN-SUFFIX,audienceinsights.com
 DOMAIN-SUFFIX,audit.median.hu
 DOMAIN-SUFFIX,audit.webinform.hu
 DOMAIN-SUFFIX,augur.io
-DOMAIN-SUFFIX,auto-bannertausch.de
 DOMAIN-SUFFIX,automaticflock.com
 DOMAIN-SUFFIX,avalonalbum.com
 DOMAIN-SUFFIX,avazutracking.net
@@ -1758,7 +1755,6 @@ DOMAIN-SUFFIX,exampleshake.com
 DOMAIN-SUFFIX,exchange-it.com
 DOMAIN-SUFFIX,exchangead.com
 DOMAIN-SUFFIX,exchangeclicksonline.com
-DOMAIN-SUFFIX,exchangedetail.com
 DOMAIN-SUFFIX,exclusivebrass.com
 DOMAIN-SUFFIX,exelate.com
 DOMAIN-SUFFIX,exelator.com
@@ -1951,6 +1947,7 @@ DOMAIN-SUFFIX,h-bid.com
 DOMAIN-SUFFIX,h0.t.hubspotemail.net
 DOMAIN-SUFFIX,h78xb.pw
 DOMAIN-SUFFIX,habitualhumor.com
+DOMAIN-SUFFIX,halcyoncanyon.com
 DOMAIN-SUFFIX,haltingbadge.com
 DOMAIN-SUFFIX,hammerhearing.com
 DOMAIN-SUFFIX,handsomehose.com
@@ -2331,7 +2328,6 @@ DOMAIN-SUFFIX,matomo.crossiety.app
 DOMAIN-SUFFIX,mautic.com
 DOMAIN-SUFFIX,max.i12.de
 DOMAIN-SUFFIX,maximiser.net
-DOMAIN-SUFFIX,maximumcash.com
 DOMAIN-SUFFIX,maxonclick.com
 DOMAIN-SUFFIX,mbs.megaroticlive.com
 DOMAIN-SUFFIX,mcdlks.com
@@ -2953,7 +2949,6 @@ DOMAIN-SUFFIX,rmgserving.com
 DOMAIN-SUFFIX,roar.com
 DOMAIN-SUFFIX,robotreplay.com
 DOMAIN-SUFFIX,rockabox.co
-DOMAIN-SUFFIX,roia.biz
 DOMAIN-SUFFIX,rok.com.com
 DOMAIN-SUFFIX,rollconnection.com
 DOMAIN-SUFFIX,rose.ixbt.com

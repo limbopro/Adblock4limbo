@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401111545
+## ! Version: 202401121340
 ## ! Title: EasyPrivacy
-## ! Last modified: 11 Jan 2024 15:45 UTC
+## ! Last modified: 12 Jan 2024 13:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1154,6 +1154,7 @@ DOMAIN-SUFFIX,gullibleguitar.com, reject
 DOMAIN-SUFFIX,gustygrandmother.com, reject
 DOMAIN-SUFFIX,h78xb.pw, reject
 DOMAIN-SUFFIX,habitualhumor.com, reject
+DOMAIN-SUFFIX,halcyoncanyon.com, reject
 DOMAIN-SUFFIX,hallowedinvention.com, reject
 DOMAIN-SUFFIX,haltingbadge.com, reject
 DOMAIN-SUFFIX,haltingdivision.com, reject
@@ -1687,6 +1688,7 @@ DOMAIN-SUFFIX,saffronrefuge.com, reject
 DOMAIN-SUFFIX,sailsuit.com, reject
 DOMAIN-SUFFIX,samesticks.com, reject
 DOMAIN-SUFFIX,samestretch.com, reject
+DOMAIN-SUFFIX,samplesamba.com, reject
 DOMAIN-SUFFIX,satisfycork.com, reject
 DOMAIN-SUFFIX,satisfyingshirt.com, reject
 DOMAIN-SUFFIX,satisfyingshow.com, reject
@@ -32192,6 +32194,7 @@ DOMAIN-SUFFIX,hits.zdnet.co.kr, reject
 DOMAIN-SUFFIX,kyson.kakao.com, reject
 DOMAIN-SUFFIX,l.m.naver.com, reject
 DOMAIN-SUFFIX,log.etoday.co.kr, reject
+DOMAIN-SUFFIX,log.kinolights.com, reject
 DOMAIN-SUFFIX,log.zdnet.co.kr, reject
 DOMAIN-SUFFIX,nil.naver.com, reject
 DOMAIN-SUFFIX,pds.auction.co.kr, reject

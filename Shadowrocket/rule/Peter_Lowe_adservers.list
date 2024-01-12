@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 10 Jan 2024 19:29:17 GMT
-# entries:        3787
+# last updated:   Fri, 12 Jan 2024 09:21:05 GMT
+# entries:        3782
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -16,7 +16,6 @@ DOMAIN-SUFFIX,1-1ads.com, reject
 DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
-DOMAIN-SUFFIX,180searchassistant.com, reject
 DOMAIN-SUFFIX,1link2020.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
@@ -219,6 +218,7 @@ DOMAIN-SUFFIX,adclick.com, reject
 DOMAIN-SUFFIX,adclient1.tucows.com, reject
 DOMAIN-SUFFIX,adclixx.net, reject
 DOMAIN-SUFFIX,adcolony.com, reject
+DOMAIN-SUFFIX,adcomplete.com, reject
 DOMAIN-SUFFIX,adconion.com, reject
 DOMAIN-SUFFIX,adcontent.gamespy.com, reject
 DOMAIN-SUFFIX,adcovery.com, reject
@@ -574,7 +574,6 @@ DOMAIN-SUFFIX,ads.pni.com, reject
 DOMAIN-SUFFIX,ads.pof.com, reject
 DOMAIN-SUFFIX,ads.powweb.com, reject
 DOMAIN-SUFFIX,ads.ppvmedien.de, reject
-DOMAIN-SUFFIX,ads.primissima.it, reject
 DOMAIN-SUFFIX,ads.printscr.com, reject
 DOMAIN-SUFFIX,ads.prisacom.com, reject
 DOMAIN-SUFFIX,ads.program3.com, reject
@@ -851,7 +850,6 @@ DOMAIN-SUFFIX,adv.freeonline.it, reject
 DOMAIN-SUFFIX,adv.hwupgrade.it, reject
 DOMAIN-SUFFIX,adv.livedoor.com, reject
 DOMAIN-SUFFIX,adv.mpvc.it, reject
-DOMAIN-SUFFIX,adv.neverbuy.com, reject
 DOMAIN-SUFFIX,adv.nexthardware.com, reject
 DOMAIN-SUFFIX,adv.webmd.com, reject
 DOMAIN-SUFFIX,adv.wp.pl, reject
@@ -1062,7 +1060,6 @@ DOMAIN-SUFFIX,audienceinsights.com, reject
 DOMAIN-SUFFIX,audit.median.hu, reject
 DOMAIN-SUFFIX,audit.webinform.hu, reject
 DOMAIN-SUFFIX,augur.io, reject
-DOMAIN-SUFFIX,auto-bannertausch.de, reject
 DOMAIN-SUFFIX,automaticflock.com, reject
 DOMAIN-SUFFIX,avalonalbum.com, reject
 DOMAIN-SUFFIX,avazutracking.net, reject
@@ -1758,7 +1755,6 @@ DOMAIN-SUFFIX,exampleshake.com, reject
 DOMAIN-SUFFIX,exchange-it.com, reject
 DOMAIN-SUFFIX,exchangead.com, reject
 DOMAIN-SUFFIX,exchangeclicksonline.com, reject
-DOMAIN-SUFFIX,exchangedetail.com, reject
 DOMAIN-SUFFIX,exclusivebrass.com, reject
 DOMAIN-SUFFIX,exelate.com, reject
 DOMAIN-SUFFIX,exelator.com, reject
@@ -1951,6 +1947,7 @@ DOMAIN-SUFFIX,h-bid.com, reject
 DOMAIN-SUFFIX,h0.t.hubspotemail.net, reject
 DOMAIN-SUFFIX,h78xb.pw, reject
 DOMAIN-SUFFIX,habitualhumor.com, reject
+DOMAIN-SUFFIX,halcyoncanyon.com, reject
 DOMAIN-SUFFIX,haltingbadge.com, reject
 DOMAIN-SUFFIX,hammerhearing.com, reject
 DOMAIN-SUFFIX,handsomehose.com, reject
@@ -2331,7 +2328,6 @@ DOMAIN-SUFFIX,matomo.crossiety.app, reject
 DOMAIN-SUFFIX,mautic.com, reject
 DOMAIN-SUFFIX,max.i12.de, reject
 DOMAIN-SUFFIX,maximiser.net, reject
-DOMAIN-SUFFIX,maximumcash.com, reject
 DOMAIN-SUFFIX,maxonclick.com, reject
 DOMAIN-SUFFIX,mbs.megaroticlive.com, reject
 DOMAIN-SUFFIX,mcdlks.com, reject
@@ -2953,7 +2949,6 @@ DOMAIN-SUFFIX,rmgserving.com, reject
 DOMAIN-SUFFIX,roar.com, reject
 DOMAIN-SUFFIX,robotreplay.com, reject
 DOMAIN-SUFFIX,rockabox.co, reject
-DOMAIN-SUFFIX,roia.biz, reject
 DOMAIN-SUFFIX,rok.com.com, reject
 DOMAIN-SUFFIX,rollconnection.com, reject
 DOMAIN-SUFFIX,rose.ixbt.com, reject

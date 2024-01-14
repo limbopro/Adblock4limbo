@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ADS_URL"],["adregain_wall"],["adblock"],["ai_front"],["redirectpage"],["exopop"],["protData"],["pUrlArray"],["pfcu1"]];
+const argsList = [["adregain_wall"],["adblock"],["ai_front"],["redirectpage"],["exopop"],["protData"],["pUrlArray"],["pfcu1"]];
 
-const hostnamesMap = new Map([["raulprietofernandez.net",[0,7]],["tunovelaligera.com",1],["manga-mx.com",2],["meuwindows.com",3],["animesbr.cc",4],["superhq.net",[5,6]],["hentaikai.com",6],["mrpiracy.top",8]]);
+const hostnamesMap = new Map([["tunovelaligera.com",0],["manga-mx.com",1],["meuwindows.com",2],["animesbr.cc",3],["superhq.net",[4,5]],["hentaikai.com",5],["raulprietofernandez.net",6],["mrpiracy.top",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -103,7 +103,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -185,7 +188,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

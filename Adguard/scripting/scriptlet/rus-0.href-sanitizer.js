@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
+const argsList = [["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/go.php?go=\"]","?go"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
 
-const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["www.ixbt.com",2],["vz.ru",[3,4]],["disqus.com",5],["youtube.com",6],["e.mail.ru",7],["octavius.mail.ru",7],["light.mail.ru",[8,9]]]);
+const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["softoroom.org",2],["lifehacker.ru",3],["www.ixbt.com",4],["vz.ru",[5,6]],["disqus.com",7],["youtube.com",8],["e.mail.ru",9],["octavius.mail.ru",9],["light.mail.ru",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -194,7 +194,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -276,7 +279,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

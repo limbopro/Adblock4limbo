@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[],["function","1000","0.02"],["TheLink"]];
+const argsList = [["#iwa_source=timeout","15000","0.02"],[],["function","1000","0.02"],["TheLink"]];
 
-const hostnamesMap = new Map([["ekino-tv.pl",0],["swiatfilmow.com",1],["cda-tv.pl",2]]);
+const hostnamesMap = new Map([["www.interia.pl",0],["ekino-tv.pl",1],["swiatfilmow.com",2],["cda-tv.pl",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -94,7 +94,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -176,7 +179,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

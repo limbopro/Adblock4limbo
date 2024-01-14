@@ -21,6 +21,7 @@
 
 /* nld-0 */
 
-[data-temptation-position="OORTJE"] {
+a[href^="https://go2.go2cloud.org/"],
+a[href^="https://www.2k19.nl/"] {
     display: none !important;
 }

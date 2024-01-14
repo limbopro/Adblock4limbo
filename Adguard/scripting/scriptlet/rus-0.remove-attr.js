@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["autoplay","[data-video-player=\"small\"]","stay"],["autoplay","video","stay"],["autoplay|loop",".watch-live__link > video","stay"],["autoplay|loop","video","stay"],["class",".js-video-box__container"],["data-autoplay","video"],["data-video-play-mode"],["disabled",".uk-modal-footer > button"],["oncontextmenu","[class]","stay"],["oncontextmenu|oncopy|onselectstart"],["target","a[href*=\"#rcmrclid\"]","stay"]];
 
-const hostnamesMap = new Map([["i-ua.tv",0],["cnews.ru",1],["gfycat.com",1],["inter.ua",1],["obozrevatel.com",1],["platformcraft.ru",1],["protv.md",1],["ren.tv",1],["rg.ru",1],["rusvesna.su",1],["tv8.md",1],["xsport.ua",1],["u24.ua",2],["afisha.ru",3],["byrutdb.org",3],["film.ru",3],["filmpro.ru",3],["lenta.ru",4],["svoboda.org",5],["dtf.ru",6],["vc.ru",6],["myshared.ru",7],["lostfilm.download",8],["lostfilm.pro",8],["lostfilm.today",8],["lostfilm.tv",8],["lostfilm.tw",8],["lostfilm.uno",8],["lostfilm.win",8],["lostfilmtv.site",8],["lostfilmtv.uno",8],["lostfilmtv1.site",8],["lostfilmtv2.site",8],["lostfilmtv3.site",8],["lostfilmtv4.site",8],["lostfilmtv5.site",8],["stalker-mods.clan.su",9],["stalker-mods.su",9],["www.rambler.ru",10]]);
+const hostnamesMap = new Map([["i-ua.tv",0],["cnews.ru",1],["gfycat.com",1],["inter.ua",1],["obozrevatel.com",1],["platformcraft.ru",1],["protv.md",1],["ren.tv",1],["rg.ru",1],["rusvesna.su",1],["tv8.md",1],["xsport.ua",1],["u24.ua",2],["afisha.ru",3],["byrutdb.org",3],["film.ru",3],["filmpro.ru",3],["lenta.ru",4],["svoboda.org",5],["dtf.ru",6],["vc.ru",6],["myshared.ru",7],["lostfilm.download",8],["lostfilm.life",8],["lostfilm.pro",8],["lostfilm.today",8],["lostfilm.tv",8],["lostfilm.tw",8],["lostfilm.uno",8],["lostfilm.win",8],["lostfilmtv.site",8],["lostfilmtv.uno",8],["lostfilmtv1.site",8],["lostfilmtv2.site",8],["lostfilmtv3.site",8],["lostfilmtv4.site",8],["lostfilmtv5.site",8],["stalker-mods.clan.su",9],["stalker-mods.su",9],["www.rambler.ru",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -151,7 +151,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -233,7 +236,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

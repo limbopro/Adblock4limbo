@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["tpl apply","tpl.[].c","/fmkorea.com.[A-z]{8","}.js/"],["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
+const argsList = [["tpl apply","tpl.[].c","/fmkorea.com.[A-z]{8","}.js/"],["powerLink","powerLink.ads"],["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
 
-const hostnamesMap = new Map([["m.fmkorea.com",0],["msearch.shopping.naver.com",1],["search.shopping.naver.com",2],["comic.naver.com",3],["enuri.com",4],["shoppinghow.kakao.com",5]]);
+const hostnamesMap = new Map([["m.fmkorea.com",0],["search.11st.co.kr",1],["msearch.shopping.naver.com",2],["search.shopping.naver.com",3],["comic.naver.com",4],["enuri.com",5],["shoppinghow.kakao.com",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -144,7 +144,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -226,7 +229,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

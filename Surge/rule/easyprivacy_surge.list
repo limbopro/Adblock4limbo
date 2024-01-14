@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401131247
+## ! Version: 202401141301
 ## ! Title: EasyPrivacy
-## ! Last modified: 13 Jan 2024 12:47 UTC
+## ! Last modified: 14 Jan 2024 13:01 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -531,6 +531,7 @@ DOMAIN-SUFFIX,apparatuslip.com
 DOMAIN-SUFFIX,aquaticalarm.com
 DOMAIN-SUFFIX,aquaticanswer.com
 DOMAIN-SUFFIX,aquaticowl.com
+DOMAIN-SUFFIX,ar1nvz5.com
 DOMAIN-SUFFIX,archswimming.com
 DOMAIN-SUFFIX,arcticamber.com
 DOMAIN-SUFFIX,argyresthia.com
@@ -775,6 +776,7 @@ DOMAIN-SUFFIX,compiledoctor.com
 DOMAIN-SUFFIX,completecabbage.com
 DOMAIN-SUFFIX,complextoad.com
 DOMAIN-SUFFIX,conceptualizereading.com
+DOMAIN-SUFFIX,concernedchange.com
 DOMAIN-SUFFIX,concernedchickens.com
 DOMAIN-SUFFIX,concernedcondition.com
 DOMAIN-SUFFIX,condemnedcomb.com
@@ -871,6 +873,7 @@ DOMAIN-SUFFIX,decisiveducks.com
 DOMAIN-SUFFIX,decoroustitle.com
 DOMAIN-SUFFIX,decoycreation.com
 DOMAIN-SUFFIX,deerbeginner.com
+DOMAIN-SUFFIX,defeatedbadge.com
 DOMAIN-SUFFIX,defectivedress.com
 DOMAIN-SUFFIX,defiantrice.com
 DOMAIN-SUFFIX,delegatediscussion.com
@@ -912,10 +915,12 @@ DOMAIN-SUFFIX,dk4ywix.com
 DOMAIN-SUFFIX,dockdigestion.com
 DOMAIN-SUFFIX,docksalmon.com
 DOMAIN-SUFFIX,dogsshoes.com
+DOMAIN-SUFFIX,dollardelta.com
 DOMAIN-SUFFIX,dolldetail.com
 DOMAIN-SUFFIX,donkeyleaf.com
 DOMAIN-SUFFIX,doorbrazil.com
 DOMAIN-SUFFIX,doubtdrawer.com
+DOMAIN-SUFFIX,doubtfulrainstorm.com
 DOMAIN-SUFFIX,downtowndirection.com
 DOMAIN-SUFFIX,dq95d35.com
 DOMAIN-SUFFIX,drabsize.com
@@ -979,6 +984,7 @@ DOMAIN-SUFFIX,enormousfoot.com
 DOMAIN-SUFFIX,entertainingeyes.com
 DOMAIN-SUFFIX,entertainskin.com
 DOMAIN-SUFFIX,enthusiasticdad.com
+DOMAIN-SUFFIX,enthusiasticring.com
 DOMAIN-SUFFIX,enthusiastictemper.com
 DOMAIN-SUFFIX,enviousthread.com
 DOMAIN-SUFFIX,equablekettle.com
@@ -991,6 +997,7 @@ DOMAIN-SUFFIX,eventexistence.com
 DOMAIN-SUFFIX,exampleshake.com
 DOMAIN-SUFFIX,exchangedetail.com
 DOMAIN-SUFFIX,excitingtub.com
+DOMAIN-SUFFIX,exclusivebrass.com
 DOMAIN-SUFFIX,exhibitsneeze.com
 DOMAIN-SUFFIX,expansioneggnog.com
 DOMAIN-SUFFIX,experienceeggs.com
@@ -1381,6 +1388,7 @@ DOMAIN-SUFFIX,mistyhorizon.com
 DOMAIN-SUFFIX,mittencattle.com
 DOMAIN-SUFFIX,mixedreading.com
 DOMAIN-SUFFIX,modifyeyes.com
+DOMAIN-SUFFIX,modularmental.com
 DOMAIN-SUFFIX,moldyicicle.com
 DOMAIN-SUFFIX,moorshoes.com
 DOMAIN-SUFFIX,motionflowers.com

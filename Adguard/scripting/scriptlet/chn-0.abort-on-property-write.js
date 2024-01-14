@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["__DOMAIN"],["delCookie"]];
+const argsList = [["__DOMAIN"],["adStart"],["delCookie"]];
 
-const hostnamesMap = new Map([["ohmanhua.com",0],["m.91zww.com",1]]);
+const hostnamesMap = new Map([["ohmanhua.com",0],["3dmgame.com",1],["m.91zww.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -103,7 +103,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -185,7 +188,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

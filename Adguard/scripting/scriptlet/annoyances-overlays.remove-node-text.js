@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["script","advert"],["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","onerror"],["script","devtools"],["script","while(!![]){try{var"]];
 
-const hostnamesMap = new Map([["xanimu.com",0],["familyporner.com",0],["darknessporn.com",0],["freepublicporn.com",0],["pisshamster.com",0],["punishworld.com",0],["skidrowreloaded.com",1],["valid.x86.fr",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["animesaga.in",6],["camcaps.io",7],["nicekkk.com",7],["dev.miuiflash.com",[7,26]],["djxmaza.in",[7,26]],["thecubexguide.com",[7,26]],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["zipcode.com.ng",19],["thejakartapost.com",20],["mathcrave.com",21],["brokensilenze.net",[22,23]],["newsrade.com",24],["broncoshq.com",25],["anascrie.ro",27],["streambuddy.net",28],["smartkhabrinews.com",29],["cheersandgears.com",30],["arras.io",31],["arras.netlify.app",31],["arrax.io",31],["stblion.xyz",33]]);
+const hostnamesMap = new Map([["xanimu.com",0],["familyporner.com",0],["darknessporn.com",0],["freepublicporn.com",0],["pisshamster.com",0],["punishworld.com",0],["skidrowreloaded.com",1],["valid.x86.fr",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["animesaga.in",6],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["camcaps.io",7],["nicekkk.com",7],["dev.miuiflash.com",[7,26]],["djxmaza.in",[7,26]],["thecubexguide.com",[7,26]],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["zipcode.com.ng",19],["thejakartapost.com",20],["mathcrave.com",21],["brokensilenze.net",[22,23]],["newsrade.com",24],["broncoshq.com",25],["anascrie.ro",27],["streambuddy.net",28],["smartkhabrinews.com",29],["cheersandgears.com",30],["arras.io",31],["arras.netlify.app",31],["arrax.io",31],["blog.cryptowidgets.net",32],["blog.insurancegold.in",32],["blog.wiki-topia.com",32],["carsmania.net",32],["carstopia.net",32],["coinsvalue.net",32],["cookinguide.net",32],["freeoseocheck.com",32],["makeupguide.net",32],["stblion.xyz",33]]);
 
 const entitiesMap = new Map([["strtape",2],["streamtape",2],["vidmoly",6],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",32]]);
 
@@ -181,7 +181,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -263,7 +266,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

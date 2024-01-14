@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["options.auto_play"],["playlist.options.auto_play_when_visible"],["ads.[].imageUrl"],["data.meta.require_addon data.meta.require_video data.meta.require_notifications data.meta.require_og_ads data.meta.require_web data.meta.require_countdown data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.displayAds data.linkCustomAdOffers"]];
+const argsList = [["options.auto_play"],["playlist.options.auto_play_when_visible"],["data.meta.require_addon data.meta.require_video data.meta.require_notifications data.meta.require_og_ads data.meta.require_web data.meta.require_countdown data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.displayAds data.linkCustomAdOffers"]];
 
-const hostnamesMap = new Map([["tvn.pl",[0,1]],["tvn24.pl",0],["gp.tsukimi.club",2],["misskey.neos.love",2],["mk.yopo.work",2],["nijimiss.moe",2],["linkvertise.com",3]]);
+const hostnamesMap = new Map([["tvn.pl",[0,1]],["tvn24.pl",0],["linkvertise.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -144,7 +144,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -226,7 +229,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

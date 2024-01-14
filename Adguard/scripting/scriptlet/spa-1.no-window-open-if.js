@@ -42,11 +42,11 @@ const uBOL_noWindowOpenIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [[],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["passeura"],["/^https?:\\/\\/movieknowing\\.com\\/$/","trueFunc"],["redirdx.in/go/"]];
+const argsList = [["","10"],[],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["passeura"],["/^https?:\\/\\/movieknowing\\.com\\/$/","trueFunc"],["redirdx.in/go/"]];
 
-const hostnamesMap = new Map([["movidy.lat",0],["warezstream.net",0],["beautyskincarebrasil.com",0],["suaurl.com",0],["cuevana.biz",0],["cuevana.run",0],["geeknetic.es",0],["animeblix.com",[0,3]],["servernew.xyz",0],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["pctreload1.com",0],["deportealdia.live",0],["repelis.io",0],["verdragonball.online",0],["otakustv.com",0],["temparchive.com",0],["repelisgt.net",0],["playpaste.com",0],["atomohd.com",1],["atomtt.com",1],["maxitorrent.com",2],["movieknowing.com",4],["redirdx.in",5]]);
+const hostnamesMap = new Map([["pulpulyy.club",0],["movidy.lat",1],["warezstream.net",1],["beautyskincarebrasil.com",1],["suaurl.com",1],["cuevana.biz",1],["cuevana.run",1],["geeknetic.es",1],["animeblix.com",[1,4]],["servernew.xyz",1],["servertwo.xyz",1],["megaseriesonline.pro",1],["chinesetubex.com.es",1],["playnewserie.xyz",1],["desenhosanimados.site",1],["pelispedia-v2.wtf",1],["paky3.me",1],["pelismart.com",1],["pelismarthd.com",1],["pelispedia-v1.wtf",1],["cuevana-3.wtf",1],["muyzorras.com",1],["vernaruto.tv",1],["clickhouse.xyz",1],["pctreload1.com",1],["deportealdia.live",1],["repelis.io",1],["verdragonball.online",1],["otakustv.com",1],["temparchive.com",1],["repelisgt.net",1],["playpaste.com",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["movieknowing.com",5],["redirdx.in",6]]);
 
-const entitiesMap = new Map([["netcine",0],["atomixhq",1]]);
+const entitiesMap = new Map([["netcine",1],["atomixhq",2]]);
 
 const exceptionsMap = new Map([]);
 
@@ -141,7 +141,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -223,7 +226,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

@@ -42,9 +42,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["img[data-src]","src","[data-src]"]];
+const argsList = [["a.indirect[data-get]","href","[data-get]"],["img[data-src]","src","[data-src]"]];
 
-const hostnamesMap = new Map([["shahanmusic.ir",0]]);
+const hostnamesMap = new Map([["subkade.ir",0],["shahanmusic.ir",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -171,7 +171,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -253,7 +256,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

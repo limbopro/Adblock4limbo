@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["localStorage"],["sessionStorage"],["document.cookie"],["open"],["adsRedirectPopups"],["atob"],["adtimaConfig"],["matchMedia"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["open"],["oneClick"],["adsRedirectPopups"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["91p.plvb.xyz",[0,1,2,3,4]],["aoe.vn",5],["audiotruyenfull.com",6],["azrom.net",7],["cafenau.com",7],["javnong.cc",8],["linkneverdie.net",9],["phimmoi4s.com",10],["phimdinhcao.net",10],["phimlongtieng.net",10],["phimdinhcao.com",10],["tinsoikeo.vip",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["tvhayh.org",12],["www2.vuaphimmoi1.net",12],["quangcaoyenbai.com",12],["sieudamtv.me",12],["ephimchill.com",12],["motphimhan.cc",12],["maclife.io",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["m.blogtruyen.vn",13],["animet.net",13],["anh.moe",13],["xoilac87.tv",14],["ytstv.me",15],["yts.do",15],["yts.mx",15],["yts.rs",15],["znews.vn",16],["zuiphim.com",17]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["phimmoi4s.com",5],["phimdinhcao.net",5],["phimlongtieng.net",5],["phimdinhcao.com",5],["plvb.xyz",[6,7,8,9,10]],["tinsoikeo.vip",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["tvhayh.org",12],["www2.vuaphimmoi1.net",12],["quangcaoyenbai.com",12],["sieudamtv.me",12],["ephimchill.com",12],["motphimhan.cc",12],["maclife.io",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.com",12],["khophim88.net",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["m.blogtruyenvn.com",13],["animet.net",13],["anh.moe",13],["vinaurl.net",14],["xoilac97.tv",15],["ytstv.me",16],["yts.do",16],["yts.mx",16],["yts.rs",16],["znews.vn",17],["zuiphim.com",18]]);
 
 const entitiesMap = new Map([]);
 
@@ -125,7 +125,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -207,7 +210,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

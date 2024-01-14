@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [[".parentNode.removeChild"],["nagScroll"],["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["potato"],["detect"],["console.clear"],["ads"],["devtoolsDetector"],["()=>_(","15000"],["DevToolsOpen"]];
 
-const hostnamesMap = new Map([["bluemoon-mcfc.co.uk",[0,7]],["kentonline.co.uk",1],["smashboards.com",2],["mobilarena.hu",3],["avdelphi.com",4],["pornhd8k.net",4],["masuit.com",4],["iphonecake.com",5],["ziperto.com",5],["compartiendofull.net",5],["themeparktourist.com",5],["magnet-novels.com",6],["bendigoadvertiser.com.au",8],["lvturbo.com",9],["sbbrisk.com",9],["sbface.com",9],["sbspeed.com",9],["streamsb.net",9],["wouterplanet.com",9],["actvid.com",9],["699pic.com",10],["thinkamericana.com",11],["menrec.com",11],["mocah.org",12],["coolwallpapers.me",13],["sflix.to",14],["freemcserver.net",15],["vgembed.com",16],["sbot.cf",17],["bluphim.com",17],["cdnmoviking.tech",17],["alfred.camera",18],["vidstreaming.xyz",19],["raenonx.cc",20],["ngelmat.net",21]]);
+const hostnamesMap = new Map([["bluemoon-mcfc.co.uk",[0,7]],["kentonline.co.uk",1],["smashboards.com",2],["mobilarena.hu",3],["avdelphi.com",4],["pornhd8k.net",4],["masuit.com",4],["iphonecake.com",5],["ziperto.com",5],["compartiendofull.net",5],["themeparktourist.com",5],["magnet-novels.com",6],["bendigoadvertiser.com.au",8],["lvturbo.com",9],["sbbrisk.com",9],["sbface.com",9],["sbspeed.com",9],["streamsb.net",9],["wouterplanet.com",9],["actvid.com",9],["699pic.com",10],["thinkamericana.com",11],["menrec.com",11],["mocah.org",12],["coolwallpapers.me",13],["sflix.to",14],["freemcserver.net",15],["vgembed.com",16],["braflix.app",16],["sbot.cf",17],["bluphim.com",17],["cdnmoviking.tech",17],["alfred.camera",18],["vidstreaming.xyz",19],["raenonx.cc",20],["ngelmat.net",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -116,7 +116,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -198,7 +201,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

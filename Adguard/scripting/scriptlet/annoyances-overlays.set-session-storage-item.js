@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["modal-newsletter","false"],["","true"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"]];
+const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["modal-newsletter","false"],["","true"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"],["adblock","true"]];
 
-const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["zonealarm.com",10],["upbeatcode.com",11],["selenagomez.com",12],["maxicours.com",13],["270towin.com",14],["getemoji.com",14]]);
+const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["zonealarm.com",10],["upbeatcode.com",11],["selenagomez.com",12],["maxicours.com",13],["270towin.com",14],["getemoji.com",14],["afterclass.io",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -134,7 +134,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -216,7 +219,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

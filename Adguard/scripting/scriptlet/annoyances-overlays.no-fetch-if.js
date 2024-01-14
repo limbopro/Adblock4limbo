@@ -42,11 +42,11 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["pagead2.googlesyndication.com"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["googletag"],["ad.php"],["cloudflareinsights.com"]];
+const argsList = [["adskeeper"],["pagead2.googlesyndication.com"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["googletag"],["ad.php"],["cloudflareinsights.com"]];
 
-const hostnamesMap = new Map([["everyeye.it",0],["automoto.it",0],["moto.it",0],["calcmaps.com",0],["thejakartapost.com",0],["crdroid.net",0],["maxedtech.com",0],["dizipal1000.com",0],["slazag.pl",0],["bytomski.pl",0],["piekary.info",0],["twojknurow.pl",0],["nowinytyskie.pl",0],["ngs24.pl",0],["24kato.pl",0],["rudzianin.pl",0],["zabrzenews.pl",0],["chorzowski.pl",0],["tarnowskiegory.info",0],["24zaglebie.pl",0],["insidermonkey.com",0],["poedb.tw",0],["stakingrewards.com",0],["udocz.com",0],["graphicget.com",1],["udemy-downloader.com",1],["bypass.city",[2,9,11]],["gamebrew.org",3],["photosonic.writesonic.com",5],["maxroll.gg",5],["tuttoandroid.net",5],["psy.pl",5],["koty.pl",5],["intibia.com",5],["simkl.com",6],["xhamster20.desi",7],["xhwebsite2.com",[7,12]],["xhamster18.desi",7],["xhadult3.com",[7,12]],["xhadult2.com",[7,12]],["xhmoon5.com",[7,12]],["xhwide1.com",[7,12]],["xhwide8.com",[7,12]],["xhamster3.com",7],["xhplanet2.com",[7,12]],["xhtab2.com",[7,12]],["xhamster5.desi",7],["xhamster9.com",7],["xhamster.desi",7],["xhamster.one",7],["xhamster.com",7],["weather.com",8],["textcleaner.net",9],["socialcounts.org",9],["theonegenerator.com",10],["fullxh.com",12],["megaxh.com",12],["unlockxh4.com",12],["xhadult4.com",12],["xhadult5.com",12],["xhamster46.com",12],["xhday.com",12],["xhday1.com",12],["xhplanet1.com",12],["xhreal2.com",12],["xhreal3.com",12],["xhvictory.com",12],["xhwebsite.com",12],["amtraker.com",13]]);
+const hostnamesMap = new Map([["bravedown.com",0],["everyeye.it",1],["automoto.it",1],["moto.it",1],["calcmaps.com",1],["thejakartapost.com",1],["crdroid.net",1],["maxedtech.com",1],["dizipal1000.com",1],["slazag.pl",1],["bytomski.pl",1],["piekary.info",1],["twojknurow.pl",1],["nowinytyskie.pl",1],["ngs24.pl",1],["24kato.pl",1],["rudzianin.pl",1],["zabrzenews.pl",1],["chorzowski.pl",1],["tarnowskiegory.info",1],["24zaglebie.pl",1],["insidermonkey.com",1],["poedb.tw",1],["stakingrewards.com",1],["udocz.com",1],["graphicget.com",2],["udemy-downloader.com",2],["bypass.city",[3,10,12]],["gamebrew.org",4],["photosonic.writesonic.com",6],["maxroll.gg",6],["tuttoandroid.net",6],["psy.pl",6],["koty.pl",6],["intibia.com",6],["simkl.com",7],["xhamster20.desi",8],["xhwebsite2.com",[8,13]],["xhamster18.desi",8],["xhadult3.com",[8,13]],["xhadult2.com",[8,13]],["xhmoon5.com",[8,13]],["xhwide1.com",[8,13]],["xhwide8.com",[8,13]],["xhamster3.com",8],["xhplanet2.com",[8,13]],["xhtab2.com",[8,13]],["xhamster5.desi",8],["xhamster9.com",8],["xhamster.desi",8],["xhamster.one",8],["xhamster.com",8],["weather.com",9],["textcleaner.net",10],["socialcounts.org",10],["theonegenerator.com",11],["fullxh.com",13],["megaxh.com",13],["unlockxh4.com",13],["xhadult4.com",13],["xhadult5.com",13],["xhamster46.com",13],["xhday.com",13],["xhday1.com",13],["xhplanet1.com",13],["xhreal2.com",13],["xhreal3.com",13],["xhvictory.com",13],["xhwebsite.com",13],["amtraker.com",14]]);
 
-const entitiesMap = new Map([["ddys",4],["xhamster18",[7,12]],["xhamster17",[7,12]],["hamsterix",[7,12]],["xhamster13",[7,12]],["xhamster",12],["xhamster1",12],["xhamster10",12],["xhamster11",12],["xhamster12",12],["xhamster14",12],["xhamster15",12],["xhamster16",12],["xhamster19",12],["xhamster20",12],["xhamster2",12],["xhamster3",12],["xhamster4",12],["xhamster5",12],["xhamster7",12],["xhamster8",12]]);
+const entitiesMap = new Map([["ddys",5],["xhamster18",[8,13]],["xhamster17",[8,13]],["hamsterix",[8,13]],["xhamster13",[8,13]],["xhamster",13],["xhamster1",13],["xhamster10",13],["xhamster11",13],["xhamster12",13],["xhamster14",13],["xhamster15",13],["xhamster16",13],["xhamster19",13],["xhamster20",13],["xhamster2",13],["xhamster3",13],["xhamster4",13],["xhamster5",13],["xhamster7",13],["xhamster8",13]]);
 
 const exceptionsMap = new Map([]);
 
@@ -128,11 +128,11 @@ function noFetchIf(
                         'Content-Length': text.length,
                     }
                 });
-                Object.defineProperty(response, 'url', {
+                safe.Object_defineProperty(response, 'url', {
                     value: details.url
                 });
                 if ( responseType !== '' ) {
-                    Object.defineProperty(response, 'type', {
+                    safe.Object_defineProperty(response, 'type', {
                         value: responseType
                     });
                 }
@@ -211,7 +211,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -293,7 +296,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

@@ -42,11 +42,11 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["Object.prototype.parallax","window.onload"],["Object.prototype.crossDomain","ecbrStart"]];
+const argsList = [["Object.prototype.autoplay","/api/"],["Object.prototype.parallax","window.onload"],["Object.prototype.crossDomain","ecbrStart"]];
 
-const hostnamesMap = new Map([["www.ukr.net",1]]);
+const hostnamesMap = new Map([["tvzvezda.ru",0],["www.ukr.net",2]]);
 
-const entitiesMap = new Map([["porno365",0]]);
+const entitiesMap = new Map([["porno365",1]]);
 
 const exceptionsMap = new Map([]);
 
@@ -178,7 +178,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -260,7 +263,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

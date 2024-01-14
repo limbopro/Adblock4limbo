@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["popMagic.init"],["$.prototype.html","/\\/images\\/[A-z0-9-_]+\\.?(jpg|gif)/"],["jQuery.prototype.load","is_coupang"],["jQuery","link.coupang.com"],["jQuery","coupang_dont_show_prompty_interval"],["jQuery.prototype.on","is_coupang"],["open","/\\/popup\\//"],["bannerpop.popup"],["window.open","/gears/popup/default.aspx"],["window.open","notice_view_html.php"],["$","/danawa-dpg-common-sponsorBanner-/"],["$","myScript[myScript.length - 1 ]"],["document.addEventListener","/adscale_slot_id/"],["ai_adb.init"],["ai_run_scripts"],["document.createElement","hasAdblock"],["chp_ads_blocker_detector"],["document.getElementById","adblock"],["$",".adsense-area"],["addEventListener","fuckadblock.min.js"],["$","#ad_center"]];
 
-const hostnamesMap = new Map([["watchfreejavonline.co",0],["m.humoruniv.com",1],["smartinpress.com",2],["newsn24.com",2],["yachuk.com",3],["aannm.cafe24.com",4],["beomil09121.cafe24.com",4],["actingbaum.co.kr",5],["picknpicker.com",5],["moneyissues.co.kr",5],["sotrychatter.com",5],["skysky138.com",5],["keela.co.kr",5],["jiwootube.com",5],["news.ssongyi.co.kr",5],["xn--wh1b751afvcpsb.com",5],["nesin.com",6],["mjmedi.com",7],["cfnews.kr",8],["sjtoday.kr",9],["dpg.danawa.com",[10,11]],["asdn.kr",12],["healthfeed.co.kr",12],["bikesell.co.kr",12],["remiz.co.kr",12],["enjoytaiwan.co.kr",12],["poketory.com",12],["withukor.com",12],["tistory.com",12],["love.asdn.kr",12],["avjamak.net",12],["untitle.org",12],["seo-marketing.co.kr",12],["plankim.com",13],["jootc.com",14],["ehpub.co.kr",14],["luckyquiz3.blogspot.com",15],["3dpchip.com",16],["ssulwar.com",17],["ilsangt.tistory.com",18],["focuskr.tistory.com",19],["singingdalong.blogspot.com",20]]);
+const hostnamesMap = new Map([["watchfreejavonline.co",0],["m.humoruniv.com",1],["smartinpress.com",2],["newsn24.com",2],["yachuk.com",3],["aannm.cafe24.com",4],["beomil09121.cafe24.com",4],["actingbaum.co.kr",5],["picknpicker.com",5],["moneyissues.co.kr",5],["sotrychatter.com",5],["skysky138.com",5],["keela.co.kr",5],["jiwootube.com",5],["news.ssongyi.co.kr",5],["xn--wh1b751afvcpsb.com",5],["nesin.com",6],["mjmedi.com",7],["cfnews.kr",8],["sjtoday.kr",9],["dpg.danawa.com",[10,11]],["asdn.kr",12],["healthfeed.co.kr",12],["bikesell.co.kr",12],["remiz.co.kr",12],["enjoytaiwan.co.kr",12],["poketory.com",12],["withukor.com",12],["tistory.com",12],["love.asdn.kr",12],["avjamak.net",12],["untitle.org",12],["seo-marketing.co.kr",12],["plankim.com",13],["jootc.com",14],["ehpub.co.kr",14],["luckyquiz3.blogspot.com",15],["deokhu.com",16],["3dpchip.com",16],["ssulwar.com",17],["ilsangt.tistory.com",18],["focuskr.tistory.com",19],["singingdalong.blogspot.com",20]]);
 
 const entitiesMap = new Map([]);
 
@@ -196,7 +196,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -278,7 +281,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

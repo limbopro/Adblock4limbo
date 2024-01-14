@@ -33,7 +33,7 @@
 
 // nld-0
 
-const toImport = [[15467484,".ankeiler--advertisement"],[10339814,".article__component--temptation-article-inline"],[4215636,".article__component--outstream-advertisement"],[14205705,".sixpack__advertisement-tile"],[2086683,".adv-tekst"],[5773039,".happy-header"],[2157061,".happy-sidebar"],[2160437,".happy-section"],[5762351,".happy-footer"],[8598901,".video-block-happy"],[14127104,"#tracking-url"]];
+const toImport = [[4215636,".article__component--outstream-advertisement"],[12803640,".layout__component--temptation"],[14205705,".sixpack__advertisement-tile"],[2086683,".adv-tekst"],[5773039,".happy-header"],[2157061,".happy-sidebar"],[2160437,".happy-section"],[5762351,".happy-footer"],[8598901,".video-block-happy"],[14127104,"#tracking-url"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

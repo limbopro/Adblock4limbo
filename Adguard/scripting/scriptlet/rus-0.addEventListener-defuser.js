@@ -42,13 +42,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","landingUrl"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,13]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["rambler.ru",[4,10]],["sibnet.ru",5],["sports.ru",6],["cq.ru",7],["softonic.ru",8],["smotrim.ru",9],["rbc.ru",11],["sportrbc.ru",11],["iptv.org.ua",12],["tva.org.ua",12],["ufchgu.ru",12],["romakatya.ru",14],["overclockers.ru",15],["gazeta.ru",16],["m.lenta.ru",17],["www.vesti.ru",18],["lenta.ru",19],["aida64.com.ua",20],["aida64russia.com",20]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,14]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["rambler.ru",[4,11]],["sibnet.ru",5],["sports.ru",6],["cq.ru",7],["1progs.com",8],["softonic.ru",9],["smotrim.ru",10],["rbc.ru",12],["sportrbc.ru",12],["iptv.org.ua",13],["tva.org.ua",13],["ufchgu.ru",13],["romakatya.ru",15],["overclockers.ru",16],["gazeta.ru",17],["m.lenta.ru",18],["www.vesti.ru",19],["lenta.ru",20],["aida64.com.ua",21],["aida64russia.com",21]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,13]],["id.rambler.ru",[4,10]],["vp.rambler.ru",[4,10]],["player.smotrim.ru",[9]],["mail.rambler.ru",[10]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,14]],["id.rambler.ru",[4,11]],["vp.rambler.ru",[4,11]],["player.smotrim.ru",[10]],["mail.rambler.ru",[11]]]);
 
 /******************************************************************************/
 
@@ -62,6 +62,24 @@ function addEventListenerDefuser(
     const rePattern = safe.patternToRegex(pattern);
     const log = shouldLog(extraArgs);
     const debug = shouldDebug(extraArgs);
+    const targetSelector = extraArgs.elements || undefined;
+    const shouldPrevent = (thisArg, type, handler) => {
+        if ( targetSelector !== undefined ) {
+            const elems = Array.from(document.querySelectorAll(targetSelector));
+            if ( elems.includes(thisArg) === false ) { return false; }
+        }
+        const matchesType = safe.RegExp_test.call(reType, type);
+        const matchesHandler = safe.RegExp_test.call(rePattern, handler);
+        const matchesEither = matchesType || matchesHandler;
+        const matchesBoth = matchesType && matchesHandler;
+        if ( log === 1 && matchesBoth || log === 2 && matchesEither || log === 3 ) {
+            safe.uboLog(`addEventListener('${type}', ${handler})`);
+        }
+        if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
+            debugger; // jshint ignore:line
+        }
+        return matchesBoth;
+    };
     const trapEddEventListeners = ( ) => {
         const eventListenerHandler = {
             apply: function(target, thisArg, args) {
@@ -73,17 +91,7 @@ function addEventListenerDefuser(
                         : String(args[1]);
                 } catch(ex) {
                 }
-                const matchesType = safe.RegExp_test.call(reType, type);
-                const matchesHandler = safe.RegExp_test.call(rePattern, handler);
-                const matchesEither = matchesType || matchesHandler;
-                const matchesBoth = matchesType && matchesHandler;
-                if ( log === 1 && matchesBoth || log === 2 && matchesEither || log === 3 ) {
-                    safe.uboLog(`addEventListener('${type}', ${handler})`);
-                }
-                if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
-                    debugger; // jshint ignore:line
-                }
-                if ( matchesBoth ) { return; }
+                if ( shouldPrevent(thisArg, type, handler) ) { return; }
                 return Reflect.apply(target, thisArg, args);
             },
             get(target, prop, receiver) {
@@ -146,7 +154,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -228,7 +239,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

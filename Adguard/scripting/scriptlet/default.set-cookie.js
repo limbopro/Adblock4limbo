@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ts_popunder","true","","reload","1"],["WHITELISTED_CLOSED","1"],["__gads","OK","","reload","1"],["4d8L2108","1","","reload","1"],["customscript0","1"],["popunder","1"],["visited","1"],["inter","1","","reload","1"],["Ads","1"],["Ads","2"],["tracking_session_id","OK","","reload","1"],["Geo","OK"],["bitmovin_analytics_uuid","OK"]];
+const argsList = [["ts_popunder","true","","reload","1"],["__pf","1"],["clictune_pop","off"],["WHITELISTED_CLOSED","1"],["__gads","OK","","reload","1"],["4d8L2108","1","","reload","1"],["customscript0","1"],["popunder","1"],["visited","1"],["inter","1","","reload","1"],["Ads","1"],["Ads","2"],["tracking_session_id","OK","","reload","1"],["Geo","OK"],["bitmovin_analytics_uuid","OK"]];
 
-const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["movingxh.world",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhtree.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["imgur.com",1],["gourmetscans.net",2],["autosport.com",3],["motorsport.com",3],["iporntoo.com",4],["top16.net",[5,6]],["hentai.tv",7],["noticiasdehoje.biz",8],["jornaldigital.org",9],["fandom.com",[10,11]],["clickorlando.com",12]]);
+const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["movingxh.world",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhtree.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["aniwave.to",1],["anix.to",1],["flixwave.to",1],["fmoviesz.to",1],["dlink2.net",2],["imgur.com",3],["gourmetscans.net",4],["autosport.com",5],["motorsport.com",5],["iporntoo.com",6],["top16.net",[7,8]],["hentai.tv",9],["noticiasdehoje.biz",10],["jornaldigital.org",11],["fandom.com",[12,13]],["clickorlando.com",14]]);
 
 const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0]]);
 
@@ -106,7 +106,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -188,7 +191,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

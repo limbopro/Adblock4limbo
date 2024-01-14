@@ -42,9 +42,9 @@ const uBOL_trustedSetLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["lo-non-moc-membership-upsell|dismissed-at","$now$"]];
+const argsList = [["lo-non-moc-membership-upsell|dismissed-at","$now$"],["201805-policy|accepted","1"]];
 
-const hostnamesMap = new Map([["500ish.com",0],["artplusmarketing.com",0],["atrium.co",0],["backchannel.com",0],["backstage.1blocker.com",0],["badootech.badoo.com",0],["bitcointechtalk.com",0],["blog.bitsrc.io",0],["bitwarden.com",0],["blog.coinbase.com",0],["blog.confiant.com",0],["blog.devcolor.org",0],["blog.growthhackers.com",0],["blog.hiri.com",0],["blog.ltse.com",0],["blog.statebox.org",0],["blog.twitch.tv",0],["blog.waffle.io",0],["bluerockpublicradio.com",0],["bolt.io",0],["boomsupersonic.com",0],["bradfieldcs.com",0],["brightthemag.com",0],["broadcast.listennotes.com",0],["checkio.org",0],["citizen428.net",0],["coach.me",0],["codeburst.io",0],["dave-bailey.com",0],["discordapp.com",0],["doist.com",0],["doit-intl.com",0],["dotandline.net",0],["doublepulsar.com",0],["economist.com",0],["electricliterature.com",0],["elidourado.com",0],["esciencecenter.nl",0],["faun.pub",0],["fossa.io",0],["freecodecamp.org",0],["fritz.ai",0],["getadblock.com",0],["levelup.gitconnected.com",0],["greylock.com",0],["headmelted.com",0],["helium.com",0],["howwegettonext.com",0],["iheart.com",0],["injusticetoday.com",0],["insightdatascience.com",0],["iota.org",0],["itnext.io",0],["itsyourturnblog.com",0],["jupyter.org",0],["keepingstock.net",0],["kiwi.com",0],["learngoprogramming.com",0],["learningbyshipping.com",0],["ledwards.com",0],["legalist.com",0],["logrocket.com",0],["mapbox.com",0],["medium.com",0],["melmagazine.com",0],["mondaynote.com",0],["newco.co",0],["news.smugmug.com",0],["nyulocal.com",0],["ofdollarsanddata.com",0],["okmeter.io",0],["open.nytimes.com",0],["javascript.plainenglish.io",0],["postlight.com",0],["proandroiddev.com",0],["prototypr.io",0],["rainway.io",0],["sagefy.org",0],["signalvnoise.com",0],["slack.engineering",0],["slackhq.com",0],["springboard.com",0],["standardnotes.org",0],["startupsventurecapital.com",0],["stoplight.io",0],["tech.buzzfeed.com",0],["theabacus.io",0],["theawl.com",0],["thebigroundtable.com",0],["thebillfold.com",0],["thebolditalic.com",0],["thecontrol.co",0],["theringer.com",0],["thinkprogress.org",0],["thriveglobal.com",0],["timeline.com",0],["towardsdatascience.com",0],["udacity.com",0],["unpatent.co",0],["usejournal.com",0],["uxdesign.cc",0],["uxplanet.org",0],["warisboring.com",0],["wearemel.com",0],["whatahowler.com",0],["x.company",0],["blog.dp6.com.br",0],["blog.angular.io",0],["thetaoist.online",0],["writingcooperative.com",0]]);
+const hostnamesMap = new Map([["500ish.com",0],["artplusmarketing.com",0],["atrium.co",0],["backchannel.com",0],["backstage.1blocker.com",0],["badootech.badoo.com",0],["bitcointechtalk.com",0],["blog.bitsrc.io",0],["blog.inkdrop.app",[0,1]],["bitwarden.com",0],["blog.coinbase.com",0],["blog.confiant.com",0],["blog.devcolor.org",0],["blog.growthhackers.com",0],["blog.hiri.com",0],["blog.ltse.com",0],["blog.statebox.org",0],["blog.twitch.tv",0],["blog.waffle.io",0],["bluerockpublicradio.com",0],["bolt.io",0],["boomsupersonic.com",0],["bradfieldcs.com",0],["brightthemag.com",0],["broadcast.listennotes.com",0],["checkio.org",0],["citizen428.net",0],["coach.me",0],["codeburst.io",0],["dave-bailey.com",0],["discordapp.com",0],["doist.com",0],["doit-intl.com",0],["dotandline.net",0],["doublepulsar.com",0],["economist.com",0],["electricliterature.com",0],["elidourado.com",0],["esciencecenter.nl",0],["faun.pub",0],["fossa.io",0],["freecodecamp.org",0],["fritz.ai",0],["getadblock.com",0],["levelup.gitconnected.com",0],["greylock.com",0],["headmelted.com",0],["helium.com",0],["howwegettonext.com",0],["iheart.com",0],["injusticetoday.com",0],["insightdatascience.com",0],["iota.org",0],["itnext.io",0],["itsyourturnblog.com",0],["jupyter.org",0],["keepingstock.net",0],["kiwi.com",0],["learngoprogramming.com",0],["learningbyshipping.com",0],["ledwards.com",0],["legalist.com",0],["logrocket.com",0],["mapbox.com",0],["medium.com",0],["melmagazine.com",0],["mondaynote.com",0],["newco.co",0],["news.smugmug.com",0],["nyulocal.com",0],["ofdollarsanddata.com",0],["okmeter.io",0],["open.nytimes.com",0],["javascript.plainenglish.io",0],["postlight.com",0],["proandroiddev.com",0],["prototypr.io",0],["rainway.io",0],["sagefy.org",0],["signalvnoise.com",0],["slack.engineering",0],["slackhq.com",0],["springboard.com",0],["standardnotes.org",0],["startupsventurecapital.com",0],["stoplight.io",0],["tech.buzzfeed.com",0],["theabacus.io",0],["theawl.com",0],["thebigroundtable.com",0],["thebillfold.com",0],["thebolditalic.com",0],["thecontrol.co",0],["theringer.com",0],["thinkprogress.org",0],["thriveglobal.com",0],["timeline.com",0],["towardsdatascience.com",0],["udacity.com",0],["unpatent.co",0],["usejournal.com",0],["uxdesign.cc",0],["uxplanet.org",0],["warisboring.com",0],["wearemel.com",0],["whatahowler.com",0],["x.company",0],["blog.dp6.com.br",0],["blog.angular.io",0],["thetaoist.online",0],["writingcooperative.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -134,7 +134,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -216,7 +219,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

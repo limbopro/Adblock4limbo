@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["q2w3_sidebar(q2w3_sidebar_options"]];
+const argsList = [["getComputedStyle"],["q2w3_sidebar(q2w3_sidebar_options"]];
 
-const hostnamesMap = new Map([["yaraon-blog.com",0]]);
+const hostnamesMap = new Map([["iwb.jp",0],["yaraon-blog.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -116,7 +116,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -198,7 +201,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

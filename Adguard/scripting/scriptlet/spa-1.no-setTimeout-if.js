@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["placebo.height()"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["placebo"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
+const argsList = [["window.getComputedStyle"],["placebo.height()"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["placebo"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
 
-const hostnamesMap = new Map([["sempreupdate.com.br",0],["peliculas8k.com",1],["guiacripto.online",2],["verasoul.com",3],["zona-leros.com",4],["xerifetech.com",5],["suaads.com",6],["reidoplacar.com",6],["suaurl.com",[6,16]],["guianoticiario.net",7],["resenhasglobais.com",8],["tecword.info",8],["smartdoing.tech",8],["vivercomsaude.online",8],["escplus.es",9],["genshinpro.com.br",10],["it-swarm-es.com",10],["manchetehoje.xyz",11],["unsurcoenlasombra.com",12],["hartico.com",13],["seriesdonghua.com",14],["mundodonghua.com",14],["forodecostarica.com",15],["seriesgratis.biz",17]]);
+const hostnamesMap = new Map([["biobiochile.cl",0],["sempreupdate.com.br",1],["peliculas8k.com",2],["guiacripto.online",3],["verasoul.com",4],["zona-leros.com",5],["xerifetech.com",6],["suaads.com",7],["reidoplacar.com",7],["suaurl.com",[7,17]],["guianoticiario.net",8],["resenhasglobais.com",9],["tecword.info",9],["smartdoing.tech",9],["vivercomsaude.online",9],["escplus.es",10],["genshinpro.com.br",11],["it-swarm-es.com",11],["manchetehoje.xyz",12],["unsurcoenlasombra.com",13],["hartico.com",14],["seriesdonghua.com",15],["mundodonghua.com",15],["forodecostarica.com",16],["seriesgratis.biz",18]]);
 
 const entitiesMap = new Map([]);
 
@@ -116,7 +116,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -198,7 +201,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

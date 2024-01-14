@@ -157,9 +157,9 @@ function setConstantCore(
         //   Support multiple trappers for the same property.
         const trapProp = function(owner, prop, configurable, handler) {
             if ( handler.init(configurable ? owner[prop] : cValue) === false ) { return; }
-            const odesc = Object.getOwnPropertyDescriptor(owner, prop);
+            const odesc = safe.Object_getOwnPropertyDescriptor(owner, prop);
             let prevGetter, prevSetter;
-            if ( odesc instanceof Object ) {
+            if ( odesc instanceof safe.Object ) {
                 owner[prop] = cValue;
                 if ( odesc.get instanceof Function ) {
                     prevGetter = odesc.get;
@@ -212,7 +212,7 @@ function setConstantCore(
             const prop = chain.slice(0, pos);
             const v = owner[prop];
             chain = chain.slice(pos + 1);
-            if ( v instanceof Object || typeof v === 'object' && v !== null ) {
+            if ( v instanceof safe.Object || typeof v === 'object' && v !== null ) {
                 trapChain(v, chain);
                 return;
             }
@@ -227,7 +227,7 @@ function setConstantCore(
                 },
                 setter: function(a) {
                     this.v = a;
-                    if ( a instanceof Object ) {
+                    if ( a instanceof safe.Object ) {
                         trapChain(a, chain);
                     }
                 }
@@ -283,7 +283,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -365,7 +368,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

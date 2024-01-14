@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["nocontext"],["faPa"],["vc_url"],["show_wpcp_message"],["tinPa"],["SGPB_POPUP_PARAMS"],["needpop"],["banner"],["window.LOCO_DATA.copyrightTranslation"]];
+const argsList = [["nocontext"],["vc_url"],["show_wpcp_message"],["tinPa"],["SGPB_POPUP_PARAMS"],["needpop"],["banner"],["window.LOCO_DATA.copyrightTranslation"]];
 
-const hostnamesMap = new Map([["coffeeapps.ir",0],["sclinic.ir",0],["farsroid.com",1],["nab-music.com",2],["shahanmusic.ir",3],["tinroid.ir",4],["tak3da.com",5],["yeknet.ir",6],["zoomg.ir",7],["oila.tj",8]]);
+const hostnamesMap = new Map([["coffeeapps.ir",0],["sclinic.ir",0],["nab-music.com",1],["shahanmusic.ir",2],["tinroid.ir",3],["tak3da.com",4],["yeknet.ir",5],["zoomg.ir",6],["oila.tj",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -125,7 +125,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -207,7 +210,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

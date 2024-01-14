@@ -33,11 +33,11 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#afterLoad\",\"action\":[\"style\",\"display: block !important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}"],["{\"selector\":\".tien-ads-video > div#player\",\"action\":[\"style\",\"visibility: visible!important;\"]}","{\"selector\":\".tien-ads-video\",\"action\":[\"style\",\"background: none!important;\"]}"]];
+const argsList = [["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}"],["{\"selector\":\".tien-ads-video > div#player\",\"action\":[\"style\",\"visibility: visible!important;\"]}","{\"selector\":\".tien-ads-video\",\"action\":[\"style\",\"background: none!important;\"]}"]];
 
-const hostnamesMap = new Map([["bhol.co.il",1],["haaretz.co.il",2],["www-haaretz-co-il.eu1.proxy.openathens.net",2],["koozi.info",3]]);
+const hostnamesMap = new Map([["bhol.co.il",0],["haaretz.co.il",1],["www-haaretz-co-il.eu1.proxy.openathens.net",1],["koozi.info",2]]);
 
-const entitiesMap = new Map([["sdarot",0]]);
+const entitiesMap = new Map(undefined);
 
 const exceptionsMap = new Map(undefined);
 

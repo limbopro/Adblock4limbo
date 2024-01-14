@@ -42,9 +42,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["onselectstart|oncopy|oncontextmenu","body"],["onmousedown|onselectstart","body"],["draggable","","stay"]];
+const argsList = [["onselectstart|oncopy|oncontextmenu","body"],["onmousedown|onselectstart","body"],["oncontextmenu","a.indirect[data-get]"],["draggable","","stay"]];
 
-const hostnamesMap = new Map([["iranstar.com",0],["javan-musics.com",1],["takmili.com",2]]);
+const hostnamesMap = new Map([["iranstar.com",0],["javan-musics.com",1],["subkade.ir",2],["takmili.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -151,7 +151,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -233,7 +236,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

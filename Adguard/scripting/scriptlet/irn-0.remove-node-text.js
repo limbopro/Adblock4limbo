@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["script","document.oncontextmenu ="],["script","document.oncontextmenu="],["script","window.location="]];
+const argsList = [["script","document.oncontextmenu ="],["script","ads_app_downloads"],["script","document.oncontextmenu="],["script","window.location="],["script","ad.setAttribute"]];
 
-const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["kihanb.ir",1],["najiremix.ir",2]]);
+const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["najiremix.ir",3],["tgju.org",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -181,7 +181,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -263,7 +266,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

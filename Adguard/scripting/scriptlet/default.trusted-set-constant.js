@@ -42,11 +42,11 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"],["document.visibilityState","visible"]];
+const argsList = [["document.visibilityState","hidden"],["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["navigator.userAgent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"],["document.visibilityState","visible"]];
 
-const hostnamesMap = new Map([["tuborstb.co",0],["app.blubank.com",1],["mobileweb.bankmellat.ir",[1,2]],["web.bale.ai",3]]);
+const hostnamesMap = new Map([["shareus.io",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4]]);
 
-const entitiesMap = new Map([["dropgalaxy",4]]);
+const entitiesMap = new Map([["dropgalaxy",5]]);
 
 const exceptionsMap = new Map([]);
 
@@ -157,9 +157,9 @@ function setConstantCore(
         //   Support multiple trappers for the same property.
         const trapProp = function(owner, prop, configurable, handler) {
             if ( handler.init(configurable ? owner[prop] : cValue) === false ) { return; }
-            const odesc = Object.getOwnPropertyDescriptor(owner, prop);
+            const odesc = safe.Object_getOwnPropertyDescriptor(owner, prop);
             let prevGetter, prevSetter;
-            if ( odesc instanceof Object ) {
+            if ( odesc instanceof safe.Object ) {
                 owner[prop] = cValue;
                 if ( odesc.get instanceof Function ) {
                     prevGetter = odesc.get;
@@ -212,7 +212,7 @@ function setConstantCore(
             const prop = chain.slice(0, pos);
             const v = owner[prop];
             chain = chain.slice(pos + 1);
-            if ( v instanceof Object || typeof v === 'object' && v !== null ) {
+            if ( v instanceof safe.Object || typeof v === 'object' && v !== null ) {
                 trapChain(v, chain);
                 return;
             }
@@ -227,7 +227,7 @@ function setConstantCore(
                 },
                 setter: function(a) {
                     this.v = a;
-                    if ( a instanceof Object ) {
+                    if ( a instanceof safe.Object ) {
                         trapChain(a, chain);
                     }
                 }
@@ -283,7 +283,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -365,7 +368,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["tips"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
+const argsList = [["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["tips"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
 
-const hostnamesMap = new Map([["1090ys8.com",0],["papalah.com",0],["youneed.win",1],["aiyifan.tv",2],["iyf.tv",2],["htmanga4.top",3],["goodav17.com",4],["m.86kl.com",5],["axjbt.com",6],["avcao.cc",6],["exoav.com",7]]);
+const hostnamesMap = new Map([["caq98i.top",0],["1090ys8.com",1],["papalah.com",1],["youneed.win",2],["aiyifan.tv",3],["iyf.tv",3],["htmanga4.top",4],["goodav17.com",5],["m.86kl.com",6],["axjbt.com",7],["avcao.cc",7],["exoav.com",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -125,7 +125,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -207,7 +210,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

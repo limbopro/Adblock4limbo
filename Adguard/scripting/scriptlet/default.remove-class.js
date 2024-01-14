@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["disabled",".get-link"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
+const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["disabled",".get-link"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
 
-const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["xda-developers.com",2],["paid4.link",3],["go.gets4link.com",4],["quizlet.com",[5,6,7]],["funker530.com",8],["av01.tv",9],["so1.asia",10],["top1iq.com",11],["freebrightsoft.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15],["sinonimos.de",16]]);
+const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["freebrightsoft.com",2],["xda-developers.com",3],["paid4.link",4],["go.gets4link.com",5],["quizlet.com",[6,7,8]],["funker530.com",9],["av01.tv",10],["so1.asia",11],["top1iq.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15],["sinonimos.de",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -152,7 +152,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -234,7 +237,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

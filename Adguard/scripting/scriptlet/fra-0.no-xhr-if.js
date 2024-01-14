@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["pagead2.googlesyndication.com"],["v.fwmrm.net/","true"],["/ping?token="]];
 
-const hostnamesMap = new Map([["ebookdz.com",0],["6play.fr",1],["app.molotov.tv",2]]);
+const hostnamesMap = new Map([["systemed.fr",0],["ebookdz.com",0],["6play.fr",1],["app.molotov.tv",2]]);
 
 const entitiesMap = new Map([["empire-streaming",0]]);
 
@@ -298,7 +298,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -380,7 +383,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

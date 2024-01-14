@@ -54,6 +54,7 @@ a[href^="https://trk.imobtrk.com/"],
 a[href^="https://www.handy-sextreffen.info/?c="],
 a[href^="https://www.tik-tok-date.com/"],
 a[href^="https://www.tipico.com/?affiliateId="],
-a[href^="https://www.vavoo.tv/promo/"] > img {
+a[href^="https://www.vavoo.tv/promo/"] > img,
+a[href^="https://www.wazazu.com/NWS/"] {
     display: none !important;
 }

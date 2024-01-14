@@ -42,11 +42,11 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["YA_SSP_ID","anonymous"],["BANNER_TYPE_FROM_NANPU","anonymous"],["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"]];
+const argsList = [["YA_SSP_ID","anonymous"],["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"]];
 
-const hostnamesMap = new Map([["dzen.ru",0],["pikabu.ru",1],["secondlifetranslations.com",2],["waves4you.com",3],["timeshighereducation.com",4],["ilovefreesoftware.com",5],["protopage.com",6],["fantasytagtree.com",7],["jamilacuisine.ro",[8,9]],["golfdigest.com",10],["ophim.vip",12],["animesuge.to",13],["aniwave.to",13],["bflix.io",13],["f2movies.ru",13],["hdtoday.so",13],["hurawatch.bz",13],["movies2watch.ru",13],["putlockernew.vc",13],["swatchseries.ru",13],["vidplay.site",13],["vidstream.pro",13],["mcloud.to",13],["team-octavi.com",14]]);
+const hostnamesMap = new Map([["dzen.ru",0],["secondlifetranslations.com",1],["waves4you.com",2],["timeshighereducation.com",3],["ilovefreesoftware.com",4],["protopage.com",5],["fantasytagtree.com",6],["jamilacuisine.ro",[7,8]],["golfdigest.com",9],["ophim.vip",11],["animesuge.to",12],["aniwave.to",12],["bflix.io",12],["f2movies.ru",12],["hdtoday.so",12],["hurawatch.bz",12],["movies2watch.ru",12],["putlockernew.vc",12],["swatchseries.ru",12],["vidplay.site",12],["vidstream.pro",12],["mcloud.to",12],["team-octavi.com",13]]);
 
-const entitiesMap = new Map([["pobre",11],["flixhq",13],["fmovies",13],["fmoviesz",13]]);
+const entitiesMap = new Map([["pobre",10],["flixhq",12],["fmovies",12],["fmoviesz",12]]);
 
 const exceptionsMap = new Map([]);
 
@@ -178,7 +178,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -260,7 +263,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

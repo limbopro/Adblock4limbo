@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401131247
+## ! Version: 202401141301
 ## ! Title: EasyPrivacy
-## ! Last modified: 13 Jan 2024 12:47 UTC
+## ! Last modified: 14 Jan 2024 13:01 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -531,6 +531,7 @@ DOMAIN-SUFFIX,apparatuslip.com, reject
 DOMAIN-SUFFIX,aquaticalarm.com, reject
 DOMAIN-SUFFIX,aquaticanswer.com, reject
 DOMAIN-SUFFIX,aquaticowl.com, reject
+DOMAIN-SUFFIX,ar1nvz5.com, reject
 DOMAIN-SUFFIX,archswimming.com, reject
 DOMAIN-SUFFIX,arcticamber.com, reject
 DOMAIN-SUFFIX,argyresthia.com, reject
@@ -775,6 +776,7 @@ DOMAIN-SUFFIX,compiledoctor.com, reject
 DOMAIN-SUFFIX,completecabbage.com, reject
 DOMAIN-SUFFIX,complextoad.com, reject
 DOMAIN-SUFFIX,conceptualizereading.com, reject
+DOMAIN-SUFFIX,concernedchange.com, reject
 DOMAIN-SUFFIX,concernedchickens.com, reject
 DOMAIN-SUFFIX,concernedcondition.com, reject
 DOMAIN-SUFFIX,condemnedcomb.com, reject
@@ -871,6 +873,7 @@ DOMAIN-SUFFIX,decisiveducks.com, reject
 DOMAIN-SUFFIX,decoroustitle.com, reject
 DOMAIN-SUFFIX,decoycreation.com, reject
 DOMAIN-SUFFIX,deerbeginner.com, reject
+DOMAIN-SUFFIX,defeatedbadge.com, reject
 DOMAIN-SUFFIX,defectivedress.com, reject
 DOMAIN-SUFFIX,defiantrice.com, reject
 DOMAIN-SUFFIX,delegatediscussion.com, reject
@@ -912,10 +915,12 @@ DOMAIN-SUFFIX,dk4ywix.com, reject
 DOMAIN-SUFFIX,dockdigestion.com, reject
 DOMAIN-SUFFIX,docksalmon.com, reject
 DOMAIN-SUFFIX,dogsshoes.com, reject
+DOMAIN-SUFFIX,dollardelta.com, reject
 DOMAIN-SUFFIX,dolldetail.com, reject
 DOMAIN-SUFFIX,donkeyleaf.com, reject
 DOMAIN-SUFFIX,doorbrazil.com, reject
 DOMAIN-SUFFIX,doubtdrawer.com, reject
+DOMAIN-SUFFIX,doubtfulrainstorm.com, reject
 DOMAIN-SUFFIX,downtowndirection.com, reject
 DOMAIN-SUFFIX,dq95d35.com, reject
 DOMAIN-SUFFIX,drabsize.com, reject
@@ -979,6 +984,7 @@ DOMAIN-SUFFIX,enormousfoot.com, reject
 DOMAIN-SUFFIX,entertainingeyes.com, reject
 DOMAIN-SUFFIX,entertainskin.com, reject
 DOMAIN-SUFFIX,enthusiasticdad.com, reject
+DOMAIN-SUFFIX,enthusiasticring.com, reject
 DOMAIN-SUFFIX,enthusiastictemper.com, reject
 DOMAIN-SUFFIX,enviousthread.com, reject
 DOMAIN-SUFFIX,equablekettle.com, reject
@@ -991,6 +997,7 @@ DOMAIN-SUFFIX,eventexistence.com, reject
 DOMAIN-SUFFIX,exampleshake.com, reject
 DOMAIN-SUFFIX,exchangedetail.com, reject
 DOMAIN-SUFFIX,excitingtub.com, reject
+DOMAIN-SUFFIX,exclusivebrass.com, reject
 DOMAIN-SUFFIX,exhibitsneeze.com, reject
 DOMAIN-SUFFIX,expansioneggnog.com, reject
 DOMAIN-SUFFIX,experienceeggs.com, reject
@@ -1381,6 +1388,7 @@ DOMAIN-SUFFIX,mistyhorizon.com, reject
 DOMAIN-SUFFIX,mittencattle.com, reject
 DOMAIN-SUFFIX,mixedreading.com, reject
 DOMAIN-SUFFIX,modifyeyes.com, reject
+DOMAIN-SUFFIX,modularmental.com, reject
 DOMAIN-SUFFIX,moldyicicle.com, reject
 DOMAIN-SUFFIX,moorshoes.com, reject
 DOMAIN-SUFFIX,motionflowers.com, reject

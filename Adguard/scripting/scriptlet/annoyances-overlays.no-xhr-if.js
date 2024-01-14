@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["pagead2.googlesyndication.com","true"],["first_order_banner"],["gif"],["googlesyndication"],["/hotjar|googletagmanager/"]];
 
-const hostnamesMap = new Map([["radsport-news.com",0],["enduro-mtb.com",0],["vampster.com",0],["granfondo-cycling.com",0],["deutschlandistvegan.de",0],["mixed.de",0],["fachwerk.de",0],["sbermarket.ru",1],["nusantararom.org",2],["unidivers.fr",3],["neilpatel.com",4]]);
+const hostnamesMap = new Map([["radsport-news.com",0],["enduro-mtb.com",0],["vampster.com",0],["granfondo-cycling.com",0],["deutschlandistvegan.de",0],["mixed.de",0],["fachwerk.de",0],["sbermarket.ru",1],["nusantararom.org",2],["unidivers.fr",3],["nsmb.com",3],["neilpatel.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -298,7 +298,10 @@ function safeSelf() {
         'Math_max': Math.max,
         'Math_min': Math.min,
         'Math_random': Math.random,
+        'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_fromEntries': Object.fromEntries.bind(Object),
+        'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
@@ -380,7 +383,7 @@ function safeSelf() {
                 }
                 return out;
             }, []);
-            return Object.fromEntries(entries);
+            return this.Object_fromEntries(entries);
         },
     };
     scriptletGlobals.set('safeSelf', safe);

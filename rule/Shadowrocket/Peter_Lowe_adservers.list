@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 12 Jan 2024 09:21:05 GMT
-# entries:        3782
+# last updated:   Mon, 15 Jan 2024 09:34:46 GMT
+# entries:        3785
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1194,6 +1194,7 @@ DOMAIN-SUFFIX,bigclicks.com, reject
 DOMAIN-SUFFIX,bigreal.org, reject
 DOMAIN-SUFFIX,bikesboard.com, reject
 DOMAIN-SUFFIX,billboard.cz, reject
+DOMAIN-SUFFIX,birthdaybelief.com, reject
 DOMAIN-SUFFIX,bitmedianetwork.com, reject
 DOMAIN-SUFFIX,bizible.com, reject
 DOMAIN-SUFFIX,bizographics.com, reject
@@ -1460,6 +1461,7 @@ DOMAIN-SUFFIX,compiledoctor.com, reject
 DOMAIN-SUFFIX,completecabbage.com, reject
 DOMAIN-SUFFIX,complextoad.com, reject
 DOMAIN-SUFFIX,comprabanner.it, reject
+DOMAIN-SUFFIX,concernedchange.com, reject
 DOMAIN-SUFFIX,concernedcondition.com, reject
 DOMAIN-SUFFIX,conditionchange.com, reject
 DOMAIN-SUFFIX,conductrics.com, reject
@@ -2698,6 +2700,7 @@ DOMAIN-SUFFIX,pixel.watch, reject
 DOMAIN-SUFFIX,pixel.yabidos.com, reject
 DOMAIN-SUFFIX,placed.com, reject
 DOMAIN-SUFFIX,placeframe.com, reject
+DOMAIN-SUFFIX,placidactivity.com, reject
 DOMAIN-SUFFIX,plausibleio.workers.dev, reject
 DOMAIN-SUFFIX,play4traffic.com, reject
 DOMAIN-SUFFIX,playhaven.com, reject

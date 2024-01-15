@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401141301
+## ! Version: 202401151530
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Jan 2024 13:01 UTC
+## ! Last modified: 15 Jan 2024 15:30 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -603,6 +603,7 @@ DOMAIN-SUFFIX,bewilderedblade.com, reject
 DOMAIN-SUFFIX,bikesboard.com, reject
 DOMAIN-SUFFIX,billowybead.com, reject
 DOMAIN-SUFFIX,billowybelief.com, reject
+DOMAIN-SUFFIX,birthdaybelief.com, reject
 DOMAIN-SUFFIX,bitterbear.com, reject
 DOMAIN-SUFFIX,blackbrake.com, reject
 DOMAIN-SUFFIX,bleachbubble.com, reject
@@ -1505,6 +1506,7 @@ DOMAIN-SUFFIX,piquantprice.com, reject
 DOMAIN-SUFFIX,piquantstove.com, reject
 DOMAIN-SUFFIX,pizzasnut.com, reject
 DOMAIN-SUFFIX,placeframe.com, reject
+DOMAIN-SUFFIX,placidactivity.com, reject
 DOMAIN-SUFFIX,placidperson.com, reject
 DOMAIN-SUFFIX,plainplayground.com, reject
 DOMAIN-SUFFIX,plainrequest.com, reject
@@ -1735,6 +1737,7 @@ DOMAIN-SUFFIX,screechingfurniture.com, reject
 DOMAIN-SUFFIX,screechingslip.com, reject
 DOMAIN-SUFFIX,screechingstocking.com, reject
 DOMAIN-SUFFIX,screechingstove.com, reject
+DOMAIN-SUFFIX,scribbleson.com, reject
 DOMAIN-SUFFIX,scribblestring.com, reject
 DOMAIN-SUFFIX,scrollservice.com, reject
 DOMAIN-SUFFIX,scrubswim.com, reject
@@ -1833,6 +1836,7 @@ DOMAIN-SUFFIX,smilingwaves.com, reject
 DOMAIN-SUFFIX,smoggysnakes.com, reject
 DOMAIN-SUFFIX,smoggysongs.com, reject
 DOMAIN-SUFFIX,smoggystation.com, reject
+DOMAIN-SUFFIX,snailscart.com, reject
 DOMAIN-SUFFIX,snailsengine.com, reject
 DOMAIN-SUFFIX,snakemineral.com, reject
 DOMAIN-SUFFIX,snakeslang.com, reject
@@ -4046,6 +4050,7 @@ DOMAIN-SUFFIX,analytics.hashnode.com, reject
 DOMAIN-SUFFIX,analytics.kaggle.io, reject
 DOMAIN-SUFFIX,analytics.kooapp.com, reject
 DOMAIN-SUFFIX,analytics.makeitmeme.com, reject
+DOMAIN-SUFFIX,analytics.maxroll.gg, reject
 DOMAIN-SUFFIX,analytics.ml.homedepot.ca, reject
 DOMAIN-SUFFIX,analytics.mouthshut.com, reject
 DOMAIN-SUFFIX,analytics.nike.com, reject

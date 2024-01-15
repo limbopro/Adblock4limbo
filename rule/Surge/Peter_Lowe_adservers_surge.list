@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 12 Jan 2024 09:21:05 GMT
-# entries:        3782
+# last updated:   Mon, 15 Jan 2024 09:34:46 GMT
+# entries:        3785
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1194,6 +1194,7 @@ DOMAIN-SUFFIX,bigclicks.com
 DOMAIN-SUFFIX,bigreal.org
 DOMAIN-SUFFIX,bikesboard.com
 DOMAIN-SUFFIX,billboard.cz
+DOMAIN-SUFFIX,birthdaybelief.com
 DOMAIN-SUFFIX,bitmedianetwork.com
 DOMAIN-SUFFIX,bizible.com
 DOMAIN-SUFFIX,bizographics.com
@@ -1460,6 +1461,7 @@ DOMAIN-SUFFIX,compiledoctor.com
 DOMAIN-SUFFIX,completecabbage.com
 DOMAIN-SUFFIX,complextoad.com
 DOMAIN-SUFFIX,comprabanner.it
+DOMAIN-SUFFIX,concernedchange.com
 DOMAIN-SUFFIX,concernedcondition.com
 DOMAIN-SUFFIX,conditionchange.com
 DOMAIN-SUFFIX,conductrics.com
@@ -2698,6 +2700,7 @@ DOMAIN-SUFFIX,pixel.watch
 DOMAIN-SUFFIX,pixel.yabidos.com
 DOMAIN-SUFFIX,placed.com
 DOMAIN-SUFFIX,placeframe.com
+DOMAIN-SUFFIX,placidactivity.com
 DOMAIN-SUFFIX,plausibleio.workers.dev
 DOMAIN-SUFFIX,play4traffic.com
 DOMAIN-SUFFIX,playhaven.com

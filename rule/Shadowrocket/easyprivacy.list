@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401151530
+## ! Version: 202401161448
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Jan 2024 15:30 UTC
+## ! Last modified: 16 Jan 2024 14:48 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3620,6 +3620,7 @@ DOMAIN-SUFFIX,tracking.ecookie.fr, reject
 DOMAIN-SUFFIX,tracking.kdata.fr, reject
 DOMAIN-SUFFIX,tracking.lqm.io, reject
 DOMAIN-SUFFIX,tracking.netvigie.com, reject
+DOMAIN-SUFFIX,tracking.voxeus.com, reject
 DOMAIN-SUFFIX,trk.a-dsp.com, reject
 DOMAIN-SUFFIX,trk.adbutter.net, reject
 DOMAIN-SUFFIX,visitping.rossel.be, reject
@@ -3962,6 +3963,7 @@ DOMAIN-SUFFIX,ab.blogs.es, reject
 DOMAIN-SUFFIX,analitica.webrpp.com, reject
 DOMAIN-SUFFIX,analytics.lasegunda.ecn.cl, reject
 DOMAIN-SUFFIX,analytics.neoogilvy.uy, reject
+DOMAIN-SUFFIX,bpt.webedia-group.com, reject
 DOMAIN-SUFFIX,collector-videoplayer.5centscdn.net, reject
 DOMAIN-SUFFIX,contadores.miarroba.com, reject
 DOMAIN-SUFFIX,contadores.miarroba.es, reject

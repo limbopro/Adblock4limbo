@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.3.12.08
+// @version      0.4.01.16
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -94,6 +94,7 @@
 // @match        https://t.me/*
 // @match        https://tameikegoro.jp/
 // @match        https://njav.tv/
+// @match        https://www.ntdm9.com/
 // @match        https://*/*
 // @exclude      https://limbopro.com/*
 // @exclude      https://limbopro.com/*
@@ -248,6 +249,7 @@ var imax = {
         javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
         douban: "*{display:none!important}",
         olevod: "#adsbox, .ads-bg {display:none!important}",
+        ntdm9: "#adsbox, iframe {display:none!important}",
         njav: "iframe[width='300px'] {display:none!important}",
         //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
@@ -302,6 +304,7 @@ function values() {
         'twitter',
         'olevod',
         'njav',
+        'ntdm9',
         "zhihu"
     ]
 
@@ -460,6 +463,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'nbys':
             css_adsRemove(imax.css.nivod);
+            break;
+        case 'ntdm9':
+            css_adsRemove(imax.css.ntdm9);
             break;
         case 'tvn':
             css_adsRemove(imax.css.tvn)

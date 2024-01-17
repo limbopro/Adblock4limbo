@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401161448
+## ! Version: 202401171521
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Jan 2024 14:48 UTC
+## ! Last modified: 17 Jan 2024 15:21 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4112,8 +4112,6 @@ DOMAIN-SUFFIX,client-metrics.chess.com
 DOMAIN-SUFFIX,clp-mms.cloudpro.co.uk
 DOMAIN-SUFFIX,cm-mms.coachmag.co.uk
 DOMAIN-SUFFIX,cm.nordvpn.com
-DOMAIN-SUFFIX,cmpworker.dotesports.com
-DOMAIN-SUFFIX,cmpworker.primagames.com
 DOMAIN-SUFFIX,cnt.hd21.com
 DOMAIN-SUFFIX,cnt.iceporn.com
 DOMAIN-SUFFIX,cnt.viptube.com
@@ -7509,6 +7507,7 @@ DOMAIN-SUFFIX,aa.dyson.co.uk
 DOMAIN-SUFFIX,aa.dyson.com
 DOMAIN-SUFFIX,aa.dyson.de
 DOMAIN-SUFFIX,aa.dyson.dk
+DOMAIN-SUFFIX,aa.dyson.es
 DOMAIN-SUFFIX,aa.maxblue.de
 DOMAIN-SUFFIX,aa.norisbank.de
 DOMAIN-SUFFIX,aa.postbank.de
@@ -7525,6 +7524,7 @@ DOMAIN-SUFFIX,academics.academicsuperstore.com
 DOMAIN-SUFFIX,acs.woolworths.com.au
 DOMAIN-SUFFIX,activity.newlook.com
 DOMAIN-SUFFIX,adb-analytics.live-now.com
+DOMAIN-SUFFIX,adbmetrics.koreanair.com
 DOMAIN-SUFFIX,adbmetrics.larioja.com
 DOMAIN-SUFFIX,adbmetrics.lasprovincias.es
 DOMAIN-SUFFIX,adbmetrics.laverdad.es
@@ -8426,6 +8426,7 @@ DOMAIN-SUFFIX,dii3.zooplus.gr
 DOMAIN-SUFFIX,dii3.zooplus.hr
 DOMAIN-SUFFIX,dii3.zooplus.hu
 DOMAIN-SUFFIX,dii3.zooplus.ie
+DOMAIN-SUFFIX,dii3.zooplus.it
 DOMAIN-SUFFIX,eagle.kudzu.com
 DOMAIN-SUFFIX,electronics.sony-latin.com
 DOMAIN-SUFFIX,emetrics.bose.ca
@@ -9185,6 +9186,7 @@ DOMAIN-SUFFIX,metrics.fortune.com
 DOMAIN-SUFFIX,metrics.fressnapf.ch
 DOMAIN-SUFFIX,metrics.friskies.com
 DOMAIN-SUFFIX,metrics.ftd.com
+DOMAIN-SUFFIX,metrics.galicia.ar
 DOMAIN-SUFFIX,metrics.gap.com
 DOMAIN-SUFFIX,metrics.genesis.es
 DOMAIN-SUFFIX,metrics.gengraf.com
@@ -9557,6 +9559,7 @@ DOMAIN-SUFFIX,metrics.rbcgam.com
 DOMAIN-SUFFIX,metrics.rci.com
 DOMAIN-SUFFIX,metrics.rcsmetrics.it
 DOMAIN-SUFFIX,metrics.realclearpolitics.com
+DOMAIN-SUFFIX,metrics.reallymoving.com
 DOMAIN-SUFFIX,metrics.realpropertymgt.com
 DOMAIN-SUFFIX,metrics.realsimple.com
 DOMAIN-SUFFIX,metrics.realtor.com
@@ -23989,6 +23992,8 @@ DOMAIN-SUFFIX,images.constellation.quintiles.com
 DOMAIN-SUFFIX,images.contact.cigna.com
 DOMAIN-SUFFIX,images.contact.princess.com
 DOMAIN-SUFFIX,images.contact.staubli.com
+DOMAIN-SUFFIX,images.contacto.unis.edu.gt
+DOMAIN-SUFFIX,images.e.seagate.com
 DOMAIN-SUFFIX,images.e.skandia.pl
 DOMAIN-SUFFIX,images.e.tcichemicals.com
 DOMAIN-SUFFIX,images.e.transunion.com
@@ -24573,6 +24578,7 @@ DOMAIN-SUFFIX,mail.dolce-gusto.com.au
 DOMAIN-SUFFIX,mail.dolce-gusto.com.my
 DOMAIN-SUFFIX,mail.dolce-gusto.com.sg
 DOMAIN-SUFFIX,mail.dolce-gusto.com.tw
+DOMAIN-SUFFIX,mail.dolce-gusto.cz
 DOMAIN-SUFFIX,mail.hsm.co.uk
 DOMAIN-SUFFIX,making-future.afry.com
 DOMAIN-SUFFIX,marketing-ap.mmc.co.jp
@@ -24755,6 +24761,9 @@ DOMAIN-SUFFIX,organizations.stratfor.com
 DOMAIN-SUFFIX,origin.www.images.2.forms.healthcare.philips.com
 DOMAIN-SUFFIX,our.sunshinecoast.qld.gov.au
 DOMAIN-SUFFIX,outsource.sitel.com
+DOMAIN-SUFFIX,owp-hk.americanexpress.com
+DOMAIN-SUFFIX,owp-sg-prop.americanexpress.com
+DOMAIN-SUFFIX,owp-tw.americanexpress.com
 DOMAIN-SUFFIX,p01.sc.origins.en25.com
 DOMAIN-SUFFIX,p03.sc.origins.en25.com
 DOMAIN-SUFFIX,p04.sc.origins.en25.com
@@ -25955,6 +25964,7 @@ DOMAIN-SUFFIX,trk.designcon.com
 DOMAIN-SUFFIX,trk.designnews.com
 DOMAIN-SUFFIX,trk.digitaltveurope.com
 DOMAIN-SUFFIX,trk.dosatron.com
+DOMAIN-SUFFIX,trk.drdobbs.com
 DOMAIN-SUFFIX,trk.du-darfst.de
 DOMAIN-SUFFIX,trk.dvsystems.com
 DOMAIN-SUFFIX,trk.e.chooseumpquabank.com

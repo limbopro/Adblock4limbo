@@ -249,7 +249,7 @@ var imax = {
         javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
         douban: "*{display:none!important}",
         olevod: "#adsbox, .ads-bg {display:none!important}",
-        ntdm9: "#adsbox, iframe {display:none!important}",
+        ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
         njav: "iframe[width='300px'] {display:none!important}",
         //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
@@ -466,6 +466,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'ntdm9':
             css_adsRemove(imax.css.ntdm9);
+            const a = document.getElementsByClassName("yammohxz_b");
+            addEventListener_defuser("touchend"); // 打断监听器
+
+            for (i = 0; i < a.length; i++) {
+                a[i].style = "display: none !important; z-index:-114154; display:block; width:0vw; height:0";
+            }
+            
             break;
         case 'tvn':
             css_adsRemove(imax.css.tvn)

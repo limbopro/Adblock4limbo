@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401161448
+## ! Version: 202401171521
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Jan 2024 14:48 UTC
+## ! Last modified: 17 Jan 2024 15:21 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4112,8 +4112,6 @@ DOMAIN-SUFFIX,client-metrics.chess.com, reject
 DOMAIN-SUFFIX,clp-mms.cloudpro.co.uk, reject
 DOMAIN-SUFFIX,cm-mms.coachmag.co.uk, reject
 DOMAIN-SUFFIX,cm.nordvpn.com, reject
-DOMAIN-SUFFIX,cmpworker.dotesports.com, reject
-DOMAIN-SUFFIX,cmpworker.primagames.com, reject
 DOMAIN-SUFFIX,cnt.hd21.com, reject
 DOMAIN-SUFFIX,cnt.iceporn.com, reject
 DOMAIN-SUFFIX,cnt.viptube.com, reject
@@ -7509,6 +7507,7 @@ DOMAIN-SUFFIX,aa.dyson.co.uk, reject
 DOMAIN-SUFFIX,aa.dyson.com, reject
 DOMAIN-SUFFIX,aa.dyson.de, reject
 DOMAIN-SUFFIX,aa.dyson.dk, reject
+DOMAIN-SUFFIX,aa.dyson.es, reject
 DOMAIN-SUFFIX,aa.maxblue.de, reject
 DOMAIN-SUFFIX,aa.norisbank.de, reject
 DOMAIN-SUFFIX,aa.postbank.de, reject
@@ -7525,6 +7524,7 @@ DOMAIN-SUFFIX,academics.academicsuperstore.com, reject
 DOMAIN-SUFFIX,acs.woolworths.com.au, reject
 DOMAIN-SUFFIX,activity.newlook.com, reject
 DOMAIN-SUFFIX,adb-analytics.live-now.com, reject
+DOMAIN-SUFFIX,adbmetrics.koreanair.com, reject
 DOMAIN-SUFFIX,adbmetrics.larioja.com, reject
 DOMAIN-SUFFIX,adbmetrics.lasprovincias.es, reject
 DOMAIN-SUFFIX,adbmetrics.laverdad.es, reject
@@ -8426,6 +8426,7 @@ DOMAIN-SUFFIX,dii3.zooplus.gr, reject
 DOMAIN-SUFFIX,dii3.zooplus.hr, reject
 DOMAIN-SUFFIX,dii3.zooplus.hu, reject
 DOMAIN-SUFFIX,dii3.zooplus.ie, reject
+DOMAIN-SUFFIX,dii3.zooplus.it, reject
 DOMAIN-SUFFIX,eagle.kudzu.com, reject
 DOMAIN-SUFFIX,electronics.sony-latin.com, reject
 DOMAIN-SUFFIX,emetrics.bose.ca, reject
@@ -9185,6 +9186,7 @@ DOMAIN-SUFFIX,metrics.fortune.com, reject
 DOMAIN-SUFFIX,metrics.fressnapf.ch, reject
 DOMAIN-SUFFIX,metrics.friskies.com, reject
 DOMAIN-SUFFIX,metrics.ftd.com, reject
+DOMAIN-SUFFIX,metrics.galicia.ar, reject
 DOMAIN-SUFFIX,metrics.gap.com, reject
 DOMAIN-SUFFIX,metrics.genesis.es, reject
 DOMAIN-SUFFIX,metrics.gengraf.com, reject
@@ -9557,6 +9559,7 @@ DOMAIN-SUFFIX,metrics.rbcgam.com, reject
 DOMAIN-SUFFIX,metrics.rci.com, reject
 DOMAIN-SUFFIX,metrics.rcsmetrics.it, reject
 DOMAIN-SUFFIX,metrics.realclearpolitics.com, reject
+DOMAIN-SUFFIX,metrics.reallymoving.com, reject
 DOMAIN-SUFFIX,metrics.realpropertymgt.com, reject
 DOMAIN-SUFFIX,metrics.realsimple.com, reject
 DOMAIN-SUFFIX,metrics.realtor.com, reject
@@ -23989,6 +23992,8 @@ DOMAIN-SUFFIX,images.constellation.quintiles.com, reject
 DOMAIN-SUFFIX,images.contact.cigna.com, reject
 DOMAIN-SUFFIX,images.contact.princess.com, reject
 DOMAIN-SUFFIX,images.contact.staubli.com, reject
+DOMAIN-SUFFIX,images.contacto.unis.edu.gt, reject
+DOMAIN-SUFFIX,images.e.seagate.com, reject
 DOMAIN-SUFFIX,images.e.skandia.pl, reject
 DOMAIN-SUFFIX,images.e.tcichemicals.com, reject
 DOMAIN-SUFFIX,images.e.transunion.com, reject
@@ -24573,6 +24578,7 @@ DOMAIN-SUFFIX,mail.dolce-gusto.com.au, reject
 DOMAIN-SUFFIX,mail.dolce-gusto.com.my, reject
 DOMAIN-SUFFIX,mail.dolce-gusto.com.sg, reject
 DOMAIN-SUFFIX,mail.dolce-gusto.com.tw, reject
+DOMAIN-SUFFIX,mail.dolce-gusto.cz, reject
 DOMAIN-SUFFIX,mail.hsm.co.uk, reject
 DOMAIN-SUFFIX,making-future.afry.com, reject
 DOMAIN-SUFFIX,marketing-ap.mmc.co.jp, reject
@@ -24755,6 +24761,9 @@ DOMAIN-SUFFIX,organizations.stratfor.com, reject
 DOMAIN-SUFFIX,origin.www.images.2.forms.healthcare.philips.com, reject
 DOMAIN-SUFFIX,our.sunshinecoast.qld.gov.au, reject
 DOMAIN-SUFFIX,outsource.sitel.com, reject
+DOMAIN-SUFFIX,owp-hk.americanexpress.com, reject
+DOMAIN-SUFFIX,owp-sg-prop.americanexpress.com, reject
+DOMAIN-SUFFIX,owp-tw.americanexpress.com, reject
 DOMAIN-SUFFIX,p01.sc.origins.en25.com, reject
 DOMAIN-SUFFIX,p03.sc.origins.en25.com, reject
 DOMAIN-SUFFIX,p04.sc.origins.en25.com, reject
@@ -25955,6 +25964,7 @@ DOMAIN-SUFFIX,trk.designcon.com, reject
 DOMAIN-SUFFIX,trk.designnews.com, reject
 DOMAIN-SUFFIX,trk.digitaltveurope.com, reject
 DOMAIN-SUFFIX,trk.dosatron.com, reject
+DOMAIN-SUFFIX,trk.drdobbs.com, reject
 DOMAIN-SUFFIX,trk.du-darfst.de, reject
 DOMAIN-SUFFIX,trk.dvsystems.com, reject
 DOMAIN-SUFFIX,trk.e.chooseumpquabank.com, reject

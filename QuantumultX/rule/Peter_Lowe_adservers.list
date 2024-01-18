@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 15 Jan 2024 09:34:46 GMT
-# entries:        3785
+# last updated:   Thu, 18 Jan 2024 07:28:57 GMT
+# entries:        3786
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2730,6 +2730,7 @@ DOMAIN-SUFFIX,porngraph.com, reject
 DOMAIN-SUFFIX,porntrack.com, reject
 DOMAIN-SUFFIX,possessivebucket.com, reject
 DOMAIN-SUFFIX,possibleboats.com, reject
+DOMAIN-SUFFIX,possiblepencil.com, reject
 DOMAIN-SUFFIX,post.spmailtechno.com, reject
 DOMAIN-SUFFIX,postback.iqm.com, reject
 DOMAIN-SUFFIX,postrelease.com, reject

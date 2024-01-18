@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401171521
+## ! Version: 202401181457
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 Jan 2024 15:21 UTC
+## ! Last modified: 18 Jan 2024 14:57 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1538,6 +1538,7 @@ DOMAIN-SUFFIX,popcornfood.com, reject
 DOMAIN-SUFFIX,popplantation.com, reject
 DOMAIN-SUFFIX,possessivebucket.com, reject
 DOMAIN-SUFFIX,possibleboats.com, reject
+DOMAIN-SUFFIX,possiblepencil.com, reject
 DOMAIN-SUFFIX,potatoinvention.com, reject
 DOMAIN-SUFFIX,powderjourney.com, reject
 DOMAIN-SUFFIX,powderprofit.com, reject
@@ -2612,6 +2613,7 @@ DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com, reject
 DOMAIN-SUFFIX,doug1izaerwt3.cloudfront.net, reject
 DOMAIN-SUFFIX,dx.mountain.com, reject
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com, reject
+DOMAIN-SUFFIX,e.channelexco.com, reject
 DOMAIN-SUFFIX,e.htplayground.com, reject
 DOMAIN-SUFFIX,e.metarouter.io, reject
 DOMAIN-SUFFIX,ea.youmaker.com, reject
@@ -32281,10 +32283,12 @@ DOMAIN-SUFFIX,views.b1tv.ro, reject
 DOMAIN-SUFFIX,views.romaniatv.net, reject
 DOMAIN-SUFFIX,a.mts.ru, reject
 DOMAIN-SUFFIX,a.pikabu.ru, reject
+DOMAIN-SUFFIX,a.ria.ru, reject
 DOMAIN-SUFFIX,ad7.bigmir.net, reject
 DOMAIN-SUFFIX,affilate.hh.ru, reject
 DOMAIN-SUFFIX,analytics.carambatv.ru, reject
 DOMAIN-SUFFIX,c.sibnet.ru, reject
+DOMAIN-SUFFIX,clck.dzen.ru, reject
 DOMAIN-SUFFIX,counter.drom.ru, reject
 DOMAIN-SUFFIX,counter.sibnet.ru, reject
 DOMAIN-SUFFIX,cpa.hh.ru, reject
@@ -32293,9 +32297,11 @@ DOMAIN-SUFFIX,cvt1.sibnet.ru, reject
 DOMAIN-SUFFIX,data.glamour.ru, reject
 DOMAIN-SUFFIX,goya.rutube.ru, reject
 DOMAIN-SUFFIX,link.subscribe.ru, reject
+DOMAIN-SUFFIX,log.dzen.ru, reject
 DOMAIN-SUFFIX,log.ren.tv, reject
 DOMAIN-SUFFIX,log.rutube.ru, reject
 DOMAIN-SUFFIX,metrika.kontur.ru, reject
+DOMAIN-SUFFIX,ms.dzen.ru, reject
 DOMAIN-SUFFIX,pixels.boxberry.ru, reject
 DOMAIN-SUFFIX,radar.imgsmail.ru, reject
 DOMAIN-SUFFIX,ssp.rambler.ru, reject

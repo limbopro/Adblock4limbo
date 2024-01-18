@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401171521
+## ! Version: 202401181457
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 Jan 2024 15:21 UTC
+## ! Last modified: 18 Jan 2024 14:57 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1538,6 +1538,7 @@ DOMAIN-SUFFIX,popcornfood.com
 DOMAIN-SUFFIX,popplantation.com
 DOMAIN-SUFFIX,possessivebucket.com
 DOMAIN-SUFFIX,possibleboats.com
+DOMAIN-SUFFIX,possiblepencil.com
 DOMAIN-SUFFIX,potatoinvention.com
 DOMAIN-SUFFIX,powderjourney.com
 DOMAIN-SUFFIX,powderprofit.com
@@ -2612,6 +2613,7 @@ DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com
 DOMAIN-SUFFIX,doug1izaerwt3.cloudfront.net
 DOMAIN-SUFFIX,dx.mountain.com
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com
+DOMAIN-SUFFIX,e.channelexco.com
 DOMAIN-SUFFIX,e.htplayground.com
 DOMAIN-SUFFIX,e.metarouter.io
 DOMAIN-SUFFIX,ea.youmaker.com
@@ -32281,10 +32283,12 @@ DOMAIN-SUFFIX,views.b1tv.ro
 DOMAIN-SUFFIX,views.romaniatv.net
 DOMAIN-SUFFIX,a.mts.ru
 DOMAIN-SUFFIX,a.pikabu.ru
+DOMAIN-SUFFIX,a.ria.ru
 DOMAIN-SUFFIX,ad7.bigmir.net
 DOMAIN-SUFFIX,affilate.hh.ru
 DOMAIN-SUFFIX,analytics.carambatv.ru
 DOMAIN-SUFFIX,c.sibnet.ru
+DOMAIN-SUFFIX,clck.dzen.ru
 DOMAIN-SUFFIX,counter.drom.ru
 DOMAIN-SUFFIX,counter.sibnet.ru
 DOMAIN-SUFFIX,cpa.hh.ru
@@ -32293,9 +32297,11 @@ DOMAIN-SUFFIX,cvt1.sibnet.ru
 DOMAIN-SUFFIX,data.glamour.ru
 DOMAIN-SUFFIX,goya.rutube.ru
 DOMAIN-SUFFIX,link.subscribe.ru
+DOMAIN-SUFFIX,log.dzen.ru
 DOMAIN-SUFFIX,log.ren.tv
 DOMAIN-SUFFIX,log.rutube.ru
 DOMAIN-SUFFIX,metrika.kontur.ru
+DOMAIN-SUFFIX,ms.dzen.ru
 DOMAIN-SUFFIX,pixels.boxberry.ru
 DOMAIN-SUFFIX,radar.imgsmail.ru
 DOMAIN-SUFFIX,ssp.rambler.ru

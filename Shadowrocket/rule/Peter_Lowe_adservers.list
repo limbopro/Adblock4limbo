@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 18 Jan 2024 07:28:57 GMT
-# entries:        3786
+# entries:        3781
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -68,7 +68,6 @@ DOMAIN-SUFFIX,aaxads.com, reject
 DOMAIN-SUFFIX,abacho.net, reject
 DOMAIN-SUFFIX,abackafterthought.com, reject
 DOMAIN-SUFFIX,abackchain.com, reject
-DOMAIN-SUFFIX,abackframe.com, reject
 DOMAIN-SUFFIX,abandonedaction.com, reject
 DOMAIN-SUFFIX,abc-ads.com, reject
 DOMAIN-SUFFIX,ablink.comms.trainline.com, reject
@@ -813,7 +812,6 @@ DOMAIN-SUFFIX,adsrv.moebelmarkt.tv, reject
 DOMAIN-SUFFIX,adsrv2.swidnica24.pl, reject
 DOMAIN-SUFFIX,adsrvr.org, reject
 DOMAIN-SUFFIX,adstacks.in, reject
-DOMAIN-SUFFIX,adstanding.com, reject
 DOMAIN-SUFFIX,adstat.4u.pl, reject
 DOMAIN-SUFFIX,adstest.weather.com, reject
 DOMAIN-SUFFIX,adsupply.com, reject
@@ -1578,7 +1576,6 @@ DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
 DOMAIN-SUFFIX,deadpangate.com, reject
-DOMAIN-SUFFIX,deadpanmarble.com, reject
 DOMAIN-SUFFIX,dealdotcom.com, reject
 DOMAIN-SUFFIX,debonairway.com, reject
 DOMAIN-SUFFIX,debtbusterloans.com, reject
@@ -1683,7 +1680,6 @@ DOMAIN-SUFFIX,efficaciouscactus.com, reject
 DOMAIN-SUFFIX,eiv.baidu.com, reject
 DOMAIN-SUFFIX,ejyymghi.com, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
-DOMAIN-SUFFIX,elasticducks.com, reject
 DOMAIN-SUFFIX,elderlyscissors.com, reject
 DOMAIN-SUFFIX,elderlytown.com, reject
 DOMAIN-SUFFIX,elephantqueue.com, reject
@@ -1757,6 +1753,7 @@ DOMAIN-SUFFIX,exampleshake.com, reject
 DOMAIN-SUFFIX,exchange-it.com, reject
 DOMAIN-SUFFIX,exchangead.com, reject
 DOMAIN-SUFFIX,exchangeclicksonline.com, reject
+DOMAIN-SUFFIX,exchangedetail.com, reject
 DOMAIN-SUFFIX,exclusivebrass.com, reject
 DOMAIN-SUFFIX,exelate.com, reject
 DOMAIN-SUFFIX,exelator.com, reject
@@ -2513,6 +2510,7 @@ DOMAIN-SUFFIX,newads.bangbros.com, reject
 DOMAIN-SUFFIX,newnet.qsrch.com, reject
 DOMAIN-SUFFIX,newnudecash.com, reject
 DOMAIN-SUFFIX,newopenx.detik.com, reject
+DOMAIN-SUFFIX,newsadsppush.com, reject
 DOMAIN-SUFFIX,newsletter-link.com, reject
 DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
@@ -2830,7 +2828,6 @@ DOMAIN-SUFFIX,quantserve.com, reject
 DOMAIN-SUFFIX,quantummetric.com, reject
 DOMAIN-SUFFIX,quarterbean.com, reject
 DOMAIN-SUFFIX,quarterserver.de, reject
-DOMAIN-SUFFIX,questaffiliates.net, reject
 DOMAIN-SUFFIX,quickkoala.io, reject
 DOMAIN-SUFFIX,quicksandear.com, reject
 DOMAIN-SUFFIX,quietknowledge.com, reject
@@ -3025,7 +3022,6 @@ DOMAIN-SUFFIX,sdkfjxjertertry.com, reject
 DOMAIN-SUFFIX,seadform.net, reject
 DOMAIN-SUFFIX,searchmarketing.com, reject
 DOMAIN-SUFFIX,searchramp.com, reject
-DOMAIN-SUFFIX,seashoreturn.com, reject
 DOMAIN-SUFFIX,secre.jp, reject
 DOMAIN-SUFFIX,secretivecub.com, reject
 DOMAIN-SUFFIX,secretspiders.com, reject
@@ -3765,7 +3761,6 @@ DOMAIN-SUFFIX,yieldmanager.net, reject
 DOMAIN-SUFFIX,yieldmo.com, reject
 DOMAIN-SUFFIX,yieldoptimizer.com, reject
 DOMAIN-SUFFIX,yieldtraffic.com, reject
-DOMAIN-SUFFIX,yldbt.com, reject
 DOMAIN-SUFFIX,ymetrica1.com, reject
 DOMAIN-SUFFIX,yoads.net, reject
 DOMAIN-SUFFIX,yoggrt.com, reject

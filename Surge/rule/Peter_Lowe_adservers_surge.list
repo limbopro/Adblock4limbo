@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 18 Jan 2024 07:28:57 GMT
-# entries:        3786
+# entries:        3781
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -68,7 +68,6 @@ DOMAIN-SUFFIX,aaxads.com
 DOMAIN-SUFFIX,abacho.net
 DOMAIN-SUFFIX,abackafterthought.com
 DOMAIN-SUFFIX,abackchain.com
-DOMAIN-SUFFIX,abackframe.com
 DOMAIN-SUFFIX,abandonedaction.com
 DOMAIN-SUFFIX,abc-ads.com
 DOMAIN-SUFFIX,ablink.comms.trainline.com
@@ -813,7 +812,6 @@ DOMAIN-SUFFIX,adsrv.moebelmarkt.tv
 DOMAIN-SUFFIX,adsrv2.swidnica24.pl
 DOMAIN-SUFFIX,adsrvr.org
 DOMAIN-SUFFIX,adstacks.in
-DOMAIN-SUFFIX,adstanding.com
 DOMAIN-SUFFIX,adstat.4u.pl
 DOMAIN-SUFFIX,adstest.weather.com
 DOMAIN-SUFFIX,adsupply.com
@@ -1578,7 +1576,6 @@ DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
 DOMAIN-SUFFIX,deadpangate.com
-DOMAIN-SUFFIX,deadpanmarble.com
 DOMAIN-SUFFIX,dealdotcom.com
 DOMAIN-SUFFIX,debonairway.com
 DOMAIN-SUFFIX,debtbusterloans.com
@@ -1683,7 +1680,6 @@ DOMAIN-SUFFIX,efficaciouscactus.com
 DOMAIN-SUFFIX,eiv.baidu.com
 DOMAIN-SUFFIX,ejyymghi.com
 DOMAIN-SUFFIX,elasticchange.com
-DOMAIN-SUFFIX,elasticducks.com
 DOMAIN-SUFFIX,elderlyscissors.com
 DOMAIN-SUFFIX,elderlytown.com
 DOMAIN-SUFFIX,elephantqueue.com
@@ -1757,6 +1753,7 @@ DOMAIN-SUFFIX,exampleshake.com
 DOMAIN-SUFFIX,exchange-it.com
 DOMAIN-SUFFIX,exchangead.com
 DOMAIN-SUFFIX,exchangeclicksonline.com
+DOMAIN-SUFFIX,exchangedetail.com
 DOMAIN-SUFFIX,exclusivebrass.com
 DOMAIN-SUFFIX,exelate.com
 DOMAIN-SUFFIX,exelator.com
@@ -2513,6 +2510,7 @@ DOMAIN-SUFFIX,newads.bangbros.com
 DOMAIN-SUFFIX,newnet.qsrch.com
 DOMAIN-SUFFIX,newnudecash.com
 DOMAIN-SUFFIX,newopenx.detik.com
+DOMAIN-SUFFIX,newsadsppush.com
 DOMAIN-SUFFIX,newsletter-link.com
 DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
@@ -2830,7 +2828,6 @@ DOMAIN-SUFFIX,quantserve.com
 DOMAIN-SUFFIX,quantummetric.com
 DOMAIN-SUFFIX,quarterbean.com
 DOMAIN-SUFFIX,quarterserver.de
-DOMAIN-SUFFIX,questaffiliates.net
 DOMAIN-SUFFIX,quickkoala.io
 DOMAIN-SUFFIX,quicksandear.com
 DOMAIN-SUFFIX,quietknowledge.com
@@ -3025,7 +3022,6 @@ DOMAIN-SUFFIX,sdkfjxjertertry.com
 DOMAIN-SUFFIX,seadform.net
 DOMAIN-SUFFIX,searchmarketing.com
 DOMAIN-SUFFIX,searchramp.com
-DOMAIN-SUFFIX,seashoreturn.com
 DOMAIN-SUFFIX,secre.jp
 DOMAIN-SUFFIX,secretivecub.com
 DOMAIN-SUFFIX,secretspiders.com
@@ -3765,7 +3761,6 @@ DOMAIN-SUFFIX,yieldmanager.net
 DOMAIN-SUFFIX,yieldmo.com
 DOMAIN-SUFFIX,yieldoptimizer.com
 DOMAIN-SUFFIX,yieldtraffic.com
-DOMAIN-SUFFIX,yldbt.com
 DOMAIN-SUFFIX,ymetrica1.com
 DOMAIN-SUFFIX,yoads.net
 DOMAIN-SUFFIX,yoggrt.com

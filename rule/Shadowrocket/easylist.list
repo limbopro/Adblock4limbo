@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202401191544
+## ! Version: 202401201223
 ## ! Title: EasyList
-## ! Last modified: 19 Jan 2024 15:44 UTC
+## ! Last modified: 20 Jan 2024 12:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1885,6 +1885,7 @@ DOMAIN-SUFFIX,aefeeqdlnh.com, reject
 DOMAIN-SUFFIX,aeffe3nhrua5hua.com, reject
 DOMAIN-SUFFIX,aegiumks.com, reject
 DOMAIN-SUFFIX,aejslgc.com, reject
+DOMAIN-SUFFIX,aekhfdpxcw.com, reject
 DOMAIN-SUFFIX,aembxbxmnuspyr.com, reject
 DOMAIN-SUFFIX,aeneasclosure.website, reject
 DOMAIN-SUFFIX,aerariacongoni.uno, reject
@@ -11584,6 +11585,7 @@ DOMAIN-SUFFIX,gemorul.com, reject
 DOMAIN-SUFFIX,gempeety.com, reject
 DOMAIN-SUFFIX,gempoussee.com, reject
 DOMAIN-SUFFIX,gen-ref.com, reject
+DOMAIN-SUFFIX,genaumsa.net, reject
 DOMAIN-SUFFIX,genbalar.com, reject
 DOMAIN-SUFFIX,generalebad.xyz, reject
 DOMAIN-SUFFIX,generalizebusinessman.com, reject
@@ -15019,6 +15021,7 @@ DOMAIN-SUFFIX,jscount.com, reject
 DOMAIN-SUFFIX,jsdelvr.com, reject
 DOMAIN-SUFFIX,jsfeedadsget.com, reject
 DOMAIN-SUFFIX,jsfrfeuubna.com, reject
+DOMAIN-SUFFIX,jsftfmegwcyhsed.com, reject
 DOMAIN-SUFFIX,jsfuz.com, reject
 DOMAIN-SUFFIX,jsmentry.com, reject
 DOMAIN-SUFFIX,jsmjmp.com, reject
@@ -19782,6 +19785,7 @@ DOMAIN-SUFFIX,ookresit.net, reject
 DOMAIN-SUFFIX,ookroulsaurd.com, reject
 DOMAIN-SUFFIX,ookroush.com, reject
 DOMAIN-SUFFIX,oolassouwa.com, reject
+DOMAIN-SUFFIX,ooloptou.net, reject
 DOMAIN-SUFFIX,ooltutoo.net, reject
 DOMAIN-SUFFIX,oomgnwdmzwnxn.com, reject
 DOMAIN-SUFFIX,oomsijahail.com, reject
@@ -33247,6 +33251,8 @@ DOMAIN-SUFFIX,lw.musictarget.com, reject
 DOMAIN-SUFFIX,mafvertizing.crazygames.com, reject
 DOMAIN-SUFFIX,mail-ads.google.com, reject
 DOMAIN-SUFFIX,montent.powzers.lol, reject
+
+
 DOMAIN-SUFFIX,n.gemini.yahoo.com, reject
 DOMAIN-SUFFIX,nontent.powzers.lol, reject
 DOMAIN-SUFFIX,oontent.powzers.lol, reject

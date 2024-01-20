@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202401191544
+## ! Version: 202401201223
 ## ! Title: EasyList
-## ! Last modified: 19 Jan 2024 15:44 UTC
+## ! Last modified: 20 Jan 2024 12:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1885,6 +1885,7 @@ DOMAIN-SUFFIX,aefeeqdlnh.com
 DOMAIN-SUFFIX,aeffe3nhrua5hua.com
 DOMAIN-SUFFIX,aegiumks.com
 DOMAIN-SUFFIX,aejslgc.com
+DOMAIN-SUFFIX,aekhfdpxcw.com
 DOMAIN-SUFFIX,aembxbxmnuspyr.com
 DOMAIN-SUFFIX,aeneasclosure.website
 DOMAIN-SUFFIX,aerariacongoni.uno
@@ -11584,6 +11585,7 @@ DOMAIN-SUFFIX,gemorul.com
 DOMAIN-SUFFIX,gempeety.com
 DOMAIN-SUFFIX,gempoussee.com
 DOMAIN-SUFFIX,gen-ref.com
+DOMAIN-SUFFIX,genaumsa.net
 DOMAIN-SUFFIX,genbalar.com
 DOMAIN-SUFFIX,generalebad.xyz
 DOMAIN-SUFFIX,generalizebusinessman.com
@@ -15019,6 +15021,7 @@ DOMAIN-SUFFIX,jscount.com
 DOMAIN-SUFFIX,jsdelvr.com
 DOMAIN-SUFFIX,jsfeedadsget.com
 DOMAIN-SUFFIX,jsfrfeuubna.com
+DOMAIN-SUFFIX,jsftfmegwcyhsed.com
 DOMAIN-SUFFIX,jsfuz.com
 DOMAIN-SUFFIX,jsmentry.com
 DOMAIN-SUFFIX,jsmjmp.com
@@ -19782,6 +19785,7 @@ DOMAIN-SUFFIX,ookresit.net
 DOMAIN-SUFFIX,ookroulsaurd.com
 DOMAIN-SUFFIX,ookroush.com
 DOMAIN-SUFFIX,oolassouwa.com
+DOMAIN-SUFFIX,ooloptou.net
 DOMAIN-SUFFIX,ooltutoo.net
 DOMAIN-SUFFIX,oomgnwdmzwnxn.com
 DOMAIN-SUFFIX,oomsijahail.com
@@ -33247,6 +33251,8 @@ DOMAIN-SUFFIX,lw.musictarget.com
 DOMAIN-SUFFIX,mafvertizing.crazygames.com
 DOMAIN-SUFFIX,mail-ads.google.com
 DOMAIN-SUFFIX,montent.powzers.lol
+
+
 DOMAIN-SUFFIX,n.gemini.yahoo.com
 DOMAIN-SUFFIX,nontent.powzers.lol
 DOMAIN-SUFFIX,oontent.powzers.lol

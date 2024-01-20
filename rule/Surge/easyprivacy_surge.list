@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401191544
+## ! Version: 202401201223
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Jan 2024 15:44 UTC
+## ! Last modified: 20 Jan 2024 12:23 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -22285,8 +22285,11 @@ DOMAIN-SUFFIX,xwpoxv.birdies.com
 DOMAIN-SUFFIX,xxjiqg.oysho.com
 DOMAIN-SUFFIX,xxlefq.commentcamarche.net
 DOMAIN-SUFFIX,xxlefq.hugolescargot.com
+DOMAIN-SUFFIX,xxlefq.jeux-gratuits.com
 DOMAIN-SUFFIX,xxlefq.journaldesfemmes.fr
+DOMAIN-SUFFIX,xxlefq.journaldunet.com
 DOMAIN-SUFFIX,xxlefq.linternaute.com
+DOMAIN-SUFFIX,xyhojp.lacoste.com
 DOMAIN-SUFFIX,xymhzq.klingel.de
 DOMAIN-SUFFIX,xyxgbs.lezhin.com
 DOMAIN-SUFFIX,xyzznt.uterque.com

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["_client","{}"],["navigator.brave","undefined"],["adBlocked","false"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["fabActive","false"],["integrityObserver.corrupted","false"],["dA","true"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
 
-const hostnamesMap = new Map([["motdepasse.tk",0],["empire-stream.net",1],["cinefil.com",2],["signal-arnaques.com",3],["dhnet.be",4],["sudinfo.be",4],["7sur7.be",4],["rtl.be",4],["pianoweb.fr",5],["parlons-basket.com",6],["mac4ever.com",6],["jaitoutcompris.com",7],["varmatin.com",8],["nicematin.com",8],["stream-zone.fr",9],["commentcamarche.net",10],["cookomix.com",11],["20minutes.fr",12],["hollywoodpq.com",13],["jardiner-malin.fr",14],["hack-life.net",15],["jtrouver.com",16],["playtv.fr",[17,18]],["skyrock.com",19],["skyrock.fr",19],["6play.fr",[20,33,34,35,36,37]],["tf1.fr",[21,22,23,33,34,35,36,37]],["occasions.decathlon.fr",[24,25]],["e-player-stream.app",27],["femmeactuelle.fr",28],["geo.fr",28],["voici.fr",28],["programme-tv.net",28],["gala.fr",28],["capital.fr",28],["allocine.fr",29],["funradio.fr",30],["rtl2.fr",30],["rtl.fr",30],["reflectim.fr",31],["e-sushi.fr",31],["canalplus.com",32],["tf1info.fr",38]]);
+const hostnamesMap = new Map([["motdepasse.tk",0],["empire-stream.net",1],["cinefil.com",2],["signal-arnaques.com",3],["dhnet.be",4],["sudinfo.be",4],["7sur7.be",4],["rtl.be",4],["pianoweb.fr",5],["parlons-basket.com",6],["mac4ever.com",6],["jaitoutcompris.com",7],["varmatin.com",8],["nicematin.com",8],["stream-zone.fr",9],["commentcamarche.net",10],["cookomix.com",11],["20minutes.fr",12],["hollywoodpq.com",13],["jardiner-malin.fr",14],["hack-life.net",15],["jtrouver.com",16],["playtv.fr",[17,18]],["skyrock.com",19],["skyrock.fr",19],["6play.fr",[20,33,34,35,36,37]],["tf1.fr",[21,22,23,33,34,35,36,37]],["occasions.decathlon.fr",[24,25]],["e-player-stream.app",27],["maxisciences.com",28],["gentside.com",28],["femmeactuelle.fr",28],["geo.fr",28],["voici.fr",28],["programme-tv.net",28],["gala.fr",28],["capital.fr",28],["allocine.fr",29],["funradio.fr",30],["rtl2.fr",30],["rtl.fr",30],["reflectim.fr",31],["e-sushi.fr",31],["canalplus.com",32],["tf1info.fr",38]]);
 
 const entitiesMap = new Map([["empire-streaming",1],["e-player-stream",26]]);
 
@@ -307,6 +307,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -327,8 +330,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -347,7 +349,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

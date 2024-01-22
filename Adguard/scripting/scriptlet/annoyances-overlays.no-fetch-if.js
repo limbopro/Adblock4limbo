@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adskeeper"],["pagead2.googlesyndication.com"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["googletag"],["ad.php"],["cloudflareinsights.com"]];
+const argsList = [["adskeeper"],["pagead2.googlesyndication.com"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["ad.php"],["cloudflareinsights.com"]];
 
-const hostnamesMap = new Map([["bravedown.com",0],["everyeye.it",1],["automoto.it",1],["moto.it",1],["calcmaps.com",1],["thejakartapost.com",1],["crdroid.net",1],["maxedtech.com",1],["dizipal1000.com",1],["slazag.pl",1],["bytomski.pl",1],["piekary.info",1],["twojknurow.pl",1],["nowinytyskie.pl",1],["ngs24.pl",1],["24kato.pl",1],["rudzianin.pl",1],["zabrzenews.pl",1],["chorzowski.pl",1],["tarnowskiegory.info",1],["24zaglebie.pl",1],["insidermonkey.com",1],["poedb.tw",1],["stakingrewards.com",1],["udocz.com",1],["graphicget.com",2],["udemy-downloader.com",2],["bypass.city",[3,10,12]],["gamebrew.org",4],["photosonic.writesonic.com",6],["maxroll.gg",6],["tuttoandroid.net",6],["psy.pl",6],["koty.pl",6],["intibia.com",6],["simkl.com",7],["xhamster20.desi",8],["xhwebsite2.com",[8,13]],["xhamster18.desi",8],["xhadult3.com",[8,13]],["xhadult2.com",[8,13]],["xhmoon5.com",[8,13]],["xhwide1.com",[8,13]],["xhwide8.com",[8,13]],["xhamster3.com",8],["xhplanet2.com",[8,13]],["xhtab2.com",[8,13]],["xhamster5.desi",8],["xhamster9.com",8],["xhamster.desi",8],["xhamster.one",8],["xhamster.com",8],["weather.com",9],["textcleaner.net",10],["socialcounts.org",10],["theonegenerator.com",11],["fullxh.com",13],["megaxh.com",13],["unlockxh4.com",13],["xhadult4.com",13],["xhadult5.com",13],["xhamster46.com",13],["xhday.com",13],["xhday1.com",13],["xhplanet1.com",13],["xhreal2.com",13],["xhreal3.com",13],["xhvictory.com",13],["xhwebsite.com",13],["amtraker.com",14]]);
+const hostnamesMap = new Map([["bravedown.com",0],["everyeye.it",1],["automoto.it",1],["moto.it",1],["calcmaps.com",1],["thejakartapost.com",1],["crdroid.net",1],["maxedtech.com",1],["dizipal1000.com",1],["slazag.pl",1],["bytomski.pl",1],["piekary.info",1],["twojknurow.pl",1],["nowinytyskie.pl",1],["ngs24.pl",1],["24kato.pl",1],["rudzianin.pl",1],["zabrzenews.pl",1],["chorzowski.pl",1],["tarnowskiegory.info",1],["24zaglebie.pl",1],["insidermonkey.com",1],["poedb.tw",1],["stakingrewards.com",1],["udocz.com",1],["graphicget.com",2],["udemy-downloader.com",2],["bypass.city",[3,12]],["gamebrew.org",4],["photosonic.writesonic.com",6],["maxroll.gg",6],["tuttoandroid.net",6],["psy.pl",6],["koty.pl",6],["intibia.com",6],["simkl.com",7],["xhvid.com",8],["xhamster20.desi",8],["xhwebsite2.com",[8,13]],["xhamster18.desi",8],["xhadult3.com",[8,13]],["xhadult2.com",[8,13]],["xhmoon5.com",[8,13]],["xhwide1.com",[8,13]],["xhwide8.com",[8,13]],["xhamster3.com",8],["xhplanet2.com",[8,13]],["xhtab2.com",[8,13]],["xhamster5.desi",8],["xhamster9.com",8],["xhamster.desi",8],["xhamster.one",8],["xhamster.com",8],["weather.com",9],["textcleaner.net",10],["socialcounts.org",10],["theonegenerator.com",11],["fullxh.com",13],["megaxh.com",13],["unlockxh4.com",13],["xhadult4.com",13],["xhadult5.com",13],["xhamster46.com",13],["xhday.com",13],["xhday1.com",13],["xhplanet1.com",13],["xhreal2.com",13],["xhreal3.com",13],["xhvictory.com",13],["xhwebsite.com",13],["amtraker.com",14]]);
 
 const entitiesMap = new Map([["ddys",5],["xhamster18",[8,13]],["xhamster17",[8,13]],["hamsterix",[8,13]],["xhamster13",[8,13]],["xhamster",13],["xhamster1",13],["xhamster10",13],["xhamster11",13],["xhamster12",13],["xhamster14",13],["xhamster15",13],["xhamster16",13],["xhamster19",13],["xhamster20",13],["xhamster2",13],["xhamster3",13],["xhamster4",13],["xhamster5",13],["xhamster7",13],["xhamster8",13]]);
 
@@ -235,6 +235,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -255,8 +258,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -275,7 +277,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

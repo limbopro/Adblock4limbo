@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["as_profile_cache","$remove$"],["as_accetpable_ads_blocked_cache","$remove$"],["as_adblock_cache","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"]];
+const argsList = [["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["as_profile_cache","$remove$"],["as_accetpable_ads_blocked_cache","$remove$"],["as_adblock_cache","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["fdx_enable_new_detail_page","true"]];
 
-const hostnamesMap = new Map([["jetpunk.com",0],["bravedown.com",1],["adultdeepfakes.com",2],["freewsad.com",3],["loawa.com",[4,5,6,7]],["ygosu.com",[4,5,6,7]],["sportalkorea.com",[4,5,6,7]],["algumon.com",[4,5,6,7]],["hancinema.net",[4,5,6,7]],["enetnews.co.kr",[4,5,6,7]],["edaily.co.kr",[4,5,6,7]],["economist.co.kr",[4,5,6,7]],["etoday.co.kr",[4,5,6,7]],["hankyung.com",[4,5,6,7]],["isplus.com",[4,5,6,7]],["hometownstation.com",[4,5,6,7]],["kagit.kr",[4,5,6,7]],["inven.co.kr",[4,5,6,7]],["viva100.com",[4,5,6,7]],["joongdo.co.kr",[4,5,6,7]],["jjang0u.com",[4,5,6,7]],["tenbizt.com",[4,5,6,7]],["tvreport.co.kr",[4,5,6,7]],["newautopost.co.kr",[4,5,6,7]],["mememedia.co.kr",[4,5,6,7]],["mobilitytv.co.kr",[4,5,6,7]],["cboard.net",[4,5,6,7]],["a-ha.io",[4,5,6,7]],["interfootball.co.kr",[4,5,6,7]],["fourfourtwo.co.kr",[4,5,6,7]],["apkmirror.com",[4,5,6,7]],["dotkeypress.kr",[4,5,6,7]],["viewcash.co.kr",[4,5,6,7]],["tripplus.co.kr",[4,5,6,7]],["enterdiary.com",[4,5,6,7]],["mtodayauto.com",[4,5,6,7]],["genshinlab.com",[4,5,6,7]],["hotplacehunter.co.kr",[4,5,6,7]],["mystylezip.com",[4,5,6,7]],["majorgeeks.com",[4,5,6,7]],["poro.gg",[4,5,6,7]],["maple.gg",[4,5,6,7]],["lolchess.gg",[4,5,6,7]],["dak.gg",[4,5,6,7]],["newdaily.co.kr",[4,5,6,7]],["meconomynews.com",[4,5,6,7]],["brandbrief.co.kr",[4,5,6,7]],["dfast.kr",[4,5,6,7]],["thephoblographer.com",[4,5,6,7]],["dogdrip.net",[4,5,6,7]],["youtu.co",[4,5,6,7]],["honkailab.com",[4,5,6,7]],["warcraftrumbledeck.com",[4,5,6,7]],["golf-live.at",[4,5,6,7]],["mlbpark.donga.com",[4,5,6,7]],["gamingdeputy.com",[4,5,6,7]],["thestockmarketwatch.com",[4,5,6,7]],["capress.kr",[4,5,6,7]],["carandmore.co.kr",[4,5,6,7]],["maxmovie.kr",[4,5,6,7]],["motorgraph.com",[4,5,6,7]],["newsbell.co.kr",[4,5,6,7]],["tminews.co.kr",[4,5,6,7]],["thehousemagazine.kr",[4,5,6,7]],["hardreset.info",[4,5,6,7]],["metabattle.com",[4,5,6,7]],["thesaurus.net",[4,5,6,7]],["maketecheasier.com",[4,5,6,7]],["tweaksforgeeks.com",[4,5,6,7]],["issuya.com",[4,5,6,7]],["alle-tests.nl",[4,5,6,7]],["mindbodygreen.com",8],["elevenlabs.io",9]]);
+const hostnamesMap = new Map([["jetpunk.com",0],["bravedown.com",1],["adultdeepfakes.com",2],["freewsad.com",3],["loawa.com",[4,5,6,7]],["ygosu.com",[4,5,6,7]],["sportalkorea.com",[4,5,6,7]],["algumon.com",[4,5,6,7]],["hancinema.net",[4,5,6,7]],["enetnews.co.kr",[4,5,6,7]],["edaily.co.kr",[4,5,6,7]],["economist.co.kr",[4,5,6,7]],["etoday.co.kr",[4,5,6,7]],["hankyung.com",[4,5,6,7]],["isplus.com",[4,5,6,7]],["hometownstation.com",[4,5,6,7]],["kagit.kr",[4,5,6,7]],["inven.co.kr",[4,5,6,7]],["viva100.com",[4,5,6,7]],["joongdo.co.kr",[4,5,6,7]],["jjang0u.com",[4,5,6,7]],["tenbizt.com",[4,5,6,7]],["tvreport.co.kr",[4,5,6,7]],["newautopost.co.kr",[4,5,6,7]],["mememedia.co.kr",[4,5,6,7]],["mobilitytv.co.kr",[4,5,6,7]],["cboard.net",[4,5,6,7]],["a-ha.io",[4,5,6,7]],["interfootball.co.kr",[4,5,6,7]],["fourfourtwo.co.kr",[4,5,6,7]],["apkmirror.com",[4,5,6,7]],["dotkeypress.kr",[4,5,6,7]],["viewcash.co.kr",[4,5,6,7]],["tripplus.co.kr",[4,5,6,7]],["enterdiary.com",[4,5,6,7]],["mtodayauto.com",[4,5,6,7]],["genshinlab.com",[4,5,6,7]],["hotplacehunter.co.kr",[4,5,6,7]],["mystylezip.com",[4,5,6,7]],["majorgeeks.com",[4,5,6,7]],["poro.gg",[4,5,6,7]],["maple.gg",[4,5,6,7]],["lolchess.gg",[4,5,6,7]],["dak.gg",[4,5,6,7]],["newdaily.co.kr",[4,5,6,7]],["meconomynews.com",[4,5,6,7]],["brandbrief.co.kr",[4,5,6,7]],["dfast.kr",[4,5,6,7]],["thephoblographer.com",[4,5,6,7]],["dogdrip.net",[4,5,6,7]],["youtu.co",[4,5,6,7]],["honkailab.com",[4,5,6,7]],["warcraftrumbledeck.com",[4,5,6,7]],["golf-live.at",[4,5,6,7]],["mlbpark.donga.com",[4,5,6,7]],["gamingdeputy.com",[4,5,6,7]],["thestockmarketwatch.com",[4,5,6,7]],["capress.kr",[4,5,6,7]],["carandmore.co.kr",[4,5,6,7]],["maxmovie.kr",[4,5,6,7]],["motorgraph.com",[4,5,6,7]],["newsbell.co.kr",[4,5,6,7]],["tminews.co.kr",[4,5,6,7]],["thehousemagazine.kr",[4,5,6,7]],["hardreset.info",[4,5,6,7]],["metabattle.com",[4,5,6,7]],["thesaurus.net",[4,5,6,7]],["maketecheasier.com",[4,5,6,7]],["tweaksforgeeks.com",[4,5,6,7]],["issuya.com",[4,5,6,7]],["alle-tests.nl",[4,5,6,7]],["topstarnews.net",[4,5,6,7]],["allthetests.com",[4,5,6,7]],["motorbikecatalog.com",[4,5,6,7]],["heraldcorp.com",[4,5,6,7]],["mindbodygreen.com",8],["elevenlabs.io",9],["fedex.com",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -158,6 +158,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -178,8 +181,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -198,7 +200,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

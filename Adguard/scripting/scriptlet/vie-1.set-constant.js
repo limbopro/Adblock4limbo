@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["seconds","0"],["adsPlayer",""],["adsTvcs",""]];
+const argsList = [["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["gvnvh18.com",1],["sexdiaryx.us",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["vndoc.com",4],["xoivo2.online",[5,6]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["gvnvh18.com",1],["sexdiaryx.us",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["tailieumoi.vn",4],["vndoc.com",5],["xoivo2.online",[6,7]]]);
 
 const entitiesMap = new Map([]);
 
@@ -307,6 +307,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -327,8 +330,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -347,7 +349,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

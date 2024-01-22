@@ -46,7 +46,7 @@ const argsList = [["alert","eval"],["history.go","eval"]];
 
 const hostnamesMap = new Map([["netcine3.la",[0,1]]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["netcine",[0,1]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -202,6 +202,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -222,8 +225,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -242,7 +244,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["AddAdsV2I.hasAdblock","falseFunc"],["AddAdsV2I.checkAddBlock","noopFunc"],["AddAdsV2I.setAddBlockMsg","noopFunc"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["window.ado","null"]];
+const argsList = [["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["window.ado","null"]];
 
-const hostnamesMap = new Map([["angol-magyar-szotar.hu",0],["embed.indavideo.hu",[1,2,3]],["huaweiblog.hu",4],["myonlineradio.hu",[5,6,7]],["embed.rtl.hu",[8,9]],["femina.hu",10]]);
+const hostnamesMap = new Map([["angol-magyar-szotar.hu",0],["embed.indavideo.hu",[1,2,3]],["huaweiblog.hu",4],["embed.rtl.hu",[5,6]],["femina.hu",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -307,6 +307,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -327,8 +330,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -347,7 +349,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

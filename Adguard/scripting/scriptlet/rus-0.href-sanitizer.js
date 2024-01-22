@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/go.php?go=\"]","?go"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
+const argsList = [["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/go.php?go=\"]","?go"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
 
-const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["softoroom.org",2],["lifehacker.ru",3],["www.ixbt.com",4],["vz.ru",[5,6]],["disqus.com",7],["youtube.com",8],["e.mail.ru",9],["octavius.mail.ru",9],["light.mail.ru",[10,11]]]);
+const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["softoroom.org",2],["opennet.me",3],["opennet.ru",3],["lifehacker.ru",4],["www.ixbt.com",5],["vz.ru",[6,7]],["disqus.com",8],["youtube.com",9],["e.mail.ru",10],["octavius.mail.ru",10],["light.mail.ru",[11,12]]]);
 
 const entitiesMap = new Map([]);
 
@@ -218,6 +218,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -238,8 +241,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -258,7 +260,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

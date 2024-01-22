@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["_AdBlockInit","noopFunc"],["google_tag_data","{}"],["killAdKiller","noopFunc"],["AD_SURVEY_Add_AdPos","noopFunc"],["AD_SURVEY_Add_AdPos_Simple","noopFunc"],["killads","true"],["all520dddaaa2022ccc","true"],["isAdsDisplayed","true"],["fuzqingAdPlus","{}"],["all520dddaaa2022aaa","undefined"],["canRunAds","true"],["adblock","0"],["can_run_ads","true"],["ga","noopFunc"],["google_empty_script_included","true"],["adsbygoogle","noopFunc"],["adblock","false"],["Object.prototype.cnobpreroll_","true"],["Object.prototype.canobpreroll_","true"],["ads",""],["onload","null"],["NativeAd","noopFunc"],["__jsadsuccess","true"],["adbk","false"],["CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY",""],["CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START",""],["player.VastADPlugin","noopFunc"],["ADSOBJET","{}"],["pageData.__banners.0.commercial.mediaUrl",""],["pageData.__banners.0.commercial.jumpUrl",""],["pageData.__banners.0.commercial.title",""],["pageData.__banners.1.commercial.mediaUrl",""],["pageData.__banners.1.commercial.jumpUrl",""],["pageData.__banners.1.commercial.title",""],["detailParams.is_ad_play","false"],["myPlayer.adDisplay","undefined"],["NEWS_FEED","noopFunc"],["conone_lmg","noopFunc"],["Object.prototype.ad_switch","0"],["dy_card_dyrun","undefined"],["poped","true"],["Object.prototype.adData","{}"],["Object.prototype._adData","{}"],["adsbygoogle.loaded","true"],["MM_openBrWindow","noopFunc"],["lists","undefined"],["is_show","false"]];
 
-const hostnamesMap = new Map([["playwright.nodejs.cn",0],["docsmall.com",0],["hmoeh.com",1],["api.guailie.com",2],["huanqiu.com",[3,4]],["itbaoku.cn",5],["yaociyuan.bid",5],["bigpixel.cn",5],["jkpan.cc",5],["520cc.cc",6],["520call.me",[6,9]],["ekamus.info",7],["koyi.pub",8],["bde4.icu",10],["tingfm.com",[10,12]],["mp4er.cc",[10,20]],["mp4er.com",[10,20]],["linovelib.com",11],["ebb.io",[13,14]],["wenxuecity.com",15],["lnk2.cc",16],["ddrk.me",[17,18]],["sssam.com",19],["hboav.com",[20,23]],["cocomanga.com",[21,22]],["ohmanhua.com",[21,22]],["onemanhua.com",[21,22]],["v.qq.com",[24,25]],["player.hboav.com",26],["x99av.com",27],["nivod5.tv",[28,29,30,31,32,33,34]],["nivod4.tv",[28,29,30,31,32,33,34]],["hamivideo.hinet.net",35],["jianshu.com",36],["baiyangzuo.xkyn.com",37],["tangdoucdn.com",38],["dianyingim.com",39],["xvideo.cc",40],["v-wb.youku.com",41],["m.youku.com",42],["v.youku.com",42],["myptt.cc",43],["edc1014070.pixnet.net",44],["m.biqiugege8.com",45],["theav.xyz",46],["69xx.one",46],["theporn.cc",46]]);
+const hostnamesMap = new Map([["nodejs.cn",0],["docsmall.com",0],["hmoeh.com",1],["api.guailie.com",2],["huanqiu.com",[3,4]],["itbaoku.cn",5],["yaociyuan.bid",5],["bigpixel.cn",5],["jkpan.cc",5],["520cc.cc",6],["520call.me",[6,9]],["ekamus.info",7],["koyi.pub",8],["bde4.icu",10],["tingfm.com",[10,12]],["mp4er.cc",[10,20]],["mp4er.com",[10,20]],["linovelib.com",11],["ebb.io",[13,14]],["wenxuecity.com",15],["lnk2.cc",16],["ddrk.me",[17,18]],["sssam.com",19],["hboav.com",[20,23]],["cocomanga.com",[21,22]],["ohmanhua.com",[21,22]],["onemanhua.com",[21,22]],["v.qq.com",[24,25]],["player.hboav.com",26],["x99av.com",27],["nivod5.tv",[28,29,30,31,32,33,34]],["nivod4.tv",[28,29,30,31,32,33,34]],["nivod7.tv",34],["hamivideo.hinet.net",35],["jianshu.com",36],["baiyangzuo.xkyn.com",37],["tangdoucdn.com",38],["dianyingim.com",39],["xvideo.cc",40],["v-wb.youku.com",41],["m.youku.com",42],["v.youku.com",42],["myptt.cc",43],["edc1014070.pixnet.net",44],["m.biqiugege8.com",45],["theav.xyz",46],["69xx.one",46],["theporn.cc",46]]);
 
 const entitiesMap = new Map([["ddys",[17,18]]]);
 
@@ -307,6 +307,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -327,8 +330,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -347,7 +349,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

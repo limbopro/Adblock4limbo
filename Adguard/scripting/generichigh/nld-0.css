@@ -21,7 +21,7 @@
 
 /* nld-0 */
 
-a[href^="https://go2.go2cloud.org/"],
-a[href^="https://www.2k19.nl/"] {
+a[href^="https://www.2k19.nl/"],
+li a[href^="https://go2.go2cloud.org/"] {
     display: none !important;
 }

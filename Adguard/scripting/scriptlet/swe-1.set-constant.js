@@ -42,7 +42,7 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["adsAreBlocked","noopFunc"],["checkYinPlaus","noopFunc"],["checkYin","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["mi_track_user","false"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"]];
+const argsList = [["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["wedoitright","noopFunc"],["checkYinPlaus","noopFunc"],["checkYin","noopFunc"],["dovideostuffAD","noopFunc"],["setYinYang","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","falseFunc"],["ispremium","trueFunc"],["slugify","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["mi_track_user","false"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"]];
 
 const hostnamesMap = new Map([["conpot.se",[0,1]],["di.se",2],["elevspel.se",3],["feber.se",[4,5,6,7]],["tjock.se",[4,5,6,7]],["findit.se",8],["fz.se",9],["fssweden.se",9],["gamereactor.se",10],["jobsinsweden.se",11],["kamrat.com",[12,13]],["kritiker.se",[14,15,16]],["mitti.se",17],["mobilanyheter.net",18],["newsner.com",19],["humorbibeln.se",19],["sportbibeln.se",19],["ettgottskratt.se",19],["zeinaskitchen.se",19],["dinbyggare.se",19],["trafiksakerhet.se",19],["boktugg.se",19],["lakartidningen.se",19],["villalivet.se",19],["matsafari.nu",19],["forexgruppen.se",19],["ordbokpro.se",20],["spray.se",[21,22]],["vinochmatguiden.se",22],["swedroid.se",23],["thatsup.se",24],["thorengruppen.se",[25,26]],["utslappsratt.se",[25,26]],["heleneholmsif.se",[25,26]],["trafikskola.se",[25,26]],["melodifestivalklubben.se",[25,26]],["morotsliv.com",[25,26]],["www.expressen.se",27]]);
 
@@ -307,6 +307,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -327,8 +330,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -347,7 +349,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

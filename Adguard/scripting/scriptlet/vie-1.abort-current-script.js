@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["document.documentElement","break;case $."],["atob","ai_block_class"],["Object.defineProperty","ADMStorageFileCDN"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["document.createElement","script"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["addEvent","popunder"],["jQuery","click_time"],["document.getElementById","chpadblock"],["document.createElement","optad"],["$","PopUnder"],["Promise","break;case"],["sp"],["encodeURIComponent","popunder"],["eval","$._Eu"],["jQuery","popurl"],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["Promise","instance"],["eval"],["jQuery","click_ads"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["$","urlAdsMbIntro"],["document.addEventListener","linksToOpen"],["setTimeout","window.location"]];
+const argsList = [["document.documentElement","break;case $."],["atob","ai_block_class"],["Object.defineProperty","ADMStorageFileCDN"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["$","homeModal"],["document.createElement","script"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["document.getElementById","chpadblock"],["document.createElement","optad"],["$","PopUnder"],["Promise","break;case"],["sp"],["encodeURIComponent","popunder"],["eval","$._Eu"],["jQuery","popurl"],["jQuery","click_time"],["$","p0pUpRandom"],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.addEventListener","window.open"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["$","urlAdsMbIntro"],["document.write","snow"],["Promise","instance"],["document.addEventListener","linksToOpen"],["setTimeout","window.location"]];
 
-const hostnamesMap = new Map([["animevietsub.io",0],["azrom.net",1],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["downloadsachmienphi.com",3],["dualeotruyenid.com",[4,30]],["m.blogtruyenmoi.com",4],["gametv.vn",5],["gocphimvn.vip",6],["p.thoctv.com",6],["gotphim.com",7],["hh3dhay.com",8],["hh3dhay.xyz",8],["holyphim.com",9],["ios.codevn.net",10],["khoaiphim.com",[11,12]],["phimmoinay.tv",12],["khohieu.com",13],["linkneverdie.net",14],["lxmanga.net",15],["nettruyenall.com",16],["nettruyenus.net",17],["nguontv.biz",18],["phimgichill.net",[19,20]],["mephimnhe1.net",20],["rphang.co",21],["misskon.com",21],["tctruyen.net",22],["tctruyen.com",22],["abtruyen.com",22],["tinsoikeo.vip",23],["toptruyenne.com",24],["truyen2u.net",25],["truyen35.vn",26],["truyenqqvn.com",27],["truyentuanopm.com",28],["vailonxx.com",29],["phimlongtieng.com",29],["phimlongtieng.net",29],["viet69.red",30],["ungtycomicsvip.com",30],["vlxx.xxx",30],["yurineko.net",30],["vlxyz.tv",30],["javhay.cam",30],["phimsexhay669.co",30],["cliphot69.biz",30],["doctruyen3qup.com",30],["hentaizz.vip",30],["animehay.city",30],["heo69.top",30],["tuoi69.tv",30],["top1sex.club",30],["lenlut.net",30],["phimsex.bet",30],["hentai-vn.com",30],["web27.sexphim1.com",30],["cdn.streamvl.sbs",30],["buomtv.tv",30],["motphimz.cc",30],["truyenvnhay.tv",30],["cdnstream.sbs",30],["javtiful.com",30],["truyengihotvay.net",30],["truyengihotqua.net",30],["truyengihotnay.com",30],["vungoctuan.vn",31],["www2.vuaphimmoi1.net",32],["xemphimhdc.cc",33],["xnxx-sex-videos.com",34]]);
+const hostnamesMap = new Map([["animevietsub.io",0],["azrom.net",1],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["downloadsachmienphi.com",3],["dualeotruyenvi.com",[4,29]],["m.blogtruyenmoi.com",4],["gametv.vn",5],["gocphimvn.vip",6],["p.thoctv.com",6],["gotphim.com",7],["hh3dhay.com",8],["hh3dhay.xyz",8],["holyphim.com",9],["ios.codevn.net",10],["khohieu.com",11],["linkneverdie.net",12],["lxmanga.net",13],["nettruyenall.com",14],["nettruyenus.net",15],["nguontv.biz",16],["phimgichill.net",[17,18]],["mephimnhe1.net",18],["phimmoinay.tv",19],["phimtho.net",20],["rphang.co",21],["misskon.com",21],["tctruyen.net",22],["tctruyen.com",22],["abtruyen.com",22],["tinsoikeo.vip",23],["truyen2u.net",24],["truyen35.vn",25],["truyenqqvn.com",26],["truyentuanopm.com",27],["vailonxx.com",28],["phimlongtieng.com",28],["phimlongtieng.net",28],["viet69.red",29],["ungtycomicsvip.com",29],["vlxx.xxx",29],["yurineko.net",29],["vlxyz.tv",29],["javhay.cam",29],["phimsexhay669.co",29],["cliphot69.vin",29],["doctruyen3qup.com",29],["hentaizz.vip",29],["animehay.city",29],["heo69.top",29],["tuoi69.tv",29],["top1sex.club",29],["lenlut.net",29],["xemsex.moe",29],["hentai-vn.tv",29],["web31.sexphim1.com",29],["cdn.streamvl.sbs",29],["buomtv.tv",29],["motphimz.cc",29],["truyenvnhay.tv",29],["cdnstream.sbs",29],["javtiful.com",29],["truyengihotvay.net",29],["truyengihotqua.net",29],["truyengihotqua.com",29],["truyengihotnay.com",29],["quatvn.club",29],["vuaphimmoi2.net",30],["vungoctuan.vn",31],["www.toptruyenhot.co",32],["xemphimhdc.cc",33],["xnxx-sex-videos.com",34]]);
 
 const entitiesMap = new Map([]);
 
@@ -220,6 +220,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -240,8 +243,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -260,7 +262,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["open"],["oneClick"],["adsRedirectPopups"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["phimmoi4s.com",5],["phimdinhcao.net",5],["phimlongtieng.net",5],["phimdinhcao.com",5],["plvb.xyz",[6,7,8,9,10]],["tinsoikeo.vip",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["tvhayh.org",12],["www2.vuaphimmoi1.net",12],["quangcaoyenbai.com",12],["sieudamtv.me",12],["ephimchill.com",12],["motphimhan.cc",12],["maclife.io",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.com",12],["khophim88.net",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["m.blogtruyenvn.com",13],["animet.net",13],["anh.moe",13],["vinaurl.net",14],["xoilac97.tv",15],["ytstv.me",16],["yts.do",16],["yts.mx",16],["yts.rs",16],["znews.vn",17],["zuiphim.com",18]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["phimmoi4s.com",5],["phimdinhcao.net",5],["phimlongtieng.net",5],["phimdinhcao.com",5],["plvb.xyz",[6,7,8,9,10]],["tinsoikeo.vip",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["tvhayh.org",12],["vuaphimmoi2.net",12],["quangcaoyenbai.com",12],["sieudamtv.one",12],["ephimchill.com",12],["motphimhan.cc",12],["maclife.io",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.com",12],["khophim88.net",12],["nhentaivn.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["m.blogtruyenvn.com",13],["animet.net",13],["anh.moe",13],["vinaurl.net",14],["xoilac98.tv",15],["ytstv.me",16],["yts.do",16],["yts.mx",16],["yts.rs",16],["znews.vn",17],["zuiphim2.com",18]]);
 
 const entitiesMap = new Map([]);
 
@@ -149,6 +149,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -169,8 +172,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -189,7 +191,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

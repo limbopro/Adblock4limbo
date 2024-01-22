@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["modal-newsletter","false"],["","true"],["umggr-newsletter-first-load","true"],["popup-closed","true"],["fs.adb.dis","1"],["adblock","true"]];
+const argsList = [["bellesa_show_slideout","false"],["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["umggr-newsletter-first-load","true"],["modal-newsletter","false"],["","true"],["popup-closed","true"],["fs.adb.dis","1"],["adblock","true"]];
 
-const hostnamesMap = new Map([["internxt.com",0],["makemytrip.com",1],["fantasyfootballhub.co.uk",2],["northcasino.com",3],["dream.ai",4],["imdb.com",5],["ringover.com",6],["eneba.com",7],["1mg.com",8],["flipkart.com",9],["zonealarm.com",10],["upbeatcode.com",11],["selenagomez.com",12],["maxicours.com",13],["270towin.com",14],["getemoji.com",14],["afterclass.io",15]]);
+const hostnamesMap = new Map([["bellesa.co",0],["internxt.com",1],["makemytrip.com",2],["fantasyfootballhub.co.uk",3],["northcasino.com",4],["dream.ai",5],["imdb.com",6],["ringover.com",7],["eneba.com",8],["1mg.com",9],["flipkart.com",10],["eminem.com",11],["selenagomez.com",11],["zonealarm.com",12],["upbeatcode.com",13],["maxicours.com",14],["270towin.com",15],["getemoji.com",15],["afterclass.io",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -158,6 +158,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -178,8 +181,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -198,7 +200,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

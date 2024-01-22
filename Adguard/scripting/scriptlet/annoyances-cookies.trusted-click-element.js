@@ -42,11 +42,11 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["form[action] button[jsname=\"tWT92d\"]"],["[title=\"Manage Cookies\"]"],["[title=\"Reject All\"]","","500"],[".sp_choice_type_12[title=\"Options\"]"],["[title=\"REJECT ALL\"]","","500"],[".sp_choice_type_12[title=\"OPTIONS\"]"],[".sp_choice_type_12[title=\"Manage or reject cookies\"]"],["[title=\"Reject all\"]","","500"],["button[title^=\"Consent\"]"],["button.reject-all"],[".cmp__dialog-footer-buttons > .is-secondary"],["#didomi-notice-agree-button"],["button[onclick=\"IMOK()\"]","","500"],["a.btn--primary"],[".message-container.global-font button.message-button.no-children.focusable.button-font.sp_choice_type_12[title=\"MORE OPTIONS\""],["[data-choice=\"1683026410215\"]","","500"],["button.sp_choice_type_12[title$=\"Settings\"]"],["button[title=\"REJECT ALL\"]","","1000"],["button.iubenda-cs-customize-btn, button.iub-cmp-reject-btn, button#iubFooterBtn"],[".sp_choice_type_12[title=\"Manage Cookies\"]"],[".sp_choice_type_REJECT_ALL","","500"],[".almacmp-button--settings, #purposeConsents1, #purposeConsents2, #purposeConsents3, #purposeConsents4, #purposeConsents5, #purposeConsents6, #purposeConsents7, #purposeConsents8, #purposeConsents9, #purposeConsents10, #purposeConsents11, #specialFeatureConsents1, #specialFeatureConsents2, #almacmp-save-layer2"],[".sanoma-logo-container ~ .message-component.sticky-buttons button.sp_choice_type_12[title=\"Asetukset\"]"],[".sanoma-logo-container ~ .message-component.privacy-manager-tcfv2 .tcfv2-stack[title=\"Sanoman sisällönjakelukumppanit\"] button.pm-switch[aria-checked=\"false\"]"],[".sanoma-logo-container ~ .message-component.sticky-buttons button.sp_choice_type_SAVE_AND_EXIT[title=\"Tallenna\"]","","1500"],["#onetrust-accept-btn-handler"],["button[title=\"Accept and continue\"]"],["button[title=\"Accept All Cookies\"]"],[".accept-all"],["#CybotCookiebotDialogBodyButtonAccept"],[".privacy-cp-wall #privacy-cp-wall-accept"],["button[aria-label=\"Continua senza accettare\"]"],["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[href=\"/x-set-cookie/\"]"],["#dialogButton1"],[".call"],["#cl-consent button[data-role=\"b_decline\"]"],["#privacy-cp-wall-accept"],["button[data-label=\"accept-button\"]","","1000"],["#cmp-btn-accept","","5000"],["button#pt-accept-all"],["[for=\"checkbox_niezbedne\"], [for=\"checkbox_spolecznosciowe\"], .btn-primary"],["[aria-labelledby=\"banner-title\"] > div[class^=\"buttons_\"] > button[class*=\"secondaryButton_\"] + button"],["button#minf-privacy-open-modal-btn-id, button.iubenda-cs-close-btn"],["button.iubenda-cs-accept-btn","","1000"],["button.trustarc-agree-btn"],[".pg-configure-button[title=\"Instellen\"]","","500"],["button.message-button[title=\"Mijn instellingen beheren\"]","","500"],["button[aria-checked=\"false\"][aria-label^=\"Social\"], button.sp_choice_type_SAVE_AND_EXIT","","500"],["#pubtech-cmp #pt-close"],[".didomi-continue-without-agreeing"],["#ccAcceptOnlyFunctional","","4000"],["button.optoutmulti_button","","2000"],["button[title=\"Accepter\"]"],[".btns-container > button[title=\"Tilpass\"]"],[".message-row > button[title=\"Avvis alle\"]","","2000"],["button.iubenda-cs-accept-btn"],[".iubenda-cs-visible .iubenda-cs-accept-btn"],["button[title=\"Accept all\"]"]];
+const argsList = [["form[action] button[jsname=\"tWT92d\"]"],["[title=\"Manage Cookies\"]"],["[title=\"Reject All\"]","","500"],[".sp_choice_type_12[title=\"Options\"]"],["[title=\"REJECT ALL\"]","","500"],[".sp_choice_type_12[title=\"OPTIONS\"]"],[".sp_choice_type_12[title=\"Manage or reject cookies\"]"],["[title=\"Reject all\"]","","500"],["#consentBanner > button[data-testid=\"banner-button\"]"],["button[title^=\"Consent\"]"],["button.reject-all"],[".cmp__dialog-footer-buttons > .is-secondary"],["#didomi-notice-agree-button"],["button[onclick=\"IMOK()\"]","","500"],["a.btn--primary"],[".message-container.global-font button.message-button.no-children.focusable.button-font.sp_choice_type_12[title=\"MORE OPTIONS\""],["[data-choice=\"1683026410215\"]","","500"],["button.sp_choice_type_12[title$=\"Settings\"]"],["button[title=\"REJECT ALL\"]","","1000"],["button.iubenda-cs-customize-btn, button.iub-cmp-reject-btn, button#iubFooterBtn"],[".sp_choice_type_12[title=\"Manage Cookies\"]"],[".sp_choice_type_REJECT_ALL","","500"],[".almacmp-button--settings, #purposeConsents1, #purposeConsents2, #purposeConsents3, #purposeConsents4, #purposeConsents5, #purposeConsents6, #purposeConsents7, #purposeConsents8, #purposeConsents9, #purposeConsents10, #purposeConsents11, #specialFeatureConsents1, #specialFeatureConsents2, #almacmp-save-layer2"],[".sanoma-logo-container ~ .message-component.sticky-buttons button.sp_choice_type_12[title=\"Asetukset\"]"],[".sanoma-logo-container ~ .message-component.privacy-manager-tcfv2 .tcfv2-stack[title=\"Sanoman sisällönjakelukumppanit\"] button.pm-switch[aria-checked=\"false\"]"],[".sanoma-logo-container ~ .message-component.sticky-buttons button.sp_choice_type_SAVE_AND_EXIT[title=\"Tallenna\"]","","1500"],["#onetrust-accept-btn-handler"],["button[title=\"Accept and continue\"]"],["button[title=\"Accept All Cookies\"]"],[".accept-all"],["#CybotCookiebotDialogBodyButtonAccept"],[".privacy-cp-wall #privacy-cp-wall-accept"],["button[aria-label=\"Continua senza accettare\"]"],["label[class=\"input-choice__label\"][for=\"CookiePurposes_1_\"], label[class=\"input-choice__label\"][for=\"CookiePurposes_2_\"], button.js-save[type=\"submit\"]"],["[href=\"/x-set-cookie/\"]"],["#dialogButton1"],[".call"],["#cl-consent button[data-role=\"b_decline\"]"],["#privacy-cp-wall-accept"],["button[data-label=\"accept-button\"]","","1000"],["button#pt-accept-all"],["[for=\"checkbox_niezbedne\"], [for=\"checkbox_spolecznosciowe\"], .btn-primary"],["[aria-labelledby=\"banner-title\"] > div[class^=\"buttons_\"] > button[class*=\"secondaryButton_\"] + button"],["button#minf-privacy-open-modal-btn-id, button.iubenda-cs-close-btn"],["button.iubenda-cs-accept-btn","","1000"],["button.trustarc-agree-btn"],[".pg-configure-button[title=\"Instellen\"]","","500"],["button.message-button[title=\"Mijn instellingen beheren\"]","","500"],["button[aria-checked=\"false\"][aria-label^=\"Social\"], button.sp_choice_type_SAVE_AND_EXIT","","500"],["#pubtech-cmp #pt-close"],[".didomi-continue-without-agreeing"],["#ccAcceptOnlyFunctional","","4000"],["button.optoutmulti_button","","2000"],["button[title=\"Accepter\"]"],[".btns-container > button[title=\"Tilpass\"]"],[".message-row > button[title=\"Avvis alle\"]","","2000"],["button.iubenda-cs-accept-btn"],[".iubenda-cs-visible .iubenda-cs-accept-btn"],["button[title=\"Accept all\"]"],[".gdpr-btn.small-right, .thirdlayer .gdpr-btn-lbl"]];
 
-const hostnamesMap = new Map([["consent.youtube.com",0],["sourcepointcmp.bloomberg.com",[1,2]],["sourcepointcmp.bloomberg.co.jp",[1,2]],["cmpv2.independent.co.uk",[2,5]],["cmpv2.standard.co.uk",[3,4]],["sourcepoint.theguardian.com",[6,7]],["spiegel.de",8],["consent.yahoo.com",9],["tumblr.com",10],["20minutos.es",11],["rfi.fr",11],["elcomercio.es",11],["france24.com",11],["fplstatistics.co.uk",12],["e-shop.leonidas.com",13],["cdn.privacy-mgmt.com",[14,15,22,23,24,58]],["consent.ladbible.com",[16,17]],["consent.unilad.com",[16,17]],["consent.gamingbible.com",[16,17]],["consent.sportbible.com",[16,17]],["consent.tyla.com",[16,17]],["consent.ladbiblegroup.com",[16,17]],["m2o.it",18],["deejay.it",18],["capital.it",18],["ilmattino.it",18],["leggo.it",18],["libero.it",18],["consent-manager.ft.com",[19,20]],["ampparit.com",21],["arvopaperi.fi",21],["iltalehti.fi",21],["kauppalehti.fi",21],["mediuutiset.fi",21],["mikrobitti.fi",21],["talouselama.fi",21],["tekniikkatalous.fi",21],["tivi.fi",21],["uusisuomi.fi",21],["digitalfoundry.net",25],["egx.net",25],["eurogamer.it",25],["mcmcomiccon.com",25],["nintendolife.com",25],["paxsite.com",25],["purexbox.com",25],["pushsquare.com",25],["starwarscelebration.com",25],["thehaul.com",25],["timeextension.com",25],["dicebreaker.com",[26,27]],["eurogamer.cz",[26,27]],["eurogamer.es",[26,27]],["eurogamer.net",[26,27]],["eurogamer.nl",[26,27]],["eurogamer.pl",[26,27]],["eurogamer.pt",[26,27]],["gamesindustry.biz",[26,27]],["jelly.deals",[26,27]],["reedpop.com",[26,27]],["rockpapershotgun.com",[26,27]],["thepopverse.com",[26,27]],["vg247.com",[26,27]],["videogameschronicle.com",[26,27]],["eurogamer.de",28],["roadtovr.com",29],["corriere.it",[30,37]],["gazzetta.it",30],["cmp.sky.it",31],["tennisassa.fi",32],["f1racing.pl",33],["consent-pref.trustarc.com",35],["highlights.legaseriea.it",36],["calciomercato.com",36],["sosfanta.com",37],["wetter.com",39],["youmath.it",40],["pip.gov.pl",41],["forbes.com",42],["mediaset.it",43],["repubblica.it",44],["fortune.com",45],["cmp.dpgmedia.nl",[46,48]],["cmp.dpgmedia.be",[46,48]],["cmp.ad.nl",[46,48]],["cmp.autotrack.nl",[46,48]],["cmp.autoweek.nl",[46,48]],["cmp.bd.nl",[46,48]],["cmp.bndestem.nl",[46,48]],["cmp.demorgen.be",[46,48]],["cmp.deondernemer.nl",[46,48]],["cmp.destentor.nl",[46,48]],["cmp.ed.nl",[46,48]],["cmp.gaspedaal.nl",[46,48]],["cmp.gelderlander.nl",[46,48]],["cmp.hln.be",[46,48]],["cmp.humo.be",[46,48]],["cmp.margriet.nl",[46,48]],["cmp.nu.nl",[46,48]],["cmp.qmusic.nl",[46,48]],["cmp.stijlvol-wonen.com",[46,48]],["cmp.trouw.nl",[46,48]],["cmp.tubantia.nl",[46,48]],["cmp.vtwonen.be",[46,48]],["cmp.vtwonen.nl",[46,48]],["cmp.pzc.nl",[46,48]],["cmp.zozitdat.nl",[46,48]],["cmp-sp.vrt.be",[47,48]],["ilrestodelcarlino.it",49],["quotidiano.net",49],["lanazione.it",49],["ilgiorno.it",49],["iltelegrafolivorno.it",49],["frandroid.com",50],["nutri-plus.de",51],["aa.com",52],["programme-tv.net",53],["cmp.vg.no",[54,55]],["movieplayer.it",56],["huffingtonpost.it",57],["lastampa.it",57],["ilsecoloxix.it",57]]);
+const hostnamesMap = new Map([["consent.youtube.com",0],["sourcepointcmp.bloomberg.com",[1,2]],["sourcepointcmp.bloomberg.co.jp",[1,2]],["cmpv2.independent.co.uk",[2,5]],["cmpv2.standard.co.uk",[3,4]],["sourcepoint.theguardian.com",[6,7]],["bbc.com",8],["spiegel.de",9],["consent.yahoo.com",10],["tumblr.com",11],["20minutos.es",12],["rfi.fr",12],["elcomercio.es",12],["france24.com",12],["fplstatistics.co.uk",13],["e-shop.leonidas.com",14],["cdn.privacy-mgmt.com",[15,16,23,24,25,58]],["consent.ladbible.com",[17,18]],["consent.unilad.com",[17,18]],["consent.gamingbible.com",[17,18]],["consent.sportbible.com",[17,18]],["consent.tyla.com",[17,18]],["consent.ladbiblegroup.com",[17,18]],["m2o.it",19],["deejay.it",19],["capital.it",19],["ilmattino.it",19],["leggo.it",19],["libero.it",19],["consent-manager.ft.com",[20,21]],["ampparit.com",22],["arvopaperi.fi",22],["iltalehti.fi",22],["kauppalehti.fi",22],["mediuutiset.fi",22],["mikrobitti.fi",22],["talouselama.fi",22],["tekniikkatalous.fi",22],["tivi.fi",22],["uusisuomi.fi",22],["digitalfoundry.net",26],["egx.net",26],["eurogamer.it",26],["mcmcomiccon.com",26],["nintendolife.com",26],["paxsite.com",26],["purexbox.com",26],["pushsquare.com",26],["starwarscelebration.com",26],["thehaul.com",26],["timeextension.com",26],["dicebreaker.com",[27,28]],["eurogamer.cz",[27,28]],["eurogamer.es",[27,28]],["eurogamer.net",[27,28]],["eurogamer.nl",[27,28]],["eurogamer.pl",[27,28]],["eurogamer.pt",[27,28]],["gamesindustry.biz",[27,28]],["jelly.deals",[27,28]],["reedpop.com",[27,28]],["rockpapershotgun.com",[27,28]],["thepopverse.com",[27,28]],["vg247.com",[27,28]],["videogameschronicle.com",[27,28]],["eurogamer.de",29],["roadtovr.com",30],["corriere.it",31],["gazzetta.it",31],["oggi.it",31],["cmp.sky.it",32],["tennisassa.fi",33],["f1racing.pl",34],["consent-pref.trustarc.com",36],["highlights.legaseriea.it",37],["calciomercato.com",37],["sosfanta.com",38],["youmath.it",40],["pip.gov.pl",41],["forbes.com",42],["mediaset.it",43],["repubblica.it",44],["fortune.com",45],["cmp.dpgmedia.nl",[46,48]],["cmp.dpgmedia.be",[46,48]],["cmp.ad.nl",[46,48]],["cmp.autotrack.nl",[46,48]],["cmp.autoweek.nl",[46,48]],["cmp.bd.nl",[46,48]],["cmp.bndestem.nl",[46,48]],["cmp.demorgen.be",[46,48]],["cmp.deondernemer.nl",[46,48]],["cmp.destentor.nl",[46,48]],["cmp.ed.nl",[46,48]],["cmp.gaspedaal.nl",[46,48]],["cmp.gelderlander.nl",[46,48]],["cmp.hln.be",[46,48]],["cmp.humo.be",[46,48]],["cmp.margriet.nl",[46,48]],["cmp.nu.nl",[46,48]],["cmp.qmusic.nl",[46,48]],["cmp.stijlvol-wonen.com",[46,48]],["cmp.trouw.nl",[46,48]],["cmp.tubantia.nl",[46,48]],["cmp.vtwonen.be",[46,48]],["cmp.vtwonen.nl",[46,48]],["cmp.pzc.nl",[46,48]],["cmp.zozitdat.nl",[46,48]],["cmp-sp.vrt.be",[47,48]],["ilrestodelcarlino.it",49],["quotidiano.net",49],["lanazione.it",49],["ilgiorno.it",49],["iltelegrafolivorno.it",49],["frandroid.com",50],["nutri-plus.de",51],["aa.com",52],["programme-tv.net",53],["cmp.vg.no",[54,55]],["movieplayer.it",56],["huffingtonpost.it",57],["lastampa.it",57],["ilsecoloxix.it",57],["geopop.it",59],["fanpage.it",59]]);
 
-const entitiesMap = new Map([["consent.google",0],["gmx",25],["music.amazon",34],["chrono24",38],["americanairlines",52]]);
+const entitiesMap = new Map([["consent.google",0],["gmx",26],["music.amazon",35],["chrono24",39],["americanairlines",52]]);
 
 const exceptionsMap = new Map([]);
 
@@ -54,16 +54,58 @@ const exceptionsMap = new Map([]);
 
 function trustedClickElement(
     selectors = '',
-    extraMatch = '', // not yet supported
+    extraMatch = '',
     delay = ''
 ) {
-    if ( extraMatch !== '' ) { return; }
-
     const safe = safeSelf();
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     const uboLog = extraArgs.log !== undefined
         ? ((...args) => { safe.uboLog(...args); })
         : (( ) => { });
+
+    if ( extraMatch !== '' ) {
+        const assertions = extraMatch.split(',').map(s => {
+            const pos1 = s.indexOf(':');
+            const s1 = pos1 !== -1 ? s.slice(0, pos1) : s;
+            const not = s1.startsWith('!');
+            const type = not ? s1.slice(1) : s1;
+            const s2 = pos1 !== -1 ? s.slice(pos1+1).trim() : '';
+            if ( s2 === '' ) { return; }
+            const out = { not, type };
+            const match = /^\/(.+)\/(i?)$/.exec(s2);
+            if ( match !== null ) {
+                out.re = new RegExp(match[1], match[2] || undefined);
+                return out;
+            }
+            const pos2 = s2.indexOf('=');
+            const key = pos2 !== -1 ? s2.slice(0, pos2).trim() : s2;
+            const value = pos2 !== -1 ? s2.slice(pos2+1).trim() : '';
+            out.re = new RegExp(`^${this.escapeRegexChars(key)}=${this.escapeRegexChars(value)}`);
+            return out;
+        }).filter(details => details !== undefined);
+        const allCookies = assertions.some(o => o.type === 'cookie')
+            ? getAllCookiesFn()
+            : [];
+        const allStorageItems = assertions.some(o => o.type === 'localStorage')
+            ? getAllLocalStorageFn()
+            : [];
+        const hasNeedle = (haystack, needle) => {
+            for ( const { key, value } of haystack ) {
+                if ( needle.test(`${key}=${value}`) ) { return true; }
+            }
+            return false;
+        };
+        for ( const { not, type, re } of assertions ) {
+            switch ( type ) {
+            case 'cookie':
+                if ( hasNeedle(allCookies, re) === not ) { return; }
+                break;
+            case 'localStorage':
+                if ( hasNeedle(allStorageItems, re) === not ) { return; }
+                break;
+            }
+        }
+    }
 
     const querySelectorEx = (selector, context = document) => {
         const pos = selector.indexOf(' >>> ');
@@ -167,6 +209,28 @@ function trustedClickElement(
     runAtHtmlElementFn(process);
 }
 
+function getAllCookiesFn() {
+    return document.cookie.split(/\s*;\s*/).map(s => {
+        const pos = s.indexOf('=');
+        if ( pos === 0 ) { return; }
+        if ( pos === -1 ) { return `${s.trim()}=`; }
+        const key = s.slice(0, pos).trim();
+        const value = s.slice(pos+1).trim();
+        return { key, value };
+    }).filter(s => s !== undefined);
+}
+
+function getAllLocalStorageFn(which = 'localStorage') {
+    const storage = self[which];
+    const out = [];
+    for ( let i = 0; i < storage.length; i++ ) {
+        const key = storage.key(i);
+        const value = storage.getItem(key);
+        return { key, value };
+    }
+    return out;
+}
+
 function runAtHtmlElementFn(fn) {
     if ( document.documentElement ) {
         fn();
@@ -217,6 +281,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -237,8 +304,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -257,7 +323,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

@@ -42,11 +42,11 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["_blocker_hidden","1"],["dismissCheck","1"],["bulletin_new_31","1"],["avPopupCookie","1"],["DictPopShownToday","true"],["notification-newsletter-closed","true"],["pum-14592","true"],["modal","true"],["closed-black-banner","1"],["consultation_modal_shown","1"],["courses_quiz_completed","1"],["discover-disable-sitewide-article","true"],["showPopUp","true"],["isShowSociety","1"],["user_sign_up_modal_closed","true"],["common_sign_up_show","1"],["popShowed10s","yes"],["showLoginPopup","1"],["hide_promo_popup","true"],["nft-now-modal","1"],["do_not_show_mortgage_banner","1"],["divioverlay240311","true"],["divioverlay240768","true"],["amp_modal","1"],["pum-2309","true"],["support-ukraine","true"],["viewedOuibounceModal","true"],["acquisitionModalShowed","1"],["pageHint","1"],["intModalViewed","true"],["modal_rss","true"],["gmu_leadform","1"],["unlogin_scroll_step","1"],["cp_id_85057","true"],["movie-displayed","true"],["njt-close-notibar","true"],["signup_modal","true"],["signup_win_closed","true"],["__TRAVEL_QUIZ__","true"],["emailSignupCookie","true"],["efblog__hide_subscribe_popup","true"],["newsletteroverlayopened","true"],["popup_kapali","true"],["subbanner","true"],["home-layer","false"],["OogCCO","1"],["ck_glue_visit","1"],["exit_intent","true"],["seen-sl-signup-modal","true"],["wp-dl-nrxt","1"],["mag-newsletterbox","1"],["_pc_signed_up","true"],["nosi","1"],["ilike","1"],["disableNewsletterOverlay","1"],["inc_optin_popup_long_hidden-1_417","1"],["mvpopnews","1"],["NewsletterPopup","1"],["_pc_annoyed","1"],["_Wmpci_Popup","true"],["modalShown","1"],["chocolatey_hide_packages_disclaimer","true"],["mobile_main_half_popup","Y"],["saiupagina","true"],["forti.engagement_popup_banner","1"],["discountPrice","true"],["__expert.modal.campaign.welcome2023","true"],["AframeNewsletter","true"],["exitModal","true"],["newsletter-popup-shown","true"],["_showed_subscribeModal_og","1"],["neverNewsletterPopup","1"],["widget_show","1"],["newsletter","1"],["digest_sub_cookie_4","true"],["NewsLetterDismissed","true"],["modalShown","true"],["closedsticky","true"],["skipped_subsctiption_popup","true"],["ad_sess_pt_email","true"],["ad_sess_pb_email","true"],["ad_sess_pk_email","true"],["ad_sess_we_email","true"],["ad_sess_ws_email","true"],["NewsletterPopupEUROPA","true"],["pum-32511","true"],["a9-beforeyouleave-popin","1"],["likePopupShown","1"],["newsletter_popup_closed","true"],["newsletter_shown","false"],["conversion_action_done","true"],["views-since-welcome-ad","3"],["_pc_NL1","true"],["subscription_was_close","true"],["lr_subscribed","true"],["mrn_nl_abo","1"],["newsletterDisplayed","1"],["newsletterBox","1"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["_blocker_hidden","1"],["dismissCheck","1"],["patch_top_tooltip_next_door_dismissed","true"],["patch_email_mobile_modal_dismissed","true"],["bulletin_new_31","1"],["avPopupCookie","1"],["DictPopShownToday","true"],["notification-newsletter-closed","true"],["pum-14592","true"],["modal","true"],["closed-black-banner","1"],["consultation_modal_shown","1"],["courses_quiz_completed","1"],["discover-disable-sitewide-article","true"],["showPopUp","true"],["isShowSociety","1"],["user_sign_up_modal_closed","true"],["common_sign_up_show","1"],["popShowed10s","yes"],["showLoginPopup","1"],["hide_promo_popup","true"],["nft-now-modal","1"],["do_not_show_mortgage_banner","1"],["divioverlay240311","true"],["divioverlay240768","true"],["amp_modal","1"],["pum-2309","true"],["support-ukraine","true"],["viewedOuibounceModal","true"],["acquisitionModalShowed","1"],["pageHint","1"],["intModalViewed","true"],["modal_rss","true"],["gmu_leadform","1"],["unlogin_scroll_step","1"],["cp_id_85057","true"],["movie-displayed","true"],["njt-close-notibar","true"],["signup_modal","true"],["signup_win_closed","true"],["__TRAVEL_QUIZ__","true"],["emailSignupCookie","true"],["efblog__hide_subscribe_popup","true"],["newsletteroverlayopened","true"],["popup_kapali","true"],["subbanner","true"],["home-layer","false"],["OogCCO","1"],["ck_glue_visit","1"],["exit_intent","true"],["seen-sl-signup-modal","true"],["wp-dl-nrxt","1"],["mag-newsletterbox","1"],["_pc_signed_up","true"],["nosi","1"],["ilike","1"],["disableNewsletterOverlay","1"],["inc_optin_popup_long_hidden-1_417","1"],["mvpopnews","1"],["NewsletterPopup","1"],["_pc_annoyed","1"],["_Wmpci_Popup","true"],["modalShown","1"],["chocolatey_hide_packages_disclaimer","true"],["mobile_main_half_popup","Y"],["saiupagina","true"],["SignupDismissed","1"],["forti.engagement_popup_banner","1"],["discountPrice","true"],["__expert.modal.campaign.welcome2023","true"],["AframeNewsletter","true"],["exitModal","true"],["newsletter-popup-shown","true"],["_showed_subscribeModal_og","1"],["neverNewsletterPopup","1"],["widget_show","1"],["newsletter","1"],["digest_sub_cookie_4","true"],["NewsLetterDismissed","true"],["modalShown","true"],["closedsticky","true"],["skipped_subsctiption_popup","true"],["ad_sess_pt_email","true"],["ad_sess_pb_email","true"],["ad_sess_pk_email","true"],["ad_sess_we_email","true"],["ad_sess_ws_email","true"],["NewsletterPopupEUROPA","true"],["pum-32511","true"],["a9-beforeyouleave-popin","1"],["likePopupShown","1"],["newsletter_popup_closed","true"],["newsletter_shown","false"],["conversion_action_done","true"],["views-since-welcome-ad","3"],["_pc_NL1","true"],["subscription_was_close","true"],["lr_subscribed","true"],["mrn_nl_abo","1"],["newsletterDisplayed","1"],["newsletterBox","1"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["rambler.ua",0],["rambler.ru",0],["dailyadvertiser.com.au",1],["canberratimes.com.au",1],["thecourier.com.au",1],["portnews.com.au",1],["illawarramercury.com.au",1],["dailyliberal.com.au",1],["centralwesterndaily.com.au",1],["newcastleherald.com.au",1],["examiner.com.au",1],["bendigoadvertiser.com.au",1],["boylove1.mobi",[2,3]],["lingq.com",4],["gatonplayseries.com",6],["imerodromos.gr",7],["flowwow.com",8],["netology.ru",9],["musescore.com",10],["helloyishi.com.tw",11],["reverseimagesearch.com",12],["kikinote.net",13],["litalico-c.jp",14],["careers360.com",15],["blog.csdn.net",[16,32]],["map.baidu.com",17],["bilkom.pl",18],["nftnow.com",19],["cian.ru",20],["disntr.com",[21,22]],["ampmedia.jp",23],["mrt.od.ua",24],["customfw.xyz",25],["intellinews.com",26],["pfister.ch",27],["1-2-3.tv",28],["academicearth.org",29],["lkslodz.pl",30],["getmyuni.com",31],["gettinenglish.com",33],["texacopolska.pl",34],["mylivewallpapers.com",35],["ebth.com",36],["findamasters.com",37],["tripoto.com",38],["horizonhobby.de",39],["ef.com",40],["uniqlo.com",41],["benguturk.com",42],["cifrus.ru",43],["kmplayer.com",44],["oogarden.de",45],["tvfindr.com",46],["adacreisen.de",47],["dropbox.com",48],["delamar.de",49],["lebensmittel-sonderposten.de",50],["linkradquadrat.de",50],["forward.com",51],["abload.de",52],["puntocellulare.it",53],["hekatron-brandschutz.de",54],["prowebscraper.com",55],["moneyvox.fr",56],["kaiser-elektro.de",57],["thedailybeast.com",58],["careerkarma.com",59],["ruggable.com",60],["chocolatey.org",61],["m.qoo10.jp",62],["girafa.com.br",63],["community.fortinet.com",64],["onlinepngtools.com",65],["onlinetools.com",65],["expert.it",66],["aframe.oscars.org",67],["mymuesli.com",69],["onlinegibdd.ru",70],["auxologico.it",71],["onclinic.ua",72],["geizdental.de",73],["unisender.com",74],["pbs.org",[75,76]],["profgalloway.com",77],["bbbl.dev",78],["pbteen.com",79],["potterybarn.com",80],["potterybarnkids.com",81],["westelm.com",82],["williams-sonoma.com",83],["porsche-design.com",84],["ordnungsliebe.net",85],["gymglish.com",86],["shoppingpl.com",87],["mozo.com.au",88],["parfois.com",89],["wiseadvice-it.ru",90],["nextgov.com",91],["thebulletin.org",92],["quto.ru",93],["freedomplatform.tv",94],["marianne.net",95],["lampenwelt.de",96],["fahrradmanufaktur.de",97],["techonthenet.com",98],["tumblr.com",99],["scitechdaily.com",100]]);
+const hostnamesMap = new Map([["rambler.ua",0],["rambler.ru",0],["dailyadvertiser.com.au",1],["canberratimes.com.au",1],["thecourier.com.au",1],["portnews.com.au",1],["illawarramercury.com.au",1],["dailyliberal.com.au",1],["centralwesterndaily.com.au",1],["newcastleherald.com.au",1],["examiner.com.au",1],["bendigoadvertiser.com.au",1],["patch.com",[2,3]],["boylove1.mobi",[4,5]],["lingq.com",6],["gatonplayseries.com",8],["imerodromos.gr",9],["flowwow.com",10],["netology.ru",11],["musescore.com",12],["helloyishi.com.tw",13],["reverseimagesearch.com",14],["kikinote.net",15],["litalico-c.jp",16],["careers360.com",17],["blog.csdn.net",[18,34]],["map.baidu.com",19],["bilkom.pl",20],["nftnow.com",21],["cian.ru",22],["disntr.com",[23,24]],["ampmedia.jp",25],["mrt.od.ua",26],["customfw.xyz",27],["intellinews.com",28],["pfister.ch",29],["1-2-3.tv",30],["academicearth.org",31],["lkslodz.pl",32],["getmyuni.com",33],["gettinenglish.com",35],["texacopolska.pl",36],["mylivewallpapers.com",37],["ebth.com",38],["findamasters.com",39],["tripoto.com",40],["horizonhobby.de",41],["ef.com",42],["uniqlo.com",43],["benguturk.com",44],["cifrus.ru",45],["kmplayer.com",46],["oogarden.de",47],["tvfindr.com",48],["adacreisen.de",49],["dropbox.com",50],["delamar.de",51],["lebensmittel-sonderposten.de",52],["linkradquadrat.de",52],["forward.com",53],["abload.de",54],["puntocellulare.it",55],["hekatron-brandschutz.de",56],["prowebscraper.com",57],["moneyvox.fr",58],["kaiser-elektro.de",59],["thedailybeast.com",60],["careerkarma.com",61],["ruggable.com",62],["chocolatey.org",63],["m.qoo10.jp",64],["girafa.com.br",65],["warnerbrosgames.com",66],["community.fortinet.com",67],["onlinepngtools.com",68],["onlinetools.com",68],["expert.it",69],["aframe.oscars.org",70],["mymuesli.com",72],["onlinegibdd.ru",73],["auxologico.it",74],["onclinic.ua",75],["geizdental.de",76],["unisender.com",77],["pbs.org",[78,79]],["profgalloway.com",80],["bbbl.dev",81],["pbteen.com",82],["potterybarn.com",83],["potterybarnkids.com",84],["westelm.com",85],["williams-sonoma.com",86],["porsche-design.com",87],["ordnungsliebe.net",88],["gymglish.com",89],["shoppingpl.com",90],["mozo.com.au",91],["parfois.com",92],["wiseadvice-it.ru",93],["nextgov.com",94],["thebulletin.org",95],["quto.ru",96],["freedomplatform.tv",97],["marianne.net",98],["lampenwelt.de",99],["fahrradmanufaktur.de",100],["techonthenet.com",101],["tumblr.com",102],["scitechdaily.com",103]]);
 
-const entitiesMap = new Map([["vivre",5],["zendesk",68]]);
+const entitiesMap = new Map([["vivre",7],["zendesk",71]]);
 
 const exceptionsMap = new Map([]);
 
@@ -130,6 +130,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -150,8 +153,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -170,7 +172,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {
@@ -206,16 +208,7 @@ function setCookieFn(
     path = '',
     options = {},
 ) {
-    const getCookieValue = name => {
-        for ( const s of document.cookie.split(/\s*;\s*/) ) {
-            const pos = s.indexOf('=');
-            if ( pos === -1 ) { continue; }
-            if ( s.slice(0, pos) !== name ) { continue; }
-            return s.slice(pos+1);
-        }
-    };
-
-    const cookieBefore = getCookieValue(name);
+    const cookieBefore = getCookieFn(name);
     if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
     if ( cookieBefore === value && options.reload ) { return; }
 
@@ -243,8 +236,19 @@ function setCookieFn(
     } catch(_) {
     }
 
-    if ( options.reload && getCookieValue(name) === value ) {
+    if ( options.reload && getCookieFn(name) === value ) {
         window.location.reload();
+    }
+}
+
+function getCookieFn(
+    name = ''
+) {
+    for ( const s of document.cookie.split(/\s*;\s*/) ) {
+        const pos = s.indexOf('=');
+        if ( pos === -1 ) { continue; }
+        if ( s.slice(0, pos) !== name ) { continue; }
+        return s.slice(pos+1).trim();
     }
 }
 

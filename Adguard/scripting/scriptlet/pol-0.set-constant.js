@@ -42,13 +42,13 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["WP.gaf.loadBunch","noopFunc"],["Object.prototype.rekids","undefined"],["Object.prototype.gafSlot","undefined"],["Object.prototype.advViewability","undefined"],["Object.prototype.loadBunch","noopFunc"],["Object.prototype.loadAndRunBunch","noopFunc"],["displayed","false"],["loadElement","noopFunc"],["showAds","true"],["pp_adblock_is_off","trueFunc"],["window.google_jobrunner","noopFunc"],["Inpl.Abd.onDetected","noopFunc"],["isAdblockDetected","0"],["adsBlocked","noopFunc"],["showAddbockerMsg","noopFunc"],["loadElementBlock","noopFunc"]];
+const argsList = [["WP.gaf.loadBunch","noopFunc"],["Object.prototype.rekids","undefined"],["Object.prototype.gafSlot","undefined"],["Object.prototype.advViewability","undefined"],["Object.prototype.loadBunch","noopFunc"],["Object.prototype.loadAndRunBunch","noopFunc"],["displayed","false"],["dfpParams.slots","null"],["loadElement","noopFunc"],["showAds","true"],["pp_adblock_is_off","trueFunc"],["window.google_jobrunner","noopFunc"],["Inpl.Abd.onDetected","noopFunc"],["isAdblockDetected","0"],["adsBlocked","noopFunc"],["showAddbockerMsg","noopFunc"],["loadElementBlock","noopFunc"]];
 
-const hostnamesMap = new Map([["www.wp.pl",0],["money.pl",[1,2,3]],["open.fm",2],["sportowefakty.wp.pl",4],["profil.wp.pl",5],["opensubtitles.org",6],["www.elektroda.pl",[7,15]],["acmilan.com.pl",8],["kitsune-subs.anime-odcinki.pl",8],["miastakobiet.pl",9],["stronazdrowia.pl",9],["dniwolne.eu",10],["interia.pl",[11,12]],["pomponik.pl",[11,12]],["cdahd.co",13],["synonimy.pl",14]]);
+const hostnamesMap = new Map([["www.wp.pl",0],["money.pl",[1,2,3]],["open.fm",2],["sportowefakty.wp.pl",4],["profil.wp.pl",5],["opensubtitles.org",6],["avanti24.pl",7],["czterykaty.pl",7],["edziecko.pl",7],["g.pl",7],["gazeta.pl",7],["haps.pl",7],["hapsvod.pl",7],["komunikaty.pl",7],["magazyn-kuchnia.pl",7],["moto.pl",7],["plotek.pl",7],["sport.pl",7],["tokfm.pl",7],["ukrayina.pl",7],["wyborcza.biz",7],["www.elektroda.pl",[8,16]],["acmilan.com.pl",9],["kitsune-subs.anime-odcinki.pl",9],["miastakobiet.pl",10],["stronazdrowia.pl",10],["dniwolne.eu",11],["interia.pl",[12,13]],["pomponik.pl",[12,13]],["cdahd.co",14],["synonimy.pl",15]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["poczta.interia.pl",[11]]]);
+const exceptionsMap = new Map([["poczta.interia.pl",[12]]]);
 
 /******************************************************************************/
 
@@ -307,6 +307,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -327,8 +330,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -347,7 +349,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

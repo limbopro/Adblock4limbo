@@ -42,9 +42,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = new Map(); // jshint ignore: line
 
-const argsList = [["autoplay","[data-video-player=\"small\"]","stay"],["autoplay","video","stay"],["autoplay|loop",".watch-live__link > video","stay"],["autoplay|loop","video","stay"],["class",".js-video-box__container"],["data-autoplay","video"],["data-video-play-mode"],["disabled",".uk-modal-footer > button"],["oncontextmenu","[class]","stay"],["oncontextmenu|oncopy|onselectstart"],["target","a[href*=\"#rcmrclid\"]","stay"]];
+const argsList = [["autoplay","[data-video-player=\"small\"]","stay"],["autoplay","video","stay"],["autoplay|loop",".watch-live__link > video","stay"],["autoplay|loop","video","stay"],["class",".js-video-box__container"],["data-autoplay","video"],["data-video-play-mode"],["disabled",".uk-modal-footer > button"],["oncontextmenu","[class]","stay"],["oncontextmenu|oncopy|onselectstart"]];
 
-const hostnamesMap = new Map([["i-ua.tv",0],["cnews.ru",1],["gfycat.com",1],["inter.ua",1],["obozrevatel.com",1],["platformcraft.ru",1],["protv.md",1],["ren.tv",1],["rg.ru",1],["rusvesna.su",1],["tv8.md",1],["xsport.ua",1],["u24.ua",2],["afisha.ru",3],["byrutdb.org",3],["film.ru",3],["filmpro.ru",3],["lenta.ru",4],["svoboda.org",5],["dtf.ru",6],["vc.ru",6],["myshared.ru",7],["lostfilm.download",8],["lostfilm.life",8],["lostfilm.pro",8],["lostfilm.today",8],["lostfilm.tv",8],["lostfilm.tw",8],["lostfilm.uno",8],["lostfilm.win",8],["lostfilmtv.site",8],["lostfilmtv.uno",8],["lostfilmtv1.site",8],["lostfilmtv2.site",8],["lostfilmtv3.site",8],["lostfilmtv4.site",8],["lostfilmtv5.site",8],["stalker-mods.clan.su",9],["stalker-mods.su",9],["www.rambler.ru",10]]);
+const hostnamesMap = new Map([["i-ua.tv",0],["cnews.ru",1],["gfycat.com",1],["inter.ua",1],["obozrevatel.com",1],["platformcraft.ru",1],["protv.md",1],["ren.tv",1],["rg.ru",1],["rusvesna.su",1],["tv8.md",1],["xsport.ua",1],["u24.ua",2],["afisha.ru",3],["byrutdb.org",3],["film.ru",3],["filmpro.ru",3],["lenta.ru",4],["svoboda.org",5],["dtf.ru",6],["vc.ru",6],["myshared.ru",7],["lostfilm.download",8],["lostfilm.life",8],["lostfilm.pro",8],["lostfilm.today",8],["lostfilm.tv",8],["lostfilm.tw",8],["lostfilm.uno",8],["lostfilm.win",8],["lostfilmtv.site",8],["lostfilmtv.uno",8],["lostfilmtv1.site",8],["lostfilmtv2.site",8],["lostfilmtv3.site",8],["lostfilmtv4.site",8],["lostfilmtv5.site",8],["stalker-mods.clan.su",9],["stalker-mods.su",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -175,6 +175,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -195,8 +198,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -215,7 +217,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

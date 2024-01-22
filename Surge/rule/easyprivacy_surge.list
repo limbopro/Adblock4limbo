@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401211228
+## ! Version: 202401221539
 ## ! Title: EasyPrivacy
-## ! Last modified: 21 Jan 2024 12:28 UTC
+## ! Last modified: 22 Jan 2024 15:39 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1421,6 +1421,7 @@ DOMAIN-SUFFIX,nervoussummer.com
 DOMAIN-SUFFIX,niftyhospital.com
 DOMAIN-SUFFIX,niftyjelly.com
 DOMAIN-SUFFIX,nightwound.com
+DOMAIN-SUFFIX,nocturnalloom.com
 DOMAIN-SUFFIX,noiselessplough.com
 DOMAIN-SUFFIX,nonchalantnerve.com
 DOMAIN-SUFFIX,nondescriptcrowd.com
@@ -2284,6 +2285,7 @@ DOMAIN-SUFFIX,analytics-1.cavai.com
 DOMAIN-SUFFIX,analytics-api.klickly.com
 DOMAIN-SUFFIX,analytics-cms.whitebeard.me
 DOMAIN-SUFFIX,analytics-consent-manager-v2-prod.azureedge.net
+DOMAIN-SUFFIX,analytics-prd.aws.wehaa.net
 DOMAIN-SUFFIX,analytics-production.hapyak.com
 DOMAIN-SUFFIX,analytics-scripts.cablelabs.com
 DOMAIN-SUFFIX,analytics-sg.tiktok.com

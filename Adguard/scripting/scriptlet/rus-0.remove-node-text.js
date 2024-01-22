@@ -44,7 +44,7 @@ const scriptletGlobals = new Map(); // jshint ignore: line
 
 const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["online-fix.me",0],["inforesist.org",[1,6]],["sports.ru",2],["pikabu.ru",3],["gsm.in.ua",4],["game4you.top",5],["games-pc.top",5],["innal.top",5],["naylo.top",5],["rustorka.com",5],["rustorka.net",5],["rustorka.top",5],["rustorkacom.lib",5],["avtovod.com.ua",6],["bigmir.net",6],["buhgalter.com.ua",6],["buhgalter911.com",6],["censor.net",6],["dengi.ua",6],["ditey.com",6],["epravda.com.ua",6],["eurointegration.com.ua",6],["f1analytic.com",6],["facenews.ua",6],["gazeta.ua",6],["gorod.dp.ua",6],["hvylya.net",6],["i.ua",6],["isport.ua",6],["ivona.ua",6],["kolobok.ua",6],["kriminal.tv",6],["meteo.ua",6],["meteofor.com.ua",6],["nnovosti.info",6],["nv.ua",6],["panno4ka.net",6],["pogodaua.com",6],["pravda.com.ua",6],["real-vin.com",6],["smak.ua",6],["stravy.net",6],["tochka.net",6],["tv.ua",6],["viva.ua",6],["vsetv.com",6],["www.ukr.net",6]]);
+const hostnamesMap = new Map([["online-fix.me",0],["inforesist.org",[1,6]],["sports.ru",2],["pikabu.ru",3],["gsm.in.ua",4],["game4you.top",5],["games-pc.top",5],["innal.top",5],["naylo.top",5],["rustorka.com",5],["rustorka.net",5],["rustorka.top",5],["rustorkacom.lib",5],["avtovod.com.ua",6],["bigmir.net",6],["buhgalter.com.ua",6],["buhgalter911.com",6],["censor.net",6],["dengi.ua",6],["ditey.com",6],["epravda.com.ua",6],["eurointegration.com.ua",6],["f1analytic.com",6],["facenews.ua",6],["gazeta.ua",6],["gorod.dp.ua",6],["hvylya.net",6],["i.ua",6],["isport.ua",6],["ivona.ua",6],["kolobok.ua",6],["kriminal.tv",6],["liga.net",6],["meteo.ua",6],["meteofor.com.ua",6],["nnovosti.info",6],["nv.ua",6],["panno4ka.net",6],["pogodaua.com",6],["pravda.com.ua",6],["real-vin.com",6],["smak.ua",6],["stravy.net",6],["tochka.net",6],["tv.ua",6],["viva.ua",6],["vsetv.com",6],["www.ukr.net",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -205,6 +205,9 @@ function safeSelf() {
             if ( `${args[0]}` === '' ) { return; }
             this.log('[uBO]', ...args);
         },
+        escapeRegexChars(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
                 return { matchAll: true };
@@ -225,8 +228,7 @@ function safeSelf() {
             }
             if ( options.flags !== undefined ) {
                 return {
-                    re: new this.RegExp(pattern.replace(
-                        /[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    re: new this.RegExp(this.escapeRegexChars(pattern),
                         options.flags
                     ),
                     expect,
@@ -245,7 +247,7 @@ function safeSelf() {
             if ( pattern === '' ) { return /^/; }
             const match = /^\/(.+)\/([gimsu]*)$/.exec(pattern);
             if ( match === null ) {
-                const reStr = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const reStr = this.escapeRegexChars(pattern);
                 return new RegExp(verbatim ? `^${reStr}$` : reStr, flags);
             }
             try {

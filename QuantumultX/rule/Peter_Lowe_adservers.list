@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 22 Jan 2024 16:36:33 GMT
-# entries:        3782
+# last updated:   Wed, 24 Jan 2024 10:03:07 GMT
+# entries:        3783
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1937,6 +1937,7 @@ DOMAIN-SUFFIX,grapeshot.co.uk, reject
 DOMAIN-SUFFIX,greetzebra.com, reject
 DOMAIN-SUFFIX,greyinstrument.com, reject
 DOMAIN-SUFFIX,greystripe.com, reject
+DOMAIN-SUFFIX,grouchybrothers.com, reject
 DOMAIN-SUFFIX,groundtruth.com, reject
 DOMAIN-SUFFIX,gscontxt.net, reject
 DOMAIN-SUFFIX,guardeddirection.com, reject

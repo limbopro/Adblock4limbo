@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401241416
+## ! Version: 202401251538
 ## ! Title: EasyPrivacy
-## ! Last modified: 24 Jan 2024 14:16 UTC
+## ! Last modified: 25 Jan 2024 15:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2360,6 +2360,7 @@ DOMAIN-SUFFIX,analytics.orenshmu.com, reject
 DOMAIN-SUFFIX,analytics.ostr.io, reject
 DOMAIN-SUFFIX,analytics.paddle.com, reject
 DOMAIN-SUFFIX,analytics.pagefly.io, reject
+DOMAIN-SUFFIX,analytics.pangle-ads.com, reject
 DOMAIN-SUFFIX,analytics.piksel.com, reject
 DOMAIN-SUFFIX,analytics.pixels.ai, reject
 DOMAIN-SUFFIX,analytics.pointdrive.linkedin.com, reject

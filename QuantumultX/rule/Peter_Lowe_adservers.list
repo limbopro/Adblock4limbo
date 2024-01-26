@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 24 Jan 2024 10:03:07 GMT
-# entries:        3783
+# entries:        3786
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -68,6 +68,7 @@ DOMAIN-SUFFIX,aaxads.com, reject
 DOMAIN-SUFFIX,abacho.net, reject
 DOMAIN-SUFFIX,abackafterthought.com, reject
 DOMAIN-SUFFIX,abackchain.com, reject
+DOMAIN-SUFFIX,abackframe.com, reject
 DOMAIN-SUFFIX,abandonedaction.com, reject
 DOMAIN-SUFFIX,abc-ads.com, reject
 DOMAIN-SUFFIX,ablink.comms.trainline.com, reject
@@ -147,7 +148,6 @@ DOMAIN-SUFFIX,ad.myapple.pl, reject
 DOMAIN-SUFFIX,ad.mynetreklam.com.streamprovider.net, reject
 DOMAIN-SUFFIX,ad.nachtagenten.de, reject
 DOMAIN-SUFFIX,ad.nettvservices.com, reject
-DOMAIN-SUFFIX,ad.nozonedata.com, reject
 DOMAIN-SUFFIX,ad.nttnavi.co.jp, reject
 DOMAIN-SUFFIX,ad.nwt.cz, reject
 DOMAIN-SUFFIX,ad.period-calendar.com, reject
@@ -472,7 +472,6 @@ DOMAIN-SUFFIX,ads.gamespyid.com, reject
 DOMAIN-SUFFIX,ads.gamigo.de, reject
 DOMAIN-SUFFIX,ads.gaming-universe.de, reject
 DOMAIN-SUFFIX,ads.gaming1.com, reject
-DOMAIN-SUFFIX,ads.geekswithblogs.net, reject
 DOMAIN-SUFFIX,ads.getlucky.com, reject
 DOMAIN-SUFFIX,ads.gld.dk, reject
 DOMAIN-SUFFIX,ads.gmodules.com, reject
@@ -490,7 +489,6 @@ DOMAIN-SUFFIX,ads.hearstmags.com, reject
 DOMAIN-SUFFIX,ads.heartlight.org, reject
 DOMAIN-SUFFIX,ads.hollywood.com, reject
 DOMAIN-SUFFIX,ads.horsehero.com, reject
-DOMAIN-SUFFIX,ads.horyzon-media.com, reject
 DOMAIN-SUFFIX,ads.hsoub.com, reject
 DOMAIN-SUFFIX,ads.ibest.com.br, reject
 DOMAIN-SUFFIX,ads.ibryte.com, reject
@@ -812,6 +810,7 @@ DOMAIN-SUFFIX,adsrv.moebelmarkt.tv, reject
 DOMAIN-SUFFIX,adsrv2.swidnica24.pl, reject
 DOMAIN-SUFFIX,adsrvr.org, reject
 DOMAIN-SUFFIX,adstacks.in, reject
+DOMAIN-SUFFIX,adstanding.com, reject
 DOMAIN-SUFFIX,adstat.4u.pl, reject
 DOMAIN-SUFFIX,adstest.weather.com, reject
 DOMAIN-SUFFIX,adsupply.com, reject
@@ -1576,6 +1575,7 @@ DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
 DOMAIN-SUFFIX,deadpangate.com, reject
+DOMAIN-SUFFIX,deadpanmarble.com, reject
 DOMAIN-SUFFIX,dealdotcom.com, reject
 DOMAIN-SUFFIX,debonairway.com, reject
 DOMAIN-SUFFIX,debtbusterloans.com, reject
@@ -1940,6 +1940,7 @@ DOMAIN-SUFFIX,greystripe.com, reject
 DOMAIN-SUFFIX,grouchybrothers.com, reject
 DOMAIN-SUFFIX,groundtruth.com, reject
 DOMAIN-SUFFIX,gscontxt.net, reject
+DOMAIN-SUFFIX,gstaticx.com, reject
 DOMAIN-SUFFIX,guardeddirection.com, reject
 DOMAIN-SUFFIX,guardedschool.com, reject
 DOMAIN-SUFFIX,gunggo.com, reject
@@ -3024,6 +3025,7 @@ DOMAIN-SUFFIX,sdkfjxjertertry.com, reject
 DOMAIN-SUFFIX,seadform.net, reject
 DOMAIN-SUFFIX,searchmarketing.com, reject
 DOMAIN-SUFFIX,searchramp.com, reject
+DOMAIN-SUFFIX,seashoreturn.com, reject
 DOMAIN-SUFFIX,secre.jp, reject
 DOMAIN-SUFFIX,secretivecub.com, reject
 DOMAIN-SUFFIX,secretspiders.com, reject
@@ -3763,6 +3765,7 @@ DOMAIN-SUFFIX,yieldmanager.net, reject
 DOMAIN-SUFFIX,yieldmo.com, reject
 DOMAIN-SUFFIX,yieldoptimizer.com, reject
 DOMAIN-SUFFIX,yieldtraffic.com, reject
+DOMAIN-SUFFIX,yldbt.com, reject
 DOMAIN-SUFFIX,ymetrica1.com, reject
 DOMAIN-SUFFIX,yoads.net, reject
 DOMAIN-SUFFIX,yoggrt.com, reject

@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 24 Jan 2024 10:03:07 GMT
-# entries:        3783
+# entries:        3786
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -68,6 +68,7 @@ DOMAIN-SUFFIX,aaxads.com
 DOMAIN-SUFFIX,abacho.net
 DOMAIN-SUFFIX,abackafterthought.com
 DOMAIN-SUFFIX,abackchain.com
+DOMAIN-SUFFIX,abackframe.com
 DOMAIN-SUFFIX,abandonedaction.com
 DOMAIN-SUFFIX,abc-ads.com
 DOMAIN-SUFFIX,ablink.comms.trainline.com
@@ -147,7 +148,6 @@ DOMAIN-SUFFIX,ad.myapple.pl
 DOMAIN-SUFFIX,ad.mynetreklam.com.streamprovider.net
 DOMAIN-SUFFIX,ad.nachtagenten.de
 DOMAIN-SUFFIX,ad.nettvservices.com
-DOMAIN-SUFFIX,ad.nozonedata.com
 DOMAIN-SUFFIX,ad.nttnavi.co.jp
 DOMAIN-SUFFIX,ad.nwt.cz
 DOMAIN-SUFFIX,ad.period-calendar.com
@@ -472,7 +472,6 @@ DOMAIN-SUFFIX,ads.gamespyid.com
 DOMAIN-SUFFIX,ads.gamigo.de
 DOMAIN-SUFFIX,ads.gaming-universe.de
 DOMAIN-SUFFIX,ads.gaming1.com
-DOMAIN-SUFFIX,ads.geekswithblogs.net
 DOMAIN-SUFFIX,ads.getlucky.com
 DOMAIN-SUFFIX,ads.gld.dk
 DOMAIN-SUFFIX,ads.gmodules.com
@@ -490,7 +489,6 @@ DOMAIN-SUFFIX,ads.hearstmags.com
 DOMAIN-SUFFIX,ads.heartlight.org
 DOMAIN-SUFFIX,ads.hollywood.com
 DOMAIN-SUFFIX,ads.horsehero.com
-DOMAIN-SUFFIX,ads.horyzon-media.com
 DOMAIN-SUFFIX,ads.hsoub.com
 DOMAIN-SUFFIX,ads.ibest.com.br
 DOMAIN-SUFFIX,ads.ibryte.com
@@ -812,6 +810,7 @@ DOMAIN-SUFFIX,adsrv.moebelmarkt.tv
 DOMAIN-SUFFIX,adsrv2.swidnica24.pl
 DOMAIN-SUFFIX,adsrvr.org
 DOMAIN-SUFFIX,adstacks.in
+DOMAIN-SUFFIX,adstanding.com
 DOMAIN-SUFFIX,adstat.4u.pl
 DOMAIN-SUFFIX,adstest.weather.com
 DOMAIN-SUFFIX,adsupply.com
@@ -1576,6 +1575,7 @@ DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
 DOMAIN-SUFFIX,deadpangate.com
+DOMAIN-SUFFIX,deadpanmarble.com
 DOMAIN-SUFFIX,dealdotcom.com
 DOMAIN-SUFFIX,debonairway.com
 DOMAIN-SUFFIX,debtbusterloans.com
@@ -1940,6 +1940,7 @@ DOMAIN-SUFFIX,greystripe.com
 DOMAIN-SUFFIX,grouchybrothers.com
 DOMAIN-SUFFIX,groundtruth.com
 DOMAIN-SUFFIX,gscontxt.net
+DOMAIN-SUFFIX,gstaticx.com
 DOMAIN-SUFFIX,guardeddirection.com
 DOMAIN-SUFFIX,guardedschool.com
 DOMAIN-SUFFIX,gunggo.com
@@ -3024,6 +3025,7 @@ DOMAIN-SUFFIX,sdkfjxjertertry.com
 DOMAIN-SUFFIX,seadform.net
 DOMAIN-SUFFIX,searchmarketing.com
 DOMAIN-SUFFIX,searchramp.com
+DOMAIN-SUFFIX,seashoreturn.com
 DOMAIN-SUFFIX,secre.jp
 DOMAIN-SUFFIX,secretivecub.com
 DOMAIN-SUFFIX,secretspiders.com
@@ -3763,6 +3765,7 @@ DOMAIN-SUFFIX,yieldmanager.net
 DOMAIN-SUFFIX,yieldmo.com
 DOMAIN-SUFFIX,yieldoptimizer.com
 DOMAIN-SUFFIX,yieldtraffic.com
+DOMAIN-SUFFIX,yldbt.com
 DOMAIN-SUFFIX,ymetrica1.com
 DOMAIN-SUFFIX,yoads.net
 DOMAIN-SUFFIX,yoggrt.com

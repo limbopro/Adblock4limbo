@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401261241
+## ! Version: 202401271313
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Jan 2024 12:41 UTC
+## ! Last modified: 27 Jan 2024 13:13 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2280,6 +2280,7 @@ DOMAIN-SUFFIX,amp-error-reporting.appspot.com
 DOMAIN-SUFFIX,amplifypixel.outbrain.com
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com
 DOMAIN-SUFFIX,analyse.bcovery.com
+DOMAIN-SUFFIX,analyse.lnearn.com
 DOMAIN-SUFFIX,analytic.rollout.io
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com
 DOMAIN-SUFFIX,analytics-1.cavai.com
@@ -2954,7 +2955,6 @@ DOMAIN-SUFFIX,ramp.purch.com
 DOMAIN-SUFFIX,reach-id.orbit.tm-awx.com
 DOMAIN-SUFFIX,realm.hearst3pcc.com
 DOMAIN-SUFFIX,recs.shareaholic.com
-DOMAIN-SUFFIX,refer.ccbill.com
 DOMAIN-SUFFIX,refer.wordpress.com
 DOMAIN-SUFFIX,referrer.disqus.com
 DOMAIN-SUFFIX,removeads.workers.dev
@@ -3331,6 +3331,7 @@ DOMAIN-SUFFIX,usersegment.wpdigital.net
 DOMAIN-SUFFIX,v.shopify.com
 DOMAIN-SUFFIX,vdrn.redplum.com
 DOMAIN-SUFFIX,vercel-vitals.axiom.co
+DOMAIN-SUFFIX,verify.lnearn.com
 DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com
 DOMAIN-SUFFIX,videoevents.outbrain.com
 DOMAIN-SUFFIX,vortex.data.microsoft.com

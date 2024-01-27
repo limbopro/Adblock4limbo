@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401261241
+## ! Version: 202401271313
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Jan 2024 12:41 UTC
+## ! Last modified: 27 Jan 2024 13:13 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2280,6 +2280,7 @@ DOMAIN-SUFFIX,amp-error-reporting.appspot.com, reject
 DOMAIN-SUFFIX,amplifypixel.outbrain.com, reject
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,analyse.bcovery.com, reject
+DOMAIN-SUFFIX,analyse.lnearn.com, reject
 DOMAIN-SUFFIX,analytic.rollout.io, reject
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com, reject
 DOMAIN-SUFFIX,analytics-1.cavai.com, reject
@@ -2954,7 +2955,6 @@ DOMAIN-SUFFIX,ramp.purch.com, reject
 DOMAIN-SUFFIX,reach-id.orbit.tm-awx.com, reject
 DOMAIN-SUFFIX,realm.hearst3pcc.com, reject
 DOMAIN-SUFFIX,recs.shareaholic.com, reject
-DOMAIN-SUFFIX,refer.ccbill.com, reject
 DOMAIN-SUFFIX,refer.wordpress.com, reject
 DOMAIN-SUFFIX,referrer.disqus.com, reject
 DOMAIN-SUFFIX,removeads.workers.dev, reject
@@ -3331,6 +3331,7 @@ DOMAIN-SUFFIX,usersegment.wpdigital.net, reject
 DOMAIN-SUFFIX,v.shopify.com, reject
 DOMAIN-SUFFIX,vdrn.redplum.com, reject
 DOMAIN-SUFFIX,vercel-vitals.axiom.co, reject
+DOMAIN-SUFFIX,verify.lnearn.com, reject
 DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com, reject
 DOMAIN-SUFFIX,videoevents.outbrain.com, reject
 DOMAIN-SUFFIX,vortex.data.microsoft.com, reject

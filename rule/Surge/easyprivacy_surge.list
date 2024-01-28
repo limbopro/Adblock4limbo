@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401271313
+## ! Version: 202401281538
 ## ! Title: EasyPrivacy
-## ! Last modified: 27 Jan 2024 13:13 UTC
+## ! Last modified: 28 Jan 2024 15:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -72,7 +72,6 @@ DOMAIN-SUFFIX,btloader.com
 DOMAIN-SUFFIX,bx-cloud.com
 DOMAIN-SUFFIX,bydst.com
 DOMAIN-SUFFIX,cadsuta.net
-DOMAIN-SUFFIX,captcha-display.com
 DOMAIN-SUFFIX,catsunrunjam.com
 DOMAIN-SUFFIX,cbdatatracker.com
 DOMAIN-SUFFIX,cdnhst.xyz
@@ -4239,6 +4238,7 @@ DOMAIN-SUFFIX,geoip.hmageo.com
 DOMAIN-SUFFIX,geoip.ifunny.co
 DOMAIN-SUFFIX,geolocation.forbes.com
 DOMAIN-SUFFIX,glassmoni.researchgate.net
+DOMAIN-SUFFIX,gmetrics.getbeamer.com
 DOMAIN-SUFFIX,gnar.grammarly.com
 DOMAIN-SUFFIX,go.pardot.com
 DOMAIN-SUFFIX,gotie.tunein.com
@@ -23548,7 +23548,6 @@ DOMAIN-SUFFIX,email.hockeytown.com
 DOMAIN-SUFFIX,email.info.exclusive-networks.com
 DOMAIN-SUFFIX,email.mymandg.co.uk
 DOMAIN-SUFFIX,emailhoteldevelopment.ihg.com
-DOMAIN-SUFFIX,emam
 DOMAIN-SUFFIX,emea-go.experian.com
 DOMAIN-SUFFIX,emeadm.rockwellautomation.com
 DOMAIN-SUFFIX,emeanews.secureforms.partnermcafee.com
@@ -26237,7 +26236,6 @@ DOMAIN-SUFFIX,webtracking.devry.edu
 DOMAIN-SUFFIX,webtracking.medical.rossu.edu
 DOMAIN-SUFFIX,webtracking.moneylaundering.com
 DOMAIN-SUFFIX,webtracking.oncourselearning.com
-DOMAIN-SUFFIX,welcome..org
 DOMAIN-SUFFIX,welcome.ciscopowerofpartnership.com
 DOMAIN-SUFFIX,welcome.coniferhealth.com
 DOMAIN-SUFFIX,welcome.e.chiefs.com

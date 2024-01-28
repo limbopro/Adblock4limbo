@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401271313
+## ! Version: 202401281538
 ## ! Title: EasyPrivacy
-## ! Last modified: 27 Jan 2024 13:13 UTC
+## ! Last modified: 28 Jan 2024 15:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -72,7 +72,6 @@ DOMAIN-SUFFIX,btloader.com, reject
 DOMAIN-SUFFIX,bx-cloud.com, reject
 DOMAIN-SUFFIX,bydst.com, reject
 DOMAIN-SUFFIX,cadsuta.net, reject
-DOMAIN-SUFFIX,captcha-display.com, reject
 DOMAIN-SUFFIX,catsunrunjam.com, reject
 DOMAIN-SUFFIX,cbdatatracker.com, reject
 DOMAIN-SUFFIX,cdnhst.xyz, reject
@@ -4239,6 +4238,7 @@ DOMAIN-SUFFIX,geoip.hmageo.com, reject
 DOMAIN-SUFFIX,geoip.ifunny.co, reject
 DOMAIN-SUFFIX,geolocation.forbes.com, reject
 DOMAIN-SUFFIX,glassmoni.researchgate.net, reject
+DOMAIN-SUFFIX,gmetrics.getbeamer.com, reject
 DOMAIN-SUFFIX,gnar.grammarly.com, reject
 DOMAIN-SUFFIX,go.pardot.com, reject
 DOMAIN-SUFFIX,gotie.tunein.com, reject
@@ -23548,7 +23548,6 @@ DOMAIN-SUFFIX,email.hockeytown.com, reject
 DOMAIN-SUFFIX,email.info.exclusive-networks.com, reject
 DOMAIN-SUFFIX,email.mymandg.co.uk, reject
 DOMAIN-SUFFIX,emailhoteldevelopment.ihg.com, reject
-DOMAIN-SUFFIX,emam, reject
 DOMAIN-SUFFIX,emea-go.experian.com, reject
 DOMAIN-SUFFIX,emeadm.rockwellautomation.com, reject
 DOMAIN-SUFFIX,emeanews.secureforms.partnermcafee.com, reject
@@ -26237,7 +26236,6 @@ DOMAIN-SUFFIX,webtracking.devry.edu, reject
 DOMAIN-SUFFIX,webtracking.medical.rossu.edu, reject
 DOMAIN-SUFFIX,webtracking.moneylaundering.com, reject
 DOMAIN-SUFFIX,webtracking.oncourselearning.com, reject
-DOMAIN-SUFFIX,welcome..org, reject
 DOMAIN-SUFFIX,welcome.ciscopowerofpartnership.com, reject
 DOMAIN-SUFFIX,welcome.coniferhealth.com, reject
 DOMAIN-SUFFIX,welcome.e.chiefs.com, reject

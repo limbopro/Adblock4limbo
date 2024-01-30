@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_noXhrIf = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["exchange.buzzoola.com"],["livejournal.com/video/check?recordId="],["method:GET"],["strm.yandex.ru/get/"],["/ad.mail.ru/adp/.*notgb|\\/res\\//"]];
 
-const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["provoronezh.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["anidub.vip",5],["anidubonline.com",5],["loveanime.live",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8],["mail.ru",9]]);
+const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["116.ru",2],["14.ru",2],["161.ru",2],["164.ru",2],["178.ru",2],["26.ru",2],["29.ru",2],["35.ru",2],["43.ru",2],["45.ru",2],["48.ru",2],["51.ru",2],["53.ru",2],["56.ru",2],["59.ru",2],["60.ru",2],["62.ru",2],["63.ru",2],["68.ru",2],["71.ru",2],["72.ru",2],["74.ru",2],["76.ru",2],["86.ru",2],["89.ru",2],["93.ru",2],["chita.ru",2],["e1.ru",2],["ircity.ru",2],["mgorsk.ru",2],["msk1.ru",2],["ngs.ru",2],["ngs22.ru",2],["ngs24.ru",2],["ngs42.ru",2],["ngs55.ru",2],["ngs70.ru",2],["nn.ru",2],["proizhevsk.ru",2],["sochi1.ru",2],["sterlitamak1.ru",2],["tolyatty.ru",2],["ufa1.ru",2],["v1.ru",2],["vladivostok1.ru",2],["voronezh1.ru",2],["www.fontanka.ru",2],["4pda.to",3],["adme.media",4],["anidub.vip",5],["anidubonline.com",5],["loveanime.live",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8],["mail.ru",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -57,10 +57,11 @@ function noXhrIf(
     directive = ''
 ) {
     if ( typeof propsToMatch !== 'string' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('prevent-xhr', propsToMatch, directive);
     const xhrInstances = new WeakMap();
     const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
-    const log = propNeedles.size === 0 ? console.log.bind(console) : undefined;
-    const warOrigin = scriptletGlobals.get('warOrigin');
+    const warOrigin = scriptletGlobals.warOrigin;
     const headers = {
         'date': '',
         'content-type': '',
@@ -68,10 +69,6 @@ function noXhrIf(
     };
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
         open(method, url, ...args) {
-            if ( log !== undefined ) {
-                log(`uBO: xhr.open(${method}, ${url}, ${args.join(', ')})`);
-                return super.open(method, url, ...args);
-            }
             xhrInstances.delete(this);
             if ( warOrigin !== undefined && url.startsWith(warOrigin) ) {
                 return super.open(method, url, ...args);
@@ -79,6 +76,9 @@ function noXhrIf(
             const haystack = { method, url };
             if ( matchObjectProperties(propNeedles, haystack) ) {
                 xhrInstances.set(this, haystack);
+            }
+            if ( propsToMatch === '' && directive === '' ) {
+                safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(haystack, null, 2)}`);
             }
             haystack.headers = Object.assign({}, headers);
             return super.open(method, url, ...args);
@@ -154,6 +154,7 @@ function noXhrIf(
                 details.xhr.dispatchEvent(new Event('readystatechange'));
                 details.xhr.dispatchEvent(new Event('load'));
                 details.xhr.dispatchEvent(new Event('loadend'));
+                safe.uboLog(logPrefix, `Prevented with response:\n${details.xhr.response}`);
             });
         }
         getResponseHeader(headerName) {
@@ -215,12 +216,12 @@ function generateContentFn(directive) {
             return Promise.resolve(randomize(len | 0));
         }
     }
-    if ( directive.startsWith('war:') && scriptletGlobals.has('warOrigin') ) {
+    if ( directive.startsWith('war:') && scriptletGlobals.warOrigin ) {
         return new Promise(resolve => {
-            const warOrigin = scriptletGlobals.get('warOrigin');
+            const warOrigin = scriptletGlobals.warOrigin;
             const warName = directive.slice(4);
             const fullpath = [ warOrigin, '/', warName ];
-            const warSecret = scriptletGlobals.get('warSecret');
+            const warSecret = scriptletGlobals.warSecret;
             if ( warSecret !== undefined ) {
                 fullpath.push('?secret=', warSecret);
             }
@@ -257,7 +258,7 @@ function matchObjectProperties(propNeedles, ...objs) {
         let value = haystack[prop];
         if ( value === undefined ) { continue; }
         if ( typeof value !== 'string' ) {
-            try { value = JSON.stringify(value); }
+            try { value = safe.JSON_stringify(value); }
             catch(ex) { }
             if ( typeof value !== 'string' ) { continue; }
         }
@@ -285,8 +286,8 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -316,11 +317,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -388,7 +400,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_removeNodeText = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","advert"],["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","onerror"],["script","devtools"],["script","while(!![]){try{var"]];
+const argsList = [["script","advert"],["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","onerror"],["script","devtools"],["script","while(!![]){try{var"]];
 
-const hostnamesMap = new Map([["xanimu.com",0],["familyporner.com",0],["darknessporn.com",0],["freepublicporn.com",0],["pisshamster.com",0],["punishworld.com",0],["skidrowreloaded.com",1],["valid.x86.fr",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["animesaga.in",6],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["camcaps.io",7],["nicekkk.com",7],["dev.miuiflash.com",[7,26]],["djxmaza.in",[7,26]],["thecubexguide.com",[7,26]],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["aventurainromania.ro",18],["zipcode.com.ng",19],["thejakartapost.com",20],["mathcrave.com",21],["brokensilenze.net",[22,23]],["newsrade.com",24],["broncoshq.com",25],["anascrie.ro",27],["streambuddy.net",28],["smartkhabrinews.com",29],["cheersandgears.com",30],["arras.io",31],["arras.netlify.app",31],["arrax.io",31],["blog.cryptowidgets.net",32],["blog.insurancegold.in",32],["blog.wiki-topia.com",32],["blog.coinsvalue.net",32],["blog.cookinguide.net",32],["blog.freeoseocheck.com",32],["stblion.xyz",33]]);
+const hostnamesMap = new Map([["xanimu.com",0],["familyporner.com",0],["darknessporn.com",0],["freepublicporn.com",0],["pisshamster.com",0],["punishworld.com",0],["skidrowreloaded.com",1],["valid.x86.fr",3],["bolugundem.com",4],["jpost.com",5],["teamkong.tk",6],["sekaikomik.bio",6],["animesaga.in",7],["moviesapi.club",7],["bestx.stream",7],["watchx.top",7],["camcaps.io",8],["nicekkk.com",8],["dev.miuiflash.com",[8,27]],["djxmaza.in",[8,27]],["thecubexguide.com",[8,27]],["streamvid.net",8],["tips97tech.blogspot.com",8],["seriesperu.com",9],["klartext-ne.de",9],["iptvromania.ro",9],["cespun.eu",9],["sbot.cf",10],["fjordd.com",12],["playertv.net",14],["warungkomik.com",15],["themeslide.com",15],["terramirabilis.ro",16],["161.97.70.5",17],["gdrivedescarga.com",18],["audiologyresearch.org",19],["aventurainromania.ro",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["newsrade.com",25],["broncoshq.com",26],["anascrie.ro",28],["streambuddy.net",29],["smartkhabrinews.com",30],["cheersandgears.com",31],["arras.io",32],["arras.netlify.app",32],["arrax.io",32],["blog.cryptowidgets.net",33],["blog.insurancegold.in",33],["blog.wiki-topia.com",33],["blog.coinsvalue.net",33],["blog.cookinguide.net",33],["blog.freeoseocheck.com",33],["stblion.xyz",34]]);
 
-const entitiesMap = new Map([["strtape",2],["streamtape",2],["vidmoly",6],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",32]]);
+const entitiesMap = new Map([["strtape",2],["streamtape",2],["vidmoly",7],["oploverz",[9,13]],["tvhay",11],["bg-gledai",19],["vembed",33]]);
 
 const exceptionsMap = new Map([]);
 
@@ -66,18 +66,18 @@ function replaceNodeTextFn(
     replacement = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('replace-node-text.fn', ...Array.from(arguments));
     const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const shouldLog = scriptletGlobals.has('canDebug') && extraArgs.log || 0;
     const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
     const stop = (takeRecord = true) => {
         if ( takeRecord ) {
             handleMutations(observer.takeRecords());
         }
         observer.disconnect();
-        if ( shouldLog !== 0 ) {
-            safe.uboLog(`replace-node-text-core.fn: quitting "${pattern}" => "${replacement}"`);
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Quitting');
         }
     };
     let sedCount = extraArgs.sedCount || 0;
@@ -92,10 +92,10 @@ function replaceNodeTextFn(
             ? before.replace(rePattern, replacement)
             : replacement;
         node.textContent = after;
-        if ( shouldLog !== 0 ) {
-            safe.uboLog('replace-node-text.fn before:\n', before);
-            safe.uboLog('replace-node-text.fn after:\n', after);
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
+        safe.uboLog(logPrefix, `Text after:\n${after.trim()}`);
         return sedCount === 0 || (sedCount -= 1) !== 0;
     };
     const handleMutations = mutations => {
@@ -123,9 +123,7 @@ function replaceNodeTextFn(
             if ( handleNode(node) ) { continue; }
             stop(); break;
         }
-        if ( shouldLog !== 0 ) {
-            safe.uboLog(`replace-node-text-core.fn ${count} nodes present before installing mutation observer`);
-        }
+        safe.uboLog(logPrefix, `${count} nodes present before installing mutation observer`);
     }
     if ( extraArgs.stay ) { return; }
     runAt(( ) => {
@@ -168,8 +166,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -199,11 +197,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -271,7 +280,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

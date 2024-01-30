@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_hrefSanitizer = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://app.adjust.com/\"][href*=\"?redirect=\"]","?redirect"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"https://drivevideo.xyz/link?link=http\"]","?link"],["a[href^=\"http://go.redirectingat.com\"][href*=\"&url=\"]","?url"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://disq.us/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?u=http\"]","?u"],["a[href^=\"https://colab.research.google.com/corgiredirector?site=http\"]","?site"],["a[href^=\"https://shop-links.co/link/?\"][href*=\"&url=http\"]","?url"],["a[href^=\"http://www.jdoqocy.com/click-\"][href*=\"?URL=http\"]","?URL"],["a[href^=\"https://track.adtraction.com/t/t?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://metager.org/partner/r?link=http\"]","?link"],["a[href*=\"https://www.chollometro.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.dealabs.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.hotukdeals.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.mydealz.de/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://nl.pepper.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.it/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.pl/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.ru/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.preisjaeger.at/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.promodescuentos.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pelando.com.br/api/redirect?url=\"]","?url"]];
 
@@ -58,6 +58,8 @@ function hrefSanitizer(
 ) {
     if ( typeof selector !== 'string' ) { return; }
     if ( selector === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('href-sanitizer', selector, source);
     if ( source === '' ) { source = 'text'; }
     const sanitizeCopycats = (href, text) => {
         let elems = [];
@@ -69,6 +71,7 @@ function hrefSanitizer(
         for ( const elem of elems ) {
             elem.setAttribute('href', text);
         }
+        return elems.length;
     };
     const validateURL = text => {
         if ( text === '' ) { return ''; }
@@ -117,7 +120,8 @@ function hrefSanitizer(
             if ( hrefAfter === '' ) { continue; }
             if ( hrefAfter === href ) { continue; }
             elem.setAttribute('href', hrefAfter);
-            sanitizeCopycats(href, hrefAfter);
+            const count = sanitizeCopycats(href, hrefAfter);
+            safe.uboLog(logPrefix, `Sanitized ${count+1} links to\n${hrefAfter}`);
         }
         return true;
     };
@@ -181,8 +185,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -212,11 +216,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -284,7 +299,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

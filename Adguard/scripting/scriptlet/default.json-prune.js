@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_jsonPrune = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["adBlockWallEnabled"],["adtagparameter","enabled"],["adEnabled"],["Playlist.ContentBreaks"],["adRenderers"],["ads breaks cuepoints times"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.device.adSponsorshipTemplate data.device.adsParams"],["data.[].vast_url"],["vastUrl"],["adReinsertion"],["enabled","testhide"],["adParam"],["adProvider"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["ssai_manifest ad_manifest playback_info.ad_info qvt.playback_info.ad_info"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["data.getDetailPageContent.linkCustomAdOffers"],["data.getTaboolaAds.*"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["*","ad_unit_path"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["MediaContainer.Metadata.[].Ad"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["ads"],["ssaiInfo fallback.ssaiInfo"],["adtech-brightline adtech-google-pal adtech-iab-om"],["result.ads"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["adease adeaseBlob vmap","adease"],["plugins.adService"],["session.showAds"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"]];
 
@@ -58,19 +58,28 @@ function jsonPrune(
     stackNeedle = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('json-prune', rawPrunePaths, rawNeedlePaths, stackNeedle);
     const stackNeedleDetails = safe.initPattern(stackNeedle, { canNegate: true });
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     JSON.parse = new Proxy(JSON.parse, {
         apply: function(target, thisArg, args) {
             const objBefore = Reflect.apply(target, thisArg, args);
+            if ( rawPrunePaths === '' ) {
+                safe.uboLog(logPrefix, safe.JSON_stringify(objBefore, null, 2));
+            }
             const objAfter = objectPruneFn(
                 objBefore,
                 rawPrunePaths,
                 rawNeedlePaths,
                 stackNeedleDetails,
                 extraArgs
-           );
-           return objAfter || objBefore;
+            );
+            if ( objAfter === undefined ) { return objBefore; }
+            safe.uboLog(logPrefix, 'Pruned');
+            if ( safe.logLevel > 1 ) {
+                safe.uboLog(logPrefix, `After pruning:\n${safe.JSON_stringify(objAfter, null, 2)}`);
+            }
+            return objAfter;
         },
     });
 }
@@ -83,15 +92,12 @@ function objectPruneFn(
     extraArgs = {}
 ) {
     if ( typeof rawPrunePaths !== 'string' ) { return; }
-    const safe = safeSelf();
     const prunePaths = rawPrunePaths !== ''
         ? rawPrunePaths.split(/ +/)
         : [];
     const needlePaths = prunePaths.length !== 0 && rawNeedlePaths !== ''
         ? rawNeedlePaths.split(/ +/)
         : [];
-    const logLevel = shouldLog({ log: rawPrunePaths === '' || extraArgs.log });
-    const reLogNeedle = safe.patternToRegex(logLevel === true ? rawNeedlePaths : '');
     if ( stackNeedleDetails.matchAll !== true ) {
         if ( matchesStackTrace(stackNeedleDetails, extraArgs.logstack) === false ) {
             return;
@@ -106,14 +112,6 @@ function objectPruneFn(
             }
             return true;
         };
-        objectPruneFn.logJson = (json, msg, reNeedle) => {
-            if ( reNeedle.test(json) === false ) { return; }
-            safeSelf().uboLog(`objectPrune()`, msg, location.hostname, json);
-        };
-    }
-    const jsonBefore = logLevel ? safe.JSON_stringify(obj, null, 2) : '';
-    if ( logLevel === true || logLevel === 'all' ) {
-        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( prunePaths.length === 0 ) { return; }
     let outcome = 'nomatch';
@@ -124,15 +122,12 @@ function objectPruneFn(
             }
         }
     }
-    if ( logLevel === outcome ) {
-        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
-    }
     if ( outcome === 'match' ) { return obj; }
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -162,11 +157,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -234,7 +240,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
@@ -327,11 +365,6 @@ function objectFindOwnerFn(
         chain = chain.slice(pos + 1);
     }
     return true;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 function getExceptionToken() {

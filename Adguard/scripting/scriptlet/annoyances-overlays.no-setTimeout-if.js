@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_noSetTimeoutIf = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["SMOKESCREEN"],["mdp-deblocker"],[".first().height()"],["type","1000"],["showAd"],["chkADB"],["adblock"],["$(\"ins\").css"],["/0===.\\.offsetHeight/"],["adBlockEnabled","3000"],["wpcom_ad_wrap"],["#rbm_block_active"],["/offsetHeight[\\s\\S]*?offsetWidth[\\s\\S]*?\\.parentNode\\.removeChild/"],["white-list us"],["blockerDetected"],["/function\\(\\)\\{var.[a-z]\\=[a-z]\\.getElementById/","3000"],["google_ads_frame"],["AdBlockerCheck"],["adsbygoogle"],["広告"],["test.offsetHeight"],["()=>","5000"],["if($(\"ins\").css"],[".offsetHeight === 0"],["\"none\"===window.getComputedStyle"],["comBlocked"],["showads","7000"],[".height() == 0"],["appendMessage"],["adblockNotif"],["testAdBlock"],["xdBlockEnabled","100"],["bottomad"],["/[a-w0-9]{12,}/"],["o.customPassLogin()"],["facebook","200"],["shownJoinInModal"],["/autoShow.*localStorage\\.setItem\\(.auto_login_show_count/"],[".login-modal-btn:eq(0)"],["initialisePopupModal"],["mfp_login-register"],["","15000"],["OpenModal(\"popup_warning_modal\")"],["pbAdBlockHooks"],["Cookie.get(\"contribute-modal"],["#modal-id"],["userVisited"],["#PatronModal"],["isshowmodal","3000"],["init_no_delay"],["modalOpen()"],["jQuery.colorbox"],["cd-user-modal"],["advice-popup"],["#send_enquery_popup_load"],["$('.spg-"],["newsletter_show()","2000"],["signupPopup"],["#sign-up-campaign"],["#FloaterModal"],["newsletterModalContent",""],["displayPopup()"],["#IdentifiedPopUpHTML"],["hhModal","5000"],["SignUPPopup_load","5000"],["setPopup"],["mweb_to_app_popup"],["popupObject"],["popup_create_subscribtion"],["newsletter"],["function(){return i(!0)}","3000"],["refreshCount()"],["#newsletter-dialog"],["adsbygoogle","2000"],["checkAdStatus","500"],["ads","2000"],["ThriveGlobal"],["checkForAds"],["check","100"],["scan","500"],["onload_popup","8000"],["Adblocker","10000"],["()","2000"],["()","4000"],["()","1000"],["#advert-tracker","500"],["()","3000"],["w3ad","1000"],["()","1500"],["bioEp.showPopup"],["innerHTML"],["adsBlocked"],["showOverlay"],["NoAd","8000"],["loginModal","500"],["()","700"],["warning"],["__ext_loaded"],["slideout"],["modal"],["offsetHeight"],["0x"],["","7000"],["body"],["null"],["()","5000"],["popup"],["adblocker"],["exit_popup","10000"],["show"],["test.remove"],["noscroll","3000"],["adsbygoogle","5000"],["google_jobrunner"],["bait"],["Delay"],["checkFeed","1000"],["samOverlay"],["adStillHere"],["adb"],["offsetHeight","100"],["adBlockDetected"],["premium"],["blocked","1000"],["blocker"],[".modal","1000"],["Zord.analytics.registerBeforeLeaveEvent","3000"],["myModal","3000"],["an_message","500"],["_0x"],["pipaId","0"],["pgblck"],["forceRefresh"],["pop"],["ads"],["head"],["&adslot"],["debugger"],["ai_"],["donation-modal"],["$"],["onscroll","5500"],["login","5000"],["devtoolIsOpening","100"],["abp"],["gnt_mol_oy"],["adsok"],["length","3000"],["devtools"],["popupScreen"],["support-jsfiddle"],["ad"],["_detectLoop"],["concertAds"],["whetherdo"],["Premium"],["||null"],["pleaseSupportUs"],["nn_mpu1","5000"],["devtool"]];
 
@@ -58,6 +58,7 @@ function noSetTimeoutIf(
 ) {
     if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('prevent-setTimeout', needle, delay);
     const needleNot = needle.charAt(0) === '!';
     if ( needleNot ) { needle = needle.slice(1); }
     if ( delay === '' ) { delay = undefined; }
@@ -67,9 +68,6 @@ function noSetTimeoutIf(
         if ( delayNot ) { delay = delay.slice(1); }
         delay = parseInt(delay, 10);
     }
-    const log = needleNot === false && needle === '' && delay === undefined
-        ? console.log
-        : undefined;
     const reNeedle = safe.patternToRegex(needle);
     self.setTimeout = new Proxy(self.setTimeout, {
         apply: function(target, thisArg, args) {
@@ -77,19 +75,20 @@ function noSetTimeoutIf(
                 ? String(safe.Function_toString(args[0]))
                 : String(args[0]);
             const b = args[1];
-            if ( log !== undefined ) {
-                log('uBO: setTimeout("%s", %s)', a, b);
-            } else {
-                let defuse;
-                if ( needle !== '' ) {
-                    defuse = reNeedle.test(a) !== needleNot;
-                }
-                if ( defuse !== false && delay !== undefined ) {
-                    defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
-                }
-                if ( defuse ) {
-                    args[0] = function(){};
-                }
+            if ( needle === '' && delay === undefined ) {
+                safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
+                return Reflect.apply(target, thisArg, args);
+            }
+            let defuse;
+            if ( needle !== '' ) {
+                defuse = reNeedle.test(a) !== needleNot;
+            }
+            if ( defuse !== false && delay !== undefined ) {
+                defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
+            }
+            if ( defuse ) {
+                args[0] = function(){};
+                safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
             }
             return Reflect.apply(target, thisArg, args);
         },
@@ -103,8 +102,8 @@ function noSetTimeoutIf(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -134,11 +133,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -206,7 +216,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

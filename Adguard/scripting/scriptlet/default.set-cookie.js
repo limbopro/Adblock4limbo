@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_setCookie = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ts_popunder","true","","reload","1"],["__pf","1"],["npabp","1"],["clictune_pop","off"],["WHITELISTED_CLOSED","1"],["popunder","1"],["__gads","OK","","reload","1"],["4d8L2108","1","","reload","1"],["visits","1"],["customscript0","1"],["visited","1"],["inter","1","","reload","1"],["Ads","1"],["Ads","2"],["tracking_session_id","OK","","reload","1"],["Geo","OK"],["bitmovin_analytics_uuid","OK"]];
+const argsList = [["ts_popunder","true","","reload","1"],["__pf","1"],["npabp","1"],["clictune_pop","off"],["WHITELISTED_CLOSED","1"],["popunder","1"],["softonic-r2d2-view-state","1"],["__gads","OK","","reload","1"],["4d8L2108","1","","reload","1"],["visits","1"],["customscript0","1"],["visited","1"],["inter","1","","reload","1"],["Ads","1"],["Ads","2"],["tracking_session_id","OK","","reload","1"],["Geo","OK"],["bitmovin_analytics_uuid","OK"]];
 
-const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["movingxh.world",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhtree.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["aniwave.to",1],["anix.to",1],["flixwave.to",1],["fmoviesz.to",1],["twitchmetrics.net",2],["dlink2.net",3],["imgur.com",4],["xcity.org",5],["top16.net",[5,10]],["gourmetscans.net",6],["autosport.com",7],["motorsport.com",7],["smartkhabrinews.com",8],["iporntoo.com",9],["hentai.tv",11],["noticiasdehoje.biz",12],["jornaldigital.org",13],["fandom.com",[14,15]],["clickorlando.com",16]]);
+const hostnamesMap = new Map([["fullxh.com",0],["megaxh.com",0],["movingxh.world",0],["unlockxh4.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhtree.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["xhwide8.com",0],["aniwave.to",1],["anix.to",1],["flixwave.to",1],["fmoviesz.to",1],["twitchmetrics.net",2],["dlink2.net",3],["imgur.com",4],["xcity.org",5],["top16.net",[5,11]],["gourmetscans.net",7],["autosport.com",8],["motorsport.com",8],["smartkhabrinews.com",9],["iporntoo.com",10],["hentai.tv",12],["noticiasdehoje.biz",13],["jornaldigital.org",14],["fandom.com",[15,16]],["clickorlando.com",17]]);
 
-const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0]]);
+const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster5",0],["xhamster7",0],["xhamster8",0],["softonic",6]]);
 
 const exceptionsMap = new Map([]);
 
@@ -58,6 +58,8 @@ function setCookie(
     path = ''
 ) {
     if ( name === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
     name = encodeURIComponent(name);
 
     const validValues = [
@@ -82,7 +84,7 @@ function setCookie(
         if ( n > 15 ) { return; }
     }
 
-    setCookieFn(
+    const done = setCookieFn(
         false,
         name,
         value,
@@ -90,11 +92,15 @@ function setCookie(
         path,
         safeSelf().getExtraArgs(Array.from(arguments), 3)
     );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
+    }
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -124,11 +130,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -196,7 +213,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
@@ -236,9 +285,12 @@ function setCookieFn(
     } catch(_) {
     }
 
-    if ( options.reload && getCookieFn(name) === value ) {
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
         window.location.reload();
     }
+
+    return done;
 }
 
 function getCookieFn(

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401291416
+## ! Version: 202401301522
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Jan 2024 14:16 UTC
+## ! Last modified: 30 Jan 2024 15:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -223,6 +223,7 @@ DOMAIN-SUFFIX,loopcybersec.com, reject
 DOMAIN-SUFFIX,lsdm.co, reject
 DOMAIN-SUFFIX,maggieeatstheangel.com, reject
 DOMAIN-SUFFIX,matheranalytics.com, reject
+DOMAIN-SUFFIX,mathilde-ads.com, reject
 DOMAIN-SUFFIX,maxepv.com, reject
 DOMAIN-SUFFIX,maxtrafixx.tech, reject
 DOMAIN-SUFFIX,mb-tracking.com, reject
@@ -2952,6 +2953,7 @@ DOMAIN-SUFFIX,pixels.afcdn.com, reject
 DOMAIN-SUFFIX,pl.connatix.com, reject
 DOMAIN-SUFFIX,platform.iteratehq.com, reject
 DOMAIN-SUFFIX,play.adtonos.com, reject
+DOMAIN-SUFFIX,player-metrics.instaread.co, reject
 DOMAIN-SUFFIX,pm.boostintegrated.com, reject
 DOMAIN-SUFFIX,popup-static.unisender.com, reject
 DOMAIN-SUFFIX,porpoise.azettl.net, reject
@@ -3862,11 +3864,14 @@ DOMAIN-SUFFIX,uh.nakanohito.jp, reject
 DOMAIN-SUFFIX,webbc.fivecdm.com, reject
 DOMAIN-SUFFIX,x9.shinobi.jp, reject
 DOMAIN-SUFFIX,acelogger.heraldcorp.com, reject
+DOMAIN-SUFFIX,assets.datarize.ai, reject
 DOMAIN-SUFFIX,cm-exchange.toast.com, reject
+DOMAIN-SUFFIX,dtr-onsite-feed.datarize.ai, reject
 DOMAIN-SUFFIX,event.hackle.io, reject
 DOMAIN-SUFFIX,log.adplex.co.kr, reject
 DOMAIN-SUFFIX,log.cizion.com, reject
 DOMAIN-SUFFIX,log.mofa.go.kr, reject
+DOMAIN-SUFFIX,log.pipeline.datarize.io, reject
 DOMAIN-SUFFIX,log.targetpush.co.kr, reject
 DOMAIN-SUFFIX,logger.bzu.kr, reject
 DOMAIN-SUFFIX,logs-partners.coupang.com, reject
@@ -3875,6 +3880,7 @@ DOMAIN-SUFFIX,mtag.mman.kr, reject
 DOMAIN-SUFFIX,ngc1.nsm-corp.com, reject
 DOMAIN-SUFFIX,performanceplay.co.kr, reject
 DOMAIN-SUFFIX,pxl.retaku.net, reject
+DOMAIN-SUFFIX,realtime-profiling.datarize.ai, reject
 DOMAIN-SUFFIX,saluton.cizion.com, reject
 DOMAIN-SUFFIX,sas.nsm-corp.com, reject
 DOMAIN-SUFFIX,teralog.techhub.co.kr, reject

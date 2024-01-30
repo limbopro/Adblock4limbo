@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_abortOnPropertyRead = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["open"],["oneClick"],["adsRedirectPopups"],["atob"],["adtimaConfig"],["matchMedia"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["adsBlocked"],["Math.round"],["pushOnPageGala"],["sp"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["adsRedirectPopups"],["atob"],["adtimaConfig"],["matchMedia"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["cafenau.com",2],["javnong.cc",3],["linkneverdie.net",4],["phimmoi4s.com",5],["phimdinhcao.net",5],["phimlongtieng.net",5],["phimdinhcao.com",5],["plvb.xyz",[6,7,8,9,10]],["tinsoikeo.vip",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["tvhayh.org",12],["vuaphimmoi2.net",12],["quangcaoyenbai.com",12],["sieudamtv.one",12],["ephimchill.com",12],["motphimhan.cc",12],["maclife.io",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.com",12],["khophim88.net",12],["nhentaivn.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["m.blogtruyenvn.com",13],["animet.net",13],["anh.moe",13],["vinaurl.net",14],["xoilac98.tv",15],["ytstv.me",16],["yts.do",16],["yts.mx",16],["yts.rs",16],["znews.vn",17],["zuiphim2.com",18]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["azrom.net",2],["javnong.cc",3],["linkneverdie.net",4],["nettruyenus.net",5],["phimmoi4s.com",6],["phimdinhcao.net",6],["phimlongtieng.net",6],["phimdinhcao.com",6],["plvb.xyz",[7,8,9,10,11]],["tinsoikeo.vip",12],["truyensieuhay.com",13],["phimvietsub.pro",13],["quangcaoyenbai.com",13],["sieudamtv.one",13],["ephimchill.com",13],["maclife.io",13],["ophimhdvn3.net",13],["thuvienhd.xyz",13],["xemtv.tvhayhd.com",13],["khophim88.net",13],["nhentaivn.com",13],["khophimchill.com",13],["mv.dailyphimz.com",13],["veryfiles.com",14],["viettoons.tv",15],["mv.phimmoiaz.cc",15],["dood.pm",15],["ytstv.me",15],["animet.net",15],["anh.moe",15],["truyenhentaivn.com",15],["vinaurl.net",16],["xoilac98.tv",17],["yts.do",18],["yts.mx",18],["yts.rs",18],["znews.vn",19],["zuiphim2.com",20]]);
 
 const entitiesMap = new Map([]);
 
@@ -57,8 +57,11 @@ function abortOnPropertyRead(
 ) {
     if ( typeof chain !== 'string' ) { return; }
     if ( chain === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
     const exceptionToken = getExceptionToken();
     const abort = function() {
+        safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
     };
     const makeProxy = function(owner, chain) {
@@ -112,8 +115,8 @@ function getExceptionToken() {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -143,11 +146,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -215,7 +229,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

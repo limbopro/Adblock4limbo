@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_noSetTimeoutIf = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["window.getComputedStyle"],["placebo.height()"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["placebo"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
+const argsList = [["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
 
-const hostnamesMap = new Map([["biobiochile.cl",0],["sempreupdate.com.br",1],["peliculas8k.com",2],["guiacripto.online",3],["verasoul.com",4],["zona-leros.com",5],["xerifetech.com",6],["suaads.com",7],["reidoplacar.com",7],["suaurl.com",[7,17]],["guianoticiario.net",8],["resenhasglobais.com",9],["tecword.info",9],["smartdoing.tech",9],["vivercomsaude.online",9],["escplus.es",10],["genshinpro.com.br",11],["it-swarm-es.com",11],["manchetehoje.xyz",12],["unsurcoenlasombra.com",13],["hartico.com",14],["seriesdonghua.com",15],["mundodonghua.com",15],["forodecostarica.com",16],["seriesgratis.biz",18]]);
+const hostnamesMap = new Map([["peliculas8k.com",0],["guiacripto.online",1],["zona-leros.com",2],["xerifetech.com",3],["suaads.com",4],["reidoplacar.com",4],["suaurl.com",[4,14]],["guianoticiario.net",5],["resenhasglobais.com",6],["tecword.info",6],["smartdoing.tech",6],["vivercomsaude.online",6],["escplus.es",7],["genshinpro.com.br",8],["it-swarm-es.com",8],["manchetehoje.xyz",9],["unsurcoenlasombra.com",10],["hartico.com",11],["seriesdonghua.com",12],["mundodonghua.com",12],["forodecostarica.com",13],["seriesgratis.biz",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -58,6 +58,7 @@ function noSetTimeoutIf(
 ) {
     if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('prevent-setTimeout', needle, delay);
     const needleNot = needle.charAt(0) === '!';
     if ( needleNot ) { needle = needle.slice(1); }
     if ( delay === '' ) { delay = undefined; }
@@ -67,9 +68,6 @@ function noSetTimeoutIf(
         if ( delayNot ) { delay = delay.slice(1); }
         delay = parseInt(delay, 10);
     }
-    const log = needleNot === false && needle === '' && delay === undefined
-        ? console.log
-        : undefined;
     const reNeedle = safe.patternToRegex(needle);
     self.setTimeout = new Proxy(self.setTimeout, {
         apply: function(target, thisArg, args) {
@@ -77,19 +75,20 @@ function noSetTimeoutIf(
                 ? String(safe.Function_toString(args[0]))
                 : String(args[0]);
             const b = args[1];
-            if ( log !== undefined ) {
-                log('uBO: setTimeout("%s", %s)', a, b);
-            } else {
-                let defuse;
-                if ( needle !== '' ) {
-                    defuse = reNeedle.test(a) !== needleNot;
-                }
-                if ( defuse !== false && delay !== undefined ) {
-                    defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
-                }
-                if ( defuse ) {
-                    args[0] = function(){};
-                }
+            if ( needle === '' && delay === undefined ) {
+                safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
+                return Reflect.apply(target, thisArg, args);
+            }
+            let defuse;
+            if ( needle !== '' ) {
+                defuse = reNeedle.test(a) !== needleNot;
+            }
+            if ( defuse !== false && delay !== undefined ) {
+                defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
+            }
+            if ( defuse ) {
+                args[0] = function(){};
+                safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
             }
             return Reflect.apply(target, thisArg, args);
         },
@@ -103,8 +102,8 @@ function noSetTimeoutIf(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -134,11 +133,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -206,7 +216,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

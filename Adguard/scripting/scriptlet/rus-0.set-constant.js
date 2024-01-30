@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_setConstant = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["Object.prototype.changeVisible","noopFunc"],["ADV_DISABLED","true"],["Clicks._test_meta_referer","null"],["JSON.parse","noopFunc"],["Object.prototype.AdvObject","noopFunc"],["Object.prototype.AdvertisementManager","undefined"],["Object.prototype.IS_CHECK_REGISTRATION","false"],["Object.prototype.MediaReady","noopFunc"],["Object.prototype.PLAYED","null"],["Object.prototype._currentAgeRestriction","null"],["Object.prototype.adUsageStorageVars","undefined"],["Object.prototype.adblockSettings","undefined"],["Object.prototype.advert","null"],["Object.prototype.advertObject","null"],["Object.prototype.afg","true"],["Object.prototype.autoPlay","false"],["Object.prototype.autoPlay","null"],["Object.prototype.autoPopups","undefined"],["Object.prototype.autoplay","false"],["Object.prototype.autoplay","null"],["Object.prototype.autostart","noopFunc"],["Object.prototype.branding","undefined"],["Object.prototype.compactMode","true"],["Object.prototype.createBannerItem","null"],["Object.prototype.detect","noopFunc"],["Object.prototype.detectAdb","noopFunc"],["Object.prototype.detectAdblock","noopFunc"],["Object.prototype.disableAutoplay","true"],["Object.prototype.disablePaste","false"],["Object.prototype.disableSeek","noopFunc"],["Object.prototype.disableSelection","noopFunc"],["Object.prototype.getAutoplay","noopFunc"],["Object.prototype.getUaasConfig","undefined"],["Object.prototype.isNoAds","{}"],["Object.prototype.livetv-state","true"],["Object.prototype.manualAutoplay_","null"],["Object.prototype.minPlayingVisibleHeight","noopFunc"],["Object.prototype.onIntersected","noopFunc"],["Object.prototype.openstatCb","undefined"],["Object.prototype.partnerId","{}"],["Object.prototype.playVideo","noopFunc"],["Object.prototype.utm","false"],["Object.prototype.utm_campaign","false"],["Object.prototype.utm_medium","false"],["Object.prototype.utm_source","false"],["Object.prototype.utm_space","false"],["Object.prototype.utm_term","false"],["PageBottomBanners","undefined"],["String.fromCharCode","trueFunc"],["Unauthorized2","undefined"],["adBlock","false"],["app.book.external","null"],["cadb","false"],["clicks","2"],["g_GazetaNoExchange","true"],["home.export.complex-feed","undefined"],["isAdFree","noopFunc"],["localStorage.localstorageGameData",""],["main_air_closed","true"],["noAdsAtAll","{}"],["pl.getParams.isPlay","null"],["player.options.scroll","false"],["playerOptions.behaviour.autoPlay","false"],["sectionConfig.adBlock","null"],["timeEnd","1"],["top100Counter","false"],["window.EUMP.plugins.antiblock","noopFunc"],["window.ab","false"],["Object.prototype.preroll","undefined"],["biads.initCli","undefined"],["NO_ADV","1"],["Object.prototype.ENABLE_SMOKESCREEN","undefined"],["Object.prototype._Mimic","undefined"],["Object.prototype.autoPlayParams","false"],["Object.prototype.autoplayScrollHandler","noopFunc"],["Object.prototype.mimic","undefined"],["Object.prototype.obfuscate","noopFunc"],["Object.prototype.onLinkClick","noopFunc"],["Object.prototype.onLinkMouseDown","noopFunc"],["Object.prototype.runMimic","noopFunc"],["Object.prototype.useMimic","noopFunc"],["document.title","null"],["mr._mimic.locator.setup","{}"],["mr.data.asteroids","undefined"],["Object.prototype.hasAdBlockWhiteList","false"],["Object.prototype.AdvertisingManager","noopFunc"]];
+const argsList = [["Object.prototype.changeVisible","noopFunc"],["ADV_DISABLED","true"],["Clicks._test_meta_referer","null"],["JSON.parse","noopFunc"],["Object.prototype.AdvObject","noopFunc"],["Object.prototype.AdvertisementManager","undefined"],["Object.prototype.IS_CHECK_REGISTRATION","false"],["Object.prototype.MediaReady","noopFunc"],["Object.prototype.PLAYED","null"],["Object.prototype._currentAgeRestriction","null"],["Object.prototype.adUsageStorageVars","undefined"],["Object.prototype.adblockSettings","undefined"],["Object.prototype.advert","null"],["Object.prototype.advertObject","null"],["Object.prototype.afg","true"],["Object.prototype.autoPlay","false"],["Object.prototype.autoPlay","null"],["Object.prototype.autoPopups","undefined"],["Object.prototype.autoplay","false"],["Object.prototype.autoplay","null"],["Object.prototype.autostart","noopFunc"],["Object.prototype.branding","undefined"],["Object.prototype.compactMode","true"],["Object.prototype.createBannerItem","null"],["Object.prototype.detect","noopFunc"],["Object.prototype.detectAdb","noopFunc"],["Object.prototype.detectAdblock","noopFunc"],["Object.prototype.disableAutoplay","true"],["Object.prototype.disablePaste","false"],["Object.prototype.disableSeek","noopFunc"],["Object.prototype.disableSelection","noopFunc"],["Object.prototype.getAutoplay","noopFunc"],["Object.prototype.getUaasConfig","undefined"],["Object.prototype.isNoAds","{}"],["Object.prototype.livetv-state","true"],["Object.prototype.manualAutoplay_","null"],["Object.prototype.minPlayingVisibleHeight","noopFunc"],["Object.prototype.onIntersected","noopFunc"],["Object.prototype.openstatCb","undefined"],["Object.prototype.partnerId","{}"],["Object.prototype.playVideo","noopFunc"],["Object.prototype.utm","false"],["Object.prototype.utm_campaign","false"],["Object.prototype.utm_medium","false"],["Object.prototype.utm_source","false"],["Object.prototype.utm_space","false"],["Object.prototype.utm_term","false"],["PageBottomBanners","undefined"],["String.fromCharCode","trueFunc"],["Unauthorized2","undefined"],["adBlock","false"],["app.book.external","null"],["cadb","false"],["clicks","2"],["g_GazetaNoExchange","true"],["home.export.complex-feed","undefined"],["isAdFree","noopFunc"],["localStorage.localstorageGameData",""],["main_air_closed","true"],["noAdsAtAll","{}"],["pl.getParams.isPlay","null"],["player.options.scroll","false"],["playerOptions.behaviour.autoPlay","false"],["sectionConfig.adBlock","null"],["timeEnd","1"],["top100Counter","false"],["window.EUMP.plugins.antiblock","noopFunc"],["window.ab","false"],["Object.prototype.preroll","undefined"],["biads.initCli","undefined"],["NO_ADV","1"],["Object.prototype.ENABLE_SMOKESCREEN","undefined"],["Object.prototype._Mimic","undefined"],["Object.prototype.autoPlayParams","false"],["Object.prototype.autoplayScrollHandler","noopFunc"],["Object.prototype.mimic","undefined"],["Object.prototype.obfuscate","noopFunc"],["Object.prototype.onLinkClick","noopFunc"],["Object.prototype.onLinkMouseDown","noopFunc"],["Object.prototype.runMimic","noopFunc"],["Object.prototype.useMimic","noopFunc"],["document.title","null"],["mr._mimic.locator.transform","undefined"],["mr.data.asteroids","undefined"],["Object.prototype.hasAdBlockWhiteList","false"],["Object.prototype.AdvertisingManager","noopFunc"]];
 
-const hostnamesMap = new Map([["116.ru",0],["14.ru",0],["161.ru",0],["164.ru",0],["178.ru",0],["26.ru",0],["29.ru",0],["35.ru",0],["43.ru",0],["45.ru",0],["48.ru",0],["51.ru",0],["53.ru",0],["56.ru",0],["59.ru",0],["60.ru",0],["62.ru",0],["63.ru",0],["68.ru",0],["71.ru",0],["72.ru",0],["74.ru",0],["76.ru",0],["86.ru",0],["89.ru",0],["93.ru",0],["chita.ru",0],["e1.ru",0],["ircity.ru",0],["mgorsk.ru",0],["msk1.ru",0],["ngs.ru",0],["ngs22.ru",0],["ngs24.ru",0],["ngs42.ru",0],["ngs55.ru",0],["ngs70.ru",0],["nn.ru",0],["proizhevsk.ru",0],["provoronezh.ru",0],["sochi1.ru",0],["sterlitamak1.ru",0],["tolyatty.ru",0],["ufa1.ru",0],["v1.ru",0],["vladivostok1.ru",0],["www.fontanka.ru",0],["peers.tv",1],["www.ukr.net",2],["animelend.info",3],["ivi.ru",[4,13]],["ictv.ua",5],["inter.ua",5],["k1.ua",5],["novy.tv",5],["ntn.ua",5],["starlight.digital",5],["stb.ua",5],["teleportal.ua",5],["player.vgtrk.com",6],["tv-gubernia.ru",[7,58]],["xsport.ua",8],["1tv.ru",[9,29,66]],["music.yandex.by",10],["music.yandex.kz",10],["music.yandex.ru",10],["music.yandex.uz",10],["api-video.khl.ru",11],["razlozhi.ru",[12,52]],["igroutka.ru",14],["cdnvideo.ru",15],["eda.ru",15],["mania.gcdn.co",15],["vp.rambler.ru",[15,36]],["www.rambler.ru",15],["afisha.ru",16],["partnerkin.com",17],["iz.ru",18],["bonus-tv.ru",19],["eagleplatform.com",[19,61]],["embed.dugout.com",20],["sports.ru",21],["7days.ru",0],["doctorpiter.ru",0],["dom.mail.ru",0],["kinonews.ru",0],["kp.kg",0],["kp.kz",0],["kp.md",0],["kp.ru",0],["lady.mail.ru",0],["mk.ru",0],["ohotniki.ru",0],["portalvirtualreality.ru",0],["radiokp.ru",0],["sportkp.ru",0],["wday.ru",0],["woman.ru",0],["tass.ru",22],["ati.su",23],["24smi.org",24],["russia-tv.online",25],["examenpdd.com",26],["embed.twitch.tv",27],["player.twitch.tv",27],["www.mos.ru",28],["kinokong.pro",30],["dzen.ru",[31,32,39]],["play.tv3.lt",33],["play.tv3.lv",33],["tv3play.skaties.lv",33],["rbc.ru",34],["sportrbc.ru",34],["tenews.org.ua",35],["rg.ru",[37,38]],["frontend.vh.yandex.ru",39],["naydex.net",39],["widgets.kinopoisk.ru",39],["www.kinopoisk.ru",39],["yastatic.net",39],["3dnews.kz",40],["3dnews.ru",40],["vm.ru",40],["forbes.ru",[41,42,43,44,45,46]],["vk.com",[47,49,59]],["vk.ru",[47,49,59]],["free-tor.info",48],["korsars.info",48],["hentai-share.one",50],["gdz-putina.fun",51],["gdz.ninja",51],["gdz.ru",51],["gdzotputina.club",51],["gdzputina.net",51],["megaresheba.com",51],["megaresheba.ru",51],["resheba.me",51],["spishi.fun",51],["zoobrilka.net",51],["audioportal.su",53],["gazeta.ru",[54,56]],["ya.ru",55],["playground.ru",57],["player.smotrim.ru",60],["kinescope.io",62],["apollo.lv",63],["tvnet.lv",63],["softportal.com",64],["rambler.ru",65],["remont-aud.net",67],["okminigames.mail.ru",70],["e.mail.ru",[71,77,78,84]],["octavius.mail.ru",[71,77,78,84]],["otvet.mail.ru",72],["player-smotri.mail.ru",73],["ok.ru",[74,76]],["mail.ru",[75,81,82,83]],["sportmail.ru",[75,80]],["my.mail.ru",79],["news.mail.ru",80],["pogoda.mail.ru",80],["mail.ukr.net",85]]);
+const hostnamesMap = new Map([["116.ru",0],["14.ru",0],["161.ru",0],["164.ru",0],["178.ru",0],["26.ru",0],["29.ru",0],["35.ru",0],["43.ru",0],["45.ru",0],["48.ru",0],["51.ru",0],["53.ru",0],["56.ru",0],["59.ru",0],["60.ru",0],["62.ru",0],["63.ru",0],["68.ru",0],["71.ru",0],["72.ru",0],["74.ru",0],["76.ru",0],["86.ru",0],["89.ru",0],["93.ru",0],["chita.ru",0],["e1.ru",0],["ircity.ru",0],["mgorsk.ru",0],["msk1.ru",0],["ngs.ru",0],["ngs22.ru",0],["ngs24.ru",0],["ngs42.ru",0],["ngs55.ru",0],["ngs70.ru",0],["nn.ru",0],["proizhevsk.ru",0],["sochi1.ru",0],["sterlitamak1.ru",0],["tolyatty.ru",0],["ufa1.ru",0],["v1.ru",0],["vladivostok1.ru",0],["voronezh1.ru",0],["www.fontanka.ru",0],["peers.tv",1],["www.ukr.net",2],["animelend.info",3],["ivi.ru",[4,13]],["ictv.ua",5],["inter.ua",5],["k1.ua",5],["novy.tv",5],["ntn.ua",5],["starlight.digital",5],["stb.ua",5],["teleportal.ua",5],["player.vgtrk.com",6],["tv-gubernia.ru",[7,58]],["xsport.ua",8],["1tv.ru",[9,29,66]],["music.yandex.by",10],["music.yandex.kz",10],["music.yandex.ru",10],["music.yandex.uz",10],["api-video.khl.ru",11],["razlozhi.ru",[12,52]],["igroutka.ru",14],["cdnvideo.ru",15],["eda.ru",15],["mania.gcdn.co",15],["vp.rambler.ru",[15,36]],["www.rambler.ru",15],["afisha.ru",16],["partnerkin.com",17],["iz.ru",18],["bonus-tv.ru",19],["eagleplatform.com",[19,61]],["embed.dugout.com",20],["sports.ru",21],["7days.ru",0],["doctorpiter.ru",0],["dom.mail.ru",0],["kinonews.ru",0],["kp.kg",0],["kp.kz",0],["kp.md",0],["kp.ru",0],["lady.mail.ru",0],["mk.ru",0],["ohotniki.ru",0],["portalvirtualreality.ru",0],["radiokp.ru",0],["sportkp.ru",0],["wday.ru",0],["woman.ru",0],["tass.ru",22],["ati.su",23],["24smi.org",24],["russia-tv.online",25],["examenpdd.com",26],["embed.twitch.tv",27],["player.twitch.tv",27],["www.mos.ru",28],["kinokong.pro",30],["dzen.ru",[31,32,39]],["play.tv3.lt",33],["play.tv3.lv",33],["tv3play.skaties.lv",33],["rbc.ru",34],["sportrbc.ru",34],["tenews.org.ua",35],["rg.ru",[37,38]],["frontend.vh.yandex.ru",39],["naydex.net",39],["widgets.kinopoisk.ru",39],["www.kinopoisk.ru",39],["yastatic.net",39],["3dnews.kz",40],["3dnews.ru",40],["vm.ru",40],["forbes.ru",[41,42,43,44,45,46]],["vk.com",[47,49,59]],["vk.ru",[47,49,59]],["free-tor.info",48],["korsars.info",48],["hentai-share.one",50],["gdz-putina.fun",51],["gdz.ninja",51],["gdz.ru",51],["gdzotputina.club",51],["gdzputina.net",51],["megaresheba.com",51],["megaresheba.ru",51],["resheba.me",51],["spishi.fun",51],["zoobrilka.net",51],["audioportal.su",53],["gazeta.ru",[54,56]],["ya.ru",55],["playground.ru",57],["player.smotrim.ru",60],["kinescope.io",62],["apollo.lv",63],["tvnet.lv",63],["softportal.com",64],["rambler.ru",65],["remont-aud.net",67],["okminigames.mail.ru",70],["e.mail.ru",[71,77,78,84]],["octavius.mail.ru",[71,77,78,84]],["otvet.mail.ru",72],["player-smotri.mail.ru",73],["ok.ru",[74,76]],["mail.ru",[75,81,82,83]],["sportmail.ru",[75,80]],["my.mail.ru",79],["news.mail.ru",80],["pogoda.mail.ru",80],["mail.ukr.net",85]]);
 
 const entitiesMap = new Map([["hdrezka",68],["rezka",68],["mult-porno",69],["sex-studentki",69],["cosplay-porn",69]]);
 
@@ -55,28 +55,27 @@ const exceptionsMap = new Map([["1yar.tv",[19]],["calls.mail.ru",[75,81,82,83]],
 function setConstant(
     ...args
 ) {
-    setConstantCore(false, ...args);
+    setConstantFn(false, ...args);
 }
 
-function setConstantCore(
+function setConstantFn(
     trusted = false,
     chain = '',
-    cValue = ''
+    rawValue = ''
 ) {
     if ( chain === '' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-constant', chain, rawValue);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    function setConstant(chain, cValue) {
+    function setConstant(chain, rawValue) {
         const trappedProp = (( ) => {
             const pos = chain.lastIndexOf('.');
             if ( pos === -1 ) { return chain; }
             return chain.slice(pos+1);
         })();
-        if ( trappedProp === '' ) { return; }
-        const thisScript = document.currentScript;
         const cloakFunc = fn => {
             safe.Object_defineProperty(fn, 'name', { value: trappedProp });
-            const proxy = new Proxy(fn, {
+            return new Proxy(fn, {
                 defineProperty(target, prop) {
                     if ( prop !== 'toString' ) {
                         return Reflect.defineProperty(...arguments);
@@ -98,50 +97,12 @@ function setConstantCore(
                     return Reflect.get(...arguments);
                 },
             });
-            return proxy;
         };
-        if ( cValue === 'undefined' ) {
-            cValue = undefined;
-        } else if ( cValue === 'false' ) {
-            cValue = false;
-        } else if ( cValue === 'true' ) {
-            cValue = true;
-        } else if ( cValue === 'null' ) {
-            cValue = null;
-        } else if ( cValue === "''" || cValue === '' ) {
-            cValue = '';
-        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
-            cValue = [];
-        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
-            cValue = {};
-        } else if ( cValue === 'noopFunc' ) {
-            cValue = cloakFunc(function(){});
-        } else if ( cValue === 'trueFunc' ) {
-            cValue = cloakFunc(function(){ return true; });
-        } else if ( cValue === 'falseFunc' ) {
-            cValue = cloakFunc(function(){ return false; });
-        } else if ( /^-?\d+$/.test(cValue) ) {
-            cValue = parseInt(cValue);
-            if ( isNaN(cValue) ) { return; }
-            if ( Math.abs(cValue) > 0x7FFF ) { return; }
-        } else if ( trusted ) {
-            if ( cValue.startsWith('{') && cValue.endsWith('}') ) {
-                try { cValue = safe.JSON_parse(cValue).value; } catch(ex) { return; }
-            }
-        } else {
-            return;
-        }
-        if ( extraArgs.as !== undefined ) {
-            const value = cValue;
-            if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => value;
-            } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => value);
-            } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(value);
-            } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(value);
-            }
+        if ( trappedProp === '' ) { return; }
+        const thisScript = document.currentScript;
+        let normalValue = validateConstantFn(trusted, rawValue);
+        if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
+            normalValue = cloakFunc(normalValue);
         }
         let aborted = false;
         const mustAbort = function(v) {
@@ -149,18 +110,21 @@ function setConstantCore(
             if ( aborted ) { return true; }
             aborted =
                 (v !== undefined && v !== null) &&
-                (cValue !== undefined && cValue !== null) &&
-                (typeof v !== typeof cValue);
+                (normalValue !== undefined && normalValue !== null) &&
+                (typeof v !== typeof normalValue);
+            if ( aborted ) {
+                safe.uboLog(logPrefix, `Aborted because value set to ${v}`);
+            }
             return aborted;
         };
         // https://github.com/uBlockOrigin/uBlock-issues/issues/156
         //   Support multiple trappers for the same property.
         const trapProp = function(owner, prop, configurable, handler) {
-            if ( handler.init(configurable ? owner[prop] : cValue) === false ) { return; }
+            if ( handler.init(configurable ? owner[prop] : normalValue) === false ) { return; }
             const odesc = safe.Object_getOwnPropertyDescriptor(owner, prop);
             let prevGetter, prevSetter;
             if ( odesc instanceof safe.Object ) {
-                owner[prop] = cValue;
+                owner[prop] = normalValue;
                 if ( odesc.get instanceof Function ) {
                     prevGetter = odesc.get;
                 }
@@ -175,7 +139,7 @@ function setConstantCore(
                         if ( prevGetter !== undefined ) {
                             prevGetter();
                         }
-                        return handler.getter(); // cValue
+                        return handler.getter();
                     },
                     set(a) {
                         if ( prevSetter !== undefined ) {
@@ -184,7 +148,9 @@ function setConstantCore(
                         handler.setter(a);
                     }
                 });
+                safe.uboLog(logPrefix, 'Trap installed');
             } catch(ex) {
+                safe.uboErr(logPrefix, ex);
             }
         };
         const trapChain = function(owner, chain) {
@@ -198,13 +164,15 @@ function setConstantCore(
                         return true;
                     },
                     getter: function() {
-                        return document.currentScript === thisScript
-                            ? this.v
-                            : cValue;
+                        if ( document.currentScript === thisScript ) {
+                            return this.v;
+                        }
+                        safe.uboLog(logPrefix, 'Property read');
+                        return normalValue;
                     },
                     setter: function(a) {
                         if ( mustAbort(a) === false ) { return; }
-                        cValue = a;
+                        normalValue = a;
                     }
                 });
                 return;
@@ -236,7 +204,7 @@ function setConstantCore(
         trapChain(window, chain);
     }
     runAt(( ) => {
-        setConstant(chain, cValue);
+        setConstant(chain, rawValue);
     }, extraArgs.runAt);
 }
 
@@ -270,8 +238,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -301,11 +269,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -373,8 +352,89 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
+}
+
+function validateConstantFn(trusted, raw) {
+    const safe = safeSelf();
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    let value;
+    if ( raw === 'undefined' ) {
+        value = undefined;
+    } else if ( raw === 'false' ) {
+        value = false;
+    } else if ( raw === 'true' ) {
+        value = true;
+    } else if ( raw === 'null' ) {
+        value = null;
+    } else if ( raw === "''" || raw === '' ) {
+        value = '';
+    } else if ( raw === '[]' || raw === 'emptyArr' ) {
+        value = [];
+    } else if ( raw === '{}' || raw === 'emptyObj' ) {
+        value = {};
+    } else if ( raw === 'noopFunc' ) {
+        value = function(){};
+    } else if ( raw === 'trueFunc' ) {
+        value = function(){ return true; };
+    } else if ( raw === 'falseFunc' ) {
+        value = function(){ return false; };
+    } else if ( /^-?\d+$/.test(raw) ) {
+        value = parseInt(raw);
+        if ( isNaN(raw) ) { return; }
+        if ( Math.abs(raw) > 0x7FFF ) { return; }
+    } else if ( trusted ) {
+        if ( raw.startsWith('{') && raw.endsWith('}') ) {
+            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+        }
+    } else {
+        return;
+    }
+    if ( extraArgs.as !== undefined ) {
+        if ( extraArgs.as === 'function' ) {
+            return ( ) => value;
+        } else if ( extraArgs.as === 'callback' ) {
+            return ( ) => (( ) => value);
+        } else if ( extraArgs.as === 'resolved' ) {
+            return Promise.resolve(value);
+        } else if ( extraArgs.as === 'rejected' ) {
+            return Promise.reject(value);
+        }
+    }
+    return value;
 }
 
 /******************************************************************************/

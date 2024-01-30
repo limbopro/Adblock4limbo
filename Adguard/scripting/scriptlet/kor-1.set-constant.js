@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_setConstant = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["list_end_run","noopFunc"],["FastClick.attach","noopFunc"],["FastClick","noopFunc"],["Math.uuid","","","asFunction"],["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
@@ -55,28 +55,27 @@ const exceptionsMap = new Map([["coupang.com",[17]],["coupangcdn.com",[17]]]);
 function setConstant(
     ...args
 ) {
-    setConstantCore(false, ...args);
+    setConstantFn(false, ...args);
 }
 
-function setConstantCore(
+function setConstantFn(
     trusted = false,
     chain = '',
-    cValue = ''
+    rawValue = ''
 ) {
     if ( chain === '' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-constant', chain, rawValue);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    function setConstant(chain, cValue) {
+    function setConstant(chain, rawValue) {
         const trappedProp = (( ) => {
             const pos = chain.lastIndexOf('.');
             if ( pos === -1 ) { return chain; }
             return chain.slice(pos+1);
         })();
-        if ( trappedProp === '' ) { return; }
-        const thisScript = document.currentScript;
         const cloakFunc = fn => {
             safe.Object_defineProperty(fn, 'name', { value: trappedProp });
-            const proxy = new Proxy(fn, {
+            return new Proxy(fn, {
                 defineProperty(target, prop) {
                     if ( prop !== 'toString' ) {
                         return Reflect.defineProperty(...arguments);
@@ -98,50 +97,12 @@ function setConstantCore(
                     return Reflect.get(...arguments);
                 },
             });
-            return proxy;
         };
-        if ( cValue === 'undefined' ) {
-            cValue = undefined;
-        } else if ( cValue === 'false' ) {
-            cValue = false;
-        } else if ( cValue === 'true' ) {
-            cValue = true;
-        } else if ( cValue === 'null' ) {
-            cValue = null;
-        } else if ( cValue === "''" || cValue === '' ) {
-            cValue = '';
-        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
-            cValue = [];
-        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
-            cValue = {};
-        } else if ( cValue === 'noopFunc' ) {
-            cValue = cloakFunc(function(){});
-        } else if ( cValue === 'trueFunc' ) {
-            cValue = cloakFunc(function(){ return true; });
-        } else if ( cValue === 'falseFunc' ) {
-            cValue = cloakFunc(function(){ return false; });
-        } else if ( /^-?\d+$/.test(cValue) ) {
-            cValue = parseInt(cValue);
-            if ( isNaN(cValue) ) { return; }
-            if ( Math.abs(cValue) > 0x7FFF ) { return; }
-        } else if ( trusted ) {
-            if ( cValue.startsWith('{') && cValue.endsWith('}') ) {
-                try { cValue = safe.JSON_parse(cValue).value; } catch(ex) { return; }
-            }
-        } else {
-            return;
-        }
-        if ( extraArgs.as !== undefined ) {
-            const value = cValue;
-            if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => value;
-            } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => value);
-            } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(value);
-            } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(value);
-            }
+        if ( trappedProp === '' ) { return; }
+        const thisScript = document.currentScript;
+        let normalValue = validateConstantFn(trusted, rawValue);
+        if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
+            normalValue = cloakFunc(normalValue);
         }
         let aborted = false;
         const mustAbort = function(v) {
@@ -149,18 +110,21 @@ function setConstantCore(
             if ( aborted ) { return true; }
             aborted =
                 (v !== undefined && v !== null) &&
-                (cValue !== undefined && cValue !== null) &&
-                (typeof v !== typeof cValue);
+                (normalValue !== undefined && normalValue !== null) &&
+                (typeof v !== typeof normalValue);
+            if ( aborted ) {
+                safe.uboLog(logPrefix, `Aborted because value set to ${v}`);
+            }
             return aborted;
         };
         // https://github.com/uBlockOrigin/uBlock-issues/issues/156
         //   Support multiple trappers for the same property.
         const trapProp = function(owner, prop, configurable, handler) {
-            if ( handler.init(configurable ? owner[prop] : cValue) === false ) { return; }
+            if ( handler.init(configurable ? owner[prop] : normalValue) === false ) { return; }
             const odesc = safe.Object_getOwnPropertyDescriptor(owner, prop);
             let prevGetter, prevSetter;
             if ( odesc instanceof safe.Object ) {
-                owner[prop] = cValue;
+                owner[prop] = normalValue;
                 if ( odesc.get instanceof Function ) {
                     prevGetter = odesc.get;
                 }
@@ -175,7 +139,7 @@ function setConstantCore(
                         if ( prevGetter !== undefined ) {
                             prevGetter();
                         }
-                        return handler.getter(); // cValue
+                        return handler.getter();
                     },
                     set(a) {
                         if ( prevSetter !== undefined ) {
@@ -184,7 +148,9 @@ function setConstantCore(
                         handler.setter(a);
                     }
                 });
+                safe.uboLog(logPrefix, 'Trap installed');
             } catch(ex) {
+                safe.uboErr(logPrefix, ex);
             }
         };
         const trapChain = function(owner, chain) {
@@ -198,13 +164,15 @@ function setConstantCore(
                         return true;
                     },
                     getter: function() {
-                        return document.currentScript === thisScript
-                            ? this.v
-                            : cValue;
+                        if ( document.currentScript === thisScript ) {
+                            return this.v;
+                        }
+                        safe.uboLog(logPrefix, 'Property read');
+                        return normalValue;
                     },
                     setter: function(a) {
                         if ( mustAbort(a) === false ) { return; }
-                        cValue = a;
+                        normalValue = a;
                     }
                 });
                 return;
@@ -236,7 +204,7 @@ function setConstantCore(
         trapChain(window, chain);
     }
     runAt(( ) => {
-        setConstant(chain, cValue);
+        setConstant(chain, rawValue);
     }, extraArgs.runAt);
 }
 
@@ -270,8 +238,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -301,11 +269,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -373,8 +352,89 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
+}
+
+function validateConstantFn(trusted, raw) {
+    const safe = safeSelf();
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    let value;
+    if ( raw === 'undefined' ) {
+        value = undefined;
+    } else if ( raw === 'false' ) {
+        value = false;
+    } else if ( raw === 'true' ) {
+        value = true;
+    } else if ( raw === 'null' ) {
+        value = null;
+    } else if ( raw === "''" || raw === '' ) {
+        value = '';
+    } else if ( raw === '[]' || raw === 'emptyArr' ) {
+        value = [];
+    } else if ( raw === '{}' || raw === 'emptyObj' ) {
+        value = {};
+    } else if ( raw === 'noopFunc' ) {
+        value = function(){};
+    } else if ( raw === 'trueFunc' ) {
+        value = function(){ return true; };
+    } else if ( raw === 'falseFunc' ) {
+        value = function(){ return false; };
+    } else if ( /^-?\d+$/.test(raw) ) {
+        value = parseInt(raw);
+        if ( isNaN(raw) ) { return; }
+        if ( Math.abs(raw) > 0x7FFF ) { return; }
+    } else if ( trusted ) {
+        if ( raw.startsWith('{') && raw.endsWith('}') ) {
+            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+        }
+    } else {
+        return;
+    }
+    if ( extraArgs.as !== undefined ) {
+        if ( extraArgs.as === 'function' ) {
+            return ( ) => value;
+        } else if ( extraArgs.as === 'callback' ) {
+            return ( ) => (( ) => value);
+        } else if ( extraArgs.as === 'resolved' ) {
+            return Promise.resolve(value);
+        } else if ( extraArgs.as === 'rejected' ) {
+            return Promise.reject(value);
+        }
+    }
+    return value;
 }
 
 /******************************************************************************/

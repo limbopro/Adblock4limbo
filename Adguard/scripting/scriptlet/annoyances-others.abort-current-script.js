@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_abortCurrentScript = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["stopPrntScr"],["document.createElement","player.gliacloud.com"],["jQuery","eventParams.responseVariables.enablepaywall"],["jQuery","#sidebar-ad"],["document.createElement","counter.toString"],["document.getElementById","lock_content"],["document.oncontextmenu"],["document.ondragstart"],["tjQuery","body"],["document.onselectstart"],["$","contextmenu"],["document.getElementsByTagName","oncontextmenu"],["validateKey"],["addEventListener","blockEvent"],["disable_keystrokes"],["document.addEventListener","copyWithSource"],["jQuery","onselectstart"],["add_message_to_copied_text"],["document.onkeypress"],["window.oncontextmenu"],["window.addEventListener","copy"],["_HWIO.readyjs","stopPrntScr"],["nocontextmenu"],["document.addEventListener","contextmenu"],["document.onkeydown"],["document.oncopy"],["disableEnterKey","Content is protected"],["document.onmousedown"],["jQuery","contextmenu"],["document.keypress"],["EventTarget.prototype.addEventListener","keydown"],["jQuery","document.oncontextmenu"],["document.onkeyup"],["disableSelection"],["addEvent","document.body.oncopy"],["document.addEventListener","addLink"],["jQuery","fp_mouse_right_click_restriction"],["jQuery","oncopy"]];
 
-const hostnamesMap = new Map([["sudya-dredd.ru",0],["moviesrush.in",[0,7,24]],["charbelnemnom.com",0],["moneysave.info",1],["thestar.com",2],["thespec.com",2],["therecord.com",2],["thepeterboroughexaminer.com",2],["stcatharinesstandard.ca",2],["niagarafallsreview.ca",2],["wellandtribune.ca",2],["bramptonguardian.com",2],["caledonenterprise.com",2],["cambridgetimes.ca",2],["durhamregion.com",2],["flamboroughreview.com",2],["guelphmercury.com",2],["hamiltonnews.com",2],["insidehalton.com",2],["insideottawavalley.com",2],["mississauga.com",2],["muskokaregion.com",2],["mykawartha.com",2],["newhamburgindependent.ca",2],["niagarathisweek.com",2],["northbaynipissing.com",2],["northumberlandnews.com",2],["orangeville.com",2],["ourwindsor.ca",2],["parrysound.com",2],["sachem.ca",2],["simcoe.com",2],["theifp.ca",2],["toronto.com",2],["waterloochronicle.ca",2],["yorkregion.com",2],["legacy.com",2],["edition.pagesuite-professional.co.uk",2],["hub.metroland.com",2],["rkb.jp",3],["fmmods.com",4],["blogchiasekienthuc.com",5],["daotranslate.com",6],["habuteru.com",6],["ufchgu.ru",[6,14,33]],["mangahentai.me",6],["themodellingnews.com",6],["senpaiediciones.com",6],["descopera.ro",6],["amantecod.it",6],["truelovejapan.com",6],["volt-index.ru",[6,37]],["universaladbdriver.com",6],["firmwarefile.com",6],["bg-gledai.co",6],["victorytale.com",6],["clujust.ro",[6,7]],["mysports.to",6],["mi-faq.ru",[6,14,33]],["mathbang.net",[6,8]],["seriesgratis.biz",6],["mangacrab.com",6],["metalnaveia66.com",6],["bollywoodhindi.in",6],["legionscans.com",6],["footy.to",6],["kdramasurdu.net",6],["osomatsusan.hatenablog.com",6],["flinsetyadi.com",6],["bingotingo.com",6],["carfixer.co.kr",6],["urbanbrush.net",6],["now.rememberapp.co.kr",[6,9]],["untitle.org",[6,8]],["tecnoprogramas.com",6],["animeactua.com",[6,26]],["creativestudio.kr",6],["onna.kr",[6,15]],["info-beihilfe.de",6],["audiobookcup.com",6],["funfunhan.com",[6,8]],["blofinder.com",6],["bookpost.kr",[6,8]],["ex-nihil0.com",6],["donghun.kr",[6,8]],["zoommastory.com",[6,8]],["deutschaj.com",6],["kokone.co.kr",[6,8]],["stevenh.net",[6,8]],["ideas0419.com",[6,8]],["raycat.net",[6,8]],["hosii.info",[6,8]],["blahblah.pe.kr",[6,8]],["geniusjw.com",[6,8]],["blog.esherloon.com",[6,8]],["centrair.kr",[6,8]],["softwarebits.net",6],["tunovelaligera.com",6],["krtopic.com",6],["healthfeed.co.kr",6],["my-expert.ru",[6,7,24]],["bimiacg.net",6],["solidfile.net",6],["promocode99.in",6],["downloadtutorials.net",6],["nawalakarsa.id",6],["tecnomusic-evolution.com",6],["jpopsingles.eu",6],["wartaterkini.news",6],["pcprogramasymas.net",6],["tistory.com",[6,8,15]],["ghostspectre.the-ninja.jp",6],["slothjuns.net",6],["eduardo-monica.com",6],["apkspurefile.com",6],["foxaholic.com",6],["koreanaddict.net",6],["omgkpop.top",6],["gamegame.kr",[6,8]],["eoreuni.com",6],["jstranslations1.com",6],["animeuniverse.it",6],["baltasar5010purohentai.com",6],["aihristdreamtranslations.com",[6,33]],["tipslab.info",6],["indcit.com",6],["semi168.net",6],["semi168.club",6],["audio-sound-premium.com",6],["filmboxoffice.web.id",6],["kakpishem.ru",[6,25,33]],["teepr.com",[6,31]],["texte.work",6],["sysnettechsolutions.com",6],["reinodekovel.com",6],["elektrikmen.com",6],["world4.eu",6],["activationkeys.co",6],["secondlifetranslations.com",6],["samuraiscan.com",6],["globaledu.jp",6],["lazytranslations.com",6],["kaystls.site",7],["filmzone.com",7],["immigrantinvest.com",7],["pabrikarang.com",[7,9]],["allaboutshaving.kr",7],["javsubtitle.co",7],["neo-blood.co.jp",7],["machow2.com",7],["rawneix.in",7],["theturtleislandnews.com",7],["audiotools.in",7],["moviesrush.one",[7,24]],["lapandilladelarejilla.es",7],["7misr4day.com",7],["michaelemad.com",7],["toonvideos.net.in",[7,24]],["onepiece-online-manga.com",7],["clockks.com",7],["iptv4best.com",7],["teus.me",8],["archwin.net",8],["onpc.kr",8],["blog.hangyeong.com",8],["tokyodomin.com",8],["modoobrisbane.com",8],["genuineactivator.com",9],["melodelaa.link",9],["asus-zenfone.com",9],["techieway.blogspot.com",9],["chronologia.pl",9],["kpopjjang.com",10],["hinfomax.co.kr",10],["britg.kr",10],["japanxxxmovie.com",10],["sexpox.com",10],["47news.jp",10],["learn-from-homey.blogspot.com",10],["belajarbro.id",10],["mangaku.cc",10],["transtv.co.id",11],["tezgoal.com",12],["comeinsidebox.com",13],["ezms.link",13],["ladyblog.me",16],["denizlihaber.com",[17,18]],["acritica.com",18],["toptoon.com",19],["pressian.com",20],["bestxiaomiproducts.com",21],["appofmirror.com",22],["knightnoscanlation.com",23],["hunterfansub.com",24],["bloombergquint.com",25],["procrackerz.org",26],["hataphim.com",27],["japan-fans.com",27],["nubng.com",28],["ifdreamscametrue.com",28],["kkpmh.vip",28],["jucagototranslations.fukou-da.net",28],["kusonime.com",[29,30]],["utorrentgamesps2.blogspot.com",32],["portalwrc.pl",34],["ktk.kz",35],["linkerpt.com",36]]);
+const hostnamesMap = new Map([["sudya-dredd.ru",0],["moviesrush.in",[0,7,24]],["charbelnemnom.com",0],["moneysave.info",1],["thestar.com",2],["thespec.com",2],["therecord.com",2],["thepeterboroughexaminer.com",2],["stcatharinesstandard.ca",2],["niagarafallsreview.ca",2],["wellandtribune.ca",2],["bramptonguardian.com",2],["caledonenterprise.com",2],["cambridgetimes.ca",2],["durhamregion.com",2],["flamboroughreview.com",2],["guelphmercury.com",2],["hamiltonnews.com",2],["insidehalton.com",2],["insideottawavalley.com",2],["mississauga.com",2],["muskokaregion.com",2],["mykawartha.com",2],["newhamburgindependent.ca",2],["niagarathisweek.com",2],["northbaynipissing.com",2],["northumberlandnews.com",2],["orangeville.com",2],["ourwindsor.ca",2],["parrysound.com",2],["sachem.ca",2],["simcoe.com",2],["theifp.ca",2],["toronto.com",2],["waterloochronicle.ca",2],["yorkregion.com",2],["legacy.com",2],["edition.pagesuite-professional.co.uk",2],["hub.metroland.com",2],["rkb.jp",3],["fmmods.com",4],["blogchiasekienthuc.com",5],["rightrasta.com",[6,7]],["daotranslate.com",6],["habuteru.com",6],["ufchgu.ru",[6,14,33]],["mangahentai.me",6],["themodellingnews.com",6],["senpaiediciones.com",6],["descopera.ro",6],["amantecod.it",6],["truelovejapan.com",6],["volt-index.ru",[6,37]],["universaladbdriver.com",6],["firmwarefile.com",6],["bg-gledai.co",6],["victorytale.com",6],["clujust.ro",[6,7]],["mysports.to",6],["mi-faq.ru",[6,14,33]],["mathbang.net",[6,8]],["seriesgratis.biz",6],["mangacrab.com",6],["metalnaveia66.com",6],["bollywoodhindi.in",6],["legionscans.com",6],["footy.to",6],["kdramasurdu.net",6],["osomatsusan.hatenablog.com",6],["flinsetyadi.com",6],["bingotingo.com",6],["carfixer.co.kr",6],["urbanbrush.net",6],["now.rememberapp.co.kr",[6,9]],["untitle.org",[6,8]],["tecnoprogramas.com",6],["animeactua.com",[6,26]],["creativestudio.kr",6],["onna.kr",[6,15]],["info-beihilfe.de",6],["audiobookcup.com",6],["funfunhan.com",[6,8]],["blofinder.com",6],["bookpost.kr",[6,8]],["ex-nihil0.com",6],["donghun.kr",[6,8]],["zoommastory.com",[6,8]],["deutschaj.com",6],["kokone.co.kr",[6,8]],["stevenh.net",[6,8]],["ideas0419.com",[6,8]],["raycat.net",[6,8]],["hosii.info",[6,8]],["blahblah.pe.kr",[6,8]],["geniusjw.com",[6,8]],["blog.esherloon.com",[6,8]],["centrair.kr",[6,8]],["softwarebits.net",6],["tunovelaligera.com",6],["krtopic.com",6],["healthfeed.co.kr",6],["my-expert.ru",[6,7,24]],["bimiacg.net",6],["solidfile.net",6],["promocode99.in",6],["downloadtutorials.net",6],["nawalakarsa.id",6],["tecnomusic-evolution.com",6],["jpopsingles.eu",6],["wartaterkini.news",6],["pcprogramasymas.net",6],["tistory.com",[6,8,15]],["ghostspectre.the-ninja.jp",6],["slothjuns.net",6],["eduardo-monica.com",6],["apkspurefile.com",6],["foxaholic.com",6],["koreanaddict.net",6],["omgkpop.top",6],["gamegame.kr",[6,8]],["eoreuni.com",6],["jstranslations1.com",6],["animeuniverse.it",6],["baltasar5010purohentai.com",6],["aihristdreamtranslations.com",[6,33]],["tipslab.info",6],["indcit.com",6],["semi168.net",6],["semi168.club",6],["audio-sound-premium.com",6],["filmboxoffice.web.id",6],["kakpishem.ru",[6,25,33]],["teepr.com",[6,31]],["texte.work",6],["sysnettechsolutions.com",6],["reinodekovel.com",6],["elektrikmen.com",6],["world4.eu",6],["activationkeys.co",6],["secondlifetranslations.com",6],["samuraiscan.com",6],["globaledu.jp",6],["lazytranslations.com",6],["kaystls.site",7],["filmzone.com",7],["immigrantinvest.com",7],["pabrikarang.com",[7,9]],["allaboutshaving.kr",7],["javsubtitle.co",7],["neo-blood.co.jp",7],["machow2.com",7],["rawneix.in",7],["theturtleislandnews.com",7],["audiotools.in",7],["moviesrush.one",[7,24]],["lapandilladelarejilla.es",7],["7misr4day.com",7],["michaelemad.com",7],["toonvideos.net.in",[7,24]],["onepiece-online-manga.com",7],["clockks.com",7],["iptv4best.com",7],["teus.me",8],["archwin.net",8],["onpc.kr",8],["blog.hangyeong.com",8],["tokyodomin.com",8],["modoobrisbane.com",8],["genuineactivator.com",9],["melodelaa.link",9],["asus-zenfone.com",9],["techieway.blogspot.com",9],["chronologia.pl",9],["kpopjjang.com",10],["hinfomax.co.kr",10],["britg.kr",10],["japanxxxmovie.com",10],["sexpox.com",10],["47news.jp",10],["learn-from-homey.blogspot.com",10],["belajarbro.id",10],["mangaku.cc",10],["transtv.co.id",11],["tezgoal.com",12],["comeinsidebox.com",13],["ezms.link",13],["ladyblog.me",16],["denizlihaber.com",[17,18]],["acritica.com",18],["toptoon.com",19],["pressian.com",20],["bestxiaomiproducts.com",21],["appofmirror.com",22],["knightnoscanlation.com",23],["hunterfansub.com",24],["bloombergquint.com",25],["procrackerz.org",26],["hataphim.com",27],["japan-fans.com",27],["nubng.com",28],["ifdreamscametrue.com",28],["kkpmh.vip",28],["jucagototranslations.fukou-da.net",28],["kusonime.com",[29,30]],["utorrentgamesps2.blogspot.com",32],["portalwrc.pl",34],["ktk.kz",35],["linkerpt.com",36]]);
 
 const entitiesMap = new Map([]);
 
@@ -66,6 +66,7 @@ function abortCurrentScriptCore(
     if ( typeof target !== 'string' ) { return; }
     if ( target === '' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('abort-current-script', target, needle, context);
     const reNeedle = safe.patternToRegex(needle);
     const reContext = safe.patternToRegex(context);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
@@ -89,7 +90,6 @@ function abortCurrentScriptCore(
         value = owner[prop];
         desc = undefined;
     }
-    const log = shouldLog(extraArgs);
     const debug = shouldDebug(extraArgs);
     const exceptionToken = getExceptionToken();
     const scriptTexts = new WeakMap();
@@ -122,14 +122,19 @@ function abortCurrentScriptCore(
             if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
             return;
         }
-        if ( log && e.src !== '' ) { safe.uboLog(`matched src: ${e.src}`); }
+        if ( safe.logLevel > 1 && context !== '' ) {
+            safe.uboLog(logPrefix, `Matched src\n${e.src}`);
+        }
         const scriptText = getScriptText(e);
         if ( reNeedle.test(scriptText) === false ) {
             if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
             return;
         }
-        if ( log ) { safe.uboLog(`matched script text: ${scriptText}`); }
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
+        }
         if ( debug === 'match' || debug === 'all' ) { debugger; }  // jshint ignore: line
+        safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
     };
     if ( debug === 'install' ) { debugger; }  // jshint ignore: line
@@ -151,7 +156,7 @@ function abortCurrentScriptCore(
             }
         });
     } catch(ex) {
-        if ( log ) { safe.uboLog(ex); }
+        safe.uboErr(logPrefix, `Error: ${ex}`);
     }
 }
 
@@ -183,8 +188,8 @@ function getExceptionToken() {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -214,11 +219,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -286,18 +302,45 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
 function shouldDebug(details) {
     if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.debug;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
+    return scriptletGlobals.canDebug && details.debug;
 }
 
 /******************************************************************************/

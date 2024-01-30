@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_m3uPrune = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["type=ad",".m3u8"]];
 
@@ -58,9 +58,8 @@ function m3uPrune(
 ) {
     if ( typeof m3uPattern !== 'string' ) { return; }
     const safe = safeSelf();
-    const options = safe.getExtraArgs(Array.from(arguments), 2);
-    const logLevel = shouldLog(options);
-    const uboLog = logLevel ? ((...args) => safe.uboLog(...args)) : (( ) => { });
+    const logPrefix = safe.makeLogPrefix('m3u-prune', m3uPattern, urlPattern);
+    const toLog = [];
     const regexFromArg = arg => {
         if ( arg === '' ) { return /^/; }
         const match = /^\/(.+)\/([gms]*)$/.exec(arg);
@@ -79,22 +78,22 @@ function m3uPrune(
         if ( lines[i].startsWith('#EXT-X-CUE:TYPE="SpliceOut"') === false ) {
             return false;
         }
-        uboLog('m3u-prune: discarding', `\n\t${lines[i]}`);
+        toLog.push(`\t${lines[i]}`);
         lines[i] = undefined; i += 1;
         if ( lines[i].startsWith('#EXT-X-ASSET:CAID') ) {
-            uboLog(`\t${lines[i]}`);
+            toLog.push(`\t${lines[i]}`);
             lines[i] = undefined; i += 1;
         }
         if ( lines[i].startsWith('#EXT-X-SCTE35:') ) {
-            uboLog(`\t${lines[i]}`);
+            toLog.push(`\t${lines[i]}`);
             lines[i] = undefined; i += 1;
         }
         if ( lines[i].startsWith('#EXT-X-CUE-IN') ) {
-            uboLog(`\t${lines[i]}`);
+            toLog.push(`\t${lines[i]}`);
             lines[i] = undefined; i += 1;
         }
         if ( lines[i].startsWith('#EXT-X-SCTE35:') ) {
-            uboLog(`\t${lines[i]}`);
+            toLog.push(`\t${lines[i]}`);
             lines[i] = undefined; i += 1;
         }
         return true;
@@ -102,10 +101,10 @@ function m3uPrune(
     const pruneInfBlock = (lines, i) => {
         if ( lines[i].startsWith('#EXTINF') === false ) { return false; }
         if ( reM3u.test(lines[i+1]) === false ) { return false; }
-        uboLog('m3u-prune: discarding', `\n\t${lines[i]}, \n\t${lines[i+1]}`);
+        toLog.push('Discarding', `\t${lines[i]}, \t${lines[i+1]}`);
         lines[i] = lines[i+1] = undefined; i += 2;
         if ( lines[i].startsWith('#EXT-X-DISCONTINUITY') ) {
-            uboLog(`\t${lines[i]}`);
+            toLog.push(`\t${lines[i]}`);
             lines[i] = undefined; i += 1;
         }
         return true;
@@ -142,9 +141,7 @@ function m3uPrune(
                 }
                 text = before.trim() + '\n' + after.trim();
                 reM3u.lastIndex = before.length + 1;
-                uboLog('m3u-prune: discarding\n',
-                    discard.split(/\n+/).map(s => `\t${s}`).join('\n')
-                );
+                toLog.push('Discarding', ...discard.split(/\n+/).map(s => `\t${s}`));
                 if ( reM3u.global === false ) { break; }
             }
             return text;
@@ -169,13 +166,18 @@ function m3uPrune(
                 return Reflect.apply(target, thisArg, args);
             }
             return realFetch(...args).then(realResponse =>
-                realResponse.text().then(text =>
-                    new Response(pruner(text), {
+                realResponse.text().then(text => {
+                    const response = new Response(pruner(text), {
                         status: realResponse.status,
                         statusText: realResponse.statusText,
                         headers: realResponse.headers,
-                    })
-                )
+                    });
+                    if ( toLog.length !== 0 ) {
+                        toLog.unshift(logPrefix);
+                        safe.uboLog(toLog.join('\n'));
+                    }
+                    return response;
+                })
             );
         }
     });
@@ -193,6 +195,10 @@ function m3uPrune(
                 if ( textout === textin ) { return; }
                 Object.defineProperty(thisArg, 'response', { value: textout });
                 Object.defineProperty(thisArg, 'responseText', { value: textout });
+                if ( toLog.length !== 0 ) {
+                    toLog.unshift(logPrefix);
+                    safe.uboLog(toLog.join('\n'));
+                }
             });
             return Reflect.apply(target, thisArg, args);
         }
@@ -200,8 +206,8 @@ function m3uPrune(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -231,11 +237,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -303,13 +320,40 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 /******************************************************************************/

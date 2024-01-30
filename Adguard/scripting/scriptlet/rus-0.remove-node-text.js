@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_removeNodeText = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","\"Shadow"]];
+const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","tick"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["online-fix.me",0],["inforesist.org",[1,6]],["sports.ru",2],["pikabu.ru",3],["gsm.in.ua",4],["game4you.top",5],["games-pc.top",5],["innal.top",5],["naylo.top",5],["rustorka.com",5],["rustorka.net",5],["rustorka.top",5],["rustorkacom.lib",5],["avtovod.com.ua",6],["bigmir.net",6],["buhgalter.com.ua",6],["buhgalter911.com",6],["censor.net",6],["dengi.ua",6],["ditey.com",6],["epravda.com.ua",6],["eurointegration.com.ua",6],["f1analytic.com",6],["facenews.ua",6],["gazeta.ua",6],["gorod.dp.ua",6],["hvylya.net",6],["i.ua",6],["isport.ua",6],["ivona.ua",6],["kolobok.ua",6],["kriminal.tv",6],["liga.net",6],["meteo.ua",6],["meteofor.com.ua",6],["nnovosti.info",6],["nv.ua",6],["panno4ka.net",6],["pogodaua.com",6],["pravda.com.ua",6],["real-vin.com",6],["smak.ua",6],["stravy.net",6],["tochka.net",6],["tv.ua",6],["viva.ua",6],["vsetv.com",6],["www.ukr.net",6]]);
+const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["inforesist.org",[2,7]],["sports.ru",3],["pikabu.ru",4],["gsm.in.ua",5],["game4you.top",6],["games-pc.top",6],["innal.top",6],["naylo.top",6],["rustorka.com",6],["rustorka.net",6],["rustorka.top",6],["rustorkacom.lib",6],["avtovod.com.ua",7],["bigmir.net",7],["buhgalter.com.ua",7],["buhgalter911.com",7],["businessua.com",7],["censor.net",7],["dengi.ua",7],["ditey.com",7],["epravda.com.ua",7],["eurointegration.com.ua",7],["f1analytic.com",7],["facenews.ua",7],["gazeta.ua",7],["gorod.dp.ua",7],["hvylya.net",7],["i.ua",7],["isport.ua",7],["ivona.ua",7],["kolobok.ua",7],["kriminal.tv",7],["liga.net",7],["meteo.ua",7],["meteofor.com.ua",7],["nnovosti.info",7],["nv.ua",7],["panno4ka.net",7],["pogodaua.com",7],["pravda.com.ua",7],["real-vin.com",7],["smak.ua",7],["stravy.net",7],["tochka.net",7],["tv.ua",7],["viva.ua",7],["vsetv.com",7],["www.ukr.net",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -66,18 +66,18 @@ function replaceNodeTextFn(
     replacement = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('replace-node-text.fn', ...Array.from(arguments));
     const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const shouldLog = scriptletGlobals.has('canDebug') && extraArgs.log || 0;
     const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
     const stop = (takeRecord = true) => {
         if ( takeRecord ) {
             handleMutations(observer.takeRecords());
         }
         observer.disconnect();
-        if ( shouldLog !== 0 ) {
-            safe.uboLog(`replace-node-text-core.fn: quitting "${pattern}" => "${replacement}"`);
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Quitting');
         }
     };
     let sedCount = extraArgs.sedCount || 0;
@@ -92,10 +92,10 @@ function replaceNodeTextFn(
             ? before.replace(rePattern, replacement)
             : replacement;
         node.textContent = after;
-        if ( shouldLog !== 0 ) {
-            safe.uboLog('replace-node-text.fn before:\n', before);
-            safe.uboLog('replace-node-text.fn after:\n', after);
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
+        safe.uboLog(logPrefix, `Text after:\n${after.trim()}`);
         return sedCount === 0 || (sedCount -= 1) !== 0;
     };
     const handleMutations = mutations => {
@@ -123,9 +123,7 @@ function replaceNodeTextFn(
             if ( handleNode(node) ) { continue; }
             stop(); break;
         }
-        if ( shouldLog !== 0 ) {
-            safe.uboLog(`replace-node-text-core.fn ${count} nodes present before installing mutation observer`);
-        }
+        safe.uboLog(logPrefix, `${count} nodes present before installing mutation observer`);
     }
     if ( extraArgs.stay ) { return; }
     runAt(( ) => {
@@ -168,8 +166,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -199,11 +197,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -271,7 +280,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

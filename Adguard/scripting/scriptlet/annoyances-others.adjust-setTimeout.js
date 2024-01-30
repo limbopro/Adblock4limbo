@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_adjustSetTimeout = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["counter","","0.02"],["letgo","*","0.001"],["-1","*","0.001"],["tick","","0.02"],["setC","1000","0.001"],["window.location.href","*","0.001"],["countDown","*","0.001"],["show()","*","0.001"],["DOWNLOAD","*","0.001"],["Download","*","0.001"],["div_form"],["value","*","0.001"],["e(t-1)","*","0.001"],["window.location.href","*","0.02"],["counter","*","0.02"],["download_loading","*","0.02"],["autoload-wait","*","0.02"],["content","*","0.02"],["/HideTimerID|clsname/","*","0.02"],["countdowntimer","*","0.02"],["updateClock","","0.02"],["seconds","*","0.02"],["myTimer","*","0.02"],["goLink(","3000"],["get-link","*","0.02"],["getlink","*","0.02"],["download","*","0.02"],["/Please wait|myTime--/","*","0.02"],["updateClock","*","0.02"],["/_0x|gotoo/","*","0.02"],["status.innerHTML","*","0.02"],["document[_0x","*","0.02"],["countDown","","0.02"],["#counter","","0.02"],["count","","0.02"],["#download-loading","*","0.02"],["Tick","","0.02"],["submit","5000","0.02"],["wpsafe","*","0.02"],["_0x","*","0.02"],["redirect","4000","0.02"],["tick","1000"],["grecaptcha","*","0.02"],["run()","","0.02"],["#proceed","*","0.02"],["timer","1000","0.02"],["/waiting|\\.classList\\.remove|gotoo/","*","0.02"],["seconds","","0.02"],["countdown()","","0.02"],["TheLink","","0.02"],["st2","","0.02"],["startTimer","*","0.02"],["goVideoJS","*","0.02"],["Please wait","*","0.02"],["showText","*","0.02"],["checkclick","*","0.02"],["getlink","*","0.001"],["/gotoo|pop-button|stickyadin/","*","0.02"],["#download_ad_addon","10000","0.02"],["$('.skip-btn').","*","0.02"],["download_file","","0.02"],["waitting_download","","0.02"],["CountBack","990","0.02"],["timeUpdater","","0.02"],["btn","3000","0.02"],["clsname","5000","0.02"],["#download","10000","0.02"],["#download","11000","0.02"],["/get-link","5000","0.02"],["fade","5000","0.02"],["timer_end","20000","0.02"],["disabled","","0.02"],["gotoo","22000","0.02"],["gotoo","17000","0.02"],["download link","","0.02"],["tick","1000","0.02"],["countdown","1400","0.02"],["updateinfo","1000","0.02"],["count--","1000","0.02"],["window.location.href","10000","0.02"],["params.redirect","5000","0.02"],["timers","","0.02"],["timers","4000","0.02"],["doRedirect","3000","0.02"],["timer--","","0.02"],["timers","1500","0.02"],["var _0x","","0.02"],[".eg-manually-get","7000","0.02"],["downloadbtn","","0.02"],["link_button","","0.02"],["#get_btn","","0.02"],["counter","2000","0.02"],["adFreePopup","15000","0.02"],["go_url","15000","0.3"],["window.location.href=t,clearTimeout","10000"],["adpop-content-left","","0.02"],["#ad .timer","","0.02"],["setSeconds","","0.02"],["updateReloj","","0.02"],["countdown","","0.02"],["dlcntdwn","","0.02"],["tick()","","0.02"],["startCountdown","","0.02"],["contador","","0.02"],["/action-downloadFile?"],["#freebtn","","0.02"],["download()"]];
+const argsList = [["Taplytics","*","0.001"],["counter","","0.02"],["letgo","*","0.001"],["-1","*","0.001"],["tick","","0.02"],["setC","1000","0.001"],["window.location.href","*","0.001"],["countDown","*","0.001"],["show()","*","0.001"],["DOWNLOAD","*","0.001"],["Download","*","0.001"],["div_form"],["value","*","0.001"],["e(t-1)","*","0.001"],["window.location.href","*","0.02"],["counter","*","0.02"],["download_loading","*","0.02"],["autoload-wait","*","0.02"],["content","*","0.02"],["/HideTimerID|clsname/","*","0.02"],["countdowntimer","*","0.02"],["updateClock","","0.02"],["seconds","*","0.02"],["myTimer","*","0.02"],["goLink(","3000"],["get-link","*","0.02"],["getlink","*","0.02"],["download","*","0.02"],["/Please wait|myTime--/","*","0.02"],["updateClock","*","0.02"],["/_0x|gotoo/","*","0.02"],["status.innerHTML","*","0.02"],["document[_0x","*","0.02"],["countDown","","0.02"],["#counter","","0.02"],["count","","0.02"],["#download-loading","*","0.02"],["Tick","","0.02"],["submit","5000","0.02"],["wpsafe","*","0.02"],["_0x","*","0.02"],["redirect","4000","0.02"],["tick","1000"],["grecaptcha","*","0.02"],["run()","","0.02"],["#proceed","*","0.02"],["timer","1000","0.02"],["/waiting|\\.classList\\.remove|gotoo/","*","0.02"],["seconds","","0.02"],["countdown()","","0.02"],["TheLink","","0.02"],["st2","","0.02"],["startTimer","*","0.02"],["goVideoJS","*","0.02"],["Please wait","*","0.02"],["showText","*","0.02"],["checkclick","*","0.02"],["getlink","*","0.001"],["/gotoo|pop-button|stickyadin/","*","0.02"],["#download_ad_addon","10000","0.02"],["$('.skip-btn').","*","0.02"],["download_file","","0.02"],["waitting_download","","0.02"],["CountBack","990","0.02"],["timeUpdater","","0.02"],["btn","3000","0.02"],["clsname","5000","0.02"],["#download","10000","0.02"],["#download","11000","0.02"],["/get-link","5000","0.02"],["fade","5000","0.02"],["timer_end","20000","0.02"],["disabled","","0.02"],["gotoo","22000","0.02"],["gotoo","17000","0.02"],["download link","","0.02"],["tick","1000","0.02"],["countdown","1400","0.02"],["updateinfo","1000","0.02"],["count--","1000","0.02"],["window.location.href","10000","0.02"],["params.redirect","5000","0.02"],["timers","","0.02"],["timers","4000","0.02"],["doRedirect","3000","0.02"],["timer--","","0.02"],["timers","1500","0.02"],["var _0x","","0.02"],[".eg-manually-get","7000","0.02"],["downloadbtn","","0.02"],["link_button","","0.02"],["#get_btn","","0.02"],["counter","2000","0.02"],["adFreePopup","15000","0.02"],["go_url","15000","0.3"],["window.location.href=t,clearTimeout","10000"],["adpop-content-left","","0.02"],["#ad .timer","","0.02"],["setSeconds","","0.02"],["updateReloj","","0.02"],["countdown","","0.02"],["dlcntdwn","","0.02"],["tick()","","0.02"],["startCountdown","","0.02"],["contador","","0.02"],["/action-downloadFile?"],["#freebtn","","0.02"],["download()"]];
 
-const hostnamesMap = new Map([["noblocktape.com",0],["antiadtape.com",0],["tapewithadblock.org",0],["adblockstrtape.link",0],["adblockstrtech.link",0],["stape.fun",0],["strcloud.link",0],["moviessoul.com",0],["infidrive.net",2],["file-upload.com",3],["present.rssing.com",4],["thecustomrom.com",5],["streamvid.net",6],["1fichier.com",7],["pling.com",9],["maqal360.com",10],["diudemy.com",10],["fansonlinehub.com",11],["teralink.me",11],["teraearn.com",11],["terashare.me",11],["hotmediahub.com",11],["terabox.fun",11],["easymc.io",12],["iggtech.com",13],["ipamod.com",13],["apkmody.fun",15],["apkmody.io",15],["vsthemes.org",16],["comohoy.com",17],["indilinks.xyz",18],["blogtechh.com",19],["coins-town.com",20],["upapk.io",21],["bakenor.com",22],["prod.danawa.com",23],["blogmado.com",24],["vavada5com.com",25],["financerites.in",25],["financerites.com",25],["apkmaza.co",26],["bakeput.com",27],["bakemain.com",27],["bakeleft.com",27],["link-descarga.site",28],["kinemaster.cc",29],["zertalious.xyz",30],["hashhackers.com",31],["katdrive.net",31],["newsongs.co.in",31],["course-downloader.com",32],["123lnk.xyz",32],["universalfreecourse.com",32],["freenulledworld.com",32],["downloadfreecourse.com",32],["aapks.com",32],["pvpcorme.com",32],["dosya.co",32],["ishort.xyz",32],["fmoviesdl.com",33],["solotakus-tv.ml",33],["uncensored-hentai.com",33],["curimovie.com",33],["malzero.xyz",34],["modyolo.com",35],["uploadmaza.com",36],["uptomega.me",36],["dlfiles.online",36],["hubfiles.ws",36],["romsget.io",37],["romsgames.net",37],["mcrypto.club",38],["spantechie.com",39],["imgadult.com",40],["imgdrive.net",40],["imgtaxi.com",40],["imgwallet.com",40],["uploadrar.com",41],["steampiay.cc",42],["pouvideo.cc",42],["pomvideo.cc",42],["top1iq.com",43],["downfile.site",44],["memangbau.com",44],["trangchu.news",44],["techacode.com",44],["azmath.info",44],["freetp.org",45],["online-fix.me",45],["technoashwath.com",46],["uploadflix.org",47],["uploadbaz.me",47],["downloadr.in",48],["freetraderdownload.com.br",48],["appofmirror.com",48],["egyshare.cc",49],["samfirms.com",51],["4shared.com",52],["mdzsmutpcvykb.net",53],["mdfx9dc8n.net",53],["themehits.com",54],["atlai.club",55],["healthfirstweb.com",56],["yogablogfit.com",56],["vocalley.com",56],["howifx.com",56],["enit.in",56],["skincarie.com",56],["imperialstudy.com",56],["techymedies.com",57],["noltrt.com",58],["getthot.com",59],["videezy.com",60],["fdocuments.in",61],["tgsup.group",62],["kutub3lpdf.com",62],["movie4k.dev",63],["itscybertech.com",64],["newzflix.xyz",65],["moviesfi.net",[66,67]],["shareappscrack.com",68],["policiesforyou.com",69],["gamemodding.com",70],["mixdrop.sx",71],["moddedguru.com",[72,73]],["upvideo.to",74],["sama-share.com",75],["zeefiles.download",75],["apkdone.com",76],["jptorrent.org",77],["pinsystem.co.uk",78],["gamefront.com",79],["render-state.to",80],["respuestadetarea.com",81],["asistente-de-estudio.com",81],["edurespuestas.com",82],["c.newsnow.co.uk",83],["pentafaucet.com",84],["getitall.top",84],["ihomeworkhelper.com",85],["hdfull.lv",86],["emulatorgames.net",87],["desiupload.co",88],["bdupload.asia",88],["indishare.org",88],["onlinefreecourse.net",88],["uploadking.net",88],["w4files.ws",89],["easylinks.in",90],["novafusion.pl",91],["surfline.com",92],["catcut.net",93],["apkshki.com",94],["pngitem.com",95],["world-sms.org",96],["pulsemens.com",97],["verteleseriesonline.com",98],["hentaisd.tv",98],["memoriadatv.com",99],["filehorse.com",100],["filerio.in",101],["worldofmods.com",101],["subdowns.com",102],["tudogamesbr.com",103],["videouroki.net",104],["katfile.com",105],["coolrom.com.au",106],["freeroms.com",106]]);
+const hostnamesMap = new Map([["foxnews.com",0],["noblocktape.com",1],["antiadtape.com",1],["tapewithadblock.org",1],["adblockstrtape.link",1],["adblockstrtech.link",1],["stape.fun",1],["strcloud.link",1],["moviessoul.com",1],["infidrive.net",3],["file-upload.com",4],["present.rssing.com",5],["thecustomrom.com",6],["streamvid.net",7],["1fichier.com",8],["pling.com",10],["maqal360.com",11],["diudemy.com",11],["fansonlinehub.com",12],["teralink.me",12],["teraearn.com",12],["terashare.me",12],["hotmediahub.com",12],["terabox.fun",12],["easymc.io",13],["iggtech.com",14],["ipamod.com",14],["apkmody.fun",16],["apkmody.io",16],["vsthemes.org",17],["comohoy.com",18],["indilinks.xyz",19],["blogtechh.com",20],["coins-town.com",21],["upapk.io",22],["bakenor.com",23],["prod.danawa.com",24],["blogmado.com",25],["vavada5com.com",26],["financerites.in",26],["financerites.com",26],["apkmaza.co",27],["bakeput.com",28],["bakemain.com",28],["bakeleft.com",28],["link-descarga.site",29],["kinemaster.cc",30],["zertalious.xyz",31],["hashhackers.com",32],["katdrive.net",32],["newsongs.co.in",32],["course-downloader.com",33],["123lnk.xyz",33],["universalfreecourse.com",33],["freenulledworld.com",33],["downloadfreecourse.com",33],["aapks.com",33],["pvpcorme.com",33],["dosya.co",33],["ishort.xyz",33],["fmoviesdl.com",34],["solotakus-tv.ml",34],["uncensored-hentai.com",34],["curimovie.com",34],["malzero.xyz",35],["modyolo.com",36],["uploadmaza.com",37],["uptomega.me",37],["dlfiles.online",37],["hubfiles.ws",37],["romsget.io",38],["romsgames.net",38],["mcrypto.club",39],["spantechie.com",40],["imgadult.com",41],["imgdrive.net",41],["imgtaxi.com",41],["imgwallet.com",41],["uploadrar.com",42],["steampiay.cc",43],["pouvideo.cc",43],["pomvideo.cc",43],["top1iq.com",44],["downfile.site",45],["memangbau.com",45],["trangchu.news",45],["techacode.com",45],["azmath.info",45],["freetp.org",46],["online-fix.me",46],["technoashwath.com",47],["uploadflix.org",48],["uploadbaz.me",48],["downloadr.in",49],["freetraderdownload.com.br",49],["appofmirror.com",49],["egyshare.cc",50],["samfirms.com",52],["4shared.com",53],["mdzsmutpcvykb.net",54],["mdfx9dc8n.net",54],["themehits.com",55],["atlai.club",56],["healthfirstweb.com",57],["yogablogfit.com",57],["vocalley.com",57],["howifx.com",57],["enit.in",57],["skincarie.com",57],["imperialstudy.com",57],["techymedies.com",58],["noltrt.com",59],["getthot.com",60],["videezy.com",61],["fdocuments.in",62],["tgsup.group",63],["kutub3lpdf.com",63],["movie4k.dev",64],["itscybertech.com",65],["newzflix.xyz",66],["moviesfi.net",[67,68]],["shareappscrack.com",69],["policiesforyou.com",70],["gamemodding.com",71],["mixdrop.sx",72],["moddedguru.com",[73,74]],["upvideo.to",75],["sama-share.com",76],["zeefiles.download",76],["apkdone.com",77],["jptorrent.org",78],["pinsystem.co.uk",79],["gamefront.com",80],["render-state.to",81],["respuestadetarea.com",82],["asistente-de-estudio.com",82],["edurespuestas.com",83],["c.newsnow.co.uk",84],["pentafaucet.com",85],["getitall.top",85],["ihomeworkhelper.com",86],["hdfull.lv",87],["emulatorgames.net",88],["desiupload.co",89],["bdupload.asia",89],["indishare.org",89],["onlinefreecourse.net",89],["uploadking.net",89],["w4files.ws",90],["easylinks.in",91],["novafusion.pl",92],["surfline.com",93],["catcut.net",94],["apkshki.com",95],["pngitem.com",96],["world-sms.org",97],["pulsemens.com",98],["verteleseriesonline.com",99],["hentaisd.tv",99],["memoriadatv.com",100],["filehorse.com",101],["filerio.in",102],["worldofmods.com",102],["subdowns.com",103],["tudogamesbr.com",104],["videouroki.net",105],["katfile.com",106],["coolrom.com.au",107],["freeroms.com",107]]);
 
-const entitiesMap = new Map([["shavetape",0],["adblockstreamtape",0],["streamtape",0],["stre4mplay",1],["streampiay",1],["stemplay",1],["steamplay",1],["steanplay",1],["streamp1ay",1],["streanplay",1],["mixdroop",8],["flixhub",14],["premiumebooks",50],["mixdrop",53]]);
+const entitiesMap = new Map([["shavetape",1],["adblockstreamtape",1],["streamtape",1],["stre4mplay",2],["streampiay",2],["stemplay",2],["steamplay",2],["steanplay",2],["streamp1ay",2],["streanplay",2],["mixdroop",9],["flixhub",15],["premiumebooks",51],["mixdrop",54]]);
 
 const exceptionsMap = new Map([]);
 
@@ -81,8 +81,8 @@ function adjustSetTimeout(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -112,11 +112,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -184,7 +195,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

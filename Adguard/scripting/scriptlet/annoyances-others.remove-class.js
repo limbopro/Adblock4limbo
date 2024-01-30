@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_removeClass = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ppn-overflows",".ppn-overflows.ppn-floating_enable"],["vjs-floater-parent|vjs-top-parent-mobile","#iol_player_container"],["jw-flag-floating",".main-media-holder > div.video-player  > div.jwplayer"],["videoScrollClass",".video-box.videoScrollClass"],["jw-flag-floating","#jw-video-js"],["LEmbedVideo--floating",".LEmbedVideo.LEmbedVideo--floating"],["floating",".embed__content--draggable"],["glimmer-sticky",".content-lede-video.glimmer-sticky-container .glimmerPlayer.glimmer-sticky"],["vjs-pip-active",".video-js.vjs-pip-active"],["Header__siteHeaderBanner","header.Header__siteHeaderBanner"],["cnx-float",".cnx-content-wrapper.cnx-float"],["videoContent_player_fixed",".videoContent_player_fixed"],["isPinned",".videoPlayer.isPinned"],["jw-flag-floating",".news-article-body .jwplayer.jw-flag-floating"],["stuck",".placeholder > .sticky-container.stuck"],["is-collapsed",".Body--Mobile .ContentItem .is-collapsed.RichContent--unescapable"],["jw-flag-floating",".m-video-player--frame-container .jwplayer.jw-flag-floating"],["has-ads-free-promo-header","body"],["blocked",".left-content > section#examples-content > .example.blocked"],["async-hide","html"],["isBranding","body"],["with-branding",".main-layout"],["app-banner-parent","body"],["with-promo-bar","body"],["disable-scroll","body"],["is-promobar-active","body"],["jw-flag-floating",".jwplayer"],["viously-sticked-top-right",".viously-ui-container"],["skin-moeskin","body"],["floating","video-livebox > div[data-endscreen=\"plus1_endscreen\"]"],["sticky",".video-top-container"],["disabled",".body-page .card-body button.btn-primary.btn-block"],["disabled","#wait1button"],["is--persistent",".videoPlayer"],["hidden","#wcGetLink"],["disabled","a[id^=\"newskip-\"].disabled"],["has-dealbar"],["withRightBar","#vidPlayer > div"],["with-sidebar-ads",".video-player-area"],["hidden","#getlink"],["zsj-act"],["disable-selection","body"],["no-select","div"],["unselectable","p"]];
+const argsList = [["gated-overlay",".article-gating"],["has-gated-overlay|gated-article-body",".gated-article-body"],["ppn-overflows",".ppn-overflows.ppn-floating_enable"],["vjs-floater-parent|vjs-top-parent-mobile","#iol_player_container"],["jw-flag-floating",".main-media-holder > div.video-player  > div.jwplayer"],["videoScrollClass",".video-box.videoScrollClass"],["jw-flag-floating","#jw-video-js"],["LEmbedVideo--floating",".LEmbedVideo.LEmbedVideo--floating"],["floating",".embed__content--draggable"],["glimmer-sticky",".content-lede-video.glimmer-sticky-container .glimmerPlayer.glimmer-sticky"],["vjs-pip-active",".video-js.vjs-pip-active"],["Header__siteHeaderBanner","header.Header__siteHeaderBanner"],["cnx-float",".cnx-content-wrapper.cnx-float"],["videoContent_player_fixed",".videoContent_player_fixed"],["isPinned",".videoPlayer.isPinned"],["jw-flag-floating",".news-article-body .jwplayer.jw-flag-floating"],["stuck",".placeholder > .sticky-container.stuck"],["is-collapsed",".Body--Mobile .ContentItem .is-collapsed.RichContent--unescapable"],["jw-flag-floating",".m-video-player--frame-container .jwplayer.jw-flag-floating"],["has-ads-free-promo-header","body"],["blocked",".left-content > section#examples-content > .example.blocked"],["async-hide","html"],["isBranding","body"],["with-branding",".main-layout"],["app-banner-parent","body"],["with-promo-bar","body"],["disable-scroll","body"],["is-promobar-active","body"],["jw-flag-floating",".jwplayer"],["viously-sticked-top-right",".viously-ui-container"],["skin-moeskin","body"],["floating","video-livebox > div[data-endscreen=\"plus1_endscreen\"]"],["sticky",".video-top-container"],["disabled",".body-page .card-body button.btn-primary.btn-block"],["disabled","#wait1button"],["is--persistent",".videoPlayer"],["hidden","#wcGetLink"],["disabled","a[id^=\"newskip-\"].disabled"],["has-dealbar"],["withRightBar","#vidPlayer > div"],["with-sidebar-ads",".video-player-area"],["hidden","#getlink"],["zsj-act"],["disable-selection","body"],["no-select","div"],["unselectable","p"]];
 
-const hostnamesMap = new Map([["cnyes.com",0],["toro.it",1],["dnevnik.hr",2],["infor.pl",3],["tv.lrytas.lt",4],["lrytas.lt",5],["cbsnews.com",6],["elle.com",7],["timesofisrael.com",8],["goodreads.com",9],["accuweather.com",10],["danas.hr",11],["filmweb.pl",12],["theweathernetwork.com",13],["is.fi",14],["zhihu.com",15],["owlcation.com",16],["investing.com",17],["context.reverso.net",18],["leagueoflegends.com",19],["oeko-planet.com",19],["zombie-film.club",20],["lalafo.kg",21],["similarweb.com",22],["eyeondesign.aiga.org",23],["coub.com",24],["artstation.com",25],["nypost.com",26],["theparking.eu",27],["moegirl.org.cn",28],["pluska.sk",29],["standard.co.uk",30],["independent.co.uk",30],["bstlar.com",31],["examtadka.com",32],["djxmaza.in",32],["polsatnews.pl",33],["polsatsport.pl",33],["teknopaid.xyz",34],["streamcheck.link",35],["tinyurl.so",35],["tinyurl.is",35],["androidauthority.com",36],["tnaflix.com",37],["ebonyo.com",38],["bestopbook.info",39],["wenku.baidu.com",40],["postype.com",41],["jovenesweb.com",42],["wneen.com",43]]);
+const hostnamesMap = new Map([["foxnews.com",[0,1]],["cnyes.com",2],["toro.it",3],["dnevnik.hr",4],["infor.pl",5],["tv.lrytas.lt",6],["lrytas.lt",7],["cbsnews.com",8],["elle.com",9],["timesofisrael.com",10],["goodreads.com",11],["accuweather.com",12],["danas.hr",13],["filmweb.pl",14],["theweathernetwork.com",15],["is.fi",16],["zhihu.com",17],["owlcation.com",18],["investing.com",19],["context.reverso.net",20],["leagueoflegends.com",21],["oeko-planet.com",21],["zombie-film.club",22],["lalafo.kg",23],["similarweb.com",24],["eyeondesign.aiga.org",25],["coub.com",26],["artstation.com",27],["nypost.com",28],["theparking.eu",29],["moegirl.org.cn",30],["pluska.sk",31],["standard.co.uk",32],["independent.co.uk",32],["bstlar.com",33],["examtadka.com",34],["djxmaza.in",34],["polsatnews.pl",35],["polsatsport.pl",35],["teknopaid.xyz",36],["streamcheck.link",37],["tinyurl.so",37],["tinyurl.is",37],["androidauthority.com",38],["tnaflix.com",39],["ebonyo.com",40],["bestopbook.info",41],["wenku.baidu.com",42],["postype.com",43],["jovenesweb.com",44],["wneen.com",45]]);
 
 const entitiesMap = new Map([]);
 
@@ -139,8 +139,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -170,11 +170,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -242,7 +253,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

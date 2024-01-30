@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_trustedClickElement = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["[data-automation=\"continue-to-ads-btn\"]","","10000"]];
 
@@ -58,10 +58,7 @@ function trustedClickElement(
     delay = ''
 ) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const uboLog = extraArgs.log !== undefined
-        ? ((...args) => { safe.uboLog(...args); })
-        : (( ) => { });
+    const logPrefix = safe.makeLogPrefix('trusted-click-element', selectors, extraMatch, delay);
 
     if ( extraMatch !== '' ) {
         const assertions = extraMatch.split(',').map(s => {
@@ -142,12 +139,12 @@ function trustedClickElement(
 
     const next = notFound => {
         if ( selectorList.length === 0 ) {
-            uboLog(`trusted-click-element: Completed`);
+            safe.uboLog(logPrefix, 'Completed');
             return terminate();
         }
         const tnow = Date.now();
         if ( tnow >= tbye ) {
-            uboLog(`trusted-click-element: Timed out`);
+            safe.uboLog(logPrefix, 'Timed out');
             return terminate();
         }
         if ( notFound ) { observe(); }
@@ -156,7 +153,7 @@ function trustedClickElement(
             next.timer = undefined;
             process();
         }, delay);
-        uboLog(`trusted-click-element: Waiting for ${selectorList[0]}...`);
+        safe.uboLog(logPrefix, `Waiting for ${selectorList[0]}...`);
     };
     next.stop = ( ) => {
         if ( next.timer === undefined ) { return; }
@@ -200,7 +197,7 @@ function trustedClickElement(
             selectorList.unshift(selector);
             return next(true);
         }
-        uboLog(`trusted-click-element: Clicked ${selector}`);
+        safe.uboLog(logPrefix, `Clicked ${selector}`);
         elem.click();
         tnext += clickDelay;
         next();
@@ -244,8 +241,8 @@ function runAtHtmlElementFn(fn) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -275,11 +272,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -347,7 +355,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

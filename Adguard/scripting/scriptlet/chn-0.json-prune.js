@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_jsonPrune = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["*","nativeConfig"],["*","list.*.link.ad list.*.link.kicker"],["ads"],["ad"]];
 
@@ -58,19 +58,28 @@ function jsonPrune(
     stackNeedle = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('json-prune', rawPrunePaths, rawNeedlePaths, stackNeedle);
     const stackNeedleDetails = safe.initPattern(stackNeedle, { canNegate: true });
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     JSON.parse = new Proxy(JSON.parse, {
         apply: function(target, thisArg, args) {
             const objBefore = Reflect.apply(target, thisArg, args);
+            if ( rawPrunePaths === '' ) {
+                safe.uboLog(logPrefix, safe.JSON_stringify(objBefore, null, 2));
+            }
             const objAfter = objectPruneFn(
                 objBefore,
                 rawPrunePaths,
                 rawNeedlePaths,
                 stackNeedleDetails,
                 extraArgs
-           );
-           return objAfter || objBefore;
+            );
+            if ( objAfter === undefined ) { return objBefore; }
+            safe.uboLog(logPrefix, 'Pruned');
+            if ( safe.logLevel > 1 ) {
+                safe.uboLog(logPrefix, `After pruning:\n${safe.JSON_stringify(objAfter, null, 2)}`);
+            }
+            return objAfter;
         },
     });
 }
@@ -83,15 +92,12 @@ function objectPruneFn(
     extraArgs = {}
 ) {
     if ( typeof rawPrunePaths !== 'string' ) { return; }
-    const safe = safeSelf();
     const prunePaths = rawPrunePaths !== ''
         ? rawPrunePaths.split(/ +/)
         : [];
     const needlePaths = prunePaths.length !== 0 && rawNeedlePaths !== ''
         ? rawNeedlePaths.split(/ +/)
         : [];
-    const logLevel = shouldLog({ log: rawPrunePaths === '' || extraArgs.log });
-    const reLogNeedle = safe.patternToRegex(logLevel === true ? rawNeedlePaths : '');
     if ( stackNeedleDetails.matchAll !== true ) {
         if ( matchesStackTrace(stackNeedleDetails, extraArgs.logstack) === false ) {
             return;
@@ -106,14 +112,6 @@ function objectPruneFn(
             }
             return true;
         };
-        objectPruneFn.logJson = (json, msg, reNeedle) => {
-            if ( reNeedle.test(json) === false ) { return; }
-            safeSelf().uboLog(`objectPrune()`, msg, location.hostname, json);
-        };
-    }
-    const jsonBefore = logLevel ? safe.JSON_stringify(obj, null, 2) : '';
-    if ( logLevel === true || logLevel === 'all' ) {
-        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( prunePaths.length === 0 ) { return; }
     let outcome = 'nomatch';
@@ -124,15 +122,12 @@ function objectPruneFn(
             }
         }
     }
-    if ( logLevel === outcome ) {
-        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
-    }
     if ( outcome === 'match' ) { return obj; }
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -162,11 +157,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -234,7 +240,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
@@ -327,11 +365,6 @@ function objectFindOwnerFn(
         chain = chain.slice(pos + 1);
     }
     return true;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 function getExceptionToken() {

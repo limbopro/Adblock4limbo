@@ -35,7 +35,7 @@
 
 const argsList = [["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"],["{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop1\"]}","{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop2\"]}"]];
 
-const hostnamesMap = new Map([["metruyencv.com",0],["metruyencv.info",0],["metruyencv.net",0],["boophim.net",1],["chillphimmoiz.org",1]]);
+const hostnamesMap = new Map([["metruyencv.com",0],["metruyencv.info",0],["metruyencv.net",0],["chillphimmoiz.org",1]]);
 
 const entitiesMap = new Map(undefined);
 

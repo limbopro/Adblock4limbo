@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_setCookie = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["popundr","1"],["popundr0","7"],["modalads","yes"],["notheme","1"]];
 
-const hostnamesMap = new Map([["hdfilmizle.org",0],["yukfilmizle.com",0],["filmseyretizlet.com",1],["gazeterize.com",2],["bursahaberdar.com",2],["isvecgundemi.com",2],["kgrt.net",2],["halk54.com",2],["eskisehirhaber.com",2],["haberlisin.com",2],["eksisozluk111.com",3]]);
+const hostnamesMap = new Map([["hdfilmizle.org",0],["yukfilmizle.com",0],["filmseyretizlet.com",1],["gazeterize.com",2],["bursahaberdar.com",2],["isvecgundemi.com",2],["kgrt.net",2],["halk54.com",2],["eskisehirhaber.com",2],["haberlisin.com",2],["eksisozluk.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -58,6 +58,8 @@ function setCookie(
     path = ''
 ) {
     if ( name === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
     name = encodeURIComponent(name);
 
     const validValues = [
@@ -82,7 +84,7 @@ function setCookie(
         if ( n > 15 ) { return; }
     }
 
-    setCookieFn(
+    const done = setCookieFn(
         false,
         name,
         value,
@@ -90,11 +92,15 @@ function setCookie(
         path,
         safeSelf().getExtraArgs(Array.from(arguments), 3)
     );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
+    }
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -124,11 +130,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -196,7 +213,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
@@ -236,9 +285,12 @@ function setCookieFn(
     } catch(_) {
     }
 
-    if ( options.reload && getCookieFn(name) === value ) {
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
         window.location.reload();
     }
+
+    return done;
 }
 
 function getCookieFn(

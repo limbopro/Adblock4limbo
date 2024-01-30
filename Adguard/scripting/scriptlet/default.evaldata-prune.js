@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_evaldataPrune = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["entity.commercial"]];
 
@@ -76,15 +76,12 @@ function objectPruneFn(
     extraArgs = {}
 ) {
     if ( typeof rawPrunePaths !== 'string' ) { return; }
-    const safe = safeSelf();
     const prunePaths = rawPrunePaths !== ''
         ? rawPrunePaths.split(/ +/)
         : [];
     const needlePaths = prunePaths.length !== 0 && rawNeedlePaths !== ''
         ? rawNeedlePaths.split(/ +/)
         : [];
-    const logLevel = shouldLog({ log: rawPrunePaths === '' || extraArgs.log });
-    const reLogNeedle = safe.patternToRegex(logLevel === true ? rawNeedlePaths : '');
     if ( stackNeedleDetails.matchAll !== true ) {
         if ( matchesStackTrace(stackNeedleDetails, extraArgs.logstack) === false ) {
             return;
@@ -99,14 +96,6 @@ function objectPruneFn(
             }
             return true;
         };
-        objectPruneFn.logJson = (json, msg, reNeedle) => {
-            if ( reNeedle.test(json) === false ) { return; }
-            safeSelf().uboLog(`objectPrune()`, msg, location.hostname, json);
-        };
-    }
-    const jsonBefore = logLevel ? safe.JSON_stringify(obj, null, 2) : '';
-    if ( logLevel === true || logLevel === 'all' ) {
-        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( prunePaths.length === 0 ) { return; }
     let outcome = 'nomatch';
@@ -116,9 +105,6 @@ function objectPruneFn(
                 outcome = 'match';
             }
         }
-    }
-    if ( logLevel === outcome ) {
-        objectPruneFn.logJson(jsonBefore, `prune:"${rawPrunePaths}" log:"${logLevel}"`, reLogNeedle);
     }
     if ( outcome === 'match' ) { return obj; }
 }
@@ -214,9 +200,24 @@ function objectFindOwnerFn(
     return true;
 }
 
+function getExceptionToken() {
+    const safe = safeSelf();
+    const token =
+        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const oe = self.onerror;
+    self.onerror = function(msg, ...args) {
+        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
+        if ( oe instanceof Function ) {
+            return oe.call(this, msg, ...args);
+        }
+    }.bind();
+    return token;
+}
+
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -246,11 +247,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -318,28 +330,40 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
-    return safe;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
-}
-
-function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
         }
-    }.bind();
-    return token;
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
+    return safe;
 }
 
 /******************************************************************************/

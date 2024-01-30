@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_adjustSetInterval = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["disabled"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"]];
 
-const hostnamesMap = new Map([["595.ucoz.net",0],["5mod-file.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.pro",6],["uakino.club",6],["vgtimes.ru",7],["startgamer.ru",8],["iblitzmods.ru",9],["wowskill.ru",10],["diplomsrazu.ru",11],["igrozoom.ru",11],["ru-minecraft.ru",11],["softomania.net",11],["vip-mods.ru",11],["warezok.net",11],["windows-driver.com",11],["windows-driver.net",11],["windows-program.com",11]]);
+const hostnamesMap = new Map([["595.ucoz.net",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["padmin.su",0],["sims3pack.ru",0],["wallegend.net",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.pro",6],["uakino.club",6],["vgtimes.ru",7],["startgamer.ru",8],["iblitzmods.ru",9],["wowskill.ru",10],["diplomsrazu.ru",11],["igrozoom.ru",11],["ru-minecraft.ru",11],["softomania.net",11],["vip-mods.ru",11],["warezok.net",11],["windows-driver.com",11],["windows-driver.net",11],["windows-program.com",11]]);
 
 const entitiesMap = new Map([]);
 
@@ -81,8 +81,8 @@ function adjustSetInterval(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -112,11 +112,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -184,7 +195,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

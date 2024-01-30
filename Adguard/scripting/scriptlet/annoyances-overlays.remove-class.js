@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_removeClass = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["cookie-paywall-visible","article"],["c-avLazyStickyVideo-sticky",".c-avLazyStickyVideo-container"],["promo-above","body.promo-above"],["floating",".hero-video"],["normal-hasActivity-nav-page",".install-pages"],["hasActivityNavTop","#pageNav"],["stuck",".video-page__player > div.sinparty-player > div"],["oxy-modal-active","body"],["md:pt-[54px]",".z-50.overflow-hidden:not(.group)"],["pt-[64px]",".z-50.overflow-hidden:not(.group)"],["video-flyout--fixed",".video-flyout"],["jw-flag-floating|jw-flag-small-player"],["show",".widget-mini-player"],["StickyVideoPlayer",".OTVVideoPlayer"],["mfp-popup-exit-quiz-v2","body"],["header-infobar-active","body"],["is-benefit","div#homepagePage"],["js-main-header",".header"],["vlog-sticky-video",".video.vlog-sticky-video"],["fancybox-lock","html"],["jw-flag-floating",".jwplayer.jw-flag-floating"],["with-ticker","body"],["randomplayer--fixed",".randomplayer.randomplayer--fixed"],["State--CountrySelectorModal","html"],["tos-opened","body.tos-opened"],["hustle-no-scroll","html"],["open-popup","body.open-popup"],["popup-active","body[class=\"popup-active\"]"],["js_show-android",".wrapper"],["tp-modal-open","body"],["frozen-mobile-body","body"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
 
@@ -139,8 +139,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -170,11 +170,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -242,7 +253,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

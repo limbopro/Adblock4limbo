@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_removeAttr = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["style",".cnx-content-wrapper.cnx-float-transition"],["class","#videoFloat[class^=\"VideoFloat_videofloat-floating__\"]"],["style",".Body--Mobile .ContentItem .RichContent--unescapable > .RichContent-inner[style^=\"max-height:\"]"],["href",".InfoSpace[href^=\"https://360.yandex.\"][href*=\"/premium-plans?\"]"],["onCopy|onContextmenu","body"],["disabled","#captcha_container + button.btn"],["disabled","#getlink"],["oncontextmenu"],["disabled",".body-page .card-body button.btn-primary.btn-block"],["disabled","#wait1button"],["disabled","#gotolink"],["href","a[href].unlock-step-link.check"],["style",".js-dailymotion"],["disabled","#wcGetLink"],["style|oncontextmenu","body"],["autoplay","video"],["disabled","button#downloadf[disabled]"],["disabled","#downloadbtn"],["style|oncontextmenu",".body[itemprop]"],["disabled","button"],["disabled","button[onclick=\"fun2()\"]"],["disabled",".unlock-button"],["onclick",".rebrand_article_content_block > div[align=\"center\"] > a.big_img,a.resize-image"],["oncontextmenu|onselectstart|ondragstart","body"],["oncopy",".lyrics-body"],["oncontextmenu","[oncontextmenu]"],["oncontextmenu","div[oncontextmenu]"],["oncontextmenu|onselectstart",".lyricBody"],["data-contextmenu"],["oncontextmenu|onselectstart|ondragstart|onmousedown|unselectable",".noselect"],["oncontextmenu|onselectstart|ondragstart|onmousedown|unselectable",".page-content"],["onselectstart","body"],["oncontextmenu|onselectstart|ondragstart",".inner"],["oncontextmenu|onselectstart|ondragstart","#novel_inner_wrap"],["oncontextmenu|onselectstart|ondragstart","article"],["oncontextmenu|onselectstart|ondragstart","#novel_area"],["oncontextmenu|onselectstart|ondragstart",".content"],["oncontextmenu|onselectstart|ondragstart",".document_img"],["oncontextmenu","body"],["onselectstart|ondragstart|oncontextmenu","img[class=\"_images\"]"],["onselectstart|ondragstart|oncontextmenu|onpaste|oncopy","body"],["oncontextmenu|onselectstart","body"],["oncopy|oncontextmenu","body"],["oncontextmenu|onselectstart|onselect|oncopy|ondragstart|ondrag|onbeforeprint","body"],["oncontextmenu|onkeydown|onmousedown","body"],["oncontextmenu|onkeydown","body"],["oncontextmenu",".img-container > img[oncontextmenu]"],["onselectstart|ondragstart|unselectable","#rescontent"],["data-protect","body[data-protect]"],["oncontextmenu|ondragstart|onkeydown|onmousedown|onselectstart","body"],["onmousedown|onselectstart|ondragstart","body"],["onmousedown|onselectstart|ondragstart",".post-body[ondragstart][onmousedown][onselectstart]"],["ondragstart","[ondragstart]"],["onselectstart","[onselectstart]"],["onmousedown","img[onmousedown]"],["oncopy|onselectstart","body"],["oncopy","body"]];
 
@@ -138,8 +138,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -169,11 +169,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -241,7 +252,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

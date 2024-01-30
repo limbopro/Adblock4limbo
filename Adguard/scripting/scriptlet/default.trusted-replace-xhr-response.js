@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_trustedReplaceXhrResponse = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","/playlist\\?list=|player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|player\\?key=|watch\\?v=|youtubei\\/v1\\/player/"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
 
@@ -58,12 +58,8 @@ function trustedReplaceXhrResponse(
     propsToMatch = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('trusted-replace-xhr-response', pattern, replacement, propsToMatch);
     const xhrInstances = new WeakMap();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const logLevel = shouldLog({
-        log: pattern === '' && 'all' || extraArgs.log,
-    });
-    const log = logLevel ? ((...args) => { safe.uboLog(...args); }) : (( ) => { }); 
     if ( pattern === '*' ) { pattern = '.*'; }
     const rePattern = safe.patternToRegex(pattern);
     const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
@@ -77,10 +73,10 @@ function trustedReplaceXhrResponse(
                     outcome = 'nomatch';
                 }
             }
-            if ( outcome === logLevel || outcome === 'all' ) {
-                log(`xhr.open(${method}, ${url}, ${args.join(', ')})`);
-            }
             if ( outcome === 'match' ) {
+                if ( safe.logLevel > 1 ) {
+                    safe.uboLog(logPrefix, `Matched "propsToMatch"`);
+                }
                 xhrInstances.set(outerXhr, xhrDetails);
             }
             return super.open(method, url, ...args);
@@ -106,13 +102,8 @@ function trustedReplaceXhrResponse(
             }
             const textBefore = innerResponse;
             const textAfter = textBefore.replace(rePattern, replacement);
-            const outcome = textAfter !== textBefore ? 'match' : 'nomatch';
-            if ( outcome === logLevel || logLevel === 'all' ) {
-                log(
-                    `trusted-replace-xhr-response (${outcome})`,
-                    `\n\tpattern: ${pattern}`, 
-                    `\n\treplacement: ${replacement}`,
-                );
+            if ( textAfter !== textBefore ) {
+                safe.uboLog(logPrefix, 'Match');
             }
             return (xhrDetails.response = textAfter);
         }
@@ -147,7 +138,7 @@ function matchObjectProperties(propNeedles, ...objs) {
         let value = haystack[prop];
         if ( value === undefined ) { continue; }
         if ( typeof value !== 'string' ) {
-            try { value = JSON.stringify(value); }
+            try { value = safe.JSON_stringify(value); }
             catch(ex) { }
             if ( typeof value !== 'string' ) { continue; }
         }
@@ -175,8 +166,8 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -206,11 +197,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -278,13 +280,40 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
 }
 
 /******************************************************************************/

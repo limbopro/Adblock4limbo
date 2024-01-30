@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_trustedSetCookie = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["wallpaper","click"],["WPdp","gqcHFMkMCFBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSGl1BMyFBXQpBBBpBXUBPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSo+RV1BAQFBXUBPRRwRRUtSS1MOE1NZVF1BEwJBXUBUV0FWVkZWVEdVU0AeS1M0NzxBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSS1MWBlNZVgwe"],["WPtcs2","CP1ik8AP1ik8ABIACDPLAbEgAAAAAEPgAB5YAABBqhmgAIgAUABcADgAPgAoACoAFwAOQAeACAAEgALoAYABlADQANQAeAA_ACIAEcAJgAUIApACmAFWALgAugBiADMAGgAN4AegA_ACEAENAIgAiQBHACWAE0AJwAUYAwABhwDKAMsAZoA0QBsgDkAHPAO4A7wB7AD4gH2AfsA_wEAgIOAhABEQCKQEWARgAjUBHAEdAJEASUAlIBOwCfgFBgKgAqIBVwCxAFzALrAXkBegC-gGKANEAa8A2gBuADiAHHAOkAdQA7YB7QD7AH_ARMAi8BHsCRAJFASoAlYBMUCZAJlATaAnYBQ8CjwKRAUnApoCmwFPgKhgVIBUoCqgFWAK5AV2AsKBYgFigLKAWiAtQBbEC3ALdAXAAuQBdAC7QF3wLyAvMBfQC_wGCAMGAYaAxABiwDHgGQwMjAySBkwGTgMqAZYAzMBnIDPAGiANGAaaA1MBqsDVwNZAa8A2iBtwG3wN0A3UBwADggHFgOPAcnA5YDlwHPgOsAeKA8eB5IHlAPigfIB8oD6QH1wPtA-6B-wH7gQBAgIBAwCB4EEQIJgQYAg2BCECFAEK4IWghcBDECGcEOQQ6gh4CHoEPwIpgRgAjSBGsCN4EcQI6AR2Aj2BH0CP4EhAJFASNgkgCScEmASZglQCVIEsAJZwS3BLiCXQJdgS-gmACYIEwwJiwTMBM4CagE2IJtgm5BN4E3wJwhBqAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
 
@@ -60,6 +60,8 @@ function trustedSetCookie(
 ) {
     if ( name === '' ) { return; }
 
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
     const time = new Date();
 
     if ( value === '$now$' ) {
@@ -81,7 +83,7 @@ function trustedSetCookie(
         expires = time.toUTCString();
     }
 
-    setCookieFn(
+    const done = setCookieFn(
         true,
         name,
         value,
@@ -89,11 +91,15 @@ function trustedSetCookie(
         path,
         safeSelf().getExtraArgs(Array.from(arguments), 4)
     );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
+    }
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -123,11 +129,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -195,7 +212,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
@@ -235,9 +284,12 @@ function setCookieFn(
     } catch(_) {
     }
 
-    if ( options.reload && getCookieFn(name) === value ) {
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
         window.location.reload();
     }
+
+    return done;
 }
 
 function getCookieFn(

@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_hrefSanitizer = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/idg.digidip.net/\"]","?url"],["a[href*=\"metromode.se/bouncer\"]","?url"]];
 
-const hostnamesMap = new Map([["aftonbladet.se",0],["livsstil.se",0],["godare.se",0],["byggahus.se",0],["expressen.se",0],["elle.se",[0,1]],["svenskdam.se",[0,1]],["galamagasin.se",0],["allas.se",1],["femina.se",1],["hant.se",1],["mabra.com",1],["residencemagazine.se",1],["motherhood.se",1],["m3.se",2],["pcforalla.se",2],["macworld.se",2],["metromode.se",3]]);
+const hostnamesMap = new Map([["aftonbladet.se",0],["livsstil.se",0],["godare.se",0],["byggahus.se",0],["expressen.se",0],["elle.se",[0,1]],["svenskdam.se",[0,1]],["galamagasin.se",0],["rodeo.net",0],["familjeliv.se",0],["allas.se",1],["femina.se",1],["hant.se",1],["mabra.com",1],["residencemagazine.se",1],["motherhood.se",1],["m3.se",2],["pcforalla.se",2],["macworld.se",2],["metromode.se",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -58,6 +58,8 @@ function hrefSanitizer(
 ) {
     if ( typeof selector !== 'string' ) { return; }
     if ( selector === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('href-sanitizer', selector, source);
     if ( source === '' ) { source = 'text'; }
     const sanitizeCopycats = (href, text) => {
         let elems = [];
@@ -69,6 +71,7 @@ function hrefSanitizer(
         for ( const elem of elems ) {
             elem.setAttribute('href', text);
         }
+        return elems.length;
     };
     const validateURL = text => {
         if ( text === '' ) { return ''; }
@@ -117,7 +120,8 @@ function hrefSanitizer(
             if ( hrefAfter === '' ) { continue; }
             if ( hrefAfter === href ) { continue; }
             elem.setAttribute('href', hrefAfter);
-            sanitizeCopycats(href, hrefAfter);
+            const count = sanitizeCopycats(href, hrefAfter);
+            safe.uboLog(logPrefix, `Sanitized ${count+1} links to\n${hrefAfter}`);
         }
         return true;
     };
@@ -181,8 +185,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -212,11 +216,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -284,7 +299,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

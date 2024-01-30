@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_noSetTimeoutIf = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["placebo.height()"],["AdBlock"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["t.open(\\'\\x"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"]];
+const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["AdBlock"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["t.open(\\'\\x"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"]];
 
-const hostnamesMap = new Map([["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["morlevha.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["teknotaci.com",1],["sinnerclownceviri.com",2],["intekno.net",3],["kuponuna148.com",4],["kuponuna149.com",4],["kuponuna150.com",4],["kuponuna151.com",4],["kuponuna152.com",4],["kuponuna153.com",4],["kuponuna154.com",4],["kuponuna155.com",4],["kuponuna156.com",4],["kuponuna157.com",4],["kuponuna158.com",4],["kuponuna159.com",4],["kuponuna160.com",4],["kuponuna161.com",4],["kuponuna162.com",4],["kuponuna163.com",4],["kuponuna164.com",4],["kuponuna165.com",4],["kuponuna166.com",4],["kuponuna167.com",4],["kuponuna168.com",4],["kuponuna169.com",4],["kuponuna170.com",4],["veryansintv.com",5],["tekniknot.com",6],["filmizletv2.com",7],["filmizletv3.com",7],["filmizletv4.com",7],["filmizletv5.com",7],["filmizletv6.com",7],["filmizletv7.com",7],["filmizletv8.com",7],["filmizletv9.com",7],["filmizletv10.com",7],["filmizletv11.com",7],["filmizletv12.com",7],["filmizletv13.com",7],["filmizletv14.com",7],["filmizletv15.com",7],["filmizletv16.com",7],["filmizletv17.com",7],["filmizletv18.com",7],["filmizletv19.com",7],["filmizletv20.com",7],["eksisozluk111.com",8]]);
+const hostnamesMap = new Map([["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["morlevha.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["sinnerclownceviri.com",1],["intekno.net",2],["kuponuna148.com",3],["kuponuna149.com",3],["kuponuna150.com",3],["kuponuna151.com",3],["kuponuna152.com",3],["kuponuna153.com",3],["kuponuna154.com",3],["kuponuna155.com",3],["kuponuna156.com",3],["kuponuna157.com",3],["kuponuna158.com",3],["kuponuna159.com",3],["kuponuna160.com",3],["kuponuna161.com",3],["kuponuna162.com",3],["kuponuna163.com",3],["kuponuna164.com",3],["kuponuna165.com",3],["kuponuna166.com",3],["kuponuna167.com",3],["kuponuna168.com",3],["kuponuna169.com",3],["kuponuna170.com",3],["veryansintv.com",4],["tekniknot.com",5],["filmizletv2.com",6],["filmizletv3.com",6],["filmizletv4.com",6],["filmizletv5.com",6],["filmizletv6.com",6],["filmizletv7.com",6],["filmizletv8.com",6],["filmizletv9.com",6],["filmizletv10.com",6],["filmizletv11.com",6],["filmizletv12.com",6],["filmizletv13.com",6],["filmizletv14.com",6],["filmizletv15.com",6],["filmizletv16.com",6],["filmizletv17.com",6],["filmizletv18.com",6],["filmizletv19.com",6],["filmizletv20.com",6],["eksisozluk.com",7]]);
 
-const entitiesMap = new Map([["filmizletv",7]]);
+const entitiesMap = new Map([["filmizletv",6]]);
 
 const exceptionsMap = new Map([]);
 
@@ -58,6 +58,7 @@ function noSetTimeoutIf(
 ) {
     if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('prevent-setTimeout', needle, delay);
     const needleNot = needle.charAt(0) === '!';
     if ( needleNot ) { needle = needle.slice(1); }
     if ( delay === '' ) { delay = undefined; }
@@ -67,9 +68,6 @@ function noSetTimeoutIf(
         if ( delayNot ) { delay = delay.slice(1); }
         delay = parseInt(delay, 10);
     }
-    const log = needleNot === false && needle === '' && delay === undefined
-        ? console.log
-        : undefined;
     const reNeedle = safe.patternToRegex(needle);
     self.setTimeout = new Proxy(self.setTimeout, {
         apply: function(target, thisArg, args) {
@@ -77,19 +75,20 @@ function noSetTimeoutIf(
                 ? String(safe.Function_toString(args[0]))
                 : String(args[0]);
             const b = args[1];
-            if ( log !== undefined ) {
-                log('uBO: setTimeout("%s", %s)', a, b);
-            } else {
-                let defuse;
-                if ( needle !== '' ) {
-                    defuse = reNeedle.test(a) !== needleNot;
-                }
-                if ( defuse !== false && delay !== undefined ) {
-                    defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
-                }
-                if ( defuse ) {
-                    args[0] = function(){};
-                }
+            if ( needle === '' && delay === undefined ) {
+                safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
+                return Reflect.apply(target, thisArg, args);
+            }
+            let defuse;
+            if ( needle !== '' ) {
+                defuse = reNeedle.test(a) !== needleNot;
+            }
+            if ( defuse !== false && delay !== undefined ) {
+                defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
+            }
+            if ( defuse ) {
+                args[0] = function(){};
+                safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
             }
             return Reflect.apply(target, thisArg, args);
         },
@@ -103,8 +102,8 @@ function noSetTimeoutIf(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -134,11 +133,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -206,7 +216,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

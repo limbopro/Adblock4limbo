@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_removeNodeText = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["script","if(!document.getElementById"]];
 
@@ -66,18 +66,18 @@ function replaceNodeTextFn(
     replacement = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('replace-node-text.fn', ...Array.from(arguments));
     const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const shouldLog = scriptletGlobals.has('canDebug') && extraArgs.log || 0;
     const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
     const stop = (takeRecord = true) => {
         if ( takeRecord ) {
             handleMutations(observer.takeRecords());
         }
         observer.disconnect();
-        if ( shouldLog !== 0 ) {
-            safe.uboLog(`replace-node-text-core.fn: quitting "${pattern}" => "${replacement}"`);
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Quitting');
         }
     };
     let sedCount = extraArgs.sedCount || 0;
@@ -92,10 +92,10 @@ function replaceNodeTextFn(
             ? before.replace(rePattern, replacement)
             : replacement;
         node.textContent = after;
-        if ( shouldLog !== 0 ) {
-            safe.uboLog('replace-node-text.fn before:\n', before);
-            safe.uboLog('replace-node-text.fn after:\n', after);
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
+        safe.uboLog(logPrefix, `Text after:\n${after.trim()}`);
         return sedCount === 0 || (sedCount -= 1) !== 0;
     };
     const handleMutations = mutations => {
@@ -123,9 +123,7 @@ function replaceNodeTextFn(
             if ( handleNode(node) ) { continue; }
             stop(); break;
         }
-        if ( shouldLog !== 0 ) {
-            safe.uboLog(`replace-node-text-core.fn ${count} nodes present before installing mutation observer`);
-        }
+        safe.uboLog(logPrefix, `${count} nodes present before installing mutation observer`);
     }
     if ( extraArgs.stay ) { return; }
     runAt(( ) => {
@@ -168,8 +166,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -199,11 +197,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -271,7 +280,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

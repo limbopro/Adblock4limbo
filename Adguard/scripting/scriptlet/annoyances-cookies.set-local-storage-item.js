@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_setLocalStorageItem = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["wu.ccpa-toast-viewed","true"],["dnt","1"],["dnt_a","1"],["makerz_allow_consentmgr","0"],["cookie-consent","true"],["SHOW_COOKIE_BANNER","no"],["CookiesConsent","1"],["amCookieBarFirstShow","1"],["acceptedCookies","false"],["viewedCookieBanner","true"],["accept_all_cookies","false"],["isCookies","1"],["cookieconsent_status","false"],["user_cookie","1"],["ka:4:legal-updates","true"],["cok","true"],["cookieMessage","true"],["soCookiesPolicy","1"],["GDPR:RBI:accepted","false"],["cookieConsent","true"],["contao-privacy-center.hidden","1"],["cookie_consent","false"],["cookiesAgree","true"],["ytsc_accepted_cookies","true"],["safe-storage/v1/tracking-consent/trackingConsentMarketingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAdvertisingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey","false"],["agreeToCookie","false"],["AI Alliance_ReactCookieAcceptance_hasSetCookies","true"],["cookie_prompt_times","1"],["cookie-ack-2","true"],["firstVisit","false"],["2020-04-05","1"],["dismissed","true"],["SET_COOKIES_APPROVED","true"],["hasAcceptedCookies","true"],["isCookiesNotificationHidden","true"],["agreed-cookies","true"],["consentCookie","true"],["SWCOOKIESACC","1"],["hasAcceptedCookieNotice","true"],["fb-cookies-accepted","false"],["is_accept_cookie","true"],["accept-jove-cookie","1"],["cookie_consent_bar_value","true"],["pxdn_cookie_consent","true"],["akasha__cookiePolicy","true"],["QMOptIn","false"],["isCookiesAccepted","true"],["safe.global","false"],["cookie_banner:hidden","true"],["cookiesAccepted","false"],["accept_cookie_policy","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookiesAccepted","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["cookiePolicy","true"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","false"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
+const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["wu.ccpa-toast-viewed","true"],["dnt","1"],["dnt_a","1"],["makerz_allow_consentmgr","0"],["SHOW_COOKIE_BANNER","no"],["CookiesConsent","1"],["hasAnalyticalCookies","false"],["hasStrictlyNecessaryCookies","true"],["amCookieBarFirstShow","1"],["acceptedCookies","false"],["viewedCookieBanner","true"],["accept_all_cookies","false"],["isCookies","1"],["cookieconsent_status","false"],["user_cookie","1"],["ka:4:legal-updates","true"],["cok","true"],["cookieMessage","true"],["soCookiesPolicy","1"],["GDPR:RBI:accepted","false"],["cookieConsent","true"],["contao-privacy-center.hidden","1"],["cookie_consent","false"],["cookiesAgree","true"],["ytsc_accepted_cookies","true"],["safe-storage/v1/tracking-consent/trackingConsentMarketingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAdvertisingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey","false"],["agreeToCookie","false"],["AI Alliance_ReactCookieAcceptance_hasSetCookies","true"],["cookie_prompt_times","1"],["cookie-ack-2","true"],["firstVisit","false"],["2020-04-05","1"],["dismissed","true"],["SET_COOKIES_APPROVED","true"],["hasAcceptedCookies","true"],["isCookiesNotificationHidden","true"],["agreed-cookies","true"],["consentCookie","true"],["SWCOOKIESACC","1"],["hasAcceptedCookieNotice","true"],["fb-cookies-accepted","false"],["is_accept_cookie","true"],["accept-jove-cookie","1"],["cookie_consent_bar_value","true"],["pxdn_cookie_consent","true"],["akasha__cookiePolicy","true"],["QMOptIn","false"],["isCookiesAccepted","true"],["safe.global","false"],["cookie_banner:hidden","true"],["cookiesAccepted","false"],["accept_cookie_policy","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookiesAccepted","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["cookiePolicy","true"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["framerCookiesDismissed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["otherCookie","true"],["saveCookie","true"],["hide-cookie-permission-1","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["cookieConsent","false"],["acceptCookies","no"],["hasAcceptedGdpr","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["gdpr-done","true"]];
 
-const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["wunderground.com",3],["eversports.de",[4,5]],["makerz.me",6],["atlas.workland.com",7],["virginexperiencedays.co.uk",7],["reebok.eu",8],["alfa.com.ec",9],["rts.com.ec",9],["tropicalida.com.ec",9],["beermerchants.com",10],["saamexe.com",[11,12]],["app.bionic-reading.com",13],["nloto.ru",14],["librinova.com",15],["format.bike",16],["khanacademy.org",17],["etelecinema.hu",18],["konicaminolta.com",19],["soquest.xyz",20],["region-bayreuth.de",21],["auth.hiring.amazon.com",22],["parrotsec.org",22],["nationalexpress.de",23],["eezy.nrw",23],["bahnland-bayern.de",23],["go.bkk.hu",24],["happiful.com",24],["bazaartracker.com",25],["subscribercounter.com",26],["app.klarna.com",[27,28,29]],["instantspoursoi.fr",30],["thealliance.ai",31],["temu.com",32],["vivenu.com",33],["librumreader.com",34],["visnos.com",35],["polypane.app",36],["changelly.com",37],["glose.com",38],["yellow.systems",39],["renebieder.com",40],["goodram.com",41],["starwalk.space",42],["vitotechnology.com",42],["codedead.com",43],["studiofabiobiesel.com",44],["fydeos.com",45],["fydeos.io",45],["jove.com",46],["argent.xyz",47],["pixeden.com",48],["akasha.org",49],["ashleyfurniture.com",50],["5sim.net",51],["safe.global",52],["jibjab.com",53],["filmzie.com",54],["vietjetair.com",55],["betterprogramming.pub",56],["medium.com",56],["500ish.com",56],["gitconnected.com",56],["bettermarketing.pub",56],["diylifetech.com",56],["thebolditalic.com",56],["writingcooperative.com",56],["fanfare.pub",56],["betterhumans.pub",56],["kick.com",57],["jimdosite.com",58],["worstbassist.com",58],["streamclipsgermany.de",59],["evernote.com",[60,61]],["octopusenergy.co.jp",62],["improvethenews.org",63],["plente.com",63],["findmcserver.com",64],["schneideranwaelte.de",65],["traefik.io",65],["cityfalcon.ai",66],["digitalparking.city",67],["mediathekviewweb.de",68],["solana.com",69],["ef.co.id",70],["alohafromdeer.com",71],["fwd.com",[72,74]],["everywhere.game",73],["geotastic.net",75],["tattoodo.com",[76,77]],["garageproject.co.nz",76],["emag.berliner-woche.de",[78,79,80]],["nordkurier.de",[78,79,80]],["everest-24.pl",[81,83]],["zave.it",82],["sneakerfreaker.com",84],["cryptofalka.hu",84],["walmart.ca",85],["flyingblue.com",86],["byfood.com",87],["andsafe.de",88],["edostavka.by",89],["emall.by",89],["onexstore.pl",[90,91,92]],["revanced.app",92],["evropochta.by",[93,94]],["hitado.de",95],["inselberlin.de",96],["gronkh.tv",97],["dorkgpt.com",98],["adfilteringdevsummit.com",99],["learngerman.dw.com",100],["gostanford.com",101],["namensetiketten.de",102],["drafthound.com",[103,104]],["wokularach.pl",105],["bidup.amtrak.com",106],["eschuhe.de",107],["flyingpapers.com",108],["beta.character.ai",[109,110]],["bittimittari.fi",111],["vivantis.sk",112],["krasa.cz",112]]);
+const hostnamesMap = new Map([["omroepbrabant.nl",[0,1,2]],["wunderground.com",3],["eversports.de",[4,5]],["makerz.me",6],["reebok.eu",7],["alfa.com.ec",8],["rts.com.ec",8],["tropicalida.com.ec",8],["owgr.com",[9,10]],["beermerchants.com",11],["saamexe.com",[12,13]],["app.bionic-reading.com",14],["nloto.ru",15],["librinova.com",16],["format.bike",17],["khanacademy.org",18],["etelecinema.hu",19],["konicaminolta.com",20],["soquest.xyz",21],["region-bayreuth.de",22],["auth.hiring.amazon.com",23],["parrotsec.org",23],["nationalexpress.de",24],["eezy.nrw",24],["bahnland-bayern.de",24],["go.bkk.hu",25],["happiful.com",25],["bazaartracker.com",26],["subscribercounter.com",27],["app.klarna.com",[28,29,30]],["instantspoursoi.fr",31],["thealliance.ai",32],["temu.com",33],["vivenu.com",34],["librumreader.com",35],["visnos.com",36],["polypane.app",37],["changelly.com",38],["glose.com",39],["yellow.systems",40],["renebieder.com",41],["goodram.com",42],["starwalk.space",43],["vitotechnology.com",43],["codedead.com",44],["studiofabiobiesel.com",45],["fydeos.com",46],["fydeos.io",46],["jove.com",47],["argent.xyz",48],["pixeden.com",49],["akasha.org",50],["ashleyfurniture.com",51],["5sim.net",52],["safe.global",53],["jibjab.com",54],["filmzie.com",55],["vietjetair.com",56],["betterprogramming.pub",57],["medium.com",57],["500ish.com",57],["gitconnected.com",57],["bettermarketing.pub",57],["diylifetech.com",57],["thebolditalic.com",57],["writingcooperative.com",57],["fanfare.pub",57],["betterhumans.pub",57],["kick.com",58],["jimdosite.com",59],["worstbassist.com",59],["streamclipsgermany.de",60],["evernote.com",[61,62]],["octopusenergy.co.jp",63],["improvethenews.org",64],["plente.com",64],["findmcserver.com",65],["schneideranwaelte.de",66],["traefik.io",66],["cityfalcon.ai",67],["digitalparking.city",68],["mediathekviewweb.de",69],["solana.com",70],["ef.co.id",71],["alohafromdeer.com",72],["fwd.com",[73,75]],["everywhere.game",74],["geotastic.net",76],["tattoodo.com",[77,78]],["garageproject.co.nz",77],["jmonline.com.br",79],["atlas.workland.com",79],["virginexperiencedays.co.uk",79],["emag.berliner-woche.de",[80,81,82]],["nordkurier.de",[80,81,82]],["everest-24.pl",[83,85]],["zave.it",84],["sneakerfreaker.com",86],["cryptofalka.hu",86],["walmart.ca",87],["flyingblue.com",88],["byfood.com",89],["andsafe.de",90],["edostavka.by",91],["emall.by",91],["onexstore.pl",[92,93,94]],["revanced.app",94],["evropochta.by",[95,96]],["hitado.de",97],["inselberlin.de",98],["gronkh.tv",99],["deribit.com",100],["dorkgpt.com",100],["adfilteringdevsummit.com",101],["learngerman.dw.com",102],["gostanford.com",103],["namensetiketten.de",104],["drafthound.com",[105,106]],["wokularach.pl",107],["bidup.amtrak.com",108],["eschuhe.de",109],["flyingpapers.com",110],["beta.character.ai",[111,112]],["bittimittari.fi",113],["vivantis.sk",114],["krasa.cz",114]]);
 
 const entitiesMap = new Map([]);
 
@@ -121,8 +121,8 @@ function setLocalStorageItemFn(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -152,11 +152,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -224,7 +235,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_setCookie = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["_blocker_hidden","1"],["dismissCheck","1"],["patch_top_tooltip_next_door_dismissed","true"],["patch_email_mobile_modal_dismissed","true"],["bulletin_new_31","1"],["avPopupCookie","1"],["DictPopShownToday","true"],["notification-newsletter-closed","true"],["pum-14592","true"],["modal","true"],["closed-black-banner","1"],["consultation_modal_shown","1"],["courses_quiz_completed","1"],["discover-disable-sitewide-article","true"],["showPopUp","true"],["isShowSociety","1"],["user_sign_up_modal_closed","true"],["common_sign_up_show","1"],["popShowed10s","yes"],["showLoginPopup","1"],["hide_promo_popup","true"],["nft-now-modal","1"],["do_not_show_mortgage_banner","1"],["divioverlay240311","true"],["divioverlay240768","true"],["amp_modal","1"],["pum-2309","true"],["support-ukraine","true"],["viewedOuibounceModal","true"],["acquisitionModalShowed","1"],["pageHint","1"],["intModalViewed","true"],["modal_rss","true"],["gmu_leadform","1"],["unlogin_scroll_step","1"],["cp_id_85057","true"],["movie-displayed","true"],["njt-close-notibar","true"],["signup_modal","true"],["signup_win_closed","true"],["__TRAVEL_QUIZ__","true"],["emailSignupCookie","true"],["efblog__hide_subscribe_popup","true"],["newsletteroverlayopened","true"],["popup_kapali","true"],["subbanner","true"],["home-layer","false"],["OogCCO","1"],["ck_glue_visit","1"],["exit_intent","true"],["seen-sl-signup-modal","true"],["wp-dl-nrxt","1"],["mag-newsletterbox","1"],["_pc_signed_up","true"],["nosi","1"],["ilike","1"],["disableNewsletterOverlay","1"],["inc_optin_popup_long_hidden-1_417","1"],["mvpopnews","1"],["NewsletterPopup","1"],["_pc_annoyed","1"],["_Wmpci_Popup","true"],["modalShown","1"],["chocolatey_hide_packages_disclaimer","true"],["mobile_main_half_popup","Y"],["saiupagina","true"],["SignupDismissed","1"],["forti.engagement_popup_banner","1"],["discountPrice","true"],["__expert.modal.campaign.welcome2023","true"],["AframeNewsletter","true"],["exitModal","true"],["newsletter-popup-shown","true"],["_showed_subscribeModal_og","1"],["neverNewsletterPopup","1"],["widget_show","1"],["newsletter","1"],["digest_sub_cookie_4","true"],["NewsLetterDismissed","true"],["modalShown","true"],["closedsticky","true"],["skipped_subsctiption_popup","true"],["ad_sess_pt_email","true"],["ad_sess_pb_email","true"],["ad_sess_pk_email","true"],["ad_sess_we_email","true"],["ad_sess_ws_email","true"],["NewsletterPopupEUROPA","true"],["pum-32511","true"],["a9-beforeyouleave-popin","1"],["likePopupShown","1"],["newsletter_popup_closed","true"],["newsletter_shown","false"],["conversion_action_done","true"],["views-since-welcome-ad","3"],["_pc_NL1","true"],["subscription_was_close","true"],["lr_subscribed","true"],["mrn_nl_abo","1"],["newsletterDisplayed","1"],["newsletterBox","1"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["_blocker_hidden","1"],["dismissCheck","1"],["fblb","1"],["cookies_newsletter","1"],["patch_top_tooltip_next_door_dismissed","true"],["patch_email_mobile_modal_dismissed","true"],["bulletin_new_31","1"],["avPopupCookie","1"],["DictPopShownToday","true"],["notification-newsletter-closed","true"],["pum-14592","true"],["modal","true"],["closed-black-banner","1"],["consultation_modal_shown","1"],["courses_quiz_completed","1"],["discover-disable-sitewide-article","true"],["showPopUp","true"],["isShowSociety","1"],["user_sign_up_modal_closed","true"],["common_sign_up_show","1"],["popShowed10s","yes"],["showLoginPopup","1"],["hide_promo_popup","true"],["nft-now-modal","1"],["do_not_show_mortgage_banner","1"],["divioverlay240311","true"],["divioverlay240768","true"],["amp_modal","1"],["pum-2309","true"],["support-ukraine","true"],["viewedOuibounceModal","true"],["acquisitionModalShowed","1"],["pageHint","1"],["intModalViewed","true"],["modal_rss","true"],["gmu_leadform","1"],["unlogin_scroll_step","1"],["cp_id_85057","true"],["movie-displayed","true"],["njt-close-notibar","true"],["signup_modal","true"],["signup_win_closed","true"],["__TRAVEL_QUIZ__","true"],["emailSignupCookie","true"],["efblog__hide_subscribe_popup","true"],["newsletteroverlayopened","true"],["popup_kapali","true"],["subbanner","true"],["home-layer","false"],["OogCCO","1"],["ck_glue_visit","1"],["exit_intent","true"],["seen-sl-signup-modal","true"],["wp-dl-nrxt","1"],["mag-newsletterbox","1"],["_pc_signed_up","true"],["nosi","1"],["ilike","1"],["disableNewsletterOverlay","1"],["inc_optin_popup_long_hidden-1_417","1"],["mvpopnews","1"],["NewsletterPopup","1"],["_pc_annoyed","1"],["_Wmpci_Popup","true"],["modalShown","1"],["chocolatey_hide_packages_disclaimer","true"],["mobile_main_half_popup","Y"],["saiupagina","true"],["SignupDismissed","1"],["forti.engagement_popup_banner","1"],["discountPrice","true"],["__expert.modal.campaign.welcome2023","true"],["AframeNewsletter","true"],["exitModal","true"],["newsletter-popup-shown","true"],["_showed_subscribeModal_og","1"],["neverNewsletterPopup","1"],["widget_show","1"],["newsletter","1"],["digest_sub_cookie_4","true"],["NewsLetterDismissed","true"],["modalShown","true"],["closedsticky","true"],["skipped_subsctiption_popup","true"],["ad_sess_pt_email","true"],["ad_sess_pb_email","true"],["ad_sess_pk_email","true"],["ad_sess_we_email","true"],["ad_sess_ws_email","true"],["NewsletterPopupEUROPA","true"],["pum-32511","true"],["a9-beforeyouleave-popin","1"],["likePopupShown","1"],["newsletter_popup_closed","true"],["newsletter_shown","false"],["conversion_action_done","true"],["views-since-welcome-ad","3"],["_pc_NL1","true"],["subscription_was_close","true"],["lr_subscribed","true"],["mrn_nl_abo","1"],["newsletterDisplayed","1"],["newsletterBox","1"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["rambler.ua",0],["rambler.ru",0],["dailyadvertiser.com.au",1],["canberratimes.com.au",1],["thecourier.com.au",1],["portnews.com.au",1],["illawarramercury.com.au",1],["dailyliberal.com.au",1],["centralwesterndaily.com.au",1],["newcastleherald.com.au",1],["examiner.com.au",1],["bendigoadvertiser.com.au",1],["patch.com",[2,3]],["boylove1.mobi",[4,5]],["lingq.com",6],["gatonplayseries.com",8],["imerodromos.gr",9],["flowwow.com",10],["netology.ru",11],["musescore.com",12],["helloyishi.com.tw",13],["reverseimagesearch.com",14],["kikinote.net",15],["litalico-c.jp",16],["careers360.com",17],["blog.csdn.net",[18,34]],["map.baidu.com",19],["bilkom.pl",20],["nftnow.com",21],["cian.ru",22],["disntr.com",[23,24]],["ampmedia.jp",25],["mrt.od.ua",26],["customfw.xyz",27],["intellinews.com",28],["pfister.ch",29],["1-2-3.tv",30],["academicearth.org",31],["lkslodz.pl",32],["getmyuni.com",33],["gettinenglish.com",35],["texacopolska.pl",36],["mylivewallpapers.com",37],["ebth.com",38],["findamasters.com",39],["tripoto.com",40],["horizonhobby.de",41],["ef.com",42],["uniqlo.com",43],["benguturk.com",44],["cifrus.ru",45],["kmplayer.com",46],["oogarden.de",47],["tvfindr.com",48],["adacreisen.de",49],["dropbox.com",50],["delamar.de",51],["lebensmittel-sonderposten.de",52],["linkradquadrat.de",52],["forward.com",53],["abload.de",54],["puntocellulare.it",55],["hekatron-brandschutz.de",56],["prowebscraper.com",57],["moneyvox.fr",58],["kaiser-elektro.de",59],["thedailybeast.com",60],["careerkarma.com",61],["ruggable.com",62],["chocolatey.org",63],["m.qoo10.jp",64],["girafa.com.br",65],["warnerbrosgames.com",66],["community.fortinet.com",67],["onlinepngtools.com",68],["onlinetools.com",68],["expert.it",69],["aframe.oscars.org",70],["mymuesli.com",72],["onlinegibdd.ru",73],["auxologico.it",74],["onclinic.ua",75],["geizdental.de",76],["unisender.com",77],["pbs.org",[78,79]],["profgalloway.com",80],["bbbl.dev",81],["pbteen.com",82],["potterybarn.com",83],["potterybarnkids.com",84],["westelm.com",85],["williams-sonoma.com",86],["porsche-design.com",87],["ordnungsliebe.net",88],["gymglish.com",89],["shoppingpl.com",90],["mozo.com.au",91],["parfois.com",92],["wiseadvice-it.ru",93],["nextgov.com",94],["thebulletin.org",95],["quto.ru",96],["freedomplatform.tv",97],["marianne.net",98],["lampenwelt.de",99],["fahrradmanufaktur.de",100],["techonthenet.com",101],["tumblr.com",102],["scitechdaily.com",103]]);
+const hostnamesMap = new Map([["rambler.ua",0],["rambler.ru",0],["dailyadvertiser.com.au",1],["canberratimes.com.au",1],["thecourier.com.au",1],["portnews.com.au",1],["illawarramercury.com.au",1],["dailyliberal.com.au",1],["centralwesterndaily.com.au",1],["newcastleherald.com.au",1],["examiner.com.au",1],["bendigoadvertiser.com.au",1],["vw-passat.pl",2],["poradnikogrodniczy.pl",3],["patch.com",[4,5]],["boylove1.mobi",[6,7]],["lingq.com",8],["gatonplayseries.com",10],["imerodromos.gr",11],["flowwow.com",12],["netology.ru",13],["musescore.com",14],["helloyishi.com.tw",15],["reverseimagesearch.com",16],["kikinote.net",17],["litalico-c.jp",18],["careers360.com",19],["blog.csdn.net",[20,36]],["map.baidu.com",21],["bilkom.pl",22],["nftnow.com",23],["cian.ru",24],["disntr.com",[25,26]],["ampmedia.jp",27],["mrt.od.ua",28],["customfw.xyz",29],["intellinews.com",30],["pfister.ch",31],["1-2-3.tv",32],["academicearth.org",33],["lkslodz.pl",34],["getmyuni.com",35],["gettinenglish.com",37],["texacopolska.pl",38],["mylivewallpapers.com",39],["ebth.com",40],["findamasters.com",41],["tripoto.com",42],["horizonhobby.de",43],["ef.com",44],["uniqlo.com",45],["benguturk.com",46],["cifrus.ru",47],["kmplayer.com",48],["oogarden.de",49],["tvfindr.com",50],["adacreisen.de",51],["dropbox.com",52],["delamar.de",53],["lebensmittel-sonderposten.de",54],["linkradquadrat.de",54],["forward.com",55],["abload.de",56],["puntocellulare.it",57],["hekatron-brandschutz.de",58],["prowebscraper.com",59],["moneyvox.fr",60],["kaiser-elektro.de",61],["thedailybeast.com",62],["careerkarma.com",63],["ruggable.com",64],["chocolatey.org",65],["m.qoo10.jp",66],["girafa.com.br",67],["warnerbrosgames.com",68],["community.fortinet.com",69],["onlinepngtools.com",70],["onlinetools.com",70],["expert.it",71],["aframe.oscars.org",72],["mymuesli.com",74],["onlinegibdd.ru",75],["auxologico.it",76],["onclinic.ua",77],["geizdental.de",78],["unisender.com",79],["pbs.org",[80,81]],["profgalloway.com",82],["bbbl.dev",83],["pbteen.com",84],["potterybarn.com",85],["potterybarnkids.com",86],["westelm.com",87],["williams-sonoma.com",88],["porsche-design.com",89],["ordnungsliebe.net",90],["gymglish.com",91],["shoppingpl.com",92],["mozo.com.au",93],["parfois.com",94],["wiseadvice-it.ru",95],["nextgov.com",96],["thebulletin.org",97],["quto.ru",98],["freedomplatform.tv",99],["marianne.net",100],["lampenwelt.de",101],["fahrradmanufaktur.de",102],["techonthenet.com",103],["tumblr.com",104],["scitechdaily.com",105]]);
 
-const entitiesMap = new Map([["vivre",7],["zendesk",71]]);
+const entitiesMap = new Map([["vivre",9],["zendesk",73]]);
 
 const exceptionsMap = new Map([]);
 
@@ -58,6 +58,8 @@ function setCookie(
     path = ''
 ) {
     if ( name === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
     name = encodeURIComponent(name);
 
     const validValues = [
@@ -82,7 +84,7 @@ function setCookie(
         if ( n > 15 ) { return; }
     }
 
-    setCookieFn(
+    const done = setCookieFn(
         false,
         name,
         value,
@@ -90,11 +92,15 @@ function setCookie(
         path,
         safeSelf().getExtraArgs(Array.from(arguments), 3)
     );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
+    }
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -124,11 +130,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -196,7 +213,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
@@ -236,9 +285,12 @@ function setCookieFn(
     } catch(_) {
     }
 
-    if ( options.reload && getCookieFn(name) === value ) {
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
         window.location.reload();
     }
+
+    return done;
 }
 
 function getCookieFn(

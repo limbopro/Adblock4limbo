@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_abortCurrentScript = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["document.createElement","adsbygoogle.js"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["document.getElementById","block"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["decodeURIComponent","0x"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""]];
+const argsList = [["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["document.createElement","adsbygoogle.js"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["document.getElementById","block"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["decodeURIComponent","0x"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""]];
 
-const hostnamesMap = new Map([["gamesteelstudioplus.blogspot.com",0],["gamesteelstudio.blogspot.com",0],["infohojeonline.blogspot.com",0],["dicasdevalor.net",1],["animeszone.net",2],["canalnatelinhaonline.blogspot.com",3],["hinatasoul.com",4],["buscalinks.xyz",5],["gamesviatorrent.top",5],["inuyashadowns.com.br",6],["link.baixedetudo.net.br",6],["oliberal.com",7],["suaads.com",8],["reidoplacar.com",8],["suaurl.com",[8,22,23]],["gamestorrents.one",9],["csrevo.com",10],["guianoticiario.net",11],["oceans14.com.br",12],["illamadas.es",13],["audiotools.in",14],["lacalleochotv.org",15],["ecartelera.com",16],["animeshouse.net",17],["playpaste.com",[18,19]],["pasfox.com",[19,27]],["directvxx.com",20],["piratefilmeshd.net",21],["tiohentai.xyz",24],["palaygo.site",25],["seireshd.com",28],["hentai-id.tv",29]]);
+const hostnamesMap = new Map([["gamesteelstudioplus.blogspot.com",0],["gamesteelstudio.blogspot.com",0],["infohojeonline.blogspot.com",0],["dicasdevalor.net",1],["animeszone.net",2],["canalnatelinhaonline.blogspot.com",3],["hinatasoul.com",4],["buscalinks.xyz",5],["gamesviatorrent.top",5],["inuyashadowns.com.br",6],["link.baixedetudo.net.br",6],["oliberal.com",7],["suaads.com",8],["reidoplacar.com",8],["suaurl.com",[8,23,24]],["gamestorrents.one",9],["csrevo.com",10],["guianoticiario.net",11],["oceans14.com.br",12],["illamadas.es",13],["audiotools.in",14],["lacalleochotv.org",15],["ecartelera.com",16],["animeshouse.net",17],["futbollibre.pe",18],["playpaste.com",[19,20]],["pasfox.com",[20,28]],["directvxx.com",21],["piratefilmeshd.net",22],["tiohentai.xyz",25],["palaygo.site",26],["seireshd.com",29],["hentai-id.tv",30]]);
 
-const entitiesMap = new Map([["movidy",26]]);
+const entitiesMap = new Map([["movidy",27]]);
 
 const exceptionsMap = new Map([]);
 
@@ -66,6 +66,7 @@ function abortCurrentScriptCore(
     if ( typeof target !== 'string' ) { return; }
     if ( target === '' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('abort-current-script', target, needle, context);
     const reNeedle = safe.patternToRegex(needle);
     const reContext = safe.patternToRegex(context);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
@@ -89,7 +90,6 @@ function abortCurrentScriptCore(
         value = owner[prop];
         desc = undefined;
     }
-    const log = shouldLog(extraArgs);
     const debug = shouldDebug(extraArgs);
     const exceptionToken = getExceptionToken();
     const scriptTexts = new WeakMap();
@@ -122,14 +122,19 @@ function abortCurrentScriptCore(
             if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
             return;
         }
-        if ( log && e.src !== '' ) { safe.uboLog(`matched src: ${e.src}`); }
+        if ( safe.logLevel > 1 && context !== '' ) {
+            safe.uboLog(logPrefix, `Matched src\n${e.src}`);
+        }
         const scriptText = getScriptText(e);
         if ( reNeedle.test(scriptText) === false ) {
             if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
             return;
         }
-        if ( log ) { safe.uboLog(`matched script text: ${scriptText}`); }
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
+        }
         if ( debug === 'match' || debug === 'all' ) { debugger; }  // jshint ignore: line
+        safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
     };
     if ( debug === 'install' ) { debugger; }  // jshint ignore: line
@@ -151,7 +156,7 @@ function abortCurrentScriptCore(
             }
         });
     } catch(ex) {
-        if ( log ) { safe.uboLog(ex); }
+        safe.uboErr(logPrefix, `Error: ${ex}`);
     }
 }
 
@@ -183,8 +188,8 @@ function getExceptionToken() {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -214,11 +219,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -286,18 +302,45 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
 function shouldDebug(details) {
     if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.debug;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
+    return scriptletGlobals.canDebug && details.debug;
 }
 
 /******************************************************************************/

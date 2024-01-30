@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401291416
+## ! Version: 202401301522
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Jan 2024 14:16 UTC
+## ! Last modified: 30 Jan 2024 15:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -223,6 +223,7 @@ DOMAIN-SUFFIX,loopcybersec.com
 DOMAIN-SUFFIX,lsdm.co
 DOMAIN-SUFFIX,maggieeatstheangel.com
 DOMAIN-SUFFIX,matheranalytics.com
+DOMAIN-SUFFIX,mathilde-ads.com
 DOMAIN-SUFFIX,maxepv.com
 DOMAIN-SUFFIX,maxtrafixx.tech
 DOMAIN-SUFFIX,mb-tracking.com
@@ -2952,6 +2953,7 @@ DOMAIN-SUFFIX,pixels.afcdn.com
 DOMAIN-SUFFIX,pl.connatix.com
 DOMAIN-SUFFIX,platform.iteratehq.com
 DOMAIN-SUFFIX,play.adtonos.com
+DOMAIN-SUFFIX,player-metrics.instaread.co
 DOMAIN-SUFFIX,pm.boostintegrated.com
 DOMAIN-SUFFIX,popup-static.unisender.com
 DOMAIN-SUFFIX,porpoise.azettl.net
@@ -3862,11 +3864,14 @@ DOMAIN-SUFFIX,uh.nakanohito.jp
 DOMAIN-SUFFIX,webbc.fivecdm.com
 DOMAIN-SUFFIX,x9.shinobi.jp
 DOMAIN-SUFFIX,acelogger.heraldcorp.com
+DOMAIN-SUFFIX,assets.datarize.ai
 DOMAIN-SUFFIX,cm-exchange.toast.com
+DOMAIN-SUFFIX,dtr-onsite-feed.datarize.ai
 DOMAIN-SUFFIX,event.hackle.io
 DOMAIN-SUFFIX,log.adplex.co.kr
 DOMAIN-SUFFIX,log.cizion.com
 DOMAIN-SUFFIX,log.mofa.go.kr
+DOMAIN-SUFFIX,log.pipeline.datarize.io
 DOMAIN-SUFFIX,log.targetpush.co.kr
 DOMAIN-SUFFIX,logger.bzu.kr
 DOMAIN-SUFFIX,logs-partners.coupang.com
@@ -3875,6 +3880,7 @@ DOMAIN-SUFFIX,mtag.mman.kr
 DOMAIN-SUFFIX,ngc1.nsm-corp.com
 DOMAIN-SUFFIX,performanceplay.co.kr
 DOMAIN-SUFFIX,pxl.retaku.net
+DOMAIN-SUFFIX,realtime-profiling.datarize.ai
 DOMAIN-SUFFIX,saluton.cizion.com
 DOMAIN-SUFFIX,sas.nsm-corp.com
 DOMAIN-SUFFIX,teralog.techhub.co.kr

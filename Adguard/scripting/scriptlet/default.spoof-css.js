@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_spoofCSS = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["div[id^=\"showtheadsfatf_\"], div[id^=\"imgyad\"], .showtheadsfatf, a[href=\"https://searchenginereports.net/gmadads\"]","display","block"],[".metaRedirectWrapperBottomAds, .ametaReedirectWrapperTopAdd, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["body > div[id]:not([id=\"download\"][class=\"download\"]) a, body > *:has(iframe[src*=\"ad.a-ads.com\"]) a","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
+const argsList = [[".metaRedirectWrapperBottomAds, .ametaReedirectWrapperTopAdd, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["body > div[id]:not([id=\"download\"][class=\"download\"]) a, body > *:has(iframe[src*=\"ad.a-ads.com\"]) a","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
 
-const hostnamesMap = new Map([["searchenginereports.net",0],["megaup.net",1],["download.megaup.net",2],["techcyan.com",3],["kiktu.com",3],["upshrink.com",3],["trangchu.news",3],["banaraswap.in",3]]);
+const hostnamesMap = new Map([["megaup.net",0],["download.megaup.net",1],["techcyan.com",2],["kiktu.com",2],["upshrink.com",2],["trangchu.news",2],["banaraswap.in",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -67,15 +67,15 @@ function spoofCSS(
         propToValueMap.set(toCamelCase(args[i+0]), args[i+1]);
     }
     const safe = safeSelf();
-    const canDebug = scriptletGlobals.has('canDebug');
+    const logPrefix = safe.makeLogPrefix('spoof-css', selector, ...args);
+    const canDebug = scriptletGlobals.canDebug;
     const shouldDebug = canDebug && propToValueMap.get('debug') || 0;
-    const shouldLog = canDebug && propToValueMap.has('log') || 0;
     const spoofStyle = (prop, real) => {
         const normalProp = toCamelCase(prop);
         const shouldSpoof = propToValueMap.has(normalProp);
         const value = shouldSpoof ? propToValueMap.get(normalProp) : real;
-        if ( shouldLog === 2 || shouldSpoof && shouldLog === 1 ) {
-            safe.uboLog(prop, value);
+        if ( shouldSpoof ) {
+            safe.uboLog(logPrefix, `Spoofing ${prop} to ${value}`);
         }
         return value;
     };
@@ -143,8 +143,8 @@ function spoofCSS(
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -174,11 +174,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -246,7 +257,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

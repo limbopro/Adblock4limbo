@@ -40,11 +40,11 @@
 // Start of code to inject
 const uBOL_removeClass = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["disabled",".get-link"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["has-adz","div.has-adz","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
+const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["disabled",".get-link"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["is-hidden"]];
 
-const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["freebrightsoft.com",2],["xda-developers.com",3],["paid4.link",4],["go.gets4link.com",5],["quizlet.com",[6,7,8]],["funker530.com",9],["av01.tv",10],["so1.asia",11],["top1iq.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15],["sinonimos.de",16]]);
+const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["freebrightsoft.com",2],["xda-developers.com",3],["paid4.link",4],["go.gets4link.com",5],["quizlet.com",[6,7]],["funker530.com",8],["av01.tv",9],["so1.asia",10],["top1iq.com",11],["artribune.com",12],["bestfonts.pro",13],["falatron.com",14],["sinonimos.de",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -139,8 +139,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -170,11 +170,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -242,7 +253,39 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 

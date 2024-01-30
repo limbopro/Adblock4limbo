@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_addEventListenerDefuser = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["DOMContentLoaded","interstitial"]];
 
@@ -57,10 +57,10 @@ function addEventListenerDefuser(
     pattern = ''
 ) {
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('prevent-addEventListener', type, pattern);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     const reType = safe.patternToRegex(type, undefined, true);
     const rePattern = safe.patternToRegex(pattern);
-    const log = shouldLog(extraArgs);
     const debug = shouldDebug(extraArgs);
     const targetSelector = extraArgs.elements || undefined;
     const shouldPrevent = (thisArg, type, handler) => {
@@ -72,9 +72,6 @@ function addEventListenerDefuser(
         const matchesHandler = safe.RegExp_test.call(rePattern, handler);
         const matchesEither = matchesType || matchesHandler;
         const matchesBoth = matchesType && matchesHandler;
-        if ( log === 1 && matchesBoth || log === 2 && matchesEither || log === 3 ) {
-            safe.uboLog(`addEventListener('${type}', ${handler})`);
-        }
         if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
             debugger; // jshint ignore:line
         }
@@ -83,15 +80,19 @@ function addEventListenerDefuser(
     const trapEddEventListeners = ( ) => {
         const eventListenerHandler = {
             apply: function(target, thisArg, args) {
-                let type, handler;
+                let t, h;
                 try {
-                    type = String(args[0]);
-                    handler = args[1] instanceof Function
+                    t = String(args[0]);
+                    h = args[1] instanceof Function
                         ? String(safe.Function_toString(args[1]))
                         : String(args[1]);
                 } catch(ex) {
                 }
-                if ( shouldPrevent(thisArg, type, handler) ) { return; }
+                if ( type === '' && pattern === '' ) {
+                    safe.uboLog(logPrefix, `Called: ${t}\n${h}`);
+                } else if ( shouldPrevent(thisArg, t, h) ) {
+                    return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}`);
+                }
                 return Reflect.apply(target, thisArg, args);
             },
             get(target, prop, receiver) {
@@ -141,8 +142,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -172,11 +173,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -244,18 +256,45 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
 }
 
 function shouldDebug(details) {
     if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.debug;
-}
-
-function shouldLog(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.has('canDebug') && details.log;
+    return scriptletGlobals.canDebug && details.debug;
 }
 
 /******************************************************************************/

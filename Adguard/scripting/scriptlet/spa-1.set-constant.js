@@ -40,13 +40,13 @@
 // Start of code to inject
 const uBOL_setConstant = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["antiAdBlockerStyle","noopFunc"],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","undefined"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["_mvnxp","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["clicked","true"],["eClicked","true"],["number","0"],["sync","true"],["a_consola","noopFunc"]];
+const argsList = [["hasAdblocker","false"],["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["antiAdBlockerStyle","noopFunc"],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","undefined"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["_mvnxp","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["a_consola","noopFunc"]];
 
-const hostnamesMap = new Map([["financasdeouro.com",0],["animeszone.net",1],["repretel.com",2],["redbolivision.tv.bo",2],["animesonline.nz",3],["mdr.ar",4],["impactoespananoticias.com",4],["skynovels.net",4],["botinnifit.com",4],["minhasdelicias.com",4],["luchaonline.com",4],["meocloud.pt",5],["fichajes.com",6],["niusdiario.es",[7,34]],["xerifetech.com",8],["pobre.wtf",[9,35]],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,36]],["legendei.net",11],["mangacrab.com",12],["documaniatv.com",13],["cadenaser.com",14],["texto.kom.gt",15],["infojobs.com.br",16],["maringapost.com.br",17],["bandab.com.br",17],["ouniversodatv.com",18],["tribunaavila.com",19],["deportealdia.live",20],["elquintobeatle.com",21],["empregoestagios.com",21],["satcesc.com",21],["applesfera.com",22],["bebesymas.com",22],["compradiccion.com",22],["diariodelviajero.com",22],["directoalpaladar.com",22],["elblogsalmon.com",22],["espinof.com",22],["genbeta.com",22],["motorpasion.com",22],["motorpasionmoto.com",22],["pymesyautonomos.com",22],["trendencias.com",22],["trendenciashombre.com",22],["vidaextra.com",22],["vitonica.com",22],["xataka.com",22],["xatakaciencia.com",22],["xatakafoto.com",22],["xatakahome.com",22],["xatakamovil.com",22],["xatakandroid.com",22],["xatakawindows.com",22],["docer.com.ar",23],["doceru.com",23],["docero.com.br",23],["comandotorrents.org",24],["adslayuda.com",25],["outerspace.com.br",26],["doramasmp4.com",27],["file4go.net",29],["seriesdonghua.com",30],["mundodonghua.com",30],["playview.io",31],["megafire.net",32],["elmundo.es",33],["adclicker.info",37],["adclicker.io",37],["safepc.online",37],["solopc.net",37],["player.hentaistube.com",38],["playnewserie.xyz",39],["vizer.vip",40],["tiohentai.xyz",41],["otakustv.com",[42,43]],["pornolandia.xxx",44],["hentaiporno.xxx",45],["megadescarga.net",[46,47,48,49]],["fakings.com",50]]);
+const hostnamesMap = new Map([["3djuegos.com",0],["3djuegosguias.com",0],["3djuegospc.com",0],["applesfera.com",0],["compradiccion.com",0],["directoalpaladar.com",[0,23]],["elblogsalmon.com",[0,23]],["espinof.com",0],["genbeta.com",0],["mundoxiaomi.com",0],["trendencias.com",0],["trendenciashombre.com",0],["vidaextra.com",0],["vitonica.com",0],["xataka.com",0],["xatakaciencia.com",0],["xatakafoto.com",0],["xatakahome.com",0],["xatakamovil.com",0],["xatakandroid.com",0],["xatakawindows.com",0],["financasdeouro.com",1],["animeszone.net",2],["repretel.com",3],["redbolivision.tv.bo",3],["animesonline.nz",4],["mdr.ar",5],["impactoespananoticias.com",5],["skynovels.net",5],["botinnifit.com",5],["minhasdelicias.com",5],["luchaonline.com",5],["meocloud.pt",6],["fichajes.com",7],["niusdiario.es",[8,35]],["xerifetech.com",9],["pobre.wtf",[10,36]],["suaads.com",11],["reidoplacar.com",11],["suaurl.com",[11,37]],["legendei.net",12],["mangacrab.com",13],["documaniatv.com",14],["cadenaser.com",15],["texto.kom.gt",16],["infojobs.com.br",17],["maringapost.com.br",18],["bandab.com.br",18],["ouniversodatv.com",19],["tribunaavila.com",20],["deportealdia.live",21],["elquintobeatle.com",22],["empregoestagios.com",22],["satcesc.com",22],["bebesymas.com",23],["diariodelviajero.com",23],["motorpasion.com",23],["motorpasionmoto.com",23],["pymesyautonomos.com",23],["docer.com.ar",24],["doceru.com",24],["docero.com.br",24],["comandotorrents.org",25],["adslayuda.com",26],["outerspace.com.br",27],["doramasmp4.com",28],["file4go.net",30],["seriesdonghua.com",31],["mundodonghua.com",31],["playview.io",32],["megafire.net",33],["elmundo.es",34],["adclicker.info",38],["adclicker.io",38],["safepc.online",38],["solopc.net",38],["player.hentaistube.com",39],["playnewserie.xyz",40],["vizer.vip",41],["tiohentai.xyz",42],["otakustv.com",[43,44]],["pornolandia.xxx",45],["hentaiporno.xxx",46],["fakings.com",47]]);
 
-const entitiesMap = new Map([["anitube",28]]);
+const entitiesMap = new Map([["anitube",29]]);
 
 const exceptionsMap = new Map([]);
 
@@ -55,28 +55,27 @@ const exceptionsMap = new Map([]);
 function setConstant(
     ...args
 ) {
-    setConstantCore(false, ...args);
+    setConstantFn(false, ...args);
 }
 
-function setConstantCore(
+function setConstantFn(
     trusted = false,
     chain = '',
-    cValue = ''
+    rawValue = ''
 ) {
     if ( chain === '' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-constant', chain, rawValue);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    function setConstant(chain, cValue) {
+    function setConstant(chain, rawValue) {
         const trappedProp = (( ) => {
             const pos = chain.lastIndexOf('.');
             if ( pos === -1 ) { return chain; }
             return chain.slice(pos+1);
         })();
-        if ( trappedProp === '' ) { return; }
-        const thisScript = document.currentScript;
         const cloakFunc = fn => {
             safe.Object_defineProperty(fn, 'name', { value: trappedProp });
-            const proxy = new Proxy(fn, {
+            return new Proxy(fn, {
                 defineProperty(target, prop) {
                     if ( prop !== 'toString' ) {
                         return Reflect.defineProperty(...arguments);
@@ -98,50 +97,12 @@ function setConstantCore(
                     return Reflect.get(...arguments);
                 },
             });
-            return proxy;
         };
-        if ( cValue === 'undefined' ) {
-            cValue = undefined;
-        } else if ( cValue === 'false' ) {
-            cValue = false;
-        } else if ( cValue === 'true' ) {
-            cValue = true;
-        } else if ( cValue === 'null' ) {
-            cValue = null;
-        } else if ( cValue === "''" || cValue === '' ) {
-            cValue = '';
-        } else if ( cValue === '[]' || cValue === 'emptyArr' ) {
-            cValue = [];
-        } else if ( cValue === '{}' || cValue === 'emptyObj' ) {
-            cValue = {};
-        } else if ( cValue === 'noopFunc' ) {
-            cValue = cloakFunc(function(){});
-        } else if ( cValue === 'trueFunc' ) {
-            cValue = cloakFunc(function(){ return true; });
-        } else if ( cValue === 'falseFunc' ) {
-            cValue = cloakFunc(function(){ return false; });
-        } else if ( /^-?\d+$/.test(cValue) ) {
-            cValue = parseInt(cValue);
-            if ( isNaN(cValue) ) { return; }
-            if ( Math.abs(cValue) > 0x7FFF ) { return; }
-        } else if ( trusted ) {
-            if ( cValue.startsWith('{') && cValue.endsWith('}') ) {
-                try { cValue = safe.JSON_parse(cValue).value; } catch(ex) { return; }
-            }
-        } else {
-            return;
-        }
-        if ( extraArgs.as !== undefined ) {
-            const value = cValue;
-            if ( extraArgs.as === 'function' ) {
-                cValue = ( ) => value;
-            } else if ( extraArgs.as === 'callback' ) {
-                cValue = ( ) => (( ) => value);
-            } else if ( extraArgs.as === 'resolved' ) {
-                cValue = Promise.resolve(value);
-            } else if ( extraArgs.as === 'rejected' ) {
-                cValue = Promise.reject(value);
-            }
+        if ( trappedProp === '' ) { return; }
+        const thisScript = document.currentScript;
+        let normalValue = validateConstantFn(trusted, rawValue);
+        if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
+            normalValue = cloakFunc(normalValue);
         }
         let aborted = false;
         const mustAbort = function(v) {
@@ -149,18 +110,21 @@ function setConstantCore(
             if ( aborted ) { return true; }
             aborted =
                 (v !== undefined && v !== null) &&
-                (cValue !== undefined && cValue !== null) &&
-                (typeof v !== typeof cValue);
+                (normalValue !== undefined && normalValue !== null) &&
+                (typeof v !== typeof normalValue);
+            if ( aborted ) {
+                safe.uboLog(logPrefix, `Aborted because value set to ${v}`);
+            }
             return aborted;
         };
         // https://github.com/uBlockOrigin/uBlock-issues/issues/156
         //   Support multiple trappers for the same property.
         const trapProp = function(owner, prop, configurable, handler) {
-            if ( handler.init(configurable ? owner[prop] : cValue) === false ) { return; }
+            if ( handler.init(configurable ? owner[prop] : normalValue) === false ) { return; }
             const odesc = safe.Object_getOwnPropertyDescriptor(owner, prop);
             let prevGetter, prevSetter;
             if ( odesc instanceof safe.Object ) {
-                owner[prop] = cValue;
+                owner[prop] = normalValue;
                 if ( odesc.get instanceof Function ) {
                     prevGetter = odesc.get;
                 }
@@ -175,7 +139,7 @@ function setConstantCore(
                         if ( prevGetter !== undefined ) {
                             prevGetter();
                         }
-                        return handler.getter(); // cValue
+                        return handler.getter();
                     },
                     set(a) {
                         if ( prevSetter !== undefined ) {
@@ -184,7 +148,9 @@ function setConstantCore(
                         handler.setter(a);
                     }
                 });
+                safe.uboLog(logPrefix, 'Trap installed');
             } catch(ex) {
+                safe.uboErr(logPrefix, ex);
             }
         };
         const trapChain = function(owner, chain) {
@@ -198,13 +164,15 @@ function setConstantCore(
                         return true;
                     },
                     getter: function() {
-                        return document.currentScript === thisScript
-                            ? this.v
-                            : cValue;
+                        if ( document.currentScript === thisScript ) {
+                            return this.v;
+                        }
+                        safe.uboLog(logPrefix, 'Property read');
+                        return normalValue;
                     },
                     setter: function(a) {
                         if ( mustAbort(a) === false ) { return; }
-                        cValue = a;
+                        normalValue = a;
                     }
                 });
                 return;
@@ -236,7 +204,7 @@ function setConstantCore(
         trapChain(window, chain);
     }
     runAt(( ) => {
-        setConstant(chain, cValue);
+        setConstant(chain, rawValue);
     }, extraArgs.runAt);
 }
 
@@ -270,8 +238,8 @@ function runAt(fn, when) {
 }
 
 function safeSelf() {
-    if ( scriptletGlobals.has('safeSelf') ) {
-        return scriptletGlobals.get('safeSelf');
+    if ( scriptletGlobals.safeSelf ) {
+        return scriptletGlobals.safeSelf;
     }
     const self = globalThis;
     const safe = {
@@ -301,11 +269,22 @@ function safeSelf() {
         'JSON_parse': (...args) => safe.JSON_parseFn.call(safe.JSON, ...args),
         'JSON_stringify': (...args) => safe.JSON_stringifyFn.call(safe.JSON, ...args),
         'log': console.log.bind(console),
+        // Properties
+        logLevel: 0,
+        // Methods
+        makeLogPrefix(...args) {
+            return this.sendToLogger && `[${args.join(' \u205D ')}]` || '';
+        },
         uboLog(...args) {
-            if ( scriptletGlobals.has('canDebug') === false ) { return; }
-            if ( args.length === 0 ) { return; }
-            if ( `${args[0]}` === '' ) { return; }
-            this.log('[uBO]', ...args);
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('info', ...args);
+            
+        },
+        uboErr(...args) {
+            if ( this.sendToLogger === undefined ) { return; }
+            if ( args === undefined || args[0] === '' ) { return; }
+            return this.sendToLogger('error', ...args);
         },
         escapeRegexChars(s) {
             return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -373,8 +352,89 @@ function safeSelf() {
             return this.Object_fromEntries(entries);
         },
     };
-    scriptletGlobals.set('safeSelf', safe);
+    scriptletGlobals.safeSelf = safe;
+    if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
+    // This is executed only when the logger is opened
+    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+    let bcBuffer = [];
+    safe.logLevel = scriptletGlobals.logLevel || 1;
+    safe.sendToLogger = (type, ...args) => {
+        if ( args.length === 0 ) { return; }
+        const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( bcBuffer === undefined ) {
+            return bc.postMessage({ what: 'messageToLogger', type, text });
+        }
+        bcBuffer.push({ type, text });
+    };
+    bc.onmessage = ev => {
+        const msg = ev.data;
+        switch ( msg ) {
+        case 'iamready!':
+            if ( bcBuffer === undefined ) { break; }
+            bcBuffer.forEach(({ type, text }) =>
+                bc.postMessage({ what: 'messageToLogger', type, text })
+            );
+            bcBuffer = undefined;
+            break;
+        case 'setScriptletLogLevelToOne':
+            safe.logLevel = 1;
+            break;
+        case 'setScriptletLogLevelToTwo':
+            safe.logLevel = 2;
+            break;
+        }
+    };
+    bc.postMessage('areyouready?');
     return safe;
+}
+
+function validateConstantFn(trusted, raw) {
+    const safe = safeSelf();
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    let value;
+    if ( raw === 'undefined' ) {
+        value = undefined;
+    } else if ( raw === 'false' ) {
+        value = false;
+    } else if ( raw === 'true' ) {
+        value = true;
+    } else if ( raw === 'null' ) {
+        value = null;
+    } else if ( raw === "''" || raw === '' ) {
+        value = '';
+    } else if ( raw === '[]' || raw === 'emptyArr' ) {
+        value = [];
+    } else if ( raw === '{}' || raw === 'emptyObj' ) {
+        value = {};
+    } else if ( raw === 'noopFunc' ) {
+        value = function(){};
+    } else if ( raw === 'trueFunc' ) {
+        value = function(){ return true; };
+    } else if ( raw === 'falseFunc' ) {
+        value = function(){ return false; };
+    } else if ( /^-?\d+$/.test(raw) ) {
+        value = parseInt(raw);
+        if ( isNaN(raw) ) { return; }
+        if ( Math.abs(raw) > 0x7FFF ) { return; }
+    } else if ( trusted ) {
+        if ( raw.startsWith('{') && raw.endsWith('}') ) {
+            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+        }
+    } else {
+        return;
+    }
+    if ( extraArgs.as !== undefined ) {
+        if ( extraArgs.as === 'function' ) {
+            return ( ) => value;
+        } else if ( extraArgs.as === 'callback' ) {
+            return ( ) => (( ) => value);
+        } else if ( extraArgs.as === 'resolved' ) {
+            return Promise.resolve(value);
+        } else if ( extraArgs.as === 'rejected' ) {
+            return Promise.reject(value);
+        }
+    }
+    return value;
 }
 
 /******************************************************************************/

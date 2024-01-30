@@ -40,7 +40,7 @@
 // Start of code to inject
 const uBOL_golemDe = function() {
 
-const scriptletGlobals = new Map(); // jshint ignore: line
+const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 

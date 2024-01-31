@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401301522
+## ! Version: 202401311459
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Jan 2024 15:22 UTC
+## ! Last modified: 31 Jan 2024 14:59 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1231,6 +1231,7 @@ DOMAIN-SUFFIX,hospitablehat.com, reject
 DOMAIN-SUFFIX,hothydrant.com, reject
 DOMAIN-SUFFIX,humdrumhat.com, reject
 DOMAIN-SUFFIX,humdrumhobbies.com, reject
+DOMAIN-SUFFIX,humdrumtouch.com, reject
 DOMAIN-SUFFIX,hurtgrape.com, reject
 DOMAIN-SUFFIX,hurtteeth.com, reject
 DOMAIN-SUFFIX,hypnoticwound.com, reject
@@ -3864,8 +3865,10 @@ DOMAIN-SUFFIX,uh.nakanohito.jp, reject
 DOMAIN-SUFFIX,webbc.fivecdm.com, reject
 DOMAIN-SUFFIX,x9.shinobi.jp, reject
 DOMAIN-SUFFIX,acelogger.heraldcorp.com, reject
+DOMAIN-SUFFIX,applog.ssgdfs.com, reject
 DOMAIN-SUFFIX,assets.datarize.ai, reject
 DOMAIN-SUFFIX,cm-exchange.toast.com, reject
+DOMAIN-SUFFIX,dadispapi.gmarket.co.kr, reject
 DOMAIN-SUFFIX,dtr-onsite-feed.datarize.ai, reject
 DOMAIN-SUFFIX,event.hackle.io, reject
 DOMAIN-SUFFIX,log.adplex.co.kr, reject
@@ -3876,6 +3879,7 @@ DOMAIN-SUFFIX,log.targetpush.co.kr, reject
 DOMAIN-SUFFIX,logger.bzu.kr, reject
 DOMAIN-SUFFIX,logs-partners.coupang.com, reject
 DOMAIN-SUFFIX,megadata.co.kr, reject
+DOMAIN-SUFFIX,montelena.auction.co.kr, reject
 DOMAIN-SUFFIX,mtag.mman.kr, reject
 DOMAIN-SUFFIX,ngc1.nsm-corp.com, reject
 DOMAIN-SUFFIX,performanceplay.co.kr, reject
@@ -3886,6 +3890,7 @@ DOMAIN-SUFFIX,sas.nsm-corp.com, reject
 DOMAIN-SUFFIX,teralog.techhub.co.kr, reject
 DOMAIN-SUFFIX,tracker.adbinead.com, reject
 DOMAIN-SUFFIX,tracker.digitalcamp.co.kr, reject
+DOMAIN-SUFFIX,utsgw.auction.co.kr, reject
 DOMAIN-SUFFIX,counter.hackers.lv, reject
 DOMAIN-SUFFIX,cis.schibsted.com, reject
 DOMAIN-SUFFIX,collect.adplogger.no, reject

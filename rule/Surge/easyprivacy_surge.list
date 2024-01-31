@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202401301522
+## ! Version: 202401311459
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Jan 2024 15:22 UTC
+## ! Last modified: 31 Jan 2024 14:59 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1231,6 +1231,7 @@ DOMAIN-SUFFIX,hospitablehat.com
 DOMAIN-SUFFIX,hothydrant.com
 DOMAIN-SUFFIX,humdrumhat.com
 DOMAIN-SUFFIX,humdrumhobbies.com
+DOMAIN-SUFFIX,humdrumtouch.com
 DOMAIN-SUFFIX,hurtgrape.com
 DOMAIN-SUFFIX,hurtteeth.com
 DOMAIN-SUFFIX,hypnoticwound.com
@@ -3864,8 +3865,10 @@ DOMAIN-SUFFIX,uh.nakanohito.jp
 DOMAIN-SUFFIX,webbc.fivecdm.com
 DOMAIN-SUFFIX,x9.shinobi.jp
 DOMAIN-SUFFIX,acelogger.heraldcorp.com
+DOMAIN-SUFFIX,applog.ssgdfs.com
 DOMAIN-SUFFIX,assets.datarize.ai
 DOMAIN-SUFFIX,cm-exchange.toast.com
+DOMAIN-SUFFIX,dadispapi.gmarket.co.kr
 DOMAIN-SUFFIX,dtr-onsite-feed.datarize.ai
 DOMAIN-SUFFIX,event.hackle.io
 DOMAIN-SUFFIX,log.adplex.co.kr
@@ -3876,6 +3879,7 @@ DOMAIN-SUFFIX,log.targetpush.co.kr
 DOMAIN-SUFFIX,logger.bzu.kr
 DOMAIN-SUFFIX,logs-partners.coupang.com
 DOMAIN-SUFFIX,megadata.co.kr
+DOMAIN-SUFFIX,montelena.auction.co.kr
 DOMAIN-SUFFIX,mtag.mman.kr
 DOMAIN-SUFFIX,ngc1.nsm-corp.com
 DOMAIN-SUFFIX,performanceplay.co.kr
@@ -3886,6 +3890,7 @@ DOMAIN-SUFFIX,sas.nsm-corp.com
 DOMAIN-SUFFIX,teralog.techhub.co.kr
 DOMAIN-SUFFIX,tracker.adbinead.com
 DOMAIN-SUFFIX,tracker.digitalcamp.co.kr
+DOMAIN-SUFFIX,utsgw.auction.co.kr
 DOMAIN-SUFFIX,counter.hackers.lv
 DOMAIN-SUFFIX,cis.schibsted.com
 DOMAIN-SUFFIX,collect.adplogger.no

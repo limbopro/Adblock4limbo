@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 24 Jan 2024 10:03:07 GMT
-# entries:        3786
+# entries:        3784
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -16,6 +16,7 @@ DOMAIN-SUFFIX,1-1ads.com
 DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
+DOMAIN-SUFFIX,180searchassistant.com
 DOMAIN-SUFFIX,1link2020.com
 DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
@@ -1094,12 +1095,10 @@ DOMAIN-SUFFIX,banner.mindshare.de
 DOMAIN-SUFFIX,banner.nixnet.cz
 DOMAIN-SUFFIX,banner.noblepoker.com
 DOMAIN-SUFFIX,banner.northsky.com
-DOMAIN-SUFFIX,banner.penguin.cz
 DOMAIN-SUFFIX,banner.rbc.ru
 DOMAIN-SUFFIX,banner.reinstil.de
 DOMAIN-SUFFIX,banner.tanto.de
 DOMAIN-SUFFIX,banner.titan-dsl.de
-DOMAIN-SUFFIX,banner.webmersion.com
 DOMAIN-SUFFIX,banner10.zetasystem.dk
 DOMAIN-SUFFIX,bannerads.de
 DOMAIN-SUFFIX,bannerboxes.com
@@ -1608,7 +1607,6 @@ DOMAIN-SUFFIX,digestiondrawer.com
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com
 DOMAIN-SUFFIX,digitalmerkat.com
 DOMAIN-SUFFIX,direct-events-collector.spot.im
-DOMAIN-SUFFIX,direct-xxx-access.com
 DOMAIN-SUFFIX,directaclick.com
 DOMAIN-SUFFIX,directleads.com
 DOMAIN-SUFFIX,directorym.com
@@ -1680,6 +1678,7 @@ DOMAIN-SUFFIX,efficaciouscactus.com
 DOMAIN-SUFFIX,eiv.baidu.com
 DOMAIN-SUFFIX,ejyymghi.com
 DOMAIN-SUFFIX,elasticchange.com
+DOMAIN-SUFFIX,elasticducks.com
 DOMAIN-SUFFIX,elderlyscissors.com
 DOMAIN-SUFFIX,elderlytown.com
 DOMAIN-SUFFIX,elephantqueue.com
@@ -2965,7 +2964,6 @@ DOMAIN-SUFFIX,rta.dailymail.co.uk
 DOMAIN-SUFFIX,rtb.gumgum.com
 DOMAIN-SUFFIX,rtbadzesto.com
 DOMAIN-SUFFIX,rtbflairads.com
-DOMAIN-SUFFIX,rtbidhost.com
 DOMAIN-SUFFIX,rtbplatform.net
 DOMAIN-SUFFIX,rtbpop.com
 DOMAIN-SUFFIX,rtbpopd.com
@@ -3365,6 +3363,7 @@ DOMAIN-SUFFIX,tendertest.com
 DOMAIN-SUFFIX,terriblethumb.com
 DOMAIN-SUFFIX,text-link-ads.com
 DOMAIN-SUFFIX,textad.sexsearch.com
+DOMAIN-SUFFIX,textads.biz
 DOMAIN-SUFFIX,textlinks.com
 DOMAIN-SUFFIX,tfag.de
 DOMAIN-SUFFIX,the-ozone-project.com
@@ -3468,7 +3467,6 @@ DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk
 DOMAIN-SUFFIX,tracking.epicgames.com
-DOMAIN-SUFFIX,tracking.exipure.com
 DOMAIN-SUFFIX,tracking.hyros.com
 DOMAIN-SUFFIX,tracking.ibxlink.com
 DOMAIN-SUFFIX,tracking.intentsify.io

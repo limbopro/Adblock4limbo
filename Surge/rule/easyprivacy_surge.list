@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402011446
+## ! Version: 202402021447
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Feb 2024 14:46 UTC
+## ! Last modified: 02 Feb 2024 14:47 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2321,6 +2321,7 @@ DOMAIN-SUFFIX,analytics-scripts.cablelabs.com
 DOMAIN-SUFFIX,analytics-sg.tiktok.com
 DOMAIN-SUFFIX,analytics-static.ugc.bazaarvoice.com
 DOMAIN-SUFFIX,analytics.30m.com
+DOMAIN-SUFFIX,analytics.adobe.io
 DOMAIN-SUFFIX,analytics.agoda.com
 DOMAIN-SUFFIX,analytics.aimtell.com
 DOMAIN-SUFFIX,analytics.algolia.com
@@ -2613,6 +2614,7 @@ DOMAIN-SUFFIX,customfingerprints.bablosoft.com
 DOMAIN-SUFFIX,cws.conviva.com
 DOMAIN-SUFFIX,d.shareaholic.com
 DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net
+DOMAIN-SUFFIX,d2pt12ct4kmq21.cloudfront.net
 DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net
 DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net
 DOMAIN-SUFFIX,dash.getsitecontrol.com
@@ -3543,6 +3545,7 @@ DOMAIN-SUFFIX,vwonwkaqvq-a.global.ssl.fastly.net
 DOMAIN-SUFFIX,siteintercept.allegiancetech.com
 DOMAIN-SUFFIX,trusted-web-seal.cybertrust.ne.jp
 DOMAIN-SUFFIX,advantage.digitalsunray.com
+DOMAIN-SUFFIX,analytics.agenedia.com
 DOMAIN-SUFFIX,analytics.audionow.de
 DOMAIN-SUFFIX,analytics.gameforge.de
 DOMAIN-SUFFIX,analytics.idfnet.net
@@ -4008,6 +4011,7 @@ DOMAIN-SUFFIX,analytics.lasegunda.ecn.cl
 DOMAIN-SUFFIX,analytics.neoogilvy.uy
 DOMAIN-SUFFIX,bpt.webedia-group.com
 DOMAIN-SUFFIX,collector-videoplayer.5centscdn.net
+DOMAIN-SUFFIX,contador.biobiochile.cl
 DOMAIN-SUFFIX,contadores.miarroba.com
 DOMAIN-SUFFIX,contadores.miarroba.es
 DOMAIN-SUFFIX,creatives.sunmedia.tv
@@ -4276,6 +4280,7 @@ DOMAIN-SUFFIX,geoip.boredpanda.com
 DOMAIN-SUFFIX,geoip.hmageo.com
 DOMAIN-SUFFIX,geoip.ifunny.co
 DOMAIN-SUFFIX,geolocation.forbes.com
+DOMAIN-SUFFIX,gg.vevor.com
 DOMAIN-SUFFIX,glassmoni.researchgate.net
 DOMAIN-SUFFIX,gmetrics.getbeamer.com
 DOMAIN-SUFFIX,gnar.grammarly.com
@@ -4442,6 +4447,7 @@ DOMAIN-SUFFIX,rum.api.intuit.com
 DOMAIN-SUFFIX,rum.condenastdigital.com
 DOMAIN-SUFFIX,rum.kobo.com
 DOMAIN-SUFFIX,rvo-cohesion.healthline.com
+DOMAIN-SUFFIX,s.gofile.io
 DOMAIN-SUFFIX,s.infogram.com
 DOMAIN-SUFFIX,s.wayfair.com
 DOMAIN-SUFFIX,saa.insideedition.com
@@ -4616,6 +4622,7 @@ DOMAIN-SUFFIX,cfa.fidelity.com
 DOMAIN-SUFFIX,clear.wallapop.com
 DOMAIN-SUFFIX,content22.bmo.com
 DOMAIN-SUFFIX,content22.citibank.com.au
+DOMAIN-SUFFIX,content22.citibankonline.com
 DOMAIN-SUFFIX,content22.online.citi.com
 DOMAIN-SUFFIX,drfdisvc.walmart.com
 DOMAIN-SUFFIX,event.evtm.53.com
@@ -32378,6 +32385,7 @@ DOMAIN-SUFFIX,hits.antena3.com
 DOMAIN-SUFFIX,horizon-track.globo.com
 DOMAIN-SUFFIX,pixel.europapress.net
 DOMAIN-SUFFIX,px-intl.ucweb.com
+DOMAIN-SUFFIX,realtime.bbcl.cl
 DOMAIN-SUFFIX,rvv.emol.com
 DOMAIN-SUFFIX,statsmp2.emol.com
 DOMAIN-SUFFIX,t-pan.triodos.com

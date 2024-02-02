@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 24 Jan 2024 10:03:07 GMT
-# entries:        3786
+# entries:        3784
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -16,6 +16,7 @@ DOMAIN-SUFFIX,1-1ads.com, reject
 DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
+DOMAIN-SUFFIX,180searchassistant.com, reject
 DOMAIN-SUFFIX,1link2020.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
@@ -1094,12 +1095,10 @@ DOMAIN-SUFFIX,banner.mindshare.de, reject
 DOMAIN-SUFFIX,banner.nixnet.cz, reject
 DOMAIN-SUFFIX,banner.noblepoker.com, reject
 DOMAIN-SUFFIX,banner.northsky.com, reject
-DOMAIN-SUFFIX,banner.penguin.cz, reject
 DOMAIN-SUFFIX,banner.rbc.ru, reject
 DOMAIN-SUFFIX,banner.reinstil.de, reject
 DOMAIN-SUFFIX,banner.tanto.de, reject
 DOMAIN-SUFFIX,banner.titan-dsl.de, reject
-DOMAIN-SUFFIX,banner.webmersion.com, reject
 DOMAIN-SUFFIX,banner10.zetasystem.dk, reject
 DOMAIN-SUFFIX,bannerads.de, reject
 DOMAIN-SUFFIX,bannerboxes.com, reject
@@ -1608,7 +1607,6 @@ DOMAIN-SUFFIX,digestiondrawer.com, reject
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,digitalmerkat.com, reject
 DOMAIN-SUFFIX,direct-events-collector.spot.im, reject
-DOMAIN-SUFFIX,direct-xxx-access.com, reject
 DOMAIN-SUFFIX,directaclick.com, reject
 DOMAIN-SUFFIX,directleads.com, reject
 DOMAIN-SUFFIX,directorym.com, reject
@@ -1680,6 +1678,7 @@ DOMAIN-SUFFIX,efficaciouscactus.com, reject
 DOMAIN-SUFFIX,eiv.baidu.com, reject
 DOMAIN-SUFFIX,ejyymghi.com, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
+DOMAIN-SUFFIX,elasticducks.com, reject
 DOMAIN-SUFFIX,elderlyscissors.com, reject
 DOMAIN-SUFFIX,elderlytown.com, reject
 DOMAIN-SUFFIX,elephantqueue.com, reject
@@ -2965,7 +2964,6 @@ DOMAIN-SUFFIX,rta.dailymail.co.uk, reject
 DOMAIN-SUFFIX,rtb.gumgum.com, reject
 DOMAIN-SUFFIX,rtbadzesto.com, reject
 DOMAIN-SUFFIX,rtbflairads.com, reject
-DOMAIN-SUFFIX,rtbidhost.com, reject
 DOMAIN-SUFFIX,rtbplatform.net, reject
 DOMAIN-SUFFIX,rtbpop.com, reject
 DOMAIN-SUFFIX,rtbpopd.com, reject
@@ -3365,6 +3363,7 @@ DOMAIN-SUFFIX,tendertest.com, reject
 DOMAIN-SUFFIX,terriblethumb.com, reject
 DOMAIN-SUFFIX,text-link-ads.com, reject
 DOMAIN-SUFFIX,textad.sexsearch.com, reject
+DOMAIN-SUFFIX,textads.biz, reject
 DOMAIN-SUFFIX,textlinks.com, reject
 DOMAIN-SUFFIX,tfag.de, reject
 DOMAIN-SUFFIX,the-ozone-project.com, reject
@@ -3468,7 +3467,6 @@ DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk, reject
 DOMAIN-SUFFIX,tracking.42-01pr5-osm-secure.co.uk, reject
 DOMAIN-SUFFIX,tracking.5-47737-bi.co.uk, reject
 DOMAIN-SUFFIX,tracking.epicgames.com, reject
-DOMAIN-SUFFIX,tracking.exipure.com, reject
 DOMAIN-SUFFIX,tracking.hyros.com, reject
 DOMAIN-SUFFIX,tracking.ibxlink.com, reject
 DOMAIN-SUFFIX,tracking.intentsify.io, reject

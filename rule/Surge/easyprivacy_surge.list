@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402061500
+## ! Version: 202402071524
 ## ! Title: EasyPrivacy
-## ! Last modified: 06 Feb 2024 15:00 UTC
+## ! Last modified: 07 Feb 2024 15:24 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4356,6 +4356,7 @@ DOMAIN-SUFFIX,r.apkpure.net
 DOMAIN-SUFFIX,r.bbci.co.uk
 DOMAIN-SUFFIX,rankhit.china.com
 DOMAIN-SUFFIX,ras.yahoo.com
+DOMAIN-SUFFIX,react-admin-telemetry.marmelab.com
 DOMAIN-SUFFIX,rec.banggood.com
 DOMAIN-SUFFIX,relay.fiverr.com
 DOMAIN-SUFFIX,reports.tunein.com

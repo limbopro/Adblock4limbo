@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202402071524
+## ! Version: 202402081404
 ## ! Title: EasyList
-## ! Last modified: 07 Feb 2024 15:24 UTC
+## ! Last modified: 08 Feb 2024 14:04 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4877,6 +4877,7 @@ DOMAIN-SUFFIX,bootypleatpublisher.com, reject
 DOMAIN-SUFFIX,boozifyprays.space, reject
 DOMAIN-SUFFIX,bop-bop-bam.com, reject
 DOMAIN-SUFFIX,bopexacta.com, reject
+DOMAIN-SUFFIX,boptegre.com, reject
 DOMAIN-SUFFIX,bopvetgel.com, reject
 DOMAIN-SUFFIX,borary.com, reject
 DOMAIN-SUFFIX,bordelhaylage.cfd, reject
@@ -7805,6 +7806,7 @@ DOMAIN-SUFFIX,dauntslip.com, reject
 DOMAIN-SUFFIX,dauptoawhi.com, reject
 DOMAIN-SUFFIX,dausoofo.net, reject
 DOMAIN-SUFFIX,dautegoa.xyz, reject
+DOMAIN-SUFFIX,davctinijon.com, reject
 DOMAIN-SUFFIX,davjdaauvlp.com, reject
 DOMAIN-SUFFIX,daweneath.com, reject
 DOMAIN-SUFFIX,dawirax.com, reject
@@ -16159,6 +16161,7 @@ DOMAIN-SUFFIX,jseuprrsedc.com, reject
 DOMAIN-SUFFIX,jsfeedadsget.com, reject
 DOMAIN-SUFFIX,jsfrfeuubna.com, reject
 DOMAIN-SUFFIX,jsftfmegwcyhsed.com, reject
+DOMAIN-SUFFIX,jsftzha.com, reject
 DOMAIN-SUFFIX,jsfuz.com, reject
 DOMAIN-SUFFIX,jsjocrwmcg.com, reject
 DOMAIN-SUFFIX,jsmentry.com, reject
@@ -16730,6 +16733,7 @@ DOMAIN-SUFFIX,kncrnjspoxd.com, reject
 DOMAIN-SUFFIX,kndaspiratioty.org, reject
 DOMAIN-SUFFIX,kndvqgmfwrdyf.com, reject
 DOMAIN-SUFFIX,kneeansweras.com, reject
+DOMAIN-SUFFIX,kneeletromero.com, reject
 DOMAIN-SUFFIX,kneescountdownenforcement.com, reject
 DOMAIN-SUFFIX,kneesettingflashing.com, reject
 DOMAIN-SUFFIX,knewwholesomecharming.com, reject
@@ -27935,6 +27939,7 @@ DOMAIN-SUFFIX,startappexchange.com, reject
 DOMAIN-SUFFIX,startd0wnload22x.com, reject
 DOMAIN-SUFFIX,startlemanipulativedamaging.com, reject
 DOMAIN-SUFFIX,startpagea.com, reject
+DOMAIN-SUFFIX,startperfectsolutions.com, reject
 DOMAIN-SUFFIX,starvardsee.xyz, reject
 DOMAIN-SUFFIX,starvationdefence.com, reject
 DOMAIN-SUFFIX,starvegingerwaist.com, reject
@@ -28301,6 +28306,7 @@ DOMAIN-SUFFIX,suctionautomobile.com, reject
 DOMAIN-SUFFIX,suctionspelts.com, reject
 DOMAIN-SUFFIX,sudorwauve.com, reject
 DOMAIN-SUFFIX,sudsguidon.com, reject
+DOMAIN-SUFFIX,sudvclh.com, reject
 DOMAIN-SUFFIX,suescollum.com, reject
 DOMAIN-SUFFIX,sufeismmitered.digital, reject
 DOMAIN-SUFFIX,suffertreasureapproval.com, reject
@@ -34298,6 +34304,7 @@ DOMAIN-SUFFIX,gfxa.sheetmusicplus.com, reject
 DOMAIN-SUFFIX,gg.caixin.com, reject
 DOMAIN-SUFFIX,go.bloxplay.com, reject
 DOMAIN-SUFFIX,go.ezodn.com, reject
+DOMAIN-SUFFIX,googleads.github.io, reject
 DOMAIN-SUFFIX,hb.yahoo.net, reject
 DOMAIN-SUFFIX,hbid.ams3.cdn.digitaloceanspaces.com, reject
 DOMAIN-SUFFIX,js.mangakl.su, reject

@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 08 Feb 2024 09:22:05 GMT
-# entries:        3787
+# entries:        3783
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -59,7 +59,6 @@ DOMAIN-SUFFIX,a.vfgtb.com, reject
 DOMAIN-SUFFIX,a.xanga.com, reject
 DOMAIN-SUFFIX,a135.wftv.com, reject
 DOMAIN-SUFFIX,a5.overclockers.ua, reject
-DOMAIN-SUFFIX,a8a8altrk.com, reject
 DOMAIN-SUFFIX,aa-metrics.beauty.hotpepper.jp, reject
 DOMAIN-SUFFIX,aa-metrics.recruit-card.jp, reject
 DOMAIN-SUFFIX,aa-metrics.trip-ai.jp, reject
@@ -901,7 +900,6 @@ DOMAIN-SUFFIX,affec.tv, reject
 DOMAIN-SUFFIX,affili.net, reject
 DOMAIN-SUFFIX,affiliate.1800flowers.com, reject
 DOMAIN-SUFFIX,affiliate.dtiserv.com, reject
-DOMAIN-SUFFIX,affiliate.gamestop.com, reject
 DOMAIN-SUFFIX,affiliate.rusvpn.com, reject
 DOMAIN-SUFFIX,affiliate.travelnow.com, reject
 DOMAIN-SUFFIX,affiliate.treated.com, reject
@@ -2522,7 +2520,6 @@ DOMAIN-SUFFIX,newt1.adultworld.com, reject
 DOMAIN-SUFFIX,nexac.com, reject
 DOMAIN-SUFFIX,nexage.com, reject
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com, reject
-DOMAIN-SUFFIX,nhpfvdlbjg.com, reject
 DOMAIN-SUFFIX,nitroclicks.com, reject
 DOMAIN-SUFFIX,nocturnalloom.com, reject
 DOMAIN-SUFFIX,noiselessplough.com, reject
@@ -2630,7 +2627,6 @@ DOMAIN-SUFFIX,oxcash.com, reject
 DOMAIN-SUFFIX,oxen.hillcountrytexas.com, reject
 DOMAIN-SUFFIX,p-n.io, reject
 DOMAIN-SUFFIX,p.nag.ru, reject
-DOMAIN-SUFFIX,p2r14.com, reject
 DOMAIN-SUFFIX,paddleangle.com, reject
 DOMAIN-SUFFIX,padsbrown.com, reject
 DOMAIN-SUFFIX,pagead.l.google.com, reject

@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 08 Feb 2024 09:22:05 GMT
-# entries:        3787
+# entries:        3783
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -59,7 +59,6 @@ DOMAIN-SUFFIX,a.vfgtb.com
 DOMAIN-SUFFIX,a.xanga.com
 DOMAIN-SUFFIX,a135.wftv.com
 DOMAIN-SUFFIX,a5.overclockers.ua
-DOMAIN-SUFFIX,a8a8altrk.com
 DOMAIN-SUFFIX,aa-metrics.beauty.hotpepper.jp
 DOMAIN-SUFFIX,aa-metrics.recruit-card.jp
 DOMAIN-SUFFIX,aa-metrics.trip-ai.jp
@@ -901,7 +900,6 @@ DOMAIN-SUFFIX,affec.tv
 DOMAIN-SUFFIX,affili.net
 DOMAIN-SUFFIX,affiliate.1800flowers.com
 DOMAIN-SUFFIX,affiliate.dtiserv.com
-DOMAIN-SUFFIX,affiliate.gamestop.com
 DOMAIN-SUFFIX,affiliate.rusvpn.com
 DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
@@ -2522,7 +2520,6 @@ DOMAIN-SUFFIX,newt1.adultworld.com
 DOMAIN-SUFFIX,nexac.com
 DOMAIN-SUFFIX,nexage.com
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com
-DOMAIN-SUFFIX,nhpfvdlbjg.com
 DOMAIN-SUFFIX,nitroclicks.com
 DOMAIN-SUFFIX,nocturnalloom.com
 DOMAIN-SUFFIX,noiselessplough.com
@@ -2630,7 +2627,6 @@ DOMAIN-SUFFIX,oxcash.com
 DOMAIN-SUFFIX,oxen.hillcountrytexas.com
 DOMAIN-SUFFIX,p-n.io
 DOMAIN-SUFFIX,p.nag.ru
-DOMAIN-SUFFIX,p2r14.com
 DOMAIN-SUFFIX,paddleangle.com
 DOMAIN-SUFFIX,padsbrown.com
 DOMAIN-SUFFIX,pagead.l.google.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402081404
+## ! Version: 202402091500
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Feb 2024 14:04 UTC
+## ! Last modified: 09 Feb 2024 15:00 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -219,6 +219,7 @@ DOMAIN-SUFFIX,maxepv.com, reject
 DOMAIN-SUFFIX,mb-tracking.com, reject
 DOMAIN-SUFFIX,mcangelus.com, reject
 DOMAIN-SUFFIX,mdhv.io, reject
+DOMAIN-SUFFIX,mdstats.info, reject
 DOMAIN-SUFFIX,mediamathrdrt.com, reject
 DOMAIN-SUFFIX,mirabelanalytics.com, reject
 DOMAIN-SUFFIX,mitour.de, reject
@@ -4231,6 +4232,7 @@ DOMAIN-SUFFIX,htrace.wetvinfo.com, reject
 DOMAIN-SUFFIX,i.pokernews.com, reject
 DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com, reject
 DOMAIN-SUFFIX,iedc.fitbit.com, reject
+DOMAIN-SUFFIX,iguazu.doordash.com, reject
 DOMAIN-SUFFIX,ih.newegg.com, reject
 DOMAIN-SUFFIX,indmetric.rediff.com, reject
 DOMAIN-SUFFIX,ingest.make.rvohealth.com, reject

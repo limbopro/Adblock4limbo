@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202402101530
+## ! Version: 202402111454
 ## ! Title: EasyList
-## ! Last modified: 10 Feb 2024 15:30 UTC
+## ! Last modified: 11 Feb 2024 14:54 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -222,9 +222,7 @@ DOMAIN-SUFFIX,1ts17.top, reject
 DOMAIN-SUFFIX,1ts19.top, reject
 DOMAIN-SUFFIX,1uno1xkktau4.com, reject
 DOMAIN-SUFFIX,1web.me, reject
-DOMAIN-SUFFIX,1xlite-208883.top, reject
 DOMAIN-SUFFIX,1xlite-503779.top, reject
-DOMAIN-SUFFIX,1xlite-510677.top, reject
 DOMAIN-SUFFIX,1xlite-522762.top, reject
 DOMAIN-SUFFIX,1xroom.com, reject
 DOMAIN-SUFFIX,200088d4e2.com, reject
@@ -425,7 +423,6 @@ DOMAIN-SUFFIX,3mhg.online, reject
 DOMAIN-SUFFIX,3mhg.site, reject
 DOMAIN-SUFFIX,3myad.com, reject
 DOMAIN-SUFFIX,3qfe1gfa.de, reject
-DOMAIN-SUFFIX,3r1kwxcd.top, reject
 DOMAIN-SUFFIX,3redlightfix.com, reject
 DOMAIN-SUFFIX,3sk7d418al8u.com, reject
 DOMAIN-SUFFIX,3wr110.net, reject
@@ -650,6 +647,7 @@ DOMAIN-SUFFIX,6ef2279e3d.com, reject
 DOMAIN-SUFFIX,6f752f73ce.com, reject
 DOMAIN-SUFFIX,6fxtpu64lxyt.com, reject
 DOMAIN-SUFFIX,6glece4homah8dweracea.com, reject
+DOMAIN-SUFFIX,6hdw.site, reject
 DOMAIN-SUFFIX,6j296m8k.de, reject
 DOMAIN-SUFFIX,6kportot.com, reject
 DOMAIN-SUFFIX,6l1twlw9fy.com, reject
@@ -5730,6 +5728,7 @@ DOMAIN-SUFFIX,carlotcoopee.website, reject
 DOMAIN-SUFFIX,carmeleanurous.com, reject
 DOMAIN-SUFFIX,caroakitab.com, reject
 DOMAIN-SUFFIX,carpenterexplorerdemolition.com, reject
+DOMAIN-SUFFIX,carpfreshtying.com, reject
 DOMAIN-SUFFIX,carpi3fnusbetgu5lus.com, reject
 DOMAIN-SUFFIX,carpincur.com, reject
 DOMAIN-SUFFIX,carredwithblao.xyz, reject
@@ -7598,6 +7597,7 @@ DOMAIN-SUFFIX,cuttledpph.life, reject
 DOMAIN-SUFFIX,cuunpsyhsb.com, reject
 DOMAIN-SUFFIX,cuyynol.com, reject
 DOMAIN-SUFFIX,cvastico.com, reject
+DOMAIN-SUFFIX,cvixthukvgac.com, reject
 DOMAIN-SUFFIX,cvjfmrrgyrqnsnw.xyz, reject
 DOMAIN-SUFFIX,cvkilmfhorl.com, reject
 DOMAIN-SUFFIX,cvkvtsjjrs.xyz, reject
@@ -8008,6 +8008,7 @@ DOMAIN-SUFFIX,deckmanbrid.com, reject
 DOMAIN-SUFFIX,decknetwork.net, reject
 DOMAIN-SUFFIX,declarationfascinatedrace.com, reject
 DOMAIN-SUFFIX,declarcercket.org, reject
+DOMAIN-SUFFIX,declareave.com, reject
 DOMAIN-SUFFIX,declaredjuvenile.com, reject
 DOMAIN-SUFFIX,declaredpolitics.com, reject
 DOMAIN-SUFFIX,declarefollowersuspected.com, reject
@@ -8068,6 +8069,7 @@ DOMAIN-SUFFIX,defenselessweather.com, reject
 DOMAIN-SUFFIX,defenseneckpresent.com, reject
 DOMAIN-SUFFIX,defensive-bad.com, reject
 DOMAIN-SUFFIX,defensiveevidence.pro, reject
+DOMAIN-SUFFIX,deferapproximately.com, reject
 DOMAIN-SUFFIX,defiancebelow.com, reject
 DOMAIN-SUFFIX,defiantsniffbitterly.com, reject
 DOMAIN-SUFFIX,deficiencyluckrapt.com, reject
@@ -9714,6 +9716,7 @@ DOMAIN-SUFFIX,efvpufdjd.com, reject
 DOMAIN-SUFFIX,efwmpduvgedai.com, reject
 DOMAIN-SUFFIX,egafopmtv.xyz, reject
 DOMAIN-SUFFIX,egallsylvate.com, reject
+DOMAIN-SUFFIX,egazedatthe.xyz, reject
 DOMAIN-SUFFIX,egcqohrksmlmu.xyz, reject
 DOMAIN-SUFFIX,egczvoopdo.com, reject
 DOMAIN-SUFFIX,egerssarcel.com, reject
@@ -11687,7 +11690,6 @@ DOMAIN-SUFFIX,formerlyrelationshipserver.com, reject
 DOMAIN-SUFFIX,formingantecedent.com, reject
 DOMAIN-SUFFIX,formsassistanceclassy.com, reject
 DOMAIN-SUFFIX,formsmir.com, reject
-DOMAIN-SUFFIX,formulacountess.com, reject
 DOMAIN-SUFFIX,formulamuseconnected.com, reject
 DOMAIN-SUFFIX,fornvjvi.com, reject
 DOMAIN-SUFFIX,forooqso.tv, reject
@@ -16408,6 +16410,7 @@ DOMAIN-SUFFIX,junglehikingfence.com, reject
 DOMAIN-SUFFIX,juniorapplesconsonant.com, reject
 DOMAIN-SUFFIX,juniorsalloquy.guru, reject
 DOMAIN-SUFFIX,junipe3rus4virginiana.com, reject
+DOMAIN-SUFFIX,junivmr.com, reject
 DOMAIN-SUFFIX,junkeach.com, reject
 DOMAIN-SUFFIX,junkieenthusiasm.com, reject
 DOMAIN-SUFFIX,junkieswudge.com, reject
@@ -16735,6 +16738,7 @@ DOMAIN-SUFFIX,khment.com, reject
 DOMAIN-SUFFIX,khnwnqmwmdttsd.com, reject
 DOMAIN-SUFFIX,khoslo.com, reject
 DOMAIN-SUFFIX,khvphqpsl.com, reject
+DOMAIN-SUFFIX,kiaughsviner.com, reject
 DOMAIN-SUFFIX,kiblahsbuenas.com, reject
 DOMAIN-SUFFIX,kicationandas.info, reject
 DOMAIN-SUFFIX,kickchecking.com, reject
@@ -18608,7 +18612,6 @@ DOMAIN-SUFFIX,marblemerises.guru, reject
 DOMAIN-SUFFIX,marchedrevolution.com, reject
 DOMAIN-SUFFIX,marcherfilippo.com, reject
 DOMAIN-SUFFIX,marchgrinwimp.com, reject
-DOMAIN-SUFFIX,marchingsmug.com, reject
 DOMAIN-SUFFIX,marcoscrupulousmarks.com, reject
 DOMAIN-SUFFIX,marecreateddew.com, reject
 DOMAIN-SUFFIX,marenfu11.cn, reject
@@ -19694,6 +19697,7 @@ DOMAIN-SUFFIX,mtzenhigqg.com, reject
 DOMAIN-SUFFIX,muchotrust.com, reject
 DOMAIN-SUFFIX,mucinyak.com, reject
 DOMAIN-SUFFIX,mucmoapa.com, reject
+DOMAIN-SUFFIX,mucopussamkhya.com, reject
 DOMAIN-SUFFIX,muddiedbubales.com, reject
 DOMAIN-SUFFIX,muddychronicstuffed.com, reject
 DOMAIN-SUFFIX,muddytransplantinsert.com, reject
@@ -22767,6 +22771,7 @@ DOMAIN-SUFFIX,pervertmine.com, reject
 DOMAIN-SUFFIX,pervialinagile.com, reject
 DOMAIN-SUFFIX,perviv.com, reject
 DOMAIN-SUFFIX,peskyclarifysuitcases.com, reject
+DOMAIN-SUFFIX,peskycrash.com, reject
 DOMAIN-SUFFIX,peskylock.com, reject
 DOMAIN-SUFFIX,peskyresistamaze.com, reject
 DOMAIN-SUFFIX,pesoaniz.com, reject
@@ -23254,6 +23259,7 @@ DOMAIN-SUFFIX,plocap.com, reject
 DOMAIN-SUFFIX,plodpicture.com, reject
 DOMAIN-SUFFIX,plodrat.com, reject
 DOMAIN-SUFFIX,plosaztduojwbe.com, reject
+DOMAIN-SUFFIX,plotafb.com, reject
 DOMAIN-SUFFIX,ploygunline.com, reject
 DOMAIN-SUFFIX,plpuybpodusgb.xyz, reject
 DOMAIN-SUFFIX,plqbxvnjxq92.com, reject
@@ -24820,6 +24826,7 @@ DOMAIN-SUFFIX,qvikar.com, reject
 DOMAIN-SUFFIX,qvjpjsglmvhcbv.xyz, reject
 DOMAIN-SUFFIX,qvlczhitbsqpl.com, reject
 DOMAIN-SUFFIX,qvol.tv, reject
+DOMAIN-SUFFIX,qvtcigr.com, reject
 DOMAIN-SUFFIX,qwa3ldhn9u0t.com, reject
 DOMAIN-SUFFIX,qwaapgxfahce.com, reject
 DOMAIN-SUFFIX,qwbaiftlbfbnt.com, reject
@@ -25710,6 +25717,7 @@ DOMAIN-SUFFIX,rgtcqif.com, reject
 DOMAIN-SUFFIX,rgtqgsgwkopgnf.com, reject
 DOMAIN-SUFFIX,rguxbwbj.xyz, reject
 DOMAIN-SUFFIX,rgvqcsxqge.com, reject
+DOMAIN-SUFFIX,rhdhdmxeqx.com, reject
 DOMAIN-SUFFIX,rhendam.com, reject
 DOMAIN-SUFFIX,rhesusvitrite.com, reject
 DOMAIN-SUFFIX,rhjcnfypo.com, reject
@@ -26479,6 +26487,7 @@ DOMAIN-SUFFIX,sapfollower.com, reject
 DOMAIN-SUFFIX,sapsixysho.pro, reject
 DOMAIN-SUFFIX,saptiledispatch.com, reject
 DOMAIN-SUFFIX,saptorge.com, reject
+DOMAIN-SUFFIX,saracsoxcpa.com, reject
 DOMAIN-SUFFIX,sarcasmidentifiers.com, reject
 DOMAIN-SUFFIX,sarcasticdismalconstrue.com, reject
 DOMAIN-SUFFIX,sarcineamender.store, reject
@@ -27240,7 +27249,6 @@ DOMAIN-SUFFIX,sibylsported.com, reject
 DOMAIN-SUFFIX,sicknessfestivity.com, reject
 DOMAIN-SUFFIX,sickoaji.com, reject
 DOMAIN-SUFFIX,sicleclarets.com, reject
-DOMAIN-SUFFIX,sidanarchy.com, reject
 DOMAIN-SUFFIX,sidanarchy.net, reject
 DOMAIN-SUFFIX,sidebyx.com, reject
 DOMAIN-SUFFIX,sidebyz.com, reject
@@ -32684,7 +32692,6 @@ DOMAIN-SUFFIX,wildlifeeventlean.com, reject
 DOMAIN-SUFFIX,wildlifesolemnlyrecords.com, reject
 DOMAIN-SUFFIX,wildmatch.com, reject
 DOMAIN-SUFFIX,wildxxxparties.com, reject
-DOMAIN-SUFFIX,wilfridamendment.com, reject
 DOMAIN-SUFFIX,wilfulkilometre.com, reject
 DOMAIN-SUFFIX,wilfulknives.com, reject
 DOMAIN-SUFFIX,wilfulpessimistic.com, reject
@@ -34500,6 +34507,7 @@ DOMAIN-SUFFIX,ads.saymedia.com, reject
 DOMAIN-SUFFIX,ads.servebom.com, reject
 DOMAIN-SUFFIX,ads.sportradar.com, reject
 DOMAIN-SUFFIX,ads.travelaudience.com, reject
+DOMAIN-SUFFIX,ads.viralize.tv, reject
 DOMAIN-SUFFIX,ads2.hsoub.com, reject
 DOMAIN-SUFFIX,adsales.snidigital.com, reject
 DOMAIN-SUFFIX,adserver-2084671375.us-east-1.elb.amazonaws.com, reject
@@ -34573,6 +34581,7 @@ DOMAIN-SUFFIX,marketing.888.com, reject
 DOMAIN-SUFFIX,mbid.marfeelrev.com, reject
 DOMAIN-SUFFIX,media.netrefer.com, reject
 DOMAIN-SUFFIX,mmwebhandler.888.com, reject
+DOMAIN-SUFFIX,monetize-static.viralize.tv, reject
 DOMAIN-SUFFIX,p.smartertravel.com, reject
 DOMAIN-SUFFIX,pacontainer.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,pagead2.googlesyndication.com, reject
@@ -35656,6 +35665,7 @@ DOMAIN-SUFFIX,red-shell.speedrun.com, reject
 DOMAIN-SUFFIX,socket.streamable.com, reject
 DOMAIN-SUFFIX,sontent.powzers.lol, reject
 DOMAIN-SUFFIX,spike-plant.valorbuff.com, reject
+DOMAIN-SUFFIX,sponsors.vuejs.org, reject
 DOMAIN-SUFFIX,store-api.mumuglobal.com, reject
 DOMAIN-SUFFIX,t.police1.com, reject
 DOMAIN-SUFFIX,tontent.powzers.lol, reject

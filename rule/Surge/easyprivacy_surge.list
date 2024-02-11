@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402101530
+## ! Version: 202402111454
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Feb 2024 15:30 UTC
+## ! Last modified: 11 Feb 2024 14:54 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -539,7 +539,6 @@ DOMAIN-SUFFIX,averageactivity.com
 DOMAIN-SUFFIX,averageamusement.com
 DOMAIN-SUFFIX,awakebird.com
 DOMAIN-SUFFIX,awarealley.com
-DOMAIN-SUFFIX,awesomeagreement.com
 DOMAIN-SUFFIX,awzbijw.com
 DOMAIN-SUFFIX,axiomaticalley.com
 DOMAIN-SUFFIX,axiomaticanger.com
@@ -1205,7 +1204,6 @@ DOMAIN-SUFFIX,hoplaugh.com
 DOMAIN-SUFFIX,hosenews.com
 DOMAIN-SUFFIX,hospitablehall.com
 DOMAIN-SUFFIX,hospitablehat.com
-DOMAIN-SUFFIX,hothydrant.com
 DOMAIN-SUFFIX,humdrumhat.com
 DOMAIN-SUFFIX,humdrumhobbies.com
 DOMAIN-SUFFIX,humdrumtouch.com
@@ -2284,7 +2282,6 @@ DOMAIN-SUFFIX,amp-error-reporting.appspot.com
 DOMAIN-SUFFIX,amplifypixel.outbrain.com
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com
 DOMAIN-SUFFIX,analyse.bcovery.com
-DOMAIN-SUFFIX,analyse.lnearn.com
 DOMAIN-SUFFIX,analytic.rollout.io
 DOMAIN-SUFFIX,analyticcdn.globalmailer.com
 DOMAIN-SUFFIX,analytics-1.cavai.com
@@ -2510,6 +2507,7 @@ DOMAIN-SUFFIX,cod.bitrec.com
 DOMAIN-SUFFIX,collect-ap2.attraqt.io
 DOMAIN-SUFFIX,collect-eu.attraqt.io
 DOMAIN-SUFFIX,collect.alphastream.io
+DOMAIN-SUFFIX,collect.analyse.lnearn.com
 DOMAIN-SUFFIX,collect.bannercrowd.net
 DOMAIN-SUFFIX,collect.cloudsponge.com
 DOMAIN-SUFFIX,collect.igodigital.com
@@ -2704,7 +2702,6 @@ DOMAIN-SUFFIX,geo.ertya.com
 DOMAIN-SUFFIX,geo.gorillanation.com
 DOMAIN-SUFFIX,geo.mezr.com
 DOMAIN-SUFFIX,geo.ngtv.io
-DOMAIN-SUFFIX,geo.q5media.net
 DOMAIN-SUFFIX,geo.thehindu.com
 DOMAIN-SUFFIX,geobar.ziffdavisinternational.com
 DOMAIN-SUFFIX,geoip.apps.avada.io
@@ -3368,7 +3365,6 @@ DOMAIN-SUFFIX,d18p8z0ptb8qab.cloudfront.net
 DOMAIN-SUFFIX,d191y0yd6d0jy4.cloudfront.net
 DOMAIN-SUFFIX,d196fri2z18sm.cloudfront.net
 DOMAIN-SUFFIX,d1af033869koo7.cloudfront.net
-DOMAIN-SUFFIX,d1clfvuu2240eh.cloudfront.net
 DOMAIN-SUFFIX,d1cr9zxt7u0sgu.cloudfront.net
 DOMAIN-SUFFIX,d1f0tbk1v3e25u.cloudfront.net
 DOMAIN-SUFFIX,d1gp8joe0evc8s.cloudfront.net
@@ -3500,7 +3496,6 @@ DOMAIN-SUFFIX,artemis-cdn.ocdn.eu
 DOMAIN-SUFFIX,beagle.prod.tda.link
 DOMAIN-SUFFIX,blacktri-a.akamaihd.net
 DOMAIN-SUFFIX,cgicounter.onlinehome.de
-DOMAIN-SUFFIX,collector.ozeex.com
 DOMAIN-SUFFIX,com.econa.com
 DOMAIN-SUFFIX,counter.1i.kz
 DOMAIN-SUFFIX,counter.blogoscoop.net
@@ -4193,7 +4188,6 @@ DOMAIN-SUFFIX,fbo-statistics-collector-tc.is.flippingbook.com
 DOMAIN-SUFFIX,fdt.kraken.com
 DOMAIN-SUFFIX,femetrics.grammarly.io
 DOMAIN-SUFFIX,firebaselogging.googleapis.com
-DOMAIN-SUFFIX,fp.heavybit.com
 DOMAIN-SUFFIX,fp.measure.office.com
 DOMAIN-SUFFIX,fpa-cdn.adweek.com
 DOMAIN-SUFFIX,fpa-cdn.arstechnica.com
@@ -4407,7 +4401,6 @@ DOMAIN-SUFFIX,stat.pubhtml5.com
 DOMAIN-SUFFIX,stat.tildacdn.com
 DOMAIN-SUFFIX,stat.turb.pw
 DOMAIN-SUFFIX,stat.vulkanvegas.com
-DOMAIN-SUFFIX,stategg.cdngeek.com
 DOMAIN-SUFFIX,statistics.streamdav.com
 DOMAIN-SUFFIX,stats.aerotime.aero
 DOMAIN-SUFFIX,stats.calcalist.co.il
@@ -4530,7 +4523,6 @@ DOMAIN-SUFFIX,usmetric.rediff.com
 DOMAIN-SUFFIX,v.adblockultimate.net
 DOMAIN-SUFFIX,v.ctrl.blog
 DOMAIN-SUFFIX,views.arabnews.com
-DOMAIN-SUFFIX,views.asura.gg
 DOMAIN-SUFFIX,views.asurascans.com
 DOMAIN-SUFFIX,vortex.hulu.com
 DOMAIN-SUFFIX,w3-reporting.reddit.com
@@ -4688,7 +4680,6 @@ DOMAIN-SUFFIX,gl5g98t0vfjb.panprices.com
 DOMAIN-SUFFIX,gvmomuqjv1.swyftx.com
 DOMAIN-SUFFIX,hht8m6w8mnug.quine.sh
 DOMAIN-SUFFIX,ilkk97e98lvg.www.sidsplumbing.ie
-DOMAIN-SUFFIX,ipz51x.kvest.ee
 DOMAIN-SUFFIX,ivrnfvlcgubm.www.cefirates.com
 DOMAIN-SUFFIX,iwl2d7pa4yx1.www.logology.co
 DOMAIN-SUFFIX,ixa9ill0f7bg.grundbuch.zentraler-antragsservice.com
@@ -38608,7 +38599,6 @@ DOMAIN-SUFFIX,ss.photospecialist.at
 DOMAIN-SUFFIX,ss.photospecialist.de
 DOMAIN-SUFFIX,statistic2.reichelt.de
 DOMAIN-SUFFIX,statistics.riskommunal.net
-DOMAIN-SUFFIX,statistik.mitmischen.de
 DOMAIN-SUFFIX,stats.autoscout24.ch
 DOMAIN-SUFFIX,stats.rocketbeans.tv
 DOMAIN-SUFFIX,stats.sumikai.com
@@ -38682,7 +38672,6 @@ DOMAIN-SUFFIX,cdtm.cdiscount.com
 DOMAIN-SUFFIX,compteur.developpez.com
 DOMAIN-SUFFIX,dd.leboncoin.fr
 DOMAIN-SUFFIX,e.legalstart.fr
-DOMAIN-SUFFIX,eum2.caisse-epargne.fr
 DOMAIN-SUFFIX,events-logs.doctolib.com
 DOMAIN-SUFFIX,flow.kiloutou.fr
 DOMAIN-SUFFIX,fsm.lapresse.ca
@@ -38721,7 +38710,6 @@ DOMAIN-SUFFIX,adstats.tencentmusic.com
 DOMAIN-SUFFIX,al.autohome.com.cn
 DOMAIN-SUFFIX,ams.lelong.com.my
 DOMAIN-SUFFIX,analytics-gw.games.wanmei.com
-DOMAIN-SUFFIX,analytics.126.net
 DOMAIN-SUFFIX,analytics.163.com
 DOMAIN-SUFFIX,analytics.cnblogs.com
 DOMAIN-SUFFIX,analytics.oceanengine.com
@@ -38756,13 +38744,13 @@ DOMAIN-SUFFIX,ftwo-receiver.autohome.com.cn
 DOMAIN-SUFFIX,gentian-frd.hjapi.com
 DOMAIN-SUFFIX,gia.jd.com
 DOMAIN-SUFFIX,gk.sina.cn
+DOMAIN-SUFFIX,h5.analytics.126.net
 DOMAIN-SUFFIX,h5log.zongheng.com
 DOMAIN-SUFFIX,huaxiang.eastmoney.com
 DOMAIN-SUFFIX,idm.api.autohome.com.cn
 DOMAIN-SUFFIX,imgstat.baidu.com
 DOMAIN-SUFFIX,improving.wuzhuiso.com
 DOMAIN-SUFFIX,jcmonitor.xcar.com.cn
-DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,log.bitauto.com
 DOMAIN-SUFFIX,log.flight.qunar.com
 DOMAIN-SUFFIX,log.m.sm.cn
@@ -38825,7 +38813,6 @@ DOMAIN-SUFFIX,track.sohu.com
 DOMAIN-SUFFIX,track.tom.com
 DOMAIN-SUFFIX,trackcommon.hujiang.com
 DOMAIN-SUFFIX,tracker.ai.xiaomi.com
-DOMAIN-SUFFIX,trackjay.cool3c.com
 DOMAIN-SUFFIX,trail.53kf.com
 DOMAIN-SUFFIX,uestat.video.qiyi.com
 DOMAIN-SUFFIX,utrack.hexun.com
@@ -38839,7 +38826,6 @@ DOMAIN-SUFFIX,zio.xcar.com.cn
 DOMAIN-SUFFIX,zz.bdstatic.com
 DOMAIN-SUFFIX,cc.dalten.cz
 DOMAIN-SUFFIX,jslog.post.cz
-DOMAIN-SUFFIX,report.novinky.cz
 DOMAIN-SUFFIX,stat.super.cz
 DOMAIN-SUFFIX,statistics.csob.cz
 DOMAIN-SUFFIX,analytics.rambla.be
@@ -38900,7 +38886,6 @@ DOMAIN-SUFFIX,data.segugio.it
 DOMAIN-SUFFIX,execution-ci360.rai.it
 DOMAIN-SUFFIX,insights.cdt.ch
 DOMAIN-SUFFIX,ma.register.it
-DOMAIN-SUFFIX,sa.sky.it
 DOMAIN-SUFFIX,stats.splinder.com
 DOMAIN-SUFFIX,stats.stylight.it
 DOMAIN-SUFFIX,stats.suedtirolerjobs.it
@@ -39080,7 +39065,6 @@ DOMAIN-SUFFIX,unm.emol.com
 DOMAIN-SUFFIX,wssgmstats.vibbo.com
 DOMAIN-SUFFIX,wsstats.coches.net
 DOMAIN-SUFFIX,ai.idg.se
-DOMAIN-SUFFIX,analytics.elx.cloud
 DOMAIN-SUFFIX,ax.idg.se
 DOMAIN-SUFFIX,fusion.bonniertidskrifter.se
 DOMAIN-SUFFIX,gx.idg.se

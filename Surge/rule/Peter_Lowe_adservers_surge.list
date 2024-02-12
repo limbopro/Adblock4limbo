@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 08 Feb 2024 09:22:05 GMT
-# entries:        3783
+# entries:        3782
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -22,7 +22,6 @@ DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
-DOMAIN-SUFFIX,24log.de
 DOMAIN-SUFFIX,24pm-affiliation.com
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,2o7.net

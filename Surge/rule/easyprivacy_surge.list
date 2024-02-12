@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402111454
+## ! Version: 202402121537
 ## ! Title: EasyPrivacy
-## ! Last modified: 11 Feb 2024 14:54 UTC
+## ! Last modified: 12 Feb 2024 15:37 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4109,6 +4109,7 @@ DOMAIN-SUFFIX,collector.github.com
 DOMAIN-SUFFIX,collector.githubapp.com
 DOMAIN-SUFFIX,collector.megaxh.com
 DOMAIN-SUFFIX,collector.pi.spectrum.net
+DOMAIN-SUFFIX,collector.taoxh.life
 DOMAIN-SUFFIX,collector.xhamster.com
 DOMAIN-SUFFIX,collector.xhamster.desi
 DOMAIN-SUFFIX,collector.xhamster2.com
@@ -38949,6 +38950,7 @@ DOMAIN-SUFFIX,log.etoday.co.kr
 DOMAIN-SUFFIX,log.kinolights.com
 DOMAIN-SUFFIX,log.zdnet.co.kr
 DOMAIN-SUFFIX,nil.naver.com
+DOMAIN-SUFFIX,nlog.naver.com
 DOMAIN-SUFFIX,pds.auction.co.kr
 DOMAIN-SUFFIX,rake.11st.co.kr
 DOMAIN-SUFFIX,sp.naver.com

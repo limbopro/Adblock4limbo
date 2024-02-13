@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402121537
+## ! Version: 202402131430
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Feb 2024 15:37 UTC
+## ! Last modified: 13 Feb 2024 14:30 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3653,7 +3653,6 @@ DOMAIN-SUFFIX,t.hypers.com.cn
 DOMAIN-SUFFIX,t.rainide.com
 DOMAIN-SUFFIX,tce.alicdn.com
 DOMAIN-SUFFIX,tns.simba.taobao.com
-DOMAIN-SUFFIX,toruk.tanx.com
 DOMAIN-SUFFIX,tr.n2.hk
 DOMAIN-SUFFIX,track.storm.mg
 DOMAIN-SUFFIX,track.tomwx.net

@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".js_article\",\"tasks\":[[\"if-not\",\":has(.strong)\"],[\"spath\",\" > .widgetWrap\"]]}"],["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"]];
+const argsList = [["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"]];
 
-const hostnamesMap = new Map([["siol.net",0],["monitor.si",1]]);
+const hostnamesMap = new Map([["monitor.si",0]]);
 
 const entitiesMap = new Map(undefined);
 

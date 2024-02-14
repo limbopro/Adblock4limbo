@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["_theme-banner-upper","html"],["bgPartners2019",".videoContainer > div.beachPartners + div"],["hided","#framed > div"],["hided","div#player"]];
+const argsList = [["_theme-banner-upper","html"],["bgPartners2019",".videoContainer > div.beachPartners + div"],["hided","#framed > div"]];
 
-const hostnamesMap = new Map([["canalnet.tv",0],["beachcam.meo.pt",1],["empregonews.online",2],["eusaudavel.net",3]]);
+const hostnamesMap = new Map([["canalnet.tv",0],["beachcam.meo.pt",1],["empregonews.online",2]]);
 
 const entitiesMap = new Map([]);
 

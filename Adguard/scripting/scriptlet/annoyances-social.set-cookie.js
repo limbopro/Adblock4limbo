@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["socialDisplayed","true"]];
+const argsList = [["socialDisplayed","true"],["fblb","1"]];
 
-const hostnamesMap = new Map([["soundiiz.com",0]]);
+const hostnamesMap = new Map([["soundiiz.com",0],["vw-passat.pl",1]]);
 
 const entitiesMap = new Map([]);
 

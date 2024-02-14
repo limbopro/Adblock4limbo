@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["artmusics.top",0],["musicpars3.ir",0],["musicguitars.ir",0],["subf2m.ir",0],["zeemusic.ir",0],["najiremix.ir",0],["musichi.ir",0],["likeemusic.ir",0],["getandroid.ir",0],["musickhone.com",0],["naslmusic.ir",0],["power-music.ir",0],["uploadgoogle.ir",0],["uptrack.ir",0]]);
+const hostnamesMap = new Map([["artmusics.top",0],["musicpars3.ir",0],["musicguitars.ir",0],["subf2m.ir",0],["zeemusic.ir",0],["najiremix.ir",0],["musichi.ir",0],["likeemusic.ir",0],["farsroid.com",0],["getandroid.ir",0],["musickhone.com",0],["naslmusic.ir",0],["power-music.ir",0],["uploadgoogle.ir",0],["uptrack.ir",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -83,9 +83,12 @@ function noWindowOpenIf(
         apply: function(target, thisArg, args) {
             const haystack = args.join(' ');
             if ( rePattern.test(haystack) !== targetMatchResult ) {
+                if ( safe.logLevel > 1 ) {
+                    safe.uboLog(logPrefix, `Allowed (${args.join(', ')})`);
+                }
                 return Reflect.apply(target, thisArg, args);
             }
-            safe.uboLog(logPrefix, 'Prevented');
+            safe.uboLog(logPrefix, `Prevented (${args.join(', ')})`);
             if ( autoRemoveAfter < 0 ) { return null; }
             const decoyElem = decoy === 'obj'
                 ? createDecoy('object', 'data', ...args)

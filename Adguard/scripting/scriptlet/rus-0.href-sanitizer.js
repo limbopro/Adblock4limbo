@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/go.php?go=\"]","?go"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
 
-const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["softoroom.org",2],["opennet.me",3],["opennet.ru",3],["lifehacker.ru",4],["www.ixbt.com",5],["vz.ru",[6,7]],["disqus.com",8],["youtube.com",9],["e.mail.ru",10],["octavius.mail.ru",10],["light.mail.ru",[11,12]]]);
+const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["apad2.top",1],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["softoroom.org",2],["opennet.me",3],["opennet.ru",3],["lifehacker.ru",4],["www.ixbt.com",5],["vz.ru",[6,7]],["disqus.com",8],["youtube.com",9],["e.mail.ru",10],["octavius.mail.ru",10],["light.mail.ru",[11,12]]]);
 
 const entitiesMap = new Map([]);
 

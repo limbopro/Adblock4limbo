@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["test.offsetHeight"],["adsbygoogle"],["randno","25"]];
+const argsList = [["detected","5000"],["test.offsetHeight"],["adsbygoogle"],["randno","25"]];
 
-const hostnamesMap = new Map([["fourtoutici.pro",0],["voyageforum.com",1],["jeune-gay.fr",2]]);
+const hostnamesMap = new Map([["cookomix.com",0],["fourtoutici.pro",1],["voyageforum.com",2],["jeune-gay.fr",3]]);
 
 const entitiesMap = new Map([]);
 

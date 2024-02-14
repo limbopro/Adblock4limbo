@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["adsbygoogle"],["clarity.ms"]];
 
-const hostnamesMap = new Map([["info.gambar.pro",0],["info.mapsaddress.com",0],["info.vebma.com",0],["thejakartapost.com",0],["netq.me",1]]);
+const hostnamesMap = new Map([["cloud.majalahhewan.com",0],["info.gambar.pro",0],["info.mapsaddress.com",0],["info.vebma.com",0],["thejakartapost.com",0],["netq.me",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -78,10 +78,6 @@ function noFetchIf(
             const details = args[0] instanceof self.Request
                 ? args[0]
                 : Object.assign({ url: args[0] }, args[1]);
-            if ( propsToMatch === '' && responseBody === '' ) {
-                safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(details, null, 2)}`);
-                return Reflect.apply(target, thisArg, args);
-            }
             let proceed = true;
             try {
                 const props = new Map();
@@ -93,6 +89,11 @@ function noFetchIf(
                     }
                     if ( typeof v !== 'string' ) { continue; }
                     props.set(prop, v);
+                }
+                if ( propsToMatch === '' && responseBody === '' ) {
+                    const out = Array.from(props).map(a => `${a[0]}:${a[1]}`);
+                    safe.uboLog(logPrefix, `Called: ${out.join('\n')}`);
+                    return Reflect.apply(target, thisArg, args);
                 }
                 proceed = needles.length === 0;
                 for ( const { key, re } of needles ) {

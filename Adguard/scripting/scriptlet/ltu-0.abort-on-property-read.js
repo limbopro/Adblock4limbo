@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["BetterJsPop"],["canRunAds"]];
+const argsList = [["BetterJsPop"],["canRunAds"],["_renderAdblock"]];
 
-const hostnamesMap = new Map([["player.eltitbus.xyz",0],["player.filmux.to",0],["simpsonaionline.net",1]]);
+const hostnamesMap = new Map([["player.eltitbus.xyz",0],["player.filmux.to",0],["simpsonaionline.net",1],["15min.lt",2]]);
 
 const entitiesMap = new Map([]);
 

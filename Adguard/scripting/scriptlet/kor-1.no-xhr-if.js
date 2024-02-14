@@ -42,7 +42,7 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["\\/api\\/avods\\/v[0-9]{1","}\\/advertisement\\/"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]];
+const argsList = [["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]];
 
 const hostnamesMap = new Map([["laftel.net",0],["tv.kakao.com",1],["play-tv.kakao.com",1],["kakaotv.daum.net",1],["spotvnow.co.kr",[2,3]],["noonnu.cc",3]]);
 
@@ -74,11 +74,12 @@ function noXhrIf(
                 return super.open(method, url, ...args);
             }
             const haystack = { method, url };
-            if ( matchObjectProperties(propNeedles, haystack) ) {
-                xhrInstances.set(this, haystack);
-            }
             if ( propsToMatch === '' && directive === '' ) {
                 safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(haystack, null, 2)}`);
+                return super.open(method, url, ...args);
+            }
+            if ( matchObjectProperties(propNeedles, haystack) ) {
+                xhrInstances.set(this, haystack);
             }
             haystack.headers = Object.assign({}, headers);
             return super.open(method, url, ...args);

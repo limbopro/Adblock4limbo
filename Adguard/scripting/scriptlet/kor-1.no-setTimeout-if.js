@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
+const argsList = [["popup_goods"],["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
 
-const hostnamesMap = new Map([["moneytoring.co.kr",0],["postincome.co.kr",0],["itinformation.kr",0],["digitstar77.com",0],["filetender.com",1],["zuzunza.com",2],["klauncher.kr",2],["iphonedev.co.kr",2],["tistory.com",2],["sysnet.pe.kr",3],["genshin.gamedot.org",4],["stockinfo7.com",5],["lover924.net",6],["lover925.net",6],["lover926.net",6],["lover927.net",6],["lover928.net",6],["lover929.net",6],["lover930.net",6],["lover931.net",6],["lover932.net",6],["lover933.net",6]]);
+const hostnamesMap = new Map([["10000recipe.com",0],["moneytoring.co.kr",1],["postincome.co.kr",1],["itinformation.kr",1],["digitstar77.com",1],["filetender.com",2],["zuzunza.com",3],["klauncher.kr",3],["iphonedev.co.kr",3],["tistory.com",3],["sysnet.pe.kr",4],["genshin.gamedot.org",5],["stockinfo7.com",6],["lover924.net",7],["lover925.net",7],["lover926.net",7],["lover927.net",7],["lover928.net",7],["lover929.net",7],["lover930.net",7],["lover931.net",7],["lover932.net",7],["lover933.net",7]]);
 
 const entitiesMap = new Map([]);
 

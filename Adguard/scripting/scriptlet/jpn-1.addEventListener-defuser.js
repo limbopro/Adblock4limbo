@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["load","delayCheckAdBlock"],["load","adsCount"],["error","adscript-error"],["load","ad blocker"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
+const argsList = [["load","delayCheckAdBlock"],["load","adsCount"],["error","adscript-error"],["load","ad blocker"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
 
-const hostnamesMap = new Map([["jukenbbs.com",0],["blog-and-destroy.com",1],["coolpan.net",2],["ad-contents.jp",3],["anacap.doorblog.jp",4],["anianierosuki.work",5],["uraaka-joshi.com",6],["tokyomotion.net",7],["ero-video.net",8],["jp-xvideos.info",9]]);
+const hostnamesMap = new Map([["jukenbbs.com",0],["blog-and-destroy.com",1],["coolpan.net",2],["ad-contents.jp",3],["twidouga.net",4],["anacap.doorblog.jp",5],["anianierosuki.work",6],["uraaka-joshi.com",7],["tokyomotion.net",8],["ero-video.net",9],["jp-xvideos.info",10]]);
 
 const entitiesMap = new Map([]);
 

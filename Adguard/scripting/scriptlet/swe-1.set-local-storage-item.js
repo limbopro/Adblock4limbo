@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["CMP:advertising","0"],["CMP:analytics","0"],["CMP:marketing","0"],["CMP:personalisation","0"]];
 
-const hostnamesMap = new Map([["aftonbladet.se",[0,1,2,3]],["godare.se",[0,1,2,3]],["livsstil.se",[0,1,2,3]],["skonhetsredaktorerna.se",[0,1,2,3]],["omni.se",[0,1,2,3]],["omniekonomi.se",[0,1,2,3]],["svd.se",[0,1,2,3]]]);
+const hostnamesMap = new Map([["www.aftonbladet.se",[0,1,2,3]],["www.godare.se",[0,1,2,3]],["www.livsstil.se",[0,1,2,3]],["www.skonhetsredaktorerna.se",[0,1,2,3]],["omni.se",[0,1,2,3]],["omniekonomi.se",[0,1,2,3]],["www.svd.se",[0,1,2,3]]]);
 
 const entitiesMap = new Map([]);
 

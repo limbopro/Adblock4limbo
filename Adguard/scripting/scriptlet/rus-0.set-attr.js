@@ -57,9 +57,11 @@ function setAttr(
     attr = '',
     value = ''
 ) {
-    if ( typeof selector !== 'string' ) { return; }
     if ( selector === '' ) { return; }
+    if ( attr === '' ) { return; }
 
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-attr', attr, value);
     const validValues = [ '', 'false', 'true' ];
     let copyFrom = '';
 
@@ -94,7 +96,9 @@ function setAttr(
             const before = elem.getAttribute(attr);
             const after = extractValue(elem);
             if ( after === before ) { continue; }
+            if ( attr.startsWith('on') && attr in elem && after !== '' ) { continue; }
             elem.setAttribute(attr, after);
+            safe.uboLog(logPrefix, `${attr}="${after}"`);
         }
         return true;
     };

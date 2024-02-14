@@ -42,9 +42,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".metaRedirectWrapperBottomAds, .ametaReedirectWrapperTopAdd, a[href^=\"https://tm-offers.gamingadult.com/\"]","visibility","visible"],["body > div[id]:not([id=\"download\"][class=\"download\"]) a, body > *:has(iframe[src*=\"ad.a-ads.com\"]) a","visibility","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"]];
+const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"], [src=\"/downloada.png\"])","visibility","visible"]];
 
-const hostnamesMap = new Map([["megaup.net",0],["download.megaup.net",1],["techcyan.com",2],["kiktu.com",2],["upshrink.com",2],["trangchu.news",2],["banaraswap.in",2]]);
+const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["download.megaup.net",1]]);
 
 const entitiesMap = new Map([]);
 

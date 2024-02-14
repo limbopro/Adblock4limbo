@@ -42,13 +42,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","landingUrl"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","landingUrl"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,14]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["rambler.ru",[4,11]],["sibnet.ru",5],["sports.ru",6],["cq.ru",7],["1progs.com",8],["softonic.ru",9],["smotrim.ru",10],["rbc.ru",12],["sportrbc.ru",12],["iptv.org.ua",13],["tva.org.ua",13],["ufchgu.ru",13],["romakatya.ru",15],["overclockers.ru",16],["gazeta.ru",17],["m.lenta.ru",18],["www.vesti.ru",19],["lenta.ru",20],["aida64.com.ua",21],["aida64russia.com",21]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["1progs.com",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["overclockers.ru",17],["gazeta.ru",18],["m.lenta.ru",19],["www.vesti.ru",20],["lenta.ru",21],["aida64.com.ua",22],["aida64russia.com",22]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,14]],["id.rambler.ru",[4,11]],["vp.rambler.ru",[4,11]],["player.smotrim.ru",[10]],["mail.rambler.ru",[11]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,15]],["id.rambler.ru",[5,12]],["vp.rambler.ru",[5,12]],["player.smotrim.ru",[11]],["mail.rambler.ru",[12]]]);
 
 /******************************************************************************/
 

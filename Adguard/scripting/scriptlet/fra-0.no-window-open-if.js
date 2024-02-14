@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["empire-stream.net",0],["ddl-francais.com",0]]);
+const hostnamesMap = new Map([["japscan.lol",0],["empire-stream.net",0],["ddl-francais.com",0]]);
 
 const entitiesMap = new Map([["empire-streaming",0]]);
 
@@ -83,9 +83,12 @@ function noWindowOpenIf(
         apply: function(target, thisArg, args) {
             const haystack = args.join(' ');
             if ( rePattern.test(haystack) !== targetMatchResult ) {
+                if ( safe.logLevel > 1 ) {
+                    safe.uboLog(logPrefix, `Allowed (${args.join(', ')})`);
+                }
                 return Reflect.apply(target, thisArg, args);
             }
-            safe.uboLog(logPrefix, 'Prevented');
+            safe.uboLog(logPrefix, `Prevented (${args.join(', ')})`);
             if ( autoRemoveAfter < 0 ) { return null; }
             const decoyElem = decoy === 'obj'
                 ? createDecoy('object', 'data', ...args)

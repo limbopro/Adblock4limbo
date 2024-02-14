@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adBlockDetected"],["AdBlockLimitation"],["fanza_link"]];
+const argsList = [["onload"],["adBlockDetected"],["AdBlockLimitation"],["fanza_link"]];
 
-const hostnamesMap = new Map([["pointi.jp",0],["modalina.jp",1],["shico.xyz",2]]);
+const hostnamesMap = new Map([["iwb.jp",0],["pointi.jp",1],["modalina.jp",2],["shico.xyz",3]]);
 
 const entitiesMap = new Map([]);
 

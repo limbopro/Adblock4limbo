@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["getComputedStyle"],["q2w3_sidebar(q2w3_sidebar_options"]];
+const argsList = [["q2w3_sidebar(q2w3_sidebar_options"]];
 
-const hostnamesMap = new Map([["iwb.jp",0],["yaraon-blog.com",1]]);
+const hostnamesMap = new Map([["yaraon-blog.com",0]]);
 
 const entitiesMap = new Map([]);
 

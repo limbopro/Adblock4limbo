@@ -42,7 +42,7 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["tpl apply","tpl.[].c","/fmkorea.com.[A-z]{8","}.js/"],["powerLink","powerLink.ads"],["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
+const argsList = [["tpl apply","tpl.[].c"],["powerLink","powerLink.ads"],["adRecommend.adUnits.[]"],["data.BrandAd"],["adBannerList"],["data.supertopADNos"],["ads"]];
 
 const hostnamesMap = new Map([["m.fmkorea.com",0],["search.11st.co.kr",1],["msearch.shopping.naver.com",2],["search.shopping.naver.com",3],["comic.naver.com",4],["enuri.com",5],["shoppinghow.kakao.com",6]]);
 

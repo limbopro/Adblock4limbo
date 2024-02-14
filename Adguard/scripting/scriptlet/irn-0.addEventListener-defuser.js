@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["scroll"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
+const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
 
-const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["eghtesadonline.com",2],["elmefarda.com",3],["s-moshaver.com",3],["ganjipakhsh.com",4],["javan-musics.com",5],["mopon.ir",6],["noorlib.ir",7],["subkade.ir",8]]);
+const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["elmefarda.com",2],["s-moshaver.com",2],["ganjipakhsh.com",3],["javan-musics.com",4],["mopon.ir",5],["noorlib.ir",6],["subkade.ir",7]]);
 
 const entitiesMap = new Map([]);
 

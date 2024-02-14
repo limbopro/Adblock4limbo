@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["/advert.js"],["static.doubleclick.net/instream/ad_status.js"],["pagead2.googlesyndication.com"],["spotxchange.com"]];
 
-const hostnamesMap = new Map([["kuponuna148.com",0],["kuponuna149.com",0],["kuponuna150.com",0],["kuponuna151.com",0],["kuponuna152.com",0],["kuponuna153.com",0],["kuponuna154.com",0],["kuponuna155.com",0],["kuponuna156.com",0],["kuponuna157.com",0],["kuponuna158.com",0],["kuponuna159.com",0],["kuponuna160.com",0],["kuponuna161.com",0],["kuponuna162.com",0],["kuponuna163.com",0],["kuponuna164.com",0],["kuponuna165.com",0],["kuponuna166.com",0],["kuponuna167.com",0],["kuponuna168.com",0],["kuponuna169.com",0],["kuponuna170.com",0],["canlitribun53.com",0],["canlitribun54.com",0],["canlitribun55.com",0],["canlitribun56.com",0],["canlitribun57.com",0],["canlitribun58.com",0],["canlitribun59.com",0],["canlitribun60.com",0],["canlitribun61.com",0],["canlitribun62.com",0],["canlitribun63.com",0],["canlitribun64.com",0],["canlitribun65.com",0],["canlitribun66.com",0],["canlitribun67.com",0],["canlitribun68.com",0],["canlitribun69.com",0],["canlitribun70.com",0],["mangawt.com",1],["uzaymanga.com",2],["ruyamanga.com",2],["tv8.com.tr",3]]);
+const hostnamesMap = new Map([["kuponuna170.top",0],["kuponuna171.top",0],["kuponuna172.top",0],["kuponuna173.top",0],["kuponuna174.top",0],["kuponuna175.top",0],["kuponuna176.top",0],["kuponuna177.top",0],["kuponuna178.top",0],["kuponuna179.top",0],["kuponuna180.top",0],["kuponuna181.top",0],["kuponuna182.top",0],["kuponuna183.top",0],["kuponuna184.top",0],["kuponuna185.top",0],["kuponuna186.top",0],["kuponuna187.top",0],["kuponuna188.top",0],["kuponuna189.top",0],["kuponuna190.top",0],["kuponuna191.top",0],["kuponuna192.top",0],["kuponuna193.top",0],["kuponuna194.top",0],["kuponuna195.top",0],["kuponuna196.top",0],["kuponuna197.top",0],["kuponuna198.top",0],["kuponuna199.top",0],["kuponuna200.top",0],["kuponuna201.top",0],["kuponuna202.top",0],["kuponuna203.top",0],["kuponuna204.top",0],["kuponuna205.top",0],["kuponuna206.top",0],["kuponuna207.top",0],["kuponuna208.top",0],["kuponuna209.top",0],["kuponuna210.top",0],["kuponuna211.top",0],["kuponuna212.top",0],["kuponuna213.top",0],["kuponuna214.top",0],["kuponuna215.top",0],["kuponuna216.top",0],["kuponuna217.top",0],["kuponuna218.top",0],["kuponuna219.top",0],["kuponuna220.top",0],["kuponuna221.top",0],["kuponuna222.top",0],["kuponuna223.top",0],["kuponuna224.top",0],["kuponuna225.top",0],["kuponuna226.top",0],["kuponuna227.top",0],["kuponuna228.top",0],["kuponuna229.top",0],["kuponuna230.top",0],["kuponuna231.top",0],["kuponuna232.top",0],["kuponuna233.top",0],["kuponuna234.top",0],["kuponuna235.top",0],["kuponuna236.top",0],["kuponuna237.top",0],["kuponuna238.top",0],["kuponuna239.top",0],["kuponuna240.top",0],["kuponuna241.top",0],["kuponuna242.top",0],["kuponuna243.top",0],["kuponuna244.top",0],["kuponuna245.top",0],["kuponuna246.top",0],["kuponuna247.top",0],["kuponuna248.top",0],["kuponuna249.top",0],["kuponuna250.top",0],["canlitribun53.com",0],["canlitribun54.com",0],["canlitribun55.com",0],["canlitribun56.com",0],["canlitribun57.com",0],["canlitribun58.com",0],["canlitribun59.com",0],["canlitribun60.com",0],["canlitribun61.com",0],["canlitribun62.com",0],["canlitribun63.com",0],["canlitribun64.com",0],["canlitribun65.com",0],["canlitribun66.com",0],["canlitribun67.com",0],["canlitribun68.com",0],["canlitribun69.com",0],["canlitribun70.com",0],["mangawt.com",1],["uzaymanga.com",2],["ruyamanga.com",2],["tv8.com.tr",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -74,11 +74,12 @@ function noXhrIf(
                 return super.open(method, url, ...args);
             }
             const haystack = { method, url };
-            if ( matchObjectProperties(propNeedles, haystack) ) {
-                xhrInstances.set(this, haystack);
-            }
             if ( propsToMatch === '' && directive === '' ) {
                 safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(haystack, null, 2)}`);
+                return super.open(method, url, ...args);
+            }
+            if ( matchObjectProperties(propNeedles, haystack) ) {
+                xhrInstances.set(this, haystack);
             }
             haystack.headers = Object.assign({}, headers);
             return super.open(method, url, ...args);

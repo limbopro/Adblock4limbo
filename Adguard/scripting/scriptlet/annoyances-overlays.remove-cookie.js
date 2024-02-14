@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["articleLimitDrawerVisible"],["unauthenicatedArticleLimitReached"],["kpwc"],["search_curday"],["visit"],["pageViews"],["recipe_view_count_ru"],["recipe_view_count_es"],["recipe_view_count_uk"],["recipe_view_count_pl"],["articlesRead","when","scroll keydown"]];
+const argsList = [["popup"],["articleLimitDrawerVisible"],["unauthenicatedArticleLimitReached"],["kpwc"],["search_curday"],["visit"],["pageViews"],["recipe_view_count_ru"],["recipe_view_count_es"],["recipe_view_count_uk"],["recipe_view_count_pl"],["articlesRead","when","scroll keydown"]];
 
-const hostnamesMap = new Map([["cbr.com",[0,1,10]],["technologyreview.jp",2],["ac-illust.com",3],["photo-ac.com",3],["novagente.pt",4],["stackshare.io",5],["cookpad.es",[6,7,8,9]],["cookpad.com",[6,7,8,9]],["androidpolice.com",10],["makeuseof.com",10],["movieweb.com",10],["xda-developers.com",10],["thegamer.com",10],["gamerant.com",10],["screenrant.com",10],["howtogeek.com",10],["thethings.com",10],["simpleflying.com",10],["dualshockers.com",10]]);
+const hostnamesMap = new Map([["jungefreiheit.de",0],["cbr.com",[1,2,11]],["technologyreview.jp",3],["ac-illust.com",4],["photo-ac.com",4],["novagente.pt",5],["stackshare.io",6],["cookpad.es",[7,8,9,10]],["cookpad.com",[7,8,9,10]],["androidpolice.com",11],["makeuseof.com",11],["movieweb.com",11],["xda-developers.com",11],["thegamer.com",11],["gamerant.com",11],["screenrant.com",11],["howtogeek.com",11],["thethings.com",11],["simpleflying.com",11],["dualshockers.com",11]]);
 
 const entitiesMap = new Map([]);
 

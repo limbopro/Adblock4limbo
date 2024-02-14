@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adskeeper"],["pagead2.googlesyndication.com"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["ad.php"],["cloudflareinsights.com"]];
+const argsList = [["pagead2.googlesyndication.com"],["adskeeper"],["google-analytics.com"],["/googlesyndication\\.com|googletagmanager\\.com/"],["nitropay.com"],["analytics"],["www3.doubleclick.net"],["ads-twitter.com"],["adsbygoogle"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["ad.php"],["cloudflareinsights.com"]];
 
-const hostnamesMap = new Map([["bravedown.com",0],["everyeye.it",1],["automoto.it",1],["moto.it",1],["calcmaps.com",1],["thejakartapost.com",1],["crdroid.net",1],["maxedtech.com",1],["dizipal1000.com",1],["slazag.pl",1],["bytomski.pl",1],["piekary.info",1],["twojknurow.pl",1],["nowinytyskie.pl",1],["ngs24.pl",1],["24kato.pl",1],["rudzianin.pl",1],["zabrzenews.pl",1],["chorzowski.pl",1],["tarnowskiegory.info",1],["24zaglebie.pl",1],["insidermonkey.com",1],["poedb.tw",1],["stakingrewards.com",1],["udocz.com",1],["graphicget.com",2],["udemy-downloader.com",2],["bypass.city",[3,12]],["gamebrew.org",4],["photosonic.writesonic.com",6],["maxroll.gg",6],["tuttoandroid.net",6],["psy.pl",6],["koty.pl",6],["intibia.com",6],["simkl.com",7],["xhvid.com",8],["xhamster20.desi",8],["xhwebsite2.com",[8,13]],["xhamster18.desi",8],["xhadult3.com",[8,13]],["xhadult2.com",[8,13]],["xhmoon5.com",[8,13]],["xhwide1.com",[8,13]],["xhwide8.com",[8,13]],["xhamster3.com",8],["xhplanet2.com",[8,13]],["xhtab2.com",[8,13]],["xhamster5.desi",8],["xhamster9.com",8],["xhamster.desi",8],["xhamster.one",8],["xhamster.com",8],["weather.com",9],["textcleaner.net",10],["socialcounts.org",10],["theonegenerator.com",11],["mcskinhistory.com",11],["adbypass.org",12],["fullxh.com",13],["megaxh.com",13],["unlockxh4.com",13],["xhadult4.com",13],["xhadult5.com",13],["xhamster46.com",13],["xhday.com",13],["xhday1.com",13],["xhplanet1.com",13],["xhreal2.com",13],["xhreal3.com",13],["xhvictory.com",13],["xhwebsite.com",13],["amtraker.com",14]]);
+const hostnamesMap = new Map([["civitai.com",0],["everyeye.it",0],["automoto.it",0],["moto.it",0],["calcmaps.com",0],["thejakartapost.com",0],["crdroid.net",0],["maxedtech.com",0],["dizipal1000.com",0],["slazag.pl",0],["bytomski.pl",0],["piekary.info",0],["twojknurow.pl",0],["nowinytyskie.pl",0],["ngs24.pl",0],["24kato.pl",0],["rudzianin.pl",0],["zabrzenews.pl",0],["chorzowski.pl",0],["tarnowskiegory.info",0],["24zaglebie.pl",0],["insidermonkey.com",0],["poedb.tw",0],["stakingrewards.com",0],["udocz.com",0],["bravedown.com",1],["graphicget.com",2],["udemy-downloader.com",2],["bypass.city",[3,12]],["gamebrew.org",4],["photosonic.writesonic.com",6],["maxroll.gg",6],["tuttoandroid.net",6],["psy.pl",6],["koty.pl",6],["intibia.com",6],["simkl.com",7],["xhvid.com",8],["xhamster20.desi",8],["xhwebsite2.com",[8,13]],["xhamster18.desi",8],["xhadult3.com",[8,13]],["xhadult2.com",[8,13]],["xhmoon5.com",[8,13]],["xhwide1.com",[8,13]],["xhwide8.com",[8,13]],["xhamster3.com",8],["xhplanet2.com",[8,13]],["xhtab2.com",[8,13]],["xhamster5.desi",8],["xhamster9.com",8],["xhamster.desi",8],["xhamster.one",8],["xhamster.com",8],["weather.com",9],["textcleaner.net",10],["socialcounts.org",10],["viewing.nyc",10],["theonegenerator.com",11],["mcskinhistory.com",11],["adbypass.org",12],["fullxh.com",13],["megaxh.com",13],["unlockxh4.com",13],["xhadult4.com",13],["xhadult5.com",13],["xhamster46.com",13],["xhday.com",13],["xhday1.com",13],["xhplanet1.com",13],["xhreal2.com",13],["xhreal3.com",13],["xhvictory.com",13],["xhwebsite.com",13],["amtraker.com",14]]);
 
 const entitiesMap = new Map([["ddys",5],["xhamster18",[8,13]],["xhamster17",[8,13]],["hamsterix",[8,13]],["xhamster13",[8,13]],["xhamster",13],["xhamster1",13],["xhamster10",13],["xhamster11",13],["xhamster12",13],["xhamster14",13],["xhamster15",13],["xhamster16",13],["xhamster19",13],["xhamster20",13],["xhamster2",13],["xhamster3",13],["xhamster4",13],["xhamster5",13],["xhamster7",13],["xhamster8",13]]);
 
@@ -78,10 +78,6 @@ function noFetchIf(
             const details = args[0] instanceof self.Request
                 ? args[0]
                 : Object.assign({ url: args[0] }, args[1]);
-            if ( propsToMatch === '' && responseBody === '' ) {
-                safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(details, null, 2)}`);
-                return Reflect.apply(target, thisArg, args);
-            }
             let proceed = true;
             try {
                 const props = new Map();
@@ -93,6 +89,11 @@ function noFetchIf(
                     }
                     if ( typeof v !== 'string' ) { continue; }
                     props.set(prop, v);
+                }
+                if ( propsToMatch === '' && responseBody === '' ) {
+                    const out = Array.from(props).map(a => `${a[0]}:${a[1]}`);
+                    safe.uboLog(logPrefix, `Called: ${out.join('\n')}`);
+                    return Reflect.apply(target, thisArg, args);
                 }
                 proceed = needles.length === 0;
                 for ( const { key, re } of needles ) {

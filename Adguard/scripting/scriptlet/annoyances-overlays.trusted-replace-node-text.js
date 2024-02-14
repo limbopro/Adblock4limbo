@@ -42,9 +42,9 @@ const uBOL_replaceNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","if(floovy()) {","if(false) {"]];
+const argsList = [["script","if(floovy()) {","if(false) {"],["script","window.location.reload"]];
 
-const hostnamesMap = new Map([["heidisql.com",0]]);
+const hostnamesMap = new Map([["heidisql.com",0],["baumbet.ro",1]]);
 
 const entitiesMap = new Map([]);
 

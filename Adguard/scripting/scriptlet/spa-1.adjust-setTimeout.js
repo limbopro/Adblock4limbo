@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[".html(","*","0.001"],["playFunction","*","0.001"],["atualizar","*","0.02"],[".delay","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["contador","","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"]];
 
-const hostnamesMap = new Map([["sabornutritivo.com",0],["guiacripto.online",1],["modsimuladores.com",2],["assistirfilmesdaluna.com",2],["vejaideias.com.br",2],["jogoscompleto.xyz",2],["fazercurriculo.online",3],["usandoapp.com",3],["arnolds.com.br",4],["guialocaliza.club",4],["receitasoncaseiras.online",5],["automotivocarros.com",6],["portecnologia.com",6],["cartaocreditoplatinum.org",6],["criarjogosandroid.com",7],["receitastops.ga",7],["adrenalinagames.com",7],["nutricaohoje.website",8]]);
+const hostnamesMap = new Map([["sabornutritivo.com",0],["guiacripto.online",1],["modsimuladores.com",2],["assistirfilmesdaluna.com",2],["vejaideias.com.br",2],["jogoscompleto.xyz",2],["fazercurriculo.online",3],["usandoapp.com",3],["arnolds.com.br",4],["receitasoncaseiras.online",5],["automotivocarros.com",6],["portecnologia.com",6],["cartaocreditoplatinum.org",6],["criarjogosandroid.com",7],["adrenalinagames.com",7],["nutricaohoje.website",8]]);
 
 const entitiesMap = new Map([["lectulandia",9]]);
 

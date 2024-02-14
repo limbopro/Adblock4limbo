@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
 
-const hostnamesMap = new Map([["turbobits.cc",0],["easybib.com",1]]);
+const hostnamesMap = new Map([["tourbobit.com",0],["tourbobit.net",0],["turbobeet.net",0],["turbobi.pw",0],["turbobif.com",0],["turbobit.net",0],["turbobita.net",0],["turbobits.cc",0],["turboobit.com",0],["easybib.com",1]]);
 
 const entitiesMap = new Map([]);
 

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402141544
+## ! Version: 202402151519
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Feb 2024 15:44 UTC
+## ! Last modified: 15 Feb 2024 15:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -487,6 +487,7 @@ DOMAIN-SUFFIX,aloofmetal.com, reject
 DOMAIN-SUFFIX,aloofvest.com, reject
 DOMAIN-SUFFIX,alpineactor.com, reject
 DOMAIN-SUFFIX,amazingairplane.com, reject
+DOMAIN-SUFFIX,ambientdusk.com, reject
 DOMAIN-SUFFIX,ambiguousafternoon.com, reject
 DOMAIN-SUFFIX,ambiguousalarm.com, reject
 DOMAIN-SUFFIX,ambiguousanger.com, reject
@@ -2101,6 +2102,7 @@ DOMAIN-SUFFIX,toweringrun.com, reject
 DOMAIN-SUFFIX,tradetooth.com, reject
 DOMAIN-SUFFIX,tranquilamulet.com, reject
 DOMAIN-SUFFIX,tranquilcanyon.com, reject
+DOMAIN-SUFFIX,tranquilplume.com, reject
 DOMAIN-SUFFIX,tranquilside.com, reject
 DOMAIN-SUFFIX,translateoatmeal.com, reject
 DOMAIN-SUFFIX,trappush.com, reject
@@ -3776,6 +3778,7 @@ DOMAIN-SUFFIX,log.popin.cc, reject
 DOMAIN-SUFFIX,log000.goo.ne.jp, reject
 DOMAIN-SUFFIX,omt.shinobi.jp, reject
 DOMAIN-SUFFIX,panda.kasika.io, reject
+DOMAIN-SUFFIX,ping.paidy.com, reject
 DOMAIN-SUFFIX,rcm.shinobi.jp, reject
 DOMAIN-SUFFIX,reports-tsi.tangerine.io, reject
 DOMAIN-SUFFIX,rlog.popin.cc, reject

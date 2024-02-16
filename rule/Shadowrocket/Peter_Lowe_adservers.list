@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 08 Feb 2024 09:22:05 GMT
+# last updated:   Fri, 16 Feb 2024 14:16:11 GMT
 # entries:        3782
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -759,7 +759,6 @@ DOMAIN-SUFFIX,adserver.tupolska.com, reject
 DOMAIN-SUFFIX,adserver.twitpic.com, reject
 DOMAIN-SUFFIX,adserver.virginmedia.com, reject
 DOMAIN-SUFFIX,adserver.waggonerguide.com, reject
-DOMAIN-SUFFIX,adserver.yahoo.com, reject
 DOMAIN-SUFFIX,adserver01.de, reject
 DOMAIN-SUFFIX,adserver1.mindshare.de, reject
 DOMAIN-SUFFIX,adserver2.mindshare.de, reject
@@ -1055,6 +1054,7 @@ DOMAIN-SUFFIX,audienceinsights.com, reject
 DOMAIN-SUFFIX,audit.median.hu, reject
 DOMAIN-SUFFIX,audit.webinform.hu, reject
 DOMAIN-SUFFIX,augur.io, reject
+DOMAIN-SUFFIX,auto-bannertausch.de, reject
 DOMAIN-SUFFIX,automaticflock.com, reject
 DOMAIN-SUFFIX,avalonalbum.com, reject
 DOMAIN-SUFFIX,avazutracking.net, reject
@@ -1840,7 +1840,6 @@ DOMAIN-SUFFIX,free-counter.co.uk, reject
 DOMAIN-SUFFIX,freebanner.com, reject
 DOMAIN-SUFFIX,freecounterstat.com, reject
 DOMAIN-SUFFIX,freelogs.com, reject
-DOMAIN-SUFFIX,freeonlineusers.com, reject
 DOMAIN-SUFFIX,freepay.com, reject
 DOMAIN-SUFFIX,freeskreen.com, reject
 DOMAIN-SUFFIX,freestats.com, reject
@@ -2140,6 +2139,7 @@ DOMAIN-SUFFIX,js.iterable.com, reject
 DOMAIN-SUFFIX,js.users.51.la, reject
 DOMAIN-SUFFIX,jsecoin.com, reject
 DOMAIN-SUFFIX,jsrdn.com, reject
+DOMAIN-SUFFIX,jubilantglimmer.com, reject
 DOMAIN-SUFFIX,juicyads.com, reject
 DOMAIN-SUFFIX,juicyads.me, reject
 DOMAIN-SUFFIX,jumptap.com, reject
@@ -2845,7 +2845,6 @@ DOMAIN-SUFFIX,r3.visualwebsiteoptimizer.com, reject
 DOMAIN-SUFFIX,raac33.net, reject
 DOMAIN-SUFFIX,rabbitrifle.com, reject
 DOMAIN-SUFFIX,radar.cedexis.com, reject
-DOMAIN-SUFFIX,radarurl.com, reject
 DOMAIN-SUFFIX,radiate.com, reject
 DOMAIN-SUFFIX,radiateprose.com, reject
 DOMAIN-SUFFIX,rads.realadmin.pl, reject
@@ -3509,6 +3508,7 @@ DOMAIN-SUFFIX,trafic.ro, reject
 DOMAIN-SUFFIX,traildelsfars.com, reject
 DOMAIN-SUFFIX,traktrafficflow.com, reject
 DOMAIN-SUFFIX,tranquilcanyon.com, reject
+DOMAIN-SUFFIX,tranquilplume.com, reject
 DOMAIN-SUFFIX,tranquilside.com, reject
 DOMAIN-SUFFIX,travis.bosscasinos.com, reject
 DOMAIN-SUFFIX,traytouch.com, reject

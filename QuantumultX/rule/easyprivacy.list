@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402151519
+## ! Version: 202402161431
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Feb 2024 15:19 UTC
+## ! Last modified: 16 Feb 2024 14:31 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -45,6 +45,7 @@ DOMAIN-SUFFIX,alpha1trk.com, reject
 DOMAIN-SUFFIX,altopd.com, reject
 DOMAIN-SUFFIX,analys.live, reject
 DOMAIN-SUFFIX,analysis.fi, reject
+DOMAIN-SUFFIX,analyt.ir, reject
 DOMAIN-SUFFIX,anonstat.pw, reject
 DOMAIN-SUFFIX,apeagle.io, reject
 DOMAIN-SUFFIX,apenterprise.io, reject
@@ -901,6 +902,7 @@ DOMAIN-SUFFIX,divergentoffer.com, reject
 DOMAIN-SUFFIX,dk4ywix.com, reject
 DOMAIN-SUFFIX,dockdigestion.com, reject
 DOMAIN-SUFFIX,docksalmon.com, reject
+DOMAIN-SUFFIX,dogcollarfavourbluff.com, reject
 DOMAIN-SUFFIX,dogsshoes.com, reject
 DOMAIN-SUFFIX,dollardelta.com, reject
 DOMAIN-SUFFIX,dolldetail.com, reject
@@ -935,6 +937,7 @@ DOMAIN-SUFFIX,earthycopy.com, reject
 DOMAIN-SUFFIX,eatablesquare.com, reject
 DOMAIN-SUFFIX,echoinghaven.com, reject
 DOMAIN-SUFFIX,economicpizzas.com, reject
+DOMAIN-SUFFIX,educatedeggnog.com, reject
 DOMAIN-SUFFIX,efficaciouscactus.com, reject
 DOMAIN-SUFFIX,ejyymghi.com, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
@@ -1262,6 +1265,7 @@ DOMAIN-SUFFIX,jimny.pro, reject
 DOMAIN-SUFFIX,joblessdrum.com, reject
 DOMAIN-SUFFIX,joyoussurprise.com, reject
 DOMAIN-SUFFIX,jubilantcanyon.com, reject
+DOMAIN-SUFFIX,jubilantglimmer.com, reject
 DOMAIN-SUFFIX,justicejudo.com, reject
 DOMAIN-SUFFIX,k54nw.pw, reject
 DOMAIN-SUFFIX,kaputquill.com, reject
@@ -4140,9 +4144,9 @@ DOMAIN-SUFFIX,dc.banggood.com, reject
 DOMAIN-SUFFIX,dd.auspost.com.au, reject
 DOMAIN-SUFFIX,dd.nytimes.com, reject
 DOMAIN-SUFFIX,deliver.ptgncdn.com, reject
-DOMAIN-SUFFIX,df.infra.shopee.ph, reject
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au, reject
 DOMAIN-SUFFIX,dls-account.di.atlas.samsung.com, reject
+DOMAIN-SUFFIX,dot.nonolive.com, reject
 DOMAIN-SUFFIX,dp.shoprunner.com, reject
 DOMAIN-SUFFIX,dtag.breadfinancial.com, reject
 DOMAIN-SUFFIX,dumpster.cam4.com, reject
@@ -4505,6 +4509,7 @@ DOMAIN-SUFFIX,tracking.carsales.com.au, reject
 DOMAIN-SUFFIX,tracking.christianpost.com, reject
 DOMAIN-SUFFIX,tracking.digitalocean.com, reject
 DOMAIN-SUFFIX,tracking.engineering.cloud.seek.com.au, reject
+DOMAIN-SUFFIX,tracking.game8.co, reject
 DOMAIN-SUFFIX,tracking.hsn.com, reject
 DOMAIN-SUFFIX,tracking.shopstyle.co.uk, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject
@@ -4516,7 +4521,6 @@ DOMAIN-SUFFIX,trk.tirto.id, reject
 DOMAIN-SUFFIX,trx3.famousfix.com, reject
 DOMAIN-SUFFIX,ts.delfi.lt, reject
 DOMAIN-SUFFIX,ua.indianexpress.com, reject
-DOMAIN-SUFFIX,ubt.tracking.shopee.ph, reject
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com, reject
 DOMAIN-SUFFIX,um.contentstudio.io, reject
 DOMAIN-SUFFIX,umami.wakarimasen.moe, reject

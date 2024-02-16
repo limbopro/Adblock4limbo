@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 08 Feb 2024 09:22:05 GMT
+# last updated:   Fri, 16 Feb 2024 14:16:11 GMT
 # entries:        3782
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -759,7 +759,6 @@ DOMAIN-SUFFIX,adserver.tupolska.com
 DOMAIN-SUFFIX,adserver.twitpic.com
 DOMAIN-SUFFIX,adserver.virginmedia.com
 DOMAIN-SUFFIX,adserver.waggonerguide.com
-DOMAIN-SUFFIX,adserver.yahoo.com
 DOMAIN-SUFFIX,adserver01.de
 DOMAIN-SUFFIX,adserver1.mindshare.de
 DOMAIN-SUFFIX,adserver2.mindshare.de
@@ -1055,6 +1054,7 @@ DOMAIN-SUFFIX,audienceinsights.com
 DOMAIN-SUFFIX,audit.median.hu
 DOMAIN-SUFFIX,audit.webinform.hu
 DOMAIN-SUFFIX,augur.io
+DOMAIN-SUFFIX,auto-bannertausch.de
 DOMAIN-SUFFIX,automaticflock.com
 DOMAIN-SUFFIX,avalonalbum.com
 DOMAIN-SUFFIX,avazutracking.net
@@ -1840,7 +1840,6 @@ DOMAIN-SUFFIX,free-counter.co.uk
 DOMAIN-SUFFIX,freebanner.com
 DOMAIN-SUFFIX,freecounterstat.com
 DOMAIN-SUFFIX,freelogs.com
-DOMAIN-SUFFIX,freeonlineusers.com
 DOMAIN-SUFFIX,freepay.com
 DOMAIN-SUFFIX,freeskreen.com
 DOMAIN-SUFFIX,freestats.com
@@ -2140,6 +2139,7 @@ DOMAIN-SUFFIX,js.iterable.com
 DOMAIN-SUFFIX,js.users.51.la
 DOMAIN-SUFFIX,jsecoin.com
 DOMAIN-SUFFIX,jsrdn.com
+DOMAIN-SUFFIX,jubilantglimmer.com
 DOMAIN-SUFFIX,juicyads.com
 DOMAIN-SUFFIX,juicyads.me
 DOMAIN-SUFFIX,jumptap.com
@@ -2845,7 +2845,6 @@ DOMAIN-SUFFIX,r3.visualwebsiteoptimizer.com
 DOMAIN-SUFFIX,raac33.net
 DOMAIN-SUFFIX,rabbitrifle.com
 DOMAIN-SUFFIX,radar.cedexis.com
-DOMAIN-SUFFIX,radarurl.com
 DOMAIN-SUFFIX,radiate.com
 DOMAIN-SUFFIX,radiateprose.com
 DOMAIN-SUFFIX,rads.realadmin.pl
@@ -3509,6 +3508,7 @@ DOMAIN-SUFFIX,trafic.ro
 DOMAIN-SUFFIX,traildelsfars.com
 DOMAIN-SUFFIX,traktrafficflow.com
 DOMAIN-SUFFIX,tranquilcanyon.com
+DOMAIN-SUFFIX,tranquilplume.com
 DOMAIN-SUFFIX,tranquilside.com
 DOMAIN-SUFFIX,travis.bosscasinos.com
 DOMAIN-SUFFIX,traytouch.com

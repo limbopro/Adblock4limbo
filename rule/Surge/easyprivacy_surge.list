@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402151519
+## ! Version: 202402161431
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Feb 2024 15:19 UTC
+## ! Last modified: 16 Feb 2024 14:31 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -45,6 +45,7 @@ DOMAIN-SUFFIX,alpha1trk.com
 DOMAIN-SUFFIX,altopd.com
 DOMAIN-SUFFIX,analys.live
 DOMAIN-SUFFIX,analysis.fi
+DOMAIN-SUFFIX,analyt.ir
 DOMAIN-SUFFIX,anonstat.pw
 DOMAIN-SUFFIX,apeagle.io
 DOMAIN-SUFFIX,apenterprise.io
@@ -901,6 +902,7 @@ DOMAIN-SUFFIX,divergentoffer.com
 DOMAIN-SUFFIX,dk4ywix.com
 DOMAIN-SUFFIX,dockdigestion.com
 DOMAIN-SUFFIX,docksalmon.com
+DOMAIN-SUFFIX,dogcollarfavourbluff.com
 DOMAIN-SUFFIX,dogsshoes.com
 DOMAIN-SUFFIX,dollardelta.com
 DOMAIN-SUFFIX,dolldetail.com
@@ -935,6 +937,7 @@ DOMAIN-SUFFIX,earthycopy.com
 DOMAIN-SUFFIX,eatablesquare.com
 DOMAIN-SUFFIX,echoinghaven.com
 DOMAIN-SUFFIX,economicpizzas.com
+DOMAIN-SUFFIX,educatedeggnog.com
 DOMAIN-SUFFIX,efficaciouscactus.com
 DOMAIN-SUFFIX,ejyymghi.com
 DOMAIN-SUFFIX,elasticchange.com
@@ -1262,6 +1265,7 @@ DOMAIN-SUFFIX,jimny.pro
 DOMAIN-SUFFIX,joblessdrum.com
 DOMAIN-SUFFIX,joyoussurprise.com
 DOMAIN-SUFFIX,jubilantcanyon.com
+DOMAIN-SUFFIX,jubilantglimmer.com
 DOMAIN-SUFFIX,justicejudo.com
 DOMAIN-SUFFIX,k54nw.pw
 DOMAIN-SUFFIX,kaputquill.com
@@ -4140,9 +4144,9 @@ DOMAIN-SUFFIX,dc.banggood.com
 DOMAIN-SUFFIX,dd.auspost.com.au
 DOMAIN-SUFFIX,dd.nytimes.com
 DOMAIN-SUFFIX,deliver.ptgncdn.com
-DOMAIN-SUFFIX,df.infra.shopee.ph
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au
 DOMAIN-SUFFIX,dls-account.di.atlas.samsung.com
+DOMAIN-SUFFIX,dot.nonolive.com
 DOMAIN-SUFFIX,dp.shoprunner.com
 DOMAIN-SUFFIX,dtag.breadfinancial.com
 DOMAIN-SUFFIX,dumpster.cam4.com
@@ -4505,6 +4509,7 @@ DOMAIN-SUFFIX,tracking.carsales.com.au
 DOMAIN-SUFFIX,tracking.christianpost.com
 DOMAIN-SUFFIX,tracking.digitalocean.com
 DOMAIN-SUFFIX,tracking.engineering.cloud.seek.com.au
+DOMAIN-SUFFIX,tracking.game8.co
 DOMAIN-SUFFIX,tracking.hsn.com
 DOMAIN-SUFFIX,tracking.shopstyle.co.uk
 DOMAIN-SUFFIX,tracking.shopstyle.com
@@ -4516,7 +4521,6 @@ DOMAIN-SUFFIX,trk.tirto.id
 DOMAIN-SUFFIX,trx3.famousfix.com
 DOMAIN-SUFFIX,ts.delfi.lt
 DOMAIN-SUFFIX,ua.indianexpress.com
-DOMAIN-SUFFIX,ubt.tracking.shopee.ph
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com
 DOMAIN-SUFFIX,um.contentstudio.io
 DOMAIN-SUFFIX,umami.wakarimasen.moe

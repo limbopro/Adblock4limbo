@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402161431
+## ! Version: 202402171550
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Feb 2024 14:31 UTC
+## ! Last modified: 17 Feb 2024 15:50 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -38918,6 +38918,7 @@ DOMAIN-SUFFIX,d-log.tv-asahi.co.jp
 DOMAIN-SUFFIX,d.tv-asahi.co.jp
 DOMAIN-SUFFIX,eq-beacon.stream.co.jp
 DOMAIN-SUFFIX,eq-player-log.cdnext.stream.ne.jp
+DOMAIN-SUFFIX,gtm.diamond.jp
 DOMAIN-SUFFIX,j1.ax.xrea.com
 DOMAIN-SUFFIX,ln.ameba.jp
 DOMAIN-SUFFIX,log-lb.skyperfectv.co.jp

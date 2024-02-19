@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402181156
+## ! Version: 202402191544
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Feb 2024 11:56 UTC
+## ! Last modified: 19 Feb 2024 15:44 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3711,6 +3711,7 @@ DOMAIN-SUFFIX,pixel.barion.com, reject
 DOMAIN-SUFFIX,rum.marquardmedia.hu, reject
 DOMAIN-SUFFIX,videostat-new.index.hu, reject
 DOMAIN-SUFFIX,videostat.index.hu, reject
+DOMAIN-SUFFIX,tracker.oval.id, reject
 DOMAIN-SUFFIX,analytics.competitoor.com, reject
 DOMAIN-SUFFIX,analytics.eikondigital.it, reject
 DOMAIN-SUFFIX,analytics.gtechgroup.it, reject
@@ -4030,6 +4031,7 @@ DOMAIN-SUFFIX,analytics.brave.com, reject
 DOMAIN-SUFFIX,analytics.chase.com, reject
 DOMAIN-SUFFIX,analytics.cookiefirst.dev, reject
 DOMAIN-SUFFIX,analytics.designspiration.com, reject
+DOMAIN-SUFFIX,analytics.eip.telegraph.co.uk, reject
 DOMAIN-SUFFIX,analytics.faceitanalytics.com, reject
 DOMAIN-SUFFIX,analytics.footballdb.com, reject
 DOMAIN-SUFFIX,analytics.freemake.com, reject
@@ -38981,6 +38983,7 @@ DOMAIN-SUFFIX,stats.tunt.lv, reject
 DOMAIN-SUFFIX,click.vgnett.no, reject
 DOMAIN-SUFFIX,data.nrk.no, reject
 DOMAIN-SUFFIX,stats.proff.no, reject
+DOMAIN-SUFFIX,stm.komplett.no, reject
 DOMAIN-SUFFIX,analytics.gazeta.pl, reject
 DOMAIN-SUFFIX,collect.state.centrum24.pl, reject
 DOMAIN-SUFFIX,entryhit.wp.pl, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402181156
+## ! Version: 202402191544
 ## ! Title: EasyPrivacy
-## ! Last modified: 18 Feb 2024 11:56 UTC
+## ! Last modified: 19 Feb 2024 15:44 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3711,6 +3711,7 @@ DOMAIN-SUFFIX,pixel.barion.com
 DOMAIN-SUFFIX,rum.marquardmedia.hu
 DOMAIN-SUFFIX,videostat-new.index.hu
 DOMAIN-SUFFIX,videostat.index.hu
+DOMAIN-SUFFIX,tracker.oval.id
 DOMAIN-SUFFIX,analytics.competitoor.com
 DOMAIN-SUFFIX,analytics.eikondigital.it
 DOMAIN-SUFFIX,analytics.gtechgroup.it
@@ -4030,6 +4031,7 @@ DOMAIN-SUFFIX,analytics.brave.com
 DOMAIN-SUFFIX,analytics.chase.com
 DOMAIN-SUFFIX,analytics.cookiefirst.dev
 DOMAIN-SUFFIX,analytics.designspiration.com
+DOMAIN-SUFFIX,analytics.eip.telegraph.co.uk
 DOMAIN-SUFFIX,analytics.faceitanalytics.com
 DOMAIN-SUFFIX,analytics.footballdb.com
 DOMAIN-SUFFIX,analytics.freemake.com
@@ -38981,6 +38983,7 @@ DOMAIN-SUFFIX,stats.tunt.lv
 DOMAIN-SUFFIX,click.vgnett.no
 DOMAIN-SUFFIX,data.nrk.no
 DOMAIN-SUFFIX,stats.proff.no
+DOMAIN-SUFFIX,stm.komplett.no
 DOMAIN-SUFFIX,analytics.gazeta.pl
 DOMAIN-SUFFIX,collect.state.centrum24.pl
 DOMAIN-SUFFIX,entryhit.wp.pl

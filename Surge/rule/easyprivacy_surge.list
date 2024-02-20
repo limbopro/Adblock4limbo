@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402191544
+## ! Version: 202402201547
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Feb 2024 15:44 UTC
+## ! Last modified: 20 Feb 2024 15:47 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -307,6 +307,7 @@ DOMAIN-SUFFIX,stack-sonar.com
 DOMAIN-SUFFIX,stat.ovh
 DOMAIN-SUFFIX,statisticplatform.com
 DOMAIN-SUFFIX,statisticsplatform.com
+DOMAIN-SUFFIX,stats.rip
 DOMAIN-SUFFIX,summerhamster.com
 DOMAIN-SUFFIX,superpointlesshamsters.com
 DOMAIN-SUFFIX,t13.io
@@ -3711,7 +3712,6 @@ DOMAIN-SUFFIX,pixel.barion.com
 DOMAIN-SUFFIX,rum.marquardmedia.hu
 DOMAIN-SUFFIX,videostat-new.index.hu
 DOMAIN-SUFFIX,videostat.index.hu
-DOMAIN-SUFFIX,tracker.oval.id
 DOMAIN-SUFFIX,analytics.competitoor.com
 DOMAIN-SUFFIX,analytics.eikondigital.it
 DOMAIN-SUFFIX,analytics.gtechgroup.it
@@ -4520,6 +4520,7 @@ DOMAIN-SUFFIX,tracking.unrealengine.com
 DOMAIN-SUFFIX,trackr.vivenu.com
 DOMAIN-SUFFIX,treatment.grammarly.com
 DOMAIN-SUFFIX,tredir.go.com
+DOMAIN-SUFFIX,trk.decido.io
 DOMAIN-SUFFIX,trk.tirto.id
 DOMAIN-SUFFIX,trx3.famousfix.com
 DOMAIN-SUFFIX,ts.delfi.lt
@@ -38942,6 +38943,7 @@ DOMAIN-SUFFIX,sy.amebame.com
 DOMAIN-SUFFIX,sy.ameblo.jp
 DOMAIN-SUFFIX,t.syosetu.org
 DOMAIN-SUFFIX,track.buyma.com
+DOMAIN-SUFFIX,tracking.ai.rakuten.co.jp
 DOMAIN-SUFFIX,tracking.game8.jp
 DOMAIN-SUFFIX,tracking.gnavi.co.jp
 DOMAIN-SUFFIX,view.fujitv.co.jp

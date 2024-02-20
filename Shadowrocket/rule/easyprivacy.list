@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402191544
+## ! Version: 202402201547
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Feb 2024 15:44 UTC
+## ! Last modified: 20 Feb 2024 15:47 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -307,6 +307,7 @@ DOMAIN-SUFFIX,stack-sonar.com, reject
 DOMAIN-SUFFIX,stat.ovh, reject
 DOMAIN-SUFFIX,statisticplatform.com, reject
 DOMAIN-SUFFIX,statisticsplatform.com, reject
+DOMAIN-SUFFIX,stats.rip, reject
 DOMAIN-SUFFIX,summerhamster.com, reject
 DOMAIN-SUFFIX,superpointlesshamsters.com, reject
 DOMAIN-SUFFIX,t13.io, reject
@@ -3711,7 +3712,6 @@ DOMAIN-SUFFIX,pixel.barion.com, reject
 DOMAIN-SUFFIX,rum.marquardmedia.hu, reject
 DOMAIN-SUFFIX,videostat-new.index.hu, reject
 DOMAIN-SUFFIX,videostat.index.hu, reject
-DOMAIN-SUFFIX,tracker.oval.id, reject
 DOMAIN-SUFFIX,analytics.competitoor.com, reject
 DOMAIN-SUFFIX,analytics.eikondigital.it, reject
 DOMAIN-SUFFIX,analytics.gtechgroup.it, reject
@@ -4520,6 +4520,7 @@ DOMAIN-SUFFIX,tracking.unrealengine.com, reject
 DOMAIN-SUFFIX,trackr.vivenu.com, reject
 DOMAIN-SUFFIX,treatment.grammarly.com, reject
 DOMAIN-SUFFIX,tredir.go.com, reject
+DOMAIN-SUFFIX,trk.decido.io, reject
 DOMAIN-SUFFIX,trk.tirto.id, reject
 DOMAIN-SUFFIX,trx3.famousfix.com, reject
 DOMAIN-SUFFIX,ts.delfi.lt, reject
@@ -38942,6 +38943,7 @@ DOMAIN-SUFFIX,sy.amebame.com, reject
 DOMAIN-SUFFIX,sy.ameblo.jp, reject
 DOMAIN-SUFFIX,t.syosetu.org, reject
 DOMAIN-SUFFIX,track.buyma.com, reject
+DOMAIN-SUFFIX,tracking.ai.rakuten.co.jp, reject
 DOMAIN-SUFFIX,tracking.game8.jp, reject
 DOMAIN-SUFFIX,tracking.gnavi.co.jp, reject
 DOMAIN-SUFFIX,view.fujitv.co.jp, reject

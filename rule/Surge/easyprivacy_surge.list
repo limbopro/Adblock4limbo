@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402201547
+## ! Version: 202402211544
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Feb 2024 15:47 UTC
+## ! Last modified: 21 Feb 2024 15:44 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -203,6 +203,7 @@ DOMAIN-SUFFIX,jubbie.de
 DOMAIN-SUFFIX,k5a.io
 DOMAIN-SUFFIX,krxd.net
 DOMAIN-SUFFIX,kspotson.de
+DOMAIN-SUFFIX,ldgnrtn.com
 DOMAIN-SUFFIX,ldnlyap.com
 DOMAIN-SUFFIX,leadhit.io
 DOMAIN-SUFFIX,liveyield.com
@@ -1412,6 +1413,7 @@ DOMAIN-SUFFIX,naivestatement.com
 DOMAIN-SUFFIX,nappyattack.com
 DOMAIN-SUFFIX,nappyneck.com
 DOMAIN-SUFFIX,neatshade.com
+DOMAIN-SUFFIX,nebulacrescent.com
 DOMAIN-SUFFIX,nebulousripple.com
 DOMAIN-SUFFIX,necessarywax.com
 DOMAIN-SUFFIX,needlessnorth.com
@@ -3980,6 +3982,7 @@ DOMAIN-SUFFIX,tracking.smartmeapp.com
 DOMAIN-SUFFIX,webpixel.smartmeapp.com
 DOMAIN-SUFFIX,collector.schibsted.io
 DOMAIN-SUFFIX,evt-api.ntm.eu
+DOMAIN-SUFFIX,impression-tracker-service-5eimuebuhq-lz.a.run.app
 DOMAIN-SUFFIX,pixel.smartmedia.tj
 DOMAIN-SUFFIX,sal.isanook.com
 DOMAIN-SUFFIX,stat.matichon.co.th
@@ -37189,7 +37192,6 @@ DOMAIN-SUFFIX,link.nextaveapp.com
 DOMAIN-SUFFIX,link.nextlevelsports.com
 DOMAIN-SUFFIX,link.nilclub.com
 DOMAIN-SUFFIX,link.notifications.busuu.app
-DOMAIN-SUFFIX,link.nubank.com.br
 DOMAIN-SUFFIX,link.nutty.chat
 DOMAIN-SUFFIX,link.offers.kodakmoments.com
 DOMAIN-SUFFIX,link.olympya.com

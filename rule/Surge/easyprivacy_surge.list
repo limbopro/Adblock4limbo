@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402211544
+## ! Version: 202402221533
 ## ! Title: EasyPrivacy
-## ! Last modified: 21 Feb 2024 15:44 UTC
+## ! Last modified: 22 Feb 2024 15:33 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -280,6 +280,7 @@ DOMAIN-SUFFIX,raac33.net
 DOMAIN-SUFFIX,rapidpanda.io
 DOMAIN-SUFFIX,rapidzebra.io
 DOMAIN-SUFFIX,realtimely.io
+DOMAIN-SUFFIX,reportic.app
 DOMAIN-SUFFIX,rezync.com
 DOMAIN-SUFFIX,rfpx1.com
 DOMAIN-SUFFIX,rkdms.com
@@ -3352,6 +3353,7 @@ DOMAIN-SUFFIX,x.weather.com
 DOMAIN-SUFFIX,xp2023-pix.s3.amazonaws.com
 DOMAIN-SUFFIX,adsdk.yandex.ru
 DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com
+DOMAIN-SUFFIX,analytics.b2.ai
 DOMAIN-SUFFIX,analytics.mobile.yandex.net
 DOMAIN-SUFFIX,analytics.samsungknox.com
 DOMAIN-SUFFIX,click.oneplus.cn

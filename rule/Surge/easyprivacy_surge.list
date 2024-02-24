@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402231530
+## ! Version: 202402241159
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Feb 2024 15:30 UTC
+## ! Last modified: 24 Feb 2024 11:59 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2796,7 +2796,6 @@ DOMAIN-SUFFIX,log.mediacategory.com
 DOMAIN-SUFFIX,log.nordot.jp
 DOMAIN-SUFFIX,log.olark.com
 DOMAIN-SUFFIX,log.outbrain.com
-DOMAIN-SUFFIX,log.outbrainimg.com
 DOMAIN-SUFFIX,log.pinterest.com
 DOMAIN-SUFFIX,log.reformal.ru
 DOMAIN-SUFFIX,log.seekda.com
@@ -2881,6 +2880,7 @@ DOMAIN-SUFFIX,page-events-ustats.udemy.com
 DOMAIN-SUFFIX,pages-stats.rbl.ms
 DOMAIN-SUFFIX,pagesense-collect.zoho.com
 DOMAIN-SUFFIX,pagesocket.glam.com
+DOMAIN-SUFFIX,pbjs-stream.bydata.com
 DOMAIN-SUFFIX,pegasus.unifygroup.com
 DOMAIN-SUFFIX,perf-events.cloud.unity3d.com
 DOMAIN-SUFFIX,perf.hsforms.com
@@ -3322,6 +3322,7 @@ DOMAIN-SUFFIX,v.shopify.com
 DOMAIN-SUFFIX,vdrn.redplum.com
 DOMAIN-SUFFIX,vercel-vitals.axiom.co
 DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com
+DOMAIN-SUFFIX,video-analytics-api.cloudinary.com
 DOMAIN-SUFFIX,videoevents.outbrain.com
 DOMAIN-SUFFIX,vortex.data.microsoft.com
 DOMAIN-SUFFIX,vst.sibnet.ru

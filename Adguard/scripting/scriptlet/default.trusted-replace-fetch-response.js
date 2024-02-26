@@ -42,7 +42,7 @@ const uBOL_trustedReplaceFetchResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","player?key="],["/\\\"adSlots.*?\\}\\]\\}\\}\\],/","","player?key="]];
+const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","player?"],["/\\\"adSlots.*?\\}\\]\\}\\}\\],/","","player?"]];
 
 const hostnamesMap = new Map([["www.youtube.com",[0,1]]]);
 

@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["gvnvh18.com",1],["sexdiaryx.pro",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["tailieumoi.vn",4],["vndoc.com",5],["xoivo2.online",[6,7]],["tructiepdabong5.co",[6,7]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["gvnvh18.com",1],["sexdiaryx.tv",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["tailieumoi.vn",4],["vndoc.com",5],["xoivo2.online",[6,7]],["tructiepdabong5.co",[6,7]],["vaoroi365.com",[6,7]]]);
 
 const entitiesMap = new Map([]);
 

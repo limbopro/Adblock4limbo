@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["is-hidden"],["disabled",".get-link"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"]];
 
-const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["sinonimos.de",2],["tiktokcounter.net",2],["freebrightsoft.com",3],["xda-developers.com",4],["paid4.link",5],["go.gets4link.com",6],["quizlet.com",[7,8]],["funker530.com",9],["av01.tv",10],["so1.asia",11],["top1iq.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15]]);
+const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["sinonimos.de",2],["tiktokcounter.net",2],["tiktokrealtime.com",2],["freebrightsoft.com",3],["xda-developers.com",4],["paid4.link",5],["go.gets4link.com",6],["quizlet.com",[7,8]],["funker530.com",9],["av01.tv",10],["so1.asia",11],["top1iq.com",12],["artribune.com",13],["bestfonts.pro",14],["falatron.com",15]]);
 
 const entitiesMap = new Map([]);
 

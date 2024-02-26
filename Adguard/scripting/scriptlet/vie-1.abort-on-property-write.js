@@ -42,7 +42,7 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["AdtimaBaomoi"],["DoodPop"]];
+const argsList = [["AdtimaRender"],["DoodPop"]];
 
 const hostnamesMap = new Map([["baomoi.com",0],["dood.pm",1]]);
 
@@ -58,7 +58,7 @@ function abortOnPropertyWrite(
     if ( typeof prop !== 'string' ) { return; }
     if ( prop === '' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-on-property-read', prop);
+    const logPrefix = safe.makeLogPrefix('abort-on-property-write', prop);
     const exceptionToken = getExceptionToken();
     let owner = window;
     for (;;) {

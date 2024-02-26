@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","landingUrl"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["wheel"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","landingUrl"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["scroll","/Creepy/"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"]];
 
-const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["1progs.com",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["overclockers.ru",17],["gazeta.ru",18],["m.lenta.ru",19],["www.vesti.ru",20],["lenta.ru",21],["aida64.com.ua",22],["aida64russia.com",22]]);
+const hostnamesMap = new Map([["7days.ru",0],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["1progs.com",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["overclockers.ru",17],["gazeta.ru",18],["m.lenta.ru",19],["www.vesti.ru",20],["lenta.ru",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -57,23 +57,44 @@ function addEventListenerDefuser(
     pattern = ''
 ) {
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('prevent-addEventListener', type, pattern);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    const logPrefix = safe.makeLogPrefix('prevent-addEventListener', type, pattern);
     const reType = safe.patternToRegex(type, undefined, true);
     const rePattern = safe.patternToRegex(pattern);
     const debug = shouldDebug(extraArgs);
     const targetSelector = extraArgs.elements || undefined;
-    const shouldPrevent = (thisArg, type, handler) => {
-        if ( targetSelector !== undefined ) {
-            const elems = Array.from(document.querySelectorAll(targetSelector));
-            if ( elems.includes(thisArg) === false ) { return false; }
+    const elementMatches = elem => {
+        if ( elem && elem.matches && elem.matches(targetSelector) ) { return true; }
+        const elems = Array.from(document.querySelectorAll(targetSelector));
+        return elems.includes(elem);
+    };
+    const elementDetails = elem => {
+        if ( elem instanceof Window ) { return 'window'; }
+        if ( elem instanceof Document ) { return 'document'; }
+        if ( elem instanceof Element === false ) { return '?'; }
+        const parts = [];
+        if ( elem.id !== '' ) { parts.push(`#${CSS.escape(elem.id)}`); }
+        for ( let i = 0; i < elem.classList.length; i++ ) {
+            parts.push(`.${CSS.escape(elem.classList.item(i))}`);
         }
+        for ( let i = 0; i < elem.attributes.length; i++ ) {
+            const attr = elem.attributes.item(i);
+            if ( attr.name === 'id' ) { continue; }
+            if ( attr.name === 'class' ) { continue; }
+            parts.push(`[${CSS.escape(attr.name)}="${attr.value}"]`);
+        }
+        return parts.join('');
+    };
+    const shouldPrevent = (thisArg, type, handler) => {
         const matchesType = safe.RegExp_test.call(reType, type);
         const matchesHandler = safe.RegExp_test.call(rePattern, handler);
         const matchesEither = matchesType || matchesHandler;
         const matchesBoth = matchesType && matchesHandler;
         if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
             debugger; // jshint ignore:line
+        }
+        if ( matchesBoth && targetSelector !== undefined ) {
+            if ( elementMatches(thisArg) === false ) { return false; }
         }
         return matchesBoth;
     };
@@ -83,15 +104,21 @@ function addEventListenerDefuser(
                 let t, h;
                 try {
                     t = String(args[0]);
-                    h = args[1] instanceof Function
-                        ? String(safe.Function_toString(args[1]))
-                        : String(args[1]);
+                    if ( typeof args[1] === 'function' ) {
+                        h = String(safe.Function_toString(args[1]));
+                    } else if ( typeof args[1] === 'object' && args[1] !== null ) {
+                        if ( typeof args[1].handleEvent === 'function' ) {
+                            h = String(safe.Function_toString(args[1].handleEvent));
+                        }
+                    } else {
+                        h = String(args[1]);
+                    }
                 } catch(ex) {
                 }
                 if ( type === '' && pattern === '' ) {
-                    safe.uboLog(logPrefix, `Called: ${t}\n${h}`);
+                    safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
                 } else if ( shouldPrevent(thisArg, t, h) ) {
-                    return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}`);
+                    return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
                 }
                 return Reflect.apply(target, thisArg, args);
             },

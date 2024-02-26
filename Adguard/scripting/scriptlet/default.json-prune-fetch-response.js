@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["avails"],["response.ads"],["plugins.adService"]];
+const argsList = [["properties.componentConfigs.slideshowConfigs.interstitialNativeAds"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["ads.[].imageUrl"],["avails"],["response.ads"],["plugins.adService"]];
 
-const hostnamesMap = new Map([["hulu.com",[0,1]],["nbc.com",2],["player.pop.co.uk",3],["player.popfun.co.uk",3],["iprima.cz",4]]);
+const hostnamesMap = new Map([["msn.com",0],["hulu.com",[1,2]],["misskey.io",3],["misskey.oga.ninja",3],["mk.yopo.work",3],["sushi.ski",3],["trpger.us",3],["warpday.net",3],["zadankai.club",3],["nbc.com",4],["player.pop.co.uk",5],["player.popfun.co.uk",5],["iprima.cz",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -65,10 +65,10 @@ function jsonPruneFetchResponseFn(
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     const propNeedles = parsePropertiesToMatch(extraArgs.propsToMatch, 'url');
     const stackNeedle = safe.initPattern(extraArgs.stackToMatch || '', { canNegate: true });
+    const logall = rawPrunePaths === '';
     const applyHandler = function(target, thisArg, args) {
         const fetchPromise = Reflect.apply(target, thisArg, args);
-        if ( rawPrunePaths === '' ) { return fetchPromise; }
-        let outcome = 'match';
+        let outcome = logall ? 'nomatch' : 'match';
         if ( propNeedles.size !== 0 ) {
             const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
             if ( objs[0] instanceof Request ) {
@@ -85,14 +85,18 @@ function jsonPruneFetchResponseFn(
                 outcome = 'nomatch';
             }
         }
-        if ( outcome === 'nomatch' ) { return fetchPromise; }
-        if ( safe.logLevel > 1 ) {
+        if ( logall === false && outcome === 'nomatch' ) { return fetchPromise; }
+        if ( safe.logLevel > 1 && outcome !== 'nomatch' && propNeedles.size !== 0 ) {
             safe.uboLog(logPrefix, `Matched optional "propsToMatch"\n${extraArgs.propsToMatch}`);
         }
         return fetchPromise.then(responseBefore => {
             const response = responseBefore.clone();
             return response.json().then(objBefore => {
                 if ( typeof objBefore !== 'object' ) { return responseBefore; }
+                if ( logall ) {
+                    safe.uboLog(logPrefix, safe.JSON_stringify(objBefore, null, 2));
+                    return responseBefore;
+                }
                 const objAfter = objectPruneFn(
                     objBefore,
                     rawPrunePaths,

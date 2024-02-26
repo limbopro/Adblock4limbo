@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["popup_goods"],["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
+const argsList = [["height && 1 <= height && height <= 20"],["popup_goods"],["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
 
-const hostnamesMap = new Map([["10000recipe.com",0],["moneytoring.co.kr",1],["postincome.co.kr",1],["itinformation.kr",1],["digitstar77.com",1],["filetender.com",2],["zuzunza.com",3],["klauncher.kr",3],["iphonedev.co.kr",3],["tistory.com",3],["sysnet.pe.kr",4],["genshin.gamedot.org",5],["stockinfo7.com",6],["lover924.net",7],["lover925.net",7],["lover926.net",7],["lover927.net",7],["lover928.net",7],["lover929.net",7],["lover930.net",7],["lover931.net",7],["lover932.net",7],["lover933.net",7]]);
+const hostnamesMap = new Map([["m.humoruniv.com",0],["10000recipe.com",1],["moneytoring.co.kr",2],["postincome.co.kr",2],["itinformation.kr",2],["digitstar77.com",2],["filetender.com",3],["zuzunza.com",4],["klauncher.kr",4],["iphonedev.co.kr",4],["tistory.com",4],["sysnet.pe.kr",5],["genshin.gamedot.org",6],["stockinfo7.com",7],["lover924.net",8],["lover925.net",8],["lover926.net",8],["lover927.net",8],["lover928.net",8],["lover929.net",8],["lover930.net",8],["lover931.net",8],["lover932.net",8],["lover933.net",8]]);
 
 const entitiesMap = new Map([]);
 

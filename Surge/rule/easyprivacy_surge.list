@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402251422
+## ! Version: 202402261503
 ## ! Title: EasyPrivacy
-## ! Last modified: 25 Feb 2024 14:22 UTC
+## ! Last modified: 26 Feb 2024 15:03 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -330,6 +330,7 @@ DOMAIN-SUFFIX,tracking24.net
 DOMAIN-SUFFIX,transmapp.com
 DOMAIN-SUFFIX,triplestat.online
 DOMAIN-SUFFIX,trk-maiorum.com
+DOMAIN-SUFFIX,trkapi.impact.com
 DOMAIN-SUFFIX,trkbc.com
 DOMAIN-SUFFIX,trkn.us
 DOMAIN-SUFFIX,tru.am
@@ -1792,6 +1793,7 @@ DOMAIN-SUFFIX,sheltercellar.com
 DOMAIN-SUFFIX,shesubscriptions.com
 DOMAIN-SUFFIX,shinesavage.com
 DOMAIN-SUFFIX,shinestuart.com
+DOMAIN-SUFFIX,shinypond.com
 DOMAIN-SUFFIX,shirtsidewalk.com
 DOMAIN-SUFFIX,shiveringspot.com
 DOMAIN-SUFFIX,shiverscissors.com
@@ -3354,7 +3356,6 @@ DOMAIN-SUFFIX,x.weather.com
 DOMAIN-SUFFIX,xp2023-pix.s3.amazonaws.com
 DOMAIN-SUFFIX,adsdk.yandex.ru
 DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com
-DOMAIN-SUFFIX,analytics.b2.ai
 DOMAIN-SUFFIX,analytics.mobile.yandex.net
 DOMAIN-SUFFIX,analytics.samsungknox.com
 DOMAIN-SUFFIX,click.oneplus.cn
@@ -4199,6 +4200,7 @@ DOMAIN-SUFFIX,events2.www.edenfantasys.com
 DOMAIN-SUFFIX,evs.icy-lake.kickstarter.com
 DOMAIN-SUFFIX,exr-mms.expertreviews.co.uk
 DOMAIN-SUFFIX,f362.nola.com
+DOMAIN-SUFFIX,faro-collector-prod-*.grafana.net
 DOMAIN-SUFFIX,fathom.app.silverbeak.com
 DOMAIN-SUFFIX,fathom.tdvm.net
 DOMAIN-SUFFIX,fbo-statistics-collector-tc.is.flippingbook.com

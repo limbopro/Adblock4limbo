@@ -42,9 +42,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".s--","","0.02"],["/timerAdCountdown|_0x/","","0.02"],["timerAdCountdown","","0.02"],["timerAdCountdownCount","","0.02"]];
+const argsList = [[".s--","","0.02"],["timerAdCountdown","","0.02"],["timerAdCountdownCount","","0.02"]];
 
-const hostnamesMap = new Map([["tangdoucdn.com",0],["mp4er.cc",1],["mp4er.com",1],["bde4.com",2],["nfmovies.com",3]]);
+const hostnamesMap = new Map([["tangdoucdn.com",0],["bde4.com",1],["nfmovies.com",2]]);
 
 const entitiesMap = new Map([]);
 

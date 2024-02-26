@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[".addClass('getir')"],["flipHover"]];
 
-const hostnamesMap = new Map([["fox.com.tr",0],["ensonhaber.com",1]]);
+const hostnamesMap = new Map([["nowtv.com.tr",0],["ensonhaber.com",1]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["data.intrack"],["trace data.vast_url data.ads"],["allRow1 allRow2 recommendeds award entertainment finance shop travel productivity education download *.link *.image"],["result.commercialUrl result.watermark"],["result.adsText result.adsLink"],["data","data.vast data.content data.ad_id"],["body.productStatus"]];
+const argsList = [["data.intrack"],["trace data.vast_url data.ads"],["result.commercialUrl result.watermark"],["result.adsText result.adsLink"],["data","data.vast data.content data.ad_id"],["body.productStatus"]];
 
-const hostnamesMap = new Map([["digikala.com",0],["filmnet.ir",1],["my.irancell.ir",2],["play.namava.ir",3],["skyroom.online",4],["tmk.ir",5],["player.telewebion.com",6]]);
+const hostnamesMap = new Map([["digikala.com",0],["filmnet.ir",1],["play.namava.ir",2],["skyroom.online",3],["tmk.ir",4],["player.telewebion.com",5]]);
 
 const entitiesMap = new Map([]);
 

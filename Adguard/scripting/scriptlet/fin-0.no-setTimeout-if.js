@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["f.parentNode.removeChild(f)","100"]];
 
-const hostnamesMap = new Map([["afterdawn.com",0],["download.fi",0],["high.fi",0],["muropaketti.com",0]]);
+const hostnamesMap = new Map([["afterdawn.com",0],["dawn.fi",0],["download.fi",0],["high.fi",0],["muropaketti.com",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"], [src=\"/downloada.png\"])","visibility","visible"]];
+const argsList = [["#MainContainer > [id]:has(> [id^=\"btIn\"] > #bannerTop), #MainContainer > [id^=\"bannerTopSpacer\"], MainContainer + [id]:has(> #bannerSide)","overflow","visible"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"]];
 
-const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["download.megaup.net",1]]);
+const hostnamesMap = new Map([["puzzle-loop.com",0],["puzzle-words.com",0],["puzzle-chess.com",0],["puzzle-thermometers.com",0],["puzzle-norinori.com",0],["puzzle-minesweeper.com",0],["puzzle-slant.com",0],["puzzle-lits.com",0],["puzzle-galaxies.com",0],["puzzle-tents.com",0],["puzzle-battleships.com",0],["puzzle-pipes.com",0],["puzzle-hitori.com",0],["puzzle-heyawake.com",0],["puzzle-shingoki.com",0],["puzzle-masyu.com",0],["puzzle-stitches.com",0],["puzzle-aquarium.com",0],["puzzle-tapa.com",0],["puzzle-star-battle.com",0],["puzzle-kakurasu.com",0],["puzzle-skyscrapers.com",0],["puzzle-futoshiki.com",0],["puzzle-shakashaka.com",0],["puzzle-kakuro.com",0],["puzzle-jigsaw-sudoku.com",0],["puzzle-killer-sudoku.com",0],["puzzle-binairo.com",0],["puzzle-nonograms.com",0],["puzzle-sudoku.com",0],["puzzle-light-up.com",0],["puzzle-bridges.com",0],["puzzle-shikaku.com",0],["puzzle-nurikabe.com",0],["puzzle-dominosa.com",0],["techcyan.com",1],["kiktu.com",1],["upshrink.com",1],["trangchu.news",1],["banaraswap.in",1],["download.megaup.net",2]]);
 
 const entitiesMap = new Map([]);
 

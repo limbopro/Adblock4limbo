@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
+const argsList = [["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
 
-const hostnamesMap = new Map([["tourbobit.com",0],["tourbobit.net",0],["turbobeet.net",0],["turbobi.pw",0],["turbobif.com",0],["turbobit.net",0],["turbobita.net",0],["turbobits.cc",0],["turboobit.com",0],["easybib.com",1]]);
+const hostnamesMap = new Map([["my.irancell.ir",0],["tourbobit.com",1],["tourbobit.net",1],["turbobeet.net",1],["turbobi.pw",1],["turbobif.com",1],["turbobit.net",1],["turbobita.net",1],["turbobits.cc",1],["turboobit.com",1],["easybib.com",2]]);
 
 const entitiesMap = new Map([]);
 

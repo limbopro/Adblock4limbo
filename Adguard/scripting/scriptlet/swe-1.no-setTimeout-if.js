@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["n.modal"],["#triggerModal"],["ad"],["#top-banner-container"],["gFail"],["TAKEOVER"]];
+const argsList = [["n.modal"],["#triggerModal"],["ad"],["#top-banner-container"],["TAKEOVER"]];
 
-const hostnamesMap = new Map([["accentmagasin.se",0],["di.se",1],["etunawebben.se",2],["flashback.org",3],["idg.se",4],["www.aftonbladet.se",5]]);
+const hostnamesMap = new Map([["accentmagasin.se",0],["di.se",1],["etunawebben.se",2],["flashback.org",3],["www.aftonbladet.se",4]]);
 
 const entitiesMap = new Map([]);
 

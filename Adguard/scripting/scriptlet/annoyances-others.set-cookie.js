@@ -42,11 +42,11 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["minitvClose","1"],["aiia","true"],["_hlm_skipCounter","15"],["playvdclose","1"],["promoBannerShow","0"],["adcookie","true"],["consents_promo_dialog","1"],["promo_sidebar_dismissed","1"],["Upgrade","0"],["list-banner","true"],["NPM_POPUP","Y"],["hide_mobile_international_delivery_popup","true"],["overlay","true"]];
+const argsList = [["minitvClose","1"],["aiia","true"],["_hlm_skipCounter","15"],["playvdclose","1"],["rider-banner-hidden","1"],["promoBannerShow","0"],["adcookie","true"],["consents_promo_dialog","1"],["promo_sidebar_dismissed","1"],["Upgrade","0"],["list-banner","true"],["NPM_POPUP","Y"],["hide_mobile_international_delivery_popup","true"],["overlay","true"]];
 
-const hostnamesMap = new Map([["timesofindia.indiatimes.com",[0,3]],["csoonline.com",1],["livemint.com",2],["mumbaimirror.indiatimes.com",3],["dmarket.com",4],["fanyi.youdao.com",5],["inoreader.com",[6,7]],["watchsomuch.to",8],["mintmanga.live",9],["vibe.naver.com",10],["prom.ua",11],["vipr.im",12]]);
+const hostnamesMap = new Map([["timesofindia.indiatimes.com",[0,3]],["csoonline.com",1],["livemint.com",2],["mumbaimirror.indiatimes.com",3],["dmarket.com",5],["fanyi.youdao.com",6],["inoreader.com",[7,8]],["watchsomuch.to",9],["mintmanga.live",10],["vibe.naver.com",11],["prom.ua",12],["vipr.im",13]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["foodora",4]]);
 
 const exceptionsMap = new Map([]);
 
@@ -90,7 +90,7 @@ function setCookie(
         value,
         '',
         path,
-        safeSelf().getExtraArgs(Array.from(arguments), 3)
+        safe.getExtraArgs(Array.from(arguments), 3)
     );
 
     if ( done ) {

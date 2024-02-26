@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["seatbid rtb"],["rtb"],["rtb direct"],["*.blockId"],["ads"],["baits css direct *.slot"],["[].slot"],["result.body.direct"],["Blocks"],["auxiliaryUi.messageRenderers.upsellDialogRenderer"]];
 
-const hostnamesMap = new Map([["turbopages.org",3],["auto.ru",4],["otvet.mail.ru",5],["e.mail.ru",6],["octavius.mail.ru",6],["ok.ru",7],["championat.com",8],["youtube.com",9]]);
+const hostnamesMap = new Map([["turbopages.org",3],["auto.ru",4],["otvet.mail.ru",5],["e.mail.ru",6],["octavius.mail.ru",6],["ok.ru",7],["championat.com",8],["m.youtube.com",9],["music.youtube.com",9],["tv.youtube.com",9],["www.youtube.com",9],["youtubekids.com",9]]);
 
 const entitiesMap = new Map([["mail.yandex",0],["tv.yandex",1],["realty.ya",2]]);
 

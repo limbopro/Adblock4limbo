@@ -44,9 +44,9 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["adregain_wall"],["rInt"],["openRandomUrl"],["popURL"],["onPopUnderLoaded"],["window.onload"],["yeniSekmeAdresi"],["adx"]];
 
-const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["yeppuu.com",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["dizilost.com",[4,5]],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["4kfilmizlesene.xyz",7]]);
+const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["yeppuu.com",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["dizilost.com",[4,5]],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["4kfilmizlesene",7]]);
 
 const exceptionsMap = new Map([]);
 
@@ -58,7 +58,7 @@ function abortOnPropertyWrite(
     if ( typeof prop !== 'string' ) { return; }
     if ( prop === '' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-on-property-read', prop);
+    const logPrefix = safe.makeLogPrefix('abort-on-property-write', prop);
     const exceptionToken = getExceptionToken();
     let owner = window;
     for (;;) {

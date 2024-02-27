@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202402261503
+## ! Version: 202402271037
 ## ! Title: EasyList
-## ! Last modified: 26 Feb 2024 15:03 UTC
+## ! Last modified: 27 Feb 2024 10:37 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -15009,6 +15009,7 @@ DOMAIN-SUFFIX,iebsmqevw.com, reject
 DOMAIN-SUFFIX,iecjqkiawvifx.com, reject
 DOMAIN-SUFFIX,ieicbkjmmqkcmgq.com, reject
 DOMAIN-SUFFIX,ieiukkwfqhwuvwy.com, reject
+DOMAIN-SUFFIX,ielmzzm.com, reject
 DOMAIN-SUFFIX,iemufbuvehrjo.xyz, reject
 DOMAIN-SUFFIX,iendoo.com, reject
 DOMAIN-SUFFIX,ieoyptnech.com, reject
@@ -30652,6 +30653,7 @@ DOMAIN-SUFFIX,toymenbenes.uno, reject
 DOMAIN-SUFFIX,toyosbullpen.com, reject
 DOMAIN-SUFFIX,toysrestrictcue.com, reject
 DOMAIN-SUFFIX,tozoruaon.com, reject
+DOMAIN-SUFFIX,tozqvor.com, reject
 DOMAIN-SUFFIX,tozuoi.xyz, reject
 DOMAIN-SUFFIX,tp1jcgl644jk.com, reject
 DOMAIN-SUFFIX,tpbsxcsa.com, reject

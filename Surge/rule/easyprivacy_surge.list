@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202402281543
+## ! Version: 202402291545
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Feb 2024 15:43 UTC
+## ! Last modified: 29 Feb 2024 15:45 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -479,6 +479,7 @@ DOMAIN-SUFFIX,aheadmachine.com
 DOMAIN-SUFFIX,ajaralarm.com
 DOMAIN-SUFFIX,ak0gsh40.com
 DOMAIN-SUFFIX,alertafterthought.com
+DOMAIN-SUFFIX,alertarithmetic.com
 DOMAIN-SUFFIX,alertfaucet.com
 DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
@@ -501,6 +502,7 @@ DOMAIN-SUFFIX,ambiguousincome.com
 DOMAIN-SUFFIX,ambiguousquilt.com
 DOMAIN-SUFFIX,ambitiousagreement.com
 DOMAIN-SUFFIX,ambitiousanimal.com
+DOMAIN-SUFFIX,ambrosialsummit.com
 DOMAIN-SUFFIX,amethystzenith.com
 DOMAIN-SUFFIX,amuckafternoon.com
 DOMAIN-SUFFIX,amusedbucket.com
@@ -961,6 +963,7 @@ DOMAIN-SUFFIX,enchantedjudge.com
 DOMAIN-SUFFIX,enchantedskyline.com
 DOMAIN-SUFFIX,enchantedtop.com
 DOMAIN-SUFFIX,enchantingbear.com
+DOMAIN-SUFFIX,enchantingenchantment.com
 DOMAIN-SUFFIX,enchantingvalley.com
 DOMAIN-SUFFIX,encourageidea.com
 DOMAIN-SUFFIX,encourageshock.com
@@ -987,6 +990,7 @@ DOMAIN-SUFFIX,enviousshape.com
 DOMAIN-SUFFIX,enviousthread.com
 DOMAIN-SUFFIX,equablekettle.com
 DOMAIN-SUFFIX,erraticreaction.com
+DOMAIN-SUFFIX,etherealquasar.com
 DOMAIN-SUFFIX,etherealripple.com
 DOMAIN-SUFFIX,evaluateend.com
 DOMAIN-SUFFIX,evanescentedge.com
@@ -1114,6 +1118,7 @@ DOMAIN-SUFFIX,giftedglue.com
 DOMAIN-SUFFIX,giftedthumb.com
 DOMAIN-SUFFIX,giraffepiano.com
 DOMAIN-SUFFIX,givevacation.com
+DOMAIN-SUFFIX,gladglen.com
 DOMAIN-SUFFIX,gleamingcow.com
 DOMAIN-SUFFIX,gleamingtrade.com
 DOMAIN-SUFFIX,glisteningguide.com
@@ -1273,6 +1278,7 @@ DOMAIN-SUFFIX,jubilantglimmer.com
 DOMAIN-SUFFIX,justicejudo.com
 DOMAIN-SUFFIX,k54nw.pw
 DOMAIN-SUFFIX,kaputquill.com
+DOMAIN-SUFFIX,kindhush.com
 DOMAIN-SUFFIX,kitesquirrel.com
 DOMAIN-SUFFIX,kittyaction.com
 DOMAIN-SUFFIX,knitstamp.com
@@ -1334,6 +1340,7 @@ DOMAIN-SUFFIX,magnetairport.com
 DOMAIN-SUFFIX,magnificentmeasure.com
 DOMAIN-SUFFIX,magnificentmist.com
 DOMAIN-SUFFIX,mailboxmeeting.com
+DOMAIN-SUFFIX,majesticmountainrange.com
 DOMAIN-SUFFIX,makeshiftmine.com
 DOMAIN-SUFFIX,maliciousmusic.com
 DOMAIN-SUFFIX,maniacalappliance.com
@@ -1416,6 +1423,7 @@ DOMAIN-SUFFIX,nappyattack.com
 DOMAIN-SUFFIX,nappyneck.com
 DOMAIN-SUFFIX,neatshade.com
 DOMAIN-SUFFIX,nebulacrescent.com
+DOMAIN-SUFFIX,nebulousamusement.com
 DOMAIN-SUFFIX,nebulousripple.com
 DOMAIN-SUFFIX,necessarywax.com
 DOMAIN-SUFFIX,needlessnorth.com
@@ -1444,6 +1452,7 @@ DOMAIN-SUFFIX,numberlessring.com
 DOMAIN-SUFFIX,numerousnest.com
 DOMAIN-SUFFIX,nutritiousbean.com
 DOMAIN-SUFFIX,nuttyorganization.com
+DOMAIN-SUFFIX,oafishchance.com
 DOMAIN-SUFFIX,oafishobservation.com
 DOMAIN-SUFFIX,obscenesidewalk.com
 DOMAIN-SUFFIX,observantice.com
@@ -1512,6 +1521,7 @@ DOMAIN-SUFFIX,pinpointpotato.com
 DOMAIN-SUFFIX,piquantpigs.com
 DOMAIN-SUFFIX,piquantprice.com
 DOMAIN-SUFFIX,piquantstove.com
+DOMAIN-SUFFIX,piquantvortex.com
 DOMAIN-SUFFIX,pizzasnut.com
 DOMAIN-SUFFIX,placeframe.com
 DOMAIN-SUFFIX,placidactivity.com
@@ -1693,6 +1703,7 @@ DOMAIN-SUFFIX,roofrelation.com
 DOMAIN-SUFFIX,roomyreading.com
 DOMAIN-SUFFIX,roseincome.com
 DOMAIN-SUFFIX,rottenray.com
+DOMAIN-SUFFIX,roughharmony.com
 DOMAIN-SUFFIX,roughroll.com
 DOMAIN-SUFFIX,ruddycast.com
 DOMAIN-SUFFIX,ruddywash.com
@@ -1763,6 +1774,7 @@ DOMAIN-SUFFIX,secretspiders.com
 DOMAIN-SUFFIX,secretturtle.com
 DOMAIN-SUFFIX,sedatebun.com
 DOMAIN-SUFFIX,seedscissors.com
+DOMAIN-SUFFIX,seemlysuggestion.com
 DOMAIN-SUFFIX,selectionship.com
 DOMAIN-SUFFIX,selectivesummer.com
 DOMAIN-SUFFIX,selfishsea.com
@@ -1906,6 +1918,7 @@ DOMAIN-SUFFIX,spookyexchange.com
 DOMAIN-SUFFIX,spookyskate.com
 DOMAIN-SUFFIX,spookysleet.com
 DOMAIN-SUFFIX,spookyslope.com
+DOMAIN-SUFFIX,spookystitch.com
 DOMAIN-SUFFIX,spoonsilk.com
 DOMAIN-SUFFIX,spotlessstamp.com
 DOMAIN-SUFFIX,spotstring.com
@@ -1915,6 +1928,7 @@ DOMAIN-SUFFIX,spottedsnow.com
 DOMAIN-SUFFIX,springaftermath.com
 DOMAIN-SUFFIX,springsister.com
 DOMAIN-SUFFIX,springsnails.com
+DOMAIN-SUFFIX,sprydelta.com
 DOMAIN-SUFFIX,spuriousair.com
 DOMAIN-SUFFIX,spuriousbase.com
 DOMAIN-SUFFIX,spurioussquirrel.com
@@ -2020,6 +2034,7 @@ DOMAIN-SUFFIX,superficialeyes.com
 DOMAIN-SUFFIX,superficialspring.com
 DOMAIN-SUFFIX,superficialsquare.com
 DOMAIN-SUFFIX,supervisegoldfish.com
+DOMAIN-SUFFIX,superviseshoes.com
 DOMAIN-SUFFIX,supportwaves.com
 DOMAIN-SUFFIX,suspectmark.com
 DOMAIN-SUFFIX,suspendseed.com
@@ -2111,6 +2126,7 @@ DOMAIN-SUFFIX,torpidtoothpaste.com
 DOMAIN-SUFFIX,toweringrun.com
 DOMAIN-SUFFIX,tradetooth.com
 DOMAIN-SUFFIX,tranquilamulet.com
+DOMAIN-SUFFIX,tranquilarchipelago.com
 DOMAIN-SUFFIX,tranquilcanyon.com
 DOMAIN-SUFFIX,tranquilplume.com
 DOMAIN-SUFFIX,tranquilside.com
@@ -2234,6 +2250,7 @@ DOMAIN-SUFFIX,womanear.com
 DOMAIN-SUFFIX,workableachiever.com
 DOMAIN-SUFFIX,workoperation.com
 DOMAIN-SUFFIX,worriednumber.com
+DOMAIN-SUFFIX,worriedwine.com
 DOMAIN-SUFFIX,wrapstretch.com
 DOMAIN-SUFFIX,wreckvolcano.com
 DOMAIN-SUFFIX,writewealth.com
@@ -2740,6 +2757,7 @@ DOMAIN-SUFFIX,hpr.outbrain.com
 DOMAIN-SUFFIX,hspbotdetection.azurewebsites.net
 DOMAIN-SUFFIX,hydro-ma-proxy.akamaized.net
 DOMAIN-SUFFIX,i.compendium.com
+DOMAIN-SUFFIX,i.posthog.com
 DOMAIN-SUFFIX,i.viafoura.co
 DOMAIN-SUFFIX,iabusprivacy.pmc.com
 DOMAIN-SUFFIX,icu.getstorybox.com
@@ -4293,6 +4311,7 @@ DOMAIN-SUFFIX,mcc-tags.cisco.com
 DOMAIN-SUFFIX,mcs-va.tiktokv.com
 DOMAIN-SUFFIX,mcs.tiktokv.us
 DOMAIN-SUFFIX,mcs.us.tiktokv.com
+DOMAIN-SUFFIX,megatron.igraal.com
 DOMAIN-SUFFIX,metrics.audius.co
 DOMAIN-SUFFIX,metrics.bangbros.com
 DOMAIN-SUFFIX,metrics.camsoda.com
@@ -38914,6 +38933,7 @@ DOMAIN-SUFFIX,tla.traderlink.com
 DOMAIN-SUFFIX,track.tesiteca.it
 DOMAIN-SUFFIX,tracker.stileo.it
 DOMAIN-SUFFIX,tracking.gruppo.mps.it
+DOMAIN-SUFFIX,analysis.aws.locondo.jp
 DOMAIN-SUFFIX,analytics.castel.jp
 DOMAIN-SUFFIX,analytics.cocolog-nifty.com
 DOMAIN-SUFFIX,analytics.ikyu.com

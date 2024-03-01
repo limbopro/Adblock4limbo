@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3783
+# entries:        3779
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -578,7 +578,6 @@ DOMAIN-SUFFIX,ads.quasaraffiliates.com, reject
 DOMAIN-SUFFIX,ads.quoka.de, reject
 DOMAIN-SUFFIX,ads.radialserver.com, reject
 DOMAIN-SUFFIX,ads.radio1.lv, reject
-DOMAIN-SUFFIX,ads.rcs.it, reject
 DOMAIN-SUFFIX,ads.recoletos.es, reject
 DOMAIN-SUFFIX,ads.rediff.com, reject
 DOMAIN-SUFFIX,ads.redlightcenter.com, reject
@@ -936,7 +935,6 @@ DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
 DOMAIN-SUFFIX,alipromo.com, reject
 DOMAIN-SUFFIX,all4spy.com, reject
-DOMAIN-SUFFIX,allosponsor.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
 DOMAIN-SUFFIX,aloofmetal.com, reject
 DOMAIN-SUFFIX,aloofvest.com, reject
@@ -1750,7 +1748,6 @@ DOMAIN-SUFFIX,exampleshake.com, reject
 DOMAIN-SUFFIX,exchange-it.com, reject
 DOMAIN-SUFFIX,exchangead.com, reject
 DOMAIN-SUFFIX,exchangeclicksonline.com, reject
-DOMAIN-SUFFIX,exchangedetail.com, reject
 DOMAIN-SUFFIX,exclusivebrass.com, reject
 DOMAIN-SUFFIX,exelate.com, reject
 DOMAIN-SUFFIX,exelator.com, reject
@@ -2125,7 +2122,6 @@ DOMAIN-SUFFIX,iyfnzgb.com, reject
 DOMAIN-SUFFIX,j93557g.com, reject
 DOMAIN-SUFFIX,jadeitite.com, reject
 DOMAIN-SUFFIX,jads.co, reject
-DOMAIN-SUFFIX,jaizouji.com, reject
 DOMAIN-SUFFIX,jauchuwa.net, reject
 DOMAIN-SUFFIX,jcount.com, reject
 DOMAIN-SUFFIX,jdoqocy.com, reject

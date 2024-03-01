@@ -1,10 +1,8 @@
-
-
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3783
+# entries:        3779
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -580,7 +578,6 @@ DOMAIN-SUFFIX,ads.quasaraffiliates.com
 DOMAIN-SUFFIX,ads.quoka.de
 DOMAIN-SUFFIX,ads.radialserver.com
 DOMAIN-SUFFIX,ads.radio1.lv
-DOMAIN-SUFFIX,ads.rcs.it
 DOMAIN-SUFFIX,ads.recoletos.es
 DOMAIN-SUFFIX,ads.rediff.com
 DOMAIN-SUFFIX,ads.redlightcenter.com
@@ -938,7 +935,6 @@ DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
 DOMAIN-SUFFIX,alipromo.com
 DOMAIN-SUFFIX,all4spy.com
-DOMAIN-SUFFIX,allosponsor.com
 DOMAIN-SUFFIX,alluringbucket.com
 DOMAIN-SUFFIX,aloofmetal.com
 DOMAIN-SUFFIX,aloofvest.com
@@ -1752,7 +1748,6 @@ DOMAIN-SUFFIX,exampleshake.com
 DOMAIN-SUFFIX,exchange-it.com
 DOMAIN-SUFFIX,exchangead.com
 DOMAIN-SUFFIX,exchangeclicksonline.com
-DOMAIN-SUFFIX,exchangedetail.com
 DOMAIN-SUFFIX,exclusivebrass.com
 DOMAIN-SUFFIX,exelate.com
 DOMAIN-SUFFIX,exelator.com
@@ -2127,7 +2122,6 @@ DOMAIN-SUFFIX,iyfnzgb.com
 DOMAIN-SUFFIX,j93557g.com
 DOMAIN-SUFFIX,jadeitite.com
 DOMAIN-SUFFIX,jads.co
-DOMAIN-SUFFIX,jaizouji.com
 DOMAIN-SUFFIX,jauchuwa.net
 DOMAIN-SUFFIX,jcount.com
 DOMAIN-SUFFIX,jdoqocy.com

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403021053
+## ! Version: 202403031233
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Mar 2024 10:53 UTC
+## ! Last modified: 03 Mar 2024 12:33 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4174,6 +4174,7 @@ DOMAIN-SUFFIX,dbhsejcg-meetup-com.cdnjs.network
 DOMAIN-SUFFIX,dc.banggood.com
 DOMAIN-SUFFIX,dd.auspost.com.au
 DOMAIN-SUFFIX,dd.nytimes.com
+DOMAIN-SUFFIX,ddome-tag.blablacar.com
 DOMAIN-SUFFIX,deliver.ptgncdn.com
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au
 DOMAIN-SUFFIX,dls-account.di.atlas.samsung.com

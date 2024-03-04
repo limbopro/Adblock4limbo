@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["properties.componentConfigs.slideshowConfigs.interstitialNativeAds"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["ads.[].imageUrl"],["avails"],["response.ads"],["plugins.adService"]];
+const argsList = [["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["avails"],["response.ads"],["plugins.adService"]];
 
-const hostnamesMap = new Map([["msn.com",0],["hulu.com",[1,2]],["misskey.io",3],["misskey.oga.ninja",3],["mk.yopo.work",3],["sushi.ski",3],["trpger.us",3],["warpday.net",3],["zadankai.club",3],["nbc.com",4],["player.pop.co.uk",5],["player.popfun.co.uk",5],["iprima.cz",6]]);
+const hostnamesMap = new Map([["www.msn.com",[0,1]],["hulu.com",[2,3]],["misskey.io",4],["misskey.oga.ninja",4],["mk.yopo.work",4],["sushi.ski",4],["trpger.us",4],["warpday.net",4],["zadankai.club",4],["nbc.com",5],["player.pop.co.uk",6],["player.popfun.co.uk",6],["iprima.cz",7]]);
 
 const entitiesMap = new Map([]);
 

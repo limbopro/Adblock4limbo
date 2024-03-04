@@ -42,11 +42,11 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["sec--"],["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timeleft","*","0.02"],["timer"],[],["window.money_interval"],["advert","*","0.001"]];
+const argsList = [["sec--","*","0.001"],["sec--"],["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timeleft","*","0.02"],["timer"],[],["window.money_interval"],["advert","*","0.001"]];
 
-const hostnamesMap = new Map([["gofilmizle.com",0],["hdsinemax.com",1],["elzemfilm.org",1],["tafdi3.com",2],["tafdi4.com",2],["tafdi5.com",2],["filmizletv2.com",3],["filmizletv3.com",3],["filmizletv4.com",3],["filmizletv5.com",3],["filmizletv6.com",3],["filmizletv7.com",3],["filmizletv8.com",3],["filmizletv9.com",3],["filmizletv10.com",3],["filmizletv11.com",3],["filmizletv12.com",3],["filmizletv13.com",3],["filmizletv14.com",3],["filmizletv15.com",3],["filmizletv16.com",3],["filmizletv17.com",3],["filmizletv18.com",3],["filmizletv19.com",3],["filmizletv20.com",3],["fullhdfilm.pro",4],["hdfilmifullizle.com",4],["yabancidizi.pro",5],["hdfilmfullizle.com",6],["turkturk.org",7],["turkturk.net",7],["itemci.com",9]]);
+const hostnamesMap = new Map([["hdfilmizlesene.org",0],["gofilmizle.com",1],["hdsinemax.com",2],["elzemfilm.org",2],["tafdi3.com",3],["tafdi4.com",3],["tafdi5.com",3],["filmizletv2.com",4],["filmizletv18.com",4],["fullhdfilm.pro",5],["hdfilmifullizle.com",5],["yabancidizi.pro",6],["hdfilmfullizle.com",7],["turkturk.org",8],["turkturk.net",8],["itemci.com",10]]);
 
-const entitiesMap = new Map([["hdfilmcehennemi2",[1,8]],["filmizletv",3],["fullhdfilmizle",4],["hdfilmcehennemi",8]]);
+const entitiesMap = new Map([["hdfilmcehennemi2",[2,9]],["filmizletv",4],["fullhdfilmizle",5],["hdfilmcehennemi",9]]);
 
 const exceptionsMap = new Map([]);
 

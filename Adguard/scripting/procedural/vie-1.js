@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"],["{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop1\"]}","{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop2\"]}"]];
+const argsList = [["{\"selector\":\"[data-pagelet=\\\"RightRail\\\"] span\",\"tasks\":[[\"has\",{\"selector\":\"span\",\"tasks\":[[\"has-text\",\"Được tài trợ\"]]}]]}"],["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"],["{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop1\"]}","{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop2\"]}"],["{\"selector\":\".col\",\"tasks\":[[\"has\",{\"selector\":\"span\",\"tasks\":[[\"has-text\",\"Tin tài trợ\"]]}]]}"],["{\"selector\":\"ol > li\",\"tasks\":[[\"has\",{\"selector\":\"span\",\"tasks\":[[\"has-text\",\"QC\"]]}]]}"]];
 
-const hostnamesMap = new Map([["metruyencv.com",0],["metruyencv.info",0],["metruyencv.net",0],["chillphimmoizz.org",1]]);
+const hostnamesMap = new Map([["facebook.com",0],["metruyencv.com",1],["metruyencv.info",1],["metruyencv.net",1],["chillphimmoizz.org",2],["24h.com.vn",3],["google.com.vn",4]]);
 
 const entitiesMap = new Map(undefined);
 

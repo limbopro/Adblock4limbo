@@ -42,9 +42,9 @@ const uBOL_trustedReplaceXhrResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","/playlist\\?list=|player\\?|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|player\\?|watch\\?v=|youtubei\\/v1\\/player/"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
+const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|player\\?|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2})\\}\\],/","","/playlist\\?list=|player\\?|watch\\?v=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1]],["tv.youtube.com",2],["app.hellovaia.com",3]]);
+const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["app.hellovaia.com",3]]);
 
 const entitiesMap = new Map([]);
 

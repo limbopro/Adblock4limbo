@@ -42,9 +42,9 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["document.createElement","make_rand_div"],["Object.prototype.ppmm","invokeInterstitial"]];
+const argsList = [["document.createElement","make_rand_div"],["Object.prototype.pgmp","invokeInterstitial"]];
 
-const hostnamesMap = new Map([["pcbeta.com",0],["aiyifan.tv",1],["iyf.tv",1]]);
+const hostnamesMap = new Map([["pcbeta.com",0],["yfsp.tv",1],["aiyifan.tv",1],["iyf.tv",1]]);
 
 const entitiesMap = new Map([]);
 

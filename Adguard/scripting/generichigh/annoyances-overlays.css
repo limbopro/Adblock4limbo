@@ -22,7 +22,6 @@
 /* annoyances-overlays */
 
 [class~="mailpoet_form_popup_overlay"],
-[data-freestar-ad]:not(:empty),
 amp-web-push-widget,
 div[data-cypress="soft-push-notification-modal"] {
     display: none !important;

@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
 
-const hostnamesMap = new Map([["caq98i.top",0],["1090ys8.com",1],["papalah.com",1],["youneed.win",2],["aiyifan.tv",3],["iyf.tv",3],["goodav17.com",4],["m.86kl.com",5],["axjbt.com",6],["avcao.cc",6],["exoav.com",7]]);
+const hostnamesMap = new Map([["caq98i.top",0],["1090ys8.com",1],["papalah.com",1],["youneed.win",2],["yfsp.tv",3],["aiyifan.tv",3],["iyf.tv",3],["goodav17.com",4],["m.86kl.com",5],["axjbt.com",6],["avcao.cc",6],["exoav.com",7]]);
 
 const entitiesMap = new Map([]);
 

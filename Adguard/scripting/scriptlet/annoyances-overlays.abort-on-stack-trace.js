@@ -42,11 +42,11 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["YA_SSP_ID","anonymous"],["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"]];
+const argsList = [["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"]];
 
-const hostnamesMap = new Map([["dzen.ru",0],["secondlifetranslations.com",1],["waves4you.com",2],["timeshighereducation.com",3],["ilovefreesoftware.com",4],["protopage.com",5],["fantasytagtree.com",6],["jamilacuisine.ro",[7,8]],["golfdigest.com",9],["ophim.vip",11],["animesuge.to",12],["aniwave.to",12],["bflix.io",12],["f2movies.ru",12],["hdtoday.so",12],["hurawatch.bz",12],["movies2watch.ru",12],["putlockernew.vc",12],["swatchseries.ru",12],["vidplay.site",12],["vidstream.pro",12],["mcloud.to",12],["team-octavi.com",13]]);
+const hostnamesMap = new Map([["secondlifetranslations.com",0],["waves4you.com",1],["timeshighereducation.com",2],["ilovefreesoftware.com",3],["protopage.com",4],["fantasytagtree.com",5],["jamilacuisine.ro",[6,7]],["golfdigest.com",8],["ophim.vip",10],["animesuge.to",11],["aniwave.to",11],["bflix.io",11],["f2movies.ru",11],["hdtoday.so",11],["hurawatch.bz",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12]]);
 
-const entitiesMap = new Map([["pobre",10],["flixhq",12],["fmovies",12],["fmoviesz",12]]);
+const entitiesMap = new Map([["pobre",9],["flixhq",11],["fmovies",11],["fmoviesz",11]]);
 
 const exceptionsMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["blocker"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
+const argsList = [["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
 
-const hostnamesMap = new Map([["peliculas8k.com",0],["guiacripto.online",1],["zona-leros.com",2],["xerifetech.com",3],["suaads.com",4],["reidoplacar.com",4],["suaurl.com",[4,14]],["guianoticiario.net",5],["resenhasglobais.com",6],["tecword.info",6],["smartdoing.tech",6],["vivercomsaude.online",6],["escplus.es",7],["genshinpro.com.br",8],["it-swarm-es.com",8],["manchetehoje.xyz",9],["unsurcoenlasombra.com",10],["hartico.com",11],["seriesdonghua.com",12],["mundodonghua.com",12],["forodecostarica.com",13],["seriesgratis.biz",15]]);
+const hostnamesMap = new Map([["peliculas8k.com",0],["guiacripto.online",1],["zona-leros.com",2],["xerifetech.com",3],["suaads.com",4],["reidoplacar.com",4],["suaurl.com",[4,13]],["guianoticiario.net",5],["resenhasglobais.com",6],["tecword.info",6],["smartdoing.tech",6],["vivercomsaude.online",6],["escplus.es",7],["genshinpro.com.br",8],["it-swarm-es.com",8],["manchetehoje.xyz",9],["hartico.com",10],["seriesdonghua.com",11],["mundodonghua.com",11],["forodecostarica.com",12],["seriesgratis.biz",14]]);
 
 const entitiesMap = new Map([]);
 

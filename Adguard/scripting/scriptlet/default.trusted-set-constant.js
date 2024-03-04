@@ -42,11 +42,11 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["premium","1"],["navigator.userAgent","iPad; CPU OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari"],["navigator.platform","iPhone"],["document.visibilityState","visible"]];
+const argsList = [["premium","1"],["navigator.platform","iPhone"],["document.visibilityState","visible"]];
 
-const hostnamesMap = new Map([["tuborstb.co",0],["app.blubank.com",1],["mobileweb.bankmellat.ir",[1,2]]]);
+const hostnamesMap = new Map([["tuborstb.co",0],["mobileweb.bankmellat.ir",1]]);
 
-const entitiesMap = new Map([["dropgalaxy",3]]);
+const entitiesMap = new Map([["dropgalaxy",2]]);
 
 const exceptionsMap = new Map([]);
 

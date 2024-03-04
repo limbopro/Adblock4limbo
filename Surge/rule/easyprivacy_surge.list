@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403031233
+## ! Version: 202403041326
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Mar 2024 12:33 UTC
+## ! Last modified: 04 Mar 2024 13:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -267,6 +267,7 @@ DOMAIN-SUFFIX,pixmg.com
 DOMAIN-SUFFIX,pixrealm.com
 DOMAIN-SUFFIX,pjstat.com
 DOMAIN-SUFFIX,plausiblecdn.co
+DOMAIN-SUFFIX,privateapi.click
 DOMAIN-SUFFIX,procroanalytics.com
 DOMAIN-SUFFIX,progmxs.com
 DOMAIN-SUFFIX,pushvisit.xyz
@@ -3784,6 +3785,7 @@ DOMAIN-SUFFIX,analytics-beacon.p.uliza.jp
 DOMAIN-SUFFIX,analytics.contents.by-fw.jp
 DOMAIN-SUFFIX,analytics.liveact.cri-mw.jp
 DOMAIN-SUFFIX,analytics.livesense.marketing
+DOMAIN-SUFFIX,analytics.mbga.jp
 DOMAIN-SUFFIX,analytics.partcommunity.com
 DOMAIN-SUFFIX,analyzer51.fc2.com
 DOMAIN-SUFFIX,asumi.shinobi.jp

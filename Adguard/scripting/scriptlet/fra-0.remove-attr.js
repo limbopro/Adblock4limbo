@@ -42,9 +42,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["href","a[href]#clickfakeplayer"],["href|target","a[href]#clickfakeplayer"]];
+const argsList = [["href","a[href]#clickfakeplayer"]];
 
-const hostnamesMap = new Map([["seriepourvous.com",0],["hdss.video",1]]);
+const hostnamesMap = new Map([["seriepourvous.com",0]]);
 
 const entitiesMap = new Map([]);
 

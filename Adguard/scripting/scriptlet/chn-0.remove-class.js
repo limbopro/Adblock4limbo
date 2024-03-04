@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["publicplay","#main-player"],["q-body--prevent-scroll","body"]];
 
-const hostnamesMap = new Map([["aiyifan.tv",0],["iyf.tv",0],["9xav.cc",1]]);
+const hostnamesMap = new Map([["yfsp.tv",0],["aiyifan.tv",0],["iyf.tv",0],["9xav.cc",1]]);
 
 const entitiesMap = new Map([]);
 

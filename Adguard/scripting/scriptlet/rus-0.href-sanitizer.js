@@ -42,9 +42,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/go.php?go=\"]","?go"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
+const argsList = [["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://disq.us/url?url=\"]","[title]"],["a[href^=\"https://www.youtube.com/redirect?event=\"]","?q"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"]];
 
-const hostnamesMap = new Map([["vk.com",0],["vk.ru",0],["apad2.top",1],["game4you.top",1],["games-pc.top",1],["innal.top",1],["naylo.top",1],["rustorka.com",1],["rustorka.net",1],["rustorka.top",1],["rustorkacom.lib",1],["softoroom.org",2],["opennet.me",3],["opennet.ru",3],["lifehacker.ru",4],["www.ixbt.com",5],["vz.ru",[6,7]],["disqus.com",8],["youtube.com",9],["e.mail.ru",10],["octavius.mail.ru",10],["light.mail.ru",[11,12]]]);
+const hostnamesMap = new Map([["softoroom.org",0],["vk.com",1],["vk.ru",1],["game4you.top",2],["games-pc.top",2],["innal.top",2],["naylo.top",2],["rustorka.com",2],["rustorka.net",2],["rustorka.top",2],["rustorkacom.lib",2],["opennet.me",3],["opennet.ru",3],["kluchikipro.ru",4],["lifehacker.ru",5],["www.ixbt.com",6],["vz.ru",[7,8]],["disqus.com",9],["youtube.com",10],["e.mail.ru",11],["octavius.mail.ru",11],["light.mail.ru",[12,13]]]);
 
 const entitiesMap = new Map([]);
 

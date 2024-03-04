@@ -42,7 +42,7 @@ const uBOL_m3uPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/redirector\\.googlevideo\\.com\\/videoplayback\\?[\\s\\S]*?dclk_video_ads/","pubads.g.doubleclick.net/ondemand/hls/"],["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm","/uplynk\\.com\\/.*?\\.m3u8/"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/[a-z0-9]{13}o.*\\.ts|adjump/",".m3u8"]];
+const argsList = [["/redirector\\.googlevideo\\.com\\/videoplayback\\?[\\s\\S]*?dclk_video_ads/","pubads.g.doubleclick.net/ondemand/hls/"],["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm","/uplynk\\.com\\/.*?\\.m3u8/"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/^[a-z0-9]{13}o.*\\.ts|adjump|^[a-z0-9]{12}1\\d+\\.ts/",".m3u8"]];
 
 const hostnamesMap = new Map([["sbs.com.au",0],["10play.com.au",1],["fox.com",2],["foxsports.com",2],["mephimtv.cc",3],["player.theplatform.com",4],["yhmgo.com",5]]);
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.1.11.21
+// @version      0.2.03.06
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -156,7 +156,7 @@ function hidden_adblock4limbo() {
                 x4Home_button('0');
                 click_dont_move_and_click = --click_dont_move_and_click;
                 if (click_dont_move_and_click < 300) {
-                    znsh();
+                    ////znsh();
                 }
                 ////console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
             }
@@ -1303,9 +1303,9 @@ nsfwmode_check();
 
 function nsfwmode_check() {
     if (getCookie('nsfwmode') !== 'false' && nsfw_regex.test(document.location.href)) {
-        znsh();
+        ////znsh();
         if (document.getElementById('nsfwmode_switch')) {
-            znsh();
+            ////znsh();
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
             setTimeout(() => {
                 body_build('false');

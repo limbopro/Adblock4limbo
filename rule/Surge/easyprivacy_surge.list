@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403051444
+## ! Version: 202403060118
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Mar 2024 14:44 UTC
+## ! Last modified: 06 Mar 2024 01:18 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -86,6 +86,7 @@ DOMAIN-SUFFIX,clrt.ai
 DOMAIN-SUFFIX,cntxtfl.com
 DOMAIN-SUFFIX,confiant-integrations.net
 DOMAIN-SUFFIX,convead.io
+DOMAIN-SUFFIX,conversationalsdevelopment.nl
 DOMAIN-SUFFIX,convertlink.com
 DOMAIN-SUFFIX,cpx.to
 DOMAIN-SUFFIX,crwdcntrl.net
@@ -206,6 +207,7 @@ DOMAIN-SUFFIX,kspotson.de
 DOMAIN-SUFFIX,ldgnrtn.com
 DOMAIN-SUFFIX,ldnlyap.com
 DOMAIN-SUFFIX,leadhit.io
+DOMAIN-SUFFIX,lemonpi.io
 DOMAIN-SUFFIX,liveyield.com
 DOMAIN-SUFFIX,lltrck.com
 DOMAIN-SUFFIX,lmepbq.com
@@ -3462,6 +3464,7 @@ DOMAIN-SUFFIX,d3lqotgbn3npr.cloudfront.net
 DOMAIN-SUFFIX,d3m6sept6cnil5.cloudfront.net
 DOMAIN-SUFFIX,d3mskfhorhi2fb.cloudfront.net
 DOMAIN-SUFFIX,d3n6i6eorggdxk.cloudfront.net
+DOMAIN-SUFFIX,d3or5d0jdz94or.cloudfront.net
 DOMAIN-SUFFIX,d3pi0tys5sdysl.cloudfront.net
 DOMAIN-SUFFIX,d3plfjw9uod7ab.cloudfront.net
 DOMAIN-SUFFIX,d3qztsm17pgxue.cloudfront.net

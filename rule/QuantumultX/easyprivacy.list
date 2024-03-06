@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403051444
+## ! Version: 202403060118
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Mar 2024 14:44 UTC
+## ! Last modified: 06 Mar 2024 01:18 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -86,6 +86,7 @@ DOMAIN-SUFFIX,clrt.ai, reject
 DOMAIN-SUFFIX,cntxtfl.com, reject
 DOMAIN-SUFFIX,confiant-integrations.net, reject
 DOMAIN-SUFFIX,convead.io, reject
+DOMAIN-SUFFIX,conversationalsdevelopment.nl, reject
 DOMAIN-SUFFIX,convertlink.com, reject
 DOMAIN-SUFFIX,cpx.to, reject
 DOMAIN-SUFFIX,crwdcntrl.net, reject
@@ -206,6 +207,7 @@ DOMAIN-SUFFIX,kspotson.de, reject
 DOMAIN-SUFFIX,ldgnrtn.com, reject
 DOMAIN-SUFFIX,ldnlyap.com, reject
 DOMAIN-SUFFIX,leadhit.io, reject
+DOMAIN-SUFFIX,lemonpi.io, reject
 DOMAIN-SUFFIX,liveyield.com, reject
 DOMAIN-SUFFIX,lltrck.com, reject
 DOMAIN-SUFFIX,lmepbq.com, reject
@@ -3462,6 +3464,7 @@ DOMAIN-SUFFIX,d3lqotgbn3npr.cloudfront.net, reject
 DOMAIN-SUFFIX,d3m6sept6cnil5.cloudfront.net, reject
 DOMAIN-SUFFIX,d3mskfhorhi2fb.cloudfront.net, reject
 DOMAIN-SUFFIX,d3n6i6eorggdxk.cloudfront.net, reject
+DOMAIN-SUFFIX,d3or5d0jdz94or.cloudfront.net, reject
 DOMAIN-SUFFIX,d3pi0tys5sdysl.cloudfront.net, reject
 DOMAIN-SUFFIX,d3plfjw9uod7ab.cloudfront.net, reject
 DOMAIN-SUFFIX,d3qztsm17pgxue.cloudfront.net, reject

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2.03.06
+// @version      0.2.03.07
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -1194,7 +1194,18 @@ function visibility() {
     }
 };
 
-sessionX_check();
+
+// ## 清理成人守护模式遗留的 localstorage 问题
+
+window.onload = function () {
+    if (localStorage.getItem("finalmode") !== null) {
+        localStorage.removeItem("finalmode", "Masaka");
+        console.log('localStorage.setItem("finalmode", "Masaka");');
+        location.reload();
+    }
+}
+
+////sessionX_check();
 
 function sessionX_check() {
     if (localStorage.getItem("finalmode") !== null) {

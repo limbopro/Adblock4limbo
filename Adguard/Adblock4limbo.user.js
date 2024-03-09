@@ -73,7 +73,6 @@
 // @match        https://www.javbus.com/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
-// @match        https://xiaoxintv.net/
 // @match        https://javday.tv/*
 // @match        https://www.xvideos.com/*
 // @match        https://4hu.tv/*

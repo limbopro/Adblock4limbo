@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403071032
+## ! Version: 202403091019
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Mar 2024 10:32 UTC
+## ! Last modified: 09 Mar 2024 10:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -122,6 +122,7 @@ DOMAIN-SUFFIX,envato.market
 DOMAIN-SUFFIX,epsilondelta.co
 DOMAIN-SUFFIX,eqy.link
 DOMAIN-SUFFIX,etop.ro
+DOMAIN-SUFFIX,eval.privateapi.click
 DOMAIN-SUFFIX,everesttech.net
 DOMAIN-SUFFIX,experianmatch.info
 DOMAIN-SUFFIX,ezodn.com
@@ -167,6 +168,7 @@ DOMAIN-SUFFIX,g990421676.co
 DOMAIN-SUFFIX,gbqofs.com
 DOMAIN-SUFFIX,geoedge.be
 DOMAIN-SUFFIX,geotargetly-api-*.com
+DOMAIN-SUFFIX,getdeviceinf.com
 DOMAIN-SUFFIX,glamipixel.com
 DOMAIN-SUFFIX,glimr.io
 DOMAIN-SUFFIX,glookup.info
@@ -269,7 +271,6 @@ DOMAIN-SUFFIX,pixmg.com
 DOMAIN-SUFFIX,pixrealm.com
 DOMAIN-SUFFIX,pjstat.com
 DOMAIN-SUFFIX,plausiblecdn.co
-DOMAIN-SUFFIX,privateapi.click
 DOMAIN-SUFFIX,procroanalytics.com
 DOMAIN-SUFFIX,progmxs.com
 DOMAIN-SUFFIX,pushvisit.xyz
@@ -2708,6 +2709,7 @@ DOMAIN-SUFFIX,f-log-at.grammarly.io
 DOMAIN-SUFFIX,f-log-test.grammarly.io
 DOMAIN-SUFFIX,fcmatch.google.com
 DOMAIN-SUFFIX,fcmatch.youtube.com
+DOMAIN-SUFFIX,feliz.data.tm-awx.com
 DOMAIN-SUFFIX,filament-stats.herokuapp.com
 DOMAIN-SUFFIX,fingerprinter-production.herokuapp.com
 DOMAIN-SUFFIX,firebaselogging-pa.googleapis.com
@@ -38997,6 +38999,7 @@ DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr
 DOMAIN-SUFFIX,hits.zdnet.co.kr
 DOMAIN-SUFFIX,kyson.kakao.com
 DOMAIN-SUFFIX,l.m.naver.com
+DOMAIN-SUFFIX,ljc.coupang.com
 DOMAIN-SUFFIX,log.etoday.co.kr
 DOMAIN-SUFFIX,log.kinolights.com
 DOMAIN-SUFFIX,log.zdnet.co.kr

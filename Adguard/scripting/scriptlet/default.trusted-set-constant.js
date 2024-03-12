@@ -42,11 +42,11 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["premium","1"],["navigator.platform","iPhone"],["document.visibilityState","visible"]];
+const argsList = [["premium","'1'"],["premium","1"],["navigator.platform","iPhone"],["document.visibilityState","visible"],["window.google_image_requests","{ \"value\": [{ \"src\": \"https://pagead2.googlesyndication.com/pagead/sodar?id=sodar\" }]}"]];
 
-const hostnamesMap = new Map([["tuborstb.co",0],["mobileweb.bankmellat.ir",1]]);
+const hostnamesMap = new Map([["emturbovid.com",0],["tuborstb.co",1],["mobileweb.bankmellat.ir",2],["perchance.org",4]]);
 
-const entitiesMap = new Map([["dropgalaxy",2]]);
+const entitiesMap = new Map([["dropgalaxy",3]]);
 
 const exceptionsMap = new Map([]);
 

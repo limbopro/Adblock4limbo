@@ -42,11 +42,11 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["bidReqIdStr"],["xored"],["oncontextmenu"],["disable_copy"],["AdBlocker"],["alert"],["String.fromCharCode"],["debugger"]];
+const argsList = [["oncontextmenu"],["disable_copy"],["AdBlocker"],["alert"],["String.fromCharCode"],["debugger"]];
 
-const hostnamesMap = new Map([["otzovik.com",1],["runmods.com",2],["magesy.blog",3],["magesypro.pro",3],["romviet.com",4],["isekaipalace.com",5],["seriesperu.com",6],["alexsportz.online",7],["sportea.online",7],["freetvsports.xyz",7],["movie-web.app",7]]);
+const hostnamesMap = new Map([["runmods.com",0],["magesy.blog",1],["magesypro.pro",1],["romviet.com",2],["isekaipalace.com",3],["seriesperu.com",4],["alexsportz.online",5],["sportea.online",5],["freetvsports.xyz",5],["movie-web.app",5]]);
 
-const entitiesMap = new Map([["afisha.yandex",0]]);
+const entitiesMap = new Map([]);
 
 const exceptionsMap = new Map([]);
 

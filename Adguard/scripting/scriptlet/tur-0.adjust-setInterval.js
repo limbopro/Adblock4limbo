@@ -46,7 +46,7 @@ const argsList = [["sec--","*","0.001"],["sec--"],["money--skip","","0.02"],["af
 
 const hostnamesMap = new Map([["hdfilmizlesene.org",0],["gofilmizle.com",1],["hdsinemax.com",2],["elzemfilm.org",2],["tafdi3.com",3],["tafdi4.com",3],["tafdi5.com",3],["filmizletv2.com",4],["filmizletv18.com",4],["fullhdfilm.pro",5],["hdfilmifullizle.com",5],["yabancidizi.pro",6],["hdfilmfullizle.com",7],["turkturk.org",8],["turkturk.net",8],["itemci.com",10]]);
 
-const entitiesMap = new Map([["hdfilmcehennemi2",[2,9]],["filmizletv",4],["fullhdfilmizle",5],["hdfilmcehennemi",9]]);
+const entitiesMap = new Map([["hdfilmcehennemi",[0,9]],["hdfilmcehennemi2",[2,9]],["filmizletv",4],["fullhdfilmizle",5]]);
 
 const exceptionsMap = new Map([]);
 

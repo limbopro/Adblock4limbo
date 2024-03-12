@@ -19,11 +19,25 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* vie-1 */
+/* annoyances-others */
 
-[class^="adHTML"],
-[href^="http://www.sbbanner.com/"],
-[id^="bn_bottom_fixed_"],
-iframe[src^="https://media.vivaclix.com/js/ifr.html?"] {
+[aria-label="Back to top"],
+[data-taboola-options],
+[data-trackname="page-top"],
+[title="Back to Top"],
+[title="Go to Top"],
+a[data-webtrekk="button.scroll_to_top"],
+a[href="#Back to the top of page"],
+a[href="#back-to-top"],
+a[href="#pagetop"],
+a[href="#scrolltop"],
+a[href="#top-of-page"],
+a[href="#tothetop"],
+a[title="Back To Top"],
+a[title="Back to top"],
+a[title="Go To Top"],
+div > div + [aria-label="promo"][role="region"][data-ved],
+div[id$="-top-message-bar"][style="top: 0px; display: block;"],
+div[style^="behavior:url(#default#homePage) url(#default#userData);background-color:"] {
     display: none !important;
 }

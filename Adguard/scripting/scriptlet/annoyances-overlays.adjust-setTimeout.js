@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["SkipMsg()","*","0.02"],["count"]];
+const argsList = [["count"]];
 
-const hostnamesMap = new Map([["coolpc.com.tw",0],["coolpc.tw",0],["store.kde.org",1]]);
+const hostnamesMap = new Map([["store.kde.org",0]]);
 
 const entitiesMap = new Map([]);
 

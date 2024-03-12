@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["animationEffects[settings.animation.effect]"]];
+const argsList = [["[native code]","1000"],["animationEffects[settings.animation.effect]"]];
 
-const hostnamesMap = new Map([["zzzz.lol",0]]);
+const hostnamesMap = new Map([["laftel.net",0],["zzzz.lol",1]]);
 
 const entitiesMap = new Map([]);
 

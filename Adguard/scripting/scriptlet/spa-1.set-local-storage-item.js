@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["last_ads","yes"]];
 
-const hostnamesMap = new Map([["receitasdafazenda.com",0]]);
+const hostnamesMap = new Map([["receitasdocheff.online",0],["gastroponto.com",0],["nossoprato.online",0],["receitasdafazenda.com",0]]);
 
 const entitiesMap = new Map([]);
 

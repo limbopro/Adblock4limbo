@@ -21,12 +21,6 @@
 
 /* annoyances-widgets */
 
-a[title="WhatsApp Newsletter Marketing"],
-amp-apester-media,
-amp-embed[type="opinary"],
-amp-iframe[src^="https://widget.civey.com"],
-div[id^="blz_rss_"],
-gg-toolbar--specials,
-iframe[src*="compass.pressekompass.net/compasses"] {
+yardi-widget-craigslist {
     display: none !important;
 }

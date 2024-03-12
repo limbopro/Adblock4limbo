@@ -42,11 +42,11 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["dl-links","*","0.02"],["i--","","0.02"],[],["update","1000"]];
+const argsList = [["i--","","0.02"],[],["update","1000"]];
 
-const hostnamesMap = new Map([["crdroid.net",0],["onlinegiftools.com",2],["onlinejpgtools.com",2],["onlinepngtools.com",2],["onlinestringtools.com",2],["onlinetexttools.com",2],["onlinetools.com",2],["decrypt.day",3]]);
+const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1],["decrypt.day",2]]);
 
-const entitiesMap = new Map([["bluemediafile",1]]);
+const entitiesMap = new Map([["bluemediafile",0]]);
 
 const exceptionsMap = new Map([]);
 

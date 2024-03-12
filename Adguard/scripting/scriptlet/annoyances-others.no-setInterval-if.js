@@ -42,9 +42,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["debugger;"],["scrollTo"],["nocopy"]];
+const argsList = [["/onGatedSignupPopupTrigger|zippia-popup/"]];
 
-const hostnamesMap = new Map([["nicekkk.com",0],["imgqec.online",1],["imgwbfh.online",1],["imgyer.store",1],["imgxuh.cfd",1],["imgngc.sbs",1],["imgezx.sbs",1],["imgxza.store",1],["imgwqr.online",1],["instiz.net",2]]);
+const hostnamesMap = new Map([["zippia.com",0]]);
 
 const entitiesMap = new Map([]);
 

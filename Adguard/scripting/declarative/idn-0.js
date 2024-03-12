@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}"],["{\"selector\":\"#blockblockB\",\"action\":[\"style\",\"visibility: visible !important; display: block !important;\"]}"]];
+const argsList = [["{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}"]];
 
-const hostnamesMap = new Map([["dutaislam.com",0],["kertashitam.com",1]]);
+const hostnamesMap = new Map([["dutaislam.com",0]]);
 
 const entitiesMap = new Map(undefined);
 

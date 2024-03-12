@@ -33,7 +33,7 @@
 
 // annoyances-widgets
 
-const toImport = [[2594454,".plugin-rss"],[15752519,".blogroll-wrapper"],[10329576,".plugin-blogroll"],[7458979,".blogroll-wrapper1,.blogroll-wrapper2,.blogroll-wrapper3,.blogroll-wrapper4,.blogroll-wrapper5,.blogroll-wrapper6,.blogroll-wrapper8,.blogroll-wrapper9,.blogroll_wrapper2,.blogroll_wrapper3,.blogroll_wrapper4"],[797429,".blogroll_wrapper"],[9206816,".blogroll_wrapper_2,.blogroll_wrapper_3,.blogroll_wrapper_4"],[2286495,".blogroll_wrapper_honbun"],[11160837,"#tripla-app"],[4235807,".online-chat-root-Verbox"],[8224090,".igas-widget"],[12984583,".opinarywidget"],[9654745,".opinary-widget-wrapper"],[13353803,".opinary-wrapper"],[10963163,".gsInformer"]];
+const toImport = [[16120016,"#popin-salescontact"],[14414991,".b24-widget-button-wrapper"],[13433282,".chat_hammerbot-iframe-wrapper__outer"],[7725274,".drift-facade"],[10548027,".intercom-launcher"],[4324221,".intercom-lightweight-app"],[8491567,".m-chat-toggler"],[12739565,".sticky-button--whatsapp"],[13004488,".wix-blog-hide-in-print.SITE_FOOTER_WRAPPER"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

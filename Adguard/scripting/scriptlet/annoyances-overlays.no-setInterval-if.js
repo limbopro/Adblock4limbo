@@ -42,11 +42,11 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".parentNode.removeChild"],["nagScroll"],["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["potato"],["detect"],["console.clear"],["ads"],["devtoolsDetector"],["()=>_(","15000"],["DevToolsOpen"]];
+const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["potato"],["detect"],["console.clear"],["ads"],["devtoolsDetector"],["()=>_(","15000"],["DevToolsOpen"],["devtool"]];
 
-const hostnamesMap = new Map([["bluemoon-mcfc.co.uk",[0,7]],["kentonline.co.uk",1],["smashboards.com",2],["mobilarena.hu",3],["avdelphi.com",4],["pornhd8k.net",4],["masuit.com",4],["iphonecake.com",5],["ziperto.com",5],["compartiendofull.net",5],["themeparktourist.com",5],["magnet-novels.com",6],["bendigoadvertiser.com.au",8],["lvturbo.com",9],["sbbrisk.com",9],["sbface.com",9],["sbspeed.com",9],["streamsb.net",9],["wouterplanet.com",9],["actvid.com",9],["699pic.com",10],["thinkamericana.com",11],["menrec.com",11],["mocah.org",12],["coolwallpapers.me",13],["sflix.to",14],["webnovel.com",15],["freemcserver.net",16],["vgembed.com",17],["braflix.app",17],["sbot.cf",18],["bluphim.com",18],["cdnmoviking.tech",18],["alfred.camera",19],["vidstreaming.xyz",20],["raenonx.cc",21],["ngelmat.net",22]]);
+const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["sflix.to",12],["webnovel.com",13],["freemcserver.net",14],["vgembed.com",15],["braflix.app",15],["sbot.cf",16],["bluphim.com",16],["cdnmoviking.tech",16],["alfred.camera",17],["vidstreaming.xyz",18],["raenonx.cc",19],["ngelmat.net",20]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["vidsrc",21]]);
 
 const exceptionsMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["articlesRead"]];
+const argsList = [["br_mc"],["articlesRead"],["_zippia-popup-s_t"],["tpm_article_views"],["tpm_page_views"]];
 
-const hostnamesMap = new Map([["howtogeek.com",0],["gamerant.com",0],["cbr.com",0],["thegamer.com",0],["screenrant.com",0],["makeuseof.com",0],["movieweb.com",0],["androidpolice.com",0],["xda-developers.com",0]]);
+const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["talkingpointsmemo.com",[3,4]]]);
 
 const entitiesMap = new Map([]);
 

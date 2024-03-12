@@ -42,9 +42,9 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["document.querySelector","0","noopFunc","condition","adblock"]];
+const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","noopFunc","condition","adblock"]];
 
-const hostnamesMap = new Map([["autosport.com",0],["motorsport.com",0],["motorsport.uol.com.br",0]]);
+const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["autosport.com",2],["motorsport.com",2],["motorsport.uol.com.br",2]]);
 
 const entitiesMap = new Map([]);
 

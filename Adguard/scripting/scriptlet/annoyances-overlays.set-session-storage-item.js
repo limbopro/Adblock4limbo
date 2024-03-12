@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["bellesa_show_slideout","false"],["showBottomBanner","false"],["altses","false"],["modalViewed","true"],["anonSessionNotific","1"],["hasViewedReduceNotifications","true"],["coachmarkShown","true"],["showEventsBanner","false"],["socialProofDisabled","1"],["pharmaLeaveIntentPopup","true"],["HPLWClosedPerSessionCount","1"],["umggr-newsletter-first-load","true"],["modal-newsletter","false"],["","true"],["popup-closed","true"],["fs.adb.dis","1"],["adblock","true"]];
+const argsList = [["floating-sign-up-dismissed","true"],["banner_session","true"],["fs.adb.dis","1"],["adblock","true"]];
 
-const hostnamesMap = new Map([["bellesa.co",0],["internxt.com",1],["makemytrip.com",2],["fantasyfootballhub.co.uk",3],["northcasino.com",4],["dream.ai",5],["imdb.com",6],["ringover.com",7],["eneba.com",8],["1mg.com",9],["flipkart.com",10],["eminem.com",11],["selenagomez.com",11],["zonealarm.com",12],["upbeatcode.com",13],["maxicours.com",14],["270towin.com",15],["getemoji.com",15],["afterclass.io",16]]);
+const hostnamesMap = new Map([["semafor.com",0],["sears.com",1],["270towin.com",2],["getemoji.com",2],["afterclass.io",3]]);
 
 const entitiesMap = new Map([]);
 

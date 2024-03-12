@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["do geolokalizacji"],["#sitemodal"]];
+const argsList = [["loginModal"]];
 
-const hostnamesMap = new Map([["pogoda.interia.pl",0],["audioholics.com",1]]);
+const hostnamesMap = new Map([["analyticsvidhya.com",0]]);
 
 const entitiesMap = new Map([]);
 

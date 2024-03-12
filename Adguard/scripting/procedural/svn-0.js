@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"]];
+const argsList = [["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"],["{\"selector\":\"a.card\",\"tasks\":[[\"has-text\",\"Oglas\"]]}"]];
 
-const hostnamesMap = new Map([["monitor.si",0]]);
+const hostnamesMap = new Map([["monitor.si",0],["partis.si",1]]);
 
 const entitiesMap = new Map(undefined);
 

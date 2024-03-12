@@ -42,9 +42,9 @@ const uBOL_noWindowOpenIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["popup"],[]];
+const argsList = [[]];
 
-const hostnamesMap = new Map([["hankyung.com",0],["bypass.city",1],["adbypass.org",1],["rsadnetworkinfo.com",1],["rsinsuranceinfo.com",1],["rsfinanceinfo.com",1],["rsgamer.app",1],["rssoftwareinfo.com",1],["rshostinginfo.com",1],["rseducationinfo.com",1]]);
+const hostnamesMap = new Map([["bypass.city",0],["adbypass.org",0],["rsadnetworkinfo.com",0],["rsinsuranceinfo.com",0],["rsfinanceinfo.com",0],["rsgamer.app",0],["rssoftwareinfo.com",0],["rshostinginfo.com",0],["rseducationinfo.com",0]]);
 
 const entitiesMap = new Map([]);
 

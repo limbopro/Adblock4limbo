@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["cookielaw_accepted","1","","reload","1"]];
+const argsList = [["cookielaw_accepted","1","","reload","1"],["cookiebot-consent--necessary","1"],["cookiebot-consent--preferences","1"],["cookiebot-consent--marketing","0"],["cookiebot-consent--statistics","0"]];
 
-const hostnamesMap = new Map([["srk.fi",0]]);
+const hostnamesMap = new Map([["srk.fi",0],["aalto.fi",[1,2,3,4]]]);
 
 const entitiesMap = new Map([]);
 

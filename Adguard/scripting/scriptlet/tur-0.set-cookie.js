@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["popundr","1"],["popundr0","7"],["modalads","yes"],["notheme","1"]];
 
-const hostnamesMap = new Map([["hdfilmizle.org",0],["yukfilmizle.com",0],["filmseyretizlet.com",1],["gazeterize.com",2],["bursahaberdar.com",2],["isvecgundemi.com",2],["kgrt.net",2],["halk54.com",2],["eskisehirhaber.com",2],["haberlisin.com",2],["eksisozluk.com",3]]);
+const hostnamesMap = new Map([["hdfilmizle.org",0],["filmseyretizlet.com",1],["gazeterize.com",2],["bursahaberdar.com",2],["isvecgundemi.com",2],["kgrt.net",2],["halk54.com",2],["eskisehirhaber.com",2],["haberlisin.com",2],["eksisozluk.com",3]]);
 
 const entitiesMap = new Map([]);
 

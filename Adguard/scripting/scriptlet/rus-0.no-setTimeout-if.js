@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["","250"],["Adblock"],["SHOW_PUSH_MODAL"],["X-Set-Adblock"],["_modal"],["adblock"],["adfoxAsyncParams"],["ai_adb"],["alert","15000"],["doAd"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["google_jobrunner"],["is_adblock"],["saa"],["setInterval",""],["showModal"],["sparkle"],["toUTCString"],["slot:fail"],["NO_MIMIC_ON_"]];
+const argsList = [["","250"],["Adblock"],["SHOW_PUSH_MODAL"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["adfoxAsyncParams"],["ai_adb"],["alert","15000"],["doAd"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["google_jobrunner"],["is_adblock"],["saa"],["setInterval",""],["showModal"],["sparkle"],["toUTCString"],["slot:fail"],["NO_MIMIC_ON_"]];
 
-const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["life.ru",2],["razlozhi.ru",3],["allapteki.ru",4],["strategium.ru",5],["playground.ru",6],["dracon-zet.ru",[7,10]],["fonmod.com",[7,10]],["aqicn.org",8],["tv-kanali.online",9],["hdkinoteatr.com",11],["ferr-um.ucoz.ru",12],["stalker-2-2012.ucoz.net",12],["vseprosto.top",13],["fishki.net",14],["testserver.pro",15],["websdr.space",16],["blackwot.ru",17],["anime-chan.me",18],["num-words.com",19],["softportal.com",19],["e.mail.ru",[20,21]],["octavius.mail.ru",[20,21]]]);
+const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["life.ru",2],["razlozhi.ru",3],["allapteki.ru",4],["buhgalter.com.ua",5],["buhgalter911.com",5],["factor.ua",5],["strategium.ru",6],["playground.ru",7],["dracon-zet.ru",[8,11]],["fonmod.com",[8,11]],["aqicn.org",9],["tv-kanali.online",10],["hdkinoteatr.com",12],["ferr-um.ucoz.ru",13],["stalker-2-2012.ucoz.net",13],["vseprosto.top",14],["fishki.net",15],["testserver.pro",16],["websdr.space",17],["blackwot.ru",18],["anime-chan.me",19],["num-words.com",20],["softportal.com",20],["e.mail.ru",[21,22]],["octavius.mail.ru",[21,22]]]);
 
 const entitiesMap = new Map([]);
 

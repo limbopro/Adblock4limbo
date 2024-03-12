@@ -22,7 +22,22 @@
 /* annoyances-overlays */
 
 [class~="mailpoet_form_popup_overlay"],
-amp-web-push-widget,
-div[data-cypress="soft-push-notification-modal"] {
+[data-ajax-newsletter-subscription-container],
+[data-block-type="block:newsletter"],
+[data-module="newsletter-signup"],
+[data-nc="nc-newsletter"],
+[data-spot-im-class="card-container"],
+[data-target="#newsletter-modal"],
+[data-testid="NewsletterSubscribeFormWrapper"],
+[data-testid="newsletter-promo-widget"],
+app-emailsubscribe,
+app-newsletter-widget,
+div[class*="frontend-components-SubscribePrompt-"],
+div[data-newsletter-1],
+div[data-newsletter-2],
+div[id^="pu-email-form-"],
+gannett-atoms-component-newsletter-cta,
+hl-newsletter-cta,
+journey-inline-newsletter {
     display: none !important;
 }

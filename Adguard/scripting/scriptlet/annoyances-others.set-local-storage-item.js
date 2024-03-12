@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["simple-funnel-name",""],["social-qa/telemetry",""],["plus-sheet-session-count","0"],["show-pages","0"],["payed","2"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["mode-quills","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["brainly.co.id",0],["brainly.com",1],["dtf.ru",2],["zdopravy.cz",3],["fontshub.pro",4]]);
+const hostnamesMap = new Map([["zippia.com",0],["quillbot.com",1],["deepl.com",[2,3]]]);
 
 const entitiesMap = new Map([]);
 

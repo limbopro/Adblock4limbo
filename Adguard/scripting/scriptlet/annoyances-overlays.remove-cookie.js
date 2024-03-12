@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["popup"],["articleLimitDrawerVisible"],["unauthenicatedArticleLimitReached"],["kpwc"],["search_curday"],["visit"],["pageViews"],["recipe_view_count_ru"],["recipe_view_count_es"],["recipe_view_count_uk"],["recipe_view_count_pl"],["articlesRead","when","scroll keydown"]];
+const argsList = [["pay_ent_pass"],["pay_ent_msmp"],["kpwc"],["articlesRead","when","scroll keydown"]];
 
-const hostnamesMap = new Map([["jungefreiheit.de",0],["cbr.com",[1,2,11]],["technologyreview.jp",3],["ac-illust.com",4],["photo-ac.com",4],["novagente.pt",5],["stackshare.io",6],["cookpad.es",[7,8,9,10]],["cookpad.com",[7,8,9,10]],["androidpolice.com",11],["makeuseof.com",11],["movieweb.com",11],["xda-developers.com",11],["thegamer.com",11],["gamerant.com",11],["screenrant.com",11],["howtogeek.com",11],["thethings.com",11],["simpleflying.com",11],["dualshockers.com",11]]);
+const hostnamesMap = new Map([["bonappetit.com",[0,1]],["technologyreview.jp",2],["androidpolice.com",3],["makeuseof.com",3],["movieweb.com",3],["xda-developers.com",3],["thegamer.com",3],["cbr.com",3],["gamerant.com",3],["screenrant.com",3],["howtogeek.com",3],["thethings.com",3],["simpleflying.com",3],["dualshockers.com",3]]);
 
 const entitiesMap = new Map([]);
 

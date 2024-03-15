@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3772
+# entries:        3765
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,12 +17,10 @@ DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
 DOMAIN-SUFFIX,180searchassistant.com
-DOMAIN-SUFFIX,1link2020.com
 DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
-DOMAIN-SUFFIX,24pm-affiliation.com
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,2o7.net
 DOMAIN-SUFFIX,2znp09oa.com
@@ -725,7 +723,6 @@ DOMAIN-SUFFIX,adserver.digitoday.com
 DOMAIN-SUFFIX,adserver.echdk.pl
 DOMAIN-SUFFIX,adserver.friendfinder.com
 DOMAIN-SUFFIX,adserver.generationiron.com
-DOMAIN-SUFFIX,adserver.html.it
 DOMAIN-SUFFIX,adserver.hwupgrade.it
 DOMAIN-SUFFIX,adserver.ilango.de
 DOMAIN-SUFFIX,adserver.industryarena.com
@@ -901,7 +898,6 @@ DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
 DOMAIN-SUFFIX,affiliatefuture.com
 DOMAIN-SUFFIX,affiliates.allposters.com
-DOMAIN-SUFFIX,affiliates.babylon.com
 DOMAIN-SUFFIX,affiliates.digitalriver.com
 DOMAIN-SUFFIX,affiliates.globat.com
 DOMAIN-SUFFIX,affiliates.rozetka.com.ua
@@ -1670,7 +1666,6 @@ DOMAIN-SUFFIX,efficaciouscactus.com
 DOMAIN-SUFFIX,eiv.baidu.com
 DOMAIN-SUFFIX,ejyymghi.com
 DOMAIN-SUFFIX,elasticchange.com
-DOMAIN-SUFFIX,elasticducks.com
 DOMAIN-SUFFIX,elderlyscissors.com
 DOMAIN-SUFFIX,elderlytown.com
 DOMAIN-SUFFIX,elephantqueue.com
@@ -1756,7 +1751,6 @@ DOMAIN-SUFFIX,exoclick.com
 DOMAIN-SUFFIX,exosrv.com
 DOMAIN-SUFFIX,experianmarketingservices.digital
 DOMAIN-SUFFIX,explorads.com
-DOMAIN-SUFFIX,expmediadirect1.com
 DOMAIN-SUFFIX,exponea.com
 DOMAIN-SUFFIX,exponential.com
 DOMAIN-SUFFIX,express-submit.de
@@ -2655,6 +2649,7 @@ DOMAIN-SUFFIX,pc-tc.s3-eu-west-1.amazonaws.com
 DOMAIN-SUFFIX,pcash.imlive.com
 DOMAIN-SUFFIX,peep-auktion.de
 DOMAIN-SUFFIX,peer39.com
+DOMAIN-SUFFIX,pennyweb.com
 DOMAIN-SUFFIX,pepperjamnetwork.com
 DOMAIN-SUFFIX,perceivequarter.com
 DOMAIN-SUFFIX,percentmobile.com
@@ -2740,7 +2735,6 @@ DOMAIN-SUFFIX,priefy.com
 DOMAIN-SUFFIX,primetime.net
 DOMAIN-SUFFIX,privatecash.com
 DOMAIN-SUFFIX,prmtracking.com
-DOMAIN-SUFFIX,pro-advertising.com
 DOMAIN-SUFFIX,pro-market.net
 DOMAIN-SUFFIX,probablepartner.com
 DOMAIN-SUFFIX,processplantation.com
@@ -2860,7 +2854,6 @@ DOMAIN-SUFFIX,rate.ru
 DOMAIN-SUFFIX,ratings.lycos.com
 DOMAIN-SUFFIX,rayjump.com
 DOMAIN-SUFFIX,rcadserver.com
-DOMAIN-SUFFIX,re-directme.com
 DOMAIN-SUFFIX,reachjunction.com
 DOMAIN-SUFFIX,reactx.com
 DOMAIN-SUFFIX,readgoldfish.com

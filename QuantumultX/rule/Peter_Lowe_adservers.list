@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3772
+# entries:        3765
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,12 +17,10 @@ DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
 DOMAIN-SUFFIX,180searchassistant.com, reject
-DOMAIN-SUFFIX,1link2020.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
 DOMAIN-SUFFIX,24log.com, reject
-DOMAIN-SUFFIX,24pm-affiliation.com, reject
 DOMAIN-SUFFIX,2mdn.net, reject
 DOMAIN-SUFFIX,2o7.net, reject
 DOMAIN-SUFFIX,2znp09oa.com, reject
@@ -725,7 +723,6 @@ DOMAIN-SUFFIX,adserver.digitoday.com, reject
 DOMAIN-SUFFIX,adserver.echdk.pl, reject
 DOMAIN-SUFFIX,adserver.friendfinder.com, reject
 DOMAIN-SUFFIX,adserver.generationiron.com, reject
-DOMAIN-SUFFIX,adserver.html.it, reject
 DOMAIN-SUFFIX,adserver.hwupgrade.it, reject
 DOMAIN-SUFFIX,adserver.ilango.de, reject
 DOMAIN-SUFFIX,adserver.industryarena.com, reject
@@ -901,7 +898,6 @@ DOMAIN-SUFFIX,affiliate.travelnow.com, reject
 DOMAIN-SUFFIX,affiliate.treated.com, reject
 DOMAIN-SUFFIX,affiliatefuture.com, reject
 DOMAIN-SUFFIX,affiliates.allposters.com, reject
-DOMAIN-SUFFIX,affiliates.babylon.com, reject
 DOMAIN-SUFFIX,affiliates.digitalriver.com, reject
 DOMAIN-SUFFIX,affiliates.globat.com, reject
 DOMAIN-SUFFIX,affiliates.rozetka.com.ua, reject
@@ -1670,7 +1666,6 @@ DOMAIN-SUFFIX,efficaciouscactus.com, reject
 DOMAIN-SUFFIX,eiv.baidu.com, reject
 DOMAIN-SUFFIX,ejyymghi.com, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
-DOMAIN-SUFFIX,elasticducks.com, reject
 DOMAIN-SUFFIX,elderlyscissors.com, reject
 DOMAIN-SUFFIX,elderlytown.com, reject
 DOMAIN-SUFFIX,elephantqueue.com, reject
@@ -1756,7 +1751,6 @@ DOMAIN-SUFFIX,exoclick.com, reject
 DOMAIN-SUFFIX,exosrv.com, reject
 DOMAIN-SUFFIX,experianmarketingservices.digital, reject
 DOMAIN-SUFFIX,explorads.com, reject
-DOMAIN-SUFFIX,expmediadirect1.com, reject
 DOMAIN-SUFFIX,exponea.com, reject
 DOMAIN-SUFFIX,exponential.com, reject
 DOMAIN-SUFFIX,express-submit.de, reject
@@ -2655,6 +2649,7 @@ DOMAIN-SUFFIX,pc-tc.s3-eu-west-1.amazonaws.com, reject
 DOMAIN-SUFFIX,pcash.imlive.com, reject
 DOMAIN-SUFFIX,peep-auktion.de, reject
 DOMAIN-SUFFIX,peer39.com, reject
+DOMAIN-SUFFIX,pennyweb.com, reject
 DOMAIN-SUFFIX,pepperjamnetwork.com, reject
 DOMAIN-SUFFIX,perceivequarter.com, reject
 DOMAIN-SUFFIX,percentmobile.com, reject
@@ -2740,7 +2735,6 @@ DOMAIN-SUFFIX,priefy.com, reject
 DOMAIN-SUFFIX,primetime.net, reject
 DOMAIN-SUFFIX,privatecash.com, reject
 DOMAIN-SUFFIX,prmtracking.com, reject
-DOMAIN-SUFFIX,pro-advertising.com, reject
 DOMAIN-SUFFIX,pro-market.net, reject
 DOMAIN-SUFFIX,probablepartner.com, reject
 DOMAIN-SUFFIX,processplantation.com, reject
@@ -2860,7 +2854,6 @@ DOMAIN-SUFFIX,rate.ru, reject
 DOMAIN-SUFFIX,ratings.lycos.com, reject
 DOMAIN-SUFFIX,rayjump.com, reject
 DOMAIN-SUFFIX,rcadserver.com, reject
-DOMAIN-SUFFIX,re-directme.com, reject
 DOMAIN-SUFFIX,reachjunction.com, reject
 DOMAIN-SUFFIX,reactx.com, reject
 DOMAIN-SUFFIX,readgoldfish.com, reject

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403161256
+## ! Version: 202403171100
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Mar 2024 12:56 UTC
+## ! Last modified: 17 Mar 2024 11:00 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -88,7 +88,6 @@ DOMAIN-SUFFIX,cnna.io
 DOMAIN-SUFFIX,cntxtfl.com
 DOMAIN-SUFFIX,confiant-integrations.net
 DOMAIN-SUFFIX,convead.io
-DOMAIN-SUFFIX,conversationalsdevelopment.nl
 DOMAIN-SUFFIX,convertlink.com
 DOMAIN-SUFFIX,cpx.to
 DOMAIN-SUFFIX,crwdcntrl.net
@@ -4195,11 +4194,13 @@ DOMAIN-SUFFIX,dot.nonolive.com
 DOMAIN-SUFFIX,dp.shoprunner.com
 DOMAIN-SUFFIX,dtag.breadfinancial.com
 DOMAIN-SUFFIX,dumpster.cam4.com
+DOMAIN-SUFFIX,e.quizlet.com
 DOMAIN-SUFFIX,ea.epochbase.com
 DOMAIN-SUFFIX,ec.thredup.com
 DOMAIN-SUFFIX,edge.staging.fullstory.com
 DOMAIN-SUFFIX,eec.crunchyroll.com
 DOMAIN-SUFFIX,ejlytics.editorji.com
+DOMAIN-SUFFIX,el.quizlet.com
 DOMAIN-SUFFIX,engagefront.meteomedia.com
 DOMAIN-SUFFIX,engagefront.theweathernetwork.com
 DOMAIN-SUFFIX,engagement.feedly.com

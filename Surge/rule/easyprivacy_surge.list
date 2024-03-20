@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403191303
+## ! Version: 202403201347
 ## ! Title: EasyPrivacy
-## ! Last modified: 19 Mar 2024 13:03 UTC
+## ! Last modified: 20 Mar 2024 13:47 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4178,6 +4178,7 @@ DOMAIN-SUFFIX,cryo.socialblade.com
 DOMAIN-SUFFIX,cstats.sankakucomplex.com
 DOMAIN-SUFFIX,cwt.citywire.info
 DOMAIN-SUFFIX,d.skk.moe
+DOMAIN-SUFFIX,d401.dollartree.com
 DOMAIN-SUFFIX,data.allstate.com
 DOMAIN-SUFFIX,data.guide.photobucket.com
 DOMAIN-SUFFIX,data.torry.io
@@ -4271,10 +4272,12 @@ DOMAIN-SUFFIX,gmetrics.getbeamer.com
 DOMAIN-SUFFIX,gnar.grammarly.com
 DOMAIN-SUFFIX,go.pardot.com
 DOMAIN-SUFFIX,gotie.tunein.com
+DOMAIN-SUFFIX,grgnsht.nzxt.com
 DOMAIN-SUFFIX,gtm.wise.com
 DOMAIN-SUFFIX,gtreus.aliexpress.com
 DOMAIN-SUFFIX,gurgle.pcmag.com
 DOMAIN-SUFFIX,gurgle.spiceworks.com
+DOMAIN-SUFFIX,h031.familydollar.com
 DOMAIN-SUFFIX,health-metrics-api.setapp.com
 DOMAIN-SUFFIX,heap.drop.com
 DOMAIN-SUFFIX,hlogger.heraldcorp.com

@@ -91,7 +91,7 @@ function addEventListenerDefuser(
         const matchesEither = matchesType || matchesHandler;
         const matchesBoth = matchesType && matchesHandler;
         if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
-            debugger; // jshint ignore:line
+            debugger; // eslint-disable-line no-debugger
         }
         if ( matchesBoth && targetSelector !== undefined ) {
             if ( elementMatches(thisArg) === false ) { return false; }

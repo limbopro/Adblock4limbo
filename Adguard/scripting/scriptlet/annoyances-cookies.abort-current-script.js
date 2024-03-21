@@ -119,7 +119,8 @@ function abortCurrentScriptCore(
         if ( e instanceof HTMLScriptElement === false ) { return; }
         if ( e === thisScript ) { return; }
         if ( context !== '' && reContext.test(e.src) === false ) {
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
+            // eslint-disable-next-line no-debugger
+            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
             return;
         }
         if ( safe.logLevel > 1 && context !== '' ) {
@@ -127,17 +128,20 @@ function abortCurrentScriptCore(
         }
         const scriptText = getScriptText(e);
         if ( reNeedle.test(scriptText) === false ) {
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
+            // eslint-disable-next-line no-debugger
+            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
             return;
         }
         if ( safe.logLevel > 1 ) {
             safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
         }
-        if ( debug === 'match' || debug === 'all' ) { debugger; }  // jshint ignore: line
+        // eslint-disable-next-line no-debugger
+        if ( debug === 'match' || debug === 'all' ) { debugger; }
         safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
     };
-    if ( debug === 'install' ) { debugger; }  // jshint ignore: line
+    // eslint-disable-next-line no-debugger
+    if ( debug === 'install' ) { debugger; }
     try {
         Object.defineProperty(owner, prop, {
             get: function() {

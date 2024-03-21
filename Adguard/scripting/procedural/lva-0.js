@@ -23,26 +23,26 @@
 
 'use strict';
 
-// ruleset: vie-1
+// ruleset: lva-0
 
 /******************************************************************************/
 
 // Important!
 // Isolate from global scope
-(function uBOL_cssDeclarativeImport() {
+(function uBOL_cssProceduralImport() {
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"]}"],["{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"]];
+const argsList = [["{\"selector\":\".widget_execphp\",\"tasks\":[[\"has-text\",\"Reklāmraksti\"]]}"]];
 
-const hostnamesMap = new Map([["chotlo247.me",0],["www.o-study.net",1],["thapcam4.net",2],["blog.abit.vn",2],["www.saostar.vn",3]]);
+const hostnamesMap = new Map([["aluksniesiem.lv",0],["bauskasdzive.lv",0],["dzirkstele.lv",0],["rekurzeme.lv",0],["staburags.lv",0],["ziemellatvija.lv",0],["zz.lv",0]]);
 
 const entitiesMap = new Map(undefined);
 
 const exceptionsMap = new Map(undefined);
 
-self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports = self.proceduralImports || [];
+self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
 
 /******************************************************************************/
 

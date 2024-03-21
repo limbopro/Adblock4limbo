@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["loginModal"]];
+const argsList = [["_waitingAuth0Counter"],["custom-modal-create-account-link"],["loginModal"]];
 
-const hostnamesMap = new Map([["analyticsvidhya.com",0]]);
+const hostnamesMap = new Map([["clarin.com",0],["tekinvestor.no",1],["analyticsvidhya.com",2]]);
 
 const entitiesMap = new Map([]);
 

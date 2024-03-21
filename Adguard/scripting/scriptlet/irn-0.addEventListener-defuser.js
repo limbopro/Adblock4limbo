@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
 
-const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["elmefarda.com",2],["s-moshaver.com",2],["ganjipakhsh.com",3],["javan-musics.com",4],["mopon.ir",5],["noorlib.ir",6],["subkade.ir",7]]);
+const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["elmefarda.com",2],["s-moshaver.com",2],["ganjipakhsh.com",3],["javan-musics.com",4],["tabanmusic.com",4],["texahang.org",4],["iran-music.com",4],["mopon.ir",5],["noorlib.ir",6],["subkade.ir",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -91,7 +91,7 @@ function addEventListenerDefuser(
         const matchesEither = matchesType || matchesHandler;
         const matchesBoth = matchesType && matchesHandler;
         if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
-            debugger; // jshint ignore:line
+            debugger; // eslint-disable-line no-debugger
         }
         if ( matchesBoth && targetSelector !== undefined ) {
             if ( elementMatches(thisArg) === false ) { return false; }

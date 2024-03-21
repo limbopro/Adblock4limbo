@@ -46,7 +46,7 @@ const argsList = [["click","checkTarget"],["click","popundr"],["click","showPop"
 
 const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["diziwatch.net",0],["fullhd720pizle.live",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2]]);
 
-const entitiesMap = new Map([["filmmakinesi1",0],["yabancidizitv",0],["filmizlemax",0]]);
+const entitiesMap = new Map([["filmmakinesi1",0],["filmizlemax",0]]);
 
 const exceptionsMap = new Map([]);
 
@@ -91,7 +91,7 @@ function addEventListenerDefuser(
         const matchesEither = matchesType || matchesHandler;
         const matchesBoth = matchesType && matchesHandler;
         if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
-            debugger; // jshint ignore:line
+            debugger; // eslint-disable-line no-debugger
         }
         if ( matchesBoth && targetSelector !== undefined ) {
             if ( elementMatches(thisArg) === false ) { return false; }

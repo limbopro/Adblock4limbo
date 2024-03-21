@@ -42,9 +42,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".lazy","src","[data-sco-src]"]];
+const argsList = [["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],[".lazy","src","[data-sco-src]"]];
 
-const hostnamesMap = new Map([["rocketnews24.com",0],["soranews24.com",0],["youpouch.com",0]]);
+const hostnamesMap = new Map([["statisticsanddata.org",0],["rocketnews24.com",1],["soranews24.com",1],["youpouch.com",1]]);
 
 const entitiesMap = new Map([]);
 

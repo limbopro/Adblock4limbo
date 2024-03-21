@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["jQuery","wizard_accordion"],["disableEnterKey"],["document.ondragstart"],["b2a"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["setTimeout","test"],["Bau","preloadAds"],["monsterinsights_frontend"]];
+const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["monsterinsights_frontend"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4,5,8]],["discoveringtheplanet.com",[6,7]],["egoinas.se",8],["enkelteknik.se",8],["hamnen.se",8],["cannabis.se",8],["tidningen.djurskyddet.se",8],["influens.se",8],["byggvarlden.se",8],["vegomagasinet.se",8],["golflivet.se",8],["evertiq.se",9],["foretagsverige.se",10],["forskningsverige.se",10],["motorbibeln.se",10],["hallbarhetsverige.se",10],["tillvaxtsverige.se",10],["grillbibeln.se",10],["kampenmotcancer.se",10],["folkhalsasverige.se",10],["hejaolika.se",11],["medibok.se",12],["nasdaqomxnordic.com",13],["sakochliv.se",14],["skrattsajten.com",15],["norpan.se",15],["spelhubben.se",16],["husbilsplats.se",16],["svensktgolfforum.se",17],["www.expressen.se",18],["zeinaskitchen.se",19],["trafiksakerhet.se",19],["boktugg.se",19],["lakartidningen.se",19],["villalivet.se",19],["matsafari.nu",19],["forexgruppen.se",19],["fastighetsvarlden.se",19]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["foretagsverige.se",8],["forskningsverige.se",8],["motorbibeln.se",8],["hallbarhetsverige.se",8],["tillvaxtsverige.se",8],["grillbibeln.se",8],["kampenmotcancer.se",8],["folkhalsasverige.se",8],["hejaolika.se",9],["medibok.se",10],["nasdaqomxnordic.com",11],["sakochliv.se",12],["skrattsajten.com",13],["norpan.se",13],["spelhubben.se",14],["husbilsplats.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",15],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15]]);
 
 const entitiesMap = new Map([]);
 
@@ -119,7 +119,8 @@ function abortCurrentScriptCore(
         if ( e instanceof HTMLScriptElement === false ) { return; }
         if ( e === thisScript ) { return; }
         if ( context !== '' && reContext.test(e.src) === false ) {
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
+            // eslint-disable-next-line no-debugger
+            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
             return;
         }
         if ( safe.logLevel > 1 && context !== '' ) {
@@ -127,17 +128,20 @@ function abortCurrentScriptCore(
         }
         const scriptText = getScriptText(e);
         if ( reNeedle.test(scriptText) === false ) {
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
+            // eslint-disable-next-line no-debugger
+            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
             return;
         }
         if ( safe.logLevel > 1 ) {
             safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
         }
-        if ( debug === 'match' || debug === 'all' ) { debugger; }  // jshint ignore: line
+        // eslint-disable-next-line no-debugger
+        if ( debug === 'match' || debug === 'all' ) { debugger; }
         safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
     };
-    if ( debug === 'install' ) { debugger; }  // jshint ignore: line
+    // eslint-disable-next-line no-debugger
+    if ( debug === 'install' ) { debugger; }
     try {
         Object.defineProperty(owner, prop, {
             get: function() {

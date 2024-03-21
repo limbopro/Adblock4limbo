@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["window.ado","null"]];
+const argsList = [["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["AddAdsV2I.disableAds","true"],["AddAdsV2I.loadMainScript","noopFunc"],["AddAdsV2I.showBackupAds","false"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["window.ado","null"]];
 
-const hostnamesMap = new Map([["angol-magyar-szotar.hu",0],["embed.indavideo.hu",[1,2,3]],["huaweiblog.hu",4],["embed.rtl.hu",[5,6]],["femina.hu",7]]);
+const hostnamesMap = new Map([["angol-magyar-szotar.hu",0],["embed.indavideo.hu",[1,2,3]],["huaweiblog.hu",4],["myonlineradio.hu",[5,6,7]],["player.rtl.hu",[8,9]],["femina.hu",10]]);
 
 const entitiesMap = new Map([]);
 

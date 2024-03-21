@@ -33,7 +33,7 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"span:has([href*=\\\"promo\\\"])\",\"tasks\":[[\"xpath\",\"..\"]]}"],["{\"selector\":\"div[aria-label*=\\\"המחלקה המסחרית\\\"]\",\"tasks\":[[\"upward\",5]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"admiral\"]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"(window)}catch\"]]}","{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"200===\"]]}","{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"responseText\"]]}"]];
+const argsList = [["{\"selector\":\"span:has([href*=\\\"promo\\\"])\",\"tasks\":[[\"xpath\",\"..\"]]}"],["{\"selector\":\"div[aria-label*=\\\"ה��חלקה המסחרית\\\"]\",\"tasks\":[[\"upward\",5]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"admiral\"]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"(window)}catch\"]]}","{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"200===\"]]}","{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"responseText\"]]}"]];
 
 const hostnamesMap = new Map([["haaretz.co.il",0],["www-haaretz-co-il.eu1.proxy.openathens.net",0],["www.kikar.co.il",1],["morfix.co.il",2],["sheee.co.il",3],["walla.co.il",3]]);
 

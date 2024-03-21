@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","document.oncontextmenu ="],["script","ads_app_name"],["script","document.oncontextmenu="],["script","/popTimes_|document\\.onkeydown|'contextmenu'/"],["script","window.location="],["script","ad.setAttribute"]];
+const argsList = [["script","document.oncontextmenu ="],["script","ads_app_name"],["script","document.oncontextmenu="],["script","/popTimes_|document\\.onkeydown|'contextmenu'/"],["script","window.location="],["script","popTimes_"],["script","ad.setAttribute"]];
 
-const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["musiceman.net",3],["najiremix.ir",4],["tgju.org",5]]);
+const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["musiceman.net",3],["najiremix.ir",4],["iran-music.com",5],["tgju.org",6]]);
 
 const entitiesMap = new Map([]);
 

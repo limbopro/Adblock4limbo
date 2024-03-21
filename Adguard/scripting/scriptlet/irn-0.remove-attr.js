@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["onselectstart|oncopy|oncontextmenu","body"],["onmousedown|onselectstart","body"],["oncontextmenu","a.indirect[data-get]"],["draggable","","stay"]];
 
-const hostnamesMap = new Map([["iranstar.com",0],["javan-musics.com",1],["musiceman.net",1],["subkade.ir",2],["takmili.com",3]]);
+const hostnamesMap = new Map([["iranstar.com",0],["javan-musics.com",1],["tabanmusic.com",1],["texahang.org",1],["iran-music.com",1],["musiceman.net",1],["subkade.ir",2],["takmili.com",3]]);
 
 const entitiesMap = new Map([]);
 

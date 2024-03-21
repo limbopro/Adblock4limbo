@@ -99,7 +99,7 @@ function hrefSanitizer(
             return elem.textContent
                 .replace(/^[^\x21-\x7e]+/, '') // remove leading invalid characters
                 .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
-                ;
+            ;
         }
         return '';
     };

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403201347
+## ! Version: 202403211532
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Mar 2024 13:47 UTC
+## ! Last modified: 21 Mar 2024 15:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -11543,7 +11543,6 @@ DOMAIN-SUFFIX,samc.swisscanto.com
 DOMAIN-SUFFIX,samc.zkb.ch
 DOMAIN-SUFFIX,samc.zuerilaufcup.ch
 DOMAIN-SUFFIX,sametrics.finn.no
-DOMAIN-SUFFIX,sams.manager-magazin.de
 DOMAIN-SUFFIX,sams.spiegel.de
 DOMAIN-SUFFIX,samt.frankly.ch
 DOMAIN-SUFFIX,samt.swisscanto.com

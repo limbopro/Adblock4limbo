@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["document.documentElement","break;case $."],["atob","ai_block_class"],["Object.defineProperty","ADMStorageFileCDN"],["document.addEventListener","opened_window_shoppe"],["JSON.parse","break;case $."],["document.addEventListener","popunder"],["document.createElement","script"],["navigator","devtoolsDetector"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setInterval","offsetHeight"],["document.getElementById","chpadblock"],["document.createElement","optad"],["$","PopUnder"],["Promise","break;case"],["eval","$._Eu"],["jQuery","popurl"],["document.addEventListener","linksToOpen"],["jQuery","click_time"],["$","p0pUpRandom"],["document.querySelectorAll","popMagic"],["$","popup"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.addEventListener","window.open"],["document.addEventListener","popup"],["$","btpop"],["jQuery","window.open"],["WebAssembly","instantiate"],["document.write","snow"],["Promise","instance"],["setTimeout","window.location"]];
 
-const hostnamesMap = new Map([["animevietsub.io",0],["azrom.net",1],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["afamily.vn",2],["cunghocvui.com",3],["downloadsachmienphi.com",4],["lrepacks.net",4],["dualeotruyenme.com",[5,29]],["m.blogtruyenmoi.com",5],["gocphimvnn.com",6],["p.thoctv.com",6],["gotphim.com",7],["hh3dhay.lol",8],["hh3dhay.xyz",8],["holyfilm.org",9],["ios.codevn.net",10],["khohieu.com",11],["linkneverdie.net",12],["lxmanga.net",13],["nettruyenall.com",14],["phimgichill.net",[15,16]],["hhhay.tv",15],["hh3dhay.pro",15],["truyengihotnha.com",[15,29]],["truyengihotnha.net",[15,29]],["mephimnhe1.net",16],["phimhdc.net",17],["motchill.ac",17],["phimmoinay.vip",18],["phimtho.net",19],["rphang.cx",20],["misskon.com",20],["tctruyen.net",21],["tctruyen.com",21],["abtruyen.com",21],["phimss.com",21],["tinsoikeo.care",22],["truyen2u.net",23],["truyen35.vn",24],["truyenqqvn.com",25],["animehay.city",[25,29]],["truyensextv.com",26],["truyentuan.xyz",27],["vailonxx.com",28],["phimlongtieng.com",28],["phimlongtieng.net",28],["viet69.bz",29],["ungtycomicsvip.com",29],["vlxx.moe",29],["yurineko.net",29],["vlxyz.vc",29],["javhay.in",29],["phimsexhay669.co",29],["cliphot69.city",29],["doctruyen3qkr.com",29],["hentaizz.me",29],["heo69.day",29],["tuoi69.blog",29],["top1sex.club",29],["lenlut.tv",29],["xemxxx.net",29],["hentaivn.top",29],["sexvn1.cc",29],["cdn.streamvl.sbs",29],["www.buomtv.app",29],["truyenvn.io",29],["cdnstream.sbs",29],["javtiful.com",29],["truyengihotdo.net",29],["truyengihotzay.net",29],["truyengihotqua.net",29],["truyengihotqua.com",29],["truyengihotnay.com",29],["quatvn2.club",29],["tenmientruyengi.net",29],["topxxxviet.com",29],["phim18hd.top",29],["web.sexviet88.day",29],["sexphetv.pro",29],["helvid.net",29],["vungoctuan.vn",30],["www.toptruyen3.info",31],["xnxx-sex-videos.com",32]]);
+const hostnamesMap = new Map([["animevietsub.io",0],["azrom.net",1],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["afamily.vn",2],["cunghocvui.com",3],["downloadsachmienphi.com",4],["lrepacks.net",4],["dualeotruyenme.com",[5,29]],["m.blogtruyenmoi.com",5],["gocphimmoi.com",6],["p.thoctv.com",6],["gotphim.com",7],["hh3dhay.lol",8],["hh3dhay.xyz",8],["holyfilm.org",9],["ios.codevn.net",10],["khohieu.com",11],["linkneverdie.net",12],["lxmanga88.com",13],["nettruyennn.com",14],["phimgichill.net",[15,16]],["hhhay.tv",15],["hh3dhay.pro",15],["truyengihotnha.com",[15,29]],["truyengihotnha.net",[15,29]],["mephimnhe1.net",16],["phimhdc.net",17],["motchill.ac",17],["phimmoinay.vip",18],["phimtho.net",19],["rphang.biz",20],["misskon.com",20],["tctruyen.net",21],["abtruyen.net",21],["phimss.com",21],["tinsoikeo.care",22],["truyen2u.net",23],["truyen35.vn",24],["truyenqqvn.com",25],["animehay.me",[25,29]],["truyensextv.com",26],["truyentuan.xyz",27],["vailonxx.com",28],["phimlongtieng.com",28],["phimlongtieng.net",28],["viet69.ca",29],["ungtycomicsvip.com",29],["vlxx.moe",29],["yurineko.net",29],["vlxyz.vc",29],["javhay.in",29],["phimsexhay669.org",29],["cliphot69.city",29],["doctruyen3qvn.net",29],["hentaizz.pro",29],["heo69.vc",29],["tuoi69.blog",29],["top1sex.club",29],["lenlut.tv",29],["mup69.net",29],["hentaivn.day",29],["sexvn1.cc",29],["cdn.streamvl.sbs",29],["www.buomtv.app",29],["truyenvn.club",29],["cdnstream.sbs",29],["javtiful.com",29],["truyengihotdo.net",29],["truyengihotzay.net",29],["truyengihotqua.net",29],["truyengihotqua.com",29],["truyengihotnay.com",29],["quatvn2.club",29],["tenmientruyengi.net",29],["ww2.topsexviet.info",29],["phim18hd.top",29],["web.sexviet88.day",29],["sexdep9x.pro",29],["helvid.net",29],["vungoctuan.vn",30],["www.toptruyen3.info",31],["xnxx-sex-videos.com",32]]);
 
 const entitiesMap = new Map([]);
 
@@ -119,7 +119,8 @@ function abortCurrentScriptCore(
         if ( e instanceof HTMLScriptElement === false ) { return; }
         if ( e === thisScript ) { return; }
         if ( context !== '' && reContext.test(e.src) === false ) {
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
+            // eslint-disable-next-line no-debugger
+            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
             return;
         }
         if ( safe.logLevel > 1 && context !== '' ) {
@@ -127,17 +128,20 @@ function abortCurrentScriptCore(
         }
         const scriptText = getScriptText(e);
         if ( reNeedle.test(scriptText) === false ) {
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }  // jshint ignore: line
+            // eslint-disable-next-line no-debugger
+            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
             return;
         }
         if ( safe.logLevel > 1 ) {
             safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
         }
-        if ( debug === 'match' || debug === 'all' ) { debugger; }  // jshint ignore: line
+        // eslint-disable-next-line no-debugger
+        if ( debug === 'match' || debug === 'all' ) { debugger; }
         safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
     };
-    if ( debug === 'install' ) { debugger; }  // jshint ignore: line
+    // eslint-disable-next-line no-debugger
+    if ( debug === 'install' ) { debugger; }
     try {
         Object.defineProperty(owner, prop, {
             get: function() {

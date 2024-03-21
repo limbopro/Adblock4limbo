@@ -42,9 +42,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["i--","","0.02"],[],["update","1000"]];
+const argsList = [["i--","","0.02"],["Clipboard","1000","0.001"]];
 
-const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1],["decrypt.day",2]]);
+const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1]]);
 
 const entitiesMap = new Map([["bluemediafile",0]]);
 

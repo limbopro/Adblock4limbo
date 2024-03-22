@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3765
+# entries:        3763
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,10 +17,12 @@ DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,101order.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
 DOMAIN-SUFFIX,180searchassistant.com, reject
+DOMAIN-SUFFIX,1link2020.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
 DOMAIN-SUFFIX,24log.com, reject
+DOMAIN-SUFFIX,24pm-affiliation.com, reject
 DOMAIN-SUFFIX,2mdn.net, reject
 DOMAIN-SUFFIX,2o7.net, reject
 DOMAIN-SUFFIX,2znp09oa.com, reject
@@ -787,7 +789,6 @@ DOMAIN-SUFFIX,adsmetadata.startappservice.com, reject
 DOMAIN-SUFFIX,adsmogo.com, reject
 DOMAIN-SUFFIX,adsnative.com, reject
 DOMAIN-SUFFIX,adsoftware.com, reject
-DOMAIN-SUFFIX,adsoldier.com, reject
 DOMAIN-SUFFIX,adsolut.in, reject
 DOMAIN-SUFFIX,adspeed.net, reject
 DOMAIN-SUFFIX,adspirit.de, reject
@@ -821,7 +822,6 @@ DOMAIN-SUFFIX,adtechus.com, reject
 DOMAIN-SUFFIX,adtegrity.net, reject
 DOMAIN-SUFFIX,adthis.com, reject
 DOMAIN-SUFFIX,adthrive.com, reject
-DOMAIN-SUFFIX,adthurst.com, reject
 DOMAIN-SUFFIX,adtiger.de, reject
 DOMAIN-SUFFIX,adtilt.com, reject
 DOMAIN-SUFFIX,adtng.com, reject
@@ -898,6 +898,7 @@ DOMAIN-SUFFIX,affiliate.travelnow.com, reject
 DOMAIN-SUFFIX,affiliate.treated.com, reject
 DOMAIN-SUFFIX,affiliatefuture.com, reject
 DOMAIN-SUFFIX,affiliates.allposters.com, reject
+DOMAIN-SUFFIX,affiliates.babylon.com, reject
 DOMAIN-SUFFIX,affiliates.digitalriver.com, reject
 DOMAIN-SUFFIX,affiliates.globat.com, reject
 DOMAIN-SUFFIX,affiliates.rozetka.com.ua, reject
@@ -2950,7 +2951,6 @@ DOMAIN-SUFFIX,rtbplatform.net, reject
 DOMAIN-SUFFIX,rtbpop.com, reject
 DOMAIN-SUFFIX,rtbpopd.com, reject
 DOMAIN-SUFFIX,rtmark.net, reject
-DOMAIN-SUFFIX,rtpdn11.com, reject
 DOMAIN-SUFFIX,rtxplatform.com, reject
 DOMAIN-SUFFIX,ru4.com, reject
 DOMAIN-SUFFIX,rubiconproject.com, reject
@@ -3259,14 +3259,12 @@ DOMAIN-SUFFIX,supertop.ru, reject
 DOMAIN-SUFFIX,supertop100.com, reject
 DOMAIN-SUFFIX,supply.colossusssp.com, reject
 DOMAIN-SUFFIX,supportwaves.com, reject
-DOMAIN-SUFFIX,surfmusik-adserver.de, reject
 DOMAIN-SUFFIX,surveygizmobeacon.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,sw88.espn.com, reject
 DOMAIN-SUFFIX,swan-swan-goose.com, reject
 DOMAIN-SUFFIX,swankysquare.com, reject
 DOMAIN-SUFFIX,swimslope.com, reject
 DOMAIN-SUFFIX,swingslip.com, reject
-DOMAIN-SUFFIX,swordfishdc.com, reject
 DOMAIN-SUFFIX,swordgoose.com, reject
 DOMAIN-SUFFIX,synonymoussticks.com, reject
 DOMAIN-SUFFIX,t.appsflyer.com, reject

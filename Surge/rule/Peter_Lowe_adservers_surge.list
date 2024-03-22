@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3765
+# entries:        3763
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,10 +17,12 @@ DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,101order.com
 DOMAIN-SUFFIX,180hits.de
 DOMAIN-SUFFIX,180searchassistant.com
+DOMAIN-SUFFIX,1link2020.com
 DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
+DOMAIN-SUFFIX,24pm-affiliation.com
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,2o7.net
 DOMAIN-SUFFIX,2znp09oa.com
@@ -787,7 +789,6 @@ DOMAIN-SUFFIX,adsmetadata.startappservice.com
 DOMAIN-SUFFIX,adsmogo.com
 DOMAIN-SUFFIX,adsnative.com
 DOMAIN-SUFFIX,adsoftware.com
-DOMAIN-SUFFIX,adsoldier.com
 DOMAIN-SUFFIX,adsolut.in
 DOMAIN-SUFFIX,adspeed.net
 DOMAIN-SUFFIX,adspirit.de
@@ -821,7 +822,6 @@ DOMAIN-SUFFIX,adtechus.com
 DOMAIN-SUFFIX,adtegrity.net
 DOMAIN-SUFFIX,adthis.com
 DOMAIN-SUFFIX,adthrive.com
-DOMAIN-SUFFIX,adthurst.com
 DOMAIN-SUFFIX,adtiger.de
 DOMAIN-SUFFIX,adtilt.com
 DOMAIN-SUFFIX,adtng.com
@@ -898,6 +898,7 @@ DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
 DOMAIN-SUFFIX,affiliatefuture.com
 DOMAIN-SUFFIX,affiliates.allposters.com
+DOMAIN-SUFFIX,affiliates.babylon.com
 DOMAIN-SUFFIX,affiliates.digitalriver.com
 DOMAIN-SUFFIX,affiliates.globat.com
 DOMAIN-SUFFIX,affiliates.rozetka.com.ua
@@ -2950,7 +2951,6 @@ DOMAIN-SUFFIX,rtbplatform.net
 DOMAIN-SUFFIX,rtbpop.com
 DOMAIN-SUFFIX,rtbpopd.com
 DOMAIN-SUFFIX,rtmark.net
-DOMAIN-SUFFIX,rtpdn11.com
 DOMAIN-SUFFIX,rtxplatform.com
 DOMAIN-SUFFIX,ru4.com
 DOMAIN-SUFFIX,rubiconproject.com
@@ -3259,14 +3259,12 @@ DOMAIN-SUFFIX,supertop.ru
 DOMAIN-SUFFIX,supertop100.com
 DOMAIN-SUFFIX,supply.colossusssp.com
 DOMAIN-SUFFIX,supportwaves.com
-DOMAIN-SUFFIX,surfmusik-adserver.de
 DOMAIN-SUFFIX,surveygizmobeacon.s3.amazonaws.com
 DOMAIN-SUFFIX,sw88.espn.com
 DOMAIN-SUFFIX,swan-swan-goose.com
 DOMAIN-SUFFIX,swankysquare.com
 DOMAIN-SUFFIX,swimslope.com
 DOMAIN-SUFFIX,swingslip.com
-DOMAIN-SUFFIX,swordfishdc.com
 DOMAIN-SUFFIX,swordgoose.com
 DOMAIN-SUFFIX,synonymoussticks.com
 DOMAIN-SUFFIX,t.appsflyer.com

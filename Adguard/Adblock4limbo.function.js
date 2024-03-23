@@ -934,7 +934,8 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
 ['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
 ['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'special'],
-['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'common'],
+['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'better'],
+['泥巴影视', 'https://www.nivod8.tv/', '_blank', 'movies', 'common'],
 ];
 
 

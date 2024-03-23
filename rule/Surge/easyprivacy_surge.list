@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403221503
+## ! Version: 202403231529
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Mar 2024 15:03 UTC
+## ! Last modified: 23 Mar 2024 15:29 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -219,6 +219,7 @@ DOMAIN-SUFFIX,logicanalytics.io
 DOMAIN-SUFFIX,logtail.com
 DOMAIN-SUFFIX,loopcybersec.com
 DOMAIN-SUFFIX,lsdm.co
+DOMAIN-SUFFIX,lyfnh.io
 DOMAIN-SUFFIX,maggieeatstheangel.com
 DOMAIN-SUFFIX,matheranalytics.com
 DOMAIN-SUFFIX,mathilde-ads.com
@@ -2467,6 +2468,7 @@ DOMAIN-SUFFIX,b7tp47v2nb3x-a.akamaihd.net
 DOMAIN-SUFFIX,bacon.section.io
 DOMAIN-SUFFIX,barium.cheezdev.com
 DOMAIN-SUFFIX,bat.bing.com
+DOMAIN-SUFFIX,baxter.olx.org
 DOMAIN-SUFFIX,bc.marfeelcache.com
 DOMAIN-SUFFIX,beacon.adelphic.com
 DOMAIN-SUFFIX,beacon.affil.walmart.com
@@ -3996,6 +3998,7 @@ DOMAIN-SUFFIX,collector-videoplayer.5centscdn.net
 DOMAIN-SUFFIX,contador.biobiochile.cl
 DOMAIN-SUFFIX,contadores.miarroba.com
 DOMAIN-SUFFIX,contadores.miarroba.es
+DOMAIN-SUFFIX,count.sibbo.net
 DOMAIN-SUFFIX,creatives.sunmedia.tv
 DOMAIN-SUFFIX,ctx.citiservi.es
 DOMAIN-SUFFIX,datanoticias.prisasd.com
@@ -4180,6 +4183,7 @@ DOMAIN-SUFFIX,cstats.sankakucomplex.com
 DOMAIN-SUFFIX,cwt.citywire.info
 DOMAIN-SUFFIX,d.skk.moe
 DOMAIN-SUFFIX,d401.dollartree.com
+DOMAIN-SUFFIX,dabu.askmediagroup.com
 DOMAIN-SUFFIX,data.allstate.com
 DOMAIN-SUFFIX,data.guide.photobucket.com
 DOMAIN-SUFFIX,data.torry.io

@@ -479,22 +479,10 @@ function navigation4limbo_body_pre() {
         <div class="div_global onlinemovies">\
         <div class="title_global">在线影视//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><a class="a_global" id="nbys" href="https://www.nivod4.tv/"\
-        target="_blank">泥巴影视</a></li>\
         <li class="li_global"><a class="a_global better" id="common" href="https://ddys.pro/"\
         target="_blank">低端影视</a></li>\
         <li class="li_global"><a class="a_global special" id="common" href="https://xiaobaotv.net/"\
         target="_blank">小宝影视</a></li>\
-        <li class="li_global"><a class="a_global" id="xbys" href="https://gimy.ai/"\
-        target="_blank">剧迷网</a></li>\
-        <li class="li_global"><a class="a_global" id="duboku" href="https://www.duboku.tv/"\
-        target="_blank">独播库</a></li>\
-        <li class="li_global"><a class="a_global" id="ttsp" href="https://www.ttsp.tv/"\
-        target="_blank">天天视频</a></li>\
-        <li class="li_global"><a class="a_global" id="555dy" href="https://555dyx3.com/"\
-        target="_blank">555电影网</a></li>\
-        <li class="li_global"><a class="a_global" id="libvio" href="https://libvio.top/"\
-        target="_blank">libvio梨</a></li>\
         </ul>\
         </div>\
         \
@@ -945,7 +933,24 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
 ['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
 ['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
+['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'special'],
+['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'common'],
 ];
+
+
+
+/**
+ * <li class="li_global"><a class="a_global" id="nbys" href="https://www.nivod8.tv/"\
+        target="_blank">泥巴影视</a></li>\
+        <li class="li_global"><a class="a_global" id="xbys" href="https://gimy.ai/"\
+        target="_blank">剧迷网</a></li>\
+        <li class="li_global"><a class="a_global" id="duboku" href="https://www.duboku.tv/"\
+        target="_blank">独播库</a></li>\
+        <li class="li_global"><a class="a_global" id="ttsp" href="https://www.ttsp.tv/"\
+        target="_blank">天天视频</a></li>\
+        <li class="li_global"><a class="a_global" id="libvio" href="https://libvio.top/"\
+        target="_blank">libvio梨</a></li>\
+ */
 
 var click_count = 0;
 document.addEventListener("keydown", function (event) {
@@ -1104,6 +1109,7 @@ function parentElement_add() {
                 child_push('.div_global.front > ul', '', "", 'front-end', 0)
                 child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0)
                 child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1)
+                child_push('.div_global.onlinemovies > ul', '', '', 'movies', '#xbys')
                 scroll_switch();
                 //if_a_click_then_close_daohang();
                 _footer_move(); // 最后再移动 div._footer
@@ -1133,6 +1139,7 @@ function parentElement_add() {
                 child_push('.div_global.front > ul', '', "", 'front-end', 0)
                 child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0)
                 child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1)
+                child_push('.div_global.onlinemovies > ul', '', '', 'movies', '#xbys', 0)
                 //console.log("// parentElement_add() 生成检测...");
                 scroll_switch();
                 //if_a_click_then_close_daohang();

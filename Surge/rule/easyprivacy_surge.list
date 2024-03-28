@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403271547
+## ! Version: 202403281312
 ## ! Title: EasyPrivacy
-## ! Last modified: 27 Mar 2024 15:47 UTC
+## ! Last modified: 28 Mar 2024 13:12 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1062,6 +1062,7 @@ DOMAIN-SUFFIX,flameuncle.com
 DOMAIN-SUFFIX,flimsycircle.com
 DOMAIN-SUFFIX,flimsythought.com
 DOMAIN-SUFFIX,floodprincipal.com
+DOMAIN-SUFFIX,flourishingcollaboration.com
 DOMAIN-SUFFIX,flowersornament.com
 DOMAIN-SUFFIX,flowerstreatment.com
 DOMAIN-SUFFIX,flowerycreature.com

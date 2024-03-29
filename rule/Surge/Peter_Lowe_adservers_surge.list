@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3763
+# entries:        3762
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -573,7 +573,6 @@ DOMAIN-SUFFIX,ads.printscr.com
 DOMAIN-SUFFIX,ads.prisacom.com
 DOMAIN-SUFFIX,ads.program3.com
 DOMAIN-SUFFIX,ads.psd2html.com
-DOMAIN-SUFFIX,ads.quasaraffiliates.com
 DOMAIN-SUFFIX,ads.quoka.de
 DOMAIN-SUFFIX,ads.radialserver.com
 DOMAIN-SUFFIX,ads.radio1.lv
@@ -838,7 +837,6 @@ DOMAIN-SUFFIX,adv.cooperhosting.net
 DOMAIN-SUFFIX,adv.donejty.pl
 DOMAIN-SUFFIX,adv.freeonline.it
 DOMAIN-SUFFIX,adv.hwupgrade.it
-DOMAIN-SUFFIX,adv.livedoor.com
 DOMAIN-SUFFIX,adv.mpvc.it
 DOMAIN-SUFFIX,adv.nexthardware.com
 DOMAIN-SUFFIX,adv.webmd.com
@@ -3259,6 +3257,7 @@ DOMAIN-SUFFIX,supertop.ru
 DOMAIN-SUFFIX,supertop100.com
 DOMAIN-SUFFIX,supply.colossusssp.com
 DOMAIN-SUFFIX,supportwaves.com
+DOMAIN-SUFFIX,surfmusik-adserver.de
 DOMAIN-SUFFIX,surveygizmobeacon.s3.amazonaws.com
 DOMAIN-SUFFIX,sw88.espn.com
 DOMAIN-SUFFIX,swan-swan-goose.com

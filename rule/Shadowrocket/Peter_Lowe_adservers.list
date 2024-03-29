@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 26 Feb 2024 09:09:41 GMT
-# entries:        3763
+# entries:        3762
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -573,7 +573,6 @@ DOMAIN-SUFFIX,ads.printscr.com, reject
 DOMAIN-SUFFIX,ads.prisacom.com, reject
 DOMAIN-SUFFIX,ads.program3.com, reject
 DOMAIN-SUFFIX,ads.psd2html.com, reject
-DOMAIN-SUFFIX,ads.quasaraffiliates.com, reject
 DOMAIN-SUFFIX,ads.quoka.de, reject
 DOMAIN-SUFFIX,ads.radialserver.com, reject
 DOMAIN-SUFFIX,ads.radio1.lv, reject
@@ -838,7 +837,6 @@ DOMAIN-SUFFIX,adv.cooperhosting.net, reject
 DOMAIN-SUFFIX,adv.donejty.pl, reject
 DOMAIN-SUFFIX,adv.freeonline.it, reject
 DOMAIN-SUFFIX,adv.hwupgrade.it, reject
-DOMAIN-SUFFIX,adv.livedoor.com, reject
 DOMAIN-SUFFIX,adv.mpvc.it, reject
 DOMAIN-SUFFIX,adv.nexthardware.com, reject
 DOMAIN-SUFFIX,adv.webmd.com, reject
@@ -3259,6 +3257,7 @@ DOMAIN-SUFFIX,supertop.ru, reject
 DOMAIN-SUFFIX,supertop100.com, reject
 DOMAIN-SUFFIX,supply.colossusssp.com, reject
 DOMAIN-SUFFIX,supportwaves.com, reject
+DOMAIN-SUFFIX,surfmusik-adserver.de, reject
 DOMAIN-SUFFIX,surveygizmobeacon.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,sw88.espn.com, reject
 DOMAIN-SUFFIX,swan-swan-goose.com, reject

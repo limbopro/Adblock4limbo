@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403281312
+## ! Version: 202403291227
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Mar 2024 13:12 UTC
+## ! Last modified: 29 Mar 2024 12:27 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -342,7 +342,6 @@ DOMAIN-SUFFIX,trkbc.com, reject
 DOMAIN-SUFFIX,trkn.us, reject
 DOMAIN-SUFFIX,tru.am, reject
 DOMAIN-SUFFIX,truffle.bid, reject
-DOMAIN-SUFFIX,trx-hub.com, reject
 DOMAIN-SUFFIX,tryzens-analytics.com, reject
 DOMAIN-SUFFIX,turboeagle.co, reject
 DOMAIN-SUFFIX,turbolion.io, reject
@@ -382,6 +381,7 @@ DOMAIN-SUFFIX,zhctrack.net, reject
 DOMAIN-SUFFIX,zippyfrog.co, reject
 DOMAIN-SUFFIX,zononi.com, reject
 DOMAIN-SUFFIX,zqtk.net, reject
+DOMAIN-SUFFIX,109.123.233.251, reject
 DOMAIN-SUFFIX,185.193.38.148, reject
 DOMAIN-SUFFIX,35.194.26.233, reject
 DOMAIN-SUFFIX,35.239.57.233, reject
@@ -415,6 +415,7 @@ DOMAIN-SUFFIX,f1tbit.com, reject
 DOMAIN-SUFFIX,filmoljupci.com, reject
 DOMAIN-SUFFIX,g1thub.com, reject
 DOMAIN-SUFFIX,gay-hotvideo.net, reject
+DOMAIN-SUFFIX,gulf.moneroocean.stream, reject
 DOMAIN-SUFFIX,igrid.org, reject
 DOMAIN-SUFFIX,jscoinminer.com, reject
 DOMAIN-SUFFIX,mi-de-ner-nis3.info, reject

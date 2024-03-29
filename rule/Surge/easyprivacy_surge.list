@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403281312
+## ! Version: 202403291227
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Mar 2024 13:12 UTC
+## ! Last modified: 29 Mar 2024 12:27 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -342,7 +342,6 @@ DOMAIN-SUFFIX,trkbc.com
 DOMAIN-SUFFIX,trkn.us
 DOMAIN-SUFFIX,tru.am
 DOMAIN-SUFFIX,truffle.bid
-DOMAIN-SUFFIX,trx-hub.com
 DOMAIN-SUFFIX,tryzens-analytics.com
 DOMAIN-SUFFIX,turboeagle.co
 DOMAIN-SUFFIX,turbolion.io
@@ -382,6 +381,7 @@ DOMAIN-SUFFIX,zhctrack.net
 DOMAIN-SUFFIX,zippyfrog.co
 DOMAIN-SUFFIX,zononi.com
 DOMAIN-SUFFIX,zqtk.net
+DOMAIN-SUFFIX,109.123.233.251
 DOMAIN-SUFFIX,185.193.38.148
 DOMAIN-SUFFIX,35.194.26.233
 DOMAIN-SUFFIX,35.239.57.233
@@ -415,6 +415,7 @@ DOMAIN-SUFFIX,f1tbit.com
 DOMAIN-SUFFIX,filmoljupci.com
 DOMAIN-SUFFIX,g1thub.com
 DOMAIN-SUFFIX,gay-hotvideo.net
+DOMAIN-SUFFIX,gulf.moneroocean.stream
 DOMAIN-SUFFIX,igrid.org
 DOMAIN-SUFFIX,jscoinminer.com
 DOMAIN-SUFFIX,mi-de-ner-nis3.info

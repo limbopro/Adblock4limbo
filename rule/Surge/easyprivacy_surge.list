@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202403291227
+## ! Version: 202403301507
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Mar 2024 12:27 UTC
+## ! Last modified: 30 Mar 2024 15:07 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1432,6 +1432,7 @@ DOMAIN-SUFFIX,nappyattack.com
 DOMAIN-SUFFIX,nappyneck.com
 DOMAIN-SUFFIX,neatshade.com
 DOMAIN-SUFFIX,nebulacrescent.com
+DOMAIN-SUFFIX,nebulajubilee.com
 DOMAIN-SUFFIX,nebulousamusement.com
 DOMAIN-SUFFIX,nebulousripple.com
 DOMAIN-SUFFIX,necessarywax.com
@@ -3688,6 +3689,7 @@ DOMAIN-SUFFIX,msg.71.am
 DOMAIN-SUFFIX,p.aty.sohu.com
 DOMAIN-SUFFIX,p.tencentmind.com
 DOMAIN-SUFFIX,pos.baidu.com
+DOMAIN-SUFFIX,pr.nss.netease.com
 DOMAIN-SUFFIX,pv.hd.sohu.com
 DOMAIN-SUFFIX,pv.kuaizhan.com
 DOMAIN-SUFFIX,pv.sohu.com
@@ -3996,6 +3998,7 @@ DOMAIN-SUFFIX,1to1.bbva.com
 DOMAIN-SUFFIX,ab.blogs.es
 DOMAIN-SUFFIX,analitica.webrpp.com
 DOMAIN-SUFFIX,analytics.lasegunda.ecn.cl
+DOMAIN-SUFFIX,analytics.mercadolibre.com
 DOMAIN-SUFFIX,analytics.neoogilvy.uy
 DOMAIN-SUFFIX,bpt.webedia-group.com
 DOMAIN-SUFFIX,collector-videoplayer.5centscdn.net

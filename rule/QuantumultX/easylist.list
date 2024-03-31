@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202403301507
+## ! Version: 202403311112
 ## ! Title: EasyList
-## ! Last modified: 30 Mar 2024 15:07 UTC
+## ! Last modified: 31 Mar 2024 11:12 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -37605,6 +37605,7 @@ DOMAIN-SUFFIX,ads2.hsoub.com, reject
 DOMAIN-SUFFIX,adsales.snidigital.com, reject
 DOMAIN-SUFFIX,adserver-2084671375.us-east-1.elb.amazonaws.com, reject
 DOMAIN-SUFFIX,adserving.unibet.com, reject
+DOMAIN-SUFFIX,adsinteractive-794b.kxcdn.com, reject
 DOMAIN-SUFFIX,adtechvideo.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,advast.sibnet.ru, reject
 DOMAIN-SUFFIX,adx-exchange.toast.com, reject

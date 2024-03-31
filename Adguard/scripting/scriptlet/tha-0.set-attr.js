@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: kor-1
+// ruleset: tha-0
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_setCookie = function() {
+const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ld_ac_timeout","Y"],["adv","1"],["notToday2","Y"]];
+const argsList = [["body","oncontextmenu",""]];
 
-const hostnamesMap = new Map([["oh-yes.co.kr",0],["ssodam.com",1],["luckyquiz3.blogspot.com",2]]);
+const hostnamesMap = new Map([["nungkai.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,49 +52,115 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function setCookie(
-    name = '',
-    value = '',
-    path = ''
+function setAttr(
+    selector = '',
+    attr = '',
+    value = ''
 ) {
-    if ( name === '' ) { return; }
+    if ( selector === '' ) { return; }
+    if ( attr === '' ) { return; }
+
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
+    const logPrefix = safe.makeLogPrefix('set-attr', attr, value);
+    const validValues = [ '', 'false', 'true' ];
+    let copyFrom = '';
 
-    const validValues = [
-        'accept', 'reject',
-        'accepted', 'rejected', 'notaccepted',
-        'allow', 'deny',
-        'allowed', 'disallow',
-        'enable', 'disable',
-        'enabled', 'disabled',
-        'ok',
-        'on', 'off',
-        'true', 't', 'false', 'f',
-        'yes', 'y', 'no', 'n',
-        'necessary', 'required',
-    ];
-    const normalized = value.toLowerCase();
-    const match = /^("?)(.+)\1$/.exec(normalized);
-    const unquoted = match && match[2] || normalized;
-    if ( validValues.includes(unquoted) === false ) {
-        if ( /^\d+$/.test(unquoted) === false ) { return; }
-        const n = parseInt(value, 10);
-        if ( n > 32767 ) { return; }
+    if ( validValues.includes(value.toLowerCase()) === false ) {
+        if ( /^\d+$/.test(value) ) {
+            const n = parseInt(value, 10);
+            if ( n >= 32768 ) { return; }
+            value = `${n}`;
+        } else if ( /^\[.+\]$/.test(value) ) {
+            copyFrom = value.slice(1, -1);
+        } else {
+            return;
+        }
     }
 
-    const done = setCookieFn(
-        false,
-        name,
-        value,
-        '',
-        path,
-        safe.getExtraArgs(Array.from(arguments), 3)
-    );
+    const extractValue = elem => {
+        if ( copyFrom !== '' ) {
+            return elem.getAttribute(copyFrom) || '';
+        }
+        return value;
+    };
 
-    if ( done ) {
-        safe.uboLog(logPrefix, 'Done');
+    const applySetAttr = ( ) => {
+        const elems = [];
+        try {
+            elems.push(...document.querySelectorAll(selector));
+        }
+        catch(ex) {
+            return false;
+        }
+        for ( const elem of elems ) {
+            const before = elem.getAttribute(attr);
+            const after = extractValue(elem);
+            if ( after === before ) { continue; }
+            if ( after !== '' && /^on/i.test(attr) ) {
+                if ( attr.toLowerCase() in elem ) { continue; }
+            }
+            elem.setAttribute(attr, after);
+            safe.uboLog(logPrefix, `${attr}="${after}"`);
+        }
+        return true;
+    };
+    let observer, timer;
+    const onDomChanged = mutations => {
+        if ( timer !== undefined ) { return; }
+        let shouldWork = false;
+        for ( const mutation of mutations ) {
+            if ( mutation.addedNodes.length === 0 ) { continue; }
+            for ( const node of mutation.addedNodes ) {
+                if ( node.nodeType !== 1 ) { continue; }
+                shouldWork = true;
+                break;
+            }
+            if ( shouldWork ) { break; }
+        }
+        if ( shouldWork === false ) { return; }
+        timer = self.requestAnimationFrame(( ) => {
+            timer = undefined;
+            applySetAttr();
+        });
+    };
+    const start = ( ) => {
+        if ( applySetAttr() === false ) { return; }
+        observer = new MutationObserver(onDomChanged);
+        observer.observe(document.body, {
+            subtree: true,
+            childList: true,
+        });
+    };
+    runAt(( ) => { start(); }, 'idle');
+}
+
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
     }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -248,71 +314,6 @@ function safeSelf() {
     return safe;
 }
 
-function setCookieFn(
-    trusted = false,
-    name = '',
-    value = '',
-    expires = '',
-    path = '',
-    options = {},
-) {
-    // https://datatracker.ietf.org/doc/html/rfc2616#section-2.2
-    // https://github.com/uBlockOrigin/uBlock-issues/issues/2777
-    if ( trusted === false && /[^!#$%&'*+\-.0-9A-Z[\]^_`a-z|~]/.test(name) ) {
-        name = encodeURIComponent(name);
-    }
-    // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
-    if ( /[^!#-+\--:<-[\]-~]/.test(value) ) {
-        value = encodeURIComponent(value);
-    }
-
-    const cookieBefore = getCookieFn(name);
-    if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
-    if ( cookieBefore === value && options.reload ) { return; }
-
-    const cookieParts = [ name, '=', value ];
-    if ( expires !== '' ) {
-        cookieParts.push('; expires=', expires);
-    }
-
-    if ( path === '' ) { path = '/'; }
-    else if ( path === 'none' ) { path = ''; }
-    if ( path !== '' && path !== '/' ) { return; }
-    if ( path === '/' ) {
-        cookieParts.push('; path=/');
-    }
-
-    if ( trusted ) {
-        if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
-        }
-        cookieParts.push('; Secure');
-    }
-
-    try {
-        document.cookie = cookieParts.join('');
-    } catch(_) {
-    }
-
-    const done = getCookieFn(name) === value;
-    if ( done && options.reload ) {
-        window.location.reload();
-    }
-
-    return done;
-}
-
-function getCookieFn(
-    name = ''
-) {
-    for ( const s of document.cookie.split(/\s*;\s*/) ) {
-        const pos = s.indexOf('=');
-        if ( pos === -1 ) { continue; }
-        if ( s.slice(0, pos) !== name ) { continue; }
-        return s.slice(pos+1).trim();
-    }
-}
-
 /******************************************************************************/
 
 const hnParts = [];
@@ -373,7 +374,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { setCookie(...argsList[i]); }
+    try { setAttr(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -395,7 +396,7 @@ const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_setCookie();
+    return uBOL_setAttr();
 }
 
 // Firefox
@@ -403,11 +404,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_setCookie = cloneInto([
-            [ '(', uBOL_setCookie.toString(), ')();' ],
+        page.uBOL_setAttr = cloneInto([
+            [ '(', uBOL_setAttr.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_setCookie);
+        const blob = new page.Blob(...page.uBOL_setAttr);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -421,7 +422,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_setCookie;
+    delete page.uBOL_setAttr;
 }
 
 /******************************************************************************/

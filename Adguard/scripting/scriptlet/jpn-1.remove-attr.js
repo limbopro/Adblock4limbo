@@ -42,9 +42,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["hidden","html[hidden]"],["id","#div-gpt-ad-sidebottom"],["id","#div-gpt-ad-footer"],["id","#div-gpt-ad-pagebottom"],["id","#div-gpt-ad-relatedbottom-1"],["onclick","div[data-js][style*=\"background\"]","stay"],["class","[id][role] > [id] > [class] > section"],["href",".cps-post-main > a[href^=\"https://www.amazon.co.jp\"]"],["href",".game_amazon > a[href*=\".amazon.\"]"],["data-popup-url"],["onclick","span > a[onclick]"]];
+const argsList = [["hidden","html[hidden]"],["id","#div-gpt-ad-sidebottom"],["id","#div-gpt-ad-footer"],["id","#div-gpt-ad-pagebottom"],["id","#div-gpt-ad-relatedbottom-1"],["class","[id][role] > [id] > [class] > section"],["href",".cps-post-main > a[href^=\"https://www.amazon.co.jp\"]"],["data-popup-url"],["onclick","span > a[onclick]"]];
 
-const hostnamesMap = new Map([["ssbsblg.blogspot.com",0],["rocketnews24.com",[1,2,3,4]],["youpouch.com",[1,2,3,4]],["sekai-kabuka.com",5],["coron.tech",6],["lifematome.blog",7],["giocox.jp",8],["wav.tv",9],["380cc.cc",10]]);
+const hostnamesMap = new Map([["ssbsblg.blogspot.com",0],["rocketnews24.com",[1,2,3,4]],["youpouch.com",[1,2,3,4]],["coron.tech",5],["lifematome.blog",6],["wav.tv",7],["380cc.cc",8]]);
 
 const entitiesMap = new Map([]);
 

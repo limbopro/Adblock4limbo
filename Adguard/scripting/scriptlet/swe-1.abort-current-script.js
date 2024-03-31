@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["showConsentDlg"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["monsterinsights_frontend"]];
+const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["monsterinsights_frontend"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["foretagsverige.se",8],["forskningsverige.se",8],["motorbibeln.se",8],["hallbarhetsverige.se",8],["tillvaxtsverige.se",8],["grillbibeln.se",8],["kampenmotcancer.se",8],["folkhalsasverige.se",8],["hejaolika.se",9],["medibok.se",10],["nasdaqomxnordic.com",11],["sakochliv.se",12],["skrattsajten.com",13],["norpan.se",13],["spelhubben.se",14],["husbilsplats.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",15],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["zeinaskitchen.se",14],["trafiksakerhet.se",14],["boktugg.se",14],["lakartidningen.se",14],["villalivet.se",14],["matsafari.nu",14],["forexgruppen.se",14],["fastighetsvarlden.se",14]]);
 
 const entitiesMap = new Map([]);
 

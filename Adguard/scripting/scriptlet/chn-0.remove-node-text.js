@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#text","中間廣告"]];
+const argsList = [["#text","中間廣告"],["script","yumayishop"]];
 
-const hostnamesMap = new Map([["jmcomic1.me",0]]);
+const hostnamesMap = new Map([["jmcomic1.me",0],["phone-book.tw",1]]);
 
 const entitiesMap = new Map([]);
 

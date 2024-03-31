@@ -42,9 +42,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#close_preload","1000","0"]];
+const argsList = [["#close_preload","1000","0"],["กดเพื่อดูหนัง","*"]];
 
-const hostnamesMap = new Map([["thmovieshd.com",0]]);
+const hostnamesMap = new Map([["thmovieshd.com",0],["subthai.tv",1]]);
 
 const entitiesMap = new Map([]);
 

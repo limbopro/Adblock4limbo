@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["Cookies"],["nwlettersignupcheck"]];
+const argsList = [["Cookies"]];
 
-const hostnamesMap = new Map([["cannabis.se",0],["finansliv.se",1]]);
+const hostnamesMap = new Map([["cannabis.se",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -550,6 +550,14 @@ DOMAIN-SUFFIX,zjrtxt.xyz, reject
 DOMAIN-SUFFIX,znhlxvb.xyz, reject
 DOMAIN-SUFFIX,zojyob.icu, reject
 DOMAIN-SUFFIX,zopuqv.icu, reject
+DOMAIN-SUFFIX,ebwonro.cn, reject
+DOMAIN-SUFFIX,inalzlo.top, reject
+DOMAIN-SUFFIX,qkscga.xyz, reject
+DOMAIN-SUFFIX,xgjidt.xyz, reject
+DOMAIN-SUFFIX,jwhdgt.icu, reject
+DOMAIN-SUFFIX,npjvgug.xyz, reject
+DOMAIN-SUFFIX,szmyl.cn, reject
+DOMAIN-SUFFIX,osusjsga.com, reject
 DOMAIN-SUFFIX,zsjpi.cn, reject
 DOMAIN-SUFFIX,zttuvj.xyz, reject
 DOMAIN-SUFFIX,ztxjutz.xyz, reject
@@ -4868,6 +4876,7 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
+DOMAIN-SUFFIX,vjvj.vj24co.com, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject
@@ -5088,7 +5097,7 @@ DOMAIN-SUFFIX,b1.engdvd.com, reject
 DOMAIN-SUFFIX,b1.xiao84.com, reject
 DOMAIN-SUFFIX,b17.8794.cn, reject
 DOMAIN-SUFFIX,b7sw62.pingshu8.xyz, reject
-DOMAIN-SUFFIX,bai.luyouwang.com, reject
+DOMAIN-SUFFIX,192.luyouwang.com, reject
 DOMAIN-SUFFIX,baidu1.cardbaobao.com, reject
 DOMAIN-SUFFIX,baidu1.codejie.net, reject
 DOMAIN-SUFFIX,baidujs.cnys.com, reject

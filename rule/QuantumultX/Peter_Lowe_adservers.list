@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 01 Apr 2024 08:08:04 GMT
-# entries:        3763
+# last updated:   Tue, 02 Apr 2024 19:29:39 GMT
+# entries:        3764
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2003,6 +2003,7 @@ DOMAIN-SUFFIX,hsn.uqhv.net, reject
 DOMAIN-SUFFIX,htlbid.com, reject
 DOMAIN-SUFFIX,httpool.com, reject
 DOMAIN-SUFFIX,hubadnetwork.com, reject
+DOMAIN-SUFFIX,hubspotlinks.com, reject
 DOMAIN-SUFFIX,hueads.com, reject
 DOMAIN-SUFFIX,hueadsortb.com, reject
 DOMAIN-SUFFIX,hueadsxml.com, reject

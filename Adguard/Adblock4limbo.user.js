@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.X
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.03.27
+// @version      0.4.04.04
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -98,13 +98,14 @@
 // @match        https://tameikegoro.jp/
 // @match        https://njav.tv/
 // @match        https://www.ntdm9.com/
+// @match        https://www.javlibrary.com/*
+// @match        https://rouman5.com/*
 // @exclude      https://limbopro.com/*
 // @exclude      https://limbopro.com/*
 // @exclude      https://venus-av.com/*
 // @exclude      https://developer.mozilla.org/
 // @exclude      https://www.youtube.com/*
 // @exclude      https://www.xvideos.com/*
-// @match        https://www.javlibrary.com/*
 // @match        https://*/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
@@ -255,6 +256,7 @@ var imax = {
         olevod: "#adsbox, .ads-bg {display:none!important}",
         ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
         njav: "iframe[width='300px'] {display:none!important}",
+        rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}"
         //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
     function: {
@@ -311,6 +313,7 @@ function values() {
         'olevod',
         'njav',
         'ntdm9',
+        'rouman',
         "zhihu"
     ]
 
@@ -848,6 +851,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             setTimeout(() => {
                 onAdsHide()
             }, 500)
+            break;
+
+        case 'rouman':
+            css_adsRemove(imax.css.rouman, 100, 'roumanx');
+
+            setTimeout(() => {
+                document.querySelectorAll("div[class*='modalCloseButton']")[0].click()
+            }, 500)
+
             break;
 
         default:

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202404031456
+## ! Version: 202404040215
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Apr 2024 14:56 UTC
+## ! Last modified: 04 Apr 2024 02:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4499,6 +4499,7 @@ DOMAIN-SUFFIX,stats.wwitv.com, reject
 DOMAIN-SUFFIX,stats2.mytuner.mobi, reject
 DOMAIN-SUFFIX,statsegg.cdngeek.com, reject
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv, reject
+DOMAIN-SUFFIX,svc.eu01.miro.com, reject
 DOMAIN-SUFFIX,szrpr.raen.com, reject
 DOMAIN-SUFFIX,t.9gag.com, reject
 DOMAIN-SUFFIX,t.airasia.com, reject
@@ -4586,6 +4587,7 @@ DOMAIN-SUFFIX,tracking.shopstyle.co.uk, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject
 DOMAIN-SUFFIX,tracking.unrealengine.com, reject
 DOMAIN-SUFFIX,trackr.vivenu.com, reject
+DOMAIN-SUFFIX,trcksplt.miro.com, reject
 DOMAIN-SUFFIX,treatment.grammarly.com, reject
 DOMAIN-SUFFIX,tredir.go.com, reject
 DOMAIN-SUFFIX,trk.decido.io, reject
@@ -38781,6 +38783,8 @@ DOMAIN-SUFFIX,tags.aljazeera.net, reject
 DOMAIN-SUFFIX,insight.olx.ba, reject
 DOMAIN-SUFFIX,4399stat.5054399.com, reject
 DOMAIN-SUFFIX,a.itsmore.cn, reject
+DOMAIN-SUFFIX,ac.dun.163.com, reject
+DOMAIN-SUFFIX,ac.dun.163yun.com, reject
 DOMAIN-SUFFIX,accwww9.53kf.com, reject
 DOMAIN-SUFFIX,adstats.tencentmusic.com, reject
 DOMAIN-SUFFIX,al.autohome.com.cn, reject
@@ -38800,6 +38804,7 @@ DOMAIN-SUFFIX,beacon.qq.com, reject
 DOMAIN-SUFFIX,cherry.le.com, reject
 DOMAIN-SUFFIX,click.gamersky.com, reject
 DOMAIN-SUFFIX,clickcount.cnool.net, reject
+DOMAIN-SUFFIX,clientlog.music.163.com, reject
 DOMAIN-SUFFIX,count.candou.com, reject
 DOMAIN-SUFFIX,count5.pconline.com.cn, reject
 DOMAIN-SUFFIX,counter.people.cn, reject
@@ -38814,6 +38819,7 @@ DOMAIN-SUFFIX,err.ifengcloud.ifeng.com, reject
 DOMAIN-SUFFIX,event.csdn.net, reject
 DOMAIN-SUFFIX,fclog.baidu.com, reject
 DOMAIN-SUFFIX,flog.pressplay.cc, reject
+DOMAIN-SUFFIX,fp-upload.dun.163.com, reject
 DOMAIN-SUFFIX,frog.yuanfudao.com, reject
 DOMAIN-SUFFIX,ftwo-feedback.autohome.com.cn, reject
 DOMAIN-SUFFIX,ftwo-receiver.autohome.com.cn, reject
@@ -38860,6 +38866,7 @@ DOMAIN-SUFFIX,rlogs.youdao.com, reject
 DOMAIN-SUFFIX,ro.aiwan4399.com, reject
 DOMAIN-SUFFIX,s.360.cn, reject
 DOMAIN-SUFFIX,sbeacon.sina.com.cn, reject
+DOMAIN-SUFFIX,sentry.music.163.com, reject
 DOMAIN-SUFFIX,sfp.safe.baidu.com, reject
 DOMAIN-SUFFIX,shrek.6.cn, reject
 DOMAIN-SUFFIX,sngmta.qq.com, reject

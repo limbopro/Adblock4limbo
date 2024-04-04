@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202404031456
+## ! Version: 202404040215
 ## ! Title: EasyList
-## ! Last modified: 03 Apr 2024 14:56 UTC
+## ! Last modified: 04 Apr 2024 02:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -38614,6 +38614,7 @@ DOMAIN-SUFFIX,tool.acces-vod.com, reject
 DOMAIN-SUFFIX,widgets.comcontent.net, reject
 DOMAIN-SUFFIX,you75.youpornsexvideos.com, reject
 DOMAIN-SUFFIX,123.manga1001.top, reject
+DOMAIN-SUFFIX,1337x.vpnonly.site, reject
 DOMAIN-SUFFIX,ad.animehub.ac, reject
 DOMAIN-SUFFIX,ad.imp.joins.com, reject
 DOMAIN-SUFFIX,ad.itweb.co.za, reject

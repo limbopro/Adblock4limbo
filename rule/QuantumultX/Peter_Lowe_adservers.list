@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 02 Apr 2024 19:29:39 GMT
-# entries:        3764
+# last updated:   Wed, 03 Apr 2024 23:19:30 GMT
+# entries:        3766
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -310,6 +310,7 @@ DOMAIN-SUFFIX,admized.com, reject
 DOMAIN-SUFFIX,admob.com, reject
 DOMAIN-SUFFIX,admonitor.com, reject
 DOMAIN-SUFFIX,adn.lrb.co.uk, reject
+DOMAIN-SUFFIX,adnami.io, reject
 DOMAIN-SUFFIX,adnet.asahi.com, reject
 DOMAIN-SUFFIX,adnet.biz, reject
 DOMAIN-SUFFIX,adnet.de, reject
@@ -1062,6 +1063,8 @@ DOMAIN-SUFFIX,axonix.com, reject
 DOMAIN-SUFFIX,ay.delivery, reject
 DOMAIN-SUFFIX,aztracking.net, reject
 DOMAIN-SUFFIX,b-s.tercept.com, reject
+DOMAIN-SUFFIX,b.videoamp.com, reject
+DOMAIN-SUFFIX,b3.videoamp.com, reject
 DOMAIN-SUFFIX,ba.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,backbeatmedia.com, reject
 DOMAIN-SUFFIX,balloontexture.com, reject
@@ -3597,7 +3600,6 @@ DOMAIN-SUFFIX,vid.pubmatic.com, reject
 DOMAIN-SUFFIX,vidcpm.com, reject
 DOMAIN-SUFFIX,video-stats.video.google.com, reject
 DOMAIN-SUFFIX,videoadex.com, reject
-DOMAIN-SUFFIX,videoamp.com, reject
 DOMAIN-SUFFIX,videoegg.com, reject
 DOMAIN-SUFFIX,videostats.kakao.com, reject
 DOMAIN-SUFFIX,vidible.tv, reject

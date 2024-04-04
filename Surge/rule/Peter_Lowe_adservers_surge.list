@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 02 Apr 2024 19:29:39 GMT
-# entries:        3764
+# last updated:   Wed, 03 Apr 2024 23:19:30 GMT
+# entries:        3766
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -310,6 +310,7 @@ DOMAIN-SUFFIX,admized.com
 DOMAIN-SUFFIX,admob.com
 DOMAIN-SUFFIX,admonitor.com
 DOMAIN-SUFFIX,adn.lrb.co.uk
+DOMAIN-SUFFIX,adnami.io
 DOMAIN-SUFFIX,adnet.asahi.com
 DOMAIN-SUFFIX,adnet.biz
 DOMAIN-SUFFIX,adnet.de
@@ -1062,6 +1063,8 @@ DOMAIN-SUFFIX,axonix.com
 DOMAIN-SUFFIX,ay.delivery
 DOMAIN-SUFFIX,aztracking.net
 DOMAIN-SUFFIX,b-s.tercept.com
+DOMAIN-SUFFIX,b.videoamp.com
+DOMAIN-SUFFIX,b3.videoamp.com
 DOMAIN-SUFFIX,ba.afl.rakuten.co.jp
 DOMAIN-SUFFIX,backbeatmedia.com
 DOMAIN-SUFFIX,balloontexture.com
@@ -3597,7 +3600,6 @@ DOMAIN-SUFFIX,vid.pubmatic.com
 DOMAIN-SUFFIX,vidcpm.com
 DOMAIN-SUFFIX,video-stats.video.google.com
 DOMAIN-SUFFIX,videoadex.com
-DOMAIN-SUFFIX,videoamp.com
 DOMAIN-SUFFIX,videoegg.com
 DOMAIN-SUFFIX,videostats.kakao.com
 DOMAIN-SUFFIX,vidible.tv

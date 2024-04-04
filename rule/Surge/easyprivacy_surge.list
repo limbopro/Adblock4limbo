@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202404031456
+## ! Version: 202404040215
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Apr 2024 14:56 UTC
+## ! Last modified: 04 Apr 2024 02:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4499,6 +4499,7 @@ DOMAIN-SUFFIX,stats.wwitv.com
 DOMAIN-SUFFIX,stats2.mytuner.mobi
 DOMAIN-SUFFIX,statsegg.cdngeek.com
 DOMAIN-SUFFIX,streamstats.prd.dlive.tv
+DOMAIN-SUFFIX,svc.eu01.miro.com
 DOMAIN-SUFFIX,szrpr.raen.com
 DOMAIN-SUFFIX,t.9gag.com
 DOMAIN-SUFFIX,t.airasia.com
@@ -4586,6 +4587,7 @@ DOMAIN-SUFFIX,tracking.shopstyle.co.uk
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.unrealengine.com
 DOMAIN-SUFFIX,trackr.vivenu.com
+DOMAIN-SUFFIX,trcksplt.miro.com
 DOMAIN-SUFFIX,treatment.grammarly.com
 DOMAIN-SUFFIX,tredir.go.com
 DOMAIN-SUFFIX,trk.decido.io
@@ -38781,6 +38783,8 @@ DOMAIN-SUFFIX,tags.aljazeera.net
 DOMAIN-SUFFIX,insight.olx.ba
 DOMAIN-SUFFIX,4399stat.5054399.com
 DOMAIN-SUFFIX,a.itsmore.cn
+DOMAIN-SUFFIX,ac.dun.163.com
+DOMAIN-SUFFIX,ac.dun.163yun.com
 DOMAIN-SUFFIX,accwww9.53kf.com
 DOMAIN-SUFFIX,adstats.tencentmusic.com
 DOMAIN-SUFFIX,al.autohome.com.cn
@@ -38800,6 +38804,7 @@ DOMAIN-SUFFIX,beacon.qq.com
 DOMAIN-SUFFIX,cherry.le.com
 DOMAIN-SUFFIX,click.gamersky.com
 DOMAIN-SUFFIX,clickcount.cnool.net
+DOMAIN-SUFFIX,clientlog.music.163.com
 DOMAIN-SUFFIX,count.candou.com
 DOMAIN-SUFFIX,count5.pconline.com.cn
 DOMAIN-SUFFIX,counter.people.cn
@@ -38814,6 +38819,7 @@ DOMAIN-SUFFIX,err.ifengcloud.ifeng.com
 DOMAIN-SUFFIX,event.csdn.net
 DOMAIN-SUFFIX,fclog.baidu.com
 DOMAIN-SUFFIX,flog.pressplay.cc
+DOMAIN-SUFFIX,fp-upload.dun.163.com
 DOMAIN-SUFFIX,frog.yuanfudao.com
 DOMAIN-SUFFIX,ftwo-feedback.autohome.com.cn
 DOMAIN-SUFFIX,ftwo-receiver.autohome.com.cn
@@ -38860,6 +38866,7 @@ DOMAIN-SUFFIX,rlogs.youdao.com
 DOMAIN-SUFFIX,ro.aiwan4399.com
 DOMAIN-SUFFIX,s.360.cn
 DOMAIN-SUFFIX,sbeacon.sina.com.cn
+DOMAIN-SUFFIX,sentry.music.163.com
 DOMAIN-SUFFIX,sfp.safe.baidu.com
 DOMAIN-SUFFIX,shrek.6.cn
 DOMAIN-SUFFIX,sngmta.qq.com

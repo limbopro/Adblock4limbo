@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2.03.07
+// @version      0.2.04.04
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -898,6 +898,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['iconfont', 'https://www.iconfont.cn/', '_blank', 'Tools', 'common'],
 ['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
 ['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
+['肉漫', 'https://www.rouman5.com/', '_blank', 'comic18', 'special'],
 ['博客优化', 'https://limbopro.com/category/builder/', '_blank', 'seoandmore', 'special'],
 ['博客防御', 'https://limbopro.com/tag/Cloudflare/', '_blank', 'seoandmore', 'common'],
 ['苦瓜书盘', 'https://kgbook.com/', '_blank', 'bookreadanddownload', 'common'],
@@ -994,6 +995,12 @@ document.addEventListener("keydown", function (event) {
         }
     }
 
+    if (event.code === 'KeyL') { // 锁屏
+        if (document.getElementById('navigation4limbo').style.zIndex > 0 && (document.querySelector('.crisp-client.active') === null)) {
+            lock_screen_switch(); // 锁屏
+        }
+    }
+
     if (event.code === "Space") { // 空格键
         if (!(document.querySelector('div#navigation4limbo').style.opacity == 0) && (document.querySelector('.crisp-client.active') === null)) {
             open_googlesearch_iframe();  // 如果当前页面为导航详情页 则可按 G 键快速唤出搜索框
@@ -1082,6 +1089,46 @@ function new_align() {
 function parentElement_add() {
     all(0, -114154, 1, 'none');
     body_build('false');
+
+    /*
+    添加点击监听事件开始 点击空白处执行隐藏导航
+    */
+
+    document.querySelector('div.echo').addEventListener('click', function (event) {
+
+        if (document.querySelector("#navigation4limbo") !== null && document.querySelector("#navigation4limbo").style.zIndex > 0) {
+
+            var target = event.target;
+            var li_button = document.querySelectorAll('li.li_global');
+            var number = 0;
+
+            for (i = 0; i < li_button.length; i++) {
+                if (target !== li_button[i] && !li_button[i].contains(target)) {
+                    number += 1;
+                    console.log("+" + number)
+                } else {
+                    number -= 1;
+                    console.log("-" + number)
+                }
+            }
+
+            if (number !== 0 && number < li_button.length) {
+                console.log('点到了')
+            } else {
+
+                if (document.querySelector("#navigation4limbo") !== null && document.querySelector("#navigation4limbo").style.zIndex > 0) {
+                    body_build('false');
+                }
+
+            }
+        }
+    });
+
+    /*
+   添加点击监听事件结束
+   */
+
+
     var parentElementX = setInterval(() => { //
         //console.log("\\ parentElement_add() 类目自动化生成检测... ")
         if (document.querySelector('div#navigation4limbo[style]')) {
@@ -1367,10 +1414,15 @@ function lock_screen_setPWD(x) { // 锁屏设置
         lock_screen_mode_check();
     } else if (getCookie('lock_screen_pwd') == '' || getCookie('lock_screen_pwd') == 'null') {
         var password = window.prompt("请设置锁屏密码（任意你记得住的字母/数字等符号的简单组合)；如忘记密码，你可通过清理浏览器 cookie 的方式重置密码；本次设置仅针对当前网站域名生效。");
-        setCookie('lock_screen_pwd', password, 114154);
-        setTimeout(() => {
-            lock_screen_setPWD();
-        }, 1000)
+        if (typeof password == "object") {
+            lock_screen_switch();
+            // 密码设置已取消
+        } else {
+            setCookie('lock_screen_pwd', password, 114154);
+            setTimeout(() => {
+                lock_screen_setPWD();
+            }, 1000)
+        }
     } else {
         lock_screen_mode_check_after();
     }

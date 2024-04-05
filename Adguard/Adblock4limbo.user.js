@@ -81,6 +81,7 @@
 // @match        https://netflav5.com/*
 // @match        https://filemoon.sx/*
 // @match        https://emturbovid.com/*
+// @match        https://netflavns1.com/*
 // @match        https://fc2stream.tv/*
 // @match        https://embedrise.com/*
 // @match        https://mmfl02.com/*
@@ -307,6 +308,7 @@ function values() {
         "hanime1",
         "javlibrary",
         "emturbovid",
+        'netflavns1',
         'fc2stream',
         'douban',
         'twitter',
@@ -651,6 +653,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             break;
         case "emturbovid":
+            window_open_defuser(); // 打断 window.open 施法
+            break;
+        case "netflavns1":
             window_open_defuser(); // 打断 window.open 施法
             break;
         case "fc2stream":

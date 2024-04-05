@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202404051548
+## ! Version: 202404051607
 ## ! Title: EasyList
-## ! Last modified: 05 Apr 2024 15:48 UTC
+## ! Last modified: 05 Apr 2024 16:07 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -14688,6 +14688,7 @@ DOMAIN-SUFFIX,handlingattic.com, reject
 DOMAIN-SUFFIX,handlingblare.com, reject
 DOMAIN-SUFFIX,handsenvious.com, reject
 DOMAIN-SUFFIX,handshakesexyconquer.com, reject
+DOMAIN-SUFFIX,handsomebend.pro, reject
 DOMAIN-SUFFIX,handsomepinchingconsultation.com, reject
 DOMAIN-SUFFIX,handtub.com, reject
 DOMAIN-SUFFIX,handwritingdigestion.com, reject
@@ -28971,6 +28972,7 @@ DOMAIN-SUFFIX,schqydstxtsi.com, reject
 DOMAIN-SUFFIX,schullemony.com, reject
 DOMAIN-SUFFIX,sciadopi5tysverticil1lata.com, reject
 DOMAIN-SUFFIX,sciencepoints.com, reject
+DOMAIN-SUFFIX,scientific-doubt.com, reject
 DOMAIN-SUFFIX,scientificdimly.com, reject
 DOMAIN-SUFFIX,scientificsinner.com, reject
 DOMAIN-SUFFIX,scientistgrowl.com, reject

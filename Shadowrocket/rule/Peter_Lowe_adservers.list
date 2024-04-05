@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 03 Apr 2024 23:19:30 GMT
-# entries:        3766
+# entries:        3758
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -900,7 +900,6 @@ DOMAIN-SUFFIX,affiliates.allposters.com, reject
 DOMAIN-SUFFIX,affiliates.babylon.com, reject
 DOMAIN-SUFFIX,affiliates.digitalriver.com, reject
 DOMAIN-SUFFIX,affiliates.globat.com, reject
-DOMAIN-SUFFIX,affiliates.rozetka.com.ua, reject
 DOMAIN-SUFFIX,affiliates.streamray.com, reject
 DOMAIN-SUFFIX,affiliates.thinkhost.net, reject
 DOMAIN-SUFFIX,affiliates.thrixxx.com, reject
@@ -940,7 +939,6 @@ DOMAIN-SUFFIX,amazon-adsystem.com, reject
 DOMAIN-SUFFIX,ambiguousquilt.com, reject
 DOMAIN-SUFFIX,ambitiousagreement.com, reject
 DOMAIN-SUFFIX,americash.com, reject
-DOMAIN-SUFFIX,ampleclick.com, reject
 DOMAIN-SUFFIX,amung.us, reject
 DOMAIN-SUFFIX,analytics-production.hapyak.com, reject
 DOMAIN-SUFFIX,analytics.adpost.org, reject
@@ -1073,7 +1071,6 @@ DOMAIN-SUFFIX,banner.ambercoastcasino.com, reject
 DOMAIN-SUFFIX,banner.buempliz-online.ch, reject
 DOMAIN-SUFFIX,banner.cotedazurpalace.com, reject
 DOMAIN-SUFFIX,banner.coza.com, reject
-DOMAIN-SUFFIX,banner.cz, reject
 DOMAIN-SUFFIX,banner.easyspace.com, reject
 DOMAIN-SUFFIX,banner.elisa.net, reject
 DOMAIN-SUFFIX,banner.eurogrand.com, reject
@@ -1821,7 +1818,6 @@ DOMAIN-SUFFIX,forkcdn.com, reject
 DOMAIN-SUFFIX,forwrdnow.com, reject
 DOMAIN-SUFFIX,fourarithmetic.com, reject
 DOMAIN-SUFFIX,fpctraffic.com, reject
-DOMAIN-SUFFIX,fpctraffic2.com, reject
 DOMAIN-SUFFIX,fpjs.io, reject
 DOMAIN-SUFFIX,fqtag.com, reject
 DOMAIN-SUFFIX,frailflock.com, reject
@@ -1874,7 +1870,6 @@ DOMAIN-SUFFIX,gammamaximum.com, reject
 DOMAIN-SUFFIX,gaug.es, reject
 DOMAIN-SUFFIX,gavvia.com, reject
 DOMAIN-SUFFIX,gearwom.de, reject
-DOMAIN-SUFFIX,gekko.spiceworks.com, reject
 DOMAIN-SUFFIX,generateoffice.com, reject
 DOMAIN-SUFFIX,geo.digitalpoint.com, reject
 DOMAIN-SUFFIX,geobanner.adultfriendfinder.com, reject
@@ -1952,7 +1947,6 @@ DOMAIN-SUFFIX,hbopenbid.pubmatic.com, reject
 DOMAIN-SUFFIX,hdscout.com, reject
 DOMAIN-SUFFIX,heap.com, reject
 DOMAIN-SUFFIX,hearinglizards.com, reject
-DOMAIN-SUFFIX,heias.com, reject
 DOMAIN-SUFFIX,hellobar.com, reject
 DOMAIN-SUFFIX,helpcollar.com, reject
 DOMAIN-SUFFIX,hentaicounter.com, reject
@@ -2398,7 +2392,6 @@ DOMAIN-SUFFIX,mixpanel.com, reject
 DOMAIN-SUFFIX,mkto-ab410147.com, reject
 DOMAIN-SUFFIX,mktoresp.com, reject
 DOMAIN-SUFFIX,ml314.com, reject
-DOMAIN-SUFFIX,mlm.de, reject
 DOMAIN-SUFFIX,mlsend.com, reject
 DOMAIN-SUFFIX,mltrk.io, reject
 DOMAIN-SUFFIX,mmismm.com, reject
@@ -3399,7 +3392,6 @@ DOMAIN-SUFFIX,toplist.pornhost.com, reject
 DOMAIN-SUFFIX,toplista.mw.hu, reject
 DOMAIN-SUFFIX,toplistcity.com, reject
 DOMAIN-SUFFIX,topsir.com, reject
-DOMAIN-SUFFIX,topsite.lv, reject
 DOMAIN-SUFFIX,topsites.com.br, reject
 DOMAIN-SUFFIX,topstats.com, reject
 DOMAIN-SUFFIX,totemcash.com, reject

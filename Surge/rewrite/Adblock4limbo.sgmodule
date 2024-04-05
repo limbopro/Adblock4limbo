@@ -1,4 +1,4 @@
-#!name=毒奶特供(2024年04月05日更新)
+#!name=毒奶特供(2024年04月06日更新)
 #!desc=毒奶去网页广告计划（稳定版）For Surge / Quantumult X / Shadowrocket/ 油猴 - Tampermonkey ；如去内容农场/泥巴影视/剧迷网/低端影视/哔滴影视/Jable/Missav//Netflav/Xvideos/Pornhub/91../禁漫天堂/百度与谷歌搜索结果页面广告等视频网站广告或其他ACG网站网页广告/百度知道广告...
 
 #! \\ You Can Change The World With Code.
@@ -90,7 +90,7 @@ https://creative.live.missav.com/widgets/Spot/lib.js - reject
 禁漫天堂(18comic.org|vip) = type=http-response , pattern="^https?:\/\/18comic\.(vip|org)\/(?!(.*(onclick|cdn-cgi|\.))).*" , requires-body=1 , max-size=0 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0
 肉漫(rouman5) = type=http-response , pattern="^https?:\/\/(rouman5\.com)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=0 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0
 紳士漫畫(www.wnacg.com) = type=http-response , pattern="^https?:\/\/www\.wnacg\.com\/(?!(.*(onclick|cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=0 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0
-CN影视(cnys.tv) = type=http-response , pattern="^https?:\/\/((cnys)\.(tv|com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=-1 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0
+CN影视(cnys.tv) = type=http-response , pattern="^https?:\/\/((cnys)\.(tv|com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=-1 , script-path=https://limbopro.com/Adguard/cnys.js , script-update-interval=0
 小宝影视(xiaobaotv.net) = type=http-response , pattern="^https?:\/\/((xiaobaotv|xiaoxintv)\.(net|com))\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=-1 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0
 泥巴影视(Nivod4.tv) = type=http-response , pattern="^https?:\/\/(www|m)\.(nivod\d\.tv)\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=-1 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0
 剧迷网(gimy.app|ai) = type=http-response , pattern="^https?:\/\/(\w{0,3}(\.){0,1}(gimy)(\.)\w{0,3})\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=0 , script-path=https://limbopro.com/Adguard/Adblock4limbo.js , script-update-interval=0

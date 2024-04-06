@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202404051607
+## ! Version: 202404061242
 ## ! Title: EasyList
-## ! Last modified: 05 Apr 2024 16:07 UTC
+## ! Last modified: 06 Apr 2024 12:42 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3583,6 +3583,7 @@ DOMAIN-SUFFIX,autographnutmegassail.com, reject
 DOMAIN-SUFFIX,automatedtraffic.com, reject
 DOMAIN-SUFFIX,automateyourlist.com, reject
 DOMAIN-SUFFIX,automaticallyindecisionalarm.com, reject
+DOMAIN-SUFFIX,automenunct.com, reject
 DOMAIN-SUFFIX,autoperplexturban.com, reject
 DOMAIN-SUFFIX,autopsycarrel.com, reject
 DOMAIN-SUFFIX,autopsyfowl.com, reject
@@ -4775,7 +4776,6 @@ DOMAIN-SUFFIX,biteburied.com, reject
 DOMAIN-SUFFIX,bitemisuse.com, reject
 DOMAIN-SUFFIX,biteneverthelessnan.com, reject
 DOMAIN-SUFFIX,bitesized-commission.pro, reject
-DOMAIN-SUFFIX,bits.avcdn.net, reject
 DOMAIN-SUFFIX,bitsspiral.com, reject
 DOMAIN-SUFFIX,bittenlacygreater.com, reject
 DOMAIN-SUFFIX,bitterborder.pro, reject
@@ -16869,6 +16869,7 @@ DOMAIN-SUFFIX,isegeowrvnxorj.com, reject
 DOMAIN-SUFFIX,iseoiknnqckto.xyz, reject
 DOMAIN-SUFFIX,isftdmoj.com, reject
 DOMAIN-SUFFIX,isgost.com, reject
+DOMAIN-SUFFIX,ishaweewouta.com, reject
 DOMAIN-SUFFIX,ishedtotigai.info, reject
 DOMAIN-SUFFIX,ishibeesoany.com, reject
 DOMAIN-SUFFIX,ishoapty.net, reject
@@ -18297,6 +18298,7 @@ DOMAIN-SUFFIX,kmyaklgcik.com, reject
 DOMAIN-SUFFIX,kmyunderthf.info, reject
 DOMAIN-SUFFIX,knackseafood.com, reject
 DOMAIN-SUFFIX,knaplpdmbrbi.com, reject
+DOMAIN-SUFFIX,knappedmurshid.com, reject
 DOMAIN-SUFFIX,knaveavo.guru, reject
 DOMAIN-SUFFIX,knawelgrx.com, reject
 DOMAIN-SUFFIX,kncecafvdeu.info, reject
@@ -18493,6 +18495,7 @@ DOMAIN-SUFFIX,ksdlumuhym.com, reject
 DOMAIN-SUFFIX,ksehinkitw.hair, reject
 DOMAIN-SUFFIX,kshzlyvbaaa.com, reject
 DOMAIN-SUFFIX,ksnbiepnvjdi.com, reject
+DOMAIN-SUFFIX,ksnbtmz.com, reject
 DOMAIN-SUFFIX,kssvsjfhxpzwfd.com, reject
 DOMAIN-SUFFIX,kstjqjuaw.xyz, reject
 DOMAIN-SUFFIX,kstvhknmhfppbf.com, reject
@@ -18941,6 +18944,7 @@ DOMAIN-SUFFIX,lecticashaptan.com, reject
 DOMAIN-SUFFIX,lecythleche.website, reject
 DOMAIN-SUFFIX,ledaoutrush.com, reject
 DOMAIN-SUFFIX,ledgesprimely.com, reject
+DOMAIN-SUFFIX,ledgingalcaid.com, reject
 DOMAIN-SUFFIX,ledhatbet.com, reject
 DOMAIN-SUFFIX,ledrapti.net, reject
 DOMAIN-SUFFIX,ledslevier.com, reject
@@ -19502,6 +19506,7 @@ DOMAIN-SUFFIX,logicconfinement.com, reject
 DOMAIN-SUFFIX,logicdate.com, reject
 DOMAIN-SUFFIX,logicdripping.com, reject
 DOMAIN-SUFFIX,logicorganized.com, reject
+DOMAIN-SUFFIX,logicschort.com, reject
 DOMAIN-SUFFIX,loglabitrufly.top, reject
 DOMAIN-SUFFIX,loglaupt.com, reject
 DOMAIN-SUFFIX,logsgroupknew.com, reject
@@ -24724,6 +24729,7 @@ DOMAIN-SUFFIX,pesteroverwork.com, reject
 DOMAIN-SUFFIX,pesterunusual.com, reject
 DOMAIN-SUFFIX,pestilenttidefilth.org, reject
 DOMAIN-SUFFIX,petalycnida.com, reject
+DOMAIN-SUFFIX,petasmaeryops.com, reject
 DOMAIN-SUFFIX,petasmaupbore.website, reject
 DOMAIN-SUFFIX,petasusawber.com, reject
 DOMAIN-SUFFIX,petchesa.net, reject
@@ -25342,6 +25348,7 @@ DOMAIN-SUFFIX,pohlbe.com, reject
 DOMAIN-SUFFIX,pohsoneche.info, reject
 DOMAIN-SUFFIX,poi3d.space, reject
 DOMAIN-SUFFIX,poignantsensitivenessforming.com, reject
+DOMAIN-SUFFIX,poilloiter.top, reject
 DOMAIN-SUFFIX,poinct.com, reject
 DOMAIN-SUFFIX,poined.com, reject
 DOMAIN-SUFFIX,pointed-deal.pro, reject
@@ -37651,6 +37658,7 @@ DOMAIN-SUFFIX,pb.s3wfg.com, reject
 DOMAIN-SUFFIX,pics.firstload.de, reject
 DOMAIN-SUFFIX,popmog.com, reject
 DOMAIN-SUFFIX,promos.fling.com, reject
+DOMAIN-SUFFIX,proto2ad.durasite.net, reject
 DOMAIN-SUFFIX,pubfeed.linkby.com, reject
 DOMAIN-SUFFIX,qsearch-a.akamaihd.net, reject
 DOMAIN-SUFFIX,random-affiliate.atimaze.com, reject

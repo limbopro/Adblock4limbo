@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202404061242
+## ! Version: 202404071352
 ## ! Title: EasyList
-## ! Last modified: 06 Apr 2024 12:42 UTC
+## ! Last modified: 07 Apr 2024 13:52 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -8286,6 +8286,7 @@ DOMAIN-SUFFIX,d33gmheck9s2xl.cloudfront.net, reject
 DOMAIN-SUFFIX,d36f31688a.com, reject
 DOMAIN-SUFFIX,d37914770f.com, reject
 DOMAIN-SUFFIX,d3befd5a11.com, reject
+DOMAIN-SUFFIX,d3c.life, reject
 DOMAIN-SUFFIX,d3c.site, reject
 DOMAIN-SUFFIX,d3d98dc11c.com, reject
 DOMAIN-SUFFIX,d3da127b69.com, reject
@@ -10355,6 +10356,7 @@ DOMAIN-SUFFIX,edstevermotorie.com, reject
 DOMAIN-SUFFIX,edsvqciwxxqd.com, reject
 DOMAIN-SUFFIX,edthechildrenandthe.info, reject
 DOMAIN-SUFFIX,edtheparllase.com, reject
+DOMAIN-SUFFIX,edtotigainare.info, reject
 DOMAIN-SUFFIX,edttfiou.com, reject
 DOMAIN-SUFFIX,edu-lib.com, reject
 DOMAIN-SUFFIX,edua29146y.com, reject
@@ -14121,6 +14123,7 @@ DOMAIN-SUFFIX,gplgqqg.com, reject
 DOMAIN-SUFFIX,gporkecpyttu.com, reject
 DOMAIN-SUFFIX,gppsusbb.com, reject
 DOMAIN-SUFFIX,gpsecureads.com, reject
+DOMAIN-SUFFIX,gptkjrseu.com, reject
 DOMAIN-SUFFIX,gpylmwtjiy.com, reject
 DOMAIN-SUFFIX,gpynepb.com, reject
 DOMAIN-SUFFIX,gqaecrxbj.com, reject
@@ -14454,7 +14457,6 @@ DOMAIN-SUFFIX,guigebichir.website, reject
 DOMAIN-SUFFIX,guiletoad.com, reject
 DOMAIN-SUFFIX,guiltjadechances.com, reject
 DOMAIN-SUFFIX,guilty-bear.com, reject
-DOMAIN-SUFFIX,guinsters286nedril.com, reject
 DOMAIN-SUFFIX,guitarfelicityraw.com, reject
 DOMAIN-SUFFIX,gujakqludcuk.com, reject
 DOMAIN-SUFFIX,gujojbavdoh.com, reject
@@ -17959,6 +17961,7 @@ DOMAIN-SUFFIX,katukaunamiss.com, reject
 DOMAIN-SUFFIX,kaubapsy.com, reject
 DOMAIN-SUFFIX,kaujouphosta.com, reject
 DOMAIN-SUFFIX,kauleeci.com, reject
+DOMAIN-SUFFIX,kaurieseluxate.com, reject
 DOMAIN-SUFFIX,kaushoag.net, reject
 DOMAIN-SUFFIX,kauvoaph.xyz, reject
 DOMAIN-SUFFIX,kauzishy.com, reject
@@ -23977,6 +23980,7 @@ DOMAIN-SUFFIX,ovoordie.xyz, reject
 DOMAIN-SUFFIX,ovplnxsq.com, reject
 DOMAIN-SUFFIX,ovqds.com, reject
 DOMAIN-SUFFIX,ovsdnhpigmtd.xyz, reject
+DOMAIN-SUFFIX,ovsgalzea.com, reject
 DOMAIN-SUFFIX,ovsiicni.com, reject
 DOMAIN-SUFFIX,ovsrhikuma.com, reject
 DOMAIN-SUFFIX,ovuvmdoty.com, reject
@@ -26294,6 +26298,7 @@ DOMAIN-SUFFIX,ptowouse.xyz, reject
 DOMAIN-SUFFIX,ptp22.com, reject
 DOMAIN-SUFFIX,ptp24.com, reject
 DOMAIN-SUFFIX,ptpoeyc.com, reject
+DOMAIN-SUFFIX,ptsixwereksbef.info, reject
 DOMAIN-SUFFIX,ptstnews.pro, reject
 DOMAIN-SUFFIX,pttsite.com, reject
 DOMAIN-SUFFIX,ptufihie.net, reject
@@ -37536,10 +37541,12 @@ DOMAIN-SUFFIX,10945-5.s.cdn15.com, reject
 DOMAIN-SUFFIX,1187531871.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1274355588.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1437953666.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1453683541.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1472566097.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1529462937.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1675450967.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1736253261.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1858742167.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,a-delivery.rmbl.ws, reject
 DOMAIN-SUFFIX,a.ucoz.net, reject
 DOMAIN-SUFFIX,ad-blocking24.net, reject
@@ -37735,6 +37742,7 @@ DOMAIN-SUFFIX,d141wsrw9m4as6.cloudfront.net, reject
 DOMAIN-SUFFIX,d142i1hxvwe38g.cloudfront.net, reject
 DOMAIN-SUFFIX,d145ghnzqbsasr.cloudfront.net, reject
 DOMAIN-SUFFIX,d14821r0t3377v.cloudfront.net, reject
+DOMAIN-SUFFIX,d14l1tkufmtp1z.cloudfront.net, reject
 DOMAIN-SUFFIX,d14zhsq5aop7ap.cloudfront.net, reject
 DOMAIN-SUFFIX,d154nw1c88j0q6.cloudfront.net, reject
 DOMAIN-SUFFIX,d15bcy38hlba76.cloudfront.net, reject
@@ -38675,7 +38683,6 @@ DOMAIN-SUFFIX,123.manga1001.top, reject
 DOMAIN-SUFFIX,1337x.vpnonly.site, reject
 DOMAIN-SUFFIX,ad.animehub.ac, reject
 DOMAIN-SUFFIX,ad.imp.joins.com, reject
-DOMAIN-SUFFIX,ad.itweb.co.za, reject
 DOMAIN-SUFFIX,ad.khan.co.kr, reject
 DOMAIN-SUFFIX,ad.kimcartoon.si, reject
 DOMAIN-SUFFIX,ad.kissanime.co, reject
@@ -38691,6 +38698,7 @@ DOMAIN-SUFFIX,ad.norfolkbroads.com, reject
 DOMAIN-SUFFIX,ads-api.stuff.co.nz, reject
 DOMAIN-SUFFIX,ads.audio.thisisdax.com, reject
 DOMAIN-SUFFIX,adsbb.depositfiles.com, reject
+DOMAIN-SUFFIX,adw.heraldm.com, reject
 DOMAIN-SUFFIX,aontent.powzers.lol, reject
 DOMAIN-SUFFIX,api.mumuglobal.com, reject
 DOMAIN-SUFFIX,asgg.ghostbin.me, reject
@@ -38832,6 +38840,7 @@ DOMAIN-SUFFIX,port7.xhamster.desi, reject
 DOMAIN-SUFFIX,port7.xhamster2.com, reject
 DOMAIN-SUFFIX,port7.xhamster3.com, reject
 DOMAIN-SUFFIX,qovua60gue.tubewolf.com, reject
+DOMAIN-SUFFIX,rockpoint.xhaccess.com, reject
 DOMAIN-SUFFIX,rockpoint.xhamster.com, reject
 DOMAIN-SUFFIX,rockpoint.xhamster.desi, reject
 DOMAIN-SUFFIX,rockpoint.xhamster2.com, reject

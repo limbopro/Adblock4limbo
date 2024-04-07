@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202404061242
+## ! Version: 202404071352
 ## ! Title: EasyList
-## ! Last modified: 06 Apr 2024 12:42 UTC
+## ! Last modified: 07 Apr 2024 13:52 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -8286,6 +8286,7 @@ DOMAIN-SUFFIX,d33gmheck9s2xl.cloudfront.net
 DOMAIN-SUFFIX,d36f31688a.com
 DOMAIN-SUFFIX,d37914770f.com
 DOMAIN-SUFFIX,d3befd5a11.com
+DOMAIN-SUFFIX,d3c.life
 DOMAIN-SUFFIX,d3c.site
 DOMAIN-SUFFIX,d3d98dc11c.com
 DOMAIN-SUFFIX,d3da127b69.com
@@ -10355,6 +10356,7 @@ DOMAIN-SUFFIX,edstevermotorie.com
 DOMAIN-SUFFIX,edsvqciwxxqd.com
 DOMAIN-SUFFIX,edthechildrenandthe.info
 DOMAIN-SUFFIX,edtheparllase.com
+DOMAIN-SUFFIX,edtotigainare.info
 DOMAIN-SUFFIX,edttfiou.com
 DOMAIN-SUFFIX,edu-lib.com
 DOMAIN-SUFFIX,edua29146y.com
@@ -14121,6 +14123,7 @@ DOMAIN-SUFFIX,gplgqqg.com
 DOMAIN-SUFFIX,gporkecpyttu.com
 DOMAIN-SUFFIX,gppsusbb.com
 DOMAIN-SUFFIX,gpsecureads.com
+DOMAIN-SUFFIX,gptkjrseu.com
 DOMAIN-SUFFIX,gpylmwtjiy.com
 DOMAIN-SUFFIX,gpynepb.com
 DOMAIN-SUFFIX,gqaecrxbj.com
@@ -14454,7 +14457,6 @@ DOMAIN-SUFFIX,guigebichir.website
 DOMAIN-SUFFIX,guiletoad.com
 DOMAIN-SUFFIX,guiltjadechances.com
 DOMAIN-SUFFIX,guilty-bear.com
-DOMAIN-SUFFIX,guinsters286nedril.com
 DOMAIN-SUFFIX,guitarfelicityraw.com
 DOMAIN-SUFFIX,gujakqludcuk.com
 DOMAIN-SUFFIX,gujojbavdoh.com
@@ -17959,6 +17961,7 @@ DOMAIN-SUFFIX,katukaunamiss.com
 DOMAIN-SUFFIX,kaubapsy.com
 DOMAIN-SUFFIX,kaujouphosta.com
 DOMAIN-SUFFIX,kauleeci.com
+DOMAIN-SUFFIX,kaurieseluxate.com
 DOMAIN-SUFFIX,kaushoag.net
 DOMAIN-SUFFIX,kauvoaph.xyz
 DOMAIN-SUFFIX,kauzishy.com
@@ -23977,6 +23980,7 @@ DOMAIN-SUFFIX,ovoordie.xyz
 DOMAIN-SUFFIX,ovplnxsq.com
 DOMAIN-SUFFIX,ovqds.com
 DOMAIN-SUFFIX,ovsdnhpigmtd.xyz
+DOMAIN-SUFFIX,ovsgalzea.com
 DOMAIN-SUFFIX,ovsiicni.com
 DOMAIN-SUFFIX,ovsrhikuma.com
 DOMAIN-SUFFIX,ovuvmdoty.com
@@ -26294,6 +26298,7 @@ DOMAIN-SUFFIX,ptowouse.xyz
 DOMAIN-SUFFIX,ptp22.com
 DOMAIN-SUFFIX,ptp24.com
 DOMAIN-SUFFIX,ptpoeyc.com
+DOMAIN-SUFFIX,ptsixwereksbef.info
 DOMAIN-SUFFIX,ptstnews.pro
 DOMAIN-SUFFIX,pttsite.com
 DOMAIN-SUFFIX,ptufihie.net
@@ -37536,10 +37541,12 @@ DOMAIN-SUFFIX,10945-5.s.cdn15.com
 DOMAIN-SUFFIX,1187531871.rsc.cdn77.org
 DOMAIN-SUFFIX,1274355588.rsc.cdn77.org
 DOMAIN-SUFFIX,1437953666.rsc.cdn77.org
+DOMAIN-SUFFIX,1453683541.rsc.cdn77.org
 DOMAIN-SUFFIX,1472566097.rsc.cdn77.org
 DOMAIN-SUFFIX,1529462937.rsc.cdn77.org
 DOMAIN-SUFFIX,1675450967.rsc.cdn77.org
 DOMAIN-SUFFIX,1736253261.rsc.cdn77.org
+DOMAIN-SUFFIX,1858742167.rsc.cdn77.org
 DOMAIN-SUFFIX,a-delivery.rmbl.ws
 DOMAIN-SUFFIX,a.ucoz.net
 DOMAIN-SUFFIX,ad-blocking24.net
@@ -37735,6 +37742,7 @@ DOMAIN-SUFFIX,d141wsrw9m4as6.cloudfront.net
 DOMAIN-SUFFIX,d142i1hxvwe38g.cloudfront.net
 DOMAIN-SUFFIX,d145ghnzqbsasr.cloudfront.net
 DOMAIN-SUFFIX,d14821r0t3377v.cloudfront.net
+DOMAIN-SUFFIX,d14l1tkufmtp1z.cloudfront.net
 DOMAIN-SUFFIX,d14zhsq5aop7ap.cloudfront.net
 DOMAIN-SUFFIX,d154nw1c88j0q6.cloudfront.net
 DOMAIN-SUFFIX,d15bcy38hlba76.cloudfront.net
@@ -38675,7 +38683,6 @@ DOMAIN-SUFFIX,123.manga1001.top
 DOMAIN-SUFFIX,1337x.vpnonly.site
 DOMAIN-SUFFIX,ad.animehub.ac
 DOMAIN-SUFFIX,ad.imp.joins.com
-DOMAIN-SUFFIX,ad.itweb.co.za
 DOMAIN-SUFFIX,ad.khan.co.kr
 DOMAIN-SUFFIX,ad.kimcartoon.si
 DOMAIN-SUFFIX,ad.kissanime.co
@@ -38691,6 +38698,7 @@ DOMAIN-SUFFIX,ad.norfolkbroads.com
 DOMAIN-SUFFIX,ads-api.stuff.co.nz
 DOMAIN-SUFFIX,ads.audio.thisisdax.com
 DOMAIN-SUFFIX,adsbb.depositfiles.com
+DOMAIN-SUFFIX,adw.heraldm.com
 DOMAIN-SUFFIX,aontent.powzers.lol
 DOMAIN-SUFFIX,api.mumuglobal.com
 DOMAIN-SUFFIX,asgg.ghostbin.me
@@ -38832,6 +38840,7 @@ DOMAIN-SUFFIX,port7.xhamster.desi
 DOMAIN-SUFFIX,port7.xhamster2.com
 DOMAIN-SUFFIX,port7.xhamster3.com
 DOMAIN-SUFFIX,qovua60gue.tubewolf.com
+DOMAIN-SUFFIX,rockpoint.xhaccess.com
 DOMAIN-SUFFIX,rockpoint.xhamster.com
 DOMAIN-SUFFIX,rockpoint.xhamster.desi
 DOMAIN-SUFFIX,rockpoint.xhamster2.com

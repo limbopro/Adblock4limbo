@@ -20,6 +20,7 @@ DOMAIN-SUFFIX,154.7.80.158, reject
 DOMAIN-SUFFIX,194.59.220.161, reject
 DOMAIN-SUFFIX,205.209.138.102, reject
 DOMAIN-SUFFIX,23.231.151.252, reject
+DOMAIN-SUFFIX,0322cfmtl.cc, reject
 DOMAIN-SUFFIX,0940088.com, reject
 DOMAIN-SUFFIX,0j775d.cn, reject
 DOMAIN-SUFFIX,0k7wod.cn, reject
@@ -69,11 +70,13 @@ DOMAIN-SUFFIX,aourgk.xyz, reject
 DOMAIN-SUFFIX,ariqye.xyz, reject
 DOMAIN-SUFFIX,arnhhwo.xyz, reject
 DOMAIN-SUFFIX,arqvm.cn, reject
+DOMAIN-SUFFIX,atzhcjv.xyz, reject
 DOMAIN-SUFFIX,awuvcq.xyz, reject
 DOMAIN-SUFFIX,azyuuk.xyz, reject
 DOMAIN-SUFFIX,b37r5.cyou, reject
 DOMAIN-SUFFIX,batijian.com, reject
 DOMAIN-SUFFIX,bba9603w.com, reject
+DOMAIN-SUFFIX,bdjfea.cn, reject
 DOMAIN-SUFFIX,bdtdat652.shop, reject
 DOMAIN-SUFFIX,bdxpdz.xyz, reject
 DOMAIN-SUFFIX,benpsbp.com, reject
@@ -209,6 +212,7 @@ DOMAIN-SUFFIX,fztyrv.xyz, reject
 DOMAIN-SUFFIX,gblxtlo.xyz, reject
 DOMAIN-SUFFIX,gcumgu.xyz, reject
 DOMAIN-SUFFIX,gfjn5.xyz, reject
+DOMAIN-SUFFIX,gfylyw.xyz, reject
 DOMAIN-SUFFIX,ghgasdb365.shop, reject
 DOMAIN-SUFFIX,ghgasdt963.shop, reject
 DOMAIN-SUFFIX,gicjtss.cn, reject
@@ -323,6 +327,7 @@ DOMAIN-SUFFIX,ly55442.com, reject
 DOMAIN-SUFFIX,lznfuab.xyz, reject
 DOMAIN-SUFFIX,m1170.top, reject
 DOMAIN-SUFFIX,m6690.top, reject
+DOMAIN-SUFFIX,m6j37.xyz, reject
 DOMAIN-SUFFIX,mdhv3.icu, reject
 DOMAIN-SUFFIX,mdzwjra.cn, reject
 DOMAIN-SUFFIX,misjgy.xyz, reject
@@ -359,6 +364,7 @@ DOMAIN-SUFFIX,nvdtdsd.xyz, reject
 DOMAIN-SUFFIX,nvjqtz.xyz, reject
 DOMAIN-SUFFIX,nyt5j.cyou, reject
 DOMAIN-SUFFIX,o1b04.cyou, reject
+DOMAIN-SUFFIX,obgekjz.icu, reject
 DOMAIN-SUFFIX,obturex.com, reject
 DOMAIN-SUFFIX,ocggec.xyz, reject
 DOMAIN-SUFFIX,ofkcww.xyz, reject
@@ -526,9 +532,11 @@ DOMAIN-SUFFIX,vaekkfv.cn, reject
 DOMAIN-SUFFIX,vcnpnf.xyz, reject
 DOMAIN-SUFFIX,vdvcjlp.cn, reject
 DOMAIN-SUFFIX,veaiyl.icu, reject
+DOMAIN-SUFFIX,vejhln.xyz, reject
 DOMAIN-SUFFIX,vfchm.cyou, reject
 DOMAIN-SUFFIX,vflorp.xyz, reject
 DOMAIN-SUFFIX,vhvwlb.xyz, reject
+DOMAIN-SUFFIX,vioyugo.cn, reject
 DOMAIN-SUFFIX,vmnlkr.icu, reject
 DOMAIN-SUFFIX,vpzohx.xyz, reject
 DOMAIN-SUFFIX,vszzzj.xyz, reject
@@ -542,6 +550,7 @@ DOMAIN-SUFFIX,wioboy.xyz, reject
 DOMAIN-SUFFIX,wisealty.com, reject
 DOMAIN-SUFFIX,wjwod.cyou, reject
 DOMAIN-SUFFIX,wkywrc.cn, reject
+DOMAIN-SUFFIX,wnalzle.top, reject
 DOMAIN-SUFFIX,wnifdlae.top, reject
 DOMAIN-SUFFIX,wnmaoc.xyz, reject
 DOMAIN-SUFFIX,wopvmmy.cn, reject

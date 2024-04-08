@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"]];
+const argsList = [["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"]];
 
-const hostnamesMap = new Map([["moovitapp.com",0],["teller.jp",1]]);
+const hostnamesMap = new Map([["moovitapp.com",0],["teller.jp",1],["bbc.com",[2,3,4,5]]]);
 
 const entitiesMap = new Map([]);
 

@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: annoyances-overlays
+// ruleset: tur-0
 
 /******************************************************************************/
 
@@ -38,164 +38,131 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_noFetchIf = function() {
+const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["/ad\\.php|api\\/ads/"],["cloudflareinsights.com"]];
+const argsList = [["script","redirect"]];
 
-const hostnamesMap = new Map([["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["theonegenerator.com",2],["mcskinhistory.com",2],["bypass.city",3],["adbypass.org",3],["fullxh.com",4],["megaxh.com",4],["unlockxh4.com",4],["xhadult2.com",4],["xhadult3.com",4],["xhadult4.com",4],["xhadult5.com",4],["xhamster46.com",4],["xhday.com",4],["xhday1.com",4],["xhmoon5.com",4],["xhplanet1.com",4],["xhplanet2.com",4],["xhreal2.com",4],["xhreal3.com",4],["xhtab2.com",4],["xhvictory.com",4],["xhwebsite.com",4],["xhwebsite2.com",4],["xhwide1.com",4],["xhwide8.com",4],["amtraker.com",5]]);
+const hostnamesMap = new Map([["m.4khd.com",0]]);
 
-const entitiesMap = new Map([["ddys",0],["hamsterix",4],["xhamster",4],["xhamster1",4],["xhamster10",4],["xhamster11",4],["xhamster12",4],["xhamster13",4],["xhamster14",4],["xhamster15",4],["xhamster16",4],["xhamster17",4],["xhamster18",4],["xhamster19",4],["xhamster20",4],["xhamster2",4],["xhamster3",4],["xhamster4",4],["xhamster5",4],["xhamster7",4],["xhamster8",4]]);
+const entitiesMap = new Map([]);
 
 const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function noFetchIf(
-    propsToMatch = '',
-    responseBody = ''
+function removeNodeText(
+    nodeName,
+    condition,
+    ...extraArgs
 ) {
-    if ( typeof propsToMatch !== 'string' ) { return; }
-    const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody);
-    const needles = [];
-    for ( const condition of propsToMatch.split(/\s+/) ) {
-        if ( condition === '' ) { continue; }
-        const pos = condition.indexOf(':');
-        let key, value;
-        if ( pos !== -1 ) {
-            key = condition.slice(0, pos);
-            value = condition.slice(pos + 1);
-        } else {
-            key = 'url';
-            value = condition;
-        }
-        needles.push({ key, re: safe.patternToRegex(value) });
-    }
-    self.fetch = new Proxy(self.fetch, {
-        apply: function(target, thisArg, args) {
-            const details = args[0] instanceof self.Request
-                ? args[0]
-                : Object.assign({ url: args[0] }, args[1]);
-            let proceed = true;
-            try {
-                const props = new Map();
-                for ( const prop in details ) {
-                    let v = details[prop];
-                    if ( typeof v !== 'string' ) {
-                        try { v = safe.JSON_stringify(v); }
-                        catch(ex) { }
-                    }
-                    if ( typeof v !== 'string' ) { continue; }
-                    props.set(prop, v);
-                }
-                if ( propsToMatch === '' && responseBody === '' ) {
-                    const out = Array.from(props).map(a => `${a[0]}:${a[1]}`);
-                    safe.uboLog(logPrefix, `Called: ${out.join('\n')}`);
-                    return Reflect.apply(target, thisArg, args);
-                }
-                proceed = needles.length === 0;
-                for ( const { key, re } of needles ) {
-                    if (
-                        props.has(key) === false ||
-                        re.test(props.get(key)) === false
-                    ) {
-                        proceed = true;
-                        break;
-                    }
-                }
-            } catch(ex) {
-            }
-            if ( proceed ) {
-                return Reflect.apply(target, thisArg, args);
-            }
-            let responseType = '';
-            if ( details.mode === undefined || details.mode === 'cors' ) {
-                try {
-                    const desURL = new URL(details.url);
-                    responseType = desURL.origin !== document.location.origin
-                        ? 'cors'
-                        : 'basic';
-                } catch(ex) {
-                    safe.uboErr(logPrefix, `Error: ${ex}`);
-                }
-            }
-            return generateContentFn(responseBody).then(text => {
-                safe.uboLog(logPrefix, `Prevented with response "${text}"`);
-                const response = new Response(text, {
-                    statusText: 'OK',
-                    headers: {
-                        'Content-Length': text.length,
-                    }
-                });
-                safe.Object_defineProperty(response, 'url', {
-                    value: details.url
-                });
-                if ( responseType !== '' ) {
-                    safe.Object_defineProperty(response, 'type', {
-                        value: responseType
-                    });
-                }
-                return response;
-            });
-        }
-    });
+    replaceNodeTextFn(nodeName, '', '', 'condition', condition || '', ...extraArgs);
 }
 
-function generateContentFn(directive) {
+function replaceNodeTextFn(
+    nodeName = '',
+    pattern = '',
+    replacement = ''
+) {
     const safe = safeSelf();
-    const randomize = len => {
-        const chunks = [];
-        let textSize = 0;
-        do {
-            const s = safe.Math_random().toString(36).slice(2);
-            chunks.push(s);
-            textSize += s.length;
+    const logPrefix = safe.makeLogPrefix('replace-node-text.fn', ...Array.from(arguments));
+    const reNodeName = safe.patternToRegex(nodeName, 'i', true);
+    const rePattern = safe.patternToRegex(pattern, 'gms');
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
+    const stop = (takeRecord = true) => {
+        if ( takeRecord ) {
+            handleMutations(observer.takeRecords());
         }
-        while ( textSize < len );
-        return chunks.join(' ').slice(0, len);
+        observer.disconnect();
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Quitting');
+        }
     };
-    if ( directive === 'true' ) {
-        return Promise.resolve(randomize(10));
-    }
-    if ( directive === 'emptyObj' ) {
-        return Promise.resolve('{}');
-    }
-    if ( directive === 'emptyArr' ) {
-        return Promise.resolve('[]');
-    }
-    if ( directive === 'emptyStr' ) {
-        return Promise.resolve('');
-    }
-    if ( directive.startsWith('length:') ) {
-        const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
-        if ( match ) {
-            const min = parseInt(match[1], 10);
-            const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
-            const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
-            return Promise.resolve(randomize(len | 0));
+    let sedCount = extraArgs.sedCount || 0;
+    const handleNode = node => {
+        const before = node.textContent;
+        reCondition.lastIndex = 0;
+        if ( safe.RegExp_test.call(reCondition, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
+        if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
+        const after = pattern !== ''
+            ? before.replace(rePattern, replacement)
+            : replacement;
+        node.textContent = after;
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
-    }
-    if ( directive.startsWith('war:') && scriptletGlobals.warOrigin ) {
-        return new Promise(resolve => {
-            const warOrigin = scriptletGlobals.warOrigin;
-            const warName = directive.slice(4);
-            const fullpath = [ warOrigin, '/', warName ];
-            const warSecret = scriptletGlobals.warSecret;
-            if ( warSecret !== undefined ) {
-                fullpath.push('?secret=', warSecret);
+        safe.uboLog(logPrefix, `Text after:\n${after.trim()}`);
+        return sedCount === 0 || (sedCount -= 1) !== 0;
+    };
+    const handleMutations = mutations => {
+        for ( const mutation of mutations ) {
+            for ( const node of mutation.addedNodes ) {
+                if ( reNodeName.test(node.nodeName) === false ) { continue; }
+                if ( handleNode(node) ) { continue; }
+                stop(false); return;
             }
-            const warXHR = new safe.XMLHttpRequest();
-            warXHR.responseType = 'text';
-            warXHR.onloadend = ev => {
-                resolve(ev.target.responseText || '');
-            };
-            warXHR.open('GET', fullpath.join(''));
-            warXHR.send();
-        });
+        }
+    };
+    const observer = new MutationObserver(handleMutations);
+    observer.observe(document, { childList: true, subtree: true });
+    if ( document.documentElement ) {
+        const treeWalker = document.createTreeWalker(
+            document.documentElement,
+            NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT
+        );
+        let count = 0;
+        for (;;) {
+            const node = treeWalker.nextNode();
+            count += 1;
+            if ( node === null ) { break; }
+            if ( reNodeName.test(node.nodeName) === false ) { continue; }
+            if ( handleNode(node) ) { continue; }
+            stop(); break;
+        }
+        safe.uboLog(logPrefix, `${count} nodes present before installing mutation observer`);
     }
-    return Promise.resolve('');
+    if ( extraArgs.stay ) { return; }
+    runAt(( ) => {
+        const quitAfter = extraArgs.quitAfter || 0;
+        if ( quitAfter !== 0 ) {
+            setTimeout(( ) => { stop(); }, quitAfter);
+        } else {
+            stop();
+        }
+    }, 'interactive');
+}
+
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
+    }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -409,7 +376,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { noFetchIf(...argsList[i]); }
+    try { removeNodeText(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -427,11 +394,11 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
-const targetWorld = 'MAIN';
+const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noFetchIf();
+    return uBOL_removeNodeText();
 }
 
 // Firefox
@@ -439,11 +406,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_noFetchIf = cloneInto([
-            [ '(', uBOL_noFetchIf.toString(), ')();' ],
+        page.uBOL_removeNodeText = cloneInto([
+            [ '(', uBOL_removeNodeText.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_noFetchIf);
+        const blob = new page.Blob(...page.uBOL_removeNodeText);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -457,7 +424,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_noFetchIf;
+    delete page.uBOL_removeNodeText;
 }
 
 /******************************************************************************/

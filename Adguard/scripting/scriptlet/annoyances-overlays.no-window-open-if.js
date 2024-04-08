@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["bypass.city",0],["adbypass.org",0],["rsadnetworkinfo.com",0],["rsinsuranceinfo.com",0],["rsfinanceinfo.com",0],["rsgamer.app",0],["rssoftwareinfo.com",0],["rshostinginfo.com",0],["rseducationinfo.com",0]]);
+const hostnamesMap = new Map([["bypass.city",0],["adbypass.org",0]]);
 
 const entitiesMap = new Map([]);
 

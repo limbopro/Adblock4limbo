@@ -21,6 +21,7 @@
 
 /* jpn-1 */
 
+a[href*="ams.exad.jp/"] > img,
 a[href^="http://abroadabc.com/index.php"],
 a[href^="https://nxcount.com/AdClick/"][target="_blank"],
 a[href^="https://preaf.jp/pa.do"] > img,

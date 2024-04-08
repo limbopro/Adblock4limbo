@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["count"]];
+const argsList = [["count"],["viewClickAttributeId"]];
 
-const hostnamesMap = new Map([["appimagehub.com",0],["gnome-look.org",0],["store.kde.org",0],["linux-apps.com",0],["opendesktop.org",0],["pling.com",0],["xfce-look.org",0]]);
+const hostnamesMap = new Map([["appimagehub.com",0],["gnome-look.org",0],["store.kde.org",0],["linux-apps.com",0],["opendesktop.org",0],["pling.com",0],["xfce-look.org",0],["bbc.com",1]]);
 
 const entitiesMap = new Map([]);
 

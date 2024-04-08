@@ -42,11 +42,11 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["js-page-scroll-lock","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["js-show-newsletter-popup","","stay"],["show-intro-popup","","stay"],["modal-open","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
+const argsList = [["js-page-scroll-lock","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["js-show-newsletter-popup","","stay"],["modal-open","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
 
-const hostnamesMap = new Map([["cityam.com",0],["all3dp.com",1],["cityandstateny.com",2],["forbes.com",3],["dgb.de",4],["construction-physics.com",5],["sambowman.co",5],["asiasentinel.com",5],["understandingai.org",5],["hamiltonnolan.com",5],["aporiamagazine.com",5],["garbageday.email",5],["jacobwolf.report",5],["semianalysis.com",5],["dossier.today",5],["engineeringleadership.xyz",5],["piratewires.com",5],["slowboring.com",5],["flowstate.fm",5],["popular.info",5],["newsletter.banklesshq.com",5],["antiracismnewsletter.com",5],["racket.news",5],["eugyppius.com",5],["dkb.blog",5],["duffelblog.com",5],["theankler.com",5],["fullstackeconomics.com",5],["substack.com",5],["platformer.news",5],["mightyape.co.nz",6],["novelza.com",8],["postype.com",9]]);
+const hostnamesMap = new Map([["cityam.com",0],["all3dp.com",1],["cityandstateny.com",2],["forbes.com",3],["dgb.de",4],["mightyape.co.nz",5],["novelza.com",7],["postype.com",8]]);
 
-const entitiesMap = new Map([["pornhub",7]]);
+const entitiesMap = new Map([["pornhub",6]]);
 
 const exceptionsMap = new Map([]);
 

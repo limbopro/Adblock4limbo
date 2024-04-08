@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["mode-quills","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["history","$remove$"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["mode-quills","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["cnn.com",[1,2]],["quillbot.com",3],["deepl.com",[4,5]]]);
+const hostnamesMap = new Map([["zippia.com",0],["bloomberg.com",1],["cnn.com",[2,3]],["quillbot.com",4],["deepl.com",[5,6]]]);
 
 const entitiesMap = new Map([]);
 

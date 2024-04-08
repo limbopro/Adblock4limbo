@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[],["","30000","0.0001"],["document.getElementById","1777"],["timer"],["zat_tick"]];
+const argsList = [[],["()=>r(t)","15000"],["","30000","0.0001"],["document.getElementById","1777"],["js-article-check-visibility","2000"],["timer"],["zat_tick"]];
 
-const hostnamesMap = new Map([["autoinfo24.ru",0],["dp73.spb.ru",0],["dropmefiles.com.ua",0],["dropmefiles.net",0],["gtavicecity.ru",0],["pes-files.ru",0],["tv-kanali.online",1],["soyztreid.website",2],["freetp.org",3],["freetp.ru",3],["online-fix.me",3],["4pda.to",4]]);
+const hostnamesMap = new Map([["autoinfo24.ru",0],["dp73.spb.ru",0],["dropmefiles.com.ua",0],["dropmefiles.net",0],["gtavicecity.ru",0],["pes-files.ru",0],["dzen.ru",1],["tv-kanali.online",2],["fonland.site",3],["soyztreid.website",3],["rbc.ru",4],["freetp.org",5],["freetp.ru",5],["online-fix.me",5],["4pda.to",6]]);
 
 const entitiesMap = new Map([]);
 

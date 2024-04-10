@@ -23,37 +23,53 @@
 
 ### 目前在维护的网站目录
 
-| 网站  | 支持软件 | 广告类型 |
-| --- | --- | --- |
-| 低端影视 | S/Q/T/X | 图片/跳过视频广告倒计时 |
-| 哔嘀影视 | S/Q/T/X | 图片/跳过视频广告倒计时 |
-| 独播库 | S/Q/T/X | 图片  |
-| 555影院 | S/Q/T/X | 图片  |
-| libvio | S/Q/X | 图片  |
-| 韩剧TV | S/Q/T/X | 图片（需配合去广告分流） |
-| 天天视频 | S/Q/T/X | 动图/弹窗 |
-| Google/Bing | S/Q/T/X | 屏蔽搜索结果页的内容农场结果/文字及图片 |
-| 百度搜索/知道 | S/Q/X | 图片  |
-| Jable | S/Q/T/X | 图片/弹窗/M3U8文件提取 |
-| MissAV | S/Q/T/X | 图片/弹窗/离开页面后正常播放视频 |
-| Pornhub | S/Q/T/X | 图片/视频广告（需配合去广告分流） |
-| Javbus | S/Q/X | 图片  |
-| 91  | S/Q/T/X | 图片/视频广告（需配合去广告分流） |
-| 4hu | S/Q/X | 图片/弹窗 |
-| 绅士漫画 | S/Q/T/X | 图片  |
-| 禁漫天堂 | S/Q/T/X | 图片  |
-| 知乎  | T/X | PC端未登录状态浏览知乎体验优化 |
-| 泥巴影视 | S/Q/T/X | 播放页20秒广告加速移除 |
+| 网站  | 网站类型 | 支持软件 | 广告类型 |
+| --- | --- | --- | --- |
+| [低端影视](https://ddys.pro/) | 在线影视 | Surge/QuantumultX/小火箭/油猴 | 图片/跳过视频广告倒计时 |
+| [小宝影视](https://xiaoheimi.net/index.php) | 在线影视 | 同上  | 图片  |
+| [泥巴影视](https://www.nivod8.tv/) | 在线影视 | 同上  | 播放页片头20秒广告加速移除 |
+| [CN影视](https://cnys.tv/) | 在线影视 | 同上  | 图片广告/片头广告 |
+| [剧迷网](https://gimy.ai/) | 在线影视 | 同上  | 图片  |
+| [哔嘀影视](https://www.bdys10.com/) | 在线影视 | 同上  | 图片/跳过片头视频广告倒计时 |
+| [独播库](https://www.duboku.tv/) | 在线影视 | 同上  | 图片  |
+| [欧乐影院](https://www.olevod.tv/index.html) | 在线影视 | 同上  | XHR |
+| ~~555影院~~ | 在线影视 | 同上  | 图片  |
+| [libvio](https://www.libvio.one/) | 在线影视 | 同上  | 图片  |
+| [韩剧TV](https://www.tvn.cc/) | 在线影视 | 同上  | 图片（需配合去广告分流） |
+| [天天视频](https://ttsp.tv/) | 在线影视 | 同上  | 动图/弹窗 |
+| [NT动漫](https://www.ntdm.com/) | 在线影视 | 同上  | 图片  |
+| [Google](https://www.google.com.hk/)/[Bing](https://www.bing.com/) | 搜索引擎 | 同上  | 屏蔽搜索结果页的内容农场结果/文字及图片 |
+| [百度搜索](https://www.baidu.com/)/[知道](https://zhidao.baidu.com/) | 搜索引擎 | 同上  | 图片  |
+| [Jable](https://jable.tv/) | Porn | 同上  | 图片/弹窗/M3U8文件提取 |
+| [MissAV](https://missav.com/) | Porn | 同上  | 图片/弹窗/离开页面后正常播放视频 |
+| [Supjav](https://supjav.com/) | Porn | Surge/QuantumultX/小火箭/ | 播放页弹窗/图片 |
+| [Javday](https://javday.tv/) | Porn | Surge/QuantumultX/小火箭/ | 图片/弹窗 |
+| [njav](https://njav.tv/zh/) | Porn | Surge/QuantumultX/小火箭/ | 图片  |
+| [Netflav](https://netflav.com/) | Porn | Surge/QuantumultX/小火箭/ | 图片/播放页弹窗 |
+| [Pornhub](https://cn.pornhub.com/) | Porn | Surge/QuantumultX/小火箭/ | 图片/视频广告（需配合去广告分流） |
+| [Javlibrary](https://www.javlibrary.com/cn/) | Jav图书馆 | 同上  | 图片  |
+| [Javbus](https://www.javbus.com/) | Jav图书馆 | 同上  | 图片  |
+| [Xvideos](https://www.xvideos.com/) | Porn | Surge/QuantumultX/小火箭/ | 片头广告/图片 |
+| [91Porn](https://91porn.com/) | Porn | 同上  | 图片/视频广告（需配合去广告分流） |
+| [4hu](https://4hu.tv/) | Porn | 同上  | 图片/弹窗 |
+| [Hitomi](https://hitomi.la/index-chinese.html) | 工口漫画及下载 | 同上  | 图片  |
+| [肉漫](https://rouman5.com/home) | 工口漫画 | 同上  | 图片  |
+| [绅士漫画](https://www.wnacg.com/) | 工口漫画 | 同上  | 图片  |
+| [禁漫天堂](https://18comic.org/) | 工口漫画 | 同上  | 图片  |
+| [anime1](https://anime1.me/) | 漫画在线 | 同上  | 图片  |
+| [hanime1](https://hanime1.me/) | 工口动漫 | 同上  | 图片  |
+| [知乎](https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour) | 问答  | 油猴  | PC端未登录状态浏览知乎体验优化 |
 
-> **完整网站目录及网址**：https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist
+> 如无特别说明，【毒奶去网页广告计划】在对以上网站网页广告去除过程中，代理软件（如Surge、QuantumultX、Shadowrocket）将优先支持，油猴用户次之或不完美支持，PC、Mac等桌面浏览器用户优先推荐安装 [ublock origin](https://limbopro.com/archives/1098.html) 等浏览器扩展，Android 用户推荐安装 [Firefox 浏览器 + ublock origin 组合](https://limbopro.com/archives/26805.html) 以屏蔽网页广告。
 
-> S:surge; Q:Quantumultx; T:油猴脚本支持；X:Shadowrocket支持；
+> 目前去网页广告计划支持约30+网站：涵盖**在线影视**/**电子漫画**/XXXX；  
+参阅完整的：[在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)；如果其中没有你 **希望支持去广告的网站**，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；
 
 > FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）；iOS 用户常见FAQ：https://t.me/Adblock4limbo/21 ； 油猴用户常见FAQ：https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 
 @> Surge 用户如需访问 Pornhub ，请直接访问 cn.pxxxn.com （即中文版），访问 www.pxxxn.com 或会失败；
 
-## 电报讨论群组及 issue
+## 电报讨论群组及 issues
 
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
 > 2. 如你在使用过程中遇到什么问题或**有网站需要移除广告**，可通过 [issues](https://github.com/limbopro/Adblock4limbo/issues) 提交；

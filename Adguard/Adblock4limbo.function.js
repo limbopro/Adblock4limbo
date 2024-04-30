@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2.04.04
+// @version      0.2.04.10
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -899,6 +899,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
 ['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
 ['肉漫', 'https://www.rouman5.com/', '_blank', 'comic18', 'special'],
+['hitomi', 'https://hitomi.la/index-chinese.html', '_blank', 'comic18', 'special'],
 ['博客优化', 'https://limbopro.com/category/builder/', '_blank', 'seoandmore', 'special'],
 ['博客防御', 'https://limbopro.com/tag/Cloudflare/', '_blank', 'seoandmore', 'common'],
 ['苦瓜书盘', 'https://kgbook.com/', '_blank', 'bookreadanddownload', 'common'],

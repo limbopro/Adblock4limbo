@@ -42,9 +42,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#MainContainer > [id]:has(> [id^=\"btIn\"] > #bannerTop)","clip-path","none"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["ins.adsbygoogle:has(iframe[src])","clip-path","none"]];
+const argsList = [["[id=\"aswift_0_host\"], [id=\"aswift_1_host\"], [id=\"aswift_2_host\"], [id=\"aswift_3_host\"], [id=\"aswift_4_host\"], [id=\"aswift_5_host\"]","clip-path","none"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id*=\"div-gpt-ad-\"], [id*=\"google_ads_\"], #featuredimage, [href*=\"random-affiliate.atimaze.com\"]","clip-path","none"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"]];
 
-const hostnamesMap = new Map([["puzzle-loop.com",0],["puzzle-words.com",0],["puzzle-chess.com",0],["puzzle-thermometers.com",0],["puzzle-norinori.com",0],["puzzle-minesweeper.com",0],["puzzle-slant.com",0],["puzzle-lits.com",0],["puzzle-galaxies.com",0],["puzzle-tents.com",0],["puzzle-battleships.com",0],["puzzle-pipes.com",0],["puzzle-hitori.com",0],["puzzle-heyawake.com",0],["puzzle-shingoki.com",0],["puzzle-masyu.com",0],["puzzle-stitches.com",0],["puzzle-aquarium.com",0],["puzzle-tapa.com",0],["puzzle-star-battle.com",0],["puzzle-kakurasu.com",0],["puzzle-skyscrapers.com",0],["puzzle-futoshiki.com",0],["puzzle-shakashaka.com",0],["puzzle-kakuro.com",0],["puzzle-jigsaw-sudoku.com",0],["puzzle-killer-sudoku.com",0],["puzzle-binairo.com",0],["puzzle-nonograms.com",0],["puzzle-sudoku.com",0],["puzzle-light-up.com",0],["puzzle-bridges.com",0],["puzzle-shikaku.com",0],["puzzle-nurikabe.com",0],["puzzle-dominosa.com",0],["techcyan.com",1],["kiktu.com",1],["upshrink.com",1],["trangchu.news",1],["banaraswap.in",1],["download.megaup.net",2],["decrypt.day",3]]);
+const hostnamesMap = new Map([["decrypt.day",0],["techcyan.com",1],["kiktu.com",1],["upshrink.com",1],["trangchu.news",1],["banaraswap.in",1],["jytechs.in",2],["dev.miuiflash.com",2],["djxmaza.in",2],["thecubexguide.com",2],["download.megaup.net",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -83,6 +83,9 @@ function spoofCSS(
     const cloackFunc = (fn, thisArg, name) => {
         const trap = fn.bind(thisArg);
         Object.defineProperty(trap, 'name', { value: name });
+        Object.defineProperty(trap, 'toString', {
+            value: ( ) => `function ${name}() { [native code] }`
+        });
         return trap;
     };
     self.getComputedStyle = new Proxy(self.getComputedStyle, {
@@ -96,7 +99,7 @@ function spoofCSS(
                 get(target, prop, receiver) {
                     if ( typeof target[prop] === 'function' ) {
                         if ( prop === 'getPropertyValue' ) {
-                            return cloackFunc(function(prop) {
+                            return cloackFunc(function getPropertyValue(prop) {
                                 return spoofStyle(prop, target[prop]);
                             }, target, 'getPropertyValue');
                         }

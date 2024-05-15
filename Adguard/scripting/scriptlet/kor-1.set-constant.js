@@ -42,13 +42,13 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["_ads_zum_main_initbanner_750_zum_main_br_widget_336","true"],["list_end_run","noopFunc"],["Math.uuid","","","asFunction"],["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["PartnersCoupang","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
+const argsList = [["_ads_zum_main_initbanner_750_zum_main_br_widget_336","true"],["list_end_run","noopFunc"],["Math.uuid","","","asFunction"],["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
-const hostnamesMap = new Map([["zum.com",0],["m.humoruniv.com",1],["hub.zum.com",2],["mememedia.co.kr",3],["humors.zigcou.com",4],["shopping.interpark.com",5],["sbs.co.kr",[6,8]],["fun-iyagi.co.kr",7],["timecoffee.co.kr",7],["333aaa.site",7],["domin.co.kr",9],["uwayapply.com",10],["tvchosun.com",11],["app.dcinside.com",12],["m.dcinside.com",12],["naver.com",13],["koreapas.com",14],["imbc.com",15],["meeco.kr",17],["sogirl.so",18],["tistory.com",19],["sajuplus.net",19],["auto.danawa.com",20]]);
+const hostnamesMap = new Map([["zum.com",0],["m.humoruniv.com",1],["hub.zum.com",2],["mememedia.co.kr",3],["humors.zigcou.com",4],["shopping.interpark.com",5],["sbs.co.kr",[6,8]],["fun-iyagi.co.kr",7],["timecoffee.co.kr",7],["333aaa.site",7],["domin.co.kr",9],["uwayapply.com",10],["tvchosun.com",11],["app.dcinside.com",12],["m.dcinside.com",12],["naver.com",13],["koreapas.com",14],["imbc.com",15],["meeco.kr",16],["sogirl.so",17],["tistory.com",18],["sajuplus.net",18],["auto.danawa.com",19]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["coupang.com",[16]],["coupangcdn.com",[16]]]);
+const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 

@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ld_ac_timeout","Y"],["adv","1"],["notToday2","Y"]];
+const argsList = [["ld_ac_timeout","Y"],["adv","1"],["ba.uuid","0"],["notToday2","Y"]];
 
-const hostnamesMap = new Map([["oh-yes.co.kr",0],["ssodam.com",1],["luckyquiz3.blogspot.com",2]]);
+const hostnamesMap = new Map([["oh-yes.co.kr",0],["ssodam.com",1],["naver.com",2],["luckyquiz3.blogspot.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -264,7 +264,7 @@ function setCookieFn(
     // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
     // The characters [",] are given a pass from the RFC requirements because
     // apparently browsers do not follow the RFC to the letter.
-    if ( /[^!-:<-[\]-~]/.test(value) ) {
+    if ( /[^ -:<-[\]-~]/.test(value) ) {
         value = encodeURIComponent(value);
     }
 

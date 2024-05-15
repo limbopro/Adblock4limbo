@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
 
-const hostnamesMap = new Map([["betweenjpandkr.blog",0],["dvdrev.com",1],["fm.sekkaku.net",2],["lifematome.blog",3],["free-avx.jp",4],["seikeidouga.blog.jp",5],["tcg-bloglife.com",5],["ch-review.net",5],["gametohkenranbu.sakuraweb.com",5],["jisakuhibi.jp",5],["rank1-media.com",5],["resizer.myct.jp",5]]);
+const hostnamesMap = new Map([["betweenjpandkr.blog",0],["dvdrev.com",1],["fm.sekkaku.net",2],["lifematome.blog",3],["free-avx.jp",4],["ideal2ch.livedoor.biz",5],["seikeidouga.blog.jp",5],["tcg-bloglife.com",5],["ch-review.net",5],["gametohkenranbu.sakuraweb.com",5],["jisakuhibi.jp",5],["rank1-media.com",5],["resizer.myct.jp",5]]);
 
 const entitiesMap = new Map([]);
 

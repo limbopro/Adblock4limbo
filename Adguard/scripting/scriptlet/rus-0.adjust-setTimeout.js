@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[],["()=>r(t)","15000"],["","30000","0.0001"],["document.getElementById","1777"],["js-article-check-visibility","2000"],["timer"],["zat_tick"]];
+const argsList = [[],["()=>r(t)","15000"],["","30000","0.0001"],["js-article-check-visibility","2000"],["timer"],["zat_tick"]];
 
-const hostnamesMap = new Map([["autoinfo24.ru",0],["dp73.spb.ru",0],["dropmefiles.com.ua",0],["dropmefiles.net",0],["gtavicecity.ru",0],["pes-files.ru",0],["dzen.ru",1],["tv-kanali.online",2],["fonland.site",3],["soyztreid.website",3],["rbc.ru",4],["freetp.org",5],["freetp.ru",5],["online-fix.me",5],["4pda.to",6]]);
+const hostnamesMap = new Map([["autoinfo24.ru",0],["dp73.spb.ru",0],["dropmefiles.com.ua",0],["dropmefiles.net",0],["gtavicecity.ru",0],["pes-files.ru",0],["dzen.ru",1],["tv-kanali.online",2],["rbc.ru",3],["freetp.org",4],["freetp.ru",4],["online-fix.me",4],["4pda.to",5]]);
 
 const entitiesMap = new Map([]);
 

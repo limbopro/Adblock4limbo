@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adregain_wall"],["adsBlocked"],["ai_front"],["disableSelection"],["disable_keystrokes"],["document.oncontextmenu"],["document.ondragstart"],["document.onselectstart"],["fetch"],["keepAdblock"],["window.yaProxy"],["mailruEnabled"]];
+const argsList = [["adsBlocked"],["ai_front"],["disableSelection"],["disable_keystrokes"],["document.oncontextmenu"],["document.ondragstart"],["document.onselectstart"],["fetch"],["keepAdblock"],["window.yaProxy"],["mailruEnabled"]];
 
-const hostnamesMap = new Map([["meteoservice.ru",0],["24pdd.ru",1],["doctorrouter.ru",2],["ranobe-novels.ru",2],["tests24.su",2],["ufchgu.ru",[3,4]],["fssp.gov.ru",[5,6,7]],["southpark.su",[5,6,7]],["stroi-help.ru",[5,6,7]],["turkcinema.org",[5,6,7]],["phys-kids.com",8],["gamemag.ru",9],["kakprosto.ru",10],["ok.ru",11]]);
+const hostnamesMap = new Map([["24pdd.ru",0],["doctorrouter.ru",1],["ranobe-novels.ru",1],["tests24.su",1],["ufchgu.ru",[2,3]],["fssp.gov.ru",[4,5,6]],["southpark.su",[4,5,6]],["turkcinema.org",[4,5,6]],["phys-kids.com",7],["gamemag.ru",8],["kakprosto.ru",9],["ok.ru",10]]);
 
 const entitiesMap = new Map([]);
 

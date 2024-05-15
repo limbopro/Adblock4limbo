@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["addEventListener","AdBlock"],["onload","google_esf"],["atob","/documentEl[\\s\\S]*?_0x/"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["document.write","sitejack"],["__htapop"]];
+const argsList = [["addEventListener","AdBlock"],["onload","google_esf"],["atob","/documentEl[\\s\\S]*?_0x/"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["Math.floor","amazon"],["document.createElement","overview"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["document.write","sitejack"],["__htapop"]];
 
-const hostnamesMap = new Map([["bm.best-hit.tv",0],["h178.com",0],["qa.crefan.jp",1],["ssbsblg.blogspot.com",2],["blog-and-destroy.com",3],["musenboya.com",4],["kledgeb.blogspot.com",5],["connect.coron.tech",7],["javple.com",8],["realsound.jp",9],["h1g.jp",9],["russianbeauties.jp",10],["agora-web.jp",11],["yugioh-starlight.com",12],["kijomatomelog.com",12],["gundamlog.com",12],["doorblog.jp",12],["digital-thread.com",12],["livedoor.blog",12],["blog.jp",12],["blog.livedoor.jp",[12,15,17]],["majikichi.com",13],["xn--gmq92kd2rm1kx34a.com",14],["dtiblog.com",15],["momoiroadult.com",16],["avgle.com",18]]);
+const hostnamesMap = new Map([["bm.best-hit.tv",0],["h178.com",0],["qa.crefan.jp",1],["ssbsblg.blogspot.com",2],["blog-and-destroy.com",3],["musenboya.com",4],["kledgeb.blogspot.com",5],["connect.coron.tech",7],["blog.livedoor.jp",[8,15,18,20]],["erommd-street.com",9],["ac-illust.com",10],["photo-ac.com",10],["javple.com",11],["realsound.jp",12],["h1g.jp",12],["russianbeauties.jp",13],["agora-web.jp",14],["2chblog.jp",15],["yugioh-starlight.com",15],["kijomatomelog.com",15],["gundamlog.com",15],["doorblog.jp",15],["digital-thread.com",15],["livedoor.blog",15],["blog.jp",15],["majikichi.com",16],["xn--gmq92kd2rm1kx34a.com",17],["dtiblog.com",18],["momoiroadult.com",19],["avgle.com",21]]);
 
-const entitiesMap = new Map([["manga1001",6],["javmix",14]]);
+const entitiesMap = new Map([["manga1001",6],["javmix",17]]);
 
 const exceptionsMap = new Map([]);
 

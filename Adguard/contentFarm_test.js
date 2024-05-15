@@ -3,7 +3,7 @@ Written by limbopro
 https://limbopro.com/archives/block-contentfarm.html
 https://t.me/Adblock4limbo
 There are 7179 content farm domains in total until now.
-Last updated at  1/5月/2024/00:00
+Last updated at 15/5月/2024/22:06
 */
 
 

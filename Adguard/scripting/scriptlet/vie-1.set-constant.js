@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["video.adVast",""],["linkAff","null","3"],["seconds","0"],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
+const argsList = [["ADMStorageFileCDN","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["video.adVast",""],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["gvnvh18.com",1],["sexdiaryx.biz",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["sexvietmoi.io",4],["clipsexvietnam.net",4],["phimsexviet.io",4],["phimsexvietnam.app",4],["mb.clipsex.xxx",4],["ww1.phimsexchill.com",4],["gm.phimsexnhanh.tv",4],["phimsexvip.cc",4],["sex.ditnhau.cc",4],["topsexhay.org",4],["tailieumoi.vn",5],["vndoc.com",6],["www.iosviet.com",7],["xoivo2.online",[8,9]],["tructiepdabong5.co",[8,9]],["vaoroi365.com",[8,9]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["gvnvh18.com",1],["sexdiaryx.org",1],["phimvietsub.pro",2],["api.anime3s.com",2],["subnhanh.xyz",2],["phimvuihd.org",3],["tailieumoi.vn",4],["vndoc.com",5],["web.motsex.net",6],["clipsexvietnam.net",6],["phimsexviet.io",6],["phimsexvietnam.app",6],["mb.clipsex.xxx",6],["web.phimsexnhanh.tv",6],["gm.phimsexnhanh.tv",6],["phimsexvip.cc",6],["web.ditnhau.cc",6],["phim.sexhayvl.org",6],["www.iosviet.com",7],["xoivo2.online",[8,9]],["tructiepdabong5.co",[8,9]],["vaoroi365.com",[8,9]]]);
 
 const entitiesMap = new Map([]);
 

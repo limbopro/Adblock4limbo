@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gif"],["googlesyndication"],["/hotjar|googletagmanager/"]];
+const argsList = [["gif"],["googlesyndication"],["/hotjar|googletagmanager/"],["ads"]];
 
-const hostnamesMap = new Map([["nusantararom.org",0],["unidivers.fr",1],["nsmb.com",1],["neilpatel.com",2]]);
+const hostnamesMap = new Map([["nusantararom.org",0],["unidivers.fr",1],["nsmb.com",1],["neilpatel.com",2],["solarmagazine.nl",3]]);
 
 const entitiesMap = new Map([]);
 

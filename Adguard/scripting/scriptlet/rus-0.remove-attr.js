@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["autoplay","[data-video-player=\"small\"]","stay"],["autoplay","video","stay"],["autoplay|loop",".watch-live__link > video","stay"],["autoplay|loop","video","stay"],["class",".js-video-box__container"],["data-autoplay","video"],["disabled",".uk-modal-footer > button"],["oncontextmenu","[class]","stay"],["oncontextmenu|oncopy|onselectstart"]];
 
-const hostnamesMap = new Map([["i-ua.tv",0],["cnews.ru",1],["gfycat.com",1],["inter.ua",1],["obozrevatel.com",1],["platformcraft.ru",1],["protv.md",1],["rg.ru",1],["rusvesna.su",1],["tv8.md",1],["xsport.ua",1],["u24.ua",2],["afisha.ru",3],["byrutdb.org",3],["film.ru",3],["filmpro.ru",3],["lenta.ru",4],["svoboda.org",5],["myshared.ru",6],["lostfilm.download",7],["lostfilm.life",7],["lostfilm.pro",7],["lostfilm.today",7],["lostfilm.tv",7],["lostfilm.tw",7],["lostfilm.uno",7],["lostfilm.win",7],["lostfilmtv.site",7],["lostfilmtv.uno",7],["lostfilmtv1.site",7],["lostfilmtv2.site",7],["lostfilmtv3.site",7],["lostfilmtv4.site",7],["lostfilmtv5.site",7],["stalker-mods.clan.su",8],["stalker-mods.su",8]]);
+const hostnamesMap = new Map([["i-ua.tv",0],["cnews.ru",1],["gfycat.com",1],["inter.ua",1],["obozrevatel.com",1],["platformcraft.ru",1],["protv.md",1],["rg.ru",1],["rusvesna.su",1],["tv8.md",1],["xsport.ua",1],["u24.ua",2],["afisha.ru",3],["byruthub.org",3],["film.ru",3],["filmpro.ru",3],["lenta.ru",4],["svoboda.org",5],["myshared.ru",6],["lostfilm.download",7],["lostfilm.life",7],["lostfilm.one",7],["lostfilm.pro",7],["lostfilm.today",7],["lostfilm.tv",7],["lostfilm.tw",7],["lostfilm.uno",7],["lostfilm.win",7],["lostfilmtv.site",7],["lostfilmtv.uno",7],["lostfilmtv1.site",7],["lostfilmtv2.site",7],["lostfilmtv3.site",7],["lostfilmtv4.site",7],["lostfilmtv5.site",7],["stalker-mods.clan.su",8],["stalker-mods.su",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -53,15 +53,20 @@ const exceptionsMap = new Map([]);
 /******************************************************************************/
 
 function removeAttr(
-    token = '',
-    selector = '',
+    rawToken = '',
+    rawSelector = '',
     behavior = ''
 ) {
-    if ( typeof token !== 'string' ) { return; }
-    if ( token === '' ) { return; }
-    const tokens = token.split(/\s*\|\s*/);
-    if ( selector === '' ) {
-        selector = `[${tokens.join('],[')}]`;
+    if ( typeof rawToken !== 'string' ) { return; }
+    if ( rawToken === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('remove-attr', rawToken, rawSelector, behavior);
+    const tokens = rawToken.split(/\s*\|\s*/);
+    const selector = tokens
+        .map(a => `${rawSelector}[${CSS.escape(a)}]`)
+        .join(',');
+    if ( safe.logLevel > 1 ) {
+        safe.uboLog(logPrefix, `Target selector:\n\t${selector}`);
     }
     let timer;
     const rmattr = ( ) => {
@@ -70,7 +75,9 @@ function removeAttr(
             const nodes = document.querySelectorAll(selector);
             for ( const node of nodes ) {
                 for ( const attr of tokens ) {
+                    if ( node.hasAttribute(attr) === false ) { continue; }
                     node.removeAttribute(attr);
+                    safe.uboLog(logPrefix, `Removed attribute '${attr}'`);
                 }
             }
         } catch(ex) {
@@ -90,7 +97,7 @@ function removeAttr(
             }
         }
         if ( skip ) { return; }
-        timer = self.requestIdleCallback(rmattr, { timeout: 17 });
+        timer = self.requestIdleCallback(rmattr, { timeout: 67 });
     };
     const start = ( ) => {
         rmattr();

@@ -42,26 +42,31 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["style","#episode"],["data-money","div[data-money]"],["data-href","span[data-href^=\"https://ensonhaber.me/\"]"],["placeholder","input[id=\"search-textbox\"]"],["data-time",".video-skip[data-time]"]];
+const argsList = [["style","#episode"],["data-money","div[data-money]"],["data-href","span[data-href^=\"https://ensonhaber.me/\"]"],["placeholder","input[id=\"search-textbox\"]"],["data-front","#tv-spoox2"],["data-time",".video-skip[data-time]"]];
 
-const hostnamesMap = new Map([["asyadiziizle.com",0],["dizipal73.cloud",1],["dizipal74.cloud",1],["dizipal132.cloud",1],["dizipal133.cloud",1],["dizipal134.cloud",1],["dizipal135.cloud",1],["dizipal140.cloud",1],["hdsinemax.com",1],["elzemfilm.org",1],["ensonhaber.com",2],["eksisozluk.com",3],["inattvhd188.xyz",4],["inattvhd189.xyz",4],["inattvhd190.xyz",4],["inattvhd191.xyz",4],["inattvhd192.xyz",4],["inattvhd193.xyz",4],["inattvhd194.xyz",4],["inattvhd195.xyz",4],["inattvhd196.xyz",4],["inattvhd197.xyz",4],["inattvhd198.xyz",4],["inattvhd199.xyz",4],["inattvhd200.xyz",4],["inattvhd201.xyz",4],["inattvhd202.xyz",4],["inattvhd203.xyz",4],["inattvhd204.xyz",4],["inattvhd205.xyz",4],["inattvhd206.xyz",4],["inattvhd207.xyz",4],["inattvhd208.xyz",4],["inattvhd209.xyz",4],["inattvhd210.xyz",4],["inattvhd211.xyz",4],["inattvhd212.xyz",4],["inattvhd213.xyz",4],["inattvhd214.xyz",4],["inattvhd215.xyz",4],["inattvhd216.xyz",4],["inattvhd217.xyz",4],["inattvhd218.xyz",4],["inattvhd219.xyz",4],["inattvhd220.xyz",4],["inattvhd221.xyz",4]]);
+const hostnamesMap = new Map([["asyadiziizle.com",0],["dizipal73.cloud",1],["dizipal74.cloud",1],["dizipal132.cloud",1],["dizipal133.cloud",1],["dizipal134.cloud",1],["dizipal135.cloud",1],["dizipal140.cloud",1],["hdsinemax.com",1],["elzemfilm.org",1],["ensonhaber.com",2],["eksisozluk.com",3],["izlekolik.org",4],["inattvhd188.xyz",5],["inattvhd189.xyz",5],["inattvhd190.xyz",5],["inattvhd191.xyz",5],["inattvhd192.xyz",5],["inattvhd193.xyz",5],["inattvhd194.xyz",5],["inattvhd195.xyz",5],["inattvhd196.xyz",5],["inattvhd197.xyz",5],["inattvhd198.xyz",5],["inattvhd199.xyz",5],["inattvhd200.xyz",5],["inattvhd201.xyz",5],["inattvhd202.xyz",5],["inattvhd203.xyz",5],["inattvhd204.xyz",5],["inattvhd205.xyz",5],["inattvhd206.xyz",5],["inattvhd207.xyz",5],["inattvhd208.xyz",5],["inattvhd209.xyz",5],["inattvhd210.xyz",5],["inattvhd211.xyz",5],["inattvhd212.xyz",5],["inattvhd213.xyz",5],["inattvhd214.xyz",5],["inattvhd215.xyz",5],["inattvhd216.xyz",5],["inattvhd217.xyz",5],["inattvhd218.xyz",5],["inattvhd219.xyz",5],["inattvhd220.xyz",5],["inattvhd221.xyz",5]]);
 
-const entitiesMap = new Map([["siyahfilmizle",1],["sinepal",1],["hdfilmcehennemi2",1],["hdfilmcehennemi",1]]);
+const entitiesMap = new Map([["siyahfilmizle",1],["sinepal",1]]);
 
 const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
 function removeAttr(
-    token = '',
-    selector = '',
+    rawToken = '',
+    rawSelector = '',
     behavior = ''
 ) {
-    if ( typeof token !== 'string' ) { return; }
-    if ( token === '' ) { return; }
-    const tokens = token.split(/\s*\|\s*/);
-    if ( selector === '' ) {
-        selector = `[${tokens.join('],[')}]`;
+    if ( typeof rawToken !== 'string' ) { return; }
+    if ( rawToken === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('remove-attr', rawToken, rawSelector, behavior);
+    const tokens = rawToken.split(/\s*\|\s*/);
+    const selector = tokens
+        .map(a => `${rawSelector}[${CSS.escape(a)}]`)
+        .join(',');
+    if ( safe.logLevel > 1 ) {
+        safe.uboLog(logPrefix, `Target selector:\n\t${selector}`);
     }
     let timer;
     const rmattr = ( ) => {
@@ -70,7 +75,9 @@ function removeAttr(
             const nodes = document.querySelectorAll(selector);
             for ( const node of nodes ) {
                 for ( const attr of tokens ) {
+                    if ( node.hasAttribute(attr) === false ) { continue; }
                     node.removeAttribute(attr);
+                    safe.uboLog(logPrefix, `Removed attribute '${attr}'`);
                 }
             }
         } catch(ex) {
@@ -90,7 +97,7 @@ function removeAttr(
             }
         }
         if ( skip ) { return; }
-        timer = self.requestIdleCallback(rmattr, { timeout: 17 });
+        timer = self.requestIdleCallback(rmattr, { timeout: 67 });
     };
     const start = ( ) => {
         rmattr();

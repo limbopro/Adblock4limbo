@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["amazon"],["doubleclick.net"]];
+const argsList = [["doubleclick.net"]];
 
-const hostnamesMap = new Map([["service.webgoto.net",0],["lemino.docomo.ne.jp",1]]);
+const hostnamesMap = new Map([["lemino.docomo.ne.jp",0]]);
 
 const entitiesMap = new Map([]);
 

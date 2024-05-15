@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["japaneseasmr.top",0],["kokeshi-doll.com",0],["uraaka-joshi.com",0],["oppaideippai.net",0],["trendynailwraps.com",0],["embed.share-videos.se",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0]]);
+const hostnamesMap = new Map([["japaneseasmr.top",0],["kokeshi-doll.com",0],["uraaka-joshi.com",0],["oppaideippai.net",0],["trendynailwraps.com",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0]]);
 
 const entitiesMap = new Map([]);
 

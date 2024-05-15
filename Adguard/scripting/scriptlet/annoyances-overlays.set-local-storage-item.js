@@ -42,11 +42,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["emailLightBox","true"],["join-popup-closed","true"],["nbaSIBWidgetSeen","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
+const argsList = [["emailLightBox","true"],["join-popup-closed","true"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
 
-const hostnamesMap = new Map([["duluthtrading.com",0],["loyalfordogs.com",1],["clutchpoints.com",2],["urbanoutfitters.com",3],["paulaschoice.com",4],["realpython.com",5],["www.watermarkremover.io",7],["scenexe.io",8]]);
+const hostnamesMap = new Map([["duluthtrading.com",0],["loyalfordogs.com",1],["tastemade.com",2],["clutchpoints.com",3],["core.app",4],["urbanoutfitters.com",5],["paulaschoice.com",6],["realpython.com",7],["www.watermarkremover.io",9],["scenexe.io",10]]);
 
-const entitiesMap = new Map([["brainly",6]]);
+const entitiesMap = new Map([["brainly",8]]);
 
 const exceptionsMap = new Map([]);
 
@@ -77,17 +77,21 @@ function setLocalStorageItemFn(
         'false', 'true',
         'on', 'off',
         'yes', 'no',
+        'accept', 'reject',
+        'accepted', 'rejected',
         '{}', '[]', '""',
         '$remove$',
     ];
 
     if ( trusted ) {
-        if ( value === '$now$' ) {
-            value = Date.now();
-        } else if ( value === '$currentDate$' ) {
-            value = `${Date()}`;
-        } else if ( value === '$currentISODate$' ) {
-            value = (new Date()).toISOString();
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
+        }
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
         }
     } else {
         const normalized = value.toLowerCase();

@@ -42,11 +42,11 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["/ad\\.php|api\\/ads/"],["cloudflareinsights.com"]];
+const argsList = [["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"]];
 
-const hostnamesMap = new Map([["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["theonegenerator.com",2],["mcskinhistory.com",2],["bypass.city",3],["adbypass.org",3],["fullxh.com",4],["megaxh.com",4],["unlockxh4.com",4],["xhadult2.com",4],["xhadult3.com",4],["xhadult4.com",4],["xhadult5.com",4],["xhamster46.com",4],["xhday.com",4],["xhday1.com",4],["xhmoon5.com",4],["xhplanet1.com",4],["xhplanet2.com",4],["xhreal2.com",4],["xhreal3.com",4],["xhtab2.com",4],["xhvictory.com",4],["xhwebsite.com",4],["xhwebsite2.com",4],["xhwide1.com",4],["xhwide8.com",4],["amtraker.com",5]]);
+const hostnamesMap = new Map([["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["theonegenerator.com",2],["mcskinhistory.com",2],["bypass.city",3],["adbypass.org",3],["amtraker.com",4]]);
 
-const entitiesMap = new Map([["ddys",0],["hamsterix",4],["xhamster",4],["xhamster1",4],["xhamster10",4],["xhamster11",4],["xhamster12",4],["xhamster13",4],["xhamster14",4],["xhamster15",4],["xhamster16",4],["xhamster17",4],["xhamster18",4],["xhamster19",4],["xhamster20",4],["xhamster2",4],["xhamster3",4],["xhamster4",4],["xhamster5",4],["xhamster7",4],["xhamster8",4]]);
+const entitiesMap = new Map([["ddys",0]]);
 
 const exceptionsMap = new Map([]);
 

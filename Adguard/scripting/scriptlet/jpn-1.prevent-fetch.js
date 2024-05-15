@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["pagead2.googlesyndication.com"],["tpc.googlesyndication.com"],["cdn.adschill.com"]];
 
-const hostnamesMap = new Map([["success-corp.co.jp",0],["tojav.net",0],["audio-sound-premium.com",0],["kledgeb.blogspot.com",0],["rocketnews24.com",1],["youpouch.com",1]]);
+const hostnamesMap = new Map([["success-corp.co.jp",0],["audio-sound-premium.com",0],["tojav.net",0],["asobicreate.net",0],["kledgeb.blogspot.com",0],["rocketnews24.com",1],["youpouch.com",1]]);
 
 const entitiesMap = new Map([["manga1001",2]]);
 

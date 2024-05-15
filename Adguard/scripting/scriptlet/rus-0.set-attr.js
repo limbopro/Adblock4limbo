@@ -42,9 +42,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#progress-value","data-timer","10"],[".Root:not(.sgia-main-content) main > div:first-child:empty","class","false"],[".owl-item > a > img","src","[data-src]"],["main > div:first-child:empty","class","false"],["video","controls","true"]];
+const argsList = [["#progress-value","data-timer","10"],[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"]];
 
-const hostnamesMap = new Map([["howdyho.net",0],["sdamgia.ru",1],["eneyida.tv",2],["reshu.by",3],["dtf.ru",4],["vc.ru",4]]);
+const hostnamesMap = new Map([["howdyho.net",0],["eneyida.tv",1],["overclockers.ru",2],["dtf.ru",3],["vc.ru",3],["3dnews.kz",4],["3dnews.ru",4]]);
 
 const entitiesMap = new Map([]);
 

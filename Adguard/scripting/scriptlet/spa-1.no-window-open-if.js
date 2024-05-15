@@ -42,11 +42,11 @@ const uBOL_noWindowOpenIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["","10"],[],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["passeura"],["/^https?:\\/\\/movieknowing\\.com\\/$/","trueFunc"],["redirdx.in/go/"]];
+const argsList = [[],["","10"],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["passeura"],["/^https?:\\/\\/movieknowing\\.com\\/$/","trueFunc"],["redirdx.in/go/"]];
 
-const hostnamesMap = new Map([["pulpulyy.club",0],["movidy.lat",1],["warezstream.net",1],["embedder.net",1],["beautyskincarebrasil.com",1],["poseidonhd2.co",1],["geeknetic.es",1],["animeblix.com",[1,4]],["servertwo.xyz",1],["megaseriesonline.pro",1],["chinesetubex.com.es",1],["playnewserie.xyz",1],["desenhosanimados.site",1],["pelispedia-v2.wtf",1],["paky3.me",1],["pelismart.com",1],["pelismarthd.com",1],["pelispedia-v1.wtf",1],["cuevana-3.wtf",1],["muyzorras.com",1],["vernaruto.tv",1],["clickhouse.xyz",1],["deportealdia.live",1],["repelis.io",1],["verdragonball.online",1],["otakustv.com",1],["repelisgt.net",1],["playpaste.com",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["movieknowing.com",5],["redirdx.in",6]]);
+const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["poseidonhd2.co",0],["geeknetic.es",0],["animeblix.com",[0,4]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["verdragonball.online",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["movieknowing.com",5],["redirdx.in",6]]);
 
-const entitiesMap = new Map([["cuevana2espanol",1],["cuevana",1],["netcine",1],["atomixhq",2]]);
+const entitiesMap = new Map([["cuevana2espanol",0],["cuevana",0],["netcine",0],["atomixhq",2]]);
 
 const exceptionsMap = new Map([]);
 

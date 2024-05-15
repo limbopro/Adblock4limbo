@@ -38,6 +38,7 @@ a[href^="https://vario.tv/?raf="],
 adsenseintermedioleft,
 adsenseintermedioright,
 div[class^="publicHoriz"],
-div[id^="M"][id*="Composite"] {
+div[id^="M"][id*="Composite"],
+ned-ad {
     display: none !important;
 }

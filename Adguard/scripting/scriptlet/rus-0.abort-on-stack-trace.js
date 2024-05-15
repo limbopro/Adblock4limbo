@@ -42,13 +42,13 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["Object.prototype.autoplay","assets"],["Object.prototype.parallax","window.onload"],["Object.prototype.crossDomain","ecbrStart"]];
+const argsList = [["Object.prototype.autoplay","assets"],["document.getElementsByTagName","adsBlocked"],["Object.prototype.parallax","window.onload"],["Object.prototype.ssrAds","completeRadar"],["Object.prototype.crossDomain","ecbrStart"]];
 
-const hostnamesMap = new Map([["tvzvezda.ru",0],["www.ukr.net",2]]);
+const hostnamesMap = new Map([["tvzvezda.ru",0],["blackwot.ru",1],["mail.ru",3],["www.ukr.net",4]]);
 
-const entitiesMap = new Map([["porno365",1]]);
+const entitiesMap = new Map([["porno365",2]]);
 
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["3igames.mail.ru",[3]],["account.mail.ru",[3]],["auto.mail.ru",[3]],["biz.mail.ru",[3]],["blog.mail.ru",[3]],["bonus.mail.ru",[3]],["calendar.mail.ru",[3]],["calls.mail.ru",[3]],["cloud.mail.ru",[3]],["connect.mail.ru",[3]],["deti.mail.ru",[3]],["dobro.mail.ru",[3]],["e.mail.ru",[3]],["gibdd.mail.ru",[3]],["health.mail.ru",[3]],["help.mail.ru",[3]],["hi-tech.mail.ru",[3]],["horo.mail.ru",[3]],["kino.mail.ru",[3]],["lady.mail.ru",[3]],["love.mail.ru",[3]],["mcs.mail.ru",[3]],["minigames.mail.ru",[3]],["my.mail.ru",[3]],["news.mail.ru",[3]],["o2.mail.ru",[3]],["octavius.mail.ru",[3]],["okminigames.mail.ru",[3]],["otvet.mail.ru",[3]],["pets.mail.ru",[3]],["player-smotri.mail.ru",[3]],["pogoda.mail.ru",[3]],["top.mail.ru",[3]],["touch.mail.ru",[3]],["tv.mail.ru",[3]]]);
 
 /******************************************************************************/
 

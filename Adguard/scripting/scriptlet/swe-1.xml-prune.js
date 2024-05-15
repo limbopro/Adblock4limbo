@@ -42,9 +42,9 @@ const uBOL_xmlPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["MediaFile","","se-tv4.videoplaza.tv/proxy/distributor"]];
+const argsList = [["Ad","","/fwmrm.net\\/ad\\/g/"]];
 
-const hostnamesMap = new Map([["tv4play.se",0]]);
+const hostnamesMap = new Map([["tv4play.se",0],["tv4.se",0],["fotbollskanalen.se",0],["koket.se",0]]);
 
 const entitiesMap = new Map([]);
 

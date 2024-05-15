@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["/_fa_dXVpZA==$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWNjZXB0YWJsZV9hZHM=$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWRz$/","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["fdx_enable_new_detail_page","true"]];
+const argsList = [["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["/_fa_dXVpZA==$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWNjZXB0YWJsZV9hZHM=$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWRz$/","$remove$"],["/_fa_Y2FjaGVfYWRibG9ja19jaXJjdW12ZW50X3Njb3Jl$/","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["fdx_enable_new_detail_page","true"]];
 
-const hostnamesMap = new Map([["jetpunk.com",0],["bravedown.com",1],["adultdeepfakes.com",2],["freewsad.com",3],["loawa.com",[4,5,6,7]],["ygosu.com",[4,5,6,7]],["sportalkorea.com",[4,5,6,7]],["enetnews.co.kr",[4,5,6,7]],["edaily.co.kr",[4,5,6,7]],["economist.co.kr",[4,5,6,7]],["etoday.co.kr",[4,5,6,7]],["hankyung.com",[4,5,6,7]],["isplus.com",[4,5,6,7]],["hometownstation.com",[4,5,6,7]],["inven.co.kr",[4,5,6,7]],["honkailab.com",[4,5,6,7]],["warcraftrumbledeck.com",[4,5,6,7]],["genshinlab.com",[4,5,6,7]],["thestockmarketwatch.com",[4,5,6,7]],["thephoblographer.com",[4,5,6,7]],["issuya.com",[4,5,6,7]],["worldhistory.org",[4,5,6,7]],["meeco.kr",[4,5,6,7]],["etnews.com",[4,5,6,7]],["iusm.co.kr",[4,5,6,7]],["dogdrip.net",[4,5,6,7]],["etoland.co.kr",[4,5,6,7]],["picrew.me",[4,5,6,7]],["uttranews.com",[4,5,6,7]],["text-compare.com",[4,5,6,7]],["fntimes.com",[4,5,6,7]],["javatpoint.com",[4,5,6,7]],["vipotv.com",[4,5,6,7]],["lamire.jp",[4,5,6,7]],["mindbodygreen.com",8],["elevenlabs.io",9],["fedex.com",10]]);
+const hostnamesMap = new Map([["jetpunk.com",0],["bravedown.com",1],["adultdeepfakes.com",2],["freewsad.com",3],["loawa.com",[4,5,6,7,8]],["ygosu.com",[4,5,6,7,8]],["sportalkorea.com",[4,5,6,7,8]],["enetnews.co.kr",[4,5,6,7,8]],["edaily.co.kr",[4,5,6,7,8]],["economist.co.kr",[4,5,6,7,8]],["etoday.co.kr",[4,5,6,7,8]],["hankyung.com",[4,5,6,7,8]],["isplus.com",[4,5,6,7,8]],["hometownstation.com",[4,5,6,7,8]],["inven.co.kr",[4,5,6,7,8]],["honkailab.com",[4,5,6,7,8]],["warcraftrumbledeck.com",[4,5,6,7,8]],["genshinlab.com",[4,5,6,7,8]],["thestockmarketwatch.com",[4,5,6,7,8]],["thephoblographer.com",[4,5,6,7,8]],["issuya.com",[4,5,6,7,8]],["worldhistory.org",[4,5,6,7,8]],["meeco.kr",[4,5,6,7,8]],["etnews.com",[4,5,6,7,8]],["iusm.co.kr",[4,5,6,7,8]],["dogdrip.net",[4,5,6,7,8]],["etoland.co.kr",[4,5,6,7,8]],["picrew.me",[4,5,6,7,8]],["uttranews.com",[4,5,6,7,8]],["text-compare.com",[4,5,6,7,8]],["fntimes.com",[4,5,6,7,8]],["javatpoint.com",[4,5,6,7,8]],["vipotv.com",[4,5,6,7,8]],["lamire.jp",[4,5,6,7,8]],["bamgosu.site",[4,5,6,7,8]],["etnewskorea.com",[4,5,6,7,8]],["allthekingz.com",[4,5,6,7,8]],["gadgets360.com",[4,5,6,7,8]],["automobile-catalog.com",[4,5,6,7,8]],["maketecheasier.com",[4,5,6,7,8]],["thesaurus.net",[4,5,6,7,8]],["wfmz.com",[4,5,6,7,8]],["thestar.co.uk",[4,5,6,7,8]],["yorkshirepost.co.uk",[4,5,6,7,8]],["mydaily.co.kr",[4,5,6,7,8]],["raenonx.cc",[4,5,6,7,8]],["ndtvprofit.com",[4,5,6,7,8]],["mindbodygreen.com",9],["elevenlabs.io",10],["fedex.com",11]]);
 
 const entitiesMap = new Map([]);
 
@@ -77,17 +77,21 @@ function setLocalStorageItemFn(
         'false', 'true',
         'on', 'off',
         'yes', 'no',
+        'accept', 'reject',
+        'accepted', 'rejected',
         '{}', '[]', '""',
         '$remove$',
     ];
 
     if ( trusted ) {
-        if ( value === '$now$' ) {
-            value = Date.now();
-        } else if ( value === '$currentDate$' ) {
-            value = `${Date()}`;
-        } else if ( value === '$currentISODate$' ) {
-            value = (new Date()).toISOString();
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
+        }
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
         }
     } else {
         const normalized = value.toLowerCase();

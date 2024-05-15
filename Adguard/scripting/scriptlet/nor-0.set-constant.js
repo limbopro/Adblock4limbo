@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["showAd","false"],["adblock","false"],["adblockEnabled","noopFunc"],["trackAdblock","noopFunc"],["adblockerAlert","noopFunc"],["__INITIAL_STATE__.features.should-show-snow","false"],["__AB__","noopFunc"]];
+const argsList = [["showAd","false"],["adblock","false"],["adblockEnabled","noopFunc"],["trackAdblock","noopFunc"],["adblockerAlert","noopFunc"],["__INITIAL_STATE__.features.should-show-snow","false"],["ads","emptyObj"]];
 
-const hostnamesMap = new Map([["blogg.no",0],["techstart.dk",1],["connery.dk",4],["spleis.no",5],["e24.no",6]]);
+const hostnamesMap = new Map([["blogg.no",0],["techstart.dk",1],["connery.dk",4],["spleis.no",5],["gamer.no",6]]);
 
 const entitiesMap = new Map([["gamereactor",[2,3]]]);
 

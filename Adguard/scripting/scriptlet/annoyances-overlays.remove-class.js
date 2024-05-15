@@ -42,35 +42,41 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["js-page-scroll-lock","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["js-show-newsletter-popup","","stay"],["modal-open","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
+const argsList = [["js-page-scroll-lock","body","stay"],["pum-open-overlay","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["js-show-newsletter-popup","","stay"],["modal-open","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
 
-const hostnamesMap = new Map([["cityam.com",0],["all3dp.com",1],["cityandstateny.com",2],["forbes.com",3],["dgb.de",4],["mightyape.co.nz",5],["novelza.com",7],["postype.com",8]]);
+const hostnamesMap = new Map([["cityam.com",0],["securityweek.com",1],["all3dp.com",2],["cityandstateny.com",3],["forbes.com",4],["dgb.de",5],["mightyape.co.nz",6],["novelza.com",8],["postype.com",9]]);
 
-const entitiesMap = new Map([["pornhub",6]]);
+const entitiesMap = new Map([["pornhub",7]]);
 
 const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
 function removeClass(
-    token = '',
-    selector = '',
+    rawToken = '',
+    rawSelector = '',
     behavior = ''
 ) {
-    if ( typeof token !== 'string' ) { return; }
-    if ( token === '' ) { return; }
-    const classTokens = token.split(/\s*\|\s*/);
-    if ( selector === '' ) {
-        selector = '.' + classTokens.map(a => CSS.escape(a)).join(',.');
+    if ( typeof rawToken !== 'string' ) { return; }
+    if ( rawToken === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('remove-class', rawToken, rawSelector, behavior);
+    const tokens = rawToken.split(/\s*\|\s*/);
+    const selector = tokens
+        .map(a => `${rawSelector}.${CSS.escape(a)}`)
+        .join(',');
+    if ( safe.logLevel > 1 ) {
+        safe.uboLog(logPrefix, `Target selector:\n\t${selector}`);
     }
     const mustStay = /\bstay\b/.test(behavior);
     let timer;
-    const rmclass = function() {
+    const rmclass = ( ) => {
         timer = undefined;
         try {
             const nodes = document.querySelectorAll(selector);
             for ( const node of nodes ) {
-                node.classList.remove(...classTokens);
+                node.classList.remove(...tokens);
+                safe.uboLog(logPrefix, 'Removed class(es)');
             }
         } catch(ex) {
         }

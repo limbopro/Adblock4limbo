@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["bumpers","","propsToMatch","url:/playback2.a2d.tv\\/play/"]];
+const argsList = [["playbackItem.isStitched","","propsToMatch","url:a2d.tv/play"]];
 
-const hostnamesMap = new Map([["tv4play.se",0]]);
+const hostnamesMap = new Map([["tv4play.se",0],["tv4.se",0],["fotbollskanalen.se",0],["koket.se",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -65,10 +65,10 @@ function jsonPruneFetchResponseFn(
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     const propNeedles = parsePropertiesToMatch(extraArgs.propsToMatch, 'url');
     const stackNeedle = safe.initPattern(extraArgs.stackToMatch || '', { canNegate: true });
+    const logall = rawPrunePaths === '';
     const applyHandler = function(target, thisArg, args) {
         const fetchPromise = Reflect.apply(target, thisArg, args);
-        if ( rawPrunePaths === '' ) { return fetchPromise; }
-        let outcome = 'match';
+        let outcome = logall ? 'nomatch' : 'match';
         if ( propNeedles.size !== 0 ) {
             const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
             if ( objs[0] instanceof Request ) {
@@ -85,14 +85,18 @@ function jsonPruneFetchResponseFn(
                 outcome = 'nomatch';
             }
         }
-        if ( outcome === 'nomatch' ) { return fetchPromise; }
-        if ( safe.logLevel > 1 ) {
+        if ( logall === false && outcome === 'nomatch' ) { return fetchPromise; }
+        if ( safe.logLevel > 1 && outcome !== 'nomatch' && propNeedles.size !== 0 ) {
             safe.uboLog(logPrefix, `Matched optional "propsToMatch"\n${extraArgs.propsToMatch}`);
         }
         return fetchPromise.then(responseBefore => {
             const response = responseBefore.clone();
             return response.json().then(objBefore => {
                 if ( typeof objBefore !== 'object' ) { return responseBefore; }
+                if ( logall ) {
+                    safe.uboLog(logPrefix, safe.JSON_stringify(objBefore, null, 2));
+                    return responseBefore;
+                }
                 const objAfter = objectPruneFn(
                     objBefore,
                     rawPrunePaths,
@@ -441,14 +445,33 @@ function objectFindOwnerFn(
             return modified;
         }
         const prop = chain.slice(0, pos);
+        const next = chain.slice(pos + 1);
+        let found = false;
+        if ( prop === '[-]' && Array.isArray(owner) ) {
+            let i = owner.length;
+            while ( i-- ) {
+                if ( objectFindOwnerFn(owner[i], next) === false ) { continue; }
+                owner.splice(i, 1);
+                found = true;
+            }
+            return found;
+        }
+        if ( prop === '{-}' && owner instanceof Object ) {
+            for ( const key of Object.keys(owner) ) {
+                if ( objectFindOwnerFn(owner[key], next) === false ) { continue; }
+                delete owner[key];
+                found = true;
+            }
+            return found;
+        }
         if (
             prop === '[]' && Array.isArray(owner) ||
+            prop === '{}' && owner instanceof Object ||
             prop === '*' && owner instanceof Object
         ) {
-            const next = chain.slice(pos + 1);
-            let found = false;
             for ( const key of Object.keys(owner) ) {
-                found = objectFindOwnerFn(owner[key], next, prune) || found;
+                if (objectFindOwnerFn(owner[key], next, prune) === false ) { continue; }
+                found = true;
             }
             return found;
         }
@@ -456,7 +479,6 @@ function objectFindOwnerFn(
         owner = owner[prop];
         chain = chain.slice(pos + 1);
     }
-    return true;
 }
 
 function getExceptionToken() {

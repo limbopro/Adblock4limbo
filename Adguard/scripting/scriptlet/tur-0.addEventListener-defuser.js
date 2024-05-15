@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["click","checkTarget"],["click","popundr"],["click","showPop"]];
+const argsList = [["click","checkTarget"],["click","popundr"],["click","showPop"],["click","adLink"]];
 
-const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["diziwatch.net",0],["fullhd720pizle.live",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2]]);
+const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["diziwatch.net",0],["fullhd720pizle.live",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2],["kultfilmler.com",3]]);
 
 const entitiesMap = new Map([["filmmakinesi1",0],["filmizlemax",0]]);
 

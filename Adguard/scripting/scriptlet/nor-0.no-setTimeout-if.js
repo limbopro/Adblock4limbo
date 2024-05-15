@@ -42,7 +42,7 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/doCheck\\(.",".\\)/"]];
+const argsList = [["/doCheck\\(.,.\\)/"]];
 
 const hostnamesMap = new Map([["maskinbladet.dk",0]]);
 

@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
+const argsList = [["#btn11","","2500"],["#tp-snp2","","2500"],["#tp-snp2","","1000"],["#cross-snp2","","1000"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
 
-const hostnamesMap = new Map([["my.irancell.ir",0],["tourbobit.com",1],["tourbobit.net",1],["turbobeet.net",1],["turbobi.pw",1],["turbobif.com",1],["turbobit.net",1],["turbobita.net",1],["turbobits.cc",1],["turboobit.com",1],["easybib.com",2]]);
+const hostnamesMap = new Map([["fitnessholic.net",[0,1]],["techyinfo.in",1],["bankshiksha.in",[2,3]],["earn.mpscstudyhub.com",[2,3]],["earn.quotesopia.com",[2,3]],["money.quotesopia.com",[2,3]],["best-mobilegames.com",[2,3]],["learn.moderngyan.com",[2,3]],["bharatsarkarijobalert.com",[2,3]],["my.irancell.ir",4],["tourbobit.com",5],["tourbobit.net",5],["turbobeet.net",5],["turbobi.pw",5],["turbobif.com",5],["turbobit.net",5],["turbobita.net",5],["turbobits.cc",5],["turboobit.com",5],["easybib.com",6]]);
 
 const entitiesMap = new Map([]);
 

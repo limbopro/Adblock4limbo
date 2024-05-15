@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: spa-1
+// ruleset: annoyances-overlays
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_noFetchIf = function() {
+const uBOL_trustedSetSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["pagead2.googlesyndication.com"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"]];
+const argsList = [["status_of_app_redirect_half_modal_on_coordinate_list","{\"displayed\":true}"]];
 
-const hostnamesMap = new Map([["sinensistoon.com",0],["packsmega.info",1],["megacurioso.net",2],["tudonoticiasbr.com",2],["ggames.com.br",2],["mundodonghua.com",2],["receitasoncaseiras.online",2],["receitasdochico.life",2],["dicasdefinancas.net",2],["dicasfinanceirasbr.com",2],["expertplay.net",2],["alarmadefraude.com",2],["modescanlator.com",2],["sabornutritivo.com",2],["financasdeouro.com",2],["animeszone.net",2],["megacanaisonline.me",2],["animesonline.nz",2],["los40.com",2],["negociosecommerce.com",[2,8]],["puromarketing.com",[2,8]],["todostartups.com",[2,8]],["pobre.wtf",2],["acortalo.net",2],["link-descarga.site",2],["meutimao.com.br",2],["discografias.net",2],["listas.pro",2],["emperorscan.com",2],["lawebdelprogramador.com",2],["dicasgostosas.com",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["todoandroid.live",5],["gadgetzona.net",5],["qwanturankpro.com",5],["desbloquea.me",5],["mega-enlace.com",5],["enlacito.com",5],["acortame-esto.com",5],["monumental.co.cr",6],["elcomercio.com",6],["antena7.com.do",6],["rqp.com.bo",6],["canal12.com.sv",6],["chapintv.com",6],["vtv.com.hn",6],["tn23.tv",6],["canal13mexico.com",6],["c9n.com.py",6],["repretel.com",6],["redbolivision.tv.bo",6],["independentespanol.com",6],["teleculinaria.pt",7],["nptmedia.tv",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",10],["costumbresmexico.com",11],["desbloqueador.site",11],["notipostingt.com",12],["tivify.tv",13],["netmovies.com.br",14]]);
+const hostnamesMap = new Map([["wear.jp",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,150 +52,76 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function noFetchIf(
-    propsToMatch = '',
-    responseBody = ''
-) {
-    if ( typeof propsToMatch !== 'string' ) { return; }
-    const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody);
-    const needles = [];
-    for ( const condition of propsToMatch.split(/\s+/) ) {
-        if ( condition === '' ) { continue; }
-        const pos = condition.indexOf(':');
-        let key, value;
-        if ( pos !== -1 ) {
-            key = condition.slice(0, pos);
-            value = condition.slice(pos + 1);
-        } else {
-            key = 'url';
-            value = condition;
-        }
-        needles.push({ key, re: safe.patternToRegex(value) });
-    }
-    self.fetch = new Proxy(self.fetch, {
-        apply: function(target, thisArg, args) {
-            const details = args[0] instanceof self.Request
-                ? args[0]
-                : Object.assign({ url: args[0] }, args[1]);
-            let proceed = true;
-            try {
-                const props = new Map();
-                for ( const prop in details ) {
-                    let v = details[prop];
-                    if ( typeof v !== 'string' ) {
-                        try { v = safe.JSON_stringify(v); }
-                        catch(ex) { }
-                    }
-                    if ( typeof v !== 'string' ) { continue; }
-                    props.set(prop, v);
-                }
-                if ( propsToMatch === '' && responseBody === '' ) {
-                    const out = Array.from(props).map(a => `${a[0]}:${a[1]}`);
-                    safe.uboLog(logPrefix, `Called: ${out.join('\n')}`);
-                    return Reflect.apply(target, thisArg, args);
-                }
-                proceed = needles.length === 0;
-                for ( const { key, re } of needles ) {
-                    if (
-                        props.has(key) === false ||
-                        re.test(props.get(key)) === false
-                    ) {
-                        proceed = true;
-                        break;
-                    }
-                }
-            } catch(ex) {
-            }
-            if ( proceed ) {
-                return Reflect.apply(target, thisArg, args);
-            }
-            let responseType = '';
-            if ( details.mode === undefined || details.mode === 'cors' ) {
-                try {
-                    const desURL = new URL(details.url);
-                    responseType = desURL.origin !== document.location.origin
-                        ? 'cors'
-                        : 'basic';
-                } catch(ex) {
-                    safe.uboErr(logPrefix, `Error: ${ex}`);
-                }
-            }
-            return generateContentFn(responseBody).then(text => {
-                safe.uboLog(logPrefix, `Prevented with response "${text}"`);
-                const response = new Response(text, {
-                    statusText: 'OK',
-                    headers: {
-                        'Content-Length': text.length,
-                    }
-                });
-                safe.Object_defineProperty(response, 'url', {
-                    value: details.url
-                });
-                if ( responseType !== '' ) {
-                    safe.Object_defineProperty(response, 'type', {
-                        value: responseType
-                    });
-                }
-                return response;
-            });
-        }
-    });
+function trustedSetSessionStorageItem(key = '', value = '') {
+    setLocalStorageItemFn('session', true, key, value);
 }
 
-function generateContentFn(directive) {
-    const safe = safeSelf();
-    const randomize = len => {
-        const chunks = [];
-        let textSize = 0;
-        do {
-            const s = safe.Math_random().toString(36).slice(2);
-            chunks.push(s);
-            textSize += s.length;
+function setLocalStorageItemFn(
+    which = 'local',
+    trusted = false,
+    key = '',
+    value = '',
+) {
+    if ( key === '' ) { return; }
+
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
+    }
+
+    const trustedValues = [
+        '',
+        'undefined', 'null',
+        'false', 'true',
+        'on', 'off',
+        'yes', 'no',
+        'accept', 'reject',
+        'accepted', 'rejected',
+        '{}', '[]', '""',
+        '$remove$',
+    ];
+
+    if ( trusted ) {
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
         }
-        while ( textSize < len );
-        return chunks.join(' ').slice(0, len);
-    };
-    if ( directive === 'true' ) {
-        return Promise.resolve(randomize(10));
-    }
-    if ( directive === 'emptyObj' ) {
-        return Promise.resolve('{}');
-    }
-    if ( directive === 'emptyArr' ) {
-        return Promise.resolve('[]');
-    }
-    if ( directive === 'emptyStr' ) {
-        return Promise.resolve('');
-    }
-    if ( directive.startsWith('length:') ) {
-        const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
-        if ( match ) {
-            const min = parseInt(match[1], 10);
-            const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
-            const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
-            return Promise.resolve(randomize(len | 0));
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
+        }
+    } else {
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10);
+            if ( n > 32767 ) { return; }
         }
     }
-    if ( directive.startsWith('war:') && scriptletGlobals.warOrigin ) {
-        return new Promise(resolve => {
-            const warOrigin = scriptletGlobals.warOrigin;
-            const warName = directive.slice(4);
-            const fullpath = [ warOrigin, '/', warName ];
-            const warSecret = scriptletGlobals.warSecret;
-            if ( warSecret !== undefined ) {
-                fullpath.push('?secret=', warSecret);
+
+    try {
+        const storage = self[`${which}Storage`];
+        if ( value === '$remove$' ) {
+            const safe = safeSelf();
+            const pattern = safe.patternToRegex(key, undefined, true );
+            const toRemove = [];
+            for ( let i = 0, n = storage.length; i < n; i++ ) {
+                const key = storage.key(i);
+                if ( pattern.test(key) ) { toRemove.push(key); }
             }
-            const warXHR = new safe.XMLHttpRequest();
-            warXHR.responseType = 'text';
-            warXHR.onloadend = ev => {
-                resolve(ev.target.responseText || '');
-            };
-            warXHR.open('GET', fullpath.join(''));
-            warXHR.send();
-        });
+            for ( const key of toRemove ) {
+                storage.removeItem(key);
+            }
+        } else {
+            storage.setItem(key, `${value}`);
+        }
+    } catch(ex) {
     }
-    return Promise.resolve('');
 }
 
 function safeSelf() {
@@ -409,7 +335,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { noFetchIf(...argsList[i]); }
+    try { trustedSetSessionStorageItem(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -427,11 +353,11 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
-const targetWorld = 'MAIN';
+const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noFetchIf();
+    return uBOL_trustedSetSessionStorageItem();
 }
 
 // Firefox
@@ -439,11 +365,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_noFetchIf = cloneInto([
-            [ '(', uBOL_noFetchIf.toString(), ')();' ],
+        page.uBOL_trustedSetSessionStorageItem = cloneInto([
+            [ '(', uBOL_trustedSetSessionStorageItem.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_noFetchIf);
+        const blob = new page.Blob(...page.uBOL_trustedSetSessionStorageItem);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -457,7 +383,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_noFetchIf;
+    delete page.uBOL_trustedSetSessionStorageItem;
 }
 
 /******************************************************************************/

@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["last_ads","yes"]];
 
-const hostnamesMap = new Map([["receitasdocheff.online",0],["gastroponto.com",0],["nossoprato.online",0],["receitasdafazenda.com",0]]);
+const hostnamesMap = new Map([["receitasdocheff.online",0],["receitasvegana.com",0],["megacurioso.online",0],["gastroponto.com",0],["nossoprato.online",0],["receitasdafazenda.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -77,17 +77,21 @@ function setLocalStorageItemFn(
         'false', 'true',
         'on', 'off',
         'yes', 'no',
+        'accept', 'reject',
+        'accepted', 'rejected',
         '{}', '[]', '""',
         '$remove$',
     ];
 
     if ( trusted ) {
-        if ( value === '$now$' ) {
-            value = Date.now();
-        } else if ( value === '$currentDate$' ) {
-            value = `${Date()}`;
-        } else if ( value === '$currentISODate$' ) {
-            value = (new Date()).toISOString();
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
+        }
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
         }
     } else {
         const normalized = value.toLowerCase();

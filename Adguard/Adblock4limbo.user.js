@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Adblock4limbo.X
+// @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.04.10
+// @version      0.4.05.08
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -98,6 +98,7 @@
 // @match        https://www.olevod.com/*
 // @match        https://www.olevod.one/*
 // @match        https://t.me/*
+// @match        https://twitter.com/*
 // @match        https://tameikegoro.jp/
 // @match        https://njav.tv/
 // @match        https://www.ntdm9.com/
@@ -110,6 +111,7 @@
 // @exclude      https://www.youtube.com/*
 // @exclude      https://www.xvideos.com/*
 // @match        https://*/*
+// @require      https://update.greasyfork.org/scripts/478651/Twitter%20%E7%BD%91%E9%A1%B5%E7%89%88%E5%A4%9A%E8%A7%86%E9%A2%91gif%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
 // @run-at       document-end
 // @grant        none
@@ -866,29 +868,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
             indexLogin();
             addListener("div.TopNavBar-tab-d8yaD", () => { indexLogin() });
-            break;
-        case 'twitter':
-            console.log(values + "IS HERE!")
-            setInterval(() => {
-                if (document.querySelectorAll('[data-testid="cellInnerDiv"]')) {
-                    let article = document.querySelectorAll('[data-testid="cellInnerDiv"]')
-                    for (i = 0; i < article.length; i++) {
-                        if (!article[i].querySelector('a[href*=ssstwitter]')) {
-                            if (article[i].querySelector('[data-testid="videoPlayer"]')) {
-                                console.log(article[i].textContent);
-                                let a = document.createElement('a')
-                                a.href = 'https://ssstwitter.com/';
-                                a.className = 'xdload'
-                                a.target = '_blank';
-                                a.zIndex = '114154';
-                                a.style = 'position:absolute;right:40px;top:20px;background-color:blue;color:aquamarine;z-index:114154;'
-                                a.textContent = "下载视频";
-                                article[i].appendChild(a)
-                            }
-                        }
-                    }
-                }
-            }, 1000)
             break;
         case 'olevod':
             css_adsRemove(imax.css.olevod, 0, 'fuckolevod');

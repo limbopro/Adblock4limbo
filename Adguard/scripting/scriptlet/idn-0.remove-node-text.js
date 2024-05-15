@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","adblock"],["script","replaceState","condition","shope.ee"],["script","showModal"]];
+const argsList = [["script","adblock"],["script","hargamenu"],["script","replaceState","condition","shope.ee"],["script","showModal"]];
 
-const hostnamesMap = new Map([["almaftuchin.com",0],["gramedia.com",1],["carisinyal.com",2]]);
+const hostnamesMap = new Map([["almaftuchin.com",0],["wisatalova.com",1],["gramedia.com",2],["carisinyal.com",3]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,11 +42,11 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ts_popunder","true","","reload","1"],["popunder_stop","1"],["__pf","1"],["npabp","1"],["popunder","yes"],["__gads","1"],["clictune_pop","off"],["WHITELISTED_CLOSED","1"],["popunder","1"],["softonic-r2d2-view-state","1"],["modal_cookie","yes"],["__gads","OK","","reload","1"],["visits","1"],["ad_opened","true"],["customscript0","1"],["visited","1"],["inter","1","","reload","1"],["Ads","1"],["Ads","2"],["Geo","OK"],["bitmovin_analytics_uuid","OK"]];
+const argsList = [["popunder_stop","1"],["ts_popunder","true","","reload","1"],["__pf","1"],["npabp","1"],["popunder","yes"],["__gads","1"],["clictune_pop","off"],["WHITELISTED_CLOSED","1"],["popunder","1"],["softonic-r2d2-view-state","1"],["modal_cookie","yes"],["__gads","OK","","reload","1"],["visits","1"],["ad_opened","true"],["customscript0","1"],["visited","1"],["inter","1","","reload","1"],["Ads","1"],["Ads","2"],["Geo","OK"],["bitmovin_analytics_uuid","OK"]];
 
-const hostnamesMap = new Map([["buktube.com",0],["fullxh.com",0],["megaxh.com",0],["movingxh.world",0],["taoxh.life",0],["unlockxh4.com",0],["xhaccess.com",0],["xhadult2.com",0],["xhadult3.com",0],["xhadult4.com",0],["xhadult5.com",0],["xhamster46.com",0],["xhday.com",0],["xhday1.com",0],["xhmoon5.com",0],["xhplanet1.com",0],["xhplanet2.com",0],["xhreal2.com",0],["xhreal3.com",0],["xhtab2.com",0],["xhtree.com",0],["xhvictory.com",0],["xhwebsite.com",0],["xhwebsite2.com",0],["xhwide1.com",0],["m.tnaflix.com",1],["animesuge.to",2],["aniwave.to",2],["anix.to",2],["bflix.to",2],["flixtorz.to",2],["fmoviesz.to",2],["hurawatch.bz",2],["mangafire.to",2],["soap2dayx.to",2],["twitchmetrics.net",3],["andhrafriends.com",4],["rsadnetworkinfo.com",5],["rsinsuranceinfo.com",5],["rsfinanceinfo.com",5],["rsgamer.app",5],["rssoftwareinfo.com",5],["rshostinginfo.com",5],["rseducationinfo.com",5],["dlink2.net",6],["imgur.com",7],["xcity.org",8],["top16.net",[8,15]],["coolrom.com.au",10],["gourmetscans.net",11],["smartkhabrinews.com",12],["sharedisk.me",13],["shrdsk.me",13],["iporntoo.com",14],["hentai.tv",16],["noticiasdehoje.biz",17],["jornaldigital.org",18],["fandom.com",19],["clickorlando.com",20]]);
+const hostnamesMap = new Map([["tnaflix.com",0],["buktube.com",1],["fullxh.com",1],["megaxh.com",1],["movingxh.world",1],["seexh.com",1],["taoxh.life",1],["unlockxh4.com",1],["xhaccess.com",1],["xhadult2.com",1],["xhadult3.com",1],["xhadult4.com",1],["xhadult5.com",1],["xhamster46.com",1],["xhbig.com",1],["xhday.com",1],["xhday1.com",1],["xhmoon5.com",1],["xhplanet1.com",1],["xhplanet2.com",1],["xhreal2.com",1],["xhreal3.com",1],["xhtab2.com",1],["xhtree.com",1],["xhvictory.com",1],["xhwebsite.com",1],["xhwebsite2.com",1],["xhwide1.com",1],["animesuge.to",2],["aniwave.to",2],["anix.to",2],["bflix.to",2],["flixtorz.to",2],["fmoviesz.to",2],["hurawatch.bz",2],["mangafire.to",2],["moviestowatch.id",2],["soap2dayx.to",2],["twitchmetrics.net",3],["andhrafriends.com",4],["rsadnetworkinfo.com",5],["rsinsuranceinfo.com",5],["rsfinanceinfo.com",5],["rsgamer.app",5],["rssoftwareinfo.com",5],["rshostinginfo.com",5],["rseducationinfo.com",5],["dlink2.net",6],["imgur.com",7],["imgur-com.translate.goog",7],["xcity.org",8],["top16.net",[8,15]],["coolrom.com.au",10],["gourmetscans.net",11],["smartkhabrinews.com",12],["sharedisk.me",13],["shrdsk.me",13],["iporntoo.com",14],["hentai.tv",16],["noticiasdehoje.biz",17],["jornaldigital.org",18],["fandom.com",19],["clickorlando.com",20]]);
 
-const entitiesMap = new Map([["hamsterix",0],["xhamster",0],["xhamster1",0],["xhamster10",0],["xhamster11",0],["xhamster12",0],["xhamster13",0],["xhamster14",0],["xhamster15",0],["xhamster16",0],["xhamster17",0],["xhamster18",0],["xhamster19",0],["xhamster20",0],["xhamster2",0],["xhamster3",0],["xhamster4",0],["xhamster42",0],["xhamster5",0],["xhamster7",0],["xhamster8",0],["softonic",9]]);
+const entitiesMap = new Map([["hamsterix",1],["xhamster",1],["xhamster1",1],["xhamster10",1],["xhamster11",1],["xhamster12",1],["xhamster13",1],["xhamster14",1],["xhamster15",1],["xhamster16",1],["xhamster17",1],["xhamster18",1],["xhamster19",1],["xhamster20",1],["xhamster2",1],["xhamster3",1],["xhamster4",1],["xhamster42",1],["xhamster5",1],["xhamster7",1],["xhamster8",1],["softonic",9]]);
 
 const exceptionsMap = new Map([]);
 
@@ -264,7 +264,7 @@ function setCookieFn(
     // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
     // The characters [",] are given a pass from the RFC requirements because
     // apparently browsers do not follow the RFC to the letter.
-    if ( /[^!-:<-[\]-~]/.test(value) ) {
+    if ( /[^ -:<-[\]-~]/.test(value) ) {
         value = encodeURIComponent(value);
     }
 

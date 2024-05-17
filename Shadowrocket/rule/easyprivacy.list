@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202405151336
+## ! Version: 202405171426
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 May 2024 13:36 UTC
+## ! Last modified: 17 May 2024 14:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2853,6 +2853,7 @@ DOMAIN-SUFFIX,iabusprivacy.pmc.com, reject
 DOMAIN-SUFFIX,icu.getstorybox.com, reject
 DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net, reject
 DOMAIN-SUFFIX,identification.hotmart.com, reject
+DOMAIN-SUFFIX,ihi.flowplayer.com, reject
 DOMAIN-SUFFIX,imp.pvnsolutions.com, reject
 DOMAIN-SUFFIX,impress.vcita.com, reject
 DOMAIN-SUFFIX,impression.clickinc.com, reject
@@ -3318,6 +3319,7 @@ DOMAIN-SUFFIX,track.td3x.com, reject
 DOMAIN-SUFFIX,track.uc.cn, reject
 DOMAIN-SUFFIX,track.untd.com, reject
 DOMAIN-SUFFIX,track.uppromote.com, reject
+DOMAIN-SUFFIX,track.us.org, reject
 DOMAIN-SUFFIX,track.venatusmedia.com, reject
 DOMAIN-SUFFIX,track.vscash.com, reject
 DOMAIN-SUFFIX,track.yfret.com, reject
@@ -3699,6 +3701,7 @@ DOMAIN-SUFFIX,trck.spoteffects.net, reject
 DOMAIN-SUFFIX,trecker.aklamio.com, reject
 DOMAIN-SUFFIX,vtrtl.de, reject
 DOMAIN-SUFFIX,webcounter.goweb.de, reject
+DOMAIN-SUFFIX,wranalytics.wildrocket.io, reject
 DOMAIN-SUFFIX,x.bloggurat.net, reject
 DOMAIN-SUFFIX,zs.dhl.de, reject
 DOMAIN-SUFFIX,abs.proxistore.com, reject
@@ -3839,6 +3842,7 @@ DOMAIN-SUFFIX,statistics.rbi-nl.com, reject
 DOMAIN-SUFFIX,trkr.shoppingminds.net, reject
 DOMAIN-SUFFIX,dnt-userreport.com, reject
 DOMAIN-SUFFIX,tags.op-palvelut.fi, reject
+DOMAIN-SUFFIX,analytics.palitra.ge, reject
 DOMAIN-SUFFIX,links.boom.ge, reject
 DOMAIN-SUFFIX,stats-real-clients.zentech.gr, reject
 DOMAIN-SUFFIX,heartbeat.pmd.444.hu, reject
@@ -39387,6 +39391,7 @@ DOMAIN-SUFFIX,stats.nhk.or.jp, reject
 DOMAIN-SUFFIX,sy.amebame.com, reject
 DOMAIN-SUFFIX,sy.ameblo.jp, reject
 DOMAIN-SUFFIX,t.syosetu.org, reject
+DOMAIN-SUFFIX,temp.twicomi.com, reject
 DOMAIN-SUFFIX,track.buyma.com, reject
 DOMAIN-SUFFIX,track.prod.smash.pet, reject
 DOMAIN-SUFFIX,tracking.ai.rakuten.co.jp, reject
@@ -39506,6 +39511,7 @@ DOMAIN-SUFFIX,sync.rambler.ru, reject
 DOMAIN-SUFFIX,top-staging.mail.ru, reject
 DOMAIN-SUFFIX,xray.mail.ru, reject
 DOMAIN-SUFFIX,yast.rutube.ru, reject
+DOMAIN-SUFFIX,harvester.cms.markiza.sk, reject
 DOMAIN-SUFFIX,go-usertrack-importer.pub.24ur.si, reject
 DOMAIN-SUFFIX,tracker.azet.sk, reject
 DOMAIN-SUFFIX,analytics.bolavip.com, reject

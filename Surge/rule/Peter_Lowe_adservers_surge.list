@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 05 May 2024 19:21:23 GMT
-# entries:        3729
+# entries:        3726
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -672,6 +672,7 @@ DOMAIN-SUFFIX,ads2.webdrive.no
 DOMAIN-SUFFIX,ads2.xnet.cz
 DOMAIN-SUFFIX,ads2004.treiberupdate.de
 DOMAIN-SUFFIX,ads24h.net
+DOMAIN-SUFFIX,ads3-adnow.com
 DOMAIN-SUFFIX,ads3.contentabc.com
 DOMAIN-SUFFIX,ads3.gamecity.net
 DOMAIN-SUFFIX,ads3.virtual-nights.com
@@ -2281,7 +2282,6 @@ DOMAIN-SUFFIX,markedmeasure.com
 DOMAIN-SUFFIX,markedpail.com
 DOMAIN-SUFFIX,marketing.888.com
 DOMAIN-SUFFIX,marketing.desertcart.com
-DOMAIN-SUFFIX,marketing.hearstmagazines.nl
 DOMAIN-SUFFIX,marketing.net.brillen.de
 DOMAIN-SUFFIX,marketing.net.home24.de
 DOMAIN-SUFFIX,marketing.net.occhiali24.it
@@ -2741,7 +2741,6 @@ DOMAIN-SUFFIX,proper.io
 DOMAIN-SUFFIX,props.id
 DOMAIN-SUFFIX,prosper.on-line-casino.ca
 DOMAIN-SUFFIX,protectcrev.com
-DOMAIN-SUFFIX,protectivemetrics.com
 DOMAIN-SUFFIX,protectsubrev.com
 DOMAIN-SUFFIX,protestcopy.com
 DOMAIN-SUFFIX,proton-tm.com
@@ -2778,7 +2777,6 @@ DOMAIN-SUFFIX,pushtrack.co
 DOMAIN-SUFFIX,pushwhy.com
 DOMAIN-SUFFIX,px.dynamicyield.com
 DOMAIN-SUFFIX,px.gfycat.com
-DOMAIN-SUFFIX,px.spiceworks.com
 DOMAIN-SUFFIX,pxf.io
 DOMAIN-SUFFIX,pxl-mailtracker.com
 DOMAIN-SUFFIX,pxl.iqm.com
@@ -3195,7 +3193,6 @@ DOMAIN-SUFFIX,steadfastsystem.com
 DOMAIN-SUFFIX,steelhouse.com
 DOMAIN-SUFFIX,steelhousemedia.com
 DOMAIN-SUFFIX,steepscale.com
-DOMAIN-SUFFIX,stepplane.com
 DOMAIN-SUFFIX,stickssheep.com
 DOMAIN-SUFFIX,stickyadstv.com
 DOMAIN-SUFFIX,stiffgame.com

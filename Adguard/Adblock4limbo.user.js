@@ -69,8 +69,10 @@
 // @match        https://m.yhpdm.com/*
 // @match        https://www.nivod4.tv/*
 // @match        https://www.nivod8.tv/*
+// @match        https://www.nivod9.tv/*
 // @match        https://m.nivod4.tv/*
 // @match        https://m.nivod8.tv/*
+// @match        https://m.nivod9.tv/*
 // @match        https://www.javbus.com/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*

@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 05 May 2024 19:21:23 GMT
-# entries:        3729
+# entries:        3726
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -672,6 +672,7 @@ DOMAIN-SUFFIX,ads2.webdrive.no, reject
 DOMAIN-SUFFIX,ads2.xnet.cz, reject
 DOMAIN-SUFFIX,ads2004.treiberupdate.de, reject
 DOMAIN-SUFFIX,ads24h.net, reject
+DOMAIN-SUFFIX,ads3-adnow.com, reject
 DOMAIN-SUFFIX,ads3.contentabc.com, reject
 DOMAIN-SUFFIX,ads3.gamecity.net, reject
 DOMAIN-SUFFIX,ads3.virtual-nights.com, reject
@@ -2281,7 +2282,6 @@ DOMAIN-SUFFIX,markedmeasure.com, reject
 DOMAIN-SUFFIX,markedpail.com, reject
 DOMAIN-SUFFIX,marketing.888.com, reject
 DOMAIN-SUFFIX,marketing.desertcart.com, reject
-DOMAIN-SUFFIX,marketing.hearstmagazines.nl, reject
 DOMAIN-SUFFIX,marketing.net.brillen.de, reject
 DOMAIN-SUFFIX,marketing.net.home24.de, reject
 DOMAIN-SUFFIX,marketing.net.occhiali24.it, reject
@@ -2741,7 +2741,6 @@ DOMAIN-SUFFIX,proper.io, reject
 DOMAIN-SUFFIX,props.id, reject
 DOMAIN-SUFFIX,prosper.on-line-casino.ca, reject
 DOMAIN-SUFFIX,protectcrev.com, reject
-DOMAIN-SUFFIX,protectivemetrics.com, reject
 DOMAIN-SUFFIX,protectsubrev.com, reject
 DOMAIN-SUFFIX,protestcopy.com, reject
 DOMAIN-SUFFIX,proton-tm.com, reject
@@ -2778,7 +2777,6 @@ DOMAIN-SUFFIX,pushtrack.co, reject
 DOMAIN-SUFFIX,pushwhy.com, reject
 DOMAIN-SUFFIX,px.dynamicyield.com, reject
 DOMAIN-SUFFIX,px.gfycat.com, reject
-DOMAIN-SUFFIX,px.spiceworks.com, reject
 DOMAIN-SUFFIX,pxf.io, reject
 DOMAIN-SUFFIX,pxl-mailtracker.com, reject
 DOMAIN-SUFFIX,pxl.iqm.com, reject
@@ -3195,7 +3193,6 @@ DOMAIN-SUFFIX,steadfastsystem.com, reject
 DOMAIN-SUFFIX,steelhouse.com, reject
 DOMAIN-SUFFIX,steelhousemedia.com, reject
 DOMAIN-SUFFIX,steepscale.com, reject
-DOMAIN-SUFFIX,stepplane.com, reject
 DOMAIN-SUFFIX,stickssheep.com, reject
 DOMAIN-SUFFIX,stickyadstv.com, reject
 DOMAIN-SUFFIX,stiffgame.com, reject

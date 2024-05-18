@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202405171426
+## ! Version: 202405180232
 ## ! Title: EasyList
-## ! Last modified: 17 May 2024 14:26 UTC
+## ! Last modified: 18 May 2024 02:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -6796,6 +6796,7 @@ DOMAIN-SUFFIX,checkyofeed.com, reject
 DOMAIN-SUFFIX,cheddaramusias.life, reject
 DOMAIN-SUFFIX,cheebetoops.com, reject
 DOMAIN-SUFFIX,cheecmou.com, reject
+DOMAIN-SUFFIX,cheeghek.xyz, reject
 DOMAIN-SUFFIX,cheekobsu.com, reject
 DOMAIN-SUFFIX,cheekysleepyreproof.com, reject
 DOMAIN-SUFFIX,cheelroo.net, reject
@@ -31457,6 +31458,7 @@ DOMAIN-SUFFIX,snidethereto.com, reject
 DOMAIN-SUFFIX,sniejankmqq.com, reject
 DOMAIN-SUFFIX,sniffleawag.top, reject
 DOMAIN-SUFFIX,snipersex.com, reject
+DOMAIN-SUFFIX,snipishdements.com, reject
 DOMAIN-SUFFIX,snippystowstool.com, reject
 DOMAIN-SUFFIX,snippyteevee.com, reject
 DOMAIN-SUFFIX,snitchgutsdainty.com, reject
@@ -36936,6 +36938,7 @@ DOMAIN-SUFFIX,webtradehub.com, reject
 DOMAIN-SUFFIX,wecjdqpinrpaugf.com, reject
 DOMAIN-SUFFIX,wecouldle.com, reject
 DOMAIN-SUFFIX,wedflossbecause.com, reject
+DOMAIN-SUFFIX,wedgedgeoduck.com, reject
 DOMAIN-SUFFIX,wedgierbirsit.com, reject
 DOMAIN-SUFFIX,wednesdaygranddadlecture.com, reject
 DOMAIN-SUFFIX,wednesdaynaked.com, reject

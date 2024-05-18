@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202405171426
+## ! Version: 202405180232
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 May 2024 14:26 UTC
+## ! Last modified: 18 May 2024 02:32 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -743,6 +743,7 @@ DOMAIN-SUFFIX,cherriescare.com
 DOMAIN-SUFFIX,cherriescloud.com
 DOMAIN-SUFFIX,chesscherry.com
 DOMAIN-SUFFIX,chesscolor.com
+DOMAIN-SUFFIX,chesscrowd.com
 DOMAIN-SUFFIX,chewcoat.com
 DOMAIN-SUFFIX,chickensstation.com
 DOMAIN-SUFFIX,childlikecook.com
@@ -804,6 +805,7 @@ DOMAIN-SUFFIX,conditionchange.com
 DOMAIN-SUFFIX,conditioncrush.com
 DOMAIN-SUFFIX,confesschairs.com
 DOMAIN-SUFFIX,confusedcart.com
+DOMAIN-SUFFIX,connectashelf.com
 DOMAIN-SUFFIX,consciouschairs.com
 DOMAIN-SUFFIX,consciouscheese.com
 DOMAIN-SUFFIX,consciousdirt.com
@@ -1352,6 +1354,7 @@ DOMAIN-SUFFIX,leaplunchroom.com
 DOMAIN-SUFFIX,learnedmarket.com
 DOMAIN-SUFFIX,leftliquid.com
 DOMAIN-SUFFIX,legalleg.com
+DOMAIN-SUFFIX,lemonsandjoy.com
 DOMAIN-SUFFIX,lettucecopper.com
 DOMAIN-SUFFIX,lettucelimit.com
 DOMAIN-SUFFIX,levelbehavior.com
@@ -1642,6 +1645,7 @@ DOMAIN-SUFFIX,processplantation.com
 DOMAIN-SUFFIX,producecopy.com
 DOMAIN-SUFFIX,producepickle.com
 DOMAIN-SUFFIX,productivepear.com
+DOMAIN-SUFFIX,productsurfer.com
 DOMAIN-SUFFIX,profitrumour.com
 DOMAIN-SUFFIX,profusesupport.com
 DOMAIN-SUFFIX,promiseair.com
@@ -1671,6 +1675,7 @@ DOMAIN-SUFFIX,quaintcan.com
 DOMAIN-SUFFIX,quaintlake.com
 DOMAIN-SUFFIX,quantumlagoon.com
 DOMAIN-SUFFIX,quarterbean.com
+DOMAIN-SUFFIX,queenskart.com
 DOMAIN-SUFFIX,questionableobservation.com
 DOMAIN-SUFFIX,quicksandear.com
 DOMAIN-SUFFIX,quietknowledge.com
@@ -1699,6 +1704,7 @@ DOMAIN-SUFFIX,rangeplayground.com
 DOMAIN-SUFFIX,rapidkittens.com
 DOMAIN-SUFFIX,raresummer.com
 DOMAIN-SUFFIX,raspyteam.com
+DOMAIN-SUFFIX,reactjspdf.com
 DOMAIN-SUFFIX,readgoldfish.com
 DOMAIN-SUFFIX,readingguilt.com
 DOMAIN-SUFFIX,readymoon.com
@@ -1813,6 +1819,7 @@ DOMAIN-SUFFIX,scarfthought.com
 DOMAIN-SUFFIX,scatteredheat.com
 DOMAIN-SUFFIX,scatteredquiver.com
 DOMAIN-SUFFIX,scatteredstream.com
+DOMAIN-SUFFIX,scenicapparel.com
 DOMAIN-SUFFIX,scientificshirt.com
 DOMAIN-SUFFIX,scientificsneeze.com
 DOMAIN-SUFFIX,scintillatingscissors.com
@@ -2992,6 +2999,7 @@ DOMAIN-SUFFIX,page-events-ustats.udemy.com
 DOMAIN-SUFFIX,pages-stats.rbl.ms
 DOMAIN-SUFFIX,pagesense-collect.zoho.com
 DOMAIN-SUFFIX,pagesocket.glam.com
+DOMAIN-SUFFIX,parallax.askmediagroup.com
 DOMAIN-SUFFIX,pbjs-stream.bydata.com
 DOMAIN-SUFFIX,pegasus.unifygroup.com
 DOMAIN-SUFFIX,perf-events.cloud.unity3d.com
@@ -3065,6 +3073,7 @@ DOMAIN-SUFFIX,qubitanalytics.appspot.com
 DOMAIN-SUFFIX,query.petametrics.com
 DOMAIN-SUFFIX,r.skimresources.com
 DOMAIN-SUFFIX,ramp.purch.com
+DOMAIN-SUFFIX,rampjs-cdn.system1.com
 DOMAIN-SUFFIX,reach-id.orbit.tm-awx.com
 DOMAIN-SUFFIX,realm.hearst3pcc.com
 DOMAIN-SUFFIX,receive.wmcdp.io
@@ -3269,6 +3278,7 @@ DOMAIN-SUFFIX,telemetry.tableausoftware.com
 DOMAIN-SUFFIX,telemetry.vtex.com
 DOMAIN-SUFFIX,test.takedwn.ws
 DOMAIN-SUFFIX,timejs.game.163.com
+DOMAIN-SUFFIX,tk.pathmonk.com
 DOMAIN-SUFFIX,tl.tradetracker.net
 DOMAIN-SUFFIX,tm.tradetracker.net
 DOMAIN-SUFFIX,tm.vendemore.com

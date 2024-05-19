@@ -15,7 +15,15 @@
 
 **毒奶去广告计划始于 11.01.2020**，原文：https://limbopro.com/archives/12904.html ；
 
-> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket），仅针对iOS浏览器（Chrome/Safari等）网页广告（Javascript 弹窗横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，提升iPhone或iPad端浏览器观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；如需反馈问题请加入我们的[电报讨论组]((https://t.me/Adblock4limbo))或[提交issue](https://github.com/limbopro/Adblock4limbo/issues)；
+> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket），仅针对iOS浏览器（Chrome/Safari等）**网页广告**（Javascript 弹窗横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，提升iPhone或iPad端浏览器观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；
+
+
+> 如需反馈问题请加入我们的[电报讨论组]((https://t.me/Adblock4limbo)) 或 提交 [提交issue](https://github.com/limbopro/Adblock4limbo/issues) ；
+
+### 提交issue
+> 优先推荐 [提交issue](https://github.com/limbopro/Adblock4limbo/issues) ；
+
+### 其他注意事项
 
 > ⚠️ **注意事项**！为应对广告屏蔽插件如Adguard等插件浏览器扩展对网站广告的屏蔽，大多数网站都会不定期更新网站页面结构包括但不限于DIV元素位置，类，内容等等；而这些更新极有可能会导出本计划部分屏蔽规则失效，这也正是本计划持续更新的原因，所以请大家务必加入电报讨论群组，适时为我们提供使用反馈；
 
@@ -236,18 +244,11 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 7. [Tiktok 免拔卡解锁](https://limbopro.com/archives/3629.html)
 8. [Jable/Pornhub 视频下载（M3U8）](https://limbopro.com/archives/M3U8-Downloader.html)
 
-## 我们的其他项目
-1. [机场专线-适用于机场（域名及其订阅）的专属分流规则](https://github.com/limbopro/Profiles4limbo)；
 
 ## 进阶资料
  EasyList China
  [已知的 Adblock Plus 過濾條件集](https://adblockplus.org/zh_TW/subscriptions)
  [AdGuard 过滤器](https://adguard.com/zh_cn/blog/adguard-filters.html)
-
-## 取得联系
-
-- 如有疑问或有效反馈可联系  [@limboprobot](https://t.me/limboprobot)
-- 部分分规则有参考Adguard 中文过滤器 https://adguard.com/zh_cn/blog/adguard-filters.html (强大如斯
 
 ## 一些建议
 
@@ -271,23 +272,3 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=
 
 [1]: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/NobyDa.jpg
 [2]: https://limbopro.com/usr/uploads/2021/08/3373964069.jpg
-
-- [Adblock4limbo](#adblock4limbo)
-  - [一些建议](#一些建议)
-  - [电报讨论群组](#电报讨论群组)
-  - [去广告原理悉知](#去广告原理悉知)
-  - [毒奶去广告计划介绍](#毒奶去广告计划介绍)
-    - [目前在维护的网站目录](#目前在维护的网站目录)
-  - [毒奶去广告使用方法（配置步骤）](#毒奶去广告使用方法配置步骤)
-    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for QuantumultX）](#毒奶去广告计划分流与重写由毒奶博主维护-for-quantumultx)
-    - [毒奶去广告计划分流与重写；（由毒奶博主维护 for Surge）](#毒奶去广告计划分流与重写由毒奶博主维护-for-surge)
-    - [毒奶去广告计划油猴脚本版；（由毒奶博主维护 for userscript）](#毒奶去广告计划油猴脚本版由毒奶博主维护-for-userscript)
-    - [NobyDa 去广告分流；（由NobyDa维护）](#nobyda-去广告分流由nobyda维护)
-  - [神机规则 去Youtube App 播放广告；（由花姐维护）](#神机规则-去youtube-app-播放广告由花姐维护)
-    - [QuantumultX YouTube App 去广告重写配置步骤](#quantumultx-youtube-app-去广告重写配置步骤)
-    - [Surge YouTube App 去广告重写配置步骤](#surge-youtube-app-去广告重写配置步骤)
-  - [相关屏蔽广告分流/重写](#相关屏蔽广告分流重写)
-  - [其他系列教程（或参考）](#其他系列教程或参考)
-  - [我们的其他项目](#我们的其他项目)
-  - [进阶资料](#进阶资料)
-  - [取得联系](#取得联系)

@@ -96,13 +96,11 @@
 
 ### 💡 涉及重要脚本及其源码
 
-> 每日凌晨0点同步更新至Github仓库；
+每日凌晨0点同步更新至Github仓库；
 
-- **Adblock4limbo.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.js 重写对应脚本及其对应URL路径 
-
-- **Adblock4limbo.user.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js （油猴用户优先推荐安装此版本脚本；去广告实现用户脚本及其对应URL路径；）
-
-- **Adblock4limbo.function.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.function.js 导航页扩展脚本及其对应URL路径 
+1. **Adblock4limbo.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.js 重写对应脚本及其对应URL路径 
+2. **Adblock4limbo.user.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js （桌面浏览器油猴用户优先推荐安装此版本脚本；去广告实现用户脚本及其对应URL路径；）
+3. **Adblock4limbo.function.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.function.js 导航页扩展脚本及其对应URL路径 
 
 ## 毒奶去广告使用方法（配置步骤）
 
@@ -152,86 +150,22 @@ https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surg
 
 参阅原文：https://limbopro.com/archives/12904.html 在此不再列出；
 
-### 毒奶去广告计划油猴脚本版；（由毒奶博主维护 for userscript）
 
-特指 Safari for iOS and userscript ；详情参阅：https://limbopro.com/archives/userscripts.html
+## 去Youtube App 播放广告；
 
-### NobyDa 去广告分流；（由NobyDa维护）
+参阅原文：https://limbopro.com/archives/12727.html
 
-> 非必要，不添加；已添加的用户可自行禁用，自行测试；已经不维护，且很多规则在实际使用过程中会误碰，导致系统服务或App服务不可用；（03.22.2022）
-
-**1.分流引用**
-
-```
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt
-```
-
-```
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt
-```
-
-<details>
-<summary>点此查看分流-引用的正确排序</summary>
-
-> ⚠️ Quantumult X 遵循从上至下的读写顺序，所以去广告分流规则应排在最前，其他需进行代理的分流规则紧随其后，之后在到大陆的分流规则，Final 兜底；
-
-![分流引用排序示例][1]
-
-</details>
-
-## 神机规则 去Youtube App 播放广告；（由花姐维护）
-
-### QuantumultX YouTube App 去广告重写配置步骤
-
-**1.重写引用**
-
-```
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf
-```
-
-> 此重写规则来自神机的仓库 [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master)
-> 如何验证去广告重写是否生效；[参考此处](https://limbopro.com/archives/12727.html#操作步骤)；
-> 更多去广告项目：https://github.com/privacy-protection-tools/anti-AD （分流去广告：基于广告资源（URL）所属的完整域名/域名后缀/域名关键字的相关请求进行 Reject），此项目类似 NobyDa 去广告分流项目；可能会有少许冲突，请自行斟酌使用；
-
-### Surge YouTube App 去广告重写配置步骤
-
-```
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Module/Block/YouTubeAds.sgmodule
-```
-
-1.复制上面 Surge **去YouTube App视频广告模块**的链接（文件以.sgmodule为后缀）；
-2.打开 Surge - 首页 - 下滑至底部 - 找到模块 - 点击模块 - 安装新模块；
-3.粘贴刚刚复制的 模块的链接；
-4.安装并信任证书；
-5.Over；
-
-## 相关屏蔽广告分流/重写
+## 分流规则及重写相关
 
 0. 在此毒奶对大家的付出表示感谢
 1. [NobyDa](https://github.com/NobyDa/Script/tree/master) 脚本仓库（*如删库可替换 NobyDa 为 limbopro，其他同理）
-2. [NobyDa-AD](https://github.com/NobyDa/ND-AD) 野比去广告分流；（10w+）
-2. [ConnersHua](https://github.com/ConnersHua/Profiles/tree/master) 神机规则（停止更新）
-3. [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master) 神机规则（更新中）
-3. [limbopro](https://github.com/limbopro/Profiles/tree/master/limbopro) 机场专线
-4. [Qure](https://github.com/Koolson/Qure/tree/master/IconSet) 开源图标
-5. [chavyleung](https://github.com/chavyleung/scripts) 签到脚本
-
-
-```
-[filter_remote]
-https://raw.githubusercontent.com/limbopro/Profiles/master/limbopro/airports.list, tag=机场专线, force-policy=PROXY, enabled=true
-http://limbopro.com/Adblock4limbo.list, tag=毒奶特供, force-policy=reject, enabled=true
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt, tag=野比(4W+), force-policy=reject, enabled=false
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=野比(6W+), force-policy=reject, enabled=true
-
-[rewrite_remote]
-http://limbopro.com/Adblock4limbo.conf, tag=毒奶特供, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=DivineEngine (Youtube AdsBlock), enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivineEngine (Advertising), enabled=true
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NoByDa（lhie1 Rewrite）, enabled=true
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=NoByDa（NoByDa Rewrite）, enabled=true
-
-```
+2. [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master) blackmatrix7分流及重写（更新中） ；
+3. [NobyDa-AD](https://github.com/NobyDa/ND-AD) 野比去广告分流；（10w+）
+4. [ConnersHua](https://github.com/ConnersHua/Profiles/tree/master) 神机规则（停止更新）
+5. [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master) 神机规则（停止更新）
+6. [limbopro](https://github.com/limbopro/Profiles/tree/master/limbopro) 机场专线（更新中）
+7. [Qure](https://github.com/Koolson/Qure/tree/master/IconSet) 开源图标
+8. [chavyleung](https://github.com/chavyleung/scripts) 签到脚本
 
 ## 其他系列教程（或参考）
 0. [iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.com/archives/safari-content-blocker.html)

@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["pui__root--no-seekbar",".pui__root--no-seekbar","stay"]];
+const argsList = [["takeover","html.takeover"]];
 
-const hostnamesMap = new Map([["vtm.be",0]]);
+const hostnamesMap = new Map([["datumprikker.nl",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -98,7 +98,7 @@ function removeClass(
             }
         }
         if ( skip ) { return; }
-        timer = self.requestIdleCallback(rmclass, { timeout: 67 });
+        timer = safe.onIdle(rmclass, { timeout: 67 });
     };
     const observer = new MutationObserver(mutationHandler);
     const start = ( ) => {
@@ -257,6 +257,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

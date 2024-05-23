@@ -1,0 +1,8 @@
+/* 91porna.com 
+div.filters > div#videobox,
+div.row > div.col.col-24 {
+    display: none !important;
+    pointer-events: none !important;
+    height: 0px !important;
+}
+*/

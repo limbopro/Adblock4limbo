@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["/compass.adop.cc|adsbygoogle/"]];
+const argsList = [["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["adsbygoogle"],["/compass.adop.cc|adsbygoogle/"]];
 
-const hostnamesMap = new Map([["laftel.net",0],["tv.kakao.com",1],["play-tv.kakao.com",1],["kakaotv.daum.net",1],["spotvnow.co.kr",[2,3]],["noonnu.cc",3],["3dpchip.com",4]]);
+const hostnamesMap = new Map([["laftel.net",0],["tv.kakao.com",1],["play-tv.kakao.com",1],["kakaotv.daum.net",1],["spotvnow.co.kr",[2,3]],["noonnu.cc",3],["luckyquiz3.blogspot.com",4],["3dpchip.com",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -399,6 +399,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

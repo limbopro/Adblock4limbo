@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["fuckAdBlock","undefined"],["document.getElementById","AAdsspaCe"]];
+const argsList = [["document.createElement","adsbygoogle"],["Math","Flags.newInject"]];
 
-const hostnamesMap = new Map([["gratisaftehalen.nl",0],["notebookcheck.nl",1]]);
+const hostnamesMap = new Map([["webcams-texel.nl",0],["indeleiderstrui.nl",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -304,6 +304,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

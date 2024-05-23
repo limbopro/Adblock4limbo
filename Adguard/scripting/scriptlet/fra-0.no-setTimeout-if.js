@@ -42,7 +42,7 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["detected","5000"],["adsbygoogle"],["randno","25"]];
+const argsList = [["detected"],["adsbygoogle"],["randno","25"]];
 
 const hostnamesMap = new Map([["cookomix.com",0],["voyageforum.com",1],["jeune-gay.fr",2]]);
 
@@ -214,6 +214,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

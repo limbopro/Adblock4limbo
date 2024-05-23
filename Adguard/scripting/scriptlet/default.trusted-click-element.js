@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#btn11","","2500"],["#tp-snp2","","2500"],["#tp-snp2","","1000"],["#cross-snp2","","1000"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
+const argsList = [["#tp-snp2","","1000"],["#cross-snp2","","1000"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
 
-const hostnamesMap = new Map([["fitnessholic.net",[0,1]],["techyinfo.in",1],["bankshiksha.in",[2,3]],["earn.mpscstudyhub.com",[2,3]],["earn.quotesopia.com",[2,3]],["money.quotesopia.com",[2,3]],["best-mobilegames.com",[2,3]],["learn.moderngyan.com",[2,3]],["bharatsarkarijobalert.com",[2,3]],["my.irancell.ir",4],["tourbobit.com",5],["tourbobit.net",5],["turbobeet.net",5],["turbobi.pw",5],["turbobif.com",5],["turbobit.net",5],["turbobita.net",5],["turbobits.cc",5],["turboobit.com",5],["easybib.com",6]]);
+const hostnamesMap = new Map([["bankshiksha.in",[0,1]],["earn.mpscstudyhub.com",[0,1]],["earn.quotesopia.com",[0,1]],["money.quotesopia.com",[0,1]],["best-mobilegames.com",[0,1]],["learn.moderngyan.com",[0,1]],["bharatsarkarijobalert.com",[0,1]],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["turboobit.com",3],["easybib.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -104,6 +104,20 @@ function trustedClickElement(
         }
     }
 
+    const getShadowRoot = elem => {
+        // Firefox
+        if ( elem.openOrClosedShadowRoot ) {
+            return elem.openOrClosedShadowRoot;
+        }
+        // Chromium
+        if ( typeof chrome === 'object' ) {
+            if ( chrome.dom && chrome.dom.openOrClosedShadowRoot ) {
+                return chrome.dom.openOrClosedShadowRoot(elem);
+            }
+        }
+        return null;
+    };
+
     const querySelectorEx = (selector, context = document) => {
         const pos = selector.indexOf(' >>> ');
         if ( pos === -1 ) { return context.querySelector(selector); }
@@ -111,7 +125,7 @@ function trustedClickElement(
         const inside = selector.slice(pos + 5).trim();
         const elem = context.querySelector(outside);
         if ( elem === null ) { return null; }
-        const shadowRoot = elem.shadowRoot;
+        const shadowRoot = getShadowRoot(elem);
         return shadowRoot && querySelectorEx(inside, shadowRoot);
     };
 
@@ -353,6 +367,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

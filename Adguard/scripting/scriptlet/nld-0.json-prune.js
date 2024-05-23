@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["assets.preroll"],["ads time_events_url"]];
+const argsList = [["assets.preroll"]];
 
-const hostnamesMap = new Map([["bnnvara.nl",0],["npo.nl",0],["vpro.nl",0],["goplay.be",1]]);
+const hostnamesMap = new Map([["npo.nl",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -238,6 +238,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

@@ -42,9 +42,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ADS_BLOCKED"]];
+const argsList = [["ADS_BLOCKED"],["encodeURIComponent"]];
 
-const hostnamesMap = new Map([["jav777.xyz",0]]);
+const hostnamesMap = new Map([["jav777.xyz",0],["applnn.cc",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -187,6 +187,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

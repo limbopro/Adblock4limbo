@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["canRunAds","true"],["isAdBlockActive","false"],["ads_toegestaan","true"],["isAdBlockEnabled","false"],["adblock","0"]];
+const argsList = [["DAB","noopFunc"],["BannerManager","undefined"]];
 
-const hostnamesMap = new Map([["routenet.nl",0],["trafficnet.nl",0],["autoweek.nl",1],["marokko.nl",2],["nu.nl",3],["girlscene.nl",4]]);
+const hostnamesMap = new Map([["forum.fok.nl",0],["hardware.info",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -350,6 +350,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

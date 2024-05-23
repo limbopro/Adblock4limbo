@@ -42,9 +42,9 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["$.prototype.html","_boom"],["String.prototype.substring","/checkCookie.+main\\.do/"],["Node.prototype.insertBefore",".html"],["alert","chk_adBlock"]];
+const argsList = [["$.prototype.html","_boom"],["String.prototype.substring","/checkCookie.+main\\.do/"],["alert","chk_adBlock"]];
 
-const hostnamesMap = new Map([["m.humoruniv.com",0],["www.cultureland.co.kr",1],["luckyquiz3.blogspot.com",2],["errornight.com",3]]);
+const hostnamesMap = new Map([["m.humoruniv.com",0],["www.cultureland.co.kr",1],["errornight.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -277,6 +277,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

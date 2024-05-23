@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["DOMContentLoaded","interstitial"]];
+const argsList = [["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
 
-const hostnamesMap = new Map([["cyclismactu.net",0],["lecourrier-du-soir.com",1],["macg.co",2]]);
+const hostnamesMap = new Map([["cyclismactu.net",0],["lecourrier-du-soir.com",1],["player.melaniezettofrais.online",2],["macg.co",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -281,6 +281,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

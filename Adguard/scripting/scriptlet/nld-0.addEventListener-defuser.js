@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["","DAB"],["/[\\w]{16}/","/^e=>.*/"]];
+const argsList = [["","Flags.autoRecov"]];
 
-const hostnamesMap = new Map([["fok.nl",0],["tweakers.net",1]]);
+const hostnamesMap = new Map([["hardware.info",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -281,6 +281,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

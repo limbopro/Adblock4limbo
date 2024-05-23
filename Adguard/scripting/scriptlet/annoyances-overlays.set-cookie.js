@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["m6e-newsletter","1"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["cp_style_3841","true"],["m6e-newsletter","1"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["artribune.com",0],["gourmetfoodstore.com",1],["railsnotes.xyz",2],["kermitlynch.com",3],["jingdaily.com",4],["babiesrus.ca",5],["toysrus.ca",5],["clevercreations.org",6],["yvonnebennetti.com",7],["funko.com",8],["loungefly.com",8],["saucerco.com",9],["sharperimage.com",10],["sweetwater.com",11],["assos.com",12],["techonthenet.com",13],["tumblr.com",14],["scitechdaily.com",15]]);
+const hostnamesMap = new Map([["breachmedia.ca",0],["artribune.com",1],["gourmetfoodstore.com",2],["railsnotes.xyz",3],["kermitlynch.com",4],["jingdaily.com",5],["babiesrus.ca",6],["toysrus.ca",6],["clevercreations.org",7],["yvonnebennetti.com",8],["funko.com",9],["loungefly.com",9],["saucerco.com",10],["sharperimage.com",11],["sweetwater.com",12],["assos.com",13],["techonthenet.com",14],["tumblr.com",15],["scitechdaily.com",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -73,6 +73,7 @@ function setCookie(
         'true', 't', 'false', 'f',
         'yes', 'y', 'no', 'n',
         'necessary', 'required',
+        'approved', 'disapproved',
     ];
     const normalized = value.toLowerCase();
     const match = /^("?)(.+)\1$/.exec(normalized);
@@ -210,6 +211,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

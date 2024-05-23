@@ -42,11 +42,11 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["integrityObserver.corrupted","0"],["checkAdsBlocked","noopFunc"],["navigator.brave","undefined"],["checkDiv","noopFunc"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["integrityObserver.corrupted","false"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["advanced_ads_ready","noopFunc"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
+const argsList = [["integrityObserver.corrupted","0"],["checkAdsBlocked","noopFunc"],["dAp","true"],["navigator.brave","undefined"],["checkDiv","noopFunc"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["integrityObserver.corrupted","false"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["advanced_ads_ready","noopFunc"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
 
-const hostnamesMap = new Map([["journaldesfemmes.fr",0],["rustica.fr",1],["empire-stream.net",2],["cinefil.com",3],["signal-arnaques.com",4],["dhnet.be",5],["sudinfo.be",5],["7sur7.be",5],["rtl.be",5],["pianoweb.fr",6],["parlons-basket.com",7],["mac4ever.com",7],["jaitoutcompris.com",8],["varmatin.com",9],["nicematin.com",9],["commentcamarche.net",10],["20minutes.fr",11],["hollywoodpq.com",12],["jardiner-malin.fr",13],["hack-life.net",14],["jtrouver.com",15],["playtv.fr",[16,17]],["skyrock.com",18],["skyrock.fr",18],["6play.fr",[19,33,34,35,36,37]],["tf1.fr",[20,21,22,33,34,35,36,37]],["justarrived.lu",23],["occasions.decathlon.fr",[24,25]],["e-player-stream.app",27],["maxisciences.com",28],["gentside.com",28],["femmeactuelle.fr",28],["geo.fr",28],["voici.fr",28],["programme-tv.net",28],["gala.fr",28],["capital.fr",28],["allocine.fr",29],["funradio.fr",30],["rtl2.fr",30],["rtl.fr",30],["reflectim.fr",31],["e-sushi.fr",31],["canalplus.com",32],["tf1info.fr",38]]);
+const hostnamesMap = new Map([["journaldesfemmes.fr",0],["rustica.fr",1],["cookomix.com",2],["empire-stream.net",3],["cinefil.com",4],["signal-arnaques.com",5],["dhnet.be",6],["sudinfo.be",6],["7sur7.be",6],["rtl.be",6],["pianoweb.fr",7],["parlons-basket.com",8],["mac4ever.com",8],["jaitoutcompris.com",9],["varmatin.com",10],["nicematin.com",10],["commentcamarche.net",11],["20minutes.fr",12],["hollywoodpq.com",13],["jardiner-malin.fr",14],["hack-life.net",15],["jtrouver.com",16],["playtv.fr",[17,18]],["skyrock.com",19],["skyrock.fr",19],["6play.fr",[20,34,35,36,37,38]],["tf1.fr",[21,22,23,34,35,36,37,38]],["justarrived.lu",24],["occasions.decathlon.fr",[25,26]],["e-player-stream.app",28],["maxisciences.com",29],["gentside.com",29],["femmeactuelle.fr",29],["geo.fr",29],["voici.fr",29],["programme-tv.net",29],["gala.fr",29],["capital.fr",29],["allocine.fr",30],["funradio.fr",31],["rtl2.fr",31],["rtl.fr",31],["reflectim.fr",32],["e-sushi.fr",32],["canalplus.com",33],["tf1info.fr",39]]);
 
-const entitiesMap = new Map([["empire-streaming",2],["e-player-stream",26]]);
+const entitiesMap = new Map([["empire-streaming",3],["e-player-stream",27]]);
 
 const exceptionsMap = new Map([]);
 
@@ -350,6 +350,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".call(null)","10"],["AdBlockerCheck"]];
+const argsList = [[".height() === 0"]];
 
-const hostnamesMap = new Map([["hardware.info",0],["dumpert.nl",1]]);
+const hostnamesMap = new Map([["topkleurplaat.nl",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -214,6 +214,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

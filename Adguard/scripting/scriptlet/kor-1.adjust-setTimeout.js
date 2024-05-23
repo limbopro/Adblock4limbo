@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["closeBtn.innerHTML","","0.001"]];
+const argsList = [["closeBtn.innerHTML","","0.001"],["noPingPong||(e.sendPing","*","0.001"]];
 
-const hostnamesMap = new Map([["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0],["lover932.net",0],["lover933.net",0]]);
+const hostnamesMap = new Map([["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0],["lover932.net",0],["lover933.net",0],["chzzk.naver.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -193,6 +193,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

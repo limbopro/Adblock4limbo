@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["pay_ent_pass"],["pay_ent_msmp"],["kpwc"],["articlesRead","when","scroll keydown"]];
+const argsList = [["pay_ent_pass"],["pay_ent_msmp"],["kpwc"],["articlesRead","when","scroll keydown"],["_ngViCo-SupporterPromo"]];
 
-const hostnamesMap = new Map([["bonappetit.com",[0,1]],["technologyreview.jp",2],["androidpolice.com",3],["makeuseof.com",3],["movieweb.com",3],["xda-developers.com",3],["thegamer.com",3],["cbr.com",3],["gamerant.com",3],["screenrant.com",3],["howtogeek.com",3],["thethings.com",3],["simpleflying.com",3],["dualshockers.com",3]]);
+const hostnamesMap = new Map([["bonappetit.com",[0,1]],["technologyreview.jp",2],["androidpolice.com",3],["makeuseof.com",3],["movieweb.com",3],["xda-developers.com",3],["thegamer.com",3],["cbr.com",3],["gamerant.com",3],["screenrant.com",3],["howtogeek.com",3],["thethings.com",3],["simpleflying.com",3],["dualshockers.com",3],["newgrounds.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -227,6 +227,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

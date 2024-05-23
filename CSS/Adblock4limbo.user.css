@@ -1,5 +1,5 @@
 /* ! *** easylist:easylist/easylist_general_hide.txt */
-/* https://easylist.to/easylist/easylist.txt */ 
+/* https://easylist.to/easylist/easylist.txt */
 /* General element hiding rules */
 
 #AC_ad,
@@ -15973,4 +15973,5 @@ div[id^="zergnet-widget"],
 .resultsList>div>div>div.G-5c[role="tab"][tabindex="0"] {
     display: none !important;
     pointer-events: none !important;
+    height: 0px !important;
 }

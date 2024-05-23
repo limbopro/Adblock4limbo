@@ -42,7 +42,7 @@ const uBOL_xmlPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"]];
+const argsList = [["Period[id*=\"-ad-\"]","",".mpd"]];
 
 const hostnamesMap = new Map([["goplay.be",0]]);
 
@@ -301,6 +301,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

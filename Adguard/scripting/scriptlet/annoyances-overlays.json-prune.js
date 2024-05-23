@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["auxiliaryUi.messageRenderers.upsellDialogRenderer"]];
+const argsList = [["require.0.3.0.__bbox.define.[].2.is_linkshim_supported require.0.3.0.__bbox.define.[].2.click_ids"],["auxiliaryUi.messageRenderers.upsellDialogRenderer"]];
 
-const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["tv.youtube.com",0],["www.youtube.com",0],["youtubekids.com",0]]);
+const hostnamesMap = new Map([["www.facebook.com",0],["m.youtube.com",1],["music.youtube.com",1],["tv.youtube.com",1],["www.youtube.com",1],["youtubekids.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -238,6 +238,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

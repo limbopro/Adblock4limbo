@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/a[ab]\\.tweakers\\.nl/"]];
+const argsList = [["securepubads.g.doubleclick.net"],["v.fwmrm.net"],["/a[ab]\\.tweakers\\.nl/"],["pubads.g.doubleclick.net/gampad/ads"]];
 
-const hostnamesMap = new Map([["tweakers.net",0]]);
+const hostnamesMap = new Map([["filmvandaag.nl",0],["vtmgo.be",1],["tweakers.net",2],["goplay.be",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -311,6 +311,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

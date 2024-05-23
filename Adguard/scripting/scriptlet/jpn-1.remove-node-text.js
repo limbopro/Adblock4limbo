@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
+const argsList = [["#text","/スポンサードリンク：?|楽天広告：/"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
 
-const hostnamesMap = new Map([["betweenjpandkr.blog",0],["dvdrev.com",1],["fm.sekkaku.net",2],["lifematome.blog",3],["free-avx.jp",4],["ideal2ch.livedoor.biz",5],["seikeidouga.blog.jp",5],["tcg-bloglife.com",5],["ch-review.net",5],["gametohkenranbu.sakuraweb.com",5],["jisakuhibi.jp",5],["rank1-media.com",5],["resizer.myct.jp",5]]);
+const hostnamesMap = new Map([["kasegeru.blog.jp",0],["betweenjpandkr.blog",1],["dvdrev.com",2],["fm.sekkaku.net",3],["lifematome.blog",4],["free-avx.jp",5],["ideal2ch.livedoor.biz",6],["seikeidouga.blog.jp",6],["tcg-bloglife.com",6],["ch-review.net",6],["gametohkenranbu.sakuraweb.com",6],["jisakuhibi.jp",6],["rank1-media.com",6],["resizer.myct.jp",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -278,6 +278,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

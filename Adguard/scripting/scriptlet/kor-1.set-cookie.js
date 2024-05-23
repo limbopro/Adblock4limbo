@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ld_ac_timeout","Y"],["adv","1"],["ba.uuid","0"],["notToday2","Y"]];
+const argsList = [["ld_ac_timeout","Y"],["adv","1"],["ba.uuid","0","","domain","naver.com"]];
 
-const hostnamesMap = new Map([["oh-yes.co.kr",0],["ssodam.com",1],["naver.com",2],["luckyquiz3.blogspot.com",3]]);
+const hostnamesMap = new Map([["oh-yes.co.kr",0],["ssodam.com",1],["naver.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -73,6 +73,7 @@ function setCookie(
         'true', 't', 'false', 'f',
         'yes', 'y', 'no', 'n',
         'necessary', 'required',
+        'approved', 'disapproved',
     ];
     const normalized = value.toLowerCase();
     const match = /^("?)(.+)\1$/.exec(normalized);
@@ -210,6 +211,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["mode-quills","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["newYeradlariWebsiteHidden","true"],["mode-quills","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["bloomberg.com",1],["dailynewshungary.com",2],["cnn.com",[3,4]],["reuters.com",5],["theweek.com",[6,7]],["quillbot.com",8],["deepl.com",[9,10]]]);
+const hostnamesMap = new Map([["zippia.com",0],["bloomberg.com",1],["dailynewshungary.com",2],["cnn.com",[3,4]],["reuters.com",5],["theweek.com",[6,7]],["nisanyansozluk.com",8],["quillbot.com",9],["deepl.com",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -237,6 +237,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

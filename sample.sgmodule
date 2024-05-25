@@ -1,4 +1,5 @@
-
+#!name=Pornhub Adsblock
+#!desc=移除 Pornhub 上gif/播放页视频广告；
 
 [URL Rewrite]
 # Pornhub 视频广告跳过

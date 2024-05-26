@@ -157,15 +157,17 @@ https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surg
 
 ## 分流规则及重写相关
 
-0. 在此毒奶对大家的付出表示感谢
-1. [NobyDa](https://github.com/NobyDa/Script/tree/master) 脚本仓库（*如删库可替换 NobyDa 为 limbopro，其他同理）
-2. [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master) blackmatrix7分流及重写（更新中） ；
-3. [NobyDa-AD](https://github.com/NobyDa/ND-AD) 野比去广告分流；（10w+）
-4. [ConnersHua](https://github.com/ConnersHua/Profiles/tree/master) 神机规则（停止更新）
-5. [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master) 神机规则（停止更新）
-6. [limbopro](https://github.com/limbopro/Profiles/tree/master/limbopro) 机场专线（更新中）
-7. [Qure](https://github.com/Koolson/Qure/tree/master/IconSet) 开源图标
-8. [chavyleung](https://github.com/chavyleung/scripts) 签到脚本
+在此毒奶对大家的付出表示感谢
+
+1. [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master) blackmatrix7分流及重写（更新中）
+2. [去广告分流增强](https://github.com/limbopro/Adblock4limbo/tree/main/rule) (更新中)
+3. [limbopro](https://github.com/limbopro/Profiles/tree/master/limbopro) 机场专线（更新中）；
+4. [NobyDa](https://github.com/NobyDa/Script/tree/master) 脚本仓库（*如删库可替换 NobyDa 为 limbopro，其他同理）
+5. [NobyDa-AD](https://github.com/NobyDa/ND-AD) 野比去广告分流；（10w+）
+6. [ConnersHua](https://github.com/ConnersHua/Profiles/tree/master) 神机规则（停止更新）
+7. [DivineEngine](https://github.com/DivineEngine/Profiles/tree/master) 神机规则（停止更新）
+8. [Qure](https://github.com/Koolson/Qure/tree/master/IconSet) 开源图标（停止更新）
+9. [chavyleung](https://github.com/chavyleung/scripts) 签到脚本
 
 ## 其他系列教程（或参考）
 0. [iOS Safari 内容拦截器 - 全方位去网页广告（免费，开源，社区维护）](https://limbopro.com/archives/safari-content-blocker.html)

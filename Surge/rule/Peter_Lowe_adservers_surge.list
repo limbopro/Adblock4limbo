@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 05 May 2024 19:21:23 GMT
-# entries:        3726
+# entries:        3725
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -3626,7 +3626,6 @@ DOMAIN-SUFFIX,webtrackerplus.com
 DOMAIN-SUFFIX,webtracky.com
 DOMAIN-SUFFIX,webtraffic.se
 DOMAIN-SUFFIX,webtraxx.de
-DOMAIN-SUFFIX,webtrends.telegraph.co.uk
 DOMAIN-SUFFIX,webtrendslive.com
 DOMAIN-SUFFIX,webxcdn.com
 DOMAIN-SUFFIX,wellmadefrog.com

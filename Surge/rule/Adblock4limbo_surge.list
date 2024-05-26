@@ -3,16 +3,16 @@
 ## 原文参阅 https://limbopro.com/archives/12904.html
 ## 电报群组 https://t.me/Adblock4limbo  
 ## Repo: https://github.com/limbopro/Adblock4limbo  
-## Adblock4limbo: 510 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
+## Adblock4limbo: 519 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## EasyList/EasylistChina/EasyPrivacy 隐私追踪器/去广告分流规则请在Github仓库 Adblock4limbo -> rule 文件夹下查找，按需添加...
 ## 仓库地址：https://github.com/limbopro/Adblock4limbo/tree/main/rule
-## Peter Lowe’s Ad and tracking server list: 3726 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList: 40834 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 39576 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5796 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## Peter Lowe’s Ad and tracking server list: 3725 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
+## EasyList: 40883 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 39588 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5823 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 592 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 91034 Domains/IP/Others (非去重统计)
-## Last updated at 23/5月/2024/23:11
+## 以上共计: 91130 Domains/IP/Others (非去重统计)
+## Last updated at 27/5月/2024/00:57
 ## */
 
 
@@ -20,7 +20,18 @@
 ## 原文参阅 https://limbopro.com/archives/12904.html
 
 
-##### https://www.novel543.com/
+##### https://m.diyibanzhu.me/ 第一版主小说网
+DOMAIN,25e87c0802f91cf8cgg.6uzxtlv.cn
+DOMAIN-SUFFIX,5mgrgsc.cn
+DOMAIN-SUFFIX,2700.5mgrgsc.cn
+DOMAIN-SUFFIX,6fi3bv9.cn
+DOMAIN-SUFFIX,6uzxtlv.cn
+DOMAIN-SUFFIX,xn--qrq171dxpq.com
+DOMAIN-SUFFIX,clarity.ms
+DOMAIN-SUFFIX,histats.com
+DOMAIN-SUFFIX,5e87c0802f91cf8cgg.6uzxtlv.cn
+
+##### https://www.novel543.com/ 小说网
 DOMAIN-SUFFIX,popin.cc
 DOMAIN-SUFFIX,double.net
 DOMAIN-SUFFIX,spotxchange.com

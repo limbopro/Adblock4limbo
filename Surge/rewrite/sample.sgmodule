@@ -1,0 +1,15 @@
+#!name=Pornhub Adsblock
+#!desc=移除 Pornhub 上gif/播放页视频广告；
+
+[URL Rewrite]
+# Pornhub 视频广告跳过
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads.* - reject
+
+# Pornhub 重定向
+(^https?:\/\/www\.pornhub\.com)(.*) https://cn.pornhub.com$2 307
+
+[Script]
+Pornhub(cn.pornhub.com) = type=http-response , pattern="^https?:\/\/(\w{0,3}(\.){0,1}(pornhub)(\.)\w{0,3})\/(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mp3|json|ico))))).*" , requires-body=1 , max-size=0 , script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.js , script-update-interval=0
+
+[MITM]
+hostname = %APPEND% www.pornhub.com, cn.pornhub.com

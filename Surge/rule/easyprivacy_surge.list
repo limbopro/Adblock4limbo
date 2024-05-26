@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202405231431
+## ! Version: 202405261617
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 May 2024 14:31 UTC
+## ! Last modified: 26 May 2024 16:17 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -754,6 +754,7 @@ DOMAIN-SUFFIX,childlikeexample.com
 DOMAIN-SUFFIX,childlikeform.com
 DOMAIN-SUFFIX,chingovernment.com
 DOMAIN-SUFFIX,chinsnakes.com
+DOMAIN-SUFFIX,chipperisle.com
 DOMAIN-SUFFIX,chivalrouscord.com
 DOMAIN-SUFFIX,chubbycreature.com
 DOMAIN-SUFFIX,chunkycactus.com
@@ -1103,6 +1104,7 @@ DOMAIN-SUFFIX,flimsycircle.com
 DOMAIN-SUFFIX,flimsythought.com
 DOMAIN-SUFFIX,floodprincipal.com
 DOMAIN-SUFFIX,flourishingcollaboration.com
+DOMAIN-SUFFIX,flourishingpartnership.com
 DOMAIN-SUFFIX,flowersornament.com
 DOMAIN-SUFFIX,flowerstreatment.com
 DOMAIN-SUFFIX,flowerycreature.com
@@ -1231,6 +1233,7 @@ DOMAIN-SUFFIX,handyincrease.com
 DOMAIN-SUFFIX,haplesshydrant.com
 DOMAIN-SUFFIX,haplessland.com
 DOMAIN-SUFFIX,happenhistory.com
+DOMAIN-SUFFIX,happysponge.com
 DOMAIN-SUFFIX,harborcaption.com
 DOMAIN-SUFFIX,harborcub.com
 DOMAIN-SUFFIX,hardtofindmilk.com
@@ -1523,12 +1526,14 @@ DOMAIN-SUFFIX,observantice.com
 DOMAIN-SUFFIX,oldfashionedoffer.com
 DOMAIN-SUFFIX,omniscientfeeling.com
 DOMAIN-SUFFIX,omniscientspark.com
+DOMAIN-SUFFIX,onlywoofs.com
 DOMAIN-SUFFIX,opalquill.com
 DOMAIN-SUFFIX,operationchicken.com
 DOMAIN-SUFFIX,operationnail.com
 DOMAIN-SUFFIX,opinionsurprise.com
 DOMAIN-SUFFIX,oppositeoperation.com
 DOMAIN-SUFFIX,optimallimit.com
+DOMAIN-SUFFIX,opulentsylvan.com
 DOMAIN-SUFFIX,orangeoperation.com
 DOMAIN-SUFFIX,organizationdogs.com
 DOMAIN-SUFFIX,orientedargument.com
@@ -1858,6 +1863,7 @@ DOMAIN-SUFFIX,selectionship.com
 DOMAIN-SUFFIX,selectivesummer.com
 DOMAIN-SUFFIX,selfishsea.com
 DOMAIN-SUFFIX,selfishsnake.com
+DOMAIN-SUFFIX,sendingspire.com
 DOMAIN-SUFFIX,sensorsmile.com
 DOMAIN-SUFFIX,sentinelp.com
 DOMAIN-SUFFIX,separateshow.com
@@ -3012,6 +3018,7 @@ DOMAIN-SUFFIX,page-events-ustats.udemy.com
 DOMAIN-SUFFIX,pages-stats.rbl.ms
 DOMAIN-SUFFIX,pagesense-collect.zoho.com
 DOMAIN-SUFFIX,pagesocket.glam.com
+DOMAIN-SUFFIX,panorama.wixapps.net
 DOMAIN-SUFFIX,parallax.askmediagroup.com
 DOMAIN-SUFFIX,pbjs-stream.bydata.com
 DOMAIN-SUFFIX,pegasus.unifygroup.com
@@ -3390,6 +3397,7 @@ DOMAIN-SUFFIX,tracking.ads.global-fashion-group.com
 DOMAIN-SUFFIX,tracking.aegpresents.com
 DOMAIN-SUFFIX,tracking.americaneagle.com
 DOMAIN-SUFFIX,tracking.audio.thisisdax.com
+DOMAIN-SUFFIX,tracking.b-cdn.net
 DOMAIN-SUFFIX,tracking.bababam.com
 DOMAIN-SUFFIX,tracking.brandmentions.com
 DOMAIN-SUFFIX,tracking.buygoods.com
@@ -3419,6 +3427,7 @@ DOMAIN-SUFFIX,tracking.musixmatch.com
 DOMAIN-SUFFIX,tracking.olx-st.com
 DOMAIN-SUFFIX,tracking.pacharge.com
 DOMAIN-SUFFIX,tracking.plinga.de
+DOMAIN-SUFFIX,tracking.prepr.io
 DOMAIN-SUFFIX,tracking.quisma.com
 DOMAIN-SUFFIX,tracking.rapidape.com
 DOMAIN-SUFFIX,tracking.scenepass.com
@@ -4229,6 +4238,7 @@ DOMAIN-SUFFIX,analytics.oyorooms.com
 DOMAIN-SUFFIX,analytics.pgncs.notion.so
 DOMAIN-SUFFIX,analytics.plex.tv
 DOMAIN-SUFFIX,analytics.productreview.com.au
+DOMAIN-SUFFIX,analytics.qogita.com
 DOMAIN-SUFFIX,analytics.realestate.com.au
 DOMAIN-SUFFIX,analytics.send.cm
 DOMAIN-SUFFIX,analytics.silktide.com
@@ -4238,6 +4248,7 @@ DOMAIN-SUFFIX,analytics.tradedoubler.com
 DOMAIN-SUFFIX,analytics.vedantu.com
 DOMAIN-SUFFIX,analytics.wavebox.io
 DOMAIN-SUFFIX,analytics.yugen.to
+DOMAIN-SUFFIX,analyticsapi.qogita.com
 DOMAIN-SUFFIX,anon-stats.eff.org
 DOMAIN-SUFFIX,api-hotmart-tracking-manager.hotmart.com
 DOMAIN-SUFFIX,api-js.mixpanel.com
@@ -39438,6 +39449,7 @@ DOMAIN-SUFFIX,kyson.kakao.com
 DOMAIN-SUFFIX,l.m.naver.com
 DOMAIN-SUFFIX,log.etoday.co.kr
 DOMAIN-SUFFIX,log.kinolights.com
+DOMAIN-SUFFIX,log.tossinvest.com
 DOMAIN-SUFFIX,log.zdnet.co.kr
 DOMAIN-SUFFIX,nil.naver.com
 DOMAIN-SUFFIX,nlog.naver.com

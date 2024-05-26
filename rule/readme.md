@@ -23,7 +23,9 @@ easyprivacy.list：EasyPrivacy 是一个可选的补充过滤器列表，可完�
 
 > 以上去广告分流规则可能存在误杀的情况，如在使用过程中遇到问题，可自行尝试在代理软件中查看网络日志进行定位，如需可禁用相关去广告分流；
 
-QuantumultX/Shadowrocket/Surge 用户可以按需添加：
+QuantumultX/Shadowrocket/Surge 用户可以按需添加分流规则：
+
+**如何获取正确的 list 链接**？参阅 [获取 Github raw 资源链接小Tips](https://limbopro.com/archives/27377.html)；
 
 QuantumultX：https://github.com/limbopro/Adblock4limbo/tree/main/rule/QuantumultX
 

@@ -42,9 +42,9 @@ const uBOL_closeWindow = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/dispatch"],["utm"]];
+const argsList = [["/dispatch"],["/p/?q="],["utm"]];
 
-const hostnamesMap = new Map([["silvercube12.xyz",0],["infox.sg",1]]);
+const hostnamesMap = new Map([["silvercube12.xyz",0],["tv.acestream.org",1],["infox.sg",2]]);
 
 const entitiesMap = new Map([]);
 

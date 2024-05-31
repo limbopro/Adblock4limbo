@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["height && 1 <= height && height <= 20"],["popup_goods"],["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
 
-const hostnamesMap = new Map([["m.humoruniv.com",0],["10000recipe.com",1],["moneytoring.co.kr",2],["postincome.co.kr",2],["itinformation.kr",2],["digitstar77.com",2],["filetender.com",3],["zuzunza.com",4],["klauncher.kr",4],["iphonedev.co.kr",4],["tistory.com",4],["sysnet.pe.kr",5],["genshin.gamedot.org",6],["stockinfo7.com",7],["lover924.net",8],["lover925.net",8],["lover926.net",8],["lover927.net",8],["lover928.net",8],["lover929.net",8],["lover930.net",8],["lover931.net",8],["lover932.net",8],["lover933.net",8]]);
+const hostnamesMap = new Map([["m.humoruniv.com",0],["10000recipe.com",1],["moneytoring.co.kr",2],["postincome.co.kr",2],["itinformation.kr",2],["digitstar77.com",2],["filetender.com",3],["zuzunza.com",4],["klauncher.kr",4],["iphonedev.co.kr",4],["tistory.com",4],["sysnet.pe.kr",5],["genshin.gamedot.org",6],["stockinfo7.com",7],["lover932.net",8],["lover933.net",8],["lover934.net",8],["lover935.net",8],["lover936.net",8],["lover937.net",8],["lover938.net",8],["lover939.net",8],["lover940.net",8],["lover941.net",8]]);
 
 const entitiesMap = new Map([]);
 

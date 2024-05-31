@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ad blocker"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["hasAdblock"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
+const argsList = [["ad blocker"],["Promise[\\'all\\'](urls"],["hasAdblock"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
 
-const hostnamesMap = new Map([["packsmega.info",0],["peliculas8k.com",1],["guiacripto.online",2],["zona-leros.com",3],["xerifetech.com",4],["suaads.com",5],["reidoplacar.com",5],["suaurl.com",[5,15]],["guianoticiario.net",6],["resenhasglobais.com",7],["tecword.info",7],["smartdoing.tech",7],["vivercomsaude.online",7],["escplus.es",8],["genshinpro.com.br",9],["it-swarm-es.com",9],["manchetehoje.xyz",10],["dicasgostosas.com",11],["hartico.com",12],["seriesdonghua.com",13],["mundodonghua.com",13],["forodecostarica.com",14],["seriesgratis.biz",16]]);
+const hostnamesMap = new Map([["packsmega.info",0],["peliculas8k.com",1],["ricasdelicias.online",2],["sabornutritivo.com",2],["dicasgostosas.com",2],["guiacripto.online",3],["zona-leros.com",4],["xerifetech.com",5],["suaads.com",6],["reidoplacar.com",6],["suaurl.com",[6,15]],["guianoticiario.net",7],["resenhasglobais.com",8],["tecword.info",8],["smartdoing.tech",8],["vivercomsaude.online",8],["escplus.es",9],["genshinpro.com.br",10],["it-swarm-es.com",10],["manchetehoje.xyz",11],["hartico.com",12],["seriesdonghua.com",13],["mundodonghua.com",13],["forodecostarica.com",14],["seriesgratis.biz",16]]);
 
 const entitiesMap = new Map([]);
 

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202405261617
+## ! Version: 202405311106
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 May 2024 16:17 UTC
+## ! Last modified: 31 May 2024 11:06 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -225,6 +225,7 @@ DOMAIN-SUFFIX,log.dance, reject
 DOMAIN-SUFFIX,logicanalytics.io, reject
 DOMAIN-SUFFIX,logtail.com, reject
 DOMAIN-SUFFIX,loopcybersec.com, reject
+DOMAIN-SUFFIX,lordofthesuperfrogs.com, reject
 DOMAIN-SUFFIX,lsdm.co, reject
 DOMAIN-SUFFIX,lyfnh.io, reject
 DOMAIN-SUFFIX,maggieeatstheangel.com, reject
@@ -1690,6 +1691,7 @@ DOMAIN-SUFFIX,questionableobservation.com, reject
 DOMAIN-SUFFIX,quicksandear.com, reject
 DOMAIN-SUFFIX,quietknowledge.com, reject
 DOMAIN-SUFFIX,quillkick.com, reject
+DOMAIN-SUFFIX,quirkybliss.com, reject
 DOMAIN-SUFFIX,quirkysugar.com, reject
 DOMAIN-SUFFIX,quixoticnebula.com, reject
 DOMAIN-SUFFIX,quizzicalpartner.com, reject
@@ -2721,10 +2723,6 @@ DOMAIN-SUFFIX,curated.fieldtest.cc, reject
 DOMAIN-SUFFIX,customfingerprints.bablosoft.com, reject
 DOMAIN-SUFFIX,cws.conviva.com, reject
 DOMAIN-SUFFIX,d.shareaholic.com, reject
-DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net, reject
-DOMAIN-SUFFIX,d2pt12ct4kmq21.cloudfront.net, reject
-DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net, reject
-DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net, reject
 DOMAIN-SUFFIX,dash.getsitecontrol.com, reject
 DOMAIN-SUFFIX,data.circulate.com, reject
 DOMAIN-SUFFIX,data.digitalks.az, reject
@@ -3070,6 +3068,7 @@ DOMAIN-SUFFIX,player-metrics.instaread.co, reject
 DOMAIN-SUFFIX,pm.boostintegrated.com, reject
 DOMAIN-SUFFIX,popup-static.unisender.com, reject
 DOMAIN-SUFFIX,porpoise.azettl.net, reject
+DOMAIN-SUFFIX,pr-bh.ybp.yahoo.com, reject
 DOMAIN-SUFFIX,pr.blogflux.com, reject
 DOMAIN-SUFFIX,prd-collector-anon.ex.co, reject
 DOMAIN-SUFFIX,prd-collector-platform.ex.co, reject
@@ -3547,6 +3546,7 @@ DOMAIN-SUFFIX,d1r55yzuc1b1bw.cloudfront.net, reject
 DOMAIN-SUFFIX,d1rgnfh960lz2b.cloudfront.net, reject
 DOMAIN-SUFFIX,d1ros97qkrwjf5.cloudfront.net, reject
 DOMAIN-SUFFIX,d1t9uctetvi0tu.cloudfront.net, reject
+DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net, reject
 DOMAIN-SUFFIX,d1vg5xiq7qffdj.cloudfront.net, reject
 DOMAIN-SUFFIX,d1wix2gc2cgqis.cloudfront.net, reject
 DOMAIN-SUFFIX,d1xfq2052q7thw.cloudfront.net, reject
@@ -3570,10 +3570,12 @@ DOMAIN-SUFFIX,d2kdl5wcwrtj90.cloudfront.net, reject
 DOMAIN-SUFFIX,d2nxi61n77zqpl.cloudfront.net, reject
 DOMAIN-SUFFIX,d2o67tzzxkqap2.cloudfront.net, reject
 DOMAIN-SUFFIX,d2oh4tlt9mrke9.cloudfront.net, reject
+DOMAIN-SUFFIX,d2pt12ct4kmq21.cloudfront.net, reject
 DOMAIN-SUFFIX,d2r1yp2w7bby2u.cloudfront.net, reject
 DOMAIN-SUFFIX,d2rnkf2kqy5m6h.cloudfront.net, reject
 DOMAIN-SUFFIX,d2t77mnxyo7adj.cloudfront.net, reject
 DOMAIN-SUFFIX,d2tgfbvjf3q6hn.cloudfront.net, reject
+DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net, reject
 DOMAIN-SUFFIX,d2wu036mkcz52n.cloudfront.net, reject
 DOMAIN-SUFFIX,d2wy8f7a9ursnm.cloudfront.net, reject
 DOMAIN-SUFFIX,d2z0bn1jv8xwtk.cloudfront.net, reject
@@ -3607,6 +3609,7 @@ DOMAIN-SUFFIX,d3s7ggfq1s6jlj.cloudfront.net, reject
 DOMAIN-SUFFIX,d3sbxpiag177w8.cloudfront.net, reject
 DOMAIN-SUFFIX,d3tglifpd8whs6.cloudfront.net, reject
 DOMAIN-SUFFIX,d3uvwl4wtkgzo1.cloudfront.net, reject
+DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net, reject
 DOMAIN-SUFFIX,d4ax0r5detcsu.cloudfront.net, reject
 DOMAIN-SUFFIX,d761erxl2qywg.cloudfront.net, reject
 DOMAIN-SUFFIX,d81mfvml8p5ml.cloudfront.net, reject
@@ -3625,6 +3628,7 @@ DOMAIN-SUFFIX,dn34cbtcv9mef.cloudfront.net, reject
 DOMAIN-SUFFIX,dniyppubkuut7.cloudfront.net, reject
 DOMAIN-SUFFIX,dnn506yrbagrg.cloudfront.net, reject
 DOMAIN-SUFFIX,dnxlgencstz4.cloudfront.net, reject
+DOMAIN-SUFFIX,dqif5bl25s0bf.cloudfront.net, reject
 DOMAIN-SUFFIX,drlimmode9ddd.cloudfront.net, reject
 DOMAIN-SUFFIX,dsbahmgppc0j4.cloudfront.net, reject
 DOMAIN-SUFFIX,dtxtngytz5im1.cloudfront.net, reject
@@ -3866,13 +3870,16 @@ DOMAIN-SUFFIX,statistics.jfmedier.dk, reject
 DOMAIN-SUFFIX,trckr.nordiskemedier.dk, reject
 DOMAIN-SUFFIX,analytics.belgacom.be, reject
 DOMAIN-SUFFIX,apm.tnet.nl, reject
+DOMAIN-SUFFIX,ct.beslist.nl, reject
 DOMAIN-SUFFIX,dmtgo.upc.biz, reject
 DOMAIN-SUFFIX,go.planetnine.com, reject
+DOMAIN-SUFFIX,navigator-analytics.tweakwise.com, reject
 DOMAIN-SUFFIX,rmgdapfnccsharpprd.azurewebsites.net, reject
 DOMAIN-SUFFIX,sp.dpgmedia.net, reject
 DOMAIN-SUFFIX,stat.24liveplus.com, reject
 DOMAIN-SUFFIX,statistics.rbi-nl.com, reject
 DOMAIN-SUFFIX,tags.hilabel.nl, reject
+DOMAIN-SUFFIX,tr.mediafin.be, reject
 DOMAIN-SUFFIX,trkr.shoppingminds.net, reject
 DOMAIN-SUFFIX,dnt-userreport.com, reject
 DOMAIN-SUFFIX,tags.op-palvelut.fi, reject
@@ -4741,6 +4748,7 @@ DOMAIN-SUFFIX,tracking.digitalocean.com, reject
 DOMAIN-SUFFIX,tracking.engineering.cloud.seek.com.au, reject
 DOMAIN-SUFFIX,tracking.game8.co, reject
 DOMAIN-SUFFIX,tracking.hsn.com, reject
+DOMAIN-SUFFIX,tracking.rocketleague.com, reject
 DOMAIN-SUFFIX,tracking.shopstyle.co.uk, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject
 DOMAIN-SUFFIX,tracking.unrealengine.com, reject
@@ -4766,6 +4774,7 @@ DOMAIN-SUFFIX,views.arabnews.com, reject
 DOMAIN-SUFFIX,views.asurascans.com, reject
 DOMAIN-SUFFIX,vortex.hulu.com, reject
 DOMAIN-SUFFIX,w3-reporting.reddit.com, reject
+DOMAIN-SUFFIX,w6.chabad.org, reject
 DOMAIN-SUFFIX,wa.childrensplace.com, reject
 DOMAIN-SUFFIX,wa.gmx.co.uk, reject
 DOMAIN-SUFFIX,wa.gymboree.com, reject
@@ -39484,6 +39493,7 @@ DOMAIN-SUFFIX,iwa.iplsc.com, reject
 DOMAIN-SUFFIX,kropka.onet.pl, reject
 DOMAIN-SUFFIX,mklik.gazeta.pl, reject
 DOMAIN-SUFFIX,p.gazeta.pl, reject
+DOMAIN-SUFFIX,p2ro4u.trybawaryjny.pl, reject
 DOMAIN-SUFFIX,pixel.wp.pl, reject
 DOMAIN-SUFFIX,rek.www.wp.pl, reject
 DOMAIN-SUFFIX,stats.teledyski.info, reject
@@ -39594,6 +39604,7 @@ DOMAIN-SUFFIX,h.n11.com, reject
 DOMAIN-SUFFIX,hstats.hepsiburada.com, reject
 DOMAIN-SUFFIX,stats.birgun.net, reject
 DOMAIN-SUFFIX,tracker.blutv.com, reject
+DOMAIN-SUFFIX,analytics.cosmonova.net, reject
 DOMAIN-SUFFIX,counter.nv.ua, reject
 DOMAIN-SUFFIX,counter.ukr.net, reject
 DOMAIN-SUFFIX,remp.nv.ua, reject

@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["modalViewed","true"]];
+const argsList = [["signUpBannerDismissed","true"],["shouldShowAuthBannerAfterQuery","false"],["modalViewed","true"]];
 
-const hostnamesMap = new Map([["fantasyfootballhub.co.uk",0]]);
+const hostnamesMap = new Map([["perplexity.ai",[0,1]],["fantasyfootballhub.co.uk",2]]);
 
 const entitiesMap = new Map([]);
 

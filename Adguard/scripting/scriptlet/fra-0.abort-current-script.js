@@ -42,7 +42,7 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["chp_ads_blocker_detector"],["document.getElementById","Blocking Ads"],["document.addEventListener","/getComputedStyle[\\s\\S]*?_0x/"],["document.createElement","adblock"],["document.write","alert"],["setTimeout","bloqueur"],["Promise","alert"],["document.getElementById","msg_ab"],["document.querySelector","oadbActive"],["$","checkAds"],["$","!document.getElementById(btoa"],["document.getElementById","adback"],["JSON.parse","document.createElement('script')"],["document.createElement","document.documentElement).appendChild"],["document.getElementById","window.open"]];
+const argsList = [["chp_ads_blocker_detector"],["document.getElementById","Blocking Ads"],["EventTarget.prototype.addEventListener","/((ad-img|banner)-|interstitial|getComputedStyle)[\\s\\S]{1,5000}$/"],["document.createElement","adblock"],["document.write","alert"],["setTimeout","bloqueur"],["Promise","alert"],["document.getElementById","msg_ab"],["document.querySelector","oadbActive"],["$","checkAds"],["$","!document.getElementById(btoa"],["document.getElementById","adback"],["JSON.parse","document.createElement('script')"],["document.createElement","document.documentElement).appendChild"],["document.getElementById","window.open"]];
 
 const hostnamesMap = new Map([["super-ethanol.com",0],["monumentum.fr",1],["japscan.lol",2],["lemanip.com",3],["crunchyscan.fr",[4,5,6]],["abcbourse.com",7],["cliqueduplateau.com",8],["monacomatin.mc",9],["leakgaming.fr",10],["recreatisse.com",11],["ultimate-catch.eu",11],["japscan.me",[12,13]],["scan-manga.com",14]]);
 

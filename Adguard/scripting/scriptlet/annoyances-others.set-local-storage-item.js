@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["newYeradlariWebsiteHidden","true"],["mode-quills","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["bloomberg.com",1],["dailynewshungary.com",2],["cnn.com",[3,4]],["reuters.com",5],["theweek.com",[6,7]],["nisanyansozluk.com",8],["quillbot.com",9],["deepl.com",[10,11]]]);
+const hostnamesMap = new Map([["zippia.com",0],["bloomberg.com",1],["dailynewshungary.com",2],["cnn.com",[3,4]],["reuters.com",5],["theweek.com",[6,7]],["seekingalpha.com",8],["nisanyansozluk.com",9],["quillbot.com",10],["csmonitor.com",11],["deepl.com",[12,13]]]);
 
 const entitiesMap = new Map([]);
 

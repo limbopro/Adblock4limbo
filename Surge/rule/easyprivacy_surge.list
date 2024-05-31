@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202405261617
+## ! Version: 202405311106
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 May 2024 16:17 UTC
+## ! Last modified: 31 May 2024 11:06 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -225,6 +225,7 @@ DOMAIN-SUFFIX,log.dance
 DOMAIN-SUFFIX,logicanalytics.io
 DOMAIN-SUFFIX,logtail.com
 DOMAIN-SUFFIX,loopcybersec.com
+DOMAIN-SUFFIX,lordofthesuperfrogs.com
 DOMAIN-SUFFIX,lsdm.co
 DOMAIN-SUFFIX,lyfnh.io
 DOMAIN-SUFFIX,maggieeatstheangel.com
@@ -1690,6 +1691,7 @@ DOMAIN-SUFFIX,questionableobservation.com
 DOMAIN-SUFFIX,quicksandear.com
 DOMAIN-SUFFIX,quietknowledge.com
 DOMAIN-SUFFIX,quillkick.com
+DOMAIN-SUFFIX,quirkybliss.com
 DOMAIN-SUFFIX,quirkysugar.com
 DOMAIN-SUFFIX,quixoticnebula.com
 DOMAIN-SUFFIX,quizzicalpartner.com
@@ -2721,10 +2723,6 @@ DOMAIN-SUFFIX,curated.fieldtest.cc
 DOMAIN-SUFFIX,customfingerprints.bablosoft.com
 DOMAIN-SUFFIX,cws.conviva.com
 DOMAIN-SUFFIX,d.shareaholic.com
-DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net
-DOMAIN-SUFFIX,d2pt12ct4kmq21.cloudfront.net
-DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net
-DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net
 DOMAIN-SUFFIX,dash.getsitecontrol.com
 DOMAIN-SUFFIX,data.circulate.com
 DOMAIN-SUFFIX,data.digitalks.az
@@ -3070,6 +3068,7 @@ DOMAIN-SUFFIX,player-metrics.instaread.co
 DOMAIN-SUFFIX,pm.boostintegrated.com
 DOMAIN-SUFFIX,popup-static.unisender.com
 DOMAIN-SUFFIX,porpoise.azettl.net
+DOMAIN-SUFFIX,pr-bh.ybp.yahoo.com
 DOMAIN-SUFFIX,pr.blogflux.com
 DOMAIN-SUFFIX,prd-collector-anon.ex.co
 DOMAIN-SUFFIX,prd-collector-platform.ex.co
@@ -3547,6 +3546,7 @@ DOMAIN-SUFFIX,d1r55yzuc1b1bw.cloudfront.net
 DOMAIN-SUFFIX,d1rgnfh960lz2b.cloudfront.net
 DOMAIN-SUFFIX,d1ros97qkrwjf5.cloudfront.net
 DOMAIN-SUFFIX,d1t9uctetvi0tu.cloudfront.net
+DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net
 DOMAIN-SUFFIX,d1vg5xiq7qffdj.cloudfront.net
 DOMAIN-SUFFIX,d1wix2gc2cgqis.cloudfront.net
 DOMAIN-SUFFIX,d1xfq2052q7thw.cloudfront.net
@@ -3570,10 +3570,12 @@ DOMAIN-SUFFIX,d2kdl5wcwrtj90.cloudfront.net
 DOMAIN-SUFFIX,d2nxi61n77zqpl.cloudfront.net
 DOMAIN-SUFFIX,d2o67tzzxkqap2.cloudfront.net
 DOMAIN-SUFFIX,d2oh4tlt9mrke9.cloudfront.net
+DOMAIN-SUFFIX,d2pt12ct4kmq21.cloudfront.net
 DOMAIN-SUFFIX,d2r1yp2w7bby2u.cloudfront.net
 DOMAIN-SUFFIX,d2rnkf2kqy5m6h.cloudfront.net
 DOMAIN-SUFFIX,d2t77mnxyo7adj.cloudfront.net
 DOMAIN-SUFFIX,d2tgfbvjf3q6hn.cloudfront.net
+DOMAIN-SUFFIX,d2wa5sea6guof0.cloudfront.net
 DOMAIN-SUFFIX,d2wu036mkcz52n.cloudfront.net
 DOMAIN-SUFFIX,d2wy8f7a9ursnm.cloudfront.net
 DOMAIN-SUFFIX,d2z0bn1jv8xwtk.cloudfront.net
@@ -3607,6 +3609,7 @@ DOMAIN-SUFFIX,d3s7ggfq1s6jlj.cloudfront.net
 DOMAIN-SUFFIX,d3sbxpiag177w8.cloudfront.net
 DOMAIN-SUFFIX,d3tglifpd8whs6.cloudfront.net
 DOMAIN-SUFFIX,d3uvwl4wtkgzo1.cloudfront.net
+DOMAIN-SUFFIX,d3vebqdofhigrn.cloudfront.net
 DOMAIN-SUFFIX,d4ax0r5detcsu.cloudfront.net
 DOMAIN-SUFFIX,d761erxl2qywg.cloudfront.net
 DOMAIN-SUFFIX,d81mfvml8p5ml.cloudfront.net
@@ -3625,6 +3628,7 @@ DOMAIN-SUFFIX,dn34cbtcv9mef.cloudfront.net
 DOMAIN-SUFFIX,dniyppubkuut7.cloudfront.net
 DOMAIN-SUFFIX,dnn506yrbagrg.cloudfront.net
 DOMAIN-SUFFIX,dnxlgencstz4.cloudfront.net
+DOMAIN-SUFFIX,dqif5bl25s0bf.cloudfront.net
 DOMAIN-SUFFIX,drlimmode9ddd.cloudfront.net
 DOMAIN-SUFFIX,dsbahmgppc0j4.cloudfront.net
 DOMAIN-SUFFIX,dtxtngytz5im1.cloudfront.net
@@ -3866,13 +3870,16 @@ DOMAIN-SUFFIX,statistics.jfmedier.dk
 DOMAIN-SUFFIX,trckr.nordiskemedier.dk
 DOMAIN-SUFFIX,analytics.belgacom.be
 DOMAIN-SUFFIX,apm.tnet.nl
+DOMAIN-SUFFIX,ct.beslist.nl
 DOMAIN-SUFFIX,dmtgo.upc.biz
 DOMAIN-SUFFIX,go.planetnine.com
+DOMAIN-SUFFIX,navigator-analytics.tweakwise.com
 DOMAIN-SUFFIX,rmgdapfnccsharpprd.azurewebsites.net
 DOMAIN-SUFFIX,sp.dpgmedia.net
 DOMAIN-SUFFIX,stat.24liveplus.com
 DOMAIN-SUFFIX,statistics.rbi-nl.com
 DOMAIN-SUFFIX,tags.hilabel.nl
+DOMAIN-SUFFIX,tr.mediafin.be
 DOMAIN-SUFFIX,trkr.shoppingminds.net
 DOMAIN-SUFFIX,dnt-userreport.com
 DOMAIN-SUFFIX,tags.op-palvelut.fi
@@ -4741,6 +4748,7 @@ DOMAIN-SUFFIX,tracking.digitalocean.com
 DOMAIN-SUFFIX,tracking.engineering.cloud.seek.com.au
 DOMAIN-SUFFIX,tracking.game8.co
 DOMAIN-SUFFIX,tracking.hsn.com
+DOMAIN-SUFFIX,tracking.rocketleague.com
 DOMAIN-SUFFIX,tracking.shopstyle.co.uk
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.unrealengine.com
@@ -4766,6 +4774,7 @@ DOMAIN-SUFFIX,views.arabnews.com
 DOMAIN-SUFFIX,views.asurascans.com
 DOMAIN-SUFFIX,vortex.hulu.com
 DOMAIN-SUFFIX,w3-reporting.reddit.com
+DOMAIN-SUFFIX,w6.chabad.org
 DOMAIN-SUFFIX,wa.childrensplace.com
 DOMAIN-SUFFIX,wa.gmx.co.uk
 DOMAIN-SUFFIX,wa.gymboree.com
@@ -39484,6 +39493,7 @@ DOMAIN-SUFFIX,iwa.iplsc.com
 DOMAIN-SUFFIX,kropka.onet.pl
 DOMAIN-SUFFIX,mklik.gazeta.pl
 DOMAIN-SUFFIX,p.gazeta.pl
+DOMAIN-SUFFIX,p2ro4u.trybawaryjny.pl
 DOMAIN-SUFFIX,pixel.wp.pl
 DOMAIN-SUFFIX,rek.www.wp.pl
 DOMAIN-SUFFIX,stats.teledyski.info
@@ -39594,6 +39604,7 @@ DOMAIN-SUFFIX,h.n11.com
 DOMAIN-SUFFIX,hstats.hepsiburada.com
 DOMAIN-SUFFIX,stats.birgun.net
 DOMAIN-SUFFIX,tracker.blutv.com
+DOMAIN-SUFFIX,analytics.cosmonova.net
 DOMAIN-SUFFIX,counter.nv.ua
 DOMAIN-SUFFIX,counter.ukr.net
 DOMAIN-SUFFIX,remp.nv.ua

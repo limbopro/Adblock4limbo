@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["canRunAds","true"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.psts.init","noopFunc"],["App.featureTest.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["useSeznamAds","false"]];
 
-const hostnamesMap = new Map([["hokej.cz",0],["media.cms.markiza.sk",1],["media.joj.sk",[1,2]],["mobilenet.cz",[3,4]],["fzone.cz",[3,4]],["fdrive.cz",[3,4]],["podcasty.seznam.cz",[5,6]],["root.cz",7],["tn.nova.cz",8]]);
+const hostnamesMap = new Map([["hokej.cz",0],["media.joj.sk",[1,2]],["media.cms.markiza.sk",1],["mobilenet.cz",[3,4]],["fzone.cz",[3,4]],["fdrive.cz",[3,4]],["podcasty.seznam.cz",[5,6]],["root.cz",7],["tn.nova.cz",8]]);
 
 const entitiesMap = new Map([]);
 

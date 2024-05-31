@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["apv","false"]];
+const argsList = [["registration_modal_dismissed","true"],["apv","false"]];
 
-const hostnamesMap = new Map([["nzherald.co.nz",0]]);
+const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1]]);
 
 const entitiesMap = new Map([]);
 

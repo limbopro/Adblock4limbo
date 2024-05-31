@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["cp_style_3841","true"],["m6e-newsletter","1"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["cp_style_3841","true"],["m6e-newsletter","1"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["marketing-modal-closed-1","2"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["breachmedia.ca",0],["artribune.com",1],["gourmetfoodstore.com",2],["railsnotes.xyz",3],["kermitlynch.com",4],["jingdaily.com",5],["babiesrus.ca",6],["toysrus.ca",6],["clevercreations.org",7],["yvonnebennetti.com",8],["funko.com",9],["loungefly.com",9],["saucerco.com",10],["sharperimage.com",11],["sweetwater.com",12],["assos.com",13],["techonthenet.com",14],["tumblr.com",15],["scitechdaily.com",16]]);
+const hostnamesMap = new Map([["breachmedia.ca",0],["artribune.com",1],["gourmetfoodstore.com",2],["railsnotes.xyz",3],["theinformation.com",4],["kermitlynch.com",5],["jingdaily.com",6],["babiesrus.ca",7],["toysrus.ca",7],["clevercreations.org",8],["yvonnebennetti.com",9],["funko.com",10],["loungefly.com",10],["saucerco.com",11],["sharperimage.com",12],["sweetwater.com",13],["assos.com",14],["techonthenet.com",15],["tumblr.com",16],["scitechdaily.com",17]]);
 
 const entitiesMap = new Map([]);
 

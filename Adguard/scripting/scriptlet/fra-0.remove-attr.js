@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["href","a[href]#clickfakeplayer"]];
 
-const hostnamesMap = new Map([["1jour1film.homes",0],["seriepourvous.com",0]]);
+const hostnamesMap = new Map([["seriescultes.store",0],["1jour1film.homes",0],["seriepourvous.com",0]]);
 
 const entitiesMap = new Map([]);
 

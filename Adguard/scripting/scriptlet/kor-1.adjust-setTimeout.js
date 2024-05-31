@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["closeBtn.innerHTML","","0.001"],["noPingPong||(e.sendPing","*","0.001"]];
+const argsList = [["closeBtn.innerHTML","","0.001"]];
 
-const hostnamesMap = new Map([["lover924.net",0],["lover925.net",0],["lover926.net",0],["lover927.net",0],["lover928.net",0],["lover929.net",0],["lover930.net",0],["lover931.net",0],["lover932.net",0],["lover933.net",0],["chzzk.naver.com",1]]);
+const hostnamesMap = new Map([["lover932.net",0],["lover933.net",0],["lover934.net",0],["lover935.net",0],["lover936.net",0],["lover937.net",0],["lover938.net",0],["lover939.net",0],["lover940.net",0],["lover941.net",0]]);
 
 const entitiesMap = new Map([]);
 

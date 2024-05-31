@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["doubleclick.net"],["www3.doubleclick.net"],["pagead2.googlesyndication.com"]];
+const argsList = [["/googlesyndication\\.com|doubleclick\\.net/"],["doubleclick.net"],["www3.doubleclick.net"],["pagead2.googlesyndication.com"]];
 
-const hostnamesMap = new Map([["04647.club",0],["taiwanlibrarysearch.herokuapp.com",1],["mpyit.com",2],["linetv.tw",2]]);
+const hostnamesMap = new Map([["wandhi.com",0],["04647.club",1],["taiwanlibrarysearch.herokuapp.com",2],["mpyit.com",3],["linetv.tw",3]]);
 
 const entitiesMap = new Map([]);
 

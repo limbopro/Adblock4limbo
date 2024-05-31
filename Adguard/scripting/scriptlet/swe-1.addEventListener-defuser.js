@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["/^(?:adBlocker|contextmenu)$/"],["scroll","helpers.scroll(id)"],["/contextmenu|cut|copy|paste/"],["contextmenu"],["contextmenu",".disabled"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
+const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["/contextmenu|keydown/","e.preventDefault"],["/^(?:adBlocker|contextmenu)$/"],["scroll","helpers.scroll(id)"],["/contextmenu|cut|copy|paste/"],["contextmenu"],["contextmenu",".disabled"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
 
-const hostnamesMap = new Map([["allas.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["lwcdn.com",4],["mitti.se",5],["cafe.se",5],["praktisktbatagande.se",5],["sexpacket.se",6],["streamio.com",7],["nyan.ax",7],["spelhubben.se",7],["fotosidan.se",7],["illvet.se",7],["varldenshistoria.se",7],["www.expressen.se",8],["di.se",8],["youplay.se",9],["lundagard.se",10],["boktugg.se",10],["morotsliv.com",10],["affarsstaden.se",10],["kurera.se",10],["nyfiknainvesterare.se",10],["home2tiny.se",11]]);
+const hostnamesMap = new Map([["allas.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["internetodontologi.se",4],["lwcdn.com",5],["mitti.se",6],["cafe.se",6],["praktisktbatagande.se",6],["sexpacket.se",7],["streamio.com",8],["nyan.ax",8],["spelhubben.se",8],["fotosidan.se",8],["illvet.se",8],["varldenshistoria.se",8],["www.expressen.se",9],["di.se",9],["youplay.se",10],["lundagard.se",11],["boktugg.se",11],["morotsliv.com",11],["affarsstaden.se",11],["kurera.se",11],["nyfiknainvesterare.se",11],["home2tiny.se",12]]);
 
 const entitiesMap = new Map([]);
 

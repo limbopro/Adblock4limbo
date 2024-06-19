@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["/contextmenu|keydown/","e.preventDefault"],["/^(?:adBlocker|contextmenu)$/"],["scroll","helpers.scroll(id)"],["/contextmenu|cut|copy|paste/"],["contextmenu"],["contextmenu",".disabled"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
+const argsList = [["blur","i.focusPlayerElement"],["scroll","t.view.updateBounds"],["/adblockDetector|adsInserted|partnerExternalLinkClick/"],["click"],["contextmenu","","showCopyrightBox"],["/contextmenu|keydown/","e.preventDefault"],["/^(?:adBlocker|contextmenu)$/"],["scroll","helpers.scroll(id)"],["/contextmenu|cut|copy|paste/"],["contextmenu"],["contextmenu",".disabled"],["loadstart"],["wheel"],["/mousewheel|DOMMouseScroll/","smoothScrollEvent"]];
 
-const hostnamesMap = new Map([["allas.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["internetodontologi.se",4],["lwcdn.com",5],["mitti.se",6],["cafe.se",6],["praktisktbatagande.se",6],["sexpacket.se",7],["streamio.com",8],["nyan.ax",8],["spelhubben.se",8],["fotosidan.se",8],["illvet.se",8],["varldenshistoria.se",8],["www.expressen.se",9],["di.se",9],["youplay.se",10],["lundagard.se",11],["boktugg.se",11],["morotsliv.com",11],["affarsstaden.se",11],["kurera.se",11],["nyfiknainvesterare.se",11],["home2tiny.se",12]]);
+const hostnamesMap = new Map([["allas.se",[0,1]],["elle.se",[0,1]],["femina.se",[0,1]],["hant.se",[0,1]],["mabra.com",[0,1]],["residencemagazine.se",[0,1]],["svenskdam.se",[0,1]],["motherhood.se",[0,1]],["byggahus.se",2],["devote.se",3],["fotosidan.se",4],["internetodontologi.se",5],["lwcdn.com",6],["mitti.se",7],["cafe.se",7],["praktisktbatagande.se",7],["sexpacket.se",8],["streamio.com",9],["nyan.ax",9],["spelhubben.se",9],["illvet.se",9],["varldenshistoria.se",9],["www.expressen.se",10],["di.se",10],["youplay.se",11],["lundagard.se",12],["boktugg.se",12],["morotsliv.com",12],["affarsstaden.se",12],["kurera.se",12],["nyfiknainvesterare.se",12],["home2tiny.se",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -64,6 +64,8 @@ function addEventListenerDefuser(
     const debug = shouldDebug(extraArgs);
     const targetSelector = extraArgs.elements || undefined;
     const elementMatches = elem => {
+        if ( targetSelector === 'window' ) { return elem === window; }
+        if ( targetSelector === 'document' ) { return elem === document; }
         if ( elem && elem.matches && elem.matches(targetSelector) ) { return true; }
         const elems = Array.from(document.querySelectorAll(targetSelector));
         return elems.includes(elem);

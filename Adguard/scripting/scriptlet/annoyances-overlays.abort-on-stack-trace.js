@@ -46,7 +46,7 @@ const argsList = [["encodeURIComponent","inlineScript"],["String.prototype.charC
 
 const hostnamesMap = new Map([["secondlifetranslations.com",0],["waves4you.com",1],["timeshighereducation.com",2],["ilovefreesoftware.com",3],["protopage.com",4],["fantasytagtree.com",5],["jamilacuisine.ro",[6,7]],["golfdigest.com",8],["ophim.vip",10],["animesuge.to",11],["bflix.io",11],["f2movies.ru",11],["hdtoday.so",11],["hurawatch.bz",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12],["embtaku.pro",13]]);
 
-const entitiesMap = new Map([["pobre",9],["aniwave",11],["flixhq",11],["fmovies",11],["fmoviesz",11]]);
+const entitiesMap = new Map([["pobre",9],["aniwave",11],["flixhq",11],["fmovies",11],["fmovies24",11],["fmoviesz",11]]);
 
 const exceptionsMap = new Map([]);
 

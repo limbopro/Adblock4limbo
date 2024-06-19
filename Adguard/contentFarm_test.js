@@ -2,7 +2,7 @@
 // @name         屏蔽内容农场（with 油猴脚本）X
 // @namespace    https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
 // @version      0.4.05.31
-// @description  利用 JavaScript/CSS 屏蔽「内容农场」在谷歌搜索结果中的呈现，顺便在清除谷歌搜索结果中的Adsense广告，还你清爽的 Google 中文搜索体验！
+// @description  利用 JavaScript/CSS 屏蔽【谷歌/Bing国际】搜索结果中的「内容农场」内容，顺便在清除谷歌搜索结果中的Adsense广告，还你清爽的 Google/Bing 中文搜索体验！
 // @author       limbopro
 // @license MIT
 // @match        https://www.google.com/search*
@@ -14,52 +14,25 @@
 // @grant        none
 // ==/UserScript==
  
-// 仅限于屏蔽内容农场在谷歌搜索中出现
-// https://limbopro.com/Adguard/contentFarm/contentFarm.js 实时更新
-// https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm/contentFarm.js push 后更新
-// 脚本安装后可自行更改脚本URL路径
+/* 源码地址
+// https://limbopro.com/Adguard/contentFarm/contentFarm.js 每日更新；供 Quantumult X / Surge 等代理软件调用；
+// https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/contentFarm/contentFarm.js push 后更新至GitHub 方便查看历史更新内容
+*/
 
 /*
 Written by limbopro
-https://limbopro.com/archives/block-contentfarm.html
-https://t.me/Adblock4limbo
+iOS 屏蔽内容农场：https://limbopro.com/archives/block-contentfarm.html
+群组：https://t.me/Adblock4limbo
+完整项目：https://github.com/limbopro/Adblock4limbo
 There are 7179 content farm domains in total until now.
-Last updated at  1/6月/2024/00:00
-*/
-
-
-/*
-Google TxT Ads block 
+Last updated at 19/6月/2024/10:42
 */
 
 function contentFarm_AdsRemove_Auto(){
 
-//var ads_cssSelectors = [
-//"[data-text-ad]",
-//"#tvcap"
-//];
-
-//var ads_List = document.querySelectorAll( ads_cssSelectors );
-//if (ads_List.length >0) {
-//for (xyz = 0; xyz < ads_List.length; xyz++){
-//ads_List[xyz].style.display = "none";
-//}
-//}
-
-
-/* 
-var ads_cssSelectors = ["[data-text-ad],#tvcap"];
-var ads_List = document.querySelectorAll( ads_cssSelectors );
-var ads_Block;
-for (ads_Block = 0; ads_Block < ads_List.length; ads_Block++){
-ads_List[ads_Block].style.display = "none";
-}
-*/
-
 /*
 content farm domains list.
 */
-
 
 var ads_host = [
 "001553.cn",

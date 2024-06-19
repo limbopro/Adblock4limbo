@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: vie-1
+// ruleset: hun-0
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_abortOnPropertyRead = function() {
+const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPageGala"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU)break;case $."],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["atob"],["adtimaConfig"]];
+const argsList = [["stpdsck","1"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["phimmoi4s.com",4],["phimdinhcao.net",4],["phimlongtieng.net",4],["phimdinhcao.com",4],["plvb.xyz",[5,6,7,8,9]],["rk.plcdn.xyz",[5,6,7,8,9]],["tinsoikeo.cloud",10],["truyensieuhay.com",11],["phimvietsub.pro",11],["quangcaoyenbai.com",11],["sieudamtv.site",11],["ephimchill.com",11],["ophimhdvn3.net",11],["thuvienhd.xyz",11],["xemtv.tvhayhd.tv",11],["www.khophim88s.com",11],["nhentaivn.online",11],["motchilltv.icu",11],["mv.dailyphimz.com",11],["mv.phimbathu.one",11],["veryfiles.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["dood.pm",13],["ytstv.me",13],["animet1.net",13],["anh.moe",13],["truyenhentaivn.co",13],["maclife.io",13],["javfc2.net",13],["hoctot.hocmai.vn",13],["vinaurl.net",14],["www.nettruyenupp.com",15],["xoilac86x5.live",16],["yts.do",17],["yts.mx",17],["yts.rs",17],["znews.vn",18]]);
+const hostnamesMap = new Map([["myonlineradio.hu",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,66 +52,50 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function abortOnPropertyRead(
-    chain = ''
+function setCookie(
+    name = '',
+    value = '',
+    path = ''
 ) {
-    if ( typeof chain !== 'string' ) { return; }
-    if ( chain === '' ) { return; }
+    if ( name === '' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
-    const exceptionToken = getExceptionToken();
-    const abort = function() {
-        safe.uboLog(logPrefix, 'Aborted');
-        throw new ReferenceError(exceptionToken);
-    };
-    const makeProxy = function(owner, chain) {
-        const pos = chain.indexOf('.');
-        if ( pos === -1 ) {
-            const desc = Object.getOwnPropertyDescriptor(owner, chain);
-            if ( !desc || desc.get !== abort ) {
-                Object.defineProperty(owner, chain, {
-                    get: abort,
-                    set: function(){}
-                });
-            }
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        let v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if ( v ) {
-            makeProxy(v, chain);
-            return;
-        }
-        const desc = Object.getOwnPropertyDescriptor(owner, prop);
-        if ( desc && desc.set !== undefined ) { return; }
-        Object.defineProperty(owner, prop, {
-            get: function() { return v; },
-            set: function(a) {
-                v = a;
-                if ( a instanceof Object ) {
-                    makeProxy(a, chain);
-                }
-            }
-        });
-    };
-    const owner = window;
-    makeProxy(owner, chain);
-}
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
 
-function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
-        }
-    }.bind();
-    return token;
+    const validValues = [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'deny',
+        'allowed', 'disallow',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+        'necessary', 'required',
+        'approved', 'disapproved',
+    ];
+    const normalized = value.toLowerCase();
+    const match = /^("?)(.+)\1$/.exec(normalized);
+    const unquoted = match && match[2] || normalized;
+    if ( validValues.includes(unquoted) === false ) {
+        if ( /^\d+$/.test(unquoted) === false ) { return; }
+        const n = parseInt(value, 10);
+        if ( n > 32767 ) { return; }
+    }
+
+    const done = setCookieFn(
+        false,
+        name,
+        value,
+        '',
+        path,
+        safe.getExtraArgs(Array.from(arguments), 3)
+    );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
+    }
 }
 
 function safeSelf() {
@@ -271,6 +255,73 @@ function safeSelf() {
     return safe;
 }
 
+function setCookieFn(
+    trusted = false,
+    name = '',
+    value = '',
+    expires = '',
+    path = '',
+    options = {},
+) {
+    // https://datatracker.ietf.org/doc/html/rfc2616#section-2.2
+    // https://github.com/uBlockOrigin/uBlock-issues/issues/2777
+    if ( trusted === false && /[^!#$%&'*+\-.0-9A-Z[\]^_`a-z|~]/.test(name) ) {
+        name = encodeURIComponent(name);
+    }
+    // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
+    // The characters [",] are given a pass from the RFC requirements because
+    // apparently browsers do not follow the RFC to the letter.
+    if ( /[^ -:<-[\]-~]/.test(value) ) {
+        value = encodeURIComponent(value);
+    }
+
+    const cookieBefore = getCookieFn(name);
+    if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
+    if ( cookieBefore === value && options.reload ) { return; }
+
+    const cookieParts = [ name, '=', value ];
+    if ( expires !== '' ) {
+        cookieParts.push('; expires=', expires);
+    }
+
+    if ( path === '' ) { path = '/'; }
+    else if ( path === 'none' ) { path = ''; }
+    if ( path !== '' && path !== '/' ) { return; }
+    if ( path === '/' ) {
+        cookieParts.push('; path=/');
+    }
+
+    if ( trusted ) {
+        if ( options.domain ) {
+            cookieParts.push(`; domain=${options.domain}`);
+        }
+        cookieParts.push('; Secure');
+    }
+
+    try {
+        document.cookie = cookieParts.join('');
+    } catch(_) {
+    }
+
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
+        window.location.reload();
+    }
+
+    return done;
+}
+
+function getCookieFn(
+    name = ''
+) {
+    for ( const s of document.cookie.split(/\s*;\s*/) ) {
+        const pos = s.indexOf('=');
+        if ( pos === -1 ) { continue; }
+        if ( s.slice(0, pos) !== name ) { continue; }
+        return s.slice(pos+1).trim();
+    }
+}
+
 /******************************************************************************/
 
 const hnParts = [];
@@ -331,7 +382,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { abortOnPropertyRead(...argsList[i]); }
+    try { setCookie(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -349,11 +400,11 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
-const targetWorld = 'MAIN';
+const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortOnPropertyRead();
+    return uBOL_setCookie();
 }
 
 // Firefox
@@ -361,11 +412,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_abortOnPropertyRead = cloneInto([
-            [ '(', uBOL_abortOnPropertyRead.toString(), ')();' ],
+        page.uBOL_setCookie = cloneInto([
+            [ '(', uBOL_setCookie.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_abortOnPropertyRead);
+        const blob = new page.Blob(...page.uBOL_setCookie);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -379,7 +430,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_abortOnPropertyRead;
+    delete page.uBOL_setCookie;
 }
 
 /******************************************************************************/

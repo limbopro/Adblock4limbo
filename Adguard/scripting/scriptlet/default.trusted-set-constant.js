@@ -42,11 +42,11 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML\\, like Gecko) Chrome/119.0.0.0 Safari/537.36\"}"],["document.visibilityState","visible"]];
+const argsList = [["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["document.visibilityState","visible"]];
 
-const hostnamesMap = new Map([["emturbovid.com",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["web.bale.ai",4],["financemonk.net",5]]);
+const hostnamesMap = new Map([["emturbovid.com",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]],["financemonk.net",4]]);
 
-const entitiesMap = new Map([["dropgalaxy",5]]);
+const entitiesMap = new Map([["dropgalaxy",4]]);
 
 const exceptionsMap = new Map([]);
 

@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href",".leaving-message center > a.btn[onclick^=\"window.open\"][href*=\"/ads.html\"]"]];
 
-const hostnamesMap = new Map([["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["compartiendofull.net",3]]);
+const hostnamesMap = new Map([["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["compartiendofull.net",3]]);
 
 const entitiesMap = new Map([["assistirfilmeshdgratis",0]]);
 

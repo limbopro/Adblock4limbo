@@ -42,11 +42,11 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["checkGDPRInt"],["_0x39426c"]];
+const argsList = [["checkGDPRInt"]];
 
 const hostnamesMap = new Map([["feber.se",0],["tjock.se",0]]);
 
-const entitiesMap = new Map([["nyafilmer",1]]);
+const entitiesMap = new Map([]);
 
 const exceptionsMap = new Map([]);
 

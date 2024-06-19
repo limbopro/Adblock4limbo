@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.05.23
+// @version      0.4.06.19
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -68,6 +68,8 @@
 // @match        https://m.yhdmp.cc/*
 // @match        https://m.yhdmp.com/*
 // @match        https://m.yhpdm.com/*
+// @match        https://www.nivod5.com/*
+// @match        https://m.nivod5.com/*
 // @match        https://www.nivod4.tv/*
 // @match        https://www.nivod8.tv/*
 // @match        https://www.nivod9.tv/*

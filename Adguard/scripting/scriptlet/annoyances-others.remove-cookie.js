@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["br_mc"],["articlesRead"],["_zippia-popup-s_t"],["arc"],["tpm_article_views"],["tpm_page_views"]];
+const argsList = [["br_mc"],["articlesRead"],["_zippia-popup-s_t"],["tce","when","scroll"],["arc"],["tpm_article_views"],["tpm_page_views"]];
 
-const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["nautil.us",3],["talkingpointsmemo.com",[4,5]]]);
+const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["lawinsider.com",3],["nautil.us",4],["talkingpointsmemo.com",[5,6]]]);
 
 const entitiesMap = new Map([]);
 

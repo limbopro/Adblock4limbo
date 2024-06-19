@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["cookieAccepted","true"],["cookie_accept","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"]];
+const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["callToRegisterClosed","true"],["cookieAccepted","true"],["cookie_accept","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"]];
 
-const hostnamesMap = new Map([["kufar.by",[0,4]],["liga.net",1],["ixbt.com",2],["forum.ixbt.com",3],["playground.ru",5],["kinotv.ru",6]]);
+const hostnamesMap = new Map([["kufar.by",[0,5]],["direct.farm",1],["liga.net",2],["ixbt.com",3],["forum.ixbt.com",4],["playground.ru",6],["kinotv.ru",7]]);
 
 const entitiesMap = new Map([]);
 

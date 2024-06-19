@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202405311106
+## ! Version: 202406190215
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 May 2024 11:06 UTC
+## ! Last modified: 19 Jun 2024 02:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -16,6 +16,7 @@
 
 
 DOMAIN-SUFFIX,00px.net
+DOMAIN-SUFFIX,1bliq.io
 DOMAIN-SUFFIX,1cros.net
 DOMAIN-SUFFIX,2cnt.net
 DOMAIN-SUFFIX,2l6ddsmnm.de
@@ -128,7 +129,9 @@ DOMAIN-SUFFIX,envato.market
 DOMAIN-SUFFIX,epsilondelta.co
 DOMAIN-SUFFIX,eqy.link
 DOMAIN-SUFFIX,etop.ro
+DOMAIN-SUFFIX,eu-1-id5-sync.com
 DOMAIN-SUFFIX,everesttech.net
+DOMAIN-SUFFIX,ew3.io
 DOMAIN-SUFFIX,experianmatch.info
 DOMAIN-SUFFIX,ezodn.com
 DOMAIN-SUFFIX,ezstat.ru
@@ -385,6 +388,7 @@ DOMAIN-SUFFIX,wlt-alice.de
 DOMAIN-SUFFIX,wlt-jupiter.de
 DOMAIN-SUFFIX,wmgroup.us
 DOMAIN-SUFFIX,woodpeckerlog.com
+DOMAIN-SUFFIX,xanalytics.vip
 DOMAIN-SUFFIX,yardianalytics.com
 DOMAIN-SUFFIX,yndhi.com
 DOMAIN-SUFFIX,yottlyscript.com
@@ -1182,6 +1186,7 @@ DOMAIN-SUFFIX,goldfishgrowth.com
 DOMAIN-SUFFIX,gondolagnome.com
 DOMAIN-SUFFIX,gorgeousedge.com
 DOMAIN-SUFFIX,gorgeousground.com
+DOMAIN-SUFFIX,gracefulmilk.com
 DOMAIN-SUFFIX,gracefulsock.com
 DOMAIN-SUFFIX,grainmass.com
 DOMAIN-SUFFIX,grandfatherguitar.com
@@ -1525,6 +1530,7 @@ DOMAIN-SUFFIX,oafishobservation.com
 DOMAIN-SUFFIX,obscenesidewalk.com
 DOMAIN-SUFFIX,observantice.com
 DOMAIN-SUFFIX,oldfashionedoffer.com
+DOMAIN-SUFFIX,omgthink.com
 DOMAIN-SUFFIX,omniscientfeeling.com
 DOMAIN-SUFFIX,omniscientspark.com
 DOMAIN-SUFFIX,onlywoofs.com
@@ -1672,6 +1678,7 @@ DOMAIN-SUFFIX,puffyloss.com
 DOMAIN-SUFFIX,puffypaste.com
 DOMAIN-SUFFIX,puffypull.com
 DOMAIN-SUFFIX,puffypurpose.com
+DOMAIN-SUFFIX,pulsatingmeadow.com
 DOMAIN-SUFFIX,pumpedpancake.com
 DOMAIN-SUFFIX,pumpedpurpose.com
 DOMAIN-SUFFIX,punyplant.com
@@ -1685,6 +1692,7 @@ DOMAIN-SUFFIX,quaintborder.com
 DOMAIN-SUFFIX,quaintcan.com
 DOMAIN-SUFFIX,quaintlake.com
 DOMAIN-SUFFIX,quantumlagoon.com
+DOMAIN-SUFFIX,quantumshine.com
 DOMAIN-SUFFIX,quarterbean.com
 DOMAIN-SUFFIX,queenskart.com
 DOMAIN-SUFFIX,questionableobservation.com
@@ -2318,6 +2326,7 @@ DOMAIN-SUFFIX,voraciousgrip.com
 DOMAIN-SUFFIX,voyagepotato.com
 DOMAIN-SUFFIX,vq1qi.pw
 DOMAIN-SUFFIX,waggishpig.com
+DOMAIN-SUFFIX,waitingnumber.com
 DOMAIN-SUFFIX,wakefulcook.com
 DOMAIN-SUFFIX,wantingwindow.com
 DOMAIN-SUFFIX,warmafterthought.com
@@ -2404,6 +2413,7 @@ DOMAIN-SUFFIX,a.getflowbox.com
 DOMAIN-SUFFIX,a.hcaptcha.com
 DOMAIN-SUFFIX,a.mobify.com
 DOMAIN-SUFFIX,a.opumo.net
+DOMAIN-SUFFIX,a.vturb.net
 DOMAIN-SUFFIX,activity-flow.vtex.com
 DOMAIN-SUFFIX,activity.wisepops.com
 DOMAIN-SUFFIX,ad.aloodo.com
@@ -2411,6 +2421,7 @@ DOMAIN-SUFFIX,ade.googlesyndication.com
 DOMAIN-SUFFIX,adfox.yandex.ru
 DOMAIN-SUFFIX,adlog.com.com
 DOMAIN-SUFFIX,ads-trk.vidible.tv
+DOMAIN-SUFFIX,adv-analytics-collector.videograph.ai
 DOMAIN-SUFFIX,affiliate-api.raptive.com
 DOMAIN-SUFFIX,affiliates.minglematch.com
 DOMAIN-SUFFIX,akatracking.esearchvision.com
@@ -2599,6 +2610,7 @@ DOMAIN-SUFFIX,beamanalytics.b-cdn.net
 DOMAIN-SUFFIX,bee.tc.easebar.com
 DOMAIN-SUFFIX,behavior.tongdun.net
 DOMAIN-SUFFIX,bento.agoda.com
+DOMAIN-SUFFIX,bi.heyloyalty.com
 DOMAIN-SUFFIX,bi.medscape.com
 DOMAIN-SUFFIX,bmrg.reflected.net
 DOMAIN-SUFFIX,bonfire.spklw.com
@@ -2642,6 +2654,7 @@ DOMAIN-SUFFIX,client-logger.beta.salemove.com
 DOMAIN-SUFFIX,client-logger.salemove.com
 DOMAIN-SUFFIX,clouderrorreporting.googleapis.com
 DOMAIN-SUFFIX,cloudfront-labs.amazonaws.com
+DOMAIN-SUFFIX,cloudmetrics.xenforo.com
 DOMAIN-SUFFIX,cltgtstor001.blob.core.windows.net
 DOMAIN-SUFFIX,cnt.3dmy.net
 DOMAIN-SUFFIX,cnt.mastorage.net
@@ -3063,6 +3076,7 @@ DOMAIN-SUFFIX,pixels.afcdn.com
 DOMAIN-SUFFIX,pl.connatix.com
 DOMAIN-SUFFIX,pla.fwdcdn.com
 DOMAIN-SUFFIX,platform.iteratehq.com
+DOMAIN-SUFFIX,plausible.server.hakai.app
 DOMAIN-SUFFIX,play.adtonos.com
 DOMAIN-SUFFIX,player-metrics.instaread.co
 DOMAIN-SUFFIX,pm.boostintegrated.com
@@ -3186,6 +3200,7 @@ DOMAIN-SUFFIX,stats.curds.io
 DOMAIN-SUFFIX,stats.datahjaelp.net
 DOMAIN-SUFFIX,stats.edicy.com
 DOMAIN-SUFFIX,stats.esecured.net
+DOMAIN-SUFFIX,stats.flixhq.live
 DOMAIN-SUFFIX,stats.fomo.com
 DOMAIN-SUFFIX,stats.gifs.com
 DOMAIN-SUFFIX,stats.heyoya.com
@@ -3567,6 +3582,7 @@ DOMAIN-SUFFIX,d2ibu2ug0mt5qp.cloudfront.net
 DOMAIN-SUFFIX,d2j1fszo1axgmp.cloudfront.net
 DOMAIN-SUFFIX,d2j74sjmqqyf26.cloudfront.net
 DOMAIN-SUFFIX,d2kdl5wcwrtj90.cloudfront.net
+DOMAIN-SUFFIX,d2lxqodqbpy7c2.cloudfront.net
 DOMAIN-SUFFIX,d2nxi61n77zqpl.cloudfront.net
 DOMAIN-SUFFIX,d2o67tzzxkqap2.cloudfront.net
 DOMAIN-SUFFIX,d2oh4tlt9mrke9.cloudfront.net
@@ -3636,6 +3652,17 @@ DOMAIN-SUFFIX,du4rq1xqh3i1k.cloudfront.net
 DOMAIN-SUFFIX,duu8lzqdm8tsz.cloudfront.net
 DOMAIN-SUFFIX,dy2xcjk8s1dbz.cloudfront.net
 DOMAIN-SUFFIX,dzgwautxzdtn9.cloudfront.net
+DOMAIN-SUFFIX,anal.sataniskwijt.be
+DOMAIN-SUFFIX,analytics.code.dccouncil.gov
+DOMAIN-SUFFIX,count.vidsrc.pro
+DOMAIN-SUFFIX,goat.hepicgamerz.com
+DOMAIN-SUFFIX,goat.nhimmeo.cf
+DOMAIN-SUFFIX,goat.skeetstats.xyz
+DOMAIN-SUFFIX,goat.tailspace.net
+DOMAIN-SUFFIX,st.mapleranks.com
+DOMAIN-SUFFIX,stats.afrocave.com
+DOMAIN-SUFFIX,stats.boringproxy.io
+DOMAIN-SUFFIX,stats.how.wtf
 DOMAIN-SUFFIX,am-vid-events.taboola.com
 DOMAIN-SUFFIX,convsgmp.taboola.com
 DOMAIN-SUFFIX,la-sync.taboola.com
@@ -3965,6 +3992,7 @@ DOMAIN-SUFFIX,log.gs3.goo.ne.jp
 DOMAIN-SUFFIX,log.popin.cc
 DOMAIN-SUFFIX,log000.goo.ne.jp
 DOMAIN-SUFFIX,logger.torimochi-ad.net
+DOMAIN-SUFFIX,metrics.streaks.jp
 DOMAIN-SUFFIX,omt.shinobi.jp
 DOMAIN-SUFFIX,panda.kasika.io
 DOMAIN-SUFFIX,ping.paidy.com
@@ -4623,6 +4651,7 @@ DOMAIN-SUFFIX,sjc.cloud.optable.co
 DOMAIN-SUFFIX,slipstream.skyscanner.net
 DOMAIN-SUFFIX,smetrics.couponcabin.com
 DOMAIN-SUFFIX,smetrics.ralphlauren.com
+DOMAIN-SUFFIX,sofire.terabox.app
 DOMAIN-SUFFIX,sp.cargurus.co.uk
 DOMAIN-SUFFIX,sp.ecosia.org
 DOMAIN-SUFFIX,sp.welcometothejungle.com
@@ -4753,9 +4782,11 @@ DOMAIN-SUFFIX,tracking.shopstyle.co.uk
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.unrealengine.com
 DOMAIN-SUFFIX,trackr.vivenu.com
+DOMAIN-SUFFIX,trck.coomeet.com
 DOMAIN-SUFFIX,trcksplt.miro.com
 DOMAIN-SUFFIX,treatment.grammarly.com
 DOMAIN-SUFFIX,tredir.go.com
+DOMAIN-SUFFIX,trends.privacywall.org
 DOMAIN-SUFFIX,trk.decido.io
 DOMAIN-SUFFIX,trk.tirto.id
 DOMAIN-SUFFIX,trx3.famousfix.com
@@ -39170,6 +39201,7 @@ DOMAIN-SUFFIX,analytics.clubic.com
 DOMAIN-SUFFIX,bmly.impots.gouv.fr
 DOMAIN-SUFFIX,cdtm.cdiscount.com
 DOMAIN-SUFFIX,compteur.developpez.com
+DOMAIN-SUFFIX,datalayer.orange.fr
 DOMAIN-SUFFIX,dd.leboncoin.fr
 DOMAIN-SUFFIX,e.legalstart.fr
 DOMAIN-SUFFIX,events-logs.doctolib.com
@@ -39180,6 +39212,7 @@ DOMAIN-SUFFIX,hlms.ecologie.gouv.fr
 DOMAIN-SUFFIX,insights.decathlon.net
 DOMAIN-SUFFIX,kwgs.letudiant.fr
 DOMAIN-SUFFIX,logstash-3.radio-canada.ca
+DOMAIN-SUFFIX,metrics-broker.prod.p.tf1.fr
 DOMAIN-SUFFIX,ocular.dealabs.com
 DOMAIN-SUFFIX,p.pagesjaunes.fr
 DOMAIN-SUFFIX,pixel.dugwood.com
@@ -39394,6 +39427,7 @@ DOMAIN-SUFFIX,ma.register.it
 DOMAIN-SUFFIX,stats.splinder.com
 DOMAIN-SUFFIX,stats.stylight.it
 DOMAIN-SUFFIX,stats.suedtirolerjobs.it
+DOMAIN-SUFFIX,t.mediaset.it
 DOMAIN-SUFFIX,tla.traderlink.com
 DOMAIN-SUFFIX,track.tesiteca.it
 DOMAIN-SUFFIX,tracker.stileo.it
@@ -39411,7 +39445,6 @@ DOMAIN-SUFFIX,bc.nhk.jp
 DOMAIN-SUFFIX,beacon.watch.impress.co.jp
 DOMAIN-SUFFIX,beat.yourtv.jp
 DOMAIN-SUFFIX,count.upc.rakuten.co.jp
-DOMAIN-SUFFIX,counter.wikiwiki.jp
 DOMAIN-SUFFIX,d-log.asahi.co.jp
 DOMAIN-SUFFIX,d-log.bs-asahi.tv
 DOMAIN-SUFFIX,d-log.tv-asahi.co.jp
@@ -39576,6 +39609,7 @@ DOMAIN-SUFFIX,g.siliconweek.es
 DOMAIN-SUFFIX,geo.emol.cl
 DOMAIN-SUFFIX,hits.antena3.com
 DOMAIN-SUFFIX,horizon-track.globo.com
+DOMAIN-SUFFIX,logs.openbank.com
 DOMAIN-SUFFIX,mega.promodescuentos.com
 DOMAIN-SUFFIX,ocular.promodescuentos.com
 DOMAIN-SUFFIX,pixel.europapress.net

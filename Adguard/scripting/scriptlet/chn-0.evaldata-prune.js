@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["entity.commercial"]];
 
-const hostnamesMap = new Map([["m.nivod9.tv",0],["m.nivod8.tv",0],["m.nivod7.tv",0],["m.nivod5.tv",0],["m1.nivod.tv",0],["m.nivod4.tv",0]]);
+const hostnamesMap = new Map([["m.nivod2.com",0],["m.nivod2.tv",0],["m.nivod4.com",0],["m.nivod4.tv",0],["m.nivod5.com",0],["m.nivod5.tv",0],["m.nivod7.com",0],["m.nivod7.tv",0],["m.nivod8.com",0],["m.nivod8.tv",0],["m.nivod9.com",0],["m.nivod9.tv",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["www3.doubleclick.net"]];
+const argsList = [["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["doubleclick.net"],["www3.doubleclick.net"]];
 
-const hostnamesMap = new Map([["tv.kakao.com",0],["play-tv.kakao.com",0],["kakaotv.daum.net",0],["spotvnow.co.kr",[1,2]],["blackkiwi.net",3]]);
+const hostnamesMap = new Map([["tv.kakao.com",0],["play-tv.kakao.com",0],["kakaotv.daum.net",0],["spotvnow.co.kr",[1,2]],["srank.kr",3],["blackkiwi.net",4]]);
 
 const entitiesMap = new Map([]);
 

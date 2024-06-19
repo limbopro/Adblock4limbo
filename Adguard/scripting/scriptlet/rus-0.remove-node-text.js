@@ -42,7 +42,7 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/adblog|tick/"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","\"Shadow"]];
+const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/checkAdBlock|tick/"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","\"Shadow"]];
 
 const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["game4you.top",3],["games-pc.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["inforesist.org",[4,8]],["sports.ru",5],["pikabu.ru",6],["gsm.in.ua",7],["24boxing.com.ua",8],["avtovod.com.ua",8],["bigmir.net",8],["buhgalter.com.ua",8],["buhgalter911.com",8],["businessua.com",8],["censor.net",8],["dengi.ua",8],["ditey.com",8],["epravda.com.ua",8],["eurointegration.com.ua",8],["f1analytic.com",8],["facenews.ua",8],["factor.ua",8],["football-ukraine.com",8],["footballgazeta.com",8],["footballtransfer.com.ua",8],["gazeta.ua",8],["gorod.dp.ua",8],["hvylya.net",8],["i.ua",8],["isport.ua",8],["ivona.ua",8],["kolobok.ua",8],["kriminal.tv",8],["liga.net",8],["meteo.ua",8],["meteofor.com.ua",8],["nnovosti.info",8],["nv.ua",8],["panno4ka.net",8],["pogodaua.com",8],["pravda.com.ua",8],["real-vin.com",8],["smak.ua",8],["sportanalytic.com",8],["stravy.net",8],["tochka.net",8],["tv.ua",8],["viva.ua",8],["vsetv.com",8],["www.ukr.net",8],["zdorovia.com.ua",8]]);
 

@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["getComputedStyle"],["FbTrack"],["document.body.style"]];
+const argsList = [["getComputedStyle"],["document.body.style"]];
 
-const hostnamesMap = new Map([["karpathir.com",0],["myonlineradio.hu",1],["port.hu",2]]);
+const hostnamesMap = new Map([["karpathir.com",0],["port.hu",1]]);
 
 const entitiesMap = new Map([]);
 

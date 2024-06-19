@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["porntrex.com",0],["fembed.com",0],["xrares.com",0],["uploadbox.cc",0],["daftporn.com",0],["boost.ink",0],["wootly.ch",0],["sexlist.tv",0],["player.theplatform.com",0],["cine24.online",0]]);
+const hostnamesMap = new Map([["fembed.com",0],["xrares.com",0],["uploadbox.cc",0],["daftporn.com",0],["boost.ink",0],["porntrex.com",0],["wootly.ch",0],["sexlist.tv",0],["player.theplatform.com",0],["cine24.online",0]]);
 
 const entitiesMap = new Map([["europixhd",0],["hdeuropix",0],["hindipix",0],["topeuropix",0],["pelisplay",0],["earnload",0]]);
 

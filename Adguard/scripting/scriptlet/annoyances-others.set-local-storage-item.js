@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["bloomberg.com",1],["dailynewshungary.com",2],["cnn.com",[3,4]],["reuters.com",5],["theweek.com",[6,7]],["seekingalpha.com",8],["nisanyansozluk.com",9],["quillbot.com",10],["csmonitor.com",11],["deepl.com",[12,13]]]);
+const hostnamesMap = new Map([["zippia.com",0],["thejournal.ie",1],["bloomberg.com",2],["dailynewshungary.com",3],["cnn.com",[4,5]],["reuters.com",6],["theweek.com",[7,8]],["seekingalpha.com",9],["nisanyansozluk.com",10],["quillbot.com",11],["csmonitor.com",12],["deepl.com",[13,14]]]);
 
 const entitiesMap = new Map([]);
 

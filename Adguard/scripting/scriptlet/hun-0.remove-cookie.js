@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: vie-1
+// ruleset: hun-0
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_abortOnPropertyRead = function() {
+const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPageGala"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU)break;case $."],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["atob"],["adtimaConfig"]];
+const argsList = [["adblock"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["phimmoi4s.com",4],["phimdinhcao.net",4],["phimlongtieng.net",4],["phimdinhcao.com",4],["plvb.xyz",[5,6,7,8,9]],["rk.plcdn.xyz",[5,6,7,8,9]],["tinsoikeo.cloud",10],["truyensieuhay.com",11],["phimvietsub.pro",11],["quangcaoyenbai.com",11],["sieudamtv.site",11],["ephimchill.com",11],["ophimhdvn3.net",11],["thuvienhd.xyz",11],["xemtv.tvhayhd.tv",11],["www.khophim88s.com",11],["nhentaivn.online",11],["motchilltv.icu",11],["mv.dailyphimz.com",11],["mv.phimbathu.one",11],["veryfiles.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["dood.pm",13],["ytstv.me",13],["animet1.net",13],["anh.moe",13],["truyenhentaivn.co",13],["maclife.io",13],["javfc2.net",13],["hoctot.hocmai.vn",13],["vinaurl.net",14],["www.nettruyenupp.com",15],["xoilac86x5.live",16],["yts.do",17],["yts.mx",17],["yts.rs",17],["znews.vn",18]]);
+const hostnamesMap = new Map([["myonlineradio.hu",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,66 +52,66 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function abortOnPropertyRead(
-    chain = ''
+function cookieRemover(
+    needle = ''
 ) {
-    if ( typeof chain !== 'string' ) { return; }
-    if ( chain === '' ) { return; }
+    if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
-    const exceptionToken = getExceptionToken();
-    const abort = function() {
-        safe.uboLog(logPrefix, 'Aborted');
-        throw new ReferenceError(exceptionToken);
+    const reName = safe.patternToRegex(needle);
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 1);
+    const throttle = (fn, ms = 500) => {
+        if ( throttle.timer !== undefined ) { return; }
+        throttle.timer = setTimeout(( ) => {
+            throttle.timer = undefined;
+            fn();
+        }, ms);
     };
-    const makeProxy = function(owner, chain) {
-        const pos = chain.indexOf('.');
-        if ( pos === -1 ) {
-            const desc = Object.getOwnPropertyDescriptor(owner, chain);
-            if ( !desc || desc.get !== abort ) {
-                Object.defineProperty(owner, chain, {
-                    get: abort,
-                    set: function(){}
-                });
-            }
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        let v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if ( v ) {
-            makeProxy(v, chain);
-            return;
-        }
-        const desc = Object.getOwnPropertyDescriptor(owner, prop);
-        if ( desc && desc.set !== undefined ) { return; }
-        Object.defineProperty(owner, prop, {
-            get: function() { return v; },
-            set: function(a) {
-                v = a;
-                if ( a instanceof Object ) {
-                    makeProxy(a, chain);
+    const removeCookie = ( ) => {
+        document.cookie.split(';').forEach(cookieStr => {
+            const pos = cookieStr.indexOf('=');
+            if ( pos === -1 ) { return; }
+            const cookieName = cookieStr.slice(0, pos).trim();
+            if ( reName.test(cookieName) === false ) { return; }
+            const part1 = cookieName + '=';
+            const part2a = '; domain=' + document.location.hostname;
+            const part2b = '; domain=.' + document.location.hostname;
+            let part2c, part2d;
+            const domain = document.domain;
+            if ( domain ) {
+                if ( domain !== document.location.hostname ) {
+                    part2c = '; domain=.' + domain;
                 }
+                if ( domain.startsWith('www.') ) {
+                    part2d = '; domain=' + domain.replace('www', '');
+                }
+            }
+            const part3 = '; path=/';
+            const part4 = '; Max-Age=-1000; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            document.cookie = part1 + part4;
+            document.cookie = part1 + part2a + part4;
+            document.cookie = part1 + part2b + part4;
+            document.cookie = part1 + part3 + part4;
+            document.cookie = part1 + part2a + part3 + part4;
+            document.cookie = part1 + part2b + part3 + part4;
+            if ( part2c !== undefined ) {
+                document.cookie = part1 + part2c + part3 + part4;
+            }
+            if ( part2d !== undefined ) {
+                document.cookie = part1 + part2d + part3 + part4;
             }
         });
     };
-    const owner = window;
-    makeProxy(owner, chain);
-}
-
-function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
-        }
-    }.bind();
-    return token;
+    removeCookie();
+    window.addEventListener('beforeunload', removeCookie);
+    if ( typeof extraArgs.when !== 'string' ) { return; }
+    const supportedEventTypes = [ 'scroll', 'keydown' ];
+    const eventTypes = extraArgs.when.split(/\s/);
+    for ( const type of eventTypes ) {
+        if ( supportedEventTypes.includes(type) === false ) { continue; }
+        document.addEventListener(type, ( ) => {
+            throttle(removeCookie);
+        }, { passive: true });
+    }
 }
 
 function safeSelf() {
@@ -331,7 +331,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { abortOnPropertyRead(...argsList[i]); }
+    try { cookieRemover(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -349,11 +349,11 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
-const targetWorld = 'MAIN';
+const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortOnPropertyRead();
+    return uBOL_cookieRemover();
 }
 
 // Firefox
@@ -361,11 +361,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_abortOnPropertyRead = cloneInto([
-            [ '(', uBOL_abortOnPropertyRead.toString(), ')();' ],
+        page.uBOL_cookieRemover = cloneInto([
+            [ '(', uBOL_cookieRemover.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_abortOnPropertyRead);
+        const blob = new page.Blob(...page.uBOL_cookieRemover);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -379,7 +379,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_abortOnPropertyRead;
+    delete page.uBOL_cookieRemover;
 }
 
 /******************************************************************************/

@@ -42,13 +42,13 @@ const uBOL_trustedSetCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adTakeOver","seen"],["wallpaper","click"],["WPdp","gqcHFMkMCFBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSGl1BMyFBXQpBBBpBXUBPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSo+RV1BAQFBXUBPRRwRRUtSS1MOE1NZVF1BEwJBXUBUV0FWVkZWVEdVU0AeS1M0NzxBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSS1MWBlNZVgwe"],["WPtcs2","CP1ik8AP1ik8ABIACDPLAbEgAAAAAEPgAB5YAABBqhmgAIgAUABcADgAPgAoACoAFwAOQAeACAAEgALoAYABlADQANQAeAA_ACIAEcAJgAUIApACmAFWALgAugBiADMAGgAN4AegA_ACEAENAIgAiQBHACWAE0AJwAUYAwABhwDKAMsAZoA0QBsgDkAHPAO4A7wB7AD4gH2AfsA_wEAgIOAhABEQCKQEWARgAjUBHAEdAJEASUAlIBOwCfgFBgKgAqIBVwCxAFzALrAXkBegC-gGKANEAa8A2gBuADiAHHAOkAdQA7YB7QD7AH_ARMAi8BHsCRAJFASoAlYBMUCZAJlATaAnYBQ8CjwKRAUnApoCmwFPgKhgVIBUoCqgFWAK5AV2AsKBYgFigLKAWiAtQBbEC3ALdAXAAuQBdAC7QF3wLyAvMBfQC_wGCAMGAYaAxABiwDHgGQwMjAySBkwGTgMqAZYAzMBnIDPAGiANGAaaA1MBqsDVwNZAa8A2iBtwG3wN0A3UBwADggHFgOPAcnA5YDlwHPgOsAeKA8eB5IHlAPigfIB8oD6QH1wPtA-6B-wH7gQBAgIBAwCB4EEQIJgQYAg2BCECFAEK4IWghcBDECGcEOQQ6gh4CHoEPwIpgRgAjSBGsCN4EcQI6AR2Aj2BH0CP4EhAJFASNgkgCScEmASZglQCVIEsAJZwS3BLiCXQJdgS-gmACYIEwwJiwTMBM4CagE2IJtgm5BN4E3wJwhBqAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
+const argsList = [["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"],["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","gqcHFMkMCFBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSGl1BMyFBXQpBBBpBXUBPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSo+RV1BAQFBXUBPRRwRRUtSS1MOE1NZVF1BEwJBXUBUV0FWVkZWVEdVU0AeS1M0NzxBXQpBBBpBXUNPRRIQARgHRUtBPCxBS1MAFAEKA1NZRSpSOlNPRRcTRUtSS1MOFVNZVl1BCgVBXUJPRQUQRUtSUEFTUkBUUkJVUUVSS1MWBlNZVgwe"],["WPtcs2","CP1ik8AP1ik8ABIACDPLAbEgAAAAAEPgAB5YAABBqhmgAIgAUABcADgAPgAoACoAFwAOQAeACAAEgALoAYABlADQANQAeAA_ACIAEcAJgAUIApACmAFWALgAugBiADMAGgAN4AegA_ACEAENAIgAiQBHACWAE0AJwAUYAwABhwDKAMsAZoA0QBsgDkAHPAO4A7wB7AD4gH2AfsA_wEAgIOAhABEQCKQEWARgAjUBHAEdAJEASUAlIBOwCfgFBgKgAqIBVwCxAFzALrAXkBegC-gGKANEAa8A2gBuADiAHHAOkAdQA7YB7QD7AH_ARMAi8BHsCRAJFASoAlYBMUCZAJlATaAnYBQ8CjwKRAUnApoCmwFPgKhgVIBUoCqgFWAK5AV2AsKBYgFigLKAWiAtQBbEC3ALdAXAAuQBdAC7QF3wLyAvMBfQC_wGCAMGAYaAxABiwDHgGQwMjAySBkwGTgMqAZYAzMBnIDPAGiANGAaaA1MBqsDVwNZAa8A2iBtwG3wN0A3UBwADggHFgOPAcnA5YDlwHPgOsAeKA8eB5IHlAPigfIB8oD6QH1wPtA-6B-wH7gQBAgIBAwCB4EEQIJgQYAg2BCECFAEK4IWghcBDECGcEOQQ6gh4CHoEPwIpgRgAjSBGsCN4EcQI6AR2Aj2BH0CP4EhAJFASNgkgCScEmASZglQCVIEsAJZwS3BLiCXQJdgS-gmACYIEwwJiwTMBM4CagE2IJtgm5BN4E3wJwhBqAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
 
-const hostnamesMap = new Map([["govtech.com",0],["theporndude.com",1],["wp.pl",[2,3,4]],["money.pl",[2,3,4]],["pysznosci.pl",[2,3,4]],["pudelek.pl",[2,3,4]],["gadzetomania.pl",[2,3,4]],["fotoblogia.pl",[2,3,4]],["komorkomania.pl",[2,3,4]],["dobreprogramy.pl",[2,3,4]],["autokult.pl",[2,3,4]],["genialne.pl",[2,3,4]],["o2.pl",4],["parenting.pl",4],["polygamia.pl",4],["abczdrowie.pl",4],["open.fm",4],["benchmark.pl",4],["kafeteria.pl",4],["autocentrum.pl",4],["jastrzabpost.pl",4]]);
+const hostnamesMap = new Map([["govtech.com",0],["barstoolsports.com",1],["globo.com",2],["theporndude.com",3],["wp.pl",[4,5,6]],["money.pl",[4,5,6]],["pysznosci.pl",[4,5,6]],["pudelek.pl",[4,5,6]],["gadzetomania.pl",[4,5,6]],["fotoblogia.pl",[4,5,6]],["komorkomania.pl",[4,5,6]],["dobreprogramy.pl",[4,5,6]],["autokult.pl",[4,5,6]],["genialne.pl",[4,5,6]],["o2.pl",6],["parenting.pl",6],["polygamia.pl",6],["abczdrowie.pl",6],["open.fm",6],["benchmark.pl",6],["kafeteria.pl",6],["autocentrum.pl",6],["jastrzabpost.pl",6]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["www.wp.pl",[2,3]]]);
+const exceptionsMap = new Map([["www.wp.pl",[4,5]]]);
 
 /******************************************************************************/
 
@@ -64,10 +64,11 @@ function trustedSetCookie(
     const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
     const time = new Date();
 
-    if ( value === '$now$' ) {
-        value = Date.now();
-    } else if ( value === '$currentDate$' ) {
-        value = time.toUTCString();
+    if ( value.includes('$now$') ) {
+        value = value.replaceAll('$now$', time.getTime());
+    }
+    if ( value.includes('$currentDate$') ) {
+        value = value.replaceAll('$currentDate$', time.toUTCString());
     }
 
     let expires = '';

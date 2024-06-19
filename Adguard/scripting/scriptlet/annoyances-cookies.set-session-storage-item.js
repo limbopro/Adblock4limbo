@@ -42,9 +42,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["hasConsent","1"],["hasDsg","1"],["cookieMessageDisagree","true"],["terms-and-policy-accepted","true"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
+const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["terms-and-policy-accepted","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
 
-const hostnamesMap = new Map([["cachecrawler.com",[0,1]],["erco.com",2],["smartwielen.lu",3],["griffin.com",4],["c6bank.com.br",5],["gedik.com",6],["collato.com",[7,8]]]);
+const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["smartwielen.lu",2],["cachecrawler.com",[3,4]],["griffin.com",5],["c6bank.com.br",6],["gedik.com",7],["collato.com",[8,9]]]);
 
 const entitiesMap = new Map([]);
 

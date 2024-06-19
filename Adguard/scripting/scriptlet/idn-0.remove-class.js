@@ -42,9 +42,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["content-wrap"]];
+const argsList = [["content-wrap"],["content-wrap|wrap-all"],["t480"]];
 
-const hostnamesMap = new Map([["okezone.com",0]]);
+const hostnamesMap = new Map([["okezone.com",0],["inews.id",1],["sindonews.com",2]]);
 
 const entitiesMap = new Map([]);
 

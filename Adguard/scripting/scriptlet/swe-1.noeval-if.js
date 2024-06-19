@@ -42,9 +42,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adbEnableForPage"],["targetele"]];
+const argsList = [["adbEnableForPage"]];
 
-const hostnamesMap = new Map([["forexgruppen.se",0],["temadagar.se",1]]);
+const hostnamesMap = new Map([["forexgruppen.se",0]]);
 
 const entitiesMap = new Map([]);
 

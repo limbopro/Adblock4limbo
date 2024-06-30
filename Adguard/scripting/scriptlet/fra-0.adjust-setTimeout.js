@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["userConsentProcessEnded","*","0.001"],["/userConsentProcessEnded|\\[0\\]\\+\"With\"/","*","0.001"],["#regarder","7000","0.02"]];
+const argsList = [["return t()","*","0.001"],["userConsentProcessEnded","*","0.001"],["/userConsentProcessEnded|\\[0\\]\\+\"With\"/","*","0.001"],["#regarder","7000","0.02"]];
 
-const hostnamesMap = new Map([["magicmaman.com",0],["cosmopolitan.fr",1],["zoneseries.stream",2]]);
+const hostnamesMap = new Map([["sudouest.fr",0],["magicmaman.com",1],["cosmopolitan.fr",2],["zoneseries.stream",3]]);
 
 const entitiesMap = new Map([]);
 

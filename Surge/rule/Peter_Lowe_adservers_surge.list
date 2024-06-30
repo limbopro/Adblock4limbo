@@ -1,11 +1,13 @@
+
+
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 12 Jun 2024 11:50:55 GMT
-# entries:        3552
+# last updated:   Tue, 25 Jun 2024 22:47:11 GMT
+# entries:        3543
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&minetype=plaintext
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -76,7 +78,6 @@ DOMAIN-SUFFIX,abstractedauthority.com
 DOMAIN-SUFFIX,abtasty.com
 DOMAIN-SUFFIX,ac.rnm.ca
 DOMAIN-SUFFIX,acemlnb.com
-DOMAIN-SUFFIX,acid-adserver.click
 DOMAIN-SUFFIX,acridtwist.com
 DOMAIN-SUFFIX,actionsplash.com
 DOMAIN-SUFFIX,actonsoftware.com
@@ -184,7 +185,6 @@ DOMAIN-SUFFIX,adaction.de
 DOMAIN-SUFFIX,adadvisor.net
 DOMAIN-SUFFIX,adalliance.io
 DOMAIN-SUFFIX,adanging.blog
-DOMAIN-SUFFIX,adap.tv
 DOMAIN-SUFFIX,adapt.tv
 DOMAIN-SUFFIX,adaranth.com
 DOMAIN-SUFFIX,adbilty.me
@@ -395,7 +395,6 @@ DOMAIN-SUFFIX,ads.bluemountain.com
 DOMAIN-SUFFIX,ads.boerding.com
 DOMAIN-SUFFIX,ads.boylesports.com
 DOMAIN-SUFFIX,ads.brabys.com
-DOMAIN-SUFFIX,ads.brazzers.com
 DOMAIN-SUFFIX,ads.bumq.com
 DOMAIN-SUFFIX,ads.canalblog.com
 DOMAIN-SUFFIX,ads.casinocity.com
@@ -581,7 +580,6 @@ DOMAIN-SUFFIX,ads.schmoozecom.net
 DOMAIN-SUFFIX,ads.scifi.com
 DOMAIN-SUFFIX,ads.seniorfriendfinder.com
 DOMAIN-SUFFIX,ads.servebom.com
-DOMAIN-SUFFIX,ads.sexgratuit.tv
 DOMAIN-SUFFIX,ads.shizmoo.com
 DOMAIN-SUFFIX,ads.shopstyle.com
 DOMAIN-SUFFIX,ads.sift.co.uk
@@ -866,7 +864,6 @@ DOMAIN-SUFFIX,adworx.nl
 DOMAIN-SUFFIX,adx.gayboy.at
 DOMAIN-SUFFIX,adxpansion.com
 DOMAIN-SUFFIX,adxpose.com
-DOMAIN-SUFFIX,adyea.com
 DOMAIN-SUFFIX,adyoulike.com
 DOMAIN-SUFFIX,adz.rashflash.com
 DOMAIN-SUFFIX,adz2you.com
@@ -1294,6 +1291,7 @@ DOMAIN-SUFFIX,cityads.telus.net
 DOMAIN-SUFFIX,cj.com
 DOMAIN-SUFFIX,cjbmanagement.com
 DOMAIN-SUFFIX,cjlog.com
+DOMAIN-SUFFIX,cl.turkishairlines.com
 DOMAIN-SUFFIX,cl0udh0st1ng.com
 DOMAIN-SUFFIX,claria.com
 DOMAIN-SUFFIX,clck.ru
@@ -1710,7 +1708,6 @@ DOMAIN-SUFFIX,feedmob.com
 DOMAIN-SUFFIX,fimserve.com
 DOMAIN-SUFFIX,findcommerce.com
 DOMAIN-SUFFIX,findyourcasino.com
-DOMAIN-SUFFIX,fineoffer.net
 DOMAIN-SUFFIX,fingahvf.top
 DOMAIN-SUFFIX,fireworkadservices.com
 DOMAIN-SUFFIX,fireworkanalytics.com
@@ -2331,9 +2328,7 @@ DOMAIN-SUFFIX,mylink-today.com
 DOMAIN-SUFFIX,mypagerank.net
 DOMAIN-SUFFIX,mypagerank.ru
 DOMAIN-SUFFIX,mypowermall.com
-DOMAIN-SUFFIX,mystat-in.net
 DOMAIN-SUFFIX,mystat.pl
-DOMAIN-SUFFIX,mytop-in.net
 DOMAIN-SUFFIX,n2.mouseflow.com
 DOMAIN-SUFFIX,n69.com
 DOMAIN-SUFFIX,naj.sk
@@ -2712,7 +2707,6 @@ DOMAIN-SUFFIX,rcadserver.com
 DOMAIN-SUFFIX,reachjunction.com
 DOMAIN-SUFFIX,reactx.com
 DOMAIN-SUFFIX,readingguilt.com
-DOMAIN-SUFFIX,readserver.net
 DOMAIN-SUFFIX,readymoon.com
 DOMAIN-SUFFIX,realcastmedia.com
 DOMAIN-SUFFIX,realclever.com
@@ -2878,7 +2872,6 @@ DOMAIN-SUFFIX,services.hearstmags.com
 DOMAIN-SUFFIX,serving-sys.com
 DOMAIN-SUFFIX,sessioncam.com
 DOMAIN-SUFFIX,sexcounter.com
-DOMAIN-SUFFIX,sexinyourcity.com
 DOMAIN-SUFFIX,sexlist.com
 DOMAIN-SUFFIX,sextracker.com
 DOMAIN-SUFFIX,shakegoldfish.com

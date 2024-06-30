@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["cp_style_3841","true"],["m6e-newsletter","1"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["marketing-modal-closed-1","2"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_501941328","1"],["popup_closed","true"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["marketing-modal-closed-1","2"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["breachmedia.ca",0],["artribune.com",1],["gourmetfoodstore.com",2],["railsnotes.xyz",3],["theinformation.com",4],["kermitlynch.com",5],["jingdaily.com",6],["babiesrus.ca",7],["toysrus.ca",7],["clevercreations.org",8],["yvonnebennetti.com",9],["funko.com",10],["loungefly.com",10],["saucerco.com",11],["sharperimage.com",12],["sweetwater.com",13],["assos.com",14],["techonthenet.com",15],["tumblr.com",16],["scitechdaily.com",17]]);
+const hostnamesMap = new Map([["breachmedia.ca",0],["artribune.com",1],["oled-info.com",2],["readergrev.com",3],["gourmetfoodstore.com",4],["railsnotes.xyz",5],["theinformation.com",6],["kermitlynch.com",7],["jingdaily.com",8],["babiesrus.ca",9],["toysrus.ca",9],["clevercreations.org",10],["yvonnebennetti.com",11],["funko.com",12],["loungefly.com",12],["saucerco.com",13],["sharperimage.com",14],["sweetwater.com",15],["assos.com",16],["techonthenet.com",17],["tumblr.com",18],["scitechdaily.com",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -74,6 +74,7 @@ function setCookie(
         'yes', 'y', 'no', 'n',
         'necessary', 'required',
         'approved', 'disapproved',
+        'hide', 'hidden',
     ];
     const normalized = value.toLowerCase();
     const match = /^("?)(.+)\1$/.exec(normalized);
@@ -295,6 +296,8 @@ function setCookieFn(
         if ( options.domain ) {
             cookieParts.push(`; domain=${options.domain}`);
         }
+        cookieParts.push('; Secure');
+    } else if ( /^__(Host|Secure)-/.test(name) ) {
         cookieParts.push('; Secure');
     }
 

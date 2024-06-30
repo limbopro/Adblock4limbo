@@ -42,9 +42,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["onclick","a[href][onclick^=\"setpos\"]"]];
+const argsList = [["style",".two-ad-area"]];
 
-const hostnamesMap = new Map([["datapps.org",0]]);
+const hostnamesMap = new Map([["manwa.fun",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -53,15 +53,20 @@ const exceptionsMap = new Map([]);
 /******************************************************************************/
 
 function removeAttr(
-    token = '',
-    selector = '',
+    rawToken = '',
+    rawSelector = '',
     behavior = ''
 ) {
-    if ( typeof token !== 'string' ) { return; }
-    if ( token === '' ) { return; }
-    const tokens = token.split(/\s*\|\s*/);
-    if ( selector === '' ) {
-        selector = `[${tokens.join('],[')}]`;
+    if ( typeof rawToken !== 'string' ) { return; }
+    if ( rawToken === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('remove-attr', rawToken, rawSelector, behavior);
+    const tokens = rawToken.split(/\s*\|\s*/);
+    const selector = tokens
+        .map(a => `${rawSelector}[${CSS.escape(a)}]`)
+        .join(',');
+    if ( safe.logLevel > 1 ) {
+        safe.uboLog(logPrefix, `Target selector:\n\t${selector}`);
     }
     let timer;
     const rmattr = ( ) => {
@@ -70,7 +75,9 @@ function removeAttr(
             const nodes = document.querySelectorAll(selector);
             for ( const node of nodes ) {
                 for ( const attr of tokens ) {
+                    if ( node.hasAttribute(attr) === false ) { continue; }
                     node.removeAttribute(attr);
+                    safe.uboLog(logPrefix, `Removed attribute '${attr}'`);
                 }
             }
         } catch(ex) {
@@ -90,7 +97,7 @@ function removeAttr(
             }
         }
         if ( skip ) { return; }
-        timer = self.requestIdleCallback(rmattr, { timeout: 17 });
+        timer = safe.onIdle(rmattr, { timeout: 67 });
     };
     const start = ( ) => {
         rmattr();
@@ -250,6 +257,12 @@ function safeSelf() {
                 return out;
             }, []);
             return this.Object_fromEntries(entries);
+        },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
         },
     };
     scriptletGlobals.safeSelf = safe;

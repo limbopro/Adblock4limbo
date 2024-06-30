@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: rus-0
+// ruleset: spa-1
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_setCookie = function() {
+const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["callToRegisterClosed","true"],["cookieAccepted","true"],["cookie_accept","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"]];
+const argsList = [["script","/function.*adblock/"]];
 
-const hostnamesMap = new Map([["kufar.by",[0,5]],["direct.farm",1],["liga.net",2],["ixbt.com",3],["forum.ixbt.com",4],["playground.ru",6],["kinotv.ru",7]]);
+const hostnamesMap = new Map([["daemon-hentai.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,51 +52,118 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function setCookie(
-    name = '',
-    value = '',
-    path = ''
+function removeNodeText(
+    nodeName,
+    condition,
+    ...extraArgs
 ) {
-    if ( name === '' ) { return; }
+    replaceNodeTextFn(nodeName, '', '', 'condition', condition || '', ...extraArgs);
+}
+
+function replaceNodeTextFn(
+    nodeName = '',
+    pattern = '',
+    replacement = ''
+) {
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
-
-    const validValues = [
-        'accept', 'reject',
-        'accepted', 'rejected', 'notaccepted',
-        'allow', 'deny',
-        'allowed', 'disallow',
-        'enable', 'disable',
-        'enabled', 'disabled',
-        'ok',
-        'on', 'off',
-        'true', 't', 'false', 'f',
-        'yes', 'y', 'no', 'n',
-        'necessary', 'required',
-        'approved', 'disapproved',
-        'hide', 'hidden',
-    ];
-    const normalized = value.toLowerCase();
-    const match = /^("?)(.+)\1$/.exec(normalized);
-    const unquoted = match && match[2] || normalized;
-    if ( validValues.includes(unquoted) === false ) {
-        if ( /^\d+$/.test(unquoted) === false ) { return; }
-        const n = parseInt(value, 10);
-        if ( n > 32767 ) { return; }
+    const logPrefix = safe.makeLogPrefix('replace-node-text.fn', ...Array.from(arguments));
+    const reNodeName = safe.patternToRegex(nodeName, 'i', true);
+    const rePattern = safe.patternToRegex(pattern, 'gms');
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
+    const stop = (takeRecord = true) => {
+        if ( takeRecord ) {
+            handleMutations(observer.takeRecords());
+        }
+        observer.disconnect();
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Quitting');
+        }
+    };
+    let sedCount = extraArgs.sedCount || 0;
+    const handleNode = node => {
+        const before = node.textContent;
+        reCondition.lastIndex = 0;
+        if ( safe.RegExp_test.call(reCondition, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
+        if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
+        const after = pattern !== ''
+            ? before.replace(rePattern, replacement)
+            : replacement;
+        node.textContent = after;
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
+        }
+        safe.uboLog(logPrefix, `Text after:\n${after.trim()}`);
+        return sedCount === 0 || (sedCount -= 1) !== 0;
+    };
+    const handleMutations = mutations => {
+        for ( const mutation of mutations ) {
+            for ( const node of mutation.addedNodes ) {
+                if ( reNodeName.test(node.nodeName) === false ) { continue; }
+                if ( handleNode(node) ) { continue; }
+                stop(false); return;
+            }
+        }
+    };
+    const observer = new MutationObserver(handleMutations);
+    observer.observe(document, { childList: true, subtree: true });
+    if ( document.documentElement ) {
+        const treeWalker = document.createTreeWalker(
+            document.documentElement,
+            NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT
+        );
+        let count = 0;
+        for (;;) {
+            const node = treeWalker.nextNode();
+            count += 1;
+            if ( node === null ) { break; }
+            if ( reNodeName.test(node.nodeName) === false ) { continue; }
+            if ( node === document.currentScript ) { continue; }
+            if ( handleNode(node) ) { continue; }
+            stop(); break;
+        }
+        safe.uboLog(logPrefix, `${count} nodes present before installing mutation observer`);
     }
+    if ( extraArgs.stay ) { return; }
+    runAt(( ) => {
+        const quitAfter = extraArgs.quitAfter || 0;
+        if ( quitAfter !== 0 ) {
+            setTimeout(( ) => { stop(); }, quitAfter);
+        } else {
+            stop();
+        }
+    }, 'interactive');
+}
 
-    const done = setCookieFn(
-        false,
-        name,
-        value,
-        '',
-        path,
-        safe.getExtraArgs(Array.from(arguments), 3)
-    );
-
-    if ( done ) {
-        safe.uboLog(logPrefix, 'Done');
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
     }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -256,75 +323,6 @@ function safeSelf() {
     return safe;
 }
 
-function setCookieFn(
-    trusted = false,
-    name = '',
-    value = '',
-    expires = '',
-    path = '',
-    options = {},
-) {
-    // https://datatracker.ietf.org/doc/html/rfc2616#section-2.2
-    // https://github.com/uBlockOrigin/uBlock-issues/issues/2777
-    if ( trusted === false && /[^!#$%&'*+\-.0-9A-Z[\]^_`a-z|~]/.test(name) ) {
-        name = encodeURIComponent(name);
-    }
-    // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
-    // The characters [",] are given a pass from the RFC requirements because
-    // apparently browsers do not follow the RFC to the letter.
-    if ( /[^ -:<-[\]-~]/.test(value) ) {
-        value = encodeURIComponent(value);
-    }
-
-    const cookieBefore = getCookieFn(name);
-    if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
-    if ( cookieBefore === value && options.reload ) { return; }
-
-    const cookieParts = [ name, '=', value ];
-    if ( expires !== '' ) {
-        cookieParts.push('; expires=', expires);
-    }
-
-    if ( path === '' ) { path = '/'; }
-    else if ( path === 'none' ) { path = ''; }
-    if ( path !== '' && path !== '/' ) { return; }
-    if ( path === '/' ) {
-        cookieParts.push('; path=/');
-    }
-
-    if ( trusted ) {
-        if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
-        }
-        cookieParts.push('; Secure');
-    } else if ( /^__(Host|Secure)-/.test(name) ) {
-        cookieParts.push('; Secure');
-    }
-
-    try {
-        document.cookie = cookieParts.join('');
-    } catch(_) {
-    }
-
-    const done = getCookieFn(name) === value;
-    if ( done && options.reload ) {
-        window.location.reload();
-    }
-
-    return done;
-}
-
-function getCookieFn(
-    name = ''
-) {
-    for ( const s of document.cookie.split(/\s*;\s*/) ) {
-        const pos = s.indexOf('=');
-        if ( pos === -1 ) { continue; }
-        if ( s.slice(0, pos) !== name ) { continue; }
-        return s.slice(pos+1).trim();
-    }
-}
-
 /******************************************************************************/
 
 const hnParts = [];
@@ -385,7 +383,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { setCookie(...argsList[i]); }
+    try { removeNodeText(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -407,7 +405,7 @@ const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_setCookie();
+    return uBOL_removeNodeText();
 }
 
 // Firefox
@@ -415,11 +413,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_setCookie = cloneInto([
-            [ '(', uBOL_setCookie.toString(), ')();' ],
+        page.uBOL_removeNodeText = cloneInto([
+            [ '(', uBOL_removeNodeText.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_setCookie);
+        const blob = new page.Blob(...page.uBOL_removeNodeText);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -433,7 +431,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_setCookie;
+    delete page.uBOL_removeNodeText;
 }
 
 /******************************************************************************/

@@ -42,9 +42,9 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["getComputedStyle","_0x"],["document.createEvent","Object.trigger"]];
+const argsList = [["document.createEvent","Object.trigger"]];
 
-const hostnamesMap = new Map([["japscan.lol",0],["zone-telechargement.moe",1],["dl-protect.net",1],["annuaire-telechargement.tel",1]]);
+const hostnamesMap = new Map([["zone-telechargement.moe",0],["dl-protect.net",0],["annuaire-telechargement.tel",0]]);
 
 const entitiesMap = new Map([]);
 

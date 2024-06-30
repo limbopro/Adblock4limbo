@@ -63,6 +63,8 @@ function trustedReplaceXhrResponse(
     if ( pattern === '*' ) { pattern = '.*'; }
     const rePattern = safe.patternToRegex(pattern);
     const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
         open(method, url, ...args) {
             const outerXhr = this;
@@ -98,6 +100,9 @@ function trustedReplaceXhrResponse(
                 return xhrDetails.response;
             }
             if ( typeof innerResponse !== 'string' ) {
+                return (xhrDetails.response = innerResponse);
+            }
+            if ( reIncludes && reIncludes.test(innerResponse) === false ) {
                 return (xhrDetails.response = innerResponse);
             }
             const textBefore = innerResponse;

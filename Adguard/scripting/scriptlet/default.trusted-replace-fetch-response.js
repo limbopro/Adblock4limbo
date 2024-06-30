@@ -68,6 +68,8 @@ function replaceFetchResponseFn(
     if ( pattern === '*' ) { pattern = '.*'; }
     const rePattern = safe.patternToRegex(pattern);
     const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
+    const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
             const fetchPromise = Reflect.apply(target, thisArg, args);
@@ -97,6 +99,9 @@ function replaceFetchResponseFn(
             return fetchPromise.then(responseBefore => {
                 const response = responseBefore.clone();
                 return response.text().then(textBefore => {
+                    if ( reIncludes && reIncludes.test(textBefore) === false ) {
+                        return responseBefore;
+                    }
                     const textAfter = textBefore.replace(rePattern, replacement);
                     const outcome = textAfter !== textBefore ? 'match' : 'nomatch';
                     if ( outcome === 'nomatch' ) { return responseBefore; }

@@ -42,13 +42,13 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/checkAdBlock|tick/"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","\"Shadow"]];
+const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/checkAd|tick/"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","violatedDirective"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["game4you.top",3],["games-pc.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["inforesist.org",[4,8]],["sports.ru",5],["pikabu.ru",6],["gsm.in.ua",7],["24boxing.com.ua",8],["avtovod.com.ua",8],["bigmir.net",8],["buhgalter.com.ua",8],["buhgalter911.com",8],["businessua.com",8],["censor.net",8],["dengi.ua",8],["ditey.com",8],["epravda.com.ua",8],["eurointegration.com.ua",8],["f1analytic.com",8],["facenews.ua",8],["factor.ua",8],["football-ukraine.com",8],["footballgazeta.com",8],["footballtransfer.com.ua",8],["gazeta.ua",8],["gorod.dp.ua",8],["hvylya.net",8],["i.ua",8],["isport.ua",8],["ivona.ua",8],["kolobok.ua",8],["kriminal.tv",8],["liga.net",8],["meteo.ua",8],["meteofor.com.ua",8],["nnovosti.info",8],["nv.ua",8],["panno4ka.net",8],["pogodaua.com",8],["pravda.com.ua",8],["real-vin.com",8],["smak.ua",8],["sportanalytic.com",8],["stravy.net",8],["tochka.net",8],["tv.ua",8],["viva.ua",8],["vsetv.com",8],["www.ukr.net",8],["zdorovia.com.ua",8]]);
+const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["game4you.top",3],["games-pc.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["inforesist.org",[4,9]],["sports.ru",5],["pikabu.ru",6],["gsm.in.ua",7],["mail.ru",8],["24boxing.com.ua",9],["avtovod.com.ua",9],["bigmir.net",9],["buhgalter.com.ua",9],["buhgalter911.com",9],["businessua.com",9],["censor.net",9],["dengi.ua",9],["ditey.com",9],["epravda.com.ua",9],["eurointegration.com.ua",9],["f1analytic.com",9],["facenews.ua",9],["factor.ua",9],["football-ukraine.com",9],["footballgazeta.com",9],["footballtransfer.com.ua",9],["gazeta.ua",9],["gorod.dp.ua",9],["hvylya.net",9],["i.ua",9],["isport.ua",9],["ivona.ua",9],["kolobok.ua",9],["kriminal.tv",9],["liga.net",9],["meteo.ua",9],["meteofor.com.ua",9],["nnovosti.info",9],["nv.ua",9],["panno4ka.net",9],["pogodaua.com",9],["pravda.com.ua",9],["real-vin.com",9],["smak.ua",9],["sportanalytic.com",9],["stravy.net",9],["tochka.net",9],["tv.ua",9],["viva.ua",9],["vsetv.com",9],["www.ukr.net",9],["zdorovia.com.ua",9]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["3igames.mail.ru",[8]],["account.mail.ru",[8]],["auto.mail.ru",[8]],["biz.mail.ru",[8]],["blog.mail.ru",[8]],["bonus.mail.ru",[8]],["calendar.mail.ru",[8]],["calls.mail.ru",[8]],["cloud.mail.ru",[8]],["connect.mail.ru",[8]],["deti.mail.ru",[8]],["dobro.mail.ru",[8]],["e.mail.ru",[8]],["gibdd.mail.ru",[8]],["health.mail.ru",[8]],["help.mail.ru",[8]],["hi-tech.mail.ru",[8]],["horo.mail.ru",[8]],["kino.mail.ru",[8]],["lady.mail.ru",[8]],["love.mail.ru",[8]],["mcs.mail.ru",[8]],["minigames.mail.ru",[8]],["my.mail.ru",[8]],["news.mail.ru",[8]],["o2.mail.ru",[8]],["octavius.mail.ru",[8]],["okminigames.mail.ru",[8]],["otvet.mail.ru",[8]],["pets.mail.ru",[8]],["player-smotri.mail.ru",[8]],["pogoda.mail.ru",[8]],["top.mail.ru",[8]],["touch.mail.ru",[8]],["tv.mail.ru",[8]]]);
 
 /******************************************************************************/
 
@@ -120,6 +120,7 @@ function replaceNodeTextFn(
             count += 1;
             if ( node === null ) { break; }
             if ( reNodeName.test(node.nodeName) === false ) { continue; }
+            if ( node === document.currentScript ) { continue; }
             if ( handleNode(node) ) { continue; }
             stop(); break;
         }

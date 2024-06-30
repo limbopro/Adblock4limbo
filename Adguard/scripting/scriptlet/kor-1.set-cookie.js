@@ -74,6 +74,7 @@ function setCookie(
         'yes', 'y', 'no', 'n',
         'necessary', 'required',
         'approved', 'disapproved',
+        'hide', 'hidden',
     ];
     const normalized = value.toLowerCase();
     const match = /^("?)(.+)\1$/.exec(normalized);
@@ -295,6 +296,8 @@ function setCookieFn(
         if ( options.domain ) {
             cookieParts.push(`; domain=${options.domain}`);
         }
+        cookieParts.push('; Secure');
+    } else if ( /^__(Host|Secure)-/.test(name) ) {
         cookieParts.push('; Secure');
     }
 

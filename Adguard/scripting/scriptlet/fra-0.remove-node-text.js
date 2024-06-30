@@ -42,7 +42,7 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","https://www.aozoiekopoaka.shop/"]];
+const argsList = [["script","/ApoZow|'(map'|\\/imgs\\/|ads?-\\d+|ad-img-slot|ad_inview_area|div-leader-ad)|\\['style'\\]\\['display'\\]/"]];
 
 const hostnamesMap = new Map([["japscan.lol",0]]);
 
@@ -120,6 +120,7 @@ function replaceNodeTextFn(
             count += 1;
             if ( node === null ) { break; }
             if ( reNodeName.test(node.nodeName) === false ) { continue; }
+            if ( node === document.currentScript ) { continue; }
             if ( handleNode(node) ) { continue; }
             stop(); break;
         }

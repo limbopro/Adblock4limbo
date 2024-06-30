@@ -42,9 +42,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["oncontextmenu|onselectstart|ondragstart|oncopy|oncut|onpaste|onbeforecopy"],["data-name=\"exitInterstitial\"","","stay"]];
+const argsList = [["oncontextmenu|onselectstart|ondragstart|oncopy|oncut|onpaste|onbeforecopy"]];
 
-const hostnamesMap = new Map([["banistmo.com",0],["firstcoastnews.com",1],["wtsp.com",1],["ajc.com",1],["wusa9.com",1],["wfaa.com",1],["9news.com",1],["fox2now.com",1],["wcnc.com",1],["13newsnow.com",1],["wsvn.com",1],["abc15.com",1],["wwltv.com",1],["wkyc.com",1],["wthr.com",1],["11alive.com",1],["king5.com",1]]);
+const hostnamesMap = new Map([["banistmo.com",0]]);
 
 const entitiesMap = new Map([]);
 

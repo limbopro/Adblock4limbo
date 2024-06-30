@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["","250"],["Adblock"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["ai_adb"],["alert","15000"],["antyadb","5000"],["doAd"],["evercookie","300000"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["getVisibleDivs","300"],["is_adblock"],["removeJuristicNotification"],["saa"],["setInterval",""],["sparkle"],["toUTCString"],["slot:fail"],["NO_MIMIC_ON_"]];
+const argsList = [["","250"],["Adblock"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["ai_adb"],["alert","15000"],["antyadb","5000"],["doAd"],["evercookie","300000"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["getVisibleDivs","300"],["is_adblock"],["removeJuristicNotification"],["saa"],["setInterval",""],["sparkle"],["toUTCString"]];
 
-const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["razlozhi.ru",2],["allapteki.ru",3],["buhgalter.com.ua",4],["buhgalter911.com",4],["factor.ua",4],["strategium.ru",5],["fonmod.com",[6,11]],["aqicn.org",7],["tragtorr.in",8],["tragtorr.info",8],["tv-kanali.online",9],["tradingview.com",10],["hdkinoteatr.com",12],["ferr-um.ucoz.ru",13],["stalker-2-2012.ucoz.net",13],["rusvesna.su",14],["fishki.net",15],["vseinstrumenti.ru",16],["testserver.pro",17],["websdr.space",18],["anime-chan.me",19],["num-words.com",20],["softportal.com",20],["e.mail.ru",[21,22]],["octavius.mail.ru",[21,22]]]);
+const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["razlozhi.ru",2],["allapteki.ru",3],["buhgalter.com.ua",4],["buhgalter911.com",4],["factor.ua",4],["strategium.ru",5],["fonmod.com",[6,11]],["aqicn.org",7],["tragtorr.in",8],["tragtorr.info",8],["tv-kanali.online",9],["tradingview.com",10],["hdkinoteatr.com",12],["ferr-um.ucoz.ru",13],["stalker-2-2012.ucoz.net",13],["rusvesna.su",14],["fishki.net",15],["vseinstrumenti.ru",16],["testserver.pro",17],["websdr.space",18],["anime-chan.me",19],["num-words.com",20],["softportal.com",20]]);
 
 const entitiesMap = new Map([]);
 

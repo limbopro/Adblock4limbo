@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["countChapterNum","$remove$"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["thejournal.ie",1],["bloomberg.com",2],["dailynewshungary.com",3],["cnn.com",[4,5]],["reuters.com",6],["theweek.com",[7,8]],["seekingalpha.com",9],["nisanyansozluk.com",10],["quillbot.com",11],["csmonitor.com",12],["deepl.com",[13,14]]]);
+const hostnamesMap = new Map([["zippia.com",0],["thejournal.ie",1],["bloomberg.com",2],["dailynewshungary.com",3],["cnn.com",[4,5]],["reuters.com",6],["theweek.com",[7,8]],["seekingalpha.com",9],["nisanyansozluk.com",10],["pawread.com",11],["quillbot.com",12],["csmonitor.com",13],["deepl.com",[14,15]]]);
 
 const entitiesMap = new Map([]);
 

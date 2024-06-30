@@ -1,11 +1,11 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 12 Jun 2024 11:50:55 GMT
-# entries:        3552
+# last updated:   Tue, 25 Jun 2024 22:47:11 GMT
+# entries:        3543
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&minetype=plaintext
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -76,7 +76,6 @@ DOMAIN-SUFFIX,abstractedauthority.com, reject
 DOMAIN-SUFFIX,abtasty.com, reject
 DOMAIN-SUFFIX,ac.rnm.ca, reject
 DOMAIN-SUFFIX,acemlnb.com, reject
-DOMAIN-SUFFIX,acid-adserver.click, reject
 DOMAIN-SUFFIX,acridtwist.com, reject
 DOMAIN-SUFFIX,actionsplash.com, reject
 DOMAIN-SUFFIX,actonsoftware.com, reject
@@ -184,7 +183,6 @@ DOMAIN-SUFFIX,adaction.de, reject
 DOMAIN-SUFFIX,adadvisor.net, reject
 DOMAIN-SUFFIX,adalliance.io, reject
 DOMAIN-SUFFIX,adanging.blog, reject
-DOMAIN-SUFFIX,adap.tv, reject
 DOMAIN-SUFFIX,adapt.tv, reject
 DOMAIN-SUFFIX,adaranth.com, reject
 DOMAIN-SUFFIX,adbilty.me, reject
@@ -395,7 +393,6 @@ DOMAIN-SUFFIX,ads.bluemountain.com, reject
 DOMAIN-SUFFIX,ads.boerding.com, reject
 DOMAIN-SUFFIX,ads.boylesports.com, reject
 DOMAIN-SUFFIX,ads.brabys.com, reject
-DOMAIN-SUFFIX,ads.brazzers.com, reject
 DOMAIN-SUFFIX,ads.bumq.com, reject
 DOMAIN-SUFFIX,ads.canalblog.com, reject
 DOMAIN-SUFFIX,ads.casinocity.com, reject
@@ -581,7 +578,6 @@ DOMAIN-SUFFIX,ads.schmoozecom.net, reject
 DOMAIN-SUFFIX,ads.scifi.com, reject
 DOMAIN-SUFFIX,ads.seniorfriendfinder.com, reject
 DOMAIN-SUFFIX,ads.servebom.com, reject
-DOMAIN-SUFFIX,ads.sexgratuit.tv, reject
 DOMAIN-SUFFIX,ads.shizmoo.com, reject
 DOMAIN-SUFFIX,ads.shopstyle.com, reject
 DOMAIN-SUFFIX,ads.sift.co.uk, reject
@@ -866,7 +862,6 @@ DOMAIN-SUFFIX,adworx.nl, reject
 DOMAIN-SUFFIX,adx.gayboy.at, reject
 DOMAIN-SUFFIX,adxpansion.com, reject
 DOMAIN-SUFFIX,adxpose.com, reject
-DOMAIN-SUFFIX,adyea.com, reject
 DOMAIN-SUFFIX,adyoulike.com, reject
 DOMAIN-SUFFIX,adz.rashflash.com, reject
 DOMAIN-SUFFIX,adz2you.com, reject
@@ -1294,6 +1289,7 @@ DOMAIN-SUFFIX,cityads.telus.net, reject
 DOMAIN-SUFFIX,cj.com, reject
 DOMAIN-SUFFIX,cjbmanagement.com, reject
 DOMAIN-SUFFIX,cjlog.com, reject
+DOMAIN-SUFFIX,cl.turkishairlines.com, reject
 DOMAIN-SUFFIX,cl0udh0st1ng.com, reject
 DOMAIN-SUFFIX,claria.com, reject
 DOMAIN-SUFFIX,clck.ru, reject
@@ -1710,7 +1706,6 @@ DOMAIN-SUFFIX,feedmob.com, reject
 DOMAIN-SUFFIX,fimserve.com, reject
 DOMAIN-SUFFIX,findcommerce.com, reject
 DOMAIN-SUFFIX,findyourcasino.com, reject
-DOMAIN-SUFFIX,fineoffer.net, reject
 DOMAIN-SUFFIX,fingahvf.top, reject
 DOMAIN-SUFFIX,fireworkadservices.com, reject
 DOMAIN-SUFFIX,fireworkanalytics.com, reject
@@ -2331,9 +2326,7 @@ DOMAIN-SUFFIX,mylink-today.com, reject
 DOMAIN-SUFFIX,mypagerank.net, reject
 DOMAIN-SUFFIX,mypagerank.ru, reject
 DOMAIN-SUFFIX,mypowermall.com, reject
-DOMAIN-SUFFIX,mystat-in.net, reject
 DOMAIN-SUFFIX,mystat.pl, reject
-DOMAIN-SUFFIX,mytop-in.net, reject
 DOMAIN-SUFFIX,n2.mouseflow.com, reject
 DOMAIN-SUFFIX,n69.com, reject
 DOMAIN-SUFFIX,naj.sk, reject
@@ -2712,7 +2705,6 @@ DOMAIN-SUFFIX,rcadserver.com, reject
 DOMAIN-SUFFIX,reachjunction.com, reject
 DOMAIN-SUFFIX,reactx.com, reject
 DOMAIN-SUFFIX,readingguilt.com, reject
-DOMAIN-SUFFIX,readserver.net, reject
 DOMAIN-SUFFIX,readymoon.com, reject
 DOMAIN-SUFFIX,realcastmedia.com, reject
 DOMAIN-SUFFIX,realclever.com, reject
@@ -2878,7 +2870,6 @@ DOMAIN-SUFFIX,services.hearstmags.com, reject
 DOMAIN-SUFFIX,serving-sys.com, reject
 DOMAIN-SUFFIX,sessioncam.com, reject
 DOMAIN-SUFFIX,sexcounter.com, reject
-DOMAIN-SUFFIX,sexinyourcity.com, reject
 DOMAIN-SUFFIX,sexlist.com, reject
 DOMAIN-SUFFIX,sextracker.com, reject
 DOMAIN-SUFFIX,shakegoldfish.com, reject

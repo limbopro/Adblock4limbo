@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["/touchmove|wheel/","preventDefault()"],["load","interstitialAd"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
+const argsList = [["DOMContentLoaded","getComputedStyle(a).height"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["/touchmove|wheel/","preventDefault()"],["load","interstitialAd"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
 
-const hostnamesMap = new Map([["jukenbbs.com",0],["blog.housinkai.com",1],["kakenhi.net",1],["seesaa.net",1],["blog-and-destroy.com",2],["coolpan.net",3],["twi-fans.com",4],["twivideo.net",5],["twidouga.net",6],["anacap.doorblog.jp",7],["anianierosuki.work",8],["uraaka-joshi.com",9],["tokyomotion.net",10],["ero-video.net",11],["jp-xvideos.info",12]]);
+const hostnamesMap = new Map([["iwb.jp",0],["jukenbbs.com",1],["blog.housinkai.com",2],["kakenhi.net",2],["seesaa.net",2],["blog-and-destroy.com",3],["coolpan.net",4],["twi-fans.com",5],["twivideo.net",6],["twidouga.net",7],["anacap.doorblog.jp",8],["anianierosuki.work",9],["uraaka-joshi.com",10],["tokyomotion.net",11],["ero-video.net",12],["jp-xvideos.info",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -75,7 +75,9 @@ function addEventListenerDefuser(
         if ( elem instanceof Document ) { return 'document'; }
         if ( elem instanceof Element === false ) { return '?'; }
         const parts = [];
-        if ( elem.id !== '' ) { parts.push(`#${CSS.escape(elem.id)}`); }
+        // https://github.com/uBlockOrigin/uAssets/discussions/17907#discussioncomment-9871079
+        const id = String(elem.id);
+        if ( id !== '' ) { parts.push(`#${CSS.escape(id)}`); }
         for ( let i = 0; i < elem.classList.length; i++ ) {
             parts.push(`.${CSS.escape(elem.classList.item(i))}`);
         }

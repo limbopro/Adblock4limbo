@@ -1,10 +1,8 @@
-
-
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 25 Jun 2024 22:47:11 GMT
-# entries:        3543
+# last updated:   Wed, 10 Jul 2024 18:09:34 GMT
+# entries:        3550
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -74,6 +72,7 @@ DOMAIN-SUFFIX,ablinks.mail.hinge.co
 DOMAIN-SUFFIX,aboardlevel.com
 DOMAIN-SUFFIX,abruptroad.com
 DOMAIN-SUFFIX,absorbingband.com
+DOMAIN-SUFFIX,absorbingcorn.com
 DOMAIN-SUFFIX,abstractedauthority.com
 DOMAIN-SUFFIX,abtasty.com
 DOMAIN-SUFFIX,ac.rnm.ca
@@ -432,7 +431,6 @@ DOMAIN-SUFFIX,ads.dtpnetwork.biz
 DOMAIN-SUFFIX,ads.eagletribune.com
 DOMAIN-SUFFIX,ads.easy-forex.com
 DOMAIN-SUFFIX,ads.economist.com
-DOMAIN-SUFFIX,ads.edbindex.dk
 DOMAIN-SUFFIX,ads.elcarado.com
 DOMAIN-SUFFIX,ads.electrocelt.com
 DOMAIN-SUFFIX,ads.elitetrader.com
@@ -445,7 +443,6 @@ DOMAIN-SUFFIX,ads.expat-blog.biz
 DOMAIN-SUFFIX,ads.fairfax.com.au
 DOMAIN-SUFFIX,ads.fastcomgroup.it
 DOMAIN-SUFFIX,ads.fasttrack-ignite.com
-DOMAIN-SUFFIX,ads.faxo.com
 DOMAIN-SUFFIX,ads.femmefab.nl
 DOMAIN-SUFFIX,ads.ferianc.com
 DOMAIN-SUFFIX,ads.filmup.com
@@ -724,7 +721,6 @@ DOMAIN-SUFFIX,adserver.janes.com
 DOMAIN-SUFFIX,adserver.kontent.com
 DOMAIN-SUFFIX,adserver.lecool.com
 DOMAIN-SUFFIX,adserver.mobi
-DOMAIN-SUFFIX,adserver.msmb.biz
 DOMAIN-SUFFIX,adserver.news.com.au
 DOMAIN-SUFFIX,adserver.nydailynews.com
 DOMAIN-SUFFIX,adserver.o2.pl
@@ -969,6 +965,7 @@ DOMAIN-SUFFIX,anstrex.com
 DOMAIN-SUFFIX,anuncios.edicaoms.com.br
 DOMAIN-SUFFIX,anxiousapples.com
 DOMAIN-SUFFIX,api.amplitude.com
+DOMAIN-SUFFIX,api.appmetrica.yandex.ru
 DOMAIN-SUFFIX,api.eu.amplitude.com
 DOMAIN-SUFFIX,api.intensifier.de
 DOMAIN-SUFFIX,api.iterable.com
@@ -983,7 +980,6 @@ DOMAIN-SUFFIX,app-measurement.com
 DOMAIN-SUFFIX,app.pendo.io
 DOMAIN-SUFFIX,app2.salesmanago.pl
 DOMAIN-SUFFIX,appboycdn.com
-DOMAIN-SUFFIX,appmetrica.yandex.ru
 DOMAIN-SUFFIX,appsflyer.com
 DOMAIN-SUFFIX,aps.hearstnp.com
 DOMAIN-SUFFIX,apsalar.com
@@ -1352,7 +1348,6 @@ DOMAIN-SUFFIX,clickonometrics.pl
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk
 DOMAIN-SUFFIX,clicks.equantum.com
 DOMAIN-SUFFIX,clicks.eventbrite.com
-DOMAIN-SUFFIX,clicks.mods.de
 DOMAIN-SUFFIX,clicks.monzo.com
 DOMAIN-SUFFIX,clickserve.cc-dt.com
 DOMAIN-SUFFIX,clicktag.de
@@ -1708,6 +1703,7 @@ DOMAIN-SUFFIX,feedmob.com
 DOMAIN-SUFFIX,fimserve.com
 DOMAIN-SUFFIX,findcommerce.com
 DOMAIN-SUFFIX,findyourcasino.com
+DOMAIN-SUFFIX,fineoffer.net
 DOMAIN-SUFFIX,fingahvf.top
 DOMAIN-SUFFIX,fireworkadservices.com
 DOMAIN-SUFFIX,fireworkanalytics.com
@@ -1885,6 +1881,7 @@ DOMAIN-SUFFIX,hocgeese.com
 DOMAIN-SUFFIX,hollowafterthought.com
 DOMAIN-SUFFIX,homelycrown.com
 DOMAIN-SUFFIX,homepageking.de
+DOMAIN-SUFFIX,honorablehall.com
 DOMAIN-SUFFIX,honorableland.com
 DOMAIN-SUFFIX,hostedads.realitykings.com
 DOMAIN-SUFFIX,hotjar.com
@@ -2036,6 +2033,7 @@ DOMAIN-SUFFIX,klclick1.com
 DOMAIN-SUFFIX,kliks.nl
 DOMAIN-SUFFIX,klsdee.com
 DOMAIN-SUFFIX,kmpiframe.keepmeposted.com.mt
+DOMAIN-SUFFIX,knitstamp.com
 DOMAIN-SUFFIX,knorex.com
 DOMAIN-SUFFIX,knottyswing.com
 DOMAIN-SUFFIX,komoona.com
@@ -2589,6 +2587,7 @@ DOMAIN-SUFFIX,previousplayground.com
 DOMAIN-SUFFIX,previouspotato.com
 DOMAIN-SUFFIX,prf.hn
 DOMAIN-SUFFIX,priceypies.com
+DOMAIN-SUFFIX,pricklydebt.com
 DOMAIN-SUFFIX,priefy.com
 DOMAIN-SUFFIX,primetime.net
 DOMAIN-SUFFIX,privatecash.com
@@ -2740,6 +2739,11 @@ DOMAIN-SUFFIX,reklamdsp.com
 DOMAIN-SUFFIX,relmaxtop.com
 DOMAIN-SUFFIX,rememberdiscussion.com
 DOMAIN-SUFFIX,remox.com
+DOMAIN-SUFFIX,report-1.appmetrica.webvisor.com
+DOMAIN-SUFFIX,report-2.appmetrica.webvisor.com
+DOMAIN-SUFFIX,report-partners.appmetrica.yandex.net
+DOMAIN-SUFFIX,report.ap.yandex-net.ru
+DOMAIN-SUFFIX,report.appmetrica.yandex.net
 DOMAIN-SUFFIX,republika.onet.pl
 DOMAIN-SUFFIX,resalag.com
 DOMAIN-SUFFIX,resonantbrush.com
@@ -3059,6 +3063,7 @@ DOMAIN-SUFFIX,summerhamster.com
 DOMAIN-SUFFIX,summerobject.com
 DOMAIN-SUFFIX,sumo.com
 DOMAIN-SUFFIX,sumome.com
+DOMAIN-SUFFIX,superawesome.tv
 DOMAIN-SUFFIX,superclix.de
 DOMAIN-SUFFIX,superficialsquare.com
 DOMAIN-SUFFIX,supersonicads.com

@@ -42,9 +42,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],[".video-skip[data-time]","data-time","0"],[".lazy","src","[data-sco-src]"]];
+const argsList = [["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],[".video-skip[data-time]","data-time","0"],[".lazy","src","[data-sco-src]"],[".floatL > img.lazyload","src","[data-src]"]];
 
-const hostnamesMap = new Map([["statisticsanddata.org",0],["18kalebettv.xyz",1],["19kalebettv.xyz",1],["rocketnews24.com",2],["soranews24.com",2],["youpouch.com",2]]);
+const hostnamesMap = new Map([["statisticsanddata.org",0],["18kalebettv.xyz",1],["19kalebettv.xyz",1],["rocketnews24.com",2],["soranews24.com",2],["youpouch.com",2],["phileweb.com",3]]);
 
 const entitiesMap = new Map([]);
 

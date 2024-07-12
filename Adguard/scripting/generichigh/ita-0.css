@@ -71,6 +71,7 @@ a[href^="https://www.18carati.com/?acc="],
 a[href^="https://www.centoxcento.net/?track="],
 a[href^="https://www.dazn.com/"][href*="?utm_source=affiliate"],
 av-adv-slot,
+div[class^="hbagency_space_"],
 div[class^="rtbuzz_"],
 div[id^="rtbuzz_"] {
     display: none !important;

@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"],["/document\\.getElementById[\\s\\S]*?\\.style\\.display\\.indexOf/"]];
+const argsList = [[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"],["/document\\.getElementById[\\s\\S]*?\\.style\\.display\\.indexOf/"]];
 
-const hostnamesMap = new Map([["manwa.fun",0],["18comic.vip",1],["itdog.cn",2],["xbeibeix.com",3],["520cc.cc",[4,19]],["colamanga.com",5],["cocomanga.com",[5,16]],["ekamus.info",6],["logi.im",6],["moeci.com",7],["tingfm.com",8],["233tw.com",9],["ruanyifeng.com",10],["t66y.com",11],["tsubasa.im",12],["league-funny.com",13],["haoweichi.com",14],["zhenbuka.com",15],["ohmanhua.com",16],["onemanhua.com",16],["5278.cc",17],["hboav.com",17],["axutongxue.net",18],["nfmovies.com",20]]);
+const hostnamesMap = new Map([["ftchinese.com",0],["manwa.fun",1],["18comic.vip",2],["itdog.cn",3],["xbeibeix.com",4],["520cc.cc",[5,20]],["colamanga.com",6],["cocomanga.com",[6,17]],["ekamus.info",7],["logi.im",7],["moeci.com",8],["tingfm.com",9],["233tw.com",10],["ruanyifeng.com",11],["t66y.com",12],["tsubasa.im",13],["league-funny.com",14],["haoweichi.com",15],["zhenbuka.com",16],["ohmanhua.com",17],["onemanhua.com",17],["5278.cc",18],["hboav.com",18],["axutongxue.net",19],["nfmovies.com",21]]);
 
 const entitiesMap = new Map([]);
 

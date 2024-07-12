@@ -26,6 +26,7 @@
 [data-block-type="block:newsletter"],
 [data-module="newsletter-signup"],
 [data-nc="nc-newsletter"],
+[data-nxt-template-substep="SubscribeNewsletter"],
 [data-spot-im-class="card-container"],
 [data-target="#newsletter-modal"],
 [data-testid="NewsletterSubscribeFormWrapper"],

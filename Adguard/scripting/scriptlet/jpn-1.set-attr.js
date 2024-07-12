@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: default
+// ruleset: jpn-1
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_setSessionStorageItem = function() {
+const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["realm.Oidc.3pc","$remove$"],["nxt_is_incognito","false"]];
+const argsList = [[".floatL > img.lazyload","src","[data-src]"]];
 
-const hostnamesMap = new Map([["sfchronicle.com",0],["advocate-news.com",1],["akronnewsreporter.com",1],["bocopreps.com",1],["bostonherald.com",1],["broomfieldenterprise.com",1],["brushnewstribune.com",1],["buffzone.com",1],["burlington-record.com",1],["canoncitydailyrecord.com",1],["chicagotribune.com",1],["chicoer.com",1],["coloradodaily.com",1],["coloradohometownweekly.com",1],["courant.com",1],["dailybreeze.com",1],["dailybulletin.com",1],["dailycamera.com",1],["dailydemocrat.com",1],["dailyfreeman.com",1],["dailylocal.com",1],["dailynews.com",1],["dailypress.com",1],["dailytribune.com",1],["delcotimes.com",1],["denverpost.com",1],["eastbaytimes.com",1],["eptrail.com",1],["excelsiorcalifornia.com",1],["fortmorgantimes.com",1],["greeleytribune.com",1],["journal-advocate.com",1],["julesburgadvocate.com",1],["lamarledger.com",1],["lowellsun.com",1],["macombdaily.com",1],["mainlinemedianews.com",1],["marinij.com",1],["mcall.com",1],["mendocinobeacon.com",1],["mercurynews.com",1],["montereyherald.com",1],["morningjournal.com",1],["nashobavalleyvoice.com",1],["news-herald.com",1],["nydailynews.com",1],["ocregister.com",1],["oneidadispatch.com",1],["orlandosentinel.com",1],["orovillemr.com",1],["paradisepost.com",1],["pasadenastarnews.com",1],["pilotonline.com",1],["pottsmerc.com",1],["pressandguide.com",1],["pressenterprise.com",1],["presstelegram.com",1],["readingeagle.com",1],["record-bee.com",1],["redbluffdailynews.com",1],["redlandsdailyfacts.com",1],["reporterherald.com",1],["santacruzsentinel.com",1],["saratogian.com",1],["sbsun.com",1],["sentinelandenterprise.com",1],["sgvtribune.com",1],["siliconvalley.com",1],["southplattesentinel.com",1],["sun-sentinel.com",1],["themorningsun.com",1],["thenewsherald.com",1],["theoaklandpress.com",1],["thereporter.com",1],["thereporteronline.com",1],["times-standard.com",1],["timescall.com",1],["timesherald.com",1],["timesheraldonline.com",1],["trentonian.com",1],["troyrecord.com",1],["twincities.com",1],["ukiahdailyjournal.com",1],["voicenews.com",1],["whittierdailynews.com",1],["willitsnews.com",1]]);
+const hostnamesMap = new Map([["phileweb.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,76 +52,115 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function setSessionStorageItem(key = '', value = '') {
-    setLocalStorageItemFn('session', false, key, value);
+function setAttr(
+    selector = '',
+    attr = '',
+    value = ''
+) {
+    if ( selector === '' ) { return; }
+    if ( attr === '' ) { return; }
+
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-attr', attr, value);
+    const validValues = [ '', 'false', 'true' ];
+    let copyFrom = '';
+
+    if ( validValues.includes(value.toLowerCase()) === false ) {
+        if ( /^\d+$/.test(value) ) {
+            const n = parseInt(value, 10);
+            if ( n >= 32768 ) { return; }
+            value = `${n}`;
+        } else if ( /^\[.+\]$/.test(value) ) {
+            copyFrom = value.slice(1, -1);
+        } else {
+            return;
+        }
+    }
+
+    const extractValue = elem => {
+        if ( copyFrom !== '' ) {
+            return elem.getAttribute(copyFrom) || '';
+        }
+        return value;
+    };
+
+    const applySetAttr = ( ) => {
+        const elems = [];
+        try {
+            elems.push(...document.querySelectorAll(selector));
+        }
+        catch(ex) {
+            return false;
+        }
+        for ( const elem of elems ) {
+            const before = elem.getAttribute(attr);
+            const after = extractValue(elem);
+            if ( after === before ) { continue; }
+            if ( after !== '' && /^on/i.test(attr) ) {
+                if ( attr.toLowerCase() in elem ) { continue; }
+            }
+            elem.setAttribute(attr, after);
+            safe.uboLog(logPrefix, `${attr}="${after}"`);
+        }
+        return true;
+    };
+    let observer, timer;
+    const onDomChanged = mutations => {
+        if ( timer !== undefined ) { return; }
+        let shouldWork = false;
+        for ( const mutation of mutations ) {
+            if ( mutation.addedNodes.length === 0 ) { continue; }
+            for ( const node of mutation.addedNodes ) {
+                if ( node.nodeType !== 1 ) { continue; }
+                shouldWork = true;
+                break;
+            }
+            if ( shouldWork ) { break; }
+        }
+        if ( shouldWork === false ) { return; }
+        timer = self.requestAnimationFrame(( ) => {
+            timer = undefined;
+            applySetAttr();
+        });
+    };
+    const start = ( ) => {
+        if ( applySetAttr() === false ) { return; }
+        observer = new MutationObserver(onDomChanged);
+        observer.observe(document.body, {
+            subtree: true,
+            childList: true,
+        });
+    };
+    runAt(( ) => { start(); }, 'idle');
 }
 
-function setLocalStorageItemFn(
-    which = 'local',
-    trusted = false,
-    key = '',
-    value = '',
-) {
-    if ( key === '' ) { return; }
-
-    // For increased compatibility with AdGuard
-    if ( value === 'emptyArr' ) {
-        value = '[]';
-    } else if ( value === 'emptyObj' ) {
-        value = '{}';
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
     }
-
-    const trustedValues = [
-        '',
-        'undefined', 'null',
-        'false', 'true',
-        'on', 'off',
-        'yes', 'no',
-        'accept', 'reject',
-        'accepted', 'rejected',
-        '{}', '[]', '""',
-        '$remove$',
-    ];
-
-    if ( trusted ) {
-        if ( value.includes('$now$') ) {
-            value = value.replaceAll('$now$', Date.now());
-        }
-        if ( value.includes('$currentDate$') ) {
-            value = value.replaceAll('$currentDate$', `${Date()}`);
-        }
-        if ( value.includes('$currentISODate$') ) {
-            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
-        }
-    } else {
-        const normalized = value.toLowerCase();
-        const match = /^("?)(.+)\1$/.exec(normalized);
-        const unquoted = match && match[2] || normalized;
-        if ( trustedValues.includes(unquoted) === false ) {
-            if ( /^\d+$/.test(unquoted) === false ) { return; }
-            const n = parseInt(unquoted, 10);
-            if ( n > 32767 ) { return; }
-        }
-    }
-
-    try {
-        const storage = self[`${which}Storage`];
-        if ( value === '$remove$' ) {
-            const safe = safeSelf();
-            const pattern = safe.patternToRegex(key, undefined, true );
-            const toRemove = [];
-            for ( let i = 0, n = storage.length; i < n; i++ ) {
-                const key = storage.key(i);
-                if ( pattern.test(key) ) { toRemove.push(key); }
-            }
-            for ( const key of toRemove ) {
-                storage.removeItem(key);
-            }
-        } else {
-            storage.setItem(key, `${value}`);
-        }
-    } catch(ex) {
-    }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -341,7 +380,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { setSessionStorageItem(...argsList[i]); }
+    try { setAttr(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -363,7 +402,7 @@ const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_setSessionStorageItem();
+    return uBOL_setAttr();
 }
 
 // Firefox
@@ -371,11 +410,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_setSessionStorageItem = cloneInto([
-            [ '(', uBOL_setSessionStorageItem.toString(), ')();' ],
+        page.uBOL_setAttr = cloneInto([
+            [ '(', uBOL_setAttr.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_setSessionStorageItem);
+        const blob = new page.Blob(...page.uBOL_setAttr);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -389,7 +428,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_setSessionStorageItem;
+    delete page.uBOL_setAttr;
 }
 
 /******************************************************************************/

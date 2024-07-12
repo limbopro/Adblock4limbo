@@ -44,6 +44,7 @@ a[id^="adBanner"][target="_blank"],
 a[onclick*="AdRotatePro"],
 a[onclick*="artikelbanner"],
 a[title="LeoVegas"],
+adsaga-banner,
 article[data-section="sponsrad"],
 div[class$="popup-and-layer-ads"],
 div[class*="ai-viewport"][data-insertion-position],
@@ -62,6 +63,7 @@ div[id^="borka-widescreen"],
 div[id^="matchads-"],
 img[alt="Leovegas"],
 img[alt="Spela på Betsson"],
-img[src*="/track.adtraction"] {
+img[src*="/track.adtraction"],
+ins[data-revive-zoneid] {
     display: none !important;
 }

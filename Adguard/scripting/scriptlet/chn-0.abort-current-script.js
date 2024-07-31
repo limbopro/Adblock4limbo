@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"]];
+const argsList = [["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"],["Function","new Function(document["]];
 
-const hostnamesMap = new Map([["bilinovel.com",0],["18comic.org",1],["18comic.vip",1],["18-comic.work",1],["vxetable.cn",2],["h-ciyuan.com",3],["1keydata.com",4],["slit.cn",5],["jkpan.cc",[6,7]],["getrelax.cc",8],["poedb.tw",9],["bingfeng.tw",10],["youranshare.com",11],["getitfree.cn",12],["pg-wuming.com",13],["m.lwxs.com",[14,15]],["pornbest.org",16],["nunuyy3.org",17],["dogfight360.com",18],["o8tv.com",19],["javlibrary.com",20],["wnacg1.cc",21],["pixnet.net",22],["ggjav.com",23],["porn87.com",23]]);
+const hostnamesMap = new Map([["bilinovel.com",0],["18comic.org",1],["18comic.vip",1],["18-comic.work",1],["vxetable.cn",2],["h-ciyuan.com",3],["1keydata.com",4],["slit.cn",5],["jkpan.cc",[6,7]],["getrelax.cc",8],["poedb.tw",9],["bingfeng.tw",10],["youranshare.com",11],["getitfree.cn",12],["pg-wuming.com",13],["m.lwxs.com",[14,15]],["pornbest.org",16],["nunuyy3.org",17],["dogfight360.com",18],["o8tv.com",19],["javlibrary.com",20],["wnacg1.cc",21],["pixnet.net",22],["ggjav.com",23],["porn87.com",23],["mxdm.xyz",24]]);
 
 const entitiesMap = new Map([["hentaicomic",21],["wnacg",21]]);
 
@@ -179,7 +179,7 @@ function runAtHtmlElementFn(fn) {
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
@@ -207,12 +207,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
+const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
 
-const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["elmefarda.com",2],["s-moshaver.com",2],["ganjipakhsh.com",3],["javan-musics.com",4],["tabanmusic.com",4],["texahang.org",4],["iran-music.com",4],["mopon.ir",5],["noorlib.ir",6],["subkade.ir",7]]);
+const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["elmefarda.com",2],["s-moshaver.com",2],["ganjipakhsh.com",3],["javan-musics.com",4],["tabanmusic.com",4],["texahang.org",4],["iran-music.com",4],["lenz.ir",5],["mopon.ir",6],["noorlib.ir",7],["subkade.ir",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -188,12 +188,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

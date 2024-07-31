@@ -46,7 +46,7 @@ const argsList = [["block_ads"],["setNptTechAdblockerCookie"],["possivelAdblockD
 
 const hostnamesMap = new Map([["luratoons.com",0],["lura-toons.com",0],["elespanol.com",1],["mundodevalor.me",2],["aquiyahorajuegos.net",3],["visorcrab.com",4],["httpmangacrab2.com",4],["manga-crab.com",4],["mangacrab.com",4],["hinatasoul.com",5],["pcworld.es",6],["tunovelaligera.com",7],["20minutos.es",8],["comando.to",9],["porno-japones.top",10],["tvplusgratis.com",11],["hobbugs.com",11],["seriesretro.com",12],["cozinha.minhasdelicias.com",13],["diariodegoias.com.br",14],["outerspace.com.br",14],["1i1.in",15],["packsmega.info",16],["embedder.net",17],["poseidonhd2.co",18],["fiuxy2.com",19],["pelispop.me",20],["baixartorrents.org",[21,22]],["pctmix1.com",23],["aquariumgays.com",23],["allfeeds.live",24],["grantorrent.nl",27],["hentaistube.com",28],["libertinga.net",29],["mrpiracy.top",30],["seireshd.com",31],["cinetux.to",[32,33]],["holanime.com",34],["pirlotv.es",35],["repelisplus.vip",36],["descargaranimehentai.com",37],["tuhentaionline.com",38],["animeonline.ninja",39]]);
 
-const entitiesMap = new Map([["gnula",18],["cuevana2espanol",18],["cuevana",18],["cinecalidad2",25],["cine-calidad",26]]);
+const entitiesMap = new Map([["cuevana3",18],["gnula",18],["cuevana2espanol",18],["cuevana",18],["cinecalidad2",25],["cine-calidad",26]]);
 
 const exceptionsMap = new Map([]);
 
@@ -102,7 +102,7 @@ function abortOnPropertyRead(
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
@@ -130,12 +130,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

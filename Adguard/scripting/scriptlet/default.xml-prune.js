@@ -42,11 +42,11 @@ const uBOL_xmlPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["VAST","","barstoolsports.com"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"][not(@bitstreamSwitching=\"true\")]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])] | //*[name()=\"Period\"][./*[name()=\"BaseURL\"]][not(.//*[name()=\"ContentProtection\"])])","",".mpd"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"]/@start | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'adease')]])","[media^=\"A_D/\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ad/')]])","",".mpd"]];
+const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["VAST > Ad","","/tserver"],["VAST","","barstoolsports.com"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"][not(@bitstreamSwitching=\"true\")]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])] | //*[name()=\"Period\"][./*[name()=\"BaseURL\"]][not(.//*[name()=\"ContentProtection\"])])","",".mpd"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"]/@start | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'adease')]])","[media^=\"A_D/\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ad/')]])","",".mpd"]];
 
-const hostnamesMap = new Map([["imasdk.googleapis.com",[0,3]],["hulu.com",1],["www.amazon.co.jp",2],["www.amazon.co.uk",2],["www.amazon.com",2],["www.amazon.de",2],["www.primevideo.com",2],["vix.com",4],["go.discovery.com",5],["investigationdiscovery.com",5],["go.tlc.com",5],["sciencechannel.com",5],["cbs.com",6],["paramountplus.com",6],["play.max.com",7],["foxtel.com.au",8],["serially.it",9]]);
+const hostnamesMap = new Map([["imasdk.googleapis.com",[0,4]],["hulu.com",1],["www.amazon.co.jp",2],["www.amazon.co.uk",2],["www.amazon.com",2],["www.amazon.de",2],["www.primevideo.com",2],["itv.com",3],["vix.com",5],["go.discovery.com",6],["investigationdiscovery.com",6],["go.tlc.com",6],["sciencechannel.com",6],["cbs.com",7],["paramountplus.com",7],["play.max.com",8],["foxtel.com.au",9],["serially.it",10]]);
 
-const entitiesMap = new Map([["discoveryplus",5]]);
+const entitiesMap = new Map([["discoveryplus",6]]);
 
 const exceptionsMap = new Map([]);
 
@@ -204,12 +204,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["return"],["getComputedStyle"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"]];
+const argsList = [["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
 
-const hostnamesMap = new Map([["kotobank.jp",0],["puzzle-ch.com",1],["o-dan.net",2],["dropbooks.net",3],["fp1-siken.com",4],["fp2-siken.com",4],["fp3-siken.com",4],["ap-siken.com",4],["db-siken.com",4],["fe-siken.com",4],["itpassportsiken.com",4],["nw-siken.com",4],["pm-siken.com",4],["sc-siken.com",4],["sg-siken.com",4],["musenboya.com",5],["crefan.jp",6],["nan-net.com",7],["javcup.com",8],["yavtube.com",8],["46matome.net",9],["openworldnews.net",9],["animesoku.com",9],["vipnews.jp",9],["ldblog.jp",9],["livedoor.blog",9],["2chblog.jp",9],["oumaga-times.com",9],["all-nationz.com",9],["ebitsu.net",9],["fiveslot777.com",9],["jisaka.com",9],["kijyomatome.com",9],["konoyubitomare.jp",9],["livedoor.biz",9],["momoclonews.com",9],["norisoku.com",9],["pachinkopachisro.com",9],["vtubernews.jp",9],["blog.jp",9],["giants-news.com",9],["blog.livedoor.jp",9],["doorblog.jp",9],["sexpixbox.com",10]]);
+const hostnamesMap = new Map([["kotobank.jp",0],["puzzle-ch.com",1],["o-dan.net",2],["dropbooks.net",3],["fp1-siken.com",4],["fp2-siken.com",4],["fp3-siken.com",4],["ap-siken.com",4],["db-siken.com",4],["fe-siken.com",4],["itpassportsiken.com",4],["nw-siken.com",4],["pm-siken.com",4],["sc-siken.com",4],["sg-siken.com",4],["musenboya.com",5],["crefan.jp",6],["nan-net.com",7],["javcup.com",8],["yavtube.com",8],["46matome.net",9],["openworldnews.net",9],["animesoku.com",9],["vipnews.jp",9],["ldblog.jp",9],["livedoor.blog",9],["2chblog.jp",9],["oumaga-times.com",9],["all-nationz.com",9],["ebitsu.net",9],["fiveslot777.com",9],["jisaka.com",9],["kijyomatome.com",9],["konoyubitomare.jp",9],["livedoor.biz",9],["momoclonews.com",9],["norisoku.com",9],["pachinkopachisro.com",9],["vtubernews.jp",9],["blog.jp",9],["giants-news.com",9],["blog.livedoor.jp",9],["doorblog.jp",9],["sexpixbox.com",10],["skebetter.com",11]]);
 
 const entitiesMap = new Map([["manga1001",4]]);
 
@@ -117,12 +117,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

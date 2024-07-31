@@ -42,9 +42,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"]];
+const argsList = [["dtGonza.playeradstime","\"-1\""],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["__abburi","{\"value\": \"https://veev.to/assets/videoplayer/df8fdb9.js\"}"]];
 
-const hostnamesMap = new Map([["emturbovid.com",0],["tuborstb.co",1],["app.blubank.com",2],["mobileweb.bankmellat.ir",[2,3]]]);
+const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["emturbovid.com",1],["findjav.com",1],["mmtv01.xyz",1],["stbturbo.xyz",1],["tuborstb.co",2],["app.blubank.com",3],["mobileweb.bankmellat.ir",[3,4]],["veev.to",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -100,7 +100,7 @@ function setConstantFn(
         };
         if ( trappedProp === '' ) { return; }
         const thisScript = document.currentScript;
-        let normalValue = validateConstantFn(trusted, rawValue);
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
         if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
             normalValue = cloakFunc(normalValue);
         }
@@ -253,12 +253,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,9 +396,8 @@ function safeSelf() {
     return safe;
 }
 
-function validateConstantFn(trusted, raw) {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     let value;
     if ( raw === 'undefined' ) {
         value = undefined;

@@ -42,11 +42,11 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["detectedAdblock","noopFunc"],["hasAdblocker","false"],["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag","{}"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["initPopunder","noopFunc"],["__configuredDFPTags","{}"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","noopFunc"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["a_consola","noopFunc"]];
+const argsList = [["checkAdBlock","noopFunc"],["detectedAdblock","noopFunc"],["hasAdblocker","false"],["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag","{}"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["initPopunder","noopFunc"],["__configuredDFPTags","{}"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","noopFunc"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["a_consola","noopFunc"]];
 
-const hostnamesMap = new Map([["descargaseriestv.com",0],["3djuegos.com",1],["3djuegosguias.com",1],["3djuegospc.com",1],["applesfera.com",1],["compradiccion.com",1],["directoalpaladar.com",[1,24]],["elblogsalmon.com",[1,24]],["espinof.com",1],["genbeta.com",1],["mundoxiaomi.com",1],["trendencias.com",1],["trendenciashombre.com",1],["vidaextra.com",1],["vitonica.com",1],["xataka.com",1],["xatakaciencia.com",1],["xatakafoto.com",1],["xatakahome.com",1],["xatakamovil.com",1],["xatakandroid.com",1],["xatakawindows.com",1],["financasdeouro.com",2],["animeszone.net",3],["atv.pe",[4,5]],["monumental.co.cr",[4,5]],["elcomercio.com",[4,5]],["antena7.com.do",[4,5]],["rqp.com.bo",[4,5]],["canal12.com.sv",[4,5]],["chapintv.com",[4,5]],["vtv.com.hn",[4,5]],["tn23.tv",[4,5]],["canal13mexico.com",[4,5]],["c9n.com.py",[4,5]],["repretel.com",[4,5]],["redbolivision.tv.bo",[4,5]],["animesonline.nz",6],["mdr.ar",7],["impactoespananoticias.com",7],["skynovels.net",7],["botinnifit.com",7],["minhasdelicias.com",7],["luchaonline.com",7],["meocloud.pt",8],["fichajes.com",9],["niusdiario.es",[10,38]],["xerifetech.com",11],["pobre.wtf",[12,39]],["suaads.com",13],["reidoplacar.com",[13,40]],["suaurl.com",[13,40]],["legendei.net",14],["documaniatv.com",15],["cadenaser.com",16],["texto.kom.gt",17],["infojobs.com.br",18],["maringapost.com.br",19],["bandab.com.br",19],["ouniversodatv.com",20],["tribunaavila.com",21],["deportealdia.live",22],["elquintobeatle.com",23],["empregoestagios.com",23],["satcesc.com",23],["bebesymas.com",24],["diariodelviajero.com",24],["motorpasion.com",24],["motorpasionmoto.com",24],["pymesyautonomos.com",24],["docer.com.ar",25],["doceru.com",25],["docero.com.br",25],["comandotorrents.org",26],["adslayuda.com",27],["outerspace.com.br",28],["doramasmp4.com",29],["file4go.net",31],["seriesdonghua.com",32],["mundodonghua.com",32],["playview.io",33],["3xyaoi.com",34],["uol.com.br",35],["megafire.net",36],["elmundo.es",37],["gourlpro.com",41],["adclic.es",41],["adclic.org",41],["mundopolo.net",41],["jurisfera.com",41],["adclicker.info",41],["adclicker.io",41],["safepc.online",41],["solopc.net",41],["player.hentaistube.com",42],["playnewserie.xyz",43],["tiohentai.xyz",44],["otakustv.com",[45,46]],["pornolandia.xxx",47],["hentaiporno.xxx",48],["fakings.com",49]]);
+const hostnamesMap = new Map([["cinelatino.net",0],["descargaseriestv.com",1],["anitube.vip",1],["hinatasoul.com",1],["3djuegos.com",2],["3djuegosguias.com",2],["3djuegospc.com",2],["applesfera.com",2],["compradiccion.com",2],["directoalpaladar.com",[2,25]],["elblogsalmon.com",[2,25]],["espinof.com",2],["genbeta.com",2],["mundoxiaomi.com",2],["trendencias.com",2],["trendenciashombre.com",2],["vidaextra.com",2],["vitonica.com",2],["xataka.com",2],["xatakaciencia.com",2],["xatakafoto.com",2],["xatakahome.com",2],["xatakamovil.com",2],["xatakandroid.com",2],["xatakawindows.com",2],["financasdeouro.com",3],["animeszone.net",4],["atv.pe",[5,6]],["monumental.co.cr",[5,6]],["elcomercio.com",[5,6]],["antena7.com.do",[5,6]],["rqp.com.bo",[5,6]],["canal12.com.sv",[5,6]],["chapintv.com",[5,6]],["vtv.com.hn",[5,6]],["tn23.tv",[5,6]],["canal13mexico.com",[5,6]],["c9n.com.py",[5,6]],["repretel.com",[5,6]],["redbolivision.tv.bo",[5,6]],["animesonline.nz",7],["mdr.ar",8],["impactoespananoticias.com",8],["skynovels.net",8],["botinnifit.com",8],["minhasdelicias.com",8],["luchaonline.com",8],["meocloud.pt",9],["fichajes.com",10],["niusdiario.es",[11,39]],["xerifetech.com",12],["pobre.wtf",[13,40]],["suaads.com",14],["reidoplacar.com",[14,41]],["suaurl.com",[14,41]],["legendei.net",15],["documaniatv.com",16],["cadenaser.com",17],["texto.kom.gt",18],["infojobs.com.br",19],["maringapost.com.br",20],["bandab.com.br",20],["ouniversodatv.com",21],["tribunaavila.com",22],["deportealdia.live",23],["elquintobeatle.com",24],["empregoestagios.com",24],["satcesc.com",24],["bebesymas.com",25],["diariodelviajero.com",25],["motorpasion.com",25],["motorpasionmoto.com",25],["pymesyautonomos.com",25],["docer.com.ar",26],["doceru.com",26],["docero.com.br",26],["comandotorrents.org",27],["adslayuda.com",28],["outerspace.com.br",29],["doramasmp4.com",30],["file4go.net",32],["seriesdonghua.com",33],["mundodonghua.com",33],["playview.io",34],["3xyaoi.com",35],["uol.com.br",36],["megafire.net",37],["elmundo.es",38],["gourlpro.com",42],["adclic.es",42],["adclic.org",42],["mundopolo.net",42],["jurisfera.com",42],["adclicker.info",42],["adclicker.io",42],["safepc.online",42],["solopc.net",42],["player.hentaistube.com",43],["playnewserie.xyz",44],["tiohentai.xyz",45],["otakustv.com",[46,47]],["pornolandia.xxx",48],["hentaiporno.xxx",49],["fakings.com",50]]);
 
-const entitiesMap = new Map([["anitube",30]]);
+const entitiesMap = new Map([["anitube",31]]);
 
 const exceptionsMap = new Map([]);
 
@@ -100,7 +100,7 @@ function setConstantFn(
         };
         if ( trappedProp === '' ) { return; }
         const thisScript = document.currentScript;
-        let normalValue = validateConstantFn(trusted, rawValue);
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
         if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
             normalValue = cloakFunc(normalValue);
         }
@@ -253,12 +253,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,9 +396,8 @@ function safeSelf() {
     return safe;
 }
 
-function validateConstantFn(trusted, raw) {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     let value;
     if ( raw === 'undefined' ) {
         value = undefined;

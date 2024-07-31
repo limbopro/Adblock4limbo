@@ -42,11 +42,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["emailLightBox","true"],["join-popup-closed","true"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
+const argsList = [["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
 
-const hostnamesMap = new Map([["duluthtrading.com",0],["loyalfordogs.com",1],["tastemade.com",2],["clutchpoints.com",3],["core.app",4],["urbanoutfitters.com",5],["paulaschoice.com",6],["realpython.com",7],["www.watermarkremover.io",9],["scenexe.io",10]]);
+const hostnamesMap = new Map([["duluthtrading.com",0],["themonthly.com.au",1],["thesaturdaypaper.com.au",1],["tastemade.com",2],["clutchpoints.com",3],["core.app",4],["urbanoutfitters.com",5],["paulaschoice.com",6],["realpython.com",7],["www.watermarkremover.io",10],["scenexe.io",11]]);
 
-const entitiesMap = new Map([["brainly",8]]);
+const entitiesMap = new Map([["brainly",[8,9]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -140,12 +140,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

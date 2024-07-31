@@ -42,11 +42,11 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".kcAds1","display","block"],["[id=\"aswift_0_host\"], [id=\"aswift_1_host\"], [id=\"aswift_2_host\"], [id=\"aswift_3_host\"], [id=\"aswift_4_host\"], [id=\"aswift_5_host\"]","clip-path","none"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"]];
+const argsList = [["[id=\"aswift_0_host\"], [id=\"aswift_1_host\"], [id=\"aswift_2_host\"], [id=\"aswift_3_host\"], [id=\"aswift_4_host\"], [id=\"aswift_5_host\"]","clip-path","none"],["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["article > div[style=\"margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;\"] > div","left","auto"]];
 
-const hostnamesMap = new Map([["kisscartoon.se",0],["kc.linksgen.com",0],["decrypt.day",1],["techcyan.com",2],["kiktu.com",2],["upshrink.com",2],["trangchu.news",2],["banaraswap.in",2],["download.megaup.net",3]]);
+const hostnamesMap = new Map([["decrypt.day",0],["techcyan.com",1],["kiktu.com",1],["upshrink.com",1],["trangchu.news",1],["banaraswap.in",1],["download.megaup.net",2],["exploader.net",3]]);
 
-const entitiesMap = new Map([["kimcartoon",0]]);
+const entitiesMap = new Map([]);
 
 const exceptionsMap = new Map([]);
 
@@ -172,12 +172,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

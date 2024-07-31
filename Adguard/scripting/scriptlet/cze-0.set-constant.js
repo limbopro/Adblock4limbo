@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["canRunAds","true"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.psts.init","noopFunc"],["App.featureTest.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["useSeznamAds","false"]];
+const argsList = [["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["useSeznamAds","false"]];
 
-const hostnamesMap = new Map([["hokej.cz",0],["media.joj.sk",[1,2]],["media.cms.markiza.sk",1],["mobilenet.cz",[3,4]],["fzone.cz",[3,4]],["fdrive.cz",[3,4]],["podcasty.seznam.cz",[5,6]],["root.cz",7],["tn.nova.cz",8]]);
+const hostnamesMap = new Map([["hokej.cz",0],["impuls.cz",1],["media.joj.sk",[2,3]],["media.cms.markiza.sk",2],["mobilenet.cz",[4,5]],["fzone.cz",[4,5]],["fdrive.cz",[4,5]],["podcasty.seznam.cz",[6,7]],["root.cz",8],["tn.nova.cz",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -100,7 +100,7 @@ function setConstantFn(
         };
         if ( trappedProp === '' ) { return; }
         const thisScript = document.currentScript;
-        let normalValue = validateConstantFn(trusted, rawValue);
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
         if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
             normalValue = cloakFunc(normalValue);
         }
@@ -253,12 +253,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,9 +396,8 @@ function safeSelf() {
     return safe;
 }
 
-function validateConstantFn(trusted, raw) {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     let value;
     if ( raw === 'undefined' ) {
         value = undefined;

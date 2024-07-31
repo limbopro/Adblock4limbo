@@ -42,9 +42,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["da325"],["ref_cookie"],["video_view_count"],["/^/"],["PageCount"],[],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_ips"],["kt_referer"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["didomi_token"]];
+const argsList = [["da325"],["ref_cookie"],["video_view_count"],["/^/"],["PageCount"],[],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_referer"],["kt_ips"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["/_alooma/"],["didomi_token"]];
 
-const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["buktube.com",2],["fullxh.com",2],["galleryxh.site",2],["megaxh.com",2],["movingxh.world",2],["seexh.com",2],["taoxh.life",2],["unlockxh4.com",2],["xhaccess.com",2],["xhadult2.com",2],["xhadult3.com",2],["xhadult4.com",2],["xhadult5.com",2],["xhamster46.com",2],["xhbig.com",2],["xhbranch5.com",2],["xhday.com",2],["xhday1.com",2],["xhmoon5.com",2],["xhplanet1.com",2],["xhplanet2.com",2],["xhreal2.com",2],["xhreal3.com",2],["xhtab2.com",2],["xhtab4.com",2],["xhtree.com",2],["xhvictory.com",2],["xhwebsite.com",2],["xhwebsite2.com",2],["xhwide1.com",2],["adultasianporn.com",3],["jetpunk.com",4],["xxxxsx.com",5],["sexvideos.host",6],["beaumontenterprise.com",7],["chron.com",7],["ctinsider.com",7],["ctpost.com",7],["expressnews.com",7],["houstonchronicle.com",7],["lmtonline.com",7],["middletownpress.com",7],["mrt.com",7],["newstimes.com",7],["nhregister.com",7],["registercitizen.com",7],["sfchronicle.com",7],["stamfordadvocate.com",7],["thehour.com",7],["timesunion.com",7],["heavyfetish.com",[8,9,10]],["watchporn.to",9],["columbian.com",11],["nypost.com",11],["pagesix.com",11],["factable.com",[12,13]],["bing.com",14],["msn.com",14],["androidpolice.com",15],["makeuseof.com",15],["movieweb.com",15],["xda-developers.com",15],["dev.to",[16,17]],["tv5mondeplus.com",18]]);
+const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["buktube.com",2],["fullxh.com",2],["galleryxh.site",2],["megaxh.com",2],["movingxh.world",2],["seexh.com",2],["taoxh.life",2],["unlockxh4.com",2],["xhaccess.com",2],["xhadult2.com",2],["xhadult3.com",2],["xhadult4.com",2],["xhadult5.com",2],["xhamster46.com",2],["xhbig.com",2],["xhbranch5.com",2],["xhday.com",2],["xhday1.com",2],["xhmoon5.com",2],["xhplanet1.com",2],["xhplanet2.com",2],["xhreal2.com",2],["xhreal3.com",2],["xhtab2.com",2],["xhtab4.com",2],["xhtree.com",2],["xhvictory.com",2],["xhwebsite.com",2],["xhwebsite2.com",2],["xhwide1.com",2],["adultasianporn.com",3],["jetpunk.com",4],["xxxxsx.com",5],["sexvideos.host",6],["beaumontenterprise.com",7],["chron.com",7],["ctinsider.com",7],["ctpost.com",7],["expressnews.com",7],["houstonchronicle.com",7],["lmtonline.com",7],["middletownpress.com",7],["mrt.com",7],["newstimes.com",7],["nhregister.com",7],["registercitizen.com",7],["sfchronicle.com",7],["stamfordadvocate.com",7],["thehour.com",7],["timesunion.com",7],["heavyfetish.com",[8,9,10]],["severeporn.com",10],["watchporn.to",10],["columbian.com",11],["nypost.com",11],["pagesix.com",11],["factable.com",[12,13]],["bing.com",14],["msn.com",14],["androidpolice.com",15],["makeuseof.com",15],["movieweb.com",15],["xda-developers.com",15],["dev.to",[16,17]],["vpnmentor.com",18],["tv5mondeplus.com",19]]);
 
 const entitiesMap = new Map([["hamsterix",2],["xhamster",2],["xhamster1",2],["xhamster10",2],["xhamster11",2],["xhamster12",2],["xhamster13",2],["xhamster14",2],["xhamster15",2],["xhamster16",2],["xhamster17",2],["xhamster18",2],["xhamster19",2],["xhamster20",2],["xhamster2",2],["xhamster3",2],["xhamster4",2],["xhamster42",2],["xhamster5",2],["xhamster7",2],["xhamster8",2]]);
 
@@ -130,12 +130,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

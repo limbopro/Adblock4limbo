@@ -42,9 +42,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["countChapterNum","$remove$"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["gu.history.weeklyArticleCount","$remove$"],["gu.history.dailyArticleCount","$remove$"],["vox_article_readcount","$remove$"],["vox_article_readcount_count","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["countChapterNum","$remove$"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["thejournal.ie",1],["bloomberg.com",2],["dailynewshungary.com",3],["cnn.com",[4,5]],["reuters.com",6],["theweek.com",[7,8]],["seekingalpha.com",9],["nisanyansozluk.com",10],["pawread.com",11],["quillbot.com",12],["csmonitor.com",13],["deepl.com",[14,15]]]);
+const hostnamesMap = new Map([["zippia.com",0],["theguardian.com",[1,2]],["vox.com",[3,4]],["thejournal.ie",5],["bloomberg.com",6],["dailynewshungary.com",7],["cnn.com",[8,9]],["reuters.com",10],["theweek.com",[11,12]],["seekingalpha.com",13],["nisanyansozluk.com",14],["pawread.com",15],["quillbot.com",16],["csmonitor.com",17],["deepl.com",[18,19]]]);
 
 const entitiesMap = new Map([]);
 
@@ -140,12 +140,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["avails","","propsToMatch","amazonaws.com"],["response.ads"],["plugins.adService"]];
+const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["results","","propsToMatch","deezer.getAudiobreak"],["avails","","propsToMatch","amazonaws.com"],["response.ads"],["plugins.adService"],["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1]],["m.youtube.com",1],["music.youtube.com",1],["tv.youtube.com",1],["youtubekids.com",1],["youtube-nocookie.com",1],["www.msn.com",[2,3]],["hulu.com",[4,5]],["crackle.com",6],["misskey.io",7],["misskey.oga.ninja",7],["mk.yopo.work",7],["sushi.ski",7],["trpger.us",7],["warpday.net",7],["zadankai.club",7],["zee5.com",8],["target.com",9],["play.geforcenow.com",10],["www.tiktok.com",11],["npo.nl",12],["watch.shout-tv.com",13],["tumblr.com",14],["nbc.com",15],["player.pop.co.uk",16],["player.popfun.co.uk",16],["iprima.cz",17]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1,20]],["m.youtube.com",1],["music.youtube.com",1],["tv.youtube.com",1],["youtubekids.com",1],["youtube-nocookie.com",1],["www.msn.com",[2,3]],["hulu.com",[4,5]],["crackle.com",6],["misskey.io",7],["misskey.oga.ninja",7],["mk.yopo.work",7],["sushi.ski",7],["trpger.us",7],["warpday.net",7],["zadankai.club",7],["zee5.com",8],["target.com",9],["play.geforcenow.com",10],["www.tiktok.com",11],["npo.nl",12],["watch.shout-tv.com",13],["realcanadiansuperstore.ca",14],["tumblr.com",15],["deezer.com",16],["nbc.com",17],["player.pop.co.uk",18],["player.popfun.co.uk",18],["iprima.cz",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -237,12 +237,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -490,7 +492,7 @@ function objectFindOwnerFn(
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {

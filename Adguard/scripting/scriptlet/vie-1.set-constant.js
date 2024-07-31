@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ADMStorageFileCDN","noopFunc"],["a_vid","0"],["open","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["video.adVast",""],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
+const argsList = [["ADMStorageFileCDN","noopFunc"],["open","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["a_vid","0"],["seconds","0"],["video.adVast",""],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["cliphot69.buzz",1],["freeplayervideo.com",2],["abysscdn.com",2],["player-cdn.com",2],["geoip.redirect-ads.com",2],["gvnvh18.com",3],["sexdiaryx.blog",3],["phimvietsub.pro",4],["api.anime3s.com",4],["subnhanh.xyz",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vndoc.com",7],["web.motsex.net",8],["vuasex.club",8],["phimsexviet.io",8],["phimsexvietnam.app",8],["mb.clipsex.xxx",8],["gm.phimsexnhanh.tv",8],["clipsex.cam",8],["link.ditnhau.cc",8],["phim.sexhayvl.org",8],["xx.clipsexhot.net",8],["xx.sexkhongchemoi.com",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["freeplayervideo.com",1],["abysscdn.com",1],["player-cdn.com",1],["geoip.redirect-ads.com",1],["gvnvh18.com",2],["sexdiaryx.guru",2],["phimvietsub.pro",3],["api.anime3s.com",3],["subnhanh.xyz",3],["phimvuihd.org",4],["tailieumoi.vn",5],["vn.cliphot69.live",6],["vndoc.com",7],["web.motsex.net",8],["vuasex.club",8],["phimsexviet.io",8],["phimsexvietnam.app",8],["mobile.clipsex.xxx",8],["gm.phimsexnhanh.tv",8],["clipsex.cam",8],["link.ditnhau.cc",8],["phim.sexhayvl.org",8],["xx.clipsexhot.net",8],["xx.sexkhongchemoi.com",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -100,7 +100,7 @@ function setConstantFn(
         };
         if ( trappedProp === '' ) { return; }
         const thisScript = document.currentScript;
-        let normalValue = validateConstantFn(trusted, rawValue);
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
         if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
             normalValue = cloakFunc(normalValue);
         }
@@ -253,12 +253,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,9 +396,8 @@ function safeSelf() {
     return safe;
 }
 
-function validateConstantFn(trusted, raw) {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     let value;
     if ( raw === 'undefined' ) {
         value = undefined;

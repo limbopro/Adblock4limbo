@@ -42,11 +42,11 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","btnHtml"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","disable-devtool"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","devtools"],["script","while(!![]){try{var"],["script","/closeWindow\\(\\)|clickIE\\(\\)|reEnable\\(\\)/"],["script","ab927c49cf1b"],["script","detectDevTool"],["script","/Clipboard|oncontextmenu|wpcp|keyCode/"],["style","/-webkit-user-select|webkit-appearance/"],["script","loc.hostname"],["script","adblock"],["script","disableselect"]];
+const argsList = [["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","btnHtml"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","devtools"],["script","while(!![]){try{var"],["script","/closeWindow\\(\\)|clickIE\\(\\)|reEnable\\(\\)/"],["script","ab927c49cf1b"],["script","detectDevTool"],["script","/Clipboard|oncontextmenu|wpcp|keyCode/"],["style","/-webkit-user-select|webkit-appearance/"],["script","loc.hostname"],["script","adblock"],["script","disableselect"],["script","stopPrntScr"],["style","selection"],["script","checkAdsBlocked"]];
 
-const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",2],["bolugundem.com",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["animesaga.in",6],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["camcaps.io",7],["nicekkk.com",7],["dev.miuiflash.com",[7,27]],["djxmaza.in",[7,27]],["thecubexguide.com",[7,27]],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["aventurainromania.ro",18],["appimagehub.com",19],["gnome-look.org",19],["store.kde.org",19],["linux-apps.com",19],["opendesktop.org",19],["pling.com",19],["xfce-look.org",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["newsrade.com",25],["broncoshq.com",26],["anascrie.ro",28],["streambuddy.net",29],["smartkhabrinews.com",30],["cheersandgears.com",31],["blog.cryptowidgets.net",32],["blog.insurancegold.in",32],["blog.wiki-topia.com",32],["blog.coinsvalue.net",32],["blog.cookinguide.net",32],["blog.freeoseocheck.com",32],["stblion.xyz",33],["xn-----0b4asja7ccgu2b4b0gd0edbjm2jpa1b1e9zva7a0347s4da2797e8qri.xn--1ck2e1b",34],["xn--90afacv0clj6ac0dxa.xn--p1ai",34],["xn--90afacv0cu2a3cr.xn--p1ai",34],["puzzle-loop.com",35],["puzzle-words.com",35],["puzzle-chess.com",35],["puzzle-thermometers.com",35],["puzzle-norinori.com",35],["puzzle-minesweeper.com",35],["puzzle-slant.com",35],["puzzle-lits.com",35],["puzzle-galaxies.com",35],["puzzle-tents.com",35],["puzzle-battleships.com",35],["puzzle-pipes.com",35],["puzzle-hitori.com",35],["puzzle-heyawake.com",35],["puzzle-shingoki.com",35],["puzzle-masyu.com",35],["puzzle-stitches.com",35],["puzzle-aquarium.com",35],["puzzle-tapa.com",35],["puzzle-star-battle.com",35],["puzzle-kakurasu.com",35],["puzzle-skyscrapers.com",35],["puzzle-futoshiki.com",35],["puzzle-shakashaka.com",35],["puzzle-kakuro.com",35],["puzzle-jigsaw-sudoku.com",35],["puzzle-killer-sudoku.com",35],["puzzle-binairo.com",35],["puzzle-nonograms.com",35],["puzzle-sudoku.com",35],["puzzle-light-up.com",35],["puzzle-bridges.com",35],["puzzle-shikaku.com",35],["puzzle-nurikabe.com",35],["puzzle-dominosa.com",35],["inattvcom117.xyz",36],["mrbenne.com",[37,38]],["www-liverpoolecho-co-uk.translate.goog",39],["xanimu.com",40],["cosxplay.com",40],["noicetranslations.blogspot.com",41]]);
+const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",2],["bolugundem.com",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["animesaga.in",6],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["camcaps.io",7],["nicekkk.com",7],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["aventurainromania.ro",18],["appimagehub.com",19],["gnome-look.org",19],["store.kde.org",19],["linux-apps.com",19],["opendesktop.org",19],["pling.com",19],["xfce-look.org",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["newsrade.com",25],["broncoshq.com",26],["anascrie.ro",27],["streambuddy.net",28],["smartkhabrinews.com",29],["cheersandgears.com",30],["blog.cryptowidgets.net",31],["blog.insurancegold.in",31],["blog.wiki-topia.com",31],["blog.coinsvalue.net",31],["blog.cookinguide.net",31],["blog.freeoseocheck.com",31],["stblion.xyz",32],["xn-----0b4asja7ccgu2b4b0gd0edbjm2jpa1b1e9zva7a0347s4da2797e8qri.xn--1ck2e1b",33],["xn--90afacv0clj6ac0dxa.xn--p1ai",33],["xn--90afacv0cu2a3cr.xn--p1ai",33],["puzzle-loop.com",34],["puzzle-words.com",34],["puzzle-chess.com",34],["puzzle-thermometers.com",34],["puzzle-norinori.com",34],["puzzle-minesweeper.com",34],["puzzle-slant.com",34],["puzzle-lits.com",34],["puzzle-galaxies.com",34],["puzzle-tents.com",34],["puzzle-battleships.com",34],["puzzle-pipes.com",34],["puzzle-hitori.com",34],["puzzle-heyawake.com",34],["puzzle-shingoki.com",34],["puzzle-masyu.com",34],["puzzle-stitches.com",34],["puzzle-aquarium.com",34],["puzzle-tapa.com",34],["puzzle-star-battle.com",34],["puzzle-kakurasu.com",34],["puzzle-skyscrapers.com",34],["puzzle-futoshiki.com",34],["puzzle-shakashaka.com",34],["puzzle-kakuro.com",34],["puzzle-jigsaw-sudoku.com",34],["puzzle-killer-sudoku.com",34],["puzzle-binairo.com",34],["puzzle-nonograms.com",34],["puzzle-sudoku.com",34],["puzzle-light-up.com",34],["puzzle-bridges.com",34],["puzzle-shikaku.com",34],["puzzle-nurikabe.com",34],["puzzle-dominosa.com",34],["inattvcom117.xyz",35],["mrbenne.com",[36,37]],["www-liverpoolecho-co-uk.translate.goog",38],["xanimu.com",39],["cosxplay.com",39],["noicetranslations.blogspot.com",40],["monitoruldevrancea.ro",[41,42]],["readcomiconline.li",43]]);
 
-const entitiesMap = new Map([["strtape",1],["streamtape",1],["vidmoly",6],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",32],["redecanais",34],["redecanaistv",34],["redisex",34]]);
+const entitiesMap = new Map([["strtape",1],["streamtape",1],["vidmoly",6],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",31],["redecanais",33],["redecanaistv",33],["redisex",33]]);
 
 const exceptionsMap = new Map([]);
 
@@ -54,10 +54,10 @@ const exceptionsMap = new Map([]);
 
 function removeNodeText(
     nodeName,
-    condition,
+    includes,
     ...extraArgs
 ) {
-    replaceNodeTextFn(nodeName, '', '', 'condition', condition || '', ...extraArgs);
+    replaceNodeTextFn(nodeName, '', '', 'includes', includes || '', ...extraArgs);
 }
 
 function replaceNodeTextFn(
@@ -70,7 +70,12 @@ function replaceNodeTextFn(
     const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
+    const reIncludes = extraArgs.includes || extraArgs.condition
+        ? safe.patternToRegex(extraArgs.includes || extraArgs.condition, 'ms')
+        : null;
+    const reExcludes = extraArgs.excludes
+        ? safe.patternToRegex(extraArgs.excludes, 'ms')
+        : null;
     const stop = (takeRecord = true) => {
         if ( takeRecord ) {
             handleMutations(observer.takeRecords());
@@ -83,8 +88,14 @@ function replaceNodeTextFn(
     let sedCount = extraArgs.sedCount || 0;
     const handleNode = node => {
         const before = node.textContent;
-        reCondition.lastIndex = 0;
-        if ( safe.RegExp_test.call(reCondition, before) === false ) { return true; }
+        if ( reIncludes ) {
+            reIncludes.lastIndex = 0;
+            if ( safe.RegExp_test.call(reIncludes, before) === false ) { return true; }
+        }
+        if ( reExcludes ) {
+            reExcludes.lastIndex = 0;
+            if ( safe.RegExp_test.call(reExcludes, before) ) { return true; }
+        }
         rePattern.lastIndex = 0;
         if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
         rePattern.lastIndex = 0;
@@ -182,12 +193,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

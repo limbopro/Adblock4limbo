@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["onload","google_esf"],["atob","/documentEl[\\s\\S]*?_0x/"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["Math.floor","amazon"],["document.createElement","overview"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["__htapop"]];
+const argsList = [["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["Math.floor","amazon"],["document.createElement","overview"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["__htapop"]];
 
-const hostnamesMap = new Map([["qa.crefan.jp",0],["ssbsblg.blogspot.com",1],["blog-and-destroy.com",2],["musenboya.com",3],["kledgeb.blogspot.com",4],["connect.coron.tech",6],["akibablog.blog.jp",7],["blog.livedoor.jp",[7,8,15,18]],["erommd-street.com",9],["ac-illust.com",10],["photo-ac.com",10],["javple.com",11],["encount.press",12],["realsound.jp",12],["h1g.jp",12],["russianbeauties.jp",13],["agora-web.jp",14],["2chblog.jp",15],["yugioh-starlight.com",15],["kijomatomelog.com",15],["gundamlog.com",15],["doorblog.jp",15],["digital-thread.com",15],["livedoor.blog",15],["blog.jp",15],["majikichi.com",16],["xn--gmq92kd2rm1kx34a.com",17],["momoiroadult.com",19],["avgle.com",20]]);
+const hostnamesMap = new Map([["qa.crefan.jp",0],["blog-and-destroy.com",1],["musenboya.com",2],["kledgeb.blogspot.com",3],["connect.coron.tech",5],["akibablog.blog.jp",6],["blog.livedoor.jp",[6,7,14,17]],["erommd-street.com",8],["ac-illust.com",9],["photo-ac.com",9],["javple.com",10],["encount.press",11],["realsound.jp",11],["h1g.jp",11],["russianbeauties.jp",12],["agora-web.jp",13],["2chblog.jp",14],["yugioh-starlight.com",14],["kijomatomelog.com",14],["gundamlog.com",14],["doorblog.jp",14],["digital-thread.com",14],["livedoor.blog",14],["blog.jp",14],["majikichi.com",15],["xn--gmq92kd2rm1kx34a.com",16],["momoiroadult.com",18],["avgle.com",19]]);
 
-const entitiesMap = new Map([["manga1001",5],["javmix",17]]);
+const entitiesMap = new Map([["manga1001",4],["javmix",16]]);
 
 const exceptionsMap = new Map([]);
 
@@ -179,7 +179,7 @@ function runAtHtmlElementFn(fn) {
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
@@ -207,12 +207,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

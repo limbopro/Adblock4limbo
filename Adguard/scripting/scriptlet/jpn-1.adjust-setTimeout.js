@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["simplegameAdCountDown","1000","0.02"],["aeriaGamesAdCountDown","","0.02"],["visibility","4000"],["[native code]","2000","0.3"],["[native code]","3000","0.25"],["[native code]","4000","0.2"]];
+const argsList = [["simplegameAdCountDown","1000","0.02"],["aeriaGamesAdCountDown","","0.02"],["visibility","4000"],["[native code]","2000","0.3"],["[native code]","3000","0.25"],["[native code]","4000","0.2"],["window.ADGMAD.repair_bonus","30000","0.001"]];
 
-const hostnamesMap = new Map([["simplegame.jp",0],["minigame.aeriagames.jp",1],["ponta.abstractpainting.work",[2,3,4,5]]]);
+const hostnamesMap = new Map([["simplegame.jp",0],["minigame.aeriagames.jp",1],["ponta.abstractpainting.work",[2,3,4,5]],["game.hiroba.dpoint.docomo.ne.jp",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -96,12 +96,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -42,9 +42,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/checkAd|tick/"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","violatedDirective"],["script","\"Shadow"]];
+const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/gtag\\('event'/"],["script","/s_script|tick/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","violatedDirective"],["script","\"Shadow"]];
 
-const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["game4you.top",3],["games-pc.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["inforesist.org",[4,9]],["sports.ru",5],["pikabu.ru",6],["gsm.in.ua",7],["mail.ru",8],["24boxing.com.ua",9],["avtovod.com.ua",9],["bigmir.net",9],["buhgalter.com.ua",9],["buhgalter911.com",9],["businessua.com",9],["censor.net",9],["dengi.ua",9],["ditey.com",9],["epravda.com.ua",9],["eurointegration.com.ua",9],["f1analytic.com",9],["facenews.ua",9],["factor.ua",9],["football-ukraine.com",9],["footballgazeta.com",9],["footballtransfer.com.ua",9],["gazeta.ua",9],["gorod.dp.ua",9],["hvylya.net",9],["i.ua",9],["isport.ua",9],["ivona.ua",9],["kolobok.ua",9],["kriminal.tv",9],["liga.net",9],["meteo.ua",9],["meteofor.com.ua",9],["nnovosti.info",9],["nv.ua",9],["panno4ka.net",9],["pogodaua.com",9],["pravda.com.ua",9],["real-vin.com",9],["smak.ua",9],["sportanalytic.com",9],["stravy.net",9],["tochka.net",9],["tv.ua",9],["viva.ua",9],["vsetv.com",9],["www.ukr.net",9],["zdorovia.com.ua",9]]);
+const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["inforesist.org",[3,9]],["game4you.top",4],["games-pc.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["sports.ru",5],["pikabu.ru",6],["gsm.in.ua",7],["mail.ru",8],["24boxing.com.ua",9],["avtovod.com.ua",9],["bigmir.net",9],["buhgalter.com.ua",9],["buhgalter911.com",9],["businessua.com",9],["censor.net",9],["dengi.ua",9],["ditey.com",9],["epravda.com.ua",9],["f1analytic.com",9],["facenews.ua",9],["factor.ua",9],["football-ukraine.com",9],["footballgazeta.com",9],["footballtransfer.com.ua",9],["gazeta.ua",9],["gorod.dp.ua",9],["hvylya.net",9],["i.ua",9],["isport.ua",9],["ivona.ua",9],["kolobok.ua",9],["kriminal.tv",9],["liga.net",9],["meteo.ua",9],["meteofor.com.ua",9],["nnovosti.info",9],["nv.ua",9],["panno4ka.net",9],["pogodaua.com",9],["pravda.com.ua",9],["real-vin.com",9],["smak.ua",9],["sportanalytic.com",9],["stravy.net",9],["tochka.net",9],["tv.ua",9],["viva.ua",9],["vsetv.com",9],["www.ukr.net",9],["zdorovia.com.ua",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -54,10 +54,10 @@ const exceptionsMap = new Map([["3igames.mail.ru",[8]],["account.mail.ru",[8]],[
 
 function removeNodeText(
     nodeName,
-    condition,
+    includes,
     ...extraArgs
 ) {
-    replaceNodeTextFn(nodeName, '', '', 'condition', condition || '', ...extraArgs);
+    replaceNodeTextFn(nodeName, '', '', 'includes', includes || '', ...extraArgs);
 }
 
 function replaceNodeTextFn(
@@ -70,7 +70,12 @@ function replaceNodeTextFn(
     const reNodeName = safe.patternToRegex(nodeName, 'i', true);
     const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const reCondition = safe.patternToRegex(extraArgs.condition || '', 'ms');
+    const reIncludes = extraArgs.includes || extraArgs.condition
+        ? safe.patternToRegex(extraArgs.includes || extraArgs.condition, 'ms')
+        : null;
+    const reExcludes = extraArgs.excludes
+        ? safe.patternToRegex(extraArgs.excludes, 'ms')
+        : null;
     const stop = (takeRecord = true) => {
         if ( takeRecord ) {
             handleMutations(observer.takeRecords());
@@ -83,8 +88,14 @@ function replaceNodeTextFn(
     let sedCount = extraArgs.sedCount || 0;
     const handleNode = node => {
         const before = node.textContent;
-        reCondition.lastIndex = 0;
-        if ( safe.RegExp_test.call(reCondition, before) === false ) { return true; }
+        if ( reIncludes ) {
+            reIncludes.lastIndex = 0;
+            if ( safe.RegExp_test.call(reIncludes, before) === false ) { return true; }
+        }
+        if ( reExcludes ) {
+            reExcludes.lastIndex = 0;
+            if ( safe.RegExp_test.call(reExcludes, before) ) { return true; }
+        }
         rePattern.lastIndex = 0;
         if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
         rePattern.lastIndex = 0;
@@ -182,12 +193,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -42,9 +42,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["monsterinsights_frontend"]];
+const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["chp_adblock_browser"],["monsterinsights_frontend"],["advads"],["advanced_ads"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["zeinaskitchen.se",14],["trafiksakerhet.se",14],["boktugg.se",14],["lakartidningen.se",14],["villalivet.se",14],["matsafari.nu",14],["forexgruppen.se",14],["fastighetsvarlden.se",14]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["temadagar.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",[15,16,17]],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15],["branschkoll.se",[16,17]],["rocknytt.net",[16,17]],["upphandling24.se",[16,17]],["kimura.se",[16,17]],["datormagazin.se",[16,17]],["polistidningen.se",[16,17]],["densistavilan.se",[16,17]],["classicmotor.se",[16,17]],["tidningenhalsa.se",[16,17]],["husohem.se",[16,17]],["guiden.se",[16,17]],["nyadagbladet.se",[16,17]],["enkelteknik.se",[16,17]]]);
 
 const entitiesMap = new Map([]);
 
@@ -179,7 +179,7 @@ function runAtHtmlElementFn(fn) {
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
@@ -207,12 +207,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

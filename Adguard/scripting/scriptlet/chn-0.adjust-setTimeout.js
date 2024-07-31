@@ -42,9 +42,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adCountDown","","0.02"],["video-ad-timeout","*","0.02"],["e-","","0.02"],["r--","","0.02"],["CloseAd","","0.02"]];
+const argsList = [["adCountDown","","0.02"],["video-ad-timeout","*","0.02"],["","","0.02"],["CloseAd","","0.02"]];
 
-const hostnamesMap = new Map([["51zxw.net",0],["iwatchme2u.com",1],["youku.com",[2,3]],["zhenbuka3.com",4],["zhenbuka2.com",4],["bukaivip.com",4]]);
+const hostnamesMap = new Map([["51zxw.net",0],["iwatchme2u.com",1],["youku.com",2],["zhenbuka3.com",3],["zhenbuka2.com",3],["bukaivip.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -96,12 +96,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

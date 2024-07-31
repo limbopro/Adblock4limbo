@@ -42,9 +42,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"]];
+const argsList = [["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"],["/pagead2\\.googlesyndication\\.com|outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
 
-const hostnamesMap = new Map([["r7.com",0],["descargas2024gratis.blogspot.com",0],["megacurioso.net",0],["tudonoticiasbr.com",0],["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["modescanlator.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,8]],["puromarketing.com",[0,8]],["todostartups.com",[0,8]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["cerisetoon.com",1],["sinensistoon.com",1],["packsmega.info",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["todoandroid.live",5],["gadgetzona.net",5],["qwanturankpro.com",5],["desbloquea.me",5],["mega-enlace.com",5],["enlacito.com",5],["acortame-esto.com",5],["atv.pe",6],["monumental.co.cr",6],["elcomercio.com",6],["antena7.com.do",6],["rqp.com.bo",6],["canal12.com.sv",6],["chapintv.com",6],["vtv.com.hn",6],["tn23.tv",6],["canal13mexico.com",6],["c9n.com.py",6],["repretel.com",6],["redbolivision.tv.bo",6],["independentespanol.com",6],["teleculinaria.pt",7],["nptmedia.tv",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",10],["costumbresmexico.com",11],["desbloqueador.site",11],["notipostingt.com",12],["tivify.tv",13],["netmovies.com.br",14]]);
+const hostnamesMap = new Map([["r7.com",0],["descargas2024gratis.blogspot.com",0],["megacurioso.net",0],["tudonoticiasbr.com",0],["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["modescanlator.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,9]],["puromarketing.com",[0,9]],["todostartups.com",[0,9]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["cerisetoon.com",1],["sinensistoon.com",1],["packsmega.info",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["acortados.com",[5,6]],["acortalink.me",5],["todoandroid.live",6],["gadgetzona.net",6],["qwanturankpro.com",6],["desbloquea.me",6],["mega-enlace.com",6],["enlacito.com",6],["acortame-esto.com",6],["atv.pe",7],["monumental.co.cr",7],["elcomercio.com",7],["antena7.com.do",7],["rqp.com.bo",7],["canal12.com.sv",7],["chapintv.com",7],["vtv.com.hn",7],["tn23.tv",7],["canal13mexico.com",7],["c9n.com.py",7],["repretel.com",7],["redbolivision.tv.bo",7],["independentespanol.com",7],["teleculinaria.pt",8],["nptmedia.tv",10],["suaads.com",11],["reidoplacar.com",11],["suaurl.com",11],["costumbresmexico.com",12],["desbloqueador.site",12],["notipostingt.com",13],["tivify.tv",14],["netmovies.com.br",15],["anitube.vip",16],["hinatasoul.com",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -54,11 +54,11 @@ const exceptionsMap = new Map([]);
 
 function noFetchIf(
     propsToMatch = '',
-    responseBody = ''
+    responseBody = '',
+    responseType = ''
 ) {
-    if ( typeof propsToMatch !== 'string' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody);
+    const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody, responseType);
     const needles = [];
     for ( const condition of propsToMatch.split(/\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -72,6 +72,28 @@ function noFetchIf(
             value = condition;
         }
         needles.push({ key, re: safe.patternToRegex(value) });
+    }
+    const validResponseProps = {
+        ok: [ false, true ],
+        statusText: [ '', 'Not Found' ],
+        type: [ 'basic', 'cors', 'default', 'error', 'opaque' ],
+    };
+    const responseProps = {
+        statusText: { value: 'OK' },
+    };
+    if ( /^\{.*\}$/.test(responseType) ) {
+        try {
+            Object.entries(JSON.parse(responseType)).forEach(([ p, v ]) => {
+                if ( validResponseProps[p] === undefined ) { return; }
+                if ( validResponseProps[p].includes(v) === false ) { return; }
+                responseProps[p] = { value: v };
+            });
+        }
+        catch(ex) {}
+    } else if ( responseType !== '' ) {
+        if ( validResponseProps.type.includes(responseType) ) {
+            responseProps.type = { value: responseType };
+        }
     }
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
@@ -110,33 +132,18 @@ function noFetchIf(
             if ( proceed ) {
                 return Reflect.apply(target, thisArg, args);
             }
-            let responseType = '';
-            if ( details.mode === undefined || details.mode === 'cors' ) {
-                try {
-                    const desURL = new URL(details.url);
-                    responseType = desURL.origin !== document.location.origin
-                        ? 'cors'
-                        : 'basic';
-                } catch(ex) {
-                    safe.uboErr(logPrefix, `Error: ${ex}`);
-                }
-            }
             return generateContentFn(responseBody).then(text => {
                 safe.uboLog(logPrefix, `Prevented with response "${text}"`);
                 const response = new Response(text, {
-                    statusText: 'OK',
                     headers: {
                         'Content-Length': text.length,
                     }
                 });
-                safe.Object_defineProperty(response, 'url', {
-                    value: details.url
-                });
-                if ( responseType !== '' ) {
-                    safe.Object_defineProperty(response, 'type', {
-                        value: responseType
-                    });
-                }
+                const props = Object.assign(
+                    { url: { value: details.url } },
+                    responseProps
+                );
+                safe.Object_defineProperties(response, props);
                 return response;
             });
         }
@@ -214,12 +221,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

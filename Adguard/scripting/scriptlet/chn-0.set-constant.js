@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["_AdBlockInit","noopFunc"],["google_tag_data","{}"],["killAdKiller","noopFunc"],["AD_SURVEY_Add_AdPos","noopFunc"],["AD_SURVEY_Add_AdPos_Simple","noopFunc"],["killads","true"],["all520dddaaa2022ccc","true"],["isAdsDisplayed","true"],["fuzqingAdPlus","{}"],["all520dddaaa2022aaa","undefined"],["canRunAds","true"],["adblock","0"],["can_run_ads","true"],["ga","noopFunc"],["google_empty_script_included","true"],["adsbygoogle","noopFunc"],["adblock","false"],["Object.prototype.cnobpreroll_","true"],["Object.prototype.canobpreroll_","true"],["ads",""],["NativeAd","noopFunc"],["__jsadsuccess","true"],["onload","null"],["adbk","false"],["config.group",""],["preBid","{}"],["preBid.displayAd","noopFunc"],["preBid.getPrerollVASTUrl","noopFunc"],["player.VastADPlugin","noopFunc"],["ADSOBJET","{}"],["myPlayer.adDisplay","undefined"],["NEWS_FEED","noopFunc"],["conone_lmg","noopFunc"],["Object.prototype.ad_switch","0"],["dy_card_dyrun","undefined"],["poped","true"],["Object.prototype.adData","{}"],["Object.prototype._adData","{}"],["adsbygoogle.loaded","true"],["MM_openBrWindow","noopFunc"],["lists","undefined"],["is_show","false"],["adv_resize","noopFunc"],["CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY",""],["CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START",""],["pageData.__banners.0.commercial.mediaUrl",""],["pageData.__banners.0.commercial.jumpUrl",""],["pageData.__banners.0.commercial.title",""],["pageData.__banners.1.commercial.mediaUrl",""],["pageData.__banners.1.commercial.jumpUrl",""],["pageData.__banners.1.commercial.title",""],["detailParams.is_ad_play","false"]];
+const argsList = [["_AdBlockInit","noopFunc"],["google_tag_data","{}"],["killAdKiller","noopFunc"],["AD_SURVEY_Add_AdPos","noopFunc"],["AD_SURVEY_Add_AdPos_Simple","noopFunc"],["killads","true"],["all520dddaaa2022ccc","true"],["isAdsDisplayed","true"],["fuzqingAdPlus","{}"],["all520dddaaa2022aaa","undefined"],["canRunAds","true"],["adblock","0"],["can_run_ads","true"],["ga","noopFunc"],["google_empty_script_included","true"],["adsbygoogle","noopFunc"],["adblock","false"],["Object.prototype.cnobpreroll_","true"],["Object.prototype.canobpreroll_","true"],["ads",""],["NativeAd","noopFunc"],["__jsadsuccess","true"],["onload","null"],["adbk","false"],["config.group",""],["preBid","{}"],["preBid.displayAd","noopFunc"],["preBid.getPrerollVASTUrl","noopFunc"],["player.VastADPlugin","noopFunc"],["ADSOBJET","{}"],["myPlayer.adDisplay","undefined"],["NEWS_FEED","noopFunc"],["conone_lmg","noopFunc"],["Object.prototype.ad_switch","0"],["dy_card_dyrun","undefined"],["poped","true"],["Object.prototype.adData","{}"],["Object.prototype._adData","{}"],["adsbygoogle.loaded","true"],["MM_openBrWindow","noopFunc"],["lists","undefined"],["is_show","false"],["CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY",""],["CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START",""],["pageData.__banners.0.commercial.mediaUrl",""],["pageData.__banners.0.commercial.jumpUrl",""],["pageData.__banners.0.commercial.title",""],["pageData.__banners.1.commercial.mediaUrl",""],["pageData.__banners.1.commercial.jumpUrl",""],["pageData.__banners.1.commercial.title",""],["detailParams.is_ad_play","false"]];
 
-const hostnamesMap = new Map([["baomidou.com",0],["nodejs.cn",0],["docsmall.com",0],["hmoeh.com",1],["api.guailie.com",2],["huanqiu.com",[3,4]],["itbaoku.cn",5],["yaociyuan.bid",5],["bigpixel.cn",5],["jkpan.cc",5],["520cc.cc",6],["520call.me",[6,9]],["ekamus.info",7],["koyi.pub",8],["bde4.icu",10],["tingfm.com",[10,12]],["linovelib.com",11],["ebb.io",[13,14]],["wenxuecity.com",15],["lnk2.cc",16],["ddrk.me",[17,18]],["sssam.com",19],["cocomanga.com",[20,21]],["ohmanhua.com",[20,21]],["onemanhua.com",[20,21]],["hboav.com",[22,23]],["cnys.tv",24],["now.com",[25,26,27]],["player.hboav.com",28],["x99av.com",29],["hamivideo.hinet.net",30],["jianshu.com",31],["xkyn.com",32],["tangdoucdn.com",33],["dianyingim.com",34],["xvideo.cc",35],["v-wb.youku.com",36],["m.youku.com",37],["v.youku.com",37],["myptt.cc",38],["edc1014070.pixnet.net",39],["m.biqiugege8.com",40],["theav.xyz",41],["69xx.one",41],["theporn.cc",41],["18comic.org",42],["18comic.vip",42],["lpl.qq.com",[43,44]],["v.qq.com",[43,44]],["nivod2.com",[45,46,47,48,49,50,51]],["nivod2.tv",[45,46,47,48,49,50,51]],["nivod4.com",[45,46,47,48,49,50,51]],["nivod4.tv",[45,46,47,48,49,50,51]],["nivod5.com",[45,46,47,48,49,50,51]],["nivod5.tv",[45,46,47,48,49,50,51]],["nivod7.com",[45,46,47,48,49,50,51]],["nivod7.tv",[45,46,47,48,49,50,51]],["nivod8.com",[45,46,47,48,49,50,51]],["nivod8.tv",[45,46,47,48,49,50,51]],["nivod9.com",[45,46,47,48,49,50,51]],["nivod9.tv",[45,46,47,48,49,50,51]]]);
+const hostnamesMap = new Map([["baomidou.com",0],["nodejs.cn",0],["docsmall.com",0],["hmoeh.com",1],["api.guailie.com",2],["huanqiu.com",[3,4]],["itbaoku.cn",5],["yaociyuan.bid",5],["bigpixel.cn",5],["jkpan.cc",5],["520cc.cc",6],["520call.me",[6,9]],["ekamus.info",7],["koyi.pub",8],["bde4.icu",10],["tingfm.com",[10,12]],["linovelib.com",11],["ebb.io",[13,14]],["wenxuecity.com",15],["lnk2.cc",16],["ddrk.me",[17,18]],["sssam.com",19],["cocomanga.com",[20,21]],["ohmanhua.com",[20,21]],["onemanhua.com",[20,21]],["hboav.com",[22,23]],["cnys.tv",24],["now.com",[25,26,27]],["player.hboav.com",28],["x99av.com",29],["hamivideo.hinet.net",30],["jianshu.com",31],["xkyn.com",32],["tangdoucdn.com",33],["dianyingim.com",34],["xvideo.cc",35],["v-wb.youku.com",36],["m.youku.com",37],["v.youku.com",37],["myptt.cc",38],["edc1014070.pixnet.net",39],["m.biqiugege8.com",40],["theav.xyz",41],["69xx.one",41],["theporn.cc",41],["lpl.qq.com",[42,43]],["v.qq.com",[42,43]],["nivod2.com",[44,45,46,47,48,49,50]],["nivod2.tv",[44,45,46,47,48,49,50]],["nivod4.com",[44,45,46,47,48,49,50]],["nivod4.tv",[44,45,46,47,48,49,50]],["nivod5.com",[44,45,46,47,48,49,50]],["nivod5.tv",[44,45,46,47,48,49,50]],["nivod7.com",[44,45,46,47,48,49,50]],["nivod7.tv",[44,45,46,47,48,49,50]],["nivod8.com",[44,45,46,47,48,49,50]],["nivod8.tv",[44,45,46,47,48,49,50]],["nivod9.com",[44,45,46,47,48,49,50]],["nivod9.tv",[44,45,46,47,48,49,50]]]);
 
 const entitiesMap = new Map([["ddys",[17,18]]]);
 
@@ -100,7 +100,7 @@ function setConstantFn(
         };
         if ( trappedProp === '' ) { return; }
         const thisScript = document.currentScript;
-        let normalValue = validateConstantFn(trusted, rawValue);
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
         if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
             normalValue = cloakFunc(normalValue);
         }
@@ -253,12 +253,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,9 +396,8 @@ function safeSelf() {
     return safe;
 }
 
-function validateConstantFn(trusted, raw) {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     let value;
     if ( raw === 'undefined' ) {
         value = undefined;

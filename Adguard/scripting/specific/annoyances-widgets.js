@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = ["#floating-experience-feature-tour-popover,\n#view-__module-context__-_amzn_conversational-experience-module__tandalone-0"];
+const argsList = ["#floating-experience-feature-tour-popover,\n#view-__module-context__-_amzn_conversational-experience-module__tandalone-0","#chatbotToronto"];
 
-const hostnamesMap = new Map([["docs.aws.amazon.com",0]]);
+const hostnamesMap = new Map([["docs.aws.amazon.com",0],["hp.com",1]]);
 
 const entitiesMap = new Map(undefined);
 

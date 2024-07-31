@@ -42,13 +42,13 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["*","nativeConfig"],["*","list.*.link.ad list.*.link.kicker"],["ads"],["ad"]];
+const argsList = [["*","nativeConfig"],["*.*","adFeedbackData adType adServedUrls"],["*","list.*.link.ad list.*.link.kicker"],["configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"],["ads"],["ad"]];
 
-const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",1],["www.qq.com",2],["v.qq.com",2],["new.qq.com",2],["qq.com",3]]);
+const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",[1,2,3]],["news.qq.com",4],["www.qq.com",4],["v.qq.com",4],["new.qq.com",4],["qq.com",5]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["sports.qq.com",[3]],["work.weixin.qq.com",[3]]]);
+const exceptionsMap = new Map([["sports.qq.com",[5]],["work.weixin.qq.com",[5]]]);
 
 /******************************************************************************/
 
@@ -141,12 +141,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,7 +396,7 @@ function objectFindOwnerFn(
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {

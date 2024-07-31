@@ -42,9 +42,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["_waitingAuth0Counter"],["window.loginStateChange.subscribe"],["custom-modal-create-account-link"],["loginModal"]];
+const argsList = [["_waitingAuth0Counter"],["window.loginStateChange.subscribe"],["custom-modal-create-account-link"],["isOpen"],["loginModal"]];
 
-const hostnamesMap = new Map([["clarin.com",0],["tradingview.com",1],["tekinvestor.no",2],["analyticsvidhya.com",3]]);
+const hostnamesMap = new Map([["clarin.com",0],["tradingview.com",1],["tekinvestor.no",2],["gadgetizedpanda.com",3],["analyticsvidhya.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -117,12 +117,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

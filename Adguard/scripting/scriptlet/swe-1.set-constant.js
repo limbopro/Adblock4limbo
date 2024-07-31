@@ -42,9 +42,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["checkAdblocker","noopFunc"],["checkAdsBlocked","noopFunc"],["premium","trueFunc"],["p","true"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"],["mi_track_user","false"]];
+const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["getAdblockerStatus","noopFunc"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["detect","noopFunc"],["mi_track_user","false"]];
 
-const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["di.se",3],["feber.se",4],["tjock.se",4],["findit.se",5],["fz.se",6],["fssweden.se",6],["gamereactor.se",7],["jobsinsweden.se",8],["kamrat.com",[9,10]],["kritiker.se",[11,12,13,14]],["swedroid.se",12],["mitti.se",15],["mobilanyheter.net",16],["ordbokpro.se",17],["spray.se",[18,19]],["vinochmatguiden.se",19],["thatsup.se",20],["thorengruppen.se",[21,22]],["utslappsratt.se",[21,22]],["heleneholmsif.se",[21,22]],["trafikskola.se",[21,22]],["melodifestivalklubben.se",[21,22]],["morotsliv.com",[21,22]],["www.expressen.se",23],["zeinaskitchen.se",24],["trafiksakerhet.se",24],["boktugg.se",24],["lakartidningen.se",24],["villalivet.se",24],["matsafari.nu",24],["forexgruppen.se",24],["fastighetsvarlden.se",24]]);
+const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["di.se",3],["feber.se",4],["tjock.se",4],["findit.se",5],["fz.se",6],["fssweden.se",6],["tinyurl.se",6],["gamereactor.se",7],["jobsinsweden.se",8],["kamrat.com",[9,10]],["mitti.se",11],["mobilanyheter.net",12],["ordbokpro.se",13],["spray.se",[14,15]],["vinochmatguiden.se",15],["swedroid.se",16],["thatsup.se",17],["thorengruppen.se",[18,19]],["utslappsratt.se",[18,19]],["heleneholmsif.se",[18,19]],["trafikskola.se",[18,19]],["melodifestivalklubben.se",[18,19]],["morotsliv.com",[18,19]],["www.expressen.se",20],["zeinaskitchen.se",21],["trafiksakerhet.se",21],["boktugg.se",21],["lakartidningen.se",21],["villalivet.se",21],["matsafari.nu",21],["forexgruppen.se",21],["fastighetsvarlden.se",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -100,7 +100,7 @@ function setConstantFn(
         };
         if ( trappedProp === '' ) { return; }
         const thisScript = document.currentScript;
-        let normalValue = validateConstantFn(trusted, rawValue);
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
         if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
             normalValue = cloakFunc(normalValue);
         }
@@ -253,12 +253,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,9 +396,8 @@ function safeSelf() {
     return safe;
 }
 
-function validateConstantFn(trusted, raw) {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
     let value;
     if ( raw === 'undefined' ) {
         value = undefined;

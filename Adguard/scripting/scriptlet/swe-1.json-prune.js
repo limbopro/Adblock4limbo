@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["autoplay players.*.ga acl.ads players.*.autoplay"],["payload.ads campaigns.*"],["autoplay"]];
+const argsList = [["autoplay"],["autoplay players.*.ga acl.ads players.*.autoplay"],["payload.ads campaigns.*"]];
 
-const hostnamesMap = new Map([["lwcdn.com",0],["alingsastidning.se",0],["bohuslaningen.se",0],["gp.se",0],["hallandsposten.se",0],["hn.se",0],["stromstadstidning.se",0],["ttela.se",0],["kungsbackaposten.se",0],["kungalvsposten.se",0],["molndalsposten.se",0],["partilletidning.se",0],["sttidningen.se",0],["markposten.se",0],["harrydaposten.se",0],["mellerudsnyheter.se",0],["matspar.se",1],["youplay.se",2],["expressen.se",2],["di.se",2],["nsk.se",2],["skd.se",2],["nvp.se",2],["nuiosteraker.se",2],["barometern.se",2],["blt.se",2],["bt.se",2],["kristianstadsbladet.se",2],["olandsbladet.se",2],["smp.se",2],["sydostran.se",2],["trelleborgsallehanda.se",2],["ut.se",2],["ystadsallehanda.se",2],["corren.se",2],["folkbladet.se",2],["mvt.se",2],["nt.se",2],["vt.se",2],["klt.nu",2],["vimmerbytidning.se",2],["kuriren.nu",2],["nsd.se",2],["norran.se",2],["pt.se",2],["ekuriren.se",2],["strengnastidning.se",2],["kkuriren.se",2],["sn.se",2],["eposten.se",2],["unt.se",2],["helagotland.se",2],["kindaposten.se",2],["folkbladet.nu",2],["vk.se",2],["vasterbottningen.se",2],["mellanbygden.nu",2],["nordsverige.se",2],["lokaltidningen.nu",2],["vasterastidning.se",2],["mitti.se",2],["thelocal.se",2],["byrum.se",2],["sverigespringer.se",2],["recept.se",2],["viivilla.se",2],["mestmotor.se",2],["babyhjalp.se",2],["fragbite.se",2],["ibnytt.se",2],["realtid.se",2],["cafe.se",2],["kingmagazine.se",2],["vxonews.se",2],["vaxjobladet.se",2],["alekuriren.se",2],["nyheter24.se",2],["svenskgolf.se",2],["golfing.se",2],["gotlandjustnu.se",2],["familjeliv.se",2],["praktisktbatagande.se",2],["norrahalland.se",2],["lokalti.se",2],["lchfarkivet.se",2],["alltforforaldrar.se",2],["idrottensaffarer.se",2],["vf.se",2],["hjotidning.se",2],["kt.se",2],["kt-kuriren.se",2],["sla.se",2],["mariestadstidningen.se",2],["filipstadstidning.se",2],["fryksdalsbygden.se",2],["nwt.se",2],["arvikanyheter.se",2],["nkp.se",2],["saffletidningen.se",2],["provinstidningen.se",2],["dalslanningen.se",2],["nlt.se",2],["skaraborgsbygden.se",2]]);
+const hostnamesMap = new Map([["expressen.se",0],["di.se",0],["nsk.se",0],["skd.se",0],["nvp.se",0],["nuiosteraker.se",0],["barometern.se",0],["blt.se",0],["bt.se",0],["kristianstadsbladet.se",0],["olandsbladet.se",0],["smp.se",0],["sydostran.se",0],["trelleborgsallehanda.se",0],["ut.se",0],["ystadsallehanda.se",0],["corren.se",0],["folkbladet.se",0],["mvt.se",0],["nt.se",0],["vt.se",0],["klt.nu",0],["vimmerbytidning.se",0],["kuriren.nu",0],["nsd.se",0],["norran.se",0],["pt.se",0],["ekuriren.se",0],["strengnastidning.se",0],["kkuriren.se",0],["sn.se",0],["eposten.se",0],["unt.se",0],["helagotland.se",0],["kindaposten.se",0],["folkbladet.nu",0],["vk.se",0],["vasterbottningen.se",0],["mellanbygden.nu",0],["nordsverige.se",0],["lokaltidningen.nu",0],["vasterastidning.se",0],["mitti.se",0],["thelocal.se",0],["byrum.se",0],["sverigespringer.se",0],["recept.se",0],["viivilla.se",0],["mestmotor.se",0],["babyhjalp.se",0],["fragbite.se",0],["ibnytt.se",0],["realtid.se",0],["cafe.se",0],["kingmagazine.se",0],["vxonews.se",0],["vaxjobladet.se",0],["alekuriren.se",0],["nyheter24.se",0],["svenskgolf.se",0],["golfing.se",0],["gotlandjustnu.se",0],["familjeliv.se",0],["praktisktbatagande.se",0],["norrahalland.se",0],["lokalti.se",0],["lchfarkivet.se",0],["alltforforaldrar.se",0],["idrottensaffarer.se",0],["vf.se",0],["hjotidning.se",0],["kt.se",0],["kt-kuriren.se",0],["sla.se",0],["mariestadstidningen.se",0],["filipstadstidning.se",0],["fryksdalsbygden.se",0],["nwt.se",0],["arvikanyheter.se",0],["nkp.se",0],["saffletidningen.se",0],["provinstidningen.se",0],["dalslanningen.se",0],["nlt.se",0],["skaraborgsbygden.se",0],["lwcdn.com",1],["alingsastidning.se",1],["bohuslaningen.se",1],["gp.se",1],["hallandsposten.se",1],["hn.se",1],["stromstadstidning.se",1],["ttela.se",1],["kungsbackaposten.se",1],["kungalvsposten.se",1],["molndalsposten.se",1],["partilletidning.se",1],["sttidningen.se",1],["markposten.se",1],["harrydaposten.se",1],["mellerudsnyheter.se",1],["matspar.se",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -141,12 +141,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -394,7 +396,7 @@ function objectFindOwnerFn(
 function getExceptionToken() {
     const safe = safeSelf();
     const token =
-        String.fromCharCode(Date.now() % 26 + 97) +
+        safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {

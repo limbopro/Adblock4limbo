@@ -42,11 +42,11 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["_0x","5000"],["clientHeight"],["debugger"],["move_string"],["replaceWith"]];
+const argsList = [["clientHeight"],["debugger"],["move_string"],["replaceWith"],["_0x","5000"]];
 
-const hostnamesMap = new Map([["howdyho.net",0],["fatcatslim.ru",1],["aniu.ru",2],["liveball.uno",2],["anime-chan.me",3],["volyninfo.com",4]]);
+const hostnamesMap = new Map([["fatcatslim.ru",0],["aniu.ru",1],["liveball.uno",1],["anime-chan.me",2],["volyninfo.com",3]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["howdyho",4]]);
 
 const exceptionsMap = new Map([]);
 
@@ -117,12 +117,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

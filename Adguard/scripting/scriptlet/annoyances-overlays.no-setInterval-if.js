@@ -42,11 +42,11 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["potato"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["devtools"]];
+const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["devtools"]];
 
-const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["vipstreams.in",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["sflix.to",12],["webnovel.com",13],["freemcserver.net",14],["vgembed.com",15],["sbot.cf",16],["bluphim.com",16],["cdnmoviking.tech",16],["movie4kto.net",17],["alfred.camera",18],["vidstreaming.xyz",19],["choosingnothing.com",19],["ngelmat.net",20],["bembed.net",21],["embedv.net",21],["fslinks.org",21],["listeamed.net",21],["v6embed.xyz",21],["vgplayer.xyz",21],["vid-guard.com",21],["fightful.com",22],["player.melaniezettofrais.online",23]]);
+const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["phimfit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["vipstreams.in",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["sflix.to",12],["webnovel.com",13],["vgembed.com",14],["sbot.cf",15],["bluphim.com",15],["cdnmoviking.tech",15],["movie4kto.net",16],["alfred.camera",17],["vidstreaming.xyz",18],["choosingnothing.com",18],["ngelmat.net",19],["bembed.net",20],["embedv.net",20],["fslinks.org",20],["listeamed.net",20],["v6embed.xyz",20],["vgplayer.xyz",20],["vid-guard.com",20],["fightful.com",21],["player.melaniezettofrais.online",22]]);
 
-const entitiesMap = new Map([["vidsrc",21],["vembed",21]]);
+const entitiesMap = new Map([["vidsrc",20],["vembed",20]]);
 
 const exceptionsMap = new Map([]);
 
@@ -117,12 +117,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

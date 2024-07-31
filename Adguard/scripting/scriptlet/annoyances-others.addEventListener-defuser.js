@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["/^(mouseout|mouseleave)$/"]];
 
-const hostnamesMap = new Map([["whas11.com",0],["wfmynews2.com",0],["wbir.com",0],["wzzm13.com",0],["wltx.com",0],["wqad.com",0],["wnep.com",0],["wgrz.com",0],["cbs8.com",0],["firstcoastnews.com",0],["kare11.com",0],["wtsp.com",0],["ajc.com",0],["wfaa.com",0],["9news.com",0],["fox2now.com",0],["wcnc.com",0],["13newsnow.com",0],["wsvn.com",0],["abc15.com",0],["wwltv.com",0],["wkyc.com",0],["wthr.com",0],["11alive.com",0],["wusa9.com",0],["king5.com",0]]);
+const hostnamesMap = new Map([["newscentermaine.com",0],["5newsonline.com",0],["fox61.com",0],["wtol.com",0],["wiz.io",0],["winnipegfreepress.com",0],["khou.com",0],["abc10.com",0],["12news.com",0],["ksdk.com",0],["whas11.com",0],["wfmynews2.com",0],["wbir.com",0],["wzzm13.com",0],["wltx.com",0],["wqad.com",0],["wnep.com",0],["wgrz.com",0],["cbs8.com",0],["firstcoastnews.com",0],["kare11.com",0],["wtsp.com",0],["ajc.com",0],["wfaa.com",0],["9news.com",0],["fox2now.com",0],["wcnc.com",0],["13newsnow.com",0],["wsvn.com",0],["abc15.com",0],["wwltv.com",0],["wkyc.com",0],["wthr.com",0],["11alive.com",0],["wusa9.com",0],["king5.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -188,12 +188,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

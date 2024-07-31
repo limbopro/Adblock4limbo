@@ -42,11 +42,11 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#progress-value","data-timer","10"],[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"]];
+const argsList = [[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","15"]];
 
-const hostnamesMap = new Map([["howdyho.net",0],["eneyida.tv",1],["overclockers.ru",2],["dtf.ru",3],["vc.ru",3],["3dnews.kz",4],["3dnews.ru",4]]);
+const hostnamesMap = new Map([["eneyida.tv",0],["overclockers.ru",1],["dtf.ru",2],["vc.ru",2],["3dnews.kz",3],["3dnews.ru",3]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["howdyho",4]]);
 
 const exceptionsMap = new Map([]);
 
@@ -179,12 +179,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

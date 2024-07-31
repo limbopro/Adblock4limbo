@@ -42,11 +42,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["adDisplayed","$remove$"],["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["/_fa_dXVpZA==$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWNjZXB0YWJsZV9hZHM=$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWRz$/","$remove$"],["/_fa_Y2FjaGVfYWRibG9ja19jaXJjdW12ZW50X3Njb3Jl$/","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["didomi_token","$remove$"],["rateLimitData","$remove$"],["fdx_enable_new_detail_page","true"]];
+const argsList = [["adDisplayed","$remove$"],["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["/_fa_dXVpZA==$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWNjZXB0YWJsZV9hZHM=$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWRz$/","$remove$"],["/_fa_Y2FjaGVfYWRibG9ja19jaXJjdW12ZW50X3Njb3Jl$/","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["didomi_token","$remove$"],["fdx_enable_new_detail_page","true"]];
 
-const hostnamesMap = new Map([["hdfilmcehennemi2.cx",0],["jetpunk.com",1],["bravedown.com",2],["adultdeepfakes.com",3],["freewsad.com",4],["loawa.com",[5,6,7,8,9]],["ygosu.com",[5,6,7,8,9]],["sportalkorea.com",[5,6,7,8,9]],["edaily.co.kr",[5,6,7,8,9]],["economist.co.kr",[5,6,7,8,9]],["etoday.co.kr",[5,6,7,8,9]],["isplus.com",[5,6,7,8,9]],["hometownstation.com",[5,6,7,8,9]],["honkailab.com",[5,6,7,8,9]],["genshinlab.com",[5,6,7,8,9]],["thestockmarketwatch.com",[5,6,7,8,9]],["thephoblographer.com",[5,6,7,8,9]],["issuya.com",[5,6,7,8,9]],["worldhistory.org",[5,6,7,8,9]],["etnews.com",[5,6,7,8,9]],["iusm.co.kr",[5,6,7,8,9]],["dogdrip.net",[5,6,7,8,9]],["etoland.co.kr",[5,6,7,8,9]],["picrew.me",[5,6,7,8,9]],["text-compare.com",[5,6,7,8,9]],["fntimes.com",[5,6,7,8,9]],["javatpoint.com",[5,6,7,8,9]],["lamire.jp",[5,6,7,8,9]],["bamgosu.site",[5,6,7,8,9]],["etnewskorea.com",[5,6,7,8,9]],["allthekingz.com",[5,6,7,8,9]],["gadgets360.com",[5,6,7,8,9]],["automobile-catalog.com",[5,6,7,8,9]],["maketecheasier.com",[5,6,7,8,9]],["thesaurus.net",[5,6,7,8,9]],["wfmz.com",[5,6,7,8,9]],["thestar.co.uk",[5,6,7,8,9]],["yorkshirepost.co.uk",[5,6,7,8,9]],["mydaily.co.kr",[5,6,7,8,9]],["raenonx.cc",[5,6,7,8,9]],["ndtvprofit.com",[5,6,7,8,9]],["badmouth1.com",[5,6,7,8,9]],["logicieleducatif.fr",[5,6,7,8,9]],["taxguru.in",[5,6,7,8,9]],["islamicfinder.org",[5,6,7,8,9]],["aikatu.jp",[5,6,7,8,9]],["secure-signup.net",[5,6,7,8,9]],["globalrph.com",[5,6,7,8,9]],["sportsrec.com",[5,6,7,8,9]],["reportera.co.kr",[5,6,7,8,9]],["slobodnadalmacija.hr",[5,6,7,8,9]],["flatpanelshd.com",[5,6,7,8,9]],["mindbodygreen.com",10],["elevenlabs.io",11],["tv5mondeplus.com",12],["financemonk.net",13],["fedex.com",14]]);
+const hostnamesMap = new Map([["hdfilmcehennemi2.cx",0],["jetpunk.com",1],["bravedown.com",2],["adultdeepfakes.com",3],["freewsad.com",4],["loawa.com",[5,6,7,8,9]],["ygosu.com",[5,6,7,8,9]],["sportalkorea.com",[5,6,7,8,9]],["edaily.co.kr",[5,6,7,8,9]],["economist.co.kr",[5,6,7,8,9]],["etoday.co.kr",[5,6,7,8,9]],["isplus.com",[5,6,7,8,9]],["hometownstation.com",[5,6,7,8,9]],["honkailab.com",[5,6,7,8,9]],["genshinlab.com",[5,6,7,8,9]],["thestockmarketwatch.com",[5,6,7,8,9]],["thephoblographer.com",[5,6,7,8,9]],["issuya.com",[5,6,7,8,9]],["worldhistory.org",[5,6,7,8,9]],["etnews.com",[5,6,7,8,9]],["iusm.co.kr",[5,6,7,8,9]],["dogdrip.net",[5,6,7,8,9]],["etoland.co.kr",[5,6,7,8,9]],["picrew.me",[5,6,7,8,9]],["text-compare.com",[5,6,7,8,9]],["fntimes.com",[5,6,7,8,9]],["javatpoint.com",[5,6,7,8,9]],["lamire.jp",[5,6,7,8,9]],["bamgosu.site",[5,6,7,8,9]],["etnewskorea.com",[5,6,7,8,9]],["allthekingz.com",[5,6,7,8,9]],["gadgets360.com",[5,6,7,8,9]],["automobile-catalog.com",[5,6,7,8,9]],["maketecheasier.com",[5,6,7,8,9]],["thesaurus.net",[5,6,7,8,9]],["wfmz.com",[5,6,7,8,9]],["thestar.co.uk",[5,6,7,8,9]],["yorkshirepost.co.uk",[5,6,7,8,9]],["mydaily.co.kr",[5,6,7,8,9]],["raenonx.cc",[5,6,7,8,9]],["ndtvprofit.com",[5,6,7,8,9]],["badmouth1.com",[5,6,7,8,9]],["logicieleducatif.fr",[5,6,7,8,9]],["taxguru.in",[5,6,7,8,9]],["islamicfinder.org",[5,6,7,8,9]],["aikatu.jp",[5,6,7,8,9]],["secure-signup.net",[5,6,7,8,9]],["globalrph.com",[5,6,7,8,9]],["sportsrec.com",[5,6,7,8,9]],["reportera.co.kr",[5,6,7,8,9]],["slobodnadalmacija.hr",[5,6,7,8,9]],["flatpanelshd.com",[5,6,7,8,9]],["videogamemods.com",[5,6,7,8,9]],["adintrend.tv",[5,6,7,8,9]],["ark-unity.com",[5,6,7,8,9]],["cool-style.com.tw",[5,6,7,8,9]],["dziennik.pl",[5,6,7,8,9]],["mindbodygreen.com",10],["elevenlabs.io",11],["tv5mondeplus.com",12],["fedex.com",13]]);
 
-const entitiesMap = new Map([["dropgalaxy",13]]);
+const entitiesMap = new Map([]);
 
 const exceptionsMap = new Map([]);
 
@@ -140,12 +140,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

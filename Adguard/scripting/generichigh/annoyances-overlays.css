@@ -22,13 +22,10 @@
 /* annoyances-overlays */
 
 [class~="mailpoet_form_popup_overlay"],
-[data-ajax-newsletter-subscription-container],
 [data-block-type="block:newsletter"],
 [data-module="newsletter-signup"],
-[data-nc="nc-newsletter"],
 [data-nxt-template-substep="SubscribeNewsletter"],
 [data-spot-im-class="card-container"],
-[data-target="#newsletter-modal"],
 [data-testid="NewsletterSubscribeFormWrapper"],
 [data-testid="newsletter-promo-widget"],
 app-emailsubscribe,

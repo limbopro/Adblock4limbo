@@ -42,7 +42,7 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["devtools"]];
+const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["/devtools|debu/"]];
 
 const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["phimfit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["vipstreams.in",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["sflix.to",12],["webnovel.com",13],["vgembed.com",14],["sbot.cf",15],["bluphim.com",15],["cdnmoviking.tech",15],["movie4kto.net",16],["alfred.camera",17],["vidstreaming.xyz",18],["choosingnothing.com",18],["ngelmat.net",19],["bembed.net",20],["embedv.net",20],["fslinks.org",20],["listeamed.net",20],["v6embed.xyz",20],["vgplayer.xyz",20],["vid-guard.com",20],["fightful.com",21],["player.melaniezettofrais.online",22]]);
 
@@ -223,6 +223,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

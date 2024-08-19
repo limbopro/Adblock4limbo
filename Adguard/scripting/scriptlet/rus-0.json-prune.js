@@ -42,7 +42,7 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].slot"]];
+const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].*.result.body"]];
 
 const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,4]],["1plus1.video",3],["igromania.ru",5],["kanobu.ru",5],["znanija.com",6],["aniqit.com",7],["anivod.com",7],["ashdi.vip",7],["kodik.cc",7],["kodik.info",7],["tortuga.wtf",7],["ok.ru",8],["touch.mail.ru",8],["e.mail.ru",9]]);
 
@@ -247,6 +247,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -394,10 +400,7 @@ function objectFindOwnerFn(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -406,6 +409,12 @@ function getExceptionToken() {
         }
     }.bind();
     return token;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

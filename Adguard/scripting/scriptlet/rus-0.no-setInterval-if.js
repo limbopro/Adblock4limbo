@@ -42,7 +42,7 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["clientHeight"],["debugger"],["move_string"],["replaceWith"],["_0x","5000"]];
+const argsList = [["clientHeight"],["debugger"],["move_string"],["replaceWith"],["_0x","1000"]];
 
 const hostnamesMap = new Map([["fatcatslim.ru",0],["aniu.ru",1],["liveball.uno",1],["anime-chan.me",2],["volyninfo.com",3]]);
 
@@ -223,6 +223,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

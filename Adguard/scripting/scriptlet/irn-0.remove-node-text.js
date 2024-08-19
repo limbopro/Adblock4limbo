@@ -85,6 +85,18 @@ function replaceNodeTextFn(
             safe.uboLog(logPrefix, 'Quitting');
         }
     };
+    const textContentFactory = (( ) => {
+        const out = { createScript: s => s };
+        const { trustedTypes: tt } = self;
+        if ( tt instanceof Object ) {
+            if ( typeof tt.getPropertyType === 'function' ) {
+                if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
+                    return tt.createPolicy(getRandomToken(), out);
+                }
+            }
+        }
+        return out;
+    })();
     let sedCount = extraArgs.sedCount || 0;
     const handleNode = node => {
         const before = node.textContent;
@@ -102,7 +114,9 @@ function replaceNodeTextFn(
         const after = pattern !== ''
             ? before.replace(rePattern, replacement)
             : replacement;
-        node.textContent = after;
+        node.textContent = node.nodeName === 'SCRIPT'
+            ? textContentFactory.createScript(after)
+            : after;
         if ( safe.logLevel > 1 ) {
             safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
@@ -148,10 +162,16 @@ function replaceNodeTextFn(
     }, 'interactive');
 }
 
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+}
+
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -299,6 +319,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

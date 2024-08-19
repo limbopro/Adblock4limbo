@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["visibilitychange","captureContext"]];
 
-const hostnamesMap = new Map([["7days.ru",[0,25]],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["regnum.news",9],["regnum.ru",9],["tproger.ru",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["carservic.ru",14],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["xv-ru.com",17],["overclockers.ru",18],["bonus-tv.ru",19],["kinoblin.ru",20],["m.lenta.ru",21],["www.vesti.ru",22],["lenta.ru",23],["otvet.mail.ru",24],["cdn.viqeo.tv",25],["kinonews.ru",25],["kp.kg",25],["kp.kz",25],["kp.md",25],["kp.ru",25],["mk.ru",25],["ohotniki.ru",25],["portalvirtualreality.ru",25],["radiokp.ru",25],["sportkp.ru",25],["wday.ru",25],["woman.ru",25],["www.fontanka.ru",25]]);
+const hostnamesMap = new Map([["7days.ru",[0,25]],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["regnum.news",9],["regnum.ru",9],["tproger.ru",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["carservic.ru",14],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["xv-ru.com",17],["overclockers.ru",18],["bonus-tv.ru",19],["kinoblin.ru",20],["serialai.ru",20],["m.lenta.ru",21],["www.vesti.ru",22],["lenta.ru",23],["otvet.mail.ru",24],["cdn.viqeo.tv",25],["kinonews.ru",25],["kp.kg",25],["kp.kz",25],["kp.md",25],["kp.ru",25],["mk.ru",25],["ohotniki.ru",25],["portalvirtualreality.ru",25],["radiokp.ru",25],["sportkp.ru",25],["wday.ru",25],["woman.ru",25],["www.fontanka.ru",25]]);
 
 const entitiesMap = new Map([]);
 
@@ -146,7 +146,7 @@ function addEventListenerDefuser(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -294,6 +294,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

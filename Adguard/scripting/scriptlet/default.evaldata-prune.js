@@ -219,10 +219,7 @@ function objectFindOwnerFn(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -355,6 +352,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -390,6 +393,12 @@ function safeSelf() {
     };
     bc.postMessage('areyouready?');
     return safe;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

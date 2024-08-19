@@ -42,9 +42,9 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","noopFunc","condition","adblock"],["document.getElementById","0","undefined","condition","divContentVideo"]];
+const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["fetch","0","{\"value\": \"https://www.apkmoddone.com/feeds/posts/summary/-/_Apps?alt=json&max-results=0\"}","condition","ipinfo.io"],["document.querySelector","0","{\"value\": \"body\"}","condition","iframe"],["String.prototype.endsWith","0","''","condition","translate.goog"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"]];
 
-const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["autosport.com",2],["motorsport.com",2],["motorsport.uol.com.br",2],["kimcartoon.li",3],["kc.linksgen.com",3],["kisscartoon.se",3]]);
+const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["apkmoddone.com",2],["www.apkmoddone.com",3],["dogdrip.net",4],["ygosu.com",5],["bamgosu.site",5],["loawa.com",6],["autosport.com",7],["motorsport.com",7],["motorsport.uol.com.br",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -228,6 +228,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

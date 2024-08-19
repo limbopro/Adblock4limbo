@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/fa/generate/userid"],["cpc"],["candidatelogapi method:POST"],["PlayReports"]];
+const argsList = [["/fa/generate/userid"],["candidatelogapi method:POST"],["PlayReports"]];
 
-const hostnamesMap = new Map([["asriran.com",0],["digikala.com",1],["jobvision.ir",2],["play.namava.ir",3]]);
+const hostnamesMap = new Map([["asriran.com",0],["jobvision.ir",1],["play.namava.ir",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -408,6 +408,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

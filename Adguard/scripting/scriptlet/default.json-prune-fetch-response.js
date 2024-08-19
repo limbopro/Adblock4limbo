@@ -42,9 +42,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["results","","propsToMatch","deezer.getAudiobreak"],["avails","","propsToMatch","amazonaws.com"],["response.ads"],["plugins.adService"],["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"]];
+const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["results","","propsToMatch","deezer.getAudiobreak"],["avails","","propsToMatch","amazonaws.com"],["response.ads"],["plugins.adService"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1,20]],["m.youtube.com",1],["music.youtube.com",1],["tv.youtube.com",1],["youtubekids.com",1],["youtube-nocookie.com",1],["www.msn.com",[2,3]],["hulu.com",[4,5]],["crackle.com",6],["misskey.io",7],["misskey.oga.ninja",7],["mk.yopo.work",7],["sushi.ski",7],["trpger.us",7],["warpday.net",7],["zadankai.club",7],["zee5.com",8],["target.com",9],["play.geforcenow.com",10],["www.tiktok.com",11],["npo.nl",12],["watch.shout-tv.com",13],["realcanadiansuperstore.ca",14],["tumblr.com",15],["deezer.com",16],["nbc.com",17],["player.pop.co.uk",18],["player.popfun.co.uk",18],["iprima.cz",19]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1,2]],["m.youtube.com",2],["music.youtube.com",2],["tv.youtube.com",2],["youtubekids.com",2],["youtube-nocookie.com",2],["www.msn.com",[3,4]],["hulu.com",[5,6]],["crackle.com",7],["misskey.io",8],["misskey.oga.ninja",8],["mk.yopo.work",8],["sushi.ski",8],["trpger.us",8],["warpday.net",8],["zadankai.club",8],["zee5.com",9],["target.com",10],["play.geforcenow.com",11],["www.tiktok.com",12],["npo.nl",13],["watch.shout-tv.com",14],["realcanadiansuperstore.ca",15],["tumblr.com",16],["deezer.com",17],["nbc.com",18],["player.pop.co.uk",19],["player.popfun.co.uk",19],["iprima.cz",20]]);
 
 const entitiesMap = new Map([]);
 
@@ -343,6 +343,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -490,10 +496,7 @@ function objectFindOwnerFn(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -502,6 +505,12 @@ function getExceptionToken() {
         }
     }.bind();
     return token;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

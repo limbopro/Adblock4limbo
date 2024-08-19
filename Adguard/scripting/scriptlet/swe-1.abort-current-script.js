@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["chp_adblock_browser"],["monsterinsights_frontend"],["advads"],["advanced_ads"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["temadagar.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",[15,16,17]],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15],["branschkoll.se",[16,17]],["rocknytt.net",[16,17]],["upphandling24.se",[16,17]],["kimura.se",[16,17]],["datormagazin.se",[16,17]],["polistidningen.se",[16,17]],["densistavilan.se",[16,17]],["classicmotor.se",[16,17]],["tidningenhalsa.se",[16,17]],["husohem.se",[16,17]],["guiden.se",[16,17]],["nyadagbladet.se",[16,17]],["enkelteknik.se",[16,17]]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["temadagar.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",[15,16,17]],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15],["branschkoll.se",[16,17]],["rocknytt.net",[16,17]],["upphandling24.se",[16,17]],["kimura.se",[16,17]],["datormagazin.se",[16,17]],["polistidningen.se",[16,17]],["densistavilan.se",[16,17]],["classicmotor.se",[16,17]],["tidningenhalsa.se",[16,17]],["husohem.se",[16,17]],["guiden.se",[16,17]],["nyadagbladet.se",[16,17]],["enkelteknik.se",[16,17]],["vadhanderisverige.se",[16,17]]]);
 
 const entitiesMap = new Map([]);
 
@@ -177,10 +177,7 @@ function runAtHtmlElementFn(fn) {
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -313,6 +310,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -353,6 +356,12 @@ function safeSelf() {
 function shouldDebug(details) {
     if ( details instanceof Object === false ) { return false; }
     return scriptletGlobals.canDebug && details.debug;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

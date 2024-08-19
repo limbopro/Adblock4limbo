@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"]];
+const argsList = [["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["/pagead2\\.googlesyndication\\.com|outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"],["popads.net"]];
 
-const hostnamesMap = new Map([["aqualapp.com",0],["raulprietofernandez.net",0],["minhaconexao.com.br",1]]);
+const hostnamesMap = new Map([["aqualapp.com",0],["raulprietofernandez.net",0],["minhaconexao.com.br",1],["anitube.vip",2],["hinatasoul.com",2],["dicasgostosas.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -408,6 +408,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

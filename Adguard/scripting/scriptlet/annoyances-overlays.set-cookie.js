@@ -42,9 +42,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_501941328","1"],["popup_closed","true"],["SuppressInterstitial","true","","reload","1"],["exit-intent","true"],["marketing-modal-closed-1","2"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_501941328","1"],["popup_closed","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["breachmedia.ca",0],["artribune.com",1],["oled-info.com",2],["readergrev.com",3],["gourmetfoodstore.com",4],["railsnotes.xyz",5],["theinformation.com",6],["kermitlynch.com",7],["jingdaily.com",8],["babiesrus.ca",9],["toysrus.ca",9],["clevercreations.org",10],["iconduck.com",11],["shojiwax.com",12],["skepticalraptor.com",12],["yvonnebennetti.com",13],["funko.com",14],["loungefly.com",14],["saucerco.com",15],["sharperimage.com",16],["sweetwater.com",17],["assos.com",18],["techonthenet.com",19],["tumblr.com",20],["scitechdaily.com",21]]);
+const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["oled-info.com",3],["readergrev.com",4],["jointhefollowup.com",4],["gourmetfoodstore.com",5],["theinformation.com",6],["intellinews.com",7],["kermitlynch.com",8],["jingdaily.com",9],["babiesrus.ca",10],["toysrus.ca",10],["clevercreations.org",11],["iconduck.com",12],["shojiwax.com",13],["skepticalraptor.com",13],["yvonnebennetti.com",14],["funko.com",15],["loungefly.com",15],["saucerco.com",16],["sharperimage.com",17],["sweetwater.com",18],["assos.com",19],["techonthenet.com",20],["tumblr.com",21],["scitechdaily.com",22]]);
 
 const entitiesMap = new Map([]);
 
@@ -223,6 +223,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

@@ -42,9 +42,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","15"]];
+const argsList = [[".media > .andropov-video > video","controls","true"],[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","16"]];
 
-const hostnamesMap = new Map([["eneyida.tv",0],["overclockers.ru",1],["dtf.ru",2],["vc.ru",2],["3dnews.kz",3],["3dnews.ru",3]]);
+const hostnamesMap = new Map([["dtf.ru",0],["vc.ru",0],["eneyida.tv",1],["overclockers.ru",2],["3dnews.kz",3],["3dnews.ru",3]]);
 
 const entitiesMap = new Map([["howdyho",4]]);
 
@@ -137,7 +137,7 @@ function setAttr(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -285,6 +285,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

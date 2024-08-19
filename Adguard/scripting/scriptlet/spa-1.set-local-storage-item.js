@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["last_ads","yes"]];
 
-const hostnamesMap = new Map([["receitasdocheff.online",0],["receitasvegana.com",0],["megacurioso.online",0],["gastroponto.com",0],["nossoprato.online",0],["receitasdafazenda.com",0]]);
+const hostnamesMap = new Map([["receitasdocheff.online",0],["infoinvest.org",0],["receitastop.click",0],["receitasvegana.com",0],["megacurioso.online",0],["gastroponto.com",0],["nossoprato.online",0],["receitasdafazenda.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -246,6 +246,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

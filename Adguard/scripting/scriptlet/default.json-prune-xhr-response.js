@@ -42,9 +42,9 @@ const uBOL_jsonPruneXhrResponse = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["data.viewer.instream_video_ads data.scrubber","","propsToMatch","/api/graphql"],["data.home.home_timeline_urt.instructions.[].entries.[-].content.itemContent.promotedMetadata","","propsToMatch","url:/Home"],["data.search_by_raw_query.search_timeline.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata","","propsToMatch","url:/SearchTimeline"],["data.threaded_conversation_with_injections_v2.instructions.[].entries.[-].content.items.[].item.itemContent.promotedMetadata","","propsToMatch","url:/TweetDetail"],["data.user.result.timeline_v2.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata","","propsToMatch","url:/UserTweets"]];
+const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"],["data.viewer.instream_video_ads data.scrubber","","propsToMatch","/api/graphql"],["data.home.home_timeline_urt.instructions.[].entries.[-].content.itemContent.promotedMetadata","","propsToMatch","url:/Home"],["data.search_by_raw_query.search_timeline.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata","","propsToMatch","url:/SearchTimeline"],["data.threaded_conversation_with_injections_v2.instructions.[].entries.[-].content.items.[].item.itemContent.promotedMetadata","","propsToMatch","url:/TweetDetail"],["data.user.result.timeline_v2.timeline.instructions.[].entries.[-].content.itemContent.promotedMetadata","","propsToMatch","url:/UserTweets"]];
 
-const hostnamesMap = new Map([["web.facebook.com",0],["www.facebook.com",0],["twitter.com",[1,2,3,4]],["x.com",[1,2,3,4]]]);
+const hostnamesMap = new Map([["www.youtube.com",0],["web.facebook.com",1],["www.facebook.com",1],["twitter.com",[2,3,4,5]],["x.com",[2,3,4,5]]]);
 
 const entitiesMap = new Map([]);
 
@@ -345,6 +345,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -492,10 +498,7 @@ function objectFindOwnerFn(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -504,6 +507,12 @@ function getExceptionToken() {
         }
     }.bind();
     return token;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

@@ -39,7 +39,7 @@ const hostnamesMap = new Map([["sjofart.ax",0],["avestatidning.com",1],["salaall
 
 const entitiesMap = new Map(undefined);
 
-const exceptionsMap = new Map([["www.com.se",[23]]]);
+const exceptionsMap = new Map([["www.com.se",[23]],["pagalnew.com.se",[23]]]);
 
 self.declarativeImports = self.declarativeImports || [];
 self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });

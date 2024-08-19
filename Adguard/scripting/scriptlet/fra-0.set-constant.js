@@ -42,11 +42,11 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["integrityObserver.corrupted","0"],["checkAdsBlocked","noopFunc"],["dAp","true"],["navigator.brave","undefined"],["checkDiv","noopFunc"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["integrityObserver.corrupted","false"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["advanced_ads_ready","noopFunc"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["empire.pop","undefined"],["empire.direct","undefined"],["empire.isAdbActive","false"],["empire.directHideAds","undefined"],["empire.countpremium.film","0"],["empire.countpremium.serie","0"],["empire.countpremiumaccount.film","0"],["empire.countpremiumaccount.serie","0"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
+const argsList = [["penci_options_set.ad_blocker_detector","false"],["ima","{}"],["integrityObserver.corrupted","0"],["checkAdsBlocked","noopFunc"],["dAp","true"],["navigator.brave","undefined"],["checkDiv","noopFunc"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["integrityObserver.corrupted","false"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["advanced_ads_ready","noopFunc"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["empire.pop","undefined"],["empire.direct","undefined"],["empire.isAdbActive","false"],["empire.directHideAds","undefined"],["empire.countpremium.film","0"],["empire.countpremium.serie","0"],["empire.countpremiumaccount.film","0"],["empire.countpremiumaccount.serie","0"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
 
-const hostnamesMap = new Map([["journaldesfemmes.fr",0],["rustica.fr",1],["cookomix.com",2],["empire-stream.net",[3,27,28,29,30,31,32,33,34]],["cinefil.com",4],["signal-arnaques.com",5],["dhnet.be",6],["sudinfo.be",6],["7sur7.be",6],["rtl.be",6],["pianoweb.fr",7],["parlons-basket.com",8],["mac4ever.com",8],["jaitoutcompris.com",9],["varmatin.com",10],["nicematin.com",10],["commentcamarche.net",11],["20minutes.fr",12],["hollywoodpq.com",13],["jardiner-malin.fr",14],["hack-life.net",15],["jtrouver.com",16],["playtv.fr",[17,18]],["skyrock.com",19],["skyrock.fr",19],["6play.fr",[20,42,43,44,45,46]],["tf1.fr",[21,22,23,42,43,44,45,46]],["justarrived.lu",24],["occasions.decathlon.fr",[25,26]],["e-player-stream.app",36],["maxisciences.com",37],["gentside.com",37],["femmeactuelle.fr",37],["geo.fr",37],["voici.fr",37],["programme-tv.net",37],["gala.fr",37],["capital.fr",37],["allocine.fr",38],["funradio.fr",39],["rtl2.fr",39],["rtl.fr",39],["reflectim.fr",40],["e-sushi.fr",40],["canalplus.com",41],["tf1info.fr",47]]);
+const hostnamesMap = new Map([["adala-news.fr",0],["tvaplus.ca",1],["journaldesfemmes.fr",2],["rustica.fr",3],["cookomix.com",4],["empire-streamz.fr",[5,29,30,31,32,33,34,35,36]],["empire-stream.net",[5,29,30,31,32,33,34,35,36]],["cinefil.com",6],["signal-arnaques.com",7],["dhnet.be",8],["sudinfo.be",8],["7sur7.be",8],["rtl.be",8],["pianoweb.fr",9],["parlons-basket.com",10],["mac4ever.com",10],["jaitoutcompris.com",11],["varmatin.com",12],["nicematin.com",12],["commentcamarche.net",13],["20minutes.fr",14],["hollywoodpq.com",15],["jardiner-malin.fr",16],["hack-life.net",17],["jtrouver.com",18],["playtv.fr",[19,20]],["skyrock.com",21],["skyrock.fr",21],["6play.fr",[22,44,45,46,47,48]],["tf1.fr",[23,24,25,44,45,46,47,48]],["justarrived.lu",26],["occasions.decathlon.fr",[27,28]],["e-player-stream.app",38],["maxisciences.com",39],["gentside.com",39],["femmeactuelle.fr",39],["geo.fr",39],["voici.fr",39],["programme-tv.net",39],["gala.fr",39],["capital.fr",39],["allocine.fr",40],["funradio.fr",41],["rtl2.fr",41],["rtl.fr",41],["reflectim.fr",42],["e-sushi.fr",42],["canalplus.com",43],["tf1info.fr",49]]);
 
-const entitiesMap = new Map([["empire-streaming",3],["e-player-stream",35]]);
+const entitiesMap = new Map([["empire-streaming",5],["e-player-stream",37]]);
 
 const exceptionsMap = new Map([]);
 
@@ -211,7 +211,7 @@ function setConstantFn(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -359,6 +359,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

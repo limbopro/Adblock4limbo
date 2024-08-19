@@ -42,9 +42,9 @@ const uBOL_noXhrIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["/api/ads"],["adsbygoogle"]];
+const argsList = [["/api/ads"],["adsbygoogle"],["pagead2.googlesyndication.com"]];
 
-const hostnamesMap = new Map([["noy1.top",0],["pansearch.me",1]]);
+const hostnamesMap = new Map([["noy1.top",0],["pansearch.me",1],["linetv.tw",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -408,6 +408,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

@@ -42,9 +42,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["data.intrack"],["trace data.vast_url data.ads"],["result.commercialUrl result.watermark"],["result.adsText result.adsLink"],["data","data.vast data.content data.ad_id"],["body.productStatus"]];
+const argsList = [["trace data.vast_url data.ads"],["result.commercialUrl result.watermark"],["result.adsText result.adsLink"],["data","data.vast data.content data.ad_id"],["body.productStatus"]];
 
-const hostnamesMap = new Map([["digikala.com",0],["filmnet.ir",1],["play.namava.ir",2],["skyroom.online",3],["tmk.ir",4],["player.telewebion.com",5]]);
+const hostnamesMap = new Map([["filmnet.ir",0],["play.namava.ir",1],["skyroom.online",2],["tmk.ir",3],["player.telewebion.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -247,6 +247,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -394,10 +400,7 @@ function objectFindOwnerFn(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -406,6 +409,12 @@ function getExceptionToken() {
         }
     }.bind();
     return token;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

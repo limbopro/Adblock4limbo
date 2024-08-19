@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["DOMContentLoaded","getComputedStyle(a).height"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["/touchmove|wheel/","preventDefault()"],["load","interstitialAd"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["click","event.triggered"]];
+const argsList = [["DOMContentLoaded","getComputedStyle(a).height"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["/touchmove|wheel/","preventDefault()"],["load","interstitialAd"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"]];
 
-const hostnamesMap = new Map([["iwb.jp",0],["jukenbbs.com",1],["blog.housinkai.com",2],["kakenhi.net",2],["seesaa.net",2],["blog-and-destroy.com",3],["coolpan.net",4],["twi-fans.com",5],["twivideo.net",6],["twidouga.net",7],["anacap.doorblog.jp",8],["anianierosuki.work",9],["uraaka-joshi.com",10],["tokyomotion.net",11],["ero-video.net",12],["jp-xvideos.info",13]]);
+const hostnamesMap = new Map([["iwb.jp",0],["jukenbbs.com",1],["blog.housinkai.com",2],["kakenhi.net",2],["seesaa.net",2],["blog-and-destroy.com",3],["coolpan.net",4],["twi-fans.com",5],["twivideo.net",6],["twidouga.net",7],["anacap.doorblog.jp",8],["anianierosuki.work",9],["uraaka-joshi.com",10],["tokyomotion.net",11],["ero-video.net",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -146,7 +146,7 @@ function addEventListenerDefuser(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -294,6 +294,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

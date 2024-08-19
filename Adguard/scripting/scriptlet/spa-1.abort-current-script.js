@@ -42,11 +42,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["fetch","/alert|bloqueador|\\.catch|\\.type/"],["document.createElement","adsbygoogle.js"],["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["String.prototype.concat","popup"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""]];
+const argsList = [["document.createElement","adsbygoogle.js"],["fetch","/alert|bloqueador|\\.catch|\\.type/"],["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["document.addEventListener","window.open"],["String.prototype.concat","popup"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""],["document.addEventListener","window.location;"]];
 
-const hostnamesMap = new Map([["luratoons.com",0],["lura-toons.com",0],["playertv.org",1],["tvembed.net",1],["tv0800.zip",1],["gamesteelstudioplus.blogspot.com",2],["gamesteelstudio.blogspot.com",2],["infohojeonline.blogspot.com",2],["dicasdevalor.net",3],["animeszone.net",4],["canalnatelinhaonline.blogspot.com",5],["hinatasoul.com",6],["buscalinks.xyz",7],["gamesviatorrent.top",7],["inuyashadowns.com.br",8],["link.baixedetudo.net.br",8],["oliberal.com",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,23,24]],["csrevo.com",11],["guianoticiario.net",12],["oceans14.com.br",13],["illamadas.es",14],["audiotools.in",15],["ecartelera.com",16],["animeshouse.net",17],["packsmega.info",18],["futbollibre.pe",19],["embedder.net",19],["playpaste.com",[20,21]],["pasfox.com",[21,28]],["directvxx.com",22],["tiohentai.xyz",25],["palaygo.site",26],["seireshd.com",29],["hentai-id.tv",30]]);
+const hostnamesMap = new Map([["gamesperu2021.blogspot.com",[0,18]],["playertv.org",0],["tvembed.net",0],["tv0800.zip",0],["luratoons.com",1],["lura-toons.com",1],["gamesteelstudioplus.blogspot.com",2],["gamesteelstudio.blogspot.com",2],["infohojeonline.blogspot.com",2],["dicasdevalor.net",3],["animeszone.net",4],["canalnatelinhaonline.blogspot.com",5],["hinatasoul.com",6],["buscalinks.xyz",7],["gamesviatorrent.top",7],["inuyashadowns.com.br",8],["link.baixedetudo.net.br",8],["oliberal.com",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,24,25]],["csrevo.com",11],["guianoticiario.net",12],["oceans14.com.br",13],["illamadas.es",14],["audiotools.in",15],["ecartelera.com",16],["animeshouse.net",17],["packsmega.info",19],["futbollibre.pe",20],["embedder.net",20],["playpaste.com",[21,22]],["pasfox.com",[22,29]],["directvxx.com",23],["tiohentai.xyz",26],["palaygo.site",27],["seireshd.com",30],["hentai-id.tv",31],["todo-anime.net",32]]);
 
-const entitiesMap = new Map([["movidy",27]]);
+const entitiesMap = new Map([["movidy",28]]);
 
 const exceptionsMap = new Map([]);
 
@@ -177,10 +177,7 @@ function runAtHtmlElementFn(fn) {
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -313,6 +310,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -353,6 +356,12 @@ function safeSelf() {
 function shouldDebug(details) {
     if ( details instanceof Object === false ) { return false; }
     return scriptletGlobals.canDebug && details.debug;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

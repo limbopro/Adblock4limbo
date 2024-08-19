@@ -42,7 +42,7 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","/ApoZow|'(map'|\\/imgs\\/|ads?-\\d+|ad-img-slot|ad_inview_area|div-leader-ad)|\\['style'\\]\\['display'\\]|\\.length;var|\\.substr\\(0|\\.reduce\\(\\(acc, curr\\)|g1hnttodBEe8apl|_adbn_|adheader|\\\"\\/00|DklzSoz|Countdown|mpl=kdel|String.fromCharCode\\(127\\)/"]];
+const argsList = [["script","/ApoZow|'(map'|\\/imgs\\/|ads?-\\d+|ad-img-slot|ad_inview_area|div-leader-ad)|\\['style'\\]\\['display'\\]|\\.length;var|\\.substr\\(0|\\.reduce\\(\\(acc, curr\\)|g1hnttodBEe8apl|_adbn_|adheader|\\\"\\/00|DklzSoz|Countdown|mpl=kdel|String.fromCharCode\\(127\\)|\\\"getComputedStyle\\\"|newImg|interstitial|&utm_medium/"]];
 
 const hostnamesMap = new Map([["japscan.lol",0]]);
 
@@ -85,6 +85,18 @@ function replaceNodeTextFn(
             safe.uboLog(logPrefix, 'Quitting');
         }
     };
+    const textContentFactory = (( ) => {
+        const out = { createScript: s => s };
+        const { trustedTypes: tt } = self;
+        if ( tt instanceof Object ) {
+            if ( typeof tt.getPropertyType === 'function' ) {
+                if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
+                    return tt.createPolicy(getRandomToken(), out);
+                }
+            }
+        }
+        return out;
+    })();
     let sedCount = extraArgs.sedCount || 0;
     const handleNode = node => {
         const before = node.textContent;
@@ -102,7 +114,9 @@ function replaceNodeTextFn(
         const after = pattern !== ''
             ? before.replace(rePattern, replacement)
             : replacement;
-        node.textContent = after;
+        node.textContent = node.nodeName === 'SCRIPT'
+            ? textContentFactory.createScript(after)
+            : after;
         if ( safe.logLevel > 1 ) {
             safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
@@ -146,6 +160,12 @@ function replaceNodeTextFn(
             stop();
         }
     }, 'interactive');
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 function runAt(fn, when) {

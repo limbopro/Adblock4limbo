@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["japscan.lol",0],["empire-stream.net",0],["ddl-francais.com",0]]);
+const hostnamesMap = new Map([["japscan.lol",0],["empire-streamz.fr",0],["empire-stream.net",0],["ddl-francais.com",0]]);
 
 const entitiesMap = new Map([["empire-streaming",0]]);
 
@@ -249,6 +249,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

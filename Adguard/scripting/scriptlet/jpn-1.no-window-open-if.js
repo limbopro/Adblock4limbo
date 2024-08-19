@@ -44,7 +44,7 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["japaneseasmr.top",0],["kokeshi-doll.com",0],["uraaka-joshi.com",0],["oppaideippai.net",0],["trendynailwraps.com",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0]]);
+const hostnamesMap = new Map([["kokeshi-doll.com",0],["uraaka-joshi.com",0],["oppaideippai.net",0],["trendynailwraps.com",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -249,6 +249,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

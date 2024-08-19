@@ -42,9 +42,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["dtGonza.playeradstime","\"-1\""],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["__abburi","{\"value\": \"https://veev.to/assets/videoplayer/df8fdb9.js\"}"]];
+const argsList = [["dtGonza.playeradstime","\"-1\""],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"]];
 
-const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["emturbovid.com",1],["findjav.com",1],["mmtv01.xyz",1],["stbturbo.xyz",1],["tuborstb.co",2],["app.blubank.com",3],["mobileweb.bankmellat.ir",[3,4]],["veev.to",5]]);
+const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["emturbovid.com",1],["findjav.com",1],["mmtv01.xyz",1],["stbturbo.xyz",1],["streamsilk.com",1],["tuborstb.co",2],["app.blubank.com",3],["mobileweb.bankmellat.ir",[3,4]]]);
 
 const entitiesMap = new Map([]);
 
@@ -211,7 +211,7 @@ function setConstantFn(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -359,6 +359,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

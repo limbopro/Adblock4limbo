@@ -42,9 +42,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["#tp-snp2","","1000"],["#cross-snp2","","1000"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
+const argsList = [["#tp-snp2","","1000"],["#cross-snp2","","1000"],["button.fc-button"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
 
-const hostnamesMap = new Map([["bgmi32bitapk.in",[0,1]],["bankshiksha.in",[0,1]],["earn.mpscstudyhub.com",[0,1]],["earn.quotesopia.com",[0,1]],["money.quotesopia.com",[0,1]],["best-mobilegames.com",[0,1]],["learn.moderngyan.com",[0,1]],["bharatsarkarijobalert.com",[0,1]],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["turboobit.com",3],["easybib.com",4]]);
+const hostnamesMap = new Map([["bgmi32bitapk.in",[0,1]],["bankshiksha.in",[0,1]],["earn.mpscstudyhub.com",[0,1]],["earn.quotesopia.com",[0,1]],["money.quotesopia.com",[0,1]],["best-mobilegames.com",[0,1]],["learn.moderngyan.com",[0,1]],["bharatsarkarijobalert.com",[0,1]],["skmedix.pl",2],["my.irancell.ir",3],["tourbobit.com",4],["tourbobit.net",4],["turbobeet.net",4],["turbobi.pw",4],["turbobif.com",4],["turbobit.net",4],["turbobita.net",4],["turbobits.cc",4],["turboobit.com",4],["easybib.com",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -376,6 +376,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

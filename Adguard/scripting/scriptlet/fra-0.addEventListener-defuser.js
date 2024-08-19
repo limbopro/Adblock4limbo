@@ -42,9 +42,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["load","isAdblock"],["DOMContentLoaded","/\\['classList'\\][\\s\\S]*?\\['target'\\]/"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
+const argsList = [["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
 
-const hostnamesMap = new Map([["cyclismactu.net",0],["japscan.lol",1],["lecourrier-du-soir.com",2],["player.melaniezettofrais.online",3],["macg.co",4]]);
+const hostnamesMap = new Map([["cyclismactu.net",0],["lecourrier-du-soir.com",1],["player.melaniezettofrais.online",2],["macg.co",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -146,7 +146,7 @@ function addEventListenerDefuser(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -294,6 +294,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

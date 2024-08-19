@@ -42,11 +42,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
+const argsList = [["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
 
-const hostnamesMap = new Map([["duluthtrading.com",0],["themonthly.com.au",1],["thesaturdaypaper.com.au",1],["tastemade.com",2],["clutchpoints.com",3],["core.app",4],["urbanoutfitters.com",5],["paulaschoice.com",6],["realpython.com",7],["www.watermarkremover.io",10],["scenexe.io",11]]);
+const hostnamesMap = new Map([["duluthtrading.com",0],["themonthly.com.au",1],["thesaturdaypaper.com.au",1],["tastemade.com",2],["clutchpoints.com",3],["core.app",4],["interestingengineering.com",5],["urbanoutfitters.com",6],["paulaschoice.com",7],["realpython.com",8],["www.watermarkremover.io",11],["scenexe.io",12]]);
 
-const entitiesMap = new Map([["brainly",[8,9]]]);
+const entitiesMap = new Map([["brainly",[9,10]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -246,6 +246,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

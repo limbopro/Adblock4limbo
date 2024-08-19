@@ -25,7 +25,7 @@
 
 'use strict';
 
-// ruleset: cze-0
+// ruleset: vie-1
 
 /******************************************************************************/
 
@@ -38,13 +38,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_adjustSetTimeout = function() {
+const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["vendor-load","3000"]];
+const argsList = [["logged","1"]];
 
-const hostnamesMap = new Map([["sauto.cz",0]]);
+const hostnamesMap = new Map([["freeplayervideo.com",0],["abysscdn.com",0],["player-cdn.com",0],["geoip.redirect-ads.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -52,32 +52,76 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function adjustSetTimeout(
-    needleArg = '',
-    delayArg = '',
-    boostArg = ''
+function setSessionStorageItem(key = '', value = '') {
+    setLocalStorageItemFn('session', false, key, value);
+}
+
+function setLocalStorageItemFn(
+    which = 'local',
+    trusted = false,
+    key = '',
+    value = '',
 ) {
-    if ( typeof needleArg !== 'string' ) { return; }
-    const safe = safeSelf();
-    const reNeedle = safe.patternToRegex(needleArg);
-    let delay = delayArg !== '*' ? parseInt(delayArg, 10) : -1;
-    if ( isNaN(delay) || isFinite(delay) === false ) { delay = 1000; }
-    let boost = parseFloat(boostArg);
-    boost = isNaN(boost) === false && isFinite(boost)
-        ? Math.min(Math.max(boost, 0.001), 50)
-        : 0.05;
-    self.setTimeout = new Proxy(self.setTimeout, {
-        apply: function(target, thisArg, args) {
-            const [ a, b ] = args;
-            if (
-                (delay === -1 || b === delay) &&
-                reNeedle.test(a.toString())
-            ) {
-                args[1] = b * boost;
-            }
-            return target.apply(thisArg, args);
+    if ( key === '' ) { return; }
+
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
+    }
+
+    const trustedValues = [
+        '',
+        'undefined', 'null',
+        'false', 'true',
+        'on', 'off',
+        'yes', 'no',
+        'accept', 'reject',
+        'accepted', 'rejected',
+        '{}', '[]', '""',
+        '$remove$',
+    ];
+
+    if ( trusted ) {
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
         }
-    });
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
+        }
+    } else {
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10);
+            if ( n > 32767 ) { return; }
+        }
+    }
+
+    try {
+        const storage = self[`${which}Storage`];
+        if ( value === '$remove$' ) {
+            const safe = safeSelf();
+            const pattern = safe.patternToRegex(key, undefined, true );
+            const toRemove = [];
+            for ( let i = 0, n = storage.length; i < n; i++ ) {
+                const key = storage.key(i);
+                if ( pattern.test(key) ) { toRemove.push(key); }
+            }
+            for ( const key of toRemove ) {
+                storage.removeItem(key);
+            }
+        } else {
+            storage.setItem(key, `${value}`);
+        }
+    } catch(ex) {
+    }
 }
 
 function safeSelf() {
@@ -305,7 +349,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { adjustSetTimeout(...argsList[i]); }
+    try { setSessionStorageItem(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -323,11 +367,11 @@ argsList.length = 0;
 //   'MAIN' world not yet supported in Firefox, so we inject the code into
 //   'MAIN' ourself when environment in Firefox.
 
-const targetWorld = 'MAIN';
+const targetWorld = 'ISOLATED';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_adjustSetTimeout();
+    return uBOL_setSessionStorageItem();
 }
 
 // Firefox
@@ -335,11 +379,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_adjustSetTimeout = cloneInto([
-            [ '(', uBOL_adjustSetTimeout.toString(), ')();' ],
+        page.uBOL_setSessionStorageItem = cloneInto([
+            [ '(', uBOL_setSessionStorageItem.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_adjustSetTimeout);
+        const blob = new page.Blob(...page.uBOL_setSessionStorageItem);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -353,7 +397,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_adjustSetTimeout;
+    delete page.uBOL_setSessionStorageItem;
 }
 
 /******************************************************************************/

@@ -42,11 +42,11 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["sec--","*","0.001"],["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timeleft","*","0.02"],["timer"],[],["advert","*","0.001"]];
+const argsList = [["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timer"],[],["advert","*","0.001"],["sec--","*","0.001"],["timeleft","*","0.02"]];
 
-const hostnamesMap = new Map([["filmizlehdfilm.com",0],["hdfilmizlesene.org",0],["hdsinemax.com",1],["elzemfilm.org",1],["tafdi3.com",2],["tafdi4.com",2],["tafdi5.com",2],["filmizletv2.com",3],["filmizletv18.com",3],["fullhdfilm.pro",4],["hdfilmifullizle.com",4],["yabancidizi.pro",5],["hdfilmfullizle.com",6],["turkturk.org",7],["turkturk.net",7],["itemci.com",8]]);
+const hostnamesMap = new Map([["hdsinemax.com",0],["elzemfilm.org",0],["tafdi3.com",1],["tafdi4.com",1],["tafdi5.com",1],["filmizletv2.com",2],["filmizletv18.com",2],["fullhdfilm.pro",3],["hdfilmifullizle.com",3],["hdfilmfullizle.com",4],["turkturk.org",5],["turkturk.net",5],["itemci.com",6],["filmizlehdfilm.com",7],["fullfilmizle.cc",7],["hdfilmcix.org",7],["hdfilmizlesene.org",7],["sinema.cx",7]]);
 
-const entitiesMap = new Map([["fullhdfilmizletv",0],["filmizletv",[0,3]],["hdfilmcehennemi",0],["fullhdfilmizle",4]]);
+const entitiesMap = new Map([["filmizletv",[2,7]],["fullhdfilmizle",[3,7]],["fullfilmizle",7],["fullhdfilmizletv",7],["hdfilmcehennemi",7],["yabancidizi",8]]);
 
 const exceptionsMap = new Map([]);
 
@@ -202,6 +202,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

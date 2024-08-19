@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#header\",\"action\":[\"style\",\"position:static!important; top: 0 !important;\"]}","{\"selector\":\"#main_container\",\"action\":[\"style\",\"padding-top: 0 !important;\"]}","{\"selector\":\".header_nav\",\"action\":[\"style\",\"position:static !important;\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important;\"]}"]];
+const argsList = [["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: unset !important\"]}"],["{\"selector\":\"#header\",\"action\":[\"style\",\"position:static!important; top: 0 !important;\"]}","{\"selector\":\"#main_container\",\"action\":[\"style\",\"padding-top: 0 !important;\"]}","{\"selector\":\".header_nav\",\"action\":[\"style\",\"position:static !important;\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important;\"]}"]];
 
-const hostnamesMap = new Map([["cinemagia.ro",0],["litoraltv.ro",1]]);
+const hostnamesMap = new Map([["epochtimes-romania.com",0],["cinemagia.ro",1],["litoraltv.ro",2]]);
 
 const entitiesMap = new Map(undefined);
 

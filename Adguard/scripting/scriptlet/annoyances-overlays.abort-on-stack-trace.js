@@ -44,9 +44,9 @@ const scriptletGlobals = {}; // jshint ignore: line
 
 const argsList = [["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"],["Promise","/isEnable|isOpen/"]];
 
-const hostnamesMap = new Map([["secondlifetranslations.com",0],["waves4you.com",1],["timeshighereducation.com",2],["ilovefreesoftware.com",3],["protopage.com",4],["fantasytagtree.com",5],["jamilacuisine.ro",[6,7]],["golfdigest.com",8],["ophim.vip",10],["animesuge.to",11],["bflix.io",11],["flixrave.to",11],["f2movies.ru",11],["hdtoday.so",11],["hurawatch.bz",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vid2faf.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12],["embtaku.pro",13]]);
+const hostnamesMap = new Map([["secondlifetranslations.com",0],["waves4you.com",1],["timeshighereducation.com",2],["ilovefreesoftware.com",3],["protopage.com",4],["fantasytagtree.com",5],["jamilacuisine.ro",[6,7]],["golfdigest.com",8],["ophim.vip",10],["animesuge.to",11],["bflix.io",11],["f2movies.ru",11],["hdtoday.so",11],["hurawatch.bz",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vid2faf.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12],["embtaku.pro",13]]);
 
-const entitiesMap = new Map([["pobre",9],["aniwave",11],["flixhq",11],["fmovies",11],["fmovies24",11],["fmoviesz",11]]);
+const entitiesMap = new Map([["pobre",9],["aniwave",11],["anix",11],["flixhq",11],["fmovies",11]]);
 
 const exceptionsMap = new Map([]);
 
@@ -105,10 +105,7 @@ function abortOnStackTrace(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -286,6 +283,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -321,6 +324,12 @@ function safeSelf() {
     };
     bc.postMessage('areyouready?');
     return safe;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

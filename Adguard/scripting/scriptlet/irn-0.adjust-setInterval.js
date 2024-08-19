@@ -42,9 +42,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [[],["","","0"]];
+const argsList = [["timeLeft","*","0.02"],[],["","","0"]];
 
-const hostnamesMap = new Map([["gold-team.org",0],["iwo.ir",0],["uupload.ir",0],["up44.ir",1]]);
+const hostnamesMap = new Map([["animelist.tv",0],["gold-team.org",1],["iwo.ir",1],["uupload.ir",1],["up44.ir",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -202,6 +202,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

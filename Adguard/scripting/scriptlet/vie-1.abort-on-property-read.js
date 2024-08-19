@@ -42,9 +42,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPageGala"],["links"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["atob"],["adtimaConfig"]];
+const argsList = [["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["links"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["atob"],["adtimaConfig"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["nettruyenaa.com",4],["phimdinhcao.net",5],["phimlongtieng.net",5],["phimdinhcao.com",5],["plvb.xyz",[6,7,8,9,10]],["rk.plcdn.xyz",[6,7,8,9,10]],["tinsoikeo.live",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["quangcaoyenbai.com",12],["sieudamtv.dev",12],["ephimchill.com",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.tv",12],["www.khophim88s.com",12],["nhentaivn.online",12],["motphimmoi.net",12],["mv.dailyphimz.com",12],["mv.phimbathu.one",12],["veryfiles.com",13],["viettoons.tv",14],["mv.phimmoiaz.cc",14],["dood.pm",14],["ytstv.me",14],["animet1.net",14],["anh.moe",14],["hentaivn.forum",14],["maclife.io",14],["javfc2.net",14],["hoctot.hocmai.vn",14],["bluphim.art",14],["cdn2.blueskychilling.online",14],["moviking.ohaha79xxx.site",14],["vinaurl.net",15],["www.nettruyenupp.com",16],["xoilacs.cc",17],["yts.do",18],["yts.mx",18],["yts.rs",18],["znews.vn",19]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["nettruyenaa.com",4],["phimdinhcao.net",5],["phimlongtieng.net",5],["phimdinhcao.com",5],["plvb.xyz",[6,7,8,9,10]],["rk.plcdn.xyz",[6,7,8,9,10]],["tinsoikeo.live",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["quangcaoyenbai.com",12],["sieudamtv.dev",12],["ephimchill.com",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.tv",12],["www.khophim88s.com",12],["nhentaivn.online",12],["mv.dailyphimz.com",12],["mv.phimbathu.one",12],["veryfiles.com",13],["viettoons.tv",14],["mv.phimmoiaz.cc",14],["dood.pm",14],["ytstv.me",14],["animet1.net",14],["anh.moe",14],["truyenhentai.bio",14],["maclife.io",14],["javfc2.net",14],["hoctot.hocmai.vn",14],["bluphim.art",14],["cdn2.blueskychilling.online",14],["ohaha79xxx.site",14],["vinaurl.net",15],["www.nettruyenupp.com",16],["xoilacx.cc",17],["yts.do",18],["yts.mx",18],["yts.rs",18],["znews.vn",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -100,10 +100,7 @@ function abortOnPropertyRead(
 }
 
 function getExceptionToken() {
-    const safe = safeSelf();
-    const token =
-        safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const token = getRandomToken();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -236,6 +233,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -271,6 +274,12 @@ function safeSelf() {
     };
     bc.postMessage('areyouready?');
     return safe;
+}
+
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/

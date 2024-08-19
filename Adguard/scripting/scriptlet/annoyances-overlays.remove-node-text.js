@@ -42,11 +42,11 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","btnHtml"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","ConsoleBan"],["script","XF"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","devtools"],["script","while(!![]){try{var"],["script","/closeWindow\\(\\)|clickIE\\(\\)|reEnable\\(\\)/"],["script","ab927c49cf1b"],["script","detectDevTool"],["script","/Clipboard|oncontextmenu|wpcp|keyCode/"],["style","/-webkit-user-select|webkit-appearance/"],["script","loc.hostname"],["script","adblock"],["script","disableselect"],["script","stopPrntScr"],["style","selection"],["script","checkAdsBlocked"]];
+const argsList = [["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","debugger"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","btnHtml"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","XF"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","devtools"],["script","while(!![]){try{var"],["script","/closeWindow\\(\\)|clickIE\\(\\)|reEnable\\(\\)/"],["script","ab927c49cf1b"],["script","detectDevTool"],["script","/Clipboard|oncontextmenu|wpcp|keyCode/"],["style","/-webkit-user-select|webkit-appearance/"],["script","loc.hostname"],["script","adblock"],["script","disableselect"],["script","stopPrntScr"],["style","selection"],["script","checkAdsBlocked"]];
 
-const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",2],["bolugundem.com",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["animesaga.in",6],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["camcaps.io",7],["nicekkk.com",7],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["aventurainromania.ro",18],["appimagehub.com",19],["gnome-look.org",19],["store.kde.org",19],["linux-apps.com",19],["opendesktop.org",19],["pling.com",19],["xfce-look.org",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["newsrade.com",25],["broncoshq.com",26],["anascrie.ro",27],["streambuddy.net",28],["smartkhabrinews.com",29],["cheersandgears.com",30],["blog.cryptowidgets.net",31],["blog.insurancegold.in",31],["blog.wiki-topia.com",31],["blog.coinsvalue.net",31],["blog.cookinguide.net",31],["blog.freeoseocheck.com",31],["stblion.xyz",32],["xn-----0b4asja7ccgu2b4b0gd0edbjm2jpa1b1e9zva7a0347s4da2797e8qri.xn--1ck2e1b",33],["xn--90afacv0clj6ac0dxa.xn--p1ai",33],["xn--90afacv0cu2a3cr.xn--p1ai",33],["puzzle-loop.com",34],["puzzle-words.com",34],["puzzle-chess.com",34],["puzzle-thermometers.com",34],["puzzle-norinori.com",34],["puzzle-minesweeper.com",34],["puzzle-slant.com",34],["puzzle-lits.com",34],["puzzle-galaxies.com",34],["puzzle-tents.com",34],["puzzle-battleships.com",34],["puzzle-pipes.com",34],["puzzle-hitori.com",34],["puzzle-heyawake.com",34],["puzzle-shingoki.com",34],["puzzle-masyu.com",34],["puzzle-stitches.com",34],["puzzle-aquarium.com",34],["puzzle-tapa.com",34],["puzzle-star-battle.com",34],["puzzle-kakurasu.com",34],["puzzle-skyscrapers.com",34],["puzzle-futoshiki.com",34],["puzzle-shakashaka.com",34],["puzzle-kakuro.com",34],["puzzle-jigsaw-sudoku.com",34],["puzzle-killer-sudoku.com",34],["puzzle-binairo.com",34],["puzzle-nonograms.com",34],["puzzle-sudoku.com",34],["puzzle-light-up.com",34],["puzzle-bridges.com",34],["puzzle-shikaku.com",34],["puzzle-nurikabe.com",34],["puzzle-dominosa.com",34],["inattvcom117.xyz",35],["mrbenne.com",[36,37]],["www-liverpoolecho-co-uk.translate.goog",38],["xanimu.com",39],["cosxplay.com",39],["noicetranslations.blogspot.com",40],["monitoruldevrancea.ro",[41,42]],["readcomiconline.li",43]]);
+const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",2],["bolugundem.com",3],["jpost.com",4],["teamkong.tk",5],["sekaikomik.bio",5],["animesaga.in",6],["moviesapi.club",6],["bestx.stream",6],["watchx.top",6],["camcaps.io",7],["nicekkk.com",7],["streamvid.net",7],["tips97tech.blogspot.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["aventurainromania.ro",18],["appimagehub.com",19],["gnome-look.org",19],["store.kde.org",19],["linux-apps.com",19],["opendesktop.org",19],["pling.com",19],["xfce-look.org",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["broncoshq.com",25],["anascrie.ro",26],["streambuddy.net",27],["smartkhabrinews.com",28],["cheersandgears.com",29],["blog.cryptowidgets.net",30],["blog.insurancegold.in",30],["blog.wiki-topia.com",30],["blog.coinsvalue.net",30],["blog.cookinguide.net",30],["blog.freeoseocheck.com",30],["stblion.xyz",31],["xn-----0b4asja7ccgu2b4b0gd0edbjm2jpa1b1e9zva7a0347s4da2797e8qri.xn--1ck2e1b",32],["xn--90afacv0clj6ac0dxa.xn--p1ai",32],["xn--90afacv0cu2a3cr.xn--p1ai",32],["puzzle-loop.com",33],["puzzle-words.com",33],["puzzle-chess.com",33],["puzzle-thermometers.com",33],["puzzle-norinori.com",33],["puzzle-minesweeper.com",33],["puzzle-slant.com",33],["puzzle-lits.com",33],["puzzle-galaxies.com",33],["puzzle-tents.com",33],["puzzle-battleships.com",33],["puzzle-pipes.com",33],["puzzle-hitori.com",33],["puzzle-heyawake.com",33],["puzzle-shingoki.com",33],["puzzle-masyu.com",33],["puzzle-stitches.com",33],["puzzle-aquarium.com",33],["puzzle-tapa.com",33],["puzzle-star-battle.com",33],["puzzle-kakurasu.com",33],["puzzle-skyscrapers.com",33],["puzzle-futoshiki.com",33],["puzzle-shakashaka.com",33],["puzzle-kakuro.com",33],["puzzle-jigsaw-sudoku.com",33],["puzzle-killer-sudoku.com",33],["puzzle-binairo.com",33],["puzzle-nonograms.com",33],["puzzle-sudoku.com",33],["puzzle-light-up.com",33],["puzzle-bridges.com",33],["puzzle-shikaku.com",33],["puzzle-nurikabe.com",33],["puzzle-dominosa.com",33],["inattvcom117.xyz",34],["mrbenne.com",[35,36]],["www-liverpoolecho-co-uk.translate.goog",37],["www-themirror-com.translate.goog",37],["www-football-london.translate.goog",37],["www-devonlive-com.translate.goog",37],["www-cornwalllive-com.translate.goog",37],["www-glasgowlive-co-uk.translate.goog",37],["www-kentlive-news.translate.goog",37],["www-essexlive-news.translate.goog",37],["www-lincolnshirelive-co-uk.translate.goog",37],["www-leeds--live-co-uk.translate.goog",37],["www-insider-co-uk.translate.goog",37],["xanimu.com",38],["cosxplay.com",38],["noicetranslations.blogspot.com",39],["monitoruldevrancea.ro",[40,41]],["readcomiconline.li",42]]);
 
-const entitiesMap = new Map([["strtape",1],["streamtape",1],["vidmoly",6],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",31],["redecanais",33],["redecanaistv",33],["redisex",33]]);
+const entitiesMap = new Map([["strtape",1],["streamtape",1],["vidmoly",6],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",30],["redecanais",32],["redecanaistv",32],["redisex",32]]);
 
 const exceptionsMap = new Map([]);
 
@@ -85,6 +85,18 @@ function replaceNodeTextFn(
             safe.uboLog(logPrefix, 'Quitting');
         }
     };
+    const textContentFactory = (( ) => {
+        const out = { createScript: s => s };
+        const { trustedTypes: tt } = self;
+        if ( tt instanceof Object ) {
+            if ( typeof tt.getPropertyType === 'function' ) {
+                if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
+                    return tt.createPolicy(getRandomToken(), out);
+                }
+            }
+        }
+        return out;
+    })();
     let sedCount = extraArgs.sedCount || 0;
     const handleNode = node => {
         const before = node.textContent;
@@ -102,7 +114,9 @@ function replaceNodeTextFn(
         const after = pattern !== ''
             ? before.replace(rePattern, replacement)
             : replacement;
-        node.textContent = after;
+        node.textContent = node.nodeName === 'SCRIPT'
+            ? textContentFactory.createScript(after)
+            : after;
         if ( safe.logLevel > 1 ) {
             safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
         }
@@ -148,10 +162,16 @@ function replaceNodeTextFn(
     }, 'interactive');
 }
 
+function getRandomToken() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+}
+
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
@@ -299,6 +319,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

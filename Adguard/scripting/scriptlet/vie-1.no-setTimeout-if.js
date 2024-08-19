@@ -42,7 +42,7 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // jshint ignore: line
 
-const argsList = [["DisplayAHTML","5000"],["callback","4003"]];
+const argsList = [["DisplayAHTML","5001"],["callback","6004"]];
 
 const hostnamesMap = new Map([["linkneverdie.net",[0,1]]]);
 
@@ -223,6 +223,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }

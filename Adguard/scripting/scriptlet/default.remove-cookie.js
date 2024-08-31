@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: default
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_cookieRemover = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["da325"],["ref_cookie"],["video_view_count"],["/^/"],["PageCount"],[],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_referer"],["kt_ips"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["MicrosoftApplicationsTelemetryFirstLaunchTime"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["/_alooma/"],["didomi_token"]];
+const argsList = [["da325"],["ref_cookie"],["video_view_count"],["/^/"],["PageCount"],[],["__adblocker"],["/vs|to|vs_spon|tgpOut|current_click/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_referer"],["kt_ips"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["MicrosoftApplicationsTelemetryFirstLaunchTime"],["/optimizelyEndUserId|s_fid|sc_tcr|s_cc/"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["/_alooma/"],["didomi_token"]];
 
-const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["buktube.com",2],["fullxh.com",2],["galleryxh.site",2],["megaxh.com",2],["movingxh.world",2],["seexh.com",2],["taoxh.life",2],["unlockxh4.com",2],["xhaccess.com",2],["xhadult2.com",2],["xhadult3.com",2],["xhadult4.com",2],["xhadult5.com",2],["xhamster46.com",2],["xhbig.com",2],["xhbranch5.com",2],["xhday.com",2],["xhday1.com",2],["xhmoon5.com",2],["xhplanet1.com",2],["xhplanet2.com",2],["xhreal2.com",2],["xhreal3.com",2],["xhtab2.com",2],["xhtab4.com",2],["xhtree.com",2],["xhvictory.com",2],["xhwebsite.com",2],["xhwebsite2.com",2],["xhwide1.com",2],["adultasianporn.com",3],["jetpunk.com",4],["skmedix.pl",5],["xxxxsx.com",5],["sexvideos.host",6],["beaumontenterprise.com",7],["chron.com",7],["ctinsider.com",7],["ctpost.com",7],["expressnews.com",7],["houstonchronicle.com",7],["lmtonline.com",7],["middletownpress.com",7],["mrt.com",7],["newstimes.com",7],["nhregister.com",7],["registercitizen.com",7],["sfchronicle.com",7],["stamfordadvocate.com",7],["thehour.com",7],["timesunion.com",7],["heavyfetish.com",[8,9,10]],["severeporn.com",10],["watchporn.to",10],["columbian.com",11],["nypost.com",11],["pagesix.com",11],["factable.com",[12,13]],["bing.com",14],["msn.com",14],["web.skype.com",[14,15]],["androidpolice.com",16],["makeuseof.com",16],["movieweb.com",16],["xda-developers.com",16],["dev.to",[17,18]],["vpnmentor.com",19],["tv5mondeplus.com",20]]);
+const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["buktube.com",2],["fullxh.com",2],["galleryxh.site",2],["megaxh.com",2],["movingxh.world",2],["seexh.com",2],["taoxh.life",2],["unlockxh4.com",2],["xhaccess.com",2],["xhadult2.com",2],["xhadult3.com",2],["xhadult4.com",2],["xhadult5.com",2],["xhamster46.com",2],["xhbig.com",2],["xhbranch5.com",2],["xhday.com",2],["xhday1.com",2],["xhmoon5.com",2],["xhplanet1.com",2],["xhplanet2.com",2],["xhreal2.com",2],["xhreal3.com",2],["xhtab2.com",2],["xhtab4.com",2],["xhtree.com",2],["xhvictory.com",2],["xhwebsite.com",2],["xhwebsite2.com",2],["xhwide1.com",2],["adultasianporn.com",3],["jetpunk.com",4],["skmedix.pl",5],["xxxxsx.com",5],["blick.ch",6],["sexvideos.host",7],["beaumontenterprise.com",8],["chron.com",8],["ctinsider.com",8],["ctpost.com",8],["expressnews.com",8],["houstonchronicle.com",8],["lmtonline.com",8],["middletownpress.com",8],["mrt.com",8],["newstimes.com",8],["nhregister.com",8],["registercitizen.com",8],["sfchronicle.com",8],["stamfordadvocate.com",8],["thehour.com",8],["timesunion.com",8],["heavyfetish.com",[9,10,11]],["severeporn.com",11],["watchporn.to",11],["columbian.com",12],["nypost.com",12],["pagesix.com",12],["factable.com",[13,14]],["bing.com",15],["msn.com",15],["web.skype.com",[15,16]],["1und1.de",17],["androidpolice.com",18],["makeuseof.com",18],["movieweb.com",18],["xda-developers.com",18],["dev.to",[19,20]],["vpnmentor.com",21],["tv5mondeplus.com",22]]);
 
 const entitiesMap = new Map([["hamsterix",2],["xhamster",2],["xhamster1",2],["xhamster10",2],["xhamster11",2],["xhamster12",2],["xhamster13",2],["xhamster14",2],["xhamster15",2],["xhamster16",2],["xhamster17",2],["xhamster18",2],["xhamster19",2],["xhamster20",2],["xhamster2",2],["xhamster3",2],["xhamster4",2],["xhamster42",2],["xhamster5",2],["xhamster7",2],["xhamster8",2]]);
 
@@ -282,7 +280,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

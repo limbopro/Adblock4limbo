@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: irn-0
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_removeNodeText = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","document.oncontextmenu ="],["script","ads_app_name"],["script","document.oncontextmenu="],["script","/popTimes_|document\\.onkeydown|'contextmenu'/"],["script","window.location="],["script","popTimes_"],["script","ad.setAttribute"]];
+const argsList = [["script","document.oncontextmenu ="],["script","ads_app_name"],["script","document.oncontextmenu="],["script","/popTimes_|document\\.onkeydown|'contextmenu'/"],["script","window.location="],["script","displayCountryInConsole"],["script","popTimes_"],["script","ad.setAttribute"],["script","Event.MOUSEDOWN"]];
 
-const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["musiceman.net",3],["najiremix.ir",4],["iran-music.com",5],["tgju.org",6]]);
+const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["musiceman.net",3],["najiremix.ir",4],["persian-fa.ir",5],["iran-music.com",6],["tgju.org",7],["vaamfaa.ir",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -365,7 +363,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: spa-1
 
@@ -40,13 +38,13 @@
 // Start of code to inject
 const uBOL_abortOnPropertyRead = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["block_ads"],["setNptTechAdblockerCookie"],["possivelAdblockDetectado"],["eazyAdUnBlockerHttp"],["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["userout"],["initPu"],["cJsEdge"],["lolaop"],["adk_pdisp"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"],["area51"]];
+const argsList = [["block_ads"],["setNptTechAdblockerCookie"],["possivelAdblockDetectado"],["eazyAdUnBlockerHttp"],["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["popunder"],["userout"],["initPu"],["cJsEdge"],["lolaop"],["adk_pdisp"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"],["area51"]];
 
-const hostnamesMap = new Map([["luratoons.com",0],["lura-toons.com",0],["elespanol.com",1],["mundodevalor.me",2],["aquiyahorajuegos.net",3],["visorcrab.com",4],["httpmangacrab2.com",4],["manga-crab.com",4],["mangacrab.com",4],["hinatasoul.com",5],["pcworld.es",6],["tunovelaligera.com",7],["20minutos.es",8],["comando.to",9],["porno-japones.top",10],["tvplusgratis.com",11],["hobbugs.com",11],["seriesretro.com",12],["cozinha.minhasdelicias.com",13],["diariodegoias.com.br",14],["outerspace.com.br",14],["1i1.in",15],["packsmega.info",16],["embedder.net",17],["poseidonhd2.co",18],["fiuxy2.com",19],["pelispop.me",20],["baixartorrents.org",[21,22]],["pctmix1.com",23],["aquariumgays.com",23],["allfeeds.live",24],["grantorrent.nl",27],["hentaistube.com",28],["libertinga.net",29],["mrpiracy.top",30],["seireshd.com",31],["cinetux.to",[32,33]],["holanime.com",34],["pirlotv.es",35],["repelisplus.vip",36],["descargaranimehentai.com",37],["tuhentaionline.com",38],["animeonline.ninja",39]]);
+const hostnamesMap = new Map([["luratoons.com",0],["lura-toons.com",0],["elespanol.com",1],["mundodevalor.me",2],["aquiyahorajuegos.net",3],["visorcrab.com",4],["httpmangacrab2.com",4],["manga-crab.com",4],["mangacrab.com",4],["hinatasoul.com",5],["pcworld.es",6],["tunovelaligera.com",7],["20minutos.es",8],["comando.to",9],["porno-japones.top",10],["tvplusgratis.com",11],["hobbugs.com",11],["seriesretro.com",12],["cozinha.minhasdelicias.com",13],["diariodegoias.com.br",14],["outerspace.com.br",14],["1i1.in",15],["brjogostorrents.com",16],["packsmega.info",17],["embedder.net",18],["poseidonhd2.co",19],["fiuxy2.com",20],["pelispop.me",21],["baixartorrents.org",[22,23]],["pctmix1.com",24],["aquariumgays.com",24],["allfeeds.live",25],["grantorrent.nl",28],["hentaistube.com",29],["libertinga.net",30],["mrpiracy.top",31],["seireshd.com",32],["cinetux.to",[33,34]],["holanime.com",35],["pirlotv.es",36],["repelisplus.vip",37],["descargaranimehentai.com",38],["tuhentaionline.com",39],["animeonline.ninja",40]]);
 
-const entitiesMap = new Map([["cuevana3",18],["gnula",18],["cuevana2espanol",18],["cuevana",18],["cinecalidad2",25],["cine-calidad",26]]);
+const entitiesMap = new Map([["cuevana3",19],["gnula",19],["cuevana2espanol",19],["cuevana",19],["cinecalidad2",26],["cine-calidad",27]]);
 
 const exceptionsMap = new Map([]);
 
@@ -285,7 +283,19 @@ function getRandomToken() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

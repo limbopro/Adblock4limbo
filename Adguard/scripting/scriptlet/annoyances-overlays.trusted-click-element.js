@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: annoyances-overlays
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_trustedClickElement = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"]];
 
@@ -422,7 +420,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

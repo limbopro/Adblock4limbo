@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: rus-0
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_removeAttr = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["autoplay","[data-video-player=\"small\"]","stay"],["autoplay","video","stay"],["autoplay|loop",".watch-live__link > video","stay"],["autoplay|loop","video","stay"],["class",".js-video-box__container"],["data-autoplay","video"],["disabled",".uk-modal-footer > button"],["oncontextmenu","[class]","stay"],["oncontextmenu|oncopy|onselectstart"]];
 
@@ -321,7 +319,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

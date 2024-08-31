@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: default
 
@@ -40,9 +38,9 @@
 // Start of code to inject
 const uBOL_xmlPrune = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["VAST > Ad","","/tserver"],["VAST","","barstoolsports.com"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"][not(@bitstreamSwitching=\"true\")]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])] | //*[name()=\"Period\"][./*[name()=\"BaseURL\"]][not(.//*[name()=\"ContentProtection\"])])","",".mpd"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"]/@start | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'adease')]])","[media^=\"A_D/\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ad/')]])","",".mpd"]];
+const argsList = [["VAST","","adnxs"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ads-')]] | //*[name()=\"Period\"]/@start)","Period[id^=\"Ad\"i]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[@value=\"Ad\"]] | //*[name()=\"Period\"]/@start)","[value=\"Ad\"]",".mpd"],["VAST > Ad","","/tserver"],["VAST","","barstoolsports.com"],["xpath(//*[name()=\"Period\"][.//*[name()=\"AdaptationSet\"][@contentType=\"video\"][not(@bitstreamSwitching=\"true\")]])","",".mpd"],["xpath(//*[name()=\"MPD\"][.//*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]]/@mediaPresentationDuration | //*[name()=\"Period\"][./*[name()=\"BaseURL\" and contains(text(),'dash_clear_fmp4') and contains(text(),'/a/')]])","",".mpd"],["Period[id*=\"-roll-\"][id*=\"-ad-\"]","","pubads.g.doubleclick.net/ondemand"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"]/@start | //*[name()=\"Period\"][not(.//*[name()=\"SegmentTimeline\"])][not(.//*[name()=\"ContentProtection\"])] | //*[name()=\"Period\"][./*[name()=\"BaseURL\"]][not(.//*[name()=\"ContentProtection\"])])","",".mpd"],["xpath(//*[name()=\"MPD\"]/@mediaPresentationDuration | //*[name()=\"Period\"]/@start | //*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'adease')]])","[media^=\"A_D/\"]",".mpd"],["xpath(//*[name()=\"Period\"][.//*[name()=\"BaseURL\" and contains(text(),'/ad/')]])","",".mpd"]];
 
 const hostnamesMap = new Map([["imasdk.googleapis.com",[0,4]],["hulu.com",1],["www.amazon.co.jp",2],["www.amazon.co.uk",2],["www.amazon.com",2],["www.amazon.de",2],["www.primevideo.com",2],["itv.com",3],["vix.com",5],["go.discovery.com",6],["investigationdiscovery.com",6],["go.tlc.com",6],["sciencechannel.com",6],["cbs.com",7],["paramountplus.com",7],["play.max.com",8],["foxtel.com.au",9],["serially.it",10]]);
 
@@ -356,7 +354,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

@@ -767,6 +767,7 @@ DOMAIN-SUFFIX,adsmart.net, reject
 DOMAIN-SUFFIX,adsmartracker.com, reject
 DOMAIN-SUFFIX,adsmetadata.startappservice.com, reject
 DOMAIN-SUFFIX,adsmogo.com, reject
+DOMAIN-SUFFIX,adsnative.com, reject
 DOMAIN-SUFFIX,adsoftware.com, reject
 DOMAIN-SUFFIX,adsolut.in, reject
 DOMAIN-SUFFIX,adspeed.net, reject
@@ -856,6 +857,7 @@ DOMAIN-SUFFIX,adxpansion.com, reject
 DOMAIN-SUFFIX,adxpose.com, reject
 DOMAIN-SUFFIX,adyoulike.com, reject
 DOMAIN-SUFFIX,adz.rashflash.com, reject
+DOMAIN-SUFFIX,adz2you.com, reject
 DOMAIN-SUFFIX,adzbazar.com, reject
 DOMAIN-SUFFIX,adzerk.net, reject
 DOMAIN-SUFFIX,adzerk.s3.amazonaws.com, reject
@@ -2013,7 +2015,6 @@ DOMAIN-SUFFIX,k.iinfo.cz, reject
 DOMAIN-SUFFIX,kameleoon.eu, reject
 DOMAIN-SUFFIX,kanoodle.com, reject
 DOMAIN-SUFFIX,kargo.com, reject
-DOMAIN-SUFFIX,karonty.com, reject
 DOMAIN-SUFFIX,keymedia.hu, reject
 DOMAIN-SUFFIX,kindads.com, reject
 DOMAIN-SUFFIX,kissmetrics.com, reject
@@ -2322,6 +2323,7 @@ DOMAIN-SUFFIX,mypagerank.ru, reject
 DOMAIN-SUFFIX,mypowermall.com, reject
 DOMAIN-SUFFIX,mystat-in.net, reject
 DOMAIN-SUFFIX,mystat.pl, reject
+DOMAIN-SUFFIX,mytop-in.net, reject
 DOMAIN-SUFFIX,n2.mouseflow.com, reject
 DOMAIN-SUFFIX,n69.com, reject
 DOMAIN-SUFFIX,naj.sk, reject
@@ -2349,7 +2351,6 @@ DOMAIN-SUFFIX,netclickstats.com, reject
 DOMAIN-SUFFIX,netcommunities.com, reject
 DOMAIN-SUFFIX,netdirect.nl, reject
 DOMAIN-SUFFIX,netech.postaffiliatepro.com, reject
-DOMAIN-SUFFIX,netincap.com, reject
 DOMAIN-SUFFIX,netmera-web.com, reject
 DOMAIN-SUFFIX,netmera.com, reject
 DOMAIN-SUFFIX,netmng.com, reject
@@ -2470,7 +2471,6 @@ DOMAIN-SUFFIX,oxado.com, reject
 DOMAIN-SUFFIX,oxcash.com, reject
 DOMAIN-SUFFIX,oxen.hillcountrytexas.com, reject
 DOMAIN-SUFFIX,p-n.io, reject
-DOMAIN-SUFFIX,p.nag.ru, reject
 DOMAIN-SUFFIX,pagead.l.google.com, reject
 DOMAIN-SUFFIX,pagefair.com, reject
 DOMAIN-SUFFIX,pagerank-ranking.de, reject

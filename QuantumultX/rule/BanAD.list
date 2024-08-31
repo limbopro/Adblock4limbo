@@ -320,7 +320,6 @@ DOMAIN-SUFFIX,rlcdn.com, reject
 DOMAIN-SUFFIX,rtbasia.com, reject
 DOMAIN-SUFFIX,sanya1.com, reject
 DOMAIN-SUFFIX,scupio.com, reject
-DOMAIN-SUFFIX,serving-sys.com, reject
 DOMAIN-SUFFIX,shuiguo.com, reject
 DOMAIN-SUFFIX,shuzilm.cn, reject
 DOMAIN-SUFFIX,similarweb.com, reject
@@ -388,6 +387,7 @@ DOMAIN-SUFFIX,wooboo.com.cn, reject
 DOMAIN-SUFFIX,wqmobile.com, reject
 DOMAIN-SUFFIX,wrating.com, reject
 DOMAIN-SUFFIX,wumii.cn, reject
+DOMAIN-SUFFIX,wwads.cn, reject
 DOMAIN-SUFFIX,xcy8.com, reject
 DOMAIN-SUFFIX,xdrig.com, reject
 DOMAIN-SUFFIX,xiaozhen.com, reject
@@ -421,7 +421,6 @@ DOMAIN-SUFFIX,zhiziyun.com, reject
 DOMAIN-SUFFIX,zhjfad.com, reject
 DOMAIN-SUFFIX,zqzxz.com, reject
 DOMAIN-SUFFIX,zzsx8.com, reject
-DOMAIN-SUFFIX,wwads.cn, reject
 
 # 广告联盟-国外****************
 DOMAIN-SUFFIX,acuityplatform.com, reject

@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: swe-1
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_hrefSanitizer = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/idg.digidip.net/\"]","?url"],["a[href*=\"metromode.se/bouncer\"]","?url"]];
 
@@ -89,9 +87,12 @@ function hrefSanitizer(
         const end = recursive ? source.indexOf('?', 1) : source.length;
         try {
             const url = new URL(href, document.location);
-            const value = url.searchParams.get(source.slice(1, end));
+            let value = url.searchParams.get(source.slice(1, end));
             if ( value === null ) { return href }
             if ( recursive ) { return extractParam(value, source.slice(end)); }
+            if ( value.includes(' ') ) {
+                value = value.replace(/ /g, '%20');
+            }
             return value;
         } catch(x) {
         }
@@ -361,7 +362,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

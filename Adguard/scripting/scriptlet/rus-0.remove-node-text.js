@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: rus-0
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_removeNodeText = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/gtag\\('event'/"],["script","/s_script|tick/"],["script","AdBlocker"],["script","addPlaceholder"],["script","message_ads"],["script","violatedDirective"],["script","\"Shadow"]];
 
@@ -48,7 +46,7 @@ const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorre
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["3igames.mail.ru",[8]],["account.mail.ru",[8]],["auto.mail.ru",[8]],["biz.mail.ru",[8]],["blog.mail.ru",[8]],["bonus.mail.ru",[8]],["calendar.mail.ru",[8]],["calls.mail.ru",[8]],["cloud.mail.ru",[8]],["connect.mail.ru",[8]],["deti.mail.ru",[8]],["dobro.mail.ru",[8]],["e.mail.ru",[8]],["gibdd.mail.ru",[8]],["health.mail.ru",[8]],["help.mail.ru",[8]],["hi-tech.mail.ru",[8]],["horo.mail.ru",[8]],["kino.mail.ru",[8]],["lady.mail.ru",[8]],["love.mail.ru",[8]],["mcs.mail.ru",[8]],["minigames.mail.ru",[8]],["my.mail.ru",[8]],["news.mail.ru",[8]],["o2.mail.ru",[8]],["octavius.mail.ru",[8]],["okminigames.mail.ru",[8]],["otvet.mail.ru",[8]],["pets.mail.ru",[8]],["player-smotri.mail.ru",[8]],["pogoda.mail.ru",[8]],["top.mail.ru",[8]],["touch.mail.ru",[8]],["tv.mail.ru",[8]]]);
+const exceptionsMap = new Map([["3igames.mail.ru",[8]],["account.mail.ru",[8]],["auto.mail.ru",[8]],["biz.mail.ru",[8]],["blog.mail.ru",[8]],["bonus.mail.ru",[8]],["calendar.mail.ru",[8]],["calls.mail.ru",[8]],["cloud.mail.ru",[8]],["connect.mail.ru",[8]],["deti.mail.ru",[8]],["dobro.mail.ru",[8]],["e.mail.ru",[8]],["finance.mail.ru",[8]],["gibdd.mail.ru",[8]],["health.mail.ru",[8]],["help.mail.ru",[8]],["hi-tech.mail.ru",[8]],["horo.mail.ru",[8]],["kino.mail.ru",[8]],["lady.mail.ru",[8]],["love.mail.ru",[8]],["mcs.mail.ru",[8]],["minigames.mail.ru",[8]],["my.mail.ru",[8]],["news.mail.ru",[8]],["o2.mail.ru",[8]],["octavius.mail.ru",[8]],["okminigames.mail.ru",[8]],["otvet.mail.ru",[8]],["pets.mail.ru",[8]],["player-smotri.mail.ru",[8]],["pogoda.mail.ru",[8]],["top.mail.ru",[8]],["touch.mail.ru",[8]],["tv.mail.ru",[8]],["vfokuse.mail.ru",[8]],["widgets.mail.ru",[8]]]);
 
 /******************************************************************************/
 
@@ -365,7 +363,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

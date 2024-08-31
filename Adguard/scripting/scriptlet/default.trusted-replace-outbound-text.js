@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: default
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_trustedReplaceOutboundText = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["JSON.stringify","/^{\"([^\"]*(tokn|csrf|tken|tkn|toke|token|toekn)[^\"]*)\":\"[0-9a-z]+\",\"info\":\\[{.*\"action_info\":.*}]}$/","{\"$1\":\"\",\"info\":[{\"action_info\":{\"success\":true,\"trigger_type\":\"\",\"page_type\":null},\"request\":{\"server_render_id\":\"\",\"canonical_url\":\"\"},\"screenview_id\":\"\",\"screen\":{\"height\":\"\",\"width\":\"\"},\"adblock\":{\"enabled\":false},\"source\":\"global\",\"action\":\"view\",\"noun\":\"screen\",\"referrer\":{\"url\":\"\",\"domain\":\"\"},\"client_timestamp\":\"\",\"correlation_id\":\"\"}]}"]];
+const argsList = [["atob","/^.*$/","","condition","translate.goog"]];
 
-const hostnamesMap = new Map([["www.reddit.com",0]]);
+const hostnamesMap = new Map([["dogdrip.net",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -106,12 +104,26 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
     if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, { construct: handler });
-        return (...args) => { return Reflect.construct(...args); };
+        context[prop] = new Proxy(fn, {
+            construct: handler,
+            get(target, prop, receiver) {
+                if ( prop === 'toString' ) { return toString; }
+                return Reflect.get(target, prop, receiver);
+            },
+        });
+        return (...args) => Reflect.construct(...args);
     }
-    context[prop] = new Proxy(fn, { apply: handler });
-    return (...args) => { return Reflect.apply(...args); };
+    context[prop] = new Proxy(fn, {
+        apply: handler,
+        get(target, prop, receiver) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop, receiver);
+        },
+    });
+    return (...args) => Reflect.apply(...args);
 }
 
 function safeSelf() {
@@ -137,6 +149,7 @@ function safeSelf() {
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -235,6 +248,12 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -275,7 +294,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

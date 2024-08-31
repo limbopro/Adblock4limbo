@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: rus-0
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_addEventListenerDefuser = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["visibilitychange","captureContext"]];
 
-const hostnamesMap = new Map([["7days.ru",[0,25]],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["regnum.news",9],["regnum.ru",9],["tproger.ru",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["carservic.ru",14],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["xv-ru.com",17],["overclockers.ru",18],["bonus-tv.ru",19],["kinoblin.ru",20],["serialai.ru",20],["m.lenta.ru",21],["www.vesti.ru",22],["lenta.ru",23],["otvet.mail.ru",24],["cdn.viqeo.tv",25],["kinonews.ru",25],["kp.kg",25],["kp.kz",25],["kp.md",25],["kp.ru",25],["mk.ru",25],["ohotniki.ru",25],["portalvirtualreality.ru",25],["radiokp.ru",25],["sportkp.ru",25],["wday.ru",25],["woman.ru",25],["www.fontanka.ru",25]]);
+const hostnamesMap = new Map([["7days.ru",[0,25]],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["regnum.news",9],["regnum.ru",9],["tproger.ru",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["carservic.ru",14],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["xv-ru.com",17],["overclockers.ru",18],["bonus-tv.ru",19],["kinoblin.ru",20],["serialai.ru",20],["m.lenta.ru",21],["www.vesti.ru",22],["lenta.ru",23],["otvet.mail.ru",24],["cdn.viqeo.tv",25],["kinonews.ru",25],["kp.kg",25],["kp.kz",25],["kp.md",25],["kp.ru",25],["mk.ru",25],["ohotniki.ru",25],["portalvirtualreality.ru",25],["radiokp.ru",25],["sportkp.ru",25],["wday.ru",25],["woman.ru",25],["www.fontanka.ru",25]]);
 
 const entitiesMap = new Map([]);
 
@@ -102,45 +100,67 @@ function addEventListenerDefuser(
         }
         return matchesBoth;
     };
-    const trapEddEventListeners = ( ) => {
-        const eventListenerHandler = {
-            apply: function(target, thisArg, args) {
-                let t, h;
-                try {
-                    t = String(args[0]);
-                    if ( typeof args[1] === 'function' ) {
-                        h = String(safe.Function_toString(args[1]));
-                    } else if ( typeof args[1] === 'object' && args[1] !== null ) {
-                        if ( typeof args[1].handleEvent === 'function' ) {
-                            h = String(safe.Function_toString(args[1].handleEvent));
-                        }
-                    } else {
-                        h = String(args[1]);
+    runAt(( ) => {
+        proxyApplyFn('EventTarget.prototype.addEventListener', function(target, thisArg, args) {
+            let t, h;
+            try {
+                t = String(args[0]);
+                if ( typeof args[1] === 'function' ) {
+                    h = String(safe.Function_toString(args[1]));
+                } else if ( typeof args[1] === 'object' && args[1] !== null ) {
+                    if ( typeof args[1].handleEvent === 'function' ) {
+                        h = String(safe.Function_toString(args[1].handleEvent));
                     }
-                } catch(ex) {
+                } else {
+                    h = String(args[1]);
                 }
-                if ( type === '' && pattern === '' ) {
-                    safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
-                } else if ( shouldPrevent(thisArg, t, h) ) {
-                    return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
-                }
-                return Reflect.apply(target, thisArg, args);
-            },
+            } catch(ex) {
+            }
+            if ( type === '' && pattern === '' ) {
+                safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
+            } else if ( shouldPrevent(thisArg, t, h) ) {
+                return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
+            }
+            return Reflect.apply(target, thisArg, args);
+        });
+    }, extraArgs.runAt);
+}
+
+function proxyApplyFn(
+    target = '',
+    handler = ''
+) {
+    let context = globalThis;
+    let prop = target;
+    for (;;) {
+        const pos = prop.indexOf('.');
+        if ( pos === -1 ) { break; }
+        context = context[prop.slice(0, pos)];
+        if ( context instanceof Object === false ) { return; }
+        prop = prop.slice(pos+1);
+    }
+    const fn = context[prop];
+    if ( typeof fn !== 'function' ) { return; }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
+    if ( fn.prototype && fn.prototype.constructor === fn ) {
+        context[prop] = new Proxy(fn, {
+            construct: handler,
             get(target, prop, receiver) {
-                if ( prop === 'toString' ) {
-                    return target.toString.bind(target);
-                }
+                if ( prop === 'toString' ) { return toString; }
                 return Reflect.get(target, prop, receiver);
             },
-        };
-        self.EventTarget.prototype.addEventListener = new Proxy(
-            self.EventTarget.prototype.addEventListener,
-            eventListenerHandler
-        );
-    };
-    runAt(( ) => {
-        trapEddEventListeners();
-    }, extraArgs.runAt);
+        });
+        return (...args) => Reflect.construct(...args);
+    }
+    context[prop] = new Proxy(fn, {
+        apply: handler,
+        get(target, prop, receiver) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop, receiver);
+        },
+    });
+    return (...args) => Reflect.apply(...args);
 }
 
 function runAt(fn, when) {
@@ -345,7 +365,19 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

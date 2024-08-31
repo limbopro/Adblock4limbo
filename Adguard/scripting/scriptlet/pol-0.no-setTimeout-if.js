@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: pol-0
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_noSetTimeoutIf = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["PrebidDamOpen","800"],["HubAPI","3000"],["/getComputedStyle[\\s\\S]*?style\\.display=\"none\"[\\s\\S]*?styleBlocked[\\s\\S]*?detected/"],["function check(){console.log(\"checked\");if($(\".adform\").children().length>3){console.log(\"its more\");$(\".adform\").children(\".adform-banner\").show();clearTimeout(check)}}","1000"],["ubfix()"],["no-ads-info"],["bioEp.showPopup"],["hasAdblock"],["notDetected"],["Math.round","5000"],["AdBlock"],["adBanner"],["_actions(a)","2"],["mdpDeBlocker"],["block","0"],["detected","300"],["showAdblockImage","2000"],["adBlockTest","100"]];
 
@@ -69,36 +67,65 @@ function noSetTimeoutIf(
         delay = parseInt(delay, 10);
     }
     const reNeedle = safe.patternToRegex(needle);
-    self.setTimeout = new Proxy(self.setTimeout, {
-        apply: function(target, thisArg, args) {
-            const a = args[0] instanceof Function
-                ? String(safe.Function_toString(args[0]))
-                : String(args[0]);
-            const b = args[1];
-            if ( needle === '' && delay === undefined ) {
-                safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
-                return Reflect.apply(target, thisArg, args);
-            }
-            let defuse;
-            if ( needle !== '' ) {
-                defuse = reNeedle.test(a) !== needleNot;
-            }
-            if ( defuse !== false && delay !== undefined ) {
-                defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
-            }
-            if ( defuse ) {
-                args[0] = function(){};
-                safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
-            }
+    proxyApplyFn('setTimeout', function setTimeout(target, thisArg, args) {
+        const a = args[0] instanceof Function
+            ? String(safe.Function_toString(args[0]))
+            : String(args[0]);
+        const b = args[1];
+        if ( needle === '' && delay === undefined ) {
+            safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
             return Reflect.apply(target, thisArg, args);
-        },
+        }
+        let defuse;
+        if ( needle !== '' ) {
+            defuse = reNeedle.test(a) !== needleNot;
+        }
+        if ( defuse !== false && delay !== undefined ) {
+            defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
+        }
+        if ( defuse ) {
+            args[0] = function(){};
+            safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
+        }
+        return Reflect.apply(target, thisArg, args);
+    });
+}
+
+function proxyApplyFn(
+    target = '',
+    handler = ''
+) {
+    let context = globalThis;
+    let prop = target;
+    for (;;) {
+        const pos = prop.indexOf('.');
+        if ( pos === -1 ) { break; }
+        context = context[prop.slice(0, pos)];
+        if ( context instanceof Object === false ) { return; }
+        prop = prop.slice(pos+1);
+    }
+    const fn = context[prop];
+    if ( typeof fn !== 'function' ) { return; }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
+    if ( fn.prototype && fn.prototype.constructor === fn ) {
+        context[prop] = new Proxy(fn, {
+            construct: handler,
+            get(target, prop, receiver) {
+                if ( prop === 'toString' ) { return toString; }
+                return Reflect.get(target, prop, receiver);
+            },
+        });
+        return (...args) => Reflect.construct(...args);
+    }
+    context[prop] = new Proxy(fn, {
+        apply: handler,
         get(target, prop, receiver) {
-            if ( prop === 'toString' ) {
-                return target.toString.bind(target);
-            }
+            if ( prop === 'toString' ) { return toString; }
             return Reflect.get(target, prop, receiver);
         },
     });
+    return (...args) => Reflect.apply(...args);
 }
 
 function safeSelf() {
@@ -269,7 +296,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

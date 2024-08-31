@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: spa-1
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_noXhrIf = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["/pagead2\\.googlesyndication\\.com|outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"],["popads.net"]];
+const argsList = [["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["popads.net"]];
 
-const hostnamesMap = new Map([["aqualapp.com",0],["raulprietofernandez.net",0],["minhaconexao.com.br",1],["anitube.vip",2],["hinatasoul.com",2],["dicasgostosas.com",3]]);
+const hostnamesMap = new Map([["aqualapp.com",0],["raulprietofernandez.net",0],["minhaconexao.com.br",1],["caroloportunidades.com.br",2],["dicasgostosas.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -454,7 +452,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

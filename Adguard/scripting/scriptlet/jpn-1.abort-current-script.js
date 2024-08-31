@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: jpn-1
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_abortCurrentScript = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["Array.prototype.join","amazon"],["document.createElement","overview"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["__htapop"]];
+const argsList = [["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["Array.prototype.join","amazon"],["document.createElement","overview"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"]];
 
-const hostnamesMap = new Map([["qa.crefan.jp",0],["blog-and-destroy.com",1],["musenboya.com",2],["kledgeb.blogspot.com",3],["connect.coron.tech",5],["akibablog.blog.jp",6],["blog.livedoor.jp",[6,7,14,17]],["erommd-street.com",8],["ac-illust.com",9],["photo-ac.com",9],["javple.com",10],["encount.press",11],["realsound.jp",11],["h1g.jp",11],["russianbeauties.jp",12],["agora-web.jp",13],["2chblog.jp",14],["yugioh-starlight.com",14],["kijomatomelog.com",14],["gundamlog.com",14],["doorblog.jp",14],["digital-thread.com",14],["livedoor.blog",14],["blog.jp",14],["majikichi.com",15],["xn--gmq92kd2rm1kx34a.com",16],["momoiroadult.com",18],["avgle.com",19]]);
+const hostnamesMap = new Map([["qa.crefan.jp",0],["blog-and-destroy.com",1],["musenboya.com",2],["kledgeb.blogspot.com",3],["connect.coron.tech",5],["akibablog.blog.jp",6],["blog.livedoor.jp",[6,7,14,17]],["erommd-street.com",8],["ac-illust.com",9],["photo-ac.com",9],["javple.com",10],["engineweb.jp",11],["kenshonavi.com",11],["maidonanews.jp",11],["nkreport.jp",11],["riajo.com",11],["searchkoreanews.jp",11],["shiori-tabi.jp",11],["trafficnews.jp",11],["yougakumap.com",11],["encount.press",11],["realsound.jp",11],["h1g.jp",11],["russianbeauties.jp",12],["agora-web.jp",13],["2chblog.jp",14],["yugioh-starlight.com",14],["kijomatomelog.com",14],["gundamlog.com",14],["doorblog.jp",14],["digital-thread.com",14],["livedoor.blog",14],["blog.jp",14],["majikichi.com",15],["xn--gmq92kd2rm1kx34a.com",16],["momoiroadult.com",18]]);
 
 const entitiesMap = new Map([["manga1001",4],["javmix",16]]);
 
@@ -367,7 +365,19 @@ function getRandomToken() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

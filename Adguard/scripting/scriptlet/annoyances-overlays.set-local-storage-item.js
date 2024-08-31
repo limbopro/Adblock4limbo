@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: annoyances-overlays
 
@@ -40,13 +38,13 @@
 // Start of code to inject
 const uBOL_setLocalStorageItem = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
+const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"]];
 
-const hostnamesMap = new Map([["duluthtrading.com",0],["themonthly.com.au",1],["thesaturdaypaper.com.au",1],["tastemade.com",2],["clutchpoints.com",3],["core.app",4],["interestingengineering.com",5],["urbanoutfitters.com",6],["paulaschoice.com",7],["realpython.com",8],["www.watermarkremover.io",11],["scenexe.io",12]]);
+const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["themonthly.com.au",2],["thesaturdaypaper.com.au",2],["tastemade.com",3],["clutchpoints.com",4],["core.app",5],["interestingengineering.com",6],["urbanoutfitters.com",7],["paulaschoice.com",8],["realpython.com",9],["www.watermarkremover.io",12],["scenexe.io",13]]);
 
-const entitiesMap = new Map([["brainly",[9,10]]]);
+const entitiesMap = new Map([["brainly",[10,11]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -74,13 +72,9 @@ function setLocalStorageItemFn(
     const trustedValues = [
         '',
         'undefined', 'null',
-        'false', 'true',
-        'on', 'off',
-        'yes', 'no',
-        'accept', 'reject',
-        'accepted', 'rejected',
         '{}', '[]', '""',
         '$remove$',
+        ...getSafeCookieValuesFn(),
     ];
 
     if ( trusted ) {
@@ -122,6 +116,27 @@ function setLocalStorageItemFn(
         }
     } catch(ex) {
     }
+}
+
+function getSafeCookieValuesFn() {
+    return [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'disallow', 'deny',
+        'allowed', 'denied',
+        'approved', 'disapproved',
+        'checked', 'unchecked',
+        'dismiss', 'dismissed',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'essential', 'nonessential',
+        'hide', 'hidden',
+        'necessary', 'required',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+    ];
 }
 
 function safeSelf() {
@@ -292,7 +307,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: default
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_trustedReplaceXhrResponse = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|player\\?|watch\\?[tv]=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|player\\?|watch\\?[tv]=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["/\\{\"brs_content_label\":[^,]+,\"[^\"]+\":\"SPONSORED\"[^\\n]+\"cursor\":\"[^}]+\\}/g","{}","/api/graphql"],["/\\{\"brs_content_label\":[^\\n]+?\"category\":\"SPONSORED\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/.*/","","pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
+const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|player\\?|watch\\?[tv]=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|player\\?|watch\\?[tv]=|youtubei\\/v1\\/player/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","youtubei/v1/player"],["/\\{\"brs_content_label\":[^,]+,\"[^\"]+\":\"SPONSORED\"[^\\n]+\"cursor\":\"[^}]+\\}/g","{}","/api/graphql"],["/\\{\"brs_content_[^\\n]+?\"category\":\"SPONSORED\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","{}","/api/graphql"],["/\\{\"brs_c[^\\n]+?\"SponsoredData\",\"ad_id\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/.*/","","pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
 
-const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5,6,7]],["www.facebook.com",[3,4,5,6,7]],["in-jpn.com",8],["app.hellovaia.com",9],["app.vaia.com",9]]);
+const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5,6,7,8]],["www.facebook.com",[3,4,5,6,7,8]],["in-jpn.com",9],["app.hellovaia.com",10],["app.vaia.com",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -338,7 +336,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

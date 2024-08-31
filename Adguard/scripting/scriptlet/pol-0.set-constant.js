@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: pol-0
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_setConstant = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["WP.gaf.loadBunch","noopFunc"],["Object.prototype.rekids","undefined"],["Object.prototype.gafSlot","undefined"],["Object.prototype.advViewability","undefined"],["Object.prototype.loadBunch","noopFunc"],["Object.prototype.loadAndRunBunch","noopFunc"],["displayed","false"],["loadElement","noopFunc"],["showAds","true"],["pp_adblock_is_off","trueFunc"],["window.google_jobrunner","noopFunc"],["Inpl.Abd.onDetected","noopFunc"],["isAdblockDetected","0"],["adsBlocked","noopFunc"],["showAddbockerMsg","noopFunc"],["loadElementBlock","noopFunc"]];
 
@@ -453,7 +451,19 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

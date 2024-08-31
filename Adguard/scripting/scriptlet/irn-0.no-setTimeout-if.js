@@ -23,7 +23,7 @@
 /* eslint-disable indent */
 /* global cloneInto */
 
-// ruleset: chn-0
+// ruleset: irn-0
 
 /******************************************************************************/
 
@@ -36,13 +36,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_noWindowOpenIf = function() {
+const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[],["/bit\\.ly|kbtv/"],["0","qciss.net"],["88p2p.com"]];
+const argsList = [["updateAdContents"]];
 
-const hostnamesMap = new Map([["embedrise.com",0],["88files.net",0],["freejavbt.com",0],["iwatchme2u.com",1],["qciss.net",2],["5278.cc",3]]);
+const hostnamesMap = new Map([["targoman.ir",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -50,76 +50,44 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function noWindowOpenIf(
-    pattern = '',
-    delay = '',
-    decoy = ''
+function noSetTimeoutIf(
+    needle = '',
+    delay = ''
 ) {
+    if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('no-window-open-if', pattern, delay, decoy);
-    const targetMatchResult = pattern.startsWith('!') === false;
-    if ( targetMatchResult === false ) {
-        pattern = pattern.slice(1);
+    const logPrefix = safe.makeLogPrefix('prevent-setTimeout', needle, delay);
+    const needleNot = needle.charAt(0) === '!';
+    if ( needleNot ) { needle = needle.slice(1); }
+    if ( delay === '' ) { delay = undefined; }
+    let delayNot = false;
+    if ( delay !== undefined ) {
+        delayNot = delay.charAt(0) === '!';
+        if ( delayNot ) { delay = delay.slice(1); }
+        delay = parseInt(delay, 10);
     }
-    const rePattern = safe.patternToRegex(pattern);
-    let autoRemoveAfter = parseInt(delay);
-    if ( isNaN(autoRemoveAfter) ) {
-        autoRemoveAfter = -1;
-    }
-    const createDecoy = function(tag, urlProp, url) {
-        const decoyElem = document.createElement(tag);
-        decoyElem[urlProp] = url;
-        decoyElem.style.setProperty('height','1px', 'important');
-        decoyElem.style.setProperty('position','fixed', 'important');
-        decoyElem.style.setProperty('top','-1px', 'important');
-        decoyElem.style.setProperty('width','1px', 'important');
-        document.body.appendChild(decoyElem);
-        setTimeout(( ) => { decoyElem.remove(); }, autoRemoveAfter * 1000);
-        return decoyElem;
-    };
-    proxyApplyFn('open', function open(target, thisArg, args) {
-        const haystack = args.join(' ');
-        if ( rePattern.test(haystack) !== targetMatchResult ) {
-            if ( safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, `Allowed (${args.join(', ')})`);
-            }
+    const reNeedle = safe.patternToRegex(needle);
+    proxyApplyFn('setTimeout', function setTimeout(target, thisArg, args) {
+        const a = args[0] instanceof Function
+            ? String(safe.Function_toString(args[0]))
+            : String(args[0]);
+        const b = args[1];
+        if ( needle === '' && delay === undefined ) {
+            safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
             return Reflect.apply(target, thisArg, args);
         }
-        safe.uboLog(logPrefix, `Prevented (${args.join(', ')})`);
-        if ( autoRemoveAfter < 0 ) { return null; }
-        const decoyElem = decoy === 'obj'
-            ? createDecoy('object', 'data', ...args)
-            : createDecoy('iframe', 'src', ...args);
-        let popup = decoyElem.contentWindow;
-        if ( typeof popup === 'object' && popup !== null ) {
-            Object.defineProperty(popup, 'closed', { value: false });
-        } else {
-            const noopFunc = function open(){};
-            popup = new Proxy(self, {
-                get: function(target, prop) {
-                    if ( prop === 'closed' ) { return false; }
-                    const r = Reflect.get(...arguments);
-                    if ( typeof r === 'function' ) { return noopFunc; }
-                    return target[prop];
-                },
-                set: function() {
-                    return Reflect.set(...arguments);
-                },
-            });
+        let defuse;
+        if ( needle !== '' ) {
+            defuse = reNeedle.test(a) !== needleNot;
         }
-        if ( safe.logLevel !== 0 ) {
-            popup = new Proxy(popup, {
-                get: function(target, prop) {
-                    safe.uboLog(logPrefix, 'window.open / get', prop, '===', target[prop]);
-                    return Reflect.get(...arguments);
-                },
-                set: function(target, prop, value) {
-                    safe.uboLog(logPrefix, 'window.open / set', prop, '=', value);
-                    return Reflect.set(...arguments);
-                },
-            });
+        if ( defuse !== false && delay !== undefined ) {
+            defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
         }
-        return popup;
+        if ( defuse ) {
+            args[0] = function(){};
+            safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
+        }
+        return Reflect.apply(target, thisArg, args);
     });
 }
 
@@ -397,7 +365,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { noWindowOpenIf(...argsList[i]); }
+    try { noSetTimeoutIf(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -419,7 +387,7 @@ const targetWorld = 'MAIN';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noWindowOpenIf();
+    return uBOL_noSetTimeoutIf();
 }
 
 // Firefox
@@ -427,11 +395,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_noWindowOpenIf = cloneInto([
-            [ '(', uBOL_noWindowOpenIf.toString(), ')();' ],
+        page.uBOL_noSetTimeoutIf = cloneInto([
+            [ '(', uBOL_noSetTimeoutIf.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_noWindowOpenIf);
+        const blob = new page.Blob(...page.uBOL_noSetTimeoutIf);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -445,7 +413,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_noWindowOpenIf;
+    delete page.uBOL_noSetTimeoutIf;
 }
 
 /******************************************************************************/

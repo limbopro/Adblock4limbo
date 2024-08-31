@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: default
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_jsonPruneFetchResponse = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["results","","propsToMatch","deezer.getAudiobreak"],["avails","","propsToMatch","amazonaws.com"],["response.ads"],["plugins.adService"]];
 
@@ -516,7 +514,19 @@ function getRandomToken() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: spa-1
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_removeAttr = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href",".leaving-message center > a.btn[onclick^=\"window.open\"][href*=\"/ads.html\"]"]];
+const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href",".leaving-message center > a.btn[onclick^=\"window.open\"][href*=\"/ads.html\"]"],["href","a[xhref=\"javascript:void(0)\"][target=\"_blank\"]"]];
 
-const hostnamesMap = new Map([["cinelatino.net",0],["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["compartiendofull.net",3]]);
+const hostnamesMap = new Map([["megafilmeshd.si",0],["pobreflix.do",0],["redecanais.in",0],["cinelatino.net",0],["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["compartiendofull.net",3],["peliculasyserieslatino.me",4]]);
 
 const entitiesMap = new Map([["assistirfilmeshdgratis",0]]);
 
@@ -321,7 +319,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: rus-0
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_setCookie = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["callToRegisterClosed","true"],["cookieAccepted","true"],["cookie_accept","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"]];
+const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["adBlockModal","true"],["callToRegisterClosed","true"],["cookieAccepted","true"],["cookie_accept","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"]];
 
-const hostnamesMap = new Map([["kufar.by",[0,5]],["direct.farm",1],["liga.net",2],["ixbt.com",3],["forum.ixbt.com",4],["playground.ru",6],["kinotv.ru",7]]);
+const hostnamesMap = new Map([["kufar.by",[0,6]],["myshows.me",1],["direct.farm",2],["liga.net",3],["ixbt.com",4],["forum.ixbt.com",5],["playground.ru",7],["kinotv.ru",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -60,27 +58,10 @@ function setCookie(
     if ( name === '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
-
-    const validValues = [
-        'accept', 'reject',
-        'accepted', 'rejected', 'notaccepted',
-        'allow', 'deny',
-        'allowed', 'disallow',
-        'enable', 'disable',
-        'enabled', 'disabled',
-        'ok',
-        'on', 'off',
-        'true', 't', 'false', 'f',
-        'yes', 'y', 'no', 'n',
-        'necessary', 'required',
-        'approved', 'disapproved',
-        'hide', 'hidden',
-        'essential', 'nonessential',
-        'dismiss', 'dismissed',
-    ];
     const normalized = value.toLowerCase();
     const match = /^("?)(.+)\1$/.exec(normalized);
     const unquoted = match && match[2] || normalized;
+    const validValues = getSafeCookieValuesFn();
     if ( validValues.includes(unquoted) === false ) {
         if ( /^\d+$/.test(unquoted) === false ) { return; }
         const n = parseInt(value, 10);
@@ -99,6 +80,27 @@ function setCookie(
     if ( done ) {
         safe.uboLog(logPrefix, 'Done');
     }
+}
+
+function getSafeCookieValuesFn() {
+    return [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'disallow', 'deny',
+        'allowed', 'denied',
+        'approved', 'disapproved',
+        'checked', 'unchecked',
+        'dismiss', 'dismissed',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'essential', 'nonessential',
+        'hide', 'hidden',
+        'necessary', 'required',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+    ];
 }
 
 function safeSelf() {
@@ -338,7 +340,19 @@ function getCookieFn(
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

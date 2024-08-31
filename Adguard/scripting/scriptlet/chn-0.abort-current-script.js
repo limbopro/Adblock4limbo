@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: chn-0
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_abortCurrentScript = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"],["Function","new Function(document["]];
 
@@ -367,7 +365,19 @@ function getRandomToken() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

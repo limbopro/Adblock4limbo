@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: default
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_setLocalStorageItem = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adDisplayed","$remove$"],["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["/_fa_dXVpZA==$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWNjZXB0YWJsZV9hZHM=$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWRz$/","$remove$"],["/_fa_Y2FjaGVfYWRibG9ja19jaXJjdW12ZW50X3Njb3Jl$/","$remove$"],["segmentDeviceId","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["didomi_token","$remove$"],["fdx_enable_new_detail_page","true"]];
+const argsList = [["adDisplayed","$remove$"],["PageCount","$remove$"],["a_render","true"],["adf_plays","2"],["email","true"],["adshield-analytics-uuid","$remove$"],["/_fa_dXVpZA==$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWNjZXB0YWJsZV9hZHM=$/","$remove$"],["/_fa_Y2FjaGVfaXNfYmxvY2tpbmdfYWRz$/","$remove$"],["/_fa_Y2FjaGVfYWRibG9ja19jaXJjdW12ZW50X3Njb3Jl$/","$remove$"],["segmentDeviceId","$remove$"],["/optimizely_data|tealium_timing/","$remove$"],["IIElevenLabsDubbingResult","$remove$"],["didomi_token","$remove$"],["fdx_enable_new_detail_page","true"]];
 
-const hostnamesMap = new Map([["hdfilmcehennemi2.cx",0],["jetpunk.com",1],["bravedown.com",2],["adultdeepfakes.com",3],["freewsad.com",4],["loawa.com",[5,6,7,8,9]],["ygosu.com",[5,6,7,8,9]],["sportalkorea.com",[5,6,7,8,9]],["edaily.co.kr",[5,6,7,8,9]],["economist.co.kr",[5,6,7,8,9]],["etoday.co.kr",[5,6,7,8,9]],["isplus.com",[5,6,7,8,9]],["hometownstation.com",[5,6,7,8,9]],["honkailab.com",[5,6,7,8,9]],["genshinlab.com",[5,6,7,8,9]],["thestockmarketwatch.com",[5,6,7,8,9]],["thephoblographer.com",[5,6,7,8,9]],["issuya.com",[5,6,7,8,9]],["worldhistory.org",[5,6,7,8,9]],["etnews.com",[5,6,7,8,9]],["iusm.co.kr",[5,6,7,8,9]],["dogdrip.net",[5,6,7,8,9]],["etoland.co.kr",[5,6,7,8,9]],["picrew.me",[5,6,7,8,9]],["text-compare.com",[5,6,7,8,9]],["fntimes.com",[5,6,7,8,9]],["javatpoint.com",[5,6,7,8,9]],["lamire.jp",[5,6,7,8,9]],["bamgosu.site",[5,6,7,8,9]],["etnewskorea.com",[5,6,7,8,9]],["allthekingz.com",[5,6,7,8,9]],["gadgets360.com",[5,6,7,8,9]],["automobile-catalog.com",[5,6,7,8,9]],["maketecheasier.com",[5,6,7,8,9]],["thesaurus.net",[5,6,7,8,9]],["wfmz.com",[5,6,7,8,9]],["thestar.co.uk",[5,6,7,8,9]],["yorkshirepost.co.uk",[5,6,7,8,9]],["mydaily.co.kr",[5,6,7,8,9]],["raenonx.cc",[5,6,7,8,9]],["ndtvprofit.com",[5,6,7,8,9]],["badmouth1.com",[5,6,7,8,9]],["logicieleducatif.fr",[5,6,7,8,9]],["taxguru.in",[5,6,7,8,9]],["islamicfinder.org",[5,6,7,8,9]],["aikatu.jp",[5,6,7,8,9]],["secure-signup.net",[5,6,7,8,9]],["globalrph.com",[5,6,7,8,9]],["sportsrec.com",[5,6,7,8,9]],["reportera.co.kr",[5,6,7,8,9]],["slobodnadalmacija.hr",[5,6,7,8,9]],["flatpanelshd.com",[5,6,7,8,9]],["videogamemods.com",[5,6,7,8,9]],["adintrend.tv",[5,6,7,8,9]],["ark-unity.com",[5,6,7,8,9]],["cool-style.com.tw",[5,6,7,8,9]],["dziennik.pl",[5,6,7,8,9]],["eurointegration.com.ua",[5,6,7,8,9]],["mindbodygreen.com",10],["elevenlabs.io",11],["tv5mondeplus.com",12],["fedex.com",13]]);
+const hostnamesMap = new Map([["hdfilmcehennemi2.cx",0],["jetpunk.com",1],["bravedown.com",2],["adultdeepfakes.com",3],["freewsad.com",4],["loawa.com",[5,6,7,8,9]],["ygosu.com",[5,6,7,8,9]],["sportalkorea.com",[5,6,7,8,9]],["edaily.co.kr",[5,6,7,8,9]],["economist.co.kr",[5,6,7,8,9]],["etoday.co.kr",[5,6,7,8,9]],["isplus.com",[5,6,7,8,9]],["hometownstation.com",[5,6,7,8,9]],["honkailab.com",[5,6,7,8,9]],["genshinlab.com",[5,6,7,8,9]],["thestockmarketwatch.com",[5,6,7,8,9]],["issuya.com",[5,6,7,8,9]],["worldhistory.org",[5,6,7,8,9]],["etnews.com",[5,6,7,8,9]],["iusm.co.kr",[5,6,7,8,9]],["dogdrip.net",[5,6,7,8,9]],["etoland.co.kr",[5,6,7,8,9]],["picrew.me",[5,6,7,8,9]],["text-compare.com",[5,6,7,8,9]],["fntimes.com",[5,6,7,8,9]],["javatpoint.com",[5,6,7,8,9]],["lamire.jp",[5,6,7,8,9]],["bamgosu.site",[5,6,7,8,9]],["etnewskorea.com",[5,6,7,8,9]],["allthekingz.com",[5,6,7,8,9]],["gadgets360.com",[5,6,7,8,9]],["automobile-catalog.com",[5,6,7,8,9]],["maketecheasier.com",[5,6,7,8,9]],["thesaurus.net",[5,6,7,8,9]],["wfmz.com",[5,6,7,8,9]],["thestar.co.uk",[5,6,7,8,9]],["yorkshirepost.co.uk",[5,6,7,8,9]],["mydaily.co.kr",[5,6,7,8,9]],["raenonx.cc",[5,6,7,8,9]],["ndtvprofit.com",[5,6,7,8,9]],["badmouth1.com",[5,6,7,8,9]],["logicieleducatif.fr",[5,6,7,8,9]],["taxguru.in",[5,6,7,8,9]],["islamicfinder.org",[5,6,7,8,9]],["aikatu.jp",[5,6,7,8,9]],["secure-signup.net",[5,6,7,8,9]],["globalrph.com",[5,6,7,8,9]],["sportsrec.com",[5,6,7,8,9]],["reportera.co.kr",[5,6,7,8,9]],["slobodnadalmacija.hr",[5,6,7,8,9]],["flatpanelshd.com",[5,6,7,8,9]],["videogamemods.com",[5,6,7,8,9]],["adintrend.tv",[5,6,7,8,9]],["ark-unity.com",[5,6,7,8,9]],["cool-style.com.tw",[5,6,7,8,9]],["dziennik.pl",[5,6,7,8,9]],["eurointegration.com.ua",[5,6,7,8,9]],["winfuture.de",[5,6,7,8,9]],["freemcserver.net",[5,6,7,8,9]],["pravda.com.ua",[5,6,7,8,9]],["mindbodygreen.com",10],["1und1.de",11],["elevenlabs.io",12],["tv5mondeplus.com",13],["fedex.com",14]]);
 
 const entitiesMap = new Map([]);
 
@@ -74,13 +72,9 @@ function setLocalStorageItemFn(
     const trustedValues = [
         '',
         'undefined', 'null',
-        'false', 'true',
-        'on', 'off',
-        'yes', 'no',
-        'accept', 'reject',
-        'accepted', 'rejected',
         '{}', '[]', '""',
         '$remove$',
+        ...getSafeCookieValuesFn(),
     ];
 
     if ( trusted ) {
@@ -122,6 +116,27 @@ function setLocalStorageItemFn(
         }
     } catch(ex) {
     }
+}
+
+function getSafeCookieValuesFn() {
+    return [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'disallow', 'deny',
+        'allowed', 'denied',
+        'approved', 'disapproved',
+        'checked', 'unchecked',
+        'dismiss', 'dismissed',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'essential', 'nonessential',
+        'hide', 'hidden',
+        'necessary', 'required',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+    ];
 }
 
 function safeSelf() {
@@ -292,7 +307,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

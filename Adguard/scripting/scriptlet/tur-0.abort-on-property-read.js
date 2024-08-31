@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: tur-0
 
@@ -40,13 +38,13 @@
 // Start of code to inject
 const uBOL_abortOnPropertyRead = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adblockmesaj"],["detectedAdBlock"],["detectAdBlock"],["adsBlocked"],["rTargets"],["initPu"],["initAd"],["initPop"],["oV1"],["openPopup"],["pop_status"],["sagAltReklamListesi"],["initDizi"],["wpsite_clickable_data"],["jsPopunder"]];
+const argsList = [["adblockmesaj"],["detectedAdBlock"],["detectAdBlock"],["adsBlocked"],["rTargets"],["initPu"],["initAd"],["initPop"],["oV1"],["elemDiv"],["openPopup"],["pop_status"],["sagAltReklamListesi"],["initDizi"],["wpsite_clickable_data"],["jsPopunder"]];
 
-const hostnamesMap = new Map([["komputerdelisi.com",0],["mangawt.com",0],["gsmturkey.net",0],["vidtekno.com",0],["sozcu.com.tr",1],["telegramgruplari.com",2],["kanalmaras.com",3],["r10.net",4],["vkfilmizlet.net",5],["diziyoutv.com",5],["guneykoresinemasi.com",5],["jetfilmizletv.net",5],["dizimax2.com",5],["yenierotikfilm.xyz",5],["diziday1.com",5],["zipfilmizle.com",5],["bamfilmizle.com",5],["sinemadafilm.com",5],["hdizlefilmleri.com",5],["filmmoduu.com",5],["abifilmizle.org",5],["trfilm.net",5],["dolufilm.org",5],["turkifsaalemi.com",5],["kuponuna170.top",5],["kuponuna171.top",5],["kuponuna172.top",5],["kuponuna173.top",5],["kuponuna174.top",5],["kuponuna175.top",5],["kuponuna176.top",5],["kuponuna177.top",5],["kuponuna178.top",5],["kuponuna179.top",5],["kuponuna180.top",5],["kuponuna181.top",5],["kuponuna182.top",5],["kuponuna183.top",5],["kuponuna184.top",5],["kuponuna185.top",5],["kuponuna186.top",5],["kuponuna187.top",5],["kuponuna188.top",5],["kuponuna189.top",5],["kuponuna190.top",5],["kuponuna191.top",5],["kuponuna192.top",5],["kuponuna193.top",5],["kuponuna194.top",5],["kuponuna195.top",5],["kuponuna196.top",5],["kuponuna197.top",5],["kuponuna198.top",5],["kuponuna199.top",5],["kuponuna200.top",5],["kuponuna201.top",5],["kuponuna202.top",5],["kuponuna203.top",5],["kuponuna204.top",5],["kuponuna205.top",5],["kuponuna206.top",5],["kuponuna207.top",5],["kuponuna208.top",5],["kuponuna209.top",5],["kuponuna210.top",5],["kuponuna211.top",5],["kuponuna212.top",5],["kuponuna213.top",5],["kuponuna214.top",5],["kuponuna215.top",5],["kuponuna216.top",5],["kuponuna217.top",5],["kuponuna218.top",5],["kuponuna219.top",5],["kuponuna220.top",5],["kuponuna221.top",5],["kuponuna222.top",5],["kuponuna223.top",5],["kuponuna224.top",5],["kuponuna225.top",5],["kuponuna226.top",5],["kuponuna227.top",5],["kuponuna228.top",5],["kuponuna229.top",5],["kuponuna230.top",5],["kuponuna231.top",5],["kuponuna232.top",5],["kuponuna233.top",5],["kuponuna234.top",5],["kuponuna235.top",5],["kuponuna236.top",5],["kuponuna237.top",5],["kuponuna238.top",5],["kuponuna239.top",5],["kuponuna240.top",5],["kuponuna241.top",5],["kuponuna242.top",5],["kuponuna243.top",5],["kuponuna244.top",5],["kuponuna245.top",5],["kuponuna246.top",5],["kuponuna247.top",5],["kuponuna248.top",5],["kuponuna249.top",5],["kuponuna250.top",5],["superfilmgeldi.biz",6],["supernaturalizle.com",6],["sinemakolik.net",6],["hdsinemax.com",6],["fullhdabifilm.com",6],["bettercallsaulizle.com",6],["superfilmgeldi.net",6],["fullhdfilmizlett1.com",6],["fullhdfilmcibaba2.com",6],["filmsezonu.com",6],["fullhdfilmizleabi.com",6],["hdfreeizle.com",6],["hdmixfilim.com",[6,10]],["fullhdfilmizlepala.com",6],["fullfilmcidayi4.com",6],["filmizlehdizle.com",7],["dizivex.com",7],["roketdizi.co",7],["1080hdfilmizle.com",7],["shirl.club",8],["altporno.xyz",8],["afroditscans.com",9],["goodfilmizle.org",11],["goodfilmizle.com",11],["diziyou.co",12],["technopat.net",13]]);
+const hostnamesMap = new Map([["komputerdelisi.com",0],["mangawt.com",0],["gsmturkey.net",0],["vidtekno.com",0],["sozcu.com.tr",1],["telegramgruplari.com",2],["kanalmaras.com",3],["r10.net",4],["promy.pro",5],["vkfilmizlet.net",5],["diziyoutv.com",5],["guneykoresinemasi.com",5],["jetfilmizletv.net",5],["dizimax2.com",5],["yenierotikfilm.xyz",5],["diziday1.com",5],["zipfilmizle.com",5],["bamfilmizle.com",5],["sinemadafilm.com",5],["hdizlefilmleri.com",5],["filmmoduu.com",5],["abifilmizle.org",5],["trfilm.net",5],["dolufilm.org",5],["turkifsaalemi.com",5],["kuponuna170.top",5],["kuponuna171.top",5],["kuponuna172.top",5],["kuponuna173.top",5],["kuponuna174.top",5],["kuponuna175.top",5],["kuponuna176.top",5],["kuponuna177.top",5],["kuponuna178.top",5],["kuponuna179.top",5],["kuponuna180.top",5],["kuponuna181.top",5],["kuponuna182.top",5],["kuponuna183.top",5],["kuponuna184.top",5],["kuponuna185.top",5],["kuponuna186.top",5],["kuponuna187.top",5],["kuponuna188.top",5],["kuponuna189.top",5],["kuponuna190.top",5],["kuponuna191.top",5],["kuponuna192.top",5],["kuponuna193.top",5],["kuponuna194.top",5],["kuponuna195.top",5],["kuponuna196.top",5],["kuponuna197.top",5],["kuponuna198.top",5],["kuponuna199.top",5],["kuponuna200.top",5],["kuponuna201.top",5],["kuponuna202.top",5],["kuponuna203.top",5],["kuponuna204.top",5],["kuponuna205.top",5],["kuponuna206.top",5],["kuponuna207.top",5],["kuponuna208.top",5],["kuponuna209.top",5],["kuponuna210.top",5],["kuponuna211.top",5],["kuponuna212.top",5],["kuponuna213.top",5],["kuponuna214.top",5],["kuponuna215.top",5],["kuponuna216.top",5],["kuponuna217.top",5],["kuponuna218.top",5],["kuponuna219.top",5],["kuponuna220.top",5],["kuponuna221.top",5],["kuponuna222.top",5],["kuponuna223.top",5],["kuponuna224.top",5],["kuponuna225.top",5],["kuponuna226.top",5],["kuponuna227.top",5],["kuponuna228.top",5],["kuponuna229.top",5],["kuponuna230.top",5],["kuponuna231.top",5],["kuponuna232.top",5],["kuponuna233.top",5],["kuponuna234.top",5],["kuponuna235.top",5],["kuponuna236.top",5],["kuponuna237.top",5],["kuponuna238.top",5],["kuponuna239.top",5],["kuponuna240.top",5],["kuponuna241.top",5],["kuponuna242.top",5],["kuponuna243.top",5],["kuponuna244.top",5],["kuponuna245.top",5],["kuponuna246.top",5],["kuponuna247.top",5],["kuponuna248.top",5],["kuponuna249.top",5],["kuponuna250.top",5],["fullfilmizlebaba.com",6],["superfilmgeldi.biz",6],["supernaturalizle.com",6],["sinemakolik.net",6],["hdsinemax.com",6],["fullhdabifilm.com",6],["bettercallsaulizle.com",6],["superfilmgeldi.net",6],["fullhdfilmizlett1.com",6],["fullhdfilmcibaba2.com",6],["filmsezonu.com",6],["fullhdfilmizleabi.com",6],["hdfreeizle.com",6],["hdmixfilim.com",[6,11]],["fullhdfilmizlepala.com",6],["fullfilmcidayi4.com",6],["filmizlehdizle.com",7],["dizivex.com",7],["roketdizi.co",7],["1080hdfilmizle.com",7],["shirl.club",8],["altporno.xyz",8],["1dizifilmizle.com",9],["afroditscans.com",10],["goodfilmizle.org",12],["goodfilmizle.com",12],["diziyou.co",13],["technopat.net",14]]);
 
-const entitiesMap = new Map([["breakingbadizle",5],["vkfilmizlet",6],["diziyo",6],["yabancidiziizlesene",7],["tranimeizle",14]]);
+const entitiesMap = new Map([["breakingbadizle",5],["vkfilmizlet",6],["diziyo",6],["yabancidiziizlesene",7],["tranimeizle",15]]);
 
 const exceptionsMap = new Map([]);
 
@@ -285,7 +283,19 @@ function getRandomToken() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

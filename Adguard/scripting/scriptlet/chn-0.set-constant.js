@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: chn-0
 
@@ -40,7 +38,7 @@
 // Start of code to inject
 const uBOL_setConstant = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["_AdBlockInit","noopFunc"],["google_tag_data","{}"],["killAdKiller","noopFunc"],["AD_SURVEY_Add_AdPos","noopFunc"],["AD_SURVEY_Add_AdPos_Simple","noopFunc"],["killads","true"],["all520dddaaa2022ccc","true"],["isAdsDisplayed","true"],["fuzqingAdPlus","{}"],["all520dddaaa2022aaa","undefined"],["canRunAds","true"],["adblock","0"],["can_run_ads","true"],["ga","noopFunc"],["google_empty_script_included","true"],["adsbygoogle","noopFunc"],["adblock","false"],["Object.prototype.cnobpreroll_","true"],["Object.prototype.canobpreroll_","true"],["ads",""],["NativeAd","noopFunc"],["__jsadsuccess","true"],["onload","null"],["adbk","false"],["config.group",""],["preBid","{}"],["preBid.displayAd","noopFunc"],["preBid.getPrerollVASTUrl","noopFunc"],["player.VastADPlugin","noopFunc"],["ADSOBJET","{}"],["myPlayer.adDisplay","undefined"],["NEWS_FEED","noopFunc"],["conone_lmg","noopFunc"],["Object.prototype.ad_switch","0"],["dy_card_dyrun","undefined"],["poped","true"],["Object.prototype.adData","{}"],["Object.prototype._adData","{}"],["adsbygoogle.loaded","true"],["MM_openBrWindow","noopFunc"],["lists","undefined"],["is_show","false"],["adInfo","{}"],["isAdLoaded","true"],["Object.prototype.noAD","true"],["CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY",""],["CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START",""],["pageData.__banners.0.commercial.mediaUrl",""],["pageData.__banners.0.commercial.jumpUrl",""],["pageData.__banners.0.commercial.title",""],["pageData.__banners.1.commercial.mediaUrl",""],["pageData.__banners.1.commercial.jumpUrl",""],["pageData.__banners.1.commercial.title",""],["detailParams.is_ad_play","false"]];
 
@@ -453,7 +451,19 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

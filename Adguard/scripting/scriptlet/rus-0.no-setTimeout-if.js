@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: rus-0
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_noSetTimeoutIf = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["","250"],["Adblock"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["ai_adb"],["alert","15000"],["antyadb","5000"],["clientHeight","2000"],["doAd"],["evercookie","300000"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["getVisibleDivs","300"],["is_adblock"],["removeJuristicNotification"],["saa"],["setInterval",""],["sparkle"],["toUTCString"],["()=>n()","50"]];
+const argsList = [["","250"],["Adblock"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["ai_adb"],["alert","15000"],["antyadb","5000"],["clientHeight","2000"],["doAd"],["evercookie","300000"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["getVisibleDivs","300"],["initServices","5000"],["is_adblock"],["removeJuristicNotification"],["saa"],["setInterval",""],["sparkle"],["toUTCString"],["()=>n()","50"]];
 
-const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["razlozhi.ru",2],["allapteki.ru",3],["buhgalter.com.ua",4],["buhgalter911.com",4],["factor.ua",4],["strategium.ru",5],["fonmod.com",[6,12]],["aqicn.org",7],["tragtorr.in",8],["tragtorr.info",8],["litehd.tv",9],["russia-tv.online",9],["tv-kanali.online",10],["tradingview.com",11],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["rusvesna.su",15],["fishki.net",16],["vseinstrumenti.ru",17],["testserver.pro",18],["websdr.space",19],["anime-chan.me",20],["num-words.com",21],["softportal.com",21],["e.mail.ru",22]]);
+const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["razlozhi.ru",2],["allapteki.ru",3],["buhgalter.com.ua",4],["buhgalter911.com",4],["factor.ua",4],["strategium.ru",5],["fonmod.com",[6,12]],["aqicn.org",7],["tragtorr.in",8],["tragtorr.info",8],["litehd.tv",9],["russia-tv.online",9],["tv-kanali.online",10],["tradingview.com",11],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["rusvesna.su",15],["in-poland.com",16],["fishki.net",17],["vseinstrumenti.ru",18],["testserver.pro",19],["websdr.space",20],["anime-chan.me",21],["num-words.com",22],["softportal.com",22],["e.mail.ru",23]]);
 
 const entitiesMap = new Map([]);
 
@@ -69,36 +67,65 @@ function noSetTimeoutIf(
         delay = parseInt(delay, 10);
     }
     const reNeedle = safe.patternToRegex(needle);
-    self.setTimeout = new Proxy(self.setTimeout, {
-        apply: function(target, thisArg, args) {
-            const a = args[0] instanceof Function
-                ? String(safe.Function_toString(args[0]))
-                : String(args[0]);
-            const b = args[1];
-            if ( needle === '' && delay === undefined ) {
-                safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
-                return Reflect.apply(target, thisArg, args);
-            }
-            let defuse;
-            if ( needle !== '' ) {
-                defuse = reNeedle.test(a) !== needleNot;
-            }
-            if ( defuse !== false && delay !== undefined ) {
-                defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
-            }
-            if ( defuse ) {
-                args[0] = function(){};
-                safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
-            }
+    proxyApplyFn('setTimeout', function setTimeout(target, thisArg, args) {
+        const a = args[0] instanceof Function
+            ? String(safe.Function_toString(args[0]))
+            : String(args[0]);
+        const b = args[1];
+        if ( needle === '' && delay === undefined ) {
+            safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
             return Reflect.apply(target, thisArg, args);
-        },
+        }
+        let defuse;
+        if ( needle !== '' ) {
+            defuse = reNeedle.test(a) !== needleNot;
+        }
+        if ( defuse !== false && delay !== undefined ) {
+            defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
+        }
+        if ( defuse ) {
+            args[0] = function(){};
+            safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
+        }
+        return Reflect.apply(target, thisArg, args);
+    });
+}
+
+function proxyApplyFn(
+    target = '',
+    handler = ''
+) {
+    let context = globalThis;
+    let prop = target;
+    for (;;) {
+        const pos = prop.indexOf('.');
+        if ( pos === -1 ) { break; }
+        context = context[prop.slice(0, pos)];
+        if ( context instanceof Object === false ) { return; }
+        prop = prop.slice(pos+1);
+    }
+    const fn = context[prop];
+    if ( typeof fn !== 'function' ) { return; }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
+    if ( fn.prototype && fn.prototype.constructor === fn ) {
+        context[prop] = new Proxy(fn, {
+            construct: handler,
+            get(target, prop, receiver) {
+                if ( prop === 'toString' ) { return toString; }
+                return Reflect.get(target, prop, receiver);
+            },
+        });
+        return (...args) => Reflect.construct(...args);
+    }
+    context[prop] = new Proxy(fn, {
+        apply: handler,
         get(target, prop, receiver) {
-            if ( prop === 'toString' ) {
-                return target.toString.bind(target);
-            }
+            if ( prop === 'toString' ) { return toString; }
             return Reflect.get(target, prop, receiver);
         },
     });
+    return (...args) => Reflect.apply(...args);
 }
 
 function safeSelf() {
@@ -269,7 +296,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

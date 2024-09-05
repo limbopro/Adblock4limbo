@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.07.12
+// @version      0.4.09.05
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -145,6 +145,7 @@ daohang_build(); // 为页面增加导航按钮
 // 如不要导航可注释该行代码 在代码前加两行斜杆 //
 // daohang_build() 就像这样
 
+
 // 一些常量
 /* Start */
 
@@ -244,7 +245,7 @@ var imax = {
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         missav: "a[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         porna91: "a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
-        porn91: "br, .ad_img,img[class*=\"ad_img\"], iframe[src*=\"ads\"], img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
+        porn91: "br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
         pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
@@ -261,7 +262,7 @@ var imax = {
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos
         javbus: ".ad-item,.ad-box {display:none !important}",
-        _4hu:"script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
+        _4hu: "script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
@@ -273,7 +274,7 @@ var imax = {
         njav: "iframe[width='300px'] {display:none!important}",
         jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
         rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
-        diyibanzhu:"img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
+        diyibanzhu: "img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
         novel543: "iframe, div#adfoot, div.px-3.py-3, #adfoot, .gadBlock {height:0px; display:none !important; pointer-events: none !important;}"
         //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
     },
@@ -445,20 +446,32 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             break;
         case '91porn.':
-            
-            cloudflare_captchaBypass();
+            //cloudflare_captchaBypass();
             css_adsRemove(imax.css.porn91);
-            //css_adsRemove(imax.css.porna91);
 
+            let url91 = document.location.href;
+            if (url91.indexOf('view_') !== -1) {
+                let play = setInterval(() => {
+                    if (document.querySelector('div.preroll-skip-button') !== null) {
+                        document.querySelector('div.preroll-skip-button').click();
+                    } else {
+                        clearInterval(play);
+                    }
+                }, 1000)
+            }
+
+
+            //css_adsRemove(imax.css.porna91);
             //_91porn_videoplay_ads();
 
             // 播放页空白
-
+            /*
             document.querySelectorAll("br").forEach((x) => {
                 if (x.clientHeight = 0) {
                     x.remove()
                 }
             })
+            */
 
             break;
         case 'avple':
@@ -923,11 +936,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.novel543, 100, 'novel543x');
             break;
 
-case 'diyibanzhu':
+        case 'diyibanzhu':
             css_adsRemove(imax.css.diyibanzhu, 100, 'novel543x');
-                                window_open_defuser(); // 打断 window.open 施法
+            window_open_defuser(); // 打断 window.open 施法
             break;
-            
+
 
         default:
             // 修正 case 中 default 的匹配规则  10.25.203
@@ -1001,6 +1014,8 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
     //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
     if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {
         console.log('CSP + PC, SO DO NOTING.')
+    } else if (window.location.href.toLowerCase().indexOf('91porn.') !== -1) {
+        console.log('SO DO NOTING.')
     } else {
         let daohang = setInterval(() => {
             if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {

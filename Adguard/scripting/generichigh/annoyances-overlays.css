@@ -28,6 +28,7 @@
 [data-spot-im-class="card-container"],
 [data-testid="NewsletterSubscribeFormWrapper"],
 [data-testid="newsletter-promo-widget"],
+[data-testid="prism-newsletter-form"],
 app-emailsubscribe,
 app-newsletter-widget,
 div[class*="frontend-components-SubscribePrompt-"],

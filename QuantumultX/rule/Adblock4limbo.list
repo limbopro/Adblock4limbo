@@ -7,12 +7,12 @@
 ## EasyList/EasylistChina/EasyPrivacy 隐私追踪器/去广告分流规则请在Github仓库 Adblock4limbo -> rule 文件夹下查找，按需添加...
 ## 仓库地址：https://github.com/limbopro/Adblock4limbo/tree/main/rule
 ## Peter Lowe’s Ad and tracking server list: 3547 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList: 38021 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 41484 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5257 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList: 37987 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 41412 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 5310 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 89433 Domains/IP/Others (非去重统计)
-## Last updated at  1/9月/2024/00:00
+## 以上共计: 89380 Domains/IP/Others (非去重统计)
+## Last updated at  6/9月/2024/01:52
 ## */
 
 
@@ -20,350 +20,350 @@
 ## 如需完整配置，参阅请原文 https://limbopro.com/archives/12904.html
 
 ##### streamtape.com
-DOMAIN-SUFFIX,tj.orlandowaggons.com, reject
-DOMAIN-SUFFIX,citadelpathstatue.com, reject
-DOMAIN-SUFFIX,a.adforcast.com, reject
-DOMAIN-SUFFIX,impolo.com, reject
+DOMAIN-SUFFIX,tj.orlandowaggons.com,reject
+DOMAIN-SUFFIX,citadelpathstatue.com,reject
+DOMAIN-SUFFIX,a.adforcast.com,reject
+DOMAIN-SUFFIX,impolo.com,reject
 
 ##### ww7.pornhoarder.tv
-DOMAIN-SUFFIX,578d72001a.com, reject
-DOMAIN-SUFFIX,wpadmngr.com, reject
-DOMAIN-SUFFIX,cdn.tsyndicate.com, reject
-DOMAIN-SUFFIX,youradexchange.com, reject
-DOMAIN-SUFFIX,zprofuqkssny.com, reject
-DOMAIN-SUFFIX,vjugz.com, reject
-DOMAIN-SUFFIX,du0pud0sdlmzf.cloudfront.net, reject
-DOMAIN-SUFFIX,cdn.tsyndicate.com, reject
+DOMAIN-SUFFIX,578d72001a.com,reject
+DOMAIN-SUFFIX,wpadmngr.com,reject
+DOMAIN-SUFFIX,cdn.tsyndicate.com,reject
+DOMAIN-SUFFIX,youradexchange.com,reject
+DOMAIN-SUFFIX,zprofuqkssny.com,reject
+DOMAIN-SUFFIX,vjugz.com,reject
+DOMAIN-SUFFIX,du0pud0sdlmzf.cloudfront.net,reject
+DOMAIN-SUFFIX,cdn.tsyndicate.com,reject
 
 ##### m.po18vip.com 
-DOMAIN-SUFFIX,histats.com, reject
-DOMAIN-SUFFIX,kkjhgfds.top, reject
+DOMAIN-SUFFIX,histats.com,reject
+DOMAIN-SUFFIX,kkjhgfds.top,reject
 
 ##### https://m.diyibanzhu.me/ 第一版主小说网
-DOMAIN,25e87c0802f91cf8cgg.6uzxtlv.cn, reject
-DOMAIN-SUFFIX,5mgrgsc.cn, reject
-DOMAIN-SUFFIX,2700.5mgrgsc.cn, reject
-DOMAIN-SUFFIX,6fi3bv9.cn, reject
-DOMAIN-SUFFIX,6uzxtlv.cn, reject
-DOMAIN-SUFFIX,xn--qrq171dxpq.com, reject
-DOMAIN-SUFFIX,clarity.ms, reject
-DOMAIN-SUFFIX,histats.com, reject
-DOMAIN-SUFFIX,5e87c0802f91cf8cgg.6uzxtlv.cn, reject
+DOMAIN,25e87c0802f91cf8cgg.6uzxtlv.cn,reject
+DOMAIN-SUFFIX,5mgrgsc.cn,reject
+DOMAIN-SUFFIX,2700.5mgrgsc.cn,reject
+DOMAIN-SUFFIX,6fi3bv9.cn,reject
+DOMAIN-SUFFIX,6uzxtlv.cn,reject
+DOMAIN-SUFFIX,xn--qrq171dxpq.com,reject
+DOMAIN-SUFFIX,clarity.ms,reject
+DOMAIN-SUFFIX,histats.com,reject
+DOMAIN-SUFFIX,5e87c0802f91cf8cgg.6uzxtlv.cn,reject
 
 ##### https://www.novel543.com/ 小说网
-DOMAIN-SUFFIX,popin.cc, reject
-DOMAIN-SUFFIX,double.net, reject
-DOMAIN-SUFFIX,spotxchange.com, reject
-DOMAIN-SUFFIX,stat.gn01.top, reject
-DOMAIN-SUFFIX,ad.vidverto.io, reject
-DOMAIN-SUFFIX,googlesyndication.com, reject
-DOMAIN-SUFFIX,pagead2.googlesyndication.com, reject
-DOMAIN-SUFFIX,gn01.top, reject
-DOMAIN-SUFFIX,b1sync.zemanta.com, reject
+DOMAIN-SUFFIX,popin.cc,reject
+DOMAIN-SUFFIX,double.net,reject
+DOMAIN-SUFFIX,spotxchange.com,reject
+DOMAIN-SUFFIX,stat.gn01.top,reject
+DOMAIN-SUFFIX,ad.vidverto.io,reject
+DOMAIN-SUFFIX,googlesyndication.com,reject
+DOMAIN-SUFFIX,pagead2.googlesyndication.com,reject
+DOMAIN-SUFFIX,gn01.top,reject
+DOMAIN-SUFFIX,b1sync.zemanta.com,reject
 
 ##### https://www.lyxsjmm.com/
-DOMAIN-SUFFIX,tu.xasnjafnvn.com, reject
-DOMAIN-SUFFIX,bn.ufitjvn.com, reject
+DOMAIN-SUFFIX,tu.xasnjafnvn.com,reject
+DOMAIN-SUFFIX,bn.ufitjvn.com,reject
 
 ##### https://javmost.xyz/  
-#DOMAIN,delivery-node-aziz.voe-network.net, reject
-#DOMAIN,inspiringaccurate.com, reject
-#DOMAIN,track.aso1.net, reject
-DOMAIN-SUFFIX,v3.fstats.xyz, reject
-DOMAIN-SUFFIX,wpadmngr.com, reject
-DOMAIN-SUFFIX,histats.com, reject
-DOMAIN-SUFFIX,son-in-lawmorbid.com, reject
-DOMAIN-SUFFIX,mc.yandex.ru, reject
-DOMAIN-SUFFIX,amung.us, reject
-DOMAIN-SUFFIX,widgets.amung.us, reject
-DOMAIN-SUFFIX,s10.histats.com, reject
-DOMAIN-SUFFIX,eyebrowscrambledlater.com, reject
-DOMAIN-SUFFIX,a.realsrv.com, reject
-DOMAIN-SUFFIX,media.aso1.net, reject
-DOMAIN-SUFFIX,js.wpshsdk.com, reject
-DOMAIN-SUFFIX,js.wpushsdk.com, reject
-DOMAIN-SUFFIX,9e77b6e6e2.2e3f31faae.com, reject
-DOMAIN-SUFFIX,playersb.com, reject
-#DOMAIN-SUFFIX,dood.la, reject
+#DOMAIN,delivery-node-aziz.voe-network.net,reject
+#DOMAIN,inspiringaccurate.com,reject
+#DOMAIN,track.aso1.net,reject
+DOMAIN-SUFFIX,v3.fstats.xyz,reject
+DOMAIN-SUFFIX,wpadmngr.com,reject
+DOMAIN-SUFFIX,histats.com,reject
+DOMAIN-SUFFIX,son-in-lawmorbid.com,reject
+DOMAIN-SUFFIX,mc.yandex.ru,reject
+DOMAIN-SUFFIX,amung.us,reject
+DOMAIN-SUFFIX,widgets.amung.us,reject
+DOMAIN-SUFFIX,s10.histats.com,reject
+DOMAIN-SUFFIX,eyebrowscrambledlater.com,reject
+DOMAIN-SUFFIX,a.realsrv.com,reject
+DOMAIN-SUFFIX,media.aso1.net,reject
+DOMAIN-SUFFIX,js.wpshsdk.com,reject
+DOMAIN-SUFFIX,js.wpushsdk.com,reject
+DOMAIN-SUFFIX,9e77b6e6e2.2e3f31faae.com,reject
+DOMAIN-SUFFIX,playersb.com,reject
+#DOMAIN-SUFFIX,dood.la,reject
 
 ##### https://www.tvc.cc/  
-DOMAIN-SUFFIX,42yenxh.cn, reject
-DOMAIN-SUFFIX,dwyhup.cn, reject
-DOMAIN-SUFFIX,netdjs.net, reject
-DOMAIN-SUFFIX,pc.stgowan.com, reject
+DOMAIN-SUFFIX,42yenxh.cn,reject
+DOMAIN-SUFFIX,dwyhup.cn,reject
+DOMAIN-SUFFIX,netdjs.net,reject
+DOMAIN-SUFFIX,pc.stgowan.com,reject
 
 ##### https://avple.tv/  
-DOMAIN-SUFFIX,tapioni.com, reject
-#DOMAIN-SUFFIX,107iwh.cn:4032, reject
-#DOMAIN-SUFFIX,qinhemuye.com:443, reject
-DOMAIN-SUFFIX,107iwh.cn, reject
-DOMAIN-SUFFIX,hbhuatie.com, reject
-DOMAIN-SUFFIX,qinzhihao.com, reject
-DOMAIN-SUFFIX,nby360.com, reject
-DOMAIN-SUFFIX,tfosrv.com, reject
-DOMAIN-SUFFIX,trafforsrv.com, reject
-DOMAIN-SUFFIX,trafficforce.com, reject
-DOMAIN-SUFFIX,s.csyfe.com, reject
+DOMAIN-SUFFIX,tapioni.com,reject
+#DOMAIN-SUFFIX,107iwh.cn:4032,reject
+#DOMAIN-SUFFIX,qinhemuye.com:443,reject
+DOMAIN-SUFFIX,107iwh.cn,reject
+DOMAIN-SUFFIX,hbhuatie.com,reject
+DOMAIN-SUFFIX,qinzhihao.com,reject
+DOMAIN-SUFFIX,nby360.com,reject
+DOMAIN-SUFFIX,tfosrv.com,reject
+DOMAIN-SUFFIX,trafforsrv.com,reject
+DOMAIN-SUFFIX,trafficforce.com,reject
+DOMAIN-SUFFIX,s.csyfe.com,reject
 
 ##### https://www.tvn.cc/ 韩剧TV  
-DOMAIN-SUFFIX,qw2v.changshuohr.net, reject
-DOMAIN-SUFFIX,wss.haoyundmn.com, reject
+DOMAIN-SUFFIX,qw2v.changshuohr.net,reject
+DOMAIN-SUFFIX,wss.haoyundmn.com,reject
 
 ##### missav.com  
-DOMAIN-SUFFIX,video.ktkjmp.com, reject
-DOMAIN-SUFFIX,go.myavlive.com, reject
-DOMAIN-SUFFIX,gsjln04hd.com, reject
-DOMAIN-SUFFIX,creative.myavlive.com, reject
-DOMAIN-SUFFIX,creative.live.missav.com, reject
-DOMAIN-SUFFIX,cashewsforlife208.com, reject
-DOMAIN-SUFFIX,ingest.sentry, reject
-DOMAIN-SUFFIX,phloxsub73ulata.com, reject
-DOMAIN-SUFFIX,xxxjmp.com, reject
-DOMAIN-SUFFIX,pitrespite.com, reject
-DOMAIN-SUFFIX,alexametrics.com, reject
-DOMAIN-SUFFIX,designslicensedeep.com, reject
-DOMAIN-SUFFIX,a.bestcontentfood.top, reject
-DOMAIN-SUFFIX,tsyndicate.com, reject
-DOMAIN-SUFFIX,cashewsforlife208.com, reject
-DOMAIN-SUFFIX,e67repidwnfu7gcha.com, reject
-DOMAIN-SUFFIX,mc7clurd09pla4nrtat7ion.com, reject
-DOMAIN-SUFFIX,e67repidwnfu7gcha.com, reject
-DOMAIN-SUFFIX,wuzbhjpvsf.com, reject
-DOMAIN-SUFFIX,a.realsrv.com, reject
+DOMAIN-SUFFIX,video.ktkjmp.com,reject
+DOMAIN-SUFFIX,go.myavlive.com,reject
+DOMAIN-SUFFIX,gsjln04hd.com,reject
+DOMAIN-SUFFIX,creative.myavlive.com,reject
+DOMAIN-SUFFIX,creative.live.missav.com,reject
+DOMAIN-SUFFIX,cashewsforlife208.com,reject
+DOMAIN-SUFFIX,ingest.sentry,reject
+DOMAIN-SUFFIX,phloxsub73ulata.com,reject
+DOMAIN-SUFFIX,xxxjmp.com,reject
+DOMAIN-SUFFIX,pitrespite.com,reject
+DOMAIN-SUFFIX,alexametrics.com,reject
+DOMAIN-SUFFIX,designslicensedeep.com,reject
+DOMAIN-SUFFIX,a.bestcontentfood.top,reject
+DOMAIN-SUFFIX,tsyndicate.com,reject
+DOMAIN-SUFFIX,cashewsforlife208.com,reject
+DOMAIN-SUFFIX,e67repidwnfu7gcha.com,reject
+DOMAIN-SUFFIX,mc7clurd09pla4nrtat7ion.com,reject
+DOMAIN-SUFFIX,e67repidwnfu7gcha.com,reject
+DOMAIN-SUFFIX,wuzbhjpvsf.com,reject
+DOMAIN-SUFFIX,a.realsrv.com,reject
 
 ##### Jable.tv av吃到饱  
-DOMAIN-SUFFIX,a.shukriya90.com, reject
-DOMAIN-SUFFIX,a.shukriya90.com, reject
-DOMAIN-SUFFIX,creative.xlviirdr.com, reject
-DOMAIN-SUFFIX,realsrv.com, reject
-DOMAIN-SUFFIX,asewlfjqwlflkew.com, reject
-DOMAIN-SUFFIX,uus52.com, reject
-DOMAIN-SUFFIX,uus58.com, reject
-DOMAIN-SUFFIX,ddmax20.xyz, reject
-DOMAIN-SUFFIX,ads.exosrv.com, reject
-DOMAIN-KEYWORD,exosrv, reject
-DOMAIN-KEYWORD,asewlfjqwlflkew, reject
-DOMAIN-SUFFIX,tyrantdb.com, reject
-DOMAIN-SUFFIX,adserve.work, reject
+DOMAIN-SUFFIX,a.shukriya90.com,reject
+DOMAIN-SUFFIX,a.shukriya90.com,reject
+DOMAIN-SUFFIX,creative.xlviirdr.com,reject
+DOMAIN-SUFFIX,realsrv.com,reject
+DOMAIN-SUFFIX,asewlfjqwlflkew.com,reject
+DOMAIN-SUFFIX,uus52.com,reject
+DOMAIN-SUFFIX,uus58.com,reject
+DOMAIN-SUFFIX,ddmax20.xyz,reject
+DOMAIN-SUFFIX,ads.exosrv.com,reject
+DOMAIN-KEYWORD,exosrv,reject
+DOMAIN-KEYWORD,asewlfjqwlflkew,reject
+DOMAIN-SUFFIX,tyrantdb.com,reject
+DOMAIN-SUFFIX,adserve.work,reject
 
 ##### nfmovies.com 奈菲影视  
-DOMAIN-KEYWORD,brushshopy, reject
-DOMAIN-KEYWORD,onenews, reject
-DOMAIN-SUFFIX,s96.cnzz.com, reject
-#DOMAIN-SUFFIX,yabo729.com, reject
+DOMAIN-KEYWORD,brushshopy,reject
+DOMAIN-KEYWORD,onenews,reject
+DOMAIN-SUFFIX,s96.cnzz.com,reject
+#DOMAIN-SUFFIX,yabo729.com,reject
 
 ###### m.pianku.me/ 手机片库网  
-DOMAIN-SUFFIX,xn--3bs795g.zone, reject
-DOMAIN-SUFFIX,xn--2qux23c9ziyrq.plus, reject
-DOMAIN-SUFFIX,xn--2qux23c9ziyrq.club, reject
-DOMAIN-SUFFIX,xn--xhq9mt12cf5v.xn--io0a7i, reject
-DOMAIN-SUFFIX,ddmax20.xyz, reject
-DOMAIN-SUFFIX,xn--3bs795g.link, reject
-DOMAIN-SUFFIX,show.suning.beer, reject
-DOMAIN-SUFFIX,www.govshenzhen.cn, reject
-DOMAIN-SUFFIX,mm9842.com, reject
-DOMAIN-KEYWORD,e2wysbacctt1, reject
-#DOMAIN-SUFFIX,streamtape.com, reject
+DOMAIN-SUFFIX,xn--3bs795g.zone,reject
+DOMAIN-SUFFIX,xn--2qux23c9ziyrq.plus,reject
+DOMAIN-SUFFIX,xn--2qux23c9ziyrq.club,reject
+DOMAIN-SUFFIX,xn--xhq9mt12cf5v.xn--io0a7i,reject
+DOMAIN-SUFFIX,ddmax20.xyz,reject
+DOMAIN-SUFFIX,xn--3bs795g.link,reject
+DOMAIN-SUFFIX,show.suning.beer,reject
+DOMAIN-SUFFIX,www.govshenzhen.cn,reject
+DOMAIN-SUFFIX,mm9842.com,reject
+DOMAIN-KEYWORD,e2wysbacctt1,reject
+#DOMAIN-SUFFIX,streamtape.com,reject
 
 ##### netflav.com Netflav  
-DOMAIN-SUFFIX,xlvirdr.com, reject
-DOMAIN-SUFFIX,media.dalysv.com, reject
-DOMAIN-SUFFIX,creative.mnaspm.com, reject
-DOMAIN-SUFFIX,go.mnaspm.com, reject
-DOMAIN-SUFFIX,solestudious.com, reject
-DOMAIN-SUFFIX,enrichyummy.com, reject
-DOMAIN-SUFFIX,maphuahin.com, reject
-DOMAIN-SUFFIX,ggsfq.com, reject
-DOMAIN-SUFFIX,ad.pornimg.xyz, reject
-DOMAIN-SUFFIX,yandex.ru, reject
-DOMAIN-SUFFIX,awaitcola.com, reject
-#DOMAIN-SUFFIX,jsdelivr.net, reject
-DOMAIN-SUFFIX,wine-api.net, reject
-#DOMAIN-KEYWORD,wixsite.com, reject
-DOMAIN-SUFFIX,exosrv.com, reject
-DOMAIN-SUFFIX,juicyads.com, reject
-#DOMAIN-SUFFIX,wixstatic.com, reject
-DOMAIN-SUFFIX,thumb.fvs.io, reject
-DOMAIN-SUFFIX,itnuzleafan.com, reject
-DOMAIN-SUFFIX,oawhaursaith.com, reject
-DOMAIN-SUFFIX,unreshiramor.com, reject
-DOMAIN-SUFFIX,regulationprivilegescan.top, reject
-DOMAIN-SUFFIX,in-page-push.com, reject
-DOMAIN-SUFFIX,farmcrapsubsist.com, reject
+DOMAIN-SUFFIX,xlvirdr.com,reject
+DOMAIN-SUFFIX,media.dalysv.com,reject
+DOMAIN-SUFFIX,creative.mnaspm.com,reject
+DOMAIN-SUFFIX,go.mnaspm.com,reject
+DOMAIN-SUFFIX,solestudious.com,reject
+DOMAIN-SUFFIX,enrichyummy.com,reject
+DOMAIN-SUFFIX,maphuahin.com,reject
+DOMAIN-SUFFIX,ggsfq.com,reject
+DOMAIN-SUFFIX,ad.pornimg.xyz,reject
+DOMAIN-SUFFIX,yandex.ru,reject
+DOMAIN-SUFFIX,awaitcola.com,reject
+#DOMAIN-SUFFIX,jsdelivr.net,reject
+DOMAIN-SUFFIX,wine-api.net,reject
+#DOMAIN-KEYWORD,wixsite.com,reject
+DOMAIN-SUFFIX,exosrv.com,reject
+DOMAIN-SUFFIX,juicyads.com,reject
+#DOMAIN-SUFFIX,wixstatic.com,reject
+DOMAIN-SUFFIX,thumb.fvs.io,reject
+DOMAIN-SUFFIX,itnuzleafan.com,reject
+DOMAIN-SUFFIX,oawhaursaith.com,reject
+DOMAIN-SUFFIX,unreshiramor.com,reject
+DOMAIN-SUFFIX,regulationprivilegescan.top,reject
+DOMAIN-SUFFIX,in-page-push.com,reject
+DOMAIN-SUFFIX,farmcrapsubsist.com,reject
 
 ##### avgle.me  
-DOMAIN-SUFFIX,jads.co, reject
-DOMAIN-SUFFIX,adxadserv.com, reject
-DOMAIN-SUFFIX,moatads.com, reject
-DOMAIN-SUFFIX,juicyads.in, reject
-DOMAIN-SUFFIX,dtscout.com, reject
+DOMAIN-SUFFIX,jads.co,reject
+DOMAIN-SUFFIX,adxadserv.com,reject
+DOMAIN-SUFFIX,moatads.com,reject
+DOMAIN-SUFFIX,juicyads.in,reject
+DOMAIN-SUFFIX,dtscout.com,reject
 
 ##### dilili.tv  
-DOMAIN-SUFFIX,51.la, reject
-DOMAIN-SUFFIX,51daeka.com, reject
+DOMAIN-SUFFIX,51.la,reject
+DOMAIN-SUFFIX,51daeka.com,reject
 
 ##### www.cocomanhua.com  
-DOMAIN-SUFFIX,exdynsrv.com, reject
-#DOMAIN-SUFFIX,cloudfront.net, reject
-DOMAIN-SUFFIX,d227cncaprzd7y.cloudfront.net, reject
-DOMAIN-SUFFIX,d10lumateci472.cloudfront.net, reject
+DOMAIN-SUFFIX,exdynsrv.com,reject
+#DOMAIN-SUFFIX,cloudfront.net,reject
+DOMAIN-SUFFIX,d227cncaprzd7y.cloudfront.net,reject
+DOMAIN-SUFFIX,d10lumateci472.cloudfront.net,reject
 
 ##### m.yhdm.io  
-DOMAIN-SUFFIX,dvzk66.cn, reject
-DOMAIN-SUFFIX,pu0glv.cn, reject
+DOMAIN-SUFFIX,dvzk66.cn,reject
+DOMAIN-SUFFIX,pu0glv.cn,reject
 
 ##### www.porntrex.com/  
-#DOMAIN-SUFFIX,ads.bullionyield.com, reject
+#DOMAIN-SUFFIX,ads.bullionyield.com,reject
 
 ##### https://www.zhenbuka.com/  
-DOMAIN-KEYWORD,dlads, reject
-DOMAIN,dagonghuzhu.com, reject
-#DOMAIN-SUFFIX,byteimg.com, reject
-DOMAIN-KEYWORD,xxshuyuan, reject
-DOMAIN-KEYWORD,haowanyou, reject
-DOMAIN-KEYWORD,dat8, reject
-DOMAIN-KEYWORD,112wan, reject
-DOMAIN-KEYWORD,dfkj8, reject
-DOMAIN-KEYWORD,mifengv, reject
-DOMAIN-KEYWORD,lieyou, reject
-DOMAIN-KEYWORD,789htbet, reject
-DOMAIN-KEYWORD,mdapp09, reject
-DOMAIN-KEYWORD,juruigj, reject
-#DOMAIN-KEYWORD,mmiyue, reject
+DOMAIN-KEYWORD,dlads,reject
+DOMAIN,dagonghuzhu.com,reject
+#DOMAIN-SUFFIX,byteimg.com,reject
+DOMAIN-KEYWORD,xxshuyuan,reject
+DOMAIN-KEYWORD,haowanyou,reject
+DOMAIN-KEYWORD,dat8,reject
+DOMAIN-KEYWORD,112wan,reject
+DOMAIN-KEYWORD,dfkj8,reject
+DOMAIN-KEYWORD,mifengv,reject
+DOMAIN-KEYWORD,lieyou,reject
+DOMAIN-KEYWORD,789htbet,reject
+DOMAIN-KEYWORD,mdapp09,reject
+DOMAIN-KEYWORD,juruigj,reject
+#DOMAIN-KEYWORD,mmiyue,reject
 
 ##### pornhub.com  
-DOMAIN-SUFFIX,etahub.com, reject
-DOMAIN-SUFFIX,evtubescms.phncdn.com, reject
+DOMAIN-SUFFIX,etahub.com,reject
+DOMAIN-SUFFIX,evtubescms.phncdn.com,reject
 
 ##### www.hptoon.com  
-DOMAIN-SUFFIX,22c.in, reject
-DOMAIN-SUFFIX,imgxxx.shunxincar.cn, reject
-#DOMAIN-SUFFIX,cc58.oss-cn-beijing.aliyuncs.com, reject
-#DOMAIN-SUFFIX,oss-accelerate.aliyuncs.com, reject
-DOMAIN-SUFFIX,kk.braincf.com, reject
-DOMAIN-SUFFIX,run.haireig.com, reject
-DOMAIN-SUFFIX,d.zxptw.cn, reject
-DOMAIN-SUFFIX,new.xiongzhangad.com, reject
-DOMAIN-SUFFIX,js.users.51.la, reject
-DOMAIN-SUFFIX,maxwellsery.com, reject
-DOMAIN-SUFFIX,annabelleabe.com, reject
+DOMAIN-SUFFIX,22c.in,reject
+DOMAIN-SUFFIX,imgxxx.shunxincar.cn,reject
+#DOMAIN-SUFFIX,cc58.oss-cn-beijing.aliyuncs.com,reject
+#DOMAIN-SUFFIX,oss-accelerate.aliyuncs.com,reject
+DOMAIN-SUFFIX,kk.braincf.com,reject
+DOMAIN-SUFFIX,run.haireig.com,reject
+DOMAIN-SUFFIX,d.zxptw.cn,reject
+DOMAIN-SUFFIX,new.xiongzhangad.com,reject
+DOMAIN-SUFFIX,js.users.51.la,reject
+DOMAIN-SUFFIX,maxwellsery.com,reject
+DOMAIN-SUFFIX,annabelleabe.com,reject
 
 ##### https://91mjw.com/  
-DOMAIN-SUFFIX,jidukeji.com, reject
-DOMAIN-SUFFIX,atmib.com, reject
-DOMAIN-SUFFIX,bjzysd.net, reject
-DOMAIN-SUFFIX,iycwl.com, reject
-DOMAIN-SUFFIX,haoyundm.com, reject
-DOMAIN-SUFFIX,qqq123987.site, reject
-DOMAIN-SUFFIX,qweewq2021.online, reject
-DOMAIN-SUFFIX,qqq123987.site, reject
-DOMAIN-SUFFIX,jianxinshanghai.com, reject
-DOMAIN-SUFFIX,js.51toubu.com, reject
-DOMAIN-SUFFIX,img.hylmxing.com, reject
-DOMAIN-SUFFIX,777.000123456789.space, reject
-DOMAIN-SUFFIX,bhichong.com, reject
-DOMAIN-SUFFIX,tskdfjksldk.sdhsgcj.com, reject
-DOMAIN-SUFFIX,haoyuntj.com, reject
+DOMAIN-SUFFIX,jidukeji.com,reject
+DOMAIN-SUFFIX,atmib.com,reject
+DOMAIN-SUFFIX,bjzysd.net,reject
+DOMAIN-SUFFIX,iycwl.com,reject
+DOMAIN-SUFFIX,haoyundm.com,reject
+DOMAIN-SUFFIX,qqq123987.site,reject
+DOMAIN-SUFFIX,qweewq2021.online,reject
+DOMAIN-SUFFIX,qqq123987.site,reject
+DOMAIN-SUFFIX,jianxinshanghai.com,reject
+DOMAIN-SUFFIX,js.51toubu.com,reject
+DOMAIN-SUFFIX,img.hylmxing.com,reject
+DOMAIN-SUFFIX,777.000123456789.space,reject
+DOMAIN-SUFFIX,bhichong.com,reject
+DOMAIN-SUFFIX,tskdfjksldk.sdhsgcj.com,reject
+DOMAIN-SUFFIX,haoyuntj.com,reject
 
 ##### https://m.biquge.com.cn/  
-DOMAIN-SUFFIX,bizhixiang.cn, reject
-DOMAIN-SUFFIX,jspassport.ssl.qhimg.com, reject
+DOMAIN-SUFFIX,bizhixiang.cn,reject
+DOMAIN-SUFFIX,jspassport.ssl.qhimg.com,reject
 
 ##### https://gimy.tv/ 剧迷tv  
-DOMAIN-SUFFIX,ads.superad.cc, reject
+DOMAIN-SUFFIX,ads.superad.cc,reject
 
 ##### https://hpjav.tv/ JAVFAN #NSFW  
-DOMAIN-SUFFIX,wpncdn.com, reject
-DOMAIN-SUFFIX,exosrv.com, reject
-DOMAIN-SUFFIX,jads.co, reject
-DOMAIN-KEYWORD,toateeli, reject
-DOMAIN-KEYWORD,greenplasticdua, reject
-DOMAIN-KEYWORD,bongacash, reject
-DOMAIN-KEYWORD,bngpt, reject
-DOMAIN-KEYWORD,stunninglover, reject
-DOMAIN-KEYWORD,jads, reject
-DOMAIN-KEYWORD,trwl1, reject
-#DOMAIN-KEYWORD,vidoza, reject
-DOMAIN-KEYWORD,o333o, reject
-DOMAIN-SUFFIX,ad.pornimg.xyz, reject
+DOMAIN-SUFFIX,wpncdn.com,reject
+DOMAIN-SUFFIX,exosrv.com,reject
+DOMAIN-SUFFIX,jads.co,reject
+DOMAIN-KEYWORD,toateeli,reject
+DOMAIN-KEYWORD,greenplasticdua,reject
+DOMAIN-KEYWORD,bongacash,reject
+DOMAIN-KEYWORD,bngpt,reject
+DOMAIN-KEYWORD,stunninglover,reject
+DOMAIN-KEYWORD,jads,reject
+DOMAIN-KEYWORD,trwl1,reject
+#DOMAIN-KEYWORD,vidoza,reject
+DOMAIN-KEYWORD,o333o,reject
+DOMAIN-SUFFIX,ad.pornimg.xyz,reject
 
 ##### https://javgg.net/  
-DOMAIN-SUFFIX,x2sfa.javgg.eu, reject
-DOMAIN-SUFFIX,xd3r.javgg.eu, reject
-DOMAIN-SUFFIX,p242.plainwrk.name, reject
+DOMAIN-SUFFIX,x2sfa.javgg.eu,reject
+DOMAIN-SUFFIX,xd3r.javgg.eu,reject
+DOMAIN-SUFFIX,p242.plainwrk.name,reject
 
 ##### https://www5.javmost.com/  
-DOMAIN-KEYWORD,histats, reject
-DOMAIN-KEYWORD,dtscout, reject
-DOMAIN-KEYWORD,adform, reject
-DOMAIN-KEYWORD,mathtag, reject
-DOMAIN-KEYWORD,pagespeed-mod, reject
-DOMAIN-KEYWORD,in-page-push, reject
+DOMAIN-KEYWORD,histats,reject
+DOMAIN-KEYWORD,dtscout,reject
+DOMAIN-KEYWORD,adform,reject
+DOMAIN-KEYWORD,mathtag,reject
+DOMAIN-KEYWORD,pagespeed-mod,reject
+DOMAIN-KEYWORD,in-page-push,reject
 
 ##### https://hanime1.me/
-DOMAIN-SUFFIX,impactserving.com, reject
-DOMAIN-SUFFIX,addthis.com, reject
-DOMAIN-SUFFIX,magsrv.com, reject
-DOMAIN-SUFFIX,creative.kbnmnl.com, reject
+DOMAIN-SUFFIX,impactserving.com,reject
+DOMAIN-SUFFIX,addthis.com,reject
+DOMAIN-SUFFIX,magsrv.com,reject
+DOMAIN-SUFFIX,creative.kbnmnl.com,reject
 
 ##### https://supjav.com/
-DOMAIN-SUFFIX,adxadserv.com, reject
-DOMAIN-SUFFIX,xlivrdr.com, reject
-DOMAIN-SUFFIX,fanza.cc, reject
+DOMAIN-SUFFIX,adxadserv.com,reject
+DOMAIN-SUFFIX,xlivrdr.com,reject
+DOMAIN-SUFFIX,fanza.cc,reject
 
 #### disqus  
-DOMAIN-SUFFIX,referrer.disqus.com, reject
-DOMAIN-SUFFIX,links.services.disqus.com, reject
-DOMAIN-SUFFIX,disqusads.com, reject
-DOMAIN,glitter.services.disqus.com, reject
-DOMAIN,juggler.services.disqus.com, reject
-DOMAIN,tempest.services.disqus.com, reject
-DOMAIN,mc.viglink.com, reject
-DOMAIN,qa.viglink.com, reject
-DOMAIN,ns4.viglink.com, reject
-DOMAIN,ns2.viglink.com, reject
-DOMAIN,ns3.viglink.com, reject
-DOMAIN,apicdn.viglink.com, reject
-DOMAIN-SUFFIX,cdn.viglink.com, reject
+DOMAIN-SUFFIX,referrer.disqus.com,reject
+DOMAIN-SUFFIX,links.services.disqus.com,reject
+DOMAIN-SUFFIX,disqusads.com,reject
+DOMAIN,glitter.services.disqus.com,reject
+DOMAIN,juggler.services.disqus.com,reject
+DOMAIN,tempest.services.disqus.com,reject
+DOMAIN,mc.viglink.com,reject
+DOMAIN,qa.viglink.com,reject
+DOMAIN,ns4.viglink.com,reject
+DOMAIN,ns2.viglink.com,reject
+DOMAIN,ns3.viglink.com,reject
+DOMAIN,apicdn.viglink.com,reject
+DOMAIN-SUFFIX,cdn.viglink.com,reject
 
 #### www.tz659.com  
-DOMAIN,nggfe.fdgem.com, reject
-DOMAIN,rthmnj.xyz, reject
-DOMAIN-SUFFIX, jknmthwd.xyz, reject
-DOMAIN,koprtgh.omhoa.com, reject
-DOMAIN,hbftgh.ibjkqnhjwd.xyz, reject
-DOMAIN,kmopoer.jkbuymjhp.xyz, reject
-DOMAIN,kmef.ikjwmfeds.xyz, reject
-DOMAIN,hnrtg.iujkegbpo.xyz, reject
-DOMAIN-SUFFIX,tcc.qscvli.com, reject
-DOMAIN,fg.knlk2md.cn, reject
-DOMAIN,tg.gtlpaj.com, reject
-DOMAIN-SUFFIX,gtlpaj.com, reject
-DOMAIN-SUFFIX,knlk2md.cn, reject
-DOMAIN-SUFFIX,7tad.cn, reject
-DOMAIN,tc.vpubmi.com, reject
-DOMAIN-SUFFIX,qoiw1xw.cn, reject
-DOMAIN-SUFFIX,purpleads.io, reject
+DOMAIN,nggfe.fdgem.com,reject
+DOMAIN,rthmnj.xyz,reject
+DOMAIN-SUFFIX,jknmthwd.xyz,reject
+DOMAIN,koprtgh.omhoa.com,reject
+DOMAIN,hbftgh.ibjkqnhjwd.xyz,reject
+DOMAIN,kmopoer.jkbuymjhp.xyz,reject
+DOMAIN,kmef.ikjwmfeds.xyz,reject
+DOMAIN,hnrtg.iujkegbpo.xyz,reject
+DOMAIN-SUFFIX,tcc.qscvli.com,reject
+DOMAIN,fg.knlk2md.cn,reject
+DOMAIN,tg.gtlpaj.com,reject
+DOMAIN-SUFFIX,gtlpaj.com,reject
+DOMAIN-SUFFIX,knlk2md.cn,reject
+DOMAIN-SUFFIX,7tad.cn,reject
+DOMAIN,tc.vpubmi.com,reject
+DOMAIN-SUFFIX,qoiw1xw.cn,reject
+DOMAIN-SUFFIX,purpleads.io,reject
 
 #### cn1.91short.com
-DOMAIN-SUFFIX, ioacfu.com, reject
+DOMAIN-SUFFIX,ioacfu.com,reject
 
 #### 91porn.com
-#### DOMAIN-SUFFIX, killcovid2021.com, reject
+#### DOMAIN-SUFFIX,killcovid2021.com,reject
 
 #### xiaobaotv.net
-DOMAIN-SUFFIX, onerousethelpictures.com, reject
-DOMAIN-SUFFIX, exemptambientcream.com, reject
-DOMAIN-SUFFIX, catdomepimyth.com, reject
+DOMAIN-SUFFIX,onerousethelpictures.com,reject
+DOMAIN-SUFFIX,exemptambientcream.com,reject
+DOMAIN-SUFFIX,catdomepimyth.com,reject
 
 #### javday.tv
-DOMAIN-SUFFIX, farwine.com, reject
+DOMAIN-SUFFIX,farwine.com,reject
 
 #### www.ntdm9.com
-DOMAIN-SUFFIX, pc.stgowan.com, reject
-DOMAIN-SUFFIX, 2xmzazd.cn, reject
-DOMAIN-SUFFIX, 2qpqwkx.cn, reject
-DOMAIN-SUFFIX, server.mch3.com, reject
+DOMAIN-SUFFIX,pc.stgowan.com,reject
+DOMAIN-SUFFIX,2xmzazd.cn,reject
+DOMAIN-SUFFIX,2qpqwkx.cn,reject
+DOMAIN-SUFFIX,server.mch3.com,reject
 
 
 
@@ -372,371 +372,371 @@ DOMAIN-SUFFIX, server.mch3.com, reject
 
 # Advertising
 # > General
-DOMAIN-KEYWORD,adservice, reject
+DOMAIN-KEYWORD,adservice,reject
 
 # (0~9)
 # > 51wnl
-DOMAIN,ad.51wnl-cq.com, reject
-DOMAIN,adextra.51wnl-cq.com, reject
-DOMAIN,log.51wnl-cq.com, reject
-DOMAIN,r.51wnl-cq.com, reject
+DOMAIN,ad.51wnl-cq.com,reject
+DOMAIN,adextra.51wnl-cq.com,reject
+DOMAIN,log.51wnl-cq.com,reject
+DOMAIN,r.51wnl-cq.com,reject
 
 # (A)
 # > Apple
-DOMAIN-SUFFIX,iadsdk.apple.com, reject
-DOMAIN-SUFFIX,ads.internal.unity3d.com, reject
-DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com, reject
-DOMAIN-SUFFIX,unityads.unity3d.com, reject
+DOMAIN-SUFFIX,iadsdk.apple.com,reject
+DOMAIN-SUFFIX,ads.internal.unity3d.com,reject
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,reject
+DOMAIN-SUFFIX,unityads.unity3d.com,reject
 # --- (Alibaba) ---
-DOMAIN,tunion-api.m.taobao.com, reject
+DOMAIN,tunion-api.m.taobao.com,reject
 # > YOUKU
-DOMAIN-SUFFIX,atm.youku.com, reject
-DOMAIN,ad.mobile.youku.com, reject
-DOMAIN,adx.op.cp18.ott.cibntv.net, reject
-DOMAIN,iyes.youku.com, reject
-DOMAIN,pl.cp31.ott.cibntv.net, reject
+DOMAIN-SUFFIX,atm.youku.com,reject
+DOMAIN,ad.mobile.youku.com,reject
+DOMAIN,adx.op.cp18.ott.cibntv.net,reject
+DOMAIN,iyes.youku.com,reject
+DOMAIN,pl.cp31.ott.cibntv.net,reject
 # > AMap
-DOMAIN,optimus-ads.amap.com, reject
-DOMAIN,optimus-ads.amap.com.w.alikunlun.com, reject
+DOMAIN,optimus-ads.amap.com,reject
+DOMAIN,optimus-ads.amap.com.w.alikunlun.com,reject
 # ------
 # > Autohome
-DOMAIN,adproxy.autohome.com.cn, reject
-DOMAIN,rd.autohome.com.cn, reject
-DOMAIN,al.autohome.com.cn, reject
-DOMAIN,applogapi.autohome.com.cn, reject
-DOMAIN,adm0.autoimg.cn, reject
-DOMAIN,adm1.autoimg.cn, reject
-DOMAIN,adm2.autoimg.cn, reject
-DOMAIN,adm3.autoimg.cn, reject
+DOMAIN,adproxy.autohome.com.cn,reject
+DOMAIN,rd.autohome.com.cn,reject
+DOMAIN,al.autohome.com.cn,reject
+DOMAIN,applogapi.autohome.com.cn,reject
+DOMAIN,adm0.autoimg.cn,reject
+DOMAIN,adm1.autoimg.cn,reject
+DOMAIN,adm2.autoimg.cn,reject
+DOMAIN,adm3.autoimg.cn,reject
 
 # (B)
 # --- (Baidu) ---
-DOMAIN-SUFFIX,duapps.com, reject
-DOMAIN-SUFFIX,cpro.baidu.com, reject
-DOMAIN-SUFFIX,pos.baidu.com, reject
-DOMAIN,afd.baidu.com, reject
-DOMAIN,als.baidu.com, reject
-DOMAIN,duclick.baidu.com, reject
-DOMAIN,mobads.baidu.com, reject
-DOMAIN,mobads-logs.baidu.com, reject
-DOMAIN,nadvideo2.baidu.com, reject
-DOMAIN,nsclick.baidu.com, reject
+DOMAIN-SUFFIX,duapps.com,reject
+DOMAIN-SUFFIX,cpro.baidu.com,reject
+DOMAIN-SUFFIX,pos.baidu.com,reject
+DOMAIN,afd.baidu.com,reject
+DOMAIN,als.baidu.com,reject
+DOMAIN,duclick.baidu.com,reject
+DOMAIN,mobads.baidu.com,reject
+DOMAIN,mobads-logs.baidu.com,reject
+DOMAIN,nadvideo2.baidu.com,reject
+DOMAIN,nsclick.baidu.com,reject
 # > iQIYI
-DOMAIN,t7z.cupid.iqiyi.com, reject
-DOMAIN,t7z.cupid.ptqy.gitv.tv, reject
+DOMAIN,t7z.cupid.iqiyi.com,reject
+DOMAIN,t7z.cupid.ptqy.gitv.tv,reject
 ## IP-CIDR,101.227.97.240/32,no-resolve
 ## IP-CIDR,101.227.200.11/32,no-resolve
 ## IP-CIDR,101.227.200.28/32,no-resolve
 ## IP-CIDR,124.192.153.42/32,no-resolve
 # ------
 # > ByteDance
-DOMAIN-SUFFIX,pangolin-sdk-toutiao.com, reject
-DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com, reject
-DOMAIN,ad.toutiao.com, reject
-DOMAIN,dsp.toutiao.com, reject
-DOMAIN,pangolin.snssdk.com, reject
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,reject
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,reject
+DOMAIN,ad.toutiao.com,reject
+DOMAIN,dsp.toutiao.com,reject
+DOMAIN,pangolin.snssdk.com,reject
 # > baicizhan
-DOMAIN,advertise.baicizhan.com, reject
-DOMAIN,advertise.baicizhan.org, reject
+DOMAIN,advertise.baicizhan.com,reject
+DOMAIN,advertise.baicizhan.org,reject
 # > BitAuto
-DOMAIN,adx.yiche.com, reject
-DOMAIN,log.ycapp.yiche.com, reject
+DOMAIN,adx.yiche.com,reject
+DOMAIN,log.ycapp.yiche.com,reject
 # > Braze
-DOMAIN-SUFFIX,iad.appboy.com, reject
-DOMAIN-SUFFIX,iad-03.appboy.com, reject
-DOMAIN-SUFFIX,iad-01.braze.com, reject
-DOMAIN-SUFFIX,iad-02.braze.com, reject
-DOMAIN-SUFFIX,iad-03.braze.com, reject
-DOMAIN-SUFFIX,iad-04.braze.com, reject
-DOMAIN-SUFFIX,iad-05.braze.com, reject
-DOMAIN-SUFFIX,iad-06.braze.com, reject
-DOMAIN-SUFFIX,iad-08.braze.com, reject
+DOMAIN-SUFFIX,iad.appboy.com,reject
+DOMAIN-SUFFIX,iad-03.appboy.com,reject
+DOMAIN-SUFFIX,iad-01.braze.com,reject
+DOMAIN-SUFFIX,iad-02.braze.com,reject
+DOMAIN-SUFFIX,iad-03.braze.com,reject
+DOMAIN-SUFFIX,iad-04.braze.com,reject
+DOMAIN-SUFFIX,iad-05.braze.com,reject
+DOMAIN-SUFFIX,iad-06.braze.com,reject
+DOMAIN-SUFFIX,iad-08.braze.com,reject
 
 # (C)
 # > CCTVVideo
-DOMAIN,adstore-index-1252524079.file.myqcloud.com, reject
+DOMAIN,adstore-index-1252524079.file.myqcloud.com,reject
 # > CNTV
-DOMAIN,galaxy.bjcathay.com, reject
-DOMAIN,mdrecv.app.cntvwb.cn, reject
-DOMAIN,sdapprecv.app.cntvwb.cn, reject
-DOMAIN,vdapprecv.app.cntvwb.cn, reject
+DOMAIN,galaxy.bjcathay.com,reject
+DOMAIN,mdrecv.app.cntvwb.cn,reject
+DOMAIN,sdapprecv.app.cntvwb.cn,reject
+DOMAIN,vdapprecv.app.cntvwb.cn,reject
 # > ChinaTelecom
-DOMAIN,ad.21cn.com, reject
-DOMAIN,ad.k.21cn.com, reject
-DOMAIN,admarket.21cn.com, reject
-DOMAIN,adshows.21cn.com, reject
+DOMAIN,ad.21cn.com,reject
+DOMAIN,ad.k.21cn.com,reject
+DOMAIN,admarket.21cn.com,reject
+DOMAIN,adshows.21cn.com,reject
 # > Chelaile
-DOMAIN,atrace.chelaile.net.cn, reject
-DOMAIN,logs.chelaile.net.cn, reject
+DOMAIN,atrace.chelaile.net.cn,reject
+DOMAIN,logs.chelaile.net.cn,reject
 # > Camera360
-DOMAIN,dispatcher.360in.com, reject
-DOMAIN,ad.360in.com, reject
-DOMAIN,exp.360in.com, reject
+DOMAIN,dispatcher.360in.com,reject
+DOMAIN,ad.360in.com,reject
+DOMAIN,exp.360in.com,reject
 
 # (D)
 # > Douban
-# AND,((USER-AGENT,Frodo*), (DOMAIN,119.29.29.29)), reject
+# AND,((USER-AGENT,Frodo*), (DOMAIN,119.29.29.29)),reject
 
 # (G)
 # > Google
-DOMAIN-SUFFIX,doubleclick.net, reject
-DOMAIN-SUFFIX,googleadservices.com, reject
-DOMAIN-SUFFIX,googleadsserving.cn, reject
-DOMAIN-SUFFIX,googlesyndication.com, reject
-DOMAIN-SUFFIX,googletagservices.com, reject
-DOMAIN,ads.youtube.com, reject
+DOMAIN-SUFFIX,doubleclick.net,reject
+DOMAIN-SUFFIX,googleadservices.com,reject
+DOMAIN-SUFFIX,googleadsserving.cn,reject
+DOMAIN-SUFFIX,googlesyndication.com,reject
+DOMAIN-SUFFIX,googletagservices.com,reject
+DOMAIN,ads.youtube.com,reject
 
 # (H)
 # > HunanTV
-DOMAIN-SUFFIX,da.mgtv.com, reject
-DOMAIN-SUFFIX,da.hunantv.com, reject
-DOMAIN-SUFFIX,log.hunantv.com, reject
-DOMAIN-SUFFIX,v2.hunantv.com, reject
+DOMAIN-SUFFIX,da.mgtv.com,reject
+DOMAIN-SUFFIX,da.hunantv.com,reject
+DOMAIN-SUFFIX,log.hunantv.com,reject
+DOMAIN-SUFFIX,v2.hunantv.com,reject
 # > Hupu
-DOMAIN,adx.hupu.com, reject
-DOMAIN,adx-api.hupu.com, reject
-DOMAIN,goblin.hupu.com, reject
+DOMAIN,adx.hupu.com,reject
+DOMAIN,adx-api.hupu.com,reject
+DOMAIN,goblin.hupu.com,reject
 # > happycast
-DOMAIN,ad.hpplay.cn, reject
-DOMAIN,adc.hpplay.cn, reject
-DOMAIN,adcdn.hpplay.cn, reject
-DOMAIN,adeng.hpplay.cn, reject
-DOMAIN,pin.hpplay.cn, reject
-DOMAIN,rp.hpplay.cn, reject
-DOMAIN,rpt.hpplay.cn, reject
+DOMAIN,ad.hpplay.cn,reject
+DOMAIN,adc.hpplay.cn,reject
+DOMAIN,adcdn.hpplay.cn,reject
+DOMAIN,adeng.hpplay.cn,reject
+DOMAIN,pin.hpplay.cn,reject
+DOMAIN,rp.hpplay.cn,reject
+DOMAIN,rpt.hpplay.cn,reject
 
 # (J)
 # >jxedt
-DOMAIN,richmanapi.jxedt.com, reject
-DOMAIN,richmanmain.jxedt.com, reject
-DOMAIN,richmanrules.jxedt.com, reject
+DOMAIN,richmanapi.jxedt.com,reject
+DOMAIN,richmanmain.jxedt.com,reject
+DOMAIN,richmanrules.jxedt.com,reject
 
 # (K)
 # > Kingsoft
-DOMAIN,ad-stat.ksosoft.com, reject
-DOMAIN,img.auction-ads.wpscdn.cn, reject
-DOMAIN,counter.kingsoft.com, reject
-DOMAIN,counter.ksosoft.com, reject
-DOMAIN,minfo.wps.cn, reject
-DOMAIN,mobad.ijinshan.com, reject
-DOMAIN,ups.ksmobile.net, reject
-DOMAIN,ws.ksmobile.net, reject
+DOMAIN,ad-stat.ksosoft.com,reject
+DOMAIN,img.auction-ads.wpscdn.cn,reject
+DOMAIN,counter.kingsoft.com,reject
+DOMAIN,counter.ksosoft.com,reject
+DOMAIN,minfo.wps.cn,reject
+DOMAIN,mobad.ijinshan.com,reject
+DOMAIN,ups.ksmobile.net,reject
+DOMAIN,ws.ksmobile.net,reject
 # > Kuaishou
-DOMAIN-SUFFIX,e.kuaishou.com, reject
-DOMAIN,js-ad.a.yximgs.com, reject
+DOMAIN-SUFFIX,e.kuaishou.com,reject
+DOMAIN,js-ad.a.yximgs.com,reject
 
 # (L)
 # > Le
-DOMAIN-SUFFIX,webp2p.letv.com, reject
-DOMAIN,ark.letv.com, reject
-DOMAIN,emma-414870e223.huodonghezi.com, reject
-DOMAIN,g3.letv.com, reject
-DOMAIN,n.mark.letv.com, reject
+DOMAIN-SUFFIX,webp2p.letv.com,reject
+DOMAIN,ark.letv.com,reject
+DOMAIN,emma-414870e223.huodonghezi.com,reject
+DOMAIN,g3.letv.com,reject
+DOMAIN,n.mark.letv.com,reject
 # > LinkWiFi
-DOMAIN,a.wkanx.com, reject
-DOMAIN,cwx.lianwangtech.com, reject
-DOMAIN,c1wx.lianwangtech.com, reject
+DOMAIN,a.wkanx.com,reject
+DOMAIN,cwx.lianwangtech.com,reject
+DOMAIN,c1wx.lianwangtech.com,reject
 
 # (M)
 # > Microsoft
-DOMAIN-SUFFIX,ads.msn.com, reject
-DOMAIN-SUFFIX,ads1.msn.com, reject
-DOMAIN-SUFFIX,ads2.msn.com, reject
-DOMAIN-SUFFIX,bingads.microsoft.com, reject
-DOMAIN-SUFFIX,rads.msn.com, reject
-DOMAIN,mobileads.msn.com, reject
+DOMAIN-SUFFIX,ads.msn.com,reject
+DOMAIN-SUFFIX,ads1.msn.com,reject
+DOMAIN-SUFFIX,ads2.msn.com,reject
+DOMAIN-SUFFIX,bingads.microsoft.com,reject
+DOMAIN-SUFFIX,rads.msn.com,reject
+DOMAIN,mobileads.msn.com,reject
 # > MojiWeather
-DOMAIN,ad.api.moji.com, reject
-DOMAIN,adlaunch.moji.com, reject
-DOMAIN,ads.mojicdn.com, reject
-DOMAIN,v1.log.moji.com, reject
+DOMAIN,ad.api.moji.com,reject
+DOMAIN,adlaunch.moji.com,reject
+DOMAIN,ads.mojicdn.com,reject
+DOMAIN,v1.log.moji.com,reject
 # > MiguVideo
-DOMAIN-SUFFIX,ad.cmvideo.cn, reject
-DOMAIN,ggc.cmvideo.cn, reject
-DOMAIN,ggic03.miguvideo.com, reject
-DOMAIN,ggmk.miguvideo.com, reject
-DOMAIN,ggv.cmvideo.cn, reject
-DOMAIN,ggx.cmvideo.cn, reject
-DOMAIN,ggx03.miguvideo.com, reject
+DOMAIN-SUFFIX,ad.cmvideo.cn,reject
+DOMAIN,ggc.cmvideo.cn,reject
+DOMAIN,ggic03.miguvideo.com,reject
+DOMAIN,ggmk.miguvideo.com,reject
+DOMAIN,ggv.cmvideo.cn,reject
+DOMAIN,ggx.cmvideo.cn,reject
+DOMAIN,ggx03.miguvideo.com,reject
 
 # (N)
 # > NetEase
-DOMAIN-SUFFIX,dsp.youdao.com, reject
-DOMAIN-SUFFIX,union.youdao.com, reject
-DOMAIN,ad.bn.netease.com, reject
-DOMAIN,ad.yixin.im, reject
-DOMAIN,admusicpic.music.126.net, reject
-DOMAIN,g1.163.com, reject
-DOMAIN,gorgon.youdao.com, reject
-DOMAIN,iad.g.163.com, reject
-DOMAIN,iadmat.nosdn.127.net, reject
-DOMAIN,iadmusicmat.music.126.net, reject
-DOMAIN,iadmusicmatvideo.music.126.net, reject
-DOMAIN,impservice.dictapp.youdao.com, reject
-DOMAIN,impservice.youdao.com, reject
-DOMAIN,n.3g.163.com, reject
-DOMAIN,nex.163.com, reject
-DOMAIN,yt-adp.nosdn.127.net, reject
-DOMAIN,yt-adp.ws.126.net, reject
+DOMAIN-SUFFIX,dsp.youdao.com,reject
+DOMAIN-SUFFIX,union.youdao.com,reject
+DOMAIN,ad.bn.netease.com,reject
+DOMAIN,ad.yixin.im,reject
+DOMAIN,admusicpic.music.126.net,reject
+DOMAIN,g1.163.com,reject
+DOMAIN,gorgon.youdao.com,reject
+DOMAIN,iad.g.163.com,reject
+DOMAIN,iadmat.nosdn.127.net,reject
+DOMAIN,iadmusicmat.music.126.net,reject
+DOMAIN,iadmusicmatvideo.music.126.net,reject
+DOMAIN,impservice.dictapp.youdao.com,reject
+DOMAIN,impservice.youdao.com,reject
+DOMAIN,n.3g.163.com,reject
+DOMAIN,nex.163.com,reject
+DOMAIN,yt-adp.nosdn.127.net,reject
+DOMAIN,yt-adp.ws.126.net,reject
 
 # (P)
 # > PPTV
-DOMAIN,ads.aplus.pptv.com, reject
-DOMAIN,ads.aplusapi.pptv.com, reject
-DOMAIN,asimgs.pplive.cn, reject
-DOMAIN,de.as.pptv.com, reject
+DOMAIN,ads.aplus.pptv.com,reject
+DOMAIN,ads.aplusapi.pptv.com,reject
+DOMAIN,asimgs.pplive.cn,reject
+DOMAIN,de.as.pptv.com,reject
 # > Photoable
-DOMAIN,regist.fotoable.com, reject
-DOMAIN,cdn.adapi.fotoable.com, reject
+DOMAIN,regist.fotoable.com,reject
+DOMAIN,cdn.adapi.fotoable.com,reject
 # > PeanutWiFi
-DOMAIN,adnew.wifi8.com, reject
-DOMAIN,adfile.wifi8.com, reject
+DOMAIN,adnew.wifi8.com,reject
+DOMAIN,adfile.wifi8.com,reject
 # > PConline
-DOMAIN,ad-analysis.pconline.com.cn, reject
-DOMAIN,iad0ssl.pcauto.com.cn, reject
-DOMAIN,iad0ssl.pconline.com.cn, reject
-DOMAIN,imgad0.pcauto.com.cn, reject
-DOMAIN,imgad0.pconline.com.cn, reject
-DOMAIN,ivy.pchouse.com.cn, reject
+DOMAIN,ad-analysis.pconline.com.cn,reject
+DOMAIN,iad0ssl.pcauto.com.cn,reject
+DOMAIN,iad0ssl.pconline.com.cn,reject
+DOMAIN,imgad0.pcauto.com.cn,reject
+DOMAIN,imgad0.pconline.com.cn,reject
+DOMAIN,ivy.pchouse.com.cn,reject
 # > Phoenix New Media
-DOMAIN-SUFFIX,deliver.ifeng.com, reject
-DOMAIN,api.newad.ifeng.com, reject
-DOMAIN,ifengad.3g.ifeng.com, reject
+DOMAIN-SUFFIX,deliver.ifeng.com,reject
+DOMAIN,api.newad.ifeng.com,reject
+DOMAIN,ifengad.3g.ifeng.com,reject
 
 # (Q)
 # > QingTing
-DOMAIN,ad.qingting.fm, reject
-DOMAIN,adlaunch.qingting.fm, reject
-DOMAIN,ad-cdn.qingting.fm, reject
+DOMAIN,ad.qingting.fm,reject
+DOMAIN,adlaunch.qingting.fm,reject
+DOMAIN,ad-cdn.qingting.fm,reject
 # > OPPO
-DOMAIN-SUFFIX,ads.oppomobile.com, reject
-DOMAIN,adsfs.oppomobile.com, reject
+DOMAIN-SUFFIX,ads.oppomobile.com,reject
+DOMAIN,adsfs.oppomobile.com,reject
 
 # (S)
 # > Sina
-DOMAIN-SUFFIX,alitui.weibo.com, reject
-DOMAIN-SUFFIX,beacon.sina.com.cn, reject
-DOMAIN,adimg.uve.weibo.com, reject
-DOMAIN,adimg.vue.weibo.com, reject
-DOMAIN,u1.img.mobile.sina.cn, reject
-DOMAIN,sax.sina.com.cn, reject
-DOMAIN,saxs.sina.com.cn, reject
-DOMAIN,saxn.sina.com.cn, reject
+DOMAIN-SUFFIX,alitui.weibo.com,reject
+DOMAIN-SUFFIX,beacon.sina.com.cn,reject
+DOMAIN,adimg.uve.weibo.com,reject
+DOMAIN,adimg.vue.weibo.com,reject
+DOMAIN,u1.img.mobile.sina.cn,reject
+DOMAIN,sax.sina.com.cn,reject
+DOMAIN,saxs.sina.com.cn,reject
+DOMAIN,saxn.sina.com.cn,reject
 # > SOHU
-DOMAIN-SUFFIX,ad.sohu.com, reject
-DOMAIN-SUFFIX,ads.sohu.com, reject
-DOMAIN-SUFFIX,aty.sohu.com, reject
-DOMAIN,hui.sohu.com, reject
-DOMAIN-SUFFIX,pv.sohu.com, reject
+DOMAIN-SUFFIX,ad.sohu.com,reject
+DOMAIN-SUFFIX,ads.sohu.com,reject
+DOMAIN-SUFFIX,aty.sohu.com,reject
+DOMAIN,hui.sohu.com,reject
+DOMAIN-SUFFIX,pv.sohu.com,reject
 # > Snapchat
-DOMAIN,ads.snapchat.com, reject
-DOMAIN,adsapi.snapchat.com, reject
+DOMAIN,ads.snapchat.com,reject
+DOMAIN,adsapi.snapchat.com,reject
 # > Skyworth
-DOMAIN-SUFFIX,hoisin.coocaa.com, reject
-DOMAIN-SUFFIX,hoisin.coocaatv.com, reject
-DOMAIN,data-hoisin.coocaa.com, reject
+DOMAIN-SUFFIX,hoisin.coocaa.com,reject
+DOMAIN-SUFFIX,hoisin.coocaatv.com,reject
+DOMAIN,data-hoisin.coocaa.com,reject
 
 # (T)
 # --- (Tencent) ---
-DOMAIN-SUFFIX,e.qq.com, reject
-DOMAIN-SUFFIX,gdt.qq.com, reject
-DOMAIN-SUFFIX,l.qq.com, reject
-DOMAIN,adsmind.apdcdn.tc.qq.com, reject
-DOMAIN,adsmind.gdtimg.com, reject
-DOMAIN,adsmind.tc.qq.com, reject
-DOMAIN,adsmind.ugdtimg.com, reject
-DOMAIN,livep.l.t002.ottcn.com, reject
-DOMAIN,pgdt.gtimg.cn, reject
-DOMAIN,pgdt.gtimg.com, reject
-DOMAIN,pgdt.ugdtimg.com, reject
-DOMAIN,splashqqlive.gtimg.com, reject
-DOMAIN,wa.gtimg.com, reject
-# DOMAIN,wxsnsdy.wxs.qq.com, reject
-# DOMAIN,wxsnsdythumb.wxs.qq.com, reject
+DOMAIN-SUFFIX,e.qq.com,reject
+DOMAIN-SUFFIX,gdt.qq.com,reject
+DOMAIN-SUFFIX,l.qq.com,reject
+DOMAIN,adsmind.apdcdn.tc.qq.com,reject
+DOMAIN,adsmind.gdtimg.com,reject
+DOMAIN,adsmind.tc.qq.com,reject
+DOMAIN,adsmind.ugdtimg.com,reject
+DOMAIN,livep.l.t002.ottcn.com,reject
+DOMAIN,pgdt.gtimg.cn,reject
+DOMAIN,pgdt.gtimg.com,reject
+DOMAIN,pgdt.ugdtimg.com,reject
+DOMAIN,splashqqlive.gtimg.com,reject
+DOMAIN,wa.gtimg.com,reject
+# DOMAIN,wxsnsdy.wxs.qq.com,reject
+# DOMAIN,wxsnsdythumb.wxs.qq.com,reject
 # > Tencent Music (TME)
-DOMAIN,ad.tencentmusic.com, reject
-DOMAIN,adstats.tencentmusic.com, reject
-DOMAIN,adserviceretry.kugou.com, reject
-DOMAIN,ads.service.kugou.com, reject
-DOMAIN,adsfile.bssdlbig.kugou.com, reject
-DOMAIN,g.koowo.com, reject
-DOMAIN,kgmobilestat.kugou.com, reject
-DOMAIN,kgmobilestatbak.kugou.com, reject
-DOMAIN,mobilelog.kugou.com, reject
-DOMAIN,mobilead.kuwo.cn, reject
-DOMAIN,rich.kuwo.cn, reject
-DOMAIN,tmead.y.qq.com, reject
-DOMAIN,splashimgbssdl.yun.kugou.com, reject
-DOMAIN,adsfilebssdlbig.tx.kugou.com, reject
+DOMAIN,ad.tencentmusic.com,reject
+DOMAIN,adstats.tencentmusic.com,reject
+DOMAIN,adserviceretry.kugou.com,reject
+DOMAIN,ads.service.kugou.com,reject
+DOMAIN,adsfile.bssdlbig.kugou.com,reject
+DOMAIN,g.koowo.com,reject
+DOMAIN,kgmobilestat.kugou.com,reject
+DOMAIN,kgmobilestatbak.kugou.com,reject
+DOMAIN,mobilelog.kugou.com,reject
+DOMAIN,mobilead.kuwo.cn,reject
+DOMAIN,rich.kuwo.cn,reject
+DOMAIN,tmead.y.qq.com,reject
+DOMAIN,splashimgbssdl.yun.kugou.com,reject
+DOMAIN,adsfilebssdlbig.tx.kugou.com,reject
 # ------
 # > TongHuaShun
-DOMAIN,adm.10jqka.com.cn, reject
-DOMAIN,stat.10jqka.com.cn, reject
+DOMAIN,adm.10jqka.com.cn,reject
+DOMAIN,stat.10jqka.com.cn,reject
 # > The Paper
-DOMAIN,admonitor.thepaper.cn, reject
-DOMAIN,adpai.thepaper.cn, reject
-DOMAIN,imgadpai.thepaper.cn, reject
+DOMAIN,admonitor.thepaper.cn,reject
+DOMAIN,adpai.thepaper.cn,reject
+DOMAIN,imgadpai.thepaper.cn,reject
 # > Thunder
-DOMAIN,adsp.xunlei.com, reject
-DOMAIN,etl.xlmc.sandai.net, reject
+DOMAIN,adsp.xunlei.com,reject
+DOMAIN,etl.xlmc.sandai.net,reject
 
 # (V)
 # > VariFlight
-DOMAIN,adv-adlog.variflight.com, reject
-DOMAIN,adv-ads.variflight.com, reject
-DOMAIN,app-ad.variflight.com, reject
+DOMAIN,adv-adlog.variflight.com,reject
+DOMAIN,adv-ads.variflight.com,reject
+DOMAIN,app-ad.variflight.com,reject
 # > vivo
-DOMAIN,adlog.vivo.com.cn, reject
-DOMAIN,adreq.vivo.com.cn, reject
-DOMAIN,ads-marketing-vivofs.vivo.com.cn, reject
-DOMAIN,adsdk.vivo.com.cn, reject
-DOMAIN,adsstatic.vivo.com.cn, reject
-DOMAIN,adxlog.vivo.com.cn, reject
-DOMAIN,vcardsdkservice.vivo.com.cn, reject
-DOMAIN-KEYWORD,stsdk.vivo.com.cn, reject
-DOMAIN-KEYWORD,stsdk.vivoglobal.com, reject
+DOMAIN,adlog.vivo.com.cn,reject
+DOMAIN,adreq.vivo.com.cn,reject
+DOMAIN,ads-marketing-vivofs.vivo.com.cn,reject
+DOMAIN,adsdk.vivo.com.cn,reject
+DOMAIN,adsstatic.vivo.com.cn,reject
+DOMAIN,adxlog.vivo.com.cn,reject
+DOMAIN,vcardsdkservice.vivo.com.cn,reject
+DOMAIN-KEYWORD,stsdk.vivo.com.cn,reject
+DOMAIN-KEYWORD,stsdk.vivoglobal.com,reject
 # > Viber
-DOMAIN,ads.viber.com, reject
-DOMAIN,ads-d.viber.com, reject
-DOMAIN,ads.aws.viber.com, reject
+DOMAIN,ads.viber.com,reject
+DOMAIN,ads-d.viber.com,reject
+DOMAIN,ads.aws.viber.com,reject
 
 # (X)
 # > Ximalaya
-DOMAIN,ad.ximalaya.com, reject
-DOMAIN,adbs.ximalaya.com, reject
-DOMAIN,adse.ximalaya.com, reject
-DOMAIN,adse.wsa.ximalaya.com, reject
-DOMAIN,adbehavior.wsa.ximalaya.com, reject
-DOMAIN,adbehavior.ximalaya.com, reject
-DOMAIN,adsebs.ximalaya.com, reject
-DOMAIN,adwbs.ximalaya.com, reject
+DOMAIN,ad.ximalaya.com,reject
+DOMAIN,adbs.ximalaya.com,reject
+DOMAIN,adse.ximalaya.com,reject
+DOMAIN,adse.wsa.ximalaya.com,reject
+DOMAIN,adbehavior.wsa.ximalaya.com,reject
+DOMAIN,adbehavior.ximalaya.com,reject
+DOMAIN,adsebs.ximalaya.com,reject
+DOMAIN,adwbs.ximalaya.com,reject
 # > Xiaohongshu
-DOMAIN,ads-img-qc.xhscdn.com, reject
-DOMAIN,ads-video-al.xhscdn.com, reject
-DOMAIN,ads-video-qc.xhscdn.com, reject
-DOMAIN,t-ads.xiaohongshu.com, reject
+DOMAIN,ads-img-qc.xhscdn.com,reject
+DOMAIN,ads-video-al.xhscdn.com,reject
+DOMAIN,ads-video-qc.xhscdn.com,reject
+DOMAIN,t-ads.xiaohongshu.com,reject
 
 # (Y)
 # > Yahoo
-DOMAIN-SUFFIX,adserver.yahoo.com, reject
-DOMAIN-SUFFIX,adspecs.yahoo.com, reject
-DOMAIN-SUFFIX,advertising.yahoo.com, reject
-DOMAIN-SUFFIX,gemini.yahoo.com, reject
-DOMAIN,admarketing.yahoo.net, reject
-DOMAIN,ads.auctions.yahoo.com, reject
-DOMAIN,ads.finance.yahoo.com, reject
-DOMAIN,ads.yahoo.com, reject
-DOMAIN,ads.yahoo.de, reject
+DOMAIN-SUFFIX,adserver.yahoo.com,reject
+DOMAIN-SUFFIX,adspecs.yahoo.com,reject
+DOMAIN-SUFFIX,advertising.yahoo.com,reject
+DOMAIN-SUFFIX,gemini.yahoo.com,reject
+DOMAIN,admarketing.yahoo.net,reject
+DOMAIN,ads.auctions.yahoo.com,reject
+DOMAIN,ads.finance.yahoo.com,reject
+DOMAIN,ads.yahoo.com,reject
+DOMAIN,ads.yahoo.de,reject
 
 # (Z)
 # > Zhihu
 # USER-AGENT,AVOS*
-DOMAIN,appcloud2.in.zhihu.com, reject
-DOMAIN,mqtt.zhihu.com, reject
-DOMAIN,sugar.zhihu.com, reject
-DOMAIN,118.89.204.198, reject
+DOMAIN,appcloud2.in.zhihu.com,reject
+DOMAIN,mqtt.zhihu.com,reject
+DOMAIN,sugar.zhihu.com,reject
+DOMAIN,118.89.204.198,reject
 ## IP-CIDR,118.89.204.198/32,no-resolve
 ## IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,no-resolve
 # > ZOL
-DOMAIN,apppv.zol.com.cn, reject
-DOMAIN,pvnapp.zol.com.cn, reject
+DOMAIN,apppv.zol.com.cn,reject
+DOMAIN,pvnapp.zol.com.cn,reject

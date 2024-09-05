@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["anichin.top",0],["kimcilonly.site",0],["kiryuu.id",0],["subindojav.cc",0]]);
+const hostnamesMap = new Map([["anichin.top",0],["kimcilonly.site",0],["kiryuu.id",0],["kiryuu.org",0],["njavtv.com",0],["subindojav.cc",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -62,10 +62,8 @@ function noWindowOpenIf(
         pattern = pattern.slice(1);
     }
     const rePattern = safe.patternToRegex(pattern);
-    let autoRemoveAfter = parseInt(delay);
-    if ( isNaN(autoRemoveAfter) ) {
-        autoRemoveAfter = -1;
-    }
+    const autoRemoveAfter = (parseFloat(delay) || 0) * 1000;
+    const setTimeout = self.setTimeout;
     const createDecoy = function(tag, urlProp, url) {
         const decoyElem = document.createElement(tag);
         decoyElem[urlProp] = url;
@@ -74,9 +72,10 @@ function noWindowOpenIf(
         decoyElem.style.setProperty('top','-1px', 'important');
         decoyElem.style.setProperty('width','1px', 'important');
         document.body.appendChild(decoyElem);
-        setTimeout(( ) => { decoyElem.remove(); }, autoRemoveAfter * 1000);
+        setTimeout(( ) => { decoyElem.remove(); }, autoRemoveAfter);
         return decoyElem;
     };
+    const noopFunc = function(){};
     proxyApplyFn('open', function open(target, thisArg, args) {
         const haystack = args.join(' ');
         if ( rePattern.test(haystack) !== targetMatchResult ) {
@@ -86,7 +85,13 @@ function noWindowOpenIf(
             return Reflect.apply(target, thisArg, args);
         }
         safe.uboLog(logPrefix, `Prevented (${args.join(', ')})`);
-        if ( autoRemoveAfter < 0 ) { return null; }
+        if ( delay === '' ) { return null; }
+        if ( decoy === 'blank' ) {
+            args[0] = 'about:blank';
+            const r = Reflect.apply(target, thisArg, args);
+            setTimeout(( ) => { r.close(); }, autoRemoveAfter);
+            return r;
+        }
         const decoyElem = decoy === 'obj'
             ? createDecoy('object', 'data', ...args)
             : createDecoy('iframe', 'src', ...args);
@@ -94,28 +99,31 @@ function noWindowOpenIf(
         if ( typeof popup === 'object' && popup !== null ) {
             Object.defineProperty(popup, 'closed', { value: false });
         } else {
-            const noopFunc = function open(){};
             popup = new Proxy(self, {
-                get: function(target, prop) {
+                get: function(target, prop, ...args) {
                     if ( prop === 'closed' ) { return false; }
-                    const r = Reflect.get(...arguments);
+                    const r = Reflect.get(target, prop, ...args);
                     if ( typeof r === 'function' ) { return noopFunc; }
-                    return target[prop];
+                    return r;
                 },
-                set: function() {
-                    return Reflect.set(...arguments);
+                set: function(...args) {
+                    return Reflect.set(...args);
                 },
             });
         }
         if ( safe.logLevel !== 0 ) {
             popup = new Proxy(popup, {
-                get: function(target, prop) {
-                    safe.uboLog(logPrefix, 'window.open / get', prop, '===', target[prop]);
-                    return Reflect.get(...arguments);
+                get: function(target, prop, ...args) {
+                    const r = Reflect.get(target, prop, ...args);
+                    safe.uboLog(logPrefix, `popup / get ${prop} === ${r}`);
+                    if ( typeof r === 'function' ) {
+                        return (...args) => { return r.call(target, ...args); };
+                    }
+                    return r;
                 },
-                set: function(target, prop, value) {
-                    safe.uboLog(logPrefix, 'window.open / set', prop, '=', value);
-                    return Reflect.set(...arguments);
+                set: function(target, prop, value, ...args) {
+                    safe.uboLog(logPrefix, `popup / set ${prop} = ${value}`);
+                    return Reflect.set(target, prop, value, ...args);
                 },
             });
         }

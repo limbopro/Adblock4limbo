@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["gatedSignupTimerCounter","$remove$"],["gu.history.weeklyArticleCount","$remove$"],["gu.history.dailyArticleCount","$remove$"],["vox_article_readcount","$remove$"],["vox_article_readcount_count","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["countChapterNum","$remove$"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["theguardian.com",[1,2]],["vox.com",[3,4]],["thejournal.ie",5],["bloomberg.com",6],["dailynewshungary.com",7],["cnn.com",[8,9]],["reuters.com",10],["theweek.com",[11,12]],["seekingalpha.com",13],["nisanyansozluk.com",14],["pawread.com",15],["quillbot.com",16],["csmonitor.com",17],["deepl.com",[18,19]]]);
+const hostnamesMap = new Map([["zippia.com",0],["theguardian.com",[1,2]],["vox.com",[3,4]],["thejournal.ie",5],["bloomberg.com",6],["dailynewshungary.com",7],["cnn.com",[8,9]],["irishnews.com",10],["reuters.com",10],["theweek.com",[11,12]],["seekingalpha.com",13],["nisanyansozluk.com",14],["pawread.com",15],["quillbot.com",16],["csmonitor.com",17],["deepl.com",[18,19]]]);
 
 const entitiesMap = new Map([]);
 

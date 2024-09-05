@@ -377,6 +377,7 @@ function navigation4limbo_body_pre() {
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="hidedaohang">隐藏导航</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmode_switch">成人保护模式(ON)</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="lock_screen">锁屏! 🔐</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="play" onclick="window.player.play()">播放! 🎵</button></li>\
         <li class="li_global"><a href="https://t.me/Adblock4limbo/21" target="_blank" class="a_global red" id="FAQ">常见FAQ</a></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues?q=is%3Aissue+is%3Aclosed" \
         target="_blank">提交issue</a></li>\

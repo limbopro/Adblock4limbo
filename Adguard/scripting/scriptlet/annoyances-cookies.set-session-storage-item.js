@@ -40,9 +40,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
+const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
 
-const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["ssga.com",4],["cachecrawler.com",[5,6]],["griffin.com",7],["c6bank.com.br",8],["gedik.com",9],["collato.com",[10,11]]]);
+const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["brightonandhovealbion.com",4],["ssga.com",5],["cachecrawler.com",[6,7]],["griffin.com",8],["c6bank.com.br",9],["gedik.com",10],["collato.com",[11,12]]]);
 
 const entitiesMap = new Map([]);
 

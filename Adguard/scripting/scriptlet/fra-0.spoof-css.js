@@ -23,7 +23,7 @@
 /* eslint-disable indent */
 /* global cloneInto */
 
-// ruleset: cze-0
+// ruleset: fra-0
 
 /******************************************************************************/
 
@@ -36,13 +36,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_removeAttr = function() {
+const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["style","body"],["style","div[id^=\"head\"]"]];
+const argsList = [[".navbar-nav > li.nav-item > a[href^=\"https://www.origoclick.com/manga/?type=nav&\"]","display","block"]];
 
-const hostnamesMap = new Map([["super.cz",0],["titulky.com",1]]);
+const hostnamesMap = new Map([["japscan.lol",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -50,105 +50,108 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function removeAttr(
-    rawToken = '',
-    rawSelector = '',
-    behavior = ''
+function spoofCSS(
+    selector,
+    ...args
 ) {
-    if ( typeof rawToken !== 'string' ) { return; }
-    if ( rawToken === '' ) { return; }
-    const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('remove-attr', rawToken, rawSelector, behavior);
-    const tokens = rawToken.split(/\s*\|\s*/);
-    const selector = tokens
-        .map(a => `${rawSelector}[${CSS.escape(a)}]`)
-        .join(',');
-    if ( safe.logLevel > 1 ) {
-        safe.uboLog(logPrefix, `Target selector:\n\t${selector}`);
+    if ( typeof selector !== 'string' ) { return; }
+    if ( selector === '' ) { return; }
+    const toCamelCase = s => s.replace(/-[a-z]/g, s => s.charAt(1).toUpperCase());
+    const propToValueMap = new Map();
+    for ( let i = 0; i < args.length; i += 2 ) {
+        if ( typeof args[i+0] !== 'string' ) { break; }
+        if ( args[i+0] === '' ) { break; }
+        if ( typeof args[i+1] !== 'string' ) { break; }
+        propToValueMap.set(toCamelCase(args[i+0]), args[i+1]);
     }
-    const asap = /\basap\b/.test(behavior);
-    let timerId;
-    const rmattrAsync = ( ) => {
-        if ( timerId !== undefined ) { return; }
-        timerId = safe.onIdle(( ) => {
-            timerId = undefined;
-            rmattr();
-        }, { timeout: 17 });
-    };
-    const rmattr = ( ) => {
-        if ( timerId !== undefined ) {
-            safe.offIdle(timerId);
-            timerId = undefined;
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('spoof-css', selector, ...args);
+    const canDebug = scriptletGlobals.canDebug;
+    const shouldDebug = canDebug && propToValueMap.get('debug') || 0;
+    const instanceProperties = [ 'cssText', 'length', 'parentRule' ];
+    const spoofStyle = (prop, real) => {
+        const normalProp = toCamelCase(prop);
+        const shouldSpoof = propToValueMap.has(normalProp);
+        const value = shouldSpoof ? propToValueMap.get(normalProp) : real;
+        if ( shouldSpoof ) {
+            safe.uboLog(logPrefix, `Spoofing ${prop} to ${value}`);
         }
-        try {
-            const nodes = document.querySelectorAll(selector);
-            for ( const node of nodes ) {
-                for ( const attr of tokens ) {
-                    if ( node.hasAttribute(attr) === false ) { continue; }
-                    node.removeAttribute(attr);
-                    safe.uboLog(logPrefix, `Removed attribute '${attr}'`);
-                }
-            }
-        } catch(ex) {
-        }
+        return value;
     };
-    const mutationHandler = mutations => {
-        if ( timerId !== undefined ) { return; }
-        let skip = true;
-        for ( let i = 0; i < mutations.length && skip; i++ ) {
-            const { type, addedNodes, removedNodes } = mutations[i];
-            if ( type === 'attributes' ) { skip = false; }
-            for ( let j = 0; j < addedNodes.length && skip; j++ ) {
-                if ( addedNodes[j].nodeType === 1 ) { skip = false; break; }
-            }
-            for ( let j = 0; j < removedNodes.length && skip; j++ ) {
-                if ( removedNodes[j].nodeType === 1 ) { skip = false; break; }
-            }
-        }
-        if ( skip ) { return; }
-        asap ? rmattr() : rmattrAsync();
-    };
-    const start = ( ) => {
-        rmattr();
-        if ( /\bstay\b/.test(behavior) === false ) { return; }
-        const observer = new MutationObserver(mutationHandler);
-        observer.observe(document, {
-            attributes: true,
-            attributeFilter: tokens,
-            childList: true,
-            subtree: true,
+    const cloackFunc = (fn, thisArg, name) => {
+        const trap = fn.bind(thisArg);
+        Object.defineProperty(trap, 'name', { value: name });
+        Object.defineProperty(trap, 'toString', {
+            value: ( ) => `function ${name}() { [native code] }`
         });
+        return trap;
     };
-    runAt(( ) => { start(); }, behavior.split(/\s+/));
-}
-
-function runAt(fn, when) {
-    const intFromReadyState = state => {
-        const targets = {
-            'loading': 1, 'asap': 1,
-            'interactive': 2, 'end': 2, '2': 2,
-            'complete': 3, 'idle': 3, '3': 3,
-        };
-        const tokens = Array.isArray(state) ? state : [ state ];
-        for ( const token of tokens ) {
-            const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
-            return targets[prop];
-        }
-        return 0;
-    };
-    const runAt = intFromReadyState(when);
-    if ( intFromReadyState(document.readyState) >= runAt ) {
-        fn(); return;
-    }
-    const onStateChange = ( ) => {
-        if ( intFromReadyState(document.readyState) < runAt ) { return; }
-        fn();
-        safe.removeEventListener.apply(document, args);
-    };
-    const safe = safeSelf();
-    const args = [ 'readystatechange', onStateChange, { capture: true } ];
-    safe.addEventListener.apply(document, args);
+    self.getComputedStyle = new Proxy(self.getComputedStyle, {
+        apply: function(target, thisArg, args) {
+            // eslint-disable-next-line no-debugger
+            if ( shouldDebug !== 0 ) { debugger; }
+            const style = Reflect.apply(target, thisArg, args);
+            const targetElements = new WeakSet(document.querySelectorAll(selector));
+            if ( targetElements.has(args[0]) === false ) { return style; }
+            const proxiedStyle = new Proxy(style, {
+                get(target, prop, receiver) {
+                    if ( typeof target[prop] === 'function' ) {
+                        if ( prop === 'getPropertyValue' ) {
+                            return cloackFunc(function getPropertyValue(prop) {
+                                return spoofStyle(prop, target[prop]);
+                            }, target, 'getPropertyValue');
+                        }
+                        return cloackFunc(target[prop], target, prop);
+                    }
+                    if ( instanceProperties.includes(prop) ) {
+                        return Reflect.get(target, prop);
+                    }
+                    return spoofStyle(prop, Reflect.get(target, prop, receiver));
+                },
+                getOwnPropertyDescriptor(target, prop) {
+                    if ( propToValueMap.has(prop) ) {
+                        return {
+                            configurable: true,
+                            enumerable: true,
+                            value: propToValueMap.get(prop),
+                            writable: true,
+                        };
+                    }
+                    return Reflect.getOwnPropertyDescriptor(target, prop);
+                },
+            });
+            return proxiedStyle;
+        },
+        get(target, prop, receiver) {
+            if ( prop === 'toString' ) {
+                return target.toString.bind(target);
+            }
+            return Reflect.get(target, prop, receiver);
+        },
+    });
+    Element.prototype.getBoundingClientRect = new Proxy(Element.prototype.getBoundingClientRect, {
+        apply: function(target, thisArg, args) {
+            // eslint-disable-next-line no-debugger
+            if ( shouldDebug !== 0 ) { debugger; }
+            const rect = Reflect.apply(target, thisArg, args);
+            const targetElements = new WeakSet(document.querySelectorAll(selector));
+            if ( targetElements.has(thisArg) === false ) { return rect; }
+            let { height, width } = rect;
+            if ( propToValueMap.has('width') ) {
+                width = parseFloat(propToValueMap.get('width'));
+            }
+            if ( propToValueMap.has('height') ) {
+                height = parseFloat(propToValueMap.get('height'));
+            }
+            return new self.DOMRect(rect.x, rect.y, width, height);
+        },
+        get(target, prop, receiver) {
+            if ( prop === 'toString' ) {
+                return target.toString.bind(target);
+            }
+            return Reflect.get(target, prop, receiver);
+        },
+    });
 }
 
 function safeSelf() {
@@ -388,7 +391,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { removeAttr(...argsList[i]); }
+    try { spoofCSS(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -410,7 +413,7 @@ const targetWorld = 'MAIN';
 
 // Not Firefox
 if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_removeAttr();
+    return uBOL_spoofCSS();
 }
 
 // Firefox
@@ -418,11 +421,11 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
     const page = self.wrappedJSObject;
     let script, url;
     try {
-        page.uBOL_removeAttr = cloneInto([
-            [ '(', uBOL_removeAttr.toString(), ')();' ],
+        page.uBOL_spoofCSS = cloneInto([
+            [ '(', uBOL_spoofCSS.toString(), ')();' ],
             { type: 'text/javascript; charset=utf-8' },
         ], self);
-        const blob = new page.Blob(...page.uBOL_removeAttr);
+        const blob = new page.Blob(...page.uBOL_spoofCSS);
         url = page.URL.createObjectURL(blob);
         const doc = page.document;
         script = doc.createElement('script');
@@ -436,7 +439,7 @@ if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
         if ( script ) { script.remove(); }
         page.URL.revokeObjectURL(url);
     }
-    delete page.uBOL_removeAttr;
+    delete page.uBOL_spoofCSS;
 }
 
 /******************************************************************************/

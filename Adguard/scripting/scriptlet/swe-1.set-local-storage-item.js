@@ -20,10 +20,8 @@
 
 */
 
-/* jshint esversion:11 */
+/* eslint-disable indent */
 /* global cloneInto */
-
-'use strict';
 
 // ruleset: swe-1
 
@@ -40,11 +38,11 @@
 // Start of code to inject
 const uBOL_setLocalStorageItem = function() {
 
-const scriptletGlobals = {}; // jshint ignore: line
+const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["CMP:advertising","0"],["CMP:analytics","0"],["CMP:marketing","0"],["CMP:personalisation","0"]];
+const argsList = [["/^ev_did|ev_sid/","$remove$"]];
 
-const hostnamesMap = new Map([["www.aftonbladet.se",[0,1,2,3]],["www.godare.se",[0,1,2,3]],["www.livsstil.se",[0,1,2,3]],["www.skonhetsredaktorerna.se",[0,1,2,3]],["omni.se",[0,1,2,3]],["omniekonomi.se",[0,1,2,3]],["www.svd.se",[0,1,2,3]]]);
+const hostnamesMap = new Map([["synonymer.se",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -74,20 +72,20 @@ function setLocalStorageItemFn(
     const trustedValues = [
         '',
         'undefined', 'null',
-        'false', 'true',
-        'on', 'off',
-        'yes', 'no',
         '{}', '[]', '""',
         '$remove$',
+        ...getSafeCookieValuesFn(),
     ];
 
     if ( trusted ) {
-        if ( value === '$now$' ) {
-            value = Date.now();
-        } else if ( value === '$currentDate$' ) {
-            value = `${Date()}`;
-        } else if ( value === '$currentISODate$' ) {
-            value = (new Date()).toISOString();
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
+        }
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
         }
     } else {
         const normalized = value.toLowerCase();
@@ -120,6 +118,27 @@ function setLocalStorageItemFn(
     }
 }
 
+function getSafeCookieValuesFn() {
+    return [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'disallow', 'deny',
+        'allowed', 'denied',
+        'approved', 'disapproved',
+        'checked', 'unchecked',
+        'dismiss', 'dismissed',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'essential', 'nonessential',
+        'hide', 'hidden',
+        'necessary', 'required',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+    ];
+}
+
 function safeSelf() {
     if ( scriptletGlobals.safeSelf ) {
         return scriptletGlobals.safeSelf;
@@ -136,12 +155,14 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String_fromCharCode': String.fromCharCode,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -234,6 +255,18 @@ function safeSelf() {
             }, []);
             return this.Object_fromEntries(entries);
         },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
+        },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
@@ -274,7 +307,19 @@ function safeSelf() {
 /******************************************************************************/
 
 const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
+try {
+    let origin = document.location.origin;
+    if ( origin === 'null' ) {
+        const origins = document.location.ancestorOrigins;
+        for ( let i = 0; i < origins.length; i++ ) {
+            origin = origins[i];
+            if ( origin !== 'null' ) { break; }
+        }
+    }
+    const pos = origin.lastIndexOf('://');
+    if ( pos === -1 ) { return; }
+    hnParts.push(...origin.slice(pos+3).split('.'));
+}
 catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }

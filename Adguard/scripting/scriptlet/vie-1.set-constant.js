@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["ADMStorageFileCDN","noopFunc"],["open","noopFunc"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["a_vid","0"],["seconds","0"],["video.adVast",""],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["freeplayervideo.com",1],["abysscdn.com",1],["player-cdn.com",1],["geoip.redirect-ads.com",1],["gvnvh18.com",2],["sexdiaryx.guru",2],["phimvietsub.pro",3],["api.anime3s.com",3],["subnhanh.xyz",3],["phimvuihd.org",4],["tailieumoi.vn",5],["vn.cliphot69.live",6],["vndoc.com",7],["web.motsex.net",8],["vuasex.club",8],["phimsexviet.io",8],["phimsexvietnam.app",8],["mobile.clipsex.xxx",8],["gm.phimsexnhanh.tv",8],["clipsex.cam",8],["mobi.ditnhau.cc",8],["phim.sexhayvl.org",8],["xx.clipsexhot.net",8],["xx.sexkhongchemoi.com",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["freeplayervideo.com",1],["abysscdn.com",1],["player-cdn.com",1],["geoip.redirect-ads.com",1],["gvnvh18.com",2],["sexdiaryx.guru",2],["phimvietsub.pro",3],["api.anime3s.com",3],["subnhanh.xyz",3],["phimvuihd.org",4],["tailieumoi.vn",5],["vn.cliphot69.live",6],["vndoc.com",7],["web.motsex.net",8],["vuasex.club",8],["phimsexviet.io",8],["phimsexvietnam.app",8],["mobi.clipsex.xxx",8],["gm.phimsexnhanh.tv",8],["clipsex.cam",8],["link.ditnhau.cc",8],["phim.sexhayvl.org",8],["3x.clipsexhot.net",8],["xx.sexkhongchemoi.com",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -428,7 +428,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( isNaN(raw) ) { return; }
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
-        if ( raw.startsWith('{') && raw.endsWith('}') ) {
+        if ( raw.startsWith('json:') ) {
+            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+        } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
             try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
         }
     } else {

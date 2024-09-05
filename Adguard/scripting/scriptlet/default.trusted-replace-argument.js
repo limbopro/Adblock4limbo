@@ -40,9 +40,9 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["fetch","0","{\"value\": \"https://www.apkmoddone.com/feeds/posts/summary/-/_Apps?alt=json&max-results=0\"}","condition","ipinfo.io"],["document.querySelector","0","{\"value\": \"body\"}","condition","iframe"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"]];
+const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","{\"value\": \"body\"}","condition","iframe"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){document.querySelectorAll(\\\"script[wp-data]\\\").forEach(element=>{const html=new DOMParser().parseFromString(atob(element.getAttribute(\\\"wp-data\\\")),\\\"text/html\\\");html.querySelectorAll(\\\"link:not([as])\\\").forEach(linkEl=>{element.after(linkEl)});element.parentElement.removeChild(element);})})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"]];
 
-const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["apkmoddone.com",2],["www.apkmoddone.com",3],["ygosu.com",4],["bamgosu.site",4],["loawa.com",5],["autosport.com",6],["motorsport.com",6],["motorsport.uol.com.br",6]]);
+const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["www.apkmoddone.com",2],["ygosu.com",3],["bamgosu.site",3],["loawa.com",4],["infinityfree.com",5],["autosport.com",6],["motorsport.com",6],["motorsport.uol.com.br",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -311,7 +311,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( isNaN(raw) ) { return; }
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
-        if ( raw.startsWith('{') && raw.endsWith('}') ) {
+        if ( raw.startsWith('json:') ) {
+            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+        } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
             try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
         }
     } else {

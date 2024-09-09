@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 12 Aug 2024 11:05:58 GMT
-# entries:        3547
+# entries:        3542
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -239,7 +239,6 @@ DOMAIN-SUFFIX,adhaven.com
 DOMAIN-SUFFIX,adhese.be
 DOMAIN-SUFFIX,adhese.com
 DOMAIN-SUFFIX,adhigh.net
-DOMAIN-SUFFIX,adhoc4.net
 DOMAIN-SUFFIX,adhunter.media
 DOMAIN-SUFFIX,adimage.guardian.co.uk
 DOMAIN-SUFFIX,adimages.been.com
@@ -523,7 +522,6 @@ DOMAIN-SUFFIX,ads.multimania.lycos.fr
 DOMAIN-SUFFIX,ads.muslimehelfen.org
 DOMAIN-SUFFIX,ads.mvscoelho.com
 DOMAIN-SUFFIX,ads.myadv.org
-DOMAIN-SUFFIX,ads.nccwebs.com
 DOMAIN-SUFFIX,ads.ndtv1.com
 DOMAIN-SUFFIX,ads.networksolutions.com
 DOMAIN-SUFFIX,ads.newgrounds.com
@@ -2050,7 +2048,6 @@ DOMAIN-SUFFIX,leadboltads.net
 DOMAIN-SUFFIX,leadclick.com
 DOMAIN-SUFFIX,leadinfo.net
 DOMAIN-SUFFIX,leadingedgecash.com
-DOMAIN-SUFFIX,leadplace.fr
 DOMAIN-SUFFIX,leadspace.com
 DOMAIN-SUFFIX,leadzupc.com
 DOMAIN-SUFFIX,leaplunchroom.com
@@ -2972,7 +2969,6 @@ DOMAIN-SUFFIX,spinnaker-js.com
 DOMAIN-SUFFIX,spirebaboon.com
 DOMAIN-SUFFIX,sponsorads.de
 DOMAIN-SUFFIX,sponsorpro.de
-DOMAIN-SUFFIX,sponsors.thoughtsmedia.com
 DOMAIN-SUFFIX,spookysleet.com
 DOMAIN-SUFFIX,spot.fitness.com
 DOMAIN-SUFFIX,spotlessstamp.com
@@ -3242,7 +3238,6 @@ DOMAIN-SUFFIX,tracker.metricswave.com
 DOMAIN-SUFFIX,tracker.mmdlv.it
 DOMAIN-SUFFIX,tracker.samplicio.us
 DOMAIN-SUFFIX,tracker.vgame.us
-DOMAIN-SUFFIX,tracking.1-a1502-bi.co.uk
 DOMAIN-SUFFIX,tracking.21-a4652-bi.co.uk
 DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk

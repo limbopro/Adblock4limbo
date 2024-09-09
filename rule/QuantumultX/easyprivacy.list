@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202409051614
+## ! Version: 202409081436
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Sep 2024 16:14 UTC
+## ! Last modified: 08 Sep 2024 14:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1881,6 +1881,7 @@ DOMAIN-SUFFIX,rambunctiousflock.com, reject
 DOMAIN-SUFFIX,rambunctiousvoyage.com, reject
 DOMAIN-SUFFIX,rangecake.com, reject
 DOMAIN-SUFFIX,rangeplayground.com, reject
+DOMAIN-SUFFIX,rangergustav.com, reject
 DOMAIN-SUFFIX,rapidkittens.com, reject
 DOMAIN-SUFFIX,raresummer.com, reject
 DOMAIN-SUFFIX,reactjspdf.com, reject
@@ -4354,6 +4355,7 @@ DOMAIN-SUFFIX,0.myikas.com, reject
 DOMAIN-SUFFIX,analitik.bik.gov.tr, reject
 DOMAIN-SUFFIX,analytics.faprika.net, reject
 DOMAIN-SUFFIX,analytics.kkb.com.tr, reject
+DOMAIN-SUFFIX,analytics.qushad.com, reject
 DOMAIN-SUFFIX,c.keltis.com, reject
 DOMAIN-SUFFIX,collector.wawlabs.com, reject
 DOMAIN-SUFFIX,log.collectaction.com, reject
@@ -4373,6 +4375,7 @@ DOMAIN-SUFFIX,tracking.aita.gov.vn, reject
 DOMAIN-SUFFIX,tracking3.vnncdn.net, reject
 DOMAIN-SUFFIX,za.zalo.me, reject
 DOMAIN-SUFFIX,za.zdn.vn, reject
+DOMAIN-SUFFIX,a-da.invideo.io, reject
 DOMAIN-SUFFIX,a-reporting.nytimes.com, reject
 DOMAIN-SUFFIX,a.electerious.com, reject
 DOMAIN-SUFFIX,a.tellonym.me, reject
@@ -4395,6 +4398,7 @@ DOMAIN-SUFFIX,ampltd.top.gg, reject
 DOMAIN-SUFFIX,ampltd2.medal.tv, reject
 DOMAIN-SUFFIX,anal.doubledouble.top, reject
 DOMAIN-SUFFIX,analytics-batch.blitz.gg, reject
+DOMAIN-SUFFIX,analytics-dataplane.invideo.io, reject
 DOMAIN-SUFFIX,analytics-proxy.springboard.com, reject
 DOMAIN-SUFFIX,analytics-server.arras.cx, reject
 DOMAIN-SUFFIX,analytics-tracking.meetup.com, reject
@@ -4577,6 +4581,7 @@ DOMAIN-SUFFIX,eventlog.jackpot.de, reject
 DOMAIN-SUFFIX,events-prod.autolist.com, reject
 DOMAIN-SUFFIX,events-tracker.deliveroo.net, reject
 DOMAIN-SUFFIX,events.api.godaddy.com, reject
+DOMAIN-SUFFIX,events.baselime.io, reject
 DOMAIN-SUFFIX,events.clips4sale.com, reject
 DOMAIN-SUFFIX,events.framer.com, reject
 DOMAIN-SUFFIX,events.mercadolibre.com, reject
@@ -4753,6 +4758,7 @@ DOMAIN-SUFFIX,pingback.issuu.com, reject
 DOMAIN-SUFFIX,pingo.staticmoly.me, reject
 DOMAIN-SUFFIX,pixel.archivecaslytosk.onion, reject
 DOMAIN-SUFFIX,pixel.archiveiya74codqgiixo33q62qlrqtkgmcitqx5u2oeqnmn5bpcbiyd.onion, reject
+DOMAIN-SUFFIX,pixel.clutter.com, reject
 DOMAIN-SUFFIX,pixel.convertize.io, reject
 DOMAIN-SUFFIX,pixel.facebook.com, reject
 DOMAIN-SUFFIX,pixel.honestjohn.co.uk, reject
@@ -4851,6 +4857,7 @@ DOMAIN-SUFFIX,stat.vulkanvegas.com, reject
 DOMAIN-SUFFIX,statistics.streamdav.com, reject
 DOMAIN-SUFFIX,stats.aerotime.aero, reject
 DOMAIN-SUFFIX,stats.calcalist.co.il, reject
+DOMAIN-SUFFIX,stats.chromatone.center, reject
 DOMAIN-SUFFIX,stats.codeur.com, reject
 DOMAIN-SUFFIX,stats.davidickedelivery.com, reject
 DOMAIN-SUFFIX,stats.gateio.ch, reject

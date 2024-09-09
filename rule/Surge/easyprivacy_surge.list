@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202409051614
+## ! Version: 202409081436
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Sep 2024 16:14 UTC
+## ! Last modified: 08 Sep 2024 14:36 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1881,6 +1881,7 @@ DOMAIN-SUFFIX,rambunctiousflock.com
 DOMAIN-SUFFIX,rambunctiousvoyage.com
 DOMAIN-SUFFIX,rangecake.com
 DOMAIN-SUFFIX,rangeplayground.com
+DOMAIN-SUFFIX,rangergustav.com
 DOMAIN-SUFFIX,rapidkittens.com
 DOMAIN-SUFFIX,raresummer.com
 DOMAIN-SUFFIX,reactjspdf.com
@@ -4354,6 +4355,7 @@ DOMAIN-SUFFIX,0.myikas.com
 DOMAIN-SUFFIX,analitik.bik.gov.tr
 DOMAIN-SUFFIX,analytics.faprika.net
 DOMAIN-SUFFIX,analytics.kkb.com.tr
+DOMAIN-SUFFIX,analytics.qushad.com
 DOMAIN-SUFFIX,c.keltis.com
 DOMAIN-SUFFIX,collector.wawlabs.com
 DOMAIN-SUFFIX,log.collectaction.com
@@ -4373,6 +4375,7 @@ DOMAIN-SUFFIX,tracking.aita.gov.vn
 DOMAIN-SUFFIX,tracking3.vnncdn.net
 DOMAIN-SUFFIX,za.zalo.me
 DOMAIN-SUFFIX,za.zdn.vn
+DOMAIN-SUFFIX,a-da.invideo.io
 DOMAIN-SUFFIX,a-reporting.nytimes.com
 DOMAIN-SUFFIX,a.electerious.com
 DOMAIN-SUFFIX,a.tellonym.me
@@ -4395,6 +4398,7 @@ DOMAIN-SUFFIX,ampltd.top.gg
 DOMAIN-SUFFIX,ampltd2.medal.tv
 DOMAIN-SUFFIX,anal.doubledouble.top
 DOMAIN-SUFFIX,analytics-batch.blitz.gg
+DOMAIN-SUFFIX,analytics-dataplane.invideo.io
 DOMAIN-SUFFIX,analytics-proxy.springboard.com
 DOMAIN-SUFFIX,analytics-server.arras.cx
 DOMAIN-SUFFIX,analytics-tracking.meetup.com
@@ -4577,6 +4581,7 @@ DOMAIN-SUFFIX,eventlog.jackpot.de
 DOMAIN-SUFFIX,events-prod.autolist.com
 DOMAIN-SUFFIX,events-tracker.deliveroo.net
 DOMAIN-SUFFIX,events.api.godaddy.com
+DOMAIN-SUFFIX,events.baselime.io
 DOMAIN-SUFFIX,events.clips4sale.com
 DOMAIN-SUFFIX,events.framer.com
 DOMAIN-SUFFIX,events.mercadolibre.com
@@ -4753,6 +4758,7 @@ DOMAIN-SUFFIX,pingback.issuu.com
 DOMAIN-SUFFIX,pingo.staticmoly.me
 DOMAIN-SUFFIX,pixel.archivecaslytosk.onion
 DOMAIN-SUFFIX,pixel.archiveiya74codqgiixo33q62qlrqtkgmcitqx5u2oeqnmn5bpcbiyd.onion
+DOMAIN-SUFFIX,pixel.clutter.com
 DOMAIN-SUFFIX,pixel.convertize.io
 DOMAIN-SUFFIX,pixel.facebook.com
 DOMAIN-SUFFIX,pixel.honestjohn.co.uk
@@ -4851,6 +4857,7 @@ DOMAIN-SUFFIX,stat.vulkanvegas.com
 DOMAIN-SUFFIX,statistics.streamdav.com
 DOMAIN-SUFFIX,stats.aerotime.aero
 DOMAIN-SUFFIX,stats.calcalist.co.il
+DOMAIN-SUFFIX,stats.chromatone.center
 DOMAIN-SUFFIX,stats.codeur.com
 DOMAIN-SUFFIX,stats.davidickedelivery.com
 DOMAIN-SUFFIX,stats.gateio.ch

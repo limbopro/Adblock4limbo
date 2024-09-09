@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 12 Aug 2024 11:05:58 GMT
-# entries:        3547
+# entries:        3542
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -239,7 +239,6 @@ DOMAIN-SUFFIX,adhaven.com, reject
 DOMAIN-SUFFIX,adhese.be, reject
 DOMAIN-SUFFIX,adhese.com, reject
 DOMAIN-SUFFIX,adhigh.net, reject
-DOMAIN-SUFFIX,adhoc4.net, reject
 DOMAIN-SUFFIX,adhunter.media, reject
 DOMAIN-SUFFIX,adimage.guardian.co.uk, reject
 DOMAIN-SUFFIX,adimages.been.com, reject
@@ -523,7 +522,6 @@ DOMAIN-SUFFIX,ads.multimania.lycos.fr, reject
 DOMAIN-SUFFIX,ads.muslimehelfen.org, reject
 DOMAIN-SUFFIX,ads.mvscoelho.com, reject
 DOMAIN-SUFFIX,ads.myadv.org, reject
-DOMAIN-SUFFIX,ads.nccwebs.com, reject
 DOMAIN-SUFFIX,ads.ndtv1.com, reject
 DOMAIN-SUFFIX,ads.networksolutions.com, reject
 DOMAIN-SUFFIX,ads.newgrounds.com, reject
@@ -2050,7 +2048,6 @@ DOMAIN-SUFFIX,leadboltads.net, reject
 DOMAIN-SUFFIX,leadclick.com, reject
 DOMAIN-SUFFIX,leadinfo.net, reject
 DOMAIN-SUFFIX,leadingedgecash.com, reject
-DOMAIN-SUFFIX,leadplace.fr, reject
 DOMAIN-SUFFIX,leadspace.com, reject
 DOMAIN-SUFFIX,leadzupc.com, reject
 DOMAIN-SUFFIX,leaplunchroom.com, reject
@@ -2972,7 +2969,6 @@ DOMAIN-SUFFIX,spinnaker-js.com, reject
 DOMAIN-SUFFIX,spirebaboon.com, reject
 DOMAIN-SUFFIX,sponsorads.de, reject
 DOMAIN-SUFFIX,sponsorpro.de, reject
-DOMAIN-SUFFIX,sponsors.thoughtsmedia.com, reject
 DOMAIN-SUFFIX,spookysleet.com, reject
 DOMAIN-SUFFIX,spot.fitness.com, reject
 DOMAIN-SUFFIX,spotlessstamp.com, reject
@@ -3242,7 +3238,6 @@ DOMAIN-SUFFIX,tracker.metricswave.com, reject
 DOMAIN-SUFFIX,tracker.mmdlv.it, reject
 DOMAIN-SUFFIX,tracker.samplicio.us, reject
 DOMAIN-SUFFIX,tracker.vgame.us, reject
-DOMAIN-SUFFIX,tracking.1-a1502-bi.co.uk, reject
 DOMAIN-SUFFIX,tracking.21-a4652-bi.co.uk, reject
 DOMAIN-SUFFIX,tracking.28-91473-wbm.co.uk, reject
 DOMAIN-SUFFIX,tracking.39-bb4a9-osm.co.uk, reject

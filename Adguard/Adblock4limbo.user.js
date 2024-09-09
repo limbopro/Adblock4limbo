@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.09.05
+// @version      0.4.09.09
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -110,6 +110,7 @@
 // @match        https://njav.tv/*
 // @match        https://www.ntdm9.com/*
 // @match        https://www.novel543.com/*
+// @match        https://www.hltv.org/*
 // @match        https://m.diyibanzhu.me/*
 // @match        https://www.javlibrary.com/*
 // @match        https://rouman5.com/*
@@ -257,6 +258,7 @@ var imax = {
         nivod: "img[src*='1a732eeb1adb'], img[src*='49e8abd32d13'], span[style*='1a2d'],span[style*='0891'],[style='text-align: center; margin-top: 30px;'],.qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
+        hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
         cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
@@ -339,6 +341,7 @@ function values() {
         'rouman',
         'novel543',
         'diyibanzhu',
+        'hltv',
         "zhihu"
     ]
 
@@ -544,6 +547,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'jable': // 2333
             console.log("IT'S JABLE");
 
+            // 子域名跳转至主域名 jable.tv 
             if (/\b(.*\.)(jable\.tv.*)\b/i.test(window.location.href.toLowerCase())) {
                 console.log(window.location.href.toLowerCase())
                 let url_jable_rewrite = window.location.href.toLowerCase().replace(/https:\/\/\w{2,3}\./i, "https://")
@@ -551,10 +555,21 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 window.location.replace(url_jable_rewrite)
             }
 
+            // 去除首页广告
+
+            if (document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').length > 0) {
+                document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').forEach((x) => { // xxx 
+                    if (x.querySelectorAll("[target='_blank']").length > 0) {
+                        x.style = "display: none !important; z-index:-114154; display:block; width:0vw; height:0";
+                    }
+                })
+            }
+
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             const url_jable = document.location.href;
+
             const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
             if (url_jable.search(reg_videos) !== -1) {
                 setTimeout(() => {
@@ -565,6 +580,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
                 }, 3000)
                 //video_delayPlay(3000);
+
                 setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 4000);
                 //addEventListener_defuser("touchend"); // 打断监听器
 
@@ -624,6 +640,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
             break;
+
+        case 'hltv':
+            css_adsRemove(imax.css.hltv);
+            noWindowOpenIf(); // no-window-open-if
+            break;
+
         case 'nivod': // nbys 泥巴影视
             css_adsRemove(imax.css.nivod);
             hrefAttribute_set();

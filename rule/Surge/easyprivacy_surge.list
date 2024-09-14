@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202409081436
+## ! Version: 202409132119
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Sep 2024 14:36 UTC
+## ! Last modified: 13 Sep 2024 21:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3640,6 +3640,7 @@ DOMAIN-SUFFIX,try.abtasty.com
 DOMAIN-SUFFIX,ts.tradetracker.net
 DOMAIN-SUFFIX,ucounter.ucoz.net
 DOMAIN-SUFFIX,uid.mediacorp.sg
+DOMAIN-SUFFIX,uilogging.tcdevops.com
 DOMAIN-SUFFIX,uim.tifbs.net
 DOMAIN-SUFFIX,umami.aigenerations.net
 DOMAIN-SUFFIX,units.knotch.it
@@ -4703,6 +4704,7 @@ DOMAIN-SUFFIX,mcs-va.tiktokv.com
 DOMAIN-SUFFIX,mcs.tiktokv.us
 DOMAIN-SUFFIX,mcs.tiktokw.us
 DOMAIN-SUFFIX,mcs.us.tiktokv.com
+DOMAIN-SUFFIX,mdt.crateandbarrel.com
 DOMAIN-SUFFIX,megatron.igraal.com
 DOMAIN-SUFFIX,metrics.audius.co
 DOMAIN-SUFFIX,metrics.bangbros.com
@@ -4856,6 +4858,7 @@ DOMAIN-SUFFIX,stat.turb.pw
 DOMAIN-SUFFIX,stat.vulkanvegas.com
 DOMAIN-SUFFIX,statistics.streamdav.com
 DOMAIN-SUFFIX,stats.aerotime.aero
+DOMAIN-SUFFIX,stats.allenai.org
 DOMAIN-SUFFIX,stats.calcalist.co.il
 DOMAIN-SUFFIX,stats.chromatone.center
 DOMAIN-SUFFIX,stats.codeur.com
@@ -38711,7 +38714,6 @@ DOMAIN-SUFFIX,go.petmire.com
 DOMAIN-SUFFIX,go.piccolo.mobi
 DOMAIN-SUFFIX,go.picsart.com
 DOMAIN-SUFFIX,go.pinoy.innovatedating.com
-DOMAIN-SUFFIX,go.playbackbone.com
 DOMAIN-SUFFIX,go.player2app.com
 DOMAIN-SUFFIX,go.poland.innovatedating.com
 DOMAIN-SUFFIX,go.polen-app.com
@@ -41334,6 +41336,7 @@ DOMAIN-SUFFIX,track.exame.com
 DOMAIN-SUFFIX,track.olx.com.br
 DOMAIN-SUFFIX,tracker.bt.uol.com.br
 DOMAIN-SUFFIX,tracker.publico.pt
+DOMAIN-SUFFIX,unleash.livepix.gg
 DOMAIN-SUFFIX,analytics.okazii.ro
 DOMAIN-SUFFIX,views.b1tv.ro
 DOMAIN-SUFFIX,views.romaniatv.net

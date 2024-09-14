@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["jQuery","adblockdetect"],["document.onkeydown","e"],["document.onkeypress"],["frames","oncontextmenu"],["jQuery","contextmenu"],["disableEnterKey"],["document.ondragstart"],["$","banner_loader"],["advads_passive_placements"],["show_msg"],["$","shuffle"],["checkCampaignCookie"],["$","e.preventDefault"],["document.oncontextmenu"],["chp_adblock_browser"],["monsterinsights_frontend"],["advads"],["advanced_ads"]];
 
-const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["temadagar.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",[15,16,17]],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15],["branschkoll.se",[16,17]],["rocknytt.net",[16,17]],["upphandling24.se",[16,17]],["kimura.se",[16,17]],["datormagazin.se",[16,17]],["polistidningen.se",[16,17]],["densistavilan.se",[16,17]],["classicmotor.se",[16,17]],["tidningenhalsa.se",[16,17]],["husohem.se",[16,17]],["guiden.se",[16,17]],["nyadagbladet.se",[16,17]],["enkelteknik.se",[16,17]],["vadhanderisverige.se",[16,17]]]);
+const hostnamesMap = new Map([["affarsstaden.se",0],["byggipedia.se",[1,2,3,4]],["discoveringtheplanet.com",[5,6]],["evertiq.se",7],["hejaolika.se",8],["medibok.se",9],["nasdaqomxnordic.com",10],["sakochliv.se",11],["skrattsajten.com",12],["norpan.se",12],["spelhubben.se",13],["husbilsplats.se",13],["temadagar.se",14],["zeinaskitchen.se",15],["trafiksakerhet.se",15],["boktugg.se",15],["lakartidningen.se",15],["villalivet.se",[15,16,17]],["matsafari.nu",15],["forexgruppen.se",15],["fastighetsvarlden.se",15],["branschkoll.se",[16,17]],["rocknytt.net",[16,17]],["upphandling24.se",[16,17]],["kimura.se",[16,17]],["datormagazin.se",[16,17]],["polistidningen.se",[16,17]],["densistavilan.se",[16,17]],["classicmotor.se",[16,17]],["tidningenhalsa.se",[16,17]],["husohem.se",[16,17]],["guiden.se",[16,17]],["nyadagbladet.se",[16,17]],["enkelteknik.se",[16,17]],["vadhanderisverige.se",[16,17]],["passioneffect.se",[16,17]]]);
 
 const entitiesMap = new Map([]);
 
@@ -242,7 +242,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

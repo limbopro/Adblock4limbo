@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["adsShow","true"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["runScript","false"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
 
-const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["barcanews.org",5],["binanews.ir",6],["1da.ir",7],["1ea.ir",7],["2ad.ir",7],["fontyab.com",[8,9]],["fidibo.com",[10,11,12]],["my.mci.ir",[10,11,12,16,17]],["pwa.mci.ir",[10,11,12,16,17]],["ketabesabz.com",13],["lahzeakhar.com",14],["musicdel.ir",15],["msbmusic.ir",18],["myhastidl.cam",18],["netgasht.com",18],["opizo.me",19],["xip.li",19],["s-moshaver.com",20],["tamasha.com",[21,22,23]],["takmili.com",[24,25,26,27,28]],["takhfifan.com",[29,30]]]);
+const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["barcanews.org",5],["binanews.ir",6],["1da.ir",7],["1ea.ir",7],["2ad.ir",7],["themez.top",7],["fontyab.com",[8,9]],["fidibo.com",[10,11,12]],["my.mci.ir",[10,11,12,16,17]],["pwa.mci.ir",[10,11,12,16,17]],["ketabesabz.com",13],["lahzeakhar.com",14],["musicdel.ir",15],["msbmusic.ir",18],["myhastidl.cam",18],["netgasht.com",18],["opizo.me",19],["xip.li",19],["s-moshaver.com",20],["tamasha.com",[21,22,23]],["takmili.com",[24,25,26,27,28]],["takhfifan.com",[29,30]]]);
 
 const entitiesMap = new Map([]);
 
@@ -291,7 +291,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

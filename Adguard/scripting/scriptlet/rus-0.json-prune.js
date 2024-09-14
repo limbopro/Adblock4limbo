@@ -40,9 +40,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].*.result.body"]];
+const argsList = [["*.preroll"],["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].*.result.body"]];
 
-const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,4]],["1plus1.video",3],["igromania.ru",5],["kanobu.ru",5],["znanija.com",6],["aniqit.com",7],["anivod.com",7],["ashdi.vip",7],["kodik.cc",7],["kodik.info",7],["kodikdb.com",7],["tortuga.wtf",7],["ok.ru",8],["touch.mail.ru",8],["e.mail.ru",9]]);
+const hostnamesMap = new Map([["fanserial.fun",0],["fanserialstv.net",0],["uma.media",1],["ivanovonews.ru",2],["kufar.by",3],["pikabu.ru",[3,5]],["1plus1.video",4],["igromania.ru",6],["kanobu.ru",6],["znanija.com",7],["aniqit.com",8],["anivod.com",8],["ashdi.vip",8],["kodik.cc",8],["kodik.info",8],["kodikdb.com",8],["tortuga.wtf",8],["ok.ru",9],["touch.mail.ru",9],["e.mail.ru",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -179,7 +179,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

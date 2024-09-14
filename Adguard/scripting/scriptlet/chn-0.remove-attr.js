@@ -40,9 +40,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["style",".two-ad-area"]];
+const argsList = [["style",".two-ad-area"],["style","#banner[style*=\"background-image:url\"]"]];
 
-const hostnamesMap = new Map([["manwa.fun",0]]);
+const hostnamesMap = new Map([["manwa.fun",0],["huya.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -207,7 +207,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

@@ -40,13 +40,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["visibilitychange","captureContext"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/smartweek/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["visibilitychange","captureContext"]];
 
-const hostnamesMap = new Map([["7days.ru",[0,25]],["fastpic.org",[1,15]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,12]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["regnum.news",9],["regnum.ru",9],["tproger.ru",9],["softonic.ru",10],["smotrim.ru",11],["rbc.ru",13],["sportrbc.ru",13],["carservic.ru",14],["iptv.org.ua",14],["tva.org.ua",14],["ufchgu.ru",14],["romakatya.ru",16],["xv-ru.com",17],["overclockers.ru",18],["bonus-tv.ru",19],["kinoblin.ru",20],["serialai.ru",20],["m.lenta.ru",21],["www.vesti.ru",22],["lenta.ru",23],["otvet.mail.ru",24],["cdn.viqeo.tv",25],["kinonews.ru",25],["kp.kg",25],["kp.kz",25],["kp.md",25],["kp.ru",25],["mk.ru",25],["ohotniki.ru",25],["portalvirtualreality.ru",25],["radiokp.ru",25],["sportkp.ru",25],["wday.ru",25],["woman.ru",25],["www.fontanka.ru",25]]);
+const hostnamesMap = new Map([["7days.ru",[0,26]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["cdn.viqeo.tv",26],["kinonews.ru",26],["kp.kg",26],["kp.kz",26],["kp.md",26],["kp.ru",26],["mk.ru",26],["ohotniki.ru",26],["portalvirtualreality.ru",26],["radiokp.ru",26],["sportkp.ru",26],["wday.ru",26],["woman.ru",26],["www.fontanka.ru",26]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,15]],["id.rambler.ru",[5,12]],["vp.rambler.ru",[5,12]],["player.smotrim.ru",[11]],["mail.rambler.ru",[12]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,16]],["id.rambler.ru",[5,13]],["vp.rambler.ru",[5,13]],["player.smotrim.ru",[12]],["mail.rambler.ru",[13]]]);
 
 /******************************************************************************/
 
@@ -248,7 +248,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

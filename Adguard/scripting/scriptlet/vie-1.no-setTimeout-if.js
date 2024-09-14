@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["DisplayAHTML","5001"],["callback","6004"]];
 
-const hostnamesMap = new Map([["linkneverdie.net",[0,1]]]);
+const hostnamesMap = new Map([["linkneverdie.net",[0,1]],["linkneverdie.top",[0,1]],["linkneverdie2.com",[0,1]]]);
 
 const entitiesMap = new Map([]);
 
@@ -184,7 +184,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

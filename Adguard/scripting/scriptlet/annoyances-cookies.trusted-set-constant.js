@@ -40,9 +40,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["dataLayer","{\"value\":[{\"signals\":[\"remixd\"]},{\"event\":\"remixd_gtm_fire\"}]}"]];
+const argsList = [["dataLayer","{\"value\":[{\"signals\":[\"remixd\"]},{\"event\":\"remixd_gtm_fire\"}]}"],["cmp_importvendors","{\"value\": [\"s23\",\"s2564\"]}"]];
 
-const hostnamesMap = new Map([["radiox.co.uk",0]]);
+const hostnamesMap = new Map([["radiox.co.uk",0],["octopusenergy.de",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -291,7 +291,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

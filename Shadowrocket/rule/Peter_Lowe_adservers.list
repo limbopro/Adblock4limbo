@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 12 Aug 2024 11:05:58 GMT
+# last updated:   Mon, 09 Sep 2024 15:04:31 GMT
 # entries:        3542
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -74,6 +74,7 @@ DOMAIN-SUFFIX,absorbingband.com, reject
 DOMAIN-SUFFIX,abstractedauthority.com, reject
 DOMAIN-SUFFIX,abtasty.com, reject
 DOMAIN-SUFFIX,ac.rnm.ca, reject
+DOMAIN-SUFFIX,accountsdoor.com, reject
 DOMAIN-SUFFIX,acemlnb.com, reject
 DOMAIN-SUFFIX,acridtwist.com, reject
 DOMAIN-SUFFIX,actionsplash.com, reject
@@ -239,6 +240,7 @@ DOMAIN-SUFFIX,adhaven.com, reject
 DOMAIN-SUFFIX,adhese.be, reject
 DOMAIN-SUFFIX,adhese.com, reject
 DOMAIN-SUFFIX,adhigh.net, reject
+DOMAIN-SUFFIX,adhoc4.net, reject
 DOMAIN-SUFFIX,adhunter.media, reject
 DOMAIN-SUFFIX,adimage.guardian.co.uk, reject
 DOMAIN-SUFFIX,adimages.been.com, reject
@@ -1215,7 +1217,6 @@ DOMAIN-SUFFIX,calmcactus.com, reject
 DOMAIN-SUFFIX,calypsocapsule.com, reject
 DOMAIN-SUFFIX,campaign.bharatmatrimony.com, reject
 DOMAIN-SUFFIX,caniamedia.com, reject
-DOMAIN-SUFFIX,capablecows.com, reject
 DOMAIN-SUFFIX,capriciouscorn.com, reject
 DOMAIN-SUFFIX,captainbicycle.com, reject
 DOMAIN-SUFFIX,carambo.la, reject
@@ -1959,6 +1960,7 @@ DOMAIN-SUFFIX,insightexpressai.com, reject
 DOMAIN-SUFFIX,inskinad.com, reject
 DOMAIN-SUFFIX,inspectlet.com, reject
 DOMAIN-SUFFIX,install.365-stream.com, reject
+DOMAIN-SUFFIX,instantmadness.com, reject
 DOMAIN-SUFFIX,insticator.com, reject
 DOMAIN-SUFFIX,intelliads.com, reject
 DOMAIN-SUFFIX,intelligenceadx.com, reject
@@ -2048,6 +2050,7 @@ DOMAIN-SUFFIX,leadboltads.net, reject
 DOMAIN-SUFFIX,leadclick.com, reject
 DOMAIN-SUFFIX,leadinfo.net, reject
 DOMAIN-SUFFIX,leadingedgecash.com, reject
+DOMAIN-SUFFIX,leadplace.fr, reject
 DOMAIN-SUFFIX,leadspace.com, reject
 DOMAIN-SUFFIX,leadzupc.com, reject
 DOMAIN-SUFFIX,leaplunchroom.com, reject
@@ -2578,7 +2581,6 @@ DOMAIN-SUFFIX,predictad.com, reject
 DOMAIN-SUFFIX,premium-offers.com, reject
 DOMAIN-SUFFIX,presetrabbits.com, reject
 DOMAIN-SUFFIX,previousplayground.com, reject
-DOMAIN-SUFFIX,previouspotato.com, reject
 DOMAIN-SUFFIX,prf.hn, reject
 DOMAIN-SUFFIX,priceypies.com, reject
 DOMAIN-SUFFIX,pricklydebt.com, reject
@@ -3445,7 +3447,6 @@ DOMAIN-SUFFIX,webtrackerplus.com, reject
 DOMAIN-SUFFIX,webtracky.com, reject
 DOMAIN-SUFFIX,webtraffic.se, reject
 DOMAIN-SUFFIX,webtraxx.de, reject
-DOMAIN-SUFFIX,webtrendslive.com, reject
 DOMAIN-SUFFIX,webxcdn.com, reject
 DOMAIN-SUFFIX,wellmadefrog.com, reject
 DOMAIN-SUFFIX,welved.com, reject
@@ -3551,6 +3552,5 @@ DOMAIN-SUFFIX,zmedia.com, reject
 DOMAIN-SUFFIX,zonewedgeshaft.com, reject
 DOMAIN-SUFFIX,zpu.samsungelectronics.com, reject
 DOMAIN-SUFFIX,zqtk.net, reject
-DOMAIN-SUFFIX,zukxd6fkxqn.com, reject
 DOMAIN-SUFFIX,zy16eoat1w.com, reject
 DOMAIN-SUFFIX,zzhc.vnet.cn, reject

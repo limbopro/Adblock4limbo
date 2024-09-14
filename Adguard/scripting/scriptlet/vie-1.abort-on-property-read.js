@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["phimdinhcao.net",4],["phimlongtieng.net",4],["phimdinhcao.com",4],["plvb.xyz",[5,6,7,8,9]],["plcdn.xyz",[5,6,7,8,9]],["tinsoikeo.live",10],["truyensieuhay.com",11],["phimvietsub.pro",11],["quangcaoyenbai.com",11],["sieudamtv.dev",11],["ephimchill.com",11],["ophimhdvn3.net",11],["thuvienhd.xyz",11],["xemtv.tvhayhd.tv",11],["www.khophim88s.com",11],["nhentaivn.online",11],["mv.dailyphimz.com",11],["mv.phimbathu.one",11],["veryfiles.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["dood.pm",13],["ytstv.me",13],["animet1.net",13],["anh.moe",13],["hentaivn.forum",13],["maclife.io",13],["javfc2.net",13],["hoctot.hocmai.vn",13],["bluphim.art",13],["cdn2.blueskychilling.online",13],["ohaha79xxx.site",13],["fastscans.net",13],["vinaurl.net",14],["www.nettruyenupp.com",15],["xoilac86z24.live",16],["yts.do",17],["yts.mx",17],["yts.rs",17],["znews.vn",18]]);
+const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["linkneverdie.top",3],["linkneverdie2.com",3],["phimdinhcao.net",4],["phimlongtieng.net",4],["www.phimdinhcaoz.com",4],["plvb.xyz",[5,6,7,8,9]],["plcdn.xyz",[5,6,7,8,9]],["tinsoikeo.live",10],["truyensieuhay.com",11],["phimvietsub.pro",11],["quangcaoyenbai.com",11],["sex.sieudamtv.biz",11],["ephimchill.com",11],["ophimhdvn3.net",11],["thuvienhd.xyz",11],["xemtv.tvhayhd.tv",11],["www.khophim88s.com",11],["nhentaivn.online",11],["mv.dailyphimz.com",11],["mv.phimbathu.one",11],["veryfiles.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["dood.pm",13],["ytstv.me",13],["animet2.net",13],["anh.moe",13],["hentaivn.blog",13],["maclife.io",13],["javfc2.net",13],["hoctot.hocmai.vn",13],["bluphim.art",13],["cdn2.blueskychilling.online",13],["ohaha79xxx.site",13],["fastscans.net",13],["vinaurl.net",14],["www.nettruyenupp.com",15],["xoilaca.cc",16],["yts.do",17],["yts.mx",17],["yts.rs",17],["znews.vn",18]]);
 
 const entitiesMap = new Map([]);
 
@@ -165,7 +165,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

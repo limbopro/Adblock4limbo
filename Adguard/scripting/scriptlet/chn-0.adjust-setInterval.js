@@ -40,9 +40,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".s--","","0.02"],["timerAdCountdown","","0.02"],["timerAdCountdownCount","","0.02"]];
+const argsList = [[".s--","","0.02"],["timerAdCountdown","","0.02"]];
 
-const hostnamesMap = new Map([["tangdoucdn.com",0],["bde4.com",1],["nfmovies.com",2]]);
+const hostnamesMap = new Map([["tangdoucdn.com",0],["bde4.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -134,7 +134,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

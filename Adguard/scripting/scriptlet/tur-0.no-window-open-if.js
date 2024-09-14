@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[],["bit.ly"],["google.com/url?"]];
 
-const hostnamesMap = new Map([["rcjza2fzqyr4.buzz",0],["d3xg9jm5zucs.buzz",0],["fwlcqyxc88qx.buzz",0],["lgrmdr8asu8l.buzz",0],["kc2uta38qg2t.buzz",0],["agb3nquu6rzw.buzz",0],["yvt2bm7hzgtt.cloud",0],["elzemfilm.org",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["diziwatch.net",0],["hdizlefilmleri.com",0],["izleorg3.org",0],["youtubemp3.us",0],["pchocasi.com.tr",1],["sinema.cx",2]]);
+const hostnamesMap = new Map([["rcjza2fzqyr4.buzz",0],["d3xg9jm5zucs.buzz",0],["fwlcqyxc88qx.buzz",0],["lgrmdr8asu8l.buzz",0],["kc2uta38qg2t.buzz",0],["agb3nquu6rzw.buzz",0],["yvt2bm7hzgtt.cloud",0],["elzemfilm.org",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["diziwatch.net",0],["hdizlefilmleri.com",0],["izleorg3.org",0],["youtubemp3.us",0],["izlekolik.org",0],["pchocasi.com.tr",1],["sinema.cx",2]]);
 
 const entitiesMap = new Map([["erosfilmizle",0],["breakingbadizle",0],["jetfilmizle",0],["4kfilmizlesene",0]]);
 
@@ -224,7 +224,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

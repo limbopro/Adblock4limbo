@@ -40,11 +40,11 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timer"],[],["advert","*","0.001"],["sec--","*","0.001"],["timeleft","*","0.02"]];
+const argsList = [["skipButton","*","0.001"],["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["timer"],[],["advert","*","0.001"],["sec--","*","0.001"],["timeleft","*","0.02"]];
 
-const hostnamesMap = new Map([["hdsinemax.com",0],["elzemfilm.org",0],["tafdi3.com",1],["tafdi4.com",1],["tafdi5.com",1],["filmizletv2.com",2],["filmizletv18.com",2],["fullhdfilm.pro",3],["hdfilmifullizle.com",3],["hdfilmfullizle.com",4],["turkturk.org",5],["turkturk.net",5],["itemci.com",6],["filmizlehdfilm.com",7],["fullfilmizle.cc",7],["hdfilmcix.org",7],["hdfilmizlesene.org",7],["sinema.cx",7]]);
+const hostnamesMap = new Map([["dizipal1.com",0],["hdsinemax.com",1],["elzemfilm.org",1],["tafdi3.com",2],["tafdi4.com",2],["tafdi5.com",2],["filmizletv2.com",3],["filmizletv18.com",3],["fullhdfilm.pro",4],["hdfilmifullizle.com",4],["hdfilmfullizle.com",5],["turkturk.org",6],["turkturk.net",6],["itemci.com",7],["filmizlehdfilm.com",8],["fullfilmizle.cc",8],["hdfilmcix.org",8],["hdfilmizlesene.org",8],["sinema.cx",8]]);
 
-const entitiesMap = new Map([["filmizletv",[2,7]],["fullhdfilmizle",[3,7]],["fullfilmizle",7],["fullhdfilmizletv",7],["hdfilmcehennemi",7],["yabancidizi",8]]);
+const entitiesMap = new Map([["filmizletv",[3,8]],["fullhdfilmizle",[4,8]],["fullfilmizle",8],["fullhdfilmizletv",8],["hdfilmcehennemi",8],["yabancidizi",9]]);
 
 const exceptionsMap = new Map([]);
 
@@ -134,7 +134,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

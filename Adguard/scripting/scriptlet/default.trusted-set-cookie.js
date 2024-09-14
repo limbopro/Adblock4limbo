@@ -40,7 +40,7 @@ const uBOL_trustedSetCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"],["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","vb2DUB1ITIQTBkQFQkQTFAeVAFBEAtWVFgQLT8QWkBRBRJbEkAIVDkDK0AeVARCVFgDWkBfBEAIR04QGxYQTFEeVBZBVFgDQVAGQlEBR1ECR1EHC04QIjIQTBkQFQkQTFMeVAFBEAtWVFgQLT8QWkBRBRJbEkAIVDlvVE4QEBIQTFMeVA9AVFgDWkBfAkAIRU4QAhEQTFMFRFYGRVEDRVIDRVdPWkBlJi8QTBkQFQkQTFAeVAFBEAtWVFgQLT8QWkBRBRJbEkAIVDkDK0AeVARCVFgDWkBfBEAIR04QGxYQTFEeVBZBVFgDQVAGQlEBR1ECR1EHWkBHF0AIRx9P"],["WPtcs2","CQDzioAQDzioABIACDPLBDFgAAAAAAAAAB5YAAAUvgAAAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
+const argsList = [["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"],["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","f79HRV+MWcbXEwbBVwbXAUVRFRKAF5dRA0bPWobShVaFUdQAhUDRGwIOxUVRFFJRA0IShVUFBUDVxsbC0MbXAQVRENKRA0IUQUMUQQLVgAPVQMIGxsbMmcbXEwbBVwbXAYVRFRKAF5dRA0bPWobShVaFUdQAhUDRGxkRBsbAEcbXAYVRFpLRA0IShVUEhUDVRsbEkQbXAYOVAIOVQUJUQEKUgZEShVuNnobXEwbBVwbXAUVRFRKAF5dRA0bPWobShVaFUdQAhUDRGwIOxUVRFFJRA0IShVUFBUDVxsbC0MbXAQVRENKRA0IUQUMUQQLVgAPVQMIShVMBxUDV0pE"],["WPtcs2","CQEk-sAQEk-sABIACDPLBGFgAAAAAAAAAB5YAAAUygAAAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"]];
 
 const hostnamesMap = new Map([["govtech.com",0],["governing.com",0],["barstoolsports.com",1],["globo.com",2],["theporndude.com",3],["wp.pl",[4,5,6]],["money.pl",[4,5,6]],["pysznosci.pl",[4,5,6]],["pudelek.pl",[4,5,6]],["gadzetomania.pl",[4,5,6]],["fotoblogia.pl",[4,5,6]],["komorkomania.pl",[4,5,6]],["dobreprogramy.pl",[4,5,6]],["autokult.pl",[4,5,6]],["genialne.pl",[4,5,6]],["abczdrowie.pl",[4,5,6]],["o2.pl",6],["parenting.pl",6],["polygamia.pl",6],["open.fm",6],["benchmark.pl",6],["kafeteria.pl",6],["autocentrum.pl",6],["jastrzabpost.pl",6]]);
 
@@ -155,7 +155,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

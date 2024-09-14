@@ -40,13 +40,13 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["*","nativeConfig"],["*.*","adFeedbackData adType adServedUrls"],["*","list.*.link.ad list.*.link.kicker"],["configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"],["data.cm_info.ads"],["ads"],["ad"]];
+const argsList = [["*","nativeConfig"],["*.*","adFeedbackData adType adServedUrls"],["*","list.*.link.ad list.*.link.kicker"],["configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"],["ads"],["ad"],["data.cm_info.ads"]];
 
-const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",[1,2,3]],["bilibili.com",4],["news.qq.com",5],["www.qq.com",5],["v.qq.com",5],["new.qq.com",5],["qq.com",6]]);
+const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",[1,2,3]],["news.qq.com",4],["www.qq.com",4],["v.qq.com",4],["new.qq.com",4],["qq.com",5],["bilibili.com",6]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["sports.qq.com",[6]],["work.weixin.qq.com",[6]]]);
+const exceptionsMap = new Map([["sports.qq.com",[5]],["work.weixin.qq.com",[5]]]);
 
 /******************************************************************************/
 
@@ -179,7 +179,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 12 Aug 2024 11:05:58 GMT
+# last updated:   Mon, 09 Sep 2024 15:04:31 GMT
 # entries:        3542
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -74,6 +74,7 @@ DOMAIN-SUFFIX,absorbingband.com
 DOMAIN-SUFFIX,abstractedauthority.com
 DOMAIN-SUFFIX,abtasty.com
 DOMAIN-SUFFIX,ac.rnm.ca
+DOMAIN-SUFFIX,accountsdoor.com
 DOMAIN-SUFFIX,acemlnb.com
 DOMAIN-SUFFIX,acridtwist.com
 DOMAIN-SUFFIX,actionsplash.com
@@ -239,6 +240,7 @@ DOMAIN-SUFFIX,adhaven.com
 DOMAIN-SUFFIX,adhese.be
 DOMAIN-SUFFIX,adhese.com
 DOMAIN-SUFFIX,adhigh.net
+DOMAIN-SUFFIX,adhoc4.net
 DOMAIN-SUFFIX,adhunter.media
 DOMAIN-SUFFIX,adimage.guardian.co.uk
 DOMAIN-SUFFIX,adimages.been.com
@@ -1215,7 +1217,6 @@ DOMAIN-SUFFIX,calmcactus.com
 DOMAIN-SUFFIX,calypsocapsule.com
 DOMAIN-SUFFIX,campaign.bharatmatrimony.com
 DOMAIN-SUFFIX,caniamedia.com
-DOMAIN-SUFFIX,capablecows.com
 DOMAIN-SUFFIX,capriciouscorn.com
 DOMAIN-SUFFIX,captainbicycle.com
 DOMAIN-SUFFIX,carambo.la
@@ -1959,6 +1960,7 @@ DOMAIN-SUFFIX,insightexpressai.com
 DOMAIN-SUFFIX,inskinad.com
 DOMAIN-SUFFIX,inspectlet.com
 DOMAIN-SUFFIX,install.365-stream.com
+DOMAIN-SUFFIX,instantmadness.com
 DOMAIN-SUFFIX,insticator.com
 DOMAIN-SUFFIX,intelliads.com
 DOMAIN-SUFFIX,intelligenceadx.com
@@ -2048,6 +2050,7 @@ DOMAIN-SUFFIX,leadboltads.net
 DOMAIN-SUFFIX,leadclick.com
 DOMAIN-SUFFIX,leadinfo.net
 DOMAIN-SUFFIX,leadingedgecash.com
+DOMAIN-SUFFIX,leadplace.fr
 DOMAIN-SUFFIX,leadspace.com
 DOMAIN-SUFFIX,leadzupc.com
 DOMAIN-SUFFIX,leaplunchroom.com
@@ -2578,7 +2581,6 @@ DOMAIN-SUFFIX,predictad.com
 DOMAIN-SUFFIX,premium-offers.com
 DOMAIN-SUFFIX,presetrabbits.com
 DOMAIN-SUFFIX,previousplayground.com
-DOMAIN-SUFFIX,previouspotato.com
 DOMAIN-SUFFIX,prf.hn
 DOMAIN-SUFFIX,priceypies.com
 DOMAIN-SUFFIX,pricklydebt.com
@@ -3445,7 +3447,6 @@ DOMAIN-SUFFIX,webtrackerplus.com
 DOMAIN-SUFFIX,webtracky.com
 DOMAIN-SUFFIX,webtraffic.se
 DOMAIN-SUFFIX,webtraxx.de
-DOMAIN-SUFFIX,webtrendslive.com
 DOMAIN-SUFFIX,webxcdn.com
 DOMAIN-SUFFIX,wellmadefrog.com
 DOMAIN-SUFFIX,welved.com
@@ -3551,6 +3552,5 @@ DOMAIN-SUFFIX,zmedia.com
 DOMAIN-SUFFIX,zonewedgeshaft.com
 DOMAIN-SUFFIX,zpu.samsungelectronics.com
 DOMAIN-SUFFIX,zqtk.net
-DOMAIN-SUFFIX,zukxd6fkxqn.com
 DOMAIN-SUFFIX,zy16eoat1w.com
 DOMAIN-SUFFIX,zzhc.vnet.cn

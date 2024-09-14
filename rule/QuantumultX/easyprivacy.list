@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202409081436
+## ! Version: 202409132119
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Sep 2024 14:36 UTC
+## ! Last modified: 13 Sep 2024 21:19 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3640,6 +3640,7 @@ DOMAIN-SUFFIX,try.abtasty.com, reject
 DOMAIN-SUFFIX,ts.tradetracker.net, reject
 DOMAIN-SUFFIX,ucounter.ucoz.net, reject
 DOMAIN-SUFFIX,uid.mediacorp.sg, reject
+DOMAIN-SUFFIX,uilogging.tcdevops.com, reject
 DOMAIN-SUFFIX,uim.tifbs.net, reject
 DOMAIN-SUFFIX,umami.aigenerations.net, reject
 DOMAIN-SUFFIX,units.knotch.it, reject
@@ -4703,6 +4704,7 @@ DOMAIN-SUFFIX,mcs-va.tiktokv.com, reject
 DOMAIN-SUFFIX,mcs.tiktokv.us, reject
 DOMAIN-SUFFIX,mcs.tiktokw.us, reject
 DOMAIN-SUFFIX,mcs.us.tiktokv.com, reject
+DOMAIN-SUFFIX,mdt.crateandbarrel.com, reject
 DOMAIN-SUFFIX,megatron.igraal.com, reject
 DOMAIN-SUFFIX,metrics.audius.co, reject
 DOMAIN-SUFFIX,metrics.bangbros.com, reject
@@ -4856,6 +4858,7 @@ DOMAIN-SUFFIX,stat.turb.pw, reject
 DOMAIN-SUFFIX,stat.vulkanvegas.com, reject
 DOMAIN-SUFFIX,statistics.streamdav.com, reject
 DOMAIN-SUFFIX,stats.aerotime.aero, reject
+DOMAIN-SUFFIX,stats.allenai.org, reject
 DOMAIN-SUFFIX,stats.calcalist.co.il, reject
 DOMAIN-SUFFIX,stats.chromatone.center, reject
 DOMAIN-SUFFIX,stats.codeur.com, reject
@@ -38711,7 +38714,6 @@ DOMAIN-SUFFIX,go.petmire.com, reject
 DOMAIN-SUFFIX,go.piccolo.mobi, reject
 DOMAIN-SUFFIX,go.picsart.com, reject
 DOMAIN-SUFFIX,go.pinoy.innovatedating.com, reject
-DOMAIN-SUFFIX,go.playbackbone.com, reject
 DOMAIN-SUFFIX,go.player2app.com, reject
 DOMAIN-SUFFIX,go.poland.innovatedating.com, reject
 DOMAIN-SUFFIX,go.polen-app.com, reject
@@ -41334,6 +41336,7 @@ DOMAIN-SUFFIX,track.exame.com, reject
 DOMAIN-SUFFIX,track.olx.com.br, reject
 DOMAIN-SUFFIX,tracker.bt.uol.com.br, reject
 DOMAIN-SUFFIX,tracker.publico.pt, reject
+DOMAIN-SUFFIX,unleash.livepix.gg, reject
 DOMAIN-SUFFIX,analytics.okazii.ro, reject
 DOMAIN-SUFFIX,views.b1tv.ro, reject
 DOMAIN-SUFFIX,views.romaniatv.net, reject

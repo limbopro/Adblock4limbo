@@ -40,7 +40,7 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".navbar-nav > li.nav-item > a[href^=\"https://www.origoclick.com/manga/?type=nav&\"]","display","block"]];
+const argsList = [[".navbar-nav > li.nav-item > a[href^=\"https://www.origoclick.com\"]","top","auto"]];
 
 const hostnamesMap = new Map([["japscan.lol",0]]);
 
@@ -210,7 +210,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["adregain_wall"],["rInt"],["openRandomUrl"],["popURL"],["onPopUnderLoaded"],["window.onload"],["yeniSekmeAdresi"],["getLink"],["adx"]];
 
-const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["yeppuu.com",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["dizilost.com",[4,5]],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["erotikhdfilmx3.shop",7]]);
+const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["yeppuu.com",2],["dizipia.com",3],["birasyadizi.com",4],["seyredeger.com",4],["indirmedenfilmizle.vip",4],["dizilost.com",[4,5]],["mixizle.com",6],["fullhdabifilm.com",6],["hdmixfilim.com",6],["erotikhdfilmx3.shop",7],["izlekolik.org",8]]);
 
 const entitiesMap = new Map([["4kfilmizlesene",8]]);
 
@@ -143,7 +143,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

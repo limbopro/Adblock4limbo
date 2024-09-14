@@ -40,11 +40,11 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["data-money",".play-that-video"],["style","#episode"],["data-money","div[data-money]"],["data-href","span[data-href^=\"https://ensonhaber.me/\"]"],["placeholder","input[id=\"search-textbox\"]"],["data-front","#tv-spoox2"],["data-time",".video-skip[data-time]"]];
+const argsList = [["data-money",".play-that-video"],["disabled",".pre-player > button#skipButton[onclick=\"skipAd()\"][disabled]"],["style","#episode"],["data-money","div[data-money]"],["data-href","span[data-href^=\"https://ensonhaber.me/\"]"],["placeholder","input[id=\"search-textbox\"]"],["data-front","#tv-spoox2"],["data-time",".video-skip[data-time]"]];
 
-const hostnamesMap = new Map([["vipfilmcity.pro",0],["asyadiziizle.com",1],["dizipal73.cloud",2],["dizipal74.cloud",2],["dizipal132.cloud",2],["dizipal133.cloud",2],["dizipal134.cloud",2],["dizipal135.cloud",2],["dizipal140.cloud",2],["hdsinemax.com",2],["elzemfilm.org",2],["ensonhaber.com",3],["eksisozluk.com",4],["izlekolik.org",5],["inattvhd188.xyz",6],["inattvhd189.xyz",6],["inattvhd190.xyz",6],["inattvhd191.xyz",6],["inattvhd192.xyz",6],["inattvhd193.xyz",6],["inattvhd194.xyz",6],["inattvhd195.xyz",6],["inattvhd196.xyz",6],["inattvhd197.xyz",6],["inattvhd198.xyz",6],["inattvhd199.xyz",6],["inattvhd200.xyz",6],["inattvhd201.xyz",6],["inattvhd202.xyz",6],["inattvhd203.xyz",6],["inattvhd204.xyz",6],["inattvhd205.xyz",6],["inattvhd206.xyz",6],["inattvhd207.xyz",6],["inattvhd208.xyz",6],["inattvhd209.xyz",6],["inattvhd210.xyz",6],["inattvhd211.xyz",6],["inattvhd212.xyz",6],["inattvhd213.xyz",6],["inattvhd214.xyz",6],["inattvhd215.xyz",6],["inattvhd216.xyz",6],["inattvhd217.xyz",6],["inattvhd218.xyz",6],["inattvhd219.xyz",6],["inattvhd220.xyz",6],["inattvhd221.xyz",6]]);
+const hostnamesMap = new Map([["vipfilmcity.pro",0],["dizipal1.com",1],["asyadiziizle.com",2],["dizipal73.cloud",3],["dizipal74.cloud",3],["dizipal132.cloud",3],["dizipal133.cloud",3],["dizipal134.cloud",3],["dizipal135.cloud",3],["dizipal140.cloud",3],["hdsinemax.com",3],["elzemfilm.org",3],["ensonhaber.com",4],["eksisozluk.com",5],["izlekolik.org",6],["inattvhd188.xyz",7],["inattvhd189.xyz",7],["inattvhd190.xyz",7],["inattvhd191.xyz",7],["inattvhd192.xyz",7],["inattvhd193.xyz",7],["inattvhd194.xyz",7],["inattvhd195.xyz",7],["inattvhd196.xyz",7],["inattvhd197.xyz",7],["inattvhd198.xyz",7],["inattvhd199.xyz",7],["inattvhd200.xyz",7],["inattvhd201.xyz",7],["inattvhd202.xyz",7],["inattvhd203.xyz",7],["inattvhd204.xyz",7],["inattvhd205.xyz",7],["inattvhd206.xyz",7],["inattvhd207.xyz",7],["inattvhd208.xyz",7],["inattvhd209.xyz",7],["inattvhd210.xyz",7],["inattvhd211.xyz",7],["inattvhd212.xyz",7],["inattvhd213.xyz",7],["inattvhd214.xyz",7],["inattvhd215.xyz",7],["inattvhd216.xyz",7],["inattvhd217.xyz",7],["inattvhd218.xyz",7],["inattvhd219.xyz",7],["inattvhd220.xyz",7],["inattvhd221.xyz",7]]);
 
-const entitiesMap = new Map([["siyahfilmizle",2],["sinepal",2]]);
+const entitiesMap = new Map([["siyahfilmizle",3],["sinepal",3]]);
 
 const exceptionsMap = new Map([]);
 
@@ -207,7 +207,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

@@ -40,9 +40,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["gemiusStream.init","noopFunc"],["window.ado","null"]];
+const argsList = [["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["ENABLE_PAGE_LEVEL_ADS","true"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["gemiusStream.init","noopFunc"],["window.ado","null"]];
 
-const hostnamesMap = new Map([["angol-magyar-szotar.hu",0],["embed.indavideo.hu",[1,2,3]],["huaweiblog.hu",4],["player.rtl.hu",[5,6,7]],["femina.hu",8]]);
+const hostnamesMap = new Map([["angol-magyar-szotar.hu",0],["embed.indavideo.hu",[1,2,3]],["huaweiblog.hu",4],["myonlineradio.hu",5],["player.rtl.hu",[6,7,8]],["femina.hu",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -291,7 +291,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

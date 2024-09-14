@@ -21,6 +21,7 @@
 
 /* tur-0 */
 
+a[href*="//ad.donanimhaber.com"],
 a[href*="//track.bcvc.mobi/earn.php"],
 a[href*="/earn.php?zone"][target="_blank"] > img,
 a[href*="admost.com/adx/"],
@@ -33,7 +34,6 @@ a[href*="megabatorturkiyebay"] > img,
 a[href*="penisbuyutucu"] > img,
 a[href*="seriouslove.club"] > img,
 a[href*="sporx.com/rdrct.php"][target="_blank"],
-a[href^="http://ad.donanimhaber.com"],
 a[href^="http://adserv.ontek.com.tr/"],
 a[href^="http://adserver.advrstcdn.com/getad.php"],
 a[href^="http://izlenzi.com/campaign/"],
@@ -65,6 +65,7 @@ div[class^="sag-reklam"],
 div[class^="vSagReklam-"],
 div[data-advert="temedya"],
 div[data-fr33-b4nn3r],
+div[data-free-banner],
 div[data-splsh-dsktp-cntnr],
 div[id^="b-banner"],
 div[id^="floatLayer"],

@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_501941328","1"],["popup_closed","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["oled-info.com",3],["readergrev.com",4],["objectivebayesian.com",4],["jointhefollowup.com",4],["gourmetfoodstore.com",5],["theinformation.com",6],["intellinews.com",7],["kermitlynch.com",8],["jingdaily.com",9],["babiesrus.ca",10],["toysrus.ca",10],["clevercreations.org",11],["iconduck.com",12],["shojiwax.com",13],["skepticalraptor.com",13],["yvonnebennetti.com",14],["funko.com",15],["loungefly.com",15],["saucerco.com",16],["sharperimage.com",17],["sweetwater.com",18],["assos.com",19],["techonthenet.com",20],["tumblr.com",21],["scitechdaily.com",22]]);
+const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["oled-info.com",3],["readergrev.com",4],["objectivebayesian.com",4],["monopoly.marketecture.tv",4],["jointhefollowup.com",4],["gourmetfoodstore.com",5],["theinformation.com",6],["intellinews.com",7],["kermitlynch.com",8],["jingdaily.com",9],["babiesrus.ca",10],["toysrus.ca",10],["clevercreations.org",11],["iconduck.com",12],["shojiwax.com",13],["skepticalraptor.com",13],["yvonnebennetti.com",14],["funko.com",15],["loungefly.com",15],["saucerco.com",16],["sharperimage.com",17],["sweetwater.com",18],["assos.com",19],["techonthenet.com",20],["tumblr.com",21],["scitechdaily.com",22]]);
 
 const entitiesMap = new Map([]);
 
@@ -159,7 +159,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {

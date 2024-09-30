@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
 
-const hostnamesMap = new Map([["kotobank.jp",0],["puzzle-ch.com",1],["o-dan.net",2],["dropbooks.net",3],["fp1-siken.com",4],["fp2-siken.com",4],["fp3-siken.com",4],["ap-siken.com",4],["db-siken.com",4],["fe-siken.com",4],["itpassportsiken.com",4],["nw-siken.com",4],["pm-siken.com",4],["sc-siken.com",4],["sg-siken.com",4],["musenboya.com",5],["crefan.jp",6],["nan-net.com",7],["javcup.com",8],["yavtube.com",8],["46matome.net",9],["openworldnews.net",9],["animesoku.com",9],["vipnews.jp",9],["ldblog.jp",9],["livedoor.blog",9],["2chblog.jp",9],["oumaga-times.com",9],["all-nationz.com",9],["ebitsu.net",9],["fiveslot777.com",9],["jisaka.com",9],["kijyomatome.com",9],["konoyubitomare.jp",9],["livedoor.biz",9],["momoclonews.com",9],["norisoku.com",9],["pachinkopachisro.com",9],["vtubernews.jp",9],["blog.jp",9],["giants-news.com",9],["blog.livedoor.jp",9],["doorblog.jp",9],["sexpixbox.com",10],["skebetter.com",11]]);
+const hostnamesMap = new Map([["kotobank.jp",0],["puzzle-ch.com",1],["o-dan.net",2],["dropbooks.net",3],["fp1-siken.com",4],["fp2-siken.com",4],["fp3-siken.com",4],["ap-siken.com",4],["db-siken.com",4],["fe-siken.com",4],["itpassportsiken.com",4],["nw-siken.com",4],["pm-siken.com",4],["sc-siken.com",4],["sg-siken.com",4],["musenboya.com",5],["crefan.jp",6],["nan-net.com",7],["javcup.com",8],["46matome.net",9],["openworldnews.net",9],["animesoku.com",9],["vipnews.jp",9],["ldblog.jp",9],["livedoor.blog",9],["2chblog.jp",9],["oumaga-times.com",9],["all-nationz.com",9],["ebitsu.net",9],["fiveslot777.com",9],["jisaka.com",9],["kijyomatome.com",9],["konoyubitomare.jp",9],["livedoor.biz",9],["momoclonews.com",9],["norisoku.com",9],["pachinkopachisro.com",9],["vtubernews.jp",9],["blog.jp",9],["giants-news.com",9],["blog.livedoor.jp",9],["doorblog.jp",9],["sexpixbox.com",10],["skebetter.com",11]]);
 
 const entitiesMap = new Map([["manga1001",4]]);
 
@@ -67,14 +67,15 @@ function noSetTimeoutIf(
         delay = parseInt(delay, 10);
     }
     const reNeedle = safe.patternToRegex(needle);
-    proxyApplyFn('setTimeout', function setTimeout(target, thisArg, args) {
-        const a = args[0] instanceof Function
-            ? String(safe.Function_toString(args[0]))
-            : String(args[0]);
-        const b = args[1];
+    proxyApplyFn('setTimeout', function setTimeout(context) {
+        const { callArgs } = context;
+        const a = callArgs[0] instanceof Function
+            ? String(safe.Function_toString(callArgs[0]))
+            : String(callArgs[0]);
+        const b = callArgs[1];
         if ( needle === '' && delay === undefined ) {
             safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
-            return Reflect.apply(target, thisArg, args);
+            return context.reflect();
         }
         let defuse;
         if ( needle !== '' ) {
@@ -84,10 +85,10 @@ function noSetTimeoutIf(
             defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
         }
         if ( defuse ) {
-            args[0] = function(){};
+            callArgs[0] = function(){};
             safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
         }
-        return Reflect.apply(target, thisArg, args);
+        return context.reflect();
     });
 }
 
@@ -106,26 +107,70 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
-    if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, {
-            construct: handler,
-            get(target, prop, receiver) {
-                if ( prop === 'toString' ) { return toString; }
-                return Reflect.get(target, prop, receiver);
-            },
-        });
-        return (...args) => Reflect.construct(...args);
-    }
-    context[prop] = new Proxy(fn, {
-        apply: handler,
-        get(target, prop, receiver) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop, receiver);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
         },
-    });
-    return (...args) => Reflect.apply(...args);
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -263,9 +308,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

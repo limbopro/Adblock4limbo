@@ -40,9 +40,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["CookieTerm18","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
+const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["dismissedTrackingBanner","true"],["CookieTerm18","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
 
-const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["fatalmodel.com",4],["brightonandhovealbion.com",5],["ssga.com",6],["cachecrawler.com",[7,8]],["griffin.com",9],["c6bank.com.br",10],["gedik.com",11],["collato.com",[12,13]]]);
+const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["blockchain.com",4],["fatalmodel.com",5],["brightonandhovealbion.com",6],["ssga.com",7],["cachecrawler.com",[8,9]],["griffin.com",10],["c6bank.com.br",11],["gedik.com",12],["collato.com",[13,14]]]);
 
 const entitiesMap = new Map([]);
 
@@ -274,9 +274,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

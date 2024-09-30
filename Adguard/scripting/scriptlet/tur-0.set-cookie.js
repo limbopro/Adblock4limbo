@@ -40,9 +40,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"]];
+const argsList = [["__gads","ok"],["popundr0","7"],["modalads","yes"],["notheme","1"]];
 
-const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["isvecgundemi.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2]]);
+const hostnamesMap = new Map([["gecmisi.com.tr",0],["filmseyretizlet.com",1],["gazeterize.com",2],["bursahaberdar.com",2],["isvecgundemi.com",2],["kgrt.net",2],["halk54.com",2],["eskisehirhaber.com",2],["haberlisin.com",2],["eksisozluk.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -238,9 +238,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

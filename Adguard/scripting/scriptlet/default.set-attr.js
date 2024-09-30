@@ -40,9 +40,9 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],[".video-skip[data-time]","data-time","0"],[".lazy","src","[data-sco-src]"],["c-wiz[data-p] [data-query] a[target=\"_blank\"][role=\"link\"]","rlhc","1"],["span[class] img.lazyload[width]","src","[data-src]"]];
+const argsList = [["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],[".video-skip[data-time]","data-time","0"],[".lazy","src","[data-sco-src]"],["c-wiz[data-p] [data-query] a[target=\"_blank\"][role=\"link\"]","rlhc","1"],[":is(.watch-on-link-logo, li.post) img.ezlazyload[src^=\"data:image\"][data-ezsrc]","src","[data-ezsrc]"],["span[class] img.lazyload[width]","src","[data-src]"]];
 
-const hostnamesMap = new Map([["statisticsanddata.org",0],["18kalebettv.xyz",1],["19kalebettv.xyz",1],["rocketnews24.com",2],["soranews24.com",2],["youpouch.com",2],["phileweb.com",4]]);
+const hostnamesMap = new Map([["statisticsanddata.org",0],["18kalebettv.xyz",1],["19kalebettv.xyz",1],["rocketnews24.com",2],["soranews24.com",2],["youpouch.com",2],["wnynewsnow.com",4],["phileweb.com",5]]);
 
 const entitiesMap = new Map([["www.google",3]]);
 
@@ -296,9 +296,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

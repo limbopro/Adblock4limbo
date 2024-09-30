@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["realm.Oidc.3pc","$remove$"],["adViewed","true"],["nxt_is_incognito","false"]];
 
-const hostnamesMap = new Map([["sfchronicle.com",0],["moneycontrol.com",1],["advocate-news.com",2],["akronnewsreporter.com",2],["bocopreps.com",2],["bostonherald.com",2],["broomfieldenterprise.com",2],["brushnewstribune.com",2],["buffzone.com",2],["burlington-record.com",2],["canoncitydailyrecord.com",2],["chicagotribune.com",2],["chicoer.com",2],["coloradodaily.com",2],["coloradohometownweekly.com",2],["courant.com",2],["dailybreeze.com",2],["dailybulletin.com",2],["dailycamera.com",2],["dailydemocrat.com",2],["dailyfreeman.com",2],["dailylocal.com",2],["dailynews.com",2],["dailypress.com",2],["dailytribune.com",2],["delcotimes.com",2],["denverpost.com",2],["eastbaytimes.com",2],["eptrail.com",2],["excelsiorcalifornia.com",2],["fortmorgantimes.com",2],["greeleytribune.com",2],["journal-advocate.com",2],["julesburgadvocate.com",2],["lamarledger.com",2],["lowellsun.com",2],["macombdaily.com",2],["mainlinemedianews.com",2],["marinij.com",2],["mcall.com",2],["mendocinobeacon.com",2],["mercurynews.com",2],["montereyherald.com",2],["morningjournal.com",2],["nashobavalleyvoice.com",2],["news-herald.com",2],["nydailynews.com",2],["ocregister.com",2],["oneidadispatch.com",2],["orlandosentinel.com",2],["orovillemr.com",2],["paradisepost.com",2],["pasadenastarnews.com",2],["pilotonline.com",2],["pottsmerc.com",2],["pressandguide.com",2],["pressenterprise.com",2],["presstelegram.com",2],["readingeagle.com",2],["record-bee.com",2],["redbluffdailynews.com",2],["redlandsdailyfacts.com",2],["reporterherald.com",2],["sandiegouniontribune.com",2],["santacruzsentinel.com",2],["saratogian.com",2],["sbsun.com",2],["sentinelandenterprise.com",2],["sgvtribune.com",2],["siliconvalley.com",2],["southplattesentinel.com",2],["sun-sentinel.com",2],["themorningsun.com",2],["thenewsherald.com",2],["theoaklandpress.com",2],["thereporter.com",2],["thereporteronline.com",2],["times-standard.com",2],["timescall.com",2],["timesherald.com",2],["timesheraldonline.com",2],["trentonian.com",2],["troyrecord.com",2],["twincities.com",2],["ukiahdailyjournal.com",2],["voicenews.com",2],["whittierdailynews.com",2],["willitsnews.com",2]]);
+const hostnamesMap = new Map([["expressnews.com",0],["sfchronicle.com",0],["moneycontrol.com",1],["advocate-news.com",2],["akronnewsreporter.com",2],["bocopreps.com",2],["bostonherald.com",2],["broomfieldenterprise.com",2],["brushnewstribune.com",2],["buffzone.com",2],["burlington-record.com",2],["canoncitydailyrecord.com",2],["chicagotribune.com",2],["chicoer.com",2],["coloradodaily.com",2],["coloradohometownweekly.com",2],["courant.com",2],["dailybreeze.com",2],["dailybulletin.com",2],["dailycamera.com",2],["dailydemocrat.com",2],["dailyfreeman.com",2],["dailylocal.com",2],["dailynews.com",2],["dailypress.com",2],["dailytribune.com",2],["delcotimes.com",2],["denverpost.com",2],["eastbaytimes.com",2],["eptrail.com",2],["excelsiorcalifornia.com",2],["fortmorgantimes.com",2],["greeleytribune.com",2],["journal-advocate.com",2],["julesburgadvocate.com",2],["lamarledger.com",2],["lowellsun.com",2],["macombdaily.com",2],["mainlinemedianews.com",2],["marinij.com",2],["mcall.com",2],["mendocinobeacon.com",2],["mercurynews.com",2],["montereyherald.com",2],["morningjournal.com",2],["nashobavalleyvoice.com",2],["news-herald.com",2],["nydailynews.com",2],["ocregister.com",2],["oneidadispatch.com",2],["orlandosentinel.com",2],["orovillemr.com",2],["paradisepost.com",2],["pasadenastarnews.com",2],["pilotonline.com",2],["pottsmerc.com",2],["pressandguide.com",2],["pressenterprise.com",2],["presstelegram.com",2],["readingeagle.com",2],["record-bee.com",2],["redbluffdailynews.com",2],["redlandsdailyfacts.com",2],["reporterherald.com",2],["sandiegouniontribune.com",2],["santacruzsentinel.com",2],["saratogian.com",2],["sbsun.com",2],["sentinelandenterprise.com",2],["sgvtribune.com",2],["siliconvalley.com",2],["southplattesentinel.com",2],["sun-sentinel.com",2],["themorningsun.com",2],["thenewsherald.com",2],["theoaklandpress.com",2],["thereporter.com",2],["thereporteronline.com",2],["times-standard.com",2],["timescall.com",2],["timesherald.com",2],["timesheraldonline.com",2],["trentonian.com",2],["troyrecord.com",2],["twincities.com",2],["ukiahdailyjournal.com",2],["voicenews.com",2],["whittierdailynews.com",2],["willitsnews.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -274,9 +274,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

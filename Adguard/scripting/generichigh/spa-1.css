@@ -22,6 +22,8 @@
 /* spa-1 */
 
 a[href*="/jump/next.php"][id="gpujs_link"],
-a[href^="https://ads.impulsosocial.online/"] {
+a[href^="https://ads.impulsosocial.online/"],
+div[id^="banner-300x250-"],
+div[id^="banner-970x250-"] {
     display: none !important;
 }

@@ -40,9 +40,9 @@ const uBOL_m3uPrune = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/redirector\\.googlevideo\\.com\\/videoplayback\\?[\\s\\S]*?dclk_video_ads/","pubads.g.doubleclick.net/ondemand/hls/"],["/^\\w{11}[1-9]\\d+\\.ts/",".m3u8"],["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm","/uplynk\\.com\\/.*?\\.m3u8/"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/^[a-z0-9]{13}o.*\\.ts|adjump|^[a-z0-9]{12}1\\d+\\.ts/",".m3u8"]];
+const argsList = [["/redirector\\.googlevideo\\.com\\/videoplayback\\?[\\s\\S]*?dclk_video_ads/","pubads.g.doubleclick.net/ondemand/hls/"],["/^\\w{11}[1-9]\\d+\\.ts/",".m3u8"],["lura.live/prod/","/prog.m3u8"],["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm","/uplynk\\.com\\/.*?\\.m3u8/"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/^[a-z0-9]{13}o.*\\.ts|adjump|^[a-z0-9]{12}1\\d+\\.ts/",".m3u8"]];
 
-const hostnamesMap = new Map([["sbs.com.au",0],["phim1080.in",1],["10play.com.au",2],["fox.com",3],["foxsports.com",3],["mephimtv.cc",4],["player.theplatform.com",5],["yhmgo.com",6]]);
+const hostnamesMap = new Map([["sbs.com.au",0],["phim1080.in",1],["vix.com",2],["10play.com.au",3],["fox.com",4],["foxsports.com",4],["mephimtv.cc",5],["player.theplatform.com",6],["yhmgo.com",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -342,9 +342,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

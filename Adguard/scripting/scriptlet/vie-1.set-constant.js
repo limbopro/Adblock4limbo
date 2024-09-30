@@ -40,9 +40,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ADMStorageFileCDN","noopFunc"],["open","noopFunc"],["a_vid","0"],["D4zz","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["video.adVast",""],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
+const argsList = [["ADMStorageFileCDN","noopFunc"],["a_vid","0"],["video.adVast",""],["open","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["D4zz","noopFunc"],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["freeplayervideo.com",1],["abysscdn.com",1],["player-cdn.com",1],["geoip.redirect-ads.com",1],["full.cliphot69.live",2],["gvnvh18.com",3],["sexdiaryx.one",3],["phimvietsub.pro",4],["api.anime3s.com",4],["subnhanh.xyz",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vndoc.com",7],["web.motsex.net",8],["vuasex.club",8],["phimsexviet.io",8],["phimsexvietnam.app",8],["mobi.clipsex.xxx",8],["gm.phimsexnhanh.tv",8],["clipsex.cam",8],["mobi.ditnhau.cc",8],["phim.sexhayvl.org",8],["3x.clipsexhot.net",8],["xx.sexkhongchemoi.com",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["cliphot69.baby",1],["coiphimsex.net",2],["vx.phimsexvip.cc",2],["phimsexviet.io",2],["phimsexvietnam.app",2],["xxx.clipsex.xxx",2],["gm.phimsexnhanh.tv",2],["clipsex.cam",2],["mobi.ditnhau.cc",2],["phim.sexhayvl.org",2],["xem.clipsexhot.net",2],["xx.sexkhongchemoi.com",2],["freeplayervideo.com",3],["abysscdn.com",3],["player-cdn.com",3],["geoip.redirect-ads.com",3],["phimvietsub.pro",4],["api.anime3s.com",4],["subnhanh.xyz",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vndoc.com",7],["www.gvnvh.net",8],["sexdiaryx.one",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -370,9 +370,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }
@@ -423,6 +432,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         value = function(){ return true; };
     } else if ( raw === 'falseFunc' ) {
         value = function(){ return false; };
+    } else if ( raw === 'throwFunc' ) {
+        value = function(){ throw ''; };
     } else if ( /^-?\d+$/.test(raw) ) {
         value = parseInt(raw);
         if ( isNaN(raw) ) { return; }

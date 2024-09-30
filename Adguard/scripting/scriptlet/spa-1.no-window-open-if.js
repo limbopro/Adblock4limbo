@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[],["","10"],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["passeura"],["/^https?:\\/\\/movieknowing\\.com\\/$/","trueFunc"],["redirdx.in/go/"],["?key="]];
 
-const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["poseidonhd2.co",0],["geeknetic.es",0],["animeblix.com",[0,4]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["verdragonball.online",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["okpeliz.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["movieknowing.com",5],["redirdx.in",6],["torrentjogos.com.br",7]]);
+const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["pelispedia.life",0],["poseidonhd2.co",0],["geeknetic.es",0],["animeblix.com",[0,4]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["verdragonball.online",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["okpeliz.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["movieknowing.com",5],["redirdx.in",6],["torrentjogos.com.br",7]]);
 
 const entitiesMap = new Map([["cuevana3",0],["gnula",0],["cuevana2espanol",0],["cuevana",0],["netcine",0],["atomixhq",2]]);
 
@@ -76,25 +76,26 @@ function noWindowOpenIf(
         return decoyElem;
     };
     const noopFunc = function(){};
-    proxyApplyFn('open', function open(target, thisArg, args) {
-        const haystack = args.join(' ');
+    proxyApplyFn('open', function open(context) {
+        const { callArgs } = context;
+        const haystack = callArgs.join(' ');
         if ( rePattern.test(haystack) !== targetMatchResult ) {
             if ( safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, `Allowed (${args.join(', ')})`);
+                safe.uboLog(logPrefix, `Allowed (${callArgs.join(', ')})`);
             }
-            return Reflect.apply(target, thisArg, args);
+            return context.reflect();
         }
-        safe.uboLog(logPrefix, `Prevented (${args.join(', ')})`);
+        safe.uboLog(logPrefix, `Prevented (${callArgs.join(', ')})`);
         if ( delay === '' ) { return null; }
         if ( decoy === 'blank' ) {
-            args[0] = 'about:blank';
-            const r = Reflect.apply(target, thisArg, args);
+            callArgs[0] = 'about:blank';
+            const r = context.reflect();
             setTimeout(( ) => { r.close(); }, autoRemoveAfter);
             return r;
         }
         const decoyElem = decoy === 'obj'
-            ? createDecoy('object', 'data', ...args)
-            : createDecoy('iframe', 'src', ...args);
+            ? createDecoy('object', 'data', ...callArgs)
+            : createDecoy('iframe', 'src', ...callArgs);
         let popup = decoyElem.contentWindow;
         if ( typeof popup === 'object' && popup !== null ) {
             Object.defineProperty(popup, 'closed', { value: false });
@@ -146,26 +147,70 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
-    if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, {
-            construct: handler,
-            get(target, prop, receiver) {
-                if ( prop === 'toString' ) { return toString; }
-                return Reflect.get(target, prop, receiver);
-            },
-        });
-        return (...args) => Reflect.construct(...args);
-    }
-    context[prop] = new Proxy(fn, {
-        apply: handler,
-        get(target, prop, receiver) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop, receiver);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
         },
-    });
-    return (...args) => Reflect.apply(...args);
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -303,9 +348,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

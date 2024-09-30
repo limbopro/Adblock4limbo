@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.09.14
+// @version      0.4.09.16
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -84,6 +84,7 @@
 // @match        https://javday.tv/*
 // @match        https://www.xvideos.com/*
 // @match        https://4hu.tv/*
+// @match        https://www.4hu.tv/*
 // @match        https://netflav.com/*
 // @match        https://netflav5.com/*
 // @match        https://filemoon.sx/*
@@ -238,7 +239,7 @@ var imax = {
         btbdys: ".artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
-        ddrk2: "body,* {overflow-x:hidden !important;}",
+        ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
         jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, iframe, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
         test: "*, div,img {display: none !important}",
         tvn: "img[src*='gif'], iframe {display:none !important; pointer-events:none important;}",
@@ -265,7 +266,7 @@ var imax = {
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos
         javbus: ".ad-item,.ad-box {display:none !important}",
-        _4hu: "script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
+        _4hu: "div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
@@ -523,11 +524,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //css_adsRemove(imax.css.ddrk);
             css_adsRemove(imax.css.ddrk2);
             //selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 0)
-            
+
             var divx = document.createElement('div');
-            divx.id = 'adblock4limbo';
-            divx.style.display = 'none';
+            divx.id = 'adblock4limbox';
+            divx.style = 'display:none;'
             var body = document.querySelectorAll('body')[0];
+            //body.appendChild(divx);
             var child = document.querySelectorAll('#sajdhfbjwhe,#kasjbgih,#fkasjgf')
             child.forEach((x) => {
                 divx.appendChild(x);
@@ -559,7 +561,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'jable': // 2333
             console.log("IT'S JABLE");
 
-            // 子域名跳转至主域名 jable.tv 
+            // 子域名跳转至主域名 jable.tv
             if (/\b(.*\.)(jable\.tv.*)\b/i.test(window.location.href.toLowerCase())) {
                 console.log(window.location.href.toLowerCase())
                 let url_jable_rewrite = window.location.href.toLowerCase().replace(/https:\/\/\w{2,3}\./i, "https://")
@@ -570,7 +572,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             // 去除首页广告
 
             if (document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').length > 0) {
-                document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').forEach((x) => { // xxx 
+                document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').forEach((x) => { // xxx
                     if (x.querySelectorAll("[target='_blank']").length > 0) {
                         x.style = "display: none !important; z-index:-114154; display:block; width:0vw; height:0";
                     }
@@ -803,7 +805,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             /*
             let ads = document.querySelectorAll('div.hidden-sm.hidden-md');
             for (i = 0; i < ads.length; i++) {
-                if (ads[i].querySelectorAll("a[href*='abs']")) { 
+                if (ads[i].querySelectorAll("a[href*='abs']")) {
                     ads[i].remove();
                 }
             }

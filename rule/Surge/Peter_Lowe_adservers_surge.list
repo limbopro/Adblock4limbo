@@ -1,8 +1,10 @@
+
+
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 09 Sep 2024 15:04:31 GMT
-# entries:        3542
+# last updated:   Wed, 25 Sep 2024 14:12:10 GMT
+# entries:        3546
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -118,7 +120,6 @@ DOMAIN-SUFFIX,ad.digitallook.com
 DOMAIN-SUFFIX,ad.dnoticias.pt
 DOMAIN-SUFFIX,ad.domainfactory.de
 DOMAIN-SUFFIX,ad.exyws.org
-DOMAIN-SUFFIX,ad.foxnetworks.com
 DOMAIN-SUFFIX,ad.grafika.cz
 DOMAIN-SUFFIX,ad.gt
 DOMAIN-SUFFIX,ad.hbv.de
@@ -223,7 +224,6 @@ DOMAIN-SUFFIX,ademails.com
 DOMAIN-SUFFIX,adengage.com
 DOMAIN-SUFFIX,adetracking.com
 DOMAIN-SUFFIX,adeure.com
-DOMAIN-SUFFIX,adexc.net
 DOMAIN-SUFFIX,adexchangegate.com
 DOMAIN-SUFFIX,adexchangeprediction.com
 DOMAIN-SUFFIX,adexpose.com
@@ -351,7 +351,6 @@ DOMAIN-SUFFIX,ads-kesselhaus.com
 DOMAIN-SUFFIX,ads-trk.vidible.tv
 DOMAIN-SUFFIX,ads-twitter.com
 DOMAIN-SUFFIX,ads.365.mk
-DOMAIN-SUFFIX,ads.4tube.com
 DOMAIN-SUFFIX,ads.5ci.lt
 DOMAIN-SUFFIX,ads.73dpi.com
 DOMAIN-SUFFIX,ads.a-snag-smartmoney.fyi
@@ -364,6 +363,7 @@ DOMAIN-SUFFIX,ads.activestate.com
 DOMAIN-SUFFIX,ads.adfox.ru
 DOMAIN-SUFFIX,ads.administrator.de
 DOMAIN-SUFFIX,ads.adred.de
+DOMAIN-SUFFIX,ads.adsbtc.fun
 DOMAIN-SUFFIX,ads.adstream.com.ro
 DOMAIN-SUFFIX,ads.adultfriendfinder.com
 DOMAIN-SUFFIX,ads.advance.net
@@ -382,7 +382,6 @@ DOMAIN-SUFFIX,ads.asiafriendfinder.com
 DOMAIN-SUFFIX,ads.aspalliance.com
 DOMAIN-SUFFIX,ads.avazu.net
 DOMAIN-SUFFIX,ads.bb59.ru
-DOMAIN-SUFFIX,ads.belointeractive.com
 DOMAIN-SUFFIX,ads.betfair.com
 DOMAIN-SUFFIX,ads.bigchurch.com
 DOMAIN-SUFFIX,ads.bigfoot.com
@@ -453,7 +452,6 @@ DOMAIN-SUFFIX,ads.forbes.net
 DOMAIN-SUFFIX,ads.formit.cz
 DOMAIN-SUFFIX,ads.fortunecity.com
 DOMAIN-SUFFIX,ads.fotosidan.se
-DOMAIN-SUFFIX,ads.foxnetworks.com
 DOMAIN-SUFFIX,ads.friendfinder.com
 DOMAIN-SUFFIX,ads.gamecity.net
 DOMAIN-SUFFIX,ads.gamespyid.com
@@ -561,6 +559,7 @@ DOMAIN-SUFFIX,ads.printscr.com
 DOMAIN-SUFFIX,ads.prisacom.com
 DOMAIN-SUFFIX,ads.program3.com
 DOMAIN-SUFFIX,ads.psd2html.com
+DOMAIN-SUFFIX,ads.pubmatic.com
 DOMAIN-SUFFIX,ads.quoka.de
 DOMAIN-SUFFIX,ads.radialserver.com
 DOMAIN-SUFFIX,ads.radio1.lv
@@ -1024,6 +1023,7 @@ DOMAIN-SUFFIX,awzbijw.com
 DOMAIN-SUFFIX,axiomaticalley.com
 DOMAIN-SUFFIX,axonix.com
 DOMAIN-SUFFIX,ay.delivery
+DOMAIN-SUFFIX,ayads.co
 DOMAIN-SUFFIX,aztracking.net
 DOMAIN-SUFFIX,b-s.tercept.com
 DOMAIN-SUFFIX,b.videoamp.com
@@ -1320,6 +1320,7 @@ DOMAIN-SUFFIX,click.redditmail.com
 DOMAIN-SUFFIX,click.twcwigs.com
 DOMAIN-SUFFIX,click2freemoney.com
 DOMAIN-SUFFIX,click360v2-ingest.azurewebsites.net
+DOMAIN-SUFFIX,clickadddilla.com
 DOMAIN-SUFFIX,clickadz.com
 DOMAIN-SUFFIX,clickagents.com
 DOMAIN-SUFFIX,clickbank.com
@@ -1386,7 +1387,6 @@ DOMAIN-SUFFIX,compactbanner.com
 DOMAIN-SUFFIX,comparereaction.com
 DOMAIN-SUFFIX,compiledoctor.com
 DOMAIN-SUFFIX,comprabanner.it
-DOMAIN-SUFFIX,concernedchange.com
 DOMAIN-SUFFIX,conditionchange.com
 DOMAIN-SUFFIX,conductrics.com
 DOMAIN-SUFFIX,connatix.com
@@ -1467,7 +1467,6 @@ DOMAIN-SUFFIX,cushiondrum.com
 DOMAIN-SUFFIX,customad.cnn.com
 DOMAIN-SUFFIX,customads.co
 DOMAIN-SUFFIX,customers.kameleoon.com
-DOMAIN-SUFFIX,cutcurrent.com
 DOMAIN-SUFFIX,cutechin.com
 DOMAIN-SUFFIX,cxense.com
 DOMAIN-SUFFIX,cyberbounty.com
@@ -1523,6 +1522,7 @@ DOMAIN-SUFFIX,directorym.com
 DOMAIN-SUFFIX,directtrack.com
 DOMAIN-SUFFIX,discountclick.com
 DOMAIN-SUFFIX,discreetfield.com
+DOMAIN-SUFFIX,displayvertising.com
 DOMAIN-SUFFIX,disqusads.com
 DOMAIN-SUFFIX,dist.belnk.com
 DOMAIN-SUFFIX,distillery.wistia.com
@@ -1757,6 +1757,7 @@ DOMAIN-SUFFIX,fvl1f.pw
 DOMAIN-SUFFIX,fwcdn1.com
 DOMAIN-SUFFIX,fwcdn2.com
 DOMAIN-SUFFIX,fxstyle.net
+DOMAIN-SUFFIX,g2.gumgum.com
 DOMAIN-SUFFIX,ga.clearbit.com
 DOMAIN-SUFFIX,gadsbee.com
 DOMAIN-SUFFIX,galaxien.com
@@ -1775,6 +1776,7 @@ DOMAIN-SUFFIX,geovisite.com
 DOMAIN-SUFFIX,getclicky.com
 DOMAIN-SUFFIX,getintent.com
 DOMAIN-SUFFIX,getmyads.com
+DOMAIN-SUFFIX,getxmlisi.com
 DOMAIN-SUFFIX,giddycoat.com
 DOMAIN-SUFFIX,glisteningsign.com
 DOMAIN-SUFFIX,globalismedia.com
@@ -1803,6 +1805,7 @@ DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,gostats.com
 DOMAIN-SUFFIX,gothamads.com
+DOMAIN-SUFFIX,gotoyahoo.com
 DOMAIN-SUFFIX,gotraffic.net
 DOMAIN-SUFFIX,gp.dejanews.com
 DOMAIN-SUFFIX,graizoah.com
@@ -2213,6 +2216,7 @@ DOMAIN-SUFFIX,mediaplex.com
 DOMAIN-SUFFIX,mediascale.de
 DOMAIN-SUFFIX,mediaserver.bwinpartypartners.it
 DOMAIN-SUFFIX,mediasmart.io
+DOMAIN-SUFFIX,mediasquare.fr
 DOMAIN-SUFFIX,mediatext.com
 DOMAIN-SUFFIX,mediavine.com
 DOMAIN-SUFFIX,mediavoice.com
@@ -2228,6 +2232,7 @@ DOMAIN-SUFFIX,megastats.com
 DOMAIN-SUFFIX,megawerbung.de
 DOMAIN-SUFFIX,meltmilk.com
 DOMAIN-SUFFIX,memorizeneck.com
+DOMAIN-SUFFIX,merequartz.com
 DOMAIN-SUFFIX,messagenovice.com
 DOMAIN-SUFFIX,metadsp.co.uk
 DOMAIN-SUFFIX,metaffiliation.com
@@ -2408,6 +2413,7 @@ DOMAIN-SUFFIX,offer.fyber.com
 DOMAIN-SUFFIX,offer.sponsorpay.com
 DOMAIN-SUFFIX,offerforge.com
 DOMAIN-SUFFIX,offermatica.com
+DOMAIN-SUFFIX,ogads-pa.googleapis.com
 DOMAIN-SUFFIX,oglasi.posjetnica.com
 DOMAIN-SUFFIX,ogury.com
 DOMAIN-SUFFIX,ojrq.net
@@ -2471,6 +2477,7 @@ DOMAIN-SUFFIX,oxado.com
 DOMAIN-SUFFIX,oxcash.com
 DOMAIN-SUFFIX,oxen.hillcountrytexas.com
 DOMAIN-SUFFIX,p-n.io
+DOMAIN-SUFFIX,paa-reporting-advertising.amazon
 DOMAIN-SUFFIX,pagead.l.google.com
 DOMAIN-SUFFIX,pagefair.com
 DOMAIN-SUFFIX,pagerank-ranking.de
@@ -2656,7 +2663,6 @@ DOMAIN-SUFFIX,qctop.com
 DOMAIN-SUFFIX,ql.tc
 DOMAIN-SUFFIX,qnsr.com
 DOMAIN-SUFFIX,qrlsx.com
-DOMAIN-SUFFIX,quacksquirrel.com
 DOMAIN-SUFFIX,quaintcan.com
 DOMAIN-SUFFIX,quantcast.com
 DOMAIN-SUFFIX,quantcount.com
@@ -2765,6 +2771,7 @@ DOMAIN-SUFFIX,rexadvert.xyz
 DOMAIN-SUFFIX,reyden-x.com
 DOMAIN-SUFFIX,rhombusads.com
 DOMAIN-SUFFIX,rhythmone.com
+DOMAIN-SUFFIX,richaudience.com
 DOMAIN-SUFFIX,richmails.com
 DOMAIN-SUFFIX,richstring.com
 DOMAIN-SUFFIX,rightstats.com
@@ -2779,6 +2786,7 @@ DOMAIN-SUFFIX,rmedia.boston.com
 DOMAIN-SUFFIX,roar.com
 DOMAIN-SUFFIX,robotreplay.com
 DOMAIN-SUFFIX,rockabox.co
+DOMAIN-SUFFIX,rockagainst.com
 DOMAIN-SUFFIX,rok.com.com
 DOMAIN-SUFFIX,rollconnection.com
 DOMAIN-SUFFIX,rose.ixbt.com
@@ -2828,7 +2836,6 @@ DOMAIN-SUFFIX,scaredsong.com
 DOMAIN-SUFFIX,scaredswing.com
 DOMAIN-SUFFIX,scarfsmash.com
 DOMAIN-SUFFIX,scatteredheat.com
-DOMAIN-SUFFIX,scatteredquiver.com
 DOMAIN-SUFFIX,scintillatingscissors.com
 DOMAIN-SUFFIX,scintillatingsilver.com
 DOMAIN-SUFFIX,scissorsstatement.com
@@ -2987,6 +2994,7 @@ DOMAIN-SUFFIX,srvmath.com
 DOMAIN-SUFFIX,srvtrck.com
 DOMAIN-SUFFIX,srwww1.com
 DOMAIN-SUFFIX,sshowads.pubmatic.com
+DOMAIN-SUFFIX,sskzlabs.com
 DOMAIN-SUFFIX,st.dynamicyield.com
 DOMAIN-SUFFIX,st.pubmatic.com
 DOMAIN-SUFFIX,stack-sonar.com
@@ -3037,7 +3045,6 @@ DOMAIN-SUFFIX,steadfastsound.com
 DOMAIN-SUFFIX,steadfastsystem.com
 DOMAIN-SUFFIX,steelhouse.com
 DOMAIN-SUFFIX,steelhousemedia.com
-DOMAIN-SUFFIX,steepscale.com
 DOMAIN-SUFFIX,stickyadstv.com
 DOMAIN-SUFFIX,stiffgame.com
 DOMAIN-SUFFIX,stimulatingsneeze.com
@@ -3101,7 +3108,6 @@ DOMAIN-SUFFIX,t.visitorqueue.com
 DOMAIN-SUFFIX,t.x.co
 DOMAIN-SUFFIX,taboola.com
 DOMAIN-SUFFIX,tag-demo.mention-me.com
-DOMAIN-SUFFIX,tag.links-analytics.com
 DOMAIN-SUFFIX,tag.mention-me.com
 DOMAIN-SUFFIX,tagcommander.com
 DOMAIN-SUFFIX,tagger.opecloud.com

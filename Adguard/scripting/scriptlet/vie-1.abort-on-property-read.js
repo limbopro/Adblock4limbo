@@ -40,9 +40,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
+const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
 
-const hostnamesMap = new Map([["aoe.vn",0],["audiotruyenfull.com",1],["javnong.cc",2],["linkneverdie.net",3],["linkneverdie.top",3],["linkneverdie2.com",3],["phimdinhcao.net",4],["phimlongtieng.net",4],["www.phimdinhcaoz.com",4],["plvb.xyz",[5,6,7,8,9]],["plcdn.xyz",[5,6,7,8,9]],["tinsoikeo.live",10],["truyensieuhay.com",11],["phimvietsub.pro",11],["quangcaoyenbai.com",11],["sex.sieudamtv.biz",11],["ephimchill.com",11],["ophimhdvn3.net",11],["thuvienhd.xyz",11],["xemtv.tvhayhd.tv",11],["www.khophim88s.com",11],["nhentaivn.online",11],["mv.dailyphimz.com",11],["mv.phimbathu.one",11],["veryfiles.com",12],["viettoons.tv",13],["mv.phimmoiaz.cc",13],["dood.pm",13],["ytstv.me",13],["animet2.net",13],["anh.moe",13],["hentaivn.blog",13],["maclife.io",13],["javfc2.net",13],["hoctot.hocmai.vn",13],["bluphim.art",13],["cdn2.blueskychilling.online",13],["ohaha79xxx.site",13],["fastscans.net",13],["vinaurl.net",14],["www.nettruyenupp.com",15],["xoilaca.cc",16],["yts.do",17],["yts.mx",17],["yts.rs",17],["znews.vn",18]]);
+const hostnamesMap = new Map([["animevietsubs.com",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["phimdinhcao.net",5],["phimlongtieng.net",5],["www.phimdinhcaoz.com",5],["plcdn.xyz",[6,7,8,9,10]],["tinsoikeo.live",11],["truyensieuhay.com",12],["phimvietsub.pro",12],["quangcaoyenbai.com",12],["sieudamtv.biz",12],["ephimchill.com",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.tv",12],["www.khophim88s.com",12],["nhentaivn.online",12],["mv.dailyphimz.com",12],["mv.phimbathu.one",12],["veryfiles.com",13],["viettoons.tv",14],["mv.phimmoiaz.cc",14],["dood.pm",14],["ytstv.me",14],["animet3.net",14],["anh.moe",14],["hentaivn.blog",14],["maclife.io",14],["javfc2.net",14],["hoctot.hocmai.vn",14],["bluphim.art",14],["cdn2.blueskychilling.online",14],["ohaha79xxx.site",14],["fastscansz.com",14],["herotruyen.com",14],["vinaurl.net",15],["www.nettruyenupp.com",16],["xoilacg.cc",17],["yts.do",18],["yts.mx",18],["yts.rs",18],["znews.vn",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -244,9 +244,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

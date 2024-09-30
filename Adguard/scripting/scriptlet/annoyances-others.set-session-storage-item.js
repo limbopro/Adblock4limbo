@@ -40,9 +40,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["signUpBannerDismissed","true"],["shouldShowAuthBannerAfterQuery","false"],["modalViewed","true"]];
+const argsList = [["sem30_popup_shown","1"],["signUpBannerDismissed","true"],["shouldShowAuthBannerAfterQuery","false"],["modalViewed","true"]];
 
-const hostnamesMap = new Map([["perplexity.ai",[0,1]],["fantasyfootballhub.co.uk",2]]);
+const hostnamesMap = new Map([["semrush.com",0],["perplexity.ai",[1,2]],["fantasyfootballhub.co.uk",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -274,9 +274,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

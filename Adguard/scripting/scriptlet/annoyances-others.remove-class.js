@@ -40,9 +40,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["js-no-scroll","html","stay"],["blocked","body","stay"],["mfp-popup-exit-quiz-v2","","stay"],["stickyBanner","","stay"],["float-player","","stay"],["vp-docked","","stay"],["vp-docked-mode","","stay"],["styles_stuck__gtILi","","stay"],["desktop-floating-player","","stay"],["sticky","","stay"],["jw-flag-floating","","stay"],["video-flyout--fixed","","stay"],["powa-sticky","","stay"],["video__docker_state_docked","","stay"],["dock","","stay"],["floating","","stay"]];
+const argsList = [["oon-scroll-lock","body","stay"],["js-no-scroll","html","stay"],["blocked","body","stay"],["mfp-popup-exit-quiz-v2","","stay"],["stickyBanner","","stay"],["float-player","","stay"],["vp-docked","","stay"],["vp-docked-mode","","stay"],["styles_stuck__gtILi","","stay"],["desktop-floating-player","","stay"],["sticky","","stay"],["jw-flag-floating","","stay"],["video-flyout--fixed","","stay"],["powa-sticky","","stay"],["video__docker_state_docked","","stay"],["dock","","stay"],["floating","","stay"]];
 
-const hostnamesMap = new Map([["opensecrets.org",0],["inquinte.ca",1],["neilpatel.com",2],["redfin.com",3],["texasmonthly.com",4],["yahoo.com",[5,6]],["msnbc.com",7],["today.com",7],["nbcnews.com",7],["thehill.com",8],["nbc4i.com",8],["ktla.com",8],["ktsm.com",8],["kark.com",8],["myarklamiss.com",8],["nwahomepage.com",8],["mytwintiers.com",8],["news10.com",8],["wavy.com",8],["independent.co.uk",[9,10]],["allrecipes.com",10],["telemundopr.com",11],["nbcchicago.com",11],["nbcdfw.com",11],["nbcboston.com",11],["nbcconnecticut.com",11],["nbcphiladelphia.com",11],["nbcsandiego.com",11],["nbclosangeles.com",11],["nbcnewyork.com",11],["nbcbayarea.com",11],["kbtx.com",12],["kptv.com",12],["wfaa.com",13],["wkyc.com",13],["9news.com",13],["11alive.com",13],["6abc.com",14],["abc11.com",14],["abc13.com",14],["abc30.com",14],["abc7.com",14],["abc7chicago.com",14],["abc7news.com",14],["abc7ny.com",14],["cbsnews.com",15]]);
+const hostnamesMap = new Map([["on.orf.at",0],["opensecrets.org",1],["inquinte.ca",2],["neilpatel.com",3],["redfin.com",4],["texasmonthly.com",5],["yahoo.com",[6,7]],["msnbc.com",8],["today.com",8],["nbcnews.com",8],["thehill.com",9],["nbc4i.com",9],["ktla.com",9],["ktsm.com",9],["kark.com",9],["myarklamiss.com",9],["nwahomepage.com",9],["mytwintiers.com",9],["news10.com",9],["wavy.com",9],["independent.co.uk",[10,11]],["allrecipes.com",11],["telemundopr.com",12],["nbcchicago.com",12],["nbcdfw.com",12],["nbcboston.com",12],["nbcconnecticut.com",12],["nbcphiladelphia.com",12],["nbcsandiego.com",12],["nbclosangeles.com",12],["nbcnewyork.com",12],["nbcbayarea.com",12],["kbtx.com",13],["kptv.com",13],["wfaa.com",14],["wkyc.com",14],["9news.com",14],["11alive.com",14],["6abc.com",15],["abc11.com",15],["abc13.com",15],["abc30.com",15],["abc7.com",15],["abc7chicago.com",15],["abc7news.com",15],["abc7ny.com",15],["cbsnews.com",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -277,9 +277,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["/devtools|debu/"]];
 
-const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["phimfit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["vipstreams.in",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["sflix.to",12],["webnovel.com",13],["vgembed.com",14],["sbot.cf",15],["bluphim.com",15],["cdnmoviking.tech",15],["movie4kto.net",16],["alfred.camera",17],["vidstreaming.xyz",18],["choosingnothing.com",18],["ngelmat.net",19],["bembed.net",20],["embedv.net",20],["fslinks.org",20],["listeamed.net",20],["v6embed.xyz",20],["vgplayer.xyz",20],["vid-guard.com",20],["fightful.com",21],["player.melaniezettofrais.online",22]]);
+const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["phimfit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["vipstreams.in",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["sflix.to",12],["webnovel.com",13],["vgembed.com",14],["sbot.cf",15],["bluphim.com",15],["cdnmoviking.tech",15],["movie4kto.net",16],["alfred.camera",17],["vidstreaming.xyz",18],["choosingnothing.com",18],["jetv.xyz",18],["ngelmat.net",19],["bembed.net",20],["embedv.net",20],["fslinks.org",20],["listeamed.net",20],["v6embed.xyz",20],["vgplayer.xyz",20],["vid-guard.com",20],["fightful.com",21],["player.melaniezettofrais.online",22]]);
 
 const entitiesMap = new Map([["vidsrc",20],["vembed",20]]);
 
@@ -67,14 +67,15 @@ function noSetIntervalIf(
         delay = parseInt(delay, 10);
     }
     const reNeedle = safe.patternToRegex(needle);
-    proxyApplyFn('setInterval', function setInterval(target, thisArg, args) {
-        const a = args[0] instanceof Function
-            ? String(safe.Function_toString(args[0]))
-            : String(args[0]);
-        const b = args[1];
+    proxyApplyFn('setInterval', function setInterval(context) {
+        const { callArgs } = context;
+        const a = callArgs[0] instanceof Function
+            ? String(safe.Function_toString(callArgs[0]))
+            : String(callArgs[0]);
+        const b = callArgs[1];
         if ( needle === '' && delay === undefined ) {
             safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
-            return Reflect.apply(target, thisArg, args);
+            return context.reflect();
         }
         let defuse;
         if ( needle !== '' ) {
@@ -84,10 +85,10 @@ function noSetIntervalIf(
             defuse = (b === delay || isNaN(b) && isNaN(delay) ) !== delayNot;
         }
         if ( defuse ) {
-            args[0] = function(){};
+            callArgs[0] = function(){};
             safe.uboLog(logPrefix, `Prevented:\n${a}\n${b}`);
         }
-        return Reflect.apply(target, thisArg, args);
+        return context.reflect();
     });
 }
 
@@ -106,26 +107,70 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
-    if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, {
-            construct: handler,
-            get(target, prop, receiver) {
-                if ( prop === 'toString' ) { return toString; }
-                return Reflect.get(target, prop, receiver);
-            },
-        });
-        return (...args) => Reflect.construct(...args);
-    }
-    context[prop] = new Proxy(fn, {
-        apply: handler,
-        get(target, prop, receiver) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop, receiver);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
         },
-    });
-    return (...args) => Reflect.apply(...args);
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -263,9 +308,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

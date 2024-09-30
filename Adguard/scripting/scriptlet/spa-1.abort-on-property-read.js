@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["block_ads"],["setNptTechAdblockerCookie"],["possivelAdblockDetectado"],["eazyAdUnBlockerHttp"],["antiAdBlockerStyle"],["adBlockFunction"],["Object.prototype.autoRecov"],["ad_nodes"],["hb_now"],["adblock"],["adsBlocked"],["adblockDetected"],["gothamBatAdblock"],["Bl0ckAdBl0ckCo"],["ppAdblocks"],["mMCheckAgainBlock"],["popunder"],["userout"],["initPu"],["cJsEdge"],["lolaop"],["adk_pdisp"],["redirectpage"],["initPopunder"],["_cpp"],["popurl"],["the_crakien"],["allclick_Public"],["zoneSett"],["checkCookieClick"],["_0x4e52"],["Redirecionar"],["scriptwz_url"],["smrtSB"],["asgPopScript"],["Object.prototype.Focm"],["smrtSP"],["adbClick"],["pub"],["Pub2"],["area51"]];
 
-const hostnamesMap = new Map([["luratoons.com",0],["lura-toons.com",0],["elespanol.com",1],["mundodevalor.me",2],["aquiyahorajuegos.net",3],["visorcrab.com",4],["httpmangacrab2.com",4],["manga-crab.com",4],["mangacrab.com",4],["hinatasoul.com",5],["pcworld.es",6],["tunovelaligera.com",7],["20minutos.es",8],["comando.to",9],["porno-japones.top",10],["tvplusgratis.com",11],["seriesretro.com",12],["cozinha.minhasdelicias.com",13],["diariodegoias.com.br",14],["outerspace.com.br",14],["1i1.in",15],["brjogostorrents.com",16],["packsmega.info",17],["embedder.net",18],["poseidonhd2.co",19],["fiuxy2.com",20],["pelispop.me",21],["baixartorrents.org",[22,23]],["pctmix1.com",24],["aquariumgays.com",24],["allfeeds.live",25],["grantorrent.nl",28],["hentaistube.com",29],["libertinga.net",30],["mrpiracy.top",31],["seireshd.com",32],["cinetux.to",[33,34]],["holanime.com",35],["pirlotv.es",36],["repelisplus.vip",37],["descargaranimehentai.com",38],["tuhentaionline.com",39],["animeonline.ninja",40]]);
+const hostnamesMap = new Map([["luratoons.com",0],["lura-toons.com",0],["elespanol.com",1],["mundodevalor.me",2],["aquiyahorajuegos.net",3],["visorcrab.com",4],["httpmangacrab2.com",4],["manga-crab.com",4],["mangacrab.com",4],["hinatasoul.com",5],["pcworld.es",6],["tunovelaligera.com",7],["20minutos.es",8],["comando.to",9],["porno-japones.top",10],["tvplusgratis.com",11],["seriesretro.com",12],["cozinha.minhasdelicias.com",13],["diariodegoias.com.br",14],["outerspace.com.br",14],["1i1.in",15],["brjogostorrents.com",16],["packsmega.info",17],["embedder.net",18],["pelispedia.life",19],["poseidonhd2.co",19],["fiuxy2.com",20],["pelispop.me",21],["baixartorrents.org",[22,23]],["pctmix1.com",24],["aquariumgays.com",24],["allfeeds.live",25],["grantorrent.nl",28],["hentaistube.com",29],["libertinga.net",30],["mrpiracy.top",31],["seireshd.com",32],["cinetux.to",[33,34]],["holanime.com",35],["pirlotv.es",36],["repelisplus.vip",37],["descargaranimehentai.com",38],["tuhentaionline.com",39],["animeonline.ninja",40]]);
 
 const entitiesMap = new Map([["cuevana3",19],["gnula",19],["cuevana2espanol",19],["cuevana",19],["cinecalidad2",26],["cine-calidad",27]]);
 
@@ -244,9 +244,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

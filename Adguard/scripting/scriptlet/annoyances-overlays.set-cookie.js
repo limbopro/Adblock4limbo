@@ -40,9 +40,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_501941328","1"],["popup_closed","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
+const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_501941328","1"],["popup_closed","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["sabl","1"],["logged_in","1","","reload","1"],["ezgwcc","1"]];
 
-const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["oled-info.com",3],["readergrev.com",4],["objectivebayesian.com",4],["monopoly.marketecture.tv",4],["jointhefollowup.com",4],["gourmetfoodstore.com",5],["theinformation.com",6],["intellinews.com",7],["kermitlynch.com",8],["jingdaily.com",9],["babiesrus.ca",10],["toysrus.ca",10],["clevercreations.org",11],["iconduck.com",12],["shojiwax.com",13],["skepticalraptor.com",13],["yvonnebennetti.com",14],["funko.com",15],["loungefly.com",15],["saucerco.com",16],["sharperimage.com",17],["sweetwater.com",18],["assos.com",19],["techonthenet.com",20],["tumblr.com",21],["scitechdaily.com",22]]);
+const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["oled-info.com",3],["lowpass.cc",4],["readergrev.com",4],["objectivebayesian.com",4],["monopoly.marketecture.tv",4],["jointhefollowup.com",4],["gourmetfoodstore.com",5],["theinformation.com",6],["in.investing.com",7],["intellinews.com",8],["kermitlynch.com",9],["jingdaily.com",10],["babiesrus.ca",11],["toysrus.ca",11],["clevercreations.org",12],["iconduck.com",13],["shojiwax.com",14],["skepticalraptor.com",14],["girlscoutshop.com",15],["yvonnebennetti.com",16],["funko.com",17],["loungefly.com",17],["saucerco.com",18],["columbiasportswear.it",19],["columbiasportswear.at",20],["columbiasportswear.de",21],["columbiasportswear.fr",22],["columbiasportswear.es",23],["columbiasportswear.co.uk",24],["sharperimage.com",25],["sweetwater.com",26],["assos.com",27],["techonthenet.com",28],["tumblr.com",29],["scitechdaily.com",30]]);
 
 const entitiesMap = new Map([]);
 
@@ -238,9 +238,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

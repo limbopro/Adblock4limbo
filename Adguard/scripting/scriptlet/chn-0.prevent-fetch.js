@@ -40,9 +40,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["pagead2.googlesyndication.com"],["/googlesyndication\\.com|doubleclick\\.net/"],["doubleclick.net"],["www3.doubleclick.net"]];
+const argsList = [["method:HEAD"],["pagead2.googlesyndication.com"],["/googlesyndication\\.com|doubleclick\\.net/"],["doubleclick.net"],["www3.doubleclick.net"]];
 
-const hostnamesMap = new Map([["fsbot.xyz",0],["mpyit.com",0],["linetv.tw",0],["wandhi.com",1],["04647.club",2],["taiwanlibrarysearch.herokuapp.com",3]]);
+const hostnamesMap = new Map([["hmanga.world",0],["fsbot.xyz",1],["mpyit.com",1],["linetv.tw",1],["wandhi.com",2],["04647.club",3],["taiwanlibrarysearch.herokuapp.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -93,10 +93,11 @@ function noFetchIf(
             responseProps.type = { value: responseType };
         }
     }
-    proxyApplyFn('fetch', function fetch(target, thisArg, args) {
-        const details = args[0] instanceof self.Request
-            ? args[0]
-            : Object.assign({ url: args[0] }, args[1]);
+    proxyApplyFn('fetch', function fetch(context) {
+        const { callArgs } = context;
+        const details = callArgs[0] instanceof self.Request
+            ? callArgs[0]
+            : Object.assign({ url: callArgs[0] }, callArgs[1]);
         let proceed = true;
         try {
             const props = new Map();
@@ -114,7 +115,7 @@ function noFetchIf(
                 safe.uboLog(logPrefix, `Called: ${out.join('\n')}`);
             }
             if ( propsToMatch === '' && responseBody === '' ) {
-                return Reflect.apply(target, thisArg, args);
+                return context.reflect();
             }
             proceed = needles.length === 0;
             for ( const { key, pattern } of needles ) {
@@ -129,7 +130,7 @@ function noFetchIf(
         } catch(ex) {
         }
         if ( proceed ) {
-            return Reflect.apply(target, thisArg, args);
+            return context.reflect();
         }
         return generateContentFn(responseBody).then(text => {
             safe.uboLog(logPrefix, `Prevented with response "${text}"`);
@@ -218,26 +219,70 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
-    if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, {
-            construct: handler,
-            get(target, prop, receiver) {
-                if ( prop === 'toString' ) { return toString; }
-                return Reflect.get(target, prop, receiver);
-            },
-        });
-        return (...args) => Reflect.construct(...args);
-    }
-    context[prop] = new Proxy(fn, {
-        apply: handler,
-        get(target, prop, receiver) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop, receiver);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
         },
-    });
-    return (...args) => Reflect.apply(...args);
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -375,9 +420,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

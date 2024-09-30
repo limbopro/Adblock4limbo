@@ -40,9 +40,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["registration_modal_dismissed","true"],["apv","false"]];
+const argsList = [["registration_modal_dismissed","true"],["apv","false"],["campaign_seen_today","true"]];
 
-const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1]]);
+const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["democracynow.org",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -238,9 +238,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

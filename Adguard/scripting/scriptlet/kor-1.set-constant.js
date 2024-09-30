@@ -40,9 +40,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["_ads_zum_main_initbanner_750_zum_main_br_widget_336","true"],["list_end_run_read_top_boom","noopFunc"],["list_end_run_pds_notice_boom","noopFunc"],["list_end_run_comment_bottom_boom","noopFunc"],["list_end_run_center_boom","noopFunc"],["list_end_run_list_bottom_boom","noopFunc"],["list_end_run","noopFunc"],["Math.uuid","","","asFunction"],["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
+const argsList = [["_ads_zum_main_initbanner_750_zum_main_br_widget_336","true"],["list_end_run_read_top_boom","noopFunc"],["list_end_run_pds_notice_boom","noopFunc"],["list_end_run_comment_bottom_boom","noopFunc"],["list_end_run_center_boom","noopFunc"],["list_end_run_list_bottom_boom","noopFunc"],["list_end_run","noopFunc"],["Math.uuid","","","asFunction"],["jQuery.fn.getUrlParameter","","asFunction"],["window.__NEXT_DATA__.props.pageProps.initialState.post.adhistory","{}"],["$is.powerLink.loadPowerLink","noopFunc"],["SbsHtml5PlayerContainer.prototype.renderAdSequence","noopFunc"],["pum_vars","undefined"],["player.renderAdSequence","undefined"],["bannerpop.popup","noopFunc"],["admode","0"],["player.advertisement_finished","true"],["reple_dori","noopFunc"],["getAdcrUrl",""],["random_imglink","noopFunc"],["vrixadsdk","undefined"],["hahaha","noopFunc"],["adsBlocked","noopFunc"],["DHAntiAdBlocker","true"],["checkAds","noopFunc"],["NAVER_ADPOST_V2","noopFunc"]];
 
-const hostnamesMap = new Map([["zum.com",0],["m.humoruniv.com",[1,2,3,4,5,6]],["hub.zum.com",7],["mememedia.co.kr",8],["humors.zigcou.com",9],["shopping.interpark.com",10],["sbs.co.kr",[11,13]],["fun-iyagi.co.kr",12],["timecoffee.co.kr",12],["333aaa.site",12],["domin.co.kr",14],["uwayapply.com",15],["tvchosun.com",16],["app.dcinside.com",17],["m.dcinside.com",17],["naver.com",18],["koreapas.com",19],["imbc.com",20],["meeco.kr",21],["sogirl.so",22],["tistory.com",23],["sajuplus.net",23],["auto.danawa.com",24]]);
+const hostnamesMap = new Map([["zum.com",0],["m.humoruniv.com",[1,2,3,4,5,6]],["hub.zum.com",7],["mememedia.co.kr",8],["humors.zigcou.com",9],["shopping.interpark.com",10],["sbs.co.kr",[11,13]],["fun-iyagi.co.kr",12],["timecoffee.co.kr",12],["333aaa.site",12],["domin.co.kr",14],["uwayapply.com",15],["tvchosun.com",16],["app.dcinside.com",17],["m.dcinside.com",17],["naver.com",18],["koreapas.com",19],["imbc.com",20],["kilho.net",21],["meeco.kr",22],["sogirl.so",23],["tistory.com",24],["sajuplus.net",24],["auto.danawa.com",25]]);
 
 const entitiesMap = new Map([]);
 
@@ -370,9 +370,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }
@@ -423,6 +432,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         value = function(){ return true; };
     } else if ( raw === 'falseFunc' ) {
         value = function(){ return false; };
+    } else if ( raw === 'throwFunc' ) {
+        value = function(){ throw ''; };
     } else if ( /^-?\d+$/.test(raw) ) {
         value = parseInt(raw);
         if ( isNaN(raw) ) { return; }

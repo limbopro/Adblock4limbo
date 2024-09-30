@@ -40,9 +40,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],[".navbar-nav > li.nav-item > a[href^=\"https://www.origoclick.com\"]","top","auto"]];
+const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["[target=\"_blank\"][rel=\"noopener noreferrer\"]","display","block"]];
 
-const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["download.megaup.net",1],["japscan.lol",2]]);
+const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["download.megaup.net",1],["1001tracklists.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -94,7 +94,7 @@ function spoofCSS(
             const targetElements = new WeakSet(document.querySelectorAll(selector));
             if ( targetElements.has(args[0]) === false ) { return style; }
             const proxiedStyle = new Proxy(style, {
-                get(target, prop, receiver) {
+                get(target, prop) {
                     if ( typeof target[prop] === 'function' ) {
                         if ( prop === 'getPropertyValue' ) {
                             return cloackFunc(function getPropertyValue(prop) {
@@ -106,7 +106,7 @@ function spoofCSS(
                     if ( instanceProperties.includes(prop) ) {
                         return Reflect.get(target, prop);
                     }
-                    return spoofStyle(prop, Reflect.get(target, prop, receiver));
+                    return spoofStyle(prop, Reflect.get(target, prop));
                 },
                 getOwnPropertyDescriptor(target, prop) {
                     if ( propToValueMap.has(prop) ) {
@@ -122,11 +122,11 @@ function spoofCSS(
             });
             return proxiedStyle;
         },
-        get(target, prop, receiver) {
+        get(target, prop) {
             if ( prop === 'toString' ) {
                 return target.toString.bind(target);
             }
-            return Reflect.get(target, prop, receiver);
+            return Reflect.get(target, prop);
         },
     });
     Element.prototype.getBoundingClientRect = new Proxy(Element.prototype.getBoundingClientRect, {
@@ -145,11 +145,11 @@ function spoofCSS(
             }
             return new self.DOMRect(rect.x, rect.y, width, height);
         },
-        get(target, prop, receiver) {
+        get(target, prop) {
             if ( prop === 'toString' ) {
                 return target.toString.bind(target);
             }
-            return Reflect.get(target, prop, receiver);
+            return Reflect.get(target, prop);
         },
     });
 }
@@ -289,9 +289,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

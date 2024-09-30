@@ -40,9 +40,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adBlockerDetected","false"],["blockId","0"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["adBlockDetected","noopFunc"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"],["univresalP","noopFunc"],["TagProvider.cleanup","noopFunc"]];
+const argsList = [["use","false"],["adBlockerDetected","false"],["blockId","0"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["adBlockDetected","noopFunc"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"],["univresalP","noopFunc"],["TagProvider.cleanup","noopFunc"]];
 
-const hostnamesMap = new Map([["egotter.com",0],["inkbrushpainting.work",1],["bridalgown.work",1],["contents-group.work",1],["heisei-housewarming.work",1],["liquidfoundation.work",1],["nailcolor.work",1],["studioglass.work",1],["tapestry.work",1],["teaceremony.work",1],["weddinghall.work",1],["520call.me",2],["520cc.cc",2],["dropbooks.net",3],["coolpan.net",4],["g-pc.info",5],["intaa.net",6],["h-ken.net",7],["pictab.art",8],["onagazou.info",8],["fashionpost.jp",9],["jav380.com",10],["sukima.me",[11,12,13,14]],["sonae.sankei.co.jp",15],["ponta.abstractpainting.work",[16,17]],["dotti2.jp",18],["pochitto2.jp",18],["gotouchi.jp",18],["cmnw.jp",18],["ddd-smart.net",19],["famitsu.com",20]]);
+const hostnamesMap = new Map([["0115765.com",0],["egotter.com",1],["inkbrushpainting.work",2],["bridalgown.work",2],["contents-group.work",2],["heisei-housewarming.work",2],["liquidfoundation.work",2],["nailcolor.work",2],["studioglass.work",2],["tapestry.work",2],["teaceremony.work",2],["weddinghall.work",2],["520call.me",3],["520cc.cc",3],["dropbooks.net",4],["coolpan.net",5],["g-pc.info",6],["intaa.net",7],["h-ken.net",8],["pictab.art",9],["onagazou.info",9],["fashionpost.jp",10],["jav380.com",11],["sukima.me",[12,13,14,15]],["sonae.sankei.co.jp",16],["ponta.abstractpainting.work",[17,18]],["dotti2.jp",19],["pochitto2.jp",19],["gotouchi.jp",19],["cmnw.jp",19],["ddd-smart.net",20],["famitsu.com",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -370,9 +370,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }
@@ -423,6 +432,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         value = function(){ return true; };
     } else if ( raw === 'falseFunc' ) {
         value = function(){ return false; };
+    } else if ( raw === 'throwFunc' ) {
+        value = function(){ throw ''; };
     } else if ( /^-?\d+$/.test(raw) ) {
         value = parseInt(raw);
         if ( isNaN(raw) ) { return; }

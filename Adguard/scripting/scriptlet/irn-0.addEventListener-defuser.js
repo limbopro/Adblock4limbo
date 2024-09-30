@@ -40,9 +40,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
+const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["DOMContentLoaded","ajax_tptn_tracker"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
 
-const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["elmefarda.com",2],["s-moshaver.com",2],["ganjipakhsh.com",3],["javan-musics.com",4],["tabanmusic.com",4],["texahang.org",4],["iran-music.com",4],["lenz.ir",5],["mopon.ir",6],["noorlib.ir",7],["subkade.ir",8]]);
+const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["downloadha.com",2],["elmefarda.com",3],["s-moshaver.com",3],["ganjipakhsh.com",4],["javan-musics.com",5],["tabanmusic.com",5],["texahang.org",5],["iran-music.com",5],["lenz.ir",6],["mopon.ir",7],["noorlib.ir",8],["subkade.ir",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -101,18 +101,19 @@ function addEventListenerDefuser(
         return matchesBoth;
     };
     runAt(( ) => {
-        proxyApplyFn('EventTarget.prototype.addEventListener', function(target, thisArg, args) {
+        proxyApplyFn('EventTarget.prototype.addEventListener', function(context) {
+            const { callArgs, thisArg } = context;
             let t, h;
             try {
-                t = String(args[0]);
-                if ( typeof args[1] === 'function' ) {
-                    h = String(safe.Function_toString(args[1]));
-                } else if ( typeof args[1] === 'object' && args[1] !== null ) {
-                    if ( typeof args[1].handleEvent === 'function' ) {
-                        h = String(safe.Function_toString(args[1].handleEvent));
+                t = String(callArgs[0]);
+                if ( typeof callArgs[1] === 'function' ) {
+                    h = String(safe.Function_toString(callArgs[1]));
+                } else if ( typeof callArgs[1] === 'object' && callArgs[1] !== null ) {
+                    if ( typeof callArgs[1].handleEvent === 'function' ) {
+                        h = String(safe.Function_toString(callArgs[1].handleEvent));
                     }
                 } else {
-                    h = String(args[1]);
+                    h = String(callArgs[1]);
                 }
             } catch(ex) {
             }
@@ -121,7 +122,7 @@ function addEventListenerDefuser(
             } else if ( shouldPrevent(thisArg, t, h) ) {
                 return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
             }
-            return Reflect.apply(target, thisArg, args);
+            return context.reflect();
         });
     }, extraArgs.runAt);
 }
@@ -141,26 +142,70 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
-    if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, {
-            construct: handler,
-            get(target, prop, receiver) {
-                if ( prop === 'toString' ) { return toString; }
-                return Reflect.get(target, prop, receiver);
-            },
-        });
-        return (...args) => Reflect.construct(...args);
-    }
-    context[prop] = new Proxy(fn, {
-        apply: handler,
-        get(target, prop, receiver) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop, receiver);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
         },
-    });
-    return (...args) => Reflect.apply(...args);
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function runAt(fn, when) {
@@ -327,9 +372,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["simplegameAdCountDown","1000","0.02"],["aeriaGamesAdCountDown","","0.02"],["visibility","4000"],["[native code]","2000","0.3"],["[native code]","3000","0.25"],["[native code]","4000","0.2"],["window.ADGMAD.repair_bonus","30000","0.001"]];
 
-const hostnamesMap = new Map([["simplegame.jp",0],["minigame.aeriagames.jp",1],["ponta.abstractpainting.work",[2,3,4,5]],["game.hiroba.dpoint.docomo.ne.jp",6]]);
+const hostnamesMap = new Map([["simplegame.jp",0],["minigame.aeriagames.jp",1],["ponta.abstractpainting.work",[2,3,4,5]],["kantangame.com",6],["game.hiroba.dpoint.docomo.ne.jp",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -213,9 +213,18 @@ function safeSelf() {
     const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
     let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
     safe.sendToLogger = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
+        }
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
         if ( bcBuffer === undefined ) {
             return bc.postMessage({ what: 'messageToLogger', type, text });
         }

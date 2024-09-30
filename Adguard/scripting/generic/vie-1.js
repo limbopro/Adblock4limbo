@@ -33,7 +33,7 @@
 
 // vie-1
 
-const toImport = [[3075652,"#ads-preload"],[11083042,"#banner-top"],[14424411,"#mobileCatfish"],[14727432,"#pmadv"],[4238981,".aanetwork-ads-box"],[15434546,".ad_location"],[4159676,".close-ads"],[9624758,".google-auto-placed"],[3079339,".jw-cue"],[14738640,".midroll-marker"],[16672551,".quangcao"],[4723804,".right-box.top-block"],[4317978,".samBannerUnit"],[4954116,".tpm-unit"]];
+const toImport = [[1977996,"#_AM_POPUP_FRAME"],[3075652,"#ads-preload"],[11083042,"#banner-top"],[14424411,"#mobileCatfish"],[14727432,"#pmadv"],[4238981,".aanetwork-ads-box"],[15434546,".ad_location"],[4159676,".close-ads"],[3942003,".float-ck"],[9624758,".google-auto-placed"],[3079339,".jw-cue"],[14738640,".midroll-marker"],[16672551,".quangcao"],[4723804,".right-box.top-block"],[4317978,".samBannerUnit"],[4954116,".tpm-unit"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

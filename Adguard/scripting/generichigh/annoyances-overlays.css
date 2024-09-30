@@ -25,18 +25,15 @@
 [data-block-type="block:newsletter"],
 [data-module="newsletter-signup"],
 [data-nxt-template-substep="SubscribeNewsletter"],
-[data-spot-im-class="card-container"],
 [data-testid="NewsletterSubscribeFormWrapper"],
 [data-testid="newsletter-promo-widget"],
 [data-testid="prism-newsletter-form"],
 app-emailsubscribe,
 app-newsletter-widget,
-div[class*="frontend-components-SubscribePrompt-"],
 div[data-newsletter-1],
 div[data-newsletter-2],
 div[id^="pu-email-form-"],
 gannett-atoms-component-newsletter-cta,
-hl-newsletter-cta,
 journey-inline-newsletter {
     display: none !important;
 }

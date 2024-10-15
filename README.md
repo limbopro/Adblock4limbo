@@ -68,12 +68,15 @@
 | [hanime1](https://hanime1.me/) | 工口动漫 | 同上  | 图片  |
 | [知乎](https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour) | 问答  | 油猴  | PC端未登录状态浏览知乎体验优化 |
 
+> 目前去网页广告计划支持约30+网站：涵盖**在线影视**/**电子漫画**/XXXX；  
+参阅完整的：[在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)；如果其中没有你 **希望支持去广告的网站**，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；  
+
 > 如无特别说明，【毒奶去网页广告计划】在对以上网站网页广告去除过程中，代理软件（如Surge、QuantumultX、Shadowrocket）将优先支持，油猴用户次之或不完美支持，PC、Mac等桌面浏览器用户优先推荐安装 [ublock origin](https://limbopro.com/archives/1098.html) 等浏览器扩展，Android 用户推荐安装 [Firefox 浏览器 + ublock origin 组合](https://limbopro.com/archives/26805.html) 以屏蔽网页广告。
 
-> 目前去网页广告计划支持约30+网站：涵盖**在线影视**/**电子漫画**/XXXX；  
-参阅完整的：[在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)；如果其中没有你 **希望支持去广告的网站**，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；
 
-> FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）；iOS 用户常见FAQ：https://t.me/Adblock4limbo/21 ； 油猴用户常见FAQ：https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
+> FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）；  
+> iOS 用户常见FAQ：https://t.me/Adblock4limbo/21 ；  
+> 油猴用户常见FAQ：https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；  
 
 @> Surge 用户如需访问 Pornhub ，请直接访问 cn.pxxxn.com （即中文版），访问 www.pxxxn.com 或会失败；
 
@@ -81,6 +84,7 @@
 
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
 > 2. 如你在使用过程中遇到什么问题或**有网站需要移除广告**，可通过 [issues](https://github.com/limbopro/Adblock4limbo/issues) 提交；
+> 3. 直连联系博主电报：http://t.me/limboprobot / Gmail： service.limbopro.com@gmail.com
 
 ### 提交 issue 格式
 
@@ -92,7 +96,8 @@
 > 5. 做过哪些尝试：你的操作路径（先做了什么又做了什么发生了什么现象）...
 > 6. 一些细节说明：
 
-快来提交 [issue](https://github.com/limbopro/Adblock4limbo/issues) 吧
+不局限如上，越多细节越好。  
+快来提交 [issue](https://github.com/limbopro/Adblock4limbo/issues) 吧！
 
 ### 💡 涉及重要脚本及其源码
 
@@ -147,6 +152,14 @@ https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surg
 > **如何更新模块与外部资源（脚本/分流/重写等）**：模块安装好后，可点击 - **模块** - 找到 **安装的模块** ，左滑 想要更新的模块 - 点击 **更新** ；返回 Surge - **首页** - 点击左上角的 **配置文件名称** - 找到 **编辑** - **外部资源** - **全部更新**； 
 
 ### 毒奶去广告计划（for Shadowrocket）
+
+参阅原文：https://limbopro.com/archives/12904.html 在此不再列出；
+
+### 毒奶去广告计划（for Loon）
+
+参阅原文：https://limbopro.com/archives/12904.html 在此不再列出；
+
+### 毒奶去广告计划（for Stash）
 
 参阅原文：https://limbopro.com/archives/12904.html 在此不再列出；
 

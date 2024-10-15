@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["#text","/スポンサードリンク：?|楽天広告：/"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
 
-const hostnamesMap = new Map([["kasegeru.blog.jp",0],["betweenjpandkr.blog",1],["dvdrev.com",2],["fm.sekkaku.net",3],["lifematome.blog",4],["free-avx.jp",5],["ideal2ch.livedoor.biz",6],["seikeidouga.blog.jp",6],["tcg-bloglife.com",6],["ch-review.net",6],["gametohkenranbu.sakuraweb.com",6],["jisakuhibi.jp",6],["rank1-media.com",6],["resizer.myct.jp",6]]);
+const hostnamesMap = new Map([["kasegeru.blog.jp",0],["betweenjpandkr.blog",1],["dvdrev.com",2],["fm.sekkaku.net",3],["lifematome.blog",4],["free-avx.jp",5],["kabegami.jpn.org",6],["ideal2ch.livedoor.biz",6],["seikeidouga.blog.jp",6],["tcg-bloglife.com",6],["ch-review.net",6],["gametohkenranbu.sakuraweb.com",6],["jisakuhibi.jp",6],["rank1-media.com",6],["resizer.myct.jp",6]]);
 
 const entitiesMap = new Map([]);
 

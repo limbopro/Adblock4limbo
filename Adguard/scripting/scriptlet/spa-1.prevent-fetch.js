@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
 
-const hostnamesMap = new Map([["istigo.net",0],["modescanlator.net",0],["r7.com",0],["descargas2024gratis.blogspot.com",0],["megacurioso.net",0],["tudonoticiasbr.com",0],["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["modescanlator.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,9]],["puromarketing.com",[0,9]],["todostartups.com",[0,9]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["cerisetoon.com",1],["sinensistoon.com",1],["packsmega.info",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["acortados.com",[5,6]],["acortalink.me",5],["todoandroid.live",6],["gadgetzona.net",6],["qwanturankpro.com",6],["desbloquea.me",6],["mega-enlace.com",6],["enlacito.com",6],["acortame-esto.com",6],["atv.pe",7],["monumental.co.cr",7],["elcomercio.com",7],["antena7.com.do",7],["rqp.com.bo",7],["canal12.com.sv",7],["chapintv.com",7],["vtv.com.hn",7],["tn23.tv",7],["canal13mexico.com",7],["c9n.com.py",7],["repretel.com",7],["redbolivision.tv.bo",7],["independentespanol.com",7],["teleculinaria.pt",8],["nptmedia.tv",10],["suaads.com",11],["reidoplacar.com",11],["suaurl.com",11],["costumbresmexico.com",12],["desbloqueador.site",12],["notipostingt.com",13],["tivify.tv",14],["netmovies.com.br",15],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
+const hostnamesMap = new Map([["istigo.net",0],["modescanlator.net",0],["r7.com",0],["descargas2024gratis.blogspot.com",0],["megacurioso.net",0],["tudonoticiasbr.com",0],["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["modescanlator.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,9]],["puromarketing.com",[0,9]],["todostartups.com",[0,9]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["cerisetoon.com",1],["sinensistoon.com",1],["packsmega.info",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["acortados.com",[5,6]],["acortalink.me",5],["todoandroid.live",6],["gadgetzona.net",6],["qwanturankpro.com",6],["desbloquea.me",6],["mega-enlace.com",6],["enlacito.com",6],["acortame-esto.com",6],["atv.pe",7],["monumental.co.cr",7],["elcomercio.com",7],["antena7.com.do",7],["rqp.com.bo",7],["canal12.com.sv",7],["chapintv.com",7],["vtv.com.hn",7],["tn23.tv",7],["canal13mexico.com",7],["c9n.com.py",7],["repretel.com",7],["redbolivision.tv.bo",7],["independentespanol.com",7],["teleculinaria.pt",8],["nptmedia.tv",10],["suaads.com",11],["reidoplacar.com",11],["suaurl.com",11],["costumbresmexico.com",12],["desbloqueador.site",12],["notipostingt.com",13],["tivify.tv",14],["netmovies.com.br",15],["coempregos.com.br",16],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -132,7 +132,7 @@ function noFetchIf(
         if ( proceed ) {
             return context.reflect();
         }
-        return generateContentFn(responseBody).then(text => {
+        return Promise.resolve(generateContentFn(false, responseBody)).then(text => {
             safe.uboLog(logPrefix, `Prevented with response "${text}"`);
             const response = new Response(text, {
                 headers: {
@@ -149,7 +149,7 @@ function noFetchIf(
     });
 }
 
-function generateContentFn(directive) {
+function generateContentFn(trusted, directive) {
     const safe = safeSelf();
     const randomize = len => {
         const chunks = [];
@@ -163,27 +163,27 @@ function generateContentFn(directive) {
         return chunks.join(' ').slice(0, len);
     };
     if ( directive === 'true' ) {
-        return Promise.resolve(randomize(10));
+        return randomize(10);
     }
     if ( directive === 'emptyObj' ) {
-        return Promise.resolve('{}');
+        return '{}';
     }
     if ( directive === 'emptyArr' ) {
-        return Promise.resolve('[]');
+        return '[]';
     }
     if ( directive === 'emptyStr' ) {
-        return Promise.resolve('');
+        return '';
     }
     if ( directive.startsWith('length:') ) {
         const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
-        if ( match ) {
-            const min = parseInt(match[1], 10);
-            const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
-            const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
-            return Promise.resolve(randomize(len | 0));
-        }
+        if ( match === null ) { return ''; }
+        const min = parseInt(match[1], 10);
+        const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
+        const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
+        return randomize(len | 0);
     }
-    if ( directive.startsWith('war:') && scriptletGlobals.warOrigin ) {
+    if ( directive.startsWith('war:') ) {
+        if ( scriptletGlobals.warOrigin === undefined ) { return ''; }
         return new Promise(resolve => {
             const warOrigin = scriptletGlobals.warOrigin;
             const warName = directive.slice(4);
@@ -199,9 +199,12 @@ function generateContentFn(directive) {
             };
             warXHR.open('GET', fullpath.join(''));
             warXHR.send();
-        });
+        }).catch(( ) => '');
     }
-    return Promise.resolve('');
+    if ( trusted ) {
+        return directive;
+    }
+    return '';
 }
 
 function proxyApplyFn(

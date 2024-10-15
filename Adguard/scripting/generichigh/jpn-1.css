@@ -32,6 +32,7 @@ div[class^="_taxel_ad_article_"],
 div[class^="insentense-adsense"],
 div[id^="JP_"][style],
 div[id^="active_overlay"],
-iframe[id^="IFTG"] {
+iframe[id^="IFTG"],
+iframe[src^="https://gallerieshub.com/"] {
     display: none !important;
 }

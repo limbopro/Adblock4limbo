@@ -40,9 +40,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".addClass('getir')"],["flipHover"]];
+const argsList = [["showAdBlockMessage"],[".addClass('getir')"],["flipHover"]];
 
-const hostnamesMap = new Map([["nowtv.com.tr",0],["ensonhaber.com",1]]);
+const hostnamesMap = new Map([["gecmisi.com.tr",0],["nowtv.com.tr",1],["ensonhaber.com",2]]);
 
 const entitiesMap = new Map([]);
 

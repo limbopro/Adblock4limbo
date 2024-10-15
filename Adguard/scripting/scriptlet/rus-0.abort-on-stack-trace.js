@@ -40,13 +40,13 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Object.prototype.autoplay","assets"],["document.getElementsByTagName","adsBlocked"],["Object.prototype.parallax","window.onload"],["Object.prototype.ssrAds","completeRadar"],["Object.prototype.crossDomain","ecbrStart"]];
+const argsList = [["Object.prototype.autoplay","assets"],["document.getElementsByTagName","adsBlocked"],["fetch","eval"],["Object.prototype.parallax","window.onload"],["Object.prototype.ssrAds","completeRadar"],["Object.prototype.crossDomain","ecbrStart"]];
 
-const hostnamesMap = new Map([["tvzvezda.ru",0],["blackwot.ru",1],["mail.ru",3],["www.ukr.net",4]]);
+const hostnamesMap = new Map([["tvzvezda.ru",0],["blackwot.ru",1],["forums.rusmedserv.com",2],["mail.ru",4],["www.ukr.net",5]]);
 
-const entitiesMap = new Map([["porno365",2]]);
+const entitiesMap = new Map([["porno365",3]]);
 
-const exceptionsMap = new Map([["3igames.mail.ru",[3]],["account.mail.ru",[3]],["auto.mail.ru",[3]],["biz.mail.ru",[3]],["blog.mail.ru",[3]],["bonus.mail.ru",[3]],["calendar.mail.ru",[3]],["calls.mail.ru",[3]],["cloud.mail.ru",[3]],["connect.mail.ru",[3]],["deti.mail.ru",[3]],["dobro.mail.ru",[3]],["e.mail.ru",[3]],["finance.mail.ru",[3]],["gibdd.mail.ru",[3]],["health.mail.ru",[3]],["help.mail.ru",[3]],["hi-tech.mail.ru",[3]],["horo.mail.ru",[3]],["kino.mail.ru",[3]],["lady.mail.ru",[3]],["love.mail.ru",[3]],["mcs.mail.ru",[3]],["minigames.mail.ru",[3]],["my.mail.ru",[3]],["news.mail.ru",[3]],["o2.mail.ru",[3]],["octavius.mail.ru",[3]],["okminigames.mail.ru",[3]],["otvet.mail.ru",[3]],["pets.mail.ru",[3]],["player-smotri.mail.ru",[3]],["pogoda.mail.ru",[3]],["top.mail.ru",[3]],["touch.mail.ru",[3]],["tv.mail.ru",[3]],["vfokuse.mail.ru",[3]],["widgets.mail.ru",[3]]]);
+const exceptionsMap = new Map([["3igames.mail.ru",[4]],["account.mail.ru",[4]],["auto.mail.ru",[4]],["biz.mail.ru",[4]],["blog.mail.ru",[4]],["bonus.mail.ru",[4]],["calendar.mail.ru",[4]],["calls.mail.ru",[4]],["cloud.mail.ru",[4]],["connect.mail.ru",[4]],["deti.mail.ru",[4]],["dobro.mail.ru",[4]],["e.mail.ru",[4]],["finance.mail.ru",[4]],["gibdd.mail.ru",[4]],["health.mail.ru",[4]],["help.mail.ru",[4]],["hi-tech.mail.ru",[4]],["horo.mail.ru",[4]],["kino.mail.ru",[4]],["lady.mail.ru",[4]],["love.mail.ru",[4]],["mcs.mail.ru",[4]],["minigames.mail.ru",[4]],["my.mail.ru",[4]],["news.mail.ru",[4]],["o2.mail.ru",[4]],["octavius.mail.ru",[4]],["okminigames.mail.ru",[4]],["otvet.mail.ru",[4]],["pets.mail.ru",[4]],["player-smotri.mail.ru",[4]],["pogoda.mail.ru",[4]],["top.mail.ru",[4]],["touch.mail.ru",[4]],["tv.mail.ru",[4]],["vfokuse.mail.ru",[4]],["widgets.mail.ru",[4]]]);
 
 /******************************************************************************/
 

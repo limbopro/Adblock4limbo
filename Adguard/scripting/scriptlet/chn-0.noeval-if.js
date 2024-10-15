@@ -40,9 +40,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ADS_BLOCKED"],["encodeURIComponent"]];
+const argsList = [["ADS_BLOCKED"],["encodeURIComponent"],["WebSocket"]];
 
-const hostnamesMap = new Map([["jav777.xyz",0],["applnn.cc",1]]);
+const hostnamesMap = new Map([["jav777.xyz",0],["applnn.cc",1],["wap.yushuwu.cloud",2]]);
 
 const entitiesMap = new Map([]);
 

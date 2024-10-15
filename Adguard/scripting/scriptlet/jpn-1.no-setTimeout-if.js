@@ -40,11 +40,11 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
+const argsList = [["getComputedStyle(a).height"],["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
 
-const hostnamesMap = new Map([["kotobank.jp",0],["puzzle-ch.com",1],["o-dan.net",2],["dropbooks.net",3],["fp1-siken.com",4],["fp2-siken.com",4],["fp3-siken.com",4],["ap-siken.com",4],["db-siken.com",4],["fe-siken.com",4],["itpassportsiken.com",4],["nw-siken.com",4],["pm-siken.com",4],["sc-siken.com",4],["sg-siken.com",4],["musenboya.com",5],["crefan.jp",6],["nan-net.com",7],["javcup.com",8],["46matome.net",9],["openworldnews.net",9],["animesoku.com",9],["vipnews.jp",9],["ldblog.jp",9],["livedoor.blog",9],["2chblog.jp",9],["oumaga-times.com",9],["all-nationz.com",9],["ebitsu.net",9],["fiveslot777.com",9],["jisaka.com",9],["kijyomatome.com",9],["konoyubitomare.jp",9],["livedoor.biz",9],["momoclonews.com",9],["norisoku.com",9],["pachinkopachisro.com",9],["vtubernews.jp",9],["blog.jp",9],["giants-news.com",9],["blog.livedoor.jp",9],["doorblog.jp",9],["sexpixbox.com",10],["skebetter.com",11]]);
+const hostnamesMap = new Map([["iwb.jp",0],["kotobank.jp",1],["puzzle-ch.com",2],["o-dan.net",3],["dropbooks.net",4],["fp1-siken.com",5],["fp2-siken.com",5],["fp3-siken.com",5],["ap-siken.com",5],["db-siken.com",5],["fe-siken.com",5],["itpassportsiken.com",5],["nw-siken.com",5],["pm-siken.com",5],["sc-siken.com",5],["sg-siken.com",5],["musenboya.com",6],["crefan.jp",7],["nan-net.com",8],["javcup.com",9],["46matome.net",10],["openworldnews.net",10],["animesoku.com",10],["vipnews.jp",10],["ldblog.jp",10],["livedoor.blog",10],["2chblog.jp",10],["oumaga-times.com",10],["all-nationz.com",10],["ebitsu.net",10],["fiveslot777.com",10],["jisaka.com",10],["kijyomatome.com",10],["konoyubitomare.jp",10],["livedoor.biz",10],["momoclonews.com",10],["norisoku.com",10],["pachinkopachisro.com",10],["vtubernews.jp",10],["blog.jp",10],["giants-news.com",10],["blog.livedoor.jp",10],["doorblog.jp",10],["sexpixbox.com",11],["skebetter.com",12]]);
 
-const entitiesMap = new Map([["manga1001",4]]);
+const entitiesMap = new Map([["manga1001",5]]);
 
 const exceptionsMap = new Map([]);
 

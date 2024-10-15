@@ -40,11 +40,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["user_closed_pop_up","true"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"],["adblockNoticePermaDismiss","true"]];
+const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["BRANCH_BANNER_PAGE_LOAD","1"],["EMAIL_CAPTURE_MODAL_STOP","1"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["user_closed_pop_up","true"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"],["adblockNoticePermaDismiss","true"]];
 
-const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["themonthly.com.au",2],["thesaturdaypaper.com.au",2],["tastemade.com",3],["clutchpoints.com",4],["core.app",5],["interestingengineering.com",6],["urbanoutfitters.com",7],["paulaschoice.com",8],["audialab.com",9],["realpython.com",10],["nosdevoirs.fr",12],["www.watermarkremover.io",13],["scenexe.io",14],["camspider.com",15]]);
+const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["themonthly.com.au",2],["thesaturdaypaper.com.au",2],["tastemade.com",3],["clutchpoints.com",4],["magnolia.com",[5,6]],["core.app",7],["interestingengineering.com",8],["urbanoutfitters.com",9],["paulaschoice.com",10],["audialab.com",11],["realpython.com",12],["nosdevoirs.fr",14],["www.watermarkremover.io",15],["scenexe.io",16],["camspider.com",17]]);
 
-const entitiesMap = new Map([["brainly",[11,12]]]);
+const entitiesMap = new Map([["brainly",[13,14]]]);
 
 const exceptionsMap = new Map([]);
 

@@ -40,9 +40,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["props.initialProps.pageProps.pageData.brandingAds"]];
+const argsList = [["ads"],["data.adData"],["props.initialProps.pageProps.pageData.brandingAds"]];
 
-const hostnamesMap = new Map([["search.yahoo.co.jp",0]]);
+const hostnamesMap = new Map([["tver.jp",[0,1]],["search.yahoo.co.jp",2]]);
 
 const entitiesMap = new Map([]);
 

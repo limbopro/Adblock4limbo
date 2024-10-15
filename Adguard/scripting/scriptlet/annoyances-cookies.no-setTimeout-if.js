@@ -40,9 +40,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["appendChild"]];
+const argsList = [["appendChild"],["checkPURLayerMustBeShown"]];
 
-const hostnamesMap = new Map([["svd.se",0]]);
+const hostnamesMap = new Map([["svd.se",0],["winfuture.de",1]]);
 
 const entitiesMap = new Map([]);
 

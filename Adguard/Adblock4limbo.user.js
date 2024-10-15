@@ -106,6 +106,7 @@
 // @match        https://www.olevod.com/*
 // @match        https://www.olevod.one/*
 // @match        https://t.me/*
+// @match        https://hitomi.la/*
 // @match        https://twitter.com/*
 // @match        https://tameikegoro.jp/*
 // @match        https://njav.tv/*
@@ -270,6 +271,7 @@ var imax = {
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
+        hitomi: ".container > div[class$=\"content\"] > div[class]:has(> script) {display:none !important; pointer-events: none !important;}",
         hanime1: "span.scaled-exoclick, iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
         javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
         douban: "*{display:none!important}",
@@ -331,6 +333,7 @@ function values() {
         "netflavns2",
         "supjav",
         "hanime1",
+        "hitomi",
         "javlibrary",
         "emturbovid",
         'netflavns1',
@@ -792,6 +795,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case "njav":
             css_adsRemove(imax.css.njav, 0, 'njav');
             break;
+
+        case "hitomi":
+            css_adsRemove(imax.css.hitomi);
+            window_open_defuser();
+            abort_on_property_read();
+            js_adsRemove(uBlockOrigin.addEventListenerdefuser);
+            js_adsRemove(uBlockOrigin.noevalif);
+            break;
+
         case "hanime1":
             css_adsRemove(imax.css.hanime1);
             const div = document.querySelectorAll('div.hidden-xs.hidden-sm')

@@ -40,9 +40,9 @@ const uBOL_cookieRemover = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["lmt"],["/^ev_did|ev_sid/"]];
+const argsList = [["ca_public_page_views"],["lmt"],["/^ev_did|ev_sid/"]];
 
-const hostnamesMap = new Map([["lexbase.se",0],["synonymer.se",1]]);
+const hostnamesMap = new Map([["chef.se",0],["lexbase.se",1],["synonymer.se",2]]);
 
 const entitiesMap = new Map([]);
 

@@ -40,9 +40,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["dtGonza.playeradstime","\"-1\""],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"]];
+const argsList = [["dtGonza.playeradstime","\"-1\""],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["_omapp.scripts.geolocation","{\"value\": {\"status\":\"loaded\",\"object\":null,\"data\":{\"country\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_1\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_2\":{\"shortName\":\"\",\"longName\":\"\"},\"locality\":{\"shortName\":\"\",\"longName\":\"\"},\"original\":{\"ip\":\"\",\"ip_decimal\":null,\"country\":\"\",\"country_eu\":false,\"country_iso\":\"\",\"city\":\"\",\"latitude\":null,\"longitude\":null,\"user_agent\":{\"product\":\"\",\"version\":\"\",\"comment\":\"\",\"raw_value\":\"\"},\"zip_code\":\"\",\"time_zone\":\"\"}},\"error\":\"\"}}"]];
 
-const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["emturbovid.com",1],["findjav.com",1],["mmtv01.xyz",1],["stbturbo.xyz",1],["streamsilk.com",1],["tuborstb.co",2],["app.blubank.com",3],["mobileweb.bankmellat.ir",[3,4]]]);
+const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["emturbovid.com",1],["findjav.com",1],["mmtv01.xyz",1],["stbturbo.xyz",1],["streamsilk.com",1],["tuborstb.co",2],["app.blubank.com",3],["mobileweb.bankmellat.ir",[3,4]],["seclore.com",5]]);
 
 const entitiesMap = new Map([]);
 

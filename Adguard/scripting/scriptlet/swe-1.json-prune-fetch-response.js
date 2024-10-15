@@ -40,9 +40,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["playbackItem.isStitched","","propsToMatch","url:a2d.tv/play"]];
+const argsList = [["autoplay","","propsToMatch","url:ljsp.lwcdn.com"],["playbackItem.isStitched","","propsToMatch","url:a2d.tv/play"]];
 
-const hostnamesMap = new Map([["tv4play.se",0],["tv4.se",0],["fotbollskanalen.se",0],["koket.se",0]]);
+const hostnamesMap = new Map([["lwcdn.com",0],["alingsastidning.se",0],["bohuslaningen.se",0],["gp.se",0],["hallandsposten.se",0],["hn.se",0],["stromstadstidning.se",0],["ttela.se",0],["kungsbackaposten.se",0],["kungalvsposten.se",0],["molndalsposten.se",0],["partilletidning.se",0],["sttidningen.se",0],["markposten.se",0],["harrydaposten.se",0],["mellerudsnyheter.se",0],["tv4play.se",1],["tv4.se",1],["fotbollskanalen.se",1],["koket.se",1]]);
 
 const entitiesMap = new Map([]);
 

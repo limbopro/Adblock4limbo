@@ -44,7 +44,7 @@ const argsList = [["penci_options_set.ad_blocker_detector","false"],["ima","{}"]
 
 const hostnamesMap = new Map([["adala-news.fr",0],["tvaplus.ca",1],["journaldesfemmes.fr",2],["rustica.fr",3],["cookomix.com",4],["empire-anime.com",[5,29,30,31,32,33,34,35,36,37,38,39]],["empire-streamz.fr",[5,29,30,31,32,33,34,35,36]],["empire-stream.net",[5,29,30,31,32,33,34,35,36]],["cinefil.com",6],["signal-arnaques.com",7],["dhnet.be",8],["sudinfo.be",8],["7sur7.be",8],["rtl.be",8],["pianoweb.fr",9],["parlons-basket.com",10],["mac4ever.com",10],["jaitoutcompris.com",11],["varmatin.com",12],["nicematin.com",12],["commentcamarche.net",13],["20minutes.fr",14],["hollywoodpq.com",15],["jardiner-malin.fr",16],["hack-life.net",17],["jtrouver.com",18],["playtv.fr",[19,20]],["skyrock.com",21],["skyrock.fr",21],["6play.fr",[22,47,48,49,50,51]],["tf1.fr",[23,24,25,47,48,49,50,51]],["justarrived.lu",26],["occasions.decathlon.fr",[27,28]],["e-player-stream.app",41],["maxisciences.com",42],["gentside.com",42],["femmeactuelle.fr",42],["geo.fr",42],["voici.fr",42],["programme-tv.net",42],["gala.fr",42],["capital.fr",42],["allocine.fr",43],["funradio.fr",44],["rtl2.fr",44],["rtl.fr",44],["reflectim.fr",45],["e-sushi.fr",45],["canalplus.com",46],["tf1info.fr",52]]);
 
-const entitiesMap = new Map([["empire-streaming",5],["e-player-stream",40]]);
+const entitiesMap = new Map([["empire-streaming",[5,29,30,31,32,33,34,35,36,37,38,39]],["e-player-stream",40]]);
 
 const exceptionsMap = new Map([]);
 

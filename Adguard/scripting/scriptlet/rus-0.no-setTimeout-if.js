@@ -40,9 +40,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["","250"],["Adblock"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["ai_adb"],["alert","15000"],["antyadb","5000"],["clientHeight","2000"],["doAd"],["evercookie","300000"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["getVisibleDivs","300"],["initServices","5000"],["is_adblock"],["removeJuristicNotification"],["saa"],["setInterval",""],["sparkle"],["toUTCString"],["window.location.replace"],["()=>n()","50"]];
+const argsList = [["","250"],["Adblock"],["X-Set-Adblock"],["_modal"],["adBlockEnabled"],["adblock"],["ai_adb"],["alert","15000"],["antyadb","5000"],["clientHeight","2000"],["doAd"],["evercookie","300000"],["getComputedStyle","250"],["getCookie","3000"],["getElementBy"],["getVisibleDivs","300"],["initServices","5000"],["is_adblock"],["removeJuristicNotification"],["saa"],["setInterval",""],["sparkle"],["toUTCString"],["()=>n()","50"]];
 
-const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["razlozhi.ru",2],["allapteki.ru",3],["buhgalter.com.ua",4],["buhgalter911.com",4],["factor.ua",4],["strategium.ru",5],["fonmod.com",[6,12]],["aqicn.org",7],["tragtorr.in",8],["tragtorr.info",8],["litehd.tv",9],["russia-tv.online",9],["tv-kanali.online",10],["tradingview.com",11],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["rusvesna.su",15],["in-poland.com",16],["fishki.net",17],["vseinstrumenti.ru",18],["testserver.pro",19],["websdr.space",20],["anime-chan.me",21],["num-words.com",22],["softportal.com",22],["forums.rusmedserv.com",23],["e.mail.ru",24]]);
+const hostnamesMap = new Map([["otzovik.com",0],["sibnet.ru",1],["razlozhi.ru",2],["allapteki.ru",3],["buhgalter.com.ua",4],["buhgalter911.com",4],["factor.ua",4],["strategium.ru",5],["fonmod.com",[6,12]],["aqicn.org",7],["tragtorr.in",8],["tragtorr.info",8],["litehd.tv",9],["russia-tv.online",9],["tv-kanali.online",10],["tradingview.com",11],["hdkinoteatr.com",13],["ferr-um.ucoz.ru",14],["stalker-2-2012.ucoz.net",14],["rusvesna.su",15],["in-poland.com",16],["fishki.net",17],["vseinstrumenti.ru",18],["testserver.pro",19],["websdr.space",20],["anime-chan.me",21],["num-words.com",22],["softportal.com",22],["e.mail.ru",23]]);
 
 const entitiesMap = new Map([]);
 

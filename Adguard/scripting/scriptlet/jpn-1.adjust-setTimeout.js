@@ -40,9 +40,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["simplegameAdCountDown","1000","0.02"],["aeriaGamesAdCountDown","","0.02"],["visibility","4000"],["[native code]","2000","0.3"],["[native code]","3000","0.25"],["[native code]","4000","0.2"],["window.ADGMAD.repair_bonus","30000","0.001"]];
+const argsList = [["simplegameAdCountDown","1000","0.02"],["aeriaGamesAdCountDown","","0.02"],["visibility","4000"],["[native code]","2000","0.3"],["[native code]","3000","0.25"],["[native code]","4000","0.2"],["/nrWrapper\\(\\)|n\\.setTimeoutIds_\\.has\\(i\\)/","10000"],["window.ADGMAD.repair_bonus","30000","0.001"]];
 
-const hostnamesMap = new Map([["simplegame.jp",0],["minigame.aeriagames.jp",1],["ponta.abstractpainting.work",[2,3,4,5]],["kantangame.com",6],["game.hiroba.dpoint.docomo.ne.jp",6]]);
+const hostnamesMap = new Map([["simplegame.jp",0],["minigame.aeriagames.jp",1],["ponta.abstractpainting.work",[2,3,4,5]],["tver.jp",6],["kantangame.com",7],["game.hiroba.dpoint.docomo.ne.jp",7]]);
 
 const entitiesMap = new Map([]);
 

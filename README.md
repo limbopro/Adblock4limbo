@@ -17,12 +17,6 @@
 
 > ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket），仅针对iOS浏览器（Chrome/Safari等）**网页广告**（Javascript 弹窗横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，提升iPhone或iPad端浏览器观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；
 
-
-> 如需反馈问题请加入我们的[电报讨论组]((https://t.me/Adblock4limbo)) 或 提交 [提交issue](https://github.com/limbopro/Adblock4limbo/issues) ；
-
-### 提交issue
-> 优先推荐 [提交issue](https://github.com/limbopro/Adblock4limbo/issues) ；
-
 ### 其他注意事项
 
 > ⚠️ **注意事项**！为应对广告屏蔽插件如Adguard等插件浏览器扩展对网站广告的屏蔽，大多数网站都会不定期更新网站页面结构包括但不限于DIV元素位置，类，内容等等；而这些更新极有可能会导出本计划部分屏蔽规则失效，这也正是本计划持续更新的原因，所以请大家务必加入电报讨论群组，适时为我们提供使用反馈；
@@ -80,13 +74,15 @@
 
 @> Surge 用户如需访问 Pornhub ，请直接访问 cn.pxxxn.com （即中文版），访问 www.pxxxn.com 或会失败；
 
-## 电报讨论群组及 issues
+## 电报讨论群组及 issues提交等
 
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
 > 2. 如你在使用过程中遇到什么问题或**有网站需要移除广告**，可通过 [issues](https://github.com/limbopro/Adblock4limbo/issues) 提交；
 > 3. 直连联系博主电报：http://t.me/limboprobot / Gmail： service.limbopro.com@gmail.com
 
 ### 提交 issue 格式
+
+在日常使用过程中**你的反馈很重要**，如果 [在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist) 里的网站**换了域名**，或**又出现了广告**，请[提交issue](https://github.com/limbopro/Adblock4limbo/issues) 为我们提供相关信息；
 
 > 1. 网站：
 > 2. 对应网页：

@@ -78,7 +78,7 @@
 
 > 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
 > 2. 如你在使用过程中遇到什么问题或**有网站需要移除广告**，可通过 [issues](https://github.com/limbopro/Adblock4limbo/issues) 提交；
-> 3. 直连联系博主电报：http://t.me/limboprobot / Gmail： service.limbopro.com@gmail.com
+> 3. 直接联系博主电报：http://t.me/limboprobot / Gmail： service.limbopro.com@gmail.com
 
 ### 提交 issue 格式
 

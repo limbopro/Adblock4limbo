@@ -29,10 +29,10 @@
 | --- | --- | --- | --- |
 | [低端影视](https://ddys.pro/) | 在线影视 | Surge/QuantumultX/小火箭/油猴 | 图片/跳过视频广告倒计时 |
 | [小宝影视](https://xiaoheimi.net/index.php) | 在线影视 | 同上  | 图片  |
-| [泥巴影视](https://www.nivod8.tv/) | 在线影视 | 同上  | 播放页片头20秒广告加速移除 |
+| ~~[泥巴影视](https://www.nivod8.tv/)~~| 在线影视 | 同上  | 播放页片头20秒广告加速移除 |
 | [CN影视](https://cnys.tv/) | 在线影视 | 同上  | 图片广告/片头广告 |
 | [剧迷网](https://gimy.ai/) | 在线影视 | 同上  | 图片  |
-| [哔嘀影视](https://www.bdys10.com/) | 在线影视 | 同上  | 图片/跳过片头视频广告倒计时 |
+| ~~[哔嘀影视](https://www.bdys10.com/)~~ | 在线影视 | 同上  | 图片/跳过片头视频广告倒计时 |
 | [独播库](https://www.duboku.tv/) | 在线影视 | 同上  | 图片  |
 | [欧乐影院](https://www.olevod.tv/index.html) | 在线影视 | 同上  | XHR |
 | ~~555影院~~ | 在线影视 | 同上  | 图片  |
@@ -63,7 +63,7 @@
 | [知乎](https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour) | 问答  | 油猴  | PC端未登录状态浏览知乎体验优化 |
 
 > 目前去网页广告计划支持约30+网站：涵盖**在线影视**/**电子漫画**/XXXX；  
-参阅完整的：[在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)；如果其中没有你 **希望支持去广告的网站**，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；  
+参阅完整的：[在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)；如果其中没有你 **希望支持去广告的网站**或在维护的网站换了域名，或又出现了广告，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；
 
 > 如无特别说明，【毒奶去网页广告计划】在对以上网站网页广告去除过程中，代理软件（如Surge、QuantumultX、Shadowrocket）将优先支持，油猴用户次之或不完美支持，PC、Mac等桌面浏览器用户优先推荐安装 [ublock origin](https://limbopro.com/archives/1098.html) 等浏览器扩展，Android 用户推荐安装 [Firefox 浏览器 + ublock origin 组合](https://limbopro.com/archives/26805.html) 以屏蔽网页广告。
 

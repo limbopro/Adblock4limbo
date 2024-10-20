@@ -10,7 +10,7 @@ var replace_str = '</title>\
 '
 
 let url = $request.url;
-var url_target_regex = /(missav|netflav)/g;
+var url_target_regex = /(missav|netflav|supjav|njav|javday)/g;
 
 var url_target = url.match(url_target_regex);
 if ($response.body) {  // 判断响应体是否存在

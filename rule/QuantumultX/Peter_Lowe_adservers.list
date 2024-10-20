@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 06 Oct 2024 12:00:27 GMT
-# entries:        3548
+# entries:        3545
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -145,7 +145,6 @@ DOMAIN-SUFFIX,ad.period-calendar.com, reject
 DOMAIN-SUFFIX,ad.profiwin.de, reject
 DOMAIN-SUFFIX,ad.prv.pl, reject
 DOMAIN-SUFFIX,ad.reachlocal.com, reject
-DOMAIN-SUFFIX,ad.simflight.com, reject
 DOMAIN-SUFFIX,ad.simgames.net, reject
 DOMAIN-SUFFIX,ad.style, reject
 DOMAIN-SUFFIX,ad.tapthislink.com, reject
@@ -195,7 +194,6 @@ DOMAIN-SUFFIX,adbrite.com, reject
 DOMAIN-SUFFIX,adbroker.de, reject
 DOMAIN-SUFFIX,adbunker.com, reject
 DOMAIN-SUFFIX,adbutler.com, reject
-DOMAIN-SUFFIX,adbuyer.com, reject
 DOMAIN-SUFFIX,adbuyer3.lycos.com, reject
 DOMAIN-SUFFIX,adcampo.com, reject
 DOMAIN-SUFFIX,adcannyads.com, reject
@@ -1377,7 +1375,6 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com, reject
 DOMAIN-SUFFIX,collector.cdp.cnn.com, reject
 DOMAIN-SUFFIX,colonize.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
-DOMAIN-SUFFIX,commindo-media-ressourcen.de, reject
 DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
 DOMAIN-SUFFIX,compactbanner.com, reject

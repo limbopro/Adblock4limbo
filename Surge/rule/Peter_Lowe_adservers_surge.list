@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 06 Oct 2024 12:00:27 GMT
-# entries:        3548
+# entries:        3545
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -145,7 +145,6 @@ DOMAIN-SUFFIX,ad.period-calendar.com
 DOMAIN-SUFFIX,ad.profiwin.de
 DOMAIN-SUFFIX,ad.prv.pl
 DOMAIN-SUFFIX,ad.reachlocal.com
-DOMAIN-SUFFIX,ad.simflight.com
 DOMAIN-SUFFIX,ad.simgames.net
 DOMAIN-SUFFIX,ad.style
 DOMAIN-SUFFIX,ad.tapthislink.com
@@ -195,7 +194,6 @@ DOMAIN-SUFFIX,adbrite.com
 DOMAIN-SUFFIX,adbroker.de
 DOMAIN-SUFFIX,adbunker.com
 DOMAIN-SUFFIX,adbutler.com
-DOMAIN-SUFFIX,adbuyer.com
 DOMAIN-SUFFIX,adbuyer3.lycos.com
 DOMAIN-SUFFIX,adcampo.com
 DOMAIN-SUFFIX,adcannyads.com
@@ -1377,7 +1375,6 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com
 DOMAIN-SUFFIX,collector.cdp.cnn.com
 DOMAIN-SUFFIX,colonize.com
 DOMAIN-SUFFIX,comfortablecheese.com
-DOMAIN-SUFFIX,commindo-media-ressourcen.de
 DOMAIN-SUFFIX,commissionmonster.com
 DOMAIN-SUFFIX,communications.melitaltd.com
 DOMAIN-SUFFIX,compactbanner.com

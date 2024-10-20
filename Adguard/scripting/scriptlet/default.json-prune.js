@@ -40,9 +40,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id"],["*","*.adserverDomain"],["ads breaks cuepoints times"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.[].vast_url"],["adReinsertion"],["enabled","testhide"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["adverts.breaks"],["*","all"],["avails"],["adtagparameter","enabled"],["ssai_manifest ad_manifest playback_info.ad_info qvt.playback_info.ad_info"],["PlaybackDetails.[].DaiVod"],["data.searchClassifiedFeed.searchResultView.0.searchResultItemsV2.edges.[-].node.item.content.creative.clickThroughEvent.adsTrackingMetadata.metadata.adRequestId"],["data.me.personalizedFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.adRequestId"],["data.me.rhrFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.sponsor"],["[].data.displayAdsV3.data.[-].__typename"],["[].data.TopAdsProducts.data.[-].__typename"],["[].data.topads.data.[-].__typename"],["placements.processingFile"],["sorts.[-].recommendationList.[].contentMetadata.EncryptedAdTrackingData"],["ads.[-].ad_id"],["gifs.[-].cta"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["data.getDetailPageContent.linkCustomAdOffers.[-].title"],["data.getTaboolaAds.*"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["ad_slots"],["plugins.dfp"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["MediaContainer.Metadata.[].Ad"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["resource_response.data.[-].pin_promotion_id"],["ads"],["data.xdt_injected_story_units.ad_media_items"],["ssaiInfo fallback.ssaiInfo"],["adtech-brightline adtech-google-pal adtech-iab-om"],["result.ads"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["adease adeaseBlob vmap","adease"],["plugins.adService"],["session.showAds"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.id_for_advertisement"]];
+const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id"],["*","*.adserverDomain"],["ads breaks cuepoints times"],["urls","urls.0"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist"],["value.media.ad_breaks"],["data.[].vast_url"],["adReinsertion"],["enabled","testhide"],["playlist.movie.advertising.ad_server"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["adverts.breaks"],["*","all"],["avails"],["adtagparameter","enabled"],["ssai_manifest ad_manifest playback_info.ad_info qvt.playback_info.ad_info"],["PlaybackDetails.[].DaiVod"],["data.searchClassifiedFeed.searchResultView.0.searchResultItemsV2.edges.[-].node.item.content.creative.clickThroughEvent.adsTrackingMetadata.metadata.adRequestId"],["data.me.personalizedFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.adRequestId"],["data.me.rhrFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.sponsor"],["[].data.displayAdsV3.data.[-].__typename"],["[].data.TopAdsProducts.data.[-].__typename"],["[].data.topads.data.[-].__typename"],["placements.processingFile"],["sorts.[-].recommendationList.[].contentMetadata.EncryptedAdTrackingData"],["ads.[-].ad_id"],["gifs.[-].cta"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["data.getDetailPageContent.linkCustomAdOffers.[-].title"],["data.getTaboolaAds.*"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["ad_slots"],["plugins.dfp"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["MediaContainer.Metadata.[].Ad"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["resource_response.data.[-].pin_promotion_id"],["ads"],["data.xdt_injected_story_units.ad_media_items"],["ssaiInfo fallback.ssaiInfo"],["adtech-brightline adtech-google-pal adtech-iab-om"],["result.ads"],["stream.insertion.adSession"],["stream.insertion.points"],["stream.insertion"],["stream.sources.*.insertion"],["pods.0.ads"],["*.tanya_video_ads"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["adease adeaseBlob vmap","adease"],["plugins.adService"],["session.showAds"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.id_for_advertisement"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.sponsored_auction_distance"]];
 
-const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["web.facebook.com",[2,3,4,5,6,74]],["www.facebook.com",[2,3,4,5,6,74]],["voodc.com",7],["shazysport.pro",7],["streamhd247.info",7],["focus4ca.com",7],["gamerarcades.com",7],["volokit2.com",7],["sbs.com.au",8],["hulu.com",[10,11]],["www.amazon.co.jp",12],["www.amazon.co.uk",12],["www.amazon.com",12],["www.amazon.de",12],["www.primevideo.com",12],["crunchyroll.com",13],["vvvvid.it",14],["plus.rtl.de",15],["tv2.no",16],["tvn24.pl",17],["art19.com",18],["channel4.com",19],["hentaihaven.xxx",20],["play.virginmediatelevision.ie",21],["nbc.com",21],["winfuture.de",22],["watch.sling.com",23],["dazn.com",24],["nextdoor.com",[25,26,27]],["tokopedia.com",[28,29,30]],["upscaler.stockphotos.com",31],["roblox.com",32],["sainsburys.co.uk",33],["redgifs.com",34],["fansonlinehub.com",35],["hotmediahub.com",35],["terabox.fun",35],["teralink.me",35],["terashare.me",35],["teraearn.com",35],["linkvertise.com",[36,37,38]],["domoplus.pl",39],["kuchniaplus.pl",39],["miniminiplus.pl",39],["teletoonplus.pl",39],["vix.com",[40,41,42]],["vlive.tv",44],["go.discovery.com",46],["investigationdiscovery.com",46],["tvn.pl",47],["app.plex.tv",48],["10play.com.au",49],["player.stv.tv",50],["fox.com",52],["foxsports.com",52],["serially.it",52],["instagram.com",53],["play.max.com",[54,55]],["sportstiger.com",56],["disneyplus.com",[57,58,59,60,61]],["colearn.id",62],["hotstar.com",63],["play.history.com",64],["eu-proxy.startpage.com",65],["player.pop.co.uk",66],["player.popfun.co.uk",66],["foxtel.com.au",67],["iprima.cz",68],["speedrun.com",69],["www.reddit.com",[70,71]],["nypost.com",72],["pagesix.com",72],["stories.los40.com",73]]);
+const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["web.facebook.com",[2,3,4,5,6,74,75]],["www.facebook.com",[2,3,4,5,6,74,75]],["voodc.com",7],["shazysport.pro",7],["streamhd247.info",7],["focus4ca.com",7],["gamerarcades.com",7],["volokit2.com",7],["sbs.com.au",8],["hulu.com",[10,11]],["www.amazon.co.jp",12],["www.amazon.co.uk",12],["www.amazon.com",12],["www.amazon.de",12],["www.primevideo.com",12],["crunchyroll.com",13],["vvvvid.it",14],["plus.rtl.de",15],["tv2.no",16],["tvn24.pl",17],["art19.com",18],["channel4.com",19],["hentaihaven.xxx",20],["play.virginmediatelevision.ie",21],["nbc.com",21],["winfuture.de",22],["watch.sling.com",23],["dazn.com",24],["nextdoor.com",[25,26,27]],["tokopedia.com",[28,29,30]],["upscaler.stockphotos.com",31],["roblox.com",32],["sainsburys.co.uk",33],["redgifs.com",34],["fansonlinehub.com",35],["hotmediahub.com",35],["terabox.fun",35],["teralink.me",35],["terashare.me",35],["teraearn.com",35],["linkvertise.com",[36,37,38]],["domoplus.pl",39],["kuchniaplus.pl",39],["miniminiplus.pl",39],["teletoonplus.pl",39],["vix.com",[40,41,42]],["vlive.tv",44],["go.discovery.com",46],["investigationdiscovery.com",46],["tvn.pl",47],["app.plex.tv",48],["10play.com.au",49],["player.stv.tv",50],["fox.com",52],["foxsports.com",52],["serially.it",52],["instagram.com",53],["play.max.com",[54,55]],["sportstiger.com",56],["disneyplus.com",[57,58,59,60,61]],["colearn.id",62],["hotstar.com",63],["play.history.com",64],["eu-proxy.startpage.com",65],["player.pop.co.uk",66],["player.popfun.co.uk",66],["foxtel.com.au",67],["iprima.cz",68],["speedrun.com",69],["www.reddit.com",[70,71]],["nypost.com",72],["pagesix.com",72],["stories.los40.com",73]]);
 
 const entitiesMap = new Map([["vipbox",7],["vipboxtv",7],["viprow",7],["buffstreams",7],["elixx",9],["shorttey",43],["discoveryplus",[45,46]],["pinterest",51]]);
 
@@ -255,13 +255,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -270,30 +268,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

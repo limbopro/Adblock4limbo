@@ -40,9 +40,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["DOMContentLoaded","ajax_tptn_tracker"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
+const argsList = [["scroll","return\"undefined\""],["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["DOMContentLoaded","ajax_tptn_tracker"],["contextmenu"],["","t.preventDefault"],["load","contextmenu"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
 
-const hostnamesMap = new Map([["bizma.ir",0],["app.blubank.com",1],["downloadha.com",2],["elmefarda.com",3],["s-moshaver.com",3],["ganjipakhsh.com",4],["javan-musics.com",5],["tabanmusic.com",5],["texahang.org",5],["iran-music.com",5],["lenz.ir",6],["mopon.ir",7],["noorlib.ir",8],["subkade.ir",9]]);
+const hostnamesMap = new Map([["autosafkar.com",0],["bizma.ir",1],["app.blubank.com",2],["downloadha.com",3],["elmefarda.com",4],["s-moshaver.com",4],["ganjipakhsh.com",5],["javan-musics.com",6],["tabanmusic.com",6],["texahang.org",6],["iran-music.com",6],["lenz.ir",7],["mopon.ir",8],["noorlib.ir",9],["subkade.ir",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -369,13 +369,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -384,30 +382,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

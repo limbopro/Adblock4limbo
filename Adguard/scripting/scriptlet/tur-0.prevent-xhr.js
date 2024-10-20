@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["pagead2.googlesyndication.com"],["/advert.js"],["static.doubleclick.net/instream/ad_status.js"],["spotxchange.com"]];
 
-const hostnamesMap = new Map([["forumchess.com.tr",0],["uzaymanga.com",0],["kuponuna170.top",1],["kuponuna171.top",1],["kuponuna172.top",1],["kuponuna173.top",1],["kuponuna174.top",1],["kuponuna175.top",1],["kuponuna176.top",1],["kuponuna177.top",1],["kuponuna178.top",1],["kuponuna179.top",1],["kuponuna180.top",1],["kuponuna181.top",1],["kuponuna182.top",1],["kuponuna183.top",1],["kuponuna184.top",1],["kuponuna185.top",1],["kuponuna186.top",1],["kuponuna187.top",1],["kuponuna188.top",1],["kuponuna189.top",1],["kuponuna190.top",1],["kuponuna191.top",1],["kuponuna192.top",1],["kuponuna193.top",1],["kuponuna194.top",1],["kuponuna195.top",1],["kuponuna196.top",1],["kuponuna197.top",1],["kuponuna198.top",1],["kuponuna199.top",1],["kuponuna200.top",1],["kuponuna201.top",1],["kuponuna202.top",1],["kuponuna203.top",1],["kuponuna204.top",1],["kuponuna205.top",1],["kuponuna206.top",1],["kuponuna207.top",1],["kuponuna208.top",1],["kuponuna209.top",1],["kuponuna210.top",1],["kuponuna211.top",1],["kuponuna212.top",1],["kuponuna213.top",1],["kuponuna214.top",1],["kuponuna215.top",1],["kuponuna216.top",1],["kuponuna217.top",1],["kuponuna218.top",1],["kuponuna219.top",1],["kuponuna220.top",1],["kuponuna221.top",1],["kuponuna222.top",1],["kuponuna223.top",1],["kuponuna224.top",1],["kuponuna225.top",1],["kuponuna226.top",1],["kuponuna227.top",1],["kuponuna228.top",1],["kuponuna229.top",1],["kuponuna230.top",1],["kuponuna231.top",1],["kuponuna232.top",1],["kuponuna233.top",1],["kuponuna234.top",1],["kuponuna235.top",1],["kuponuna236.top",1],["kuponuna237.top",1],["kuponuna238.top",1],["kuponuna239.top",1],["kuponuna240.top",1],["kuponuna241.top",1],["kuponuna242.top",1],["kuponuna243.top",1],["kuponuna244.top",1],["kuponuna245.top",1],["kuponuna246.top",1],["kuponuna247.top",1],["kuponuna248.top",1],["kuponuna249.top",1],["kuponuna250.top",1],["canlitribun237.live",1],["canlitribun238.live",1],["canlitribun239.live",1],["canlitribun240.live",1],["canlitribun241.live",1],["canlitribun242.live",1],["canlitribun243.live",1],["canlitribun244.live",1],["canlitribun245.live",1],["canlitribun246.live",1],["/(^\\|.+\\.)canlitribun\\d+\\.live/",1],["mangawt.com",2],["tv8.com.tr",3]]);
+const hostnamesMap = new Map([["forumchess.com.tr",0],["uzaymanga.com",0],["kuponuna170.top",1],["kuponuna171.top",1],["kuponuna172.top",1],["kuponuna173.top",1],["kuponuna174.top",1],["kuponuna175.top",1],["kuponuna176.top",1],["kuponuna177.top",1],["kuponuna178.top",1],["kuponuna179.top",1],["kuponuna180.top",1],["kuponuna181.top",1],["kuponuna182.top",1],["kuponuna183.top",1],["kuponuna184.top",1],["kuponuna185.top",1],["kuponuna186.top",1],["kuponuna187.top",1],["kuponuna188.top",1],["kuponuna189.top",1],["kuponuna190.top",1],["kuponuna191.top",1],["kuponuna192.top",1],["kuponuna193.top",1],["kuponuna194.top",1],["kuponuna195.top",1],["kuponuna196.top",1],["kuponuna197.top",1],["kuponuna198.top",1],["kuponuna199.top",1],["kuponuna200.top",1],["kuponuna201.top",1],["kuponuna202.top",1],["kuponuna203.top",1],["kuponuna204.top",1],["kuponuna205.top",1],["kuponuna206.top",1],["kuponuna207.top",1],["kuponuna208.top",1],["kuponuna209.top",1],["kuponuna210.top",1],["kuponuna211.top",1],["kuponuna212.top",1],["kuponuna213.top",1],["kuponuna214.top",1],["kuponuna215.top",1],["kuponuna216.top",1],["kuponuna217.top",1],["kuponuna218.top",1],["kuponuna219.top",1],["kuponuna220.top",1],["kuponuna221.top",1],["kuponuna222.top",1],["kuponuna223.top",1],["kuponuna224.top",1],["kuponuna225.top",1],["kuponuna226.top",1],["kuponuna227.top",1],["kuponuna228.top",1],["kuponuna229.top",1],["kuponuna230.top",1],["kuponuna231.top",1],["kuponuna232.top",1],["kuponuna233.top",1],["kuponuna234.top",1],["kuponuna235.top",1],["kuponuna236.top",1],["kuponuna237.top",1],["kuponuna238.top",1],["kuponuna239.top",1],["kuponuna240.top",1],["kuponuna241.top",1],["kuponuna242.top",1],["kuponuna243.top",1],["kuponuna244.top",1],["kuponuna245.top",1],["kuponuna246.top",1],["kuponuna247.top",1],["kuponuna248.top",1],["kuponuna249.top",1],["kuponuna250.top",1],["canlitribun237.live",1],["canlitribun238.live",1],["canlitribun239.live",1],["canlitribun240.live",1],["canlitribun241.live",1],["canlitribun242.live",1],["canlitribun243.live",1],["canlitribun244.live",1],["canlitribun245.live",1],["canlitribun246.live",1],["mangawt.com",2],["tv8.com.tr",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -74,20 +74,20 @@ function preventXhrFn(
     };
     const XHRBefore = XMLHttpRequest.prototype;
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
-        open(method, url, defer, ...args) {
+        open(method, url, ...args) {
             xhrInstances.delete(this);
             if ( warOrigin !== undefined && url.startsWith(warOrigin) ) {
-                return super.open(method, url, defer, ...args);
+                return super.open(method, url, ...args);
             }
             const haystack = { method, url };
             if ( propsToMatch === '' && directive === '' ) {
                 safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(haystack, null, 2)}`);
-                return super.open(method, url, defer, ...args);
+                return super.open(method, url, ...args);
             }
             if ( matchObjectProperties(propNeedles, haystack) ) {
                 const xhrDetails = Object.assign(haystack, {
                     xhr: this,
-                    defer,
+                    defer: args.length === 0 || !!args[0],
                     directive,
                     headers: {
                         'date': '',
@@ -103,7 +103,7 @@ function preventXhrFn(
                 });
                 xhrInstances.set(this, xhrDetails);
             }
-            return super.open(method, url, defer, ...args);
+            return super.open(method, url, ...args);
         }
         send(...args) {
             const xhrDetails = xhrInstances.get(this);
@@ -467,13 +467,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -482,30 +480,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

@@ -40,9 +40,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["a[href^=\"https://cdns.6hiidude.gold/file.php?link=http\"]","?link"],["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"https://linkshortify.com/\"][href*=\"url=http\"]","?url"],["a[href^=\"https://www.linkedin.com/redir/redirect?url=http\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http\"]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"https://drivevideo.xyz/link?link=http\"]","?link"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://disq.us/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?u=http\"]","?u"],["a[href^=\"https://colab.research.google.com/corgiredirector?site=http\"]","?site"],["a[href^=\"https://shop-links.co/link/?\"][href*=\"&url=http\"]","?url"],["a[href^=\"http://www.jdoqocy.com/click-\"][href*=\"?URL=http\"]","?URL"],["a[href^=\"https://track.adtraction.com/t/t?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://metager.org/partner/r?link=http\"]","?link"],["a[href*=\"go.redirectingat.com\"][href*=\"url=http\"]","?url"],["a[href^=\"https://slickdeals.net/?\"][href*=\"u2=http\"]","?u2"],["a[href^=\"https://online.adservicemedia.dk/\"][href*=\"deeplink=http\"]","?deeplink"],["a:is([href^=\"https://click.justwatch.com/\"],[href^=\"https://d.justwatch.com/\"])[href*=\"r=http\"]:not([href*=\".pxf.io\"])","?r"],["a:is([href^=\"https://click.justwatch.com/\"],[href^=\"https://d.justwatch.com/\"])[href*=\"r=http\"][href*=\".pxf.io\"]","?r?u"],["a[href*=\"https://www.chollometro.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.dealabs.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.hotukdeals.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.mydealz.de/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://nl.pepper.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.it/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.pl/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.ru/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.preisjaeger.at/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.promodescuentos.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pelando.com.br/api/redirect?url=\"]","?url"],["a[href^=\"https://cna.st/\"][data-offer-url^=\"https://\"]","[data-offer-url]"]];
+const argsList = [["a[href^=\"https://cdns.6hiidude.gold/file.php?link=http\"]","?link"],["a[href^=\"https://azrom.net/\"][href*=\"?url=\"]","?url"],["a[href^=\"/p/download.html?ntlruby=\"]","?ntlruby"],["a[href^=\"https://www.adtival.network/\"][href*=\"&url=\"]","?url"],["a[href^=\"https://linkshortify.com/\"][href*=\"url=http\"]","?url"],["a[href^=\"https://www.linkedin.com/redir/redirect?url=http\"]","?url"],["a[href^=\"//duckduckgo.com/l/?uddg=\"]","?uddg"],["a[href^=\"https://androidauth.wpengine.com/wp-json/api/advanced_redirect?ref=\"]","?ref"],["a[href^=\"https://www.dpbolvw.net/click-\"][href*=\"?url=\"]","?url"],["a[href^=\"https://greenmangaming.sjv.io/c/\"][href*=\"?u=\"]","?u"],["a[href^=\"https://go.skimresources.com/\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=\"]","?murl"],["a[href*=\"?\"][href*=\"&url=http\"]","?url"],["a[href*=\"?\"][href*=\"&u=http\"]","?u"],["a[href^=\"/vp/player/to/?u=http\"], a[href^=\"/vp/download/goto/?u=http\"]","?u"],["a[href^=\"https://drivevideo.xyz/link?link=http\"]","?link"],["a[href^=\"https://app.adjust.com/\"][href*=\"?fallback=http\"]","?fallback"],["a[href^=\"https://go.redirectingat.com?url=http\"]","?url"],["a[href^=\"/check.php?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://click.linksynergy.com/deeplink?id=\"][href*=\"&murl=http\"]","?murl"],["a[href^=\"https://disq.us/url?url=\"][title^=\"http\"]","[title]"],["a[href^=\"https://disq.us/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?url=http\"]","?url"],["a[href^=\"https://steamcommunity.com/linkfilter/?u=http\"]","?u"],["a[href^=\"https://colab.research.google.com/corgiredirector?site=http\"]","?site"],["a[href^=\"https://shop-links.co/link/?\"][href*=\"&url=http\"]","?url"],["a[href^=\"http://www.jdoqocy.com/click-\"][href*=\"?URL=http\"]","?URL"],["a[href^=\"https://track.adtraction.com/t/t?\"][href*=\"&url=http\"]","?url"],["a[href^=\"https://metager.org/partner/r?link=http\"]","?link"],["a[href*=\"go.redirectingat.com\"][href*=\"url=http\"]","?url"],["a[href^=\"https://slickdeals.net/?\"][href*=\"u2=http\"]","?u2"],["a[href^=\"https://online.adservicemedia.dk/\"][href*=\"deeplink=http\"]","?deeplink"],["a:is([href^=\"https://click.justwatch.com/\"],[href^=\"https://d.justwatch.com/\"])[href*=\"r=http\"]:not([href*=\".pxf.io\"])","?r"],["a:is([href^=\"https://click.justwatch.com/\"],[href^=\"https://d.justwatch.com/\"])[href*=\"r=http\"][href*=\".pxf.io\"]","?r?u"],["a[href*=\"https://www.chollometro.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.dealabs.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.hotukdeals.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.mydealz.de/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://nl.pepper.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.it/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.pl/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pepper.ru/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.preisjaeger.at/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.promodescuentos.com/visit/\"][title^=\"https://\"]","[title]"],["a[href*=\"https://www.pelando.com.br/api/redirect?url=\"]","?url"],["a[href^=\"https://cna.st/\"][data-offer-url^=\"https://\"]","[data-offer-url]"],["a.btn[href^=\"https://zxro.com/u/?url=http\"]","?url"]];
 
-const hostnamesMap = new Map([["6hiidude.gold",0],["azrom.net",1],["taisachonthi.com",2],["kazefuri.net",3],["linkedin.com",5],["html.duckduckgo.com",6],["lite.duckduckgo.com",6],["androidauthority.com",7],["pcgamingwiki.com",[8,9]],["starstyle.com",10],["insidehook.com",[11,12,13]],["nowinstock.net",[11,12,13]],["fap18.net",14],["xxxmom.net",14],["fuck55.net",14],["gofucker.com",14],["sexu.tv",14],["vid123.net",14],["babe8.net",14],["beeg.porn",14],["losporn.org",15],["streamporn.li",15],["pandamovies.org",15],["bananamovies.org",15],["xopenload.net",15],["adultdvdparadise.com",15],["speedporn.net",15],["mangoporn.net",15],["pandamovie.info",15],["mangoporn.co",15],["mangoparody.com",15],["xxxscenes.net",15],["pornkino.cc",15],["watchxxxfree.pw",15],["pandamovie.in",15],["speedporn.pw",15],["watchfreexxx.net",15],["youwatchporn.com",15],["watchpornfree.info",15],["pandamovies.me",15],["xtapes.me",15],["netflixporno.net",15],["pornwish.org",15],["freeomovie.info",15],["fullxxxmovies.me",15],["watchpornx.com",15],["xxxparodyhd.net",15],["xxxstream.me",15],["pornwatch.ws",15],["xopenload.pw",15],["onstreams.net",15],["playpornfree.xyz",15],["pandamovies.pw",15],["streamporn.pw",15],["xopenload.me",15],["paypal.com",16],["elotrolado.net",17],["tube188.com",18],["tomshardware.com",19],["disqus.com",[20,21]],["steamcommunity.com",[22,23]],["colab.research.google.com",24],["xda-developers.com",25],["isthereanydeal.com",[26,27]],["metager.org",28],["slickdeals.net",[29,30]],["dk.pcpartpicker.com",31],["justwatch.com",[32,33]],["chollometro.com",34],["dealabs.com",35],["hotukdeals.com",36],["mydealz.de",37],["nl.pepper.com",38],["pepper.it",39],["pepper.pl",40],["pepper.ru",41],["preisjaeger.at",42],["promodescuentos.com",43],["pelando.com.br",44],["pitchfork.com",45]]);
+const hostnamesMap = new Map([["6hiidude.gold",0],["azrom.net",1],["taisachonthi.com",2],["kazefuri.net",3],["linkedin.com",5],["html.duckduckgo.com",6],["lite.duckduckgo.com",6],["androidauthority.com",7],["pcgamingwiki.com",[8,9]],["starstyle.com",10],["insidehook.com",[11,12,13]],["nowinstock.net",[11,12,13]],["fap18.net",14],["xxxmom.net",14],["fuck55.net",14],["gofucker.com",14],["sexu.tv",14],["vid123.net",14],["babe8.net",14],["beeg.porn",14],["losporn.org",15],["streamporn.li",15],["pandamovies.org",15],["bananamovies.org",15],["xopenload.net",15],["adultdvdparadise.com",15],["speedporn.net",15],["mangoporn.net",15],["pandamovie.info",15],["mangoporn.co",15],["mangoparody.com",15],["xxxscenes.net",15],["pornkino.cc",15],["watchxxxfree.pw",15],["pandamovie.in",15],["speedporn.pw",15],["watchfreexxx.net",15],["youwatchporn.com",15],["watchpornfree.info",15],["pandamovies.me",15],["xtapes.me",15],["netflixporno.net",15],["pornwish.org",15],["freeomovie.info",15],["fullxxxmovies.me",15],["watchpornx.com",15],["xxxparodyhd.net",15],["xxxstream.me",15],["pornwatch.ws",15],["xopenload.pw",15],["onstreams.net",15],["playpornfree.xyz",15],["pandamovies.pw",15],["streamporn.pw",15],["xopenload.me",15],["paypal.com",16],["elotrolado.net",17],["tube188.com",18],["tomshardware.com",19],["disqus.com",[20,21]],["steamcommunity.com",[22,23]],["colab.research.google.com",24],["xda-developers.com",25],["isthereanydeal.com",[26,27]],["metager.org",28],["slickdeals.net",[29,30]],["dk.pcpartpicker.com",31],["justwatch.com",[32,33]],["chollometro.com",34],["dealabs.com",35],["hotukdeals.com",36],["mydealz.de",37],["nl.pepper.com",38],["pepper.it",39],["pepper.pl",40],["pepper.ru",41],["preisjaeger.at",42],["promodescuentos.com",43],["pelando.com.br",44],["pitchfork.com",45],["onual.com",46]]);
 
 const entitiesMap = new Map([["movies4u",4]]);
 
@@ -326,13 +326,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -341,30 +339,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.4.09.16
+// @version      0.4.10.20
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
@@ -86,6 +86,7 @@
 // @match        https://4hu.tv/*
 // @match        https://www.4hu.tv/*
 // @match        https://netflav.com/*
+// @match        https://javplayer.me/*
 // @match        https://netflav5.com/*
 // @match        https://filemoon.sx/*
 // @match        https://emturbovid.com/*
@@ -233,11 +234,11 @@ var imax = {
         //contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
     },
     css: {
-        globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
-        libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
-        goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
-        avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
-        btbdys: ".artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
+	    globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
+	    libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
+	    goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
+	    avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
+	    btbdys: ".artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
@@ -247,7 +248,7 @@ var imax = {
         comic_18: "div.div2_sticky2, p > a[target=_blank], div.modal-body > a[target=_blank], li[class*='pop'] > a[target=_blank], li[class*='top'] > a[target=_blank], .modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important; pointer-events: none !important;}", // 555电影网
         dy555: "div.module {z-index:1!important} div.popup.popup-tips.none.popupShow, a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
-        missav: "a[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
+        missav: "[href*='bit.ly'],[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         porna91: "a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
         porn91: "br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
@@ -261,6 +262,7 @@ var imax = {
         nivod: "img[src*='1a732eeb1adb'], img[src*='49e8abd32d13'], span[style*='1a2d'],span[style*='0891'],[style='text-align: center; margin-top: 30px;'],.qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
+	iyf:"",
         hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
         cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
@@ -277,7 +279,7 @@ var imax = {
         douban: "*{display:none!important}",
         olevod: "#adsbox, .ads-bg {display:none!important}",
         ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
-        njav: "iframe[width='300px'] {display:none!important}",
+        njav: "div[style=\"position: absolute; inset: 0px; z-index: 999; display: block;\"],.ad-floating,[src*='.gif'],iframe[width='300px'] {display:none!important}",
         jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
         rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
         diyibanzhu: "img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
@@ -319,6 +321,7 @@ function values() {
         "nivod",
         "91short",
         "xiaobaotv",
+	"iyf",
         "cnys",
         "xiaoxintv",
         "javday",
@@ -326,7 +329,8 @@ function values() {
         "javbus",
         "4hu",
         "netflav",
-        "filemoon",
+        "javplayer",
+	    "filemoon",
         "embedrise",
         "mmfl02",
         "mmsw02",
@@ -393,52 +397,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             pornhub_sidebar_ads();
             break;
-        case 'missav':
-            div_ad_missav(); // 广告空白高度 height 调制0；
-            window_open_defuser(); // 打断 window.open 施法
-            var ua_missav = navigator.userAgent.toLowerCase();
-            var mobile_missav = "mobile";
-            //cloudflare_captchaBypass();
-            css_adsRemove(imax.css.missav);
-
-            setTimeout(() => {
-                if (ua_missav.indexOf(mobile_missav) === -1) {
-
-                    if (document.querySelector('div.mt-4').querySelector('h1') !== null) {
-                        ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "missavX", 2, "button");
-                        ele_dynamicAppend("div.mt-4", "onclick", "暂停", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "missavP", 3, "button");
-                        ele_dynamicAppend("div.mt-4", "href", "如何下载视频", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
-                    }
-
-                    if (document.getElementById("how")) {
-                        document.getElementById("how").target = "_blank";
-                    }
-
-                    // 添加监听器
-                    if (document.getElementById("missavX")) {
-                        addListenerById("missavX", () => { video_loopPlay('loop') }, 1000);
-                    }
-
-                    if (document.getElementById("missavP")) {
-                        addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
-                    }
-
-                } else if (ua_missav.indexOf(mobile_missav) > -1) {
-                    ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "video_Play()", "missavX", 0, "button");
-                    ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "fullscreen()", "missavFullScreen", 2, "button");
-                    ele_dynamicAppend("div.mt-4", "onclick", "暂停", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "video_pause()", "missavPause", 1, "button");
-                    ele_dynamicAppend("div.mt-4", "href", "如何下载视频", "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
-                    // 添加监听器
-                    document.getElementById("how").target = "_blank";
-                    addListenerById("missavX", () => { video_Play() }, 1000);
-                    addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
-                    addListenerById("missavPause", () => { video_pause() }, 1000);
-                }
-            }, 3000)
-
-            //missAv_adsRemove();
-            break;
-
         case '91porna':
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.porna91);
@@ -603,7 +561,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             }
             break;
-            break;
         case 'bdys':
             css_adsRemove(imax.css.btbdys, 0, "siwtch_button");
             css_adsRemove(imax.css.switch, 0, "switch_class")
@@ -697,6 +654,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'xiaobaotv':
             // nothing to do.
             break;
+        case 'iyf':
+		    break;
 
         case 'cnys':
             // nothing to do.
@@ -751,6 +710,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         case 'javbus':
+            third_party_fileX("script", "https://update.sleazyfork.org/scripts/25781/JAV%E8%80%81%E5%8F%B8%E6%9C%BA.user.js", "head")
             css_adsRemove(imax.css.javbus, 0, "javbus");
             break;
         case "4hu":
@@ -787,6 +747,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             abort_on_property_read('__Y');
             break;
+	    case "javplayer":
+            adsDomain_switch("fc2stream")
+            break;
         case "supjav":
             noWindowOpenIf('window.open')
             noWindowOpenIf('touchend')
@@ -794,7 +757,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case "njav":
             css_adsRemove(imax.css.njav, 0, 'njav');
-            break;
+            js_adsRemove(uBlockOrigin.setconstant);
+            js_adsRemove(uBlockOrigin.nowindowopenif);
+            noWindowOpenIf('window.open')
+            noWindowOpenIf('touchend')  
+            window_open_defuser(); // 打断 window.open 施法
+	    break;
 
         case "hitomi":
             css_adsRemove(imax.css.hitomi);
@@ -989,7 +957,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             break;
 
-
+        case 'missav':
+	    css_adsRemove(imax.css.missav, 100, 'missavx');
+            window_open_defuser(); // 打断 window.open 施法
+	    break;
         default:
             // 修正 case 中 default 的匹配规则  10.25.203
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {

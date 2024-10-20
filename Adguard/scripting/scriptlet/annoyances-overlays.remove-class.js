@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["js-page-scroll-lock","body","stay"],["pum-open-overlay","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["open-pw","body","stay"],["subscribe-pop-active","body","stay"],["blocking-signup","html","stay"],["modal-open","","stay"],["js-show-newsletter-popup","","stay"],["show-intro-popup","html","stay"],["has-intro-popup","html","stay"],["modal-in","html","stay"],["oxy-modal-active","body","stay"],["modal-open","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
 
-const hostnamesMap = new Map([["cityam.com",0],["securityweek.com",1],["all3dp.com",2],["cityandstateny.com",3],["forbes.com",4],["money.com",5],["insider.fitt.co",6],["restofworld.org",7],["chicagotribune.com",8],["dgb.de",9],["michaelmoore.com",[10,11,12]],["persuasion.community",[10,11,12]],["thebulwark.com",[10,11,12]],["theclimatebrink.com",[10,11,12]],["forkingpaths.co",[10,11,12]],["gamefile.news",[10,11,12]],["publicnotice.co",[10,11,12]],["techemails.com",[10,11,12]],["aisnakeoil.com",[10,11,12]],["secretsofprivacy.com",[10,11,12]],["moreisdifferent.blog",[10,11,12]],["latent.space",[10,11,12]],["statsignificant.com",[10,11,12]],["noahpinion.blog",[10,11,12]],["read.perspectiveship.com",[10,11,12]],["newsletter.maartengrootendorst.com",[10,11,12]],["newsletter.eng-leadership.com",[10,11,12]],["blog.codingconfessions.com",[10,11,12]],["afterbabel.com",[10,11,12]],["theintrinsicperspective.com",[10,11,12]],["elysian.press",[10,11,12]],["experimental-history.com",[10,11,12]],["thebignewsletter.com",[10,11,12]],["honest-broker.com",[10,11,12]],["henrikkarlsson.xyz",[10,11,12]],["computerenhance.com",[10,11,12]],["friendlyatheist.com",[10,11,12]],["unchartedterritories.tomaspueyo.com",[10,11,12]],["construction-physics.com",[10,11,12]],["sambowman.co",[10,11,12]],["asiasentinel.com",[10,11,12]],["understandingai.org",[10,11,12]],["hamiltonnolan.com",[10,11,12]],["aporiamagazine.com",[10,11,12]],["garbageday.email",[10,11,12]],["jacobwolf.report",[10,11,12]],["semianalysis.com",[10,11,12]],["dossier.today",[10,11,12]],["engineeringleadership.xyz",[10,11,12]],["piratewires.com",[10,11,12]],["slowboring.com",[10,11,12]],["flowstate.fm",[10,11,12]],["popular.info",[10,11,12]],["newsletter.banklesshq.com",[10,11,12]],["antiracismnewsletter.com",[10,11,12]],["racket.news",[10,11,12]],["eugyppius.com",[10,11,12]],["dkb.blog",[10,11,12]],["duffelblog.com",[10,11,12]],["theankler.com",[10,11,12]],["fullstackeconomics.com",[10,11,12]],["substack.com",[10,11,12]],["platformer.news",[10,11,12]],["wahaca.co.uk",13],["mightyape.co.nz",14],["novelza.com",16],["postype.com",17]]);
+const hostnamesMap = new Map([["cityam.com",0],["securityweek.com",1],["all3dp.com",2],["cityandstateny.com",3],["forbes.com",4],["money.com",5],["insider.fitt.co",6],["restofworld.org",7],["chicagotribune.com",8],["dgb.de",9],["strangeloopcanon.com",[10,11,12]],["michaelmoore.com",[10,11,12]],["persuasion.community",[10,11,12]],["thebulwark.com",[10,11,12]],["theclimatebrink.com",[10,11,12]],["forkingpaths.co",[10,11,12]],["gamefile.news",[10,11,12]],["publicnotice.co",[10,11,12]],["techemails.com",[10,11,12]],["aisnakeoil.com",[10,11,12]],["secretsofprivacy.com",[10,11,12]],["moreisdifferent.blog",[10,11,12]],["latent.space",[10,11,12]],["statsignificant.com",[10,11,12]],["noahpinion.blog",[10,11,12]],["read.perspectiveship.com",[10,11,12]],["newsletter.maartengrootendorst.com",[10,11,12]],["newsletter.eng-leadership.com",[10,11,12]],["blog.codingconfessions.com",[10,11,12]],["afterbabel.com",[10,11,12]],["theintrinsicperspective.com",[10,11,12]],["elysian.press",[10,11,12]],["experimental-history.com",[10,11,12]],["thebignewsletter.com",[10,11,12]],["honest-broker.com",[10,11,12]],["henrikkarlsson.xyz",[10,11,12]],["computerenhance.com",[10,11,12]],["friendlyatheist.com",[10,11,12]],["unchartedterritories.tomaspueyo.com",[10,11,12]],["construction-physics.com",[10,11,12]],["sambowman.co",[10,11,12]],["asiasentinel.com",[10,11,12]],["understandingai.org",[10,11,12]],["hamiltonnolan.com",[10,11,12]],["aporiamagazine.com",[10,11,12]],["garbageday.email",[10,11,12]],["jacobwolf.report",[10,11,12]],["semianalysis.com",[10,11,12]],["dossier.today",[10,11,12]],["engineeringleadership.xyz",[10,11,12]],["piratewires.com",[10,11,12]],["slowboring.com",[10,11,12]],["flowstate.fm",[10,11,12]],["popular.info",[10,11,12]],["newsletter.banklesshq.com",[10,11,12]],["antiracismnewsletter.com",[10,11,12]],["racket.news",[10,11,12]],["eugyppius.com",[10,11,12]],["dkb.blog",[10,11,12]],["duffelblog.com",[10,11,12]],["theankler.com",[10,11,12]],["fullstackeconomics.com",[10,11,12]],["substack.com",[10,11,12]],["platformer.news",[10,11,12]],["wahaca.co.uk",13],["mightyape.co.nz",14],["novelza.com",16],["postype.com",17]]);
 
 const entitiesMap = new Map([["pornhub",15]]);
 
@@ -274,13 +274,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -289,30 +287,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

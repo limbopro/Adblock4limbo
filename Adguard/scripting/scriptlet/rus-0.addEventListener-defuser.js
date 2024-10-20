@@ -40,9 +40,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["visibilitychange","captureContext"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
 
-const hostnamesMap = new Map([["7days.ru",[0,26]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["cdn.viqeo.tv",26],["kinonews.ru",26],["kp.kg",26],["kp.kz",26],["kp.md",26],["kp.ru",26],["mk.ru",26],["ohotniki.ru",26],["portalvirtualreality.ru",26],["radiokp.ru",26],["sportkp.ru",26],["wday.ru",26],["woman.ru",26],["www.fontanka.ru",26]]);
+const hostnamesMap = new Map([["7days.ru",[0,27]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["e.mail.ru",26],["octavius.mail.ru",26],["cdn.viqeo.tv",27],["kinonews.ru",27],["kp.kg",27],["kp.kz",27],["kp.md",27],["kp.ru",27],["mk.ru",27],["ohotniki.ru",27],["portalvirtualreality.ru",27],["radiokp.ru",27],["sportkp.ru",27],["wday.ru",27],["woman.ru",27],["www.fontanka.ru",27]]);
 
 const entitiesMap = new Map([]);
 
@@ -369,13 +369,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -384,30 +382,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

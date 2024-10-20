@@ -40,9 +40,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Promise","detectedAdblock"],["$","popup"],["Number",";break;case"],["document.addEventListener","window.open"],["Object.defineProperty","ADMStorageFileCDN"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["document.createElement","script"],["$","PopUnder"],["eval","$._Eu"],["jQuery","popurl"],["addEvent","popu"],["jQuery","click_time"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","open"],["jQuery","PopUnder"],["$","window.open"],["eval"],["jQuery","click_ads"],["Promise","break;case"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["Promise","instance"],["setTimeout","open"],["document.addEventListener","linksToOpen"],["setTimeout","window.location"]];
+const argsList = [["Promise","detectedAdblock"],["$","popup"],["Number",";break;case"],["document.addEventListener","window.open"],["Object.defineProperty","ADMStorageFileCDN"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["document.createElement","script"],["$","PopUnder"],["eval","$._Eu"],["jQuery","popurl"],["addEvent","popu"],["jQuery","click_time"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","open"],["jQuery","PopUnder"],["$","window.open"],["eval"],["jQuery","click_ads"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["Promise","instance"],["setTimeout","open"],["document.addEventListener","linksToOpen"],["setTimeout","window.location"]];
 
-const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.kim",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["cunghocvui.com",5],["dualeotruyenbff.com",[6,39]],["m.blogtruyenmoi.com",6],["freeplayervideo.com",7],["abysscdn.com",7],["player-cdn.com",7],["geoip.redirect-ads.com",7],["playhydrax.com",7],["gocmod.com",8],["goctruyentranhvui2.com",9],["truyenqqto.com",9],["nettruyenww.com",9],["sextop1.pw",9],["hhvsub.com",9],["sayhentai.one",9],["live.sexviet88.xyz",[9,39]],["gotphim.com",10],["hh3dhay.life",[11,12,21]],["hh3dhay.xyz",12],["holyfilm.org",13],["imail.edu.vn",[14,15]],["ios.codevn.net",16],["linkneverdie.net",17],["linkneverdie.top",17],["linkneverdie2.com",17],["lrepacks.net",18],["luotphimtv.lat",19],["p.thoctv.com",19],["lxmanga.ink",20],["phimgichill.net",[21,22]],["hhhay.me",21],["truyengihotnha.com",[21,39]],["truyengihotnha.net",[21,39]],["tram3d.net",21],["animevietsub.tube",21],["mephimnhe1.net",22],["phimmoi.sale",23],["motphimww.net",23],["phimmoinay.vip",24],["phimtho.net",25],["phimtuoitho.site",26],["rphang.love",27],["misskon.com",27],["saigon24.net",28],["sexhd88.live",29],["tiemsachhay.net",30],["tinsoikeo.live",31],["truyen2u.pro",32],["truyen35.shop",33],["truyengpt.com",34],["viet69.rent",34],["truyensextv.com",35],["truyentuan.xyz",36],["ungtycomicsvip.org",[37,39]],["vailonxx.vip",38],["phimlongtieng.com",38],["phimlongtieng.net",38],["viet69.ing",39],["ungtycomicsvip.com",39],["vlxx.mx",39],["yurineko.net",39],["vlxyz.tube",39],["hd.javhay.site",39],["phimsexhay669.pro",39],["cliphot69.fun",39],["doctruyen3qmoi.pro",39],["ihentai.vip",39],["heodam.moe",39],["sex.tuoi69.store",39],["top1sex.me",39],["sexmup18.com",39],["hentaivn.today",39],["streamvl.top",39],["www.buomtv.vip",39],["truyenvn.blog",39],["cdnstream.sbs",39],["javtiful.com",39],["truyengihotdo.net",39],["truyengihotzay.net",39],["truyengihotqua.net",39],["truyengihotqua.com",39],["truyengihotnay.com",39],["quatvn.fit",39],["tenmientruyengi.net",39],["topviet69.net",39],["phim18hd.sex",39],["tvphimsex.pro",39],["demo.14412882.com",39],["damsextv.pro",39],["xemphim18.vip",39],["cliphot69.mom",39],["hhtq5.vip",39],["sexdiary.club",39],["viet69.run",40],["vungoctuan.vn",41],["www.toptruyen68.pro",[42,43]],["xemphimhdcv.com",44],["xnxx-sex-videos.com",45]]);
+const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.my",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["cunghocvui.com",5],["dualeotruyenman.com",[6,40]],["m.blogtruyenmoi.com",6],["freeplayervideo.com",7],["abysscdn.com",7],["player-cdn.com",7],["geoip.redirect-ads.com",7],["playhydrax.com",7],["gocmod.com",8],["goctruyentranhvui3.com",9],["nettruyenww.com",9],["sextop1.mx",9],["hhvsub.com",9],["sayhentai.one",9],["vn.sexviet88.xyz",[9,40]],["gotphim.com",10],["hh3dhay.life",[11,12,21]],["hh3dhay.xyz",12],["holyfilm.org",13],["imail.edu.vn",[14,15]],["ios.codevn.net",16],["linkneverdie.net",17],["linkneverdie.top",17],["linkneverdie2.com",17],["lrepacks.net",18],["luotphimtv.cam",19],["p.thoctv.com",19],["lxmanga.online",20],["phimgichill.net",[21,22]],["hhhay.me",21],["truyengihotnha.com",[21,40]],["truyengihotnha.net",[21,40]],["tram3d.net",21],["animevietsub.run",21],["mephimnhe1.net",22],["phimmoi.sale",23],["motphimww.net",23],["phimmoinay.vip",24],["phimtho.net",25],["phimtuoitho.site",26],["rphang.dog",27],["misskon.com",27],["saigon24.net",28],["sexhd88.live",29],["tiemsachhay.net",30],["tinsoikeo.live",31],["truyen2u.top",32],["truyen35.shop",33],["truyenqq.uk",34],["viet69.team",34],["truyenqqto.com",35],["truyensextv.com",36],["truyentuan.xyz",37],["ungtycomicsvip.org",[38,40]],["vailonxx.vip",39],["phimlongtieng.com",39],["phimlongtieng.net",39],["viet69.do",40],["ungtycomicsvip.com",40],["vlxx.mx",40],["yurineko.net",40],["vlxyz.tube",40],["hd.javhay.site",40],["phimsexhay669.pro",40],["cliphot69.my",40],["doctruyen3qw.pro",40],["ihentai.wiki",40],["javhd.baby",40],["sex.tuoi69.store",40],["top1sex.me",40],["sexmup18.com",40],["hentaivn.today",40],["streamvl.top",40],["www.buomtv.me",40],["truyenvn.wiki",40],["cdnstream.sbs",40],["javtiful.com",40],["truyengihotdo.net",40],["truyengihotzay.net",40],["truyengihotqua.net",40],["truyengihotqua.com",40],["truyengihotnay.com",40],["quatvn.fit",40],["tenmientruyengi.net",40],["topviet69.online",40],["phim18hd.sex",40],["mupdep.net",40],["demo.14412882.com",40],["damsextv.pro",40],["cliphot69.uno",40],["hhtq5.vip",40],["sexdiary.club",40],["viet69.la",41],["vungoctuan.vn",42],["www.toptruyenww.pro",[43,44]],["xemphimhdc.vip",45],["xnxx-sex-videos.com",46]]);
 
 const entitiesMap = new Map([]);
 
@@ -318,13 +318,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -333,30 +331,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

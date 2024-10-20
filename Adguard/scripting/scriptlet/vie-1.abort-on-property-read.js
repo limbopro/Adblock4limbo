@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
 
-const hostnamesMap = new Map([["animevietsubs.com",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["phimdinhcao.net",5],["phimlongtieng.net",5],["www.phimdinhcaoz.com",5],["plcdn.xyz",[6,7,8,9,10]],["tinsoikeo.live",11],["truyensieuhay.com",12],["hayhaytv.org",12],["quangcaoyenbai.com",12],["sieudamtv.vin",12],["ephimchill.com",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.tv",12],["www.khophim88s.com",12],["nhentaivn.online",12],["mv.dailyphimz.com",12],["mv.phimbathu.one",12],["veryfiles.com",13],["viettoons.tv",14],["mv.phimmoiaz.cc",14],["dood.pm",14],["ytstv.me",14],["animet3.pro",14],["anh.moe",14],["hentaivn.love",14],["maclife.io",14],["xemphimjav.com",14],["hoctot.hocmai.vn",14],["bluphim.art",14],["cdn2.blueskychilling.online",14],["ohaha79xxx.site",14],["fastscans1.net",14],["herotruyen.com",14],["vinaurl.net",15],["www.nettruyenupp.com",16],["xoilacq.cc",17],["yts.do",18],["yts.mx",18],["yts.rs",18],["znews.vn",19]]);
+const hostnamesMap = new Map([["animevietsubs.com",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["phimdinhcao.net",5],["phimlongtieng.net",5],["www.phimdinhcaoz.com",5],["plcdn.xyz",[6,7,8,9,10]],["tinsoikeo.live",11],["truyensieuhay.com",12],["hayhaytv.org",12],["quangcaoyenbai.com",12],["sieudamtv.lol",12],["ephimchill.com",12],["ophimhdvn3.net",12],["thuvienhd.xyz",12],["xemtv.tvhayhd.tv",12],["www.khophim88s.com",12],["nhentaivn.online",12],["mv.dailyphimz.com",12],["mv.phimbathu.one",12],["veryfiles.com",13],["viettoons.tv",14],["mv.phimmoiaz.cc",14],["dood.pm",14],["ytstv.me",14],["animet3.biz",14],["anh.moe",14],["hentaivn.love",14],["maclife.io",14],["xemphimjav.com",14],["hoctot.hocmai.vn",14],["bluphim.art",14],["cdn2.blueskychilling.online",14],["ohaha79xxx.site",14],["fastscans2.net",14],["herotruyen.com",14],["truyenfull.io",14],["vinaurl.net",15],["www.nettruyenupp.com",16],["xoilacxi.cc",17],["yts.do",18],["yts.mx",18],["yts.rs",18],["znews.vn",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -241,13 +241,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -256,30 +254,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

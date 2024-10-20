@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["ADMStorageFileCDN","noopFunc"],["a_vid","0"],["video.adVast",""],["open","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["D4zz","noopFunc"],["timer","0"],["adsPlayer",""],["adsTvcs",""]];
 
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["cliphot69.mom",1],["coiphimsex.net",2],["vx.phimsexvip.cc",2],["phimsexviet.io",2],["phimsexvietnam.app",2],["web.clipsex.xxx",2],["gm.phimsexnhanh.tv",2],["clipsex.cam",2],["ww1.ditnhau.cc",2],["phim.sexhayvl.org",2],["x.clipsexhot.org",2],["xx.sexkhongchemoi.com",2],["freeplayervideo.com",3],["abysscdn.com",3],["player-cdn.com",3],["geoip.redirect-ads.com",3],["hayhaytv.org",4],["api.anime3s.com",4],["subnhanh1.org",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vndoc.com",7],["www.gvnvh.net",8],["sexdiaryx.live",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["cliphot69.uno",1],["coiphimsex.net",2],["vx.phimsexvip.cc",2],["phimsexviet.io",2],["phimsexvietnam.app",2],["web.clipsex.xxx",2],["gm.phimsexnhanh.tv",2],["clipsex.cam",2],["ww1.ditnhau.cc",2],["phim.sexhayvl.org",2],["x.clipsexhot.org",2],["xx.sexkhongchemoi.com",2],["freeplayervideo.com",3],["abysscdn.com",3],["player-cdn.com",3],["geoip.redirect-ads.com",3],["hayhaytv.org",4],["api.anime3s.com",4],["subnhanh1.org",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vndoc.com",7],["www.gvnvh.net",8],["sexdiaryx.live",8],["www.iosviet.com",9],["xoivo2.online",[10,11]],["tructiepdabong5.co",[10,11]],["vaoroi365.com",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -367,13 +367,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -382,30 +380,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["request=adb"],["doubleclick"],["googlesyndication"],["/adsbygoogle|doubleclick/"],["homad-global-configs"],["/enthusiastgaming|googleoptimize|googletagmanager/"],["/doubleclick|googlesyndication/"],["/^(?!.*(einthusan\\.io|yahoo|rtnotif|ajax|quantcast|bugsnag))/"],["/adnxs.com|onetag-sys.com|teads.tv|google-analytics.com/"],["ad_"],["/redirector\\.googlevideo\\.com\\/videoplayback[\\s\\S]*?dclk_video_ads/"],["method:HEAD"],["ads"],["svonm"],["/\\/VisitorAPI\\.js|\\/AppMeasurement\\.js/"],["inklinkor.com"],["damoh"],["/youboranqs01|spotx|springserve/"],["adsbygoogle"],["/doubleclick|googlesyndication/","length:10"],["/googima.js"],["/adskeeper|bidgear|googlesyndication|mgid/"],["fwmrm.net"],["/\\/ad\\/g\\/1/"],["adsbygoogle","length:10"],["adinplay.com"],["pagead2.googlesyndication.com"],["popunder"],["/pagead2\\.googlesyndication\\.com|inklinkor\\.com/"],["czilladx"],["/^/"],["/ad"],["wp-json/rsm-adutil","true"],["outbrain"],["prebid"],["wpadmngr"],["/ads"],["pub.network"],["googlesyndication","length:10"],["url:googlesyndication"],["/analytics|livestats/"],["mahimeta"],["notifier"],["/ad-"],["/coinzillatag|czilladx/"],["/thaudray\\.com|putchumt\\.com/"],["php"],["/googlesyndication|doubleclick/"],["bmcdn6"],["adx"],["cls_report?"],["adswizz.com"],["tag"],["googletagmanager"],["time-events"],["/_Ad_|_ad/"],["/googlesyndication|nitropay/"],["method:POST url:/logImpressions"],["method:POST"],["utreon.com/pl/api/event method:POST"],["log-sdk.ksapisrv.com/rest/wd/common/log/collect method:POST"],["/VisitorAPI|AppMeasurement/"],["analytics/bulk-pixel"],["/(trace|beacon)\\.qq\\.com/"],["excess.duolingo.com/batch"],["/eventLog.ajax"],["t.wayfair.com/b.php?"],["mobileanalytics"],["cloudflare.com/cdn-cgi/trace"],["/recommendations."],["/api/analytics"],["api"],["lr-ingest.io"],["/gtm.js"],["ip-api"],["/froloa.js"],["1.1.1.1/cdn-cgi/trace"],["live.streamtheworld.com/partnerIds"],["/vast.php?"],["adsbygoogle","length:35000-55000"],["/\\/preroll\\.engine$/"],["stella"]];
 
-const hostnamesMap = new Map([["handelsblatt.com",0],["moviepilot.de",1],["asiaontop.com",[1,38]],["journaldemontreal.com",1],["minhaconexao.com.br",1],["videolyrics.in",1],["sportshub.to",[1,2]],["topsporter.net",1],["meteoetradar.com",1],["gala.fr",1],["geo.fr",1],["voici.fr",1],["sankaku.app",2],["zigforums.com",2],["ge-map-overlays.appspot.com",2],["freegogpcgames.com",2],["hollaforums.com",2],["powforums.com",2],["supforums.com",2],["play.nova.bg",[2,20]],["fxmag.pl",2],["toolkitspro.com",2],["meteopool.org",2],["ssstik.io",2],["animefever.cc",2],["digipuzzle.net",2],["crn.com",2],["postazap.com",2],["laweducationinfo.com",2],["savemoneyinfo.com",2],["worldaffairinfo.com",2],["godstoryinfo.com",2],["successstoryinfo.com",2],["cxissuegk.com",2],["learnmarketinfo.com",2],["bhugolinfo.com",2],["armypowerinfo.com",2],["rsadnetworkinfo.com",2],["rsinsuranceinfo.com",2],["rsfinanceinfo.com",2],["rsgamer.app",2],["rssoftwareinfo.com",2],["rshostinginfo.com",2],["rseducationinfo.com",2],["phonereviewinfo.com",2],["makeincomeinfo.com",2],["gknutshell.com",2],["vichitrainfo.com",2],["workproductivityinfo.com",2],["rangerboard.com",2],["informaxonline.com",[2,31]],["cambb.xxx",2],["nudecams.xxx",2],["routech.ro",2],["rontechtips.com",2],["edealinfo.com",2],["homeairquality.org",2],["techtrim.tech",2],["pigeonburger.xyz",2],["askpaccosi.com",2],["crypto4tun.com",2],["fusedgt.com",2],["apkowner.org",2],["appsmodz.com",2],["bingotingo.com",2],["superpsx.com",2],["stringreveals.com",2],["fox.com",2],["obutecodanet.ig.com.br",2],["firmwarex.net",2],["softwaretotal.net",2],["freecodezilla.net",2],["iconmonstr.com",2],["rbxscripts.net",2],["rimworldbase.com",2],["ewrc-results.com",2],["adslink.pw",2],["comentariodetexto.com",2],["wordpredia.com",2],["livsavr.co",2],["sportfacts.net",2],["sportnews.to",2],["gsmhamza.com",2],["38.242.194.12",2],["bi-girl.net",2],["idealfollow.in",2],["medeberiyaa.com",2],["samuraiscan.org",2],["shinobijawi.id",2],["snbc13.com",2],["webmatrices.com",2],["adelsfun.com",2],["advantien.com",2],["bailbondsfinder.com",2],["bigpiecreative.com",2],["childrenslibrarylady.com",2],["classifarms.com",2],["comtasq.ca",2],["crone.es",2],["ctrmarketingsolutions.com",2],["dropnudes.com",2],["ftuapps.dev",2],["genzsport.com",2],["grsprotection.com",2],["gruporafa.com.br",2],["inmatefindcalifornia.com",2],["inmatesearchidaho.com",2],["itsonsitetv.com",2],["mfmfinancials.com",2],["myproplugins.com",2],["onehack.us",2],["ovester.com",2],["paste.bin.sx",2],["privatenudes.com",2],["renoconcrete.ca",2],["richieashbeck.com",2],["short1ink.com",2],["stpm.co.uk",2],["wegotcookies.co",2],["fordownloader.com",2],["animehub.ac",2],["yottachess.com",2],["infidrive.net",2],["animefreak.to",2],["9animes.ru",2],["couponscorpion.com",2],["pinsystem.co.uk",3],["wetter.de",4],["thesimsresource.com",5],["gnomio.com",6],["techacode.com",6],["trangchu.news",6],["cybermania.ws",6],["techhelpbd.com",6],["youmath.it",8],["frkn64modding.com",9],["sbs.com.au",10],["gearingcommander.com",12],["gameszap.com",12],["differenceprimitive85p.shop",12],["novelmultiverse.com",12],["taming.io",12],["cekip.site",12],["snlookup.com",12],["globfone.com",12],["chimicamo.org",12],["webforefront.com",12],["apkmagic.com.ar",12],["reaperscans.id",12],["freecoursesonline.me",12],["short1.site",12],["telewizja-streamer.xyz",12],["filmisub.cc",12],["filmesdostorrenthd.net",12],["play-games.com",12],["vox.de",13],["vip.de",13],["rtl.de",13],["fitforfun.de",13],["desired.de",13],["kino.de",13],["cinema.de",13],["nationalgeographic.fr",14],["oko.sh",[15,28]],["golem.de",16],["player.pcgameshardware.de",16],["rakuten.tv",17],["hausbau-forum.de",18],["hipsonyc.com",18],["theforyou.in",18],["gyanitheme.com",18],["hostadviser.net",18],["bloggingaro.com",18],["emoji.gg",18],["texture-packs.com",18],["manyakan.com",18],["persianhive.com",18],["boainformacao.com.br",18],["gcertificationcourse.com",18],["portaliz.site",18],["tech-story.net",18],["visalist.io",18],["litecoin.host",18],["alliptvlinks.com",19],["u.co.uk",22],["uktvplay.co.uk",22],["uktvplay.uktv.co.uk",22],["channel4.com",23],["pomofocus.io",24],["royaledudes.io",25],["koramaup.com",26],["1cloudfile.com",26],["aiimgvlog.fun",27],["bestclaimtrx.xyz",27],["freebinance.top",27],["tvi.la",28],["iir.la",28],["tii.la",28],["ckk.ai",28],["oei.la",28],["lnbz.la",28],["oii.la",28],["tpi.li",28],["exactpay.online",29],["claim.fun",29],["faucetcrypto.net",29],["btc25.org",29],["doge25.in",29],["cashbux.work",29],["pasend.link",30],["freewp.io",30],["citytv.com",32],["file4go.net",33],["jetpunk.com",34],["mcrypto.club",35],["coinsparty.com",35],["simplebits.io",36],["flightsim.to",37],["stardeos.com",39],["goduke.com",40],["1apple.xyz",41],["lavanguardia.com",42],["foodsdictionary.co.il",43],["freesolana.top",44],["farescd.com",46],["getintoway.com",47],["bitcotasks.com",48],["freelitecoin.top",49],["freetron.top",49],["earncrypto.co.in",49],["citi.com",50],["hotfm.audio",51],["luffytra.xyz",52],["maxt.church",53],["history.com",54],["pluto.tv",55],["osuskinner.com",56],["osuskins.net",56],["docs.google.com",57],["endbasic.dev",58],["jmmv.dev",58],["fingerprint.com",58],["utreon.com",59],["zhihu.com",60],["natgeotv.com",61],["airtel.in",62],["meeting.tencent.com",63],["duolingo.com",64],["study.com",65],["wayfair.com",66],["viu.com",67],["myair2.resmed.com",68],["travelerdoor.com",68],["azby.fmworld.net",69],["unrealengine.com",70],["wco.tv",71],["dark-gaming.com",72],["securegames.iwin.com",73],["neilpatel.com",74],["virginmediatelevision.ie",75],["myair.resmed.com",76],["player.amperwave.net",77],["poophq.com",[78,79,80]],["veev.to",[78,79,80]],["nicovideo.jp",81]]);
+const hostnamesMap = new Map([["handelsblatt.com",0],["moviepilot.de",1],["asiaontop.com",[1,38]],["journaldemontreal.com",1],["minhaconexao.com.br",1],["videolyrics.in",1],["sportshub.to",[1,2]],["topsporter.net",1],["meteoetradar.com",1],["gala.fr",1],["geo.fr",1],["voici.fr",1],["sankaku.app",2],["zigforums.com",2],["ge-map-overlays.appspot.com",2],["freegogpcgames.com",2],["hollaforums.com",2],["powforums.com",2],["supforums.com",2],["play.nova.bg",[2,20]],["fxmag.pl",2],["toolkitspro.com",2],["meteopool.org",2],["ssstik.io",2],["animefever.cc",2],["digipuzzle.net",2],["crn.com",2],["postazap.com",2],["laweducationinfo.com",2],["savemoneyinfo.com",2],["worldaffairinfo.com",2],["godstoryinfo.com",2],["successstoryinfo.com",2],["cxissuegk.com",2],["learnmarketinfo.com",2],["bhugolinfo.com",2],["armypowerinfo.com",2],["rsadnetworkinfo.com",2],["rsinsuranceinfo.com",2],["rsfinanceinfo.com",2],["rsgamer.app",2],["rssoftwareinfo.com",2],["rshostinginfo.com",2],["rseducationinfo.com",2],["phonereviewinfo.com",2],["makeincomeinfo.com",2],["gknutshell.com",2],["vichitrainfo.com",2],["workproductivityinfo.com",2],["rangerboard.com",2],["informaxonline.com",[2,31]],["cambb.xxx",2],["nudecams.xxx",2],["routech.ro",2],["rontechtips.com",2],["edealinfo.com",2],["homeairquality.org",2],["techtrim.tech",2],["pigeonburger.xyz",2],["askpaccosi.com",2],["crypto4tun.com",2],["fusedgt.com",2],["apkowner.org",2],["appsmodz.com",2],["bingotingo.com",2],["superpsx.com",2],["stringreveals.com",2],["fox.com",2],["obutecodanet.ig.com.br",2],["firmwarex.net",2],["softwaretotal.net",2],["freecodezilla.net",2],["iconmonstr.com",2],["rbxscripts.net",2],["rimworldbase.com",2],["ewrc-results.com",2],["adslink.pw",2],["comentariodetexto.com",2],["wordpredia.com",2],["livsavr.co",2],["sportfacts.net",2],["sportnews.to",2],["gsmhamza.com",2],["38.242.194.12",2],["bi-girl.net",2],["idealfollow.in",2],["medeberiyaa.com",2],["samuraiscan.org",2],["shinobijawi.id",2],["snbc13.com",2],["webmatrices.com",2],["adelsfun.com",2],["advantien.com",2],["bailbondsfinder.com",2],["bigpiecreative.com",2],["childrenslibrarylady.com",2],["classifarms.com",2],["comtasq.ca",2],["crone.es",2],["ctrmarketingsolutions.com",2],["dropnudes.com",2],["ftuapps.dev",2],["genzsport.com",2],["grsprotection.com",2],["gruporafa.com.br",2],["inmatefindcalifornia.com",2],["inmatesearchidaho.com",2],["itsonsitetv.com",2],["mfmfinancials.com",2],["myproplugins.com",2],["onehack.us",2],["ovester.com",2],["paste.bin.sx",2],["privatenudes.com",2],["renoconcrete.ca",2],["richieashbeck.com",2],["short1ink.com",2],["stpm.co.uk",2],["wegotcookies.co",2],["fordownloader.com",2],["animehub.ac",2],["yottachess.com",2],["infidrive.net",2],["animefreak.to",2],["9animes.ru",2],["couponscorpion.com",2],["pinsystem.co.uk",3],["wetter.de",4],["thesimsresource.com",5],["gnomio.com",6],["techacode.com",6],["trangchu.news",6],["cybermania.ws",6],["techhelpbd.com",6],["youmath.it",8],["frkn64modding.com",9],["sbs.com.au",10],["gearingcommander.com",12],["gameszap.com",12],["differenceprimitive85p.shop",12],["novelmultiverse.com",12],["taming.io",12],["cekip.site",12],["snlookup.com",12],["globfone.com",12],["chimicamo.org",12],["webforefront.com",12],["apkmagic.com.ar",12],["reaperscans.id",12],["freecoursesonline.me",12],["short1.site",12],["telewizja-streamer.xyz",12],["filmisub.cc",12],["filmesdostorrenthd.net",12],["play-games.com",12],["vox.de",13],["vip.de",13],["rtl.de",13],["fitforfun.de",13],["desired.de",13],["kino.de",13],["cinema.de",13],["nationalgeographic.fr",14],["oko.sh",[15,28]],["golem.de",16],["player.pcgameshardware.de",16],["rakuten.tv",17],["hausbau-forum.de",18],["hipsonyc.com",18],["theforyou.in",18],["gyanitheme.com",18],["hostadviser.net",18],["bloggingaro.com",18],["emoji.gg",18],["texture-packs.com",18],["manyakan.com",18],["persianhive.com",18],["boainformacao.com.br",18],["gcertificationcourse.com",18],["portaliz.site",18],["tech-story.net",18],["visalist.io",18],["litecoin.host",18],["blackhatworld.com",18],["alliptvlinks.com",19],["u.co.uk",22],["uktvplay.co.uk",22],["uktvplay.uktv.co.uk",22],["channel4.com",23],["pomofocus.io",24],["royaledudes.io",25],["koramaup.com",26],["1cloudfile.com",26],["aiimgvlog.fun",27],["bestclaimtrx.xyz",27],["freebinance.top",27],["tvi.la",28],["iir.la",28],["tii.la",28],["ckk.ai",28],["oei.la",28],["lnbz.la",28],["oii.la",28],["tpi.li",28],["exactpay.online",29],["claim.fun",29],["faucetcrypto.net",29],["btc25.org",29],["doge25.in",29],["cashbux.work",29],["pasend.link",30],["freewp.io",30],["citytv.com",32],["file4go.net",33],["jetpunk.com",34],["mcrypto.club",35],["coinsparty.com",35],["simplebits.io",36],["flightsim.to",37],["stardeos.com",39],["goduke.com",40],["1apple.xyz",41],["lavanguardia.com",42],["foodsdictionary.co.il",43],["freesolana.top",44],["farescd.com",46],["getintoway.com",47],["bitcotasks.com",48],["freelitecoin.top",49],["freetron.top",49],["earncrypto.co.in",49],["citi.com",50],["hotfm.audio",51],["luffytra.xyz",52],["maxt.church",53],["history.com",54],["pluto.tv",55],["osuskinner.com",56],["osuskins.net",56],["docs.google.com",57],["endbasic.dev",58],["jmmv.dev",58],["fingerprint.com",58],["utreon.com",59],["zhihu.com",60],["natgeotv.com",61],["airtel.in",62],["meeting.tencent.com",63],["duolingo.com",64],["study.com",65],["wayfair.com",66],["viu.com",67],["myair2.resmed.com",68],["travelerdoor.com",68],["azby.fmworld.net",69],["unrealengine.com",70],["wco.tv",71],["dark-gaming.com",72],["securegames.iwin.com",73],["neilpatel.com",74],["virginmediatelevision.ie",75],["myair.resmed.com",76],["player.amperwave.net",77],["poophq.com",[78,79,80]],["veev.to",[78,79,80]],["nicovideo.jp",81]]);
 
 const entitiesMap = new Map([["asiaon",[1,38]],["nsw2u",2],["cinemakottaga",2],["apkmaven",2],["blurayufr",2],["teluguflix",2],["bg-gledai",2],["gledaitv",2],["kissanime",2],["einthusan",7],["animeheaven",11],["khatrimaza",12],["moviegan",12],["writedroid",12],["readcomiconline",21],["empire-anime",26],["empire-stream",26],["empire-streaming",26],["empire-streamz",26],["streamingcommunity",45]]);
 
@@ -74,20 +74,20 @@ function preventXhrFn(
     };
     const XHRBefore = XMLHttpRequest.prototype;
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
-        open(method, url, defer, ...args) {
+        open(method, url, ...args) {
             xhrInstances.delete(this);
             if ( warOrigin !== undefined && url.startsWith(warOrigin) ) {
-                return super.open(method, url, defer, ...args);
+                return super.open(method, url, ...args);
             }
             const haystack = { method, url };
             if ( propsToMatch === '' && directive === '' ) {
                 safe.uboLog(logPrefix, `Called: ${safe.JSON_stringify(haystack, null, 2)}`);
-                return super.open(method, url, defer, ...args);
+                return super.open(method, url, ...args);
             }
             if ( matchObjectProperties(propNeedles, haystack) ) {
                 const xhrDetails = Object.assign(haystack, {
                     xhr: this,
-                    defer,
+                    defer: args.length === 0 || !!args[0],
                     directive,
                     headers: {
                         'date': '',
@@ -103,7 +103,7 @@ function preventXhrFn(
                 });
                 xhrInstances.set(this, xhrDetails);
             }
-            return super.open(method, url, defer, ...args);
+            return super.open(method, url, ...args);
         }
         send(...args) {
             const xhrDetails = xhrInstances.get(this);
@@ -467,13 +467,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -482,30 +480,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

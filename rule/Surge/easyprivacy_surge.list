@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202410151035
+## ! Version: 202410201418
 ## ! Title: EasyPrivacy
-## ! Last modified: 15 Oct 2024 10:35 UTC
+## ! Last modified: 20 Oct 2024 14:18 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -278,6 +278,7 @@ DOMAIN-SUFFIX,nimblebird.co
 DOMAIN-SUFFIX,nimbleswan.io
 DOMAIN-SUFFIX,nmgassets.com
 DOMAIN-SUFFIX,nmgplatform.com
+DOMAIN-SUFFIX,nmo-ep.nl
 DOMAIN-SUFFIX,notifpush.com
 DOMAIN-SUFFIX,ns1p.net
 DOMAIN-SUFFIX,nxakpj4ac8gkd53.info
@@ -1684,6 +1685,7 @@ DOMAIN-SUFFIX,nutritiousbean.com
 DOMAIN-SUFFIX,nuttyorganization.com
 DOMAIN-SUFFIX,oafishchance.com
 DOMAIN-SUFFIX,oafishobservation.com
+DOMAIN-SUFFIX,objecthero.com
 DOMAIN-SUFFIX,obscenesidewalk.com
 DOMAIN-SUFFIX,observantice.com
 DOMAIN-SUFFIX,oldfashionedoffer.com
@@ -2828,6 +2830,7 @@ DOMAIN-SUFFIX,clicktracker.iscan.nl
 DOMAIN-SUFFIX,client-analytics.braintreegateway.com
 DOMAIN-SUFFIX,client-logger.beta.salemove.com
 DOMAIN-SUFFIX,client-logger.salemove.com
+DOMAIN-SUFFIX,client.perimeterx.net
 DOMAIN-SUFFIX,clouderrorreporting.googleapis.com
 DOMAIN-SUFFIX,cloudfront-labs.amazonaws.com
 DOMAIN-SUFFIX,cloudmetrics.xenforo.com
@@ -3422,6 +3425,7 @@ DOMAIN-SUFFIX,stream-log.dditscdn.com
 DOMAIN-SUFFIX,streams.cablecar.sph.com.sg
 DOMAIN-SUFFIX,sts.eccmp.com
 DOMAIN-SUFFIX,sunlightmetrics.b-cdn.net
+DOMAIN-SUFFIX,surfshark.events
 DOMAIN-SUFFIX,survey.interquest.com
 DOMAIN-SUFFIX,svibeacon.onezapp.com
 DOMAIN-SUFFIX,sync.adap.tv
@@ -4763,7 +4767,6 @@ DOMAIN-SUFFIX,mstm.motorsport.com
 DOMAIN-SUFFIX,na.groupondata.com
 DOMAIN-SUFFIX,nasi.etherscan.com
 DOMAIN-SUFFIX,net.haier.com
-DOMAIN-SUFFIX,no88kks.infinityscans.net
 DOMAIN-SUFFIX,no9pldds1lmn3.soundcloud.com
 DOMAIN-SUFFIX,noodle.backmarket.io
 DOMAIN-SUFFIX,nr-data.noelleeming.co.nz
@@ -5022,6 +5025,7 @@ DOMAIN-SUFFIX,ua.indianexpress.com
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com
 DOMAIN-SUFFIX,um.contentstudio.io
 DOMAIN-SUFFIX,umami.wakarimasen.moe
+DOMAIN-SUFFIX,unl1zvy2zuyn.franchiseplus.nl
 DOMAIN-SUFFIX,urs.metacritic.com
 DOMAIN-SUFFIX,user-metrics.onthemarket.com
 DOMAIN-SUFFIX,usmetric.rediff.com
@@ -5031,8 +5035,11 @@ DOMAIN-SUFFIX,vf.startpage.com
 DOMAIN-SUFFIX,views.arabnews.com
 DOMAIN-SUFFIX,views.asurascans.com
 DOMAIN-SUFFIX,vortex.hulu.com
+DOMAIN-SUFFIX,w2g-mtrx.w2g.tv
+DOMAIN-SUFFIX,w2g-ping.b-cdn.net
 DOMAIN-SUFFIX,w3-reporting.reddit.com
 DOMAIN-SUFFIX,w6.chabad.org
+DOMAIN-SUFFIX,w9g7dlhw3kaank.www.eldorado.gg
 DOMAIN-SUFFIX,wa.childrensplace.com
 DOMAIN-SUFFIX,wa.gmx.co.uk
 DOMAIN-SUFFIX,wa.gymboree.com
@@ -5044,6 +5051,7 @@ DOMAIN-SUFFIX,weblog.flyasiana.com
 DOMAIN-SUFFIX,wh.ipaddress.com
 DOMAIN-SUFFIX,wstats.e-wok.tv
 DOMAIN-SUFFIX,xp.apple.com
+DOMAIN-SUFFIX,yes88kks.infinityscans.net
 DOMAIN-SUFFIX,z.cdp-dev.cnn.com
 DOMAIN-SUFFIX,z737.thestar.com
 DOMAIN-SUFFIX,za.qeeq.com
@@ -5118,7 +5126,6 @@ DOMAIN-SUFFIX,sourcepoint-mms.history.com
 DOMAIN-SUFFIX,sourcepoint-mms.mylifetime.com
 DOMAIN-SUFFIX,vg247-p2.vg247.com
 DOMAIN-SUFFIX,vg247-uk.vg247.com
-DOMAIN-SUFFIX,0d8is908gby1.www.terraform.com.ar
 DOMAIN-SUFFIX,11b6n4ty2x3.taxliencode.com
 DOMAIN-SUFFIX,13js1lbtbj3.sparkloop.app
 DOMAIN-SUFFIX,16i6nuuc2ej.koelewijn.nl
@@ -5151,12 +5158,9 @@ DOMAIN-SUFFIX,5mc92su06suu.www.abhijith.page
 DOMAIN-SUFFIX,6nwp0r33a71m.app.dev.cardahealth.com
 DOMAIN-SUFFIX,6ynyejkv0j1s.app.tapmyback.com
 DOMAIN-SUFFIX,704g8xh7qfzx.www.intercity.technology
-DOMAIN-SUFFIX,76zvoxo5yx0l.www.eldorado.gg
 DOMAIN-SUFFIX,771fnypadw0j.pt.themoneytizer.com
 DOMAIN-SUFFIX,78rkcgj4i8c6.www.cefirates.com
 DOMAIN-SUFFIX,7hdl8dlfjm4g.www.cybernetman.com
-DOMAIN-SUFFIX,7mvmjg.www.emanualonline.com
-DOMAIN-SUFFIX,8e0905osvgw5.taleez.com
 DOMAIN-SUFFIX,8ehhtsv9bo7i.monkeylearn.com
 DOMAIN-SUFFIX,8ue4rp6yxyis.www.tapmyback.com
 DOMAIN-SUFFIX,8vwxqg.tapin.gg
@@ -5172,11 +5176,12 @@ DOMAIN-SUFFIX,b1tow9h4erpw.anur.polymerdev.com
 DOMAIN-SUFFIX,b20p6lt350nt.app.polymersearch.com
 DOMAIN-SUFFIX,b536mpmxoqxa.www.themoneytizer.com
 DOMAIN-SUFFIX,b5j6itccyluq.nofluffjobs.com
+DOMAIN-SUFFIX,c319tpiw462o.segops.madisonspecs.com
 DOMAIN-SUFFIX,cqsecshf4rd9.www.tracktheta.com
 DOMAIN-SUFFIX,cqz6fn6aox.aporia.com
 DOMAIN-SUFFIX,cy98g9wuwn0n.angularjs.poc.glenigan.com
+DOMAIN-SUFFIX,dlziqh9bo7.boring.fm
 DOMAIN-SUFFIX,dsoxjxin5jji.controlconceptsusa.com
-DOMAIN-SUFFIX,dwdlpqm6d4ra.test1.emanualonline.com
 DOMAIN-SUFFIX,e5obq1v261.www.lurkit.com
 DOMAIN-SUFFIX,f02b61sgc617.es.themoneytizer.com
 DOMAIN-SUFFIX,fkupm8697t19.eyevolution.de
@@ -5185,26 +5190,30 @@ DOMAIN-SUFFIX,fyznhp8inq9x.jaywilsonwebsolutions.com
 DOMAIN-SUFFIX,gl5g98t0vfjb.panprices.com
 DOMAIN-SUFFIX,gvmomuqjv1.swyftx.com
 DOMAIN-SUFFIX,hht8m6w8mnug.quine.sh
+DOMAIN-SUFFIX,ia84berzxy7v.de.themoneytizer.com
 DOMAIN-SUFFIX,ilkk97e98lvg.www.sidsplumbing.ie
 DOMAIN-SUFFIX,ivrnfvlcgubm.www.cefirates.com
 DOMAIN-SUFFIX,iwl2d7pa4yx1.www.logology.co
 DOMAIN-SUFFIX,ixa9ill0f7bg.grundbuch.zentraler-antragsservice.com
-DOMAIN-SUFFIX,jii3gnhro.www.emanualonline.com
+DOMAIN-SUFFIX,jc917x3.adaptive.marketing
 DOMAIN-SUFFIX,jiktq0fr9hv6.meleton.ru
 DOMAIN-SUFFIX,kn81kivjwwc7.www.logology.co
 DOMAIN-SUFFIX,li3k4d70ig52.resourceya.com
 DOMAIN-SUFFIX,lj5s1u8ct5vz.app.chatpay.dev
 DOMAIN-SUFFIX,lofo3l15c674.platform.replai.io
 DOMAIN-SUFFIX,lv6od3a4sz12.www.logology.co
+DOMAIN-SUFFIX,m3uef4b38brmbntdzx.franchiseplus.nl
 DOMAIN-SUFFIX,m4zoxtrcea1k.controlconceptsusa.com
 DOMAIN-SUFFIX,m6c4t9vmqarj.www.cefirates.com
 DOMAIN-SUFFIX,mh9qqwotr890.koelewijn.nl
 DOMAIN-SUFFIX,mteme7li1d6r.vertexmarketingagency.com
+DOMAIN-SUFFIX,my8yyx7wcyyt.dev.monumentmetals-pwa.stgin.com
 DOMAIN-SUFFIX,n367tqpdxce0.quine.sh
 DOMAIN-SUFFIX,n4kb43cl2bsw.creatordrop.com
 DOMAIN-SUFFIX,nqyuel589fq5.esgrounding.com
 DOMAIN-SUFFIX,ns3w1qrlbk4s.tip.etip-staging.etip.io
 DOMAIN-SUFFIX,o3gxzoewxl1x.cp.zomro.com
+DOMAIN-SUFFIX,omyvimmw9wsk.t.mahapowerex.eu
 DOMAIN-SUFFIX,os270ojwwxtg.gameflow.tv
 DOMAIN-SUFFIX,otx23nu6rzon.prep.toppers.com
 DOMAIN-SUFFIX,p7h1silo3f.app.cainthus.com
@@ -5213,7 +5222,6 @@ DOMAIN-SUFFIX,qnlbs2m0uoto.www.videoath.com
 DOMAIN-SUFFIX,qqeuq1cmoooq.accuretawealth.com
 DOMAIN-SUFFIX,qri2r94eeajr.innovationcast.com
 DOMAIN-SUFFIX,qt5jl7r111h7.allesvoormijnvakantie.nl
-DOMAIN-SUFFIX,rbat6ac0zzjd.www.terraform.com.ar
 DOMAIN-SUFFIX,rgb9uinh2dej9ri.jacobzhang.de
 DOMAIN-SUFFIX,ros3d4dbs3px.salud-masculina.info
 DOMAIN-SUFFIX,s2whyufxmzam.chatpay.com.br
@@ -41003,6 +41011,7 @@ DOMAIN-SUFFIX,ymprove.gmx.net
 DOMAIN-SUFFIX,ymprove.web.de
 DOMAIN-SUFFIX,gtm.mandesager.dk
 DOMAIN-SUFFIX,ia.ekstrabladet.dk
+DOMAIN-SUFFIX,nrpukcsgboqr0gz2o8.www.bolighub.dk
 DOMAIN-SUFFIX,analytics.allovoisins.com
 DOMAIN-SUFFIX,analytics.clubic.com
 DOMAIN-SUFFIX,bmly.impots.gouv.fr
@@ -41347,10 +41356,10 @@ DOMAIN-SUFFIX,iwa.iplsc.com
 DOMAIN-SUFFIX,kropka.onet.pl
 DOMAIN-SUFFIX,mklik.gazeta.pl
 DOMAIN-SUFFIX,p.gazeta.pl
-DOMAIN-SUFFIX,p2ro4u.trybawaryjny.pl
 DOMAIN-SUFFIX,pixel.wp.pl
 DOMAIN-SUFFIX,rek.www.wp.pl
 DOMAIN-SUFFIX,stats.teledyski.info
+DOMAIN-SUFFIX,yctjw54slxrwwlh.trybawaryjny.pl
 DOMAIN-SUFFIX,audience-mostread.r7.com
 DOMAIN-SUFFIX,click.uol.com.br
 DOMAIN-SUFFIX,csplog.kwai-pro.com

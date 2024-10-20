@@ -2,6 +2,8 @@
 /* https://easylist.to/easylist/easylist.txt */
 /* General element hiding rules */
 
+a[href*='redirect.php'] > img[src*='.gif'],
+a[href*='ads'],
 #AC_ad,
 #AD_160,
 #AD_300,

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Function4limbo.X
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2.04.10
+// @version      0.2024.10.19
 // @license      CC BY-NC-SA 4.0
 // @description  专为 Adblock4limbo 设计；https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；
 // @author       limbopro
@@ -284,7 +284,7 @@ function if_a_click_then_close_daohang() {
 */
 
 
-var nsfw_regex = new RegExp(/\b(thisav|njav|missav|javlib|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+var nsfw_regex = new RegExp(/\b(thisav|njav|missav|javlib|javbus|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|javbus|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
 var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
 var echo_ell_length = 21; // 总共导航类目数量
 var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
@@ -378,9 +378,9 @@ function navigation4limbo_body_pre() {
         <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmode_switch">成人保护模式(ON)</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#efb432 !important; box-shadow:inset 0px 0px 15px 3px #efb432;" class="a_global red"  id="lock_screen">锁屏! 🔐</button></li>\
         <li class="li_global"><a href="https://t.me/Adblock4limbo/21" target="_blank" class="a_global red" id="FAQ">常见FAQ</a></li>\
-        <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues?q=is%3Aissue+is%3Aclosed" \
+        <li class="li_global"><a class="a_global red" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues?q=is%3Aissue+is%3Aclosed" \
         target="_blank">提交issue</a></li>\
-        <li class="li_global"><a class="a_global green" id="admin" href="https://t.me/limboprobot" \
+        <li class="li_global"><a class="a_global red" id="admin" href="https://t.me/limboprobot" \
         target="_blank">联系博主</a></li>\
         <li class="li_global"><a class="a_global" id="tgGroup" href="https://t.me/Adblock4limbo/21" \
         target="_blank">电报群组</a></li>\
@@ -442,7 +442,7 @@ function navigation4limbo_body_pre() {
         <div class="title_global">网络连通及被墙检测//</div>\
         <ul class="ul_global">\
         <li class="li_global"><a class="a_global special" id="Sukka" href="https://ip.skk.moe/"\
-        target="_blank">ip地址查询</a></li>\
+        target="_blank">ip地址查询（当前代理节点/本地IP信息）</a></li>\
         <li class="li_global"><a class="a_global" id="checkgfw" href="https://www.checkgfw.com/"\
         target="_blank">域名被墙检测</a></li>\
         \
@@ -867,17 +867,21 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Cloudflare Domain', 'https://www.cloudflare.com/products/registrar/', '_blank', 'domain-buy', 'better'],
 ['NameCheap', 'https://www.namecheap.com/', '_blank', 'domain-buy', 'common'],
 ['freenom', 'https://www.freenom.com/zh/freeandpaiddomains.html', '_blank', 'domain-buy', 'common'],
-['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'special'],
-['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'special'],
-['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'special'],
-['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'better'],
+['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'better'],
+['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'better'],
+['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'better'],
+['Javbus', 'https://www.javbus.com/', '_blank', 'xOnline', 'common'],
+['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'common'],
 ['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'common'],
 ['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'common'],
 ['Javday', 'https://javday.tv/', '_blank', 'xOnline', 'common'],
 ['Njav', 'https://njav.tv/zh/', '_blank', 'xOnline', 'common'],
-['Thisav', 'https://thisav.com/', '_blank', 'xOnline', 'common'],
 ['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
 ['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
+['Bash 教程','https://wangdoc.com/bash/','_blank','knowledge','common'],
+['SSH 教程','https://wangdoc.com/ssh/','_blank','knowledge','common'],
+['Vim从入门到精通', 'https://limbopro.com/archives/31058.html', '_blank', 'knowledge', 'common'],
+['网站状态检测', 'https://check-host.net/check-http?host=https://limbopro.com', '_blank', 'ipcheck', 'special'],
 ['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],
 ['BGP Toolkit ', 'https://bgp.he.net/', '_blank', 'ipcheck', 'common'],
 ['Baidu', 'https://www.baidu.com/', '_blank', 'ipcheck', 'common'],
@@ -896,14 +900,15 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['在线文件格式转换器', 'https://convertio.co/zh/', '_blank', 'Tools', 'common'],
 ['PDF在线转换', 'https://www.ilovepdf.com/zh-cn', '_blank', 'Tools', 'common'],
 ['iconfont', 'https://www.iconfont.cn/', '_blank', 'Tools', 'common'],
-['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
+['hitomi', 'https://hitomi.la/index-chinese.html', '_blank', 'comic18', 'better'],
 ['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
+['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
 ['肉漫', 'https://www.rouman5.com/', '_blank', 'comic18', 'special'],
-['hitomi', 'https://hitomi.la/index-chinese.html', '_blank', 'comic18', 'special'],
 ['博客优化', 'https://limbopro.com/category/builder/', '_blank', 'seoandmore', 'special'],
 ['博客防御', 'https://limbopro.com/tag/Cloudflare/', '_blank', 'seoandmore', 'common'],
 ['苦瓜书盘', 'https://kgbook.com/', '_blank', 'bookreadanddownload', 'common'],
 ['Library Genesis', 'https://www.libgen.is/', '_blank', 'bookreadanddownload', 'special'],
+['Z-library', 'https://limbopro.com/archives/30553.html', '_blank', 'bookreadanddownload', 'special'],
 ['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
 ['CSS教程', 'https://www.runoob.com/css/css-tutorial.html', '_blank', 'front-end', 'common'],
 ['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
@@ -935,6 +940,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
 ['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
 ['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
+['iyf爱壹帆', 'https://www.iyf.tv/', '_blank', 'movies', 'special'],
 ['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'special'],
 ['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'better'],
 ];

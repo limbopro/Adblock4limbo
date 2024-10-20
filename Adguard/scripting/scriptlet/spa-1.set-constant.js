@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["checkAdBlock","noopFunc"],["detectedAdblock","noopFunc"],["hasAdblocker","false"],["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag","{}"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["eazy_ad_unblocker_msg_var",""],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["ShowRewards","noopFunc"],["initPopunder","noopFunc"],["URL_VAST_YOUTUBE","{}"],["__configuredDFPTags","{}"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","noopFunc"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["a_consola","noopFunc"]];
 
-const hostnamesMap = new Map([["cinelatino.net",0],["descargaseriestv.com",1],["coempregos.com.br",1],["anitube.us",1],["anitube.vip",1],["hinatasoul.com",1],["3djuegos.com",2],["3djuegosguias.com",2],["3djuegospc.com",2],["applesfera.com",2],["compradiccion.com",2],["directoalpaladar.com",[2,25]],["elblogsalmon.com",[2,25]],["espinof.com",2],["genbeta.com",2],["mundoxiaomi.com",2],["trendencias.com",2],["trendenciashombre.com",2],["vidaextra.com",2],["vitonica.com",2],["xataka.com",2],["xatakaciencia.com",2],["xatakafoto.com",2],["xatakahome.com",2],["xatakamovil.com",2],["xatakandroid.com",2],["xatakawindows.com",2],["financasdeouro.com",3],["animeszone.net",4],["atv.pe",[5,6]],["monumental.co.cr",[5,6]],["elcomercio.com",[5,6]],["antena7.com.do",[5,6]],["rqp.com.bo",[5,6]],["canal12.com.sv",[5,6]],["chapintv.com",[5,6]],["vtv.com.hn",[5,6]],["tn23.tv",[5,6]],["canal13mexico.com",[5,6]],["c9n.com.py",[5,6]],["repretel.com",[5,6]],["redbolivision.tv.bo",[5,6]],["animesonline.nz",7],["mdr.ar",8],["impactoespananoticias.com",8],["skynovels.net",8],["botinnifit.com",8],["minhasdelicias.com",8],["luchaonline.com",8],["meocloud.pt",9],["fichajes.com",10],["niusdiario.es",[11,41]],["xerifetech.com",12],["pobre.wtf",[13,42]],["suaads.com",14],["reidoplacar.com",[14,43]],["suaurl.com",[14,43]],["legendei.net",15],["documaniatv.com",16],["cadenaser.com",17],["texto.kom.gt",18],["infojobs.com.br",19],["maringapost.com.br",20],["bandab.com.br",20],["ouniversodatv.com",21],["tribunaavila.com",22],["deportealdia.live",23],["elquintobeatle.com",24],["empregoestagios.com",24],["satcesc.com",24],["bebesymas.com",25],["diariodelviajero.com",25],["motorpasion.com",25],["motorpasionmoto.com",25],["pymesyautonomos.com",25],["docer.com.ar",26],["doceru.com",26],["docero.com.br",26],["comandotorrents.org",27],["adslayuda.com",28],["outerspace.com.br",29],["doramasmp4.com",30],["file4go.net",32],["seriesdonghua.com",33],["mundodonghua.com",33],["playview.io",34],["clickjogos.com.br",35],["3xyaoi.com",36],["uol.com.br",[37,38]],["megafire.net",39],["elmundo.es",40],["gourlpro.com",44],["adclic.es",44],["adclic.org",44],["mundopolo.net",44],["jurisfera.com",44],["adclicker.info",44],["adclicker.io",44],["safepc.online",44],["solopc.net",44],["player.hentaistube.com",45],["playnewserie.xyz",46],["tiohentai.xyz",47],["otakustv.com",[48,49]],["pornolandia.xxx",50],["hentaiporno.xxx",51],["fakings.com",52]]);
+const hostnamesMap = new Map([["cinelatino.net",0],["descargaseriestv.com",1],["coempregos.com.br",1],["anitube.us",1],["anitube.vip",1],["hinatasoul.com",1],["3djuegos.com",2],["3djuegosguias.com",2],["3djuegospc.com",2],["applesfera.com",2],["compradiccion.com",2],["directoalpaladar.com",[2,25]],["elblogsalmon.com",[2,25]],["espinof.com",2],["genbeta.com",2],["mundoxiaomi.com",2],["trendencias.com",2],["trendenciashombre.com",2],["vidaextra.com",2],["vitonica.com",2],["xataka.com",2],["xatakaciencia.com",2],["xatakafoto.com",2],["xatakahome.com",2],["xatakamovil.com",2],["xatakandroid.com",2],["xatakawindows.com",2],["financasdeouro.com",3],["animeszone.net",4],["atv.pe",[5,6]],["monumental.co.cr",[5,6]],["elcomercio.com",[5,6]],["antena7.com.do",[5,6]],["rqp.com.bo",[5,6]],["canal12.com.sv",[5,6]],["chapintv.com",[5,6]],["vtv.com.hn",[5,6]],["tn23.tv",[5,6]],["canal13mexico.com",[5,6]],["c9n.com.py",[5,6]],["repretel.com",[5,6]],["redbolivision.tv.bo",[5,6]],["animesonline.nz",7],["mdr.ar",8],["impactoespananoticias.com",8],["skynovels.net",8],["botinnifit.com",8],["minhasdelicias.com",8],["luchaonline.com",8],["meocloud.pt",9],["fichajes.com",10],["niusdiario.es",[11,41]],["xerifetech.com",12],["pobre.wtf",[13,42]],["suaads.com",14],["reidoplacar.com",[14,43]],["suaurl.com",[14,43]],["legendei.net",15],["documaniatv.com",16],["cadenaser.com",17],["texto.kom.gt",18],["infojobs.com.br",19],["maringapost.com.br",20],["bandab.com.br",20],["ouniversodatv.com",21],["tribunaavila.com",22],["deportealdia.live",23],["elquintobeatle.com",24],["empregoestagios.com",24],["satcesc.com",24],["bebesymas.com",25],["diariodelviajero.com",25],["motorpasion.com",25],["motorpasionmoto.com",25],["pymesyautonomos.com",25],["docer.com.ar",26],["doceru.com",26],["docero.com.br",26],["comandotorrents.org",27],["adslayuda.com",28],["outerspace.com.br",29],["doramasmp4.com",30],["file4go.net",32],["seriesdonghua.com",33],["mundodonghua.com",33],["playview.io",34],["clickjogos.com.br",35],["3xyaoi.com",36],["uol.com.br",[37,38]],["megafire.net",39],["elmundo.es",40],["myfirstdollar.org",44],["gourlpro.com",44],["adclic.es",44],["adclic.org",44],["mundopolo.net",44],["jurisfera.com",44],["adclicker.info",44],["adclicker.io",44],["safepc.online",44],["solopc.net",44],["player.hentaistube.com",45],["playnewserie.xyz",46],["tiohentai.xyz",47],["otakustv.com",[48,49]],["pornolandia.xxx",50],["hentaiporno.xxx",51],["fakings.com",52]]);
 
 const entitiesMap = new Map([["anitube",31]]);
 
@@ -367,13 +367,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -382,30 +380,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 

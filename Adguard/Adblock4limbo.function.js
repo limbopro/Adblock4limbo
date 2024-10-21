@@ -19,9 +19,13 @@
 
 /**
  * ---------------------------
- * 作者： limbopro
- * 使用手册： https://limbopro.com/archives/12904.html
- * 联系我们： https://limbopro.com/6.html
+ * 毒奶去网页广告计划
+ * Author: limbopro
+ * 完全使用手册：https://limbopro.com/archives/12904.html
+ * 联系博主：https://t.me/limboprobot
+ * 电报群组：https://t.me/Adblock4limbo
+ * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
+ * Github：https://github.com/limbopro/Adblock4limbo
  * ---------------------------
  */
 

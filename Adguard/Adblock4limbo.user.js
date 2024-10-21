@@ -3,7 +3,7 @@
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
 // @version      0.4.10.20
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去广告计划JS脚本；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
+// @description  毒奶去网页广告计划用户脚本；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Javbus/Supjav/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/hitomi/91porn/等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
@@ -13,6 +13,8 @@
 // @match        https://ddys.mov/*
 // @match        https://jable.tv/*
 // @match        https://cnys.tv/*
+// @match        https://m.iyf.tv/*
+// @match        https://www.iyf.tv/*
 // @match        https://en.jable.tv/*
 // @match        https://*.jable.tv/*
 // @match        https://www.btbdys.com/*
@@ -20,6 +22,7 @@
 // @match        https://www.bdys02.com/*
 // @match        https://www.bdys03.com/*
 // @match        https://www.bdys10.com/*
+// @match        https://www.52bdys.com/*
 // @match        https://cn.pornhub.com/*
 // @match        https://www.pornhub.com/*
 // @match        https://missav.com/*
@@ -246,11 +249,11 @@ var imax = {
         //contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
     },
     css: {
-	    globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
-	    libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
-	    goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
-	    avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
-	    btbdys: ".artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
+        globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
+        libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
+        goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
+        avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
+        btbdys: "div[style*='z-index:999'],.artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
@@ -274,7 +277,7 @@ var imax = {
         nivod: "img[src*='1a732eeb1adb'], img[src*='49e8abd32d13'], span[style*='1a2d'],span[style*='0891'],[style='text-align: center; margin-top: 30px;'],.qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
-	iyf:"",
+        iyf: ".dabf > .ng-star-inserted,vg-pause-f,.bg-overlayer:style(pointer-events: unset !important;),.pggf > .ng-star-inserted {display:none !important; pointer-events: none !important;}",
         hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
         cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
@@ -333,7 +336,7 @@ function values() {
         "nivod",
         "91short",
         "xiaobaotv",
-	"iyf",
+        "iyf",
         "cnys",
         "xiaoxintv",
         "javday",
@@ -342,7 +345,7 @@ function values() {
         "4hu",
         "netflav",
         "javplayer",
-	    "filemoon",
+        "filemoon",
         "embedrise",
         "mmfl02",
         "mmsw02",
@@ -496,6 +499,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'ddys':
             //css_adsRemove(imax.css.ddrk);
             css_adsRemove(imax.css.ddrk2);
+            
             //selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 0)
 
             var divx = document.createElement('div');
@@ -579,6 +583,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //videoAds_accelerateSkip(0.1); // 视频广告加速
             //setConstant(); // 视频广告加速
             hrefAttribute_set();
+
+            if (document.querySelectorAll('li[data-increase]')[1] !== null) {
+    document.querySelectorAll('li[data-increase]')[1].click()
+}
+
             var url = document.location.href;
             if (url == "https://www.bdys10.com/" || url == "https://www.bdys03.com/") {
                 if (!document.getElementById("bdys")) {
@@ -667,7 +676,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             // nothing to do.
             break;
         case 'iyf':
-		    break;
+        css_adsRemove(imax.css.iyf);
+            break;
 
         case 'cnys':
             // nothing to do.
@@ -759,7 +769,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             abort_on_property_read('__Y');
             break;
-	    case "javplayer":
+        case "javplayer":
             adsDomain_switch("fc2stream")
             break;
         case "supjav":
@@ -772,9 +782,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             js_adsRemove(uBlockOrigin.setconstant);
             js_adsRemove(uBlockOrigin.nowindowopenif);
             noWindowOpenIf('window.open')
-            noWindowOpenIf('touchend')  
+            noWindowOpenIf('touchend')
             window_open_defuser(); // 打断 window.open 施法
-	    break;
+            break;
 
         case "hitomi":
             css_adsRemove(imax.css.hitomi);
@@ -970,9 +980,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         case 'missav':
-	    css_adsRemove(imax.css.missav, 100, 'missavx');
+            css_adsRemove(imax.css.missav, 100, 'missavx');
             window_open_defuser(); // 打断 window.open 施法
-	    break;
+            break;
         default:
             // 修正 case 中 default 的匹配规则  10.25.203
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {

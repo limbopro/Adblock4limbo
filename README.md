@@ -66,7 +66,7 @@
 > 目前去网页广告计划支持约30+网站：涵盖**在线影视**/**电子漫画**/XXXX；  
 参阅**完整**的：[**在维护的网站列表**](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)（**该列表即时更新，如有出入请以此为准**）；如果其中没有你 **希望支持去广告的网站**或在维护的网站换了域名，或又出现了广告，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；
 
-> 如无特别说明，【毒奶去网页广告计划】在对以上网站网页广告去除过程中，代理软件（如Surge、QuantumultX、Shadowrocket）将优先支持，油猴用户次之或不完美支持，PC、Mac等桌面浏览器用户优先推荐安装 ublock origin 等浏览器扩展，Android 用户推荐安装 Firefox 浏览器 + ublock origin 组合 以屏蔽网页广告。
+> 如无特别说明，【毒奶去网页广告计划】在对以上网站网页广告去除过程中，代理软件（如Surge、**QuantumultX（最优先适配）**、Shadowrocket等）将优先支持，油猴用户次之或不完美支持，PC、Mac等桌面浏览器用户优先推荐安装 [ublock origin](https://limbopro.com/archives/1098.html) 等浏览器扩展，Android 用户推荐安装 [Firefox 浏览器 + ublock origin 组合](https://limbopro.com/archives/26805.html) 以屏蔽网页广告。
 
 > FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）；  
 > iOS 用户常见FAQ：https://t.me/Adblock4limbo/21 ；  

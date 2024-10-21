@@ -15,13 +15,13 @@
 
 **毒奶去广告计划始于 11.01.2020**，原文：https://limbopro.com/archives/12904.html ；
 
-> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket），仅针对iOS浏览器（Chrome/Safari等）**网页广告**（Javascript 弹窗横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，提升iPhone或iPad端浏览器观影或网页浏览体验；本计划会长期更新，以适应未来更多需要；
+> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket/loon/Stash..），仅针对iOS浏览器（Chrome/Safari等），**移除特定网站网页广告**（Javascript 弹窗/Ads横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，**提升iPhone或iPad端浏览器观影或网页浏览体验**；本计划会长期更新，以适应未来更多需要；
 
 ### 其他注意事项
 
-> 🈲️ 另外，按教程配置好后，如若仍发现广告，请按以下方式进行重试：1.清理浏览器缓存 2.在无痕模式下打开该页面，如若仍有广告请优先 [提交issue](https://github.com/limbopro/Adblock4limbo/issues)  反馈（附上该页面截图和链接/18🈲图片注意打码处理）；3.请确保你的浏览器没有自带广告屏蔽功能（如Alook浏览器），其内置的过滤器将导致一些冲突；4.建议使用谷歌浏览器，~~Safari~~；
+> 🈲️ 另外，按教程配置好后，如若仍发现广告，请按以下方式进行重试：1.**清理浏览器缓存** 2.在**无痕模式下打开该页面**，如若仍有广告请优先 [提交issue](https://github.com/limbopro/Adblock4limbo/issues)  反馈（附上该页面截图和链接/18🈲图片注意打码处理）；3.请确保你的浏览器没有自带广告屏蔽功能（如Alook浏览器），其内置的过滤器将导致一些冲突；4.建议使用谷歌浏览器，~~Safari~~；
 
-### 目前在维护的网站目录
+### 目前在维护的网站目录（示例）
 
 | 网站  | 网站类型 | 支持软件 | 广告类型 |
 | --- | --- | --- | --- |
@@ -60,35 +60,27 @@
 | [hanime1](https://hanime1.me/) | 工口动漫 | 同上  | 图片  |
 | [知乎](https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour) | 问答  | 油猴  | PC端未登录状态浏览知乎体验优化 |
 
+#### 目前在维护的网站目录（即时更新）
+
 > 目前去网页广告计划支持约30+网站：涵盖**在线影视**/**电子漫画**/XXXX；  
-参阅完整的：[在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)；如果其中没有你 **希望支持去广告的网站**或在维护的网站换了域名，或又出现了广告，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；
+参阅**完整**的：[**在维护的网站列表**](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist)（**该列表即时更新，如有出入请以此为准**）；如果其中没有你 **希望支持去广告的网站**或在维护的网站换了域名，或又出现了广告，可以在本文 **反馈问题/提交新网站** 部分，按要求 **反馈问题/提交新网站**；
 
 > 如无特别说明，【毒奶去网页广告计划】在对以上网站网页广告去除过程中，代理软件（如Surge、QuantumultX、Shadowrocket）将优先支持，油猴用户次之或不完美支持，PC、Mac等桌面浏览器用户优先推荐安装 [ublock origin](https://limbopro.com/archives/1098.html) 等浏览器扩展，Android 用户推荐安装 [Firefox 浏览器 + ublock origin 组合](https://limbopro.com/archives/26805.html) 以屏蔽网页广告。
-
 
 > FAQ(可能出现的问题及解决办法): https://limbopro.com/archives/12904.html （譬如 www.google.com:80/443 N/A MitM failed ）；  
 > iOS 用户常见FAQ：https://t.me/Adblock4limbo/21 ；  
 > 油猴用户常见FAQ：https://greasyfork.org/zh-CN/scripts/443290-adblock4limbo；  
 
-@> Surge 用户如需访问 Pornhub ，请直接访问 cn.pxxxn.com （即中文版），访问 www.pxxxn.com 或会失败；
+## 如何反馈问题/提交新网站（重要）
 
-## 电报讨论群组及 issues提交等
+![New issue](https://limbopro.com/usr/uploads/2023/09/407956982.png)
 
-> 1. 加入[群组](https://t.me/Adblock4limbo)，讨论交流为我们贡献你的力量；
-> 2. 如你在使用过程中遇到什么问题或**有网站需要移除广告**，可通过 [issues](https://github.com/limbopro/Adblock4limbo/issues) 提交；
-> 3. 直接联系博主电报：http://t.me/limboprobot / Gmail： service.limbopro.com@gmail.com
+> **电报机器人**🤖： [http://t.me/limboprobot](http://t.me/limboprobot)（简单建议/问题反馈/有趣文章或讯息投稿/...） ；    
+**讨论群组**：[https://t.me/Adblock4limbo/21](https://t.me/Adblock4limbo/21) 反馈与去网页广告相关问题，非相关话题可能会被移出群组；  
 
-### 提交 issue 格式
+> 1.如果 [在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist) 里没有你 **希望支持去广告的网站**，你可以 [提交issue](https://github.com/limbopro/Adblock4limbo/issues)；2.然后按照后文的 **配置教程** 部分安装去广告分流/模块/重写/或油猴脚本；（如无意外，你提交的网站较有价值的话，一般24h内会完成去广告支持，届时请更新相应模块/重写/分流）；3.在日常使用过程中**你的反馈很重要**，如果 [在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist) 里的网站**换了域名**，或**又出现了广告**，请[提交issue](https://github.com/limbopro/Adblock4limbo/issues) 为我们提供相关信息；  
 
-在日常使用过程中**你的反馈很重要**，如果 [在维护的网站列表](https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist) 里的网站**换了域名**，或**又出现了广告**，请[提交issue](https://github.com/limbopro/Adblock4limbo/issues) 为我们提供相关信息；
-
-> 1. 网站：
-> 2. 对应网页：
-> 3. 出现广告位置的截图：
-> 4. 使用的浏览器：如Chrome/Safari/Firefox..
-> 4. 代理软件：如Surge/QuantumultX
-> 5. 做过哪些尝试：你的操作路径（先做了什么又做了什么发生了什么现象）...
-> 6. 一些细节说明：
+> **反馈问题/提交新网站** 需包含信息：网站域名/广告出现页面网址/广告类型如(GIF|弹窗|底部横幅|...)，你使用的代理软件(如QuantumultX/Shadowrocket/Surge)或 浏览器扩展 油猴-Tampermonkey...；## 如何反馈问题/提交新网站（重要）  
 
 不局限如上，越多细节越好。  
 快来提交 [issue](https://github.com/limbopro/Adblock4limbo/issues) 吧！

@@ -83,17 +83,15 @@
 
 > **反馈问题/提交新网站** 需包含信息：网站域名/广告出现页面网址/广告类型如(GIF|弹窗|底部横幅|...)，你使用的代理软件(如QuantumultX/Shadowrocket/Surge)或 浏览器扩展 油猴-Tampermonkey...；## 如何反馈问题/提交新网站（重要）  
 
-不局限如上，越多细节越好。  
+>> 不局限如上，越多细节越好。  
 快来提交 [issue](https://github.com/limbopro/Adblock4limbo/issues) 吧！
 
-### 💡 涉及重要脚本及其源码
+### 去网页广告计划涉及脚本名称及其源码
 
-每日凌晨0点同步更新至Github仓库；
-
-1. **Adblock4limbo.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.js 重写对应脚本及其对应URL路径 
-2. **Adblock4limbo.user.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js （桌面浏览器油猴用户优先推荐安装此版本脚本；去广告实现用户脚本及其对应URL路径；）
-3. **Adblock4limbo.function.js** https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.function.js 导航页扩展脚本及其对应URL路径 
-
+1.**Adblock4limbo.js** —— 重写JS源码  https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.js  
+2.**Adblock4limbo.user.js** —— 去网页广告JS源码  https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js  
+3.**Adblock4limbo.function.js** —— 右下角导航页JS源码  
+https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.function.js  
 ## 毒奶去广告使用方法（配置步骤）
 
 完整配置教程：https://limbopro.com/archives/12904.html

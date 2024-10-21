@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202410201418
+## ! Version: 202410211252
 ## ! Title: EasyList
-## ! Last modified: 20 Oct 2024 14:18 UTC
+## ! Last modified: 21 Oct 2024 12:52 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -30734,7 +30734,6 @@ DOMAIN-SUFFIX,gg.caixin.com
 DOMAIN-SUFFIX,giftandgamecentral.com
 DOMAIN-SUFFIX,go.affiliatesleague.com
 DOMAIN-SUFFIX,go.bloxplay.com
-DOMAIN-SUFFIX,go.ezodn.com
 DOMAIN-SUFFIX,googleads.github.io
 DOMAIN-SUFFIX,hb.yahoo.net
 DOMAIN-SUFFIX,hbid.ams3.cdn.digitaloceanspaces.com

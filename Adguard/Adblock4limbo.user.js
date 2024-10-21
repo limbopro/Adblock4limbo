@@ -3,7 +3,7 @@
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
 // @version      0.4.10.20
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去广告计划油猴版；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
+// @description  毒奶去广告计划JS脚本；新增导航按钮；通过 JavaScript 移除Pornhub/搜索引擎（Bing/Google）广告及内容农场结果清除/泥巴影视/低端影视（可避免PC端10秒广告倒计时）/欧乐影院/独播库/ibvio/Jable（包含M3U8文件提取）/MissAv（禁止离开激活窗口视频自动暂停播放）/禁漫天堂/紳士漫畫/91porn/哔滴影视（加速跳过视频广告/避免反查）/555电影网（o8tv）等视频网站上的视频广告和图片广告，保持界面清爽干净无打扰！其他：优化PC端未登录状态访问知乎浏览体验（动态移除登录窗口/永远不会跳转至首页登录页面）；
 // @author       limbopro
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
@@ -132,12 +132,24 @@
 /**
  * ---------------------------
  * Author: limbopro
- * View: https://limbopro.com/archives/12904.html
+ * 完全使用手册：https://limbopro.com/archives/12904.html
  * 电报群组：https://t.me/Adblock4limbo
+ * 联系博主：https://t.me/limboprobot
  * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
  * Github：https://github.com/limbopro/Adblock4limbo
  * ---------------------------
  */
+
+/* 新增反馈&导航按钮
+
+// 油猴脚本用户导航页使用指南（PC/Mac）
+/// 1.1 当页面右下角导航按钮消失后，1秒内连续按 2次 ESC 键可唤出导航页面；
+/// 1.2 当页面右下角出现导航按钮时，此时只需按一次ESC键可唤出导航页面；
+/// 1.3 当处于导航页面时，按ESC可退出导航详情页；
+/// 1.4 当处于导航页面时，按G键或空格键 可快速唤出搜索框，可快速进行搜索操作（同时会退出导航页面）；
+/// 1.5 当处于导航页面时，按C键 可快速唤出网页聊天框，可快速提建议或反馈问题；
+
+*/
 
 /**
  * 为网页增加导航按钮，将位于页面右下角呈现；
@@ -1150,7 +1162,7 @@ function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag
     if (here.length > 0) {
         here[0].insertBefore(new_ele, here[0].childNodes[array])
         //here[0].appendChild(new_ele);
-        console.log("按钮已添加；")
+        console.log("按钮已添加")
     }
 }
 

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202410201418
+## ! Version: 202410211300
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Oct 2024 14:18 UTC
+## ! Last modified: 21 Oct 2024 13:00 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -140,7 +140,6 @@ DOMAIN-SUFFIX,eu-1-id5-sync.com, reject
 DOMAIN-SUFFIX,everesttech.net, reject
 DOMAIN-SUFFIX,ew3.io, reject
 DOMAIN-SUFFIX,experianmatch.info, reject
-DOMAIN-SUFFIX,ezodn.com, reject
 DOMAIN-SUFFIX,ezstat.ru, reject
 DOMAIN-SUFFIX,f27tltnd.de, reject
 DOMAIN-SUFFIX,fairdatacenter.de, reject
@@ -41014,6 +41013,7 @@ DOMAIN-SUFFIX,ia.ekstrabladet.dk, reject
 DOMAIN-SUFFIX,nrpukcsgboqr0gz2o8.www.bolighub.dk, reject
 DOMAIN-SUFFIX,analytics.allovoisins.com, reject
 DOMAIN-SUFFIX,analytics.clubic.com, reject
+DOMAIN-SUFFIX,at.pagesjaunes.fr, reject
 DOMAIN-SUFFIX,bmly.impots.gouv.fr, reject
 DOMAIN-SUFFIX,cdtm.cdiscount.com, reject
 DOMAIN-SUFFIX,compteur.developpez.com, reject

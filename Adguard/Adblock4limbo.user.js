@@ -153,6 +153,7 @@
 // @match        https://m.diyibanzhu.me/*
 // @match        https://www.javlibrary.com/*
 // @match        https://rouman5.com/*
+// @exclude      https://limbopro.com/*
 // @exclude      https://venus-av.com/*
 // @exclude      https://developer.mozilla.org/
 // @exclude      https://www.youtube.com/*
@@ -775,6 +776,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     siteAdd('MissAV', 'https://missav.com/search', '/' + code)
                     siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
                     siteAdd('Supjav', 'https://supjav.com/?s=', code)
+                    siteAdd('番号搜索🔍', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
                     siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
                     console.log('已生成在线预览链接🔗')
 
@@ -986,6 +988,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     siteAdd('MissAV', 'https://missav.com/search', '/' + code)
                     siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
                     siteAdd('Supjav', 'https://supjav.com/?s=', code)
+                    siteAdd('番号搜索🔍', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
                     siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
                     console.log('已生成在线预览链接🔗')
 

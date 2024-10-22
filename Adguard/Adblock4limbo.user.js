@@ -767,7 +767,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         a.href = url + codeSlect
                         a.textContent = siteName
                         a.target = '_blank'
-                        a.style = 'color:#CC0000;'
+                        a.style = 'color:rgb(8 0 204);'
                         lable.appendChild(a)
                         p.appendChild(lable)
                     }
@@ -775,6 +775,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     siteAdd('MissAV', 'https://missav.com/search', '/' + code)
                     siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
                     siteAdd('Supjav', 'https://supjav.com/?s=', code)
+                    siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
                     console.log('已生成在线预览链接🔗')
 
                 } else {
@@ -948,46 +949,52 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }, 1500)
             }
 
+            function javLibrary() { // 在番号详情页追加在线预览链接
 
-            xqy();
-            function xqy() {
-                setTimeout(() => { // 番号详情页添加番号搜索等操作
-                    javlibrary();
-                    if (document.querySelector('tr td.text')) {
-                        var code = document.querySelector('tr td.text').textContent;
-                        ele_dynamicAppend("#video_id > table > tbody", "onclick", "复制番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibraryx", 3, "button")
-                        ele_dynamicAppend("#video_id > table > tbody", "target", "搜索番号", "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd !important; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "javlibrarysearch", 4, "a")
-                        ele_dynamicAppend("#video_id > table > tbody", "onclick", "", "", "", "copy", 2, "input");
-                        document.getElementById('copy').value = code;
-                        document.getElementById('javlibraryx').addEventListener('click', () => {
-                            copyText("copy", "javlibraryx", "复制番号")
-                        })
+                let father = document.querySelector('div#video_info')
 
-                        // 为番号搜索添加素材
+                //let code = window.location.pathname.replace('/', '')
+                let code = document.querySelectorAll('td.text')[0].textContent
 
-                        document.querySelector("#javlibrarysearch").addEventListener('click', () => {
-                            if (document.querySelector("#searchbyGoogle") || null === document.querySelector("#searchbyGoogle")) {
-                                open_googlesearch_iframe();
-                            }
-                        })
+                let url = window.location.href
+                //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
+                let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
 
-                        if ((/\b(gsc.tab)\b/i.test(document.location.href.toLowerCase()))) {
-                            var jav_url = document.location.href.toLowerCase();
-                            var regexp_jav = /(.*)(#gsc.*)/;
-                            var jav_url_right = jav_url.replace(regexp_jav, '$1' + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=");
-                            document.querySelector('#javlibrarysearch').href = jav_url_right;
-                            document.querySelector('#javlibrarysearch').target = '_self'
-                            console.log(jav_url_right)
-                        } else {
-                            var jav_url = document.location.href.toLowerCase();
-                            var jav_url_right = jav_url + "#gsc.tab=0&gsc.q=" + code + "&gsc.sort=";
-                            document.querySelector('#javlibrarysearch').href = jav_url_right;
-                            document.querySelector('#javlibrarysearch').target = '_self'
-                            console.log(jav_url_right)
-                        }
+                if (url.search(regx) !== -1) {
+
+                    let p = document.createElement('table')
+                    p.style = 'word-break:break-all;font-size:14px;line-height:25px;'
+                    father.insertBefore(p, father.childNodes[2])
+
+                    let span = document.createElement('td')
+                    span.className = 'header'
+                    span.textContent = '在线预览：'
+                    p.appendChild(span)
+
+                    function siteAdd(siteName, url, codeSlect) {
+                        let a = document.createElement('a')
+                        let lable = document.createElement('label')
+                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                        a.href = url + codeSlect
+                        a.textContent = siteName
+                        a.target = '_blank'
+                        a.style = 'color:rgb(8 0 204);'
+                        lable.appendChild(a)
+                        p.appendChild(lable)
                     }
-                }, 1000)
+
+                    siteAdd('MissAV', 'https://missav.com/search', '/' + code)
+                    siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
+                    siteAdd('Supjav', 'https://supjav.com/?s=', code)
+                    siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
+                    console.log('已生成在线预览链接🔗')
+
+                } else {
+                    console.log('当前网站不不匹配')
+                }
             }
+
+            javLibrary()
 
         case 'douban':
             if (document.querySelectorAll('a.Ims1t')[0]) {

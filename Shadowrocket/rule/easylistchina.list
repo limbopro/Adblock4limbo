@@ -22,6 +22,15 @@ DOMAIN-SUFFIX,205.209.138.102, reject
 DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,gyunce.xyz, reject
+DOMAIN-SUFFIX,mlgowell.com, reject
+DOMAIN-SUFFIX,rqroytj33.fun, reject
+DOMAIN-SUFFIX,couvxlif.top, reject
+DOMAIN-SUFFIX,tarvrf.xyz, reject
+DOMAIN-SUFFIX,sbmhqe.xyz, reject
+DOMAIN-SUFFIX,dayujs.top, reject
+DOMAIN-SUFFIX,fanjs.top, reject
+DOMAIN-SUFFIX,qjoges.xyz, reject
 DOMAIN-SUFFIX,gpowow.xyz, reject
 DOMAIN-SUFFIX,jizxnr.xyz, reject
 DOMAIN-SUFFIX,msmcoa.xyz, reject
@@ -4465,6 +4474,7 @@ DOMAIN-SUFFIX,yt-adp.ws.126.net, reject
 DOMAIN-SUFFIX,z.nowscore.com, reject
 DOMAIN-SUFFIX,zt2088.com, reject
 DOMAIN-SUFFIX,ztyumn.ifeng.com, reject
+DOMAIN-SUFFIX,cnbd1.appmobile.cn, reject
 DOMAIN-SUFFIX,003store.com, reject
 DOMAIN-SUFFIX,0941.org, reject
 DOMAIN-SUFFIX,1.07swz.com, reject

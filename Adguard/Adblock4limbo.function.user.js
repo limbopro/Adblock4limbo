@@ -1,10 +1,21 @@
 // ==UserScript==
-// @name         Adblock4limbo.[github]
-// @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
+// @name         毒奶导航以及实用函数调用合集
+// @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
 // @version      0.2024.10.23
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue  
+// @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
+// @match        https://*/*
+// @match        https://twitter.com/*
+// @match        https://www.xvideos.com/*
+// @match        https://www.youtube.com/*
+// @match        https://developer.mozilla.org/*
+// @match        https://venus-av.com/*
+// @exclude      https://limbopro.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
 
 /**
  * ---------------------------
@@ -18,1722 +29,9 @@
  * ---------------------------
  */
 
-/* 新增反馈&导航按钮
+// 各种 function 的集合
 
-// 【导航】使用指南（PC/Mac）
-/// 按教程安装好油猴脚本
-/// 访问任意网站（绝大多数网站）
-/// 1.1 当页面右下角【导航按钮】消失后，1秒内连续按2次 ESC键 可唤出【导航页面】；
-/// 1.2 当页面右下角出现【导航按钮】时，此时只需再按一次 ESC键 可唤出【导航页面】；
-/// 1.3 当处于导航页面时，按ESC键 或点击空白处 可退出【导航页面】；
-/// 1.4 当处于导航页面时，按G键 或 空格键 可快速唤出【搜索框】，可快速进行搜索操作（同时会退出导航页面）；
-/// 1.5 当处于导航页面时，按C键 可快速唤出【网页聊天】框，可快速提建议或反馈问题；
-
-// 【导航】使用指南（iOS）
-/// 按教程配置好相应重写/去广告分流
-/// 访问【目前在维护的网站目录】里的（绝大多数）网站
-/// 1.1 当页面右下角导航按钮消失后，点击页面右侧1/3空白处即可唤出【导航按钮】；
-/// 1.2 当页面右下角出现导航按钮时，点击按钮即可唤出【导航页面】；
-/// 1.3 上下滑动页面亦可唤出【导航按钮】；
-*/
-
-// @match        https://*/*
-// @match        https://ddrk.me/*
-// @match        https://ddys.tv/*
-// @match        https://ddys.pro/*
-// @match        https://ddys.art/*
-// @match        https://ddys2.me/*
-// @match        https://ddys.mov/*
-// @match        https://jable.tv/*
-// @match        https://cnys.tv/*
-// @match        https://m.iyf.tv/*
-// @match        https://www.iyf.tv/*
-// @match        https://en.jable.tv/*
-// @match        https://*.jable.tv/*
-// @match        https://www.btbdys.com/*
-// @match        https://www.bdys01.com/*
-// @match        https://www.bdys02.com/*
-// @match        https://www.bdys03.com/*
-// @match        https://www.bdys10.com/*
-// @match        https://www.52bdys.com/*
-// @match        https://cn.pornhub.com/*
-// @match        https://www.pornhub.com/*
-// @match        https://missav.com/*
-// @match        https://91porn.com/*
-// @match        https://91porna.com/*
-// @match        https://www.91porn.com/*
-// @match        https://avple.tv/*
-// @match        https://18comic.org/*
-// @match        https://18comic.vip/*
-// @match        https://www.5dy5.cc/*
-// @match        https://www.5dy6.cc/*
-// @match        https://www.5dy7.cc/*
-// @match        https://www.5dy8.cc/*
-// @match        https://www.o8tv.com/*
-// @match        https://www.555dd5.com/*
-// @match        https://www.555dd6.com/*
-// @match        https://www.555dd7.com/*
-// @match        https://www.555dd8.com/*
-// @match        https://555dyx1.com/*
-// @match        https://555dyx3.com/*
-// @match        https://555dyx4.com/*
-// @match        https://555dyx5.com/*
-// @match        https://o8tv.com/*
-// @match        https://www.wnacg.com/*
-// @match        https://www.wnacg.org/*
-// @match        https://w.duboku.io/*
-// @match        https://www.duboku.tv/*
-// @match        https://www.libvio.com/*
-// @match        https://www.libvio.pro/*
-// @match        https://www.libvio.top/*
-// @match        https://www.libvio.me/*
-// @match        https://www.tvn.cc/*
-// @match        https://m.tvn.cc/*
-// @match        https://wap.tvn.cc/*
-// @match        https://www.google.com/search*
-// @match        https://www.google.com.hk/search*
-// @match        https://www.bing.com/search?q=*
-// @match        https://cn.bing.com/search?q=*
-// @match        https://zhuanlan.zhihu.com/*
-// @match        https://www.zhihu.com/*
-// @match        https://www.instagram.com/*
-// @match        https://www.nbys.tv/*
-// @match        https://www.ttsp.tv/*
-// @match        http://www.tz659.com/*
-// @match        https://anime1.me/*
-// @match        https://m.yhdmp.cc/*
-// @match        https://m.yhdmp.com/*
-// @match        https://m.yhpdm.com/*
-// @match        https://www.nivod5.com/*
-// @match        https://m.nivod5.com/*
-// @match        https://www.nivod4.tv/*
-// @match        https://www.nivod8.tv/*
-// @match        https://www.nivod9.tv/*
-// @match        https://m.nivod4.tv/*
-// @match        https://m.nivod8.tv/*
-// @match        https://m.nivod9.tv/*
-// @include      https://m.nivod*.tv/*
-// @include      https://www.nivod*.tv/*
-// @match        https://www.javbus.com/*
-// @match        https://cn1.91short.com/*
-// @match        https://xiaobaotv.net/*
-// @match        https://javday.tv/*
-// @match        https://www.xvideos.com/*
-// @match        https://4hu.tv/*
-// @match        https://www.4hu.tv/*
-// @match        https://netflav.com/*
-// @match        https://javplayer.me/*
-// @match        https://netflav5.com/*
-// @match        https://filemoon.sx/*
-// @match        https://emturbovid.com/*
-// @match        https://netflavns1.com/*
-// @match        https://fc2stream.tv/*
-// @match        https://mmsw02.com/*
-// @match        https://embedrise.com/*
-// @match        https://mmfl02.com/*
-// @match        https://netflavns2.com/*
-// @match        https://supjav.com/*
-// @match        https://hanime1.me/*
-// @match        https://wangdoc.com/*
-// @match        https://developer.mozilla.org/*
-// @match        https://zh.javascript.info/*
-// @match        https://deerchao.cn/*
-// @match        https://gimy.ai/*
-// @match        https://www.olevod.tv/*
-// @match        https://www.olevod.com/*
-// @match        https://www.olevod.one/*
-// @match        https://t.me/*
-// @match        https://hitomi.la/*
-// @match        https://twitter.com/*
-// @match        https://tameikegoro.jp/*
-// @match        https://njav.tv/*
-// @match        https://www.ntdm9.com/*
-// @match        https://www.novel543.com/*
-// @match        https://www.hltv.org/*
-// @match        https://m.diyibanzhu.me/*
-// @match        https://www.javlibrary.com/*
-// @match        https://rouman5.com/*
-// @exclude      https://limbopro.com/*
-// @exclude      https://venus-av.com/*
-// @exclude      https://developer.mozilla.org/
-// @exclude      https://www.youtube.com/*
-// @exclude      https://www.xvideos.com/*
-// @require      https://update.greasyfork.org/scripts/478651/Twitter%20%E7%BD%91%E9%A1%B5%E7%89%88%E5%A4%9A%E8%A7%86%E9%A2%91gif%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.user.js
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=limbopro.com
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
-
-/**
- * 为网页增加导航按钮，将位于页面右下角呈现；
- * 如需取消该按钮，请将如上调用代码注释；
-*/
-
-
-daohang_build(); // 为页面增加导航按钮
-// 如不要导航可注释该行代码 在代码前加两行斜杆 //
-// daohang_build() 就像这样
-
-
-// 一些常量
-/* Start */
-
-var uBlockOrigin = {
-
-
-    // uBlockOrigin 默认脚本
-    // https://github.com/uBlockOrigin/uBOL-home/tree/main/chromium/rulesets/scripting/scriptlet
-    // uBO Lite (uBOL), a permission-less MV3 API-based content blocker.
-    // uBOL is entirely declarative, meaning there is no need for a permanent uBOL process for the filtering to occur, and CSS/JS injection-based content filtering is performed reliably by the browser itself rather than by the extension. This means that uBOL itself does not consume CPU/memory resources while content blocking is ongoing -- uBOL's service worker process is required only when you interact with the popup panel or the option pages.
-    // uBOL does not require broad "read/modify data" permission at install time, hence its limited capabilities out of the box compared to uBlock Origin or other content blockers requiring broad "read/modify data" permissions at install time.
-
-    /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
-     这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
-    */
-
-    chn0abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
-    chn0setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
-    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
-    abortonpropertyread: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-read.js", // default.abort-on-property-read.js
-    abortonpropertywrite: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-write.js", // default.abort-on-property-write.js
-    abortonstacktrace: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-stack-trace.js", // abort-on-stack-trace.js
-    addEventListenerdefuser: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.addEventListener-defuser.js", // default.addEventListener-defuser.js
-    alertbuster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.alert-buster.js", // default.alert-buster.js
-    cookieremover: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.cookie-remover.js", // default.cookie-remover.js
-    disablenewtablinks: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.disable-newtab-links.js", // default.disable-newtab-links.js
-    evaldataprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.evaldata-prune.js", // default.evaldata-prune.js
-    jsonprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.json-prune.js", // default.json-prune.js
-    m3uprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.m3u-prune.js", // default.m3u-prune.js
-    nanosetIntervalbooster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nano-setInterval-booster.js", // default.nano-setInterval-booster.js
-    nanosetTimeoutbooster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nano-setTimeout-booster.js", // default.nano-setTimeout-booster.js
-    noevalif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.noeval-if.js", // default.noeval-if.js
-    nofetchif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-fetch-if.js", // default.no-fetch-if.js
-    norequestAnimationFrameif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-requestAnimationFrame-if.js", // default.no-requestAnimationFrame-if.js
-    nosetIntervalif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-setInterval-if.js", // default.no-setInterval-if.js
-    nosetTimeoutif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-setTimeout-if.js", // default.no-setTimeout-if.js
-    nowebrtc: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nowebrtc.js", // default.nowebrtc.js
-    nowindowopenif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-window-open-if.js", // default.no-window-open-if.js
-    noxhrif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-xhr-if.js", // default.no-xhr-if.js
-    refreshdefuser: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.refresh-defuser.js", // default.refresh-defuser.js
-    removeattr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-attr.js", // default.remove-attr.js
-    removeclass: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-class.js", // default.remove-class.js
-    removenodetext: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-node-text.js", // default.remove-node-text.js
-    replacenodetext: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.replace-node-text.js", // default.replace-node-text.js
-    setattr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-attr.js", // default.set-attr.js
-    setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-constant.js", // default.set-constant.js
-    setcookie: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-cookie.js", // default.set-cookie.js
-    setlocalstorageitem: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-local-storage-item.js", // set-local-storage-item.js
-    spoofcss: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.spoof-css.js", // default.spoof-css.js
-    trustedsetconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.trusted-set-constant.js", // default.trusted-set-constant.js
-    trustedsetcookie: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.trusted-set-cookie.js", // default.trusted-set-cookie.js
-    windowcloseif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.window-close-if.js", // default.window-close-if.js
-    xmlprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.xml-prune.js", // default.xml-prune.js
-}
-
-var js_common = {
-    crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统 chat
-}
-
-var css_common = {
-    //General element hiding rules
-    /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
-     这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
-    */
-    gehr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/CSS/Adblock4limbo.user.css"
-}
-
-// 暂时 third_party_fileX('link', css_common.gehr, 'head'); // 动态引入 ublcok origin 通用去广告样式；
-// third_party_fileX("script", js_common.crisp, "head"); // 动态引入 crisp 聊天系统；
-// 油猴用户（桌面浏览器用户）可通过 // 注释上述代码来禁用Crisp；
-// Qx/Shadrowrocket/Surge/Loon 等代理软件用户可通过添加分流来禁用Crisp；（分流类型选择 host-keyword, crisp, reject）;
-
-/* End */
-
-var imax = {
-    js: {
-        //functionx: "https://greasyfork.org/scripts/477474-functionx4limbo-x/code/functionx4limboX.user.js",
-        functionx: "https://limbopro.com/Adguard/Adblock4limbo.function.js", // 全局js
-        //duboku: "https://limbopro.com/Adguard/duboku.js", // 独播库
-        avple: "https://limbopro.com/Adguard/avple.js", // avple 同步至 Greasy 时需注释
-        contentFarm: "https://limbopro.com/Adguard/contentFarm.js", // 内容农场
-        //contentFarm: 'https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js',
-    },
-    css: {
-        globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
-        othercss: ".jable_css { background: rgb(0, 172, 106) important; border-right:6px solid #28a745 !important;} .fontColor {color:green !important}", // 按钮输入框块等元素类
-        libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
-        goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
-        avple: "#adsbox,.asg-overlay,.jss20,.jss13,iframe,span[class*=MuiSkeleton-root],.jss16 ,.MuiSkeleton-pulse.jss12.MuiSkeleton-rect.MuiSkeleton-root,[id*=KnvW],img[src*=\".gif\"],iframe[data-width] {display: none! important;}", // avple
-        btbdys: "div[style*='z-index:999'],.artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
-        switch: ".switch {display:none !important}",
-        ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
-        ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
-        jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, iframe, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
-        test: "*, div,img {display: none !important}",
-        tvn: "img[src*='gif'], iframe {display:none !important; pointer-events:none important;}",
-        comic_18: "div.div2_sticky2, p > a[target=_blank], div.modal-body > a[target=_blank], li[class*='pop'] > a[target=_blank], li[class*='top'] > a[target=_blank], .modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important; pointer-events: none !important;}", // 555电影网
-        dy555: "div.module {z-index:1!important} div.popup.popup-tips.none.popupShow, a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
-        wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
-        missav: "a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
-        porna91: "a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
-        porn91: "br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
-        zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
-        pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
-        instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
-        ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none !important}",
-        tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
-        anime: "div[id*=ad] {display:none !important}",
-        yhdmp: ".yrtjbmnk_b, .hvitsutz_b {display :none !important; pointer-events: none !important;}", // 樱花动漫
-        //nivod: "[style='text-align: center; margin-top: 30px;'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
-        nivod: "img[src*='1a732eeb1adb'], img[src*='49e8abd32d13'], span[style*='1a2d'],span[style*='0891'],[style='text-align: center; margin-top: 30px;'],.qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
-        _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
-        xiaobaotv: "",
-        iyf: ".dabf > .ng-star-inserted,vg-pause-f,.bg-overlayer:style(pointer-events: unset !important;),.pggf > .ng-star-inserted {display:none !important; pointer-events: none !important;}",
-        hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
-        cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
-        google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
-        javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
-        xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos
-        javbus: ".ad-item,.ad-box {display:none !important}",
-        _4hu: "div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
-        // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
-        netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
-        supjav: "<div id='adsbox'>, <div class='right'>,<div class='movv-ad ad_3_3'>,<div class='movv-ad ad_3_2'>,<ins class='adsbyexoclick' data-zoneid='4238924'>, .movv-ad, .adsbyexoclick, #adsbox, .movv-ad, .adsbyexoclick {display:none !important; pointer-events: none !important;}",
-        hitomi: ".container > div[class$=\"content\"] > div[class]:has(> script) {display:none !important; pointer-events: none !important;}",
-        hanime1: "span.scaled-exoclick, iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
-        javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
-        douban: "*{display:none!important}",
-        olevod: "#adsbox, .ads-bg {display:none!important}",
-        ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
-        njav: "div[style=\"position: absolute; inset: 0px; z-index: 999; display: block;\"],.ad-floating,[src*='.gif'],iframe[width='300px'] {display:none!important}",
-        jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
-        rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
-        diyibanzhu: "img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
-        novel543: "iframe, div#adfoot, div.px-3.py-3, #adfoot, .gadBlock {height:0px; display:none !important; pointer-events: none !important;}"
-        //button_common: "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;" // 按钮/输入框通用样式
-    },
-    function: {
-    }
-}
-
-css_adsRemove(imax.css.othercss, 0, 'othercss') // 引用全局样式
-
-function values() {
-    var adsDomain = [
-        "pornhub",
-        "missav",
-        "91porna",
-        "91porn.",
-        "avple",
-        "18comic",
-        "wnacg",
-        "ddys",
-        "jable",
-        "bdys",
-        "google",
-        "bing",
-        "duboku",
-        "libvio",
-        "tvn",
-        "www.5dy",
-        "www.555dd",
-        "o8tv",
-        "555dyx",
-        "instagram",
-        "ttsp",
-        "tz659",
-        "nbys",
-        "anime1",
-        "yhpdm",
-        "yhdmp",
-        "nivod",
-        "91short",
-        "xiaobaotv",
-        "iyf",
-        "cnys",
-        "xiaoxintv",
-        "javday",
-        "xvideos",
-        "javbus",
-        "4hu",
-        "netflav",
-        "javplayer",
-        "filemoon",
-        "embedrise",
-        "mmfl02",
-        "mmsw02",
-        "netflavns2",
-        "supjav",
-        "hanime1",
-        "hitomi",
-        "javlibrary",
-        "emturbovid",
-        'netflavns1',
-        'fc2stream',
-        'douban',
-        'twitter',
-        'olevod',
-        'njav',
-        'ntdm9',
-        'rouman',
-        'novel543',
-        'diyibanzhu',
-        'hltv',
-        "zhihu"
-    ]
-
-    var url = document.location.href;
-    console.log("URL : " + url); // 看看当前 URL
-    var i;
-    for (i = 0; i < adsDomain.length; i++) {
-        if (url.indexOf(adsDomain[i]) !== -1) {
-            var values = adsDomain[i]; // 释放参数值
-            console.log("Catch it : " + values) // 看看控制台输出了个啥
-        }
-    }
-    return values;
-}
-
-function adsDomain_switch(x) { // 匹配参数值 执行相应函数
-    switch (x) {
-        case 'pornhub':
-            pornhub_interstitialPass();
-            //tag_adsRemove("script", "ads_batch");
-            const custom_style_values_pb = "right: 0px !important; padding: 0 !important; position: relative !important;"
-            css_adsRemove(imax.css.pornhubx, 500, "pornhubX");
-
-            setTimeout(() => {
-                let ads_selector = [".topAdContainter", "a[href*='ads']", "a[href*='fuck']", "a[href*='ad']", "div.adContainer.clearfix.noBottom", ".adContainer.clearfix.middleVideoAdContainer"];
-                let ads = setInterval(() => {
-                    ads_selector.forEach((x) => { selector_one_by_one(x) })
-                    console.log("清理还在继续..." + x)
-                    if (document.querySelectorAll(ads_selector).length == 0) {
-                        clearInterval(ads)
-                        console.log("清理计时器，ads移除完毕...")
-                    }
-                }, 1000)
-            }, 100)
-
-            let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-            setTimeout(() => {
-                ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
-                if (document.getElementById("download_pornhub")) {
-                    document.getElementById("download_pornhub").style = "display: inline !important;";
-                    document.getElementById("download_pornhub").target = "_blank !important;";
-                }
-            }, 3000)
-
-
-            pornhub_sidebar_ads();
-            break;
-        case '91porna':
-            //cloudflare_captchaBypass();
-            css_adsRemove(imax.css.porna91);
-            //_91porn_videoplay_ads();
-
-            // 播放页空白
-
-            document.querySelectorAll("br").forEach((x) => {
-                if (x.clientHeight = 0) {
-                    x.remove()
-                }
-            })
-
-            break;
-        case '91porn.':
-            //cloudflare_captchaBypass();
-            css_adsRemove(imax.css.porn91);
-
-            let url91 = document.location.href;
-            if (url91.indexOf('view_') !== -1) {
-                let play = setInterval(() => {
-                    if (document.querySelector('div.preroll-skip-button') !== null) {
-                        document.querySelector('div.preroll-skip-button').click();
-                    } else {
-                        clearInterval(play);
-                    }
-                }, 1000)
-            }
-
-
-            //css_adsRemove(imax.css.porna91);
-            //_91porn_videoplay_ads();
-
-            // 播放页空白
-            /*
-            document.querySelectorAll("br").forEach((x) => {
-                if (x.clientHeight = 0) {
-                    x.remove()
-                }
-            })
-            */
-
-            break;
-        case 'avple':
-            //cloudflare_captchaBypass();
-            css_adsRemove(imax.css.avple);
-            third_party_fileX("script", imax.js.avple, "body")
-            break;
-        case '18comic':
-            css_adsRemove(imax.css.comic_18);
-            button_dynamicRemove("#chk_cover", 200);
-            _18comic_adsRemove();
-            break;
-        case 'www.5dy':
-            adsDomain_switch("555dyx")
-            break;
-        case 'o8tv':
-            adsDomain_switch("555dyx")
-            break;
-        case 'www.555dd':
-            adsDomain_switch("555dyx")
-            break;
-        case "555dyx":
-
-
-            let www = setInterval(() => {
-                if (document.querySelector('video')) {
-                    document.querySelector('video').style = 'opacity: 1; filter: contrast(1.01) brightness(1.05) saturate(1.1);'
-                    /* if (document.querySelector('video').loop == 'false') {
-                         document.querySelector('video').setAttribute('loop', '')
-                     }
-                     */
-                    console.log("画面增强设置成功...")
-                    clearInterval(www)
-                }
-            }, 1000)
-
-            document.querySelectorAll('div.module').forEach((x) => { x.style.zIndex = 1 });
-            css_adsRemove(imax.css.dy555, 0, "555dy")
-            document.querySelectorAll('.popup-btn.close-pop')[0].click(); //模拟点击
-            break;
-        case 'wnacg':
-            css_adsRemove(imax.css.wnacg);
-            break;
-        case 'ddys':
-            //css_adsRemove(imax.css.ddrk);
-            css_adsRemove(imax.css.ddrk2);
-
-            //selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 0)
-
-            var divx = document.createElement('div');
-            divx.id = 'adblock4limbox';
-            divx.style = 'display:none;'
-            var body = document.querySelectorAll('body')[0];
-            //body.appendChild(divx);
-            var child = document.querySelectorAll('#sajdhfbjwhe,#kasjbgih,#fkasjgf')
-            child.forEach((x) => {
-                divx.appendChild(x);
-            })
-
-            break;
-        case 'duboku':
-            third_party_fileX("script", imax.js.duboku, "body")
-            break;
-        case 'libvio':
-            css_adsRemove(imax.css.libvio)
-            break;
-        case 'nbys':
-            css_adsRemove(imax.css.nivod);
-            break;
-        case 'ntdm9':
-            css_adsRemove(imax.css.ntdm9);
-            const a = document.getElementsByClassName("yammohxz_b");
-            addEventListener_defuser("touchend"); // 打断监听器
-
-            for (i = 0; i < a.length; i++) {
-                a[i].style = "display: none !important; z-index:-114154; display:block; width:0vw; height:0";
-            }
-
-            break;
-        case 'tvn':
-            css_adsRemove(imax.css.tvn)
-            break;
-        case 'jable': // 2333
-            console.log("IT'S JABLE");
-
-            // 子域名跳转至主域名 jable.tv
-            if (/\b(.*\.)(jable\.tv.*)\b/i.test(window.location.href.toLowerCase())) {
-                console.log(window.location.href.toLowerCase())
-                let url_jable_rewrite = window.location.href.toLowerCase().replace(/https:\/\/\w{2,3}\./i, "https://")
-                console.log(url_jable_rewrite)
-                window.location.replace(url_jable_rewrite)
-            }
-
-            // 去除首页广告
-
-            if (document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').length > 0) {
-                document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').forEach((x) => { // xxx
-                    if (x.querySelectorAll("[target='_blank']").length > 0) {
-                        x.style = "display: none !important; z-index:-114154; display:block; width:0vw; height:0";
-                    }
-                })
-            }
-
-            //cloudflare_captchaBypass();
-            css_adsRemove(imax.css.jable);
-            jable_adsRemove();
-            const url_jable = document.location.href;
-            const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
-            if (url_jable.search(reg_videos) !== -1) {
-
-                setTimeout(() => {
-                    let cssText = "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-                    let cssText2 = "width:72px; margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-                    ele_dynamicAppend("div.header-left > h6", "onclick", "code", cssText2, "", "avCodeCopy", 13, "input");
-                    ele_dynamicAppend("div.header-left > h6", "onclick", "复制番号", cssText, "", "copyavCode", 14, "button");
-                    ele_dynamicAppend("div.header-left > h6", "onclick", "", cssText, "", "copy", 15, "input");
-                    ele_dynamicAppend("div.header-left > h6", "onclick", "复制M3U8文件地址", cssText, "", "jablex", 16, "button")
-                    ele_dynamicAppend("div.header-left > h6", "onclick", "如何下载视频？", cssText, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 17, "button");
-                    var regex = /[a-zA-Z]{3,5}\-\d{3,5}/i
-                    var avCode = document.querySelectorAll('h4')[0].innerText.match(regex)[0]
-                    //let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
-                    let input = document.querySelector('#avCodeCopy')
-                    input.value = avCode
-                    // 添加监听器
-                    addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
-                    addListenerById("copyavCode", () => { avCodeCopy() }, 0);
-                }, 3000)
-
-                function avCodeCopy() {
-                    //if (document.querySelector('#avCodeCopy') == null) {
-                    //let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
-                    //let input = document.createElement('input')
-                    //input.id = 'avCodeCopy'
-                    //input.type = 'text'
-                    //let input = document.querySelector('#avCodeCopy')
-                    //input.value = avCode
-                    //input.style = 'opacity:0 !important; z-zindex = -114154 !important'
-                    //document.body.appendChild(input)
-                    //}
-
-                    //setTimeout(() => {
-                    // 复制工作开始
-                    let civ = document.querySelector('#avCodeCopy')
-                    civ.select()
-                    document.execCommand('copy')
-
-                    //const range = document.createRange(); range.selectNode(civ); const selection = window.getSelection();
-                    //if (selection.rangeCount > 0) selection.removeAllRanges(); // 判断光标是否复制其他内容 如有则清除
-                    //selection.addRange(range); document.execCommand('copy');
-                    // 复制工作结束
-
-                    document.querySelector('#copyavCode').innerHTML = '复制成功!'
-                    document.querySelector('#copyavCode').setAttribute('class', 'jable_css')
-                    setTimeout(() => {
-                        document.querySelector('#copyavCode').innerHTML = '复制番号'
-                        document.querySelector('#copyavCode').className = ''
-                    }, 1500)
-                    //}, 0)
-                }
-
-                // avCodeCopy()
-
-                //video_delayPlay(3000);
-
-                setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 4000);
-                //addEventListener_defuser("touchend"); // 打断监听器
-
-            }
-            break;
-        case 'bdys':
-            css_adsRemove(imax.css.btbdys, 0, "siwtch_button");
-            css_adsRemove(imax.css.switch, 0, "switch_class")
-            //videoAds_accelerateSkip(0.1); // 视频广告加速
-            //setConstant(); // 视频广告加速
-            hrefAttribute_set();
-
-            if (document.querySelectorAll('li[data-increase]')[1] !== null) {
-                document.querySelectorAll('li[data-increase]')[1].click()
-            }
-
-            var url = document.location.href;
-            if (url == "https://www.bdys10.com/" || url == "https://www.bdys03.com/") {
-                if (!document.getElementById("bdys")) {
-                    ele_dynamicAppend("div.container-xl", "onclick", "隐藏公告", "position:inherit; right:92px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "bdys", 1, "button");
-                    addListenerById("bdys", () => { notice_hidden("div.col-12") }, 2000);
-                }
-                if (getCookie("hidden") == 1) {
-                    notice_hidden("div.col-12");
-                }
-            }
-            break;
-        case 'instagram':
-            // 解除 Instagram 桌面浏览器版禁用右键复制图片
-            css_adsRemove(imax.css.instagram);
-            break;
-        case 'ttsp':
-            css_adsRemove(imax.css.ttsp);
-            break;
-        case 'tz659':
-            css_adsRemove(imax.css.tz659);
-            //tag_ads_traversal("body", 0)
-            break;
-        case 'anime1':
-            css_adsRemove(imax.css.anime);
-            break;
-        case 'yhdmp':
-            css_adsRemove(imax.css.yhdmp);
-            break;
-        case 'yhpdm':
-            css_adsRemove(imax.css.yhdmp);
-            break;
-        case 'google':
-            css_adsRemove(imax.css.google);
-            var userAgent = navigator.userAgent.toLowerCase();
-            if (/\b(mobile)\b/i.test(userAgent)) {
-                js_adsRemove(imax.js.contentFarm);
-                console.log("getYou") // 手机用户 特别是苹果用户会正常加载内容农场脚本
-            } else {
-                js_adsRemove(imax.js.contentFarm);
-                console.log("PC端") // 啥也不做
-            }
-            //var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
-            //setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
-            break;
-        case 'bing':
-            js_adsRemove(imax.js.contentFarm);
-            break;
-
-        case 'hltv':
-            css_adsRemove(imax.css.hltv);
-            noWindowOpenIf(); // no-window-open-if
-            break;
-
-        case 'nivod': // nbys 泥巴影视
-            css_adsRemove(imax.css.nivod);
-            hrefAttribute_set();
-            setConstant('detailParams.is_ad_play', 'false'); // 泥巴影视PC版播放页视频广告加速
-            evaldataPrune(); // 泥巴影视移动版播放页视频广告加速
-            css_adsRemove(imax.css.nbys); // 网页图片广告
-            setInterval(() => {
-                remove_parentElement_by_child('view.nut-swiper-item.slider-item', "img[src*='1a732eeb1adb']");
-                remove_parentElement_by_child('view.nut-swiper-item.slider-item', "img[src*='49e8abd32d13']");
-                remove_parentElement_by_child('.qy20-h-carousel__ul', "span[style*='d92ea585-0']");
-                remove_parentElement_by_child("li.qy20-h-carousel__li", "span[style*='0891']");
-                remove_parentElement_by_child("li.qy20-h-carousel__li", "span[style*='1a2d']");
-            }, 2000)
-            break;
-        case '91short':
-            css_adsRemove(imax.css._91short);
-
-            // 播放页GIF动图广告
-            const player_info = document.querySelectorAll("div.player-info,li.nav-menu-item")
-            for (i = 0; i < player_info.length; i++) {
-                const selector = ['div > a[href][target=_blank]', 'a[href*=kyty]']
-                if (player_info[i].querySelectorAll(selector).length >= 1) {
-                    player_info[i].style = "display: none !important;";
-                }
-            }
-
-            // 多余的高
-            document.querySelector("div.highlight-box").style = "display: none !important;";
-            addEventListener_defuser("touchend"); // 打断监听器
-            break;
-
-        case 'xiaobaotv':
-            // nothing to do.
-            break;
-        case 'iyf':
-            css_adsRemove(imax.css.iyf);
-            break;
-
-        case 'cnys':
-            // nothing to do.
-            //videoAds_accelerateSkip(0.1); // 视频广告加速
-            //setConstant(); // 视频广告加速
-            css_adsRemove(imax.css.cnys, 0, 'cnys')
-
-            if (document.querySelectorAll('iframe')[2] !== null && document.querySelectorAll('iframe')[2] !== undefined) {
-                document.querySelectorAll('iframe')[2].style = 'opacity:0% !important; pointer-events: none !important;';
-                setTimeout(() => {
-                    document.querySelectorAll('iframe')[2].style = 'opacity:1 !important; pointer-events: auto !important;';
-                    setTimeout(() => {
-                        document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('div#player_pause')[0].style = 'display:none !important';
-                        setTimeout(() => {
-
-                            //document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('button.yzmplayer-icon.yzmplayer-play-icon')[0].click();
-
-                            document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('button.yzmplayer-icon.yzmplayer-play-icon')[0].addEventListener('touchend', function () {
-                                setTimeout(() => {
-                                    document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('div#player_pause')[0].style = 'display:none !important';
-                                }, 10);
-                            });
-
-                        }, 1000)
-                    }, 3000)
-                }, 7500)
-            }
-
-            //document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('#ADtip')[0].style = 'display:none';
-
-            break;
-
-        case 'xiaoxintv':
-            // nothing to do.
-            break;
-
-        case 'javday':
-            // nothing to do.
-            css_adsRemove(imax.css.javday, 0, 'javday')
-            break;
-        case 'xvideos':
-            setInterval(() => {
-                if (!document.getElementById('xvideos_t')) {
-                    css_adsRemove(imax.css.xvideos, 100, "xvideos_t");
-                    noWindowOpenIf();
-                } else {
-                    noWindowOpenIf();
-                }
-            }, 1000)
-            break;
-
-        case 'javbus':
-            css_adsRemove(imax.css.javbus, 0, "javbus");
-
-            function javbus() { // 在番号详情页追加在线预览链接
-
-                let father = document.querySelector('div.col-md-3.info')
-                let code = window.location.pathname.replace('/', '')
-
-                let url = window.location.href
-                let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
-
-                if (url.search(regx) !== -1) {
-
-                    let p = document.createElement('p')
-                    p.style = 'word-break:break-all;font-size:14px;line-height:25px;'
-                    father.insertBefore(p, father.childNodes[2])
-
-                    let span = document.createElement('span')
-                    span.className = 'header'
-                    span.textContent = '在线预览：'
-                    p.appendChild(span)
-
-                    function siteAdd(siteName, url, codeSlect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + codeSlect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:rgb(8 0 204);'
-                        lable.appendChild(a)
-                        p.appendChild(lable)
-                    }
-
-                    siteAdd('MissAV', 'https://missav.com/search', '/' + code)
-                    siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
-                    siteAdd('Supjav', 'https://supjav.com/?s=', code)
-                    siteAdd('番号搜索🔍', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                    siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                    console.log('已生成在线预览链接🔗')
-
-                } else {
-                    console.log('当前网站不不匹配')
-                }
-            }
-
-            javbus()
-
-            break;
-        case "4hu":
-            css_adsRemove(imax.css._4hu);
-            hrefAttribute_set();
-            break;
-        case "netflav":
-            window_open_defuser(); // 打断 window.open 施法
-            css_adsRemove(imax.css.netflav, 0, "4hu");
-            break;
-        case "filemoon":
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-        case "embedrise":
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-        case "mmfl02":
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-        case "mmsw02":
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-        case "emturbovid":
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-        case "netflavns1":
-            window_open_defuser(); // 打断 window.open 施法
-            css_adsRemove(imax.css.js_common, 50, 'common');
-            break;
-        case "netflavns2":
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-        case "fc2stream":
-            window_open_defuser(); // 打断 window.open 施法
-            abort_on_property_read('__Y');
-            break;
-        case "javplayer":
-            adsDomain_switch("fc2stream")
-            break;
-        case "supjav":
-            noWindowOpenIf('window.open')
-            noWindowOpenIf('touchend')
-            css_adsRemove(imax.css.supjav, 0, "superjav");
-            break;
-        case "njav":
-            css_adsRemove(imax.css.njav, 0, 'njav');
-            js_adsRemove(uBlockOrigin.setconstant);
-            js_adsRemove(uBlockOrigin.nowindowopenif);
-            noWindowOpenIf('window.open')
-            noWindowOpenIf('touchend')
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-
-        case "hitomi":
-            css_adsRemove(imax.css.hitomi);
-            window_open_defuser();
-            abort_on_property_read();
-            js_adsRemove(uBlockOrigin.addEventListenerdefuser);
-            js_adsRemove(uBlockOrigin.noevalif);
-            break;
-
-        case "hanime1":
-            css_adsRemove(imax.css.hanime1);
-            const div = document.querySelectorAll('div.hidden-xs.hidden-sm')
-            // PC 端div元素广告移除
-            for (i = 0; i < div.length; i++) {
-                if (div[i].querySelectorAll('iframe').length > 0) {
-                    div[i].style = "display: none !important;";
-                }
-            }
-
-            /*
-            let ads = document.querySelectorAll('div.hidden-sm.hidden-md');
-            for (i = 0; i < ads.length; i++) {
-                if (ads[i].querySelectorAll("a[href*='abs']")) {
-                    ads[i].remove();
-                }
-            }
-            */
-
-            break;
-        case "javlibrary":
-
-            css_adsRemove(imax.css.javlibrary)
-            window_open_defuser(); // 打断 window.open 施法
-            abort_on_property_read();
-            js_adsRemove(uBlockOrigin.addEventListenerdefuser);
-            js_adsRemove(uBlockOrigin.noevalif);
-
-            if (/\b(https:\/\/www.javlibrary.com\/.*?)(\/videoreviews.php)(\?.*)(&mode=2)\b/i.test(window.location.href.toLowerCase())) {
-                console.log(window.location.href.toLowerCase())
-                let url_jav_rewrite = window.location.href.toLowerCase().replace(/(videoreviews.php)/i, '').replace(/(&mode=2)/i, '')
-                console.log(url_jav_rewrite)
-                window.location.replace(url_jav_rewrite)
-            }
-
-            function javlibrary() {
-                // '#topmenu', 'div.menutext', '.searchbar',
-                css_adsRemove(imax.css.javlibrary);
-                var target_ = ['#rightcolumn', '.videothumblist', '.titlebox', '.menutext']
-
-                if (window.innerWidth < 650) {
-                    console.log("现在执行缩小任务")
-                    function ifAdd(target) {
-                        if (document.querySelectorAll(target)[0]) {
-                            document.querySelectorAll(target)[0].classList.add('whenmobile')
-                        }
-                    }
-                    target_.forEach(ifAdd);
-                    if (document.querySelector('div#rightcolumn')) {
-                        var parentElement = document.querySelector('div#rightcolumn')
-                        if (document.querySelectorAll("td[style='vertical-align: top;']")[1]) {
-                            var child = document.querySelectorAll("td[style='vertical-align: top;']")[1];
-                        }
-                        if (document.querySelector('div.socialmedia')) {
-                            var insertBeforethisgay = document.querySelector('div.socialmedia');
-                        }
-
-                        if ((child) && (parentElement) && (insertBeforethisgay)) {
-                            parentElement.insertBefore(child, insertBeforethisgay)
-                        }
-                        document.querySelectorAll('td.t>div').forEach((x) => {
-                            x.style.width = 'auto';
-
-                        })
-                    }
-
-                    if (document.querySelector('div#video_title')) {
-                        document.querySelector('#rightcolumn').style.width = window.innerWidth - 90 + "px"
-                        document.querySelector('div#video_favorite_edit').style.width = '250px'
-                    }
-                } else {
-                    console.log("现在执行扩大任务")
-                    if (document.querySelector('div#video_title')) {
-                        document.querySelector('#rightcolumn').style.width = window.innerWidth + "px"
-                        document.querySelector('div#video_favorite_edit').style.width = 'auto'
-                    }
-                    function ifRemove(target) {
-                        if (document.querySelectorAll(target)[0]) {
-                            document.querySelectorAll(target)[0].classList.remove('whenmobile')
-                        }
-                    }
-                    target_.forEach(ifRemove);
-                }
-            }
-
-            javlibrary(); // 2333
-
-            zjpl()
-            function zjpl() {
-                setTimeout(() => { // 最佳评论页 调换位置
-                    javlibrary();
-                    if (document.querySelectorAll('td.info')[0]) {
-                        document.querySelectorAll('td.info').forEach((x) => {
-                            x.style.width = "60px"
-                            x.querySelectorAll('*').forEach((y) => {
-                                //     y.style.width = "60px"
-                            })
-                        })
-
-                        var ff = document.querySelectorAll("table.comment > tbody > tr");
-                        for (i = 0; i < ff.length; i++) {
-                            ff[i].insertBefore(ff[i].querySelectorAll('td')[1], ff[i].querySelectorAll('td')[0])
-                        }
-                    }
-                }, 1500)
-            }
-
-            function javLibrary() { // 在番号详情页追加在线预览链接
-
-                let father = document.querySelector('div#video_info')
-
-                //let code = window.location.pathname.replace('/', '')
-                let code = document.querySelectorAll('td.text')[0].textContent
-
-                let url = window.location.href
-                //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
-                let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
-
-                if (url.search(regx) !== -1) {
-
-                    let p = document.createElement('table')
-                    p.style = 'word-break:break-all;font-size:14px;line-height:25px;'
-                    father.insertBefore(p, father.childNodes[2])
-
-                    let span = document.createElement('td')
-                    span.className = 'header'
-                    span.textContent = '在线预览：'
-                    p.appendChild(span)
-
-                    function siteAdd(siteName, url, codeSlect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + codeSlect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:rgb(8 0 204);'
-                        lable.appendChild(a)
-                        p.appendChild(lable)
-                    }
-
-                    siteAdd('MissAV', 'https://missav.com/search', '/' + code)
-                    siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
-                    siteAdd('Supjav', 'https://supjav.com/?s=', code)
-                    siteAdd('番号搜索🔍', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                    siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                    console.log('已生成在线预览链接🔗')
-
-                } else {
-                    console.log('当前网站不不匹配')
-                }
-            }
-
-            javLibrary()
-
-        case 'douban':
-            if (document.querySelectorAll('a.Ims1t')[0]) {
-                alert("首页...")
-                document.querySelectorAll('a.Ims1t').forEach((x) => { x.href = 'https://movie.douban.com/top250' })
-            }
-            break;
-
-            break;
-        case 'zhihu':
-            var zhihu_id = "zhihux"
-            button_dynamicRemove("[class='Button Modal-closeButton Button--plain']", 10);
-            css_adsRemove(imax.css.zhihuAds, 100, "hloyx");
-            indexLogin();
-            addListener("div.TopNavBar-tab-d8yaD", () => { indexLogin() });
-            break;
-        case 'olevod':
-            css_adsRemove(imax.css.olevod, 0, 'fuckolevod');
-            setTimeout(() => {
-                onAdsHide()
-            }, 500)
-            break;
-
-        case 'rouman':
-            css_adsRemove(imax.css.rouman, 100, 'roumanx');
-
-            setTimeout(() => {
-                document.querySelectorAll("div[class*='modalCloseButton']")[0].click()
-            }, 500)
-
-            break;
-
-        case 'novel543':
-            css_adsRemove(imax.css.novel543, 100, 'novel543x');
-            break;
-
-        case 'diyibanzhu':
-            css_adsRemove(imax.css.diyibanzhu, 100, 'novel543x');
-            window_open_defuser(); // 打断 window.open 施法
-            break;
-
-        case 'missav':
-            css_adsRemove(imax.css.missav, 100, 'missavx');
-            window_open_defuser(); // 打断 window.open 施法
-            var ua_missav = navigator.userAgent.toLowerCase();
-            var mobile_missav = "mobile";
-            //cloudflare_captchaBypass();
-
-            setTimeout(() => {
-                let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-                if (ua_missav.indexOf(mobile_missav) === -1) {
-
-                    if (document.querySelector('div.mt-4').querySelector('h1') !== null) {
-                        ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", cssText, "", "missavX", 2, "button");
-                        ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "", "missavP", 3, "button");
-                        ele_dynamicAppend("div.mt-4", "href", "如何下载视频", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
-                    }
-
-                    if (document.getElementById("how")) {
-                        document.getElementById("how").target = "_blank";
-                    }
-
-                    // 添加监听器
-                    if (document.getElementById("missavX")) {
-                        addListenerById("missavX", () => { video_loopPlay('loop') }, 1000);
-                    }
-
-                    if (document.getElementById("missavP")) {
-                        addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
-                    }
-
-                } else if (ua_missav.indexOf(mobile_missav) > -1) {
-                    ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", cssText, "video_Play()", "missavX", 0, "button");
-                    ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", cssText, "fullscreen()", "missavFullScreen", 2, "button");
-                    ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "video_pause()", "missavPause", 1, "button");
-                    ele_dynamicAppend("div.mt-4", "href", "如何下载视频", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
-                    // 添加监听器
-                    document.getElementById("how").target = "_blank";
-                    addListenerById("missavX", () => { video_Play() }, 1000);
-                    addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
-                    addListenerById("missavPause", () => { video_pause() }, 1000);
-                }
-            }, 3000)
-
-            break;
-        default:
-            // 修正 case 中 default 的匹配规则  10.25.203
-            if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {
-                if (document.querySelector('video')) {
-                    abort_on_property_read('__Y');
-                    window_open_defuser(); // 打断 window.open 施法
-                }
-            }
-
-            console.log("Catch Nothing! DEFAULT!");
-        //alert('DEFAULT!CATCH!')
-    }
-}
-
-adsDomain_switch(values()) // 动手吧
-
-/* Start */
-/*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
-这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
-*/
-
-// uBlock Origin 脚本添加
-function uBlockOrigin_add() {
-    js_adsRemove(uBlockOrigin.chn0abortcurrentscript);
-    js_adsRemove(uBlockOrigin.chn0setconstant);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortonpropertyread);
-    js_adsRemove(uBlockOrigin.abortonpropertywrite);
-    js_adsRemove(uBlockOrigin.abortonstacktrace);
-    js_adsRemove(uBlockOrigin.addEventListenerdefuser);
-    js_adsRemove(uBlockOrigin.alertbuster);
-    js_adsRemove(uBlockOrigin.cookieremover);
-    js_adsRemove(uBlockOrigin.disablenewtablinks);
-    js_adsRemove(uBlockOrigin.evaldataprune);
-    js_adsRemove(uBlockOrigin.jsonprune);
-    js_adsRemove(uBlockOrigin.m3uprune);
-    js_adsRemove(uBlockOrigin.nanosetIntervalbooster);
-    js_adsRemove(uBlockOrigin.nanosetTimeoutbooster);
-    js_adsRemove(uBlockOrigin.noevalif);
-    js_adsRemove(uBlockOrigin.nofetchif);
-    js_adsRemove(uBlockOrigin.norequestAnimationFrameif);
-    js_adsRemove(uBlockOrigin.nosetIntervalif);
-    js_adsRemove(uBlockOrigin.nosetTimeoutif);
-    js_adsRemove(uBlockOrigin.nowebrtc);
-    js_adsRemove(uBlockOrigin.nowindowopenif);
-    js_adsRemove(uBlockOrigin.noxhrif);
-    js_adsRemove(uBlockOrigin.refreshdefuser);
-    js_adsRemove(uBlockOrigin.removeattr);
-    js_adsRemove(uBlockOrigin.removeclass);
-    js_adsRemove(uBlockOrigin.removenodetext);
-    js_adsRemove(uBlockOrigin.replacenodetext);
-    js_adsRemove(uBlockOrigin.setattr);
-    js_adsRemove(uBlockOrigin.setconstant);
-    js_adsRemove(uBlockOrigin.setcookie);
-    js_adsRemove(uBlockOrigin.setlocalstorageitem);
-    js_adsRemove(uBlockOrigin.spoofcss);
-    js_adsRemove(uBlockOrigin.trustedsetconstant);
-    js_adsRemove(uBlockOrigin.trustedsetcookie);
-    js_adsRemove(uBlockOrigin.windowcloseif);
-    js_adsRemove(uBlockOrigin.xmlprune);
-}
-
-/* End */
-
-function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建;
-    var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
-    //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
-    if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {
-        console.log('CSP + PC, SO DO NOTING.')
-    } else if (window.location.href.toLowerCase().indexOf('91porn.') !== -1) {
-        console.log('SO DO NOTING.')
-    } else {
-        let daohang = setInterval(() => {
-            if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
-                third_party_fileX("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-                console.log('引入 // daohang & 清理循环 // daohang')
-                clearInterval(daohang);
-            } else if (document.querySelectorAll("button#x4Home").length >= 1) {
-                clearInterval(daohang);
-                console.log('清理循环 // daohang')
-            }
-        }, 500);
-    }
-}
-
-// 按根据父元素是否包含子元素而删除父元素
-function remove_parentElement_by_child(parentElement, child) {
-    let remove_parentElement_by_child_interval = setInterval(() => {
-        if (document.querySelector(parentElement + ">" + child)) {
-            document.querySelectorAll(parentElement).forEach((x) => {
-                if (x.querySelector(child)) {
-                    x.remove();
-                    clearInterval(remove_parentElement_by_child_interval);
-                }
-            })
-        }
-    }, 1000)
-}
-
-// 无数函数及方法的组合使脚本更灵活
-// 自动跳过 pornhub interstitial 插页式广告
-function pornhub_interstitialPass() {
-    const ele_skip = "[onclick*='clearModalCookie']"
-    const exist = document.querySelectorAll(ele_skip);
-    if (document.querySelectorAll(ele_skip).length > 0) {
-        const href = exist[1].href;
-        window.location = href;
-    }
-}
-
-// 设置 cookie // 18comic Javascript
-function _18comic_adsRemove() {
-    document.cookie = "cover=1";
-    document.cookie = "shunt=1";
-    document.cookie = "guide=1";
-}
-
-// 设置 cookie // missAv Javascript
-function missAv_adsRemove() {
-    document.cookie = "_gat_UA-177787578-7; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-}
-
-// 设置 Cookie // 任意
-function set_cookie(name, value) {
-    document.cookie = name + '=' + value + '; Path=/;';
-}
-
-// 通过CSS选择器隐藏广告样式
-function selector_adsRemove(selector, time) {
-    var i;
-    setTimeout(() => {
-        var nodelists = document.querySelectorAll(selector)
-        for (i = 0; i < nodelists.length; i++) {
-            //nodelists[i].remove();
-            nodelists[i].style = "display: none !important;"
-        }
-    }, time)
-}
-
-
-
-// 设置 cookie 并移除特定元素
-function jable_adsRemove() { // Cookie 设定及注入
-    document.cookie = "ts_popunder=1";
-    document.cookie = "kt_tcookie=1";
-    document.cookie = "asgsc262182=2";
-    var adsDomain = [
-        'r.trwl1.com',
-        'r.www.com'
-    ];
-
-
-    const div = document.querySelectorAll("div.col-6.col-sm-4.col-lg-3, div.col-6.col-sm-4.col-xl-3, div.col-6.col-sm-4.col-lg-12")
-    for (x = 0; x < div.length; x++) {
-        if (div[x].querySelectorAll("script, a[href*=trackwilltrk]").length >= 1) {
-            div[x].style = "display: none !important; pointer-events: none !important;"
-        }
-    }
-}
-
-// 移除 某个 tag标签
-function tag_adsRemove(tagname, keyword) {
-    var i;
-    var tag = document.getElementsByTagName(tagname);
-    for (i = 0; i < tag.length; i++) {
-        if (tag[i].src.indexOf(keyword) !== -1) {
-            tag[i].remove()
-        }
-        if (tag[i].innerHTML.indexOf(keyword) !== -1) {
-            tag[i].remove()
-        }
-    }
-}
-
-// 在页面动态插入元素并赋予相应元素
-
-function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag) {
-    let new_ele = document.createElement(tag);
-    new_ele.innerHTML = txt;
-    new_ele.setAttribute(attribute, func);
-    new_ele.setAttribute("id", id);
-    new_ele.setAttribute("style", style);
-    var here = document.querySelectorAll(selector);
-    if (here.length > 0) {
-        here[0].insertBefore(new_ele, here[0].childNodes[array])
-        //here[0].appendChild(new_ele);
-        console.log("按钮已添加")
-    }
-}
-
-
-// Cloudflare recaptcha 绕过
-function cloudflare_captchaBypass() {
-    var title = document.title;
-    if (title.search("Cloudflare") !== -1 || title.search("Attention") !== -1) {
-        window.location.reload();
-        console.log("captchaBypass done;")
-    };
-}
-
-
-// missav 广告移除后导致的空白
-function div_ad_missav() {
-    let div_ad = document.querySelectorAll('div.mx-auto[style]')
-    for (i = 0; i < div_ad.length; i++) {
-        if (div_ad[i].querySelectorAll('[target=\'_blank\']').length >= 1) {
-            div_ad[i].style.height = '0px'
-        }
-    }
-}
-
-/* 循环播放 missAV */
-
-var timer = null;
-var timerlist = [];
-
-function video_loopPlay(x) {
-    if (x === 'loop') {
-        intval = window.setInterval(missAv_playbutton, 1000)
-    } else if (x === 'pause') {
-        if (intval) {
-            timerlist.forEach((item, index) => { // 清理监听事件移除
-                clearInterval(item);
-            })
-            video_pause();
-        }
-    }
-}
-
-function missAv_playbutton() {
-    timerlist.push(intval);
-    var ele_catch = document.querySelectorAll("video[preload='none'],video#player");
-    if (ele_catch.length > 0) {
-        ele_catch[0].play();
-        //ele_catch[1].play();
-        //console.log("视频已开启循环播放；")
-    }
-}
-
-
-/* 播放 */
-function window_play() {
-    window.player.play()
-}
-
-/* 播放 */
-function video_Play() {
-    //setInterval(function () {
-    var ele = ["video[preload='none'],video#player"];
-    var ele_catch = document.querySelectorAll(ele);
-    if (ele_catch.length > 0) {
-        ele_catch[0].play();
-        ele_catch[1].play();
-        console.log("视频已开始播放；")
-    }
-    //}, 1000)
-}
-
-/* 全屏 */
-function fullscreen() {
-    const fullScreen = document.querySelector('button[data-plyr=\'fullscreen\']');
-    fullScreen.click()
-    //fullScreen.requestFullscreen();
-    //const fullScreen = document.querySelector('div.plyr__video-wrapper');
-    //fullScreen.requestFullscreen();
-}
-
-/* 全屏 */
-function fullscreen_backup() {
-    //setInterval(function () {
-    var ele = [".plyr--fullscreen-enabled [data-plyr=fullscreen]"];
-    var ele_catch = document.querySelectorAll(ele);
-    if (ele_catch.length > 0) {
-        ele_catch[0].click();
-        //ele_catch[1].click();
-        console.log("视频已全屏；")
-    }
-    //}, 1000)
-}
-
-/* 暂停 */
-function window_pause() {
-    window.player.pause()
-}
-
-/* 暂停 */
-function video_pause() {
-    //setInterval(function () {
-    var ele = ["video[preload='none'],video#player"];
-    var ele_catch = document.querySelectorAll(ele);
-    if (ele_catch.length > 0) {
-        ele_catch[0].pause();
-        ele_catch[1].pause();
-        console.log("视频已暂停；")
-    }
-    //}, 1000)
-}
-
-/* 延后播放 */
-function video_delayPlay(time) {
-    setTimeout(function () {
-        var ele = ["video[preload='none'],video#player"];
-        var ele_catch = document.querySelector(ele);
-        if (ele_catch) {
-            ele_catch.play()
-            console.log("视频已延后播放；")
-        }
-    }, time)
-}
-
-/* 添加监听器 bySelector*/
-function addListener(selector, funx) {
-    setTimeout(() => {
-        var ele = document.querySelectorAll(selector);
-        for (let index = 0; index < ele.length; index++) {
-            ele[index].addEventListener("click", funx, false)
-        }
-    }, 1000)
-}
-
-/* 添加监听器 byID */
-function addListenerById(id, funx, time) {
-    setTimeout(() => {
-        var eleById = document.getElementById(id);
-        eleById.addEventListener("click", funx, false)
-    }, time)
-}
-
-
-function loopq() {
-    alert("Got it!")
-}
-
-/* 添加属性 */
-function setAttribute_after(x, y) {
-    var index;
-    var ele = document.querySelectorAll(x)
-    for (index = 0; index < ele.length; index++) {
-        ele[index].setAttribute("onclick", y);
-        console.log("属性设置中...");
-    }
-}
-
-/* 低端影视是否显示图像 */
-function cheat() {
-    var ele = document.getElementById("holyx");
-    ele.innerHTML = imax.css.ddrk_cheat;
-    setTimeout(() => {
-        ele.innerHTML = imax.css.ddrk_hidden;
-        console.log("正在切换剧集；")
-    }, 150);
-}
-
-// 禁止新页面跳转
-function hrefAttribute_set() {
-    var href = document.querySelectorAll("a");
-    var i;
-    if (href.length > 0) {
-        console.log("新标签页打开链接已被禁止；")
-        for (i = 0; i < href.length; i++) {
-            href[i].target = "_self";
-        }
-    }
-}
-
-// 禁止新页面跳转另一种实现 循环
-function href_attributeSet(time, id) {
-    document.getElementById(id).style.background = "black";
-    document.getElementById(id).innerHTML = "清理中! ♻️";
-    setTimeout(() => {
-        // 监控页面是否有新的 button
-        let selector = "button[class*='Button PaginationButton']";
-        let ele_button = document.querySelectorAll(selector);
-        if (ele_button.length > 0) {
-            window.onload = addListener(selector, () => { href_attributeSet(time, id) });
-        }
-        let times = 0;
-        let loop = setInterval(() => {
-            // 修改属性
-            times += 1;
-            let href = document.querySelectorAll("a");
-            let i;
-            for (i = 0; i < href.length; i++) {
-                if (href[i].target == "_blank") {
-                    href[i].setAttribute("target", "_self");
-                }
-            }
-            let href_Length = document.querySelectorAll("a[target='_blank']").length;
-            if (href_Length === 0 && times >= 2) {
-                clearInterval(loop);
-                if (document.getElementById(id)) {
-                    document.getElementById(id).innerHTML = "100%! ♻️";
-                    document.getElementById(id).style.background = "green";
-                    console.log("循环第" + times + "遍；")
-                    console.log("清理完毕!");
-                }
-            }
-        }, time)
-    }, time)
-}
-
-// 动态创建引用外部js JavaScript
-function js_adsRemove(url) {
-    var script = document.createElement("script");
-    script.src = url;
-    document.body.appendChild(script);
-    console.log("JavaScript脚本新增完毕！");
-}
-
-
-// 动态创建并引用外部资源 外部样式表 外部脚本
-function third_party_fileX(tagname, url, where) {
-    var ele_NewX = document.createElement(tagname);
-    // script
-    if (tagname == "script") {
-        ele_NewX.type = "text/javascript";
-        ele_NewX.src = url;
-        ele_NewX.className = 'async';
-        // link
-    } else if (tagname == "link") {
-        ele_NewX.rel = "stylesheet";
-        ele_NewX.type = "text/css";
-        ele_NewX.href = url;
-    }
-
-    setTimeout(() => {
-        if (where == "body" && ele_NewX) {
-            if (document.body) {
-                document.body.appendChild(ele_NewX);
-            }
-        } else if (where == "head" && ele_NewX) {
-            if (document.head) {
-                document.head.appendChild(ele_NewX);
-            }
-        }
-    }, 1000)
-}
-
-
-// 动态创建引用内部资源 内嵌式样式 内嵌式脚本
-function css_adsRemove(newstyle, delaytime, id) {
-    setTimeout(() => {
-        var creatcss = document.createElement("style");
-        creatcss.id = id;
-        creatcss.innerHTML = newstyle;
-        document.getElementsByTagName('head')[0].appendChild(creatcss)
-        console.log("CSS样式新增完毕！");
-    }, delaytime);
-}
-
-// 循环模拟模拟点击
-function button_dynamicRemove(selector, times) {
-    var initCount = 0;
-    var loop = setInterval(() => {
-        var ele = document.querySelectorAll(selector);
-        if (ele.length > 0) {
-            ele[0].click()
-        }
-        initCount += 1;
-        if (initCount == times) {
-            clearInterval(loop);
-        }
-    }, 0)
-}
-
-// 知乎循环跳转绕过登录页
-function indexLogin() { // 跳转至热门话题 Explore 或 随机
-    let url = document.location.href;
-    let cssSelector = "a[href='//www.zhihu.com/'],a[href='//www.zhihu.com'],a[href='https://www.zhihu.com']";
-    let rewrite_url = "https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour";
-    let reg = /^https:\/\/www.zhihu.com\/signin/gi;
-    if (url.search(reg) !== -1) {
-        window.location = rewrite_url;
-    }
-
-    setTimeout(() => { // 延时执行函数优化
-        var ele = document.querySelectorAll(cssSelector)
-        if (ele.length > 0) {
-            let i;
-            for (i = 0; i < ele.length; i++) {
-                ele[i].href = rewrite_url;
-            }
-        }
-    }, 300);
-
-    /*
-    var url = document.location.href;
-    var url_list = [
-        "https://www.zhihu.com/knowledge-plan/hot-question/hot/",
-    ]
-    var rand = Math.floor(Math.random() * url_list.length);
-    var url_random = url_list[rand];
-    var reg = /^https:\/\/www.zhihu.com\/signin/gi;
-    if (url.search(reg) !== -1) {
-        window.location = url_random;
-    }
-    */
-}
-
-
-/// abort-on-property-read.js
-/// alias aopr.js
-/// https://github.com/gorhill/uBlock/blob/a94df7f3b27080ae2dcb3b914ace39c0c294d2f6/assets/resources/scriptlets.js#L96
-function abort_on_property_read() {
-    const magic = String.fromCharCode(Date.now() % 26 + 97) +
-        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
-    const abort = function () {
-        throw new ReferenceError(magic);
-    };
-    const makeProxy = function (owner, chain) {
-        const pos = chain.indexOf('.');
-        if (pos === -1) {
-            const desc = Object.getOwnPropertyDescriptor(owner, chain);
-            if (!desc || desc.get !== abort) {
-                Object.defineProperty(owner, chain, {
-                    get: abort,
-                    set: function () { }
-                });
-            }
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        let v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if (v) {
-            makeProxy(v, chain);
-            return;
-        }
-        const desc = Object.getOwnPropertyDescriptor(owner, prop);
-        if (desc && desc.set !== undefined) { return; }
-        Object.defineProperty(owner, prop, {
-            get: function () { return v; },
-            set: function (a) {
-                v = a;
-                if (a instanceof Object) {
-                    makeProxy(a, chain);
-                }
-            }
-        });
-    };
-    const owner = window;
-    let chain = '{{1}}';
-    makeProxy(owner, chain);
-    const oe = window.onerror;
-    window.onerror = function (msg, src, line, col, error) {
-        if (typeof msg === 'string' && msg.indexOf(magic) !== -1) {
-            return true;
-        }
-        if (oe instanceof Function) {
-            return oe(msg, src, line, col, error);
-        }
-    }.bind();
-};
-
-/* 视频页广告加速跳过 */
-function videoAds_accelerateSkip(fasterx) {
-    // https://github.com/gorhill/uBlock/wiki
-    /// nano-setInterval-booster.js
-    /// alias nano-sib.js
-    //console.log("视频广告加速")
-    let needleArg = '{{1}}';
-    if (needleArg === '{{1}}') { needleArg = ''; }
-    let delayArg = '{{2}}';
-    if (delayArg === '{{2}}') { delayArg = ''; }
-    let boostArg = '{{3}}';
-    if (boostArg === '{{3}}') { boostArg = ''; }
-    if (needleArg === '') {
-        needleArg = '.?';
-    } else if (needleArg.charAt(0) === '/' && needleArg.slice(-1) === '/') {
-        needleArg = needleArg.slice(1, -1);
-    } else {
-        needleArg = needleArg.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-    const reNeedle = new RegExp(needleArg);
-    let delay = delayArg !== '*' ? parseInt(delayArg, 10) : -1;
-    if (isNaN(delay) || isFinite(delay) === false) { delay = 1000; }
-    let boost = parseFloat(boostArg);
-    boost = isNaN(boost) === false && isFinite(boost)
-        ? Math.min(Math.max(boost, fasterx), 50)
-        : fasterx;
-    self.setInterval = new Proxy(self.setInterval, {
-        apply: function (target, thisArg, args) {
-            const [a, b] = args;
-            if (
-                (delay === -1 || b === delay) &&
-                reNeedle.test(a.toString())
-            ) {
-                args[1] = b * boost;
-            }
-            return target.apply(thisArg, args);
-        }
-    });
-};
-
-// overridePropertyRead 覆盖属性读取
-/// https://github.com/AdguardTeam/Scriptlets/blob/master/wiki/about-scriptlets.md#set-constant
+// 获取M3U8文件资源链接
 
 var repeat_regex = ["https:?\/\/.*?hls.*?\.m3u8", "https:?\/\/.*?phncdn.*?hls.*?\.m3u8", "https:?\/\/.*?mushroomtrack.*?\.m3u8"]
 
@@ -1749,593 +47,2015 @@ function m3u8_tempt(x) {
     }
 }
 
-function pornhub_sidebar_ads() {
+
+/* 循环播放 */
+function video_loopPlay() {
+    setInterval(function () {
+        var ele = ["video[preload='none', 'common'],video#player"];
+        var ele_catch = document.querySelector(ele);
+        if (ele_catch) {
+            ele_catch.play()
+            //console.log("视频已开启循环播放；")
+        }
+    }, 1000)
+}
+
+/* 延后播放 */
+function video_delayPlay(time) {
+    setTimeout(function () {
+        var ele = ["video[preload='none', 'common'],video#player"];
+        var ele_catch = document.querySelector(ele);
+        if (ele_catch) {
+            ele_catch.play()
+            //console.log("视频已延后播放；")
+        }
+    }, time)
+}
+
+function selector_one_by_one(x) { // 按选择器一个一个移除
+    if (document.querySelector(x)) {
+        document.querySelectorAll(x).forEach((x) => { x.remove() })
+    }
+}
+
+// 先新建一个按钮
+function adblock4limbo(x, csp) {
+    // 新建 x4Div
+    let new_body = document.createElement('div'); // body 换为 div
+    new_body.id = 'x4Div'; // 高等悬挂
+    let body = document.body;
+    //document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
+    document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
+
+    // 定义按钮
+    let x4Home = document.createElement('button')
+    x4Home.id = "x4Home";
+
+    if (csp == 'nocsp') {
+        console.log('创建不带CSP属性按钮...')
+        x4Home.setAttribute("class", "cms");
+        //x4Home.setAttribute('onclick', "body_build('true');")
+        var nocsp = 'padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;background-color:transparent;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/uploads/imgs/Adblock4limbo.svg") !important;background-size:100% !important;background-repeat:no-repeat;';
+        x4Home.style = nocsp;
+        document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
+        document.getElementById('x4Home').style.height = x;
+        document.getElementById('x4Home').style.width = x;
+
+        if (window.innerHeight < 600) {
+            document.querySelector('#x4Home').style.bottom = '30%';
+        }
+
+    } else if (csp == 'csp') {
+        console.log('创建带CSP属性按钮...')
+        var csp = 'box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:17px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;border-radius:50%;';
+        x4Home.style = csp;
+        x4Home.textContent = '导航';
+        document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
+        //x4Home.setAttribute("class", "cspButton");
+        document.getElementById('x4Home').style.height = x;
+        document.getElementById('x4Home').style.width = x;
+        if (window.innerHeight < 600) {
+            document.querySelector('#x4Home').style.bottom = '30%';
+        }
+    }
+}
+
+// 定义按钮尺寸
+function x4Home_button_width() {
+    //const userAgent = navigator.userAgent.toLowerCase();
+    const window_innerWidth = window.innerWidth;
+    if (window_innerWidth <= 920) {
+        //if (/\b(android|iphone|ipad|ipod)\b/i.test(userAgent)) {
+        var size = '54px';
+        return size;
+    } else {
+        var size = '75px';
+        return size;
+    }
+}
+
+
+// 自动隐藏按钮
+
+setInterval(() => {
+    hidden_adblock4limbo();
+}
+    , 2500)
+
+var click_dont_move_and_click = 600;
+
+function hidden_adblock4limbo() {
+    if (document.getElementById('x4Home') !== null) {
+        ////console.log("// hidden_adblock4limbo() 按钮存在") // 存在
+        var last_known_scroll_position = window.scrollY;
+        const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
+        setTimeout(() => {
+            //// console.log("本次移动距离" + Math.abs(last_known_scroll_position - window.scrollY))
+            //if (Math.abs(last_known_scroll_position - window.scrollY) > 1000) {
+            if (last_known_scroll_position !== window.scrollY && document.querySelector('img.lockscreen') == null) {
+                ////console.log("// hidden_adblock4limbo() 按钮存在，且页面还在滑动...");
+                if (document.querySelector("#navigation4limbo").style.zIndex > 0) {
+                    document.querySelector("#navigation4limbo").style.zIndex = ++document.querySelector("#navigation4limbo").style.zIndex;
+                }
+                znsh_unlock();
+                x4Home_button('1');
+                if (click_dont_move_and_click < 400) { // 定时400秒
+                    click_dont_move_and_click = click_dont_move_and_click + 600;
+                } else {
+                    click_dont_move_and_click = click_dont_move_and_click + 120;
+                }
+                document.querySelector('#x4Home').style.zIndex = document.querySelector('#x4Home').style.zIndex + 1;
+            } else {
+                x4Home_button('0');
+                click_dont_move_and_click = --click_dont_move_and_click;
+                if (click_dont_move_and_click < 300) {
+                    ////znsh();
+                }
+                ////console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
+            }
+            //console.log("现在导航按钮显示次数比隐藏次数多了" + click_dont_move_and_click + "次");
+        }, 1000)
+    } else {
+        ////console.log("// hidden_adblock4limbo() 按钮存在，但已隐藏...");
+    }
+}
+
+
+document.body.addEventListener('click', () => { // 点击计数器
+    if (click_dont_move_and_click < 400) { // 定时400秒
+        click_dont_move_and_click = click_dont_move_and_click + 600;
+    } else {
+        click_dont_move_and_click = click_dont_move_and_click + 120;
+    }
+})
+
+// 长时间不动则隐藏按钮
+function x4Home_button(x) { // 显示导航按钮
+    const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
+    if (x == 1 && !(document.getElementById('x4Home') === null)) {
+        x4Home.style.height = x4Home_button_width();
+        x4Home.style.width = x4Home_button_width();
+        new_div.style.zIndex = '114154';
+    } else {
+        if ((x4Home.style.height == "0%")) {
+        } else {
+            setTimeout(() => {
+                x4Home.style.height = '0%';
+            }, 500)
+        }
+    }
+}
+
+
+// 当鼠标🖱靠近时显示按钮
+//onload = () => {
+const mousemove_element = document.querySelectorAll('body')[0];
+// 绑定鼠标移动事件
+mousemove_element.addEventListener('mousemove', e => {
+    ////console.log("// mousemove_element 鼠标所在位置：" + e.offsetX);
+    ////console.log("// mousemove_element 要触发位置为：" + Math.floor(0.55 * window.innerWidth));
+    if (document.body.clientWidth) {
+        if (e.offsetX >= 0.85 * window.innerWidth) {
+            x4Home_button('1');
+        }
+    }
+});
+//}
+
+
+
+// 为按钮添加监听事件 防止被破坏
+function _onclick_button() {
+    if (document.querySelector('button#x4Home')) {
+        document.querySelector('button#x4Home').addEventListener("click", function () {
+            body_build('true'); // 添加监听事件
+        })
+    }
     setTimeout(() => {
-        var ele_parent = ["div"];
-        var ele_children = ["img[data-title][title][srcset]"];
-        var ele_attributes = ["class"];
-        var i;
+        if (document.querySelector("button#xX")) {
+            document.querySelector('button#xX').addEventListener("click", function () {
+                body_build('false'); // 添加监听事件
+            })
+        }
 
-        const css_Selctors = document.querySelectorAll(ele_parent);
+        if (document.querySelector('button#webChat')) {
+            document.querySelector('button#webChat').addEventListener("click", function () {
+                crisp_active('1', '1', '1'); // 添加监听事件
+            })
+        }
 
-        for (i = 0; i < css_Selctors.length; i++) {
-            if (css_Selctors[i].querySelectorAll(ele_children).length !== 0) {
-                if (css_Selctors[i].getAttribute(ele_attributes)) {
-                    if (css_Selctors[i].attributes.length == 1) {
-                        if (css_Selctors[i].children.length == 2) {
-                            console.log(css_Selctors[i])
-                            css_Selctors[i].style.display = "none";
-                        }
-                    }
+        if (document.querySelector('button#hidedaohang')) {
+            document.querySelector('button#hidedaohang').addEventListener("click", function () {
+                hide_button_switch('1'); // 添加监听事件
+            })
+        }
+
+        if (document.querySelector('button#resetting')) {
+            document.querySelector('button#resetting').addEventListener("click", function () {
+                if (localStorage.getItem("crisp") == 'active') {
+                    localStorage.setItem("crisp", ""); // 重置导航
+                }
+
+                location.reload();
+            })
+        }
+
+        if (document.querySelector('a#lsj')) {
+            document.querySelector('a#lsj').addEventListener("click", function () {
+                open_googlesearch_iframe(); // 添加监听事件
+            })
+        }
+
+        if (document.getElementById('nsfwmode_switch')) {
+            document.getElementById('nsfwmode_switch').addEventListener('click', function () {
+                nsfwmode(); // 开始或关闭成人模式
+            })
+        }
+
+        if (document.getElementById('lock_screen')) {
+            document.getElementById('lock_screen').addEventListener('click', function () {
+                lock_screen_switch(); // 开始或关闭锁屏
+            })
+        }
+
+    }, 1000)
+}
+
+
+// 监听导航页的按钮是否被点击
+/*
+function if_a_click_then_close_daohang() {
+    if (document.querySelector('div.echo')) {
+        document.querySelector('div.echo').querySelectorAll('a').forEach((x) => {
+            x.addEventListener('click', () => {
+                body_build('false');
+            })
+        })
+    }
+}
+*/
+
+
+var nsfw_regex = new RegExp(/\b(thisav|njav|missav|javlib|javbus|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|javbus|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
+var echo_ell_length = 21; // 总共导航类目数量
+var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
+
+// 判断是否需要在当前页面插入导航按钮
+let str_ua = navigator.userAgent.toLowerCase();
+let regexp = /(.*)(iphone\sos\s)(\d{2})(.*)/;
+let ios_version = str_ua.replace(regexp, '$3');
+
+var csp = ['twitter', 'xvideos'];
+var number_x = 0;
+if (/\b(google|bing)\b/i.test(window.location.href.toLowerCase())) { // 谷歌和必应均不插入导航按钮
+} else if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) { // 如果是带有CSP的网站则带上参数 csp // 2333
+    adblock4limbo(x4Home_button_width(), 'csp');
+    _onclick_button();
+}
+else {
+    adblock4limbo(x4Home_button_width(), 'nocsp'); // 反之则不带
+    _onclick_button();
+}
+
+function csp_remove() {
+    // 删除CSP模式下不可点击的按钮
+    var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
+    if (csp_regex.test(window.location.href.toLowerCase())) {
+        if (document.querySelector("button#x4Home") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
+            // 如果引用了 Adblock4limbo.function.js 则什么也不做
+        } else {
+            let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
+            button.forEach((x) => {
+                if (document.querySelector(x)) { document.querySelector(x).remove() }
+            });
+            let li = document.querySelectorAll('li.li_global');
+            for (x = 0; x < li.length; x++) {
+                if ((li[x].querySelector('a') === null)) {
+                    li[x].remove()
                 }
             }
         }
-    }, 500);
-}
-
-
-function tag_ads_traversal(selector, i) {
-    const css_Selctors = document.querySelectorAll(selector)
-    css_Selctors[i].style.display = "none";
-}
-
-// Get Cookies 获取指定命名的cookie 的值
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i].trim();
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    } else {
+        if (document.querySelector("button#x4Home") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
+            // 如果引用了 Adblock4limbo.function.js 则什么也不做
+        } else {
+            let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
+            button.forEach((x) => {
+                if (document.querySelector(x)) { document.querySelector(x).remove() }
+            });
+            let li = document.querySelectorAll('li.li_global');
+            for (x = 0; x < li.length; x++) {
+                if ((li[x].querySelector('a') === null)) {
+                    li[x].remove()
+                }
+            }
+        }
     }
+}
+
+/*
+如不想显示 chat 聊天按钮
+可使用双斜杠 // 注释上述函数调用代码；
+举例如下：
+
+// adblock4limbo();
+// hidden_adblock4limbo();
+
+*/
+
+/* Chat and navigation4limbo End */
+
+// 初始化导航内容
+function navigation4limbo_body_pre() {
+    let navigation4limbo = document.createElement('div')
+    navigation4limbo.id = 'navigation4limbo';
+    navigation4limbo.setAttribute("class", "navigation4limbo_css");
+    let body = document.body;
+    document.querySelector('html').insertBefore(navigation4limbo, body);
+
+    let ele_innerHTML = '\
+        <div class="echo">\
+        \
+        <div class="closeX_W">\
+        <div class="ellCloseX"><button style="border-radius: 50%;opacity: 0.5;" id="xX" ></button></div>\
+        </div>\
+        \
+        \
+        <div class="div_global feedback">\
+        <div class="title_global" >反馈/建议/功能设置//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><button style="border-radius:4px; background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">在线联系</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="hidedaohang">隐藏导航</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="resetting">重置导航</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#5165e4 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmode_switch">成人保护模式(ON)</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#efb432 !important; box-shadow:inset 0px 0px 15px 3px #efb432;" class="a_global red"  id="lock_screen">锁屏! 🔐</button></li>\
+        <li class="li_global"><a href="https://t.me/Adblock4limbo/21" target="_blank" class="a_global red" id="FAQ">FAQ</a></li>\
+        <li class="li_global"><a class="a_global red" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues?q=is%3Aissue+is%3Aclosed" \
+        target="_blank">提交issue</a></li>\
+        <li class="li_global"><a class="a_global red" id="admin" href="https://t.me/limboprobot" \
+        target="_blank">联系博主TG</a></li>\
+        <li class="li_global"><a class="a_global" id="tgGroup" href="https://t.me/Adblock4limbo/21" \
+        target="_blank">电报群组</a></li>\
+        <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.function.js" \
+        target="_blank">查看源码</a></li>\
+        <div class="fbt">新网站收录、当前网页广告问题反馈，其他建议或意见，请通过<span style="color:black;font-weight:bolder;">以上方式</span>告知我们（告知前可先看一下<a class="a_global title_" href="https://t.me/Adblock4limbo/21">FAQ </a>）...P.S. 该 Feature 持续增加/完善中，欢迎大家为之添砖加瓦！</div>\
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global gkd">\
+        <div class="title_global">关注博主//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a class="a_global" id="Github" href="https://github.com/limbopro" \
+        target="_blank">Github</a></li>\
+        <li class="li_global"><a class="a_global" id="GreasyFork" href="https://sleazyfork.org/zh-CN/users/893587-limbopro" \
+        target="_blank">GreasyFork</a></li>\
+        <li class="li_global"><a class="a_global special" id="limboprossr" href="https://t.me/limboprossr" \
+        target="_blank">资讯频道</a></li>\
+        <li class="li_global"><a class="a_global special" id="SecretGarden" href="https://t.me/+dQ-tZYqhSDEwNTk1" \
+        target="_blank">春潮频道</a></li>\
+        <li class="li_global"><a class="a_global better" id="limboprossr" href="https://twitter.com/limboprossr" \
+        target="_blank">Twitter</a></li>\
+        <li class="li_global"><a class="a_global" id="YouTube" href="https://m.youtube.com/@limboprossr/featured" \
+        target="_blank">YouTube</a></li>\
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global magicbox">\
+        <div class="title_global">工具箱//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" \
+        target="_blank">广告拦截大全</a></li>\
+        <li class="li_global"><a class="a_global" id="software_skills" href="https://limbopro.com/category/software-skills/" \
+        target="_blank">软件百科</a></li>\
+        <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="index" href="https://limbopro.com/" \
+        target="_blank">毒奶博客</a></li>\
+        <li class="li_global"><a class="a_global red " style="border-radius:4px; background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="lsj">毒奶搜索</a></li>\
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global speedtest">\
+        <div class="title_global">测速工具//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a class="a_global better" id="CloudflareSpeedtest" href="https://speed.cloudflare.com/"\
+        target="_blank">Cloudflare</a></li>\
+        <li class="li_global"><a class="a_global special" id="StairSpeedTest" href="https://limbopro.com/archives/ssrspeed.html"\
+        target="_blank">StairSpeedTest(机场测速)</a></li>\
+        <li class="li_global"><a class="a_global" id="Speedtest" href="https://www.speedtest.net/zh-Hans"\
+        target="_blank">Speedtest</a></li>\
+        \
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global ipcheck">\
+        <div class="title_global">网络连通及被墙检测//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a class="a_global special" id="Sukka" href="https://ip.skk.moe/"\
+        target="_blank">ip地址查询（当前代理节点/本地IP信息）</a></li>\
+        <li class="li_global"><a class="a_global" id="checkgfw" href="https://www.checkgfw.com/"\
+        target="_blank">域名被墙检测</a></li>\
+        \
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global front">\
+        <div class="title_global">前端入门//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a class="a_global" id="wangdoc" href="https://wangdoc.com/" \
+        target="_blank">网道</a></li>\
+        <li class="li_global"><a class="a_global" id="Web_mdn" href="https://developer.mozilla.org/zh-CN/docs/Web" \
+        target="_blank">Web 开发技术</a></li>\
+        <li class="li_global"><a class="a_global special" id="JavaScript" href="https://zh.javascript.info/" \
+        target="_blank">现代 JavaScript 教程</a></li>\
+        \
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global boysshouldread">\
+        <div class="title_global">男孩子读物//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a class="a_global better" id="regex" href="https://limbopro.com/archives/Regular_Expressions.html" \
+        target="_blank">正则表达式</a></li>\
+        <li class="li_global"><a class="a_global special" id="Linux-Shell" href="https://t.me/limboprossr/3197" \
+        target="__blank">快乐的命令行</a></li>\
+        \
+        </ul>\
+        </div>\
+        \
+        \
+        <div class="div_global onlinemovies">\
+        <div class="title_global">在线影视//</div>\
+        <ul class="ul_global">\
+        <li class="li_global"><a class="a_global moviesColor" id="common" href="https://ddys.pro/"\
+        target="_blank">低端影视</a></li>\
+        <li class="li_global"><a class="a_global moviesColor" id="common" href="https://xiaobaotv.net/"\
+        target="_blank">小宝影视</a></li>\
+        </ul>\
+        </div>\
+        \
+        <div class="_footer" style="color:black!important;">当前网页已在<a href="https://github.com/limbopro/Adblock4limbo/blob/main/Adblock4limbo.weblist" target="_blank" >去广告计划</a>范围，如在此页面发现广告请及时反馈。<div>\
+        \
+        </div>\
+        \
+'
+    let navigation4limbo_parents = document.getElementById('navigation4limbo');
+    navigation4limbo_parents.innerHTML = ele_innerHTML;
+}
+
+
+
+var file = {
+    javlibrary: "td.advsearch {display:none}#rightcolumn{right:90px;width:auto;} .videothumblist .videos {min-width:auto}  table.about td {width:auto!important} table.about td.desc {width:auto !important;min-width:0px!important} .titlebox {width:auto !important}.videothumblist.videos {width:auto !important} #leftmenu{max-width:90px;} div.videothumblist{overflow:scroll !important; overflow-x:hidden !important}iframe{display:none} table.about td {min-width:0px;} body.main{min-width:0px !important}\
+    \
+    ",
+    global_css: '\
+    div.crisp-client.active{pointer-events:auto; z-index:114154; opacity:1;} div.crisp-client{pointer-events:none; z-index:-114154; opacity:0;} .a_global.moviesColor {font-weight:300;background:black;color:#01ff5f!important;box-shadow:inset 0px 0px 15px 3px black} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } img.nsfw {position:fixed;width:100%;} img.lockscreen {position:fixed;width:100%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo { color:white;width:100%;height:100%} #nsfw { opacity:0.7; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button_csp{font-size:xxx-large;transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .close_search_button_csp:hover {background-color:red;opacity:1 !important;}  .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.green{background:#688e4e !important; transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #688e4e;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto}  div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation4limbo.navigation4limbo_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation4limbo.navigation4limbo_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{word-wrap:break-word;font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{padding-left:2px;display:table-cell;vertical-align:bottom;width:106px;height:50px;text-align:center;font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-bottom:4px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation4limbo{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+    '
+}
+
+// ::-webkit-scrollbar{width:8px;}::-webkit-scrollbar:horizontal{height:8px}::-webkit-scrollbar-track{display:none}::-webkit-scrollbar-thumb{border-radius:2px;background-color:white;} img.nsfw {position:fixed;width:100%;top:0%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo {text-align:center;color:white;width:100%;height:100%} #nsfw { opacity:0.4; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button_csp{font-size:xxx-large;transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .close_search_button_csp:hover {background-color:red;opacity:1 !important;}  .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.special{background:#3764ac !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac}.a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #x4Home{height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#2c447e;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#navigation4limbo.navigation4limbo_css{overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#navigation4limbo.navigation4limbo_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;}.echo{width:auto;font-size:15px;text-align:inherit;position:absolute;}ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{word-wrap:break-word;font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:248px;margin:0px;overflow:auto;width:auto;} .title_global{padding-left:2px;display:table-cell;vertical-align:bottom;width:106px;height:50px;text-align:center;font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-bottom:4px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#navigation4limbo{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:100% !important;padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+// 优先追加style元素 以内联样式的方式
+function css_add(css, here_write_css_name_you_want) {
+    // css style 创建
+    let body = document.body;
+    var css_name_x = document.createElement('style');
+    css_name_x.id = here_write_css_name_you_want;
+    css_name_x.innerText = css;
+    document.querySelector('html').insertBefore(css_name_x, body);
+}
+
+// 优先追加style元素 以 link 的方式
+function css_url_add(css_url, here_write_css_name_you_want) {
+    // css file 创建
+    let head = document.querySelectorAll('head')[0];
+    var css_name_y = document.createElement('link');
+    css_name_y.id = here_write_css_name_you_want;
+    css_name_y.href = css_url;
+    css_name_y.type = 'text/css';
+    css_name_y.rel = 'stylesheet';
+    head.appendChild(css_name_y);
+}
+
+css_add(file.global_css, 'navigation4limbo_style'); // 在body后面插入 css
+//css_add(file.javlibrary, 'mayi'); // 在body后面插入 css
+
+function insertBefore_that_element_xx(x) {
+    let parentElement = document.querySelector('div#rightcolumn')
+    let insertBefore_that_element_X = document.querySelector('div#video_favorite_edit');
+    let son = document.querySelectorAll("[style*='vertical-align: top']")[1]
+    parentElement.insertBefore(son, insertBefore_that_element_X);
+    document.querySelectorAll(x).forEach((x) => { x.style.width = '140px' })
+    if (window.innerWidth < 430) {
+    }
+}
+
+// 新建一个独立的 div 元素 用作sample
+function div_sample(echo_selector, insertBefore_that_element, switchX, child_css_change) {
+    let target = document.querySelector(echo_selector);
+    let div_global_x = document.createElement('div');
+    div_global_x.className = "div_global " + child_css_change;
+    let div_title = document.createElement('div');
+    div_title.textContent = 'sample';
+    div_title.className = 'title_global'; // 全局
+    let ul_ul_global = document.createElement('ul');
+    ul_ul_global.className = 'ul_global';
+    let li_li_global = document.createElement('li');
+    li_li_global.className = 'li_global';
+    let a = document.createElement('a');
+    a.className = 'a_global';
+    a.href = 'https://limbopro.com/';
+    a.target = '_blank';
+    a.textContent = 'Sample';
+    //a.id = 'sample';
+    li_li_global.appendChild(a);
+    ul_ul_global.appendChild(li_li_global);
+    div_global_x.appendChild(div_title);
+    div_global_x.appendChild(ul_ul_global);
+    if (switchX == 1) {
+        let insertBefore_that_elementx = document.querySelector(insertBefore_that_element);
+        target.insertBefore(div_global_x, insertBefore_that_elementx); // 插入到现有 body 前
+    } else {
+        target.appendChild(div_global_x);
+    }
+}
+
+// 新建一个独立的 li 元素 用作sample
+function li_sample(div_global_selector, insertBefore_that_element, switchX) {
+    let target = document.querySelector(div_global_selector);
+    let li_global_x = document.createElement('li');
+    li_global_x.className = "li_global";
+    let a = document.createElement('a')
+    a.className = 'a_global';
+    //a.id = 'sample';
+    a.href = 'https://limbopro.com/';
+    a.target = '_blank';
+    a.textContent = 'Sample';
+    li_global_x.appendChild(a);
+
+    if (switchX == 1) {
+        let thatli = target.querySelectorAll('li');
+        // document.querySelector('.div_global.speedtest').querySelectorAll('li')
+        for (i = 0; i < thatli.length; i++) {
+            if (thatli[i].querySelector(insertBefore_that_element)) {
+                // document.querySelector('.div_global.speedtest').querySelectorAll('li').querySelector('#Speedtest')
+                target.insertBefore(li_global_x, thatli[i])
+            }
+        }
+    } else {
+        target.appendChild(li_global_x);
+    }
+}
+
+// .div_global.DeverloperX
+
+
+// 可向上滑动判断
+function scroll_switch() {
+    //let scroll_check = setInterval(() => {
+    var div_global = document.querySelectorAll('.div_global');
+    ////console.log("// scroll_switch() 查看子元素数量是否超出设定");
+
+    for (i = 0; i < div_global.length; i++) {
+
+        if (div_global[i].querySelector('div.fbt')) {
+            var fbt = div_global[i].querySelector('div.fbt').clientHeight
+        } else { var fbt = 0 }
+
+
+        var sum = 0;
+        let li = div_global[i].querySelectorAll('li')
+        //let li = document.querySelectorAll('.div_global')[20].querySelectorAll('li')
+        for (x = 0; x < li.length; x++) {
+            sum += li[x].clientHeight;
+        }
+
+        //console.log(sum)
+
+        if (div_global[i].querySelectorAll('li').length * 31 + fbt > 8 * 31 || sum + fbt > 8 * 31) {
+            // if (sum_scroll() + fbt > 8 * 31) {
+            let scroll_innerHTML = document.createElement('div');
+            scroll_innerHTML.textContent = '*可向上滑动查看更多';
+            scroll_innerHTML.className = "scroll";
+            document.querySelectorAll("div.div_global")[i].appendChild(scroll_innerHTML);
+            ////console.log("// scroll_switch() 正在执行插入 // 子元素较多");
+            ////clearInterval(scroll_check);
+        }
+    }
+
+    //}, 1000)
+}
+
+//document.querySelectorAll('.div_global')[3].querySelectorAll("li").length * 31
+
+function xXX() {
+    let div_global = document.querySelectorAll('.div_global');
+    for (i = 0; i < div_global.length; i++) {
+        let a_length = div_global[i].querySelectorAll("a").length;
+        for (i = 0; i < a_length; i++) {
+            div_global[i].querySelectorAll('a')
+        }
+    }
+    var a_length = document.querySelectorAll('.div_global')[3].querySelectorAll("li").length;
+    for (i = 0; i < a_length; i++) {
+        //console.log(document.querySelectorAll('.div_global')[3].querySelectorAll("a")[i].clientHeight);
+        if (document.querySelectorAll('.div_global')[3].querySelectorAll("a")[i].clientHeight > 27) {
+            let scroll_innerHTML = document.createElement('div');
+            scroll_innerHTML.textContent = '*可向上滑动查看更多';
+            scroll_innerHTML.className = "scroll";
+        }
+    }
+}
+
+var selector = { // css 定义选择器
+    body_css_real: ["div.navigation4limbo_css", 'common'],
+    body_css: ["div#navigation4limbo.navigation4limbo_css", 'common'],
+    footer: ["div._footer", 'common'],
+}
+
+function all(opacity, zIndex, switchX, pointevents = '') {
+    //console.log("// body_build() 输入为 true，开始创建导航..." + " 透明度为 " + opacity + " 层级数目为 " + zIndex)
+    if (!document.querySelector('div#navigation4limbo[style]')) { // 如果导航不存在则生成
+        navigation4limbo_body_pre(); // 生成导航
+        let parentElement = document.getElementById('navigation4limbo');
+        parentElement.style.zIndex = zIndex;
+        parentElement.style.opacity = opacity;
+        parentElement.style.pointerEvents = pointevents;
+        body_align("navigation4limbo");// 初始化导航大小
+        body_bgp_switch(); // 设置背景图片
+        echo_align(); // 导航居中
+        //new_align();
+        echo_check_switch(switchX); // 监控导航大小变化
+        //boom();
+    } else {
+        //boom();
+        let parentElement = document.getElementById('navigation4limbo');
+        parentElement.style.zIndex = zIndex + 1;
+        parentElement.style.opacity = opacity;
+        parentElement.style.pointerEvents = pointevents;
+        body_align("navigation4limbo");// 初始化导航大小
+        body_bgp_switch(); // 设置背景图片
+        echo_align(); // 导航居中
+        //new_align();
+        echo_check_switch(switchX); // 监控导航大小变化
+    }
+}
+
+// 按钮闪烁提示
+function opacity_switch() {
+    if (document.querySelector('#windowClose')) {
+        document.querySelector('#windowClose').style.opacity = '0.5'
+        setTimeout(() => {
+            document.querySelector('#windowClose').style.opacity = '1.5'
+        }, 1500)
+    }
+}
+
+function boom() {
+    var true_ = 10;
+    let xman = setInterval(() => {
+        true_--;
+        opacity_switch();
+        console.log(true_)
+        if (true_ < 1) {
+            clearInterval(xman)
+        }
+    }, 3000)
+} //boom();
+
+
+/* Start 判断是否显示导航 可不删 */
+function body_build(x) { // 判断导航显示与否
+    if (x == "true") {
+        ////console.log("// body_build() 输入为 true，开始创建导航...")
+        all(1, 114154, 1, 'auto')
+    } else if (x == "false") {
+        all(0, -114154, 1, 'none')
+        setTimeout(() => {
+            x4Home_button("1"); // 显示导航按钮
+        }, 1000)
+        //console.log("// body_build() 导航已隐藏，右下角按钮浮现...");
+    }
+}
+
+// 设置导航初始大小 初始DaoHang 大小
+function body_align(parentElement) {
+    // 先居中 parentElement 全屏
+    var parentElement = document.getElementById(parentElement);
+    parentElement.style.height = window.innerHeight * 1 + "px";
+    parentElement.style.width = window.innerWidth * 1 + "px"
+    //}
+}
+
+// 替换背景图片
+function body_bgp_switch() {
+    if (!(csp_regex.test(window.location.href.toLowerCase()))) {
+        let url_w = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp_w.jpg";
+        let url_h = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg";
+        if (window.innerWidth * 0.65 >= window.innerHeight) {
+            document.querySelector("div#navigation4limbo").style.backgroundImage = `url(${url_w})`;
+        } else {
+            document.querySelector("div#navigation4limbo").style.backgroundImage = `url(${url_h})`;
+        }
+    } else {
+        document.querySelector("div#navigation4limbo").style.backgroundColor = '#dfdfdf';
+        document.querySelector("div > button#xX").textContent = 'X';
+        document.querySelector("div > button#xX").style = 'font-size:-webkit-xxx-large;border-radius:50%;';
+    }
+}
+
+// echo 居中
+function echo_align() {
+    if (window.innerHeight > document.querySelector("div.echo").scrollHeight) {
+        document.querySelector(selector.body_css_real).style.paddingTop = (window.innerHeight - document.querySelector("div.echo").scrollHeight) / 2 - 108 + "px";
+        // 108 为 closeX 的尺寸
+    }
+
+    //var echo_ell_length = document.querySelectorAll('div.div_global').length; // 总共导航类目数量
+    if (window.innerWidth > (112 * echo_ell_length)) { // 当屏幕宽度大于 452px
+        //console.log("正在检查是否属于大尺寸...")
+        body_align("navigation4limbo");
+        document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - (112 * echo_ell_length + 8 * echo_ell_overlay_length)) / 2 + "px";
+        document.querySelector('div._footer').style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
+        document.querySelector('div.ellCloseX').style.zIndex = "-1"; // 确保关闭按钮可见可点击
+        if (document.querySelector('div.closeX_Z')) {
+            document.querySelector('div.closeX_Z').className = "closeX_W";
+        }
+        //document.querySelector('div.ellCloseX').style.position = "initial"; // 确保关闭按钮可见可点击
+    } else {
+        new_align();
+        document.querySelector('div._footer').style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
+        /*
+        console.log("// echo_align() 正在检查是否属于小尺寸...");
+        document.querySelector(selector.footer).style.width = Math.floor((window.innerWidth / 112)) * 112 + "px"; // footer 宽度
+        body_align("navigation4limbo");
+        document.querySelector(selector.body_css_real).style.paddingLeft = ((window.innerWidth % 112 - 8 * echo_ell_overlay_length) / 2) + "px"; // 当 ellCloseX position 为 initial 时
+        if (document.querySelector('div.closeX_W')) {
+            document.querySelector('div.closeX_W').className = ("closeX_Z");
+        }*/
+    }
+}
+
+function _blank() {
+    const url_now = window.location.href.toLowerCase();
+    if (/\b(limbopro)\b/i.test(url_now)) {
+        document.querySelectorAll('div.echo a').forEach((x) => {
+            x.target = "_blank";
+            // 将当前页面链接 target 设置为 _blank
+            //console.log("// _blank() 将当前页面链接 target 设置为 _blank...");
+        })
+    } else {
+        //console.log("// _blank() 判断当前非博客页面，它是" + url_now);
+    }
+}
+
+// 超棒自动化
+// 在尾部追加子元素
+
+var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0', 'better'],
+['SpeedTest', 'https://www.speedtest.net/', '_blank', '0', 'common'],
+['溜池ゴロー', 'https://tameikegoro.jp/', '_blank', 'porn', 'better'],
+['s1s1s1 S1/エスワンー', 'https://s1s1s1.com/', '_blank', 'porn', 'better'],
+['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'special'],
+['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'special'],
+['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn', 'common'],
+['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'poxrn', 'common'],
+['ATTACKERS（アタッカーズ）', 'https://www.attackers.net/top/', '_blank', 'porn', 'common'],
+['PRESTIGE(プレステージ)', 'https://www.prestige-av.com/', '_blank', 'porn', 'common'],
+['PREMIUM（プレミアム', 'https://www.premium-beauty.com/top/', '_blank', 'porn', 'special'],
+['MOODYZー', 'https://www.moodyz.com/top/', '_blank', 'porn', 'common'],
+['IDEAPOCKET (アイデアポケット）', 'https://www.ideapocket.com/top/', '_blank', 'porn', 'porn', 'common'],
+['OPPAI（おっぱい）', 'https://www.oppai-av.com/', '_blank', 'porn', 'common'],
+['【kawaii*】公式サイト', 'https://www.kawaiikawaii.jp/top/', '_blank', 'porn', 'common'],
+['肉感あふれる女優', 'https://www.fitch-av.com/top/', '_blank', 'porn', 'common'],
+['タカラ映像 TAKARA', 'https://www.takara-tv.jp/', '_blank', 'porn', 'common'],
+['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn', 'common'],
+['トップページ - AVメーカー【ダスッ！】公式サイト', 'https://www.dasdas.jp/top/', '_blank', 'porn', 'common'],
+['レズ・素人ナンパを中心', 'https://deeps.net/', '_blank', 'porn', 'common'],
+['変態紳士倶楽部】公式サイト', 'https://www.to-satsu.com/top/', '_blank', 'porn', 'common'],
+['wanzfactory（ワンズファクトリー）', 'https://www.wanz-factory.com/top/', '_blank', 'porn', 'common'],
+['【E-BODY（イーボディ）】公式サイト', 'https://www.av-e-body.com/top/', '_blank', 'porn', 'common'],
+['MGS動画は', 'https://www.mgstage.com/', '_blank', 'porn', 'common'],
+['ABC/妄想族(1302本)', 'https://www.mousouzoku-av.com/top/', '_blank', 'porn', 'common'],
+['JET「卍GROUP」のトップページです', 'https://manji-group.com/top/', '_blank', 'porn', 'common'],
+['!! ROCKET', 'https://www.rocket-inc.net/top.php', '_blank', 'porn', 'common'],
+['FANZA通販-アダルト通販ショッピング', 'https://www.dmm.co.jp/mono/', '_blank', 'porn', 'common'],
+['【無垢】公式サイトトーップページ | AVメーカ', 'https://www.muku.tv/top/', '_blank', 'porn', 'common'],
+['Github', "https://github.com/", "_blank", "Tech", 'common'],
+['Wikipedia', "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5", "_blank", "Tech", 'common'],
+["Reddit", "https://www.reddit.com/", "_blank", "Social", 'special'],
+["Quora", "https://www.quora.com/", "_blank", "Social", 'common'],
+["Twitter", "https://twitter.com/", "_blank", "Social", 'special'],
+["Instagram", "https://www.instagram.com/", "_blank", "Social", 'special'],
+["Tiktok", "https://www.tiktok.com/", "_blank", "Social", 'common'],
+["Youtube", "https://m.youtube.com/", "_blank", "Social", 'special'],
+["Netflix", "https://www.netflix.com/browse", "_blank", "Media", 'special'],
+["HBO", "https://www.hbo.com/", "_blank", "Media", 'common'],
+["Disney+", "https://www.disneyplus.com/en-hk", "_blank", "Media", 'common'],
+["Amazon Prime Video", "https://www.primevideo.com/", "_blank", "Media", 'common'],
+["Pexels", "https://www.pexels.com/", "_blank", "IMages", 'common'],
+["Pixbay", "https://pixabay.com/", "_blank", "IMages", 'common'],
+['Github', 'https://github.com/', '_blank', 'Developer', 'special'],
+['v2ex', 'https://www.v2ex.com/', '_blank', 'Developer'],
+['思否', 'https://segmentfault.com/', '_blank', 'Developer', 'special'],
+['掘金', 'https://juejin.cn/', '_blank', 'Developer', 'special'],
+['MDN', 'https://developer.mozilla.org/zh-CN/', '_blank', 'Developer', 'common'],
+['w3schools', 'https://w3schools.cn/', '_blank', 'Developer', 'common'],
+['Stack Overflow', 'https://stackoverflow.com/', '_blank', 'Developer', 'common'],
+['Typecho', 'https://typecho.org/', '_blank', 'front-build', 'special'],
+['Vercel', 'https://vercel.com/new', '_blank', 'front-build', 'special'],
+['Cloudflare Pages', 'https://pages.cloudflare.com/', '_blank', 'front-build', 'special'],
+['Gitpages', 'https://pages.github.com/', '_blank', 'front-build', 'special'],
+['Fly.io', 'https://fly.io/', '_blank', 'front-build', 'common'],
+['NameSilo', 'https://www.namesilo.com/', '_blank', 'domain-buy', 'better'],
+['Cloudflare Domain', 'https://www.cloudflare.com/products/registrar/', '_blank', 'domain-buy', 'better'],
+['NameCheap', 'https://www.namecheap.com/', '_blank', 'domain-buy', 'common'],
+['freenom', 'https://www.freenom.com/zh/freeandpaiddomains.html', '_blank', 'domain-buy', 'common'],
+['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'better'],
+['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'better'],
+['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'better'],
+['Javbus', 'https://www.javbus.com/', '_blank', 'xOnline', 'better'],
+['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'common'],
+['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'better'],
+['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'common'],
+['Javday', 'https://javday.tv/', '_blank', 'xOnline', 'common'],
+['Njav', 'https://njav.tv/zh/', '_blank', 'xOnline', 'common'],
+['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
+['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
+['Bash 教程', 'https://wangdoc.com/bash/', '_blank', 'knowledge', 'common'],
+['SSH 教程', 'https://wangdoc.com/ssh/', '_blank', 'knowledge', 'common'],
+['Vim从入门到精通', 'https://limbopro.com/archives/31058.html', '_blank', 'knowledge', 'common'],
+['网站状态检测', 'https://check-host.net/check-http?host=https://limbopro.com', '_blank', 'ipcheck', 'special'],
+['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],
+['BGP Toolkit ', 'https://bgp.he.net/', '_blank', 'ipcheck', 'common'],
+['Baidu', 'https://www.baidu.com/', '_blank', 'ipcheck', 'common'],
+['Google', 'https://www.google.com/', '_blank', 'search', 'special'],
+['Bing', 'https://www.bing.com/', '_blank', 'search', 'common'],
+['DuckDuckGo', 'https://duckduckgo.com/', '_blank', 'search', 'common'],
+['Yahoo!）', 'https://hk.yahoo.com/?p=us', '_blank', 'search', 'common'],
+['搜狗搜索', 'https://www.sogou.com/', '_blank', 'search', 'common'],
+['Baidu', 'https://www.baidu.com/', '_blank', 'search', 'common'],
+['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AICHAT', 'better'],
+['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AICHAT', 'special'],
+['Claude.ai', 'https://claude.ai/', '_blank', 'AICHAT', 'special'],
+['Google AI', 'https://labs.google.com/search/experiments', '_blank', 'AICHAT', 'common'],
+['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AICHAT', 'better'],
+["在线正则表达式测试", 'https://tool.oschina.net/regex/', '_blanl', 'Tools', 'special'],
+['在线文件格式转换器', 'https://convertio.co/zh/', '_blank', 'Tools', 'common'],
+['PDF在线转换', 'https://www.ilovepdf.com/zh-cn', '_blank', 'Tools', 'common'],
+['iconfont', 'https://www.iconfont.cn/', '_blank', 'Tools', 'common'],
+['hitomi', 'https://hitomi.la/index-chinese.html', '_blank', 'comic18', 'better'],
+['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'special'],
+['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'special'],
+['肉漫', 'https://www.rouman5.com/', '_blank', 'comic18', 'special'],
+['博客优化', 'https://limbopro.com/category/builder/', '_blank', 'seoandmore', 'special'],
+['博客防御', 'https://limbopro.com/tag/Cloudflare/', '_blank', 'seoandmore', 'common'],
+['苦瓜书盘', 'https://kgbook.com/', '_blank', 'bookreadanddownload', 'common'],
+['Library Genesis', 'https://www.libgen.is/', '_blank', 'bookreadanddownload', 'special'],
+['Z-library', 'https://limbopro.com/archives/30553.html', '_blank', 'bookreadanddownload', 'special'],
+['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
+['CSS教程', 'https://www.runoob.com/css/css-tutorial.html', '_blank', 'front-end', 'common'],
+['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
+['M3U8下载?(Porn/Jable..)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'common'],
+['Twitter 视频下载(PC网页版)', 'https://twittervid.com/', '_blank', 'dload', 'common'],
+['Instagram 视频下载(电报🤖)', 'https://t.me/instasavegrambot', '_blank', 'dload', 'special'],
+['YouTube 视频下载(电报🤖)', 'https://t.me/yt_dbot', '_blank', 'dload', 'special'],
+['Instagram 视频下载(iOS捷径)', 'https://limbopro.com/archives/1053.html', '_blank', 'dload', 'special'],
+['Instagram 视频下载(PC网页版)', 'https://sssinstagram.com/', '_blank', 'dload'],
+['Youtube 视频下载(PC网页版)', 'https://ssyoutube.com/', '_blank', 'dload'],
+['Pornhub 视频下载(PC网页版)', 'https://www.saveporn.net/', '_blank', 'dload'],
+['More...', 'https://limbopro.com/category/downloader/', '_blank', 'dload'],
+['Stable Diffusion入门', 'https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html', '_blank', 'aigc', 'special'],
+['Civitai', 'https://civitai.com/', '_blank', 'aigc', 'better'],
+['Midjourney', 'https://midjourney.com/', '_blank', 'aigc', 'better'],
+['Notion AI', 'https://www.notion.so/product/ai', '_blank', 'aigc', 'better'],
+['网易新闻', 'https://news.163.com/', '_blank', 'currentnews', 'better'],
+['谷歌新闻', 'https://news.google.com/home?hl=zh-CN&gl=CN&ceid=CN:zh-Hans', '_blank', 'currentnews', 'common'],
+['纽约时报', 'https://cn.nytimes.com/zh-hant/', '_blank', 'currentnews', 'common'],
+['华尔街日报', 'https://cn.wsj.com/', '_blank', 'currentnews', 'common'],
+['BBC News', 'https://www.bbc.com/zhongwen/simp', '_blank', 'currentnews', 'common'],
+['顶尖文案TOPYS', 'https://www.topys.cn/', '_blank', 'writer', 'better'],
+['广告门', 'https://www.adquan.com/', '_blank', 'writer', 'special'],
+['梅花网', 'https://www.meihua.info/', '_blank', 'writer', 'common'],
+['数英网', 'https://www.digitaling.com/', '_blank', 'writer', 'special'],
+['运营派', 'https://www.yunyingpai.com/', '_blank', 'writer', 'common'],
+['少数派', 'https://sspai.com/', '_blank', 'technews', 'common'],
+['虎嗅', 'https://huxiu.com/', '_blank', 'technews', 'common'],
+['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
+['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
+['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
+['iyf爱壹帆', 'https://www.iyf.tv/', '_blank', 'movies', 'moviesColor'],
+['欧乐影视', 'https://www.olevod.tv/', '_blank', 'movies', 'better'],
+['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'better'],
+['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'better'],
+];
+
+
+
+/**
+ * <li class="li_global"><a class="a_global" id="nbys" href="https://www.nivod8.tv/"\
+        target="_blank">泥巴影视</a></li>\
+        <li class="li_global"><a class="a_global" id="xbys" href="https://gimy.ai/"\
+        target="_blank">剧迷网</a></li>\
+        <li class="li_global"><a class="a_global" id="duboku" href="https://www.duboku.tv/"\
+        target="_blank">独播库</a></li>\
+        <li class="li_global"><a class="a_global" id="ttsp" href="https://www.ttsp.tv/"\
+        target="_blank">天天视频</a></li>\
+        <li class="li_global"><a class="a_global" id="libvio" href="https://libvio.top/"\
+        target="_blank">libvio梨</a></li>\
+ */
+
+var click_count = 0;
+document.addEventListener("keydown", function (event) {
+    if (event.code === "Escape") {
+        click_count = ++click_count;
+        console.log(click_count + "次ESC点击次数");
+        // 执行你想要的操作
+        // 监听键盘事件 ESC
+
+
+
+        if (!(document.querySelector('div#nsfw') === null) && !(document.querySelector('div#nsfw').style === null) && !(document.querySelector('div#nsfw').getAttribute('style') === null) && (document.querySelector('div#nsfw').getAttribute('style').search('-114') == -1) && document.querySelector('img.lockscreen') == null && click_count == 1) {
+            znsh_unlock();
+        } else if ((document.querySelector('div[data-chat-status="ongoing"]') && (document.querySelector('div[data-chat-status="ongoing"]').getAttribute('data-visible') == 'true')) || document.querySelector('div[data-chat-status="initial"]') && (document.querySelector('div[data-chat-status="initial"]').getAttribute('data-visible') == 'true') && click_count == 1) {
+            crisp_active('1', '1', '1');
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex > 0 && click_count == 1) {
+            body_build('false');
+        } else if (typeof close_googlesearch_iframe == 'function' && document.querySelector("#searchbyGoogle") && (document.querySelector("#searchbyGoogle")).style.zIndex > 0 && click_count == 1) {
+            close_googlesearch_iframe();
+        } else if ((document.querySelector("#x4Home").style.height == "0%") && click_count == 1) {
+            setTimeout(() => {
+                x4Home_button('1') // 按钮出现
+            }, 1000)
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex < 0 && click_count == 2 && (document.querySelector('div#nsfw') == null || document.querySelector('div#nsfw').style.zIndex < 0)) {
+            body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
+        } else if (typeof body_build == 'function' && document.querySelector("#navigation4limbo").style.zIndex > 0 && click_count == 3) {
+            lock_screen_switch();
+        }
+    }
+
+    if (event.code === 'KeyG') {
+        if (document.getElementById('navigation4limbo').style.zIndex > 0 && (document.querySelector('.crisp-client.active') === null)) {
+            open_googlesearch_iframe(); // 如果当前页面为导航详情页 则可按 G 键快速唤出搜索框
+        }
+    }
+
+    if (event.code === 'KeyC') {
+        if (document.getElementById('navigation4limbo').style.zIndex > 0 && (document.querySelector('.crisp-client.active') === null)) {
+            crisp_active('1', '1', '1') // 如果当前页面为导航详情页 则可按 C 键快速唤出聊天框
+        }
+    }
+
+    if (event.code === 'KeyL') { // 锁屏
+        if (document.getElementById('navigation4limbo').style.zIndex > 0 && (document.querySelector('.crisp-client.active') === null)) {
+            lock_screen_switch(); // 锁屏
+        }
+    }
+
+    if (event.code === "Space") { // 空格键
+        if (!(document.querySelector('div#navigation4limbo').style.opacity == 0) && (document.querySelector('.crisp-client.active') === null)) {
+            //if (!(document.querySelector('div#navigation4limbo').style.opacity == 0)) {
+            open_googlesearch_iframe();  // 如果当前页面为导航详情页 则可按 G 键快速唤出搜索框
+        }
+        // 处理空格键按下后要执行的代码
+        // body_build('true');
+    }
+
+    if (event.code === 'Enter' && document.querySelector('input.lockscreen') !== null) {
+        screen_unlock(); // 验证密码
+    }
+
+
+    setTimeout(() => {
+        click_count = 0;
+    }, 500);
+
+});
+
+// Crisp 聊天💬系统
+thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head")
+
+let chatUnread = setInterval(() => { // 如果Crisp聊天💬系统有未读消息，则显示系统图标
+    if (document.querySelector("[data-has-unread]") !== null && document.querySelector("[data-has-unread]").getAttribute('data-has-unread') == 'true') {
+        crisp_active('1', '0', '1')
+        clearInterval(chatUnread)
+    }
+}, 1000)
+
+
+if (localStorage.getItem("crisp") == 'active') {
+    crisp_active('1', '0', '1')
+
+    /*
+    setTimeout(() => {
+        document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
+        console.log("Crisp聊天💬系统图标已显示（localStorage）");
+    }, 3000);
+    */
+}
+
+function crisp_active(x, y, opacity) {
+    if (x == 1) {
+        let crisp_js_injection = setInterval(() => {
+            if (!document.querySelector("script[src*='crisp']")) {
+                //console.log("// crisp_active() 插入 crisp 系统脚本...")
+                thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head");
+                clearInterval(crisp_js_injection);
+                console.log("Crisp聊天💬系统加载中")
+            } else {
+                clearInterval(crisp_js_injection);
+                console.log("Crisp聊天💬系统已加载");
+            }
+        }, 1000);
+
+        if (y !== '0') {
+            // 激活窗口
+            let Crisp_open = setInterval(() => {
+                if (document.querySelector('[aria-live=polite].crisp-client') !== null && document.querySelector('[aria-live=polite].crisp-client').classList.value.indexOf('active') > 0) {
+                    if (document.querySelector('div[data-visible]') !== null && document.querySelector('div[data-visible]').getAttribute('data-visible') == 'false') {
+                        //document.querySelector('div[data-visible]').setAttribute('data-visible', 'true');
+                        //document.querySelector('[data-maximized]').setAttribute('data-maximized', 'true');
+                        document.querySelector('a[data-maximized]').click();
+                        //document.querySelector('span[class=cc-1bvfm]').click();
+                        console.log("窗口已激活（被动）")
+                    }
+                    clearInterval(Crisp_open);
+                    // do nothing
+                } else {
+                    document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
+                    console.log("Crisp聊天💬系统图标已显示（手动）");
+                    if (document.querySelector('div[data-visible]') !== null && document.querySelector('div[data-visible]').getAttribute('data-visible') == 'false') {
+                        //document.querySelector('div[data-visible]').setAttribute('data-visible', 'true');
+                        //document.querySelector('[data-maximized]').setAttribute('data-maximized', 'true');
+                        document.querySelector('a[data-maximized]').click();
+                        //document.querySelector('span[class=cc-1bvfm]').click();
+                        console.log("Crisp聊天💬系统窗口已激活（手动）")
+                    }
+                    clearInterval(Crisp_open);
+                }
+            }, 500);
+        }
+
+        if (opacity = 1) {
+            let crisp_localStorage = setInterval(() => {
+                if ((document.querySelector('[aria-live=polite].crisp-client') !== null && document.querySelector('[aria-live=polite].crisp-client').classList.value.indexOf('active') > 0) == false) {
+                    document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
+                    clearInterval(crisp_localStorage)
+                    console.log("Crisp聊天💬系统图标已显示（localStorage）");
+                }
+            }, 1000)
+        }
+
+        if (localStorage.getItem("crisp") == null | localStorage.getItem("crisp") == '') {
+            localStorage.setItem("crisp", "active");
+        }
+    }
+}
+
+
+// 监听 visibility change 事件 用户离开当前页面事件
+function visibility_() {
+    if (getCookie('nsfwmode') !== 'false') {
+        document.addEventListener('visibilitychange', function () {
+            var visible = document.visibilityState;
+            if (visible !== 'visible') {
+                console.log(visible)
+                document.body.style.filter = 'blur(50px)'
+            } else {
+                setTimeout(() => {
+                    console.log(visible)
+
+                    document.body.style.filter = 'blur(0px)'
+
+                    if (document.body.getAttribute('style') !== null) {
+                        document.body.removeAttribute('style');
+                    }
+                }, 500)
+            }
+        })
+    } else if (x == 'false') {
+        document.removeEventListener('visibilitychange', (() => { }), true) // 移除模糊监听
+    }
+};
+
+
+// 移动 echo div._footer 位置
+function _footer_move() {
+    let target = document.querySelector('.echo')
+    let child = document.querySelector('div._footer')
+    target.appendChild(child)
+}
+
+
+function new_align() {
+    if (document.querySelectorAll('div.div_global').length > 15) {
+        var category = Math.floor((window.innerWidth / 112));
+        function sum(x) {
+            ////console.log("每排共计" + category + "个类目...")
+            let sum = 0;
+            for (i = 0; i < x; i++) {
+                sum += document.querySelectorAll('div.div_global')[i].clientWidth;
+            }
+            return sum;
+        }
+
+        sum(category)
+
+        if (sum(category) > window.innerWidth) {
+            var category = Math.floor((window.innerWidth / 112)) - 1;
+            sum(category);
+            ////console.log("占据" + sum(category) + "px...")
+            document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - sum(category)) / 2 + "px"
+            ////console.log("判断失误...")
+            ////console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
+        } else {
+            ////console.log("判断正常...")
+        }
+        ////console.log("占据" + sum(category) + "px...")
+        document.querySelector(selector.body_css_real).style.paddingLeft = (window.innerWidth - sum(category)) / 2 + "px"
+        ////console.log("本次偏移量为" + (window.innerWidth - sum(category)) / 2 + "px")
+    }
+}
+
+
+function parentElement_add() {
+    all(0, -114154, 1, 'none');
+    body_build('false');
+
+    /*
+    添加点击监听事件开始 点击空白处执行隐藏导航
+    */
+
+    document.querySelector('div.echo').addEventListener('click', function (event) {
+
+        if (document.querySelector("#navigation4limbo") !== null && document.querySelector("#navigation4limbo").style.zIndex > 0) {
+
+            var target = event.target;
+            var li_button = document.querySelectorAll('li.li_global');
+            var number = 0;
+
+            for (i = 0; i < li_button.length; i++) {
+                if (target !== li_button[i] && !li_button[i].contains(target)) {
+                    number += 1;
+                    console.log("+" + number)
+                } else {
+                    number -= 1;
+                    console.log("-" + number)
+                }
+            }
+
+            if (number !== 0 && number < li_button.length) {
+                console.log('点到了')
+            } else {
+
+                if (document.querySelector("#navigation4limbo") !== null && document.querySelector("#navigation4limbo").style.zIndex > 0) {
+                    body_build('false');
+                }
+
+            }
+        }
+    });
+
+    /*
+   添加点击监听事件结束
+   */
+
+
+    var parentElementX = setInterval(() => { //
+        //console.log("\\ parentElement_add() 类目自动化生成检测... ")
+        if (document.querySelector('div#navigation4limbo[style]')) {
+            const url_now = window.location.href.toLowerCase();
+            //if (/\b\b/i.test(window.location.href.toLowerCase())) {
+            if (nsfw_regex.test(window.location.href.toLowerCase())) {
+                parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
+                parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
+                parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
+                parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
+                parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
+                parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
+                parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
+                parent_push('.echo', 'Media', 4, '流媒体//', 'Media')
+                parent_push(".echo", 'AICHAT', 4, '智能AI//', 'AICHAT')
+                parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
+                parent_push('.echo', 'news', '10', '时事新闻//', 'currentnews')
+                parent_push('.echo', 'technews', '10', '科技新闻//', 'technews')
+                parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
+                parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
+                parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
+                parent_push('.echo', 'front-build', 4, "建站工具//", "front-build")
+                parent_push('.echo', 'domain-buy', 4, "域名注册商//", "domain-buy")
+                parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
+                parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
+                child_push('.div_global.front > ul', '', "", 'front-end', 0, '', 'a_global')
+                child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0, '', 'a_global')
+                child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1, '', 'a_global')
+                child_push('.div_global.onlinemovies > ul', '', '', 'movies', '#xbys', '', 'a_global moviesColor')
+                scroll_switch();
+                //if_a_click_then_close_daohang();
+                _footer_move(); // 最后再移动 div._footer
+                csp_remove(); // 删除CSP模式下不可点击的按钮
+                //new_align(); // 居中
+                clearInterval(parentElementX);
+            } else {
+                parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
+                parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
+                parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
+                parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
+                parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
+                parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
+                parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
+                parent_push('.echo', 'Media', 4, '流媒体//', 'Media')
+                parent_push(".echo", 'AICHAT', 4, '智能AI//', 'AICHAT')
+                parent_push(".echo", 'aigc', 4, 'AIGC//', 'aigc')
+                parent_push('.echo', 'news', '10', '时事新闻//', 'currentnews')
+                parent_push('.echo', 'technews', '10', '科技新闻//', 'technews')
+                parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
+                parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
+                parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
+                parent_push('.echo', 'front-build', 4, "建站工具//", "front-build")
+                parent_push('.echo', 'domain-buy', 4, "域名注册商//", "domain-buy")
+                parent_push(".echo", 'DeverloperX', 4, '开发者社区//', 'Developer')
+                parent_push(".echo", 'Images', 4, '免费商用图片', 'IMages')
+                child_push('.div_global.front > ul', '', "", 'front-end', 0, '', 'a_global')
+                child_push('.div_global.boysshouldread > ul', '', '', 'knowledge', 0, '', 'a_global')
+                child_push('.div_global.ipcheck > ul', '', '', 'ipcheck', 1, '', 'a_global')
+                child_push('.div_global.onlinemovies > ul', '', '', 'movies', '#xbys', '', 'a_global moviesColor')
+                //console.log("// parentElement_add() 生成检测...");
+                scroll_switch();
+                //if_a_click_then_close_daohang();
+                _footer_move(); // 最后再移动 div._footer
+                csp_remove(); // 删除CSP模式下不可点击的按钮
+                //new_align(); // 居中
+                clearInterval(parentElementX);
+            }
+        }
+    }, 500)
+}
+
+parentElement_add();
+
+
+// 宅男守护
+function nsfw_content_hidden(x) { // nsfw 网站模糊
+    // 
+
+    /* 插入 2333 */
+    if (x == 'true') { // 新建背景模糊 nsfw
+        if (!document.querySelector("#nsfw_echo")) {
+            let nsfw_frame_blur = document.createElement('div');
+            nsfw_frame_blur.id = 'nsfw';
+            nsfw_frame_blur.style.zIndex = '114154';
+            nsfw_frame_blur.style.opacity = '0.7';
+            let parentElement = document.querySelector('#x4Div') ? document.querySelector('#x4Div') : '';
+            parentElement.appendChild(nsfw_frame_blur)
+
+            if (window.innerWidth < window.innerHeight) {
+                var innerHTML_echo = '<div id="nsfw_echo"><img class="nsfw" src="https://limbopro.com/Ad_swipe_mobile_1.png"></div>'
+            } else {
+                var innerHTML_echo = '<div id="nsfw_echo"><img class="nsfw" src="https://limbopro.com/Ad_swipe_pc_1.png"></div>'
+            }
+
+            nsfw_frame_blur.innerHTML = innerHTML_echo;
+
+        } else {
+            if (document.querySelector("#nsfw")) {
+                document.querySelector("#nsfw").style.zIndex = '114154';
+                document.querySelector("#nsfw").style.opacity = 0.7;
+            }
+        }
+    }
+}
+
+// 监听 visibility change 事件 用户离开当前页面事件
+function visibility() {
+    if (getCookie('nsfwmode') !== 'false') {
+        document.addEventListener('visibilitychange', function () {
+            var visible = document.visibilityState;
+            //(visible !== 'visible' && getCookie('nsfwmode') !== 'false')
+            if (visible !== 'visible' && getCookie('nsfwmode') !== 'false') {
+                document.body.style.filter = 'blur(50px)';
+                nsfw_content_hidden('true'); // 开启模糊
+                setTimeout(() => { sessionX('true') }, 1000);
+            }
+        })
+    }
+};
+
+
+// ## 清理成人守护模式遗留的 localstorage 问题
+
+window.onload = function () {
+    if (localStorage.getItem("finalmode") !== null) {
+        localStorage.removeItem("finalmode", "Masaka");
+        console.log('localStorage.setItem("finalmode", "Masaka");');
+        location.reload();
+    }
+}
+
+////sessionX_check();
+
+function sessionX_check() {
+    if (localStorage.getItem("finalmode") !== null) {
+        document.body.style.filter = 'blur(50px)';
+        nsfw_content_hidden('true'); // 开启模糊
+    }
+}
+
+function sessionX(x) {
+    if (x == 'true') {
+        if (document.getElementById('nsfw') && document.getElementById('nsfw') !== null && document.getElementById('nsfw').style.zIndex > 0) {
+            localStorage.setItem("finalmode", "Masaka");
+            console.log('localStorage.setItem("finalmode", "Masaka");');
+        }
+    } else if (x == 'false') {
+        if (document.getElementById('nsfw') && document.getElementById('nsfw') !== null && document.getElementById('nsfw').style.zIndex < 0) {
+            localStorage.removeItem("finalmode", "Masaka");
+            if (document.body.getAttribute('style') !== null) {
+                document.body.removeAttribute('style');
+            }
+            console.log('localStorage.removeItem("finalmode", "Masaka");');
+        }
+    }
+}
+
+
+// 取消模糊 监听
+function visibility_switch() {
+    var znsh_setInterval = window.setInterval(() => {
+        if (document.querySelector("div#nsfw")) {
+            document.querySelector("div#nsfw").addEventListener("click", znsh_unlock);
+            clearInterval(znsh_setInterval);
+        }
+    }, 1500);
+}
+
+function znsh_unlock(x) {
+    if (x == 'lockscreen') {
+        if (document.querySelector("#nsfw")) {
+            if (document.body.style.filter.replace(/[^0-9]/ig, "") > 10) {
+                var filter_now = document.body.style.filter.replace(/[^0-9]/ig, "");
+                document.body.style.filter = 'blur(' + (filter_now - 20) + 'px)';
+            } else {
+                if (document.body.style.filter !== '') {
+                    document.body.style.filter = 'blur(0px)';
+                }
+                document.querySelector("#nsfw").style.zIndex = '-114154';
+                document.querySelector("#nsfw").style.opacity = 0;
+                setTimeout(() => {
+                    x4Home_button('1'); // 显示导航按钮
+                }, 1000)
+            }
+        }
+    } else if (document.querySelector('img.lockscreen') == null) {
+        if (document.querySelector("#nsfw")) {
+            if (document.body.style.filter.replace(/[^0-9]/ig, "") > 10) {
+                var filter_now = document.body.style.filter.replace(/[^0-9]/ig, "");
+                document.body.style.filter = 'blur(' + (filter_now - 20) + 'px)';
+            } else {
+                if (document.body.style.filter !== '') {
+                    document.body.style.filter = 'blur(0px)';
+                }
+                document.querySelector("#nsfw").style.zIndex = '-114154';
+                document.querySelector("#nsfw").style.opacity = 0;
+                setTimeout(() => {
+                    x4Home_button('1'); // 显示导航按钮
+                }, 1000)
+            }
+        }
+    }
+    setTimeout(() => { sessionX('false'); }, 1000);
+}
+
+function znsh() {
+    //var url = document.location.href;
+    //console.log(url)
+    if (nsfw_regex.test(document.location.href)) {
+        visibility();
+        //console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
+        visibility_switch(); //
+    }
+}
+
+function nsfwmode(x) { // 是否开启
+    if (x == 'false') {
+        setCookie('nsfwmode', 'false');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (x == 'true') {
+        setCookie('nsfwmode', 'true', '114154');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (getCookie('nsfwmode') == 'false') {
+        setCookie('nsfwmode', 'true', '114154');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (getCookie('nsfwmode') == 'true') {
+        setCookie('nsfwmode', 'false');
+        visibility('false');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    } else if (getCookie('nsfwmode') == '') {
+        setCookie('nsfwmode', 'false');
+        visibility('false');
+        setTimeout(() => { nsfwmode_check() }, 100)
+    }
+}
+
+nsfwmode_check();
+
+function nsfwmode_check() {
+    if (getCookie('nsfwmode') !== 'false' && nsfw_regex.test(document.location.href)) {
+        ////znsh();
+        if (document.getElementById('nsfwmode_switch')) {
+            ////znsh();
+            document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
+            setTimeout(() => {
+                body_build('false');
+            }, 1200)
+        }
+    } else if (getCookie('nsfwmode') !== 'true' && nsfw_regex.test(document.location.href)) {
+        if (document.getElementById('nsfwmode_switch')) {
+            znsh_unlock();
+            document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
+            setTimeout(() => {
+                body_build('false');
+            }, 1200)
+        }
+    } else {
+        if (document.getElementById('nsfwmode_switch')) {
+            document.getElementById('nsfwmode_switch').textContent = '非成人网站';
+        }
+    }
+}
+
+// 设置 cookie 饼
+function setCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
+function getCookie(cname) {
+    var name = cname + "="; var ca = document.cookie.split(';'); for (var i = 0; i < ca.length; i++) { var c = ca[i].trim(); if (c.indexOf(name) == 0) return c.substring(name.length, c.length); }
     return "";
 }
 
-// 哔滴影视隐藏公告广告
-function notice_hidden(selector) { // bdys
-    document.querySelector(selector).classList.add("switch") // 隐藏公告
-    document.cookie = "hidden=1";
-    document.getElementById("bdys").innerHTML = "查看公告";
-    addListenerById("bdys", () => { notice_show("div.col-12") }, 2000);
+function hide_button_switch(x) {
+    if (x == 1) {
+        document.querySelector('button#x4Home').classList.add('cms_opacity');
+        var days = window.prompt("请输入你想要隐藏该按钮的天数？（请直接输入数字），该按钮将在你指定的时间后再次显示。你可通过清理浏览器 cookie 或 无痕模式打开的方式提前停止计时。本次设置仅针对当前网站域名生效。");
+        setCookie("button_switch", 'True', days);
+        body_build('false');
+        x4Home_button('hidden');
+    }
 }
 
-// 哔滴影视展示公告
-function notice_show(selector) {
-    document.querySelector(selector).classList.remove("switch") // 展示公告
-    document.cookie = "hidden=0";
-    document.getElementById("bdys").innerHTML = "隐藏公告";
-    addListenerById("bdys", () => { notice_hidden("div.col-12") }, 2000);
+function lock_screen_setPWD(x) { // 锁屏设置
+    if (x == 'check') {
+        lock_screen_mode_check();
+    } else if (getCookie('lock_screen_pwd') == '' || getCookie('lock_screen_pwd') == 'null') {
+        var password = window.prompt("请设置锁屏密码（任意你记得住的字母/数字等符号的简单组合)；如忘记密码，你可通过清理浏览器 cookie 的方式重置密码；本次设置仅针对当前网站域名生效。");
+        if (typeof password == "object") {
+            lock_screen_switch();
+            // 密码设置已取消
+        } else {
+            setCookie('lock_screen_pwd', password, 114154);
+            setTimeout(() => {
+                lock_screen_setPWD();
+            }, 1000)
+        }
+    } else {
+        lock_screen_mode_check_after();
+    }
+}
+
+lock_screen_mode_check();
+
+function screen_unlock() {
+    // var pwd = window.prompt("请输入密码以解锁...");
+    // if (pwd == getCookie('lock_screen_pwd')) {
+    if (document.querySelector('input.lockscreen').value == getCookie('lock_screen_pwd')) {
+
+        znsh_unlock('lockscreen');
+        znsh_unlock('lockscreen');
+
+        setTimeout(() => {
+            x4Home_button('1'); // 显示导航按钮
+        }, 1000)
+
+        nsfwmode('true');
+        document.querySelector("button.unlock").removeEventListener("click", screen_unlock);
+        document.querySelector('img.lockscreen').className = 'nsfw';
+        document.querySelector('img.nsfw').style = 'filter:blur(0px)';
+        setTimeout(() => {
+            document.querySelector("img.nsfw").addEventListener("click", znsh_unlock());
+        }, 0)
+        setCookie('lock_screen_mode', 'false', '114154');
+
+        // 移除解锁按钮 UNLOCK 🔓
+        if (document.querySelector('button.unlock')) {
+            document.querySelector('button.unlock').remove();
+        }
+        if (document.querySelector('input.lockscreen')) {
+            document.querySelector('input.lockscreen').remove();
+        }
+        if (document.getElementById('nsfw')) {
+            document.getElementById('nsfw').style = '/*text-align:center;*/'
+        }
+        // 结束
+
+        //location.reload();
+    } else {
+        alert('密码错误❌！请重新输入...')
+    }
+}
+
+function lock_screen_mode_check() {
+    if (getCookie('lock_screen_mode') == 'true') {
+        nsfwmode('false');
+        lock_screen_setPWD();
+    }
+}
+
+function lock_screen_mode_check_after() {
+    if (getCookie('lock_screen_mode') == 'true') {
+        document.body.style.filter = 'blur(50px)';
+        nsfw_content_hidden('true'); // 开启模糊
+        document.querySelector('img.nsfw').className = 'lockscreen';
+        document.querySelector('img.lockscreen').style = 'filter:blur(50px)'
+
+        // 增加解锁按钮 UNLOCK 🔓
+
+        var button_echo = document.createElement('button'); // 隐藏输入框 避免浏览器提示记住密码
+        button_echo.id = 'unlock';
+        button_echo.className = 'unlock';
+        button_echo.style = 'border-radius:4px; font-size:medium; border-radius:26px; box-shadow:inset 0px 0px 15px 3px #16191f00; position: relative;z-index: 114155;top: 50%;width: 180px;height: 40px; font-weight:inherit; background:blue; color:white;';
+        button_echo.textContent = 'UNLOCK!';
+
+        var input_echo = document.createElement('input'); // 密码输入框
+        input_echo.className = 'lockscreen';
+        input_echo.style = '-webkit-text-security:disc;z-index:114155; position:fixed;width:180px;height:27px;top:45%;outline-style:none;border:0px;color:black;background:aliceblue;auto-complete:new-password;';
+        //input_echo.type = 'password';
+        input_echo.type = 'text';
+        input_echo.autocomplete = 'off';
+        input_echo.placeholder = ' 在这里输入密码...';
+
+        var target_echo = document.getElementById('nsfw_echo');
+        var before = document.querySelector('img.lockscreen')
+        target_echo.insertBefore(button_echo, before);
+        document.getElementById('nsfw').style = 'text-align:center;'
+
+        var before2 = document.querySelector('button.unlock');
+        var target_echo1 = document.getElementById('nsfw_echo');
+        target_echo1.insertBefore(input_echo, before2);
+
+        // 结束
+
+        document.querySelector("button.unlock").addEventListener("click", screen_unlock);
+        body_build('false');
+    }
+}
+
+function lock_screen_switch() {
+    if (getCookie('lock_screen_mode') == 'false') {
+        setCookie('lock_screen_mode', 'true', '114154');
+        setTimeout(() => { lock_screen_mode_check() }, 100)
+        body_build('false');
+    } else if (getCookie('lock_screen_mode') == 'true') {
+        setCookie('lock_screen_mode', 'false', '114154');
+        //visibility('false');
+        setTimeout(() => { lock_screen_mode_check() }, 100)
+    } else if (getCookie('lock_screen_mode') == '') {
+        setCookie('lock_screen_mode', 'true', '114154');
+        //visibility('false');
+        setTimeout(() => { lock_screen_mode_check() }, 100)
+        body_build('false');
+    }
+}
+
+
+// 隐藏按钮选项 1 一天
+let button_switch = getCookie("button_switch");
+if (button_switch == 'True') {
+    document.querySelector('button#x4Home').classList.add('cms_opacity');
+} else {
+    document.querySelector('button#x4Home').classList.remove('cms_opacity');
+}
+
+
+// 复制父元素下指定位置子元素
+function parentElement_build(parentNode, i) {
+    //console.log("// parentElement_build(() 正在复制" + parentNode + "下的父元素，并追加到" + parentNode + "后");
+    if (document.querySelectorAll(parentNode)[0]) {
+        let parentElement = document.querySelectorAll(parentNode)[0]; // 抓住老番茄
+        let node = document.querySelectorAll(parentNode)[0].children[i]; // 取出
+        let clone = node.cloneNode(true); // 复制
+        parentElement.appendChild(clone);
+    }
+}
+
+// 替换父元素的内容
+function parentElement_inner(parentNode, Headline_css, Headreplace_str, child_css_change) {
+    //console.log("// parentElement_inner() 正在替换" + parentNode + "下的最后一个元素的标题及相关属性");
+    document.querySelector(".div_global." + child_css_change).querySelector(Headline_css).textContent = Headreplace_str;
+} // parentElement_inner('.echo','.title','社交媒体//','Social')
+
+// 在父元素下追加元素
+function parentElement_push(parentNode, category, child_css_change, insertBefore_that_element, switchX) {
+
+    // part1
+    var arrayXP = parentNodeX;
+    arrayXP.length
+    var valid = 0;
+    for (i = 0; i < arrayXP.length; i++) {
+        if (arrayXP[i][3] == category) {
+            var number = ++valid;
+            ////console.log("// parentElement_push() 匹配到的内容为" + arrayXP[i][0]);
+        }
+    }
+
+
+    //console.log("// parentElement_push() 匹配到符合" + category + "的数量为" + number);
+    //console.log("// parentElement_push() .div_global." + child_css_change + " > ul");
+
+    // part 2
+    var real_length = document.querySelector(".div_global." + child_css_change + " > ul").querySelectorAll('li').length
+    //console.log("// 被复制子元素个数为" + real_length + category + "类目下符合要求的元素个数为" + number)
+    if (number > real_length) {
+        var lenth_now = number - real_length;
+        //console.log("// parentElement_push() 开始新建元素...")
+        for (i = 0; i < lenth_now; i++) {
+            li_sample(".div_global." + child_css_change + " > ul", insertBefore_that_element, switchX);
+            //child_build(".div_global." + child_css_change + " > ul")
+        }
+
+        // Part 3
+        var bb = 0;
+        for (i = 0; i < arrayXP.length; i++) {
+            if (arrayXP[i][3] == category) {
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].textContent = arrayXP[i][0];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].href = arrayXP[i][1];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].target = arrayXP[i][2];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].id = arrayXP[i][3];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][3]);
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
+                var bb = ++bb;
+                // 元素新建成功，开始执行元素重写
+                ////console.log('// 元素新建成功，开始执行元素重写');
+            }
+        }
+    }
+    else {
+        // Part 4
+        var bb = 0;
+        for (i = 0; i < arrayXP.length; i++) {
+            //console.log("// 无需新建元素，开始执行元素重写...")
+            if (arrayXP[i][3] == category) {
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].textContent = arrayXP[i][0];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].href = arrayXP[i][1];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].target = arrayXP[i][2];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].id = arrayXP[i][3];
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][3]);
+                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
+                var bb = ++bb;
+            }
+        }
+    }
 }
 
 
 
-// window.open-defuser.js
-// https://github.com/gorhill/uBlock/wiki/Resources-Library#windowopen-defuserjs-
+function parent_push(parentNode, child_css_change, childPosition, title, category, insertBefore_that_element, switchX) {
+    //parentElement_build(parentNode, childPosition)
+    div_sample(parentNode, insertBefore_that_element, switchX, child_css_change);
+    parentElement_inner(parentNode, '.title_global', title, child_css_change); // 该标题改属性
+    parentElement_push(parentNode, category, child_css_change, insertBefore_that_element, switchX)
+}
 
-function window_open_defuser() {
-    'use strict';
-    let arg1 = '{{1}}';
-    if (arg1 === '{{1}}') { arg1 = ''; }
-    let arg2 = '{{2}}';
-    if (arg2 === '{{2}}') { arg2 = ''; }
-    let arg3 = '{{3}}';
-    if (arg3 === '{{3}}') { arg3 = ''; }
-    const log = /\blog\b/.test(arg3)
-        ? console.log.bind(console)
-        : () => { };
-    const newSyntax = /^[01]?$/.test(arg1) === false;
-    let pattern = '';
-    let targetResult = true;
-    let autoRemoveAfter = -1;
-    if (newSyntax) {
-        pattern = arg1;
-        if (pattern.startsWith('!')) {
-            targetResult = false;
-            pattern = pattern.slice(1);
-        }
-        autoRemoveAfter = parseInt(arg2);
-        if (isNaN(autoRemoveAfter)) {
-            autoRemoveAfter = -1;
-        }
-    } else {
-        pattern = arg2;
-        if (arg1 === '0') {
-            targetResult = false;
-        }
-    }
-    if (pattern === '') {
-        pattern = '.?';
-    } else if (/^\/.+\/$/.test(pattern)) {
-        pattern = pattern.slice(1, -1);
-    } else {
-        pattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-    const rePattern = new RegExp(pattern);
-    const createDecoy = function (tag, urlProp, url) {
-        const decoy = document.createElement(tag);
-        decoy[urlProp] = url;
-        decoy.style.setProperty('height', '1px', 'important');
-        decoy.style.setProperty('position', 'fixed', 'important');
-        decoy.style.setProperty('top', '-1px', 'important');
-        decoy.style.setProperty('width', '1px', 'important');
-        document.body.appendChild(decoy);
-        setTimeout(() => decoy.remove(), autoRemoveAfter * 1000);
-        return decoy;
-    };
-    window.open = new Proxy(window.open, {
-        apply: function (target, thisArg, args) {
-            log('window.open:', ...args);
-            const url = args[0];
-            if (rePattern.test(url) !== targetResult) {
-                return target.apply(thisArg, args);
-            }
-            if (autoRemoveAfter < 0) { return null; }
-            const decoy = /\bobj\b/.test(arg3)
-                ? createDecoy('object', 'data', url)
-                : createDecoy('iframe', 'src', url);
-            let popup = decoy.contentWindow;
-            if (typeof popup === 'object' && popup !== null) {
-                Object.defineProperty(popup, 'closed', { value: false });
-            } else {
-                const noopFunc = (function () { }).bind(self);
-                popup = new Proxy(self, {
-                    get: function (target, prop) {
-                        if (prop === 'closed') { return false; }
-                        const r = Reflect.get(...arguments);
-                        if (typeof r === 'function') { return noopFunc; }
-                        return target[prop];
-                    },
-                    set: function () {
-                        return Reflect.set(...arguments);
-                    },
-                });
-            }
-            if (/\blog\b/.test(arg3)) {
-                popup = new Proxy(popup, {
-                    get: function (target, prop) {
-                        log('window.open / get', prop, '===', target[prop]);
-                        return Reflect.get(...arguments);
-                    },
-                    set: function (target, prop, value) {
-                        log('window.open / set', prop, '=', value);
-                        return Reflect.set(...arguments);
-                    },
-                });
-            }
-            return popup;
-        }
-    });
-};
+/**
+ * 举例//
+ * parentElement_build('.echo',3)
+ * parentElement_inner('.echo','.title','社交媒体//','SocialX');
+ * parentElement_push('.echo','Social','SocialX')
+ * parentElement('.echo','Social',4,'社交媒体//','Social')
+ */
 
-/* 广告视频加速 */
-function setConstant(
-    chain = '',
-    cValue = ''
-) {
-    if (typeof chain !== 'string') { return; }
-    if (chain === '') { return; }
-    const trappedProp = (() => {
-        const pos = chain.lastIndexOf('.');
-        if (pos === -1) { return chain; }
-        return chain.slice(pos + 1);
-    })();
-    if (trappedProp === '') { return; }
-    const thisScript = document.currentScript;
-    const objectDefineProperty = Object.defineProperty.bind(Object);
-    const cloakFunc = fn => {
-        objectDefineProperty(fn, 'name', { value: trappedProp });
-        const proxy = new Proxy(fn, {
-            defineProperty(target, prop) {
-                if (prop !== 'toString') {
-                    return Reflect.deleteProperty(...arguments);
-                }
-                return true;
-            },
-            deleteProperty(target, prop) {
-                if (prop !== 'toString') {
-                    return Reflect.deleteProperty(...arguments);
-                }
-                return true;
-            },
-            get(target, prop) {
-                if (prop === 'toString') {
-                    return function () {
-                        return `function ${trappedProp}() { [native code] }`;
-                    }.bind(null);
-                }
-                return Reflect.get(...arguments);
-            },
-        });
-        return proxy;
-    };
-    if (cValue === 'undefined') {
-        cValue = undefined;
-    } else if (cValue === 'false') {
-        cValue = false;
-    } else if (cValue === 'true') {
-        cValue = true;
-    } else if (cValue === 'null') {
-        cValue = null;
-    } else if (cValue === "''") {
-        cValue = '';
-    } else if (cValue === '[]') {
-        cValue = [];
-    } else if (cValue === '{}') {
-        cValue = {};
-    } else if (cValue === 'noopFunc') {
-        cValue = cloakFunc(function () { });
-    } else if (cValue === 'trueFunc') {
-        cValue = cloakFunc(function () { return true; });
-    } else if (cValue === 'falseFunc') {
-        cValue = cloakFunc(function () { return false; });
-    } else if (/^\d+$/.test(cValue)) {
-        cValue = parseFloat(cValue);
-        if (isNaN(cValue)) { return; }
-        if (Math.abs(cValue) > 0x7FFF) { return; }
-    } else {
-        return;
+
+function child_build(div_global_selector) { // 复制父元素下最后一个子元素
+    //console.log("// child_build() 正在复制 " + div_global_selector + " 下的元素并追加到自身身后...");
+    if (document.querySelector(div_global_selector)) {
+        let parentElement = document.querySelector(div_global_selector); // 抓住老番茄
+        let node = document.querySelector(div_global_selector).lastElementChild; // 取出
+        let clone = node.cloneNode(true); // 复制
+        parentElement.appendChild(clone);
     }
-    let aborted = false;
-    const mustAbort = function (v) {
-        if (aborted) { return true; }
-        aborted =
-            (v !== undefined && v !== null) &&
-            (cValue !== undefined && cValue !== null) &&
-            (typeof v !== typeof cValue);
-        return aborted;
-    };
-    // https://github.com/uBlockOrigin/uBlock-issues/issues/156
-    //   Support multiple trappers for the same property.
-    const trapProp = function (owner, prop, configurable, handler) {
-        if (handler.init(owner[prop]) === false) { return; }
-        const odesc = Object.getOwnPropertyDescriptor(owner, prop);
-        let prevGetter, prevSetter;
-        if (odesc instanceof Object) {
-            owner[prop] = cValue;
-            if (odesc.get instanceof Function) {
-                prevGetter = odesc.get;
-            }
-            if (odesc.set instanceof Function) {
-                prevSetter = odesc.set;
-            }
-        }
-        try {
-            objectDefineProperty(owner, prop, {
-                configurable,
-                get() {
-                    if (prevGetter !== undefined) {
-                        prevGetter();
+}
+
+// 替换子元素的内容
+function child_inner(div_global_selector, length, array, category, insertBefore_that_element, switchX, color) {
+    //let arrayX = parentNodeX;
+    if (parentNodeX[length][3] == category) { // 如果类目匹配则执行
+        //child_build(div_global_selector); // 開始复制子元素
+        li_sample(div_global_selector, insertBefore_that_element, switchX);
+        document.querySelector(div_global_selector).lastElementChild.querySelector('a').textContent = parentNodeX[length][0] // 開始修改其內容
+        document.querySelector(div_global_selector).lastElementChild.querySelector('a').href = parentNodeX[length][1] // 開始需改其鏈接
+        document.querySelector(div_global_selector).lastElementChild.querySelector('a').target = parentNodeX[length][2] // 開始修改其目標
+        document.querySelector(div_global_selector).lastElementChild.querySelector('a').classList.add("a_global") // 開始修改其类
+        document.querySelector(div_global_selector).lastElementChild.querySelector('a').classList.add(parentNodeX[length][4]) // 開始修改其类
+    }
+}
+
+function child_push(div_global_selector, length, array, category, insertBefore_that_element, switchX, color) {
+    for (i = 0; i < parentNodeX.length; i++) {
+        child_inner(div_global_selector, i, array, category, insertBefore_that_element, switchX, color); // 替换子元素内容
+    }
+
+
+}
+
+// document.querySelectorAll("div.echo")[0].children
+// child_push(".div_global.pornMaker > ul","10","")
+// child_push(".div_global.pornMaker > ul","10","","porn")
+
+let ads_css = '.ad_img {display:none! important; pointer-events: none !important;}\
+'
+function ads_remove(selector) {
+    document.querySelectorAll(selector).forEach((x) => { x.remove() })
+    css_add(ads_css, "fuckads")
+}
+
+// 自动调整导航宽度及高度
+
+function echo_check_switch(x) {
+    if (x == 1) {
+        var echo_check = setInterval(() => {
+            let widthX = window.innerWidth;
+            let heightX = window.innerHeight;
+            setTimeout(() => {
+                if (document.querySelector("#navigation4limbo[style]")) {
+                    if (document.querySelector("#navigation4limbo[style]").style.opacity == 1) {
+                        if (widthX != window.innerWidth | heightX != window.innerHeight) {
+                            body_build('true');
+                            //console.log("// echo_check_switch() 捕捉到导航变动...，且导航处于显示状态...")
+                        }
                     }
-                    return handler.getter(); // cValue
-                },
-                set(a) {
-                    if (prevSetter !== undefined) {
-                        prevSetter(a);
-                    }
-                    handler.setter(a);
-                }
-            });
-        } catch (ex) {
-        }
-    };
-    const trapChain = function (owner, chain) {
-        const pos = chain.indexOf('.');
-        if (pos === -1) {
-            trapProp(owner, chain, false, {
-                v: undefined,
-                init: function (v) {
-                    if (mustAbort(v)) { return false; }
-                    this.v = v;
-                    return true;
-                },
-                getter: function () {
-                    return document.currentScript === thisScript
-                        ? this.v
-                        : cValue;
-                },
-                setter: function (a) {
-                    if (mustAbort(a) === false) { return; }
-                    cValue = a;
-                }
-            });
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        const v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if (v instanceof Object || typeof v === 'object' && v !== null) {
-            trapChain(v, chain);
-            return;
-        }
-        trapProp(owner, prop, true, {
-            v: undefined,
-            init: function (v) {
-                this.v = v;
-                return true;
-            },
-            getter: function () {
-                return this.v;
-            },
-            setter: function (a) {
-                this.v = a;
-                if (a instanceof Object) {
-                    trapChain(a, chain);
-                }
-            }
-        });
-    };
-    trapChain(window, chain);
-}
-
-// 泥巴影视手机版视频播放前20秒广告跳过 nbys nivod4
-// https://github.com/AdguardTeam/AdguardFilters/issues/146359
-
-function evaldataPrune() {
-    window.eval = new Proxy(eval, {
-        apply: (a, b, c) => {
-            if (c[0] && c[0].includes("commercial") && c[0].startsWith("(") && c[0].endsWith(")")) { let a = c[0].slice(1).slice(0, -1), b = JSON.parse(a); b.entity?.commercial && (b.entity.commercial = void 0), c[0] = `(${JSON.stringify(b)})` }
-            return Reflect.apply(a, b, c)
-        }
-    })
-};
-
-/// abort-current-script.js
-/// alias acs.js
-/// alias abort-current-inline-script.js
-/// alias acis.js
-
-function abortCurrentInlineScript(source, property, search) {
-    const searchRegexp = toRegExp(search);
-    const rid = randomId();
-
-    const SRC_DATA_MARKER = 'data:text/javascript;base64,';
-
-    const getCurrentScript = () => {
-        if ('currentScript' in document) {
-            return document.currentScript;
-        }
-        const scripts = document.getElementsByTagName('script');
-        return scripts[scripts.length - 1];
-    };
-
-    const ourScript = getCurrentScript();
-
-    const abort = () => {
-        const scriptEl = getCurrentScript();
-        if (!scriptEl) {
-            return;
-        }
-        let content = scriptEl.textContent;
-
-        // We are using Node.prototype.textContent property descriptor
-        // to get the real script content
-        // even when document.currentScript.textContent is replaced.
-        // https://github.com/AdguardTeam/Scriptlets/issues/57#issuecomment-593638991
-
-        try {
-            const textContentGetter = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent').get;
-            content = textContentGetter.call(scriptEl);
-        } catch (e) { } // eslint-disable-line no-empty
-
-        // https://github.com/AdguardTeam/Scriptlets/issues/130
-        if (content.length === 0
-            && typeof scriptEl.src !== 'undefined'
-            && scriptEl.src?.startsWith(SRC_DATA_MARKER)) {
-            const encodedContent = scriptEl.src.slice(SRC_DATA_MARKER.length);
-            content = window.atob(encodedContent);
-        }
-
-        if (scriptEl instanceof HTMLScriptElement
-            && content.length > 0
-            && scriptEl !== ourScript
-            && searchRegexp.test(content)) {
-            hit(source);
-            throw new ReferenceError(rid);
-        }
-    };
-
-    const setChainPropAccess = (owner, property) => {
-        const chainInfo = getPropertyInChain(owner, property);
-        let { base } = chainInfo;
-        const { prop, chain } = chainInfo;
-
-        // The scriptlet might be executed before the chain property has been created
-        // (for instance, document.body before the HTML body was loaded).
-        // In this case we're checking whether the base element exists or not
-        // and if not, we simply exit without overriding anything.
-        // e.g. https://github.com/AdguardTeam/Scriptlets/issues/57#issuecomment-575841092
-
-        if (base instanceof Object === false && base === null) {
-            const props = property.split('.');
-            const propIndex = props.indexOf(prop);
-            const baseName = props[propIndex - 1];
-
-            const message = `The scriptlet had been executed before the ${baseName} was loaded.`;
-            logMessage(source, message);
-            return;
-        }
-
-        if (chain) {
-            const setter = (a) => {
-                base = a;
-                if (a instanceof Object) {
-                    setChainPropAccess(a, chain);
-                }
-            };
-            Object.defineProperty(owner, prop, {
-                get: () => base,
-                set: setter,
-            });
-            return;
-        }
-
-        let currentValue = base[prop];
-        let origDescriptor = Object.getOwnPropertyDescriptor(base, prop);
-        if (origDescriptor instanceof Object === false
-            || origDescriptor.get instanceof Function === false) {
-            currentValue = base[prop];
-            origDescriptor = undefined;
-        }
-
-        const descriptorWrapper = Object.assign(getDescriptorAddon(), {
-            currentValue,
-            get() {
-                if (!this.isAbortingSuspended) {
-                    this.isolateCallback(abort);
-                }
-                if (origDescriptor instanceof Object) {
-                    return origDescriptor.get.call(base);
-                }
-                return this.currentValue;
-            },
-            set(newValue) {
-                if (!this.isAbortingSuspended) {
-                    this.isolateCallback(abort);
-                }
-                if (origDescriptor instanceof Object) {
-                    origDescriptor.set.call(base, newValue);
                 } else {
-                    this.currentValue = newValue;
+                    //console.log("未捕捉到导航...，且导航处于未显示状态...")
                 }
-            },
-        });
-
-        setPropertyAccess(base, prop, {
-            // Call wrapped getter and setter to keep isAbortingSuspended & isolateCallback values
-            get() {
-                return descriptorWrapper.get.call(descriptorWrapper);
-            },
-            set(newValue) {
-                descriptorWrapper.set.call(descriptorWrapper, newValue);
-            },
-        });
-    };
-
-    setChainPropAccess(window, property);
-
-    window.onerror = createOnErrorHandler(rid).bind();
+            }, 1000)
+        }, 500)
+    } else if (x == 0) {
+        //console.log("// echo_check_switch() 导航已关闭，清理导航大小变化监控循环...")
+        clearInterval(echo_check) // 清理循环
+    }
 }
 
 
-// https://github.com/gorhill/uBlock/wiki/Resources-Library#addeventlistener-defuserjs-
-function addEventListener_defuser() {
-    let needle1 = '{{1}}';
-    if (needle1 === '' || needle1 === '{{1}}') {
-        needle1 = '.?';
-    } else if (/^\/.+\/$/.test(needle1)) {
-        needle1 = needle1.slice(1, -1);
+const js_common_fx = {
+    crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统 chat
+}
+
+// 动态创建并引用外部资源 外部样式表 外部脚本
+function thrd_party_file(tagname, url, where) {
+    const ele_New = document.createElement(tagname);
+    // script
+    if (tagname == "script") {
+        ele_New.type = "text/javascript";
+        ele_New.src = url;
+        ele_New.setAttribute('async', '')
+        // link
+    } else if (tagname == "link") {
+        ele_New.rel = "stylesheet";
+        ele_New.type = "text/css";
+        ele_New.href = url;
+    }
+    if (where == "body") {
+        document.body.appendChild(ele_New);
+    } else if (where == "head") {
+        document.head.appendChild(ele_New);
+    }
+}
+
+
+function testx() {
+    var selector = window.prompt("请输入你想要移除的元素对应的标签 e.g. div a li ul 或更具体的元素选择器 e.g. .ad #ad ");
+    if (document.querySelectorAll(selector)[0]) {
+        document.querySelectorAll(selector).forEach((x) => { x.remove() })
     } else {
-        needle1 = needle1.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        alert("元素不存在!")
     }
-    needle1 = new RegExp(needle1);
-    let needle2 = '{{2}}';
-    if (needle2 === '' || needle2 === '{{2}}') {
-        needle2 = '.?';
-    } else if (/^\/.+\/$/.test(needle2)) {
-        needle2 = needle2.slice(1, -1);
+}
+
+
+function close_googlesearch_iframe_eventlistener() {
+    let mikey = setInterval(() => {
+        if (document.querySelector('button#close_search_button') !== null) {
+            document.querySelector('button#close_search_button').addEventListener('click', function () {
+                close_googlesearch_iframe(); // 添加监听事件
+            });
+            clearInterval(mikey);
+            console.log("为谷歌搜索添加监听器成功...")
+        }
+    }, 1000)
+}
+
+if (getCookie('googlesearch') == 'True') {
+    open_googlesearch_iframe();
+} else {
+    close_googlesearch_iframe();
+}
+
+function open_googlesearch_iframe() {
+    setCookie('googlesearch', 'True', 7);
+    if (document.cookie.indexOf("alert") == -1) {
+        //alert('cookie 不存在')
+        setCookie('alert', '7', '7')
+        alert('功能呈现页尚处于优化中...，欢迎反馈使用体验及建议...(搜索结果基于谷歌，如需更好的体验可多刷新/重新加载几次搜索页面以便谷歌自动化完善样式...)')
+    }
+
+    if (document.querySelector('#searchbyGoogle')) {
+        document.querySelector('#searchbyGoogle').style.zIndex = '1141541';
+        document.querySelector('#searchbyGoogle').style.opacity = '1';
+        body_build('false');
+        document.querySelector('#x4Home').style.bottom = '30%';
+        setTimeout(() => {
+            if (!document.querySelectorAll("script[src*='=a897efc85e']").length >= 1) {
+                let parentElement = document.querySelector('#searchbyGoogle');
+                let new_s = document.createElement('script');
+                new_s.src = 'https://cse.google.com/cse.js?cx=77ba49c819b1d40d7';
+                parentElement.appendChild(new_s);
+                body_build('false');
+            }
+        }, 500);
+        close_googlesearch_iframe_eventlistener();
+        googlesearch_blank();
     } else {
-        needle2 = needle2.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-    needle2 = new RegExp(needle2);
-    self.EventTarget.prototype.addEventListener = new Proxy(
-        self.EventTarget.prototype.addEventListener,
-        {
-            apply: function (target, thisArg, args) {
-                let type, handler;
-                try {
-                    type = String(args[0]);
-                    handler = String(args[1]);
-                } catch (ex) {
-                }
-                if (
-                    needle1.test(type) === false ||
-                    needle2.test(handler) === false
-                ) {
-                    return target.apply(thisArg, args);
-                }
+        // 创建一个搜索框
+        document.querySelector('#x4Home').style.bottom = '30%'; // 先把导航按钮提高一个度
+        let new_b = document.createElement('body')
+        let new_div_search = document.createElement('div')
+        new_div_search.className = "new_div_search"
+        new_b.id = 'searchbyGoogle'
+        new_b.style.zIndex = 1141541;
+        new_b.style.bottom = '0%';
+        new_b.style.position = 'absolute';
+        let old_b = document.body;
+        new_b.appendChild(new_div_search)
+        old_b.appendChild(new_b);
+        let googlesearch = document.createElement('div');
+        googlesearch.className = 'gcse-search';
+        new_div_search.appendChild(googlesearch);
+
+        setTimeout(() => {
+            if (!document.querySelectorAll("script[src*='=a897efc85e']").length >= 1) {
+                let parentElement = document.querySelector('#searchbyGoogle');
+                let new_s = document.createElement('script');
+                new_s.src = 'https://cse.google.com/cse.js?cx=77ba49c819b1d40d7';
+                parentElement.appendChild(new_s);
+                body_build('false');
             }
+        }, 500)
+
+        // 创建一个关闭搜索的按钮
+
+        if (!csp_regex.test(window.location.href.toLowerCase())) {
+            let close_search_button = document.createElement('button')
+            close_search_button.id = 'close_search_button';
+            close_search_button.className = 'close_search_button';
+            //// close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
+            document.querySelector('#searchbyGoogle').appendChild(close_search_button);
+            close_googlesearch_iframe_eventlistener(); // 监听
+            googlesearch_blank();
+        } else {
+            let close_search_button = document.createElement('button')
+            close_search_button.id = 'close_search_button';
+            close_search_button.className = 'close_search_button_csp';
+            close_search_button.textContent = 'X';
+            //// close_search_button.setAttribute('onclick', 'close_googlesearch_iframe()');
+            document.querySelector('#searchbyGoogle').appendChild(close_search_button);
+            close_googlesearch_iframe_eventlistener(); // 监听
+            googlesearch_blank();
         }
-    );
-};
-
-document.querySelectorAll('a').forEach((x) => {
-    x.innerHTML
-})
-
-
-// noWindowOpenIf
-// https://github.com/gorhill/uBlock/wiki/Resources-Library#no-window-open-ifjs-
-//noWindowOpenIf()
-function noWindowOpenIf(
-    pattern = '',
-    delay = '',
-    decoy = ''
-) {
-    const safe = safeSelf();
-    const targetMatchResult = pattern.startsWith('!') === false;
-    if (targetMatchResult === false) {
-        pattern = pattern.slice(1);
     }
-    const rePattern = safe.patternToRegex(pattern);
-    let autoRemoveAfter = parseInt(delay);
-    if (isNaN(autoRemoveAfter)) {
-        autoRemoveAfter = -1;
-    }
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const logLevel = shouldLog(extraArgs);
-    const createDecoy = function (tag, urlProp, url) {
-        const decoyElem = document.createElement(tag);
-        decoyElem[urlProp] = url;
-        decoyElem.style.setProperty('height', '1px', 'important');
-        decoyElem.style.setProperty('position', 'fixed', 'important');
-        decoyElem.style.setProperty('top', '-1px', 'important');
-        decoyElem.style.setProperty('width', '1px', 'important');
-        document.body.appendChild(decoyElem);
-        setTimeout(() => { decoyElem.remove(); }, autoRemoveAfter * 1000);
-        return decoyElem;
-    };
-    window.open = new Proxy(window.open, {
-        apply: function (target, thisArg, args) {
-            const haystack = args.join(' ');
-            if (logLevel) {
-                safe.uboLog('window.open:', haystack);
-            }
-            if (rePattern.test(haystack) !== targetMatchResult) {
-                return Reflect.apply(target, thisArg, args);
-            }
-            if (autoRemoveAfter < 0) { return null; }
-            const decoyElem = decoy === 'obj'
-                ? createDecoy('object', 'data', ...args)
-                : createDecoy('iframe', 'src', ...args);
-            let popup = decoyElem.contentWindow;
-            if (typeof popup === 'object' && popup !== null) {
-                Object.defineProperty(popup, 'closed', { value: false });
-            } else {
-                const noopFunc = (function () { }).bind(self);
-                popup = new Proxy(self, {
-                    get: function (target, prop) {
-                        if (prop === 'closed') { return false; }
-                        const r = Reflect.get(...arguments);
-                        if (typeof r === 'function') { return noopFunc; }
-                        return target[prop];
-                    },
-                    set: function () {
-                        return Reflect.set(...arguments);
-                    },
-                });
-            }
-            if (logLevel) {
-                popup = new Proxy(popup, {
-                    get: function (target, prop) {
-                        safe.uboLog('window.open / get', prop, '===', target[prop]);
-                        return Reflect.get(...arguments);
-                    },
-                    set: function (target, prop, value) {
-                        safe.uboLog('window.open / set', prop, '=', value);
-                        return Reflect.set(...arguments);
-                    },
-                });
-            }
-            return popup;
+}
+
+function googlesearch_blank() {
+    var googlesearch_blank_check = setInterval(() => { // 重新设置 谷歌搜索结果页面 target 为 _blank 的链接
+        console.log("定时器正在执行...")
+        if (document.querySelector("body#searchbyGoogle").style.zIndex == -11415411) {
+            clearInterval(googlesearch_blank_check);
+            console.log("搜索按钮关闭，清除计时器...");
+            /*for (i = 1; i <= googlesearch_blank_check; i++) {
+                clearInterval(i);
+            }*/
         }
-    });
+
+        if (document.querySelectorAll("div[class*='gs']")[0]) {
+            //setTimeout(() => {
+            if (document.querySelectorAll(".gsc-results-wrapper-overlay.gsc-results-wrapper-visible")[0]) {
+                let a = document.querySelectorAll(".gsc-results-wrapper-overlay.gsc-results-wrapper-visible")[0].querySelectorAll("a")
+                var aa = 0;
+                for (i = 0; i < a.length; i++) {
+                    a[i].target = '_blank'
+                    var aa = ++aa;
+                    //console.log(aa)
+                    if (aa + 1 >= a.length) {
+                        //clearInterval(googlesearch_blank_check)
+                        console.log("共计" + aa + "个搜索结果，链接的 target值 重置设置结束...")
+                    }
+                }
+            }
+            //}, 1000)
+        }
+    }, 2500)
+}
+
+function close_googlesearch_iframe() {
+    if (document.querySelectorAll(".gsc-modal-background-image.gsc-modal-background-image-visible")[0]) { // 先关闭搜索结果页
+        if (document.querySelectorAll("div[class*='gsc-results-close-btn']")[0]) {
+            document.querySelectorAll("div[class*='gsc-results-close-btn']")[0].click();
+        }
+    } else if (!(/\b(gsc.q)\b/i.test(document.location.href))) { // 在关闭搜索框
+        console.log('谷歌搜索已关闭...')
+        setCookie('googlesearch', 'False', 7);
+        x4Home_button("1"); // 显示导航按钮;
+        if (document.querySelector('#searchbyGoogle')) {
+            document.querySelector('#searchbyGoogle').style.zIndex = '-11415411'
+            document.querySelector('#searchbyGoogle').style.opacity = '0'
+            document.querySelector('#x4Home').style.bottom = '15%';  // 搜索隐藏后把导航按钮降低一个度
+        }
+    } else {
+        open_googlesearch_iframe()
+    }
+}
+
+
+
+// 复制 input 内容
+function copyText(id1, id2, Text) { // 复制文本按钮
+    let corlor = { // 定义常量
+        css: {
+            borderRight_copied: "6px solid white",
+            borderRight_recover: "6px solid #38a3fd",
+            backgroundColor_copied: "#00AC6A",
+            backgroundColor_recover: "#2563eb"
+        }
+    }
+
+    function border_color(ele, value) { // 制作一个循环
+        for (let i = 0; i < ele.length; i++) {
+            ele[i].style.borderRight = value
+        }
+    }
+
+    const ele_1 = document.getElementById(id1);
+    const ele_2 = document.getElementById(id2);
+    const ele_array = [ele_1, ele_2];
+
+    // 复制工作开始
+    const input = document.querySelectorAll("input#copy");
+    input[0].select()
+    document.execCommand('copy')
+    //const range = document.createRange(); range.selectNode(input[0]); const selection = window.getSelection();
+    //if (selection.rangeCount > 0) selection.removeAllRanges(); // 判断光标是否复制其他内容 如有则清除
+    //selection.addRange(range); document.execCommand('copy');
+    // 复制工作结束
+
+    ele_2.innerText = "复制成功！";
+    ele_2.style.backgroundColor = corlor.css.backgroundColor_copied;
+
+    border_color(ele_array, corlor.css.borderRight_copied)
+    setTimeout(() => {
+        ele_2.innerText = Text;
+        ele_2.style.backgroundColor = corlor.css.backgroundColor_recover;
+        border_color(ele_array, corlor.css.borderRight_recover)
+    }, 3000);
+}
+
+
+// 在页面动态插入元素并赋予相应元素
+function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag) {
+    let new_ele = document.createElement(tag);
+    new_ele.innerHTML = txt;
+    new_ele.setAttribute(attribute, func);
+    new_ele.setAttribute("id", id);
+    new_ele.setAttribute("style", style);
+    var here = document.querySelectorAll(selector);
+    if (here.length > 0) {
+        here[0].insertBefore(new_ele, here[0].childNodes[array])
+        //here[0].appendChild(new_ele);
+        console.log("按钮已添加；")
+    }
+}
+
+function testy() {
+
+    //alert('在做了(0%)')
+    var js_url = window.prompt("请输入第三方脚本（应以 .js 为后缀）");
+    var head_or_body = window.prompt("请输入脚本插入位置（e.g. body head）");
+    thrd_party_file('script', js_url, head_or_body)
+    if (!js_url == '') {
+        body_build('false');
+    }
+}
+
+function closeP() {
+    alert("部分页面可能无法正常关闭...!届时请手动关闭！请点击确定！");
+    window.close()
 }

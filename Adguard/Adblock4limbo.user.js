@@ -574,31 +574,38 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             const url_jable = document.location.href;
-
             const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
             if (url_jable.search(reg_videos) !== -1) {
 
                 setTimeout(() => {
                     let cssText = "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
+                    let cssText2 = "width:72px; margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
+                    ele_dynamicAppend("div.header-left > h6", "onclick", "code", cssText2, "", "avCodeCopy", 13, "input");
                     ele_dynamicAppend("div.header-left > h6", "onclick", "复制番号", cssText, "", "copyavCode", 14, "button");
                     ele_dynamicAppend("div.header-left > h6", "onclick", "", cssText, "", "copy", 15, "input");
                     ele_dynamicAppend("div.header-left > h6", "onclick", "复制M3U8文件地址", cssText, "", "jablex", 16, "button")
                     ele_dynamicAppend("div.header-left > h6", "onclick", "如何下载视频？", cssText, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 17, "button");
+                    var regex = /[a-zA-Z]{3,5}\-\d{3,5}/i
+                    var avCode = document.querySelectorAll('h4')[0].innerText.match(regex)[0]
+                    //let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
+                    let input = document.querySelector('#avCodeCopy')
+                    input.value = avCode
                     // 添加监听器
                     addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
                     addListenerById("copyavCode", () => { avCodeCopy() }, 0);
                 }, 3000)
 
                 function avCodeCopy() {
-                    if (document.querySelector('#avCodeCopy') == null) {
-                        let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
-                        let input = document.createElement('input')
-                        input.id = 'avCodeCopy'
-                        //input.type = 'text'
-                        input.value = avCode
-                        input.style = 'opacity:0 !important; z-zindex = -114154 !important'
-                        document.body.appendChild(input)
-                    }
+                    //if (document.querySelector('#avCodeCopy') == null) {
+                    //let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
+                    //let input = document.createElement('input')
+                    //input.id = 'avCodeCopy'
+                    //input.type = 'text'
+                    //let input = document.querySelector('#avCodeCopy')
+                    //input.value = avCode
+                    //input.style = 'opacity:0 !important; z-zindex = -114154 !important'
+                    //document.body.appendChild(input)
+                    //}
 
                     //setTimeout(() => {
                     // 复制工作开始

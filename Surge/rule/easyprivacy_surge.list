@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202410221504
+## ! Version: 202410222203
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Oct 2024 15:04 UTC
+## ! Last modified: 22 Oct 2024 22:03 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -336,6 +336,7 @@ DOMAIN-SUFFIX,seadform.net
 DOMAIN-SUFFIX,selphiu.com
 DOMAIN-SUFFIX,seoab.io
 DOMAIN-SUFFIX,sf-insights.io
+DOMAIN-SUFFIX,sgmntfy.com
 DOMAIN-SUFFIX,sgstats.com
 DOMAIN-SUFFIX,site24x7rum.eu
 DOMAIN-SUFFIX,sitecounter.site
@@ -2908,7 +2909,6 @@ DOMAIN-SUFFIX,ct.capterra.com
 DOMAIN-SUFFIX,ct.corpusapp.com
 DOMAIN-SUFFIX,ct.needlive.com
 DOMAIN-SUFFIX,ct.pinterest.com
-DOMAIN-SUFFIX,cta-service-cms2.hubspot.com
 DOMAIN-SUFFIX,curated.fieldtest.cc
 DOMAIN-SUFFIX,customfingerprints.bablosoft.com
 DOMAIN-SUFFIX,cws.conviva.com

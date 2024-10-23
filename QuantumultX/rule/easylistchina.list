@@ -22,6 +22,11 @@ DOMAIN-SUFFIX,205.209.138.102, reject
 DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,rdxqbp.xyz, reject
+DOMAIN-SUFFIX,sksbgm.xyz, reject
+DOMAIN-SUFFIX,enkvum.xyz, reject
+DOMAIN-SUFFIX,rcdwhp.xyz, reject
+DOMAIN-SUFFIX,iouvxlio.top, reject
 DOMAIN-SUFFIX,gyunce.xyz, reject
 DOMAIN-SUFFIX,mlgowell.com, reject
 DOMAIN-SUFFIX,rqroytj33.fun, reject

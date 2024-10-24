@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202410231551
+## ! Version: 202410241138
 ## ! Title: EasyList
-## ! Last modified: 23 Oct 2024 15:51 UTC
+## ! Last modified: 24 Oct 2024 11:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2724,6 +2724,7 @@ DOMAIN-SUFFIX,asce.xyz, reject
 DOMAIN-SUFFIX,ascensionunfinished.com, reject
 DOMAIN-SUFFIX,ascentflabbysketch.com, reject
 DOMAIN-SUFFIX,ascentloinconvenience.com, reject
+DOMAIN-SUFFIX,ascentsboni.com, reject
 DOMAIN-SUFFIX,ascertainedthetongs.com, reject
 DOMAIN-SUFFIX,ascertainintend.com, reject
 DOMAIN-SUFFIX,ascraftan.com, reject
@@ -3705,6 +3706,7 @@ DOMAIN-SUFFIX,belfrycaptured.com, reject
 DOMAIN-SUFFIX,belfrynonfiction.com, reject
 DOMAIN-SUFFIX,belia-glp.com, reject
 DOMAIN-SUFFIX,belickitungchan.com, reject
+DOMAIN-SUFFIX,beliefnormandygarbage.com, reject
 DOMAIN-SUFFIX,believableboy.com, reject
 DOMAIN-SUFFIX,believemefly.com, reject
 DOMAIN-SUFFIX,believeradar.com, reject
@@ -5933,6 +5935,7 @@ DOMAIN-SUFFIX,cnahoscfk.xyz, reject
 DOMAIN-SUFFIX,cnbxqqemvuubaf.com, reject
 DOMAIN-SUFFIX,cndcfvmc.com, reject
 DOMAIN-SUFFIX,cndynza.click, reject
+DOMAIN-SUFFIX,cnegrxyu.com, reject
 DOMAIN-SUFFIX,cnfccdxhggrz.com, reject
 DOMAIN-SUFFIX,cngcpy.com, reject
 DOMAIN-SUFFIX,cnifypm.com, reject
@@ -10438,6 +10441,7 @@ DOMAIN-SUFFIX,freefromads.pro, reject
 DOMAIN-SUFFIX,freelancebeheld.com, reject
 DOMAIN-SUFFIX,freelancepicketpeople.com, reject
 DOMAIN-SUFFIX,freelancerarity.com, reject
+DOMAIN-SUFFIX,freepopnews.skin, reject
 DOMAIN-SUFFIX,freesoftwarelive.com, reject
 DOMAIN-SUFFIX,freestar.io, reject
 DOMAIN-SUFFIX,freetrckr.com, reject
@@ -12978,6 +12982,7 @@ DOMAIN-SUFFIX,iekrtaas.com, reject
 DOMAIN-SUFFIX,ieldrjjkxwo.com, reject
 DOMAIN-SUFFIX,ielmzzm.com, reject
 DOMAIN-SUFFIX,ieo8qjp3x9jn.pro, reject
+DOMAIN-SUFFIX,ieqmxymlyz.com, reject
 DOMAIN-SUFFIX,iessjhfdsyn.com, reject
 DOMAIN-SUFFIX,ietyofedinj89yewtburgh.com, reject
 DOMAIN-SUFFIX,ievjrgjid.com, reject
@@ -13876,6 +13881,7 @@ DOMAIN-SUFFIX,izitrckr.com, reject
 DOMAIN-SUFFIX,izjzkye.com, reject
 DOMAIN-SUFFIX,izlok.xyz, reject
 DOMAIN-SUFFIX,izlutev.com, reject
+DOMAIN-SUFFIX,izoaghiwoft.net, reject
 DOMAIN-SUFFIX,izrnvo.com, reject
 DOMAIN-SUFFIX,izzzlfrzmwtter.com, reject
 DOMAIN-SUFFIX,j45.webringporn.com, reject
@@ -15290,6 +15296,7 @@ DOMAIN-SUFFIX,leoyard.com, reject
 DOMAIN-SUFFIX,lepetitdiary.com, reject
 DOMAIN-SUFFIX,lephaush.net, reject
 DOMAIN-SUFFIX,lepiotaspectry.com, reject
+DOMAIN-SUFFIX,lepomisbunched.com, reject
 DOMAIN-SUFFIX,leqjnmmyqtb.com, reject
 DOMAIN-SUFFIX,lernodydenknow.info, reject
 DOMAIN-SUFFIX,leroaboy.net, reject
@@ -16777,6 +16784,7 @@ DOMAIN-SUFFIX,misyuni.com, reject
 DOMAIN-SUFFIX,mittenheatdied.com, reject
 DOMAIN-SUFFIX,miuo.cloud, reject
 DOMAIN-SUFFIX,miveci.uno, reject
+DOMAIN-SUFFIX,mivibsegnuhaub.xyz, reject
 DOMAIN-SUFFIX,miwllmo.com, reject
 DOMAIN-SUFFIX,mixandfun.com, reject
 DOMAIN-SUFFIX,mixclckchat.net, reject
@@ -17928,6 +17936,7 @@ DOMAIN-SUFFIX,notepastaparliamentary.com, reject
 DOMAIN-SUFFIX,notepositivelycomplaints.com, reject
 DOMAIN-SUFFIX,notesbook.in, reject
 DOMAIN-SUFFIX,notesrumba.com, reject
+DOMAIN-SUFFIX,notherlicorne.com, reject
 DOMAIN-SUFFIX,nothingpetwring.com, reject
 DOMAIN-SUFFIX,nothycantyo.com, reject
 DOMAIN-SUFFIX,noticebroughtcloud.com, reject
@@ -23072,6 +23081,7 @@ DOMAIN-SUFFIX,ruthproudlyquest.com, reject
 DOMAIN-SUFFIX,ruthwoof.com, reject
 DOMAIN-SUFFIX,ruwertur.com, reject
 DOMAIN-SUFFIX,ruwfempxgwry.xyz, reject
+DOMAIN-SUFFIX,ruxmkiqkasw.com, reject
 DOMAIN-SUFFIX,ruzotchaufu.xyz, reject
 DOMAIN-SUFFIX,rvddfchkj.xyz, reject
 DOMAIN-SUFFIX,rvetreyu.net, reject
@@ -26207,6 +26217,7 @@ DOMAIN-SUFFIX,throwinterrogatetwitch.com, reject
 DOMAIN-SUFFIX,throwsceases.com, reject
 DOMAIN-SUFFIX,thrtle.com, reject
 DOMAIN-SUFFIX,thrustlumpypulse.com, reject
+DOMAIN-SUFFIX,thsantmirza.shop, reject
 DOMAIN-SUFFIX,thterras.com, reject
 DOMAIN-SUFFIX,thuangreith.shop, reject
 DOMAIN-SUFFIX,thubanoa.com, reject
@@ -26433,6 +26444,7 @@ DOMAIN-SUFFIX,toenailtrishaw.com, reject
 DOMAIN-SUFFIX,toffeeallergythrill.com, reject
 DOMAIN-SUFFIX,toffeebigot.com, reject
 DOMAIN-SUFFIX,toffeecollationsdogcollar.com, reject
+DOMAIN-SUFFIX,toffiesoxgall.com, reject
 DOMAIN-SUFFIX,toftheca.buzz, reject
 DOMAIN-SUFFIX,togenron.com, reject
 DOMAIN-SUFFIX,togetherballroom.com, reject
@@ -30732,6 +30744,7 @@ DOMAIN-SUFFIX,cwchmb.com, reject
 DOMAIN-SUFFIX,kinkadservercdn.com, reject
 DOMAIN-SUFFIX,ohmygosh.info, reject
 DOMAIN-SUFFIX,1019175970.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1030671461.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1051912086.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1080872514.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,10945-2.s.cdn15.com, reject
@@ -30743,6 +30756,7 @@ DOMAIN-SUFFIX,1208344341.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,123-stream.org, reject
 DOMAIN-SUFFIX,1310530397.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1323818756.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1401315973.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1402819692.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1437953666.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1446023384.rsc.cdn77.org, reject

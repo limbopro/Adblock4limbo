@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202410231619
+## ! Version: 202410241138
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Oct 2024 16:19 UTC
+## ! Last modified: 24 Oct 2024 11:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3057,6 +3057,7 @@ DOMAIN-SUFFIX,highway.cablecar.sph.com.sg
 DOMAIN-SUFFIX,hit.mybestpro.com
 DOMAIN-SUFFIX,hits.dealer.com
 DOMAIN-SUFFIX,hits.getelevar.com
+DOMAIN-SUFFIX,hits.gokwik.co
 DOMAIN-SUFFIX,hits.informer.com
 DOMAIN-SUFFIX,hktracker.hankookilbo.com
 DOMAIN-SUFFIX,hydro-ma-proxy.akamaized.net
@@ -3277,6 +3278,7 @@ DOMAIN-SUFFIX,pt.crossmediaservices.com
 DOMAIN-SUFFIX,pt.ispot.tv
 DOMAIN-SUFFIX,ptsc.shoplocal.com
 DOMAIN-SUFFIX,pub.sheknows.com
+DOMAIN-SUFFIX,pulse.shopflo.com
 DOMAIN-SUFFIX,px.marchex.io
 DOMAIN-SUFFIX,px.mountain.com
 DOMAIN-SUFFIX,px.owneriq.net
@@ -3346,6 +3348,7 @@ DOMAIN-SUFFIX,sp-wukong-tracker.b-cdn.net
 DOMAIN-SUFFIX,sp.tinymce.com
 DOMAIN-SUFFIX,spa-tracker.spapi.io
 DOMAIN-SUFFIX,speedtrap.shopdirect.com
+DOMAIN-SUFFIX,src.freshmarketer.in
 DOMAIN-SUFFIX,ssa.stepstone.com
 DOMAIN-SUFFIX,ssr.streamrail.net
 DOMAIN-SUFFIX,st.cdnco.us
@@ -4476,6 +4479,7 @@ DOMAIN-SUFFIX,analytics.synchrony.com
 DOMAIN-SUFFIX,analytics.tomato.gg
 DOMAIN-SUFFIX,analytics.tradedoubler.com
 DOMAIN-SUFFIX,analytics.vedantu.com
+DOMAIN-SUFFIX,analytics.vortexscans.com
 DOMAIN-SUFFIX,analytics.wavebox.io
 DOMAIN-SUFFIX,analytics.yugen.to
 DOMAIN-SUFFIX,analyticsapi.qogita.com

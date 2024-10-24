@@ -1,12 +1,1 @@
-.ec_ad_results {display:none !important;}
-.ad-icon {display:none !important;}
-.wpbyuwfarr-ecom-ads {display:none !important;}
-div[class*="fc-"][tplid] {display:none !important;}
-.w-question-list[data-sign] {display:none !important;}
-.ec-ad {display:none !important;}
-
-/*
-ec_wise_ad {display:none !important;}
-#results > div[class]:not(.result):not(.result-op):not(.sp-rslt-bar):not(.s-group-result):not(.hint-unsafe) {display:none !important;}
-div[class*="fc-"][tplid] {display:none !important;}
-*/
+.ec_ad_results, .ad-icon, .wpbyuwfarr-ecom-ads, div[class*="fc-"][tplid], .w-question-list[data-sign], .ec-ad, {display:none !important;}

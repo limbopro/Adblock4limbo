@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2024.10.23
+// @version      0.2024.10.24
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue  
 // @author       limbopro
@@ -38,6 +38,9 @@
 */
 
 // @match        https://*/*
+// @match        https://m.baidu.com/*
+// @match        https://www.baidu.com/*
+// @match        https://zhidao.baidu.com/*
 // @match        https://ddrk.me/*
 // @match        https://ddys.tv/*
 // @match        https://ddys.pro/*
@@ -117,6 +120,9 @@
 // @match        https://www.javbus.com/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
+// @match        https://xiaobaotv.com/*
+// @match        https://xiaoxintv.net/*
+// @match        https://xiaoxintv.com/*
 // @match        https://javday.tv/*
 // @match        https://www.xvideos.com/*
 // @match        https://4hu.tv/*
@@ -267,6 +273,9 @@ var imax = {
         btbdys: "div[style*='z-index:999'],.artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
+        baidu_zhidao: "*,.ad-link:not(.adsbox), .ad-icon, .ec-ad, mdiv[class$='-ecom-ads'],div[class*='fc-'][tplid],.ec_ad_results, .ad-icon, .wpbyuwfarr-ecom-ads, div[class*=\"fc-\"][tplid], .w-question-list[data-sign], .ec-ad, {display:none !important;}",
+        baidu_search: "div[style*=fixed],.ec_ad_results {display:none !important;} ", // baidu
+        baidu_index: "#foot, .recordcode, .index-copyright, div[style*='overflow'], article , .rn-container, .s-loading-frame.bottom {display:none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
         jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, iframe, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
         test: "*, div,img {display: none !important}",
@@ -327,6 +336,8 @@ function values() {
         "avple",
         "18comic",
         "wnacg",
+        "zhidao",
+        "baidu",
         "ddys",
         "jable",
         "bdys",
@@ -349,9 +360,9 @@ function values() {
         "nivod",
         "91short",
         "xiaobaotv",
+        "xiaoxintv",
         "iyf",
         "cnys",
-        "xiaoxintv",
         "javday",
         "xvideos",
         "javbus",
@@ -510,6 +521,23 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'wnacg':
             css_adsRemove(imax.css.wnacg);
             break;
+        case 'zhidao':
+            css_adsRemove(imax.css.baidu_zhidao)
+            break;
+        case 'baidu':
+            console.log('Got u! baidu.com')
+            let regex = /https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)/gi
+            window.location.href.search(regex) !== -1
+            if (window.location.href.search(regex) !== -1) {
+                css_adsRemove(imax.css.baidu_search);
+                console.log('移除搜索结果广告🪧...')
+            } else {
+                adsDomain_switch("zhidao")
+                css_adsRemove(imax.css.baidu_index);
+                console.log('移首页广告🪧...')
+            }
+
+            break;
         case 'ddys':
             //css_adsRemove(imax.css.ddrk);
             css_adsRemove(imax.css.ddrk2);
@@ -552,6 +580,28 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'jable': // 2333
             console.log("IT'S JABLE");
 
+            window.onload = function () {
+
+                if (document.location.href.search('search') !== -1) {
+                    let regex = /.*\/search\//;
+                    let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase()
+                    setTimeout(() => {
+                        tmd('#list_videos_videos_list_search_result > nav', code, '试试其他搜索：');
+                    }, 2000)
+                    console.log("生成搜索链接🔗");
+                }
+
+                if (document.querySelector('.plyr__poster') !== null) { // 在其他站点播放
+                    let regex = /.*\/videos\//;
+                    let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase();
+                    setTimeout(() => {
+                        tmd('h4', code, '在其他站点播放：');
+                        console.log("生成在其他站点播放链接🔗");
+                    }, 2000)
+                }
+
+            }()
+
             // 子域名跳转至主域名 jable.tv
             if (/\b(.*\.)(jable\.tv.*)\b/i.test(window.location.href.toLowerCase())) {
                 console.log(window.location.href.toLowerCase())
@@ -561,7 +611,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             // 去除首页广告
-
             if (document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').length > 0) {
                 document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').forEach((x) => { // xxx
                     if (x.querySelectorAll("[target='_blank']").length > 0) {
@@ -596,26 +645,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }, 3000)
 
                 function avCodeCopy() {
-                    //if (document.querySelector('#avCodeCopy') == null) {
-                    //let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
-                    //let input = document.createElement('input')
-                    //input.id = 'avCodeCopy'
-                    //input.type = 'text'
-                    //let input = document.querySelector('#avCodeCopy')
-                    //input.value = avCode
-                    //input.style = 'opacity:0 !important; z-zindex = -114154 !important'
-                    //document.body.appendChild(input)
-                    //}
-
-                    //setTimeout(() => {
                     // 复制工作开始
                     let civ = document.querySelector('#avCodeCopy')
                     civ.select()
                     document.execCommand('copy')
-
-                    //const range = document.createRange(); range.selectNode(civ); const selection = window.getSelection();
-                    //if (selection.rangeCount > 0) selection.removeAllRanges(); // 判断光标是否复制其他内容 如有则清除
-                    //selection.addRange(range); document.execCommand('copy');
                     // 复制工作结束
 
                     document.querySelector('#copyavCode').innerHTML = '复制成功!'
@@ -627,14 +660,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     //}, 0)
                 }
 
-                // avCodeCopy()
-
-                //video_delayPlay(3000);
-
                 setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 4000);
-                //addEventListener_defuser("touchend"); // 打断监听器
-
             }
+
+
             break;
         case 'bdys':
             css_adsRemove(imax.css.btbdys, 0, "siwtch_button");
@@ -771,6 +800,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
         case 'xiaoxintv':
             // nothing to do.
+            adsDomain_switch("xiaobaotv")
             break;
 
         case 'javday':
@@ -792,46 +822,19 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.javbus, 0, "javbus");
 
             function javbus() { // 在番号详情页追加在线预览链接
+                setTimeout(() => {
+                    let father = 'div.col-md-3.info';
+                    let code = window.location.pathname.replace('/', '')
+                    let url = window.location.href
+                    let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
 
-                let father = document.querySelector('div.col-md-3.info')
-                let code = window.location.pathname.replace('/', '')
 
-                let url = window.location.href
-                let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
-
-                if (url.search(regx) !== -1) {
-
-                    let p = document.createElement('p')
-                    p.style = 'word-break:break-all;font-size:14px;line-height:25px;'
-                    father.insertBefore(p, father.childNodes[2])
-
-                    let span = document.createElement('span')
-                    span.className = 'header'
-                    span.textContent = '在线预览：'
-                    p.appendChild(span)
-
-                    function siteAdd(siteName, url, codeSlect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + codeSlect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:rgb(8 0 204);'
-                        lable.appendChild(a)
-                        p.appendChild(lable)
+                    if (url.search(regx) !== -1) {
+                        tmd(father, code, '在线预览: ')
+                    } else {
+                        console.log('当前网站不不匹配')
                     }
-
-                    siteAdd('MissAV', 'https://missav.com/search', '/' + code)
-                    siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
-                    siteAdd('Supjav', 'https://supjav.com/?s=', code)
-                    siteAdd('番号搜索🔍', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                    siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                    console.log('已生成在线预览链接🔗')
-
-                } else {
-                    console.log('当前网站不不匹配')
-                }
+                }, 2000)
             }
 
             javbus()
@@ -875,6 +878,29 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             adsDomain_switch("fc2stream")
             break;
         case "supjav":
+
+            window.onload = function () {
+                if (document.location.href.search('/?s\=') !== -1) {
+                    let regex = /.*\/\?s=/;
+                    let code = window.location.href.replace(regex, '').replace('/', '').toLowerCase();
+                    setTimeout(() => {
+                        tmd('div.archive-title', code, '试试其他搜索：');
+                    }, 2000)
+                    console.log("生成搜索链接🔗");
+                }
+
+                if (document.querySelector('#player-wrap') !== null) { // 在其他站点播放
+                    var regex = /[a-zA-Z]{3,5}\-\d{3,5}/i
+                    var code = document.querySelectorAll('title')[0].innerText.match(regex)[0]
+                    setTimeout(() => {
+                        tmd('h1', code, '在其他站点播放：');
+                    }, 2000)
+                }
+
+            }()
+
+
+
             noWindowOpenIf('window.open')
             noWindowOpenIf('touchend')
             css_adsRemove(imax.css.supjav, 0, "superjav");
@@ -1003,53 +1029,26 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }, 1500)
             }
 
-            function javLibrary() { // 在番号详情页追加在线预览链接
+            function javLibrary_links() { // 在番号详情页追加在线预览链接
 
-                let father = document.querySelector('div#video_info')
+                setTimeout(() => {
+                    let father = 'div#video_info'
+                    //let code = window.location.pathname.replace('/', '')
+                    let code = document.querySelectorAll('td.text')[0].textContent
 
-                //let code = window.location.pathname.replace('/', '')
-                let code = document.querySelectorAll('td.text')[0].textContent
+                    let url = window.location.href
+                    //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
+                    let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
 
-                let url = window.location.href
-                //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
-                let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
-
-                if (url.search(regx) !== -1) {
-
-                    let p = document.createElement('table')
-                    p.style = 'word-break:break-all;font-size:14px;line-height:25px;'
-                    father.insertBefore(p, father.childNodes[2])
-
-                    let span = document.createElement('td')
-                    span.className = 'header'
-                    span.textContent = '在线预览：'
-                    p.appendChild(span)
-
-                    function siteAdd(siteName, url, codeSlect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + codeSlect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:rgb(8 0 204);'
-                        lable.appendChild(a)
-                        p.appendChild(lable)
+                    if (url.search(regx) !== -1) {
+                        tmd(father, code, '在线预览: ')
+                    } else {
+                        console.log('当前网站不不匹配')
                     }
-
-                    siteAdd('MissAV', 'https://missav.com/search', '/' + code)
-                    siteAdd('Jable', 'https://jable.tv/search', '/' + code + '/')
-                    siteAdd('Supjav', 'https://supjav.com/?s=', code)
-                    siteAdd('番号搜索🔍', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                    siteAdd('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                    console.log('已生成在线预览链接🔗')
-
-                } else {
-                    console.log('当前网站不不匹配')
-                }
+                }, 2000)
             }
 
-            javLibrary()
+            javLibrary_links()
 
         case 'douban':
             if (document.querySelectorAll('a.Ims1t')[0]) {
@@ -1092,6 +1091,30 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         case 'missav':
+
+            window.onload = function () {
+                if (document.location.href.search('search') !== -1) {
+                    let regex = /.*\/search\//;
+                    let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase()
+                    setTimeout(() => {
+                        tmd('h1', code, '试试其他搜索：');
+                    }, 2000)
+                    console.log("生成搜索链接🔗");
+                }
+
+
+                setTimeout(() => {
+                    if (document.querySelector('.plyr__poster') !== null) { // 播放页插入其他站点播放链接
+                        let code = document.querySelectorAll('span.font-medium')[0].textContent;
+
+                        tmd('span.font-medium', code, '在其他站点播放：');
+
+                        console.log("生成在其他站点播放链接🔗");
+                    }
+                }, 2000)
+
+            }()
+
             css_adsRemove(imax.css.missav, 100, 'missavx');
             window_open_defuser(); // 打断 window.open 施法
             var ua_missav = navigator.userAgent.toLowerCase();
@@ -1102,13 +1125,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
                 if (ua_missav.indexOf(mobile_missav) === -1) {
 
-                    if (document.querySelector('div.mt-4').querySelector('h1') !== null) {
+                    if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null) {
                         ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", cssText, "", "missavX", 2, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "", "missavP", 3, "button");
                         ele_dynamicAppend("div.mt-4", "href", "如何下载视频", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
                     }
 
-                    if (document.getElementById("how")) {
+                    if (document.getElementById("how") !== null) {
                         document.getElementById("how").target = "_blank";
                     }
 
@@ -1127,7 +1150,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "video_pause()", "missavPause", 1, "button");
                     ele_dynamicAppend("div.mt-4", "href", "如何下载视频", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
                     // 添加监听器
-                    document.getElementById("how").target = "_blank";
+
+                    if (document.getElementById("how") !== null) {
+                        document.getElementById("how").target = "_blank";
+                    }
+
                     addListenerById("missavX", () => { video_Play() }, 1000);
                     addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
                     addListenerById("missavPause", () => { video_pause() }, 1000);
@@ -1213,11 +1240,11 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
         let daohang = setInterval(() => {
             if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
                 third_party_fileX("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-                console.log('引入 // daohang & 清理循环 // daohang')
+                console.log('functionx.js 首次引用成功，等待生效...')
                 clearInterval(daohang);
             } else if (document.querySelectorAll("button#x4Home").length >= 1) {
                 clearInterval(daohang);
-                console.log('清理循环 // daohang')
+                console.log('functionx.js 引用成功，等待生效...')
             }
         }, 500);
     }
@@ -1461,8 +1488,10 @@ function addListener(selector, funx) {
 /* 添加监听器 byID */
 function addListenerById(id, funx, time) {
     setTimeout(() => {
-        var eleById = document.getElementById(id);
-        eleById.addEventListener("click", funx, false)
+        if (document.getElementById(id) !== null) {
+            var eleById = document.getElementById(id);
+            eleById.addEventListener("click", funx, false)
+        }
     }, time)
 }
 

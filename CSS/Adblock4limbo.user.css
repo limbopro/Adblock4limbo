@@ -2,6 +2,7 @@
 /* https://easylist.to/easylist/easylist.txt */
 /* General element hiding rules */
 
+.ec_ad_results,
 a[href*='redirect.php'] > img[src*='.gif'],
 a[href*='ads'],
 #AC_ad,

@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 06 Oct 2024 12:00:27 GMT
-# entries:        3545
+# entries:        3542
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -220,6 +220,7 @@ DOMAIN-SUFFIX,ademails.com, reject
 DOMAIN-SUFFIX,adengage.com, reject
 DOMAIN-SUFFIX,adetracking.com, reject
 DOMAIN-SUFFIX,adeure.com, reject
+DOMAIN-SUFFIX,adexc.net, reject
 DOMAIN-SUFFIX,adexchangegate.com, reject
 DOMAIN-SUFFIX,adexchangeprediction.com, reject
 DOMAIN-SUFFIX,adexpose.com, reject
@@ -747,7 +748,6 @@ DOMAIN-SUFFIX,adservrs.com.edgekey.net, reject
 DOMAIN-SUFFIX,adsfac.eu, reject
 DOMAIN-SUFFIX,adsfac.net, reject
 DOMAIN-SUFFIX,adsfac.us, reject
-DOMAIN-SUFFIX,adsfactor.net, reject
 DOMAIN-SUFFIX,adsfeed.brabys.com, reject
 DOMAIN-SUFFIX,adshrink.it, reject
 DOMAIN-SUFFIX,adside.com, reject
@@ -807,7 +807,6 @@ DOMAIN-SUFFIX,adtraction.com, reject
 DOMAIN-SUFFIX,adtrade.net, reject
 DOMAIN-SUFFIX,adultadvertising.com, reject
 DOMAIN-SUFFIX,adv-adserver.com, reject
-DOMAIN-SUFFIX,adv.cooperhosting.net, reject
 DOMAIN-SUFFIX,adv.donejty.pl, reject
 DOMAIN-SUFFIX,adv.freeonline.it, reject
 DOMAIN-SUFFIX,adv.hwupgrade.it, reject
@@ -841,6 +840,7 @@ DOMAIN-SUFFIX,adview.com, reject
 DOMAIN-SUFFIX,advisormedia.cz, reject
 DOMAIN-SUFFIX,adviva.net, reject
 DOMAIN-SUFFIX,advnt.com, reject
+DOMAIN-SUFFIX,adwebone.com, reject
 DOMAIN-SUFFIX,adwhirl.com, reject
 DOMAIN-SUFFIX,adworldnetwork.com, reject
 DOMAIN-SUFFIX,adworx.at, reject
@@ -1121,7 +1121,6 @@ DOMAIN-SUFFIX,bidbarrel.cbsnews.com, reject
 DOMAIN-SUFFIX,bidclix.com, reject
 DOMAIN-SUFFIX,bidclix.net, reject
 DOMAIN-SUFFIX,bidr.io, reject
-DOMAIN-SUFFIX,bidsopt.com, reject
 DOMAIN-SUFFIX,bidswitch.net, reject
 DOMAIN-SUFFIX,bidtellect.com, reject
 DOMAIN-SUFFIX,bidvertiser.com, reject
@@ -1484,7 +1483,6 @@ DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
 DOMAIN-SUFFIX,dealdotcom.com, reject
-DOMAIN-SUFFIX,debtbusterloans.com, reject
 DOMAIN-SUFFIX,decenterads.com, reject
 DOMAIN-SUFFIX,decisivebase.com, reject
 DOMAIN-SUFFIX,decisivedrawer.com, reject
@@ -3488,7 +3486,6 @@ DOMAIN-SUFFIX,worldwidedigitalads.com, reject
 DOMAIN-SUFFIX,worriednumber.com, reject
 DOMAIN-SUFFIX,wt-eu02.net, reject
 DOMAIN-SUFFIX,wt.bankmillennium.pl, reject
-DOMAIN-SUFFIX,wtlive.com, reject
 DOMAIN-SUFFIX,www-banner.chat.ru, reject
 DOMAIN-SUFFIX,www-google-analytics.l.google.com, reject
 DOMAIN-SUFFIX,www.dnps.com, reject

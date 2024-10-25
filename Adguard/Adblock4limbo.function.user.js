@@ -432,7 +432,10 @@ function navigation4limbo_body_pre() {
         target="_blank">软件百科</a></li>\
         <li class="li_global"><a style="background:#5a4771;box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global" id="index" href="https://limbopro.com/" \
         target="_blank">毒奶博客</a></li>\
-        <li class="li_global"><a class="a_global red " style="border-radius:4px; background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="lsj">毒奶搜索</a></li>\
+        <li class="li_global"><a class="a_global red " style="border-radius:4px; background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="毒奶搜索" href="https://limbopro.com/search.html"\
+        target="_blank">毒奶搜索</a></li>\
+        <li class="li_global"><a class="a_global red " style="border-radius:4px; background:#c53f3f; box-shadow:inset 0px 0px 15px 3px #16191f00;"  id="番号搜索" href="https://limbopro.com/btsearch.html"\
+        target="_blank">番号搜索</a></li>\
         </ul>\
         </div>\
         \
@@ -492,9 +495,9 @@ function navigation4limbo_body_pre() {
         <div class="div_global onlinemovies">\
         <div class="title_global">在线影视//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><a class="a_global moviesColor" id="common" href="https://ddys.pro/"\
+        <li class="li_global"><a class="a_global special" id="common" href="https://ddys.pro/"\
         target="_blank">低端影视</a></li>\
-        <li class="li_global"><a class="a_global moviesColor" id="common" href="https://xiaobaotv.com/"\
+        <li class="li_global"><a class="a_global special" id="common" href="https://xiaobaotv.com/"\
         target="_blank">小宝影视</a></li>\
         </ul>\
         </div>\
@@ -949,8 +952,8 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
 ['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
 ['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
-['iyf爱壹帆', 'https://www.iyf.tv/', '_blank', 'movies', 'moviesColor'],
-['欧乐影视', 'https://www.olevod.tv/', '_blank', 'movies', 'better'],
+['iyf爱壹帆', 'https://www.iyf.tv/', '_blank', 'movies', 'better'],
+['欧乐影视', 'https://www.olevod.tv/', '_blank', 'movies', 'special'],
 ['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'better'],
 ['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'better'],
 ['Raining FM', 'https://raining.fm/', '_blank', 'imusic', 'better'],

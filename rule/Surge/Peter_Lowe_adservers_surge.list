@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Sun, 06 Oct 2024 12:00:27 GMT
-# entries:        3545
+# entries:        3542
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -220,6 +220,7 @@ DOMAIN-SUFFIX,ademails.com
 DOMAIN-SUFFIX,adengage.com
 DOMAIN-SUFFIX,adetracking.com
 DOMAIN-SUFFIX,adeure.com
+DOMAIN-SUFFIX,adexc.net
 DOMAIN-SUFFIX,adexchangegate.com
 DOMAIN-SUFFIX,adexchangeprediction.com
 DOMAIN-SUFFIX,adexpose.com
@@ -747,7 +748,6 @@ DOMAIN-SUFFIX,adservrs.com.edgekey.net
 DOMAIN-SUFFIX,adsfac.eu
 DOMAIN-SUFFIX,adsfac.net
 DOMAIN-SUFFIX,adsfac.us
-DOMAIN-SUFFIX,adsfactor.net
 DOMAIN-SUFFIX,adsfeed.brabys.com
 DOMAIN-SUFFIX,adshrink.it
 DOMAIN-SUFFIX,adside.com
@@ -807,7 +807,6 @@ DOMAIN-SUFFIX,adtraction.com
 DOMAIN-SUFFIX,adtrade.net
 DOMAIN-SUFFIX,adultadvertising.com
 DOMAIN-SUFFIX,adv-adserver.com
-DOMAIN-SUFFIX,adv.cooperhosting.net
 DOMAIN-SUFFIX,adv.donejty.pl
 DOMAIN-SUFFIX,adv.freeonline.it
 DOMAIN-SUFFIX,adv.hwupgrade.it
@@ -841,6 +840,7 @@ DOMAIN-SUFFIX,adview.com
 DOMAIN-SUFFIX,advisormedia.cz
 DOMAIN-SUFFIX,adviva.net
 DOMAIN-SUFFIX,advnt.com
+DOMAIN-SUFFIX,adwebone.com
 DOMAIN-SUFFIX,adwhirl.com
 DOMAIN-SUFFIX,adworldnetwork.com
 DOMAIN-SUFFIX,adworx.at
@@ -1121,7 +1121,6 @@ DOMAIN-SUFFIX,bidbarrel.cbsnews.com
 DOMAIN-SUFFIX,bidclix.com
 DOMAIN-SUFFIX,bidclix.net
 DOMAIN-SUFFIX,bidr.io
-DOMAIN-SUFFIX,bidsopt.com
 DOMAIN-SUFFIX,bidswitch.net
 DOMAIN-SUFFIX,bidtellect.com
 DOMAIN-SUFFIX,bidvertiser.com
@@ -1484,7 +1483,6 @@ DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
 DOMAIN-SUFFIX,dealdotcom.com
-DOMAIN-SUFFIX,debtbusterloans.com
 DOMAIN-SUFFIX,decenterads.com
 DOMAIN-SUFFIX,decisivebase.com
 DOMAIN-SUFFIX,decisivedrawer.com
@@ -3488,7 +3486,6 @@ DOMAIN-SUFFIX,worldwidedigitalads.com
 DOMAIN-SUFFIX,worriednumber.com
 DOMAIN-SUFFIX,wt-eu02.net
 DOMAIN-SUFFIX,wt.bankmillennium.pl
-DOMAIN-SUFFIX,wtlive.com
 DOMAIN-SUFFIX,www-banner.chat.ru
 DOMAIN-SUFFIX,www-google-analytics.l.google.com
 DOMAIN-SUFFIX,www.dnps.com

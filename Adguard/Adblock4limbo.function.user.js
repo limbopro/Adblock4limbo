@@ -2124,3 +2124,118 @@ function tmd(parents, code, textContent) {
     otherSearch()
     
 }
+
+
+
+
+// 给几个视频网站加搜索引擎
+function ccBig() {
+    var searchIntro = {
+        url: {
+            xiaoxintv: 'https://www.xiaobaotv.com/search.html?wd=', // 小宝影视搜索
+            ddys: 'https://ddys.pro/?s=', // 低端影视搜索
+            ddys_id: '&post_type=post', // 低端影视搜索
+            iyf: 'https://www.iyf.tv/search/', // aiyifan
+            ole: 'https://www.olevod.tv/search?q=', // 欧乐tv
+            yingshitv: 'https://yingshi.tv/search/', // ystv
+        },
+        regexp: {
+            xiaoxintv: /https\:\/\/www.xiaobaotv.com\/search.html\?wd=/gi, // 小宝影视搜索       
+            ddys: /https\:\/\/ddys.pro\/\?s=/gi, // 低端影视搜索
+            iyf: /https\:\/\/www.iyf.tv\/search\//gi,  //aiyifan
+            ole: /https\:\/\/www.olevod.tv\/search\?q=/gi, // 欧乐tv
+            yingshitv: /https\:\/\/yingshi.tv\/search\//gi, // ystv
+        }
+    }
+
+    window.location.href.match(searchIntro.regexp.ole)
+
+    var site = 'none'
+    var url = window.location.href // 获取当前网页地址
+
+    // 低端影视
+    if (url.match(searchIntro.regexp.ddys)) {
+        site = 'ddys'
+        let code = url.replace(searchIntro.regexp.ddys, "").replace(searchIntro.url.ddys_id, '')
+        console.log(code)
+        console.log('It\'s ddys')
+        tmd('header.page-header', code, '试试其他搜索： ', 'p_child')
+        // iyf
+    } else if (url.match(searchIntro.regexp.iyf)) {
+        site = 'iyf'
+        let code = url.replace(searchIntro.regexp.iyf, "")
+        console.log(code)
+        console.log('It\'s iyf')
+        tmd('#filterDiv', code, '试试其他搜索： ', 'p_child')
+        // 欧乐tv oletv
+    } else if (url.match(searchIntro.regexp.ole)) {
+        let code = url.replace(searchIntro.regexp.ole, "")
+        site = 'ole'
+        console.log(code)
+        console.log('It\'s olevod')
+        tmd('div.filter-title', code, '试试其他搜索： ', 'p_child')
+        // ystv
+    } else if (url.match(searchIntro.regexp.yingshitv)) {
+        let code = url.replace(searchIntro.regexp.yingshitv, "")
+        site = 'yingshittv'
+        console.log(code)
+        console.log('It\'s yingshitv')
+        tmd('div.topic-header-text-sub', code, '试试其他搜索： ', 'p_child')
+        // 小宝TV
+    } else if (url.match(searchIntro.regexp.xiaoxintv)) {
+        console.log('It\'s xiaoxintv')
+        let code = url.replace(searchIntro.regexp.xiaoxintv, "").replace('&submit=','')
+        site = 'xiaoxintiv'
+        console.log(code)
+        tmd('div.myui-panel_hd', code, '试试其他搜索： ', 'p_child')
+    } else {
+        console.log('Nothing here!')
+    }
+
+    function siteAdd(siteName, url, code) {
+        let a = document.createElement('a')
+        let lable = document.createElement('label')
+        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+        a.href = url + code
+        a.textContent = siteName
+        a.target = '_blank'
+        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+        lable.appendChild(a)
+        let p = document.querySelector('#p_child')
+        p.appendChild(lable)
+    }
+
+    function tmd(parents, code, textContent, id) {
+        function otherSearch() { // 在详情页追加在线预览链接
+            // 试试其他搜索：
+            let father = document.querySelectorAll(parents)[0]
+
+            let p_parents = document.createElement('p')
+            p_parents.id = 'p_parents'
+            p_parents.style = 'margin:10px 0px 10px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+
+            let p = document.createElement('p')
+            p.style = 'padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+            p.id = id
+
+            p_parents.appendChild(p)
+            father.insertBefore(p_parents, father.childNodes[0])
+
+            let span = document.createElement('span')
+            span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+            span.textContent = textContent
+            p.appendChild(span)
+
+            siteAdd('低端影视', searchIntro.url.ddys, code + searchIntro.url.ddys_id, id)
+            siteAdd('小宝影视', searchIntro.url.xiaoxintv, code, id)
+            siteAdd('iyf爱壹帆', searchIntro.url.iyf, code, id)
+            siteAdd('欧乐影视', searchIntro.url.ole, code, id)
+            siteAdd('影视TV', searchIntro.url.yingshitv, code, id)
+            console.log('已生成在线预览链接🔗')
+        }
+
+        otherSearch()
+    }
+}
+
+setTimeout(() => { ccBig() }, 1000)

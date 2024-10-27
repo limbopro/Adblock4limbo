@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202410251620
+## ! Version: 202410271559
 ## ! Title: EasyPrivacy
-## ! Last modified: 25 Oct 2024 16:20 UTC
+## ! Last modified: 27 Oct 2024 15:59 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2747,6 +2747,7 @@ DOMAIN-SUFFIX,ao-freegeoip.herokuapp.com, reject
 DOMAIN-SUFFIX,ape-tagit.timeinc.net, reject
 DOMAIN-SUFFIX,api-analytics-prd.pelcro.com, reject
 DOMAIN-SUFFIX,api.autopilothq.com, reject
+DOMAIN-SUFFIX,api.june.so, reject
 DOMAIN-SUFFIX,api.wipmania.com, reject
 DOMAIN-SUFFIX,apple.www.letv.com, reject
 DOMAIN-SUFFIX,applets.ebxcdn.com, reject
@@ -41204,6 +41205,7 @@ DOMAIN-SUFFIX,log.rabobank.nl, reject
 DOMAIN-SUFFIX,metrics.nu.nl, reject
 DOMAIN-SUFFIX,r.kleertjes.com, reject
 DOMAIN-SUFFIX,sat.sanoma.fi, reject
+DOMAIN-SUFFIX,statistiek.rijksoverheid.nl, reject
 DOMAIN-SUFFIX,stats.fd.nl, reject
 DOMAIN-SUFFIX,topspin.npo.nl, reject
 DOMAIN-SUFFIX,track.pexi.nl, reject

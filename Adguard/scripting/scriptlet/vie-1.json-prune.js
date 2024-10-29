@@ -42,7 +42,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["0.time_mobile 0.time 0.link_video 0.link_video_mobile 0.link 0.link_mobile 1.time_mobile 1.time 1.link_video 1.link_video_mobile 1.link 1.link_mobile"]];
 
-const hostnamesMap = new Map([["luotphim1.net",0],["mephim.ink",0],["cdnwp.icu",0]]);
+const hostnamesMap = new Map([["mephim.ink",0],["cdnwp.icu",0]]);
 
 const entitiesMap = new Map([]);
 

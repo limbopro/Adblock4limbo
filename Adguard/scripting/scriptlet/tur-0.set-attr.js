@@ -55,110 +55,21 @@ function setAttr(
     attr = '',
     value = ''
 ) {
-    if ( selector === '' ) { return; }
-    if ( attr === '' ) { return; }
-
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('set-attr', attr, value);
+    const logPrefix = safe.makeLogPrefix('set-attr', selector, attr, value);
     const validValues = [ '', 'false', 'true' ];
-    let copyFrom = '';
 
     if ( validValues.includes(value.toLowerCase()) === false ) {
         if ( /^\d+$/.test(value) ) {
             const n = parseInt(value, 10);
             if ( n >= 32768 ) { return; }
             value = `${n}`;
-        } else if ( /^\[.+\]$/.test(value) ) {
-            copyFrom = value.slice(1, -1);
-        } else {
+        } else if ( /^\[.+\]$/.test(value) === false ) {
             return;
         }
     }
 
-    const extractValue = elem => {
-        if ( copyFrom !== '' ) {
-            return elem.getAttribute(copyFrom) || '';
-        }
-        return value;
-    };
-
-    const applySetAttr = ( ) => {
-        const elems = [];
-        try {
-            elems.push(...document.querySelectorAll(selector));
-        }
-        catch(ex) {
-            return false;
-        }
-        for ( const elem of elems ) {
-            const before = elem.getAttribute(attr);
-            const after = extractValue(elem);
-            if ( after === before ) { continue; }
-            if ( after !== '' && /^on/i.test(attr) ) {
-                if ( attr.toLowerCase() in elem ) { continue; }
-            }
-            elem.setAttribute(attr, after);
-            safe.uboLog(logPrefix, `${attr}="${after}"`);
-        }
-        return true;
-    };
-    let observer, timer;
-    const onDomChanged = mutations => {
-        if ( timer !== undefined ) { return; }
-        let shouldWork = false;
-        for ( const mutation of mutations ) {
-            if ( mutation.addedNodes.length === 0 ) { continue; }
-            for ( const node of mutation.addedNodes ) {
-                if ( node.nodeType !== 1 ) { continue; }
-                shouldWork = true;
-                break;
-            }
-            if ( shouldWork ) { break; }
-        }
-        if ( shouldWork === false ) { return; }
-        timer = self.requestAnimationFrame(( ) => {
-            timer = undefined;
-            applySetAttr();
-        });
-    };
-    const start = ( ) => {
-        if ( applySetAttr() === false ) { return; }
-        observer = new MutationObserver(onDomChanged);
-        observer.observe(document.body, {
-            subtree: true,
-            childList: true,
-        });
-    };
-    runAt(( ) => { start(); }, 'idle');
-}
-
-function runAt(fn, when) {
-    const intFromReadyState = state => {
-        const targets = {
-            'loading': 1, 'asap': 1,
-            'interactive': 2, 'end': 2, '2': 2,
-            'complete': 3, 'idle': 3, '3': 3,
-        };
-        const tokens = Array.isArray(state) ? state : [ state ];
-        for ( const token of tokens ) {
-            const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
-            return targets[prop];
-        }
-        return 0;
-    };
-    const runAt = intFromReadyState(when);
-    if ( intFromReadyState(document.readyState) >= runAt ) {
-        fn(); return;
-    }
-    const onStateChange = ( ) => {
-        if ( intFromReadyState(document.readyState) < runAt ) { return; }
-        fn();
-        safe.removeEventListener.apply(document, args);
-    };
-    const safe = safeSelf();
-    const args = [ 'readystatechange', onStateChange, { capture: true } ];
-    safe.addEventListener.apply(document, args);
+    setAttrFn(logPrefix, selector, attr, value);
 }
 
 function safeSelf() {
@@ -346,6 +257,104 @@ function safeSelf() {
         };
     }
     return safe;
+}
+
+function setAttrFn(
+    logPrefix,
+    selector = '',
+    attr = '',
+    value = ''
+) {
+    if ( selector === '' ) { return; }
+    if ( attr === '' ) { return; }
+
+    const safe = safeSelf();
+    const copyFrom = /^\[.+\]$/.test(value)
+        ? value.slice(1, -1)
+        : '';
+
+    const extractValue = elem => copyFrom !== ''
+        ? elem.getAttribute(copyFrom) || ''
+        : value;
+
+    const applySetAttr = ( ) => {
+        let elems;
+        try {
+            elems = document.querySelectorAll(selector);
+        } catch(_) {
+            return false;
+        }
+        for ( const elem of elems ) {
+            const before = elem.getAttribute(attr);
+            const after = extractValue(elem);
+            if ( after === before ) { continue; }
+            if ( after !== '' && /^on/i.test(attr) ) {
+                if ( attr.toLowerCase() in elem ) { continue; }
+            }
+            elem.setAttribute(attr, after);
+            safe.uboLog(logPrefix, `${attr}="${after}"`);
+        }
+        return true;
+    };
+
+    let observer, timer;
+    const onDomChanged = mutations => {
+        if ( timer !== undefined ) { return; }
+        let shouldWork = false;
+        for ( const mutation of mutations ) {
+            if ( mutation.addedNodes.length === 0 ) { continue; }
+            for ( const node of mutation.addedNodes ) {
+                if ( node.nodeType !== 1 ) { continue; }
+                shouldWork = true;
+                break;
+            }
+            if ( shouldWork ) { break; }
+        }
+        if ( shouldWork === false ) { return; }
+        timer = self.requestAnimationFrame(( ) => {
+            timer = undefined;
+            applySetAttr();
+        });
+    };
+
+    const start = ( ) => {
+        if ( applySetAttr() === false ) { return; }
+        observer = new MutationObserver(onDomChanged);
+        observer.observe(document.body, {
+            subtree: true,
+            childList: true,
+        });
+    };
+    runAt(( ) => { start(); }, 'idle');
+}
+
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1, 'asap': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
+    }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 /******************************************************************************/

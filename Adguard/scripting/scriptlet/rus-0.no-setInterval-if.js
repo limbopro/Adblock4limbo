@@ -40,7 +40,7 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["clientHeight"],["debugger"],["move_string"],["replaceWith"],["_0x","1000"]];
+const argsList = [["clientHeight"],["debugger"],["move_string"],["replaceWith"],["height()"]];
 
 const hostnamesMap = new Map([["fatcatslim.ru",0],["aniu.ru",1],["liveball.uno",1],["anime-chan.me",2],["volyninfo.com",3]]);
 

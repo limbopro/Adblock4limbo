@@ -40,7 +40,7 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["detected"],["replaceChildren"],["adsbygoogle"],["sessionStorage"],["randno","25"]];
+const argsList = [["detected"],["getElementById"],["adsbygoogle"],["sessionStorage"],["randno","25"]];
 
 const hostnamesMap = new Map([["cookomix.com",0],["japscan.lol",[1,3]],["voyageforum.com",2],["jeune-gay.fr",4]]);
 

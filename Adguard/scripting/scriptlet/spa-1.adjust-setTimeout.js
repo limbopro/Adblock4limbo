@@ -40,9 +40,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["contador","*","0.001"],["counter","*","0.001"],[".html(","*","0.001"],["playFunction","*","0.001"],["e(!0)","*","0.001"],["resumeVideoFromAd","*","0.001"],["/atualizar|hided/","*","0.001"],[".delay","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["contador","","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"],["conta"]];
+const argsList = [["contador","*","0.001"],["counter","*","0.001"],[".html(","*","0.001"],["playFunction","*","0.001"],["e(!0)","*","0.001"],["resumeVideoFromAd","*","0.001"],["/atualizar|hided/","*","0.001"],[".delay","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["contador","","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"],["w-content","*","0.001"],["conta"]];
 
-const hostnamesMap = new Map([["dicasdereceitas.net",0],["dicasgeeks.net",0],["boafinancas.com",1],["sabornutritivo.com",2],["guiacripto.online",3],["mundodeportivo.com",4],["terra.com.br",5],["receitasnatural.com",6],["financastop.online",6],["cryptobr.biz",6],["modsimuladores.com",6],["assistirfilmesdaluna.com",6],["vejaideias.com.br",6],["jogoscompleto.xyz",6],["fazercurriculo.online",7],["usandoapp.com",7],["arnolds.com.br",8],["receitasoncaseiras.online",9],["automotivocarros.com",10],["portecnologia.com",10],["cartaocreditoplatinum.org",10],["criarjogosandroid.com",11],["adrenalinagames.com",11],["nutricaohoje.website",12],["peliculasyserieslatino.me",14]]);
+const hostnamesMap = new Map([["dicasdereceitas.net",0],["dicasgeeks.net",0],["boafinancas.com",1],["sabornutritivo.com",2],["guiacripto.online",3],["mundodeportivo.com",4],["terra.com.br",5],["receitasnatural.com",6],["financastop.online",6],["cryptobr.biz",6],["modsimuladores.com",6],["assistirfilmesdaluna.com",6],["vejaideias.com.br",6],["jogoscompleto.xyz",6],["fazercurriculo.online",7],["usandoapp.com",7],["arnolds.com.br",8],["receitasoncaseiras.online",9],["automotivocarros.com",10],["portecnologia.com",10],["cartaocreditoplatinum.org",10],["criarjogosandroid.com",11],["adrenalinagames.com",11],["nutricaohoje.website",12],["anime-latino.com",14],["peliculasyserieslatino.me",15]]);
 
 const entitiesMap = new Map([["lectulandia",13]]);
 

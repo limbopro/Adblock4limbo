@@ -883,6 +883,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'special'],
 ['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'special'],
 ['Javbus', 'https://www.javbus.com/', '_blank', 'xOnline', 'special'],
+['Jav.land', 'https://jav.land/', '_blank', 'xOnline', 'special'],
 ['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'better'],
 ['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'better'],
 ['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'better'],
@@ -1243,7 +1244,7 @@ function parentElement_add() {
             const url_now = window.location.href.toLowerCase();
             //if (/\b\b/i.test(window.location.href.toLowerCase())) {
             if (nsfw_regex.test(window.location.href.toLowerCase())) {
-                parent_push('.echo', 'imusic', 4, '在线音乐//','imusic')
+                parent_push('.echo', 'imusic', 4, '在线音乐//', 'imusic')
                 parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
@@ -1274,7 +1275,7 @@ function parentElement_add() {
                 //new_align(); // 居中
                 clearInterval(parentElementX);
             } else {
-                parent_push('.echo', 'imusic', 4, '在线音乐//','imusic')
+                parent_push('.echo', 'imusic', 4, '在线音乐//', 'imusic')
                 parent_push('.echo', 'xOnline', 4, '午夜惊魂//', 'xOnline')
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
@@ -2076,7 +2077,7 @@ function closeP() {
 // 在番号详情页追加在线预览链接
 function tmd(parentsSelector, code, textContent) {
 
-    function otherSearch() { 
+    function otherSearch() {
         // 试试其他搜索：
 
         let parentElement = document.querySelectorAll(parentsSelector)[0]

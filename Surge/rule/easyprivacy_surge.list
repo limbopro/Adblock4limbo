@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202410291143
+## ! Version: 202410311535
 ## ! Title: EasyPrivacy
-## ! Last modified: 29 Oct 2024 11:43 UTC
+## ! Last modified: 31 Oct 2024 15:35 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -256,6 +256,7 @@ DOMAIN-SUFFIX,mdhv.io
 DOMAIN-SUFFIX,mdstats.info
 DOMAIN-SUFFIX,mediamathrdrt.com
 DOMAIN-SUFFIX,michiganrobotflower.com
+DOMAIN-SUFFIX,minstats.xyz
 DOMAIN-SUFFIX,mirabelanalytics.com
 DOMAIN-SUFFIX,mircheigeshoa.com
 DOMAIN-SUFFIX,mitour.de
@@ -350,6 +351,7 @@ DOMAIN-SUFFIX,speedyrhino.co
 DOMAIN-SUFFIX,spinnaker-js.com
 DOMAIN-SUFFIX,sprtnd.com
 DOMAIN-SUFFIX,srmdata-eur.com
+DOMAIN-SUFFIX,srvgl.com
 DOMAIN-SUFFIX,ssevt.com
 DOMAIN-SUFFIX,stack-sonar.com
 DOMAIN-SUFFIX,stat.ovh
@@ -3693,7 +3695,6 @@ DOMAIN-SUFFIX,wco.crownpeak.com
 DOMAIN-SUFFIX,wds.weqs.me
 DOMAIN-SUFFIX,web-tracker.smsbump.com
 DOMAIN-SUFFIX,web1.51.la
-DOMAIN-SUFFIX,webcare.byside.com
 DOMAIN-SUFFIX,websdk.appsflyer.com
 DOMAIN-SUFFIX,webservices.websitepros.com
 DOMAIN-SUFFIX,webstats.thaindian.com
@@ -3845,6 +3846,7 @@ DOMAIN-SUFFIX,st.mapleranks.com
 DOMAIN-SUFFIX,stats.boringproxy.io
 DOMAIN-SUFFIX,stats.how.wtf
 DOMAIN-SUFFIX,ascpqnj-oam.global.ssl.fastly.net
+DOMAIN-SUFFIX,fpcn.bpsgameserver.com
 DOMAIN-SUFFIX,fyrsbckgi-c.global.ssl.fastly.net
 DOMAIN-SUFFIX,mjca-yijws.global.ssl.fastly.net
 DOMAIN-SUFFIX,rc.vtex.com.br
@@ -4104,6 +4106,7 @@ DOMAIN-SUFFIX,analytics2-meride-tv.akamaized.net
 DOMAIN-SUFFIX,audit.shaa.it
 DOMAIN-SUFFIX,click.kataweb.it
 DOMAIN-SUFFIX,cnt.iol.it
+DOMAIN-SUFFIX,dmp.citynews.ovh
 DOMAIN-SUFFIX,dmpcdn.el-mundo.net
 DOMAIN-SUFFIX,dmpmetrics.rcsmetrics.it
 DOMAIN-SUFFIX,eventsink.api.redbee.live

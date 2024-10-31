@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2024.10.29
+// @version      0.2024.10.30
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -118,6 +118,7 @@
 // @include      https://m.nivod*.tv/*
 // @include      https://www.nivod*.tv/*
 // @match        https://www.javbus.com/*
+// @match        https://jav.land/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
 // @match        https://xiaobaotv.com/*
@@ -304,6 +305,7 @@ var imax = {
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: "#video-sponsor-links,.videoad-title,.remove-ads-link,.remove-ads,.exo-ad-ins-container,.adsbyexoclick,#video-ad,#ad-footer,.videoad-title {display:none !important; pointer-events: none !important;}", // xvideos
         javbus: ".ad-item,.ad-box {display:none !important}",
+        javland: "img[src*='.gif'], a[href^=\"https://go.rmhfrtnd.com/\"] {display:none !important; pointer-events: none !important;}",  // jav.land
         _4hu: "div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
@@ -366,6 +368,7 @@ function values() {
         "javday",
         "xvideos",
         "javbus",
+        "jav.land",
         "4hu",
         "netflav",
         "javplayer",
@@ -923,6 +926,71 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             javbus()
+
+            break;
+        case 'jav.land': // 444
+            css_adsRemove(imax.css.javland, 0, "javland");
+
+            function jav() {
+                if (document.querySelectorAll('td[width="80%"]')[1] !== null) {
+                    let code = document.querySelectorAll('td[width="80%"]')[1].textContent
+
+
+                    // 在番号详情页追加在线预览链接
+                    function tmd(parentsSelector, code, textContent) {
+
+                        function otherSearch() {
+                            // 试试其他搜索：
+
+                            let parentElement = document.querySelectorAll(parentsSelector)[0]
+
+                            let p1 = document.createElement('p')
+                            p1.id = 'p1'
+                            p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+
+                            let p2 = document.createElement('p')
+                            p2.style = 'padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                            p2.id = 'p2'
+
+
+                            p1.appendChild(p2)
+                            parentElement.insertBefore(p1, parentElement.childNodes[2])
+
+                            let span = document.createElement('span')
+                            span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                            span.textContent = textContent
+                            p2.appendChild(span)
+
+                            function aAdd2Parent(siteName, url, codeSlect) {
+                                let a = document.createElement('a')
+                                let lable = document.createElement('label')
+                                lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                                a.href = url + codeSlect
+                                a.textContent = siteName
+                                a.target = '_blank'
+                                a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                                lable.appendChild(a)
+                                p2.appendChild(lable)
+                            }
+
+                            aAdd2Parent('MissAV[720P]', 'https://missav.com/search', '/' + code)
+                            aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
+                            aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
+                            aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
+                            aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
+                            aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
+                            console.log('已生成在线预览链接🔗')
+                        }
+                        otherSearch()
+                    }
+
+                    setTimeout(() => {
+                        tmd('.col-md-6.col-sm-12.col-xs-12', code, '在线预览: ');
+                    }, 100)
+                }
+            }
+
+            jav();
 
             break;
         case "4hu":

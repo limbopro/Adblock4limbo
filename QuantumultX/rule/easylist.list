@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202410311535
+## ! Version: 202411011003
 ## ! Title: EasyList
-## ! Last modified: 31 Oct 2024 15:35 UTC
+## ! Last modified: 01 Nov 2024 10:03 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2299,6 +2299,7 @@ DOMAIN-SUFFIX,amshroomishan.com, reject
 DOMAIN-SUFFIX,amswadloonan.com, reject
 DOMAIN-SUFFIX,amtracking01.com, reject
 DOMAIN-SUFFIX,amtropiusr.com, reject
+DOMAIN-SUFFIX,amulaswhitish.com, reject
 DOMAIN-SUFFIX,amuletcontext.com, reject
 DOMAIN-SUFFIX,amunfezanttor.com, reject
 DOMAIN-SUFFIX,amused-ground.com, reject
@@ -10032,6 +10033,7 @@ DOMAIN-SUFFIX,fixpass.net, reject
 DOMAIN-SUFFIX,fizawhwpyda.com, reject
 DOMAIN-SUFFIX,fizzysquirtbikes.com, reject
 DOMAIN-SUFFIX,fjaqxtszakk.com, reject
+DOMAIN-SUFFIX,fjbtkrfay.com, reject
 DOMAIN-SUFFIX,fjbubsdhpcticbu.com, reject
 DOMAIN-SUFFIX,fjhfruuhmgnrt.com, reject
 DOMAIN-SUFFIX,fjojdlcz.com, reject
@@ -10901,6 +10903,7 @@ DOMAIN-SUFFIX,geegleshoaph.com, reject
 DOMAIN-SUFFIX,geejetag.com, reject
 DOMAIN-SUFFIX,geephenuw.com, reject
 DOMAIN-SUFFIX,geerairu.net, reject
+DOMAIN-SUFFIX,geeseruesome.com, reject
 DOMAIN-SUFFIX,geetacog.xyz, reject
 DOMAIN-SUFFIX,geethaihoa.com, reject
 DOMAIN-SUFFIX,geethaiw.xyz, reject
@@ -16862,6 +16865,7 @@ DOMAIN-SUFFIX,mobileoffers-7-j-download.com, reject
 DOMAIN-SUFFIX,mobileoffers-dld-download.com, reject
 DOMAIN-SUFFIX,mobileoffers-ep-download.com, reject
 DOMAIN-SUFFIX,mobilepreviouswicked.com, reject
+DOMAIN-SUFFIX,mobilerefreit.com, reject
 DOMAIN-SUFFIX,mobiletracking.ru, reject
 DOMAIN-SUFFIX,mobipromote.com, reject
 DOMAIN-SUFFIX,mobiprotg.com, reject
@@ -19570,6 +19574,7 @@ DOMAIN-SUFFIX,pbmt.cloud, reject
 DOMAIN-SUFFIX,pbterra.com, reject
 DOMAIN-SUFFIX,pbwlanlzmzeip.com, reject
 DOMAIN-SUFFIX,pbxai.com, reject
+DOMAIN-SUFFIX,pbyfdgnh.com, reject
 DOMAIN-SUFFIX,pc-ads.com, reject
 DOMAIN-SUFFIX,pc180101.com, reject
 DOMAIN-SUFFIX,pc1ads.com, reject
@@ -19740,6 +19745,7 @@ DOMAIN-SUFFIX,permissionfence.com, reject
 DOMAIN-SUFFIX,permissivegrimlychore.com, reject
 DOMAIN-SUFFIX,perpetrateabsolute.com, reject
 DOMAIN-SUFFIX,perpetratejewels.com, reject
+DOMAIN-SUFFIX,perpetraterummage.com, reject
 DOMAIN-SUFFIX,perpetualcod.com, reject
 DOMAIN-SUFFIX,perryflealowest.com, reject
 DOMAIN-SUFFIX,perryvolleyball.com, reject
@@ -21663,6 +21669,7 @@ DOMAIN-SUFFIX,quiveringgland.com, reject
 DOMAIN-SUFFIX,quiveringriddance.com, reject
 DOMAIN-SUFFIX,quizmastersnag.com, reject
 DOMAIN-SUFFIX,quizna.xyz, reject
+DOMAIN-SUFFIX,qujptcqr.com, reject
 DOMAIN-SUFFIX,qumagee.com, reject
 DOMAIN-SUFFIX,qummafsivff.com, reject
 DOMAIN-SUFFIX,quokkacheeks.com, reject
@@ -27837,6 +27844,7 @@ DOMAIN-SUFFIX,variedsubduedplaice.com, reject
 DOMAIN-SUFFIX,varietiesassuage.com, reject
 DOMAIN-SUFFIX,varietiesplea.com, reject
 DOMAIN-SUFFIX,varietyofdisplayformats.com, reject
+DOMAIN-SUFFIX,varietypatrice.com, reject
 DOMAIN-SUFFIX,variousanyplaceauthorized.com, reject
 DOMAIN-SUFFIX,variouscreativeformats.com, reject
 DOMAIN-SUFFIX,variousformatscontent.com, reject
@@ -30726,10 +30734,12 @@ DOMAIN-SUFFIX,1596918856.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1614729201.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1651567170.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1675450967.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1686385128.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1736253261.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1771616246.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1844221534.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1918634747.rsc.cdn77.org, reject
+DOMAIN-SUFFIX,1937343605.rsc.cdn77.org, reject
 DOMAIN-SUFFIX,1wnurc.com, reject
 DOMAIN-SUFFIX,1xlite-016702.top, reject
 DOMAIN-SUFFIX,a-delivery.rmbl.ws, reject

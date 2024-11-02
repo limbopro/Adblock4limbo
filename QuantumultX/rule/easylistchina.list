@@ -22,6 +22,16 @@ DOMAIN-SUFFIX,205.209.138.102, reject
 DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,qoubliy.top, reject
+DOMAIN-SUFFIX,vuirssd.icu, reject
+DOMAIN-SUFFIX,kjnsgqe.icu, reject
+DOMAIN-SUFFIX,rbift.icu, reject
+DOMAIN-SUFFIX,heiviek.com, reject
+DOMAIN-SUFFIX,wmcbld.top, reject
+DOMAIN-SUFFIX,ifmccdn.icu, reject
+DOMAIN-SUFFIX,vrelai.com, reject
+DOMAIN-SUFFIX,woublie.top, reject
+DOMAIN-SUFFIX,ti4la.icu, reject
 DOMAIN-SUFFIX,graesol.com, reject
 DOMAIN-SUFFIX,ctlacnh.icu, reject
 DOMAIN-SUFFIX,xggcyef.icu, reject
@@ -32,6 +42,7 @@ DOMAIN-SUFFIX,1dki0.icu, reject
 DOMAIN-SUFFIX,bhakte.com, reject
 DOMAIN-SUFFIX,lalabaos1101.top, reject
 DOMAIN-SUFFIX,1dki0.icu, reject
+DOMAIN-SUFFIX,eoubliw.top, reject
 DOMAIN-SUFFIX,qkgllif.icu, reject
 DOMAIN-SUFFIX,extopae.icu, reject
 DOMAIN-SUFFIX,yj2nf.icu, reject

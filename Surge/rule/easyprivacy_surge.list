@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411011003
+## ! Version: 202411021418
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Nov 2024 10:03 UTC
+## ! Last modified: 02 Nov 2024 14:18 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -966,6 +966,7 @@ DOMAIN-SUFFIX,decisivedrawer.com
 DOMAIN-SUFFIX,decisiveducks.com
 DOMAIN-SUFFIX,decoroustitle.com
 DOMAIN-SUFFIX,decoycreation.com
+DOMAIN-SUFFIX,deeptack.com
 DOMAIN-SUFFIX,deerbeginner.com
 DOMAIN-SUFFIX,defeatedbadge.com
 DOMAIN-SUFFIX,defectivedress.com
@@ -1544,6 +1545,7 @@ DOMAIN-SUFFIX,lyricshook.com
 DOMAIN-SUFFIX,maddeningpowder.com
 DOMAIN-SUFFIX,madebyintent.com
 DOMAIN-SUFFIX,magicaljoin.com
+DOMAIN-SUFFIX,magicminibox.com
 DOMAIN-SUFFIX,magiczenith.com
 DOMAIN-SUFFIX,magnetairport.com
 DOMAIN-SUFFIX,magnificentmeasure.com
@@ -5132,7 +5134,6 @@ DOMAIN-SUFFIX,fuse.forbes.com
 DOMAIN-SUFFIX,sourcepoint-mms.aetv.com
 DOMAIN-SUFFIX,sourcepoint-mms.history.com
 DOMAIN-SUFFIX,sourcepoint-mms.mylifetime.com
-DOMAIN-SUFFIX,vg247-p2.vg247.com
 DOMAIN-SUFFIX,vg247-uk.vg247.com
 DOMAIN-SUFFIX,11b6n4ty2x3.taxliencode.com
 DOMAIN-SUFFIX,13js1lbtbj3.sparkloop.app
@@ -31659,7 +31660,6 @@ DOMAIN-SUFFIX,info.metronet.com
 DOMAIN-SUFFIX,info.metronetbusiness.com
 DOMAIN-SUFFIX,info.metronetinc.com
 DOMAIN-SUFFIX,info.mkt.global.dnp.co.jp
-DOMAIN-SUFFIX,info.mouser.com
 DOMAIN-SUFFIX,info.multiburo.com
 DOMAIN-SUFFIX,info.natera.com
 DOMAIN-SUFFIX,info.neg.co.jp

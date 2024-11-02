@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 06 Oct 2024 12:00:27 GMT
-# entries:        3542
+# last updated:   Sat, 02 Nov 2024 08:14:39 GMT
+# entries:        3543
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2398,6 +2398,7 @@ DOMAIN-SUFFIX,oas.uniontrib.com, reject
 DOMAIN-SUFFIX,oascentral.chicagobusiness.com, reject
 DOMAIN-SUFFIX,oascentral.fortunecity.com, reject
 DOMAIN-SUFFIX,oascentral.register.com, reject
+DOMAIN-SUFFIX,objecthero.com, reject
 DOMAIN-SUFFIX,obscenesidewalk.com, reject
 DOMAIN-SUFFIX,observantice.com, reject
 DOMAIN-SUFFIX,oclasrv.com, reject

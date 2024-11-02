@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411011003
+## ! Version: 202411021418
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Nov 2024 10:03 UTC
+## ! Last modified: 02 Nov 2024 14:18 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -966,6 +966,7 @@ DOMAIN-SUFFIX,decisivedrawer.com, reject
 DOMAIN-SUFFIX,decisiveducks.com, reject
 DOMAIN-SUFFIX,decoroustitle.com, reject
 DOMAIN-SUFFIX,decoycreation.com, reject
+DOMAIN-SUFFIX,deeptack.com, reject
 DOMAIN-SUFFIX,deerbeginner.com, reject
 DOMAIN-SUFFIX,defeatedbadge.com, reject
 DOMAIN-SUFFIX,defectivedress.com, reject
@@ -1544,6 +1545,7 @@ DOMAIN-SUFFIX,lyricshook.com, reject
 DOMAIN-SUFFIX,maddeningpowder.com, reject
 DOMAIN-SUFFIX,madebyintent.com, reject
 DOMAIN-SUFFIX,magicaljoin.com, reject
+DOMAIN-SUFFIX,magicminibox.com, reject
 DOMAIN-SUFFIX,magiczenith.com, reject
 DOMAIN-SUFFIX,magnetairport.com, reject
 DOMAIN-SUFFIX,magnificentmeasure.com, reject
@@ -5132,7 +5134,6 @@ DOMAIN-SUFFIX,fuse.forbes.com, reject
 DOMAIN-SUFFIX,sourcepoint-mms.aetv.com, reject
 DOMAIN-SUFFIX,sourcepoint-mms.history.com, reject
 DOMAIN-SUFFIX,sourcepoint-mms.mylifetime.com, reject
-DOMAIN-SUFFIX,vg247-p2.vg247.com, reject
 DOMAIN-SUFFIX,vg247-uk.vg247.com, reject
 DOMAIN-SUFFIX,11b6n4ty2x3.taxliencode.com, reject
 DOMAIN-SUFFIX,13js1lbtbj3.sparkloop.app, reject
@@ -31659,7 +31660,6 @@ DOMAIN-SUFFIX,info.metronet.com, reject
 DOMAIN-SUFFIX,info.metronetbusiness.com, reject
 DOMAIN-SUFFIX,info.metronetinc.com, reject
 DOMAIN-SUFFIX,info.mkt.global.dnp.co.jp, reject
-DOMAIN-SUFFIX,info.mouser.com, reject
 DOMAIN-SUFFIX,info.multiburo.com, reject
 DOMAIN-SUFFIX,info.natera.com, reject
 DOMAIN-SUFFIX,info.neg.co.jp, reject

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 02 Nov 2024 08:14:39 GMT
-# entries:        3543
+# last updated:   Fri, 08 Nov 2024 19:26:19 GMT
+# entries:        3549
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1276,6 +1276,7 @@ DOMAIN-SUFFIX,cl0udh0st1ng.com
 DOMAIN-SUFFIX,claria.com
 DOMAIN-SUFFIX,clck.ru
 DOMAIN-SUFFIX,clevernt.com
+DOMAIN-SUFFIX,click-2.eu
 DOMAIN-SUFFIX,click.airmalta-mail.com
 DOMAIN-SUFFIX,click.aliexpress.com
 DOMAIN-SUFFIX,click.allkeyshop.com
@@ -1395,6 +1396,7 @@ DOMAIN-SUFFIX,content.acc-hd.de
 DOMAIN-SUFFIX,content.ad
 DOMAIN-SUFFIX,content22.online.citi.com
 DOMAIN-SUFFIX,contextweb.com
+DOMAIN-SUFFIX,contrack.link
 DOMAIN-SUFFIX,controlcola.com
 DOMAIN-SUFFIX,converge-digital.com
 DOMAIN-SUFFIX,conversantmedia.com
@@ -2689,6 +2691,7 @@ DOMAIN-SUFFIX,rads.realadmin.pl
 DOMAIN-SUFFIX,railwayreason.com
 DOMAIN-SUFFIX,rambunctiousflock.com
 DOMAIN-SUFFIX,rampidads.com
+DOMAIN-SUFFIX,randkuj.xyz
 DOMAIN-SUFFIX,rankchamp.de
 DOMAIN-SUFFIX,ranking-charts.de
 DOMAIN-SUFFIX,ranking-hits.de
@@ -3188,6 +3191,7 @@ DOMAIN-SUFFIX,tlvmedia.com
 DOMAIN-SUFFIX,tm.br.de
 DOMAIN-SUFFIX,tnkexchange.com
 DOMAIN-SUFFIX,tns-counter.ru
+DOMAIN-SUFFIX,to-go1.eu
 DOMAIN-SUFFIX,top-casting-termine.de
 DOMAIN-SUFFIX,top-site-list.com
 DOMAIN-SUFFIX,top.list.ru
@@ -3208,6 +3212,7 @@ DOMAIN-SUFFIX,topstats.com
 DOMAIN-SUFFIX,totemcash.com
 DOMAIN-SUFFIX,touchclarity.com
 DOMAIN-SUFFIX,tour.brazzers.com
+DOMAIN-SUFFIX,track-on.pl
 DOMAIN-SUFFIX,track.adform.net
 DOMAIN-SUFFIX,track.anchorfree.com
 DOMAIN-SUFFIX,track.canva.com
@@ -3385,6 +3390,7 @@ DOMAIN-SUFFIX,vericlick.com
 DOMAIN-SUFFIX,vertamedia.com
 DOMAIN-SUFFIX,verticalmass.com
 DOMAIN-SUFFIX,vervewireless.com
+DOMAIN-SUFFIX,vgnp3trk.com
 DOMAIN-SUFFIX,vibrantmedia.com
 DOMAIN-SUFFIX,vibrantsundown.com
 DOMAIN-SUFFIX,vid.pubmatic.com

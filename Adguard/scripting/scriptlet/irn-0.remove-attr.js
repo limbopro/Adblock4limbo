@@ -40,9 +40,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["onselectstart|oncopy|oncontextmenu","body"],["onmousedown|onselectstart","body"],["oncontextmenu","a.indirect[data-get]"],["draggable","","stay"]];
+const argsList = [["onmousedown|onselectstart","body"],["onselectstart|oncopy|oncontextmenu","body"],["oncontextmenu","a.indirect[data-get]"],["draggable","","stay"]];
 
-const hostnamesMap = new Map([["iranstar.com",0],["javan-musics.com",1],["tabanmusic.com",1],["texahang.org",1],["iran-music.com",1],["musiceman.net",1],["subkade.ir",2],["takmili.com",3]]);
+const hostnamesMap = new Map([["behtaraneh.ir",0],["musiceman.net",0],["iranstar.com",1],["javan-musics.com",0],["tabanmusic.com",0],["texahang.org",0],["iran-music.com",0],["subkade.ir",2],["takmili.com",3]]);
 
 const entitiesMap = new Map([]);
 

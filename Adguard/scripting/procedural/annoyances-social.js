@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".execphpwidget\",\"tasks\":[[\"has-text\",\"FREE UPDATES!\"]]}"]];
+const argsList = [["{\"selector\":\".execphpwidget\",\"tasks\":[[\"has-text\",\"FREE UPDATES!\"]]}"],["{\"selector\":\".widget-title\",\"tasks\":[[\"has-text\",\"Share this page!\"]]}"]];
 
-const hostnamesMap = new Map([["openculture.com",0]]);
+const hostnamesMap = new Map([["openculture.com",0],["ruwix.com",1]]);
 
 const entitiesMap = new Map(undefined);
 

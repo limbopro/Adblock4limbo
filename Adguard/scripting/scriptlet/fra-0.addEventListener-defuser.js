@@ -40,7 +40,7 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["load","setTimeout"],["DOMContentLoaded","BiSou"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
+const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["load","setTimeout"],["DOMContentLoaded","Barcelona"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
 
 const hostnamesMap = new Map([["nicematin.com",0],["cyclismactu.net",1],["japscan.lol",[2,3]],["lecourrier-du-soir.com",4],["player.melaniezettofrais.online",5],["macg.co",6]]);
 

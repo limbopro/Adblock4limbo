@@ -40,13 +40,13 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/buzzoola\\.com|plrjs\\.org/"],["doubleclick.net"],["/\\/apic\\//"]];
+const argsList = [["/buzzoola\\.com|plrjs\\.org/"],["doubleclick.net"],["rythm"],["/\\/apic\\//"]];
 
-const hostnamesMap = new Map([["volley.ru",0],["animix.lol",1],["mail.ru",2]]);
+const hostnamesMap = new Map([["volley.ru",0],["animix.lol",1],["ya.ru",2],["mail.ru",3]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["3igames.mail.ru",[2]],["account.mail.ru",[2]],["auto.mail.ru",[2]],["biz.mail.ru",[2]],["blog.mail.ru",[2]],["bonus.mail.ru",[2]],["calendar.mail.ru",[2]],["calls.mail.ru",[2]],["cloud.mail.ru",[2]],["connect.mail.ru",[2]],["deti.mail.ru",[2]],["dobro.mail.ru",[2]],["e.mail.ru",[2]],["finance.mail.ru",[2]],["gibdd.mail.ru",[2]],["health.mail.ru",[2]],["help.mail.ru",[2]],["hi-tech.mail.ru",[2]],["horo.mail.ru",[2]],["kino.mail.ru",[2]],["lady.mail.ru",[2]],["love.mail.ru",[2]],["mcs.mail.ru",[2]],["minigames.mail.ru",[2]],["my.mail.ru",[2]],["news.mail.ru",[2]],["o2.mail.ru",[2]],["octavius.mail.ru",[2]],["okminigames.mail.ru",[2]],["otvet.mail.ru",[2]],["pets.mail.ru",[2]],["player-smotri.mail.ru",[2]],["pogoda.mail.ru",[2]],["top.mail.ru",[2]],["touch.mail.ru",[2]],["tv.mail.ru",[2]],["vfokuse.mail.ru",[2]],["widgets.mail.ru",[2]]]);
+const exceptionsMap = new Map([["3igames.mail.ru",[3]],["account.mail.ru",[3]],["auto.mail.ru",[3]],["biz.mail.ru",[3]],["blog.mail.ru",[3]],["bonus.mail.ru",[3]],["calendar.mail.ru",[3]],["calls.mail.ru",[3]],["cloud.mail.ru",[3]],["connect.mail.ru",[3]],["deti.mail.ru",[3]],["dobro.mail.ru",[3]],["e.mail.ru",[3]],["finance.mail.ru",[3]],["gibdd.mail.ru",[3]],["health.mail.ru",[3]],["help.mail.ru",[3]],["hi-tech.mail.ru",[3]],["horo.mail.ru",[3]],["kino.mail.ru",[3]],["lady.mail.ru",[3]],["love.mail.ru",[3]],["mcs.mail.ru",[3]],["minigames.mail.ru",[3]],["my.mail.ru",[3]],["news.mail.ru",[3]],["o2.mail.ru",[3]],["octavius.mail.ru",[3]],["okminigames.mail.ru",[3]],["otvet.mail.ru",[3]],["pets.mail.ru",[3]],["player-smotri.mail.ru",[3]],["pogoda.mail.ru",[3]],["top.mail.ru",[3]],["touch.mail.ru",[3]],["tv.mail.ru",[3]],["vfokuse.mail.ru",[3]],["widgets.mail.ru",[3]]]);
 
 /******************************************************************************/
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2024.11.02
+// @version      0.2024.11.08
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -18,9 +18,9 @@
  * ---------------------------
  */
 
-/* 新增反馈&导航按钮（页面右下角）
+/* 新增反馈&导航按钮&成人保护模式&页面锁（见页面右下角）
 
-// 【导航】使用指南（PC/Mac）
+// **【导航】使用指南（PC/Mac）**
 /// 按教程安装好油猴脚本
 /// 访问任意网站（绝大多数网站）
 /// 1.1 当页面右下角【导航按钮】消失后，1秒内连续按2次 ESC键 可唤出【导航页面】；
@@ -28,13 +28,21 @@
 /// 1.3 当处于导航页面时，按ESC键 或点击空白处 可退出【导航页面】；
 /// 1.4 当处于导航页面时，按G键 或 空格键 可快速唤出【搜索框】，可快速进行搜索操作（同时会退出导航页面）；
 /// 1.5 当处于导航页面时，按C键 可快速唤出【网页聊天】框，可快速提建议或反馈问题；
+/// 1.6 快速 【按3次ESC键】 可**快速开启页面锁🔒**（需设置锁屏密码🔑/仅对当前访问网站生效/如忘记密码可清除浏览器cookie）
 
-// 【导航】使用指南（iOS）
+// **【导航】使用指南（iOS）**
 /// 按教程配置好相应重写/去广告分流
 /// 访问【目前在维护的网站目录】里的（绝大多数）网站
 /// 1.1 当页面右下角导航按钮消失后，点击页面右侧1/3空白处即可唤出【导航按钮】；
 /// 1.2 当页面右下角出现导航按钮时，点击按钮即可唤出【导航页面】；
 /// 1.3 上下滑动页面亦可唤出【导航按钮】；
+
+// **【导航】使用指南（PC/Mac/iOS）**
+/// **成人保护模式**
+/// 仅针对部分主要成人网站生效
+/// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
+/// 可在 导航 - **反馈/建议/功能设置//** 关闭成人保护模式；
+
 */
 
 // @match        https://*/*
@@ -48,6 +56,7 @@
 // @match        https://ddys2.me/*
 // @match        https://ddys.mov/*
 // @match        https://jable.tv/*
+// @match        https://cupfoxapp.tv/
 // @match        https://cnys.tv/*
 // @match        https://m.iyf.tv/*
 // @match        https://www.iyf.tv/*
@@ -298,6 +307,7 @@ var imax = {
         nivod: "img[src*='1a732eeb1adb'], img[src*='49e8abd32d13'], span[style*='1a2d'],span[style*='0891'],[style='text-align: center; margin-top: 30px;'],.qy20-h-carousel__li:nth-child(-n+2), .qy20-h-carousel__li:nth-child(-1n+2), span[style*='d92ea585-0'],span[style*='3db8c0fd-218f-491f-b2b0-2057bd401a2d'], iframe, img[src*=gif], .video-ad, .nav-ads, #adDiv, .v-ad, .ad-text, #video-container + ul[style^=\"width:\"] > li > img {display: none !important; pointer-events:none important;}", // 泥巴影视视频左上角水印贴片 nivod
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
+        cupfoxapp: ".head_ad {display:none !important; pointer-events: none !important;}",
         iyf: "vg-pause-f, div.ad, .ad, .ad_tag, .dabf > .ng-star-inserted, .pggf > .ng-star-inserted {display:none !important; pointer-events: none !important;}",
         hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
         cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
@@ -363,6 +373,7 @@ function values() {
         "91short",
         "xiaobaotv",
         "xiaoxintv",
+        "cupfoxapp",
         "iyf",
         "cnys",
         "javday",
@@ -765,6 +776,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
         case 'xiaobaotv':
             // nothing to do.
+            break;
+            case 'cupfoxapp':
+            css_adsRemove(imax.css.cupfoxapp, 100, 'fuckcupfoxapp');
             break;
         case 'iyf':
 

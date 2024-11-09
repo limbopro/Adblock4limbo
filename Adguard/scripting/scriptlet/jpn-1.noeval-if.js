@@ -40,9 +40,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["hoihoi"]];
+const argsList = [["/g(',')?e(',')?t(',')?U(',')?T(',')?C/"],["hoihoi"]];
 
-const hostnamesMap = new Map([["ov53i9il.blog.fc2.com",0],["mjoato3uion.ky-3.net",0],["qaacacthlive.omaww.net",0]]);
+const hostnamesMap = new Map([["wiki.yjsnpi.nu",0],["ov53i9il.blog.fc2.com",1],["mjoato3uion.ky-3.net",1],["qaacacthlive.omaww.net",1]]);
 
 const entitiesMap = new Map([]);
 

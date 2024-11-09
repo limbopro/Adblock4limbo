@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411021418
+## ! Version: 202411090308
 ## ! Title: EasyPrivacy
-## ! Last modified: 02 Nov 2024 14:18 UTC
+## ! Last modified: 09 Nov 2024 03:08 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -159,6 +159,7 @@ DOMAIN-SUFFIX,fptls2.com
 DOMAIN-SUFFIX,fptls3.com
 DOMAIN-SUFFIX,funnelserv.systems
 DOMAIN-SUFFIX,fzlnk.com
+DOMAIN-SUFFIX,g10102301085.co
 DOMAIN-SUFFIX,g10300385420.co
 DOMAIN-SUFFIX,g11686975765.co
 DOMAIN-SUFFIX,g1188506010.co
@@ -339,6 +340,7 @@ DOMAIN-SUFFIX,seoab.io
 DOMAIN-SUFFIX,sf-insights.io
 DOMAIN-SUFFIX,sgmntfy.com
 DOMAIN-SUFFIX,sgstats.com
+DOMAIN-SUFFIX,shgcdn3.com
 DOMAIN-SUFFIX,site24x7rum.eu
 DOMAIN-SUFFIX,sitecounter.site
 DOMAIN-SUFFIX,sitedataprocessing.com
@@ -3427,6 +3429,7 @@ DOMAIN-SUFFIX,stats.zotabox.com
 DOMAIN-SUFFIX,statsapi.screen9.com
 DOMAIN-SUFFIX,statscollector-1.agora.io
 DOMAIN-SUFFIX,statscollector.sd-rtn.com
+DOMAIN-SUFFIX,statsjs.klevu.com
 DOMAIN-SUFFIX,statt-collect.herokuapp.com
 DOMAIN-SUFFIX,stg-data-collector.playbuzz.com
 DOMAIN-SUFFIX,stream-log.dditscdn.com
@@ -3493,7 +3496,6 @@ DOMAIN-SUFFIX,tags.catapultx.com
 DOMAIN-SUFFIX,tags.dxmdp.com
 DOMAIN-SUFFIX,tags.fullcontact.com
 DOMAIN-SUFFIX,tags.master-perf-tools.com
-DOMAIN-SUFFIX,tags.refinery89.com
 DOMAIN-SUFFIX,tagtracking.vibescm.com
 DOMAIN-SUFFIX,target.mixi.media
 DOMAIN-SUFFIX,telemetrics.klaviyo.com
@@ -4451,6 +4453,7 @@ DOMAIN-SUFFIX,analytics-wcms.joins.net
 DOMAIN-SUFFIX,analytics-zone-1.api.leadfamly.com
 DOMAIN-SUFFIX,analytics.3c5.com
 DOMAIN-SUFFIX,analytics.academy.com
+DOMAIN-SUFFIX,analytics.ahrefs.dev
 DOMAIN-SUFFIX,analytics.archive.org
 DOMAIN-SUFFIX,analytics.brave.com
 DOMAIN-SUFFIX,analytics.chase.com
@@ -4611,6 +4614,7 @@ DOMAIN-SUFFIX,engine.traceparts.com
 DOMAIN-SUFFIX,eproof.drudgereport.com
 DOMAIN-SUFFIX,error-collector.ted.com
 DOMAIN-SUFFIX,errorreports.couponcabin.com
+DOMAIN-SUFFIX,errors.darkreader.app
 DOMAIN-SUFFIX,espy.boehs.org
 DOMAIN-SUFFIX,et.nytimes.com
 DOMAIN-SUFFIX,et.tidal.com
@@ -4901,12 +4905,14 @@ DOMAIN-SUFFIX,stat.pubhtml5.com
 DOMAIN-SUFFIX,stat.tildacdn.com
 DOMAIN-SUFFIX,stat.turb.pw
 DOMAIN-SUFFIX,stat.vulkanvegas.com
+DOMAIN-SUFFIX,statistics.darkreader.app
 DOMAIN-SUFFIX,statistics.streamdav.com
 DOMAIN-SUFFIX,stats.aerotime.aero
 DOMAIN-SUFFIX,stats.allenai.org
 DOMAIN-SUFFIX,stats.calcalist.co.il
 DOMAIN-SUFFIX,stats.chromatone.center
 DOMAIN-SUFFIX,stats.codeur.com
+DOMAIN-SUFFIX,stats.darkreader.app
 DOMAIN-SUFFIX,stats.davidickedelivery.com
 DOMAIN-SUFFIX,stats.gateio.ch
 DOMAIN-SUFFIX,stats.habr.com
@@ -4921,6 +4927,7 @@ DOMAIN-SUFFIX,stats.searchftps.net
 DOMAIN-SUFFIX,stats.suenicholls.com
 DOMAIN-SUFFIX,stats.synedat.io
 DOMAIN-SUFFIX,stats.trimbles.ie
+DOMAIN-SUFFIX,stats.vidbinge.com
 DOMAIN-SUFFIX,stats.vk-portal.net
 DOMAIN-SUFFIX,stats.wordpress.com
 DOMAIN-SUFFIX,stats.wwitv.com
@@ -4961,7 +4968,6 @@ DOMAIN-SUFFIX,tags.johnlewis.com
 DOMAIN-SUFFIX,tags.klove.com
 DOMAIN-SUFFIX,tags.stepstone.com
 DOMAIN-SUFFIX,tao.barstoolsports.com
-DOMAIN-SUFFIX,taplytics-umami.grubhub.com
 DOMAIN-SUFFIX,target-us.samsung.com
 DOMAIN-SUFFIX,target.nationwide.com
 DOMAIN-SUFFIX,target.nejm.org
@@ -5087,7 +5093,6 @@ DOMAIN-SUFFIX,rsx.afterpay.com
 DOMAIN-SUFFIX,svc2.sc.com
 DOMAIN-SUFFIX,tm-eps.neutrino.nu
 DOMAIN-SUFFIX,tmetrix.my.chick-fil-a.com
-DOMAIN-SUFFIX,tmx.bestbuy.com
 DOMAIN-SUFFIX,tmx.td.com
 DOMAIN-SUFFIX,u47.pnc.com
 DOMAIN-SUFFIX,w-profiling.simplii.com

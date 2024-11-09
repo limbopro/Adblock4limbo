@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 02 Nov 2024 08:14:39 GMT
-# entries:        3543
+# last updated:   Fri, 08 Nov 2024 19:26:19 GMT
+# entries:        3549
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1276,6 +1276,7 @@ DOMAIN-SUFFIX,cl0udh0st1ng.com, reject
 DOMAIN-SUFFIX,claria.com, reject
 DOMAIN-SUFFIX,clck.ru, reject
 DOMAIN-SUFFIX,clevernt.com, reject
+DOMAIN-SUFFIX,click-2.eu, reject
 DOMAIN-SUFFIX,click.airmalta-mail.com, reject
 DOMAIN-SUFFIX,click.aliexpress.com, reject
 DOMAIN-SUFFIX,click.allkeyshop.com, reject
@@ -1395,6 +1396,7 @@ DOMAIN-SUFFIX,content.acc-hd.de, reject
 DOMAIN-SUFFIX,content.ad, reject
 DOMAIN-SUFFIX,content22.online.citi.com, reject
 DOMAIN-SUFFIX,contextweb.com, reject
+DOMAIN-SUFFIX,contrack.link, reject
 DOMAIN-SUFFIX,controlcola.com, reject
 DOMAIN-SUFFIX,converge-digital.com, reject
 DOMAIN-SUFFIX,conversantmedia.com, reject
@@ -2689,6 +2691,7 @@ DOMAIN-SUFFIX,rads.realadmin.pl, reject
 DOMAIN-SUFFIX,railwayreason.com, reject
 DOMAIN-SUFFIX,rambunctiousflock.com, reject
 DOMAIN-SUFFIX,rampidads.com, reject
+DOMAIN-SUFFIX,randkuj.xyz, reject
 DOMAIN-SUFFIX,rankchamp.de, reject
 DOMAIN-SUFFIX,ranking-charts.de, reject
 DOMAIN-SUFFIX,ranking-hits.de, reject
@@ -3188,6 +3191,7 @@ DOMAIN-SUFFIX,tlvmedia.com, reject
 DOMAIN-SUFFIX,tm.br.de, reject
 DOMAIN-SUFFIX,tnkexchange.com, reject
 DOMAIN-SUFFIX,tns-counter.ru, reject
+DOMAIN-SUFFIX,to-go1.eu, reject
 DOMAIN-SUFFIX,top-casting-termine.de, reject
 DOMAIN-SUFFIX,top-site-list.com, reject
 DOMAIN-SUFFIX,top.list.ru, reject
@@ -3208,6 +3212,7 @@ DOMAIN-SUFFIX,topstats.com, reject
 DOMAIN-SUFFIX,totemcash.com, reject
 DOMAIN-SUFFIX,touchclarity.com, reject
 DOMAIN-SUFFIX,tour.brazzers.com, reject
+DOMAIN-SUFFIX,track-on.pl, reject
 DOMAIN-SUFFIX,track.adform.net, reject
 DOMAIN-SUFFIX,track.anchorfree.com, reject
 DOMAIN-SUFFIX,track.canva.com, reject
@@ -3385,6 +3390,7 @@ DOMAIN-SUFFIX,vericlick.com, reject
 DOMAIN-SUFFIX,vertamedia.com, reject
 DOMAIN-SUFFIX,verticalmass.com, reject
 DOMAIN-SUFFIX,vervewireless.com, reject
+DOMAIN-SUFFIX,vgnp3trk.com, reject
 DOMAIN-SUFFIX,vibrantmedia.com, reject
 DOMAIN-SUFFIX,vibrantsundown.com, reject
 DOMAIN-SUFFIX,vid.pubmatic.com, reject

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         毒奶导航以及实用函数调用合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.11.08
+// @version      0.2024.11.09
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -1516,7 +1516,7 @@ function getCookie(cname) {
 function hide_button_switch(x) {
     if (x == 1) {
         document.querySelector('button#x4Home').classList.add('cms_opacity');
-        var days = window.prompt("请输入你想要隐藏该按钮的天数？（请直接输入数字），该按钮将在你指定的时间后再次显示。你可通过清理浏览器 cookie 或 无痕模式打开的方式提前停止计时。本次设置仅针对当前网站域名生效。");
+        var days = window.prompt("请输入你想要隐藏页面右下角导航🧭按钮的天数？（请直接输入数字），该按钮将在你指定的时间后再次显示。你可通过清理浏览器 cookie 或 无痕模式打开的方式提前停止计时。本次设置仅针对当前网站域名生效。");
         setCookie("button_switch", 'True', days);
         body_build('false');
         x4Home_button('hidden');

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411090308
+## ! Version: 202411100255
 ## ! Title: EasyPrivacy
-## ! Last modified: 09 Nov 2024 03:08 UTC
+## ! Last modified: 10 Nov 2024 02:55 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -822,6 +822,7 @@ DOMAIN-SUFFIX,clovercabbage.com, reject
 DOMAIN-SUFFIX,clumsycar.com, reject
 DOMAIN-SUFFIX,clumsyrock.com, reject
 DOMAIN-SUFFIX,coachquartz.com, reject
+DOMAIN-SUFFIX,coalkitchen.com, reject
 DOMAIN-SUFFIX,coatfood.com, reject
 DOMAIN-SUFFIX,cobaltoverture.com, reject
 DOMAIN-SUFFIX,coffeesidehustle.com, reject
@@ -1272,6 +1273,7 @@ DOMAIN-SUFFIX,geekactive.com, reject
 DOMAIN-SUFFIX,generalprose.com, reject
 DOMAIN-SUFFIX,generateoffice.com, reject
 DOMAIN-SUFFIX,gentlemoonlight.com, reject
+DOMAIN-SUFFIX,ghostgenie.com, reject
 DOMAIN-SUFFIX,giantsvessel.com, reject
 DOMAIN-SUFFIX,giddycoat.com, reject
 DOMAIN-SUFFIX,giftedglue.com, reject
@@ -1758,6 +1760,7 @@ DOMAIN-SUFFIX,persuadesock.com, reject
 DOMAIN-SUFFIX,persuadesupport.com, reject
 DOMAIN-SUFFIX,petiteumbrella.com, reject
 DOMAIN-SUFFIX,philippinch.com, reject
+DOMAIN-SUFFIX,phonicsblitz.com, reject
 DOMAIN-SUFFIX,photographpan.com, reject
 DOMAIN-SUFFIX,physicalbikes.com, reject
 DOMAIN-SUFFIX,piespower.com, reject
@@ -2117,6 +2120,7 @@ DOMAIN-SUFFIX,sizzlingsmoke.com, reject
 DOMAIN-SUFFIX,skillfuldrop.com, reject
 DOMAIN-SUFFIX,skillfulsock.com, reject
 DOMAIN-SUFFIX,skisofa.com, reject
+DOMAIN-SUFFIX,skullmagnets.com, reject
 DOMAIN-SUFFIX,slaysweater.com, reject
 DOMAIN-SUFFIX,sleepcartoon.com, reject
 DOMAIN-SUFFIX,slimopinion.com, reject
@@ -2236,6 +2240,7 @@ DOMAIN-SUFFIX,standingnest.com, reject
 DOMAIN-SUFFIX,standingsack.com, reject
 DOMAIN-SUFFIX,standtrouble.com, reject
 DOMAIN-SUFFIX,starkscale.com, reject
+DOMAIN-SUFFIX,startercost.com, reject
 DOMAIN-SUFFIX,startingcars.com, reject
 DOMAIN-SUFFIX,stat.pet, reject
 DOMAIN-SUFFIX,statementsweater.com, reject

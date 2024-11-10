@@ -1,1 +1,26 @@
-.remove-ads-link, .remove-ads, .adsbyexoclick, #ad-header-mobile, .video-ad, #video-right, #ad-footer {display:none !important; pointer-events: none !important;} /* xvideos */
+#pop,
+.div_pop,
+#pop.div_pop,
+.movv-ad,
+#adsbox,
+div.right,
+div.movv-ad.ad_3_3,
+div.movv-ad.ad_3_2,
+.movv-ad,
+.adsbyexoclick,
+#adsbox,
+.adsbyexoclick,
+/* supjav */
+
+.remove-ads-link,
+.remove-ads,
+.adsbyexoclick,
+#ad-header-mobile,
+.video-ad,
+#video-right,
+#ad-footer {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* xvideos */

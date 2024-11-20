@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202411201322
+## ! Version: 202411201418
 ## ! Title: EasyList
-## ! Last modified: 20 Nov 2024 13:22 UTC
+## ! Last modified: 20 Nov 2024 14:18 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -7897,6 +7897,7 @@ DOMAIN-SUFFIX,dthepeoplewhoc.org, reject
 DOMAIN-SUFFIX,dthipkts.com, reject
 DOMAIN-SUFFIX,dtmpub.com, reject
 DOMAIN-SUFFIX,dtmvpkn.com, reject
+DOMAIN-SUFFIX,dtootmvwy.top, reject
 DOMAIN-SUFFIX,dtprofit.com, reject
 DOMAIN-SUFFIX,dtscdn.com, reject
 DOMAIN-SUFFIX,dtscout.com, reject
@@ -14751,6 +14752,7 @@ DOMAIN-SUFFIX,lparket.com, reject
 DOMAIN-SUFFIX,lpawakkabpho.com, reject
 DOMAIN-SUFFIX,lpeqztx.com, reject
 DOMAIN-SUFFIX,lpernedasesium.com, reject
+DOMAIN-SUFFIX,lpewiduqiq.com, reject
 DOMAIN-SUFFIX,lpmcr1h7z.com, reject
 DOMAIN-SUFFIX,lpmugcevks.com, reject
 DOMAIN-SUFFIX,lptiljy.com, reject
@@ -16012,6 +16014,7 @@ DOMAIN-SUFFIX,mptgate.com, reject
 DOMAIN-SUFFIX,mpuwrudpeo.com, reject
 DOMAIN-SUFFIX,mqabjtgli.xyz, reject
 DOMAIN-SUFFIX,mqcjqjhy.com, reject
+DOMAIN-SUFFIX,mqckjjkx.com, reject
 DOMAIN-SUFFIX,mqdeeisghdpd.xyz, reject
 DOMAIN-SUFFIX,mqqxkkenfws.com, reject
 DOMAIN-SUFFIX,mraozo.xyz, reject
@@ -27315,6 +27318,7 @@ DOMAIN-SUFFIX,wmptctl.com, reject
 DOMAIN-SUFFIX,wmpted.com, reject
 DOMAIN-SUFFIX,wmptengate.com, reject
 DOMAIN-SUFFIX,wmpuem.com, reject
+DOMAIN-SUFFIX,wmtten.com, reject
 DOMAIN-SUFFIX,wmudsraxwj.xyz, reject
 DOMAIN-SUFFIX,wmwwmbjkqomr.top, reject
 DOMAIN-SUFFIX,wmxthwflju.xyz, reject

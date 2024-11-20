@@ -43,6 +43,16 @@
 /// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
 /// 可在 导航 - **反馈/建议/功能设置//** 关闭成人保护模式；
 
+// **如何【禁用页面右下角导航按钮（iOS）】**
+/// iOS QX/Stash/Surge/等用户禁用导航按钮图片即可...
+/// 1.添加主机名， limbopro.com
+/// 2.添加重写， url 填写 Adblock4limbo.png ，类型选择 reject
+
+// **如何【禁用页面右下角导航按钮（PC/Mac）】**
+/// PC/Mac 油猴用户...
+/// 进入 Tampermonkey 管理面板 - 找到Adblock4limbo.[github]
+/// 找到 daohang_build() ，将其注释即可 -> ;daohang_build()；
+
 */
 
 // @match        https://*/*

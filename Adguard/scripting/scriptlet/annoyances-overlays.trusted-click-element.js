@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: annoyances-overlays
 
@@ -40,9 +39,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"]];
+const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"],["#app > #raichuLoaderTemplate [aria-label^=\"Остановить\"]"]];
 
-const hostnamesMap = new Map([["deezer.com",0],["moovitapp.com",1],["teller.jp",2],["bbc.com",[3,4,5,6]],["wrtn.jp",7],["crunchyroll.com",8],["abema.tv",9]]);
+const hostnamesMap = new Map([["deezer.com",0],["moovitapp.com",1],["teller.jp",2],["bbc.com",[3,4,5,6]],["wrtn.jp",7],["crunchyroll.com",8],["abema.tv",9],["rutube.ru",10]]);
 
 const entitiesMap = new Map([]);
 
@@ -523,44 +522,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedClickElement();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedClickElement = cloneInto([
-            [ '(', uBOL_trustedClickElement.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedClickElement);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedClickElement;
-}
+uBOL_trustedClickElement();
 
 /******************************************************************************/
 

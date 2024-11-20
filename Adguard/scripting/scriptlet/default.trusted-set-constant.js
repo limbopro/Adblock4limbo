@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,9 +39,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["dtGonza.playeradstime","\"-1\""],["google_tag_manager","{ \"value\": { \"G-Z8CH48V654\": { \"_spx\": false, \"bootstrap\": 1704067200000, \"dataLayer\": { \"name\": \"dataLayer\" } }, \"SANDBOXED_JS_SEMAPHORE\": 0, \"dataLayer\": { \"gtmDom\": true, \"gtmLoad\": true, \"subscribers\": 1 }, \"sequence\": 1 } }"],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["libAnalytics","json: {\"status\":{\"dataAvailable\":false},\"data\":{}}"],["_omapp.scripts.geolocation","{\"value\": {\"status\":\"loaded\",\"object\":null,\"data\":{\"country\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_1\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_2\":{\"shortName\":\"\",\"longName\":\"\"},\"locality\":{\"shortName\":\"\",\"longName\":\"\"},\"original\":{\"ip\":\"\",\"ip_decimal\":null,\"country\":\"\",\"country_eu\":false,\"country_iso\":\"\",\"city\":\"\",\"latitude\":null,\"longitude\":null,\"user_agent\":{\"product\":\"\",\"version\":\"\",\"comment\":\"\",\"raw_value\":\"\"},\"zip_code\":\"\",\"time_zone\":\"\"}},\"error\":\"\"}}"]];
+const argsList = [["dtGonza.playeradstime","\"-1\""],["__parkour.state.message","json:\"<h1>This domain is parked.</h1>\""],["clickAds.banner.urls","json:[{\"url\":{\"limit\":0,\"url\":\"\"}}]"],["google_tag_manager","{ \"value\": { \"G-Z8CH48V654\": { \"_spx\": false, \"bootstrap\": 1704067200000, \"dataLayer\": { \"name\": \"dataLayer\" } }, \"SANDBOXED_JS_SEMAPHORE\": 0, \"dataLayer\": { \"gtmDom\": true, \"gtmLoad\": true, \"subscribers\": 1 }, \"sequence\": 1 } }"],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["libAnalytics","json: {\"status\":{\"dataAvailable\":false},\"data\":{}}"],["_omapp.scripts.geolocation","{\"value\": {\"status\":\"loaded\",\"object\":null,\"data\":{\"country\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_1\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_2\":{\"shortName\":\"\",\"longName\":\"\"},\"locality\":{\"shortName\":\"\",\"longName\":\"\"},\"original\":{\"ip\":\"\",\"ip_decimal\":null,\"country\":\"\",\"country_eu\":false,\"country_iso\":\"\",\"city\":\"\",\"latitude\":null,\"longitude\":null,\"user_agent\":{\"product\":\"\",\"version\":\"\",\"comment\":\"\",\"raw_value\":\"\"},\"zip_code\":\"\",\"time_zone\":\"\"}},\"error\":\"\"}}"]];
 
-const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["jetpunk.com",1],["emturbovid.com",2],["findjav.com",2],["javggvideo.xyz",2],["mmtv01.xyz",2],["stbturbo.xyz",2],["streamsilk.com",2],["tuborstb.co",3],["app.blubank.com",4],["mobileweb.bankmellat.ir",[4,5]],["globo.com",6],["seclore.com",7]]);
+const hostnamesMap = new Map([["cinemitas.org",0],["cinelatino.net",0],["cineplus123.org",0],["paraveronline.org",0],["pobreflix.vc",0],["verpelis.gratis",0],["animeseries.so",1],["audiobookbay.li",1],["hhdstreams.club",1],["janitor.ai",1],["kahoo.it",1],["pix4link.com",1],["skipthecommericals.xyz",1],["sshagan.net",1],["savefrom.net",2],["jetpunk.com",3],["emturbovid.com",4],["findjav.com",4],["javggvideo.xyz",4],["mmtv01.xyz",4],["stbturbo.xyz",4],["streamsilk.com",4],["tuborstb.co",5],["app.blubank.com",6],["mobileweb.bankmellat.ir",[6,7]],["globo.com",8],["seclore.com",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -558,44 +557,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedSetConstant();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedSetConstant = cloneInto([
-            [ '(', uBOL_trustedSetConstant.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedSetConstant);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedSetConstant;
-}
+uBOL_trustedSetConstant();
 
 /******************************************************************************/
 

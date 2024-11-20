@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: chn-0
 
@@ -40,9 +39,9 @@ const uBOL_noSetTimeoutIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"]];
+const argsList = [["tpcHt0ml","1006"],["adhtml","10006"],[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"]];
 
-const hostnamesMap = new Map([["ftchinese.com",0],["manwa.fun",1],["18comic.vip",2],["itdog.cn",3],["xbeibeix.com",4],["520cc.cc",[5,20]],["colamanga.com",6],["cocomanga.com",[6,17]],["ekamus.info",7],["logi.im",7],["moeci.com",8],["tingfm.com",9],["233tw.com",10],["ruanyifeng.com",11],["t66y.com",12],["tsubasa.im",13],["league-funny.com",14],["haoweichi.com",15],["zhenbuka.com",16],["ohmanhua.com",17],["onemanhua.com",17],["5278.cc",18],["hboav.com",18],["axutongxue.net",19]]);
+const hostnamesMap = new Map([["t66y.com",[0,1,14]],["ftchinese.com",2],["manwa.fun",3],["18comic.vip",4],["itdog.cn",5],["xbeibeix.com",6],["520cc.cc",[7,22]],["colamanga.com",8],["cocomanga.com",[8,19]],["ekamus.info",9],["logi.im",9],["moeci.com",10],["tingfm.com",11],["233tw.com",12],["ruanyifeng.com",13],["tsubasa.im",15],["league-funny.com",16],["haoweichi.com",17],["zhenbuka.com",18],["ohmanhua.com",19],["onemanhua.com",19],["5278.cc",20],["hboav.com",20],["axutongxue.net",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -444,44 +443,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noSetTimeoutIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noSetTimeoutIf = cloneInto([
-            [ '(', uBOL_noSetTimeoutIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noSetTimeoutIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noSetTimeoutIf;
-}
+uBOL_noSetTimeoutIf();
 
 /******************************************************************************/
 

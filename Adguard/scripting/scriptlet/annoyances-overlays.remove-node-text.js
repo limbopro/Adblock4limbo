@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: annoyances-overlays
 
@@ -40,11 +39,11 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","debugger"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","btnHtml"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","XF"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","devtools"],["script","while(!![]){try{var"],["script","/closeWindow\\(\\)|clickIE\\(\\)|reEnable\\(\\)/"],["script","ab927c49cf1b"],["script","detectDevTool"],["script","/Clipboard|oncontextmenu|wpcp|keyCode/"],["style","/-webkit-user-select|webkit-appearance/"],["script","loc.hostname"],["script","adblock"],["script","disableselect"],["script","stopPrntScr"],["style","selection"],["script","checkAdsBlocked"],["style","::selection"]];
+const argsList = [["script","disableSelection"],["script","copyprotect"],["script","/parseInt.*push.*setTimeout.*try.*catch/"],["script","/contextmenu|wpcp/"],["script","/setTimeout.*style/"],["script","reEnable"],["script","debugger"],["script","stopRefreshSite"],["script","nocontextmenu"],["script","devtoolsDetector"],["script","contextmenu"],["script","console.clear"],["script","wccp_pro"],["script","initPopup"],["style","user-select"],["script","/contextmenu|devtool/"],["script","preventDefault"],["script","wccp"],["script","isadb"],["script","e.preventDefault();"],["script","document.oncontextmenu"],["script","btnHtml"],["script","document.onselectstart"],["script","/$.*ready.*setInterval/"],["script","disable_show_error"],["script","disable_copy"],["script","nocontext"],["script","XF"],["script","/document.onkeydown|document.ondragstart/"],["script","oncontextmenu"],["script","ctrlKey"],["script","fetch"],["script","devtools"],["script","while(!![]){try{var"],["script","/closeWindow\\(\\)|clickIE\\(\\)|reEnable\\(\\)/"],["script","ab927c49cf1b"],["script","detectDevTool"],["script","/Clipboard|oncontextmenu|wpcp|keyCode/"],["style","/-webkit-user-select|webkit-appearance/"],["script","loc.hostname"],["script","adblock"],["script","disableselect"],["script","stopPrntScr"],["style","selection"],["script","checkAdsBlocked"],["style","::selection"]];
 
-const hostnamesMap = new Map([["skidrowreloaded.com",0],["valid.x86.fr",2],["bolugundem.com",3],["ilovetoplay.xyz",4],["camcaps.io",4],["nicekkk.com",4],["streamvid.net",4],["tips97tech.blogspot.com",4],["jpost.com",5],["teamkong.tk",6],["sekaikomik.bio",6],["animesaga.in",7],["moviesapi.club",7],["bestx.stream",7],["watchx.top",7],["asumanaksoy.com",7],["freshlifecircle.com",7],["seriesperu.com",8],["klartext-ne.de",8],["iptvromania.ro",8],["cespun.eu",8],["nullforums.net",8],["sbot.cf",9],["fjordd.com",11],["playertv.net",13],["warungkomik.com",14],["themeslide.com",14],["terramirabilis.ro",15],["161.97.70.5",16],["gdrivedescarga.com",17],["audiologyresearch.org",18],["aventurainromania.ro",18],["appimagehub.com",19],["gnome-look.org",19],["store.kde.org",19],["linux-apps.com",19],["opendesktop.org",19],["pling.com",19],["xfce-look.org",19],["zipcode.com.ng",20],["thejakartapost.com",21],["mathcrave.com",22],["brokensilenze.net",[23,24]],["broncoshq.com",25],["anascrie.ro",26],["streambuddy.net",27],["smartkhabrinews.com",28],["cheersandgears.com",29],["blog.cryptowidgets.net",30],["blog.insurancegold.in",30],["blog.wiki-topia.com",30],["blog.coinsvalue.net",30],["blog.cookinguide.net",30],["blog.freeoseocheck.com",30],["stblion.xyz",31],["xn-----0b4asja7ccgu2b4b0gd0edbjm2jpa1b1e9zva7a0347s4da2797e8qri.xn--1ck2e1b",32],["xn--90afacv0clj6ac0dxa.xn--p1ai",32],["xn--90afacv0cu2a3cr.xn--p1ai",32],["puzzle-loop.com",33],["puzzle-words.com",33],["puzzle-chess.com",33],["puzzle-thermometers.com",33],["puzzle-norinori.com",33],["puzzle-minesweeper.com",33],["puzzle-slant.com",33],["puzzle-lits.com",33],["puzzle-galaxies.com",33],["puzzle-tents.com",33],["puzzle-battleships.com",33],["puzzle-pipes.com",33],["puzzle-hitori.com",33],["puzzle-heyawake.com",33],["puzzle-shingoki.com",33],["puzzle-masyu.com",33],["puzzle-stitches.com",33],["puzzle-aquarium.com",33],["puzzle-tapa.com",33],["puzzle-star-battle.com",33],["puzzle-kakurasu.com",33],["puzzle-skyscrapers.com",33],["puzzle-futoshiki.com",33],["puzzle-shakashaka.com",33],["puzzle-kakuro.com",33],["puzzle-jigsaw-sudoku.com",33],["puzzle-killer-sudoku.com",33],["puzzle-binairo.com",33],["puzzle-nonograms.com",33],["puzzle-sudoku.com",33],["puzzle-light-up.com",33],["puzzle-bridges.com",33],["puzzle-shikaku.com",33],["puzzle-nurikabe.com",33],["puzzle-dominosa.com",33],["inattvcom117.xyz",34],["mrbenne.com",[35,36]],["www-liverpoolecho-co-uk.translate.goog",37],["www-themirror-com.translate.goog",37],["www-football-london.translate.goog",37],["www-devonlive-com.translate.goog",37],["www-cornwalllive-com.translate.goog",37],["www-glasgowlive-co-uk.translate.goog",37],["www-kentlive-news.translate.goog",37],["www-essexlive-news.translate.goog",37],["www-lincolnshirelive-co-uk.translate.goog",37],["www-leeds--live-co-uk.translate.goog",37],["www-insider-co-uk.translate.goog",37],["xanimu.com",38],["cosxplay.com",38],["noicetranslations.blogspot.com",39],["monitoruldevrancea.ro",[40,41]],["readcomiconline.li",42],["japonhentai.com",43]]);
+const hostnamesMap = new Map([["hebrew4christians.com",0],["skidrowreloaded.com",1],["android1pro.com",3],["valid.x86.fr",4],["bolugundem.com",5],["ilovetoplay.xyz",6],["camcaps.io",6],["nicekkk.com",6],["streamvid.net",6],["tips97tech.blogspot.com",6],["jpost.com",7],["teamkong.tk",8],["sekaikomik.bio",8],["animesaga.in",9],["moviesapi.club",9],["bestx.stream",9],["watchx.top",9],["asumanaksoy.com",9],["freshlifecircle.com",9],["seriesperu.com",10],["klartext-ne.de",10],["iptvromania.ro",10],["cespun.eu",10],["nullforums.net",10],["sbot.cf",11],["fjordd.com",13],["playertv.net",15],["warungkomik.com",16],["themeslide.com",16],["terramirabilis.ro",17],["161.97.70.5",18],["gdrivedescarga.com",19],["audiologyresearch.org",20],["aventurainromania.ro",20],["appimagehub.com",21],["gnome-look.org",21],["store.kde.org",21],["linux-apps.com",21],["opendesktop.org",21],["pling.com",21],["xfce-look.org",21],["zipcode.com.ng",22],["thejakartapost.com",23],["mathcrave.com",24],["brokensilenze.net",[25,26]],["broncoshq.com",27],["anascrie.ro",28],["streambuddy.net",29],["smartkhabrinews.com",30],["cheersandgears.com",31],["blog.cryptowidgets.net",32],["blog.insurancegold.in",32],["blog.wiki-topia.com",32],["blog.coinsvalue.net",32],["blog.cookinguide.net",32],["blog.freeoseocheck.com",32],["stblion.xyz",33],["xn-----0b4asja7ccgu2b4b0gd0edbjm2jpa1b1e9zva7a0347s4da2797e8qri.xn--1ck2e1b",34],["xn--90afacv0clj6ac0dxa.xn--p1ai",34],["xn--90afacv0cu2a3cr.xn--p1ai",34],["puzzle-loop.com",35],["puzzle-words.com",35],["puzzle-chess.com",35],["puzzle-thermometers.com",35],["puzzle-norinori.com",35],["puzzle-minesweeper.com",35],["puzzle-slant.com",35],["puzzle-lits.com",35],["puzzle-galaxies.com",35],["puzzle-tents.com",35],["puzzle-battleships.com",35],["puzzle-pipes.com",35],["puzzle-hitori.com",35],["puzzle-heyawake.com",35],["puzzle-shingoki.com",35],["puzzle-masyu.com",35],["puzzle-stitches.com",35],["puzzle-aquarium.com",35],["puzzle-tapa.com",35],["puzzle-star-battle.com",35],["puzzle-kakurasu.com",35],["puzzle-skyscrapers.com",35],["puzzle-futoshiki.com",35],["puzzle-shakashaka.com",35],["puzzle-kakuro.com",35],["puzzle-jigsaw-sudoku.com",35],["puzzle-killer-sudoku.com",35],["puzzle-binairo.com",35],["puzzle-nonograms.com",35],["puzzle-sudoku.com",35],["puzzle-light-up.com",35],["puzzle-bridges.com",35],["puzzle-shikaku.com",35],["puzzle-nurikabe.com",35],["puzzle-dominosa.com",35],["inattvcom117.xyz",36],["mrbenne.com",[37,38]],["www-liverpoolecho-co-uk.translate.goog",39],["www-themirror-com.translate.goog",39],["www-football-london.translate.goog",39],["www-devonlive-com.translate.goog",39],["www-cornwalllive-com.translate.goog",39],["www-glasgowlive-co-uk.translate.goog",39],["www-kentlive-news.translate.goog",39],["www-essexlive-news.translate.goog",39],["www-lincolnshirelive-co-uk.translate.goog",39],["www-leeds--live-co-uk.translate.goog",39],["www-insider-co-uk.translate.goog",39],["xanimu.com",40],["cosxplay.com",40],["noicetranslations.blogspot.com",41],["monitoruldevrancea.ro",[42,43]],["readcomiconline.li",44],["japonhentai.com",45]]);
 
-const entitiesMap = new Map([["strtape",1],["streamtape",1],["vidmoly",7],["oploverz",[8,12]],["tvhay",10],["bg-gledai",18],["vembed",30],["redecanais",32],["redecanaistv",32],["redisex",32]]);
+const entitiesMap = new Map([["strtape",2],["streamtape",2],["vidmoly",9],["oploverz",[10,14]],["tvhay",12],["bg-gledai",20],["vembed",32],["redecanais",34],["redecanaistv",34],["redisex",34]]);
 
 const exceptionsMap = new Map([]);
 
@@ -466,44 +465,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_removeNodeText();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_removeNodeText = cloneInto([
-            [ '(', uBOL_removeNodeText.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_removeNodeText);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_removeNodeText;
-}
+uBOL_removeNodeText();
 
 /******************************************************************************/
 

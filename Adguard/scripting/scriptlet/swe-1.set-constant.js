@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: swe-1
 
@@ -40,9 +39,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["NWS.config.enableAdblockerDetection","false"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["googletag","1"],["window.WURFL","1"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["mi_track_user","false"]];
+const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["window.WURFL","1"],["manualAutoplay_","noopFunc"],["mi_track_user","false"]];
 
-const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["feber.se",3],["tjock.se",3],["findit.se",4],["fz.se",5],["fssweden.se",5],["tinyurl.se",5],["gamereactor.se",6],["jobsinsweden.se",7],["kamrat.com",[8,9]],["mitti.se",10],["mobilanyheter.net",11],["ordbokpro.se",12],["spray.se",[13,14]],["vinochmatguiden.se",14],["swedroid.se",15],["thatsup.se",16],["utslappsratt.se",[17,18]],["heleneholmsif.se",[17,18]],["trafikskola.se",[17,18]],["melodifestivalklubben.se",[17,18]],["morotsliv.com",[17,18]],["zeinaskitchen.se",19],["trafiksakerhet.se",19],["boktugg.se",19],["lakartidningen.se",19],["villalivet.se",19],["matsafari.nu",19],["forexgruppen.se",19],["fastighetsvarlden.se",19]]);
+const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["feber.se",3],["tjock.se",3],["findit.se",4],["fz.se",5],["fssweden.se",5],["tinyurl.se",5],["gamereactor.se",6],["jobsinsweden.se",7],["kamrat.com",[8,9]],["mobilanyheter.net",10],["ordbokpro.se",11],["thatsup.se",12],["utslappsratt.se",[13,14]],["heleneholmsif.se",[13,14]],["trafikskola.se",[13,14]],["melodifestivalklubben.se",[13,14]],["morotsliv.com",[13,14]],["nyadagbladet.se",[13,14]],["vinochmatguiden.se",15],["vk.se",16],["folkbladet.nu",16],["nordsverige.se",16],["mellanbygden.nu",16],["vasterbottningen.se",16],["lokaltidningen.nu",16],["zeinaskitchen.se",17],["trafiksakerhet.se",17],["boktugg.se",17],["lakartidningen.se",17],["villalivet.se",17],["matsafari.nu",17],["forexgruppen.se",17],["fastighetsvarlden.se",17]]);
 
 const entitiesMap = new Map([]);
 
@@ -558,44 +557,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_setConstant();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_setConstant = cloneInto([
-            [ '(', uBOL_setConstant.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_setConstant);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_setConstant;
-}
+uBOL_setConstant();
 
 /******************************************************************************/
 

@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: rus-0
 
@@ -40,9 +39,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["disabled"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"]];
+const argsList = [[],["#timer"],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["disabled"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["time"],["timer"]];
 
-const hostnamesMap = new Map([["595.ucoz.net",0],["5wip-file.ru",0],["file-mods.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["wdho.ru",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.bz",6],["uakino.me",6],["win-lite.site",6],["vgtimes.ru",7],["startgamer.ru",8],["3mod.ru",9],["iblitzmods.ru",9],["wowskill.ru",10],["diplomsrazu.ru",11],["igrozoom.ru",11],["ru-minecraft.ru",11],["softomania.net",11],["vip-mods.ru",11],["warezok.net",11],["windows-driver.com",11],["windows-driver.net",11],["windows-program.com",11]]);
+const hostnamesMap = new Map([["595.ucoz.net",0],["5wip-file.ru",0],["file-mods.ru",0],["freesoft.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["wdho.ru",0],["studizba.com",1],["surl.li",1],["muzlan.top",2],["mp3crown.cc",3],["sorokam.ru",4],["bitshare.link",5],["kinokong.bz",6],["uakino.me",6],["win-lite.site",6],["vgtimes.ru",7],["startgamer.ru",8],["3mod.ru",9],["iblitzmods.ru",9],["wowskill.ru",10],["wotspeak.org",11],["diplomsrazu.ru",12],["igrozoom.ru",12],["ru-minecraft.ru",12],["softomania.net",12],["vip-mods.ru",12],["warezok.net",12],["windows-driver.com",12],["windows-driver.net",12],["windows-program.com",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -349,44 +348,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_adjustSetInterval();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_adjustSetInterval = cloneInto([
-            [ '(', uBOL_adjustSetInterval.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_adjustSetInterval);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_adjustSetInterval;
-}
+uBOL_adjustSetInterval();
 
 /******************************************************************************/
 

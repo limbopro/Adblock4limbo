@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: annoyances-overlays
 
@@ -40,11 +39,11 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["height"],["0x"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["/devtools|debu/"]];
+const argsList = [["height"],["debugger"],["visibility","1000"],["pushAd"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["/devtools|debu/"]];
 
-const hostnamesMap = new Map([["smashboards.com",0],["mobilarena.hu",1],["avdelphi.com",2],["pornhd8k.net",2],["masuit.com",2],["phimfit.com",2],["iphonecake.com",3],["ziperto.com",3],["compartiendofull.net",3],["themeparktourist.com",3],["magnet-novels.com",4],["bluemoon-mcfc.co.uk",5],["bendigoadvertiser.com.au",6],["lvturbo.com",7],["sbbrisk.com",7],["sbface.com",7],["sbspeed.com",7],["streamsb.net",7],["wouterplanet.com",7],["actvid.com",7],["myflixerz.to",7],["putlocker.pe",7],["sflix.to",[7,12]],["sflix.is",7],["sflix.ca",7],["theflixertv.to",7],["vipstreams.in",7],["699pic.com",8],["thinkamericana.com",9],["menrec.com",9],["mocah.org",10],["coolwallpapers.me",11],["webnovel.com",13],["vgembed.com",14],["sbot.cf",15],["bluphim.com",15],["cdnmoviking.tech",15],["movie4kto.net",16],["alfred.camera",17],["vidstreaming.xyz",18],["choosingnothing.com",18],["jetv.xyz",18],["ngelmat.net",19],["bembed.net",20],["embedv.net",20],["fslinks.org",20],["listeamed.net",20],["v6embed.xyz",20],["vgplayer.xyz",20],["vid-guard.com",20],["fightful.com",21],["player.melaniezettofrais.online",22]]);
+const hostnamesMap = new Map([["smashboards.com",0],["avdelphi.com",1],["pornhd8k.net",1],["masuit.com",1],["phimfit.com",1],["iphonecake.com",2],["ziperto.com",2],["compartiendofull.net",2],["themeparktourist.com",2],["magnet-novels.com",3],["bluemoon-mcfc.co.uk",4],["bendigoadvertiser.com.au",5],["lvturbo.com",6],["sbbrisk.com",6],["sbface.com",6],["sbspeed.com",6],["streamsb.net",6],["wouterplanet.com",6],["actvid.com",6],["myflixerz.to",6],["putlocker.pe",6],["theflixertv.to",6],["vipstreams.in",6],["699pic.com",7],["thinkamericana.com",8],["menrec.com",8],["mocah.org",9],["coolwallpapers.me",10],["sflix.to",11],["sflix.is",11],["sflix.ca",11],["webnovel.com",12],["vgembed.com",13],["sbot.cf",14],["bluphim.com",14],["cdnmoviking.tech",14],["movie4kto.net",15],["alfred.camera",16],["vidstreaming.xyz",17],["choosingnothing.com",17],["jetv.xyz",17],["ngelmat.net",18],["bembed.net",19],["embedv.net",19],["fslinks.org",19],["listeamed.net",19],["v6embed.xyz",19],["vgplayer.xyz",19],["vid-guard.com",19],["fightful.com",20],["player.melaniezettofrais.online",21]]);
 
-const entitiesMap = new Map([["vidsrc",20],["vembed",20]]);
+const entitiesMap = new Map([["vidsrc",19],["vembed",19]]);
 
 const exceptionsMap = new Map([]);
 
@@ -444,44 +443,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noSetIntervalIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noSetIntervalIf = cloneInto([
-            [ '(', uBOL_noSetIntervalIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noSetIntervalIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noSetIntervalIf;
-}
+uBOL_noSetIntervalIf();
 
 /******************************************************************************/
 

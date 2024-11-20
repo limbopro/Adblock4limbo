@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -42,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[],["","10"],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["?key="],["passeura"],["redirdx.in/go/"]];
 
-const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["pelispedia.life",0],["poseidonhd2.co",0],["geeknetic.es",0],["animeblix.com",[0,5]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["okpeliz.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["verdragonball.online",4],["torrentjogos.com.br",4],["redirdx.in",6]]);
+const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["pelispedia.life",0],["poseidonhd2.co",0],["geeknetic.es",0],["animeblix.com",[0,5]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["anime-jl.net",0],["okpeliz.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["maxitorrent.com",3],["verdragonball.online",4],["torrentjogos.com.br",4],["redirdx.in",6]]);
 
 const entitiesMap = new Map([["cuevana3",0],["gnula",0],["cuevana2espanol",0],["cuevana",0],["netcine",0],["atomixhq",2]]);
 
@@ -488,44 +487,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noWindowOpenIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noWindowOpenIf = cloneInto([
-            [ '(', uBOL_noWindowOpenIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noWindowOpenIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noWindowOpenIf;
-}
+uBOL_noWindowOpenIf();
 
 /******************************************************************************/
 

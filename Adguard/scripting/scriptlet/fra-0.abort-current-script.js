@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: fra-0
 
@@ -42,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["jQuery","adblocker"],["chp_ads_blocker_detector"],["document.getElementById","Blocking Ads"],["document.createElement","adblock"],["document.write","alert"],["setTimeout","bloqueur"],["Promise","alert"],["document.getElementById","msg_ab"],["document.querySelector","oadbActive"],["$","checkAds"],["document.getElementById","adback"],["JSON.parse","document.createElement('script')"],["document.createElement","document.documentElement).appendChild"]];
 
-const hostnamesMap = new Map([["adala-news.fr",0],["super-ethanol.com",1],["monumentum.fr",2],["lemanip.com",3],["crunchyscan.fr",[4,5,6]],["abcbourse.com",7],["cliqueduplateau.com",8],["monacomatin.mc",9],["recreatisse.com",10],["ultimate-catch.eu",10],["japscan.me",[11,12]]]);
+const hostnamesMap = new Map([["equinoxmagazine.fr",0],["adala-news.fr",0],["super-ethanol.com",1],["monumentum.fr",2],["lemanip.com",3],["crunchyscan.fr",[4,5,6]],["abcbourse.com",7],["cliqueduplateau.com",8],["monacomatin.mc",9],["recreatisse.com",10],["ultimate-catch.eu",10],["japscan.me",[11,12]]]);
 
 const entitiesMap = new Map([]);
 
@@ -468,44 +467,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortCurrentScript();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_abortCurrentScript = cloneInto([
-            [ '(', uBOL_abortCurrentScript.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_abortCurrentScript);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_abortCurrentScript;
-}
+uBOL_abortCurrentScript();
 
 /******************************************************************************/
 

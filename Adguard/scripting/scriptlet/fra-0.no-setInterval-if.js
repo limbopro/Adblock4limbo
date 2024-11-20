@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: fra-0
 
@@ -40,9 +39,9 @@ const uBOL_noSetIntervalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["window.location"],["adsbygoogle"],["this[_0x"],["var _0x"]];
+const argsList = [["window.location"],["adsbygoogle"],["var _0x"]];
 
-const hostnamesMap = new Map([["chat.babel.com",0],["lecourrier-du-soir.com",1],["zone-telechargement.work",2],["dl-protect.info",3]]);
+const hostnamesMap = new Map([["chat.babel.com",0],["lecourrier-du-soir.com",1],["dl-protect.info",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -444,44 +443,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noSetIntervalIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noSetIntervalIf = cloneInto([
-            [ '(', uBOL_noSetIntervalIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noSetIntervalIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noSetIntervalIf;
-}
+uBOL_noSetIntervalIf();
 
 /******************************************************************************/
 

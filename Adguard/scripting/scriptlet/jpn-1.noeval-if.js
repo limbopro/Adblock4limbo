@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: jpn-1
 
@@ -40,9 +39,9 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/g(',')?e(',')?t(',')?U(',')?T(',')?C/"],["hoihoi"]];
+const argsList = [["hoihoi"]];
 
-const hostnamesMap = new Map([["wiki.yjsnpi.nu",0],["ov53i9il.blog.fc2.com",1],["mjoato3uion.ky-3.net",1],["qaacacthlive.omaww.net",1]]);
+const hostnamesMap = new Map([["ov53i9il.blog.fc2.com",0],["mjoato3uion.ky-3.net",0],["qaacacthlive.omaww.net",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -343,44 +342,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noEvalIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noEvalIf = cloneInto([
-            [ '(', uBOL_noEvalIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noEvalIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noEvalIf;
-}
+uBOL_noEvalIf();
 
 /******************************************************************************/
 

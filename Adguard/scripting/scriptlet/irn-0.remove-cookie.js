@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: irn-0
 
@@ -36,7 +35,7 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_cookieRemover = function() {
+const uBOL_removeCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
@@ -50,7 +49,7 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function cookieRemover(
+function removeCookie(
     needle = ''
 ) {
     if ( typeof needle !== 'string' ) { return; }
@@ -64,7 +63,7 @@ function cookieRemover(
             fn();
         }, ms);
     };
-    const removeCookie = ( ) => {
+    const remove = ( ) => {
         document.cookie.split(';').forEach(cookieStr => {
             const pos = cookieStr.indexOf('=');
             if ( pos === -1 ) { return; }
@@ -99,15 +98,15 @@ function cookieRemover(
             }
         });
     };
-    removeCookie();
-    window.addEventListener('beforeunload', removeCookie);
+    remove();
+    window.addEventListener('beforeunload', remove);
     if ( typeof extraArgs.when !== 'string' ) { return; }
     const supportedEventTypes = [ 'scroll', 'keydown' ];
     const eventTypes = extraArgs.when.split(/\s/);
     for ( const type of eventTypes ) {
         if ( supportedEventTypes.includes(type) === false ) { continue; }
         document.addEventListener(type, ( ) => {
-            throttle(removeCookie);
+            throttle(remove);
         }, { passive: true });
     }
 }
@@ -371,7 +370,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { cookieRemover(...argsList[i]); }
+    try { removeCookie(...argsList[i]); }
     catch(ex) {}
 }
 argsList.length = 0;
@@ -383,44 +382,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_cookieRemover();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_cookieRemover = cloneInto([
-            [ '(', uBOL_cookieRemover.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_cookieRemover);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_cookieRemover;
-}
+uBOL_removeCookie();
 
 /******************************************************************************/
 

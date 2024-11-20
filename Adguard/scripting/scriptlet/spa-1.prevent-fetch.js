@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -42,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["method:HEAD"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
 
-const hostnamesMap = new Map([["gourlpro.com",0],["casperhd.com",0],["short.7hd.club",0],["istigo.net",0],["modescanlator.net",0],["r7.com",0],["descargas2024gratis.blogspot.com",0],["megacurioso.net",0],["tudonoticiasbr.com",0],["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["modescanlator.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,9]],["puromarketing.com",[0,9]],["todostartups.com",[0,9]],["pobre.wtf",0],["acortalo.net",0],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["cerisetoon.com",1],["sinensistoon.com",1],["packsmega.info",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["acortados.com",[5,6]],["acortalink.me",5],["todoandroid.live",6],["gadgetzona.net",6],["qwanturankpro.com",6],["desbloquea.me",6],["mega-enlace.com",6],["enlacito.com",6],["acortame-esto.com",6],["atv.pe",7],["monumental.co.cr",7],["elcomercio.com",7],["antena7.com.do",7],["rqp.com.bo",7],["canal12.com.sv",7],["chapintv.com",7],["vtv.com.hn",7],["tn23.tv",7],["canal13mexico.com",7],["c9n.com.py",7],["repretel.com",7],["redbolivision.tv.bo",7],["independentespanol.com",7],["teleculinaria.pt",8],["nptmedia.tv",10],["suaads.com",11],["reidoplacar.com",11],["suaurl.com",11],["costumbresmexico.com",12],["desbloqueador.site",12],["notipostingt.com",13],["tivify.tv",14],["netmovies.com.br",15],["coempregos.com.br",16],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
+const hostnamesMap = new Map([["gourlpro.com",0],["casperhd.com",0],["short.7hd.club",0],["istigo.net",0],["modescanlator.net",0],["r7.com",0],["descargas2024gratis.blogspot.com",0],["megacurioso.net",0],["tudonoticiasbr.com",0],["ggames.com.br",0],["mundodonghua.com",0],["receitasoncaseiras.online",0],["receitasdochico.life",0],["dicasdefinancas.net",0],["dicasfinanceirasbr.com",0],["expertplay.net",0],["alarmadefraude.com",0],["modescanlator.com",0],["sabornutritivo.com",0],["financasdeouro.com",0],["animeszone.net",0],["megacanaisonline.me",0],["animesonline.nz",0],["los40.com",0],["negociosecommerce.com",[0,9]],["puromarketing.com",[0,9]],["todostartups.com",[0,9]],["pobre.wtf",0],["suaurl.com",[0,11]],["reidoplacar.com",[0,11]],["suaads.com",[0,11]],["link-descarga.site",0],["meutimao.com.br",0],["discografias.net",0],["listas.pro",0],["emperorscan.com",0],["lawebdelprogramador.com",0],["dicasgostosas.com",0],["cerisetoon.com",1],["sinensistoon.com",1],["packsmega.info",2],["peliculas8k.com",3],["southparkstudios.com.br",4],["southpark.lat",4],["acortados.com",[5,6]],["acortalink.me",5],["todoandroid.live",6],["gadgetzona.net",6],["qwanturankpro.com",6],["desbloquea.me",6],["mega-enlace.com",6],["acortame-esto.com",6],["atv.pe",7],["monumental.co.cr",7],["elcomercio.com",7],["antena7.com.do",7],["rqp.com.bo",7],["canal12.com.sv",7],["chapintv.com",7],["vtv.com.hn",7],["tn23.tv",7],["canal13mexico.com",7],["c9n.com.py",7],["repretel.com",7],["redbolivision.tv.bo",7],["independentespanol.com",7],["teleculinaria.pt",8],["nptmedia.tv",10],["costumbresmexico.com",12],["desbloqueador.site",12],["notipostingt.com",13],["tivify.tv",14],["netmovies.com.br",15],["coempregos.com.br",16],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -559,44 +558,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noFetchIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noFetchIf = cloneInto([
-            [ '(', uBOL_noFetchIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noFetchIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noFetchIf;
-}
+uBOL_noFetchIf();
 
 /******************************************************************************/
 

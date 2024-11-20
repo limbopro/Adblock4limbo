@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: fra-0
 
@@ -40,7 +39,7 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/www3\\.doubleclick\\.net|tagger\\.opecloud\\.com|fwmrm\\.net/","emptyArr"],["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico method:HEAD"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
+const argsList = [["/www3\\.doubleclick\\.net|tagger\\.opecloud\\.com|fwmrm\\.net/","emptyArr"],["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
 
 const hostnamesMap = new Map([["rmcbfmplay.com",0],["france.tv",2],["lameteoagricole.net",3],["meteo-grenoble.com",3],["signal-arnaques.com",3],["techno-science.net",3],["animationdigitalnetwork.com",3],["animationdigitalnetwork.fr",3],["animedigitalnetwork.fr",3],["malekal.com",4],["tf1.fr",[5,6]],["tf1info.fr",[5,6]]]);
 
@@ -559,44 +558,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noFetchIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noFetchIf = cloneInto([
-            [ '(', uBOL_noFetchIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noFetchIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noFetchIf;
-}
+uBOL_noFetchIf();
 
 /******************************************************************************/
 

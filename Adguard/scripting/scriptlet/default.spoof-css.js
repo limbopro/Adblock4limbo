@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,7 +39,7 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["[target=\"_blank\"][rel^=\"noopener noreferrer\"]:has(> img[src^=\"/images/artworks/\"]","display","block"]];
+const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["[target=\"_blank\"][rel$=\" noopener noreferrer\"]:has(> img[src^=\"/images/\"]), [target=\"_blank\"][rel^=\"noopener noreferrer\"]:has(> img[src^=\"/images/\"])","display","block"]];
 
 const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["jytechs.in",1],["dev.miuiflash.com",1],["djxmaza.in",1],["thecubexguide.com",1],["download.megaup.net",2],["1001tracklists.com",3]]);
 
@@ -425,44 +424,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_spoofCSS();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_spoofCSS = cloneInto([
-            [ '(', uBOL_spoofCSS.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_spoofCSS);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_spoofCSS;
-}
+uBOL_spoofCSS();
 
 /******************************************************************************/
 

@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -40,11 +39,11 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["contador","*","0.001"],["counter","*","0.001"],[".html(","*","0.001"],["playFunction","*","0.001"],["e(!0)","*","0.001"],["resumeVideoFromAd","*","0.001"],["/atualizar|hided/","*","0.001"],[".delay","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["contador","","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"],["w-content","*","0.001"],["conta"]];
+const argsList = [["contador","*","0.001"],["counter","*","0.001"],[".html(","*","0.001"],["playFunction","*","0.001"],["e(!0)","*","0.001"],["resumeVideoFromAd","*","0.001"],["/atualizar|hided/","*","0.001"],[".delay","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"],["contador","","0.02"],["w-content","*","0.001"],["conta"]];
 
-const hostnamesMap = new Map([["dicasdereceitas.net",0],["dicasgeeks.net",0],["boafinancas.com",1],["sabornutritivo.com",2],["guiacripto.online",3],["mundodeportivo.com",4],["terra.com.br",5],["receitasnatural.com",6],["financastop.online",6],["cryptobr.biz",6],["modsimuladores.com",6],["assistirfilmesdaluna.com",6],["vejaideias.com.br",6],["jogoscompleto.xyz",6],["fazercurriculo.online",7],["usandoapp.com",7],["arnolds.com.br",8],["receitasoncaseiras.online",9],["automotivocarros.com",10],["portecnologia.com",10],["cartaocreditoplatinum.org",10],["criarjogosandroid.com",11],["adrenalinagames.com",11],["nutricaohoje.website",12],["anime-latino.com",14],["peliculasyserieslatino.me",15]]);
+const hostnamesMap = new Map([["dicasdereceitas.net",0],["dicasgeeks.net",0],["boafinancas.com",1],["sabornutritivo.com",2],["guiacripto.online",3],["mundodeportivo.com",4],["terra.com.br",5],["receitasnatural.com",6],["financastop.online",6],["cryptobr.biz",6],["modsimuladores.com",6],["assistirfilmesdaluna.com",6],["vejaideias.com.br",6],["jogoscompleto.xyz",6],["fazercurriculo.online",7],["usandoapp.com",7],["arnolds.com.br",8],["receitasoncaseiras.online",9],["automotivocarros.com",10],["portecnologia.com",10],["cartaocreditoplatinum.org",10],["nutricaohoje.website",11],["adrenalinagames.com",13],["anime-latino.com",14],["peliculasyserieslatino.me",15]]);
 
-const entitiesMap = new Map([["lectulandia",13]]);
+const entitiesMap = new Map([["lectulandia",12]]);
 
 const exceptionsMap = new Map([]);
 
@@ -349,44 +348,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_adjustSetTimeout();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_adjustSetTimeout = cloneInto([
-            [ '(', uBOL_adjustSetTimeout.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_adjustSetTimeout);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_adjustSetTimeout;
-}
+uBOL_adjustSetTimeout();
 
 /******************************************************************************/
 

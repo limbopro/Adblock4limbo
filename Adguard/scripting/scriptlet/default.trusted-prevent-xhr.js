@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,9 +39,9 @@ const uBOL_trustedPreventXhr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["outbrain.com","outbrain"]];
+const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"]];
 
-const hostnamesMap = new Map([["animefire.info",0],["animesonlinecc.us",0],["animesonliner4.com",0],["animesup.info",0],["animeyabu.net",0],["animeyabu.org",0],["anitube.us",0],["anitube.vip",0],["caroloportunidades.com.br",0],["dattebayo-br.com",0],["drstonebr.com",0],["flyanimes.cloud",0],["goanimes.vip",0],["goyabu.us",0],["hinatasoul.com",0],["isekaibrasil.com",0],["meuanime.info",0],["otakuanimess.net",0],["superanimes.in",0]]);
+const hostnamesMap = new Map([["koramaup.com",0],["1cloudfile.com",0],["animefire.info",1],["animesonlinecc.us",1],["animesonliner4.com",1],["animesup.info",1],["animeyabu.net",1],["animeyabu.org",1],["anitube.us",1],["anitube.vip",1],["caroloportunidades.com.br",1],["dattebayo-br.com",1],["drstonebr.com",1],["flyanimes.cloud",1],["goanimes.vip",1],["goyabu.us",1],["hinatasoul.com",1],["isekaibrasil.com",1],["meuanime.info",1],["otakuanimess.net",1],["superanimes.in",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -94,11 +93,11 @@ function preventXhrFn(
                         'content-type': '',
                         'content-length': '',
                     },
+                    url: haystack.url,
                     props: {
                         response: { value: '' },
                         responseText: { value: '' },
                         responseXML: { value: null },
-                        responseURL: { value: haystack.url },
                     },
                 });
                 xhrInstances.set(this, xhrDetails);
@@ -154,6 +153,7 @@ function preventXhrFn(
                 xhrDetails.headers['content-length'] = `${xhrDetails.props.response.value}`.length;
                 Object.defineProperties(xhrDetails.xhr, {
                     readyState: { value: 4 },
+                    responseURL: { value: xhrDetails.url },
                     status: { value: 200 },
                     statusText: { value: 'OK' },
                 });
@@ -163,6 +163,7 @@ function preventXhrFn(
             Promise.resolve(xhrText).then(( ) => xhrDetails).then(details => {
                 Object.defineProperties(details.xhr, {
                     readyState: { value: 1, configurable: true },
+                    responseURL: { value: xhrDetails.url },
                 });
                 safeDispatchEvent(details.xhr, 'readystatechange');
                 return details;
@@ -606,44 +607,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedPreventXhr();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedPreventXhr = cloneInto([
-            [ '(', uBOL_trustedPreventXhr.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedPreventXhr);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedPreventXhr;
-}
+uBOL_trustedPreventXhr();
 
 /******************************************************************************/
 

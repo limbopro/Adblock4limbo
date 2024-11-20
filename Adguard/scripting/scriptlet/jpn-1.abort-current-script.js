@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: jpn-1
 
@@ -40,11 +39,11 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["Array.prototype.join","amazon"],["document.createElement","overview"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"]];
+const argsList = [["onload","catch"],["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["document.createElement","overview"],["document.getElementById","imageUrls"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"]];
 
-const hostnamesMap = new Map([["qa.crefan.jp",0],["blog-and-destroy.com",1],["musenboya.com",2],["kledgeb.blogspot.com",3],["connect.coron.tech",5],["akibablog.blog.jp",6],["blog.livedoor.jp",[6,7,14,17]],["erommd-street.com",8],["ac-illust.com",9],["photo-ac.com",9],["javple.com",10],["engineweb.jp",11],["kenshonavi.com",11],["maidonanews.jp",11],["nkreport.jp",11],["riajo.com",11],["searchkoreanews.jp",11],["shiori-tabi.jp",11],["trafficnews.jp",11],["yougakumap.com",11],["encount.press",11],["realsound.jp",11],["h1g.jp",11],["russianbeauties.jp",12],["agora-web.jp",13],["2chblog.jp",14],["yugioh-starlight.com",14],["kijomatomelog.com",14],["gundamlog.com",14],["doorblog.jp",14],["digital-thread.com",14],["livedoor.blog",14],["blog.jp",14],["majikichi.com",15],["xn--gmq92kd2rm1kx34a.com",16],["momoiroadult.com",18]]);
+const hostnamesMap = new Map([["wiki.yjsnpi.nu",0],["qa.crefan.jp",1],["blog-and-destroy.com",2],["musenboya.com",3],["kledgeb.blogspot.com",4],["connect.coron.tech",6],["akibablog.blog.jp",7],["blog.livedoor.jp",[7,15,18]],["erommd-street.com",8],["twivideo.net",9],["ac-illust.com",10],["photo-ac.com",10],["javple.com",11],["engineweb.jp",12],["kenshonavi.com",12],["maidonanews.jp",12],["nkreport.jp",12],["riajo.com",12],["searchkoreanews.jp",12],["shiori-tabi.jp",12],["trafficnews.jp",12],["yougakumap.com",12],["encount.press",12],["realsound.jp",12],["h1g.jp",12],["russianbeauties.jp",13],["agora-web.jp",14],["2chblog.jp",15],["yugioh-starlight.com",15],["kijomatomelog.com",15],["gundamlog.com",15],["doorblog.jp",15],["digital-thread.com",15],["livedoor.blog",15],["blog.jp",15],["majikichi.com",16],["xn--gmq92kd2rm1kx34a.com",17],["momoiroadult.com",19]]);
 
-const entitiesMap = new Map([["manga1001",4],["javmix",16]]);
+const entitiesMap = new Map([["manga1001",5],["javmix",17]]);
 
 const exceptionsMap = new Map([]);
 
@@ -468,44 +467,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortCurrentScript();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_abortCurrentScript = cloneInto([
-            [ '(', uBOL_abortCurrentScript.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_abortCurrentScript);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_abortCurrentScript;
-}
+uBOL_abortCurrentScript();
 
 /******************************************************************************/
 

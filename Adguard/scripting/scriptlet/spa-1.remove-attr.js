@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -40,9 +39,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href",".leaving-message center > a.btn[onclick^=\"window.open\"][href*=\"/ads.html\"]"],["href","a.elementor-icon[target=\"_blank\"][rel][href]"],["href","a[xhref=\"javascript:void(0)\"][target=\"_blank\"]"]];
+const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href","a.elementor-icon[target=\"_blank\"][rel][href]"],["href","a[xhref=\"javascript:void(0)\"][target=\"_blank\"]"]];
 
-const hostnamesMap = new Map([["megafilmeshd.si",0],["pobreflix.do",0],["redecanais.in",0],["cinelatino.net",0],["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["compartiendofull.net",3],["anime-latino.com",4],["peliculasyserieslatino.me",5]]);
+const hostnamesMap = new Map([["megafilmeshd.si",0],["pobreflix.do",0],["redecanais.in",0],["cinelatino.net",0],["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["anime-latino.com",3],["peliculasyserieslatino.me",4]]);
 
 const entitiesMap = new Map([["assistirfilmeshdgratis",0]]);
 
@@ -422,44 +421,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_removeAttr();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_removeAttr = cloneInto([
-            [ '(', uBOL_removeAttr.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_removeAttr);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_removeAttr;
-}
+uBOL_removeAttr();
 
 /******************************************************************************/
 

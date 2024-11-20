@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -40,9 +39,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adBlockerOn"],["load","banner-ads"],["load","detect-modal"],["","_0x"],["detectAdBlock"],["load","daadb_get_data"],["DOMContentLoaded","document.write"],["","popunder"],["click","loadXMLDoc"],["mousedown","touchend"],["load","/_0x[\\s\\S]*?parentNode[\\s\\S]*?appendChild/"],["DOMContentLoaded","videoTag"]];
+const argsList = [["adBlockerOn"],["load","banner-ads"],["load","detect-modal"],["","_0x"],["detectAdBlock"],["load","daadb_get_data"],["DOMContentLoaded","document.write"],["","popunder"],["click","loadXMLDoc"],["mousedown","touchend"],["load","/_0x[\\s\\S]*?parentNode[\\s\\S]*?appendChild/"],["DOMContentLoaded","videoTag"],["click","window.open"]];
 
-const hostnamesMap = new Map([["canal12.com.sv",0],["depor.com",1],["softwareany.net",2],["xerifetech.com",3],["guideautoweb.com",4],["elquintobeatle.com",5],["empregoestagios.com",5],["satcesc.com",5],["g37.com.br",6],["desenhosanimados.site",7],["descargarhentaimf.xyz",8],["superflix.net",9],["irmaosdotados.net",10],["comandotorrents.org",11],["lapumia.org",11]]);
+const hostnamesMap = new Map([["canal12.com.sv",0],["depor.com",1],["softwareany.net",2],["xerifetech.com",3],["guideautoweb.com",4],["elquintobeatle.com",5],["empregoestagios.com",5],["satcesc.com",5],["g37.com.br",6],["desenhosanimados.site",7],["descargarhentaimf.xyz",8],["superflix.net",9],["irmaosdotados.net",10],["comandotorrents.org",11],["lapumia.org",11],["allcalidad.pro",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -513,44 +512,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_addEventListenerDefuser();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_addEventListenerDefuser = cloneInto([
-            [ '(', uBOL_addEventListenerDefuser.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_addEventListenerDefuser);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_addEventListenerDefuser;
-}
+uBOL_addEventListenerDefuser();
 
 /******************************************************************************/
 

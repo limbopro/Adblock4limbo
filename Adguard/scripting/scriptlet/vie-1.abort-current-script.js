@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: vie-1
 
@@ -40,9 +39,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Promise","detectedAdblock"],["$","popup"],["Number",";break;case"],["document.addEventListener","window.open"],["Object.defineProperty","ADMStorageFileCDN"],["$","open"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["jQuery","popurl"],["eval","$._Eu"],["addEvent","popu"],["jQuery","click_time"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","open"],["jQuery","PopUnder"],["$","window.open"],["eval"],["jQuery","click_ads"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["document.addEventListener","linksToOpen"],["setTimeout","open"],["setTimeout","window.location"]];
+const argsList = [["Promise","detectedAdblock"],["$","popup"],["Number",";break;case"],["document.addEventListener","window.open"],["Object.defineProperty","ADMStorageFileCDN"],["$","open"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["jQuery","popurl"],["eval","$._Eu"],["document.addEventListener","linksToOpen"],["addEvent","popu"],["jQuery","click_time"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","open"],["jQuery","PopUnder"],["$","window.open"],["eval"],["jQuery","click_ads"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["setTimeout","open"],["setTimeout","window.location"]];
 
-const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.de",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["chichnhau.mobi",5],["cunghocvui.com",6],["dualeotruyenbbq.com",[7,41]],["m.blogtruyenmoi.com",7],["freeplayervideo.com",8],["abysscdn.com",8],["player-cdn.com",8],["geoip.redirect-ads.com",8],["playhydrax.com",8],["gocmod.com",9],["goctruyentranhvui3.com",10],["nettruyenww.com",10],["sextop1.blog",10],["hhvsub.com",10],["sayhentai.one",10],["vn.sexviet88.link",[10,41]],["gotphim.com",11],["hh3dhay.life",[12,13,23]],["hh3dhay.in",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",17],["linkneverdie.net",18],["linkneverdie.top",18],["linkneverdie2.com",18],["lrepacks.net",19],["lxmanga.site",20],["p.thoctv.com",21],["phimgichill.net",[22,23]],["hhhay.ink",23],["truyengihotnha.com",[23,41]],["truyengihotnha.net",[23,41]],["tram3d.net",23],["animevietsub.ink",23],["phimmoi.club",24],["motphimww.net",24],["phimmoinay.vip",25],["phimtho.net",26],["phimtuoitho.site",27],["rphang.dog",28],["misskon.com",28],["saigon24.net",29],["sexhd88.live",30],["tiemsachhay.net",31],["tinsoikeo.live",32],["truyen2u.vip",33],["truyen35.shop",34],["truyenqq.uk",35],["viet69.town",35],["truyenqqto.com",36],["truyensextv.com",37],["truyentuan.xyz",38],["ungtycomicsvip.org",[39,41]],["vailonxx.vip",40],["phimlongtieng.com",40],["phimlongtieng.net",40],["viet69.moi",41],["ungtycomicsvip.com",41],["vlxx.mx",41],["yurineko.net",41],["vlxyz.tube",41],["hd.javhay.site",41],["phimsexhay669.pro",41],["cliphot69.art",41],["doctruyen3qw.pro",41],["ihentai.wiki",41],["jav.vc",41],["sex.tuoi69.store",41],["top1sex.me",41],["sexmup18.com",41],["hentaivn.today",41],["streamvl.top",41],["www.buomtv.one",41],["truyenvn.wiki",41],["cdnstream.sbs",41],["javtiful.com",41],["truyengihotdo.net",41],["truyengihotzay.net",41],["truyengihotqua.net",41],["truyengihotqua.com",41],["truyengihotnay.com",41],["quatvn.fit",41],["tenmientruyengi.net",41],["topviet69.vip",41],["phim18hd.sex",41],["sexhdpro.net",41],["demo.14412882.com",41],["cliphot69.lat",41],["hhtq5.vip",41],["sexdiary.club",41],["viet69.sale",42],["vungoctuan.vn",43],["ww1.xemphimhdc.com",44],["www.toptruyenww.pro",45],["xnxx-sex-videos.com",46]]);
+const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.ink",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["chichnhau.mobi",5],["cunghocvui.com",6],["dualeotruyenbbq.com",[7,42]],["m.blogtruyenmoi.com",7],["freeplayervideo.com",8],["abysscdn.com",8],["player-cdn.com",8],["geoip.redirect-ads.com",8],["playhydrax.com",8],["gocmod.com",9],["goctruyentranhvui3.com",10],["nettruyenww.com",10],["sextop1.blog",10],["hhvsub.com",10],["sayhentai.one",10],["vn.sexviet88.link",[10,42]],["gotphim.com",11],["hh3dhay.life",[12,13,23]],["hh3dhay.in",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",17],["linkneverdie.net",18],["linkneverdie.top",18],["linkneverdie2.com",18],["lrepacks.net",19],["lxmanga.store",20],["p.thoctv.com",21],["phimgichill.net",[22,23]],["hhhay.ink",23],["truyengihotnha.com",[23,42]],["truyengihotnha.net",[23,42]],["tram3d.net",23],["animevietsub.cx",23],["phimhdc.us",24],["phimmoi.club",25],["motphimww.net",25],["phimmoinay.info",26],["phimtho.net",27],["phimtuoitho.site",28],["rphang.lat",29],["misskon.com",29],["saigon24.net",30],["sexhd88.club",31],["tiemsachhay.net",32],["tinsoikeo.live",33],["truyen2u.vip",34],["truyen35.shop",35],["truyenqq2.com",36],["viet69.town",36],["truyenqqto.com",37],["truyensextv.com",38],["truyentuan.xyz",39],["ungtycomicsvip.org",[40,42]],["vailonxx.vip",41],["phimlongtieng.com",41],["phimlongtieng.net",41],["viet69.moi",42],["ungtycomicsvip.com",42],["vlxx.mx",42],["yurineko.moe",42],["vlxyz.tube",42],["hd.javhay.site",42],["phimsexhay669.pro",42],["cliphot69.art",42],["doctruyen3qw.pro",42],["ihentai.fit",42],["jav.vc",42],["sex.tuoi69.store",42],["top1sex.me",42],["sexmup18.com",42],["hentaivn.today",42],["streamvl.top",42],["www.buomtv.one",42],["truyenvn.wiki",42],["cdnstream.sbs",42],["javtiful.com",42],["truyengihotdo.net",42],["truyengihotzay.net",42],["truyengihotqua.net",42],["truyengihotqua.com",42],["truyengihotnay.com",42],["quatvn.fit",42],["tenmientruyengi.net",42],["topviet69.vip",42],["phim18hd.sex",42],["sexhdpro.net",42],["demo.14412882.com",42],["cliphot69.lat",42],["hhtq5.vip",42],["sexdiary.club",42],["viet69.sale",43],["vungoctuan.vn",44],["www.toptruyenww.pro",45],["xnxx-sex-videos.com",46]]);
 
 const entitiesMap = new Map([]);
 
@@ -468,44 +467,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortCurrentScript();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_abortCurrentScript = cloneInto([
-            [ '(', uBOL_abortCurrentScript.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_abortCurrentScript);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_abortCurrentScript;
-}
+uBOL_abortCurrentScript();
 
 /******************************************************************************/
 

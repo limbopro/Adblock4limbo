@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: chn-0
 
@@ -42,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["*","nativeConfig"],["*.*","adFeedbackData adType adServedUrls"],["*","list.*.link.ad list.*.link.kicker"],["configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"],["data.template.tabs.*.blocks.*.data.data.videos.*.ad"],["ads"],["ad"],["data.cm_info.ads"]];
 
-const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",[1,2,3]],["iqiyi.com",4],["news.qq.com",5],["www.qq.com",5],["v.qq.com",5],["new.qq.com",5],["qq.com",6],["bilibili.com",7]]);
+const hostnamesMap = new Map([["moorzon.com",0],["msn.cn",[1,2,3]],["iqiyi.com",4],["sports.qq.com",5],["news.qq.com",5],["www.qq.com",5],["v.qq.com",5],["new.qq.com",5],["qq.com",6],["bilibili.com",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -521,44 +520,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_jsonPrune();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_jsonPrune = cloneInto([
-            [ '(', uBOL_jsonPrune.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_jsonPrune);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_jsonPrune;
-}
+uBOL_jsonPrune();
 
 /******************************************************************************/
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         毒奶导航以及实用函数调用合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.11.09
+// @version      0.2024.11.18
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -326,7 +326,7 @@ function csp_remove() {
         if (document.querySelector("button#x4Home") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
             // 如果引用了 Adblock4limbo.function.js 则什么也不做
         } else {
-            let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
+            let button = ['#webChat', '#TESTX', '#TESTY'];
             button.forEach((x) => {
                 if (document.querySelector(x)) { document.querySelector(x).remove() }
             });
@@ -341,7 +341,7 @@ function csp_remove() {
         if (document.querySelector("button#x4Home") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
             // 如果引用了 Adblock4limbo.function.js 则什么也不做
         } else {
-            let button = ['#webChat', '#TESTX', '#TESTY', '#lsj'];
+            let button = ['#webChat', '#TESTX', '#TESTY'];
             button.forEach((x) => {
                 if (document.querySelector(x)) { document.querySelector(x).remove() }
             });
@@ -1460,7 +1460,7 @@ function znsh() {
 
 function nsfwmode(x) { // 是否开启
     if (x == 'false') {
-        setCookie('nsfwmode', 'false');
+        setCookie('nsfwmode', 'false', '7');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (x == 'true') {
         setCookie('nsfwmode', 'true', '114154');
@@ -1469,11 +1469,11 @@ function nsfwmode(x) { // 是否开启
         setCookie('nsfwmode', 'true', '114154');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == 'true') {
-        setCookie('nsfwmode', 'false');
+        setCookie('nsfwmode', 'false', '7');
         visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == '') {
-        setCookie('nsfwmode', 'false');
+        setCookie('nsfwmode', 'false', '7');
         visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     }

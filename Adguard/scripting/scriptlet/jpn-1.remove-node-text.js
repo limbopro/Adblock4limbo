@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: jpn-1
 
@@ -40,9 +39,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["#text","/スポンサードリンク：?|楽天広告：/"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
+const argsList = [["script","/catch.+catch/"],["#text","/スポンサードリンク：?|楽天広告：/"],["script","selectRandomProduct"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","【PR】"],["#text","/スポンサード?リンク/"]];
 
-const hostnamesMap = new Map([["kasegeru.blog.jp",0],["betweenjpandkr.blog",1],["dvdrev.com",2],["fm.sekkaku.net",3],["lifematome.blog",4],["free-avx.jp",5],["kabegami.jpn.org",6],["ideal2ch.livedoor.biz",6],["seikeidouga.blog.jp",6],["tcg-bloglife.com",6],["ch-review.net",6],["gametohkenranbu.sakuraweb.com",6],["jisakuhibi.jp",6],["rank1-media.com",6],["resizer.myct.jp",6]]);
+const hostnamesMap = new Map([["wiki.yjsnpi.nu",0],["kasegeru.blog.jp",1],["blog.livedoor.jp",2],["betweenjpandkr.blog",3],["dvdrev.com",4],["fm.sekkaku.net",5],["lifematome.blog",6],["free-avx.jp",7],["kabegami.jpn.org",8],["ideal2ch.livedoor.biz",8],["seikeidouga.blog.jp",8],["tcg-bloglife.com",8],["ch-review.net",8],["gametohkenranbu.sakuraweb.com",8],["jisakuhibi.jp",8],["rank1-media.com",8],["resizer.myct.jp",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -466,44 +465,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_removeNodeText();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_removeNodeText = cloneInto([
-            [ '(', uBOL_removeNodeText.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_removeNodeText);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_removeNodeText;
-}
+uBOL_removeNodeText();
 
 /******************************************************************************/
 

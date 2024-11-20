@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,9 +39,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["response.ads","","propsToMatch","/streams"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["results","","propsToMatch","deezer.getAudiobreak"],["avails","","propsToMatch","amazonaws.com"],["response.ads","","propsToMatch","/api"],["plugins.adService"]];
+const argsList = [["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots","","propsToMatch","/playlist?"],["playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots","","propsToMatch","/player?"],["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["response.ads","","propsToMatch","/streams"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["data.[-].inner.ctaCopy","","propsToMatch","?page="],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["results","","propsToMatch","deezer.getAudiobreak"],["avails","","propsToMatch","amazonaws.com"],["response.ads","","propsToMatch","/api"],["plugins.adService"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1,2]],["m.youtube.com",2],["music.youtube.com",2],["tv.youtube.com",2],["youtubekids.com",2],["youtube-nocookie.com",2],["www.msn.com",[3,4]],["hulu.com",[5,6]],["crackle.com",7],["play.virginmediatelevision.ie",8],["misskey.io",9],["misskey.oga.ninja",9],["mk.yopo.work",9],["sushi.ski",9],["trpger.us",9],["warpday.net",9],["zadankai.club",9],["zee5.com",10],["target.com",11],["play.geforcenow.com",12],["www.tiktok.com",13],["npo.nl",14],["watch.shout-tv.com",15],["realcanadiansuperstore.ca",16],["tumblr.com",17],["deezer.com",18],["nbc.com",19],["player.pop.co.uk",20],["player.popfun.co.uk",20],["iprima.cz",21]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1,2]],["m.youtube.com",2],["music.youtube.com",2],["tv.youtube.com",2],["youtubekids.com",2],["youtube-nocookie.com",2],["www.msn.com",[3,4]],["hulu.com",[5,6]],["crackle.com",7],["play.virginmediatelevision.ie",8],["misskey.io",9],["misskey.oga.ninja",9],["mk.yopo.work",9],["sushi.ski",9],["trpger.us",9],["warpday.net",9],["zadankai.club",9],["zee5.com",10],["target.com",11],["play.geforcenow.com",12],["www.tiktok.com",13],["npo.nl",14],["watch.shout-tv.com",15],["realcanadiansuperstore.ca",16],["fomo.id",17],["tumblr.com",18],["deezer.com",19],["nbc.com",20],["player.pop.co.uk",21],["player.popfun.co.uk",21],["iprima.cz",22]]);
 
 const entitiesMap = new Map([]);
 
@@ -617,44 +616,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_jsonPruneFetchResponse();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_jsonPruneFetchResponse = cloneInto([
-            [ '(', uBOL_jsonPruneFetchResponse.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_jsonPruneFetchResponse);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_jsonPruneFetchResponse;
-}
+uBOL_jsonPruneFetchResponse();
 
 /******************************************************************************/
 

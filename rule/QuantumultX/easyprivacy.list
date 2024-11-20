@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411100255
+## ! Version: 202411201322
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Nov 2024 02:55 UTC
+## ! Last modified: 20 Nov 2024 13:22 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -130,6 +130,7 @@ DOMAIN-SUFFIX,ed-sys.net, reject
 DOMAIN-SUFFIX,efreecode.com, reject
 DOMAIN-SUFFIX,egoi.site, reject
 DOMAIN-SUFFIX,emailsnow.info, reject
+DOMAIN-SUFFIX,entail-insights.com, reject
 DOMAIN-SUFFIX,enterombacerick.com, reject
 DOMAIN-SUFFIX,enthusiastgaming.net, reject
 DOMAIN-SUFFIX,envato.market, reject
@@ -291,6 +292,7 @@ DOMAIN-SUFFIX,oppuz.com, reject
 DOMAIN-SUFFIX,opti-digital.com, reject
 DOMAIN-SUFFIX,opticksprotection.com, reject
 DOMAIN-SUFFIX,optistats.ovh, reject
+DOMAIN-SUFFIX,organiccdn.io, reject
 DOMAIN-SUFFIX,orhdev.com, reject
 DOMAIN-SUFFIX,ostrichesica.com, reject
 DOMAIN-SUFFIX,p7cloud.net, reject
@@ -2829,6 +2831,7 @@ DOMAIN-SUFFIX,ccexperimentsstatic.oracleoutsourcing.com, reject
 DOMAIN-SUFFIX,cdn-channels-pixel.ex.co, reject
 DOMAIN-SUFFIX,cdn.ravm.tv, reject
 DOMAIN-SUFFIX,cdn.usefathom.com, reject
+DOMAIN-SUFFIX,cf-pixelfront-analytics.widencdn.net, reject
 DOMAIN-SUFFIX,cf.overblog.com, reject
 DOMAIN-SUFFIX,cgicounter.oneandone.co.uk, reject
 DOMAIN-SUFFIX,cgicounter.puretec.de, reject
@@ -2961,7 +2964,6 @@ DOMAIN-SUFFIX,ecomm.events, reject
 DOMAIN-SUFFIX,ecommstats.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,edge.adobedc.net, reject
 DOMAIN-SUFFIX,eel.transistor.fm, reject
-DOMAIN-SUFFIX,ele26126.jscrambler.com, reject
 DOMAIN-SUFFIX,eq.userneeds.com, reject
 DOMAIN-SUFFIX,era.easyvoyage.com, reject
 DOMAIN-SUFFIX,errors.snackly.co, reject
@@ -3284,6 +3286,7 @@ DOMAIN-SUFFIX,privacy.outdoorsg.com, reject
 DOMAIN-SUFFIX,processor.asccommunications.com, reject
 DOMAIN-SUFFIX,prod.ew.srp.navigacloud.com, reject
 DOMAIN-SUFFIX,prod.fennec.atp.fox, reject
+DOMAIN-SUFFIX,prodregistryv2.org, reject
 DOMAIN-SUFFIX,proxy.dzeio.com, reject
 DOMAIN-SUFFIX,proxy.trysavvy.com, reject
 DOMAIN-SUFFIX,pt.crossmediaservices.com, reject
@@ -3405,6 +3408,7 @@ DOMAIN-SUFFIX,stats.inergizedigitalmedia.com, reject
 DOMAIN-SUFFIX,stats.itweb.co.za, reject
 DOMAIN-SUFFIX,stats.kaltura.com, reject
 DOMAIN-SUFFIX,stats.ksearchnet.com, reject
+DOMAIN-SUFFIX,stats.locallabs.com, reject
 DOMAIN-SUFFIX,stats.lotlinx.com, reject
 DOMAIN-SUFFIX,stats.mituyu.com, reject
 DOMAIN-SUFFIX,stats.mpthemes.net, reject
@@ -4159,7 +4163,6 @@ DOMAIN-SUFFIX,analytics.partcommunity.com, reject
 DOMAIN-SUFFIX,analytics.spearly.com, reject
 DOMAIN-SUFFIX,analyzer51.fc2.com, reject
 DOMAIN-SUFFIX,asumi.shinobi.jp, reject
-DOMAIN-SUFFIX,b.karte.io, reject
 DOMAIN-SUFFIX,b.sli-spark.com, reject
 DOMAIN-SUFFIX,b0.yahoo.co.jp, reject
 DOMAIN-SUFFIX,bidder.mediams.mb.softbank.jp, reject
@@ -4183,6 +4186,7 @@ DOMAIN-SUFFIX,log.gs3.goo.ne.jp, reject
 DOMAIN-SUFFIX,log.popin.cc, reject
 DOMAIN-SUFFIX,log000.goo.ne.jp, reject
 DOMAIN-SUFFIX,logger.torimochi-ad.net, reject
+DOMAIN-SUFFIX,logs.chatboost-cv.algoage.co.jp, reject
 DOMAIN-SUFFIX,mail-count.matsui.co.jp, reject
 DOMAIN-SUFFIX,metrics.streaks.jp, reject
 DOMAIN-SUFFIX,omt.shinobi.jp, reject
@@ -4555,6 +4559,7 @@ DOMAIN-SUFFIX,collect.klove.com, reject
 DOMAIN-SUFFIX,collect.reagroupdata.com.au, reject
 DOMAIN-SUFFIX,collect.stepstone.co.uk, reject
 DOMAIN-SUFFIX,collect.thunder-io.com, reject
+DOMAIN-SUFFIX,collector-direct.xhamster.com, reject
 DOMAIN-SUFFIX,collector-px0py5pczn.octopart.com, reject
 DOMAIN-SUFFIX,collector.cint.com, reject
 DOMAIN-SUFFIX,collector.fiverr.com, reject
@@ -4569,6 +4574,7 @@ DOMAIN-SUFFIX,collector.xhamster.com, reject
 DOMAIN-SUFFIX,collector.xhamster.desi, reject
 DOMAIN-SUFFIX,collector.xhamster2.com, reject
 DOMAIN-SUFFIX,collector.xhamster3.com, reject
+DOMAIN-SUFFIX,collector.xhamsterporno.mx, reject
 DOMAIN-SUFFIX,colvk.viki.io, reject
 DOMAIN-SUFFIX,confiant.msn.com, reject
 DOMAIN-SUFFIX,console-telemetry.oci.oraclecloud.com, reject
@@ -4637,6 +4643,7 @@ DOMAIN-SUFFIX,events-prod.autolist.com, reject
 DOMAIN-SUFFIX,events-tracker.deliveroo.net, reject
 DOMAIN-SUFFIX,events.api.godaddy.com, reject
 DOMAIN-SUFFIX,events.baselime.io, reject
+DOMAIN-SUFFIX,events.character.ai, reject
 DOMAIN-SUFFIX,events.clips4sale.com, reject
 DOMAIN-SUFFIX,events.framer.com, reject
 DOMAIN-SUFFIX,events.mercadolibre.com, reject
@@ -4706,6 +4713,7 @@ DOMAIN-SUFFIX,impressions.svc.abillion.com, reject
 DOMAIN-SUFFIX,improve.tempest.com, reject
 DOMAIN-SUFFIX,in.brilliant.org, reject
 DOMAIN-SUFFIX,indmetric.rediff.com, reject
+DOMAIN-SUFFIX,ingest.coincodex.com, reject
 DOMAIN-SUFFIX,ingest.make.rvohealth.com, reject
 DOMAIN-SUFFIX,ingress.linktr.ee, reject
 DOMAIN-SUFFIX,insights-mxp-cdn.coursecareers.com, reject
@@ -4798,6 +4806,7 @@ DOMAIN-SUFFIX,p.hentaiforce.net, reject
 DOMAIN-SUFFIX,p.minds.com, reject
 DOMAIN-SUFFIX,pac.thescottishsun.co.uk, reject
 DOMAIN-SUFFIX,pac.thesun.co.uk, reject
+DOMAIN-SUFFIX,pac.thetimes.com, reject
 DOMAIN-SUFFIX,papi.stylar.ai, reject
 DOMAIN-SUFFIX,pappagallu.onefootball.com, reject
 DOMAIN-SUFFIX,pcp.coupert.com, reject
@@ -41296,6 +41305,7 @@ DOMAIN-SUFFIX,beacon.radiko.jp, reject
 DOMAIN-SUFFIX,beacon.watch.impress.co.jp, reject
 DOMAIN-SUFFIX,beat.yourtv.jp, reject
 DOMAIN-SUFFIX,count.upc.rakuten.co.jp, reject
+DOMAIN-SUFFIX,ctr.po-kaki-to.com, reject
 DOMAIN-SUFFIX,d-log.asahi.co.jp, reject
 DOMAIN-SUFFIX,d-log.tv-asahi.co.jp, reject
 DOMAIN-SUFFIX,d.tv-asahi.co.jp, reject
@@ -41307,6 +41317,7 @@ DOMAIN-SUFFIX,j1.ax.xrea.com, reject
 DOMAIN-SUFFIX,ln.ameba.jp, reject
 DOMAIN-SUFFIX,log-lb.skyperfectv.co.jp, reject
 DOMAIN-SUFFIX,log.recommend.nicovideo.jp, reject
+DOMAIN-SUFFIX,logcollector.note.com, reject
 DOMAIN-SUFFIX,logql.yahoo.co.jp, reject
 DOMAIN-SUFFIX,measure.ameblo.jp, reject
 DOMAIN-SUFFIX,pvtag.yahoo.co.jp, reject
@@ -41320,6 +41331,7 @@ DOMAIN-SUFFIX,rtm-tracking.zozo.jp, reject
 DOMAIN-SUFFIX,stats.nhk.or.jp, reject
 DOMAIN-SUFFIX,sy.amebame.com, reject
 DOMAIN-SUFFIX,sy.ameblo.jp, reject
+DOMAIN-SUFFIX,t.rentio.jp, reject
 DOMAIN-SUFFIX,t.syosetu.org, reject
 DOMAIN-SUFFIX,temp.twicomi.com, reject
 DOMAIN-SUFFIX,track.buyma.com, reject

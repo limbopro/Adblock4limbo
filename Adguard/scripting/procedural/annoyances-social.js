@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".execphpwidget\",\"tasks\":[[\"has-text\",\"FREE UPDATES!\"]]}"],["{\"selector\":\".widget-title\",\"tasks\":[[\"has-text\",\"Share this page!\"]]}"]];
+const argsList = [["{\"selector\":\".elementor-button-wrapper\",\"tasks\":[[\"has-text\",\"Social Media\"]]}"],["{\"selector\":\".execphpwidget\",\"tasks\":[[\"has-text\",\"FREE UPDATES!\"]]}"],["{\"selector\":\".widget-title\",\"tasks\":[[\"has-text\",\"Share this page!\"]]}"],["{\"selector\":\".promo-card-muted\",\"tasks\":[[\"has-text\",\"RSS feed\"]]}"],["{\"selector\":\".justify-between.items-center\",\"tasks\":[[\"has-text\",\"Share:\"]]}"]];
 
-const hostnamesMap = new Map([["openculture.com",0],["ruwix.com",1]]);
+const hostnamesMap = new Map([["newskarnataka.com",0],["openculture.com",1],["ruwix.com",2],["newsroom.ucla.edu",3],["neon.tech",4]]);
 
 const entitiesMap = new Map(undefined);
 

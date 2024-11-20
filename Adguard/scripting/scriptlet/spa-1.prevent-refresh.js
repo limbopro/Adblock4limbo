@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -42,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["cl1ca.com",0],["4br.me",0],["fir3.net",0]]);
+const hostnamesMap = new Map([["enrt.eu",0],["dev.encurta.app",0],["fir3.net",0],["ent4.net",0],["cl1ca.com",0],["4br.me",0]]);
 
 const entitiesMap = new Map([["seulink",0],["encurtalink",0]]);
 
@@ -347,44 +346,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_preventRefresh();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_preventRefresh = cloneInto([
-            [ '(', uBOL_preventRefresh.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_preventRefresh);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_preventRefresh;
-}
+uBOL_preventRefresh();
 
 /******************************************************************************/
 

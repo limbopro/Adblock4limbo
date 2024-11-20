@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: jpn-1
 
@@ -40,7 +39,7 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["load","delayCheckAB"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["load","/interstitialAd|videoInstArea/"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["DOMContentLoaded","Fixed"]];
+const argsList = [["load","delayCheckAB"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["load","videoInstArea"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["DOMContentLoaded","Fixed"]];
 
 const hostnamesMap = new Map([["bm.best-hit.tv",0],["jukenbbs.com",1],["blog.housinkai.com",2],["kakenhi.net",2],["seesaa.net",2],["blog-and-destroy.com",3],["coolpan.net",4],["twivideo.net",5],["twidouga.net",6],["anacap.doorblog.jp",7],["anianierosuki.work",8],["uraaka-joshi.com",9],["tokyomotion.net",10],["ero-video.net",11],["negisoku.com",12]]);
 
@@ -513,44 +512,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_addEventListenerDefuser();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_addEventListenerDefuser = cloneInto([
-            [ '(', uBOL_addEventListenerDefuser.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_addEventListenerDefuser);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_addEventListenerDefuser;
-}
+uBOL_addEventListenerDefuser();
 
 /******************************************************************************/
 

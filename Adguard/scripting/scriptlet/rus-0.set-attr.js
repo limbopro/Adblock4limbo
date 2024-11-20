@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: rus-0
 
@@ -40,11 +39,11 @@ const uBOL_setAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".media > .andropov-video > video","controls","true"],[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","16"]];
+const argsList = [[".media > .andropov-video > video","controls","true"],[".owl-item > a > img","src","[data-src]"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","16"]];
 
-const hostnamesMap = new Map([["dtf.ru",0],["vc.ru",0],["eneyida.tv",1],["overclockers.ru",2],["3dnews.kz",3],["3dnews.ru",3]]);
+const hostnamesMap = new Map([["dtf.ru",0],["vc.ru",0],["eneyida.tv",1],["overclockers.ru",2],["joyreactor.cc",3],["reactor.cc",3],["3dnews.kz",4],["3dnews.ru",4]]);
 
-const entitiesMap = new Map([["howdyho",4]]);
+const entitiesMap = new Map([["howdyho",5]]);
 
 const exceptionsMap = new Map([]);
 
@@ -441,44 +440,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_setAttr();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_setAttr = cloneInto([
-            [ '(', uBOL_setAttr.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_setAttr);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_setAttr;
-}
+uBOL_setAttr();
 
 /******************************************************************************/
 

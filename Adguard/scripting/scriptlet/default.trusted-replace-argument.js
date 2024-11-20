@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,9 +39,9 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","json:\"body\"","condition",".ad-zone"],["String.prototype.includes","0","''","condition","NAVER"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"],["String.prototype.includes","0","undefined","condition","/^checkout$/"],["history.replaceState","2","''","condition","?orgRef"],["document.querySelector","0","{\"value\": \".ad-placement-interstitial\"}","condition",".easyAdsBox"],["document.querySelector","0","json:\"div[align='center']\"","condition",".adsbygoogle.adsbygoogle-noablate"]];
+const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","json:\"body\"","condition",".ad-zone"],["document.querySelector","0","json:\"div[align='center']\"","condition",".adsbygoogle.adsbygoogle-noablate"],["String.prototype.includes","0","''","condition","NAVER"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"],["Array.prototype.find","0","undefined","condition","affinity-qi"],["String.prototype.includes","0","undefined","condition","/^checkout$/"],["history.replaceState","2","''","condition","?orgRef"],["document.querySelector","0","{\"value\": \".ad-placement-interstitial\"}","condition",".easyAdsBox"]];
 
-const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["scimagojr.com",2],["dogdrip.net",3],["infinityfree.com",3],["smsonline.cloud",3],["ygosu.com",4],["bamgosu.site",4],["loawa.com",5],["autosport.com",6],["motorsport.com",6],["motorsport.uol.com.br",6],["energiasolare100.it",7],["lundracing.com",7],["red17.co.uk",7],["workplace-products.co.uk",7],["www.lenovo.com",8],["purepeople.com",9],["gecmisi.com.tr",10]]);
+const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["scimagojr.com",2],["gecmisi.com.tr",3],["dogdrip.net",4],["infinityfree.com",4],["smsonline.cloud",4],["ygosu.com",5],["bamgosu.site",5],["loawa.com",6],["autosport.com",7],["motorsport.com",7],["motorsport.uol.com.br",7],["www.startpage.com",8],["energiasolare100.it",9],["lundracing.com",9],["red17.co.uk",9],["workplace-products.co.uk",9],["www.lenovo.com",10],["purepeople.com",11]]);
 
 const entitiesMap = new Map([]);
 
@@ -486,44 +485,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedReplaceArgument();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedReplaceArgument = cloneInto([
-            [ '(', uBOL_trustedReplaceArgument.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedReplaceArgument);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedReplaceArgument;
-}
+uBOL_trustedReplaceArgument();
 
 /******************************************************************************/
 

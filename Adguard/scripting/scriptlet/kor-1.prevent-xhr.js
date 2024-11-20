@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: kor-1
 
@@ -94,11 +93,11 @@ function preventXhrFn(
                         'content-type': '',
                         'content-length': '',
                     },
+                    url: haystack.url,
                     props: {
                         response: { value: '' },
                         responseText: { value: '' },
                         responseXML: { value: null },
-                        responseURL: { value: haystack.url },
                     },
                 });
                 xhrInstances.set(this, xhrDetails);
@@ -154,6 +153,7 @@ function preventXhrFn(
                 xhrDetails.headers['content-length'] = `${xhrDetails.props.response.value}`.length;
                 Object.defineProperties(xhrDetails.xhr, {
                     readyState: { value: 4 },
+                    responseURL: { value: xhrDetails.url },
                     status: { value: 200 },
                     statusText: { value: 'OK' },
                 });
@@ -163,6 +163,7 @@ function preventXhrFn(
             Promise.resolve(xhrText).then(( ) => xhrDetails).then(details => {
                 Object.defineProperties(details.xhr, {
                     readyState: { value: 1, configurable: true },
+                    responseURL: { value: xhrDetails.url },
                 });
                 safeDispatchEvent(details.xhr, 'readystatechange');
                 return details;
@@ -606,44 +607,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_preventXhr();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_preventXhr = cloneInto([
-            [ '(', uBOL_preventXhr.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_preventXhr);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_preventXhr;
-}
+uBOL_preventXhr();
 
 /******************************************************************************/
 

@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: spa-1
 
@@ -40,9 +39,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["document.createElement","adsbygoogle.js"],["fetch","/alert|bloqueador|\\.catch|\\.type/"],["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["document.addEventListener","window.open"],["String.prototype.concat","popup"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""],["document.addEventListener","window.location;"]];
+const argsList = [["document.createElement","adsbygoogle.js"],["fetch","/alert|bloqueador|\\.catch|\\.type/"],["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["document.addEventListener","window.open"],["String.prototype.concat","popup"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""],["document.addEventListener","showPopup"],["document.addEventListener","window.location;"]];
 
-const hostnamesMap = new Map([["gamesperu2021.blogspot.com",[0,18]],["playertv.org",0],["tvembed.net",0],["tv0800.zip",0],["luratoons.com",1],["lura-toons.com",1],["gamesteelstudioplus.blogspot.com",2],["gamesteelstudio.blogspot.com",2],["infohojeonline.blogspot.com",2],["dicasdevalor.net",3],["animeszone.net",4],["canalnatelinhaonline.blogspot.com",5],["hinatasoul.com",6],["buscalinks.xyz",7],["gamesviatorrent.top",7],["inuyashadowns.com.br",8],["link.baixedetudo.net.br",8],["oliberal.com",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,24,25]],["csrevo.com",11],["guianoticiario.net",12],["oceans14.com.br",13],["illamadas.es",14],["audiotools.in",15],["ecartelera.com",16],["animeshouse.net",17],["pelismx.lat",18],["packsmega.info",19],["futbollibre.pe",20],["embedder.net",20],["playpaste.com",[21,22]],["pasfox.com",[22,29]],["directvxx.com",23],["tiohentai.xyz",26],["palaygo.site",27],["seireshd.com",30],["hentai-id.tv",31],["todo-anime.net",32]]);
+const hostnamesMap = new Map([["gamesperu2021.blogspot.com",[0,18]],["playertv.org",0],["tvembed.net",0],["tv0800.zip",0],["luratoons.com",1],["lura-toons.com",1],["gamesteelstudioplus.blogspot.com",2],["gamesteelstudio.blogspot.com",2],["infohojeonline.blogspot.com",2],["dicasdevalor.net",3],["animeszone.net",4],["canalnatelinhaonline.blogspot.com",5],["hinatasoul.com",6],["buscalinks.xyz",7],["gamesviatorrent.top",7],["inuyashadowns.com.br",8],["link.baixedetudo.net.br",8],["oliberal.com",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,24,25]],["csrevo.com",11],["guianoticiario.net",12],["oceans14.com.br",13],["illamadas.es",14],["audiotools.in",15],["ecartelera.com",16],["animeshouse.net",17],["pelismx.lat",18],["packsmega.info",19],["futbollibre.pe",20],["embedder.net",20],["playpaste.com",[21,22]],["pasfox.com",[22,29]],["directvxx.com",23],["tiohentai.xyz",26],["palaygo.site",27],["seireshd.com",30],["hentai-id.tv",31],["toonscrab.com",32],["todo-anime.net",33]]);
 
 const entitiesMap = new Map([["movidy",28]]);
 
@@ -468,44 +467,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_abortCurrentScript();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_abortCurrentScript = cloneInto([
-            [ '(', uBOL_abortCurrentScript.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_abortCurrentScript);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_abortCurrentScript;
-}
+uBOL_abortCurrentScript();
 
 /******************************************************************************/
 

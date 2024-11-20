@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: jpn-1
 
@@ -40,9 +39,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["id","#div-gpt-ad-sidebottom"],["id","#div-gpt-ad-footer"],["id","#div-gpt-ad-pagebottom"],["id","#div-gpt-ad-relatedbottom-1"],["class","[id][role] > [id] > [class] > section"],["href",".cps-post-main > a[href^=\"https://www.amazon.co.jp\"]"],["data-popup-url"],["onclick","span > a[onclick]"]];
+const argsList = [["style",".js-reward-target[style]"],["id","#div-gpt-ad-sidebottom"],["id","#div-gpt-ad-footer"],["id","#div-gpt-ad-pagebottom"],["id","#div-gpt-ad-relatedbottom-1"],["class","[id][role] > [id] > [class] > section"],["href",".cps-post-main > a[href^=\"https://www.amazon.co.jp\"]"],["data-popup-url"],["onclick","span > a[onclick]"]];
 
-const hostnamesMap = new Map([["rocketnews24.com",[0,1,2,3]],["youpouch.com",[0,1,2,3]],["coron.tech",4],["lifematome.blog",5],["wav.tv",6],["380cc.cc",7]]);
+const hostnamesMap = new Map([["jprime.jp",0],["rocketnews24.com",[1,2,3,4]],["youpouch.com",[1,2,3,4]],["coron.tech",5],["lifematome.blog",6],["wav.tv",7],["380cc.cc",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -422,44 +421,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_removeAttr();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_removeAttr = cloneInto([
-            [ '(', uBOL_removeAttr.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_removeAttr);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_removeAttr;
-}
+uBOL_removeAttr();
 
 /******************************************************************************/
 

@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: annoyances-overlays
 
@@ -83,13 +82,10 @@ function trustedSuppressNativeMethod(
             safe.uboLog(logPrefix, `Arguments:\n${callArgs.join('\n')}`);
             return context.reflect();
         }
-        if ( callArgs.length < signatureArgs.length ) {
-            return context.reflect();
-        }
         for ( let i = 0; i < signatureArgs.length; i++ ) {
             const signatureArg = signatureArgs[i];
             if ( signatureArg === undefined ) { continue; }
-            const targetArg = callArgs[i];
+            const targetArg = i < callArgs.length ? callArgs[i] : undefined;
             if ( signatureArg.type === 'exact' ) {
                 if ( targetArg !== signatureArg.value ) {
                     return context.reflect();
@@ -100,6 +96,10 @@ function trustedSuppressNativeMethod(
                     return context.reflect();
                 }
             }
+        }
+        if ( how === 'debug' ) {
+            debugger; // eslint-disable-line no-debugger
+            return context.reflect();
         }
         safe.uboLog(logPrefix, `Suppressed:\n${callArgs.join('\n')}`);
         if ( how === 'abort' ) {
@@ -460,44 +460,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedSuppressNativeMethod();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedSuppressNativeMethod = cloneInto([
-            [ '(', uBOL_trustedSuppressNativeMethod.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedSuppressNativeMethod);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedSuppressNativeMethod;
-}
+uBOL_trustedSuppressNativeMethod();
 
 /******************************************************************************/
 

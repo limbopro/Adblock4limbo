@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,9 +39,9 @@ const uBOL_trustedReplaceOutboundText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["atob","/^.*$/","","condition","translate.goog"]];
+const argsList = [["Array.prototype.shift","/^.+$/s","","condition","https"],["atob","window.matchMedia('(display-mode: standalone)').matches","true"]];
 
-const hostnamesMap = new Map([["dogdrip.net",0]]);
+const hostnamesMap = new Map([["abysscdn.com",0],["hihihaha1.xyz",0],["playhydrax.com",0],["infinityscans.xyz",1],["infinityscans.net",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -65,8 +64,8 @@ function trustedReplaceOutboundText(
         : rawReplacement;
     const extraArgs = safe.getExtraArgs(args);
     const reCondition = safe.patternToRegex(extraArgs.condition || '');
-    const reflector = proxyApplyFn(propChain, function(...args) {
-        const encodedTextBefore = reflector(...args);
+    proxyApplyFn(propChain, function(context) {
+        const encodedTextBefore = context.reflect();
         let textBefore = encodedTextBefore;
         if ( extraArgs.encoding === 'base64' ) {
             try { textBefore = self.atob(encodedTextBefore); }
@@ -107,26 +106,70 @@ function proxyApplyFn(
     }
     const fn = context[prop];
     if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
-    if ( fn.prototype && fn.prototype.constructor === fn ) {
-        context[prop] = new Proxy(fn, {
-            construct: handler,
-            get(target, prop, receiver) {
-                if ( prop === 'toString' ) { return toString; }
-                return Reflect.get(target, prop, receiver);
-            },
-        });
-        return (...args) => Reflect.construct(...args);
-    }
-    context[prop] = new Proxy(fn, {
-        apply: handler,
-        get(target, prop, receiver) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop, receiver);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
         },
-    });
-    return (...args) => Reflect.apply(...args);
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -185,7 +228,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
@@ -261,36 +304,58 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
-    safe.sendToLogger = (type, ...args) => {
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
         }
-        bcBuffer.push({ type, text });
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 
@@ -378,44 +443,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedReplaceOutboundText();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedReplaceOutboundText = cloneInto([
-            [ '(', uBOL_trustedReplaceOutboundText.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedReplaceOutboundText);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedReplaceOutboundText;
-}
+uBOL_trustedReplaceOutboundText();
 
 /******************************************************************************/
 

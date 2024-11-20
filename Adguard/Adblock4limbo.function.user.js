@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         毒奶导航以及实用函数调用合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.11.18
+// @version      0.2024.11.20
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -170,7 +170,7 @@ function hidden_adblock4limbo() {
                 x4Home_button('0');
                 click_dont_move_and_click = --click_dont_move_and_click;
                 if (click_dont_move_and_click < 300) {
-                    znsh() ;// 暂时开启宅男守护模式
+                    znsh();// 暂时开启宅男守护模式
                 }
                 ////console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
             }
@@ -391,7 +391,7 @@ function navigation4limbo_body_pre() {
         target="_blank">联系博主TG</a></li>\
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="hidedaohang">隐藏导航按钮</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="resetting">重置导航设置</button></li>\
-        <li class="li_global"><button style="border-radius:4px; background:#5165e4; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmode_switch">成人保护模式(ON)</button></li>\
+        <li class="li_global"><button style="border-radius:4px; background:#5165e4; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="nsfwmode_switch">成人保护模式</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #171212 !important;" class="a_global red"  id="lock_screen">锁屏! 🔐</button></li>\
         <li class="li_global"><a href="https://limbopro.com/archives/12904.html#%E5%AF%BC%E8%88%AA%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5%EF%BC%88%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E9%9A%90%E8%97%8F/%E7%A6%81%E7%94%A8%EF%BC%89" target="_blank" class="a_global" id="jiaocheng">导航使用教程</a></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues?q=is%3Aissue+is%3Aclosed" \
@@ -1448,13 +1448,14 @@ function znsh_unlock(x) {
 }
 
 function znsh() {
-    //var url = document.location.href;
+    var url = document.location.href;
     //console.log(url)
     if (nsfw_regex.test(document.location.href)) {
         visibility();
-        //console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
+        console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
         visibility_switch(); //
     }
+
 }
 
 function nsfwmode(x) { // 是否开启
@@ -1481,18 +1482,19 @@ function nsfwmode(x) { // 是否开启
 nsfwmode_check();
 
 function nsfwmode_check() {
-    if (getCookie('nsfwmode') !== 'false' && nsfw_regex.test(document.location.href)) {
-        znsh() ;// 暂时开启宅男守护模式
+    if (getCookie('nsfwmode') == 'true' && nsfw_regex.test(document.location.href)) {
+        znsh();// 暂时开启宅男守护模式
         if (document.getElementById('nsfwmode_switch')) {
             znsh();// 暂时开启宅男守护模式
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
             document.getElementById('nsfwmode_switch').style.background = 'var(--red) !important';
-            
+
             setTimeout(() => {
                 body_build('false');
             }, 1200)
         }
-    } else if (getCookie('nsfwmode') !== 'true' && nsfw_regex.test(document.location.href)) {
+
+    } else if (getCookie('nsfwmode') == 'false' && nsfw_regex.test(document.location.href)) {
         if (document.getElementById('nsfwmode_switch')) {
             znsh_unlock();
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
@@ -1501,11 +1503,21 @@ function nsfwmode_check() {
                 body_build('false');
             }, 1200)
         }
-    } else {
+
+    } else if (getCookie('nsfwmode') == '' && nsfw_regex.test(document.location.href)) {
         if (document.getElementById('nsfwmode_switch')) {
-            document.getElementById('nsfwmode_switch').textContent = '非成人网站!';
+            document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
+            document.getElementById('nsfwmode_switch').style.background = 'var(--success) !important';
+            // 默认禁用成人保护模式，需用户手动开启
+            setCookie('nsfwmode', 'false', '114154');
+            setTimeout(() => { nsfwmode_check() }, 100)
+        } else {
+            if (document.getElementById('nsfwmode_switch')) {
+                document.getElementById('nsfwmode_switch').textContent = '非成人网站!';
+            }
         }
     }
+
 }
 
 // 设置 cookie 饼

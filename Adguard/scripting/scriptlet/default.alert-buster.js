@@ -43,7 +43,7 @@ const argsList = [[]];
 
 const hostnamesMap = new Map([["66ccff.work",0]]);
 
-const entitiesMap = new Map([["streamingcommunity",0]]);
+const entitiesMap = new Map([]);
 
 const exceptionsMap = new Map([]);
 

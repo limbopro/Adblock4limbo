@@ -9,10 +9,10 @@
 ## Peter Lowe’s Ad and tracking server list: 3530 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 30084 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
 ## EasyPrivacy: 41506 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 5473 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## EasyList China: 5475 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 81722 Domains/IP/Others (非去重统计)
-## Last updated at 23/11月/2024/10:28
+## 以上共计: 81724 Domains/IP/Others (非去重统计)
+## Last updated at 23/11月/2024/11:40
 ## */
 
 

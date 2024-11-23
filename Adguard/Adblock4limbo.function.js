@@ -1448,14 +1448,16 @@ function znsh_unlock(x) {
 }
 
 function znsh() {
-    var url = document.location.href;
-    //console.log(url)
-    if (nsfw_regex.test(document.location.href)) {
-        visibility();
-        console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
-        visibility_switch(); //
+    console.log("是否已开启成人🔞保护模式：" + getCookie('adultModel'))
+    if (getCookie('adultModel') = 'true') {
+        var url = document.location.href;
+        //console.log(url)
+        if (nsfw_regex.test(document.location.href)) {
+            visibility();
+            console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
+            visibility_switch(); //
+        }
     }
-
 }
 
 function nsfwmode(x) { // 是否开启
@@ -1487,6 +1489,7 @@ function nsfwmode_check() {
         if (document.getElementById('nsfwmode_switch')) {
             znsh();// 暂时开启宅男守护模式
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
+            console.log('该网站为成人🔞网站！现已开启成人保护模式！')
             // document.getElementById('nsfwmode_switch').style.background = 'var(--red) !important';
             document.getElementById('nsfwmode_switch').style.background = 'red';
             setTimeout(() => {
@@ -1498,6 +1501,7 @@ function nsfwmode_check() {
         if (document.getElementById('nsfwmode_switch')) {
             znsh_unlock();
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
+            console.log('该网站为成人🔞网站！现已（手动）关闭成人保护模式！')
             // document.getElementById('nsfwmode_switch').style.background = 'var(--success) !important';
             document.getElementById('nsfwmode_switch').style.background = 'green';
             setTimeout(() => {
@@ -1518,6 +1522,7 @@ function nsfwmode_check() {
         if (document.getElementById('nsfwmode_switch')) {
             document.getElementById('nsfwmode_switch').textContent = '非成人网站!';
             document.getElementById('nsfwmode_switch').style.background = 'green';
+            console.log('该网站非成人🔞网站！')
         }
     }
 
@@ -1525,6 +1530,7 @@ function nsfwmode_check() {
 
 // 设置 cookie 饼
 function setCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
+
 function getCookie(cname) {
     var name = cname + "="; var ca = document.cookie.split(';'); for (var i = 0; i < ca.length; i++) { var c = ca[i].trim(); if (c.indexOf(name) == 0) return c.substring(name.length, c.length); }
     return "";
@@ -2292,6 +2298,5 @@ function pAdd2Parent(parentsSelector, textContent) { // 预设样式 P 元素
     }
     otherSearch()
 }
-
 
 

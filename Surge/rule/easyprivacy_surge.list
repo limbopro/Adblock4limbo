@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411230125
+## ! Version: 202411230540
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Nov 2024 01:25 UTC
+## ! Last modified: 23 Nov 2024 05:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2079,6 +2079,7 @@ DOMAIN-SUFFIX,shakesuggestion.com
 DOMAIN-SUFFIX,shakyseat.com
 DOMAIN-SUFFIX,shakysurprise.com
 DOMAIN-SUFFIX,shakytaste.com
+DOMAIN-SUFFIX,shallowart.com
 DOMAIN-SUFFIX,shallowblade.com
 DOMAIN-SUFFIX,shallowsmile.com
 DOMAIN-SUFFIX,shamerain.com

@@ -196,33 +196,22 @@
 */
 
 
-function defultSetting(daohang_value, adultModel_value) {
-    if (daohang_value == 'true' && adultModel_value == 'true') {
+// 是否（默认）开启导航🧭按钮🔘
+// 如【不需要开启导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
+settingCookie('navigation', 'true', '114154');
+console.log('是否（默认）开启导航🧭按钮🔘：' + getCookie_('navigation'))
 
-        // 是否（默认）开启导航🧭按钮🔘
-        // 如【不需要开启导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
-        settingCookie('daohang', 'true', '114154');
-
-        // 是否（默认）开启成人🔞网站保护模式
-        // 如【不需要开启成人网站保护模式】 可将 cookie 的值从 true 改为 false
-        settingCookie('adultModel', 'true', '114154');
-
-    } else {
-        settingCookie('daohang', daohang_value, '114154');
-        settingCookie('adultModel', adultModel_value, '114154');
-
-    }
-
-    // 是否开启导航🧭按钮🔘
-    // 如【不需要开启导航🧭按钮🔘】可直接将 daohang_build() 进行注释
-    // //daohang_build() 就像这样 
-
-    daohang_build();
-    console.log('是否（默认）开启导航🧭按钮🔘：' + daohang_value)
-    console.log('是否（默认）开启成人🔞网站保护模式：' + adultModel_value)
+// 是否（默认）开启成人🔞网站保护模式
+// 如【不需要开启成人网站保护模式】 可将 cookie 的值从 true 改为 false
+if (getCookie_('nsfwmode') == '') {
+    settingCookie('nsfwmode', 'false', '114154');
+    console.log('是否（默认）开启成人🔞网站保护模式：' + getCookie_('nsfwmode'))
 }
 
-defultSetting('true', 'true'); // 为了 iOS qx/surge/loon 等代理软件可快速修改本 user.js 特设此项
+// 是否开启导航🧭按钮🔘
+// 如【不需要开启导航🧭按钮🔘】可直接将 daohang_build() 进行注释
+// //daohang_build() 就像这样 
+daohang_build();
 
 // 一些常量
 /* Start */
@@ -728,7 +717,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     ele_dynamicAppend("div.container-xl", "onclick", "隐藏公告", "position:inherit; right:92px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;", "", "bdys", 1, "button");
                     addListenerById("bdys", () => { notice_hidden("div.col-12") }, 2000);
                 }
-                if (getCookie("hidden") == 1) {
+                if (getCookie_("hidden") == 1) {
                     notice_hidden("div.col-12");
                 }
             }
@@ -1428,25 +1417,23 @@ function uBlockOrigin_add() {
 /* End */
 
 function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建;
-    if (getCookie('daohang') == 'true') {
-        var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
-        //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
-        if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {
-            console.log('CSP + PC, SO DO NOTING.')
-        } else if (window.location.href.toLowerCase().indexOf('91porn.') !== -1) {
-            console.log('SO DO NOTING.')
-        } else {
-            let daohang = setInterval(() => {
-                if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
-                    third_party_fileX("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
-                    console.log('functionx.js 首次引用成功，等待生效...')
-                    clearInterval(daohang);
-                } else if (document.querySelectorAll("button#x4Home").length >= 1) {
-                    clearInterval(daohang);
-                    console.log('functionx.js 引用成功，等待生效...')
-                }
-            }, 500);
-        }
+    var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
+    //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
+    if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {
+        console.log('CSP + PC, SO DO NOTING.')
+    } else if (window.location.href.toLowerCase().indexOf('91porn.') !== -1) {
+        console.log('SO DO NOTING.')
+    } else {
+        let daohang = setInterval(() => {
+            if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
+                third_party_fileX("script", imax.js.functionx, "body"); // js 外部引用 标签 <script>
+                console.log('functionx.js 首次引用成功，等待生效...')
+                clearInterval(daohang);
+            } else if (document.querySelectorAll("button#x4Home").length >= 1) {
+                clearInterval(daohang);
+                console.log('functionx.js 引用成功，等待生效...')
+            }
+        }, 500);
     }
 }
 
@@ -2009,7 +1996,7 @@ function tag_ads_traversal(selector, i) {
 }
 
 // Get Cookies 获取指定命名的cookie 的值
-function getCookie(cname) {
+function getCookie_(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {

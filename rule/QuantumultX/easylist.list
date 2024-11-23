@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202411230125
+## ! Version: 202411230540
 ## ! Title: EasyList
-## ! Last modified: 23 Nov 2024 01:25 UTC
+## ! Last modified: 23 Nov 2024 05:40 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -6263,6 +6263,7 @@ DOMAIN-SUFFIX,cosysuppressed.com, reject
 DOMAIN-SUFFIX,cotchaug.com, reject
 DOMAIN-SUFFIX,coticoffee.com, reject
 DOMAIN-SUFFIX,cottersguayabi.click, reject
+DOMAIN-SUFFIX,cottoidearldom.com, reject
 DOMAIN-SUFFIX,cottoncabbage.com, reject
 DOMAIN-SUFFIX,cottondivorcefootprint.com, reject
 DOMAIN-SUFFIX,cotwcpcjcrjfj.xyz, reject
@@ -8622,6 +8623,7 @@ DOMAIN-SUFFIX,eptougry.net, reject
 DOMAIN-SUFFIX,epu.sh, reject
 DOMAIN-SUFFIX,epushclick.com, reject
 DOMAIN-SUFFIX,eputysolomon.com, reject
+DOMAIN-SUFFIX,epylliafending.com, reject
 DOMAIN-SUFFIX,eqads.com, reject
 DOMAIN-SUFFIX,eqdudaj.com, reject
 DOMAIN-SUFFIX,eqhadccx.com, reject
@@ -10561,6 +10563,7 @@ DOMAIN-SUFFIX,glevoloo.com, reject
 DOMAIN-SUFFIX,glideimpulseregulate.com, reject
 DOMAIN-SUFFIX,glidelamppost.com, reject
 DOMAIN-SUFFIX,gligheew.xyz, reject
+DOMAIN-SUFFIX,gligoubsed.com, reject
 DOMAIN-SUFFIX,glimpaid.net, reject
 DOMAIN-SUFFIX,glimpsedrastic.com, reject
 DOMAIN-SUFFIX,glimpsemankind.com, reject
@@ -10638,6 +10641,7 @@ DOMAIN-SUFFIX,gloussowu.xyz, reject
 DOMAIN-SUFFIX,gloustoa.net, reject
 DOMAIN-SUFFIX,gloutanacard.com, reject
 DOMAIN-SUFFIX,gloutchi.com, reject
+DOMAIN-SUFFIX,glouvugnirsy.net, reject
 DOMAIN-SUFFIX,glouxaih.net, reject
 DOMAIN-SUFFIX,glouxalt.net, reject
 DOMAIN-SUFFIX,glouzokrache.com, reject

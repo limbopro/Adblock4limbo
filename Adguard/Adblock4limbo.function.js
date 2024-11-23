@@ -80,43 +80,47 @@ function selector_one_by_one(x) { // 按选择器一个一个移除
 
 // 先新建一个按钮
 function adblock4limbo(x, csp) {
-    // 新建 x4Div
-    let new_body = document.createElement('div'); // body 换为 div
-    new_body.id = 'x4Div'; // 高等悬挂
-    let body = document.body;
-    //document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
-    document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
 
-    // 定义按钮
-    let x4Home = document.createElement('button')
-    x4Home.id = "x4Home";
+    if (getCookie('navigation') == 'true') { // 是否开启导航🧭按钮🔘
 
-    if (csp == 'nocsp') {
-        console.log('创建不带CSP属性按钮...')
-        x4Home.setAttribute("class", "cms");
-        //x4Home.setAttribute('onclick', "body_build('true');")
-        //// var nocsp = 'padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;background-color:transparent;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/uploads/imgs/Adblock4limbo.svg") !important;background-size:100% !important;background-repeat:no-repeat;';
-        var nocsp = 'padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;background-color:transparent;background-image:url("https://limbopro.com/Adguard/Adblock4limbo.png") !important;background-size:100% !important;background-repeat:no-repeat;';
-        x4Home.style = nocsp;
-        document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
-        document.getElementById('x4Home').style.height = x;
-        document.getElementById('x4Home').style.width = x;
+        // 新建 x4Div
+        let new_body = document.createElement('div'); // body 换为 div
+        new_body.id = 'x4Div'; // 高等悬挂
+        let body = document.body;
+        //document.querySelector('html').appendChild(new_body); // 插入到现有 body 后
+        document.querySelector('html').insertBefore(new_body, body); // 插入到现有 body 前
 
-        if (window.innerHeight < 600) {
-            document.querySelector('#x4Home').style.bottom = '30%';
-        }
+        // 定义按钮
+        let x4Home = document.createElement('button')
+        x4Home.id = "x4Home";
 
-    } else if (csp == 'csp') {
-        console.log('创建带CSP属性按钮...')
-        var csp = 'box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:17px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;border-radius:50%;';
-        x4Home.style = csp;
-        x4Home.textContent = '导航';
-        document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
-        //x4Home.setAttribute("class", "cspButton");
-        document.getElementById('x4Home').style.height = x;
-        document.getElementById('x4Home').style.width = x;
-        if (window.innerHeight < 600) {
-            document.querySelector('#x4Home').style.bottom = '30%';
+        if (csp == 'nocsp') {
+            console.log('创建不带CSP属性按钮...')
+            x4Home.setAttribute("class", "cms");
+            //x4Home.setAttribute('onclick', "body_build('true');")
+            //// var nocsp = 'padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;background-color:transparent;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/uploads/imgs/Adblock4limbo.svg") !important;background-size:100% !important;background-repeat:no-repeat;';
+            var nocsp = 'padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;background-color:transparent;background-image:url("https://limbopro.com/Adguard/Adblock4limbo.png") !important;background-size:100% !important;background-repeat:no-repeat;';
+            x4Home.style = nocsp;
+            document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
+            document.getElementById('x4Home').style.height = x;
+            document.getElementById('x4Home').style.width = x;
+
+            if (window.innerHeight < 600) {
+                document.querySelector('#x4Home').style.bottom = '30%';
+            }
+
+        } else if (csp == 'csp') {
+            console.log('创建带CSP属性按钮...')
+            var csp = 'box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100%);background-color:#2e466e;border-radius:17px;border:1px solid #1f2f47;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;font-size:15px;padding:6px 13px;text-decoration:none;text-shadow:0px 1px 0px #263666;padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;border-radius:50%;';
+            x4Home.style = csp;
+            x4Home.textContent = '导航';
+            document.getElementById('x4Div').appendChild(x4Home); // 在 x4Div 下添加按钮
+            //x4Home.setAttribute("class", "cspButton");
+            document.getElementById('x4Home').style.height = x;
+            document.getElementById('x4Home').style.width = x;
+            if (window.innerHeight < 600) {
+                document.querySelector('#x4Home').style.bottom = '30%';
+            }
         }
     }
 }
@@ -192,17 +196,20 @@ document.body.addEventListener('click', () => { // 点击计数器
 
 // 长时间不动则隐藏按钮
 function x4Home_button(x) { // 显示导航按钮
-    const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
-    if (x == 1 && !(document.getElementById('x4Home') === null)) {
-        x4Home.style.height = x4Home_button_width();
-        x4Home.style.width = x4Home_button_width();
-        new_div.style.zIndex = '114154';
-    } else {
-        if ((x4Home.style.height == "0%")) {
+    if (document.getElementById('x4Home') !== null) {
+        const x4Home = document.getElementById('x4Home');
+        const new_div = document.getElementById('x4Div');
+        if (x == 1 && !(document.getElementById('x4Home') === null)) {
+            x4Home.style.height = x4Home_button_width();
+            x4Home.style.width = x4Home_button_width();
+            new_div.style.zIndex = '114154';
         } else {
-            setTimeout(() => {
-                x4Home.style.height = '0%';
-            }, 500)
+            if ((x4Home.style.height == "0%")) {
+            } else {
+                setTimeout(() => {
+                    x4Home.style.height = '0%';
+                }, 500)
+            }
         }
     }
 }
@@ -1448,15 +1455,12 @@ function znsh_unlock(x) {
 }
 
 function znsh() {
-    console.log("是否已开启成人🔞保护模式：" + getCookie('adultModel'))
-    if (getCookie('adultModel') = 'true') {
-        var url = document.location.href;
-        //console.log(url)
-        if (nsfw_regex.test(document.location.href)) {
-            visibility();
-            console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
-            visibility_switch(); //
-        }
+    var url = document.location.href;
+    console.log(url + "X")
+    if (nsfw_regex.test(document.location.href)) {
+        visibility();
+        console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
+        visibility_switch(); //
     }
 }
 
@@ -1515,7 +1519,7 @@ function nsfwmode_check() {
             // document.getElementById('nsfwmode_switch').style.background = 'var(--success) !important';
             document.getElementById('nsfwmode_switch').style.background = 'green';
             // 默认禁用成人保护模式，需用户手动开启
-            setCookie('nsfwmode', 'false', '114154');
+            setCookie('nsfwmode', 'true', '114154');
             setTimeout(() => { nsfwmode_check() }, 100)
         }
     } else {
@@ -1672,9 +1676,9 @@ function lock_screen_switch() {
 
 // 隐藏按钮选项 1 一天
 let button_switch = getCookie("button_switch");
-if (button_switch == 'True') {
+if (button_switch == 'True' && document.querySelector('button#x4Home') !== null) {
     document.querySelector('button#x4Home').classList.add('cms_opacity');
-} else {
+} else if (document.querySelector('button#x4Home') !== null) {
     document.querySelector('button#x4Home').classList.remove('cms_opacity');
 }
 
@@ -2298,5 +2302,3 @@ function pAdd2Parent(parentsSelector, textContent) { // 预设样式 P 元素
     }
     otherSearch()
 }
-
-

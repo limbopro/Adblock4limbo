@@ -43,15 +43,19 @@
 /// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
 /// 可在 导航 - **反馈/建议/功能设置//** 关闭成人保护模式；
 
-// **如何【禁用页面右下角导航按钮（iOS）】**
+// **如何【全局禁用页面右下角导航按钮及成人保护模式（iOS）】**
 /// iOS QX/Stash/Surge/等用户禁用导航按钮图片即可...
-/// 1.添加主机名， limbopro.com
-/// 2.添加重写， url 填写 Adblock4limbo.png ，类型选择 reject
+/// 1.添加主机名， **limbopro.com**
+/// 2.添加重写， **匹配的url** 填写正则表达式 **Adblock4limbo.user.js** ，类型选择 **response-body/http-response**
+/// 3.匹配的body处 填写正则表达式 **daohangMode|adultMode** ，替换处 填写 **off**
+/// 4.daohangMode 代表导航，adultMode 代表成人保护模式，你可以都关闭或只关闭其一
 
-// **如何【禁用页面右下角导航按钮（PC/Mac）】**
+// **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式（PC/Mac）】**
 /// PC/Mac 油猴用户...
-/// 进入 Tampermonkey 管理面板 - 找到Adblock4limbo.[github]
-/// 找到 daohang_build() ，将其注释即可 -> ;daohang_build()；
+/// 进入 Tampermonkey 管理面板 - 找到 **Adblock4limbo.[github]**
+/// 找到 daohang_build()  大概在 210 多行
+/// 然后将 daohangMode/adultMode 的值修改成 false 即可
+
 
 */
 

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411201418
+## ! Version: 202411230125
 ## ! Title: EasyPrivacy
-## ! Last modified: 20 Nov 2024 14:18 UTC
+## ! Last modified: 23 Nov 2024 01:25 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -167,6 +167,7 @@ DOMAIN-SUFFIX,g1188506010.co, reject
 DOMAIN-SUFFIX,g11885060100.co, reject
 DOMAIN-SUFFIX,g12083144435.co, reject
 DOMAIN-SUFFIX,g12281228770.co, reject
+DOMAIN-SUFFIX,g1386590346.co, reject
 DOMAIN-SUFFIX,g1584674682.co, reject
 DOMAIN-SUFFIX,g1584674684.co, reject
 DOMAIN-SUFFIX,g1782759015.co, reject
@@ -2764,6 +2765,7 @@ DOMAIN-SUFFIX,api.june.so, reject
 DOMAIN-SUFFIX,api.wipmania.com, reject
 DOMAIN-SUFFIX,apple.www.letv.com, reject
 DOMAIN-SUFFIX,applets.ebxcdn.com, reject
+DOMAIN-SUFFIX,apps-pbd.ctraffic.io, reject
 DOMAIN-SUFFIX,argos.citruserve.com, reject
 DOMAIN-SUFFIX,ariane.abtasty.com, reject
 DOMAIN-SUFFIX,attributiontrackingga.googlecode.com, reject
@@ -3595,6 +3597,7 @@ DOMAIN-SUFFIX,tracker.myyschool.xyz, reject
 DOMAIN-SUFFIX,tracker.nitropay.com, reject
 DOMAIN-SUFFIX,tracker.nocodelytics.com, reject
 DOMAIN-SUFFIX,tracker.novage.com.ua, reject
+DOMAIN-SUFFIX,tracker.prod.ams3.k8s.hyperia.sk, reject
 DOMAIN-SUFFIX,tracker.services.vaix.ai, reject
 DOMAIN-SUFFIX,tracker.smartframe.io, reject
 DOMAIN-SUFFIX,tracker.softcube.com, reject
@@ -3693,6 +3696,7 @@ DOMAIN-SUFFIX,user.userguiding.com, reject
 DOMAIN-SUFFIX,userexperience.thehut.net, reject
 DOMAIN-SUFFIX,usersegment.wpdigital.net, reject
 DOMAIN-SUFFIX,usr.interactiveone.com, reject
+DOMAIN-SUFFIX,utics.nodejibi.in, reject
 DOMAIN-SUFFIX,v.shopify.com, reject
 DOMAIN-SUFFIX,vdrn.redplum.com, reject
 DOMAIN-SUFFIX,vercel-vitals.axiom.co, reject
@@ -4643,6 +4647,7 @@ DOMAIN-SUFFIX,events-prod.autolist.com, reject
 DOMAIN-SUFFIX,events-tracker.deliveroo.net, reject
 DOMAIN-SUFFIX,events.api.godaddy.com, reject
 DOMAIN-SUFFIX,events.baselime.io, reject
+DOMAIN-SUFFIX,events.bsky.app, reject
 DOMAIN-SUFFIX,events.character.ai, reject
 DOMAIN-SUFFIX,events.clips4sale.com, reject
 DOMAIN-SUFFIX,events.framer.com, reject
@@ -40626,7 +40631,6 @@ DOMAIN-SUFFIX,stg-bnc-papago.naver.com, reject
 DOMAIN-SUFFIX,stg-deeplink.ring.md, reject
 DOMAIN-SUFFIX,store.echovisuals.com, reject
 DOMAIN-SUFFIX,store.esquirrel.at, reject
-DOMAIN-SUFFIX,stream.9now.com.au, reject
 DOMAIN-SUFFIX,studio.joinsalut.com, reject
 DOMAIN-SUFFIX,subito.openapp.link, reject
 DOMAIN-SUFFIX,summary.instaread.co, reject

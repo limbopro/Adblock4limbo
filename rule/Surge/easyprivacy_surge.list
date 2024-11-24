@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411230651
+## ! Version: 202411240257
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Nov 2024 06:51 UTC
+## ! Last modified: 24 Nov 2024 02:57 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1905,6 +1905,7 @@ DOMAIN-SUFFIX,rangergustav.com
 DOMAIN-SUFFIX,rapidkittens.com
 DOMAIN-SUFFIX,rarestcandy.com
 DOMAIN-SUFFIX,raresummer.com
+DOMAIN-SUFFIX,razzweb.com
 DOMAIN-SUFFIX,reactjspdf.com
 DOMAIN-SUFFIX,readgoldfish.com
 DOMAIN-SUFFIX,readingguilt.com

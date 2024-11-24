@@ -22,8 +22,13 @@ DOMAIN-SUFFIX,205.209.138.102, reject
 DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,lipheak.com, reject
+DOMAIN-SUFFIX,xcwdcynb.icu, reject
+DOMAIN-SUFFIX,wweizae.top, reject
 DOMAIN-SUFFIX,xevaix.com, reject
 DOMAIN-SUFFIX,sweizab.top, reject
+DOMAIN-SUFFIX,eweizaw.top, reject
+DOMAIN-SUFFIX,dt0j.icu, reject
 DOMAIN-SUFFIX,oqipegjz.icu, reject
 DOMAIN-SUFFIX,izuts.com, reject
 DOMAIN-SUFFIX,jweizaa.top, reject

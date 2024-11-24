@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         毒奶导航以及实用函数调用合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.11.23
+// @version      0.2024.11.24
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -77,6 +77,56 @@ function selector_one_by_one(x) { // 按选择器一个一个移除
         document.querySelectorAll(x).forEach((x) => { x.remove() })
     }
 }
+
+/* 删除所有cookies */
+function cookiesRemove() {
+
+    let qi = confirm('是否需要清空当前网站所有cookie?（可选择不清理；清理🧹后需重新登录...）');
+
+    if (qi == true) {
+        document.cookie.split(';').forEach(x => {
+            if (x.search('=')) {
+                document.cookie = x.split("=")[0] + "=; " + "expires=Thu, 01 Jan 1970 00:00:00 GMT"
+                console.log('cookies ♻️🗑️ ... ')
+            }
+        })
+    }
+
+    location.reload()
+
+}
+
+/* 连续点击3次空白处起导航🧭页面 */
+function touchdouble() {
+
+    var startTime = '';
+    var number = 0;
+    const htmlbody = document.querySelectorAll('body')[0]
+
+    htmlbody.addEventListener('touchstart', function () {
+        startTime = +new Date()
+        number += 1;
+        console.log(number)
+        interval(number)
+    })
+
+    function interval(x) {
+
+        setTimeout(() => {
+            if (x >= 3) {
+                console.log('连续点击超过' + x + "次")
+                body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
+            } else {
+                number = 0;
+                console.log("number被重设为0")
+            }
+        }, 1200)
+
+    }
+}
+
+touchdouble();
+
 
 // 先新建一个按钮
 function adblock4limbo(x, csp) {
@@ -267,7 +317,11 @@ function _onclick_button() {
                     localStorage.setItem("crisp", ""); // 重置导航
                 }
 
-                location.reload();
+                cookiesRemove()
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+
             })
         }
 
@@ -1509,7 +1563,7 @@ function nsfwmode_check() {
         }
 
     } else if (getCookie('nsfwmode') == 'false' && nsfw_regex.test(document.location.href)) {
-        if (document.getElementById('nsfwmode_switch')) {
+        if (document.getElementById('nsfwmode_switch') !== null) {
             znsh_unlock();
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
             console.log('该网站为成人🔞网站！现已（手动）关闭成人保护模式！')
@@ -1523,14 +1577,13 @@ function nsfwmode_check() {
     } else if (getCookie('nsfwmode') == '' && nsfw_regex.test(document.location.href)) {
 
         function valuefromDefault(x) {
-            if (document.getElementById('nsfwmode_switch')) {
-                document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
-                // document.getElementById('nsfwmode_switch').style.background = 'var(--success) !important';
-                document.getElementById('nsfwmode_switch').style.background = 'green';
-                // 默认禁用成人保护模式，需用户手动开启
-                setCookie('nsfwmode', x, '114154');
-                setTimeout(() => { nsfwmode_check() }, 100)
-                //alert(getCookie('adultMode'))
+            if (document.getElementById('nsfwmode_switch') !== null) {
+                if (x == 'false' || x == '') {
+                    nsfwmode('false');
+                } else {
+                    nsfwmode('true')
+                }
+
             }
         }
 
@@ -1557,7 +1610,7 @@ function getCookie(cname) {
 function hide_button_switch(x) {
     if (x == 1) {
         document.querySelector('button#x4Home').classList.add('cms_opacity');
-        var days = window.prompt("请输入你想要隐藏页面右下角导航🧭按钮的天数？（请直接输入数字），该按钮将在你指定的时间后再次显示。你可通过清理浏览器 cookie 或 无痕模式打开的方式提前停止计时。本次设置仅针对当前网站域名生效。");
+        var days = window.prompt("想要隐藏右下角导航🧭按钮多少天？（请直接输入数字）；你可通过清理浏览器 cookie 或 无痕模式打开页面重新显示导航🧭按钮；隐藏导航🧭按钮不影响PC端双击ESC键快捷调出导航页面；本次设置仅针对当前网站生效。");
         setCookie("button_switch", 'True', days);
         body_build('false');
         x4Home_button('hidden');

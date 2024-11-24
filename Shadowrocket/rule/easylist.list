@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202411230651
+## ! Version: 202411240449
 ## ! Title: EasyList
-## ! Last modified: 23 Nov 2024 06:51 UTC
+## ! Last modified: 24 Nov 2024 04:49 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3785,6 +3785,7 @@ DOMAIN-SUFFIX,bestdisplayformats.com, reject
 DOMAIN-SUFFIX,besteasyclick.com, reject
 DOMAIN-SUFFIX,bestevermotorie.com, reject
 DOMAIN-SUFFIX,bestexp1.com, reject
+DOMAIN-SUFFIX,bestfuckapps.com, reject
 DOMAIN-SUFFIX,bestfunnyads.com, reject
 DOMAIN-SUFFIX,bestladymeet.life, reject
 DOMAIN-SUFFIX,bestloans.tips, reject
@@ -8956,6 +8957,7 @@ DOMAIN-SUFFIX,exposepresentimentunfriendly.com, reject
 DOMAIN-SUFFIX,exposureawelessawelessladle.com, reject
 DOMAIN-SUFFIX,expressalike.com, reject
 DOMAIN-SUFFIX,expressingblossomjudicious.com, reject
+DOMAIN-SUFFIX,expressmealdelivery.shop, reject
 DOMAIN-SUFFIX,expressproducer.com, reject
 DOMAIN-SUFFIX,exptlgooney.com, reject
 DOMAIN-SUFFIX,expulsionfluffysea.com, reject
@@ -10709,6 +10711,7 @@ DOMAIN-SUFFIX,go-g3t-s0me.net, reject
 DOMAIN-SUFFIX,go-g3t-som3.com, reject
 DOMAIN-SUFFIX,go-rillatrack.com, reject
 DOMAIN-SUFFIX,go-srv.com, reject
+DOMAIN-SUFFIX,go-static.info, reject
 DOMAIN-SUFFIX,go.pushnative.com, reject
 DOMAIN-SUFFIX,go.syndcloud.com, reject
 DOMAIN-SUFFIX,go2.global, reject
@@ -10819,6 +10822,7 @@ DOMAIN-SUFFIX,goschenelect.com, reject
 DOMAIN-SUFFIX,goshbiopsy.com, reject
 DOMAIN-SUFFIX,gositego.live, reject
 DOMAIN-SUFFIX,gosoftwarenow.com, reject
+DOMAIN-SUFFIX,gosrv.cl, reject
 DOMAIN-SUFFIX,gossipcase.com, reject
 DOMAIN-SUFFIX,gossipfinestanalogy.com, reject
 DOMAIN-SUFFIX,gossipinvest.com, reject
@@ -18806,6 +18810,7 @@ DOMAIN-SUFFIX,pintoutcryplays.com, reject
 DOMAIN-SUFFIX,pinttalewag.com, reject
 DOMAIN-SUFFIX,pioneercomparatively.com, reject
 DOMAIN-SUFFIX,pioneerusual.com, reject
+DOMAIN-SUFFIX,piotyo.xyz, reject
 DOMAIN-SUFFIX,piouscheers.com, reject
 DOMAIN-SUFFIX,piouspoemgoodnight.com, reject
 DOMAIN-SUFFIX,pip-pip-pop.com, reject
@@ -27896,6 +27901,7 @@ DOMAIN-SUFFIX,yawcoynag.com, reject
 DOMAIN-SUFFIX,yaxgszv.com, reject
 DOMAIN-SUFFIX,yazuda.xyz, reject
 DOMAIN-SUFFIX,ybhyziittfg.com, reject
+DOMAIN-SUFFIX,ybnksajy.com, reject
 DOMAIN-SUFFIX,ybriifs.com, reject
 DOMAIN-SUFFIX,ybs2ffs7v.com, reject
 DOMAIN-SUFFIX,ybtkzjm.com, reject
@@ -28187,6 +28193,7 @@ DOMAIN-SUFFIX,zauthuvy.com, reject
 DOMAIN-SUFFIX,zavoxlquwb.com, reject
 DOMAIN-SUFFIX,zaxonoax.com, reject
 DOMAIN-SUFFIX,zcaadfl.com, reject
+DOMAIN-SUFFIX,zcaappcthktx.com, reject
 DOMAIN-SUFFIX,zchtpzu.com, reject
 DOMAIN-SUFFIX,zcode12.me, reject
 DOMAIN-SUFFIX,zcode7.me, reject

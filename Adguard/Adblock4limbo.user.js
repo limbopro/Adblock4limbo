@@ -206,12 +206,12 @@
 // 是否（默认）开启导航🧭按钮🔘 moren
 // 如【不需要开启导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
 
-settingCookie('daohangMode', 'true', '114154');
+settingCookie('daohangMode_global', 'true', '400');
 console.log('是否（默认）开启导航🧭按钮🔘：' + getCookie_('daohangMode'))
 
 // 是否（默认）开启成人🔞网站保护模式
 // 如【不需要开启成人网站保护模式】 可将 cookie 的值从 true 改为 false
-settingCookie('adultMode', 'true', '114154');
+settingCookie('adultMode', 'true', '400');
 console.log('是否（默认）开启成人🔞网站保护模式：' + getCookie_('adultMode'))
 
 // 是否开启导航🧭按钮🔘

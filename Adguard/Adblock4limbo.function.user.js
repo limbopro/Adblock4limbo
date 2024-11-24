@@ -84,12 +84,21 @@ function cookiesRemove() {
     let qi = confirm('是否需要清空当前网站所有cookie?（可选择不清理；清理🧹后需重新登录...）');
 
     if (qi == true) {
+
+        var exp = new Date();
+        var domain = "." + document.domain;
+        exp.setTime(exp.getTime() + 0 * 24 * 60 * 60 * 1000);
+
         document.cookie.split(';').forEach(x => {
             if (x.search('=')) {
-                document.cookie = x.split("=")[0] + "=; " + "expires=Thu, 01 Jan 1970 00:00:00 GMT"
-                console.log('cookies ♻️🗑️ ... ')
+                document.cookie = x.split("=")[0] + "=''; " + "expires=" + exp.toGMTString() + ';' + "path=/;" + "domain=" + domain + ";";
+                document.cookie = x.split("=")[0] + "=''; " + "expires=" + exp.toGMTString() + ';' + "path=/;";
+                console.log(x.split("=")[0] + " ♻️🗑️...")
             }
         })
+
+        console.log(exp)
+
     }
 
     location.reload()
@@ -120,7 +129,7 @@ function touchdouble() {
                 number = 0;
                 console.log("number被重设为0")
             }
-        }, 1200)
+        }, 900)
 
     }
 }
@@ -142,9 +151,9 @@ function adblock4limbo(x, csp) {
     let x4Home = document.createElement('button')
     x4Home.id = "x4Home";
 
-    if (getCookie('daohangMode') == 'false' || getCookie('daohangMode') == '') {
+    if (getCookie("daohangMode_global") == 'false' && getCookie("daohangMode_yourChoice") !== "show" || getCookie("daohangMode_global") == '') {
         x4Home.setAttribute("class", "cmsnone");
-    } else if (getCookie('daohangMode') == 'true') {
+    } else if (getCookie("daohangMode_global") == 'true') {
         x4Home.setAttribute("class", "cms");
     }
 
@@ -307,7 +316,7 @@ function _onclick_button() {
 
         if (document.querySelector('button#hidedaohang')) {
             document.querySelector('button#hidedaohang').addEventListener("click", function () {
-                hide_button_switch('1'); // 添加监听事件
+                daohangMode_switch(); // 添加监听事件
             })
         }
 
@@ -317,7 +326,10 @@ function _onclick_button() {
                     localStorage.setItem("crisp", ""); // 重置导航
                 }
 
+                setCookie("daohangMode_yourChoice", 'show', 400) // 显示按钮
+
                 cookiesRemove()
+
                 setTimeout(() => {
                     location.reload();
                 }, 1000);
@@ -453,9 +465,9 @@ function navigation4limbo_body_pre() {
         <li class="li_global"><button style="border-radius:4px; background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">在线联系</button></li>\
         <li class="li_global"><a class="a_global" id="admin" href="https://t.me/limboprobot" \
         target="_blank">联系博主TG</a></li>\
-        <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="hidedaohang">隐藏导航按钮</button></li>\
+        <li class="li_global"><button style="border-radius:4px; " class="crbhms" id="hidedaohang">导航按钮(OFF)</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="resetting">重置导航设置</button></li>\
-        <li class="li_global"><button style="border-radius:4px; " class="crbhms"  id="nsfwmode_switch">WTF!</button></li>\
+        <li class="li_global"><button style="border-radius:4px; " class="crbhms" id="nsfwmode_switch">WTF!</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #171212 !important;" class="a_global red"  id="lock_screen">锁屏! 🔐</button></li>\
         <li class="li_global"><a href="https://limbopro.com/archives/12904.html#%E5%AF%BC%E8%88%AA%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5%EF%BC%88%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E9%9A%90%E8%97%8F/%E7%A6%81%E7%94%A8%EF%BC%89" target="_blank" class="a_global" id="jiaocheng">导航使用教程</a></li>\
         <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/issues?q=is%3Aissue+is%3Aclosed" \
@@ -1415,7 +1427,15 @@ function nsfw_content_hidden(x) { // nsfw 网站模糊
 }
 
 // 监听 visibility change 事件 用户离开当前页面事件
-function visibility() {
+function visibility(x) {
+
+    if (x == 'true') {
+        // znsh();
+        document.body.style.filter = 'blur(50px)';
+        nsfw_content_hidden('true'); // 开启模糊
+        setTimeout(() => { sessionX('true') }, 1000);
+    }
+
     if (getCookie('nsfwmode') !== 'false') {
         document.addEventListener('visibilitychange', function () {
             var visible = document.visibilityState;
@@ -1556,9 +1576,10 @@ function nsfwmode_check() {
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
             console.log('该网站为成人🔞网站！现已开启成人保护模式！')
             // document.getElementById('nsfwmode_switch').style.background = 'var(--red) !important';
-            document.getElementById('nsfwmode_switch').style.background = 'red';
+            document.getElementById('nsfwmode_switch').style.background = 'green';
             setTimeout(() => {
                 body_build('false');
+                // visibility('true') // 立即模糊
             }, 1200)
         }
 
@@ -1568,7 +1589,7 @@ function nsfwmode_check() {
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
             console.log('该网站为成人🔞网站！现已（手动）关闭成人保护模式！')
             // document.getElementById('nsfwmode_switch').style.background = 'var(--success) !important';
-            document.getElementById('nsfwmode_switch').style.background = 'green';
+            document.getElementById('nsfwmode_switch').style.background = 'red';
             setTimeout(() => {
                 body_build('false');
             }, 1200)
@@ -1599,6 +1620,8 @@ function nsfwmode_check() {
 
 }
 
+
+
 // 设置 cookie 饼
 function setCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
 
@@ -1607,21 +1630,40 @@ function getCookie(cname) {
     return "";
 }
 
-function hide_button_switch(x) {
-    if (x == 1) {
-        document.querySelector('button#x4Home').classList.add('cms_opacity');
-        var days = window.prompt("想要隐藏右下角导航🧭按钮多少天？（请直接输入数字）；你可通过清理浏览器 cookie 或 无痕模式打开页面重新显示导航🧭按钮；隐藏导航🧭按钮不影响PC端双击ESC键快捷调出导航页面；本次设置仅针对当前网站生效。");
-        setCookie("button_switch", 'True', days);
-        body_build('false');
-        x4Home_button('hidden');
+function daohangMode_switch(x) {
+
+    if (x == 'hidden') {
+
+        setCookie("daohangMode_yourChoice", 'hidden', 400);
+        // document.querySelector('button#x4Home').classList.add('cms_opacity');
+        document.querySelector('button#x4Home').setAttribute("class", "cmsnone");
+        x4Home_button('hidden'); // 隐藏按钮
+        document.querySelector('button#hidedaohang').textContent = "导航按钮(OFF)"
+        document.querySelector('button#hidedaohang').style.background = 'red'
+
+    } else if (x == 'show') {
+
+        setCookie("daohangMode_yourChoice", 'show', 400);
+        // document.querySelector('button#x4Home').classList.remove('cms_opacity');
+        document.querySelector('button#x4Home').setAttribute("class", "cms");
+        document.querySelector('button#hidedaohang').textContent = "导航按钮(ON)"
+        document.querySelector('button#hidedaohang').style.background = 'green'
+        x4Home_button('1') // 显示按钮
+
+    } else if (getCookie("daohangMode_yourChoice") == '' || getCookie("daohangMode_yourChoice") == 'hidden') {
+        daohangMode_switch('show')
+    } else if (getCookie("daohangMode_yourChoice") == 'show') {
+        daohangMode_switch('hidden')
     }
 }
+
+
 
 function lock_screen_setPWD(x) { // 锁屏设置
     if (x == 'check') {
         lock_screen_mode_check();
     } else if (getCookie('lock_screen_pwd') == '' || getCookie('lock_screen_pwd') == 'null') {
-        var password = window.prompt("请设置锁屏密码（任意你记得住的字母/数字等符号的简单组合)；如忘记密码，你可通过清理浏览器 cookie 的方式重置密码；本次设置仅针对当前网站域名生效；快速连续按3次ESC键可快速锁屏锁屏🔒！");
+        var password = window.prompt("请设置锁屏密码（任意你记得住的字母/数字等符号的简单组合)；如忘记密码，你可通过清理浏览器 cookie 的方式重置密码；本次设置仅针对当前网站域名生效；1秒内连续按3次ESC键可快速开启📃页面锁🔒！");
         if (typeof password == "object") {
             lock_screen_switch();
             // 密码设置已取消
@@ -1742,11 +1784,13 @@ function lock_screen_switch() {
 
 
 // 隐藏按钮选项 1 一天
-let button_switch = getCookie("button_switch");
-if (button_switch == 'True' && document.querySelector('button#x4Home') !== null) {
-    document.querySelector('button#x4Home').classList.add('cms_opacity');
-} else if (document.querySelector('button#x4Home') !== null) {
-    document.querySelector('button#x4Home').classList.remove('cms_opacity');
+
+if (getCookie("daohangMode_yourChoice") == 'hidden' && document.querySelector('button#x4Home') !== null) {
+    daohangMode_switch('hidden')
+} else if (getCookie("daohangMode_yourChoice") == 'show' && document.querySelector('button#x4Home') !== null) {
+    daohangMode_switch('show')
+} else if (getCookie("daohangMode_yourChoice") == '' && (getCookie("daohangMode_global") == 'false' || getCookie("daohangMode_global") == '') && document.querySelector('button#x4Home') !== null) {
+    daohangMode_switch('hidden')
 }
 
 

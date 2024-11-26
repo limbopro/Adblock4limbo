@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 21 Nov 2024 11:03:43 GMT
-# entries:        3530
+# last updated:   Tue, 26 Nov 2024 11:46:50 GMT
+# entries:        3532
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -30,6 +30,7 @@ DOMAIN-SUFFIX,33across.com
 DOMAIN-SUFFIX,360yield.com
 DOMAIN-SUFFIX,3lift.com
 DOMAIN-SUFFIX,3o9s.short.gy
+DOMAIN-SUFFIX,4clicker.pro
 DOMAIN-SUFFIX,4d5.net
 DOMAIN-SUFFIX,4info.com
 DOMAIN-SUFFIX,4jnzhl0d0.com
@@ -2132,6 +2133,7 @@ DOMAIN-SUFFIX,look.opskln.com
 DOMAIN-SUFFIX,look.ufinkln.com
 DOMAIN-SUFFIX,loopme.com
 DOMAIN-SUFFIX,loudlunch.com
+DOMAIN-SUFFIX,lowest-price.eu
 DOMAIN-SUFFIX,lp3tdqle.com
 DOMAIN-SUFFIX,lucidmedia.com
 DOMAIN-SUFFIX,luckyorange.com

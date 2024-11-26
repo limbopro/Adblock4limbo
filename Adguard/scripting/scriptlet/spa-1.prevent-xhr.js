@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["widgets.outbrain.com"],["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["popads.net"]];
 
-const hostnamesMap = new Map([["file4go.net",0],["aqualapp.com",1],["raulprietofernandez.net",1],["minhaconexao.com.br",2],["caroloportunidades.com.br",3],["dicasgostosas.com",3]]);
+const hostnamesMap = new Map([["file4go.net",0],["aqualapp.com",1],["raulprietofernandez.net",1],["minhaconexao.com.br",2],["receitasdaora.online",3],["foodiesgallery.com",3],["caroloportunidades.com.br",3],["dicasgostosas.com",3]]);
 
 const entitiesMap = new Map([]);
 

@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[]];
 
-const hostnamesMap = new Map([["anichin.top",0],["kimcilonly.site",0],["kiryuu.id",0],["kiryuu.org",0],["njavtv.com",0],["subindojav.cc",0]]);
+const hostnamesMap = new Map([["anichin.top",0],["animekompi.vip",0],["kimcilonly.site",0],["kiryuu.id",0],["kiryuu.org",0],["njavtv.com",0],["subindojav.cc",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -39,9 +39,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["[target=\"_blank\"][rel$=\" noopener noreferrer\"]:has(> img[src^=\"/images/\"]), [target=\"_blank\"][rel^=\"noopener noreferrer\"]:has(> img[src^=\"/images/\"])","display","block"]];
+const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["[target=\"_blank\"][rel$=\" noopener noreferrer\"]:has(> img[src^=\"/\"][src*=\"_\"]), [target=\"_blank\"][rel^=\"noopener noreferrer\"]:has(> img[src^=\"/\"][src*=\"_\"])","display","block"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"]","[href*=\"dmm.co.jp\"])","font-size","14px"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"]","[href*=\"dmm.co.jp\"]) img","height","128px"]];
 
-const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["jytechs.in",1],["dev.miuiflash.com",1],["djxmaza.in",1],["thecubexguide.com",1],["download.megaup.net",2],["1001tracklists.com",3]]);
+const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["jytechs.in",1],["dev.miuiflash.com",1],["djxmaza.in",1],["thecubexguide.com",1],["download.megaup.net",2],["1001tracklists.com",3],["wiki.yjsnpi.nu",[4,5]]]);
 
 const entitiesMap = new Map([]);
 

@@ -39,9 +39,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/www3\\.doubleclick\\.net|tagger\\.opecloud\\.com|fwmrm\\.net/","emptyArr"],["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["static.adsafeprotected.com/favicon.ico"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
+const argsList = [["/www3\\.doubleclick\\.net|tagger\\.opecloud\\.com|fwmrm\\.net/","emptyArr"],["tag.min.js"],["fwmrm"],["pagead2.googlesyndication.com"],["js.sddan.com"],["adskeeper.co.uk"],["static.adsafeprotected.com/favicon.ico"],["/^https:\\/\\/ads\\.stickyadstv\\.com\\/$/ method:HEAD"]];
 
-const hostnamesMap = new Map([["rmcbfmplay.com",0],["france.tv",2],["lameteoagricole.net",3],["meteo-grenoble.com",3],["signal-arnaques.com",3],["techno-science.net",3],["animationdigitalnetwork.com",3],["animationdigitalnetwork.fr",3],["animedigitalnetwork.fr",3],["malekal.com",4],["tf1.fr",[5,6]],["tf1info.fr",[5,6]]]);
+const hostnamesMap = new Map([["rmcbfmplay.com",0],["france.tv",2],["lameteoagricole.net",3],["meteo-grenoble.com",3],["signal-arnaques.com",3],["techno-science.net",3],["animationdigitalnetwork.com",3],["animationdigitalnetwork.fr",3],["animedigitalnetwork.fr",3],["malekal.com",4],["crunchyscan.fr",5],["tf1.fr",[6,7]],["tf1info.fr",[6,7]]]);
 
 const entitiesMap = new Map([["darkino",1]]);
 

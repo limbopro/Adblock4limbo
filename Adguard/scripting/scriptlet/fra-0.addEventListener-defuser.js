@@ -39,7 +39,7 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["load","setTimeout"],["DOMContentLoaded","/Parfum|China|\\+'oa|=>\\s*\\{\\s*var|'ct'/"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
+const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["load","setTimeout"],["DOMContentLoaded","/=>\\{\\s*function|^.{600,650}$|Sick|Netflix|Albenia|\\+'o|\\(\\){3};\\}|setTimeout\\(function/"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
 
 const hostnamesMap = new Map([["nicematin.com",0],["cyclismactu.net",1],["japscan.lol",[2,3]],["lecourrier-du-soir.com",4],["player.melaniezettofrais.online",5],["macg.co",6]]);
 

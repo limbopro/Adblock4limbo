@@ -39,9 +39,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["scroll","return\"undefined\""],["load","contextmenu"],["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["DOMContentLoaded","ajax_tptn_tracker"],["contextmenu"],["","t.preventDefault"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"]];
+const argsList = [["scroll","return\"undefined\""],["load","contextmenu"],["/contextmenu|copy|cut/","return\"undefined\""],["contextmenu","preventDefault"],["DOMContentLoaded","ajax_tptn_tracker"],["contextmenu"],["","t.preventDefault"],["contextmenu","preventDefault","elements","div#rmpPlayer"],["click","720"],["copy","throw"],["click","return\"undefined\"","elements","a.indirect[data-get]"],["DOMContentLoaded","videojs.ads"]];
 
-const hostnamesMap = new Map([["autosafkar.com",0],["behtaraneh.ir",1],["javan-musics.com",1],["tabanmusic.com",1],["texahang.org",1],["iran-music.com",1],["bizma.ir",2],["app.blubank.com",3],["downloadha.com",4],["elmefarda.com",5],["s-moshaver.com",5],["ganjipakhsh.com",6],["lenz.ir",7],["mopon.ir",8],["noorlib.ir",9],["subkade.ir",10]]);
+const hostnamesMap = new Map([["autosafkar.com",0],["behtaraneh.ir",1],["javan-musics.com",1],["tabanmusic.com",1],["texahang.org",1],["iran-music.com",1],["bizma.ir",2],["app.blubank.com",3],["downloadha.com",4],["elmefarda.com",5],["s-moshaver.com",5],["ganjipakhsh.com",6],["lenz.ir",7],["mopon.ir",8],["noorlib.ir",9],["subkade.ir",10],["saednews.com",11]]);
 
 const entitiesMap = new Map([]);
 

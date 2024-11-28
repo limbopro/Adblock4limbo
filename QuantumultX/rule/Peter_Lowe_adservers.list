@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 26 Nov 2024 11:46:50 GMT
-# entries:        3532
+# last updated:   Tue, 26 Nov 2024 21:40:39 GMT
+# entries:        3537
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
 DOMAIN-SUFFIX,24log.com, reject
 DOMAIN-SUFFIX,24pm-affiliation.com, reject
+DOMAIN-SUFFIX,2linkpath.com, reject
 DOMAIN-SUFFIX,2mdn.net, reject
 DOMAIN-SUFFIX,2o7.net, reject
 DOMAIN-SUFFIX,2znp09oa.com, reject
@@ -1481,6 +1482,7 @@ DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
 DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
+DOMAIN-SUFFIX,deal-on.eu, reject
 DOMAIN-SUFFIX,dealdotcom.com, reject
 DOMAIN-SUFFIX,decenterads.com, reject
 DOMAIN-SUFFIX,decisivebase.com, reject
@@ -1508,6 +1510,7 @@ DOMAIN-SUFFIX,digestiondrawer.com, reject
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,digitalmerkat.com, reject
 DOMAIN-SUFFIX,direct-events-collector.spot.im, reject
+DOMAIN-SUFFIX,direct-re2.pl, reject
 DOMAIN-SUFFIX,directaclick.com, reject
 DOMAIN-SUFFIX,directleads.com, reject
 DOMAIN-SUFFIX,directorym.com, reject
@@ -2697,6 +2700,7 @@ DOMAIN-SUFFIX,ratings.lycos.com, reject
 DOMAIN-SUFFIX,rayjump.com, reject
 DOMAIN-SUFFIX,rcadserver.com, reject
 DOMAIN-SUFFIX,re-direct.pl, reject
+DOMAIN-SUFFIX,re-direct1.com, reject
 DOMAIN-SUFFIX,reachjunction.com, reject
 DOMAIN-SUFFIX,reactx.com, reject
 DOMAIN-SUFFIX,readingguilt.com, reject
@@ -2767,6 +2771,7 @@ DOMAIN-SUFFIX,richaudience.com, reject
 DOMAIN-SUFFIX,richmails.com, reject
 DOMAIN-SUFFIX,richstring.com, reject
 DOMAIN-SUFFIX,rightstats.com, reject
+DOMAIN-SUFFIX,riktok.pl, reject
 DOMAIN-SUFFIX,ringplant.com, reject
 DOMAIN-SUFFIX,ringsrecord.com, reject
 DOMAIN-SUFFIX,ritzykey.com, reject

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         毒奶导航以及实用函数调用合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.11.26
+// @version      0.2024.11.28
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -121,7 +121,7 @@ function tripleClick() {
 
     function tripleClick_check(x) {
         setTimeout(() => {
-            if (x >= 3) {
+            if (x >= 4) {
                 console.log('连续点击超过' + x + "次")
                 body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
             } else {
@@ -259,8 +259,7 @@ function hidden_adblock4limbo() {
         var last_known_scroll_position = window.scrollY;
         const x4Home = document.getElementById('x4Home'); const new_div = document.getElementById('x4Div');
         setTimeout(() => {
-            //// console.log("本次移动距离" + Math.abs(last_known_scroll_position - window.scrollY))
-            //if (Math.abs(last_known_scroll_position - window.scrollY) > 1000) {
+
             if (last_known_scroll_position !== window.scrollY && document.querySelector('img.lockscreen') == null) {
                 ////console.log("// hidden_adblock4limbo() 按钮存在，且页面还在滑动...");
                 if (document.querySelector("#navigation4limbo").style.zIndex > 0) {
@@ -278,11 +277,11 @@ function hidden_adblock4limbo() {
                 x4Home_button('0');
                 click_dont_move_and_click = --click_dont_move_and_click;
                 if (click_dont_move_and_click < 300) {
-                    znsh();// 暂时开启宅男守护模式
+                    // 暂时开启宅男守护模式
+                    // znsh_ele_create();
+                    // znsh_css_create();
                 }
-                ////console.log("// hidden_adblock4limbo() 按钮存在，页面已停止滑动，即将隐藏按钮...");
             }
-            //console.log("现在导航按钮显示次数比隐藏次数多了" + click_dont_move_and_click + "次");
         }, 1000)
     } else {
         ////console.log("// hidden_adblock4limbo() 按钮存在，但已隐藏...");
@@ -369,6 +368,7 @@ function _onclick_button() {
                 }
 
                 setCookie("daohangMode_yourChoice", 'show', 400) // 显示按钮
+                localStorage.setItem('crisp_active_c', '')
 
                 cookiesRemove()
 
@@ -857,11 +857,16 @@ function body_build(x) { // 判断导航显示与否
     if (x == "true") {
         ////console.log("// body_build() 输入为 true，开始创建导航...")
         all(1, 114154, 1, 'auto')
+        
+        if (document.getElementById('parent') !== null) {
+            document.getElementById('parent').setAttribute('class', 'parent_hidden')
+        } // 关闭 444
+
     } else if (x == "false") {
         all(0, -114154, 1, 'none')
         setTimeout(() => {
             x4Home_button("1"); // 显示导航按钮
-        }, 1000)
+        }, 750)
         //console.log("// body_build() 导航已隐藏，右下角按钮浮现...");
     }
 }
@@ -1169,115 +1174,39 @@ document.addEventListener("keydown", function (event) {
 });
 
 // Crisp 聊天💬系统
-thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head")
-
-let chatUnread = setInterval(() => { // 如果Crisp聊天💬系统有未读消息，则显示系统图标
-    if (document.querySelector("[data-has-unread]") !== null && document.querySelector("[data-has-unread]").getAttribute('data-has-unread') == 'true') {
-        crisp_active('1', '0', '1')
-        clearInterval(chatUnread)
-    }
-}, 1000)
-
-
-if (localStorage.getItem("crisp") == 'active') {
-    crisp_active('1', '0', '1')
-
-    /*
-    setTimeout(() => {
-        document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
-        console.log("Crisp聊天💬系统图标已显示（localStorage）");
-    }, 3000);
-    */
+if (document.querySelector('#crisp') == null) {
+    thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head", 'crisp')
 }
 
 function crisp_active(x, y, opacity) {
 
     if (x == 1 && y == 1 && opacity == 1) {
         localStorage.setItem('crisp_active_c', 'byhand')
-    }
 
-    thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head");
-
-    setTimeout(() => {
-        if (crisp_obj.result == 'noexist') {
-
-            if (1 == 1) {
-                if (x == 1) {
-                    if (y !== '0') {
-                        // 激活窗口
-                        let Crisp_open = setInterval(() => {
-                            if (document.querySelector('[aria-live=polite].crisp-client') !== null && document.querySelector('[aria-live=polite].crisp-client').classList.value.indexOf('active') > 0) {
-                                if (document.querySelector('div[data-visible]') !== null && document.querySelector('div[data-visible]').getAttribute('data-visible') == 'false') {
-                                    //document.querySelector('div[data-visible]').setAttribute('data-visible', 'true');
-                                    //document.querySelector('[data-maximized]').setAttribute('data-maximized', 'true');
-                                    document.querySelector('a[data-maximized]').click();
-                                    //document.querySelector('span[class=cc-1bvfm]').click();
-                                    console.log("窗口已激活（被动）")
-                                }
-                                clearInterval(Crisp_open);
-                                // do nothing
-                            } else {
-                                document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
-                                console.log("Crisp聊天💬系统图标已显示（手动）");
-                                if (document.querySelector('div[data-visible]') !== null && document.querySelector('div[data-visible]').getAttribute('data-visible') == 'false') {
-                                    //document.querySelector('div[data-visible]').setAttribute('data-visible', 'true');
-                                    //document.querySelector('[data-maximized]').setAttribute('data-maximized', 'true');
-                                    document.querySelector('a[data-maximized]').click();
-                                    //document.querySelector('span[class=cc-1bvfm]').click();
-                                    console.log("Crisp聊天💬系统窗口已激活（手动）")
-                                }
-                                clearInterval(Crisp_open);
-                            }
-                        }, 500);
-                    }
-
-                    if (opacity = 1) {
-                        let crisp_localStorage = setInterval(() => {
-                            if ((document.querySelector('[aria-live=polite].crisp-client') !== null && document.querySelector('[aria-live=polite].crisp-client').classList.value.indexOf('active') > 0) == false) {
-                                document.querySelector('[aria-live=polite].crisp-client').classList.add('active');
-                                clearInterval(crisp_localStorage)
-                                console.log("Crisp聊天💬系统图标已显示（localStorage）");
-                            }
-                        }, 1000)
-                    }
-
-                    if (localStorage.getItem("crisp") == null | localStorage.getItem("crisp") == '') {
-                        localStorage.setItem("crisp", "active");
-                        alert("如果页面右下角未出现聊天💬按钮，请尝试刷新当前页面...")
-                    }
-                }
-            } else {
-                // alert('在线聊天系统暂不可用，请通过TG或其他方式联系博主...')
+        let miki = prompt('如果页面右下角未出现聊天💬按钮或点击按钮后未能正常使用，请刷新当前页面以重新加载...；(如事后需隐藏聊天💬按钮，请输入114154，确认...；)')
+        if (miki == 114154) {
+            localStorage.setItem('crisp_active_c', '0')
+            if (document.querySelector('[aria-live=polite].crisp-client') !== null) {
+                document.querySelector('[aria-live=polite].crisp-client').classList.remove('active') // 隐藏
             }
         }
-    }, 2000)
-}
+        // alert('如果页面右下角未出现聊天💬按钮或点击按钮后未能正常使用，请刷新当前页面以重新加载...')
 
-
-// 监听 visibility change 事件 用户离开当前页面事件
-function visibility_() {
-    if (getCookie('nsfwmode') !== 'false') {
-        document.addEventListener('visibilitychange', function () {
-            var visible = document.visibilityState;
-            if (visible !== 'visible') {
-                console.log(visible)
-                document.body.style.filter = 'blur(50px)'
-            } else {
-                setTimeout(() => {
-                    console.log(visible)
-
-                    document.body.style.filter = 'blur(0px)'
-
-                    if (document.body.getAttribute('style') !== null) {
-                        document.body.removeAttribute('style');
-                    }
-                }, 500)
-            }
-        })
-    } else if (x == 'false') {
-        document.removeEventListener('visibilitychange', (() => { }), true) // 移除模糊监听
     }
-};
+
+    if (document.querySelector('#crisp') == null) {
+        thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head", 'crisp')
+    }
+
+
+    setTimeout(() => {
+        chatbuttonShow();
+        if (crisp_obj.result == 'exist' && localStorage.getItem('crisp_active_c') == 'byhand') {
+            alert('在线聊天系统暂不可用，请通过TG等其他方式联系博主反馈...')
+            localStorage.setItem('crisp_active_c', '')
+        }
+    }, 1000)
+}
 
 
 // 移动 echo div._footer 位置
@@ -1360,7 +1289,6 @@ function parentElement_add() {
     /*
    添加点击监听事件结束
    */
-
 
     var parentElementX = setInterval(() => { //
         //console.log("\\ parentElement_add() 类目自动化生成检测... ")
@@ -1472,30 +1400,6 @@ function nsfw_content_hidden(x) { // nsfw 网站模糊
 
 }
 
-// 监听 visibility change 事件 用户离开当前页面事件
-function visibility(x) {
-
-    if (x == 'true') {
-        // znsh();
-        document.body.style.filter = 'blur(50px)';
-        nsfw_content_hidden('true'); // 开启模糊
-        setTimeout(() => { sessionX('true') }, 1000);
-    }
-
-    if (getCookie('nsfwmode') !== 'false') {
-        document.addEventListener('visibilitychange', function () {
-            var visible = document.visibilityState;
-            //(visible !== 'visible' && getCookie('nsfwmode') !== 'false')
-            if (visible !== 'visible' && getCookie('nsfwmode') !== 'false') {
-                document.body.style.filter = 'blur(50px)';
-                nsfw_content_hidden('true'); // 开启模糊
-                setTimeout(() => { sessionX('true') }, 1000);
-            }
-        })
-    }
-};
-
-
 // ## 清理成人守护模式遗留的 localstorage 问题
 
 window.onload = function () {
@@ -1580,33 +1484,23 @@ function znsh_unlock(x) {
     setTimeout(() => { sessionX('false'); }, 1000);
 }
 
-function znsh() {
-    var url = document.location.href;
-    console.log(url + "X")
-    if (nsfw_regex.test(document.location.href)) {
-        visibility();
-        console.log(url + " 网站匹配 znsh() ，开启成人守护模式...")
-        visibility_switch(); //
-    }
-}
-
 function nsfwmode(x) { // 是否开启
     if (x == 'false') {
-        setCookie('nsfwmode', 'false', '114154');
+        setCookie('nsfwmode', 'false', '400');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (x == 'true') {
-        setCookie('nsfwmode', 'true', '114154');
+        setCookie('nsfwmode', 'true', '400');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == 'false') {
-        setCookie('nsfwmode', 'true', '114154');
+        setCookie('nsfwmode', 'true', '400');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == 'true') {
-        setCookie('nsfwmode', 'false', '114154');
-        visibility('false');
+        setCookie('nsfwmode', 'false', '400');
+        // visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == '') {
-        setCookie('nsfwmode', 'false', '114154');
-        visibility('false');
+        setCookie('nsfwmode', 'false', '400');
+        // visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     }
 }
@@ -1616,12 +1510,12 @@ nsfwmode_check();
 function nsfwmode_check() {
 
     if (getCookie('nsfwmode') == 'true' && nsfw_regex.test(document.location.href)) {
-        znsh();// 暂时开启宅男守护模式
         if (document.getElementById('nsfwmode_switch')) {
-            znsh();// 暂时开启宅男守护模式
+            // znsh_ele_create();
+            // znsh_css_create();
+            // 暂时开启宅男守护模式
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(ON)';
             console.log('该网站为成人🔞网站！现已开启成人保护模式！')
-            // document.getElementById('nsfwmode_switch').style.background = 'var(--red) !important';
             document.getElementById('nsfwmode_switch').style.background = 'green';
             setTimeout(() => {
                 body_build('false');
@@ -1634,7 +1528,6 @@ function nsfwmode_check() {
             znsh_unlock();
             document.getElementById('nsfwmode_switch').textContent = '成人保护模式(OFF)';
             console.log('该网站为成人🔞网站！现已（手动）关闭成人保护模式！')
-            // document.getElementById('nsfwmode_switch').style.background = 'var(--success) !important';
             document.getElementById('nsfwmode_switch').style.background = 'red';
             setTimeout(() => {
                 body_build('false');
@@ -1689,7 +1582,7 @@ function daohangMode_switch(x) {
         document.querySelector('button#hidedaohang').style.background = 'red'
 
         if (click_sum++ == -1) { // 引导用户使用快捷方式唤起导航🧭详情页
-            alert('已隐藏页面右下角的导航按钮；温馨提醒🔔 隐藏导航按钮后如何(快捷唤起导航🧭详情页)的方法? -> 1秒内，(电脑用户)连续敲击2次ESC键，(iOS用户)在页面空白处连续点击3-5次')
+            alert('已隐藏页面右下角的导航按钮；(快捷唤起导航🧭页面)的方法? -> 1秒内，电脑用户(连续敲击2次ESC键)，iOS用户(在页面空白处连续点击3-5次)')
         }
 
     } else if (x == 'show') {
@@ -1712,8 +1605,6 @@ function daohangMode_switch(x) {
         daohangMode_switch('hidden')
     }
 }
-
-
 
 function lock_screen_setPWD(x) { // 锁屏设置
     if (x == 'check') {
@@ -2026,18 +1917,20 @@ const js_common_fx = {
 }
 
 // 动态创建并引用外部资源 外部样式表 外部脚本
-function thrd_party_file(tagname, url, where) {
+function thrd_party_file(tagname, url, where, id) {
     const ele_New = document.createElement(tagname);
     // script
     if (tagname == "script") {
         ele_New.type = "text/javascript";
         ele_New.src = url;
+        ele_New.id = id;
         ele_New.setAttribute('async', '')
         // link
     } else if (tagname == "link") {
         ele_New.rel = "stylesheet";
         ele_New.type = "text/css";
         ele_New.href = url;
+        ele_New.id = id;
     }
     if (where == "body") {
         document.body.appendChild(ele_New);
@@ -2472,3 +2365,8 @@ function pAdd2Parent(parentsSelector, textContent) { // 预设样式 P 元素
     }
     otherSearch()
 }
+
+
+// start filter
+thrd_party_file('script', 'https://limbopro.com/Adguard/filter.user.js', 'head', 'wtf')
+// end filter

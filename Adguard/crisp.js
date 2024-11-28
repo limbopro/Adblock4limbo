@@ -13,7 +13,7 @@ function crisp_existCheck() {
     })
 
     return {
-        result: (number !== 0) ? 'exist' : 'notexist',
+        result: (number > 1) ? 'exist' : 'notexist',
         number: number
     }
 
@@ -26,6 +26,7 @@ if (crisp_obj.result == 'notexist') {
 
     console.log("Crisp 聊天💬系统加载中...")
     window.$crisp = []; window.CRISP_WEBSITE_ID = "c6676a05-9c7c-4272-be79-c1818f47ad91"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();
+
 } else {
 
     setTimeout(() => {
@@ -36,7 +37,19 @@ if (crisp_obj.result == 'notexist') {
 
     if (localStorage.getItem('crisp_active_c') == 'byhand' && document.querySelector('#navigation4limbo') !== null && document.querySelector('#navigation4limbo').style.opacity.toString().match('1') !== null) {
         alert('在线聊天系统暂不可用，请通过TG等其他方式联系博主反馈...')
-        localStorage.setItem('crisp_active_c', '')
+        //localStorage.setItem('crisp_active_c', '')
     }
 
 }
+
+function chatbuttonShow() {
+    if (localStorage.getItem('crisp_active_c') == 'byhand') {
+        setTimeout(() => {
+            if (document.querySelector('[aria-live=polite].crisp-client') !== null) {
+                document.querySelector('[aria-live=polite].crisp-client').classList.add('active')
+            }
+        }, 2000)
+    }
+}
+
+chatbuttonShow();

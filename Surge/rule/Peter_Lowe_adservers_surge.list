@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 26 Nov 2024 11:46:50 GMT
-# entries:        3532
+# last updated:   Tue, 26 Nov 2024 21:40:39 GMT
+# entries:        3537
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
 DOMAIN-SUFFIX,24pm-affiliation.com
+DOMAIN-SUFFIX,2linkpath.com
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,2o7.net
 DOMAIN-SUFFIX,2znp09oa.com
@@ -1481,6 +1482,7 @@ DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
 DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
+DOMAIN-SUFFIX,deal-on.eu
 DOMAIN-SUFFIX,dealdotcom.com
 DOMAIN-SUFFIX,decenterads.com
 DOMAIN-SUFFIX,decisivebase.com
@@ -1508,6 +1510,7 @@ DOMAIN-SUFFIX,digestiondrawer.com
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com
 DOMAIN-SUFFIX,digitalmerkat.com
 DOMAIN-SUFFIX,direct-events-collector.spot.im
+DOMAIN-SUFFIX,direct-re2.pl
 DOMAIN-SUFFIX,directaclick.com
 DOMAIN-SUFFIX,directleads.com
 DOMAIN-SUFFIX,directorym.com
@@ -2697,6 +2700,7 @@ DOMAIN-SUFFIX,ratings.lycos.com
 DOMAIN-SUFFIX,rayjump.com
 DOMAIN-SUFFIX,rcadserver.com
 DOMAIN-SUFFIX,re-direct.pl
+DOMAIN-SUFFIX,re-direct1.com
 DOMAIN-SUFFIX,reachjunction.com
 DOMAIN-SUFFIX,reactx.com
 DOMAIN-SUFFIX,readingguilt.com
@@ -2767,6 +2771,7 @@ DOMAIN-SUFFIX,richaudience.com
 DOMAIN-SUFFIX,richmails.com
 DOMAIN-SUFFIX,richstring.com
 DOMAIN-SUFFIX,rightstats.com
+DOMAIN-SUFFIX,riktok.pl
 DOMAIN-SUFFIX,ringplant.com
 DOMAIN-SUFFIX,ringsrecord.com
 DOMAIN-SUFFIX,ritzykey.com

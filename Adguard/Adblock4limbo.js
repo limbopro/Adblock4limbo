@@ -46,8 +46,8 @@ var url_target_regex = /(missav|netflav|supjav|njav|javday)/gi;
 
 var url_target = url.match(url_target_regex);
 
-if ($response.body !== null) {  // 判断响应体是否存在
-    if (url_target !== null) {  // 判断该URL是否匹配目标
+if ($response.body !== null && $response.body !== undefined) {  // 判断响应体是否存在
+    if (url_target !== null && url_target !== undefined) {  // 判断该URL是否匹配目标
         let window_open_reg = 'window.open'; // 匹配
         let window_open_str = ''; // 替换为空
         var body = $response.body.replaceAll(regex, replace_str).replaceAll(window_open_reg, window_open_str);

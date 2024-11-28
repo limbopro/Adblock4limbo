@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411261600
+## ! Version: 202411281043
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Nov 2024 16:00 UTC
+## ! Last modified: 28 Nov 2024 10:43 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -41266,6 +41266,7 @@ DOMAIN-SUFFIX,beam.telex.hu
 DOMAIN-SUFFIX,events.ingatlan.com
 DOMAIN-SUFFIX,outal.origo.hu
 DOMAIN-SUFFIX,analytic20.detik.com
+DOMAIN-SUFFIX,dt-tracker.mamikos.com
 DOMAIN-SUFFIX,ktracker.kumparan.com
 DOMAIN-SUFFIX,t.bukalapak.com
 DOMAIN-SUFFIX,analytics.laregione.ch

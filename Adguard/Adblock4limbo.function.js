@@ -858,9 +858,11 @@ function body_build(x) { // 判断导航显示与否
         ////console.log("// body_build() 输入为 true，开始创建导航...")
         all(1, 114154, 1, 'auto')
         
+        /*
         if (document.getElementById('parent') !== null) {
             document.getElementById('parent').setAttribute('class', 'parent_hidden')
         } // 关闭 444
+        */
 
     } else if (x == "false") {
         all(0, -114154, 1, 'none')
@@ -1519,8 +1521,7 @@ function nsfwmode_check() {
             document.getElementById('nsfwmode_switch').style.background = 'green';
             setTimeout(() => {
                 body_build('false');
-                // visibility('true') // 立即模糊
-            }, 1200)
+            }, 1000)
         }
 
     } else if (getCookie('nsfwmode') == 'false' && nsfw_regex.test(document.location.href)) {

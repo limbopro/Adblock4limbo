@@ -52,86 +52,76 @@ function ele_add(tagwhat2Create, id, textContent, parentwhat2Append, className, 
     parentwhat2Append.appendChild(_add)
 }
 
-// 添加监听事件
-function addEventListener_add() {
-    let notfilter = "div:not(#parent) {filter:blur(0px); pointer-events:auto;}"
-    setTimeout(() => {
+function znsh_ele_create() { // 生成内容元素并设置钩子
 
+    if (getCookie('nsfwmode') == 'false') {
+        console.log('!成人保护模式(off)')
+    } else {
+        if (document.getElementById('parent') == null) {
+            ele_add('div', 'parent', '', document.querySelector('html'), 'parent_show') // 显示主体
+            // ele_add('div', 'imgfilter', '<img class="fifth" src="" height=50px>', document.getElementById('parent'), 'center', '')
+            ele_add('div', 'warn', '<div class="center"><h3>🔞内容警告⚠️</h2></div><div class="center"><b>成人保护模式已开启(ON)</b><br>可进入 <b>导航 -> 设置</b> 点击相应按钮进行关闭 <b>(ON/OFF)</b></div>', document.getElementById('parent'), 'center')
+            ele_add('button', 'click2show', '显示内容', document.getElementById('parent'), 'center black')
+            ele_add('button', 'setting', '设置', document.getElementById('parent'), 'center black')
+            addEventListener_add();
+            znsh_css_create();
+        } else {
+            document.getElementById('parent').setAttribute('class', 'parent_show')
+            znsh_css_create();
+        }
+    }
+
+}
+
+function znsh_css_create() { // 为主体设置样式
+    var filter = "div:not(.div_global,.echo,#navigation4limbo,#imgfilter,#parent,#warn,.center) {filter:blur(10px); pointer-events:none; overflow:hidden;}"
+    var global = ".fifth {width:150px;} #imgfilter{display:flex; flex-direction:column; align-items:center; background:#00000000; color:white; position:fixed; top:20%; width:100%; z-index:114; border:aquamarine; font-size:larger; text-align:center;} .width150{width:150px} .black {height:45px;margin-top:0.5px;background:black;} #warn {z-index:115; display:flex;align-items:center;justify-content:center; flex-direction:column; background:#b01e1e;color:white; height:150px; border-radius:11px 11px 0px 0px;} .blank {display:block; background:#ff000000; border:antiquewhite;} .center {width:200px; font-size:small;color:white;} .parent_hidden {display:none; background:#00000000; color:white; position:fixed; top:40%; width:100%; z-index:114; border:aquamarine; font-size:larger; text-align:center;} .parent_show {display:flex; flex-direction:column; align-items:center; background:#00000000; color:white; position:fixed; top:35%; width:100%; z-index:114; border:aquamarine; font-size:larger; text-align:center;}"
+    if (document.getElementById('global') == null) {
+        css_add(global, 100, 'global')
+        css_add(filter, 100, 'filter')
+    } else {
+        document.querySelector('style#filter').innerHTML = filter
+    }
+}
+
+
+// 添加监听事件 设置
+function addEventListener_add() {
+    function notfilter() {
+        var notfilter = "div:not(#parent) {filter:blur(0px); pointer-events:auto;}"
+        document.querySelector('style#filter').innerHTML = notfilter
+        document.getElementById('parent').setAttribute('class', 'parent_hidden')
+        sessionStorage.setItem('click2show', 'true')
+    }
+
+    setTimeout(() => {
         if (document.getElementById('click2show') !== null) { // 点了
             document.getElementById('click2show').addEventListener('click', function () {
-                document.querySelector('style#filter').innerHTML = notfilter
-                document.getElementById('parent').setAttribute('class', 'parent_hidden')
-                sessionStorage.setItem('click2show', 'true')
+                notfilter();
             })
         }
 
         if (document.getElementById('setting') !== null) {
             document.getElementById('setting').addEventListener('click', function () {
                 body_build('true')
-                document.querySelector('style#filter').innerHTML = notfilter
+                notfilter();
             })
         }
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                znsh_css_create('true');
-            } else {
-            }
-        }
-        );
 
     }, 1000)
 }
 
-function znsh_ele_create() { // 生成内容元素并设置钩子
-
-    if (document.getElementById('parent') == null) {
-        ele_add('div', 'parent', '', document.querySelector('html'), 'parent_show') // 显示主体
-        // ele_add('div', 'imgfilter', '<img class="fifth" src="" height=50px>', document.getElementById('parent'), 'center', '')
-        ele_add('div', 'warn', '<div class="center"><h3>🔞内容警告⚠️</h2></div><div class="center">Users under the age of 18 please leave the current page immediately.</div>', document.getElementById('parent'), 'center')
-        ele_add('button', 'click2show', '显示内容', document.getElementById('parent'), 'center black')
-        ele_add('button', 'setting', '设置', document.getElementById('parent'), 'center black')
-        addEventListener_add();
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        if (localStorage.getItem('click2show') !== 'true' && getCookie('nsfwmode') == 'true' && (nsfw_regex.test(window.location.href.toLowerCase()))) {
+            znsh_ele_create()
+        }
     } else {
-        document.getElementById('parent').setAttribute('class', 'parent_show')
     }
 }
-
-function znsh_css_create(x) { // 为主体设置样式
-
-    function znsh_css() {
-        var filter = "div:not(.div_global,.echo,#navigation4limbo,#imgfilter,#parent,#warn,.center) {filter:blur(2px); pointer-events:none; overflow:hidden;}"
-        var global = ".fifth {width:150px;} #imgfilter{display:flex; flex-direction:column; align-items:center; background:#00000000; color:white; position:fixed; top:20%; width:100%; z-index:114; border:aquamarine; font-size:larger; text-align:center;} .width150{width:150px} .black {margin-top:0.5px;background:black;} #warn {z-index:115; display:flex;align-items:center;justify-content:center; flex-direction:column; background:#b01e1e;color:white; height:150px; border-radius:11px 11px 0px 0px;} .blank {display:block; background:#ff000000; border:antiquewhite;} .center {width:200px; font-size:small;color:white;} .parent_hidden {display:none; background:#00000000; color:white; position:fixed; top:40%; width:100%; z-index:114; border:aquamarine; font-size:larger; text-align:center;} .parent_show {display:flex; flex-direction:column; align-items:center; background:#00000000; color:white; position:fixed; top:40%; width:100%; z-index:114; border:aquamarine; font-size:larger; text-align:center;}"
-
-        if (document.getElementById('global') == null) {
-            css_add(global, 100, 'global')
-            css_add(filter, 100, 'filter')
-        } else if (document.getElementById('filter') == null) {
-            css_add(filter, 1000, 'filter')
-        } else {
-            document.querySelector('style#filter').innerHTML = filter
-        }
-    }
-
-    if (x == 'true' && localStorage.getItem('click2show') !== 'true' && getCookie('nsfwmode') == 'true' && (nsfw_regex.test(window.location.href.toLowerCase()))) {
-        znsh_ele_create();
-        znsh_css();
-    } else {
-        console.log('已设置关闭...')
-    }
-
-    if (localStorage.getItem('click2show') !== 'true') {
-        if (sessionStorage.getItem('click2show') !== 'true') {
-            if (getCookie('nsfwmode') !== "true") {
-                znsh_css()
-            }
-        }
-    }
-
-}
+);
 
 
-if ( nsfw_regex.test(window.location.href.toLowerCase()) && localStorage.getItem('click2show') !== 'true' && getCookie('nsfwmode') == 'true' && (nsfw_regex.test(window.location.href.toLowerCase())) ) {
-    znsh_ele_create();
-    znsh_css_create();
+if (getCookie('nsfwmode') == 'true' && (sessionStorage.getItem('click2show') == null || sessionStorage.getItem('click2show') == '')) {
+    znsh_ele_create()
 }

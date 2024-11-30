@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411281043
+## ! Version: 202411300544
 ## ! Title: EasyPrivacy
-## ! Last modified: 28 Nov 2024 10:43 UTC
+## ! Last modified: 30 Nov 2024 05:44 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -32,6 +32,7 @@ DOMAIN-SUFFIX,a8723.com
 DOMAIN-SUFFIX,aaxwall.com
 DOMAIN-SUFFIX,acsbapp.com
 DOMAIN-SUFFIX,adcontroll.com
+DOMAIN-SUFFIX,aditude.cloud
 DOMAIN-SUFFIX,admaxium.com
 DOMAIN-SUFFIX,adnext.co
 DOMAIN-SUFFIX,adrtx.net
@@ -4848,6 +4849,7 @@ DOMAIN-SUFFIX,plausible.safing.io
 DOMAIN-SUFFIX,plausible.tubemagic.com
 DOMAIN-SUFFIX,player-telemetry.vimeo.com
 DOMAIN-SUFFIX,plenty.vidio.com
+DOMAIN-SUFFIX,pluto.smallpdf.com
 DOMAIN-SUFFIX,pm.dailykos.com
 DOMAIN-SUFFIX,pm.geniusmonkey.com
 DOMAIN-SUFFIX,prairiedog.hashnode.com

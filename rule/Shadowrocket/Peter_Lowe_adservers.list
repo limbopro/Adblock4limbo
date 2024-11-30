@@ -1,11 +1,11 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 26 Nov 2024 21:40:39 GMT
+# last updated:   Fri, 29 Nov 2024 19:50:12 GMT
 # entries:        3537
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&amp;showintro=1&amp;mimetype=plaintext
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -67,6 +67,7 @@ DOMAIN-SUFFIX,aaxads.com, reject
 DOMAIN-SUFFIX,abacho.net, reject
 DOMAIN-SUFFIX,abc-ads.com, reject
 DOMAIN-SUFFIX,ablink.comms.trainline.com, reject
+DOMAIN-SUFFIX,ablink.info.wise.com, reject
 DOMAIN-SUFFIX,ablink.news.emails-puregym.com, reject
 DOMAIN-SUFFIX,ablinks.mail.hinge.co, reject
 DOMAIN-SUFFIX,aboardlevel.com, reject
@@ -1118,6 +1119,7 @@ DOMAIN-SUFFIX,bidbarrel.cbsnews.com, reject
 DOMAIN-SUFFIX,bidclix.com, reject
 DOMAIN-SUFFIX,bidclix.net, reject
 DOMAIN-SUFFIX,bidr.io, reject
+DOMAIN-SUFFIX,bidsopt.com, reject
 DOMAIN-SUFFIX,bidswitch.net, reject
 DOMAIN-SUFFIX,bidtellect.com, reject
 DOMAIN-SUFFIX,bidvertiser.com, reject
@@ -1142,7 +1144,6 @@ DOMAIN-SUFFIX,blogcounter.de, reject
 DOMAIN-SUFFIX,blogherads.com, reject
 DOMAIN-SUFFIX,blogtoplist.se, reject
 DOMAIN-SUFFIX,blogtopsites.com, reject
-DOMAIN-SUFFIX,blueadvertise.com, reject
 DOMAIN-SUFFIX,blueconic.com, reject
 DOMAIN-SUFFIX,blueconic.net, reject
 DOMAIN-SUFFIX,bluekai.com, reject
@@ -3262,7 +3263,6 @@ DOMAIN-SUFFIX,tracking101.com, reject
 DOMAIN-SUFFIX,tracking22.com, reject
 DOMAIN-SUFFIX,trackingsoft.com, reject
 DOMAIN-SUFFIX,trackmysales.com, reject
-DOMAIN-SUFFIX,trackuhub.com, reject
 DOMAIN-SUFFIX,tradeadexchange.com, reject
 DOMAIN-SUFFIX,tradedoubler.com, reject
 DOMAIN-SUFFIX,traffic-exchange.com, reject

@@ -1,11 +1,11 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 26 Nov 2024 21:40:39 GMT
+# last updated:   Fri, 29 Nov 2024 19:50:12 GMT
 # entries:        3537
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&amp;showintro=1&amp;mimetype=plaintext
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -67,6 +67,7 @@ DOMAIN-SUFFIX,aaxads.com
 DOMAIN-SUFFIX,abacho.net
 DOMAIN-SUFFIX,abc-ads.com
 DOMAIN-SUFFIX,ablink.comms.trainline.com
+DOMAIN-SUFFIX,ablink.info.wise.com
 DOMAIN-SUFFIX,ablink.news.emails-puregym.com
 DOMAIN-SUFFIX,ablinks.mail.hinge.co
 DOMAIN-SUFFIX,aboardlevel.com
@@ -1118,6 +1119,7 @@ DOMAIN-SUFFIX,bidbarrel.cbsnews.com
 DOMAIN-SUFFIX,bidclix.com
 DOMAIN-SUFFIX,bidclix.net
 DOMAIN-SUFFIX,bidr.io
+DOMAIN-SUFFIX,bidsopt.com
 DOMAIN-SUFFIX,bidswitch.net
 DOMAIN-SUFFIX,bidtellect.com
 DOMAIN-SUFFIX,bidvertiser.com
@@ -1142,7 +1144,6 @@ DOMAIN-SUFFIX,blogcounter.de
 DOMAIN-SUFFIX,blogherads.com
 DOMAIN-SUFFIX,blogtoplist.se
 DOMAIN-SUFFIX,blogtopsites.com
-DOMAIN-SUFFIX,blueadvertise.com
 DOMAIN-SUFFIX,blueconic.com
 DOMAIN-SUFFIX,blueconic.net
 DOMAIN-SUFFIX,bluekai.com
@@ -3262,7 +3263,6 @@ DOMAIN-SUFFIX,tracking101.com
 DOMAIN-SUFFIX,tracking22.com
 DOMAIN-SUFFIX,trackingsoft.com
 DOMAIN-SUFFIX,trackmysales.com
-DOMAIN-SUFFIX,trackuhub.com
 DOMAIN-SUFFIX,tradeadexchange.com
 DOMAIN-SUFFIX,tradedoubler.com
 DOMAIN-SUFFIX,traffic-exchange.com

@@ -59,7 +59,10 @@ function trustedReplaceArgument(
     const logPrefix = safe.makeLogPrefix('trusted-replace-argument', propChain, argposRaw, argraw);
     const argoffset = parseInt(argposRaw, 10) || 0;
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const normalValue = validateConstantFn(true, argraw, extraArgs);
+    const replacer = argraw.startsWith('repl:/') &&
+        parseReplaceFn(argraw.slice(5)) || undefined;
+    const value = replacer === undefined &&
+        validateConstantFn(true, argraw, extraArgs) || undefined;
     const reCondition = extraArgs.condition
         ? safe.patternToRegex(extraArgs.condition)
         : /^/;
@@ -70,15 +73,42 @@ function trustedReplaceArgument(
             return context.reflect();
         }
         const argpos = argoffset >= 0 ? argoffset : callArgs.length - argoffset;
-        if ( argpos >= 0 && argpos < callArgs.length ) {
-            const argBefore = callArgs[argpos];
-            if ( safe.RegExp_test.call(reCondition, argBefore) ) {
-                callArgs[argpos] = normalValue;
-                safe.uboLog(logPrefix, `Replaced argument:\nBefore: ${JSON.stringify(argBefore)}\nAfter: ${normalValue}`);
-            }
+        if ( argpos < 0 || argpos >= callArgs.length ) {
+            return context.reflect();
         }
+        const argBefore = callArgs[argpos];
+        if ( safe.RegExp_test.call(reCondition, argBefore) === false ) {
+            return context.reflect();
+        }
+        const argAfter = replacer && typeof argBefore === 'string'
+            ? argBefore.replace(replacer.re, replacer.replacement)
+            : value;
+        callArgs[argpos] = argAfter;
+        safe.uboLog(logPrefix, `Replaced argument:\nBefore: ${JSON.stringify(argBefore)}\nAfter: ${argAfter}`);
         return context.reflect();
     });
+}
+
+function parseReplaceFn(s) {
+    if ( s.charCodeAt(0) !== 0x2F /* / */ ) { return; }
+    const parser = createArglistParser('/');
+    parser.nextArg(s, 1);
+    let pattern = s.slice(parser.argBeg, parser.argEnd);
+    if ( parser.transform ) {
+        pattern = parser.normalizeArg(pattern);
+    }
+    if ( pattern === '' ) { return; }
+    parser.nextArg(s, parser.separatorEnd);
+    let replacement = s.slice(parser.argBeg, parser.argEnd);
+    if ( parser.separatorEnd === parser.separatorBeg ) { return; }
+    if ( parser.transform ) {
+        replacement = parser.normalizeArg(replacement);
+    }
+    const flags = s.slice(parser.separatorEnd);
+    try {
+        return { re: new RegExp(pattern, flags), replacement };
+    } catch(_) {
+    }
 }
 
 function proxyApplyFn(
@@ -399,6 +429,104 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         }
     }
     return value;
+}
+
+function createArglistParser(...args) {
+    return new ArglistParser(...args);
+}
+
+class ArglistParser {
+    constructor(separatorChar = ',', mustQuote = false) {
+        this.separatorChar = this.actualSeparatorChar = separatorChar;
+        this.separatorCode = this.actualSeparatorCode = separatorChar.charCodeAt(0);
+        this.mustQuote = mustQuote;
+        this.quoteBeg = 0; this.quoteEnd = 0;
+        this.argBeg = 0; this.argEnd = 0;
+        this.separatorBeg = 0; this.separatorEnd = 0;
+        this.transform = false;
+        this.failed = false;
+        this.reWhitespaceStart = /^\s+/;
+        this.reWhitespaceEnd = /\s+$/;
+        this.reOddTrailingEscape = /(?:^|[^\\])(?:\\\\)*\\$/;
+        this.reTrailingEscapeChars = /\\+$/;
+    }
+    nextArg(pattern, beg = 0) {
+        const len = pattern.length;
+        this.quoteBeg = beg + this.leftWhitespaceCount(pattern.slice(beg));
+        this.failed = false;
+        const qc = pattern.charCodeAt(this.quoteBeg);
+        if ( qc === 0x22 /* " */ || qc === 0x27 /* ' */ || qc === 0x60 /* ` */ ) {
+            this.indexOfNextArgSeparator(pattern, qc);
+            if ( this.argEnd !== len ) {
+                this.quoteEnd = this.argEnd + 1;
+                this.separatorBeg = this.separatorEnd = this.quoteEnd;
+                this.separatorEnd += this.leftWhitespaceCount(pattern.slice(this.quoteEnd));
+                if ( this.separatorEnd === len ) { return this; }
+                if ( pattern.charCodeAt(this.separatorEnd) === this.separatorCode ) {
+                    this.separatorEnd += 1;
+                    return this;
+                }
+            }
+        }
+        this.indexOfNextArgSeparator(pattern, this.separatorCode);
+        this.separatorBeg = this.separatorEnd = this.argEnd;
+        if ( this.separatorBeg < len ) {
+            this.separatorEnd += 1;
+        }
+        this.argEnd -= this.rightWhitespaceCount(pattern.slice(0, this.separatorBeg));
+        this.quoteEnd = this.argEnd;
+        if ( this.mustQuote ) {
+            this.failed = true;
+        }
+        return this;
+    }
+    normalizeArg(s, char = '') {
+        if ( char === '' ) { char = this.actualSeparatorChar; }
+        let out = '';
+        let pos = 0;
+        while ( (pos = s.lastIndexOf(char)) !== -1 ) {
+            out = s.slice(pos) + out;
+            s = s.slice(0, pos);
+            const match = this.reTrailingEscapeChars.exec(s);
+            if ( match === null ) { continue; }
+            const tail = (match[0].length & 1) !== 0
+                ? match[0].slice(0, -1)
+                : match[0];
+            out = tail + out;
+            s = s.slice(0, -match[0].length);
+        }
+        if ( out === '' ) { return s; }
+        return s + out;
+    }
+    leftWhitespaceCount(s) {
+        const match = this.reWhitespaceStart.exec(s);
+        return match === null ? 0 : match[0].length;
+    }
+    rightWhitespaceCount(s) {
+        const match = this.reWhitespaceEnd.exec(s);
+        return match === null ? 0 : match[0].length;
+    }
+    indexOfNextArgSeparator(pattern, separatorCode) {
+        this.argBeg = this.argEnd = separatorCode !== this.separatorCode
+            ? this.quoteBeg + 1
+            : this.quoteBeg;
+        this.transform = false;
+        if ( separatorCode !== this.actualSeparatorCode ) {
+            this.actualSeparatorCode = separatorCode;
+            this.actualSeparatorChar = String.fromCharCode(separatorCode);
+        }
+        while ( this.argEnd < pattern.length ) {
+            const pos = pattern.indexOf(this.actualSeparatorChar, this.argEnd);
+            if ( pos === -1 ) {
+                return (this.argEnd = pattern.length);
+            }
+            if ( this.reOddTrailingEscape.test(pattern.slice(0, pos)) === false ) {
+                return (this.argEnd = pos);
+            }
+            this.transform = true;
+            this.argEnd = pos + 1;
+        }
+    }
 }
 
 /******************************************************************************/

@@ -39,9 +39,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"]];
+const argsList = [["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"]];
 
-const hostnamesMap = new Map([["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["theonegenerator.com",2],["mcskinhistory.com",2],["bypass.city",3],["adbypass.org",3],["amtraker.com",4]]);
+const hostnamesMap = new Map([["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["theonegenerator.com",2],["mcskinhistory.com",2],["bypass.city",3],["adbypass.org",3],["amtraker.com",4],["ark-unity.com",5]]);
 
 const entitiesMap = new Map([["ddys",0]]);
 

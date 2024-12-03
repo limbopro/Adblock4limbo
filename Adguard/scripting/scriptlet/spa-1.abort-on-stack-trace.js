@@ -39,11 +39,11 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["alert","eval"],["history.go","eval"],["JSON.parse","showPopup"]];
+const argsList = [["document.open","eval"],["alert","eval"],["history.go","eval"],["JSON.parse","showPopup"]];
 
-const hostnamesMap = new Map([["netcine3.la",[0,1]],["toonscrab.com",2]]);
+const hostnamesMap = new Map([["cursomecanet.com",0],["netcine3.la",[1,2]],["toonscrab.com",3]]);
 
-const entitiesMap = new Map([["netcine",[0,1]]]);
+const entitiesMap = new Map([["netcine",[1,2]]]);
 
 const exceptionsMap = new Map([]);
 

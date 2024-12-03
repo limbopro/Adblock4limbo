@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 29 Nov 2024 19:50:12 GMT
-# entries:        3537
+# last updated:   Mon, 02 Dec 2024 15:23:02 GMT
+# entries:        3540
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1330,6 +1330,7 @@ DOMAIN-SUFFIX,clickfuse.com, reject
 DOMAIN-SUFFIX,clickhereforcellphones.com, reject
 DOMAIN-SUFFIX,clicklink.jp, reject
 DOMAIN-SUFFIX,clickmate.io, reject
+DOMAIN-SUFFIX,clickngo.pro, reject
 DOMAIN-SUFFIX,clickonometrics.pl, reject
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk, reject
 DOMAIN-SUFFIX,clicks.equantum.com, reject
@@ -1480,6 +1481,7 @@ DOMAIN-SUFFIX,damdoor.com, reject
 DOMAIN-SUFFIX,dancemistake.com, reject
 DOMAIN-SUFFIX,dapper.net, reject
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
+DOMAIN-SUFFIX,datenow.link, reject
 DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
@@ -2723,6 +2725,7 @@ DOMAIN-SUFFIX,recoco.it, reject
 DOMAIN-SUFFIX,reconditerake.com, reject
 DOMAIN-SUFFIX,record.bonniergaming.com, reject
 DOMAIN-SUFFIX,record.mrwin.com, reject
+DOMAIN-SUFFIX,redirecting8.eu, reject
 DOMAIN-SUFFIX,redirectingat.com, reject
 DOMAIN-SUFFIX,redirectvoluum.com, reject
 DOMAIN-SUFFIX,redrection.pro, reject

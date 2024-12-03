@@ -39,9 +39,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ins.adsbygoogle","display","block"]];
+const argsList = [["ins.adsbygoogle","display","block"],["article > div[style=\"margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;\"]","clip","auto"]];
 
-const hostnamesMap = new Map([["yourfones.net",0]]);
+const hostnamesMap = new Map([["yourfones.net",0],["exploader.net",1]]);
 
 const entitiesMap = new Map([]);
 

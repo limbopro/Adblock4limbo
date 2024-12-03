@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 29 Nov 2024 19:50:12 GMT
-# entries:        3537
+# last updated:   Mon, 02 Dec 2024 15:23:02 GMT
+# entries:        3540
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1330,6 +1330,7 @@ DOMAIN-SUFFIX,clickfuse.com
 DOMAIN-SUFFIX,clickhereforcellphones.com
 DOMAIN-SUFFIX,clicklink.jp
 DOMAIN-SUFFIX,clickmate.io
+DOMAIN-SUFFIX,clickngo.pro
 DOMAIN-SUFFIX,clickonometrics.pl
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk
 DOMAIN-SUFFIX,clicks.equantum.com
@@ -1480,6 +1481,7 @@ DOMAIN-SUFFIX,damdoor.com
 DOMAIN-SUFFIX,dancemistake.com
 DOMAIN-SUFFIX,dapper.net
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
+DOMAIN-SUFFIX,datenow.link
 DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
@@ -2723,6 +2725,7 @@ DOMAIN-SUFFIX,recoco.it
 DOMAIN-SUFFIX,reconditerake.com
 DOMAIN-SUFFIX,record.bonniergaming.com
 DOMAIN-SUFFIX,record.mrwin.com
+DOMAIN-SUFFIX,redirecting8.eu
 DOMAIN-SUFFIX,redirectingat.com
 DOMAIN-SUFFIX,redirectvoluum.com
 DOMAIN-SUFFIX,redrection.pro

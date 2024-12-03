@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202411301501
+## ! Version: 202412031302
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Nov 2024 15:01 UTC
+## ! Last modified: 03 Dec 2024 13:02 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1998,6 +1998,7 @@ DOMAIN-SUFFIX,saltsacademy.com
 DOMAIN-SUFFIX,samesticks.com
 DOMAIN-SUFFIX,samestretch.com
 DOMAIN-SUFFIX,samplesamba.com
+DOMAIN-SUFFIX,samuraibots.com
 DOMAIN-SUFFIX,sandstrophies.com
 DOMAIN-SUFFIX,satisfycork.com
 DOMAIN-SUFFIX,satisfyingshirt.com
@@ -2553,6 +2554,7 @@ DOMAIN-SUFFIX,wigglygeese.com
 DOMAIN-SUFFIX,wigglyindustry.com
 DOMAIN-SUFFIX,wildcommittee.com
 DOMAIN-SUFFIX,wildernesscamera.com
+DOMAIN-SUFFIX,wildwoodavenue.com
 DOMAIN-SUFFIX,wirecomic.com
 DOMAIN-SUFFIX,wiredforcoffee.com
 DOMAIN-SUFFIX,wirypaste.com
@@ -3774,7 +3776,6 @@ DOMAIN-SUFFIX,d1ros97qkrwjf5.cloudfront.net
 DOMAIN-SUFFIX,d1t9uctetvi0tu.cloudfront.net
 DOMAIN-SUFFIX,d1tbj6eaenapdy.cloudfront.net
 DOMAIN-SUFFIX,d1vg5xiq7qffdj.cloudfront.net
-DOMAIN-SUFFIX,d1wix2gc2cgqis.cloudfront.net
 DOMAIN-SUFFIX,d1xfq2052q7thw.cloudfront.net
 DOMAIN-SUFFIX,d1z3r0i09bwium.cloudfront.net
 DOMAIN-SUFFIX,d1z9vm58yath60.cloudfront.net

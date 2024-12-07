@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 02 Dec 2024 15:23:02 GMT
-# entries:        3540
+# last updated:   Wed, 04 Dec 2024 10:38:14 GMT
+# entries:        3538
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,6 +17,7 @@ DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
 DOMAIN-SUFFIX,180searchassistant.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
+DOMAIN-SUFFIX,2020mustang.com, reject
 DOMAIN-SUFFIX,207.net, reject
 DOMAIN-SUFFIX,247media.com, reject
 DOMAIN-SUFFIX,24log.com, reject
@@ -1075,7 +1076,6 @@ DOMAIN-SUFFIX,banners.thomsonlocal.com, reject
 DOMAIN-SUFFIX,banners.videosz.com, reject
 DOMAIN-SUFFIX,banners.virtuagirlhd.com, reject
 DOMAIN-SUFFIX,bannerserver.com, reject
-DOMAIN-SUFFIX,bannersgomlm.com, reject
 DOMAIN-SUFFIX,bannershotlink.perfectgonzo.com, reject
 DOMAIN-SUFFIX,bannersng.yell.com, reject
 DOMAIN-SUFFIX,bannerspace.com, reject
@@ -1888,7 +1888,6 @@ DOMAIN-SUFFIX,hsleadflows.net, reject
 DOMAIN-SUFFIX,hsn.uqhv.net, reject
 DOMAIN-SUFFIX,htlbid.com, reject
 DOMAIN-SUFFIX,httpool.com, reject
-DOMAIN-SUFFIX,hubadnetwork.com, reject
 DOMAIN-SUFFIX,hubspotlinks.com, reject
 DOMAIN-SUFFIX,hueads.com, reject
 DOMAIN-SUFFIX,hueadsortb.com, reject
@@ -2370,7 +2369,6 @@ DOMAIN-SUFFIX,newsletter-link.com, reject
 DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
 DOMAIN-SUFFIX,newt1.adultworld.com, reject
-DOMAIN-SUFFIX,nexac.com, reject
 DOMAIN-SUFFIX,nexage.com, reject
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com, reject
 DOMAIN-SUFFIX,nitroclicks.com, reject
@@ -2460,6 +2458,7 @@ DOMAIN-SUFFIX,optmnstr.com, reject
 DOMAIN-SUFFIX,optmstr.com, reject
 DOMAIN-SUFFIX,optnmstr.com, reject
 DOMAIN-SUFFIX,optnx.com, reject
+DOMAIN-SUFFIX,orbsrv.com, reject
 DOMAIN-SUFFIX,orientedargument.com, reject
 DOMAIN-SUFFIX,orionember.com, reject
 DOMAIN-SUFFIX,ota.cartrawler.com, reject
@@ -2730,6 +2729,7 @@ DOMAIN-SUFFIX,redirectingat.com, reject
 DOMAIN-SUFFIX,redirectvoluum.com, reject
 DOMAIN-SUFFIX,redrection.pro, reject
 DOMAIN-SUFFIX,redshell.io, reject
+DOMAIN-SUFFIX,reduxmedia.com, reject
 DOMAIN-SUFFIX,referralware.com, reject
 DOMAIN-SUFFIX,referrer.disqus.com, reject
 DOMAIN-SUFFIX,regnow.com, reject
@@ -2759,7 +2759,6 @@ DOMAIN-SUFFIX,revcontent.com, reject
 DOMAIN-SUFFIX,reveal.clearbit.com, reject
 DOMAIN-SUFFIX,revenuedirect.com, reject
 DOMAIN-SUFFIX,revenuehits.com, reject
-DOMAIN-SUFFIX,revive.docmatic.org, reject
 DOMAIN-SUFFIX,revive.dubcnm.com, reject
 DOMAIN-SUFFIX,revive.haskovo.net, reject
 DOMAIN-SUFFIX,revive.netriota.hu, reject
@@ -2955,7 +2954,6 @@ DOMAIN-SUFFIX,sombersurprise.com, reject
 DOMAIN-SUFFIX,somniture.stuff.co.nz, reject
 DOMAIN-SUFFIX,somoaudience.com, reject
 DOMAIN-SUFFIX,sonobi.com, reject
-DOMAIN-SUFFIX,sordidsmile.com, reject
 DOMAIN-SUFFIX,sortable.com, reject
 DOMAIN-SUFFIX,sourcepoint.vice.com, reject
 DOMAIN-SUFFIX,sovrn.com, reject

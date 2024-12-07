@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412031302
+## ! Version: 202412070841
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Dec 2024 13:02 UTC
+## ! Last modified: 07 Dec 2024 08:41 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1677,6 +1677,7 @@ DOMAIN-SUFFIX,nightwound.com, reject
 DOMAIN-SUFFIX,nimbleplot.com, reject
 DOMAIN-SUFFIX,nocturnalloom.com, reject
 DOMAIN-SUFFIX,nocturnalmystique.com, reject
+DOMAIN-SUFFIX,nodethisweek.com, reject
 DOMAIN-SUFFIX,noiselessplough.com, reject
 DOMAIN-SUFFIX,nonchalantnerve.com, reject
 DOMAIN-SUFFIX,nondescriptcrowd.com, reject
@@ -1700,6 +1701,7 @@ DOMAIN-SUFFIX,oafishobservation.com, reject
 DOMAIN-SUFFIX,objecthero.com, reject
 DOMAIN-SUFFIX,obscenesidewalk.com, reject
 DOMAIN-SUFFIX,observantice.com, reject
+DOMAIN-SUFFIX,offshorecyclone.com, reject
 DOMAIN-SUFFIX,oldfashionedoffer.com, reject
 DOMAIN-SUFFIX,omgthink.com, reject
 DOMAIN-SUFFIX,omniscientfeeling.com, reject
@@ -1780,6 +1782,7 @@ DOMAIN-SUFFIX,piquantprice.com, reject
 DOMAIN-SUFFIX,piquantstove.com, reject
 DOMAIN-SUFFIX,piquantvortex.com, reject
 DOMAIN-SUFFIX,pixeledhub.com, reject
+DOMAIN-SUFFIX,pixelvariety.com, reject
 DOMAIN-SUFFIX,pizzasnut.com, reject
 DOMAIN-SUFFIX,placeframe.com, reject
 DOMAIN-SUFFIX,placidactivity.com, reject
@@ -1988,6 +1991,7 @@ DOMAIN-SUFFIX,ruthlessdegree.com, reject
 DOMAIN-SUFFIX,ruthlessmilk.com, reject
 DOMAIN-SUFFIX,ruthlessrobin.com, reject
 DOMAIN-SUFFIX,sableloss.com, reject
+DOMAIN-SUFFIX,sableshelf.com, reject
 DOMAIN-SUFFIX,sablesmile.com, reject
 DOMAIN-SUFFIX,sablesong.com, reject
 DOMAIN-SUFFIX,sadloaf.com, reject
@@ -2680,6 +2684,7 @@ DOMAIN-SUFFIX,analytics.dvidshub.net, reject
 DOMAIN-SUFFIX,analytics.edgekey.net, reject
 DOMAIN-SUFFIX,analytics.eggoffer.com, reject
 DOMAIN-SUFFIX,analytics.erepublic.com, reject
+DOMAIN-SUFFIX,analytics.fatmedia.io, reject
 DOMAIN-SUFFIX,analytics.favcy.com, reject
 DOMAIN-SUFFIX,analytics.firespring.com, reject
 DOMAIN-SUFFIX,analytics.foresee.com, reject

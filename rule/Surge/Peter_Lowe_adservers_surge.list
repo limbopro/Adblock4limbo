@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 02 Dec 2024 15:23:02 GMT
-# entries:        3540
+# last updated:   Wed, 04 Dec 2024 10:38:14 GMT
+# entries:        3538
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -17,6 +17,7 @@ DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,180hits.de
 DOMAIN-SUFFIX,180searchassistant.com
 DOMAIN-SUFFIX,1rx.io
+DOMAIN-SUFFIX,2020mustang.com
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
@@ -1075,7 +1076,6 @@ DOMAIN-SUFFIX,banners.thomsonlocal.com
 DOMAIN-SUFFIX,banners.videosz.com
 DOMAIN-SUFFIX,banners.virtuagirlhd.com
 DOMAIN-SUFFIX,bannerserver.com
-DOMAIN-SUFFIX,bannersgomlm.com
 DOMAIN-SUFFIX,bannershotlink.perfectgonzo.com
 DOMAIN-SUFFIX,bannersng.yell.com
 DOMAIN-SUFFIX,bannerspace.com
@@ -1888,7 +1888,6 @@ DOMAIN-SUFFIX,hsleadflows.net
 DOMAIN-SUFFIX,hsn.uqhv.net
 DOMAIN-SUFFIX,htlbid.com
 DOMAIN-SUFFIX,httpool.com
-DOMAIN-SUFFIX,hubadnetwork.com
 DOMAIN-SUFFIX,hubspotlinks.com
 DOMAIN-SUFFIX,hueads.com
 DOMAIN-SUFFIX,hueadsortb.com
@@ -2370,7 +2369,6 @@ DOMAIN-SUFFIX,newsletter-link.com
 DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
 DOMAIN-SUFFIX,newt1.adultworld.com
-DOMAIN-SUFFIX,nexac.com
 DOMAIN-SUFFIX,nexage.com
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com
 DOMAIN-SUFFIX,nitroclicks.com
@@ -2460,6 +2458,7 @@ DOMAIN-SUFFIX,optmnstr.com
 DOMAIN-SUFFIX,optmstr.com
 DOMAIN-SUFFIX,optnmstr.com
 DOMAIN-SUFFIX,optnx.com
+DOMAIN-SUFFIX,orbsrv.com
 DOMAIN-SUFFIX,orientedargument.com
 DOMAIN-SUFFIX,orionember.com
 DOMAIN-SUFFIX,ota.cartrawler.com
@@ -2730,6 +2729,7 @@ DOMAIN-SUFFIX,redirectingat.com
 DOMAIN-SUFFIX,redirectvoluum.com
 DOMAIN-SUFFIX,redrection.pro
 DOMAIN-SUFFIX,redshell.io
+DOMAIN-SUFFIX,reduxmedia.com
 DOMAIN-SUFFIX,referralware.com
 DOMAIN-SUFFIX,referrer.disqus.com
 DOMAIN-SUFFIX,regnow.com
@@ -2759,7 +2759,6 @@ DOMAIN-SUFFIX,revcontent.com
 DOMAIN-SUFFIX,reveal.clearbit.com
 DOMAIN-SUFFIX,revenuedirect.com
 DOMAIN-SUFFIX,revenuehits.com
-DOMAIN-SUFFIX,revive.docmatic.org
 DOMAIN-SUFFIX,revive.dubcnm.com
 DOMAIN-SUFFIX,revive.haskovo.net
 DOMAIN-SUFFIX,revive.netriota.hu
@@ -2955,7 +2954,6 @@ DOMAIN-SUFFIX,sombersurprise.com
 DOMAIN-SUFFIX,somniture.stuff.co.nz
 DOMAIN-SUFFIX,somoaudience.com
 DOMAIN-SUFFIX,sonobi.com
-DOMAIN-SUFFIX,sordidsmile.com
 DOMAIN-SUFFIX,sortable.com
 DOMAIN-SUFFIX,sourcepoint.vice.com
 DOMAIN-SUFFIX,sovrn.com

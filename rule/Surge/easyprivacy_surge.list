@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412031302
+## ! Version: 202412070841
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Dec 2024 13:02 UTC
+## ! Last modified: 07 Dec 2024 08:41 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1677,6 +1677,7 @@ DOMAIN-SUFFIX,nightwound.com
 DOMAIN-SUFFIX,nimbleplot.com
 DOMAIN-SUFFIX,nocturnalloom.com
 DOMAIN-SUFFIX,nocturnalmystique.com
+DOMAIN-SUFFIX,nodethisweek.com
 DOMAIN-SUFFIX,noiselessplough.com
 DOMAIN-SUFFIX,nonchalantnerve.com
 DOMAIN-SUFFIX,nondescriptcrowd.com
@@ -1700,6 +1701,7 @@ DOMAIN-SUFFIX,oafishobservation.com
 DOMAIN-SUFFIX,objecthero.com
 DOMAIN-SUFFIX,obscenesidewalk.com
 DOMAIN-SUFFIX,observantice.com
+DOMAIN-SUFFIX,offshorecyclone.com
 DOMAIN-SUFFIX,oldfashionedoffer.com
 DOMAIN-SUFFIX,omgthink.com
 DOMAIN-SUFFIX,omniscientfeeling.com
@@ -1780,6 +1782,7 @@ DOMAIN-SUFFIX,piquantprice.com
 DOMAIN-SUFFIX,piquantstove.com
 DOMAIN-SUFFIX,piquantvortex.com
 DOMAIN-SUFFIX,pixeledhub.com
+DOMAIN-SUFFIX,pixelvariety.com
 DOMAIN-SUFFIX,pizzasnut.com
 DOMAIN-SUFFIX,placeframe.com
 DOMAIN-SUFFIX,placidactivity.com
@@ -1988,6 +1991,7 @@ DOMAIN-SUFFIX,ruthlessdegree.com
 DOMAIN-SUFFIX,ruthlessmilk.com
 DOMAIN-SUFFIX,ruthlessrobin.com
 DOMAIN-SUFFIX,sableloss.com
+DOMAIN-SUFFIX,sableshelf.com
 DOMAIN-SUFFIX,sablesmile.com
 DOMAIN-SUFFIX,sablesong.com
 DOMAIN-SUFFIX,sadloaf.com
@@ -2680,6 +2684,7 @@ DOMAIN-SUFFIX,analytics.dvidshub.net
 DOMAIN-SUFFIX,analytics.edgekey.net
 DOMAIN-SUFFIX,analytics.eggoffer.com
 DOMAIN-SUFFIX,analytics.erepublic.com
+DOMAIN-SUFFIX,analytics.fatmedia.io
 DOMAIN-SUFFIX,analytics.favcy.com
 DOMAIN-SUFFIX,analytics.firespring.com
 DOMAIN-SUFFIX,analytics.foresee.com

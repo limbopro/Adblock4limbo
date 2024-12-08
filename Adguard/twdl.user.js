@@ -262,7 +262,7 @@ function dlpicsfromURL(imgsrcURL, userName) {
         alert(iftwnopics_innerText())
     } else {
 
-        if (navigator.userAgent.toString().toLowerCase().search(/android|iphone|mobile/) !== -1) {
+        if (navigator.userAgent.toString().toLowerCase().search(/android|iphone|mobile|ipad|ipod|pad/gi) !== -1) {
             sessionStorage.setItem('clickcount', twdl_clickCount += 1) // 点击下载图片按钮次数统计
             localStorage.setItem('clickcount', twdl_clickCount) // 点击下载图片按钮次数统计
             if (sessionStorage.getItem('clickcount') < 3 && localStorage.getItem('clickcount') < 5) { // 如果已经提示了两次则之后不会在在本次session提示

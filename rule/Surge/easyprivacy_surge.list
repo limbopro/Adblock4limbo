@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412070841
+## ! Version: 202412080545
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Dec 2024 08:41 UTC
+## ! Last modified: 08 Dec 2024 05:45 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -96,6 +96,7 @@ DOMAIN-SUFFIX,cliquelead.com
 DOMAIN-SUFFIX,cloudwp.io
 DOMAIN-SUFFIX,clrt.ai
 DOMAIN-SUFFIX,cnna.io
+DOMAIN-SUFFIX,cnstrc.com
 DOMAIN-SUFFIX,cntxtfl.com
 DOMAIN-SUFFIX,confiant-integrations.net
 DOMAIN-SUFFIX,convead.io
@@ -4529,6 +4530,7 @@ DOMAIN-SUFFIX,beacon.shazam.com
 DOMAIN-SUFFIX,beacon.shutterfly.com
 DOMAIN-SUFFIX,beacon.walmart.com
 DOMAIN-SUFFIX,beacon.wikia-services.com
+DOMAIN-SUFFIX,beacons.digital.disneyadvertising.com
 DOMAIN-SUFFIX,bfp.capitalone.com
 DOMAIN-SUFFIX,bi.banggood.com
 DOMAIN-SUFFIX,binocule21c.merriam-webster.com
@@ -41351,6 +41353,7 @@ DOMAIN-SUFFIX,t.syosetu.org
 DOMAIN-SUFFIX,temp.twicomi.com
 DOMAIN-SUFFIX,track.buyma.com
 DOMAIN-SUFFIX,track.prod.smash.pet
+DOMAIN-SUFFIX,tracker.curama.jp
 DOMAIN-SUFFIX,tracking.ai.rakuten.co.jp
 DOMAIN-SUFFIX,tracking.game8.jp
 DOMAIN-SUFFIX,tracking.gnavi.co.jp

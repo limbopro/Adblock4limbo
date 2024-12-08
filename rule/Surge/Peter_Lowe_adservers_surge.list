@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 04 Dec 2024 10:38:14 GMT
-# entries:        3538
+# last updated:   Sat, 07 Dec 2024 08:59:52 GMT
+# entries:        3540
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1692,6 +1692,7 @@ DOMAIN-SUFFIX,fimserve.com
 DOMAIN-SUFFIX,findcommerce.com
 DOMAIN-SUFFIX,findyourcasino.com
 DOMAIN-SUFFIX,fingahvf.top
+DOMAIN-SUFFIX,fireads.org
 DOMAIN-SUFFIX,fireworkadservices.com
 DOMAIN-SUFFIX,fireworkanalytics.com
 DOMAIN-SUFFIX,fireworks-advertising.com
@@ -2320,6 +2321,7 @@ DOMAIN-SUFFIX,mybuys.com
 DOMAIN-SUFFIX,mycounter.ua
 DOMAIN-SUFFIX,mydas.mobi
 DOMAIN-SUFFIX,mylead-tracking.tracknow.info
+DOMAIN-SUFFIX,mylead.global
 DOMAIN-SUFFIX,mylink-today.com
 DOMAIN-SUFFIX,mypagerank.net
 DOMAIN-SUFFIX,mypagerank.ru

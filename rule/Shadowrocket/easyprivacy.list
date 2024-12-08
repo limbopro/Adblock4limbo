@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412070841
+## ! Version: 202412080545
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Dec 2024 08:41 UTC
+## ! Last modified: 08 Dec 2024 05:45 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -96,6 +96,7 @@ DOMAIN-SUFFIX,cliquelead.com, reject
 DOMAIN-SUFFIX,cloudwp.io, reject
 DOMAIN-SUFFIX,clrt.ai, reject
 DOMAIN-SUFFIX,cnna.io, reject
+DOMAIN-SUFFIX,cnstrc.com, reject
 DOMAIN-SUFFIX,cntxtfl.com, reject
 DOMAIN-SUFFIX,confiant-integrations.net, reject
 DOMAIN-SUFFIX,convead.io, reject
@@ -4529,6 +4530,7 @@ DOMAIN-SUFFIX,beacon.shazam.com, reject
 DOMAIN-SUFFIX,beacon.shutterfly.com, reject
 DOMAIN-SUFFIX,beacon.walmart.com, reject
 DOMAIN-SUFFIX,beacon.wikia-services.com, reject
+DOMAIN-SUFFIX,beacons.digital.disneyadvertising.com, reject
 DOMAIN-SUFFIX,bfp.capitalone.com, reject
 DOMAIN-SUFFIX,bi.banggood.com, reject
 DOMAIN-SUFFIX,binocule21c.merriam-webster.com, reject
@@ -41351,6 +41353,7 @@ DOMAIN-SUFFIX,t.syosetu.org, reject
 DOMAIN-SUFFIX,temp.twicomi.com, reject
 DOMAIN-SUFFIX,track.buyma.com, reject
 DOMAIN-SUFFIX,track.prod.smash.pet, reject
+DOMAIN-SUFFIX,tracker.curama.jp, reject
 DOMAIN-SUFFIX,tracking.ai.rakuten.co.jp, reject
 DOMAIN-SUFFIX,tracking.game8.jp, reject
 DOMAIN-SUFFIX,tracking.gnavi.co.jp, reject

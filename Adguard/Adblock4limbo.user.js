@@ -321,7 +321,7 @@ var imax = {
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         missav: "a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         porna91: "a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
-        porn91: "br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
+        porn91: ".copysuccess {background:green !important;color:white !important;} br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
         pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
@@ -506,6 +506,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }, 1000)
             }
 
+            setTimeout(() => {
+                _91porn_dl()
+            }, 2500)
 
             //css_adsRemove(imax.css.porna91);
             //_91porn_videoplay_ads();
@@ -1567,6 +1570,103 @@ function div_ad_missav() {
             div_ad[i].style.height = '0px'
         }
     }
+}
+
+
+function fileDownload(url, download = true) {
+    function getFileName(url) {
+        const name = url.split('/');
+        return name.pop();
+    }
+
+    const filename = getFileName(url);
+    fetch(url)
+        .then(response => {
+            return response.blob();
+        })
+        .then(blob => {
+            const blobUrl = window.URL.createObjectURL(blob);
+            const tempLink = document.createElement('a');
+            tempLink.style.display = 'none';
+            tempLink.href = blobUrl;
+            if (download) {
+                //下载       
+                tempLink.setAttribute('download', filename);
+            } else {
+                //预览       
+                tempLink.setAttribute('target', '_blank');
+            }
+
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            setTimeout(() => {
+                URL.revokeObjectURL(blobUrl);
+                document.body.removeChild(tempLink);
+            }, 500)
+        })
+}
+
+
+function _91porn_dl() { // 下载视频
+
+    if (window.location.href.match('view_video')) {
+        var mp4URL = document.querySelectorAll('source')[0].src
+        
+        var mp4Download = document.createElement('a')
+        mp4Download.download = document.title.toString()
+        mp4Download.target = '_blank'
+        mp4Download.id = 'mp4Download'
+        // mp4Download.href = mp4URL + '&response-content-disposition=' + encodeURIComponent('attachment; filename="' + document.title + '"');
+        mp4Download.href = mp4URL
+
+        if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
+            mp4Download.textContent = '无广播放'
+        } else {
+            mp4Download.textContent = '下载视频'
+        }
+
+        var button_download = document.createElement('button')
+        button_download.style = 'padding:12px; position:fixed;right:0px;top:216px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
+        button_download.textContent = '复制视频下载地址'
+        button_download.id = 'copyURL'
+
+        var button_alert = document.createElement('button')
+        button_alert.style = 'padding:12px; position:fixed;right:0px;top:322px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
+        button_alert.textContent = '如何下载视频?'
+        button_alert.id = 'alertDownload'
+
+        button_alert.addEventListener('click', (() => {
+            alert(' 1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；')
+         }))
+
+        button_download.addEventListener('click', (() => {
+            const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
+            textarea.id = 'fuck91porn'
+            document.querySelector('#copyURL').appendChild(textarea)
+            textarea.value = mp4URL
+            textarea.select();
+            document.execCommand('copy', true); // 执行复制
+            document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
+            document.querySelector('#copyURL').textContent = '复制成功'
+
+            setTimeout(() => { // ↩️按钮恢复原状
+                document.querySelector('#copyURL').classList.remove('copysuccess')
+                document.querySelector('#copyURL').textContent = '复制视频下载地址'
+            }, 2500)
+
+            if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
+                document.getElementById('ffuck91porn').remove()
+            }
+
+
+        }))
+
+        mp4Download.style = 'padding:12px; position:fixed;right:0px;top:150px;background:yellowgreen;color:white;font-weight:bolder;width:60px;'
+        document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('#useraction')[0])
+        document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_download, document.querySelectorAll('#useraction')[0])
+        document.querySelectorAll('#useraction')[0].parentNode.insertBefore(mp4Download, document.querySelectorAll('#useraction')[0])
+    }
+
 }
 
 /* 循环播放 missAV */

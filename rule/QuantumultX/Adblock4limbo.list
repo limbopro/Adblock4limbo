@@ -8,11 +8,11 @@
 ## 仓库地址：https://github.com/limbopro/Adblock4limbo/tree/main/rule
 ## Peter Lowe’s Ad and tracking server list: 3540 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
 ## EasyList: 29430 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 41520 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyPrivacy: 41519 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
 ## EasyList China: 5599 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 81219 Domains/IP/Others (非去重统计)
-## Last updated at  8/12月/2024/14:04
+## 以上共计: 81218 Domains/IP/Others (非去重统计)
+## Last updated at  8/12月/2024/17:07
 ## */
 
 

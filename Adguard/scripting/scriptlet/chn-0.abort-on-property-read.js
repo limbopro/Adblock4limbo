@@ -39,9 +39,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
+const argsList = [["ads"],["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
 
-const hostnamesMap = new Map([["caq98i.top",0],["1090ys8.com",1],["papalah.com",1],["youneed.win",2],["yfsp.tv",3],["aiyifan.tv",3],["iyf.tv",3],["goodav17.com",4],["m.86kl.com",5],["axjbt.com",6],["avcao.cc",6],["exoav.com",7]]);
+const hostnamesMap = new Map([["2urs.com",0],["caq98i.top",1],["1090ys8.com",2],["papalah.com",2],["youneed.win",3],["yfsp.tv",4],["aiyifan.tv",4],["iyf.tv",4],["goodav17.com",5],["m.86kl.com",6],["axjbt.com",7],["avcao.cc",7],["exoav.com",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -132,6 +132,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

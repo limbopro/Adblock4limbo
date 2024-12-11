@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 07 Dec 2024 08:59:52 GMT
-# entries:        3540
+# last updated:   Tue, 10 Dec 2024 13:13:01 GMT
+# entries:        3541
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1794,6 +1794,7 @@ DOMAIN-SUFFIX,go.scmagazine.com
 DOMAIN-SUFFIX,go.usa.gov
 DOMAIN-SUFFIX,go.xlirdr.com
 DOMAIN-SUFFIX,go2affise.com
+DOMAIN-SUFFIX,godseedband.com
 DOMAIN-SUFFIX,goingplatinum.com
 DOMAIN-SUFFIX,goldstats.com
 DOMAIN-SUFFIX,gondolagnome.com

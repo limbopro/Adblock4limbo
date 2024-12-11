@@ -142,12 +142,12 @@ function m3uPrune(
                 }
                 text = before.trim() + '\n' + after.trim();
                 reM3u.lastIndex = before.length + 1;
-                toLog.push('Discarding', ...discard.split(/\n+/).map(s => `\t${s}`));
+                toLog.push('Discarding', ...safe.String_split.call(discard, /\n+/).map(s => `\t${s}`));
                 if ( reM3u.global === false ) { break; }
             }
             return text;
         }
-        const lines = text.split(/\n\r|\n|\r/);
+        const lines = safe.String_split.call(text, /\n\r|\n|\r/);
         for ( let i = 0; i < lines.length; i++ ) {
             if ( lines[i] === undefined ) { continue; }
             if ( pruneSpliceoutBlock(lines, i) ) { continue; }
@@ -230,6 +230,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -35,7 +35,7 @@
 
 const argsList = [".hello_from_adguard_tracking_params"];
 
-const hostnamesMap = new Map([["adguard.app",0],["adguard.com",0],["adguard.info",0]]);
+const hostnamesMap = new Map([["adguard.info",0],["adguard.com",0],["adguard.app",0]]);
 
 const entitiesMap = new Map(undefined);
 

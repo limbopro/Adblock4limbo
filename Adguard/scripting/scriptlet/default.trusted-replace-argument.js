@@ -39,9 +39,9 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","json:\"body\"","condition",".ad-zone"],["Range.prototype.createContextualFragment","0","","condition","WebAssembly"],["document.querySelector","0","json:\"div[align='center']\"","condition",".adsbygoogle.adsbygoogle-noablate"],["String.prototype.includes","0","''","condition","NAVER"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"],["Array.prototype.find","0","undefined","condition","affinity-qi"],["String.prototype.includes","0","undefined","condition","/^checkout$/"],["history.replaceState","2","''","condition","?orgRef"],["document.querySelector","0","{\"value\": \".ad-placement-interstitial\"}","condition",".easyAdsBox"]];
+const argsList = [["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","json:\"body\"","condition",".ad-zone"],["Range.prototype.createContextualFragment","0","","condition","WebAssembly"],["document.querySelector","0","json:\"div[align='center']\"","condition",".adsbygoogle.adsbygoogle-noablate"],["String.prototype.includes","0","''","condition","NAVER"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["document.querySelector","0","noopFunc","condition","adblock"],["Array.prototype.find","0","undefined","condition","affinity-qi"],["String.prototype.includes","0","undefined","condition","/^checkout$/"],["HTMLAnchorElement.prototype.getAttribute","0","json:\"class\"","condition","data-direct-ad"],["history.replaceState","2","''","condition","?orgRef"],["document.querySelector","0","{\"value\": \".ad-placement-interstitial\"}","condition",".easyAdsBox"],["DOMTokenList.prototype.contains","0","","condition","/^b_algo$/"]];
 
-const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["scimagojr.com",2],["coomer.su",3],["kemono.su",3],["gecmisi.com.tr",4],["dogdrip.net",5],["infinityfree.com",5],["smsonline.cloud",5],["ygosu.com",6],["bamgosu.site",6],["loawa.com",7],["autosport.com",8],["motorsport.com",8],["motorsport.uol.com.br",8],["startpage.com",9],["energiasolare100.it",10],["lundracing.com",10],["red17.co.uk",10],["workplace-products.co.uk",10],["www.lenovo.com",11],["purepeople.com",12]]);
+const hostnamesMap = new Map([["copyseeker.net",0],["zonebourse.com",1],["scimagojr.com",2],["coomer.su",3],["kemono.su",3],["gecmisi.com.tr",4],["dogdrip.net",5],["infinityfree.com",5],["smsonline.cloud",5],["ygosu.com",6],["bamgosu.site",6],["loawa.com",7],["autosport.com",8],["motorsport.com",8],["motorsport.uol.com.br",8],["startpage.com",9],["energiasolare100.it",10],["lundracing.com",10],["red17.co.uk",10],["workplace-products.co.uk",10],["slant.co",11],["www.lenovo.com",12],["purepeople.com",13],["bing.com",14]]);
 
 const entitiesMap = new Map([]);
 
@@ -66,25 +66,39 @@ function trustedReplaceArgument(
     const reCondition = extraArgs.condition
         ? safe.patternToRegex(extraArgs.condition)
         : /^/;
-    proxyApplyFn(propChain, function(context) {
+    const getArg = context => {
+        if ( argposRaw === 'this' ) { return context.thisArg; }
         const { callArgs } = context;
-        if ( argposRaw === '' ) {
-            safe.uboLog(logPrefix, `Arguments:\n${callArgs.join('\n')}`);
-            return context.reflect();
-        }
         const argpos = argoffset >= 0 ? argoffset : callArgs.length - argoffset;
-        if ( argpos < 0 || argpos >= callArgs.length ) {
+        if ( argpos < 0 || argpos >= callArgs.length ) { return; }
+        context.private = { argpos };
+        return callArgs[argpos];
+    };
+    const setArg = (context, value) => {
+        if ( argposRaw === 'this' ) {
+            if ( value !== context.thisArg ) {
+                context.thisArg = value;
+            }
+        } else if ( context.private ) {
+            context.callArgs[context.private.argpos] = value;
+        }
+    };
+    proxyApplyFn(propChain, function(context) {
+        if ( argposRaw === '' ) {
+            safe.uboLog(logPrefix, `Arguments:\n${context.callArgs.join('\n')}`);
             return context.reflect();
         }
-        const argBefore = callArgs[argpos];
+        const argBefore = getArg(context);
         if ( safe.RegExp_test.call(reCondition, argBefore) === false ) {
             return context.reflect();
         }
         const argAfter = replacer && typeof argBefore === 'string'
             ? argBefore.replace(replacer.re, replacer.replacement)
             : value;
-        callArgs[argpos] = argAfter;
-        safe.uboLog(logPrefix, `Replaced argument:\nBefore: ${JSON.stringify(argBefore)}\nAfter: ${argAfter}`);
+        if ( argAfter !== argBefore ) {
+            setArg(context, argAfter);
+            safe.uboLog(logPrefix, `Replaced argument:\nBefore: ${JSON.stringify(argBefore)}\nAfter: ${argAfter}`);
+        }
         return context.reflect();
     });
 }
@@ -139,7 +153,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -162,7 +176,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -216,6 +230,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

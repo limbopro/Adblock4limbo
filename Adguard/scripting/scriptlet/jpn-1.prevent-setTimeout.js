@@ -39,11 +39,11 @@ const uBOL_preventSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["getComputedStyle(a).height"],["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
+const argsList = [["()=>k(S(4"],["getComputedStyle(a).height"],["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
 
-const hostnamesMap = new Map([["iwb.jp",0],["kotobank.jp",1],["puzzle-ch.com",2],["o-dan.net",3],["dropbooks.net",4],["fp1-siken.com",5],["fp2-siken.com",5],["fp3-siken.com",5],["ap-siken.com",5],["db-siken.com",5],["fe-siken.com",5],["itpassportsiken.com",5],["nw-siken.com",5],["pm-siken.com",5],["sc-siken.com",5],["sg-siken.com",5],["musenboya.com",6],["crefan.jp",7],["nan-net.com",8],["javcup.com",9],["46matome.net",10],["openworldnews.net",10],["animesoku.com",10],["vipnews.jp",10],["ldblog.jp",10],["livedoor.blog",10],["2chblog.jp",10],["oumaga-times.com",10],["all-nationz.com",10],["ebitsu.net",10],["fiveslot777.com",10],["jisaka.com",10],["kijyomatome.com",10],["konoyubitomare.jp",10],["livedoor.biz",10],["momoclonews.com",10],["norisoku.com",10],["pachinkopachisro.com",10],["vtubernews.jp",10],["blog.jp",10],["giants-news.com",10],["blog.livedoor.jp",10],["doorblog.jp",10],["sexpixbox.com",11],["skebetter.com",12]]);
+const hostnamesMap = new Map([["wiki.yjsnpi.nu",0],["iwb.jp",1],["kotobank.jp",2],["puzzle-ch.com",3],["o-dan.net",4],["dropbooks.net",5],["fp1-siken.com",6],["fp2-siken.com",6],["fp3-siken.com",6],["ap-siken.com",6],["db-siken.com",6],["fe-siken.com",6],["itpassportsiken.com",6],["nw-siken.com",6],["pm-siken.com",6],["sc-siken.com",6],["sg-siken.com",6],["musenboya.com",7],["crefan.jp",8],["nan-net.com",9],["javcup.com",10],["46matome.net",11],["openworldnews.net",11],["animesoku.com",11],["vipnews.jp",11],["ldblog.jp",11],["livedoor.blog",11],["2chblog.jp",11],["oumaga-times.com",11],["all-nationz.com",11],["ebitsu.net",11],["fiveslot777.com",11],["jisaka.com",11],["kijyomatome.com",11],["konoyubitomare.jp",11],["livedoor.biz",11],["momoclonews.com",11],["norisoku.com",11],["pachinkopachisro.com",11],["vtubernews.jp",11],["blog.jp",11],["giants-news.com",11],["blog.livedoor.jp",11],["doorblog.jp",11],["sexpixbox.com",12],["skebetter.com",13]]);
 
-const entitiesMap = new Map([["manga1001",5]]);
+const entitiesMap = new Map([["manga1001",6]]);
 
 const exceptionsMap = new Map([]);
 
@@ -104,7 +104,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -127,7 +127,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -212,6 +212,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

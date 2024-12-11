@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412080822
+## ! Version: 202412111315
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Dec 2024 08:22 UTC
+## ! Last modified: 11 Dec 2024 13:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -74,7 +74,6 @@ DOMAIN-SUFFIX,bringmethehats.com, reject
 DOMAIN-SUFFIX,briskeagle.io, reject
 DOMAIN-SUFFIX,briskpelican.io, reject
 DOMAIN-SUFFIX,broadstreet.ai, reject
-DOMAIN-SUFFIX,brsrvr.com, reject
 DOMAIN-SUFFIX,brwsrfrm.com, reject
 DOMAIN-SUFFIX,btloader.com, reject
 DOMAIN-SUFFIX,bx-cloud.com, reject
@@ -1298,6 +1297,7 @@ DOMAIN-SUFFIX,glossysense.com, reject
 DOMAIN-SUFFIX,glowingmeadow.com, reject
 DOMAIN-SUFFIX,gluedpixel.com, reject
 DOMAIN-SUFFIX,godlygeese.com, reject
+DOMAIN-SUFFIX,godseedband.com, reject
 DOMAIN-SUFFIX,goldfishgrowth.com, reject
 DOMAIN-SUFFIX,gondolagnome.com, reject
 DOMAIN-SUFFIX,goodbark.com, reject
@@ -2746,6 +2746,7 @@ DOMAIN-SUFFIX,analytics.test.cheggnet.com, reject
 DOMAIN-SUFFIX,analytics.themarketiq.com, reject
 DOMAIN-SUFFIX,analytics.threedeepmarketing.com, reject
 DOMAIN-SUFFIX,analytics.tiktok.com, reject
+DOMAIN-SUFFIX,analytics.topseotoolkit.com, reject
 DOMAIN-SUFFIX,analytics.tout.com, reject
 DOMAIN-SUFFIX,analytics.unibuddy.co, reject
 DOMAIN-SUFFIX,analytics.unilogcorp.com, reject
@@ -2843,6 +2844,7 @@ DOMAIN-SUFFIX,ccexperimentsstatic.oracleoutsourcing.com, reject
 DOMAIN-SUFFIX,cdn-channels-pixel.ex.co, reject
 DOMAIN-SUFFIX,cdn.ravm.tv, reject
 DOMAIN-SUFFIX,cdn.usefathom.com, reject
+DOMAIN-SUFFIX,cdns.brsrvr.com, reject
 DOMAIN-SUFFIX,cf-pixelfront-analytics.widencdn.net, reject
 DOMAIN-SUFFIX,cf.overblog.com, reject
 DOMAIN-SUFFIX,cgicounter.oneandone.co.uk, reject

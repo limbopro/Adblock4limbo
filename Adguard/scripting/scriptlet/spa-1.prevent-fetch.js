@@ -39,9 +39,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["method:HEAD"],["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["www3.doubleclick.net"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
+const argsList = [["www3.doubleclick.net"],["method:HEAD"],["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
 
-const hostnamesMap = new Map([["enlacito.com",0],["acortados.com",[0,6]],["todoandroid.live",0],["gadgetzona.net",0],["qwanturankpro.com",0],["desbloquea.me",0],["mega-enlace.com",0],["acortame-esto.com",0],["gourlpro.com",1],["casperhd.com",1],["short.7hd.club",1],["istigo.net",1],["modescanlator.net",1],["r7.com",1],["descargas2024gratis.blogspot.com",1],["megacurioso.net",1],["tudonoticiasbr.com",1],["ggames.com.br",1],["mundodonghua.com",1],["receitasoncaseiras.online",1],["receitasdochico.life",1],["dicasdefinancas.net",1],["dicasfinanceirasbr.com",1],["expertplay.net",1],["alarmadefraude.com",1],["modescanlator.com",1],["sabornutritivo.com",1],["financasdeouro.com",1],["animeszone.net",1],["megacanaisonline.me",1],["animesonline.nz",1],["los40.com",1],["negociosecommerce.com",[1,9]],["puromarketing.com",[1,9]],["todostartups.com",[1,9]],["pobre.wtf",1],["suaurl.com",[1,11]],["reidoplacar.com",[1,11]],["suaads.com",[1,11]],["link-descarga.site",1],["meutimao.com.br",1],["discografias.net",1],["listas.pro",1],["emperorscan.com",1],["lawebdelprogramador.com",1],["dicasgostosas.com",1],["cerisetoon.com",2],["sinensistoon.com",2],["packsmega.info",3],["peliculas8k.com",4],["southparkstudios.com.br",5],["southpark.lat",5],["acortalink.me",6],["atv.pe",7],["monumental.co.cr",7],["elcomercio.com",7],["antena7.com.do",7],["rqp.com.bo",7],["canal12.com.sv",7],["chapintv.com",7],["vtv.com.hn",7],["tn23.tv",7],["canal13mexico.com",7],["c9n.com.py",7],["repretel.com",7],["redbolivision.tv.bo",7],["independentespanol.com",7],["teleculinaria.pt",8],["nptmedia.tv",10],["costumbresmexico.com",12],["desbloqueador.site",12],["notipostingt.com",13],["tivify.tv",14],["netmovies.com.br",15],["coempregos.com.br",16],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
+const hostnamesMap = new Map([["atresplayer.com",0],["sussytoons.site",0],["tivify.tv",0],["enlacito.com",1],["acortados.com",[1,7]],["todoandroid.live",1],["gadgetzona.net",1],["qwanturankpro.com",1],["acortame-esto.com",1],["gourlpro.com",2],["casperhd.com",2],["short.7hd.club",2],["istigo.net",2],["modescanlator.net",2],["r7.com",2],["descargas2024gratis.blogspot.com",2],["megacurioso.net",2],["tudonoticiasbr.com",2],["ggames.com.br",2],["mundodonghua.com",2],["receitasoncaseiras.online",2],["receitasdochico.life",2],["dicasdefinancas.net",2],["dicasfinanceirasbr.com",2],["expertplay.net",2],["alarmadefraude.com",2],["modescanlator.com",2],["sabornutritivo.com",2],["financasdeouro.com",2],["animeszone.net",2],["megacanaisonline.me",2],["animesonline.nz",2],["los40.com",2],["negociosecommerce.com",[2,10]],["puromarketing.com",[2,10]],["todostartups.com",[2,10]],["pobre.wtf",2],["suaurl.com",[2,12]],["reidoplacar.com",[2,12]],["suaads.com",[2,12]],["link-descarga.site",2],["meutimao.com.br",2],["discografias.net",2],["listas.pro",2],["emperorscan.com",2],["lawebdelprogramador.com",2],["dicasgostosas.com",2],["cerisetoon.com",3],["sinensistoon.com",3],["packsmega.info",4],["peliculas8k.com",5],["southparkstudios.com.br",6],["southpark.lat",6],["acortalink.me",7],["atv.pe",8],["monumental.co.cr",8],["elcomercio.com",8],["antena7.com.do",8],["rqp.com.bo",8],["canal12.com.sv",8],["chapintv.com",8],["vtv.com.hn",8],["tn23.tv",8],["canal13mexico.com",8],["c9n.com.py",8],["repretel.com",8],["redbolivision.tv.bo",8],["independentespanol.com",8],["teleculinaria.pt",9],["nptmedia.tv",11],["costumbresmexico.com",13],["desbloqueador.site",13],["notipostingt.com",14],["netmovies.com.br",15],["coempregos.com.br",16],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -57,7 +57,7 @@ function noFetchIf(
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody, responseType);
     const needles = [];
-    for ( const condition of propsToMatch.split(/\s+/) ) {
+    for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
         const pos = condition.indexOf(':');
         let key, value;
@@ -234,7 +234,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -257,7 +257,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -311,6 +311,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

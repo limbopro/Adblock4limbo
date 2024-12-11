@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#primary\",\"action\":[\"style\",\"margin: 0 auto !important;\"]}"],["{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0px !important;\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"],["{\"selector\":\"#LRGR\",\"action\":[\"style\",\"background: none !important;\"]}"],["{\"selector\":\"#sp-component\",\"action\":[\"style\",\"width: 100% !important;\"]}"]];
+const argsList = [["{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0px !important;\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"],["{\"selector\":\"#LRGR\",\"action\":[\"style\",\"background: none !important;\"]}"],["{\"selector\":\"#sp-component\",\"action\":[\"style\",\"width: 100% !important;\"]}"],["{\"selector\":\"#primary\",\"action\":[\"style\",\"margin: 0 auto !important;\"]}"]];
 
-const hostnamesMap = new Map([["start2click.com",0],["kalamatatimes.gr",1],["kozanilife.gr",2],["lamiareport.gr",3],["serraikanea.gr",4]]);
+const hostnamesMap = new Map([["kalamatatimes.gr",0],["kozanilife.gr",1],["lamiareport.gr",2],["serraikanea.gr",3],["start2click.com",4]]);
 
 const entitiesMap = new Map(undefined);
 

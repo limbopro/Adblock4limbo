@@ -39,13 +39,13 @@ const uBOL_abortOnStackTrace = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["document.head.appendChild","inlineScript"],["document.querySelectorAll","inlineScript"],["Object.prototype.getBaseFingerprint","inlineScript"]];
+const argsList = [["document.head.appendChild","inlineScript"],["Object.prototype.getBaseFingerprint","inlineScript"]];
 
-const hostnamesMap = new Map([["game4you.top",[0,1]],["games-pc.top",[0,1]],["innal.top",[0,1]],["naylo.top",[0,1]],["rustorka.com",[0,1]],["rustorka.net",[0,1]],["rustorka.top",[0,1]],["rustorkacom.lib",[0,1]],["gazeta.ru",2]]);
+const hostnamesMap = new Map([["game4you.top",0],["innal.top",0],["naylo.top",0],["rustorka.com",0],["rustorka.net",0],["rustorka.top",0],["rustorkacom.lib",0],["gazeta.ru",1]]);
 
-const entitiesMap = new Map([["avtorambler",2],["championat",2],["eda",2],["lenta",2],["letidor",2],["moslenta",2],["motor",2],["passion",2],["quto",2],["rambler",2],["wmj",2],["www.afisha",2]]);
+const entitiesMap = new Map([["avtorambler",1],["championat",1],["eda",1],["lenta",1],["letidor",1],["moslenta",1],["motor",1],["passion",1],["quto",1],["rambler",1],["wmj",1],["www.afisha",1]]);
 
-const exceptionsMap = new Map([["id.rambler.ru",[2]],["quiz.rambler.ru",[2]],["vp.rambler.ru",[2]]]);
+const exceptionsMap = new Map([["id.rambler.ru",[1]],["quiz.rambler.ru",[1]],["vp.rambler.ru",[1]]]);
 
 /******************************************************************************/
 
@@ -125,7 +125,7 @@ function matchesStackTrace(
     // Normalize stack trace
     const reLine = /(.*?@)?(\S+)(:\d+):\d+\)?$/;
     const lines = [];
-    for ( let line of error.stack.split(/[\n\r]+/) ) {
+    for ( let line of safe.String_split.call(error.stack, /[\n\r]+/) ) {
         if ( line.includes(exceptionToken) ) { continue; }
         line = line.trim();
         const match = safe.RegExp_exec.call(reLine, line);
@@ -182,6 +182,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

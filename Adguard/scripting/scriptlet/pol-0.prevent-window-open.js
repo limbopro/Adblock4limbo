@@ -163,7 +163,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -186,7 +186,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -240,6 +240,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

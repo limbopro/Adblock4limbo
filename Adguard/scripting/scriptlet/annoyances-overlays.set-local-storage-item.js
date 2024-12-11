@@ -39,11 +39,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["nbaSIBWidgetSeen","true"],["BRANCH_BANNER_PAGE_LOAD","1"],["EMAIL_CAPTURE_MODAL_STOP","1"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["user_closed_pop_up","true"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"],["adblockNoticePermaDismiss","true"]];
+const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["newsletterPopupCount","1"],["nbaSIBWidgetSeen","true"],["BRANCH_BANNER_PAGE_LOAD","1"],["EMAIL_CAPTURE_MODAL_STOP","1"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["user_closed_pop_up","true"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"],["adblockNoticePermaDismiss","true"]];
 
-const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["themonthly.com.au",2],["thesaturdaypaper.com.au",2],["tastemade.com",3],["clutchpoints.com",4],["magnolia.com",[5,6]],["core.app",7],["interestingengineering.com",8],["urbanoutfitters.com",9],["paulaschoice.com",10],["audialab.com",11],["realpython.com",12],["eodev.com",14],["nosdevoirs.fr",14],["www.watermarkremover.io",15],["scenexe.io",16],["camspider.com",17]]);
+const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["themonthly.com.au",2],["thesaturdaypaper.com.au",2],["tastemade.com",3],["action.com",4],["clutchpoints.com",5],["magnolia.com",[6,7]],["core.app",8],["interestingengineering.com",9],["urbanoutfitters.com",10],["paulaschoice.com",11],["audialab.com",12],["realpython.com",13],["eodev.com",15],["nosdevoirs.fr",15],["www.watermarkremover.io",16],["scenexe.io",17],["camspider.com",18]]);
 
-const entitiesMap = new Map([["brainly",[13,14]]]);
+const entitiesMap = new Map([["brainly",[14,15]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -163,6 +163,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

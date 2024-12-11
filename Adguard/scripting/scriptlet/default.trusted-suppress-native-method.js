@@ -21,7 +21,6 @@
 */
 
 /* eslint-disable indent */
-/* global cloneInto */
 
 // ruleset: default
 
@@ -40,9 +39,9 @@ const uBOL_trustedSuppressNativeMethod = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["fetch","\"adsbygoogle.js\"","abort"]];
+const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"]];
 
-const hostnamesMap = new Map([["superpsx.com",0]]);
+const hostnamesMap = new Map([["cinema.com.my",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -60,7 +59,7 @@ function trustedSuppressNativeMethod(
     if ( stack !== '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('trusted-suppress-native-method', methodPath, signature, how);
-    const signatureArgs = signature.split(/\s*\|\s*/).map(v => {
+    const signatureArgs = safe.String_split.call(signature, /\s*\|\s*/).map(v => {
         if ( /^".*"$/.test(v) ) {
             return { type: 'pattern', re: safe.patternToRegex(v.slice(1, -1)) };
         }
@@ -83,13 +82,10 @@ function trustedSuppressNativeMethod(
             safe.uboLog(logPrefix, `Arguments:\n${callArgs.join('\n')}`);
             return context.reflect();
         }
-        if ( callArgs.length < signatureArgs.length ) {
-            return context.reflect();
-        }
         for ( let i = 0; i < signatureArgs.length; i++ ) {
             const signatureArg = signatureArgs[i];
             if ( signatureArg === undefined ) { continue; }
-            const targetArg = callArgs[i];
+            const targetArg = i < callArgs.length ? callArgs[i] : undefined;
             if ( signatureArg.type === 'exact' ) {
                 if ( targetArg !== signatureArg.value ) {
                     return context.reflect();
@@ -100,6 +96,10 @@ function trustedSuppressNativeMethod(
                     return context.reflect();
                 }
             }
+        }
+        if ( how === 'debug' ) {
+            debugger; // eslint-disable-line no-debugger
+            return context.reflect();
         }
         safe.uboLog(logPrefix, `Suppressed:\n${callArgs.join('\n')}`);
         if ( how === 'abort' ) {
@@ -136,7 +136,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -159,7 +159,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -213,6 +213,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -321,13 +322,11 @@ function safeSelf() {
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
     let lastLogType = '';
     let lastLogText = '';
     let lastLogTime = 0;
-    safe.sendToLogger = (type, ...args) => {
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
         if ( text === lastLogText && type === lastLogType ) {
@@ -336,30 +335,45 @@ function safeSelf() {
         lastLogType = type;
         lastLogText = text;
         lastLogTime = Date.now();
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
-        }
-        bcBuffer.push({ type, text });
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch(_) {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 
@@ -447,44 +461,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_trustedSuppressNativeMethod();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_trustedSuppressNativeMethod = cloneInto([
-            [ '(', uBOL_trustedSuppressNativeMethod.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_trustedSuppressNativeMethod);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_trustedSuppressNativeMethod;
-}
+uBOL_trustedSuppressNativeMethod();
 
 /******************************************************************************/
 

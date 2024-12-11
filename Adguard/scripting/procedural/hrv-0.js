@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#secondary > aside\",\"tasks\":[[\"has\",{\"selector\":\"> div.widget-header > h3\",\"tasks\":[[\"has-text\",\"/Marketing|Sponzor\\\\isano/\"]]}]]}"],["{\"selector\":\".elementor-column-gap-default\",\"tasks\":[[\"has-text\",\"/^SERV\\\\IS/\"]]}"]];
+const argsList = [["{\"selector\":\".elementor-column-gap-default\",\"tasks\":[[\"has-text\",\"/^SERV\\\\IS/\"]]}"],["{\"selector\":\"#secondary > aside\",\"tasks\":[[\"has\",{\"selector\":\"> div.widget-header > h3\",\"tasks\":[[\"has-text\",\"/Marketing|Sponzor\\\\isano/\"]]}]]}"]];
 
-const hostnamesMap = new Map([["sveopoznatima.com",0],["ul-info.com",1]]);
+const hostnamesMap = new Map([["ul-info.com",0],["sveopoznatima.com",1]]);
 
 const entitiesMap = new Map(undefined);
 

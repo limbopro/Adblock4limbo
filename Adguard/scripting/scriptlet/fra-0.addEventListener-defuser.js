@@ -39,9 +39,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["load","setTimeout"],["DOMContentLoaded","/=>\\s*\\{\\s*function|^.{600,700}$|PrimeVideo|Macbook|\\+'ined'|t'\\+'y|setTimeout\\(function/"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
+const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
 
-const hostnamesMap = new Map([["nicematin.com",0],["cyclismactu.net",1],["japscan.lol",[2,3]],["lecourrier-du-soir.com",4],["player.melaniezettofrais.online",5],["macg.co",6]]);
+const hostnamesMap = new Map([["nicematin.com",0],["cyclismactu.net",1],["lecourrier-du-soir.com",2],["player.melaniezettofrais.online",3],["macg.co",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -154,7 +154,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -177,7 +177,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -260,6 +260,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

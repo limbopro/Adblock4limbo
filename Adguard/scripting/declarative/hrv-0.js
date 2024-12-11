@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"]}"]];
+const argsList = [["{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"]}"],["{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"]];
 
-const hostnamesMap = new Map([["filmitv.rs",0],["niskevesti.rs",1]]);
+const hostnamesMap = new Map([["niskevesti.rs",0],["filmitv.rs",1]]);
 
 const entitiesMap = new Map(undefined);
 

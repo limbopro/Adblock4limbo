@@ -39,9 +39,9 @@ const uBOL_trustedPreventXhr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"]];
+const argsList = [["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"],["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"]];
 
-const hostnamesMap = new Map([["koramaup.com",0],["1cloudfile.com",0],["animefire.info",1],["animesonlinecc.us",1],["animesonliner4.com",1],["animesup.info",1],["animeyabu.net",1],["animeyabu.org",1],["anitube.us",1],["anitube.vip",1],["caroloportunidades.com.br",1],["dattebayo-br.com",1],["drstonebr.com",1],["flyanimes.cloud",1],["goanimes.vip",1],["goyabu.us",1],["hinatasoul.com",1],["isekaibrasil.com",1],["meuanime.info",1],["otakuanimess.net",1],["superanimes.in",1]]);
+const hostnamesMap = new Map([["sbs.com.au",[0,1,2]],["koramaup.com",3],["1cloudfile.com",3],["animefire.info",4],["animesonlinecc.us",4],["animesonliner4.com",4],["animesup.info",4],["animeyabu.net",4],["animeyabu.org",4],["anitube.us",4],["anitube.vip",4],["caroloportunidades.com.br",4],["dattebayo-br.com",4],["drstonebr.com",4],["flyanimes.cloud",4],["goanimes.vip",4],["goyabu.us",4],["hinatasoul.com",4],["isekaibrasil.com",4],["meuanime.info",4],["otakuanimess.net",4],["superanimes.in",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -324,8 +324,8 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
     const needles = new Map();
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
     const options = { canNegate: true };
-    for ( const needle of propsToMatch.split(/\s+/) ) {
-        const [ prop, pattern ] = needle.split(':');
+    for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
+        const [ prop, pattern ] = safe.String_split.call(needle, ':');
         if ( prop === '' ) { continue; }
         if ( pattern !== undefined ) {
             needles.set(prop, safe.initPattern(pattern, options));
@@ -360,6 +360,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

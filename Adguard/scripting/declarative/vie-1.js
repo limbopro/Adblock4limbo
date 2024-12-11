@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\".aScr\",\"action\":[\"style\",\"display:block!important\"]}","{\"selector\":\".aSlB\",\"action\":[\"style\",\"display:flex!important\"]}","{\"selector\":\".aft\",\"action\":[\"style\",\"display:block!important\"]}","{\"selector\":\".pstL\",\"action\":[\"style\",\"display:inline-flex!important\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"]}"],["{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"]];
+const argsList = [["{\"selector\":\".aScr\",\"action\":[\"style\",\"display:block!important\"]}","{\"selector\":\".aSlB\",\"action\":[\"style\",\"display:flex!important\"]}","{\"selector\":\".aft\",\"action\":[\"style\",\"display:block!important\"]}","{\"selector\":\".pstL\",\"action\":[\"style\",\"display:inline-flex!important\"]}"],["{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"]}"],["{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"]];
 
-const hostnamesMap = new Map([["chotlo3s.com",0],["apkmoddone.phongroblox.com",1],["hhpanda.li",2],["xem19.gavang1.net",2],["xem20.gavang1.net",2],["live3.thapcam26.net",2],["www.o-study.net",3],["www.saostar.vn",4]]);
+const hostnamesMap = new Map([["apkmoddone.phongroblox.com",0],["chotlo3s.com",1],["live3.thapcam26.net",2],["xem20.gavang1.net",2],["xem19.gavang1.net",2],["hhpanda.li",2],["www.o-study.net",3],["www.saostar.vn",4]]);
 
 const entitiesMap = new Map(undefined);
 

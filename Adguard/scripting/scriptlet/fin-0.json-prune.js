@@ -89,11 +89,12 @@ function objectPruneFn(
     extraArgs = {}
 ) {
     if ( typeof rawPrunePaths !== 'string' ) { return; }
+    const safe = safeSelf();
     const prunePaths = rawPrunePaths !== ''
-        ? rawPrunePaths.split(/ +/)
+        ? safe.String_split.call(rawPrunePaths, / +/)
         : [];
     const needlePaths = prunePaths.length !== 0 && rawNeedlePaths !== ''
-        ? rawNeedlePaths.split(/ +/)
+        ? safe.String_split.call(rawNeedlePaths, / +/)
         : [];
     if ( stackNeedleDetails.matchAll !== true ) {
         if ( matchesStackTrace(stackNeedleDetails, extraArgs.logstack) === false ) {
@@ -146,6 +147,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -321,7 +323,7 @@ function matchesStackTrace(
     // Normalize stack trace
     const reLine = /(.*?@)?(\S+)(:\d+):\d+\)?$/;
     const lines = [];
-    for ( let line of error.stack.split(/[\n\r]+/) ) {
+    for ( let line of safe.String_split.call(error.stack, /[\n\r]+/) ) {
         if ( line.includes(exceptionToken) ) { continue; }
         line = line.trim();
         const match = safe.RegExp_exec.call(reLine, line);

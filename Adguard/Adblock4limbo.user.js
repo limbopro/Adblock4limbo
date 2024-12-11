@@ -3,7 +3,7 @@
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
 // @version      0.2024.12.08
 // @license      CC BY-NC-SA 4.0
-// @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable/MissAv/91porn/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
+// @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
 
 /**
@@ -1324,7 +1324,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null) {
                         ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", cssText, "", "missavX", 2, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "", "missavP", 3, "button");
-                        ele_dynamicAppend("div.mt-4", "href", "如何下载视频", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
+                        ele_dynamicAppend("div.mt-4", "href", "如何下载视频?", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
                     }
 
                     if (document.getElementById("how") !== null) {
@@ -1607,66 +1607,75 @@ function fileDownload(url, download = true) {
 }
 
 
+
+
 function _91porn_dl() { // 下载视频
 
     if (window.location.href.match('view_video')) {
-        var mp4URL = document.querySelectorAll('source')[0].src
-        
-        var mp4Download = document.createElement('a')
-        mp4Download.download = document.title.toString()
-        mp4Download.target = '_blank'
-        mp4Download.id = 'mp4Download'
-        // mp4Download.href = mp4URL + '&response-content-disposition=' + encodeURIComponent('attachment; filename="' + document.title + '"');
-        mp4Download.href = mp4URL
 
-        if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
-            mp4Download.textContent = '无广播放'
-        } else {
-            mp4Download.textContent = '下载视频'
-        }
+        var css = document.createElement('style')
+        css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
+        css.id = 'porn91'
+        document.body.appendChild(css)
 
-        var button_download = document.createElement('button')
-        button_download.style = 'padding:12px; position:fixed;right:0px;top:216px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
-        button_download.textContent = '复制视频下载地址'
-        button_download.id = 'copyURL'
+        if (document.getElementById('mp4Download') == null) {
+            var mp4URL = document.querySelectorAll('source')[0].src
+            var mp4Download = document.createElement('a')
+            mp4Download.download = document.title.toString()
+            mp4Download.target = '_blank'
+            mp4Download.id = 'mp4Download'
+            mp4Download.href = mp4URL
 
-        var button_alert = document.createElement('button')
-        button_alert.style = 'padding:12px; position:fixed;right:0px;top:322px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
-        button_alert.textContent = '如何下载视频?'
-        button_alert.id = 'alertDownload'
-
-        button_alert.addEventListener('click', (() => {
-            alert(' 1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；')
-         }))
-
-        button_download.addEventListener('click', (() => {
-            const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
-            textarea.id = 'fuck91porn'
-            document.querySelector('#copyURL').appendChild(textarea)
-            textarea.value = mp4URL
-            textarea.select();
-            document.execCommand('copy', true); // 执行复制
-            document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
-            document.querySelector('#copyURL').textContent = '复制成功'
-
-            setTimeout(() => { // ↩️按钮恢复原状
-                document.querySelector('#copyURL').classList.remove('copysuccess')
-                document.querySelector('#copyURL').textContent = '复制视频下载地址'
-            }, 2500)
-
-            if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
-                document.getElementById('ffuck91porn').remove()
+            if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
+                mp4Download.textContent = '无广播放'
+            } else {
+                mp4Download.textContent = '下载视频'
             }
 
+            var button_download = document.createElement('button')
+            button_download.style = 'padding:12px; position:fixed;right:0px;top:216px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
+            button_download.textContent = '复制视频下载地址'
+            button_download.id = 'copyURL'
 
-        }))
+            var button_alert = document.createElement('button')
+            button_alert.style = 'padding:12px; position:fixed;right:0px;top:322px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
+            button_alert.textContent = '如何下载视频?'
+            button_alert.id = 'alertDownload'
 
-        mp4Download.style = 'padding:12px; position:fixed;right:0px;top:150px;background:yellowgreen;color:white;font-weight:bolder;width:60px;'
-        document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('#useraction')[0])
-        document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_download, document.querySelectorAll('#useraction')[0])
-        document.querySelectorAll('#useraction')[0].parentNode.insertBefore(mp4Download, document.querySelectorAll('#useraction')[0])
+            button_alert.addEventListener('click', (() => {
+                alert(' 1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；')
+            }))
+
+            button_download.addEventListener('click', (() => {
+                if (document.querySelectorAll('source')[0].src.match('\.mp4') !== null) {
+                    const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
+                    textarea.id = 'fuck91porn'
+                    document.querySelector('#copyURL').appendChild(textarea)
+                    textarea.value = mp4URL
+                    textarea.select();
+                    document.execCommand('copy', true); // 执行复制
+                    document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
+                    document.querySelector('#copyURL').textContent = '复制成功'
+
+                    setTimeout(() => { // ↩️按钮恢复原状
+                        document.querySelector('#copyURL').classList.remove('copysuccess')
+                        document.querySelector('#copyURL').textContent = '复制视频下载地址'
+                    }, 2500)
+
+                    if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
+                        document.getElementById('ffuck91porn').remove()
+                    }
+                } else {
+                    alert('未找到视频下载地址！')
+                }
+            }))
+
+            mp4Download.style = 'padding:12px; position:fixed;right:0px;top:150px;background:yellowgreen;color:white;font-weight:bolder;width:60px;'
+            document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('#useraction')[0])
+            document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_download, document.querySelectorAll('#useraction')[0])
+            document.querySelectorAll('#useraction')[0].parentNode.insertBefore(mp4Download, document.querySelectorAll('#useraction')[0])
+        }
     }
-
 }
 
 /* 循环播放 missAV */

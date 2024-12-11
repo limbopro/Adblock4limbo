@@ -39,9 +39,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","/function.*adblock/"]];
+const argsList = [["script","/function.*adblock/"],["script","url_popup"]];
 
-const hostnamesMap = new Map([["daemon-hentai.com",0]]);
+const hostnamesMap = new Map([["daemon-hentai.com",0],["animeid.tv",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -218,6 +218,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

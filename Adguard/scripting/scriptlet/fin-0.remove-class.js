@@ -58,7 +58,7 @@ function removeClass(
     if ( rawToken === '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('remove-class', rawToken, rawSelector, behavior);
-    const tokens = rawToken.split(/\s*\|\s*/);
+    const tokens = safe.String_split.call(rawToken, /\s*\|\s*/);
     const selector = tokens
         .map(a => `${rawSelector}.${CSS.escape(a)}`)
         .join(',');
@@ -165,6 +165,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -39,11 +39,11 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["href","a[href]#clickfakeplayer"]];
+const argsList = [["href","a[href]#clickfakeplayer"],["href","#clickfakeplayer"]];
 
 const hostnamesMap = new Map([["1jour1film.cyou",0],["seriescultes.store",0],["1jour1film.homes",0],["seriepourvous.com",0]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["1jour1film",1]]);
 
 const exceptionsMap = new Map([]);
 
@@ -58,7 +58,7 @@ function removeAttr(
     if ( rawToken === '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('remove-attr', rawToken, rawSelector, behavior);
-    const tokens = rawToken.split(/\s*\|\s*/);
+    const tokens = safe.String_split.call(rawToken, /\s*\|\s*/);
     const selector = tokens
         .map(a => `${rawSelector}[${CSS.escape(a)}]`)
         .join(',');
@@ -118,7 +118,7 @@ function removeAttr(
             subtree: true,
         });
     };
-    runAt(( ) => { start(); }, behavior.split(/\s+/));
+    runAt(( ) => { start(); }, safe.String_split.call(behavior, /\s+/));
 }
 
 function runAt(fn, when) {
@@ -174,6 +174,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

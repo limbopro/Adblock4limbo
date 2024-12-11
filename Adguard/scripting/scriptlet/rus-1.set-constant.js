@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["BB.disableRefLinks","true"],["Object.prototype.canShowMoreAds","noopFunc"],["Object.prototype.hasAdv","noopFunc"],["_0x58e4","{}"],["Object.prototype.hasPreroll","null"],["Object.prototype.needShowAlicePopup","null"],["Object.prototype.Begun","undefined"],["Object.prototype.antiadblock","false"],["Object.prototype.useExperimentFlag","undefined"],["Daria.AdvPresenter._config","{}"],["Object.prototype.showBranding","noopFunc"],["Object.prototype.initDeps","undefined"],["Object.prototype._directAdvStyles","undefined"],["__AAB__","false"],["Object.prototype._getAdConfig","noopFunc"],["Object.prototype.getHoneypot","null"],["Object.prototype.isOpenImageUnauthPopupEnabled","false"],["Object.prototype.los","null"]];
 
-const hostnamesMap = new Map([["rutr.life",0],["rutracker.lib",0],["rutracker.net",0],["rutracker.nl",0],["rutracker.org",0],["ivi.ru",[1,2]],["game4you.top",3],["games-pc.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["frontend.vh.yandex.ru",4],["naydex.net",4],["widgets.kinopoisk.ru",4],["yastatic.net",4],["lena-miro.ru",[6,7]],["levik.blog",[6,7]],["olegmakarenko.ru",[6,7]],["periskop.su",[6,7]],["shakko.ru",[6,7]],["shiro-kino.ru",[6,7]],["vadimrazumov.ru",[6,7]]]);
+const hostnamesMap = new Map([["rutr.life",0],["rutracker.lib",0],["rutracker.net",0],["rutracker.nl",0],["rutracker.org",0],["ivi.ru",[1,2]],["game4you.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["frontend.vh.yandex.ru",4],["naydex.net",4],["widgets.kinopoisk.ru",4],["yastatic.net",4],["lena-miro.ru",[6,7]],["levik.blog",[6,7]],["olegmakarenko.ru",[6,7]],["periskop.su",[6,7]],["shakko.ru",[6,7]],["shiro-kino.ru",[6,7]],["vadimrazumov.ru",[6,7]]]);
 
 const entitiesMap = new Map([["dzen",[4,8]],["horoscopes.rambler",5],["livejournal",[6,7]],["mail.yandex",9],["music.yandex",10],["ya",11],["yandex",[11,12,13,14,15,16,17]]]);
 
@@ -258,6 +258,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

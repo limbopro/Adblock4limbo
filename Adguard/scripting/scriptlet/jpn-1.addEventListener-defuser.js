@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["load","delayCheckAB"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["load","videoInstArea"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["DOMContentLoaded","Fixed"]];
 
-const hostnamesMap = new Map([["bm.best-hit.tv",0],["jukenbbs.com",1],["blog.housinkai.com",2],["kakenhi.net",2],["seesaa.net",2],["blog-and-destroy.com",3],["coolpan.net",4],["twivideo.net",5],["twidouga.net",6],["anacap.doorblog.jp",7],["anianierosuki.work",8],["uraaka-joshi.com",9],["tokyomotion.net",10],["ero-video.net",11],["negisoku.com",12]]);
+const hostnamesMap = new Map([["bm.best-hit.tv",0],["best-hit.tv",1],["h178.com",1],["j-baseball.club",1],["j-basketball.club",1],["jukenbbs.com",1],["blog.housinkai.com",2],["kakenhi.net",2],["seesaa.net",2],["blog-and-destroy.com",3],["coolpan.net",4],["twivideo.net",5],["twidouga.net",6],["anacap.doorblog.jp",7],["anianierosuki.work",8],["uraaka-joshi.com",9],["tokyomotion.net",10],["ero-video.net",11],["negisoku.com",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -154,7 +154,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -177,7 +177,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -260,6 +260,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

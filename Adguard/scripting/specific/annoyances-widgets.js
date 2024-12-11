@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [".rufus-panel-container","#floating-experience-feature-tour-popover,\n#view-__module-context__-_amzn_conversational-experience-module__tandalone-0",".chatWindow,\n.chatbotSection,\n.chatbotSlider,\n.chatbotentrybtn,\n.healthshotsChannels,\n.secBannerWidget","#chatbotToronto",".woot-widget-bubble"];
+const argsList = ["#chatbotToronto","#floating-experience-feature-tour-popover,\n#view-__module-context__-_amzn_conversational-experience-module__tandalone-0",".chatWindow,\n.chatbotSection,\n.chatbotSlider,\n.chatbotentrybtn,\n.healthshotsChannels,\n.secBannerWidget",".rufus-panel-container",".woot-widget-bubble"];
 
-const hostnamesMap = new Map([["amazon.com",0],["docs.aws.amazon.com",1],["healthshots.com",2],["hp.com",3],["therealdeal.com",4]]);
+const hostnamesMap = new Map([["hp.com",0],["docs.aws.amazon.com",1],["healthshots.com",2],["amazon.com",3],["therealdeal.com",4]]);
 
 const entitiesMap = new Map(undefined);
 

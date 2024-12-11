@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/getCode|\\/vast/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["livejournal.com/video/check?recordId="],["method:GET"],["strm.yandex.ru/get/"]];
 
-const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["anidub.vip",2],["anidubonline.com",2],["116.ru",3],["14.ru",3],["161.ru",3],["164.ru",3],["173.ru",3],["178.ru",3],["26.ru",3],["29.ru",3],["35.ru",3],["43.ru",3],["45.ru",3],["48.ru",3],["51.ru",3],["53.ru",3],["56.ru",3],["59.ru",3],["60.ru",3],["62.ru",3],["63.ru",3],["68.ru",3],["71.ru",3],["72.ru",3],["74.ru",3],["76.ru",3],["86.ru",3],["89.ru",3],["93.ru",3],["chita.ru",3],["e1.ru",3],["ircity.ru",3],["izh1.ru",3],["mgorsk.ru",3],["msk1.ru",3],["ngs.ru",3],["ngs22.ru",3],["ngs24.ru",3],["ngs42.ru",3],["ngs55.ru",3],["ngs70.ru",3],["nn.ru",3],["sochi1.ru",3],["sterlitamak1.ru",3],["tolyatty.ru",3],["ufa1.ru",3],["v1.ru",3],["vladivostok1.ru",3],["voronezh1.ru",3],["www.fontanka.ru",3],["4pda.to",4],["adme.media",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8]]);
+const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["anidub.vip",2],["anidubonline.com",2],["116.ru",3],["14.ru",3],["161.ru",3],["164.ru",3],["173.ru",3],["178.ru",3],["26.ru",3],["29.ru",3],["35.ru",3],["43.ru",3],["45.ru",3],["48.ru",3],["51.ru",3],["53.ru",3],["56.ru",3],["59.ru",3],["60.ru",3],["63.ru",3],["68.ru",3],["71.ru",3],["72.ru",3],["74.ru",3],["76.ru",3],["86.ru",3],["89.ru",3],["93.ru",3],["chita.ru",3],["e1.ru",3],["ircity.ru",3],["izh1.ru",3],["mgorsk.ru",3],["msk1.ru",3],["ngs.ru",3],["ngs22.ru",3],["ngs24.ru",3],["ngs42.ru",3],["ngs55.ru",3],["ngs70.ru",3],["nn.ru",3],["sochi1.ru",3],["sterlitamak1.ru",3],["tolyatty.ru",3],["ufa1.ru",3],["v1.ru",3],["vladivostok1.ru",3],["voronezh1.ru",3],["www.fontanka.ru",3],["ya62.ru",3],["4pda.to",4],["adme.media",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -324,8 +324,8 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
     const needles = new Map();
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
     const options = { canNegate: true };
-    for ( const needle of propsToMatch.split(/\s+/) ) {
-        const [ prop, pattern ] = needle.split(':');
+    for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
+        const [ prop, pattern ] = safe.String_split.call(needle, ':');
         if ( prop === '' ) { continue; }
         if ( pattern !== undefined ) {
             needles.set(prop, safe.initPattern(pattern, options));
@@ -360,6 +360,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

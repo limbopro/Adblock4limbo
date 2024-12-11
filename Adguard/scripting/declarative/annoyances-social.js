@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}"],["{\"selector\":\"body, html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important; position: initial !important;\"]}"]];
+const argsList = [["{\"selector\":\"body, html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important; position: initial !important;\"]}"]];
 
-const hostnamesMap = new Map([["aliprice.com",0],["gulte.com",0],["govtrack.us",0],["ultraslan.com",1],["finance.yahoo.com",2]]);
+const hostnamesMap = new Map([["ultraslan.com",0],["govtrack.us",1],["gulte.com",1],["aliprice.com",1],["finance.yahoo.com",2]]);
 
 const entitiesMap = new Map(undefined);
 

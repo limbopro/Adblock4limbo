@@ -39,9 +39,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ins.adsbygoogle","display","block"],["article > div[style=\"margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;\"]","clip","auto"]];
+const argsList = [["ins.adsbygoogle","display","block"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"],[href*=\"dmm.co.jp\"])","font-size","14px"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"],[href*=\"dmm.co.jp\"]) img","height","128px"],["a[style*=\"display:\"][href^=\"https://al.dmm.co.jp\"] img","height","20px"],["a[style*=\"display:\"][href^=\"https://al.dmm.co.jp\"] img","display","block"]];
 
-const hostnamesMap = new Map([["yourfones.net",0],["exploader.net",1]]);
+const hostnamesMap = new Map([["yourfones.net",0],["wiki.yjsnpi.nu",[1,2]],["exploader.net",[3,4]]]);
 
 const entitiesMap = new Map([]);
 
@@ -191,6 +191,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

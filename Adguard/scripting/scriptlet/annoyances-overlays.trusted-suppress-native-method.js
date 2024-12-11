@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["Function.prototype.constructor","\"debugger\"","abort"]];
 
-const hostnamesMap = new Map([["ate60vs7zcjhsjo5qgv8.com",0],["jetv.xyz",0],["t.17track.net",0],["embasic.pro",0],["dlions.pro",0]]);
+const hostnamesMap = new Map([["ate60vs7zcjhsjo5qgv8.com",0],["autoembed.cc",0],["jetv.xyz",0],["t.17track.net",0],["embasic.pro",0],["dlions.pro",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -59,7 +59,7 @@ function trustedSuppressNativeMethod(
     if ( stack !== '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('trusted-suppress-native-method', methodPath, signature, how);
-    const signatureArgs = signature.split(/\s*\|\s*/).map(v => {
+    const signatureArgs = safe.String_split.call(signature, /\s*\|\s*/).map(v => {
         if ( /^".*"$/.test(v) ) {
             return { type: 'pattern', re: safe.patternToRegex(v.slice(1, -1)) };
         }
@@ -136,7 +136,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -159,7 +159,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -213,6 +213,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

@@ -35,7 +35,7 @@
 
 const argsList = [["{\"selector\":\".widget_execphp\",\"tasks\":[[\"has-text\",\"Reklāmraksti\"]]}"]];
 
-const hostnamesMap = new Map([["aluksniesiem.lv",0],["bauskasdzive.lv",0],["dzirkstele.lv",0],["rekurzeme.lv",0],["staburags.lv",0],["ziemellatvija.lv",0],["zz.lv",0]]);
+const hostnamesMap = new Map([["zz.lv",0],["staburags.lv",0],["aluksniesiem.lv",0],["bauskasdzive.lv",0],["dzirkstele.lv",0],["ziemellatvija.lv",0],["rekurzeme.lv",0]]);
 
 const entitiesMap = new Map(undefined);
 

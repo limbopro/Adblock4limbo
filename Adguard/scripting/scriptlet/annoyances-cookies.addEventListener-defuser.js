@@ -39,9 +39,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["DOMContentLoaded","js-revoke-cookie-manager"],["load","consentDialog"],["load","function(){if(s.readyState==XMLHttpRequest.DONE"],["scroll","innerHeight"]];
+const argsList = [["DOMContentLoaded","js-revoke-cookie-manager"],["load","consentDialog"],["load","function(){if(s.readyState==XMLHttpRequest.DONE"],["DOMContentLoaded","checkCookieConsent"],["scroll","innerHeight"]];
 
-const hostnamesMap = new Map([["ubuntu.com",0],["finna.fi",1],["sss.fi",2],["akaanseutu.fi",3],["alueviesti.fi",3],["kiuruvesilehti.fi",3],["lempaala.ideapark.fi",3],["lvs.fi",3],["olutposti.fi",3],["orivedensanomat.fi",3],["pirmediat.fi",3],["radiosun.fi",3],["shl.fi",3],["urjalansanomat.fi",3],["ylojarvenuutiset.fi",3]]);
+const hostnamesMap = new Map([["ubuntu.com",0],["finna.fi",1],["sss.fi",2],["crackoverflow.com",3],["akaanseutu.fi",4],["alueviesti.fi",4],["kiuruvesilehti.fi",4],["lempaala.ideapark.fi",4],["lvs.fi",4],["olutposti.fi",4],["orivedensanomat.fi",4],["pirmediat.fi",4],["radiosun.fi",4],["shl.fi",4],["urjalansanomat.fi",4],["ylojarvenuutiset.fi",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -154,7 +154,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = undefined;
+                this.callFn = this.callArgs = this.private = undefined;
                 proxyApplyFn.ctorContexts.push(this);
                 return r;
             }
@@ -177,7 +177,7 @@ function proxyApplyFn(
             }
             reflect() {
                 const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = undefined;
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
                 proxyApplyFn.applyContexts.push(this);
                 return r;
             }
@@ -260,6 +260,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

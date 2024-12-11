@@ -33,11 +33,11 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"div.col-8\",\"action\":[\"style\",\"width: 100% !important\"]}"],["{\"selector\":\".location-choose.open > wrapper\",\"action\":[\"style\",\"visibility:hidden;\"]}"],["{\"selector\":\".modal-open\",\"action\":[\"style\",\"overflow: visible\"]}"]];
+const argsList = [["{\"selector\":\".modal-open\",\"action\":[\"style\",\"overflow: visible\"]}"],["{\"selector\":\".location-choose.open > wrapper\",\"action\":[\"style\",\"visibility:hidden;\"]}"],["{\"selector\":\"div.col-8\",\"action\":[\"style\",\"width: 100% !important\"]}"]];
 
-const hostnamesMap = new Map([["cineplexx.al",1],["bankofalbania.org",2]]);
+const hostnamesMap = new Map([["bankofalbania.org",0],["cineplexx.al",1]]);
 
-const entitiesMap = new Map([["www.filma24",0]]);
+const entitiesMap = new Map([["www.filma24",2]]);
 
 const exceptionsMap = new Map(undefined);
 

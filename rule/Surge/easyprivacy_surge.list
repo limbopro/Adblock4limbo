@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412080822
+## ! Version: 202412111315
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Dec 2024 08:22 UTC
+## ! Last modified: 11 Dec 2024 13:15 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -74,7 +74,6 @@ DOMAIN-SUFFIX,bringmethehats.com
 DOMAIN-SUFFIX,briskeagle.io
 DOMAIN-SUFFIX,briskpelican.io
 DOMAIN-SUFFIX,broadstreet.ai
-DOMAIN-SUFFIX,brsrvr.com
 DOMAIN-SUFFIX,brwsrfrm.com
 DOMAIN-SUFFIX,btloader.com
 DOMAIN-SUFFIX,bx-cloud.com
@@ -1298,6 +1297,7 @@ DOMAIN-SUFFIX,glossysense.com
 DOMAIN-SUFFIX,glowingmeadow.com
 DOMAIN-SUFFIX,gluedpixel.com
 DOMAIN-SUFFIX,godlygeese.com
+DOMAIN-SUFFIX,godseedband.com
 DOMAIN-SUFFIX,goldfishgrowth.com
 DOMAIN-SUFFIX,gondolagnome.com
 DOMAIN-SUFFIX,goodbark.com
@@ -2746,6 +2746,7 @@ DOMAIN-SUFFIX,analytics.test.cheggnet.com
 DOMAIN-SUFFIX,analytics.themarketiq.com
 DOMAIN-SUFFIX,analytics.threedeepmarketing.com
 DOMAIN-SUFFIX,analytics.tiktok.com
+DOMAIN-SUFFIX,analytics.topseotoolkit.com
 DOMAIN-SUFFIX,analytics.tout.com
 DOMAIN-SUFFIX,analytics.unibuddy.co
 DOMAIN-SUFFIX,analytics.unilogcorp.com
@@ -2843,6 +2844,7 @@ DOMAIN-SUFFIX,ccexperimentsstatic.oracleoutsourcing.com
 DOMAIN-SUFFIX,cdn-channels-pixel.ex.co
 DOMAIN-SUFFIX,cdn.ravm.tv
 DOMAIN-SUFFIX,cdn.usefathom.com
+DOMAIN-SUFFIX,cdns.brsrvr.com
 DOMAIN-SUFFIX,cf-pixelfront-analytics.widencdn.net
 DOMAIN-SUFFIX,cf.overblog.com
 DOMAIN-SUFFIX,cgicounter.oneandone.co.uk

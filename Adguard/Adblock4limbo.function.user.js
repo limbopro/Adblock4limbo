@@ -163,17 +163,15 @@ tripleClick();
 })()
 
 
-// 重设 cookie  444 
-var Weblistregex = new RegExp(/\b(xiaobaotv|iyf|gimy|ddrk|ddys|olevod|hitomi|hltv|javlibrary|thisav|njav|missav|javlib|javbus|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|javbus|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+// 重设导航/成人保护模式设置
+var weblist_regex = new RegExp(/\b(xiaobaotv|iyf|gimy|ddrk|ddys|olevod|hitomi|hltv|javlibrary|thisav|njav|missav|javlib|javbus|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|javbus|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
 if (window.location.href.match('limbopro.com')) {
     setCookie('daohangMode_global', 'true', '400');
     setCookie('adultMode', 'false', '400');
-    console.log('该网址为博主，将强制开启导航按钮！')
-} else if (Weblistregex.test(window.location.href.toLowerCase())) {
-    setCookie('daohangMode_global', 'true', '400');
-    console.log('该网址被匹配，默认开启导航按钮！')
-} else {
-    console.log('该网址未被匹配，将按你的设置执行相关操作...！')
+} else if (weblist_regex.test(window.location.href.toLowerCase()) && getCookie('daohangMode_global') == '') {
+    setCookie('daohangMode_global', 'false', '400');
+} else if (weblist_regex.test(window.location.href.toLowerCase())) {
+    console.log('该网址被匹配，将按全局设置执行相关操作...！')
 }
 
 function wtf() {

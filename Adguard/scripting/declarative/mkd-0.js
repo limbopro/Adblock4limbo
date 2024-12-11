@@ -33,9 +33,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"],["{\"selector\":\"#ablockercheck\",\"action\":[\"style\",\"display: block !important;\"]}"]];
+const argsList = [["{\"selector\":\"#ablockercheck\",\"action\":[\"style\",\"display: block !important;\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"]];
 
-const hostnamesMap = new Map([["sportski.mk",0],["stream.mk",1]]);
+const hostnamesMap = new Map([["stream.mk",0],["sportski.mk",1]]);
 
 const entitiesMap = new Map(undefined);
 

@@ -39,9 +39,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ins.adsbygoogle","display","block"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"],[href*=\"dmm.co.jp\"])","font-size","14px"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"],[href*=\"dmm.co.jp\"]) img","height","128px"],["a[style*=\"display:\"][href^=\"https://al.dmm.co.jp\"] img","height","20px"],["a[style*=\"display:\"][href^=\"https://al.dmm.co.jp\"] img","display","block"]];
+const argsList = [["ins.adsbygoogle","display","block"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"],[href*=\"dmm.co.jp\"])","font-size","14px"],["#mw-content-text div[style] a:is([href*=\"contents.fc2.com\"],[href*=\"dmm.co.jp\"]) img","height","128px"]];
 
-const hostnamesMap = new Map([["yourfones.net",0],["wiki.yjsnpi.nu",[1,2]],["exploader.net",[3,4]]]);
+const hostnamesMap = new Map([["yourfones.net",0],["wiki.yjsnpi.nu",[1,2]]]);
 
 const entitiesMap = new Map([]);
 

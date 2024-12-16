@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 10 Dec 2024 13:13:01 GMT
-# entries:        3541
+# last updated:   Fri, 13 Dec 2024 01:08:27 GMT
+# entries:        3549
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -877,6 +877,7 @@ DOMAIN-SUFFIX,affiliatetracking.com
 DOMAIN-SUFFIX,affiliatetracking.net
 DOMAIN-SUFFIX,affiliatewindow.com
 DOMAIN-SUFFIX,affiliation-france.com
+DOMAIN-SUFFIX,afflnx.com
 DOMAIN-SUFFIX,afftracking.justanswer.com
 DOMAIN-SUFFIX,afraidlanguage.com
 DOMAIN-SUFFIX,agkn.com
@@ -940,7 +941,6 @@ DOMAIN-SUFFIX,analytics.yahoo.com
 DOMAIN-SUFFIX,analyticsapi.happypancake.net
 DOMAIN-SUFFIX,ancientact.com
 DOMAIN-SUFFIX,androiddownload.net
-DOMAIN-SUFFIX,angossa.com
 DOMAIN-SUFFIX,aniview.com
 DOMAIN-SUFFIX,annonser.dagbladet.no
 DOMAIN-SUFFIX,annoyedairport.com
@@ -1109,6 +1109,7 @@ DOMAIN-SUFFIX,benefits.sovendus.com
 DOMAIN-SUFFIX,benfly.net
 DOMAIN-SUFFIX,berp.com
 DOMAIN-SUFFIX,bespoke.iln8.net
+DOMAIN-SUFFIX,best-click.pro
 DOMAIN-SUFFIX,bestboundary.com
 DOMAIN-SUFFIX,bestbuy.7tiv.net
 DOMAIN-SUFFIX,bewilderedblade.com
@@ -1367,6 +1368,7 @@ DOMAIN-SUFFIX,cmvrclicks000.com
 DOMAIN-SUFFIX,cnomy.com
 DOMAIN-SUFFIX,cnt.spbland.ru
 DOMAIN-SUFFIX,cnt1.pocitadlo.cz
+DOMAIN-SUFFIX,cnvlink.com
 DOMAIN-SUFFIX,cny.yoyo.org
 DOMAIN-SUFFIX,codeadnetwork.com
 DOMAIN-SUFFIX,cognitiv.ai
@@ -1692,6 +1694,7 @@ DOMAIN-SUFFIX,fimserve.com
 DOMAIN-SUFFIX,findcommerce.com
 DOMAIN-SUFFIX,findyourcasino.com
 DOMAIN-SUFFIX,fingahvf.top
+DOMAIN-SUFFIX,fireads.online
 DOMAIN-SUFFIX,fireads.org
 DOMAIN-SUFFIX,fireworkadservices.com
 DOMAIN-SUFFIX,fireworkanalytics.com
@@ -1822,6 +1825,7 @@ DOMAIN-SUFFIX,guardeddirection.com
 DOMAIN-SUFFIX,guardedschool.com
 DOMAIN-SUFFIX,gunggo.com
 DOMAIN-SUFFIX,h-bid.com
+DOMAIN-SUFFIX,h-trck.com
 DOMAIN-SUFFIX,h0.t.hubspotemail.net
 DOMAIN-SUFFIX,h78xb.pw
 DOMAIN-SUFFIX,habitualhumor.com
@@ -2083,7 +2087,6 @@ DOMAIN-SUFFIX,lifeimpressions.net
 DOMAIN-SUFFIX,liftdna.com
 DOMAIN-SUFFIX,ligatus.com
 DOMAIN-SUFFIX,ligatus.de
-DOMAIN-SUFFIX,lightcast.leadscoringcenter.com
 DOMAIN-SUFFIX,lightspeedcash.com
 DOMAIN-SUFFIX,lightstep.medium.systems
 DOMAIN-SUFFIX,lijit.com
@@ -2485,6 +2488,7 @@ DOMAIN-SUFFIX,pagerank-ranking.de
 DOMAIN-SUFFIX,pageranktop.com
 DOMAIN-SUFFIX,painstakingpickle.com
 DOMAIN-SUFFIX,paleleaf.com
+DOMAIN-SUFFIX,panatenlink.pl
 DOMAIN-SUFFIX,panickycurtain.com
 DOMAIN-SUFFIX,panickypancake.com
 DOMAIN-SUFFIX,panoramicplane.com
@@ -2582,6 +2586,7 @@ DOMAIN-SUFFIX,postback.iqm.com
 DOMAIN-SUFFIX,postrelease.com
 DOMAIN-SUFFIX,ppc.adhere.marchex.com
 DOMAIN-SUFFIX,pr-star.de
+DOMAIN-SUFFIX,praddpro.de
 DOMAIN-SUFFIX,prchecker.info
 DOMAIN-SUFFIX,prebid.org
 DOMAIN-SUFFIX,predictad.com
@@ -2623,6 +2628,7 @@ DOMAIN-SUFFIX,protraffic.com
 DOMAIN-SUFFIX,provenpixel.com
 DOMAIN-SUFFIX,prpops.com
 DOMAIN-SUFFIX,prsitecheck.com
+DOMAIN-SUFFIX,prufenzo.xyz
 DOMAIN-SUFFIX,pstmrk.it
 DOMAIN-SUFFIX,psychedelicchess.com
 DOMAIN-SUFFIX,ptoushoa.com
@@ -2690,6 +2696,7 @@ DOMAIN-SUFFIX,railwayreason.com
 DOMAIN-SUFFIX,rambunctiousflock.com
 DOMAIN-SUFFIX,rampidads.com
 DOMAIN-SUFFIX,randkuj.xyz
+DOMAIN-SUFFIX,randkula.online
 DOMAIN-SUFFIX,rankchamp.de
 DOMAIN-SUFFIX,ranking-charts.de
 DOMAIN-SUFFIX,ranking-hits.de
@@ -2957,6 +2964,7 @@ DOMAIN-SUFFIX,sombersurprise.com
 DOMAIN-SUFFIX,somniture.stuff.co.nz
 DOMAIN-SUFFIX,somoaudience.com
 DOMAIN-SUFFIX,sonobi.com
+DOMAIN-SUFFIX,sordidsmile.com
 DOMAIN-SUFFIX,sortable.com
 DOMAIN-SUFFIX,sourcepoint.vice.com
 DOMAIN-SUFFIX,sovrn.com
@@ -3225,6 +3233,7 @@ DOMAIN-SUFFIX,track.mailerlite.com
 DOMAIN-SUFFIX,track.miro.com
 DOMAIN-SUFFIX,track.nationalgunrights.org
 DOMAIN-SUFFIX,track.privacyatclearbit.com
+DOMAIN-SUFFIX,track.przejdzdostrony.pl
 DOMAIN-SUFFIX,track.pubmatic.com
 DOMAIN-SUFFIX,track.segmetrics.io
 DOMAIN-SUFFIX,track.software-codes.com
@@ -3240,7 +3249,6 @@ DOMAIN-SUFFIX,trackedlink.net
 DOMAIN-SUFFIX,trackedweb.net
 DOMAIN-SUFFIX,tracker-pm2.spilleren.com
 DOMAIN-SUFFIX,tracker.bannerflow.com
-DOMAIN-SUFFIX,tracker.cdnbye.com
 DOMAIN-SUFFIX,tracker.icerocket.com
 DOMAIN-SUFFIX,tracker.metricswave.com
 DOMAIN-SUFFIX,tracker.mmdlv.it

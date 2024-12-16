@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.12.8
+// @version      0.2024.12.11
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -1136,6 +1136,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['Github', 'https://github.com/', '_blank', 'Developer', 'special'],
 ['v2ex', 'https://www.v2ex.com/', '_blank', 'Developer'],
 ['思否', 'https://segmentfault.com/', '_blank', 'Developer', 'special'],
+['infoq', 'https://www.infoq.cn/', '_blank', 'Developer', 'special'],
 ['掘金', 'https://juejin.cn/', '_blank', 'Developer', 'special'],
 ['MDN', 'https://developer.mozilla.org/zh-CN/', '_blank', 'Developer', 'common'],
 ['w3schools', 'https://w3schools.cn/', '_blank', 'Developer', 'common'],
@@ -1238,8 +1239,11 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['QQ音乐', 'https://y.qq.com/', '_blank', 'imusic', 'better'],
 ['酷狗音乐', 'https://www.kugou.com/', '_blank', 'imusic', 'better'],
 ['酷狗音乐', 'https://www.kugou.com/', '_blank', 'imusic', 'better'],
+['炼码', 'https://www.lintcode.com/', '_blank', 'cheeseispower', 'better'],
 ['菜鸟教程', 'https://www.runoob.com/', '_blank', 'cheeseispower', 'better'],
 ['w3cschool', 'https://www.w3school.com.cn/', '_blank', 'cheeseispower', 'better'],
+['Stackoverflow', 'https://stackoverflow.com/', '_blank', 'cheeseispower', 'better'],
+['Github', 'https://github.com/', '_blank', 'cheeseispower', 'better'],
 ];
 
 

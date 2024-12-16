@@ -39,9 +39,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["checkAdIframe"]];
+const argsList = [["checkAdIframe"],["blockId"]];
 
-const hostnamesMap = new Map([["pixnest.pipio.site",0]]);
+const hostnamesMap = new Map([["pixnest.pipio.site",0],["inkbrushpainting.work",1],["bridalgown.work",1],["contents-group.work",1],["heisei-housewarming.work",1],["liquidfoundation.work",1],["nailcolor.work",1],["studioglass.work",1],["tapestry.work",1],["teaceremony.work",1],["weddinghall.work",1]]);
 
 const entitiesMap = new Map([]);
 

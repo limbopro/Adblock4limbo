@@ -39,9 +39,9 @@ const uBOL_trustedSetCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["intro_popup_last_hidden_at","$currentDate$"]];
+const argsList = [["intro_popup_last_hidden_at","$currentDate$"],["fandomLeftPanelPersistence","collapsed"]];
 
-const hostnamesMap = new Map([["entra.news",0],["microsoftsecurityinsights.com",0],["substack.com",0]]);
+const hostnamesMap = new Map([["entra.news",0],["microsoftsecurityinsights.com",0],["substack.com",0],["fandom.com",1]]);
 
 const entitiesMap = new Map([]);
 

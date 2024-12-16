@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412111315
+## ! Version: 202412161351
 ## ! Title: EasyPrivacy
-## ! Last modified: 11 Dec 2024 13:15 UTC
+## ! Last modified: 16 Dec 2024 13:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -774,6 +774,7 @@ DOMAIN-SUFFIX,cdnral.com
 DOMAIN-SUFFIX,ceciliavenus.com
 DOMAIN-SUFFIX,celestialeuphony.com
 DOMAIN-SUFFIX,celestialspectra.com
+DOMAIN-SUFFIX,chademocharge.com
 DOMAIN-SUFFIX,chaireggnog.com
 DOMAIN-SUFFIX,chairscrack.com
 DOMAIN-SUFFIX,chairsdonkey.com
@@ -1552,6 +1553,7 @@ DOMAIN-SUFFIX,lustroushaven.com
 DOMAIN-SUFFIX,lyricshook.com
 DOMAIN-SUFFIX,maddeningpowder.com
 DOMAIN-SUFFIX,madebyintent.com
+DOMAIN-SUFFIX,madlysuccessful.com
 DOMAIN-SUFFIX,magicaljoin.com
 DOMAIN-SUFFIX,magicminibox.com
 DOMAIN-SUFFIX,magiczenith.com
@@ -3023,7 +3025,6 @@ DOMAIN-SUFFIX,events.paramount.tech
 DOMAIN-SUFFIX,events.realgravity.com
 DOMAIN-SUFFIX,events.shareably.net
 DOMAIN-SUFFIX,events.splash-screen.net
-DOMAIN-SUFFIX,events.split.io
 DOMAIN-SUFFIX,events.storifyme.com
 DOMAIN-SUFFIX,events.tryamped.com
 DOMAIN-SUFFIX,events.tubecup.org
@@ -4300,11 +4301,13 @@ DOMAIN-SUFFIX,hitserver.ibope.com.br
 DOMAIN-SUFFIX,lurker.olx.com.br
 DOMAIN-SUFFIX,nctrk.abmail.com.br
 DOMAIN-SUFFIX,neurotrack.neurolake.io
+DOMAIN-SUFFIX,pageviews.tray.com.br
 DOMAIN-SUFFIX,sat.soluall.net
 DOMAIN-SUFFIX,segmentor.snowfox-ai.com
 DOMAIN-SUFFIX,statistic.audima.co
 DOMAIN-SUFFIX,stats.gridmidia.com.br
 DOMAIN-SUFFIX,tags.cmp.tail.digital
+DOMAIN-SUFFIX,tiktok.tray.com.br
 DOMAIN-SUFFIX,track.noddus.com
 DOMAIN-SUFFIX,track.zapimoveis.com.br
 DOMAIN-SUFFIX,tracker.tolvnow.com
@@ -4344,6 +4347,7 @@ DOMAIN-SUFFIX,g4p.redtram.com
 DOMAIN-SUFFIX,ga-tracker-dot-detmir-bonus.appspot.com
 DOMAIN-SUFFIX,ip.up66.ru
 DOMAIN-SUFFIX,kraken.rambler.ru
+DOMAIN-SUFFIX,logs.adplay.ru
 DOMAIN-SUFFIX,logs.viavideo.digital
 DOMAIN-SUFFIX,metrics.aviasales.ru
 DOMAIN-SUFFIX,piper.amocrm.ru
@@ -4354,6 +4358,7 @@ DOMAIN-SUFFIX,sp.aviasales.com
 DOMAIN-SUFFIX,sp.aviasales.ru
 DOMAIN-SUFFIX,st.hbrd.io
 DOMAIN-SUFFIX,stat.eagleplatform.com
+DOMAIN-SUFFIX,stat.fly.codes
 DOMAIN-SUFFIX,stat.rum.cdnvideo.ru
 DOMAIN-SUFFIX,stat.sputnik.ru
 DOMAIN-SUFFIX,stat.tvigle.ru
@@ -41453,7 +41458,6 @@ DOMAIN-SUFFIX,cs42.pikabu.ru
 DOMAIN-SUFFIX,cs43.pikabu.ru
 DOMAIN-SUFFIX,cvt1.sibnet.ru
 DOMAIN-SUFFIX,data.glamour.ru
-DOMAIN-SUFFIX,goya.rutube.ru
 DOMAIN-SUFFIX,link.subscribe.ru
 DOMAIN-SUFFIX,log.dzen.ru
 DOMAIN-SUFFIX,log.ren.tv

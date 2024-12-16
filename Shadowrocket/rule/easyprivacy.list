@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412111315
+## ! Version: 202412161351
 ## ! Title: EasyPrivacy
-## ! Last modified: 11 Dec 2024 13:15 UTC
+## ! Last modified: 16 Dec 2024 13:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -774,6 +774,7 @@ DOMAIN-SUFFIX,cdnral.com, reject
 DOMAIN-SUFFIX,ceciliavenus.com, reject
 DOMAIN-SUFFIX,celestialeuphony.com, reject
 DOMAIN-SUFFIX,celestialspectra.com, reject
+DOMAIN-SUFFIX,chademocharge.com, reject
 DOMAIN-SUFFIX,chaireggnog.com, reject
 DOMAIN-SUFFIX,chairscrack.com, reject
 DOMAIN-SUFFIX,chairsdonkey.com, reject
@@ -1552,6 +1553,7 @@ DOMAIN-SUFFIX,lustroushaven.com, reject
 DOMAIN-SUFFIX,lyricshook.com, reject
 DOMAIN-SUFFIX,maddeningpowder.com, reject
 DOMAIN-SUFFIX,madebyintent.com, reject
+DOMAIN-SUFFIX,madlysuccessful.com, reject
 DOMAIN-SUFFIX,magicaljoin.com, reject
 DOMAIN-SUFFIX,magicminibox.com, reject
 DOMAIN-SUFFIX,magiczenith.com, reject
@@ -3023,7 +3025,6 @@ DOMAIN-SUFFIX,events.paramount.tech, reject
 DOMAIN-SUFFIX,events.realgravity.com, reject
 DOMAIN-SUFFIX,events.shareably.net, reject
 DOMAIN-SUFFIX,events.splash-screen.net, reject
-DOMAIN-SUFFIX,events.split.io, reject
 DOMAIN-SUFFIX,events.storifyme.com, reject
 DOMAIN-SUFFIX,events.tryamped.com, reject
 DOMAIN-SUFFIX,events.tubecup.org, reject
@@ -4300,11 +4301,13 @@ DOMAIN-SUFFIX,hitserver.ibope.com.br, reject
 DOMAIN-SUFFIX,lurker.olx.com.br, reject
 DOMAIN-SUFFIX,nctrk.abmail.com.br, reject
 DOMAIN-SUFFIX,neurotrack.neurolake.io, reject
+DOMAIN-SUFFIX,pageviews.tray.com.br, reject
 DOMAIN-SUFFIX,sat.soluall.net, reject
 DOMAIN-SUFFIX,segmentor.snowfox-ai.com, reject
 DOMAIN-SUFFIX,statistic.audima.co, reject
 DOMAIN-SUFFIX,stats.gridmidia.com.br, reject
 DOMAIN-SUFFIX,tags.cmp.tail.digital, reject
+DOMAIN-SUFFIX,tiktok.tray.com.br, reject
 DOMAIN-SUFFIX,track.noddus.com, reject
 DOMAIN-SUFFIX,track.zapimoveis.com.br, reject
 DOMAIN-SUFFIX,tracker.tolvnow.com, reject
@@ -4344,6 +4347,7 @@ DOMAIN-SUFFIX,g4p.redtram.com, reject
 DOMAIN-SUFFIX,ga-tracker-dot-detmir-bonus.appspot.com, reject
 DOMAIN-SUFFIX,ip.up66.ru, reject
 DOMAIN-SUFFIX,kraken.rambler.ru, reject
+DOMAIN-SUFFIX,logs.adplay.ru, reject
 DOMAIN-SUFFIX,logs.viavideo.digital, reject
 DOMAIN-SUFFIX,metrics.aviasales.ru, reject
 DOMAIN-SUFFIX,piper.amocrm.ru, reject
@@ -4354,6 +4358,7 @@ DOMAIN-SUFFIX,sp.aviasales.com, reject
 DOMAIN-SUFFIX,sp.aviasales.ru, reject
 DOMAIN-SUFFIX,st.hbrd.io, reject
 DOMAIN-SUFFIX,stat.eagleplatform.com, reject
+DOMAIN-SUFFIX,stat.fly.codes, reject
 DOMAIN-SUFFIX,stat.rum.cdnvideo.ru, reject
 DOMAIN-SUFFIX,stat.sputnik.ru, reject
 DOMAIN-SUFFIX,stat.tvigle.ru, reject
@@ -41453,7 +41458,6 @@ DOMAIN-SUFFIX,cs42.pikabu.ru, reject
 DOMAIN-SUFFIX,cs43.pikabu.ru, reject
 DOMAIN-SUFFIX,cvt1.sibnet.ru, reject
 DOMAIN-SUFFIX,data.glamour.ru, reject
-DOMAIN-SUFFIX,goya.rutube.ru, reject
 DOMAIN-SUFFIX,link.subscribe.ru, reject
 DOMAIN-SUFFIX,log.dzen.ru, reject
 DOMAIN-SUFFIX,log.ren.tv, reject

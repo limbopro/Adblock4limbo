@@ -39,7 +39,7 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","/function\\(Baby|\\+'a'|\\+parseInt|\\+String|log'|fromCharCode'|createElement'|querySel'|\\\\x22return|;\\}\\(\\)\\)\\);\\}\\}\\(\\)\\)\\);/"]];
+const argsList = [["script","Roiyehe"]];
 
 const hostnamesMap = new Map([["japscan.lol",0]]);
 
@@ -218,6 +218,7 @@ function safeSelf() {
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
         'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,

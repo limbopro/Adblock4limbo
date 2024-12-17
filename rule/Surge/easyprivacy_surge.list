@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412161351
+## ! Version: 202412171427
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Dec 2024 13:51 UTC
+## ! Last modified: 17 Dec 2024 14:27 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -4916,6 +4916,7 @@ DOMAIN-SUFFIX,saa.insideedition.com
 DOMAIN-SUFFIX,sapi.tremendous.com
 DOMAIN-SUFFIX,sapphire-api.target.com
 DOMAIN-SUFFIX,search.anonymous.ads.brave.com
+DOMAIN-SUFFIX,service.techzine.eu
 DOMAIN-SUFFIX,shopmetric.rediff.com
 DOMAIN-SUFFIX,sid.nordstrom.com
 DOMAIN-SUFFIX,sjc.cloud.optable.co

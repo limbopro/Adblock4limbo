@@ -22,6 +22,13 @@ DOMAIN-SUFFIX,205.209.138.102, reject
 DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,ihearsoh.com, reject
+DOMAIN-SUFFIX,juutckrt.icu, reject
+DOMAIN-SUFFIX,qtimiyy.top, reject
+DOMAIN-SUFFIX,4jc.icu, reject
+DOMAIN-SUFFIX,screspoy.com, reject
+DOMAIN-SUFFIX,ua2.icu, reject
+DOMAIN-SUFFIX,ttimiyi.top, reject
 DOMAIN-SUFFIX,qonbibff.icu, reject
 DOMAIN-SUFFIX,n7a.icu, reject
 DOMAIN-SUFFIX,craegvin.com, reject

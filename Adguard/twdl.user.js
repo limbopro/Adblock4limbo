@@ -1,18 +1,18 @@
 // ==UserScript==
-// @name        Twitter/X(网页版)视频/图片/gif一键下载.[limbopro]
+// @name        Twitter/X(网页版)视频/原始图片/gif一键下载.[limbopro]
 // @name:ja     Twitter/X (Web 版) のビデオ/写真/GIF をワンクリックでダウンロード。[limbopro]
-// @name:zh-cn  Twitter/X(网页版)视频/图片/gif一键下载.[limbopro]
-// @name:zh-tw  Twitter/X(網頁版)影片/圖片/gif一鍵下載.[limbopro]
-// @name:en     Twitter/X(web version)videos/pictures/gif download.[limbopro]
+// @name:zh-cn  Twitter/X(网页版)视频/原始图片/gif一键下载.[limbopro]
+// @name:zh-tw  Twitter/X(網頁版)影片/原始圖片/gif一鍵下載.[limbopro]
+// @name:en     Twitter/X(web version)videos/4kPhotos/gif download.[limbopro]
 // @name:ko     Twitter/X(웹버전) 동영상/사진/gif 원클릭 다운로드.[limbopro]
 // @name:ru     Twitter/X (веб-версия) — загрузка видео/изображений/гифок в один клик.[limbopro]
 // @namespace    https://limbopro.com/
-// @version      0.1.3.16
-// @description Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文图片并按用户名进行保存 
-// @description:zh-cn  Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文图片并按用户名进行保存 
+// @version      0.1.3.20
+// @description Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文4k/原始图片并按用户名进行保存
+// @description:zh-cn  Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文4k/原始图片并按用户名进行保存
 // @description:ja Twitter/X (Web 版) のビデオ/写真/GIF をワンクリックでダウンロード。[limbopro] / ワンクリックでツイート画像をダウンロードし、ユーザー名で保存します
-// @description:zh-tw Twitter/X(網頁版)影片/圖片/gif一鍵下載.[limbopro] / 一鍵下載推文圖片並按使用者名稱儲存
-// @description:en Twitter/X(web version)videos/pictures/gif download.[limbopro] / Download tweet images with one click and save by username
+// @description:zh-tw Twitter/X(網頁版)影片/圖片/gif一鍵下載.[limbopro] / 一鍵下載推文4k/原始圖片並按使用者名稱儲存
+// @description:en Twitter/X(web version)videos/4kPhotos/gif download.[limbopro] / Download tweet original images(4k) with one click and save by username
 // @description:ru Twitter/X (веб-версия) — загрузка видео/изображений/гифок в один клик.[limbopro] / Загрузите изображения твитов одним щелчком мыши и сохраните их по имени пользователя.
 // @description:ko Twitter/X(웹버전) 동영상/사진/gif 원클릭 다운로드.[limbopro] / 한 번의 클릭으로 트윗 이미지를 다운로드하고 사용자 이름으로 저장
 // @author       limbopro
@@ -23,8 +23,10 @@
 // @match        https://twittervid.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
 // @grant        none
+// @downloadURL https://update.greasyfork.org/scripts/478651/TwitterX%28%E7%BD%91%E9%A1%B5%E7%89%88%29%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87gif%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.user.js
+// @updateURL https://update.greasyfork.org/scripts/478651/TwitterX%28%E7%BD%91%E9%A1%B5%E7%89%88%29%E8%A7%86%E9%A2%91%E5%9B%BE%E7%89%87gif%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.meta.js
 // ==/UserScript==
- 
+
 /*
 @ author: limbopro
 @ website: http://limbopro.com/
@@ -32,19 +34,19 @@
 @ Github: https://github.com/limbopro
 @ X: https://x.com/limboprossr
 */
- 
-/* (function () { 
+
+/* (function () {
 'use strict';
 */
- 
+
 // 引入全局 CSS
-var twdlcss = "span[id^=\"ezoic-pub-ad-placeholder-\"], .ez-sidebar-wall, span[data-ez-ph-id], .ez-sidebar-wall-ad,.ez-sidebar-wall {display:none !important} button.twdl.download_pics:hover {background-color: #f038ff；-webkit-box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);-moz-box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);box-shadow: 10px 10px 99px 6px rgba(240, 56, 255, 1);;transition: 0.7s;} .atx {display:none;} .house {z-index:114154 !important; max-width:340px; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:5px;}.help{top:80px !important;/*background:teal;*/} .twdl { z-index:114154 !important; line-height:normal; /*font-size:xx-small;*/ font-size:inherit; text-decoration:none; position:sticky; top:5px; /*text-transform:uppercase;*/ padding:6px 12px; color:white; z-index:114154;} .twittervideodownloader { background:linear-gradient(to bottom, #42a5f5 0%, #1e88e5 100%); box-shadow:inset 0 2px 2px #1976d2;} .twittervid {background:linear-gradient(to bottom, #66BB6A 0%, #43A047 100%); box-shadow:inset 0 2px 2px #388E3C;} .download_pics { /*border-radius:5px 0px 0px 5px; */ border:0px;} .greasyfork {cursor:help; right:295px;background:linear-gradient(rgb(62 53 53) 0%, rgb(31 29 29) 100%);box-shadow:rgb(0 0 0) 0px 2px 2px inset;}"
+var twdlcss = "span[id^=\"ezoic-pub-ad-placeholder-\"], .ez-sidebar-wall, span[data-ez-ph-id], .ez-sidebar-wall-ad,.ez-sidebar-wall {display:none !important} button.twdl.download_pics:active {background-image: linear-gradient(153deg, #F33FEA 40%, #fc894d); transition: 0.7s;} button.twdl.download_pics:hover {background-image: linear-gradient(135deg, #f34079 40%, #fc894d); transition: 0.7s;} .atx {display:none;} .house {z-index:114154 !important; max-width:340px; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:5px;}.help{top:80px !important;/*background:teal;*/} .twdl { z-index:114154 !important; line-height:normal; /*font-size:xx-small;*/ font-size:inherit; text-decoration:none; position:sticky; top:5px; /*text-transform:uppercase;*/ padding:6px 12px; color:white; z-index:114154;} .twittervideodownloader { background:linear-gradient(to bottom, #42a5f5 0%, #1e88e5 100%); box-shadow:inset 0 2px 2px #1976d2;} .twittervid {background:linear-gradient(to bottom, #66BB6A 0%, #43A047 100%); box-shadow:inset 0 2px 2px #388E3C;} .download_pics { /*border-radius:5px 0px 0px 5px; */ border:0px;} .greasyfork {cursor:help; right:295px;background:linear-gradient(rgb(62 53 53) 0%, rgb(31 29 29) 100%);box-shadow:rgb(0 0 0) 0px 2px 2px inset;}"
 var newstyle = document.createElement('style')
 newstyle.id = 'twdlcss'
 newstyle.innerHTML = twdlcss
 document.querySelector('head').parentNode.insertBefore(newstyle, document.querySelector('head')) // 载入
- 
- 
+
+
 var twURL_regex = new RegExp(/^https:\/\/x\.com\/.*?\/status\/\d{10,100}$/gi) // 正则匹配对的 Tweet url
 function twdl_div(article, downloaderURL, className, textContent) { // article = article[i]
     let a = document.createElement('a')
@@ -55,14 +57,14 @@ function twdl_div(article, downloaderURL, className, textContent) { // article =
             //// console.log(a.href)
         }
     })
- 
+
     a.className = className;
     a.target = '_blank';
     a.zIndex = '114154';
     a.textContent = textContent;
     return a;
 }
- 
+
 function twdl_url(article) {
     var twdl_Kurl = '';
     var twURL_regex = new RegExp(/^https:\/\/x\.com\/.*?\/status\/\d{10,100}$/gi) // 正则匹配对的 Tweet url
@@ -74,7 +76,7 @@ function twdl_url(article) {
     //// console.log('当前推文链接🔗...' + ' ' + twdl_Kurl)
     return twdl_Kurl;
 }
- 
+
 function iftwnopics_innerText() {
     var language = document.querySelector('html').lang; // en/ja/zh/ru/zh-Hant
     var textContent = '';
@@ -109,15 +111,15 @@ function iftwnopics_innerText() {
             break;
     }
 }
- 
- 
+
+
 function downloader_innerText(x) { // [LOADER]/[VID]
     // 判断当前网页语言
     var language = document.querySelector('html').lang; // en/ja/zh/ru/zh-Hant
     var textContent = '';
- 
+
     if (x == '[VID]') {
- 
+
         switch (language) { //
             case 'zh':
                 textContent = "通过" + x + "下载视频/动图";
@@ -148,9 +150,9 @@ function downloader_innerText(x) { // [LOADER]/[VID]
                 return textContent;
                 break;
         }
- 
+
     } else if (x == '[LOADER]') {
- 
+
         switch (language) { //
             case 'zh':
                 textContent = "通过" + x + "下载视频";
@@ -182,9 +184,9 @@ function downloader_innerText(x) { // [LOADER]/[VID]
                 break;
         }
     }
- 
+
 }
- 
+
 function dlpics_innerText() { // [LOADER]/[VID]
     // 判断当前网页语言
     var language = document.querySelector('html').lang; // en/ja/zh/ru/zh-Hant
@@ -220,8 +222,8 @@ function dlpics_innerText() { // [LOADER]/[VID]
             break;
     }
 }
- 
- 
+
+
 function promp_innerText() { // [LOADER]/[VID]
     // 判断当前网页语言
     var language = document.querySelector('html').lang; // en/ja/zh/ru/zh-Hant
@@ -245,8 +247,8 @@ function promp_innerText() { // [LOADER]/[VID]
             break;
     }
 }
- 
- 
+
+
 if (localStorage.getItem('clickcount') == '' || localStorage.getItem('clickcount') == null) {
     var twdl_clickCount = 0;
     console.log("twdl_clickCount 设置 为 " + '0')
@@ -254,12 +256,12 @@ if (localStorage.getItem('clickcount') == '' || localStorage.getItem('clickcount
     var twdl_clickCount = localStorage.getItem('clickcount');
     console.log("twdl_clickCount 设置 为 " + localStorage.getItem('clickcount'))
 }
- 
+
 function dlpicsfromURL(imgsrcURL, userName) {
     if (imgsrcURL.length == 0) {
         alert(iftwnopics_innerText())
     } else {
- 
+
         if (navigator.userAgent.toString().toLowerCase().search(/android|iphone|mobile/) !== -1) {
             sessionStorage.setItem('clickcount', twdl_clickCount += 1) // 点击下载图片按钮次数统计
             localStorage.setItem('clickcount', twdl_clickCount) // 点击下载图片按钮次数统计
@@ -267,28 +269,29 @@ function dlpicsfromURL(imgsrcURL, userName) {
                 alert(promp_innerText())
             }
         }
- 
-        // Part of the code is modified from CodeingShare 
+
+        // Part of the code is modified from CodeingShare
         // https://ww4k.com/CodeingShare/donwload_image_difference_domain.html
         // 解决跨域 Canvas 污染问题
- 
+
         var timeloop = 0;
- 
+
         imgsrcURL.forEach((x, index) => {
- 
+
             if (navigator.userAgent.toString().toLowerCase().search(/android|iphone|mobile/) !== -1) { //  如果当前浏览器代理为手机代理
-                timeloop = index * 1500 // 则 循环得慢一些
+                timeloop = index * 2500; // 则 循环得慢一些
                 console.log('Mobile')
             } else {
                 timeloop = index * 500
                 console.log('Not Mobile')
             }
- 
+
             setTimeout(() => {
                 var image = new Image();
                 image.setAttribute("crossOrigin", "anonymous");
                 image.onload = function () {
                     var canvas = document.createElement("canvas");
+                    canvas.id = 'twdl'
                     canvas.width = image.width;
                     canvas.height = image.height;
                     var context = canvas.getContext("2d");
@@ -299,126 +302,138 @@ function dlpicsfromURL(imgsrcURL, userName) {
                     a.href = url;
                     if (document.all) {
                         a.click();
+
+                        if (image != null) {
+                            image.flush();
+                        }
+
+
+                        context.clearRect(0, 0, image.width, image.height) // 清空画板
+                        document.querySelector('canvas#twdl').remove()
+
+
                         // console.log('Firefox')
                     } else {
                         var event = new MouseEvent("click");
                         event.initEvent('click', true, true);
                         a.dispatchEvent(event);
+
+                        if (image != null) {
+                            image.flush();
+                        }
+
+
+                        context.clearRect(0, 0, image.width, image.height) // 清空画板
+                        document.querySelector('canvas#twdl').remove()
+
+
                         // console.log('Other browser')
                     }
                 };
                 image.src = x;
             }, timeloop)
         })
- 
+
     }
 }
- 
- 
+
+
 function get_imgsURL(article, userName) {
     var url = [];
     article.querySelectorAll('a[class=' + userName + ']').forEach((x) => {
-        url.push(x)
+        var large_regex = new RegExp(/name=.*/ig)
+        console.log('get_imgsURL -> ' + x)
+        console.log('get_imgsURL -> ' + (x.toString().replace('name=medium', 'name=4096x4096').replace('name=small', 'name=4096x4096').replace(large_regex, 'name=4096x4096')))
+        url.push((x.toString().replace('name=medium', 'name=4096x4096').replace('name=small', 'name=4096x4096').replace(large_regex, 'name=4096x4096'))) // 默认下载最大化图片
     })
     return url;
 }
- 
+
 function userName(article) {
     var fileName = '';
     var regex_name = new RegExp(/\/status\/\d{10,100}$/gi) // 正则匹配对的 Tweet url
     var twURL_regex = new RegExp(/^https:\/\/x\.com\/.*?\/status\/\d{10,100}$/gi) // 正则匹配对的 Tweet url
- 
+
     article.querySelectorAll('a').forEach((x) => { // 获取 twitter url
         if (x.href.match(twURL_regex)) {
             fileName = x.href.replaceAll('https://x.com/', '').replaceAll(regex_name, '')
         }
     })
- 
+
     return fileName;
 }
- 
-/*
-const newArr = []; // 创建一个空数组 用来去重
-*/
- 
+
 function twdl() {
     if (document.querySelectorAll('[data-testid="cellInnerDiv"]')) {
         var article = document.querySelectorAll('[data-testid="cellInnerDiv"]')
         for (let i = 0; i < article.length; i++) { // twittervid
- 
-            /*
-            if (newArr.indexOf(twdl_url(article[i])) === -1) {
-                newArr.push(twdl_url(article[i]))
-                // console.log(newArr.length)
-            } // 往空数组填充每次获取的值
-             */
- 
+
             if (article[i].querySelector('.house') == null && (article[i].querySelector('[data-testid="videoPlayer"]') || article[i].querySelectorAll("img[src*='name=']").length >= 1)) { // 如果 article[i] 不包含 .house ，但 article[i] 包含图片或视频，那么创建 .house
                 var house = document.createElement('div')
                 house.className = 'house'
- 
+
                 var vid = twdl_div(article[i], 'https://twittervid.com/', 'twdl twittervid', downloader_innerText('[VID]'))
                 var loader_ = twdl_div(article[i], 'https://twittervideodownloader.com/', 'twdl twittervideodownloader', downloader_innerText('[LOADER]'))
                 var help = twdl_div(article[i], 'https://greasyfork.org/zh-CN/scripts/478651-twitter-%E7%BD%91%E9%A1%B5%E7%89%88%E5%A4%9A%E8%A7%86%E9%A2%91-gif%E4%B8%8B%E8%BD%BD-limbopro', 'twdl help', 'Need Help?')
- 
+
                 var downloader = document.createElement('button')
                 downloader.className = 'twdl download_pics'
                 downloader.innerText = dlpics_innerText()
- 
+
                 article[i].querySelectorAll("img[src*='name=']").forEach((x) => {
                     var a = document.createElement('a')
                     a.href = x.src
                     a.className = "twdl_" + userName(article[i])
                     house.appendChild(a)
                 })
- 
+
                 var array = [downloader, vid, loader_, help]
- 
+
                 array.forEach((x) => {
                     house.appendChild(x)
                 })
- 
- 
+
+
                 if (article[i].querySelectorAll("div.css-175oi2r.r-12kyg2d")[0] && article[i].querySelector('[data-testid="videoPlayer"]')) { // 推文存在文字图片且有视频的情况下
                     article[i].querySelectorAll("div.css-175oi2r.r-12kyg2d")[0].appendChild(house);
- 
+
                 } else if (article[i].querySelectorAll('[dir=auto][lang]')[0] && article[i].querySelector('[data-testid="videoPlayer"]')) {
                     article[i].querySelectorAll('[dir=auto][lang]')[0].appendChild(house);
- 
+
                 } else if (article[i].querySelector('[data-testid="videoPlayer"]')) { // 推文没有文字图片仅有视频的情况下
                     article[i].querySelector("[data-testid='videoComponent']").appendChild(house)
- 
+
                 } else if (article[i].querySelectorAll('[dir=auto][lang]')[0] && article[i].querySelectorAll("img[src*='name=']").length >= 1) {
                     article[i].querySelectorAll('[dir=auto][lang]')[0].appendChild(house);
- 
+
                 } else if (article[i].querySelectorAll("img[src*='name=']").length >= 1 && article[i].querySelectorAll("img")[1] !== null) {
                     article[i].querySelectorAll("div[aria-labelledby]")[0].parentNode.insertBefore(house, article[i].querySelectorAll("div[aria-labelledby]")[0])
                 }
- 
- 
+
+
                 downloader.addEventListener('click', () => {
                     dlpicsfromURL(get_imgsURL(article[i], "twdl_" + userName(article[i])), userName(article[i]))
                 })
- 
+
             } else {
                 // console.log(userName(article[i]) + " " + twdl_url(article[i]) + " 啥也没有...")
             }
         }
- 
+
     }
 }
- 
+
 setInterval(() => {
     twdl()
 }, 4000)
- 
+
 /* })(); */
- 
- 
+
+
 function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> 点击下载按钮
- 
+
     if (window.location.href.match(/(twittervid\.com)/gi)) {
- 
+
         if (document.querySelector('#tweetUrl') !== null && document.querySelector('#loadVideos') !== null) {
             document.querySelector('#tweetUrl').value = window.location.href.replace('https://twittervid.com/#', '')
             if (document.querySelector('#tweetUrl').value == 'https://twittervid.com/') {
@@ -427,7 +442,7 @@ function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> �
             }
         }
     }
- 
+
     if (window.location.href.match(/(twittervideodownloader\.com)/gi)) {
         if (document.querySelector('#tweetURL') !== null && document.querySelector('#submitBtn') !== null) {
             document.querySelector('#tweetURL').value = window.location.href.replace('https://twittervideodownloader.com/#', '')
@@ -437,9 +452,9 @@ function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> �
             }
         }
     }
- 
+
 }
- 
+
 if (window.location.href.match(/(twittervid\.com|twittervideodownloader)/gi) !== null) {
     inDownloaderPage()
 }

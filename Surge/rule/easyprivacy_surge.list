@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412171427
+## ! Version: 202412221151
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 Dec 2024 14:27 UTC
+## ! Last modified: 22 Dec 2024 11:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -40,6 +40,7 @@ DOMAIN-SUFFIX,adscore.com
 DOMAIN-SUFFIX,adspsp.com
 DOMAIN-SUFFIX,adstk.io
 DOMAIN-SUFFIX,adultium.com
+DOMAIN-SUFFIX,afrdtech.com
 DOMAIN-SUFFIX,aggle.net
 DOMAIN-SUFFIX,agkn.com
 DOMAIN-SUFFIX,agma-analytics.de
@@ -669,6 +670,7 @@ DOMAIN-SUFFIX,blissfulcrescendo.com
 DOMAIN-SUFFIX,blissfullagoon.com
 DOMAIN-SUFFIX,blotburn.com
 DOMAIN-SUFFIX,blueeyedblow.com
+DOMAIN-SUFFIX,bluevinebooks.com
 DOMAIN-SUFFIX,blushingbeast.com
 DOMAIN-SUFFIX,blushingboundary.com
 DOMAIN-SUFFIX,blushingbread.com
@@ -1311,6 +1313,7 @@ DOMAIN-SUFFIX,grandfatherguitar.com
 DOMAIN-SUFFIX,grandiosefire.com
 DOMAIN-SUFFIX,grandioseguide.com
 DOMAIN-SUFFIX,grandmotherunit.com
+DOMAIN-SUFFIX,granlite.com
 DOMAIN-SUFFIX,grapeopinion.com
 DOMAIN-SUFFIX,gravitygive.com
 DOMAIN-SUFFIX,gravitykick.com
@@ -1629,6 +1632,7 @@ DOMAIN-SUFFIX,minuteburst.com
 DOMAIN-SUFFIX,minuterhythm.com
 DOMAIN-SUFFIX,miscreantmine.com
 DOMAIN-SUFFIX,miscreantmoon.com
+DOMAIN-SUFFIX,missionrewards.com
 DOMAIN-SUFFIX,mistyhorizon.com
 DOMAIN-SUFFIX,mittencattle.com
 DOMAIN-SUFFIX,mixedreading.com
@@ -1636,6 +1640,7 @@ DOMAIN-SUFFIX,modifyeyes.com
 DOMAIN-SUFFIX,modularmental.com
 DOMAIN-SUFFIX,moldyicicle.com
 DOMAIN-SUFFIX,monacobeatles.com
+DOMAIN-SUFFIX,monthlyhat.com
 DOMAIN-SUFFIX,moorshoes.com
 DOMAIN-SUFFIX,morefriendly.com
 DOMAIN-SUFFIX,motionflowers.com
@@ -2162,6 +2167,7 @@ DOMAIN-SUFFIX,snakeslang.com
 DOMAIN-SUFFIX,snakesshop.com
 DOMAIN-SUFFIX,snakesstone.com
 DOMAIN-SUFFIX,snappyreport.com
+DOMAIN-SUFFIX,snapsgate.com
 DOMAIN-SUFFIX,sneakwind.com
 DOMAIN-SUFFIX,sneakystew.com
 DOMAIN-SUFFIX,snoresmile.com
@@ -2367,6 +2373,7 @@ DOMAIN-SUFFIX,tangletrace.com
 DOMAIN-SUFFIX,tangyamount.com
 DOMAIN-SUFFIX,tangycover.com
 DOMAIN-SUFFIX,tarttendency.com
+DOMAIN-SUFFIX,tasksimplify.com
 DOMAIN-SUFFIX,tastefulsongs.com
 DOMAIN-SUFFIX,tastelesstoes.com
 DOMAIN-SUFFIX,tastelesstrees.com
@@ -2485,6 +2492,7 @@ DOMAIN-SUFFIX,unknowncontrol.com
 DOMAIN-SUFFIX,unknowncrate.com
 DOMAIN-SUFFIX,unknownidea.com
 DOMAIN-SUFFIX,unknowntray.com
+DOMAIN-SUFFIX,unloadyourself.com
 DOMAIN-SUFFIX,untidyquestion.com
 DOMAIN-SUFFIX,untidyrice.com
 DOMAIN-SUFFIX,unusedstone.com
@@ -4805,6 +4813,7 @@ DOMAIN-SUFFIX,metricsishare.rediff.com
 DOMAIN-SUFFIX,mi.grubhub.com
 DOMAIN-SUFFIX,miao.baidu.com
 DOMAIN-SUFFIX,midas.chase.com
+DOMAIN-SUFFIX,mixpanel-proxy.coingecko.com
 DOMAIN-SUFFIX,mixpanel-proxy.ted.com
 DOMAIN-SUFFIX,mktcs.cloudapps.cisco.com
 DOMAIN-SUFFIX,mon.us.tiktokv.com
@@ -41079,6 +41088,7 @@ DOMAIN-SUFFIX,hlms.ecologie.gouv.fr
 DOMAIN-SUFFIX,insights.v3.decathlon.net
 DOMAIN-SUFFIX,kwgs.letudiant.fr
 DOMAIN-SUFFIX,logstash-3.radio-canada.ca
+DOMAIN-SUFFIX,mesure-pro.engie.fr
 DOMAIN-SUFFIX,metrics-broker.prod.p.tf1.fr
 DOMAIN-SUFFIX,ocular.dealabs.com
 DOMAIN-SUFFIX,p.pagesjaunes.fr

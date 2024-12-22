@@ -7,7 +7,7 @@
 // @name:ko     Twitter/X(웹버전) 동영상/사진/gif 원클릭 다운로드.[limbopro]
 // @name:ru     Twitter/X (веб-версия) — загрузка видео/изображений/гифок в один клик.[limbopro]
 // @namespace    https://limbopro.com/
-// @version      0.1.3.20
+// @version      0.1.3.201
 // @description Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文4k/原始图片并按用户名进行保存
 // @description:zh-cn  Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文4k/原始图片并按用户名进行保存
 // @description:ja Twitter/X (Web 版) のビデオ/写真/GIF をワンクリックでダウンロード。[limbopro] / ワンクリックでツイート画像をダウンロードし、ユーザー名で保存します
@@ -301,9 +301,9 @@ function dlpicsfromURL(imgsrcURL, userName, article) {
                     var dltime = (Math.ceil(img.width * img.height / 1048576) * 1000)
 
                     if (dltime == 1000) {
-                        dltime = 2500
+                        dltime = 2000
                     } else {
-                        dltime = (dltime * 0.25 + 2000)
+                        dltime = (dltime * 0.5 + 2000)
                     }
 
                     if (img.complete) {
@@ -521,3 +521,4 @@ function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> �
 if (window.location.href.match(/(twittervid\.com|twittervideodownloader)/gi) !== null) {
     inDownloaderPage()
 }
+

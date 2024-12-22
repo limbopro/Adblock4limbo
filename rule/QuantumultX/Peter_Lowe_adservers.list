@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 13 Dec 2024 01:08:27 GMT
-# entries:        3549
+# entries:        3548
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -876,7 +876,6 @@ DOMAIN-SUFFIX,affiliates.ultrahosting.com, reject
 DOMAIN-SUFFIX,affiliatetracking.com, reject
 DOMAIN-SUFFIX,affiliatetracking.net, reject
 DOMAIN-SUFFIX,affiliatewindow.com, reject
-DOMAIN-SUFFIX,affiliation-france.com, reject
 DOMAIN-SUFFIX,afflnx.com, reject
 DOMAIN-SUFFIX,afftracking.justanswer.com, reject
 DOMAIN-SUFFIX,afraidlanguage.com, reject
@@ -1330,7 +1329,6 @@ DOMAIN-SUFFIX,clickedyclick.com, reject
 DOMAIN-SUFFIX,clickfuse.com, reject
 DOMAIN-SUFFIX,clickhereforcellphones.com, reject
 DOMAIN-SUFFIX,clicklink.jp, reject
-DOMAIN-SUFFIX,clickmate.io, reject
 DOMAIN-SUFFIX,clickngo.pro, reject
 DOMAIN-SUFFIX,clickonometrics.pl, reject
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk, reject
@@ -2375,6 +2373,7 @@ DOMAIN-SUFFIX,newsletter-link.com, reject
 DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
 DOMAIN-SUFFIX,newt1.adultworld.com, reject
+DOMAIN-SUFFIX,nexac.com, reject
 DOMAIN-SUFFIX,nexage.com, reject
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com, reject
 DOMAIN-SUFFIX,nitroclicks.com, reject
@@ -3249,6 +3248,7 @@ DOMAIN-SUFFIX,trackedlink.net, reject
 DOMAIN-SUFFIX,trackedweb.net, reject
 DOMAIN-SUFFIX,tracker-pm2.spilleren.com, reject
 DOMAIN-SUFFIX,tracker.bannerflow.com, reject
+DOMAIN-SUFFIX,tracker.cdnbye.com, reject
 DOMAIN-SUFFIX,tracker.icerocket.com, reject
 DOMAIN-SUFFIX,tracker.metricswave.com, reject
 DOMAIN-SUFFIX,tracker.mmdlv.it, reject
@@ -3452,7 +3452,6 @@ DOMAIN-SUFFIX,webstat.channel4.com, reject
 DOMAIN-SUFFIX,webstat.com, reject
 DOMAIN-SUFFIX,webstat.net, reject
 DOMAIN-SUFFIX,webtrackerplus.com, reject
-DOMAIN-SUFFIX,webtracky.com, reject
 DOMAIN-SUFFIX,webtraffic.se, reject
 DOMAIN-SUFFIX,webtraxx.de, reject
 DOMAIN-SUFFIX,webxcdn.com, reject

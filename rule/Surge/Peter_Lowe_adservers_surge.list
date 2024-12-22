@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Fri, 13 Dec 2024 01:08:27 GMT
-# entries:        3549
+# entries:        3548
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -876,7 +876,6 @@ DOMAIN-SUFFIX,affiliates.ultrahosting.com
 DOMAIN-SUFFIX,affiliatetracking.com
 DOMAIN-SUFFIX,affiliatetracking.net
 DOMAIN-SUFFIX,affiliatewindow.com
-DOMAIN-SUFFIX,affiliation-france.com
 DOMAIN-SUFFIX,afflnx.com
 DOMAIN-SUFFIX,afftracking.justanswer.com
 DOMAIN-SUFFIX,afraidlanguage.com
@@ -1330,7 +1329,6 @@ DOMAIN-SUFFIX,clickedyclick.com
 DOMAIN-SUFFIX,clickfuse.com
 DOMAIN-SUFFIX,clickhereforcellphones.com
 DOMAIN-SUFFIX,clicklink.jp
-DOMAIN-SUFFIX,clickmate.io
 DOMAIN-SUFFIX,clickngo.pro
 DOMAIN-SUFFIX,clickonometrics.pl
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk
@@ -2375,6 +2373,7 @@ DOMAIN-SUFFIX,newsletter-link.com
 DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
 DOMAIN-SUFFIX,newt1.adultworld.com
+DOMAIN-SUFFIX,nexac.com
 DOMAIN-SUFFIX,nexage.com
 DOMAIN-SUFFIX,ng3.ads.warnerbros.com
 DOMAIN-SUFFIX,nitroclicks.com
@@ -3249,6 +3248,7 @@ DOMAIN-SUFFIX,trackedlink.net
 DOMAIN-SUFFIX,trackedweb.net
 DOMAIN-SUFFIX,tracker-pm2.spilleren.com
 DOMAIN-SUFFIX,tracker.bannerflow.com
+DOMAIN-SUFFIX,tracker.cdnbye.com
 DOMAIN-SUFFIX,tracker.icerocket.com
 DOMAIN-SUFFIX,tracker.metricswave.com
 DOMAIN-SUFFIX,tracker.mmdlv.it
@@ -3452,7 +3452,6 @@ DOMAIN-SUFFIX,webstat.channel4.com
 DOMAIN-SUFFIX,webstat.com
 DOMAIN-SUFFIX,webstat.net
 DOMAIN-SUFFIX,webtrackerplus.com
-DOMAIN-SUFFIX,webtracky.com
 DOMAIN-SUFFIX,webtraffic.se
 DOMAIN-SUFFIX,webtraxx.de
 DOMAIN-SUFFIX,webxcdn.com

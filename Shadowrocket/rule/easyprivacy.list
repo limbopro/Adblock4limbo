@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412171427
+## ! Version: 202412221151
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 Dec 2024 14:27 UTC
+## ! Last modified: 22 Dec 2024 11:51 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -40,6 +40,7 @@ DOMAIN-SUFFIX,adscore.com, reject
 DOMAIN-SUFFIX,adspsp.com, reject
 DOMAIN-SUFFIX,adstk.io, reject
 DOMAIN-SUFFIX,adultium.com, reject
+DOMAIN-SUFFIX,afrdtech.com, reject
 DOMAIN-SUFFIX,aggle.net, reject
 DOMAIN-SUFFIX,agkn.com, reject
 DOMAIN-SUFFIX,agma-analytics.de, reject
@@ -669,6 +670,7 @@ DOMAIN-SUFFIX,blissfulcrescendo.com, reject
 DOMAIN-SUFFIX,blissfullagoon.com, reject
 DOMAIN-SUFFIX,blotburn.com, reject
 DOMAIN-SUFFIX,blueeyedblow.com, reject
+DOMAIN-SUFFIX,bluevinebooks.com, reject
 DOMAIN-SUFFIX,blushingbeast.com, reject
 DOMAIN-SUFFIX,blushingboundary.com, reject
 DOMAIN-SUFFIX,blushingbread.com, reject
@@ -1311,6 +1313,7 @@ DOMAIN-SUFFIX,grandfatherguitar.com, reject
 DOMAIN-SUFFIX,grandiosefire.com, reject
 DOMAIN-SUFFIX,grandioseguide.com, reject
 DOMAIN-SUFFIX,grandmotherunit.com, reject
+DOMAIN-SUFFIX,granlite.com, reject
 DOMAIN-SUFFIX,grapeopinion.com, reject
 DOMAIN-SUFFIX,gravitygive.com, reject
 DOMAIN-SUFFIX,gravitykick.com, reject
@@ -1629,6 +1632,7 @@ DOMAIN-SUFFIX,minuteburst.com, reject
 DOMAIN-SUFFIX,minuterhythm.com, reject
 DOMAIN-SUFFIX,miscreantmine.com, reject
 DOMAIN-SUFFIX,miscreantmoon.com, reject
+DOMAIN-SUFFIX,missionrewards.com, reject
 DOMAIN-SUFFIX,mistyhorizon.com, reject
 DOMAIN-SUFFIX,mittencattle.com, reject
 DOMAIN-SUFFIX,mixedreading.com, reject
@@ -1636,6 +1640,7 @@ DOMAIN-SUFFIX,modifyeyes.com, reject
 DOMAIN-SUFFIX,modularmental.com, reject
 DOMAIN-SUFFIX,moldyicicle.com, reject
 DOMAIN-SUFFIX,monacobeatles.com, reject
+DOMAIN-SUFFIX,monthlyhat.com, reject
 DOMAIN-SUFFIX,moorshoes.com, reject
 DOMAIN-SUFFIX,morefriendly.com, reject
 DOMAIN-SUFFIX,motionflowers.com, reject
@@ -2162,6 +2167,7 @@ DOMAIN-SUFFIX,snakeslang.com, reject
 DOMAIN-SUFFIX,snakesshop.com, reject
 DOMAIN-SUFFIX,snakesstone.com, reject
 DOMAIN-SUFFIX,snappyreport.com, reject
+DOMAIN-SUFFIX,snapsgate.com, reject
 DOMAIN-SUFFIX,sneakwind.com, reject
 DOMAIN-SUFFIX,sneakystew.com, reject
 DOMAIN-SUFFIX,snoresmile.com, reject
@@ -2367,6 +2373,7 @@ DOMAIN-SUFFIX,tangletrace.com, reject
 DOMAIN-SUFFIX,tangyamount.com, reject
 DOMAIN-SUFFIX,tangycover.com, reject
 DOMAIN-SUFFIX,tarttendency.com, reject
+DOMAIN-SUFFIX,tasksimplify.com, reject
 DOMAIN-SUFFIX,tastefulsongs.com, reject
 DOMAIN-SUFFIX,tastelesstoes.com, reject
 DOMAIN-SUFFIX,tastelesstrees.com, reject
@@ -2485,6 +2492,7 @@ DOMAIN-SUFFIX,unknowncontrol.com, reject
 DOMAIN-SUFFIX,unknowncrate.com, reject
 DOMAIN-SUFFIX,unknownidea.com, reject
 DOMAIN-SUFFIX,unknowntray.com, reject
+DOMAIN-SUFFIX,unloadyourself.com, reject
 DOMAIN-SUFFIX,untidyquestion.com, reject
 DOMAIN-SUFFIX,untidyrice.com, reject
 DOMAIN-SUFFIX,unusedstone.com, reject
@@ -4805,6 +4813,7 @@ DOMAIN-SUFFIX,metricsishare.rediff.com, reject
 DOMAIN-SUFFIX,mi.grubhub.com, reject
 DOMAIN-SUFFIX,miao.baidu.com, reject
 DOMAIN-SUFFIX,midas.chase.com, reject
+DOMAIN-SUFFIX,mixpanel-proxy.coingecko.com, reject
 DOMAIN-SUFFIX,mixpanel-proxy.ted.com, reject
 DOMAIN-SUFFIX,mktcs.cloudapps.cisco.com, reject
 DOMAIN-SUFFIX,mon.us.tiktokv.com, reject
@@ -41079,6 +41088,7 @@ DOMAIN-SUFFIX,hlms.ecologie.gouv.fr, reject
 DOMAIN-SUFFIX,insights.v3.decathlon.net, reject
 DOMAIN-SUFFIX,kwgs.letudiant.fr, reject
 DOMAIN-SUFFIX,logstash-3.radio-canada.ca, reject
+DOMAIN-SUFFIX,mesure-pro.engie.fr, reject
 DOMAIN-SUFFIX,metrics-broker.prod.p.tf1.fr, reject
 DOMAIN-SUFFIX,ocular.dealabs.com, reject
 DOMAIN-SUFFIX,p.pagesjaunes.fr, reject

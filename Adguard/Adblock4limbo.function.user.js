@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.12.11
+// @version      0.2024.12.31
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -1092,10 +1092,12 @@ function _blank() {
 
 var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0', 'better'],
 ['SpeedTest', 'https://www.speedtest.net/', '_blank', '0', 'common'],
+['FANZA|R18成人站', 'https://www.dmm.co.jp/', '_blank', 'porn', 'better'],
 ['溜池ゴロー', 'https://tameikegoro.jp/', '_blank', 'porn', 'better'],
 ['s1s1s1 S1/エスワンー', 'https://s1s1s1.com/', '_blank', 'porn', 'better'],
 ['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'special'],
 ['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'special'],
+['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn', 'common'],
 ['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn', 'common'],
 ['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'poxrn', 'common'],
 ['ATTACKERS（アタッカーズ）', 'https://www.attackers.net/top/', '_blank', 'porn', 'common'],
@@ -1107,7 +1109,6 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['【kawaii*】公式サイト', 'https://www.kawaiikawaii.jp/top/', '_blank', 'porn', 'common'],
 ['肉感あふれる女優', 'https://www.fitch-av.com/top/', '_blank', 'porn', 'common'],
 ['タカラ映像 TAKARA', 'https://www.takara-tv.jp/', '_blank', 'porn', 'common'],
-['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn', 'common'],
 ['トップページ - AVメーカー【ダスッ！】公式サイト', 'https://www.dasdas.jp/top/', '_blank', 'porn', 'common'],
 ['レズ・素人ナンパを中心', 'https://deeps.net/', '_blank', 'porn', 'common'],
 ['変態紳士倶楽部】公式サイト', 'https://www.to-satsu.com/top/', '_blank', 'porn', 'common'],

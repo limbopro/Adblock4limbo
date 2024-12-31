@@ -3,16 +3,16 @@
 ## 原文参阅 https://limbopro.com/archives/12904.html
 ## 电报群组 https://t.me/Adblock4limbo  
 ## Repo: https://github.com/limbopro/Adblock4limbo  
-## Adblock4limbo: 541 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
+## Adblock4limbo: 544 Domains/IP/Others From https://github.com/limbopro/Adblock4limbo
 ## EasyList/EasylistChina/EasyPrivacy 隐私追踪器/去广告分流规则请在Github仓库 Adblock4limbo -> rule 文件夹下查找，按需添加...
 ## 仓库地址：https://github.com/limbopro/Adblock4limbo/tree/main/rule
-## Peter Lowe’s Ad and tracking server list: 3548 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
-## EasyList: 29171 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
-## EasyPrivacy: 41536 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
-## EasyList China: 4676 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
+## Peter Lowe’s Ad and tracking server list: 3547 Domains/IP/Others From https://pgl.yoyo.org/adservers/serverlist.php
+## EasyList: 29390 Domains/IP/Others From https://easylist.to/easylist/easylist.txt
+## EasyPrivacy: 41561 Domains/IP/Others From https://easylist.to/easylist/easyprivacy.txt
+## EasyList China: 4753 Domains/IP/Others From https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt
 ## ACL4SSR BadAD: 591 Domains/IP/Others From https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-## 以上共计: 80063 Domains/IP/Others (非去重统计)
-## Last updated at 22/12月/2024/22:21
+## 以上共计: 80386 Domains/IP/Others (非去重统计)
+## Last updated at  1/1月/2025/00:00
 ## */
 
 
@@ -126,6 +126,8 @@ DOMAIN-SUFFIX,qw2v.changshuohr.net,reject
 DOMAIN-SUFFIX,wss.haoyundmn.com,reject
 
 ##### missav.com  
+DOMAIN-SUFFIX,trackwilltrk.com,reject
+DOMAIN-SUFFIX,rmhfrtnd.com,reject
 DOMAIN-SUFFIX,video.ktkjmp.com,reject
 DOMAIN-SUFFIX,go.myavlive.com,reject
 DOMAIN-SUFFIX,gsjln04hd.com,reject
@@ -182,6 +184,7 @@ DOMAIN-KEYWORD,e2wysbacctt1,reject
 #DOMAIN-SUFFIX,streamtape.com,reject
 
 ##### netflav.com Netflav  
+DOMAIN-SUFFIX,go.xlvirdr.com
 DOMAIN-SUFFIX,xlvirdr.com,reject
 DOMAIN-SUFFIX,media.dalysv.com,reject
 DOMAIN-SUFFIX,creative.mnaspm.com,reject

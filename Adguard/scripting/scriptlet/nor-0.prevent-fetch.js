@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["damoh"]];
 
-const hostnamesMap = new Map([["vg.no",0]]);
+const hostnamesMap = new Map([["vg.no",0],["www-vg-no.translate.goog",0]]);
 
 const entitiesMap = new Map([]);
 

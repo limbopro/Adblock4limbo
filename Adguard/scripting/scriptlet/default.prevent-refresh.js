@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [[],["12"]];
 
-const hostnamesMap = new Map([["1movietv.com",0],["legendas.dev",0],["filmy4wap.co.in",0],["telesintese.com.br",0],["novsport.com",0],["deckbandit.com",0],["getcopy.link",0],["ricettafitness.com",0],["yts-subs.dev",0],["edoujin.net",0],["bitcotasks.com",0],["blackmod.net",0],["click.allkeyshop.com",0],["cl1ca.com",1],["4br.me",1],["fir3.net",1]]);
+const hostnamesMap = new Map([["1movietv.com",0],["legendas.dev",0],["telesintese.com.br",0],["novsport.com",0],["deckbandit.com",0],["getcopy.link",0],["ricettafitness.com",0],["yts-subs.dev",0],["edoujin.net",0],["bitcotasks.com",0],["blackmod.net",0],["filmy4wap.co.in",0],["filmy4waps.org",0],["click.allkeyshop.com",0],["cl1ca.com",1],["4br.me",1],["fir3.net",1]]);
 
 const entitiesMap = new Map([["seulink",1],["encurtalink",1]]);
 

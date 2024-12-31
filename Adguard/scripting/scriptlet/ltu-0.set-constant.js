@@ -39,9 +39,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["_dlf.adfree","1"]];
+const argsList = [["_dlf.adfree","1"],["isASFailed","true"]];
 
-const hostnamesMap = new Map([["delfi.lt",0]]);
+const hostnamesMap = new Map([["delfi.lt",0],["15min.lt",1]]);
 
 const entitiesMap = new Map([]);
 

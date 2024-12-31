@@ -39,9 +39,9 @@ const uBOL_trustedSuppressNativeMethod = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Function.prototype.constructor","\"debugger\"","abort"]];
+const argsList = [["Function.prototype.constructor","\"debugger\"","abort"],["RegExp.prototype.test","\"contact@foxteller.com\"","abort"]];
 
-const hostnamesMap = new Map([["ate60vs7zcjhsjo5qgv8.com",0],["autoembed.cc",0],["jetv.xyz",0],["t.17track.net",0],["embasic.pro",0],["dlions.pro",0]]);
+const hostnamesMap = new Map([["ate60vs7zcjhsjo5qgv8.com",0],["autoembed.cc",0],["jetv.xyz",0],["t.17track.net",0],["embasic.pro",0],["dlions.pro",0],["foxteller.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -61,6 +61,9 @@ function trustedSuppressNativeMethod(
     const signatureArgs = safe.String_split.call(signature, /\s*\|\s*/).map(v => {
         if ( /^".*"$/.test(v) ) {
             return { type: 'pattern', re: safe.patternToRegex(v.slice(1, -1)) };
+        }
+        if ( /^\/.+\/$/.test(v) ) {
+            return { type: 'pattern', re: safe.patternToRegex(v) };
         }
         if ( v === 'false' ) {
             return { type: 'exact', value: false };

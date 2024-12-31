@@ -39,9 +39,9 @@ const uBOL_jsonPrune = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["assets.preroll"]];
+const argsList = [["assets.preroll"],["adUrl"]];
 
-const hostnamesMap = new Map([["npo.nl",0]]);
+const hostnamesMap = new Map([["npo.nl",0],["nos.nl",1]]);
 
 const entitiesMap = new Map([]);
 

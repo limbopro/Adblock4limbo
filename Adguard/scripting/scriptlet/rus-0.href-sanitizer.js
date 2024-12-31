@@ -39,9 +39,9 @@ const uBOL_hrefSanitizer = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/bitrix/rk.php?goto=https\"]","?goto"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/redir.php?r=\"]","?r"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href][target=\"_blank\"][rel=\"nofollow\"]","?ulp"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/engine/dwn\"]","?xf"],["a[href^=\"/redir/\"]","?exturl"],["a[href^=\"/redir/\"]","?vzurl"],["a[href^=\"https://www.google.com/url?q=\"]"],["a[href^=\"https://www.youtube.com/redirect?event=\"][href*=\"&q=http\"]","?q"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"]];
+const argsList = [["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/bitrix/rk.php?goto=https\"]","?goto"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/redir.php?r=\"]","?r"],["a[href*=\"/redir/\"]","?exturl"],["a[href*=\"/redir/\"]","?vzurl"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href][target=\"_blank\"][rel=\"nofollow\"]","?ulp"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/engine/dwn\"]","?xf"],["a[href^=\"https://pikabu.ru/\"][href*=\"?u=http\"]","?u"],["a[href^=\"https://www.google.com/url?q=\"]"],["a[href^=\"https://www.youtube.com/redirect?event=\"][href*=\"&q=http\"]","?q"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"]];
 
-const hostnamesMap = new Map([["softoroom.org",0],["vk.com",1],["vk.ru",1],["freehat.cc",2],["lalapaluza.ru",2],["game4you.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["stalkermods.ru",4],["opennet.me",5],["opennet.ru",5],["kluchikipro.ru",6],["lifehacker.ru",7],["hot.game",8],["www.ixbt.com",9],["wotspeak.org",10],["vz.ru",[11,12]],["nsportal.ru",13],["youtube.com",14],["light.mail.ru",[15,16]],["e.mail.ru",17],["octavius.mail.ru",17]]);
+const hostnamesMap = new Map([["softoroom.org",0],["vk.com",1],["vk.ru",1],["freehat.cc",2],["lalapaluza.ru",2],["game4you.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["stalkermods.ru",4],["vz.ru",[5,6]],["opennet.me",7],["opennet.ru",7],["kluchikipro.ru",8],["lifehacker.ru",9],["hot.game",10],["www.ixbt.com",11],["wotspeak.org",12],["pikabu.ru",13],["nsportal.ru",14],["youtube.com",15],["light.mail.ru",[16,17]],["e.mail.ru",18],["octavius.mail.ru",18]]);
 
 const entitiesMap = new Map([]);
 
@@ -71,6 +71,7 @@ function hrefSanitizer(
         return elems.length;
     };
     const validateURL = text => {
+        if ( typeof text !== 'string' ) { return ''; }
         if ( text === '' ) { return ''; }
         if ( /[\x00-\x20\x7f]/.test(text) ) { return ''; }
         try {
@@ -89,20 +90,14 @@ function hrefSanitizer(
             let value = url.searchParams.get(source.slice(1, end));
             if ( value === null ) { return href }
             if ( recursive ) { return extractParam(value, source.slice(end)); }
-            if ( value.includes(' ') ) {
-                value = value.replace(/ /g, '%20');
-            }
             return value;
         } catch(x) {
         }
         return href;
     };
-    const extractText = (elem, source) => {
+    const extractURL = (elem, source) => {
         if ( /^\[.*\]$/.test(source) ) {
             return elem.getAttribute(source.slice(1,-1).trim()) || '';
-        }
-        if ( source.startsWith('?') ) {
-            return extractParam(elem.href, source);
         }
         if ( source === 'text' ) {
             return elem.textContent
@@ -110,7 +105,13 @@ function hrefSanitizer(
                 .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
             ;
         }
-        return '';
+        if ( source.startsWith('?') === false ) { return ''; }
+        const steps = source.replace(/(\S)\?/g, '\\1?').split(/\s+/);
+        const url = steps.length === 1
+            ? extractParam(elem.href, source)
+            : urlSkip(elem.href, false, steps);
+        if ( url === undefined ) { return; }
+        return url.replace(/ /g, '%20');
     };
     const sanitize = ( ) => {
         let elems = [];
@@ -124,7 +125,7 @@ function hrefSanitizer(
             if ( elem.localName !== 'a' ) { continue; }
             if ( elem.hasAttribute('href') === false ) { continue; }
             const href = elem.getAttribute('href');
-            const text = extractText(elem, source);
+            const text = extractURL(elem, source);
             const hrefAfter = validateURL(text);
             if ( hrefAfter === '' ) { continue; }
             if ( hrefAfter === href ) { continue; }
@@ -379,6 +380,99 @@ function safeSelf() {
         };
     }
     return safe;
+}
+
+function urlSkip(url, blocked, steps, directive = {}) {
+    try {
+        let redirectBlocked = false;
+        let urlout = url;
+        for ( const step of steps ) {
+            const urlin = urlout;
+            const c0 = step.charCodeAt(0);
+            // Extract from hash
+            if ( c0 === 0x23 && step === '#' ) { // #
+                const pos = urlin.indexOf('#');
+                urlout = pos !== -1 ? urlin.slice(pos+1) : '';
+                continue;
+            }
+            // Extract from URL parameter name at position i
+            if ( c0 === 0x26 ) { // &
+                const i = (parseInt(step.slice(1)) || 0) - 1;
+                if ( i < 0 ) { return; }
+                const url = new URL(urlin);
+                if ( i >= url.searchParams.size ) { return; }
+                const params = Array.from(url.searchParams.keys());
+                urlout = decodeURIComponent(params[i]);
+                continue;
+            }
+            // Enforce https
+            if ( c0 === 0x2B && step === '+https' ) { // +
+                const s = urlin.replace(/^https?:\/\//, '');
+                if ( /^[\w-]:\/\//.test(s) ) { return; }
+                urlout = `https://${s}`;
+                continue;
+            }
+            // Decode
+            if ( c0 === 0x2D ) { // -
+                // Base64
+                if ( step === '-base64' ) {
+                    urlout = self.atob(urlin);
+                    continue;
+                }
+                // Safe Base64
+                if ( step === '-safebase64' ) {
+                    if ( urlSkip.safeBase64Replacer === undefined ) {
+                        urlSkip.safeBase64Map = { '-': '+', '_': '/' };
+                        urlSkip.safeBase64Replacer = s => urlSkip.safeBase64Map[s];
+                    }
+                    urlout = urlin.replace(/[-_]/g, urlSkip.safeBase64Replacer);
+                    urlout = self.atob(urlout);
+                    continue;
+                }
+                // URI component
+                if ( step === '-uricomponent' ) {
+                    urlout = self.decodeURIComponent(urlin);
+                    continue;
+                }
+                // Enable skip of blocked requests
+                if ( step === '-blocked' ) {
+                    redirectBlocked = true;
+                    continue;
+                }
+            }
+            // Regex extraction from first capture group
+            if ( c0 === 0x2F ) { // /
+                const re = directive.cache ?? new RegExp(step.slice(1, -1));
+                if ( directive.cache === null ) {
+                    directive.cache = re;
+                }
+                const match = re.exec(urlin);
+                if ( match === null ) { return; }
+                if ( match.length <= 1 ) { return; }
+                urlout = match[1];
+                continue;
+            }
+            // Extract from URL parameter
+            if ( c0 === 0x3F ) { // ?
+                urlout = (new URL(urlin)).searchParams.get(step.slice(1));
+                if ( urlout === null ) { return; }
+                if ( urlout.includes(' ') ) {
+                    urlout = urlout.replace(/ /g, '%20');
+                }
+                continue;
+            }
+            // Unknown directive
+            return;
+        }
+        const urlfinal = new URL(urlout);
+        if ( urlfinal.protocol !== 'https:' ) {
+            if ( urlfinal.protocol !== 'http:' ) { return; }
+            urlout = urlout.replace('http', 'https');
+        }
+        if ( blocked && redirectBlocked !== true ) { return; }
+        return urlout;
+    } catch(x) {
+    }
 }
 
 /******************************************************************************/

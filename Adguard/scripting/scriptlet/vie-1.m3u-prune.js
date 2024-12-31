@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/#EXT-X-DISCONTINUITY(.|\\n){1,1000}#EXT-X-DISCONTINUITY/gm","index.m3u8"]];
 
-const hostnamesMap = new Map([["yeuphim.cc",0]]);
+const hostnamesMap = new Map([["yeuphim.vip",0]]);
 
 const entitiesMap = new Map([]);
 

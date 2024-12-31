@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["enabled","testhide"]];
 
-const hostnamesMap = new Map([["tv2.no",0],["vgtv.no",0]]);
+const hostnamesMap = new Map([["tv2.no",0],["www-tv2-no.translate.goog",0],["vgtv.no",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -39,9 +39,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["noscript"],["script","/wccp_pro/"],["script","decodeURIComponent"],["script","checkAdsBlocked"]];
+const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","eval(function(h","u","n","t","e","r)"],["script","show_msg"],["script","decodeURIComponent"],["script","checkAdsBlocked"]];
 
-const hostnamesMap = new Map([["dinbyggare.se",[0,1]],["pilsner.nu",2],["swedroid.se",3]]);
+const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["medibok.se",[5,6]],["pilsner.nu",7],["swedroid.se",8]]);
 
 const entitiesMap = new Map([]);
 

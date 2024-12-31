@@ -39,9 +39,9 @@ const uBOL_trustedReplaceOutboundText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Array.prototype.shift","/^.+$/s","","condition","https"],["atob","window.matchMedia('(display-mode: standalone)').matches","true"]];
+const argsList = [["decodeURIComponent","Math.random() <= 0.15","false"],["Array.prototype.shift","/^.+$/s","","condition","https"],["atob","window.matchMedia('(display-mode: standalone)').matches","true"],["Number.prototype.toString","/^-?\\d{9,10}$/",""]];
 
-const hostnamesMap = new Map([["abysscdn.com",0],["hihihaha1.xyz",0],["player-cdn.com",0],["playhydrax.com",0],["infinityscans.xyz",1],["infinityscans.net",1],["infinityscans.org",1]]);
+const hostnamesMap = new Map([["laweducationinfo.com",0],["savemoneyinfo.com",0],["worldaffairinfo.com",0],["godstoryinfo.com",0],["successstoryinfo.com",0],["cxissuegk.com",0],["learnmarketinfo.com",0],["bhugolinfo.com",0],["armypowerinfo.com",0],["rsadnetworkinfo.com",0],["rsinsuranceinfo.com",0],["rsfinanceinfo.com",0],["rsgamer.app",0],["rssoftwareinfo.com",0],["rshostinginfo.com",0],["rseducationinfo.com",0],["phonereviewinfo.com",0],["makeincomeinfo.com",0],["gknutshell.com",0],["vichitrainfo.com",0],["workproductivityinfo.com",0],["dopomininfo.com",0],["hostingdetailer.com",0],["fitnesssguide.com",0],["tradingfact4u.com",0],["cryptofactss.com",0],["softwaredetail.com",0],["artoffocas.com",0],["insurancesfact.com",0],["travellingdetail.com",0],["abysscdn.com",1],["hihihaha1.xyz",1],["player-cdn.com",1],["playhydrax.com",1],["infinityscans.xyz",2],["infinityscans.net",2],["infinityscans.org",2],["dogdrip.net",3],["infinityfree.com",3],["smsonline.cloud",3],["webdesignledger.com",3]]);
 
 const entitiesMap = new Map([]);
 

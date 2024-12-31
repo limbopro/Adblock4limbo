@@ -39,9 +39,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["error","event.target.tagName"],["","showRemoveAdBlocker"],["DOMContentLoaded","document.createElement"]];
+const argsList = [["DOMContentLoaded","check"],["error","event.target.tagName"],["","showRemoveAdBlocker"],["DOMContentLoaded","document.createElement"]];
 
-const hostnamesMap = new Map([["rjno1.com",0],["xiebruce.top",1],["85tube.com",2]]);
+const hostnamesMap = new Map([["xchina.co",0],["rjno1.com",1],["xiebruce.top",2],["85tube.com",3]]);
 
 const entitiesMap = new Map([]);
 

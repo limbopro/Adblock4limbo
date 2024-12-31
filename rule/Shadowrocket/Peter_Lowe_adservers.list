@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 13 Dec 2024 01:08:27 GMT
-# entries:        3548
+# last updated:   Tue, 31 Dec 2024 03:22:42 GMT
+# entries:        3547
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -124,7 +124,6 @@ DOMAIN-SUFFIX,ad.exyws.org, reject
 DOMAIN-SUFFIX,ad.grafika.cz, reject
 DOMAIN-SUFFIX,ad.gt, reject
 DOMAIN-SUFFIX,ad.hbv.de, reject
-DOMAIN-SUFFIX,ad.hodomobile.com, reject
 DOMAIN-SUFFIX,ad.hyena.cz, reject
 DOMAIN-SUFFIX,ad.iinfo.cz, reject
 DOMAIN-SUFFIX,ad.infoseek.com, reject
@@ -1051,7 +1050,6 @@ DOMAIN-SUFFIX,bannergrabber.internet.gr, reject
 DOMAIN-SUFFIX,bannerimage.com, reject
 DOMAIN-SUFFIX,bannermall.com, reject
 DOMAIN-SUFFIX,bannermanager.bnr.bg, reject
-DOMAIN-SUFFIX,bannermarkt.nl, reject
 DOMAIN-SUFFIX,bannerpower.com, reject
 DOMAIN-SUFFIX,banners.adultfriendfinder.com, reject
 DOMAIN-SUFFIX,banners.amigos.com, reject
@@ -1283,6 +1281,7 @@ DOMAIN-SUFFIX,click.cartsguru.io, reject
 DOMAIN-SUFFIX,click.cision.com, reject
 DOMAIN-SUFFIX,click.classmates.com, reject
 DOMAIN-SUFFIX,click.comm.rcibank.co.uk, reject
+DOMAIN-SUFFIX,click.crm.ba.com, reject
 DOMAIN-SUFFIX,click.digital.metaquestmail.com, reject
 DOMAIN-SUFFIX,click.discord.com, reject
 DOMAIN-SUFFIX,click.e.bbcmail.co.uk, reject
@@ -1735,7 +1734,6 @@ DOMAIN-SUFFIX,freezingbuilding.com, reject
 DOMAIN-SUFFIX,frequentflesh.com, reject
 DOMAIN-SUFFIX,freshrelevance.com, reject
 DOMAIN-SUFFIX,frightenedpotato.com, reject
-DOMAIN-SUFFIX,frogator.com, reject
 DOMAIN-SUFFIX,fronttoad.com, reject
 DOMAIN-SUFFIX,frtyj.com, reject
 DOMAIN-SUFFIX,frtyk.com, reject
@@ -2045,6 +2043,7 @@ DOMAIN-SUFFIX,lakequincy.com, reject
 DOMAIN-SUFFIX,lameletters.com, reject
 DOMAIN-SUFFIX,larati.net, reject
 DOMAIN-SUFFIX,largebrass.com, reject
+DOMAIN-SUFFIX,laughcloth.com, reject
 DOMAIN-SUFFIX,launchbit.com, reject
 DOMAIN-SUFFIX,layer-ad.de, reject
 DOMAIN-SUFFIX,layer-ads.de, reject
@@ -3216,6 +3215,7 @@ DOMAIN-SUFFIX,topstats.com, reject
 DOMAIN-SUFFIX,totemcash.com, reject
 DOMAIN-SUFFIX,touchclarity.com, reject
 DOMAIN-SUFFIX,tour.brazzers.com, reject
+DOMAIN-SUFFIX,track-on.eu, reject
 DOMAIN-SUFFIX,track-on.pl, reject
 DOMAIN-SUFFIX,track.adform.net, reject
 DOMAIN-SUFFIX,track.anchorfree.com, reject
@@ -3425,7 +3425,6 @@ DOMAIN-SUFFIX,vungle.com, reject
 DOMAIN-SUFFIX,w55c.net, reject
 DOMAIN-SUFFIX,wa.and.co.uk, reject
 DOMAIN-SUFFIX,waardex.com, reject
-DOMAIN-SUFFIX,warlog.ru, reject
 DOMAIN-SUFFIX,warmafterthought.com, reject
 DOMAIN-SUFFIX,washbanana.com, reject
 DOMAIN-SUFFIX,wateryvan.com, reject

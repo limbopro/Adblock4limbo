@@ -39,9 +39,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["gatedSignupTimerCounter","$remove$"],["gu.history.weeklyArticleCount","$remove$"],["gu.history.dailyArticleCount","$remove$"],["vox_article_readcount","$remove$"],["vox_article_readcount_count","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["countChapterNum","$remove$"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
+const argsList = [["gatedSignupTimerCounter","$remove$"],["gu.history.weeklyArticleCount","$remove$"],["gu.history.dailyArticleCount","$remove$"],["statistics-appOpenedCount","1"],["vox_article_readcount","$remove$"],["vox_article_readcount_count","$remove$"],["total_page_views","2"],["history","$remove$"],["wp_dark_mode_active","1"],["perm_cnn_regwall_v1","$remove$"],["REG_WALL_METER","$remove$"],["ArcP","$remove$"],["kiosq_article_reset","$remove$"],["kiosq_article_url_ack","$remove$"],["__tp-gaAccount","disabled"],["newYeradlariWebsiteHidden","true"],["countChapterNum","$remove$"],["donationPopupShown","true"],["mode-quills","$remove$"],["csm_unique_stories","$remove$"],["LMT_freeUserUsageBlock","$remove$"],["onboardingData","$remove$"]];
 
-const hostnamesMap = new Map([["zippia.com",0],["theguardian.com",[1,2]],["vox.com",[3,4]],["thejournal.ie",5],["bloomberg.com",6],["dailynewshungary.com",7],["cnn.com",[8,9]],["irishnews.com",10],["reuters.com",10],["theweek.com",[11,12]],["seekingalpha.com",13],["nisanyansozluk.com",14],["pawread.com",15],["quillbot.com",16],["csmonitor.com",17],["deepl.com",[18,19]]]);
+const hostnamesMap = new Map([["zippia.com",0],["theguardian.com",[1,2]],["r34.app",3],["vox.com",[4,5]],["thejournal.ie",6],["bloomberg.com",7],["dailynewshungary.com",8],["cnn.com",[9,10]],["irishnews.com",11],["reuters.com",11],["theweek.com",[12,13]],["seekingalpha.com",14],["nisanyansozluk.com",15],["pawread.com",16],["novafork.com",17],["quillbot.com",18],["csmonitor.com",19],["deepl.com",[20,21]]]);
 
 const entitiesMap = new Map([]);
 
@@ -136,6 +136,8 @@ function getSafeCookieValuesFn() {
         'on', 'off',
         'true', 't', 'false', 'f',
         'yes', 'y', 'no', 'n',
+        'all', 'none', 'functional',
+        'granted', 'done',
     ];
 }
 

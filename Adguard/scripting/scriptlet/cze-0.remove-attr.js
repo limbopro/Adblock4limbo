@@ -39,9 +39,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["style","body"],["style","div[id^=\"head\"]"]];
+const argsList = [["style","body"]];
 
-const hostnamesMap = new Map([["super.cz",0],["titulky.com",1]]);
+const hostnamesMap = new Map([["super.cz",0]]);
 
 const entitiesMap = new Map([]);
 

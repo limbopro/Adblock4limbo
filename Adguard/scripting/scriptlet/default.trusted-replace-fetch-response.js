@@ -39,9 +39,9 @@ const uBOL_trustedReplaceFetchResponse = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","player?"],["/\"adSlots.*?\\}\\}\\],\"adBreakHeartbeatParams/","\"adBreakHeartbeatParams","player?"],["/\\{\"id\":\\d{9,11}(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationCarousel"],["/\\{\"category_id\"(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationalCarousel"],["/\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},/g","","/\\/graphql\\/productRecommendation/i"],["/,\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true(?:(?!\"__typename\":\"recommendationItem\").)+?\"__typename\":\"recommendationItem\"\\}(?=\\])/","","/\\/graphql\\/productRecommendation/i"],["/\\{\"(?:productS|s)lashedPrice\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/RecomWidget"],["/\\{\"appUrl\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/ProductRecommendationQuery"],["/#EXT-X-KEY:METHOD=NONE\\n#EXT(?:INF:[^\\n]+|-X-DISCONTINUITY)\\n.+?(?=#EXT-X-KEY)/gms","","/media.m3u8"],["/<VAST version.+VAST>/","<VAST version=\\\"4.0\\\"></VAST>","deezer.getAudiobreak"]];
+const argsList = [["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","player?"],["/\"adSlots.*?\\}\\}\\],\"adBreakHeartbeatParams/","\"adBreakHeartbeatParams","player?"],["/<VAST version.+VAST>/","<VAST version=\\\"4.0\\\"></VAST>","deezer.getAudiobreak"],["/\\{\"id\":\\d{9,11}(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationCarousel"],["/\\{\"category_id\"(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationalCarousel"],["/\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},/g","","/\\/graphql\\/productRecommendation/i"],["/,\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true(?:(?!\"__typename\":\"recommendationItem\").)+?\"__typename\":\"recommendationItem\"\\}(?=\\])/","","/\\/graphql\\/productRecommendation/i"],["/\\{\"(?:productS|s)lashedPrice\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/RecomWidget"],["/\\{\"appUrl\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/ProductRecommendationQuery"],["/#EXT-X-KEY:METHOD=NONE\\n#EXT(?:INF:[^\\n]+|-X-DISCONTINUITY)\\n.+?(?=#EXT-X-KEY)/gms","","/media.m3u8"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1]],["tokopedia.com",[2,3,4,5,6,7]],["canela.tv",8],["deezer.com",9]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1]],["deezer.com",2],["tokopedia.com",[3,4,5,6,7,8]],["canela.tv",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -164,8 +164,12 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
     const options = { canNegate: true };
     for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
-        const [ prop, pattern ] = safe.String_split.call(needle, ':');
+        let [ prop, pattern ] = safe.String_split.call(needle, ':');
         if ( prop === '' ) { continue; }
+        if ( pattern !== undefined && /[^$\w -]/.test(prop) ) {
+            prop = `${prop}:${pattern}`;
+            pattern = undefined;
+        }
         if ( pattern !== undefined ) {
             needles.set(prop, safe.initPattern(pattern, options));
         } else if ( implicit !== '' ) {

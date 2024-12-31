@@ -39,9 +39,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["i--","","0.02"],["Clipboard","1000","0.001"],["loadexternal","1000"],["_counterTimeout"]];
+const argsList = [["i--","","0.02"],["Clipboard","1000","0.001"],["loadexternal","1000"],["counter","1000","0.001"]];
 
-const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1],["remixsearch.es",2],["lookmovie2.to",3]]);
+const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1],["remixsearch.es",2],["wallpapercat.com",3]]);
 
 const entitiesMap = new Map([["bluemediafile",0]]);
 

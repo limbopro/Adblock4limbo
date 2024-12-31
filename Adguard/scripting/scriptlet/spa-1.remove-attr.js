@@ -39,9 +39,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href","a.elementor-icon[target=\"_blank\"][rel][href]"],["href","a[xhref=\"javascript:void(0)\"][target=\"_blank\"]"]];
+const argsList = [["href","a[href]#clickfakeplayer"],["href","li[onclick^=\"go_to_player\"] > a[target=\"_blank\"][href]"],["href","a[href^=\"https://adalites.site/\"]"],["href","#fakeplayer > a"],["href","a.elementor-icon[target=\"_blank\"][rel][href]"],["href","a[xhref=\"javascript:void(0)\"][target=\"_blank\"]"]];
 
-const hostnamesMap = new Map([["megafilmeshd.si",0],["pobreflix.do",0],["redecanais.in",0],["cinelatino.net",0],["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["anime-latino.com",3],["peliculasyserieslatino.me",4]]);
+const hostnamesMap = new Map([["megafilmeshd.si",0],["pobreflix.do",0],["redecanais.in",0],["cinelatino.net",0],["paraveronline.org",0],["verpelis.gratis",0],["cineplus123.org",0],["cinemitas.org",0],["pobreflix.vc",0],["animesgratis.org",0],["serieslatinoamerica.tv",0],["pepeliculas.org",0],["cinetux.to",0],["gnula.club",1],["pelisplushd.site",2],["pobreflix.foo",3],["anime-latino.com",4],["peliculasyserieslatino.me",5]]);
 
 const entitiesMap = new Map([["assistirfilmeshdgratis",0]]);
 

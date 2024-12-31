@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 13 Dec 2024 01:08:27 GMT
-# entries:        3548
+# last updated:   Tue, 31 Dec 2024 03:22:42 GMT
+# entries:        3547
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -124,7 +124,6 @@ DOMAIN-SUFFIX,ad.exyws.org
 DOMAIN-SUFFIX,ad.grafika.cz
 DOMAIN-SUFFIX,ad.gt
 DOMAIN-SUFFIX,ad.hbv.de
-DOMAIN-SUFFIX,ad.hodomobile.com
 DOMAIN-SUFFIX,ad.hyena.cz
 DOMAIN-SUFFIX,ad.iinfo.cz
 DOMAIN-SUFFIX,ad.infoseek.com
@@ -1051,7 +1050,6 @@ DOMAIN-SUFFIX,bannergrabber.internet.gr
 DOMAIN-SUFFIX,bannerimage.com
 DOMAIN-SUFFIX,bannermall.com
 DOMAIN-SUFFIX,bannermanager.bnr.bg
-DOMAIN-SUFFIX,bannermarkt.nl
 DOMAIN-SUFFIX,bannerpower.com
 DOMAIN-SUFFIX,banners.adultfriendfinder.com
 DOMAIN-SUFFIX,banners.amigos.com
@@ -1283,6 +1281,7 @@ DOMAIN-SUFFIX,click.cartsguru.io
 DOMAIN-SUFFIX,click.cision.com
 DOMAIN-SUFFIX,click.classmates.com
 DOMAIN-SUFFIX,click.comm.rcibank.co.uk
+DOMAIN-SUFFIX,click.crm.ba.com
 DOMAIN-SUFFIX,click.digital.metaquestmail.com
 DOMAIN-SUFFIX,click.discord.com
 DOMAIN-SUFFIX,click.e.bbcmail.co.uk
@@ -1735,7 +1734,6 @@ DOMAIN-SUFFIX,freezingbuilding.com
 DOMAIN-SUFFIX,frequentflesh.com
 DOMAIN-SUFFIX,freshrelevance.com
 DOMAIN-SUFFIX,frightenedpotato.com
-DOMAIN-SUFFIX,frogator.com
 DOMAIN-SUFFIX,fronttoad.com
 DOMAIN-SUFFIX,frtyj.com
 DOMAIN-SUFFIX,frtyk.com
@@ -2045,6 +2043,7 @@ DOMAIN-SUFFIX,lakequincy.com
 DOMAIN-SUFFIX,lameletters.com
 DOMAIN-SUFFIX,larati.net
 DOMAIN-SUFFIX,largebrass.com
+DOMAIN-SUFFIX,laughcloth.com
 DOMAIN-SUFFIX,launchbit.com
 DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layer-ads.de
@@ -3216,6 +3215,7 @@ DOMAIN-SUFFIX,topstats.com
 DOMAIN-SUFFIX,totemcash.com
 DOMAIN-SUFFIX,touchclarity.com
 DOMAIN-SUFFIX,tour.brazzers.com
+DOMAIN-SUFFIX,track-on.eu
 DOMAIN-SUFFIX,track-on.pl
 DOMAIN-SUFFIX,track.adform.net
 DOMAIN-SUFFIX,track.anchorfree.com
@@ -3425,7 +3425,6 @@ DOMAIN-SUFFIX,vungle.com
 DOMAIN-SUFFIX,w55c.net
 DOMAIN-SUFFIX,wa.and.co.uk
 DOMAIN-SUFFIX,waardex.com
-DOMAIN-SUFFIX,warlog.ru
 DOMAIN-SUFFIX,warmafterthought.com
 DOMAIN-SUFFIX,washbanana.com
 DOMAIN-SUFFIX,wateryvan.com

@@ -39,9 +39,9 @@ const uBOL_preventXhr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["adsbygoogle"],["/compass.adop.cc|adsbygoogle/"]];
+const argsList = [["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["veta.naver.com/gfp"],["veta.naver.com/call"],["veta.naver.com/vas"],["adsbygoogle"],["/compass.adop.cc|adsbygoogle/"]];
 
-const hostnamesMap = new Map([["laftel.net",0],["tv.kakao.com",1],["play-tv.kakao.com",1],["kakaotv.daum.net",1],["spotvnow.co.kr",[2,3]],["noonnu.cc",3],["luckyquiz3.blogspot.com",4],["3dpchip.com",5]]);
+const hostnamesMap = new Map([["laftel.net",0],["tv.kakao.com",1],["play-tv.kakao.com",1],["kakaotv.daum.net",1],["spotvnow.co.kr",[2,3]],["noonnu.cc",3],["chzzk.naver.com",[4,5,6]],["luckyquiz3.blogspot.com",7],["3dpchip.com",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -325,8 +325,12 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
     const options = { canNegate: true };
     for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
-        const [ prop, pattern ] = safe.String_split.call(needle, ':');
+        let [ prop, pattern ] = safe.String_split.call(needle, ':');
         if ( prop === '' ) { continue; }
+        if ( pattern !== undefined && /[^$\w -]/.test(prop) ) {
+            prop = `${prop}:${pattern}`;
+            pattern = undefined;
+        }
         if ( pattern !== undefined ) {
             needles.set(prop, safe.initPattern(pattern, options));
         } else if ( implicit !== '' ) {

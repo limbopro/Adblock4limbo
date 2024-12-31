@@ -39,9 +39,9 @@ const uBOL_trustedSuppressNativeMethod = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"],["DOMTokenList.prototype.add","-style-"]];
+const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"]];
 
-const hostnamesMap = new Map([["cinema.com.my",0],["sportnews.to",1],["sportshub.to",1]]);
+const hostnamesMap = new Map([["cinema.com.my",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -61,6 +61,9 @@ function trustedSuppressNativeMethod(
     const signatureArgs = safe.String_split.call(signature, /\s*\|\s*/).map(v => {
         if ( /^".*"$/.test(v) ) {
             return { type: 'pattern', re: safe.patternToRegex(v.slice(1, -1)) };
+        }
+        if ( /^\/.+\/$/.test(v) ) {
+            return { type: 'pattern', re: safe.patternToRegex(v) };
         }
         if ( v === 'false' ) {
             return { type: 'exact', value: false };

@@ -39,11 +39,11 @@ const uBOL_trustedReplaceXhrResponse = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/,\"category_sensitive\"[^\\n]+?\"follow_button\":\\{\"__typename\":\"CometFeedStoryFollowButtonStrategy\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","}","/api/graphql"],["/,\"expanded_url\":\"([^\"]+)\",\"url\":\"[^\"]+\"/g",",\"expanded_url\":\"$1\",\"url\":\"$1\"","/graphql"],["/,\"expanded_url\":\"([^\"]+)\",\"indices\":([^\"]+)\"url\":\"[^\"]+\"/g",",\"expanded_url\":\"$1\",\"indices\":$2\"url\":\"$1\"","/tweet-result"]];
+const argsList = [["/,\"category_sensitive\"[^\\n]+?\"follow_button\":\\{\"__typename\":\"CometFeedStoryFollowButtonStrategy\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","}","/api/graphql"],["/,\"expanded_url\":\"([^\"]+)\",\"url\":\"[^\"]+\"/g",",\"expanded_url\":\"$1\",\"url\":\"$1\"","/graphql"],["/,\"expanded_url\":\"([^\"]+)\",\"indices\":([^\"]+)\"url\":\"[^\"]+\"/g",",\"expanded_url\":\"$1\",\"indices\":$2\"url\":\"$1\"","/tweet-result"],["/Timeout\":\\d+/","Timeout\":0","/api/v"]];
 
 const hostnamesMap = new Map([["web.facebook.com",0],["www.facebook.com",0],["twitter.com",1],["x.com",1],["platform.twitter.com",2]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["lookmovie2",3]]);
 
 const exceptionsMap = new Map([["platform.twitter.com",[1]]]);
 
@@ -156,8 +156,12 @@ function parsePropertiesToMatch(propsToMatch, implicit = '') {
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
     const options = { canNegate: true };
     for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
-        const [ prop, pattern ] = safe.String_split.call(needle, ':');
+        let [ prop, pattern ] = safe.String_split.call(needle, ':');
         if ( prop === '' ) { continue; }
+        if ( pattern !== undefined && /[^$\w -]/.test(prop) ) {
+            prop = `${prop}:${pattern}`;
+            pattern = undefined;
+        }
         if ( pattern !== undefined ) {
             needles.set(prop, safe.initPattern(pattern, options));
         } else if ( implicit !== '' ) {

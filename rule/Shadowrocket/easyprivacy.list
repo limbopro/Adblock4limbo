@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202412311153
+## ! Version: 202501011356
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Dec 2024 11:53 UTC
+## ! Last modified: 01 Jan 2025 13:56 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -317,7 +317,6 @@ DOMAIN-SUFFIX,pzapi-ij.com, reject
 DOMAIN-SUFFIX,pzapi-kg.com, reject
 DOMAIN-SUFFIX,pzimff.com, reject
 DOMAIN-SUFFIX,q0losid.com, reject
-DOMAIN-SUFFIX,q20jqurls0y7gk8.info, reject
 DOMAIN-SUFFIX,quantserve.com, reject
 DOMAIN-SUFFIX,quickkoala.io, reject
 DOMAIN-SUFFIX,quickpcfixer.click, reject
@@ -2914,7 +2913,6 @@ DOMAIN-SUFFIX,collector.api.video, reject
 DOMAIN-SUFFIX,collector.appconsent.io, reject
 DOMAIN-SUFFIX,collector.automote.co.nz, reject
 DOMAIN-SUFFIX,collector.clareity.net, reject
-DOMAIN-SUFFIX,collector.dmp.cnna.io, reject
 DOMAIN-SUFFIX,collector.getyourguide.com, reject
 DOMAIN-SUFFIX,collector.mazeberry.com, reject
 DOMAIN-SUFFIX,collector.sspinc.io, reject
@@ -2999,7 +2997,6 @@ DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com, reject
 DOMAIN-SUFFIX,dx.mountain.com, reject
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com, reject
 DOMAIN-SUFFIX,e.channelexco.com, reject
-DOMAIN-SUFFIX,e.htplayground.com, reject
 DOMAIN-SUFFIX,ea.youmaker.com, reject
 DOMAIN-SUFFIX,ec.walkme.com, reject
 DOMAIN-SUFFIX,ecomm.events, reject
@@ -4214,7 +4211,6 @@ DOMAIN-SUFFIX,bidder.mediams.mb.softbank.jp, reject
 DOMAIN-SUFFIX,bs.nakanohito.jp, reject
 DOMAIN-SUFFIX,bvr.ast.snva.jp, reject
 DOMAIN-SUFFIX,bvr.snva.jp, reject
-DOMAIN-SUFFIX,cdn.ad-platform.jmty.jp, reject
 DOMAIN-SUFFIX,client-log.karte.io, reject
 DOMAIN-SUFFIX,cookie.sync.usonar.jp, reject
 DOMAIN-SUFFIX,counter2.blog.livedoor.com, reject
@@ -6875,8 +6871,6 @@ DOMAIN-SUFFIX,web.hikari-ocn.com, reject
 DOMAIN-SUFFIX,web.hikari-softbank.com, reject
 DOMAIN-SUFFIX,web.life-cw.com, reject
 DOMAIN-SUFFIX,webtest.lpio.jp, reject
-DOMAIN-SUFFIX,www.a8clk.amelia.ne.jp, reject
-DOMAIN-SUFFIX,www.a8clk.kanagawa-zero.com, reject
 DOMAIN-SUFFIX,yoiku-sub.yoiku.support, reject
 DOMAIN-SUFFIX,a-api.skz.dev, reject
 DOMAIN-SUFFIX,a.aawp.de, reject
@@ -7910,7 +7904,6 @@ DOMAIN-SUFFIX,zagrabiti.viessmann.hr, reject
 DOMAIN-SUFFIX,zaventemdijleland.viessmann.be, reject
 DOMAIN-SUFFIX,zelten.fritz-berger.de, reject
 DOMAIN-SUFFIX,zug.sbb.ch, reject
-DOMAIN-SUFFIX,000scripps.hb.omtrdc.net, reject
 DOMAIN-SUFFIX,0tfsd2rwwu3xjstb.edge41.testandtarget.omniture.com, reject
 DOMAIN-SUFFIX,1ps6e7sort397gy9.edge46.testandtarget.omniture.com, reject
 DOMAIN-SUFFIX,20.edge46.testandtarget.omniture.com, reject
@@ -9724,7 +9717,6 @@ DOMAIN-SUFFIX,lp.em.viking.com, reject
 DOMAIN-SUFFIX,lp.email-kpn.cjm.adobe.com, reject
 DOMAIN-SUFFIX,lp.email-lightroom.cjm.adobe.com, reject
 DOMAIN-SUFFIX,lp.email-merkle.cjm.adobe.com, reject
-DOMAIN-SUFFIX,lp.go2.ringcentral.com, reject
 DOMAIN-SUFFIX,lp.hol1.demoamericas275.adobe.com, reject
 DOMAIN-SUFFIX,lp.hol10.demoamericas275.adobe.com, reject
 DOMAIN-SUFFIX,lp.hol11.demoamericas275.adobe.com, reject
@@ -16235,7 +16227,6 @@ DOMAIN-SUFFIX,ssl.o.univadis.es, reject
 DOMAIN-SUFFIX,ssl.o.univadis.fr, reject
 DOMAIN-SUFFIX,ssl.o.univadis.it, reject
 DOMAIN-SUFFIX,ssl.o.vitals.com, reject
-DOMAIN-SUFFIX,ssl.o.webmd.com, reject
 DOMAIN-SUFFIX,ssl.o.webmdrx.com, reject
 DOMAIN-SUFFIX,ssl.sciencechannel.com, reject
 DOMAIN-SUFFIX,sslanalytics.sixt.co.uk, reject
@@ -16781,7 +16772,6 @@ DOMAIN-SUFFIX,std.o.globalacademycme.com, reject
 DOMAIN-SUFFIX,std.o.medicinenet.com, reject
 DOMAIN-SUFFIX,std.o.medscape.com, reject
 DOMAIN-SUFFIX,std.o.rxlist.com, reject
-DOMAIN-SUFFIX,std.o.webmd.com, reject
 DOMAIN-SUFFIX,stel.telegraaf.nl, reject
 DOMAIN-SUFFIX,stereos2.crutchfield.com, reject
 DOMAIN-SUFFIX,stereos2s.crutchfield.ca, reject
@@ -17434,7 +17424,6 @@ DOMAIN-SUFFIX,visit.asb.co.nz, reject
 DOMAIN-SUFFIX,visitor.novartisoncology.us, reject
 DOMAIN-SUFFIX,visualscience.external.bbc.co.uk, reject
 DOMAIN-SUFFIX,vs.target.com, reject
-DOMAIN-SUFFIX,w.smobile.wotif.com, reject
 DOMAIN-SUFFIX,w88.abc.com, reject
 DOMAIN-SUFFIX,w88.disneynow.com, reject
 DOMAIN-SUFFIX,w88.espn.com, reject
@@ -17535,15 +17524,11 @@ DOMAIN-SUFFIX,www-sadobe.384.co.jp, reject
 DOMAIN-SUFFIX,www-sadobe.anabuki-community.com, reject
 DOMAIN-SUFFIX,www-sadobe.anabuki.co.jp, reject
 DOMAIN-SUFFIX,www-smt.daiichisankyo-hc.co.jp, reject
-DOMAIN-SUFFIX,www.metrics.argos.co.uk, reject
 DOMAIN-SUFFIX,www.metrics.bankaustria.at, reject
 DOMAIN-SUFFIX,www.notice.assurancewireless.com, reject
 DOMAIN-SUFFIX,www.notice.metrobyt-mobile.com, reject
 DOMAIN-SUFFIX,www.notice.t-mobile.com, reject
-DOMAIN-SUFFIX,www.smetrics.argos.co.uk, reject
 DOMAIN-SUFFIX,www.smetrics.imedeen.us, reject
-DOMAIN-SUFFIX,www.sstats.bnpparibasfortis.be, reject
-DOMAIN-SUFFIX,www.sstats.hellobank.be, reject
 DOMAIN-SUFFIX,www1.discountautomirrors.com, reject
 DOMAIN-SUFFIX,www15.jedora.com, reject
 DOMAIN-SUFFIX,www15.jtv.com, reject
@@ -19920,13 +19905,10 @@ DOMAIN-SUFFIX,advisorycloud-dev.actonservice.com, reject
 DOMAIN-SUFFIX,advtek.actonservice.com, reject
 DOMAIN-SUFFIX,ae.cobweb.com, reject
 DOMAIN-SUFFIX,aeromark.actonservice.com, reject
-DOMAIN-SUFFIX,africa.promo.skf.com, reject
-DOMAIN-SUFFIX,africafr.promo.skf.com, reject
 DOMAIN-SUFFIX,aftermath.actonservice.com, reject
 DOMAIN-SUFFIX,afterschoolallstars.actonservice.com, reject
 DOMAIN-SUFFIX,agcs-knowledge.allianz.com, reject
 DOMAIN-SUFFIX,agvinfo.kollmorgen.com, reject
-DOMAIN-SUFFIX,ai.promo.skf.com, reject
 DOMAIN-SUFFIX,aicipc.actonservice.com, reject
 DOMAIN-SUFFIX,aip.actonservice.com, reject
 DOMAIN-SUFFIX,air-weigh.actonservice.com, reject
@@ -19984,13 +19966,11 @@ DOMAIN-SUFFIX,apllogistics.actonservice.com, reject
 DOMAIN-SUFFIX,apparound.actonservice.com, reject
 DOMAIN-SUFFIX,apply.bluetrustloans.com, reject
 DOMAIN-SUFFIX,apply.maxlend.com, reject
-DOMAIN-SUFFIX,apprhs.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,apptus.actonservice.com, reject
 DOMAIN-SUFFIX,aptare.actonservice.com, reject
 DOMAIN-SUFFIX,apwip-dev.actonservice.com, reject
 DOMAIN-SUFFIX,apwip.actonservice.com, reject
 DOMAIN-SUFFIX,aqr.actonservice.com, reject
-DOMAIN-SUFFIX,ar.promo.skf.com, reject
 DOMAIN-SUFFIX,aragenbio.actonservice.com, reject
 DOMAIN-SUFFIX,aragonresearch.actonservice.com, reject
 DOMAIN-SUFFIX,argyleforum.actonservice.com, reject
@@ -20018,18 +19998,14 @@ DOMAIN-SUFFIX,astromed.actonservice.com, reject
 DOMAIN-SUFFIX,at.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,atbs.actonservice.com, reject
 DOMAIN-SUFFIX,aticti.actonservice.com, reject
-DOMAIN-SUFFIX,atlantic-general-hospital.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,atlanticlabequipment.actonservice.com, reject
 DOMAIN-SUFFIX,atlastravel.actonservice.com, reject
 DOMAIN-SUFFIX,atlasworldusa.actonservice.com, reject
 DOMAIN-SUFFIX,atsmobile.actonservice.com, reject
 DOMAIN-SUFFIX,attivoconsulting.actonservice.com, reject
-DOMAIN-SUFFIX,au.promo.skf.com, reject
 DOMAIN-SUFFIX,audiofly.actonservice.com, reject
-DOMAIN-SUFFIX,augustahealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,aumarketing.sedgwick.com, reject
 DOMAIN-SUFFIX,aurelianlending.actonservice.com, reject
-DOMAIN-SUFFIX,austria.promo.skf.com, reject
 DOMAIN-SUFFIX,authentic3d.actonservice.com, reject
 DOMAIN-SUFFIX,automate.gixxy.com, reject
 DOMAIN-SUFFIX,automotive.autodeskcommunications.com, reject
@@ -20052,10 +20028,7 @@ DOMAIN-SUFFIX,axisre.axiscapital.com, reject
 DOMAIN-SUFFIX,bakercommunications.actonservice.com, reject
 DOMAIN-SUFFIX,ballantine.actonservice.com, reject
 DOMAIN-SUFFIX,ballymoregroup.actonservice.com, reject
-DOMAIN-SUFFIX,baltics.promo.skf.com, reject
 DOMAIN-SUFFIX,bambee.actonservice.com, reject
-DOMAIN-SUFFIX,bannerhealth.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,baptisthealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,bayshoresystems.actonservice.com, reject
 DOMAIN-SUFFIX,bcanl.bca-autoveiling.nl, reject
 DOMAIN-SUFFIX,bcc-ltd.actonservice.com, reject
@@ -20064,14 +20037,11 @@ DOMAIN-SUFFIX,bcob.uncc.edu, reject
 DOMAIN-SUFFIX,bcs.actonservice.com, reject
 DOMAIN-SUFFIX,bdo.actonservice.com, reject
 DOMAIN-SUFFIX,bdoaustralia.bdo.com.au, reject
-DOMAIN-SUFFIX,beaconhealthsystem.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,beanworks.actonservice.com, reject
 DOMAIN-SUFFIX,beaumont.actonservice.com, reject
-DOMAIN-SUFFIX,benelux.promo.skf.com, reject
 DOMAIN-SUFFIX,bersondeanstevens.actonservice.com, reject
 DOMAIN-SUFFIX,bestbuy.actonservice.com, reject
 DOMAIN-SUFFIX,bestinfo.bluetrustloans.com, reject
-DOMAIN-SUFFIX,bg.promo.skf.com, reject
 DOMAIN-SUFFIX,bgiamericas.actonservice.com, reject
 DOMAIN-SUFFIX,bi.concordesolutions.com, reject
 DOMAIN-SUFFIX,bigcustomernetwork.actonservice.com, reject
@@ -20083,7 +20053,6 @@ DOMAIN-SUFFIX,bison.actonservice.com, reject
 DOMAIN-SUFFIX,biworldwide.actonservice.com, reject
 DOMAIN-SUFFIX,biznews.oregon.gov, reject
 DOMAIN-SUFFIX,bizz.cochraneco.com, reject
-DOMAIN-SUFFIX,bjc.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,bke.actonservice.com, reject
 DOMAIN-SUFFIX,bkifg.actonservice.com, reject
 DOMAIN-SUFFIX,blackbirdventures.actonservice.com, reject
@@ -20107,7 +20076,6 @@ DOMAIN-SUFFIX,bobswatches.actonservice.com, reject
 DOMAIN-SUFFIX,bolingbrookgolfclub.actonservice.com, reject
 DOMAIN-SUFFIX,bowl.actonservice.com, reject
 DOMAIN-SUFFIX,br.bio-rad.com, reject
-DOMAIN-SUFFIX,br.promo.skf.com, reject
 DOMAIN-SUFFIX,brainsell.actonservice.com, reject
 DOMAIN-SUFFIX,brands.cambrio.com, reject
 DOMAIN-SUFFIX,brascomarketing.actonservice.com, reject
@@ -20131,13 +20099,11 @@ DOMAIN-SUFFIX,buzz.neilsonmarketing.com, reject
 DOMAIN-SUFFIX,c-c-l.actonservice.com, reject
 DOMAIN-SUFFIX,c4cm.actonservice.com, reject
 DOMAIN-SUFFIX,c4contexture.actonservice.com, reject
-DOMAIN-SUFFIX,ca.promo.skf.com, reject
 DOMAIN-SUFFIX,ca.ssl.holdmybeerconsulting.com, reject
 DOMAIN-SUFFIX,caderonline.bu.edu, reject
 DOMAIN-SUFFIX,caf.actonservice.com, reject
 DOMAIN-SUFFIX,calgary-content.cresa.com, reject
 DOMAIN-SUFFIX,caliberco.actonservice.com, reject
-DOMAIN-SUFFIX,california.providence.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,caljetelite.actonservice.com, reject
 DOMAIN-SUFFIX,calldesignna.actonservice.com, reject
 DOMAIN-SUFFIX,callsource.actonservice.com, reject
@@ -20157,15 +20123,12 @@ DOMAIN-SUFFIX,caradonna.actonservice.com, reject
 DOMAIN-SUFFIX,cardinalretirement.actonservice.com, reject
 DOMAIN-SUFFIX,cargas.actonservice.com, reject
 DOMAIN-SUFFIX,cargurus.actonservice.com, reject
-DOMAIN-SUFFIX,carle.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,carlisleit.actonservice.com, reject
 DOMAIN-SUFFIX,carolina.actonservice.com, reject
 DOMAIN-SUFFIX,cc.pennstatehealth.org, reject
 DOMAIN-SUFFIX,celigo.actonservice.com, reject
 DOMAIN-SUFFIX,centermarkplacements.actonservice.com, reject
 DOMAIN-SUFFIX,central.actonservice.com, reject
-DOMAIN-SUFFIX,centrastate.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,centura.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,cerionnano.actonservice.com, reject
 DOMAIN-SUFFIX,certify.nasm.org, reject
 DOMAIN-SUFFIX,cesa6.actonservice.com, reject
@@ -20178,14 +20141,12 @@ DOMAIN-SUFFIX,charlotte-content.cresa.com, reject
 DOMAIN-SUFFIX,chartec.actonservice.com, reject
 DOMAIN-SUFFIX,chevalierusa.actonservice.com, reject
 DOMAIN-SUFFIX,chiefexecutive.actonservice.com, reject
-DOMAIN-SUFFIX,childrens.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,ci42.rgp.com, reject
 DOMAIN-SUFFIX,cil.isotope.com, reject
 DOMAIN-SUFFIX,cincinnati-content.cresa.com, reject
 DOMAIN-SUFFIX,circadence.actonservice.com, reject
 DOMAIN-SUFFIX,cisco-eagle.actonservice.com, reject
 DOMAIN-SUFFIX,citizensclimate.actonservice.com, reject
-DOMAIN-SUFFIX,cl.promo.skf.com, reject
 DOMAIN-SUFFIX,clariant.actonservice.com, reject
 DOMAIN-SUFFIX,claruscommerce.actonservice.com, reject
 DOMAIN-SUFFIX,classroominc.actonservice.com, reject
@@ -20205,10 +20166,8 @@ DOMAIN-SUFFIX,cloud.trapptechnology.com, reject
 DOMAIN-SUFFIX,cloudhosting.actonservice.com, reject
 DOMAIN-SUFFIX,cm.prodo.com, reject
 DOMAIN-SUFFIX,cmme.actonservice.com, reject
-DOMAIN-SUFFIX,cn.promo.skf.com, reject
 DOMAIN-SUFFIX,cns-service.actonservice.com, reject
 DOMAIN-SUFFIX,cnsecurity.actonservice.com, reject
-DOMAIN-SUFFIX,co.promo.skf.com, reject
 DOMAIN-SUFFIX,cobweb.actonservice.com, reject
 DOMAIN-SUFFIX,cofactordigital.actonservice.com, reject
 DOMAIN-SUFFIX,coffeycomm.actonservice.com, reject
@@ -20228,7 +20187,6 @@ DOMAIN-SUFFIX,communication.avantifinance.co.nz, reject
 DOMAIN-SUFFIX,communication.fits.me, reject
 DOMAIN-SUFFIX,communication.jkseva.com, reject
 DOMAIN-SUFFIX,communication.johnstongroup.ca, reject
-DOMAIN-SUFFIX,communication.promo.skf.com, reject
 DOMAIN-SUFFIX,communication.teakmedia.com, reject
 DOMAIN-SUFFIX,communication.treston.com, reject
 DOMAIN-SUFFIX,communications.all-risks.com, reject
@@ -20370,9 +20328,7 @@ DOMAIN-SUFFIX,customer.newsflare.com, reject
 DOMAIN-SUFFIX,customercare.aircycle.com, reject
 DOMAIN-SUFFIX,customerrelations.theinstitutes.org, reject
 DOMAIN-SUFFIX,customersucceed.nanophase.com, reject
-DOMAIN-SUFFIX,cvhp.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,cxm.ingeniux.com, reject
-DOMAIN-SUFFIX,cz.promo.skf.com, reject
 DOMAIN-SUFFIX,czsk.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,dacocorp.actonservice.com, reject
 DOMAIN-SUFFIX,daegis.actonservice.com, reject
@@ -20383,7 +20339,6 @@ DOMAIN-SUFFIX,dav.davrontech.com, reject
 DOMAIN-SUFFIX,dbbest.actonservice.com, reject
 DOMAIN-SUFFIX,dc.actonservice.com, reject
 DOMAIN-SUFFIX,de.bca-news.com, reject
-DOMAIN-SUFFIX,de.promo.skf.com, reject
 DOMAIN-SUFFIX,de.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,dealerrelations.cargurus.com, reject
 DOMAIN-SUFFIX,dedola.actonservice.com, reject
@@ -20402,7 +20357,6 @@ DOMAIN-SUFFIX,digital.opsbase.com, reject
 DOMAIN-SUFFIX,digital.setpointis.com, reject
 DOMAIN-SUFFIX,digitalmarketing.gogsg.com, reject
 DOMAIN-SUFFIX,digitalmarketing.smu.edu.sg, reject
-DOMAIN-SUFFIX,dignityhealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,dimensionfunding.actonservice.com, reject
 DOMAIN-SUFFIX,dincloud.actonservice.com, reject
 DOMAIN-SUFFIX,dincloudllc.actonservice.com, reject
@@ -20436,7 +20390,6 @@ DOMAIN-SUFFIX,e.replacementdevicelawsuit.com, reject
 DOMAIN-SUFFIX,e.unchealthcare.org, reject
 DOMAIN-SUFFIX,eagle.actonservice.com, reject
 DOMAIN-SUFFIX,econnect.actonservice.com, reject
-DOMAIN-SUFFIX,ecp.bdoaustralia.bdo.com.au, reject
 DOMAIN-SUFFIX,ed1.newtekone.com, reject
 DOMAIN-SUFFIX,ed4online.actonservice.com, reject
 DOMAIN-SUFFIX,edeals.rbp.com, reject
@@ -20449,11 +20402,9 @@ DOMAIN-SUFFIX,edtrainingcenter.actonservice.com, reject
 DOMAIN-SUFFIX,education.brettdanko.com, reject
 DOMAIN-SUFFIX,education.eatoncambridge.com, reject
 DOMAIN-SUFFIX,education.graduateprogram.org, reject
-DOMAIN-SUFFIX,edward.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,eeco-net.actonservice.com, reject
 DOMAIN-SUFFIX,efgam.actonservice.com, reject
 DOMAIN-SUFFIX,elastoproxy.actonservice.com, reject
-DOMAIN-SUFFIX,elcaminohospital.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,elconfidencialdigital.actonservice.com, reject
 DOMAIN-SUFFIX,electrifai.actonservice.com, reject
 DOMAIN-SUFFIX,elgas.actonservice.com, reject
@@ -20481,7 +20432,6 @@ DOMAIN-SUFFIX,emarketing.moveo.com, reject
 DOMAIN-SUFFIX,emarketing.zulkiepartners.com, reject
 DOMAIN-SUFFIX,emcalliance.vmware.com, reject
 DOMAIN-SUFFIX,emea.kollmorgen.com, reject
-DOMAIN-SUFFIX,emea.promo.skf.com, reject
 DOMAIN-SUFFIX,emisgroupplc.actonservice.com, reject
 DOMAIN-SUFFIX,emkt.stefanini.com, reject
 DOMAIN-SUFFIX,emplicity.actonservice.com, reject
@@ -20522,7 +20472,6 @@ DOMAIN-SUFFIX,es.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,eschsupply.actonservice.com, reject
 DOMAIN-SUFFIX,eservices.lubetech.com, reject
 DOMAIN-SUFFIX,esri.nl.actonservice.com, reject
-DOMAIN-SUFFIX,essentiahealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,estore.biscoind.com, reject
 DOMAIN-SUFFIX,eu.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,eumarketing.sedgwick.com, reject
@@ -20530,7 +20479,6 @@ DOMAIN-SUFFIX,events.trapptechnology.com, reject
 DOMAIN-SUFFIX,evergage1.actonservice.com, reject
 DOMAIN-SUFFIX,eversource.actonservice.com, reject
 DOMAIN-SUFFIX,evolent.actonservice.com, reject
-DOMAIN-SUFFIX,evolution.promo.skf.com, reject
 DOMAIN-SUFFIX,evolutionmarketing.actonservice.com, reject
 DOMAIN-SUFFIX,exdmarketing.smu.edu.sg, reject
 DOMAIN-SUFFIX,execreps.actonsoftware.com, reject
@@ -20586,7 +20534,6 @@ DOMAIN-SUFFIX,forpci3.siege-corp.com, reject
 DOMAIN-SUFFIX,foxt.actonservice.com, reject
 DOMAIN-SUFFIX,foxtinfo.foxt.com, reject
 DOMAIN-SUFFIX,fr.lucanet.com, reject
-DOMAIN-SUFFIX,fr.promo.skf.com, reject
 DOMAIN-SUFFIX,fr.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,franchise.goodearthcoffeehouse.com, reject
 DOMAIN-SUFFIX,franchise.locktonaffinity.net, reject
@@ -20615,7 +20562,6 @@ DOMAIN-SUFFIX,gas-sensing.spec-sensors.com, reject
 DOMAIN-SUFFIX,gatan.actonservice.com, reject
 DOMAIN-SUFFIX,gblock.greenhousedata.com, reject
 DOMAIN-SUFFIX,generaleducation.graduateprogram.org, reject
-DOMAIN-SUFFIX,genesishealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,geonetric.actonservice.com, reject
 DOMAIN-SUFFIX,get.airecontact.com, reject
 DOMAIN-SUFFIX,get.evidence.care, reject
@@ -20739,12 +20685,10 @@ DOMAIN-SUFFIX,goldencomm.actonservice.com, reject
 DOMAIN-SUFFIX,goldenhelix.actonservice.com, reject
 DOMAIN-SUFFIX,goldenpaints.actonservice.com, reject
 DOMAIN-SUFFIX,gosenergy.actonservice.com, reject
-DOMAIN-SUFFIX,goshenhealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,goto.newmarklearning.com, reject
 DOMAIN-SUFFIX,govirtualoffice.actonservice.com, reject
 DOMAIN-SUFFIX,gowestgroup.actonservice.com, reject
 DOMAIN-SUFFIX,gowhiteowl.actonservice.com, reject
-DOMAIN-SUFFIX,gr.promo.skf.com, reject
 DOMAIN-SUFFIX,grado.ufv.es, reject
 DOMAIN-SUFFIX,grande.actonservice.com, reject
 DOMAIN-SUFFIX,grassrootsunwired.actonservice.com, reject
@@ -20757,15 +20701,10 @@ DOMAIN-SUFFIX,growthmodemarketing.actonservice.com, reject
 DOMAIN-SUFFIX,guardiancu.actonservice.com, reject
 DOMAIN-SUFFIX,guidepointglobal.actonservice.com, reject
 DOMAIN-SUFFIX,guideposts.actonservice.com, reject
-DOMAIN-SUFFIX,gundersenhealth.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,hallmarkhealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,halo.actonservice.com, reject
 DOMAIN-SUFFIX,hancockhealth.hancockregional.org, reject
 DOMAIN-SUFFIX,hardinet.actonservice.com, reject
 DOMAIN-SUFFIX,harlan.actonservice.com, reject
-DOMAIN-SUFFIX,hcafarwest.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,hcagulfcoast.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,hcahealthcare.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,hcu.actonservice.com, reject
 DOMAIN-SUFFIX,health.brgeneral.org, reject
 DOMAIN-SUFFIX,health.hillcrest.com, reject
@@ -20781,7 +20720,6 @@ DOMAIN-SUFFIX,hesconet.actonservice.com, reject
 DOMAIN-SUFFIX,hhglobal.actonservice.com, reject
 DOMAIN-SUFFIX,hi.bigduck.com, reject
 DOMAIN-SUFFIX,hickeysmith.actonservice.com, reject
-DOMAIN-SUFFIX,hillcrest.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,hines.actonservice.com, reject
 DOMAIN-SUFFIX,hitachi-hightech-as.actonservice.com, reject
 DOMAIN-SUFFIX,hiway.actonservice.com, reject
@@ -20789,20 +20727,16 @@ DOMAIN-SUFFIX,hodges.actonservice.com, reject
 DOMAIN-SUFFIX,hodgesmace.actonservice.com, reject
 DOMAIN-SUFFIX,homecareresources.rosemarksystem.com, reject
 DOMAIN-SUFFIX,homehardware.actonservice.com, reject
-DOMAIN-SUFFIX,honorhealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,horacemann.actonservice.com, reject
 DOMAIN-SUFFIX,horizononline.actonservice.com, reject
-DOMAIN-SUFFIX,hospitals.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,hotel-marketing.hrs.com, reject
 DOMAIN-SUFFIX,houston-content.cresa.com, reject
 DOMAIN-SUFFIX,hpninfo.hoopis.com, reject
 DOMAIN-SUFFIX,hq.handiquilter.com, reject
-DOMAIN-SUFFIX,hr.promo.skf.com, reject
 DOMAIN-SUFFIX,hra.nyp.org, reject
 DOMAIN-SUFFIX,hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,hronboard.actonservice.com, reject
 DOMAIN-SUFFIX,hrs.actonservice.com, reject
-DOMAIN-SUFFIX,hu.promo.skf.com, reject
 DOMAIN-SUFFIX,hu.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,hub.hubfinancial.com, reject
 DOMAIN-SUFFIX,hub.hubinternational.com, reject
@@ -20813,24 +20747,19 @@ DOMAIN-SUFFIX,hygiena.actonservice.com, reject
 DOMAIN-SUFFIX,hyperdisk.actonservice.com, reject
 DOMAIN-SUFFIX,iatspayments.actonservice.com, reject
 DOMAIN-SUFFIX,ibamolecular.actonservice.com, reject
-DOMAIN-SUFFIX,iberian.promo.skf.com, reject
 DOMAIN-SUFFIX,icahealth.actonservice.com, reject
 DOMAIN-SUFFIX,icharts.actonservice.com, reject
 DOMAIN-SUFFIX,icslearn.actonsoftware.com, reject
-DOMAIN-SUFFIX,id.promo.skf.com, reject
 DOMAIN-SUFFIX,ideadevice.actonservice.com, reject
 DOMAIN-SUFFIX,idrivelogistics.actonservice.com, reject
 DOMAIN-SUFFIX,ids.actonservice.com, reject
 DOMAIN-SUFFIX,ignite.liftigniter.com, reject
 DOMAIN-SUFFIX,igpr.actonservice.com, reject
 DOMAIN-SUFFIX,ihc.cellmarque.com, reject
-DOMAIN-SUFFIX,il.promo.skf.com, reject
 DOMAIN-SUFFIX,immunocorp.actonservice.com, reject
 DOMAIN-SUFFIX,impact-dm.actonservice.com, reject
-DOMAIN-SUFFIX,in.promo.skf.com, reject
 DOMAIN-SUFFIX,incisive.actonservice.com, reject
 DOMAIN-SUFFIX,independence.americanportfolios.com, reject
-DOMAIN-SUFFIX,industry.promo.skf.com, reject
 DOMAIN-SUFFIX,inetprocess.actonservice.com, reject
 DOMAIN-SUFFIX,info-fsi.stanford.edu, reject
 DOMAIN-SUFFIX,info-pacific.marsh.com, reject
@@ -21400,7 +21329,6 @@ DOMAIN-SUFFIX,innovation.leeind.com, reject
 DOMAIN-SUFFIX,innovation.rlgbuilds.com, reject
 DOMAIN-SUFFIX,innovation.thinkcommunica.com, reject
 DOMAIN-SUFFIX,innovations.provisur.com, reject
-DOMAIN-SUFFIX,inova.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,insight.boomer.com, reject
 DOMAIN-SUFFIX,insight.redflashgroup.com, reject
 DOMAIN-SUFFIX,insight.wittkieffer.com, reject
@@ -21441,7 +21369,6 @@ DOMAIN-SUFFIX,isbamic.actonservice.com, reject
 DOMAIN-SUFFIX,isentia.actonservice.com, reject
 DOMAIN-SUFFIX,ishainsight.actonservice.com, reject
 DOMAIN-SUFFIX,isoplexis.actonservice.com, reject
-DOMAIN-SUFFIX,it.promo.skf.com, reject
 DOMAIN-SUFFIX,it.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,iwantglobal.actonservice.com, reject
 DOMAIN-SUFFIX,jagransolutions.com.actonservice.com, reject
@@ -21455,13 +21382,9 @@ DOMAIN-SUFFIX,jobappplus.actonservice.com, reject
 DOMAIN-SUFFIX,join.opencare.com, reject
 DOMAIN-SUFFIX,joinsai.securitiesamerica.com, reject
 DOMAIN-SUFFIX,joinus.holidayseniorliving.com, reject
-DOMAIN-SUFFIX,jp.promo.skf.com, reject
 DOMAIN-SUFFIX,jumpstartinc.actonservice.com, reject
 DOMAIN-SUFFIX,jwpepper.actonsoftware.com, reject
-DOMAIN-SUFFIX,kaydonus.promo.skf.com, reject
 DOMAIN-SUFFIX,kbs-services.actonservice.com, reject
-DOMAIN-SUFFIX,kc.promo.skf.com, reject
-DOMAIN-SUFFIX,kennedyhealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,kennisdomein.pqr.com, reject
 DOMAIN-SUFFIX,kesko.actonservice.com, reject
 DOMAIN-SUFFIX,kestlerfinancial.actonservice.com, reject
@@ -21484,7 +21407,6 @@ DOMAIN-SUFFIX,kurzweiledu.actonservice.com, reject
 DOMAIN-SUFFIX,kuwaitmarketing.sedgwick.com, reject
 DOMAIN-SUFFIX,kws.holdmybeerconsulting.com, reject
 DOMAIN-SUFFIX,kyloepartners.actonservice.com, reject
-DOMAIN-SUFFIX,lam.promo.skf.com, reject
 DOMAIN-SUFFIX,lammico.actonservice.com, reject
 DOMAIN-SUFFIX,landrykling.actonservice.com, reject
 DOMAIN-SUFFIX,landstar.actonservice.com, reject
@@ -21526,16 +21448,11 @@ DOMAIN-SUFFIX,logistics.osmworldwide.com, reject
 DOMAIN-SUFFIX,look-ahead.nurturemarketing.com, reject
 DOMAIN-SUFFIX,lord.actonservice.com, reject
 DOMAIN-SUFFIX,loveeveryday.brighterkind.com, reject
-DOMAIN-SUFFIX,lovelace.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,lowermybills.actonsoftware.com, reject
 DOMAIN-SUFFIX,lp.fsresidential.com, reject
 DOMAIN-SUFFIX,lp.mnp.ca, reject
 DOMAIN-SUFFIX,lp.rallypoint.com, reject
 DOMAIN-SUFFIX,ltcnetwork.mhainc.com, reject
-DOMAIN-SUFFIX,lubrication.promo.skf.com, reject
-DOMAIN-SUFFIX,lubricationcee-mea.promo.skf.com, reject
-DOMAIN-SUFFIX,lubricationde.promo.skf.com, reject
-DOMAIN-SUFFIX,lubricationus.promo.skf.com, reject
 DOMAIN-SUFFIX,lucanet.actonservice.com, reject
 DOMAIN-SUFFIX,lumenera.actonservice.com, reject
 DOMAIN-SUFFIX,lydallpm.actonservice.com, reject
@@ -21588,7 +21505,6 @@ DOMAIN-SUFFIX,marcomauto.globalfoundries.com, reject
 DOMAIN-SUFFIX,marcomm.woodward.com, reject
 DOMAIN-SUFFIX,marcomms.maistro.com, reject
 DOMAIN-SUFFIX,maricich.actonservice.com, reject
-DOMAIN-SUFFIX,marine.promo.skf.com, reject
 DOMAIN-SUFFIX,markentive.actonservice.com, reject
 DOMAIN-SUFFIX,marketing-company.getinsured.com, reject
 DOMAIN-SUFFIX,marketing-fl.waterstonemortgage.com, reject
@@ -22990,7 +22906,6 @@ DOMAIN-SUFFIX,mbna.bruker.com, reject
 DOMAIN-SUFFIX,mbns.bruker.com, reject
 DOMAIN-SUFFIX,mbopt.bruker.com, reject
 DOMAIN-SUFFIX,mbs.modernbuilderssupply.com, reject
-DOMAIN-SUFFIX,mclaren-porthuron.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,mcw.actonservice.com, reject
 DOMAIN-SUFFIX,mdfcrm.actonservice.com, reject
 DOMAIN-SUFFIX,meanwellaustralia.actonservice.com, reject
@@ -23017,7 +22932,6 @@ DOMAIN-SUFFIX,medxm1.actonservice.com, reject
 DOMAIN-SUFFIX,member.usenix.org, reject
 DOMAIN-SUFFIX,members.simplicity.coop, reject
 DOMAIN-SUFFIX,membership.mortonarb.org, reject
-DOMAIN-SUFFIX,memhosp.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,merchant-mail.neosurf.com, reject
 DOMAIN-SUFFIX,mesalabs.actonservice.com, reject
 DOMAIN-SUFFIX,message.alldata.com, reject
@@ -23031,7 +22945,6 @@ DOMAIN-SUFFIX,mfrmls.actonservice.com, reject
 DOMAIN-SUFFIX,mg.mistrasgroup.com, reject
 DOMAIN-SUFFIX,mhinvest.actonservice.com, reject
 DOMAIN-SUFFIX,mhmp.bruker.com, reject
-DOMAIN-SUFFIX,mhs.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,mhz-design.actonservice.com, reject
 DOMAIN-SUFFIX,microfocus.qm-g.com, reject
 DOMAIN-SUFFIX,microlise.actonservice.com, reject
@@ -23096,12 +23009,10 @@ DOMAIN-SUFFIX,mtracking.mhequipment.com, reject
 DOMAIN-SUFFIX,multimedia.netplusentremont.ch, reject
 DOMAIN-SUFFIX,mw-ind.actonservice.com, reject
 DOMAIN-SUFFIX,mwa.meanwellaustralia.com.au, reject
-DOMAIN-SUFFIX,mx.promo.skf.com, reject
 DOMAIN-SUFFIX,my.bruker.com, reject
 DOMAIN-SUFFIX,my.carolina.com, reject
 DOMAIN-SUFFIX,my.exotravel.com, reject
 DOMAIN-SUFFIX,my.igrafx.com, reject
-DOMAIN-SUFFIX,my.promo.skf.com, reject
 DOMAIN-SUFFIX,mya.actonservice.com, reject
 DOMAIN-SUFFIX,mycomm2.hackensackmeridian.org, reject
 DOMAIN-SUFFIX,mydario.actonservice.com, reject
@@ -23182,7 +23093,6 @@ DOMAIN-SUFFIX,oasismarketing.oasisadvantage.com, reject
 DOMAIN-SUFFIX,objectpartners.actonservice.com, reject
 DOMAIN-SUFFIX,oceanair.actonservice.com, reject
 DOMAIN-SUFFIX,oceanautomotive.actonservice.com, reject
-DOMAIN-SUFFIX,ochsner.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,offers.hddistributors.com, reject
 DOMAIN-SUFFIX,offers.jazelauto.com, reject
 DOMAIN-SUFFIX,offers.storagepipe.com, reject
@@ -23217,7 +23127,6 @@ DOMAIN-SUFFIX,outreach.semaconnect.com, reject
 DOMAIN-SUFFIX,outreach.successforall.org, reject
 DOMAIN-SUFFIX,outreach.teex.info, reject
 DOMAIN-SUFFIX,outreach.veritivcorp.com, reject
-DOMAIN-SUFFIX,overlakemedicalcenter.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,pacstainless.actonservice.com, reject
 DOMAIN-SUFFIX,page.asraymond.com, reject
 DOMAIN-SUFFIX,page.ephesus.cooperlighting.com, reject
@@ -23255,12 +23164,10 @@ DOMAIN-SUFFIX,paynewest.actonservice.com, reject
 DOMAIN-SUFFIX,pbc.programbrokerage.com, reject
 DOMAIN-SUFFIX,pcci.pccinnovation.org, reject
 DOMAIN-SUFFIX,pccipieces.actonservice.com, reject
-DOMAIN-SUFFIX,pe.promo.skf.com, reject
 DOMAIN-SUFFIX,people.mbtionline.com, reject
 DOMAIN-SUFFIX,peoplehr.actonservice.com, reject
 DOMAIN-SUFFIX,performantcorp.actonservice.com, reject
 DOMAIN-SUFFIX,permission.au.actonservice.com, reject
-DOMAIN-SUFFIX,ph.promo.skf.com, reject
 DOMAIN-SUFFIX,phdinc.actonservice.com, reject
 DOMAIN-SUFFIX,philadelphia-content.cresa.com, reject
 DOMAIN-SUFFIX,phionline.actonservice.com, reject
@@ -23270,11 +23177,9 @@ DOMAIN-SUFFIX,phsmobile.actonservice.com, reject
 DOMAIN-SUFFIX,phyins.actonservice.com, reject
 DOMAIN-SUFFIX,picarro.actonservice.com, reject
 DOMAIN-SUFFIX,pimpoint.inriver.com, reject
-DOMAIN-SUFFIX,pinnacleuniversity.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,pipelinepub.actonservice.com, reject
 DOMAIN-SUFFIX,pitcher.actonservice.com, reject
 DOMAIN-SUFFIX,pivotpointsecurity.actonservice.com, reject
-DOMAIN-SUFFIX,pl.promo.skf.com, reject
 DOMAIN-SUFFIX,pl.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,pla.pearlinsurance.com, reject
 DOMAIN-SUFFIX,plans.ceteraretirement.com, reject
@@ -23382,18 +23287,14 @@ DOMAIN-SUFFIX,rhinowebgroup.actonservice.com, reject
 DOMAIN-SUFFIX,rightanswers.actonservice.com, reject
 DOMAIN-SUFFIX,riscitsolutions.actonservice.com, reject
 DOMAIN-SUFFIX,rmhoffman.actonservice.com, reject
-DOMAIN-SUFFIX,ro.promo.skf.com, reject
 DOMAIN-SUFFIX,roiscs.actonservice.com, reject
 DOMAIN-SUFFIX,rollbar.actonservice.com, reject
 DOMAIN-SUFFIX,romotur.actonservice.com, reject
 DOMAIN-SUFFIX,root9b.actonservice.com, reject
 DOMAIN-SUFFIX,roxtec.actonservice.com, reject
-DOMAIN-SUFFIX,rs.promo.skf.com, reject
-DOMAIN-SUFFIX,rsfh.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,rsvp.markettraders.com, reject
 DOMAIN-SUFFIX,rtvision.actonservice.com, reject
 DOMAIN-SUFFIX,rumsey.actonservice.com, reject
-DOMAIN-SUFFIX,rush.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,ruw.roanokeunderwriting.com, reject
 DOMAIN-SUFFIX,rxaap.actonservice.com, reject
 DOMAIN-SUFFIX,rystadenergy.actonservice.com, reject
@@ -23418,7 +23319,6 @@ DOMAIN-SUFFIX,scorebuddy.actonservice.com, reject
 DOMAIN-SUFFIX,se.netpartnering.com, reject
 DOMAIN-SUFFIX,seahorseinfo.agilent.com, reject
 DOMAIN-SUFFIX,sealingdev.actonservice.com, reject
-DOMAIN-SUFFIX,seals.promo.skf.com, reject
 DOMAIN-SUFFIX,seamarketny.actonservice.com, reject
 DOMAIN-SUFFIX,seb.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,securityins.actonservice.com, reject
@@ -23508,7 +23408,6 @@ DOMAIN-SUFFIX,setonhill.actonservice.com, reject
 DOMAIN-SUFFIX,sffirecu.actonservice.com, reject
 DOMAIN-SUFFIX,sfsinfo.sabic.com, reject
 DOMAIN-SUFFIX,sg.lucanet.com, reject
-DOMAIN-SUFFIX,sg.promo.skf.com, reject
 DOMAIN-SUFFIX,shelbypublishing.actonservice.com, reject
 DOMAIN-SUFFIX,shipsmarter.idrivelogistics.com, reject
 DOMAIN-SUFFIX,shop.iwantclips.com, reject
@@ -23518,7 +23417,6 @@ DOMAIN-SUFFIX,singleplatform.actonservice.com, reject
 DOMAIN-SUFFIX,site.newzstand.com, reject
 DOMAIN-SUFFIX,sitel.actonservice.com, reject
 DOMAIN-SUFFIX,sjms.actonservice.com, reject
-DOMAIN-SUFFIX,sk.promo.skf.com, reject
 DOMAIN-SUFFIX,skf.actonservice.com, reject
 DOMAIN-SUFFIX,skillshouse.actonservice.com, reject
 DOMAIN-SUFFIX,slashnext.actonservice.com, reject
@@ -23563,14 +23461,12 @@ DOMAIN-SUFFIX,sruk.srglobal.com, reject
 DOMAIN-SUFFIX,ssfllp.actonservice.com, reject
 DOMAIN-SUFFIX,sswhitedental.actonservice.com, reject
 DOMAIN-SUFFIX,stahl.actonservice.com, reject
-DOMAIN-SUFFIX,stamfordhealth.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,stanburns.actonservice.com, reject
 DOMAIN-SUFFIX,start.mediware.com, reject
 DOMAIN-SUFFIX,start.mybillingtree.com, reject
 DOMAIN-SUFFIX,start.ptl.org, reject
 DOMAIN-SUFFIX,start.sharpclinical.com, reject
 DOMAIN-SUFFIX,start.spark-thinking.com, reject
-DOMAIN-SUFFIX,stcharleshealthcare.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,steel.newmill.com, reject
 DOMAIN-SUFFIX,stentel.actonservice.com, reject
 DOMAIN-SUFFIX,stormwind.actonservice.com, reject
@@ -23596,7 +23492,6 @@ DOMAIN-SUFFIX,support.flex.com, reject
 DOMAIN-SUFFIX,support2.flex.com, reject
 DOMAIN-SUFFIX,support3.flex.com, reject
 DOMAIN-SUFFIX,svmarketing.destinationtoronto.com, reject
-DOMAIN-SUFFIX,swedishcovenant.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,swim2000.actonservice.com, reject
 DOMAIN-SUFFIX,symbio.actonservice.com, reject
 DOMAIN-SUFFIX,synapse-da.actonservice.com, reject
@@ -23611,7 +23506,6 @@ DOMAIN-SUFFIX,tablesafe.actonservice.com, reject
 DOMAIN-SUFFIX,target.actonservice.com, reject
 DOMAIN-SUFFIX,targetrecruitllc.actonservice.com, reject
 DOMAIN-SUFFIX,targetstore.actonservice.com, reject
-DOMAIN-SUFFIX,tas.bdoaustralia.bdo.com.au, reject
 DOMAIN-SUFFIX,taylorshellfish.actonservice.com, reject
 DOMAIN-SUFFIX,teach.graduateprogram.org, reject
 DOMAIN-SUFFIX,team.moxtra.com, reject
@@ -23654,7 +23548,6 @@ DOMAIN-SUFFIX,towerfcu.actonservice.com, reject
 DOMAIN-SUFFIX,townsquareinteractive.actonservice.com, reject
 DOMAIN-SUFFIX,tpe.theparticipanteffect.com, reject
 DOMAIN-SUFFIX,tqhosting.actonservice.com, reject
-DOMAIN-SUFFIX,tr.promo.skf.com, reject
 DOMAIN-SUFFIX,track.healthcare-distribution.com, reject
 DOMAIN-SUFFIX,tracking.experiencescottsdale.com, reject
 DOMAIN-SUFFIX,tradeshows.aem.org, reject
@@ -23682,17 +23575,11 @@ DOMAIN-SUFFIX,trustid.actonservice.com, reject
 DOMAIN-SUFFIX,ttcu-union.actonservice.com, reject
 DOMAIN-SUFFIX,ttmc.actonservice.com, reject
 DOMAIN-SUFFIX,tvppa.actonservice.com, reject
-DOMAIN-SUFFIX,tw.promo.skf.com, reject
 DOMAIN-SUFFIX,uaemarketing.sedgwick.com, reject
 DOMAIN-SUFFIX,ugmarketing.smu.edu.sg, reject
-DOMAIN-SUFFIX,uhealthsystem.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,uhhospitals.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,uk-marketing.roxtec.com, reject
-DOMAIN-SUFFIX,uk.promo.skf.com, reject
 DOMAIN-SUFFIX,uk.sharpmarketing.eu, reject
 DOMAIN-SUFFIX,ukmarketing.sedgwick.com, reject
-DOMAIN-SUFFIX,umassmemorial.hrm.healthgrades.com, reject
-DOMAIN-SUFFIX,unchealthcare.hrm.healthgrades.com, reject
 DOMAIN-SUFFIX,unifilabs.actonservice.com, reject
 DOMAIN-SUFFIX,unitedautocredit.actonservice.com, reject
 DOMAIN-SUFFIX,unitusccu.actonservice.com, reject
@@ -23701,13 +23588,11 @@ DOMAIN-SUFFIX,updates.conexpoconagg.com, reject
 DOMAIN-SUFFIX,us-marketing.roxtec.com, reject
 DOMAIN-SUFFIX,us.lucanet.com, reject
 DOMAIN-SUFFIX,us.onkyo.actonservice.com, reject
-DOMAIN-SUFFIX,us.promo.skf.com, reject
 DOMAIN-SUFFIX,usaprogrip.actonservice.com, reject
 DOMAIN-SUFFIX,usb-vna.coppermountaintech.com, reject
 DOMAIN-SUFFIX,ussco-dev.actonservice.com, reject
 DOMAIN-SUFFIX,utexas.actonservice.com, reject
 DOMAIN-SUFFIX,value.kfcu.org, reject
-DOMAIN-SUFFIX,vehicleaftermarket.euw.promo.skf.com, reject
 DOMAIN-SUFFIX,velocitypartners.actonservice.com, reject
 DOMAIN-SUFFIX,veoci.actonservice.com, reject
 DOMAIN-SUFFIX,vertexcs.actonservice.com, reject
@@ -23715,7 +23600,6 @@ DOMAIN-SUFFIX,vetsource.actonservice.com, reject
 DOMAIN-SUFFIX,vhans.siege-corp.com, reject
 DOMAIN-SUFFIX,via.ssl.holdmybeerconsulting.com, reject
 DOMAIN-SUFFIX,video.funnelbox.com, reject
-DOMAIN-SUFFIX,vietnam.promo.skf.com, reject
 DOMAIN-SUFFIX,vip.gophersport.com, reject
 DOMAIN-SUFFIX,visit.monroecollege.edu, reject
 DOMAIN-SUFFIX,visitorlando.actonsoftware.com, reject
@@ -23726,10 +23610,7 @@ DOMAIN-SUFFIX,viu.viubyhub.com, reject
 DOMAIN-SUFFIX,vividcortex.actonservice.com, reject
 DOMAIN-SUFFIX,voiply.actonservice.com, reject
 DOMAIN-SUFFIX,vonazon.actonservice.com, reject
-DOMAIN-SUFFIX,vsmeue.promo.skf.com, reject
-DOMAIN-SUFFIX,vsmeuw.promo.skf.com, reject
 DOMAIN-SUFFIX,vt.mak.com, reject
-DOMAIN-SUFFIX,wa.bdoaustralia.bdo.com.au, reject
 DOMAIN-SUFFIX,warfieldtech.actonservice.com, reject
 DOMAIN-SUFFIX,warrenfcu.actonservice.com, reject
 DOMAIN-SUFFIX,washlaundry.actonservice.com, reject
@@ -35685,7 +35566,6 @@ DOMAIN-SUFFIX,secure.tray0bury.com, reject
 DOMAIN-SUFFIX,secure.tube6sour.com, reject
 DOMAIN-SUFFIX,secure.tula9mari.com, reject
 DOMAIN-SUFFIX,secure.vane3alga.com, reject
-DOMAIN-SUFFIX,secure.venture-365-inspired.com, reject
 DOMAIN-SUFFIX,secure.venture-enterprising.com, reject
 DOMAIN-SUFFIX,secure.venture365office.com, reject
 DOMAIN-SUFFIX,secure.vice4beek.com, reject

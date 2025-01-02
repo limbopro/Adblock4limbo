@@ -1,7 +1,7 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202501011356
+## ! Version: 202501012358
 ## ! Title: EasyList
-## ! Last modified: 01 Jan 2025 13:56 UTC
+## ! Last modified: 01 Jan 2025 23:58 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -24841,6 +24841,7 @@ DOMAIN-SUFFIX,twentydruggeddumb.com, reject
 DOMAIN-SUFFIX,twevpgjeai.com, reject
 DOMAIN-SUFFIX,twewmykfe.com, reject
 DOMAIN-SUFFIX,twi-hjritecl.world, reject
+DOMAIN-SUFFIX,twiebayed.com, reject
 DOMAIN-SUFFIX,twigwisp.com, reject
 DOMAIN-SUFFIX,twilightsuburbmill.com, reject
 DOMAIN-SUFFIX,twinadsrv.com, reject

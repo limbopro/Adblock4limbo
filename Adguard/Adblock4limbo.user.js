@@ -74,6 +74,7 @@
 // @match        https://jable.tv/*
 // @match        https://cupfoxapp.tv/*
 // @match        https://www.dmmiku.com/*
+// @match        https://bf.bfdm.xyz/*
 // @match        https://cnys.tv/*
 // @match        https://m.iyf.tv/*
 // @match        https://www.iyf.tv/*
@@ -335,7 +336,8 @@ var imax = {
         _91short: "a[href*=lhiefl], a[href*=lol], div.shortcuts-mobile-overlay,div.xtbhkpvx_b,a[href*=cpa],img[src*=gif],#adsbox, div.adm {display:none !important; pointer-events: none !important;}",
         xiaobaotv: "",
         cupfoxapp: ".head_ad {display:none !important; pointer-events: none !important;}",
-        dmmiku: ".right_ads, .ads_box, .ads_all > .ads_w {display:none !important; pointer-events: none !important;}",
+        dmmiku: "#vodshare, .right_ads, .ads_box, .ads_all > .ads_w {display:none !important; pointer-events: none !important;}",
+        bfdm: "#player_pause {display:none !important; pointer-events: none !important;}",
         iyf: "vg-pause-f, div.ad, .ad, .ad_tag, .dabf > .ng-star-inserted, .pggf > .ng-star-inserted {display:none !important; pointer-events: none !important;}",
         hltv: "div.close-container,.presented-by,.mid-container + div[id]:has(> a[href] > img[alt][src]),.kgN8P9bvyb2EqDJR,.mid-container {display:none !important; pointer-events: none !important;}",
         cnys: "div#player_pause, e#time_ad, div.vod-gg, img[src*='b02.gif'], #adsbox, #ADtip, .ec-ad {display:none !important; pointer-events: none !important;}",
@@ -403,6 +405,7 @@ function values() {
         "xiaoxintv",
         "cupfoxapp",
         "dmmiku",
+        "bfdm",
         "iyf",
         "cnys",
         "javday",
@@ -814,8 +817,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'dmmiku':
             css_adsRemove(imax.css.dmmiku, 100, 'fuckdmmiku');
-            window_open_defuser();
-            addEventListener_defuser();
+            //window_open_defuser();
+            //addEventListener_defuser();
+            break;
+        case 'bfdm':
+            css_adsRemove(imax.css.bfdm, 100, 'fuckdmmiku');
             break;
         case 'iyf':
 

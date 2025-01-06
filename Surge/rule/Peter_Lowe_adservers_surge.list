@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Tue, 31 Dec 2024 03:22:42 GMT
-# entries:        3547
+# entries:        3545
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1142,6 +1142,7 @@ DOMAIN-SUFFIX,blogcounter.de
 DOMAIN-SUFFIX,blogherads.com
 DOMAIN-SUFFIX,blogtoplist.se
 DOMAIN-SUFFIX,blogtopsites.com
+DOMAIN-SUFFIX,blueadvertise.com
 DOMAIN-SUFFIX,blueconic.com
 DOMAIN-SUFFIX,blueconic.net
 DOMAIN-SUFFIX,bluekai.com
@@ -2325,7 +2326,6 @@ DOMAIN-SUFFIX,mylead-tracking.tracknow.info
 DOMAIN-SUFFIX,mylead.global
 DOMAIN-SUFFIX,mylink-today.com
 DOMAIN-SUFFIX,mypagerank.net
-DOMAIN-SUFFIX,mypagerank.ru
 DOMAIN-SUFFIX,mypowermall.com
 DOMAIN-SUFFIX,mystat-in.net
 DOMAIN-SUFFIX,mystat.pl
@@ -2487,7 +2487,6 @@ DOMAIN-SUFFIX,pageranktop.com
 DOMAIN-SUFFIX,painstakingpickle.com
 DOMAIN-SUFFIX,paleleaf.com
 DOMAIN-SUFFIX,panatenlink.pl
-DOMAIN-SUFFIX,panickycurtain.com
 DOMAIN-SUFFIX,panickypancake.com
 DOMAIN-SUFFIX,panoramicplane.com
 DOMAIN-SUFFIX,parachutehome.sjv.io
@@ -2962,7 +2961,6 @@ DOMAIN-SUFFIX,sombersurprise.com
 DOMAIN-SUFFIX,somniture.stuff.co.nz
 DOMAIN-SUFFIX,somoaudience.com
 DOMAIN-SUFFIX,sonobi.com
-DOMAIN-SUFFIX,sordidsmile.com
 DOMAIN-SUFFIX,sortable.com
 DOMAIN-SUFFIX,sourcepoint.vice.com
 DOMAIN-SUFFIX,sovrn.com

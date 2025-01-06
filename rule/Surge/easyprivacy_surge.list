@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501012358
+## ! Version: 202501061330
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Jan 2025 23:58 UTC
+## ! Last modified: 06 Jan 2025 13:30 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -21,7 +21,6 @@ DOMAIN-SUFFIX,1cros.net
 DOMAIN-SUFFIX,2cnt.net
 DOMAIN-SUFFIX,2l6ddsmnm.de
 DOMAIN-SUFFIX,2smt6mfgo.de
-DOMAIN-SUFFIX,31daa5lnq.de
 DOMAIN-SUFFIX,34.215.155.61
 DOMAIN-SUFFIX,3gl.net
 DOMAIN-SUFFIX,4251.tech
@@ -212,7 +211,6 @@ DOMAIN-SUFFIX,ia-dmp.com
 DOMAIN-SUFFIX,iconmediapixel.com
 DOMAIN-SUFFIX,iconnode.com
 DOMAIN-SUFFIX,id-ward.com
-DOMAIN-SUFFIX,id5-sync.com
 DOMAIN-SUFFIX,idx.lat
 DOMAIN-SUFFIX,ilius.net
 DOMAIN-SUFFIX,impactcdn.com
@@ -222,12 +220,10 @@ DOMAIN-SUFFIX,imzahrwl.xyz
 DOMAIN-SUFFIX,ineed2s.ro
 DOMAIN-SUFFIX,infisecure.com
 DOMAIN-SUFFIX,innerskinresearch.com
-DOMAIN-SUFFIX,insigit.com
 DOMAIN-SUFFIX,instantfox.co
 DOMAIN-SUFFIX,intellimizeio.com
 DOMAIN-SUFFIX,irs01.com
 DOMAIN-SUFFIX,jams.wiki
-DOMAIN-SUFFIX,jazzyzest.cfd
 DOMAIN-SUFFIX,jcpclick.com
 DOMAIN-SUFFIX,jubbie.de
 DOMAIN-SUFFIX,k5a.io
@@ -269,7 +265,6 @@ DOMAIN-SUFFIX,ml-sys.xyz
 DOMAIN-SUFFIX,mm-api.agency
 DOMAIN-SUFFIX,mobildev.in
 DOMAIN-SUFFIX,monicaatron.com
-DOMAIN-SUFFIX,monu.delivery
 DOMAIN-SUFFIX,mors22.com
 DOMAIN-SUFFIX,motu-teamblue.services
 DOMAIN-SUFFIX,mrpdata.net
@@ -375,7 +370,6 @@ DOMAIN-SUFFIX,techpump.com
 DOMAIN-SUFFIX,tepatonol.com
 DOMAIN-SUFFIX,test.vast
 DOMAIN-SUFFIX,testingmetriksbre.ru
-DOMAIN-SUFFIX,thatmonkeybites3.com
 DOMAIN-SUFFIX,thefontzone.com
 DOMAIN-SUFFIX,tkrconnector.com
 DOMAIN-SUFFIX,tncid.app
@@ -403,7 +397,6 @@ DOMAIN-SUFFIX,venture-365-inspired.com
 DOMAIN-SUFFIX,venusrevival.com
 DOMAIN-SUFFIX,veozn3f.com
 DOMAIN-SUFFIX,vfghe.com
-DOMAIN-SUFFIX,vfgte.com
 DOMAIN-SUFFIX,videocdnmetrika.com
 DOMAIN-SUFFIX,videoplayerhub.com
 DOMAIN-SUFFIX,vkanalytics.net
@@ -2030,6 +2023,7 @@ DOMAIN-SUFFIX,satisfyingshow.com
 DOMAIN-SUFFIX,satisfyingspark.com
 DOMAIN-SUFFIX,savoryorange.com
 DOMAIN-SUFFIX,savorystructure.com
+DOMAIN-SUFFIX,sayinnovation.com
 DOMAIN-SUFFIX,saysidewalk.com
 DOMAIN-SUFFIX,scarcecard.com
 DOMAIN-SUFFIX,scarceshock.com
@@ -2191,6 +2185,7 @@ DOMAIN-SUFFIX,softwarerumble.com
 DOMAIN-SUFFIX,soggysponge.com
 DOMAIN-SUFFIX,soggyzoo.com
 DOMAIN-SUFFIX,solarislabyrinth.com
+DOMAIN-SUFFIX,soleblinds.com
 DOMAIN-SUFFIX,somberattack.com
 DOMAIN-SUFFIX,somberscarecrow.com
 DOMAIN-SUFFIX,sombersea.com
@@ -2907,6 +2902,7 @@ DOMAIN-SUFFIX,collect.rewardstyle.com
 DOMAIN-SUFFIX,collect.usefathom.com
 DOMAIN-SUFFIX,collect.verify.lnearn.com
 DOMAIN-SUFFIX,collection.e-satisfaction.com
+DOMAIN-SUFFIX,collector-1.ex.co
 DOMAIN-SUFFIX,collector-api.99designs.com
 DOMAIN-SUFFIX,collector-api.frspecifics.com
 DOMAIN-SUFFIX,collector.api.video
@@ -4591,6 +4587,7 @@ DOMAIN-SUFFIX,client-metrics.chess.com
 DOMAIN-SUFFIX,clp-mms.cloudpro.co.uk
 DOMAIN-SUFFIX,cm-mms.coachmag.co.uk
 DOMAIN-SUFFIX,cm.nordvpn.com
+DOMAIN-SUFFIX,cms-stats-view.vitrinabox.com
 DOMAIN-SUFFIX,cnt.hd21.com
 DOMAIN-SUFFIX,cnt.iceporn.com
 DOMAIN-SUFFIX,cnt.viptube.com
@@ -4651,7 +4648,6 @@ DOMAIN-SUFFIX,dc.banggood.com
 DOMAIN-SUFFIX,dd.auspost.com.au
 DOMAIN-SUFFIX,dd.nytimes.com
 DOMAIN-SUFFIX,ddome-tag.blablacar.com
-DOMAIN-SUFFIX,deliver.ptgncdn.com
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au
 DOMAIN-SUFFIX,dls-account.di.atlas.samsung.com
 DOMAIN-SUFFIX,dp.shoprunner.com
@@ -5143,12 +5139,14 @@ DOMAIN-SUFFIX,gj.mmstat.com
 DOMAIN-SUFFIX,oneid.mmstat.com
 DOMAIN-SUFFIX,cfa.fidelity.com
 DOMAIN-SUFFIX,clear.wallapop.com
+DOMAIN-SUFFIX,content.canadiantire.ca
 DOMAIN-SUFFIX,content22.bmo.com
 DOMAIN-SUFFIX,content22.citibank.com.au
 DOMAIN-SUFFIX,content22.citibankonline.com
 DOMAIN-SUFFIX,content22.online.citi.com
 DOMAIN-SUFFIX,drfdisvc.walmart.com
 DOMAIN-SUFFIX,event.evtm.53.com
+DOMAIN-SUFFIX,idhtm.bb.com.br
 DOMAIN-SUFFIX,idstatus.sky.com
 DOMAIN-SUFFIX,img2021.navyfederal.org
 DOMAIN-SUFFIX,imgs.signifyd.com
@@ -40885,6 +40883,7 @@ DOMAIN-SUFFIX,geoip.finanzen.net
 DOMAIN-SUFFIX,hokuspokus.tarnkappe.info
 DOMAIN-SUFFIX,llntrack.messe-duesseldorf.de
 DOMAIN-SUFFIX,lokalwerben.t-online.de
+DOMAIN-SUFFIX,lynx.gruender.de
 DOMAIN-SUFFIX,mat.ukraine-nachrichten.de
 DOMAIN-SUFFIX,metrics.n-tv.de
 DOMAIN-SUFFIX,navigation-timing.meinestadt.de

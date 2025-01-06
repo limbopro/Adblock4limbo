@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Tue, 31 Dec 2024 03:22:42 GMT
-# entries:        3547
+# entries:        3545
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1142,6 +1142,7 @@ DOMAIN-SUFFIX,blogcounter.de, reject
 DOMAIN-SUFFIX,blogherads.com, reject
 DOMAIN-SUFFIX,blogtoplist.se, reject
 DOMAIN-SUFFIX,blogtopsites.com, reject
+DOMAIN-SUFFIX,blueadvertise.com, reject
 DOMAIN-SUFFIX,blueconic.com, reject
 DOMAIN-SUFFIX,blueconic.net, reject
 DOMAIN-SUFFIX,bluekai.com, reject
@@ -2325,7 +2326,6 @@ DOMAIN-SUFFIX,mylead-tracking.tracknow.info, reject
 DOMAIN-SUFFIX,mylead.global, reject
 DOMAIN-SUFFIX,mylink-today.com, reject
 DOMAIN-SUFFIX,mypagerank.net, reject
-DOMAIN-SUFFIX,mypagerank.ru, reject
 DOMAIN-SUFFIX,mypowermall.com, reject
 DOMAIN-SUFFIX,mystat-in.net, reject
 DOMAIN-SUFFIX,mystat.pl, reject
@@ -2487,7 +2487,6 @@ DOMAIN-SUFFIX,pageranktop.com, reject
 DOMAIN-SUFFIX,painstakingpickle.com, reject
 DOMAIN-SUFFIX,paleleaf.com, reject
 DOMAIN-SUFFIX,panatenlink.pl, reject
-DOMAIN-SUFFIX,panickycurtain.com, reject
 DOMAIN-SUFFIX,panickypancake.com, reject
 DOMAIN-SUFFIX,panoramicplane.com, reject
 DOMAIN-SUFFIX,parachutehome.sjv.io, reject
@@ -2962,7 +2961,6 @@ DOMAIN-SUFFIX,sombersurprise.com, reject
 DOMAIN-SUFFIX,somniture.stuff.co.nz, reject
 DOMAIN-SUFFIX,somoaudience.com, reject
 DOMAIN-SUFFIX,sonobi.com, reject
-DOMAIN-SUFFIX,sordidsmile.com, reject
 DOMAIN-SUFFIX,sortable.com, reject
 DOMAIN-SUFFIX,sourcepoint.vice.com, reject
 DOMAIN-SUFFIX,sovrn.com, reject

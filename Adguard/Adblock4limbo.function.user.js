@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2024.12.31
+// @version      0.2025.01.05
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -1456,6 +1456,7 @@ function parentElement_add() {
                 parent_push('.echo', 'PornMaker', 4, '著名片商//', 'porn')
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
                 parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
+                parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
                 parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
@@ -1465,7 +1466,6 @@ function parentElement_add() {
                 parent_push('.echo', 'news', '10', '时事新闻//', 'currentnews')
                 parent_push('.echo', 'technews', '10', '科技新闻//', 'technews')
                 parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
-                parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
                 parent_push('.echo', 'front-build', 4, "建站工具//", "front-build")
                 parent_push('.echo', 'domain-buy', 4, "域名注册商//", "domain-buy")
@@ -1489,6 +1489,7 @@ function parentElement_add() {
                 parent_push('.echo', 'comic18', 4, '漫画//', 'comic18')
                 parent_push('.echo', 'Tools', 4, "多宝盒//", "Tools")
                 parent_push('.echo', 'dload', 4, '下载工具//', 'dload')
+                parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push(".echo", 'Search', 4, '搜索引擎//', 'search')
                 parent_push('.echo', 'Social', 4, '社交媒体//', 'Social')
                 parent_push('.echo', 'Media', 4, '流媒体//', 'Media')
@@ -1497,7 +1498,6 @@ function parentElement_add() {
                 parent_push('.echo', 'news', '10', '时事新闻//', 'currentnews')
                 parent_push('.echo', 'technews', '10', '科技新闻//', 'technews')
                 parent_push('.echo', 'writer', '10', '广告与写作//', 'writer')
-                parent_push('.echo', 'bookreadanddownload', '4', '电子书//', 'bookreadanddownload')
                 parent_push('.echo', 'seoandmore', 4, "建站指北//", "seoandmore")
                 parent_push('.echo', 'front-build', 4, "建站工具//", "front-build")
                 parent_push('.echo', 'domain-buy', 4, "域名注册商//", "domain-buy")

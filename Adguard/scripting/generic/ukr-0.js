@@ -33,7 +33,7 @@
 
 // ukr-0
 
-const toImport = [[16300881,".nts-video-wrapper"]];
+const toImport = [[11868393,".nts-ad"],[16300881,".nts-video-wrapper"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

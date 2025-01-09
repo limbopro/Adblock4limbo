@@ -39,7 +39,7 @@ const uBOL_preventSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["tpcHt1ml","1006"],["tpcHt0ml","1006"],["adhtml","10006"],[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["getCookie(\""],["location.href","3000"]];
+const argsList = [["tpcHt1ml","1006"],["tpcHt0ml","1006"],["adhtml","10006"],[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/tpc.?[A-Z0-9].?tml/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["checkCookie"],["location.href","3000"]];
 
 const hostnamesMap = new Map([["t66y.com",[0,1,2,15]],["ftchinese.com",3],["manwa.fun",4],["18comic.vip",5],["itdog.cn",6],["xbeibeix.com",7],["520cc.cc",[8,23]],["colamanga.com",9],["cocomanga.com",[9,20]],["ekamus.info",10],["logi.im",10],["moeci.com",11],["tingfm.com",12],["233tw.com",13],["ruanyifeng.com",14],["tsubasa.im",16],["league-funny.com",17],["haoweichi.com",18],["zhenbuka.com",19],["ohmanhua.com",20],["onemanhua.com",20],["5278.cc",21],["hboav.com",21],["axutongxue.net",22]]);
 

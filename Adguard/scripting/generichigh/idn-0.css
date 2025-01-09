@@ -231,6 +231,8 @@
 [src^="/image/bandarxl."],
 [title="AREASLOTS" i],
 [title="Bandar Togel Terpercaya" i],
+[title="DEWA CUAN" i],
+[title="GALA288" i],
 [title="Ovovegas" i],
 [title="Slot Gacor" i],
 [title="Texaspoker" i],
@@ -3758,7 +3760,6 @@ img[href^="http://bokepbet.xyz/"],
 img[href^="http://duniavegas88.com/"],
 img[href^="http://qqdingdong.com/"],
 img[href^="http://www.ovovegas.live/"],
-img[href^="https://pakarjackpot.com/"],
-img[title="DEWA CUAN" i] {
+img[href^="https://pakarjackpot.com/"] {
     display: none !important;
 }

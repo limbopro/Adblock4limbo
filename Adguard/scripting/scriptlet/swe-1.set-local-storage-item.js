@@ -39,9 +39,9 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/^ev_did|ev_sid/","$remove$"]];
+const argsList = [["/^ev_did|ev_sid/","$remove$"],["marketingConsent","false"],["necessaryConsent","true"],["personalisationConsent","false"]];
 
-const hostnamesMap = new Map([["synonymer.se",0]]);
+const hostnamesMap = new Map([["synonymer.se",0],["webhallen.com",[1,2,3]]]);
 
 const entitiesMap = new Map([]);
 

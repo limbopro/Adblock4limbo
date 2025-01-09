@@ -39,9 +39,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write","_blank"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"],["document.createElement","/\\.src=[\\s\\S]*?Date[\\s\\S]*?getElementsByTagName/"]];
+const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["jQuery","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write","_blank"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"],["document.createElement","/\\.src=[\\s\\S]*?getElementsByTagName/"]];
 
-const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["mordefter.com",7],["dizigom1.tv",8],["ulketv.com.tr",9],["kenttv.net",10],["ulker.com.tr",11],["duzcetv.com",12],["bizimyaka.com",13],["sinefil.tv",14]]);
+const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["vknsorgula.net",1],["okultanitimi.net",2],["asyadrama.com",3],["otopark.com",4],["turkrock.com",4],["osxinfo.net",4],["hacoos.com",5],["kampanyatakip.blogspot.com",6],["mordefter.com",7],["dizigom1.tv",8],["ulketv.com.tr",9],["kenttv.net",10],["ulker.com.tr",11],["duzcetv.com",12],["bizimyaka.com",13],["sinefil.tv",14],["dizilla.club",14],["dizilla10.com",14],["dizilla11.com",14],["dizilla12.com",14],["dizilla13.com",14],["dizilla14.com",14],["dizilla15.com",14],["dizilla16.com",14],["dizilla17.com",14],["dizilla18.com",14],["dizilla19.com",14],["dizilla20.com",14]]);
 
 const entitiesMap = new Map([]);
 

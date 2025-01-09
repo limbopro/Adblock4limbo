@@ -43,7 +43,7 @@ const argsList = [["HTMLAnchorElement.prototype.click","a[target=\"_blank\"][sty
 
 const hostnamesMap = new Map([["cety.app",0],["cuty.me",0],["upn.one",1]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["upns",1]]);
 
 const exceptionsMap = new Map([]);
 

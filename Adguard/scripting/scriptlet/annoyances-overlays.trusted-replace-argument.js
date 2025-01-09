@@ -39,9 +39,9 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Array.prototype.includes","0","undefined","condition","visitor-gate"]];
+const argsList = [["Array.prototype.includes","0","undefined","condition","visitor-gate"],["Storage.prototype.setItem","0","json:\"freeVideoFriendly\"","condition","freeVideoFriendlySlug"]];
 
-const hostnamesMap = new Map([["perplexity.ai",0]]);
+const hostnamesMap = new Map([["perplexity.ai",0],["nebula.tv",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -62,7 +62,7 @@ function trustedReplaceArgument(
     const replacer = argraw.startsWith('repl:/') &&
         parseReplaceFn(argraw.slice(5)) || undefined;
     const value = replacer === undefined &&
-        validateConstantFn(true, argraw, extraArgs) || undefined;
+        validateConstantFn(true, argraw, extraArgs);
     const reCondition = extraArgs.condition
         ? safe.patternToRegex(extraArgs.condition)
         : /^/;

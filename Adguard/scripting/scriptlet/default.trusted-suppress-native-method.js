@@ -39,9 +39,9 @@ const uBOL_trustedSuppressNativeMethod = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"]];
+const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"],["Document.prototype.querySelectorAll","\"FjZoRb\"","abort"],["Document.prototype.getElementsByClassName","\"FjZoRb\"","abort"],["Document.prototype.querySelector","/navpromo/","abort"],["Document.prototype.getElementById","/^navpromo/","abort"]];
 
-const hostnamesMap = new Map([["cinema.com.my",0]]);
+const hostnamesMap = new Map([["cinema.com.my",0],["japscan.lol",[1,2,3,4]]]);
 
 const entitiesMap = new Map([]);
 

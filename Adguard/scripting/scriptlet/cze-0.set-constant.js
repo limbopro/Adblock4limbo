@@ -39,9 +39,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["useSeznamAds","false"]];
+const argsList = [["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["sssp","trueFunc"],["errSZ","undefined"],["showFairUser001","true"],["useSeznamAds","false"]];
 
-const hostnamesMap = new Map([["hokej.cz",0],["impuls.cz",1],["media.joj.sk",[2,3]],["media.cms.markiza.sk",2],["mobilenet.cz",[4,5]],["fzone.cz",[4,5]],["fdrive.cz",[4,5]],["podcasty.seznam.cz",[6,7]],["root.cz",8],["tn.nova.cz",9]]);
+const hostnamesMap = new Map([["hokej.cz",0],["impuls.cz",1],["media.joj.sk",[2,3]],["media.cms.markiza.sk",2],["mobilenet.cz",[4,5]],["fzone.cz",[4,5]],["fdrive.cz",[4,5]],["podcasty.seznam.cz",[6,7]],["root.cz",8],["titulky.com",[9,10,11]],["tn.nova.cz",12]]);
 
 const entitiesMap = new Map([]);
 

@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["click","open"]];
 
-const hostnamesMap = new Map([["survey-smiles.com",0],["motchilltv.now",0]]);
+const hostnamesMap = new Map([["survey-smiles.com",0],["motchilltv.love",0]]);
 
 const entitiesMap = new Map([]);
 

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501090256
+## ! Version: 202501121238
 ## ! Title: EasyPrivacy
-## ! Last modified: 09 Jan 2025 02:56 UTC
+## ! Last modified: 12 Jan 2025 12:38 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1040,6 +1040,7 @@ DOMAIN-SUFFIX,dramaticdirection.com, reject
 DOMAIN-SUFFIX,drawservant.com, reject
 DOMAIN-SUFFIX,dreamycanyon.com, reject
 DOMAIN-SUFFIX,dressexpansion.com, reject
+DOMAIN-SUFFIX,driftingchef.com, reject
 DOMAIN-SUFFIX,driftpizza.com, reject
 DOMAIN-SUFFIX,dripappliance.com, reject
 DOMAIN-SUFFIX,driverequest.com, reject
@@ -1571,11 +1572,13 @@ DOMAIN-SUFFIX,majesticmountainrange.com, reject
 DOMAIN-SUFFIX,majesticwaterscape.com, reject
 DOMAIN-SUFFIX,majesticwilderness.com, reject
 DOMAIN-SUFFIX,makeshiftmine.com, reject
+DOMAIN-SUFFIX,makesimpact.com, reject
 DOMAIN-SUFFIX,maliciousmusic.com, reject
 DOMAIN-SUFFIX,managedpush.com, reject
 DOMAIN-SUFFIX,maniacalappliance.com, reject
 DOMAIN-SUFFIX,mantrafox.com, reject
 DOMAIN-SUFFIX,mapbasin.com, reject
+DOMAIN-SUFFIX,mapcommand.com, reject
 DOMAIN-SUFFIX,marblediscussion.com, reject
 DOMAIN-SUFFIX,markahouse.com, reject
 DOMAIN-SUFFIX,markedcrayon.com, reject
@@ -1636,6 +1639,7 @@ DOMAIN-SUFFIX,minuterhythm.com, reject
 DOMAIN-SUFFIX,miscreantmine.com, reject
 DOMAIN-SUFFIX,miscreantmoon.com, reject
 DOMAIN-SUFFIX,missionrewards.com, reject
+DOMAIN-SUFFIX,mistervillas.com, reject
 DOMAIN-SUFFIX,mistyhorizon.com, reject
 DOMAIN-SUFFIX,mittencattle.com, reject
 DOMAIN-SUFFIX,mixedreading.com, reject
@@ -2301,6 +2305,7 @@ DOMAIN-SUFFIX,stingyshoe.com, reject
 DOMAIN-SUFFIX,stingyspoon.com, reject
 DOMAIN-SUFFIX,stockingsleet.com, reject
 DOMAIN-SUFFIX,stockingsneeze.com, reject
+DOMAIN-SUFFIX,stocktheme.com, reject
 DOMAIN-SUFFIX,stomachscience.com, reject
 DOMAIN-SUFFIX,stonechin.com, reject
 DOMAIN-SUFFIX,stopstomach.com, reject
@@ -2846,6 +2851,7 @@ DOMAIN-SUFFIX,browser-intake-datadoghq.com, reject
 DOMAIN-SUFFIX,browser.covatic.io, reject
 DOMAIN-SUFFIX,browser.pipe.aria.microsoft.com, reject
 DOMAIN-SUFFIX,bs.yandex.ru, reject
+DOMAIN-SUFFIX,c.albss.com, reject
 DOMAIN-SUFFIX,c.amazinglybrilliant.com.au, reject
 DOMAIN-SUFFIX,c.bazo.io, reject
 DOMAIN-SUFFIX,c.imedia.cz, reject
@@ -3267,8 +3273,6 @@ DOMAIN-SUFFIX,perso.aws.arc.pub, reject
 DOMAIN-SUFFIX,pets.channeladvisor.com, reject
 DOMAIN-SUFFIX,pi.ispot.tv, reject
 DOMAIN-SUFFIX,ping.dozuki.com, reject
-DOMAIN-SUFFIX,ping.fastsimon.com, reject
-DOMAIN-SUFFIX,ping.instantsearchplus.com, reject
 DOMAIN-SUFFIX,pings.conviva.com, reject
 DOMAIN-SUFFIX,pings.vidpulse.com, reject
 DOMAIN-SUFFIX,pipe-collect.ebu.io, reject
@@ -4208,6 +4212,7 @@ DOMAIN-SUFFIX,bs.nakanohito.jp, reject
 DOMAIN-SUFFIX,bvr.ast.snva.jp, reject
 DOMAIN-SUFFIX,bvr.snva.jp, reject
 DOMAIN-SUFFIX,client-log.karte.io, reject
+DOMAIN-SUFFIX,collector.t-idr.com, reject
 DOMAIN-SUFFIX,cookie.sync.usonar.jp, reject
 DOMAIN-SUFFIX,counter2.blog.livedoor.com, reject
 DOMAIN-SUFFIX,crossees.com, reject

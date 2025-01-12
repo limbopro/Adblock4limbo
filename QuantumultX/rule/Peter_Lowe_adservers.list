@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 31 Dec 2024 03:22:42 GMT
-# entries:        3545
+# last updated:   Sun, 12 Jan 2025 11:07:40 GMT
+# entries:        3544
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1142,7 +1142,6 @@ DOMAIN-SUFFIX,blogcounter.de, reject
 DOMAIN-SUFFIX,blogherads.com, reject
 DOMAIN-SUFFIX,blogtoplist.se, reject
 DOMAIN-SUFFIX,blogtopsites.com, reject
-DOMAIN-SUFFIX,blueadvertise.com, reject
 DOMAIN-SUFFIX,blueconic.com, reject
 DOMAIN-SUFFIX,blueconic.net, reject
 DOMAIN-SUFFIX,bluekai.com, reject
@@ -1758,7 +1757,6 @@ DOMAIN-SUFFIX,fxstyle.net, reject
 DOMAIN-SUFFIX,g2.gumgum.com, reject
 DOMAIN-SUFFIX,ga.clearbit.com, reject
 DOMAIN-SUFFIX,gadsbee.com, reject
-DOMAIN-SUFFIX,galaxien.com, reject
 DOMAIN-SUFFIX,game-advertising-online.com, reject
 DOMAIN-SUFFIX,gamesites100.net, reject
 DOMAIN-SUFFIX,gamesites200.com, reject
@@ -1789,6 +1787,7 @@ DOMAIN-SUFFIX,go-rank.de, reject
 DOMAIN-SUFFIX,go-redirect.pl, reject
 DOMAIN-SUFFIX,go.dhs.gov, reject
 DOMAIN-SUFFIX,go.eu.sparkpostmail1.com, reject
+DOMAIN-SUFFIX,go.first.org, reject
 DOMAIN-SUFFIX,go.icann.org, reject
 DOMAIN-SUFFIX,go.scmagazine.com, reject
 DOMAIN-SUFFIX,go.usa.gov, reject
@@ -2064,7 +2063,6 @@ DOMAIN-SUFFIX,lemnisk.co, reject
 DOMAIN-SUFFIX,lever-analytics.com, reject
 DOMAIN-SUFFIX,lfeeder.com, reject
 DOMAIN-SUFFIX,lfstmedia.com, reject
-DOMAIN-SUFFIX,lgad.cjpowercast.com.edgesuite.net, reject
 DOMAIN-SUFFIX,lgsmartad.com, reject
 DOMAIN-SUFFIX,li.alibris.com, reject
 DOMAIN-SUFFIX,li.azstarnet.com, reject
@@ -2167,6 +2165,7 @@ DOMAIN-SUFFIX,mail-ads.google.com, reject
 DOMAIN-SUFFIX,maltiverse.lt.acemlnc.com, reject
 DOMAIN-SUFFIX,manageadv.cblogs.eu, reject
 DOMAIN-SUFFIX,mantisadnetwork.com, reject
+DOMAIN-SUFFIX,mapcommand.com, reject
 DOMAIN-SUFFIX,marinsm.com, reject
 DOMAIN-SUFFIX,markedmeasure.com, reject
 DOMAIN-SUFFIX,marketing.888.com, reject

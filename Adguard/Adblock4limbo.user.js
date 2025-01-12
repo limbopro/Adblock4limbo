@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.01.02
+// @version      0.2025.01.12
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -117,6 +117,7 @@
 // @match        https://www.libvio.pro/*
 // @match        https://www.libvio.top/*
 // @match        https://www.libvio.me/*
+// @match        https://www.libvio.fun/*
 // @match        https://www.tvn.cc/*
 // @match        https://m.tvn.cc/*
 // @match        https://wap.tvn.cc/*
@@ -311,7 +312,7 @@ var imax = {
         btbdys: "div[style*='z-index:999'],.artplayer-plugin-ads, .artplayer-plugin-ads, *#ad-float, a[href*='z2py'], a[href*='dodder'], .ayx[style^=\"position\: fixed;bottom\"],#ad-index,#adsbox,.ayx[style=\"display:block;\"],.ayx[style^=\"position: fixed;bottom\"],a[target*=_new] {display:none !important;}", // 哔滴影视
         switch: ".switch {display:none !important}",
         ddrk: "div#afc_sidebar_2842, div.cfa_popup, div[class*='popup'], #sajdhfbjwhe, #kasjbgih, #fkasjgf, img[src*='bcebos'] {opacity:0% !important; pointer-events: none !important;}",
-        baidu_zhidao: "*,.ad-link:not(.adsbox), .ad-icon, .ec-ad, mdiv[class$='-ecom-ads'],div[class*='fc-'][tplid],.ec_ad_results, .ad-icon, .wpbyuwfarr-ecom-ads, div[class*=\"fc-\"][tplid], .w-question-list[data-sign], .ec-ad, {display:none !important;}",
+        baidu_zhidao: "div[class$='-ecom-ads'], div[class*='fc-'][tplid], .wgt-ads {display :none !important; pointer-events: none !important;}",
         baidu_search: "div[style*=fixed],.ec_ad_results {display:none !important;} ", // baidu
         baidu_index: "a[data-tclog] > img, #foot, .recordcode, .index-copyright, div[style*='overflow'], .rn-container, .s-loading-frame.bottom {display:none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
@@ -378,8 +379,9 @@ function values() {
         "avple",
         "18comic",
         "wnacg",
-        "zhidao",
-        "baidu",
+        "zhidao.baidu.com",
+        "www.baidu.com",
+        "m.baidu.com",
         "ddys",
         "jable",
         "bdys",
@@ -570,10 +572,14 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'wnacg':
             css_adsRemove(imax.css.wnacg);
             break;
-        case 'zhidao':
-            css_adsRemove(imax.css.baidu_zhidao)
+        case 'zhidao.baidu.com':
+            console.log('it\'s zhidao.baidu.com')
+            css_adsRemove(imax.css.baidu_zhidao, 500, 'fuckbaidu')
+            setTimeout(() => {
+                css_adsRemove(imax.css.baidu_zhidao, 500, 'fuckbaidu')
+            }, 1500)
             break;
-        case 'baidu':
+        case 'www.baidu.com':
             console.log('Got u! baidu.com')
             let regex = /https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)/gi
             window.location.href.search(regex) !== -1
@@ -585,7 +591,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 css_adsRemove(imax.css.baidu_index);
                 console.log('移首页广告🪧...')
             }
-
             break;
         case 'ddys':
             //css_adsRemove(imax.css.ddrk);

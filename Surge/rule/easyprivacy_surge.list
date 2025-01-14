@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501121238
+## ! Version: 202501141457
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Jan 2025 12:38 UTC
+## ! Last modified: 14 Jan 2025 14:57 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2247,6 +2247,7 @@ DOMAIN-SUFFIX,springsister.com
 DOMAIN-SUFFIX,springsnails.com
 DOMAIN-SUFFIX,sproutingbag.com
 DOMAIN-SUFFIX,sprydelta.com
+DOMAIN-SUFFIX,sprysummit.com
 DOMAIN-SUFFIX,spuriousair.com
 DOMAIN-SUFFIX,spuriousbase.com
 DOMAIN-SUFFIX,spurioussquirrel.com
@@ -4645,6 +4646,7 @@ DOMAIN-SUFFIX,dabu.askmediagroup.com
 DOMAIN-SUFFIX,data.allstate.com
 DOMAIN-SUFFIX,data.guide.photobucket.com
 DOMAIN-SUFFIX,data.torry.io
+DOMAIN-SUFFIX,data.ublock-browser.com
 DOMAIN-SUFFIX,data.younow.com
 DOMAIN-SUFFIX,datadome.maisonsdumonde.com
 DOMAIN-SUFFIX,datum.jsdelivr.com
@@ -4822,6 +4824,7 @@ DOMAIN-SUFFIX,metrics.bangbros.com
 DOMAIN-SUFFIX,metrics.camsoda.com
 DOMAIN-SUFFIX,metrics.freemake.com
 DOMAIN-SUFFIX,metrics.hackerrank.com
+DOMAIN-SUFFIX,metrics.hyperliquid.xyz
 DOMAIN-SUFFIX,metrics.onewegg.com
 DOMAIN-SUFFIX,metrics.roblox.com
 DOMAIN-SUFFIX,metrics.spkt.io

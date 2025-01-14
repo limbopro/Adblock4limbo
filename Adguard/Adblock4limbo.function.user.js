@@ -1152,7 +1152,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['NameCheap', 'https://www.namecheap.com/', '_blank', 'domain-buy', 'common'],
 ['freenom', 'https://www.freenom.com/zh/freeandpaiddomains.html', '_blank', 'domain-buy', 'common'],
 ['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'special'],
-['Missav', 'https://missav.com/cn/', '_blank', 'xOnline', 'special'],
+['Missav', 'https://missav.ws/cn/', '_blank', 'xOnline', 'special'],
 ['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'special'],
 ['Javbus', 'https://www.javbus.com/', '_blank', 'xOnline', 'special'],
 ['Jav.land', 'https://jav.land/', '_blank', 'xOnline', 'special'],
@@ -2370,7 +2370,7 @@ function tmd(parentsSelector, code, textContent) {
             p2.appendChild(lable)
         }
 
-        aAdd2Parent('MissAV[720P]', 'https://missav.com/search', '/' + code)
+        aAdd2Parent('MissAV[720P]', 'https://missav.ws/search', '/' + code)
         aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
         aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
         aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")

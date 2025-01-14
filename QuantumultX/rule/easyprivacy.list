@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501121238
+## ! Version: 202501141457
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Jan 2025 12:38 UTC
+## ! Last modified: 14 Jan 2025 14:57 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2247,6 +2247,7 @@ DOMAIN-SUFFIX,springsister.com, reject
 DOMAIN-SUFFIX,springsnails.com, reject
 DOMAIN-SUFFIX,sproutingbag.com, reject
 DOMAIN-SUFFIX,sprydelta.com, reject
+DOMAIN-SUFFIX,sprysummit.com, reject
 DOMAIN-SUFFIX,spuriousair.com, reject
 DOMAIN-SUFFIX,spuriousbase.com, reject
 DOMAIN-SUFFIX,spurioussquirrel.com, reject
@@ -4645,6 +4646,7 @@ DOMAIN-SUFFIX,dabu.askmediagroup.com, reject
 DOMAIN-SUFFIX,data.allstate.com, reject
 DOMAIN-SUFFIX,data.guide.photobucket.com, reject
 DOMAIN-SUFFIX,data.torry.io, reject
+DOMAIN-SUFFIX,data.ublock-browser.com, reject
 DOMAIN-SUFFIX,data.younow.com, reject
 DOMAIN-SUFFIX,datadome.maisonsdumonde.com, reject
 DOMAIN-SUFFIX,datum.jsdelivr.com, reject
@@ -4822,6 +4824,7 @@ DOMAIN-SUFFIX,metrics.bangbros.com, reject
 DOMAIN-SUFFIX,metrics.camsoda.com, reject
 DOMAIN-SUFFIX,metrics.freemake.com, reject
 DOMAIN-SUFFIX,metrics.hackerrank.com, reject
+DOMAIN-SUFFIX,metrics.hyperliquid.xyz, reject
 DOMAIN-SUFFIX,metrics.onewegg.com, reject
 DOMAIN-SUFFIX,metrics.roblox.com, reject
 DOMAIN-SUFFIX,metrics.spkt.io, reject

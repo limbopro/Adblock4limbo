@@ -39,9 +39,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["dismissedTrackingBanner","true"],["CookieTerm18","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
+const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["sae-conversational-consent-msg-closed","true"],["dismissedTrackingBanner","true"],["CookieTerm18","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
 
-const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["blockchain.com",4],["fatalmodel.com",5],["brightonandhovealbion.com",6],["ssga.com",7],["cachecrawler.com",[8,9]],["griffin.com",10],["c6bank.com.br",11],["gedik.com",12],["collato.com",[13,14]]]);
+const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["shop-apotheke.com",4],["redcare.it",4],["shop-apotheke.at",4],["farmaline.be",4],["blockchain.com",5],["fatalmodel.com",6],["brightonandhovealbion.com",7],["ssga.com",8],["cachecrawler.com",[9,10]],["griffin.com",11],["c6bank.com.br",12],["gedik.com",13],["collato.com",[14,15]]]);
 
 const entitiesMap = new Map([]);
 
@@ -113,7 +113,7 @@ function setLocalStorageItemFn(
         } else {
             storage.setItem(key, `${value}`);
         }
-    } catch(ex) {
+    } catch {
     }
 }
 
@@ -138,6 +138,7 @@ function getSafeCookieValuesFn() {
         'yes', 'y', 'no', 'n',
         'all', 'none', 'functional',
         'granted', 'done',
+        'decline', 'declined',
     ];
 }
 
@@ -241,7 +242,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -319,7 +320,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

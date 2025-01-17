@@ -39,9 +39,9 @@ const uBOL_trustedReplaceFetchResponse = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["\"adPlacements\"","\"no_ads\"","player?"],["\"adSlots\"","\"no_ads\"","player?"],["/<VAST version.+VAST>/","<VAST version=\\\"4.0\\\"></VAST>","deezer.getAudiobreak"],["/\\{\"id\":\\d{9,11}(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationCarousel"],["/\\{\"category_id\"(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationalCarousel"],["/\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},/g","","/\\/graphql\\/productRecommendation/i"],["/,\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true(?:(?!\"__typename\":\"recommendationItem\").)+?\"__typename\":\"recommendationItem\"\\}(?=\\])/","","/\\/graphql\\/productRecommendation/i"],["/\\{\"(?:productS|s)lashedPrice\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/RecomWidget"],["/\\{\"appUrl\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/ProductRecommendationQuery"],["/#EXT-X-KEY:METHOD=NONE\\n#EXT(?:INF:[^\\n]+|-X-DISCONTINUITY)\\n.+?(?=#EXT-X-KEY)/gms","","/media.m3u8"]];
+const argsList = [["\"adPlacements\"","\"no_ads\"","player?"],["\"adSlots\"","\"no_ads\"","player?"],["/<VAST version.+VAST>/","<VAST version=\\\"4.0\\\"></VAST>","deezer.getAudiobreak"],["/\\{\"id\":\\d{9,11}(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationCarousel"],["/\\{\"category_id\"(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationalCarousel"],["/\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},/g","","/\\/graphql\\/productRecommendation/i"],["/,\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true(?:(?!\"__typename\":\"recommendationItem\").)+?\"__typename\":\"recommendationItem\"\\}(?=\\])/","","/\\/graphql\\/productRecommendation/i"],["/\\{\"(?:productS|s)lashedPrice\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/RecomWidget"],["/\\{\"appUrl\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/ProductRecommendationQuery"],["/#EXT-X-KEY:METHOD=NONE\\n#EXT(?:INF:[^\\n]+|-X-DISCONTINUITY)\\n.+?(?=#EXT-X-KEY)/gms","","/media.m3u8"],["/\"remainingWatchDuration\":\\d+/","\"remainingWatchDuration\":9999999999","/stream"],["/\"midTierRemainingAdWatchCount\":\\d+,\"showAds\":(false|true)/","\"midTierRemainingAdWatchCount\":0,\"showAds\":false","/stream"]];
 
-const hostnamesMap = new Map([["www.youtube.com",[0,1]],["deezer.com",2],["tokopedia.com",[3,4,5,6,7,8]],["canela.tv",9]]);
+const hostnamesMap = new Map([["www.youtube.com",[0,1]],["deezer.com",2],["tokopedia.com",[3,4,5,6,7,8]],["canela.tv",9],["rooter.gg",[10,11]]]);
 
 const entitiesMap = new Map([]);
 
@@ -149,7 +149,7 @@ function matchObjectProperties(propNeedles, ...objs) {
         if ( value === undefined ) { continue; }
         if ( typeof value !== 'string' ) {
             try { value = safe.JSON_stringify(value); }
-            catch(ex) { }
+            catch { }
             if ( typeof value !== 'string' ) { continue; }
         }
         if ( safe.testPattern(details, value) ) { continue; }
@@ -279,7 +279,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -357,7 +357,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

@@ -39,9 +39,9 @@ const uBOL_spoofCSS = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],[".navbar-nav > li#navpromo2.nav-item > a","height","41px"],["div[class=\"nav tabTop\"] + div > div:first-child > div:first-child > a:has(> img[src*=\"/\"][src*=\"_\"][alt]), #head + div[id] > div:last-child > div > a:has(> img[src*=\"/\"][src*=\"_\"][alt])","display","block"]];
+const argsList = [["#btx1, #btx2, #wg-genx > .mediafire","visibility","visible"],["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["div[class=\"nav tabTop\"] + div > div:first-child > div:first-child > a:has(> img[src*=\"/\"][src*=\"_\"][alt]), #head + div[id] > div:last-child > div > a:has(> img[src*=\"/\"][src*=\"_\"][alt])","display","block"]];
 
-const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["jytechs.in",1],["dev.miuiflash.com",1],["djxmaza.in",1],["thecubexguide.com",1],["download.megaup.net",2],["japscan.lol",3],["1001tracklists.com",4]]);
+const hostnamesMap = new Map([["techcyan.com",0],["kiktu.com",0],["upshrink.com",0],["trangchu.news",0],["banaraswap.in",0],["jytechs.in",1],["dev.miuiflash.com",1],["djxmaza.in",1],["thecubexguide.com",1],["download.megaup.net",2],["1001tracklists.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -267,7 +267,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -345,7 +345,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

@@ -106,6 +106,7 @@ function getSafeCookieValuesFn() {
         'yes', 'y', 'no', 'n',
         'all', 'none', 'functional',
         'granted', 'done',
+        'decline', 'declined',
     ];
 }
 
@@ -209,7 +210,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -287,7 +288,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -344,7 +345,7 @@ function setCookieFn(
 
     try {
         document.cookie = cookieParts.join('');
-    } catch(_) {
+    } catch {
     }
 
     const done = getCookieFn(name) === value;

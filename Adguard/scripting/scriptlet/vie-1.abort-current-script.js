@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["Promise","detectedAdblock"],["$","popup"],["Number",";break;case"],["document.addEventListener","window.open"],["Object.defineProperty","ADMStorageFileCDN"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Object.defineProperty","fromCharCode"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["jQuery","popurl"],["document.addEventListener","linksToOpen"],["addEvent","popu"],["jQuery","click_time"],["$","open"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","open"],["document.addEventListener","shopee"],["$","window.open"],["eval"],["jQuery","click_ads"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["setTimeout","open"],["setTimeout","window.location"]];
 
-const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.name",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["cunghocvui.com",5],["dualeotruyenalpha.com",[6,42]],["m.blogtruyenmoi.com",6],["freeplayervideo.com",7],["abysscdn.com",7],["player-cdn.com",7],["geoip.redirect-ads.com",7],["playhydrax.com",7],["gocmod.com",8],["goctruyentranhvui6.com",9],["nettruyenrr.com",9],["sextop1.show",9],["hhvsub.com",9],["sayhentai.art",9],["xem.sexviet88.xyz",[9,42]],["gotphim.com",10],["haychillz.com",11],["hh3dhay.life",[12,13]],["hh3dhay.in",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",17],["linkneverdie.net",18],["linkneverdie.top",18],["linkneverdie2.com",18],["lrepacks.net",19],["lxmanga.live",20],["p.thoctv.com",21],["phimgichill.net",22],["phimhdc.wiki",23],["phimmoi.club",24],["motphimww.net",24],["phimmoinay.top",25],["phimsexchichnhau.com",26],["phimtho.net",27],["phimtuoitho.site",28],["rphang.online",29],["misskon.com",29],["saigon24.net",30],["sexhd88.club",31],["sieutamphim.com",32],["tinsoikeo.live",33],["truyen247.pro",34],["truyen35.shop",35],["truyenqqti.com",36],["viet69.cat",36],["truyenqqto.com",37],["truyensextv.com",38],["truyentuan.xyz",39],["ungtycomicsvip.org",[40,42]],["vailonxx.co",41],["www.phimchaua.com",41],["phimlongtieng.org",41],["viet69.hn",42],["ungtycomicsvip.com",42],["vlxx.tech",42],["yurineko.my",42],["vlxyz.tube",42],["hd.javhay.site",42],["phimsexhay669.pro",42],["cliphot69.cfd",42],["doctruyen3q3.net",42],["ihentai.fan",42],["jav.vc",42],["sex.tuoi69.store",42],["top1sex.me",42],["sexmup18.com",42],["hentaivn.today",42],["www.buomtv.io",42],["truyenvn.la",42],["cdnstream.sbs",42],["javtiful.com",42],["truyengihotdo.net",42],["truyengihotzay.net",42],["truyengihotnha.com",42],["truyengihotnha.net",42],["truyengihotnay.com",42],["quatvn.fit",42],["tenmientruyengi.net",42],["topviet69.video",42],["phim18hd.in",42],["nungdam.pro",42],["demo.14412882.com",42],["cliphot69.pics",42],["hhtq5.vip",42],["sexdiary.club",42],["vn2.xvideos69.xxx",42],["umetruyenhay.com",42],["damconuong.club",42],["viet69.ws",43],["vungoctuan.vn",44],["www.toptruyen28.net",45],["xnxx-sex-videos.com",46]]);
+const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.name",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["cunghocvui.com",5],["dualeotruyenbeta.com",[6,42]],["m.blogtruyenmoi.com",6],["freeplayervideo.com",7],["abysscdn.com",7],["player-cdn.com",7],["geoip.redirect-ads.com",7],["playhydrax.com",7],["gocmod.com",8],["goctruyentranhvui6.com",9],["nettruyenrr.com",9],["sextop1.show",9],["hhvsub.com",9],["sayhentai.art",9],["xem.sexviet88.xyz",[9,42]],["gotphim.com",10],["haychillz.com",11],["hh3dhay.life",[12,13]],["hh3dhay.in",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",17],["linkneverdie.net",18],["linkneverdie.top",18],["linkneverdie2.com",18],["lrepacks.net",19],["lxmanga.live",20],["p.thoctv.com",21],["phimgichill.net",22],["phimhdc.wiki",23],["phimmoi.club",24],["motphimww.net",24],["phimmoinay.top",25],["phimsexchichnhau.com",26],["phimtho.net",27],["phimtuoitho.site",28],["rphang.online",29],["misskon.com",29],["saigon24.net",30],["sexhd88.club",31],["sieutamphim.com",32],["tinsoikeo.live",33],["truyen247.pro",34],["truyen35.shop",35],["truyenqqti.com",36],["viet69.cat",36],["truyenqqto.com",37],["truyensextv.com",38],["truyentuan.xyz",39],["ungtycomicsvip.org",[40,42]],["vailonxx.co",41],["www.phimchaua.net",41],["phimlongtieng.org",41],["viet69.hn",42],["ungtycomicsvip.com",42],["vlxx.tech",42],["yurineko.my",42],["vlxyz.tube",42],["hd.javhay.site",42],["phimsexhay669.pro",42],["cliphot69.cfd",42],["doctruyen3q3.net",42],["ihentai.fan",42],["jav.vc",42],["sex.tuoi69.store",42],["top1sex.me",42],["sexmup18.com",42],["hentaivn.today",42],["www.buomtv.io",42],["truyenvn.la",42],["cdnstream.sbs",42],["javtiful.com",42],["truyengihotdo.net",42],["truyengihotzay.net",42],["truyengihotnha.com",42],["truyengihotnha.net",42],["truyengihotnay.com",42],["quatvn.fit",42],["tenmientruyengi.net",42],["top1phimsex.com",42],["phim18hd.in",42],["nungdam.pro",42],["demo.14412882.com",42],["cliphot69.pics",42],["hhtq5.vip",42],["sexdiary.club",42],["vn2.xvideos69.xxx",42],["umetruyenhay.com",42],["damconuong.club",42],["viet69.ws",43],["vungoctuan.vn",44],["www.toptruyen28.net",45],["xnxx-sex-videos.com",46]]);
 
 const entitiesMap = new Map([]);
 
@@ -106,7 +106,7 @@ function abortCurrentScriptCore(
                 text = self.decodeURIComponent(content);
                 break;
             }
-        } catch(ex) {
+        } catch {
         }
         scriptTexts.set(elem, text);
         return text;
@@ -285,7 +285,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -363,7 +363,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

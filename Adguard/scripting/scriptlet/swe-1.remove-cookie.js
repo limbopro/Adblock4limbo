@@ -39,9 +39,9 @@ const uBOL_removeCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ca_public_page_views"],["lmt"],["/^ev_did|ev_sid/"]];
+const argsList = [["/^ev_did|ev_sid/"]];
 
-const hostnamesMap = new Map([["chef.se",0],["lexbase.se",1],["synonymer.se",2]]);
+const hostnamesMap = new Map([["synonymer.se",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -211,7 +211,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -289,7 +289,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

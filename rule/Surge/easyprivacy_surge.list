@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501141457
+## ! Version: 202501171511
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Jan 2025 14:57 UTC
+## ! Last modified: 17 Jan 2025 15:11 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3025,6 +3025,7 @@ DOMAIN-SUFFIX,event.instiengage.com
 DOMAIN-SUFFIX,event.syndigo.cloud
 DOMAIN-SUFFIX,event.webcollage.net
 DOMAIN-SUFFIX,eventapi.libring.com
+DOMAIN-SUFFIX,eventcollector.mcf-prod.a.intuit.com
 DOMAIN-SUFFIX,eventgateway.soundcloud.com
 DOMAIN-SUFFIX,eventlog.chatlead.com
 DOMAIN-SUFFIX,eventlog.inspsearchapi.com

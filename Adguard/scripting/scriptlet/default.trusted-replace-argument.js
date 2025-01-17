@@ -89,8 +89,10 @@ function trustedReplaceArgument(
             return context.reflect();
         }
         const argBefore = getArg(context);
-        if ( safe.RegExp_test.call(reCondition, argBefore) === false ) {
-            return context.reflect();
+        if ( extraArgs.condition !== undefined ) {
+            if ( safe.RegExp_test.call(reCondition, argBefore) === false ) {
+                return context.reflect();
+            }
         }
         const argAfter = replacer && typeof argBefore === 'string'
             ? argBefore.replace(replacer.re, replacer.replacement)
@@ -121,7 +123,7 @@ function parseReplaceFn(s) {
     const flags = s.slice(parser.separatorEnd);
     try {
         return { re: new RegExp(pattern, flags), replacement };
-    } catch(_) {
+    } catch {
     }
 }
 
@@ -306,7 +308,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -384,7 +386,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -425,9 +427,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
         if ( raw.startsWith('json:') ) {
-            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw.slice(5)); } catch { return; }
         } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
-            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw).value; } catch { return; }
         }
     } else {
         return;

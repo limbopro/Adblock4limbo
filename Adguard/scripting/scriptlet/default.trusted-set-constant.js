@@ -39,9 +39,9 @@ const uBOL_trustedSetConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["google_srt","json:0.6"],["clickAds.banner.urls","json:[{\"url\":{\"limit\":0,\"url\":\"\"}}]"],["asc","json:{\"cmd\": [null], \"que\": [null], \"wrapperVersion\": \"6.19.0\", \"refreshQue\": {\"waitDelay\": 3000, \"que\": []}, \"isLoaded\": true, \"bidderSettings\": {}, \"libLoaded\": true, \"version\": \"v9.20.0\", \"installedModules\": [], \"adUnits\": [], \"aliasRegistry\": {}, \"medianetGlobals\": {}}"],["google_tag_manager","json:{ \"G-Z8CH48V654\": { \"_spx\": false, \"bootstrap\": 1704067200000, \"dataLayer\": { \"name\": \"dataLayer\" } }, \"SANDBOXED_JS_SEMAPHORE\": 0, \"dataLayer\": { \"gtmDom\": true, \"gtmLoad\": true, \"subscribers\": 1 }, \"sequence\": 1 }"],["premium","'1'"],["premium","1"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["dtGonza.playeradstime","\"-1\""],["libAnalytics","json: {\"status\":{\"dataAvailable\":false},\"data\":{}}"],["_omapp.scripts.geolocation","{\"value\": {\"status\":\"loaded\",\"object\":null,\"data\":{\"country\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_1\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_2\":{\"shortName\":\"\",\"longName\":\"\"},\"locality\":{\"shortName\":\"\",\"longName\":\"\"},\"original\":{\"ip\":\"\",\"ip_decimal\":null,\"country\":\"\",\"country_eu\":false,\"country_iso\":\"\",\"city\":\"\",\"latitude\":null,\"longitude\":null,\"user_agent\":{\"product\":\"\",\"version\":\"\",\"comment\":\"\",\"raw_value\":\"\"},\"zip_code\":\"\",\"time_zone\":\"\"}},\"error\":\"\"}}"],["navigator.userAgent","json:\"Mozilla/5.0 (NAVER) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\""]];
+const argsList = [["google_srt","json:0.6"],["clickAds.banner.urls","json:[{\"url\":{\"limit\":0,\"url\":\"\"}}]"],["asc","json:{\"cmd\": [null], \"que\": [null], \"wrapperVersion\": \"6.19.0\", \"refreshQue\": {\"waitDelay\": 3000, \"que\": []}, \"isLoaded\": true, \"bidderSettings\": {}, \"libLoaded\": true, \"version\": \"v9.20.0\", \"installedModules\": [], \"adUnits\": [], \"aliasRegistry\": {}, \"medianetGlobals\": {}}"],["google_tag_manager","json:{ \"G-Z8CH48V654\": { \"_spx\": false, \"bootstrap\": 1704067200000, \"dataLayer\": { \"name\": \"dataLayer\" } }, \"SANDBOXED_JS_SEMAPHORE\": 0, \"dataLayer\": { \"gtmDom\": true, \"gtmLoad\": true, \"subscribers\": 1 }, \"sequence\": 1 }"],["premium","'1'"],["navigator.userAgent","{\"value\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\"}"],["navigator.platform","{\"value\": \"iPhone\"}"],["dtGonza.playeradstime","\"-1\""],["__NEXT_DATA__.props.pageProps.broadcastData.remainingWatchDuration","json:9999999999"],["document.referrer","json:\"1\""],["libAnalytics","json: {\"status\":{\"dataAvailable\":false},\"data\":{}}"],["_omapp.scripts.geolocation","{\"value\": {\"status\":\"loaded\",\"object\":null,\"data\":{\"country\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_1\":{\"shortName\":\"\",\"longName\":\"\"},\"administrative_area_level_2\":{\"shortName\":\"\",\"longName\":\"\"},\"locality\":{\"shortName\":\"\",\"longName\":\"\"},\"original\":{\"ip\":\"\",\"ip_decimal\":null,\"country\":\"\",\"country_eu\":false,\"country_iso\":\"\",\"city\":\"\",\"latitude\":null,\"longitude\":null,\"user_agent\":{\"product\":\"\",\"version\":\"\",\"comment\":\"\",\"raw_value\":\"\"},\"zip_code\":\"\",\"time_zone\":\"\"}},\"error\":\"\"}}"],["navigator.userAgent","json:\"Mozilla/5.0 NAVER(inapp; search) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\""],["naverappapi","json:{\"getDeviceInfo\": 1}"]];
 
-const hostnamesMap = new Map([["streamelements.com",0],["savefrom.net",1],["jetpunk.com",[2,3]],["emturbovid.com",4],["findjav.com",4],["javggvideo.xyz",4],["mmtv01.xyz",4],["stbturbo.xyz",4],["streamsilk.com",4],["tuborstb.co",5],["app.blubank.com",6],["mobileweb.bankmellat.ir",[6,7]],["cinemitas.org",8],["cinelatino.net",8],["cineplus123.org",8],["paraveronline.org",8],["pobreflix.vc",8],["verpelis.gratis",8],["globo.com",9],["seclore.com",10],["dogdrip.net",11],["infinityfree.com",11],["smsonline.cloud",11]]);
+const hostnamesMap = new Map([["streamelements.com",0],["savefrom.net",1],["jetpunk.com",[2,3]],["emturbovid.com",4],["findjav.com",4],["javggvideo.xyz",4],["mmtv01.xyz",4],["stbturbo.xyz",4],["streamsilk.com",4],["app.blubank.com",5],["mobileweb.bankmellat.ir",[5,6]],["cinemitas.org",7],["cinelatino.net",7],["cineplus123.org",7],["paraveronline.org",7],["pobreflix.vc",7],["verpelis.gratis",7],["rooter.gg",8],["comdotgame.com",9],["globo.com",10],["seclore.com",11],["dogdrip.net",[12,13]],["infinityfree.com",[12,13]],["slashdot.org",[12,13]],["smsonline.cloud",[12,13]]]);
 
 const entitiesMap = new Map([]);
 
@@ -334,7 +334,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -412,7 +412,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -453,9 +453,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
         if ( raw.startsWith('json:') ) {
-            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw.slice(5)); } catch { return; }
         } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
-            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw).value; } catch { return; }
         }
     } else {
         return;

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 12 Jan 2025 11:07:40 GMT
-# entries:        3544
+# last updated:   Wed, 15 Jan 2025 14:33:58 GMT
+# entries:        3548
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -85,7 +85,6 @@ DOMAIN-SUFFIX,actonsoftware.com
 DOMAIN-SUFFIX,actualdeals.com
 DOMAIN-SUFFIX,actuallysheep.com
 DOMAIN-SUFFIX,actuallysnake.com
-DOMAIN-SUFFIX,actuallything.com
 DOMAIN-SUFFIX,acuityads.com
 DOMAIN-SUFFIX,acuityplatform.com
 DOMAIN-SUFFIX,ad-balancer.at
@@ -939,6 +938,7 @@ DOMAIN-SUFFIX,analytics.yahoo.com
 DOMAIN-SUFFIX,analyticsapi.happypancake.net
 DOMAIN-SUFFIX,ancientact.com
 DOMAIN-SUFFIX,androiddownload.net
+DOMAIN-SUFFIX,angossa.com
 DOMAIN-SUFFIX,aniview.com
 DOMAIN-SUFFIX,annonser.dagbladet.no
 DOMAIN-SUFFIX,annoyedairport.com
@@ -1757,6 +1757,7 @@ DOMAIN-SUFFIX,fxstyle.net
 DOMAIN-SUFFIX,g2.gumgum.com
 DOMAIN-SUFFIX,ga.clearbit.com
 DOMAIN-SUFFIX,gadsbee.com
+DOMAIN-SUFFIX,galaxien.com
 DOMAIN-SUFFIX,game-advertising-online.com
 DOMAIN-SUFFIX,gamesites100.net
 DOMAIN-SUFFIX,gamesites200.com
@@ -1810,6 +1811,7 @@ DOMAIN-SUFFIX,gotraffic.net
 DOMAIN-SUFFIX,gp.dejanews.com
 DOMAIN-SUFFIX,graizoah.com
 DOMAIN-SUFFIX,grandfatherguitar.com
+DOMAIN-SUFFIX,granlite.com
 DOMAIN-SUFFIX,grapeshot.co.uk
 DOMAIN-SUFFIX,greyinstrument.com
 DOMAIN-SUFFIX,greystripe.com
@@ -2562,6 +2564,7 @@ DOMAIN-SUFFIX,pointlesshour.com
 DOMAIN-SUFFIX,pointlessprofit.com
 DOMAIN-SUFFIX,pointroll.com
 DOMAIN-SUFFIX,pokkt.com
+DOMAIN-SUFFIX,polishedfolly.com
 DOMAIN-SUFFIX,popads.net
 DOMAIN-SUFFIX,popcash.net
 DOMAIN-SUFFIX,popmyads.com
@@ -2989,6 +2992,7 @@ DOMAIN-SUFFIX,spotx.tv
 DOMAIN-SUFFIX,spotxchange.com
 DOMAIN-SUFFIX,springbot.com
 DOMAIN-SUFFIX,springserve.com
+DOMAIN-SUFFIX,sprysummit.com
 DOMAIN-SUFFIX,spulse.net
 DOMAIN-SUFFIX,spylog.com
 DOMAIN-SUFFIX,spywarelabs.com
@@ -3143,7 +3147,6 @@ DOMAIN-SUFFIX,tealeaf.com
 DOMAIN-SUFFIX,tealium.cbsnews.com
 DOMAIN-SUFFIX,tealium.com
 DOMAIN-SUFFIX,tealiumiq.com
-DOMAIN-SUFFIX,tediousticket.com
 DOMAIN-SUFFIX,tedioustooth.com
 DOMAIN-SUFFIX,teenrevenue.com
 DOMAIN-SUFFIX,telaria.com
@@ -3351,6 +3354,7 @@ DOMAIN-SUFFIX,understoodocean.com
 DOMAIN-SUFFIX,undertone.com
 DOMAIN-SUFFIX,unidentifiedanalytics.web.app
 DOMAIN-SUFFIX,unknowntray.com
+DOMAIN-SUFFIX,unloadyourself.com
 DOMAIN-SUFFIX,unrulymedia.com
 DOMAIN-SUFFIX,untd.com
 DOMAIN-SUFFIX,untidyquestion.com

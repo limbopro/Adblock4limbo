@@ -39,9 +39,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["adsShow","true"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["runScript","false"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
+const argsList = [["constant.copyText",""],["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["adsShow","true"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["runScript","false"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
 
-const hostnamesMap = new Map([["anaj.ir",[0,1,2]],["salamatnews.com",[0,1,2]],["ac.ir",3],["androidgozar.com",4],["barcanews.org",5],["binanews.ir",6],["1da.ir",7],["1ea.ir",7],["2ad.ir",7],["themez.top",7],["fontyab.com",[8,9]],["fidibo.com",[10,11,12]],["my.mci.ir",[10,11,12,16,17]],["pwa.mci.ir",[10,11,12,16,17]],["ketabesabz.com",13],["lahzeakhar.com",14],["musicdel.ir",15],["msbmusic.ir",18],["myhastidl.cam",18],["netgasht.com",18],["opizo.me",19],["xip.li",19],["s-moshaver.com",20],["tamasha.com",[21,22,23]],["takmili.com",[24,25,26,27,28]],["takhfifan.com",[29,30]]]);
+const hostnamesMap = new Map([["blog.ir",0],["anaj.ir",[1,2,3]],["salamatnews.com",[1,2,3]],["ac.ir",4],["androidgozar.com",5],["barcanews.org",6],["binanews.ir",7],["1da.ir",8],["1ea.ir",8],["2ad.ir",8],["themez.top",8],["fontyab.com",[9,10]],["fidibo.com",[11,12,13]],["my.mci.ir",[11,12,13,17,18]],["pwa.mci.ir",[11,12,13,17,18]],["ketabesabz.com",14],["lahzeakhar.com",15],["musicdel.ir",16],["msbmusic.ir",19],["myhastidl.cam",19],["netgasht.com",19],["opizo.me",20],["xip.li",20],["s-moshaver.com",21],["tamasha.com",[22,23,24]],["takmili.com",[25,26,27,28,29]],["takhfifan.com",[30,31]]]);
 
 const entitiesMap = new Map([]);
 
@@ -334,7 +334,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -412,7 +412,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -453,9 +453,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
         if ( raw.startsWith('json:') ) {
-            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw.slice(5)); } catch { return; }
         } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
-            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw).value; } catch { return; }
         }
     } else {
         return;

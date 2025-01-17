@@ -39,9 +39,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","document.oncontextmenu ="],["script","ads_app_name"],["script","document.oncontextmenu="],["script","/popTimes_|document\\.onkeydown|'contextmenu'/"],["script","window.location="],["script","displayCountryInConsole"],["script","popTimes_"],["script","ad.setAttribute"],["script","Event.MOUSEDOWN"]];
+const argsList = [["script","document.oncontextmenu ="],["script","ads_app_name"],["script","document.oncontextmenu="],["script","/popTimes_|document\\.onkeydown|'contextmenu'/"],["script","window.location="],["script","displayCountryInConsole"],["script","popTimes_"],["script","ad.setAttribute"],["script","showScrollAlert"],["script","Event.MOUSEDOWN"]];
 
-const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["musiceman.net",3],["najiremix.ir",4],["persian-fa.ir",5],["iran-music.com",6],["tgju.org",7],["vaamfaa.ir",8]]);
+const hostnamesMap = new Map([["delta3da.cam",0],["public-psychology.ir",0],["sclinic.ir",0],["farsroid.com",1],["kihanb.ir",2],["musiceman.net",3],["najiremix.ir",4],["persian-fa.ir",5],["iran-music.com",6],["tgju.org",7],["tarafdari.com",8],["vaamfaa.ir",9]]);
 
 const entitiesMap = new Map([]);
 
@@ -294,7 +294,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -372,7 +372,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

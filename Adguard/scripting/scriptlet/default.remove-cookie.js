@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["da325"],["ref_cookie"],["/^/"],["PageCount"],[],["__adblocker"],["qusnyQusny"],["/vs|to|vs_spon|tgpOut|current_click/"],["ab"],["video_view_count"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_referer"],["kt_ips"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["MicrosoftApplicationsTelemetryFirstLaunchTime"],["/optimizelyEndUserId|s_fid|sc_tcr|s_cc/"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["/_alooma/"],["didomi_token"],["ig_did"]];
 
-const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["adultasianporn.com",2],["jetpunk.com",3],["skmedix.pl",4],["xxxxsx.com",4],["blick.ch",5],["seznam.cz",6],["sexvideos.host",7],["nexusmods.com",8],["buktube.com",9],["fullxh.com",9],["galleryxh.site",9],["megaxh.com",9],["movingxh.world",9],["seexh.com",9],["unlockxh4.com",9],["valuexh.life",9],["xhaccess.com",9],["xhadult2.com",9],["xhadult3.com",9],["xhadult4.com",9],["xhadult5.com",9],["xhamster46.com",9],["xhamsterporno.mx",9],["xhbig.com",9],["xhbranch5.com",9],["xhchannel.com",9],["xhchannel2.com",9],["xhdate.world",9],["xhday.com",9],["xhday1.com",9],["xhlease.world",9],["xhmoon5.com",9],["xhofficial.com",9],["xhopen.com",9],["xhplanet1.com",9],["xhplanet2.com",9],["xhreal2.com",9],["xhreal3.com",9],["xhspot.com",9],["xhtab2.com",9],["xhtab4.com",9],["xhtotal.com",9],["xhtree.com",9],["xhvictory.com",9],["xhwebsite.com",9],["xhwebsite2.com",9],["xhwebsite5.com",9],["xhwide1.com",9],["xhwide2.com",9],["xhwide5.com",9],["xhxh3.xyz",9],["beaumontenterprise.com",10],["chron.com",10],["ctinsider.com",10],["ctpost.com",10],["expressnews.com",10],["houstonchronicle.com",10],["lmtonline.com",10],["middletownpress.com",10],["mrt.com",10],["newstimes.com",10],["nhregister.com",10],["registercitizen.com",10],["sfchronicle.com",10],["stamfordadvocate.com",10],["thehour.com",10],["timesunion.com",10],["heavyfetish.com",[11,12,13]],["severeporn.com",13],["watchporn.to",13],["columbian.com",14],["nypost.com",14],["pagesix.com",14],["factable.com",[15,16]],["bing.com",17],["msn.com",17],["web.skype.com",[17,18]],["1und1.de",19],["androidpolice.com",20],["makeuseof.com",20],["movieweb.com",20],["xda-developers.com",20],["dev.to",[21,22]],["vpnmentor.com",23],["tv5mondeplus.com",24],["instagram.com",25]]);
+const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["adultasianporn.com",2],["jetpunk.com",3],["skmedix.pl",4],["xxxxsx.com",4],["blick.ch",5],["seznam.cz",6],["sexvideos.host",7],["nexusmods.com",8],["buktube.com",9],["fullxh.com",9],["galleryxh.site",9],["megaxh.com",9],["movingxh.world",9],["seexh.com",9],["unlockxh4.com",9],["valuexh.life",9],["xhaccess.com",9],["xhadult2.com",9],["xhadult3.com",9],["xhadult4.com",9],["xhadult5.com",9],["xhamster46.com",9],["xhamsterporno.mx",9],["xhbig.com",9],["xhbranch5.com",9],["xhchannel.com",9],["xhchannel2.com",9],["xhdate.world",9],["xhday.com",9],["xhday1.com",9],["xhlease.world",9],["xhmoon5.com",9],["xhofficial.com",9],["xhopen.com",9],["xhplanet1.com",9],["xhplanet2.com",9],["xhreal2.com",9],["xhreal3.com",9],["xhspot.com",9],["xhtab2.com",9],["xhtab4.com",9],["xhtotal.com",9],["xhtree.com",9],["xhvictory.com",9],["xhwebsite.com",9],["xhwebsite2.com",9],["xhwebsite5.com",9],["xhwide1.com",9],["xhwide2.com",9],["xhwide5.com",9],["beaumontenterprise.com",10],["chron.com",10],["ctinsider.com",10],["ctpost.com",10],["expressnews.com",10],["houstonchronicle.com",10],["lmtonline.com",10],["middletownpress.com",10],["mrt.com",10],["newstimes.com",10],["nhregister.com",10],["registercitizen.com",10],["sfchronicle.com",10],["stamfordadvocate.com",10],["thehour.com",10],["timesunion.com",10],["heavyfetish.com",[11,12,13]],["severeporn.com",13],["watchporn.to",13],["columbian.com",14],["nypost.com",14],["pagesix.com",14],["factable.com",[15,16]],["bing.com",17],["msn.com",17],["web.skype.com",[17,18]],["1und1.de",19],["androidpolice.com",20],["makeuseof.com",20],["movieweb.com",20],["xda-developers.com",20],["dev.to",[21,22]],["vpnmentor.com",23],["tv5mondeplus.com",24],["instagram.com",25]]);
 
 const entitiesMap = new Map([["hamsterix",9],["xhamster",9],["xhamster1",9],["xhamster10",9],["xhamster11",9],["xhamster12",9],["xhamster13",9],["xhamster14",9],["xhamster15",9],["xhamster16",9],["xhamster17",9],["xhamster18",9],["xhamster19",9],["xhamster20",9],["xhamster2",9],["xhamster3",9],["xhamster4",9],["xhamster42",9],["xhamster5",9],["xhamster7",9],["xhamster8",9]]);
 
@@ -211,7 +211,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -289,7 +289,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

@@ -89,6 +89,9 @@
 // @match        https://cn.pornhub.com/*
 // @match        https://www.pornhub.com/*
 // @match        https://missav.com/*
+// @match        https://missav.ai/*
+// @match        https://missav.ws/*
+// @match        https://bi-girl.net/*
 // @match        https://91porn.com/*
 // @match        https://91porna.com/*
 // @match        https://www.91porn.com/*
@@ -323,6 +326,7 @@ var imax = {
         dy555: "div.module {z-index:1!important} div.popup.popup-tips.none.popupShow, a[target=\"_blank\"] img,.playtop.col-pd,a[href*=\"?channelCode=\"] > img[src*=\".com:\"],#adsbox,div.myui-panel.myui-panel-bg.clearfix.wapad {display:none !important}", // 555影院
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         missav: "a[href^='https://theporndude.com'],a[href*='mycomic'],a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
+        bigirl: 'div#container + div, h4.adblock_title,div.adblock_subtitle,[class^=\'adblock\'],div[class^=\'ad_\'], .toppage_av {display:none !important; pointer-events: none !important;}', // https://bi-girl.net/
         porna91: "a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
         porn91: ".copysuccess {background:green !important;color:white !important;} br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
@@ -374,6 +378,7 @@ function values() {
     var adsDomain = [
         "pornhub",
         "missav",
+        "bi-girl",
         "91porna",
         "91porn.",
         "avple",
@@ -1293,7 +1298,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             setTimeout(() => {
                 document.querySelectorAll("div[class*='modalCloseButton']")[0].click()
             }, 500)
-
             break;
 
         case 'novel543':
@@ -1303,6 +1307,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'diyibanzhu':
             css_adsRemove(imax.css.diyibanzhu, 100, 'novel543x');
             window_open_defuser(); // 打断 window.open 施法
+            break;
+
+        case 'bi-girl': // bigirl
+            css_adsRemove(imax.css.bigirl, 500, 'bigirl')
+            js_adsRemove(uBlockOrigin.noevalif);
             break;
 
         case 'missav':
@@ -2690,6 +2699,32 @@ function noWindowOpenIf(
                 });
             }
             return popup;
+        }
+    });
+}
+
+
+/// noEvalIf
+/// https://github.com/gorhill/uBlock/blob/60ed584fc181b5d8dd935d60c32d2592d3674188/src/js/resources/scriptlets.js#L1611
+
+function noEvalIf(
+    needle = ''
+) {
+    if (typeof needle !== 'string') { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('noeval-if', needle);
+    const reNeedle = safe.patternToRegex(needle);
+    window.eval = new Proxy(window.eval, {  // jshint ignore: line
+        apply: function (target, thisArg, args) {
+            const a = String(args[0]);
+            if (needle !== '' && reNeedle.test(a)) {
+                safe.uboLog(logPrefix, 'Prevented:\n', a);
+                return;
+            }
+            if (needle === '' || safe.logLevel > 1) {
+                safe.uboLog(logPrefix, 'Not prevented:\n', a);
+            }
+            return Reflect.apply(target, thisArg, args);
         }
     });
 }

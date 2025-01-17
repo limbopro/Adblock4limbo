@@ -63,7 +63,7 @@ function hrefSanitizer(
         try {
             elems = document.querySelectorAll(`a[href="${href}"`);
         }
-        catch(ex) {
+        catch {
         }
         for ( const elem of elems ) {
             elem.setAttribute('href', text);
@@ -77,7 +77,7 @@ function hrefSanitizer(
         try {
             const url = new URL(text, document.location);
             return url.href;
-        } catch(ex) {
+        } catch {
         }
         return '';
     };
@@ -91,7 +91,7 @@ function hrefSanitizer(
             if ( value === null ) { return href }
             if ( recursive ) { return extractParam(value, source.slice(end)); }
             return value;
-        } catch(x) {
+        } catch {
         }
         return href;
     };
@@ -118,7 +118,7 @@ function hrefSanitizer(
         try {
             elems = document.querySelectorAll(selector);
         }
-        catch(ex) {
+        catch {
             return false;
         }
         for ( const elem of elems ) {
@@ -294,7 +294,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -372,7 +372,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -471,7 +471,7 @@ function urlSkip(url, blocked, steps, directive = {}) {
         }
         if ( blocked && redirectBlocked !== true ) { return; }
         return urlout;
-    } catch(x) {
+    } catch {
     }
 }
 

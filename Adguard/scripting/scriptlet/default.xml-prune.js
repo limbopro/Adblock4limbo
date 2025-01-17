@@ -114,7 +114,7 @@ function xmlPrune(
             pruneFromDoc(xmlDoc);
             const serializer = new XMLSerializer();
             text = serializer.serializeToString(xmlDoc);
-        } catch(ex) {
+        } catch {
         }
         return text;
     };
@@ -288,7 +288,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -366,7 +366,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

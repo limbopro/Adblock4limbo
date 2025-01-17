@@ -39,9 +39,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["sssp","trueFunc"],["errSZ","undefined"],["showFairUser001","true"],["useSeznamAds","false"]];
+const argsList = [["checkAdsBlocked","noopFunc"],["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["errSZ","undefined"],["useSeznamAds","false"]];
 
-const hostnamesMap = new Map([["hokej.cz",0],["impuls.cz",1],["media.joj.sk",[2,3]],["media.cms.markiza.sk",2],["mobilenet.cz",[4,5]],["fzone.cz",[4,5]],["fdrive.cz",[4,5]],["podcasty.seznam.cz",[6,7]],["root.cz",8],["titulky.com",[9,10,11]],["tn.nova.cz",12]]);
+const hostnamesMap = new Map([["ewrc.cz",0],["hokej.cz",1],["impuls.cz",2],["media.joj.sk",[3,4]],["media.cms.markiza.sk",3],["mobilenet.cz",[5,6]],["fzone.cz",[5,6]],["fdrive.cz",[5,6]],["podcasty.seznam.cz",[7,8]],["titulky.com",[8,10]],["root.cz",9],["tn.nova.cz",11]]);
 
 const entitiesMap = new Map([]);
 
@@ -334,7 +334,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -412,7 +412,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -453,9 +453,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
         if ( raw.startsWith('json:') ) {
-            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw.slice(5)); } catch { return; }
         } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
-            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw).value; } catch { return; }
         }
     } else {
         return;

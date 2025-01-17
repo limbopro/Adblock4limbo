@@ -39,9 +39,9 @@ const uBOL_trustedSuppressNativeMethod = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"],["Document.prototype.querySelectorAll","\"FjZoRb\"","abort"],["Document.prototype.getElementsByClassName","\"FjZoRb\"","abort"],["Document.prototype.querySelector","/navpromo/","abort"],["Document.prototype.getElementById","/^navpromo/","abort"]];
+const argsList = [["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"]];
 
-const hostnamesMap = new Map([["cinema.com.my",0],["japscan.lol",[1,2,3,4]]]);
+const hostnamesMap = new Map([["cinema.com.my",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -343,7 +343,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -421,7 +421,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

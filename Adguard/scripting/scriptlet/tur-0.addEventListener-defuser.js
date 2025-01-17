@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["click","checkTarget"],["click","popundr"],["click","showPop"],["click","adLink"],["click","window.open"]];
 
-const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["diziwatch.net",0],["fullhd720pizle.live",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2],["kultfilmler.com",3],["xyzsports173.xyz",4],["xyzsports174.xyz",4],["xyzsports175.xyz",4],["xyzsports176.xyz",4],["xyzsports177.xyz",4],["xyzsports178.xyz",4],["xyzsports179.xyz",4],["xyzsports180.xyz",4],["xyzsports181.xyz",4],["xyzsports182.xyz",4],["xyzsports183.xyz",4],["xyzsports184.xyz",4],["xyzsports185.xyz",4],["xyzsports186.xyz",4],["xyzsports187.xyz",4],["xyzsports188.xyz",4],["xyzsports189.xyz",4],["xyzsports190.xyz",4],["xyzsports191.xyz",4],["xyzsports192.xyz",4],["xyzsports193.xyz",4],["xyzsports194.xyz",4],["xyzsports195.xyz",4],["xyzsports196.xyz",4],["xyzsports197.xyz",4],["xyzsports198.xyz",4],["xyzsports199.xyz",4],["xyzsports200.xyz",4]]);
+const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["fullhd720pizle.live",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2],["kultfilmler.com",3],["xyzsports173.xyz",4],["xyzsports174.xyz",4],["xyzsports175.xyz",4],["xyzsports176.xyz",4],["xyzsports177.xyz",4],["xyzsports178.xyz",4],["xyzsports179.xyz",4],["xyzsports180.xyz",4],["xyzsports181.xyz",4],["xyzsports182.xyz",4],["xyzsports183.xyz",4],["xyzsports184.xyz",4],["xyzsports185.xyz",4],["xyzsports186.xyz",4],["xyzsports187.xyz",4],["xyzsports188.xyz",4],["xyzsports189.xyz",4],["xyzsports190.xyz",4],["xyzsports191.xyz",4],["xyzsports192.xyz",4],["xyzsports193.xyz",4],["xyzsports194.xyz",4],["xyzsports195.xyz",4],["xyzsports196.xyz",4],["xyzsports197.xyz",4],["xyzsports198.xyz",4],["xyzsports199.xyz",4],["xyzsports200.xyz",4]]);
 
 const entitiesMap = new Map([["filmmakinesi1",0],["filmizlemax",0]]);
 
@@ -114,7 +114,7 @@ function addEventListenerDefuser(
                 } else {
                     h = String(callArgs[1]);
                 }
-            } catch(ex) {
+            } catch {
             }
             if ( type === '' && pattern === '' ) {
                 safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
@@ -336,7 +336,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -414,7 +414,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

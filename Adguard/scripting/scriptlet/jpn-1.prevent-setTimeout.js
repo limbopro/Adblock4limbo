@@ -39,7 +39,7 @@ const uBOL_preventSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/ad_blocker|checkMyBlock/"],["()=>k(S(4"],["getComputedStyle(a).height"],["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)","10000"]];
+const argsList = [["/ad_blocker|checkMyBlock/"],["()=>k(S(4"],["getComputedStyle(a).height"],["return"],["block"],["oAdChk"],["stopAd"],["_0x"],["/location\\.href|document\\./"],["objDef.resolve"],["movie_cnt","300"],["getAdCookie"],["floatingAd"],["affId","2000"],["return n(!0)"]];
 
 const hostnamesMap = new Map([["pvpoke-re.com",0],["wiki.yjsnpi.nu",1],["iwb.jp",2],["kotobank.jp",3],["puzzle-ch.com",4],["o-dan.net",5],["dropbooks.net",6],["fp1-siken.com",7],["fp2-siken.com",7],["fp3-siken.com",7],["ap-siken.com",7],["db-siken.com",7],["fe-siken.com",7],["itpassportsiken.com",7],["nw-siken.com",7],["pm-siken.com",7],["sc-siken.com",7],["sg-siken.com",7],["musenboya.com",8],["crefan.jp",9],["nan-net.com",10],["javcup.com",11],["46matome.net",12],["openworldnews.net",12],["animesoku.com",12],["vipnews.jp",12],["ldblog.jp",12],["livedoor.blog",12],["2chblog.jp",12],["oumaga-times.com",12],["all-nationz.com",12],["ebitsu.net",12],["fiveslot777.com",12],["jisaka.com",12],["kijyomatome.com",12],["konoyubitomare.jp",12],["livedoor.biz",12],["momoclonews.com",12],["norisoku.com",12],["pachinkopachisro.com",12],["vtubernews.jp",12],["blog.jp",12],["giants-news.com",12],["blog.livedoor.jp",12],["doorblog.jp",12],["sexpixbox.com",13],["skebetter.com",14]]);
 
@@ -288,7 +288,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -366,7 +366,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

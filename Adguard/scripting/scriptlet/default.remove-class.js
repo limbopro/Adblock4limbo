@@ -39,9 +39,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["ad-controls",".bitmovinplayer-container.ad-controls"],["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"]];
+const argsList = [["hidden","button"],["twig-body"],["get-link",".ybtn.get-link[target=\"_blank\"]","stay"],["get-link",".btn-success.get-link[target=\"_blank\"]","stay"],["has-sidebar-adz|DashboardPage-inner","div[class^=\"DashboardPage-inner\"]","stay"],["hasStickyAd","div.hasStickyAd[class^=\"SetPage\"]","stay"],["cnx-ad-container|cnx-ad-bid-slot"],["vjs-hidden",".vjs-control-bar","stay"],["hidden",".panel-body > .text-center > button"],["disabled","a#redirect-btn"],["td-ad-background-link"],["download-font-button2",".download-font-button"],["unclickable","","stay"],["ad-controls",".bitmovinplayer-container.ad-controls"]];
 
-const hostnamesMap = new Map([["sbs.com.au",0],["apps2app.com",1],["appsmodz.com",1],["xda-developers.com",2],["paid4.link",3],["go.gets4link.com",4],["quizlet.com",[5,6]],["funker530.com",7],["av01.tv",8],["so1.asia",9],["top1iq.com",10],["artribune.com",11],["bestfonts.pro",12],["falatron.com",13]]);
+const hostnamesMap = new Map([["apps2app.com",0],["appsmodz.com",0],["xda-developers.com",1],["paid4.link",2],["go.gets4link.com",3],["quizlet.com",[4,5]],["funker530.com",6],["av01.tv",7],["so1.asia",8],["top1iq.com",9],["artribune.com",10],["bestfonts.pro",11],["falatron.com",12],["sbs.com.au",13]]);
 
 const entitiesMap = new Map([]);
 
@@ -75,7 +75,7 @@ function removeClass(
                 node.classList.remove(...tokens);
                 safe.uboLog(logPrefix, 'Removed class(es)');
             }
-        } catch(ex) {
+        } catch {
         }
         if ( mustStay ) { return; }
         if ( document.readyState !== 'complete' ) { return; }
@@ -241,7 +241,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -319,7 +319,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

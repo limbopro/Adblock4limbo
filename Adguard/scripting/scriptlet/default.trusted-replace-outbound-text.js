@@ -69,7 +69,7 @@ function trustedReplaceOutboundText(
         let textBefore = encodedTextBefore;
         if ( extraArgs.encoding === 'base64' ) {
             try { textBefore = self.atob(encodedTextBefore); }
-            catch(ex) { return encodedTextBefore; }
+            catch { return encodedTextBefore; }
         }
         if ( rawPattern === '' ) {
             safe.uboLog(logPrefix, 'Decoded outbound text:\n', textBefore);
@@ -272,7 +272,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -350,7 +350,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

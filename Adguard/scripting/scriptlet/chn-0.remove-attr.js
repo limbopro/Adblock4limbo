@@ -88,7 +88,7 @@ function removeAttr(
                     safe.uboLog(logPrefix, `Removed attribute '${attr}'`);
                 }
             }
-        } catch(ex) {
+        } catch {
         }
     };
     const mutationHandler = mutations => {
@@ -250,7 +250,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -328,7 +328,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

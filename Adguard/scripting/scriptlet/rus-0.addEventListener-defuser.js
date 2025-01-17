@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
 
-const hostnamesMap = new Map([["7days.ru",[0,27]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["e.mail.ru",26],["octavius.mail.ru",26],["cdn.viqeo.tv",27],["kinonews.ru",27],["kp.kg",27],["kp.kz",27],["kp.md",27],["kp.ru",27],["mk.ru",27],["ohotniki.ru",27],["portalvirtualreality.ru",27],["radiokp.ru",27],["sportkp.ru",27],["wday.ru",27],["woman.ru",27],["www.fontanka.ru",27]]);
+const hostnamesMap = new Map([["7days.ru",[0,27]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["kp.kg",[14,27]],["kp.kz",[14,27]],["kp.md",[14,27]],["kp.ru",[14,27]],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["e.mail.ru",26],["octavius.mail.ru",26],["cdn.viqeo.tv",27],["kinonews.ru",27],["mk.ru",27],["ohotniki.ru",27],["portalvirtualreality.ru",27],["radiokp.ru",27],["sportkp.ru",27],["wday.ru",27],["woman.ru",27],["www.fontanka.ru",27]]);
 
 const entitiesMap = new Map([]);
 
@@ -114,7 +114,7 @@ function addEventListenerDefuser(
                 } else {
                     h = String(callArgs[1]);
                 }
-            } catch(ex) {
+            } catch {
             }
             if ( type === '' && pattern === '' ) {
                 safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
@@ -336,7 +336,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -414,7 +414,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

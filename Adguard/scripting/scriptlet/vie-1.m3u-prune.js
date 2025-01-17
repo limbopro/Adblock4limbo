@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/#EXT-X-DISCONTINUITY(.|\\n){1,1000}#EXT-X-DISCONTINUITY/gm","index.m3u8"]];
 
-const hostnamesMap = new Map([["yeuphim.vip",0]]);
+const hostnamesMap = new Map([["yeuphim.me",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -306,7 +306,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -384,7 +384,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

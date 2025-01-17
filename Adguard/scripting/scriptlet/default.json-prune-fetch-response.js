@@ -151,7 +151,7 @@ function matchObjectProperties(propNeedles, ...objs) {
         if ( value === undefined ) { continue; }
         if ( typeof value !== 'string' ) {
             try { value = safe.JSON_stringify(value); }
-            catch(ex) { }
+            catch { }
             if ( typeof value !== 'string' ) { continue; }
         }
         if ( safe.testPattern(details, value) ) { continue; }
@@ -323,7 +323,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -401,7 +401,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

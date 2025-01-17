@@ -39,9 +39,9 @@ const uBOL_trustedPreventXhr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"],["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"],["s4.cdnpc.net/front/css/style.min.css?version=v93","slider--features"]];
+const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"],["s4.cdnpc.net/front/css/style.min.css?version=v93","slider--features"],["cdn.taboola.com/libtrc/san1go-network/loader.js","feOffset"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"]];
 
-const hostnamesMap = new Map([["sbs.com.au",[0,1,2]],["bowfile.com",3],["1cloudfile.com",3],["koramaup.com",3],["animefire.info",[4,5]],["animesonlinecc.us",[4,5]],["animesonliner4.com",[4,5]],["animesup.info",[4,5]],["animeyabu.net",[4,5]],["animeyabu.org",[4,5]],["anitube.us",[4,5]],["anitube.vip",[4,5]],["caroloportunidades.com.br",[4,5]],["dattebayo-br.com",[4,5]],["drstonebr.com",[4,5]],["flyanimes.cloud",[4,5]],["goanimes.vip",[4,5]],["goyabu.us",[4,5]],["hinatasoul.com",[4,5]],["isekaibrasil.com",[4,5]],["meuanime.info",[4,5]],["otakuanimess.net",[4,5]],["superanimes.in",[4,5]]]);
+const hostnamesMap = new Map([["bowfile.com",0],["1cloudfile.com",0],["koramaup.com",0],["animefire.info",[1,2,3]],["animesonlinecc.us",[1,2,3]],["animesonliner4.com",[1,2,3]],["animesup.info",[1,2,3]],["animeyabu.net",[1,2,3]],["animeyabu.org",[1,2,3]],["anitube.us",[1,2,3]],["anitube.vip",[1,2,3]],["caroloportunidades.com.br",[1,2,3]],["dattebayo-br.com",[1,2,3]],["drstonebr.com",[1,2,3]],["flyanimes.cloud",[1,2,3]],["goanimes.vip",[1,2,3]],["goyabu.us",[1,2,3]],["hinatasoul.com",[1,2,3]],["isekaibrasil.com",[1,2,3]],["meuanime.info",[1,2,3]],["otakuanimess.net",[1,2,3]],["superanimes.in",[1,2,3]],["sbs.com.au",[4,5,6]]]);
 
 const entitiesMap = new Map([]);
 
@@ -68,7 +68,7 @@ function preventXhrFn(
     const safeDispatchEvent = (xhr, type) => {
         try {
             xhr.dispatchEvent(new Event(type));
-        } catch(_) {
+        } catch {
         }
     };
     const XHRBefore = XMLHttpRequest.prototype;
@@ -310,7 +310,7 @@ function matchObjectProperties(propNeedles, ...objs) {
         if ( value === undefined ) { continue; }
         if ( typeof value !== 'string' ) {
             try { value = safe.JSON_stringify(value); }
-            catch(ex) { }
+            catch { }
             if ( typeof value !== 'string' ) { continue; }
         }
         if ( safe.testPattern(details, value) ) { continue; }
@@ -440,7 +440,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -518,7 +518,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

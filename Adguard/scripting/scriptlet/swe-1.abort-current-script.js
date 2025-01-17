@@ -41,7 +41,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["disableEnterKey"],["document.ondragstart"],["advads_passive_placements"],["document.oncontextmenu"],["chp_adblock_browser"],["monsterinsights_frontend"],["advads"],["advanced_ads"]];
 
-const hostnamesMap = new Map([["discoveringtheplanet.com",[0,1]],["hejaolika.se",2],["spelhubben.se",3],["husbilsplats.se",3],["temadagar.se",4],["zeinaskitchen.se",5],["trafiksakerhet.se",5],["boktugg.se",5],["lakartidningen.se",5],["villalivet.se",[5,6,7]],["matsafari.nu",5],["forexgruppen.se",5],["fastighetsvarlden.se",5],["branschkoll.se",[6,7]],["rocknytt.net",[6,7]],["upphandling24.se",[6,7]],["datormagazin.se",[6,7]],["polistidningen.se",[6,7]],["densistavilan.se",[6,7]],["classicmotor.se",[6,7]],["tidningenhalsa.se",[6,7]],["husohem.se",[6,7]],["guiden.se",[6,7]],["nyadagbladet.se",[6,7]],["enkelteknik.se",[6,7]],["vadhanderisverige.se",[6,7]],["passioneffect.se",[6,7]],["livsmedelsnyheter.se",[6,7]]]);
+const hostnamesMap = new Map([["discoveringtheplanet.com",[0,1]],["hejaolika.se",2],["spelhubben.se",3],["husbilsplats.se",3],["temadagar.se",4],["zeinaskitchen.se",5],["trafiksakerhet.se",5],["boktugg.se",5],["lakartidningen.se",5],["villalivet.se",[5,6,7]],["matsafari.nu",5],["forexgruppen.se",5],["fastighetsvarlden.se",5],["alekuriren.se",[6,7]],["branschkoll.se",[6,7]],["rocknytt.net",[6,7]],["upphandling24.se",[6,7]],["datormagazin.se",[6,7]],["polistidningen.se",[6,7]],["densistavilan.se",[6,7]],["classicmotor.se",[6,7]],["tidningenhalsa.se",[6,7]],["husohem.se",[6,7]],["guiden.se",[6,7]],["nyadagbladet.se",[6,7]],["enkelteknik.se",[6,7]],["vadhanderisverige.se",[6,7]],["passioneffect.se",[6,7]],["livsmedelsnyheter.se",[6,7]]]);
 
 const entitiesMap = new Map([]);
 
@@ -106,7 +106,7 @@ function abortCurrentScriptCore(
                 text = self.decodeURIComponent(content);
                 break;
             }
-        } catch(ex) {
+        } catch {
         }
         scriptTexts.set(elem, text);
         return text;
@@ -285,7 +285,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -363,7 +363,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }

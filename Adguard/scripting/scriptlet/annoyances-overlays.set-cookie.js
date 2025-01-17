@@ -39,9 +39,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_450030403","1"],["popupShown","true"],["awpopup_501941328","1"],["popup_closed","true"],["email_modal","true"],["huck-newsletter-popup","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["pum-276000","true"],["uf_signup_bar","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["ezgwcc","1"],["_ad","0"]];
+const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_450030403","1"],["popupShown","true"],["awpopup_501941328","1"],["popup_closed","true"],["email_modal","true"],["huck-newsletter-popup","true"],["newsletterModal","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["pum-276000","true"],["uf_signup_bar","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["ezgwcc","1"],["_ad","0"]];
 
-const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["plantpowercouple.com",3],["commondreams.org",4],["oled-info.com",5],["lowpass.cc",6],["readergrev.com",6],["objectivebayesian.com",6],["monopoly.marketecture.tv",6],["jointhefollowup.com",6],["streamily.com",7],["huckmag.com",8],["gourmetfoodstore.com",9],["theinformation.com",10],["in.investing.com",11],["intellinews.com",12],["kermitlynch.com",13],["jingdaily.com",14],["babiesrus.ca",15],["toysrus.ca",15],["clevercreations.org",16],["thefederalist.com",17],["30seconds.com",18],["iconduck.com",19],["shojiwax.com",20],["skepticalraptor.com",20],["girlscoutshop.com",21],["yvonnebennetti.com",22],["funko.com",23],["loungefly.com",23],["saucerco.com",24],["columbiasportswear.it",25],["columbiasportswear.at",26],["columbiasportswear.de",27],["columbiasportswear.fr",28],["columbiasportswear.es",29],["columbiasportswear.co.uk",30],["sharperimage.com",31],["sweetwater.com",32],["assos.com",33],["scitechdaily.com",34],["klsescreener.com",35]]);
+const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["plantpowercouple.com",3],["commondreams.org",4],["oled-info.com",5],["lowpass.cc",6],["readergrev.com",6],["objectivebayesian.com",6],["monopoly.marketecture.tv",6],["jointhefollowup.com",6],["streamily.com",7],["huckmag.com",8],["egopowerplus.com",9],["gourmetfoodstore.com",10],["theinformation.com",11],["in.investing.com",12],["intellinews.com",13],["kermitlynch.com",14],["jingdaily.com",15],["babiesrus.ca",16],["toysrus.ca",16],["clevercreations.org",17],["thefederalist.com",18],["30seconds.com",19],["iconduck.com",20],["shojiwax.com",21],["skepticalraptor.com",21],["girlscoutshop.com",22],["yvonnebennetti.com",23],["funko.com",24],["loungefly.com",24],["saucerco.com",25],["columbiasportswear.it",26],["columbiasportswear.at",27],["columbiasportswear.de",28],["columbiasportswear.fr",29],["columbiasportswear.es",30],["columbiasportswear.co.uk",31],["sharperimage.com",32],["sweetwater.com",33],["assos.com",34],["scitechdaily.com",35],["klsescreener.com",36]]);
 
 const entitiesMap = new Map([]);
 
@@ -102,6 +102,7 @@ function getSafeCookieValuesFn() {
         'yes', 'y', 'no', 'n',
         'all', 'none', 'functional',
         'granted', 'done',
+        'decline', 'declined',
     ];
 }
 
@@ -205,7 +206,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -283,7 +284,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -340,7 +341,7 @@ function setCookieFn(
 
     try {
         document.cookie = cookieParts.join('');
-    } catch(_) {
+    } catch {
     }
 
     const done = getCookieFn(name) === value;

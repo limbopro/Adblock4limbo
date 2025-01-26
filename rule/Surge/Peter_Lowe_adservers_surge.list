@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 15 Jan 2025 14:33:58 GMT
-# entries:        3548
+# entries:        3545
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -85,6 +85,7 @@ DOMAIN-SUFFIX,actonsoftware.com
 DOMAIN-SUFFIX,actualdeals.com
 DOMAIN-SUFFIX,actuallysheep.com
 DOMAIN-SUFFIX,actuallysnake.com
+DOMAIN-SUFFIX,actuallything.com
 DOMAIN-SUFFIX,acuityads.com
 DOMAIN-SUFFIX,acuityplatform.com
 DOMAIN-SUFFIX,ad-balancer.at
@@ -184,7 +185,6 @@ DOMAIN-SUFFIX,adalliance.io
 DOMAIN-SUFFIX,adanging.blog
 DOMAIN-SUFFIX,adap.tv
 DOMAIN-SUFFIX,adapt.tv
-DOMAIN-SUFFIX,adaranth.com
 DOMAIN-SUFFIX,adbilty.me
 DOMAIN-SUFFIX,adblade.com
 DOMAIN-SUFFIX,adblade.org
@@ -342,7 +342,6 @@ DOMAIN-SUFFIX,adrotic.girlonthenet.com
 DOMAIN-SUFFIX,adrta.com
 DOMAIN-SUFFIX,ads-backend.chaincliq.com
 DOMAIN-SUFFIX,ads-bilek.com
-DOMAIN-SUFFIX,ads-click.com
 DOMAIN-SUFFIX,ads-dev.pinterest.com
 DOMAIN-SUFFIX,ads-game-187f4.firebaseapp.com
 DOMAIN-SUFFIX,ads-kesselhaus.com
@@ -600,7 +599,6 @@ DOMAIN-SUFFIX,ads.tripod.lycos.it
 DOMAIN-SUFFIX,ads.tripod.lycos.nl
 DOMAIN-SUFFIX,ads.tso.dennisnet.co.uk
 DOMAIN-SUFFIX,ads.twitter.com
-DOMAIN-SUFFIX,ads.twojatv.info
 DOMAIN-SUFFIX,ads.ultimate-guitar.com
 DOMAIN-SUFFIX,ads.uncrate.com
 DOMAIN-SUFFIX,ads.unison.bg
@@ -1309,7 +1307,6 @@ DOMAIN-SUFFIX,click.news.vans.com
 DOMAIN-SUFFIX,click.nl.npr.org
 DOMAIN-SUFFIX,click.nvgaming.nvidia.com
 DOMAIN-SUFFIX,click.redditmail.com
-DOMAIN-SUFFIX,click.twcwigs.com
 DOMAIN-SUFFIX,click.v.visionlab.es
 DOMAIN-SUFFIX,click2freemoney.com
 DOMAIN-SUFFIX,click360v2-ingest.azurewebsites.net

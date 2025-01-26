@@ -41,20 +41,35 @@ var replace_str = '</title>\
 <script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>\
 '
 
+var body_regex = /<\/body>/gi;
+var body_replace_str = '<link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
+<script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script></body>\
+'
+
+
 let url = $request.url;
 var url_target_regex = /(missav|netflav|supjav|njav|javday)/gi;
+var javbus_target_regex = /javbus/gi;
 
 var url_target = url.match(url_target_regex);
+var javbus_target = url.match(javbus_target_regex);
+
 
 if ($response.body !== null || $response.body !== undefined) {  // 判断响应体是否存在
-    if (url_target !== null || url_target !== undefined) {  // 判断该URL是否匹配目标
+
+
+    if (url_target !== null) {  // 判断该URL是否匹配目标
         let window_open_reg = 'window.open'; // 匹配
         let window_open_str = ''; // 替换为空
         var body = $response.body.replaceAll(regex, replace_str).replaceAll(window_open_reg, window_open_str);
-    } else {
+    } else if (javbus_target !== null) {
+        var body = $response.body.replaceAll(body_regex, body_replace_str);
+    }
+    else {
         var body = $response.body.replaceAll(regex, replace_str)
         // 定义响应头
     }
+
     let headers = $response.headers;
     // headers['Content-Security-Policy'] = '*';
     delete headers['Content-Security-Policy'];

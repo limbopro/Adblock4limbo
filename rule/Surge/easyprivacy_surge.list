@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501171511
+## ! Version: 202501261429
 ## ! Title: EasyPrivacy
-## ! Last modified: 17 Jan 2025 15:11 UTC
+## ! Last modified: 26 Jan 2025 14:29 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -118,6 +118,7 @@ DOMAIN-SUFFIX,dlxpix.net
 DOMAIN-SUFFIX,dm-event.net
 DOMAIN-SUFFIX,dmepyodjotcuks.com
 DOMAIN-SUFFIX,dmpxs.com
+DOMAIN-SUFFIX,domself.de
 DOMAIN-SUFFIX,doublestat.info
 DOMAIN-SUFFIX,dspx.tv
 DOMAIN-SUFFIX,dttrk.com
@@ -1183,6 +1184,7 @@ DOMAIN-SUFFIX,fearlesstramp.com
 DOMAIN-SUFFIX,featherstage.com
 DOMAIN-SUFFIX,feebleshock.com
 DOMAIN-SUFFIX,feeblestamp.com
+DOMAIN-SUFFIX,feedten.com
 DOMAIN-SUFFIX,feignedfaucet.com
 DOMAIN-SUFFIX,fernwaycloud.com
 DOMAIN-SUFFIX,fertilefeeling.com
@@ -1657,6 +1659,7 @@ DOMAIN-SUFFIX,motionlessmeeting.com
 DOMAIN-SUFFIX,mountainouspear.com
 DOMAIN-SUFFIX,movemeal.com
 DOMAIN-SUFFIX,mowfruit.com
+DOMAIN-SUFFIX,mowgoats.com
 DOMAIN-SUFFIX,muddledaftermath.com
 DOMAIN-SUFFIX,muddledmemory.com
 DOMAIN-SUFFIX,mundanenail.com
@@ -2112,6 +2115,7 @@ DOMAIN-SUFFIX,shamerain.com
 DOMAIN-SUFFIX,shapecomb.com
 DOMAIN-SUFFIX,sharkskids.com
 DOMAIN-SUFFIX,sharppatch.com
+DOMAIN-SUFFIX,sheideal.com
 DOMAIN-SUFFIX,shesubscriptions.com
 DOMAIN-SUFFIX,shinesavage.com
 DOMAIN-SUFFIX,shinypond.com
@@ -2718,6 +2722,7 @@ DOMAIN-SUFFIX,analytics.firespring.com
 DOMAIN-SUFFIX,analytics.foresee.com
 DOMAIN-SUFFIX,analytics.formstack.com
 DOMAIN-SUFFIX,analytics.genial.ly
+DOMAIN-SUFFIX,analytics.gokwik.co
 DOMAIN-SUFFIX,analytics.gooogol.com
 DOMAIN-SUFFIX,analytics.groupe-seb.com
 DOMAIN-SUFFIX,analytics.growthphysics.com
@@ -2871,6 +2876,7 @@ DOMAIN-SUFFIX,castify-trk.playitviral.com
 DOMAIN-SUFFIX,cc.swiftype.com
 DOMAIN-SUFFIX,ccexperimentsstatic.oracleoutsourcing.com
 DOMAIN-SUFFIX,cdn-channels-pixel.ex.co
+DOMAIN-SUFFIX,cdn.polarbyte.com
 DOMAIN-SUFFIX,cdn.ravm.tv
 DOMAIN-SUFFIX,cdn.usefathom.com
 DOMAIN-SUFFIX,cdns.brsrvr.com
@@ -3250,6 +3256,7 @@ DOMAIN-SUFFIX,ns.rvmkitt.com
 DOMAIN-SUFFIX,nwr.static.mmcdn.com
 DOMAIN-SUFFIX,observe-nexus.pointandplace.com
 DOMAIN-SUFFIX,observer.ip-label.net
+DOMAIN-SUFFIX,obseu.netgreencolumn.com
 DOMAIN-SUFFIX,oda.markitondemand.com
 DOMAIN-SUFFIX,olytics.omeda.com
 DOMAIN-SUFFIX,onespot-tracking.herokuapp.com
@@ -3508,6 +3515,7 @@ DOMAIN-SUFFIX,t.cfjump.com
 DOMAIN-SUFFIX,t.channeladvisor.com
 DOMAIN-SUFFIX,t.clic2buy.com
 DOMAIN-SUFFIX,t.cometlytrack.com
+DOMAIN-SUFFIX,t.commandbar.com
 DOMAIN-SUFFIX,t.enuygun.com
 DOMAIN-SUFFIX,t.fullres.net
 DOMAIN-SUFFIX,t.ghostboard.io
@@ -3928,6 +3936,7 @@ DOMAIN-SUFFIX,analytics.gameforge.de
 DOMAIN-SUFFIX,analytics.idfnet.net
 DOMAIN-SUFFIX,analytics.media-proweb.de
 DOMAIN-SUFFIX,artemis-cdn.ocdn.eu
+DOMAIN-SUFFIX,ats.otto.de
 DOMAIN-SUFFIX,beagle.prod.tda.link
 DOMAIN-SUFFIX,blacktri-a.akamaihd.net
 DOMAIN-SUFFIX,cgicounter.onlinehome.de
@@ -4274,6 +4283,7 @@ DOMAIN-SUFFIX,applog.ssgdfs.com
 DOMAIN-SUFFIX,assets.datarize.ai
 DOMAIN-SUFFIX,cm-exchange.toast.com
 DOMAIN-SUFFIX,dadispapi.gmarket.co.kr
+DOMAIN-SUFFIX,dco.coupang.com
 DOMAIN-SUFFIX,dtr-onsite-feed.datarize.ai
 DOMAIN-SUFFIX,event.hackle.io
 DOMAIN-SUFFIX,log.adplex.co.kr
@@ -4513,6 +4523,7 @@ DOMAIN-SUFFIX,analytics.3c5.com
 DOMAIN-SUFFIX,analytics.academy.com
 DOMAIN-SUFFIX,analytics.ahrefs.dev
 DOMAIN-SUFFIX,analytics.archive.org
+DOMAIN-SUFFIX,analytics.bitchute.com
 DOMAIN-SUFFIX,analytics.brave.com
 DOMAIN-SUFFIX,analytics.chase.com
 DOMAIN-SUFFIX,analytics.cookiefirst.dev
@@ -4932,6 +4943,7 @@ DOMAIN-SUFFIX,rs.mail.ru
 DOMAIN-SUFFIX,rstat.rockmostbet.com
 DOMAIN-SUFFIX,rt.newswire.ca
 DOMAIN-SUFFIX,rt.prnewswire.com
+DOMAIN-SUFFIX,rt.whitebridge.ai
 DOMAIN-SUFFIX,rta.dailymail.co.uk
 DOMAIN-SUFFIX,rta2.inews.co.uk
 DOMAIN-SUFFIX,rta2.metro.co.uk
@@ -5149,6 +5161,7 @@ DOMAIN-SUFFIX,oneid.mmstat.com
 DOMAIN-SUFFIX,cfa.fidelity.com
 DOMAIN-SUFFIX,clear.wallapop.com
 DOMAIN-SUFFIX,content.canadiantire.ca
+DOMAIN-SUFFIX,content.tab.com.au
 DOMAIN-SUFFIX,content22.bmo.com
 DOMAIN-SUFFIX,content22.citibank.com.au
 DOMAIN-SUFFIX,content22.citibankonline.com
@@ -40861,6 +40874,7 @@ DOMAIN-SUFFIX,zelle.odencat.com
 DOMAIN-SUFFIX,zombieslayer-alternate.kano.link
 DOMAIN-SUFFIX,zombieslayer.kano.link
 DOMAIN-SUFFIX,1438976156.recolution.de
+DOMAIN-SUFFIX,absys.web.de
 DOMAIN-SUFFIX,agnes.waz.de
 DOMAIN-SUFFIX,analytics.adliners.de
 DOMAIN-SUFFIX,analytics.daasrv.net

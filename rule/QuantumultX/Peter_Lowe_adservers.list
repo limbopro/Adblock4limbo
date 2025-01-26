@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 15 Jan 2025 14:33:58 GMT
-# entries:        3548
+# entries:        3545
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -85,6 +85,7 @@ DOMAIN-SUFFIX,actonsoftware.com, reject
 DOMAIN-SUFFIX,actualdeals.com, reject
 DOMAIN-SUFFIX,actuallysheep.com, reject
 DOMAIN-SUFFIX,actuallysnake.com, reject
+DOMAIN-SUFFIX,actuallything.com, reject
 DOMAIN-SUFFIX,acuityads.com, reject
 DOMAIN-SUFFIX,acuityplatform.com, reject
 DOMAIN-SUFFIX,ad-balancer.at, reject
@@ -184,7 +185,6 @@ DOMAIN-SUFFIX,adalliance.io, reject
 DOMAIN-SUFFIX,adanging.blog, reject
 DOMAIN-SUFFIX,adap.tv, reject
 DOMAIN-SUFFIX,adapt.tv, reject
-DOMAIN-SUFFIX,adaranth.com, reject
 DOMAIN-SUFFIX,adbilty.me, reject
 DOMAIN-SUFFIX,adblade.com, reject
 DOMAIN-SUFFIX,adblade.org, reject
@@ -342,7 +342,6 @@ DOMAIN-SUFFIX,adrotic.girlonthenet.com, reject
 DOMAIN-SUFFIX,adrta.com, reject
 DOMAIN-SUFFIX,ads-backend.chaincliq.com, reject
 DOMAIN-SUFFIX,ads-bilek.com, reject
-DOMAIN-SUFFIX,ads-click.com, reject
 DOMAIN-SUFFIX,ads-dev.pinterest.com, reject
 DOMAIN-SUFFIX,ads-game-187f4.firebaseapp.com, reject
 DOMAIN-SUFFIX,ads-kesselhaus.com, reject
@@ -600,7 +599,6 @@ DOMAIN-SUFFIX,ads.tripod.lycos.it, reject
 DOMAIN-SUFFIX,ads.tripod.lycos.nl, reject
 DOMAIN-SUFFIX,ads.tso.dennisnet.co.uk, reject
 DOMAIN-SUFFIX,ads.twitter.com, reject
-DOMAIN-SUFFIX,ads.twojatv.info, reject
 DOMAIN-SUFFIX,ads.ultimate-guitar.com, reject
 DOMAIN-SUFFIX,ads.uncrate.com, reject
 DOMAIN-SUFFIX,ads.unison.bg, reject
@@ -1309,7 +1307,6 @@ DOMAIN-SUFFIX,click.news.vans.com, reject
 DOMAIN-SUFFIX,click.nl.npr.org, reject
 DOMAIN-SUFFIX,click.nvgaming.nvidia.com, reject
 DOMAIN-SUFFIX,click.redditmail.com, reject
-DOMAIN-SUFFIX,click.twcwigs.com, reject
 DOMAIN-SUFFIX,click.v.visionlab.es, reject
 DOMAIN-SUFFIX,click2freemoney.com, reject
 DOMAIN-SUFFIX,click360v2-ingest.azurewebsites.net, reject

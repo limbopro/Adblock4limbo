@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501261429
+## ! Version: 202501311549
 ## ! Title: EasyPrivacy
-## ! Last modified: 26 Jan 2025 14:29 UTC
+## ! Last modified: 31 Jan 2025 15:49 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1902,6 +1902,7 @@ DOMAIN-SUFFIX,quantumlagoon.com
 DOMAIN-SUFFIX,quantumshine.com
 DOMAIN-SUFFIX,quarterbean.com
 DOMAIN-SUFFIX,queenskart.com
+DOMAIN-SUFFIX,quicklyedit.com
 DOMAIN-SUFFIX,quicksandear.com
 DOMAIN-SUFFIX,quietknowledge.com
 DOMAIN-SUFFIX,quillkick.com
@@ -3317,6 +3318,7 @@ DOMAIN-SUFFIX,pixels.afcdn.com
 DOMAIN-SUFFIX,pl.connatix.com
 DOMAIN-SUFFIX,pla.fwdcdn.com
 DOMAIN-SUFFIX,platform.iteratehq.com
+DOMAIN-SUFFIX,plausible.flamekiller.org
 DOMAIN-SUFFIX,plausible.server.hakai.app
 DOMAIN-SUFFIX,play.adtonos.com
 DOMAIN-SUFFIX,player-metrics.instaread.co

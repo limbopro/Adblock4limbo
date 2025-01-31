@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 15 Jan 2025 14:33:58 GMT
-# entries:        3545
+# entries:        3543
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -458,7 +458,6 @@ DOMAIN-SUFFIX,ads.getlucky.com, reject
 DOMAIN-SUFFIX,ads.gld.dk, reject
 DOMAIN-SUFFIX,ads.gmodules.com, reject
 DOMAIN-SUFFIX,ads.goyk.com, reject
-DOMAIN-SUFFIX,ads.gplusmedia.com, reject
 DOMAIN-SUFFIX,ads.gradfinder.com, reject
 DOMAIN-SUFFIX,ads.grindinggears.com, reject
 DOMAIN-SUFFIX,ads.gsm-exchange.com, reject
@@ -987,7 +986,6 @@ DOMAIN-SUFFIX,at-adserver.alltop.com, reject
 DOMAIN-SUFFIX,at-o.net, reject
 DOMAIN-SUFFIX,atdmt.com, reject
 DOMAIN-SUFFIX,athena-ads.wikia.com, reject
-DOMAIN-SUFFIX,ato.mx, reject
 DOMAIN-SUFFIX,attractionbanana.com, reject
 DOMAIN-SUFFIX,attribution.report, reject
 DOMAIN-SUFFIX,atwola.com, reject
@@ -1048,6 +1046,7 @@ DOMAIN-SUFFIX,bannergrabber.internet.gr, reject
 DOMAIN-SUFFIX,bannerimage.com, reject
 DOMAIN-SUFFIX,bannermall.com, reject
 DOMAIN-SUFFIX,bannermanager.bnr.bg, reject
+DOMAIN-SUFFIX,bannermarkt.nl, reject
 DOMAIN-SUFFIX,bannerpower.com, reject
 DOMAIN-SUFFIX,banners.adultfriendfinder.com, reject
 DOMAIN-SUFFIX,banners.amigos.com, reject
@@ -1837,7 +1836,6 @@ DOMAIN-SUFFIX,hb.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,hb.vntsm.com, reject
 DOMAIN-SUFFIX,hbb.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,hbopenbid.pubmatic.com, reject
-DOMAIN-SUFFIX,hdscout.com, reject
 DOMAIN-SUFFIX,heap.com, reject
 DOMAIN-SUFFIX,hearinglizards.com, reject
 DOMAIN-SUFFIX,heimi-lwx.com, reject
@@ -3144,6 +3142,7 @@ DOMAIN-SUFFIX,tealeaf.com, reject
 DOMAIN-SUFFIX,tealium.cbsnews.com, reject
 DOMAIN-SUFFIX,tealium.com, reject
 DOMAIN-SUFFIX,tealiumiq.com, reject
+DOMAIN-SUFFIX,tediousticket.com, reject
 DOMAIN-SUFFIX,tedioustooth.com, reject
 DOMAIN-SUFFIX,teenrevenue.com, reject
 DOMAIN-SUFFIX,telaria.com, reject
@@ -3200,7 +3199,6 @@ DOMAIN-SUFFIX,top100-images.rambler.ru, reject
 DOMAIN-SUFFIX,top100.mafia.ru, reject
 DOMAIN-SUFFIX,top123.ro, reject
 DOMAIN-SUFFIX,top20free.com, reject
-DOMAIN-SUFFIX,topforall.com, reject
 DOMAIN-SUFFIX,toplist.cz, reject
 DOMAIN-SUFFIX,toplist.pornhost.com, reject
 DOMAIN-SUFFIX,toplista.mw.hu, reject

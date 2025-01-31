@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 15 Jan 2025 14:33:58 GMT
-# entries:        3545
+# entries:        3543
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -458,7 +458,6 @@ DOMAIN-SUFFIX,ads.getlucky.com
 DOMAIN-SUFFIX,ads.gld.dk
 DOMAIN-SUFFIX,ads.gmodules.com
 DOMAIN-SUFFIX,ads.goyk.com
-DOMAIN-SUFFIX,ads.gplusmedia.com
 DOMAIN-SUFFIX,ads.gradfinder.com
 DOMAIN-SUFFIX,ads.grindinggears.com
 DOMAIN-SUFFIX,ads.gsm-exchange.com
@@ -987,7 +986,6 @@ DOMAIN-SUFFIX,at-adserver.alltop.com
 DOMAIN-SUFFIX,at-o.net
 DOMAIN-SUFFIX,atdmt.com
 DOMAIN-SUFFIX,athena-ads.wikia.com
-DOMAIN-SUFFIX,ato.mx
 DOMAIN-SUFFIX,attractionbanana.com
 DOMAIN-SUFFIX,attribution.report
 DOMAIN-SUFFIX,atwola.com
@@ -1048,6 +1046,7 @@ DOMAIN-SUFFIX,bannergrabber.internet.gr
 DOMAIN-SUFFIX,bannerimage.com
 DOMAIN-SUFFIX,bannermall.com
 DOMAIN-SUFFIX,bannermanager.bnr.bg
+DOMAIN-SUFFIX,bannermarkt.nl
 DOMAIN-SUFFIX,bannerpower.com
 DOMAIN-SUFFIX,banners.adultfriendfinder.com
 DOMAIN-SUFFIX,banners.amigos.com
@@ -1837,7 +1836,6 @@ DOMAIN-SUFFIX,hb.afl.rakuten.co.jp
 DOMAIN-SUFFIX,hb.vntsm.com
 DOMAIN-SUFFIX,hbb.afl.rakuten.co.jp
 DOMAIN-SUFFIX,hbopenbid.pubmatic.com
-DOMAIN-SUFFIX,hdscout.com
 DOMAIN-SUFFIX,heap.com
 DOMAIN-SUFFIX,hearinglizards.com
 DOMAIN-SUFFIX,heimi-lwx.com
@@ -3144,6 +3142,7 @@ DOMAIN-SUFFIX,tealeaf.com
 DOMAIN-SUFFIX,tealium.cbsnews.com
 DOMAIN-SUFFIX,tealium.com
 DOMAIN-SUFFIX,tealiumiq.com
+DOMAIN-SUFFIX,tediousticket.com
 DOMAIN-SUFFIX,tedioustooth.com
 DOMAIN-SUFFIX,teenrevenue.com
 DOMAIN-SUFFIX,telaria.com
@@ -3200,7 +3199,6 @@ DOMAIN-SUFFIX,top100-images.rambler.ru
 DOMAIN-SUFFIX,top100.mafia.ru
 DOMAIN-SUFFIX,top123.ro
 DOMAIN-SUFFIX,top20free.com
-DOMAIN-SUFFIX,topforall.com
 DOMAIN-SUFFIX,toplist.cz
 DOMAIN-SUFFIX,toplist.pornhost.com
 DOMAIN-SUFFIX,toplista.mw.hu

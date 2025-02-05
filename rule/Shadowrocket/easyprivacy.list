@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202501311549
+## ! Version: 202502051330
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Jan 2025 15:49 UTC
+## ! Last modified: 05 Feb 2025 13:30 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2442,6 +2442,7 @@ DOMAIN-SUFFIX,thomastorch.com, reject
 DOMAIN-SUFFIX,thoughtlessknot.com, reject
 DOMAIN-SUFFIX,threechurch.com, reject
 DOMAIN-SUFFIX,threetruck.com, reject
+DOMAIN-SUFFIX,thrillasoft.com, reject
 DOMAIN-SUFFIX,throattrees.com, reject
 DOMAIN-SUFFIX,thunderingrose.com, reject
 DOMAIN-SUFFIX,thunderingtendency.com, reject
@@ -2824,6 +2825,7 @@ DOMAIN-SUFFIX,axislogger.appspot.com, reject
 DOMAIN-SUFFIX,az.nzn.io, reject
 DOMAIN-SUFFIX,az693360.vo.msecnd.net, reject
 DOMAIN-SUFFIX,b.bedop.com, reject
+DOMAIN-SUFFIX,b.trueanthem.com, reject
 DOMAIN-SUFFIX,b7tp47v2nb3x-a.akamaihd.net, reject
 DOMAIN-SUFFIX,barium.cheezdev.com, reject
 DOMAIN-SUFFIX,bat.bing.com, reject
@@ -3111,6 +3113,7 @@ DOMAIN-SUFFIX,green-griffin-860.appspot.com, reject
 DOMAIN-SUFFIX,gsp1.baidu.com, reject
 DOMAIN-SUFFIX,gtmfsstatic.getgoogletagmanager.com, reject
 DOMAIN-SUFFIX,gtrk.s3.amazonaws.com, reject
+DOMAIN-SUFFIX,gw.conversionsapigateway.com, reject
 DOMAIN-SUFFIX,happen.spkt.io, reject
 DOMAIN-SUFFIX,harvest.graindata.com, reject
 DOMAIN-SUFFIX,hb.vhsrv.com, reject
@@ -41097,6 +41100,7 @@ DOMAIN-SUFFIX,imgstat.baidu.com, reject
 DOMAIN-SUFFIX,improving.wuzhuiso.com, reject
 DOMAIN-SUFFIX,jcmonitor.xcar.com.cn, reject
 DOMAIN-SUFFIX,l.web.huya.com, reject
+DOMAIN-SUFFIX,log-upload-os.hoyolab.com, reject
 DOMAIN-SUFFIX,log-upload-os.hoyoverse.com, reject
 DOMAIN-SUFFIX,log.bitauto.com, reject
 DOMAIN-SUFFIX,log.flight.qunar.com, reject

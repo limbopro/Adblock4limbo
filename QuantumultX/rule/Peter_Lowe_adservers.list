@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 15 Jan 2025 14:33:58 GMT
-# entries:        3543
+# last updated:   Wed, 05 Feb 2025 14:08:02 GMT
+# entries:        3544
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2674,6 +2674,7 @@ DOMAIN-SUFFIX,quirkysugar.com, reject
 DOMAIN-SUFFIX,quisma.com, reject
 DOMAIN-SUFFIX,quizzicalzephyr.com, reject
 DOMAIN-SUFFIX,r.logrocket.io, reject
+DOMAIN-SUFFIX,r.marketing.dubaisothebys.com, reject
 DOMAIN-SUFFIX,r.msn.com, reject
 DOMAIN-SUFFIX,r.scoota.co, reject
 DOMAIN-SUFFIX,r.sibmail.havasit.com, reject

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 05 Feb 2025 14:08:02 GMT
-# entries:        3544
+# last updated:   Sat, 08 Feb 2025 02:26:10 GMT
+# entries:        3538
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -12,7 +12,6 @@
 # start date:    Fri, 06 Jun 2003 00:00:00
 
 
-DOMAIN-SUFFIX,1-1ads.com
 DOMAIN-SUFFIX,101com.com
 DOMAIN-SUFFIX,180hits.de
 DOMAIN-SUFFIX,180searchassistant.com
@@ -389,7 +388,6 @@ DOMAIN-SUFFIX,ads.bluemountain.com
 DOMAIN-SUFFIX,ads.boerding.com
 DOMAIN-SUFFIX,ads.boylesports.com
 DOMAIN-SUFFIX,ads.brabys.com
-DOMAIN-SUFFIX,ads.bumq.com
 DOMAIN-SUFFIX,ads.canalblog.com
 DOMAIN-SUFFIX,ads.casinocity.com
 DOMAIN-SUFFIX,ads.casumoaffiliates.com
@@ -500,7 +498,6 @@ DOMAIN-SUFFIX,ads.livenation.com
 DOMAIN-SUFFIX,ads.lordlucky.com
 DOMAIN-SUFFIX,ads.ma7.tv
 DOMAIN-SUFFIX,ads.mail.bg
-DOMAIN-SUFFIX,ads.mariuana.it
 DOMAIN-SUFFIX,ads.massinfra.nl
 DOMAIN-SUFFIX,ads.mcafee.com
 DOMAIN-SUFFIX,ads.mediaodyssey.com
@@ -598,6 +595,7 @@ DOMAIN-SUFFIX,ads.tripod.lycos.it
 DOMAIN-SUFFIX,ads.tripod.lycos.nl
 DOMAIN-SUFFIX,ads.tso.dennisnet.co.uk
 DOMAIN-SUFFIX,ads.twitter.com
+DOMAIN-SUFFIX,ads.twojatv.info
 DOMAIN-SUFFIX,ads.ultimate-guitar.com
 DOMAIN-SUFFIX,ads.uncrate.com
 DOMAIN-SUFFIX,ads.unison.bg
@@ -668,7 +666,6 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com
 DOMAIN-SUFFIX,adsbydelema.com
 DOMAIN-SUFFIX,adscale.de
 DOMAIN-SUFFIX,adscholar.com
-DOMAIN-SUFFIX,adscience.nl
 DOMAIN-SUFFIX,adsco.re
 DOMAIN-SUFFIX,adscpm.com
 DOMAIN-SUFFIX,adsdaq.com
@@ -986,6 +983,7 @@ DOMAIN-SUFFIX,at-adserver.alltop.com
 DOMAIN-SUFFIX,at-o.net
 DOMAIN-SUFFIX,atdmt.com
 DOMAIN-SUFFIX,athena-ads.wikia.com
+DOMAIN-SUFFIX,ato.mx
 DOMAIN-SUFFIX,attractionbanana.com
 DOMAIN-SUFFIX,attribution.report
 DOMAIN-SUFFIX,atwola.com
@@ -1457,6 +1455,7 @@ DOMAIN-SUFFIX,curtaincows.com
 DOMAIN-SUFFIX,cushiondrum.com
 DOMAIN-SUFFIX,customad.cnn.com
 DOMAIN-SUFFIX,customads.co
+DOMAIN-SUFFIX,customeriomail.com
 DOMAIN-SUFFIX,customers.kameleoon.com
 DOMAIN-SUFFIX,cutechin.com
 DOMAIN-SUFFIX,cxense.com
@@ -1658,7 +1657,6 @@ DOMAIN-SUFFIX,express-submit.de
 DOMAIN-SUFFIX,extractobservation.com
 DOMAIN-SUFFIX,extreme-dm.com
 DOMAIN-SUFFIX,extremetracking.com
-DOMAIN-SUFFIX,eyeblaster.com
 DOMAIN-SUFFIX,eyeota.net
 DOMAIN-SUFFIX,eyeviewads.com
 DOMAIN-SUFFIX,eyewonder.com
@@ -1814,7 +1812,6 @@ DOMAIN-SUFFIX,greystripe.com
 DOMAIN-SUFFIX,grouchybrothers.com
 DOMAIN-SUFFIX,groundtruth.com
 DOMAIN-SUFFIX,gscontxt.net
-DOMAIN-SUFFIX,gstaticx.com
 DOMAIN-SUFFIX,guardeddirection.com
 DOMAIN-SUFFIX,guardedschool.com
 DOMAIN-SUFFIX,gunggo.com
@@ -2364,8 +2361,6 @@ DOMAIN-SUFFIX,newnet.qsrch.com
 DOMAIN-SUFFIX,newnudecash.com
 DOMAIN-SUFFIX,newopenx.detik.com
 DOMAIN-SUFFIX,newsadsppush.com
-DOMAIN-SUFFIX,newsletter-link.com
-DOMAIN-SUFFIX,newstarads.com
 DOMAIN-SUFFIX,newt1.adultadworld.com
 DOMAIN-SUFFIX,newt1.adultworld.com
 DOMAIN-SUFFIX,nexac.com
@@ -3390,7 +3385,6 @@ DOMAIN-SUFFIX,vertamedia.com
 DOMAIN-SUFFIX,verticalmass.com
 DOMAIN-SUFFIX,vervewireless.com
 DOMAIN-SUFFIX,vgnp3trk.com
-DOMAIN-SUFFIX,vibrantmedia.com
 DOMAIN-SUFFIX,vibrantsundown.com
 DOMAIN-SUFFIX,vid.pubmatic.com
 DOMAIN-SUFFIX,vidcpm.com

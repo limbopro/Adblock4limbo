@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 05 Feb 2025 14:08:02 GMT
-# entries:        3544
+# last updated:   Sat, 08 Feb 2025 02:26:10 GMT
+# entries:        3538
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -12,7 +12,6 @@
 # start date:    Fri, 06 Jun 2003 00:00:00
 
 
-DOMAIN-SUFFIX,1-1ads.com, reject
 DOMAIN-SUFFIX,101com.com, reject
 DOMAIN-SUFFIX,180hits.de, reject
 DOMAIN-SUFFIX,180searchassistant.com, reject
@@ -389,7 +388,6 @@ DOMAIN-SUFFIX,ads.bluemountain.com, reject
 DOMAIN-SUFFIX,ads.boerding.com, reject
 DOMAIN-SUFFIX,ads.boylesports.com, reject
 DOMAIN-SUFFIX,ads.brabys.com, reject
-DOMAIN-SUFFIX,ads.bumq.com, reject
 DOMAIN-SUFFIX,ads.canalblog.com, reject
 DOMAIN-SUFFIX,ads.casinocity.com, reject
 DOMAIN-SUFFIX,ads.casumoaffiliates.com, reject
@@ -500,7 +498,6 @@ DOMAIN-SUFFIX,ads.livenation.com, reject
 DOMAIN-SUFFIX,ads.lordlucky.com, reject
 DOMAIN-SUFFIX,ads.ma7.tv, reject
 DOMAIN-SUFFIX,ads.mail.bg, reject
-DOMAIN-SUFFIX,ads.mariuana.it, reject
 DOMAIN-SUFFIX,ads.massinfra.nl, reject
 DOMAIN-SUFFIX,ads.mcafee.com, reject
 DOMAIN-SUFFIX,ads.mediaodyssey.com, reject
@@ -598,6 +595,7 @@ DOMAIN-SUFFIX,ads.tripod.lycos.it, reject
 DOMAIN-SUFFIX,ads.tripod.lycos.nl, reject
 DOMAIN-SUFFIX,ads.tso.dennisnet.co.uk, reject
 DOMAIN-SUFFIX,ads.twitter.com, reject
+DOMAIN-SUFFIX,ads.twojatv.info, reject
 DOMAIN-SUFFIX,ads.ultimate-guitar.com, reject
 DOMAIN-SUFFIX,ads.uncrate.com, reject
 DOMAIN-SUFFIX,ads.unison.bg, reject
@@ -668,7 +666,6 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com, reject
 DOMAIN-SUFFIX,adsbydelema.com, reject
 DOMAIN-SUFFIX,adscale.de, reject
 DOMAIN-SUFFIX,adscholar.com, reject
-DOMAIN-SUFFIX,adscience.nl, reject
 DOMAIN-SUFFIX,adsco.re, reject
 DOMAIN-SUFFIX,adscpm.com, reject
 DOMAIN-SUFFIX,adsdaq.com, reject
@@ -986,6 +983,7 @@ DOMAIN-SUFFIX,at-adserver.alltop.com, reject
 DOMAIN-SUFFIX,at-o.net, reject
 DOMAIN-SUFFIX,atdmt.com, reject
 DOMAIN-SUFFIX,athena-ads.wikia.com, reject
+DOMAIN-SUFFIX,ato.mx, reject
 DOMAIN-SUFFIX,attractionbanana.com, reject
 DOMAIN-SUFFIX,attribution.report, reject
 DOMAIN-SUFFIX,atwola.com, reject
@@ -1457,6 +1455,7 @@ DOMAIN-SUFFIX,curtaincows.com, reject
 DOMAIN-SUFFIX,cushiondrum.com, reject
 DOMAIN-SUFFIX,customad.cnn.com, reject
 DOMAIN-SUFFIX,customads.co, reject
+DOMAIN-SUFFIX,customeriomail.com, reject
 DOMAIN-SUFFIX,customers.kameleoon.com, reject
 DOMAIN-SUFFIX,cutechin.com, reject
 DOMAIN-SUFFIX,cxense.com, reject
@@ -1658,7 +1657,6 @@ DOMAIN-SUFFIX,express-submit.de, reject
 DOMAIN-SUFFIX,extractobservation.com, reject
 DOMAIN-SUFFIX,extreme-dm.com, reject
 DOMAIN-SUFFIX,extremetracking.com, reject
-DOMAIN-SUFFIX,eyeblaster.com, reject
 DOMAIN-SUFFIX,eyeota.net, reject
 DOMAIN-SUFFIX,eyeviewads.com, reject
 DOMAIN-SUFFIX,eyewonder.com, reject
@@ -1814,7 +1812,6 @@ DOMAIN-SUFFIX,greystripe.com, reject
 DOMAIN-SUFFIX,grouchybrothers.com, reject
 DOMAIN-SUFFIX,groundtruth.com, reject
 DOMAIN-SUFFIX,gscontxt.net, reject
-DOMAIN-SUFFIX,gstaticx.com, reject
 DOMAIN-SUFFIX,guardeddirection.com, reject
 DOMAIN-SUFFIX,guardedschool.com, reject
 DOMAIN-SUFFIX,gunggo.com, reject
@@ -2364,8 +2361,6 @@ DOMAIN-SUFFIX,newnet.qsrch.com, reject
 DOMAIN-SUFFIX,newnudecash.com, reject
 DOMAIN-SUFFIX,newopenx.detik.com, reject
 DOMAIN-SUFFIX,newsadsppush.com, reject
-DOMAIN-SUFFIX,newsletter-link.com, reject
-DOMAIN-SUFFIX,newstarads.com, reject
 DOMAIN-SUFFIX,newt1.adultadworld.com, reject
 DOMAIN-SUFFIX,newt1.adultworld.com, reject
 DOMAIN-SUFFIX,nexac.com, reject
@@ -3390,7 +3385,6 @@ DOMAIN-SUFFIX,vertamedia.com, reject
 DOMAIN-SUFFIX,verticalmass.com, reject
 DOMAIN-SUFFIX,vervewireless.com, reject
 DOMAIN-SUFFIX,vgnp3trk.com, reject
-DOMAIN-SUFFIX,vibrantmedia.com, reject
 DOMAIN-SUFFIX,vibrantsundown.com, reject
 DOMAIN-SUFFIX,vid.pubmatic.com, reject
 DOMAIN-SUFFIX,vidcpm.com, reject

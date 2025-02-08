@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202502051330
+## ! Version: 202502081330
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Feb 2025 13:30 UTC
+## ! Last modified: 08 Feb 2025 13:30 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1152,6 +1152,7 @@ DOMAIN-SUFFIX,fairfeeling.com, reject
 DOMAIN-SUFFIX,fairiesbranch.com, reject
 DOMAIN-SUFFIX,fairygaze.com, reject
 DOMAIN-SUFFIX,fairytaleflame.com, reject
+DOMAIN-SUFFIX,faithrowold.com, reject
 DOMAIN-SUFFIX,fallaciousfifth.com, reject
 DOMAIN-SUFFIX,falsefeet.com, reject
 DOMAIN-SUFFIX,falseframe.com, reject
@@ -3942,6 +3943,7 @@ DOMAIN-SUFFIX,analytics.idfnet.net, reject
 DOMAIN-SUFFIX,analytics.media-proweb.de, reject
 DOMAIN-SUFFIX,artemis-cdn.ocdn.eu, reject
 DOMAIN-SUFFIX,ats.otto.de, reject
+DOMAIN-SUFFIX,b.nativendo.de, reject
 DOMAIN-SUFFIX,beagle.prod.tda.link, reject
 DOMAIN-SUFFIX,blacktri-a.akamaihd.net, reject
 DOMAIN-SUFFIX,cgicounter.onlinehome.de, reject

@@ -24,8 +24,6 @@
 
 // ruleset: cze-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["checkAdsBlocked","noopFunc"],["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["errSZ","undefined"],["useSeznamAds","false"]];
+const argsList = [["checkAdsBlocked","noopFunc"],["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["xmxalr",""],["useSeznamAds","false"],["hasUserActiveSubscription","true"]];
 
-const hostnamesMap = new Map([["ewrc.cz",0],["hokej.cz",1],["impuls.cz",2],["media.joj.sk",[3,4]],["media.cms.markiza.sk",3],["mobilenet.cz",[5,6]],["fzone.cz",[5,6]],["fdrive.cz",[5,6]],["podcasty.seznam.cz",[7,8]],["titulky.com",[8,10]],["root.cz",9],["tn.nova.cz",11]]);
+const hostnamesMap = new Map([["ewrc.cz",0],["hokej.cz",1],["impuls.cz",2],["media.joj.sk",[3,4]],["media.cms.markiza.sk",3],["mobilenet.cz",[5,6]],["fzone.cz",[5,6]],["fdrive.cz",[5,6]],["podcasty.seznam.cz",[7,8]],["titulky.com",[8,10]],["root.cz",9],["tn.nova.cz",11],["zdopravy.cz",12]]);
 
 const entitiesMap = new Map([]);
 
@@ -489,8 +487,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -547,7 +545,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setConstant(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

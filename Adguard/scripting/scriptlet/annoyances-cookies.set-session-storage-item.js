@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-cookies
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_setSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["sae-conversational-consent-msg-closed","true"],["dismissedTrackingBanner","true"],["CookieTerm18","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
+const argsList = [["cookieModal2","1"],["cookieMessageDisagree","true"],["disclaimerOpened","1"],["terms-and-policy-accepted","true"],["fa-games-consent-given","true"],["sae-conversational-consent-msg-closed","true"],["privacyPopupShown","true"],["DS_COOKIENOTIFY_CLOSED","true"],["dismissedTrackingBanner","true"],["CookieTerm18","true"],["cookie_reject","true"],["cookieConfirmed","true"],["hasConsent","1"],["hasDsg","1"],["griffinConsentIgnored","1"],["ACCEPT_LGPD","true"],["acceptCookies","false"],["terms-and-policy-accepted","yes"],["CookieBannerShown","yes"]];
 
-const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["shop-apotheke.com",4],["redcare.it",4],["shop-apotheke.at",4],["farmaline.be",4],["blockchain.com",5],["fatalmodel.com",6],["brightonandhovealbion.com",7],["ssga.com",8],["cachecrawler.com",[9,10]],["griffin.com",11],["c6bank.com.br",12],["gedik.com",13],["collato.com",[14,15]]]);
+const hostnamesMap = new Map([["workwide.de",0],["erco.com",1],["communitycrimemap.com",2],["smartwielen.lu",3],["html5games.com",4],["shop-apotheke.com",5],["redcare.it",5],["shop-apotheke.at",5],["farmaline.be",5],["beenverified.com",6],["prosciutteriasandaniele.it",7],["blockchain.com",8],["fatalmodel.com",9],["brightonandhovealbion.com",10],["ssga.com",11],["cachecrawler.com",[12,13]],["griffin.com",14],["c6bank.com.br",15],["gedik.com",16],["collato.com",[17,18]]]);
 
 const entitiesMap = new Map([]);
 
@@ -139,6 +137,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -345,8 +345,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -403,7 +403,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setSessionStorageItem(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: chn-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["DOMContentLoaded","check"],["error","event.target.tagName"],["","showRemoveAdBlocker"],["DOMContentLoaded","document.createElement"]];
+const argsList = [["DOMContentLoaded","check"],["error","event.target.tagName"],["DOMContentLoaded","adBlock"],["","showRemoveAdBlocker"],["DOMContentLoaded","document.createElement"]];
 
-const hostnamesMap = new Map([["xchina.co",0],["rjno1.com",1],["xiebruce.top",2],["85tube.com",3]]);
+const hostnamesMap = new Map([["xchina.co",0],["rjno1.com",1],["linovelib.com",2],["xiebruce.top",3],["85tube.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -444,8 +442,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -502,7 +500,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { addEventListenerDefuser(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: fra-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["siteParams.aabMessage"],["adParams siteParams.aabMessage"],["ads.enableAntiAdBlocking"],["ads.*.default ads.*.url ads.enableMidrolls","ads"],["applaunch.data.player.features.ad.enabled applaunch.data.player.features.ad.dai.enabled","appName"]];
 
-const hostnamesMap = new Map([["commentcamarche.net",0],["linternaute.com",1],["canalplus.com",[2,3]],["rtlplay.be",4]]);
+const hostnamesMap = new Map([["journaldesfemmes.fr",0],["journaldunet.com",0],["commentcamarche.net",0],["linternaute.com",1],["canalplus.com",[2,3]],["rtlplay.be",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -453,8 +451,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -511,7 +509,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { jsonPrune(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

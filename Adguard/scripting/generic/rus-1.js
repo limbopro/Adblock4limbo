@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// rus-1
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// rus-1
 
 const toImport = [[7954126,"a#mobtop[title^=\"Рейтинг мобильных сайтов\"]"]];
 

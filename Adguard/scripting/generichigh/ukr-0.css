@@ -21,6 +21,8 @@
 
 /* ukr-0 */
 
+div[id*="MarketGid"],
+div[id*="ScriptRoot"],
 html > body:has(div.popup > div.popup-inner > a[href*="/vote"]),
 html > body:has(form[action="/vote"] > button[name="send_phone"]),
 html > body:has(form[action="/vote/code"] > button[name="send_code"]),

@@ -24,8 +24,6 @@
 
 // ruleset: default
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_trustedPreventXhr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"],["s4.cdnpc.net/front/css/style.min.css?version=v93","slider--features"],["cdn.taboola.com/libtrc/san1go-network/loader.js","feOffset"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"]];
+const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"],["s4.cdnpc.net/front/css/style.min.css","slider--features"],["s4.cdnpc.net/vite-bundle/main.css","data-v-d23a26c8"],["cdn.taboola.com/libtrc/san1go-network/loader.js","feOffset"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"]];
 
-const hostnamesMap = new Map([["bowfile.com",0],["1cloudfile.com",0],["koramaup.com",0],["animefire.info",[1,2,3]],["animesonlinecc.us",[1,2,3]],["animesonliner4.com",[1,2,3]],["animesup.info",[1,2,3]],["animeyabu.net",[1,2,3]],["animeyabu.org",[1,2,3]],["anitube.us",[1,2,3]],["anitube.vip",[1,2,3]],["caroloportunidades.com.br",[1,2,3]],["dattebayo-br.com",[1,2,3]],["drstonebr.com",[1,2,3]],["flyanimes.cloud",[1,2,3]],["goanimes.vip",[1,2,3]],["goyabu.us",[1,2,3]],["hinatasoul.com",[1,2,3]],["isekaibrasil.com",[1,2,3]],["meuanime.info",[1,2,3]],["otakuanimess.net",[1,2,3]],["superanimes.in",[1,2,3]],["sbs.com.au",[4,5,6]]]);
+const hostnamesMap = new Map([["bowfile.com",0],["1cloudfile.com",0],["koramaup.com",0],["animefire.info",[1,2,3,4]],["animesonlinecc.us",[1,2,3,4]],["animesonliner4.com",[1,2,3,4]],["animesup.info",[1,2,3,4]],["animeyabu.net",[1,2,3,4]],["animeyabu.org",[1,2,3,4]],["anitube.us",[1,2,3,4]],["anitube.vip",[1,2,3,4]],["caroloportunidades.com.br",[1,2,3,4]],["dattebayo-br.com",[1,2,3,4]],["drstonebr.com",[1,2,3,4]],["file4go.com",[1,2,3,4]],["flyanimes.cloud",[1,2,3,4]],["goanimes.vip",[1,2,3,4]],["goyabu.us",[1,2,3,4]],["hinatasoul.com",[1,2,3,4]],["isekaibrasil.com",[1,2,3,4]],["meuanime.info",[1,2,3,4]],["otakuanimess.net",[1,2,3,4]],["superanimes.in",[1,2,3,4]],["sbs.com.au",[5,6,7]]]);
 
 const entitiesMap = new Map([]);
 
@@ -543,8 +541,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -601,7 +599,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedPreventXhr(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

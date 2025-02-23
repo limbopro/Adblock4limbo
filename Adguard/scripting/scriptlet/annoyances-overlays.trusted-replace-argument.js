@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-overlays
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,11 +37,11 @@ const uBOL_trustedReplaceArgument = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["Array.prototype.includes","0","undefined","condition","visitor-gate"],["Storage.prototype.setItem","0","json:\"freeVideoFriendly\"","condition","freeVideoFriendlySlug"]];
+const argsList = [["Storage.prototype.setItem","0","json:\"DWEB\"","condition","DWEB_PIN_IMAGE_CLICK_COUNT"],["Storage.prototype.setItem","0","json:\"\"","condition","unauthDownloadCount"],["Array.prototype.includes","0","undefined","condition","visitor-gate"],["Storage.prototype.setItem","0","json:\"freeVideoFriendly\"","condition","freeVideoFriendlySlug"]];
 
-const hostnamesMap = new Map([["perplexity.ai",0],["nebula.tv",1]]);
+const hostnamesMap = new Map([["perplexity.ai",2],["nebula.tv",3]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["pinterest",[0,1]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -561,8 +559,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -619,7 +617,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedReplaceArgument(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

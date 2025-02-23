@@ -24,8 +24,6 @@
 
 // ruleset: vie-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["Cookies"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["affUrls"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["localStorage"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
 
-const hostnamesMap = new Map([["animevietsubs.net",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["nungdam.pro",5],["plcdn.xyz",[6,7,8,9,10]],["thichxemphim1.net",11],["tinsoikeo.live",12],["motchill.ph",12],["ohaytv.vip",12],["truyensieuhay.com",13],["hayhaytv.org",13],["quangcaoyenbai.com",13],["sieudamsex.com",13],["ephimchill.com",13],["thuvienhd.xyz",13],["xemtivi.tvhayhd.tv",13],["www.khophim88s.com",13],["nhentaivn.online",13],["mv.dailyphimz.com",13],["mv.phimbathu.one",13],["sexhihiz.co",13],["veryfiles.com",14],["viettoons.tv",15],["mv.phimmoiaz.cc",15],["dood.pm",15],["ytstv.me",15],["animet4.site",15],["anh.moe",15],["maclife.io",15],["xemphimjav.com",15],["hoctot.hocmai.vn",15],["bluphim.fun",15],["cdn2.blueskychilling.online",15],["ohaha79xxx.site",15],["fastscans6.net",15],["herotruyen.com",15],["truyenfull.io",15],["vinaurl.net",16],["www.nettruyenupp.com",17],["www.phimdinhcao.online",18],["phimlongtieng.org",18],["www.phimdinhcaoz.com",18],["xnhau.pro",18],["xoilacxj.cc",19],["yts.do",20],["yts.mx",20],["yts.rs",20],["znews.vn",21]]);
+const hostnamesMap = new Map([["animevietsubs.net",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["mupnungvl.pro",5],["plcdn.xyz",[6,7,8,9,10]],["thichxemphim1.net",11],["tinsoikeo.live",12],["motchiill.id",12],["ohaytv.me",12],["truyensieuhay.com",13],["hayhaytv.site",13],["quangcaoyenbai.com",13],["phimchill.life",13],["thuvienhd.biz",13],["tv.tvhayhd.org",13],["www.khophim88s.com",13],["thefaplive.com",13],["mv.dailyphimz.com",13],["mv.phimbathu.one",13],["sexhihiz.vc",13],["anime47.click",13],["veryfiles.com",14],["viettoons.tv",15],["mv.phimmoiaz.cc",15],["dood.pm",15],["ytstv.me",15],["anime1.site",15],["anh.moe",15],["maclife.io",15],["xemphimjav.com",15],["hoctot.hocmai.vn",15],["bluphim2.com",15],["cdn2.blueskychilling.online",15],["ohaha79xxx.site",15],["herotruyen.com",15],["truyenfull.vision",15],["player.phimapi.com",15],["noitu.pro",15],["vinaurl.net",16],["www.nettruyenupp.com",17],["www.phimdinhcao.online",18],["motchillcx.com",18],["xnhau.one",18],["xoilacxj.cc",19],["yts.do",20],["yts.mx",20],["yts.rs",20],["znews.vn",21]]);
 
 const entitiesMap = new Map([]);
 
@@ -317,8 +315,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -375,7 +373,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortOnPropertyRead(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

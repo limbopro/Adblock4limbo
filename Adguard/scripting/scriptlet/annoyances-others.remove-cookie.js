@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-others
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_removeCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["br_mc"],["articlesRead"],["_zippia-popup-s_t"],["tce","when","scroll"],["arc"],["tpm_article_views"],["tpm_page_views"],["sbj_archiveStatus"],["issuem_lp"],["ArticlePaywallList"],["client_id"],["AAJPaywall"],["MAID"]];
+const argsList = [["br_mc"],["articlesRead"],["_zippia-popup-s_t"],["tce","when","scroll"],["arc"],["tpm_article_views"],["tpm_page_views"],["sbj_archiveStatus"],["issuem_lp"],["ArticlePaywallList"],["xbc"],["/^tncms:meter:/"],["meter_haystack"],["Drupal_visitor_paywall"],["client_id"],["AAJPaywall"],["MAID"]];
 
-const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["lawinsider.com",3],["nautil.us",4],["talkingpointsmemo.com",[5,6]],["sportsbusinessjournal.com",7],["theolivepress.es",8],["plough.com",9],["startribune.com",10],["americanaffairsjournal.org",11],["science.org",12]]);
+const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["lawinsider.com",3],["nautil.us",4],["talkingpointsmemo.com",[5,6]],["sportsbusinessjournal.com",7],["theolivepress.es",8],["plough.com",9],["politico.com",10],["politico.eu",10],["bbc.com",10],["themonthly.com.au",10],["thesaturdaypaper.com.au",10],["niagarafallsreview.ca",11],["stcatharinesstandard.ca",11],["therecord.com",11],["thespec.com",11],["thestar.com",11],["wellandtribune.ca",11],["hartfordbusiness.com",12],["commonwealmagazine.org",13],["startribune.com",14],["americanaffairsjournal.org",15],["science.org",16]]);
 
 const entitiesMap = new Map([]);
 
@@ -314,8 +312,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -372,7 +370,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: nld-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["DAB","noopFunc"],["BannerManager","undefined"]];
+const argsList = [["DAB","noopFunc"],["BannerManager","undefined"],["cookie","true"]];
 
-const hostnamesMap = new Map([["forum.fok.nl",0],["hardware.info",1]]);
+const hostnamesMap = new Map([["forum.fok.nl",0],["hardware.info",1],["dailybuzz.nl",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -489,8 +487,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -547,7 +545,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setConstant(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

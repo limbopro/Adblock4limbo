@@ -24,8 +24,6 @@
 
 // ruleset: ukr-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","moveTopBanner"],["script","mobileBrandingMainInited"]];
+const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","moveTopBanner"],["script","location.reload"],["script","mobileBrandingMainInited"]];
 
-const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",0],["censor.net",0],["dengi.ua",0],["epravda.com.ua",0],["f1analytic.com",0],["football24.ua",0],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",0],["liga.net",0],["meteofor.com.ua",0],["pravda.com.ua",0],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",0],["viva.ua",0],["beauty.ua",1],["internetua.com",1],["sinoptik.ua",1],["eurointegration.com.ua",2],["zaxid.net",3]]);
+const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",0],["censor.net",0],["dengi.ua",0],["epravda.com.ua",0],["f1analytic.com",0],["football24.ua",0],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["glianec.com",[0,3]],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",0],["liga.net",0],["meteofor.com.ua",0],["pravda.com.ua",0],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",0],["viva.ua",0],["beauty.ua",1],["internetua.com",1],["sinoptik.ua",1],["eurointegration.com.ua",2],["zaxid.net",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -397,8 +395,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -455,7 +453,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeNodeText(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

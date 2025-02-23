@@ -24,8 +24,6 @@
 
 // ruleset: spa-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_preventSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["siteAccessPopup()"],["adblockDetector"],["hasAdblock"],["ad blocker"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
+const argsList = [["siteAccessPopup()"],["adblockDetector"],["hasAdblock"],["ad blocker"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["/hasAdblock|window\\.getComputedStyle/"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
 
-const hostnamesMap = new Map([["mundolucha.com",0],["zonatmo.com",1],["cozinhabr.top",2],["ricasdelicias.online",2],["sabornutritivo.com",2],["receitasdaora.online",2],["foodiesgallery.com",2],["caroloportunidades.com.br",2],["coempregos.com.br",2],["anitube.us",2],["anitube.vip",2],["hinatasoul.com",2],["dicasgostosas.com",2],["packsmega.info",3],["peliculas8k.com",4],["guiacripto.online",5],["zona-leros.com",6],["xerifetech.com",7],["suaads.com",8],["reidoplacar.com",8],["suaurl.com",[8,17]],["guianoticiario.net",9],["resenhasglobais.com",10],["tecword.info",10],["smartdoing.tech",10],["vivercomsaude.online",10],["escplus.es",11],["genshinpro.com.br",12],["it-swarm-es.com",12],["manchetehoje.xyz",13],["hartico.com",14],["seriesdonghua.com",15],["mundodonghua.com",15],["forodecostarica.com",16],["acortalink.me",17],["seriesgratis.biz",18]]);
+const hostnamesMap = new Map([["mundolucha.com",0],["zonatmo.com",1],["cozinhabr.top",2],["ricasdelicias.online",2],["sabornutritivo.com",2],["coempregos.com.br",2],["anitube.us",2],["anitube.vip",2],["hinatasoul.com",2],["dicasgostosas.com",2],["packsmega.info",3],["peliculas8k.com",4],["guiacripto.online",5],["zona-leros.com",6],["xerifetech.com",7],["suaads.com",8],["reidoplacar.com",8],["suaurl.com",[8,18]],["guianoticiario.net",9],["resenhasglobais.com",10],["tecword.info",10],["smartdoing.tech",10],["vivercomsaude.online",10],["escplus.es",11],["genshinpro.com.br",12],["it-swarm-es.com",12],["manchetehoje.xyz",13],["receitasdaora.online",14],["foodiesgallery.com",14],["caroloportunidades.com.br",14],["hartico.com",15],["seriesdonghua.com",16],["mundodonghua.com",16],["forodecostarica.com",17],["acortalink.me",18],["seriesgratis.biz",19]]);
 
 const entitiesMap = new Map([]);
 
@@ -391,8 +389,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -449,7 +447,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { preventSetTimeout(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

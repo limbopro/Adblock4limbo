@@ -24,8 +24,6 @@
 
 // ruleset: rus-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,13 +37,13 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","addWindowOnClickStrategyHandler"],["DOMContentLoaded","banners"],["DOMContentLoaded","encodedUrl"],["DOMContentLoaded","exo_tracker"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
 
-const hostnamesMap = new Map([["7days.ru",[0,27]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["kp.kg",[14,27]],["kp.kz",[14,27]],["kp.md",[14,27]],["kp.ru",[14,27]],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["e.mail.ru",26],["octavius.mail.ru",26],["cdn.viqeo.tv",27],["kinonews.ru",27],["mk.ru",27],["ohotniki.ru",27],["portalvirtualreality.ru",27],["radiokp.ru",27],["sportkp.ru",27],["wday.ru",27],["woman.ru",27],["www.fontanka.ru",27]]);
+const hostnamesMap = new Map([["7days.ru",[0,29]],["fastpic.org",[1,19]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,16]],["sibnet.ru",6],["sports.ru",7],["oblikbudget.com.ua",8],["cq.ru",9],["1progs.me",10],["xv-ru.com",11],["litnet.com",12],["regnum.news",13],["regnum.ru",13],["tproger.ru",13],["softonic.ru",14],["smotrim.ru",15],["kp.kg",[17,29]],["kp.kz",[17,29]],["kp.md",[17,29]],["kp.ru",[17,29]],["rbc.ru",17],["sportrbc.ru",17],["carservic.ru",18],["iptv.org.ua",18],["tva.org.ua",18],["ufchgu.ru",18],["romakatya.ru",20],["overclockers.ru",21],["bonus-tv.ru",22],["kinoblin.ru",23],["serialai.ru",23],["m.lenta.ru",24],["www.vesti.ru",25],["lenta.ru",26],["otvet.mail.ru",27],["e.mail.ru",28],["octavius.mail.ru",28],["cdn.viqeo.tv",29],["kinonews.ru",29],["mk.ru",29],["ohotniki.ru",29],["portalvirtualreality.ru",29],["radiokp.ru",29],["sportkp.ru",29],["wday.ru",29],["woman.ru",29],["www.fontanka.ru",29]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([["new.fastpic.org",[1,16]],["id.rambler.ru",[5,13]],["vp.rambler.ru",[5,13]],["player.smotrim.ru",[12]],["mail.rambler.ru",[13]]]);
+const exceptionsMap = new Map([["new.fastpic.org",[1,19]],["id.rambler.ru",[5,16]],["vp.rambler.ru",[5,16]],["player.smotrim.ru",[15]],["mail.rambler.ru",[16]]]);
 
 /******************************************************************************/
 
@@ -444,8 +442,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -502,7 +500,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { addEventListenerDefuser(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

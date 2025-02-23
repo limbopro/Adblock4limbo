@@ -24,8 +24,6 @@
 
 // ruleset: chn-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_abortCurrentScript = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"],["Function","new Function(document["]];
+const argsList = [["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.write","adbyunion"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["$","#adisblock"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"],["navigator","location.href"],["Math.random","parentNode.insertBefore"],["document.createElement","return a.split"],["Function","new Function(document["]];
 
-const hostnamesMap = new Map([["bilinovel.com",0],["18comic.org",1],["18comic.vip",1],["18-comic.work",1],["vxetable.cn",2],["h-ciyuan.com",3],["1keydata.com",4],["slit.cn",5],["jkpan.cc",[6,7]],["getrelax.cc",8],["poedb.tw",9],["bingfeng.tw",10],["youranshare.com",11],["getitfree.cn",12],["pg-wuming.com",13],["m.lwxs.com",[14,15]],["akkxs.net",14],["pornbest.org",16],["nunuyy3.org",17],["dogfight360.com",18],["o8tv.com",19],["javlibrary.com",20],["wnacg1.cc",21],["pixnet.net",22],["ggjav.com",23],["porn87.com",23],["mxdm.xyz",24]]);
+const hostnamesMap = new Map([["bilinovel.com",0],["18comic.org",1],["18comic.vip",1],["18-comic.work",1],["vxetable.cn",2],["h-ciyuan.com",3],["1keydata.com",4],["slit.cn",5],["jkpan.cc",[6,7]],["getrelax.cc",8],["poedb.tw",9],["bingfeng.tw",10],["youranshare.com",11],["getitfree.cn",12],["pg-wuming.com",13],["m.lwxs.com",[14,15]],["akkxs.net",14],["pornbest.org",16],["nunuyy3.org",17],["dogfight360.com",18],["o8tv.com",19],["javlibrary.com",20],["wnacg1.cc",21],["pixnet.net",22],["ggjav.com",23],["porn87.com",23],["m.shuhaige.net",[24,25,26]],["mxdm.xyz",27]]);
 
 const entitiesMap = new Map([["hentaicomic",21],["wnacg",21]]);
 
@@ -399,8 +397,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -457,7 +455,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortCurrentScript(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

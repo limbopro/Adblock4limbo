@@ -24,8 +24,6 @@
 
 // ruleset: default
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_trustedReplaceOutboundText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["decodeURIComponent","Math.random() <= 0.15","false"],["Array.prototype.shift","/^.+$/s","","condition","https"],["atob","window.matchMedia('(display-mode: standalone)').matches","true"]];
+const argsList = [["decodeURIComponent","Math.random() <= 0.15","false"],["atob","skmedix.com","skmedix.pl"],["Array.prototype.shift","/^.+$/s","","condition","https"],["atob",".length === 0",".length === 31"],["atob","window.matchMedia('(display-mode: standalone)').matches","true"]];
 
-const hostnamesMap = new Map([["laweducationinfo.com",0],["savemoneyinfo.com",0],["worldaffairinfo.com",0],["godstoryinfo.com",0],["successstoryinfo.com",0],["cxissuegk.com",0],["learnmarketinfo.com",0],["bhugolinfo.com",0],["armypowerinfo.com",0],["rsadnetworkinfo.com",0],["rsinsuranceinfo.com",0],["rsfinanceinfo.com",0],["rsgamer.app",0],["rssoftwareinfo.com",0],["rshostinginfo.com",0],["rseducationinfo.com",0],["phonereviewinfo.com",0],["makeincomeinfo.com",0],["gknutshell.com",0],["vichitrainfo.com",0],["workproductivityinfo.com",0],["dopomininfo.com",0],["hostingdetailer.com",0],["fitnesssguide.com",0],["tradingfact4u.com",0],["cryptofactss.com",0],["softwaredetail.com",0],["artoffocas.com",0],["insurancesfact.com",0],["travellingdetail.com",0],["abysscdn.com",1],["hihihaha1.xyz",1],["player-cdn.com",1],["playhydrax.com",1],["infinityscans.xyz",2],["infinityscans.net",2],["infinityscans.org",2]]);
+const hostnamesMap = new Map([["laweducationinfo.com",0],["savemoneyinfo.com",0],["worldaffairinfo.com",0],["godstoryinfo.com",0],["successstoryinfo.com",0],["cxissuegk.com",0],["learnmarketinfo.com",0],["bhugolinfo.com",0],["armypowerinfo.com",0],["rsadnetworkinfo.com",0],["rsinsuranceinfo.com",0],["rsfinanceinfo.com",0],["rsgamer.app",0],["rssoftwareinfo.com",0],["rshostinginfo.com",0],["rseducationinfo.com",0],["phonereviewinfo.com",0],["makeincomeinfo.com",0],["gknutshell.com",0],["vichitrainfo.com",0],["workproductivityinfo.com",0],["dopomininfo.com",0],["hostingdetailer.com",0],["fitnesssguide.com",0],["tradingfact4u.com",0],["cryptofactss.com",0],["softwaredetail.com",0],["artoffocas.com",0],["insurancesfact.com",0],["travellingdetail.com",0],["skmedix.pl",1],["abysscdn.com",2],["fullfreeimage.com",2],["hihihaha1.xyz",2],["imagelovers.com",2],["player-cdn.com",2],["playhydrax.com",2],["rufiiguta.com",2],["infinityscans.xyz",[3,4]],["infinityscans.net",[3,4]],["infinityscans.org",[3,4]]]);
 
 const entitiesMap = new Map([]);
 
@@ -375,8 +373,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -433,7 +431,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedReplaceOutboundText(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: swe-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","eval(function(h","u","n","t","e","r)"],["script","show_msg"],["script","decodeURIComponent"],["script","checkAdsBlocked"]];
+const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","decodeURIComponent"],["script","checkAdsBlocked"]];
 
-const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["medibok.se",[5,6]],["pilsner.nu",7],["swedroid.se",8]]);
+const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["pilsner.nu",5],["swedroid.se",6]]);
 
 const entitiesMap = new Map([]);
 
@@ -397,8 +395,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -455,7 +453,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeNodeText(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

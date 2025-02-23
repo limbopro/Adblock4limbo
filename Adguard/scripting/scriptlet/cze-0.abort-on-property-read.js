@@ -24,8 +24,6 @@
 
 // ruleset: cze-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["App.branding"],["adsAllowed"],["HTMLIFrameElement.prototype.contentWindow"],["Ads"],["detectAdBlocker"],["atob"],["adBlockEnabled"]];
+const argsList = [["App.branding"],["adsAllowed"],["HTMLIFrameElement.prototype.contentWindow"],["Ads"],["detectAdBlocker"],["atob"]];
 
-const hostnamesMap = new Map([["cc.cz",0],["ctrlv.link",1],["games.tiscali.cz",2],["parlamentnilisty.cz",3],["svetandroida.cz",4],["zdopravy.cz",[5,6]]]);
+const hostnamesMap = new Map([["cc.cz",0],["ctrlv.link",1],["games.tiscali.cz",2],["parlamentnilisty.cz",3],["svetandroida.cz",4],["zdopravy.cz",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -317,8 +315,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -375,7 +373,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortOnPropertyRead(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-overlays
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_trustedClickElement = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"],["#app > #raichuLoaderTemplate [aria-label^=\"Остановить\"]"]];
+const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"],["#app > #raichuLoaderTemplate [aria-label^=\"Остановить\"]"],[".seo-landing-modal-cancel-btn .design-system-button-container","","500"]];
 
-const hostnamesMap = new Map([["deezer.com",0],["moovitapp.com",1],["teller.jp",2],["bbc.com",[3,4,5,6]],["wrtn.jp",7],["crunchyroll.com",8],["abema.tv",9],["rutube.ru",10]]);
+const hostnamesMap = new Map([["deezer.com",0],["moovitapp.com",1],["teller.jp",2],["bbc.com",[3,4,5,6]],["wrtn.jp",7],["crunchyroll.com",8],["abema.tv",9],["rutube.ru",10],["lemon8-app.com",11]]);
 
 const entitiesMap = new Map([]);
 
@@ -455,8 +453,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -513,7 +511,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedClickElement(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

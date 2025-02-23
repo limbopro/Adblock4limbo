@@ -19,13 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 // ruleset: lva-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope

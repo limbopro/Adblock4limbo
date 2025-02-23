@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202502081330
+## ! Version: 202502222242
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Feb 2025 13:30 UTC
+## ! Last modified: 22 Feb 2025 22:42 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -607,6 +607,7 @@ DOMAIN-SUFFIX,awzbijw.com, reject
 DOMAIN-SUFFIX,axiomaticalley.com, reject
 DOMAIN-SUFFIX,axiomaticanger.com, reject
 DOMAIN-SUFFIX,azuremystique.com, reject
+DOMAIN-SUFFIX,azurestealth.com, reject
 DOMAIN-SUFFIX,backupcat.com, reject
 DOMAIN-SUFFIX,badgeboat.com, reject
 DOMAIN-SUFFIX,badgerabbit.com, reject
@@ -922,6 +923,7 @@ DOMAIN-SUFFIX,cumbersomecake.com, reject
 DOMAIN-SUFFIX,cumbersomecar.com, reject
 DOMAIN-SUFFIX,cumbersomecarpenter.com, reject
 DOMAIN-SUFFIX,cumbersomecloud.com, reject
+DOMAIN-SUFFIX,curbminers.com, reject
 DOMAIN-SUFFIX,curiouschalk.com, reject
 DOMAIN-SUFFIX,curioussuccess.com, reject
 DOMAIN-SUFFIX,curlycannon.com, reject
@@ -1292,6 +1294,7 @@ DOMAIN-SUFFIX,givevacation.com, reject
 DOMAIN-SUFFIX,gladglen.com, reject
 DOMAIN-SUFFIX,gladysway.com, reject
 DOMAIN-SUFFIX,glamhawk.com, reject
+DOMAIN-SUFFIX,glasscoyote.com, reject
 DOMAIN-SUFFIX,gleamingcow.com, reject
 DOMAIN-SUFFIX,gleaminghaven.com, reject
 DOMAIN-SUFFIX,gleamingtrade.com, reject
@@ -1721,6 +1724,7 @@ DOMAIN-SUFFIX,objecthero.com, reject
 DOMAIN-SUFFIX,obscenesidewalk.com, reject
 DOMAIN-SUFFIX,observantice.com, reject
 DOMAIN-SUFFIX,offshorecyclone.com, reject
+DOMAIN-SUFFIX,offshoregeology.com, reject
 DOMAIN-SUFFIX,oldfashionedoffer.com, reject
 DOMAIN-SUFFIX,omgthink.com, reject
 DOMAIN-SUFFIX,omniscientfeeling.com, reject
@@ -2310,6 +2314,7 @@ DOMAIN-SUFFIX,stingsquirrel.com, reject
 DOMAIN-SUFFIX,stingycrush.com, reject
 DOMAIN-SUFFIX,stingyshoe.com, reject
 DOMAIN-SUFFIX,stingyspoon.com, reject
+DOMAIN-SUFFIX,stockerator.com, reject
 DOMAIN-SUFFIX,stockingsleet.com, reject
 DOMAIN-SUFFIX,stockingsneeze.com, reject
 DOMAIN-SUFFIX,stocktheme.com, reject
@@ -3108,6 +3113,7 @@ DOMAIN-SUFFIX,geoip.instiengage.com, reject
 DOMAIN-SUFFIX,geoip.nekudo.com, reject
 DOMAIN-SUFFIX,geolocation.outreach.com, reject
 DOMAIN-SUFFIX,geoservice.curse.com, reject
+DOMAIN-SUFFIX,geotags.refinery89.com, reject
 DOMAIN-SUFFIX,gi-client-tracking.goodgamestudios.com, reject
 DOMAIN-SUFFIX,go.activengage.com, reject
 DOMAIN-SUFFIX,green-griffin-860.appspot.com, reject
@@ -3137,6 +3143,7 @@ DOMAIN-SUFFIX,identification.hotmart.com, reject
 DOMAIN-SUFFIX,ihi.flowplayer.com, reject
 DOMAIN-SUFFIX,imp.pvnsolutions.com, reject
 DOMAIN-SUFFIX,impress.vcita.com, reject
+DOMAIN-SUFFIX,in.treasuredata.com, reject
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co, reject
 DOMAIN-SUFFIX,infinityid.condenastdigital.com, reject
 DOMAIN-SUFFIX,informer.yandex.ru, reject
@@ -3340,6 +3347,7 @@ DOMAIN-SUFFIX,processor.asccommunications.com, reject
 DOMAIN-SUFFIX,prod.ew.srp.navigacloud.com, reject
 DOMAIN-SUFFIX,prod.fennec.atp.fox, reject
 DOMAIN-SUFFIX,prodregistryv2.org, reject
+DOMAIN-SUFFIX,propsid.b-cdn.net, reject
 DOMAIN-SUFFIX,proxy.dzeio.com, reject
 DOMAIN-SUFFIX,proxy.trysavvy.com, reject
 DOMAIN-SUFFIX,pt.crossmediaservices.com, reject
@@ -5084,6 +5092,7 @@ DOMAIN-SUFFIX,tms.hft.hellofresh.com, reject
 DOMAIN-SUFFIX,tongji-res.meizu.com, reject
 DOMAIN-SUFFIX,top.wn.com, reject
 DOMAIN-SUFFIX,touch.myntra.com, reject
+DOMAIN-SUFFIX,tr.api.fanbyte.com, reject
 DOMAIN-SUFFIX,tr.clickstay.com, reject
 DOMAIN-SUFFIX,tr.www.cloudflare.com, reject
 DOMAIN-SUFFIX,track-visit.monday.com, reject
@@ -5168,6 +5177,7 @@ DOMAIN-SUFFIX,oneid.mmstat.com, reject
 DOMAIN-SUFFIX,cfa.fidelity.com, reject
 DOMAIN-SUFFIX,clear.wallapop.com, reject
 DOMAIN-SUFFIX,content.canadiantire.ca, reject
+DOMAIN-SUFFIX,content.discover.com, reject
 DOMAIN-SUFFIX,content.tab.com.au, reject
 DOMAIN-SUFFIX,content22.bmo.com, reject
 DOMAIN-SUFFIX,content22.citibank.com.au, reject
@@ -34237,7 +34247,6 @@ DOMAIN-SUFFIX,visit.donateblood.com.au, reject
 DOMAIN-SUFFIX,visit.hypertherm.com, reject
 DOMAIN-SUFFIX,visit.lifeblood.com.au, reject
 DOMAIN-SUFFIX,visit.oakstreethealth.com, reject
-DOMAIN-SUFFIX,visit.tafensw.edu.au, reject
 DOMAIN-SUFFIX,visit.tenplay.com.au, reject
 DOMAIN-SUFFIX,visitor.arabiancentres.com, reject
 DOMAIN-SUFFIX,visitor.hotelex.cn, reject
@@ -37353,7 +37362,6 @@ DOMAIN-SUFFIX,app.tagachi.io, reject
 DOMAIN-SUFFIX,app.tajawal.com, reject
 DOMAIN-SUFFIX,app.talksport.com, reject
 DOMAIN-SUFFIX,app.task.io, reject
-DOMAIN-SUFFIX,app.teachfx.com, reject
 DOMAIN-SUFFIX,app.test.elly.com, reject
 DOMAIN-SUFFIX,app.th3rdwave.coffee, reject
 DOMAIN-SUFFIX,app.theachieveapp.com, reject
@@ -39679,7 +39687,6 @@ DOMAIN-SUFFIX,link.truckerpath.com, reject
 DOMAIN-SUFFIX,link.trycircle.com, reject
 DOMAIN-SUFFIX,link.trymida.com, reject
 DOMAIN-SUFFIX,link.trytaptab.com, reject
-DOMAIN-SUFFIX,link.tubi.tv, reject
 DOMAIN-SUFFIX,link.tul.io, reject
 DOMAIN-SUFFIX,link.tumblbug.com, reject
 DOMAIN-SUFFIX,link.tupinambaenergia.com.br, reject
@@ -40929,6 +40936,7 @@ DOMAIN-SUFFIX,r.wz.de, reject
 DOMAIN-SUFFIX,responder.wt.heise.de, reject
 DOMAIN-SUFFIX,rt.bunte.de, reject
 DOMAIN-SUFFIX,sgtm.tennis-point.de, reject
+DOMAIN-SUFFIX,sp.chip.de, reject
 DOMAIN-SUFFIX,sqs.quoka.de, reject
 DOMAIN-SUFFIX,squirrel.cividi.ch, reject
 DOMAIN-SUFFIX,ss.photospecialist.at, reject
@@ -41360,6 +41368,7 @@ DOMAIN-SUFFIX,mklik.gazeta.pl, reject
 DOMAIN-SUFFIX,p.gazeta.pl, reject
 DOMAIN-SUFFIX,pixel.wp.pl, reject
 DOMAIN-SUFFIX,rek.www.wp.pl, reject
+DOMAIN-SUFFIX,ss.woodupp.pl, reject
 DOMAIN-SUFFIX,stats.teledyski.info, reject
 DOMAIN-SUFFIX,yctjw54slxrwwlh.trybawaryjny.pl, reject
 DOMAIN-SUFFIX,audience-mostread.r7.com, reject

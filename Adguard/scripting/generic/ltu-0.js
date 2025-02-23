@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// ltu-0
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// ltu-0
 
 const toImport = [[14552029,".baneriai"],[11006813,".reklamos_nuorodos"],[5359179,".reklamos_tarpas"],[14351896,".top_reklama"]];
 

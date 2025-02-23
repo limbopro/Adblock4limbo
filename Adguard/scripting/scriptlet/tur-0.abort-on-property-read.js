@@ -24,8 +24,6 @@
 
 // ruleset: tur-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adblockmesaj"],["detectedAdBlock"],["detectAdBlock"],["jsmailer"],["adsBlocked"],["rTargets"],["initPu"],["initAd"],["initPop"],["oV1"],["elemDiv"],["openPopup"],["pop_status"],["sagAltReklamListesi"],["initDizi"],["wpsite_clickable_data"],["jsPopunder"]];
+const argsList = [["adblockmesaj"],["detectedAdBlock"],["detectAdBlock"],["mailsender"],["adsBlocked"],["rTargets"],["initPu"],["initAd"],["initPop"],["oV1"],["elemDiv"],["openPopup"],["pop_status"],["sagAltReklamListesi"],["initDizi"],["wpsite_clickable_data"],["jsPopunder"]];
 
-const hostnamesMap = new Map([["komputerdelisi.com",0],["mangawt.com",0],["gsmturkey.net",0],["vidtekno.com",0],["sozcu.com.tr",1],["telegramgruplari.com",2],["tekniknot.com",3],["kanalmaras.com",4],["r10.net",5],["promy.pro",6],["vkfilmizlet.net",6],["diziyoutv.com",6],["guneykoresinemasi.com",6],["jetfilmizletv.net",6],["dizimax2.com",6],["yenierotikfilm.xyz",6],["diziday1.com",6],["zipfilmizle.com",6],["bamfilmizle.com",6],["sinemadafilm.com",6],["hdizlefilmleri.com",6],["filmmoduu.com",6],["abifilmizle.org",6],["trfilm.net",6],["dolufilm.org",6],["turkifsaalemi.com",6],["fullfilmizlebaba.com",7],["superfilmgeldi.biz",7],["supernaturalizle.com",7],["sinemakolik.net",7],["hdsinemax.com",7],["fullhdabifilm.com",7],["bettercallsaulizle.com",7],["superfilmgeldi.net",7],["fullhdfilmizlett1.com",7],["fullhdfilmcibaba2.com",7],["filmsezonu.com",7],["fullhdfilmizleabi.com",7],["hdfreeizle.com",7],["hdmixfilim.com",[7,12]],["fullhdfilmizlepala.com",7],["fullfilmcidayi4.com",7],["dizimag.org",8],["filmizlehdizle.com",8],["roketdizi.co",8],["1080hdfilmizle.com",8],["shirl.club",9],["altporno.xyz",9],["1dizifilmizle.com",10],["afroditscans.com",11],["goodfilmizle.org",13],["goodfilmizle.com",13],["diziyou.co",14],["technopat.net",15]]);
+const hostnamesMap = new Map([["komputerdelisi.com",0],["mangawt.com",0],["gsmturkey.net",0],["vidtekno.com",0],["sozcu.com.tr",1],["telegramgruplari.com",2],["tekniknot.com",3],["kanalmaras.com",4],["r10.net",5],["eldermanga.com",6],["promy.pro",6],["vkfilmizlet.net",6],["diziyoutv.com",6],["guneykoresinemasi.com",6],["jetfilmizletv.net",6],["dizimax2.com",6],["yenierotikfilm.xyz",6],["diziday1.com",6],["zipfilmizle.com",6],["bamfilmizle.com",6],["sinemadafilm.com",6],["hdizlefilmleri.com",6],["filmmoduu.com",6],["abifilmizle.org",6],["trfilm.net",6],["dolufilm.org",6],["turkifsaalemi.com",6],["fullfilmizlebaba.com",7],["superfilmgeldi.biz",7],["supernaturalizle.com",7],["sinemakolik.net",7],["hdsinemax.com",7],["fullhdabifilm.com",7],["bettercallsaulizle.com",7],["superfilmgeldi.net",7],["fullhdfilmizlett1.com",7],["fullhdfilmcibaba2.com",7],["filmsezonu.com",7],["fullhdfilmizleabi.com",7],["hdfreeizle.com",7],["hdmixfilim.com",[7,12]],["fullhdfilmizlepala.com",7],["fullfilmcidayi4.com",7],["dizimag.org",8],["filmizlehdizle.com",8],["1080hdfilmizle.com",8],["shirl.club",9],["altporno.xyz",9],["1dizifilmizle.com",10],["webdramaturkey.net",11],["afroditscans.com",11],["goodfilmizle.org",13],["goodfilmizle.com",13],["diziyou.co",14],["technopat.net",15]]);
 
 const entitiesMap = new Map([["breakingbadizle",6],["vkfilmizlet",7],["diziyo",7],["yabancidiziizlesene",8],["tranimeizle",16]]);
 
@@ -317,8 +315,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -375,7 +373,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortOnPropertyRead(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: chn-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,11 +37,11 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["_AdBlockInit","noopFunc"],["google_tag_data","{}"],["killAdKiller","noopFunc"],["AD_SURVEY_Add_AdPos","noopFunc"],["AD_SURVEY_Add_AdPos_Simple","noopFunc"],["killads","true"],["all520dddaaa2022ccc","true"],["isAdsDisplayed","true"],["fuzqingAdPlus","{}"],["all520dddaaa2022aaa","undefined"],["canRunAds","true"],["adblock","0"],["can_run_ads","true"],["ga","noopFunc"],["google_empty_script_included","true"],["adsbygoogle","noopFunc"],["Object.prototype.cnobpreroll_","true"],["Object.prototype.canobpreroll_","true"],["ads",""],["NativeAd","noopFunc"],["__jsadsuccess","true"],["onload","null"],["adbk","false"],["config.group",""],["preBid","{}"],["preBid.displayAd","noopFunc"],["preBid.getPrerollVASTUrl","noopFunc"],["player.VastADPlugin","noopFunc"],["ADSOBJET","{}"],["myPlayer.adDisplay","undefined"],["NEWS_FEED","noopFunc"],["conone_lmg","noopFunc"],["Object.prototype.ad_switch","0"],["dy_card_dyrun","undefined"],["poped","true"],["Object.prototype.adData","{}"],["Object.prototype._adData","{}"],["adsbygoogle.loaded","true"],["MM_openBrWindow","noopFunc"],["lists","undefined"],["is_show","false"],["ConFig.config.ads","{}"],["adInfo","{}"],["isAdLoaded","true"],["Object.prototype.noAD","true"],["CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY",""],["CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START",""],["pageData.__banners.0.commercial.mediaUrl",""],["pageData.__banners.0.commercial.jumpUrl",""],["pageData.__banners.0.commercial.title",""],["pageData.__banners.1.commercial.mediaUrl",""],["pageData.__banners.1.commercial.jumpUrl",""],["pageData.__banners.1.commercial.title",""],["detailParams.is_ad_play","false"]];
+const argsList = [["_AdBlockInit","noopFunc"],["google_tag_data","{}"],["killAdKiller","noopFunc"],["AD_SURVEY_Add_AdPos","noopFunc"],["AD_SURVEY_Add_AdPos_Simple","noopFunc"],["killads","true"],["all520dddaaa2022ccc","true"],["isAdsDisplayed","true"],["fuzqingAdPlus","{}"],["all520dddaaa2022aaa","undefined"],["canRunAds","true"],["adblock","0"],["can_run_ads","true"],["google_tag_manager","{}"],["google.ima.AdError","noopFunc"],["ga","noopFunc"],["google_empty_script_included","true"],["adsbygoogle","noopFunc"],["Object.prototype.cnobpreroll_","true"],["Object.prototype.canobpreroll_","true"],["ads",""],["NativeAd","noopFunc"],["__jsadsuccess","true"],["onload","null"],["adbk","false"],["config.group",""],["preBid","{}"],["preBid.displayAd","noopFunc"],["preBid.getPrerollVASTUrl","noopFunc"],["player.VastADPlugin","noopFunc"],["ADSOBJET","{}"],["myPlayer.adDisplay","undefined"],["NEWS_FEED","noopFunc"],["conone_lmg","noopFunc"],["Object.prototype.ad_switch","0"],["dy_card_dyrun","undefined"],["poped","true"],["Object.prototype.adData","{}"],["Object.prototype._adData","{}"],["adsbygoogle.loaded","true"],["MM_openBrWindow","noopFunc"],["lists","undefined"],["is_show","false"],["ConFig.config.ads","{}"],["adInfo","{}"],["isAdLoaded","true"],["Object.prototype.noAD","true"],["CreativePlayerwebPlugin.AD_EVENT.AD_DESTROY",""],["CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START",""],["pageData.__banners.0.commercial.mediaUrl",""],["pageData.__banners.0.commercial.jumpUrl",""],["pageData.__banners.0.commercial.title",""],["pageData.__banners.1.commercial.mediaUrl",""],["pageData.__banners.1.commercial.jumpUrl",""],["pageData.__banners.1.commercial.title",""],["detailParams.is_ad_play","false"]];
 
-const hostnamesMap = new Map([["baomidou.com",0],["nodejs.cn",0],["docsmall.com",0],["hmoeh.com",1],["api.guailie.com",2],["huanqiu.com",[3,4]],["itbaoku.cn",5],["yaociyuan.bid",5],["bigpixel.cn",5],["jkpan.cc",5],["520cc.cc",6],["520call.me",[6,9]],["ekamus.info",7],["koyi.pub",8],["bde4.icu",10],["tingfm.com",[10,12]],["slashlook.com",10],["linovelib.com",11],["ebb.io",[13,14]],["wenxuecity.com",15],["ddrk.me",[16,17]],["sssam.com",18],["cocomanga.com",[19,20]],["ohmanhua.com",[19,20]],["onemanhua.com",[19,20]],["hboav.com",[21,22]],["cnys.tv",23],["now.com",[24,25,26]],["player.hboav.com",27],["x99av.com",28],["hamivideo.hinet.net",29],["jianshu.com",30],["xkyn.com",31],["tangdoucdn.com",32],["dianyingim.com",33],["xvideo.cc",34],["v-wb.youku.com",35],["m.youku.com",36],["v.youku.com",36],["myptt.cc",37],["edc1014070.pixnet.net",38],["m.biqiugege8.com",39],["theav.xyz",40],["69xx.one",40],["theporn.cc",40],["huaren.live",41],["huya.com",42],["le.com",[43,44]],["sports.qq.com",[45,46]],["lpl.qq.com",[45,46]],["v.qq.com",[45,46]],["nivod2.com",[47,48,49,50,51,52,53]],["nivod2.tv",[47,48,49,50,51,52,53]],["nivod4.com",[47,48,49,50,51,52,53]],["nivod4.tv",[47,48,49,50,51,52,53]],["nivod5.com",[47,48,49,50,51,52,53]],["nivod5.tv",[47,48,49,50,51,52,53]],["nivod7.com",[47,48,49,50,51,52,53]],["nivod7.tv",[47,48,49,50,51,52,53]],["nivod8.com",[47,48,49,50,51,52,53]],["nivod8.tv",[47,48,49,50,51,52,53]],["nivod9.com",[47,48,49,50,51,52,53]],["nivod9.tv",[47,48,49,50,51,52,53]]]);
+const hostnamesMap = new Map([["baomidou.com",0],["nodejs.cn",0],["docsmall.com",0],["hmoeh.com",1],["api.guailie.com",2],["huanqiu.com",[3,4]],["itbaoku.cn",5],["yaociyuan.bid",5],["bigpixel.cn",5],["jkpan.cc",5],["520cc.cc",6],["520call.me",[6,9]],["ekamus.info",7],["koyi.pub",8],["bde4.icu",10],["tingfm.com",[10,12]],["slashlook.com",10],["linovelib.com",11],["linetv.tw",[13,14]],["ebb.io",[15,16]],["wenxuecity.com",17],["ddrk.me",[18,19]],["sssam.com",20],["cocomanga.com",[21,22]],["ohmanhua.com",[21,22]],["onemanhua.com",[21,22]],["hboav.com",[23,24]],["cnys.tv",25],["now.com",[26,27,28]],["player.hboav.com",29],["x99av.com",30],["hamivideo.hinet.net",31],["jianshu.com",32],["xkyn.com",33],["tangdoucdn.com",34],["dianyingim.com",35],["xvideo.cc",36],["v-wb.youku.com",37],["m.youku.com",38],["v.youku.com",38],["myptt.cc",39],["edc1014070.pixnet.net",40],["m.biqiugege8.com",41],["theav.xyz",42],["69xx.one",42],["theporn.cc",42],["huaren.live",43],["huya.com",44],["le.com",[45,46]],["sports.qq.com",[47,48]],["lpl.qq.com",[47,48]],["v.qq.com",[47,48]],["nivod2.com",[49,50,51,52,53,54,55]],["nivod2.tv",[49,50,51,52,53,54,55]],["nivod4.com",[49,50,51,52,53,54,55]],["nivod4.tv",[49,50,51,52,53,54,55]],["nivod5.com",[49,50,51,52,53,54,55]],["nivod5.tv",[49,50,51,52,53,54,55]],["nivod7.com",[49,50,51,52,53,54,55]],["nivod7.tv",[49,50,51,52,53,54,55]],["nivod8.com",[49,50,51,52,53,54,55]],["nivod8.tv",[49,50,51,52,53,54,55]],["nivod9.com",[49,50,51,52,53,54,55]],["nivod9.tv",[49,50,51,52,53,54,55]]]);
 
-const entitiesMap = new Map([["ddys",[16,17]]]);
+const entitiesMap = new Map([["ddys",[18,19]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -489,8 +487,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -547,7 +545,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setConstant(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

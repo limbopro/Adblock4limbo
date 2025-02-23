@@ -24,8 +24,6 @@
 
 // ruleset: cze-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_addEventListenerDefuser = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["click","location"],["ended"],["message","fishing"],["message","_0x"],["beforeunload","()"]];
+const argsList = [["click","location"],["ended"],["load","document.cookie"],["message","fishing"],["message","_0x"],["beforeunload","()"]];
 
-const hostnamesMap = new Map([["indian-tv.cz",0],["nerdfix.cz",0],["navratdoreality.cz",1],["seznamzpravy.cz",2],["novinky.cz",[2,4]],["seznam.cz",2],["super.cz",[2,3,4]],["stream.cz",2],["idnes.cz",4],["aktualne.cz",4],["reflex.cz",4],["zive.cz",4],["e15.cz",4],["blesk.cz",4],["ahaonline.cz",4],["auto.cz",4],["maminka.cz",4],["autorevue.cz",4],["osobnosti.cz",4],["lidovky.cz",4],["iprima.cz",4],["kupi.cz",4],["kinobox.cz",4],["cnews.cz",4],["zeny.cz",4],["expres.cz",4],["tiscali.cz",4],["extra.cz",4],["onetv.cz",4],["dama.cz",4],["g.cz",4],["mojecelebrity.cz",4],["spisovatele.cz",4],["modnipeklo.cz",4],["karaoketexty.cz",4],["hnonline.sk",4],["emimino.cz",4],["vitalion.cz",4],["mojezdravi.cz",4],["abicko.cz",4],["arome.cz",4],["labuznik.cz",4],["fights.cz",4],["nasepenize.cz",4]]);
+const hostnamesMap = new Map([["indian-tv.cz",0],["nerdfix.cz",0],["navratdoreality.cz",1],["titulky.com",2],["seznamzpravy.cz",3],["novinky.cz",[3,5]],["seznam.cz",3],["super.cz",[3,4,5]],["stream.cz",3],["idnes.cz",5],["aktualne.cz",5],["reflex.cz",5],["zive.cz",5],["e15.cz",5],["blesk.cz",5],["ahaonline.cz",5],["auto.cz",5],["maminka.cz",5],["autorevue.cz",5],["osobnosti.cz",5],["lidovky.cz",5],["iprima.cz",5],["kupi.cz",5],["kinobox.cz",5],["cnews.cz",5],["zeny.cz",5],["expres.cz",5],["tiscali.cz",5],["extra.cz",5],["onetv.cz",5],["dama.cz",5],["g.cz",5],["mojecelebrity.cz",5],["spisovatele.cz",5],["modnipeklo.cz",5],["karaoketexty.cz",5],["emimino.cz",5],["vitalion.cz",5],["mojezdravi.cz",5],["abicko.cz",5],["arome.cz",5],["labuznik.cz",5],["fights.cz",5],["nasepenize.cz",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -444,8 +442,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -502,7 +500,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { addEventListenerDefuser(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

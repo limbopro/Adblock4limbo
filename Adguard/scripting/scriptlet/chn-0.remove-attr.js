@@ -24,8 +24,6 @@
 
 // ruleset: chn-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_removeAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["style",".two-ad-area"],["style","#banner[style*=\"background-image:url\"]"]];
+const argsList = [["data-ads_url","[data-ads_url]"],["style",".two-ad-area"],["style","#banner[style*=\"background-image:url\"]"]];
 
-const hostnamesMap = new Map([["manwa.fun",0],["huya.com",1]]);
+const hostnamesMap = new Map([["91porna.com",0],["manwa.fun",1],["huya.com",2]]);
 
 const entitiesMap = new Map([]);
 
@@ -353,8 +351,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -411,7 +409,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeAttr(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

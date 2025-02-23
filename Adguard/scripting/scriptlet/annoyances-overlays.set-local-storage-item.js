@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-overlays
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,11 +37,11 @@ const uBOL_setLocalStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["rl","$remove$"],["hide-cookbook-modal-0","true"],["newsletterPopupCount","1"],["nbaSIBWidgetSeen","true"],["BRANCH_BANNER_PAGE_LOAD","1"],["EMAIL_CAPTURE_MODAL_STOP","1"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["user_closed_pop_up","true"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"],["adblockNoticePermaDismiss","true"],["/^freeVideoFriendly/","$remove$"]];
+const argsList = [["tls_newsletter_visibility","true"],["emailLightBox","true"],["hide-cookbook-modal-0","true"],["newsletterPopupCount","1"],["nbaSIBWidgetSeen","true"],["BRANCH_BANNER_PAGE_LOAD","1"],["EMAIL_CAPTURE_MODAL_STOP","1"],["show-email-intake-form","false"],["hasShownPopup","true"],["modalViewed","1"],["signUpModalClosed_slot-paulaschoice_us-global-signUpModal-sfmcModal","1"],["user_closed_pop_up","true"],["DWEB_PIN_IMAGE_CLICK_COUNT","$remove$"],["unauthDownloadCount","$remove$"],["rprw","$remove$"],["social-qa/machineId","$remove$"],["simple-funnel-name","$remove$"],["WkdGcGJIbEpiV0ZuWlVSaGRHRT0=","$remove$"],["ad_blocker","false"],["adblockNoticePermaDismiss","true"],["/^freeVideoFriendly/","$remove$"]];
 
-const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["themonthly.com.au",2],["thesaturdaypaper.com.au",2],["tastemade.com",3],["action.com",4],["clutchpoints.com",5],["magnolia.com",[6,7]],["core.app",8],["interestingengineering.com",9],["urbanoutfitters.com",10],["paulaschoice.com",11],["audialab.com",12],["realpython.com",13],["eodev.com",15],["nosdevoirs.fr",15],["www.watermarkremover.io",16],["scenexe.io",17],["camspider.com",18],["nebula.tv",19]]);
+const hostnamesMap = new Map([["the-tls.co.uk",0],["duluthtrading.com",1],["tastemade.com",2],["action.com",3],["clutchpoints.com",4],["magnolia.com",[5,6]],["core.app",7],["interestingengineering.com",8],["urbanoutfitters.com",9],["paulaschoice.com",10],["audialab.com",11],["realpython.com",14],["eodev.com",16],["nosdevoirs.fr",16],["www.watermarkremover.io",17],["scenexe.io",18],["camspider.com",19],["nebula.tv",20]]);
 
-const entitiesMap = new Map([["brainly",[14,15]]]);
+const entitiesMap = new Map([["pinterest",[12,13]],["brainly",[15,16]]]);
 
 const exceptionsMap = new Map([]);
 
@@ -139,6 +137,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -345,8 +345,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -403,7 +403,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setLocalStorageItem(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

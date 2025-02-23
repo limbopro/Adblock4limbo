@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// alb-0
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// alb-0
 
 const toImport = [[9121034,".grecaptcha-badge"],[911183,"#gdpr-banner"],[10215140,".gdpr-popup"],[878155,".td-more-articles-box"],[14687007,".cc-type-info"],[2386694,"#iframe_cookie"]];
 

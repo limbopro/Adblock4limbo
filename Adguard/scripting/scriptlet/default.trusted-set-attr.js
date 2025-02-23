@@ -24,8 +24,6 @@
 
 // ruleset: default
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_trustedSetAttr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["frameset[rows=\"95,30,*\"]","rows","0,30,*"]];
+const argsList = [["frameset[rows=\"95,30,*\"]","rows","0,30,*"],[".navbar-nav > li#navpromo2.nav-item > a","onclick","let a=function(){};return false;"]];
 
-const hostnamesMap = new Map([["mt-soft.sakura.ne.jp",0]]);
+const hostnamesMap = new Map([["mt-soft.sakura.ne.jp",0],["japscan.lol",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -361,8 +359,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -419,7 +417,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedSetAttr(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

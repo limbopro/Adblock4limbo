@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-others
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["registration_modal_dismissed","true"],["apv","false"],["patreonAnnouncementShown","true"],["campaign_seen_today","true"],["premium_popup","1"]];
+const argsList = [["registration_modal_dismissed","true"],["apv","false"],["patreonAnnouncementShown","true"],["campaign_seen_today","true"],["pum_popup_14631_page_views","1"],["premium_popup","1"]];
 
-const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["gmap-pedometer.com",2],["democracynow.org",3],["rumble.com",4]]);
+const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["gmap-pedometer.com",2],["democracynow.org",3],["firstthings.com",4],["rumble.com",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -103,6 +101,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -379,8 +379,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -437,7 +437,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

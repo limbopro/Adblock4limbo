@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-overlays
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_adjustSetInterval = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["i--","","0.02"],["Clipboard","1000","0.001"],["loadexternal","1000"],["counter","1000","0.001"]];
+const argsList = [["i--","","0.02"],["Clipboard","1000","0.001"],["loadexternal","1000"],["counter","1000","0.001"],[]];
 
-const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1],["remixsearch.es",2],["wallpapercat.com",3]]);
+const hostnamesMap = new Map([["onlinegiftools.com",1],["onlinejpgtools.com",1],["onlinepngtools.com",1],["onlinestringtools.com",1],["onlinetexttools.com",1],["onlinetools.com",1],["remixsearch.es",2],["wallpapercat.com",3],["loverslab.com",4]]);
 
 const entitiesMap = new Map([["bluemediafile",0]]);
 
@@ -280,8 +278,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -338,7 +336,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { adjustSetInterval(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

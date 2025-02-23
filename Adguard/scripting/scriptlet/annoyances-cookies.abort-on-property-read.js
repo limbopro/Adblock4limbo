@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-cookies
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_abortOnPropertyRead = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["__cmpGdprAppliesGlobally"],["cookieconsent.Popup"],["cookieman"]];
+const argsList = [["__cmpGdprAppliesGlobally"],["cookieconsent.Popup"]];
 
-const hostnamesMap = new Map([["al.com",0],["allkpop.com",0],["calendarpedia.co.uk",0],["ccn.com",0],["cinemablend.com",0],["cleveland.com",0],["comicsands.com",0],["duffelblog.com",0],["foxvalleyfoodie.com",0],["gamepur.com",0],["gamerevolution.com",0],["interestingengineering.com",0],["keengamer.com",0],["listenonrepeat.com",0],["mandatory.com",0],["merriam-webster.com",0],["mlive.com",0],["musicfeeds.com.au",0],["newatlas.com",0],["pgatour.com",0],["playstationlifestyle.net",0],["readlightnovel.org",0],["secondnexus.com",0],["sevenforums.com",0],["sport24.co.za",0],["sportsnaut.com",0],["superherohype.com",0],["thefashionspot.com",0],["theodysseyonline.com",0],["toledoblade.com",0],["totalbeauty.com",0],["westernjournal.com",0],["windows101tricks.com",0],["claritin.ca",1],["podleze-piekielko.pl",2]]);
+const hostnamesMap = new Map([["al.com",0],["allkpop.com",0],["calendarpedia.co.uk",0],["ccn.com",0],["cinemablend.com",0],["cleveland.com",0],["comicsands.com",0],["duffelblog.com",0],["foxvalleyfoodie.com",0],["gamepur.com",0],["gamerevolution.com",0],["interestingengineering",0],["keengamer.com",0],["listenonrepeat.com",0],["mandatory.com",0],["merriam-webster.com",0],["mlive.com",0],["musicfeeds.com.au",0],["newatlas.com",0],["pgatour.com",0],["playstationlifestyle.net",0],["readlightnovel.org",0],["secondnexus.com",0],["sevenforums.com",0],["sport24.co.za",0],["sportsnaut.com",0],["superherohype.com",0],["thefashionspot.com",0],["theodysseyonline.com",0],["toledoblade.com",0],["totalbeauty.com",0],["westernjournal.com",0],["windows101tricks.com",0],["claritin.ca",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -317,8 +315,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -375,7 +373,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortOnPropertyRead(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

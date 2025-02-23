@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-overlays
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_setCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["awpopup_450030403","1"],["popupShown","true"],["awpopup_501941328","1"],["popup_closed","true"],["email_modal","true"],["huck-newsletter-popup","true"],["newsletterModal","true"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["pum-276000","true"],["uf_signup_bar","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["ezgwcc","1"],["_ad","0"]];
+const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["popupIsClosed","1"],["awpopup_450030403","1"],["popupShown","true"],["awpopup_501941328","1"],["popup_closed","true"],["email_modal","true"],["huck-newsletter-popup","true"],["newsletterModal","true"],["enewsOptin","1"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["pum-276000","true"],["uf_signup_bar","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["ezgwcc","1"],["_ad","0"]];
 
-const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["plantpowercouple.com",3],["commondreams.org",4],["oled-info.com",5],["lowpass.cc",6],["readergrev.com",6],["objectivebayesian.com",6],["monopoly.marketecture.tv",6],["jointhefollowup.com",6],["streamily.com",7],["huckmag.com",8],["egopowerplus.com",9],["gourmetfoodstore.com",10],["theinformation.com",11],["in.investing.com",12],["intellinews.com",13],["kermitlynch.com",14],["jingdaily.com",15],["babiesrus.ca",16],["toysrus.ca",16],["clevercreations.org",17],["thefederalist.com",18],["30seconds.com",19],["iconduck.com",20],["shojiwax.com",21],["skepticalraptor.com",21],["girlscoutshop.com",22],["yvonnebennetti.com",23],["funko.com",24],["loungefly.com",24],["saucerco.com",25],["columbiasportswear.it",26],["columbiasportswear.at",27],["columbiasportswear.de",28],["columbiasportswear.fr",29],["columbiasportswear.es",30],["columbiasportswear.co.uk",31],["sharperimage.com",32],["sweetwater.com",33],["assos.com",34],["scitechdaily.com",35],["klsescreener.com",36]]);
+const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["pbs.org",3],["plantpowercouple.com",4],["commondreams.org",5],["oled-info.com",6],["lowpass.cc",7],["readergrev.com",7],["objectivebayesian.com",7],["monopoly.marketecture.tv",7],["jointhefollowup.com",7],["streamily.com",8],["huckmag.com",9],["egopowerplus.com",10],["vokey.com",11],["gourmetfoodstore.com",12],["theinformation.com",13],["in.investing.com",14],["intellinews.com",15],["kermitlynch.com",16],["jingdaily.com",17],["babiesrus.ca",18],["toysrus.ca",18],["clevercreations.org",19],["thefederalist.com",20],["30seconds.com",21],["iconduck.com",22],["shojiwax.com",23],["skepticalraptor.com",23],["girlscoutshop.com",24],["yvonnebennetti.com",25],["funko.com",26],["loungefly.com",26],["saucerco.com",27],["columbiasportswear.it",28],["columbiasportswear.at",29],["columbiasportswear.de",30],["columbiasportswear.fr",31],["columbiasportswear.es",32],["columbiasportswear.co.uk",33],["sharperimage.com",34],["sweetwater.com",35],["assos.com",36],["scitechdaily.com",37],["klsescreener.com",38]]);
 
 const entitiesMap = new Map([]);
 
@@ -103,6 +101,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -379,8 +379,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -437,7 +437,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

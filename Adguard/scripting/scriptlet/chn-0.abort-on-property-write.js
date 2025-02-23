@@ -24,8 +24,6 @@
 
 // ruleset: chn-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["__DOMAIN"],["adStart"],["delCookie"]];
+const argsList = [["checkAdblock"],["__DOMAIN"],["adStart"],["delCookie"]];
 
-const hostnamesMap = new Map([["ohmanhua.com",0],["3dmgame.com",1],["m.91zww.com",2]]);
+const hostnamesMap = new Map([["174.127.195.98",0],["ohmanhua.com",1],["3dmgame.com",2],["m.91zww.com",3]]);
 
 const entitiesMap = new Map([]);
 
@@ -295,8 +293,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -353,7 +351,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortOnPropertyWrite(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

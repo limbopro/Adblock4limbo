@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-social
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,9 +39,9 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["show_share","true"]];
 
-const hostnamesMap = new Map([["himovies.sx",0],["actvid.rs",0],["moviesjoy.is",0],["swatchseries.is",0]]);
+const hostnamesMap = new Map([["gomovies.sx",0],["actvid.rs",0]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["fmovies",0],["yesmovies",0],["himovies",0],["moviesjoy",0],["swatchseries",0]]);
 
 const exceptionsMap = new Map([]);
 
@@ -103,6 +101,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -379,8 +379,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -437,7 +437,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

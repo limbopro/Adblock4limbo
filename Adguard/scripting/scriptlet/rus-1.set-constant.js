@@ -24,8 +24,6 @@
 
 // ruleset: rus-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,13 +37,13 @@ const uBOL_setConstant = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["BB.disableRefLinks","true"],["Object.prototype.canShowMoreAds","noopFunc"],["Object.prototype.hasAdv","noopFunc"],["_0x58e4","{}"],["Object.prototype.hasPreroll","null"],["Object.prototype.needShowAlicePopup","null"],["Object.prototype.Begun","undefined"],["Object.prototype.antiadblock","false"],["Object.prototype.useExperimentFlag","undefined"],["Daria.AdvPresenter._config","{}"],["Object.prototype.showBranding","noopFunc"],["Object.prototype.initDeps","undefined"],["Object.prototype._directAdvStyles","undefined"],["__AAB__","false"],["Object.prototype._getAdConfig","noopFunc"],["Object.prototype.getHoneypot","null"],["Object.prototype.isOpenImageUnauthPopupEnabled","false"],["Object.prototype.los","null"]];
+const argsList = [["BB.disableRefLinks","true"],["Object.prototype.canShowMoreAds","noopFunc"],["Object.prototype.hasAdv","noopFunc"],["_0x58e4","{}"],["Object.prototype.hasPreroll","null"],["Object.prototype.needShowAlicePopup","null"],["Object.prototype.Begun","undefined"],["Object.prototype.antiadblock","false"],["Object.prototype.isNonEmptyString","undefined"],["Object.prototype.useExperimentFlag","undefined"],["Object.prototype.allowAdv","false"],["Object.prototype.showBranding","noopFunc"],["Object.prototype.initDeps","undefined"],["Object.prototype._directAdvStyles","undefined"],["__AAB__","false"],["Object.prototype._getAdConfig","noopFunc"],["Object.prototype.getHoneypot","null"],["Object.prototype.isOpenImageUnauthPopupEnabled","false"],["Object.prototype.los","null"]];
 
 const hostnamesMap = new Map([["rutr.life",0],["rutracker.lib",0],["rutracker.net",0],["rutracker.nl",0],["rutracker.org",0],["ivi.ru",[1,2]],["game4you.top",3],["innal.top",3],["naylo.top",3],["rustorka.com",3],["rustorka.net",3],["rustorka.top",3],["rustorkacom.lib",3],["frontend.vh.yandex.ru",4],["naydex.net",4],["widgets.kinopoisk.ru",4],["yastatic.net",4],["lena-miro.ru",[6,7]],["levik.blog",[6,7]],["olegmakarenko.ru",[6,7]],["periskop.su",[6,7]],["shakko.ru",[6,7]],["shiro-kino.ru",[6,7]],["vadimrazumov.ru",[6,7]]]);
 
-const entitiesMap = new Map([["dzen",[4,8]],["horoscopes.rambler",5],["livejournal",[6,7]],["mail.yandex",9],["music.yandex",10],["ya",11],["yandex",[11,12,13,14,15,16,17]]]);
+const entitiesMap = new Map([["dzen",[4,9]],["horoscopes.rambler",5],["livejournal",[6,7]],["shedevrum",8],["mail.yandex",10],["music.yandex",11],["ya",12],["yandex",[12,13,14,15,16,17,18]]]);
 
-const exceptionsMap = new Map([["yandex.net",[13,14,15,16,17]]]);
+const exceptionsMap = new Map([["yandex.net",[14,15,16,17,18]]]);
 
 /******************************************************************************/
 
@@ -489,8 +487,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -547,7 +545,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setConstant(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

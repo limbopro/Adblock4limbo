@@ -24,8 +24,6 @@
 
 // ruleset: cze-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["$","Ads"],["$","fancyBanner"],["$","PartnerRedirectAction"],["window.addEventListener",":visible"],["document.createElement","adbDetect"],["HTMLIFrameElement.prototype.contentWindow"]];
 
-const hostnamesMap = new Map([["csfd.cz",0],["csfd.sk",0],["drbna.cz",1],["onlajny.com",2],["zive.cz",[3,4]],["idnes.cz",[4,5]],["novinky.cz",4],["aktualne.cz",4],["reflex.cz",4],["e15.cz",4],["blesk.cz",4],["ahaonline.cz",4],["super.cz",4],["auto.cz",4],["maminka.cz",4],["autorevue.cz",4],["osobnosti.cz",4],["lidovky.cz",4],["iprima.cz",4],["kupi.cz",4],["kinobox.cz",4],["cnews.cz",4],["zeny.cz",4],["expres.cz",4],["tiscali.cz",4],["extra.cz",4],["onetv.cz",4],["dama.cz",4],["g.cz",4],["mojecelebrity.cz",4],["spisovatele.cz",4],["modnipeklo.cz",4],["karaoketexty.cz",4],["hnonline.sk",4],["emimino.cz",4],["vitalion.cz",4],["mojezdravi.cz",4],["abicko.cz",4],["arome.cz",4],["labuznik.cz",4],["fights.cz",4],["nasepenize.cz",4]]);
+const hostnamesMap = new Map([["csfd.cz",0],["csfd.sk",0],["drbna.cz",1],["onlajny.com",2],["zive.cz",[3,4]],["idnes.cz",[4,5]],["novinky.cz",4],["aktualne.cz",4],["reflex.cz",4],["e15.cz",4],["blesk.cz",4],["ahaonline.cz",4],["super.cz",4],["auto.cz",4],["maminka.cz",4],["autorevue.cz",4],["osobnosti.cz",4],["lidovky.cz",4],["iprima.cz",4],["kupi.cz",4],["kinobox.cz",4],["cnews.cz",4],["zeny.cz",4],["expres.cz",4],["tiscali.cz",4],["extra.cz",4],["onetv.cz",4],["dama.cz",4],["g.cz",4],["mojecelebrity.cz",4],["spisovatele.cz",4],["modnipeklo.cz",4],["karaoketexty.cz",4],["emimino.cz",4],["vitalion.cz",4],["mojezdravi.cz",4],["abicko.cz",4],["arome.cz",4],["labuznik.cz",4],["fights.cz",4],["nasepenize.cz",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -399,8 +397,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -457,7 +455,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { abortCurrentScript(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

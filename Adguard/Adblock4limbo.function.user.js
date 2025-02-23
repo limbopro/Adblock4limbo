@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.02.05
+// @version      0.2025.02.20
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -648,7 +648,7 @@ function dh_pageContainer_body_pre() {
         <div class="div_global feedback">\
         <div class="title_global" >反馈/建议/功能设置//</div>\
         <ul class="ul_global">\
-        <li class="li_global"><button style="border-radius:4px; background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">在线联系</button></li>\
+        <!-- <li class="li_global"><button style="border-radius:4px; background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">在线联系</button></li>--!>\
         <li class="li_global"><a class="a_global" id="admin" href="https://t.me/limboprobot" \
         target="_blank">联系博主TG</a></li>\
         <li class="li_global"><button style="border-radius:4px; " class="crbhms" id="hidedaohang">导航按钮(OFF)</button></li>\
@@ -1106,6 +1106,7 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['溜池ゴロー', 'https://tameikegoro.jp/', '_blank', 'porn', 'better'],
 ['s1s1s1 S1/エスワンー', 'https://s1s1s1.com/', '_blank', 'porn', 'better'],
 ['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'special'],
+['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'porn', 'special'],
 ['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'special'],
 ['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn', 'common'],
 ['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn', 'common'],
@@ -1345,16 +1346,18 @@ document.addEventListener("keydown", function (event) {
 });
 
 // Crisp 聊天💬系统
+/*
 if (document.querySelector('#crisp') == null) {
     thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head", 'crisp')
 }
+*/
 
 function crisp_active(x, y, opacity) {
 
     if (x == 1 && y == 1 && opacity == 1) {
         localStorage.setItem('crisp_active_c', 'byhand')
 
-        let miki = prompt('如果页面右下角未出现聊天💬按钮或点击按钮后未能正常使用，请刷新当前页面以重新加载...；(如事后需隐藏聊天💬按钮，请输入114154，确认...；)')
+        let miki = prompt('直接点击确认；如果页面右下角未出现聊天💬按钮或点击按钮后未能正常使用，请刷新当前页面以重新加载...；(如事后需隐藏聊天💬按钮，请输入114154，然后点击确认...；)')
         if (miki == 114154) {
             localStorage.setItem('crisp_active_c', '0')
             if (document.querySelector('[aria-live=polite].crisp-client') !== null) {
@@ -1365,9 +1368,11 @@ function crisp_active(x, y, opacity) {
 
     }
 
+    /*
     if (document.querySelector('#crisp') == null) {
         thrd_party_file("script", "https://limbopro.com/Adguard/crisp.js", "head", 'crisp')
     }
+    */
 
 
     setTimeout(() => {
@@ -2094,9 +2099,11 @@ function echo_check_switch(x) {
 }
 
 
+/*
 const js_common_fx = {
     crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统 chat
 }
+*/    
 
 // 动态创建并引用外部资源 外部样式表 外部脚本
 function thrd_party_file(tagname, url, where, id) {

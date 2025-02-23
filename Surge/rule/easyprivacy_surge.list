@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202502081330
+## ! Version: 202502222242
 ## ! Title: EasyPrivacy
-## ! Last modified: 08 Feb 2025 13:30 UTC
+## ! Last modified: 22 Feb 2025 22:42 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -607,6 +607,7 @@ DOMAIN-SUFFIX,awzbijw.com
 DOMAIN-SUFFIX,axiomaticalley.com
 DOMAIN-SUFFIX,axiomaticanger.com
 DOMAIN-SUFFIX,azuremystique.com
+DOMAIN-SUFFIX,azurestealth.com
 DOMAIN-SUFFIX,backupcat.com
 DOMAIN-SUFFIX,badgeboat.com
 DOMAIN-SUFFIX,badgerabbit.com
@@ -922,6 +923,7 @@ DOMAIN-SUFFIX,cumbersomecake.com
 DOMAIN-SUFFIX,cumbersomecar.com
 DOMAIN-SUFFIX,cumbersomecarpenter.com
 DOMAIN-SUFFIX,cumbersomecloud.com
+DOMAIN-SUFFIX,curbminers.com
 DOMAIN-SUFFIX,curiouschalk.com
 DOMAIN-SUFFIX,curioussuccess.com
 DOMAIN-SUFFIX,curlycannon.com
@@ -1292,6 +1294,7 @@ DOMAIN-SUFFIX,givevacation.com
 DOMAIN-SUFFIX,gladglen.com
 DOMAIN-SUFFIX,gladysway.com
 DOMAIN-SUFFIX,glamhawk.com
+DOMAIN-SUFFIX,glasscoyote.com
 DOMAIN-SUFFIX,gleamingcow.com
 DOMAIN-SUFFIX,gleaminghaven.com
 DOMAIN-SUFFIX,gleamingtrade.com
@@ -1721,6 +1724,7 @@ DOMAIN-SUFFIX,objecthero.com
 DOMAIN-SUFFIX,obscenesidewalk.com
 DOMAIN-SUFFIX,observantice.com
 DOMAIN-SUFFIX,offshorecyclone.com
+DOMAIN-SUFFIX,offshoregeology.com
 DOMAIN-SUFFIX,oldfashionedoffer.com
 DOMAIN-SUFFIX,omgthink.com
 DOMAIN-SUFFIX,omniscientfeeling.com
@@ -2310,6 +2314,7 @@ DOMAIN-SUFFIX,stingsquirrel.com
 DOMAIN-SUFFIX,stingycrush.com
 DOMAIN-SUFFIX,stingyshoe.com
 DOMAIN-SUFFIX,stingyspoon.com
+DOMAIN-SUFFIX,stockerator.com
 DOMAIN-SUFFIX,stockingsleet.com
 DOMAIN-SUFFIX,stockingsneeze.com
 DOMAIN-SUFFIX,stocktheme.com
@@ -3108,6 +3113,7 @@ DOMAIN-SUFFIX,geoip.instiengage.com
 DOMAIN-SUFFIX,geoip.nekudo.com
 DOMAIN-SUFFIX,geolocation.outreach.com
 DOMAIN-SUFFIX,geoservice.curse.com
+DOMAIN-SUFFIX,geotags.refinery89.com
 DOMAIN-SUFFIX,gi-client-tracking.goodgamestudios.com
 DOMAIN-SUFFIX,go.activengage.com
 DOMAIN-SUFFIX,green-griffin-860.appspot.com
@@ -3137,6 +3143,7 @@ DOMAIN-SUFFIX,identification.hotmart.com
 DOMAIN-SUFFIX,ihi.flowplayer.com
 DOMAIN-SUFFIX,imp.pvnsolutions.com
 DOMAIN-SUFFIX,impress.vcita.com
+DOMAIN-SUFFIX,in.treasuredata.com
 DOMAIN-SUFFIX,inbound-analytics.pixlee.co
 DOMAIN-SUFFIX,infinityid.condenastdigital.com
 DOMAIN-SUFFIX,informer.yandex.ru
@@ -3340,6 +3347,7 @@ DOMAIN-SUFFIX,processor.asccommunications.com
 DOMAIN-SUFFIX,prod.ew.srp.navigacloud.com
 DOMAIN-SUFFIX,prod.fennec.atp.fox
 DOMAIN-SUFFIX,prodregistryv2.org
+DOMAIN-SUFFIX,propsid.b-cdn.net
 DOMAIN-SUFFIX,proxy.dzeio.com
 DOMAIN-SUFFIX,proxy.trysavvy.com
 DOMAIN-SUFFIX,pt.crossmediaservices.com
@@ -5084,6 +5092,7 @@ DOMAIN-SUFFIX,tms.hft.hellofresh.com
 DOMAIN-SUFFIX,tongji-res.meizu.com
 DOMAIN-SUFFIX,top.wn.com
 DOMAIN-SUFFIX,touch.myntra.com
+DOMAIN-SUFFIX,tr.api.fanbyte.com
 DOMAIN-SUFFIX,tr.clickstay.com
 DOMAIN-SUFFIX,tr.www.cloudflare.com
 DOMAIN-SUFFIX,track-visit.monday.com
@@ -5168,6 +5177,7 @@ DOMAIN-SUFFIX,oneid.mmstat.com
 DOMAIN-SUFFIX,cfa.fidelity.com
 DOMAIN-SUFFIX,clear.wallapop.com
 DOMAIN-SUFFIX,content.canadiantire.ca
+DOMAIN-SUFFIX,content.discover.com
 DOMAIN-SUFFIX,content.tab.com.au
 DOMAIN-SUFFIX,content22.bmo.com
 DOMAIN-SUFFIX,content22.citibank.com.au
@@ -34237,7 +34247,6 @@ DOMAIN-SUFFIX,visit.donateblood.com.au
 DOMAIN-SUFFIX,visit.hypertherm.com
 DOMAIN-SUFFIX,visit.lifeblood.com.au
 DOMAIN-SUFFIX,visit.oakstreethealth.com
-DOMAIN-SUFFIX,visit.tafensw.edu.au
 DOMAIN-SUFFIX,visit.tenplay.com.au
 DOMAIN-SUFFIX,visitor.arabiancentres.com
 DOMAIN-SUFFIX,visitor.hotelex.cn
@@ -37353,7 +37362,6 @@ DOMAIN-SUFFIX,app.tagachi.io
 DOMAIN-SUFFIX,app.tajawal.com
 DOMAIN-SUFFIX,app.talksport.com
 DOMAIN-SUFFIX,app.task.io
-DOMAIN-SUFFIX,app.teachfx.com
 DOMAIN-SUFFIX,app.test.elly.com
 DOMAIN-SUFFIX,app.th3rdwave.coffee
 DOMAIN-SUFFIX,app.theachieveapp.com
@@ -39679,7 +39687,6 @@ DOMAIN-SUFFIX,link.truckerpath.com
 DOMAIN-SUFFIX,link.trycircle.com
 DOMAIN-SUFFIX,link.trymida.com
 DOMAIN-SUFFIX,link.trytaptab.com
-DOMAIN-SUFFIX,link.tubi.tv
 DOMAIN-SUFFIX,link.tul.io
 DOMAIN-SUFFIX,link.tumblbug.com
 DOMAIN-SUFFIX,link.tupinambaenergia.com.br
@@ -40929,6 +40936,7 @@ DOMAIN-SUFFIX,r.wz.de
 DOMAIN-SUFFIX,responder.wt.heise.de
 DOMAIN-SUFFIX,rt.bunte.de
 DOMAIN-SUFFIX,sgtm.tennis-point.de
+DOMAIN-SUFFIX,sp.chip.de
 DOMAIN-SUFFIX,sqs.quoka.de
 DOMAIN-SUFFIX,squirrel.cividi.ch
 DOMAIN-SUFFIX,ss.photospecialist.at
@@ -41360,6 +41368,7 @@ DOMAIN-SUFFIX,mklik.gazeta.pl
 DOMAIN-SUFFIX,p.gazeta.pl
 DOMAIN-SUFFIX,pixel.wp.pl
 DOMAIN-SUFFIX,rek.www.wp.pl
+DOMAIN-SUFFIX,ss.woodupp.pl
 DOMAIN-SUFFIX,stats.teledyski.info
 DOMAIN-SUFFIX,yctjw54slxrwwlh.trybawaryjny.pl
 DOMAIN-SUFFIX,audience-mostread.r7.com

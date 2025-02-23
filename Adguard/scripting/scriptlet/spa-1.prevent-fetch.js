@@ -24,8 +24,6 @@
 
 // ruleset: spa-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,11 +37,11 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["www3.doubleclick.net"],["method:HEAD"],["pagead2.googlesyndication.com"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
+const argsList = [["www3.doubleclick.net"],["method:HEAD"],["pagead2.googlesyndication.com"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["adskeeper.com"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
 
-const hostnamesMap = new Map([["sussyscan.com",0],["atresplayer.com",0],["sussytoons.site",0],["tivify.tv",0],["enlacito.com",1],["acortados.com",[1,7]],["todoandroid.live",1],["gadgetzona.net",1],["qwanturankpro.com",1],["acortame-esto.com",1],["gourlpro.com",2],["casperhd.com",2],["short.7hd.club",2],["istigo.net",2],["modescanlator.net",2],["r7.com",2],["descargas2024gratis.blogspot.com",2],["megacurioso.net",2],["tudonoticiasbr.com",2],["ggames.com.br",2],["mundodonghua.com",2],["receitasoncaseiras.online",2],["receitasdochico.life",2],["dicasdefinancas.net",2],["dicasfinanceirasbr.com",2],["expertplay.net",2],["alarmadefraude.com",2],["modescanlator.com",2],["sabornutritivo.com",2],["financasdeouro.com",2],["animeszone.net",2],["megacanaisonline.me",2],["animesonline.nz",2],["los40.com",2],["negociosecommerce.com",[2,10]],["puromarketing.com",[2,10]],["todostartups.com",[2,10]],["pobre.wtf",2],["suaurl.com",[2,12]],["reidoplacar.com",[2,12]],["suaads.com",[2,12]],["link-descarga.site",2],["meutimao.com.br",2],["discografias.net",2],["listas.pro",2],["emperorscan.com",2],["lawebdelprogramador.com",2],["dicasgostosas.com",2],["cerisetoon.com",3],["sinensistoon.com",3],["packsmega.info",4],["peliculas8k.com",5],["southparkstudios.com.br",6],["southpark.lat",6],["acortalink.me",7],["atv.pe",8],["monumental.co.cr",8],["elcomercio.com",8],["antena7.com.do",8],["rqp.com.bo",8],["canal12.com.sv",8],["chapintv.com",8],["vtv.com.hn",8],["tn23.tv",8],["canal13mexico.com",8],["c9n.com.py",8],["repretel.com",8],["redbolivision.tv.bo",8],["independentespanol.com",8],["teleculinaria.pt",9],["nptmedia.tv",11],["costumbresmexico.com",13],["desbloqueador.site",13],["notipostingt.com",14],["netmovies.com.br",15],["coempregos.com.br",16],["anitube.us",16],["anitube.vip",16],["hinatasoul.com",16]]);
+const hostnamesMap = new Map([["sussyscan.com",0],["atresplayer.com",0],["tivify.tv",0],["enlacito.com",1],["acortados.com",[1,2,8]],["todoandroid.live",1],["gadgetzona.net",1],["qwanturankpro.com",1],["acortame-esto.com",1],["gourlpro.com",2],["casperhd.com",2],["short.7hd.club",2],["istigo.net",2],["modescanlator.net",2],["r7.com",2],["descargas2024gratis.blogspot.com",2],["megacurioso.net",2],["tudonoticiasbr.com",2],["ggames.com.br",2],["mundodonghua.com",2],["receitasoncaseiras.online",2],["receitasdochico.life",2],["dicasdefinancas.net",2],["dicasfinanceirasbr.com",2],["expertplay.net",2],["alarmadefraude.com",2],["modescanlator.com",2],["sabornutritivo.com",2],["financasdeouro.com",2],["animeszone.net",2],["megacanaisonline.me",2],["notipostingt.com",[2,15]],["animesonline.nz",2],["los40.com",2],["negociosecommerce.com",[2,11]],["puromarketing.com",[2,11]],["todostartups.com",[2,11]],["pobre.wtf",2],["suaurl.com",[2,13]],["reidoplacar.com",[2,13]],["suaads.com",[2,13]],["link-descarga.site",2],["meutimao.com.br",2],["discografias.net",2],["listas.pro",2],["emperorscan.com",2],["lawebdelprogramador.com",2],["dicasgostosas.com",2],["animefire.info",3],["animefire.plus",3],["animesonlinecc.us",3],["animesup.info",3],["animeyabu.net",3],["animeyabu.org",3],["drstonebr.com",3],["goanimes.vip",3],["goyabu.us",3],["meuanime.info",3],["otakuanimess.net",3],["cerisetoon.com",4],["sinensistoon.com",4],["packsmega.info",5],["peliculas8k.com",6],["southparkstudios.com.br",7],["southpark.lat",7],["acortalink.me",8],["atv.pe",9],["monumental.co.cr",9],["elcomercio.com",9],["antena7.com.do",9],["rqp.com.bo",9],["canal12.com.sv",9],["chapintv.com",9],["vtv.com.hn",9],["tn23.tv",9],["canal13mexico.com",9],["c9n.com.py",9],["repretel.com",9],["redbolivision.tv.bo",9],["independentespanol.com",9],["teleculinaria.pt",10],["nptmedia.tv",12],["costumbresmexico.com",14],["desbloqueador.site",14],["netmovies.com.br",16],["coempregos.com.br",17],["anitube.us",17],["anitube.vip",17],["hinatasoul.com",17]]);
 
-const entitiesMap = new Map([]);
+const entitiesMap = new Map([["sussytoons",0]]);
 
 const exceptionsMap = new Map([]);
 
@@ -490,8 +488,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -548,7 +546,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { noFetchIf(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

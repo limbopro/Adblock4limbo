@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// svn-0
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// svn-0
 
 const toImport = [[11160899,".cookie-screen"],[6717121,".friendly.notice"],[8173925,"#eu-cookies-consent"],[5196796,"#eu-okno"]];
 

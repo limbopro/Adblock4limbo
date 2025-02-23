@@ -24,8 +24,6 @@
 
 // ruleset: hun-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_removeClass = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["modal-open","body"],["bottom-l","body","stay"],["bottom-s","body","stay"],["modal-open","body","stay"],["darken","body"],["blurry","body > :not(.m-fbPopup)","stay"],["have-ad","body"]];
+const argsList = [["modal-open","body"],["bottom-l","body","stay"],["bottom-s","body","stay"],["modal-open","body","stay"],["darken","body"],["body","no_scroll","complete"],["blurry","body > :not(.m-fbPopup)","stay"],["have-ad","body"]];
 
-const hostnamesMap = new Map([["hetek.hu",0],["magyarorszag.hu",[1,2]],["mandiner.hu",3],["traffihunter.hu",4],["vezess.hu",5],["pcworld.hu",6]]);
+const hostnamesMap = new Map([["hetek.hu",0],["magyarorszag.hu",[1,2]],["mandiner.hu",3],["traffihunter.hu",4],["otpportalok.hu",5],["vezess.hu",6],["pcworld.hu",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -344,8 +342,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -402,7 +400,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeClass(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -24,8 +24,6 @@
 
 // ruleset: spa-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
 
-const hostnamesMap = new Map([["techdiniz.com",0],["trueliketop.org",0],["sabornutritivo.com",1],["financasdeouro.com",1],["guiacripto.online",1],["guiasaude.info",2],["1i1.in",3],["estacio.br",4],["megacurioso.net",5],["receitasoncaseiras.online",5],["nutricaohoje.website",5],["automotivocarros.com",6],["portecnologia.com",6],["cartaocreditoplatinum.org",6],["homecine.cc",7],["seriesmetro.net",7],["flixseries.org",7],["homecine.tv",7],["homecine.to",7],["metroseries.net",7],["smartpelis.tv",7],["seriesbanana.com",7]]);
+const hostnamesMap = new Map([["techdiniz.com",0],["trueliketop.org",0],["sabornutritivo.com",1],["financasdeouro.com",1],["guiacripto.online",1],["guiasaude.info",2],["1i1.in",3],["estacio.br",4],["megacurioso.net",5],["receitasoncaseiras.online",5],["nutricaohoje.website",5],["automotivocarros.com",6],["portecnologia.com",6],["cartaocreditoplatinum.org",6],["pelis1.com",7],["homecine.cc",7],["seriesmetro.net",7],["flixseries.org",7],["homecine.tv",7],["homecine.to",7],["metroseries.net",7],["smartpelis.tv",7],["seriesbanana.com",7]]);
 
 const entitiesMap = new Map([]);
 
@@ -103,6 +101,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -379,8 +379,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -437,7 +437,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { setCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

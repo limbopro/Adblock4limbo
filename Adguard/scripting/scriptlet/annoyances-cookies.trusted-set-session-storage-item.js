@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-cookies
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_trustedSetSessionStorageItem = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["opd","\"1\""]];
+const argsList = [["opd","\"1\""],["_pv_CookieOptInt","closed"]];
 
-const hostnamesMap = new Map([["makemytrip.com",0]]);
+const hostnamesMap = new Map([["makemytrip.com",0],["start-nrw.de",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -139,6 +137,8 @@ function getSafeCookieValuesFn() {
         'all', 'none', 'functional',
         'granted', 'done',
         'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
     ];
 }
 
@@ -345,8 +345,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -403,7 +403,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedSetSessionStorageItem(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

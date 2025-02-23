@@ -24,8 +24,6 @@
 
 // ruleset: chn-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["method:HEAD"],["pagead2.googlesyndication.com"],["/googlesyndication\\.com|doubleclick\\.net/"],["doubleclick.net"],["www3.doubleclick.net"]];
+const argsList = [["method:HEAD"],["pagead2.googlesyndication.com"],["/googlesyndication\\.com|doubleclick\\.net/"],["doubleclick.net"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
 
-const hostnamesMap = new Map([["hmanga.world",0],["fsbot.xyz",1],["mpyit.com",1],["linetv.tw",1],["wandhi.com",2],["04647.club",3],["taiwanlibrarysearch.herokuapp.com",4]]);
+const hostnamesMap = new Map([["hmanga.world",0],["fsbot.xyz",1],["mpyit.com",1],["wandhi.com",2],["04647.club",3],["taiwanlibrarysearch.herokuapp.com",4],["linetv.tw",5]]);
 
 const entitiesMap = new Map([]);
 
@@ -490,8 +488,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -548,7 +546,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { noFetchIf(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

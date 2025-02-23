@@ -24,8 +24,6 @@
 
 // ruleset: spa-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_preventXhr = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["widgets.outbrain.com"],["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["popads.net"]];
+const argsList = [["widgets.outbrain.com"],["widgets.outbrain.com/outbrain.js"],["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["popads.net"]];
 
-const hostnamesMap = new Map([["file4go.net",0],["aqualapp.com",1],["raulprietofernandez.net",1],["minhaconexao.com.br",2],["receitasdaora.online",3],["foodiesgallery.com",3],["caroloportunidades.com.br",3],["dicasgostosas.com",3]]);
+const hostnamesMap = new Map([["file4go.net",0],["isekaibrasil.com",1],["aqualapp.com",2],["raulprietofernandez.net",2],["minhaconexao.com.br",3],["receitasdaora.online",4],["foodiesgallery.com",4],["caroloportunidades.com.br",4],["dicasgostosas.com",4]]);
 
 const entitiesMap = new Map([]);
 
@@ -543,8 +541,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -601,7 +599,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { preventXhr(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

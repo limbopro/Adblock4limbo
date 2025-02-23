@@ -24,8 +24,6 @@
 
 // ruleset: cze-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/^_?adb/"]];
 
-const hostnamesMap = new Map([["idnes.cz",0],["novinky.cz",0],["aktualne.cz",0],["reflex.cz",0],["zive.cz",0],["e15.cz",0],["blesk.cz",0],["ahaonline.cz",0],["super.cz",0],["auto.cz",0],["maminka.cz",0],["autorevue.cz",0],["osobnosti.cz",0],["lidovky.cz",0],["iprima.cz",0],["kupi.cz",0],["kinobox.cz",0],["cnews.cz",0],["zeny.cz",0],["expres.cz",0],["tiscali.cz",0],["extra.cz",0],["onetv.cz",0],["dama.cz",0],["g.cz",0],["mojecelebrity.cz",0],["spisovatele.cz",0],["modnipeklo.cz",0],["karaoketexty.cz",0],["hnonline.sk",0],["emimino.cz",0],["vitalion.cz",0],["mojezdravi.cz",0],["abicko.cz",0],["arome.cz",0],["labuznik.cz",0],["fights.cz",0],["nasepenize.cz",0]]);
+const hostnamesMap = new Map([["idnes.cz",0],["novinky.cz",0],["aktualne.cz",0],["reflex.cz",0],["zive.cz",0],["e15.cz",0],["blesk.cz",0],["ahaonline.cz",0],["super.cz",0],["auto.cz",0],["maminka.cz",0],["autorevue.cz",0],["osobnosti.cz",0],["lidovky.cz",0],["iprima.cz",0],["kupi.cz",0],["kinobox.cz",0],["cnews.cz",0],["zeny.cz",0],["expres.cz",0],["tiscali.cz",0],["extra.cz",0],["onetv.cz",0],["dama.cz",0],["g.cz",0],["mojecelebrity.cz",0],["spisovatele.cz",0],["modnipeklo.cz",0],["karaoketexty.cz",0],["emimino.cz",0],["vitalion.cz",0],["mojezdravi.cz",0],["abicko.cz",0],["arome.cz",0],["labuznik.cz",0],["fights.cz",0],["nasepenize.cz",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -314,8 +312,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -372,7 +370,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

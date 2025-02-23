@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-overlays
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,11 +37,11 @@ const uBOL_noFetchIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"]];
+const argsList = [["www3.doubleclick.net"],["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["url:/en/ad/widget method:HEAD"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"],["doubleclick"]];
 
-const hostnamesMap = new Map([["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["theonegenerator.com",2],["mcskinhistory.com",2],["bypass.city",3],["adbypass.org",3],["amtraker.com",4],["ark-unity.com",5]]);
+const hostnamesMap = new Map([["tools.jabrek.net",0],["textcleaner.net",2],["socialcounts.org",2],["viewing.nyc",2],["autopareri.com",2],["curseforge.com",2],["theonegenerator.com",3],["mcskinhistory.com",3],["bypass.city",4],["adbypass.org",4],["fullxh.com",5],["galleryxh.site",5],["megaxh.com",5],["movingxh.world",5],["seexh.com",5],["unlockxh4.com",5],["valuexh.life",5],["xhaccess.com",5],["xhadult2.com",5],["xhadult3.com",5],["xhadult4.com",5],["xhadult5.com",5],["xhamster46.com",5],["xhamsterporno.mx",5],["xhbig.com",5],["xhbranch5.com",5],["xhchannel.com",5],["xhchannel2.com",5],["xhdate.world",5],["xhday.com",5],["xhday1.com",5],["xhlease.world",5],["xhmoon5.com",5],["xhofficial.com",5],["xhopen.com",5],["xhplanet1.com",5],["xhplanet2.com",5],["xhreal2.com",5],["xhreal3.com",5],["xhspot.com",5],["xhtab2.com",5],["xhtab4.com",5],["xhtotal.com",5],["xhtree.com",5],["xhvictory.com",5],["xhwebsite.com",5],["xhwebsite2.com",5],["xhwebsite5.com",5],["xhwide1.com",5],["xhwide2.com",5],["xhwide5.com",5],["xhxh3.xyz",5],["amtraker.com",6],["ark-unity.com",7],["pokeos.com",8]]);
 
-const entitiesMap = new Map([["ddys",0]]);
+const entitiesMap = new Map([["ddys",1],["hamsterix",5],["xhamster",5],["xhamster1",5],["xhamster10",5],["xhamster11",5],["xhamster12",5],["xhamster13",5],["xhamster14",5],["xhamster15",5],["xhamster16",5],["xhamster17",5],["xhamster18",5],["xhamster19",5],["xhamster20",5],["xhamster2",5],["xhamster3",5],["xhamster4",5],["xhamster42",5],["xhamster5",5],["xhamster7",5],["xhamster8",5]]);
 
 const exceptionsMap = new Map([]);
 
@@ -490,8 +488,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -548,7 +546,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { noFetchIf(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

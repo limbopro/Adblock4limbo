@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// annoyances-widgets
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// annoyances-widgets
 
 const toImport = [[16431973,"#WACLauncher__Button"],[16120016,"#popin-salescontact"],[14414991,".b24-widget-button-wrapper"],[13433282,".chat_hammerbot-iframe-wrapper__outer"],[7725274,".drift-facade"],[10548027,".intercom-launcher"],[4324221,".intercom-lightweight-app"],[14063673,".joinchat--chatbox"],[8491567,".m-chat-toggler"],[12739565,".sticky-button--whatsapp"],[13004488,".wix-blog-hide-in-print.SITE_FOOTER_WRAPPER"]];
 

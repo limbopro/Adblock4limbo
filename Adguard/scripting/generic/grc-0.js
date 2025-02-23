@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// grc-0
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// grc-0
 
 const toImport = [[12341963,".adsbox"],[1786351,"DIV.agores300"],[8886709,"TABLE.advright"]];
 

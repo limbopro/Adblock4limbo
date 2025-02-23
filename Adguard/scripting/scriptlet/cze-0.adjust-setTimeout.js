@@ -24,8 +24,6 @@
 
 // ruleset: cze-0
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_adjustSetTimeout = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["vendor-load","3000"]];
+const argsList = [["t()","*"],["vendor-load","3000"]];
 
-const hostnamesMap = new Map([["sauto.cz",0]]);
+const hostnamesMap = new Map([["markiza.sk",0],["tvnoviny.sk",0],["sauto.cz",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -280,8 +278,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -338,7 +336,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { adjustSetTimeout(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

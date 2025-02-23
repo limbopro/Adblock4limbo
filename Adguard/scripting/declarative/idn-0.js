@@ -19,13 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 // ruleset: idn-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
@@ -33,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}"]];
+const argsList = [["{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}"],["{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}"]];
 
-const hostnamesMap = new Map([["dutaislam.com",0]]);
+const hostnamesMap = new Map([["dutaislam.com",0],["intip24news.com",1]]);
 
 const entitiesMap = new Map(undefined);
 

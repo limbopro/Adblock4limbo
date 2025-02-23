@@ -24,8 +24,6 @@
 
 // ruleset: default
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["HTMLAnchorElement.prototype.click","a[target=\"_blank\"][style]"],["HTMLAnchorElement.prototype.click","a[target=\"_blank\"]"]];
 
-const hostnamesMap = new Map([["cety.app",0],["cuty.me",0],["upn.one",1]]);
+const hostnamesMap = new Map([["cety.app",0],["cuty.me",0],["360news4u.net",1],["upn.one",1]]);
 
 const entitiesMap = new Map([["upns",1]]);
 
@@ -417,8 +415,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -475,7 +473,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedOverrideElementMethod(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

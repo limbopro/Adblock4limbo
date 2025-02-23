@@ -19,19 +19,13 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// bgr-0
 
 // Important!
 // Isolate from global scope
 (function uBOL_cssGenericImport() {
 
 /******************************************************************************/
-
-// bgr-0
 
 const toImport = [[14648089,"#ea_intext_div"],[8451109,"td#freenet_table_ads"],[11017215,".lapni-pop-over"],[16662940,"#xenium_hot_offers"]];
 

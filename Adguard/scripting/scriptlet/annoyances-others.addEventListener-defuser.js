@@ -24,8 +24,6 @@
 
 // ruleset: annoyances-others
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -41,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["/^(mouseout|mouseleave)$/"],["mouseleave"]];
 
-const hostnamesMap = new Map([["kens5.com",0],["newscentermaine.com",0],["5newsonline.com",0],["fox61.com",0],["wtol.com",0],["wiz.io",0],["winnipegfreepress.com",0],["khou.com",0],["abc10.com",0],["12news.com",0],["ksdk.com",0],["whas11.com",0],["wfmynews2.com",0],["wbir.com",0],["wzzm13.com",0],["wltx.com",0],["wqad.com",0],["wnep.com",0],["wgrz.com",0],["cbs8.com",0],["firstcoastnews.com",0],["kare11.com",0],["wtsp.com",0],["ajc.com",0],["wfaa.com",0],["9news.com",0],["fox2now.com",0],["wcnc.com",0],["13newsnow.com",0],["wsvn.com",0],["abc15.com",0],["wwltv.com",0],["wkyc.com",0],["wthr.com",0],["11alive.com",0],["wusa9.com",0],["king5.com",0],["x.com",1],["facebook.com",1],["instagram.com",1],["alibaba.com",1],["dhgate.com",1],["aliexpress.com",1],["temu.com",1]]);
+const hostnamesMap = new Map([["10tv.com",0],["kens5.com",0],["newscentermaine.com",0],["5newsonline.com",0],["fox61.com",0],["wtol.com",0],["wiz.io",0],["winnipegfreepress.com",0],["khou.com",0],["abc10.com",0],["12news.com",0],["ksdk.com",0],["whas11.com",0],["wfmynews2.com",0],["wbir.com",0],["wzzm13.com",0],["wltx.com",0],["wqad.com",0],["wnep.com",0],["wgrz.com",0],["cbs8.com",0],["firstcoastnews.com",0],["kare11.com",0],["wtsp.com",0],["ajc.com",0],["wfaa.com",0],["9news.com",0],["fox2now.com",0],["wcnc.com",0],["13newsnow.com",0],["wsvn.com",0],["abc15.com",0],["wwltv.com",0],["wkyc.com",0],["wthr.com",0],["11alive.com",0],["wusa9.com",0],["king5.com",0],["x.com",1],["facebook.com",1],["instagram.com",1],["alibaba.com",1],["dhgate.com",1],["aliexpress.com",1],["temu.com",1]]);
 
 const entitiesMap = new Map([]);
 
@@ -444,8 +442,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -502,7 +500,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { addEventListenerDefuser(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

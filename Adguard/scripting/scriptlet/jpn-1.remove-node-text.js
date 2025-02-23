@@ -24,8 +24,6 @@
 
 // ruleset: jpn-1
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["script","detectAdBlock"],["#text","/スポンサードリンク：?|楽天広告：/"],["script","selectRandomProduct"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","/スポンサード?リンク/"]];
+const argsList = [["script","detectAdBlock"],["#text","/スポンサードリンク：?|楽天広告：/"],["script","selectRandomProduct"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","/スポンサード?リンク/"],["#text","/^\\s*PR\\s*$/"]];
 
-const hostnamesMap = new Map([["rxlife.net",0],["kasegeru.blog.jp",1],["blog.livedoor.jp",2],["betweenjpandkr.blog",3],["dvdrev.com",4],["fm.sekkaku.net",5],["lifematome.blog",6],["ranky-ranking.net",7],["kabegami.jpn.org",7],["ideal2ch.livedoor.biz",7],["seikeidouga.blog.jp",7],["tcg-bloglife.com",7],["ch-review.net",7],["gametohkenranbu.sakuraweb.com",7],["jisakuhibi.jp",7],["rank1-media.com",7],["resizer.myct.jp",7]]);
+const hostnamesMap = new Map([["rxlife.net",0],["kasegeru.blog.jp",1],["blog.livedoor.jp",2],["betweenjpandkr.blog",3],["dvdrev.com",4],["fm.sekkaku.net",5],["lifematome.blog",6],["aidoly.net",7],["aikru.com",7],["ranky-ranking.net",7],["kabegami.jpn.org",7],["ideal2ch.livedoor.biz",7],["seikeidouga.blog.jp",7],["tcg-bloglife.com",7],["ch-review.net",7],["gametohkenranbu.sakuraweb.com",7],["jisakuhibi.jp",7],["rank1-media.com",7],["resizer.myct.jp",7],["tyoieronews.blog.jp",8]]);
 
 const entitiesMap = new Map([]);
 
@@ -397,8 +395,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -455,7 +453,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { removeNodeText(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

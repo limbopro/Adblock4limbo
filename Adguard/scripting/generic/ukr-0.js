@@ -19,11 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
-/******************************************************************************/
+// ukr-0
 
 // Important!
 // Isolate from global scope
@@ -31,9 +27,7 @@
 
 /******************************************************************************/
 
-// ukr-0
-
-const toImport = [[11868393,".nts-ad"],[16300881,".nts-video-wrapper"]];
+const toImport = [[2236478,"#td-ad-placeholder"],[13656179,".ad-300"],[612309,".adx_center"],[12028152,".newspack_global_ad"],[11868393,".nts-ad"],[16300881,".nts-video-wrapper"],[5819991,".td-a-rec-id-custom_ad_1,.td-a-rec-id-custom_ad_2,.td-a-rec-id-custom_ad_3,.td-a-rec-id-custom_ad_4,.td-a-rec-id-custom_ad_5"],[16153475,"ins.adsbygoogle[data-ad-client],ins.adsbygoogle[data-ad-slot]"]];
 
 const genericSelectorMap = self.genericSelectorMap || new Map();
 

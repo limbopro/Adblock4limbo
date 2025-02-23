@@ -24,8 +24,6 @@
 
 // ruleset: default
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,9 +37,9 @@ const uBOL_jsonPruneFetchResponse = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.*.link.ad list.*.link.kicker","propsToMatch","url:content/v1/cms/api/amp"],["breaks pause_ads video_metadata.end_credits_time","pause_ads","propsToMatch","/playlist"],["breaks pause_ads video_metadata.end_credits_time","breaks","propsToMatch","/playlist"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["avails","","propsToMatch","amazonaws.com"],["response.ads","","propsToMatch","/api"],["plugins.adService"],["adBreaks.[].startingOffset adBreaks.[].adBreakDuration adBreaks.[].ads adBreaks.[].startTime adBreak adBreakLocations","","propsToMatch","/session.json"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["response.ads","","propsToMatch","/streams"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["data.[].affiliate_url","","propsToMatch","cdnpk.net/v2/images/search?"],["data.[-].inner.ctaCopy","","propsToMatch","?page="],["data.custom.bcAdMetadataUrl","","propsToMatch","/media/content"],["playerAds adPlacements adSlots no_ads playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots playerResponse.no_ads [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots [].playerResponse.no_ads","","propsToMatch","/\\/(player|get_watch)\\?/"],["playerAds adPlacements adSlots no_ads playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots playerResponse.no_ads","","propsToMatch","/playlist?"]];
+const argsList = [["reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd","","propsToMatch","url:/reel_watch_sequence?"],["breaks pause_ads video_metadata.end_credits_time","pause_ads","propsToMatch","/playlist"],["breaks pause_ads video_metadata.end_credits_time","breaks","propsToMatch","/playlist"],["response.timeline.elements.[-].advertiserId","","propsToMatch","url:/api/v2/tabs/for_you"],["avails","","propsToMatch","amazonaws.com"],["response.ads","","propsToMatch","/api"],["plugins.adService"],["adBreaks.[].startingOffset adBreaks.[].adBreakDuration adBreaks.[].ads adBreaks.[].startTime adBreak adBreakLocations","","propsToMatch","/session.json"],["data.device.adsParams data.device.adSponsorshipTemplate","","propsToMatch","url:/appconfig"],["response.ads","","propsToMatch","/streams"],["ads.[].imageUrl","","propsToMatch","url:api/meta"],["adDetails","","propsToMatch","/secure?"],["data.search.products.[-].sponsored_ad.ad_source","","propsToMatch","url:/plp_search_v2?"],["session.sessionAds session.sessionAdsRequired","","propsToMatch","/session"],["itemList.[-].ad_info.ad_id","","propsToMatch","url:api/recommend/item_list/"],["assets.preroll assets.prerollDebug","","propsToMatch","/stream-link"],["adsConfiguration","","propsToMatch","/vod"],["layout.sections.mainContentCollection.components.[].data.productTiles.[-].sponsoredCreative.adGroupId","","propsToMatch","/search"],["data.[].affiliate_url","","propsToMatch","cdnpk.net/v2/images/search?"],["data.[-].inner.ctaCopy","","propsToMatch","?page="],["data.custom.bcAdMetadataUrl","","propsToMatch","/media/content"],["properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds","","propsToMatch","url:consumptionpage/gallery_windows/config.json"],["*","list.[].link.kicker","propsToMatch","/content/v1/cms/api/amp/Document"],["properties.tiles.[-].isAd","","propsToMatch","/mestripewc/default/config"],["playerAds adPlacements adSlots no_ads playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots playerResponse.no_ads [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots [].playerResponse.no_ads","","propsToMatch","/\\/(player|get_watch)\\?/"],["playerAds adPlacements adSlots no_ads playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots playerResponse.no_ads","","propsToMatch","/playlist?"]];
 
-const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["tv.youtube.com",0],["www.youtube.com",[0,23,24]],["youtubekids.com",0],["youtube-nocookie.com",0],["www.msn.com",[1,2]],["hulu.com",[3,4]],["tumblr.com",5],["nbc.com",6],["player.pop.co.uk",7],["player.popfun.co.uk",7],["iprima.cz",8],["pluto.tv",9],["crackle.com",10],["play.virginmediatelevision.ie",11],["misskey.io",12],["misskey.oga.ninja",12],["mk.yopo.work",12],["sushi.ski",12],["trpger.us",12],["warpday.net",12],["zadankai.club",12],["zee5.com",13],["target.com",14],["play.geforcenow.com",15],["www.tiktok.com",16],["npo.nl",17],["watch.shout-tv.com",18],["realcanadiansuperstore.ca",19],["flaticon.com",20],["fomo.id",21],["canela.tv",22]]);
+const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["tv.youtube.com",0],["www.youtube.com",[0,24,25]],["youtubekids.com",0],["youtube-nocookie.com",0],["hulu.com",[1,2]],["tumblr.com",3],["nbc.com",4],["player.pop.co.uk",5],["player.popfun.co.uk",5],["iprima.cz",6],["pluto.tv",7],["crackle.com",8],["play.virginmediatelevision.ie",9],["misskey.io",10],["misskey.oga.ninja",10],["mk.yopo.work",10],["sushi.ski",10],["trpger.us",10],["warpday.net",10],["zadankai.club",10],["zee5.com",11],["target.com",12],["play.geforcenow.com",13],["www.tiktok.com",14],["npo.nl",15],["watch.shout-tv.com",16],["realcanadiansuperstore.ca",17],["flaticon.com",18],["fomo.id",19],["canela.tv",20],["www.msn.com",[21,22,23]]]);
 
 const entitiesMap = new Map([]);
 
@@ -553,8 +551,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -611,7 +609,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { jsonPruneFetchResponse(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

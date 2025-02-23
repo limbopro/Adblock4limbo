@@ -24,8 +24,6 @@
 
 // ruleset: default
 
-/******************************************************************************/
-
 // Important!
 // Isolate from global scope
 
@@ -39,13 +37,13 @@ const uBOL_trustedSetCookie = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","aa4GkNzNjEWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBHE0WNTEWWxoWAgoWW1AYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzppQ00WBxEWW1AYQwxGQ1sFTUNZFUMOUk0WFRIWW1ADU1YMVlEDVVMBVFRJTUNjMSwWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBTUNBAEMOUBxJ"],["WPtcs2","CQF3YIAQF3YIABIACDPLBJFgAAAAAAAAAB5YAAAU8gAAAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"],["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"],["lastClicked","9999999999999"]];
+const argsList = [["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","aa4GkNzNjEWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBHE0WNTEWWxoWAgoWW1AYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzppQ00WBxEWW1AYQwxGQ1sFTUNZFUMOUk0WFRIWW1ADU1YMVlEDVVMBVFRJTUNjMSwWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBTUNBAEMOUBxJ"],["WPtcs2","CQF3YIAQF3YIABIACDPLBJFgAAAAAAAAAB5YAAAU8gAAAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"],["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"],["lastClicked","9999999999999"],["disqus_unique","0","","","domain","disqus.com"],["DEVICEFP","00000000000","","","domain","hoyoverse.com"],["DEVICEFP","00000000000","","","domain","hoyolab.com"]];
 
-const hostnamesMap = new Map([["globo.com",0],["theporndude.com",1],["wp.pl",[2,3,4]],["money.pl",[2,3,4]],["pysznosci.pl",[2,3,4]],["pudelek.pl",[2,3,4]],["gadzetomania.pl",[2,3,4]],["fotoblogia.pl",[2,3,4]],["komorkomania.pl",[2,3,4]],["dobreprogramy.pl",[2,3,4]],["autokult.pl",[2,3,4]],["genialne.pl",[2,3,4]],["abczdrowie.pl",[2,3,4]],["o2.pl",4],["parenting.pl",4],["polygamia.pl",4],["open.fm",4],["benchmark.pl",4],["kafeteria.pl",4],["autocentrum.pl",4],["jastrzabpost.pl",4],["govtech.com",5],["governing.com",5],["barstoolsports.com",6],["sumax43.autos",7]]);
+const hostnamesMap = new Map([["globo.com",0],["theporndude.com",1],["wp.pl",[2,3,4]],["money.pl",[2,3,4]],["pysznosci.pl",[2,3,4]],["pudelek.pl",[2,3,4]],["gadzetomania.pl",[2,3,4]],["fotoblogia.pl",[2,3,4]],["komorkomania.pl",[2,3,4]],["dobreprogramy.pl",[2,3,4]],["autokult.pl",[2,3,4]],["genialne.pl",[2,3,4]],["abczdrowie.pl",[2,3,4]],["o2.pl",4],["parenting.pl",4],["polygamia.pl",4],["open.fm",4],["benchmark.pl",4],["kafeteria.pl",4],["autocentrum.pl",4],["jastrzabpost.pl",4],["govtech.com",5],["governing.com",5],["barstoolsports.com",6],["sumax43.autos",7],["disqus.com",8],["hoyoverse.com",9],["hoyolab.com",10]]);
 
 const entitiesMap = new Map([]);
 
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["www.hoyoverse.com",[9]],["www.hoyolab.com",[10]]]);
 
 /******************************************************************************/
 
@@ -371,8 +369,8 @@ try {
     const pos = origin.lastIndexOf('://');
     if ( pos === -1 ) { return; }
     hnParts.push(...origin.slice(pos+3).split('.'));
+} catch {
 }
-catch(ex) { }
 const hnpartslen = hnParts.length;
 if ( hnpartslen === 0 ) { return; }
 
@@ -429,7 +427,7 @@ if ( entitiesMap.size !== 0 ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     try { trustedSetCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
 argsList.length = 0;
 

@@ -22,7 +22,7 @@
 
 /* eslint-disable indent */
 
-// ruleset: default
+// ruleset: hun-0
 
 // Important!
 // Isolate from global scope
@@ -33,13 +33,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_trustedReplaceXhrResponse = function() {
+const uBOL_removeNodeText = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","/\\/player(?:\\?.+)?$/"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/.*/","","pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"],["/null,\"category_sensitive\"[^\\n]+?\"__typename\":\"SponsoredData\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","null}","/api/graphql"]];
+const argsList = [["script","undefined"]];
 
-const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5,8]],["www.facebook.com",[3,4,5,8]],["in-jpn.com",6],["app.hellovaia.com",7],["app.studysmarter.de",7],["app.vaia.com",7]]);
+const hostnamesMap = new Map([["rubyvidhub.com",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -47,126 +47,149 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function trustedReplaceXhrResponse(
+function removeNodeText(
+    nodeName,
+    includes,
+    ...extraArgs
+) {
+    replaceNodeTextFn(nodeName, '', '', 'includes', includes || '', ...extraArgs);
+}
+
+function replaceNodeTextFn(
+    nodeName = '',
     pattern = '',
-    replacement = '',
-    propsToMatch = ''
+    replacement = ''
 ) {
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('trusted-replace-xhr-response', pattern, replacement, propsToMatch);
-    const xhrInstances = new WeakMap();
-    if ( pattern === '*' ) { pattern = '.*'; }
-    const rePattern = safe.patternToRegex(pattern);
-    const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    const logPrefix = safe.makeLogPrefix('replace-node-text.fn', ...Array.from(arguments));
+    const reNodeName = safe.patternToRegex(nodeName, 'i', true);
+    const rePattern = safe.patternToRegex(pattern, 'gms');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
-    self.XMLHttpRequest = class extends self.XMLHttpRequest {
-        open(method, url, ...args) {
-            const outerXhr = this;
-            const xhrDetails = { method, url };
-            let outcome = 'match';
-            if ( propNeedles.size !== 0 ) {
-                if ( matchObjectProperties(propNeedles, xhrDetails) === false ) {
-                    outcome = 'nomatch';
-                }
-            }
-            if ( outcome === 'match' ) {
-                if ( safe.logLevel > 1 ) {
-                    safe.uboLog(logPrefix, `Matched "propsToMatch"`);
-                }
-                xhrInstances.set(outerXhr, xhrDetails);
-            }
-            return super.open(method, url, ...args);
+    const reIncludes = extraArgs.includes || extraArgs.condition
+        ? safe.patternToRegex(extraArgs.includes || extraArgs.condition, 'ms')
+        : null;
+    const reExcludes = extraArgs.excludes
+        ? safe.patternToRegex(extraArgs.excludes, 'ms')
+        : null;
+    const stop = (takeRecord = true) => {
+        if ( takeRecord ) {
+            handleMutations(observer.takeRecords());
         }
-        get response() {
-            const innerResponse = super.response;
-            const xhrDetails = xhrInstances.get(this);
-            if ( xhrDetails === undefined ) {
-                return innerResponse;
-            }
-            const responseLength = typeof innerResponse === 'string'
-                ? innerResponse.length
-                : undefined;
-            if ( xhrDetails.lastResponseLength !== responseLength ) {
-                xhrDetails.response = undefined;
-                xhrDetails.lastResponseLength = responseLength;
-            }
-            if ( xhrDetails.response !== undefined ) {
-                return xhrDetails.response;
-            }
-            if ( typeof innerResponse !== 'string' ) {
-                return (xhrDetails.response = innerResponse);
-            }
-            if ( reIncludes && reIncludes.test(innerResponse) === false ) {
-                return (xhrDetails.response = innerResponse);
-            }
-            const textBefore = innerResponse;
-            const textAfter = textBefore.replace(rePattern, replacement);
-            if ( textAfter !== textBefore ) {
-                safe.uboLog(logPrefix, 'Match');
-            }
-            return (xhrDetails.response = textAfter);
-        }
-        get responseText() {
-            const response = this.response;
-            if ( typeof response !== 'string' ) {
-                return super.responseText;
-            }
-            return response;
+        observer.disconnect();
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Quitting');
         }
     };
-}
-
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
+    const textContentFactory = (( ) => {
+        const out = { createScript: s => s };
+        const { trustedTypes: tt } = self;
+        if ( tt instanceof Object ) {
+            if ( typeof tt.getPropertyType === 'function' ) {
+                if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
+                    return tt.createPolicy(getRandomToken(), out);
+                }
             }
-        };
-    }
-    const safe = safeSelf();
-    const haystack = {};
-    const props = safe.Array_from(propNeedles.keys());
-    for ( const obj of objs ) {
-        if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = safe.JSON_stringify(value); }
-            catch { }
-            if ( typeof value !== 'string' ) { continue; }
         }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
+        return out;
+    })();
+    let sedCount = extraArgs.sedCount || 0;
+    const handleNode = node => {
+        const before = node.textContent;
+        if ( reIncludes ) {
+            reIncludes.lastIndex = 0;
+            if ( safe.RegExp_test.call(reIncludes, before) === false ) { return true; }
+        }
+        if ( reExcludes ) {
+            reExcludes.lastIndex = 0;
+            if ( safe.RegExp_test.call(reExcludes, before) ) { return true; }
+        }
+        rePattern.lastIndex = 0;
+        if ( safe.RegExp_test.call(rePattern, before) === false ) { return true; }
+        rePattern.lastIndex = 0;
+        const after = pattern !== ''
+            ? before.replace(rePattern, replacement)
+            : replacement;
+        node.textContent = node.nodeName === 'SCRIPT'
+            ? textContentFactory.createScript(after)
+            : after;
+        if ( safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, `Text before:\n${before.trim()}`);
+        }
+        safe.uboLog(logPrefix, `Text after:\n${after.trim()}`);
+        return sedCount === 0 || (sedCount -= 1) !== 0;
+    };
+    const handleMutations = mutations => {
+        for ( const mutation of mutations ) {
+            for ( const node of mutation.addedNodes ) {
+                if ( reNodeName.test(node.nodeName) === false ) { continue; }
+                if ( handleNode(node) ) { continue; }
+                stop(false); return;
+            }
+        }
+    };
+    const observer = new MutationObserver(handleMutations);
+    observer.observe(document, { childList: true, subtree: true });
+    if ( document.documentElement ) {
+        const treeWalker = document.createTreeWalker(
+            document.documentElement,
+            NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT
+        );
+        let count = 0;
+        for (;;) {
+            const node = treeWalker.nextNode();
+            count += 1;
+            if ( node === null ) { break; }
+            if ( reNodeName.test(node.nodeName) === false ) { continue; }
+            if ( node === document.currentScript ) { continue; }
+            if ( handleNode(node) ) { continue; }
+            stop(); break;
+        }
+        safe.uboLog(logPrefix, `${count} nodes present before installing mutation observer`);
     }
-    return true;
+    if ( extraArgs.stay ) { return; }
+    runAt(( ) => {
+        const quitAfter = extraArgs.quitAfter || 0;
+        if ( quitAfter !== 0 ) {
+            setTimeout(( ) => { stop(); }, quitAfter);
+        } else {
+            stop();
+        }
+    }, 'interactive');
 }
 
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
+function getRandomToken() {
     const safe = safeSelf();
-    const needles = new Map();
-    if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
-    const options = { canNegate: true };
-    for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
-        let [ prop, pattern ] = safe.String_split.call(needle, ':');
-        if ( prop === '' ) { continue; }
-        if ( pattern !== undefined && /[^$\w -]/.test(prop) ) {
-            prop = `${prop}:${pattern}`;
-            pattern = undefined;
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+}
+
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1, 'asap': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            return targets[prop];
         }
-        if ( pattern !== undefined ) {
-            needles.set(prop, safe.initPattern(pattern, options));
-        } else if ( implicit !== '' ) {
-            needles.set(implicit, safe.initPattern(prop, options));
-        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
     }
-    return needles;
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -429,7 +452,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { trustedReplaceXhrResponse(...argsList[i]); }
+    try { removeNodeText(...argsList[i]); }
     catch { }
 }
 argsList.length = 0;
@@ -441,7 +464,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-uBOL_trustedReplaceXhrResponse();
+uBOL_removeNodeText();
 
 /******************************************************************************/
 

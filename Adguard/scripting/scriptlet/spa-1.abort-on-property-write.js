@@ -37,9 +37,9 @@ const uBOL_abortOnPropertyWrite = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["adregain_wall"],["adblock"],["ai_front"],["redirectpage"],["exopop"],["protData"],["pUrlArray"],["pfcu1"]];
+const argsList = [["checkAdsStatus"],["adregain_wall"],["adblock"],["ai_front"],["redirectpage"],["exopop"],["protData"],["pUrlArray"],["pfcu1"]];
 
-const hostnamesMap = new Map([["tunovelaligera.com",0],["manga-mx.com",1],["meuwindows.com",2],["animesbr.cc",3],["superhq.net",[4,5]],["hentaikai.com",5],["raulprietofernandez.net",6],["mrpiracy.top",7]]);
+const hostnamesMap = new Map([["firepaste.com",0],["tunovelaligera.com",1],["manga-mx.com",2],["meuwindows.com",3],["animesbr.cc",4],["superhq.net",[5,6]],["hentaikai.com",6],["raulprietofernandez.net",7],["mrpiracy.top",8]]);
 
 const entitiesMap = new Map([]);
 

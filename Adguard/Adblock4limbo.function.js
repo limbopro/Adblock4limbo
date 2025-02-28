@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.02.20
+// @version      0.2025.02.27
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -358,10 +358,10 @@ function _button_button_width() {
     const window_innerWidth = window.innerWidth;
     if (window_innerWidth <= 920) {
         //if (/\b(android|iphone|ipad|ipod)\b/i.test(userAgent)) {
-        var size = '40px';
+        var size = '45px'; // 40px
         return size;
     } else {
-        var size = '55px';
+        var size = '45px'; // 55px
         return size;
     }
 }
@@ -649,8 +649,8 @@ function dh_pageContainer_body_pre() {
         <div class="title_global" >反馈/建议/功能设置//</div>\
         <ul class="ul_global">\
         <!-- <li class="li_global"><button style="border-radius:4px; background:#688e4e !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="webChat">在线联系</button></li>--!>\
-        <li class="li_global"><a class="a_global" id="admin" href="https://t.me/limboprobot" \
-        target="_blank">联系博主TG</a></li>\
+        <li class="li_global"><a class="a_global" id="admin" href="https://limbopro.com/6.html" \
+        target="_blank">联系博主</a></li>\
         <li class="li_global"><button style="border-radius:4px; " class="crbhms" id="hidedaohang">导航按钮(OFF)</button></li>\
         <li class="li_global"><button style="border-radius:4px; background:#171212 !important; box-shadow:inset 0px 0px 15px 3px #16191f00;" class="a_global red"  id="resetting">重置导航设置</button></li>\
         <li class="li_global"><button style="border-radius:4px; " class="crbhms" id="nsfwmode_switch">WTF!</button></li>\
@@ -1131,6 +1131,8 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['!! ROCKET', 'https://www.rocket-inc.net/top.php', '_blank', 'porn', 'common'],
 ['FANZA通販-アダルト通販ショッピング', 'https://www.dmm.co.jp/mono/', '_blank', 'porn', 'common'],
 ['【無垢】公式サイトトーップページ | AVメーカ', 'https://www.muku.tv/top/', '_blank', 'porn', 'common'],
+['HHH(トリプルエイチ)| AVメーカ', 'https://hhh-av.com/top/', '_blank', 'porn', 'common'],
+['痴女ヘブンのトップページ| AVメーカ', 'https://bi-av.com/top', '_blank', 'porn', 'common'],
 ['Github', "https://github.com/", "_blank", "Tech", 'common'],
 ['Wikipedia', "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5", "_blank", "Tech", 'common'],
 ["Reddit", "https://www.reddit.com/", "_blank", "Social", 'special'],

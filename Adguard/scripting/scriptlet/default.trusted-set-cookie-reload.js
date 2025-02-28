@@ -33,13 +33,13 @@
 /******************************************************************************/
 
 // Start of code to inject
-const uBOL_trustedReplaceXhrResponse = function() {
+const uBOL_trustedSetCookieReload = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","/\\/player(?:\\?.+)?$/"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/.*/","","pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"],["/null,\"category_sensitive\"[^\\n]+?\"__typename\":\"SponsoredData\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","null}","/api/graphql"]];
+const argsList = [["godbayadblock","godbayadblock"]];
 
-const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5,8]],["www.facebook.com",[3,4,5,8]],["in-jpn.com",6],["app.hellovaia.com",7],["app.studysmarter.de",7],["app.vaia.com",7]]);
+const hostnamesMap = new Map([["game4you.top",0],["innal.top",0],["naylo.top",0],["rustorka.com",0],["rustorka.net",0],["rustorka.top",0],["rustorkacom.lib",0]]);
 
 const entitiesMap = new Map([]);
 
@@ -47,126 +47,57 @@ const exceptionsMap = new Map([]);
 
 /******************************************************************************/
 
-function trustedReplaceXhrResponse(
-    pattern = '',
-    replacement = '',
-    propsToMatch = ''
+function trustedSetCookieReload(name, value, offsetExpiresSec, path, ...args) {
+    trustedSetCookie(name, value, offsetExpiresSec, path, 'reload', '1', ...args);
+}
+
+function trustedSetCookie(
+    name = '',
+    value = '',
+    offsetExpiresSec = '',
+    path = ''
 ) {
-    const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('trusted-replace-xhr-response', pattern, replacement, propsToMatch);
-    const xhrInstances = new WeakMap();
-    if ( pattern === '*' ) { pattern = '.*'; }
-    const rePattern = safe.patternToRegex(pattern);
-    const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
-    self.XMLHttpRequest = class extends self.XMLHttpRequest {
-        open(method, url, ...args) {
-            const outerXhr = this;
-            const xhrDetails = { method, url };
-            let outcome = 'match';
-            if ( propNeedles.size !== 0 ) {
-                if ( matchObjectProperties(propNeedles, xhrDetails) === false ) {
-                    outcome = 'nomatch';
-                }
-            }
-            if ( outcome === 'match' ) {
-                if ( safe.logLevel > 1 ) {
-                    safe.uboLog(logPrefix, `Matched "propsToMatch"`);
-                }
-                xhrInstances.set(outerXhr, xhrDetails);
-            }
-            return super.open(method, url, ...args);
-        }
-        get response() {
-            const innerResponse = super.response;
-            const xhrDetails = xhrInstances.get(this);
-            if ( xhrDetails === undefined ) {
-                return innerResponse;
-            }
-            const responseLength = typeof innerResponse === 'string'
-                ? innerResponse.length
-                : undefined;
-            if ( xhrDetails.lastResponseLength !== responseLength ) {
-                xhrDetails.response = undefined;
-                xhrDetails.lastResponseLength = responseLength;
-            }
-            if ( xhrDetails.response !== undefined ) {
-                return xhrDetails.response;
-            }
-            if ( typeof innerResponse !== 'string' ) {
-                return (xhrDetails.response = innerResponse);
-            }
-            if ( reIncludes && reIncludes.test(innerResponse) === false ) {
-                return (xhrDetails.response = innerResponse);
-            }
-            const textBefore = innerResponse;
-            const textAfter = textBefore.replace(rePattern, replacement);
-            if ( textAfter !== textBefore ) {
-                safe.uboLog(logPrefix, 'Match');
-            }
-            return (xhrDetails.response = textAfter);
-        }
-        get responseText() {
-            const response = this.response;
-            if ( typeof response !== 'string' ) {
-                return super.responseText;
-            }
-            return response;
-        }
-    };
-}
+    if ( name === '' ) { return; }
 
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
-            }
-        };
-    }
     const safe = safeSelf();
-    const haystack = {};
-    const props = safe.Array_from(propNeedles.keys());
-    for ( const obj of objs ) {
-        if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = safe.JSON_stringify(value); }
-            catch { }
-            if ( typeof value !== 'string' ) { continue; }
-        }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
-    }
-    return true;
-}
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
+    const time = new Date();
 
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
-    const safe = safeSelf();
-    const needles = new Map();
-    if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
-    const options = { canNegate: true };
-    for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
-        let [ prop, pattern ] = safe.String_split.call(needle, ':');
-        if ( prop === '' ) { continue; }
-        if ( pattern !== undefined && /[^$\w -]/.test(prop) ) {
-            prop = `${prop}:${pattern}`;
-            pattern = undefined;
-        }
-        if ( pattern !== undefined ) {
-            needles.set(prop, safe.initPattern(pattern, options));
-        } else if ( implicit !== '' ) {
-            needles.set(implicit, safe.initPattern(prop, options));
-        }
+    if ( value.includes('$now$') ) {
+        value = value.replaceAll('$now$', time.getTime());
     }
-    return needles;
+    if ( value.includes('$currentDate$') ) {
+        value = value.replaceAll('$currentDate$', time.toUTCString());
+    }
+    if ( value.includes('$currentISODate$') ) {
+        value = value.replaceAll('$currentISODate$', time.toISOString());
+    }
+
+    let expires = '';
+    if ( offsetExpiresSec !== '' ) {
+        if ( offsetExpiresSec === '1day' ) {
+            time.setDate(time.getDate() + 1);
+        } else if ( offsetExpiresSec === '1year' ) {
+            time.setFullYear(time.getFullYear() + 1);
+        } else {
+            if ( /^\d+$/.test(offsetExpiresSec) === false ) { return; }
+            time.setSeconds(time.getSeconds() + parseInt(offsetExpiresSec, 10));
+        }
+        expires = time.toUTCString();
+    }
+
+    const done = setCookieFn(
+        true,
+        name,
+        value,
+        expires,
+        path,
+        safeSelf().getExtraArgs(Array.from(arguments), 4)
+    );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
+    }
 }
 
 function safeSelf() {
@@ -357,6 +288,76 @@ function safeSelf() {
     return safe;
 }
 
+function setCookieFn(
+    trusted = false,
+    name = '',
+    value = '',
+    expires = '',
+    path = '',
+    options = {},
+) {
+    // https://datatracker.ietf.org/doc/html/rfc2616#section-2.2
+    // https://github.com/uBlockOrigin/uBlock-issues/issues/2777
+    if ( trusted === false && /[^!#$%&'*+\-.0-9A-Z[\]^_`a-z|~]/.test(name) ) {
+        name = encodeURIComponent(name);
+    }
+    // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
+    // The characters [",] are given a pass from the RFC requirements because
+    // apparently browsers do not follow the RFC to the letter.
+    if ( /[^ -:<-[\]-~]/.test(value) ) {
+        value = encodeURIComponent(value);
+    }
+
+    const cookieBefore = getCookieFn(name);
+    if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
+    if ( cookieBefore === value && options.reload ) { return; }
+
+    const cookieParts = [ name, '=', value ];
+    if ( expires !== '' ) {
+        cookieParts.push('; expires=', expires);
+    }
+
+    if ( path === '' ) { path = '/'; }
+    else if ( path === 'none' ) { path = ''; }
+    if ( path !== '' && path !== '/' ) { return; }
+    if ( path === '/' ) {
+        cookieParts.push('; path=/');
+    }
+
+    if ( trusted ) {
+        if ( options.domain ) {
+            cookieParts.push(`; domain=${options.domain}`);
+        }
+        cookieParts.push('; Secure');
+    } else if ( /^__(Host|Secure)-/.test(name) ) {
+        cookieParts.push('; Secure');
+    }
+
+    try {
+        document.cookie = cookieParts.join('');
+    } catch {
+    }
+
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
+        window.location.reload();
+    }
+
+    return done;
+}
+
+function getCookieFn(
+    name = ''
+) {
+    const safe = safeSelf();
+    for ( const s of safe.String_split.call(document.cookie, /\s*;\s*/) ) {
+        const pos = s.indexOf('=');
+        if ( pos === -1 ) { continue; }
+        if ( s.slice(0, pos) !== name ) { continue; }
+        return s.slice(pos+1).trim();
+    }
+}
+
 /******************************************************************************/
 
 const hnParts = [];
@@ -429,7 +430,7 @@ if ( entitiesMap.size !== 0 ) {
 
 // Apply scriplets
 for ( const i of todoIndices ) {
-    try { trustedReplaceXhrResponse(...argsList[i]); }
+    try { trustedSetCookieReload(...argsList[i]); }
     catch { }
 }
 argsList.length = 0;
@@ -441,7 +442,7 @@ argsList.length = 0;
 
 /******************************************************************************/
 
-uBOL_trustedReplaceXhrResponse();
+uBOL_trustedSetCookieReload();
 
 /******************************************************************************/
 

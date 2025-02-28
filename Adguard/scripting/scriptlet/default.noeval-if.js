@@ -37,13 +37,13 @@ const uBOL_noEvalIf = function() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 
-const argsList = [["replace"],["ExoLoader"],["setInterval"],["tmohentai"],["ads"],["debugger"],["/fairAdblock|chp_adblock|adsbygoogle\\.js/"],["ppuQnty"],["adsBlocked"],["adb"],["chp_ad"],["adsbygoogle"],["show"],["AdBlock"],["popUnderStage"],["window.open"],["deblocker"],["adblock"],["popunder"],["/07c225f3\\.online|content-loader\\.com|css-load\\.com|html-load\\.com/"],["interactionCount"],["String.fromCharCode"],["blocker"],["UserCustomPop"],["AdBlocker"],["ppu"],["/popunder/i"],["shift"]];
+const argsList = [["replace"],["ExoLoader"],["setInterval"],["tmohentai"],["ads"],["debugger"],["/fairAdblock|chp_adblock|adsbygoogle\\.js/"],["ppuQnty"],["adsBlocked"],["adb"],["ppu"],["chp_ad"],["adsbygoogle"],["show"],["AdBlock"],["popUnderStage"],["window.open"],["deblocker"],["adblock"],["popunder"],["/07c225f3\\.online|content-loader\\.com|css-load\\.com|html-load\\.com/"],["interactionCount"],["String.fromCharCode"],["blocker"],["UserCustomPop"],["AdBlocker"],["/popunder/i"],["shift"],["style.display"],["/adb/i"]];
 
-const hostnamesMap = new Map([["orgyxxxhub.com",0],["junkyponk.com",0],["healthfirstweb.com",0],["vocalley.com",0],["yogablogfit.com",0],["howifx.com",0],["en.financerites.com",0],["mythvista.com",0],["livenewsflix.com",0],["cureclues.com",0],["apekite.com",0],["flash-firmware.blogspot.com",0],["uploady.io",0],["taodung.com",0],["mangaesp.co",0],["3movs.com",1],["mdbekjwqa.pw",2],["tmohentai.com",3],["tech5s.co",4],["top10cafe.se",4],["phpscripttr.com",4],["7misr4day.com",4],["descargaspcpro.net",4],["dotadostube.com",4],["taradinhos.com",4],["game-2u.com",4],["toramemoblog.com",4],["gplastra.com",4],["okleak.com",4],["afly.pro",4],["ithinkilikeyou.net",4],["milanreports.com",4],["towerofgod.me",4],["crotpedia.net",4],["158.220.106.212",4],["papahd.co",4],["drakescans.com",4],["watchfacebook.com",4],["web1s.asia",4],["bokugents.com",4],["newzjunky.com",4],["yourlifeupdated.net",4],["lscomic.com",4],["tv.durbinlive.com",4],["freeltc.online",4],["pornleaks.in",4],["dudestream.com",4],["areascans.net",4],["bonsaiprolink.shop",4],["exactlyhowlong.com",4],["kumapoi.info",4],["blogcreativos.com",4],["flixlatam.com",4],["samurai.ragnarokscanlation.org",4],["cgcosplay.org",4],["myhindigk.com",4],["aeonax.com",5],["embed.streamx.me",5],["hentaihaven.xxx",5],["myprivatejobs.com",6],["wikitraveltips.com",6],["amritadrino.com",6],["cmphost.com",6],["drinkspartner.com",6],["uploadsoon.com",6],["wp.uploadfiles.in",6],["viralxns.com",6],["posterify.net",6],["headlinerpost.com",6],["tmail.io",7],["tinys.click",8],["getintoway.com",8],["jpopsingles.eu",8],["techacode.com",9],["sideplusleaks.com",9],["azmath.info",10],["downfile.site",10],["downphanmem.com",10],["expertvn.com",10],["memangbau.com",10],["trangchu.news",10],["aztravels.net",10],["litonmods.com",11],["booksrack.net",11],["helicomicro.com",11],["klyker.com",11],["kontenterabox.com",11],["naruldonghua.com",11],["pienovels.com",11],["maccanismi.it",12],["gamesrepacks.com",12],["techhelpbd.com",12],["pokemundo.com",12],["lewebde.com",12],["app.covemarkets.com",12],["tabele-kalorii.pl",13],["hentaistream.com",14],["nudeselfiespics.com",14],["hentaivideos.net",14],["xdld.pages.dev",15],["xdld.lat",15],["ergasiakanea.eu",16],["surfsees.com",16],["conghuongtu.net",16],["downloadlyir.com",16],["ipamod.com",16],["techedubyte.com",16],["apkdrill.com",16],["gsmware.com",17],["arldeemix.com",17],["filemooon.top",[18,26]],["a-ha.io",19],["cboard.net",19],["joongdo.co.kr",19],["viva100.com",19],["gamingdeputy.com",19],["alle-tests.nl",19],["meconomynews.com",19],["brandbrief.co.kr",19],["motorgraph.com",19],["topstarnews.net",19],["autosport.com",20],["motorsport.com",20],["cdn.gledaitv.live",21],["claimlite.club",22],["kurakura21.space",23],["blackhatworld.com",24],["defienietlynotme.com",26],["fmembed.cc",26],["fmhd.bar",26],["fmoonembed.pro",26],["rgeyyddl.skin",26],["sbnmp.bar",26],["sulleiman.com",26],["vpcxz19p.xyz",26],["kickassanime.ch",27]]);
+const hostnamesMap = new Map([["orgyxxxhub.com",0],["junkyponk.com",0],["healthfirstweb.com",0],["vocalley.com",0],["yogablogfit.com",0],["howifx.com",0],["en.financerites.com",0],["mythvista.com",0],["livenewsflix.com",0],["cureclues.com",0],["apekite.com",0],["flash-firmware.blogspot.com",0],["uploady.io",0],["taodung.com",0],["mangaesp.co",0],["3movs.com",1],["mdbekjwqa.pw",2],["tmohentai.com",3],["tech5s.co",4],["top10cafe.se",4],["phpscripttr.com",4],["7misr4day.com",4],["descargaspcpro.net",4],["dotadostube.com",4],["taradinhos.com",4],["game-2u.com",4],["toramemoblog.com",4],["gplastra.com",4],["okleak.com",4],["afly.pro",4],["ithinkilikeyou.net",4],["milanreports.com",4],["towerofgod.me",4],["crotpedia.net",4],["158.220.106.212",4],["papahd.co",4],["drakescans.com",4],["watchfacebook.com",4],["web1s.asia",4],["bokugents.com",4],["newzjunky.com",4],["yourlifeupdated.net",4],["lscomic.com",4],["tv.durbinlive.com",4],["freeltc.online",4],["pornleaks.in",4],["dudestream.com",4],["areascans.net",4],["bonsaiprolink.shop",4],["exactlyhowlong.com",4],["kumapoi.info",4],["blogcreativos.com",4],["flixlatam.com",4],["samurai.ragnarokscanlation.org",4],["cgcosplay.org",4],["myhindigk.com",4],["aeonax.com",5],["embed.streamx.me",5],["hentaihaven.xxx",5],["myprivatejobs.com",6],["wikitraveltips.com",6],["amritadrino.com",6],["cmphost.com",6],["drinkspartner.com",6],["uploadsoon.com",6],["wp.uploadfiles.in",6],["viralxns.com",6],["posterify.net",6],["headlinerpost.com",6],["labgame.io",7],["tmail.io",7],["tinys.click",8],["getintoway.com",8],["jpopsingles.eu",8],["techacode.com",9],["sideplusleaks.com",9],["gamezizo.com",10],["oii.io",10],["azmath.info",11],["downfile.site",11],["downphanmem.com",11],["expertvn.com",11],["memangbau.com",11],["trangchu.news",11],["aztravels.net",11],["litonmods.com",12],["booksrack.net",12],["helicomicro.com",12],["klyker.com",12],["kontenterabox.com",12],["naruldonghua.com",12],["pienovels.com",12],["enryucomics.com",12],["maccanismi.it",13],["gamesrepacks.com",13],["techhelpbd.com",13],["pokemundo.com",13],["lewebde.com",13],["app.covemarkets.com",13],["tabele-kalorii.pl",14],["hentaistream.com",15],["nudeselfiespics.com",15],["hentaivideos.net",15],["xdld.pages.dev",16],["xdld.lat",16],["ergasiakanea.eu",17],["surfsees.com",17],["conghuongtu.net",17],["downloadlyir.com",17],["ipamod.com",17],["techedubyte.com",17],["apkdrill.com",17],["gsmware.com",18],["arldeemix.com",18],["filemooon.top",[19,26]],["a-ha.io",20],["cboard.net",20],["joongdo.co.kr",20],["viva100.com",20],["gamingdeputy.com",20],["alle-tests.nl",20],["meconomynews.com",20],["brandbrief.co.kr",20],["motorgraph.com",20],["topstarnews.net",20],["autosport.com",21],["motorsport.com",21],["cdn.gledaitv.live",22],["claimlite.club",23],["kurakura21.space",24],["blackhatworld.com",25],["defienietlynotme.com",26],["fmembed.cc",26],["fmhd.bar",26],["fmoonembed.pro",26],["rgeyyddl.skin",26],["sbnmp.bar",26],["sulleiman.com",26],["vpcxz19p.xyz",26],["kickassanime.ch",27],["bilinovel.com",28],["linovelib.com",29]]);
 
-const entitiesMap = new Map([["shrink",0],["mlwbd",4],["katmoviefix",4],["layardrama21",4],["sdmoviespoint",4],["fc-lc",7],["azsoft",10],["pasteit",13],["xcloud",15],["file-upload",25],["embedme",26],["finfang",26],["hellnaw",26],["moonembed",26],["z12z0vla",26]]);
+const entitiesMap = new Map([["shrink",0],["mlwbd",4],["katmoviefix",4],["layardrama21",4],["sdmoviespoint",4],["fc-lc",7],["file-upload",10],["azsoft",11],["pasteit",14],["xcloud",16],["embedme",26],["finfang",26],["hellnaw",26],["moonembed",26],["z12z0vla",26]]);
 
-const exceptionsMap = new Map([["xcloud.eu",[15]],["xcloud.host",[15]]]);
+const exceptionsMap = new Map([["xcloud.eu",[16]],["xcloud.host",[16]]]);
 
 /******************************************************************************/
 
@@ -54,19 +54,99 @@ function noEvalIf(
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('noeval-if', needle);
     const reNeedle = safe.patternToRegex(needle);
-    window.eval = new Proxy(window.eval, {  // jshint ignore: line
-        apply: function(target, thisArg, args) {
-            const a = String(args[0]);
-            if ( needle !== '' && reNeedle.test(a) ) {
-                safe.uboLog(logPrefix, 'Prevented:\n', a);
-                return;
-            }
-            if ( needle === '' || safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, 'Not prevented:\n', a);
-            }
-            return Reflect.apply(target, thisArg, args);
+    proxyApplyFn('eval', function(context) {
+        const { callArgs } = context;
+        const a = String(callArgs[0]);
+        if ( needle !== '' && reNeedle.test(a) ) {
+            safe.uboLog(logPrefix, 'Prevented:\n', a);
+            return;
         }
+        if ( needle === '' || safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Not prevented:\n', a);
+        }
+        return context.reflect();
     });
+}
+
+function proxyApplyFn(
+    target = '',
+    handler = ''
+) {
+    let context = globalThis;
+    let prop = target;
+    for (;;) {
+        const pos = prop.indexOf('.');
+        if ( pos === -1 ) { break; }
+        context = context[prop.slice(0, pos)];
+        if ( context instanceof Object === false ) { return; }
+        prop = prop.slice(pos+1);
+    }
+    const fn = context[prop];
+    if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = this.private = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+    }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
+        },
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( fn.prototype?.constructor === fn ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {

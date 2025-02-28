@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202502222242
+## ! Version: 202502281526
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Feb 2025 22:42 UTC
+## ! Last modified: 28 Feb 2025 15:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3138,6 +3138,7 @@ DOMAIN-SUFFIX,i.compendium.com, reject
 DOMAIN-SUFFIX,i.posthog.com, reject
 DOMAIN-SUFFIX,i.viafoura.co, reject
 DOMAIN-SUFFIX,iabusprivacy.pmc.com, reject
+DOMAIN-SUFFIX,id.a-mx.com, reject
 DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net, reject
 DOMAIN-SUFFIX,identification.hotmart.com, reject
 DOMAIN-SUFFIX,ihi.flowplayer.com, reject
@@ -3245,7 +3246,6 @@ DOMAIN-SUFFIX,mmi.bemobile.ua, reject
 DOMAIN-SUFFIX,mon.domdog.io, reject
 DOMAIN-SUFFIX,monitor-api.blackcrow.ai, reject
 DOMAIN-SUFFIX,monitor-frontend-collector.a.bybit-aws.com, reject
-DOMAIN-SUFFIX,monitor.azure.com, reject
 DOMAIN-SUFFIX,monitoring.iraiser.eu, reject
 DOMAIN-SUFFIX,monorail-edge.shopifysvc.com, reject
 DOMAIN-SUFFIX,mormont.gamer-network.net, reject
@@ -4594,6 +4594,7 @@ DOMAIN-SUFFIX,beacon.wikia-services.com, reject
 DOMAIN-SUFFIX,beacons.digital.disneyadvertising.com, reject
 DOMAIN-SUFFIX,bfp.capitalone.com, reject
 DOMAIN-SUFFIX,bi.banggood.com, reject
+DOMAIN-SUFFIX,bicp-analytics.postscript.io, reject
 DOMAIN-SUFFIX,binocule21c.merriam-webster.com, reject
 DOMAIN-SUFFIX,blitz-analytics-batch-server.blitz.gg, reject
 DOMAIN-SUFFIX,blue.nbc4i.com, reject

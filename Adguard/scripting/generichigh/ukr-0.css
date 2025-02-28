@@ -21,6 +21,7 @@
 
 /* ukr-0 */
 
+[data-revive-zoneid],
 div[id*="MarketGid"],
 div[id*="ScriptRoot"],
 html > body:has(div.popup > div.popup-inner > a[href*="/vote"]),

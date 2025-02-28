@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 17 Feb 2025 13:58:07 GMT
-# entries:        3468
+# last updated:   Thu, 27 Feb 2025 02:45:23 GMT
+# entries:        3469
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -180,6 +180,7 @@ DOMAIN-SUFFIX,adadvisor.net
 DOMAIN-SUFFIX,adalliance.io
 DOMAIN-SUFFIX,adanging.blog
 DOMAIN-SUFFIX,adap.tv
+DOMAIN-SUFFIX,adapt.tv
 DOMAIN-SUFFIX,adbilty.me
 DOMAIN-SUFFIX,adblade.com
 DOMAIN-SUFFIX,adblade.org
@@ -376,6 +377,7 @@ DOMAIN-SUFFIX,ads.betfair.com
 DOMAIN-SUFFIX,ads.bigchurch.com
 DOMAIN-SUFFIX,ads.bigfoot.com
 DOMAIN-SUFFIX,ads.bing.com
+DOMAIN-SUFFIX,ads.bittorrent.com
 DOMAIN-SUFFIX,ads.blog.com
 DOMAIN-SUFFIX,ads.bluemountain.com
 DOMAIN-SUFFIX,ads.boerding.com
@@ -713,7 +715,6 @@ DOMAIN-SUFFIX,adserver.sanomawsoy.fi
 DOMAIN-SUFFIX,adserver.sciflicks.com
 DOMAIN-SUFFIX,adserver.scr.sk
 DOMAIN-SUFFIX,adserver.smgfiles.com
-DOMAIN-SUFFIX,adserver.theonering.net
 DOMAIN-SUFFIX,adserver.trojaner-info.de
 DOMAIN-SUFFIX,adserver.tupolska.com
 DOMAIN-SUFFIX,adserver.twitpic.com
@@ -975,7 +976,6 @@ DOMAIN-SUFFIX,at-adserver.alltop.com
 DOMAIN-SUFFIX,at-o.net
 DOMAIN-SUFFIX,atdmt.com
 DOMAIN-SUFFIX,athena-ads.wikia.com
-DOMAIN-SUFFIX,ato.mx
 DOMAIN-SUFFIX,attractionbanana.com
 DOMAIN-SUFFIX,attribution.report
 DOMAIN-SUFFIX,atwola.com
@@ -1737,6 +1737,7 @@ DOMAIN-SUFFIX,getintent.com
 DOMAIN-SUFFIX,getmyads.com
 DOMAIN-SUFFIX,getxmlisi.com
 DOMAIN-SUFFIX,giddycoat.com
+DOMAIN-SUFFIX,glasscoyote.com
 DOMAIN-SUFFIX,glisteningsign.com
 DOMAIN-SUFFIX,globalismedia.com
 DOMAIN-SUFFIX,gloriousbeef.com
@@ -2000,7 +2001,6 @@ DOMAIN-SUFFIX,launchbit.com
 DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layer-ads.de
 DOMAIN-SUFFIX,lbn.ru
-DOMAIN-SUFFIX,lead02.com
 DOMAIN-SUFFIX,leadboltads.net
 DOMAIN-SUFFIX,leadclick.com
 DOMAIN-SUFFIX,leadinfo.net
@@ -2053,6 +2053,7 @@ DOMAIN-SUFFIX,linkrain.com
 DOMAIN-SUFFIX,linkreferral.com
 DOMAIN-SUFFIX,links-ranking.de
 DOMAIN-SUFFIX,links.email.crunchbase.com
+DOMAIN-SUFFIX,links.housekeep.com
 DOMAIN-SUFFIX,links.prosservice.fr
 DOMAIN-SUFFIX,links.zoopla.co.uk
 DOMAIN-SUFFIX,linkstorms.com
@@ -2358,6 +2359,7 @@ DOMAIN-SUFFIX,offer.fyber.com
 DOMAIN-SUFFIX,offer.sponsorpay.com
 DOMAIN-SUFFIX,offerforge.com
 DOMAIN-SUFFIX,offermatica.com
+DOMAIN-SUFFIX,offshoregeology.com
 DOMAIN-SUFFIX,ogads-pa.googleapis.com
 DOMAIN-SUFFIX,oglasi.posjetnica.com
 DOMAIN-SUFFIX,ogury.com
@@ -2583,9 +2585,7 @@ DOMAIN-SUFFIX,puffypaste.com
 DOMAIN-SUFFIX,puffypull.com
 DOMAIN-SUFFIX,puffypurpose.com
 DOMAIN-SUFFIX,pureclarity.net
-DOMAIN-SUFFIX,pushame.com
 DOMAIN-SUFFIX,pushance.com
-DOMAIN-SUFFIX,pushazer.com
 DOMAIN-SUFFIX,pushengage.com
 DOMAIN-SUFFIX,pushno.com
 DOMAIN-SUFFIX,pushtrack.co
@@ -3141,6 +3141,7 @@ DOMAIN-SUFFIX,topstats.com
 DOMAIN-SUFFIX,totemcash.com
 DOMAIN-SUFFIX,touchclarity.com
 DOMAIN-SUFFIX,tour.brazzers.com
+DOMAIN-SUFFIX,tr.api.fanbyte.com
 DOMAIN-SUFFIX,track-eu.customer.io
 DOMAIN-SUFFIX,track-on.eu
 DOMAIN-SUFFIX,track-on.pl

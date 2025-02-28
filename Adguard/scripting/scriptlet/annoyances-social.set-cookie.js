@@ -39,7 +39,7 @@ const scriptletGlobals = {}; // eslint-disable-line
 
 const argsList = [["show_share","true"]];
 
-const hostnamesMap = new Map([["gomovies.sx",0],["actvid.rs",0]]);
+const hostnamesMap = new Map([["gomovies.sx",0],["actvid.rs",0],["sflix.to",0],["hurawatchz.to",0]]);
 
 const entitiesMap = new Map([["fmovies",0],["yesmovies",0],["himovies",0],["moviesjoy",0],["swatchseries",0]]);
 

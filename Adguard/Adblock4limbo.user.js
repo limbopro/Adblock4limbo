@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.02.07
+// @version      0.2025.02.24
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -51,11 +51,12 @@
 /// 3.**匹配的body**处 填写正则表达式 **daohangMode|adultMode** ，**替换**处 填写 **off**
 /// 4.daohangMode 代表导航，adultMode 代表成人保护模式，你可以都关闭或只关闭其一
 
-// **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式（PC/Mac）】**
+// **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式/使导航功能失效（PC/Mac）】**
 /// PC/Mac 油猴用户...
 /// 进入 Tampermonkey 管理面板 - 找到 **Adblock4limbo.[github]**
 /// 找到 daohang_build()  大概在 210 多行
-/// 然后将 daohangMode/adultMode 的值修改成 false 即可
+/// 然后将 daohangMode/adultMode 的值修改成 false 即可 
+/// 或直接注释掉 daohang_build() 即可（注释后将无法快捷唤起导航详情页，导航功能失效）
 
 /// ! 隐藏页面右下角导航🧭按钮🔘不影响PC/Mac端快捷键使用，移动端仍可1秒内连续点击页面空白处4次及以上唤出【导航页面】；
 
@@ -210,20 +211,21 @@
 */
 
 
-// 是否（默认）开启导航🧭按钮🔘 moren
-// 如【不需要开启导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
+// 是否（默认）显示导航🧭按钮🔘
+// 如【不需要显示导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
 
 settingCookie('daohangMode_global', 'false', '400');
-console.log('是否（默认）开启导航🧭按钮🔘：' + getCookie_('daohangMode'))
+console.log('是否（默认）显示导航🧭按钮🔘：' + getCookie_('daohangMode'))
 
 // 是否（默认）开启成人🔞网站保护模式
 // 如【不需要开启成人网站保护模式】 可将 cookie 的值从 true 改为 false
 settingCookie('adultMode', 'false', '400');
 console.log('是否（默认）开启成人🔞网站保护模式：' + getCookie_('adultMode'))
 
-// 是否开启导航🧭按钮🔘
+// 是否开启导航🧭按钮🔘 // 完全开启或禁用导航功能
 // 如【不需要开启导航🧭按钮🔘】可直接将 daohang_build() 进行注释
 // //daohang_build() 就像这样 
+// 注释后将【无法快捷唤起导航详情页】且导航功能无法使用
 daohang_build();
 
 // 一些常量

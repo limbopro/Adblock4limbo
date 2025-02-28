@@ -1,5 +1,5 @@
 ☠️ AdobeCrack,https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/adobecc.list
-🛑 广告拦截,https://limbopro.com/Adblock4limbo.list
+🛑 广告拦截,https://raw.githubusercontent.com/limbopro/Adblock4limbo/refs/heads/main/rule/Surge/Adblock4limbo_surge.list
 🛑 广告拦截,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdvertisingLite/AdvertisingLite.list
 🛑 广告拦截,https://raw.githubusercontent.com/limbopro/Adblock4limbo/refs/heads/main/rule/Surge/easylistchina_surge.list
 🛑 广告拦截,https://raw.githubusercontent.com/limbopro/Adblock4limbo/refs/heads/main/rule/Surge/easylist_surge.list
@@ -33,6 +33,7 @@
 📲 国外社交媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list
 📲 国外社交媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Tumblr/Tumblr.list
 📲 国外社交媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Reddit/Reddit.list
+🎥 其他国外流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/UKMedia/UKMedia.list
 🎥 其他国外流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/UKMedia/UKMedia.list
 🎥 其他国外流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/FOXPlus/FOXPlus.list
 🎥 其他国外流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Peacock/Peacock.list

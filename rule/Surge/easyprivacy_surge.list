@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202502222242
+## ! Version: 202502281526
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Feb 2025 22:42 UTC
+## ! Last modified: 28 Feb 2025 15:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -3138,6 +3138,7 @@ DOMAIN-SUFFIX,i.compendium.com
 DOMAIN-SUFFIX,i.posthog.com
 DOMAIN-SUFFIX,i.viafoura.co
 DOMAIN-SUFFIX,iabusprivacy.pmc.com
+DOMAIN-SUFFIX,id.a-mx.com
 DOMAIN-SUFFIX,iddu1vvb7sk8-a.akamaihd.net
 DOMAIN-SUFFIX,identification.hotmart.com
 DOMAIN-SUFFIX,ihi.flowplayer.com
@@ -3245,7 +3246,6 @@ DOMAIN-SUFFIX,mmi.bemobile.ua
 DOMAIN-SUFFIX,mon.domdog.io
 DOMAIN-SUFFIX,monitor-api.blackcrow.ai
 DOMAIN-SUFFIX,monitor-frontend-collector.a.bybit-aws.com
-DOMAIN-SUFFIX,monitor.azure.com
 DOMAIN-SUFFIX,monitoring.iraiser.eu
 DOMAIN-SUFFIX,monorail-edge.shopifysvc.com
 DOMAIN-SUFFIX,mormont.gamer-network.net
@@ -4594,6 +4594,7 @@ DOMAIN-SUFFIX,beacon.wikia-services.com
 DOMAIN-SUFFIX,beacons.digital.disneyadvertising.com
 DOMAIN-SUFFIX,bfp.capitalone.com
 DOMAIN-SUFFIX,bi.banggood.com
+DOMAIN-SUFFIX,bicp-analytics.postscript.io
 DOMAIN-SUFFIX,binocule21c.merriam-webster.com
 DOMAIN-SUFFIX,blitz-analytics-batch-server.blitz.gg
 DOMAIN-SUFFIX,blue.nbc4i.com

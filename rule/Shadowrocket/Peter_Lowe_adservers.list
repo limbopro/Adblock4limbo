@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 17 Feb 2025 13:58:07 GMT
-# entries:        3468
+# last updated:   Thu, 27 Feb 2025 02:45:23 GMT
+# entries:        3469
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -180,6 +180,7 @@ DOMAIN-SUFFIX,adadvisor.net, reject
 DOMAIN-SUFFIX,adalliance.io, reject
 DOMAIN-SUFFIX,adanging.blog, reject
 DOMAIN-SUFFIX,adap.tv, reject
+DOMAIN-SUFFIX,adapt.tv, reject
 DOMAIN-SUFFIX,adbilty.me, reject
 DOMAIN-SUFFIX,adblade.com, reject
 DOMAIN-SUFFIX,adblade.org, reject
@@ -376,6 +377,7 @@ DOMAIN-SUFFIX,ads.betfair.com, reject
 DOMAIN-SUFFIX,ads.bigchurch.com, reject
 DOMAIN-SUFFIX,ads.bigfoot.com, reject
 DOMAIN-SUFFIX,ads.bing.com, reject
+DOMAIN-SUFFIX,ads.bittorrent.com, reject
 DOMAIN-SUFFIX,ads.blog.com, reject
 DOMAIN-SUFFIX,ads.bluemountain.com, reject
 DOMAIN-SUFFIX,ads.boerding.com, reject
@@ -713,7 +715,6 @@ DOMAIN-SUFFIX,adserver.sanomawsoy.fi, reject
 DOMAIN-SUFFIX,adserver.sciflicks.com, reject
 DOMAIN-SUFFIX,adserver.scr.sk, reject
 DOMAIN-SUFFIX,adserver.smgfiles.com, reject
-DOMAIN-SUFFIX,adserver.theonering.net, reject
 DOMAIN-SUFFIX,adserver.trojaner-info.de, reject
 DOMAIN-SUFFIX,adserver.tupolska.com, reject
 DOMAIN-SUFFIX,adserver.twitpic.com, reject
@@ -975,7 +976,6 @@ DOMAIN-SUFFIX,at-adserver.alltop.com, reject
 DOMAIN-SUFFIX,at-o.net, reject
 DOMAIN-SUFFIX,atdmt.com, reject
 DOMAIN-SUFFIX,athena-ads.wikia.com, reject
-DOMAIN-SUFFIX,ato.mx, reject
 DOMAIN-SUFFIX,attractionbanana.com, reject
 DOMAIN-SUFFIX,attribution.report, reject
 DOMAIN-SUFFIX,atwola.com, reject
@@ -1737,6 +1737,7 @@ DOMAIN-SUFFIX,getintent.com, reject
 DOMAIN-SUFFIX,getmyads.com, reject
 DOMAIN-SUFFIX,getxmlisi.com, reject
 DOMAIN-SUFFIX,giddycoat.com, reject
+DOMAIN-SUFFIX,glasscoyote.com, reject
 DOMAIN-SUFFIX,glisteningsign.com, reject
 DOMAIN-SUFFIX,globalismedia.com, reject
 DOMAIN-SUFFIX,gloriousbeef.com, reject
@@ -2000,7 +2001,6 @@ DOMAIN-SUFFIX,launchbit.com, reject
 DOMAIN-SUFFIX,layer-ad.de, reject
 DOMAIN-SUFFIX,layer-ads.de, reject
 DOMAIN-SUFFIX,lbn.ru, reject
-DOMAIN-SUFFIX,lead02.com, reject
 DOMAIN-SUFFIX,leadboltads.net, reject
 DOMAIN-SUFFIX,leadclick.com, reject
 DOMAIN-SUFFIX,leadinfo.net, reject
@@ -2053,6 +2053,7 @@ DOMAIN-SUFFIX,linkrain.com, reject
 DOMAIN-SUFFIX,linkreferral.com, reject
 DOMAIN-SUFFIX,links-ranking.de, reject
 DOMAIN-SUFFIX,links.email.crunchbase.com, reject
+DOMAIN-SUFFIX,links.housekeep.com, reject
 DOMAIN-SUFFIX,links.prosservice.fr, reject
 DOMAIN-SUFFIX,links.zoopla.co.uk, reject
 DOMAIN-SUFFIX,linkstorms.com, reject
@@ -2358,6 +2359,7 @@ DOMAIN-SUFFIX,offer.fyber.com, reject
 DOMAIN-SUFFIX,offer.sponsorpay.com, reject
 DOMAIN-SUFFIX,offerforge.com, reject
 DOMAIN-SUFFIX,offermatica.com, reject
+DOMAIN-SUFFIX,offshoregeology.com, reject
 DOMAIN-SUFFIX,ogads-pa.googleapis.com, reject
 DOMAIN-SUFFIX,oglasi.posjetnica.com, reject
 DOMAIN-SUFFIX,ogury.com, reject
@@ -2583,9 +2585,7 @@ DOMAIN-SUFFIX,puffypaste.com, reject
 DOMAIN-SUFFIX,puffypull.com, reject
 DOMAIN-SUFFIX,puffypurpose.com, reject
 DOMAIN-SUFFIX,pureclarity.net, reject
-DOMAIN-SUFFIX,pushame.com, reject
 DOMAIN-SUFFIX,pushance.com, reject
-DOMAIN-SUFFIX,pushazer.com, reject
 DOMAIN-SUFFIX,pushengage.com, reject
 DOMAIN-SUFFIX,pushno.com, reject
 DOMAIN-SUFFIX,pushtrack.co, reject
@@ -3141,6 +3141,7 @@ DOMAIN-SUFFIX,topstats.com, reject
 DOMAIN-SUFFIX,totemcash.com, reject
 DOMAIN-SUFFIX,touchclarity.com, reject
 DOMAIN-SUFFIX,tour.brazzers.com, reject
+DOMAIN-SUFFIX,tr.api.fanbyte.com, reject
 DOMAIN-SUFFIX,track-eu.customer.io, reject
 DOMAIN-SUFFIX,track-on.eu, reject
 DOMAIN-SUFFIX,track-on.pl, reject

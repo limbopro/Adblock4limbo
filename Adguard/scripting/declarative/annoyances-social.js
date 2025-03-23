@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"body, html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}"],["{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important; position: initial !important;\"]}"]];
-
-const hostnamesMap = new Map([["ultraslan.com",0],["govtrack.us",1],["gulte.com",1],["aliprice.com",1],["finance.yahoo.com",2]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\"body, html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important; position: initial !important;\"]}"];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["ultraslan.com",1],["govtrack.us",2],["gulte.com",2],["aliprice.com",2],["finance.yahoo.com",3]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

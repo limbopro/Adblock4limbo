@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: annoyances-overlays
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_removeClass = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["js-page-scroll-lock","body","stay"],["pum-open-overlay","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["open-pw","body","stay"],["subscribe-pop-active","body","stay"],["blocking-signup","html","stay"],["modal-open","","stay"],["js-show-newsletter-popup","","stay"],["show-intro-popup","html","stay"],["has-intro-popup","html","stay"],["modal-in","html","stay"],["modal-open","body","stay"],["oxy-modal-active","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
-
-const hostnamesMap = new Map([["cityam.com",0],["securityweek.com",1],["all3dp.com",2],["cityandstateny.com",3],["forbes.com",4],["money.com",5],["insider.fitt.co",6],["restofworld.org",7],["chicagotribune.com",8],["dgb.de",9],["goto10retro.com",[10,11,12]],["strangeloopcanon.com",[10,11,12]],["michaelmoore.com",[10,11,12]],["persuasion.community",[10,11,12]],["thebulwark.com",[10,11,12]],["theclimatebrink.com",[10,11,12]],["forkingpaths.co",[10,11,12]],["gamefile.news",[10,11,12]],["publicnotice.co",[10,11,12]],["techemails.com",[10,11,12]],["aisnakeoil.com",[10,11,12]],["secretsofprivacy.com",[10,11,12]],["moreisdifferent.blog",[10,11,12]],["latent.space",[10,11,12]],["statsignificant.com",[10,11,12]],["noahpinion.blog",[10,11,12]],["read.perspectiveship.com",[10,11,12]],["newsletter.maartengrootendorst.com",[10,11,12]],["newsletter.eng-leadership.com",[10,11,12]],["blog.codingconfessions.com",[10,11,12]],["afterbabel.com",[10,11,12]],["theintrinsicperspective.com",[10,11,12]],["elysian.press",[10,11,12]],["experimental-history.com",[10,11,12]],["thebignewsletter.com",[10,11,12]],["honest-broker.com",[10,11,12]],["henrikkarlsson.xyz",[10,11,12]],["computerenhance.com",[10,11,12]],["friendlyatheist.com",[10,11,12]],["unchartedterritories.tomaspueyo.com",[10,11,12]],["construction-physics.com",[10,11,12]],["sambowman.co",[10,11,12]],["asiasentinel.com",[10,11,12]],["understandingai.org",[10,11,12]],["hamiltonnolan.com",[10,11,12]],["aporiamagazine.com",[10,11,12]],["garbageday.email",[10,11,12]],["jacobwolf.report",[10,11,12]],["semianalysis.com",[10,11,12]],["dossier.today",[10,11,12]],["engineeringleadership.xyz",[10,11,12]],["piratewires.com",[10,11,12]],["slowboring.com",[10,11,12]],["flowstate.fm",[10,11,12]],["popular.info",[10,11,12]],["newsletter.banklesshq.com",[10,11,12]],["antiracismnewsletter.com",[10,11,12]],["racket.news",[10,11,12]],["eugyppius.com",[10,11,12]],["dkb.blog",[10,11,12]],["duffelblog.com",[10,11,12]],["theankler.com",[10,11,12]],["fullstackeconomics.com",[10,11,12]],["substack.com",[10,11,12]],["platformer.news",[10,11,12]],["tweaktown.com",13],["mightyape.co.nz",13],["suzukicycles.com",13],["wahaca.co.uk",14],["novelza.com",16],["postype.com",17]]);
-
-const entitiesMap = new Map([["pornhub",15]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_removeClass() {
 
 /******************************************************************************/
 
@@ -329,95 +312,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["js-page-scroll-lock","body","stay"],["pum-open-overlay","body","stay"],["root-modal-container-open","body","stay"],["interstitial","aside","stay"],["zephr-modal-open","body","stay"],["open-pw","body","stay"],["subscribe-pop-active","body","stay"],["blocking-signup","html","stay"],["modal-open","","stay"],["js-show-newsletter-popup","","stay"],["show-intro-popup","html","stay"],["has-intro-popup","html","stay"],["modal-in","html","stay"],["modal-open","body","stay"],["oxy-modal-active","body","stay"],["hasAdAlert","header"],["click-to-scroll","body"],["disable-selection","body"]];
+const hostnamesMap = new Map([["cityam.com",0],["securityweek.com",1],["all3dp.com",2],["cityandstateny.com",3],["forbes.com",4],["money.com",5],["insider.fitt.co",6],["restofworld.org",7],["chicagotribune.com",8],["dgb.de",9],["webworm.co",[10,11,12]],["goto10retro.com",[10,11,12]],["strangeloopcanon.com",[10,11,12]],["michaelmoore.com",[10,11,12]],["persuasion.community",[10,11,12]],["thebulwark.com",[10,11,12]],["theclimatebrink.com",[10,11,12]],["forkingpaths.co",[10,11,12]],["gamefile.news",[10,11,12]],["publicnotice.co",[10,11,12]],["techemails.com",[10,11,12]],["aisnakeoil.com",[10,11,12]],["secretsofprivacy.com",[10,11,12]],["moreisdifferent.blog",[10,11,12]],["latent.space",[10,11,12]],["statsignificant.com",[10,11,12]],["noahpinion.blog",[10,11,12]],["read.perspectiveship.com",[10,11,12]],["newsletter.maartengrootendorst.com",[10,11,12]],["newsletter.eng-leadership.com",[10,11,12]],["blog.codingconfessions.com",[10,11,12]],["afterbabel.com",[10,11,12]],["theintrinsicperspective.com",[10,11,12]],["elysian.press",[10,11,12]],["experimental-history.com",[10,11,12]],["thebignewsletter.com",[10,11,12]],["honest-broker.com",[10,11,12]],["henrikkarlsson.xyz",[10,11,12]],["computerenhance.com",[10,11,12]],["friendlyatheist.com",[10,11,12]],["unchartedterritories.tomaspueyo.com",[10,11,12]],["construction-physics.com",[10,11,12]],["sambowman.co",[10,11,12]],["asiasentinel.com",[10,11,12]],["understandingai.org",[10,11,12]],["hamiltonnolan.com",[10,11,12]],["aporiamagazine.com",[10,11,12]],["garbageday.email",[10,11,12]],["jacobwolf.report",[10,11,12]],["semianalysis.com",[10,11,12]],["dossier.today",[10,11,12]],["engineeringleadership.xyz",[10,11,12]],["piratewires.com",[10,11,12]],["slowboring.com",[10,11,12]],["flowstate.fm",[10,11,12]],["popular.info",[10,11,12]],["newsletter.banklesshq.com",[10,11,12]],["antiracismnewsletter.com",[10,11,12]],["racket.news",[10,11,12]],["eugyppius.com",[10,11,12]],["dkb.blog",[10,11,12]],["duffelblog.com",[10,11,12]],["theankler.com",[10,11,12]],["fullstackeconomics.com",[10,11,12]],["substack.com",[10,11,12]],["platformer.news",[10,11,12]],["tweaktown.com",13],["mightyape.co.nz",13],["suzukicycles.com",13],["wahaca.co.uk",14],["pornhub.*",15],["novelza.com",16],["postype.com",17]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { removeClass(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_removeClass();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

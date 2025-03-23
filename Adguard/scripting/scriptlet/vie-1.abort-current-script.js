@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: vie-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortCurrentScript = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["Promise","detectedAdblock"],["$","popup"],["Object.defineProperty","ADMStorageFileCDN"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Object.defineProperty","fromCharCode"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["jQuery","popurl"],["eval","$._Eu"],["addEvent","popu"],["jQuery","click_time"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","open"],["document.addEventListener","shopee"],["$","open"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.addEventListener","window.open"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["jQuery","open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","open"],["setTimeout","window.location"]];
-
-const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["afamily.vn",2],["thanhnien.vn",2],["cunghocvui.com",3],["dualeotruyenxxy.com",[4,42]],["m.blogtruyenmoi.com",4],["freeplayervideo.com",5],["abysscdn.com",5],["player-cdn.com",5],["geoip.redirect-ads.com",5],["playhydrax.com",5],["gocmod.com",6],["goctruyentranhvuiaa.com",7],["nettruyenvng.com",7],["sextop1.show",7],["hhvsub.com",7],["sayhentai.ink",7],["coi.sexviet88.xyz",[7,42]],["gotphim.com",8],["haychillz.com",9],["hh3dhay.life",[10,11,21]],["hh3dhay.in",11],["holyfilm.org",12],["imail.edu.vn",[13,14]],["ios.codevn.net",15],["linkneverdie.net",16],["linkneverdie.top",16],["linkneverdie2.com",16],["lrepacks.net",17],["lxmanga.cloud",18],["p.thoctv.com",19],["phimgichill.net",[20,21]],["hhhay.ink",21],["tram3d.me",21],["animevietsub.bio",21],["phimmoi.sale",22],["motphimww.biz",22],["phimmoinay.top",23],["phimtho.net",24],["phimtuoitho.site",25],["rphang.online",26],["misskon.com",26],["saigon24.net",27],["sexhd88.club",28],["sieutamphim.com",29],["thiendia.one",30],["tinsoikeo.live",31],["truyen247.pro",32],["truyen35.shop",33],["truyengg.com",34],["truyenqqtet.com",35],["viet69.cz",35],["truyenqqto.com",36],["truyensextv.com",37],["truyentuan.xyz",38],["ungtycomicsvip.org",[39,42]],["vailonxx.co",40],["motchillfa.com",40],["viet69.ong",41],["viet69.ps",42],["vlxx.gg",42],["yurineko.my",42],["xemsex.ai",42],["hd.javhay.site",42],["phimsexhay669.pro",42],["cliphot69.bar",42],["doctruyen3qui.pro",42],["ihentai.nl",42],["jav.vc",42],["sex.tuoi69.store",42],["top1sex.me",42],["hentaivc.com",42],["www.buomtv.io",42],["truyenvn.tech",42],["javtiful.com",42],["truyengihotzay.net",42],["truyengihotnay.com",42],["quatvn.love",42],["top1phimsex.com",42],["phim18hd.cam",42],["mupnungvl.pro",42],["demo.14412882.com",42],["cliphot69.pics",42],["hhtq5.vip",42],["sexdiary.club",42],["vn2.xvideos69.xxx",42],["umetruyenhay.com",42],["damconuongz.club",42],["vungoctuan.vn",43],["www.toptruyen369.net",44],["xnxx-sex-videos.com",45]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortCurrentScript() {
 
 /******************************************************************************/
 
@@ -384,95 +367,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["Promise","detectedAdblock"],["Object.defineProperty","ADMStorageFileCDN"],["$","aff"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["$","arrDirectLink"],["document.getElementById","openPop"],["document.addEventListener","open"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Symbol","break;case $"],["document.createElement",";break;case"],["eval","$._Eu"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["jQuery","Popup"],["setInterval","offsetHeight"],["document.addEventListener","Click"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["addEvent","popu"],["jQuery","click_time"],["$","open"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","shopee"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.addEventListener","window.open"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["setTimeout","open"],["setTimeout","window.location"]];
+const hostnamesMap = new Map([["10gb.vn",0],["cafef.vn",1],["gamek.vn",1],["genk.vn",1],["kenh14.vn",1],["soha.vn",1],["tuoitre.vn",1],["afamily.vn",1],["thanhnien.vn",1],["cdn2.insure885.fun",2],["cunghocvui.com",3],["dualeotruyenbotz.com",[4,42]],["m.blogtruyenmoi.com",4],["economic45882.shop",5],["freeplayervideo.com",6],["abysscdn.com",6],["player-cdn.com",6],["playhydrax.com",6],["game8.vn",7],["sexhd88.club",7],["gocmod.com",8],["goctruyentranhvuiaa.com",9],["nettruyenrr.com",9],["sextop1.show",9],["hhvsub1.com",9],["sayhentai.ink",9],["jav.sexviet88.xyz",[9,42]],["gotphim.com",10],["hh3dhay.life",[11,12,13]],["tram3d.com",12],["tram3d.me",13],["animevietsub.red",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",[17,18]],["javhd.shop",19],["linkneverdie.net",20],["linkneverdie.top",20],["linkneverdie2.com",20],["lrepacks.net",21],["lxmanga.wiki",22],["p.thoctv.com",23],["phimmoi.sale",24],["phimmoinay.top",25],["phimsexvietnam.co",26],["phimtho.net",27],["phimtuoitho.site",28],["rphang.online",29],["misskon.com",29],["saigon24.net",30],["sieutamphim.com",31],["tinsoikeo.live",32],["truyen247.pro",33],["truyen35.shop",34],["truyengg.com",35],["truyenqqtet.com",36],["viet69.xin",36],["truyenqqto.com",37],["truyensextv.com",38],["truyentuan.xyz",39],["ungtycomicsvip.org",[40,42]],["vailonxx.co",41],["motchill77.com",41],["viet69.gd",42],["vlxx.my",42],["yurineko.my",42],["xemsex.me",42],["phimsexhay669.pro",42],["cliphot69.pw",42],["doctruyen3qui3.pro",42],["ihentai.men",42],["hentaivc.com",42],["www.buomtv.io",42],["truyenvn.nl",42],["javtiful.com",42],["truyengihotzay.net",42],["truyengihotnay.com",42],["quatvn.love",42],["top1phimsex.com",42],["phim18hd.cam",42],["vlgaimup.pro",42],["demo.14412882.com",42],["cliphot69.pics",42],["hhtq5.vip",42],["sexdiary.club",42],["vn2.xvideos69.xxx",42],["umetruyenhay.com",42],["damconuong.fit",42],["viet69.lat",43],["vungoctuan.vn",44],["www.toptruyentv.pro",45],["xnxx-sex-videos.com",46]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortCurrentScript(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortCurrentScript();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

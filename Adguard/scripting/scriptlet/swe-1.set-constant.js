@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: swe-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_setConstant = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["window.WURFL","1"],["manualAutoplay_","noopFunc"],["mi_track_user","false"]];
-
-const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["feber.se",3],["tjock.se",3],["findit.se",4],["fz.se",5],["fssweden.se",5],["tinyurl.se",5],["gamereactor.se",6],["jobsinsweden.se",7],["kamrat.com",[8,9]],["mobilanyheter.net",10],["ordbokpro.se",11],["thatsup.se",12],["utslappsratt.se",[13,14]],["heleneholmsif.se",[13,14]],["trafikskola.se",[13,14]],["melodifestivalklubben.se",[13,14]],["morotsliv.com",[13,14]],["nyadagbladet.se",[13,14]],["vinochmatguiden.se",15],["vk.se",16],["folkbladet.nu",16],["nordsverige.se",16],["mellanbygden.nu",16],["vasterbottningen.se",16],["lokaltidningen.nu",16],["zeinaskitchen.se",17],["trafiksakerhet.se",17],["boktugg.se",17],["lakartidningen.se",17],["villalivet.se",17],["matsafari.nu",17],["forexgruppen.se",17],["fastighetsvarlden.se",17]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_setConstant() {
 
 /******************************************************************************/
 
@@ -474,95 +457,83 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["window.WURFL","1"],["manualAutoplay_","noopFunc"],["mi_track_user","false"]];
+const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["feber.se",3],["tjock.se",3],["findit.se",4],["fz.se",5],["fssweden.se",5],["tinyurl.se",5],["gamereactor.se",6],["jobsinsweden.se",7],["kamrat.com",[8,9]],["mobilanyheter.net",10],["ordbokpro.se",11],["thatsup.se",12],["utslappsratt.se",[13,14]],["heleneholmsif.se",[13,14]],["trafikskola.se",[13,14]],["melodifestivalklubben.se",[13,14]],["morotsliv.com",[13,14]],["nyadagbladet.se",[13,14]],["vinochmatguiden.se",15],["vk.se",16],["folkbladet.nu",16],["nordsverige.se",16],["mellanbygden.nu",16],["vasterbottningen.se",16],["lokaltidningen.nu",16],["zeinaskitchen.se",17],["trafiksakerhet.se",17],["boktugg.se",17],["lakartidningen.se",17],["villalivet.se",17],["matsafari.nu",17],["forexgruppen.se",17],["fastighetsvarlden.se",17]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { setConstant(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_setConstant();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

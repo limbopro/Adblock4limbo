@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[12989194,".fold_home__pasica_banner:not(html, body, :empty)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body, :empty)"],[6879724,".homepage-top-google-banner:not(html, body, :empty)"],[13987257,".js-gpt-ad:not(html, body, :empty)"],[2689874,".banner-izdvojeno:not(html, body, :empty)"],[8608347,".elementor-widget-smartmag-codes:not(html, body, :empty)"],[14656153,".banner__placeholder:not(html, body, :empty)"],[1377122,".cxenseignore:not(html, body, :empty, [id])"],[13371521,"div.lesnina_widget"]];
+const genericSelectorMap = [[12989194,".fold_home__pasica_banner:not(html, body, :empty)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body, :empty)"],[6879724,".homepage-top-google-banner:not(html, body, :empty)"],[13987257,".js-gpt-ad:not(html, body, :empty)"],[2689874,".banner-izdvojeno:not(html, body, :empty)"],[8608347,".elementor-widget-smartmag-codes:not(html, body, :empty)"],[14656153,".banner__placeholder:not(html, body, :empty)"],[1377122,".cxenseignore:not(html, body, :empty, [id])"],[13371521,"div.lesnina_widget"]];
+const genericExceptionSieve = [10956523];
+const genericExceptionMap = [["radiosarajevo.ba",".iAdserver"]];
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

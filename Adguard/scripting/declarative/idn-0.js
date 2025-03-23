@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}"],["{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}"]];
-
-const hostnamesMap = new Map([["dutaislam.com",0],["intip24news.com",1]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}","{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}"];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["dutaislam.com",1],["intip24news.com",2]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

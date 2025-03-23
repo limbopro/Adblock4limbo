@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"button\",\"tasks\":[[\"has\",{\"selector\":\"> div > div > div > span\",\"tasks\":[[\"has-text\",\"ממומן\"]]}]]}","{\"selector\":\"div\",\"tasks\":[[\"has\",{\"selector\":\"> div > div > div > div > div > p\",\"tasks\":[[\"has-text\",\"ממומן\"]]}]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"(window)}catch\"]]}","{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"responseText\"]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"200===\"]]}"],["{\"selector\":\"span:has([href*=\\\"promo\\\"])\",\"tasks\":[[\"xpath\",\"..\"]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"admiral\"]]}"],["{\"selector\":\"div[aria-label*=\\\"המחלקה המסחרית\\\"]\",\"tasks\":[[\"upward\",5]]}","{\"selector\":\"iframe[title*=\\\"Banner\\\"]\",\"tasks\":[[\"upward\",4]]}"]];
-
-const hostnamesMap = new Map([["wolt.com",0],["sheee.co.il",[1,2]],["walla.co.il",[1,2]],["haaretz.co.il",3],["www-haaretz-co-il.eu1.proxy.openathens.net",3],["morfix.co.il",4],["www.kikar.co.il",5]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map([["mail.walla.co.il",[1]]]);
+const argsList = ["",["{\"selector\":\"button\",\"tasks\":[[\"has\",{\"selector\":\"> div > div > div > span\",\"tasks\":[[\"has-text\",\"ממומן\"]]}]]}","{\"selector\":\"div\",\"tasks\":[[\"has\",{\"selector\":\"> div > div > div > div > div > p\",\"tasks\":[[\"has-text\",\"ממומן\"]]}]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"(window)}catch\"]]}","{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"responseText\"]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"200===\"]]}"],["{\"selector\":\"span:has([href*=\\\"promo\\\"])\",\"tasks\":[[\"xpath\",\"..\"]]}"],["{\"selector\":\"script\",\"tasks\":[[\"has-text\",\"admiral\"]]}"],["{\"selector\":\"div[aria-label*=\\\"המחלקה המסחרית\\\"]\",\"tasks\":[[\"upward\",5]]}","{\"selector\":\"iframe[title*=\\\"Banner\\\"]\",\"tasks\":[[\"upward\",4]]}"]];
+const argsSeqs = [0,1,-2,3,2,4,5,6];
+const hostnamesMap = new Map([["wolt.com",1],["sheee.co.il",2],["walla.co.il",2],["~mail.walla.co.il",4],["haaretz.co.il",5],["www-haaretz-co-il.eu1.proxy.openathens.net",5],["morfix.co.il",6],["www.kikar.co.il",7]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: spa-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_setConstant = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["DHAntiAdBlocker","true"],["checkAdBlock","noopFunc"],["detectedAdblock","noopFunc"],["hasAdblocker","false"],["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag","{}"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["ShowRewards","noopFunc"],["initPopunder","noopFunc"],["URL_VAST_YOUTUBE","{}"],["__configuredDFPTags","{}"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","noopFunc"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["a_consola","noopFunc"],["cnt1max","0"],["ifrconta","0"],["clickmax","0"],["redirigido","true"],["redirigir","noopFunc"]];
-
-const hostnamesMap = new Map([["latinpornhd.com",0],["cinelatino.net",1],["descargaseriestv.com",2],["coempregos.com.br",2],["anitube.us",2],["anitube.vip",2],["hinatasoul.com",2],["3djuegos.com",3],["3djuegosguias.com",3],["3djuegospc.com",3],["applesfera.com",3],["compradiccion.com",3],["directoalpaladar.com",[3,25]],["elblogsalmon.com",[3,25]],["espinof.com",3],["genbeta.com",3],["mundoxiaomi.com",3],["trendencias.com",3],["trendenciashombre.com",3],["vidaextra.com",3],["vitonica.com",3],["xataka.com",3],["xatakaciencia.com",3],["xatakafoto.com",3],["xatakahome.com",3],["xatakamovil.com",3],["xatakandroid.com",3],["xatakawindows.com",3],["financasdeouro.com",4],["animeszone.net",5],["atv.pe",[6,7]],["monumental.co.cr",[6,7]],["elcomercio.com",[6,7]],["antena7.com.do",[6,7]],["rqp.com.bo",[6,7]],["canal12.com.sv",[6,7]],["chapintv.com",[6,7]],["vtv.com.hn",[6,7]],["tn23.tv",[6,7]],["canal13mexico.com",[6,7]],["c9n.com.py",[6,7]],["repretel.com",[6,7]],["redbolivision.tv.bo",[6,7]],["animesonline.nz",8],["mdr.ar",9],["impactoespananoticias.com",9],["skynovels.net",9],["botinnifit.com",9],["minhasdelicias.com",9],["luchaonline.com",9],["minhaconexao.com.br",9],["meocloud.pt",10],["fichajes.com",11],["niusdiario.es",[12,41]],["xerifetech.com",13],["pobre.wtf",[14,42]],["suaads.com",15],["reidoplacar.com",[15,43]],["suaurl.com",[15,43]],["documaniatv.com",16],["cadenaser.com",17],["texto.kom.gt",18],["infojobs.com.br",19],["maringapost.com.br",20],["bandab.com.br",20],["ouniversodatv.com",21],["tribunaavila.com",22],["deportealdia.live",23],["elquintobeatle.com",24],["empregoestagios.com",24],["satcesc.com",24],["bebesymas.com",25],["diariodelviajero.com",25],["motorpasion.com",25],["motorpasionmoto.com",25],["pymesyautonomos.com",25],["docer.com.ar",26],["doceru.com",26],["docero.com.br",26],["comandotorrents.org",27],["adslayuda.com",28],["outerspace.com.br",29],["doramasmp4.com",30],["file4go.net",32],["seriesdonghua.com",33],["mundodonghua.com",33],["playview.io",34],["clickjogos.com.br",35],["3xyaoi.com",36],["uol.com.br",[37,38]],["megafire.net",39],["elmundo.es",40],["eldiario24hrs.com",44],["constanteonline.com",44],["acortaz.es",44],["myfirstdollar.org",44],["gourlpro.com",44],["adclic.es",44],["adclic.org",44],["mundopolo.net",44],["adclicker.io",44],["safepc.online",44],["solopc.net",44],["player.hentaistube.com",45],["playnewserie.xyz",46],["tiohentai.xyz",47],["otakustv.com",[48,49]],["pornolandia.xxx",50],["hentaiporno.xxx",51],["fakings.com",52],["peliseries.xyz",[53,54,55]],["seriesperu.com",56],["peliculas8k.com",57]]);
-
-const entitiesMap = new Map([["anitube",31]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_setConstant() {
 
 /******************************************************************************/
 
@@ -474,95 +457,83 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["DHAntiAdBlocker","true"],["checkAdBlock","noopFunc"],["detectedAdblock","noopFunc"],["hasAdblocker","false"],["antiAdBlockerHandler","noopFunc"],["detectAdBlock","noopFunc"],["googletag","{}"],["googletag._loaded_","true"],["AdblockDetector","{}"],["canRunAds","true"],["blockAdBlock._options","noopFunc"],["adManagerBlocked","undefined"],["$MICROSITE_INFO.blockAdBlock","false"],["adblock.check","noopFunc"],["adBlockerActive","false"],["cdo","0"],["DeRunAds","true"],["Object.prototype.adblockerEnabled","false"],["adsbygoogle.loaded","true"],["adBlockCheck","true"],["pp_show_popupmessage","noopFunc"],["easySettings.adblock","0"],["onload","null"],["adblockDetector.init","noopFunc"],["adsbygoogle.length","undefined"],["WSL2.config.enableAdblockEcommerce","0"],["ads_unblocked","true"],["adblock","true"],["better_ads_adblock","true"],["adBlockDetected","false"],["isAdsDisplayed","true"],["ATESTADO","1"],["Lata","1"],["loadingAds","true"],["runningAdsAllowed","true"],["ShowRewards","noopFunc"],["initPopunder","noopFunc"],["URL_VAST_YOUTUBE","{}"],["__configuredDFPTags","{}"],["contadorClics","1"],["Object.prototype.adSlot",""],["google.ima.OmidVerificationVendor","{}"],["ads","false"],["acdl","noopFunc"],["global.noobMaxTry","0"],["player.preroll","noopFunc"],["anunciotag","noopFunc"],["loadingAds","undefined"],["click","1"],["clickd","1"],["xxxStore","undefined"],["vidorev_jav_plugin_video_ads_object.vid_ads_m_video_ads",""],["a_consola","noopFunc"],["VASTVideoPlayer","noopFunc"],["go_to_playerVast","noopFunc"],["cnt1max","0"],["ifrconta","0"],["clickmax","0"],["redirigido","true"],["redirigir","noopFunc"]];
+const hostnamesMap = new Map([["latinpornhd.com",0],["cinelatino.net",1],["descargaseriestv.com",2],["coempregos.com.br",2],["anitube.us",2],["anitube.vip",2],["hinatasoul.com",2],["3djuegos.com",3],["3djuegosguias.com",3],["3djuegospc.com",3],["applesfera.com",3],["compradiccion.com",3],["directoalpaladar.com",[3,25]],["elblogsalmon.com",[3,25]],["espinof.com",3],["genbeta.com",3],["mundoxiaomi.com",3],["trendencias.com",3],["trendenciashombre.com",3],["vidaextra.com",3],["vitonica.com",3],["xataka.com",3],["xatakaciencia.com",3],["xatakafoto.com",3],["xatakahome.com",3],["xatakamovil.com",3],["xatakandroid.com",3],["xatakawindows.com",3],["financasdeouro.com",4],["animeszone.net",5],["atv.pe",[6,7]],["monumental.co.cr",[6,7]],["elcomercio.com",[6,7]],["antena7.com.do",[6,7]],["rqp.com.bo",[6,7]],["canal12.com.sv",[6,7]],["chapintv.com",[6,7]],["vtv.com.hn",[6,7]],["tn23.tv",[6,7]],["canal13mexico.com",[6,7]],["c9n.com.py",[6,7]],["repretel.com",[6,7]],["redbolivision.tv.bo",[6,7]],["animesonline.nz",8],["mdr.ar",9],["impactoespananoticias.com",9],["skynovels.net",9],["botinnifit.com",9],["minhasdelicias.com",9],["luchaonline.com",9],["minhaconexao.com.br",9],["meocloud.pt",10],["fichajes.com",11],["niusdiario.es",[12,41]],["xerifetech.com",13],["pobre.wtf",[14,42]],["suaads.com",15],["reidoplacar.com",[15,43]],["suaurl.com",[15,43]],["documaniatv.com",16],["cadenaser.com",17],["texto.kom.gt",18],["infojobs.com.br",19],["maringapost.com.br",20],["bandab.com.br",20],["ouniversodatv.com",21],["tribunaavila.com",22],["deportealdia.live",23],["elquintobeatle.com",24],["empregoestagios.com",24],["satcesc.com",24],["bebesymas.com",25],["diariodelviajero.com",25],["motorpasion.com",25],["motorpasionmoto.com",25],["pymesyautonomos.com",25],["docer.com.ar",26],["doceru.com",26],["docero.com.br",26],["comandotorrents.org",27],["adslayuda.com",28],["outerspace.com.br",29],["doramasmp4.com",30],["anitube.*",31],["file4go.net",32],["seriesdonghua.com",33],["mundodonghua.com",33],["playview.io",34],["clickjogos.com.br",35],["3xyaoi.com",36],["uol.com.br",[37,38]],["megafire.net",39],["elmundo.es",40],["eldiario24hrs.com",44],["constanteonline.com",44],["acortaz.es",44],["myfirstdollar.org",44],["gourlpro.com",44],["adclic.es",44],["adclic.org",44],["mundopolo.net",44],["adclicker.io",44],["safepc.online",44],["solopc.net",44],["player.hentaistube.com",45],["playnewserie.xyz",46],["tiohentai.xyz",47],["otakustv.com",[48,49]],["pornolandia.xxx",50],["hentaiporno.xxx",51],["fakings.com",52],["embed69.org",[53,54]],["peliseries.xyz",[55,56,57]],["seriesperu.com",58],["peliculas8k.com",59]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { setConstant(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_setConstant();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

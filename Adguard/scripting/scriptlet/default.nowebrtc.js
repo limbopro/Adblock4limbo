@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_noWebrtc = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [[]];
-
-const hostnamesMap = new Map([["bonstreams.net",0],["convertinmp4.com",0],["crictime.com",0],["ddlvalley.me",0],["fluvore.com",0],["mac-torrents.com",0],["nflstream.io",0],["oceanoffgames.com",0],["sawlive.tv",0],["skidrowcrack.com",0],["toros.co",0],["uptobox.com",0],["torrentfunk.com",0],["dxb.to",0],["adyou.me",0],["srt.am",0],["1fichier.com",0],["planetfools.com",0],["cpmlink.net",0],["short.pe",0],["185.153.231.222",0],["hindimean.com",0],["wizhdsports.fi",0],["peliculasmx.net",0],["animeid.tv",0],["coinfaucet.io",0],["freecardano.com",0],["freenem.com",0],["gtaall.com",0],["uii.io",0],["mimaletamusical.blogspot.com",0],["xrivonet.info",0],["gounlimited.to",0],["ebookdz.com",0],["onhockey.tv",0],["web.livecricket.is",0],["dualpaste.net",0],["startseite.to",0],["kinoger.to",0],["blizzboygames.net",0],["telepisodes.org",0],["software-on.com",0],["sharemods.com",0],["modsbase.com",0],["cyfostreams.com",0],["rlslog.net",0],["f1livegp.net",0],["zimabdko.com",0],["aii.sh",0],["buffstreamz.com",0],["vupload.com",0],["ex-foary.com",0],["hentaisaturn.com",0],["italydownload.com",0],["leggenditalia.com",0],["oasidownload.com",0],["semprehawk.com",0],["sms-anonyme.net",0],["iulive.blogspot.com",0],["embedstream.me",0],["eroticmoviesonline.me",0],["france.tv",0],["bilibili.com",0],["dandanzan.top",0],["v.qq.com",0]]);
-
-const entitiesMap = new Map([["2ddl",0],["allitebooks",0],["dramamate",0],["eztv",0],["kiss-anime",0],["letmewatchthis",0],["mkvcage",0],["yts",0],["zooqle",0],["streanplay",0],["torlock",0],["torlock2",0],["watchseries.unblocked",0],["ouo",0],["watch-series",0],["watchseries",0],["mejortorrent",0],["mejortorrento",0],["mejortorrents",0],["mejortorrents1",0],["mejortorrentt",0],["daddylive",0],["m4ufree",0],["streamm4u",0],["ganool",0],["subtorrents",0],["subtorrents1",0],["pirateproxy",0],["hdvid",0],["onvid",0],["ovid",0],["vidhd",0],["starmusiq",0],["tamilmv",0],["mywatchseries",0],["yesmovies",0],["mycoolmoviez",0],["watchtvseries",0],["animekb",0],["kstreaming",0],["streameast",0],["thestreameast",0],["glodls",0],["thevidhd",0],["okanime",0],["shrink",0],["kinoz",0],["topstreams",0],["racaty",0],["livehere",0],["1337x",0],["x1337x",0],["torrentdownloads",0],["mangaku",0],["nunuyy",0]]);
-
-const exceptionsMap = new Map([["mangaku.win",[0]]]);
+(function uBOL_noWebrtc() {
 
 /******************************************************************************/
 
@@ -81,95 +64,83 @@ function noWebrtc() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [[]];
+const hostnamesMap = new Map([["2ddl.*",0],["allitebooks.*",0],["bonstreams.net",0],["convertinmp4.com",0],["crictime.com",0],["ddlvalley.me",0],["dramamate.*",0],["eztv.*",0],["fluvore.com",0],["kiss-anime.*",0],["letmewatchthis.*",0],["mac-torrents.com",0],["mkvcage.*",0],["nflstream.io",0],["oceanoffgames.com",0],["sawlive.tv",0],["skidrowcrack.com",0],["toros.co",0],["uptobox.com",0],["yts.*",0],["zooqle.*",0],["streanplay.*",0],["torrentfunk.com",0],["torlock.*",0],["torlock2.*",0],["dxb.to",0],["adyou.me",0],["srt.am",0],["watchseries.unblocked.*",0],["ouo.*",0],["watch-series.*",0],["watchseries.*",0],["1fichier.com",0],["planetfools.com",0],["cpmlink.net",0],["short.pe",0],["185.153.231.222",0],["mejortorrent.*",0],["mejortorrento.*",0],["mejortorrents.*",0],["mejortorrents1.*",0],["mejortorrentt.*",0],["hindimean.com",0],["wizhdsports.fi",0],["daddylive.*",0],["peliculasmx.net",0],["animeid.tv",0],["m4ufree.*",0],["streamm4u.*",0],["coinfaucet.io",0],["freecardano.com",0],["freenem.com",0],["ganool.*",0],["gtaall.com",0],["subtorrents.*",0],["subtorrents1.*",0],["uii.io",0],["mimaletamusical.blogspot.com",0],["xrivonet.info",0],["gounlimited.to",0],["pirateproxy.*",0],["ebookdz.com",0],["onhockey.tv",0],["web.livecricket.is",0],["hdvid.*",0],["onvid.*",0],["ovid.*",0],["vidhd.*",0],["starmusiq.*",0],["tamilmv.*",0],["mywatchseries.*",0],["dualpaste.net",0],["yesmovies.*",0],["mycoolmoviez.*",0],["watchtvseries.*",0],["startseite.to",0],["kinoger.to",0],["animekb.*",0],["kstreaming.*",0],["blizzboygames.net",0],["software-on.com",0],["sharemods.com",0],["modsbase.com",0],["cyfostreams.com",0],["streameast.*",0],["thestreameast.*",0],["glodls.*",0],["thevidhd.*",0],["okanime.*",0],["shrink.*",0],["rlslog.net",0],["f1livegp.net",0],["zimabdko.com",0],["kinoz.*",0],["aii.sh",0],["buffstreamz.com",0],["vupload.com",0],["topstreams.*",0],["ex-foary.com",0],["hentaisaturn.com",0],["italydownload.com",0],["leggenditalia.com",0],["oasidownload.com",0],["semprehawk.com",0],["sms-anonyme.net",0],["racaty.*",0],["iulive.blogspot.com",0],["livehere.*",0],["embedstream.me",0],["eroticmoviesonline.me",0],["1337x.*",0],["x1337x.*",0],["torrentdownloads.*",0],["mangaku.*",0],["france.tv",0],["bilibili.com",0],["dandanzan.top",0],["nunuyy.*",0],["v.qq.com",0]]);
+const exceptionsMap = new Map([["mangaku.win",[0]]]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { noWebrtc(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_noWebrtc();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

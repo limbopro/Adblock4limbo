@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: annoyances-others
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_removeClass = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["oon-scroll-lock","body","stay"],["js-no-scroll","html","stay"],["blocked","body","stay"],["mfp-popup-exit-quiz-v2","","stay"],["stickyBanner","","stay"],["float-player","","stay"],["vp-docked","","stay"],["vp-docked-mode","","stay"],["styles_stuck__gtILi","","stay"],["desktop-floating-player","","stay"],["sticky","","stay"],["jw-flag-floating","","stay"],["video-flyout--fixed","","stay"],["powa-sticky","","stay"],["video__docker_state_docked","","stay"],["dock","","stay"],["floating","","stay"]];
-
-const hostnamesMap = new Map([["on.orf.at",0],["opensecrets.org",1],["inquinte.ca",2],["neilpatel.com",3],["redfin.com",4],["texasmonthly.com",5],["yahoo.com",[6,7]],["msnbc.com",8],["today.com",8],["nbcnews.com",8],["thehill.com",9],["nbc4i.com",9],["ktla.com",9],["ktsm.com",9],["kark.com",9],["myarklamiss.com",9],["nwahomepage.com",9],["mytwintiers.com",9],["news10.com",9],["wavy.com",9],["independent.co.uk",[10,11]],["allrecipes.com",11],["telemundopr.com",12],["nbcchicago.com",12],["nbcdfw.com",12],["nbcboston.com",12],["nbcconnecticut.com",12],["nbcphiladelphia.com",12],["nbcsandiego.com",12],["nbclosangeles.com",12],["nbcnewyork.com",12],["nbcbayarea.com",12],["kbtx.com",13],["kptv.com",13],["wfaa.com",14],["wkyc.com",14],["9news.com",14],["11alive.com",14],["6abc.com",15],["abc11.com",15],["abc13.com",15],["abc30.com",15],["abc7.com",15],["abc7chicago.com",15],["abc7news.com",15],["abc7ny.com",15],["cbsnews.com",16]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_removeClass() {
 
 /******************************************************************************/
 
@@ -329,95 +312,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["oon-scroll-lock","body","stay"],["js-no-scroll","html","stay"],["blocked","body","stay"],["mfp-popup-exit-quiz-v2","","stay"],["stickyBanner","","stay"],["styles_stuck__gtILi","","stay"],["sticky","","stay"],["jw-flag-floating","","stay"],["powa-sticky","","stay"],["video__docker_state_docked","","stay"],["floating","","stay"]];
+const hostnamesMap = new Map([["on.orf.at",0],["opensecrets.org",1],["inquinte.ca",2],["neilpatel.com",3],["redfin.com",4],["msnbc.com",5],["today.com",5],["nbcnews.com",5],["independent.co.uk",[6,7]],["allrecipes.com",7],["kbtx.com",8],["kptv.com",8],["wfaa.com",9],["wkyc.com",9],["cbsnews.com",10]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { removeClass(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_removeClass();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

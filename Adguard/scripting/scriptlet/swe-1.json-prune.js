@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: swe-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_jsonPrune = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["autoplay"],["payload.ads campaigns.*"]];
-
-const hostnamesMap = new Map([["expressen.se",0],["di.se",0],["nsk.se",0],["skd.se",0],["nvp.se",0],["nuiosteraker.se",0],["barometern.se",0],["blt.se",0],["bt.se",0],["kristianstadsbladet.se",0],["olandsbladet.se",0],["smp.se",0],["sydostran.se",0],["trelleborgsallehanda.se",0],["ut.se",0],["ystadsallehanda.se",0],["corren.se",0],["folkbladet.se",0],["mvt.se",0],["nt.se",0],["vt.se",0],["klt.nu",0],["vimmerbytidning.se",0],["kuriren.nu",0],["nsd.se",0],["norran.se",0],["pt.se",0],["ekuriren.se",0],["strengnastidning.se",0],["kkuriren.se",0],["sn.se",0],["eposten.se",0],["unt.se",0],["helagotland.se",0],["folkbladet.nu",0],["vasterastidning.se",0],["mitti.se",0],["thelocal.se",0],["byrum.se",0],["sverigespringer.se",0],["recept.se",0],["viivilla.se",0],["automotorsport.se",0],["babyhjalp.se",0],["fragbite.se",0],["ibnytt.se",0],["realtid.se",0],["cafe.se",0],["kingmagazine.se",0],["vaxjobladet.se",0],["alekuriren.se",0],["nyheter24.se",0],["svenskgolf.se",0],["golfing.se",0],["familjeliv.se",0],["praktisktbatagande.se",0],["norrahalland.se",0],["lokalti.se",0],["lchfarkivet.se",0],["alltforforaldrar.se",0],["idrottensaffarer.se",0],["vf.se",0],["hjotidning.se",0],["kt.se",0],["kt-kuriren.se",0],["sla.se",0],["mariestadstidningen.se",0],["filipstadstidning.se",0],["fryksdalsbygden.se",0],["nwt.se",0],["arvikanyheter.se",0],["nkp.se",0],["saffletidningen.se",0],["provinstidningen.se",0],["dalslanningen.se",0],["nlt.se",0],["skaraborgsbygden.se",0],["matspar.se",1]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_jsonPrune() {
 
 /******************************************************************************/
 
@@ -438,95 +421,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["autoplay"],["payload.ads campaigns.*"]];
+const hostnamesMap = new Map([["expressen.se",0],["di.se",0],["nsk.se",0],["skd.se",0],["nvp.se",0],["nuiosteraker.se",0],["barometern.se",0],["blt.se",0],["bt.se",0],["kristianstadsbladet.se",0],["olandsbladet.se",0],["smp.se",0],["sydostran.se",0],["trelleborgsallehanda.se",0],["ut.se",0],["ystadsallehanda.se",0],["corren.se",0],["folkbladet.se",0],["mvt.se",0],["nt.se",0],["vt.se",0],["klt.nu",0],["vimmerbytidning.se",0],["kuriren.nu",0],["nsd.se",0],["norran.se",0],["pt.se",0],["ekuriren.se",0],["strengnastidning.se",0],["kkuriren.se",0],["sn.se",0],["eposten.se",0],["unt.se",0],["helagotland.se",0],["folkbladet.nu",0],["vasterastidning.se",0],["mitti.se",0],["thelocal.se",0],["byrum.se",0],["sverigespringer.se",0],["recept.se",0],["viivilla.se",0],["automotorsport.se",0],["babyhjalp.se",0],["fragbite.se",0],["ibnytt.se",0],["realtid.se",0],["cafe.se",0],["kingmagazine.se",0],["vaxjobladet.se",0],["alekuriren.se",0],["nyheter24.se",0],["svenskgolf.se",0],["golfing.se",0],["familjeliv.se",0],["praktisktbatagande.se",0],["norrahalland.se",0],["lokalti.se",0],["lchfarkivet.se",0],["alltforforaldrar.se",0],["idrottensaffarer.se",0],["vf.se",0],["hjotidning.se",0],["kt.se",0],["kt-kuriren.se",0],["sla.se",0],["mariestadstidningen.se",0],["filipstadstidning.se",0],["fryksdalsbygden.se",0],["nwt.se",0],["arvikanyheter.se",0],["nkp.se",0],["saffletidningen.se",0],["provinstidningen.se",0],["dalslanningen.se",0],["nlt.se",0],["skaraborgsbygden.se",0],["matspar.se",1]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { jsonPrune(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_jsonPrune();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

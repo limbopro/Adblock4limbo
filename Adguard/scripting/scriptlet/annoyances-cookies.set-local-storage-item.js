@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: annoyances-cookies
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_setLocalStorageItem = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["cookie_consent","no"],["cookieConsent","false"],["zglobal_Acookie_optOut","3"],["cookie","true"],["cookiePolicy","true"],["cookies_view","true"],["gdprConsent","false"],["framerCookiesDismissed","true"],["cookie_accepted","true"],["cookies-consent-accepted","true"],["user-cookies-setting","1"],["COOKIE_AUTHORITY_QUERY_V2","1"],["ignore_cookie_warn","true"],["CerezUyariGosterildi","true"],["cookies-product","NO"],["showCookies","NO"],["localConsent","true"],["acceptedCookies","true"],["isNotificationDisplayed","true"],["COOKIE_BANNER_CLICKED","true"],["cookies-eu-statistics","false"],["cookies-eu-necessary","true"],["cookieStatus","rejected"],["consent","true"],["cookiePreference","required"],["technikmuseum-required-enabled","true"],["ctu-cm-n","1"],["ctu-cm-a","0"],["ctu-cm-m","0"],["cookieAndRecommendsAgreement","true"],["cookiebanner-active","false"],["tracking-state-v2","deny"],["cookieConsent","true"],["consent","[]"],["cookiebanner:extMedia","false"],["cookiebanner:statistic","false"],["cookiesAccepted","true"],["consentAccepted","true"],["marketingConsentAccepted","false"],["consentMode","1"],["uninavIsAgreeCookie","true"],["cookieConsent","denied"],["cookieChoice","rejected"],["adsAccepted","false"],["analyticsAccepted","false"],["analytics_gdpr_accept","yes"],["youtube_gdpr_accept","yes"],["Analytics:accepted","false"],["GDPR:accepted","true"],["cookie_usage_acknowledged_2","1"],["a_c","true"],["iag-targeting-consent","no"],["iag-performance-consent","no"],["userDeniedCookies","1"],["hasConsent","false"],["viewedCookieConsent","true"],["dnt_message_shown","1"],["necessaryConsent","true"],["marketingConsent","false"],["personalisationConsent","false"],["open_modal_update_policy","1"],["cookieinfo","1"],["cookies","1"],["cookieAccepted","true"],["necessary_cookie_confirmed","true"],["ccb_contao_token_1","1"],["cookies","0"],["cookies_accepted_6pzworitz8","true"],["rgpd.consent","1"],["_lukCookieAgree","2"],["cookiesAllowed","false"],["cookiePreference","1"],["artisan_acceptCookie","true"],["cookies_policy_acceptance","denied"],["SAFE__analyticsPreference","false"],["termsOfUseAccepted","true"],["agreeCookie","true"],["lgpd-agree","1"],["cookieIsAccepted","true"],["cookieAllowed","false"],["cookie_usage_accepted","1"],["cookieBannerShown","true"],["cookiesConsent","1"],["cookie_acceptance","true"],["analytics_cookies_acceptance","true"],["ns_cookies","1"],["gdpr","deny"],["c","false"],["cookies-preference","1"],["cookiesAcknowledged","1"],["hasConsentedPH","no"],["cookie_consent","accepted"],["gtag.consent.option","1"],["cps20","1"],["showCookieUse","false"],["terms","accepted"],["z_cookie_consent","true"],["StorageMartCookiesPolicySeen","true"],["bunq:CookieConsentStore:isBannerVisible","false"],["accepted-cookies","[]"],["ngx-webstorage|cookies","false"],["app_gdpr_consent","1"],["alreadyAcceptCookie","true"],["isCookiesAccepted","true"],["cookies","no"],["cookies-policy-accepted","true"],["cookie_prompt_times","1"],["last_prompt_time","1"],["sup_gdpr_cookie","accepted"],["gdpr_cookie","accepted"],["cn","true"],["consent_popup","1"],["COOKIE_CONSENT","false"],["cookie-consent-declined-version","1"],["Do-not-share","true"],["allow-cookies","false"],["__ph_opt_in_out_phc_9aSDbJCaDUMdZdHxxMPTvcj7A9fsl3mCgM1RBPmPsl7","0"],["should_display_cookie_banner_v2","false"],["zora-discover-14-03-23","false"],["connect-wallet-legal-consent","true"],["cookiesMin","1"],["cb-accept-cookie","true"],["cookie-permission","false"],["cookies","true"],["ROCUMENTS.cookieConsent","true"],["bcCookieAccepted","true"],["CMP:personalisation","1"],["pcClosedOnce","true"],["textshuttle_cookie","false"],["cookies-notification-message-is-hidden","true"],["cookieBanner","false"],["cookieBanner","true"],["banner","true"],["isAllowCookies","true"],["gtag_enabled","1"],["cvcConsentGiven","true"],["terms","true"],["cookie_accept","true"],["Pechinchou:CookiesModal","true"],["hub-cp","true"],["cookiePolicyAccepted","yes"],["cookie_usage_acknowledged_2","true"],["cookies_necessary_consent","true"],["cookies_marketing_consent","false"],["cookies_statistics_consent","false"],["wu.ccpa-toast-viewed","true"],["closed","true"],["dnt","1"],["dnt_a","1"],["makerz_allow_consentmgr","0"],["SHOW_COOKIE_BANNER","no"],["CookiesConsent","1"],["hasAnalyticalCookies","false"],["hasStrictlyNecessaryCookies","true"],["amCookieBarFirstShow","1"],["acceptedCookies","false"],["viewedCookieBanner","true"],["accept_all_cookies","false"],["isCookies","1"],["isCookie","Yes"],["cookieconsent_status","false"],["user_cookie","1"],["ka:4:legal-updates","true"],["cok","true"],["cookieMessage","true"],["soCookiesPolicy","1"],["GDPR:RBI:accepted","false"],["contao-privacy-center.hidden","1"],["cookie_consent","false"],["cookiesAgree","true"],["ytsc_accepted_cookies","true"],["safe-storage/v1/tracking-consent/trackingConsentMarketingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAdvertisingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey","false"],["agreeToCookie","false"],["AI Alliance_ReactCookieAcceptance_hasSetCookies","true"],["cookie-ack-2","true"],["firstVisit","false"],["2020-04-05","1"],["dismissed","true"],["SET_COOKIES_APPROVED","true"],["hasAcceptedCookies","true"],["isCookiesNotificationHidden","true"],["agreed-cookies","true"],["consentCookie","true"],["SWCOOKIESACC","1"],["hasAcceptedCookieNotice","true"],["fb-cookies-accepted","false"],["is_accept_cookie","true"],["accept-jove-cookie","1"],["cookie_consent_bar_value","true"],["pxdn_cookie_consent","true"],["akasha__cookiePolicy","true"],["QMOptIn","false"],["safe.global","false"],["cookie_banner:hidden","true"],["cookiesAccepted","false"],["accept_cookie_policy","true"],["201805-policy|accepted","1"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["cookie-consent-level","1"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["isAcceptCookie","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["otherCookie","true"],["saveCookie","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["acceptCookies","no"],["acceptCookies","true"],["has-dismissed","1"],["hasAcceptedGdpr","true"],["lw-accepts-cookies","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["canada-cookie-acknowledge","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["set_cookie_stat","false"],["set_cookie_tracking","false"],["df-cookies-allowed","true"],["cookie-consent","1"],["cookieConsent","necessary"],["gdpr-done","true"],["isTrackingAllowed","false"],["legalsAccepted","true"],["COOKIE_CONSENT_STATUS_4124","\"dismissed\""],["cookie_accepted","-1"],["consentInteraction","true"]];
-
-const hostnamesMap = new Map([["nhnieuws.nl",[0,1,2]],["omroepbrabant.nl",[0,1,2]],["posthog.com",3],["polar.sh",3],["varusteleka.com",4],["deribit.com",4],["dorkgpt.com",4],["zoho.com",5],["femibion.rs",6],["nove.fr",6],["popcornmovies.to",7],["improvethenews.org",7],["plente.com",7],["villagrancanaria.com",8],["baic.cz",9],["bunq.com",10],["framer.com",10],["zave.it",10],["tower.dev",10],["ctol.digital",11],["duty.travel.cl",12],["solscan.io",13],["connorduffy.abundancerei.com",14],["bc.gamem",15],["akkushop-turkiye.com.tr",16],["k33.com",[17,18]],["komdigi.go.id",19],["fijiairways.com",20],["planner.kaboodle.co.nz",21],["sekisuialveo.com",[23,24]],["rightsize.dk",25],["random-group.olafneumann.org",26],["espadrij.com",27],["hygiene-shop.eu",27],["gesundheitsmanufaktur.de",[27,260]],["technikmuseum.berlin",28],["cvut.cz",[29,30,31]],["r-ulybka.ru",32],["voltadol.at",33],["evium.de",34],["gpuscout.nl",35],["comnet.com.tr",35],["auth.hiring.amazon.com",35],["parrotsec.org",35],["engeldirekt.de",36],["haleon-gebro.at",[37,38]],["spectrumtherapeutics.com",39],["puregoldprotein.com",[39,46,47]],["thingtesting.com",39],["streamclipsgermany.de",39],["bo3.gg",39],["happyplates.com",[40,41]],["ickonic.com",42],["abs-cbn.com",43],["news.abs-cbn.com",43],["opmaatzagen.nl",44],["mundwerk-rottweil.de",44],["sqlook.com",45],["adef-emploi.fr",[48,49]],["lumieresdelaville.net",[48,49]],["ccaf.io",[50,51]],["dbschenkerarkas.com.tr",52],["dbschenker-seino.jp",52],["dbschenker.com",[52,144]],["scinapse.io",53],["shop.ba.com",[54,55]],["uc.pt",56],["bennettrogers.mysight.uk",57],["snipp.gg",57],["leafly.com",58],["geizhals.at",59],["geizhals.de",59],["geizhals.eu",59],["cenowarka.pl",59],["skinflint.co.uk",59],["webhallen.com",[60,61,62]],["olx.com.br",63],["unobike.com",64],["mod.io",65],["rodrigue-app.ct.ws",66],["passport-photo.online",66],["mojmaxtv.hrvatskitelekom.hr",66],["tme.eu",67],["mein-osttirol.rocks",68],["tennessine.co.uk",69],["ultraleds.co.uk",70],["greubelforsey.com",71],["lukify.app",72],["studiobookr.com",73],["getgrass.io",74],["artisan.co",75],["mobilefuse.com",76],["safe.global",[77,197]],["data.carbonmapper.org",78],["avica.link",79],["madeiramadeira.com.br",80],["sberdisk.ru",81],["column.com",82],["iqoption.com",83],["dopesnow.com",84],["montecwear.com",84],["romeo.com",85],["sonyliv.com",[86,87]],["cwallet.com",88],["oneskin.co",89],["telemetr.io",90],["near.org",91],["near.ai",91],["dev.near.org",92],["jito.network",93],["jito.wtf",93],["goodpods.com",94],["pngtree.com",[95,96]],["v2.xmeye.net",97],["venom.foundation",98],["canonvannederland.nl",99],["my-account.storage-mart.com",100],["web.bunq.com",101],["lifesum.com",102],["home.shortcutssoftware.com",103],["klimwinkel.nl",104],["markimicrowave.com",105],["aerolineas.com.ar",106],["5sim.net",106],["fold.dev",107],["mojposao.hr",108],["temu.com",[109,110]],["supreme.com",[111,112]],["g-star.com",113],["sawren.pl",114],["ultrahuman.com",115],["optionsgroup.com",116],["withpersona.com",[117,118]],["trigger.dev",119],["core.app",[120,122]],["zora.co",121],["kokku-online.de",123],["cuba-buddy.de",124],["datamask.app",125],["humandataincome.com",125],["crealitycloud.com",126],["triumphtechnicalinformation.com",127],["businessclass.com",128],["livsstil.se",129],["schneidewind-immobilien.de",130],["textshuttle.com",131],["simpleswap.io",132],["wales.nhs.attendanywhere.com",133],["sacal.it",134],["astondevs.ru",135],["gonxt.com",136],["geomiq.com",137],["bbc.com",138],["galaxy.com",139],["ticketmelon.com",140],["pechinchou.com.br",141],["thehub21.com",142],["archiup.com",143],["autoride.cz",[145,146,147]],["autoride.es",[145,146,147]],["autoride.io",[145,146,147]],["autoride.sk",[145,146,147]],["wunderground.com",148],["baselime.io",149],["eversports.de",[150,151]],["makerz.me",152],["reebok.eu",153],["alfa.com.ec",154],["rts.com.ec",154],["tropicalida.com.ec",154],["owgr.com",[155,156]],["beermerchants.com",157],["saamexe.com",[158,159]],["helium.com",158],["app.bionic-reading.com",160],["nloto.ru",161],["swisstours.com",162],["librinova.com",163],["format.bike",164],["khanacademy.org",165],["etelecinema.hu",166],["konicaminolta.com",167],["soquest.xyz",168],["region-bayreuth.de",169],["nationalexpress.de",170],["eezy.nrw",170],["bahnland-bayern.de",170],["chipcitycookies.com",171],["6amgroup.com",171],["go.bkk.hu",171],["worldlibertyfinancial.com",171],["happiful.com",171],["bazaartracker.com",172],["subscribercounter.com",173],["app.klarna.com",[174,175,176]],["instantspoursoi.fr",177],["thealliance.ai",178],["vivenu.com",179],["librumreader.com",180],["visnos.com",181],["polypane.app",182],["changelly.com",183],["glose.com",184],["yellow.systems",185],["renebieder.com",186],["goodram.com",187],["starwalk.space",188],["vitotechnology.com",188],["codedead.com",189],["studiofabiobiesel.com",190],["fydeos.com",191],["fydeos.io",191],["jove.com",192],["argent.xyz",193],["pixeden.com",194],["akasha.org",195],["ashleyfurniture.com",196],["jibjab.com",198],["filmzie.com",199],["vietjetair.com",200],["engineering.mixpanel.com",201],["betterprogramming.pub",201],["medium.com",201],["500ish.com",201],["gitconnected.com",201],["bettermarketing.pub",201],["diylifetech.com",201],["thebolditalic.com",201],["writingcooperative.com",201],["fanfare.pub",201],["betterhumans.pub",201],["kick.com",202],["jimdosite.com",203],["worstbassist.com",203],["cora-broodjes.nl",203],["evernote.com",[204,205]],["octopusenergy.co.jp",206],["findmcserver.com",207],["schneideranwaelte.de",208],["traefik.io",208],["cityfalcon.ai",209],["digitalparking.city",210],["mediathekviewweb.de",211],["solana.com",212],["ef.co.id",213],["alohafromdeer.com",214],["fwd.com",[215,217]],["everywhere.game",216],["geotastic.net",218],["tattoodo.com",[219,220]],["garageproject.co.nz",219],["jmonline.com.br",221],["atlas.workland.com",221],["virginexperiencedays.co.uk",221],["emag.berliner-woche.de",[222,223,224]],["nordkurier.de",[222,223,224]],["everest-24.pl",[225,226]],["sneakerfreaker.com",227],["cryptofalka.hu",227],["walmart.ca",228],["flyingblue.com",229],["byfood.com",230],["andsafe.de",231],["edostavka.by",232],["emall.by",232],["ishoppurium.com",233],["onexstore.pl",[234,235,236]],["revanced.app",236],["evropochta.by",[237,238]],["inselberlin.de",239],["gronkh.tv",240],["adfilteringdevsummit.com",241],["dailyrevs.com",242],["dsworks.ru",242],["daraz.com",243],["learngerman.dw.com",244],["leeway.tech",245],["gostanford.com",246],["namensetiketten.de",247],["drafthound.com",[248,249]],["wokularach.pl",250],["bidup.amtrak.com",251],["eschuhe.de",252],["zeglins.com",253],["flyingpapers.com",254],["beta.character.ai",[255,256]],["bittimittari.fi",257],["aida64.co.uk",[258,259]],["aida64.com.ua",[258,259]],["aida64.de",[258,259]],["aida64.hu",[258,259]],["aida64.it",[258,259]],["aida64russia.com",[258,259]],["open24.ee",260],["116117.fi",261],["autodude.dk",262],["autodude.fi",262],["autodude.no",262],["autodude.se",262],["valostore.fi",262],["valostore.no",262],["valostore.se",262],["vivantis-shop.at",263],["krasa.cz",263],["auf1.tv",264],["wesendit.com",265],["hatch.co",266],["gdh.digital",267],["ioplus.nl",268]]);
-
-const entitiesMap = new Map([["movies4us",7],["pedalcommander",22],["vivantis",263]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_setLocalStorageItem() {
 
 /******************************************************************************/
 
@@ -332,95 +315,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["201805-policy|accepted","1"],["psh:cookies-other","false"],["psh:cookies-seen","true"],["psh:cookies-social","true"],["cookie_consent","no"],["cookie_accepted","true"],["consentLevel","1"],["privacyModalSeen","true"],["LGPDconsent","1"],["isCookiePoliceAccepted","1"],["HAS_ACCEPTED_PRIVACY_POLICY","true"],["cookiesAceptadas","true"],["privacy.com.br","accepted"],["supabase-consent-ph","false"],["cookieConsent","essential"],["has-seen-ccpa-notice","true"],["wbx__cookieAccepted","true"],["show_cookies_popup","false"],["modal_cookies","1"],["trainingDataConsent","true"],["cookieConsent","false"],["zglobal_Acookie_optOut","3"],["cookie","true"],["cookiePolicy","true"],["cookies_view","true"],["gdprConsent","false"],["framerCookiesDismissed","true"],["vue-cookie-accept-decline-cookiePanel","accept"],["cookies-consent-accepted","true"],["user-cookies-setting","1"],["COOKIE_AUTHORITY_QUERY_V2","1"],["ignore_cookie_warn","true"],["CerezUyariGosterildi","true"],["cookies-product","NO"],["showCookies","NO"],["localConsent","true"],["acceptedCookies","true"],["isNotificationDisplayed","true"],["COOKIE_BANNER_CLICKED","true"],["cookies-eu-statistics","false"],["cookies-eu-necessary","true"],["cookieStatus","rejected"],["consent","true"],["cookiePreference","required"],["technikmuseum-required-enabled","true"],["ctu-cm-n","1"],["ctu-cm-a","0"],["ctu-cm-m","0"],["cookieAndRecommendsAgreement","true"],["cookiebanner-active","false"],["tracking-state-v2","deny"],["cookieConsent","true"],["202306151200.shown.production","true"],["consent","[]"],["cookiebanner:extMedia","false"],["cookiebanner:statistic","false"],["cookiesAccepted","true"],["consentAccepted","true"],["marketingConsentAccepted","false"],["consentMode","1"],["uninavIsAgreeCookie","true"],["cookieConsent","denied"],["cookieChoice","rejected"],["adsAccepted","false"],["analyticsAccepted","false"],["analytics_gdpr_accept","yes"],["youtube_gdpr_accept","yes"],["Analytics:accepted","false"],["GDPR:accepted","true"],["cookie_usage_acknowledged_2","1"],["a_c","true"],["iag-targeting-consent","no"],["iag-performance-consent","no"],["userDeniedCookies","1"],["hasConsent","false"],["viewedCookieConsent","true"],["dnt_message_shown","1"],["necessaryConsent","true"],["marketingConsent","false"],["personalisationConsent","false"],["open_modal_update_policy","1"],["cookieinfo","1"],["cookies","1"],["cookieAccepted","true"],["necessary_cookie_confirmed","true"],["ccb_contao_token_1","1"],["cookies","0"],["cookies_accepted_6pzworitz8","true"],["rgpd.consent","1"],["_lukCookieAgree","2"],["cookiesAllowed","false"],["cookiePreference","1"],["artisan_acceptCookie","true"],["cookies_policy_acceptance","denied"],["SAFE__analyticsPreference","false"],["termsOfUseAccepted","true"],["agreeCookie","true"],["lgpd-agree","1"],["cookieIsAccepted","true"],["cookieAllowed","false"],["cookie_usage_accepted","1"],["cookieBannerShown","true"],["cookiesConsent","1"],["cookie_acceptance","true"],["analytics_cookies_acceptance","true"],["ns_cookies","1"],["gdpr","deny"],["c","false"],["cookies-preference","1"],["cookiesAcknowledged","1"],["hasConsentedPH","no"],["cookie_consent","accepted"],["gtag.consent.option","1"],["cps20","1"],["showCookieUse","false"],["terms","accepted"],["z_cookie_consent","true"],["StorageMartCookiesPolicySeen","true"],["bunq:CookieConsentStore:isBannerVisible","false"],["accepted-cookies","[]"],["ngx-webstorage|cookies","false"],["app_gdpr_consent","1"],["alreadyAcceptCookie","true"],["isCookiesAccepted","true"],["cookies","no"],["cookies-policy-accepted","true"],["cookie_prompt_times","1"],["last_prompt_time","1"],["sup_gdpr_cookie","accepted"],["gdpr_cookie","accepted"],["cn","true"],["consent_popup","1"],["COOKIE_CONSENT","false"],["cookie-consent-declined-version","1"],["Do-not-share","true"],["allow-cookies","false"],["__ph_opt_in_out_phc_9aSDbJCaDUMdZdHxxMPTvcj7A9fsl3mCgM1RBPmPsl7","0"],["should_display_cookie_banner_v2","false"],["zora-discover-14-03-23","false"],["connect-wallet-legal-consent","true"],["cookiesMin","1"],["cb-accept-cookie","true"],["cookie-permission","false"],["cookies","true"],["ROCUMENTS.cookieConsent","true"],["bcCookieAccepted","true"],["CMP:personalisation","1"],["pcClosedOnce","true"],["textshuttle_cookie","false"],["cookies-notification-message-is-hidden","true"],["cookieBanner","false"],["cookieBanner","true"],["banner","true"],["isAllowCookies","true"],["gtag_enabled","1"],["cvcConsentGiven","true"],["terms","true"],["cookie_accept","true"],["Pechinchou:CookiesModal","true"],["hub-cp","true"],["cookiePolicyAccepted","yes"],["cookie_usage_acknowledged_2","true"],["cookies_necessary_consent","true"],["cookies_marketing_consent","false"],["cookies_statistics_consent","false"],["wu.ccpa-toast-viewed","true"],["closed","true"],["dnt","1"],["dnt_a","1"],["makerz_allow_consentmgr","0"],["SHOW_COOKIE_BANNER","no"],["CookiesConsent","1"],["hasAnalyticalCookies","false"],["hasStrictlyNecessaryCookies","true"],["amCookieBarFirstShow","1"],["acceptedCookies","false"],["viewedCookieBanner","true"],["accept_all_cookies","false"],["isCookies","1"],["isCookie","Yes"],["cookieconsent_status","false"],["user_cookie","1"],["ka:4:legal-updates","true"],["cok","true"],["cookieMessage","true"],["soCookiesPolicy","1"],["GDPR:RBI:accepted","false"],["contao-privacy-center.hidden","1"],["cookie_consent","false"],["cookiesAgree","true"],["ytsc_accepted_cookies","true"],["safe-storage/v1/tracking-consent/trackingConsentMarketingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAdvertisingKey","false"],["safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey","false"],["agreeToCookie","false"],["AI Alliance_ReactCookieAcceptance_hasSetCookies","true"],["cookie-ack-2","true"],["firstVisit","false"],["2020-04-05","1"],["dismissed","true"],["SET_COOKIES_APPROVED","true"],["hasAcceptedCookies","true"],["isCookiesNotificationHidden","true"],["agreed-cookies","true"],["consentCookie","true"],["SWCOOKIESACC","1"],["hasAcceptedCookieNotice","true"],["fb-cookies-accepted","false"],["is_accept_cookie","true"],["accept-jove-cookie","1"],["cookie_consent_bar_value","true"],["pxdn_cookie_consent","true"],["akasha__cookiePolicy","true"],["QMOptIn","false"],["safe.global","false"],["cookie_banner:hidden","true"],["cookiesAccepted","false"],["accept_cookie_policy","true"],["kick_cookie_accepted","true"],["cookies-selected","true"],["cookie-notice-dismissed","true"],["accepts-cookie-notice","true"],["dismissedPrivacyCookieMessage","1"],["allowCookies","allowed"],["cookie_consent","true"],["cookies_policy_status","true"],["cookies-accepted","true"],["allowCookies","true"],["cookie_consent","1"],["accepted-cookies","true"],["cookies-consent","0"],["cookieBannerRead","true"],["acceptCookie","0"],["cookieBannerReadDate","1"],["privacy-policy-accepted","true"],["accepted_cookies","true"],["accepted_cookie","true"],["cookie-consent","true"],["consentManager_shown","true"],["consent_necessary","true"],["consent_performance","false"],["cookie-closed","true"],["cookie-accepted","false"],["cookieConsent","1"],["enableCookieBanner","false"],["byFoodCookiePolicyRequire","false"],["ascookie--decision","true"],["isAcceptCookiesNew","true"],["isAcceptCookie","true"],["marketing","false"],["technical","true","","reload","1"],["analytics","false"],["otherCookie","true"],["saveCookie","true"],["userAcceptsCookies","1"],["grnk-cookies-accepted","true"],["acceptCookies","no"],["acceptCookies","true"],["has-dismissed","1"],["hasAcceptedGdpr","true"],["lw-accepts-cookies","true"],["cookies-accept","true"],["load-scripts-v2","2"],["acceptsAnalyticsCookies","false"],["acceptsNecessaryCookies","true"],["display_cookie_modal","false"],["pg-accept-cookies","true"],["__EOBUWIE__consents_accepted","true","","reload","1"],["canada-cookie-acknowledge","1"],["FP_cookiesAccepted","true"],["VISITED_0","true"],["OPTIONAL_COOKIES_ACCEPTED_0","true"],["storagePermission","true"],["set_cookie_stat","false"],["set_cookie_tracking","false"],["df-cookies-allowed","true"],["cookie-consent","1"],["userConsented","false"],["cookieConsent","necessary"],["gdpr-done","true"],["isTrackingAllowed","false"],["legalsAccepted","true"],["COOKIE_CONSENT_STATUS_4124","\"dismissed\""],["cookie_accepted","-1"],["cookie-policy","approve"],["consentInteraction","true"],["cookieConsentGiven","1"]];
+const hostnamesMap = new Map([["code.likeagirl.io",0],["engineering.mixpanel.com",0],["betterprogramming.pub",0],["medium.com",0],["500ish.com",0],["gitconnected.com",0],["bettermarketing.pub",0],["diylifetech.com",0],["thebolditalic.com",0],["writingcooperative.com",0],["fanfare.pub",0],["betterhumans.pub",0],["nhnieuws.nl",[1,2,3]],["omroepbrabant.nl",[1,2,3]],["posthog.com",4],["polar.sh",4],["esto.eu",5],["ctol.digital",5],["beterbed.nl",6],["metamask.io",7],["chavesnamao.com.br",8],["anhanguera.com",9],["bhaskar.com",10],["novaventa.com",11],["privacy.com.br",12],["supabase.com",13],["app.getgrass.io",14],["sanluisgarbage.com",15],["wildberries.ru",16],["cryptorank.io",17],["springmerchant.com",18],["veed.io",19],["varusteleka.com",20],["deribit.com",20],["dorkgpt.com",20],["zoho.com",21],["femibion.rs",22],["nove.fr",22],["movies4us.*",23],["popcornmovies.to",23],["improvethenews.org",23],["plente.com",23],["villagrancanaria.com",24],["baic.cz",25],["bunq.com",26],["framer.com",26],["inceptionlabs.ai",26],["zave.it",26],["tower.dev",26],["fleksberegner.dk",27],["duty.travel.cl",28],["solscan.io",29],["connorduffy.abundancerei.com",30],["bc.gamem",31],["akkushop-turkiye.com.tr",32],["k33.com",[33,34]],["komdigi.go.id",35],["fijiairways.com",36],["planner.kaboodle.co.nz",37],["pedalcommander.*",38],["sekisuialveo.com",[39,40]],["rightsize.dk",41],["random-group.olafneumann.org",42],["espadrij.com",43],["hygiene-shop.eu",43],["gesundheitsmanufaktur.de",[43,275]],["technikmuseum.berlin",44],["cvut.cz",[45,46,47]],["r-ulybka.ru",48],["voltadol.at",49],["evium.de",50],["gpuscout.nl",51],["remanga.org",51],["comnet.com.tr",51],["auth.hiring.amazon.com",51],["parrotsec.org",51],["shonenjumpplus.com",52],["engeldirekt.de",53],["haleon-gebro.at",[54,55]],["spectrumtherapeutics.com",56],["puregoldprotein.com",[56,63,64]],["thingtesting.com",56],["streamclipsgermany.de",56],["bo3.gg",56],["happyplates.com",[57,58]],["ickonic.com",59],["abs-cbn.com",60],["news.abs-cbn.com",60],["opmaatzagen.nl",61],["mundwerk-rottweil.de",61],["sqlook.com",62],["adef-emploi.fr",[65,66]],["lumieresdelaville.net",[65,66]],["ccaf.io",[67,68]],["dbschenkerarkas.com.tr",69],["dbschenker-seino.jp",69],["dbschenker.com",[69,161]],["scinapse.io",70],["shop.ba.com",[71,72]],["uc.pt",73],["bennettrogers.mysight.uk",74],["snipp.gg",74],["leafly.com",75],["geizhals.at",76],["geizhals.de",76],["geizhals.eu",76],["cenowarka.pl",76],["skinflint.co.uk",76],["webhallen.com",[77,78,79]],["olx.com.br",80],["unobike.com",81],["mod.io",82],["rodrigue-app.ct.ws",83],["passport-photo.online",83],["mojmaxtv.hrvatskitelekom.hr",83],["tme.eu",84],["mein-osttirol.rocks",85],["tennessine.co.uk",86],["ultraleds.co.uk",87],["greubelforsey.com",88],["lukify.app",89],["studiobookr.com",90],["getgrass.io",91],["artisan.co",92],["mobilefuse.com",93],["safe.global",[94,214]],["data.carbonmapper.org",95],["avica.link",96],["madeiramadeira.com.br",97],["sberdisk.ru",98],["column.com",99],["iqoption.com",100],["dopesnow.com",101],["montecwear.com",101],["romeo.com",102],["sonyliv.com",[103,104]],["cwallet.com",105],["oneskin.co",106],["telemetr.io",107],["near.org",108],["near.ai",108],["dev.near.org",109],["jito.network",110],["jito.wtf",110],["goodpods.com",111],["pngtree.com",[112,113]],["v2.xmeye.net",114],["venom.foundation",115],["canonvannederland.nl",116],["my-account.storage-mart.com",117],["web.bunq.com",118],["lifesum.com",119],["home.shortcutssoftware.com",120],["klimwinkel.nl",121],["markimicrowave.com",122],["aerolineas.com.ar",123],["5sim.net",123],["fold.dev",124],["mojposao.hr",125],["temu.com",[126,127]],["supreme.com",[128,129]],["g-star.com",130],["sawren.pl",131],["ultrahuman.com",132],["optionsgroup.com",133],["withpersona.com",[134,135]],["trigger.dev",136],["core.app",[137,139]],["zora.co",138],["kokku-online.de",140],["cuba-buddy.de",141],["datamask.app",142],["humandataincome.com",142],["crealitycloud.com",143],["triumphtechnicalinformation.com",144],["businessclass.com",145],["livsstil.se",146],["schneidewind-immobilien.de",147],["textshuttle.com",148],["simpleswap.io",149],["wales.nhs.attendanywhere.com",150],["sacal.it",151],["astondevs.ru",152],["gonxt.com",153],["geomiq.com",154],["bbc.com",155],["galaxy.com",156],["ticketmelon.com",157],["pechinchou.com.br",158],["thehub21.com",159],["archiup.com",160],["autoride.cz",[162,163,164]],["autoride.es",[162,163,164]],["autoride.io",[162,163,164]],["autoride.sk",[162,163,164]],["wunderground.com",165],["baselime.io",166],["eversports.de",[167,168]],["makerz.me",169],["reebok.eu",170],["alfa.com.ec",171],["rts.com.ec",171],["tropicalida.com.ec",171],["owgr.com",[172,173]],["beermerchants.com",174],["saamexe.com",[175,176]],["helium.com",175],["app.bionic-reading.com",177],["nloto.ru",178],["swisstours.com",179],["librinova.com",180],["format.bike",181],["khanacademy.org",182],["etelecinema.hu",183],["konicaminolta.com",184],["soquest.xyz",185],["region-bayreuth.de",186],["nationalexpress.de",187],["eezy.nrw",187],["bahnland-bayern.de",187],["chipcitycookies.com",188],["6amgroup.com",188],["go.bkk.hu",188],["worldlibertyfinancial.com",188],["happiful.com",188],["bazaartracker.com",189],["subscribercounter.com",190],["app.klarna.com",[191,192,193]],["instantspoursoi.fr",194],["thealliance.ai",195],["vivenu.com",196],["librumreader.com",197],["visnos.com",198],["polypane.app",199],["changelly.com",200],["glose.com",201],["yellow.systems",202],["renebieder.com",203],["goodram.com",204],["starwalk.space",205],["vitotechnology.com",205],["codedead.com",206],["studiofabiobiesel.com",207],["fydeos.com",208],["fydeos.io",208],["jove.com",209],["argent.xyz",210],["pixeden.com",211],["akasha.org",212],["ashleyfurniture.com",213],["jibjab.com",215],["filmzie.com",216],["vietjetair.com",217],["kick.com",218],["jimdosite.com",219],["worstbassist.com",219],["cora-broodjes.nl",219],["evernote.com",[220,221]],["octopusenergy.co.jp",222],["findmcserver.com",223],["schneideranwaelte.de",224],["traefik.io",224],["cityfalcon.ai",225],["digitalparking.city",226],["mediathekviewweb.de",227],["solana.com",228],["ef.co.id",229],["alohafromdeer.com",230],["fwd.com",[231,233]],["everywhere.game",232],["geotastic.net",234],["tattoodo.com",[235,236]],["garageproject.co.nz",235],["jmonline.com.br",237],["atlas.workland.com",237],["virginexperiencedays.co.uk",237],["emag.berliner-woche.de",[238,239,240]],["nordkurier.de",[238,239,240]],["everest-24.pl",[241,242]],["sneakerfreaker.com",243],["cryptofalka.hu",243],["walmart.ca",244],["byfood.com",245],["andsafe.de",246],["edostavka.by",247],["emall.by",247],["ishoppurium.com",248],["onexstore.pl",[249,250,251]],["revanced.app",251],["evropochta.by",[252,253]],["inselberlin.de",254],["gronkh.tv",255],["adfilteringdevsummit.com",256],["dailyrevs.com",257],["dsworks.ru",257],["daraz.com",258],["learngerman.dw.com",259],["leeway.tech",260],["gostanford.com",261],["namensetiketten.de",262],["drafthound.com",[263,264]],["wokularach.pl",265],["bidup.amtrak.com",266],["eschuhe.de",267],["zeglins.com",268],["flyingpapers.com",269],["beta.character.ai",[270,271]],["bittimittari.fi",272],["aida64.co.uk",[273,274]],["aida64.com.ua",[273,274]],["aida64.de",[273,274]],["aida64.hu",[273,274]],["aida64.it",[273,274]],["aida64russia.com",[273,274]],["open24.ee",275],["116117.fi",276],["pjspub.com",277],["autodude.dk",278],["autodude.fi",278],["autodude.no",278],["autodude.se",278],["valostore.fi",278],["valostore.no",278],["valostore.se",278],["vivantis.*",279],["vivantis-shop.at",279],["krasa.cz",279],["auf1.tv",280],["wesendit.com",281],["hatch.co",282],["gdh.digital",283],["haberturk.com",284],["ioplus.nl",285],["lahella.fi",286]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { setLocalStorageItem(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_setLocalStorageItem();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

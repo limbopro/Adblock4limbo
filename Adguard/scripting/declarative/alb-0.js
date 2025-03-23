@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".modal-open\",\"action\":[\"style\",\"overflow: visible\"]}"],["{\"selector\":\".location-choose.open > wrapper\",\"action\":[\"style\",\"visibility:hidden;\"]}"],["{\"selector\":\"div.col-8\",\"action\":[\"style\",\"width: 100% !important\"]}"]];
-
-const hostnamesMap = new Map([["bankofalbania.org",0],["cineplexx.al",1]]);
-
-const entitiesMap = new Map([["www.filma24",2]]);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\".modal-open\",\"action\":[\"style\",\"overflow: visible\"]}","{\"selector\":\".location-choose.open > wrapper\",\"action\":[\"style\",\"visibility:hidden;\"]}","{\"selector\":\"div.col-8\",\"action\":[\"style\",\"width: 100% !important\"]}"];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["bankofalbania.org",1],["cineplexx.al",2],["www.filma24.*",3]]);
+const hasEntities = true;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

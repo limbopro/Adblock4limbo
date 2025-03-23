@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: jpn-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortCurrentScript = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["EventTarget.prototype.addEventListener","eval"],["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["document.createElement","overview"],["document.getElementById","imageUrls"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["document.currentScript","IFTG"]];
-
-const hostnamesMap = new Map([["exploader.net",0],["qa.crefan.jp",1],["blog-and-destroy.com",2],["musenboya.com",3],["kledgeb.blogspot.com",4],["connect.coron.tech",6],["akibablog.blog.jp",7],["blog.livedoor.jp",[7,15,18]],["erommd-street.com",8],["twivideo.net",9],["ac-illust.com",10],["photo-ac.com",10],["javple.com",11],["chibanippo.co.jp",12],["engineweb.jp",12],["kenshonavi.com",12],["maidonanews.jp",12],["nkreport.jp",12],["riajo.com",12],["searchkoreanews.jp",12],["shiori-tabi.jp",12],["trafficnews.jp",12],["yougakumap.com",12],["encount.press",12],["realsound.jp",12],["h1g.jp",12],["russianbeauties.jp",13],["agora-web.jp",14],["2chblog.jp",15],["yugioh-starlight.com",15],["kijomatomelog.com",15],["gundamlog.com",15],["doorblog.jp",15],["digital-thread.com",15],["livedoor.blog",15],["blog.jp",15],["majikichi.com",16],["xn--gmq92kd2rm1kx34a.com",17],["momoiroadult.com",19],["jukenbbs.com",20]]);
-
-const entitiesMap = new Map([["manga1001",5],["javmix",17]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortCurrentScript() {
 
 /******************************************************************************/
 
@@ -384,95 +367,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["EventTarget.prototype.addEventListener","eval"],["onload","google_esf"],["onload","adsCount"],["navigator.brave"],["document.getElementById","_0x"],["document.querySelector","_0x"],["jQuery","decodeURIComponent"],["document.write","sitejack"],["document.createElement","overview"],["document.getElementById","imageUrls"],["$","google_ads_iframe_"],["onload","puHref"],["document.referrer","gmo_bb"],["document.write","LinkURL"],["document.currentScript","insertAdjacentHTML"],["jQuery","floatingAd"],["tag","Math.random"],["addEventListener","style.display"],["jmp","Math"],["document.getElementById","lists"],["document.currentScript","IFTG"]];
+const hostnamesMap = new Map([["exploader.net",0],["qa.crefan.jp",1],["blog-and-destroy.com",2],["musenboya.com",3],["kledgeb.blogspot.com",4],["manga1001.*",5],["connect.coron.tech",6],["akibablog.blog.jp",7],["blog.livedoor.jp",[7,15,18]],["erommd-street.com",8],["twivideo.net",9],["ac-illust.com",10],["photo-ac.com",10],["javple.com",11],["chibanippo.co.jp",12],["engineweb.jp",12],["kenshonavi.com",12],["maidonanews.jp",12],["nkreport.jp",12],["riajo.com",12],["searchkoreanews.jp",12],["shiori-tabi.jp",12],["trafficnews.jp",12],["yougakumap.com",12],["encount.press",12],["realsound.jp",12],["h1g.jp",12],["russianbeauties.jp",13],["agora-web.jp",14],["2chblog.jp",15],["yugioh-starlight.com",15],["kijomatomelog.com",15],["gundamlog.com",15],["doorblog.jp",15],["digital-thread.com",15],["livedoor.blog",15],["blog.jp",15],["majikichi.com",16],["xn--gmq92kd2rm1kx34a.com",17],["javmix.*",17],["momoiroadult.com",19],["jukenbbs.com",20]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortCurrentScript(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortCurrentScript();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

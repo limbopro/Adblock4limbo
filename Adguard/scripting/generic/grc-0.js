@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[12341963,".adsbox"],[1786351,"DIV.agores300"],[8886709,"TABLE.advright"]];
+const genericSelectorMap = [[12341963,".adsbox"],[1786351,"DIV.agores300"],[8886709,"TABLE.advright"]];
+const genericExceptionSieve = [9587466,1774173,4072598,3180160,8371964,7019440,8328142];
+const genericExceptionMap = [["aggeliestanea.gr",".adResult"],["athensmagazine.gr",".ad_wrapper"],["ediva.gr",".pub_300x250\n.pub_728x90\n.text-ad\n.textAd\n.text_ad"]];
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

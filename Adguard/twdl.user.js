@@ -7,7 +7,7 @@
 // @name:ko     Twitter/X(웹버전) 동영상/사진/gif 원클릭 다운로드.[limbopro]
 // @name:ru     Twitter/X (веб-версия) — загрузка видео/изображений/гифок в один клик.[limbopro]
 // @namespace    https://limbopro.com/
-// @version      0.1.3.20
+// @version      0.1.3.24
 // @description Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文4k/原始图片并按用户名进行保存
 // @description:zh-cn  Twitter/X(网页版)视频/图片/gif一键下载.[limbopro] / 一键下载推文4k/原始图片并按用户名进行保存
 // @description:ja Twitter/X (Web 版) のビデオ/写真/GIF をワンクリックでダウンロード。[limbopro] / ワンクリックでツイート画像をダウンロードし、ユーザー名で保存します
@@ -21,11 +21,10 @@
 // @match        https://x.com/*
 // @match        https://twittervideodownloader.com/*
 // @match        https://twittervid.com/*
+// @match        https://tweeload.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitter.com
 // @orginalURL   https://limbopro.com/Adguard/twdl.user.js
 // @grant        none
-// @downloadURL https://update.greasyfork.org/scripts/478651/TwitterX%28%E7%BD%91%E9%A1%B5%E7%89%88%29%E8%A7%86%E9%A2%91%E5%8E%9F%E5%A7%8B%E5%9B%BE%E7%89%87gif%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.user.js
-// @updateURL https://update.greasyfork.org/scripts/478651/TwitterX%28%E7%BD%91%E9%A1%B5%E7%89%88%29%E8%A7%86%E9%A2%91%E5%8E%9F%E5%A7%8B%E5%9B%BE%E7%89%87gif%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%5Blimbopro%5D.meta.js
 // ==/UserScript==
 
 /*
@@ -37,10 +36,17 @@
 */
 
 // 引入全局 CSS
-var twdlcss = "span[id^=\"ezoic-pub-ad-placeholder-\"], .ez-sidebar-wall, span[data-ez-ph-id], .ez-sidebar-wall-ad,.ez-sidebar-wall {display:none !important} button.twdl.download_pics:hover {background-image: linear-gradient(135deg, #f34079 40%, #fc894d); transition: 0.7s;} .atx {display:none;} .house {z-index:114154 !important; max-width:340px; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:5px;}.help{top:80px !important;/*background:teal;*/} .twdl { z-index:114154 !important; line-height:normal; /*font-size:xx-small;*/ font-size:inherit; text-decoration:none; position:sticky; top:5px; /*text-transform:uppercase;*/ padding:6px 12px; color:white; z-index:114154;} .twittervideodownloader { background:linear-gradient(to bottom, #42a5f5 0%, #1e88e5 100%); box-shadow:inset 0 2px 2px #1976d2;} .twittervid {background:linear-gradient(to bottom, #66BB6A 0%, #43A047 100%); box-shadow:inset 0 2px 2px #388E3C;} .download_pics { /*border-radius:5px 0px 0px 5px; */ border:0px;} .greasyfork {cursor:help; right:295px;background:linear-gradient(rgb(62 53 53) 0%, rgb(31 29 29) 100%);box-shadow:rgb(0 0 0) 0px 2px 2px inset;}"
+var twdlcss_pc = "div.contentBox,ins.adsbygoogle[data-ad-slot],ins.adsbygoogle[data-ad-client] {display:none !important;}, span[id^=\"ezoic-pub-ad-placeholder-\"], .ez-sidebar-wall, span[data-ez-ph-id], .ez-sidebar-wall-ad,.ez-sidebar-wall {display:none !important} button.twdl.download_pics:hover {background-image: linear-gradient(135deg, #f34079 40%, #fc894d); transition: 0.7s;} .atx {display:none;} .house {opacity:0.5;font-size:xx-small;z-index:114154 !important; max-width:340px; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:5px;}.help{top:80px !important;/*background:teal;*/} .house:hover {opacity:1;font-size:xx-small;z-index:114154 !important; max-width:340px; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:5px;}.help{top:80px !important;/*background:teal;*/} .twdl { z-index:114154 !important; line-height:normal; /*font-size:xx-small;*/ font-size:inherit; text-decoration:none; position:sticky; top:5px; /*text-transform:uppercase;*/ padding:4px 8px; color:white; z-index:114154;} .twittervideodownloader { background:linear-gradient(to bottom, #42a5f5 0%, #1e88e5 100%); box-shadow:inset 0 2px 2px #1976d2;} .twittervid {background:linear-gradient(to bottom, #66BB6A 0%, #43A047 100%); box-shadow:inset 0 2px 2px #388E3C;} .twee {background:linear-gradient(to bottom, #ab2dc0 0%, #ab2dc0 100%); box-shadow:inset 0 2px 2px #ab2dc0;} .download_pics { /*border-radius:5px 0px 0px 5px; */ border:0px;} .greasyfork {cursor:help; right:295px;background:linear-gradient(rgb(62 53 53) 0%, rgb(31 29 29) 100%);box-shadow:rgb(0 0 0) 0px 2px 2px inset;}"
+var twdlcss_mobile = "div.contentBox,ins.adsbygoogle[data-ad-slot],ins.adsbygoogle[data-ad-client] {display:none !important;}, span[id^=\"ezoic-pub-ad-placeholder-\"], .ez-sidebar-wall, span[data-ez-ph-id], .ez-sidebar-wall-ad,.ez-sidebar-wall {display:none !important} button.twdl.download_pics:hover {background-image: linear-gradient(135deg, #f34079 40%, #fc894d); transition: 0.7s;} .atx {display:none;} .house {z-index:114154 !important; max-width:340px; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:5px;}.help{top:80px !important;/*background:teal;*/} .twdl { z-index:114154 !important; line-height:normal; /*font-size:xx-small;*/ font-size:inherit; text-decoration:none; position:sticky; top:5px; /*text-transform:uppercase;*/ padding:6px 12px; color:white; z-index:114154;} .twittervideodownloader { background:linear-gradient(to bottom, #42a5f5 0%, #1e88e5 100%); box-shadow:inset 0 2px 2px #1976d2;} .twittervid {background:linear-gradient(to bottom, #66BB6A 0%, #43A047 100%); box-shadow:inset 0 2px 2px #388E3C;} .twee {background:linear-gradient(to bottom, #ab2dc0 0%, #ab2dc0 100%); box-shadow:inset 0 2px 2px #ab2dc0;} .download_pics { /*border-radius:5px 0px 0px 5px; */ border:0px;} .greasyfork {cursor:help; right:295px;background:linear-gradient(rgb(62 53 53) 0%, rgb(31 29 29) 100%);box-shadow:rgb(0 0 0) 0px 2px 2px inset;}"
 var newstyle = document.createElement('style')
 newstyle.id = 'twdlcss'
-newstyle.innerHTML = twdlcss
+
+if (window.navigator.userAgent.toLowerCase().indexOf('mobile') !== -1) {
+    newstyle.innerHTML = twdlcss_mobile
+} else {
+    newstyle.innerHTML = twdlcss_pc
+}
+
 document.querySelector('head').parentNode.insertBefore(newstyle, document.querySelector('head')) // 载入
 
 
@@ -115,71 +121,37 @@ function downloader_innerText(x) { // [LOADER]/[VID]
     var language = document.querySelector('html').lang; // en/ja/zh/ru/zh-Hant
     var textContent = '';
 
-    if (x == '[VID]') {
+    switch (language) { //
+        case 'zh':
+            textContent = "通过" + x + "下载视频/动图";
+            return textContent;
+            break;
+        case 'zh-Hant':
+            textContent = "透過" + x + "下載影片/動圖";
+            return textContent;
+            break;
+        /*
+    case 'ja':
+        textContent = "これらのビデオ/写真/アニメーションを" + x + "経由でダウンロードしてください";
+        return textContent;
+        break;
+        */
 
-        switch (language) { //
-            case 'zh':
-                textContent = "通过" + x + "下载视频/动图";
-                return textContent;
-                break;
-            case 'zh-Hant':
-                textContent = "透過" + x + "下載影片/動圖";
-                return textContent;
-                break;
-            /*
-        case 'ja':
-            textContent = "これらのビデオ/写真/アニメーションを" + x + "経由でダウンロードしてください";
+        case 'en':
+            textContent = "Download video/gif via " + x;
             return textContent;
             break;
-            */
-            case 'en':
-                textContent = "Download video/img/gif via " + x;
-                return textContent;
-                break;
-            /*
-        case 'ru':
-            textContent = "Загрузите эти видео/изображения/анимацию через " + x;
-            return textContent;
-            break;
-            */
-            default:
-                textContent = "Download video/img/gif via " + x;
-                return textContent;
-                break;
-        }
+        /*
+    case 'ru':
+        textContent = "Загрузите эти видео/изображения/анимацию через " + x;
+        return textContent;
+        break;
+        */
 
-    } else if (x == '[LOADER]') {
-
-        switch (language) { //
-            case 'zh':
-                textContent = "通过" + x + "下载视频";
-                return textContent;
-                break;
-            case 'zh-Hant':
-                textContent = "透過" + x + "下載影片";
-                return textContent;
-                break;
-            /*
-        case 'ja':
-            textContent = x + "経由でビデオをダウンロード";
+        default:
+            textContent = "Download video/gif via " + x;
             return textContent;
             break;
-            */
-            case 'en':
-                textContent = "Download video via " + x;
-                return textContent;
-                break;
-            /*
-        case 'ru':
-            textContent = "Скачать видео через " + x;
-            return textContent;
-            break;
-            */
-            default:
-                textContent = "Download video via " + x;
-                return textContent;
-                break;
-        }
     }
 
 }
@@ -411,8 +383,9 @@ async function twdl() {
                 var house = document.createElement('div')
                 house.className = 'house'
 
-                var vid = twdl_div(article[i], 'https://twittervid.com/', 'twdl twittervid', downloader_innerText('[VID]'))
+                // var vid = twdl_div(article[i], 'https://twittervid.com/', 'twdl twittervid', downloader_innerText('[VID]'))
                 var loader_ = twdl_div(article[i], 'https://twittervideodownloader.com/', 'twdl twittervideodownloader', downloader_innerText('[LOADER]'))
+                var twee = twdl_div(article[i], 'https://tweeload.com/', 'twdl twee', downloader_innerText('[TWEE]'))
                 var help = twdl_div(article[i], 'https://greasyfork.org/zh-CN/scripts/478651-twitter-%E7%BD%91%E9%A1%B5%E7%89%88%E5%A4%9A%E8%A7%86%E9%A2%91-gif%E4%B8%8B%E8%BD%BD-limbopro', 'twdl help', 'Need Help?')
 
                 var downloader = document.createElement('button')
@@ -428,7 +401,7 @@ async function twdl() {
 
 
 
-                var array = [downloader, vid, loader_, help]
+                var array = [downloader, /*vid,*/ twee, loader_, help]
 
                 array.forEach((x) => {
                     house.appendChild(x)
@@ -438,7 +411,7 @@ async function twdl() {
                 if (article[i].querySelectorAll("div.css-175oi2r.r-12kyg2d")[0] && article[i].querySelector('[data-testid="videoPlayer"]')) { // 推文存在文字图片且有视频的情况下
                     article[i].querySelectorAll("div.css-175oi2r.r-12kyg2d")[0].appendChild(house);
 
-                } else if (article[i].querySelectorAll('[dir=auto][lang]')[0] && article[i].querySelector('[data-testid="videoPlayer"]')) {
+                } else if (article[i].querySelectorAll('[dir=auto][lang]')[0] && article[i].querySelector('[data-testid="videoPlayer"]')) {  // 推文存在文字且有视频的情况下
                     article[i].querySelectorAll('[dir=auto][lang]')[0].appendChild(house);
 
                 } else if (article[i].querySelector('[data-testid="videoPlayer"]')) { // 推文没有文字图片仅有视频的情况下
@@ -495,8 +468,7 @@ setInterval(() => {
 
 function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> 点击下载按钮
 
-    if (window.location.href.match(/(twittervid\.com)/gi)) {
-
+    if (window.location.href.match(/(twittervid\.com)/gi)) { // vid
         if (document.querySelector('#tweetUrl') !== null && document.querySelector('#loadVideos') !== null) {
             document.querySelector('#tweetUrl').value = window.location.href.replace('https://twittervid.com/#', '')
             if (document.querySelector('#tweetUrl').value == 'https://twittervid.com/') {
@@ -506,7 +478,7 @@ function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> �
         }
     }
 
-    if (window.location.href.match(/(twittervideodownloader\.com)/gi)) {
+    if (window.location.href.match(/(twittervideodownloader\.com)/gi)) { // loader
         if (document.querySelector('#tweetURL') !== null && document.querySelector('#submitBtn') !== null) {
             document.querySelector('#tweetURL').value = window.location.href.replace('https://twittervideodownloader.com/#', '')
             if (document.querySelector('#tweetURL').value == 'https://twittervideodownloader.com/') {
@@ -516,8 +488,20 @@ function inDownloaderPage() { // 获取当前网页 url -> 给 input 赋值 -> �
         }
     }
 
+    if (window.location.href.match(/(tweeload\.com)/gi)) { // twee
+        setTimeout(() => {
+            if (document.querySelector('#url') !== null && document.querySelector('button.btn--primary') !== null) {
+                document.querySelector('#url').value = window.location.href.replace('https://tweeload.com/#', '')
+                if (document.querySelector('#url').value == 'https://tweeload.com/') {
+                } else if (document.querySelector('#url').value.match(twURL_regex)) {
+                    document.querySelector('button.btn--primary').click()
+                }
+            }
+        }, 1000)
+    }
+
 }
 
-if (window.location.href.match(/(twittervid\.com|twittervideodownloader)/gi) !== null) {
+if (window.location.href.match(/(twittervid\.com|twittervideodownloader|tweeload)/gi) !== null) {
     inDownloaderPage()
 }

@@ -21,6 +21,7 @@
 
 /* rou-1 */
 
+[href="https://www.patriotromania.ro/"],
 [href^="https://banners.livepartners.com/"],
 [href^="https://serve.efortuna.ro/"] {
     display: none !important;

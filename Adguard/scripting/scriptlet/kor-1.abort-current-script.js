@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: kor-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortCurrentScript = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["popMagic.init"],["$.prototype.html","/\\/images\\/[A-z0-9-_]+\\.?(jpg|gif)/"],["jQuery.prototype.load","is_coupang"],["jQuery","link.coupang.com"],["jQuery","coupang_dont_show_prompty_interval"],["jQuery.prototype.on","is_coupang"],["open","/\\/popup\\//"],["bannerpop.popup"],["window.open","/gears/popup/default.aspx"],["window.open","notice_view_html.php"],["$","/danawa-dpg-common-sponsorBanner-/"],["$","myScript[myScript.length - 1 ]"],["document.addEventListener","/adscale_slot_id/"],["ai_adb.init"],["ai_run_scripts"],["chp_ads_blocker_detector"],["document.getElementById","adblock"],["$",".adsense-area"],["addEventListener","fuckadblock.min.js"],["$","#ad_center"]];
-
-const hostnamesMap = new Map([["watchfreejavonline.co",0],["m.humoruniv.com",1],["smartinpress.com",2],["newsn24.com",2],["yachuk.com",3],["aannm.cafe24.com",4],["beomil09121.cafe24.com",4],["actingbaum.co.kr",5],["picknpicker.com",5],["moneyissues.co.kr",5],["sotrychatter.com",5],["skysky138.com",5],["keela.co.kr",5],["jiwootube.com",5],["news.ssongyi.co.kr",5],["xn--wh1b751afvcpsb.com",5],["nesin.com",6],["mjmedi.com",7],["cfnews.kr",8],["sjtoday.kr",9],["dpg.danawa.com",[10,11]],["asdn.kr",12],["healthfeed.co.kr",12],["bikesell.co.kr",12],["remiz.co.kr",12],["enjoytaiwan.co.kr",12],["poketory.com",12],["withukor.com",12],["tistory.com",12],["love.asdn.kr",12],["untitle.org",12],["seo-marketing.co.kr",12],["plankim.com",13],["jootc.com",14],["ehpub.co.kr",14],["deokhu.com",15],["3dpchip.com",15],["ssulwar.com",16],["ilsangt.tistory.com",17],["focuskr.tistory.com",18],["singingdalong.blogspot.com",19]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortCurrentScript() {
 
 /******************************************************************************/
 
@@ -384,95 +367,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["popMagic.init"],["$.prototype.html","/\\/images\\/[A-z0-9-_]+\\.?(jpg|gif)/"],["jQuery.prototype.load","is_coupang"],["jQuery","link.coupang.com"],["jQuery","coupang_dont_show_prompty_interval"],["jQuery.prototype.on","is_coupang"],["open","/\\/popup\\//"],["bannerpop.popup"],["window.open","/gears/popup/default.aspx"],["window.open","notice_view_html.php"],["$","/danawa-dpg-common-sponsorBanner-/"],["$","myScript[myScript.length - 1 ]"],["document.addEventListener","/adscale_slot_id/"],["ai_adb.init"],["ai_run_scripts"],["chp_ads_blocker_detector"],["document.getElementById","adblock"],["$",".adsense-area"],["addEventListener","fuckadblock.min.js"],["$","#ad_center"]];
+const hostnamesMap = new Map([["watchfreejavonline.co",0],["m.humoruniv.com",1],["smartinpress.com",2],["newsn24.com",2],["yachuk.com",3],["aannm.cafe24.com",4],["beomil09121.cafe24.com",4],["actingbaum.co.kr",5],["picknpicker.com",5],["moneyissues.co.kr",5],["sotrychatter.com",5],["skysky138.com",5],["keela.co.kr",5],["jiwootube.com",5],["news.ssongyi.co.kr",5],["xn--wh1b751afvcpsb.com",5],["nesin.com",6],["mjmedi.com",7],["cfnews.kr",8],["sjtoday.kr",9],["dpg.danawa.com",[10,11]],["asdn.kr",12],["healthfeed.co.kr",12],["bikesell.co.kr",12],["remiz.co.kr",12],["enjoytaiwan.co.kr",12],["poketory.com",12],["withukor.com",12],["tistory.com",12],["love.asdn.kr",12],["untitle.org",12],["seo-marketing.co.kr",12],["plankim.com",13],["jootc.com",14],["ehpub.co.kr",14],["deokhu.com",15],["3dpchip.com",15],["ssulwar.com",16],["ilsangt.tistory.com",17],["focuskr.tistory.com",18],["singingdalong.blogspot.com",19]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortCurrentScript(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortCurrentScript();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

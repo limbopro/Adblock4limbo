@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"main::before\",\"action\":[\"style\",\"content: 'uBlock is unrelated to the well-known uBlock Origin.' !important; font-size: 32px !important; color: red !important; font-weight: bold !important;\"]}"],["{\"selector\":\"div.hero-unit > div.search-box--hero-unit::before\",\"action\":[\"style\",\"content: 'uBlock is unrelated to the well-known uBlock Origin.' !important; font-size: var(--font-size-h2) !important; color: red !important; font-weight: bold !important;\"]}"]];
-
-const hostnamesMap = new Map([["support.ublock.org",[0,1]],["ublock.org",0]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\"main::before\",\"action\":[\"style\",\"content: 'uBlock is unrelated to the well-known uBlock Origin.' !important; font-size: 32px !important; color: red !important; font-weight: bold !important;\"]}","{\"selector\":\"div.hero-unit > div.search-box--hero-unit::before\",\"action\":[\"style\",\"content: 'uBlock is unrelated to the well-known uBlock Origin.' !important; font-size: var(--font-size-h2) !important; color: red !important; font-weight: bold !important;\"]}"];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["ublock.org",1],["~support.ublock.org",1],["support.ublock.org",2]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

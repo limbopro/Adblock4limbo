@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".d-flex.flex-column.mx-auto\",\"tasks\":[[\"has-text\",\"AUGLÝSING\"]]}"]];
-
-const hostnamesMap = new Map([["1819.is",0]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\".d-flex.flex-column.mx-auto\",\"tasks\":[[\"has-text\",\"AUGLÝSING\"]]}"]];
+const argsSeqs = [0,1];
+const hostnamesMap = new Map([["1819.is",1]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

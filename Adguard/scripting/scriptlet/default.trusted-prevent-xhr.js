@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_trustedPreventXhr = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"],["s4.cdnpc.net/front/css/style.min.css","slider--features"],["s4.cdnpc.net/vite-bundle/main.css","data-v-d23a26c8"],["cdn.taboola.com/libtrc/san1go-network/loader.js","feOffset"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"]];
-
-const hostnamesMap = new Map([["bowfile.com",0],["1cloudfile.com",0],["koramaup.com",0],["animefire.info",[1,2,3,4]],["animesonlinecc.us",[1,2,3,4]],["animesonliner4.com",[1,2,3,4]],["animesup.info",[1,2,3,4]],["animeyabu.net",[1,2,3,4]],["animeyabu.org",[1,2,3,4]],["anitube.us",[1,2,3,4]],["anitube.vip",[1,2,3,4]],["caroloportunidades.com.br",[1,2,3,4]],["dattebayo-br.com",[1,2,3,4]],["drstonebr.com",[1,2,3,4]],["file4go.com",[1,2,3,4]],["flyanimes.cloud",[1,2,3,4]],["goanimes.vip",[1,2,3,4]],["goyabu.us",[1,2,3,4]],["hinatasoul.com",[1,2,3,4]],["isekaibrasil.com",[1,2,3,4]],["meuanime.info",[1,2,3,4]],["otakuanimess.net",[1,2,3,4]],["superanimes.in",[1,2,3,4]],["sbs.com.au",[5,6,7]]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_trustedPreventXhr() {
 
 /******************************************************************************/
 
@@ -528,95 +511,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["googlesyndication","a.getAttribute(\"data-ad-client\")||\"\""],["outbrain.com","outbrain"],["s4.cdnpc.net/front/css/style.min.css","slider--features"],["s4.cdnpc.net/vite-bundle/main.css","data-v-d23a26c8"],["cdn.taboola.com/libtrc/san1go-network/loader.js","feOffset"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?ord=","b.google_reactive_tag_first"],["sbs.demdex.net/dest5.html?d_nsid=0&ord=","Demdex.canSetThirdPartyCookies"],["securepubads.g.doubleclick.net/pagead/ima_ppub_config?ippd=https%3A%2F%2Fwww.sbs.com.au%2Fondemand%2F&ord=","[\"4117\"]"]];
+const hostnamesMap = new Map([["bowfile.com",0],["1cloudfile.com",0],["koramaup.com",0],["animefire.info",[1,2,3,4]],["animesonlinecc.us",[1,2,3,4]],["animesonliner4.com",[1,2,3,4]],["animesup.info",[1,2,3,4]],["animeyabu.net",[1,2,3,4]],["animeyabu.org",[1,2,3,4]],["anitube.us",[1,2,3,4]],["anitube.vip",[1,2,3,4]],["caroloportunidades.com.br",[1,2,3,4]],["dattebayo-br.com",[1,2,3,4]],["drstonebr.com",[1,2,3,4]],["file4go.com",[1,2,3,4]],["flyanimes.cloud",[1,2,3,4]],["goanimes.vip",[1,2,3,4]],["goyabu.us",[1,2,3,4]],["hinatasoul.com",[1,2,3,4]],["isekaibrasil.com",[1,2,3,4]],["meuanime.info",[1,2,3,4]],["otakuanimess.net",[1,2,3,4]],["superanimes.in",[1,2,3,4]],["sbs.com.au",[5,6,7]]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { trustedPreventXhr(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_trustedPreventXhr();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

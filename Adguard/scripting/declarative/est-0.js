@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"body\",\"action\":[\"style\",\"overflow:visible !important\"]}"],["{\"selector\":\".trim > .container\",\"action\":[\"style\",\"margin-top:0px !important\"]}"],["{\"selector\":\".article .article-body\",\"action\":[\"style\",\"padding: 0 !important;\"]}","{\"selector\":\".article\",\"action\":[\"style\",\"padding: 0 15px 0 !important;\"]}","{\"selector\":\".dfp-ad--horizontal.dfp-ad + *\",\"action\":[\"style\",\"padding-top: 0 !important;\"]}","{\"selector\":\".digipakett-branding-root-container\",\"action\":[\"style\",\"display: none\"]}","{\"selector\":\".digipakett-branding-visible .site-header\",\"action\":[\"style\",\"top: 0px !important\"]}","{\"selector\":\".site-header\",\"action\":[\"style\",\"top: 0 !important\"]}","{\"selector\":\".structured-content__group--left\",\"action\":[\"style\",\"max-width:unset !important\"]}","{\"selector\":\"[itemprop=\\\"articleBody\\\"]\",\"action\":[\"style\",\"max-width:unset !important\"]}","{\"selector\":\"html, body\",\"action\":[\"style\",\"overflow:auto !important\"]}"]];
-
-const hostnamesMap = new Map([["delfi.ee",0],["ilm.ee",1],["postimees.ee",2]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\"body\",\"action\":[\"style\",\"overflow:visible !important\"]}","{\"selector\":\".trim > .container\",\"action\":[\"style\",\"margin-top:0px !important\"]}","{\"selector\":\".article .article-body\",\"action\":[\"style\",\"padding: 0 !important;\"]}\n{\"selector\":\".article\",\"action\":[\"style\",\"padding: 0 15px 0 !important;\"]}\n{\"selector\":\".dfp-ad--horizontal.dfp-ad + *\",\"action\":[\"style\",\"padding-top: 0 !important;\"]}\n{\"selector\":\".digipakett-branding-root-container\",\"action\":[\"style\",\"display: none\"]}\n{\"selector\":\".digipakett-branding-visible .site-header\",\"action\":[\"style\",\"top: 0px !important\"]}\n{\"selector\":\".site-header\",\"action\":[\"style\",\"top: 0 !important\"]}\n{\"selector\":\".structured-content__group--left\",\"action\":[\"style\",\"max-width:unset !important\"]}\n{\"selector\":\"[itemprop=\\\"articleBody\\\"]\",\"action\":[\"style\",\"max-width:unset !important\"]}\n{\"selector\":\"html, body\",\"action\":[\"style\",\"overflow:auto !important\"]}"];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["delfi.ee",1],["ilm.ee",2],["postimees.ee",3]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

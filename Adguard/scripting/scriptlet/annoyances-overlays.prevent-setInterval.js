@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: annoyances-overlays
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_preventSetInterval = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["height"],["debugger"],["visibility","1000"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["/devtools|debu/"],["/devtool|console\\.clear/"]];
-
-const hostnamesMap = new Map([["smashboards.com",0],["avdelphi.com",1],["pornhd8k.net",1],["masuit.com",1],["phimfit.com",1],["iphonecake.com",2],["ziperto.com",2],["compartiendofull.net",2],["themeparktourist.com",2],["bluemoon-mcfc.co.uk",3],["bendigoadvertiser.com.au",4],["lvturbo.com",5],["sbbrisk.com",5],["sbface.com",5],["sbspeed.com",5],["streamsb.net",5],["wouterplanet.com",5],["actvid.com",5],["myflixerz.to",5],["putlocker.pe",5],["theflixertv.to",5],["vipstreams.in",5],["699pic.com",6],["thinkamericana.com",7],["menrec.com",7],["mocah.org",8],["coolwallpapers.me",9],["sflix.to",10],["sflix.is",10],["sflix.ca",10],["sflix2.to",10],["webnovel.com",11],["vgembed.com",12],["sbot.cf",13],["bluphim.com",13],["cdnmoviking.tech",13],["movie4kto.net",14],["alfred.camera",15],["vidstreaming.xyz",16],["choosingnothing.com",16],["jetv.xyz",16],["ngelmat.net",17],["embed.su",18],["bembed.net",18],["embedv.net",18],["fslinks.org",18],["listeamed.net",18],["v6embed.xyz",18],["vgplayer.xyz",18],["vid-guard.com",18],["fightful.com",19],["player.melaniezettofrais.online",20]]);
-
-const entitiesMap = new Map([["vidsrc",18],["vembed",18],["sussytoons",21]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_preventSetInterval() {
 
 /******************************************************************************/
 
@@ -165,7 +148,7 @@ class RangeParser {
             this.min = this.max = parseInt(s, 10) || 0;
         }
         if ( pos !== -1 ) {
-            this.max = parseInt(s.slice(1), 10) || Number.MAX_SAFE_INTEGER;
+            this.max = parseInt(s.slice(pos + 1), 10) || Number.MAX_SAFE_INTEGER;
         }
     }
     unbound() {
@@ -376,95 +359,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["height"],["debugger"],["visibility","1000"],["removeChild"],["modal"],["_0x"],["clearInterval(loginReady)"],["offsetHeight"],["adsbygoogle"],["dfgh-adsbygoogle"],["/_0x|devtools/"],["debug"],["detect"],["console.clear"],["/DevTools|_0x/"],["ads"],["devtoolsDetector"],["DevToolsOpen"],["devtool"],["getComputedStyle"],["/devtools|debu/"],["/devtool|console\\.clear/"]];
+const hostnamesMap = new Map([["smashboards.com",0],["avdelphi.com",1],["pornhd8k.net",1],["masuit.com",1],["phimfit.com",1],["iphonecake.com",2],["ziperto.com",2],["compartiendofull.net",2],["themeparktourist.com",2],["bluemoon-mcfc.co.uk",3],["bendigoadvertiser.com.au",4],["lvturbo.com",5],["sbbrisk.com",5],["sbface.com",5],["sbspeed.com",5],["streamsb.net",5],["wouterplanet.com",5],["actvid.com",5],["myflixerz.to",5],["putlocker.pe",5],["theflixertv.to",5],["vipstreams.in",5],["699pic.com",6],["thinkamericana.com",7],["menrec.com",7],["mocah.org",8],["coolwallpapers.me",9],["sflix.to",10],["sflix.is",10],["sflix.ca",10],["sflix2.to",10],["webnovel.com",11],["vgembed.com",12],["sbot.cf",13],["bluphim.com",13],["cdnmoviking.tech",13],["movie4kto.net",14],["alfred.camera",15],["vidstreaming.xyz",16],["choosingnothing.com",16],["jetv.xyz",16],["ngelmat.net",17],["vidsrc.*",18],["embed.su",18],["bembed.net",18],["embedv.net",18],["fslinks.org",18],["listeamed.net",18],["v6embed.xyz",18],["vembed.*",18],["vgplayer.xyz",18],["vid-guard.com",18],["fightful.com",19],["player.melaniezettofrais.online",20],["sussytoons.*",21]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { preventSetInterval(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_preventSetInterval();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

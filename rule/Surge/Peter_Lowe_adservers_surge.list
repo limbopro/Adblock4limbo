@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 27 Feb 2025 02:45:23 GMT
-# entries:        3469
+# last updated:   Wed, 12 Mar 2025 00:24:00 GMT
+# entries:        3465
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -69,6 +69,7 @@ DOMAIN-SUFFIX,ablink.info.wise.com
 DOMAIN-SUFFIX,ablink.news.emails-puregym.com
 DOMAIN-SUFFIX,ablinks.mail.hinge.co
 DOMAIN-SUFFIX,aboardlevel.com
+DOMAIN-SUFFIX,abruptroad.com
 DOMAIN-SUFFIX,absorbingband.com
 DOMAIN-SUFFIX,abstractedauthority.com
 DOMAIN-SUFFIX,abtasty.com
@@ -81,7 +82,6 @@ DOMAIN-SUFFIX,actonsoftware.com
 DOMAIN-SUFFIX,actualdeals.com
 DOMAIN-SUFFIX,actuallysheep.com
 DOMAIN-SUFFIX,actuallysnake.com
-DOMAIN-SUFFIX,actuallything.com
 DOMAIN-SUFFIX,acuityads.com
 DOMAIN-SUFFIX,acuityplatform.com
 DOMAIN-SUFFIX,ad-balancer.at
@@ -853,7 +853,6 @@ DOMAIN-SUFFIX,affiliate.treated.com
 DOMAIN-SUFFIX,affiliatefuture.com
 DOMAIN-SUFFIX,affiliates.allposters.com
 DOMAIN-SUFFIX,affiliates.babylon.com
-DOMAIN-SUFFIX,affiliates.digitalriver.com
 DOMAIN-SUFFIX,affiliates.globat.com
 DOMAIN-SUFFIX,affiliates.streamray.com
 DOMAIN-SUFFIX,affiliates.thinkhost.net
@@ -1010,7 +1009,6 @@ DOMAIN-SUFFIX,banik.redigy.cz
 DOMAIN-SUFFIX,banner.ambercoastcasino.com
 DOMAIN-SUFFIX,banner.buempliz-online.ch
 DOMAIN-SUFFIX,banner.cotedazurpalace.com
-DOMAIN-SUFFIX,banner.coza.com
 DOMAIN-SUFFIX,banner.easyspace.com
 DOMAIN-SUFFIX,banner.elisa.net
 DOMAIN-SUFFIX,banner.eurogrand.com
@@ -1063,7 +1061,6 @@ DOMAIN-SUFFIX,bannershotlink.perfectgonzo.com
 DOMAIN-SUFFIX,bannersng.yell.com
 DOMAIN-SUFFIX,bannerspace.com
 DOMAIN-SUFFIX,bannerswap.com
-DOMAIN-SUFFIX,bannertesting.com
 DOMAIN-SUFFIX,bannertrack.net
 DOMAIN-SUFFIX,bannery.cz
 DOMAIN-SUFFIX,bannieres.wdmedia.net
@@ -1161,6 +1158,7 @@ DOMAIN-SUFFIX,bridgetrack.com
 DOMAIN-SUFFIX,brightcom.com
 DOMAIN-SUFFIX,brightinfo.com
 DOMAIN-SUFFIX,brightmountainmedia.com
+DOMAIN-SUFFIX,broadboundary.com
 DOMAIN-SUFFIX,broadcastbed.com
 DOMAIN-SUFFIX,broadstreetads.com
 DOMAIN-SUFFIX,browser-http-intake.logs.datadoghq.com
@@ -1355,6 +1353,7 @@ DOMAIN-SUFFIX,commissionmonster.com
 DOMAIN-SUFFIX,communications.melitaltd.com
 DOMAIN-SUFFIX,compactbanner.com
 DOMAIN-SUFFIX,comparereaction.com
+DOMAIN-SUFFIX,compiledoctor.com
 DOMAIN-SUFFIX,comprabanner.it
 DOMAIN-SUFFIX,conditionchange.com
 DOMAIN-SUFFIX,conductrics.com
@@ -1455,6 +1454,7 @@ DOMAIN-SUFFIX,dancemistake.com
 DOMAIN-SUFFIX,dapper.net
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
 DOMAIN-SUFFIX,datenow.link
+DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
 DOMAIN-SUFFIX,deal-on.eu
@@ -1613,6 +1613,7 @@ DOMAIN-SUFFIX,exampleshake.com
 DOMAIN-SUFFIX,exchange-it.com
 DOMAIN-SUFFIX,exchangead.com
 DOMAIN-SUFFIX,exchangeclicksonline.com
+DOMAIN-SUFFIX,exclusivebrass.com
 DOMAIN-SUFFIX,exelate.com
 DOMAIN-SUFFIX,exelator.com
 DOMAIN-SUFFIX,exhibitsneeze.com
@@ -2043,6 +2044,7 @@ DOMAIN-SUFFIX,link.axios.com
 DOMAIN-SUFFIX,link.email.usmagazine.com
 DOMAIN-SUFFIX,link.go.chase
 DOMAIN-SUFFIX,link.sbstck.com
+DOMAIN-SUFFIX,link.team.hyperoptic.com
 DOMAIN-SUFFIX,link.theatlantic.com
 DOMAIN-SUFFIX,link.uk.expediamail.com
 DOMAIN-SUFFIX,link4ads.com
@@ -2668,7 +2670,6 @@ DOMAIN-SUFFIX,recoco.it
 DOMAIN-SUFFIX,reconditerake.com
 DOMAIN-SUFFIX,record.bonniergaming.com
 DOMAIN-SUFFIX,record.mrwin.com
-DOMAIN-SUFFIX,redirecting8.eu
 DOMAIN-SUFFIX,redirectingat.com
 DOMAIN-SUFFIX,redirectvoluum.com
 DOMAIN-SUFFIX,redrection.pro
@@ -2730,6 +2731,7 @@ DOMAIN-SUFFIX,roar.com
 DOMAIN-SUFFIX,robotreplay.com
 DOMAIN-SUFFIX,rockabox.co
 DOMAIN-SUFFIX,rockagainst.com
+DOMAIN-SUFFIX,rockstarwriter.com
 DOMAIN-SUFFIX,rok.com.com
 DOMAIN-SUFFIX,rollconnection.com
 DOMAIN-SUFFIX,rose.ixbt.com
@@ -3074,11 +3076,9 @@ DOMAIN-SUFFIX,tealeaf.com
 DOMAIN-SUFFIX,tealium.cbsnews.com
 DOMAIN-SUFFIX,tealium.com
 DOMAIN-SUFFIX,tealiumiq.com
-DOMAIN-SUFFIX,tediousticket.com
 DOMAIN-SUFFIX,tedioustooth.com
 DOMAIN-SUFFIX,teenrevenue.com
 DOMAIN-SUFFIX,telaria.com
-DOMAIN-SUFFIX,telemetrics.klaviyo.com
 DOMAIN-SUFFIX,telemetry.dropbox.com
 DOMAIN-SUFFIX,telemetry.goodlifefitness.com
 DOMAIN-SUFFIX,telemetry.malwarebytes.com
@@ -3122,7 +3122,6 @@ DOMAIN-SUFFIX,tm.br.de
 DOMAIN-SUFFIX,tnkexchange.com
 DOMAIN-SUFFIX,tns-counter.ru
 DOMAIN-SUFFIX,to-go1.eu
-DOMAIN-SUFFIX,top-casting-termine.de
 DOMAIN-SUFFIX,top-site-list.com
 DOMAIN-SUFFIX,top.list.ru
 DOMAIN-SUFFIX,top.mail.ru
@@ -3153,8 +3152,6 @@ DOMAIN-SUFFIX,track.customer.io
 DOMAIN-SUFFIX,track.effiliation.com
 DOMAIN-SUFFIX,track.flexlinks.com
 DOMAIN-SUFFIX,track.flexlinkspro.com
-DOMAIN-SUFFIX,track.freemmo2017.com
-DOMAIN-SUFFIX,track.game18click.com
 DOMAIN-SUFFIX,track.lettingaproperty.com
 DOMAIN-SUFFIX,track.mailalert.io
 DOMAIN-SUFFIX,track.mailerlite.com
@@ -3290,7 +3287,6 @@ DOMAIN-SUFFIX,unwieldyimpulse.com
 DOMAIN-SUFFIX,upu.samsungelectronics.com
 DOMAIN-SUFFIX,url9467.comms-2.zoopla.co.uk
 DOMAIN-SUFFIX,urlcash.net
-DOMAIN-SUFFIX,urldata.net
 DOMAIN-SUFFIX,us.a1.yimg.com
 DOMAIN-SUFFIX,user-shield-check.com
 DOMAIN-SUFFIX,userreplay.com

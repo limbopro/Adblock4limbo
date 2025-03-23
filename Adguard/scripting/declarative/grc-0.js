@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0px !important;\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"],["{\"selector\":\"#LRGR\",\"action\":[\"style\",\"background: none !important;\"]}"],["{\"selector\":\"#sp-component\",\"action\":[\"style\",\"width: 100% !important;\"]}"],["{\"selector\":\"#primary\",\"action\":[\"style\",\"margin: 0 auto !important;\"]}"]];
-
-const hostnamesMap = new Map([["kalamatatimes.gr",0],["kozanilife.gr",1],["lamiareport.gr",2],["serraikanea.gr",3],["start2click.com",4]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0px !important;\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}","{\"selector\":\"#LRGR\",\"action\":[\"style\",\"background: none !important;\"]}","{\"selector\":\"#sp-component\",\"action\":[\"style\",\"width: 100% !important;\"]}","{\"selector\":\"#primary\",\"action\":[\"style\",\"margin: 0 auto !important;\"]}"];
+const argsSeqs = [0,1,2,3,4,5];
+const hostnamesMap = new Map([["kalamatatimes.gr",1],["kozanilife.gr",2],["lamiareport.gr",3],["serraikanea.gr",4],["start2click.com",5]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

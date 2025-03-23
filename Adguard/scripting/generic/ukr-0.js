@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[2236478,"#td-ad-placeholder"],[13656179,".ad-300"],[612309,".adx_center"],[12028152,".newspack_global_ad"],[11868393,".nts-ad"],[16300881,".nts-video-wrapper"],[5819991,".td-a-rec-id-custom_ad_1,.td-a-rec-id-custom_ad_2,.td-a-rec-id-custom_ad_3,.td-a-rec-id-custom_ad_4,.td-a-rec-id-custom_ad_5"],[16153475,"ins.adsbygoogle[data-ad-client],ins.adsbygoogle[data-ad-slot]"]];
+const genericSelectorMap = [[15487892,"#ad_top"],[15446900,"#ad_Top"],[5093236,"#AD_Top"],[12944704,"#ad-lead"],[11127759,"#homead"],[11128751,"#homeAd"],[2236478,"#td-ad-placeholder"],[13656179,".ad-300"],[16531403,".ads-content"],[12396141,".ads300"],[612309,".adx_center"],[10589953,".header-adv"],[12028152,".newspack_global_ad"],[11868393,".nts-ad"],[16300881,".nts-video-wrapper"],[5819991,".td-a-rec-id-custom_ad_1,\n.td-a-rec-id-custom_ad_2,\n.td-a-rec-id-custom_ad_3,\n.td-a-rec-id-custom_ad_4,\n.td-a-rec-id-custom_ad_5"],[16153475,"ins.adsbygoogle[data-ad-client],\nins.adsbygoogle[data-ad-slot]"]];
+const genericExceptionSieve = undefined;
+const genericExceptionMap = undefined;
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

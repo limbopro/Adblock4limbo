@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[9997183,"#HiddenMovie > [src^=\"http://www.youtube.com\"] + #video-blocker"],[11548607,".entry > .entry-inner > .wpvl.wpvl-youtube.ng-scope.size-l"],[2034647,".wpvl.wpvl-dailymotion > .fblogin.lockoverlay.ng-scope,.wpvl.wpvl-youtube.ng-scope.size-xl > .ng-scope + .fblogin.lockoverlay.ng-scope,.wpvl.wpvl-youtube.ng-scope.size-xxl > [ng-show=\"!blocked\"] + * + .ng-scope + .fblogin.lockoverlay.ng-scope"]];
+const genericSelectorMap = [[9997183,"#HiddenMovie > [src^=\"http://www.youtube.com\"] + #video-blocker"],[11548607,".entry > .entry-inner > .wpvl.wpvl-youtube.ng-scope.size-l"],[2034647,".wpvl.wpvl-dailymotion > .fblogin.lockoverlay.ng-scope,\n.wpvl.wpvl-youtube.ng-scope.size-xl > .ng-scope + .fblogin.lockoverlay.ng-scope,\n.wpvl.wpvl-youtube.ng-scope.size-xxl > [ng-show=\"!blocked\"] + * + .ng-scope + .fblogin.lockoverlay.ng-scope"]];
+const genericExceptionSieve = [12941665,2952977,8794540,11378159,7308180,678375,9059208,1419719,16120117,16089386,1500050,12736753,12266315,10374072,15628656,15808712,16530279,2429090,4065922,15458099];
+const genericExceptionMap = [["ad.co.il",".ad-link"],["adi.gov.il",".small-ad"],["bipbip.co.il","#printads\n.adlist\n.adpic"],["blms.co.il",".addtitle"],["callil.co.il","#AdTop"],["holmesplace.co.il",".image-advertisement"],["homeless.co.il",".postad"],["investing.com","#findABroker\n.generalOverlay"],["junkyard.co.il",".ad-body"],["kikar.co.il",".adunit"],["lavender.co.il","#topAds"],["leyada.net",".banner-300"],["now14.co.il","#taboola-below-article-thumbnails\n.share-zone"],["pitria.com",".header-ad"],["ynet.co.il",".adclass\n.shareBtn"]];
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

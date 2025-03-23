@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: pol-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_preventSetTimeout = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["PrebidDamOpen","800"],["HubAPI","3000"],["/getComputedStyle[\\s\\S]*?style\\.display=\"none\"[\\s\\S]*?styleBlocked[\\s\\S]*?detected/"],["function check(){console.log(\"checked\");if($(\".adform\").children().length>3){console.log(\"its more\");$(\".adform\").children(\".adform-banner\").show();clearTimeout(check)}}","1000"],["ubfix()"],["no-ads-info"],["bioEp.showPopup"],["hasAdblock"],["notDetected"],["Math.round","5000"],["AdBlock"],["adBanner"],["_actions(a)","2"],["mdpDeBlocker"],["block","0"],["detected","300"],["showAdblockImage","2000"],["adBlockTest","100"]];
-
-const hostnamesMap = new Map([["www.dobreprogramy.pl",0],["kafeteria.pl",1],["polygamia.pl",1],["open.fm",1],["pudelek.pl",1],["wp.pl",2],["naekranie.pl",3],["purepc.pl",4],["calcoolator.pl",5],["pl.vpnmentor.com",6],["aternos.org",7],["filmweb.pl",8],["playpuls.pl",9],["webinsider.pl",10],["start.me",11],["techsetter.pl",12],["temi.pl",13],["film.wp.pl",[14,15]],["www.o2.pl",14],["uroda.abczdrowie.pl",14],["money.pl",15],["komorkomania.pl",15],["abczdrowie.pl",15],["fotoblogia.pl",15],["gadzetomania.pl",15],["autokult.pl",15],["parenting.pl",15],["wiadomosci.wp.pl",15],["tech.wp.pl",15],["dom.wp.pl",15],["facet.wp.pl",15],["finanse.wp.pl",15],["gry.wp.pl",15],["gwiazdy.wp.pl",15],["kobieta.wp.pl",15],["ksiazki.wp.pl",15],["kuchnia.wp.pl",15],["moto.wp.pl",15],["opinie.wp.pl",15],["pogoda.wp.pl",15],["teleshow.wp.pl",15],["turystyka.wp.pl",15],["wideo.wp.pl",15],["wawalove.wp.pl",15],["karmopedia.pl",16],["elektroda.pl",17]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_preventSetTimeout() {
 
 /******************************************************************************/
 
@@ -165,7 +148,7 @@ class RangeParser {
             this.min = this.max = parseInt(s, 10) || 0;
         }
         if ( pos !== -1 ) {
-            this.max = parseInt(s.slice(1), 10) || Number.MAX_SAFE_INTEGER;
+            this.max = parseInt(s.slice(pos + 1), 10) || Number.MAX_SAFE_INTEGER;
         }
     }
     unbound() {
@@ -376,95 +359,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["PrebidDamOpen","800"],["HubAPI","3000"],["/getComputedStyle[\\s\\S]*?style\\.display=\"none\"[\\s\\S]*?styleBlocked[\\s\\S]*?detected/"],["function check(){console.log(\"checked\");if($(\".adform\").children().length>3){console.log(\"its more\");$(\".adform\").children(\".adform-banner\").show();clearTimeout(check)}}","1000"],["ubfix()"],["no-ads-info"],["bioEp.showPopup"],["hasAdblock"],["notDetected"],["Math.round","5000"],["AdBlock"],["adBanner"],["_actions(a)","2"],["mdpDeBlocker"],["block","0"],["detected","300"],["showAdblockImage","2000"],["adBlockTest","100"]];
+const hostnamesMap = new Map([["www.dobreprogramy.pl",0],["kafeteria.pl",1],["polygamia.pl",1],["open.fm",1],["pudelek.pl",1],["wp.pl",2],["naekranie.pl",3],["purepc.pl",4],["calcoolator.pl",5],["pl.vpnmentor.com",6],["aternos.org",7],["filmweb.pl",8],["playpuls.pl",9],["webinsider.pl",10],["start.me",11],["techsetter.pl",12],["temi.pl",13],["film.wp.pl",[14,15]],["www.o2.pl",14],["uroda.abczdrowie.pl",14],["money.pl",15],["komorkomania.pl",15],["abczdrowie.pl",15],["fotoblogia.pl",15],["gadzetomania.pl",15],["autokult.pl",15],["parenting.pl",15],["wiadomosci.wp.pl",15],["tech.wp.pl",15],["dom.wp.pl",15],["facet.wp.pl",15],["finanse.wp.pl",15],["gry.wp.pl",15],["gwiazdy.wp.pl",15],["kobieta.wp.pl",15],["ksiazki.wp.pl",15],["kuchnia.wp.pl",15],["moto.wp.pl",15],["opinie.wp.pl",15],["pogoda.wp.pl",15],["teleshow.wp.pl",15],["turystyka.wp.pl",15],["wideo.wp.pl",15],["wawalove.wp.pl",15],["karmopedia.pl",16],["elektroda.pl",17]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { preventSetTimeout(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_preventSetTimeout();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

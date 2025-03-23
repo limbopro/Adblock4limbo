@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: irn-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_setConstant = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["constant.copyText",""],["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["adsShow","true"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["runScript","false"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
-
-const hostnamesMap = new Map([["blog.ir",0],["anaj.ir",[1,2,3]],["salamatnews.com",[1,2,3]],["ac.ir",4],["androidgozar.com",5],["barcanews.org",6],["binanews.ir",7],["1da.ir",8],["1ea.ir",8],["2ad.ir",8],["themez.top",8],["fontyab.com",[9,10]],["fidibo.com",[11,12,13]],["my.mci.ir",[11,12,13,17,18]],["pwa.mci.ir",[11,12,13,17,18]],["ketabesabz.com",14],["lahzeakhar.com",15],["musicdel.ir",16],["msbmusic.ir",19],["myhastidl.cam",19],["netgasht.com",19],["opizo.me",20],["xip.li",20],["s-moshaver.com",21],["tamasha.com",[22,23,24]],["takmili.com",[25,26,27,28,29]],["takhfifan.com",[30,31]]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_setConstant() {
 
 /******************************************************************************/
 
@@ -474,95 +457,83 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["constant.copyText",""],["jscd","{}"],["document.URL","undefined"],["document.referrer","undefined"],["chromeOS","true"],["ShowPopUp","false"],["adsShow","true"],["openTelegram","noopFunc"],["blurred","false"],["time1","0"],["time30","0"],["navigator.userAgent",""],["navigator.appVersion",""],["navigator.appName",""],["KetabrahPopup","noopFunc"],["customnotify","noopFunc"],["runScript","false"],["window.screen.width","0"],["window.screen.height","0"],["needpop","0"],["count","0"],["appConfig.skips_limit","60000"],["disableSelection","noopFunc"],["socketUrl","undefined"],["VASTEnabled","false"],["vastURL","[]"],["disable_copy","noopFunc"],["disable_drag_text","noopFunc"],["disable_hot_keys","noopFunc"],["disable_drag_images","noopFunc"],["dealWithPrintScrKey","noopFunc"],["_paq","[]"],["_paq.push","noopFunc"]];
+const hostnamesMap = new Map([["blog.ir",0],["anaj.ir",[1,2,3]],["salamatnews.com",[1,2,3]],["ac.ir",4],["androidgozar.com",5],["barcanews.org",6],["binanews.ir",7],["1da.ir",8],["1ea.ir",8],["2ad.ir",8],["themez.top",8],["fontyab.com",[9,10]],["fidibo.com",[11,12,13]],["my.mci.ir",[11,12,13,17,18]],["pwa.mci.ir",[11,12,13,17,18]],["ketabesabz.com",14],["lahzeakhar.com",15],["musicdel.ir",16],["msbmusic.ir",19],["myhastidl.cam",19],["netgasht.com",19],["opizo.me",20],["xip.li",20],["play.radiojavan.com",21],["s-moshaver.com",22],["tamasha.com",[23,24,25]],["takmili.com",[26,27,28,29,30]],["takhfifan.com",[31,32]]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { setConstant(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_setConstant();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

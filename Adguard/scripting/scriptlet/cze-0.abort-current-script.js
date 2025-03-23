@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: cze-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortCurrentScript = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["$","Ads"],["$","fancyBanner"],["$","PartnerRedirectAction"],["window.addEventListener",":visible"],["document.createElement","adbDetect"],["HTMLIFrameElement.prototype.contentWindow"]];
-
-const hostnamesMap = new Map([["csfd.cz",0],["csfd.sk",0],["drbna.cz",1],["onlajny.com",2],["zive.cz",[3,4]],["idnes.cz",[4,5]],["novinky.cz",4],["aktualne.cz",4],["reflex.cz",4],["e15.cz",4],["blesk.cz",4],["ahaonline.cz",4],["super.cz",4],["auto.cz",4],["maminka.cz",4],["autorevue.cz",4],["osobnosti.cz",4],["lidovky.cz",4],["iprima.cz",4],["kupi.cz",4],["kinobox.cz",4],["cnews.cz",4],["zeny.cz",4],["expres.cz",4],["tiscali.cz",4],["extra.cz",4],["onetv.cz",4],["dama.cz",4],["g.cz",4],["mojecelebrity.cz",4],["spisovatele.cz",4],["modnipeklo.cz",4],["karaoketexty.cz",4],["emimino.cz",4],["vitalion.cz",4],["mojezdravi.cz",4],["abicko.cz",4],["arome.cz",4],["labuznik.cz",4],["fights.cz",4],["nasepenize.cz",4]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortCurrentScript() {
 
 /******************************************************************************/
 
@@ -384,95 +367,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["$","Ads"],["$","fancyBanner"],["$","PartnerRedirectAction"],["window.addEventListener",":visible"],["document.createElement","adbDetect"],["HTMLIFrameElement.prototype.contentWindow"]];
+const hostnamesMap = new Map([["csfd.cz",0],["csfd.sk",0],["drbna.cz",1],["onlajny.com",2],["zive.cz",[3,4]],["idnes.cz",[4,5]],["novinky.cz",4],["aktualne.cz",4],["reflex.cz",4],["e15.cz",4],["blesk.cz",4],["ahaonline.cz",4],["super.cz",4],["auto.cz",4],["maminka.cz",4],["autorevue.cz",4],["osobnosti.cz",4],["lidovky.cz",4],["iprima.cz",4],["kupi.cz",4],["kinobox.cz",4],["cnews.cz",4],["zeny.cz",4],["expres.cz",4],["tiscali.cz",4],["extra.cz",4],["onetv.cz",4],["dama.cz",4],["g.cz",4],["mojecelebrity.cz",4],["spisovatele.cz",4],["modnipeklo.cz",4],["karaoketexty.cz",4],["emimino.cz",4],["vitalion.cz",4],["mojezdravi.cz",4],["abicko.cz",4],["arome.cz",4],["labuznik.cz",4],["fights.cz",4],["nasepenize.cz",4]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortCurrentScript(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortCurrentScript();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

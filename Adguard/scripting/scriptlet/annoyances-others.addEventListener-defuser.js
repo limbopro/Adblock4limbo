@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: annoyances-others
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_addEventListenerDefuser = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["/^(mouseout|mouseleave)$/"],["mouseleave"]];
-
-const hostnamesMap = new Map([["10tv.com",0],["kens5.com",0],["newscentermaine.com",0],["5newsonline.com",0],["fox61.com",0],["wtol.com",0],["wiz.io",0],["winnipegfreepress.com",0],["khou.com",0],["abc10.com",0],["12news.com",0],["ksdk.com",0],["whas11.com",0],["wfmynews2.com",0],["wbir.com",0],["wzzm13.com",0],["wltx.com",0],["wqad.com",0],["wnep.com",0],["wgrz.com",0],["cbs8.com",0],["firstcoastnews.com",0],["kare11.com",0],["wtsp.com",0],["ajc.com",0],["wfaa.com",0],["9news.com",0],["fox2now.com",0],["wcnc.com",0],["13newsnow.com",0],["wsvn.com",0],["abc15.com",0],["wwltv.com",0],["wkyc.com",0],["wthr.com",0],["11alive.com",0],["wusa9.com",0],["king5.com",0],["x.com",1],["facebook.com",1],["instagram.com",1],["alibaba.com",1],["dhgate.com",1],["aliexpress.com",1],["temu.com",1]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_addEventListenerDefuser() {
 
 /******************************************************************************/
 
@@ -97,30 +80,32 @@ function addEventListenerDefuser(
         }
         return matchesBoth;
     };
-    runAt(( ) => {
-        proxyApplyFn('EventTarget.prototype.addEventListener', function(context) {
-            const { callArgs, thisArg } = context;
-            let t, h;
-            try {
-                t = String(callArgs[0]);
-                if ( typeof callArgs[1] === 'function' ) {
-                    h = String(safe.Function_toString(callArgs[1]));
-                } else if ( typeof callArgs[1] === 'object' && callArgs[1] !== null ) {
-                    if ( typeof callArgs[1].handleEvent === 'function' ) {
-                        h = String(safe.Function_toString(callArgs[1].handleEvent));
-                    }
-                } else {
-                    h = String(callArgs[1]);
+    const proxyFn = function(context) {
+        const { callArgs, thisArg } = context;
+        let t, h;
+        try {
+            t = String(callArgs[0]);
+            if ( typeof callArgs[1] === 'function' ) {
+                h = String(safe.Function_toString(callArgs[1]));
+            } else if ( typeof callArgs[1] === 'object' && callArgs[1] !== null ) {
+                if ( typeof callArgs[1].handleEvent === 'function' ) {
+                    h = String(safe.Function_toString(callArgs[1].handleEvent));
                 }
-            } catch {
+            } else {
+                h = String(callArgs[1]);
             }
-            if ( type === '' && pattern === '' ) {
-                safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
-            } else if ( shouldPrevent(thisArg, t, h) ) {
-                return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
-            }
-            return context.reflect();
-        });
+        } catch {
+        }
+        if ( type === '' && pattern === '' ) {
+            safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
+        } else if ( shouldPrevent(thisArg, t, h) ) {
+            return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
+        }
+        return context.reflect();
+    };
+    runAt(( ) => {
+        proxyApplyFn('EventTarget.prototype.addEventListener', proxyFn);
+        proxyApplyFn('document.addEventListener', proxyFn);
     }, extraArgs.runAt);
 }
 
@@ -429,95 +414,83 @@ function shouldDebug(details) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["scroll"],["/^(mouseout|mouseleave)$/"],["mouseleave"]];
+const hostnamesMap = new Map([["theverge.com",0],["9news.com",[0,1]],["11alive.com",[0,1]],["thehill.com",0],["abc.com",0],["abc11.com",0],["abc13.com",0],["abc30.com",0],["abc7.com",0],["abc7chicago.com",0],["abc7news.com",0],["abc7ny.com",0],["telemundopr.com",0],["nbcchicago.com",0],["nbcdfw.com",0],["nbcboston.com",0],["nbcconnecticut.com",0],["nbcphiladelphia.com",0],["nbcsandiego.com",0],["nbclosangeles.com",0],["nbcnewyork.com",0],["nbcbayarea.com",0],["nbc4i.com",0],["ktla.com",0],["ktsm.com",0],["kark.com",0],["myarklamiss.com",0],["nwahomepage.com",0],["mytwintiers.com",0],["news10.com",0],["wavy.com",0],["finance.yahoo.com",0],["10tv.com",1],["kens5.com",1],["newscentermaine.com",1],["5newsonline.com",1],["fox61.com",1],["wtol.com",1],["wiz.io",1],["winnipegfreepress.com",1],["khou.com",1],["abc10.com",1],["12news.com",1],["ksdk.com",1],["whas11.com",1],["wfmynews2.com",1],["wbir.com",1],["wzzm13.com",1],["wltx.com",1],["wqad.com",1],["wnep.com",1],["wgrz.com",1],["cbs8.com",1],["firstcoastnews.com",1],["kare11.com",1],["wtsp.com",1],["ajc.com",1],["wfaa.com",1],["fox2now.com",1],["wcnc.com",1],["13newsnow.com",1],["wsvn.com",1],["abc15.com",1],["wwltv.com",1],["wkyc.com",1],["wthr.com",1],["wusa9.com",1],["king5.com",1],["x.com",2],["instagram.com",2],["alibaba.com",2],["dhgate.com",2],["aliexpress.com",2],["temu.com",2]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { addEventListenerDefuser(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_addEventListenerDefuser();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

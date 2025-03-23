@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".entry-content > div > strong\",\"tasks\":[[\"has-text\",\"find & fix Windows error\"]]}"],["{\"selector\":\".attention-button-wrap\",\"tasks\":[[\"has-text\",\"Reimage\"]]}","{\"selector\":\".nfc-bottom-right\",\"tasks\":[[\"has-text\",\"Reimage\"]]}","{\"selector\":\"a\",\"tasks\":[[\"has-text\",\"Reimage\"]]}","{\"selector\":\"a\",\"tasks\":[[\"has-text\",\"SpyHunter\"]]}","{\"selector\":\"th\",\"tasks\":[[\"has-text\",\"/^Detection$/\"],[\"spath\",\" + td\"]]}","{\"selector\":\"th\",\"tasks\":[[\"has-text\",\"/^Detection$/\"]]}"],["{\"selector\":\"#alt_content_main_div > p\",\"tasks\":[[\"has-text\",\"SpyHunter\"]]}","{\"selector\":\".entry-content > div\",\"tasks\":[[\"has-text\",\"Special Offer\"]]}"]];
-
-const hostnamesMap = new Map([["thewindowsclub.com",0],["2-spyware.com",1],["novirus.uk",1],["faravirus.ro",1],["uirusu.jp",1],["virusi.hr",1],["wubingdu.cn",1],["avirus.hu",1],["ioys.gr",1],["odstranitvirus.cz",1],["tanpavirus.web.id",1],["utanvirus.se",1],["virukset.fi",1],["losvirus.es",1],["virusler.info.tr",1],["semvirus.pt",1],["lesvirus.fr",1],["senzavirus.it",1],["dieviren.de",1],["viruset.no",1],["usunwirusa.pl",1],["zondervirus.nl",1],["bedynet.ru",1],["virusai.lt",1],["virusi.bg",1],["viirused.ee",1],["udenvirus.dk",1],["howtoremove.guide",2]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\".entry-content > div > strong\",\"tasks\":[[\"has-text\",\"find & fix Windows error\"]]}"],["{\"selector\":\".attention-button-wrap\",\"tasks\":[[\"has-text\",\"Reimage\"]]}","{\"selector\":\".nfc-bottom-right\",\"tasks\":[[\"has-text\",\"Reimage\"]]}","{\"selector\":\"a\",\"tasks\":[[\"has-text\",\"Reimage\"]]}","{\"selector\":\"a\",\"tasks\":[[\"has-text\",\"SpyHunter\"]]}","{\"selector\":\"th\",\"tasks\":[[\"has-text\",\"/^Detection$/\"],[\"spath\",\" + td\"]]}","{\"selector\":\"th\",\"tasks\":[[\"has-text\",\"/^Detection$/\"]]}"],["{\"selector\":\"#alt_content_main_div > p\",\"tasks\":[[\"has-text\",\"SpyHunter\"]]}","{\"selector\":\".entry-content > div\",\"tasks\":[[\"has-text\",\"Special Offer\"]]}"]];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["thewindowsclub.com",1],["2-spyware.com",2],["novirus.uk",2],["faravirus.ro",2],["uirusu.jp",2],["virusi.hr",2],["wubingdu.cn",2],["avirus.hu",2],["ioys.gr",2],["odstranitvirus.cz",2],["tanpavirus.web.id",2],["utanvirus.se",2],["virukset.fi",2],["losvirus.es",2],["virusler.info.tr",2],["semvirus.pt",2],["lesvirus.fr",2],["senzavirus.it",2],["dieviren.de",2],["viruset.no",2],["usunwirusa.pl",2],["zondervirus.nl",2],["bedynet.ru",2],["virusai.lt",2],["virusi.bg",2],["viirused.ee",2],["udenvirus.dk",2],["howtoremove.guide",3]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

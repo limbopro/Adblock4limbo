@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: fra-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_setConstant = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["penci_options_set.ad_blocker_detector","false"],["ima","{}"],["integrityObserver.corrupted","0"],["checkAdsBlocked","noopFunc"],["dAp","true"],["navigator.brave","undefined"],["checkDiv","noopFunc"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["integrityObserver.corrupted","false"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["advanced_ads_ready","noopFunc"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["empire.pop","undefined"],["empire.direct","undefined"],["empire.isAdbActive","false"],["empire.directHideAds","undefined"],["empire.countpremium.film","0"],["empire.countpremium.serie","0"],["empire.countpremiumaccount.film","0"],["empire.countpremiumaccount.serie","0"],["empire.mediaData.advisorDirect",""],["empire.mediaData.advisorMovie","1"],["empire.mediaData.advisorSerie","1"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
-
-const hostnamesMap = new Map([["equinoxmagazine.fr",0],["adala-news.fr",0],["tvaplus.ca",1],["journaldesfemmes.fr",2],["rustica.fr",3],["cookomix.com",4],["empire-anime.com",[5,29,30,31,32,33,34,35,36,37,38,39]],["empire-streamz.fr",[5,29,30,31,32,33,34,35,36]],["empire-stream.net",[5,29,30,31,32,33,34,35,36]],["cinefil.com",6],["signal-arnaques.com",7],["dhnet.be",8],["sudinfo.be",8],["7sur7.be",8],["rtl.be",8],["pianoweb.fr",9],["parlons-basket.com",10],["mac4ever.com",10],["jaitoutcompris.com",11],["varmatin.com",12],["nicematin.com",12],["commentcamarche.net",13],["20minutes.fr",14],["hollywoodpq.com",15],["jardiner-malin.fr",16],["hack-life.net",17],["jtrouver.com",18],["playtv.fr",[19,20]],["skyrock.com",21],["skyrock.fr",21],["m6.fr",[22,47,48,49,50,51]],["tf1.fr",[23,24,25,47,48,49,50,51]],["justarrived.lu",26],["occasions.decathlon.fr",[27,28]],["e-player-stream.app",41],["maxisciences.com",42],["gentside.com",42],["femmeactuelle.fr",42],["geo.fr",42],["voici.fr",42],["programme-tv.net",42],["gala.fr",42],["capital.fr",42],["allocine.fr",43],["funradio.fr",44],["rtl2.fr",44],["rtl.fr",44],["reflectim.fr",45],["e-sushi.fr",45],["canalplus.com",46],["tf1info.fr",52]]);
-
-const entitiesMap = new Map([["empire-streaming",[5,29,30,31,32,33,34,35,36,37,38,39]],["e-player-stream",40]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_setConstant() {
 
 /******************************************************************************/
 
@@ -474,95 +457,83 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["penci_options_set.ad_blocker_detector","false"],["ima","{}"],["integrityObserver.corrupted","0"],["checkAdsBlocked","noopFunc"],["dAp","true"],["checkDiv","noopFunc"],["navigator.brave","undefined"],["moneyAbovePrivacy","true"],["bAdBlocker","false"],["noPub","1"],["canRunAds","true"],["adClasses","[]"],["adblockdetected","false"],["integrityObserver.corrupted","false"],["window.adsapp","true"],["ujloijdkhjkwus","false"],["wIsAdBlocked","false"],["adBlockDetected","false"],["google_jobrunner","noopFunc"],["ptv.Data.uniroll","{}"],["pmd.Data.uniroll","{}"],["OAS_AD","noopFunc"],["Object.prototype.isBlockerDetected","false"],["__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired","false"],["__TF1_CONFIG__.adblock.display","false"],["__TF1_CONFIG__.adblock.serverRequest","false"],["advanced_ads_ready","noopFunc"],["FastClick","noopFunc"],["FastClick.attach","noopFunc"],["empire.isAdbActive","false"],["empire.directHideAds","undefined"],["empire.countpremium.film","0"],["empire.countpremium.serie","0"],["empire.countpremiumMore.film","0"],["empire.countpremiumMore.serie","0"],["empire.countpremiumaccount.film","0"],["empire.countpremiumaccount.serie","0"],["empire.mediaData.advisorDirect",""],["empire.mediaData.advisorMovie","1"],["empire.mediaData.advisorSerie","1"],["adsConfig","[]"],["isSetupAccess","true"],["Object.prototype.withAds","false"],["AC.config.ads","{}"],["getAudioAdUrl","noopFunc"],["aEteAffiche","true"],["__data.application.settings.featPlayerAds","false"],["tv.freewheel.SDK.Util.pingURLWithForm","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithImage","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithScript","trueFunc"],["tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest","trueFunc"],["tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest","trueFunc"],["__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable","false"]];
+const hostnamesMap = new Map([["equinoxmagazine.fr",0],["adala-news.fr",0],["tvaplus.ca",1],["journaldesfemmes.fr",2],["rustica.fr",3],["cookomix.com",4],["cinefil.com",5],["empire-anime.com",[6,29,30,31,32,33,34,35,36,37,38,39]],["empire-streamz.fr",[6,29,30,31,32,33,34,35,36]],["empire-streaming.*",[6,29,30,31,32,33,34,35,36,37,38,39]],["empire-stream.net",6],["signal-arnaques.com",7],["dhnet.be",8],["sudinfo.be",8],["7sur7.be",8],["rtl.be",8],["pianoweb.fr",9],["parlons-basket.com",10],["mac4ever.com",10],["jaitoutcompris.com",11],["varmatin.com",12],["nicematin.com",12],["commentcamarche.net",13],["20minutes.fr",14],["hollywoodpq.com",15],["jardiner-malin.fr",16],["hack-life.net",17],["jtrouver.com",18],["playtv.fr",[19,20]],["skyrock.com",21],["skyrock.fr",21],["m6.fr",[22,47,48,49,50,51]],["tf1.fr",[23,24,25,47,48,49,50,51]],["justarrived.lu",26],["occasions.decathlon.fr",[27,28]],["empire-stream.*",[29,30,31,32,33,34,35,36]],["e-player-stream.*",40],["e-player-stream.app",41],["maxisciences.com",42],["gentside.com",42],["femmeactuelle.fr",42],["geo.fr",42],["voici.fr",42],["programme-tv.net",42],["gala.fr",42],["capital.fr",42],["allocine.fr",43],["funradio.fr",44],["rtl2.fr",44],["rtl.fr",44],["reflectim.fr",45],["e-sushi.fr",45],["canalplus.com",46],["tf1info.fr",52]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { setConstant(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_setConstant();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"]}"],["{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"]];
-
-const hostnamesMap = new Map([["niskevesti.rs",0],["filmitv.rs",1]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"]}","{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["niskevesti.rs",1],["filmitv.rs",2]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

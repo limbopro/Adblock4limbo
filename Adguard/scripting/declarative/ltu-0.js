@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".background[data-url^=\\\"https://bit.ly/\\\"]\",\"action\":[\"style\",\"visibility: hidden !important;\"]}"],["{\"selector\":\".LStatic__inner\",\"action\":[\"style\",\"padding-top: 0 !important\"]}"],["{\"selector\":\".main > #header\",\"action\":[\"style\",\"margin-top: unset !important\"]}","{\"selector\":\".main > .fixed_userbar\",\"action\":[\"style\",\"margin-bottom: unset !important\"]}"],["{\"selector\":\"#mdelfi_latest_news\",\"action\":[\"style\",\"min-height: unset !important\"]}"],["{\"selector\":\".brandpage-wrapper\",\"action\":[\"style\",\"margin-top: unset !important\"]}"],["{\"selector\":\".wrapper\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"]];
-
-const hostnamesMap = new Map([["autoplius.lt",0],["lrytas.lt",1],["torrent.ai",2],["torrent.lt",2],["m.delfi.lt",3],["imones.lt",4],["15min.lt",5]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\".background[data-url^=\\\"https://bit.ly/\\\"]\",\"action\":[\"style\",\"visibility: hidden !important;\"]}","{\"selector\":\".LStatic__inner\",\"action\":[\"style\",\"padding-top: 0 !important\"]}","{\"selector\":\".main > #header\",\"action\":[\"style\",\"margin-top: unset !important\"]}\n{\"selector\":\".main > .fixed_userbar\",\"action\":[\"style\",\"margin-bottom: unset !important\"]}","{\"selector\":\"#mdelfi_latest_news\",\"action\":[\"style\",\"min-height: unset !important\"]}","{\"selector\":\".brandpage-wrapper\",\"action\":[\"style\",\"margin-top: unset !important\"]}","{\"selector\":\".wrapper\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"];
+const argsSeqs = [0,1,2,3,4,5,6];
+const hostnamesMap = new Map([["autoplius.lt",1],["lrytas.lt",2],["torrent.ai",3],["torrent.lt",3],["m.delfi.lt",4],["imones.lt",5],["15min.lt",6]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

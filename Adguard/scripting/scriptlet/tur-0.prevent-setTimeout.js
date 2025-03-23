@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: tur-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_preventSetTimeout = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["adsbygoogle"],["/adElement\\.innerHTML|=document\\[_0x/"],["adblockalert"],["AdBlock"],["offsetParent"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["/div#gpt-passback|playerNew\\.dispose\\(\\)/"],["/img[\\s\\S]*?\\.gif/"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"],["jsAd"]];
-
-const hostnamesMap = new Map([["ankarakampkafasi.com",0],["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["menufiyatlari.com.tr",1],["sosyogaraj.com.tr",1],["teknoinfo.com.tr",1],["gecmisi.com.tr",2],["inceleriz.com",3],["sinnerclownceviri.com",[4,5]],["intekno.net",6],["kuponuna170.top",7],["kuponuna171.top",7],["kuponuna172.top",7],["kuponuna173.top",7],["kuponuna174.top",7],["kuponuna175.top",7],["kuponuna176.top",7],["kuponuna177.top",7],["kuponuna178.top",7],["kuponuna179.top",7],["kuponuna180.top",7],["kuponuna181.top",7],["kuponuna182.top",7],["kuponuna183.top",7],["kuponuna184.top",7],["kuponuna185.top",7],["kuponuna186.top",7],["kuponuna187.top",7],["kuponuna188.top",7],["kuponuna189.top",7],["kuponuna190.top",7],["kuponuna191.top",7],["kuponuna192.top",7],["kuponuna193.top",7],["kuponuna194.top",7],["kuponuna195.top",7],["kuponuna196.top",7],["kuponuna197.top",7],["kuponuna198.top",7],["kuponuna199.top",7],["kuponuna200.top",7],["kuponuna201.top",7],["kuponuna202.top",7],["kuponuna203.top",7],["kuponuna204.top",7],["kuponuna205.top",7],["kuponuna206.top",7],["kuponuna207.top",7],["kuponuna208.top",7],["kuponuna209.top",7],["kuponuna210.top",7],["kuponuna211.top",7],["kuponuna212.top",7],["kuponuna213.top",7],["kuponuna214.top",7],["kuponuna215.top",7],["kuponuna216.top",7],["kuponuna217.top",7],["kuponuna218.top",7],["kuponuna219.top",7],["kuponuna220.top",7],["kuponuna221.top",7],["kuponuna222.top",7],["kuponuna223.top",7],["kuponuna224.top",7],["kuponuna225.top",7],["kuponuna226.top",7],["kuponuna227.top",7],["kuponuna228.top",7],["kuponuna229.top",7],["kuponuna230.top",7],["kuponuna231.top",7],["kuponuna232.top",7],["kuponuna233.top",7],["kuponuna234.top",7],["kuponuna235.top",7],["kuponuna236.top",7],["kuponuna237.top",7],["kuponuna238.top",7],["kuponuna239.top",7],["kuponuna240.top",7],["kuponuna241.top",7],["kuponuna242.top",7],["kuponuna243.top",7],["kuponuna244.top",7],["kuponuna245.top",7],["kuponuna246.top",7],["kuponuna247.top",7],["kuponuna248.top",7],["kuponuna249.top",7],["kuponuna250.top",7],["veryansintv.com",8],["puhutv.com",9],["dizigom1.tv",10],["filmizletv2.com",11],["filmizletv18.com",11],["eksisozluk.com",12],["joymaxtr.com",13]]);
-
-const entitiesMap = new Map([["filmizletv",11]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_preventSetTimeout() {
 
 /******************************************************************************/
 
@@ -165,7 +148,7 @@ class RangeParser {
             this.min = this.max = parseInt(s, 10) || 0;
         }
         if ( pos !== -1 ) {
-            this.max = parseInt(s.slice(1), 10) || Number.MAX_SAFE_INTEGER;
+            this.max = parseInt(s.slice(pos + 1), 10) || Number.MAX_SAFE_INTEGER;
         }
     }
     unbound() {
@@ -376,95 +359,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["0===o.offsetLeft&&0===o.offsetTop"],["adsbygoogle"],["adblockalert"],["AdBlock"],["offsetParent"],["ad_block_detected"],["$('body').empty().append"],["kanews-modal-adblock","5000"],["/div#gpt-passback|playerNew\\.dispose\\(\\)/"],["/img[\\s\\S]*?\\.gif/"],["/filmizletv\\..*\\/uploads\\/Psk\\//"],["wt()","100"],["jsAd"]];
+const hostnamesMap = new Map([["ankarakampkafasi.com",0],["zamaninvarken.com",0],["kredi.biz.tr",0],["kriptoradar.com",0],["bakimlikadin.net",0],["korsanedebiyat.com",0],["ozbeceriksizler.co",0],["genelpara.com",0],["azbuz.org",0],["mustafabukulmez.com",0],["menufiyatlari.com.tr",1],["sosyogaraj.com.tr",1],["teknoinfo.com.tr",1],["inceleriz.com",2],["sinnerclownceviri.com",[3,4]],["intekno.net",5],["kuponuna170.top",6],["kuponuna171.top",6],["kuponuna172.top",6],["kuponuna173.top",6],["kuponuna174.top",6],["kuponuna175.top",6],["kuponuna176.top",6],["kuponuna177.top",6],["kuponuna178.top",6],["kuponuna179.top",6],["kuponuna180.top",6],["kuponuna181.top",6],["kuponuna182.top",6],["kuponuna183.top",6],["kuponuna184.top",6],["kuponuna185.top",6],["kuponuna186.top",6],["kuponuna187.top",6],["kuponuna188.top",6],["kuponuna189.top",6],["kuponuna190.top",6],["kuponuna191.top",6],["kuponuna192.top",6],["kuponuna193.top",6],["kuponuna194.top",6],["kuponuna195.top",6],["kuponuna196.top",6],["kuponuna197.top",6],["kuponuna198.top",6],["kuponuna199.top",6],["kuponuna200.top",6],["kuponuna201.top",6],["kuponuna202.top",6],["kuponuna203.top",6],["kuponuna204.top",6],["kuponuna205.top",6],["kuponuna206.top",6],["kuponuna207.top",6],["kuponuna208.top",6],["kuponuna209.top",6],["kuponuna210.top",6],["kuponuna211.top",6],["kuponuna212.top",6],["kuponuna213.top",6],["kuponuna214.top",6],["kuponuna215.top",6],["kuponuna216.top",6],["kuponuna217.top",6],["kuponuna218.top",6],["kuponuna219.top",6],["kuponuna220.top",6],["kuponuna221.top",6],["kuponuna222.top",6],["kuponuna223.top",6],["kuponuna224.top",6],["kuponuna225.top",6],["kuponuna226.top",6],["kuponuna227.top",6],["kuponuna228.top",6],["kuponuna229.top",6],["kuponuna230.top",6],["kuponuna231.top",6],["kuponuna232.top",6],["kuponuna233.top",6],["kuponuna234.top",6],["kuponuna235.top",6],["kuponuna236.top",6],["kuponuna237.top",6],["kuponuna238.top",6],["kuponuna239.top",6],["kuponuna240.top",6],["kuponuna241.top",6],["kuponuna242.top",6],["kuponuna243.top",6],["kuponuna244.top",6],["kuponuna245.top",6],["kuponuna246.top",6],["kuponuna247.top",6],["kuponuna248.top",6],["kuponuna249.top",6],["kuponuna250.top",6],["veryansintv.com",7],["puhutv.com",8],["dizigom1.tv",9],["filmizletv18.com",10],["filmizletv.*",10],["eksisozluk.com",11],["joymaxtr.com",12]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { preventSetTimeout(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_preventSetTimeout();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

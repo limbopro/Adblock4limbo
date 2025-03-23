@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[14648089,"#ea_intext_div"],[8451109,"td#freenet_table_ads"],[11017215,".lapni-pop-over"],[16662940,"#xenium_hot_offers"]];
+const genericSelectorMap = [[14648089,"#ea_intext_div"],[8451109,"td#freenet_table_ads"],[11017215,".lapni-pop-over"],[16662940,"#xenium_hot_offers"],[3482616,"#banner_ad"],[13469168,"#adbody"],[2738591,"#newAd,\n#newAd"],[7912790,"#Ads"]];
+const genericExceptionSieve = [3482616,13469168,2738591,7912790];
+const genericExceptionMap = [["bg-ikonomika.com","#banner_ad"],["noshtuvki.burkan.info","#adbody"],["olx.bg","#newAd"],["prodavalnik.com","#newAd"],["rbb.bg","#Ads"]];
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: vie-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortOnPropertyRead = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["Cookies"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["affUrls"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["localStorage"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
-
-const hostnamesMap = new Map([["animevietsubs.net",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["mupnungvl.pro",5],["plcdn.xyz",[6,7,8,9,10]],["thichxemphim1.net",11],["tinsoikeo.live",12],["motchiill.to",12],["ohaytv.me",12],["truyensieuhay.com",13],["hayhaytv.site",13],["quangcaoyenbai.com",13],["phimchill.life",13],["thuvienhd.biz",13],["tv.tvhayhd.org",13],["www.khophim88s.com",13],["thefaplive.com",13],["mv.dailyphimz.com",13],["mv.phimbathu.one",13],["sexhihiz.vc",13],["anime47.click",13],["veryfiles.com",14],["viettoons.tv",15],["mv.phimmoiaz.cc",15],["dood.pm",15],["ytstv.me",15],["anime1.site",15],["anh.moe",15],["maclife.io",15],["xemphimjav.com",15],["hoctot.hocmai.vn",15],["bluphim2.com",15],["cdn2.blueskychilling.online",15],["ohaha79xxx.site",15],["herotruyen.com",15],["truyenfull.vision",15],["player.phimapi.com",15],["noitu.pro",15],["vinaurl.net",16],["www.nettruyenupp.com",17],["www.phimdinhcao.online",18],["motchillfa.com",18],["xnhau.one",18],["xoilacxj.cc",19],["yts.do",20],["yts.mx",20],["yts.rs",20],["znews.vn",21]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortOnPropertyRead() {
 
 /******************************************************************************/
 
@@ -302,95 +285,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["affUrls"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["Cookies"],["sp"],["localStorage"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
+const hostnamesMap = new Map([["animevietsubs.net",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["plcdn.xyz",[5,6,7,8,9]],["thichxemphim1.net",10],["tinsoikeo.live",11],["motchiill.sh",11],["ohaytv.id",11],["truyensieuhay.com",12],["hayhaytv.site",12],["quangcaoyenbai.com",12],["phimchill.life",12],["thuvienhd.biz",12],["tv.tvhayhd.org",12],["www.khophim88s.com",12],["thefaplive.com",12],["mv.dailyphimz.com",12],["mv.phimbathu.one",12],["sexhihiz.org",12],["anime47.help",12],["teamlanhlung3.shop",[12,18]],["veryfiles.com",13],["viettoons.tv",14],["mv.phimmoiaz.cc",14],["ytstv.me",14],["anime3.site",14],["anh.moe",14],["maclife.io",14],["xemphimjav.com",14],["hoctot.hocmai.vn",14],["bluphim2.com",14],["cdn2.blueskychilling.online",14],["ohaha79xxx.site",14],["herotruyen.com",14],["truyenfull.vision",14],["player.phimapi.com",14],["noitu.pro",14],["vinaurl.net",15],["vlgaimup.pro",16],["www.nettruyenupp.com",17],["www.phimdinhcao.online",18],["motchill77.com",18],["xnhau.fun",18],["xoilacxj.cc",19],["yts.do",20],["yts.mx",20],["yts.rs",20],["znews.vn",21]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortOnPropertyRead(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortOnPropertyRead();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

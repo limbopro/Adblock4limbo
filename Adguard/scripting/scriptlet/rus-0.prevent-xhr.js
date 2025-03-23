@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: rus-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_preventXhr = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/getCode|\\/vast/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["livejournal.com/video/check?recordId="],["method:GET"],["strm.yandex.ru/get/"]];
-
-const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["anidub.vip",2],["anidubonline.com",2],["116.ru",3],["14.ru",3],["161.ru",3],["164.ru",3],["173.ru",3],["178.ru",3],["26.ru",3],["29.ru",3],["35.ru",3],["43.ru",3],["45.ru",3],["48.ru",3],["51.ru",3],["53.ru",3],["56.ru",3],["59.ru",3],["60.ru",3],["63.ru",3],["68.ru",3],["71.ru",3],["72.ru",3],["74.ru",3],["76.ru",3],["86.ru",3],["89.ru",3],["93.ru",3],["chita.ru",3],["e1.ru",3],["ircity.ru",3],["izh1.ru",3],["mgorsk.ru",3],["msk1.ru",3],["ngs.ru",3],["ngs22.ru",3],["ngs24.ru",3],["ngs42.ru",3],["ngs55.ru",3],["ngs70.ru",3],["nn.ru",3],["sochi1.ru",3],["sterlitamak1.ru",3],["tolyatty.ru",3],["ufa1.ru",3],["v1.ru",3],["vladivostok1.ru",3],["voronezh1.ru",3],["www.fontanka.ru",3],["ya62.ru",3],["4pda.to",4],["adme.media",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_preventXhr() {
 
 /******************************************************************************/
 
@@ -528,95 +511,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["/ad\\.mail|adfox|adhigh|adriver|mc\\.yandex|mediametrics|otm-r|static-mon/"],["/br/"],["/getCode|\\/vast/"],["/hits/event/","method:POST"],["/m2?_"],["/wl-analytics\\.tsp\\.li/"],["livejournal.com/video/check?recordId="],["method:GET"],["strm.yandex.ru/get/"]];
+const hostnamesMap = new Map([["liveinternet.ru",0],["motorpage.ru",1],["anidub.vip",2],["anidubonline.com",2],["116.ru",3],["14.ru",3],["161.ru",3],["164.ru",3],["173.ru",3],["178.ru",3],["26.ru",3],["29.ru",3],["35.ru",3],["43.ru",3],["45.ru",3],["48.ru",3],["51.ru",3],["53.ru",3],["56.ru",3],["59.ru",3],["60.ru",3],["63.ru",3],["68.ru",3],["71.ru",3],["72.ru",3],["74.ru",3],["76.ru",3],["86.ru",3],["89.ru",3],["93.ru",3],["chita.ru",3],["e1.ru",3],["ircity.ru",3],["izh1.ru",3],["mgorsk.ru",3],["msk1.ru",3],["ngs.ru",3],["ngs22.ru",3],["ngs24.ru",3],["ngs42.ru",3],["ngs55.ru",3],["ngs70.ru",3],["nn.ru",3],["sochi1.ru",3],["sterlitamak1.ru",3],["tolyatty.ru",3],["ufa1.ru",3],["v1.ru",3],["vladivostok1.ru",3],["voronezh1.ru",3],["www.fontanka.ru",3],["ya62.ru",3],["4pda.to",4],["adme.media",5],["livejournal.com",6],["sm.news",7],["dzen.ru",8],["frontend.vh.yandex.ru",8],["naydex.net",8],["widgets.kinopoisk.ru",8],["www.kinopoisk.ru",8],["yastatic.net",8]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { preventXhr(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_preventXhr();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

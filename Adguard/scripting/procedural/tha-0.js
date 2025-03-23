@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".col_del\",\"tasks\":[[\"has-text\",\"ปิดป้ายนี้\"]]}","{\"selector\":\"div.panel-primary.panel\",\"tasks\":[[\"has-text\",\"Text Link Ads\"]]}"],["{\"selector\":\"#above_comments\",\"tasks\":[[\"has\",{\"selector\":\"h2\",\"tasks\":[[\"has-text\",\"/Blognone Workplace/\"]]}]]}"],["{\"selector\":\".code-block a[onclick*=\\\"'banner'\\\"]\",\"tasks\":[[\"upward\",2]]}","{\"selector\":\".elementor-widget-container div[data-advadstrackid]\",\"tasks\":[[\"upward\",2]]}"],["{\"selector\":\".news-detail p\",\"tasks\":[[\"has-text\",\"/Advertisement/\"]]}"],["{\"selector\":\"#postlist li[id^=\\\"post_\\\"]\",\"tasks\":[[\"has\",{\"selector\":\".posthead:has(span a[href*=\\\"/advertisement/\\\"])\"}]]}"],["{\"selector\":\".panel-default\",\"tasks\":[[\"has\",{\"selector\":\"ul li div:has(a[href*=\\\"/game/page/\\\"])\"}]]}"],["{\"selector\":\".card.game_page\",\"tasks\":[[\"has\",{\"selector\":\".box:has(.box-banner)\"}]]}","{\"selector\":\"div[class^=\\\"card\\\"]\",\"tasks\":[[\"has\",{\"selector\":\"h4\",\"tasks\":[[\"has-text\",\"/RECOMMEND APPS/\"]]}]]}"],["{\"selector\":\".news_view div div\",\"tasks\":[[\"has-text\",\"/Advertisement/\"]]}"],["{\"selector\":\".top_banner\",\"tasks\":[[\"has\",{\"selector\":\"div span:has(iframe[src*=\\\"ads.siamphone.com\\\"])\"}]]}"],["{\"selector\":\".theiaStickySidebar .widget\",\"tasks\":[[\"has\",{\"selector\":\".widget-container p:has(a[rel=\\\"noopener\\\"])\"}]]}"],["{\"selector\":\".content center\",\"tasks\":[[\"has-text\",\"/Advertisement/\"]]}"]];
-
-const hostnamesMap = new Map([["animedd.xyz",0],["blognone.com",1],["gamingdose.com",2],["jarm.com",3],["jokergameth.com",4],["mustplay.in.th",5],["playulti.com",6],["popcornfor2.com",7],["siamphone.com",8],["techtalkthai.com",9],["thaijobsgov.com",10]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\".col_del\",\"tasks\":[[\"has-text\",\"ปิดป้ายนี้\"]]}","{\"selector\":\"div.panel-primary.panel\",\"tasks\":[[\"has-text\",\"Text Link Ads\"]]}"],["{\"selector\":\"#above_comments\",\"tasks\":[[\"has\",{\"selector\":\"h2\",\"tasks\":[[\"has-text\",\"/Blognone Workplace/\"]]}]]}"],["{\"selector\":\".code-block a[onclick*=\\\"'banner'\\\"]\",\"tasks\":[[\"upward\",2]]}","{\"selector\":\".elementor-widget-container div[data-advadstrackid]\",\"tasks\":[[\"upward\",2]]}"],["{\"selector\":\".news-detail p\",\"tasks\":[[\"has-text\",\"/Advertisement/\"]]}"],["{\"selector\":\"#postlist li[id^=\\\"post_\\\"]\",\"tasks\":[[\"has\",{\"selector\":\".posthead:has(span a[href*=\\\"/advertisement/\\\"])\"}]]}"],["{\"selector\":\".panel-default\",\"tasks\":[[\"has\",{\"selector\":\"ul li div:has(a[href*=\\\"/game/page/\\\"])\"}]]}"],["{\"selector\":\".card.game_page\",\"tasks\":[[\"has\",{\"selector\":\".box:has(.box-banner)\"}]]}","{\"selector\":\"div[class^=\\\"card\\\"]\",\"tasks\":[[\"has\",{\"selector\":\"h4\",\"tasks\":[[\"has-text\",\"/RECOMMEND APPS/\"]]}]]}"],["{\"selector\":\".news_view div div\",\"tasks\":[[\"has-text\",\"/Advertisement/\"]]}"],["{\"selector\":\".top_banner\",\"tasks\":[[\"has\",{\"selector\":\"div span:has(iframe[src*=\\\"ads.siamphone.com\\\"])\"}]]}"],["{\"selector\":\".theiaStickySidebar .widget\",\"tasks\":[[\"has\",{\"selector\":\".widget-container p:has(a[rel=\\\"noopener\\\"])\"}]]}"],["{\"selector\":\".content center\",\"tasks\":[[\"has-text\",\"/Advertisement/\"]]}"]];
+const argsSeqs = [0,1,2,3,4,5,6,7,8,9,10,11];
+const hostnamesMap = new Map([["animedd.xyz",1],["blognone.com",2],["gamingdose.com",3],["jarm.com",4],["jokergameth.com",5],["mustplay.in.th",6],["playulti.com",7],["popcornfor2.com",8],["siamphone.com",9],["techtalkthai.com",10],["thaijobsgov.com",11]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

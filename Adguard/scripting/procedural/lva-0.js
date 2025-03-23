@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".widget_execphp\",\"tasks\":[[\"has-text\",\"Reklāmraksti\"]]}"]];
-
-const hostnamesMap = new Map([["zz.lv",0],["staburags.lv",0],["aluksniesiem.lv",0],["bauskasdzive.lv",0],["dzirkstele.lv",0],["ziemellatvija.lv",0],["rekurzeme.lv",0]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\".widget_execphp\",\"tasks\":[[\"has-text\",\"Reklāmraksti\"]]}"]];
+const argsSeqs = [0,1];
+const hostnamesMap = new Map([["zz.lv",1],["staburags.lv",1],["aluksniesiem.lv",1],["bauskasdzive.lv",1],["dzirkstele.lv",1],["ziemellatvija.lv",1],["rekurzeme.lv",1]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

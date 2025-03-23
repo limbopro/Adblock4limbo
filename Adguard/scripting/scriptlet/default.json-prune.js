@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_jsonPrune = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id"],["*","*.adserverDomain"],["urls","urls.0"],["AffiliateAdBlock"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints"],["value.media.ad_breaks"],["data.[].vast_url"],["adReinsertion"],["enabled","testhide"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["data.getDetailPageContent.linkCustomAdOffers.[-].title"],["data.getTaboolaAds.*"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["ad_slots"],["plugins.dfp"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["MediaContainer.Metadata.[].Ad"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["resource_response.data.[-].pin_promotion_id resource_response.data.results.[-].pin_promotion_id"],["initialReduxState.pins.{-}.pin_promotion_id initialReduxState.resources.UserHomefeedResource.*.data.[-].pin_promotion_id"],["ads"],["[].data.searchResults.listings.[-].targetingSegments"],["data.xdt_injected_story_units.ad_media_items"],["ssaiInfo fallback.ssaiInfo"],["adtech-brightline adtech-google-pal adtech-iab-om"],["result.ads"],["items.[-].potentialActions.0.object.impressionToken items.[-].hasPart.0.potentialActions.0.object.impressionToken"],["context.adsIncluded"],["stream.insertion.adSession stream.insertion.points stream.insertion stream.sources.*.insertion pods.0.ads"],["ads.metadata ads.document ads.dxc ads.live ads.vod"],["*.tanya_video_ads"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["adease adeaseBlob vmap","adease"],["plugins.adService"],["session.showAds"],["adverts.breaks"],["*","all"],["adtagparameter","enabled"],["ssai_manifest ad_manifest playback_info.ad_info qvt.playback_info.ad_info"],["PlaybackDetails.[].DaiVod"],["data.searchClassifiedFeed.searchResultView.0.searchResultItemsV2.edges.[-].node.item.content.creative.clickThroughEvent.adsTrackingMetadata.metadata.adRequestId"],["data.me.personalizedFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.adRequestId"],["data.me.rhrFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.sponsor"],["[].data.displayAdsV3.data.[-].__typename"],["[].data.TopAdsProducts.data.[-].__typename"],["[].data.topads.data.[-].__typename"],["placements.processingFile"],["sorts.[-].recommendationList.[].contentMetadata.EncryptedAdTrackingData"],["ads.[-].ad_id"],["gifs.[-].cta"],["playlist.movie.advertising.ad_server"],["result.adverts"],["ads breaks cuepoints times"],["show_adverts"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["require.0.3.0.__bbox.define.[].2.is_linkshim_supported"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.id_for_advertisement"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.sponsored_auction_distance"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.sideFeed.nodes.0.ads"]];
-
-const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["kicker.de",1],["web.facebook.com",[2,3,4,5,6,79,80,81]],["www.facebook.com",[2,3,4,5,6,79,80,81]],["shazysport.pro",7],["streamhd247.info",7],["volokit2.com",7],["voodc.com",7],["vinomo.xyz",9],["listeamed.net",9],["hulu.com",[10,11]],["www.amazon.co.jp",12],["www.amazon.co.uk",12],["www.amazon.com",12],["www.amazon.de",12],["www.primevideo.com",12],["crunchyroll.com",13],["vvvvid.it",14],["plus.rtl.de",15],["tv2.no",16],["art19.com",17],["fansonlinehub.com",18],["hotmediahub.com",18],["terabox.fun",18],["teralink.me",18],["terashare.me",18],["teraearn.com",18],["linkvertise.com",[19,20,21]],["domoplus.pl",22],["kuchniaplus.pl",22],["miniminiplus.pl",22],["teletoonplus.pl",22],["vix.com",[23,24,25]],["vlive.tv",27],["go.discovery.com",29],["investigationdiscovery.com",29],["watch.foodnetwork.com",29],["tvn.pl",30],["app.plex.tv",31],["10play.com.au",32],["player.stv.tv",33],["fox.com",36],["foxsports.com",36],["serially.it",36],["autotrader.co.uk",37],["instagram.com",38],["play.max.com",[39,40]],["sportstiger.com",41],["swisscows.com",[42,43]],["disneyplus.com",[44,45]],["colearn.id",46],["hotstar.com",47],["nbc.com",48],["play.virginmediatelevision.ie",48],["play.history.com",49],["eu-proxy.startpage.com",50],["player.pop.co.uk",51],["player.popfun.co.uk",51],["foxtel.com.au",52],["iprima.cz",53],["speedrun.com",54],["channel4.com",55],["hentaihaven.xxx",56],["winfuture.de",57],["watch.sling.com",58],["dazn.com",59],["nextdoor.com",[60,61,62]],["tokopedia.com",[63,64,65]],["upscaler.stockphotos.com",66],["roblox.com",67],["sainsburys.co.uk",68],["redgifs.com",69],["tvn24.pl",70],["netflix.com",71],["sbs.com.au",72],["bitchute.com",73],["www.reddit.com",[74,75]],["threads.net",76],["nypost.com",77],["pagesix.com",77],["stories.los40.com",78]]);
-
-const entitiesMap = new Map([["vipbox",7],["vipboxtv",7],["viprow",7],["elixx",8],["shorttey",26],["discoveryplus",[28,29]],["pinterest",[34,35]]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_jsonPrune() {
 
 /******************************************************************************/
 
@@ -438,95 +421,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important"],["enabled","force_disabled"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id"],["*","*.adserverDomain"],["urls","urls.0"],["AffiliateAdBlock"],["breaks pause_ads video_metadata.end_credits_time","pause_ads"],["breaks pause_ads video_metadata.end_credits_time","breaks"],["cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints"],["value.media.ad_breaks"],["data.[].vast_url"],["adReinsertion"],["enabled","testhide"],["ad_pods.0.ads.0.segments.0.media ad_pods.1.ads.1.segments.1.media ad_pods.2.ads.2.segments.2.media ad_pods.3.ads.3.segments.3.media ad_pods.4.ads.4.segments.4.media ad_pods.5.ads.5.segments.5.media ad_pods.6.ads.6.segments.6.media ad_pods.7.ads.7.segments.7.media ad_pods.8.ads.8.segments.8.media"],["web_share_ads_adsterra_config wap_short_link_middle_page_ad wap_short_link_middle_page_show_time data.ads_cpm_info"],["data.meta.require_addon data.meta.require_captcha data.meta.require_notifications data.meta.require_og_ads data.meta.require_video data.meta.require_web data.meta.require_related_topics data.meta.require_custom_ad_step data.meta.og_ads_offers data.meta.addon_url data.displayAds data.linkCustomAdOffers"],["data.getDetailPageContent.linkCustomAdOffers.[-].title"],["data.getTaboolaAds.*"],["ads.servers.[].apiAddress"],["breaks interstitials info","interstitials"],["ad_slots"],["plugins.dfp"],["clickAnywhere urls"],["meta.advertise"],["data.attributes.config.freewheel data.attributes.config.featureFlags.dPlayer"],["data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.[].ads.[].adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.[].timeOffset"],["ssaiInfo"],["movie.advertising.ad_server playlist.movie.advertising.ad_server"],["MediaContainer.Metadata.[].Ad"],["cuepoints","cuepoints.[].start cuepoints.[].end cuepoints.[].start_float cuepoints.[].end_float"],["testadtags ad"],["resource_response.data.[-].pin_promotion_id resource_response.data.results.[-].pin_promotion_id"],["initialReduxState.pins.{-}.pin_promotion_id initialReduxState.resources.UserHomefeedResource.*.data.[-].pin_promotion_id"],["ads"],["[].data.searchResults.listings.[-].targetingSegments"],["RT-1562-AdShield-script-on-Huffpost"],["data.xdt_injected_story_units.ad_media_items"],["ssaiInfo fallback.ssaiInfo"],["adtech-brightline adtech-google-pal adtech-iab-om"],["result.ads"],["items.[-].potentialActions.0.object.impressionToken items.[-].hasPart.0.potentialActions.0.object.impressionToken"],["context.adsIncluded"],["stream.insertion.adSession stream.insertion.points stream.insertion stream.sources.*.insertion pods.0.ads"],["ads.metadata ads.document ads.dxc ads.live ads.vod"],["*.tanya_video_ads"],["success.page.spaces.player.widget_wrappers.[].widget.data.intervention_data"],["avails"],["data.reg"],["playerResponse.adPlacements playerResponse.playerAds adPlacements playerAds"],["response.ads"],["adease adeaseBlob vmap","adease"],["plugins.adService"],["session.showAds"],["adverts.breaks"],["*","all"],["adtagparameter","enabled"],["ssai_manifest ad_manifest playback_info.ad_info qvt.playback_info.ad_info"],["PlaybackDetails.[].DaiVod"],["data.searchClassifiedFeed.searchResultView.0.searchResultItemsV2.edges.[-].node.item.content.creative.clickThroughEvent.adsTrackingMetadata.metadata.adRequestId"],["data.me.personalizedFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.adRequestId"],["data.me.rhrFeed.feedItems.[-].promo.creative.clickThroughUrl.adsTrackingMetadata.metadata.sponsor"],["[].data.displayAdsV3.data.[-].__typename"],["[].data.TopAdsProducts.data.[-].__typename"],["[].data.topads.data.[-].__typename"],["placements.processingFile"],["sorts.[-].recommendationList.[].contentMetadata.EncryptedAdTrackingData"],["ads.[-].ad_id"],["gifs.[-].cta"],["playlist.movie.advertising.ad_server"],["result.adverts"],["ads breaks cuepoints times"],["show_adverts"],["data.*.elements.edges.[].node.outboundLink"],["data.children.[].data.outbound_link"],["require.0.3.0.__bbox.define.[].2.is_linkshim_supported"],["dataLayer.trackingId user.trackingId"],["config.globalInteractions.[].bsData"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.*.ad_id"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.id_for_advertisement"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data","require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.sponsored_auction_distance"],["require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.sideFeed.nodes.0.ads"]];
+const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0],["chip.de",1],["focus.de",1],["kicker.de",1],["web.facebook.com",[2,3,4,5,6,81,82,83,84]],["www.facebook.com",[2,3,4,5,6,81,82,83,84]],["vipbox.*",7],["vipboxtv.*",7],["viprow.*",7],["shazysport.pro",7],["streamhd247.info",7],["volokit2.com",7],["voodc.com",7],["elixx.*",8],["vinomo.xyz",9],["listeamed.net",9],["hulu.com",[10,11]],["www.amazon.co.jp",12],["www.amazon.co.uk",12],["www.amazon.com",12],["www.amazon.de",12],["www.primevideo.com",12],["crunchyroll.com",13],["vvvvid.it",14],["plus.rtl.de",15],["tv2.no",16],["art19.com",17],["fansonlinehub.com",18],["hotmediahub.com",18],["terabox.fun",18],["teralink.me",18],["terashare.me",18],["teraearn.com",18],["linkvertise.com",[19,20,21]],["domoplus.pl",22],["kuchniaplus.pl",22],["miniminiplus.pl",22],["teletoonplus.pl",22],["vix.com",[23,24,25]],["shorttey.*",26],["vlive.tv",27],["discoveryplus.*",[28,29]],["go.discovery.com",29],["investigationdiscovery.com",29],["watch.foodnetwork.com",29],["play.discoveryplus.com",30],["tvn.pl",31],["app.plex.tv",32],["10play.com.au",33],["player.stv.tv",34],["pinterest.*",[35,36]],["fox.com",37],["foxsports.com",37],["serially.it",37],["autotrader.co.uk",38],["huffpost.com",39],["instagram.com",40],["play.max.com",[41,42]],["sportstiger.com",43],["swisscows.com",[44,45]],["disneyplus.com",[46,47]],["colearn.id",48],["hotstar.com",49],["nbc.com",50],["play.virginmediatelevision.ie",50],["play.history.com",51],["eu-proxy.startpage.com",52],["player.pop.co.uk",53],["player.popfun.co.uk",53],["foxtel.com.au",54],["iprima.cz",55],["speedrun.com",56],["channel4.com",57],["hentaihaven.xxx",58],["winfuture.de",59],["watch.sling.com",60],["dazn.com",61],["nextdoor.com",[62,63,64]],["tokopedia.com",[65,66,67]],["upscaler.stockphotos.com",68],["roblox.com",69],["sainsburys.co.uk",70],["redgifs.com",71],["tvn24.pl",72],["netflix.com",73],["sbs.com.au",74],["bitchute.com",75],["www.reddit.com",[76,77]],["threads.net",78],["nypost.com",79],["pagesix.com",79],["stories.los40.com",80]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { jsonPrune(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_jsonPrune();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

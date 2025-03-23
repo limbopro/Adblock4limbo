@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [".hello_from_adguard_tracking_params"];
-
-const hostnamesMap = new Map([["adguard.info",0],["adguard.com",0],["adguard.app",0]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",".hello_from_adguard_tracking_params"];
+const argsSeqs = [0,1];
+const hostnamesMap = new Map([["adguard.info",1],["adguard.com",1],["adguard.app",1]]);
+const hasEntities = false;
 
 self.specificImports = self.specificImports || [];
-self.specificImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.specificImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

@@ -27,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"],["{\"selector\":\"a.card\",\"tasks\":[[\"has-text\",\"Oglas\"]]}"]];
-
-const hostnamesMap = new Map([["monitor.si",0],["partis.si",1]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"],["{\"selector\":\"a.card\",\"tasks\":[[\"has-text\",\"Oglas\"]]}"]];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["monitor.si",1],["partis.si",2]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

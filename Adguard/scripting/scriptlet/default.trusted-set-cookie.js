@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_trustedSetCookie = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","aa4GkNzNjEWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBHE0WNTEWWxoWAgoWW1AYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzppQ00WBxEWW1AYQwxGQ1sFTUNZFUMOUk0WFRIWW1ADU1YMVlEDVVMBVFRJTUNjMSwWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBTUNBAEMOUBxJ"],["WPtcs2","CQF3YIAQF3YIABIACDPLBJFgAAAAAAAAAB5YAAAU8gAAAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"],["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"],["lastClicked","9999999999999"],["disqus_unique","0","","","domain","disqus.com"],["DEVICEFP","00000000000","","","domain","hoyoverse.com"],["DEVICEFP","00000000000","","","domain","hoyolab.com"]];
-
-const hostnamesMap = new Map([["globo.com",0],["theporndude.com",1],["wp.pl",[2,3,4]],["money.pl",[2,3,4]],["pysznosci.pl",[2,3,4]],["pudelek.pl",[2,3,4]],["gadzetomania.pl",[2,3,4]],["fotoblogia.pl",[2,3,4]],["komorkomania.pl",[2,3,4]],["dobreprogramy.pl",[2,3,4]],["autokult.pl",[2,3,4]],["genialne.pl",[2,3,4]],["abczdrowie.pl",[2,3,4]],["o2.pl",4],["parenting.pl",4],["polygamia.pl",4],["open.fm",4],["benchmark.pl",4],["kafeteria.pl",4],["autocentrum.pl",4],["jastrzabpost.pl",4],["govtech.com",5],["governing.com",5],["barstoolsports.com",6],["sumax43.autos",7],["disqus.com",8],["hoyoverse.com",9],["hoyolab.com",10]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([["www.hoyoverse.com",[9]],["www.hoyolab.com",[10]]]);
+(function uBOL_trustedSetCookie() {
 
 /******************************************************************************/
 
@@ -356,95 +339,83 @@ function getCookieFn(
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe","","","domain","wp.pl"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA","","","domain","wp.pl"],["WPcbadcp","$now$"],["adTakeOver","seen"],["FCCDCF","%5Bnull%2Cnull%2Cnull%2C%5B%22CQNfK4AQNfK4AEsACCENBeFgAAAAAAJAACpoAAANVSD2F2K2kKFkPCmwXYAYBCujYAAhQgAAAkCBMACgAUgQAgFJIAgCIFAAAAAAAAAQEiCQAAQABAAAIACgAAAAAAIAAAAAAAQQAABAAIAAAAAAAAEAQAAIAAQAAAAIAABEhAAAQQAEAAAAAAAQAA%22%2C%222~~dv.70.89.93.108.122.149.184.196.236.259.311.313.323.358.415.442.486.494.495.540.574.609.864.981.1029.1048.1051.1095.1097.1126.1205.1276.1301.1365.1415.1449.1514.1570.1577.1598.1651.1716.1735.1753.1765.1870.1878.1889.1958.1960.2072.2253.2299.2373.2415.2506.2526.2531.2568.2571.2575.2624.2677.2778%22%2C%2229712C98-EA28-430A-9071-AF8FD742342E%22%5D%5D"],["_ym_uid","$now$"],["lastClicked","9999999999999"],["disqus_unique","0","","","domain","disqus.com"],["_sharedid","","0","","domain",".naszemiasto.pl"],["DEVICEFP","00000000000","","","domain",".hoyoverse.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyoverse.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyoverse.com"],["DEVICEFP","00000000000","","","domain",".hoyolab.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyolab.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyolab.com"],["ak_bmsc","","0","","domain",".nvidia.com"]];
+const hostnamesMap = new Map([["globo.com",0],["theporndude.com",1],["money.pl",[2,3,6]],["pysznosci.pl",[2,3,6]],["pudelek.pl",[2,3,6]],["gadzetomania.pl",[2,3,6]],["fotoblogia.pl",[2,3,6]],["komorkomania.pl",[2,3,6]],["dobreprogramy.pl",[2,3,6]],["autokult.pl",[2,3,6]],["genialne.pl",[2,3,6]],["abczdrowie.pl",[2,3,6]],["wp.pl",[4,5,6]],["o2.pl",6],["parenting.pl",6],["polygamia.pl",6],["open.fm",6],["benchmark.pl",6],["kafeteria.pl",6],["autocentrum.pl",6],["jastrzabpost.pl",6],["govtech.com",7],["governing.com",7],["decrypt.day",8],["gecmisi.com.tr",9],["sumax43.autos",10],["disqus.com",11],["naszemiasto.pl",12],["hoyoverse.com",[13,14,15]],["hoyolab.com",[16,17,18]],["nvidia.com",19]]);
+const exceptionsMap = new Map([["www.hoyoverse.com",[13,14,15]],["www.hoyolab.com",[16,17,18]]]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { trustedSetCookie(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_trustedSetCookie();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

@@ -14,7 +14,7 @@
 🇭 Hulu`select`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
 🇳 Netflix`select`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
 🇵 PrimeVideo`select`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
-🇾 YouTube`select`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
+🇾 YouTube`select`[]🐞 谷歌服务`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
 🇹 TikTok`select`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
 🇸 Spotify`select`[]🇺🇸 美国节点`[]🇯🇵 日本节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]♻️ 故障切换`[]🎥 其他国外流媒体`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`.*
 🐱 哔哩哔哩台湾`select`[]🇨🇳 台湾节点`(台湾)|(TAIWAN)|(TaiWan)|(Taiwan)`[]🎥 其他国外流媒体`[]♻️ 故障切换`[]DIRECT`(美国)|(USA)`(日本)|(Japan)|(JP)|(JAPAN)`(香港)|(HK)|(HONGKONG)|(HongKong)`.*

@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[1401633,"html[lang] > body.ishome > div.adult + main.main"],[5305805,".buttonautocl"],[15121070,"html[lang] > body:not([class]):not([id]):not([style]) > div.background-container > div.container > div.captcha-box"],[7244200,"html[lang] > body.startnew > div#sections > section#section_uname"],[15121154,"html[lang] > body:not([style]) > div.captchaBody"],[1119424,"html[lang] > body#body > * > div.cv-xwrapper > div.cvc > div.cv-inner"],[11542656,"html[lang] > body#body > * > div.cvh.BlockClicksActivityBusy"],[12270650,"html#html[sti][vic][lang] > body#allbody"],[4186807,"html > body > div.container.m-p > #checkbox-window.checkbox-window,html > body > div.container > form#unsubscribe-form[onsubmit=\"submitUnsubscribeForm(event)\"]"],[10657530,"html[lang] > body:not([class]):not([id]):not([style]) > div.container > div.recaptcha-box"],[10348986,"html > body.hold-transition.theme-primary.bg-img[style^=\"background-image\"][style*=\"wallpaperaccess.com\"][style*=\"background-repeat\"][style*=\"background-size\"]"],[5732160,"html > body > div.content > dl > dd.dd1 > div.min_sider > form#form1[action=\"unsubscribe.php\"]"],[1367482,"html > body.body > div.container > div.content > form > table.optoutForm"]];
+const genericSelectorMap = [[1401633,"html[lang] > body.ishome > div.adult + main.main"],[5305805,".buttonautocl"],[15121070,"html[lang] > body:not([class]):not([id]):not([style]) > div.background-container > div.container > div.captcha-box"],[7244200,"html[lang] > body.startnew > div#sections > section#section_uname"],[15121154,"html[lang] > body:not([style]) > div.captchaBody"],[1119424,"html[lang] > body#body > * > div.cv-xwrapper > div.cvc > div.cv-inner"],[11542656,"html[lang] > body#body > * > div.cvh.BlockClicksActivityBusy"],[12270650,"html#html[sti][vic][lang] > body#allbody"],[4186807,"html > body > div.container.m-p > #checkbox-window.checkbox-window,\nhtml > body > div.container > form#unsubscribe-form[onsubmit=\"submitUnsubscribeForm(event)\"]"],[10657530,"html[lang] > body:not([class]):not([id]):not([style]) > div.container > div.recaptcha-box"],[10348986,"html > body.hold-transition.theme-primary.bg-img[style^=\"background-image\"][style*=\"wallpaperaccess.com\"][style*=\"background-repeat\"][style*=\"background-size\"]"],[5732160,"html > body > div.content > dl > dd.dd1 > div.min_sider > form#form1[action=\"unsubscribe.php\"]"],[1367482,"html > body.body > div.container > div.content > form > table.optoutForm"]];
+const genericExceptionSieve = undefined;
+const genericExceptionMap = undefined;
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

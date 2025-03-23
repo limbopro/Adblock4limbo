@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: spa-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_preventSetTimeout = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["siteAccessPopup()"],["adblockDetector"],["hasAdblock"],["ad blocker"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["/hasAdblock|window\\.getComputedStyle/"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
-
-const hostnamesMap = new Map([["mundolucha.com",0],["zonatmo.com",1],["cozinhabr.top",2],["ricasdelicias.online",2],["sabornutritivo.com",2],["coempregos.com.br",2],["anitube.us",2],["anitube.vip",2],["hinatasoul.com",2],["dicasgostosas.com",2],["packsmega.info",3],["peliculas8k.com",4],["guiacripto.online",5],["zona-leros.com",6],["xerifetech.com",7],["suaads.com",8],["reidoplacar.com",8],["suaurl.com",[8,18]],["guianoticiario.net",9],["resenhasglobais.com",10],["tecword.info",10],["smartdoing.tech",10],["vivercomsaude.online",10],["escplus.es",11],["genshinpro.com.br",12],["it-swarm-es.com",12],["manchetehoje.xyz",13],["receitasdaora.online",14],["foodiesgallery.com",14],["caroloportunidades.com.br",14],["hartico.com",15],["seriesdonghua.com",16],["mundodonghua.com",16],["forodecostarica.com",17],["acortalink.me",18],["seriesgratis.biz",19]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_preventSetTimeout() {
 
 /******************************************************************************/
 
@@ -165,7 +148,7 @@ class RangeParser {
             this.min = this.max = parseInt(s, 10) || 0;
         }
         if ( pos !== -1 ) {
-            this.max = parseInt(s.slice(1), 10) || Number.MAX_SAFE_INTEGER;
+            this.max = parseInt(s.slice(pos + 1), 10) || Number.MAX_SAFE_INTEGER;
         }
     }
     unbound() {
@@ -376,95 +359,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["siteAccessPopup()"],["adblockDetector"],["window.getComputedStyle"],["hasAdblock"],["ad blocker"],["Promise[\\'all\\'](urls"],["/adBlock|\\.height\\(\\)/"],["checkAdblockUser"],["_0x"],["Por favor, desative"],["/Adblock|\\.height\\(\\)/"],["]]=== 0"],[".adsbygoogle"],["adsbygoogle"],["0=== _0x"],["/hasAdblock|window\\.getComputedStyle/"],["cicklow_"],["/Tamamo_Blocker|aadb_recheck/"],["adJsView"],["window.location.href"],["adsdirect"]];
+const hostnamesMap = new Map([["mundolucha.com",0],["zonatmo.com",1],["animefire.info",2],["animefire.plus",2],["animesonlinecc.us",2],["animesup.info",2],["animeyabu.net",2],["animeyabu.org",2],["drstonebr.com",2],["goanimes.vip",2],["goyabu.us",2],["meuanime.info",2],["otakuanimess.net",2],["cozinhabr.top",3],["ricasdelicias.online",3],["sabornutritivo.com",3],["coempregos.com.br",3],["anitube.us",3],["anitube.vip",3],["hinatasoul.com",3],["dicasgostosas.com",3],["packsmega.info",4],["peliculas8k.com",5],["guiacripto.online",6],["zona-leros.com",7],["xerifetech.com",8],["suaads.com",9],["reidoplacar.com",9],["suaurl.com",[9,19]],["guianoticiario.net",10],["resenhasglobais.com",11],["tecword.info",11],["smartdoing.tech",11],["vivercomsaude.online",11],["escplus.es",12],["genshinpro.com.br",13],["it-swarm-es.com",13],["manchetehoje.xyz",14],["receitasdaora.online",15],["foodiesgallery.com",15],["caroloportunidades.com.br",15],["hartico.com",16],["seriesdonghua.com",17],["mundodonghua.com",17],["forodecostarica.com",18],["acortalink.me",19],["seriesgratis.biz",20]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { preventSetTimeout(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_preventSetTimeout();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

@@ -27,26 +27,58 @@
 
 /******************************************************************************/
 
-const toImport = [[4298988,".zxc"],[687178,".zxc-m"],[11918799,".zxc-stik"],[5194391,".zxc_home"],[5255191,".zxc_news"],[5323427,".zxc_left"],[14353422,".zxc_matni"],[10341886,".zxc-mobile"],[7765280,".zxc-header-zxc"],[7634644,".zxc-visible-fixed"],[13791830,".zxc-padding-custom"],[15329921,".main-zxc"],[15974757,".home-zxc"],[956828,".top_zxc"],[14368092,".zxc_top"],[5820437,".side_txt_zxc"],[5035099,"#kaprila_linktable"]];
+const genericSelectorMap = [[4298988,".zxc"],[687178,".zxc-m"],[11918799,".zxc-stik"],[5194391,".zxc_home"],[5255191,".zxc_news"],[5323427,".zxc_left"],[14353422,".zxc_matni"],[10341886,".zxc-mobile"],[7765280,".zxc-header-zxc"],[7634644,".zxc-visible-fixed"],[13791830,".zxc-padding-custom"],[15329921,".main-zxc"],[15974757,".home-zxc"],[956828,".top_zxc"],[14368092,".zxc_top"],[5820437,".side_txt_zxc"],[5035099,"#kaprila_linktable"]];
+const genericExceptionSieve = [16531403,2133585,3673662,11780787,564335,13475465,13571670,3030744,7307632,12543662,15628580,8447737,14248586,6269984,890817,12231375,2086901,12318293,7260091,11377293,5980258,1427608,1012267,9504134,1788726,3573047,3103712,11019541,2579323,5295994,2219192];
+const genericExceptionMap = [["cooldl.net",".ads-content"],["sakhtafzar.com",".ads-content\n.tz_ad300_widget"],["elmefarda.com","#head728\n#ad728\n#ad640a"],["estekhtam.com",".ads-bottom"],["footofan.com",".ad-custom-size\n.ad-cat"],["7ganj.ir",".herald-ad"],["gamesib.ir",".ads_2"],["gooyait.com",".page-ads\n.banner-ads"],["gadgetnews.net",".ads-top"],["honarehzendegi.com",".logo-ad"],["ifixit.ir",".advert-image\n.block-advert\n.advert-wrap"],["ilna.ir",".adv_title"],["javan-musics.com",".adstop"],["miniroid.com",".adBox"],["mybia4music.com",".adlink\n.adstext"],["netnevesht.com",".widget-ad"],["nicmusic.net",".boxads"],["ninisite.com",".footer__subscribe"],["plaza.ir",".ad__header"],["parsfootball.com",".navad"],["persianv.com",".ads-text"],["shahrebours.com",".box_ads"],["toranji.ir",".square-ad"],["wikisemnan.com",".ads-image"]];
 
-const genericSelectorMap = self.genericSelectorMap || new Map();
-
-if ( genericSelectorMap.size === 0 ) {
-    self.genericSelectorMap = new Map(toImport);
-    return;
+if ( genericSelectorMap ) {
+    const map = self.genericSelectorMap =
+        self.genericSelectorMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericSelectorMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before},\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericSelectorMap = new Map(genericSelectorMap);
+    }
+    genericSelectorMap.length = 0;
 }
 
-for ( const toImportEntry of toImport ) {
-    const existing = genericSelectorMap.get(toImportEntry[0]);
-    genericSelectorMap.set(
-        toImportEntry[0],
-        existing === undefined
-            ? toImportEntry[1]
-            : `${existing},${toImportEntry[1]}`
-    );
+if ( genericExceptionSieve ) {
+    const hashes = self.genericExceptionSieve =
+        self.genericExceptionSieve || new Set();
+    if ( hashes.size !== 0 ) {
+        for ( const hash of genericExceptionSieve ) {
+            hashes.add(hash);
+        }
+    } else {
+        self.genericExceptionSieve = new Set(genericExceptionSieve);
+    }
+    genericExceptionSieve.length = 0;
 }
 
-self.genericSelectorMap = genericSelectorMap;
+if ( genericExceptionMap ) {
+    const map = self.genericExceptionMap =
+        self.genericExceptionMap || new Map();
+    if ( map.size !== 0 ) {
+        for ( const entry of genericExceptionMap ) {
+            const before = map.get(entry[0]);
+            if ( before === undefined ) {
+                map.set(entry[0], entry[1]);
+            } else {
+                map.set(entry[0], `${before}\n${entry[1]}`);
+            }
+        }
+    } else {
+        self.genericExceptionMap = new Map(genericExceptionMap);
+    }
+    genericExceptionMap.length = 0;
+}
 
 /******************************************************************************/
 

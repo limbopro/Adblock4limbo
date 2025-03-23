@@ -20,30 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: rus-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_noWindowOpenIf = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [[],["/tutad\\.ru/"],["about:blank"]];
-
-const hostnamesMap = new Map([["08sportbar.com",0],["08sportbar.online",0],["777sportba.com",0],["777sportba.org",0],["777streams.pro",0],["7streams.pro",0],["assiatv.com",0],["barsportbar.com",0],["boom365hd.com",0],["cdnneedtv.ru",0],["cdnpotok.com",0],["cdntvpotok.com",0],["channels247.net",0],["goool7.ws",0],["hd24.pro",0],["hd24.watch",0],["hd365.ws",0],["hdstream365.com",0],["limetvv.com",0],["live-stream365.com",0],["live365tv.site",0],["mc.today",0],["oneliketv.com",0],["oxax.tv",0],["raes.tech",0],["s7yours.com",0],["sbautumn.com",0],["sblive.online",0],["sbsports.pro",0],["sbstreams.ws",0],["shd247.com",0],["sport365hd.com",0],["sport365hd.net",0],["sport7.biz",0],["sportabar01.com",0],["sportbar.biz",0],["sportbar.pm",0],["sportbarchik88.com",0],["sportbox.ws",0],["sporting7.pw",0],["sporting77.com",0],["sportsite777.com",0],["spotless365.net",0],["stream365.pro",0],["telecdn.net",0],["tivix.co",0],["tv-assia.org",0],["vecdn.pw",0],["vip7stream.pw",0],["whd365.pro",0],["vmusi.ru",1],["ontivi.net",2]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_noWindowOpenIf() {
 
 /******************************************************************************/
 
@@ -404,95 +387,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-} catch {
-}
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [[],["/tutad\\.ru/"],["about:blank"]];
+const hostnamesMap = new Map([["08sportbar.com",0],["08sportbar.online",0],["777sportba.com",0],["777sportba.org",0],["777streams.pro",0],["7streams.pro",0],["assiatv.com",0],["barsportbar.com",0],["boom365hd.com",0],["cdnneedtv.ru",0],["cdnpotok.com",0],["cdntvpotok.com",0],["channels247.net",0],["goool7.ws",0],["hd24.pro",0],["hd24.watch",0],["hd365.ws",0],["hdstream365.com",0],["limetvv.com",0],["live-stream365.com",0],["live365tv.site",0],["mc.today",0],["oneliketv.com",0],["oxax.tv",0],["raes.tech",0],["s7yours.com",0],["sbautumn.com",0],["sblive.online",0],["sbsports.pro",0],["sbstreams.ws",0],["shd247.com",0],["sport365hd.com",0],["sport365hd.net",0],["sport7.biz",0],["sportabar01.com",0],["sportbar.biz",0],["sportbar.pm",0],["sportbarchik88.com",0],["sportbox.ws",0],["sporting7.pw",0],["sporting77.com",0],["sportsite777.com",0],["spotless365.net",0],["stream365.pro",0],["telecdn.net",0],["tivix.co",0],["tv-assia.org",0],["vecdn.pw",0],["vip7stream.pw",0],["whd365.pro",0],["vmusi.ru",1],["ontivi.net",2]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { noWindowOpenIf(...argsList[i]); }
     catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_noWindowOpenIf();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

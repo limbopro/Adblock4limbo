@@ -196,7 +196,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -234,10 +234,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -458,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["cookie_alert_overlay","noopFunc"],["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["ENABLE_PAGE_LEVEL_ADS","true"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["gemiusStream.init","noopFunc"],["window.ado","null"]];
-const hostnamesMap = new Map([["laptophardware.hu",0],["angol-magyar-szotar.hu",1],["embed.indavideo.hu",[2,3,4]],["huaweiblog.hu",5],["myonlineradio.hu",6],["player.rtl.hu",[7,8,9]],["femina.hu",10]]);
+const argsList = [["document.write","undefined"],["cookie_alert_overlay","noopFunc"],["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["ENABLE_PAGE_LEVEL_ADS","true"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["gemiusStream.init","noopFunc"],["window.ado","null"]];
+const hostnamesMap = new Map([["online-filmek.ac",0],["online-filmek.me",0],["laptophardware.hu",1],["angol-magyar-szotar.hu",2],["embed.indavideo.hu",[3,4,5]],["huaweiblog.hu",6],["myonlineradio.hu",7],["player.rtl.hu",[8,9,10]],["femina.hu",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

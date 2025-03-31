@@ -69,7 +69,7 @@ function replaceNodeTextFn(
         if ( tt instanceof Object ) {
             if ( typeof tt.getPropertyType === 'function' ) {
                 if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
-                    return tt.createPolicy(getRandomToken(), out);
+                    return tt.createPolicy(getRandomTokenFn(), out);
                 }
             }
         }
@@ -140,7 +140,7 @@ function replaceNodeTextFn(
     }, 'interactive');
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -156,7 +156,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -194,10 +194,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -366,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","adId"],["script","moveTopBanner"],["script","location.reload"],["script","mobileBrandingMainInited"]];
-const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",0],["censor.net",0],["dengi.ua",0],["epravda.com.ua",0],["f1analytic.com",0],["football24.ua",0],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["glianec.com",[0,4]],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",0],["liga.net",0],["meteofor.com.ua",0],["pravda.com.ua",0],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",0],["viva.ua",0],["beauty.ua",1],["internetua.com",1],["sinoptik.ua",1],["agronews.ua",2],["agroreview.com",2],["eurointegration.com.ua",3],["zaxid.net",5]]);
+const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","adId"],["script","moveTopBanner"],["script","location.reload"],["script","wpsite_clickable_data"],["script","bdca"],["script","mobileBrandingMainInited"]];
+const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",0],["censor.net",0],["dengi.ua",0],["epravda.com.ua",0],["f1analytic.com",0],["football24.ua",0],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["glianec.com",[0,4]],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",0],["liga.net",0],["meteofor.com.ua",0],["pravda.com.ua",0],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",0],["viva.ua",0],["beauty.ua",1],["internetua.com",1],["sinoptik.ua",1],["agronews.ua",2],["agroreview.com",2],["eurointegration.com.ua",3],["proagro.com.ua",5],["rup.com.ua",6],["zaxid.net",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

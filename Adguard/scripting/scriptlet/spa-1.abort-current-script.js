@@ -69,7 +69,7 @@ function abortCurrentScriptCore(
         desc = undefined;
     }
     const debug = shouldDebug(extraArgs);
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const scriptTexts = new WeakMap();
     const getScriptText = elem => {
         let text = elem.textContent;
@@ -154,8 +154,8 @@ function runAtHtmlElementFn(fn) {
     observer.observe(document, { childList: true });
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -185,10 +185,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -359,7 +361,7 @@ function shouldDebug(details) {
     return scriptletGlobals.canDebug && details.debug;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -368,8 +370,8 @@ function getRandomToken() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["document.createElement","adsbygoogle.js"],["fetch","/alert|bloqueador|\\.catch|\\.type/"],["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["document.addEventListener","window.open"],["String.prototype.concat","popup"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""],["Node.prototype.insertBefore","popns"],["EventTarget.prototype.addEventListener","pop[_0x"],["setInterval","doTabUnder"],["setTimeout","_blank"],["document.addEventListener","showPopup"],["document.addEventListener","window.location;"],["EventTarget.prototype.addEventListener","/Popunder|Popup/"]];
-const hostnamesMap = new Map([["gamesperu2021.blogspot.com",[0,18]],["playertv.org",0],["tvembed.net",0],["tv0800.zip",0],["luratoons.com",1],["lura-toons.com",1],["gamesteelstudioplus.blogspot.com",2],["gamesteelstudio.blogspot.com",2],["infohojeonline.blogspot.com",2],["dicasdevalor.net",3],["animeszone.net",4],["canalnatelinhaonline.blogspot.com",5],["hinatasoul.com",6],["buscalinks.xyz",7],["gamesviatorrent.top",7],["inuyashadowns.com.br",8],["link.baixedetudo.net.br",8],["oliberal.com",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,24,25]],["csrevo.com",11],["guianoticiario.net",12],["oceans14.com.br",13],["illamadas.es",14],["audiotools.in",15],["ecartelera.com",16],["animeshouse.net",17],["pelismx.lat",18],["packsmega.info",19],["futbollibre.pe",20],["embedder.net",20],["playpaste.com",[21,22]],["pasfox.com",[22,29]],["directvxx.com",23],["tiohentai.xyz",26],["palaygo.site",27],["movidy.*",28],["seireshd.com",30],["hentai-id.tv",31],["animefire.plus",32],["seriesflix.onl",33],["tvserieslatino.com",34],["seriesperu.com",35],["peliculas8k.com",35],["toonscrab.com",36],["todo-anime.net",37],["latinohentai.vip",38],["latinohentai.com",38]]);
+const argsList = [["document.createElement","adsbygoogle.js"],["fetch","/alert|bloqueador|\\.catch|\\.type/"],["EventTarget.prototype.addEventListener","adsbygoogle.js"],["jQuery","AdblockDetector"],["jQuery","/adblock/i"],["addEventListener","displayMessage"],["document.getElementsByTagName","adsbygoogle.js"],["document.createElement","Adblock"],["document.createElement","adblock"],["$","blockWall"],["document.addEventListener",".innerHTML"],["$","!document.getElementById("],["jQuery","/Adblock|dummy|detect/"],["EventTarget.prototype.addEventListener","adblock"],["onload","AdBlock"],["EventTarget.prototype.addEventListener","blocker_detector"],["$","Adblock"],["document.addEventListener","/;return \\{clear:function\\(\\)\\{/"],["document.addEventListener","window.open"],["String.prototype.concat","popup"],["EventTarget.prototype.addEventListener","window.open"],["$","window.open"],["enlace","document.write"],["document.oncontextmenu","location.replace"],["$","notficationAd"],["open","document.getElementById"],["document.addEventListener","excludeDomains"],["document.addEventListener","create_"],["onbeforeunload","popit"],["document.getElementsByTagName","onclick"],["$","ads_enabled"],["host","window.btoa"],["$",".one(\"click\""],["Node.prototype.insertBefore","popns"],["EventTarget.prototype.addEventListener","pop[_0x"],["setInterval","doTabUnder"],["setTimeout","_blank"],["document.addEventListener","showPopup"],["document.addEventListener","window.location;"],["EventTarget.prototype.addEventListener","/Popunder|Popup/"]];
+const hostnamesMap = new Map([["gamesperu2021.blogspot.com",[0,18]],["playertv.org",0],["tvembed.net",0],["tv0800.zip",0],["luratoons.com",1],["lura-toons.com",1],["gamesteelstudioplus.blogspot.com",2],["gamesteelstudio.blogspot.com",2],["infohojeonline.blogspot.com",2],["dicasdevalor.net",3],["animeszone.net",4],["canalnatelinhaonline.blogspot.com",5],["hinatasoul.com",6],["buscalinks.xyz",7],["gamesviatorrent.top",7],["inuyashadowns.com.br",8],["link.baixedetudo.net.br",8],["oliberal.com",9],["suaads.com",10],["reidoplacar.com",10],["suaurl.com",[10,24,25]],["csrevo.com",11],["guianoticiario.net",12],["oceans14.com.br",13],["illamadas.es",14],["audiotools.in",15],["ecartelera.com",16],["animeshouse.net",17],["pelismx.lat",18],["packsmega.info",19],["futbollibre.pe",20],["embedder.net",20],["hentaijl.com",20],["playpaste.com",[21,22]],["pasfox.com",[22,30]],["directvxx.com",23],["multipaste.org",26],["tiohentai.xyz",27],["palaygo.site",28],["movidy.*",29],["seireshd.com",31],["hentai-id.tv",32],["animefire.plus",33],["seriesflix.onl",34],["tvserieslatino.com",35],["seriesperu.com",36],["peliculas8k.com",36],["toonscrab.com",37],["todo-anime.net",38],["latinohentai.vip",39],["latinohentai.com",39]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

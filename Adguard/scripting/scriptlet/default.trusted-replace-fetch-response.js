@@ -45,14 +45,13 @@ function replaceFetchResponseFn(
     const logPrefix = safe.makeLogPrefix('replace-fetch-response', pattern, replacement, propsToMatch);
     if ( pattern === '*' ) { pattern = '.*'; }
     const rePattern = safe.patternToRegex(pattern);
-    const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    const propNeedles = parsePropertiesToMatchFn(propsToMatch, 'url');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
     const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
     self.fetch = new Proxy(self.fetch, {
         apply: function(target, thisArg, args) {
             const fetchPromise = Reflect.apply(target, thisArg, args);
             if ( pattern === '' ) { return fetchPromise; }
-            let outcome = 'match';
             if ( propNeedles.size !== 0 ) {
                 const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
                 if ( objs[0] instanceof Request ) {
@@ -66,13 +65,11 @@ function replaceFetchResponseFn(
                 if ( args[1] instanceof Object ) {
                     objs.push(args[1]);
                 }
-                if ( matchObjectProperties(propNeedles, ...objs) === false ) {
-                    outcome = 'nomatch';
+                const matched = matchObjectPropertiesFn(propNeedles, ...objs);
+                if ( matched === undefined ) { return fetchPromise; }
+                if ( safe.logLevel > 1 ) {
+                    safe.uboLog(logPrefix, `Matched "propsToMatch":\n\t${matched.join('\n\t')}`);
                 }
-            }
-            if ( outcome === 'nomatch' ) { return fetchPromise; }
-            if ( safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, `Matched "propsToMatch"\n${propsToMatch}`);
             }
             return fetchPromise.then(responseBefore => {
                 const response = responseBefore.clone();
@@ -81,8 +78,7 @@ function replaceFetchResponseFn(
                         return responseBefore;
                     }
                     const textAfter = textBefore.replace(rePattern, replacement);
-                    const outcome = textAfter !== textBefore ? 'match' : 'nomatch';
-                    if ( outcome === 'nomatch' ) { return responseBefore; }
+                    if ( textAfter === textBefore ) { return responseBefore; }
                     safe.uboLog(logPrefix, 'Replaced');
                     const responseAfter = new Response(textAfter, {
                         status: responseBefore.status,
@@ -108,38 +104,27 @@ function replaceFetchResponseFn(
     });
 }
 
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
-            }
-        };
-    }
+function matchObjectPropertiesFn(propNeedles, ...objs) {
     const safe = safeSelf();
-    const haystack = {};
-    const props = safe.Array_from(propNeedles.keys());
+    const matched = [];
     for ( const obj of objs ) {
         if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = safe.JSON_stringify(value); }
-            catch { }
-            if ( typeof value !== 'string' ) { continue; }
+        for ( const [ prop, details ] of propNeedles ) {
+            let value = obj[prop];
+            if ( value === undefined ) { continue; }
+            if ( typeof value !== 'string' ) {
+                try { value = safe.JSON_stringify(value); }
+                catch { }
+                if ( typeof value !== 'string' ) { continue; }
+            }
+            if ( safe.testPattern(details, value) === false ) { return; }
+            matched.push(`${prop}: ${value}`);
         }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
     }
-    return true;
+    return matched;
 }
 
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
+function parsePropertiesToMatchFn(propsToMatch, implicit = '') {
     const safe = safeSelf();
     const needles = new Map();
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
@@ -179,10 +164,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -351,8 +338,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["\"adPlacements\"","\"no_ads\"","player?"],["\"adSlots\"","\"no_ads\"","player?"],["/<VAST version.+VAST>/","<VAST version=\\\"4.0\\\"></VAST>","deezer.getAudiobreak"],["/\\{\"id\":\\d{9,11}(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationCarousel"],["/\\{\"category_id\"(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationalCarousel"],["/\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},/g","","/\\/graphql\\/productRecommendation/i"],["/,\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true(?:(?!\"__typename\":\"recommendationItem\").)+?\"__typename\":\"recommendationItem\"\\}(?=\\])/","","/\\/graphql\\/productRecommendation/i"],["/\\{\"(?:productS|s)lashedPrice\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/RecomWidget"],["/\\{\"appUrl\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/ProductRecommendationQuery"],["/#EXT-X-KEY:METHOD=NONE\\n#EXT(?:INF:[^\\n]+|-X-DISCONTINUITY)\\n.+?(?=#EXT-X-KEY)/gms","","/media.m3u8"],["/\"remainingWatchDuration\":\\d+/","\"remainingWatchDuration\":9999999999","/stream"],["/\"midTierRemainingAdWatchCount\":\\d+,\"showAds\":(false|true)/","\"midTierRemainingAdWatchCount\":0,\"showAds\":false","/stream"]];
-const hostnamesMap = new Map([["www.youtube.com",[0,1]],["deezer.com",2],["tokopedia.com",[3,4,5,6,7,8]],["canela.tv",9],["rooter.gg",[10,11]]]);
+const argsList = [["\"adPlacements\"","\"no_ads\"","player?"],["\"adSlots\"","\"no_ads\"","player?"],["/<VAST version.+VAST>/","<VAST version=\\\"4.0\\\"></VAST>","deezer.getAudiobreak"],["/\\{\"id\":\\d{9,11}(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationCarousel"],["/\\{\"category_id\"(?:(?!\"ads\":\\{\"id\":\"\").)+?\"ads\":\\{\"id\":\"\\d+\".+?\"__typename\":\"ProductCarouselV2\"\\},?/g","","/graphql/InspirationalCarousel"],["/\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},/g","","/\\/graphql\\/productRecommendation/i"],["/,\\{\"id\":\\d{9,11}(?:(?!\"isTopads\":false).)+?\"isTopads\":true(?:(?!\"__typename\":\"recommendationItem\").)+?\"__typename\":\"recommendationItem\"\\}(?=\\])/","","/\\/graphql\\/productRecommendation/i"],["/\\{\"(?:productS|s)lashedPrice\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/RecomWidget"],["/\\{\"appUrl\"(?:(?!\"isTopads\":false).)+?\"isTopads\":true.+?\"__typename\":\"recommendationItem\"\\},?/g","","/graphql/ProductRecommendationQuery"],["/#EXT-X-KEY:METHOD=NONE\\n#EXT(?:INF:[^\\n]+|-X-DISCONTINUITY)\\n.+?(?=#EXT-X-KEY)/gms","","/media.m3u8"],["/\"remainingWatchDuration\":\\d+/","\"remainingWatchDuration\":9999999999","/stream"],["/\"midTierRemainingAdWatchCount\":\\d+,\"showAds\":(false|true)/","\"midTierRemainingAdWatchCount\":0,\"showAds\":false","/stream"],["\"adSlots\"","\"no_ads\"","/^\\W+$/"]];
+const hostnamesMap = new Map([["www.youtube.com",[0,1,12]],["deezer.com",2],["tokopedia.com",[3,4,5,6,7,8]],["canela.tv",9],["rooter.gg",[10,11]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -40,7 +40,7 @@ function trustedReplaceXhrResponse(
     const xhrInstances = new WeakMap();
     if ( pattern === '*' ) { pattern = '.*'; }
     const rePattern = safe.patternToRegex(pattern);
-    const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    const propNeedles = parsePropertiesToMatchFn(propsToMatch, 'url');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
@@ -49,7 +49,7 @@ function trustedReplaceXhrResponse(
             const xhrDetails = { method, url };
             let outcome = 'match';
             if ( propNeedles.size !== 0 ) {
-                if ( matchObjectProperties(propNeedles, xhrDetails) === false ) {
+                if ( matchObjectPropertiesFn(propNeedles, xhrDetails) === undefined ) {
                     outcome = 'nomatch';
                 }
             }
@@ -100,38 +100,27 @@ function trustedReplaceXhrResponse(
     };
 }
 
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
-            }
-        };
-    }
+function matchObjectPropertiesFn(propNeedles, ...objs) {
     const safe = safeSelf();
-    const haystack = {};
-    const props = safe.Array_from(propNeedles.keys());
+    const matched = [];
     for ( const obj of objs ) {
         if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = safe.JSON_stringify(value); }
-            catch { }
-            if ( typeof value !== 'string' ) { continue; }
+        for ( const [ prop, details ] of propNeedles ) {
+            let value = obj[prop];
+            if ( value === undefined ) { continue; }
+            if ( typeof value !== 'string' ) {
+                try { value = safe.JSON_stringify(value); }
+                catch { }
+                if ( typeof value !== 'string' ) { continue; }
+            }
+            if ( safe.testPattern(details, value) === false ) { return; }
+            matched.push(`${prop}: ${value}`);
         }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
     }
-    return true;
+    return matched;
 }
 
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
+function parsePropertiesToMatchFn(propsToMatch, implicit = '') {
     const safe = safeSelf();
     const needles = new Map();
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
@@ -171,10 +160,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,

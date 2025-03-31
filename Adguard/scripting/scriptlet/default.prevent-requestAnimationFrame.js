@@ -40,8 +40,8 @@ function preventRequestAnimationFrame(
     proxyApplyFn('requestAnimationFrame', function(context) {
         const { callArgs } = context;
         const a = callArgs[0] instanceof Function
-            ? String(safe.Function_toString(callArgs[0]))
-            : String(callArgs[0]);
+            ? safe.String(safe.Function_toString(callArgs[0]))
+            : safe.String(callArgs[0]);
         if ( needleRaw === '' ) {
             safe.uboLog(logPrefix, `Called:\n${a}`);
         } else if ( reNeedle.test(a) !== needleNot ) {
@@ -152,10 +152,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,

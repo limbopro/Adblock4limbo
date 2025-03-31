@@ -196,7 +196,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -234,10 +234,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -458,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["window.WURFL","1"],["manualAutoplay_","noopFunc"],["mi_track_user","false"]];
-const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["feber.se",3],["tjock.se",3],["findit.se",4],["fz.se",5],["fssweden.se",5],["tinyurl.se",5],["gamereactor.se",6],["jobsinsweden.se",7],["kamrat.com",[8,9]],["mobilanyheter.net",10],["ordbokpro.se",11],["thatsup.se",12],["utslappsratt.se",[13,14]],["heleneholmsif.se",[13,14]],["trafikskola.se",[13,14]],["melodifestivalklubben.se",[13,14]],["morotsliv.com",[13,14]],["nyadagbladet.se",[13,14]],["vinochmatguiden.se",15],["vk.se",16],["folkbladet.nu",16],["nordsverige.se",16],["mellanbygden.nu",16],["vasterbottningen.se",16],["lokaltidningen.nu",16],["zeinaskitchen.se",17],["trafiksakerhet.se",17],["boktugg.se",17],["lakartidningen.se",17],["villalivet.se",17],["matsafari.nu",17],["forexgruppen.se",17],["fastighetsvarlden.se",17]]);
+const argsList = [["ai_set_cookie","noopFunc"],["square_array1","null"],["square_arraytop","null"],["dovideostuffAD","noopFunc"],["testPrebid","noopFunc"],["adblock","false"],["adblockEnabled","falseFunc"],["eazy_ad_unblocker","null"],["showAds","false"],["trap","noopFunc"],["ai_run_scripts","noopFunc"],["ab_disp","noopFunc"],["checkAdsBlocked","noopFunc"],["canShowAds","true"],["em_track_user","false"],["exactmetrics_frontend","undefined"],["window.WURFL","1"],["manualAutoplay_","noopFunc"],["mi_track_user","false"]];
+const hostnamesMap = new Map([["byggipedia.se",0],["conpot.se",[1,2]],["feber.se",3],["tjock.se",3],["findit.se",4],["fz.se",5],["fssweden.se",5],["tinyurl.se",5],["gamereactor.se",6],["jobsinsweden.se",7],["kamrat.com",[8,9]],["mobilanyheter.net",10],["ordbokpro.se",11],["swedroid.se",12],["thatsup.se",13],["utslappsratt.se",[14,15]],["heleneholmsif.se",[14,15]],["trafikskola.se",[14,15]],["melodifestivalklubben.se",[14,15]],["morotsliv.com",[14,15]],["nyadagbladet.se",[14,15]],["vinochmatguiden.se",16],["vk.se",17],["folkbladet.nu",17],["nordsverige.se",17],["mellanbygden.nu",17],["vasterbottningen.se",17],["lokaltidningen.nu",17],["zeinaskitchen.se",18],["trafiksakerhet.se",18],["boktugg.se",18],["lakartidningen.se",18],["villalivet.se",18],["matsafari.nu",18],["forexgruppen.se",18],["fastighetsvarlden.se",18]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

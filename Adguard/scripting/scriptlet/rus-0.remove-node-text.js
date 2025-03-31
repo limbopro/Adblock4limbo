@@ -69,7 +69,7 @@ function replaceNodeTextFn(
         if ( tt instanceof Object ) {
             if ( typeof tt.getPropertyType === 'function' ) {
                 if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
-                    return tt.createPolicy(getRandomToken(), out);
+                    return tt.createPolicy(getRandomTokenFn(), out);
                 }
             }
         }
@@ -140,7 +140,7 @@ function replaceNodeTextFn(
     }, 'interactive');
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -156,7 +156,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -194,10 +194,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -366,9 +368,9 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/gtag\\('event'/"],["script","/s_script|tick/"],["script","AdBlocker"],["script","addPlaceholder"],["script","clickedOnContent"],["script","message_ads"],["script","setRequestHeader"],["script","/initTeasers|initVads/"],["script","violatedDirective"],["script","\"Shadow"]];
-const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["inforesist.org",[3,12]],["game4you.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["sports.ru",5],["pikabu.ru",6],["agronews.ua",7],["agroreview.com",7],["gsm.in.ua",8],["tapochek.net",9],["cosplay-porn.*",10],["mult-porno.*",10],["sex-studentki.*",10],["mail.ru",11],["24boxing.com.ua",12],["avtovod.com.ua",12],["bigmir.net",12],["bilshe.com",12],["buhgalter.com.ua",12],["buhgalter911.com",12],["businessua.com",12],["censor.net",12],["dengi.ua",12],["ditey.com",12],["epravda.com.ua",12],["f1analytic.com",12],["facenews.ua",12],["factor.ua",12],["football-ukraine.com",12],["footballgazeta.com",12],["footballtransfer.com.ua",12],["gazeta.ua",12],["glianec.com",12],["gorod.dp.ua",12],["hvylya.net",12],["i.ua",12],["isport.ua",12],["ivona.ua",12],["kolobok.ua",12],["kriminal.tv",12],["liga.net",12],["meteo.ua",12],["meteofor.com.ua",12],["nnovosti.info",12],["nv.ua",12],["panno4ka.net",12],["pogodaua.com",12],["pravda.com.ua",12],["real-vin.com",12],["smak.ua",12],["sportanalytic.com",12],["stravy.net",12],["tochka.net",12],["tv.ua",12],["viva.ua",12],["vsetv.com",12],["www.ukr.net",12],["zdorovia.com.ua",12]]);
-const exceptionsMap = new Map([["3igames.mail.ru",[11]],["account.mail.ru",[11]],["auto.mail.ru",[11]],["biz.mail.ru",[11]],["blog.mail.ru",[11]],["bonus.mail.ru",[11]],["calendar.mail.ru",[11]],["calls.mail.ru",[11]],["cloud.mail.ru",[11]],["connect.mail.ru",[11]],["deti.mail.ru",[11]],["dobro.mail.ru",[11]],["e.mail.ru",[11]],["finance.mail.ru",[11]],["gibdd.mail.ru",[11]],["health.mail.ru",[11]],["help.mail.ru",[11]],["hi-tech.mail.ru",[11]],["horo.mail.ru",[11]],["kino.mail.ru",[11]],["lady.mail.ru",[11]],["love.mail.ru",[11]],["mcs.mail.ru",[11]],["minigames.mail.ru",[11]],["my.mail.ru",[11]],["news.mail.ru",[11]],["o2.mail.ru",[11]],["octavius.mail.ru",[11]],["okminigames.mail.ru",[11]],["otvet.mail.ru",[11]],["pets.mail.ru",[11]],["player-smotri.mail.ru",[11]],["pogoda.mail.ru",[11]],["top.mail.ru",[11]],["touch.mail.ru",[11]],["tv.mail.ru",[11]],["vfokuse.mail.ru",[11]],["widgets.mail.ru",[11]]]);
+const argsList = [["#text","РЕКЛАМНЫЙ БЛОК:"],["#text","Реклама"],["#text","Реклама:"],["script","/ADBLOCK|checkAdBlocker/"],["script","/checkCookie|s_script|tick/"],["script","/gtag\\('event'/"],["script","AdBlocker"],["script","addPlaceholder"],["script","clickedOnContent"],["script","message_ads"],["script","setRequestHeader"],["script","/initTeasers|initVads/"],["script","violatedDirective"],["script","\"Shadow"]];
+const hostnamesMap = new Map([["online-fix.me",0],["farposst.ru",1],["filmitorrent.net",2],["utorr.cc",2],["ritsatv.ru",3],["game4you.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["inforesist.org",[5,13]],["sports.ru",6],["pikabu.ru",7],["agronews.ua",8],["agroreview.com",8],["gsm.in.ua",9],["tapochek.net",10],["cosplay-porn.*",11],["mult-porno.*",11],["sex-studentki.*",11],["mail.ru",12],["24boxing.com.ua",13],["avtovod.com.ua",13],["bigmir.net",13],["bilshe.com",13],["buhgalter.com.ua",13],["buhgalter911.com",13],["businessua.com",13],["censor.net",13],["dengi.ua",13],["ditey.com",13],["epravda.com.ua",13],["f1analytic.com",13],["facenews.ua",13],["factor.ua",13],["football-ukraine.com",13],["footballgazeta.com",13],["footballtransfer.com.ua",13],["gazeta.ua",13],["glianec.com",13],["gorod.dp.ua",13],["hvylya.net",13],["i.ua",13],["isport.ua",13],["ivona.ua",13],["kolobok.ua",13],["kriminal.tv",13],["liga.net",13],["meteo.ua",13],["meteofor.com.ua",13],["nnovosti.info",13],["nv.ua",13],["panno4ka.net",13],["pogodaua.com",13],["pravda.com.ua",13],["real-vin.com",13],["smak.ua",13],["sportanalytic.com",13],["stravy.net",13],["tochka.net",13],["tv.ua",13],["viva.ua",13],["vsetv.com",13],["www.ukr.net",13],["zdorovia.com.ua",13]]);
+const exceptionsMap = new Map([["3igames.mail.ru",[12]],["account.mail.ru",[12]],["auto.mail.ru",[12]],["biz.mail.ru",[12]],["blog.mail.ru",[12]],["bonus.mail.ru",[12]],["calendar.mail.ru",[12]],["calls.mail.ru",[12]],["cloud.mail.ru",[12]],["connect.mail.ru",[12]],["deti.mail.ru",[12]],["dobro.mail.ru",[12]],["e.mail.ru",[12]],["finance.mail.ru",[12]],["gibdd.mail.ru",[12]],["health.mail.ru",[12]],["help.mail.ru",[12]],["hi-tech.mail.ru",[12]],["horo.mail.ru",[12]],["kino.mail.ru",[12]],["lady.mail.ru",[12]],["love.mail.ru",[12]],["mcs.mail.ru",[12]],["minigames.mail.ru",[12]],["my.mail.ru",[12]],["news.mail.ru",[12]],["o2.mail.ru",[12]],["octavius.mail.ru",[12]],["okminigames.mail.ru",[12]],["otvet.mail.ru",[12]],["pets.mail.ru",[12]],["player-smotri.mail.ru",[12]],["pogoda.mail.ru",[12]],["top.mail.ru",[12]],["touch.mail.ru",[12]],["tv.mail.ru",[12]],["vfokuse.mail.ru",[12]],["widgets.mail.ru",[12]]]);
 const hasEntities = true;
 const hasAncestors = false;
 

@@ -216,10 +216,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -389,7 +391,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[],["","10"],["!/download\\/|link|atomtt\\.com\\//"],["?sid="],["?key="],["passeura"],["redirdx.in/go/"]];
-const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["pelispedia.life",0],["cuevana3.*",0],["gnula.*",0],["poseidonhd2.co",0],["cuevana2espanol.*",0],["cuevana.*",0],["geeknetic.es",0],["animeblix.com",[0,5]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["netcine.*",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["megafire.net",0],["url.firepaste.com",0],["seriesflix.onl",0],["player.malfollado.com",0],["anime-jl.net",0],["okpeliz.com",0],["latinohentai.vip",0],["latinohentai.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["atomixhq.*",2],["maxitorrent.com",3],["verdragonball.online",4],["torrentjogos.com.br",4],["redirdx.in",6]]);
+const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["beautyskincarebrasil.com",0],["pelispedia.life",0],["cuevana3.*",0],["gnula.*",0],["poseidonhd2.co",0],["cuevana2espanol.*",0],["cuevana.*",0],["geeknetic.es",0],["animeblix.com",[0,5]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["netcine.*",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelispedia-v2.wtf",0],["paky3.me",0],["pelismart.com",0],["pelismarthd.com",0],["pelispedia-v1.wtf",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["clickhouse.xyz",0],["deportealdia.live",0],["repelis.io",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["hentaijl.com",0],["megafire.net",0],["url.firepaste.com",0],["seriesflix.onl",0],["player.malfollado.com",0],["anime-jl.net",0],["okpeliz.com",0],["latinohentai.vip",0],["latinohentai.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["pulpulyy.club",1],["atomohd.com",2],["atomtt.com",2],["atomixhq.*",2],["maxitorrent.com",3],["verdragonball.online",4],["torrentjogos.com.br",4],["redirdx.in",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

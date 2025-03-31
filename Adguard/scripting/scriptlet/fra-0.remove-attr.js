@@ -112,7 +112,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -150,10 +150,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -322,8 +324,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["href","a[href]#clickfakeplayer"],["href","#clickfakeplayer"]];
-const hostnamesMap = new Map([["1jour1film.cyou",0],["seriescultes.store",0],["1jour1film.homes",0],["seriepourvous.com",0],["1jour1film.*",1]]);
+const argsList = [["href","a[href]#clickfakeplayer"],["href",".content-propose > a[href].btn-ad-iframe"],["href","#clickfakeplayer"]];
+const hostnamesMap = new Map([["1jour1film.cyou",0],["seriescultes.store",0],["1jour1film.homes",0],["seriepourvous.com",0],["empire-streaming.*",1],["1jour1film.*",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

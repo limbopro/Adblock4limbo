@@ -200,7 +200,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -238,10 +238,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -415,8 +417,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["click","checkTarget"],["click","popundr"],["click","showPop"],["click","adLink"],["click","window.open"]];
-const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["filmmakinesi1.*",0],["fullhd720pizle.live",0],["filmizlemax.*",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2],["kultfilmler.com",3],["xyzsports173.xyz",4],["xyzsports174.xyz",4],["xyzsports175.xyz",4],["xyzsports176.xyz",4],["xyzsports177.xyz",4],["xyzsports178.xyz",4],["xyzsports179.xyz",4],["xyzsports180.xyz",4],["xyzsports181.xyz",4],["xyzsports182.xyz",4],["xyzsports183.xyz",4],["xyzsports184.xyz",4],["xyzsports185.xyz",4],["xyzsports186.xyz",4],["xyzsports187.xyz",4],["xyzsports188.xyz",4],["xyzsports189.xyz",4],["xyzsports190.xyz",4],["xyzsports191.xyz",4],["xyzsports192.xyz",4],["xyzsports193.xyz",4],["xyzsports194.xyz",4],["xyzsports195.xyz",4],["xyzsports196.xyz",4],["xyzsports197.xyz",4],["xyzsports198.xyz",4],["xyzsports199.xyz",4],["xyzsports200.xyz",4]]);
+const argsList = [["click","checkTarget"],["click","popundr"],["click","showPop"],["DOMContentLoaded","var adx ="],["click","adLink"],["click","window.open"]];
+const hostnamesMap = new Map([["720pfilmizleme1.com",0],["720pfilmizletir.com",0],["1080pfilmizletir.com",0],["720pfilmizlesene.com",0],["filmmakinesi1.*",0],["fullhd720pizle.live",0],["filmizlemax.*",0],["videoseyred.in",0],["hdfilmcehennem.live",0],["720pvkizle.com",1],["eescobarvip.com",1],["dizirix.net",2],["dizipal.org",3],["kultfilmler.com",4],["xyzsports173.xyz",5],["xyzsports174.xyz",5],["xyzsports175.xyz",5],["xyzsports176.xyz",5],["xyzsports177.xyz",5],["xyzsports178.xyz",5],["xyzsports179.xyz",5],["xyzsports180.xyz",5],["xyzsports181.xyz",5],["xyzsports182.xyz",5],["xyzsports183.xyz",5],["xyzsports184.xyz",5],["xyzsports185.xyz",5],["xyzsports186.xyz",5],["xyzsports187.xyz",5],["xyzsports188.xyz",5],["xyzsports189.xyz",5],["xyzsports190.xyz",5],["xyzsports191.xyz",5],["xyzsports192.xyz",5],["xyzsports193.xyz",5],["xyzsports194.xyz",5],["xyzsports195.xyz",5],["xyzsports196.xyz",5],["xyzsports197.xyz",5],["xyzsports198.xyz",5],["xyzsports199.xyz",5],["xyzsports200.xyz",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

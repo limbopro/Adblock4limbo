@@ -151,10 +151,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -323,8 +325,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["oncontextmenu"],["disable_copy"],["AdBlocker"],["alert"],["String.fromCharCode"],["debugger"]];
-const hostnamesMap = new Map([["runmods.com",0],["magesy.blog",1],["magesypro.pro",1],["romviet.com",2],["isekaipalace.com",3],["seriesperu.com",4],["alexsportz.online",5],["sportea.online",5],["freetvsports.xyz",5],["movie-web.app",5]]);
+const argsList = [["AdBlocker"],["oncontextmenu"],["disable_copy"],["alert"],["String.fromCharCode"],["debugger"]];
+const hostnamesMap = new Map([["romviet.com",0],["runmods.com",1],["magesy.blog",2],["magesypro.pro",2],["isekaipalace.com",3],["seriesperu.com",4],["alexsportz.online",5],["sportea.online",5],["freetvsports.xyz",5],["movie-web.app",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

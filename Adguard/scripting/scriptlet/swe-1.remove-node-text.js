@@ -69,7 +69,7 @@ function replaceNodeTextFn(
         if ( tt instanceof Object ) {
             if ( typeof tt.getPropertyType === 'function' ) {
                 if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
-                    return tt.createPolicy(getRandomToken(), out);
+                    return tt.createPolicy(getRandomTokenFn(), out);
                 }
             }
         }
@@ -140,7 +140,7 @@ function replaceNodeTextFn(
     }, 'interactive');
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -156,7 +156,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -194,10 +194,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -366,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","decodeURIComponent"],["script","checkAdsBlocked"]];
-const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["pilsner.nu",5],["swedroid.se",6]]);
+const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","decodeURIComponent"]];
+const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["pilsner.nu",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

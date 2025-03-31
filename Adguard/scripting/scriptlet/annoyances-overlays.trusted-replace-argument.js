@@ -88,7 +88,7 @@ function trustedReplaceArgument(
 
 function parseReplaceFn(s) {
     if ( s.charCodeAt(0) !== 0x2F /* / */ ) { return; }
-    const parser = createArglistParser('/');
+    const parser = new ArglistParser('/');
     parser.nextArg(s, 1);
     let pattern = s.slice(parser.argBeg, parser.argEnd);
     if ( parser.transform ) {
@@ -208,10 +208,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -427,10 +429,6 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         }
     }
     return value;
-}
-
-function createArglistParser(...args) {
-    return new ArglistParser(...args);
 }
 
 class ArglistParser {

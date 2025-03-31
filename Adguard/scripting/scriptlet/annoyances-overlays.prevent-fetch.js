@@ -287,10 +287,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -459,8 +461,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["www3.doubleclick.net"],["analytics"],["googlesyndication"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"],["doubleclick"]];
-const hostnamesMap = new Map([["tools.jabrek.net",0],["ddys.*",1],["textcleaner.net",2],["socialcounts.org",2],["viewing.nyc",2],["autopareri.com",2],["curseforge.com",2],["theonegenerator.com",3],["mcskinhistory.com",3],["bypass.city",4],["adbypass.org",4],["amtraker.com",5],["ark-unity.com",6],["pokeos.com",7]]);
+const argsList = [["www3.doubleclick.net"],["googlesyndication"],["ads"],["doubleclick"],["analytics"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"]];
+const hostnamesMap = new Map([["tools.jabrek.net",0],["maxedtech.com",1],["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["theonegenerator.com",2],["mcskinhistory.com",2],["pokeos.com",3],["sporttotal.tv",3],["ddys.*",4],["bypass.city",5],["adbypass.org",5],["amtraker.com",6],["ark-unity.com",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

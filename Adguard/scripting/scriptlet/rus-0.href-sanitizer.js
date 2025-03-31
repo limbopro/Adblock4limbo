@@ -156,7 +156,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -194,10 +194,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -458,8 +460,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/away?\"]","?to"],["a[href*=\"/bitrix/rk.php?goto=https\"]","?goto"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/redir.php?r=\"]","?r"],["a[href*=\"/redir/\"]","?exturl"],["a[href*=\"/redir/\"]","?vzurl"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"?goto=https\"]","?goto"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href][target=\"_blank\"][rel=\"nofollow\"]","?ulp"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/engine/dwn\"]","?xf"],["a[href^=\"https://api.dtf.ru/\"][href*=\"/redirect?to=\"]","?to"],["a[href^=\"https://pikabu.ru/\"][href*=\"?u=http\"]","?u"],["a[href^=\"https://www.google.com/url?q=\"]"],["a[href^=\"https://www.youtube.com/redirect?event=\"][href*=\"&q=http\"]","?q"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"]];
-const hostnamesMap = new Map([["softoroom.org",0],["vk.com",1],["vk.ru",1],["vkvideo.ru",1],["dzen.ru",2],["freehat.cc",3],["lalapaluza.ru",3],["game4you.top",4],["innal.top",4],["naylo.top",4],["rustorka.com",4],["rustorka.net",4],["rustorka.top",4],["rustorkacom.lib",4],["stalkermods.ru",5],["vz.ru",[6,7]],["opennet.me",8],["opennet.ru",8],["appleinsider.ru",9],["kluchikipro.ru",10],["lifehacker.ru",11],["hot.game",12],["www.ixbt.com",13],["wotspeak.org",14],["dtf.ru",15],["pikabu.ru",16],["nsportal.ru",17],["youtube.com",18],["light.mail.ru",[19,20]],["e.mail.ru",21],["octavius.mail.ru",21]]);
+const argsList = [["[href*=\"?url=https\"]","?url"],["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/away?\"]","?to"],["a[href*=\"/bitrix/rk.php?goto=https\"]","?goto"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/redir.php?r=\"]","?r"],["a[href*=\"/redir/\"]","?exturl"],["a[href*=\"/redir/\"]","?vzurl"],["a[href*=\"/redirect?to=\"]","?to"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"?goto=https\"]","?goto"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href][target=\"_blank\"][rel=\"nofollow\"]","?ulp"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/engine/dwn\"]","?xf"],["a[href^=\"https://pikabu.ru/\"][href*=\"?u=http\"]","?u"],["a[href^=\"https://www.google.com/url?q=\"]"],["a[href^=\"https://www.youtube.com/redirect?event=\"][href*=\"&q=http\"]","?q"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"]];
+const hostnamesMap = new Map([["mp3party.net",0],["softoroom.org",1],["vk.com",2],["vk.ru",2],["vkvideo.ru",2],["dzen.ru",3],["freehat.cc",4],["lalapaluza.ru",4],["game4you.top",5],["innal.top",5],["naylo.top",5],["rustorka.com",5],["rustorka.net",5],["rustorka.top",5],["rustorkacom.lib",5],["stalkermods.ru",6],["vz.ru",[7,8]],["dtf.ru",9],["vc.ru",9],["opennet.me",10],["opennet.ru",10],["appleinsider.ru",11],["kluchikipro.ru",12],["lifehacker.ru",13],["hot.game",14],["www.ixbt.com",15],["wotspeak.org",16],["pikabu.ru",17],["nsportal.ru",18],["youtube.com",19],["light.mail.ru",[20,21]],["e.mail.ru",22],["octavius.mail.ru",22]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

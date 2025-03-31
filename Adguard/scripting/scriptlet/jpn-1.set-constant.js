@@ -196,7 +196,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -234,10 +234,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -458,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adBlockerDetected","false"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["adBlockDetected","noopFunc"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"],["univresalP","noopFunc"],["SU_Api.AdsTimer","-1"],["TagProvider.cleanup","noopFunc"]];
-const hostnamesMap = new Map([["egotter.com",0],["520call.me",1],["520cc.cc",1],["dropbooks.net",2],["coolpan.net",3],["g-pc.info",4],["intaa.net",5],["h-ken.net",6],["pictab.art",7],["onagazou.info",7],["fashionpost.jp",8],["jav380.com",9],["sukima.me",[10,11,12,13]],["sonae.sankei.co.jp",14],["ponta.abstractpainting.work",[15,16]],["dotti2.jp",17],["pochitto2.jp",17],["gotouchi.jp",17],["cmnw.jp",17],["ddd-smart.net",18],["azby.fmworld.net",19],["famitsu.com",20]]);
+const argsList = [["adBlockerDetected","false"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["adBlockDetected","noopFunc"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"],["univresalP","noopFunc"],["isGGSurvey","true"],["enable_dl_after_countdown","true"],["SU_Api.AdsTimer","-1"],["TagProvider.cleanup","noopFunc"]];
+const hostnamesMap = new Map([["egotter.com",0],["520call.me",1],["520cc.cc",1],["dropbooks.net",2],["coolpan.net",3],["g-pc.info",4],["intaa.net",5],["h-ken.net",6],["pictab.art",7],["onagazou.info",7],["fashionpost.jp",8],["jav380.com",9],["sukima.me",[10,11,12,13]],["sonae.sankei.co.jp",14],["ponta.abstractpainting.work",[15,16]],["dotti2.jp",17],["pochitto2.jp",17],["gotouchi.jp",17],["cmnw.jp",17],["ddd-smart.net",18],["ac-illust.com",[19,20]],["photo-ac.com",[19,20]],["silhouette-ac.com",[19,20]],["azby.fmworld.net",21],["famitsu.com",22]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

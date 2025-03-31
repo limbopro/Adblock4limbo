@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["","{\"selector\":\".aScr\",\"action\":[\"style\",\"display:block!important\"]}\n{\"selector\":\".aSlB\",\"action\":[\"style\",\"display:flex!important\"]}\n{\"selector\":\".aft\",\"action\":[\"style\",\"display:block!important\"]}\n{\"selector\":\".pstL\",\"action\":[\"style\",\"display:inline-flex!important\"]}","{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"]}","{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}\n{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"]}"];
+const argsList = ["","{\"selector\":\".aScr\",\"action\":[\"style\",\"display:block!important\"]}\n{\"selector\":\".aSlB\",\"action\":[\"style\",\"display:flex!important\"]}\n{\"selector\":\".aft\",\"action\":[\"style\",\"display:block!important\"]}\n{\"selector\":\".pstL\",\"action\":[\"style\",\"display:inline-flex!important\"]}","{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"]}","{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}\n{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"];
 const argsSeqs = [0,1,2,3,4,5];
-const hostnamesMap = new Map([["apkmoddone.phongroblox.com",1],["chotlo3s.com",2],["www.o-study.net",3],["www.saostar.vn",4],["z1000.thapcam53.net",5],["hhpanda.ch",5],["themphotv.net",5]]);
+const hostnamesMap = new Map([["apkmoddone.phongroblox.com",1],["chotlo3s.com",2],["hhpanda.id",3],["themphotv.net",3],["www.o-study.net",4],["www.saostar.vn",5]]);
 const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];

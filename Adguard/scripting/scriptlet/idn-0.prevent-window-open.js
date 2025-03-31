@@ -216,10 +216,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -389,7 +391,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["anichin.top",0],["animekompi.vip",0],["indobo.com",0],["kimcilonly.site",0],["kiryuu.id",0],["kiryuu.org",0],["komikcast02.com",0],["njavtv.com",0],["subindojav.cc",0]]);
+const hostnamesMap = new Map([["anichin.top",0],["animekompi.vip",0],["indobo.com",0],["jurnalistekno.id",0],["kimcilonly.site",0],["kiryuu.id",0],["kiryuu.org",0],["komikcast02.com",0],["njavtv.com",0],["subindojav.cc",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

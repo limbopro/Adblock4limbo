@@ -77,10 +77,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -250,7 +252,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["skipButton","*","0.001"],["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["advert","*","0.001"],["kalsan","","0.001"],["sec--","*","0.001"],["timeleft","*","0.02"]];
-const hostnamesMap = new Map([["dizipal1.com",0],["hdsinemax.com",1],["elzemfilm.org",1],["tafdi3.com",2],["tafdi4.com",2],["tafdi5.com",2],["filmizletv18.com",3],["filmizletv.*",[3,7]],["fullhdfilmizle.*",[4,7]],["fullhdfilm.*",4],["itemci.com",5],["vkfilmizlet.net",6],["fullhdizle.*",7],["filmizlehdfilm.com",7],["fullfilmizle.*",7],["fullfilmizle.cc",7],["fullhdfilmizletv.*",7],["hdfilmcehennemi.*",7],["hdfilmcix.org",7],["hdfilmizlesene.org",7],["sinema.cx",7],["yabancidizi.*",8]]);
+const hostnamesMap = new Map([["dizipal1.com",0],["hdsinemax.com",1],["elzemfilm.org",1],["tafdi3.com",2],["tafdi4.com",2],["tafdi5.com",2],["filmizletv18.com",3],["filmizletv.*",[3,7]],["fullhdfilmizle.*",[4,7]],["fullhdfilm.*",4],["itemci.com",5],["vkfilmizlet.net",6],["fullhdizle.*",7],["filmizlehdfilm.com",7],["fullfilmizle.*",7],["fullfilmizle.cc",7],["fullhdfilmizletv.*",7],["hdfilmcehennemi.*",7],["hdfilmcix.*",7],["hdfilmizlesene.org",7],["sinema.cx",7],["yabancidizi.*",8]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

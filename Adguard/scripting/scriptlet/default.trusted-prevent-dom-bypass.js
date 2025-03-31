@@ -50,7 +50,16 @@ function trustedPreventDomBypass(
                     }
                 }
                 if ( targetProp !== '' ) {
-                    elem.contentWindow[targetProp] = self[targetProp];
+                    let me = self, it = elem.contentWindow;
+                    let chain = targetProp;
+                    for (;;) {
+                        const pos = chain.indexOf('.');
+                        if ( pos === -1 ) { break; }
+                        const prop = chain.slice(0, pos);
+                        me = me[prop]; it = it[prop];
+                        chain = chain.slice(pos+1);
+                    }
+                    it[chain] = me[chain];
                 } else {
                     Object.defineProperty(elem, 'contentWindow', { value: self });
                 }
@@ -162,10 +171,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -334,8 +345,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Node.prototype.appendChild","fetch"]];
-const hostnamesMap = new Map([["www.youtube.com",0]]);
+const argsList = [["Node.prototype.appendChild","fetch"],["Node.prototype.appendChild","Request"]];
+const hostnamesMap = new Map([["www.youtube.com",[0,1]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

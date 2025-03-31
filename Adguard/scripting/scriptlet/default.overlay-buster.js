@@ -85,7 +85,7 @@ function overlayBuster(allFrames) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["cimanow.cc",0],["cimanow.online",0],["freex2line.online",0]]);
+const hostnamesMap = new Map([["freex2line.online",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -69,7 +69,7 @@ function abortCurrentScriptCore(
         desc = undefined;
     }
     const debug = shouldDebug(extraArgs);
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const scriptTexts = new WeakMap();
     const getScriptText = elem => {
         let text = elem.textContent;
@@ -154,8 +154,8 @@ function runAtHtmlElementFn(fn) {
     observer.observe(document, { childList: true });
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -185,10 +185,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -359,7 +361,7 @@ function shouldDebug(details) {
     return scriptletGlobals.canDebug && details.debug;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -368,8 +370,8 @@ function getRandomToken() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["$","#modal-consent"],["spanLinkClick","#cookiebanner"],["alertCookie"],["doOnce"],["$","#kuk"],["$","#contentwrap"],["jQuery","synchronizeCookieNoteCookie"],["document.createElement","consent.cookiebot.com"],["document.createElement","delivery/cmp"],["$j","acceptTOS"],["document.createElement","admiral"]];
-const hostnamesMap = new Map([["vorteilshop.com",0],["hagengrote.de",0],["sanha-shop.com",1],["wizardshop.su",2],["aphorisma.de",3],["aphorisma-verlag.eu",3],["aphorisma.org",3],["romshub.com",4],["stadtundgruen.de",5],["tredy-fashion.de",6],["hildegardis-krankenhaus.de",7],["st-agatha-krankenhaus.de",7],["connect.de",8],["archiveofourown.org",9],["titantv.com",10],["musicfeeds.com.au",10],["minecraftalpha.net",10],["worldpopulationreview.com",10],["boston.com",10],["britannica.com",10],["download.mokeedev.com",10],["freep.com",10],["ijr.com",10],["inquirer.net",10],["legacy.com",10],["nationalreview.com",10],["nofilmschool.com",10],["order-order.com",10],["savvytime.com",10],["techlicious.com",10],["technicpack.net",10],["thedraftnetwork.com",10],["wrestlezone.com",10]]);
+const argsList = [["document.createElement","admiral"]];
+const hostnamesMap = new Map([["titantv.com",0],["musicfeeds.com.au",0],["minecraftalpha.net",0],["worldpopulationreview.com",0],["boston.com",0],["britannica.com",0],["download.mokeedev.com",0],["freep.com",0],["ijr.com",0],["inquirer.net",0],["legacy.com",0],["nationalreview.com",0],["nofilmschool.com",0],["order-order.com",0],["savvytime.com",0],["techlicious.com",0],["technicpack.net",0],["thedraftnetwork.com",0],["wrestlezone.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

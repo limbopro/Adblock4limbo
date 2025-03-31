@@ -40,7 +40,7 @@ function trustedReplaceXhrResponse(
     const xhrInstances = new WeakMap();
     if ( pattern === '*' ) { pattern = '.*'; }
     const rePattern = safe.patternToRegex(pattern);
-    const propNeedles = parsePropertiesToMatch(propsToMatch, 'url');
+    const propNeedles = parsePropertiesToMatchFn(propsToMatch, 'url');
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
     const reIncludes = extraArgs.includes ? safe.patternToRegex(extraArgs.includes) : null;
     self.XMLHttpRequest = class extends self.XMLHttpRequest {
@@ -49,7 +49,7 @@ function trustedReplaceXhrResponse(
             const xhrDetails = { method, url };
             let outcome = 'match';
             if ( propNeedles.size !== 0 ) {
-                if ( matchObjectProperties(propNeedles, xhrDetails) === false ) {
+                if ( matchObjectPropertiesFn(propNeedles, xhrDetails) === undefined ) {
                     outcome = 'nomatch';
                 }
             }
@@ -100,38 +100,27 @@ function trustedReplaceXhrResponse(
     };
 }
 
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
-            }
-        };
-    }
+function matchObjectPropertiesFn(propNeedles, ...objs) {
     const safe = safeSelf();
-    const haystack = {};
-    const props = safe.Array_from(propNeedles.keys());
+    const matched = [];
     for ( const obj of objs ) {
         if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = safe.JSON_stringify(value); }
-            catch { }
-            if ( typeof value !== 'string' ) { continue; }
+        for ( const [ prop, details ] of propNeedles ) {
+            let value = obj[prop];
+            if ( value === undefined ) { continue; }
+            if ( typeof value !== 'string' ) {
+                try { value = safe.JSON_stringify(value); }
+                catch { }
+                if ( typeof value !== 'string' ) { continue; }
+            }
+            if ( safe.testPattern(details, value) === false ) { return; }
+            matched.push(`${prop}: ${value}`);
         }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
     }
-    return true;
+    return matched;
 }
 
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
+function parsePropertiesToMatchFn(propsToMatch, implicit = '') {
     const safe = safeSelf();
     const needles = new Map();
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
@@ -171,10 +160,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -343,7 +334,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","/\\/player(?:\\?.+)?$/"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/.*/","","pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"],["/null,\"category_sensitive\"[^\\n]+?\"__typename\":\"SponsoredData\"[^\\n]+\"cursor\":\"[^\"]+\"\\}/g","null}","/api/graphql"]];
+const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","/\\/player(?:\\?.+)?$/"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/.*/","","pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"],["/null,[^\\n]{0,170}\"node\":\\{\"__typename\"[^\\n]{0,170}__typename\":\"SponsoredData\"[^\\n]+?,\"__isFeedEdge\"/g","null,\"__isFeedEdge\"","/api/graphql"]];
 const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5,8]],["www.facebook.com",[3,4,5,8]],["in-jpn.com",6],["app.hellovaia.com",7],["app.studysmarter.de",7],["app.vaia.com",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

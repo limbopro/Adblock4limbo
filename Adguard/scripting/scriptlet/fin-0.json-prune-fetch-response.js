@@ -30,23 +30,18 @@
 
 /******************************************************************************/
 
-function jsonPruneFetchResponse(...args) {
-    jsonPruneFetchResponseFn(...args);
-}
-
-function jsonPruneFetchResponseFn(
+function jsonPruneFetchResponse(
     rawPrunePaths = '',
     rawNeedlePaths = ''
 ) {
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('json-prune-fetch-response', rawPrunePaths, rawNeedlePaths);
     const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
-    const propNeedles = parsePropertiesToMatch(extraArgs.propsToMatch, 'url');
+    const propNeedles = parsePropertiesToMatchFn(extraArgs.propsToMatch, 'url');
     const stackNeedle = safe.initPattern(extraArgs.stackToMatch || '', { canNegate: true });
     const logall = rawPrunePaths === '';
     const applyHandler = function(target, thisArg, args) {
         const fetchPromise = Reflect.apply(target, thisArg, args);
-        let outcome = logall ? 'nomatch' : 'match';
         if ( propNeedles.size !== 0 ) {
             const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
             if ( objs[0] instanceof Request ) {
@@ -59,13 +54,11 @@ function jsonPruneFetchResponseFn(
             if ( args[1] instanceof Object ) {
                 objs.push(args[1]);
             }
-            if ( matchObjectProperties(propNeedles, ...objs) === false ) {
-                outcome = 'nomatch';
+            const matched = matchObjectPropertiesFn(propNeedles, ...objs);
+            if ( matched === undefined ) { return fetchPromise; }
+            if ( safe.logLevel > 1 ) {
+                safe.uboLog(logPrefix, `Matched "propsToMatch":\n\t${matched.join('\n\t')}`);
             }
-        }
-        if ( logall === false && outcome === 'nomatch' ) { return fetchPromise; }
-        if ( safe.logLevel > 1 && outcome !== 'nomatch' && propNeedles.size !== 0 ) {
-            safe.uboLog(logPrefix, `Matched optional "propsToMatch"\n${extraArgs.propsToMatch}`);
         }
         return fetchPromise.then(responseBefore => {
             const response = responseBefore.clone();
@@ -110,35 +103,24 @@ function jsonPruneFetchResponseFn(
     });
 }
 
-function matchObjectProperties(propNeedles, ...objs) {
-    if ( matchObjectProperties.extractProperties === undefined ) {
-        matchObjectProperties.extractProperties = (src, des, props) => {
-            for ( const p of props ) {
-                const v = src[p];
-                if ( v === undefined ) { continue; }
-                des[p] = src[p];
-            }
-        };
-    }
+function matchObjectPropertiesFn(propNeedles, ...objs) {
     const safe = safeSelf();
-    const haystack = {};
-    const props = safe.Array_from(propNeedles.keys());
+    const matched = [];
     for ( const obj of objs ) {
         if ( obj instanceof Object === false ) { continue; }
-        matchObjectProperties.extractProperties(obj, haystack, props);
-    }
-    for ( const [ prop, details ] of propNeedles ) {
-        let value = haystack[prop];
-        if ( value === undefined ) { continue; }
-        if ( typeof value !== 'string' ) {
-            try { value = safe.JSON_stringify(value); }
-            catch { }
-            if ( typeof value !== 'string' ) { continue; }
+        for ( const [ prop, details ] of propNeedles ) {
+            let value = obj[prop];
+            if ( value === undefined ) { continue; }
+            if ( typeof value !== 'string' ) {
+                try { value = safe.JSON_stringify(value); }
+                catch { }
+                if ( typeof value !== 'string' ) { continue; }
+            }
+            if ( safe.testPattern(details, value) === false ) { return; }
+            matched.push(`${prop}: ${value}`);
         }
-        if ( safe.testPattern(details, value) ) { continue; }
-        return false;
     }
-    return true;
+    return matched;
 }
 
 function objectPruneFn(
@@ -183,7 +165,7 @@ function objectPruneFn(
     if ( outcome === 'match' ) { return obj; }
 }
 
-function parsePropertiesToMatch(propsToMatch, implicit = '') {
+function parsePropertiesToMatchFn(propsToMatch, implicit = '') {
     const safe = safeSelf();
     const needles = new Map();
     if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
@@ -223,10 +205,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -397,7 +381,7 @@ function matchesStackTraceFn(
     logLevel = ''
 ) {
     const safe = safeSelf();
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const error = new safe.Error(exceptionToken);
     const docURL = new URL(self.location.href);
     docURL.hash = '';
@@ -442,6 +426,7 @@ function objectFindOwnerFn(
     path,
     prune = false
 ) {
+    const safe = safeSelf();
     let owner = root;
     let chain = path;
     for (;;) {
@@ -449,16 +434,16 @@ function objectFindOwnerFn(
         const pos = chain.indexOf('.');
         if ( pos === -1 ) {
             if ( prune === false ) {
-                return owner.hasOwnProperty(chain);
+                return safe.Object_hasOwn(owner, chain);
             }
             let modified = false;
             if ( chain === '*' ) {
                 for ( const key in owner ) {
-                    if ( owner.hasOwnProperty(key) === false ) { continue; }
+                    if ( safe.Object_hasOwn(owner, key) === false ) { continue; }
                     delete owner[key];
                     modified = true;
                 }
-            } else if ( owner.hasOwnProperty(chain) ) {
+            } else if ( safe.Object_hasOwn(owner, chain) ) {
                 delete owner[chain];
                 modified = true;
             }
@@ -495,14 +480,14 @@ function objectFindOwnerFn(
             }
             return found;
         }
-        if ( owner.hasOwnProperty(prop) === false ) { return false; }
+        if ( safe.Object_hasOwn(owner, prop) === false ) { return false; }
         owner = owner[prop];
         chain = chain.slice(pos + 1);
     }
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -513,7 +498,7 @@ function getExceptionToken() {
     return token;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);

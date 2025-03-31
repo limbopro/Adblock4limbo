@@ -88,7 +88,7 @@ function trustedReplaceArgument(
 
 function parseReplaceFn(s) {
     if ( s.charCodeAt(0) !== 0x2F /* / */ ) { return; }
-    const parser = createArglistParser('/');
+    const parser = new ArglistParser('/');
     parser.nextArg(s, 1);
     let pattern = s.slice(parser.argBeg, parser.argEnd);
     if ( parser.transform ) {
@@ -208,10 +208,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -429,10 +431,6 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
     return value;
 }
 
-function createArglistParser(...args) {
-    return new ArglistParser(...args);
-}
-
 class ArglistParser {
     constructor(separatorChar = ',', mustQuote = false) {
         this.separatorChar = this.actualSeparatorChar = separatorChar;
@@ -530,10 +528,10 @@ class ArglistParser {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["JSON.parse","0","repl:/\"adBlockWallEnabled\":true/\"adBlockWallEnabled\":false/","condition","adBlockWallEnabled"],["getComputedStyle","0","body","condition","getComputedStyle"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","noopFunc","condition","error-report.com"],["document.querySelector","0","noopFunc","condition","adblock"],["Array.prototype.find","0","undefined","condition","affinity-qi"],["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","json:\"body\"","condition",".ad-zone"],["Range.prototype.createContextualFragment","0","","condition","WebAssembly"],["document.querySelectorAll","0","json:\"body\"","condition",".adsbygoogle:not(.adsbygoogle-noablate)"],["document.querySelectorAll","0","json:\"#app-root\"","condition","google_ads_iframe"],["HTMLAnchorElement.prototype.getAttribute","0","json:\"class\"","condition","data-direct-ad"],["history.replaceState","2","''","condition","?orgRef"],["document.querySelector","0","{\"value\": \".ad-placement-interstitial\"}","condition",".easyAdsBox"]];
-const hostnamesMap = new Map([["bild.de",0],["imagereviser.com",1],["ygosu.com",2],["bamgosu.site",2],["loawa.com",3],["buzzfeed.com",4],["buzzfeednews.com",4],["picrew.me",4],["winfuture.de",4],["autosport.com",5],["motorsport.com",5],["motorsport.uol.com.br",5],["startpage.com",6],["copyseeker.net",7],["zonebourse.com",8],["scimagojr.com",9],["coomer.su",10],["kemono.su",10],["gecmisi.com.tr",11],["wired.com",12],["slant.co",13],["www.lenovo.com",14],["purepeople.com",15]]);
+const argsList = [["JSON.parse","0","repl:/\"adBlockWallEnabled\":true/\"adBlockWallEnabled\":false/","condition","adBlockWallEnabled"],["getComputedStyle","0","body","condition","getComputedStyle"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='//image.ygosu.com/style/main.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","{\"value\": \"(function(){let link=document.createElement('link');link.rel='stylesheet';link.href='https://loawa.com/assets/css/loawa.min.css';document.head.appendChild(link)})()\"}","condition","error-report"],["HTMLScriptElement.prototype.setAttribute","1","noopFunc","condition","error-report.com"],["document.querySelector","0","noopFunc","condition","adblock"],["document.addEventListener","0","json:\"click\"","condition","visibilitychange"],["Array.prototype.find","0","undefined","condition","affinity-qi"],["document.getElementById","0","null","condition","adsense-container"],["document.getElementById","0","null","condition","modal"],["document.querySelector","0","json:\"body\"","condition",".ad-zone"],["Range.prototype.createContextualFragment","0","","condition","WebAssembly"],["document.querySelectorAll","0","json:\"body\"","condition",".adsbygoogle:not(.adsbygoogle-noablate)"],["document.querySelectorAll","0","json:\"#app-root\"","condition","google_ads_iframe"],["HTMLAnchorElement.prototype.getAttribute","0","json:\"class\"","condition","data-direct-ad"],["history.replaceState","2","''","condition","?orgRef"],["document.querySelector","0","{\"value\": \".ad-placement-interstitial\"}","condition",".easyAdsBox"]];
+const hostnamesMap = new Map([["bild.de",0],["imagereviser.com",1],["ygosu.com",2],["bamgosu.site",2],["loawa.com",3],["buzzfeed.com",4],["buzzfeednews.com",4],["picrew.me",4],["winfuture.de",4],["autosport.com",5],["motorsport.com",5],["motorsport.uol.com.br",5],["empire-anime.*",6],["empire-streaming.*",6],["empire-anime.com",6],["empire-streamz.fr",6],["empire-stream.*",6],["startpage.com",7],["copyseeker.net",8],["zonebourse.com",9],["scimagojr.com",10],["coomer.su",11],["kemono.su",11],["gecmisi.com.tr",12],["wired.com",13],["slant.co",14],["www.lenovo.com",15],["purepeople.com",16]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

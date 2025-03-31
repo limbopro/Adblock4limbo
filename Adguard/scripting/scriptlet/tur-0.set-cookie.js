@@ -108,10 +108,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -350,8 +352,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"],["npk","1"]];
-const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2],["dizipal.org",3]]);
+const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"]];
+const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -171,7 +171,7 @@ function matchesStackTraceFn(
     logLevel = ''
 ) {
     const safe = safeSelf();
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const error = new safe.Error(exceptionToken);
     const docURL = new URL(self.location.href);
     docURL.hash = '';
@@ -216,6 +216,7 @@ function objectFindOwnerFn(
     path,
     prune = false
 ) {
+    const safe = safeSelf();
     let owner = root;
     let chain = path;
     for (;;) {
@@ -223,16 +224,16 @@ function objectFindOwnerFn(
         const pos = chain.indexOf('.');
         if ( pos === -1 ) {
             if ( prune === false ) {
-                return owner.hasOwnProperty(chain);
+                return safe.Object_hasOwn(owner, chain);
             }
             let modified = false;
             if ( chain === '*' ) {
                 for ( const key in owner ) {
-                    if ( owner.hasOwnProperty(key) === false ) { continue; }
+                    if ( safe.Object_hasOwn(owner, key) === false ) { continue; }
                     delete owner[key];
                     modified = true;
                 }
-            } else if ( owner.hasOwnProperty(chain) ) {
+            } else if ( safe.Object_hasOwn(owner, chain) ) {
                 delete owner[chain];
                 modified = true;
             }
@@ -269,7 +270,7 @@ function objectFindOwnerFn(
             }
             return found;
         }
-        if ( owner.hasOwnProperty(prop) === false ) { return false; }
+        if ( safe.Object_hasOwn(owner, prop) === false ) { return false; }
         owner = owner[prop];
         chain = chain.slice(pos + 1);
     }
@@ -294,10 +295,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -463,8 +466,8 @@ function safeSelf() {
     return safe;
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -475,7 +478,7 @@ function getExceptionToken() {
     return token;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);

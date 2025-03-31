@@ -28,8 +28,8 @@
 /******************************************************************************/
 
 const genericSelectorMap = undefined;
-const genericExceptionSieve = [4040486,1839954,8251810,6867818,1546830,449175,1848928,9220559,6381933];
-const genericExceptionMap = [["apollo.lv",".article-ad-placeholder\n.dfp-ad\n.ad01\n.adBanner\n.dfp_ad"],["tvnet.lv",".article-ad-placeholder\n.dfp-ad\n.ad01\n.adBanner\n.dfp_ad"],["atverskapi.delfi.lv",".ad-placement\n.adocean"],["varianti.lv","#ad_table\n.single_ad"]];
+const genericExceptionSieve = [4040486,1839954,6867818,9220559,6381933];
+const genericExceptionMap = [["apollo.lv",".article-ad-placeholder\n.dfp-ad"],["tvnet.lv",".article-ad-placeholder\n.dfp-ad"],["atverskapi.delfi.lv",".adocean"],["varianti.lv","#ad_table\n.single_ad"]];
 
 if ( genericSelectorMap ) {
     const map = self.genericSelectorMap =

@@ -75,10 +75,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -248,7 +250,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[],["12"]];
-const hostnamesMap = new Map([["1movietv.com",0],["legendas.dev",0],["telesintese.com.br",0],["novsport.com",0],["deckbandit.com",0],["getcopy.link",0],["ricettafitness.com",0],["yts-subs.dev",0],["edoujin.net",0],["bitcotasks.com",0],["blackmod.net",0],["filmy4wap.co.in",0],["filmy4waps.org",0],["thefootballforum.net",0],["click.allkeyshop.com",0],["cl1ca.com",1],["4br.me",1],["fir3.net",1],["seulink.*",1],["encurtalink.*",1]]);
+const hostnamesMap = new Map([["1movietv.com",0],["legendas.dev",0],["telesintese.com.br",0],["novsport.com",0],["deckbandit.com",0],["getcopy.link",0],["ricettafitness.com",0],["yts-subs.dev",0],["bitcotasks.com",0],["blackmod.net",0],["filmy4wap.co.in",0],["filmy4waps.org",0],["thefootballforum.net",0],["click.allkeyshop.com",0],["cl1ca.com",1],["4br.me",1],["fir3.net",1],["seulink.*",1],["encurtalink.*",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

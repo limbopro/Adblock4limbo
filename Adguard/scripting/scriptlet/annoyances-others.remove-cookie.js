@@ -111,10 +111,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -284,7 +286,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["br_mc"],["articlesRead"],["_zippia-popup-s_t"],["tce","when","scroll"],["arc"],["tpm_article_views"],["tpm_page_views"],["sbj_archiveStatus"],["issuem_lp"],["ArticlePaywallList"],["xbc"],["/^tncms:meter:/"],["meter_haystack"],["Drupal_visitor_paywall"],["client_id"],["AAJPaywall"],["MAID"]];
-const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["lawinsider.com",3],["nautil.us",4],["talkingpointsmemo.com",[5,6]],["sportsbusinessjournal.com",7],["theolivepress.es",8],["plough.com",9],["politico.com",10],["politico.eu",10],["bbc.com",10],["themonthly.com.au",10],["thesaturdaypaper.com.au",10],["nypost.com",10],["triathlete.com",10],["niagarafallsreview.ca",11],["stcatharinesstandard.ca",11],["therecord.com",11],["thespec.com",11],["thestar.com",11],["wellandtribune.ca",11],["hartfordbusiness.com",12],["commonwealmagazine.org",13],["startribune.com",14],["americanaffairsjournal.org",15],["science.org",16]]);
+const hostnamesMap = new Map([["bestrecipes.com.au",0],["screenrant.com",1],["androidpolice.com",1],["cbr.com",1],["collider.com",1],["dualshockers.com",1],["gamerant.com",1],["howtogeek.com",1],["makeuseof.com",1],["movieweb.com",1],["pocketnow.com",1],["thegamer.com",1],["thetravel.com",1],["xda-developers.com",1],["zippia.com",2],["lawinsider.com",3],["nautil.us",4],["talkingpointsmemo.com",[5,6]],["sportsbusinessjournal.com",7],["theolivepress.es",8],["plough.com",9],["politico.com",10],["politico.eu",10],["bbc.com",10],["climbing.com",10],["themonthly.com.au",10],["thesaturdaypaper.com.au",10],["nypost.com",10],["triathlete.com",10],["niagarafallsreview.ca",11],["stcatharinesstandard.ca",11],["therecord.com",11],["thespec.com",11],["thestar.com",11],["wellandtribune.ca",11],["hartfordbusiness.com",12],["commonwealmagazine.org",13],["startribune.com",14],["americanaffairsjournal.org",15],["science.org",16]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

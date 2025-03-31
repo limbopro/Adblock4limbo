@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202503231152
+## ! Version: 202503311454
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Mar 2025 11:52 UTC
+## ! Last modified: 31 Mar 2025 14:54 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -276,6 +276,7 @@ DOMAIN-SUFFIX,niblewren.co
 DOMAIN-SUFFIX,nigelmidnightrappers.com
 DOMAIN-SUFFIX,nimblebird.co
 DOMAIN-SUFFIX,nimbleswan.io
+DOMAIN-SUFFIX,nkdyzf.com
 DOMAIN-SUFFIX,nmgassets.com
 DOMAIN-SUFFIX,nmgplatform.com
 DOMAIN-SUFFIX,nmo-ep.nl
@@ -313,7 +314,6 @@ DOMAIN-SUFFIX,pzapi-ij.com
 DOMAIN-SUFFIX,pzapi-kg.com
 DOMAIN-SUFFIX,pzimff.com
 DOMAIN-SUFFIX,q0losid.com
-DOMAIN-SUFFIX,quantserve.com
 DOMAIN-SUFFIX,quickkoala.io
 DOMAIN-SUFFIX,quickpcfixer.click
 DOMAIN-SUFFIX,r42tag.com
@@ -540,6 +540,7 @@ DOMAIN-SUFFIX,alleyskin.com
 DOMAIN-SUFFIX,alleythecat.com
 DOMAIN-SUFFIX,allowmailbox.com
 DOMAIN-SUFFIX,alluringbucket.com
+DOMAIN-SUFFIX,alohamiles.com
 DOMAIN-SUFFIX,aloofmetal.com
 DOMAIN-SUFFIX,aloofvest.com
 DOMAIN-SUFFIX,alpineactor.com
@@ -568,6 +569,7 @@ DOMAIN-SUFFIX,annoyingacoustics.com
 DOMAIN-SUFFIX,annoyingclover.com
 DOMAIN-SUFFIX,anxiousapples.com
 DOMAIN-SUFFIX,apparatuslip.com
+DOMAIN-SUFFIX,applyless.com
 DOMAIN-SUFFIX,aquaticalarm.com
 DOMAIN-SUFFIX,aquaticanswer.com
 DOMAIN-SUFFIX,aquaticowl.com
@@ -989,6 +991,7 @@ DOMAIN-SUFFIX,decidedrum.com
 DOMAIN-SUFFIX,decisivebase.com
 DOMAIN-SUFFIX,decisivedrawer.com
 DOMAIN-SUFFIX,decisiveducks.com
+DOMAIN-SUFFIX,decklibrary.com
 DOMAIN-SUFFIX,decoroustitle.com
 DOMAIN-SUFFIX,decoycreation.com
 DOMAIN-SUFFIX,deeptack.com
@@ -1082,6 +1085,7 @@ DOMAIN-SUFFIX,eagerflame.com
 DOMAIN-SUFFIX,eagerknight.com
 DOMAIN-SUFFIX,earnbaht.com
 DOMAIN-SUFFIX,earthquakescarf.com
+DOMAIN-SUFFIX,earthups.com
 DOMAIN-SUFFIX,earthycopy.com
 DOMAIN-SUFFIX,earthyfarm.com
 DOMAIN-SUFFIX,eatablesquare.com
@@ -1147,6 +1151,7 @@ DOMAIN-SUFFIX,enviousthread.com
 DOMAIN-SUFFIX,epicoldschool.com
 DOMAIN-SUFFIX,equablekettle.com
 DOMAIN-SUFFIX,erraticreaction.com
+DOMAIN-SUFFIX,essayspin.com
 DOMAIN-SUFFIX,etherealbamboo.com
 DOMAIN-SUFFIX,ethereallagoon.com
 DOMAIN-SUFFIX,etherealpinnacle.com
@@ -1577,6 +1582,7 @@ DOMAIN-SUFFIX,livelylaugh.com
 DOMAIN-SUFFIX,livelyreward.com
 DOMAIN-SUFFIX,livingsleet.com
 DOMAIN-SUFFIX,lizardslaugh.com
+DOMAIN-SUFFIX,llamavoice.com
 DOMAIN-SUFFIX,loadsurprise.com
 DOMAIN-SUFFIX,lonelybulb.com
 DOMAIN-SUFFIX,lonelyflavor.com
@@ -1601,6 +1607,7 @@ DOMAIN-SUFFIX,lumpygnome.com
 DOMAIN-SUFFIX,lumpylumber.com
 DOMAIN-SUFFIX,lunchroomlock.com
 DOMAIN-SUFFIX,lustroushaven.com
+DOMAIN-SUFFIX,luxformula.com
 DOMAIN-SUFFIX,lyricshook.com
 DOMAIN-SUFFIX,maddeningpowder.com
 DOMAIN-SUFFIX,madebyintent.com
@@ -1692,6 +1699,7 @@ DOMAIN-SUFFIX,modularmental.com
 DOMAIN-SUFFIX,moldyicicle.com
 DOMAIN-SUFFIX,monacobeatles.com
 DOMAIN-SUFFIX,monthlyhat.com
+DOMAIN-SUFFIX,mooncrustpizza.com
 DOMAIN-SUFFIX,moorshoes.com
 DOMAIN-SUFFIX,morefriendly.com
 DOMAIN-SUFFIX,motionflowers.com
@@ -1768,6 +1776,7 @@ DOMAIN-SUFFIX,oldfashionedoffer.com
 DOMAIN-SUFFIX,omgthink.com
 DOMAIN-SUFFIX,omniscientfeeling.com
 DOMAIN-SUFFIX,omniscientspark.com
+DOMAIN-SUFFIX,onedropocean.com
 DOMAIN-SUFFIX,onlywoofs.com
 DOMAIN-SUFFIX,opalquill.com
 DOMAIN-SUFFIX,operationchicken.com
@@ -1865,6 +1874,7 @@ DOMAIN-SUFFIX,pluckypocket.com
 DOMAIN-SUFFIX,pluckyzone.com
 DOMAIN-SUFFIX,pocketfaucet.com
 DOMAIN-SUFFIX,podiumpresto.com
+DOMAIN-SUFFIX,podname.com
 DOMAIN-SUFFIX,poemprompt.com
 DOMAIN-SUFFIX,poeticpackage.com
 DOMAIN-SUFFIX,pointdigestion.com
@@ -2109,6 +2119,7 @@ DOMAIN-SUFFIX,scintillatingscissors.com
 DOMAIN-SUFFIX,scintillatingsilver.com
 DOMAIN-SUFFIX,scintillatingspace.com
 DOMAIN-SUFFIX,scissorsstatement.com
+DOMAIN-SUFFIX,scrapcranes.com
 DOMAIN-SUFFIX,scrapesleep.com
 DOMAIN-SUFFIX,scratchsofa.com
 DOMAIN-SUFFIX,screechingfurniture.com
@@ -2178,6 +2189,7 @@ DOMAIN-SUFFIX,shredquiz.com
 DOMAIN-SUFFIX,shrillspoon.com
 DOMAIN-SUFFIX,shutseashore.com
 DOMAIN-SUFFIX,shydinosaurs.com
+DOMAIN-SUFFIX,shylibrary.com
 DOMAIN-SUFFIX,shyseed.com
 DOMAIN-SUFFIX,sickflock.com
 DOMAIN-SUFFIX,sicksmash.com
@@ -2505,6 +2517,7 @@ DOMAIN-SUFFIX,timetwig.com
 DOMAIN-SUFFIX,tinyswans.com
 DOMAIN-SUFFIX,tinytendency.com
 DOMAIN-SUFFIX,tiredthroat.com
+DOMAIN-SUFFIX,tireinside.com
 DOMAIN-SUFFIX,tiresomethunder.com
 DOMAIN-SUFFIX,toecircle.com
 DOMAIN-SUFFIX,toedrawer.com
@@ -2512,6 +2525,7 @@ DOMAIN-SUFFIX,toolcapital.com
 DOMAIN-SUFFIX,toomanyalts.com
 DOMAIN-SUFFIX,toothbrushnote.com
 DOMAIN-SUFFIX,toothpasterabbits.com
+DOMAIN-SUFFIX,topcrazypress.com
 DOMAIN-SUFFIX,topichawaii.com
 DOMAIN-SUFFIX,torpidtongue.com
 DOMAIN-SUFFIX,torpidtoothpaste.com
@@ -2641,6 +2655,8 @@ DOMAIN-SUFFIX,whisperingcascade.com
 DOMAIN-SUFFIX,whisperingcrib.com
 DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whispermeeting.com
+DOMAIN-SUFFIX,whoogled.com
+DOMAIN-SUFFIX,whymaze.com
 DOMAIN-SUFFIX,wigglygeese.com
 DOMAIN-SUFFIX,wigglyindustry.com
 DOMAIN-SUFFIX,wildcommittee.com
@@ -2651,6 +2667,7 @@ DOMAIN-SUFFIX,wiredforcoffee.com
 DOMAIN-SUFFIX,wirypaste.com
 DOMAIN-SUFFIX,wistfulflight.com
 DOMAIN-SUFFIX,wittypopcorn.com
+DOMAIN-SUFFIX,wizardbuck.com
 DOMAIN-SUFFIX,womanear.com
 DOMAIN-SUFFIX,workableachiever.com
 DOMAIN-SUFFIX,workoperation.com
@@ -4736,6 +4753,7 @@ DOMAIN-SUFFIX,datum.jsdelivr.com
 DOMAIN-SUFFIX,dbhsejcg-meetup-com.cdnjs.network
 DOMAIN-SUFFIX,dc.banggood.com
 DOMAIN-SUFFIX,dd.auspost.com.au
+DOMAIN-SUFFIX,dd.g2.com
 DOMAIN-SUFFIX,dd.nytimes.com
 DOMAIN-SUFFIX,ddome-tag.blablacar.com
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au
@@ -4868,6 +4886,7 @@ DOMAIN-SUFFIX,j927.statnews.com
 DOMAIN-SUFFIX,jfapiprod.optimonk.com
 DOMAIN-SUFFIX,jumbo.zomato.com
 DOMAIN-SUFFIX,k.qwant.com
+DOMAIN-SUFFIX,kape.dataplane.rudderstack.com
 DOMAIN-SUFFIX,kinesis.us-east-1.analytics.edmentum.com
 DOMAIN-SUFFIX,librato-collector.genius.com
 DOMAIN-SUFFIX,link.kogan.com
@@ -41086,6 +41105,42 @@ DOMAIN-SUFFIX,hits.porn.fr
 DOMAIN-SUFFIX,hlms.ecologie.gouv.fr
 DOMAIN-SUFFIX,insights.v3.decathlon.net
 DOMAIN-SUFFIX,kwgs.letudiant.fr
+DOMAIN-SUFFIX,l.aufeminin.com
+DOMAIN-SUFFIX,l.autojournal.fr
+DOMAIN-SUFFIX,l.autoplus.fr
+DOMAIN-SUFFIX,l.beaute-test.com
+DOMAIN-SUFFIX,l.bibamagazine.fr
+DOMAIN-SUFFIX,l.closermag.fr
+DOMAIN-SUFFIX,l.cnetfrance.fr
+DOMAIN-SUFFIX,l.diapasonmag.fr
+DOMAIN-SUFFIX,l.doctissimo.fr
+DOMAIN-SUFFIX,l.dzfoot.com
+DOMAIN-SUFFIX,l.entrenous.fr
+DOMAIN-SUFFIX,l.football.fr
+DOMAIN-SUFFIX,l.football365.fr
+DOMAIN-SUFFIX,l.francetvinfo.fr
+DOMAIN-SUFFIX,l.gamekult.com
+DOMAIN-SUFFIX,l.grazia.fr
+DOMAIN-SUFFIX,l.lacremedugaming.fr
+DOMAIN-SUFFIX,l.lechasseurfrancais.com
+DOMAIN-SUFFIX,l.lejournaldelamaison.fr
+DOMAIN-SUFFIX,l.lesnumeriques.com
+DOMAIN-SUFFIX,l.maison-travaux.fr
+DOMAIN-SUFFIX,l.mariefrance.fr
+DOMAIN-SUFFIX,l.melty.fr
+DOMAIN-SUFFIX,l.modesettravaux.fr
+DOMAIN-SUFFIX,l.netmums.com
+DOMAIN-SUFFIX,l.nextplz.fr
+DOMAIN-SUFFIX,l.nicematin.com
+DOMAIN-SUFFIX,l.paroledemamans.com
+DOMAIN-SUFFIX,l.pleinevie.fr
+DOMAIN-SUFFIX,l.psychologies.com
+DOMAIN-SUFFIX,l.science-et-vie.com
+DOMAIN-SUFFIX,l.sportauto.fr
+DOMAIN-SUFFIX,l.sports.fr
+DOMAIN-SUFFIX,l.telestar.fr
+DOMAIN-SUFFIX,l.topsante.com
+DOMAIN-SUFFIX,l.zdnet.fr
 DOMAIN-SUFFIX,logstash-3.radio-canada.ca
 DOMAIN-SUFFIX,mesure-pro.engie.fr
 DOMAIN-SUFFIX,metrics-broker.prod.p.tf1.fr
@@ -41093,6 +41148,7 @@ DOMAIN-SUFFIX,ocular.dealabs.com
 DOMAIN-SUFFIX,p.pagesjaunes.fr
 DOMAIN-SUFFIX,pixel.dugwood.com
 DOMAIN-SUFFIX,pixel.ionos.fr
+DOMAIN-SUFFIX,plausible.k-words.io
 DOMAIN-SUFFIX,pt.legalstart.fr
 DOMAIN-SUFFIX,res.paruvendu.fr
 DOMAIN-SUFFIX,s5.charliehebdo.fr
@@ -41208,6 +41264,7 @@ DOMAIN-SUFFIX,sentry.music.163.com
 DOMAIN-SUFFIX,sfp.safe.baidu.com
 DOMAIN-SUFFIX,shrek.6.cn
 DOMAIN-SUFFIX,sngmta.qq.com
+DOMAIN-SUFFIX,snowflake.qq.com
 DOMAIN-SUFFIX,sofire.bdstatic.com
 DOMAIN-SUFFIX,stadig.ifeng.com
 DOMAIN-SUFFIX,stat-58home.58che.com
@@ -41382,7 +41439,6 @@ DOMAIN-SUFFIX,ad-log.dable.io
 DOMAIN-SUFFIX,adoffice.11st.co.kr
 DOMAIN-SUFFIX,aem-collector.daumkakao.io
 DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com
-DOMAIN-SUFFIX,cdp.yna.co.kr
 DOMAIN-SUFFIX,count.munhwa.com
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr
 DOMAIN-SUFFIX,hits.zdnet.co.kr

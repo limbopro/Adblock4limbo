@@ -200,7 +200,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -238,10 +238,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -415,9 +417,9 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/beforeunload|pagehide/","0x"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","StrategyHandler"],["DOMContentLoaded","banners"],["DOMContentLoaded","encodedUrl"],["DOMContentLoaded","exo_tracker"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","detect-modal"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
-const hostnamesMap = new Map([["7days.ru",[0,31]],["shedevrum.ai",1],["fastpic.org",[2,20]],["biqle.org",3],["biqle.ru",3],["autonews.co.ua",4],["in-poland.com",4],["liveball.cc",4],["liveball.uno",4],["ukrainianwall.com",4],["fm-app.ru",5],["tvapp.su",5],["yootv.ru",5],["rambler.ru",[6,17]],["sibnet.ru",7],["sports.ru",8],["buhplatforma.com.ua",9],["dzplatforma.com.ua",9],["medplatforma.com.ua",9],["oblikbudget.com.ua",9],["oplatforma.com.ua",9],["pro-op.com.ua",9],["prokadry.com.ua",9],["cq.ru",10],["1progs.me",11],["xv-ru.com",12],["litnet.com",13],["regnum.news",14],["regnum.ru",14],["tproger.ru",14],["softonic.ru",15],["smotrim.ru",16],["kp.kg",[18,31]],["kp.kz",[18,31]],["kp.md",[18,31]],["kp.ru",[18,31]],["rbc.ru",18],["sportrbc.ru",18],["carservic.ru",19],["iptv.org.ua",19],["tva.org.ua",19],["ufchgu.ru",19],["romakatya.ru",21],["blackwot.ru",22],["overclockers.ru",23],["bonus-tv.ru",24],["kinoblin.ru",25],["serialai.ru",25],["m.lenta.ru",26],["www.vesti.ru",27],["lenta.ru",28],["otvet.mail.ru",29],["e.mail.ru",30],["octavius.mail.ru",30],["cdn.viqeo.tv",31],["kinonews.ru",31],["mk.ru",31],["ohotniki.ru",31],["portalvirtualreality.ru",31],["radiokp.ru",31],["sportkp.ru",31],["wday.ru",31],["woman.ru",31],["www.fontanka.ru",31]]);
-const exceptionsMap = new Map([["new.fastpic.org",[2,20]],["id.rambler.ru",[6,17]],["vp.rambler.ru",[6,17]],["player.smotrim.ru",[16]],["mail.rambler.ru",[17]]]);
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/beforeunload|pagehide/","0x"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","StrategyHandler"],["DOMContentLoaded","banners"],["DOMContentLoaded","downloadAdModal"],["DOMContentLoaded","encodedUrl"],["DOMContentLoaded","exo_tracker"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["error","","elements","[data-status=\"loading\"]"],["getexoloader"],["load","AdBlock"],["load","detect-modal"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["new","window.location"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["userpause","Math.random"],["visibilitychange","document.hidden"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
+const hostnamesMap = new Map([["7days.ru",[0,36]],["shedevrum.ai",1],["fastpic.org",[2,22]],["biqle.org",3],["biqle.ru",3],["autonews.co.ua",4],["in-poland.com",4],["liveball.cc",4],["liveball.uno",4],["ukrainianwall.com",4],["fm-app.ru",5],["tvapp.su",5],["yootv.ru",5],["rambler.ru",[6,18]],["sibnet.ru",7],["sports.ru",8],["buhplatforma.com.ua",9],["dzplatforma.com.ua",9],["medplatforma.com.ua",9],["oblikbudget.com.ua",9],["oplatforma.com.ua",9],["pro-op.com.ua",9],["prokadry.com.ua",9],["cq.ru",10],["freesoft.ru",11],["1progs.me",12],["xv-ru.com",13],["litnet.com",14],["regnum.news",15],["regnum.ru",15],["tproger.ru",15],["softonic.ru",16],["smotrim.ru",17],["kp.kg",[19,36]],["kp.kz",[19,36]],["kp.md",[19,36]],["kp.ru",[19,36]],["rbc.ru",19],["sportrbc.ru",19],["carservic.ru",20],["iptv.org.ua",20],["tva.org.ua",20],["ufchgu.ru",20],["trychatgpt.ru",21],["romakatya.ru",23],["blackwot.ru",24],["overclockers.ru",25],["bonus-tv.ru",26],["kinoblin.ru",27],["serialai.ru",27],["braz-rus.pro",[28,32]],["m.lenta.ru",29],["www.vesti.ru",30],["lenta.ru",31],["rutube.ru",33],["otvet.mail.ru",34],["e.mail.ru",35],["octavius.mail.ru",35],["cdn.viqeo.tv",36],["kinonews.ru",36],["mk.ru",36],["ohotniki.ru",36],["portalvirtualreality.ru",36],["radiokp.ru",36],["sportkp.ru",36],["wday.ru",36],["woman.ru",36],["www.fontanka.ru",36]]);
+const exceptionsMap = new Map([["new.fastpic.org",[2,22]],["id.rambler.ru",[6,18]],["vp.rambler.ru",[6,18]],["player.smotrim.ru",[17]],["mail.rambler.ru",[18]]]);
 const hasEntities = false;
 const hasAncestors = false;
 

@@ -69,7 +69,7 @@ function abortCurrentScriptCore(
         desc = undefined;
     }
     const debug = shouldDebug(extraArgs);
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const scriptTexts = new WeakMap();
     const getScriptText = elem => {
         let text = elem.textContent;
@@ -154,8 +154,8 @@ function runAtHtmlElementFn(fn) {
     observer.observe(document, { childList: true });
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -185,10 +185,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -359,7 +361,7 @@ function shouldDebug(details) {
     return scriptletGlobals.canDebug && details.debug;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -369,7 +371,7 @@ function getRandomToken() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["EventTarget.prototype.addEventListener",".height();"],["document.addEventListener","/abisuq/"],["$","adblock"],["$","!document.getElementById(btoa"],["document.createElement","adblock"],["EventTarget.prototype.addEventListener","arlinablock"],["EventTarget.prototype.addEventListener","ad_killer"],["document.write","_blank"],["document.write",".hit.gemius."],["$","#myModal"],["loadBrands"],["sessionStorage.getItem","reklam"],["$","/ads/"],["doOpen","edsiga.com"],["document.createElement","/\\.src=[\\s\\S]*?getElementsByTagName/"]];
-const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["vknsorgula.net",1],["okultanitimi.net",2],["otopark.com",3],["turkrock.com",3],["osxinfo.net",3],["hacoos.com",4],["kampanyatakip.blogspot.com",5],["mordefter.com",6],["dizigom1.tv",7],["ulketv.com.tr",8],["kenttv.net",9],["ulker.com.tr",10],["duzcetv.com",11],["bizimyaka.com",12],["asyaanimeleri.com",13],["sinefil.tv",14],["dizilla.club",14],["dizilla10.com",14],["dizilla11.com",14],["dizilla12.com",14],["dizilla13.com",14],["dizilla14.com",14],["dizilla15.com",14],["dizilla16.com",14],["dizilla17.com",14],["dizilla18.com",14],["dizilla19.com",14],["dizilla20.com",14]]);
+const hostnamesMap = new Map([["dizifon.com",0],["birasyadizi.com",0],["azsekerlik.blogspot.com",1],["vknsorgula.net",1],["okultanitimi.net",2],["otopark.com",3],["turkrock.com",3],["osxinfo.net",3],["hacoos.com",4],["kampanyatakip.blogspot.com",5],["mordefter.com",6],["dizigom1.tv",7],["ulketv.com.tr",8],["kenttv.net",9],["ulker.com.tr",10],["duzcetv.com",11],["bizimyaka.com",12],["asyaanimeleri.com",13],["sinefil.tv",14]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -42,8 +42,8 @@ function preventSetTimeout(
     proxyApplyFn('setTimeout', function(context) {
         const { callArgs } = context;
         const a = callArgs[0] instanceof Function
-            ? String(safe.Function_toString(callArgs[0]))
-            : String(callArgs[0]);
+            ? safe.String(safe.Function_toString(callArgs[0]))
+            : safe.String(callArgs[0]);
         const b = callArgs[1];
         if ( needleRaw === '' && range.unbound() ) {
             safe.uboLog(logPrefix, `Called:\n${a}\n${b}`);
@@ -188,10 +188,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -360,8 +362,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".offsetHeight == 0"],[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/(\\s|\\()tpc/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["/getCookie|checkCK|checkCookie/"],["location.href","3000"]];
-const hostnamesMap = new Map([["445nan.com",0],["ftchinese.com",1],["manwa.fun",2],["18comic.vip",3],["itdog.cn",4],["xbeibeix.com",5],["520cc.cc",[6,21]],["colamanga.com",7],["cocomanga.com",[7,18]],["ekamus.info",8],["logi.im",8],["moeci.com",9],["tingfm.com",10],["233tw.com",11],["ruanyifeng.com",12],["t66y.com",13],["tsubasa.im",14],["league-funny.com",15],["haoweichi.com",16],["zhenbuka.com",17],["ohmanhua.com",18],["onemanhua.com",18],["5278.cc",19],["hboav.com",19],["axutongxue.vip",20],["axutongxue.com",20],["axutongxue.net",20]]);
+const argsList = [[".offsetHeight == 0"],[".offsetHeight"],["/alert\\('请关闭.*Chrome/"],["float_right > div"],["adblock_tip"],["/\\.height\\(\\) == 0|adsbygoogle/"],["myModal"],["loadErrorTip"],["ins.adsbygoogle"],["_0x"],["adblock"],["发现严重BUG"],["checker"],["/(\\s|\\()tpc/"],["/home/?adblock="],["ad_num_show"],["adsbygoogle"],["ad_ids"],["checkSiteNormalLoad"],["/ad block stop|warm_msg/"],["location.href","3000"],["/getCookie|checkCK|checkCookie/"]];
+const hostnamesMap = new Map([["445nan.com",0],["ftchinese.com",1],["manwa.fun",2],["18comic.vip",3],["itdog.cn",4],["xbeibeix.com",5],["520cc.cc",[6,20]],["colamanga.com",7],["cocomanga.com",[7,18]],["ekamus.info",8],["logi.im",8],["moeci.com",9],["tingfm.com",10],["233tw.com",11],["ruanyifeng.com",12],["t66y.com",13],["tsubasa.im",14],["league-funny.com",15],["haoweichi.com",16],["zhenbuka.com",17],["ohmanhua.com",18],["onemanhua.com",18],["5278.cc",19],["hboav.com",19],["axutongxue.cn",21],["axu.pages.dev",21],["axutongxue.vip",21],["axutongxue.com",21],["axutongxue.net",21]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -196,7 +196,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -234,10 +234,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -459,7 +461,7 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["ADMStorageFileCDN","noopFunc"],["a_vid","0"],["open","noopFunc"],["maxAds","0"],["video.adVast",""],["urlAds",""],["linkAff","null","3"],["adsPlayer",""],["adsTvcs",""],["seconds","0"],["D4zz","noopFunc"],["timer","0"]];
-const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["cliphot69.pics",1],["freeplayervideo.com",2],["abysscdn.com",2],["player-cdn.com",2],["hayhaytv.site",3],["subnhanh1.org",3],["phimsexviet.io",4],["phimsexvietnam.app",4],["gm.phimsexnhanh.tv",4],["clipsex.cam",4],["ww1.ditnhau.cc",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vaoroi14.live",[7,8]],["vndoc.com",9],["www.gvnvh.net",10],["sexdiaryx.live",10],["www.iosviet.com",11]]);
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["cliphot69.pics",1],["freeplayervideo.com",2],["abysscdn.com",2],["player-cdn.com",2],["hayhaytv.site",3],["subnhanh1.org",3],["phimsexvietnam.app",4],["gm.phimsexnhanh.tv",4],["clipsex.cam",4],["ww1.ditnhau.cc",4],["phimvuihd.org",5],["tailieumoi.vn",6],["vaoroi14.live",[7,8]],["vndoc.com",9],["www.gvnvh.net",10],["sexdiaryx.live",10],["www.iosviet.com",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

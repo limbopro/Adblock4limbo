@@ -156,7 +156,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -194,10 +194,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -458,8 +460,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href^=\"/goto/\"]","?url -base64"],["a[href^=\"https://hamtamovie.nl/dl/?url=\"]","?url"],["a[href^=\"https://l.vrgl.ir/r?\"][href*=\"&l=http\"]","?l"],["div#link-container > a[data-sentry-element=\"Link\"]","?url"]];
-const hostnamesMap = new Map([["fontchi.com",0],["hamtamovie.nl",1],["virgool.io",2],["zarebin.ir",3]]);
+const argsList = [["a[href^=\"/goto/\"]","?url -base64"],["a[href^=\"https://hamtamovie.nl/dl/?url=\"]","?url"],["a[href^=\"https://l.vrgl.ir/r?\"][href*=\"&l=http\"]","?l"],["div#link-container > a[data-sentry-element=\"Link\"]","?url"],["a[variant=\"contained\"][href^=\"https://api2.zoomit.ir/catalog/store-links/\"][href*=\"/click?url=http\"]","?url"]];
+const hostnamesMap = new Map([["fontchi.com",0],["hamtamovie.nl",1],["virgool.io",2],["zarebin.ir",3],["zoomit.ir",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\".widget_execphp\",\"tasks\":[[\"has-text\",\"Reklāmraksti\"]]}"]];
-const argsSeqs = [0,1];
-const hostnamesMap = new Map([["zz.lv",1],["staburags.lv",1],["aluksniesiem.lv",1],["bauskasdzive.lv",1],["dzirkstele.lv",1],["ziemellatvija.lv",1],["rekurzeme.lv",1]]);
+const argsList = ["",["{\"selector\":\"div\",\"tasks\":[[\"has\",{\"selector\":\"div\",\"tasks\":[[\"has-text\",\"Reklāma\"]]}],[\"upward\",\"div.item_box_main\"]]}"],["{\"selector\":\".widget_execphp\",\"tasks\":[[\"has-text\",\"Reklāmraksti\"]]}"]];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["salidzini.lv",1],["zz.lv",2],["staburags.lv",2],["aluksniesiem.lv",2],["bauskasdzive.lv",2],["dzirkstele.lv",2],["ziemellatvija.lv",2],["rekurzeme.lv",2]]);
 const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];

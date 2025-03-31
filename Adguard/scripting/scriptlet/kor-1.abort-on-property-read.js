@@ -37,7 +37,7 @@ function abortOnPropertyRead(
     if ( chain === '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const abort = function() {
         safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
@@ -77,8 +77,8 @@ function abortOnPropertyRead(
     makeProxy(owner, chain);
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -108,10 +108,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -277,7 +279,7 @@ function safeSelf() {
     return safe;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -286,8 +288,8 @@ function getRandomToken() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["pum_popups"],["adBlockDetected"],["ad_blk"],["$.prototype.fadeIn"]];
-const hostnamesMap = new Map([["hashnews.cafe24.com",0],["x86.co.kr",1],["1004lucifer.blogspot.com",1],["te31.com",1],["tistory.com",1],["avdbs.com",2],["detegice.github.io",3]]);
+const argsList = [["pum_popups"],["adBlockDetected"],["$.prototype.fadeIn"]];
+const hostnamesMap = new Map([["hashnews.cafe24.com",0],["x86.co.kr",1],["1004lucifer.blogspot.com",1],["te31.com",1],["tistory.com",1],["detegice.github.io",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

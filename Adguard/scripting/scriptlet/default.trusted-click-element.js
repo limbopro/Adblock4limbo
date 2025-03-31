@@ -252,10 +252,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -424,10 +426,10 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["#tp-snp2","","1000"],["#cross-snp2","","1000"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"]];
-const hostnamesMap = new Map([["bgmi32bitapk.in",[0,1]],["bankshiksha.in",[0,1]],["earn.mpscstudyhub.com",[0,1]],["earn.quotesopia.com",[0,1]],["money.quotesopia.com",[0,1]],["best-mobilegames.com",[0,1]],["learn.moderngyan.com",[0,1]],["bharatsarkarijobalert.com",[0,1]],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["turboobit.com",3],["easybib.com",4]]);
+const argsList = [["#tp-snp2","","1000"],["#cross-snp2","","1000"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"],[".kw-ads-pagination-button:first-child,.kw-ads-pagination-button:first-child","","1000"]];
+const hostnamesMap = new Map([["bgmi32bitapk.in",[0,1]],["bankshiksha.in",[0,1]],["earn.mpscstudyhub.com",[0,1]],["earn.quotesopia.com",[0,1]],["money.quotesopia.com",[0,1]],["best-mobilegames.com",[0,1]],["learn.moderngyan.com",[0,1]],["bharatsarkarijobalert.com",[0,1]],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["turboobit.com",3],["easybib.com",4],["read.amazon.*",5]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

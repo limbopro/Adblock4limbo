@@ -47,14 +47,14 @@ function abortOnStackTrace(
                 get: function() {
                     const log = safe.logLevel > 1 ? 'all' : 'match';
                     if ( matchesStackTraceFn(needleDetails, log) ) {
-                        throw new ReferenceError(getExceptionToken());
+                        throw new ReferenceError(getExceptionTokenFn());
                     }
                     return v;
                 },
                 set: function(a) {
                     const log = safe.logLevel > 1 ? 'all' : 'match';
                     if ( matchesStackTraceFn(needleDetails, log) ) {
-                        throw new ReferenceError(getExceptionToken());
+                        throw new ReferenceError(getExceptionTokenFn());
                     }
                     v = a;
                 },
@@ -84,8 +84,8 @@ function abortOnStackTrace(
     makeProxy(owner, chain);
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -101,7 +101,7 @@ function matchesStackTraceFn(
     logLevel = ''
 ) {
     const safe = safeSelf();
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const error = new safe.Error(exceptionToken);
     const docURL = new URL(self.location.href);
     docURL.hash = '';
@@ -160,10 +160,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -329,7 +331,7 @@ function safeSelf() {
     return safe;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -338,8 +340,8 @@ function getRandomToken() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["encodeURIComponent","inlineScript"],["String.prototype.charCodeAt","ai_"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["document.createElement","admiral"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"],["Promise","/isEnable|isOpen/"],["$","/mainseto.js:286:1"],["document.getSelection","inlineScript"]];
-const hostnamesMap = new Map([["secondlifetranslations.com",0],["waves4you.com",1],["timeshighereducation.com",2],["ilovefreesoftware.com",3],["protopage.com",4],["fantasytagtree.com",5],["jamilacuisine.ro",[6,7]],["golfdigest.com",8],["pobre.*",9],["ophim.vip",10],["animesuge.to",11],["aniwave.*",11],["anix.*",11],["bflix.io",11],["flixhq.*",11],["fmovies.*",11],["f2movies.ru",11],["hdtoday.so",11],["hurawatch.bz",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vid2faf.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12],["embtaku.pro",13],["indahonline.com",14],["tweaktown.com",15]]);
+const argsList = [["String.prototype.charCodeAt","ai_"],["document.createElement","admiral"],["encodeURIComponent","inlineScript"],["Drupal.CTools.Modal.show","/(^(?!.*(injectedScript|makeProxy).*))/"],["getSelection","quoty-public"],["document.createElement","createAdblockFallbackSubscribeToProtopageAdDiv"],["document.getElementById","nouplaod"],["document.oncontextmenu"],["Object","/(?=^(?!.*(jquery|inlineScript)))/"],["eval","build.js"],["navigator.userAgent","phimv"],["console.clear"],["document.addEventListener","preventDeleteDialog"],["Promise","/isEnable|isOpen/"],["$","/mainseto.js:286:1"],["document.getSelection","inlineScript"]];
+const hostnamesMap = new Map([["waves4you.com",0],["golfdigest.com",1],["secondlifetranslations.com",2],["timeshighereducation.com",3],["ilovefreesoftware.com",4],["protopage.com",5],["fantasytagtree.com",6],["jamilacuisine.ro",[7,8]],["pobre.*",9],["ophim.vip",10],["animesuge.to",11],["aniwave.*",11],["anix.*",11],["bflix.io",11],["flixhq.*",11],["fmovies.*",11],["f2movies.ru",11],["hdtoday.so",11],["hurawatch.bz",11],["movies2watch.ru",11],["putlockernew.vc",11],["swatchseries.ru",11],["vidplay.site",11],["vid2faf.site",11],["vidstream.pro",11],["mcloud.to",11],["team-octavi.com",12],["embtaku.pro",13],["indahonline.com",14],["tweaktown.com",15]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

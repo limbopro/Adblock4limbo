@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 27 Mar 2025 07:08:28 GMT
-# entries:        3451
+# last updated:   Wed, 02 Apr 2025 06:04:41 GMT
+# entries:        3455
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -20,7 +20,6 @@ DOMAIN-SUFFIX,2020mustang.com
 DOMAIN-SUFFIX,207.net
 DOMAIN-SUFFIX,247media.com
 DOMAIN-SUFFIX,24log.com
-DOMAIN-SUFFIX,24pm-affiliation.com
 DOMAIN-SUFFIX,2linkpath.com
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,2o7.net
@@ -150,6 +149,7 @@ DOMAIN-SUFFIX,ad.technoratimedia.com
 DOMAIN-SUFFIX,ad.tv2.no
 DOMAIN-SUFFIX,ad.universcine.com
 DOMAIN-SUFFIX,ad.usatoday.com
+DOMAIN-SUFFIX,ad.virtual-nights.com
 DOMAIN-SUFFIX,ad.wavu.hu
 DOMAIN-SUFFIX,ad.weatherbug.com
 DOMAIN-SUFFIX,ad.wsod.com
@@ -595,6 +595,7 @@ DOMAIN-SUFFIX,ads.uxs.at
 DOMAIN-SUFFIX,ads.v-lazer.com
 DOMAIN-SUFFIX,ads.verticalresponse.com
 DOMAIN-SUFFIX,ads.vgchartz.com
+DOMAIN-SUFFIX,ads.virtual-nights.com
 DOMAIN-SUFFIX,ads.virtuopolitan.com
 DOMAIN-SUFFIX,ads.vnumedia.com
 DOMAIN-SUFFIX,ads.walkiberia.com
@@ -621,6 +622,7 @@ DOMAIN-SUFFIX,ads1-adnow.com
 DOMAIN-SUFFIX,ads1.mediacapital.pt
 DOMAIN-SUFFIX,ads1.msn.com
 DOMAIN-SUFFIX,ads1.rne.com
+DOMAIN-SUFFIX,ads1.virtual-nights.com
 DOMAIN-SUFFIX,ads10.speedbit.com
 DOMAIN-SUFFIX,ads180.com
 DOMAIN-SUFFIX,ads2.brazzers.com
@@ -630,6 +632,7 @@ DOMAIN-SUFFIX,ads2.gamecity.net
 DOMAIN-SUFFIX,ads2.hsoub.com
 DOMAIN-SUFFIX,ads2.net-communities.co.uk
 DOMAIN-SUFFIX,ads2.rne.com
+DOMAIN-SUFFIX,ads2.virtual-nights.com
 DOMAIN-SUFFIX,ads2.webdrive.no
 DOMAIN-SUFFIX,ads2.xnet.cz
 DOMAIN-SUFFIX,ads2004.treiberupdate.de
@@ -637,8 +640,11 @@ DOMAIN-SUFFIX,ads24h.net
 DOMAIN-SUFFIX,ads3-adnow.com
 DOMAIN-SUFFIX,ads3.contentabc.com
 DOMAIN-SUFFIX,ads3.gamecity.net
+DOMAIN-SUFFIX,ads3.virtual-nights.com
 DOMAIN-SUFFIX,ads4.gamecity.net
+DOMAIN-SUFFIX,ads4.virtual-nights.com
 DOMAIN-SUFFIX,ads4homes.com
+DOMAIN-SUFFIX,ads5.virtual-nights.com
 DOMAIN-SUFFIX,ads6.gamecity.net
 DOMAIN-SUFFIX,ads7.gamecity.net
 DOMAIN-SUFFIX,adsafeprotected.com
@@ -990,7 +996,6 @@ DOMAIN-SUFFIX,awzbijw.com
 DOMAIN-SUFFIX,axonix.com
 DOMAIN-SUFFIX,ay.delivery
 DOMAIN-SUFFIX,ayads.co
-DOMAIN-SUFFIX,aztracking.net
 DOMAIN-SUFFIX,b-s.tercept.com
 DOMAIN-SUFFIX,b.videoamp.com
 DOMAIN-SUFFIX,b3.videoamp.com
@@ -1292,7 +1297,6 @@ DOMAIN-SUFFIX,clickdensity.com
 DOMAIN-SUFFIX,clickedyclick.com
 DOMAIN-SUFFIX,clickfuse.com
 DOMAIN-SUFFIX,clickhereforcellphones.com
-DOMAIN-SUFFIX,clicklink.jp
 DOMAIN-SUFFIX,clickngo.pro
 DOMAIN-SUFFIX,clickonometrics.pl
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk
@@ -1968,7 +1972,6 @@ DOMAIN-SUFFIX,kissmetrics.com
 DOMAIN-SUFFIX,klclick.com
 DOMAIN-SUFFIX,klclick1.com
 DOMAIN-SUFFIX,kliks.nl
-DOMAIN-SUFFIX,klsdee.com
 DOMAIN-SUFFIX,knitstamp.com
 DOMAIN-SUFFIX,knorex.com
 DOMAIN-SUFFIX,knottyswing.com
@@ -1991,6 +1994,7 @@ DOMAIN-SUFFIX,launchbit.com
 DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layer-ads.de
 DOMAIN-SUFFIX,lbn.ru
+DOMAIN-SUFFIX,lead02.com
 DOMAIN-SUFFIX,leadboltads.net
 DOMAIN-SUFFIX,leadclick.com
 DOMAIN-SUFFIX,leadinfo.net
@@ -2030,6 +2034,7 @@ DOMAIN-SUFFIX,lightstep.medium.systems
 DOMAIN-SUFFIX,lijit.com
 DOMAIN-SUFFIX,link-booster.de
 DOMAIN-SUFFIX,link.axios.com
+DOMAIN-SUFFIX,link.email.davidlloydclubs.co.uk
 DOMAIN-SUFFIX,link.email.usmagazine.com
 DOMAIN-SUFFIX,link.go.chase
 DOMAIN-SUFFIX,link.sbstck.com
@@ -2776,6 +2781,7 @@ DOMAIN-SUFFIX,scratch2cash.com
 DOMAIN-SUFFIX,screechingfurniture.com
 DOMAIN-SUFFIX,screechingstocking.com
 DOMAIN-SUFFIX,screechingstove.com
+DOMAIN-SUFFIX,scripte-monster.de
 DOMAIN-SUFFIX,scrubswim.com
 DOMAIN-SUFFIX,sdkfjxjertertry.com
 DOMAIN-SUFFIX,seadform.net
@@ -3149,7 +3155,6 @@ DOMAIN-SUFFIX,track.pubmatic.com
 DOMAIN-SUFFIX,track.segmetrics.io
 DOMAIN-SUFFIX,track.software-codes.com
 DOMAIN-SUFFIX,track.spe.schoolmessenger.com
-DOMAIN-SUFFIX,track.themaccleanup.info
 DOMAIN-SUFFIX,track.ultravpn.com
 DOMAIN-SUFFIX,track.unear.net
 DOMAIN-SUFFIX,track.vcdc.com
@@ -3295,7 +3300,6 @@ DOMAIN-SUFFIX,veille-referencement.com
 DOMAIN-SUFFIX,velismedia.com
 DOMAIN-SUFFIX,venetrigni.com
 DOMAIN-SUFFIX,vengefulgrass.com
-DOMAIN-SUFFIX,ventivmedia.com
 DOMAIN-SUFFIX,venturead.com
 DOMAIN-SUFFIX,vericlick.com
 DOMAIN-SUFFIX,vertamedia.com

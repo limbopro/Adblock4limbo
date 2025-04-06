@@ -326,7 +326,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["/chp_?ad/"]];
-const hostnamesMap = new Map([["193.142.147.230",0],["5.253.86.213",0],["ainzscans.net",0],["igobokep.cam",0],["jenismac.com",0],["siimanga.cyou",0]]);
+const hostnamesMap = new Map([["193.142.147.230",0],["5.253.86.213",0],["ainzscans.net",0],["igobokep.cam",0],["jenismac.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

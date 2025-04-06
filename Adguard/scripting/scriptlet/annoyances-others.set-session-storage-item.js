@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["sem30_popup_shown","1"],["signUpBannerDismissed","true"],["shouldShowAuthBannerAfterQuery","false"],["modalViewed","true"]];
-const hostnamesMap = new Map([["semrush.com",0],["perplexity.ai",[1,2]],["fantasyfootballhub.co.uk",3]]);
+const argsList = [["sem30_popup_shown","1"],["signUpBannerDismissed","true"],["shouldShowAuthBannerAfterQuery","false"],["oai/apps/noAuthHasDismissedSoftRateLimitModal","true"],["modalViewed","true"]];
+const hostnamesMap = new Map([["semrush.com",0],["perplexity.ai",[1,2]],["chatgpt.com",3],["fantasyfootballhub.co.uk",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

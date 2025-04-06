@@ -289,7 +289,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["nocontext"],["vc_url"],["show_wpcp_message"],["fixedPostGroups"],["tinPa"],["SGPB_POPUP_PARAMS"],["needpop"],["window.LOCO_DATA.copyrightTranslation"]];
-const hostnamesMap = new Map([["coffeeapps.ir",0],["p30konkor.com",0],["sclinic.ir",0],["nab-music.com",1],["shahanmusic.ir",2],["saednews.com",3],["tinroid.ir",4],["tak3da.com",5],["yeknet.ir",6],["oila.tj",7]]);
+const hostnamesMap = new Map([["anesthesianotes.ir",0],["coffeeapps.ir",0],["p30konkor.com",0],["sclinic.ir",0],["nab-music.com",1],["shahanmusic.ir",2],["saednews.com",3],["tinroid.ir",4],["tak3da.com",5],["yeknet.ir",6],["oila.tj",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

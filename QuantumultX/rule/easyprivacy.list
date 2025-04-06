@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202504011414
+## ! Version: 202504060317
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Apr 2025 14:14 UTC
+## ! Last modified: 06 Apr 2025 03:17 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -41421,6 +41421,7 @@ DOMAIN-SUFFIX,recv-jnn.tbs.co.jp, reject
 DOMAIN-SUFFIX,recv.tbs.co.jp, reject
 DOMAIN-SUFFIX,rtm-tracking.zozo.jp, reject
 DOMAIN-SUFFIX,stats.nhk.or.jp, reject
+DOMAIN-SUFFIX,sy.ameba.jp, reject
 DOMAIN-SUFFIX,sy.amebame.com, reject
 DOMAIN-SUFFIX,sy.ameblo.jp, reject
 DOMAIN-SUFFIX,t.rentio.jp, reject

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.04.01
+// @version      0.2025.04.06
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -88,6 +88,7 @@
 // @match        https://www.52bdys.com/*
 // @match        https://cn.pornhub.com/*
 // @match        https://www.pornhub.com/*
+// @match        https://t66y.com/*
 // @match        https://missav.com/*
 // @match        https://missav.ai/*
 // @match        https://missav.ws/*
@@ -339,6 +340,7 @@ var imax = {
         porn91: ".copysuccess {background:green !important;color:white !important;} br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
         pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
+        t66y: "div.tips[style*='auto'],div[class*=ftad-item] {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none !important}",
         tz659: "figure, img[src*='mt2.jpg'],img[src*='pf.gif'],[src*='.gif'], iframe {display:none !important}",
@@ -385,6 +387,7 @@ css_adsRemove(imax.css.othercss, 0, 'othercss') // 引用全局样式
 function values() {
     var adsDomain = [
         "pornhub",
+        "t66y",
         "missav",
         "bi-girl",
         "t1229.btc760.com",
@@ -500,6 +503,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             pornhub_sidebar_ads();
             break;
+
+        case 't66y':
+            css_adsRemove(imax.css.t66y);
+            break;
+
         case '91porna':
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.porna91);

@@ -426,7 +426,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["appearance.extended_auto_start"],["banner.ytcode"],["data","errors"],["dl bpas"],["isVideoAutoplayMode swUrl"],["results.fixed"],["tiers.TIER_ANY"],["vast"],["result.body.direct"],["[].*.result.body"]];
-const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,4]],["1plus1.video",3],["igromania.ru",5],["kanobu.ru",5],["znanija.com",6],["aniqit.com",7],["anivod.com",7],["ashdi.vip",7],["kodik.cc",7],["kodik.info",7],["kodikdb.com",7],["tortuga.wtf",7],["ok.ru",8],["touch.mail.ru",8],["e.mail.ru",9]]);
+const hostnamesMap = new Map([["uma.media",0],["ivanovonews.ru",1],["kufar.by",2],["pikabu.ru",[2,4]],["1plus1.video",3],["igromania.ru",5],["kanobu.ru",5],["znanija.com",6],["aniqit.com",7],["anivod.com",7],["ashdi.vip",7],["kodik.cc",7],["kodik.info",7],["kodikdb.com",7],["tortuga.wtf",7],["ok.ru",8],["touch.mail.ru",8],["mail.ru",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

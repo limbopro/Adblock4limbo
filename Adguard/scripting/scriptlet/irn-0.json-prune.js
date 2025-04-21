@@ -425,8 +425,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["trace data.vast_url data.ads"],["result.commercialUrl result.watermark"],["result.adsText result.adsLink"],["data.geocampaigns"],["data","data.vast data.content data.ad_id"],["body.productStatus"]];
-const hostnamesMap = new Map([["filmnet.ir",0],["play.namava.ir",1],["skyroom.online",2],["app.snapp.taxi",3],["tmk.ir",4],["player.telewebion.com",5]]);
+const argsList = [["props.children.[].props.children.[].props.children.props.advertisment"],["trace data.vast_url data.ads"],["result.commercialUrl result.watermark"],["result.adsText result.adsLink"],["data.geocampaigns"],["data","data.vast data.content data.ad_id"],["body.productStatus"]];
+const hostnamesMap = new Map([["fam.ir",0],["filmnet.ir",1],["play.namava.ir",2],["skyroom.online",3],["app.snapp.taxi",4],["tmk.ir",5],["player.telewebion.com",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

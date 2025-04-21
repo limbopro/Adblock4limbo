@@ -370,8 +370,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["decodeURIComponent","newAdblockBoardDisplayed"],["addEventListener","/faBar[\\s\\S]*?insertAdjacentElement/"],["$","/loadData|halfpage|welcome|screening|placement|adtitle/"],["billboard750"],["jQuery","#sdWelcomeScreen"],["$","#AdPopup"],["document.querySelectorAll","popMagic"],["Math.random"],["$","alert"],["document.addEventListener","adblocka"],["atob","decodeURIComponent"],["document.getElementById","block"],["parseInt","adblock"],["String.fromCharCode","/(?:Math|btoa)/"],["parseInt","/adBlock/"],["showAdblockImage"],["IRI","Adblock"]];
-const hostnamesMap = new Map([["filmweb.pl",[0,1,16]],["naekranie.pl",2],["czasdzieci.pl",3],["hdtvpolska.com",4],["tubagliwic.pl",5],["tubawyszkowa.pl",5],["filmy69.pl",6],["otube.pl",7],["skript.pl",[8,9]],["twojetv.ws",10],["zambrow.org",11],["weszlo.com",12],["prnews.pl",12],["mambiznes.pl",12],["kresy.pl",12],["natemat.pl",12],["dziennik.pl",12],["cdahd.co",13],["sadeczanin.info",14],["karmopedia.pl",15],["smartage.pl",14]]);
+const argsList = [["decodeURIComponent","newAdblockBoardDisplayed"],["addEventListener","/faBar[\\s\\S]*?insertAdjacentElement/"],["$","/loadData|halfpage|welcome|screening|placement|adtitle/"],["billboard750"],["jQuery","#sdWelcomeScreen"],["$","#AdPopup"],["document.querySelectorAll","popMagic"],["Math.random"]];
+const hostnamesMap = new Map([["filmweb.pl",[0,1]],["naekranie.pl",2],["czasdzieci.pl",3],["hdtvpolska.com",4],["tubagliwic.pl",5],["tubawyszkowa.pl",5],["filmy69.pl",6],["otube.pl",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

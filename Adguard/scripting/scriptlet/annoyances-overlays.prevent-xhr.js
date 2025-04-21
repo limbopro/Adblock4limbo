@@ -503,8 +503,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["googlesyndication"],["/hotjar|googletagmanager/"],["ads"],["gif"]];
-const hostnamesMap = new Map([["maxedtech.com",0],["unidivers.fr",0],["nsmb.com",0],["neilpatel.com",1],["solarmagazine.nl",2],["nusantararom.org",3]]);
+const argsList = [["googlesyndication"],["gif"],["/hotjar|googletagmanager/"],["ads"]];
+const hostnamesMap = new Map([["maxedtech.com",0],["unidivers.fr",0],["nsmb.com",0],["nusantararom.org",1],["neilpatel.com",2],["solarmagazine.nl",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

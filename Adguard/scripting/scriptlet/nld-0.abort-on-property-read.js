@@ -289,7 +289,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["Object.prototype.autoRecov"],["Object.prototype.disableAb"]];
-const hostnamesMap = new Map([["hardware.info",0],["tweakers.net",0],["indeleiderstrui.nl",1]]);
+const hostnamesMap = new Map([["autotrader.nl",0],["hardware.info",0],["tweakers.net",0],["indeleiderstrui.nl",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -29,7 +29,7 @@
 
 const argsList = ["",["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"]];
 const argsSeqs = [0,1];
-const hostnamesMap = new Map([["metruyencv.info",1],["metruyencv.net",1],["metruyencv.com",1]]);
+const hostnamesMap = new Map([["metruyencv.com",1],["metruyencv.net",1]]);
 const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];

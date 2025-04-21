@@ -20,174 +20,130 @@
 
 */
 
-// ruleset: pol-0
+// ruleset: jpn-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_addEventListenerDefuser() {
+(function uBOL_hrefSanitizer() {
 
 /******************************************************************************/
 
-function addEventListenerDefuser(
-    type = '',
-    pattern = ''
+function hrefSanitizer(
+    selector = '',
+    source = ''
 ) {
+    if ( typeof selector !== 'string' ) { return; }
+    if ( selector === '' ) { return; }
     const safe = safeSelf();
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
-    const logPrefix = safe.makeLogPrefix('prevent-addEventListener', type, pattern);
-    const reType = safe.patternToRegex(type, undefined, true);
-    const rePattern = safe.patternToRegex(pattern);
-    const debug = shouldDebug(extraArgs);
-    const targetSelector = extraArgs.elements || undefined;
-    const elementMatches = elem => {
-        if ( targetSelector === 'window' ) { return elem === window; }
-        if ( targetSelector === 'document' ) { return elem === document; }
-        if ( elem && elem.matches && elem.matches(targetSelector) ) { return true; }
-        const elems = Array.from(document.querySelectorAll(targetSelector));
-        return elems.includes(elem);
-    };
-    const elementDetails = elem => {
-        if ( elem instanceof Window ) { return 'window'; }
-        if ( elem instanceof Document ) { return 'document'; }
-        if ( elem instanceof Element === false ) { return '?'; }
-        const parts = [];
-        // https://github.com/uBlockOrigin/uAssets/discussions/17907#discussioncomment-9871079
-        const id = String(elem.id);
-        if ( id !== '' ) { parts.push(`#${CSS.escape(id)}`); }
-        for ( let i = 0; i < elem.classList.length; i++ ) {
-            parts.push(`.${CSS.escape(elem.classList.item(i))}`);
-        }
-        for ( let i = 0; i < elem.attributes.length; i++ ) {
-            const attr = elem.attributes.item(i);
-            if ( attr.name === 'id' ) { continue; }
-            if ( attr.name === 'class' ) { continue; }
-            parts.push(`[${CSS.escape(attr.name)}="${attr.value}"]`);
-        }
-        return parts.join('');
-    };
-    const shouldPrevent = (thisArg, type, handler) => {
-        const matchesType = safe.RegExp_test.call(reType, type);
-        const matchesHandler = safe.RegExp_test.call(rePattern, handler);
-        const matchesEither = matchesType || matchesHandler;
-        const matchesBoth = matchesType && matchesHandler;
-        if ( debug === 1 && matchesBoth || debug === 2 && matchesEither ) {
-            debugger; // eslint-disable-line no-debugger
-        }
-        if ( matchesBoth && targetSelector !== undefined ) {
-            if ( elementMatches(thisArg) === false ) { return false; }
-        }
-        return matchesBoth;
-    };
-    const proxyFn = function(context) {
-        const { callArgs, thisArg } = context;
-        let t, h;
+    const logPrefix = safe.makeLogPrefix('href-sanitizer', selector, source);
+    if ( source === '' ) { source = 'text'; }
+    const sanitizeCopycats = (href, text) => {
+        let elems = [];
         try {
-            t = String(callArgs[0]);
-            if ( typeof callArgs[1] === 'function' ) {
-                h = String(safe.Function_toString(callArgs[1]));
-            } else if ( typeof callArgs[1] === 'object' && callArgs[1] !== null ) {
-                if ( typeof callArgs[1].handleEvent === 'function' ) {
-                    h = String(safe.Function_toString(callArgs[1].handleEvent));
-                }
-            } else {
-                h = String(callArgs[1]);
-            }
+            elems = document.querySelectorAll(`a[href="${href}"`);
+        }
+        catch {
+        }
+        for ( const elem of elems ) {
+            elem.setAttribute('href', text);
+        }
+        return elems.length;
+    };
+    const validateURL = text => {
+        if ( typeof text !== 'string' ) { return ''; }
+        if ( text === '' ) { return ''; }
+        if ( /[\x00-\x20\x7f]/.test(text) ) { return ''; }
+        try {
+            const url = new URL(text, document.location);
+            return url.href;
         } catch {
         }
-        if ( type === '' && pattern === '' ) {
-            safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
-        } else if ( shouldPrevent(thisArg, t, h) ) {
-            return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
+        return '';
+    };
+    const extractParam = (href, source) => {
+        if ( Boolean(source) === false ) { return href; }
+        const recursive = source.includes('?', 1);
+        const end = recursive ? source.indexOf('?', 1) : source.length;
+        try {
+            const url = new URL(href, document.location);
+            let value = url.searchParams.get(source.slice(1, end));
+            if ( value === null ) { return href }
+            if ( recursive ) { return extractParam(value, source.slice(end)); }
+            return value;
+        } catch {
         }
-        return context.reflect();
+        return href;
     };
-    runAt(( ) => {
-        proxyApplyFn('EventTarget.prototype.addEventListener', proxyFn);
-        proxyApplyFn('document.addEventListener', proxyFn);
-    }, extraArgs.runAt);
-}
-
-function proxyApplyFn(
-    target = '',
-    handler = ''
-) {
-    let context = globalThis;
-    let prop = target;
-    for (;;) {
-        const pos = prop.indexOf('.');
-        if ( pos === -1 ) { break; }
-        context = context[prop.slice(0, pos)];
-        if ( context instanceof Object === false ) { return; }
-        prop = prop.slice(pos+1);
-    }
-    const fn = context[prop];
-    if ( typeof fn !== 'function' ) { return; }
-    if ( proxyApplyFn.CtorContext === undefined ) {
-        proxyApplyFn.ctorContexts = [];
-        proxyApplyFn.CtorContext = class {
-            constructor(...args) {
-                this.init(...args);
-            }
-            init(callFn, callArgs) {
-                this.callFn = callFn;
-                this.callArgs = callArgs;
-                return this;
-            }
-            reflect() {
-                const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = this.private = undefined;
-                proxyApplyFn.ctorContexts.push(this);
-                return r;
-            }
-            static factory(...args) {
-                return proxyApplyFn.ctorContexts.length !== 0
-                    ? proxyApplyFn.ctorContexts.pop().init(...args)
-                    : new proxyApplyFn.CtorContext(...args);
-            }
-        };
-        proxyApplyFn.applyContexts = [];
-        proxyApplyFn.ApplyContext = class {
-            constructor(...args) {
-                this.init(...args);
-            }
-            init(callFn, thisArg, callArgs) {
-                this.callFn = callFn;
-                this.thisArg = thisArg;
-                this.callArgs = callArgs;
-                return this;
-            }
-            reflect() {
-                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
-                proxyApplyFn.applyContexts.push(this);
-                return r;
-            }
-            static factory(...args) {
-                return proxyApplyFn.applyContexts.length !== 0
-                    ? proxyApplyFn.applyContexts.pop().init(...args)
-                    : new proxyApplyFn.ApplyContext(...args);
-            }
-        };
-    }
-    const fnStr = fn.toString();
-    const toString = (function toString() { return fnStr; }).bind(null);
-    const proxyDetails = {
-        apply(target, thisArg, args) {
-            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
-        },
-        get(target, prop) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop);
-        },
+    const extractURL = (elem, source) => {
+        if ( /^\[.*\]$/.test(source) ) {
+            return elem.getAttribute(source.slice(1,-1).trim()) || '';
+        }
+        if ( source === 'text' ) {
+            return elem.textContent
+                .replace(/^[^\x21-\x7e]+/, '') // remove leading invalid characters
+                .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
+            ;
+        }
+        if ( source.startsWith('?') === false ) { return ''; }
+        const steps = source.replace(/(\S)\?/g, '\\1?').split(/\s+/);
+        const url = steps.length === 1
+            ? extractParam(elem.href, source)
+            : urlSkip(elem.href, false, steps);
+        if ( url === undefined ) { return; }
+        return url.replace(/ /g, '%20');
     };
-    if ( fn.prototype?.constructor === fn ) {
-        proxyDetails.construct = function(target, args) {
-            return handler(proxyApplyFn.CtorContext.factory(target, args));
-        };
-    }
-    context[prop] = new Proxy(fn, proxyDetails);
+    const sanitize = ( ) => {
+        let elems = [];
+        try {
+            elems = document.querySelectorAll(selector);
+        }
+        catch {
+            return false;
+        }
+        for ( const elem of elems ) {
+            if ( elem.localName !== 'a' ) { continue; }
+            if ( elem.hasAttribute('href') === false ) { continue; }
+            const href = elem.getAttribute('href');
+            const text = extractURL(elem, source);
+            const hrefAfter = validateURL(text);
+            if ( hrefAfter === '' ) { continue; }
+            if ( hrefAfter === href ) { continue; }
+            elem.setAttribute('href', hrefAfter);
+            const count = sanitizeCopycats(href, hrefAfter);
+            safe.uboLog(logPrefix, `Sanitized ${count+1} links to\n${hrefAfter}`);
+        }
+        return true;
+    };
+    let observer, timer;
+    const onDomChanged = mutations => {
+        if ( timer !== undefined ) { return; }
+        let shouldSanitize = false;
+        for ( const mutation of mutations ) {
+            if ( mutation.addedNodes.length === 0 ) { continue; }
+            for ( const node of mutation.addedNodes ) {
+                if ( node.nodeType !== 1 ) { continue; }
+                shouldSanitize = true;
+                break;
+            }
+            if ( shouldSanitize ) { break; }
+        }
+        if ( shouldSanitize === false ) { return; }
+        timer = safe.onIdle(( ) => {
+            timer = undefined;
+            sanitize();
+        });
+    };
+    const start = ( ) => {
+        if ( sanitize() === false ) { return; }
+        observer = new MutationObserver(onDomChanged);
+        observer.observe(document.body, {
+            subtree: true,
+            childList: true,
+        });
+    };
+    runAt(( ) => { start(); }, 'interactive');
 }
 
 function runAt(fn, when) {
@@ -409,16 +365,103 @@ function safeSelf() {
     return safe;
 }
 
-function shouldDebug(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.canDebug && details.debug;
+function urlSkip(url, blocked, steps, directive = {}) {
+    try {
+        let redirectBlocked = false;
+        let urlout = url;
+        for ( const step of steps ) {
+            const urlin = urlout;
+            const c0 = step.charCodeAt(0);
+            // Extract from hash
+            if ( c0 === 0x23 && step === '#' ) { // #
+                const pos = urlin.indexOf('#');
+                urlout = pos !== -1 ? urlin.slice(pos+1) : '';
+                continue;
+            }
+            // Extract from URL parameter name at position i
+            if ( c0 === 0x26 ) { // &
+                const i = (parseInt(step.slice(1)) || 0) - 1;
+                if ( i < 0 ) { return; }
+                const url = new URL(urlin);
+                if ( i >= url.searchParams.size ) { return; }
+                const params = Array.from(url.searchParams.keys());
+                urlout = decodeURIComponent(params[i]);
+                continue;
+            }
+            // Enforce https
+            if ( c0 === 0x2B && step === '+https' ) { // +
+                const s = urlin.replace(/^https?:\/\//, '');
+                if ( /^[\w-]:\/\//.test(s) ) { return; }
+                urlout = `https://${s}`;
+                continue;
+            }
+            // Decode
+            if ( c0 === 0x2D ) { // -
+                // Base64
+                if ( step === '-base64' ) {
+                    urlout = self.atob(urlin);
+                    continue;
+                }
+                // Safe Base64
+                if ( step === '-safebase64' ) {
+                    if ( urlSkip.safeBase64Replacer === undefined ) {
+                        urlSkip.safeBase64Map = { '-': '+', '_': '/' };
+                        urlSkip.safeBase64Replacer = s => urlSkip.safeBase64Map[s];
+                    }
+                    urlout = urlin.replace(/[-_]/g, urlSkip.safeBase64Replacer);
+                    urlout = self.atob(urlout);
+                    continue;
+                }
+                // URI component
+                if ( step === '-uricomponent' ) {
+                    urlout = decodeURIComponent(urlin);
+                    continue;
+                }
+                // Enable skip of blocked requests
+                if ( step === '-blocked' ) {
+                    redirectBlocked = true;
+                    continue;
+                }
+            }
+            // Regex extraction from first capture group
+            if ( c0 === 0x2F ) { // /
+                const re = directive.cache ?? new RegExp(step.slice(1, -1));
+                if ( directive.cache === null ) {
+                    directive.cache = re;
+                }
+                const match = re.exec(urlin);
+                if ( match === null ) { return; }
+                if ( match.length <= 1 ) { return; }
+                urlout = match[1];
+                continue;
+            }
+            // Extract from URL parameter
+            if ( c0 === 0x3F ) { // ?
+                urlout = (new URL(urlin)).searchParams.get(step.slice(1));
+                if ( urlout === null ) { return; }
+                if ( urlout.includes(' ') ) {
+                    urlout = urlout.replace(/ /g, '%20');
+                }
+                continue;
+            }
+            // Unknown directive
+            return;
+        }
+        const urlfinal = new URL(urlout);
+        if ( urlfinal.protocol !== 'https:' ) {
+            if ( urlfinal.protocol !== 'http:' ) { return; }
+        }
+        if ( blocked && redirectBlocked !== true ) { return; }
+        return urlout;
+    } catch {
+    }
 }
 
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["message","t.origin===k"]];
-const hostnamesMap = new Map([["kafeteria.pl",0],["polygamia.pl",0],["open.fm",0],["pudelek.pl",0]]);
+const argsList = [["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"]];
+const hostnamesMap = new Map([["figure-times.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -486,7 +529,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { addEventListenerDefuser(...argsList[i]); }
+    try { hrefSanitizer(...argsList[i]); }
     catch { }
 }
 

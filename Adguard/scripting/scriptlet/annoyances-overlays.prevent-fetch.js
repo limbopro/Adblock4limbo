@@ -26,17 +26,28 @@
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_noFetchIf() {
+(function uBOL_preventFetch() {
 
 /******************************************************************************/
 
-function noFetchIf(
+function preventFetch(...args) {
+    preventFetchFn(false, ...args);
+}
+
+function preventFetchFn(
+    trusted = false,
     propsToMatch = '',
     responseBody = '',
     responseType = ''
 ) {
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody, responseType);
+    const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
+    const logPrefix = safe.makeLogPrefix(
+        scriptletName,
+        propsToMatch,
+        responseBody,
+        responseType
+    );
     const needles = [];
     for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -112,7 +123,7 @@ function noFetchIf(
         if ( proceed ) {
             return context.reflect();
         }
-        return Promise.resolve(generateContentFn(false, responseBody)).then(text => {
+        return Promise.resolve(generateContentFn(trusted, responseBody)).then(text => {
             safe.uboLog(logPrefix, `Prevented with response "${text}"`);
             const response = new Response(text, {
                 headers: {
@@ -461,8 +472,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["www3.doubleclick.net"],["googlesyndication"],["ads"],["doubleclick"],["analytics"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"]];
-const hostnamesMap = new Map([["tools.jabrek.net",0],["maxedtech.com",1],["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["theonegenerator.com",2],["mcskinhistory.com",2],["pokeos.com",3],["sporttotal.tv",3],["ddys.*",4],["bypass.city",5],["adbypass.org",5],["amtraker.com",6],["ark-unity.com",7]]);
+const argsList = [["www3.doubleclick.net"],["googlesyndication"],["analytics"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"],["doubleclick"]];
+const hostnamesMap = new Map([["tools.jabrek.net",0],["maxedtech.com",1],["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["ddys.*",2],["theonegenerator.com",3],["mcskinhistory.com",3],["bypass.city",4],["adbypass.org",4],["amtraker.com",5],["ark-unity.com",6],["pokeos.com",7],["sporttotal.tv",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;
@@ -530,7 +541,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { noFetchIf(...argsList[i]); }
+    try { preventFetch(...argsList[i]); }
     catch { }
 }
 

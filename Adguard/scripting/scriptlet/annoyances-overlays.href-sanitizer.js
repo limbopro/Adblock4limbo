@@ -20,35 +20,13 @@
 
 */
 
-/* jshint esversion:11 */
-/* global cloneInto */
-
-'use strict';
-
 // ruleset: annoyances-overlays
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_hrefSanitizer = function() {
-
-const scriptletGlobals = {}; // jshint ignore: line
-
-const argsList = [["a[href^=\"https://www.youtube.com/redirect?event=video_description\"][href*=\"&q=http\"]","?q"]];
-
-const hostnamesMap = new Map([["m.youtube.com",0],["music.youtube.com",0],["tv.youtube.com",0],["www.youtube.com",0],["youtubekids.com",0],["youtube-nocookie.com",0]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_hrefSanitizer() {
 
 /******************************************************************************/
 
@@ -66,7 +44,7 @@ function hrefSanitizer(
         try {
             elems = document.querySelectorAll(`a[href="${href}"`);
         }
-        catch(ex) {
+        catch {
         }
         for ( const elem of elems ) {
             elem.setAttribute('href', text);
@@ -74,26 +52,33 @@ function hrefSanitizer(
         return elems.length;
     };
     const validateURL = text => {
+        if ( typeof text !== 'string' ) { return ''; }
         if ( text === '' ) { return ''; }
         if ( /[\x00-\x20\x7f]/.test(text) ) { return ''; }
         try {
             const url = new URL(text, document.location);
             return url.href;
-        } catch(ex) {
+        } catch {
         }
         return '';
     };
-    const extractText = (elem, source) => {
+    const extractParam = (href, source) => {
+        if ( Boolean(source) === false ) { return href; }
+        const recursive = source.includes('?', 1);
+        const end = recursive ? source.indexOf('?', 1) : source.length;
+        try {
+            const url = new URL(href, document.location);
+            let value = url.searchParams.get(source.slice(1, end));
+            if ( value === null ) { return href }
+            if ( recursive ) { return extractParam(value, source.slice(end)); }
+            return value;
+        } catch {
+        }
+        return href;
+    };
+    const extractURL = (elem, source) => {
         if ( /^\[.*\]$/.test(source) ) {
             return elem.getAttribute(source.slice(1,-1).trim()) || '';
-        }
-        if ( source.startsWith('?') ) {
-            try {
-                const url = new URL(elem.href, document.location);
-                return url.searchParams.get(source.slice(1)) || '';
-            } catch(x) {
-            }
-            return '';
         }
         if ( source === 'text' ) {
             return elem.textContent
@@ -101,21 +86,27 @@ function hrefSanitizer(
                 .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
             ;
         }
-        return '';
+        if ( source.startsWith('?') === false ) { return ''; }
+        const steps = source.replace(/(\S)\?/g, '\\1?').split(/\s+/);
+        const url = steps.length === 1
+            ? extractParam(elem.href, source)
+            : urlSkip(elem.href, false, steps);
+        if ( url === undefined ) { return; }
+        return url.replace(/ /g, '%20');
     };
     const sanitize = ( ) => {
         let elems = [];
         try {
             elems = document.querySelectorAll(selector);
         }
-        catch(ex) {
+        catch {
             return false;
         }
         for ( const elem of elems ) {
             if ( elem.localName !== 'a' ) { continue; }
             if ( elem.hasAttribute('href') === false ) { continue; }
             const href = elem.getAttribute('href');
-            const text = extractText(elem, source);
+            const text = extractURL(elem, source);
             const hrefAfter = validateURL(text);
             if ( hrefAfter === '' ) { continue; }
             if ( hrefAfter === href ) { continue; }
@@ -158,14 +149,14 @@ function hrefSanitizer(
 function runAt(fn, when) {
     const intFromReadyState = state => {
         const targets = {
-            'loading': 1,
+            'loading': 1, 'asap': 1,
             'interactive': 2, 'end': 2, '2': 2,
             'complete': 3, 'idle': 3, '3': 3,
         };
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -203,10 +194,14 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
+        'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -239,7 +234,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
@@ -282,7 +277,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -305,159 +300,242 @@ function safeSelf() {
             }
             return self.requestAnimationFrame(fn);
         },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
-    safe.sendToLogger = (type, ...args) => {
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
         }
-        bcBuffer.push({ type, text });
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
+}
+
+function urlSkip(url, blocked, steps, directive = {}) {
+    try {
+        let redirectBlocked = false;
+        let urlout = url;
+        for ( const step of steps ) {
+            const urlin = urlout;
+            const c0 = step.charCodeAt(0);
+            // Extract from hash
+            if ( c0 === 0x23 && step === '#' ) { // #
+                const pos = urlin.indexOf('#');
+                urlout = pos !== -1 ? urlin.slice(pos+1) : '';
+                continue;
+            }
+            // Extract from URL parameter name at position i
+            if ( c0 === 0x26 ) { // &
+                const i = (parseInt(step.slice(1)) || 0) - 1;
+                if ( i < 0 ) { return; }
+                const url = new URL(urlin);
+                if ( i >= url.searchParams.size ) { return; }
+                const params = Array.from(url.searchParams.keys());
+                urlout = decodeURIComponent(params[i]);
+                continue;
+            }
+            // Enforce https
+            if ( c0 === 0x2B && step === '+https' ) { // +
+                const s = urlin.replace(/^https?:\/\//, '');
+                if ( /^[\w-]:\/\//.test(s) ) { return; }
+                urlout = `https://${s}`;
+                continue;
+            }
+            // Decode
+            if ( c0 === 0x2D ) { // -
+                // Base64
+                if ( step === '-base64' ) {
+                    urlout = self.atob(urlin);
+                    continue;
+                }
+                // Safe Base64
+                if ( step === '-safebase64' ) {
+                    if ( urlSkip.safeBase64Replacer === undefined ) {
+                        urlSkip.safeBase64Map = { '-': '+', '_': '/' };
+                        urlSkip.safeBase64Replacer = s => urlSkip.safeBase64Map[s];
+                    }
+                    urlout = urlin.replace(/[-_]/g, urlSkip.safeBase64Replacer);
+                    urlout = self.atob(urlout);
+                    continue;
+                }
+                // URI component
+                if ( step === '-uricomponent' ) {
+                    urlout = decodeURIComponent(urlin);
+                    continue;
+                }
+                // Enable skip of blocked requests
+                if ( step === '-blocked' ) {
+                    redirectBlocked = true;
+                    continue;
+                }
+            }
+            // Regex extraction from first capture group
+            if ( c0 === 0x2F ) { // /
+                const re = directive.cache ?? new RegExp(step.slice(1, -1));
+                if ( directive.cache === null ) {
+                    directive.cache = re;
+                }
+                const match = re.exec(urlin);
+                if ( match === null ) { return; }
+                if ( match.length <= 1 ) { return; }
+                urlout = match[1];
+                continue;
+            }
+            // Extract from URL parameter
+            if ( c0 === 0x3F ) { // ?
+                urlout = (new URL(urlin)).searchParams.get(step.slice(1));
+                if ( urlout === null ) { return; }
+                if ( urlout.includes(' ') ) {
+                    urlout = urlout.replace(/ /g, '%20');
+                }
+                continue;
+            }
+            // Unknown directive
+            return;
+        }
+        const urlfinal = new URL(urlout);
+        if ( urlfinal.protocol !== 'https:' ) {
+            if ( urlfinal.protocol !== 'http:' ) { return; }
+        }
+        if ( blocked && redirectBlocked !== true ) { return; }
+        return urlout;
+    } catch {
+    }
 }
 
 /******************************************************************************/
 
-const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["a[href^=\"https://steamcommunity.com/linkfilter/?u=http\"]","?u"]];
+const hostnamesMap = new Map([["store.steampowered.com",0]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { hrefSanitizer(...argsList[i]); }
-    catch(ex) {}
-}
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'ISOLATED';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_hrefSanitizer();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_hrefSanitizer = cloneInto([
-            [ '(', uBOL_hrefSanitizer.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_hrefSanitizer);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_hrefSanitizer;
+    catch { }
 }
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

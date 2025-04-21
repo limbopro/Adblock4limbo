@@ -325,8 +325,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["RTCPeerConnection"],["Criteo"]];
-const hostnamesMap = new Map([["streamin.to",0],["shinden.pl",1]]);
+const argsList = [["RTCPeerConnection"]];
+const hostnamesMap = new Map([["streamin.to",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

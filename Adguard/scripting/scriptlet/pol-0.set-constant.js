@@ -460,9 +460,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["WP.gaf.loadBunch","noopFunc"],["Object.prototype.rekids","undefined"],["Object.prototype.gafSlot","undefined"],["Object.prototype.advViewability","undefined"],["Object.prototype.loadBunch","noopFunc"],["Object.prototype.loadAndRunBunch","noopFunc"],["displayed","false"],["loadElement","noopFunc"],["showAds","true"],["pp_adblock_is_off","trueFunc"],["window.google_jobrunner","noopFunc"],["Inpl.Abd.onDetected","noopFunc"],["isAdblockDetected","0"],["adsBlocked","noopFunc"],["showAddbockerMsg","noopFunc"],["loadElementBlock","noopFunc"]];
-const hostnamesMap = new Map([["www.wp.pl",0],["money.pl",[1,2,3]],["open.fm",2],["sportowefakty.wp.pl",4],["profil.wp.pl",5],["opensubtitles.org",6],["www.elektroda.pl",[7,15]],["acmilan.com.pl",8],["kitsune-subs.anime-odcinki.pl",8],["miastakobiet.pl",9],["stronazdrowia.pl",9],["dniwolne.eu",10],["interia.pl",[11,12]],["pomponik.pl",[11,12]],["cdahd.co",13],["synonimy.pl",14]]);
-const exceptionsMap = new Map([["poczta.interia.pl",[11]]]);
+const argsList = [["WP.gaf.loadBunch","noopFunc"],["Object.prototype.rekids","undefined"],["Object.prototype.gafSlot","undefined"],["Object.prototype.advViewability","undefined"],["Object.prototype.loadBunch","noopFunc"],["Object.prototype.loadAndRunBunch","noopFunc"],["displayed","false"],["loadElement","noopFunc"]];
+const hostnamesMap = new Map([["www.wp.pl",0],["money.pl",[1,2,3]],["open.fm",2],["sportowefakty.wp.pl",4],["profil.wp.pl",5],["opensubtitles.org",6],["www.elektroda.pl",7]]);
+const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
 

@@ -369,8 +369,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","if(floovy()) {","if(false) {"],["style",".np{",".dummy{","condition","@media print"],["script","window.location.reload"],["style","@media print"],["style","/\\.novel-box \\*:not\\(a\\)|@media print/g"]];
-const hostnamesMap = new Map([["heidisql.com",0],["novelpia.com",1],["baumbet.ro",2],["karsaz-law.com",3],["mskmangaz.blogspot.com",4]]);
+const argsList = [["style",".np{",".dummy{","condition","@media print"],["script","if(floovy()) {","if(false) {"],["script","window.location.reload"],["style","@media print"],["style","/\\.novel-box \\*:not\\(a\\)|@media print/g"]];
+const hostnamesMap = new Map([["novelpia.com",0],["heidisql.com",1],["baumbet.ro",2],["karsaz-law.com",3],["mskmangaz.blogspot.com",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

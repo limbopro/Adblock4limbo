@@ -26,17 +26,28 @@
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_noFetchIf() {
+(function uBOL_preventFetch() {
 
 /******************************************************************************/
 
-function noFetchIf(
+function preventFetch(...args) {
+    preventFetchFn(false, ...args);
+}
+
+function preventFetchFn(
+    trusted = false,
     propsToMatch = '',
     responseBody = '',
     responseType = ''
 ) {
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('prevent-fetch', propsToMatch, responseBody, responseType);
+    const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
+    const logPrefix = safe.makeLogPrefix(
+        scriptletName,
+        propsToMatch,
+        responseBody,
+        responseType
+    );
     const needles = [];
     for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -112,7 +123,7 @@ function noFetchIf(
         if ( proceed ) {
             return context.reflect();
         }
-        return Promise.resolve(generateContentFn(false, responseBody)).then(text => {
+        return Promise.resolve(generateContentFn(trusted, responseBody)).then(text => {
             safe.uboLog(logPrefix, `Prevented with response "${text}"`);
             const response = new Response(text, {
                 headers: {
@@ -530,7 +541,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { noFetchIf(...argsList[i]); }
+    try { preventFetch(...argsList[i]); }
     catch { }
 }
 

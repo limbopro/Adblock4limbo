@@ -362,8 +362,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["function neTick(){neTickCounter++;if(neTickCounter<=neTickCountLimit){neTickAjax=$.ajax({type:\"POST\"","url:adminAjaxUrl+\"?action=ne_tick\"","dataType:\"json\"","success:function(data){neTickResponseAction(data)}})}}","10000"],["muted","8000"],["seead"]];
-const hostnamesMap = new Map([["naekranie.pl",0],["playpuls.pl",1],["zspnr1.lowicz.pl",2]]);
+const argsList = [["function neTick(){neTickCounter++;if(neTickCounter<=neTickCountLimit){neTickAjax=$.ajax({type:\"POST\"","url:adminAjaxUrl+\"?action=ne_tick\"","dataType:\"json\"","success:function(data){neTickResponseAction(data)}})}}","10000"]];
+const hostnamesMap = new Map([["naekranie.pl",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

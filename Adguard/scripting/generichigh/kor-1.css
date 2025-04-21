@@ -91,6 +91,7 @@ img[src*="//static.stax.kr/resource/banner/"],
 img[src^="/bannerpop/"],
 ins[class^="MediaIndex_AD_"],
 ins[data-aiinad-inv],
-tenping[tenping-ad-display-type] {
+tenping[tenping-ad-display-type],
+ul[class] > li:has(> a[href^="/guarantee.php"]) {
     display: none !important;
 }

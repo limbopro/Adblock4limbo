@@ -352,8 +352,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["CM_cookieConsent","0"],["allow-marketing-cookies","0"]];
-const hostnamesMap = new Map([["destination.se",0],["sistaminuten.se",0],["inet.se",1]]);
+const argsList = [["CM_cookieConsent","0"],["allow-marketing-cookies","0"],["cmplz_banner-status","dismissed"],["cmplz_functional","allow"],["cmplz_marketing","deny"],["cmplz_preferences","deny"],["cmplz_statistics","deny"]];
+const hostnamesMap = new Map([["destination.se",0],["sistaminuten.se",0],["inet.se",1],["inredningsvis.se",[2,3,4,5,6]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

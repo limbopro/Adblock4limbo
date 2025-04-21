@@ -288,8 +288,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["WP.inline"],["__headpayload"],["Object.prototype.bodyCode"],["launchOpenWindow"],["o6c6e"],["uabpd3"],["checkAds"],["zfgformats"],["mdpDeBlocker"],["HateAdBlock"],["adBlockDetected"],["abask"]];
-const hostnamesMap = new Map([["wp.pl",0],["www.wp.pl",1],["sportowefakty.wp.pl",2],["anyfiles.pl",3],["animezone.pl",4],["pcworld.pl",5],["astroweb.pl",6],["exdb.net",[7,8]],["epidemia-koronawirus.pl",8],["trojmiasto.pl",[9,10]],["kurnik.pl",11]]);
+const argsList = [["WP.inline"],["__headpayload"],["Object.prototype.bodyCode"],["launchOpenWindow"],["o6c6e"],["uabpd3"]];
+const hostnamesMap = new Map([["wp.pl",0],["www.wp.pl",1],["sportowefakty.wp.pl",2],["anyfiles.pl",3],["animezone.pl",4],["pcworld.pl",5]]);
 const exceptionsMap = new Map([["pilot.wp.pl",[0]],["poczta.wp.pl",[0]],["sportowefakty.wp.pl",[0]]]);
 const hasEntities = false;
 const hasAncestors = false;

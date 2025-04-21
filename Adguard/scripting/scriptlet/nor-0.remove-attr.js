@@ -326,7 +326,7 @@ function safeSelf() {
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["data-track"],["class",".dfp-loaded"]];
 const hostnamesMap = new Map([["sonderborgnyt.dk",0],["no",1]]);
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["bankid.com",[1]],["3dsecure.no",[1]]]);
 const hasEntities = false;
 const hasAncestors = false;
 

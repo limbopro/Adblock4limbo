@@ -266,8 +266,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ads"],["ub_ct_load"],["iaqExt"],["detectAB"],["_yhbog"],["yafaIt"],["fuckAdBlock"],["addBlocking"],["czy_wlaczony_adblock"],["Vublock"],["AdservingModule"],["_pop"],["adcashMacros"],["adquestoConfig"]];
-const hostnamesMap = new Map([["playpuls.pl",0],["autocentrum.pl",1],["demotywatory.pl",1],["dziennik.pl",1],["facetemjestem.pl",1],["gala.pl",1],["garnek.pl",1],["gry-online.pl",1],["jegostrona.pl",1],["joemonster.org",1],["kobieta.pl",1],["komixxy.pl",1],["transfery.info",1],["v10.pl",1],["facet.wp.pl",2],["gwiazdy.wp.pl",2],["teleshow.wp.pl",2],["bankier.pl",3],["filiser.tv",4],["eurogamer.pl",5],["cvninja.pl",6],["warezdark.pl",7],["naszemiasto.pl",8],["tvn24.pl",9],["shinden.pl",10],["exdb.net",11],["darmowa-tv.ws",12],["roweroweporady.pl",13]]);
+const argsList = [["ads"],["ub_ct_load"],["iaqExt"],["detectAB"],["_yhbog"],["yafaIt"]];
+const hostnamesMap = new Map([["playpuls.pl",0],["autocentrum.pl",1],["demotywatory.pl",1],["dziennik.pl",1],["facetemjestem.pl",1],["gala.pl",1],["garnek.pl",1],["gry-online.pl",1],["jegostrona.pl",1],["joemonster.org",1],["kobieta.pl",1],["komixxy.pl",1],["transfery.info",1],["v10.pl",1],["facet.wp.pl",2],["gwiazdy.wp.pl",2],["teleshow.wp.pl",2],["bankier.pl",3],["filiser.tv",4],["eurogamer.pl",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

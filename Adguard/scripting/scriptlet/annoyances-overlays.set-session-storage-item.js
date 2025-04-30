@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["floating-sign-up-dismissed","true"],["emailSignupModal_isShown","true"],["banner_session","true"],["fs.adb.dis","1"],["adblock","true"]];
-const hostnamesMap = new Map([["semafor.com",0],["virginvoyages.com",1],["sears.com",2],["270towin.com",3],["getemoji.com",3],["afterclass.io",4]]);
+const argsList = [["floating-sign-up-dismissed","true"],["emailSignupModal_isShown","true"],["banner_session","true"],["enews_popup_session","1"],["fs.adb.dis","1"],["adblock","true"]];
+const hostnamesMap = new Map([["semafor.com",0],["virginvoyages.com",1],["sears.com",2],["bcliquorstores.com",3],["270towin.com",4],["getemoji.com",4],["afterclass.io",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

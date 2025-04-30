@@ -341,8 +341,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["[id^=\"div-gpt-ad\"]","display","block"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["div[class=\"nav tabTop\"] + div > div:first-child > div:first-child > a:has(> img[src*=\"/\"][src*=\"_\"][alt]), #head + div[id] > div:last-child > div > a:has(> img[src*=\"/\"][src*=\"_\"][alt])","display","block"]];
-const hostnamesMap = new Map([["jytechs.in",0],["dev.miuiflash.com",0],["djxmaza.in",0],["thecubexguide.com",0],["download.megaup.net",1],["1001tracklists.com",2]]);
+const argsList = [["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["div[class=\"nav tabTop\"] + div > div:first-child > div:first-child > a:has(> img[src*=\"/\"][src*=\"_\"][alt]), #head + div[id] > div:last-child > div > a:has(> img[src*=\"/\"][src*=\"_\"][alt])","display","block"]];
+const hostnamesMap = new Map([["download.megaup.net",0],["1001tracklists.com",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

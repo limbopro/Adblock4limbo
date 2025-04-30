@@ -352,8 +352,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"]];
-const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2]]);
+const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"],["mrr_1","1"]];
+const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2],["erotizmfilmleri1.cc",3],["klasikfilmler.net",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

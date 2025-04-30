@@ -252,7 +252,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[],[".numcard"],[".time"],[".track-download__timer"],["closeWait","1800"],["countdown"],["disabled"],["js-game-loader-block","1000","0.0001"],["ks_counter"],["p"],["timer"],["#timer"]];
-const hostnamesMap = new Map([["595.ucoz.net",0],["5wip-file.ru",0],["file-mods.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["muzlan.top",1],["mp3crown.cc",2],["sorokam.ru",3],["bitshare.link",4],["kinokong.sk",5],["uakino.me",5],["win-lite.site",5],["vgtimes.ru",6],["startgamer.ru",7],["3mod.ru",8],["iblitzmods.ru",8],["wowskill.ru",9],["diplomsrazu.ru",10],["igrozoom.ru",10],["ru-minecraft.ru",10],["softomania.net",10],["vip-mods.ru",10],["warezok.net",10],["windows-driver.com",10],["windows-driver.net",10],["windows-program.com",10],["studizba.com",11],["surl.*",11]]);
+const hostnamesMap = new Map([["595.ucoz.net",0],["5wip-file.ru",0],["file-mods.ru",0],["infourok.ru",0],["mixmuz.ru",0],["myshared.ru",0],["myzcloud.me",0],["n-torrents.org",0],["sims3pack.ru",0],["wallegend.net",0],["muzlan.top",1],["mp3crown.cc",2],["sorokam.ru",3],["bitshare.link",4],["kinokong.sk",5],["uakino.me",5],["win-lite.site",5],["vgtimes.ru",6],["startgamer.ru",7],["3mod.ru",8],["iblitzmods.ru",8],["wowskill.ru",9],["anifap.com",10],["anifap.xyz",10],["diplomsrazu.ru",10],["igrozoom.ru",10],["ru-minecraft.ru",10],["softomania.net",10],["vip-mods.ru",10],["warezok.net",10],["windows-driver.com",10],["windows-driver.net",10],["windows-program.com",10],["studizba.com",11],["surl.*",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

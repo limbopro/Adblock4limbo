@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["","{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"]}","{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"]}"];
-const argsSeqs = [0,1,2];
-const hostnamesMap = new Map([["niskevesti.rs",1],["filmitv.rs",2]]);
+const argsList = ["","{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"]}","{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"]}","{\"selector\":\".iframe-widget[src*=\\\"popularno\\\"]\",\"action\":[\"style\",\"max-height: 250px !important\"]}"];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["niskevesti.rs",1],["filmitv.rs",2],["blic.rs",3]]);
 const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];

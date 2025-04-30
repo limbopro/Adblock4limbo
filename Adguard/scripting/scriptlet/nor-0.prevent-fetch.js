@@ -472,8 +472,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["damoh"]];
-const hostnamesMap = new Map([["vg.no",0],["www-vg-no.translate.goog",0]]);
+const argsList = [["damoh"],["v.fwmrm.net/ad/g/1"],["pagead2.googlesyndication.com"]];
+const hostnamesMap = new Map([["vg.no",0],["www-vg-no.translate.goog",0],["embed.viaplay.com",1],["senest.dk",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

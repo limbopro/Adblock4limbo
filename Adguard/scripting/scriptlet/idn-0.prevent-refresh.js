@@ -250,7 +250,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["tipsgaptek.com",0],["tipskerja.com",0]]);
+const hostnamesMap = new Map([["tipskerja.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

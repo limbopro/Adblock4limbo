@@ -266,8 +266,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["checkAdsStatus"],["adregain_wall"],["adblock"],["ai_front"],["redirectpage"],["exopop"],["protData"],["pUrlArray"],["pfcu1"]];
-const hostnamesMap = new Map([["firepaste.com",0],["tunovelaligera.com",1],["manga-mx.com",2],["meuwindows.com",3],["animesbr.cc",4],["superhq.net",[5,6]],["hentaikai.com",6],["raulprietofernandez.net",7],["mrpiracy.top",8]]);
+const argsList = [["checkAdsStatus"],["adregain_wall"],["adblock"],["ai_front"],["redirectpage"],["exopop"],["protData"],["pUrlArray"],["pfcu1"],["anuncioConfig"],["setRandomBanner"]];
+const hostnamesMap = new Map([["firepaste.com",0],["tunovelaligera.com",1],["manga-mx.com",2],["meuwindows.com",3],["animesbr.cc",4],["superhq.net",[5,6]],["hentaikai.com",6],["raulprietofernandez.net",7],["mrpiracy.top",8],["dragonball.sullca.com",[9,10]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

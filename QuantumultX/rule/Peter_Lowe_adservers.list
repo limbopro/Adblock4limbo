@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 14 Apr 2025 17:23:54 GMT
-# entries:        3447
+# entries:        3445
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -911,7 +911,6 @@ DOMAIN-SUFFIX,analytics.pointdrive.linkedin.com, reject
 DOMAIN-SUFFIX,analytics.poolshool.com, reject
 DOMAIN-SUFFIX,analytics.posttv.com, reject
 DOMAIN-SUFFIX,analytics.santander.co.uk, reject
-DOMAIN-SUFFIX,analytics.shorte.st, reject
 DOMAIN-SUFFIX,analytics.swiggy.com, reject
 DOMAIN-SUFFIX,analytics.tiktok.com, reject
 DOMAIN-SUFFIX,analytics.xelondigital.com, reject
@@ -1212,6 +1211,7 @@ DOMAIN-SUFFIX,cdn.onesignal.com, reject
 DOMAIN-SUFFIX,cdn.scarabresearch.com, reject
 DOMAIN-SUFFIX,cdn.segment.com, reject
 DOMAIN-SUFFIX,cdnondemand.org, reject
+DOMAIN-SUFFIX,ceciliavenus.com, reject
 DOMAIN-SUFFIX,cedato.com, reject
 DOMAIN-SUFFIX,celtra.com, reject
 DOMAIN-SUFFIX,centerpointmedia.com, reject
@@ -1345,7 +1345,6 @@ DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
 DOMAIN-SUFFIX,compactbanner.com, reject
 DOMAIN-SUFFIX,comparereaction.com, reject
-DOMAIN-SUFFIX,compiledoctor.com, reject
 DOMAIN-SUFFIX,comprabanner.it, reject
 DOMAIN-SUFFIX,conditionchange.com, reject
 DOMAIN-SUFFIX,conductrics.com, reject
@@ -1446,7 +1445,6 @@ DOMAIN-SUFFIX,dancemistake.com, reject
 DOMAIN-SUFFIX,dapper.net, reject
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
 DOMAIN-SUFFIX,datenow.link, reject
-DOMAIN-SUFFIX,daughterstone.com, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
 DOMAIN-SUFFIX,deal-on.eu, reject
@@ -1711,6 +1709,7 @@ DOMAIN-SUFFIX,fxstyle.net, reject
 DOMAIN-SUFFIX,g2.gumgum.com, reject
 DOMAIN-SUFFIX,ga.clearbit.com, reject
 DOMAIN-SUFFIX,gadsbee.com, reject
+DOMAIN-SUFFIX,galaxien.com, reject
 DOMAIN-SUFFIX,game-advertising-online.com, reject
 DOMAIN-SUFFIX,gamesites100.net, reject
 DOMAIN-SUFFIX,gamesites200.com, reject
@@ -1929,7 +1928,6 @@ DOMAIN-SUFFIX,ipstack.com, reject
 DOMAIN-SUFFIX,irchan.com, reject
 DOMAIN-SUFFIX,ireklama.cz, reject
 DOMAIN-SUFFIX,is-tracking-pixel-api-prod.appspot.com, reject
-DOMAIN-SUFFIX,itop.cz, reject
 DOMAIN-SUFFIX,its-that-easy.com, reject
 DOMAIN-SUFFIX,ivwbox.de, reject
 DOMAIN-SUFFIX,ivykiosk.com, reject
@@ -2130,6 +2128,7 @@ DOMAIN-SUFFIX,matomo.activate.cz, reject
 DOMAIN-SUFFIX,matomo.crossiety.app, reject
 DOMAIN-SUFFIX,mautic.com, reject
 DOMAIN-SUFFIX,max.i12.de, reject
+DOMAIN-SUFFIX,maximiser.net, reject
 DOMAIN-SUFFIX,maxonclick.com, reject
 DOMAIN-SUFFIX,mbs.megaroticlive.com, reject
 DOMAIN-SUFFIX,mcdlks.com, reject
@@ -3368,7 +3367,6 @@ DOMAIN-SUFFIX,whispa.com, reject
 DOMAIN-SUFFIX,whisperingcascade.com, reject
 DOMAIN-SUFFIX,whisperingcrib.com, reject
 DOMAIN-SUFFIX,whisperingsummit.com, reject
-DOMAIN-SUFFIX,whoisonline.net, reject
 DOMAIN-SUFFIX,wickedreports.com, reject
 DOMAIN-SUFFIX,widespace.com, reject
 DOMAIN-SUFFIX,widget.educationdynamics.com, reject

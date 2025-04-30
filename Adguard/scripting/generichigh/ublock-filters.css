@@ -1,0 +1,98 @@
+/*******************************************************************************
+
+    uBlock Origin Lite - a comprehensive, MV3-compliant content blocker
+    Copyright (C) 2014-present Raymond Hill
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see {http://www.gnu.org/licenses/}.
+
+    Home: https://github.com/gorhill/uBlock
+*/
+
+/* ublock-filters */
+
+*:not(body) > a[href^="https://07c225f3.online/content"],
+*:not(body) > a[href^="https://content-loader.com/content"],
+*:not(body) > a[href^="https://html-load.com/content"],
+[class^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]),
+[data-ad-manager-id]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
+[data-ad-module]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
+[data-ad-width]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
+[data-adblockkey]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(html):not(.adsbygoogle),
+[data-advadstrackid]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
+[data-lnguri*="vipbox"],
+[data-lnguri^="https://s3.amazonaws.com"],
+[data-uri^="https://s3.amazonaws.com"],
+[href*="/afu.php"],
+[href*="passtechusa.com"],
+[href*="postlnk.com"],
+[href*="uselnk.com/"],
+[href="//xxxrevpushclcdu.com/app.webp"],
+[href="https://clickaine.com"],
+[href="https://t.me/Russia_Vs_Ukraine_War3"],
+[href^="//ad.jetx.info/"],
+[href^="//cadsecs.com/"],
+[href^="//clk.afftracks.online/"],
+[href^="//look.utndln.com/offer"],
+[href^="//mellowads.com/"],
+[href^="//producebreed.com/"],
+[href^="//taghaugh.com/"],
+[href^="http://referrer.website/"],
+[href^="https://adult.xyz/"],
+[href^="https://bestbuyrdp.com/"],
+[href^="https://buycheaphost.net/"],
+[href^="https://buycheaprdp.com/"],
+[href^="https://dl-protect.net/get-premium-url"],
+[href^="https://exi8ef83z9.com/"],
+[href^="https://fireads.online/"],
+[href^="https://go.rdrjmp.com/"],
+[href^="https://go.smljmp.com/"],
+[href^="https://join.enjoyx.com/track/"],
+[href^="https://klsdee.com/"],
+[href^="https://pl.allsports4free.club/"],
+[href^="https://pl.allsports4u.club/"],
+[href^="https://popcash.net/"],
+[href^="https://t.mobtyb.com/"],
+[href^="https://track.wg-aff.com/click"],
+[href^="https://wap4dollar.com/ad/nonadult/serve.php"],
+[href^="https://www.onclickperformance.com/"],
+[href^="https://www.safestcontentgate.com/"],
+[href^="luvaihoo.com"],
+[id^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"]),
+[onclick*="postlnk.com"],
+[src^="//dombnrs.com/"],
+[src^="https://forum.picbaron.com/Banner"],
+a[dontfo=""][style$="position: absolute; z-index: 2147483647;"],
+a[href*=".click/?z="][href*="&n"],
+a[href*="/go.php?a_aid="],
+a[href^="http://www.poweredbyliquidfire.mobi/"],
+a[href^="https://go.awdeliverynet.com/"],
+a[href^="https://syndication.exdynsrv.com/splash.php"],
+a[href^="https://track.cam4tracking.com/"],
+a[id][href="https://chpadblock.com/"][rel^="noopener noreferrer"],
+a[id][href="https://hamrocsit.com"][rel^="noopener noreferrer"],
+a[id][href="https://toolkitspro.com"][rel^="noopener noreferrer"],
+a[onclick="openAuc();"],
+body > div[style$="z-index: 2147483647; top: 0px; left: 0px; position: fixed; display: block;"],
+div[class$="player-promo-col"],
+div[id][style^="position: fixed; inset: 0px; z-index: 2147483647; background: black"][style*="opacity: 0.01"],
+div[id^="div-gpt-"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"]),
+div[style="position: fixed; display: block; width: 100%; height: 100%; inset: 0px; background-color: rgba(0, 0, 0, 0); z-index: 300000;"],
+div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"],
+div[style="top: 0px; left: 0px; width: 1287px; height: 500px; position: fixed; z-index: 2147483647;"],
+div[style^="position: fixed; inset: 0px; z-index: 2147483647; background: black; opacity: 0.01"],
+div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"],
+div[style^="z-index: 999999; background-image: url(\"data:image/gif;base64,"][style$="position: absolute;"],
+html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"] {
+    display: none !important;
+}

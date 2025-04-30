@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 14 Apr 2025 17:23:54 GMT
-# entries:        3447
+# entries:        3445
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -911,7 +911,6 @@ DOMAIN-SUFFIX,analytics.pointdrive.linkedin.com
 DOMAIN-SUFFIX,analytics.poolshool.com
 DOMAIN-SUFFIX,analytics.posttv.com
 DOMAIN-SUFFIX,analytics.santander.co.uk
-DOMAIN-SUFFIX,analytics.shorte.st
 DOMAIN-SUFFIX,analytics.swiggy.com
 DOMAIN-SUFFIX,analytics.tiktok.com
 DOMAIN-SUFFIX,analytics.xelondigital.com
@@ -1212,6 +1211,7 @@ DOMAIN-SUFFIX,cdn.onesignal.com
 DOMAIN-SUFFIX,cdn.scarabresearch.com
 DOMAIN-SUFFIX,cdn.segment.com
 DOMAIN-SUFFIX,cdnondemand.org
+DOMAIN-SUFFIX,ceciliavenus.com
 DOMAIN-SUFFIX,cedato.com
 DOMAIN-SUFFIX,celtra.com
 DOMAIN-SUFFIX,centerpointmedia.com
@@ -1345,7 +1345,6 @@ DOMAIN-SUFFIX,commissionmonster.com
 DOMAIN-SUFFIX,communications.melitaltd.com
 DOMAIN-SUFFIX,compactbanner.com
 DOMAIN-SUFFIX,comparereaction.com
-DOMAIN-SUFFIX,compiledoctor.com
 DOMAIN-SUFFIX,comprabanner.it
 DOMAIN-SUFFIX,conditionchange.com
 DOMAIN-SUFFIX,conductrics.com
@@ -1446,7 +1445,6 @@ DOMAIN-SUFFIX,dancemistake.com
 DOMAIN-SUFFIX,dapper.net
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
 DOMAIN-SUFFIX,datenow.link
-DOMAIN-SUFFIX,daughterstone.com
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
 DOMAIN-SUFFIX,deal-on.eu
@@ -1711,6 +1709,7 @@ DOMAIN-SUFFIX,fxstyle.net
 DOMAIN-SUFFIX,g2.gumgum.com
 DOMAIN-SUFFIX,ga.clearbit.com
 DOMAIN-SUFFIX,gadsbee.com
+DOMAIN-SUFFIX,galaxien.com
 DOMAIN-SUFFIX,game-advertising-online.com
 DOMAIN-SUFFIX,gamesites100.net
 DOMAIN-SUFFIX,gamesites200.com
@@ -1929,7 +1928,6 @@ DOMAIN-SUFFIX,ipstack.com
 DOMAIN-SUFFIX,irchan.com
 DOMAIN-SUFFIX,ireklama.cz
 DOMAIN-SUFFIX,is-tracking-pixel-api-prod.appspot.com
-DOMAIN-SUFFIX,itop.cz
 DOMAIN-SUFFIX,its-that-easy.com
 DOMAIN-SUFFIX,ivwbox.de
 DOMAIN-SUFFIX,ivykiosk.com
@@ -2130,6 +2128,7 @@ DOMAIN-SUFFIX,matomo.activate.cz
 DOMAIN-SUFFIX,matomo.crossiety.app
 DOMAIN-SUFFIX,mautic.com
 DOMAIN-SUFFIX,max.i12.de
+DOMAIN-SUFFIX,maximiser.net
 DOMAIN-SUFFIX,maxonclick.com
 DOMAIN-SUFFIX,mbs.megaroticlive.com
 DOMAIN-SUFFIX,mcdlks.com
@@ -3368,7 +3367,6 @@ DOMAIN-SUFFIX,whispa.com
 DOMAIN-SUFFIX,whisperingcascade.com
 DOMAIN-SUFFIX,whisperingcrib.com
 DOMAIN-SUFFIX,whisperingsummit.com
-DOMAIN-SUFFIX,whoisonline.net
 DOMAIN-SUFFIX,wickedreports.com
 DOMAIN-SUFFIX,widespace.com
 DOMAIN-SUFFIX,widget.educationdynamics.com

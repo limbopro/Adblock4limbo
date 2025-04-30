@@ -362,8 +362,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".height() === 0"]];
-const hostnamesMap = new Map([["topkleurplaat.nl",0]]);
+const argsList = [["ckad"],[".height() === 0"]];
+const hostnamesMap = new Map([["forum.fok.nl",0],["topkleurplaat.nl",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         屏蔽内容农场（with 油猴脚本）X
 // @namespace    https://greasyfork.org/scripts/442253-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA-with-%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/code/%E5%B1%8F%E8%94%BD%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%EF%BC%88with%20%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%EF%BC%89.user.js
-// @version      0.4.05.31
+// @version      0.4.06.0
 // @description  利用 JavaScript/CSS 屏蔽【谷歌/Bing国际】搜索结果中的「内容农场」内容，顺便在清除谷歌搜索结果中的Adsense广告，还你清爽的 Google/Bing 中文搜索体验！
 // @author       limbopro
 // @license MIT
 // @match        https://www.google.com/search*
 // @match        https://www.google.com.hk/search*
 // @match        https://www.bing.com/search*
+// @match        https://cn.bing.com/search*
 // @match        https://www.bing.com/?FORM*
+// @match        https://cn.bing.com/?FORM*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com.hk
 // @run-at document-end
 // @grant        none
@@ -25,7 +27,7 @@ iOS 屏蔽内容农场：https://limbopro.com/archives/block-contentfarm.html
 群组：https://t.me/Adblock4limbo
 完整项目：https://github.com/limbopro/Adblock4limbo
 There are 7179 content farm domains in total until now.
-Last updated at  1/5月/2025/00:00
+Last updated at  1/6月/2025/00:00
 */
 
 function contentFarm_AdsRemove_Auto(){
@@ -7221,6 +7223,7 @@ var ads_host = [
     ];
 
     var search_results_css = [
+        "[data-snc]", // google 新样式
         "li.b_algo", // bing 搜索结果样式
         ".mnr-c.xpd.O9g5cc.uUPGi", // Google 富文本搜索结果 style
         "div[data-sokoban-grid]", // 通用
@@ -7255,6 +7258,13 @@ var i, x;
 }
 
 
-contentFarm_AdsRemove_Auto();
-var timecount = 0;
+contentFarm_AdsRemove_Auto(); // 首次执行农场内容检测
+var timecount =0;
 var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
+
+
+window.addEventListener('scroll', () => {
+contentFarm_AdsRemove_Auto();
+console.log('滚动条正在滚动');
+console.log('滚动条位置:', window.scrollY); // 获取垂直滚动条的位置
+});

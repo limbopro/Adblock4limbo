@@ -472,8 +472,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["api"]];
-const hostnamesMap = new Map([["online-filmek.ac",0]]);
+const argsList = [["api"],["ads"]];
+const hostnamesMap = new Map([["online-filmek.ac",[0,1]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

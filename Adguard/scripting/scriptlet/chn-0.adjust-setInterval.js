@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".s--","","0.02"],["timerAdCountdown","","0.02"]];
-const hostnamesMap = new Map([["tangdoucdn.com",0],["bde4.com",1]]);
+const argsList = [[".s--","","0.02"],["timerAdCountdown","","0.02"],["adUI","1000","0.02"]];
+const hostnamesMap = new Map([["tangdoucdn.com",0],["bde4.com",1],["iqiyi.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -417,8 +417,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["DOMContentLoaded","js-revoke-cookie-manager"],["load","function(){if(s.readyState==XMLHttpRequest.DONE"]];
-const hostnamesMap = new Map([["ubuntu.com",0],["sss.fi",1]]);
+const argsList = [["load","function(){if(s.readyState==XMLHttpRequest.DONE"]];
+const hostnamesMap = new Map([["sss.fi",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

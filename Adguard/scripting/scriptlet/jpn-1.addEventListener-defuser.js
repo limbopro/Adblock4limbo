@@ -418,7 +418,7 @@ function shouldDebug(details) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["load","delayCheckAB"],["load","iframe"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["load","videoInstArea"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["DOMContentLoaded","Fixed"]];
-const hostnamesMap = new Map([["bm.best-hit.tv",0],["iwb.jp",1],["best-hit.tv",2],["h178.com",2],["j-baseball.club",2],["j-basketball.club",2],["jukenbbs.com",2],["addchannel.net",3],["beasoku.com",3],["blog.housinkai.com",3],["kakenhi.net",3],["seesaa.net",3],["blog-and-destroy.com",4],["coolpan.net",5],["twivideo.net",6],["twidouga.net",7],["anacap.doorblog.jp",8],["anianierosuki.work",9],["uraaka-joshi.com",10],["tokyomotion.net",11],["ero-video.net",12],["negisoku.com",13]]);
+const hostnamesMap = new Map([["bm.best-hit.tv",0],["iwb.jp",1],["best-hit.tv",2],["h178.com",2],["j-baseball.club",2],["j-basketball.club",2],["jukenbbs.com",2],["memo.wiki",3],["addchannel.net",3],["beasoku.com",3],["blog.housinkai.com",3],["kakenhi.net",3],["seesaa.net",3],["blog-and-destroy.com",4],["coolpan.net",5],["twivideo.net",6],["twidouga.net",7],["anacap.doorblog.jp",8],["anianierosuki.work",9],["uraaka-joshi.com",10],["tokyomotion.net",11],["ero-video.net",12],["negisoku.com",13]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

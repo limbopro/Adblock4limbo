@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["","{\"selector\":\"html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}","{\"selector\":\".tien-ads-video > div#player\",\"action\":[\"style\",\"visibility: visible!important;\"]}\n{\"selector\":\".tien-ads-video\",\"action\":[\"style\",\"background: none!important;\"]}"];
-const argsSeqs = [0,1,2,3];
-const hostnamesMap = new Map([["haaretz.co.il",1],["www-haaretz-co-il.eu1.proxy.openathens.net",1],["bhol.co.il",2],["koozi.info",3]]);
+const argsList = ["","{\"selector\":\"html\",\"action\":[\"style\",\"height: auto !important; overflow: auto !important\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important;\"]}"];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["haaretz.co.il",1],["www-haaretz-co-il.eu1.proxy.openathens.net",1],["bhol.co.il",2]]);
 const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];

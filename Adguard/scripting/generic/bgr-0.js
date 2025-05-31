@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[14648089,"#ea_intext_div"],[8451109,"td#freenet_table_ads"],[11017215,".lapni-pop-over"],[16662940,"#xenium_hot_offers"],[3482616,"#banner_ad"],[13469168,"#adbody"],[2738591,"#newAd,\n#newAd"],[7912790,"#Ads"]];
+const genericSelectorMap = [[14648089,"#ea_intext_div"],[8451109,"td#freenet_table_ads"],[11017215,".lapni-pop-over"],[16662940,"#xenium_hot_offers"]];
 const genericExceptionSieve = [3482616,13469168,2738591,7912790];
 const genericExceptionMap = [["bg-ikonomika.com","#banner_ad"],["noshtuvki.burkan.info","#adbody"],["olx.bg","#newAd"],["prodavalnik.com","#newAd"],["rbb.bg","#Ads"]];
 

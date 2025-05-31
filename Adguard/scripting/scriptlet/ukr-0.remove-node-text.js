@@ -368,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","adId"],["script","moveTopBanner"],["script","location.reload"],["script","\"/loader.min.js","stay","1"],["script","ads.offsetHeight"],["script","wpsite_clickable_data"],["script","bdca"],["script","mobileBrandingMainInited"]];
-const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",0],["censor.net",0],["dengi.ua",0],["epravda.com.ua",0],["f1analytic.com",0],["football24.ua",0],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["glianec.com",[0,4]],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",0],["liga.net",0],["meteofor.com.ua",0],["pravda.com.ua",0],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",0],["viva.ua",0],["beauty.ua",1],["internetua.com",1],["okino.ua",1],["sinoptik.ua",1],["agronews.ua",2],["agroreview.com",2],["eurointegration.com.ua",3],["newsyou.info",[5,6]],["proagro.com.ua",7],["rup.com.ua",8],["zaxid.net",9]]);
+const argsList = [["script","!function(r,n,t,e)"],["script",",mr=function(r,"]];
+const hostnamesMap = new Map([["www.ukr.net",0],["pravda.com.ua",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

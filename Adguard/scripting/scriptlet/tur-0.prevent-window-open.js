@@ -390,8 +390,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[],["bit.ly"],["google.com/url?"]];
-const hostnamesMap = new Map([["erosfilmizle.*",0],["rcjza2fzqyr4.buzz",0],["agb3nquu6rzw.buzz",0],["breakingbadizle.*",0],["elzemfilm.org",0],["jetfilmizle.*",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["hdizlefilmleri.com",0],["izleorg3.org",0],["youtubemp3.us",0],["player.filmizle.in",0],["tranimaci.com",0],["izlekolik.org",0],["4kfilmizlesene.*",0],["pchocasi.com.tr",1],["sinema.cx",2]]);
+const argsList = [[],["bit.ly"]];
+const hostnamesMap = new Map([["erosfilmizle.*",0],["rcjza2fzqyr4.buzz",0],["agb3nquu6rzw.buzz",0],["breakingbadizle.*",0],["elzemfilm.org",0],["jetfilmizle.*",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["hdizlefilmleri.com",0],["izleorg3.org",0],["youtubemp3.us",0],["animeler.me",0],["player.filmizle.in",0],["tranimaci.com",0],["izlekolik.org",0],["4kfilmizlesene.*",0],["pchocasi.com.tr",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

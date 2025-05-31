@@ -340,8 +340,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["document.createElement","make_rand_div"],["Object.prototype.pgmp","invokeInterstitial"]];
-const hostnamesMap = new Map([["pcbeta.com",0],["yfsp.tv",1],["aiyifan.tv",1],["iyf.tv",1]]);
+const argsList = [["alert",".onerror"],["document.createElement","make_rand_div"],["Object.prototype.pgmp","invokeInterstitial"]];
+const hostnamesMap = new Map([["mcappx.com",0],["pcbeta.com",1],["yfsp.tv",2],["aiyifan.tv",2],["iyf.tv",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -345,8 +345,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Node.prototype.appendChild","fetch"],["Node.prototype.appendChild","Request"]];
-const hostnamesMap = new Map([["www.youtube.com",[0,1]]]);
+const argsList = [["Node.prototype.appendChild","fetch"],["Node.prototype.appendChild","Request"],["Node.prototype.appendChild","JSON.parse"]];
+const hostnamesMap = new Map([["www.youtube.com",[0,1,2]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

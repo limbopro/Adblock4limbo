@@ -48,7 +48,7 @@ function disableNewtabLinks() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["earnload.*",0],["boost.ink",0],["sitemini.io.vn",0],["vip1s.top",0],["sexlist.tv",0],["player.theplatform.com",0],["cine24.online",0],["porntrex.com",0],["stream.hownetwork.xyz",0]]);
+const hostnamesMap = new Map([["earnload.*",0],["boost.ink",0],["sexlist.tv",0],["player.theplatform.com",0],["cine24.online",0],["porntrex.com",0],["stream.hownetwork.xyz",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

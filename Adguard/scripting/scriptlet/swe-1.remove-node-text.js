@@ -368,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","decodeURIComponent"]];
-const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["pilsner.nu",5]]);
+const argsList = [["script","contextmenu"],["script","e.keyCode"],["noscript"],["script","/wccp_pro/"],["script","e.preventDefault"],["script","decodeURIComponent"],["script","request_ads_to_display"],["script","event.target.tagName"]];
+const hostnamesMap = new Map([["byggipedia.se",[0,1]],["dinbyggare.se",[2,3]],["internetodontologi.se",4],["skrattsajten.com",4],["norpan.se",4],["pilsner.nu",5],["medibok.se",5],["kandisvarlden.com",5],["web-tools.se",6],["bio-link.se",6],["spelhubben.se",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

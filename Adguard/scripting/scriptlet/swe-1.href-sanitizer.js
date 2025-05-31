@@ -460,8 +460,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/idg.digidip.net/\"]","?url"],["a[href*=\"metromode.se/bouncer\"]","?url"]];
-const hostnamesMap = new Map([["aftonbladet.se",0],["livsstil.se",0],["godare.se",0],["byggahus.se",0],["expressen.se",0],["elle.se",[0,1]],["femina.se",[0,1]],["svenskdam.se",[0,1]],["galamagasin.se",0],["rodeo.net",0],["familjeliv.se",0],["vitaestilo.se",0],["veckorevyn.com",0],["allas.se",1],["hant.se",1],["mabra.com",1],["residencemagazine.se",1],["motherhood.se",1],["m3.se",2],["pcforalla.se",2],["macworld.se",2],["metromode.se",3]]);
+const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/click\"]","?url"],["a[href*=\"/idg.digidip.net/\"]","?url"],["a[href*=\"metromode.se/bouncer\"]","?url"]];
+const hostnamesMap = new Map([["aftonbladet.se",0],["godare.se",0],["byggahus.se",0],["expressen.se",0],["elle.se",[0,1,2]],["femina.se",[0,1]],["svenskdam.se",[0,1]],["galamagasin.se",0],["rodeo.net",0],["familjeliv.se",0],["vitaestilo.se",0],["veckorevyn.com",0],["golflivet.se",0],["allas.se",1],["hant.se",1],["mabra.com",1],["residencemagazine.se",1],["motherhood.se",1],["m3.se",3],["pcforalla.se",3],["macworld.se",3],["metromode.se",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

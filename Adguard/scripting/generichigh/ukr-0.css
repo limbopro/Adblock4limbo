@@ -21,12 +21,30 @@
 
 /* ukr-0 */
 
-[data-revive-zoneid],
-div[id*="MarketGid"],
-div[id*="ScriptRoot"],
-html > body:has(div.popup > div.popup-inner > a[href*="/vote"]),
-html > body:has(form[action="/vote"] > button[name="send_phone"]),
-html > body:has(form[action="/vote/code"] > button[name="send_code"]),
-html > body:has(nav.header__nav > a.header__login[href*="/vote"]) {
+[name="Ad_Image"],
+a[href*=".twkv.ru"],
+a[href*="sapmedia.ru"],
+a[href^="https://ad.letmeads.com/"],
+a[href^="https://searchlnk.ru/r/"],
+a[href^="https://ya-distrib.ru/r/"],
+div[data-adv-type="dfp"],
+div[data-banner-name],
+div[id^="AdFox_banner_"],
+div[id^="CGCandy"],
+div[id^="_u_ablock_"],
+div[id^="admixer_"],
+div[id^="ads_games_"],
+div[id^="beroll_rotator"],
+div[id^="cpa_rotator_block_"],
+div[id^="lp_banner_"],
+div[id^="smi2adblock"],
+div[id^="smi_teaser_"],
+div[id^="teaser_70"],
+div[id^="yandex_rtb"],
+iframe[src^="https://ad.adriver.ru/"],
+img[src*="rmbn.ru/banners/"],
+noindex > div[onmouseout],
+noindex > nofollow > table[onmouseout^="this.bgColor"],
+td[id^="advtd"] {
     display: none !important;
 }

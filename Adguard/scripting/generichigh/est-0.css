@@ -25,7 +25,6 @@ A[href*="http://pay4results24.eu"],
 IFRAME[src*="sale24.ee"],
 iframe[src*="cherrystatic.net"],
 iframe[src*="date.elu24.ee"],
-iframe[src*="hotelliveeb.ee"],
 iframe[src*="static.chilli.ee"],
 iframe[src*="superdeal.ee"] {
     display: none !important;

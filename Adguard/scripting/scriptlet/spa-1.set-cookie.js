@@ -352,10 +352,10 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
-const hostnamesMap = new Map([["techdiniz.com",0],["trueliketop.org",0],["sabornutritivo.com",1],["financasdeouro.com",1],["guiacripto.online",1],["guiasaude.info",2],["1i1.in",3],["estacio.br",4],["megacurioso.net",5],["receitasoncaseiras.online",5],["nutricaohoje.website",5],["automotivocarros.com",6],["portecnologia.com",6],["cartaocreditoplatinum.org",6],["pelismart.tv",7],["pelis1.com",7],["homecine.cc",7],["seriesmetro.net",7],["flixseries.org",7],["homecine.tv",7],["homecine.to",7],["metroseries.net",7],["smartpelis.tv",7],["seriesbanana.com",7]]);
+const argsList = [["adsCompleted","1"],["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
+const hostnamesMap = new Map([["redecanaistv.*",0],["redecanais.*",0],["techdiniz.com",1],["trueliketop.org",1],["sabornutritivo.com",2],["financasdeouro.com",2],["guiacripto.online",2],["guiasaude.info",3],["1i1.in",4],["estacio.br",5],["megacurioso.net",6],["receitasoncaseiras.online",6],["nutricaohoje.website",6],["automotivocarros.com",7],["portecnologia.com",7],["cartaocreditoplatinum.org",7],["pelismart.tv",8],["pelis1.com",8],["homecine.cc",8],["seriesmetro.net",8],["flixseries.org",8],["homecine.tv",8],["homecine.to",8],["metroseries.net",8],["smartpelis.tv",8],["seriesbanana.com",8]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

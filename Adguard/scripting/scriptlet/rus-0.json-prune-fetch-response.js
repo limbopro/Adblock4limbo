@@ -507,8 +507,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["data.age_restrictions"],["data.template.disable_registration"]];
-const hostnamesMap = new Map([["player.smotrim.ru",[0,1]]]);
+const argsList = [["data.age_restrictions"],["data.template.disable_registration"],["item.banners"]];
+const hostnamesMap = new Map([["player.smotrim.ru",[0,1]],["ohmywishes.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

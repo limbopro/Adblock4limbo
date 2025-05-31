@@ -318,10 +318,10 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["last_ads","yes"]];
-const hostnamesMap = new Map([["financeiropronto.vip",0],["receitasdocheff.online",0],["meufinanceiro.org",0],["investimentosfacil.online",0],["fomedereceitas.online",0],["blog.whatsappgb.top",0],["infoinvest.org",0],["receitastop.click",0],["receitasvegana.com",0],["megacurioso.online",0],["gastroponto.com",0],["nossoprato.online",0],["receitasdafazenda.com",0]]);
+const argsList = [["finalReloadDone","1"],["last_ads","yes"]];
+const hostnamesMap = new Map([["redecanaistv.*",0],["redecanais.*",0],["financeiropronto.vip",1],["receitasdocheff.online",1],["meufinanceiro.org",1],["investimentosfacil.online",1],["fomedereceitas.online",1],["blog.whatsappgb.top",1],["infoinvest.org",1],["receitastop.click",1],["receitasvegana.com",1],["megacurioso.online",1],["gastroponto.com",1],["nossoprato.online",1],["receitasdafazenda.com",1]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

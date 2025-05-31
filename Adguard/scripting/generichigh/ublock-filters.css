@@ -21,9 +21,6 @@
 
 /* ublock-filters */
 
-*:not(body) > a[href^="https://07c225f3.online/content"],
-*:not(body) > a[href^="https://content-loader.com/content"],
-*:not(body) > a[href^="https://html-load.com/content"],
 [class^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]),
 [data-ad-manager-id]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
 [data-ad-module]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
@@ -92,7 +89,6 @@ div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: aut
 div[style="top: 0px; left: 0px; width: 1287px; height: 500px; position: fixed; z-index: 2147483647;"],
 div[style^="position: fixed; inset: 0px; z-index: 2147483647; background: black; opacity: 0.01"],
 div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"],
-div[style^="z-index: 999999; background-image: url(\"data:image/gif;base64,"][style$="position: absolute;"],
-html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"] {
+div[style^="z-index: 999999; background-image: url(\"data:image/gif;base64,"][style$="position: absolute;"] {
     display: none !important;
 }

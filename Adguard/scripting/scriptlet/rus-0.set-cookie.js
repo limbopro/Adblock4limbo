@@ -352,8 +352,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["adBlockModal","true"],["callToRegisterClosed","true"],["cookieAccepted","true"],["cookie_accept","1"],["cookie_consent_shown","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"]];
-const hostnamesMap = new Map([["kufar.by",[0,7]],["myshows.me",1],["direct.farm",2],["liga.net",3],["ixbt.com",4],["avito.ru",5],["forum.ixbt.com",6],["playground.ru",8],["kinotv.ru",9]]);
+const argsList = [["KUF_SUGGESTER_SHOW_2_ITERATION","1"],["adBlockModal","true"],["callToRegisterClosed","true"],["cookieAccepted","true"],["cookie_accept","1"],["cookie_consent_shown","1"],["ha","1"],["kuf_agr","true"],["pg_SuggestGameFollow","true"],["telegram_popup","Y"],["yandexFull","true"]];
+const hostnamesMap = new Map([["kufar.by",[0,7]],["myshows.me",1],["direct.farm",2],["liga.net",3],["ixbt.com",4],["avito.ru",5],["forum.ixbt.com",6],["playground.ru",8],["kinotv.ru",9],["mp3party.net",10]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

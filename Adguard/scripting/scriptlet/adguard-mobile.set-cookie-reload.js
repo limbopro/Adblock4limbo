@@ -321,7 +321,16 @@ function setCookieFn(
 
     if ( trusted ) {
         if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
+            let domain = options.domain;
+            if ( /^\/.+\//.test(domain) ) {
+                const baseURL = new URL(document.baseURI);
+                const reDomain = new RegExp(domain.slice(1, -1));
+                const match = reDomain.exec(baseURL.hostname);
+                domain = match ? match[0] : undefined;
+            }
+            if ( domain ) {
+                cookieParts.push(`; domain=${domain}`);
+            }
         }
         cookieParts.push('; Secure');
     } else if ( /^__(Host|Secure)-/.test(name) ) {
@@ -357,7 +366,7 @@ function getCookieFn(
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["pShowMob","true"]];
-const hostnamesMap = new Map([["interxh.site",0],["xhspot.com",0],["xhwide5.com",0],["xhchannel.com",0],["xhtotal.com",0],["xhtree.com",0],["xhwide2.com",0],["xhlease.world",0],["xhamsterporno.mx",0],["valuexh.life",0],["xhdate.world",0],["xhbranch5.com",0],["galleryxh.site",0],["xhbig.com",0],["xhaccess.com",0],["xhofficial.com",0],["seexh.com",0],["xhamster42.desi",0],["xhvid.com",0],["xhamster20.desi",0],["xhamster19.desi",0],["xhwebsite2.com",0],["xhamster18.desi",0],["xhadult3.com",0],["xhadult2.com",0],["xhmoon5.com",0],["xhwide1.com",0],["xhamster3.com",0],["xhplanet2.com",0],["megaxh.com",0],["xhamster16.*",0],["xhamster.com",0],["xhamster2.com",0],["xhamster7.com",0],["xhamster8.com",0],["xhamster9.com",0],["xhamster10.com",0],["xhamster12.com",0],["xhamster13.*",0],["xhamster14.com",0],["xhamster15.com",0],["xhamster17.*",0],["xhamster18.*",0],["xhamster19.com",0],["xhamster1.desi",0],["xhamster2.desi",0],["xhamster3.*",0],["xhamster4.desi",0],["xhamster20.com",0],["xhamster22.com",0],["xhamster23.com",0],["xhamster25.com",0],["xhamster26.com",0],["xhamster27.com",0],["openxh.com",0],["xhamster31.com",0],["xhamster32.com",0],["xhamster34.com",0],["xhamster36.com",0],["xhamster37.com",0],["xhamster38.com",0],["xhamster5.desi",0],["xhopen.com",0],["openxh1.com",0],["xhamster39.com",0],["xhamster40.com",0],["xhamster.one",0],["xhamster.desi",0],["stripchat.com",0]]);
+const hostnamesMap = new Map([["interxh.site",0],["xhspot.com",0],["xhwide5.com",0],["xhchannel.com",0],["xhtotal.com",0],["xhtree.com",0],["xhwide2.com",0],["xhlease.world",0],["xhamsterporno.mx",0],["valuexh.life",0],["xhdate.world",0],["xhbranch5.com",0],["galleryxh.site",0],["xhbig.com",0],["xhaccess.com",0],["xhofficial.com",0],["seexh.com",0],["xhamster42.desi",0],["xhvid.com",0],["xhamster20.desi",0],["xhamster19.desi",0],["xhwebsite2.com",0],["xhamster18.desi",0],["xhadult3.com",0],["xhadult2.com",0],["xhmoon5.com",0],["xhwide1.com",0],["xhamster3.com",0],["xhplanet2.com",0],["megaxh.com",0],["xhamster16.*",0],["xhamster.com",0],["xhamster2.com",0],["xhamster7.com",0],["xhamster8.com",0],["xhamster9.com",0],["xhamster10.com",0],["xhamster12.com",0],["xhamster13.*",0],["xhamster14.com",0],["xhamster15.com",0],["xhamster17.*",0],["xhamster18.*",0],["xhamster19.com",0],["xhamster1.desi",0],["xhamster2.desi",0],["xhamster3.*",0],["xhamster4.desi",0],["xhamster20.com",0],["xhamster22.com",0],["xhamster23.com",0],["xhamster25.com",0],["xhamster26.com",0],["xhamster27.com",0],["openxh.com",0],["xhamster31.com",0],["xhamster32.com",0],["xhamster34.com",0],["xhamster38.com",0],["xhamster5.desi",0],["xhopen.com",0],["openxh1.com",0],["xhamster39.com",0],["xhamster40.com",0],["xhamster.one",0],["xhamster.desi",0],["stripchat.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

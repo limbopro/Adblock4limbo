@@ -28,8 +28,8 @@
 /******************************************************************************/
 
 const genericSelectorMap = undefined;
-const genericExceptionSieve = [3553464,10589953,1900095,11278966,11450765,6050898,674161,674156,2899287];
-const genericExceptionMap = [["andhrajyothy.com","#adDiv"],["chirantannews.in",".header-ads"],["divyalive.com",".header-ads"],["chamaktabharat.com",".navbar-ad-section"],["prabhatvaibhav.com",".navbar-area-2 ~ div[style]"],["abnewslive.in",".np-ads-wrapper\n.np-header-ads-area"],["nepalimato.com",".np-ads-wrapper"],["onlinejalandhar.com",".np-ads-wrapper\n.np-header-ads-area"],["dainikbharatbhaskar.com",".td-ad-m\n.td-ad-p\n.td-ad-tp"],["dainikdawa.com",".td-ad-m\n.td-ad-p\n.td-ad-tp"]];
+const genericExceptionSieve = [10589953,1900095,11278966,11450765,6050898,674161,674156,2899287];
+const genericExceptionMap = [["chirantannews.in",".header-ads"],["divyalive.com",".header-ads"],["chamaktabharat.com",".navbar-ad-section"],["prabhatvaibhav.com",".navbar-area-2 ~ div[style]"],["abnewslive.in",".np-ads-wrapper\n.np-header-ads-area"],["nepalimato.com",".np-ads-wrapper"],["onlinejalandhar.com",".np-ads-wrapper\n.np-header-ads-area"],["dainikbharatbhaskar.com",".td-ad-m\n.td-ad-p\n.td-ad-tp"],["dainikdawa.com",".td-ad-m\n.td-ad-p\n.td-ad-tp"]];
 
 if ( genericSelectorMap ) {
     const map = self.genericSelectorMap =

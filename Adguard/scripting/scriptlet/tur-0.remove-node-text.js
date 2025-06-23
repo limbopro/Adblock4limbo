@@ -368,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","ad_block"],["script","redirect"],["script","pbrk"],["script","openRandomSite"]];
-const hostnamesMap = new Map([["birsenaltuntas.com",0],["m.4khd.com",1],["sinema.*",2],["efullizle.com",3]]);
+const argsList = [["script","ad_block"],["script","redirect"],["#text","reklam_linki"],["script","pbrk"],["script","openRandomSite"]];
+const hostnamesMap = new Map([["birsenaltuntas.com",0],["m.4khd.com",1],["bugunkibris.com",2],["sinema.*",3],["efullizle.com",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

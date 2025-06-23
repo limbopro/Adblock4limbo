@@ -288,8 +288,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adsBlocked"],["ABDetector"],["Object.prototype.autoRecov"],["gothamBatAdblock"],["mdpDeBlocker"],["onload"],["adsurgeNode"],["zoneSett"],["__yget_ad_list"],["_adb"]];
-const hostnamesMap = new Map([["benjaminellisbernard.fr",0],["ebookdz.com",1],["radio.fr",2],["vostfr.stream",3],["9docu.org",3],["bleachmx.fr",4],["iphonetweak.fr",5],["iphonesoft.fr",5],["filmstreamy.com",6],["11anim.com",7],["basketusa.com",8],["lindependant.fr",9]]);
+const argsList = [["adsBlocked"],["ABDetector"],["Object.prototype.autoRecov"],["gothamBatAdblock"],["mdpDeBlocker"],["onload"],["zoneSett"],["__yget_ad_list"],["_adb"]];
+const hostnamesMap = new Map([["benjaminellisbernard.fr",0],["ebookdz.com",1],["radio.fr",2],["vostfr.stream",3],["9docu.org",3],["bleachmx.fr",4],["iphonetweak.fr",5],["iphonesoft.fr",5],["11anim.com",6],["basketusa.com",7],["lindependant.fr",8]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

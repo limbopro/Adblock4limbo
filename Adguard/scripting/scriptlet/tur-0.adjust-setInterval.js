@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["money--skip","","0.02"],["after-ads","*","0.001"],["#rekgecyen","*","0.02"],["reklam","*","0.02"],["advert","*","0.001"],["sec--","*","0.001"],["timeleft","*","0.02"]];
-const hostnamesMap = new Map([["hdsinemax.com",0],["elzemfilm.org",0],["tafdi3.com",1],["tafdi4.com",1],["tafdi5.com",1],["filmizletv18.com",2],["filmizletv.*",[2,5]],["fullhdfilmizle.*",[3,5]],["fullhdfilm.*",3],["itemci.com",4],["fullhdizle.*",5],["filmizlehdfilm.com",5],["fullfilmizle.*",5],["fullfilmizle.cc",5],["fullhdfilmizletv.*",5],["hdfilmcehennemi.*",5],["hdfilmcix.*",5],["hdfilmizlesene.org",5],["sinema.cx",5],["yabancidizi.*",6]]);
+const argsList = [["money--skip","","0.02"],["after-ads","*","0.001"],["reklam","*","0.02"],["advert","*","0.001"],["sec--","*","0.001"],["timeleft","*","0.02"],["#rekgecyen","*","0.02"]];
+const hostnamesMap = new Map([["hdsinemax.com",0],["elzemfilm.org",0],["tafdi3.com",1],["tafdi4.com",1],["fullhdfilmizle.*",[2,4]],["fullhdfilm.*",2],["itemci.com",3],["fullhdizle.*",4],["filmizlehdfilm.com",4],["filmizletv.*",[4,6]],["fullfilmizle.*",4],["fullfilmizle.cc",4],["fullhdfilmizletv.*",4],["hdfilmcehennemi.*",4],["hdfilmcix.*",4],["hdfilmizlesene.org",4],["sinema.cx",4],["yabancidizi.*",5],["filmizletv3.com",6],["filmizletv4.com",6],["filmizletv5.com",6],["filmizletv6.com",6],["filmizletv7.com",6],["filmizletv8.com",6],["filmizletv9.com",6],["filmizletv10.com",6],["filmizletv11.com",6],["filmizletv12.com",6],["filmizletv13.com",6],["filmizletv14.com",6],["filmizletv15.com",6],["filmizletv16.com",6],["filmizletv17.com",6],["filmizletv18.com",6],["filmizletv19.com",6],["filmizletv20.com",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

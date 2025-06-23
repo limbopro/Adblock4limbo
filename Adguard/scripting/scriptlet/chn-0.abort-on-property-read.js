@@ -288,8 +288,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ads"],["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"],["exoNoExternalUI38djdkjDDJsio96"]];
-const hostnamesMap = new Map([["2urs.com",0],["caq98i.top",1],["1090ys8.com",2],["papalah.com",2],["youneed.win",3],["yfsp.tv",4],["aiyifan.tv",4],["iyf.tv",4],["goodav17.com",5],["m.86kl.com",6],["axjbt.com",7],["avcao.cc",7],["exoav.com",8]]);
+const argsList = [["ads"],["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"]];
+const hostnamesMap = new Map([["2urs.com",0],["caq98i.top",1],["1090ys8.com",2],["papalah.com",2],["youneed.win",3],["yfsp.tv",4],["aiyifan.tv",4],["iyf.tv",4],["goodav17.com",5],["m.86kl.com",6],["axjbt.com",7],["avcao.cc",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

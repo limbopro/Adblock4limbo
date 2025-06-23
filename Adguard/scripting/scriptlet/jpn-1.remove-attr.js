@@ -324,7 +324,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["href","a[style*=\"display:\"][href^=\"https://al.dmm.co.jp\"]","stay"],["style",".js-reward-target[style]","stay"],["id","#div-gpt-ad-sidebottom"],["id","#div-gpt-ad-footer"],["id","#div-gpt-ad-pagebottom"],["id","#div-gpt-ad-relatedbottom-1"],["class","[id][role] > [id] > [class] > section"],["href",".cps-post-main > a[href^=\"https://www.amazon.co.jp\"]"],["data-popup-url"],["onclick","span > a[onclick]"]];
+const argsList = [["href","a[style*=\"display:\"][href^=\"https://al.dmm.co.jp\"]","stay"],["style",".js-reward-target[style]","stay"],["id","#div-gpt-ad-sidebottom"],["id","#div-gpt-ad-footer"],["id","#div-gpt-ad-pagebottom"],["id","#div-gpt-ad-relatedbottom-1"],["class","article[itemprop=\"articleBody\"]","stay"],["href",".cps-post-main > a[href^=\"https://www.amazon.co.jp\"]"],["data-popup-url"],["onclick","span > a[onclick]"]];
 const hostnamesMap = new Map([["exploader.net",0],["jprime.jp",1],["rocketnews24.com",[2,3,4,5]],["youpouch.com",[2,3,4,5]],["coron.tech",6],["lifematome.blog",7],["wav.tv",8],["380cc.cc",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

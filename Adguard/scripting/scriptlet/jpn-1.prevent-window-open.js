@@ -391,7 +391,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["kokeshi-doll.com",0],["uraaka-joshi.com",0],["trendynailwraps.com",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0],["motimoti3d.jp",0]]);
+const hostnamesMap = new Map([["uraaka-joshi.com",0],["trendynailwraps.com",0],["wav.tv",0],["asg.to",0],["dl.520cc.cc",0],["motimoti3d.jp",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

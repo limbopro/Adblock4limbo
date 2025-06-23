@@ -504,7 +504,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["widgets.outbrain.com"],["widgets.outbrain.com/outbrain.js"],["pagead2.googlesyndication.com"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["popads.net"],["//cdn.taboola.com/libtrc/unpkg/tfa.js"]];
-const hostnamesMap = new Map([["file4go.net",0],["isekaibrasil.com",1],["aqualapp.com",2],["raulprietofernandez.net",2],["minhaconexao.com.br",3],["receitasdaora.online",4],["foodiesgallery.com",4],["caroloportunidades.com.br",4],["dicasgostosas.com",4],["drstonebr.com",5],["animefire.info",5],["animesonliner4.com",5],["coempregos.com.br",5],["anitube.us",5],["dattebayo-br.com",5],["anitube.vip",5],["hinatasoul.comssstik.io",5]]);
+const hostnamesMap = new Map([["file4go.net",0],["isekaibrasil.com",1],["aqualapp.com",2],["raulprietofernandez.net",2],["minhaconexao.com.br",3],["receitasdaora.online",4],["foodiesgallery.com",4],["caroloportunidades.com.br",4],["dicasgostosas.com",4],["drstonebr.com",5],["animesonliner4.com",5],["coempregos.com.br",5],["anitube.us",5],["dattebayo-br.com",5],["anitube.vip",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

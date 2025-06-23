@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["","{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}","{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important; position: unset !important; pointer-events: auto !important;\"]}"];
-const argsSeqs = [0,1,2,3];
-const hostnamesMap = new Map([["dutaislam.com",1],["intip24news.com",2],["juragan.film",3]]);
+const argsList = ["","{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}","{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important; position: unset !important; pointer-events: auto !important;\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important;\"]}"];
+const argsSeqs = [0,1,2,3,4];
+const hostnamesMap = new Map([["dutaislam.com",1],["intip24news.com",2],["juragan.film",3],["hrv.okestream365.xyz",4]]);
 const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];

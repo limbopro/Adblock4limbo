@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/userConsentProcess|this===/","*","0.001"],["return t()","*","0.001"],["userConsentProcessEnded","*","0.001"],["setTimeoutIds_","*","0.001"],["/userConsentProcessEnded|\\[0\\]\\+\"With\"/","*","0.001"],["#regarder","7000","0.02"]];
-const hostnamesMap = new Map([["marieclaire.fr",0],["sudouest.fr",1],["magicmaman.com",2],["lessentiel.lu",3],["20min.ch",3],["cosmopolitan.fr",4],["zoneseries.stream",5]]);
+const argsList = [["/userConsentProcess|this===/","*","0.001"],["return t()","*","0.001"],["userConsentProcessEnded","*","0.001"],["setTimeoutIds_","*","0.001"],["/userConsentProcessEnded|\\[0\\]\\+\"With\"/","*","0.001"]];
+const hostnamesMap = new Map([["marieclaire.fr",0],["sudouest.fr",1],["magicmaman.com",2],["lessentiel.lu",3],["20min.ch",3],["cosmopolitan.fr",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

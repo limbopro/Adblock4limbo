@@ -21,7 +21,6 @@
 
 /* kor-1 */
 
-[id^="div-gpt-ad"],
 a[href*="//ad-api.enuri.info/"],
 a[href*="//ad.planbplus.co.kr/"],
 a[href*="//adv.imadrep.co.kr/"],
@@ -29,7 +28,6 @@ a[href*="//click.soonwe.com/"],
 amp-ad,
 amp-embed,
 div[class^="__staxbn"],
-div[id^="div-gpt-"],
 div[id^="targetpushAd_"],
 iframe[src*=".clickmon.co.kr/"],
 iframe[src*=".contentsfeed.com/RealMedia/ads/"],

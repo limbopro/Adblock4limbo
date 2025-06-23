@@ -127,6 +127,10 @@ class JSONPath {
         const r = this.#compile(query, 0);
         if ( r === undefined ) { return; }
         if ( r.i !== query.length ) {
+            if ( query.startsWith('+=', r.i) ) {
+                r.modify = '+';
+                r.i += 1;
+            }
             if ( query.startsWith('=', r.i) === false ) { return; }
             try { r.rval = JSON.parse(query.slice(r.i+1)); }
             catch { return; }
@@ -142,7 +146,7 @@ class JSONPath {
     }
     apply(root) {
         if ( this.valid === false ) { return 0; }
-        const { rval } = this.#compiled;
+        const { modify, rval } = this.#compiled;
         this.#root = root;
         const paths = this.#evaluate(this.#compiled.steps, []);
         const n = paths.length;
@@ -150,7 +154,11 @@ class JSONPath {
         while ( i-- ) {
             const { obj, key } = this.#resolvePath(paths[i]);
             if ( rval !== undefined ) {
-                obj[key] = rval;
+                if ( modify === '+' ) {
+                    this.#modifyVal(obj, key, rval);
+                } else {
+                    obj[key] = rval;
+                }
             } else if ( Array.isArray(obj) && typeof key === 'number' ) {
                 obj.splice(key, 1);
             } else {
@@ -478,11 +486,21 @@ class JSONPath {
         }
         if ( outcome ) { return k; }
     }
+    #modifyVal(obj, key, rval) {
+        const lval = obj[key];
+        if ( rval instanceof Object === false ) { return; }
+        if ( lval instanceof Object === false ) { return; }
+        if ( Array.isArray(lval) ) { return; }
+        for ( const [ k, v ] of Object.entries(rval) ) {
+            lval[k] = v;
+        }
+    }
 }
 
 function jsonlEditFn(jsonp, text = '') {
     const safe = safeSelf();
-    const linesBefore = text.split(/\n+/);
+    const lineSeparator = /\r?\n/.exec(text)?.[0] || '\n';
+    const linesBefore = text.split('\n');
     const linesAfter = [];
     for ( const lineBefore of linesBefore ) {
         let obj;
@@ -495,9 +513,10 @@ function jsonlEditFn(jsonp, text = '') {
             linesAfter.push(lineBefore);
             continue;
         }
-        linesAfter.push(JSONPath.toJSON(obj, safe.JSON_stringify));
+        const lineAfter = safe.JSON_stringify(obj);
+        linesAfter.push(lineAfter);
     }
-    return linesAfter.join('\n');
+    return linesAfter.join(lineSeparator);
 }
 
 function matchObjectPropertiesFn(propNeedles, ...objs) {

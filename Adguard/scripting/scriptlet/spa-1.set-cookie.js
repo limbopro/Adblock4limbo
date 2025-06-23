@@ -317,7 +317,16 @@ function setCookieFn(
 
     if ( trusted ) {
         if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
+            let domain = options.domain;
+            if ( /^\/.+\//.test(domain) ) {
+                const baseURL = new URL(document.baseURI);
+                const reDomain = new RegExp(domain.slice(1, -1));
+                const match = reDomain.exec(baseURL.hostname);
+                domain = match ? match[0] : undefined;
+            }
+            if ( domain ) {
+                cookieParts.push(`; domain=${domain}`);
+            }
         }
         cookieParts.push('; Secure');
     } else if ( /^__(Host|Secure)-/.test(name) ) {
@@ -352,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adsCompleted","1"],["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
-const hostnamesMap = new Map([["redecanaistv.*",0],["redecanais.*",0],["techdiniz.com",1],["trueliketop.org",1],["sabornutritivo.com",2],["financasdeouro.com",2],["guiacripto.online",2],["guiasaude.info",3],["1i1.in",4],["estacio.br",5],["megacurioso.net",6],["receitasoncaseiras.online",6],["nutricaohoje.website",6],["automotivocarros.com",7],["portecnologia.com",7],["cartaocreditoplatinum.org",7],["pelismart.tv",8],["pelis1.com",8],["homecine.cc",8],["seriesmetro.net",8],["flixseries.org",8],["homecine.tv",8],["homecine.to",8],["metroseries.net",8],["smartpelis.tv",8],["seriesbanana.com",8]]);
+const argsList = [["modalVisited","true"],["adsCompleted","1"],["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
+const hostnamesMap = new Map([["redecanaistv.*",[0,1]],["redecanais.*",[0,1]],["techdiniz.com",2],["trueliketop.org",2],["sabornutritivo.com",3],["guiacripto.online",3],["guiasaude.info",4],["1i1.in",5],["estacio.br",6],["receitasoncaseiras.online",7],["nutricaohoje.website",7],["portecnologia.com",8],["papayaseries.net",9],["pelismart.tv",9],["pelis1.com",9],["homecine.cc",9],["seriesmetro.net",9],["flixseries.org",9],["homecine.tv",9],["homecine.to",9],["metroseries.net",9],["smartpelis.tv",9],["seriesbanana.com",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

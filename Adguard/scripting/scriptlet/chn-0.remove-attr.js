@@ -325,7 +325,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["data-ads_url","[data-ads_url]"],["style",".two-ad-area"],["style","#banner[style*=\"background-image:url\"]"]];
-const hostnamesMap = new Map([["91porna.com",0],["manwa.fun",1],["huya.com",2]]);
+const hostnamesMap = new Map([["mfulbvu.xyz",0],["91porna.com",0],["manwa.fun",1],["huya.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

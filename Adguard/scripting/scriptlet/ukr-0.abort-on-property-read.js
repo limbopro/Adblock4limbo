@@ -289,7 +289,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["SIN.AdsLoader"],["adsBlocked"],["wpsite_clickable_data"],["u_global_data"],["ads_script"],["utarget_script"],["parent.window.opener"]];
-const hostnamesMap = new Map([["sinoptik.ua",0],["prozoro.net.ua",1],["classicalmusicnews.ru",2],["agroreview.com",2],["agronews.ua",2],["legion-rus.clan.su",3],["narod.ru",3],["at.ua",3],["clan.su",3],["igrul-ka.ru",3],["selezen.net",3],["my1.ru",3],["do.am",3],["moy.su",3],["jetvis.ru",3],["fanofnfs.3dn.ru",[3,4]],["kubik3.ru",3],["paravozik.tv",3],["greenflash.su",3],["play-force.ru",3],["megomult.ru",3],["rub.org.ua",3],["elektronika56.ru",3],["staroetv.su",3],["pro-zakupki.ru",3],["kino-torrent.net",3],["tc-image.3dn.ru",3],["pokatushki-pmr.ru",3],["tapochek.net",4],["sht.at.xn--uakinosvit-cri.net",4],["nnmclub.to",5],["friends-online.me",5],["doramakun.ru",5],["kinogo.eu",5],["kino-live2.org",5],["silf.ua",6]]);
+const hostnamesMap = new Map([["sinoptik.ua",0],["prozoro.net.ua",1],["classicalmusicnews.ru",2],["agroreview.com",2],["agronews.ua",2],["legion-rus.clan.su",3],["narod.ru",3],["at.ua",3],["clan.su",3],["igrul-ka.ru",3],["selezen.net",3],["my1.ru",3],["do.am",3],["moy.su",3],["jetvis.ru",3],["fanofnfs.3dn.ru",[3,4]],["kubik3.ru",3],["paravozik.tv",3],["greenflash.su",3],["play-force.ru",3],["megomult.ru",3],["rub.org.ua",3],["elektronika56.ru",3],["staroetv.su",3],["pro-zakupki.ru",3],["kino-torrent.net",3],["tc-image.3dn.ru",3],["pokatushki-pmr.ru",3],["tapochek.net",4],["nnmclub.to",5],["friends-online.me",5],["doramakun.ru",5],["kinogo.eu",5],["kino-live2.org",5],["silf.ua",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

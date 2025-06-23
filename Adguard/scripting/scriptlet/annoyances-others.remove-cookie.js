@@ -44,6 +44,13 @@ function removeCookie(
             fn();
         }, ms);
     };
+    const baseURL = new URL(document.baseURI);
+    let targetDomain = extraArgs.domain;
+    if ( targetDomain && /^\/.+\//.test(targetDomain) ) {
+        const reDomain = new RegExp(targetDomain.slice(1, -1));
+        const match = reDomain.exec(baseURL.hostname);
+        targetDomain = match ? match[0] : undefined;
+    }
     const remove = ( ) => {
         safe.String_split.call(document.cookie, ';').forEach(cookieStr => {
             const pos = cookieStr.indexOf('=');
@@ -51,16 +58,19 @@ function removeCookie(
             const cookieName = cookieStr.slice(0, pos).trim();
             if ( reName.test(cookieName) === false ) { return; }
             const part1 = cookieName + '=';
-            const part2a = '; domain=' + document.location.hostname;
-            const part2b = '; domain=.' + document.location.hostname;
+            const part2a = `; domain=${baseURL.hostname}`;
+            const part2b = `; domain=.${baseURL.hostname}`;
             let part2c, part2d;
-            const domain = document.domain;
-            if ( domain ) {
-                if ( domain !== document.location.hostname ) {
-                    part2c = '; domain=.' + domain;
+            if ( targetDomain ) {
+                part2c = `; domain=${targetDomain}`;
+                part2d = `; domain=.${targetDomain}`;
+            } else if ( document.domain ) {
+                const domain = document.domain;
+                if ( domain !== baseURL.hostname ) {
+                    part2c = `; domain=.${domain}`;
                 }
                 if ( domain.startsWith('www.') ) {
-                    part2d = '; domain=' + domain.replace('www', '');
+                    part2d = `; domain=${domain.replace('www', '')}`;
                 }
             }
             const part3 = '; path=/';

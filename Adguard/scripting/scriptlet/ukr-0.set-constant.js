@@ -460,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["amodule.data","[]"],["td_ad_background_click_link","undefined"],["playerConfigs.rek","{}"]];
-const hostnamesMap = new Map([["cosmonova-broadcast.tv",0],["root-nation.com",1],["kinoz.store",2],["vb24132nightdwellers.com",2],["vb24131crasosnemesis.com",2]]);
+const argsList = [["amodule.data","[]"],["td_ad_background_click_link","undefined"]];
+const hostnamesMap = new Map([["cosmonova-broadcast.tv",0],["root-nation.com",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

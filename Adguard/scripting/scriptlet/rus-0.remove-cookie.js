@@ -44,6 +44,13 @@ function removeCookie(
             fn();
         }, ms);
     };
+    const baseURL = new URL(document.baseURI);
+    let targetDomain = extraArgs.domain;
+    if ( targetDomain && /^\/.+\//.test(targetDomain) ) {
+        const reDomain = new RegExp(targetDomain.slice(1, -1));
+        const match = reDomain.exec(baseURL.hostname);
+        targetDomain = match ? match[0] : undefined;
+    }
     const remove = ( ) => {
         safe.String_split.call(document.cookie, ';').forEach(cookieStr => {
             const pos = cookieStr.indexOf('=');
@@ -51,16 +58,19 @@ function removeCookie(
             const cookieName = cookieStr.slice(0, pos).trim();
             if ( reName.test(cookieName) === false ) { return; }
             const part1 = cookieName + '=';
-            const part2a = '; domain=' + document.location.hostname;
-            const part2b = '; domain=.' + document.location.hostname;
+            const part2a = `; domain=${baseURL.hostname}`;
+            const part2b = `; domain=.${baseURL.hostname}`;
             let part2c, part2d;
-            const domain = document.domain;
-            if ( domain ) {
-                if ( domain !== document.location.hostname ) {
-                    part2c = '; domain=.' + domain;
+            if ( targetDomain ) {
+                part2c = `; domain=${targetDomain}`;
+                part2d = `; domain=.${targetDomain}`;
+            } else if ( document.domain ) {
+                const domain = document.domain;
+                if ( domain !== baseURL.hostname ) {
+                    part2c = `; domain=.${domain}`;
                 }
                 if ( domain.startsWith('www.') ) {
-                    part2d = '; domain=' + domain.replace('www', '');
+                    part2d = `; domain=${domain.replace('www', '')}`;
                 }
             }
             const part3 = '; path=/';
@@ -285,8 +295,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/^bda|^bltsr/"],["/^bltsr$|^JPIqApiY$|^specific$|^substantial$/"],["/adblock_/"],["isab"],["shedevrum-aab"],["yadb"]];
-const hostnamesMap = new Map([["comedy-radio.ru",0],["kufar.by",0],["radioromantika.ru",0],["relax-fm.ru",0],["rg.ru",0],["sm.news",0],["ura.news",0],["veseloeradio.ru",0],["yandex.by",1],["yandex.kz",1],["yandex.ru",1],["yandex.uz",1],["yapx.ru",2],["24smi.org",3],["shedevrum.ai",4],["kakprosto.ru",5]]);
+const argsList = [["/^bda|^bltsr/"],["/^bltsr$|^JPIqApiY$|^specific$|^substantial$/"],["/adblock_/"],["hurricane"],["isab"],["shedevrum-aab"],["yadb"]];
+const hostnamesMap = new Map([["comedy-radio.ru",0],["kufar.by",0],["radioromantika.ru",0],["relax-fm.ru",0],["rg.ru",0],["sm.news",0],["ura.news",0],["veseloeradio.ru",0],["yandex.by",1],["yandex.kz",1],["yandex.ru",1],["yandex.uz",1],["yapx.ru",2],["drive2.ru",3],["24smi.org",4],["shedevrum.ai",5],["kakprosto.ru",6]]);
 const exceptionsMap = new Map([["passport.yandex.by",[1]],["passport.yandex.kz",[1]],["passport.yandex.ru",[1]],["passport.yandex.uz",[1]]]);
 const hasEntities = false;
 const hasAncestors = false;

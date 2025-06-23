@@ -29,7 +29,7 @@
 
 const argsList = ["","{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"]}","{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"]}\n{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"]}"];
 const argsSeqs = [0,1,2,3,4];
-const hostnamesMap = new Map([["chotlo3s.com",1],["hhpanda.baby",2],["thempho1.com",2],["www.o-study.net",3],["www.saostar.vn",4]]);
+const hostnamesMap = new Map([["chotlo3s.com",1],["hhpanda.win",2],["thempho2.com",2],["www.o-study.net",3],["www.saostar.vn",4]]);
 const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];

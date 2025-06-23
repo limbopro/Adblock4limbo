@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["","{\"selector\":\"#readerChromeOverlayBottom.readerChromeOverlayBottom-banner-desktop\",\"action\":[\"style\",\"bottom: 0 !important;\"]}","{\"selector\":\".video-player--stream-display-ad_lower-third\",\"action\":[\"style\",\"height: 100% !important;\"]}"];
-const argsSeqs = [0,1,2];
-const hostnamesMap = new Map([["read.amazon.*",1],["twitch.tv",2]]);
+const argsList = ["","{\"selector\":\"#readerChromeOverlayBottom.readerChromeOverlayBottom-banner-desktop\",\"action\":[\"style\",\"bottom:0 !important;\"]}","{\"selector\":\".cUDaEv\",\"action\":[\"style\",\"margin-top:162px !important;\"]}\n{\"selector\":\".gZyLpV .mobile-header\",\"action\":[\"style\",\"margin-top:0 !important;\"]}\n{\"selector\":\".iOxiqE .mobile-header\",\"action\":[\"style\",\"margin-top:0 !important;\"]}","{\"selector\":\".video-player--stream-display-ad_lower-third\",\"action\":[\"style\",\"height:100% !important;\"]}"];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["read.amazon.*",1],["benzinga.com",2],["twitch.tv",3]]);
 const hasEntities = true;
 
 self.declarativeImports = self.declarativeImports || [];

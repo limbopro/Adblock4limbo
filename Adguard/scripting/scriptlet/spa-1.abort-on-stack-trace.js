@@ -341,7 +341,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["atob","wp-content/"],["alert","eval"],["history.go","eval"],["JSON.parse","showPopup"]];
-const hostnamesMap = new Map([["yomucomics.com",0],["netcine.*",[1,2]],["netcine3.la",[1,2]],["toonscrab.com",3]]);
+const hostnamesMap = new Map([["yomucomics.com",0],["netcine.*",[1,2]],["toonscrab.com",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

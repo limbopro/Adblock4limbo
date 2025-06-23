@@ -307,7 +307,16 @@ function setCookieFn(
 
     if ( trusted ) {
         if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
+            let domain = options.domain;
+            if ( /^\/.+\//.test(domain) ) {
+                const baseURL = new URL(document.baseURI);
+                const reDomain = new RegExp(domain.slice(1, -1));
+                const match = reDomain.exec(baseURL.hostname);
+                domain = match ? match[0] : undefined;
+            }
+            if ( domain ) {
+                cookieParts.push(`; domain=${domain}`);
+            }
         }
         cookieParts.push('; Secure');
     } else if ( /^__(Host|Secure)-/.test(name) ) {
@@ -342,9 +351,9 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ak_bmsc","","0","","domain",".nvidia.com"],["ad_expire=true;","$now$"],["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe","","","domain","wp.pl"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA","","","domain","wp.pl"],["WPcbadcp","$now$"],["adTakeOver","seen"],["_ym_uid","$now$"],["lastClicked","9999999999999"],["welcome_message_1","true","","","reload","1"],["disqus_unique","0","","","domain","disqus.com"],["_sharedid","","0","","domain",".naszemiasto.pl"],["_sharedid","","0","","domain",".mirror.co.uk"],["DEVICEFP","00000000000","","","domain",".hoyoverse.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyoverse.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyoverse.com"],["DEVICEFP","00000000000","","","domain",".hoyolab.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyolab.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyolab.com"]];
-const hostnamesMap = new Map([["nvidia.com",0],["labgame.io",1],["globo.com",2],["theporndude.com",3],["money.pl",[4,5,8]],["pysznosci.pl",[4,5,8]],["pudelek.pl",[4,5,8]],["gadzetomania.pl",[4,5,8]],["fotoblogia.pl",[4,5,8]],["komorkomania.pl",[4,5,8]],["dobreprogramy.pl",[4,5,8]],["autokult.pl",[4,5,8]],["genialne.pl",[4,5,8]],["abczdrowie.pl",[4,5,8]],["wp.pl",[6,7,8]],["o2.pl",8],["parenting.pl",8],["polygamia.pl",8],["open.fm",8],["benchmark.pl",8],["kafeteria.pl",8],["autocentrum.pl",8],["jastrzabpost.pl",8],["govtech.com",9],["governing.com",9],["gecmisi.com.tr",10],["sumax43.autos",11],["goflix.sbs",12],["disqus.com",13],["naszemiasto.pl",14],["mirror.co.uk",15],["hoyoverse.com",[16,17,18]],["hoyolab.com",[19,20,21]]]);
-const exceptionsMap = new Map([["www.hoyoverse.com",[16,17,18]],["www.hoyolab.com",[19,20,21]]]);
+const argsList = [["ak_bmsc","","0","","domain",".nvidia.com"],["ad_expire=true;","$now$"],["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe","","","domain","wp.pl"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA","","","domain","wp.pl"],["WPcbadcp","$now$"],["adTakeOver","seen"],["_ym_uid","$now$"],["in_d4","1","","","domain","hanime.tv"],["lastClicked","9999999999999"],["welcome_message_1","true","","","reload","1"],["disqus_unique","0","","","domain","disqus.com"],["_sharedid","","0","","domain",".naszemiasto.pl"],["_sharedid","","0","","domain",".mirror.co.uk"],["DEVICEFP","00000000000","","","domain",".hoyoverse.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyoverse.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyoverse.com"],["DEVICEFP","00000000000","","","domain",".hoyolab.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyolab.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyolab.com"]];
+const hostnamesMap = new Map([["nvidia.com",0],["labgame.io",1],["globo.com",2],["theporndude.com",3],["money.pl",[4,5,8]],["pysznosci.pl",[4,5,8]],["pudelek.pl",[4,5,8]],["gadzetomania.pl",[4,5,8]],["fotoblogia.pl",[4,5,8]],["komorkomania.pl",[4,5,8]],["dobreprogramy.pl",[4,5,8]],["autokult.pl",[4,5,8]],["genialne.pl",[4,5,8]],["abczdrowie.pl",[4,5,8]],["wp.pl",[6,7,8]],["o2.pl",8],["parenting.pl",8],["polygamia.pl",8],["open.fm",8],["benchmark.pl",8],["kafeteria.pl",8],["autocentrum.pl",8],["jastrzabpost.pl",8],["govtech.com",9],["governing.com",9],["gecmisi.com.tr",10],["hanime.tv",11],["sumax43.autos",12],["goflix.sbs",13],["disqus.com",14],["naszemiasto.pl",15],["mirror.co.uk",16],["hoyoverse.com",[17,18,19]],["hoyolab.com",[20,21,22]]]);
+const exceptionsMap = new Map([["www.hoyoverse.com",[17,18,19]],["www.hoyolab.com",[20,21,22]]]);
 const hasEntities = false;
 const hasAncestors = false;
 

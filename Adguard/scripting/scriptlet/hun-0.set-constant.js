@@ -461,7 +461,7 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["cookie_alert_overlay","noopFunc"],["adblock","false"],["AdHandler.adblocked","0"],["AdHandler.adBlockEnabled","0"],["AdHandler.checkAdblock","noopFunc"],["tie.ad_blocker_detector","undefined"],["ENABLE_PAGE_LEVEL_ADS","true"],["gemiusStream","{}"],["gemiusStream.event","noopFunc"],["gemiusStream.init","noopFunc"],["window.ado","null"]];
-const hostnamesMap = new Map([["laptophardware.hu",0],["angol-magyar-szotar.hu",1],["embed.indavideo.hu",[2,3,4]],["huaweiblog.hu",5],["myonlineradio.hu",6],["player.rtl.hu",[7,8,9]],["femina.hu",10]]);
+const hostnamesMap = new Map([["laptophardware.hu",0],["milestone66.hu",0],["reformsziget.hu",0],["paplanvilag.hu",0],["foodker.hu",0],["angol-magyar-szotar.hu",1],["embed.indavideo.hu",[2,3,4]],["huaweiblog.hu",5],["myonlineradio.hu",6],["player.rtl.hu",[7,8,9]],["femina.hu",10]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -370,8 +370,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["atob","new Function(atob("],["WebSocket","event.data"]];
-const hostnamesMap = new Map([["crimsonav.com",0],["ngsingleissues.nationalgeographic.com",0],["adrissa.com.co",1],["americansoda.co.uk",1],["casteloforte.com.br",1],["centerfabril.com.br",1],["forqueen.cz",1],["joinusonline.net",1],["jollibee.com.vn",1],["kitapsan.com.tr",1],["mebelinovdom.com",1],["ojworld.it",1],["qualityrental.com",1],["szaszmotorshop.hu",1],["tvojstyl.sk",1],["up-shop.org",1],["yairalon.com.br",1]]);
+const argsList = [["atob","new Function(atob("],["WebSocket","event.data"],["open","executeCode"]];
+const hostnamesMap = new Map([["crimsonav.com",0],["ngsingleissues.nationalgeographic.com",0],["adrissa.com.co",1],["americansoda.co.uk",1],["casteloforte.com.br",1],["centerfabril.com.br",1],["forqueen.cz",1],["joinusonline.net",1],["jollibee.com.vn",1],["kitapsan.com.tr",1],["mebelinovdom.com",1],["ojworld.it",1],["qualityrental.com",1],["szaszmotorshop.hu",1],["tvojstyl.sk",1],["up-shop.org",1],["yairalon.com.br",1],["weightlossdiet.top",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

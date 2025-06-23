@@ -22,7 +22,6 @@
 /* cze-0 */
 
 [id^="aswift"],
-[id^="etarget"],
 [id^="sklikReklama"],
 [id^="sm-ad"] {
     display: none !important;

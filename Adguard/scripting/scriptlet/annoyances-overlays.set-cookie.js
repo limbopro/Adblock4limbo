@@ -317,7 +317,16 @@ function setCookieFn(
 
     if ( trusted ) {
         if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
+            let domain = options.domain;
+            if ( /^\/.+\//.test(domain) ) {
+                const baseURL = new URL(document.baseURI);
+                const reDomain = new RegExp(domain.slice(1, -1));
+                const match = reDomain.exec(baseURL.hostname);
+                domain = match ? match[0] : undefined;
+            }
+            if ( domain ) {
+                cookieParts.push(`; domain=${domain}`);
+            }
         }
         cookieParts.push('; Secure');
     } else if ( /^__(Host|Secure)-/.test(name) ) {
@@ -352,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["popupIsClosed","1"],["awpopup_450030403","1"],["popupShown","true"],["awpopup_501941328","1"],["popup_closed","true"],["email_modal","true"],["huck-newsletter-popup","true"],["newsletterModal","true"],["enewsOptin","1"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["pum-276000","true"],["uf_signup_bar","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["ezgwcc","1"],["_ad","0"],["leftPanelOpen","0"],["iAgree","1"]];
-const hostnamesMap = new Map([["monarchmoney.com",0],["railsnotes.xyz",0],["breachmedia.ca",1],["artribune.com",2],["pbs.org",3],["plantpowercouple.com",4],["commondreams.org",5],["oled-info.com",6],["lowpass.cc",7],["readergrev.com",7],["objectivebayesian.com",7],["monopoly.marketecture.tv",7],["jointhefollowup.com",7],["streamily.com",8],["huckmag.com",9],["egopowerplus.com",10],["vokey.com",11],["gourmetfoodstore.com",12],["theinformation.com",13],["in.investing.com",14],["intellinews.com",15],["kermitlynch.com",16],["jingdaily.com",17],["babiesrus.ca",18],["toysrus.ca",18],["clevercreations.org",19],["thefederalist.com",20],["30seconds.com",21],["iconduck.com",22],["shojiwax.com",23],["skepticalraptor.com",23],["girlscoutshop.com",24],["yvonnebennetti.com",25],["funko.com",26],["loungefly.com",26],["saucerco.com",27],["columbiasportswear.it",28],["columbiasportswear.at",29],["columbiasportswear.de",30],["columbiasportswear.fr",31],["columbiasportswear.es",32],["columbiasportswear.co.uk",33],["sharperimage.com",34],["sweetwater.com",35],["assos.com",36],["scitechdaily.com",37],["klsescreener.com",38],["fandom.com",39],["bangbros.com",40]]);
+const argsList = [["block-popuproadblock","true"],["exit-intent","true"],["cp_style_3841","true"],["m6e-newsletter","1"],["popupIsClosed","1"],["awpopup_450030403","1"],["popupShown","true"],["awpopup_501941328","1"],["popup_closed","true"],["email_modal","true"],["huck-newsletter-popup","true"],["newsletterModal","true"],["enewsOptin","1"],["SuppressInterstitial","true","","reload","1"],["marketing-modal-closed-1","2"],["r_p_s_n","1"],["viewedOuibounceModal","true"],["hidePopUp","true"],["newsletter","true"],["isNewsletterPopupShown","false","","reload","1"],["mailerlite:forms:shown:109925949413262377","1"],["pum-276000","true"],["uf_signup_bar","1"],["client-mailingListModalShown","true"],["jetpack_post_subscribe_modal_dismissed","true"],["newsletterLightboxDisplayed","true"],["MCPopupClosed","yes"],["welcome_modal_email_ts","1"],["newsletter-newsletter-popup","true"],["Columbia_IT_emailPopup","1"],["Columbia_AT_emailPopup","1"],["Columbia_DE_emailPopup","1"],["Columbia_FR_emailPopup","1"],["Columbia_ES_emailPopup","1"],["Columbia_UK_emailPopup","1"],["mystery_popup","true"],["sws-gwpop","1"],["popup-newsletter","true"],["ezgwcc","1"],["_ad","0"],["leftPanelOpen","0"],["iAgree","1"],["firebox_3330","1"]];
+const hostnamesMap = new Map([["press.princeton.edu",0],["monarchmoney.com",1],["railsnotes.xyz",1],["breachmedia.ca",2],["artribune.com",3],["pbs.org",4],["plantpowercouple.com",5],["commondreams.org",6],["oled-info.com",7],["lowpass.cc",8],["readergrev.com",8],["objectivebayesian.com",8],["monopoly.marketecture.tv",8],["jointhefollowup.com",8],["streamily.com",9],["huckmag.com",10],["egopowerplus.com",11],["vokey.com",12],["gourmetfoodstore.com",13],["theinformation.com",14],["in.investing.com",15],["intellinews.com",16],["kermitlynch.com",17],["jingdaily.com",18],["babiesrus.ca",19],["toysrus.ca",19],["clevercreations.org",20],["thefederalist.com",21],["30seconds.com",22],["iconduck.com",23],["shojiwax.com",24],["skepticalraptor.com",24],["girlscoutshop.com",25],["yvonnebennetti.com",26],["funko.com",27],["loungefly.com",27],["saucerco.com",28],["columbiasportswear.it",29],["columbiasportswear.at",30],["columbiasportswear.de",31],["columbiasportswear.fr",32],["columbiasportswear.es",33],["columbiasportswear.co.uk",34],["sharperimage.com",35],["sweetwater.com",36],["assos.com",37],["scitechdaily.com",38],["klsescreener.com",39],["fandom.com",40],["bangbros.com",41],["tmnascommunity.eu",42]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

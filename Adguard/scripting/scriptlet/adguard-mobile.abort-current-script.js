@@ -370,8 +370,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["navigator.userAgent","/document\\.write[\\s\\S]*?BANNER_/"],["$","exoMobilePop"],["bindPostitial"],["document.getElementsByClassName","adBlocked"],["jmp","Math"],["navigator.userAgent","_rand"]];
-const hostnamesMap = new Map([["gameinn.jp",0],["m.sunporno.com",1],["straitstimes.com",2],["supleks.jp",3],["komaki2.jp",4],["seikeidouga.blog.jp",5]]);
+const argsList = [["$","exoMobilePop"],["bindPostitial"],["document.getElementsByClassName","adBlocked"],["jmp","Math"],["navigator.userAgent","_rand"]];
+const hostnamesMap = new Map([["m.sunporno.com",0],["straitstimes.com",1],["supleks.jp",2],["komaki2.jp",3],["seikeidouga.blog.jp",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

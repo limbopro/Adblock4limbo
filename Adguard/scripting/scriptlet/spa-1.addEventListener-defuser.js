@@ -417,8 +417,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adBlockerOn"],["load","banner-ads"],["load","detect-modal"],["","_0x"],["detectAdBlock"],["load","daadb_get_data"],["DOMContentLoaded","document.write"],["","popunder"],["click","loadXMLDoc"],["mousedown","touchend"],["load","/_0x[\\s\\S]*?parentNode[\\s\\S]*?appendChild/"],["DOMContentLoaded","videoTag"],["","/abrirVentanasEmergentes|abrirNuevaVentana|Popunder/"],["click","manejar"],["click","window.open"]];
-const hostnamesMap = new Map([["canal12.com.sv",0],["depor.com",1],["softwareany.net",2],["xerifetech.com",3],["guideautoweb.com",4],["elquintobeatle.com",5],["empregoestagios.com",5],["satcesc.com",5],["g37.com.br",6],["desenhosanimados.site",7],["mundohentaioficial.com",7],["descargarhentaimf.xyz",8],["superflix.net",9],["irmaosdotados.net",10],["comandotorrents.org",11],["lapumia.org",11],["megafire.net",12],["firepaste.com",12],["seriesperu.com",13],["peliculas8k.com",13],["allcalidad.pro",14]]);
+const argsList = [["adBlockerOn"],["load","banner-ads"],["load","detect-modal"],["","_0x"],["detectAdBlock"],["load","daadb_get_data"],["DOMContentLoaded","document.write"],["","popunder"],["click","loadXMLDoc"],["mousedown","touchend"],["load","/_0x[\\s\\S]*?parentNode[\\s\\S]*?appendChild/"],["DOMContentLoaded","videoTag"],["click","Popunder"],["","/abrirVentanasEmergentes|abrirNuevaVentana|Popunder/"],["click","manejar"],["click","window.open"]];
+const hostnamesMap = new Map([["canal12.com.sv",0],["depor.com",1],["softwareany.net",2],["xerifetech.com",3],["guideautoweb.com",4],["empregoestagios.com",5],["satcesc.com",5],["g37.com.br",6],["desenhosanimados.site",7],["mundohentaioficial.com",7],["descargarhentaimf.xyz",8],["superflix.net",9],["irmaosdotados.net",10],["comandotorrents.org",11],["lapumia.org",11],["animeonline.lat",12],["megafire.net",13],["firepaste.com",13],["seriesperu.com",14],["peliculas8k.com",14],["allcalidad.pro",15]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[12989194,".fold_home__pasica_banner:not(html, body, :empty)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body, :empty)"],[6879724,".homepage-top-google-banner:not(html, body, :empty)"],[13987257,".js-gpt-ad:not(html, body, :empty)"],[2689874,".banner-izdvojeno:not(html, body, :empty)"],[8608347,".elementor-widget-smartmag-codes:not(html, body, :empty)"],[14656153,".banner__placeholder:not(html, body, :empty)"],[1377122,".cxenseignore:not(html, body, :empty, [id])"],[13371521,"div.lesnina_widget"],[751037,".td-a-ad:not(html, body, :empty)"],[3276505,".adaplace:not(html, body, :empty)"]];
+const genericSelectorMap = [[12989194,".fold_home__pasica_banner:not(html, body, :empty)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body, :empty)"],[6879724,".homepage-top-google-banner:not(html, body, :empty)"],[13987257,".js-gpt-ad:not(html, body, :empty)"],[2689874,".banner-izdvojeno:not(html, body, :empty)"],[8608347,".elementor-widget-smartmag-codes:not(html, body, :empty)"],[14656153,".banner__placeholder:not(html, body, :empty)"],[1377122,".cxenseignore:not(html, body, :empty, [id])"],[13371521,"div.lesnina_widget"],[751037,".td-a-ad:not(html, body, :empty)"],[3276505,".adaplace:not(html, body, :empty)"],[12768321,".gpt-ad-banner:not(html, body, :empty)"]];
 const genericExceptionSieve = [10956523];
 const genericExceptionMap = [["radiosarajevo.ba",".iAdserver"]];
 

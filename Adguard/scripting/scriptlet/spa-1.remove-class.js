@@ -315,8 +315,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["_theme-banner-upper","html"],["bgPartners2019",".videoContainer > div.beachPartners + div"],["hided","#framed > div"]];
-const hostnamesMap = new Map([["canalnet.tv",0],["beachcam.meo.pt",1],["empregonews.online",2]]);
+const argsList = [["_theme-banner-upper","html"],["bgPartners2019",".videoContainer > div.beachPartners + div"]];
+const hostnamesMap = new Map([["canalnet.tv",0],["beachcam.meo.pt",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

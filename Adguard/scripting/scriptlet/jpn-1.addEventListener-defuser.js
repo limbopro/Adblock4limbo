@@ -417,8 +417,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["load","delayCheckAB"],["load","iframe"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["load","videoInstArea"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["DOMContentLoaded","Fixed"]];
-const hostnamesMap = new Map([["bm.best-hit.tv",0],["iwb.jp",1],["best-hit.tv",2],["h178.com",2],["j-baseball.club",2],["j-basketball.club",2],["jukenbbs.com",2],["memo.wiki",3],["addchannel.net",3],["beasoku.com",3],["blog.housinkai.com",3],["kakenhi.net",3],["seesaa.net",3],["blog-and-destroy.com",4],["coolpan.net",5],["twivideo.net",6],["twidouga.net",7],["anacap.doorblog.jp",8],["anianierosuki.work",9],["uraaka-joshi.com",10],["tokyomotion.net",11],["ero-video.net",12],["negisoku.com",13]]);
+const argsList = [["load","adBlockDetected"],["load","delayCheckAB"],["load","iframe"],["load","delayCheckAdBlock"],["DOMContentLoaded","interstitialAd"],["load","adsCount"],["error","adscript-error"],["load","videoInstArea"],["","setTrigger"],["scroll","b.type"],["click","event"],["playing","VAST_TARGET"],["DOMContentLoaded","window["],["DOMContentLoaded","showPopUpBanner"],["DOMContentLoaded","adDiv"],["DOMContentLoaded","Fixed"]];
+const hostnamesMap = new Map([["gigafile.nu",0],["bm.best-hit.tv",1],["iwb.jp",2],["best-hit.tv",3],["h178.com",3],["j-baseball.club",3],["j-basketball.club",3],["jukenbbs.com",3],["memo.wiki",4],["addchannel.net",4],["beasoku.com",4],["kakenhi.net",4],["seesaa.net",4],["blog-and-destroy.com",5],["coolpan.net",6],["twivideo.net",7],["twidouga.net",8],["anacap.doorblog.jp",9],["anianierosuki.work",10],["uraaka-joshi.com",11],["tokyomotion.net",12],["ero-video.net",13],["seesaawiki.jp",14],["negisoku.com",15]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

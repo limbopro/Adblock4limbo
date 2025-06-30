@@ -318,7 +318,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["google_tg_rep","[\"n\",15500]"],["google_tg_rep_date","1900000000000"],["superberb_disable_date","$now$"]];
+const argsList = [["google_tg_rep","[\"n\",15500]"],["google_tg_rep_date","2030-03-18T02:00:00"],["superberb_disable_date","$now$"]];
 const hostnamesMap = new Map([["pvpoke-re.com",[0,1]],["fapeza.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

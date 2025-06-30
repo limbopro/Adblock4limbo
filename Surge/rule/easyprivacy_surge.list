@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202506230948
+## ! Version: 202506301535
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Jun 2025 09:48 UTC
+## ! Last modified: 30 Jun 2025 15:35 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -459,6 +459,12 @@ DOMAIN-SUFFIX,zodalt.com
 DOMAIN-SUFFIX,zononi.com
 DOMAIN-SUFFIX,zqtk.net
 DOMAIN-SUFFIX,ztsrv.com
+DOMAIN-SUFFIX,rsra-ph.cdn-fileserver.com
+DOMAIN-SUFFIX,rsra.cdn-fileserver.com
+DOMAIN-SUFFIX,rsras-ph.cdn-fileserver.com
+DOMAIN-SUFFIX,rsras.cdn-fileserver.com
+DOMAIN-SUFFIX,sra-px.cdn-fileserver.com
+DOMAIN-SUFFIX,youseasky.com
 DOMAIN-SUFFIX,109.123.233.251
 DOMAIN-SUFFIX,185.193.38.148
 DOMAIN-SUFFIX,35.194.26.233
@@ -4339,6 +4345,7 @@ DOMAIN-SUFFIX,analitik.bik.gov.tr
 DOMAIN-SUFFIX,analytics.faprika.net
 DOMAIN-SUFFIX,analytics.kkb.com.tr
 DOMAIN-SUFFIX,analytics.qushad.com
+DOMAIN-SUFFIX,analytics.ticimax.cloud
 DOMAIN-SUFFIX,c.keltis.com
 DOMAIN-SUFFIX,collector.wawlabs.com
 DOMAIN-SUFFIX,log.collectaction.com
@@ -4776,7 +4783,6 @@ DOMAIN-SUFFIX,performance-logger.minted.com
 DOMAIN-SUFFIX,perr.hola.org
 DOMAIN-SUFFIX,pf.newegg.com
 DOMAIN-SUFFIX,pftk.temu.com
-DOMAIN-SUFFIX,ph.thenextweb.com
 DOMAIN-SUFFIX,ping.hashnode.com
 DOMAIN-SUFFIX,ping.hungama.com
 DOMAIN-SUFFIX,pingback.giphy.com
@@ -4879,7 +4885,6 @@ DOMAIN-SUFFIX,ss.esade.edu
 DOMAIN-SUFFIX,ss.photospecialist.co.uk
 DOMAIN-SUFFIX,sst.bwt.com
 DOMAIN-SUFFIX,sst.shopware.com
-DOMAIN-SUFFIX,sstats.adobe.com
 DOMAIN-SUFFIX,st.sawlive.tv
 DOMAIN-SUFFIX,stan.xing.com
 DOMAIN-SUFFIX,stape.brascast.com
@@ -5029,6 +5034,8 @@ DOMAIN-SUFFIX,two.cm.com
 DOMAIN-SUFFIX,ua.indianexpress.com
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com
 DOMAIN-SUFFIX,um.contentstudio.io
+DOMAIN-SUFFIX,umami.flixer.su
+DOMAIN-SUFFIX,umami.spencerdevs.xyz
 DOMAIN-SUFFIX,umami.vidfast.pro
 DOMAIN-SUFFIX,umami.wakarimasen.moe
 DOMAIN-SUFFIX,unl1zvy2zuyn.franchiseplus.nl
@@ -41581,6 +41588,7 @@ DOMAIN-SUFFIX,analytics.sanoma.fi
 DOMAIN-SUFFIX,data.reactandshare.com
 DOMAIN-SUFFIX,dax.yle.fi
 DOMAIN-SUFFIX,events.il.fi
+DOMAIN-SUFFIX,insights.mtv.a2d.tv
 DOMAIN-SUFFIX,logger.omio.com
 DOMAIN-SUFFIX,rac.ruutu.fi
 DOMAIN-SUFFIX,stat.mtv3.fi

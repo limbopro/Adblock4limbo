@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202506230948
+## ! Version: 202506301535
 ## ! Title: EasyPrivacy
-## ! Last modified: 23 Jun 2025 09:48 UTC
+## ! Last modified: 30 Jun 2025 15:35 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -459,6 +459,12 @@ DOMAIN-SUFFIX,zodalt.com, reject
 DOMAIN-SUFFIX,zononi.com, reject
 DOMAIN-SUFFIX,zqtk.net, reject
 DOMAIN-SUFFIX,ztsrv.com, reject
+DOMAIN-SUFFIX,rsra-ph.cdn-fileserver.com, reject
+DOMAIN-SUFFIX,rsra.cdn-fileserver.com, reject
+DOMAIN-SUFFIX,rsras-ph.cdn-fileserver.com, reject
+DOMAIN-SUFFIX,rsras.cdn-fileserver.com, reject
+DOMAIN-SUFFIX,sra-px.cdn-fileserver.com, reject
+DOMAIN-SUFFIX,youseasky.com, reject
 DOMAIN-SUFFIX,109.123.233.251, reject
 DOMAIN-SUFFIX,185.193.38.148, reject
 DOMAIN-SUFFIX,35.194.26.233, reject
@@ -4339,6 +4345,7 @@ DOMAIN-SUFFIX,analitik.bik.gov.tr, reject
 DOMAIN-SUFFIX,analytics.faprika.net, reject
 DOMAIN-SUFFIX,analytics.kkb.com.tr, reject
 DOMAIN-SUFFIX,analytics.qushad.com, reject
+DOMAIN-SUFFIX,analytics.ticimax.cloud, reject
 DOMAIN-SUFFIX,c.keltis.com, reject
 DOMAIN-SUFFIX,collector.wawlabs.com, reject
 DOMAIN-SUFFIX,log.collectaction.com, reject
@@ -4776,7 +4783,6 @@ DOMAIN-SUFFIX,performance-logger.minted.com, reject
 DOMAIN-SUFFIX,perr.hola.org, reject
 DOMAIN-SUFFIX,pf.newegg.com, reject
 DOMAIN-SUFFIX,pftk.temu.com, reject
-DOMAIN-SUFFIX,ph.thenextweb.com, reject
 DOMAIN-SUFFIX,ping.hashnode.com, reject
 DOMAIN-SUFFIX,ping.hungama.com, reject
 DOMAIN-SUFFIX,pingback.giphy.com, reject
@@ -4879,7 +4885,6 @@ DOMAIN-SUFFIX,ss.esade.edu, reject
 DOMAIN-SUFFIX,ss.photospecialist.co.uk, reject
 DOMAIN-SUFFIX,sst.bwt.com, reject
 DOMAIN-SUFFIX,sst.shopware.com, reject
-DOMAIN-SUFFIX,sstats.adobe.com, reject
 DOMAIN-SUFFIX,st.sawlive.tv, reject
 DOMAIN-SUFFIX,stan.xing.com, reject
 DOMAIN-SUFFIX,stape.brascast.com, reject
@@ -5029,6 +5034,8 @@ DOMAIN-SUFFIX,two.cm.com, reject
 DOMAIN-SUFFIX,ua.indianexpress.com, reject
 DOMAIN-SUFFIX,ubuyanalytics.ubuy.com, reject
 DOMAIN-SUFFIX,um.contentstudio.io, reject
+DOMAIN-SUFFIX,umami.flixer.su, reject
+DOMAIN-SUFFIX,umami.spencerdevs.xyz, reject
 DOMAIN-SUFFIX,umami.vidfast.pro, reject
 DOMAIN-SUFFIX,umami.wakarimasen.moe, reject
 DOMAIN-SUFFIX,unl1zvy2zuyn.franchiseplus.nl, reject
@@ -41581,6 +41588,7 @@ DOMAIN-SUFFIX,analytics.sanoma.fi, reject
 DOMAIN-SUFFIX,data.reactandshare.com, reject
 DOMAIN-SUFFIX,dax.yle.fi, reject
 DOMAIN-SUFFIX,events.il.fi, reject
+DOMAIN-SUFFIX,insights.mtv.a2d.tv, reject
 DOMAIN-SUFFIX,logger.omio.com, reject
 DOMAIN-SUFFIX,rac.ruutu.fi, reject
 DOMAIN-SUFFIX,stat.mtv3.fi, reject

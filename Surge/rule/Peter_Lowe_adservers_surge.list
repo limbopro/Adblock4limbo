@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 13 Jun 2025 13:49:05 GMT
-# entries:        3421
+# last updated:   Thu, 26 Jun 2025 13:06:55 GMT
+# entries:        3418
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1442,7 +1442,6 @@ DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
 DOMAIN-SUFFIX,datenow.link
 DOMAIN-SUFFIX,dc-storm.com
 DOMAIN-SUFFIX,de17a.com
-DOMAIN-SUFFIX,deal-on.eu
 DOMAIN-SUFFIX,dealdotcom.com
 DOMAIN-SUFFIX,decenterads.com
 DOMAIN-SUFFIX,decisivebase.com
@@ -1542,6 +1541,7 @@ DOMAIN-SUFFIX,emebo.io
 DOMAIN-SUFFIX,emerse.com
 DOMAIN-SUFFIX,emetriq.de
 DOMAIN-SUFFIX,emjcd.com
+DOMAIN-SUFFIX,eml.blackduck.com
 DOMAIN-SUFFIX,emltrk.com
 DOMAIN-SUFFIX,emodoinc.com
 DOMAIN-SUFFIX,emptyescort.com
@@ -1927,6 +1927,7 @@ DOMAIN-SUFFIX,iyfbodn.com
 DOMAIN-SUFFIX,iyfnzgb.com
 DOMAIN-SUFFIX,j93557g.com
 DOMAIN-SUFFIX,jads.co
+DOMAIN-SUFFIX,jauchuwa.net
 DOMAIN-SUFFIX,jcount.com
 DOMAIN-SUFFIX,jdoqocy.com
 DOMAIN-SUFFIX,jinkads.de
@@ -2046,6 +2047,7 @@ DOMAIN-SUFFIX,live.trmzum.com
 DOMAIN-SUFFIX,liveadexchanger.com
 DOMAIN-SUFFIX,liveintent.com
 DOMAIN-SUFFIX,livelylaugh.com
+DOMAIN-SUFFIX,livelyreward.com
 DOMAIN-SUFFIX,liverail.com
 DOMAIN-SUFFIX,livingsleet.com
 DOMAIN-SUFFIX,lizardslaugh.com
@@ -2070,7 +2072,6 @@ DOMAIN-SUFFIX,look.opskln.com
 DOMAIN-SUFFIX,look.ufinkln.com
 DOMAIN-SUFFIX,loopme.com
 DOMAIN-SUFFIX,loudlunch.com
-DOMAIN-SUFFIX,lowest-price.eu
 DOMAIN-SUFFIX,lucidmedia.com
 DOMAIN-SUFFIX,luckyorange.com
 DOMAIN-SUFFIX,ludicrousarch.com
@@ -2538,7 +2539,6 @@ DOMAIN-SUFFIX,prpops.com
 DOMAIN-SUFFIX,prsitecheck.com
 DOMAIN-SUFFIX,prufenzo.xyz
 DOMAIN-SUFFIX,pstmrk.it
-DOMAIN-SUFFIX,ptoushoa.com
 DOMAIN-SUFFIX,pub.chez.com
 DOMAIN-SUFFIX,pub.club-internet.fr
 DOMAIN-SUFFIX,pub.hardware.fr
@@ -2668,7 +2668,6 @@ DOMAIN-SUFFIX,revcontent.com
 DOMAIN-SUFFIX,reveal.clearbit.com
 DOMAIN-SUFFIX,revenuedirect.com
 DOMAIN-SUFFIX,revenuehits.com
-DOMAIN-SUFFIX,revive.dubcnm.com
 DOMAIN-SUFFIX,revive.haskovo.net
 DOMAIN-SUFFIX,revive.netriota.hu
 DOMAIN-SUFFIX,revive.plays.bg
@@ -3007,7 +3006,6 @@ DOMAIN-SUFFIX,tagcommander.com
 DOMAIN-SUFFIX,tagger.opecloud.com
 DOMAIN-SUFFIX,tags.tiqcdn.com
 DOMAIN-SUFFIX,tagtoo.com
-DOMAIN-SUFFIX,tagular.com
 DOMAIN-SUFFIX,tailsweep.com
 DOMAIN-SUFFIX,tailsweep.se
 DOMAIN-SUFFIX,takethatad.com
@@ -3102,7 +3100,6 @@ DOMAIN-SUFFIX,touchclarity.com
 DOMAIN-SUFFIX,tour.brazzers.com
 DOMAIN-SUFFIX,tr.api.fanbyte.com
 DOMAIN-SUFFIX,track-eu.customer.io
-DOMAIN-SUFFIX,track-on.eu
 DOMAIN-SUFFIX,track-on.pl
 DOMAIN-SUFFIX,track.adform.net
 DOMAIN-SUFFIX,track.anchorfree.com

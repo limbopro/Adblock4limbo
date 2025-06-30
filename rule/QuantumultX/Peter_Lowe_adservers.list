@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 13 Jun 2025 13:49:05 GMT
-# entries:        3421
+# last updated:   Thu, 26 Jun 2025 13:06:55 GMT
+# entries:        3418
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1442,7 +1442,6 @@ DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
 DOMAIN-SUFFIX,datenow.link, reject
 DOMAIN-SUFFIX,dc-storm.com, reject
 DOMAIN-SUFFIX,de17a.com, reject
-DOMAIN-SUFFIX,deal-on.eu, reject
 DOMAIN-SUFFIX,dealdotcom.com, reject
 DOMAIN-SUFFIX,decenterads.com, reject
 DOMAIN-SUFFIX,decisivebase.com, reject
@@ -1542,6 +1541,7 @@ DOMAIN-SUFFIX,emebo.io, reject
 DOMAIN-SUFFIX,emerse.com, reject
 DOMAIN-SUFFIX,emetriq.de, reject
 DOMAIN-SUFFIX,emjcd.com, reject
+DOMAIN-SUFFIX,eml.blackduck.com, reject
 DOMAIN-SUFFIX,emltrk.com, reject
 DOMAIN-SUFFIX,emodoinc.com, reject
 DOMAIN-SUFFIX,emptyescort.com, reject
@@ -1927,6 +1927,7 @@ DOMAIN-SUFFIX,iyfbodn.com, reject
 DOMAIN-SUFFIX,iyfnzgb.com, reject
 DOMAIN-SUFFIX,j93557g.com, reject
 DOMAIN-SUFFIX,jads.co, reject
+DOMAIN-SUFFIX,jauchuwa.net, reject
 DOMAIN-SUFFIX,jcount.com, reject
 DOMAIN-SUFFIX,jdoqocy.com, reject
 DOMAIN-SUFFIX,jinkads.de, reject
@@ -2046,6 +2047,7 @@ DOMAIN-SUFFIX,live.trmzum.com, reject
 DOMAIN-SUFFIX,liveadexchanger.com, reject
 DOMAIN-SUFFIX,liveintent.com, reject
 DOMAIN-SUFFIX,livelylaugh.com, reject
+DOMAIN-SUFFIX,livelyreward.com, reject
 DOMAIN-SUFFIX,liverail.com, reject
 DOMAIN-SUFFIX,livingsleet.com, reject
 DOMAIN-SUFFIX,lizardslaugh.com, reject
@@ -2070,7 +2072,6 @@ DOMAIN-SUFFIX,look.opskln.com, reject
 DOMAIN-SUFFIX,look.ufinkln.com, reject
 DOMAIN-SUFFIX,loopme.com, reject
 DOMAIN-SUFFIX,loudlunch.com, reject
-DOMAIN-SUFFIX,lowest-price.eu, reject
 DOMAIN-SUFFIX,lucidmedia.com, reject
 DOMAIN-SUFFIX,luckyorange.com, reject
 DOMAIN-SUFFIX,ludicrousarch.com, reject
@@ -2538,7 +2539,6 @@ DOMAIN-SUFFIX,prpops.com, reject
 DOMAIN-SUFFIX,prsitecheck.com, reject
 DOMAIN-SUFFIX,prufenzo.xyz, reject
 DOMAIN-SUFFIX,pstmrk.it, reject
-DOMAIN-SUFFIX,ptoushoa.com, reject
 DOMAIN-SUFFIX,pub.chez.com, reject
 DOMAIN-SUFFIX,pub.club-internet.fr, reject
 DOMAIN-SUFFIX,pub.hardware.fr, reject
@@ -2668,7 +2668,6 @@ DOMAIN-SUFFIX,revcontent.com, reject
 DOMAIN-SUFFIX,reveal.clearbit.com, reject
 DOMAIN-SUFFIX,revenuedirect.com, reject
 DOMAIN-SUFFIX,revenuehits.com, reject
-DOMAIN-SUFFIX,revive.dubcnm.com, reject
 DOMAIN-SUFFIX,revive.haskovo.net, reject
 DOMAIN-SUFFIX,revive.netriota.hu, reject
 DOMAIN-SUFFIX,revive.plays.bg, reject
@@ -3007,7 +3006,6 @@ DOMAIN-SUFFIX,tagcommander.com, reject
 DOMAIN-SUFFIX,tagger.opecloud.com, reject
 DOMAIN-SUFFIX,tags.tiqcdn.com, reject
 DOMAIN-SUFFIX,tagtoo.com, reject
-DOMAIN-SUFFIX,tagular.com, reject
 DOMAIN-SUFFIX,tailsweep.com, reject
 DOMAIN-SUFFIX,tailsweep.se, reject
 DOMAIN-SUFFIX,takethatad.com, reject
@@ -3102,7 +3100,6 @@ DOMAIN-SUFFIX,touchclarity.com, reject
 DOMAIN-SUFFIX,tour.brazzers.com, reject
 DOMAIN-SUFFIX,tr.api.fanbyte.com, reject
 DOMAIN-SUFFIX,track-eu.customer.io, reject
-DOMAIN-SUFFIX,track-on.eu, reject
 DOMAIN-SUFFIX,track-on.pl, reject
 DOMAIN-SUFFIX,track.adform.net, reject
 DOMAIN-SUFFIX,track.anchorfree.com, reject

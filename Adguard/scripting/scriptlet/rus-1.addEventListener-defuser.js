@@ -418,7 +418,7 @@ function shouldDebug(details) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["click","externalLink"],["/beforeunload|pagehide/","/0x|_setCookies/"]];
-const hostnamesMap = new Map([["otvet.mail.ru",0],["dzen.ru",1]]);
+const hostnamesMap = new Map([["otvet.mail.ru",0],["dzen.ru",1],["ya.ru",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

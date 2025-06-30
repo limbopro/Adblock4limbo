@@ -295,8 +295,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["tvoid"],["/HgGedof|KIykI/"]];
-const hostnamesMap = new Map([["yandex.*",0],["dzen.ru",1]]);
+const argsList = [["tvoid"],["/bltsr|HgGedof|KIykI/"]];
+const hostnamesMap = new Map([["yandex.*",0],["dzen.ru",1],["ya.ru",1]]);
 const exceptionsMap = new Map([["yandex.net",[0]]]);
 const hasEntities = true;
 const hasAncestors = false;

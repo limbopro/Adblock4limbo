@@ -48,7 +48,7 @@ function alertBuster() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["66ccff.work",0],["onlineatlas.us",0]]);
+const hostnamesMap = new Map([["onlineatlas.us",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

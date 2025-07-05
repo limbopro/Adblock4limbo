@@ -472,8 +472,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["www3.doubleclick.net"],["googlesyndication"],["analytics"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"],["doubleclick"],["adsbygoogle"]];
-const hostnamesMap = new Map([["tools.jabrek.net",0],["maxedtech.com",1],["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["ddys.*",2],["theonegenerator.com",3],["mcskinhistory.com",3],["bypass.city",4],["adbypass.org",4],["amtraker.com",5],["ark-unity.com",6],["pokeos.com",7],["sporttotal.tv",7],["wiibackupmanager.co.uk",8]]);
+const argsList = [["www3.doubleclick.net"],["googlesyndication"],["analytics"],["ads"],["/googlesyndication|googletag/"],["cloudflareinsights.com"],["/adsbygoogle|ad-manager/"],["doubleclick"],["adsbygoogle"],["method:HEAD"]];
+const hostnamesMap = new Map([["tools.jabrek.net",0],["maxedtech.com",1],["textcleaner.net",1],["socialcounts.org",1],["viewing.nyc",1],["autopareri.com",1],["curseforge.com",1],["ddys.*",2],["theonegenerator.com",3],["mcskinhistory.com",3],["bypass.city",4],["adbypass.org",4],["amtraker.com",5],["ark-unity.com",6],["pokeos.com",7],["sporttotal.tv",7],["wiibackupmanager.co.uk",8],["globalairportconcierge.com",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

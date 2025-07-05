@@ -53,6 +53,7 @@ img[alt^="Annonse "]:not(body, :empty),
 img[src^="https://storage.googleapis.com/ad-campaigns/"]:not(body, :empty),
 img[title^="advertisement"],
 optimus-element[linecount="undefined"][width="480"]:first-of-type:nth-last-of-type(2):not(body, :empty),
-optimus-element[linecount="undefined"][width="980"]:not(body, :empty) {
+optimus-element[linecount="undefined"][width="980"]:not(body, :empty),
+section[data-aller-id^="strossleabb"] {
     display: none !important;
 }

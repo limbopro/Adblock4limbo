@@ -325,7 +325,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["href","a[href]#clickfakeplayer"],["href",".content-propose > a[href].btn-ad-iframe"],["href","#clickfakeplayer"]];
-const hostnamesMap = new Map([["1jour1film.cyou",0],["seriescultes.store",0],["1jour1film.homes",0],["seriepourvous.com",0],["empire-streaming.*",1],["1jour1film.*",2]]);
+const hostnamesMap = new Map([["1jour1film.cyou",0],["seriepourvous.com",0],["empire-streaming.*",1],["1jour1film.*",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

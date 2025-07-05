@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["getid","*","0.001"],["countdown","*","0.001"],[".style.display","*","0.02"],["Loading...","","0.02"],["adsHandle_noclick","","0.02"],["start_preroll","*","0.001"]];
-const hostnamesMap = new Map([["infohojeonline.blogspot.com",0],["xupalace.org",1],["player.cuevana3.*",1],["player.gnula.*",1],["player.poseidonhd2.co",1],["player.cuevana2espanol.*",1],["player.cuevana.*",1],["sejasaudavel.net",2],["cuevana-3.wtf",3],["topflix.*",4],["compucalitv.tv",5]]);
+const argsList = [["seconds","*","0.001"],["getid","*","0.001"],["countdown","*","0.001"],[".style.display","*","0.02"],["Loading...","","0.02"],["adsHandle_noclick","","0.02"],["start_preroll","*","0.001"]];
+const hostnamesMap = new Map([["fgtd.online",0],["infohojeonline.blogspot.com",1],["xupalace.org",2],["player.cuevana3.*",2],["player.gnula.*",2],["player.poseidonhd2.co",2],["player.cuevana2espanol.*",2],["player.cuevana.*",2],["sejasaudavel.net",3],["cuevana-3.wtf",4],["topflix.*",5],["compucalitv.tv",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

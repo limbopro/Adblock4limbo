@@ -507,8 +507,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["bumpers","","propsToMatch","url:/playback2.a2d.tv\\/play/"]];
-const hostnamesMap = new Map([["mtv.fi",0],["mtvuutiset.fi",0]]);
+const argsList = [["bumpers","","propsToMatch","url:/playback2.a2d.tv\\/play/"],["playbackItem.isStitched","","propsToMatch","prism.a2d.tv"]];
+const hostnamesMap = new Map([["mtv.fi",[0,1]],["mtvuutiset.fi",[0,1]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["","{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}","{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important; position: unset !important; pointer-events: auto !important;\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important;\"]}"];
-const argsSeqs = [0,1,2,3,4];
-const hostnamesMap = new Map([["dutaislam.com",1],["intip24news.com",2],["juragan.film",3],["hrv.okestream365.xyz",4]]);
+const argsList = ["","{\"selector\":\".content-paralax\",\"action\":[\"style\",\"top: 0!important;\"]}","{\"selector\":\".outer-wrapper\",\"action\":[\"style\",\"margin-top:60px!important;\"]}","{\"selector\":\"body.sticky-header\",\"action\":[\"style\",\"padding: unset!important;\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"overflow: auto !important; position: unset !important; pointer-events: auto !important;\"]}","{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important;\"]}"];
+const argsSeqs = [0,1,2,3,4,5];
+const hostnamesMap = new Map([["sindonews.com",1],["dutaislam.com",2],["intip24news.com",3],["juragan.film",4],["hrv.okestream365.xyz",5]]);
 const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];

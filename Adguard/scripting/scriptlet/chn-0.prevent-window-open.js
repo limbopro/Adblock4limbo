@@ -391,7 +391,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[],["/bit\\.ly|kbtv/"],["0","qciss.net"],["88p2p.com"]];
-const hostnamesMap = new Map([["embedrise.com",0],["88files.net",0],["freejavbt.com",0],["iwatchme2u.com",1],["qciss.net",2],["5278.cc",3]]);
+const hostnamesMap = new Map([["embedrise.com",0],["88files.net",0],["freejavbt.com",0],["vikacg.com",0],["iwatchme2u.com",1],["qciss.net",2],["5278.cc",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

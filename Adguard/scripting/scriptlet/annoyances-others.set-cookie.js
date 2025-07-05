@@ -361,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["registration_modal_dismissed","true"],["apv","false"],["patreonAnnouncementShown","true"],["campaign_seen_today","true"],["pum_popup_14631_page_views","1"],["premium_popup","1"]];
-const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["gmap-pedometer.com",2],["democracynow.org",3],["firstthings.com",4],["rumble.com",5]]);
+const argsList = [["registration_modal_dismissed","true"],["apv","false"],["patreonAnnouncementShown","true"],["campaign_seen_today","true"],["pum_popup_14631_page_views","1"],["premium_popup","1"],["HideDonationLightbox","1"]];
+const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["gmap-pedometer.com",2],["democracynow.org",3],["firstthings.com",4],["rumble.com",5],["oceana.org",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

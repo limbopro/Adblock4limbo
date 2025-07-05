@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202506301535
+## ! Version: 202507050514
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Jun 2025 15:35 UTC
+## ! Last modified: 05 Jul 2025 05:14 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2787,6 +2787,7 @@ DOMAIN-SUFFIX,e045f561.b-cdn.net
 DOMAIN-SUFFIX,ea.youmaker.com
 DOMAIN-SUFFIX,ec.walkme.com
 DOMAIN-SUFFIX,ecomm.events
+DOMAIN-SUFFIX,ecommerce-events.adscale.com
 DOMAIN-SUFFIX,ecommstats.s3.amazonaws.com
 DOMAIN-SUFFIX,eel.transistor.fm
 DOMAIN-SUFFIX,enc-90128738.b-cdn.net
@@ -2876,6 +2877,7 @@ DOMAIN-SUFFIX,ga.webdigi.co.uk
 DOMAIN-SUFFIX,ganon.yahoo.com
 DOMAIN-SUFFIX,gateway.foresee.com
 DOMAIN-SUFFIX,genesis.malwarebytes.com
+DOMAIN-SUFFIX,geo.bdg.com
 DOMAIN-SUFFIX,geo.ertya.com
 DOMAIN-SUFFIX,geo.gorillanation.com
 DOMAIN-SUFFIX,geo.mezr.com
@@ -2986,6 +2988,7 @@ DOMAIN-SUFFIX,loggingapi.spingo.com
 DOMAIN-SUFFIX,loglady.skypicker.com
 DOMAIN-SUFFIX,logs-api.shoprunner.com
 DOMAIN-SUFFIX,logs.animaapp.com
+DOMAIN-SUFFIX,logs.dynamicauth.com
 DOMAIN-SUFFIX,logs.mezmo.com
 DOMAIN-SUFFIX,logs.spilgames.com
 DOMAIN-SUFFIX,lucid.mjhassoc.com
@@ -4076,7 +4079,6 @@ DOMAIN-SUFFIX,analytics.liveact.cri-mw.jp
 DOMAIN-SUFFIX,analytics.livesense.marketing
 DOMAIN-SUFFIX,analytics.partcommunity.com
 DOMAIN-SUFFIX,analytics.spearly.com
-DOMAIN-SUFFIX,analyzer51.fc2.com
 DOMAIN-SUFFIX,asumi.shinobi.jp
 DOMAIN-SUFFIX,b.clipkit.co
 DOMAIN-SUFFIX,b.sli-spark.com
@@ -4417,6 +4419,7 @@ DOMAIN-SUFFIX,analytics.global.sky.com
 DOMAIN-SUFFIX,analytics.hashnode.com
 DOMAIN-SUFFIX,analytics.inquisitr.com
 DOMAIN-SUFFIX,analytics.kaggle.io
+DOMAIN-SUFFIX,analytics.komiku.org
 DOMAIN-SUFFIX,analytics.makeitmeme.com
 DOMAIN-SUFFIX,analytics.maxroll.gg
 DOMAIN-SUFFIX,analytics.ml.homedepot.ca
@@ -4684,6 +4687,7 @@ DOMAIN-SUFFIX,intent.pcworld.idg.com.au
 DOMAIN-SUFFIX,intent.techadvisor.com
 DOMAIN-SUFFIX,internal-analytics.odoo.com
 DOMAIN-SUFFIX,internal-e.posthog.com
+DOMAIN-SUFFIX,internal-t.posthog.com
 DOMAIN-SUFFIX,intg.snapchat.com
 DOMAIN-SUFFIX,intuitvisitorid.api.intuit.com
 DOMAIN-SUFFIX,ip.cliphunter.com
@@ -4696,6 +4700,7 @@ DOMAIN-SUFFIX,jumbo.zomato.com
 DOMAIN-SUFFIX,k.qwant.com
 DOMAIN-SUFFIX,kape.dataplane.rudderstack.com
 DOMAIN-SUFFIX,kinesis.us-east-1.analytics.edmentum.com
+DOMAIN-SUFFIX,kqefj.clearstem.com
 DOMAIN-SUFFIX,librato-collector.genius.com
 DOMAIN-SUFFIX,link.kogan.com
 DOMAIN-SUFFIX,lists.ccmbg.com
@@ -41401,6 +41406,7 @@ DOMAIN-SUFFIX,sstm.sport2000.fr
 DOMAIN-SUFFIX,stats*.credit-cooperatif.coop
 DOMAIN-SUFFIX,stats.sexemodel.com
 DOMAIN-SUFFIX,stt.wawacity.onl
+DOMAIN-SUFFIX,stw.extrem-down.zone
 DOMAIN-SUFFIX,t.blablacar.com
 DOMAIN-SUFFIX,tc2.hometogo.net
 DOMAIN-SUFFIX,tracker.mspy.com

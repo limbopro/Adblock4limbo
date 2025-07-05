@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 26 Jun 2025 13:06:55 GMT
-# entries:        3418
+# entries:        3416
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -653,7 +653,6 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com, reject
 DOMAIN-SUFFIX,adsbydelema.com, reject
 DOMAIN-SUFFIX,adscale.de, reject
 DOMAIN-SUFFIX,adscholar.com, reject
-DOMAIN-SUFFIX,adscience.nl, reject
 DOMAIN-SUFFIX,adsco.re, reject
 DOMAIN-SUFFIX,adscpm.com, reject
 DOMAIN-SUFFIX,adsdaq.com, reject
@@ -1638,7 +1637,6 @@ DOMAIN-SUFFIX,feedmob.com, reject
 DOMAIN-SUFFIX,fimserve.com, reject
 DOMAIN-SUFFIX,findcommerce.com, reject
 DOMAIN-SUFFIX,findyourcasino.com, reject
-DOMAIN-SUFFIX,fingahvf.top, reject
 DOMAIN-SUFFIX,fireads.online, reject
 DOMAIN-SUFFIX,fireads.org, reject
 DOMAIN-SUFFIX,fireworkadservices.com, reject
@@ -2233,6 +2231,7 @@ DOMAIN-SUFFIX,mtrcs.samba.tv, reject
 DOMAIN-SUFFIX,mtree.com, reject
 DOMAIN-SUFFIX,munchkin.marketo.net, reject
 DOMAIN-SUFFIX,mundanenail.com, reject
+DOMAIN-SUFFIX,mundanepollution.com, reject
 DOMAIN-SUFFIX,musiccounter.ru, reject
 DOMAIN-SUFFIX,muteknife.com, reject
 DOMAIN-SUFFIX,muwmedia.com, reject
@@ -3100,7 +3099,6 @@ DOMAIN-SUFFIX,touchclarity.com, reject
 DOMAIN-SUFFIX,tour.brazzers.com, reject
 DOMAIN-SUFFIX,tr.api.fanbyte.com, reject
 DOMAIN-SUFFIX,track-eu.customer.io, reject
-DOMAIN-SUFFIX,track-on.pl, reject
 DOMAIN-SUFFIX,track.adform.net, reject
 DOMAIN-SUFFIX,track.anchorfree.com, reject
 DOMAIN-SUFFIX,track.canva.com, reject

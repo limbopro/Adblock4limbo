@@ -473,7 +473,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["ads.google.com"],["adsbygoogle"],["clarity.ms"]];
-const hostnamesMap = new Map([["mudah.my",0],["cloud.majalahhewan.com",1],["info.gambar.pro",1],["info.mapsaddress.com",1],["info.vebma.com",1],["thejakartapost.com",1],["tutorialsaya.com",1],["netq.me",2]]);
+const hostnamesMap = new Map([["mudah.my",0],["cloud.majalahhewan.com",1],["info.mapsaddress.com",1],["info.vebma.com",1],["thejakartapost.com",1],["tutorialsaya.com",1],["netq.me",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

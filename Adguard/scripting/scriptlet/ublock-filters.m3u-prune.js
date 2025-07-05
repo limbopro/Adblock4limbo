@@ -381,7 +381,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["lura.live/prod/","/prog.m3u8"],["/^https?:\\/\\/redirector\\.googlevideo\\.com.*/","/.*m3u8/"],["/,ad\\n.+?(?=#UPLYNK-SEGMENT)/gm","/uplynk\\.com\\/.*?\\.m3u8/"],["/#EXT-X-DISCONTINUITY.{1,100}#EXT-X-DISCONTINUITY/gm","mixed.m3u8"],["tvessaiprod.nbcuni.com","/theplatform\\.com\\/.*?\\.m3u8/"],["/^\\w{11}[1-9]\\d+\\.ts/",".m3u8"],["dclk_video_ads",".m3u8"]];
-const hostnamesMap = new Map([["vix.com",0],["10play.com.au",1],["fox.com",2],["foxsports.com",2],["mephimtv.cc",3],["player.theplatform.com",4],["phim1080.in",5],["sbs.com.au",6]]);
+const hostnamesMap = new Map([["vix.com",0],["10.com.au",1],["10play.com.au",1],["fox.com",2],["foxsports.com",2],["mephimtv.cc",3],["player.theplatform.com",4],["phim1080.in",5],["sbs.com.au",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

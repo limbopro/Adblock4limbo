@@ -516,8 +516,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adBlocks.[-].id","","propsToMatch","/schedules/ads"]];
-const hostnamesMap = new Map([["magio.tv",0]]);
+const argsList = [["ad_blocks.[-].id_program","","propsToMatch","/api/advertisement/getAllStreamAdBlocks/"],["adBlocks.[-].id","","propsToMatch","/schedules/ads"]];
+const hostnamesMap = new Map([["chip.4net.tv",0],["doubrava.4net.tv",0],["gemnet.4net.tvhtn.4net.tv",0],["itv.satt.cz",0],["jon.4net.tv",0],["libli.tv",0],["live-new.4net.tv",0],["live-rete.4net.tv",0],["live.4net.tv",0],["live.artos.4net.tv",0],["live.chiptv.cz",0],["live.kabelko.sk",0],["live.martico.sk",0],["live.metrotv.sk",0],["live.rapidnet.tv",0],["live.rete.cz",0],["live.swan.4net.tv",0],["martico.4net.tv",0],["muj.internethned.cz",0],["online.pecka.tv",0],["pamico.4net.tv",0],["pegas.4net.tv",0],["prestonet.4net.tv",0],["prime.4net.tv",0],["profinet.4net.tv",0],["rapidnet.4net.tv",0],["sleduj.interaktivni.tv",0],["sprintel.tv",0],["tv.e-max.sk",0],["tv.giganet.sk",0],["tv.htn.cz",0],["tv.itcity.sk",0],["tv.maxicom.cz",0],["tv.nejpripojeni.cz",0],["tv.nuo.sk",0],["tv.rainside.sk",0],["tv.sauron.cz",0],["tv.selfnet.cz",0],["tv.tes-media.sk",0],["tv.tv2go.eu",0],["tvadmin.pamico-czech.cz",0],["winet.4net.tv",0],["zona.telly.cz",0],["magio.tv",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

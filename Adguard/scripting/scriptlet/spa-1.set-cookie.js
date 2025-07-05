@@ -361,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["modalVisited","true"],["adsCompleted","1"],["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
-const hostnamesMap = new Map([["redecanaistv.*",[0,1]],["redecanais.*",[0,1]],["techdiniz.com",2],["trueliketop.org",2],["sabornutritivo.com",3],["guiacripto.online",3],["guiasaude.info",4],["1i1.in",5],["estacio.br",6],["receitasoncaseiras.online",7],["nutricaohoje.website",7],["portecnologia.com",8],["papayaseries.net",9],["pelismart.tv",9],["pelis1.com",9],["homecine.cc",9],["seriesmetro.net",9],["flixseries.org",9],["homecine.tv",9],["homecine.to",9],["metroseries.net",9],["smartpelis.tv",9],["seriesbanana.com",9]]);
+const argsList = [["unlock","1"],["modalVisited","true"],["adsCompleted","1"],["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
+const hostnamesMap = new Map([["fgtd.online",0],["redecanaistv.*",[1,2]],["redecanais.*",[1,2]],["techdiniz.com",3],["trueliketop.org",3],["sabornutritivo.com",4],["guiacripto.online",4],["guiasaude.info",5],["1i1.in",6],["estacio.br",7],["receitasoncaseiras.online",8],["nutricaohoje.website",8],["portecnologia.com",9],["papayaseries.net",10],["pelismart.tv",10],["pelis1.com",10],["homecine.cc",10],["seriesmetro.net",10],["flixseries.org",10],["homecine.tv",10],["homecine.to",10],["metroseries.net",10],["smartpelis.tv",10],["seriesbanana.com",10]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

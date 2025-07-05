@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Thu, 26 Jun 2025 13:06:55 GMT
-# entries:        3418
+# entries:        3416
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -653,7 +653,6 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com
 DOMAIN-SUFFIX,adsbydelema.com
 DOMAIN-SUFFIX,adscale.de
 DOMAIN-SUFFIX,adscholar.com
-DOMAIN-SUFFIX,adscience.nl
 DOMAIN-SUFFIX,adsco.re
 DOMAIN-SUFFIX,adscpm.com
 DOMAIN-SUFFIX,adsdaq.com
@@ -1638,7 +1637,6 @@ DOMAIN-SUFFIX,feedmob.com
 DOMAIN-SUFFIX,fimserve.com
 DOMAIN-SUFFIX,findcommerce.com
 DOMAIN-SUFFIX,findyourcasino.com
-DOMAIN-SUFFIX,fingahvf.top
 DOMAIN-SUFFIX,fireads.online
 DOMAIN-SUFFIX,fireads.org
 DOMAIN-SUFFIX,fireworkadservices.com
@@ -2233,6 +2231,7 @@ DOMAIN-SUFFIX,mtrcs.samba.tv
 DOMAIN-SUFFIX,mtree.com
 DOMAIN-SUFFIX,munchkin.marketo.net
 DOMAIN-SUFFIX,mundanenail.com
+DOMAIN-SUFFIX,mundanepollution.com
 DOMAIN-SUFFIX,musiccounter.ru
 DOMAIN-SUFFIX,muteknife.com
 DOMAIN-SUFFIX,muwmedia.com
@@ -3100,7 +3099,6 @@ DOMAIN-SUFFIX,touchclarity.com
 DOMAIN-SUFFIX,tour.brazzers.com
 DOMAIN-SUFFIX,tr.api.fanbyte.com
 DOMAIN-SUFFIX,track-eu.customer.io
-DOMAIN-SUFFIX,track-on.pl
 DOMAIN-SUFFIX,track.adform.net
 DOMAIN-SUFFIX,track.anchorfree.com
 DOMAIN-SUFFIX,track.canva.com

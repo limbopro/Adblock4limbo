@@ -1364,7 +1364,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             setConstant('ConFig.config.ads', '{}'); // huaren影视PC版播放页视频广告加速
             //videoAds_accelerateSkip(0.01)
             //evaldataPrune(); // 影视移动版播放页视频广告加速
-            css_adsRemove(imax.css.huaren_live, 500, 'roumanx');
+            css_adsRemove(imax.css.huaren_live, 200, 'roumanx');
             break;
 
         case 'huaren.live':

@@ -50,9 +50,11 @@ var body_replace_str = '<link rel="stylesheet" href="https://limbopro.com/CSS/Ad
 let url = $request.url;
 var url_target_regex = /(missav|netflav|supjav|njav|javday)/gi;
 var javbus_target_regex = /javbus/gi;
+var huarenlive_target_regex = /huaren\.live\/player\/ec\.php/gi;
 
 var url_target = url.match(url_target_regex);
 var javbus_target = url.match(javbus_target_regex);
+var huarenlive_target = url.match(huarenlive_target_regex);
 
 
 if ($response.body !== null || $response.body !== undefined) {  // 判断响应体是否存在
@@ -64,7 +66,9 @@ if ($response.body !== null || $response.body !== undefined) {  // 判断响应�
         var body = $response.body.replaceAll(regex, replace_str).replaceAll(window_open_reg, window_open_str);
     } else if (javbus_target !== null) {
         var body = $response.body.replaceAll(body_regex, body_replace_str);
-    }
+    } else if (huarenlive_target !== null) {
+        var body = $response.body.replaceAll("\"time\":\"20\"", "\"time\":\"0\""); // 视频播放页广告跳过
+    } 
     else {
         var body = $response.body.replaceAll(regex, replace_str)
         // 定义响应头

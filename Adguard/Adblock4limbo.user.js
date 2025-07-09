@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.06.23
+// @version      0.2025.07.08
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -55,7 +55,7 @@
 /// PC/Mac 油猴用户...
 /// 进入 Tampermonkey 管理面板 - 找到 **Adblock4limbo.[github]**
 /// 找到 daohang_build()  大概在 210 多行
-/// 然后将 daohangMode/adultMode 的值修改成 false 即可 
+/// 然后将 daohangMode/adultMode 的值修改成 false 即可
 /// 或直接注释掉 daohang_build() 即可（注释后将无法快捷唤起导航详情页，导航功能失效）
 
 /// ! 隐藏页面右下角导航🧭按钮🔘不影响PC/Mac端快捷键使用，移动端仍可1秒内连续点击页面空白处4次及以上唤出【导航页面】；
@@ -89,6 +89,7 @@
 // @match        https://cn.pornhub.com/*
 // @match        https://www.pornhub.com/*
 // @match        https://t66y.com/*
+// @match        https://www.dmm.co.jp/*
 // @match        https://missav.com/*
 // @match        https://missav.ai/*
 // @match        https://missav.ws/*
@@ -193,6 +194,8 @@
 // @match        https://www.hltv.org/*
 // @match        https://m.diyibanzhu.me/*
 // @match        https://www.javlibrary.com/*
+// @match        https://play.huaren.live/*
+// @match        https://huaren.live/*
 // @match        https://rouman5.com/*
 // @match        https://rou.video/*
 // @exclude      https://x.com/*
@@ -228,7 +231,7 @@ console.log('是否（默认）开启成人🔞网站保护模式：' + getCooki
 
 // 是否开启导航🧭按钮🔘 // 完全开启或禁用导航功能
 // 如【不需要开启导航🧭按钮🔘】可直接将 daohang_build() 进行注释
-// //daohang_build() 就像这样 
+// //daohang_build() 就像这样
 // 注释后将【无法快捷唤起导航详情页】且导航功能无法使用
 daohang_build();
 
@@ -335,9 +338,10 @@ var imax = {
         wnacg: "div > img[src*='gif'],div.sh,div > a[target='_blank'] > img {display:none !important}", // 绅士漫画
         manhuapicanone: "li[class*=lindex],.row.alert,.my-insert-flag,[role=alert],img[src*=gif] {display:none !important; pointer-events: none !important;} ", // 嗶咔picacg免費網頁版
         manhuapicaheight: "/*li[class*=lindex],*/.row.alert,.my-insert-flag,[role=alert],img[src*=gif] {height:0px !important} ", // 嗶咔picacg免費網頁版
+        dmm: "",
         missav: "a[href^='https://theporndude.com'],a[href*='mycomic'],a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
         bigirl: 'div#container + div, h4.adblock_title,div.adblock_subtitle,[class^=\'adblock\'],div[class^=\'ad_\'], .toppage_av {display:none !important; pointer-events: none !important;}', // https://bi-girl.net/
-        opgg:".AdSense,  div[data-ad], tr.ad, #banner-container, section[class*='md:hidden'] {display:none !important; pointer-events: none !important;}",
+        opgg: ".AdSense,  div[data-ad], tr.ad, #banner-container, section[class*='md:hidden'] {display:none !important; pointer-events: none !important;}",
         btc760: ".ad_img,.ad_img,#ad_headerbanner {display:none !important; pointer-events: none !important;}", // btc760
         porna91: "a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important; pointer-events: none !important;}", // 91porna
         porn91: ".copysuccess {background:green !important;color:white !important;} br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
@@ -362,7 +366,7 @@ var imax = {
         google: "div.XDZKBc,.jnyxRd.TpRPV {display:none !important}",
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: ".remove-ads-link, .remove-ads, .adsbyexoclick, #ad-header-mobile, .video-ad, #video-right, #ad-footer {display:none !important; pointer-events: none !important;}", // xvideos
-        javbus: ".ad-item,.ad-box {display:none !important}",
+        javbus: "div.row iframe,.ad-item,.ad-box {display:none !important}",
         javland: "img[src*='.gif'], a[href^=\"https://go.rmhfrtnd.com/\"] {display:none !important; pointer-events: none !important;}",  // jav.land
         _4hu: ".couplet-left, body[ontouchstart] > div[id^='content_'][style='display: block;'], div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
@@ -376,6 +380,7 @@ var imax = {
         ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
         njav: "div[style=\"position: absolute; inset: 0px; z-index: 999; display: block;\"],.ad-floating,[src*='.gif'],iframe[width='300px'] {display:none!important}",
         jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
+        huaren_live: ".ad-txt, .pause-ad, .ad-link:not(.adsbox), .action-ad, img[src*='ads.jpg'] {display:none !important; pointer-events: none !important;}",
         rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
         rouvideo: "div[style*='pointer-events: none'],.flex.items-center.justify-center.my-2,ins > iframe,a.vast-blocker,.p-2.rounded.text-center,.text-xl.mb-1,[class*='hover:underline'],[style*='overflow: hidden'],[data-advadstrackid] {display:none !important; pointer-events: none !important;}",
         diyibanzhu: "img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
@@ -392,6 +397,7 @@ function values() {
     var adsDomain = [
         "pornhub",
         "t66y",
+        'www.dmm.co.jp',
         "missav",
         "bi-girl",
         "op.gg",
@@ -457,6 +463,8 @@ function values() {
         'olevod',
         'njav',
         'ntdm9',
+        'play.huaren.live',
+        'huaren.live',
         'rouman',
         'rou.video',
         'novel543',
@@ -1064,7 +1072,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
 
                     // 在番号详情页追加在线预览链接
-                    function tmd(parentsSelector, code, textContent) {
+                    function tmd_land(parentsSelector, code, textContent) {
 
                         function otherSearch() {
                             // 试试其他搜索：
@@ -1076,7 +1084,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
 
                             let p2 = document.createElement('p')
-                            p2.style = 'padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                            p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
                             p2.id = 'p2'
 
 
@@ -1112,7 +1120,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
 
                     setTimeout(() => {
-                        tmd('.col-md-6.col-sm-12.col-xs-12', code, '在线预览: ');
+                        tmd_land('.col-md-6.col-sm-12.col-xs-12', code, '在线预览: ');
                     }, 100)
                 }
             }
@@ -1351,6 +1359,22 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }, 500)
             break;
 
+        case 'play.huaren.live':
+            //createAbortCurrentScript(window, 'Math.random', "parseInt(localStorage")
+            setConstant('ConFig.config.ads', '{}'); // huaren影视PC版播放页视频广告加速
+            //videoAds_accelerateSkip(0.01)
+            //evaldataPrune(); // 影视移动版播放页视频广告加速
+            css_adsRemove(imax.css.huaren_live, 500, 'roumanx');
+            break;
+
+        case 'huaren.live':
+            css_adsRemove(imax.css.huaren_live, 500, 'roumanx');
+            //videoAds_accelerateSkip(0.1); // 视频广告加速
+            //setConstant(); // 视频广告加速
+            js_adsRemove(uBlockOrigin.abortcurrentscript);
+            //noWindowOpenIf();
+            break;
+
         case 'rouman':
             css_adsRemove(imax.css.rouman, 100, 'roumanx');
 
@@ -1404,12 +1428,95 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             js_adsRemove(uBlockOrigin.noevalif);
             break;
 
-            case 'op.gg': // op.gg
+        case 'op.gg': // op.gg
             css_adsRemove(imax.css.opgg, 500, 'bigirl')
             js_adsRemove(uBlockOrigin.noevalif);
             break;
 
-            
+        case 'www.dmm.co.jp':
+
+            // 在番号详情页追加在线预览链接
+            function tmd_dmm(parentsSelector, code, textContent) {
+                function otherSearch() {
+                    // 试试其他搜索：
+                    let parentElement = document.querySelectorAll(parentsSelector)[0]
+                    let p1 = document.createElement('p')
+                    p1.id = 'p1'
+                    p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+
+                    let p2 = document.createElement('p')
+                    p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                    p2.id = 'p2'
+
+
+                    p1.appendChild(p2)
+                    parentElement.insertBefore(p1, parentElement.childNodes[2])
+
+                    let span = document.createElement('span')
+                    span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                    span.textContent = textContent
+                    p2.appendChild(span)
+
+                    function aAdd2Parent(siteName, url, codeSlect) {
+                        let a = document.createElement('a')
+                        let lable = document.createElement('label')
+                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                        a.href = url + codeSlect
+                        a.textContent = siteName
+                        a.target = '_blank'
+                        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                        lable.appendChild(a)
+                        p2.appendChild(lable)
+                    }
+
+                    aAdd2Parent('MissAV[720P]', 'https://missav.ws/search', '/' + code)
+                    aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
+                    aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
+                    aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
+                    aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
+                    aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
+                    aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
+
+                    console.log('已生成在线预览链接🔗')
+                }
+                otherSearch()
+
+            }
+
+            // dmm.co.jp
+
+            function isMobile() {
+                // 判断是否为移动设备
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+
+            if (isMobile()) {
+                // 如果是手机端，执行手机端相关函数
+                tmd_dmm('div.box-overview', code_dmm(), '在其他站点播放：');
+            } else {
+                // 如果是PC端，执行PC端相关函数
+                tmd_dmm('div.box-rank', code_dmm(), '在其他站点播放：');
+            }
+
+            isMobile()
+
+            function code_dmm() {
+                var url = window.location.href;
+                const match = url.match(/cid=([^/&?]+)/);
+                let cid = match ? match[1] : null;
+                if (!cid) return null;
+                // 如果首字母是数字，则删除
+                if (/^\d/.test(cid)) {
+                    cid = cid.slice(1);
+                }
+                const code_dmm = cid.replace(/0{2}/, '-');
+                console.log(code_dmm);
+                console.log(cid);
+                return code_dmm;
+            }
+
+            break;
+
 
         case 'missav':
 
@@ -1516,9 +1623,6 @@ adsDomain_switch(values()) // 动手吧
 function uBlockOrigin_add() {
     js_adsRemove(uBlockOrigin.chn0abortcurrentscript);
     js_adsRemove(uBlockOrigin.chn0setconstant);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
     js_adsRemove(uBlockOrigin.abortcurrentscript);
     js_adsRemove(uBlockOrigin.abortonpropertyread);
     js_adsRemove(uBlockOrigin.abortonpropertywrite);
@@ -1728,10 +1832,10 @@ function fileDownload(url, download = true) {
             tempLink.style.display = 'none';
             tempLink.href = blobUrl;
             if (download) {
-                //下载       
+                //下载
                 tempLink.setAttribute('download', filename);
             } else {
-                //预览       
+                //预览
                 tempLink.setAttribute('target', '_blank');
             }
 
@@ -2374,6 +2478,330 @@ function window_open_defuser() {
         }
     });
 };
+
+
+// abort-current-script.js 打断内连函数
+function createAbortCurrentScript(target, needle, context) {
+    return function () {
+        if (target === '' || target === '{{1}}') { return; }
+        const reRegexEscape = /[.*+?^${}()|[\]\\]/g;
+        const reNeedle = (() => {
+            if (needle === '' || needle === '{{2}}') { return /^/; }
+            if (/^\/.+\/$/.test(needle)) {
+                return new RegExp(needle.slice(1, -1));
+            }
+            return new RegExp(needle.replace(reRegexEscape, '\\$&'));
+        })();
+        const reContext = (() => {
+            if (context === '' || context === '{{3}}') { return /^$/; }
+            if (/^\/.+\/$/.test(context)) {
+                return new RegExp(context.slice(1, -1));
+            }
+            return new RegExp(context.replace(reRegexEscape, '\\$&'));
+        })();
+        const thisScript = document.currentScript;
+        const chain = target.split('.');
+        let owner = window;
+        let prop;
+        for (; ;) {
+            prop = chain.shift();
+            if (chain.length === 0) { break; }
+            owner = owner[prop];
+            if (owner instanceof Object === false) { return; }
+        }
+        let value;
+        let desc = Object.getOwnPropertyDescriptor(owner, prop);
+        if (
+            desc instanceof Object === false ||
+            desc.get instanceof Function === false
+        ) {
+            value = owner[prop];
+            desc = undefined;
+        }
+        const magic = String.fromCharCode(Date.now() % 26 + 97) +
+            Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+        const scriptTexts = new WeakMap();
+        const getScriptText = elem => {
+            let text = elem.textContent;
+            if (text.trim() !== '') { return text; }
+            if (scriptTexts.has(elem)) { return scriptTexts.get(elem); }
+            const [, mime, content] =
+                /^data:([^,]*),(.+)$/.exec(elem.src.trim()) ||
+                ['', '', ''];
+            try {
+                switch (true) {
+                    case mime.endsWith(';base64'):
+                        text = self.atob(content);
+                        break;
+                    default:
+                        text = self.decodeURIComponent(content);
+                        break;
+                }
+            } catch (ex) {
+            }
+            scriptTexts.set(elem, text);
+            return text;
+        };
+        const validate = () => {
+            const e = document.currentScript;
+            if (e instanceof HTMLScriptElement === false) { return; }
+            if (reContext.test(e.src) === false) { return; }
+            if (e === thisScript) { return; }
+            if (reNeedle.test(getScriptText(e)) === false) { return; }
+            throw new ReferenceError(magic);
+        };
+        Object.defineProperty(owner, prop, {
+            get: function () {
+                validate();
+                return desc instanceof Object
+                    ? desc.get.call(owner)
+                    : value;
+            },
+            set: function (a) {
+                validate();
+                if (desc instanceof Object) {
+                    desc.set.call(owner, a);
+                } else {
+                    value = a;
+                }
+            }
+        });
+        const oe = window.onerror;
+        window.onerror = function (msg) {
+            if (typeof msg === 'string' && msg.includes(magic)) {
+                return true;
+            }
+            if (oe instanceof Function) {
+                return oe.apply(this, arguments);
+            }
+        }.bind();
+    };
+}
+
+// 用法示例：
+// createAbortCurrentScript('window.foo', 'someKeyword', '/inline/')();
+
+/* 广告视频加速 */
+/**
+ * 高阶函数：设置链式属性为常量，并进行属性劫持
+ * @param {string} chain - 目标属性链，如 'navigator.webdriver'
+ * @param {*} value - 需要设置的值，可以为常见字符串或直接为目标类型
+ */
+function setconstantV2(chain, value) {
+    let cValue = value;
+    const thisScript = document.currentScript;
+    if (cValue === 'undefined') {
+        cValue = undefined;
+    } else if (cValue === 'false') {
+        cValue = false;
+    } else if (cValue === 'true') {
+        cValue = true;
+    } else if (cValue === 'null') {
+        cValue = null;
+    } else if (cValue === "''") {
+        cValue = '';
+    } else if (cValue === '[]') {
+        cValue = [];
+    } else if (cValue === '{}') {
+        cValue = {};
+    } else if (cValue === 'noopFunc') {
+        cValue = function () { };
+    } else if (cValue === 'trueFunc') {
+        cValue = function () { return true; };
+    } else if (cValue === 'falseFunc') {
+        cValue = function () { return false; };
+    } else if (typeof cValue === 'string' && /^\d+$/.test(cValue)) {
+        cValue = parseFloat(cValue);
+        if (isNaN(cValue)) { return; }
+        if (Math.abs(cValue) > 0x7FFF) { return; }
+    }
+    // 其它类型直接通过
+
+    let aborted = false;
+    const mustAbort = function (v) {
+        if (aborted) { return true; }
+        aborted =
+            (v !== undefined && v !== null) &&
+            (cValue !== undefined && cValue !== null) &&
+            (typeof v !== typeof cValue);
+        return aborted;
+    };
+
+    const trapProp = function (owner, prop, configurable, handler) {
+        if (handler.init(owner[prop]) === false) { return; }
+        const odesc = Object.getOwnPropertyDescriptor(owner, prop);
+        let prevGetter, prevSetter;
+        if (odesc instanceof Object) {
+            owner[prop] = cValue;
+            if (odesc.get instanceof Function) {
+                prevGetter = odesc.get;
+            }
+            if (odesc.set instanceof Function) {
+                prevSetter = odesc.set;
+            }
+        }
+        Object.defineProperty(owner, prop, {
+            configurable,
+            get() {
+                if (prevGetter !== undefined) {
+                    prevGetter();
+                }
+                return handler.getter();
+            },
+            set(a) {
+                if (prevSetter !== undefined) {
+                    prevSetter(a);
+                }
+                handler.setter(a);
+            }
+        });
+    };
+
+    const trapChain = function (owner, chain) {
+        const pos = chain.indexOf('.');
+        if (pos === -1) {
+            trapProp(owner, chain, false, {
+                v: undefined,
+                init: function (v) {
+                    if (mustAbort(v)) { return false; }
+                    this.v = v;
+                    return true;
+                },
+                getter: function () {
+                    return document.currentScript === thisScript
+                        ? this.v
+                        : cValue;
+                },
+                setter: function (a) {
+                    if (mustAbort(a) === false) { return; }
+                    cValue = a;
+                }
+            });
+            return;
+        }
+        const prop = chain.slice(0, pos);
+        const v = owner[prop];
+        chain = chain.slice(pos + 1);
+        if (v instanceof Object || (typeof v === 'object' && v !== null)) {
+            trapChain(v, chain);
+            return;
+        }
+        trapProp(owner, prop, true, {
+            v: undefined,
+            init: function (v) {
+                this.v = v;
+                return true;
+            },
+            getter: function () {
+                return this.v;
+            },
+            setter: function (a) {
+                this.v = a;
+                if (a instanceof Object) {
+                    trapChain(a, chain);
+                }
+            }
+        });
+    };
+
+    trapChain(window, chain);
+}
+
+
+/*
+
+// 让所有 setInterval 的延时加速 20 倍（即 0.05 倍原时长）
+setIntervalBooster();
+
+// 让所有 setTimeout 的延时加速 5 倍
+setTimeoutBooster('.?', '*', 0.2);
+
+// 只加速包含 “ad” 关键字的定时器回调
+setIntervalBooster('ad', '*', 0.1);
+
+*/
+
+/**
+ * setTimeoutBooster - 高阶函数，加速/减速 setTimeout
+ * @param {string|RegExp} needle - 代码匹配用正则或字符串（可选，默认匹配全部）
+ * @param {number|string} delayMatcher - 延时匹配（可选，默认 1000，* 代表任意）
+ * @param {number} boostRatio - 倍速，0.5=快2倍，2=慢2倍（可选，默认 0.05=快20倍）
+ */
+function setTimeoutBooster(needle = '.?', delayMatcher = 1000, boostRatio = 0.05) {
+    let needleArg = needle;
+    let delayArg = delayMatcher;
+    let boostArg = boostRatio;
+    if (needleArg === '') {
+        needleArg = '.?';
+    } else if (needleArg instanceof RegExp) {
+        needleArg = needleArg.source;
+    } else if (needleArg.charAt && needleArg.charAt(0) === '/' && needleArg.slice(-1) === '/')
+        needleArg = needleArg.slice(1, -1);
+    else
+        needleArg = needleArg.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const reNeedle = new RegExp(needleArg);
+    let delay = delayArg !== '*' ? parseInt(delayArg, 10) : -1;
+    if (isNaN(delay) || isFinite(delay) === false) delay = 1000;
+    let boost = parseFloat(boostArg);
+    boost = isNaN(boost) === false && isFinite(boost)
+        ? Math.min(Math.max(boost, 0.02), 50)
+        : 0.05;
+    self.setTimeout = new Proxy(self.setTimeout, {
+        apply: function (target, thisArg, args) {
+            const [a, b] = args;
+            if (
+                (delay === -1 || b === delay) &&
+                reNeedle.test(a.toString())
+            ) {
+                args[1] = b * boost;
+            }
+            return target.apply(thisArg, args);
+        }
+    });
+}
+
+
+
+
+
+/**
+ * setIntervalBooster - 高阶函数，加速/减速 setInterval
+ * @param {string|RegExp} needle - 代码匹配用正则或字符串（可选，默认匹配全部）
+ * @param {number|string} delayMatcher - 延时匹配（可选，默认 1000，* 代表任意）
+ * @param {number} boostRatio - 倍速，0.5=快2倍，2=慢2倍（可选，默认 0.05=快20倍）
+ */
+function setIntervalBooster(needle = '.?', delayMatcher = 1000, boostRatio = 0.05) {
+    let needleArg = needle;
+    let delayArg = delayMatcher;
+    let boostArg = boostRatio;
+    if (needleArg === '') {
+        needleArg = '.?';
+    } else if (needleArg instanceof RegExp) {
+        needleArg = needleArg.source;
+    } else if (needleArg.charAt && needleArg.charAt(0) === '/' && needleArg.slice(-1) === '/')
+        needleArg = needleArg.slice(1, -1);
+    else
+        needleArg = needleArg.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const reNeedle = new RegExp(needleArg);
+    let delay = delayArg !== '*' ? parseInt(delayArg, 10) : -1;
+    if (isNaN(delay) || isFinite(delay) === false) delay = 1000;
+    let boost = parseFloat(boostArg);
+    boost = isNaN(boost) === false && isFinite(boost)
+        ? Math.min(Math.max(boost, 0.02), 50)
+        : 0.05;
+    self.setInterval = new Proxy(self.setInterval, {
+        apply: function (target, thisArg, args) {
+            const [a, b] = args;
+            if (
+                (delay === -1 || b === delay) &&
+                reNeedle.test(a.toString())
+            ) {
+                args[1] = b * boost;
+            }
+            return target.apply(thisArg, args);
+        }
+    });
+}
 
 /* 广告视频加速 */
 function setConstant(

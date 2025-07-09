@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.02.27
+// @version      0.2025.07.08
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -2105,7 +2105,7 @@ function echo_check_switch(x) {
 const js_common_fx = {
     crisp: 'https://limbopro.com/Adguard/crisp.js' // crisp 聊天系统 chat
 }
-*/    
+*/
 
 // 动态创建并引用外部资源 外部样式表 外部脚本
 function thrd_party_file(tagname, url, where, id) {
@@ -2365,6 +2365,8 @@ function closeP() {
 // 在番号详情页追加在线预览链接
 function tmd(parentsSelector, code, textContent) {
 
+    var dmm = code.replace(/-/g, '00')
+
     function otherSearch() {
         // 试试其他搜索：
 
@@ -2405,6 +2407,8 @@ function tmd(parentsSelector, code, textContent) {
         aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
         aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
         aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
+        aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
+
         console.log('已生成在线预览链接🔗')
     }
     otherSearch()

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202507050514
+## ! Version: 202507091409
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Jul 2025 05:14 UTC
+## ! Last modified: 09 Jul 2025 14:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -362,6 +362,7 @@ DOMAIN-SUFFIX,seoab.io
 DOMAIN-SUFFIX,sf-insights.io
 DOMAIN-SUFFIX,sgmntfy.com
 DOMAIN-SUFFIX,sgstats.com
+DOMAIN-SUFFIX,shdid.me
 DOMAIN-SUFFIX,shgcdn3.com
 DOMAIN-SUFFIX,site24x7rum.eu
 DOMAIN-SUFFIX,sitecounter.site
@@ -3051,6 +3052,7 @@ DOMAIN-SUFFIX,nr.static.mmcdn.com
 DOMAIN-SUFFIX,ns.rvmkitt.com
 DOMAIN-SUFFIX,nwr.static.mmcdn.com
 DOMAIN-SUFFIX,o9tt6h08li.execute-api.eu-west-1.amazonaws.com
+DOMAIN-SUFFIX,obs.jollyoutdoorjogger.com
 DOMAIN-SUFFIX,obs.system1onesource.com
 DOMAIN-SUFFIX,observe-nexus.pointandplace.com
 DOMAIN-SUFFIX,observer.ip-label.net
@@ -3082,6 +3084,7 @@ DOMAIN-SUFFIX,perso.aws.arc.pub
 DOMAIN-SUFFIX,pets.channeladvisor.com
 DOMAIN-SUFFIX,pi.ispot.tv
 DOMAIN-SUFFIX,ping.dozuki.com
+DOMAIN-SUFFIX,ping.fastsimon.com
 DOMAIN-SUFFIX,pings.conviva.com
 DOMAIN-SUFFIX,pings.vidpulse.com
 DOMAIN-SUFFIX,pipe-collect.ebu.io
@@ -4339,6 +4342,7 @@ DOMAIN-SUFFIX,collector.schibsted.io
 DOMAIN-SUFFIX,evt-api.ntm.eu
 DOMAIN-SUFFIX,impression-tracker-service-5eimuebuhq-lz.a.run.app
 DOMAIN-SUFFIX,pixel.smartmedia.tj
+DOMAIN-SUFFIX,roibest-report-sdk.qiliangjia.com
 DOMAIN-SUFFIX,sal.isanook.com
 DOMAIN-SUFFIX,stat.matichon.co.th
 DOMAIN-SUFFIX,webpushstat.api.engagelab.cc
@@ -4921,6 +4925,7 @@ DOMAIN-SUFFIX,stats.suenicholls.com
 DOMAIN-SUFFIX,stats.synedat.io
 DOMAIN-SUFFIX,stats.trimbles.ie
 DOMAIN-SUFFIX,stats.vidbinge.com
+DOMAIN-SUFFIX,stats.videasy.net
 DOMAIN-SUFFIX,stats.vk-portal.net
 DOMAIN-SUFFIX,stats.wordpress.com
 DOMAIN-SUFFIX,stats.wwitv.com
@@ -41572,8 +41577,10 @@ DOMAIN-SUFFIX,e428.tio.nl
 DOMAIN-SUFFIX,events.reclamefolder.nl
 DOMAIN-SUFFIX,inzicht.cz.nl
 DOMAIN-SUFFIX,log.rabobank.nl
+DOMAIN-SUFFIX,log.willie.nl
 DOMAIN-SUFFIX,metrics.nu.nl
 DOMAIN-SUFFIX,metrics.pazzox.be
+DOMAIN-SUFFIX,pipeline.nachtkastje.nl
 DOMAIN-SUFFIX,r.kleertjes.com
 DOMAIN-SUFFIX,raf.postnl.be
 DOMAIN-SUFFIX,raf.postnl.nl

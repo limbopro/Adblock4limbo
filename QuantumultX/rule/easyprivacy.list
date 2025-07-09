@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202507050514
+## ! Version: 202507091409
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Jul 2025 05:14 UTC
+## ! Last modified: 09 Jul 2025 14:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -362,6 +362,7 @@ DOMAIN-SUFFIX,seoab.io, reject
 DOMAIN-SUFFIX,sf-insights.io, reject
 DOMAIN-SUFFIX,sgmntfy.com, reject
 DOMAIN-SUFFIX,sgstats.com, reject
+DOMAIN-SUFFIX,shdid.me, reject
 DOMAIN-SUFFIX,shgcdn3.com, reject
 DOMAIN-SUFFIX,site24x7rum.eu, reject
 DOMAIN-SUFFIX,sitecounter.site, reject
@@ -3051,6 +3052,7 @@ DOMAIN-SUFFIX,nr.static.mmcdn.com, reject
 DOMAIN-SUFFIX,ns.rvmkitt.com, reject
 DOMAIN-SUFFIX,nwr.static.mmcdn.com, reject
 DOMAIN-SUFFIX,o9tt6h08li.execute-api.eu-west-1.amazonaws.com, reject
+DOMAIN-SUFFIX,obs.jollyoutdoorjogger.com, reject
 DOMAIN-SUFFIX,obs.system1onesource.com, reject
 DOMAIN-SUFFIX,observe-nexus.pointandplace.com, reject
 DOMAIN-SUFFIX,observer.ip-label.net, reject
@@ -3082,6 +3084,7 @@ DOMAIN-SUFFIX,perso.aws.arc.pub, reject
 DOMAIN-SUFFIX,pets.channeladvisor.com, reject
 DOMAIN-SUFFIX,pi.ispot.tv, reject
 DOMAIN-SUFFIX,ping.dozuki.com, reject
+DOMAIN-SUFFIX,ping.fastsimon.com, reject
 DOMAIN-SUFFIX,pings.conviva.com, reject
 DOMAIN-SUFFIX,pings.vidpulse.com, reject
 DOMAIN-SUFFIX,pipe-collect.ebu.io, reject
@@ -4339,6 +4342,7 @@ DOMAIN-SUFFIX,collector.schibsted.io, reject
 DOMAIN-SUFFIX,evt-api.ntm.eu, reject
 DOMAIN-SUFFIX,impression-tracker-service-5eimuebuhq-lz.a.run.app, reject
 DOMAIN-SUFFIX,pixel.smartmedia.tj, reject
+DOMAIN-SUFFIX,roibest-report-sdk.qiliangjia.com, reject
 DOMAIN-SUFFIX,sal.isanook.com, reject
 DOMAIN-SUFFIX,stat.matichon.co.th, reject
 DOMAIN-SUFFIX,webpushstat.api.engagelab.cc, reject
@@ -4921,6 +4925,7 @@ DOMAIN-SUFFIX,stats.suenicholls.com, reject
 DOMAIN-SUFFIX,stats.synedat.io, reject
 DOMAIN-SUFFIX,stats.trimbles.ie, reject
 DOMAIN-SUFFIX,stats.vidbinge.com, reject
+DOMAIN-SUFFIX,stats.videasy.net, reject
 DOMAIN-SUFFIX,stats.vk-portal.net, reject
 DOMAIN-SUFFIX,stats.wordpress.com, reject
 DOMAIN-SUFFIX,stats.wwitv.com, reject
@@ -41572,8 +41577,10 @@ DOMAIN-SUFFIX,e428.tio.nl, reject
 DOMAIN-SUFFIX,events.reclamefolder.nl, reject
 DOMAIN-SUFFIX,inzicht.cz.nl, reject
 DOMAIN-SUFFIX,log.rabobank.nl, reject
+DOMAIN-SUFFIX,log.willie.nl, reject
 DOMAIN-SUFFIX,metrics.nu.nl, reject
 DOMAIN-SUFFIX,metrics.pazzox.be, reject
+DOMAIN-SUFFIX,pipeline.nachtkastje.nl, reject
 DOMAIN-SUFFIX,r.kleertjes.com, reject
 DOMAIN-SUFFIX,raf.postnl.be, reject
 DOMAIN-SUFFIX,raf.postnl.nl, reject

@@ -27,7 +27,7 @@ iOS 屏蔽内容农场：https://limbopro.com/archives/block-contentfarm.html
 群组：https://t.me/Adblock4limbo
 完整项目：https://github.com/limbopro/Adblock4limbo
 There are 7179 content farm domains in total until now.
-Last updated at  9/7月/2025/23:35
+Last updated at 10/7月/2025/23:38
 */
 
 function contentFarm_AdsRemove_Auto(){
@@ -7261,10 +7261,3 @@ var i, x;
 contentFarm_AdsRemove_Auto(); // 首次执行农场内容检测
 var timecount =0;
 var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
-
-
-window.addEventListener('scroll', () => {
-contentFarm_AdsRemove_Auto();
-console.log('滚动条正在滚动');
-console.log('滚动条位置:', window.scrollY); // 获取垂直滚动条的位置
-});

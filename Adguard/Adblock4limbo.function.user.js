@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.07.08
+// @version      0.2025.07.09
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -1244,8 +1244,8 @@ var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0'
 ['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
 ['iyf爱壹帆', 'https://www.iyf.tv/', '_blank', 'movies', 'better'],
 ['欧乐影视', 'https://www.olevod.tv/', '_blank', 'movies', 'special'],
-['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'better'],
-['影视TV', 'https://yingshi.tv/', '_blank', 'movies', 'better'],
+//['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'better'],
+//['影视TV', 'https://yingshi.tv/', '_blank', 'movies', 'better'],
 ['剧迷网', 'https://gimy.ai/', '_blank', 'movies', 'better'],
 ['Raining FM', 'https://raining.fm/', '_blank', 'imusic', 'better'],
 ['SoundCloud', 'https://soundcloud.com/', '_blank', 'imusic', 'better'],

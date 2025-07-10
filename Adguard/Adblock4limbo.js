@@ -1,87 +1,112 @@
 /**
- * 
- * ---------------------------
- * 毒奶去网页广告计划
+ * Adblock4limbo - Web Ad Removal Script
  * Author: limbopro
- * 完全使用手册：https://limbopro.com/archives/12904.html
- * 联系博主：https://t.me/limboprobot
- * 电报群组：https://t.me/Adblock4limbo
- * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
- * Github：https://github.com/limbopro/Adblock4limbo
- * ---------------------------
- * 
+ * Documentation: https://limbopro.com/archives/12904.html
+ * Contact: https://t.me/limboprobot
+ * Telegram Group: https://t.me/Adblock4limbo
+ * FAQ: https://t.me/Adblock4limbo/21
+ * Github: https://github.com/limbopro/Adblock4limbo
  */
 
-/*
-********
-QuantumultX:
+/**
+ * QuantumultX Configuration:
+ *
+ * [rewrite_local]
+ * ^https?:\/\/www\.example\.com(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* url script-response-body https://limbopro.com/Adguard/Adblock4limbo.js
+ *
+ * [mitm]
+ * hostname = www.example.com
+ */
 
-[rewrite_local]
-^https?:\/\/www\.example\.com(?!(.*(cdn-cgi|(\.(js|css|jpg|jpeg|png|webp|gif|zip|woff|woff2|m3u8|mp4|mov|m4v|avi|mkv|flv|rmvb|wmv|rm|asf|asx|mp3|json|ico|otf|ttf))))).* url script-response-body https://limbopro.com/Adguard/Adblock4limbo.js
+/**
+ * Modifies request headers to spoof User-Agent
+ * var requestHeaders = $request.headers;
+ * requestHeaders['User-Agent'] = 'Mozilla/6.0 (iPhone 15; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/116.0.5845.118 Mobile/15E148 Safari/604.1';
+ */
 
-[mitm]
-hostname = www.example.com
-********
+// CSS and JS resources for ad removal
+const CSS_URL = "https://limbopro.com/CSS/Adblock4limbo.user.css";
+const JS_URL = "https://limbopro.com/Adguard/Adblock4limbo.user.js";
 
-*/
+// HTML injection strings
+const TITLE_INJECTION = `</title>
+<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
+<script type="text/javascript" async="async" src="${JS_URL}"></script>
+`;
 
-/*
-定义请求体
-var modifiedHeaders = $request.headers;
-modifiedHeaders['User-Agent'] = 'Mozilla/6.0 (iPhone 15; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/116.0.5845.118 Mobile/15E148 Safari/604.1';
-*/
+const BODY_INJECTION = `
+<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
+<script type="text/javascript" async="async" src="${JS_URL}"></script></body>
+`;
 
+// Regular expressions for URL matching
+const TARGET_SITES_REGEX = /(missav|netflav|supjav|njav|javday)/i;
+const JAVBUS_REGEX = /javbus/i;
+const HUARENLIVE_REGEX = /huaren\.live\/player\/ec\.php/i;
 
-// 定义 全局CSS/JS 用于移除网页上的广告元素、禁止点击弹窗广告等
+// Regular expressions for content manipulation
+const TITLE_REGEX = /<\/title>/i;
+const BODY_REGEX = /<\/body>/i;
+const WINDOW_OPEN_REGEX = /window\.open/g;
 
+// Main function to process response
+function processResponse() {
+    const requestUrl = $request.url;
+    let responseBody = $response.body;
 
-var regex = /<\/title>/gi;
-var replace_str = '</title>\
-<link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
-<script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script>\
-'
-
-var body_regex = /<\/body>/gi;
-var body_replace_str = '<link rel="stylesheet" href="https://limbopro.com/CSS/Adblock4limbo.user.css" type="text/css" />\
-<script type="text/javascript" async="async" src="https://limbopro.com/Adguard/Adblock4limbo.user.js"></script></body>\
-'
-
-
-let url = $request.url;
-var url_target_regex = /(missav|netflav|supjav|njav|javday)/gi;
-var javbus_target_regex = /javbus/gi;
-var huarenlive_target_regex = /huaren\.live\/player\/ec\.php/gi;
-
-var url_target = url.match(url_target_regex);
-var javbus_target = url.match(javbus_target_regex);
-var huarenlive_target = url.match(huarenlive_target_regex);
-
-
-if ($response.body !== null || $response.body !== undefined) {  // 判断响应体是否存在
-
-
-    if (url_target !== null) {  // 判断该URL是否匹配目标
-        let window_open_reg = 'window.open'; // 匹配
-        let window_open_str = ''; // 替换为空
-        var body = $response.body.replaceAll(regex, replace_str).replaceAll(window_open_reg, window_open_str);
-    } else if (javbus_target !== null) {
-        var body = $response.body.replaceAll(body_regex, body_replace_str);
-    } else if (huarenlive_target !== null) {
-        var body = $response.body.replaceAll("\"time\":\"20\"", "\"time\":\"0\""); // 视频播放页广告跳过
-    } 
-    else {
-        var body = $response.body.replaceAll(regex, replace_str)
-        // 定义响应头
+    // Validate response body
+    if (!responseBody) {
+        console.log("Response body is null or undefined");
+        $done({ url: requestUrl });
+        return;
     }
 
-    let headers = $response.headers;
-    // headers['Content-Security-Policy'] = '*';
-    delete headers['Content-Security-Policy'];
-    delete headers['X-Frame-Options'];
-    delete headers['Referrer-Policy'];
-    headers['Cross-Origin-Embedder-Policy'] = 'unsafe-none';
-    headers['Cross-Origin-Opener-Policy'] = 'unsafe-none';
-    headers['Cross-Origin-Resource-Policy'] = 'cross-origin';
-    $done({ headers: headers, body: body, url: url })
+    // Check URL matches
+    const isTargetSite = requestUrl.match(TARGET_SITES_REGEX);
+    const isJavbus = requestUrl.match(JAVBUS_REGEX);
+    const isHuarenlive = requestUrl.match(HUARENLIVE_REGEX);
+
+    // Process response body based on URL
+    if (isTargetSite) {
+        responseBody = responseBody
+            .replace(TITLE_REGEX, TITLE_INJECTION)
+            .replace(WINDOW_OPEN_REGEX, "");
+    } else if (isJavbus) {
+        responseBody = responseBody.replace(BODY_REGEX, BODY_INJECTION);
+    } else if (isHuarenlive) {
+        responseBody = responseBody
+            .replace(/"time":"20"/g, '"time":"0"')
+            //.replace(/"ads":\s*\{[^}]*\}/g, '"ads": {}')
+            .replaceAll(/"img":\s*"[^"]*"/g, '"img": ""')
+    } else {
+        responseBody = responseBody.replace(TITLE_REGEX, TITLE_INJECTION);
+    }
+
+    // Modify response headers
+    const responseHeaders = {
+        ...$response.headers,
+        "Cross-Origin-Embedder-Policy": "unsafe-none",
+        "Cross-Origin-Opener-Policy": "unsafe-none",
+        "Cross-Origin-Resource-Policy": "cross-origin"
+    };
+
+    // Remove restrictive headers
+    delete responseHeaders["Content-Security-Policy"];
+    delete responseHeaders["X-Frame-Options"];
+    delete responseHeaders["Referrer-Policy"];
+
+    // Return modified response
+    $done({
+        headers: responseHeaders,
+        body: responseBody,
+        url: requestUrl
+    });
 }
 
+// Execute main function with error handling
+try {
+    processResponse();
+} catch (error) {
+    console.log(`Error processing response: ${error.message}`);
+    $done({ url: $request.url, body: $response.body, headers: $response.headers });
+}

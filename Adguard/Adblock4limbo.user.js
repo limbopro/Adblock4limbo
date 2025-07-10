@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.07.08
+// @version      0.2025.07.10
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -221,7 +221,7 @@
 // 是否（默认）显示导航🧭按钮🔘
 // 如【不需要显示导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
 
-settingCookie('daohangMode_global', 'false', '400');
+settingCookie('daohangMode_global', 'true', '400');
 console.log('是否（默认）显示导航🧭按钮🔘：' + getCookie_('daohangMode'))
 
 // 是否（默认）开启成人🔞网站保护模式
@@ -380,7 +380,7 @@ var imax = {
         ntdm9: "#adsbox, .yammohxz_b {display:none !important; pointer-events: none !important;}",
         njav: "div[style=\"position: absolute; inset: 0px; z-index: 999; display: block;\"],.ad-floating,[src*='.gif'],iframe[width='300px'] {display:none!important}",
         jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
-        huaren_live: ".ad-txt, .pause-ad, .ad-link:not(.adsbox), .action-ad, img[src*='ads.jpg'] {display:none !important; pointer-events: none !important;}",
+        huaren_live: "[src*='0d463e36ddf0630.jpg'],.ad-tso,.ad-s,#dm-opacity,.ad-txt, .pause-ad, .ad-link:not(.adsbox), .action-ad, img[src*='ads.jpg'] {display:none !important; pointer-events: none !important;}",
         rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
         rouvideo: "div[style*='pointer-events: none'],.flex.items-center.justify-center.my-2,ins > iframe,a.vast-blocker,.p-2.rounded.text-center,.text-xl.mb-1,[class*='hover:underline'],[style*='overflow: hidden'],[data-advadstrackid] {display:none !important; pointer-events: none !important;}",
         diyibanzhu: "img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
@@ -1081,7 +1081,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
                             let p1 = document.createElement('p')
                             p1.id = 'p1'
-                            p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+                            p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
 
                             let p2 = document.createElement('p')
                             p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
@@ -1360,18 +1360,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         case 'play.huaren.live':
-            //createAbortCurrentScript(window, 'Math.random', "parseInt(localStorage")
-            setConstant('ConFig.config.ads', '{}'); // huaren影视PC版播放页视频广告加速
-            //videoAds_accelerateSkip(0.01)
-            //evaldataPrune(); // 影视移动版播放页视频广告加速
-            css_adsRemove(imax.css.huaren_live, 200, 'roumanx');
+
+            //setConstant('ConFig.config.ads', '{}'); // huaren影视PC版播放页视频广告加速
+            css_adsRemove(imax.css.huaren_live, 200, 'huaren');
+            ConFig.config.ads = {};
+
             break;
 
         case 'huaren.live':
-            css_adsRemove(imax.css.huaren_live, 500, 'roumanx');
-            //videoAds_accelerateSkip(0.1); // 视频广告加速
-            //setConstant(); // 视频广告加速
-            js_adsRemove(uBlockOrigin.abortcurrentscript);
+            css_adsRemove(imax.css.huaren_live, 200, 'huaren');
             //noWindowOpenIf();
             break;
 
@@ -1442,7 +1439,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     let parentElement = document.querySelectorAll(parentsSelector)[0]
                     let p1 = document.createElement('p')
                     p1.id = 'p1'
-                    p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+                    p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
 
                     let p2 = document.createElement('p')
                     p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
@@ -1475,7 +1472,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
                     aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
                     aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
-                    aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
+                    //aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
 
                     console.log('已生成在线预览链接🔗')
                 }
@@ -1490,26 +1487,44 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             }
 
-            if (isMobile()) {
-                // 如果是手机端，执行手机端相关函数
-                tmd_dmm('div.box-overview', code_dmm(), '在其他站点播放：');
-            } else {
-                // 如果是PC端，执行PC端相关函数
-                tmd_dmm('div.box-rank', code_dmm(), '在其他站点播放：');
+            if (!code_dmm() == false) {
+                if (isMobile()) {
+                    // 如果是手机端，执行手机端相关函数
+                    if (document.querySelector('div.box-overview') !== null) { // https://www.dmm.co.jp/digital/
+                        tmd_dmm('div.box-overview', code_dmm(), '在其他站点播放：');
+                    } else if (document.querySelector('h1') !== null) { // https://www.dmm.co.jp/monthly/ 
+                        tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+                    }
+
+                } else {
+                    // 如果是PC端，执行PC端相关函数
+                    const url = window.location.href;
+                    if (url.includes('digital')) { // https://www.dmm.co.jp/digital/
+                        tmd_dmm('div.box-sampleInfo', code_dmm(), '在其他站点播放：');
+                    } else {
+                        tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：'); // https://www.dmm.co.jp/monthly/
+                    }
+
+                }
+
             }
 
             isMobile()
+
 
             function code_dmm() {
                 var url = window.location.href;
                 const match = url.match(/cid=([^/&?]+)/);
                 let cid = match ? match[1] : null;
                 if (!cid) return null;
-                // 如果首字母是数字，则删除
-                if (/^\d/.test(cid)) {
-                    cid = cid.slice(1);
+                // 删除开头的全部数字
+                cid = cid.replace(/^\d+/, '');
+                let code_dmm = cid.replace(/0{2}/, '-');
+                // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
+                if (!code_dmm.includes('-')) {
+                    code_dmm = code_dmm.replace(/(\D*)(\d+)/, '$1-$2');
                 }
-                const code_dmm = cid.replace(/0{2}/, '-');
+                // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
                 console.log(code_dmm);
                 console.log(cid);
                 return code_dmm;

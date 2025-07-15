@@ -20,181 +20,50 @@
 
 */
 
-// ruleset: spa-1
+// ruleset: ublock-filters
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_noWindowOpenIf() {
+(function uBOL_preventInnerHTML() {
 
 /******************************************************************************/
 
-function noWindowOpenIf(
-    pattern = '',
-    delay = '',
-    decoy = ''
+function preventInnerHTML(
+    selector = '',
+    pattern = ''
 ) {
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('no-window-open-if', pattern, delay, decoy);
-    const targetMatchResult = pattern.startsWith('!') === false;
-    if ( targetMatchResult === false ) {
-        pattern = pattern.slice(1);
-    }
-    const rePattern = safe.patternToRegex(pattern);
-    const autoRemoveAfter = (parseFloat(delay) || 0) * 1000;
-    const setTimeout = self.setTimeout;
-    const createDecoy = function(tag, urlProp, url) {
-        const decoyElem = document.createElement(tag);
-        decoyElem[urlProp] = url;
-        decoyElem.style.setProperty('height','1px', 'important');
-        decoyElem.style.setProperty('position','fixed', 'important');
-        decoyElem.style.setProperty('top','-1px', 'important');
-        decoyElem.style.setProperty('width','1px', 'important');
-        document.body.appendChild(decoyElem);
-        setTimeout(( ) => { decoyElem.remove(); }, autoRemoveAfter);
-        return decoyElem;
-    };
-    const noopFunc = function(){};
-    proxyApplyFn('open', function open(context) {
-        if ( pattern === 'debug' && safe.logLevel !== 0 ) {
-            debugger; // eslint-disable-line no-debugger
-            return context.reflect();
+    const logPrefix = safe.makeLogPrefix('prevent-innerHTML', selector, pattern);
+    const matcher = safe.initPattern(pattern, { canNegate: true });
+    const current = safe.Object_getOwnPropertyDescriptor(Element.prototype, 'innerHTML');
+    if ( current === undefined ) { return; }
+    const shouldPreventSet = (elem, a) => {
+        if ( selector !== '' ) {
+            if ( typeof elem.matches !== 'function' ) { return false; }
+            if ( elem.matches(selector) === false ) { return false; }
         }
-        const { callArgs } = context;
-        const haystack = callArgs.join(' ');
-        if ( rePattern.test(haystack) !== targetMatchResult ) {
+        return safe.testPattern(matcher, a);
+    };
+    Object.defineProperty(Element.prototype, 'innerHTML', {
+        get: function() {
+            return current.get
+                ? current.get.call(this)
+                : current.value;
+        },
+        set: function(a) {
+            if ( shouldPreventSet(this, a) ) {
+                safe.uboLog(logPrefix, 'Prevented');
+            } else if ( current.set ) {
+                current.set.call(this, a);
+            }
             if ( safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, `Allowed (${callArgs.join(', ')})`);
+                safe.uboLog(logPrefix, `Assigned:\n${a}`);
             }
-            return context.reflect();
-        }
-        safe.uboLog(logPrefix, `Prevented (${callArgs.join(', ')})`);
-        if ( delay === '' ) { return null; }
-        if ( decoy === 'blank' ) {
-            callArgs[0] = 'about:blank';
-            const r = context.reflect();
-            setTimeout(( ) => { r.close(); }, autoRemoveAfter);
-            return r;
-        }
-        const decoyElem = decoy === 'obj'
-            ? createDecoy('object', 'data', ...callArgs)
-            : createDecoy('iframe', 'src', ...callArgs);
-        let popup = decoyElem.contentWindow;
-        if ( typeof popup === 'object' && popup !== null ) {
-            Object.defineProperty(popup, 'closed', { value: false });
-        } else {
-            popup = new Proxy(self, {
-                get: function(target, prop, ...args) {
-                    if ( prop === 'closed' ) { return false; }
-                    const r = Reflect.get(target, prop, ...args);
-                    if ( typeof r === 'function' ) { return noopFunc; }
-                    return r;
-                },
-                set: function(...args) {
-                    return Reflect.set(...args);
-                },
-            });
-        }
-        if ( safe.logLevel !== 0 ) {
-            popup = new Proxy(popup, {
-                get: function(target, prop, ...args) {
-                    const r = Reflect.get(target, prop, ...args);
-                    safe.uboLog(logPrefix, `popup / get ${prop} === ${r}`);
-                    if ( typeof r === 'function' ) {
-                        return (...args) => { return r.call(target, ...args); };
-                    }
-                    return r;
-                },
-                set: function(target, prop, value, ...args) {
-                    safe.uboLog(logPrefix, `popup / set ${prop} = ${value}`);
-                    return Reflect.set(target, prop, value, ...args);
-                },
-            });
-        }
-        return popup;
+            current.value = a;
+        },
     });
-}
-
-function proxyApplyFn(
-    target = '',
-    handler = ''
-) {
-    let context = globalThis;
-    let prop = target;
-    for (;;) {
-        const pos = prop.indexOf('.');
-        if ( pos === -1 ) { break; }
-        context = context[prop.slice(0, pos)];
-        if ( context instanceof Object === false ) { return; }
-        prop = prop.slice(pos+1);
-    }
-    const fn = context[prop];
-    if ( typeof fn !== 'function' ) { return; }
-    if ( proxyApplyFn.CtorContext === undefined ) {
-        proxyApplyFn.ctorContexts = [];
-        proxyApplyFn.CtorContext = class {
-            constructor(...args) {
-                this.init(...args);
-            }
-            init(callFn, callArgs) {
-                this.callFn = callFn;
-                this.callArgs = callArgs;
-                return this;
-            }
-            reflect() {
-                const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = this.private = undefined;
-                proxyApplyFn.ctorContexts.push(this);
-                return r;
-            }
-            static factory(...args) {
-                return proxyApplyFn.ctorContexts.length !== 0
-                    ? proxyApplyFn.ctorContexts.pop().init(...args)
-                    : new proxyApplyFn.CtorContext(...args);
-            }
-        };
-        proxyApplyFn.applyContexts = [];
-        proxyApplyFn.ApplyContext = class {
-            constructor(...args) {
-                this.init(...args);
-            }
-            init(callFn, thisArg, callArgs) {
-                this.callFn = callFn;
-                this.thisArg = thisArg;
-                this.callArgs = callArgs;
-                return this;
-            }
-            reflect() {
-                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
-                proxyApplyFn.applyContexts.push(this);
-                return r;
-            }
-            static factory(...args) {
-                return proxyApplyFn.applyContexts.length !== 0
-                    ? proxyApplyFn.applyContexts.pop().init(...args)
-                    : new proxyApplyFn.ApplyContext(...args);
-            }
-        };
-    }
-    const fnStr = fn.toString();
-    const toString = (function toString() { return fnStr; }).bind(null);
-    const proxyDetails = {
-        apply(target, thisArg, args) {
-            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
-        },
-        get(target, prop) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop);
-        },
-    };
-    if ( fn.prototype?.constructor === fn ) {
-        proxyDetails.construct = function(target, args) {
-            return handler(proxyApplyFn.CtorContext.factory(target, args));
-        };
-    }
-    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -390,10 +259,10 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[],["!/download\\/|link|atomtt\\.com\\//"],["?key="],["passeura"],["redirdx.in/go/"]];
-const hostnamesMap = new Map([["darkmahou.org",0],["movidy.lat",0],["warezstream.net",0],["embedder.net",0],["pelispedia.life",0],["cuevana3.*",0],["gnula.*",0],["poseidonhd2.co",0],["cuevana2espanol.*",0],["cuevana.*",0],["geeknetic.es",0],["animeblix.com",[0,3]],["servertwo.xyz",0],["megaseriesonline.pro",0],["chinesetubex.com.es",0],["netcine.*",0],["playnewserie.xyz",0],["desenhosanimados.site",0],["pelismart.com",0],["pelismarthd.com",0],["cuevana-3.wtf",0],["muyzorras.com",0],["vernaruto.tv",0],["repelis.io",0],["otakustv.com",0],["repelisgt.net",0],["playpaste.com",0],["pelisxporno.net",0],["colegialasdeverdad.*",0],["eshentai.tv",0],["animeocs.com",0],["hentaijl.com",0],["megafire.net",0],["url.firepaste.com",0],["seriesflix.onl",0],["okpeliz.com",0],["player.malfollado.com",0],["anime-jl.net",0],["latinohentai.vip",0],["latinohentai.com",0],["player.seriesgod.com",0],["player.pelisgod.com",0],["atomohd.com",1],["atomtt.com",1],["atomixhq.*",1],["verdragonball.online",2],["torrentjogos.com.br",2],["redirdx.in",4]]);
+const argsList = [["","delete window"]];
+const hostnamesMap = new Map([["movielair.cc",0]]);
 const exceptionsMap = new Map([]);
-const hasEntities = true;
+const hasEntities = false;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {
@@ -459,7 +328,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { noWindowOpenIf(...argsList[i]); }
+    try { preventInnerHTML(...argsList[i]); }
     catch { }
 }
 

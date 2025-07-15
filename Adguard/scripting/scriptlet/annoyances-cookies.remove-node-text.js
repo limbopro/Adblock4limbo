@@ -156,7 +156,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -368,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","CompanyModal"]];
-const hostnamesMap = new Map([["lebonlogiciel.com",0]]);
+const argsList = [["script","realCookieBanner"]];
+const hostnamesMap = new Map([["minaprotocol.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

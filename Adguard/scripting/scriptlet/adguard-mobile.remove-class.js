@@ -315,8 +315,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["banners-brand","#page_content"],["fixed_ad","#header.fixed_ad"],["hasStickyHead","body.hasStickyHead"],["pt-[100px]","#main-container"],["mobile-sticky-ad-is-active","body"],["branding","body[id=\"pagebody\"]"],["branding","body"],["has-adhesion",".header-placeholder.has-adhesion"]];
-const hostnamesMap = new Map([["m.7days.ru",0],["thestudentroom.co.uk",1],["lepoint.fr",2],["mumsnet.com",3],["liquipedia.net",4],["www.ixbt.com",5],["slovoidilo.ua",6],["accuweather.com",7]]);
+const argsList = [["banners-brand","#page_content"],["fixed_ad","#header.fixed_ad"],["hasStickyHead","body.hasStickyHead"],["pt-[100px]","#main-container"],["mobile-sticky-ad-is-active","body"],["branding","body[id=\"pagebody\"]"],["i4It-cmp2-toaster-visible",".i4It"],["branding","body"],["has-adhesion",".header-placeholder.has-adhesion"]];
+const hostnamesMap = new Map([["m.7days.ru",0],["thestudentroom.co.uk",1],["lepoint.fr",2],["mumsnet.com",3],["liquipedia.net",4],["www.ixbt.com",5],["kayak.com.tr",6],["slovoidilo.ua",7],["accuweather.com",8]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

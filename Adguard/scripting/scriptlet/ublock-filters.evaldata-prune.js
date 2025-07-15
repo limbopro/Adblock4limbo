@@ -488,7 +488,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["entity.commercial"]];
-const hostnamesMap = new Map([["m.nivod5.tv",0],["m1.nivod.tv",0],["m.nivod4.tv",0]]);
+const hostnamesMap = new Map([["m1.nivod.tv",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

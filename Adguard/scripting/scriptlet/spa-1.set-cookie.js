@@ -362,7 +362,7 @@ function getCookieFn(
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["unlock","1"],["modalVisited","true"],["adsCompleted","1"],["force_ad","2"],["visited","1"],["Ads","2"],["clicked_ads","2"],["modal_promo","1"],["visited","yes"],["CLI_02_Dxxxxxxxxxxxxxxx","1"],["player","1"]];
-const hostnamesMap = new Map([["fgtd.online",0],["redecanaistv.*",[1,2]],["redecanais.*",[1,2]],["techdiniz.com",3],["trueliketop.org",3],["sabornutritivo.com",4],["guiacripto.online",4],["guiasaude.info",5],["1i1.in",6],["estacio.br",7],["receitasoncaseiras.online",8],["nutricaohoje.website",8],["portecnologia.com",9],["papayaseries.net",10],["pelismart.tv",10],["pelis1.com",10],["homecine.cc",10],["seriesmetro.net",10],["flixseries.org",10],["homecine.tv",10],["homecine.to",10],["metroseries.net",10],["smartpelis.tv",10],["seriesbanana.com",10]]);
+const hostnamesMap = new Map([["fgtd.online",0],["redecanaistv.*",[1,2]],["redecanais.*",[1,2]],["techdiniz.com",3],["trueliketop.org",3],["sabornutritivo.com",4],["guiacripto.online",4],["guiasaude.info",5],["1i1.in",6],["estacio.br",7],["receitasoncaseiras.online",8],["nutricaohoje.website",8],["portecnologia.com",9],["iputitas.net",10],["pelispedia.is",10],["papayaseries.net",10],["pelismart.tv",10],["pelis1.com",10],["homecine.cc",10],["seriesmetro.net",10],["flixseries.org",10],["homecine.tv",10],["homecine.to",10],["metroseries.net",10],["smartpelis.tv",10],["seriesbanana.com",10]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

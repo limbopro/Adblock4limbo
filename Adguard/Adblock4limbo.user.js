@@ -1477,7 +1477,49 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     console.log('已生成在线预览链接🔗')
                 }
                 otherSearch()
+            }
 
+            // 在工口漫画详情页追加在线预览链接
+            function tmd_dmm_doujin(parentsSelector, h1, textContent) {
+                function otherSearch() {
+                    // 试试其他搜索：
+                    let parentElement = document.querySelectorAll(parentsSelector)[0]
+                    let p1 = document.createElement('p')
+                    p1.id = 'p1'
+                    p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+
+                    let p2 = document.createElement('p')
+                    p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                    p2.id = 'p2'
+
+
+                    p1.appendChild(p2)
+                    parentElement.insertBefore(p1, parentElement.childNodes[2])
+
+                    let span = document.createElement('span')
+                    span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                    span.textContent = textContent
+                    p2.appendChild(span)
+
+                    function aAdd2Parent(siteName, url, h1Slect) {
+                        let a = document.createElement('a')
+                        let lable = document.createElement('label')
+                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                        a.href = url + h1Slect
+                        a.textContent = siteName
+                        a.target = '_blank'
+                        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                        lable.appendChild(a)
+                        p2.appendChild(lable)
+                    }
+                    aAdd2Parent('Hitomi[HD]', 'https://www.google.com/search?q=', "site:hitomi.la" + " " + h1)
+                    aAdd2Parent('禁漫天堂[HD]', 'https://www.google.com/search?q=', "site:18comic.vip" + " " + h1)
+                    aAdd2Parent('绅士漫画[HD]', 'https://www.google.com/search?q=', "site:www.wnacg.com" + " " + h1)
+                    aAdd2Parent('Google🔍', 'https://www.google.com/search?q=', "免费" + " " + h1)
+
+                    console.log('已生成在线预览链接🔗')
+                }
+                otherSearch()
             }
 
             // dmm.co.jp
@@ -1488,22 +1530,71 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             if (!code_dmm() == false) {
+                var url = window.location.href;
+
                 if (isMobile()) {
                     // 如果是手机端，执行手机端相关函数
-                    if (document.querySelector('div.box-overview') !== null) { // https://www.dmm.co.jp/digital/
-                        tmd_dmm('div.box-overview', code_dmm(), '在其他站点播放：');
-                    } else if (document.querySelector('h1') !== null) { // https://www.dmm.co.jp/monthly/ 
-                        tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+                    if (document.querySelector('div.box-overview') !== null && url.includes('/digital/')) { // https://www.dmm.co.jp/digital/
+                        try {
+                            tmd_dmm('div.box-overview', code_dmm(), '在其他站点播放：');
+                        } catch (e) {
+                            console.error('Error in tmd_dmm:', e);
+                        }
+                    } else if (document.querySelector('h1') !== null && url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/ 
+                        try {
+                            tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+                        } catch (e) {
+                            console.error('Error in tmd_dmm:', e);
+                        }
+                    } else if (document.querySelector('h1') !== null && url.includes('/doujin/')) { // https://www.dmm.co.jp/dc/doujin/
+                        // 获取标题
+                        const h1 = document.querySelector('h1');
+                        const text = Array.from(h1.childNodes)
+                            .filter(node => node.nodeType === Node.TEXT_NODE)
+                            .map(node => node.textContent.trim())
+                            .join('');
+                        console.log(text);
+
+                        try {
+                            tmd_dmm_doujin('h1', text, '在其他站点观看：');
+                        } catch (e) {
+                            console.error('Error in tmd_dmm_doujin:', e);
+                        }
                     }
 
                 } else {
                     // 如果是PC端，执行PC端相关函数
-                    const url = window.location.href;
-                    if (url.includes('digital')) { // https://www.dmm.co.jp/digital/
-                        tmd_dmm('div.box-sampleInfo', code_dmm(), '在其他站点播放：');
-                    } else {
-                        tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：'); // https://www.dmm.co.jp/monthly/
+                    if (url.includes('/digital/')) { // https://www.dmm.co.jp/digital/ 动画
+                        try {
+                            tmd_dmm('div.box-sampleInfo', code_dmm(), '在其他站点播放：');
+                        } catch (e) {
+                            console.error('/digital/ Error in tmd_dmm:', e);
+                        }
+                    } else if (url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/ 动画
+                        try {
+                            tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：');
+                        } catch (e) {
+                            console.error('/monthly/ Error in tmd_dmm:', e);
+                        }
+                    } else if (url.includes('/doujin/')) { //https://www.dmm.co.jp/dc/doujin/ 同人
+
+                        // 获取标题
+
+                        const h1 = document.querySelector('h1.productTitle__txt');
+                        const text = Array.from(h1.childNodes)
+                            .filter(node => node.nodeType === Node.TEXT_NODE)
+                            .map(node => node.textContent.trim())
+                            .join('');
+                        console.log(text);
+
+                        try {
+                            tmd_dmm_doujin('div.m-productPreview', text, '在其他站点观看：');
+                        } catch (e) {
+                            console.error('/doujin/ Error in tmd_dmm:', e);
+                        }
+
                     }
+
 
                 }
 

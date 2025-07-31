@@ -20,35 +20,13 @@
 
 */
 
-/* jshint esversion:11 */
-/* global cloneInto */
-
-'use strict';
-
 // ruleset: tur-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_adjustSetTimeout = function() {
-
-const scriptletGlobals = {}; // jshint ignore: line
-
-const argsList = [["ifsrc","2000","0.02"]];
-
-const hostnamesMap = new Map([["onlinedizi.cc",0]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_adjustSetTimeout() {
 
 /******************************************************************************/
 
@@ -96,12 +74,17 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
+        'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -134,7 +117,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
@@ -177,7 +160,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -194,159 +177,156 @@ function safeSelf() {
             }, []);
             return this.Object_fromEntries(entries);
         },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
+        },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
-    safe.sendToLogger = (type, ...args) => {
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
         }
-        bcBuffer.push({ type, text });
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 
 /******************************************************************************/
 
-const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["ifrld","*","0.001"]];
+const hostnamesMap = new Map([["hdfilmsitesi.*",0]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { adjustSetTimeout(...argsList[i]); }
-    catch(ex) {}
-}
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_adjustSetTimeout();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_adjustSetTimeout = cloneInto([
-            [ '(', uBOL_adjustSetTimeout.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_adjustSetTimeout);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_adjustSetTimeout;
+    catch { }
 }
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

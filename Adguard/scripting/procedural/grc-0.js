@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\".article-fullcontent > div\",\"tasks\":[[\"has-text\",\"ADVERTISEMENT\"]]}"],["{\"selector\":\".left-col\",\"tasks\":[[\"has\",{\"selector\":\"h3\",\"tasks\":[[\"has-text\",\"Advertise\"]]}]]}"],["{\"selector\":\"#hp-readmore-cross-article .article\",\"tasks\":[[\"has\",{\"selector\":\".byline_date\",\"tasks\":[[\"has-text\",\"ADVERTORIAL\"]]}]]}"]];
-const argsSeqs = [0,1,2,3];
-const hostnamesMap = new Map([["moneyonline.gr",1],["sexgr.net",2],["sport24.gr",3]]);
+const argsList = ["[]","[{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0px !important;\"],\"cssable\":true}]","[{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"],\"cssable\":true}]","[{\"selector\":\"#LRGR\",\"action\":[\"style\",\"background: none !important;\"],\"cssable\":true}]","[{\"selector\":\".article-fullcontent > div\",\"tasks\":[[\"has-text\",\"ADVERTISEMENT\"]]}]","[{\"selector\":\"#sp-component\",\"action\":[\"style\",\"width: 100% !important;\"],\"cssable\":true}]","[{\"selector\":\".left-col\",\"tasks\":[[\"has\",{\"selector\":\"h3\",\"tasks\":[[\"has-text\",\"Advertise\"]]}]]}]","[{\"selector\":\"#hp-readmore-cross-article .article\",\"tasks\":[[\"has\",{\"selector\":\".byline_date\",\"tasks\":[[\"has-text\",\"ADVERTORIAL\"]]}]]}]","[{\"selector\":\"#primary\",\"action\":[\"style\",\"margin: 0 auto !important;\"],\"cssable\":true}]"];
+const argsSeqs = [0,1,2,3,4,5,6,7,8];
+const hostnamesMap = new Map([["kalamatatimes.gr",1],["kozanilife.gr",2],["lamiareport.gr",3],["moneyonline.gr",4],["serraikanea.gr",5],["sexgr.net",6],["sport24.gr",7],["start2click.com",8]]);
 const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];

@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["unlock","*","0.001"],["contador","*","0.001"],[".html(","*","0.001"],["playFunction","*","0.001"],["PLAYER LIBERADO","*","0.001"],["e(!0)","*","0.001"],["resumeVideoFromAd","*","0.001"],["/atualizar|hided/","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"],["w-content","*","0.001"],["conta"]];
-const hostnamesMap = new Map([["fgtd.online",0],["dicasdereceitas.net",1],["dicasgeeks.net",1],["sabornutritivo.com",2],["guiacripto.online",3],["coempregos.com.br",4],["anitube.us",4],["anitube.vip",4],["hinatasoul.com",4],["mundodeportivo.com",5],["terra.com.br",6],["financastop.online",7],["modsimuladores.com",7],["vejaideias.com.br",7],["jogoscompleto.xyz",7],["arnolds.com.br",8],["receitasoncaseiras.online",9],["portecnologia.com",10],["nutricaohoje.website",11],["lectulandia.*",12],["anime-latino.com",13],["peliculasyserieslatino.me",14]]);
+const argsList = [["unlock","*","0.001"],["contador","*","0.001"],[".html(","*","0.001"],["playFunction","*","0.001"],["PLAYER LIBERADO","*","0.001"],["e(!0)","*","0.001"],["resumeVideoFromAd","*","0.001"],["/atualizar|hided/","*","0.001"],["videoliberado","*","0.02"],["PLAYER","*","0.02"],["liberaDownload","*","0.02"],["PLAYER LIBERADO","10000","0.02"],["redirect","*","0.02"],["w-content","*","0.001"]];
+const hostnamesMap = new Map([["fgtd.online",0],["dicasdereceitas.net",1],["dicasgeeks.net",1],["sabornutritivo.com",2],["guiacripto.online",3],["coempregos.com.br",4],["anitube.us",4],["anitube.vip",4],["hinatasoul.com",4],["mundodeportivo.com",5],["terra.com.br",6],["modsimuladores.com",7],["vejaideias.com.br",7],["jogoscompleto.xyz",7],["arnolds.com.br",8],["receitasoncaseiras.online",9],["portecnologia.com",10],["nutricaohoje.website",11],["lectulandia.*",12],["anime-latino.com",13]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

@@ -288,10 +288,10 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["$.magnificPopup.open"],["LieDetector"]];
-const hostnamesMap = new Map([["juraganfilm.ink",0],["3gpterbaru.com",1]]);
+const argsList = [["$.magnificPopup.open"],["LieDetector"],["SGPB_POPUP_PARAMS"]];
+const hostnamesMap = new Map([["juraganfilm.ink",0],["3gpterbaru.com",1],["dicrotin.*",2]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

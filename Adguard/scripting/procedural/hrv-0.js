@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\".elementor-column-gap-default\",\"tasks\":[[\"has-text\",\"/^SERV\\\\IS/\"]]}"],["{\"selector\":\"#secondary > aside\",\"tasks\":[[\"has\",{\"selector\":\"> div.widget-header > h3\",\"tasks\":[[\"has-text\",\"/^.*(Marketing|Sponzor\\\\isano).*$/\"]]}]]}"]];
-const argsSeqs = [0,1,2];
-const hostnamesMap = new Map([["ul-info.com",1],["sveopoznatima.com",2]]);
+const argsList = ["[]","[{\"selector\":\".tie-col-md-8\",\"action\":[\"style\",\"width: 100% !important\"],\"cssable\":true}]","[{\"selector\":\"#mvp-site-main\",\"action\":[\"style\",\"margin-top: 0 !important\"],\"cssable\":true}]","[{\"selector\":\".elementor-column-gap-default\",\"tasks\":[[\"has-text\",\"/^SERV\\\\IS/\"]]}]","[{\"selector\":\".iframe-widget[src*=\\\"popularno\\\"]\",\"action\":[\"style\",\"max-height: 250px !important\"],\"cssable\":true}]","[{\"selector\":\".se-group-horizontal-ads-top\",\"action\":[\"style\",\"min-height:unset!important;width:0!important\"],\"cssable\":true}]","[{\"selector\":\"#secondary > aside\",\"tasks\":[[\"has\",{\"selector\":\"> div.widget-header > h3\",\"tasks\":[[\"has-text\",\"/^.*(Marketing|Sponzor\\\\isano).*$/\"]]}]]}]"];
+const argsSeqs = [0,1,2,3,4,5,6];
+const hostnamesMap = new Map([["niskevesti.rs",1],["filmitv.rs",2],["ul-info.com",3],["blic.rs",4],["oslobodjenje.ba",5],["sveopoznatima.com",6]]);
 const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];

@@ -390,7 +390,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[],["&disp=popup","1"]];
+const argsList = [[],["layerid","1"]];
 const hostnamesMap = new Map([["bypass.city",0],["adbypass.org",0],["weibo.com",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

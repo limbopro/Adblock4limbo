@@ -390,8 +390,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[],["","10"]];
-const hostnamesMap = new Map([["nosteam.ro",0],["nosteamgames.ro",0],["posturi.live",0],["filmeserialegratis.*",0],["fsplayer.*",0],["vzlinks.com",0],["onlyplay.online",1]]);
+const argsList = [[],["","10"],["_blank","10"]];
+const hostnamesMap = new Map([["nosteam.ro",0],["nosteamgames.ro",0],["posturi.live",0],["filmeserialegratis.*",0],["fsplayer.*",0],["vzlinks.com",0],["onlyplay.online",1],["canale-tv.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

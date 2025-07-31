@@ -505,7 +505,7 @@ function safeSelf() {
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["yabs.yandex.ru/count/"]];
 const hostnamesMap = new Map([["ya.*",0],["yandex.*",0]]);
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["games.s3.yandex.net",[0]]]);
 const hasEntities = true;
 const hasAncestors = false;
 

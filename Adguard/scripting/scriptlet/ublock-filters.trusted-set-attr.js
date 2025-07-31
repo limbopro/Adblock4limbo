@@ -333,9 +333,9 @@ function runAt(fn, when) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[".navbar-nav > li#navpromo2.nav-item > a","onclick","let a=function(){};return false;"],["frameset[rows=\"95,30,*\"]","rows","0,30,*"]];
-const hostnamesMap = new Map([["japscan.lol",0],["mt-soft.sakura.ne.jp",1]]);
+const hostnamesMap = new Map([["japscan.*",0],["mt-soft.sakura.ne.jp",1]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

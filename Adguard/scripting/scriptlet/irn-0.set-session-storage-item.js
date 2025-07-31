@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["sentryReplaySession","$remove$"]];
-const hostnamesMap = new Map([["alaatv.com",0]]);
+const argsList = [["videoWatchCount","$remove$"]];
+const hostnamesMap = new Map([["aparat.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

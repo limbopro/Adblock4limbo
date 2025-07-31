@@ -425,9 +425,9 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["*.*","adFeedbackData adType adServedUrls"],["*","list.*.link.ad list.*.link.kicker"],["configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"],["data.template.tabs.*.blocks.*.data.data.videos.*.ad"],["ads"],["ad"],["data.cm_info.ads"]];
-const hostnamesMap = new Map([["msn.cn",[0,1,2]],["iqiyi.com",3],["sports.qq.com",4],["news.qq.com",4],["www.qq.com",4],["v.qq.com",4],["new.qq.com",4],["qq.com",5],["bilibili.com",6]]);
-const exceptionsMap = new Map([["sports.qq.com",[5]],["work.weixin.qq.com",[5]]]);
+const argsList = [["*.*","adFeedbackData adType adServedUrls"],["*","list.*.link.ad list.*.link.kicker"],["configs.*.properties.slideshowWCSettings.interstitialNativeAds configs.*.properties.fullScreenSlideshowSettings.interstitialNativeAds properties.componentConfigs.slideshowConfigs.interstitialNativeAds properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"],["data.CardList.[].children_list.ad_list data.CardList.[-].params.advertiser_name"],["data.template.tabs.*.blocks.*.data.data.videos.*.ad"],["ads"],["ad"],["data.cm_info.ads"]];
+const hostnamesMap = new Map([["msn.cn",[0,1,2]],["v.qq.com",[3,5]],["iqiyi.com",4],["sports.qq.com",5],["news.qq.com",5],["www.qq.com",5],["new.qq.com",5],["qq.com",6],["bilibili.com",7]]);
+const exceptionsMap = new Map([["sports.qq.com",[6]],["work.weixin.qq.com",[6]]]);
 const hasEntities = false;
 const hasAncestors = false;
 

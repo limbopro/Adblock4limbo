@@ -244,9 +244,9 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/protect?"],["/link-"],["/telephone-service"],["/^/"],["/soft98"]];
-const hostnamesMap = new Map([["norton.com",0],["soft98.ir",1],["sysban.ir",2],["smostafa.ir",3],["coffeete.ir",4]]);
-const exceptionsMap = new Map([["forum.soft98.ir",[1]]]);
+const argsList = [["/protect?"]];
+const hostnamesMap = new Map([["norton.com",0]]);
+const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
 

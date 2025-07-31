@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\"article.article\",\"action\":[\"remove-class\",\"cookie-paywall-visible\"]}","{\"selector\":\"aside\",\"tasks\":[[\"has-text\",\"Sisuturundus\"]]}"]];
-const argsSeqs = [0,1];
-const hostnamesMap = new Map([["postimees.ee",1]]);
+const argsList = ["[]","[{\"selector\":\"body\",\"action\":[\"style\",\"overflow:visible !important\"],\"cssable\":true}]","[{\"selector\":\".trim > .container\",\"action\":[\"style\",\"margin-top:0px !important\"],\"cssable\":true}]","[{\"selector\":\".article .article-body\",\"action\":[\"style\",\"padding: 0 !important;\"],\"cssable\":true},{\"selector\":\".article\",\"action\":[\"style\",\"padding: 0 15px 0 !important;\"],\"cssable\":true},{\"selector\":\".dfp-ad--horizontal.dfp-ad + *\",\"action\":[\"style\",\"padding-top: 0 !important;\"],\"cssable\":true},{\"selector\":\".digipakett-branding-root-container\",\"action\":[\"style\",\"display: none\"],\"cssable\":true},{\"selector\":\".digipakett-branding-visible .site-header\",\"action\":[\"style\",\"top: 0px !important\"],\"cssable\":true},{\"selector\":\".site-header\",\"action\":[\"style\",\"top: 0 !important\"],\"cssable\":true},{\"selector\":\".structured-content__group--left\",\"action\":[\"style\",\"max-width:unset !important\"],\"cssable\":true},{\"selector\":\"[itemprop=\\\"articleBody\\\"]\",\"action\":[\"style\",\"max-width:unset !important\"],\"cssable\":true},{\"selector\":\"article.article\",\"action\":[\"remove-class\",\"cookie-paywall-visible\"]},{\"selector\":\"aside\",\"tasks\":[[\"has-text\",\"Sisuturundus\"]]},{\"selector\":\"html, body\",\"action\":[\"style\",\"overflow:auto !important\"],\"cssable\":true}]"];
+const argsSeqs = [0,1,2,3];
+const hostnamesMap = new Map([["delfi.ee",1],["ilm.ee",2],["postimees.ee",3]]);
 const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];

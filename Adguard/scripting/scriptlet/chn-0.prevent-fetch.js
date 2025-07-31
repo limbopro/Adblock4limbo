@@ -472,8 +472,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["method:HEAD"],["pagead2.googlesyndication.com"],["/googlesyndication\\.com|doubleclick\\.net/"],["doubleclick.net"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
-const hostnamesMap = new Map([["hmanga.world",0],["fsbot.xyz",1],["mpyit.com",1],["wandhi.com",2],["04647.club",3],["taiwanlibrarysearch.herokuapp.com",4],["linetv.tw",5]]);
+const argsList = [["pagead2.googlesyndication.com"],["method:HEAD"],["/googlesyndication\\.com|doubleclick\\.net/"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
+const hostnamesMap = new Map([["slashview.com",0],["fsbot.xyz",0],["mpyit.com",0],["hmanga.world",1],["wandhi.com",2],["taiwanlibrarysearch.herokuapp.com",3],["linetv.tw",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

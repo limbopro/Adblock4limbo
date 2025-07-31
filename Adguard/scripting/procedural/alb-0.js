@@ -27,10 +27,10 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\".vc_raw_html\",\"tasks\":[[\"has-text\",\"Html code\"]]}"],["{\"selector\":\".td-block-title-wrap > h4 > span\",\"tasks\":[[\"has-text\",\"REKLAMA\"]]}"],["{\"selector\":\".td_block_template_1\",\"tasks\":[[\"has-text\",\"- Advertisement -\"]]}"],["{\"selector\":\".widget\",\"tasks\":[[\"has-text\",\"REKLAMA\"]]}"]];
-const argsSeqs = [0,1,2,3,4];
-const hostnamesMap = new Map([["kohajone.com",1],["shkoder.net",2],["mediaworld.al",3],["konica.al",4]]);
-const hasEntities = false;
+const argsList = ["[]","[{\"selector\":\".vc_raw_html\",\"tasks\":[[\"has-text\",\"Html code\"]]}]","[{\"selector\":\".modal-open\",\"action\":[\"style\",\"overflow: visible\"],\"cssable\":true}]","[{\"selector\":\".td-block-title-wrap > h4 > span\",\"tasks\":[[\"has-text\",\"REKLAMA\"]]}]","[{\"selector\":\".location-choose.open > wrapper\",\"action\":[\"style\",\"visibility:hidden;\"],\"cssable\":true}]","[{\"selector\":\".td_block_template_1\",\"tasks\":[[\"has-text\",\"- Advertisement -\"]]}]","[{\"selector\":\".widget\",\"tasks\":[[\"has-text\",\"REKLAMA\"]]}]","[{\"selector\":\"div.col-8\",\"action\":[\"style\",\"width: 100% !important\"],\"cssable\":true}]"];
+const argsSeqs = [0,1,2,3,4,5,6,7];
+const hostnamesMap = new Map([["kohajone.com",1],["bankofalbania.org",2],["shkoder.net",3],["cineplexx.al",4],["mediaworld.al",5],["konica.al",6],["www.filma24.*",7]]);
+const hasEntities = true;
 
 self.proceduralImports = self.proceduralImports || [];
 self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });

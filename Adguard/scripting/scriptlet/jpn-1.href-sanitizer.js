@@ -460,8 +460,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"]];
-const hostnamesMap = new Map([["figure-times.com",0]]);
+const argsList = [["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"],["a[href^=\"https://adclick.g.doubleclick.net/\"][href*=\"adurl=\"]","?adurl"]];
+const hostnamesMap = new Map([["figure-times.com",0],["safeframe.googlesyndication.com",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

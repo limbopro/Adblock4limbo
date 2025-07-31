@@ -391,7 +391,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["japscan.lol",0],["empire-anime.com",0],["empire-streamz.fr",0],["empire-streaming.*",0],["empire-stream.*",0]]);
+const hostnamesMap = new Map([["japscan.*",0],["empire-anime.com",0],["empire-streamz.fr",0],["empire-streaming.*",0],["empire-stream.*",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

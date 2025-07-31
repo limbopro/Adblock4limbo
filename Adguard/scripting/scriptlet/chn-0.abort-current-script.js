@@ -32,11 +32,11 @@
 
 function abortCurrentScript(...args) {
     runAtHtmlElementFn(( ) => {
-        abortCurrentScriptCore(...args);
+        abortCurrentScriptFn(...args);
     });
 }
 
-function abortCurrentScriptCore(
+function abortCurrentScriptFn(
     target = '',
     needle = '',
     context = ''
@@ -71,8 +71,9 @@ function abortCurrentScriptCore(
     const debug = shouldDebug(extraArgs);
     const exceptionToken = getExceptionTokenFn();
     const scriptTexts = new WeakMap();
+    const textContentGetter = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent').get;
     const getScriptText = elem => {
-        let text = elem.textContent;
+        let text = textContentGetter.call(elem);
         if ( text.trim() !== '' ) { return text; }
         if ( scriptTexts.has(elem) ) { return scriptTexts.get(elem); }
         const [ , mime, content ] =
@@ -370,8 +371,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["EventTarget.prototype.addEventListener","window.getComputedStyle"],["document.getElementById","adBlockDetected"],["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"],["navigator","location.href"],["Math.random","parentNode.insertBefore"],["document.createElement","return a.split"],["Function","new Function(document["]];
-const hostnamesMap = new Map([["dqzboy.com",0],["playav.cc",1],["bilinovel.com",2],["18comic.org",3],["18comic.vip",3],["18-comic.work",3],["vxetable.cn",4],["1keydata.com",5],["slit.cn",6],["jkpan.cc",[7,8]],["poedb.tw",9],["bingfeng.tw",10],["youranshare.com",11],["getitfree.cn",12],["pg-wuming.com",13],["m.lwxs.com",[14,15]],["akkxs.net",14],["pornbest.org",16],["nunuyy3.org",17],["dogfight360.com",18],["o8tv.com",19],["javlibrary.com",20],["hentaicomic.*",21],["wnacg1.cc",21],["wnacg.*",21],["pixnet.net",22],["ggjav.com",23],["porn87.com",23],["m.shuhaige.net",[24,25,26]],["mxdm.xyz",27]]);
+const argsList = [["EventTarget.prototype.addEventListener","window.getComputedStyle"],["document.getElementById","adBlockDetected"],["document.createElement","pagead2.googlesyndication.com"],["document.dispatchEvent","/getexoloader/"],["decodeURIComponent","pagead"],["document.querySelector","window.getComputedStyle"],["alert","typeof(ad)"],["jQuery","\\u"],["document.writeln","\\u"],["document.getElementById","/#myModal'\\)\\.modal/"],["setTimeout","COOKIE_NAME"],["$","adskilltest"],["document.getElementById","/!document\\.getElementById\\([\\s\\S]*?\\.style\\.display=/"],["$","!document.getElementById(btoa"],["eval","_0x"],["document.write","_0x"],["jQuery","injectPops"],["$","infoid"],["document.write","document.write(ad);"],["document.write","tips"],["document.write","/getCookie[\\s\\S]*?\\(\"\\\\x/"],["document.write","/\\.(gif|php)/"],["window.leave"],["$","popunder"],["document.write","ads_codes"],["navigator","location.href"],["Math.random","parentNode.insertBefore"],["document.createElement","return a.split"],["Function","new Function(document["]];
+const hostnamesMap = new Map([["dqzboy.com",0],["playav.cc",1],["bilinovel.com",2],["18comic.org",3],["18comic.vip",3],["18-comic.work",3],["vxetable.cn",4],["1keydata.com",5],["slit.cn",6],["jkpan.cc",[7,8]],["poedb.tw",9],["bingfeng.tw",10],["youranshare.com",11],["getitfree.cn",12],["pg-wuming.com",13],["m.lwxs.com",[14,15]],["akkxs.net",14],["pornbest.org",16],["nunuyy3.org",17],["dogfight360.com",18],["o8tv.com",19],["javlibrary.com",20],["hentaicomic.*",21],["wnacg1.cc",21],["wnacg.*",21],["pixnet.net",22],["ggjav.com",23],["porn87.com",23],["av6k.com",24],["m.shuhaige.net",[25,26,27]],["mxdm.xyz",28]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

@@ -27,7 +27,7 @@ iOS 屏蔽内容农场：https://limbopro.com/archives/block-contentfarm.html
 群组：https://t.me/Adblock4limbo
 完整项目：https://github.com/limbopro/Adblock4limbo
 There are 7179 content farm domains in total until now.
-Last updated at 15/7月/2025/21:52
+Last updated at  1/8月/2025/00:00
 */
 
 function contentFarm_AdsRemove_Auto(){
@@ -7216,7 +7216,6 @@ var ads_host = [
 "zzzhtrade.com",
 "zzzxmryy.com",
 "zzzysy.com",
-
         "zditect.com",
         "whatthefuck.wtf"
         //"csdn.net"
@@ -7234,22 +7233,39 @@ var ads_host = [
         "div[class][data-sokoban-container]"// 最后一个选择器也不需要逗号结尾
     ]
 
-var i, x;
+
+
+    const hideGoogleAds = () => { // 隐藏 Google 广告 
+        const style = document.createElement('style');
+        style.textContent = `
+    #tvcap, #tads {
+      display: none !important;
+    }
+    `;
+        document.head.appendChild(style);
+    };
+
+    // Check if URL includes 'google.com' and execute
+    if (document.head && /google\.com/.test(window.location.hostname)) {
+        hideGoogleAds();
+    }
+
+    var i, x;
     setTimeout(() => {
         var huge = document.querySelectorAll(search_results_css);
         console.log("捕获" + huge.length + "个有效样式！")
         for (i = 0; i < ads_host.length; i++) {
             var ads_host_css = "[href*='" + ads_host[i] + "']";
-                for (x = 0; x < huge.length; x++) {
-                    if (huge[x].querySelectorAll(ads_host_css).length) {
-                        huge[x].remove();
-                        console.log(huge[x].textContent + " -> 涉及内容农场！已移除！")
-                    }
+            for (x = 0; x < huge.length; x++) {
+                if (huge[x].querySelectorAll(ads_host_css).length) {
+                    huge[x].remove();
+                    console.log(huge[x].textContent + " -> 涉及内容农场！已移除！")
                 }
             }
-        }, 500);
+        }
+    }, 500);
 
-    timecount +=1;
+    timecount += 1;
     console.log("循环第" + timecount + "次")
     if (timecount === 1) {
         clearInterval(id);
@@ -7259,5 +7275,44 @@ var i, x;
 
 
 contentFarm_AdsRemove_Auto(); // 首次执行农场内容检测
-var timecount =0;
+var timecount = 0;
 var id = setInterval(contentFarm_AdsRemove_Auto, 1000);
+
+
+// 创建 MutationObserver 实例
+const observer = new MutationObserver((mutationsList, observer) => {
+  for (const mutation of mutationsList) {
+    // 检查是否有新节点被添加到 DOM
+    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+      // 确认新节点是否包含搜索结果（可以通过类名、ID 或其他特征检查）
+      const newContent = mutation.target.querySelector('[data-async-context] > div'); // 根据实际页面结构调整选择器
+      if (newContent) {
+        console.log('New search results detected!');
+        contentFarm_AdsRemove_Auto(); // 调用目标函数
+      }
+    }
+  }
+});
+
+// 选择要观察的目标容器
+const targetNode = document.querySelector('div[data-async-context]');
+
+// 配置 MutationObserver
+const config = {
+  childList: true, // 监控子节点的变化（如添加或删除节点）
+  subtree: true,   // 监控目标节点及其所有后代节点
+};
+
+// 如果找到目标节点，开始观察
+if (targetNode) {
+  observer.observe(targetNode, config);
+} else {
+  console.warn('Target node div[data-async-context] not found. Please check the selector.');
+}
+
+// 可选：停止观察（如果需要）
+function stopObserving() {
+  observer.disconnect();
+  console.log('MutationObserver stopped.');
+}
+

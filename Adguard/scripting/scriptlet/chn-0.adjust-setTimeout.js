@@ -252,7 +252,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["adCountDown","","0.02"],["video-ad-timeout","*","0.02"],["","","0.02"],["CloseAd","","0.02"]];
-const hostnamesMap = new Map([["51zxw.net",0],["iwatchme2u.com",1],["youku.com",2],["zhenbuka3.com",3],["zhenbuka2.com",3],["bukaivip.com",3]]);
+const hostnamesMap = new Map([["51zxw.net",0],["iwatchme2u.com",1],["youku.com",2],["zhenbuka3.com",3],["bukaivip.com",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

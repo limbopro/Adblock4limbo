@@ -362,8 +362,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ai_"],["adsbygoogle"],["show"],["ai_adb"]];
-const hostnamesMap = new Map([["turdanews.net",0],["vwforum.ro",1],["bloground.ro",2],["boardingpass.ro",3]]);
+const argsList = [["ai_"],["adsbygoogle"],["show"],["ai_adb"],["location"]];
+const hostnamesMap = new Map([["turdanews.net",0],["vwforum.ro",1],["bloground.ro",2],["boardingpass.ro",3],["canale-tv.com",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

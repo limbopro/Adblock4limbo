@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}"],["{\"selector\":\"a.card\",\"tasks\":[[\"has-text\",\"Oglas\"]]}"]];
+const argsList = ["[]","[{\"selector\":\"li.article\",\"tasks\":[[\"has-text\",\"Oglasno sporočilo\"]]}]","[{\"selector\":\"a.card\",\"tasks\":[[\"has-text\",\"Oglas\"]]}]"];
 const argsSeqs = [0,1,2];
 const hostnamesMap = new Map([["monitor.si",1],["partis.si",2]]);
 const hasEntities = false;

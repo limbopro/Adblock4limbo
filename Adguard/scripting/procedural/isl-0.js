@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const argsList = ["",["{\"selector\":\".d-flex.flex-column.mx-auto\",\"tasks\":[[\"has-text\",\"AUGLÝSING\"]]}"]];
+const argsList = ["[]","[{\"selector\":\".d-flex.flex-column.mx-auto\",\"tasks\":[[\"has-text\",\"AUGLÝSING\"]]}]"];
 const argsSeqs = [0,1];
 const hostnamesMap = new Map([["1819.is",1]]);
 const hasEntities = false;

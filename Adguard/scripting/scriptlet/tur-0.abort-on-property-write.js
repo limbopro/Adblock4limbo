@@ -266,8 +266,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adregain_wall"],["rInt"],["openRandomUrl"],["popURL"],["window.onload"],["yeniSekmeAdresi"],["popURLs"],["getLink"],["adx"],["onPopUnderLoaded"]];
-const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["yeppuu.com",2],["dizipia.com",3],["dizilost.com",[4,9]],["mixizle.com",5],["fullhdabifilm.com",5],["hdmixfilim.com",5],["dizimag.*",6],["erotikhdfilmx3.shop",7],["izlekolik.org",8],["4kfilmizlesene.*",8],["hdfilmizleamk.net",9],["indirmedenfilmizle.vip",9],["birasyadizi.com",9],["seyredeger.com",9]]);
+const argsList = [["adregain_wall"],["rInt"],["openRandomUrl"],["popURL"],["yeniSekmeAdresi"],["popURLs"],["getLink"],["adx"],["onPopUnderLoaded"]];
+const hostnamesMap = new Map([["memoryhackers.org",0],["r10.net",1],["yeppuu.com",2],["dizipia.com",3],["mixizle.com",4],["fullhdabifilm.com",4],["hdmixfilim.com",4],["dizimag.*",5],["erotikhdfilmx3.shop",6],["izlekolik.org",7],["4kfilmizlesene.*",7],["hdfilmizleamk.net",8],["birasyadizi.com",8],["seyredeger.com",8]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.07.22
+// @version      0.2025.08.07
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -90,6 +90,7 @@
 // @match        https://www.pornhub.com/*
 // @match        https://t66y.com/*
 // @match        https://www.dmm.co.jp/*
+// @match        https://*.dmm.co.jp/*
 // @match        https://missav.com/*
 // @match        https://missav.ai/*
 // @match        https://missav.ws/*
@@ -397,7 +398,7 @@ function values() {
     var adsDomain = [
         "pornhub",
         "t66y",
-        'www.dmm.co.jp',
+        'dmm.co.jp',
         "missav",
         "bi-girl",
         "op.gg",
@@ -1430,196 +1431,225 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             js_adsRemove(uBlockOrigin.noevalif);
             break;
 
-        case 'www.dmm.co.jp':
+        case 'dmm.co.jp':
 
             // 在番号详情页追加在线预览链接
-            function tmd_dmm(parentsSelector, code, textContent) {
-                function otherSearch() {
-                    // 试试其他搜索：
-                    let parentElement = document.querySelectorAll(parentsSelector)[0]
-                    let p1 = document.createElement('p')
-                    p1.id = 'p1'
-                    p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+            window.addEventListener('load', function () {
 
-                    let p2 = document.createElement('p')
-                    p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-                    p2.id = 'p2'
+                setTimeout(() => {
 
+                    function tmd_dmm(parentsSelector, code, textContent) {
+                        function otherSearch() {
+                            // 试试其他搜索：
+                            let parentElement = document.querySelectorAll(parentsSelector)[0]
+                            let p1 = document.createElement('p')
+                            p1.id = 'p1'
+                            p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
 
-                    p1.appendChild(p2)
-                    parentElement.insertBefore(p1, parentElement.childNodes[2])
-
-                    let span = document.createElement('span')
-                    span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-                    span.textContent = textContent
-                    p2.appendChild(span)
-
-                    function aAdd2Parent(siteName, url, codeSlect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + codeSlect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-                        lable.appendChild(a)
-                        p2.appendChild(lable)
-                    }
-
-                    aAdd2Parent('MissAV[720P]', 'https://missav.ws/search', '/' + code)
-                    aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
-                    aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
-                    aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                    aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                    aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
-                    //aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
-
-                    console.log('已生成在线预览链接🔗')
-                }
-                otherSearch()
-            }
-
-            // 在工口漫画详情页追加在线预览链接
-            function tmd_dmm_doujin(parentsSelector, h1, textContent) {
-                function otherSearch() {
-                    // 试试其他搜索：
-                    let parentElement = document.querySelectorAll(parentsSelector)[0]
-                    let p1 = document.createElement('p')
-                    p1.id = 'p1'
-                    p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
-
-                    let p2 = document.createElement('p')
-                    p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-                    p2.id = 'p2'
+                            let p2 = document.createElement('p')
+                            p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                            p2.id = 'p2'
 
 
-                    p1.appendChild(p2)
-                    parentElement.insertBefore(p1, parentElement.childNodes[2])
+                            p1.appendChild(p2)
+                            //parentElement.insertBefore(p1, parentElement.childNodes[2])
+                            parentElement.appendChild(p1)
 
-                    let span = document.createElement('span')
-                    span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-                    span.textContent = textContent
-                    p2.appendChild(span)
+                            let span = document.createElement('span')
+                            span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                            span.textContent = textContent
+                            p2.appendChild(span)
 
-                    function aAdd2Parent(siteName, url, h1Slect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + h1Slect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-                        lable.appendChild(a)
-                        p2.appendChild(lable)
-                    }
-                    aAdd2Parent('Hitomi[HD]', 'https://www.google.com/search?q=', "site:hitomi.la" + " " + h1)
-                    aAdd2Parent('禁漫天堂[HD]', 'https://www.google.com/search?q=', "site:18comic.vip" + " " + h1)
-                    aAdd2Parent('绅士漫画[HD]', 'https://www.google.com/search?q=', "site:www.wnacg.com" + " " + h1)
-                    aAdd2Parent('Google🔍', 'https://www.google.com/search?q=', "免费" + " " + h1)
+                            function aAdd2Parent(siteName, url, codeSlect) {
+                                let a = document.createElement('a')
+                                let lable = document.createElement('label')
+                                lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                                a.href = url + codeSlect
+                                a.textContent = siteName
+                                a.target = '_blank'
+                                a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                                lable.appendChild(a)
+                                p2.appendChild(lable)
+                            }
 
-                    console.log('已生成在线预览链接🔗')
-                }
-                otherSearch()
-            }
+                            aAdd2Parent('MissAV[720P]', 'https://missav.ws/search', '/' + code)
+                            aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
+                            aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
+                            aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
+                            aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
+                            aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
+                            //aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
 
-            // dmm.co.jp
-
-            function isMobile() {
-                // 判断是否为移动设备
-                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            }
-
-            if (!code_dmm() == false) {
-                var url = window.location.href;
-
-                if (isMobile()) {
-                    // 如果是手机端，执行手机端相关函数
-                    if (document.querySelector('div.box-overview') !== null && url.includes('/digital/')) { // https://www.dmm.co.jp/digital/
-                        try {
-                            tmd_dmm('div.box-overview', code_dmm(), '在其他站点播放：');
-                        } catch (e) {
-                            console.error('Error in tmd_dmm:', e);
+                            console.log('已生成在线预览链接🔗')
                         }
-                    } else if (document.querySelector('h1') !== null && url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/ 
-                        try {
-                            tmd_dmm('h1', code_dmm(), '在其他站点播放：');
-                        } catch (e) {
-                            console.error('Error in tmd_dmm:', e);
-                        }
-                    } else if (document.querySelector('h1') !== null && url.includes('/doujin/')) { // https://www.dmm.co.jp/dc/doujin/
-                        // 获取标题
-                        const h1 = document.querySelector('h1');
-                        const text = Array.from(h1.childNodes)
-                            .filter(node => node.nodeType === Node.TEXT_NODE)
-                            .map(node => node.textContent.trim())
-                            .join('');
-                        console.log(text);
 
-                        try {
-                            tmd_dmm_doujin('h1', text, '在其他站点观看：');
-                        } catch (e) {
-                            console.error('Error in tmd_dmm_doujin:', e);
-                        }
-                    }
-
-                } else {
-                    // 如果是PC端，执行PC端相关函数
-                    if (url.includes('/digital/')) { // https://www.dmm.co.jp/digital/ 动画
-                        try {
-                            tmd_dmm('div.box-sampleInfo', code_dmm(), '在其他站点播放：');
-                        } catch (e) {
-                            console.error('/digital/ Error in tmd_dmm:', e);
-                        }
-                    } else if (url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/ 动画
-                        try {
-                            tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：');
-                        } catch (e) {
-                            console.error('/monthly/ Error in tmd_dmm:', e);
-                        }
-                    } else if (url.includes('/doujin/')) { //https://www.dmm.co.jp/dc/doujin/ 同人
-
-                        // 获取标题
-
-                        const h1 = document.querySelector('h1.productTitle__txt');
-                        const text = Array.from(h1.childNodes)
-                            .filter(node => node.nodeType === Node.TEXT_NODE)
-                            .map(node => node.textContent.trim())
-                            .join('');
-                        console.log(text);
-
-                        try {
-                            tmd_dmm_doujin('div.m-productPreview', text, '在其他站点观看：');
-                        } catch (e) {
-                            console.error('/doujin/ Error in tmd_dmm:', e);
-                        }
+                        setTimeout(() => { otherSearch() }, 1500); // 等待页面加载完成
 
                     }
 
+                    // 在工口漫画详情页追加在线预览链接
+                    function tmd_dmm_doujin(parentsSelector, h1, textContent) {
+                        function otherSearch() {
 
-                }
+                            setTimeout(() => {
 
-            }
+                                // 试试其他搜索：
+                                let parentElement = document.querySelectorAll(parentsSelector)[0]
+                                let p1 = document.createElement('p')
+                                p1.id = 'p1'
+                                p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
 
-            isMobile()
+                                let p2 = document.createElement('p')
+                                p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                                p2.id = 'p2'
 
 
-            function code_dmm() {
-                var url = window.location.href;
-                const match = url.match(/cid=([^/&?]+)/);
-                let cid = match ? match[1] : null;
-                if (!cid) return null;
-                // 删除开头的全部数字
-                cid = cid.replace(/^\d+/, '');
-                let code_dmm = cid.replace(/0{2}/, '-');
-                // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
-                if (!code_dmm.includes('-')) {
-                    code_dmm = code_dmm.replace(/(\D*)(\d+)/, '$1-$2');
-                }
-                // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
-                console.log(code_dmm);
-                console.log(cid);
-                return code_dmm;
-            }
+                                p1.appendChild(p2)
+                                //parentElement.insertBefore(p1, parentElement.childNodes[2])
+                                parentElement.appendChild(p1)
+
+                                let span = document.createElement('span')
+                                span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                                span.textContent = textContent
+                                p2.appendChild(span)
+
+                                function aAdd2Parent(siteName, url, h1Slect) {
+                                    let a = document.createElement('a')
+                                    let lable = document.createElement('label')
+                                    lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                                    a.href = url + h1Slect
+                                    a.textContent = siteName
+                                    a.target = '_blank'
+                                    a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                                    lable.appendChild(a)
+                                    p2.appendChild(lable)
+                                }
+                                aAdd2Parent('Hitomi[HD]', 'https://www.google.com/search?q=', "site:hitomi.la" + " " + h1)
+                                aAdd2Parent('禁漫天堂[HD]', 'https://www.google.com/search?q=', "site:18comic.vip" + " " + h1)
+                                aAdd2Parent('绅士漫画[HD]', 'https://www.google.com/search?q=', "site:www.wnacg.com" + " " + h1)
+                                aAdd2Parent('Google🔍', 'https://www.google.com/search?q=', "免费" + " " + h1)
+
+                                console.log('已生成在线预览链接🔗')
+
+
+                            }, 2000); // 等待页面加载完成
+                        }
+
+                        setTimeout(() => { otherSearch() }, 3000); // 等待页面加载完成
+                    }
+
+                    // dmm.co.jp
+
+                    function isMobile() {
+                        // 判断是否为移动设备
+                        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    }
+
+
+                    function code_dmm() {
+                        var url = window.location.href;
+                        console.log("当前URL:" + url);
+                        // 使用正则表达式从URL中提取cid参数
+                        const match = url.match(/id=([^/&?]+)/);
+                        let cid = match ? match[1] : null;
+                        if (!cid) return null;
+                        // 删除开头的全部数字
+                        cid = cid.replace(/^\d+/, '');
+                        let code_dmm = cid.replace(/0{2}/, '-');
+                        // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
+                        if (!code_dmm.includes('-')) {
+                            code_dmm = code_dmm.replace(/(\D*)(\d+)/, '$1-$2');
+                        }
+                        // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
+                        console.log(code_dmm);
+                        console.log(cid);
+                        return code_dmm;
+                    } code_dmm();
+
+
+                    if (!code_dmm() == false) {
+                        var url = window.location.href;
+
+                        if (isMobile()) {
+                            // 如果是手机端，执行手机端相关函数
+                            if (document.querySelector('h1 > span') !== null && (url.includes('/content/') || url.includes("dightal"))) { // https://www.dmm.co.jp/content/
+                                try {
+                                    tmd_dmm('h1 > span', code_dmm(), '在其他站点播放：');
+                                } catch (e) {
+                                    console.error('Error in tmd_dmm:', e);
+                                }
+                            } else if (document.querySelector('h1') !== null && url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/
+                                try {
+                                    tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+                                } catch (e) {
+                                    console.error('Error in tmd_dmm:', e);
+                                }
+                            } else if (document.querySelector('h1') !== null && url.includes('/doujin/')) { // https://www.dmm.co.jp/dc/doujin/
+                                // 获取标题
+                                const h1 = document.querySelector('h1');
+                                const text = Array.from(h1.childNodes)
+                                    .filter(node => node.nodeType === Node.TEXT_NODE)
+                                    .map(node => node.textContent.trim())
+                                    .join('');
+                                console.log(text);
+
+                                try {
+                                    tmd_dmm_doujin('h1', text, '在其他站点观看：');
+                                } catch (e) {
+                                    console.error('Error in tmd_dmm_doujin:', e);
+                                }
+                            }
+
+                        } else {
+
+                            var url = window.location.href;
+                            console.log("PC端")
+                            console.log("URL:" + url)
+                            // 如果是PC端，执行PC端相关函数
+                            if (url.includes('/content/') || url.includes("dightal")) { // https://www.dmm.co.jp/content/ 动画
+                                console.log("content")
+                                try {
+                                    console.log('/content/ div.box-sampleInfo');
+                                    tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+                                } catch (e) {
+                                    console.error('/content/ Error in tmd_dmm:', e);
+                                }
+                            } else if (url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/ 动画
+                                console.log("monthly")
+                                try {
+                                    console.log('/content/ div.bx-detail-player-sampleMovie');
+                                    tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：');
+                                } catch (e) {
+                                    console.error('/monthly/ Error in tmd_dmm:', e);
+                                }
+                            } else if (url.includes('/doujin/')) { //https://www.dmm.co.jp/dc/doujin/ 同人
+
+                                // 获取标题
+
+                                const h1 = document.querySelector('h1.productTitle__txt');
+                                const text = Array.from(h1.childNodes)
+                                    .filter(node => node.nodeType === Node.TEXT_NODE)
+                                    .map(node => node.textContent.trim())
+                                    .join('');
+                                console.log(text);
+
+                                try {
+                                    console.log('/doujin/ div.m-productPreview');
+                                    tmd_dmm_doujin('div.m-productPreview', text, '在其他站点观看：');
+                                } catch (e) {
+                                    console.error('/doujin/ Error in tmd_dmm:', e);
+                                }
+                            }
+
+
+                        }
+
+
+                    }
+
+                }, 5000); // 等待页面加载完成
+
+            });
 
             break;
 

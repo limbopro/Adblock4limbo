@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 30 Jul 2025 07:30:29 GMT
-# entries:        3423
+# last updated:   Tue, 05 Aug 2025 15:17:49 GMT
+# entries:        3420
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -13,7 +13,6 @@
 
 
 DOMAIN-SUFFIX,101com.com
-DOMAIN-SUFFIX,180hits.de
 DOMAIN-SUFFIX,180searchassistant.com
 DOMAIN-SUFFIX,1rx.io
 DOMAIN-SUFFIX,2020mustang.com
@@ -617,7 +616,6 @@ DOMAIN-SUFFIX,ads.yumenetworks.com
 DOMAIN-SUFFIX,ads1-adnow.com
 DOMAIN-SUFFIX,ads1.mediacapital.pt
 DOMAIN-SUFFIX,ads1.msn.com
-DOMAIN-SUFFIX,ads1.rne.com
 DOMAIN-SUFFIX,ads1.virtual-nights.com
 DOMAIN-SUFFIX,ads10.speedbit.com
 DOMAIN-SUFFIX,ads180.com
@@ -626,7 +624,6 @@ DOMAIN-SUFFIX,ads2.contentabc.com
 DOMAIN-SUFFIX,ads2.femmefab.nl
 DOMAIN-SUFFIX,ads2.gamecity.net
 DOMAIN-SUFFIX,ads2.hsoub.com
-DOMAIN-SUFFIX,ads2.rne.com
 DOMAIN-SUFFIX,ads2.virtual-nights.com
 DOMAIN-SUFFIX,ads2.webdrive.no
 DOMAIN-SUFFIX,ads2.xnet.cz
@@ -1439,7 +1436,6 @@ DOMAIN-SUFFIX,dacdn.vwo.com
 DOMAIN-SUFFIX,dakic-ia-300.com
 DOMAIN-SUFFIX,damageddistance.com
 DOMAIN-SUFFIX,damdoor.com
-DOMAIN-SUFFIX,dancemistake.com
 DOMAIN-SUFFIX,dapper.net
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com
 DOMAIN-SUFFIX,datenow.link
@@ -1450,7 +1446,6 @@ DOMAIN-SUFFIX,decenterads.com
 DOMAIN-SUFFIX,decisivebase.com
 DOMAIN-SUFFIX,decisivedrawer.com
 DOMAIN-SUFFIX,decknetwork.net
-DOMAIN-SUFFIX,decoycreation.com
 DOMAIN-SUFFIX,deepintent.com
 DOMAIN-SUFFIX,delicatecascade.com
 DOMAIN-SUFFIX,deloo.de
@@ -1635,7 +1630,6 @@ DOMAIN-SUFFIX,fastly-insights.com
 DOMAIN-SUFFIX,faultycanvas.com
 DOMAIN-SUFFIX,fave.co
 DOMAIN-SUFFIX,fc.webmasterpro.de
-DOMAIN-SUFFIX,feathr.co
 DOMAIN-SUFFIX,feedbackresearch.com
 DOMAIN-SUFFIX,feedjit.com
 DOMAIN-SUFFIX,feedmob.com
@@ -2481,6 +2475,7 @@ DOMAIN-SUFFIX,pointlessprofit.com
 DOMAIN-SUFFIX,pointroll.com
 DOMAIN-SUFFIX,pokkt.com
 DOMAIN-SUFFIX,polishedfolly.com
+DOMAIN-SUFFIX,polo.feathr.co
 DOMAIN-SUFFIX,popads.net
 DOMAIN-SUFFIX,popcash.net
 DOMAIN-SUFFIX,popmyads.com
@@ -3060,6 +3055,7 @@ DOMAIN-SUFFIX,the-ozone-project.com
 DOMAIN-SUFFIX,theadex.com
 DOMAIN-SUFFIX,theadhost.com
 DOMAIN-SUFFIX,thebugs.ws
+DOMAIN-SUFFIX,themangotea.com
 DOMAIN-SUFFIX,themoneytizer.com
 DOMAIN-SUFFIX,therapistla.com
 DOMAIN-SUFFIX,thinkitten.com
@@ -3275,6 +3271,7 @@ DOMAIN-SUFFIX,ventivmedia.com
 DOMAIN-SUFFIX,venturead.com
 DOMAIN-SUFFIX,vericlick.com
 DOMAIN-SUFFIX,vertamedia.com
+DOMAIN-SUFFIX,verticalmass.com
 DOMAIN-SUFFIX,vervewireless.com
 DOMAIN-SUFFIX,vgnp3trk.com
 DOMAIN-SUFFIX,vibrantsundown.com

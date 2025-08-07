@@ -326,7 +326,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["adbEnableForPage"]];
-const hostnamesMap = new Map([["forexgruppen.se",0],["kattannonser.se",0]]);
+const hostnamesMap = new Map([["kattannonser.se",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

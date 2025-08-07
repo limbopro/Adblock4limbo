@@ -426,8 +426,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"],[".kw-ads-pagination-button:first-child,.kw-ads-pagination-button:first-child","","1000"]];
-const hostnamesMap = new Map([["my.irancell.ir",0],["tourbobit.com",1],["tourbobit.net",1],["turbobeet.net",1],["turbobi.pw",1],["turbobif.com",1],["turbobit.net",1],["turbobita.net",1],["turbobits.cc",1],["turboobit.com",1],["easybib.com",2],["read.amazon.*",3]]);
+const argsList = [["#player-option-1","","500"],["button[data-testid=\"close-modal\"]"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"],[".kw-ads-pagination-button:first-child,.kw-ads-pagination-button:first-child","","1000"]];
+const hostnamesMap = new Map([["yabaisub.cloud",0],["truthsocial.com",1],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["turboobit.com",3],["easybib.com",4],["read.amazon.*",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

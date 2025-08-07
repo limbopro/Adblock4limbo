@@ -319,7 +319,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["browser-ids","$remove$"],["fdx_enable_new_detail_page","true"],["plausible_ignore","true"]];
-const hostnamesMap = new Map([["visible.com",0],["fedex.com",1],["coomer.su",2],["kemono.su",2]]);
+const hostnamesMap = new Map([["visible.com",0],["fedex.com",1],["coomer.st",2],["kemono.cr",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

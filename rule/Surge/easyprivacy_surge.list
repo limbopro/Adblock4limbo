@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202507311545
+## ! Version: 202508071429
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Jul 2025 15:45 UTC
+## ! Last modified: 07 Aug 2025 14:29 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -558,6 +558,7 @@ DOMAIN-SUFFIX,ak0gsh40.com
 DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
 DOMAIN-SUFFIX,aliveachiever.com
+DOMAIN-SUFFIX,alloutdubstep.com
 DOMAIN-SUFFIX,alluringbucket.com
 DOMAIN-SUFFIX,almostsugar.com
 DOMAIN-SUFFIX,alohamiles.com
@@ -663,6 +664,7 @@ DOMAIN-SUFFIX,blesspizzas.com
 DOMAIN-SUFFIX,blisscalendar.com
 DOMAIN-SUFFIX,blissfulcrescendo.com
 DOMAIN-SUFFIX,blissfullagoon.com
+DOMAIN-SUFFIX,blitzcampaigns.com
 DOMAIN-SUFFIX,blockdial.com
 DOMAIN-SUFFIX,blotburn.com
 DOMAIN-SUFFIX,blueeyedblow.com
@@ -1170,6 +1172,7 @@ DOMAIN-SUFFIX,gammamaximum.com
 DOMAIN-SUFFIX,gardenovens.com
 DOMAIN-SUFFIX,gatejunction.com
 DOMAIN-SUFFIX,gaudyairplane.com
+DOMAIN-SUFFIX,gearbubbles.com
 DOMAIN-SUFFIX,geekbackyard.com
 DOMAIN-SUFFIX,generalprose.com
 DOMAIN-SUFFIX,generateoffice.com
@@ -1267,6 +1270,7 @@ DOMAIN-SUFFIX,heartbreakingmind.com
 DOMAIN-SUFFIX,hearthow.com
 DOMAIN-SUFFIX,heavydetail.com
 DOMAIN-SUFFIX,heavyplayground.com
+DOMAIN-SUFFIX,hellounbox.com
 DOMAIN-SUFFIX,helpcollar.com
 DOMAIN-SUFFIX,helpflame.com
 DOMAIN-SUFFIX,hertechlife.com
@@ -2197,6 +2201,7 @@ DOMAIN-SUFFIX,texturetrick.com
 DOMAIN-SUFFIX,thebigvan.com
 DOMAIN-SUFFIX,thefishstops.com
 DOMAIN-SUFFIX,thejavalane.com
+DOMAIN-SUFFIX,themangotea.com
 DOMAIN-SUFFIX,themepicker.com
 DOMAIN-SUFFIX,thepowerstones.com
 DOMAIN-SUFFIX,therapeuticcars.com
@@ -2227,6 +2232,7 @@ DOMAIN-SUFFIX,tiresomethunder.com
 DOMAIN-SUFFIX,toasttutor.com
 DOMAIN-SUFFIX,tofupancake.com
 DOMAIN-SUFFIX,tofusquirrel.com
+DOMAIN-SUFFIX,tomatobarrel.com
 DOMAIN-SUFFIX,toolcapital.com
 DOMAIN-SUFFIX,toomanyalts.com
 DOMAIN-SUFFIX,topbookgifts.com
@@ -2722,6 +2728,7 @@ DOMAIN-SUFFIX,collector.automote.co.nz
 DOMAIN-SUFFIX,collector.clareity.net
 DOMAIN-SUFFIX,collector.getyourguide.com
 DOMAIN-SUFFIX,collector.mazeberry.com
+DOMAIN-SUFFIX,collector.net-logger.com
 DOMAIN-SUFFIX,collector.sspinc.io
 DOMAIN-SUFFIX,collector5.zipy.ai
 DOMAIN-SUFFIX,commerce.bing.com
@@ -2821,6 +2828,7 @@ DOMAIN-SUFFIX,eel.transistor.fm
 DOMAIN-SUFFIX,enc-90128738.b-cdn.net
 DOMAIN-SUFFIX,eq.userneeds.com
 DOMAIN-SUFFIX,era.easyvoyage.com
+DOMAIN-SUFFIX,error-analytics-production.shopifysvc.com
 DOMAIN-SUFFIX,error-analytics-sessions-production.shopifysvc.com
 DOMAIN-SUFFIX,errors.snackly.co
 DOMAIN-SUFFIX,et.educationdynamics.com
@@ -3490,6 +3498,7 @@ DOMAIN-SUFFIX,track.zappos.com
 DOMAIN-SUFFIX,tracker-dot-optimeeze.appspot.com
 DOMAIN-SUFFIX,tracker-server.high-cdn.com
 DOMAIN-SUFFIX,tracker-v4.gamedock.io
+DOMAIN-SUFFIX,tracker.3dissue.com
 DOMAIN-SUFFIX,tracker.affirm.com
 DOMAIN-SUFFIX,tracker.au.zitcha.app
 DOMAIN-SUFFIX,tracker.beezup.com
@@ -4825,6 +4834,7 @@ DOMAIN-SUFFIX,ophan.theguardian.com
 DOMAIN-SUFFIX,optimizely.techtarget.com
 DOMAIN-SUFFIX,p.hentaiforce.net
 DOMAIN-SUFFIX,p.minds.com
+DOMAIN-SUFFIX,p.spotidownloader.com
 DOMAIN-SUFFIX,pac.thescottishsun.co.uk
 DOMAIN-SUFFIX,pac.thesun.co.uk
 DOMAIN-SUFFIX,pac.thetimes.com
@@ -5027,6 +5037,7 @@ DOMAIN-SUFFIX,telemetry.algolia.com
 DOMAIN-SUFFIX,telemetry.api.playstation.com
 DOMAIN-SUFFIX,telemetry.canva.com
 DOMAIN-SUFFIX,telemetry.firez.one
+DOMAIN-SUFFIX,telemetry.proton.me
 DOMAIN-SUFFIX,telemetry.stytch.com
 DOMAIN-SUFFIX,telemetry.tradingview.com
 DOMAIN-SUFFIX,tgt.maep.ibm.com
@@ -41863,7 +41874,6 @@ DOMAIN-SUFFIX,cs42.pikabu.ru
 DOMAIN-SUFFIX,cs43.pikabu.ru
 DOMAIN-SUFFIX,cvt1.sibnet.ru
 DOMAIN-SUFFIX,data.glamour.ru
-DOMAIN-SUFFIX,ga.finam.ru
 DOMAIN-SUFFIX,link.subscribe.ru
 DOMAIN-SUFFIX,log.dzen.ru
 DOMAIN-SUFFIX,log.ren.tv

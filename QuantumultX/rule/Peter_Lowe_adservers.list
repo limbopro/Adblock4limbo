@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Wed, 30 Jul 2025 07:30:29 GMT
-# entries:        3423
+# last updated:   Tue, 05 Aug 2025 15:17:49 GMT
+# entries:        3420
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -13,7 +13,6 @@
 
 
 DOMAIN-SUFFIX,101com.com, reject
-DOMAIN-SUFFIX,180hits.de, reject
 DOMAIN-SUFFIX,180searchassistant.com, reject
 DOMAIN-SUFFIX,1rx.io, reject
 DOMAIN-SUFFIX,2020mustang.com, reject
@@ -617,7 +616,6 @@ DOMAIN-SUFFIX,ads.yumenetworks.com, reject
 DOMAIN-SUFFIX,ads1-adnow.com, reject
 DOMAIN-SUFFIX,ads1.mediacapital.pt, reject
 DOMAIN-SUFFIX,ads1.msn.com, reject
-DOMAIN-SUFFIX,ads1.rne.com, reject
 DOMAIN-SUFFIX,ads1.virtual-nights.com, reject
 DOMAIN-SUFFIX,ads10.speedbit.com, reject
 DOMAIN-SUFFIX,ads180.com, reject
@@ -626,7 +624,6 @@ DOMAIN-SUFFIX,ads2.contentabc.com, reject
 DOMAIN-SUFFIX,ads2.femmefab.nl, reject
 DOMAIN-SUFFIX,ads2.gamecity.net, reject
 DOMAIN-SUFFIX,ads2.hsoub.com, reject
-DOMAIN-SUFFIX,ads2.rne.com, reject
 DOMAIN-SUFFIX,ads2.virtual-nights.com, reject
 DOMAIN-SUFFIX,ads2.webdrive.no, reject
 DOMAIN-SUFFIX,ads2.xnet.cz, reject
@@ -1439,7 +1436,6 @@ DOMAIN-SUFFIX,dacdn.vwo.com, reject
 DOMAIN-SUFFIX,dakic-ia-300.com, reject
 DOMAIN-SUFFIX,damageddistance.com, reject
 DOMAIN-SUFFIX,damdoor.com, reject
-DOMAIN-SUFFIX,dancemistake.com, reject
 DOMAIN-SUFFIX,dapper.net, reject
 DOMAIN-SUFFIX,data.namesakeoscilloscopemarquis.com, reject
 DOMAIN-SUFFIX,datenow.link, reject
@@ -1450,7 +1446,6 @@ DOMAIN-SUFFIX,decenterads.com, reject
 DOMAIN-SUFFIX,decisivebase.com, reject
 DOMAIN-SUFFIX,decisivedrawer.com, reject
 DOMAIN-SUFFIX,decknetwork.net, reject
-DOMAIN-SUFFIX,decoycreation.com, reject
 DOMAIN-SUFFIX,deepintent.com, reject
 DOMAIN-SUFFIX,delicatecascade.com, reject
 DOMAIN-SUFFIX,deloo.de, reject
@@ -1635,7 +1630,6 @@ DOMAIN-SUFFIX,fastly-insights.com, reject
 DOMAIN-SUFFIX,faultycanvas.com, reject
 DOMAIN-SUFFIX,fave.co, reject
 DOMAIN-SUFFIX,fc.webmasterpro.de, reject
-DOMAIN-SUFFIX,feathr.co, reject
 DOMAIN-SUFFIX,feedbackresearch.com, reject
 DOMAIN-SUFFIX,feedjit.com, reject
 DOMAIN-SUFFIX,feedmob.com, reject
@@ -2481,6 +2475,7 @@ DOMAIN-SUFFIX,pointlessprofit.com, reject
 DOMAIN-SUFFIX,pointroll.com, reject
 DOMAIN-SUFFIX,pokkt.com, reject
 DOMAIN-SUFFIX,polishedfolly.com, reject
+DOMAIN-SUFFIX,polo.feathr.co, reject
 DOMAIN-SUFFIX,popads.net, reject
 DOMAIN-SUFFIX,popcash.net, reject
 DOMAIN-SUFFIX,popmyads.com, reject
@@ -3060,6 +3055,7 @@ DOMAIN-SUFFIX,the-ozone-project.com, reject
 DOMAIN-SUFFIX,theadex.com, reject
 DOMAIN-SUFFIX,theadhost.com, reject
 DOMAIN-SUFFIX,thebugs.ws, reject
+DOMAIN-SUFFIX,themangotea.com, reject
 DOMAIN-SUFFIX,themoneytizer.com, reject
 DOMAIN-SUFFIX,therapistla.com, reject
 DOMAIN-SUFFIX,thinkitten.com, reject
@@ -3275,6 +3271,7 @@ DOMAIN-SUFFIX,ventivmedia.com, reject
 DOMAIN-SUFFIX,venturead.com, reject
 DOMAIN-SUFFIX,vericlick.com, reject
 DOMAIN-SUFFIX,vertamedia.com, reject
+DOMAIN-SUFFIX,verticalmass.com, reject
 DOMAIN-SUFFIX,vervewireless.com, reject
 DOMAIN-SUFFIX,vgnp3trk.com, reject
 DOMAIN-SUFFIX,vibrantsundown.com, reject

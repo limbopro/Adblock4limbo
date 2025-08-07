@@ -368,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","detectAdBlock"],["#text","/スポンサードリンク：?|楽天広告：/"],["script","selectRandomProduct"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","/スポンサード?リンク/"],["#text","/^PR\\s$/"],["#text","/^\\s*PR\\s*$/"]];
-const hostnamesMap = new Map([["rxlife.net",0],["kasegeru.blog.jp",1],["blog.livedoor.jp",2],["betweenjpandkr.blog",3],["dvdrev.com",4],["fm.sekkaku.net",5],["lifematome.blog",6],["negisoku.com",7],["arty-matome.com",7],["aidoly.net",7],["aikru.com",7],["ranky-ranking.net",7],["kabegami.jpn.org",7],["ideal2ch.livedoor.biz",7],["seikeidouga.blog.jp",7],["tcg-bloglife.com",7],["ch-review.net",7],["gametohkenranbu.sakuraweb.com",7],["jisakuhibi.jp",7],["rank1-media.com",7],["resizer.myct.jp",7],["sinsimmd.com",8],["tyoieronews.blog.jp",9]]);
+const argsList = [["script","detectAdBlocker"],["script","detectAdBlock"],["#text","/スポンサードリンク：?|楽天広告：/"],["script","selectRandomProduct"],["#text","PR:"],["#text","関連動画"],["#text","【広告】"],["#text","/\\[vkExUnit_ad area=(after|before)\\]/"],["#text","/スポンサード?リンク/"],["#text","/^PR\\s$/"],["#text","/^\\s*PR\\s*$/"]];
+const hostnamesMap = new Map([["pretravel.kawasaki-create.com",0],["rxlife.net",1],["kasegeru.blog.jp",2],["blog.livedoor.jp",3],["betweenjpandkr.blog",4],["dvdrev.com",5],["fm.sekkaku.net",6],["lifematome.blog",7],["negisoku.com",8],["arty-matome.com",8],["aidoly.net",8],["aikru.com",8],["ranky-ranking.net",8],["kabegami.jpn.org",8],["ideal2ch.livedoor.biz",8],["seikeidouga.blog.jp",8],["tcg-bloglife.com",8],["ch-review.net",8],["gametohkenranbu.sakuraweb.com",8],["rank1-media.com",8],["resizer.myct.jp",8],["sinsimmd.com",9],["tyoieronews.blog.jp",10]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

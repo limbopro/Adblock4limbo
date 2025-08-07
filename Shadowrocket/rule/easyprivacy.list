@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202507311545
+## ! Version: 202508071429
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Jul 2025 15:45 UTC
+## ! Last modified: 07 Aug 2025 14:29 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -558,6 +558,7 @@ DOMAIN-SUFFIX,ak0gsh40.com, reject
 DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
 DOMAIN-SUFFIX,aliveachiever.com, reject
+DOMAIN-SUFFIX,alloutdubstep.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
 DOMAIN-SUFFIX,almostsugar.com, reject
 DOMAIN-SUFFIX,alohamiles.com, reject
@@ -663,6 +664,7 @@ DOMAIN-SUFFIX,blesspizzas.com, reject
 DOMAIN-SUFFIX,blisscalendar.com, reject
 DOMAIN-SUFFIX,blissfulcrescendo.com, reject
 DOMAIN-SUFFIX,blissfullagoon.com, reject
+DOMAIN-SUFFIX,blitzcampaigns.com, reject
 DOMAIN-SUFFIX,blockdial.com, reject
 DOMAIN-SUFFIX,blotburn.com, reject
 DOMAIN-SUFFIX,blueeyedblow.com, reject
@@ -1170,6 +1172,7 @@ DOMAIN-SUFFIX,gammamaximum.com, reject
 DOMAIN-SUFFIX,gardenovens.com, reject
 DOMAIN-SUFFIX,gatejunction.com, reject
 DOMAIN-SUFFIX,gaudyairplane.com, reject
+DOMAIN-SUFFIX,gearbubbles.com, reject
 DOMAIN-SUFFIX,geekbackyard.com, reject
 DOMAIN-SUFFIX,generalprose.com, reject
 DOMAIN-SUFFIX,generateoffice.com, reject
@@ -1267,6 +1270,7 @@ DOMAIN-SUFFIX,heartbreakingmind.com, reject
 DOMAIN-SUFFIX,hearthow.com, reject
 DOMAIN-SUFFIX,heavydetail.com, reject
 DOMAIN-SUFFIX,heavyplayground.com, reject
+DOMAIN-SUFFIX,hellounbox.com, reject
 DOMAIN-SUFFIX,helpcollar.com, reject
 DOMAIN-SUFFIX,helpflame.com, reject
 DOMAIN-SUFFIX,hertechlife.com, reject
@@ -2197,6 +2201,7 @@ DOMAIN-SUFFIX,texturetrick.com, reject
 DOMAIN-SUFFIX,thebigvan.com, reject
 DOMAIN-SUFFIX,thefishstops.com, reject
 DOMAIN-SUFFIX,thejavalane.com, reject
+DOMAIN-SUFFIX,themangotea.com, reject
 DOMAIN-SUFFIX,themepicker.com, reject
 DOMAIN-SUFFIX,thepowerstones.com, reject
 DOMAIN-SUFFIX,therapeuticcars.com, reject
@@ -2227,6 +2232,7 @@ DOMAIN-SUFFIX,tiresomethunder.com, reject
 DOMAIN-SUFFIX,toasttutor.com, reject
 DOMAIN-SUFFIX,tofupancake.com, reject
 DOMAIN-SUFFIX,tofusquirrel.com, reject
+DOMAIN-SUFFIX,tomatobarrel.com, reject
 DOMAIN-SUFFIX,toolcapital.com, reject
 DOMAIN-SUFFIX,toomanyalts.com, reject
 DOMAIN-SUFFIX,topbookgifts.com, reject
@@ -2722,6 +2728,7 @@ DOMAIN-SUFFIX,collector.automote.co.nz, reject
 DOMAIN-SUFFIX,collector.clareity.net, reject
 DOMAIN-SUFFIX,collector.getyourguide.com, reject
 DOMAIN-SUFFIX,collector.mazeberry.com, reject
+DOMAIN-SUFFIX,collector.net-logger.com, reject
 DOMAIN-SUFFIX,collector.sspinc.io, reject
 DOMAIN-SUFFIX,collector5.zipy.ai, reject
 DOMAIN-SUFFIX,commerce.bing.com, reject
@@ -2821,6 +2828,7 @@ DOMAIN-SUFFIX,eel.transistor.fm, reject
 DOMAIN-SUFFIX,enc-90128738.b-cdn.net, reject
 DOMAIN-SUFFIX,eq.userneeds.com, reject
 DOMAIN-SUFFIX,era.easyvoyage.com, reject
+DOMAIN-SUFFIX,error-analytics-production.shopifysvc.com, reject
 DOMAIN-SUFFIX,error-analytics-sessions-production.shopifysvc.com, reject
 DOMAIN-SUFFIX,errors.snackly.co, reject
 DOMAIN-SUFFIX,et.educationdynamics.com, reject
@@ -3490,6 +3498,7 @@ DOMAIN-SUFFIX,track.zappos.com, reject
 DOMAIN-SUFFIX,tracker-dot-optimeeze.appspot.com, reject
 DOMAIN-SUFFIX,tracker-server.high-cdn.com, reject
 DOMAIN-SUFFIX,tracker-v4.gamedock.io, reject
+DOMAIN-SUFFIX,tracker.3dissue.com, reject
 DOMAIN-SUFFIX,tracker.affirm.com, reject
 DOMAIN-SUFFIX,tracker.au.zitcha.app, reject
 DOMAIN-SUFFIX,tracker.beezup.com, reject
@@ -4825,6 +4834,7 @@ DOMAIN-SUFFIX,ophan.theguardian.com, reject
 DOMAIN-SUFFIX,optimizely.techtarget.com, reject
 DOMAIN-SUFFIX,p.hentaiforce.net, reject
 DOMAIN-SUFFIX,p.minds.com, reject
+DOMAIN-SUFFIX,p.spotidownloader.com, reject
 DOMAIN-SUFFIX,pac.thescottishsun.co.uk, reject
 DOMAIN-SUFFIX,pac.thesun.co.uk, reject
 DOMAIN-SUFFIX,pac.thetimes.com, reject
@@ -5027,6 +5037,7 @@ DOMAIN-SUFFIX,telemetry.algolia.com, reject
 DOMAIN-SUFFIX,telemetry.api.playstation.com, reject
 DOMAIN-SUFFIX,telemetry.canva.com, reject
 DOMAIN-SUFFIX,telemetry.firez.one, reject
+DOMAIN-SUFFIX,telemetry.proton.me, reject
 DOMAIN-SUFFIX,telemetry.stytch.com, reject
 DOMAIN-SUFFIX,telemetry.tradingview.com, reject
 DOMAIN-SUFFIX,tgt.maep.ibm.com, reject
@@ -41863,7 +41874,6 @@ DOMAIN-SUFFIX,cs42.pikabu.ru, reject
 DOMAIN-SUFFIX,cs43.pikabu.ru, reject
 DOMAIN-SUFFIX,cvt1.sibnet.ru, reject
 DOMAIN-SUFFIX,data.glamour.ru, reject
-DOMAIN-SUFFIX,ga.finam.ru, reject
 DOMAIN-SUFFIX,link.subscribe.ru, reject
 DOMAIN-SUFFIX,log.dzen.ru, reject
 DOMAIN-SUFFIX,log.ren.tv, reject

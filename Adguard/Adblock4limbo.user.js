@@ -1491,51 +1491,46 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     function tmd_dmm_doujin(parentsSelector, h1, textContent) {
                         function otherSearch() {
 
-                            setTimeout(() => {
+                            // 试试其他搜索：
+                            let parentElement = document.querySelectorAll(parentsSelector)[0]
+                            let p1 = document.createElement('p')
+                            p1.id = 'p1'
+                            p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
 
-                                // 试试其他搜索：
-                                let parentElement = document.querySelectorAll(parentsSelector)[0]
-                                let p1 = document.createElement('p')
-                                p1.id = 'p1'
-                                p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
-
-                                let p2 = document.createElement('p')
-                                p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-                                p2.id = 'p2'
+                            let p2 = document.createElement('p')
+                            p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
+                            p2.id = 'p2'
 
 
-                                p1.appendChild(p2)
-                                //parentElement.insertBefore(p1, parentElement.childNodes[2])
-                                parentElement.appendChild(p1)
+                            p1.appendChild(p2)
+                            //parentElement.insertBefore(p1, parentElement.childNodes[2])
+                            parentElement.appendChild(p1)
 
-                                let span = document.createElement('span')
-                                span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-                                span.textContent = textContent
-                                p2.appendChild(span)
+                            let span = document.createElement('span')
+                            span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
+                            span.textContent = textContent
+                            p2.appendChild(span)
 
-                                function aAdd2Parent(siteName, url, h1Slect) {
-                                    let a = document.createElement('a')
-                                    let lable = document.createElement('label')
-                                    lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                                    a.href = url + h1Slect
-                                    a.textContent = siteName
-                                    a.target = '_blank'
-                                    a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-                                    lable.appendChild(a)
-                                    p2.appendChild(lable)
-                                }
-                                aAdd2Parent('Hitomi[HD]', 'https://www.google.com/search?q=', "site:hitomi.la" + " " + h1)
-                                aAdd2Parent('禁漫天堂[HD]', 'https://www.google.com/search?q=', "site:18comic.vip" + " " + h1)
-                                aAdd2Parent('绅士漫画[HD]', 'https://www.google.com/search?q=', "site:www.wnacg.com" + " " + h1)
-                                aAdd2Parent('Google🔍', 'https://www.google.com/search?q=', "免费" + " " + h1)
+                            function aAdd2Parent(siteName, url, h1Slect) {
+                                let a = document.createElement('a')
+                                let lable = document.createElement('label')
+                                lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
+                                a.href = url + h1Slect
+                                a.textContent = siteName
+                                a.target = '_blank'
+                                a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
+                                lable.appendChild(a)
+                                p2.appendChild(lable)
+                            }
+                            aAdd2Parent('Hitomi[HD]', 'https://www.google.com/search?q=', "site:hitomi.la" + " " + h1)
+                            aAdd2Parent('禁漫天堂[HD]', 'https://www.google.com/search?q=', "site:18comic.vip" + " " + h1)
+                            aAdd2Parent('绅士漫画[HD]', 'https://www.google.com/search?q=', "site:www.wnacg.com" + " " + h1)
+                            aAdd2Parent('Google🔍', 'https://www.google.com/search?q=', "免费" + " " + h1)
 
-                                console.log('已生成在线预览链接🔗')
-
-
-                            }, 2000); // 等待页面加载完成
+                            console.log('已生成在线预览链接🔗')
                         }
 
-                        setTimeout(() => { otherSearch() }, 3000); // 等待页面加载完成
+                        setTimeout(() => { otherSearch() }, 1500); // 等待页面加载完成
                     }
 
                     // dmm.co.jp
@@ -1647,7 +1642,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
                     }
 
-                }, 5000); // 等待页面加载完成
+                }, 2500); // 等待页面加载完成
 
             });
 

@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202508071429
+## ! Version: 202508100226
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Aug 2025 14:29 UTC
+## ! Last modified: 10 Aug 2025 02:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1978,6 +1978,7 @@ DOMAIN-SUFFIX,skillsresults.com
 DOMAIN-SUFFIX,skisofa.com
 DOMAIN-SUFFIX,skullmagnets.com
 DOMAIN-SUFFIX,skylightdata.com
+DOMAIN-SUFFIX,slackpod.com
 DOMAIN-SUFFIX,slaysweater.com
 DOMAIN-SUFFIX,slickcontent.com
 DOMAIN-SUFFIX,slinksuggestion.com
@@ -3569,6 +3570,7 @@ DOMAIN-SUFFIX,tracking.livingsocial.com
 DOMAIN-SUFFIX,tracking.magnetmail.net
 DOMAIN-SUFFIX,tracking.markethero.io
 DOMAIN-SUFFIX,tracking.musixmatch.com
+DOMAIN-SUFFIX,tracking.offerista.com
 DOMAIN-SUFFIX,tracking.olx-st.com
 DOMAIN-SUFFIX,tracking.pacharge.com
 DOMAIN-SUFFIX,tracking.plinga.de
@@ -3612,6 +3614,7 @@ DOMAIN-SUFFIX,ts.tradetracker.net
 DOMAIN-SUFFIX,uaas.yandex.ru
 DOMAIN-SUFFIX,ubm.docu.info
 DOMAIN-SUFFIX,ucounter.ucoz.net
+DOMAIN-SUFFIX,uct.service.usercentrics.eu
 DOMAIN-SUFFIX,uid.mediacorp.sg
 DOMAIN-SUFFIX,uilogging.tcdevops.com
 DOMAIN-SUFFIX,uim.tifbs.net

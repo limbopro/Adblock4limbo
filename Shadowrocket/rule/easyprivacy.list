@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202508071429
+## ! Version: 202508100226
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Aug 2025 14:29 UTC
+## ! Last modified: 10 Aug 2025 02:26 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -1978,6 +1978,7 @@ DOMAIN-SUFFIX,skillsresults.com, reject
 DOMAIN-SUFFIX,skisofa.com, reject
 DOMAIN-SUFFIX,skullmagnets.com, reject
 DOMAIN-SUFFIX,skylightdata.com, reject
+DOMAIN-SUFFIX,slackpod.com, reject
 DOMAIN-SUFFIX,slaysweater.com, reject
 DOMAIN-SUFFIX,slickcontent.com, reject
 DOMAIN-SUFFIX,slinksuggestion.com, reject
@@ -3569,6 +3570,7 @@ DOMAIN-SUFFIX,tracking.livingsocial.com, reject
 DOMAIN-SUFFIX,tracking.magnetmail.net, reject
 DOMAIN-SUFFIX,tracking.markethero.io, reject
 DOMAIN-SUFFIX,tracking.musixmatch.com, reject
+DOMAIN-SUFFIX,tracking.offerista.com, reject
 DOMAIN-SUFFIX,tracking.olx-st.com, reject
 DOMAIN-SUFFIX,tracking.pacharge.com, reject
 DOMAIN-SUFFIX,tracking.plinga.de, reject
@@ -3612,6 +3614,7 @@ DOMAIN-SUFFIX,ts.tradetracker.net, reject
 DOMAIN-SUFFIX,uaas.yandex.ru, reject
 DOMAIN-SUFFIX,ubm.docu.info, reject
 DOMAIN-SUFFIX,ucounter.ucoz.net, reject
+DOMAIN-SUFFIX,uct.service.usercentrics.eu, reject
 DOMAIN-SUFFIX,uid.mediacorp.sg, reject
 DOMAIN-SUFFIX,uilogging.tcdevops.com, reject
 DOMAIN-SUFFIX,uim.tifbs.net, reject

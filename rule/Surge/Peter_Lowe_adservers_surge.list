@@ -2,10 +2,10 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Tue, 05 Aug 2025 15:17:49 GMT
-# entries:        3420
+# entries:        3419
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&minetype=plaintext
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -649,6 +649,7 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com
 DOMAIN-SUFFIX,adsbydelema.com
 DOMAIN-SUFFIX,adscale.de
 DOMAIN-SUFFIX,adscholar.com
+DOMAIN-SUFFIX,adscience.nl
 DOMAIN-SUFFIX,adsco.re
 DOMAIN-SUFFIX,adscpm.com
 DOMAIN-SUFFIX,adsdaq.com
@@ -1322,7 +1323,6 @@ DOMAIN-SUFFIX,clustrmaps.com
 DOMAIN-SUFFIX,cmp.dmgmediaprivacy.co.uk
 DOMAIN-SUFFIX,cmvrclicks000.com
 DOMAIN-SUFFIX,cnomy.com
-DOMAIN-SUFFIX,cnt.spbland.ru
 DOMAIN-SUFFIX,cnt1.pocitadlo.cz
 DOMAIN-SUFFIX,cnvlink.com
 DOMAIN-SUFFIX,cny.yoyo.org
@@ -2044,7 +2044,6 @@ DOMAIN-SUFFIX,live.trmzum.com
 DOMAIN-SUFFIX,liveadexchanger.com
 DOMAIN-SUFFIX,liveintent.com
 DOMAIN-SUFFIX,livelylaugh.com
-DOMAIN-SUFFIX,livelyreward.com
 DOMAIN-SUFFIX,liverail.com
 DOMAIN-SUFFIX,livingsleet.com
 DOMAIN-SUFFIX,lizardslaugh.com

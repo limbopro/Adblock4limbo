@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.08.07
+// @version      0.2025.08.10
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -720,7 +720,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     let regex = /.*\/videos\//;
                     let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase();
                     setTimeout(() => {
-                        tmd('h4', code, '在其他站点播放：');
+
+                        if (document.querySelector('#p1') == null) {
+                            console.log('开始生成在线预览链接...')
+                            tmd('h4', code, '在其他站点播放：');
+                        }
+
                         console.log("生成在其他站点播放链接🔗");
                     }, 3000)
                 }
@@ -1182,7 +1187,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     var regex = /[a-zA-Z]{3,5}\-\d{3,5}/i
                     var code = document.querySelectorAll('title')[0].innerText.match(regex)[0]
                     setTimeout(() => {
-                        tmd('h1', code, '在其他站点播放：');
+
+                        if (document.querySelector('#p1') == null) {
+                            console.log('开始生成在线预览链接...')
+                            tmd('h1', code, '在其他站点播放：');
+                        }
+
                     }, 2000)
                 }
 
@@ -1569,7 +1579,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             // 如果是手机端，执行手机端相关函数
                             if (document.querySelector('h1 > span') !== null && (url.includes('/content/') || url.includes("dightal"))) { // https://www.dmm.co.jp/content/
                                 try {
-                                    tmd_dmm('h1 > span', code_dmm(), '在其他站点播放：');
+
+                                    if (document.querySelector('#p1') == null) {
+                                        console.log('开始生成在线预览链接...')
+                                        tmd_dmm('h1 > span', code_dmm(), '在其他站点播放：');
+                                    }
+
                                 } catch (e) {
                                     console.error('Error in tmd_dmm:', e);
                                 }
@@ -1589,7 +1604,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                 console.log(text);
 
                                 try {
-                                    tmd_dmm_doujin('h1', text, '在其他站点观看：');
+                                    if (document.querySelector('#p1') == null) {
+                                        console.log('开始生成在线预览链接...')
+                                        tmd_dmm_doujin('h1', text, '在其他站点观看：');
+                                    }
                                 } catch (e) {
                                     console.error('Error in tmd_dmm_doujin:', e);
                                 }
@@ -1605,7 +1623,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                 console.log("content")
                                 try {
                                     console.log('/content/ div.box-sampleInfo');
-                                    tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+
+                                    if (document.querySelector('#p1') == null) {
+                                        console.log('开始生成在线预览链接...')
+                                        tmd_dmm('h1', code_dmm(), '在其他站点播放：');
+                                    }
+
                                 } catch (e) {
                                     console.error('/content/ Error in tmd_dmm:', e);
                                 }
@@ -1613,7 +1636,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                 console.log("monthly")
                                 try {
                                     console.log('/content/ div.bx-detail-player-sampleMovie');
-                                    tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：');
+                                    if (document.querySelector('#p1') == null) {
+                                        console.log('开始生成在线预览链接...')
+                                        tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：');
+                                    }
                                 } catch (e) {
                                     console.error('/monthly/ Error in tmd_dmm:', e);
                                 }
@@ -1630,7 +1656,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
                                 try {
                                     console.log('/doujin/ div.m-productPreview');
-                                    tmd_dmm_doujin('div.m-productPreview', text, '在其他站点观看：');
+                                    if (document.querySelector('#p1') == null) {
+                                        console.log('开始生成在线预览链接...')
+                                        tmd_dmm_doujin('div.m-productPreview', text, '在其他站点观看：');
+                                    }
                                 } catch (e) {
                                     console.error('/doujin/ Error in tmd_dmm:', e);
                                 }
@@ -1665,9 +1694,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 setTimeout(() => {
                     if (document.querySelector('.plyr__poster') !== null) { // 播放页插入其他站点播放链接
                         let code = document.querySelectorAll('span.font-medium')[0].textContent;
-
-                        tmd('span.font-medium', code, '在其他站点播放：');
-
+                        if (document.querySelector('#p1') == null) {
+                            console.log('开始生成在线预览链接...')
+                            tmd('span.font-medium', code, '在其他站点播放：');
+                        }
                         console.log("生成在其他站点播放链接🔗");
                     }
                 }, 2000)
@@ -1684,7 +1714,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
                 if (ua_missav.indexOf(mobile_missav) === -1) {
 
-                    if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null) {
+                    if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null && document.querySelector('#how') === null) {
                         ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", cssText, "", "missavX", 2, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "", "missavP", 3, "button");
                         ele_dynamicAppend("div.mt-4", "href", "如何下载视频?", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");

@@ -2,10 +2,10 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Tue, 05 Aug 2025 15:17:49 GMT
-# entries:        3420
+# entries:        3419
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&minetype=plaintext
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -649,6 +649,7 @@ DOMAIN-SUFFIX,adsby.bidtheatre.com, reject
 DOMAIN-SUFFIX,adsbydelema.com, reject
 DOMAIN-SUFFIX,adscale.de, reject
 DOMAIN-SUFFIX,adscholar.com, reject
+DOMAIN-SUFFIX,adscience.nl, reject
 DOMAIN-SUFFIX,adsco.re, reject
 DOMAIN-SUFFIX,adscpm.com, reject
 DOMAIN-SUFFIX,adsdaq.com, reject
@@ -1322,7 +1323,6 @@ DOMAIN-SUFFIX,clustrmaps.com, reject
 DOMAIN-SUFFIX,cmp.dmgmediaprivacy.co.uk, reject
 DOMAIN-SUFFIX,cmvrclicks000.com, reject
 DOMAIN-SUFFIX,cnomy.com, reject
-DOMAIN-SUFFIX,cnt.spbland.ru, reject
 DOMAIN-SUFFIX,cnt1.pocitadlo.cz, reject
 DOMAIN-SUFFIX,cnvlink.com, reject
 DOMAIN-SUFFIX,cny.yoyo.org, reject
@@ -2044,7 +2044,6 @@ DOMAIN-SUFFIX,live.trmzum.com, reject
 DOMAIN-SUFFIX,liveadexchanger.com, reject
 DOMAIN-SUFFIX,liveintent.com, reject
 DOMAIN-SUFFIX,livelylaugh.com, reject
-DOMAIN-SUFFIX,livelyreward.com, reject
 DOMAIN-SUFFIX,liverail.com, reject
 DOMAIN-SUFFIX,livingsleet.com, reject
 DOMAIN-SUFFIX,lizardslaugh.com, reject

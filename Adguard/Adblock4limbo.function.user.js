@@ -2495,7 +2495,7 @@ function ysMax() {
         aAdd2Parent('小宝影视', ysMaxurl.xiaoxintv, ysCode)
         aAdd2Parent('iyf爱壹帆', ysMaxurl.iyf, ysCode)
         aAdd2Parent('欧乐影视', ysMaxurl.ole, ysCode)
-        aAdd2Parent('影视TV', ysMaxurl.yingshitv, ysCode)
+        //aAdd2Parent('影视TV', ysMaxurl.yingshitv, ysCode)
         aAdd2Parent('影视搜索[聚合]', ysMaxurl.juhesousuo, ysCode)
         console.log('已生成在线预览链接🔗')
     }

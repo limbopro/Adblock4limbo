@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.08.10
+// @version      0.2025.08.11
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -754,7 +754,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             jable_adsRemove();
             const url_jable = document.location.href;
             const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
-            if (url_jable.search(reg_videos) !== -1) {
+            if (url_jable.search(reg_videos) !== -1 && document.querySelector('#avCodeCopy') === null) {
 
                 setTimeout(() => {
                     let cssText = "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
@@ -1733,7 +1733,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
                     }
 
-                } else if (ua_missav.indexOf(mobile_missav) > -1) {
+                } else if (ua_missav.indexOf(mobile_missav) > -1 && document.querySelector('#missavFullScreen') === null) {
                     ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", cssText, "video_Play()", "missavX", 0, "button");
                     ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", cssText, "fullscreen()", "missavFullScreen", 2, "button");
                     ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "video_pause()", "missavPause", 1, "button");

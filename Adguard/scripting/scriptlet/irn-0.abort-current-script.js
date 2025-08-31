@@ -371,8 +371,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["disableSelection","reEnable"],["vc_url"],["watermarkAdData"],["document.onclick","checkCookie"],["document.onselectstart","killCopy"],["eif"],["document.onclick","Hamisheonlinepaps"],["jQuery","Drupal"],["jQuery","contextmenu"],["reEnable"],["document.oncontextmenu"],["jQuery","wccp_pro"],["clear_body_at_all_for_extentions"],["pa_vc_url"],["document.write","renderAds"]];
-const hostnamesMap = new Map([["anesthesianotes.ir",0],["coffeeapps.ir",0],["androidparsi.ir",1],["dailymobile.ir",1],["tarfandha.org",1],["alaatv.com",2],["bandmoviez.one",3],["fileboro.com",4],["farnet.io",5],["hamisheonline.com",6],["iranstar.com",7],["itarfand.com",8],["jafekri.com",[9,10,11,12]],["jeyran.net",10],["searchline.ir",10],["takmili.com",10],["vakil.net",10],["mybia4music.com",13],["p30konkor.com",0],["sclinic.ir",0],["tabnak.ir",14]]);
+const argsList = [["disableSelection","reEnable"],["vc_url"],["document.onclick","checkCookie"],["document.onselectstart","killCopy"],["eif"],["document.onclick","Hamisheonlinepaps"],["jQuery","Drupal"],["jQuery","contextmenu"],["reEnable"],["document.oncontextmenu"],["jQuery","wccp_pro"],["clear_body_at_all_for_extentions"],["pa_vc_url"],["document.write","renderAds"]];
+const hostnamesMap = new Map([["anesthesianotes.ir",0],["coffeeapps.ir",0],["androidparsi.ir",1],["dailymobile.ir",1],["tarfandha.org",1],["bandmoviez.one",2],["fileboro.com",3],["farnet.io",4],["hamisheonline.com",5],["iranstar.com",6],["itarfand.com",7],["jafekri.com",[8,9,10,11]],["jeyran.net",9],["searchline.ir",9],["takmili.com",9],["vakil.net",9],["mybia4music.com",12],["p30konkor.com",0],["sclinic.ir",0],["tabnak.ir",13]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

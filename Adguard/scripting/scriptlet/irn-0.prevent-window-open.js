@@ -391,7 +391,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[]];
-const hostnamesMap = new Map([["artmusics.top",0],["musicpars3.ir",0],["musicguitars.ir",0],["subf2m.ir",0],["zeemusic.ir",0],["najiremix.ir",0],["musichi.ir",0],["likeemusic.ir",0],["appiroid.ir",0],["androidtime.com",0],["farsroid.com",0],["getandroid.ir",0],["musictag.ir",0],["musickhone.com",0],["naslmusic.ir",0],["power-music.ir",0],["uploadgoogle.ir",0],["uptrack.ir",0]]);
+const hostnamesMap = new Map([["artmusics.top",0],["musicpars3.ir",0],["musicguitars.ir",0],["subf2m.ir",0],["zeemusic.ir",0],["najiremix.ir",0],["musichi.ir",0],["likeemusic.ir",0],["appiroid.ir",0],["androidtime.com",0],["getandroid.ir",0],["musictag.ir",0],["musickhone.com",0],["naslmusic.ir",0],["power-music.ir",0],["uploadgoogle.ir",0],["uptrack.ir",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

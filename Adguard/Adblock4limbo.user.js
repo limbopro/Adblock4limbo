@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.08.11
+// @version      0.2025.08.29
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -194,7 +194,7 @@
 // @match        https://www.novel543.com/*
 // @match        https://www.hltv.org/*
 // @match        https://m.diyibanzhu.me/*
-// @match        https://www.javlibrary.com/*
+// @match        https://www.javlibrary.com/cn/?v=*
 // @match        https://play.huaren.live/*
 // @match        https://huaren.live/*
 // @match        https://rouman5.com/*
@@ -1240,121 +1240,143 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             */
 
             break;
+
         case "javlibrary":
 
-            css_adsRemove(imax.css.javlibrary)
-            window_open_defuser(); // 打断 window.open 施法
-            abort_on_property_read();
-            js_adsRemove(uBlockOrigin.addEventListenerdefuser);
-            js_adsRemove(uBlockOrigin.noevalif);
+            async function onPageLoad() {
+                await waitForPageLoad();
+                console.log('网页所有元素已加载完毕');
+                // 在此执行你的代码
 
-            if (/\b(https:\/\/www.javlibrary.com\/.*?)(\/videoreviews.php)(\?.*)(&mode=2)\b/i.test(window.location.href.toLowerCase())) {
-                console.log(window.location.href.toLowerCase())
-                let url_jav_rewrite = window.location.href.toLowerCase().replace(/(videoreviews.php)/i, '').replace(/(&mode=2)/i, '')
-                console.log(url_jav_rewrite)
-                window.location.replace(url_jav_rewrite)
-            }
+                css_adsRemove(imax.css.javlibrary)
+                window_open_defuser(); // 打断 window.open 施法
+                abort_on_property_read();
+                js_adsRemove(uBlockOrigin.addEventListenerdefuser);
+                js_adsRemove(uBlockOrigin.noevalif);
 
-            function javlibrary() {
-                // '#topmenu', 'div.menutext', '.searchbar',
-                css_adsRemove(imax.css.javlibrary);
-                var target_ = ['#rightcolumn', '.videothumblist', '.titlebox', '.menutext']
-
-                if (window.innerWidth < 650) {
-                    console.log("现在执行缩小任务")
-                    function ifAdd(target) {
-                        if (document.querySelectorAll(target)[0]) {
-                            document.querySelectorAll(target)[0].classList.add('whenmobile')
-                        }
-                    }
-                    target_.forEach(ifAdd);
-                    if (document.querySelector('div#rightcolumn')) {
-                        var parentElement = document.querySelector('div#rightcolumn')
-                        if (document.querySelectorAll("td[style='vertical-align: top;']")[1]) {
-                            var child = document.querySelectorAll("td[style='vertical-align: top;']")[1];
-                        }
-                        if (document.querySelector('div.socialmedia')) {
-                            var insertBeforethisgay = document.querySelector('div.socialmedia');
-                        }
-
-                        if ((child) && (parentElement) && (insertBeforethisgay)) {
-                            parentElement.insertBefore(child, insertBeforethisgay)
-                        }
-                        document.querySelectorAll('td.t>div').forEach((x) => {
-                            x.style.width = 'auto';
-
-                        })
-                    }
-
-                    if (document.querySelector('div#video_title')) {
-                        document.querySelector('#rightcolumn').style.width = window.innerWidth - 90 + "px"
-                        document.querySelector('div#video_favorite_edit').style.width = '250px'
-                    }
-                } else {
-                    console.log("现在执行扩大任务")
-                    if (document.querySelector('div#video_title')) {
-                        document.querySelector('#rightcolumn').style.width = window.innerWidth + "px"
-                        document.querySelector('div#video_favorite_edit').style.width = 'auto'
-                    }
-                    function ifRemove(target) {
-                        if (document.querySelectorAll(target)[0]) {
-                            document.querySelectorAll(target)[0].classList.remove('whenmobile')
-                        }
-                    }
-                    target_.forEach(ifRemove);
+                if (/\b(https:\/\/www.javlibrary.com\/.*?)(\/videoreviews.php)(\?.*)(&mode=2)\b/i.test(window.location.href.toLowerCase())) {
+                    console.log(window.location.href.toLowerCase())
+                    let url_jav_rewrite = window.location.href.toLowerCase().replace(/(videoreviews.php)/i, '').replace(/(&mode=2)/i, '')
+                    console.log(url_jav_rewrite)
+                    window.location.replace(url_jav_rewrite)
                 }
-            }
 
-            javlibrary(); // 2333
+                function javlibrary() {
+                    // '#topmenu', 'div.menutext', '.searchbar',
+                    css_adsRemove(imax.css.javlibrary);
+                    var target_ = ['#rightcolumn', '.videothumblist', '.titlebox', '.menutext']
 
-            zjpl()
-            function zjpl() {
-                setTimeout(() => { // 最佳评论页 调换位置
-                    javlibrary();
-                    if (document.querySelectorAll('td.info')[0]) {
-                        document.querySelectorAll('td.info').forEach((x) => {
-                            x.style.width = "60px"
-                            x.querySelectorAll('*').forEach((y) => {
-                                //     y.style.width = "60px"
-                            })
-                        })
-
-                        var ff = document.querySelectorAll("table.comment > tbody > tr");
-                        for (i = 0; i < ff.length; i++) {
-                            ff[i].insertBefore(ff[i].querySelectorAll('td')[1], ff[i].querySelectorAll('td')[0])
+                    if (window.innerWidth < 650) {
+                        console.log("现在执行缩小任务")
+                        function ifAdd(target) {
+                            if (document.querySelectorAll(target)[0]) {
+                                document.querySelectorAll(target)[0].classList.add('whenmobile')
+                            }
                         }
-                    }
-                }, 1500)
-            }
+                        target_.forEach(ifAdd);
+                        if (document.querySelector('div#rightcolumn')) {
+                            var parentElement = document.querySelector('div#rightcolumn')
+                            if (document.querySelectorAll("td[style='vertical-align: top;']")[1]) {
+                                var child = document.querySelectorAll("td[style='vertical-align: top;']")[1];
+                            }
+                            if (document.querySelector('div.socialmedia')) {
+                                var insertBeforethisgay = document.querySelector('div.socialmedia');
+                            }
 
-            function javLibrary_links() { // 在番号详情页追加在线预览链接
+                            if ((child) && (parentElement) && (insertBeforethisgay)) {
+                                parentElement.insertBefore(child, insertBeforethisgay)
+                            }
+                            document.querySelectorAll('td.t>div').forEach((x) => {
+                                x.style.width = 'auto';
 
-                setTimeout(() => {
-                    let father = 'div#video_info'
-                    //let code = window.location.pathname.replace('/', '')
-                    let code = document.querySelectorAll('td.text')[0].textContent
+                            })
+                        }
 
-                    let url = window.location.href
-                    //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
-                    let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
-
-                    if (url.search(regx) !== -1) {
-                        tmd(father, code, '在线预览: ')
+                        if (document.querySelector('div#video_title')) {
+                            document.querySelector('#rightcolumn').style.width = window.innerWidth - 90 + "px"
+                            document.querySelector('div#video_favorite_edit').style.width = '250px'
+                        }
                     } else {
-                        console.log('当前网站不不匹配')
+                        console.log("现在执行扩大任务")
+                        if (document.querySelector('div#video_title')) {
+                            document.querySelector('#rightcolumn').style.width = window.innerWidth + "px"
+                            document.querySelector('div#video_favorite_edit').style.width = 'auto'
+                        }
+                        function ifRemove(target) {
+                            if (document.querySelectorAll(target)[0]) {
+                                document.querySelectorAll(target)[0].classList.remove('whenmobile')
+                            }
+                        }
+                        target_.forEach(ifRemove);
                     }
-                }, 2000)
+                }
+
+                javlibrary(); // 2333
+
+                zjpl()
+                function zjpl() {
+                    setTimeout(() => { // 最佳评论页 调换位置
+                        javlibrary();
+                        if (document.querySelectorAll('td.info')[0]) {
+                            document.querySelectorAll('td.info').forEach((x) => {
+                                x.style.width = "60px"
+                                x.querySelectorAll('*').forEach((y) => {
+                                    //     y.style.width = "60px"
+                                })
+                            })
+
+                            var ff = document.querySelectorAll("table.comment > tbody > tr");
+                            for (i = 0; i < ff.length; i++) {
+                                ff[i].insertBefore(ff[i].querySelectorAll('td')[1], ff[i].querySelectorAll('td')[0])
+                            }
+                        }
+                    }, 1500)
+                }
+
+                function javLibrary_links() { // 在番号详情页追加在线预览链接
+
+                    setTimeout(() => {
+                        let father = 'div#video_info'
+                        //let code = window.location.pathname.replace('/', '')
+                        let code = document.querySelectorAll('td.text')[0].textContent
+
+                        let url = window.location.href
+                        //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
+                        let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
+
+                        if (url.search(regx) !== -1) {
+                            tmd(father, code, '在线预览: ')
+                        } else {
+                            console.log('当前网站不不匹配')
+                        }
+                    }, 2000)
+                }
+
+                javLibrary_links()
+
             }
 
-            javLibrary_links()
+
+            function waitForPageLoad() {
+                return new Promise((resolve) => {
+                    if (document.readyState === 'complete') {
+                        resolve();
+                    } else {
+                        window.addEventListener('load', () => resolve(), { once: true });
+                    }
+                });
+            }
+
+            onPageLoad();
+
+
+            break;
 
         case 'douban':
             if (document.querySelectorAll('a.Ims1t')[0]) {
                 alert("首页...")
                 document.querySelectorAll('a.Ims1t').forEach((x) => { x.href = 'https://movie.douban.com/top250' })
             }
-            break;
-
             break;
         case 'zhihu':
             var zhihu_id = "zhihux"

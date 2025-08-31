@@ -340,9 +340,9 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["NodeList.prototype.forEach","/\\bRi[@\\s][^\\t]+\\/application\\.min\\.packed\\.js/"]];
-const hostnamesMap = new Map([["soft98.ir",0]]);
-const exceptionsMap = new Map([["forum.soft98.ir",[0]]]);
+const argsList = [["document.createElement","join_telegram"]];
+const hostnamesMap = new Map([["tigatravel.com",0]]);
+const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
 

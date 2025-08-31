@@ -504,7 +504,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["adsbygoogle"]];
-const hostnamesMap = new Map([["kritiker.se",0],["bio-link.se",0],["web-tools.se",0]]);
+const hostnamesMap = new Map([["kritiker.se",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

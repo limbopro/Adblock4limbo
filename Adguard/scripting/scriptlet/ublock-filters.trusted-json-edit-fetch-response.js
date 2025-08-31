@@ -71,9 +71,10 @@ function jsonEditFetchResponseFn(trusted, jsonq = '') {
             const response = responseBefore.clone();
             return response.json().then(obj => {
                 if ( typeof obj !== 'object' ) { return responseBefore; }
-                if ( jsonp.apply(obj) === 0 ) { return responseBefore; }
+                const objAfter = jsonp.apply(obj);
+                if ( objAfter === undefined ) { return responseBefore; }
                 safe.uboLog(logPrefix, 'Edited');
-                const responseAfter = Response.json(obj, {
+                const responseAfter = Response.json(objAfter, {
                     status: responseBefore.status,
                     statusText: responseBefore.statusText,
                     headers: responseBefore.headers,
@@ -121,12 +122,19 @@ class JSONPath {
         const r = this.#compile(query, 0);
         if ( r === undefined ) { return; }
         if ( r.i !== query.length ) {
-            if ( query.startsWith('+=', r.i) ) {
+            let val;
+            if ( query.startsWith('=', r.i) ) {
+                if ( /^=repl\(.+\)$/.test(query.slice(r.i)) ) {
+                    r.modify = 'repl';
+                    val = query.slice(r.i+6, -1);
+                } else {
+                    val = query.slice(r.i+1);
+                }
+            } else if ( query.startsWith('+=', r.i) ) {
                 r.modify = '+';
-                r.i += 1;
+                val = query.slice(r.i+2);
             }
-            if ( query.startsWith('=', r.i) === false ) { return; }
-            try { r.rval = JSON.parse(query.slice(r.i+1)); }
+            try { r.rval = JSON.parse(val); }
             catch { return; }
         }
         this.#compiled = r;
@@ -139,28 +147,25 @@ class JSONPath {
         return paths;
     }
     apply(root) {
-        if ( this.valid === false ) { return 0; }
-        const { modify, rval } = this.#compiled;
-        this.#root = root;
+        if ( this.valid === false ) { return; }
+        const { rval } = this.#compiled;
+        this.#root = { '$': root };
         const paths = this.#evaluate(this.#compiled.steps, []);
-        const n = paths.length;
-        let i = n;
+        let i = paths.length
+        if ( i === 0 ) { this.#root = null; return; }
         while ( i-- ) {
             const { obj, key } = this.#resolvePath(paths[i]);
             if ( rval !== undefined ) {
-                if ( modify === '+' ) {
-                    this.#modifyVal(obj, key, rval);
-                } else {
-                    obj[key] = rval;
-                }
+                this.#modifyVal(obj, key);
             } else if ( Array.isArray(obj) && typeof key === 'number' ) {
                 obj.splice(key, 1);
             } else {
                 delete obj[key];
             }
         }
+        const result = this.#root['$'] ?? null;
         this.#root = null;
-        return n;
+        return result;
     }
     dump() {
         return JSON.stringify(this.#compiled);
@@ -185,8 +190,15 @@ class JSONPath {
         if ( query.length === 0 ) { return; }
         const steps = [];
         let c = query.charCodeAt(i);
-        steps.push({ mv: c === 0x24 /* $ */ ? this.#ROOT : this.#CURRENT });
-        if ( c === 0x24 /* $ */ || c === 0x40 /* @ */ ) { i += 1; }
+        if ( c === 0x24 /* $ */ ) {
+            steps.push({ mv: this.#ROOT });
+            i += 1;
+        } else if ( c === 0x40 /* @ */ ) {
+            steps.push({ mv: this.#CURRENT });
+            i += 1;
+        } else {
+            steps.push({ mv: i === 0 ? this.#ROOT : this.#CURRENT });
+        }
         let mv = this.#UNDEFINED;
         for (;;) {
             if ( i === query.length ) { break; }
@@ -248,7 +260,8 @@ class JSONPath {
             i = r.i + 1;
             mv = this.#UNDEFINED;
         }
-        if ( steps.length <= 1 ) { return; }
+        if ( steps.length === 0 ) { return; }
+        if ( mv !== this.#UNDEFINED ) { return; }
         return { steps, i };
     }
     #evaluate(steps, pathin) {
@@ -257,7 +270,7 @@ class JSONPath {
         for ( const step of steps ) {
             switch ( step.mv ) {
             case this.#ROOT:
-                resultset = [ [] ];
+                resultset = [ [ '$' ] ];
                 break;
             case this.#CURRENT:
                 resultset = [ pathin ];
@@ -480,13 +493,40 @@ class JSONPath {
         }
         if ( outcome ) { return k; }
     }
-    #modifyVal(obj, key, rval) {
-        const lval = obj[key];
-        if ( rval instanceof Object === false ) { return; }
-        if ( lval instanceof Object === false ) { return; }
-        if ( Array.isArray(lval) ) { return; }
-        for ( const [ k, v ] of Object.entries(rval) ) {
-            lval[k] = v;
+    #modifyVal(obj, key) {
+        const { modify, rval } = this.#compiled;
+        switch ( modify ) {
+        case undefined:
+            obj[key] = rval;
+            break;
+        case '+': {
+            if ( rval instanceof Object === false ) { return; }
+            const lval = obj[key];
+            if ( lval instanceof Object === false ) { return; }
+            if ( Array.isArray(lval) ) { return; }
+            for ( const [ k, v ] of Object.entries(rval) ) {
+                lval[k] = v;
+            }
+            break;
+        }
+        case 'repl': {
+            const lval = obj[key];
+            if ( typeof lval !== 'string' ) { return; }
+            if ( this.#compiled.re === undefined ) {
+                this.#compiled.re = null;
+                try {
+                    this.#compiled.re = rval.regex !== undefined
+                        ? new RegExp(rval.regex, rval.flags)
+                        : new RegExp(rval.pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+                } catch {
+                }
+            }
+            if ( this.#compiled.re === null ) { return; }
+            obj[key] = lval.replace(this.#compiled.re, rval.replacement);
+            break;
+        }
+        default:
+            break;
         }
     }
 }

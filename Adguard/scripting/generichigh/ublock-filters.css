@@ -21,6 +21,9 @@
 
 /* ublock-filters */
 
+*:not(body) > a[href^="https://07c225f3.online/"],
+*:not(body) > a[href^="https://content-loader.com/"],
+*:not(body) > a[href^="https://html-load.com/"],
 [class^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]),
 [data-ad-manager-id]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
 [data-ad-module]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle),
@@ -60,7 +63,7 @@
 [href^="https://wap4dollar.com/ad/nonadult/serve.php"],
 [href^="https://www.onclickperformance.com/"],
 [href^="https://www.safestcontentgate.com/"],
-[href^="luvaihoo.com"],
+[id^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"]),
 [onclick*="postlnk.com"],
 [src^="//dombnrs.com/"],
 a[dontfo=""][style$="position: absolute; z-index: 2147483647;"],
@@ -77,11 +80,14 @@ a[onclick="openAuc();"],
 body > div[style$="z-index: 2147483647; top: 0px; left: 0px; position: fixed; display: block;"],
 div[class$="player-promo-col"],
 div[id][style^="position: fixed; inset: 0px; z-index: 2147483647; background: black"][style*="opacity: 0.01"],
+div[id^="div-gpt-"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"]),
 div[style="position: fixed; display: block; width: 100%; height: 100%; inset: 0px; background-color: rgba(0, 0, 0, 0); z-index: 300000;"],
 div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"],
 div[style="top: 0px; left: 0px; width: 1287px; height: 500px; position: fixed; z-index: 2147483647;"],
 div[style^="position: fixed; inset: 0px; z-index: 2147483647; background: black; opacity: 0.01"],
 div[style^="position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01"],
-div[style^="z-index: 999999; background-image: url(\"data:image/gif;base64,"][style$="position: absolute;"] {
+div[style^="z-index: 999999; background-image: url(\"data:image/gif;base64,"][style$="position: absolute;"],
+html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"],
+img[width="728"][height="90"] {
     display: none !important;
 }

@@ -295,8 +295,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["blaize_session"],["blaize_tracking_id"],["pay_ent_pass"],["pay_ent_msmp"],["sgID"],["kpwc"],["/articlesLimit|articlesRead|previousPage/","when","scroll keydown"],["_ngViCo-SupporterPromo"]];
-const hostnamesMap = new Map([["theverge.com",[0,1]],["bonappetit.com",[2,3]],["similarweb.com",4],["technologyreview.jp",5],["androidpolice.com",6],["makeuseof.com",6],["movieweb.com",6],["xda-developers.com",6],["thegamer.com",6],["cbr.com",6],["gamerant.com",6],["screenrant.com",6],["howtogeek.com",6],["thethings.com",6],["simpleflying.com",6],["dualshockers.com",6],["newgrounds.com",7]]);
+const argsList = [["blaize_session"],["blaize_tracking_id"],["dpp_paywall"],["pay_ent_pass"],["pay_ent_msmp"],["sgID"],["kpwc"],["/articlesLimit|articlesRead|previousPage/","when","scroll keydown"],["_ngViCo-SupporterPromo"]];
+const hostnamesMap = new Map([["theverge.com",[0,1]],["thedriftmag.com",2],["bonappetit.com",[3,4]],["similarweb.com",5],["technologyreview.jp",6],["androidpolice.com",7],["makeuseof.com",7],["movieweb.com",7],["xda-developers.com",7],["thegamer.com",7],["cbr.com",7],["gamerant.com",7],["screenrant.com",7],["howtogeek.com",7],["thethings.com",7],["simpleflying.com",7],["dualshockers.com",7],["newgrounds.com",8]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

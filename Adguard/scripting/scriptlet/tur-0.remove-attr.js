@@ -324,8 +324,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["style","#episode"],["data-money","div[data-money]"],["data-href","span[data-href^=\"https://ensonhaber.me/\"]"],["placeholder","input[id=\"search-textbox\"]"],["data-front","#tv-spoox2"],["href","a[href^=\"https://www.haber7.com/advertorial/\"].headline-slider-item"],["href",".slick-dots > li > a[href^=\"https://www.haber7.com/advertorial/\"]"],["loading","iframe[loading=\"lazy\"]"]];
-const hostnamesMap = new Map([["asyadiziizle.com",0],["siyahfilmizle.*",1],["elzemfilm.org",1],["sinepal.*",1],["ensonhaber.com",2],["eksisozluk.com",3],["izlekolik.org",4],["haber7.com",[5,6]],["yabancidizi.*",7]]);
+const argsList = [["style","#episode"],["data-money","div[data-money]"],["data-href","span[data-href^=\"https://ensonhaber.me/\"]"],["placeholder","input[id=\"search-textbox\"]"],["href","div[class^=\"swiper-\"] > a[href^=\"https://www.sinpasyts.com/\"]"],["href",".swiper-pagination > a[href=\"null\"]"],["data-front","#tv-spoox2"],["href","a[href^=\"https://www.haber7.com/advertorial/\"].headline-slider-item"],["href",".slick-dots > li > a[href^=\"https://www.haber7.com/advertorial/\"]"],["loading","iframe[loading=\"lazy\"]"]];
+const hostnamesMap = new Map([["asyadiziizle.com",0],["siyahfilmizle.*",1],["elzemfilm.org",1],["sinepal.*",1],["ensonhaber.com",2],["eksisozluk.com",3],["aydinlik.com.tr",[4,5]],["izlekolik.org",6],["haber7.com",[7,8]],["yabancidizi.*",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

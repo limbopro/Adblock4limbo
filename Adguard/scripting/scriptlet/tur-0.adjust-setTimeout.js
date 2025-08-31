@@ -252,7 +252,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["ifrld","*","0.001"]];
-const hostnamesMap = new Map([["hdfilmsitesi.*",0]]);
+const hostnamesMap = new Map([["hdfilmsitesi.*",0],["filmizle.*",0],["filmizleplus.*",0],["fullhdfilm.*",0],["fullhdizle.*",0],["filmizlehdfilm.com",0],["filmizletv.*",0],["fullfilmizle.*",0],["fullhdfilmizle.*",0],["fullhdfilmizletv.*",0],["hdfilmcix.*",0],["hdfilmizlesene.*",0],["sinema.*",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

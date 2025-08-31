@@ -472,7 +472,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/_events/"],["/buzzoola\\.com|plrjs\\.org/"],["/mpsuadv\\.ru/"],["/stats/bulk"],["doubleclick.net"],["rythm_market"],["/\\/apic\\//"]];
+const argsList = [["/_events/"],["/buzzoola\\.com|plrjs\\.org/"],["/mpsuadv\\.ru/"],["/stats/bulk"],["doubleclick.net"],["rythm_"],["/\\/apic\\//"]];
 const hostnamesMap = new Map([["www.ukr.net",0],["volley.ru",1],["trychatgpt.ru",2],["dzen.ru",3],["sportsdzen.ru",3],["animix.lol",4],["ya.ru",5],["mail.ru",6]]);
 const exceptionsMap = new Map([["3igames.mail.ru",[6]],["account.mail.ru",[6]],["auto.mail.ru",[6]],["biz.mail.ru",[6]],["blog.mail.ru",[6]],["bonus.mail.ru",[6]],["calendar.mail.ru",[6]],["calls.mail.ru",[6]],["cloud.mail.ru",[6]],["connect.mail.ru",[6]],["deti.mail.ru",[6]],["dobro.mail.ru",[6]],["e.mail.ru",[6]],["finance.mail.ru",[6]],["gibdd.mail.ru",[6]],["health.mail.ru",[6]],["help.mail.ru",[6]],["hi-tech.mail.ru",[6]],["horo.mail.ru",[6]],["kino.mail.ru",[6]],["lady.mail.ru",[6]],["love.mail.ru",[6]],["mcs.mail.ru",[6]],["minigames.mail.ru",[6]],["my.mail.ru",[6]],["news.mail.ru",[6]],["o2.mail.ru",[6]],["octavius.mail.ru",[6]],["okminigames.mail.ru",[6]],["otvet.mail.ru",[6]],["pets.mail.ru",[6]],["player-smotri.mail.ru",[6]],["pogoda.mail.ru",[6]],["top.mail.ru",[6]],["touch.mail.ru",[6]],["tv.mail.ru",[6]],["vfokuse.mail.ru",[6]],["widgets.mail.ru",[6]]]);
 const hasEntities = false;

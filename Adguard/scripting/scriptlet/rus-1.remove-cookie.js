@@ -295,7 +295,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/bltsr|HgGedof|KIykI/"]];
+const argsList = [["/ancQTZw|bltsr|HgGedof|KIykI/"]];
 const hostnamesMap = new Map([["dzen.ru",0],["ya.ru",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

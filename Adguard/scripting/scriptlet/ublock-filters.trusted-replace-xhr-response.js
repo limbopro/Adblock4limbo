@@ -335,7 +335,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["\"adPlacements\"","\"no_ads\"","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?([A-Z]\"\\}|\"\\}{2,4})\\}\\],/","","/playlist\\?list=|\\/player(?:\\?.+)?$|watch\\?[tv]=/"],["/\"adPlacements.*?(\"adSlots\"|\"adBreakHeartbeatParams\")/gms","$1","/\\/player(?:\\?.+)?$/"],["/\\{\"node\":\\{\"role\":\"SEARCH_ADS\"[^\\n]+?cursor\":[^}]+\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"MarketplaceFeedAdStory\"[^\\n]+?\"cursor\":(?:null|\"\\{[^\\n]+?\\}\"|[^\\n]+?MarketplaceSearchFeedStoriesEdge\")\\}/g","{}","/api/graphql"],["/\\{\"node\":\\{\"__typename\":\"VideoHomeFeedUnitSectionComponent\"[^\\n]+?\"sponsored_data\":\\{\"ad_id\"[^\\n]+?\"cursor\":null\\}/","{}","/api/graphql"],["/\"enabled\":\\s*true/","\"enabled\":false","svonm.com"],["\"ads_disabled\":false","\"ads_disabled\":true","payments"]];
-const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5]],["www.facebook.com",[3,4,5]],["desired.de",6],["app.hellovaia.com",7],["app.studysmarter.de",7],["app.vaia.com",7]]);
+const hostnamesMap = new Map([["tv.youtube.com",0],["www.youtube.com",[1,2]],["web.facebook.com",[3,4,5]],["www.facebook.com",[3,4,5]],["desired.de",6],["app.studysmarter.de",7],["app.vaia.com",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

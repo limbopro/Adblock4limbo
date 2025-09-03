@@ -417,8 +417,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["DOMContentLoaded","adblock"],["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
-const hostnamesMap = new Map([["nicematin.com",0],["cyclismactu.net",1],["lecourrier-du-soir.com",2],["player.melaniezettofrais.online",3],["macg.co",4]]);
+const argsList = [["DOMContentLoaded","adblock"],["DOMContentLoaded","isAdblock"],["load","isAdblock"],["DOMContentLoaded","adsbygoogle"],["click","Popup"],["DOMContentLoaded","interstitial"]];
+const hostnamesMap = new Map([["nicematin.com",0],["cyclismactu.net",[1,2]],["lecourrier-du-soir.com",3],["player.melaniezettofrais.online",4],["macg.co",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

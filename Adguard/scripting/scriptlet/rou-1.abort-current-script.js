@@ -371,8 +371,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Math.floor","offsetHeight"],["onload","noBackPlease"],["setTimeout","admc"]];
-const hostnamesMap = new Map([["competentedigitale.ro",0],["cool-etv.net",1],["posturi.live",2]]);
+const argsList = [["Math.floor","offsetHeight"],["onload","noBackPlease"],["setTimeout","admc"],["document.write","unescape"]];
+const hostnamesMap = new Map([["competentedigitale.ro",0],["cool-etv.net",1],["posturi.live",2],["player.desenefaine.net",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

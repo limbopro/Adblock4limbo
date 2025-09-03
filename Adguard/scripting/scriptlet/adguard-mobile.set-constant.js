@@ -460,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["mobiles",""],["inviewstitial_fired","true"],["add_h2023","noopFunc"],["abp1","0"],["player.postitialTimeout","0"],["adformtag","[]"],["customAdlistMob","[]"],["InfCustomSTAMobileFunc","noopFunc"],["initializeInterstitial","noopFunc"],["PopUnder.bindEvent","noopFunc"],["exoUrl","undefined"],["organicPop","undefined"],["showme","false"],["pcc","1"],["Object.prototype.vastOptions","{}"]];
-const hostnamesMap = new Map([["erozine.jp",0],["oreno3d.com",1],["m.efuxs.com",2],["pornhub.com",3],["pornhub.org",3],["pornhub.net",3],["m.viptube.com",4],["m.nuvid.*",4],["m.hd21.com",4],["delfi.lt",5],["m.hellporno.com",6],["mediafire.com",7],["moneycontrol.com",8],["gotporn.com",9],["m.tnaflix.com",[10,11]],["m.minixiaoshuow.com",[12,13]],["redd.tube",14]]);
+const argsList = [["Object.prototype.isAdActive","false"],["Object.prototype.vastOptions","{}"],["mobiles",""],["inviewstitial_fired","true"],["add_h2023","noopFunc"],["abp1","0"],["player.postitialTimeout","0"],["adformtag","[]"],["customAdlistMob","[]"],["InfCustomSTAMobileFunc","noopFunc"],["initializeInterstitial","noopFunc"],["PopUnder.bindEvent","noopFunc"],["exoUrl","undefined"],["organicPop","undefined"],["showme","false"],["pcc","1"]];
+const hostnamesMap = new Map([["timesofindia.indiatimes.com",0],["redd.tube",1],["erozine.jp",2],["oreno3d.com",3],["m.efuxs.com",4],["pornhub.com",5],["pornhub.org",5],["pornhub.net",5],["m.viptube.com",6],["m.nuvid.*",6],["m.hd21.com",6],["delfi.lt",7],["m.hellporno.com",8],["mediafire.com",9],["moneycontrol.com",10],["gotporn.com",11],["m.tnaflix.com",[12,13]],["m.minixiaoshuow.com",[14,15]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

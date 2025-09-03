@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202508311542
+## ! Version: 202509011209
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Aug 2025 15:42 UTC
+## ! Last modified: 01 Sep 2025 12:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2539,6 +2539,7 @@ DOMAIN-SUFFIX,analytics.vdo.ai, reject
 DOMAIN-SUFFIX,analytics.vendemore.com, reject
 DOMAIN-SUFFIX,analytics.vitalsignstracker.com, reject
 DOMAIN-SUFFIX,analytics.vixcloud.co, reject
+DOMAIN-SUFFIX,analytics.wask.co, reject
 DOMAIN-SUFFIX,analytics.webgains.io, reject
 DOMAIN-SUFFIX,analytics.webpushr.com, reject
 DOMAIN-SUFFIX,analytics.websolute.it, reject
@@ -2561,6 +2562,7 @@ DOMAIN-SUFFIX,api-analytics-prd.pelcro.com, reject
 DOMAIN-SUFFIX,api.autopilothq.com, reject
 DOMAIN-SUFFIX,api.june.so, reject
 DOMAIN-SUFFIX,api.wipmania.com, reject
+DOMAIN-SUFFIX,app.optibase.io, reject
 DOMAIN-SUFFIX,apple.www.letv.com, reject
 DOMAIN-SUFFIX,applets.ebxcdn.com, reject
 DOMAIN-SUFFIX,apps-pbd.ctraffic.io, reject
@@ -4798,6 +4800,7 @@ DOMAIN-SUFFIX,mp.theepochtimes.com, reject
 DOMAIN-SUFFIX,mr.homedepot.ca, reject
 DOMAIN-SUFFIX,mstm.motorsport.com, reject
 DOMAIN-SUFFIX,mtg.macpaw.com, reject
+DOMAIN-SUFFIX,mtm.bondagevalley.cc, reject
 DOMAIN-SUFFIX,mx.eneba.com, reject
 DOMAIN-SUFFIX,na.groupondata.com, reject
 DOMAIN-SUFFIX,nasi.etherscan.com, reject
@@ -41756,7 +41759,9 @@ DOMAIN-SUFFIX,yjtag.yahoo.co.jp, reject
 DOMAIN-SUFFIX,ad-log.dable.io, reject
 DOMAIN-SUFFIX,adoffice.11st.co.kr, reject
 DOMAIN-SUFFIX,aem-collector.daumkakao.io, reject
+DOMAIN-SUFFIX,analysis.sooplive.co.kr, reject
 DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com, reject
+DOMAIN-SUFFIX,collector1.sooplive.co.kr, reject
 DOMAIN-SUFFIX,count.munhwa.com, reject
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr, reject
 DOMAIN-SUFFIX,hits.zdnet.co.kr, reject

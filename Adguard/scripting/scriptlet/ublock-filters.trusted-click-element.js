@@ -427,7 +427,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["#player-option-1","","500"],["button[data-testid=\"close-modal\"]"],["div[class^=\"css-\"][style=\"transition-duration: 0s;\"] > div[dir=\"auto\"][data-testid=\"needDownloadPS\"]"],["#no-thanks-btn"],["button[data-test=\"watch-ad-button\"]"],[".kw-ads-pagination-button:first-child,.kw-ads-pagination-button:first-child","","1000"]];
-const hostnamesMap = new Map([["yabaisub.cloud",0],["truthsocial.com",1],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["turboobit.com",3],["easybib.com",4],["read.amazon.*",5]]);
+const hostnamesMap = new Map([["yabaisub.cloud",0],["truthsocial.com",1],["my.irancell.ir",2],["tourbobit.com",3],["tourbobit.net",3],["turbobeet.net",3],["turbobi.pw",3],["turbobif.com",3],["turbobit.net",3],["turbobita.net",3],["turbobits.cc",3],["easybib.com",4],["read.amazon.*",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

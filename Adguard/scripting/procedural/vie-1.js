@@ -27,9 +27,9 @@
 
 /******************************************************************************/
 
-const argsList = ["[]","[{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}]","[{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"],\"cssable\":true}]","[{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"],\"cssable\":true}]","[{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"],\"cssable\":true}]","[{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"],\"cssable\":true},{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"],\"cssable\":true}]","[{\"selector\":\"video[src^=\\\"/\\\"]\",\"action\":[\"style\",\"pointer-events: none\"],\"cssable\":true}]"];
-const argsSeqs = [0,1,2,3,4,5,6];
-const hostnamesMap = new Map([["metruyencv.com",1],["metruyencv.net",1],["chotlo3s.com",2],["hhtq.click",3],["thempho2.com",3],["phimchautinhtri.net",3],["www.o-study.net",4],["www.saostar.vn",5],["xem15.net",6],["xem14.net",6]]);
+const argsList = ["[]","[{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}]","[{\"selector\":\"#header\",\"action\":[\"style\",\"margin-top: 0 !important\"],\"cssable\":true}]","[{\"selector\":\"html\",\"action\":[\"style\",\"overflow: auto !important\"],\"cssable\":true}]","[{\"selector\":\"body\",\"action\":[\"style\",\"position: static !important\"],\"cssable\":true}]","[{\"selector\":\"div.layout.pt-mobi-top\",\"action\":[\"style\",\"padding-top: 0 !important\"],\"cssable\":true},{\"selector\":\"header.bg-white\",\"action\":[\"style\",\"margin-top: 0px !important\"],\"cssable\":true}]"];
+const argsSeqs = [0,1,2,3,4,5];
+const hostnamesMap = new Map([["metruyencv.com",1],["metruyencv.net",1],["chotlo3s.com",2],["hhtq.click",3],["thempho5.com",3],["phimchautinhtri.net",3],["www.o-study.net",4],["www.saostar.vn",5]]);
 const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];

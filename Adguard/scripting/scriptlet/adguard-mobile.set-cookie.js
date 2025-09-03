@@ -361,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["in_m4","1"],["playcnt","1"],["no_postitial_content","1"],["no_postitial_video","1"],["inter","1"]];
-const hostnamesMap = new Map([["hanime.tv",0],["m.proporn.com",[1,2]],["m.nuvid.*",3],["m.hd21.com",3],["m.economictimes.com",4]]);
+const argsList = [["_ga","OK","","reload","1"],["views","1"],["in_m4","1"],["playcnt","1"],["no_postitial_content","1"],["no_postitial_video","1"],["inter","1"]];
+const hostnamesMap = new Map([["m.dcinside.com",0],["upload.dcinside.com",0],["pornhub.com",1],["hanime.tv",2],["m.proporn.com",[3,4]],["m.nuvid.*",5],["m.hd21.com",5],["m.economictimes.com",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

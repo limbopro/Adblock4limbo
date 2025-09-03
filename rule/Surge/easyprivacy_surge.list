@@ -1,7 +1,7 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202508311542
+## ! Version: 202509011209
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Aug 2025 15:42 UTC
+## ! Last modified: 01 Sep 2025 12:09 UTC
 ## ! Expires: 4 days (update frequency)
 ## ! *** easylist:template_header.txt ***
 ## ! 
@@ -2539,6 +2539,7 @@ DOMAIN-SUFFIX,analytics.vdo.ai
 DOMAIN-SUFFIX,analytics.vendemore.com
 DOMAIN-SUFFIX,analytics.vitalsignstracker.com
 DOMAIN-SUFFIX,analytics.vixcloud.co
+DOMAIN-SUFFIX,analytics.wask.co
 DOMAIN-SUFFIX,analytics.webgains.io
 DOMAIN-SUFFIX,analytics.webpushr.com
 DOMAIN-SUFFIX,analytics.websolute.it
@@ -2561,6 +2562,7 @@ DOMAIN-SUFFIX,api-analytics-prd.pelcro.com
 DOMAIN-SUFFIX,api.autopilothq.com
 DOMAIN-SUFFIX,api.june.so
 DOMAIN-SUFFIX,api.wipmania.com
+DOMAIN-SUFFIX,app.optibase.io
 DOMAIN-SUFFIX,apple.www.letv.com
 DOMAIN-SUFFIX,applets.ebxcdn.com
 DOMAIN-SUFFIX,apps-pbd.ctraffic.io
@@ -4798,6 +4800,7 @@ DOMAIN-SUFFIX,mp.theepochtimes.com
 DOMAIN-SUFFIX,mr.homedepot.ca
 DOMAIN-SUFFIX,mstm.motorsport.com
 DOMAIN-SUFFIX,mtg.macpaw.com
+DOMAIN-SUFFIX,mtm.bondagevalley.cc
 DOMAIN-SUFFIX,mx.eneba.com
 DOMAIN-SUFFIX,na.groupondata.com
 DOMAIN-SUFFIX,nasi.etherscan.com
@@ -41756,7 +41759,9 @@ DOMAIN-SUFFIX,yjtag.yahoo.co.jp
 DOMAIN-SUFFIX,ad-log.dable.io
 DOMAIN-SUFFIX,adoffice.11st.co.kr
 DOMAIN-SUFFIX,aem-collector.daumkakao.io
+DOMAIN-SUFFIX,analysis.sooplive.co.kr
 DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com
+DOMAIN-SUFFIX,collector1.sooplive.co.kr
 DOMAIN-SUFFIX,count.munhwa.com
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr
 DOMAIN-SUFFIX,hits.zdnet.co.kr

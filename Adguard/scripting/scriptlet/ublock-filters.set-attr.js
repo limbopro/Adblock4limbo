@@ -344,8 +344,8 @@ function runAt(fn, when) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[":is(.watch-on-link-logo, li.post) img.ezlazyload[src^=\"data:image\"][data-ezsrc]","src","[data-ezsrc]"],[".lazy","src","[data-sco-src]"],["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],[".video-skip[data-time]","data-time","0"],["c-wiz[data-p] [data-query] a[target=\"_blank\"][role=\"link\"]","rlhc","1"]];
-const hostnamesMap = new Map([["wnynewsnow.com",0],["rocketnews24.com",1],["soranews24.com",1],["youpouch.com",1],["statisticsanddata.org",2],["18kalebettv.xyz",3],["19kalebettv.xyz",3],["www.google.*",4]]);
+const argsList = [[":is(.watch-on-link-logo, li.post) img.ezlazyload[src^=\"data:image\"][data-ezsrc]","src","[data-ezsrc]"],[".lazy","src","[data-sco-src]"],["iframe[data-src-cmplz][src=\"about:blank\"]","src","[data-src-cmplz]"],["c-wiz[data-p] [data-query] a[target=\"_blank\"][role=\"link\"]","rlhc","1"]];
+const hostnamesMap = new Map([["wnynewsnow.com",0],["rocketnews24.com",1],["soranews24.com",1],["youpouch.com",1],["statisticsanddata.org",2],["www.google.*",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

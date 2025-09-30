@@ -361,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"],["mrr_1","1"]];
-const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2],["erotizmfilmleri1.cc",3],["klasikfilmler.net",3]]);
+const argsList = [["popundr0","7"],["modalads","yes"],["notheme","1"],["mrr_1","1"],["reklamgosterimx","ok"]];
+const hostnamesMap = new Map([["filmseyretizlet.com",0],["gazeterize.com",1],["bursahaberdar.com",1],["kgrt.net",1],["halk54.com",1],["eskisehirhaber.com",1],["haberlisin.com",1],["eksisozluk.com",2],["erotizmfilmleri1.cc",3],["klasikfilmler.net",3],["mactanmaca322.shop",4],["mactanmaca323.shop",4],["mactanmaca324.shop",4],["mactanmaca325.shop",4],["mactanmaca326.shop",4],["mactanmaca327.shop",4],["mactanmaca328.shop",4],["mactanmaca329.shop",4],["mactanmaca330.shop",4],["mactanmaca331.shop",4],["mactanmaca332.shop",4],["mactanmaca333.shop",4],["mactanmaca334.shop",4],["mactanmaca335.shop",4],["mactanmaca336.shop",4],["mactanmaca337.shop",4],["mactanmaca338.shop",4],["mactanmaca339.shop",4],["mactanmaca340.shop",4],["mactanmaca341.shop",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

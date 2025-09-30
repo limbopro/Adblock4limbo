@@ -41,6 +41,7 @@ function preventFetchFn(
     responseType = ''
 ) {
     const safe = safeSelf();
+    const setTimeout = self.setTimeout;
     const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
     const logPrefix = safe.makeLogPrefix(
         scriptletName,
@@ -48,6 +49,7 @@ function preventFetchFn(
         responseBody,
         responseType
     );
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
     const needles = [];
     for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -135,6 +137,11 @@ function preventFetchFn(
                 responseProps
             );
             safe.Object_defineProperties(response, props);
+            if ( extraArgs.throttle ) {
+                return new Promise(resolve => {
+                    setTimeout(( ) => { resolve(response); }, extraArgs.throttle);
+                });
+            }
             return response;
         });
     });
@@ -472,8 +479,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["pagead2.googlesyndication.com"],["method:HEAD"],["/googlesyndication\\.com|doubleclick\\.net/"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
-const hostnamesMap = new Map([["slashview.com",0],["fsbot.xyz",0],["mpyit.com",0],["hmanga.world",1],["wandhi.com",2],["taiwanlibrarysearch.herokuapp.com",3],["linetv.tw",4]]);
+const argsList = [["adsbygoogle.js"],["pagead2.googlesyndication.com"],["method:HEAD"],["/googlesyndication\\.com|doubleclick\\.net/"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
+const hostnamesMap = new Map([["helper-employer.com",0],["slashview.com",1],["fsbot.xyz",1],["mpyit.com",1],["hmanga.world",2],["wandhi.com",3],["taiwanlibrarysearch.herokuapp.com",4],["linetv.tw",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

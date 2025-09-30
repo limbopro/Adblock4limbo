@@ -426,7 +426,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["props.children.[].props.tvc"]];
-const hostnamesMap = new Map([["xem15.net",0],["xem14.net",0]]);
+const hostnamesMap = new Map([["xem16.net",0],["xem17.net",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

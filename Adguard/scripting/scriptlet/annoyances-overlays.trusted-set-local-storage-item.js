@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["contextual-sign-in-modal-cool-off-hidden","$now$"],["halfSheetAppBannerDismissed","{\"halfSheetAppBannerDismissed\":{\"expiration\":2000000000000,\"data\":true}}"],["lastViewTime","$currentDate$"],["reference_offer","__q_objt|{\"offer_type\":\"PROMOTION\"}"],["show_offer","__q_bool|0"],["show_offer_timestamp","__q_numb|9999999999999"],["adblockNotice","{\"dismissed\":true,\"impressionCount\":1}"]];
-const hostnamesMap = new Map([["linkedin.com",0],["patreon.com",1],["cu.tbs.co.jp",2],["bitchute.com",[3,4,5]],["duckduckgo.com",6]]);
+const argsList = [["contextual-sign-in-modal-cool-off-hidden","$now$"],["halfSheetAppBannerDismissed","{\"halfSheetAppBannerDismissed\":{\"expiration\":2000000000000,\"data\":true}}"],["lastViewTime","$currentDate$"],["reference_offer","__q_objt|{\"offer_type\":\"PROMOTION\"}"],["show_offer","__q_bool|0"],["show_offer_timestamp","__q_numb|9999999999999"],["adblockNotice","{\"dismissed\":true,\"impressionCount\":1}"],["xvmDialogLastShown","$now$"]];
+const hostnamesMap = new Map([["linkedin.com",0],["patreon.com",1],["cu.tbs.co.jp",2],["bitchute.com",[3,4,5]],["duckduckgo.com",6],["modxvm.com",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

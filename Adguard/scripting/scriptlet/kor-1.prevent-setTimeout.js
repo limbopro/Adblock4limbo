@@ -362,8 +362,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["height && 1 <= height && height <= 20"],["coupangAd"],["popup_goods"],["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
-const hostnamesMap = new Map([["m.humoruniv.com",0],["enjoyplan.tistory.com",1],["10000recipe.com",2],["moneytoring.co.kr",3],["postincome.co.kr",3],["itinformation.kr",3],["digitstar77.com",3],["filetender.com",4],["zuzunza.com",5],["iphonedev.co.kr",5],["tistory.com",5],["sysnet.pe.kr",6],["genshin.gamedot.org",7],["stockinfo7.com",8],["lover932.net",9],["lover933.net",9],["lover934.net",9],["lover935.net",9],["lover936.net",9],["lover937.net",9],["lover938.net",9],["lover939.net",9],["lover940.net",9],["lover941.net",9]]);
+const argsList = [["height && 1 <= height && height <= 20"],["coupangAd"],["popup_goods"],["piBlock"],["","15000"],["/\\.displayMessage\\(/"],["window.getComputedStyle"],["adBlockedMessage"],["banner_book"],["blockCheck2022"],["ad.innerHTML.replace"],["document[_0x"]];
+const hostnamesMap = new Map([["m.humoruniv.com",0],["enjoyplan.tistory.com",1],["10000recipe.com",2],["moneytoring.co.kr",3],["postincome.co.kr",3],["itinformation.kr",3],["digitstar77.com",3],["filetender.com",4],["zuzunza.com",5],["iphonedev.co.kr",5],["tistory.com",5],["chzzkban.xyz",6],["mylocation.co.kr",7],["sysnet.pe.kr",8],["genshin.gamedot.org",9],["stockinfo7.com",10],["lover932.net",11],["lover933.net",11],["lover934.net",11],["lover935.net",11],["lover936.net",11],["lover937.net",11],["lover938.net",11],["lover939.net",11],["lover940.net",11],["lover941.net",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -41,6 +41,7 @@ function preventFetchFn(
     responseType = ''
 ) {
     const safe = safeSelf();
+    const setTimeout = self.setTimeout;
     const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
     const logPrefix = safe.makeLogPrefix(
         scriptletName,
@@ -48,6 +49,7 @@ function preventFetchFn(
         responseBody,
         responseType
     );
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
     const needles = [];
     for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -135,6 +137,11 @@ function preventFetchFn(
                 responseProps
             );
             safe.Object_defineProperties(response, props);
+            if ( extraArgs.throttle ) {
+                return new Promise(resolve => {
+                    setTimeout(( ) => { resolve(response); }, extraArgs.throttle);
+                });
+            }
             return response;
         });
     });
@@ -472,8 +479,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["googlesyndication"],["popads.net"],["pagead2.googlesyndication.com"],["method:HEAD"],["mode:no-cors"],["www3.doubleclick.net"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["static.ads-twitter.com"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
-const hostnamesMap = new Map([["laprovincia.es",0],["informacion.es",0],["levante-emv.com",0],["viciados.net",0],["fgtd.online",1],["jornaldacidadeonline.com.br",2],["gourlpro.com",2],["casperhd.com",2],["short.7hd.club",2],["istigo.net",2],["modescanlator.net",2],["r7.com",2],["descargas2024gratis.blogspot.com",2],["ggames.com.br",2],["mundodonghua.com",2],["receitasoncaseiras.online",2],["dicasdefinancas.net",2],["expertplay.net",2],["alarmadefraude.com",2],["modescanlator.com",2],["sabornutritivo.com",2],["neworldtravel.com",[2,3,10]],["financialtrust.info",[2,3,10]],["tulink.org",[2,3,10]],["acortados.com",[2,3,10]],["notipostingt.com",[2,17]],["animesonline.nz",2],["los40.com",2],["negociosecommerce.com",[2,13]],["puromarketing.com",[2,13]],["todostartups.com",[2,13]],["suaurl.com",[2,15]],["reidoplacar.com",[2,15]],["suaads.com",[2,15]],["link-descarga.site",2],["meutimao.com.br",2],["listas.pro",2],["emperorscan.com",2],["lawebdelprogramador.com",2],["dicasgostosas.com",2],["cuitonline.com",3],["enlacito.com",3],["todoandroid.live",3],["gadgetzona.net",3],["qwanturankpro.com",3],["acortame-esto.com",3],["redecanaistv.*",4],["redecanais.*",4],["atresplayer.com",5],["sussytoons.*",5],["tivify.tv",5],["animefire.plus",6],["animesonlinecc.us",6],["animesup.info",6],["animeyabu.net",6],["animeyabu.org",6],["drstonebr.com",6],["goanimes.vip",6],["goyabu.us",6],["otakuanimess.net",6],["packsmega.info",7],["peliculas8k.com",8],["southparkstudios.com.br",9],["southpark.lat",9],["acortalink.me",10],["atv.pe",11],["monumental.co.cr",11],["elcomercio.com",11],["antena7.com.do",11],["rqp.com.bo",11],["canal12.com.sv",11],["chapintv.com",11],["vtv.com.hn",11],["tn23.tv",11],["canal13mexico.com",11],["c9n.com.py",11],["repretel.com",11],["redbolivision.tv.bo",11],["independentespanol.com",11],["teleculinaria.pt",12],["nptmedia.tv",14],["costumbresmexico.com",16],["desbloqueador.site",16],["netmovies.com.br",18],["coempregos.com.br",19],["anitube.us",19],["anitube.vip",19],["hinatasoul.com",19]]);
+const argsList = [["googleads.g.doubleclick.net"],["googletagmanager.com"],["connect.facebook.net"],["static.ads-twitter.com"],["google-analytics.com"],["googlesyndication"],["popads.net"],["pagead2.googlesyndication.com"],["method:HEAD"],["mode:no-cors"],["/pagead2\\.googlesyndication.com/ method:HEAD"],["www3.doubleclick.net"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["/mopinion\\.com|iubenda\\.com|bannersnack\\.com|unblockia\\.com|googlesyndication\\.com/"],["/googlesyndication\\.com|iubenda\\.com|unblockia\\.com|bannersnack\\.com|mopinion\\.com/"],["imasdk.googleapis.com"],["/ads-twitter\\.com|pagead|googleads|doubleclick/","","opaque"],["securepubads.g.doubleclick.net/pagead/ppub_config"],["adsbygoogle"],["call-zone-adxs"],["/pagead2\\.googlesyndication\\.com|ads-api\\.twitter\\.com/"],["/^(?!.*(chrome-extension:)).*$/ method:HEAD"],["ads-twitter.com"],["/adsbygoogle.js"],["/outbrain\\.com|adligature\\.com|quantserve\\.com|srvtrck\\.com/"]];
+const hostnamesMap = new Map([["manhastro.net",[0,1,2,3,4]],["notipostingt.com",[3,7]],["laprovincia.es",5],["informacion.es",5],["levante-emv.com",5],["viciados.net",5],["fgtd.online",6],["jornaldacidadeonline.com.br",7],["gourlpro.com",7],["casperhd.com",7],["short.7hd.club",7],["istigo.net",7],["modescanlator.net",7],["r7.com",7],["descargas2024gratis.blogspot.com",7],["ggames.com.br",7],["mundodonghua.com",7],["receitasoncaseiras.online",7],["dicasdefinancas.net",7],["expertplay.net",7],["alarmadefraude.com",7],["modescanlator.com",7],["sabornutritivo.com",7],["neworldtravel.com",[7,8,16]],["financialtrust.info",[7,8,16]],["tulink.org",[7,8,16]],["acortados.com",[7,8,16]],["animesonline.nz",7],["los40.com",7],["negociosecommerce.com",[7,19]],["puromarketing.com",[7,19]],["todostartups.com",[7,19]],["suaurl.com",[7,21]],["reidoplacar.com",[7,21]],["suaads.com",[7,21]],["link-descarga.site",7],["meutimao.com.br",7],["listas.pro",7],["emperorscan.com",7],["lawebdelprogramador.com",7],["dicasgostosas.com",7],["cuitonline.com",8],["enlacito.com",8],["todoandroid.live",8],["gadgetzona.net",8],["qwanturankpro.com",8],["acortame-esto.com",8],["redecanaistv.*",9],["redecanais.*",9],["atresplayer.com",10],["sussytoons.*",11],["tivify.tv",11],["animefire.plus",12],["animesonlinecc.us",12],["animesup.info",12],["animeyabu.net",12],["animeyabu.org",12],["drstonebr.com",12],["goanimes.vip",12],["goyabu.us",12],["otakuanimess.net",12],["packsmega.info",13],["peliculas8k.com",14],["southparkstudios.com.br",15],["southpark.lat",15],["acortalink.me",16],["atv.pe",17],["monumental.co.cr",17],["elcomercio.com",17],["antena7.com.do",17],["rqp.com.bo",17],["canal12.com.sv",17],["chapintv.com",17],["vtv.com.hn",17],["tn23.tv",17],["canal13mexico.com",17],["c9n.com.py",17],["repretel.com",17],["redbolivision.tv.bo",17],["independentespanol.com",17],["teleculinaria.pt",18],["nptmedia.tv",20],["costumbresmexico.com",22],["desbloqueador.site",22],["netmovies.com.br",23],["coempregos.com.br",24],["anitube.us",24],["anitube.vip",24],["hinatasoul.com",24]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

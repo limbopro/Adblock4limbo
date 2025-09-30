@@ -425,8 +425,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["*","*.media.*.advertisement_id"],["ads breaks cuepoints times","ads"],["rot_url pop_type"]];
-const hostnamesMap = new Map([["sub100.com.br",0],["app.prende.tv",1],["animeblix.com",2]]);
+const argsList = [["*","*.media.*.advertisement_id"],["ads breaks cuepoints times","ads"],["rot_url pop_type"],["adn_placement components.player.playbackContext.ads"]];
+const hostnamesMap = new Map([["sub100.com.br",0],["app.prende.tv",1],["animeblix.com",2],["play.mercadolibre.cl",3],["play.mercadolivre.com.br",3],["play.mercadolibre.com.ar",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

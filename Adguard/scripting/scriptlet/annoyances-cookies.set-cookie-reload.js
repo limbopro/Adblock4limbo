@@ -365,8 +365,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["tlc_cookie_banner_declined","true"]];
-const hostnamesMap = new Map([["travelfranceonline.com",0]]);
+const argsList = [["tlc_cookie_banner_declined","true"],["marketing_cookie_agree","false"],["cookies_confirmed_18","4"]];
+const hostnamesMap = new Map([["travelfranceonline.com",0],["xistore.by",1],["baur.eu",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

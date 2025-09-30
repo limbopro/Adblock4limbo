@@ -368,7 +368,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","adsbygoogle"],["script","/jQuery.*reload/"],["script","document.head.appendChild"],["script","ai_adb"],["script","maxbet"]];
+const argsList = [["script","adsbygoogle"],["script","/jQuery.*reload/"],["script","document.head.appendChild"],["script","ai_adb"],["style","/@media.*url/gms"]];
 const hostnamesMap = new Map([["turdanews.net",0],["sampmoduri.ro",1],["filme2023.online",2],["clujust.ro",3],["gsp.ro",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

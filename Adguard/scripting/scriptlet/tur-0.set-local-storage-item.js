@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["lscache-pop","1"],["/^totalPlayTime/","$remove$"],["adShown","true"],["adSkipped","true"]];
-const hostnamesMap = new Map([["turkanime.co",0],["hdfilmcehennemi.*",1],["cizgivedizi.com",[2,3]]]);
+const argsList = [["lscache-pop","1"],["redirected_to_home","true"],["/^totalPlayTime/","$remove$"],["adShown","true"],["adSkipped","true"]];
+const hostnamesMap = new Map([["turkanime.co",0],["diziyiizle.com",1],["hdfilmcehennemi.*",2],["cizgivedizi.com",[3,4]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

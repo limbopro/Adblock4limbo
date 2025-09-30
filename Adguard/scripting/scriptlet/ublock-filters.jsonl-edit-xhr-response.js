@@ -785,8 +785,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".data[?@.category==\"SPONSORED\"].node","","propsToMatch","/graphql"],[".data.viewer.news_feed.edges.*[?@.category==\"SPONSORED\"].node","","propsToMatch","/graphql"],[".data.viewer.marketplace_feed_stories.edges.*[?@.node.__typename==\"MarketplaceFeedAdStory\"]","/graphql"]];
-const hostnamesMap = new Map([["web.facebook.com",[0,1,2]],["www.facebook.com",[0,1,2]]]);
+const argsList = [[".data[?@.category==\"SPONSORED\"].node","propsToMatch","/graphql"],["..node[?.*.__typename==\"SponsoredData\"]","propsToMatch","/graphql"],[".data.viewer.news_feed.edges.*[?@.category==\"SPONSORED\"].node","propsToMatch","/graphql"],[".data.viewer.marketplace_feed_stories.edges.*[?@.node.__typename==\"MarketplaceFeedAdStory\"]","/graphql"]];
+const hostnamesMap = new Map([["web.facebook.com",[0,1,2,3]],["www.facebook.com",[0,1,2,3]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

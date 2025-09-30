@@ -460,8 +460,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"],["a[href^=\"https://al.dmm.com/?lurl=\"]","?lurl"],["a[href^=\"https://affiliate.suruga-ya.jp/modules/af/af_jump.php?\"]","?goods_url"],["a[href*=\"hb.afl.rakuten.co.jp/hgc/\"][href*=\"/?pc=\"]","?pc"],["a[href*=\"ck.jp.ap.valuecommerce.com/servlet/referral?\"][href*=\"&vc_url=\"]","?vc_url"],["a[href^=\"https://adclick.g.doubleclick.net/\"][href*=\"adurl=\"]","?adurl"]];
-const hostnamesMap = new Map([["figure-times.com",0],["figsoku.net",[1,2,3,4]],["safeframe.googlesyndication.com",5]]);
+const argsList = [["a[href^=\"https://app.adjust.com/\"]","?redirect"],["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"],["a[href^=\"https://al.dmm.com/?lurl=\"]","?lurl"],["a[href^=\"https://affiliate.suruga-ya.jp/modules/af/af_jump.php?\"]","?goods_url"],["a[href*=\"hb.afl.rakuten.co.jp/hgc/\"][href*=\"/?pc=\"]","?pc"],["a[href*=\"ck.jp.ap.valuecommerce.com/servlet/referral?\"][href*=\"&vc_url=\"]","?vc_url"],["a[href^=\"https://adclick.g.doubleclick.net/\"][href*=\"adurl=\"]","?adurl"]];
+const hostnamesMap = new Map([["www.yahoo.co.jp",0],["figure-times.com",1],["figsoku.net",[2,3,4,5]],["safeframe.googlesyndication.com",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

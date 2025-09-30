@@ -107,92 +107,103 @@ function trustedClickElement(
         return shadowRoot && querySelectorEx(inside, shadowRoot);
     };
 
-    const selectorList = safe.String_split.call(selectors, /\s*,\s*/)
-        .filter(s => {
-            try {
-                void querySelectorEx(s);
-            } catch {
-                return false;
-            }
-            return true;
-        });
-    if ( selectorList.length === 0 ) { return; }
-
+    const steps = safe.String_split.call(selectors, /\s*,\s*/).map(a => {
+        if ( /^\d+$/.test(a) ) { return parseInt(a, 10); }
+        return a;
+    });
+    if ( steps.length === 0 ) { return; }
     const clickDelay = parseInt(delay, 10) || 1;
-    const t0 = Date.now();
-    const tbye = t0 + 10000;
-    let tnext = selectorList.length !== 1 ? t0 : t0 + clickDelay;
+    for ( let i = steps.length-1; i > 0; i-- ) {
+        if ( typeof steps[i] !== 'string' ) { continue; }
+        if ( typeof steps[i-1] !== 'string' ) { continue; }
+        steps.splice(i, 0, clickDelay);
+    }
+    if ( typeof steps.at(-1) !== 'number' ) {
+        steps.push(10000);
+    }
+
+    const waitForTime = ms => {
+        return new Promise(resolve => {
+            safe.uboLog(logPrefix, `Waiting for ${ms} ms`);
+            waitForTime.timer = setTimeout(( ) => {
+                waitForTime.timer = undefined;
+                resolve();
+            }, ms);
+        });
+    };
+    waitForTime.cancel = ( ) => {
+        const { timer } = waitForTime;
+        if ( timer === undefined ) { return; }
+        clearTimeout(timer);
+        waitForTime.timer = undefined;
+    };
+
+    const waitForElement = selector => {
+        return new Promise(resolve => {
+            const elem = querySelectorEx(selector);
+            if ( elem !== null ) {
+                elem.click();
+                resolve();
+                return;
+            }
+            safe.uboLog(logPrefix, `Waiting for ${selector}`);
+            const observer = new MutationObserver(( ) => {
+                const elem = querySelectorEx(selector);
+                if ( elem === null ) { return; }
+                waitForElement.cancel();
+                elem.click();
+                resolve();
+            });
+            observer.observe(document, {
+                attributes: true,
+                childList: true,
+                subtree: true,
+            });
+            waitForElement.observer = observer;
+        });
+    };
+    waitForElement.cancel = ( ) => {
+        const { observer } = waitForElement;
+        if ( observer === undefined ) { return; }
+        waitForElement.observer = undefined;
+        observer.disconnect();
+    };
+
+    const waitForTimeout = ms => {
+        waitForTimeout.cancel();
+        waitForTimeout.timer = setTimeout(( ) => {
+            waitForTimeout.timer = undefined;
+            terminate();
+            safe.uboLog(logPrefix, `Timed out after ${ms} ms`);
+        }, ms);
+    };
+    waitForTimeout.cancel = ( ) => {
+        if ( waitForTimeout.timer === undefined ) { return; }
+        clearTimeout(waitForTimeout.timer);
+        waitForTimeout.timer = undefined;
+    };
 
     const terminate = ( ) => {
-        selectorList.length = 0;
-        next.stop();
-        observe.stop();
+        waitForTime.cancel();
+        waitForElement.cancel();
+        waitForTimeout.cancel();
     };
 
-    const next = notFound => {
-        if ( selectorList.length === 0 ) {
-            safe.uboLog(logPrefix, 'Completed');
-            return terminate();
+    const process = async ( ) => {
+        waitForTimeout(steps.pop());
+        while ( steps.length !== 0 ) {
+            const step = steps.shift();
+            if ( step === undefined ) { break; }
+            if ( typeof step === 'number' ) {
+                await waitForTime(step);
+                if ( step === 1 ) { continue; }
+                continue;
+            }
+            if ( step.startsWith('!') ) { continue; }
+            await waitForElement(step);
+            safe.uboLog(logPrefix, `Clicked ${step}`);
         }
-        const tnow = Date.now();
-        if ( tnow >= tbye ) {
-            safe.uboLog(logPrefix, 'Timed out');
-            return terminate();
-        }
-        if ( notFound ) { observe(); }
-        const delay = Math.max(notFound ? tbye - tnow : tnext - tnow, 1);
-        next.timer = setTimeout(( ) => {
-            next.timer = undefined;
-            process();
-        }, delay);
-        safe.uboLog(logPrefix, `Waiting for ${selectorList[0]}...`);
-    };
-    next.stop = ( ) => {
-        if ( next.timer === undefined ) { return; }
-        clearTimeout(next.timer);
-        next.timer = undefined;
-    };
-
-    const observe = ( ) => {
-        if ( observe.observer !== undefined ) { return; }
-        observe.observer = new MutationObserver(( ) => {
-            if ( observe.timer !== undefined ) { return; }
-            observe.timer = setTimeout(( ) => {
-                observe.timer = undefined;
-                process();
-            }, 20);
-        });
-        observe.observer.observe(document, {
-            attributes: true,
-            childList: true,
-            subtree: true,
-        });
-    };
-    observe.stop = ( ) => {
-        if ( observe.timer !== undefined ) {
-            clearTimeout(observe.timer);
-            observe.timer = undefined;
-        }
-        if ( observe.observer ) {
-            observe.observer.disconnect();
-            observe.observer = undefined;
-        }
-    };
-
-    const process = ( ) => {
-        next.stop();
-        if ( Date.now() < tnext ) { return next(); }
-        const selector = selectorList.shift();
-        if ( selector === undefined ) { return terminate(); }
-        const elem = querySelectorEx(selector);
-        if ( elem === null ) {
-            selectorList.unshift(selector);
-            return next(true);
-        }
-        safe.uboLog(logPrefix, `Clicked ${selector}`);
-        elem.click();
-        tnext += clickDelay;
-        next();
+        terminate();
     };
 
     runAtHtmlElementFn(process);
@@ -426,8 +437,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"],["#app > [data-testid=\"embed-wrapper\"] [aria-label*=\"становить\"]"],[".seo-landing-modal-cancel-btn .design-system-button-container","","500"],[".dig-Modal:has(div[data-testid=\"digTruncateTooltipTrigger\"]) > .dig-Modal-close-btn","","2000"]];
-const hostnamesMap = new Map([["deezer.com",0],["moovitapp.com",1],["teller.jp",2],["bbc.com",[3,4,5,6]],["wrtn.jp",7],["crunchyroll.com",8],["abema.tv",9],["rutube.ru",10],["lemon8-app.com",11],["dropbox.com",12]]);
+const argsList = [[".chakra-portal .chakra-modal__content-container > section.chakra-modal__content > .chakra-modal__header:has(> .chakra-stack > a[href^=\"https://www.deezer.com/payment/go.php?origin=paywall_pressure\"]) + button.chakra-modal__close-btn"],["[data-automation=\"continue-to-ads-btn\"]","","10000"],[".z_share_popover div.gap_2 > button.mt_24px.rounded_100vh + button.text_tint.disabled\\:opacity_0\\.4.h_50px"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1000"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1100"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1200"],["[data-testid=\"consentBanner\"] > button[data-testid=\"banner-button\"]","","1300"],["#web-modal button.css-1d86b5p"],[".erc-existing-profile-onboarding-modal button[class^=\"modal-portal__close-button\"]"],["#com-onboarding-OnboardingWelcomeModal__title + div .com-a-Button--dark"],[".seo-landing-modal-cancel-btn .design-system-button-container","","500"],[".dig-Modal:has(div[data-testid=\"digTruncateTooltipTrigger\"]) > .dig-Modal-close-btn","","2000"]];
+const hostnamesMap = new Map([["deezer.com",0],["moovitapp.com",1],["teller.jp",2],["bbc.com",[3,4,5,6]],["wrtn.jp",7],["crunchyroll.com",8],["abema.tv",9],["lemon8-app.com",10],["dropbox.com",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -418,7 +418,7 @@ function shouldDebug(details) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["DOMContentLoaded","check"],["error","event.target.tagName"],["DOMContentLoaded","adBlock"],["","showRemoveAdBlocker"],["DOMContentLoaded","document.createElement"],["DOMContentLoaded","localStorage"],["touchend","window.location.href"],["touchend","clientheight"]];
-const hostnamesMap = new Map([["xchina.co",0],["rjno1.com",1],["linovelib.com",2],["xiebruce.top",3],["85tube.com",4],["iplark.com",5],["69shumi.com",6],["biquge543.com",6],["beqg.cc",6],["biquge321.com",6],["m.13xsw.com",7],["wap.yushuwu.cloud",7]]);
+const hostnamesMap = new Map([["xchina.co",0],["rjno1.com",1],["linovelib.com",2],["xiebruce.top",3],["85tube.com",4],["iplark.com",5],["m.biquge12345.com",6],["69shumi.com",6],["biquge543.com",6],["beqg.cc",6],["biquge321.com",6],["m.13xsw.com",7],["wap.yushuwu.cloud",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

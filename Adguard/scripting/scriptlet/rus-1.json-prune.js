@@ -425,8 +425,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Blocks"],["direct rtb seatbid data.*.attributes.blockId"]];
-const hostnamesMap = new Map([["avtorambler.*",0],["championat.*",0],["eda.*",0],["gazeta.ru",0],["lenta.*",0],["letidor.*",0],["moslenta.*",0],["motor.*",0],["passion.*",0],["quto.*",0],["rambler.*",0],["wmj.*",0],["www.afisha.*",0],["dzen.*",1],["ya.*",1],["yandex.*",1]]);
+const argsList = [["Blocks"],["direct rtb seatbid data.*.attributes.blockId"],["*.disable-adv"]];
+const hostnamesMap = new Map([["avtorambler.*",0],["championat.*",0],["eda.*",0],["gazeta.ru",0],["lenta.*",0],["letidor.*",0],["moslenta.*",0],["motor.*",0],["passion.*",0],["quto.*",0],["rambler.*",0],["wmj.*",0],["www.afisha.*",0],["dzen.*",1],["ya.*",1],["yandex.*",1],["mail.yandex.*",2]]);
 const exceptionsMap = new Map([["id.rambler.ru",[0]],["quiz.rambler.ru",[0]],["vp.rambler.ru",[0]],["yandex.net",[1]]]);
 const hasEntities = true;
 const hasAncestors = false;

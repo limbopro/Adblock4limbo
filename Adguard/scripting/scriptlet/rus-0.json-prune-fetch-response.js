@@ -507,8 +507,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ads.banners.endtag ads.banners.pausebanner ads.rolls"],["data.age_restrictions"],["data.template.disable_registration"],["item.banners"]];
-const hostnamesMap = new Map([["lumex.space",0],["player.smotrim.ru",[1,2]],["ohmywishes.com",3]]);
+const argsList = [["ads.banners.endtag ads.banners.pausebanner ads.rolls"],["appearance.auto_start","","stackToMatch","!rutube.ru/video"],["data.age_restrictions"],["data.template.disable_registration"],["item.banners"]];
+const hostnamesMap = new Map([["lumex.space",0],["rutube.ru",1],["player.smotrim.ru",[2,3]],["ohmywishes.com",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

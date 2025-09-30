@@ -31,6 +31,7 @@ div[class^="_taxel_ad_article_"],
 div[class^="insentense-adsense"],
 div[id^="JP_"][style],
 div[id^="active_overlay"],
+div[style="width:300px!important;height:250px!important;position:relative!important;text-align:center!important;overflow:hidden!important;margin:5px;"],
 iframe[id^="IFTG"] {
     display: none !important;
 }

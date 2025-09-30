@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["felhasznalo_cookie_preferencia","0"]];
-const hostnamesMap = new Map([["onlinepenztarca.hu",0]]);
+const argsList = [["felhasznalo_cookie_preferencia","0"],["skanzen-cookie-consent","false"]];
+const hostnamesMap = new Map([["onlinepenztarca.hu",0],["skanzen.hu",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

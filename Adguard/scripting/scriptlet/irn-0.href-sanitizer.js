@@ -460,8 +460,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href^=\"/goto/\"]","?url -base64"],["a[href^=\"https://hamtamovie.nl/dl/?url=\"]","?url"],["a[href^=\"https://l.vrgl.ir/r?\"][href*=\"&l=http\"]","?l"],["div#link-container > a[data-sentry-element=\"Link\"]","?url"],["a[variant=\"contained\"][href^=\"https://api2.zoomit.ir/catalog/store-links/\"][href*=\"/click?url=http\"]","?url"]];
-const hostnamesMap = new Map([["fontchi.com",0],["hamtamovie.nl",1],["virgool.io",2],["zarebin.ir",3],["zoomit.ir",4]]);
+const argsList = [["a[href^=\"/goto/\"]","?url -base64"],["a[href^=\"https://hamtamovie.nl/dl/?url=\"]","?url"],["a[href^=\"https://l.vrgl.ir/r?\"][href*=\"&l=http\"]","?l"],["div#link-container > a[data-sentry-element=\"Link\"]","?url"],["a[href^=\"https://offerdaily.ir/index.php?do=go&url=\"]","?url -base64"],["a[variant=\"contained\"][href^=\"https://api2.zoomit.ir/catalog/store-links/\"][href*=\"/click?url=http\"]","?url"]];
+const hostnamesMap = new Map([["fontchi.com",0],["hamtamovie.nl",1],["virgool.io",2],["zarebin.ir",3],["offerdaily.ir",4],["zoomit.ir",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

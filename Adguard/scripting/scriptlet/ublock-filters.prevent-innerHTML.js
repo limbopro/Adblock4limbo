@@ -44,7 +44,7 @@ function preventInnerHTML(
             if ( typeof elem.matches !== 'function' ) { return false; }
             if ( elem.matches(selector) === false ) { return false; }
         }
-        return safe.testPattern(matcher, a);
+        return safe.testPattern(matcher, `${a}`);
     };
     Object.defineProperty(Element.prototype, 'innerHTML', {
         get: function() {
@@ -259,10 +259,10 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["","delete window"]];
-const hostnamesMap = new Map([["movielair.cc",0]]);
+const argsList = [["","/test.{1000,}onerror.{1000,}/s"]];
+const hostnamesMap = new Map([["cdn.gledaitv.*",0]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

@@ -325,8 +325,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["break;case"],["String.fromCharCode(_0x"],["_impspcabe"]];
-const hostnamesMap = new Map([["netcinez.*",0],["netcinetv.*",0],["lectorhub.j5z.xyz",1],["comicspornohentai.com",2]]);
+const argsList = [["decodeURIComponent(atob"],["break;case"],["String.fromCharCode(_0x"],["_impspcabe"]];
+const hostnamesMap = new Map([["hostingunlock.com",0],["netcinez.*",1],["netcinetv.*",1],["lectorhub.j5z.xyz",2],["comicspornohentai.com",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

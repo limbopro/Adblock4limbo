@@ -288,9 +288,9 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Object.prototype.AdvManager"],["Ya.loaderVer"],["document.referrer"]];
-const hostnamesMap = new Map([["nova.rambler.*",0],["yandex.*",1],["4pda.*",2]]);
-const exceptionsMap = new Map([["vh.yandex.ru",[1]],["yandex.net",[1]]]);
+const argsList = [["Object.prototype.AdvManager"],["document.referrer"]];
+const hostnamesMap = new Map([["nova.rambler.*",0],["4pda.*",1]]);
+const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;
 

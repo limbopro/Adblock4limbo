@@ -326,8 +326,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".clientHeight"]];
-const hostnamesMap = new Map([["seriesemcena.com.br",0]]);
+const argsList = [["ULTIMATE_BAIT_REMOVED"],[".clientHeight"]];
+const hostnamesMap = new Map([["manhastro.net",0],["seriesemcena.com.br",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

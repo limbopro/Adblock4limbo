@@ -41,6 +41,7 @@ function preventFetchFn(
     responseType = ''
 ) {
     const safe = safeSelf();
+    const setTimeout = self.setTimeout;
     const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
     const logPrefix = safe.makeLogPrefix(
         scriptletName,
@@ -48,6 +49,7 @@ function preventFetchFn(
         responseBody,
         responseType
     );
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
     const needles = [];
     for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -135,6 +137,11 @@ function preventFetchFn(
                 responseProps
             );
             safe.Object_defineProperties(response, props);
+            if ( extraArgs.throttle ) {
+                return new Promise(resolve => {
+                    setTimeout(( ) => { resolve(response); }, extraArgs.throttle);
+                });
+            }
             return response;
         });
     });
@@ -472,8 +479,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["www3.doubleclick.net"],["adblockanalytics.com"],["adsbygoogle.js"],["doubleclick.net"],["adManager.js"]];
-const hostnamesMap = new Map([["tv.kakao.com",0],["play-tv.kakao.com",0],["kakaotv.daum.net",0],["spotvnow.co.kr",[1,2]],["namechart.kr",3],["eftlibrary.com",3],["blackkiwi.net",3],["hub.weirdhost.xyz",[4,5]],["srank.kr",6],["hasha.in",7]]);
+const argsList = [["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["www3.doubleclick.net"],["adblockanalytics.com"],["adsbygoogle.js"],["adManager.js"]];
+const hostnamesMap = new Map([["tv.kakao.com",0],["play-tv.kakao.com",0],["kakaotv.daum.net",0],["spotvnow.co.kr",[1,2]],["namechart.kr",3],["eftlibrary.com",3],["blackkiwi.net",3],["hub.weirdhost.xyz",[4,5]],["hasha.in",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

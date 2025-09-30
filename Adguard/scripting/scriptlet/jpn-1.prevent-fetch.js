@@ -41,6 +41,7 @@ function preventFetchFn(
     responseType = ''
 ) {
     const safe = safeSelf();
+    const setTimeout = self.setTimeout;
     const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
     const logPrefix = safe.makeLogPrefix(
         scriptletName,
@@ -48,6 +49,7 @@ function preventFetchFn(
         responseBody,
         responseType
     );
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
     const needles = [];
     for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
         if ( condition === '' ) { continue; }
@@ -135,6 +137,11 @@ function preventFetchFn(
                 responseProps
             );
             safe.Object_defineProperties(response, props);
+            if ( extraArgs.throttle ) {
+                return new Promise(resolve => {
+                    setTimeout(( ) => { resolve(response); }, extraArgs.throttle);
+                });
+            }
             return response;
         });
     });
@@ -472,8 +479,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adsbygoogle.js"],["pagead2.googlesyndication.com"],["adsbygoogle"],["tpc.googlesyndication.com"],["cdn.adschill.com"]];
-const hostnamesMap = new Map([["rkd3.dev",0],["video.tv-tokyo.co.jp",1],["gunauc.net",1],["success-corp.co.jp",1],["audio-sound-premium.com",1],["tojav.net",1],["kledgeb.blogspot.com",1],["rxlife.net",2],["rocketnews24.com",3],["youpouch.com",3],["manga1001.*",4]]);
+const argsList = [["/adm\\.shinobi\\.jp\\/st\\/t\\.js/ method:HEAD mode:no-cors"],["adsbygoogle.js"],["pagead2.googlesyndication.com"],["adsbygoogle"],["tpc.googlesyndication.com"],["cdn.adschill.com"]];
+const hostnamesMap = new Map([["himachat.jp",0],["rkd3.dev",1],["video.tv-tokyo.co.jp",2],["gunauc.net",2],["success-corp.co.jp",2],["audio-sound-premium.com",2],["tojav.net",2],["kledgeb.blogspot.com",2],["rxlife.net",3],["rocketnews24.com",4],["youpouch.com",4],["manga1001.*",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

@@ -460,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Object.prototype.isAdActive","false"],["Object.prototype.vastOptions","{}"],["mobiles",""],["inviewstitial_fired","true"],["add_h2023","noopFunc"],["abp1","0"],["player.postitialTimeout","0"],["adformtag","[]"],["customAdlistMob","[]"],["InfCustomSTAMobileFunc","noopFunc"],["initializeInterstitial","noopFunc"],["PopUnder.bindEvent","noopFunc"],["exoUrl","undefined"],["organicPop","undefined"],["showme","false"],["pcc","1"]];
-const hostnamesMap = new Map([["timesofindia.indiatimes.com",0],["redd.tube",1],["erozine.jp",2],["oreno3d.com",3],["m.efuxs.com",4],["pornhub.com",5],["pornhub.org",5],["pornhub.net",5],["m.viptube.com",6],["m.nuvid.*",6],["m.hd21.com",6],["delfi.lt",7],["m.hellporno.com",8],["mediafire.com",9],["moneycontrol.com",10],["gotporn.com",11],["m.tnaflix.com",[12,13]],["m.minixiaoshuow.com",[14,15]]]);
+const argsList = [["Object.prototype.isAdActive","false"],["Object.prototype.vastOptions","{}"],["mobiles",""],["DMP_IS_AUTOPLAY_ENABLED","false"],["inviewstitial_fired","true"],["add_h2023","noopFunc"],["abp1","0"],["player.postitialTimeout","0"],["adformtag","[]"],["customAdlistMob","[]"],["InfCustomSTAMobileFunc","noopFunc"],["initializeInterstitial","noopFunc"],["PopUnder.bindEvent","noopFunc"],["exoUrl","undefined"],["organicPop","undefined"],["showme","false"],["pcc","1"]];
+const hostnamesMap = new Map([["timesofindia.indiatimes.com",0],["redd.tube",1],["erozine.jp",2],["dailymotion.com",3],["oreno3d.com",4],["m.efuxs.com",5],["pornhub.com",6],["pornhub.org",6],["pornhub.net",6],["m.viptube.com",7],["m.nuvid.*",7],["m.hd21.com",7],["delfi.lt",8],["m.hellporno.com",9],["mediafire.com",10],["moneycontrol.com",11],["gotporn.com",12],["m.tnaflix.com",[13,14]],["m.minixiaoshuow.com",[15,16]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

@@ -355,8 +355,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["cookieConsent","onlyNeeded"],["cookies_confirm","true"],["CookiesControl","{\"necessary\":true,\"performance\":false}"]];
-const hostnamesMap = new Map([["filen.io",0],["cockta.eu",1],["customuse.com",2]]);
+const argsList = [["cookieConsent","onlyNeeded"],["cookies_confirm","true"],["CookiesControl","{\"necessary\":true,\"performance\":false}"],["cookie-preferences","{\"functionality\":false,\"advertising\":false,\"analytics\":false,\"socialMedia\":false,\"lastUpdated\":\"1\"}"]];
+const hostnamesMap = new Map([["filen.io",0],["cockta.eu",1],["customuse.com",2],["lmarena.ai",3]]);
 const exceptionsMap = new Map([["app.filen.io",[0]]]);
 const hasEntities = false;
 const hasAncestors = false;

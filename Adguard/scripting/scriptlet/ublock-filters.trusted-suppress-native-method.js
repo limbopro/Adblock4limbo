@@ -204,6 +204,10 @@ function proxyApplyFn(
                     : new proxyApplyFn.ApplyContext(...args);
             }
         };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
     }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
@@ -216,7 +220,7 @@ function proxyApplyFn(
             return Reflect.get(target, prop);
         },
     };
-    if ( fn.prototype?.constructor === fn ) {
+    if ( proxyApplyFn.isCtor.get(target) ) {
         proxyDetails.construct = function(target, args) {
             return handler(proxyApplyFn.CtorContext.factory(target, args));
         };
@@ -435,7 +439,7 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Document.prototype.querySelectorAll","\"/^#/\"","prevent","/nawNA inlineScript/"],["Document.prototype.querySelector","\"/^[.#][A-Za-z]+_[A-Za-z]*$/\"","prevent","/stackDepth:[4-7].+inlineScript/"],["Document.prototype.querySelector","\"/^\\[class~=/\"","prevent","inlineScript"],["Element.prototype.insertAdjacentHTML","\"afterbegin\"","prevent","/\\/[A-Za-z]+\\.min\\.js\\?/"],["Document.prototype.createTextNode","\"/広告/\"","abort"],["Document.prototype.createElement","\"script\"","prevent","litespeed/js"],["eval","\"/chp_?ad/\"","prevent"],["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"],["eval","\"adsBlocked\""],["Storage.prototype.setItem","searchCount"],["fetch","\"flashtalking\""],["DOMTokenList.prototype.add","\"-\""],["HTMLScriptElement.prototype.setAttribute","\"data-cfasync\"","abort"],["DOMTokenList.prototype.add","\"-\"","prevent","/wp-content\\/uploads\\/[a-z]+\\/[a-z]+\\.js/"]];
+const argsList = [["Document.prototype.querySelectorAll","\"/^#/\"","prevent","/nawNA inlineScript/"],["Document.prototype.querySelector","\"/^[.#][A-Za-z]+_[A-Za-z]*$/\"","prevent","/stackDepth:[4-7].+inlineScript/"],["Document.prototype.querySelector","\"/^\\[class~=/\"","prevent","inlineScript"],["Element.prototype.insertAdjacentHTML","\"afterbegin\"","prevent","/\\/[A-Za-z]+\\.min\\.js\\?/"],["Document.prototype.createTextNode","\"/[\\sA-z亜-熙ぁ-んァ-ヶ]+/\"","abort","/\\/[0-9A-Za-z]{9,11}\\.js\\?v=/"],["Document.prototype.createElement","\"script\"","prevent","litespeed/js"],["eval","\"/chp_?ad/\"","prevent"],["HTMLScriptElement.prototype.setAttribute","\"data-sdk\"","abort"],["eval","\"adsBlocked\""],["Storage.prototype.setItem","searchCount"],["fetch","\"flashtalking\""],["DOMTokenList.prototype.add","\"-\""],["HTMLScriptElement.prototype.setAttribute","\"data-cfasync\"","abort"],["DOMTokenList.prototype.add","\"-\"","prevent","/wp-content\\/uploads\\/[a-z]+\\/[a-z]+\\.js/"]];
 const hostnamesMap = new Map([["japscan.*",[0,1,2]],["pvpoke-re.com",[3,4]],["yaoimangaonline.com",5],["nxbrew.net",6],["tresdaos.com",6],["cinema.com.my",7],["allcelebspics.com",8],["alttyab.net",8],["an1me.*",8],["androjungle.com",8],["arkadmin.fr",8],["azoranov.com",8],["barranquillaestereo.com",8],["brasilsimulatormods.com",8],["cambrevenements.com",8],["cartoonstvonline.com",8],["comparili.net",8],["diaobe.net",8],["filegajah.com",8],["filmestorrent.tv",8],["franceprefecture.fr",8],["freecricket.net",8],["germanvibes.org",8],["getmaths.co.uk",8],["gewinnspiele-markt.com",8],["hamzag.com",8],["hannibalfm.net",8],["hornyconfessions.com",8],["ilcamminodiluce.it",8],["joguinhosgratis.com",8],["joziporn.com",8],["justpaste.top",8],["mctechsolutions.in",8],["medibok.se",8],["megafire.net",8],["mirrorpoi.my.id",8],["mockuphunts.com",8],["mortaltech.com",8],["multivideodownloader.com",8],["nauci-engleski.com",8],["nauci-njemacki.com",8],["nekopoi.my.id",8],["pa1n.xyz",8],["papafoot.*",8],["playertv.net",8],["programsolve.com",8],["radio-deejay.com",8],["ranaaclanhungary.com",8],["rasoi.me",8],["riprendiamocicatania.com",8],["rsrlink.in",8],["seriesperu.com",8],["shmapp.ca",8],["skillmineopportunities.com",8],["teczpert.com",8],["totalsportek.app",8],["tromcap.com",8],["tv0800.com",8],["tv3monde.com",8],["ustrendynews.com",8],["watchnow.fun",8],["yelitzonpc.com",8],["ymknow.xyz",8],["shomareh-yab.ir",9],["cimanow.cc",10],["freex2line.online",10],["evaki.fun",11],["sportshub.to",11],["sportnews.to",11],["bebasbokep.online",12],["asianboy.fans",13]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;

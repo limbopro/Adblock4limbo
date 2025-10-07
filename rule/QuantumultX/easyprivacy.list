@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202509301545
+## ! Version: 202510070834
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Sep 2025 15:45 UTC
+## ! Last modified: 07 Oct 2025 08:34 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 089dba089b1545df05c6394ea68fdcdf2a774de0
+## ! Commit: 0f41b6d4a631eef9cbcd97a4d913ed43506ade9a
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -39,6 +39,7 @@ DOMAIN-SUFFIX,adcontroll.com, reject
 DOMAIN-SUFFIX,aditude.cloud, reject
 DOMAIN-SUFFIX,admaxium.com, reject
 DOMAIN-SUFFIX,adnext.co, reject
+DOMAIN-SUFFIX,adrsbl.io, reject
 DOMAIN-SUFFIX,adrtx.net, reject
 DOMAIN-SUFFIX,adscore.com, reject
 DOMAIN-SUFFIX,adsmeasurement.com, reject
@@ -307,6 +308,7 @@ DOMAIN-SUFFIX,mors22.com, reject
 DOMAIN-SUFFIX,motu-teamblue.services, reject
 DOMAIN-SUFFIX,mrpdata.net, reject
 DOMAIN-SUFFIX,mt48.net, reject
+DOMAIN-SUFFIX,myangular.life, reject
 DOMAIN-SUFFIX,mysingleromance.com, reject
 DOMAIN-SUFFIX,native-track.com, reject
 DOMAIN-SUFFIX,niblewren.co, reject
@@ -1638,6 +1640,7 @@ DOMAIN-SUFFIX,perceivequarter.com, reject
 DOMAIN-SUFFIX,perfectfetch.com, reject
 DOMAIN-SUFFIX,perkyjade.com, reject
 DOMAIN-SUFFIX,phonecup.com, reject
+DOMAIN-SUFFIX,phoneresult.com, reject
 DOMAIN-SUFFIX,photohints.com, reject
 DOMAIN-SUFFIX,physicstees.com, reject
 DOMAIN-SUFFIX,pickmicro.com, reject
@@ -2445,6 +2448,7 @@ DOMAIN-SUFFIX,amp-error-reporting.appspot.com, reject
 DOMAIN-SUFFIX,amplifypixel.outbrain.com, reject
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,analyse.bcovery.com, reject
+DOMAIN-SUFFIX,analytic-client.adult-chess.com, reject
 DOMAIN-SUFFIX,analytic-client.blitzmightyparty.com, reject
 DOMAIN-SUFFIX,analytic-client.chickgoddess.com, reject
 DOMAIN-SUFFIX,analytic-client.panowars.com, reject
@@ -2921,6 +2925,7 @@ DOMAIN-SUFFIX,g.msn.com, reject
 DOMAIN-SUFFIX,g2insights-cdn.azureedge.net, reject
 DOMAIN-SUFFIX,ga-beacon.appspot.com, reject
 DOMAIN-SUFFIX,ga.webdigi.co.uk, reject
+DOMAIN-SUFFIX,galileotelemetry.tencent.com, reject
 DOMAIN-SUFFIX,ganon.yahoo.com, reject
 DOMAIN-SUFFIX,gateway.foresee.com, reject
 DOMAIN-SUFFIX,genesis.malwarebytes.com, reject
@@ -4384,6 +4389,7 @@ DOMAIN-SUFFIX,target.smi2.ru, reject
 DOMAIN-SUFFIX,tbe.tom.ru, reject
 DOMAIN-SUFFIX,telemetry.jivosite.com, reject
 DOMAIN-SUFFIX,test.legitcode.ws, reject
+DOMAIN-SUFFIX,test.showvid.ws, reject
 DOMAIN-SUFFIX,tms-st.cdn.ngenix.net, reject
 DOMAIN-SUFFIX,tms.dmp.wi-fi.ru, reject
 DOMAIN-SUFFIX,top.elec.ru, reject
@@ -41946,6 +41952,7 @@ DOMAIN-SUFFIX,unleash.livepix.gg, reject
 DOMAIN-SUFFIX,analytics.okazii.ro, reject
 DOMAIN-SUFFIX,views.b1tv.ro, reject
 DOMAIN-SUFFIX,views.romaniatv.net, reject
+DOMAIN-SUFFIX,a.lifehacker.ru, reject
 DOMAIN-SUFFIX,a.mts.ru, reject
 DOMAIN-SUFFIX,a.pikabu.ru, reject
 DOMAIN-SUFFIX,a.ria.ru, reject

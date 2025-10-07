@@ -266,6 +266,10 @@ function proxyApplyFn(
                     : new proxyApplyFn.ApplyContext(...args);
             }
         };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
     }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
@@ -278,7 +282,7 @@ function proxyApplyFn(
             return Reflect.get(target, prop);
         },
     };
-    if ( fn.prototype?.constructor === fn ) {
+    if ( proxyApplyFn.isCtor.get(target) ) {
         proxyDetails.construct = function(target, args) {
             return handler(proxyApplyFn.CtorContext.factory(target, args));
         };
@@ -480,7 +484,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["adsbygoogle.js"],["pagead2.googlesyndication.com"],["method:HEAD"],["/googlesyndication\\.com|doubleclick\\.net/"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
-const hostnamesMap = new Map([["helper-employer.com",0],["slashview.com",1],["fsbot.xyz",1],["mpyit.com",1],["hmanga.world",2],["wandhi.com",3],["taiwanlibrarysearch.herokuapp.com",4],["linetv.tw",5]]);
+const hostnamesMap = new Map([["helper-employer.com",0],["slashview.com",1],["fsbot.xyz",1],["mpyit.com",1],["4gtv.tv",1],["hmanga.world",2],["wandhi.com",3],["taiwanlibrarysearch.herokuapp.com",4],["linetv.tw",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

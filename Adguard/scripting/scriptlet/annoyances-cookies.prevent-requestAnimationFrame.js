@@ -113,6 +113,10 @@ function proxyApplyFn(
                     : new proxyApplyFn.ApplyContext(...args);
             }
         };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
     }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
@@ -125,7 +129,7 @@ function proxyApplyFn(
             return Reflect.get(target, prop);
         },
     };
-    if ( fn.prototype?.constructor === fn ) {
+    if ( proxyApplyFn.isCtor.get(target) ) {
         proxyDetails.construct = function(target, args) {
             return handler(proxyApplyFn.CtorContext.factory(target, args));
         };

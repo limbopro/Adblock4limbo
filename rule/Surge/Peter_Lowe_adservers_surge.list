@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 25 Sep 2025 10:18:36 GMT
-# entries:        3444
+# last updated:   Mon, 06 Oct 2025 20:23:44 GMT
+# entries:        3443
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -50,6 +50,7 @@ DOMAIN-SUFFIX,a.sakh.com
 DOMAIN-SUFFIX,a.ucoz.net
 DOMAIN-SUFFIX,a.ucoz.ru
 DOMAIN-SUFFIX,a.vartoken.com
+DOMAIN-SUFFIX,a.vdo.ai
 DOMAIN-SUFFIX,a.vfghd.com
 DOMAIN-SUFFIX,a.vfgtb.com
 DOMAIN-SUFFIX,a.xanga.com
@@ -208,6 +209,7 @@ DOMAIN-SUFFIX,adcycle.com
 DOMAIN-SUFFIX,add.newmedia.cz
 DOMAIN-SUFFIX,addfreestats.com
 DOMAIN-SUFFIX,addme.com
+DOMAIN-SUFFIX,ade.clmbtech.com
 DOMAIN-SUFFIX,adecn.com
 DOMAIN-SUFFIX,adeimptrck.com
 DOMAIN-SUFFIX,ademails.com
@@ -288,7 +290,6 @@ DOMAIN-SUFFIX,admex.com
 DOMAIN-SUFFIX,admidadsp.com
 DOMAIN-SUFFIX,adminder.com
 DOMAIN-SUFFIX,adminshop.com
-DOMAIN-SUFFIX,admix.in
 DOMAIN-SUFFIX,admixer.net
 DOMAIN-SUFFIX,admized.com
 DOMAIN-SUFFIX,admob.com
@@ -365,7 +366,6 @@ DOMAIN-SUFFIX,ads.appsgeyser.com
 DOMAIN-SUFFIX,ads.as4x.tmcs.net
 DOMAIN-SUFFIX,ads.as4x.tmcs.ticketmaster.com
 DOMAIN-SUFFIX,ads.asiafriendfinder.com
-DOMAIN-SUFFIX,ads.aspalliance.com
 DOMAIN-SUFFIX,ads.avazu.net
 DOMAIN-SUFFIX,ads.bb59.ru
 DOMAIN-SUFFIX,ads.betfair.com
@@ -1293,6 +1293,7 @@ DOMAIN-SUFFIX,clickfuse.com
 DOMAIN-SUFFIX,clickhereforcellphones.com
 DOMAIN-SUFFIX,clickngo.pro
 DOMAIN-SUFFIX,clickonometrics.pl
+DOMAIN-SUFFIX,clicks.checkatrade.com
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk
 DOMAIN-SUFFIX,clicks.equantum.com
 DOMAIN-SUFFIX,clicks.eventbrite.com
@@ -1378,6 +1379,7 @@ DOMAIN-SUFFIX,counted.com
 DOMAIN-SUFFIX,counter.bloke.com
 DOMAIN-SUFFIX,counter.cnw.cz
 DOMAIN-SUFFIX,counter.cz
+DOMAIN-SUFFIX,counter.dreamhost.com
 DOMAIN-SUFFIX,counter.mirohost.net
 DOMAIN-SUFFIX,counter.mojgorod.ru
 DOMAIN-SUFFIX,counter.rambler.ru
@@ -1696,7 +1698,6 @@ DOMAIN-SUFFIX,funnelytics.io
 DOMAIN-SUFFIX,furryfork.com
 DOMAIN-SUFFIX,fusionads.net
 DOMAIN-SUFFIX,fusionquest.com
-DOMAIN-SUFFIX,futuristicapparatus.com
 DOMAIN-SUFFIX,futuristicfifth.com
 DOMAIN-SUFFIX,futuristicframe.com
 DOMAIN-SUFFIX,fuzzybasketball.com
@@ -1765,6 +1766,7 @@ DOMAIN-SUFFIX,grapeshot.co.uk
 DOMAIN-SUFFIX,greystripe.com
 DOMAIN-SUFFIX,grouchybrothers.com
 DOMAIN-SUFFIX,groundtruth.com
+DOMAIN-SUFFIX,growthrx.in
 DOMAIN-SUFFIX,gscontxt.net
 DOMAIN-SUFFIX,guardeddirection.com
 DOMAIN-SUFFIX,guardedschool.com
@@ -1787,7 +1789,6 @@ DOMAIN-SUFFIX,hb.vntsm.com
 DOMAIN-SUFFIX,hbb.afl.rakuten.co.jp
 DOMAIN-SUFFIX,hbopenbid.pubmatic.com
 DOMAIN-SUFFIX,heap.com
-DOMAIN-SUFFIX,heimi-lwx.com
 DOMAIN-SUFFIX,hellobar.com
 DOMAIN-SUFFIX,helpcollar.com
 DOMAIN-SUFFIX,hentaicounter.com
@@ -1876,7 +1877,6 @@ DOMAIN-SUFFIX,imagecash.net
 DOMAIN-SUFFIX,images-pw.secureserver.net
 DOMAIN-SUFFIX,img.prohardver.hu
 DOMAIN-SUFFIX,imgpromo.easyrencontre.com
-DOMAIN-SUFFIX,immensehoney.com
 DOMAIN-SUFFIX,imonomy.com
 DOMAIN-SUFFIX,imp.i312864.net
 DOMAIN-SUFFIX,impossibleexpansion.com
@@ -1981,7 +1981,6 @@ DOMAIN-SUFFIX,krxd.net
 DOMAIN-SUFFIX,ktu.sv2.biz
 DOMAIN-SUFFIX,kvsadman.com
 DOMAIN-SUFFIX,l1.britannica.com
-DOMAIN-SUFFIX,lakequincy.com
 DOMAIN-SUFFIX,lameletters.com
 DOMAIN-SUFFIX,landkarts.com
 DOMAIN-SUFFIX,larati.net
@@ -1991,6 +1990,7 @@ DOMAIN-SUFFIX,launchbit.com
 DOMAIN-SUFFIX,layer-ad.de
 DOMAIN-SUFFIX,layer-ads.de
 DOMAIN-SUFFIX,lazybumblebee.com
+DOMAIN-SUFFIX,lbn.ru
 DOMAIN-SUFFIX,lead02.com
 DOMAIN-SUFFIX,leadboltads.net
 DOMAIN-SUFFIX,leadclick.com
@@ -3269,7 +3269,6 @@ DOMAIN-SUFFIX,urbanlaurel.com
 DOMAIN-SUFFIX,url9467.comms-2.zoopla.co.uk
 DOMAIN-SUFFIX,urlcash.net
 DOMAIN-SUFFIX,us.a1.yimg.com
-DOMAIN-SUFFIX,userreplay.com
 DOMAIN-SUFFIX,userreplay.net
 DOMAIN-SUFFIX,users.maxcluster.net
 DOMAIN-SUFFIX,utils.mediageneral.net

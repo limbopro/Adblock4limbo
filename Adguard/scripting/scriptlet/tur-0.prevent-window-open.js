@@ -177,6 +177,10 @@ function proxyApplyFn(
                     : new proxyApplyFn.ApplyContext(...args);
             }
         };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
     }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
@@ -189,7 +193,7 @@ function proxyApplyFn(
             return Reflect.get(target, prop);
         },
     };
-    if ( fn.prototype?.constructor === fn ) {
+    if ( proxyApplyFn.isCtor.get(target) ) {
         proxyDetails.construct = function(target, args) {
             return handler(proxyApplyFn.CtorContext.factory(target, args));
         };
@@ -391,7 +395,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [[],["bit.ly"]];
-const hostnamesMap = new Map([["erosfilmizle.*",0],["breakingbadizle.*",0],["elzemfilm.org",0],["jetfilmizle.*",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["izleorg3.org",0],["youtubemp3.us",0],["uzaymanga.com",0],["dizipal.website",0],["videojs.online",0],["epikplayer.xyz",0],["animeler.me",0],["player.filmizle.in",0],["tranimaci.com",0],["izlekolik.org",0],["4kfilmizlesene.*",0],["hdselcuksports371.top",0],["hdselcuksports372.top",0],["hdselcuksports373.top",0],["hdselcuksports374.top",0],["hdselcuksports375.top",0],["hdselcuksports376.top",0],["hdselcuksports377.top",0],["hdselcuksports378.top",0],["hdselcuksports379.top",0],["hdselcuksports380.top",0],["hdselcuksports381.top",0],["hdselcuksports382.top",0],["hdselcuksports383.top",0],["hdselcuksports384.top",0],["hdselcuksports385.top",0],["hdselcuksports386.top",0],["hdselcuksports387.top",0],["hdselcuksports388.top",0],["hdselcuksports389.top",0],["hdselcuksports390.top",0],["hdselcuksports368.top",0],["justintvizle430.top",0],["justintvizle431.top",0],["justintvizle432.top",0],["justintvizle433.top",0],["justintvizle434.top",0],["justintvizle435.top",0],["justintvizle436.top",0],["justintvizle437.top",0],["justintvizle438.top",0],["justintvizle439.top",0],["justintvizle440.top",0],["justintvizle441.top",0],["justintvizle442.top",0],["justintvizle443.top",0],["justintvizle444.top",0],["justintvizle445.top",0],["justintvizle446.top",0],["justintvizle447.top",0],["justintvizle448.top",0],["justintvizle449.top",0],["pchocasi.com.tr",1]]);
+const hostnamesMap = new Map([["erosfilmizle.*",0],["breakingbadizle.*",0],["elzemfilm.org",0],["jetfilmizle.*",0],["movietube32.xyz",0],["turkerotikfilm.com",0],["izleorg3.org",0],["youtubemp3.us",0],["uzaymanga.com",0],["dizipal.website",0],["videojs.online",0],["epikplayer.xyz",0],["animeler.me",0],["player.filmizle.in",0],["tranimaci.com",0],["izlekolik.org",0],["4kfilmizlesene.*",0],["hdselcuksports420.top",0],["hdselcuksports421.top",0],["hdselcuksports422.top",0],["hdselcuksports423.top",0],["hdselcuksports424.top",0],["hdselcuksports425.top",0],["hdselcuksports426.top",0],["hdselcuksports427.top",0],["hdselcuksports428.top",0],["hdselcuksports429.top",0],["hdselcuksports430.top",0],["hdselcuksports431.top",0],["hdselcuksports432.top",0],["hdselcuksports433.top",0],["hdselcuksports434.top",0],["hdselcuksports435.top",0],["hdselcuksports436.top",0],["hdselcuksports437.top",0],["hdselcuksports438.top",0],["hdselcuksports439.top",0],["hdselcuksports440.top",0],["hdselcuksports441.top",0],["hdselcuksports442.top",0],["hdselcuksports443.top",0],["hdselcuksports444.top",0],["hdselcuksports445.top",0],["hdselcuksports446.top",0],["hdselcuksports447.top",0],["hdselcuksports448.top",0],["hdselcuksports449.top",0],["hdselcuksports450.top",0],["hdselcuksports451.top",0],["hdselcuksports452.top",0],["hdselcuksports453.top",0],["hdselcuksports454.top",0],["hdselcuksports455.top",0],["hdselcuksports456.top",0],["hdselcuksports457.top",0],["hdselcuksports458.top",0],["hdselcuksports459.top",0],["hdselcuksports460.top",0],["hdselcuksports461.top",0],["hdselcuksports462.top",0],["hdselcuksports463.top",0],["hdselcuksports464.top",0],["hdselcuksports465.top",0],["hdselcuksports466.top",0],["hdselcuksports467.top",0],["hdselcuksports468.top",0],["hdselcuksports469.top",0],["hdselcuksports470.top",0],["hdselcuksports471.top",0],["hdselcuksports472.top",0],["hdselcuksports368.top",0],["justintvizle430.top",0],["justintvizle431.top",0],["justintvizle432.top",0],["justintvizle433.top",0],["justintvizle434.top",0],["justintvizle435.top",0],["justintvizle436.top",0],["justintvizle437.top",0],["justintvizle438.top",0],["justintvizle439.top",0],["justintvizle440.top",0],["justintvizle441.top",0],["justintvizle442.top",0],["justintvizle443.top",0],["justintvizle444.top",0],["justintvizle445.top",0],["justintvizle446.top",0],["justintvizle447.top",0],["justintvizle448.top",0],["justintvizle449.top",0],["pchocasi.com.tr",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

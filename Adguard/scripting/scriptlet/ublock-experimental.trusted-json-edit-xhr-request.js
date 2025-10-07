@@ -73,9 +73,9 @@ function jsonEditXhrRequestFn(trusted, jsonq = '') {
             try { data = safe.JSON_parse(body); }
             catch { }
             if ( data instanceof Object === false ) { return; }
-            const n = jsonp.apply(data);
-            if ( n === 0 ) { return; }
-            body = safe.JSON_stringify(data);
+            const objAfter = jsonp.apply(data);
+            if ( objAfter === undefined ) { return; }
+            body = safe.JSON_stringify(objAfter);
             safe.uboLog(logPrefix, 'Edited');
             if ( safe.logLevel > 1 ) {
                 safe.uboLog(logPrefix, `After edit:\n${body}`);
@@ -110,12 +110,19 @@ class JSONPath {
         const r = this.#compile(query, 0);
         if ( r === undefined ) { return; }
         if ( r.i !== query.length ) {
-            if ( query.startsWith('+=', r.i) ) {
+            let val;
+            if ( query.startsWith('=', r.i) ) {
+                if ( /^=repl\(.+\)$/.test(query.slice(r.i)) ) {
+                    r.modify = 'repl';
+                    val = query.slice(r.i+6, -1);
+                } else {
+                    val = query.slice(r.i+1);
+                }
+            } else if ( query.startsWith('+=', r.i) ) {
                 r.modify = '+';
-                r.i += 1;
+                val = query.slice(r.i+2);
             }
-            if ( query.startsWith('=', r.i) === false ) { return; }
-            try { r.rval = JSON.parse(query.slice(r.i+1)); }
+            try { r.rval = JSON.parse(val); }
             catch { return; }
         }
         this.#compiled = r;
@@ -128,28 +135,25 @@ class JSONPath {
         return paths;
     }
     apply(root) {
-        if ( this.valid === false ) { return 0; }
-        const { modify, rval } = this.#compiled;
-        this.#root = root;
+        if ( this.valid === false ) { return; }
+        const { rval } = this.#compiled;
+        this.#root = { '$': root };
         const paths = this.#evaluate(this.#compiled.steps, []);
-        const n = paths.length;
-        let i = n;
+        let i = paths.length
+        if ( i === 0 ) { this.#root = null; return; }
         while ( i-- ) {
             const { obj, key } = this.#resolvePath(paths[i]);
             if ( rval !== undefined ) {
-                if ( modify === '+' ) {
-                    this.#modifyVal(obj, key, rval);
-                } else {
-                    obj[key] = rval;
-                }
+                this.#modifyVal(obj, key);
             } else if ( Array.isArray(obj) && typeof key === 'number' ) {
                 obj.splice(key, 1);
             } else {
                 delete obj[key];
             }
         }
+        const result = this.#root['$'] ?? null;
         this.#root = null;
-        return n;
+        return result;
     }
     dump() {
         return JSON.stringify(this.#compiled);
@@ -174,8 +178,15 @@ class JSONPath {
         if ( query.length === 0 ) { return; }
         const steps = [];
         let c = query.charCodeAt(i);
-        steps.push({ mv: c === 0x24 /* $ */ ? this.#ROOT : this.#CURRENT });
-        if ( c === 0x24 /* $ */ || c === 0x40 /* @ */ ) { i += 1; }
+        if ( c === 0x24 /* $ */ ) {
+            steps.push({ mv: this.#ROOT });
+            i += 1;
+        } else if ( c === 0x40 /* @ */ ) {
+            steps.push({ mv: this.#CURRENT });
+            i += 1;
+        } else {
+            steps.push({ mv: i === 0 ? this.#ROOT : this.#CURRENT });
+        }
         let mv = this.#UNDEFINED;
         for (;;) {
             if ( i === query.length ) { break; }
@@ -237,7 +248,8 @@ class JSONPath {
             i = r.i + 1;
             mv = this.#UNDEFINED;
         }
-        if ( steps.length <= 1 ) { return; }
+        if ( steps.length === 0 ) { return; }
+        if ( mv !== this.#UNDEFINED ) { return; }
         return { steps, i };
     }
     #evaluate(steps, pathin) {
@@ -246,7 +258,7 @@ class JSONPath {
         for ( const step of steps ) {
             switch ( step.mv ) {
             case this.#ROOT:
-                resultset = [ [] ];
+                resultset = [ [ '$' ] ];
                 break;
             case this.#CURRENT:
                 resultset = [ pathin ];
@@ -375,7 +387,7 @@ class JSONPath {
                 continue;
             }
             if ( c0 === 0x27 /* ' */ ) {
-                const r = this.#consumeQuotedIdentifier(query, i+1);
+                const r = this.#untilChar(query, 0x27 /* ' */, i+1)
                 if ( r === undefined ) { return; }
                 keys.push(r.s);
                 i = r.i;
@@ -396,22 +408,27 @@ class JSONPath {
         }
         return { s: keys.length === 1 ? keys[0] : keys, i };
     }
-    #consumeQuotedIdentifier(query, i) {
+    #consumeUnquotedIdentifier(query, i) {
+        const match = this.#reUnquotedIdentifier.exec(query.slice(i));
+        if ( match === null ) { return; }
+        return match[0];
+    }
+    #untilChar(query, targetCharCode, i) {
         const len = query.length;
         const parts = [];
         let beg = i, end = i;
         for (;;) {
             if ( end === len ) { return; }
             const c = query.charCodeAt(end);
-            if ( c === 0x27 /* ' */ ) {
+            if ( c === targetCharCode ) {
                 parts.push(query.slice(beg, end));
                 end += 1;
                 break;
             }
             if ( c === 0x5C /* \ */ && (end+1) < len ) {
                 parts.push(query.slice(beg, end));
-                const d = query.chatCodeAt(end+1);
-                if ( d === 0x27 || d === 0x5C ) {
+                const d = query.charCodeAt(end+1);
+                if ( d === targetCharCode || d === 0x5C ) {
                     end += 1;
                     beg = end;
                 }
@@ -420,12 +437,20 @@ class JSONPath {
         }
         return { s: parts.join(''), i: end };
     }
-    #consumeUnquotedIdentifier(query, i) {
-        const match = this.#reUnquotedIdentifier.exec(query.slice(i));
-        if ( match === null ) { return; }
-        return match[0];
-    }
     #compileExpr(query, step, i) {
+        if ( query.startsWith('=/', i) ) {
+            const r = this.#untilChar(query, 0x2F /* / */, i+2);
+            if ( r === undefined ) { return i; }
+            const match = /^[i]/.exec(query.slice(r.i));
+            try {
+                step.rval = new RegExp(r.s, match && match[0] || undefined);
+            } catch {
+                return i;
+            }
+            step.op = 're';
+            if ( match ) { r.i += match[0].length; }
+            return r.i;
+        }
         const match = this.#reExpr.exec(query.slice(i));
         if ( match === null ) { return i; }
         try {
@@ -465,17 +490,45 @@ class JSONPath {
         case '^=': outcome = `${v}`.startsWith(step.rval) === target; break;
         case '$=': outcome = `${v}`.endsWith(step.rval) === target; break;
         case '*=': outcome = `${v}`.includes(step.rval) === target; break;
+        case 're': outcome = step.rval.test(`${v}`); break;
         default: outcome = hasOwn === target; break;
         }
         if ( outcome ) { return k; }
     }
-    #modifyVal(obj, key, rval) {
-        const lval = obj[key];
-        if ( rval instanceof Object === false ) { return; }
-        if ( lval instanceof Object === false ) { return; }
-        if ( Array.isArray(lval) ) { return; }
-        for ( const [ k, v ] of Object.entries(rval) ) {
-            lval[k] = v;
+    #modifyVal(obj, key) {
+        const { modify, rval } = this.#compiled;
+        switch ( modify ) {
+        case undefined:
+            obj[key] = rval;
+            break;
+        case '+': {
+            if ( rval instanceof Object === false ) { return; }
+            const lval = obj[key];
+            if ( lval instanceof Object === false ) { return; }
+            if ( Array.isArray(lval) ) { return; }
+            for ( const [ k, v ] of Object.entries(rval) ) {
+                lval[k] = v;
+            }
+            break;
+        }
+        case 'repl': {
+            const lval = obj[key];
+            if ( typeof lval !== 'string' ) { return; }
+            if ( this.#compiled.re === undefined ) {
+                this.#compiled.re = null;
+                try {
+                    this.#compiled.re = rval.regex !== undefined
+                        ? new RegExp(rval.regex, rval.flags)
+                        : new RegExp(rval.pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+                } catch {
+                }
+            }
+            if ( this.#compiled.re === null ) { return; }
+            obj[key] = lval.replace(this.#compiled.re, rval.replacement);
+            break;
+        }
+        default:
+            break;
         }
     }
 }
@@ -714,7 +767,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".context.client[?.clientScreen==\"WATCH_FULL_SCREEN\"].clientScreen=\"ADUNIT\"","/youtubei/v1/player?prettyPrint"]];
+const argsList = [["..playbackContext[?.contentPlaybackContext]+={\"adPlaybackContext\":{\"pyv\":true}}","propsToMatch","/player"]];
 const hostnamesMap = new Map([["www.youtube.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

@@ -425,8 +425,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["overlay.bottomSheetOverlayRenderer","overlay.bottomSheetOverlayRenderer.displayImmediately"]];
-const hostnamesMap = new Map([["m.youtube.com",0]]);
+const argsList = [["overlay.bottomSheetOverlayRenderer","overlay.bottomSheetOverlayRenderer.displayImmediately"],["ads.[].imageUrl"]];
+const hostnamesMap = new Map([["m.youtube.com",0],["buttersc.one",1],["gp.tsukimi.club",1],["invillage-outvillage.com",1],["misskey.gamelore.fun",1],["misskey.neos.love",1],["misskey.systems",1],["mivatter.com",1],["mk.yopo.work",1],["msk.kitazawa.me",1],["nijimiss.moe",1],["novelskey.tarbin.net",1],["oekakiskey.com",1],["side.misskey.productions",1],["sushi.ski",1],["voskey.icalo.net",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

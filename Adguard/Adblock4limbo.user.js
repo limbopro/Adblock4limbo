@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.09.03
+// @version      0.2025.10.07
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -1574,23 +1574,50 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
 
                     function code_dmm() {
-                        var url = window.location.href;
-                        console.log("当前URL:" + url);
-                        // 使用正则表达式从URL中提取cid参数
-                        const match = url.match(/id=([^/&?]+)/);
-                        let cid = match ? match[1] : null;
-                        if (!cid) return null;
-                        // 删除开头的全部数字
-                        cid = cid.replace(/^\d+/, '');
-                        let code_dmm = cid.replace(/0{2}/, '-');
-                        // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
-                        if (!code_dmm.includes('-')) {
-                            code_dmm = code_dmm.replace(/(\D*)(\d+)/, '$1-$2');
+
+                        // 1. すべての<th>要素を取得します
+                        const thElements = document.querySelectorAll('th');
+                        let bangou = null; // 番号を格納する変数
+
+                        // 2. <th>要素をループして目的のテキストを探します
+                        for (const th of thElements) {
+                            if (th.textContent.includes('メーカー品番：')) {
+                                // 3. 目的の<th>を見つけたら、その隣の要素(<td>)を取得します
+                                const tdElement = th.nextElementSibling;
+
+                                // 4. <td>要素が存在すれば、その中のテキストを取得します
+                                if (tdElement) {
+                                    bangou = tdElement.textContent.trim(); // .trim()で前後の余白を削除
+                                    break; // 目的の要素を見つけたらループを終了
+                                }
+                            }
                         }
-                        // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
-                        console.log(code_dmm);
-                        console.log(cid);
-                        return code_dmm;
+
+                        // 5. 結果をコンソールに出力します
+                        console.log(bangou); // "HZGD-082"
+
+                        if (bangou !== null) {
+                            return bangou;
+                        } else if (bangou == null) {
+                            var url = window.location.href;
+                            console.log("当前URL:" + url);
+                            // 使用正则表达式从URL中提取cid参数
+                            const match = url.match(/id=([^/&?]+)/);
+                            let cid = match ? match[1] : null;
+                            if (!cid) return null;
+                            // 删除开头的全部数字
+                            cid = cid.replace(/^\d+/, '');
+                            let code_dmm = cid.replace(/0{2}/, '-');
+                            // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
+                            if (!code_dmm.includes('-')) {
+                                code_dmm = code_dmm.replace(/(\D*)(\d+)/, '$1-$2');
+                            }
+                            // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
+                            console.log(code_dmm);
+                            console.log(cid);
+                            return code_dmm;
+                        }
+
                     } code_dmm();
 
 

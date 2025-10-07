@@ -170,6 +170,10 @@ function proxyApplyFn(
                     : new proxyApplyFn.ApplyContext(...args);
             }
         };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
     }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
@@ -182,7 +186,7 @@ function proxyApplyFn(
             return Reflect.get(target, prop);
         },
     };
-    if ( fn.prototype?.constructor === fn ) {
+    if ( proxyApplyFn.isCtor.get(target) ) {
         proxyDetails.construct = function(target, args) {
             return handler(proxyApplyFn.CtorContext.factory(target, args));
         };
@@ -417,8 +421,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["scroll","adBlockerCalled"],["load","document.cookie"],["DOMContentLoaded","interstitial-popup"],["touchmove","preventDefault"],["","returnAd"],["/^(?:scroll|touchmove|wheel)$/","preventDefault"],["/^(?:mousewheel|touchmove)$/"],["DOMContentLoaded","interstitialAdDiv"]];
-const hostnamesMap = new Map([["m.livehindustan.com",0],["momon-ga.com",1],["quiz-facts.com",2],["uraaka.com",3],["openloadpro.com",4],["erobanach.com",4],["news.mynavi.jp",5],["mudainodocument.com",6],["rakukan.net",7]]);
+const argsList = [["scroll","adBlockerCalled"],["load","document.cookie"],["DOMContentLoaded","interstitial-popup"],["","returnAd"],["/^(?:scroll|touchmove|wheel)$/","preventDefault"],["/^(?:mousewheel|touchmove)$/"],["DOMContentLoaded","interstitialAdDiv"]];
+const hostnamesMap = new Map([["m.livehindustan.com",0],["momon-ga.com",1],["quiz-facts.com",2],["openloadpro.com",3],["erobanach.com",3],["news.mynavi.jp",4],["mudainodocument.com",5],["rakukan.net",6]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

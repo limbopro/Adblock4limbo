@@ -425,8 +425,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["*","*.media.*.advertisement_id"],["ads breaks cuepoints times","ads"],["rot_url pop_type"],["adn_placement components.player.playbackContext.ads"]];
-const hostnamesMap = new Map([["sub100.com.br",0],["app.prende.tv",1],["animeblix.com",2],["play.mercadolibre.cl",3],["play.mercadolivre.com.br",3],["play.mercadolibre.com.ar",3]]);
+const argsList = [["vmap_ad_breaks interstitials"],["*","*.media.*.advertisement_id"],["ads breaks cuepoints times","ads"],["rot_url pop_type"],["adn_placement components.player.playbackContext.ads"]];
+const hostnamesMap = new Map([["vix.com",0],["sub100.com.br",1],["app.prende.tv",2],["animeblix.com",3],["play.mercadolibre.cl",4],["play.mercadolivre.com.br",4],["play.mercadolibre.com.ar",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202509301545
+## ! Version: 202510070834
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Sep 2025 15:45 UTC
+## ! Last modified: 07 Oct 2025 08:34 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 089dba089b1545df05c6394ea68fdcdf2a774de0
+## ! Commit: 0f41b6d4a631eef9cbcd97a4d913ed43506ade9a
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -39,6 +39,7 @@ DOMAIN-SUFFIX,adcontroll.com
 DOMAIN-SUFFIX,aditude.cloud
 DOMAIN-SUFFIX,admaxium.com
 DOMAIN-SUFFIX,adnext.co
+DOMAIN-SUFFIX,adrsbl.io
 DOMAIN-SUFFIX,adrtx.net
 DOMAIN-SUFFIX,adscore.com
 DOMAIN-SUFFIX,adsmeasurement.com
@@ -307,6 +308,7 @@ DOMAIN-SUFFIX,mors22.com
 DOMAIN-SUFFIX,motu-teamblue.services
 DOMAIN-SUFFIX,mrpdata.net
 DOMAIN-SUFFIX,mt48.net
+DOMAIN-SUFFIX,myangular.life
 DOMAIN-SUFFIX,mysingleromance.com
 DOMAIN-SUFFIX,native-track.com
 DOMAIN-SUFFIX,niblewren.co
@@ -1638,6 +1640,7 @@ DOMAIN-SUFFIX,perceivequarter.com
 DOMAIN-SUFFIX,perfectfetch.com
 DOMAIN-SUFFIX,perkyjade.com
 DOMAIN-SUFFIX,phonecup.com
+DOMAIN-SUFFIX,phoneresult.com
 DOMAIN-SUFFIX,photohints.com
 DOMAIN-SUFFIX,physicstees.com
 DOMAIN-SUFFIX,pickmicro.com
@@ -2445,6 +2448,7 @@ DOMAIN-SUFFIX,amp-error-reporting.appspot.com
 DOMAIN-SUFFIX,amplifypixel.outbrain.com
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com
 DOMAIN-SUFFIX,analyse.bcovery.com
+DOMAIN-SUFFIX,analytic-client.adult-chess.com
 DOMAIN-SUFFIX,analytic-client.blitzmightyparty.com
 DOMAIN-SUFFIX,analytic-client.chickgoddess.com
 DOMAIN-SUFFIX,analytic-client.panowars.com
@@ -2921,6 +2925,7 @@ DOMAIN-SUFFIX,g.msn.com
 DOMAIN-SUFFIX,g2insights-cdn.azureedge.net
 DOMAIN-SUFFIX,ga-beacon.appspot.com
 DOMAIN-SUFFIX,ga.webdigi.co.uk
+DOMAIN-SUFFIX,galileotelemetry.tencent.com
 DOMAIN-SUFFIX,ganon.yahoo.com
 DOMAIN-SUFFIX,gateway.foresee.com
 DOMAIN-SUFFIX,genesis.malwarebytes.com
@@ -4384,6 +4389,7 @@ DOMAIN-SUFFIX,target.smi2.ru
 DOMAIN-SUFFIX,tbe.tom.ru
 DOMAIN-SUFFIX,telemetry.jivosite.com
 DOMAIN-SUFFIX,test.legitcode.ws
+DOMAIN-SUFFIX,test.showvid.ws
 DOMAIN-SUFFIX,tms-st.cdn.ngenix.net
 DOMAIN-SUFFIX,tms.dmp.wi-fi.ru
 DOMAIN-SUFFIX,top.elec.ru
@@ -41946,6 +41952,7 @@ DOMAIN-SUFFIX,unleash.livepix.gg
 DOMAIN-SUFFIX,analytics.okazii.ro
 DOMAIN-SUFFIX,views.b1tv.ro
 DOMAIN-SUFFIX,views.romaniatv.net
+DOMAIN-SUFFIX,a.lifehacker.ru
 DOMAIN-SUFFIX,a.mts.ru
 DOMAIN-SUFFIX,a.pikabu.ru
 DOMAIN-SUFFIX,a.ria.ru

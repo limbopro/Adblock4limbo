@@ -399,7 +399,7 @@ class JSONPath {
                 continue;
             }
             if ( c0 === 0x27 /* ' */ ) {
-                const r = this.#consumeQuotedIdentifier(query, i+1);
+                const r = this.#untilChar(query, 0x27 /* ' */, i+1)
                 if ( r === undefined ) { return; }
                 keys.push(r.s);
                 i = r.i;
@@ -420,22 +420,27 @@ class JSONPath {
         }
         return { s: keys.length === 1 ? keys[0] : keys, i };
     }
-    #consumeQuotedIdentifier(query, i) {
+    #consumeUnquotedIdentifier(query, i) {
+        const match = this.#reUnquotedIdentifier.exec(query.slice(i));
+        if ( match === null ) { return; }
+        return match[0];
+    }
+    #untilChar(query, targetCharCode, i) {
         const len = query.length;
         const parts = [];
         let beg = i, end = i;
         for (;;) {
             if ( end === len ) { return; }
             const c = query.charCodeAt(end);
-            if ( c === 0x27 /* ' */ ) {
+            if ( c === targetCharCode ) {
                 parts.push(query.slice(beg, end));
                 end += 1;
                 break;
             }
             if ( c === 0x5C /* \ */ && (end+1) < len ) {
                 parts.push(query.slice(beg, end));
-                const d = query.chatCodeAt(end+1);
-                if ( d === 0x27 || d === 0x5C ) {
+                const d = query.charCodeAt(end+1);
+                if ( d === targetCharCode || d === 0x5C ) {
                     end += 1;
                     beg = end;
                 }
@@ -444,12 +449,20 @@ class JSONPath {
         }
         return { s: parts.join(''), i: end };
     }
-    #consumeUnquotedIdentifier(query, i) {
-        const match = this.#reUnquotedIdentifier.exec(query.slice(i));
-        if ( match === null ) { return; }
-        return match[0];
-    }
     #compileExpr(query, step, i) {
+        if ( query.startsWith('=/', i) ) {
+            const r = this.#untilChar(query, 0x2F /* / */, i+2);
+            if ( r === undefined ) { return i; }
+            const match = /^[i]/.exec(query.slice(r.i));
+            try {
+                step.rval = new RegExp(r.s, match && match[0] || undefined);
+            } catch {
+                return i;
+            }
+            step.op = 're';
+            if ( match ) { r.i += match[0].length; }
+            return r.i;
+        }
         const match = this.#reExpr.exec(query.slice(i));
         if ( match === null ) { return i; }
         try {
@@ -489,6 +502,7 @@ class JSONPath {
         case '^=': outcome = `${v}`.startsWith(step.rval) === target; break;
         case '$=': outcome = `${v}`.endsWith(step.rval) === target; break;
         case '*=': outcome = `${v}`.includes(step.rval) === target; break;
+        case 're': outcome = step.rval.test(`${v}`); break;
         default: outcome = hasOwn === target; break;
         }
         if ( outcome ) { return k; }
@@ -633,6 +647,10 @@ function proxyApplyFn(
                     : new proxyApplyFn.ApplyContext(...args);
             }
         };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
     }
     const fnStr = fn.toString();
     const toString = (function toString() { return fnStr; }).bind(null);
@@ -645,7 +663,7 @@ function proxyApplyFn(
             return Reflect.get(target, prop);
         },
     };
-    if ( fn.prototype?.constructor === fn ) {
+    if ( proxyApplyFn.isCtor.get(target) ) {
         proxyDetails.construct = function(target, args) {
             return handler(proxyApplyFn.CtorContext.factory(target, args));
         };

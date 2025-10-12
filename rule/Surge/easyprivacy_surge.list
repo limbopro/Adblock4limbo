@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510070844
+## ! Version: 202510120413
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Oct 2025 08:44 UTC
+## ! Last modified: 12 Oct 2025 04:13 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 376ca263ba91a817008f37de9fc8a4411e25132b
+## ! Commit: 30d22cd396899edd773d64192705c17a282caa32
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -70,6 +70,7 @@ DOMAIN-SUFFIX,avads.net
 DOMAIN-SUFFIX,awmonitor.com
 DOMAIN-SUFFIX,b3mxnuvcer.com
 DOMAIN-SUFFIX,bfmio.com
+DOMAIN-SUFFIX,bgalytics.com
 DOMAIN-SUFFIX,bidgx.com
 DOMAIN-SUFFIX,bidswitch.net
 DOMAIN-SUFFIX,bkrtx.com
@@ -454,7 +455,6 @@ DOMAIN-SUFFIX,venture-365-inspired.com
 DOMAIN-SUFFIX,venusrevival.com
 DOMAIN-SUFFIX,veozn3f.com
 DOMAIN-SUFFIX,vfghe.com
-DOMAIN-SUFFIX,videocdnmetrika.com
 DOMAIN-SUFFIX,videoplayerhub.com
 DOMAIN-SUFFIX,visit-server.inmobi-choice.io
 DOMAIN-SUFFIX,vkanalytics.net
@@ -1577,6 +1577,7 @@ DOMAIN-SUFFIX,notconscious.com
 DOMAIN-SUFFIX,notifyglass.com
 DOMAIN-SUFFIX,noundictionary.com
 DOMAIN-SUFFIX,novaseekers.com
+DOMAIN-SUFFIX,nowaymail.com
 DOMAIN-SUFFIX,nudgeduck.com
 DOMAIN-SUFFIX,nullnorth.com
 DOMAIN-SUFFIX,numerousnest.com
@@ -1693,6 +1694,7 @@ DOMAIN-SUFFIX,predictplate.com
 DOMAIN-SUFFIX,prepareplanes.com
 DOMAIN-SUFFIX,presetrabbits.com
 DOMAIN-SUFFIX,presscoder.com
+DOMAIN-SUFFIX,prettyeasycafe.com
 DOMAIN-SUFFIX,prettylearning.com
 DOMAIN-SUFFIX,previousplayground.com
 DOMAIN-SUFFIX,priceypies.com
@@ -2558,6 +2560,7 @@ DOMAIN-SUFFIX,analytics.recruitics.com
 DOMAIN-SUFFIX,analytics.reyrey.net
 DOMAIN-SUFFIX,analytics.rogersmedia.com
 DOMAIN-SUFFIX,analytics.salesanalytics.io
+DOMAIN-SUFFIX,analytics.sayprimer.com
 DOMAIN-SUFFIX,analytics.scorpion.co
 DOMAIN-SUFFIX,analytics.shareaholic.com
 DOMAIN-SUFFIX,analytics.shorte.st
@@ -3108,6 +3111,7 @@ DOMAIN-SUFFIX,nova.dice.net
 DOMAIN-SUFFIX,nr.static.mmcdn.com
 DOMAIN-SUFFIX,ns.rvmkitt.com
 DOMAIN-SUFFIX,nwr.static.mmcdn.com
+DOMAIN-SUFFIX,o.momently.info
 DOMAIN-SUFFIX,o9tt6h08li.execute-api.eu-west-1.amazonaws.com
 DOMAIN-SUFFIX,obs.esnlocco.com
 DOMAIN-SUFFIX,obs.jollyoutdoorjogger.com
@@ -4904,6 +4908,7 @@ DOMAIN-SUFFIX,ohm-dot-hackster-io.appspot.com
 DOMAIN-SUFFIX,ophan.theguardian.com
 DOMAIN-SUFFIX,optimizely.techtarget.com
 DOMAIN-SUFFIX,otel-mobile.doordash.com
+DOMAIN-SUFFIX,p.codio.com
 DOMAIN-SUFFIX,p.hentaiforce.net
 DOMAIN-SUFFIX,p.minds.com
 DOMAIN-SUFFIX,p.spotidownloader.com

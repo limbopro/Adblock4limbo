@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 06 Oct 2025 20:23:44 GMT
-# entries:        3443
+# last updated:   Sat, 11 Oct 2025 23:27:17 GMT
+# entries:        3438
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -405,7 +405,6 @@ DOMAIN-SUFFIX,ads.devmates.com, reject
 DOMAIN-SUFFIX,ads.digital-digest.com, reject
 DOMAIN-SUFFIX,ads.digitalmedianet.com, reject
 DOMAIN-SUFFIX,ads.digitalpoint.com, reject
-DOMAIN-SUFFIX,ads.directionsmag.com, reject
 DOMAIN-SUFFIX,ads.doit.com.cn, reject
 DOMAIN-SUFFIX,ads.domeus.com, reject
 DOMAIN-SUFFIX,ads.dtpnetwork.biz, reject
@@ -725,6 +724,7 @@ DOMAIN-SUFFIX,adsfac.eu, reject
 DOMAIN-SUFFIX,adsfac.net, reject
 DOMAIN-SUFFIX,adsfac.us, reject
 DOMAIN-SUFFIX,adsfeed.brabys.com, reject
+DOMAIN-SUFFIX,adsflowprime.top, reject
 DOMAIN-SUFFIX,adshrink.it, reject
 DOMAIN-SUFFIX,adside.com, reject
 DOMAIN-SUFFIX,adsiduous.com, reject
@@ -824,7 +824,6 @@ DOMAIN-SUFFIX,adxpansion.com, reject
 DOMAIN-SUFFIX,adxpose.com, reject
 DOMAIN-SUFFIX,adyoulike.com, reject
 DOMAIN-SUFFIX,adz.rashflash.com, reject
-DOMAIN-SUFFIX,adz2you.com, reject
 DOMAIN-SUFFIX,adzbazar.com, reject
 DOMAIN-SUFFIX,adzerk.net, reject
 DOMAIN-SUFFIX,adzerk.s3.amazonaws.com, reject
@@ -1010,7 +1009,6 @@ DOMAIN-SUFFIX,banner.media-system.de, reject
 DOMAIN-SUFFIX,banner.nixnet.cz, reject
 DOMAIN-SUFFIX,banner.noblepoker.com, reject
 DOMAIN-SUFFIX,banner.northsky.com, reject
-DOMAIN-SUFFIX,banner.rbc.ru, reject
 DOMAIN-SUFFIX,banner.reinstil.de, reject
 DOMAIN-SUFFIX,banner.tanto.de, reject
 DOMAIN-SUFFIX,banner.titan-dsl.de, reject
@@ -1095,7 +1093,6 @@ DOMAIN-SUFFIX,bidvertiser.com, reject
 DOMAIN-SUFFIX,big-bang-ads.com, reject
 DOMAIN-SUFFIX,bigbangmedia.com, reject
 DOMAIN-SUFFIX,bigclicks.com, reject
-DOMAIN-SUFFIX,bigreal.org, reject
 DOMAIN-SUFFIX,billboard.cz, reject
 DOMAIN-SUFFIX,birthdaybelief.com, reject
 DOMAIN-SUFFIX,bitmedianetwork.com, reject
@@ -1233,8 +1230,6 @@ DOMAIN-SUFFIX,cl.turkishairlines.com, reject
 DOMAIN-SUFFIX,cl0udh0st1ng.com, reject
 DOMAIN-SUFFIX,clck.ru, reject
 DOMAIN-SUFFIX,clevernt.com, reject
-DOMAIN-SUFFIX,click-1.pl, reject
-DOMAIN-SUFFIX,click-2.eu, reject
 DOMAIN-SUFFIX,click.airmalta-mail.com, reject
 DOMAIN-SUFFIX,click.aliexpress.com, reject
 DOMAIN-SUFFIX,click.allkeyshop.com, reject
@@ -1789,6 +1784,7 @@ DOMAIN-SUFFIX,hb.vntsm.com, reject
 DOMAIN-SUFFIX,hbb.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,hbopenbid.pubmatic.com, reject
 DOMAIN-SUFFIX,heap.com, reject
+DOMAIN-SUFFIX,heimi-lwx.com, reject
 DOMAIN-SUFFIX,hellobar.com, reject
 DOMAIN-SUFFIX,helpcollar.com, reject
 DOMAIN-SUFFIX,hentaicounter.com, reject
@@ -2019,7 +2015,6 @@ DOMAIN-SUFFIX,li.onetravel.com, reject
 DOMAIN-SUFFIX,li.patheos.com, reject
 DOMAIN-SUFFIX,li.pmc.com, reject
 DOMAIN-SUFFIX,li.realtor.com, reject
-DOMAIN-SUFFIX,li.walmart.com, reject
 DOMAIN-SUFFIX,li.ziffimages.com, reject
 DOMAIN-SUFFIX,liadm.com, reject
 DOMAIN-SUFFIX,libraryfacts.com, reject
@@ -2316,6 +2311,7 @@ DOMAIN-SUFFIX,nondescriptcrowd.com, reject
 DOMAIN-SUFFIX,nondescriptnote.com, reject
 DOMAIN-SUFFIX,nondescriptstocking.com, reject
 DOMAIN-SUFFIX,novem.pl, reject
+DOMAIN-SUFFIX,nowaymail.com, reject
 DOMAIN-SUFFIX,npttech.com, reject
 DOMAIN-SUFFIX,nr-data.net, reject
 DOMAIN-SUFFIX,nr.mmcdn.com, reject
@@ -2520,6 +2516,7 @@ DOMAIN-SUFFIX,prebid.org, reject
 DOMAIN-SUFFIX,predictad.com, reject
 DOMAIN-SUFFIX,premium-offers.com, reject
 DOMAIN-SUFFIX,presetrabbits.com, reject
+DOMAIN-SUFFIX,prettyeasycafe.com, reject
 DOMAIN-SUFFIX,previousplayground.com, reject
 DOMAIN-SUFFIX,prf.hn, reject
 DOMAIN-SUFFIX,priceypies.com, reject
@@ -3229,7 +3226,6 @@ DOMAIN-SUFFIX,truehits.net, reject
 DOMAIN-SUFFIX,truehits1.gits.net.th, reject
 DOMAIN-SUFFIX,truehits2.gits.net.th, reject
 DOMAIN-SUFFIX,trust.titanhq.com, reject
-DOMAIN-SUFFIX,trustpid.com, reject
 DOMAIN-SUFFIX,trustx.org, reject
 DOMAIN-SUFFIX,tsyndicate.com, reject
 DOMAIN-SUFFIX,tsyndicate.net, reject
@@ -3453,5 +3449,4 @@ DOMAIN-SUFFIX,zmedia.com, reject
 DOMAIN-SUFFIX,zonewedgeshaft.com, reject
 DOMAIN-SUFFIX,zpu.samsungelectronics.com, reject
 DOMAIN-SUFFIX,zqtk.net, reject
-DOMAIN-SUFFIX,zy16eoat1w.com, reject
 DOMAIN-SUFFIX,zzhc.vnet.cn, reject

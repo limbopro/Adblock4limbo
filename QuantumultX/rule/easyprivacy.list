@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510070844
+## ! Version: 202510120413
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Oct 2025 08:44 UTC
+## ! Last modified: 12 Oct 2025 04:13 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 376ca263ba91a817008f37de9fc8a4411e25132b
+## ! Commit: 30d22cd396899edd773d64192705c17a282caa32
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -70,6 +70,7 @@ DOMAIN-SUFFIX,avads.net, reject
 DOMAIN-SUFFIX,awmonitor.com, reject
 DOMAIN-SUFFIX,b3mxnuvcer.com, reject
 DOMAIN-SUFFIX,bfmio.com, reject
+DOMAIN-SUFFIX,bgalytics.com, reject
 DOMAIN-SUFFIX,bidgx.com, reject
 DOMAIN-SUFFIX,bidswitch.net, reject
 DOMAIN-SUFFIX,bkrtx.com, reject
@@ -454,7 +455,6 @@ DOMAIN-SUFFIX,venture-365-inspired.com, reject
 DOMAIN-SUFFIX,venusrevival.com, reject
 DOMAIN-SUFFIX,veozn3f.com, reject
 DOMAIN-SUFFIX,vfghe.com, reject
-DOMAIN-SUFFIX,videocdnmetrika.com, reject
 DOMAIN-SUFFIX,videoplayerhub.com, reject
 DOMAIN-SUFFIX,visit-server.inmobi-choice.io, reject
 DOMAIN-SUFFIX,vkanalytics.net, reject
@@ -1577,6 +1577,7 @@ DOMAIN-SUFFIX,notconscious.com, reject
 DOMAIN-SUFFIX,notifyglass.com, reject
 DOMAIN-SUFFIX,noundictionary.com, reject
 DOMAIN-SUFFIX,novaseekers.com, reject
+DOMAIN-SUFFIX,nowaymail.com, reject
 DOMAIN-SUFFIX,nudgeduck.com, reject
 DOMAIN-SUFFIX,nullnorth.com, reject
 DOMAIN-SUFFIX,numerousnest.com, reject
@@ -1693,6 +1694,7 @@ DOMAIN-SUFFIX,predictplate.com, reject
 DOMAIN-SUFFIX,prepareplanes.com, reject
 DOMAIN-SUFFIX,presetrabbits.com, reject
 DOMAIN-SUFFIX,presscoder.com, reject
+DOMAIN-SUFFIX,prettyeasycafe.com, reject
 DOMAIN-SUFFIX,prettylearning.com, reject
 DOMAIN-SUFFIX,previousplayground.com, reject
 DOMAIN-SUFFIX,priceypies.com, reject
@@ -2558,6 +2560,7 @@ DOMAIN-SUFFIX,analytics.recruitics.com, reject
 DOMAIN-SUFFIX,analytics.reyrey.net, reject
 DOMAIN-SUFFIX,analytics.rogersmedia.com, reject
 DOMAIN-SUFFIX,analytics.salesanalytics.io, reject
+DOMAIN-SUFFIX,analytics.sayprimer.com, reject
 DOMAIN-SUFFIX,analytics.scorpion.co, reject
 DOMAIN-SUFFIX,analytics.shareaholic.com, reject
 DOMAIN-SUFFIX,analytics.shorte.st, reject
@@ -3108,6 +3111,7 @@ DOMAIN-SUFFIX,nova.dice.net, reject
 DOMAIN-SUFFIX,nr.static.mmcdn.com, reject
 DOMAIN-SUFFIX,ns.rvmkitt.com, reject
 DOMAIN-SUFFIX,nwr.static.mmcdn.com, reject
+DOMAIN-SUFFIX,o.momently.info, reject
 DOMAIN-SUFFIX,o9tt6h08li.execute-api.eu-west-1.amazonaws.com, reject
 DOMAIN-SUFFIX,obs.esnlocco.com, reject
 DOMAIN-SUFFIX,obs.jollyoutdoorjogger.com, reject
@@ -4904,6 +4908,7 @@ DOMAIN-SUFFIX,ohm-dot-hackster-io.appspot.com, reject
 DOMAIN-SUFFIX,ophan.theguardian.com, reject
 DOMAIN-SUFFIX,optimizely.techtarget.com, reject
 DOMAIN-SUFFIX,otel-mobile.doordash.com, reject
+DOMAIN-SUFFIX,p.codio.com, reject
 DOMAIN-SUFFIX,p.hentaiforce.net, reject
 DOMAIN-SUFFIX,p.minds.com, reject
 DOMAIN-SUFFIX,p.spotidownloader.com, reject

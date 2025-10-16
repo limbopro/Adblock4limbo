@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[11160899,".cookie-screen"],[6717121,".friendly.notice"],[8173925,"#eu-cookies-consent"],[5196796,"#eu-okno"]];
+const genericSelectorMap = [[3395,".cookie-screen"],[3777,".friendly.notice"],[2405,"#eu-cookies-consent"],[3068,"#eu-okno"]];
 const genericExceptionSieve = undefined;
 const genericExceptionMap = undefined;
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.10.12
+// @version      0.2025.10.16
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -214,6 +214,20 @@
 // @grant        none
 // ==/UserScript==
 
+function checkDOMLoaded() {
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        console.log('DOM 已加载');
+        // 在此处运行您的代码
+    } else {
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM 已加载（通过事件触发）');
+            // 在此处运行您的代码
+        });
+    }
+}
+
+checkDOMLoaded();
+
 /**
  * 为网页增加导航按钮，将位于页面右下角呈现；
  * 如需取消该按钮，请将如上调用代码注释；
@@ -345,7 +359,7 @@ var imax = {
         bigirl: 'div#container + div, h4.adblock_title,div.adblock_subtitle,[class^=\'adblock\'],div[class^=\'ad_\'], .toppage_av {display:none !important; pointer-events: none !important;}', // https://bi-girl.net/
         opgg: ".AdSense,  div[data-ad], tr.ad, #banner-container, section[class*='md:hidden'] {display:none !important; pointer-events: none !important;}",
         btc760: ".ad_img,.ad_img,#ad_headerbanner {display:none !important; pointer-events: none !important;}", // btc760
-        porny91: "[href*='vfrbu1044'], div.coment-bottom, header + #main:nth-child(n+4) .container-fluid.mb-3.p-0,header + #main:nth-child(n+4) > div[id^=\"po-s\"]:not(#po-shd),.row > div.colVideoList:has(> div.video-elem > a[target=\"_blank\"]),.jsv-g1,.fixed-bottom.jsv.jsv-g1 {display:none !important;pointer-events:none important;}", // 91porny
+        porny91: "div.row  a[target*='_blank'],[href*='vfrbu1044'], div.coment-bottom, header + #main:nth-child(n+4) .container-fluid.mb-3.p-0,header + #main:nth-child(n+4) > div[id^=\"po-s\"]:not(#po-shd),.row > div.colVideoList:has(> div.video-elem > a[target=\"_blank\"]),.jsv-g1,.fixed-bottom.jsv.jsv-g1 {display:none !important;pointer-events:none important;}", // 91porny
         porna91: ".modal-backdrop.in,.dx-banner-item,.ad-dialog,a.checkNum[target='_blank']:not([href*='91porna.com']),li.flex.mr-6,div.text-mini.mb-3,a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important;pointer-events:none important;}", // 91porna
         porn91: ".copysuccess {background:green !important;color:white !important;} br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
@@ -511,7 +525,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
             setTimeout(() => {
-                ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
+                ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
                 if (document.getElementById("download_pornhub")) {
                     document.getElementById("download_pornhub").style = "display: inline !important;";
                     document.getElementById("download_pornhub").target = "_blank !important;";
@@ -553,6 +567,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     x.remove()
                 }
             })
+
+            setTimeout(() => {
+                _91porny_dl()
+            }, 1200)
 
             break;
 
@@ -771,7 +789,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.jable);
             jable_adsRemove();
             const url_jable = document.location.href;
-            const reg_videos = /^https:\/\/jable\.tv\/videos/gi;
+            const reg_videos = /^https:\/\/jable\.tv.*\/videos/gi;
+
+            url_jable.search(reg_videos) !== -1 && document.querySelector('#avCodeCopy') === null
+
             if (url_jable.search(reg_videos) !== -1 && document.querySelector('#avCodeCopy') === null) {
 
                 setTimeout(() => {
@@ -781,7 +802,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     ele_dynamicAppend("div.header-left > h6", "onclick", "复制番号", cssText, "", "copyavCode", 14, "button");
                     ele_dynamicAppend("div.header-left > h6", "onclick", "", cssText, "", "copy", 15, "input");
                     ele_dynamicAppend("div.header-left > h6", "onclick", "复制M3U8文件地址", cssText, "", "jablex", 16, "button")
-                    ele_dynamicAppend("div.header-left > h6", "onclick", "如何下载视频？", cssText, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 17, "button");
+                    ele_dynamicAppend("div.header-left > h6", "onclick", "在线下载本视频", cssText, "", "onlinedl", 17, "button");
+                    ele_dynamicAppend("div.header-left > h6", "onclick", "如何下载本视频？", cssText, "window.open(\"https://limbopro.com/archives/M3U8-Downloader.html\", \"_blank\")", "how", 18, "button");
                     var regex = /[a-zA-Z]{3,5}\-\d{3,5}/i
                     var avCode = document.querySelectorAll('h4')[0].innerText.match(regex)[0]
                     //let avCode = window.location.pathname.replace('/videos/', '').replace('/', '')
@@ -799,6 +821,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     document.execCommand('copy')
                     // 复制工作结束
 
+                    // 取消文本选中
+                    window.getSelection().removeAllRanges();
+                    // 移除焦点，防止键盘弹出
+                    document.activeElement.blur();
+
                     document.querySelector('#copyavCode').innerHTML = '复制成功!'
                     document.querySelector('#copyavCode').setAttribute('class', 'jable_css')
                     setTimeout(() => {
@@ -808,7 +835,199 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     //}, 0)
                 }
 
-                setTimeout(() => { repeat_regex.forEach(m3u8_tempt) }, 4000);
+
+
+                setTimeout(() => {
+
+                    repeat_regex.forEach(m3u8_tempt)
+
+                    // online download button script
+                    // 获取按钮
+                    const button = document.getElementById('onlinedl');
+
+                    // 动态创建样式
+                    function createStyles() {
+                        const style = document.createElement('style');
+                        style.textContent = `
+                        /* 遮罩层样式 */
+                        .overlay {
+                            display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        z-index: 999;
+                }
+
+                        /* 悬浮窗样式 */
+                        .modal {
+                        height: 65%;
+                        align-content: center;
+                        display: none;
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        padding: 30px;
+                        border: 2px solid #007bff;
+                        border-radius: 10px;
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        text-align: center;
+                        max-width: 400px;
+                        width: 90%;
+                        animation: modalFadeIn 0.3s ease-out;
+                }
+
+                        /* 动画效果 */
+                        @keyframes modalFadeIn {
+                            from {
+                            opacity: 0;
+                        transform: translate(-50%, -60%);
+                    }
+                        to {
+                            opacity: 1;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                        .modal h3 {
+                            color: #007bff;
+                        margin-top: 0;
+                        font-size: 1.5em;
+                }
+
+                        .modal p {
+                            color: #333;
+                        font-size: 1.1em;
+                        margin: 15px 0;
+                }
+
+                        .modal a {
+                            display: inline-block;
+                        background-color: #007bff;
+                        color: white;
+                        padding: 12px 24px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        transition: background-color 0.3s;
+                        margin-top: 15px;
+                }
+
+                        .modal a:hover {
+                            background - color: #0056b3;
+                        transform: translateY(-2px);
+                }
+
+                        .close-btn {
+                            background-color: #dc3545;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin-top: 10px;
+                        font-size: 14px;
+                }
+
+                        .close-btn:hover {
+                            background-color: #c82333;
+                }
+                        `;
+                        document.head.appendChild(style);
+                        return style;
+                    }
+
+                    // 动态创建DOM元素
+                    function createModalElements() {
+                        // 创建遮罩层
+                        const overlay = document.createElement('div');
+                        overlay.id = 'overlay';
+                        overlay.className = 'overlay';
+
+                        // 创建悬浮窗
+                        const modal = document.createElement('div');
+                        modal.id = 'modal';
+                        modal.className = 'modal';
+                        modal.innerHTML = `
+                        <h3>✅ 已复制M3U8文件地址</h3>
+                        <p>1.点击下方按钮<span>跳转到在线解析网站 anyconv</>，<span>2.粘贴M3U8文件地址</>，3.然后点击<span>转换为MP4格式</>进行下载即可！<br><br>(P.S. 需要注意的是，使用在线解析下载长视频(大于128Mb)可能体验不佳或不如App，可查看更多下载方法选择合适的App下载长视频；点击页面上的非弹窗部分关闭本弹窗)</p>
+                        <a href="https://anyconv.com/m3u8-to-mp4-converter/" target="_blank">跳转到下载网站 anyconv</a><br>
+                        <a href="https://limbopro.com/archives/M3U8-Downloader.html" target="_blank">查看更多下载方法</a>
+                        <!-- <br><button class="close-btn" onclick="closeModal()">关闭</button> --!>
+                            `;
+
+                        // 添加到页面
+                        document.body.appendChild(overlay);
+                        document.body.appendChild(modal);
+
+                        return { overlay, modal };
+                    }
+
+
+
+                    // 执行函数
+                    function executeFunction() {
+                        document.getElementById('jablex').click()
+                        console.log('函数已执行');
+
+                        // 创建样式（只创建一次）
+                        if (!document.querySelector('style[data-modal-styles]')) {
+                            const style = createStyles();
+                            style.setAttribute('data-modal-styles', 'true');
+                        }
+
+                        // 创建DOM元素（只创建一次）
+                        if (!document.getElementById('modal')) {
+                            createModalElements();
+                        }
+
+                        // 显示悬浮窗
+                        showModal();
+                    }
+
+                    // 按钮点击事件
+                    button.addEventListener('click', executeFunction);
+
+                    // 点击遮罩层关闭悬浮窗
+                    document.addEventListener('click', function (e) {
+                        if (e.target.id === 'overlay') {
+                            closeModal();
+                        }
+                    });
+
+                    // ESC键关闭悬浮窗
+                    document.addEventListener('keydown', function (e) {
+                        if (e.key === 'Escape') {
+                            closeModal();
+                        }
+                    });
+
+                    // 显示悬浮窗
+                    function showModal() {
+                        const overlay = document.getElementById('overlay');
+                        const modal = document.getElementById('modal');
+
+                        overlay.style.display = 'block';
+                        modal.style.display = 'block';
+                    }
+
+                    // 关闭悬浮窗
+                    function closeModal() {
+                        const overlay = document.getElementById('overlay');
+                        const modal = document.getElementById('modal');
+
+                        overlay.style.display = 'none';
+                        modal.style.display = 'none';
+                    }
+
+
+                }, 4000);
+
             }
 
 
@@ -1483,280 +1702,378 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
         case 'dmm.co.jp':
 
-            // 23333
-
             // 在番号详情页追加在线预览链接
-            // window.addEventListener('load', function () {
+            // https://video.dmm.co.jp/
+            window.addEventListener('load', function () {
 
-            setTimeout(() => {
-                iscode_dmm() // 执行函数
-            }, 1500); // 等待页面加载完成
+                setTimeout(() => {
+                    extractAndGenerateLinks() // 执行函数
+                }, 1500); // 等待页面加载完成
 
-
-            var currentUrl = location.href;
-            setInterval(function () {
-                if (currentUrl !== location.href) {
-                    console.log('URL 改变了！新 URL:', location.href);
-                    currentUrl = location.href;
-                    // 执行你的逻辑
-                    setTimeout(() => {
-                        iscode_dmm() // 执行函数
-                    }, 1500); // 等待页面加载完成
-                }
-            }, 2000);  // 每 100ms 检查一次，频率可调整
-
-            function tmd_dmm(parentsSelector, code, textContent) {
-                function otherSearch() {
-                    // 试试其他搜索：
-                    let parentElement = document.querySelectorAll(parentsSelector)[0]
-                    let p1 = document.createElement('p')
-                    p1.id = 'p1'
-                    p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
-
-                    let p2 = document.createElement('p')
-                    p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-                    p2.id = 'p2'
-
-
-                    p1.appendChild(p2)
-                    //parentElement.insertBefore(p1, parentElement.childNodes[2])
-                    parentElement.appendChild(p1)
-
-                    let span = document.createElement('span')
-                    span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-                    span.textContent = textContent
-                    p2.appendChild(span)
-
-                    function aAdd2Parent(siteName, url, codeSlect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + codeSlect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-                        lable.appendChild(a)
-                        p2.appendChild(lable)
+                var currentUrl = location.href;
+                setInterval(function () {
+                    if (currentUrl !== location.href) {
+                        console.log('URL 改变了！新 URL:', location.href);
+                        currentUrl = location.href;
+                        // 执行你的逻辑
+                        setTimeout(() => {
+                            extractAndGenerateLinks() // 执行函数
+                        }, 1500); // 等待页面加载完成
                     }
+                }, 2000);  // 每 100ms 检查一次，频率可调整
 
-                    aAdd2Parent('MissAV[720P]', 'https://missav.ws/search', '/' + code)
-                    aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
-                    aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
-                    aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                    aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                    aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
-                    //aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
+                function generateSearchLinks(parentsSelector, code, textContent) {
 
-                    console.log('已生成在线预览链接🔗')
-                }
+                    // 配置搜索网站
+                    const searchSites = [
+                        { name: 'MissAV[720P]', url: 'https://missav.ws/search/', suffix: '/' },
+                        { name: 'Jable[HD]', url: 'https://jable.tv/search/', suffix: '/' },
+                        { name: 'Supjav[ultraHD]', url: 'https://supjav.com/?s=', suffix: '' },
+                        { name: '番号搜索[聚合]', url: 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', suffix: '&gsc.sort=' },
+                        { name: '谷歌搜索🔍', url: 'https://www.google.com/search?q=', suffix: '' },
+                        { name: 'Javbus📖', url: 'https://www.javbus.com/search/', suffix: '&type=&parent=ce' },
+                    ];
 
-                setTimeout(() => { otherSearch() }, 500); // 等待页面加载完成
-
-            }
-
-            // 在工口漫画详情页追加在线预览链接
-            function tmd_dmm_doujin(parentsSelector, h1, textContent) {
-                function otherSearch() {
-
-                    // 试试其他搜索：
-                    let parentElement = document.querySelectorAll(parentsSelector)[0]
-                    let p1 = document.createElement('p')
-                    p1.id = 'p1'
-                    p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
-
-                    let p2 = document.createElement('p')
-                    p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-                    p2.id = 'p2'
-
-
-                    p1.appendChild(p2)
-                    //parentElement.insertBefore(p1, parentElement.childNodes[2])
-                    parentElement.appendChild(p1)
-
-                    let span = document.createElement('span')
-                    span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-                    span.textContent = textContent
-                    p2.appendChild(span)
-
-                    function aAdd2Parent(siteName, url, h1Slect) {
-                        let a = document.createElement('a')
-                        let lable = document.createElement('label')
-                        lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                        a.href = url + h1Slect
-                        a.textContent = siteName
-                        a.target = '_blank'
-                        a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-                        lable.appendChild(a)
-                        p2.appendChild(lable)
-                    }
-                    aAdd2Parent('Hitomi[HD]', 'https://www.google.com/search?q=', "site:hitomi.la" + " " + h1)
-                    aAdd2Parent('禁漫天堂[HD]', 'https://www.google.com/search?q=', "site:18comic.vip" + " " + h1)
-                    aAdd2Parent('绅士漫画[HD]', 'https://www.google.com/search?q=', "site:www.wnacg.com" + " " + h1)
-                    aAdd2Parent('Google🔍', 'https://www.google.com/search?q=', "免费" + " " + h1)
-
-                    console.log('已生成在线预览链接🔗')
-                }
-
-                setTimeout(() => { otherSearch() }, 500); // 等待页面加载完成
-            }
-
-            // dmm.co.jp
-
-            function isMobile() {
-                // 判断是否为移动设备
-                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            }
-
-
-            function code_dmm() {
-
-                // 1. すべての<th>要素を取得します
-                const thElements = document.querySelectorAll('th');
-                let bangou = null; // 番号を格納する変数
-
-                // 2. <th>要素をループして目的のテキストを探します
-                for (const th of thElements) {
-                    if (th.textContent.includes('メーカー品番：')) {
-                        // 3. 目的の<th>を見つけたら、その隣の要素(<td>)を取得します
-                        const tdElement = th.nextElementSibling;
-
-                        // 4. <td>要素が存在すれば、その中のテキストを取得します
-                        if (tdElement) {
-                            bangou = tdElement.textContent.trim(); // .trim()で前後の余白を削除
-                            break; // 目的の要素を見つけたらループを終了
+                    function createSearchLinks() {
+                        // 错误处理：检查父元素是否存在
+                        const parentElement = document.querySelector(parentsSelector);
+                        if (!parentElement) {
+                            console.error('Parent element not found for selector:', parentsSelector);
+                            return;
                         }
+
+                        // 错误处理：检查 code 和 textContent
+                        if (!code || !textContent) {
+                            console.error('Invalid code or textContent provided:', { code, textContent });
+                            return;
+                        }
+
+                        // 创建 p1 元素并设置内联样式
+                        const p1 = document.createElement('p');
+                        p1.id = 'search-panel';
+                        p1.style.cssText = 'height: fit-content; margin: 10px 0 0 0; border-left: 6px solid #38a3fd; font-size: 14px; border-radius: 4px; background: #10141f; color: chocolate; padding: 0; word-break: break-all;';
+
+                        // 创建 p2 元素并设置内联样式
+                        const p2 = document.createElement('p');
+                        p2.id = 'search-links';
+                        p2.style.cssText = 'background: black; padding: 6px; font-size: inherit; word-break: break-all;';
+
+                        // 创建 span 元素并设置内联样式
+                        const span = document.createElement('span');
+                        span.style.cssText = 'font-weight: bolder; font-size: medium; color: bisque;';
+                        span.textContent = textContent;
+
+                        // 将 span 添加到 p2
+                        p2.appendChild(span);
+
+                        // 使用 DocumentFragment 优化 DOM 操作
+                        const fragment = document.createDocumentFragment();
+                        searchSites.forEach(site => {
+                            const a = document.createElement('a');
+                            a.href = site.url + encodeURIComponent(code) + site.suffix;
+                            a.textContent = site.name;
+                            a.target = '_blank';
+                            a.style.cssText = 'color: inherit; font-weight: inherit;';
+                            a.setAttribute('aria-label', `Search ${site.name} for ${code}`);
+
+                            const label = document.createElement('label');
+                            label.style.cssText = 'font-weight: inherit; display: inline-block; max-width: 100%; margin-right: 10px;';
+                            label.appendChild(a);
+                            fragment.appendChild(label);
+                        });
+
+                        // 将 fragment 添加到 p2
+                        p2.appendChild(fragment);
+                        p1.appendChild(p2);
+                        parentElement.appendChild(p1);
+
+                        console.log('已生成在线预览链接🔗');
                     }
+
+                    // 使用 DOMContentLoaded 替代 setTimeout
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', createSearchLinks);
+                    } else {
+                        createSearchLinks();
+                    }
+
                 }
 
-                // 5. 結果をコンソールに出力します
-                console.log(bangou); // "HZGD-082"
 
-                if (bangou !== null) {
-                    return bangou;
-                } else if (bangou == null) {
-                    var url = window.location.href;
-                    console.log("当前URL:" + url);
-                    // 使用正则表达式从URL中提取cid参数
-                    const match = url.match(/id=([^/&?]+)/);
-                    let cid = match ? match[1] : null;
-                    if (!cid) return null;
-                    // 删除开头的全部数字
-                    cid = cid.replace(/^\d+/, '');
-                    let code_dmm = cid.replace(/0{2}/, '-');
-                    // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
-                    if (!code_dmm.includes('-')) {
-                        code_dmm = code_dmm.replace(/(\D*)(\d+)/, '$1-$2');
+                function isMobile() {
+                    // 判断是否为移动设备
+                    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                }
+
+
+                function extractCodeFromUrl() {
+                    const url = window.location.href;
+                    console.log(`当前URL: ${url}`);
+
+                    const match = url.match(/id=([^&#?]+)/);
+                    if (!match || !match[1]) {
+                        console.warn("URL 中未找到有效的 id 参数");
+                        return null;
                     }
-                    // 如果 code_dmm 中没有横杠，则在第一个数字前添加横杠
-                    console.log(code_dmm);
-                    console.log(cid);
+
+                    let idValue = match[1];
+                    // 移除前缀（如 h_1100），提取字母和数字部分
+                    let cid = idValue.replace(/^(h_\d+)?([a-zA-Z]+)(\d+)$/, '$2$3');
+                    if (!cid) {
+                        console.warn("处理后的 cid 为空");
+                        return null;
+                    }
+
+                    // 分离字母和数字
+                    const parts = cid.match(/([a-zA-Z]+)(\d+)/);
+                    if (!parts) {
+                        console.warn("cid 格式不符合预期");
+                        return null;
+                    }
+
+                    const prefix = parts[1]; // 字母部分
+                    const number = parseInt(parts[2], 10); // 转换为整数
+                    // 格式化为 3 位数字，补前导零
+                    const formattedNumber = number.toString().padStart(3, '0');
+                    let code_dmm = `${prefix}-${formattedNumber}`;
+
+                    console.log(`cid: ${cid}`);
+                    console.log(`code_dmm: ${code_dmm}`);
                     return code_dmm;
                 }
 
-            };
 
+                function extractAndGenerateLinks() { // 番号提取及链接生成
 
-            function iscode_dmm() {
+                    console.log("执行 extractAndGenerateLinks() 函数");
 
-                // 如果 code_dmm() 返回 false，则不执行后续代码
-                if (!code_dmm() == false) {
-                    var url = window.location.href;
+                    // 如果 extractCodeFromUrl() 返回 false，直接退出
+                    const code = extractCodeFromUrl();
+                    if (!code) return;
 
-                    if (isMobile()) {
-                        // 如果是手机端，执行手机端相关函数
-                        if (document.querySelector('h1 > span') !== null && (url.includes('/content/') || url.includes("dightal"))) { // https://www.dmm.co.jp/content/
-                            try {
+                    const url = window.location.href;
+                    const isMobileDevice = isMobile();
+                    const isContentPage = url.includes('/content/') || url.includes('dightal');
+                    const isMonthlyPage = url.includes('/monthly/');
 
-                                if (document.querySelector('#p1') == null) {
-                                    console.log('开始生成在线预览链接...')
-                                    tmd_dmm('h1 > span', code_dmm(), '在其他站点播放：');
-                                }
+                    // 如果 #p1 存在，直接退出
+                    if (document.querySelector('#p1')) return;
 
-                            } catch (e) {
-                                console.error('Error in tmd_dmm:', e);
-                            }
-                        } else if (document.querySelector('h1') !== null && url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/
-                            try {
-                                tmd_dmm('h1', code_dmm(), '在其他站点播放：');
-                            } catch (e) {
-                                console.error('Error in tmd_dmm:', e);
-                            }
-                        } else if (document.querySelector('h1') !== null && url.includes('/doujin/')) { // https://www.dmm.co.jp/dc/doujin/
-                            // 获取标题
-                            const h1 = document.querySelector('h1');
-                            const text = Array.from(h1.childNodes)
-                                .filter(node => node.nodeType === Node.TEXT_NODE)
-                                .map(node => node.textContent.trim())
-                                .join('');
-                            console.log(text);
-
-                            try {
-                                if (document.querySelector('#p1') == null) {
-                                    console.log('开始生成在线预览链接...')
-                                    tmd_dmm_doujin('h1', text, '在其他站点观看：');
-                                }
-                            } catch (e) {
-                                console.error('Error in tmd_dmm_doujin:', e);
-                            }
+                    try {
+                        let selector;
+                        if (isMobileDevice) {
+                            selector = isContentPage ? 'h1 > span' : isMonthlyPage ? 'h1' : null;
+                        } else {
+                            selector = isContentPage ? 'h1' : isMonthlyPage ? 'div.bx-detail-player-sampleMovie' : null;
+                            console.log(`${isContentPage ? '/content/' : '/monthly/'} ${selector}`);
                         }
 
-                    } else {
-
-                        var url = window.location.href;
-                        console.log("PC端")
-                        console.log("URL:" + url)
-                        // 如果是PC端，执行PC端相关函数
-                        if (url.includes('/content/') || url.includes("dightal")) { // https://www.dmm.co.jp/content/ 动画
-                            console.log("content")
-                            try {
-                                console.log('/content/ div.box-sampleInfo');
-
-                                if (document.querySelector('#p1') == null) {
-                                    console.log('开始生成在线预览链接...')
-                                    tmd_dmm('h1', code_dmm(), '在其他站点播放：');
-                                }
-
-                            } catch (e) {
-                                console.error('/content/ Error in tmd_dmm:', e);
-                            }
-                        } else if (url.includes('/monthly/')) { // https://www.dmm.co.jp/monthly/ 动画
-                            console.log("monthly")
-                            try {
-                                console.log('/content/ div.bx-detail-player-sampleMovie');
-                                if (document.querySelector('#p1') == null) {
-                                    console.log('开始生成在线预览链接...')
-                                    tmd_dmm('div.bx-detail-player-sampleMovie', code_dmm(), '在其他站点播放：');
-                                }
-                            } catch (e) {
-                                console.error('/monthly/ Error in tmd_dmm:', e);
-                            }
-                        } else if (url.includes('/doujin/')) { //https://www.dmm.co.jp/dc/doujin/ 同人
-
-                            // 获取标题
-
-                            const h1 = document.querySelector('h1.productTitle__txt');
-                            const text = Array.from(h1.childNodes)
-                                .filter(node => node.nodeType === Node.TEXT_NODE)
-                                .map(node => node.textContent.trim())
-                                .join('');
-                            console.log(text);
-
-                            try {
-                                console.log('/doujin/ div.m-productPreview');
-                                if (document.querySelector('#p1') == null) {
-                                    console.log('开始生成在线预览链接...')
-                                    tmd_dmm_doujin('div.m-productPreview', text, '在其他站点观看：');
-                                }
-                            } catch (e) {
-                                console.error('/doujin/ Error in tmd_dmm:', e);
-                            }
+                        if (selector) {
+                            console.log('开始生成在线预览链接...');
+                            generateSearchLinks(selector, code, '在其他站点播放：');
                         }
+                    } catch (e) {
+                        console.error(`Error in ${isMobileDevice ? 'mobile' : 'PC'}:`, e);
+                    }
+
+                }
+
+                // 在 DMM 同人页面添加搜索链接
+
+                // 获取 h1 文本（排除 <span> 内容和限定/版本等字眼，增强鲁棒性）
+                function getH1Text(selector) {
+                    try {
+                        const element = document.querySelector(selector);
+                        if (!element) {
+                            console.warn('No element found with selector:', selector);
+                            return '';
+                        }
+
+                        function extractText(node) {
+                            let text = '';
+                            node.childNodes.forEach(child => {
+                                if (child.nodeType === Node.TEXT_NODE) {
+                                    text += child.textContent.trim();
+                                } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName.toLowerCase() !== 'span') {
+                                    text += extractText(child);
+                                }
+                            });
+                            return text;
+                        }
+
+                        let textContent = extractText(element);
+                        if (!textContent) {
+                            console.warn('No valid text content found in element with selector:', selector);
+                            return '';
+                        }
+
+                        // 过滤包含“限定”“版本”等字眼的文本
+                        const filterPatterns = [
+                            /【[^】]*限定[^】]*】/g, // 匹配如【FANZA限定版】
+                            /【[^】]*版[^】]*】/g,   // 匹配如【特别版】
+                            /限定版/g,                // 匹配限定版
+                            /特別版/g,                // 匹配特别版
+                            /版/g                     // 匹配单独的“版”
+                        ];
+
+                        filterPatterns.forEach(pattern => {
+                            textContent = textContent.replace(pattern, '').trim();
+                        });
+
+                        if (!textContent) {
+                            console.warn('Text content is empty after filtering:', selector);
+                            return '';
+                        }
+
+                        return textContent;
+                    } catch (error) {
+                        console.error('Error extracting text:', error);
+                        return '';
                     }
                 }
-            }
 
-            // }); // window load end
+                // 添加搜索链接功能
+                function addDmmDoujinSearchLink(parentsSelector, h1Text, linkLabel) {
+                    // 检查是否为 DMM 同人页面 URL
+                    function isDmmDoujinUrl() {
+                        return window.location.href.startsWith('https://www.dmm.co.jp/dc/doujin/');
+                    }
 
+                    // 创建并添加搜索链接
+                    function createSearchLinks(parentElement, textContent, h1Text) {
+                        if (!parentElement) {
+                            console.warn(`Parent element not found with selector: ${parentsSelector}`);
+                            return;
+                        }
+
+                        // 检查是否已存在 ID 为 p1 的元素
+                        if (document.getElementById('p1')) {
+                            console.log('Search links already exist, skipping.');
+                            return;
+                        }
+
+                        // 创建 p1 容器
+                        const p1 = document.createElement('p');
+                        p1.id = 'p1';
+                        p1.style.cssText = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:4px !important; box-shadow:rgb(151, 151, 151) 0px 0px 0px 0px inset; background:#10141f; color:chocolate; padding:0px; word-break:break-all; border-radius:0px';
+
+                        // 创建 p2 容器
+                        const p2 = document.createElement('p');
+                        p2.id = 'p2';
+                        p2.style.cssText = 'background:black; padding-left:6px; font-weight:inherit; padding:6px; word-break:break-all; font-size:inherit; border-radius:0px';
+
+                        p1.appendChild(p2);
+                        parentElement.appendChild(p1);
+
+                        // 添加标题
+                        const span = document.createElement('span');
+                        span.style.cssText = 'font-weight:bolder; font-size:medium; color:bisque;';
+                        span.textContent = textContent;
+                        p2.appendChild(span);
+
+                        // 添加单个搜索链接
+                        function appendSearchLink(siteName, url, query) {
+                            const a = document.createElement('a');
+                            const label = document.createElement('label');
+                            label.style.cssText = 'font-weight:inherit; display:inline-block; max-width:100%; margin-right:10px;';
+                            a.href = url + encodeURIComponent(query);
+                            a.textContent = siteName;
+                            a.target = '_blank';
+                            a.style.cssText = 'color:inherit; font-weight:inherit';
+                            label.appendChild(a);
+                            p2.appendChild(label);
+                        }
+
+                        const searchSites = [
+                            { name: 'Hitomi[HD]', url: 'https://www.google.com/search?q=', query: `site:hitomi.la ${h1Text}` },
+                            { name: '禁漫天堂[HD]', url: 'https://www.google.com/search?q=', query: `site:18comic.vip ${h1Text}` },
+                            { name: '绅士漫画[HD]', url: 'https://www.google.com/search?q=', query: `site:www.wnacg.com ${h1Text}` },
+                            { name: 'Google🔍', url: 'https://www.google.com/search?q=', query: `${h1Text}` }
+                        ];
+
+                        searchSites.forEach(site => appendSearchLink(site.name, site.url, site.query));
+                        console.log('Search links generated successfully.');
+                    }
+
+                    // 主逻辑：执行搜索链接添加
+                    function executeSearch() {
+                        if (!isDmmDoujinUrl()) {
+                            console.log('This function can only be executed on https://www.dmm.co.jp/dc/doujin/ and its subpages.');
+                            return;
+                        }
+
+                        const parentElement = document.querySelector(parentsSelector);
+                        createSearchLinks(parentElement, linkLabel, h1Text);
+                    }
+
+                    // 使用 MutationObserver 检测 DOM 加载
+                    function observeDomLoad() {
+                        const targetNode = document.body;
+                        if (!targetNode) {
+                            console.warn('Document body not found.');
+                            return;
+                        }
+
+                        const observer = new MutationObserver((mutations, obs) => {
+                            const parentElement = document.querySelector(parentsSelector);
+                            if (parentElement) {
+                                executeSearch();
+                                obs.disconnect();
+                            }
+                        });
+
+                        observer.observe(targetNode, {
+                            childList: true,
+                            subtree: true
+                        });
+
+                        // 超时 5 秒后停止观察
+                        setTimeout(() => {
+                            observer.disconnect();
+                            executeSearch();
+                        }, 5000);
+                    }
+
+                    // 启动观察
+                    observeDomLoad();
+                }
+
+                // 主逻辑：初始化脚本
+                function initDmmSearchLinks() {
+                    if (!window.location.href.startsWith('https://www.dmm.co.jp/dc/doujin/')) {
+                        console.log('Page is not under https://www.dmm.co.jp/dc/doujin/, script not executed.');
+                        return;
+                    }
+
+                    // 尝试两种可能的 h1 选择器
+                    const selectors = ['h1.productTitle__txt', 'header.detail_header'];
+                    let h1Text = '';
+                    let selectedSelector = '';
+
+                    for (const selector of selectors) {
+                        h1Text = getH1Text(selector);
+                        if (h1Text) {
+                            selectedSelector = selector;
+                            break;
+                        }
+                    }
+
+                    if (!h1Text) {
+                        console.warn('No valid h1 text found with selectors:', selectors.join(', '));
+                        return;
+                    }
+
+                    addDmmDoujinSearchLink(selectedSelector, h1Text, '试试其他搜索：');
+                }
+
+                // 执行脚本
+                try {
+                    initDmmSearchLinks();
+                } catch (error) {
+                    console.error('Error initializing DMM search links:', error);
+                }
+
+            });
 
             break;
 
@@ -1800,7 +2117,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null && document.querySelector('#how') === null) {
                         ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", cssText, "", "missavX", 2, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "", "missavP", 3, "button");
-                        ele_dynamicAppend("div.mt-4", "href", "如何下载视频?", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
+                        ele_dynamicAppend("div.mt-4", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
                     }
 
                     if (document.getElementById("how") !== null) {
@@ -1820,7 +2137,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", cssText, "video_Play()", "missavX", 0, "button");
                     ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", cssText, "fullscreen()", "missavFullScreen", 2, "button");
                     ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "video_pause()", "missavPause", 1, "button");
-                    ele_dynamicAppend("div.mt-4", "href", "如何下载视频", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
+                    ele_dynamicAppend("div.mt-4", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
                     // 添加监听器
 
                     if (document.getElementById("how") !== null) {
@@ -2094,6 +2411,284 @@ function fileDownload(url, download = true) {
 
 
 
+function _91porny_dl() {
+    if (document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src
+    ) {
+
+        var css = document.createElement('style')
+        css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
+        css.id = 'porn91'
+        document.body.appendChild(css)
+
+        if (document.getElementById('mp4Download') == null) {
+            var mp4URL = document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src
+            var mp4Download = document.createElement('a')
+            mp4Download.download = document.title.toString()
+            mp4Download.target = '_blank'
+            mp4Download.id = 'mp4Download'
+            mp4Download.href = mp4URL
+
+            if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
+                mp4Download.textContent = '无广播放'
+            } else {
+                mp4Download.textContent = '下载M3U8文件'
+            }
+
+            var button_download = document.createElement('button')
+            button_download.style = 'font-size:12px; padding:10px; position:static;right:0px;top:216px;border:0px; background:#3286cd;color:white;font-weight:bolder;height:38px;'
+            button_download.textContent = '复制本视频的M3U8文件地址'
+            button_download.id = 'copyURL'
+
+            var button_alert = document.createElement('button')
+            button_alert.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:yellowgreen;color:white;font-weight:bolder;height:38px;'
+            button_alert.textContent = '如何下载M3U8视频?'
+            button_alert.id = 'alertDownload'
+
+            var button_downloadOnline = document.createElement('button')
+            button_downloadOnline.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:rgb(34, 90, 137);color:white;font-weight:bolder;height:38px;'
+            button_downloadOnline.textContent = '在线下载本视频'
+            button_downloadOnline.id = 'downloadOnline'
+
+
+            var button_hidden = document.createElement('button')
+            button_hidden.style = 'font-size:12px; padding:10px; position:static;right:0px;top:482px;border:0px; background:black;color:white;font-weight:bolder;height:38px;'
+            button_hidden.textContent = '隐藏按钮'
+            button_hidden.id = 'hiddenButton'
+
+            button_alert.addEventListener('click', (() => {
+                window.open('https://limbopro.com/archives/M3U8-Downloader.html', '_blank')
+            }))
+
+
+            const downloadOnlineurl = 'https://anyconv.com/m3u8-to-mp4-converter/' + "#" + mp4URL
+
+            /* button_downloadOnline.addEventListener('click', (() => {
+                window.open(downloadOnlineurl, '_blank')
+            }))*/
+
+            button_hidden.addEventListener('click', (() => {
+                document.getElementById('mp4Download').style.display = 'none'
+                document.getElementById('copyURL').style.display = 'none'
+                document.getElementById('alertDownload').style.display = 'none'
+                document.getElementById('hiddenButton').style.display = 'none'
+            }))
+
+            button_download.addEventListener('click', (() => {
+                if (document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src !== null) {
+                    const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
+                    textarea.id = 'fuck91porn'
+                    document.querySelector('#copyURL').appendChild(textarea)
+                    textarea.value = mp4URL
+                    textarea.select();
+                    document.execCommand('copy', true); // 执行复制
+                    document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
+                    document.querySelector('#copyURL').textContent = '复制成功'
+
+                    setTimeout(() => { // ↩️按钮恢复原状
+                        document.querySelector('#copyURL').classList.remove('copysuccess')
+                        document.querySelector('#copyURL').textContent = '复制本视频的M3U8文件地址'
+                    }, 2500)
+
+                    if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
+                        document.getElementById('ffuck91porn').remove()
+                    }
+                } else {
+                    alert('未找到视频下载地址！')
+                }
+            }))
+
+            document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_download, document.querySelectorAll('h4.container-title')[0])
+            document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_downloadOnline, document.querySelectorAll('h4.container-title')[0])
+            document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('h4.container-title')[0])
+        }
+
+
+        // online download button script
+        // 获取按钮
+        const button = document.getElementById('downloadOnline');
+
+        // 动态创建样式
+        function createStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                        /* 遮罩层样式 */
+                        .overlay {
+                            display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        z-index: 999;
+                }
+
+                        /* 悬浮窗样式 */
+                        .modal {
+                        overflow: auto;
+                        height: 75%;
+                        align-content: center;
+                        display: none;
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: white;
+                        padding: 30px;
+                        border: 2px solid #007bff;
+                        border-radius: 10px;
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        text-align: center;
+                        max-width: 400px;
+                        width: 90%;
+                        animation: modalFadeIn 0.3s ease-out;
+                }
+
+                        /* 动画效果 */
+                        @keyframes modalFadeIn {
+                            from {
+                            opacity: 0;
+                        transform: translate(-50%, -60%);
+                    }
+                        to {
+                            opacity: 1;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                        .modal h3 {
+                            color: #007bff;
+                        margin-top: 0;
+                        font-size: 1.5em;
+                }
+
+                        .modal p {
+                            color: #333;
+                        font-size: 1.1em;
+                        margin: 15px 0;
+                }
+
+                        .modal a {
+                            display: inline-block;
+                        background-color: #007bff;
+                        color: white;
+                        padding: 12px 24px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        transition: background-color 0.3s;
+                        margin-top: 15px;
+                }
+
+                        .modal a:hover {
+                            background - color: #0056b3;
+                        transform: translateY(-2px);
+                }
+
+                        .close-btn {
+                            background-color: #dc3545;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin-top: 10px;
+                        font-size: 14px;
+                }
+
+                        .close-btn:hover {
+                            background-color: #c82333;
+                }
+                        `;
+            document.head.appendChild(style);
+            return style;
+        }
+
+        // 动态创建DOM元素
+        function createModalElements() {
+            // 创建遮罩层
+            const overlay = document.createElement('div');
+            overlay.id = 'overlay';
+            overlay.className = 'overlay';
+
+            // 创建悬浮窗
+            const modal = document.createElement('div');
+            modal.id = 'modal';
+            modal.className = 'modal';
+            modal.innerHTML = `
+                        <h3>✅ 已复制M3U8文件地址</h3>
+                        <p>1.点击下方按钮<span>跳转到在线解析网站 anyconv</>，<span>2.粘贴M3U8文件地址</>，3.然后点击<span>转换为MP4格式</>进行下载即可！<br><br>(P.S. 需要注意的是，使用在线解析下载长视频(大于128Mb)可能体验不佳或不如App，可查看更多下载方法选择合适的App下载长视频；点击页面上的非弹窗部分关闭本弹窗)</p>
+                        <a href="https://anyconv.com/m3u8-to-mp4-converter/" target="_blank">跳转到下载网站 anyconv</a><br>
+                        <a href="https://limbopro.com/archives/M3U8-Downloader.html" target="_blank">查看更多下载方法</a>
+                        <!-- <br><button class="close-btn" onclick="closeModal()">关闭</button> --!>
+                            `;
+
+            // 添加到页面
+            document.body.appendChild(overlay);
+            document.body.appendChild(modal);
+
+            return { overlay, modal };
+        }
+
+
+        // 执行函数
+        function executeFunction() {
+            document.getElementById('copyURL').click()
+            console.log('函数已执行');
+
+            // 创建样式（只创建一次）
+            if (!document.querySelector('style[data-modal-styles]')) {
+                const style = createStyles();
+                style.setAttribute('data-modal-styles', 'true');
+            }
+
+            // 创建DOM元素（只创建一次）
+            if (!document.getElementById('modal')) {
+                createModalElements();
+            }
+
+            // 显示悬浮窗
+            showModal();
+        }
+
+        // 按钮点击事件
+        button.addEventListener('click', executeFunction);
+
+        // 点击遮罩层关闭悬浮窗
+        document.addEventListener('click', function (e) {
+            if (e.target.id === 'overlay') {
+                closeModal();
+            }
+        });
+
+        // ESC键关闭悬浮窗
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // 显示悬浮窗
+        function showModal() {
+            const overlay = document.getElementById('overlay');
+            const modal = document.getElementById('modal');
+
+            overlay.style.display = 'block';
+            modal.style.display = 'block';
+        }
+
+        // 关闭悬浮窗
+        function closeModal() {
+            const overlay = document.getElementById('overlay');
+            const modal = document.getElementById('modal');
+
+            overlay.style.display = 'none';
+            modal.style.display = 'none';
+        }
+    }
+}
+
 
 function _91porn_dl() { // 下载视频
 
@@ -2125,7 +2720,7 @@ function _91porn_dl() { // 下载视频
 
             var button_alert = document.createElement('button')
             button_alert.style = 'padding:12px; position:fixed;right:0px;top:322px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
-            button_alert.textContent = '如何下载视频?'
+            button_alert.textContent = '如何下载本视频？'
             button_alert.id = 'alertDownload'
 
             button_alert.addEventListener('click', (() => {

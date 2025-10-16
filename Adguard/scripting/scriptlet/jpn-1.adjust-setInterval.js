@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["reward_countdown"],["timerId","1000"],[".run()}","1000"]];
-const hostnamesMap = new Map([["shindanmaker.com",0],["portal.game.sycasualgames.com",1],["collepic.net",2]]);
+const argsList = [["reward_countdown"],["timerId","1000"],[".run()}","1000"],["skipcnt","1000","0.001"]];
+const hostnamesMap = new Map([["shindanmaker.com",0],["portal.game.sycasualgames.com",1],["collepic.net",2],["portal.game.success-corp.jp",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

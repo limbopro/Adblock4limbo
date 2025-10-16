@@ -28,7 +28,7 @@
 /******************************************************************************/
 
 const genericSelectorMap = undefined;
-const genericExceptionSieve = [10589953,11450765,6050898,674161,674156,2899287];
+const genericExceptionSieve = [1793,2445,1106,2417,2412,3415];
 const genericExceptionMap = [["chirantannews.in",".header-ads"],["divyalive.com",".header-ads"],["abnewslive.in",".np-ads-wrapper\n.np-header-ads-area"],["nepalimato.com",".np-ads-wrapper"],["onlinejalandhar.com",".np-ads-wrapper\n.np-header-ads-area"],["dainikbharatbhaskar.com",".td-ad-m\n.td-ad-p\n.td-ad-tp"],["dainikdawa.com",".td-ad-m\n.td-ad-p\n.td-ad-tp"]];
 
 if ( genericSelectorMap ) {

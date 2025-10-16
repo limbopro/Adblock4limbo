@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[12989194,".fold_home__pasica_banner:not(html, body, :empty)"],[15451211,"#googleglava"],[10680956,"#googledesnovertikalna"],[5855077,"#googleispodteksta"],[15445665,"#googledolje"],[10652823,".reklama-na-indexu:not(html, body, :empty)"],[6879724,".homepage-top-google-banner:not(html, body, :empty)"],[13987257,".js-gpt-ad:not(html, body, :empty)"],[2689874,".banner-izdvojeno:not(html, body, :empty)"],[8608347,".elementor-widget-smartmag-codes:not(html, body, :empty)"],[14656153,".banner__placeholder:not(html, body, :empty)"],[1377122,".cxenseignore:not(html, body, :empty, [id])"],[13371521,"div.lesnina_widget"],[751037,".td-a-ad:not(html, body, :empty)"],[3276505,".adaplace:not(html, body, :empty)"],[12768321,".gpt-ad-banner:not(html, body, :empty)"],[4474177,".ad-loading-placeholder:not(html, body, :empty)"],[4291315,".gddanas:not(html, body, :empty)"]];
-const genericExceptionSieve = [10956523];
+const genericSelectorMap = [[778,".fold_home__pasica_banner:not(html, body, :empty)"],[1099,"#googleglava"],[2684,"#googledesnovertikalna"],[1893,"#googleispodteksta"],[3745,"#googledolje"],[3223,".reklama-na-indexu:not(html, body, :empty)"],[2540,".homepage-top-google-banner:not(html, body, :empty)"],[3513,".js-gpt-ad:not(html, body, :empty)"],[2898,".banner-izdvojeno:not(html, body, :empty)"],[2651,".elementor-widget-smartmag-codes:not(html, body, :empty)"],[665,".banner__placeholder:not(html, body, :empty)"],[866,".cxenseignore:not(html, body, :empty, [id])"],[2177,"div.lesnina_widget"],[1469,".td-a-ad:not(html, body, :empty)"],[3801,".adaplace:not(html, body, :empty)"],[1089,".gpt-ad-banner:not(html, body, :empty)"],[1345,".ad-loading-placeholder:not(html, body, :empty)"],[2803,".gddanas:not(html, body, :empty)"]];
+const genericExceptionSieve = [3819];
 const genericExceptionMap = [["radiosarajevo.ba",".iAdserver"]];
 
 if ( genericSelectorMap ) {

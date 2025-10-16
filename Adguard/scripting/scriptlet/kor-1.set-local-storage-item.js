@@ -20,274 +20,109 @@
 
 */
 
-// ruleset: chn-0
+// ruleset: kor-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_preventFetch() {
+(function uBOL_setLocalStorageItem() {
 
 /******************************************************************************/
 
-function preventFetch(...args) {
-    preventFetchFn(false, ...args);
+function setLocalStorageItem(key = '', value = '') {
+    setLocalStorageItemFn('local', false, key, value);
 }
 
-function preventFetchFn(
+function setLocalStorageItemFn(
+    which = 'local',
     trusted = false,
-    propsToMatch = '',
-    responseBody = '',
-    responseType = ''
+    key = '',
+    value = '',
 ) {
-    const safe = safeSelf();
-    const setTimeout = self.setTimeout;
-    const scriptletName = `${trusted ? 'trusted-' : ''}prevent-fetch`;
-    const logPrefix = safe.makeLogPrefix(
-        scriptletName,
-        propsToMatch,
-        responseBody,
-        responseType
-    );
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 4);
-    const needles = [];
-    for ( const condition of safe.String_split.call(propsToMatch, /\s+/) ) {
-        if ( condition === '' ) { continue; }
-        const pos = condition.indexOf(':');
-        let key, value;
-        if ( pos !== -1 ) {
-            key = condition.slice(0, pos);
-            value = condition.slice(pos + 1);
-        } else {
-            key = 'url';
-            value = condition;
-        }
-        needles.push({ key, pattern: safe.initPattern(value, { canNegate: true }) });
-    }
-    const validResponseProps = {
-        ok: [ false, true ],
-        statusText: [ '', 'Not Found' ],
-        type: [ 'basic', 'cors', 'default', 'error', 'opaque' ],
-    };
-    const responseProps = {
-        statusText: { value: 'OK' },
-    };
-    if ( /^\{.*\}$/.test(responseType) ) {
-        try {
-            Object.entries(JSON.parse(responseType)).forEach(([ p, v ]) => {
-                if ( validResponseProps[p] === undefined ) { return; }
-                if ( validResponseProps[p].includes(v) === false ) { return; }
-                responseProps[p] = { value: v };
-            });
-        }
-        catch { }
-    } else if ( responseType !== '' ) {
-        if ( validResponseProps.type.includes(responseType) ) {
-            responseProps.type = { value: responseType };
-        }
-    }
-    proxyApplyFn('fetch', function fetch(context) {
-        const { callArgs } = context;
-        const details = callArgs[0] instanceof self.Request
-            ? callArgs[0]
-            : Object.assign({ url: callArgs[0] }, callArgs[1]);
-        let proceed = true;
-        try {
-            const props = new Map();
-            for ( const prop in details ) {
-                let v = details[prop];
-                if ( typeof v !== 'string' ) {
-                    try { v = safe.JSON_stringify(v); }
-                    catch { }
-                }
-                if ( typeof v !== 'string' ) { continue; }
-                props.set(prop, v);
-            }
-            if ( safe.logLevel > 1 || propsToMatch === '' && responseBody === '' ) {
-                const out = Array.from(props).map(a => `${a[0]}:${a[1]}`);
-                safe.uboLog(logPrefix, `Called: ${out.join('\n')}`);
-            }
-            if ( propsToMatch === '' && responseBody === '' ) {
-                return context.reflect();
-            }
-            proceed = needles.length === 0;
-            for ( const { key, pattern } of needles ) {
-                if (
-                    pattern.expect && props.has(key) === false ||
-                    safe.testPattern(pattern, props.get(key)) === false
-                ) {
-                    proceed = true;
-                    break;
-                }
-            }
-        } catch {
-        }
-        if ( proceed ) {
-            return context.reflect();
-        }
-        return Promise.resolve(generateContentFn(trusted, responseBody)).then(text => {
-            safe.uboLog(logPrefix, `Prevented with response "${text}"`);
-            const response = new Response(text, {
-                headers: {
-                    'Content-Length': text.length,
-                }
-            });
-            const props = Object.assign(
-                { url: { value: details.url } },
-                responseProps
-            );
-            safe.Object_defineProperties(response, props);
-            if ( extraArgs.throttle ) {
-                return new Promise(resolve => {
-                    setTimeout(( ) => { resolve(response); }, extraArgs.throttle);
-                });
-            }
-            return response;
-        });
-    });
-}
+    if ( key === '' ) { return; }
 
-function generateContentFn(trusted, directive) {
-    const safe = safeSelf();
-    const randomize = len => {
-        const chunks = [];
-        let textSize = 0;
-        do {
-            const s = safe.Math_random().toString(36).slice(2);
-            chunks.push(s);
-            textSize += s.length;
-        }
-        while ( textSize < len );
-        return chunks.join(' ').slice(0, len);
-    };
-    if ( directive === 'true' ) {
-        return randomize(10);
+    // For increased compatibility with AdGuard
+    if ( value === 'emptyArr' ) {
+        value = '[]';
+    } else if ( value === 'emptyObj' ) {
+        value = '{}';
     }
-    if ( directive === 'emptyObj' ) {
-        return '{}';
-    }
-    if ( directive === 'emptyArr' ) {
-        return '[]';
-    }
-    if ( directive === 'emptyStr' ) {
-        return '';
-    }
-    if ( directive.startsWith('length:') ) {
-        const match = /^length:(\d+)(?:-(\d+))?$/.exec(directive);
-        if ( match === null ) { return ''; }
-        const min = parseInt(match[1], 10);
-        const extent = safe.Math_max(parseInt(match[2], 10) || 0, min) - min;
-        const len = safe.Math_min(min + extent * safe.Math_random(), 500000);
-        return randomize(len | 0);
-    }
-    if ( directive.startsWith('war:') ) {
-        if ( scriptletGlobals.warOrigin === undefined ) { return ''; }
-        return new Promise(resolve => {
-            const warOrigin = scriptletGlobals.warOrigin;
-            const warName = directive.slice(4);
-            const fullpath = [ warOrigin, '/', warName ];
-            const warSecret = scriptletGlobals.warSecret;
-            if ( warSecret !== undefined ) {
-                fullpath.push('?secret=', warSecret);
-            }
-            const warXHR = new safe.XMLHttpRequest();
-            warXHR.responseType = 'text';
-            warXHR.onloadend = ev => {
-                resolve(ev.target.responseText || '');
-            };
-            warXHR.open('GET', fullpath.join(''));
-            warXHR.send();
-        }).catch(( ) => '');
-    }
+
+    const trustedValues = [
+        '',
+        'undefined', 'null',
+        '{}', '[]', '""',
+        '$remove$',
+        ...getSafeCookieValuesFn(),
+    ];
+
     if ( trusted ) {
-        return directive;
+        if ( value.includes('$now$') ) {
+            value = value.replaceAll('$now$', Date.now());
+        }
+        if ( value.includes('$currentDate$') ) {
+            value = value.replaceAll('$currentDate$', `${Date()}`);
+        }
+        if ( value.includes('$currentISODate$') ) {
+            value = value.replaceAll('$currentISODate$', (new Date()).toISOString());
+        }
+    } else {
+        const normalized = value.toLowerCase();
+        const match = /^("?)(.+)\1$/.exec(normalized);
+        const unquoted = match && match[2] || normalized;
+        if ( trustedValues.includes(unquoted) === false ) {
+            if ( /^-?\d+$/.test(unquoted) === false ) { return; }
+            const n = parseInt(unquoted, 10) || 0;
+            if ( n < -32767 || n > 32767 ) { return; }
+        }
     }
-    return '';
+
+    try {
+        const storage = self[`${which}Storage`];
+        if ( value === '$remove$' ) {
+            const safe = safeSelf();
+            const pattern = safe.patternToRegex(key, undefined, true );
+            const toRemove = [];
+            for ( let i = 0, n = storage.length; i < n; i++ ) {
+                const key = storage.key(i);
+                if ( pattern.test(key) ) { toRemove.push(key); }
+            }
+            for ( const key of toRemove ) {
+                storage.removeItem(key);
+            }
+        } else {
+            storage.setItem(key, `${value}`);
+        }
+    } catch {
+    }
 }
 
-function proxyApplyFn(
-    target = '',
-    handler = ''
-) {
-    let context = globalThis;
-    let prop = target;
-    for (;;) {
-        const pos = prop.indexOf('.');
-        if ( pos === -1 ) { break; }
-        context = context[prop.slice(0, pos)];
-        if ( context instanceof Object === false ) { return; }
-        prop = prop.slice(pos+1);
-    }
-    const fn = context[prop];
-    if ( typeof fn !== 'function' ) { return; }
-    if ( proxyApplyFn.CtorContext === undefined ) {
-        proxyApplyFn.ctorContexts = [];
-        proxyApplyFn.CtorContext = class {
-            constructor(...args) {
-                this.init(...args);
-            }
-            init(callFn, callArgs) {
-                this.callFn = callFn;
-                this.callArgs = callArgs;
-                return this;
-            }
-            reflect() {
-                const r = Reflect.construct(this.callFn, this.callArgs);
-                this.callFn = this.callArgs = this.private = undefined;
-                proxyApplyFn.ctorContexts.push(this);
-                return r;
-            }
-            static factory(...args) {
-                return proxyApplyFn.ctorContexts.length !== 0
-                    ? proxyApplyFn.ctorContexts.pop().init(...args)
-                    : new proxyApplyFn.CtorContext(...args);
-            }
-        };
-        proxyApplyFn.applyContexts = [];
-        proxyApplyFn.ApplyContext = class {
-            constructor(...args) {
-                this.init(...args);
-            }
-            init(callFn, thisArg, callArgs) {
-                this.callFn = callFn;
-                this.thisArg = thisArg;
-                this.callArgs = callArgs;
-                return this;
-            }
-            reflect() {
-                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
-                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
-                proxyApplyFn.applyContexts.push(this);
-                return r;
-            }
-            static factory(...args) {
-                return proxyApplyFn.applyContexts.length !== 0
-                    ? proxyApplyFn.applyContexts.pop().init(...args)
-                    : new proxyApplyFn.ApplyContext(...args);
-            }
-        };
-        proxyApplyFn.isCtor = new Map();
-    }
-    if ( proxyApplyFn.isCtor.has(target) === false ) {
-        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
-    }
-    const fnStr = fn.toString();
-    const toString = (function toString() { return fnStr; }).bind(null);
-    const proxyDetails = {
-        apply(target, thisArg, args) {
-            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
-        },
-        get(target, prop) {
-            if ( prop === 'toString' ) { return toString; }
-            return Reflect.get(target, prop);
-        },
-    };
-    if ( proxyApplyFn.isCtor.get(target) ) {
-        proxyDetails.construct = function(target, args) {
-            return handler(proxyApplyFn.CtorContext.factory(target, args));
-        };
-    }
-    context[prop] = new Proxy(fn, proxyDetails);
+function getSafeCookieValuesFn() {
+    return [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'disallow', 'deny',
+        'allowed', 'denied',
+        'approved', 'disapproved',
+        'checked', 'unchecked',
+        'dismiss', 'dismissed',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'essential', 'nonessential',
+        'forbidden', 'forever',
+        'hide', 'hidden',
+        'necessary', 'required',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+        'all', 'none', 'functional',
+        'granted', 'done',
+        'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
+    ];
 }
 
 function safeSelf() {
@@ -483,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adsbygoogle.js"],["pagead2.googlesyndication.com"],["/googlesyndication\\.com|doubleclick\\.net/"],["www3.doubleclick.net"],["/pagead2\\.googlesyndication\\.com|\\/fbevents\\.js/"]];
-const hostnamesMap = new Map([["helper-employer.com",0],["slashview.com",1],["fsbot.xyz",1],["mpyit.com",1],["4gtv.tv",1],["wandhi.com",2],["taiwanlibrarysearch.herokuapp.com",3],["linetv.tw",4]]);
+const argsList = [["/adblock_detected/","$remove$"]];
+const hostnamesMap = new Map([["dcinside.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -552,7 +387,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { preventFetch(...argsList[i]); }
+    try { setLocalStorageItem(...argsList[i]); }
     catch { }
 }
 

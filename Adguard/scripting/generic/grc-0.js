@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[12341963,".adsbox"],[1786351,"DIV.agores300"],[8886709,"TABLE.advright"]];
-const genericExceptionSieve = [9587466,1774173,4072598,3180160,8371964,7019440,8328142];
+const genericSelectorMap = [[715,".adsbox"],[495,"DIV.agores300"],[2485,"TABLE.advright"]];
+const genericExceptionSieve = [2826,605,1174,1664,3836,2992,974];
 const genericExceptionMap = [["aggeliestanea.gr",".adResult"],["athensmagazine.gr",".ad_wrapper"],["ediva.gr",".pub_300x250\n.pub_728x90\n.text-ad\n.textAd\n.text_ad"]];
 
 if ( genericSelectorMap ) {

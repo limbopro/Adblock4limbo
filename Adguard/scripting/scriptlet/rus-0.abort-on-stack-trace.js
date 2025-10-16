@@ -340,8 +340,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["Object.prototype.autoplay","assets"],["Object.prototype.loadAdvertScriptMode","/yastatic\\.net/"],["document.createElement","checkAboba"],["document.getElementById","/723-|ai-2-/"],["fetch","eval"],["Object.prototype.parallax","window.onload"],["HTMLVideoElement.prototype.play","onCanPlay"],["Object.prototype.crossDomain","ecbrStart"]];
-const hostnamesMap = new Map([["tvzvezda.ru",0],["ya.ru",1],["shadowcore.ru",2],["ai-next.ru",3],["forums.rusmedserv.com",4],["porno365.*",5],["tass.ru",6],["www.ukr.net",7]]);
+const argsList = [["HTMLVideoElement.prototype.play","/index-"],["Object.prototype.autoplay","assets"],["Object.prototype.dispatcher","fad.js"],["Object.prototype.loadAdvertScriptMode","/yastatic\\.net/"],["document.createElement","checkAboba"],["document.getElementById","/723-|ai-2-/"],["fetch","eval"],["Object.prototype.parallax","window.onload"],["HTMLVideoElement.prototype.play","onCanPlay"],["Object.prototype.crossDomain","ecbrStart"]];
+const hostnamesMap = new Map([["dtf.ru",0],["vc.ru",0],["tvzvezda.ru",1],["vk.com",2],["vk.ru",2],["ya.ru",3],["shadowcore.ru",4],["ai-next.ru",5],["forums.rusmedserv.com",6],["porno365.*",7],["tass.ru",8],["www.ukr.net",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

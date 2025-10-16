@@ -369,7 +369,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["script","realCookieBanner"]];
-const hostnamesMap = new Map([["rittmeisterdestille.de",0],["minaprotocol.com",0]]);
+const hostnamesMap = new Map([["frixtender.de",0],["rittmeisterdestille.de",0],["minaprotocol.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

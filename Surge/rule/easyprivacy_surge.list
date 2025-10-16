@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510121014
+## ! Version: 202510161042
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Oct 2025 10:14 UTC
+## ! Last modified: 16 Oct 2025 10:42 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: b54176647c30fc98585199160a5300785b6b59d0
+## ! Commit: 7a2c5c29a9f4af8d32f3adac79138f3045a2f8e7
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -394,6 +394,7 @@ DOMAIN-SUFFIX,siteperformancetest.net
 DOMAIN-SUFFIX,sjpf.io
 DOMAIN-SUFFIX,skcrtxr.com
 DOMAIN-SUFFIX,smartmetrics.co.uk
+DOMAIN-SUFFIX,smartytouch.co
 DOMAIN-SUFFIX,snptrk.com
 DOMAIN-SUFFIX,soapfighters.com
 DOMAIN-SUFFIX,solutionshindsight.net
@@ -762,6 +763,7 @@ DOMAIN-SUFFIX,captivatingcanyon.com
 DOMAIN-SUFFIX,captivatingillusion.com
 DOMAIN-SUFFIX,captivatingpanorama.com
 DOMAIN-SUFFIX,captivatingperformance.com
+DOMAIN-SUFFIX,cardmethod.com
 DOMAIN-SUFFIX,carefuldolls.com
 DOMAIN-SUFFIX,caringcast.com
 DOMAIN-SUFFIX,carloforward.com
@@ -1209,6 +1211,7 @@ DOMAIN-SUFFIX,gloomyseason.com
 DOMAIN-SUFFIX,gloriousbeef.com
 DOMAIN-SUFFIX,glowingmeadow.com
 DOMAIN-SUFFIX,gluedpixel.com
+DOMAIN-SUFFIX,goddesslamps.com
 DOMAIN-SUFFIX,godseedband.com
 DOMAIN-SUFFIX,goldfishgrowth.com
 DOMAIN-SUFFIX,goldstudies.com
@@ -1248,6 +1251,7 @@ DOMAIN-SUFFIX,guiltlessbasketball.com
 DOMAIN-SUFFIX,gulliblegrip.com
 DOMAIN-SUFFIX,gustocooking.com
 DOMAIN-SUFFIX,gustygrandmother.com
+DOMAIN-SUFFIX,haikusoap.com
 DOMAIN-SUFFIX,halcyoncanyon.com
 DOMAIN-SUFFIX,halcyonsculpture.com
 DOMAIN-SUFFIX,haltingbadge.com
@@ -1340,6 +1344,7 @@ DOMAIN-SUFFIX,intelligentscissors.com
 DOMAIN-SUFFIX,intentlens.com
 DOMAIN-SUFFIX,internalcondition.com
 DOMAIN-SUFFIX,internalsink.com
+DOMAIN-SUFFIX,inventorycache.com
 DOMAIN-SUFFIX,inventtango.com
 DOMAIN-SUFFIX,iotapool.com
 DOMAIN-SUFFIX,irelandroad.com
@@ -1509,6 +1514,7 @@ DOMAIN-SUFFIX,mimosamajor.com
 DOMAIN-SUFFIX,mindfulgem.com
 DOMAIN-SUFFIX,mindlessmark.com
 DOMAIN-SUFFIX,mineinvoice.com
+DOMAIN-SUFFIX,minibilling.com
 DOMAIN-SUFFIX,minorcattle.com
 DOMAIN-SUFFIX,minuteburst.com
 DOMAIN-SUFFIX,miscreantmoon.com
@@ -1575,6 +1581,7 @@ DOMAIN-SUFFIX,nostalgicneed.com
 DOMAIN-SUFFIX,notcardboard.com
 DOMAIN-SUFFIX,notconscious.com
 DOMAIN-SUFFIX,notifyglass.com
+DOMAIN-SUFFIX,notrealcat.com
 DOMAIN-SUFFIX,noundictionary.com
 DOMAIN-SUFFIX,novaseekers.com
 DOMAIN-SUFFIX,nowaymail.com
@@ -1647,6 +1654,7 @@ DOMAIN-SUFFIX,physicstees.com
 DOMAIN-SUFFIX,pickmicro.com
 DOMAIN-SUFFIX,pietexture.com
 DOMAIN-SUFFIX,pigeonsetc.com
+DOMAIN-SUFFIX,pigmentpaper.com
 DOMAIN-SUFFIX,pinchsquirrel.com
 DOMAIN-SUFFIX,pincourse.com
 DOMAIN-SUFFIX,piquantgrove.com
@@ -1750,6 +1758,7 @@ DOMAIN-SUFFIX,quizzicalpartner.com
 DOMAIN-SUFFIX,quizzicalzephyr.com
 DOMAIN-SUFFIX,rabbitbreath.com
 DOMAIN-SUFFIX,rabbitrifle.com
+DOMAIN-SUFFIX,rackforstorage.com
 DOMAIN-SUFFIX,radiantcanopy.com
 DOMAIN-SUFFIX,radiantlullaby.com
 DOMAIN-SUFFIX,radiateprose.com
@@ -2238,6 +2247,7 @@ DOMAIN-SUFFIX,toolforthought.com
 DOMAIN-SUFFIX,toomanyalts.com
 DOMAIN-SUFFIX,topbookgifts.com
 DOMAIN-SUFFIX,topcrazypress.com
+DOMAIN-SUFFIX,topthrowbacks.com
 DOMAIN-SUFFIX,touristfuel.com
 DOMAIN-SUFFIX,toysbasics.com
 DOMAIN-SUFFIX,toytakeover.com
@@ -2391,6 +2401,7 @@ DOMAIN-SUFFIX,wrongpotato.com
 DOMAIN-SUFFIX,wrongwound.com
 DOMAIN-SUFFIX,wtaccesscontrol.com
 DOMAIN-SUFFIX,yieldingwoman.com
+DOMAIN-SUFFIX,youcandrawanything.com
 DOMAIN-SUFFIX,yourlifedream.com
 DOMAIN-SUFFIX,zephyrcatalyst.com
 DOMAIN-SUFFIX,zephyrlabyrinth.com
@@ -2826,6 +2837,7 @@ DOMAIN-SUFFIX,doh.cq0.co
 DOMAIN-SUFFIX,doppler-beacon.cbsivideo.com
 DOMAIN-SUFFIX,doppler-client-events.cbsivideo.com
 DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com
+DOMAIN-SUFFIX,duplexer.wix.com
 DOMAIN-SUFFIX,dx.mountain.com
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com
 DOMAIN-SUFFIX,e.channelexco.com
@@ -3823,6 +3835,7 @@ DOMAIN-SUFFIX,dc8na2hxrj29i.cloudfront.net
 DOMAIN-SUFFIX,dc8xl0ndzn2cb.cloudfront.net
 DOMAIN-SUFFIX,dcv4p460uqa46.cloudfront.net
 DOMAIN-SUFFIX,dd6zx4ibq538k.cloudfront.net
+DOMAIN-SUFFIX,de5zarwna0j2q.cloudfront.net
 DOMAIN-SUFFIX,dggaenaawxe8z.cloudfront.net
 DOMAIN-SUFFIX,dh0c1bz67fuho.cloudfront.net
 DOMAIN-SUFFIX,di2xwvxz1jrvu.cloudfront.net
@@ -41880,7 +41893,6 @@ DOMAIN-SUFFIX,log.etoday.co.kr
 DOMAIN-SUFFIX,log.kinolights.com
 DOMAIN-SUFFIX,log.tossinvest.com
 DOMAIN-SUFFIX,log.zdnet.co.kr
-DOMAIN-SUFFIX,nam.veta.naver.com
 DOMAIN-SUFFIX,pds.auction.co.kr
 DOMAIN-SUFFIX,rake.11st.co.kr
 DOMAIN-SUFFIX,sp.naver.com

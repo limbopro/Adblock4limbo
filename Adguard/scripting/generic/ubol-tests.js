@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[7956034,"#gcf #gcf1 .fail"],[1256738,"#ef #gcf2 .fail"]];
-const genericExceptionSieve = [1256738];
+const genericSelectorMap = [[1602,"#gcf #gcf1 .fail"],[3362,"#ef #gcf2 .fail"]];
+const genericExceptionSieve = [3362];
 const genericExceptionMap = [["ublockorigin.github.io","#ef #gcf2 .fail"],["localhost","#ef #gcf2 .fail"]];
 
 if ( genericSelectorMap ) {

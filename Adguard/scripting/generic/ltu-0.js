@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[14552029,".baneriai"],[11006813,".reklamos_nuorodos"],[5359179,".reklamos_tarpas"],[14351896,".top_reklama"]];
+const genericSelectorMap = [[3037,".baneriai"],[861,".reklamos_nuorodos"],[1611,".reklamos_tarpas"],[3608,".top_reklama"]];
 const genericExceptionSieve = undefined;
 const genericExceptionMap = undefined;
 

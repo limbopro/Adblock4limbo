@@ -62,35 +62,17 @@ function hrefSanitizer(
         }
         return '';
     };
-    const extractParam = (href, source) => {
-        if ( Boolean(source) === false ) { return href; }
-        const recursive = source.includes('?', 1);
-        const end = recursive ? source.indexOf('?', 1) : source.length;
-        try {
-            const url = new URL(href, document.location);
-            let value = url.searchParams.get(source.slice(1, end));
-            if ( value === null ) { return href }
-            if ( recursive ) { return extractParam(value, source.slice(end)); }
-            return value;
-        } catch {
-        }
-        return href;
-    };
     const extractURL = (elem, source) => {
         if ( /^\[.*\]$/.test(source) ) {
             return elem.getAttribute(source.slice(1,-1).trim()) || '';
         }
         if ( source === 'text' ) {
             return elem.textContent
-                .replace(/^[^\x21-\x7e]+/, '') // remove leading invalid characters
-                .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
-            ;
+                .replace(/^[^\x21-\x7e]+/, '')  // remove leading invalid characters
+                .replace(/[^\x21-\x7e]+$/, ''); // remove trailing invalid characters
         }
-        if ( source.startsWith('?') === false ) { return ''; }
-        const steps = source.replace(/(\S)\?/g, '\\1?').split(/\s+/);
-        const url = steps.length === 1
-            ? extractParam(elem.href, source)
-            : urlSkip(elem.href, false, steps);
+        const steps = source.replace(/(\S)\?/g, '\\1 ?').split(/\s+/);
+        const url = urlSkip(elem.href, false, steps);
         if ( url === undefined ) { return; }
         return url.replace(/ /g, '%20');
     };
@@ -460,8 +442,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href^=\"https://app.adjust.com/\"]","?redirect"],["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"],["a[href^=\"https://al.dmm.com/?lurl=\"]","?lurl"],["a[href^=\"https://affiliate.suruga-ya.jp/modules/af/af_jump.php?\"]","?goods_url"],["a[href*=\"hb.afl.rakuten.co.jp/hgc/\"][href*=\"/?pc=\"]","?pc"],["a[href*=\"ck.jp.ap.valuecommerce.com/servlet/referral?\"][href*=\"&vc_url=\"]","?vc_url"],["a[href^=\"https://adclick.g.doubleclick.net/\"][href*=\"adurl=\"]","?adurl"]];
-const hostnamesMap = new Map([["www.yahoo.co.jp",0],["figure-times.com",1],["figsoku.net",[2,3,4,5]],["safeframe.googlesyndication.com",6]]);
+const argsList = [["a[href^=\"https://app.adjust.com/\"]","?redirect"],["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"],["a[href^=\"https://al.dmm.com/?lurl=\"]","?lurl"],["a[href^=\"https://affiliate.suruga-ya.jp/modules/af/af_jump.php?\"]","?goods_url"],["a[href*=\"hb.afl.rakuten.co.jp/hgc/\"][href*=\"/?pc=\"]","?pc"],["a[href*=\"ck.jp.ap.valuecommerce.com/servlet/referral?\"][href*=\"&vc_url=\"]","?vc_url"],["a[href^=\"https://al.fanza.co.jp/?lurl=\"]","?lurl"],["a[href^=\"https://adclick.g.doubleclick.net/\"][href*=\"adurl=\"]","?adurl"]];
+const hostnamesMap = new Map([["www.yahoo.co.jp",0],["figure-times.com",1],["figsoku.net",[2,3,4,5]],["ura-akiba.jp",6],["safeframe.googlesyndication.com",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

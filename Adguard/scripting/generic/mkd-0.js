@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[11895552,"#kae_unique_id_0"],[16153475,".adsbygoogle"]];
-const genericExceptionSieve = [8251810];
+const genericSelectorMap = [[768,"#kae_unique_id_0"],[2947,".adsbygoogle"]];
+const genericExceptionSieve = [2466];
 const genericExceptionMap = [["stream.mk",".ad-placement"]];
 
 if ( genericSelectorMap ) {

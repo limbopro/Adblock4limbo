@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[9121034,".grecaptcha-badge"],[911183,"#gdpr-banner"],[10215140,".gdpr-popup"],[878155,".td-more-articles-box"],[14687007,".cc-type-info"],[2386694,"#iframe_cookie"]];
+const genericSelectorMap = [[3338,".grecaptcha-badge"],[1871,"#gdpr-banner"],[3812,".gdpr-popup"],[1611,".td-more-articles-box"],[2847,".cc-type-info"],[2822,"#iframe_cookie"]];
 const genericExceptionSieve = undefined;
 const genericExceptionMap = undefined;
 

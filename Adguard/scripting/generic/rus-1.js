@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[7954126,"a#mobtop[title^=\"Рейтинг мобильных сайтов\"]"]];
-const genericExceptionSieve = [7892988,3782327];
+const genericSelectorMap = [[3790,"a#mobtop[title^=\"Рейтинг мобильных сайтов\"]"]];
+const genericExceptionSieve = [4092,1719];
 const genericExceptionMap = [["inoreader.com",".ad_title"],["only-paper.*",".adbanner"]];
 
 if ( genericSelectorMap ) {

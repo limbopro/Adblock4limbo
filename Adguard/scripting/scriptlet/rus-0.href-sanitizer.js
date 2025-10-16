@@ -62,35 +62,17 @@ function hrefSanitizer(
         }
         return '';
     };
-    const extractParam = (href, source) => {
-        if ( Boolean(source) === false ) { return href; }
-        const recursive = source.includes('?', 1);
-        const end = recursive ? source.indexOf('?', 1) : source.length;
-        try {
-            const url = new URL(href, document.location);
-            let value = url.searchParams.get(source.slice(1, end));
-            if ( value === null ) { return href }
-            if ( recursive ) { return extractParam(value, source.slice(end)); }
-            return value;
-        } catch {
-        }
-        return href;
-    };
     const extractURL = (elem, source) => {
         if ( /^\[.*\]$/.test(source) ) {
             return elem.getAttribute(source.slice(1,-1).trim()) || '';
         }
         if ( source === 'text' ) {
             return elem.textContent
-                .replace(/^[^\x21-\x7e]+/, '') // remove leading invalid characters
-                .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
-            ;
+                .replace(/^[^\x21-\x7e]+/, '')  // remove leading invalid characters
+                .replace(/[^\x21-\x7e]+$/, ''); // remove trailing invalid characters
         }
-        if ( source.startsWith('?') === false ) { return ''; }
-        const steps = source.replace(/(\S)\?/g, '\\1?').split(/\s+/);
-        const url = steps.length === 1
-            ? extractParam(elem.href, source)
-            : urlSkip(elem.href, false, steps);
+        const steps = source.replace(/(\S)\?/g, '\\1 ?').split(/\s+/);
+        const url = urlSkip(elem.href, false, steps);
         if ( url === undefined ) { return; }
         return url.replace(/ /g, '%20');
     };
@@ -460,8 +442,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["[href*=\"?url=https\"]","?url"],["a[href*=\"&link=https://\"]","?link"],["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/away?\"]","?to"],["a[href*=\"/bitrix/rk.php?goto=https\"]","?goto"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/redir.php?r=\"]","?r"],["a[href*=\"/redir/\"]","?exturl"],["a[href*=\"/redir/\"]","?vzurl"],["a[href*=\"/redirect?to=\"]","?to"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"?goto=https\"]","?goto"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href][target=\"_blank\"]","?ulp"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/engine/dwn\"]","?xf"],["a[href^=\"https://go.2038.pro/\"][href*=\"?dl=\"]","?dl"],["a[href^=\"https://pikabu.ru/\"][href*=\"?u=http\"]","?u"],["a[href^=\"https://www.google.com/url?q=\"]"],["a[href^=\"https://www.youtube.com/redirect?event=\"][href*=\"&q=http\"]","?q"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"],["[href^=\"https://clicker.mail.ru/redir?u=\"]","?u"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"]];
-const hostnamesMap = new Map([["mp3party.net",0],["portalvirtualreality.ru",1],["softoroom.org",2],["vk.com",3],["vk.ru",3],["vkvideo.ru",3],["dzen.ru",4],["freehat.cc",5],["lalapaluza.ru",5],["game4you.top",6],["innal.top",6],["naylo.top",6],["rustorka.com",6],["rustorka.net",6],["rustorka.top",6],["rustorkacom.lib",6],["stalkermods.ru",7],["vz.ru",[8,9]],["dtf.ru",10],["vc.ru",[10,18]],["opennet.me",11],["opennet.ru",11],["appleinsider.ru",12],["kluchikipro.ru",13],["lifehacker.ru",[14,15]],["hot.game",15],["www.ixbt.com",16],["wotspeak.org",17],["pikabu.ru",19],["nsportal.ru",20],["youtube.com",21],["light.mail.ru",[22,23]],["my.mail.ru",24],["e.mail.ru",25],["octavius.mail.ru",25]]);
+const argsList = [["[href*=\"?url=https\"]","?url"],["a[href*=\"&link=https://\"]","?link"],["a[href*=\".php?go=\"]","?go"],["a[href*=\"/away.php?\"]","?to"],["a[href*=\"/away?\"]","?to"],["a[href*=\"/bitrix/rk.php?goto=https\"]","?goto"],["a[href*=\"/go.php\"]","?url"],["a[href*=\"/redir.php?r=\"]","?r"],["a[href*=\"/redir/\"]","?exturl"],["a[href*=\"/redir/\"]","?vzurl"],["a[href*=\"/redirect?to=\"]","?to"],["a[href*=\"://click.opennet.ru/cgi-bin/\"]","?to"],["a[href*=\"?goto=https\"]","?goto"],["a[href*=\"deeplink=\"]","?deeplink"],["a[href][rel*=\"sponsored\"][target=\"_blank\"]","?goto"],["a[href][target=\"_blank\"]","?ulp"],["a[href^=\"//www.ixbt.com/click/?c=\"]","[title]"],["a[href^=\"/engine/dwn\"]","?xf"],["a[href^=\"https://fixti.ru/download.php?files=\"]","?files"],["a[href^=\"https://go.2038.pro/\"][href*=\"?dl=\"]","?dl"],["a[href^=\"https://pikabu.ru/\"][href*=\"?u=http\"]","?u"],["a[href^=\"https://www.google.com/url?q=\"]"],["a[href^=\"https://www.youtube.com/redirect?event=\"][href*=\"&q=http\"]","?q"],["[href^=\"https://checklink.mail.ru/proxy?\"]","?url"],["[href^=\"https://click.mail.ru/redir?u=\"]","?u"],["[href^=\"https://clicker.mail.ru/redir?u=\"]","?u"],["[data-cke-saved-href^=\"https://checklink.mail.ru/proxy?\"]"]];
+const hostnamesMap = new Map([["mp3party.net",0],["portalvirtualreality.ru",1],["softoroom.org",2],["vk.com",3],["vk.ru",3],["vkvideo.ru",3],["dzen.ru",4],["freehat.cc",5],["lalapaluza.ru",5],["game4you.top",6],["innal.top",6],["naylo.top",6],["rustorka.com",6],["rustorka.net",6],["rustorka.top",6],["rustorkacom.lib",6],["stalkermods.ru",7],["vz.ru",[8,9]],["dtf.ru",10],["vc.ru",[10,19]],["opennet.me",11],["opennet.ru",11],["appleinsider.ru",12],["kluchikipro.ru",13],["lifehacker.ru",[14,15]],["hot.game",15],["www.ixbt.com",16],["wotspeak.org",17],["rsload.net",18],["pikabu.ru",20],["nsportal.ru",21],["youtube.com",22],["light.mail.ru",[23,24]],["my.mail.ru",25],["e.mail.ru",26],["octavius.mail.ru",26]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

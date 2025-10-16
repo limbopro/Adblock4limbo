@@ -368,8 +368,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["script","/function.*adblock/"],["script","url_popup"]];
-const hostnamesMap = new Map([["daemon-hentai.com",0],["animeid.tv",1]]);
+const argsList = [["script","/function.*adblock/"],["script","ads-popup"],["script","url_popup"]];
+const hostnamesMap = new Map([["daemon-hentai.com",0],["elpais.bo",1],["animeid.tv",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

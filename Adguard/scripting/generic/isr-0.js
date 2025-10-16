@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[9997183,"#HiddenMovie > [src^=\"http://www.youtube.com\"] + #video-blocker"],[11548607,".entry > .entry-inner > .wpvl.wpvl-youtube.ng-scope.size-l"],[2034647,".wpvl.wpvl-dailymotion > .fblogin.lockoverlay.ng-scope,\n.wpvl.wpvl-youtube.ng-scope.size-xl > .ng-scope + .fblogin.lockoverlay.ng-scope,\n.wpvl.wpvl-youtube.ng-scope.size-xxl > [ng-show=\"!blocked\"] + * + .ng-scope + .fblogin.lockoverlay.ng-scope"],[12051159,"#bthn"]];
-const genericExceptionSieve = [12941665,2952977,8794540,11378159,7308180,678375,15808712,16530279,9059208,1419719,16120117,16089386,1500050,12736753,12266315,10374072,15628656,2429090,4065922,15458099];
+const genericSelectorMap = [[2943,"#HiddenMovie > [src^=\"http://www.youtube.com\"] + #video-blocker"],[1983,".entry > .entry-inner > .wpvl.wpvl-youtube.ng-scope.size-l"],[3031,".wpvl.wpvl-dailymotion > .fblogin.lockoverlay.ng-scope,\n.wpvl.wpvl-youtube.ng-scope.size-xl > .ng-scope + .fblogin.lockoverlay.ng-scope,\n.wpvl.wpvl-youtube.ng-scope.size-xxl > [ng-show=\"!blocked\"] + * + .ng-scope + .fblogin.lockoverlay.ng-scope"],[727,"#bthn"]];
+const genericExceptionSieve = [2401,3857,428,3567,916,2535,2248,2919,2952,2503,2357,298,914,2289,2891,3000,2416,162,2690,3891];
 const genericExceptionMap = [["ad.co.il",".ad-link"],["adi.gov.il",".small-ad"],["bipbip.co.il","#printads\n.adlist\n.adpic"],["blms.co.il",".addtitle"],["c14.co.il","#taboola-below-article-thumbnails\n.share-zone"],["now14.co.il","#taboola-below-article-thumbnails\n.share-zone"],["callil.co.il","#AdTop"],["holmesplace.co.il",".image-advertisement"],["homeless.co.il",".postad"],["investing.com","#findABroker\n.generalOverlay"],["junkyard.co.il",".ad-body"],["kikar.co.il",".adunit"],["lavender.co.il","#topAds"],["leyada.net",".banner-300"],["pitria.com",".header-ad"],["ynet.co.il",".adclass\n.shareBtn"]];
 
 if ( genericSelectorMap ) {

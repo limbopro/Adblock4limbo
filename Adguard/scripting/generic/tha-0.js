@@ -28,7 +28,7 @@
 /******************************************************************************/
 
 const genericSelectorMap = undefined;
-const genericExceptionSieve = [12302442];
+const genericExceptionSieve = [2154];
 const genericExceptionMap = [["blognone.com",".advertorial"]];
 
 if ( genericSelectorMap ) {

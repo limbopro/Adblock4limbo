@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[7719083,"#digi-fm-live-stream"],[12253005,".only-desktop.promotii-wrapper"],[16277823,".only_desktop.related_on_top.parteneri.sectiune"],[2566477,".SC_TBlock"],[16540261,".strawberry_ads_container"],[8559454,".strawberry-ads__pretty-container"],[9084222,".strawberry-ads-manager-container"],[5539703,".strawberry-ad-card"],[4430763,".strawberry-ad"],[5639992,"#sam_branding[style=\"min-height:250px;\"]"]];
-const genericExceptionSieve = [2152501,16153475,16634508];
+const genericSelectorMap = [[2219,"#digi-fm-live-stream"],[1869,".only-desktop.promotii-wrapper"],[319,".only_desktop.related_on_top.parteneri.sectiune"],[2381,".SC_TBlock"],[613,".strawberry_ads_container"],[2910,".strawberry-ads__pretty-container"],[3390,".strawberry-ads-manager-container"],[1911,".strawberry-ad-card"],[2987,".strawberry-ad"],[3896,"#sam_branding[style=\"min-height:250px;\"]"]];
+const genericExceptionSieve = [2101,2947,652];
 const genericExceptionMap = [["dez.ro","#ad-carousel"],["televiziunea-medicala.ro",".adsbygoogle"],["tvonline123.com","#ads-container"]];
 
 if ( genericSelectorMap ) {

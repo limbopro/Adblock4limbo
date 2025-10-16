@@ -27,8 +27,8 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[9774695,".article-share"],[11335417,".article-share__item"]];
-const genericExceptionSieve = [9774695,11335417];
+const genericSelectorMap = [[1639,".article-share"],[1785,".article-share__item"]];
+const genericExceptionSieve = [1639,1785];
 const genericExceptionMap = [["postimees.ee",".article-share\n.article-share__item"]];
 
 if ( genericSelectorMap ) {

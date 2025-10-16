@@ -332,8 +332,8 @@ function runAt(fn, when) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [[".navbar-nav > li#navpromo2.nav-item > a","onclick","let a=function(){};return false;"],["frameset[rows=\"95,30,*\"]","rows","0,30,*"]];
-const hostnamesMap = new Map([["japscan.*",0],["mt-soft.sakura.ne.jp",1]]);
+const argsList = [[".navbar-nav > li#navpromo2.nav-item > a","onclick","let a=function(){};return false;"],["*:not(#nitro-top,.nitro-any,#nitro-body-desktop,#nitro-header-mobile) > ins.adsbygoogle:not(:has(#aswift_0))","data-ad-status","filled"],["ins.adsbygoogle:has(> #aswift_0_host)","data-ad-status","unfilled"],["frameset[rows=\"95,30,*\"]","rows","0,30,*"]];
+const hostnamesMap = new Map([["japscan.*",0],["pvpoke-re.com",[1,2]],["mt-soft.sakura.ne.jp",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

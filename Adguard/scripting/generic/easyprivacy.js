@@ -27,7 +27,7 @@
 
 /******************************************************************************/
 
-const genericSelectorMap = [[1233234,"#cxense-recs-in-article"],[15506548,".embed-responsive-trendmd"]];
+const genericSelectorMap = [[338,"#cxense-recs-in-article"],[3188,".embed-responsive-trendmd"]];
 const genericExceptionSieve = undefined;
 const genericExceptionMap = undefined;
 

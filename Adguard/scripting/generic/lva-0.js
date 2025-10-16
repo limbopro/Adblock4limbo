@@ -28,7 +28,7 @@
 /******************************************************************************/
 
 const genericSelectorMap = undefined;
-const genericExceptionSieve = [4040486,1839954,6867818,9220559,6381933];
+const genericExceptionSieve = [1830,850,2922,463,365];
 const genericExceptionMap = [["apollo.lv",".article-ad-placeholder\n.dfp-ad"],["tvnet.lv",".article-ad-placeholder\n.dfp-ad"],["atverskapi.delfi.lv",".adocean"],["varianti.lv","#ad_table\n.single_ad"]];
 
 if ( genericSelectorMap ) {

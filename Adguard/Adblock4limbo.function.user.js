@@ -2293,6 +2293,8 @@ function close_googlesearch_iframe() {
 
 
 
+
+
 // 复制 input 内容
 function copyText(id1, id2, Text) { // 复制文本按钮
     let color = { // 定义常量
@@ -2315,16 +2317,26 @@ function copyText(id1, id2, Text) { // 复制文本按钮
     const ele_array = [ele_1, ele_2];
 
     // 复制工作开始
+
+    // 现代复制方法
+
     const input = document.querySelectorAll("input#copy");
     input[0].select()
     document.execCommand('copy')
-    //const range = document.createRange(); range.selectNode(input[0]); const selection = window.getSelection();
-    //if (selection.rangeCount > 0) selection.removeAllRanges(); // 判断光标是否复制其他内容 如有则清除
-    //selection.addRange(range); document.execCommand('copy');
+
+
+    // 旧版复制方法
+
+    /*
+    const range = document.createRange(); range.selectNode(input[0]); const selection = window.getSelection();
+    if (selection.rangeCount > 0) selection.removeAllRanges(); // 判断光标是否复制其他内容 如有则清除
+    selection.addRange(range); document.execCommand('copy');
+    */
     // 复制工作结束
 
     ele_2.innerText = "复制成功！";
     ele_2.style.backgroundColor = color.css.backgroundColor_copied;
+
 
     border_color(ele_array, color.css.borderRight_copied)
     setTimeout(() => {
@@ -2332,7 +2344,14 @@ function copyText(id1, id2, Text) { // 复制文本按钮
         ele_2.style.backgroundColor = color.css.backgroundColor_recover;
         border_color(ele_array, color.css.borderRight_recover)
     }, 3000);
+
+    // 取消文本选中
+    window.getSelection().removeAllRanges();
+    // 移除焦点，防止键盘弹出
+    document.activeElement.blur();
 }
+
+
 
 
 // 在页面动态插入元素并赋予相应元素
@@ -2412,7 +2431,7 @@ function tmd(parentsSelector, code, textContent) {
         aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
         aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
         aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
-        aAdd2Parent('🔞今晚看什么？', 'https://limbopro.com/tools/jwksm/','')
+        aAdd2Parent('🔞今晚看什么？', 'https://limbopro.com/tools/jwksm/', '')
 
         console.log('已生成在线预览链接🔗')
     }

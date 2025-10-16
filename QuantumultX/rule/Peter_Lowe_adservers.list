@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 11 Oct 2025 23:27:17 GMT
-# entries:        3438
+# last updated:   Thu, 16 Oct 2025 07:31:26 GMT
+# entries:        3443
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1175,6 +1175,7 @@ DOMAIN-SUFFIX,captainbicycle.com, reject
 DOMAIN-SUFFIX,carambo.la, reject
 DOMAIN-SUFFIX,carbonads.com, reject
 DOMAIN-SUFFIX,carbonads.net, reject
+DOMAIN-SUFFIX,cardmethod.com, reject
 DOMAIN-SUFFIX,caringcast.com, reject
 DOMAIN-SUFFIX,cartstack.com, reject
 DOMAIN-SUFFIX,carvecakes.com, reject
@@ -1769,6 +1770,7 @@ DOMAIN-SUFFIX,gunggo.com, reject
 DOMAIN-SUFFIX,h-bid.com, reject
 DOMAIN-SUFFIX,h-trck.com, reject
 DOMAIN-SUFFIX,h0.t.hubspotemail.net, reject
+DOMAIN-SUFFIX,haikusoap.com, reject
 DOMAIN-SUFFIX,halcyoncanyon.com, reject
 DOMAIN-SUFFIX,haltingbadge.com, reject
 DOMAIN-SUFFIX,hammerhearing.com, reject
@@ -2195,6 +2197,7 @@ DOMAIN-SUFFIX,microticker.com, reject
 DOMAIN-SUFFIX,milotree.com, reject
 DOMAIN-SUFFIX,mineinvoice.com, reject
 DOMAIN-SUFFIX,minewhat.com, reject
+DOMAIN-SUFFIX,minibilling.com, reject
 DOMAIN-SUFFIX,mintegral.com, reject
 DOMAIN-SUFFIX,mittencattle.com, reject
 DOMAIN-SUFFIX,mix2ads.com, reject
@@ -2608,6 +2611,7 @@ DOMAIN-SUFFIX,r2.visualwebsiteoptimizer.com, reject
 DOMAIN-SUFFIX,r3.visualwebsiteoptimizer.com, reject
 DOMAIN-SUFFIX,raac33.net, reject
 DOMAIN-SUFFIX,rabbitrifle.com, reject
+DOMAIN-SUFFIX,rackforstorage.com, reject
 DOMAIN-SUFFIX,radar.cedexis.com, reject
 DOMAIN-SUFFIX,radiate.com, reject
 DOMAIN-SUFFIX,radiateprose.com, reject
@@ -3424,6 +3428,7 @@ DOMAIN-SUFFIX,yldbt.com, reject
 DOMAIN-SUFFIX,ymetrica1.com, reject
 DOMAIN-SUFFIX,yoads.net, reject
 DOMAIN-SUFFIX,yoggrt.com, reject
+DOMAIN-SUFFIX,youcandrawanything.com, reject
 DOMAIN-SUFFIX,youradexchange.com, reject
 DOMAIN-SUFFIX,ypu.samsungelectronics.com, reject
 DOMAIN-SUFFIX,zangocash.com, reject

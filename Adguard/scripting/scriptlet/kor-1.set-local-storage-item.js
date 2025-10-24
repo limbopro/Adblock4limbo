@@ -319,7 +319,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["/adblock_detected/","$remove$"]];
-const hostnamesMap = new Map([["dcinside.com",0]]);
+const hostnamesMap = new Map([["m.dcinside.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

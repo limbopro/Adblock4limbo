@@ -460,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adsPlayer",""],["adsTvcs",""],["ADMStorageFileCDN","noopFunc"],["a_vid","0"],["video.adVast",""],["open","noopFunc"],["maxAds","0"],["urlAds",""],["linkAff","null","3"],["seconds","0"],["D4zz","noopFunc"],["timer","0"]];
-const hostnamesMap = new Map([["achristmascarollive.com",[0,1]],["cafef.vn",2],["gamek.vn",2],["genk.vn",2],["kenh14.vn",2],["soha.vn",2],["tuoitre.vn",2],["afamily.vn",2],["thanhnien.vn",2],["cliphot69.pics",3],["clipsex.cam",4],["freeplayervideo.com",5],["abysscdn.com",5],["player-cdn.com",5],["hayhaytv.site",6],["subnhanh1.org",6],["phimvuihd.org",7],["tailieumoi.vn",8],["vndoc.com",9],["www.gvnvh.net",10],["sexdiaryx.to",10],["www.iosviet.com",11]]);
+const argsList = [["ADMStorageFileCDN","noopFunc"],["a_vid","0"],["video.adVast",""],["open","noopFunc"],["maxAds","0"],["urlAds",""],["adsPlayer",""],["adsTvcs",""],["linkAff","null","3"],["seconds","0"],["D4zz","noopFunc"],["timer","0"]];
+const hostnamesMap = new Map([["cafef.vn",0],["gamek.vn",0],["genk.vn",0],["kenh14.vn",0],["soha.vn",0],["tuoitre.vn",0],["afamily.vn",0],["thanhnien.vn",0],["cliphot69.pics",1],["clipsex.cam",2],["freeplayervideo.com",3],["abysscdn.com",3],["player-cdn.com",3],["hayhaytv.site",4],["motchillzz.site",4],["phimvuihd.org",5],["prismafinance.com",[6,7]],["tailieumoi.vn",8],["vndoc.com",9],["www.gvnvh.net",10],["sexdiaryx.to",10],["www.iosviet.com",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

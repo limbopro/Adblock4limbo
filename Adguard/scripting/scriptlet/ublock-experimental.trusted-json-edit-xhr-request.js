@@ -767,7 +767,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["..playbackContext[?.contentPlaybackContext]+={\"adPlaybackContext\":{\"pyv\":true}}","propsToMatch","/player"]];
+const argsList = [["[?..originalUrl^=\"https://www.youtube.com/watch\"]..[?.playbackContext][?!.params]+={\"params\":\"yAEB\"}","propsToMatch","/player"]];
 const hostnamesMap = new Map([["www.youtube.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

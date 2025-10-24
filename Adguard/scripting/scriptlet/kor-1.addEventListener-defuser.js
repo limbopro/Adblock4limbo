@@ -421,8 +421,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["hashchange","#viewus-explore-more"],["DOMContentLoaded","link.coupang.com"],["load","_0x"]];
-const hostnamesMap = new Map([["youtu.co",0],["dfast.kr",0],["whathappen.co.kr",1],["momkim.co.kr",1],["klauncher.kr",2]]);
+const argsList = [["hashchange","#viewus-explore-more"],["DOMContentLoaded","link.coupang.com"],["pageshow","/\\.persisted *&& *interval_Ad *&& *clearInterval\\( *interval_Ad *\\)/"],["load","_0x"]];
+const hostnamesMap = new Map([["youtu.co",0],["dfast.kr",0],["whathappen.co.kr",1],["momkim.co.kr",1],["m.dcinside.com",2],["klauncher.kr",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

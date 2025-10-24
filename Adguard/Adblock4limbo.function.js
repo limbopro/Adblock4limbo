@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.08.28
+// @version      0.2025.10.17
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -2386,61 +2386,59 @@ function closeP() {
 }
 
 // 在番号详情页追加在线预览链接
-function tmd(parentsSelector, code, textContent) {
+function tmd(parentSelector, code, titleText) {
+    const formattedCode = code.replace(/-/g, '00');
 
-    var dmm = code.replace(/-/g, '00')
+    function createSearchLinks() {
+        // Creates search links for various platforms
 
-    function otherSearch() {
-        // 试试其他搜索：
+        const parentElement = document.querySelectorAll(parentSelector)[0];
 
-        let parentElement = document.querySelectorAll(parentsSelector)[0]
+        const container = document.createElement('p');
+        container.id = 'previewContainer';
+        container.style = 'margin:10px 0px 10px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius: 4px !important; box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; background:#10141f; color:chocolate; padding:0px 0px 0px 0px; word-break:break-all; border-radius:0px 0px 0px 0px';
 
-        let p1 = document.createElement('p')
-        p1.id = 'p1'
-        p1.style = 'margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
+        const content = document.createElement('p');
+        content.style = 'gap:3px; margin-bottom: 0px;display: flex;flex-wrap: wrap;justify-content: flex-start;align-items: center;text-align: left;font-weight: inherit;padding: 6px;word-break: break-all;font-size: inherit;border-radius: 0px;';
+        content.id = 'contentWrapper';
 
-        let p2 = document.createElement('p')
-        p2.style = 'padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-        p2.id = 'p2'
+        container.appendChild(content);
+        // parentElement.insertBefore(container, parentElement.childNodes[2]);
+        parentElement.insertAdjacentElement('afterend', container);
 
+        const title = document.createElement('span');
+        title.style = 'font-weight:bolder; font-size:medium; color:bisque;';
+        title.textContent = titleText;
+        content.appendChild(title);
 
-        p1.appendChild(p2)
-        parentElement.insertBefore(p1, parentElement.childNodes[2])
-
-        let span = document.createElement('span')
-        span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-        span.textContent = textContent
-        p2.appendChild(span)
-
-        function aAdd2Parent(siteName, url, codeSlect) {
-            let a = document.createElement('a')
-            let lable = document.createElement('label')
-            lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-            a.href = url + codeSlect
-            a.textContent = siteName
-            a.target = '_blank'
-            a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-            lable.appendChild(a)
-            p2.appendChild(lable)
+        function addLinkToContainer(siteName, baseUrl, searchCode) {
+            const link = document.createElement('a');
+            const label = document.createElement('label');
+            label.style = 'font-weight:inherit; display:inline-block; max-width:100%; margin-right:10px;margin-bottom:0px;';
+            link.href = baseUrl + searchCode;
+            link.textContent = siteName;
+            link.target = '_blank';
+            link.style = 'color:inherit; font-weight:inherit';
+            label.appendChild(link);
+            content.appendChild(label);
         }
 
-        aAdd2Parent('MissAV[720P]', 'https://missav.ws/search', '/' + code)
-        aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
-        aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
-        aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-        aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-        aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
-        aAdd2Parent('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', dmm)
-        aAdd2Parent('🔞今晚看什么？', 'https://limbopro.com/tools/jwksm/', '')
+        addLinkToContainer('MissAV[720P]', 'https://missav.ws/search', '/' + code);
+        addLinkToContainer('Jable[HD]', 'https://jable.tv/search', '/' + code + '/');
+        addLinkToContainer('Supjav[ultraHD]', 'https://supjav.com/?s=', code);
+        addLinkToContainer('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + '&gsc.sort=');
+        addLinkToContainer('谷歌搜索🔍', 'https://www.google.com/search?q=', code);
+        addLinkToContainer('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce');
+        addLinkToContainer('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', formattedCode);
+        addLinkToContainer('🔞今晚看什么呢？', 'https://limbopro.com/tools/jwksm/', '');
 
-        console.log('已生成在线预览链接🔗')
+        console.log('Online preview links generated 🔗');
     }
 
-    if (document.querySelector('#p1') == null) {
-        console.log('开始生成在线预览链接...')
-        otherSearch()
+    if (!document.querySelector('#previewContainer')) {
+        console.log('Generating online preview links...');
+        createSearchLinks();
     }
-
 }
 
 

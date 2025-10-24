@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 16 Oct 2025 07:31:26 GMT
+# last updated:   Wed, 22 Oct 2025 20:58:42 GMT
 # entries:        3443
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -338,7 +338,6 @@ DOMAIN-SUFFIX,ads-dev.pinterest.com
 DOMAIN-SUFFIX,ads-game-187f4.firebaseapp.com
 DOMAIN-SUFFIX,ads-img.mozilla.org
 DOMAIN-SUFFIX,ads-portal-cdn.vidaatv.net
-DOMAIN-SUFFIX,ads-trk.vidible.tv
 DOMAIN-SUFFIX,ads-twitter.com
 DOMAIN-SUFFIX,ads.365.mk
 DOMAIN-SUFFIX,ads.5ci.lt
@@ -407,7 +406,6 @@ DOMAIN-SUFFIX,ads.digitalmedianet.com
 DOMAIN-SUFFIX,ads.digitalpoint.com
 DOMAIN-SUFFIX,ads.doit.com.cn
 DOMAIN-SUFFIX,ads.domeus.com
-DOMAIN-SUFFIX,ads.dtpnetwork.biz
 DOMAIN-SUFFIX,ads.eagletribune.com
 DOMAIN-SUFFIX,ads.easy-forex.com
 DOMAIN-SUFFIX,ads.economist.com
@@ -454,7 +452,6 @@ DOMAIN-SUFFIX,ads.hbv.de
 DOMAIN-SUFFIX,ads.hearstmags.com
 DOMAIN-SUFFIX,ads.heartlight.org
 DOMAIN-SUFFIX,ads.hollywood.com
-DOMAIN-SUFFIX,ads.horsehero.com
 DOMAIN-SUFFIX,ads.hsoub.com
 DOMAIN-SUFFIX,ads.ibest.com.br
 DOMAIN-SUFFIX,ads.ibryte.com
@@ -1000,7 +997,6 @@ DOMAIN-SUFFIX,banner.buempliz-online.ch
 DOMAIN-SUFFIX,banner.cotedazurpalace.com
 DOMAIN-SUFFIX,banner.easyspace.com
 DOMAIN-SUFFIX,banner.elisa.net
-DOMAIN-SUFFIX,banner.eurogrand.com
 DOMAIN-SUFFIX,banner.finzoom.ro
 DOMAIN-SUFFIX,banner.goldenpalace.com
 DOMAIN-SUFFIX,banner.inyourpocket.com
@@ -1466,7 +1462,6 @@ DOMAIN-SUFFIX,didtheyreadit.com
 DOMAIN-SUFFIX,digestiondrawer.com
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com
 DOMAIN-SUFFIX,direct-events-collector.spot.im
-DOMAIN-SUFFIX,direct-re2.pl
 DOMAIN-SUFFIX,directaclick.com
 DOMAIN-SUFFIX,directorym.com
 DOMAIN-SUFFIX,discountclick.com
@@ -1691,6 +1686,7 @@ DOMAIN-SUFFIX,functionalcrown.com
 DOMAIN-SUFFIX,functionalfeather.com
 DOMAIN-SUFFIX,funklicks.com
 DOMAIN-SUFFIX,funnelytics.io
+DOMAIN-SUFFIX,funtoyplanet.com
 DOMAIN-SUFFIX,furryfork.com
 DOMAIN-SUFFIX,fusionads.net
 DOMAIN-SUFFIX,fusionquest.com
@@ -1962,6 +1958,7 @@ DOMAIN-SUFFIX,kanoodle.com
 DOMAIN-SUFFIX,kargo.com
 DOMAIN-SUFFIX,kickoffo.site
 DOMAIN-SUFFIX,kindads.com
+DOMAIN-SUFFIX,kindlereunion.com
 DOMAIN-SUFFIX,kissmetrics.com
 DOMAIN-SUFFIX,kittycatking.com
 DOMAIN-SUFFIX,klclick.com
@@ -2171,6 +2168,7 @@ DOMAIN-SUFFIX,megastats.com
 DOMAIN-SUFFIX,megawerbung.de
 DOMAIN-SUFFIX,meltmilk.com
 DOMAIN-SUFFIX,memorizeneck.com
+DOMAIN-SUFFIX,mercuryace.com
 DOMAIN-SUFFIX,merequartz.com
 DOMAIN-SUFFIX,metadsp.co.uk
 DOMAIN-SUFFIX,metaffiliation.com
@@ -2920,6 +2918,7 @@ DOMAIN-SUFFIX,stakingsmile.com
 DOMAIN-SUFFIX,stalesummer.com
 DOMAIN-SUFFIX,starffa.com
 DOMAIN-SUFFIX,starkscale.com
+DOMAIN-SUFFIX,starrynets.com
 DOMAIN-SUFFIX,startapp.com
 DOMAIN-SUFFIX,stat-track.com
 DOMAIN-SUFFIX,stat.cliche.se
@@ -2976,6 +2975,7 @@ DOMAIN-SUFFIX,stupendoussleet.com
 DOMAIN-SUFFIX,stupendoussnow.com
 DOMAIN-SUFFIX,subscribe.hearstmags.com
 DOMAIN-SUFFIX,succeedscene.com
+DOMAIN-SUFFIX,successbuffet.com
 DOMAIN-SUFFIX,sugoicounter.com
 DOMAIN-SUFFIX,sulkycook.com
 DOMAIN-SUFFIX,summerobject.com
@@ -3264,6 +3264,7 @@ DOMAIN-SUFFIX,untd.com
 DOMAIN-SUFFIX,unusualtitle.com
 DOMAIN-SUFFIX,unwieldyhealth.com
 DOMAIN-SUFFIX,unwieldyimpulse.com
+DOMAIN-SUFFIX,upgradeyoga.com
 DOMAIN-SUFFIX,upu.samsungelectronics.com
 DOMAIN-SUFFIX,urbanlaurel.com
 DOMAIN-SUFFIX,url9467.comms-2.zoopla.co.uk
@@ -3303,7 +3304,6 @@ DOMAIN-SUFFIX,videoadex.com
 DOMAIN-SUFFIX,videoadstech.org
 DOMAIN-SUFFIX,videoegg.com
 DOMAIN-SUFFIX,videostats.kakao.com
-DOMAIN-SUFFIX,vidible.tv
 DOMAIN-SUFFIX,vidora.com
 DOMAIN-SUFFIX,view4cash.de
 DOMAIN-SUFFIX,viglink.com

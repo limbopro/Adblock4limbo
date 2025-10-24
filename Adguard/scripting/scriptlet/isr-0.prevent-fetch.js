@@ -484,7 +484,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["adsbygoogle"]];
-const hostnamesMap = new Map([["sheee.co.il",0],["walla.co.il",0],["ynet.co.il",0],["mako.co.il",0],["n12.co.il",0],["tech12.co.il",0],["tvbee.co.il",0],["calcalist.co.il",0],["13news.co.il",0],["13tv.co.il",0],["sport5.co.il",0],["one.co.il",0],["inn.co.il",0],["yad2.co.il",0],["haaretz.co.il",0],["themarker.com",0],["hwzone.co.il",0],["www-haaretz-co-il.eu1.proxy.openathens.net",0],["www-themarker-com.eu1.proxy.openathens.net",0]]);
+const hostnamesMap = new Map([["sheee.co.il",0],["walla.co.il",0],["ynet.co.il",0],["mako.co.il",0],["n12.co.il",0],["tech12.co.il",0],["tvbee.co.il",0],["calcalist.co.il",0],["13news.co.il",0],["13tv.co.il",0],["sport5.co.il",0],["one.co.il",0],["inn.co.il",0],["yad2.co.il",0],["haaretz.co.il",0],["themarker.com",0],["foodsdictionary.co.il",0],["hwzone.co.il",0],["www-haaretz-co-il.eu1.proxy.openathens.net",0],["www-themarker-com.eu1.proxy.openathens.net",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

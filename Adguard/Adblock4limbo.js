@@ -43,6 +43,7 @@ const BODY_INJECTION = `
 const TARGET_SITES_REGEX = /(missav|netflav|supjav|njav|javday)/i;
 const JAVBUS_REGEX = /javbus/i;
 const DMM_REGEX = /dmm\.co/i;
+const MDSP_REGEX = /d1skbu98kuldnf\.cloudfront\.net/i;
 const HUARENLIVE_REGEX = /huaren\.live\/player\/ec\.php/i;
 
 // Regular expressions for content manipulation
@@ -66,6 +67,7 @@ function processResponse() {
     const isTargetSite = requestUrl.match(TARGET_SITES_REGEX);
     const isJavbus = requestUrl.match(JAVBUS_REGEX);
     const isDMM = requestUrl.match(DMM_REGEX);
+    const isMDSP = requestUrl.match(MDSP_REGEX);
     const isHuarenlive = requestUrl.match(HUARENLIVE_REGEX);
 
     // Process response body based on URL
@@ -73,7 +75,7 @@ function processResponse() {
         responseBody = responseBody
             .replace(TITLE_REGEX, TITLE_INJECTION)
             .replace(WINDOW_OPEN_REGEX, "");
-    } else if (isJavbus || isDMM) {
+    } else if (isJavbus || isDMM || isMDSP) {
         responseBody = responseBody.replace(BODY_REGEX, BODY_INJECTION);
     } else if (isHuarenlive) {
         responseBody = responseBody

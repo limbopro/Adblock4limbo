@@ -361,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["registration_modal_dismissed","true"],["apv","false"],["patreonAnnouncementShown","true"],["campaign_seen_today","true"],["pum_popup_14631_page_views","1"],["premium_popup","1"],["HideDonationLightbox","1"],["inc_optin_never_see_again-popup-1","1"]];
-const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["gmap-pedometer.com",2],["democracynow.org",3],["firstthings.com",4],["rumble.com",5],["oceana.org",6],["branc.jp",7]]);
+const argsList = [["registration_modal_dismissed","true"],["apv","false"],["patreonAnnouncementShown","true"],["dn_alert_homescreen_closed","1"],["dn_donation_count","1"],["campaign_seen_today","true"],["pum_popup_14631_page_views","1"],["premium_popup","1"],["HideDonationLightbox","1"],["inc_optin_never_see_again-popup-1","1"]];
+const hostnamesMap = new Map([["thebump.com",0],["nzherald.co.nz",1],["gmap-pedometer.com",2],["dutchnews.nl",[3,4]],["democracynow.org",5],["firstthings.com",6],["rumble.com",7],["oceana.org",8],["branc.jp",9]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

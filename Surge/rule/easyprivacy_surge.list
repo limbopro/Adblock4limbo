@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510161042
+## ! Version: 202510241014
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Oct 2025 10:42 UTC
+## ! Last modified: 24 Oct 2025 10:14 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 7a2c5c29a9f4af8d32f3adac79138f3045a2f8e7
+## ! Commit: 128deffc4c7912c49b1540b53b6ac90624561ccb
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1172,6 +1172,7 @@ DOMAIN-SUFFIX,fumblingform.com
 DOMAIN-SUFFIX,functionalcrown.com
 DOMAIN-SUFFIX,functionalfeather.com
 DOMAIN-SUFFIX,funoverbored.com
+DOMAIN-SUFFIX,funtoyplanet.com
 DOMAIN-SUFFIX,furryfork.com
 DOMAIN-SUFFIX,fusedcontent.com
 DOMAIN-SUFFIX,futuristicapparatus.com
@@ -1313,6 +1314,7 @@ DOMAIN-SUFFIX,humdrumtouch.com
 DOMAIN-SUFFIX,humourspot.com
 DOMAIN-SUFFIX,hurtgrape.com
 DOMAIN-SUFFIX,hustlercoach.com
+DOMAIN-SUFFIX,hybridburst.com
 DOMAIN-SUFFIX,hydraconcept.com
 DOMAIN-SUFFIX,hyperlegend.com
 DOMAIN-SUFFIX,hypnoticwound.com
@@ -1344,6 +1346,7 @@ DOMAIN-SUFFIX,intelligentscissors.com
 DOMAIN-SUFFIX,intentlens.com
 DOMAIN-SUFFIX,internalcondition.com
 DOMAIN-SUFFIX,internalsink.com
+DOMAIN-SUFFIX,intricateberry.com
 DOMAIN-SUFFIX,inventorycache.com
 DOMAIN-SUFFIX,inventtango.com
 DOMAIN-SUFFIX,iotapool.com
@@ -1386,6 +1389,7 @@ DOMAIN-SUFFIX,keenquill.com
 DOMAIN-SUFFIX,kidpowers.com
 DOMAIN-SUFFIX,kindasingle.com
 DOMAIN-SUFFIX,kindhush.com
+DOMAIN-SUFFIX,kindlereunion.com
 DOMAIN-SUFFIX,kitetuning.com
 DOMAIN-SUFFIX,kittycatking.com
 DOMAIN-SUFFIX,knewpenny.com
@@ -1498,6 +1502,7 @@ DOMAIN-SUFFIX,memopilot.com
 DOMAIN-SUFFIX,memorizematch.com
 DOMAIN-SUFFIX,memorizeneck.com
 DOMAIN-SUFFIX,mentorsticks.com
+DOMAIN-SUFFIX,mercuryace.com
 DOMAIN-SUFFIX,meremark.com
 DOMAIN-SUFFIX,merequartz.com
 DOMAIN-SUFFIX,merryopal.com
@@ -41886,6 +41891,7 @@ DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com
 DOMAIN-SUFFIX,collector1.sooplive.co.kr
 DOMAIN-SUFFIX,count.munhwa.com
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr
+DOMAIN-SUFFIX,haystack.wavve.com
 DOMAIN-SUFFIX,hits.zdnet.co.kr
 DOMAIN-SUFFIX,kyson.kakao.com
 DOMAIN-SUFFIX,l.m.naver.com

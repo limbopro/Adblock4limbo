@@ -425,8 +425,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ad_flg ad_url data.adData data.adTagUrl"],["ads"],["result.ad_info"],["result.paths.[].ad_info"],["ads.[].imageUrl"],["data.adData"],["props.initialProps.pageProps.pageData.brandingAds"]];
-const hostnamesMap = new Map([["lemino.docomo.ne.jp",0],["sports.tv.rakuten.co.jp",[1,2,3]],["tver.jp",[1,5]],["ikaskey.bktsk.com",4],["live-theater.net",4],["misskey.art",4],["misskey.resonite.love",4],["misskeytsf.love",4],["misskirara.net",4],["p1.a9z.dev",4],["takusuki.com",4],["trpger.us",4],["mk.yopo.work",4],["sushi.ski",4],["warpday.net",4],["zadankai.club",4],["misskey.io",4],["search.yahoo.co.jp",6]]);
+const argsList = [["ad_flg ad_url data.adData data.adTagUrl"],["ads"],["result.ad_info"],["result.paths.[].ad_info"],["ads.[].imageUrl"],["data.adData"],["props.initialProps.pageProps.pageData.brandingAds"],["data.response.videoAds data.response.waku.tagRelatedBanner"]];
+const hostnamesMap = new Map([["lemino.docomo.ne.jp",0],["sports.tv.rakuten.co.jp",[1,2,3]],["tver.jp",[1,5]],["ikaskey.bktsk.com",4],["live-theater.net",4],["misskey.art",4],["misskey.resonite.love",4],["misskeytsf.love",4],["misskirara.net",4],["p1.a9z.dev",4],["takusuki.com",4],["trpger.us",4],["mk.yopo.work",4],["sushi.ski",4],["warpday.net",4],["zadankai.club",4],["misskey.io",4],["search.yahoo.co.jp",6],["www.nicovideo.jp",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

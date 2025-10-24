@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510161042
+## ! Version: 202510241014
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Oct 2025 10:42 UTC
+## ! Last modified: 24 Oct 2025 10:14 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 7a2c5c29a9f4af8d32f3adac79138f3045a2f8e7
+## ! Commit: 128deffc4c7912c49b1540b53b6ac90624561ccb
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1172,6 +1172,7 @@ DOMAIN-SUFFIX,fumblingform.com, reject
 DOMAIN-SUFFIX,functionalcrown.com, reject
 DOMAIN-SUFFIX,functionalfeather.com, reject
 DOMAIN-SUFFIX,funoverbored.com, reject
+DOMAIN-SUFFIX,funtoyplanet.com, reject
 DOMAIN-SUFFIX,furryfork.com, reject
 DOMAIN-SUFFIX,fusedcontent.com, reject
 DOMAIN-SUFFIX,futuristicapparatus.com, reject
@@ -1313,6 +1314,7 @@ DOMAIN-SUFFIX,humdrumtouch.com, reject
 DOMAIN-SUFFIX,humourspot.com, reject
 DOMAIN-SUFFIX,hurtgrape.com, reject
 DOMAIN-SUFFIX,hustlercoach.com, reject
+DOMAIN-SUFFIX,hybridburst.com, reject
 DOMAIN-SUFFIX,hydraconcept.com, reject
 DOMAIN-SUFFIX,hyperlegend.com, reject
 DOMAIN-SUFFIX,hypnoticwound.com, reject
@@ -1344,6 +1346,7 @@ DOMAIN-SUFFIX,intelligentscissors.com, reject
 DOMAIN-SUFFIX,intentlens.com, reject
 DOMAIN-SUFFIX,internalcondition.com, reject
 DOMAIN-SUFFIX,internalsink.com, reject
+DOMAIN-SUFFIX,intricateberry.com, reject
 DOMAIN-SUFFIX,inventorycache.com, reject
 DOMAIN-SUFFIX,inventtango.com, reject
 DOMAIN-SUFFIX,iotapool.com, reject
@@ -1386,6 +1389,7 @@ DOMAIN-SUFFIX,keenquill.com, reject
 DOMAIN-SUFFIX,kidpowers.com, reject
 DOMAIN-SUFFIX,kindasingle.com, reject
 DOMAIN-SUFFIX,kindhush.com, reject
+DOMAIN-SUFFIX,kindlereunion.com, reject
 DOMAIN-SUFFIX,kitetuning.com, reject
 DOMAIN-SUFFIX,kittycatking.com, reject
 DOMAIN-SUFFIX,knewpenny.com, reject
@@ -1498,6 +1502,7 @@ DOMAIN-SUFFIX,memopilot.com, reject
 DOMAIN-SUFFIX,memorizematch.com, reject
 DOMAIN-SUFFIX,memorizeneck.com, reject
 DOMAIN-SUFFIX,mentorsticks.com, reject
+DOMAIN-SUFFIX,mercuryace.com, reject
 DOMAIN-SUFFIX,meremark.com, reject
 DOMAIN-SUFFIX,merequartz.com, reject
 DOMAIN-SUFFIX,merryopal.com, reject
@@ -41886,6 +41891,7 @@ DOMAIN-SUFFIX,bizlog-gateway.myrealtrip.com, reject
 DOMAIN-SUFFIX,collector1.sooplive.co.kr, reject
 DOMAIN-SUFFIX,count.munhwa.com, reject
 DOMAIN-SUFFIX,data-logdelivery.wconcept.co.kr, reject
+DOMAIN-SUFFIX,haystack.wavve.com, reject
 DOMAIN-SUFFIX,hits.zdnet.co.kr, reject
 DOMAIN-SUFFIX,kyson.kakao.com, reject
 DOMAIN-SUFFIX,l.m.naver.com, reject

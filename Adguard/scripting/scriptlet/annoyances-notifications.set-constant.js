@@ -460,8 +460,8 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["history.state","undefined"]];
-const hostnamesMap = new Map([["smocca.jp",0]]);
+const argsList = [["Object.prototype.disablePaginationLimitForLoggedOut","true"],["history.state","undefined"]];
+const hostnamesMap = new Map([["cosmos.so",0],["smocca.jp",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

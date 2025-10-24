@@ -344,8 +344,8 @@ function runAt(fn, when) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["._1z_ ._21_","style",""],[".comment-media .andropov-video video","controls","true"],[".cycle-carousel-wrap > a.bottom_slide__item > img","src","[data-src]"],[".media .andropov-video video","controls","true"],[".owl-item > a > img","src","[data-src]"],["[class^=\"articleBlockVideo_\"] video","controls","true"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","25"],["video[class*=\"HLSPlayback_player\"]","controls","true"]];
-const hostnamesMap = new Map([["playvillage.ru",0],["dtf.ru",[1,3]],["vc.ru",[1,3]],["fishki.net",2],["eneyida.tv",4],["fontanka.ru",5],["overclockers.ru",6],["joyreactor.cc",7],["reactor.cc",7],["3dnews.ru",8],["howdyho.*",9],["tass.ru",10]]);
+const argsList = [["._1z_ ._21_","style",""],[".comment-media .andropov-video video","controls","true"],[".cycle-carousel-wrap > a.bottom_slide__item > img","src","[data-src]"],[".media .andropov-video video","controls","true"],[".owl-item > a > img","src","[data-src]"],["[class^=\"articleBlockVideo_\"] video","controls","true"],["img[src=\"https://overclockers.ru/assets/logo_gray_stub.gif\"]","src","[data-src]"],["video","controls","true"],["video[controls=\"controls\"]","controls","true"],["#progress-value","data-timer","25"],[".html-fishing a","target","true"],["video[class*=\"HLSPlayback_player\"]","controls","true"]];
+const hostnamesMap = new Map([["playvillage.ru",0],["dtf.ru",[1,3]],["vc.ru",[1,3]],["fishki.net",2],["eneyida.tv",4],["fontanka.ru",5],["overclockers.ru",6],["joyreactor.cc",7],["reactor.cc",7],["3dnews.ru",8],["howdyho.*",9],["e.mail.ru",10],["octavius.mail.ru",10],["tass.ru",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

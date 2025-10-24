@@ -503,8 +503,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["api-v2.adrop.io/request"],["ad.smartmediarep.com/NetInsight/video/smr","length:300"],["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["adsbygoogle"],["/compass.adop.cc|adsbygoogle/","emptyStr"]];
-const hostnamesMap = new Map([["newneek.co",0],["mplay.mk.co.kr",1],["laftel.net",2],["tv.kakao.com",3],["play-tv.kakao.com",3],["kakaotv.daum.net",3],["spotvnow.co.kr",[4,5]],["noonnu.cc",5],["luckyquiz3.blogspot.com",6],["3dpchip.com",7]]);
+const argsList = [["api-v2.adrop.io/request"],["ad.smartmediarep.com/NetInsight/video/smr","length:300"],["api/avods/v1/advertisement"],["/^https.\\/\\/videoads\\.kakao\\.com\\/adserver\\/api\\/v[0-9]{1","2}\\/vmap$/"],["imasdk.googleapis.com/js/sdkloader/ima3.js"],["pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"],["addc.dcinside.com","emptyStr"],["adsbygoogle"],["/compass.adop.cc|adsbygoogle/","emptyStr"]];
+const hostnamesMap = new Map([["newneek.co",0],["mplay.mk.co.kr",1],["laftel.net",2],["tv.kakao.com",3],["play-tv.kakao.com",3],["kakaotv.daum.net",3],["spotvnow.co.kr",[4,5]],["noonnu.cc",5],["m.dcinside.com",6],["luckyquiz3.blogspot.com",7],["3dpchip.com",8]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

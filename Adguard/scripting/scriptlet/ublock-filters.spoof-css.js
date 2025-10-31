@@ -341,10 +341,10 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["a[href][target=\"_blank\"],[src^=\"//ad.a-ads.com/\"]","visibility","visible"],["div[class=\"nav tabTop\"] + div > div:first-child > div:first-child > a:has(> img[src*=\"/\"][src*=\"_\"][alt]), #head + div[id] > div:last-child > div > a:has(> img[src*=\"/\"][src*=\"_\"][alt])","display","block"]];
-const hostnamesMap = new Map([["download.megaup.net",[0,1]],["1001tracklists.com",2]]);
+const argsList = [["body > div.full-container > div.full-container.text-center > div.mt-2[style=\"margin: 0px auto; display: block;\"] > a.Aikoi.donate[target=\"_blank\"][rel][href^=\"https://www.longosto.shop/?utm_source=\"] > img.img-fluid","visibility","visible"],["a img:not([src=\"images/main_logo_inverted.png\"])","visibility","visible"],["a[href][target=\"_blank\"],[src^=\"//ad.a-ads.com/\"]","visibility","visible"],["div[class=\"nav tabTop\"] + div > div:first-child > div:first-child > a:has(> img[src*=\"/\"][src*=\"_\"][alt]), #head + div[id] > div:last-child > div > a:has(> img[src*=\"/\"][src*=\"_\"][alt])","display","block"]];
+const hostnamesMap = new Map([["japscan.*",0],["download.megaup.net",[1,2]],["1001tracklists.com",3]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

@@ -20,73 +20,86 @@
 
 */
 
-// ruleset: chn-0
+// ruleset: tur-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_abortOnPropertyRead() {
+(function uBOL_removeCookie() {
 
 /******************************************************************************/
 
-function abortOnPropertyRead(
-    chain = ''
+function removeCookie(
+    needle = ''
 ) {
-    if ( typeof chain !== 'string' ) { return; }
-    if ( chain === '' ) { return; }
+    if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
-    const exceptionToken = getExceptionTokenFn();
-    const abort = function() {
-        safe.uboLog(logPrefix, 'Aborted');
-        throw new ReferenceError(exceptionToken);
+    const reName = safe.patternToRegex(needle);
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 1);
+    const throttle = (fn, ms = 500) => {
+        if ( throttle.timer !== undefined ) { return; }
+        throttle.timer = setTimeout(( ) => {
+            throttle.timer = undefined;
+            fn();
+        }, ms);
     };
-    const makeProxy = function(owner, chain) {
-        const pos = chain.indexOf('.');
-        if ( pos === -1 ) {
-            const desc = Object.getOwnPropertyDescriptor(owner, chain);
-            if ( !desc || desc.get !== abort ) {
-                Object.defineProperty(owner, chain, {
-                    get: abort,
-                    set: function(){}
-                });
-            }
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        let v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if ( v ) {
-            makeProxy(v, chain);
-            return;
-        }
-        const desc = Object.getOwnPropertyDescriptor(owner, prop);
-        if ( desc && desc.set !== undefined ) { return; }
-        Object.defineProperty(owner, prop, {
-            get: function() { return v; },
-            set: function(a) {
-                v = a;
-                if ( a instanceof Object ) {
-                    makeProxy(a, chain);
+    const baseURL = new URL(document.baseURI);
+    let targetDomain = extraArgs.domain;
+    if ( targetDomain && /^\/.+\//.test(targetDomain) ) {
+        const reDomain = new RegExp(targetDomain.slice(1, -1));
+        const match = reDomain.exec(baseURL.hostname);
+        targetDomain = match ? match[0] : undefined;
+    }
+    const remove = ( ) => {
+        safe.String_split.call(document.cookie, ';').forEach(cookieStr => {
+            const pos = cookieStr.indexOf('=');
+            if ( pos === -1 ) { return; }
+            const cookieName = cookieStr.slice(0, pos).trim();
+            if ( reName.test(cookieName) === false ) { return; }
+            const part1 = cookieName + '=';
+            const part2a = `; domain=${baseURL.hostname}`;
+            const part2b = `; domain=.${baseURL.hostname}`;
+            let part2c, part2d;
+            if ( targetDomain ) {
+                part2c = `; domain=${targetDomain}`;
+                part2d = `; domain=.${targetDomain}`;
+            } else if ( document.domain ) {
+                const domain = document.domain;
+                if ( domain !== baseURL.hostname ) {
+                    part2c = `; domain=.${domain}`;
                 }
+                if ( domain.startsWith('www.') ) {
+                    part2d = `; domain=${domain.replace('www', '')}`;
+                }
+            }
+            const part3 = '; path=/';
+            const part4 = '; Max-Age=-1000; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            document.cookie = part1 + part4;
+            document.cookie = part1 + part2a + part4;
+            document.cookie = part1 + part2b + part4;
+            document.cookie = part1 + part3 + part4;
+            document.cookie = part1 + part2a + part3 + part4;
+            document.cookie = part1 + part2b + part3 + part4;
+            if ( part2c !== undefined ) {
+                document.cookie = part1 + part2c + part3 + part4;
+            }
+            if ( part2d !== undefined ) {
+                document.cookie = part1 + part2d + part3 + part4;
             }
         });
     };
-    const owner = window;
-    makeProxy(owner, chain);
-}
-
-function getExceptionTokenFn() {
-    const token = getRandomTokenFn();
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
-        }
-    }.bind();
-    return token;
+    remove();
+    window.addEventListener('beforeunload', remove);
+    if ( typeof extraArgs.when !== 'string' ) { return; }
+    const supportedEventTypes = [ 'scroll', 'keydown' ];
+    const eventTypes = safe.String_split.call(extraArgs.when, /\s/);
+    for ( const type of eventTypes ) {
+        if ( supportedEventTypes.includes(type) === false ) { continue; }
+        document.addEventListener(type, ( ) => {
+            throttle(remove);
+        }, { passive: true });
+    }
 }
 
 function safeSelf() {
@@ -279,17 +292,11 @@ function safeSelf() {
     return safe;
 }
 
-function getRandomTokenFn() {
-    const safe = safeSelf();
-    return safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
-}
-
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ads"],["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"],["addImageAd"],["createFixedBottomBannerWithClose"]];
-const hostnamesMap = new Map([["2urs.com",0],["caq98i.top",1],["1090ys8.com",2],["papalah.com",2],["youneed.win",3],["yfsp.tv",4],["aiyifan.tv",4],["iyf.tv",4],["goodav17.com",5],["m.86kl.com",6],["axjbt.com",7],["avcao.cc",7],["hanime1-me.icu",[8,9]],["hanime1-me.top",[8,9]]]);
+const argsList = [["showAllDaFull"]];
+const hostnamesMap = new Map([["yabancidiziio.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -357,7 +364,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { abortOnPropertyRead(...argsList[i]); }
+    try { removeCookie(...argsList[i]); }
     catch { }
 }
 

@@ -288,8 +288,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["createApp"],["yaContextCb"],["mobileAdvPop"],["popUnderUrl"],["adsbyimobile"]];
-const hostnamesMap = new Map([["wuxianxiaoshuowang.com",0],["ura.news",1],["m.nuvid.*",2],["m.hd21.com",2],["m.drtuber.com",2],["pornhd.com",3],["gamerch.com",4]]);
+const argsList = [["createApp"],["mobileAdvPop"],["popUnderUrl"],["adsbyimobile"]];
+const hostnamesMap = new Map([["wuxianxiaoshuowang.com",0],["m.nuvid.*",1],["m.hd21.com",1],["m.drtuber.com",1],["pornhd.com",2],["gamerch.com",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

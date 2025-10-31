@@ -296,7 +296,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["/^bda|^bltsr/"],["/adblock_/"],["hurricane"],["isab"],["shedevrum-aab"],["yadb"]];
-const hostnamesMap = new Map([["comedy-radio.ru",0],["kufar.by",0],["radioromantika.ru",0],["relax-fm.ru",0],["rg.ru",0],["sm.news",0],["ura.news",0],["veseloeradio.ru",0],["yapx.ru",1],["drive2.ru",2],["24smi.org",3],["shedevrum.ai",4],["kakprosto.ru",5]]);
+const hostnamesMap = new Map([["comedy-radio.ru",0],["kufar.by",0],["radioromantika.ru",0],["relax-fm.ru",0],["rg.ru",0],["sm.news",0],["veseloeradio.ru",0],["yapx.ru",1],["drive2.ru",2],["24smi.org",3],["shedevrum.ai",4],["kakprosto.ru",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

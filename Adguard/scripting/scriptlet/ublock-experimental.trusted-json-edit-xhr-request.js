@@ -426,9 +426,9 @@ class JSONPath {
                 break;
             }
             if ( c === 0x5C /* \ */ && (end+1) < len ) {
-                parts.push(query.slice(beg, end));
                 const d = query.charCodeAt(end+1);
-                if ( d === targetCharCode || d === 0x5C ) {
+                if ( d === targetCharCode ) {
+                    parts.push(query.slice(beg, end));
                     end += 1;
                     beg = end;
                 }
@@ -767,7 +767,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["[?..originalUrl^=\"https://www.youtube.com/watch\"]..[?.playbackContext][?!.params]+={\"params\":\"yAEB\"}","propsToMatch","/player"]];
+const argsList = [["..client[?.clientScreen==\"WATCH_FULL_SCREEN\"].clientScreen=\"CHANNEL\"","propsToMatch","/player"]];
 const hostnamesMap = new Map([["www.youtube.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

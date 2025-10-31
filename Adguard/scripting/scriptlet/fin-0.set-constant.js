@@ -20,73 +20,199 @@
 
 */
 
-// ruleset: chn-0
+// ruleset: fin-0
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_abortOnPropertyRead() {
+(function uBOL_setConstant() {
 
 /******************************************************************************/
 
-function abortOnPropertyRead(
-    chain = ''
+function setConstant(
+    ...args
 ) {
-    if ( typeof chain !== 'string' ) { return; }
-    if ( chain === '' ) { return; }
-    const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
-    const exceptionToken = getExceptionTokenFn();
-    const abort = function() {
-        safe.uboLog(logPrefix, 'Aborted');
-        throw new ReferenceError(exceptionToken);
-    };
-    const makeProxy = function(owner, chain) {
-        const pos = chain.indexOf('.');
-        if ( pos === -1 ) {
-            const desc = Object.getOwnPropertyDescriptor(owner, chain);
-            if ( !desc || desc.get !== abort ) {
-                Object.defineProperty(owner, chain, {
-                    get: abort,
-                    set: function(){}
-                });
-            }
-            return;
-        }
-        const prop = chain.slice(0, pos);
-        let v = owner[prop];
-        chain = chain.slice(pos + 1);
-        if ( v ) {
-            makeProxy(v, chain);
-            return;
-        }
-        const desc = Object.getOwnPropertyDescriptor(owner, prop);
-        if ( desc && desc.set !== undefined ) { return; }
-        Object.defineProperty(owner, prop, {
-            get: function() { return v; },
-            set: function(a) {
-                v = a;
-                if ( a instanceof Object ) {
-                    makeProxy(a, chain);
-                }
-            }
-        });
-    };
-    const owner = window;
-    makeProxy(owner, chain);
+    setConstantFn(false, ...args);
 }
 
-function getExceptionTokenFn() {
-    const token = getRandomTokenFn();
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
+function setConstantFn(
+    trusted = false,
+    chain = '',
+    rawValue = ''
+) {
+    if ( chain === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('set-constant', chain, rawValue);
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
+    function setConstant(chain, rawValue) {
+        const trappedProp = (( ) => {
+            const pos = chain.lastIndexOf('.');
+            if ( pos === -1 ) { return chain; }
+            return chain.slice(pos+1);
+        })();
+        const cloakFunc = fn => {
+            safe.Object_defineProperty(fn, 'name', { value: trappedProp });
+            return new Proxy(fn, {
+                defineProperty(target, prop) {
+                    if ( prop !== 'toString' ) {
+                        return Reflect.defineProperty(...arguments);
+                    }
+                    return true;
+                },
+                deleteProperty(target, prop) {
+                    if ( prop !== 'toString' ) {
+                        return Reflect.deleteProperty(...arguments);
+                    }
+                    return true;
+                },
+                get(target, prop) {
+                    if ( prop === 'toString' ) {
+                        return function() {
+                            return `function ${trappedProp}() { [native code] }`;
+                        }.bind(null);
+                    }
+                    return Reflect.get(...arguments);
+                },
+            });
+        };
+        if ( trappedProp === '' ) { return; }
+        const thisScript = document.currentScript;
+        let normalValue = validateConstantFn(trusted, rawValue, extraArgs);
+        if ( rawValue === 'noopFunc' || rawValue === 'trueFunc' || rawValue === 'falseFunc' ) {
+            normalValue = cloakFunc(normalValue);
         }
-    }.bind();
-    return token;
+        let aborted = false;
+        const mustAbort = function(v) {
+            if ( trusted ) { return false; }
+            if ( aborted ) { return true; }
+            aborted =
+                (v !== undefined && v !== null) &&
+                (normalValue !== undefined && normalValue !== null) &&
+                (typeof v !== typeof normalValue);
+            if ( aborted ) {
+                safe.uboLog(logPrefix, `Aborted because value set to ${v}`);
+            }
+            return aborted;
+        };
+        // https://github.com/uBlockOrigin/uBlock-issues/issues/156
+        //   Support multiple trappers for the same property.
+        const trapProp = function(owner, prop, configurable, handler) {
+            if ( handler.init(configurable ? owner[prop] : normalValue) === false ) { return; }
+            const odesc = safe.Object_getOwnPropertyDescriptor(owner, prop);
+            let prevGetter, prevSetter;
+            if ( odesc instanceof safe.Object ) {
+                owner[prop] = normalValue;
+                if ( odesc.get instanceof Function ) {
+                    prevGetter = odesc.get;
+                }
+                if ( odesc.set instanceof Function ) {
+                    prevSetter = odesc.set;
+                }
+            }
+            try {
+                safe.Object_defineProperty(owner, prop, {
+                    configurable,
+                    get() {
+                        if ( prevGetter !== undefined ) {
+                            prevGetter();
+                        }
+                        return handler.getter();
+                    },
+                    set(a) {
+                        if ( prevSetter !== undefined ) {
+                            prevSetter(a);
+                        }
+                        handler.setter(a);
+                    }
+                });
+                safe.uboLog(logPrefix, 'Trap installed');
+            } catch(ex) {
+                safe.uboErr(logPrefix, ex);
+            }
+        };
+        const trapChain = function(owner, chain) {
+            const pos = chain.indexOf('.');
+            if ( pos === -1 ) {
+                trapProp(owner, chain, false, {
+                    v: undefined,
+                    init: function(v) {
+                        if ( mustAbort(v) ) { return false; }
+                        this.v = v;
+                        return true;
+                    },
+                    getter: function() {
+                        if ( document.currentScript === thisScript ) {
+                            return this.v;
+                        }
+                        safe.uboLog(logPrefix, 'Property read');
+                        return normalValue;
+                    },
+                    setter: function(a) {
+                        if ( mustAbort(a) === false ) { return; }
+                        normalValue = a;
+                    }
+                });
+                return;
+            }
+            const prop = chain.slice(0, pos);
+            const v = owner[prop];
+            chain = chain.slice(pos + 1);
+            if ( v instanceof safe.Object || typeof v === 'object' && v !== null ) {
+                trapChain(v, chain);
+                return;
+            }
+            trapProp(owner, prop, true, {
+                v: undefined,
+                init: function(v) {
+                    this.v = v;
+                    return true;
+                },
+                getter: function() {
+                    return this.v;
+                },
+                setter: function(a) {
+                    this.v = a;
+                    if ( a instanceof safe.Object ) {
+                        trapChain(a, chain);
+                    }
+                }
+            });
+        };
+        trapChain(window, chain);
+    }
+    runAt(( ) => {
+        setConstant(chain, rawValue);
+    }, extraArgs.runAt);
+}
+
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1, 'asap': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
+    }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -279,17 +405,63 @@ function safeSelf() {
     return safe;
 }
 
-function getRandomTokenFn() {
+function validateConstantFn(trusted, raw, extraArgs = {}) {
     const safe = safeSelf();
-    return safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    let value;
+    if ( raw === 'undefined' ) {
+        value = undefined;
+    } else if ( raw === 'false' ) {
+        value = false;
+    } else if ( raw === 'true' ) {
+        value = true;
+    } else if ( raw === 'null' ) {
+        value = null;
+    } else if ( raw === "''" || raw === '' ) {
+        value = '';
+    } else if ( raw === '[]' || raw === 'emptyArr' ) {
+        value = [];
+    } else if ( raw === '{}' || raw === 'emptyObj' ) {
+        value = {};
+    } else if ( raw === 'noopFunc' ) {
+        value = function(){};
+    } else if ( raw === 'trueFunc' ) {
+        value = function(){ return true; };
+    } else if ( raw === 'falseFunc' ) {
+        value = function(){ return false; };
+    } else if ( raw === 'throwFunc' ) {
+        value = function(){ throw ''; };
+    } else if ( /^-?\d+$/.test(raw) ) {
+        value = parseInt(raw);
+        if ( isNaN(raw) ) { return; }
+        if ( Math.abs(raw) > 0x7FFF ) { return; }
+    } else if ( trusted ) {
+        if ( raw.startsWith('json:') ) {
+            try { value = safe.JSON_parse(raw.slice(5)); } catch { return; }
+        } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
+            try { value = safe.JSON_parse(raw).value; } catch { return; }
+        }
+    } else {
+        return;
+    }
+    if ( extraArgs.as !== undefined ) {
+        if ( extraArgs.as === 'function' ) {
+            return ( ) => value;
+        } else if ( extraArgs.as === 'callback' ) {
+            return ( ) => (( ) => value);
+        } else if ( extraArgs.as === 'resolved' ) {
+            return Promise.resolve(value);
+        } else if ( extraArgs.as === 'rejected' ) {
+            return Promise.reject(value);
+        }
+    }
+    return value;
 }
 
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ads"],["alertadmodal"],["adBlockDetected"],["daau_app"],["Object.prototype.ShouldLoadAds"],["popunder"],["akumtagcc"],["myclick"],["addImageAd"],["createFixedBottomBannerWithClose"]];
-const hostnamesMap = new Map([["2urs.com",0],["caq98i.top",1],["1090ys8.com",2],["papalah.com",2],["youneed.win",3],["yfsp.tv",4],["aiyifan.tv",4],["iyf.tv",4],["goodav17.com",5],["m.86kl.com",6],["axjbt.com",7],["avcao.cc",7],["hanime1-me.icu",[8,9]],["hanime1-me.top",[8,9]]]);
+const argsList = [["setnp","0"]];
+const hostnamesMap = new Map([["telsu.fi",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -357,7 +529,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { abortOnPropertyRead(...argsList[i]); }
+    try { setConstant(...argsList[i]); }
     catch { }
 }
 

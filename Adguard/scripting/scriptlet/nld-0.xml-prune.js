@@ -363,7 +363,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["Period[id*=\"-ad-\"]","",".mpd"]];
-const hostnamesMap = new Map([["goplay.be",0]]);
+const hostnamesMap = new Map([["play.tv",0],["goplay.be",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510241014
+## ! Version: 202510311543
 ## ! Title: EasyPrivacy
-## ! Last modified: 24 Oct 2025 10:14 UTC
+## ! Last modified: 31 Oct 2025 15:43 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 128deffc4c7912c49b1540b53b6ac90624561ccb
+## ! Commit: 0d580125df9541e011bd7f09da85b24de2586085
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -653,6 +653,7 @@ DOMAIN-SUFFIX,baseboosters.com, reject
 DOMAIN-SUFFIX,basilfish.com, reject
 DOMAIN-SUFFIX,basketballbelieve.com, reject
 DOMAIN-SUFFIX,baskettexture.com, reject
+DOMAIN-SUFFIX,bastingart.com, reject
 DOMAIN-SUFFIX,bawdybalance.com, reject
 DOMAIN-SUFFIX,beamvolcano.com, reject
 DOMAIN-SUFFIX,beancontrol.com, reject
@@ -674,6 +675,7 @@ DOMAIN-SUFFIX,bikinginspire.com, reject
 DOMAIN-SUFFIX,bilingualgeek.com, reject
 DOMAIN-SUFFIX,billowybead.com, reject
 DOMAIN-SUFFIX,billowybelief.com, reject
+DOMAIN-SUFFIX,billtable.com, reject
 DOMAIN-SUFFIX,binarycrest.com, reject
 DOMAIN-SUFFIX,binspiredtees.com, reject
 DOMAIN-SUFFIX,birthdaybelief.com, reject
@@ -909,6 +911,7 @@ DOMAIN-SUFFIX,crystalboulevard.com, reject
 DOMAIN-SUFFIX,cubchannel.com, reject
 DOMAIN-SUFFIX,cubepins.com, reject
 DOMAIN-SUFFIX,cuddlycake.com, reject
+DOMAIN-SUFFIX,cuddlylab.com, reject
 DOMAIN-SUFFIX,cuddlylunchroom.com, reject
 DOMAIN-SUFFIX,culturedcamera.com, reject
 DOMAIN-SUFFIX,culturedfeather.com, reject
@@ -923,6 +926,7 @@ DOMAIN-SUFFIX,curlycannon.com, reject
 DOMAIN-SUFFIX,currentcollar.com, reject
 DOMAIN-SUFFIX,curtaincows.com, reject
 DOMAIN-SUFFIX,curvedhoney.com, reject
+DOMAIN-SUFFIX,curveshore.com, reject
 DOMAIN-SUFFIX,curvycry.com, reject
 DOMAIN-SUFFIX,cushiondrum.com, reject
 DOMAIN-SUFFIX,cutecalculator.com, reject
@@ -1155,6 +1159,7 @@ DOMAIN-SUFFIX,frailfruit.com, reject
 DOMAIN-SUFFIX,framebanana.com, reject
 DOMAIN-SUFFIX,franksfloral.com, reject
 DOMAIN-SUFFIX,franticroof.com, reject
+DOMAIN-SUFFIX,freedomgrail.com, reject
 DOMAIN-SUFFIX,freezeassets.com, reject
 DOMAIN-SUFFIX,freezingbuilding.com, reject
 DOMAIN-SUFFIX,frequentflesh.com, reject
@@ -1255,6 +1260,7 @@ DOMAIN-SUFFIX,gustygrandmother.com, reject
 DOMAIN-SUFFIX,haikusoap.com, reject
 DOMAIN-SUFFIX,halcyoncanyon.com, reject
 DOMAIN-SUFFIX,halcyonsculpture.com, reject
+DOMAIN-SUFFIX,halocolor.com, reject
 DOMAIN-SUFFIX,haltingbadge.com, reject
 DOMAIN-SUFFIX,haltingdivision.com, reject
 DOMAIN-SUFFIX,hammerhearing.com, reject
@@ -1363,6 +1369,7 @@ DOMAIN-SUFFIX,jazzstadium.com, reject
 DOMAIN-SUFFIX,jazzwholesale.com, reject
 DOMAIN-SUFFIX,jetskiscovers.com, reject
 DOMAIN-SUFFIX,jewelryforest.com, reject
+DOMAIN-SUFFIX,jewelrysprings.com, reject
 DOMAIN-SUFFIX,joblessdrum.com, reject
 DOMAIN-SUFFIX,jobmist.com, reject
 DOMAIN-SUFFIX,joyfulharbor.com, reject
@@ -1427,6 +1434,7 @@ DOMAIN-SUFFIX,lighttalon.com, reject
 DOMAIN-SUFFIX,likethedog.com, reject
 DOMAIN-SUFFIX,limepeal.com, reject
 DOMAIN-SUFFIX,linkedleg.com, reject
+DOMAIN-SUFFIX,linksoutside.com, reject
 DOMAIN-SUFFIX,livelumber.com, reject
 DOMAIN-SUFFIX,livelylaugh.com, reject
 DOMAIN-SUFFIX,livingsleet.com, reject
@@ -1497,6 +1505,7 @@ DOMAIN-SUFFIX,melodiouscomposition.com, reject
 DOMAIN-SUFFIX,melodiousharmony.com, reject
 DOMAIN-SUFFIX,melodioussymphony.com, reject
 DOMAIN-SUFFIX,meltmilk.com, reject
+DOMAIN-SUFFIX,memeorigin.com, reject
 DOMAIN-SUFFIX,memolight.com, reject
 DOMAIN-SUFFIX,memopilot.com, reject
 DOMAIN-SUFFIX,memorizematch.com, reject
@@ -1508,6 +1517,7 @@ DOMAIN-SUFFIX,merequartz.com, reject
 DOMAIN-SUFFIX,merryopal.com, reject
 DOMAIN-SUFFIX,merryvault.com, reject
 DOMAIN-SUFFIX,mesaviewlodge.com, reject
+DOMAIN-SUFFIX,messagelists.com, reject
 DOMAIN-SUFFIX,messmonster.com, reject
 DOMAIN-SUFFIX,messyoranges.com, reject
 DOMAIN-SUFFIX,metajaws.com, reject
@@ -1613,6 +1623,7 @@ DOMAIN-SUFFIX,opalquill.com, reject
 DOMAIN-SUFFIX,operationchicken.com, reject
 DOMAIN-SUFFIX,operationnail.com, reject
 DOMAIN-SUFFIX,optimallimit.com, reject
+DOMAIN-SUFFIX,optionsnomad.com, reject
 DOMAIN-SUFFIX,opulentsylvan.com, reject
 DOMAIN-SUFFIX,orangebirdie.com, reject
 DOMAIN-SUFFIX,orientedargument.com, reject
@@ -1695,6 +1706,7 @@ DOMAIN-SUFFIX,polishedcrescent.com, reject
 DOMAIN-SUFFIX,polishedfolly.com, reject
 DOMAIN-SUFFIX,politeplanes.com, reject
 DOMAIN-SUFFIX,politicalporter.com, reject
+DOMAIN-SUFFIX,popmixradio.com, reject
 DOMAIN-SUFFIX,popplantation.com, reject
 DOMAIN-SUFFIX,possibleboats.com, reject
 DOMAIN-SUFFIX,possiblepencil.com, reject
@@ -1741,6 +1753,7 @@ DOMAIN-SUFFIX,pumpedpancake.com, reject
 DOMAIN-SUFFIX,pumpedpurpose.com, reject
 DOMAIN-SUFFIX,punyplant.com, reject
 DOMAIN-SUFFIX,puppetcorp.com, reject
+DOMAIN-SUFFIX,puppiesart.com, reject
 DOMAIN-SUFFIX,puppytooth.com, reject
 DOMAIN-SUFFIX,purposepipe.com, reject
 DOMAIN-SUFFIX,pyramidpaw.com, reject
@@ -1815,6 +1828,7 @@ DOMAIN-SUFFIX,remixslot.com, reject
 DOMAIN-SUFFIX,rentinfinity.com, reject
 DOMAIN-SUFFIX,repeatsweater.com, reject
 DOMAIN-SUFFIX,replaceroute.com, reject
+DOMAIN-SUFFIX,rescuerhino.com, reject
 DOMAIN-SUFFIX,resonantbrush.com, reject
 DOMAIN-SUFFIX,resonantrock.com, reject
 DOMAIN-SUFFIX,respectrain.com, reject
@@ -2048,6 +2062,7 @@ DOMAIN-SUFFIX,sparklingshelf.com, reject
 DOMAIN-SUFFIX,specialscissors.com, reject
 DOMAIN-SUFFIX,specialsnake.com, reject
 DOMAIN-SUFFIX,spectacularstamp.com, reject
+DOMAIN-SUFFIX,spellingthoughts.com, reject
 DOMAIN-SUFFIX,spellknight.com, reject
 DOMAIN-SUFFIX,spellmist.com, reject
 DOMAIN-SUFFIX,spellsalsa.com, reject
@@ -2145,6 +2160,7 @@ DOMAIN-SUFFIX,subseacare.com, reject
 DOMAIN-SUFFIX,subseasecurity.com, reject
 DOMAIN-SUFFIX,subsequentstew.com, reject
 DOMAIN-SUFFIX,substantialgrade.com, reject
+DOMAIN-SUFFIX,successbuffet.com, reject
 DOMAIN-SUFFIX,successfuelevents.com, reject
 DOMAIN-SUFFIX,suddensoda.com, reject
 DOMAIN-SUFFIX,suggestionbridge.com, reject
@@ -2174,6 +2190,7 @@ DOMAIN-SUFFIX,swordgoose.com, reject
 DOMAIN-SUFFIX,syllablesight.com, reject
 DOMAIN-SUFFIX,synonymoussticks.com, reject
 DOMAIN-SUFFIX,synthesizescarecrow.com, reject
+DOMAIN-SUFFIX,systemssummit.com, reject
 DOMAIN-SUFFIX,tabcarts.com, reject
 DOMAIN-SUFFIX,tackytrains.com, reject
 DOMAIN-SUFFIX,tacojournal.com, reject
@@ -2309,6 +2326,7 @@ DOMAIN-SUFFIX,unusualtitle.com, reject
 DOMAIN-SUFFIX,unwieldyhealth.com, reject
 DOMAIN-SUFFIX,unwieldyimpulse.com, reject
 DOMAIN-SUFFIX,unwieldyplastic.com, reject
+DOMAIN-SUFFIX,upgradeyoga.com, reject
 DOMAIN-SUFFIX,uppitytime.com, reject
 DOMAIN-SUFFIX,upscaledigest.com, reject
 DOMAIN-SUFFIX,urbanlaurel.com, reject
@@ -2385,6 +2403,7 @@ DOMAIN-SUFFIX,wildcommittee.com, reject
 DOMAIN-SUFFIX,wildwoodavenue.com, reject
 DOMAIN-SUFFIX,wirecomic.com, reject
 DOMAIN-SUFFIX,wiredforcoffee.com, reject
+DOMAIN-SUFFIX,wirenewsletter.com, reject
 DOMAIN-SUFFIX,wirypaste.com, reject
 DOMAIN-SUFFIX,wisedotcom.com, reject
 DOMAIN-SUFFIX,wispycity.com, reject
@@ -2842,7 +2861,6 @@ DOMAIN-SUFFIX,doh.cq0.co, reject
 DOMAIN-SUFFIX,doppler-beacon.cbsivideo.com, reject
 DOMAIN-SUFFIX,doppler-client-events.cbsivideo.com, reject
 DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com, reject
-DOMAIN-SUFFIX,duplexer.wix.com, reject
 DOMAIN-SUFFIX,dx.mountain.com, reject
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com, reject
 DOMAIN-SUFFIX,e.channelexco.com, reject
@@ -3008,6 +3026,7 @@ DOMAIN-SUFFIX,insitez.blob.core.windows.net, reject
 DOMAIN-SUFFIX,intake-analytics.wikimedia.org, reject
 DOMAIN-SUFFIX,invite.leanlab.co, reject
 DOMAIN-SUFFIX,invitejs.trustpilot.com, reject
+DOMAIN-SUFFIX,ip-check-perf.radar.cloudflare.com, reject
 DOMAIN-SUFFIX,ip.lovely-app.com, reject
 DOMAIN-SUFFIX,ip.momentummedia.com.au, reject
 DOMAIN-SUFFIX,iq.sixaxisllc.com, reject
@@ -3900,6 +3919,7 @@ DOMAIN-SUFFIX,b.nativendo.de, reject
 DOMAIN-SUFFIX,beagle.prod.tda.link, reject
 DOMAIN-SUFFIX,blacktri-a.akamaihd.net, reject
 DOMAIN-SUFFIX,cgicounter.onlinehome.de, reject
+DOMAIN-SUFFIX,click-performance.assets.rndtech.de, reject
 DOMAIN-SUFFIX,com.econa.com, reject
 DOMAIN-SUFFIX,counter.1i.kz, reject
 DOMAIN-SUFFIX,counter.blogoscoop.net, reject

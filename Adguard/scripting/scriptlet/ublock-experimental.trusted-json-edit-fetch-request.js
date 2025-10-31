@@ -20,7 +20,7 @@
 
 */
 
-// ruleset: ublock-filters
+// ruleset: ublock-experimental
 
 // Important!
 // Isolate from global scope

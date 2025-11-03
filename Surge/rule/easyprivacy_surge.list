@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510311543
+## ! Version: 202511031131
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Oct 2025 15:43 UTC
+## ! Last modified: 03 Nov 2025 11:31 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 0d580125df9541e011bd7f09da85b24de2586085
+## ! Commit: 882813c8f149456491834dc49848baee2874c026
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -536,6 +536,7 @@ DOMAIN-SUFFIX,str1kee.com
 DOMAIN-SUFFIX,tercabilis.info
 DOMAIN-SUFFIX,trustisimportant.fun
 DOMAIN-SUFFIX,2znp09oa.com
+DOMAIN-SUFFIX,3rdspacetech.com
 DOMAIN-SUFFIX,4jnzhl0d0.com
 DOMAIN-SUFFIX,82o9v830.com
 DOMAIN-SUFFIX,abilityscale.com
@@ -669,6 +670,7 @@ DOMAIN-SUFFIX,bewilderedbattle.com
 DOMAIN-SUFFIX,bewilderedblade.com
 DOMAIN-SUFFIX,bhcumsc.com
 DOMAIN-SUFFIX,bidpapers.com
+DOMAIN-SUFFIX,bigworldfashion.com
 DOMAIN-SUFFIX,bikepaws.com
 DOMAIN-SUFFIX,bikesboard.com
 DOMAIN-SUFFIX,bikinginspire.com
@@ -743,6 +745,7 @@ DOMAIN-SUFFIX,burgersalt.com
 DOMAIN-SUFFIX,burlywhistle.com
 DOMAIN-SUFFIX,burnbubble.com
 DOMAIN-SUFFIX,bushesbag.com
+DOMAIN-SUFFIX,businessupdater.com
 DOMAIN-SUFFIX,bustlingbook.com
 DOMAIN-SUFFIX,butterbulb.com
 DOMAIN-SUFFIX,butterburst.com
@@ -898,6 +901,7 @@ DOMAIN-SUFFIX,crashchance.com
 DOMAIN-SUFFIX,cratecamera.com
 DOMAIN-SUFFIX,creatorcherry.com
 DOMAIN-SUFFIX,creatorpassenger.com
+DOMAIN-SUFFIX,creatorsnote.com
 DOMAIN-SUFFIX,creaturecabbage.com
 DOMAIN-SUFFIX,crimsonmeadow.com
 DOMAIN-SUFFIX,critictruck.com
@@ -931,6 +935,7 @@ DOMAIN-SUFFIX,curvycry.com
 DOMAIN-SUFFIX,cushiondrum.com
 DOMAIN-SUFFIX,cutecalculator.com
 DOMAIN-SUFFIX,cutechin.com
+DOMAIN-SUFFIX,cyclinghere.com
 DOMAIN-SUFFIX,cyclopsdial.com
 DOMAIN-SUFFIX,damagedadvice.com
 DOMAIN-SUFFIX,damageddistance.com
@@ -1083,6 +1088,7 @@ DOMAIN-SUFFIX,fairytaleflame.com
 DOMAIN-SUFFIX,faithrowold.com
 DOMAIN-SUFFIX,fakedisguise.com
 DOMAIN-SUFFIX,fallaciousfifth.com
+DOMAIN-SUFFIX,fallingshoals.com
 DOMAIN-SUFFIX,falseframe.com
 DOMAIN-SUFFIX,falsesight.com
 DOMAIN-SUFFIX,familiarrod.com
@@ -2024,6 +2030,7 @@ DOMAIN-SUFFIX,snacktoken.com
 DOMAIN-SUFFIX,snakeslang.com
 DOMAIN-SUFFIX,snappyreport.com
 DOMAIN-SUFFIX,snapsgate.com
+DOMAIN-SUFFIX,snazzypoodle.com
 DOMAIN-SUFFIX,sneakwind.com
 DOMAIN-SUFFIX,sneakystew.com
 DOMAIN-SUFFIX,sneezecovers.com
@@ -2253,6 +2260,7 @@ DOMAIN-SUFFIX,ticketjolly.com
 DOMAIN-SUFFIX,ticketssponge.com
 DOMAIN-SUFFIX,ticklesign.com
 DOMAIN-SUFFIX,tidymitten.com
+DOMAIN-SUFFIX,tidysprite.com
 DOMAIN-SUFFIX,tightpowder.com
 DOMAIN-SUFFIX,tinybluewhale.com
 DOMAIN-SUFFIX,tinyswans.com
@@ -3447,6 +3455,7 @@ DOMAIN-SUFFIX,t.clic2buy.com
 DOMAIN-SUFFIX,t.cometlytrack.com
 DOMAIN-SUFFIX,t.commandbar.com
 DOMAIN-SUFFIX,t.enuygun.com
+DOMAIN-SUFFIX,t.fastcmp.com
 DOMAIN-SUFFIX,t.fullres.net
 DOMAIN-SUFFIX,t.ghostboard.io
 DOMAIN-SUFFIX,t.greenbids.ai
@@ -41870,6 +41879,7 @@ DOMAIN-SUFFIX,d.tv-asahi.co.jp
 DOMAIN-SUFFIX,ek-tracker.ekitan.com
 DOMAIN-SUFFIX,eq-beacon.stream.co.jp
 DOMAIN-SUFFIX,eq-player-log.cdnext.stream.ne.jp
+DOMAIN-SUFFIX,fp.kakaku.com
 DOMAIN-SUFFIX,gtm.diamond.jp
 DOMAIN-SUFFIX,is-log.furunavi.jp
 DOMAIN-SUFFIX,j1.ax.xrea.com

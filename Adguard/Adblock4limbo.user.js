@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.10.22
+// @version      0.2025.11.03
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -102,6 +102,7 @@
 // @match        https://91porn.com/*
 // @match        https://91porn.com/*
 // @match        https://91porna.com/*
+// @match        https://91porny.com/*
 // @match        https://www.91porn.com/*
 // @match        https://avple.tv/*
 // @match        https://18comic.org/*
@@ -561,21 +562,137 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
 
         case '91porny':
+
             //cloudflare_captchaBypass();
             css_adsRemove(imax.css.porny91);
             //_91porn_videoplay_ads();
 
-            // 播放页空白
 
+            // 播放页空白
             document.querySelectorAll("br").forEach((x) => {
                 if (x.clientHeight = 0) {
                     x.remove()
                 }
             })
 
+
+
+            /**
+ * 关闭指定的 Bootstrap 模态框（仅使用官方 API：BS5 / BS4）
+ *
+ * @param {string} selector - 必需的 CSS 选择器，支持多个用逗号分隔
+ *                            示例: '#myModal', '.modal', '#m1, #m2'
+ * @returns {void}
+ *
+ * @example
+ * closeBootstrapModal('#loginModal');
+ * closeBootstrapModal('.modal.show, #alertModal');
+ */
+            function closeBootstrapModal(selector) {
+                'use strict';
+
+                // 1. 参数校验
+                if (typeof selector !== 'string' || !selector.trim()) {
+                    console.warn('closeBootstrapModal: 必须提供有效的选择器字符串');
+                    return;
+                }
+
+                // 2. 解析多个选择器
+                const selectors = selector
+                    .split(',')
+                    .map(s => s.trim())
+                    .filter(s => s);
+
+                if (!selectors.length) {
+                    console.warn('closeBootstrapModal: 解析后无有效选择器');
+                    return;
+                }
+
+                // 3. 获取所有匹配元素并去重
+                const elements = Array.from(
+                    new Set(
+                        selectors.flatMap(sel =>
+                            Array.from(document.querySelectorAll(sel))
+                        )
+                    )
+                );
+
+                if (!elements.length) {
+                    console.log('closeBootstrapModal: 未找到匹配的元素');
+                    return;
+                }
+
+                // 4. 逐个尝试关闭（仅使用官方 API）
+                elements.forEach(modal => {
+                    let closed = false;
+
+                    // === Bootstrap 5 原生 API ===
+                    if (!closed && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                        const instance = bootstrap.Modal.getInstance(modal);
+                        if (instance) {
+                            instance.hide();
+                            console.log('Bootstrap 5: instance.hide() 已调用', modal);
+                            closed = true;
+                        } else {
+                            // 尝试创建新实例并关闭（适用于未初始化但结构正确的 modal）
+                            try {
+                                new bootstrap.Modal(modal).hide();
+                                console.log('Bootstrap 5: 新实例 hide() 已调用', modal);
+                                closed = true;
+                            } catch (e) {
+                                console.warn('Bootstrap 5: 创建实例失败', e, modal);
+                            }
+                        }
+                    }
+
+                    // === Bootstrap 4 jQuery API ===
+                    if (!closed && typeof $ !== 'undefined' && $.fn.modal) {
+                        try {
+                            $(modal).modal('hide');
+                            console.log('jQuery: modal("hide") 已调用', modal);
+                            closed = true;
+                        } catch (e) {
+                            console.warn('jQuery modal("hide") 失败', e, modal);
+                        }
+                    }
+
+                    // === 若都失败，仅记录警告 ===
+                    if (!closed) {
+                        console.warn('closeBootstrapModal: 无法关闭模态框（无可用 Bootstrap API）', modal);
+                    }
+                });
+            }
+
+            // 或者绑定到某个事件
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBootstrapModal('.modal.show,div.skip-btn'); });
+
             setTimeout(() => {
-                _91porny_dl()
-            }, 1200)
+                closeBootstrapModal('.modal.show,div.skip-btn') // 关闭模态框
+                _91porny_dl() // 下载按钮
+                if (document.querySelector('div.skip-btn.cursor-p')) { // 跳过广告按钮
+                    document.querySelector('div.skip-btn.cursor-p').click()
+                }
+            }, 2000);
+
+            document.addEventListener('DOMContentLoaded', function () {
+                this.setTimeout(() => {
+                    closeBootstrapModal('.modal.show,div.skip-btn') // 关闭模态框
+                    _91porny_dl() // 下载按钮
+                    if (document.querySelector('div.skip-btn.cursor-p')) { // 跳过广告按钮
+                        document.querySelector('div.skip-btn.cursor-p').click()
+                    }
+                });
+            });
+
+            window.addEventListener('load', function () {
+                this.setTimeout(() => {
+                    closeBootstrapModal('.modal.show,div.skip-btn') // 关闭模态框
+                    _91porny_dl() // 下载按钮
+                    if (document.querySelector('div.skip-btn.cursor-p')) { // 跳过广告按钮
+                        document.querySelector('div.skip-btn.cursor-p').click()
+                    }
+                });
+            }, 2000);
 
             break;
 
@@ -586,7 +703,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
         case 'd1skbu98kuldnf.cloudfront.net': //mdsp
         case 'dnt92ffcqr0xu.cloudfront.net': //mdsp
-        
+
             window.addEventListener('load', function () {
                 this.setTimeout(() => {
                     css_adsRemove(imax.css.dnfcloudfront);
@@ -2356,105 +2473,111 @@ function fileDownload(url, download = true) {
 
 
 function _91porny_dl() {
-    if (document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src
-    ) {
 
-        var css = document.createElement('style')
-        css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
-        css.id = 'porn91'
-        document.body.appendChild(css)
+    const element = document.querySelector('div.videoPlayContainer div[data-src]');
+    if (element && element.dataset.src) {
+        console.log(element.dataset.src);
+        // 执行你的逻辑
 
-        if (document.getElementById('mp4Download') == null) {
-            var mp4URL = document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src
-            var mp4Download = document.createElement('a')
-            mp4Download.download = document.title.toString()
-            mp4Download.target = '_blank'
-            mp4Download.id = 'mp4Download'
-            mp4Download.href = mp4URL
 
-            if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
-                mp4Download.textContent = '无广播放'
-            } else {
-                mp4Download.textContent = '下载M3U8文件'
+        {
+
+            var css = document.createElement('style')
+            css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
+            css.id = 'porn91'
+            document.body.appendChild(css)
+
+            if (document.getElementById('copyURL') == null) {
+                var mp4URL = document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src
+                var mp4Download = document.createElement('a')
+                mp4Download.download = document.title.toString()
+                mp4Download.target = '_blank'
+                mp4Download.id = 'mp4Download'
+                mp4Download.href = mp4URL
+
+                if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
+                    mp4Download.textContent = '无广播放'
+                } else {
+                    mp4Download.textContent = '下载M3U8文件'
+                }
+
+                var button_download = document.createElement('button')
+                button_download.style = 'font-size:12px; padding:10px; position:static;right:0px;top:216px;border:0px; background:#3286cd;color:white;font-weight:bolder;height:38px;'
+                button_download.textContent = '复制本视频的M3U8文件地址'
+                button_download.id = 'copyURL'
+
+                var button_alert = document.createElement('button')
+                button_alert.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:yellowgreen;color:white;font-weight:bolder;height:38px;'
+                button_alert.textContent = '如何下载M3U8视频?'
+                button_alert.id = 'alertDownload'
+
+                var button_downloadOnline = document.createElement('button')
+                button_downloadOnline.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:rgb(34, 90, 137);color:white;font-weight:bolder;height:38px;'
+                button_downloadOnline.textContent = '在线下载本视频'
+                button_downloadOnline.id = 'downloadOnline'
+
+
+                var button_hidden = document.createElement('button')
+                button_hidden.style = 'font-size:12px; padding:10px; position:static;right:0px;top:482px;border:0px; background:black;color:white;font-weight:bolder;height:38px;'
+                button_hidden.textContent = '隐藏按钮'
+                button_hidden.id = 'hiddenButton'
+
+                button_alert.addEventListener('click', (() => {
+                    window.open('https://limbopro.com/archives/M3U8-Downloader.html', '_blank')
+                }))
+
+
+                const downloadOnlineurl = 'https://anyconv.com/m3u8-to-mp4-converter/' + "#" + mp4URL
+
+                /* button_downloadOnline.addEventListener('click', (() => {
+                    window.open(downloadOnlineurl, '_blank')
+                }))*/
+
+                button_hidden.addEventListener('click', (() => {
+                    document.getElementById('mp4Download').style.display = 'none'
+                    document.getElementById('copyURL').style.display = 'none'
+                    document.getElementById('alertDownload').style.display = 'none'
+                    document.getElementById('hiddenButton').style.display = 'none'
+                }))
+
+                button_download.addEventListener('click', (() => {
+                    if (document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src !== null) {
+                        const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
+                        textarea.id = 'fuck91porn'
+                        document.querySelector('#copyURL').appendChild(textarea)
+                        textarea.value = mp4URL
+                        textarea.select();
+                        document.execCommand('copy', true); // 执行复制
+                        document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
+                        document.querySelector('#copyURL').textContent = '复制成功'
+
+                        setTimeout(() => { // ↩️按钮恢复原状
+                            document.querySelector('#copyURL').classList.remove('copysuccess')
+                            document.querySelector('#copyURL').textContent = '复制本视频的M3U8文件地址'
+                        }, 2500)
+
+                        if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
+                            document.getElementById('ffuck91porn').remove()
+                        }
+                    } else {
+                        alert('未找到视频下载地址！')
+                    }
+                }))
+
+                document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_download, document.querySelectorAll('h4.container-title')[0])
+                document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_downloadOnline, document.querySelectorAll('h4.container-title')[0])
+                document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('h4.container-title')[0])
             }
 
-            var button_download = document.createElement('button')
-            button_download.style = 'font-size:12px; padding:10px; position:static;right:0px;top:216px;border:0px; background:#3286cd;color:white;font-weight:bolder;height:38px;'
-            button_download.textContent = '复制本视频的M3U8文件地址'
-            button_download.id = 'copyURL'
 
-            var button_alert = document.createElement('button')
-            button_alert.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:yellowgreen;color:white;font-weight:bolder;height:38px;'
-            button_alert.textContent = '如何下载M3U8视频?'
-            button_alert.id = 'alertDownload'
+            // online download button script
+            // 获取按钮
+            const button = document.getElementById('downloadOnline');
 
-            var button_downloadOnline = document.createElement('button')
-            button_downloadOnline.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:rgb(34, 90, 137);color:white;font-weight:bolder;height:38px;'
-            button_downloadOnline.textContent = '在线下载本视频'
-            button_downloadOnline.id = 'downloadOnline'
-
-
-            var button_hidden = document.createElement('button')
-            button_hidden.style = 'font-size:12px; padding:10px; position:static;right:0px;top:482px;border:0px; background:black;color:white;font-weight:bolder;height:38px;'
-            button_hidden.textContent = '隐藏按钮'
-            button_hidden.id = 'hiddenButton'
-
-            button_alert.addEventListener('click', (() => {
-                window.open('https://limbopro.com/archives/M3U8-Downloader.html', '_blank')
-            }))
-
-
-            const downloadOnlineurl = 'https://anyconv.com/m3u8-to-mp4-converter/' + "#" + mp4URL
-
-            /* button_downloadOnline.addEventListener('click', (() => {
-                window.open(downloadOnlineurl, '_blank')
-            }))*/
-
-            button_hidden.addEventListener('click', (() => {
-                document.getElementById('mp4Download').style.display = 'none'
-                document.getElementById('copyURL').style.display = 'none'
-                document.getElementById('alertDownload').style.display = 'none'
-                document.getElementById('hiddenButton').style.display = 'none'
-            }))
-
-            button_download.addEventListener('click', (() => {
-                if (document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src !== null) {
-                    const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
-                    textarea.id = 'fuck91porn'
-                    document.querySelector('#copyURL').appendChild(textarea)
-                    textarea.value = mp4URL
-                    textarea.select();
-                    document.execCommand('copy', true); // 执行复制
-                    document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
-                    document.querySelector('#copyURL').textContent = '复制成功'
-
-                    setTimeout(() => { // ↩️按钮恢复原状
-                        document.querySelector('#copyURL').classList.remove('copysuccess')
-                        document.querySelector('#copyURL').textContent = '复制本视频的M3U8文件地址'
-                    }, 2500)
-
-                    if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
-                        document.getElementById('ffuck91porn').remove()
-                    }
-                } else {
-                    alert('未找到视频下载地址！')
-                }
-            }))
-
-            document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_download, document.querySelectorAll('h4.container-title')[0])
-            document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_downloadOnline, document.querySelectorAll('h4.container-title')[0])
-            document.querySelectorAll('h4.container-title')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('h4.container-title')[0])
-        }
-
-
-        // online download button script
-        // 获取按钮
-        const button = document.getElementById('downloadOnline');
-
-        // 动态创建样式
-        function createStyles() {
-            const style = document.createElement('style');
-            style.textContent = `
+            // 动态创建样式
+            function createStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
                         /* 遮罩层样式 */
                         .overlay {
                             display: none;
@@ -2545,22 +2668,22 @@ function _91porny_dl() {
                             background-color: #c82333;
                 }
                         `;
-            document.head.appendChild(style);
-            return style;
-        }
+                document.head.appendChild(style);
+                return style;
+            }
 
-        // 动态创建DOM元素
-        function createModalElements() {
-            // 创建遮罩层
-            const overlay = document.createElement('div');
-            overlay.id = 'overlay';
-            overlay.className = 'overlay';
+            // 动态创建DOM元素
+            function createModalElements() {
+                // 创建遮罩层
+                const overlay = document.createElement('div');
+                overlay.id = 'overlay';
+                overlay.className = 'overlay';
 
-            // 创建悬浮窗
-            const modal = document.createElement('div');
-            modal.id = 'modal';
-            modal.className = 'modal';
-            modal.innerHTML = `
+                // 创建悬浮窗
+                const modal = document.createElement('div');
+                modal.id = 'modal';
+                modal.className = 'modal';
+                modal.innerHTML = `
                         <h3>✅ 已复制M3U8文件地址</h3>
                         <p>1.点击下方按钮<span>跳转到在线解析网站 anyconv</>，<span>2.粘贴M3U8文件地址</>，3.然后点击<span>转换为MP4格式</>进行下载即可！<br><br>(P.S. 需要注意的是，使用在线解析下载长视频(大于128Mb)可能体验不佳或不如App，可查看更多下载方法选择合适的App下载长视频；点击页面上的非弹窗部分关闭本弹窗)</p>
                         <a href="https://anyconv.com/m3u8-to-mp4-converter/" target="_blank">跳转到下载网站 anyconv</a><br>
@@ -2568,68 +2691,72 @@ function _91porny_dl() {
                         <!-- <br><button class="close-btn" onclick="closeModal()">关闭</button> --!>
                             `;
 
-            // 添加到页面
-            document.body.appendChild(overlay);
-            document.body.appendChild(modal);
+                // 添加到页面
+                document.body.appendChild(overlay);
+                document.body.appendChild(modal);
 
-            return { overlay, modal };
-        }
-
-
-        // 执行函数
-        function executeFunction() {
-            document.getElementById('copyURL').click()
-            console.log('函数已执行');
-
-            // 创建样式（只创建一次）
-            if (!document.querySelector('style[data-modal-styles]')) {
-                const style = createStyles();
-                style.setAttribute('data-modal-styles', 'true');
+                return { overlay, modal };
             }
 
-            // 创建DOM元素（只创建一次）
-            if (!document.getElementById('modal')) {
-                createModalElements();
+
+            // 执行函数
+            function executeFunction() {
+                document.getElementById('copyURL').click()
+                console.log('函数已执行');
+
+                // 创建样式（只创建一次）
+                if (!document.querySelector('style[data-modal-styles]')) {
+                    const style = createStyles();
+                    style.setAttribute('data-modal-styles', 'true');
+                }
+
+                // 创建DOM元素（只创建一次）
+                if (!document.getElementById('modal')) {
+                    createModalElements();
+                }
+
+                // 显示悬浮窗
+                showModal();
             }
+
+            // 按钮点击事件
+            button.addEventListener('click', executeFunction);
+
+            // 点击遮罩层关闭悬浮窗
+            document.addEventListener('click', function (e) {
+                if (e.target.id === 'overlay') {
+                    closeModal();
+                }
+            });
+
+            // ESC键关闭悬浮窗
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
 
             // 显示悬浮窗
-            showModal();
-        }
+            function showModal() {
+                const overlay = document.getElementById('overlay');
+                const modal = document.getElementById('modal');
 
-        // 按钮点击事件
-        button.addEventListener('click', executeFunction);
-
-        // 点击遮罩层关闭悬浮窗
-        document.addEventListener('click', function (e) {
-            if (e.target.id === 'overlay') {
-                closeModal();
+                overlay.style.display = 'block';
+                modal.style.display = 'block';
             }
-        });
 
-        // ESC键关闭悬浮窗
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeModal();
+            // 关闭悬浮窗
+            function closeModal() {
+                const overlay = document.getElementById('overlay');
+                const modal = document.getElementById('modal');
+
+                overlay.style.display = 'none';
+                modal.style.display = 'none';
             }
-        });
-
-        // 显示悬浮窗
-        function showModal() {
-            const overlay = document.getElementById('overlay');
-            const modal = document.getElementById('modal');
-
-            overlay.style.display = 'block';
-            modal.style.display = 'block';
         }
 
-        // 关闭悬浮窗
-        function closeModal() {
-            const overlay = document.getElementById('overlay');
-            const modal = document.getElementById('modal');
-
-            overlay.style.display = 'none';
-            modal.style.display = 'none';
-        }
+    } else {
+        console.log('未找到带有 data-src 的元素');
     }
 }
 
@@ -4104,3 +4231,5 @@ function aopr() {
 
 // 设置 cookie 饼
 function settingCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
+
+

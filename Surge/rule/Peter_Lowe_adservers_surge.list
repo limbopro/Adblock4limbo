@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 31 Oct 2025 15:15:52 GMT
-# entries:        3455
+# last updated:   Sun, 02 Nov 2025 21:01:02 GMT
+# entries:        3459
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1089,6 +1089,7 @@ DOMAIN-SUFFIX,bidvertiser.com
 DOMAIN-SUFFIX,big-bang-ads.com
 DOMAIN-SUFFIX,bigbangmedia.com
 DOMAIN-SUFFIX,bigclicks.com
+DOMAIN-SUFFIX,bigworldfashion.com
 DOMAIN-SUFFIX,billboard.cz
 DOMAIN-SUFFIX,billtable.com
 DOMAIN-SUFFIX,birthdaybelief.com
@@ -1424,6 +1425,7 @@ DOMAIN-SUFFIX,customers.kameleoon.com
 DOMAIN-SUFFIX,cutechin.com
 DOMAIN-SUFFIX,cxense.com
 DOMAIN-SUFFIX,cyberbounty.com
+DOMAIN-SUFFIX,cyclinghere.com
 DOMAIN-SUFFIX,d-collect.jennifersoft.com
 DOMAIN-SUFFIX,d-collector.jennifersoft.com
 DOMAIN-SUFFIX,d.adroll.com
@@ -1622,6 +1624,7 @@ DOMAIN-SUFFIX,fadedsnow.com
 DOMAIN-SUFFIX,fairfeeling.com
 DOMAIN-SUFFIX,fakedisguise.com
 DOMAIN-SUFFIX,fallaciousfifth.com
+DOMAIN-SUFFIX,fallingshoals.com
 DOMAIN-SUFFIX,fam-ad.com
 DOMAIN-SUFFIX,farethief.com
 DOMAIN-SUFFIX,farmergoldfish.com
@@ -3105,6 +3108,7 @@ DOMAIN-SUFFIX,ticklesign.com
 DOMAIN-SUFFIX,ticksel.com
 DOMAIN-SUFFIX,tics.techdirt.com
 DOMAIN-SUFFIX,tidaltv.com
+DOMAIN-SUFFIX,tidysprite.com
 DOMAIN-SUFFIX,tinybar.com
 DOMAIN-SUFFIX,tinybluewhale.com
 DOMAIN-SUFFIX,tinytendency.com

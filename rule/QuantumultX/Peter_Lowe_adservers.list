@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 31 Oct 2025 15:15:52 GMT
-# entries:        3455
+# last updated:   Sun, 02 Nov 2025 21:01:02 GMT
+# entries:        3459
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1089,6 +1089,7 @@ DOMAIN-SUFFIX,bidvertiser.com, reject
 DOMAIN-SUFFIX,big-bang-ads.com, reject
 DOMAIN-SUFFIX,bigbangmedia.com, reject
 DOMAIN-SUFFIX,bigclicks.com, reject
+DOMAIN-SUFFIX,bigworldfashion.com, reject
 DOMAIN-SUFFIX,billboard.cz, reject
 DOMAIN-SUFFIX,billtable.com, reject
 DOMAIN-SUFFIX,birthdaybelief.com, reject
@@ -1424,6 +1425,7 @@ DOMAIN-SUFFIX,customers.kameleoon.com, reject
 DOMAIN-SUFFIX,cutechin.com, reject
 DOMAIN-SUFFIX,cxense.com, reject
 DOMAIN-SUFFIX,cyberbounty.com, reject
+DOMAIN-SUFFIX,cyclinghere.com, reject
 DOMAIN-SUFFIX,d-collect.jennifersoft.com, reject
 DOMAIN-SUFFIX,d-collector.jennifersoft.com, reject
 DOMAIN-SUFFIX,d.adroll.com, reject
@@ -1622,6 +1624,7 @@ DOMAIN-SUFFIX,fadedsnow.com, reject
 DOMAIN-SUFFIX,fairfeeling.com, reject
 DOMAIN-SUFFIX,fakedisguise.com, reject
 DOMAIN-SUFFIX,fallaciousfifth.com, reject
+DOMAIN-SUFFIX,fallingshoals.com, reject
 DOMAIN-SUFFIX,fam-ad.com, reject
 DOMAIN-SUFFIX,farethief.com, reject
 DOMAIN-SUFFIX,farmergoldfish.com, reject
@@ -3105,6 +3108,7 @@ DOMAIN-SUFFIX,ticklesign.com, reject
 DOMAIN-SUFFIX,ticksel.com, reject
 DOMAIN-SUFFIX,tics.techdirt.com, reject
 DOMAIN-SUFFIX,tidaltv.com, reject
+DOMAIN-SUFFIX,tidysprite.com, reject
 DOMAIN-SUFFIX,tinybar.com, reject
 DOMAIN-SUFFIX,tinybluewhale.com, reject
 DOMAIN-SUFFIX,tinytendency.com, reject

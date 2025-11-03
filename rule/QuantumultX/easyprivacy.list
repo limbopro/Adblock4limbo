@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202510311543
+## ! Version: 202511031131
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Oct 2025 15:43 UTC
+## ! Last modified: 03 Nov 2025 11:31 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 0d580125df9541e011bd7f09da85b24de2586085
+## ! Commit: 882813c8f149456491834dc49848baee2874c026
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -536,6 +536,7 @@ DOMAIN-SUFFIX,str1kee.com, reject
 DOMAIN-SUFFIX,tercabilis.info, reject
 DOMAIN-SUFFIX,trustisimportant.fun, reject
 DOMAIN-SUFFIX,2znp09oa.com, reject
+DOMAIN-SUFFIX,3rdspacetech.com, reject
 DOMAIN-SUFFIX,4jnzhl0d0.com, reject
 DOMAIN-SUFFIX,82o9v830.com, reject
 DOMAIN-SUFFIX,abilityscale.com, reject
@@ -669,6 +670,7 @@ DOMAIN-SUFFIX,bewilderedbattle.com, reject
 DOMAIN-SUFFIX,bewilderedblade.com, reject
 DOMAIN-SUFFIX,bhcumsc.com, reject
 DOMAIN-SUFFIX,bidpapers.com, reject
+DOMAIN-SUFFIX,bigworldfashion.com, reject
 DOMAIN-SUFFIX,bikepaws.com, reject
 DOMAIN-SUFFIX,bikesboard.com, reject
 DOMAIN-SUFFIX,bikinginspire.com, reject
@@ -743,6 +745,7 @@ DOMAIN-SUFFIX,burgersalt.com, reject
 DOMAIN-SUFFIX,burlywhistle.com, reject
 DOMAIN-SUFFIX,burnbubble.com, reject
 DOMAIN-SUFFIX,bushesbag.com, reject
+DOMAIN-SUFFIX,businessupdater.com, reject
 DOMAIN-SUFFIX,bustlingbook.com, reject
 DOMAIN-SUFFIX,butterbulb.com, reject
 DOMAIN-SUFFIX,butterburst.com, reject
@@ -898,6 +901,7 @@ DOMAIN-SUFFIX,crashchance.com, reject
 DOMAIN-SUFFIX,cratecamera.com, reject
 DOMAIN-SUFFIX,creatorcherry.com, reject
 DOMAIN-SUFFIX,creatorpassenger.com, reject
+DOMAIN-SUFFIX,creatorsnote.com, reject
 DOMAIN-SUFFIX,creaturecabbage.com, reject
 DOMAIN-SUFFIX,crimsonmeadow.com, reject
 DOMAIN-SUFFIX,critictruck.com, reject
@@ -931,6 +935,7 @@ DOMAIN-SUFFIX,curvycry.com, reject
 DOMAIN-SUFFIX,cushiondrum.com, reject
 DOMAIN-SUFFIX,cutecalculator.com, reject
 DOMAIN-SUFFIX,cutechin.com, reject
+DOMAIN-SUFFIX,cyclinghere.com, reject
 DOMAIN-SUFFIX,cyclopsdial.com, reject
 DOMAIN-SUFFIX,damagedadvice.com, reject
 DOMAIN-SUFFIX,damageddistance.com, reject
@@ -1083,6 +1088,7 @@ DOMAIN-SUFFIX,fairytaleflame.com, reject
 DOMAIN-SUFFIX,faithrowold.com, reject
 DOMAIN-SUFFIX,fakedisguise.com, reject
 DOMAIN-SUFFIX,fallaciousfifth.com, reject
+DOMAIN-SUFFIX,fallingshoals.com, reject
 DOMAIN-SUFFIX,falseframe.com, reject
 DOMAIN-SUFFIX,falsesight.com, reject
 DOMAIN-SUFFIX,familiarrod.com, reject
@@ -2024,6 +2030,7 @@ DOMAIN-SUFFIX,snacktoken.com, reject
 DOMAIN-SUFFIX,snakeslang.com, reject
 DOMAIN-SUFFIX,snappyreport.com, reject
 DOMAIN-SUFFIX,snapsgate.com, reject
+DOMAIN-SUFFIX,snazzypoodle.com, reject
 DOMAIN-SUFFIX,sneakwind.com, reject
 DOMAIN-SUFFIX,sneakystew.com, reject
 DOMAIN-SUFFIX,sneezecovers.com, reject
@@ -2253,6 +2260,7 @@ DOMAIN-SUFFIX,ticketjolly.com, reject
 DOMAIN-SUFFIX,ticketssponge.com, reject
 DOMAIN-SUFFIX,ticklesign.com, reject
 DOMAIN-SUFFIX,tidymitten.com, reject
+DOMAIN-SUFFIX,tidysprite.com, reject
 DOMAIN-SUFFIX,tightpowder.com, reject
 DOMAIN-SUFFIX,tinybluewhale.com, reject
 DOMAIN-SUFFIX,tinyswans.com, reject
@@ -3447,6 +3455,7 @@ DOMAIN-SUFFIX,t.clic2buy.com, reject
 DOMAIN-SUFFIX,t.cometlytrack.com, reject
 DOMAIN-SUFFIX,t.commandbar.com, reject
 DOMAIN-SUFFIX,t.enuygun.com, reject
+DOMAIN-SUFFIX,t.fastcmp.com, reject
 DOMAIN-SUFFIX,t.fullres.net, reject
 DOMAIN-SUFFIX,t.ghostboard.io, reject
 DOMAIN-SUFFIX,t.greenbids.ai, reject
@@ -41870,6 +41879,7 @@ DOMAIN-SUFFIX,d.tv-asahi.co.jp, reject
 DOMAIN-SUFFIX,ek-tracker.ekitan.com, reject
 DOMAIN-SUFFIX,eq-beacon.stream.co.jp, reject
 DOMAIN-SUFFIX,eq-player-log.cdnext.stream.ne.jp, reject
+DOMAIN-SUFFIX,fp.kakaku.com, reject
 DOMAIN-SUFFIX,gtm.diamond.jp, reject
 DOMAIN-SUFFIX,is-log.furunavi.jp, reject
 DOMAIN-SUFFIX,j1.ax.xrea.com, reject

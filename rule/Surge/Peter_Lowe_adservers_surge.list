@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 02 Nov 2025 21:01:02 GMT
-# entries:        3459
+# last updated:   Mon, 03 Nov 2025 16:45:01 GMT
+# entries:        3461
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -2407,6 +2407,7 @@ DOMAIN-SUFFIX,orientedargument.com
 DOMAIN-SUFFIX,orionember.com
 DOMAIN-SUFFIX,ota.cartrawler.com
 DOMAIN-SUFFIX,otto-images.developershed.com
+DOMAIN-SUFFIX,ourdreamstaticpages.pages.dev
 DOMAIN-SUFFIX,outbrain.com
 DOMAIN-SUFFIX,overconfidentfood.com
 DOMAIN-SUFFIX,overkick.com
@@ -2439,6 +2440,7 @@ DOMAIN-SUFFIX,partner.pelikan.cz
 DOMAIN-SUFFIX,partnerad.l.google.com
 DOMAIN-SUFFIX,partnerads.ysm.yahoo.com
 DOMAIN-SUFFIX,partnercash.de
+DOMAIN-SUFFIX,partnerhut.com
 DOMAIN-SUFFIX,partnerlinks.io
 DOMAIN-SUFFIX,partners.priceline.com
 DOMAIN-SUFFIX,partplanes.com

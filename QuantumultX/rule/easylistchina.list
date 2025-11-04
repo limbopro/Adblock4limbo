@@ -23,6 +23,12 @@ DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,hash.trafficmanager.net, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,dkc63u5su8.com, reject
+DOMAIN-SUFFIX,tb4gv2cp5z.com, reject
+DOMAIN-SUFFIX,divergentld.com, reject
+DOMAIN-SUFFIX,zdh11040lo.com, reject
+DOMAIN-SUFFIX,ohvtrokyq.com, reject
+DOMAIN-SUFFIX,3yx95kv3at.com, reject
 DOMAIN-SUFFIX,4totls9uh.com, reject
 DOMAIN-SUFFIX,c0zwsdryg.com, reject
 DOMAIN-SUFFIX,biconcave43.com, reject
@@ -37,6 +43,8 @@ DOMAIN-SUFFIX,dxuxtb.com, reject
 DOMAIN-SUFFIX,i90ptshd.top, reject
 DOMAIN-SUFFIX,ouargilbpg.com, reject
 DOMAIN-SUFFIX,bendrunb.com, reject
+DOMAIN-SUFFIX,mwvt.cn, reject
+DOMAIN-SUFFIX,jvekga.cn, reject
 DOMAIN-SUFFIX,fdi1rg6ihs.com, reject
 DOMAIN-SUFFIX,i7mfm1hl44.com, reject
 DOMAIN-SUFFIX,reflection67.top, reject

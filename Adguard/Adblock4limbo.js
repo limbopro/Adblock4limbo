@@ -39,7 +39,7 @@ const BODY_INJECTION = `
 `;
 
 // 正则表达式
-const TARGET_SITES_REGEX = /(missav|netflav|supjav|njav|javday|91porna)/i;
+const TARGET_SITES_REGEX = /(missav|netflav|supjav|njav|javday|91porna|lk1\.supremejav\.com|turbovidhls\.com|trailerhg\.xyz|turbovidhls\.com|turboplayers\.xyz|javggvideo\.xyz|turtleviplay\.xyz|findjav\.com|stbturbo\.xyz|emturbovid\.com)/i;
 const JAVBUS_REGEX = /javbus/i;
 const DMM_REGEX = /dmm\.co/i;
 const MDSP_REGEX = /d1skbu98kuldnf\.cloudfront\.net/i;

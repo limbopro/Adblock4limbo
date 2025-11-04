@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511031131
+## ! Version: 202511040352
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Nov 2025 11:31 UTC
+## ! Last modified: 04 Nov 2025 03:52 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 882813c8f149456491834dc49848baee2874c026
+## ! Commit: 8f1714100259b75f40e90ecfcd1e0bf810bbeb0d
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -581,6 +581,7 @@ DOMAIN-SUFFIX,aliasanvil.com
 DOMAIN-SUFFIX,alikeaddition.com
 DOMAIN-SUFFIX,aliveachiever.com
 DOMAIN-SUFFIX,alloutdubstep.com
+DOMAIN-SUFFIX,alltypo.com
 DOMAIN-SUFFIX,alluringbucket.com
 DOMAIN-SUFFIX,almostsugar.com
 DOMAIN-SUFFIX,alohamiles.com
@@ -1659,6 +1660,7 @@ DOMAIN-SUFFIX,parallelbulb.com
 DOMAIN-SUFFIX,parchedsofa.com
 DOMAIN-SUFFIX,parentpicture.com
 DOMAIN-SUFFIX,parsimoniouspolice.com
+DOMAIN-SUFFIX,partnerhut.com
 DOMAIN-SUFFIX,partplanes.com
 DOMAIN-SUFFIX,passivepolo.com
 DOMAIN-SUFFIX,pastoralroad.com
@@ -2000,6 +2002,7 @@ DOMAIN-SUFFIX,sinceresubstance.com
 DOMAIN-SUFFIX,singroot.com
 DOMAIN-SUFFIX,sinkportal.com
 DOMAIN-SUFFIX,sixauthority.com
+DOMAIN-SUFFIX,sixpants.com
 DOMAIN-SUFFIX,sixscissors.com
 DOMAIN-SUFFIX,sizzlingsmoke.com
 DOMAIN-SUFFIX,sketchpals.com

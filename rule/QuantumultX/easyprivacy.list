@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511031131
+## ! Version: 202511040352
 ## ! Title: EasyPrivacy
-## ! Last modified: 03 Nov 2025 11:31 UTC
+## ! Last modified: 04 Nov 2025 03:52 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 882813c8f149456491834dc49848baee2874c026
+## ! Commit: 8f1714100259b75f40e90ecfcd1e0bf810bbeb0d
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -581,6 +581,7 @@ DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
 DOMAIN-SUFFIX,aliveachiever.com, reject
 DOMAIN-SUFFIX,alloutdubstep.com, reject
+DOMAIN-SUFFIX,alltypo.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
 DOMAIN-SUFFIX,almostsugar.com, reject
 DOMAIN-SUFFIX,alohamiles.com, reject
@@ -1659,6 +1660,7 @@ DOMAIN-SUFFIX,parallelbulb.com, reject
 DOMAIN-SUFFIX,parchedsofa.com, reject
 DOMAIN-SUFFIX,parentpicture.com, reject
 DOMAIN-SUFFIX,parsimoniouspolice.com, reject
+DOMAIN-SUFFIX,partnerhut.com, reject
 DOMAIN-SUFFIX,partplanes.com, reject
 DOMAIN-SUFFIX,passivepolo.com, reject
 DOMAIN-SUFFIX,pastoralroad.com, reject
@@ -2000,6 +2002,7 @@ DOMAIN-SUFFIX,sinceresubstance.com, reject
 DOMAIN-SUFFIX,singroot.com, reject
 DOMAIN-SUFFIX,sinkportal.com, reject
 DOMAIN-SUFFIX,sixauthority.com, reject
+DOMAIN-SUFFIX,sixpants.com, reject
 DOMAIN-SUFFIX,sixscissors.com, reject
 DOMAIN-SUFFIX,sizzlingsmoke.com, reject
 DOMAIN-SUFFIX,sketchpals.com, reject

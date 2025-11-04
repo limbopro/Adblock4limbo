@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.11.03
+// @version      0.2025.11.04
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -175,7 +175,16 @@
 // @match        https://filemoon.sx/*
 // @match        https://emturbovid.com/*
 // @match        https://netflavns1.com/*
+// @match        https://turbovidhls.com/*
+// @match        https://trailerhg.xyz/*
+// @match        https://turboplayers.xyz/*
+// @match        https://javggvideo.xyz/*
+// @match        https://turtleviplay.xyz/*
+// @match        https://findjav.com/*
+// @match        https://stbturbo.xyz/*
+// @match        https://emturbovid.com/*
 // @match        https://fc2stream.tv/*
+// @match        https://turbovidhls.com/*
 // @match        https://mmsw02.com/*
 // @match        https://embedrise.com/*
 // @match        https://mmfl02.com/*
@@ -392,7 +401,7 @@ var imax = {
         _4hu: ".couplet-left, body[ontouchstart] > div[id^='content_'][style='display: block;'], div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
-        supjav: '#pop, .div_pop, #pop.div_pop, .movv-ad, #adsbox, div.right, div.movv-ad.ad_3_3, div.movv-ad.ad_3_2, .movv-ad, .adsbyexoclick, #adsbox, .adsbyexoclick  {display:none !important; pointer-events: none !important;}',
+        supjav: '.video-wrap > div.right,#pop, .div_pop, #pop.div_pop, .movv-ad, #adsbox, div.right, div.movv-ad.ad_3_3, div.movv-ad.ad_3_2, .movv-ad, .adsbyexoclick, #adsbox, .adsbyexoclick  {display:none !important; pointer-events: none !important;}',
         hitomi: ".container > div[class$=\"content\"] > div[class]:has(> script) {display:none !important; pointer-events: none !important;}",
         hanime1: "span.scaled-exoclick, iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
         javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
@@ -481,6 +490,15 @@ function values() {
         "javlibrary",
         "emturbovid",
         'netflavns1',
+        "turbovidhls.com",
+        "trailerhg.xyz",
+        "turboplayers.xyz",
+        "javggvideo.xyz",
+        "turtleviplay.xyz",
+        "findjav.com",
+        "stbturbo.xyz",
+        "emturbovid.com",
+        "turbovidhls.com",
         'fc2stream',
         'douban',
         'twitter',
@@ -1536,6 +1554,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser(); // 打断 window.open 施法
             break;
         case "fc2stream":
+        case "turbovidhls.com":
+        case 'trailerhg.xyz':            // 预告片/镜像站
+        case 'turboplayers.xyz':         // Turbo 播放器
+        case 'javggvideo.xyz':           // JAV 视频托管
+        case 'turtleviplay.xyz':         // Turtle VIPlay
+        case 'findjav.com':              // JAV 搜索站
+        case 'stbturbo.xyz':             // STB Turbo 视频
+        case 'emturbovid.com':           // EM TurboVid
+            // 在这里添加你的处理逻辑（如注入 scriptlet）
             window_open_defuser(); // 打断 window.open 施法
             abort_on_property_read('__Y');
             break;
@@ -1544,6 +1571,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case "supjav":
             css_adsRemove(imax.css.supjav, 0, "superjav");
+
             window.onload = function () {
                 if (document.location.href.search('/?s\=') !== -1) {
                     let regex = /.*\/\?s=/;
@@ -1569,8 +1597,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             }()
 
-            noWindowOpenIf('window.open')
-            noWindowOpenIf('touchend')
+            //noWindowOpenIf('window.open')
+            //noWindowOpenIf('touchend')
+            window_open_defuser(); // 打断 window.open 施法
 
             break;
         case "njav":
@@ -3218,6 +3247,59 @@ function videoAds_accelerateSkip(fasterx) {
 // overridePropertyRead 覆盖属性读取
 /// https://github.com/AdguardTeam/Scriptlets/blob/master/wiki/about-scriptlets.md#set-constant
 
+function overridePropertyRead(property, value) {
+    if (!property) {
+        throw new Error("[override-property-read snippet]: " +
+            "No property to override.");
+    }
+    if (typeof value === "undefined") {
+        throw new Error("[override-property-read snippet]: " +
+            "No value to override with.");
+    }
+
+    let cValue;
+    let debugLog = (debug ? log : () => { })
+        .bind(null, "override-property-read");
+
+    if (value === "false") {
+        cValue = false;
+    }
+    else if (value === "true") {
+        cValue = true;
+    }
+    else if (value === "null") {
+        cValue = null;
+    }
+    else if (value === "noopFunc") {
+        cValue = () => { };
+    }
+    else if (value === "trueFunc") {
+        cValue = () => true;
+    }
+    else if (value === "falseFunc") {
+        cValue = () => false;
+    }
+    else if (/^\d+$/.test(value)) {
+        cValue = parseFloat(value);
+    }
+    else if (value === "") {
+        cValue = value;
+    }
+    else if (value !== "undefined") {
+        throw new Error("[override-property-read snippet]: " +
+            `Value "${value}" is not valid.`);
+    }
+
+    let newGetter = () => {
+        debugLog(`${property} override done.`);
+        return cValue;
+    };
+
+    debugLog(`Overriding ${property}.`);
+
+    wrapPropertyAccess(window, property, { get: newGetter, set() { } });
+}
+
 var repeat_regex = ["https:?\/\/.*?hls.*?\.m3u8", "https:?\/\/.*?phncdn.*?hls.*?\.m3u8", "https:?\/\/.*?mushroomtrack.*?\.m3u8"]
 
 function m3u8_tempt(x) {
@@ -4233,3 +4315,51 @@ function aopr() {
 function settingCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
 
 
+
+// 注入 prevent-setTimeout scriptlet
+function injectPreventSetTimeout() {
+    // 防止重复注入
+    if (window.__preventSetTimeoutInjected) return;
+    window.__preventSetTimeoutInjected = true;
+
+    const target = 'window.open';
+    const hitLog = () => console.log(`%c[Blocked] ${target} via setTimeout`, 'color: #e74c3c; font-weight: bold;');
+
+    // 匹配 window.open 各种写法
+    const containsTarget = (str) => {
+        if (typeof str !== 'string') return false;
+        return /\bwindow\s*\.\s*open\s*\(/.test(str) ||
+            /\bwindow\s*\[\s*["']open["']\s*\]\s*\(/.test(str) ||
+            /\bwindow\s*\?\.\s*open\s*\(/.test(str);
+    };
+
+    const nativeSetTimeout = window.setTimeout;
+
+    window.setTimeout = function (callback, delay, ...args) {
+        let code = '';
+
+        // 函数形式
+        if (typeof callback === 'function') {
+            code = callback.toString();
+        }
+        // 字符串形式（如 setTimeout("window.open(...)")）
+        else if (typeof callback === 'string') {
+            code = callback;
+        }
+        // 其他类型直接放行
+        else {
+            return nativeSetTimeout.apply(this, arguments);
+        }
+
+        // 检查是否包含 window.open
+        if (containsTarget(code)) {
+            hitLog();
+            return; // 静默阻止
+        }
+
+        // 正常执行
+        return nativeSetTimeout.call(this, callback, delay, ...args);
+    };
+
+    console.log('%c[Scriptlet] prevent-setTimeout 已注入，保护当前站点', 'color: #2ecc71; font-weight: bold;');
+}

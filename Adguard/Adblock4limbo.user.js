@@ -263,6 +263,7 @@ console.log('是否（默认）开启成人🔞网站保护模式：' + getCooki
 // 注释后将【无法快捷唤起导航详情页】且导航功能无法使用
 daohang_build();
 
+
 // 一些常量
 /* Start */
 
@@ -2337,7 +2338,19 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
             }, 500);
         }
     }
+
+    window.addEventListener('load', function () {
+        // 判断当前 URL 是否为 Google
+        if (!/^https?:\/\/(www\.)?(google|bing|baidu)\.(com|cn|hk|co\.[a-z]{2}|[a-z]{2})\/.*/i.test(location.href)) {
+            initLimoProSearch(); // 划词搜索
+            console.log('划词搜索功能已初始化');
+        }
+    });
 }
+
+
+
+
 
 // 按根据父元素是否包含子元素而删除父元素
 function remove_parentElement_by_child(parentElement, child) {

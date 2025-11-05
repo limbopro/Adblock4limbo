@@ -2611,32 +2611,37 @@ thrd_party_file('script', 'https://limbopro.com/Adguard/filter.user.js', 'head',
 // @license MIT
 // @run-at       document-idle
 // ==/UserScript==
- 
- 
+
+
 // blog: https://limbopro.com/
 // Tg: https://t.me/limboprossr
- 
-initLimoProSearch()
- 
+
+
+// 判断当前 URL 是否为 Google
+if (!/^https?:\/\/(www\.)?(google|bing|baidu)\.(com|cn|hk|co\.[a-z]{2}|[a-z]{2})\/.*/i.test(location.href)) {
+    initLimoProSearch();
+}
+
+
 function initLimoProSearch() {
     if (window.limboproSearchPro) {
         console.log('LimoPro 搜索面板已存在');
         return;
     }
     window.limboproSearchPro = true;
- 
+
     const buttons = [
         { text: '使用谷歌搜索🔍', color: '#0ea5e9' },  // 科技蓝
         { text: '使用影视搜索🎬', color: '#8b5cf6' }, // 紫色
         { text: '使用番号搜索🔞', color: '#c42a4e' } // 暗红
     ];
- 
+
     const urls = [
         'https://www.google.com/search?q=', // 谷歌搜索
         'https://limbopro.com/search.html#gsc.tab=0&gsc.q=', // 影视搜索
         'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=' // 番号搜索
     ];
- 
+
     const container = document.createElement('div');
     container.id = 'limbopro-search-pro';
     Object.assign(container.style, {
@@ -2659,7 +2664,7 @@ function initLimoProSearch() {
         opacity: '0'
     });
     document.body.appendChild(container);
- 
+
     const updateTheme = () => {
         const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         container.style.background = isDark ? 'rgba(30,30,40,0.92)' : 'rgba(255,255,255,0.95)';
@@ -2667,12 +2672,12 @@ function initLimoProSearch() {
     };
     updateTheme();
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
- 
+
     const btns = buttons.map((cfg, i) => {
         const btn = document.createElement('button');
         btn.textContent = cfg.text;
         btn.dataset.url = urls[i];
- 
+
         Object.assign(btn.style, {
             width: '100%',
             padding: '4px 14px',
@@ -2691,7 +2696,7 @@ function initLimoProSearch() {
             whiteSpace: 'nowrap',
             textShadow: '0 1px 2px rgba(0,0,0,0.3)'  // 增强暗色模式可读性
         });
- 
+
         btn.onmouseover = btn.ontouchstart = () => {
             btn.style.transform = 'translateY(-3px) scale(1.03)';
             btn.style.boxShadow = '0 10px 24px rgba(0,0,0,0.3)';
@@ -2701,14 +2706,14 @@ function initLimoProSearch() {
             btn.style.boxShadow = '0 4px 14px rgba(0,0,0,0.22)';
         };
         btn.onmousedown = btn.ontouchstart = e => e.stopPropagation();
- 
+
         container.appendChild(btn);
         return btn;
     });
- 
+
     let currentText = '';
     let showTimeout = null;
- 
+
     const hide = () => {
         container.style.opacity = '0';
         setTimeout(() => {
@@ -2719,54 +2724,54 @@ function initLimoProSearch() {
         currentText = '';
         if (showTimeout) clearTimeout(showTimeout);
     };
- 
+
     const showPanel = (text) => {
         const sel = window.getSelection();
         if (!sel.rangeCount) return hide();
         const range = sel.getRangeAt(0);
         const rect = range.getBoundingClientRect();
         if (!rect.width) return hide();
- 
+
         container.style.display = 'flex';
         const w = container.offsetWidth;
         const h = container.offsetHeight;
         container.style.display = 'none';
- 
+
         const vw = window.innerWidth;
         const vh = window.innerHeight;
- 
+
         const isMultiLine = rect.height > 24;
- 
+
         let left = isMultiLine
             ? window.scrollX + rect.left - w - 12
             : window.scrollX + rect.right + 12 + 70;
- 
+
         let top = isMultiLine
             ? window.scrollY + rect.bottom - h
             : window.scrollY + rect.top;
- 
+
         // 防重叠
         const panelTop = top - window.scrollY;
         const panelBottom = panelTop + h;
         const textTop = rect.top;
         const textBottom = rect.bottom;
- 
+
         if (isMultiLine && panelTop < textBottom && panelBottom > textTop) {
             top = window.scrollY + rect.bottom + 8;
         }
- 
+
         top = Math.max(window.scrollY + 12, Math.min(top, window.scrollY + vh - h - 12));
         left = Math.max(window.scrollX + 12, Math.min(left, window.scrollX + vw - w - 12));
- 
+
         container.style.top = top + 'px';
         container.style.left = left + 'px';
         container.style.display = 'flex';
         container.style.opacity = '1';  // 淡入
- 
+
         currentText = text;
         btns.forEach(b => b.dataset.q = text);  // 修复：text → currentText
     };
- 
+
     document.addEventListener('selectionchange', () => {
         if (showTimeout) clearTimeout(showTimeout);
         showTimeout = setTimeout(() => {
@@ -2779,7 +2784,7 @@ function initLimoProSearch() {
             }
         }, 100);
     });
- 
+
     btns.forEach(btn => {
         btn.onclick = () => {
             if (currentText) {
@@ -2787,22 +2792,22 @@ function initLimoProSearch() {
             }
         };
     });
- 
+
     document.addEventListener('mousedown', e => {
         if (!container.contains(e.target) && !window.getSelection().toString().trim()) hide();
     });
- 
+
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const now = Date.now();
         if (now - lastScroll > 300 && !window.getSelection().toString().trim()) hide();
         lastScroll = now;
     });
- 
+
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && !window.getSelection().toString().trim()) hide();
     });
- 
+
     hide();
     console.log('LimoPro 搜索面板（你的终极优化版）已加载');
 }

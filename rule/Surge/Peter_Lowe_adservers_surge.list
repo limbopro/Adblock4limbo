@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 03 Nov 2025 16:45:01 GMT
-# entries:        3461
+# last updated:   Tue, 04 Nov 2025 20:01:42 GMT
+# entries:        3463
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1960,6 +1960,7 @@ DOMAIN-SUFFIX,jungroup.com
 DOMAIN-SUFFIX,justicejudo.com
 DOMAIN-SUFFIX,justpremium.com
 DOMAIN-SUFFIX,justrelevant.com
+DOMAIN-SUFFIX,justwowjars.com
 DOMAIN-SUFFIX,k.iinfo.cz
 DOMAIN-SUFFIX,kameleoon.eu
 DOMAIN-SUFFIX,kanoodle.com
@@ -2834,6 +2835,7 @@ DOMAIN-SUFFIX,signalayer.com
 DOMAIN-SUFFIX,sillyscrew.com
 DOMAIN-SUFFIX,silvermob.com
 DOMAIN-SUFFIX,simpleanalytics.io
+DOMAIN-SUFFIX,simplesafari.com
 DOMAIN-SUFFIX,simpli.fi
 DOMAIN-SUFFIX,simulateswing.com
 DOMAIN-SUFFIX,sincerebuffalo.com

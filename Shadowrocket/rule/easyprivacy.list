@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511040352
+## ! Version: 202511050416
 ## ! Title: EasyPrivacy
-## ! Last modified: 04 Nov 2025 03:52 UTC
+## ! Last modified: 05 Nov 2025 04:16 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 8f1714100259b75f40e90ecfcd1e0bf810bbeb0d
+## ! Commit: f7646a773cce730d6632a5181c9fe164a3bcfe1e
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1399,6 +1399,7 @@ DOMAIN-SUFFIX,justconfig.com, reject
 DOMAIN-SUFFIX,justicejudo.com, reject
 DOMAIN-SUFFIX,justpickaname.com, reject
 DOMAIN-SUFFIX,justwebcards.com, reject
+DOMAIN-SUFFIX,justwowjars.com, reject
 DOMAIN-SUFFIX,keenquill.com, reject
 DOMAIN-SUFFIX,kidpowers.com, reject
 DOMAIN-SUFFIX,kindasingle.com, reject
@@ -1994,6 +1995,7 @@ DOMAIN-SUFFIX,silentwrench.com, reject
 DOMAIN-SUFFIX,siliconslow.com, reject
 DOMAIN-SUFFIX,sillyscrew.com, reject
 DOMAIN-SUFFIX,simplenaming.com, reject
+DOMAIN-SUFFIX,simplesafari.com, reject
 DOMAIN-SUFFIX,simplesidewalk.com, reject
 DOMAIN-SUFFIX,simulateswing.com, reject
 DOMAIN-SUFFIX,sincerebuffalo.com, reject
@@ -2389,6 +2391,7 @@ DOMAIN-SUFFIX,washbanana.com, reject
 DOMAIN-SUFFIX,watersensible.com, reject
 DOMAIN-SUFFIX,waterywave.com, reject
 DOMAIN-SUFFIX,waveinverter.com, reject
+DOMAIN-SUFFIX,wavesimple.com, reject
 DOMAIN-SUFFIX,wavesmachine.com, reject
 DOMAIN-SUFFIX,waxsirens.com, reject
 DOMAIN-SUFFIX,wayjoyfarm.com, reject

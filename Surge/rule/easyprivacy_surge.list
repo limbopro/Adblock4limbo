@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511040352
+## ! Version: 202511050416
 ## ! Title: EasyPrivacy
-## ! Last modified: 04 Nov 2025 03:52 UTC
+## ! Last modified: 05 Nov 2025 04:16 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 8f1714100259b75f40e90ecfcd1e0bf810bbeb0d
+## ! Commit: f7646a773cce730d6632a5181c9fe164a3bcfe1e
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1399,6 +1399,7 @@ DOMAIN-SUFFIX,justconfig.com
 DOMAIN-SUFFIX,justicejudo.com
 DOMAIN-SUFFIX,justpickaname.com
 DOMAIN-SUFFIX,justwebcards.com
+DOMAIN-SUFFIX,justwowjars.com
 DOMAIN-SUFFIX,keenquill.com
 DOMAIN-SUFFIX,kidpowers.com
 DOMAIN-SUFFIX,kindasingle.com
@@ -1994,6 +1995,7 @@ DOMAIN-SUFFIX,silentwrench.com
 DOMAIN-SUFFIX,siliconslow.com
 DOMAIN-SUFFIX,sillyscrew.com
 DOMAIN-SUFFIX,simplenaming.com
+DOMAIN-SUFFIX,simplesafari.com
 DOMAIN-SUFFIX,simplesidewalk.com
 DOMAIN-SUFFIX,simulateswing.com
 DOMAIN-SUFFIX,sincerebuffalo.com
@@ -2389,6 +2391,7 @@ DOMAIN-SUFFIX,washbanana.com
 DOMAIN-SUFFIX,watersensible.com
 DOMAIN-SUFFIX,waterywave.com
 DOMAIN-SUFFIX,waveinverter.com
+DOMAIN-SUFFIX,wavesimple.com
 DOMAIN-SUFFIX,wavesmachine.com
 DOMAIN-SUFFIX,waxsirens.com
 DOMAIN-SUFFIX,wayjoyfarm.com

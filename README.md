@@ -15,7 +15,7 @@
 
 **毒奶去广告计划始于 11.01.2020**，原文：https://limbopro.com/archives/12904.html ；
 
-> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket/loon/Stash..），仅针对iOS浏览器（Chrome/Safari等），**移除特定网站网页广告**（Javascript 弹窗/Ads横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/哔滴影视/剧迷网/奈菲影视/低端影视/真不卡/91美剧网/Jable/MissAV等，**提升iPhone或iPad端浏览器观影或网页浏览体验**；本计划会长期更新，以适应未来更多需要；
+> ✅ **效用**：毒奶去广告计划（稳定版）For QuantumultX/Surge/Shadowrocket/loon/Stash..），仅针对iOS浏览器（Chrome/Safari等），**移除特定网站网页广告**（Javascript 弹窗/Ads横幅等），如谷歌搜索结果中的内容农场内容/百度与谷歌搜索结果页面的广告/禁漫天堂/Pornhub/~~哔滴影视~~/剧迷网/~~奈菲影视~~/~~低端影视~~/~~真不卡~~/~~91美剧网~~/Jable/MissAV等，**提升iPhone或iPad端浏览器观影或网页浏览体验**；本计划会长期更新，以适应未来更多需要；
 
 ### 其他注意事项
 
@@ -25,7 +25,7 @@
 
 | 网站  | 网站类型 | 支持软件 | 广告类型 |
 | --- | --- | --- | --- |
-| [低端影视](https://ddys.pro/) | 在线影视 | Surge/QuantumultX/小火箭/油猴 | 图片/跳过视频广告倒计时 |
+| ~~[低端影视](https://ddys.pro/)~~ | 在线影视 | Surge/QuantumultX/小火箭/油猴 | 图片/跳过视频广告倒计时 |
 | [小宝影视](https://xiaoheimi.net/index.php) | 在线影视 | 同上  | 图片  |
 | ~~[泥巴影视](https://www.nivod8.tv/)~~| 在线影视 | 同上  | 播放页片头20秒广告加速移除 |
 | [CN影视](https://cnys.tv/) | 在线影视 | 同上  | 图片广告/片头广告 |

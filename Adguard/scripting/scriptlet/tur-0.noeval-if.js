@@ -20,35 +20,13 @@
 
 */
 
-/* jshint esversion:11 */
-/* global cloneInto */
-
-'use strict';
-
 // ruleset: tur-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_noEvalIf = function() {
-
-const scriptletGlobals = {}; // jshint ignore: line
-
-const argsList = [["delete window"]];
-
-const hostnamesMap = new Map([["canlidiziizlesene.org",0]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_noEvalIf() {
 
 /******************************************************************************/
 
@@ -57,14 +35,105 @@ function noEvalIf(
 ) {
     if ( typeof needle !== 'string' ) { return; }
     const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('noeval-if', needle);
     const reNeedle = safe.patternToRegex(needle);
-    window.eval = new Proxy(window.eval, {  // jshint ignore: line
-        apply: function(target, thisArg, args) {
-            const a = args[0];
-            if ( reNeedle.test(a.toString()) ) { return; }
-            return target.apply(thisArg, args);
+    proxyApplyFn('eval', function(context) {
+        const { callArgs } = context;
+        const a = String(callArgs[0]);
+        if ( needle !== '' && reNeedle.test(a) ) {
+            safe.uboLog(logPrefix, 'Prevented:\n', a);
+            return;
         }
+        if ( needle === '' || safe.logLevel > 1 ) {
+            safe.uboLog(logPrefix, 'Not prevented:\n', a);
+        }
+        return context.reflect();
     });
+}
+
+function proxyApplyFn(
+    target = '',
+    handler = ''
+) {
+    let context = globalThis;
+    let prop = target;
+    for (;;) {
+        const pos = prop.indexOf('.');
+        if ( pos === -1 ) { break; }
+        context = context[prop.slice(0, pos)];
+        if ( context instanceof Object === false ) { return; }
+        prop = prop.slice(pos+1);
+    }
+    const fn = context[prop];
+    if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = this.private = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
+    }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
+        },
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( proxyApplyFn.isCtor.get(target) ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -83,12 +152,17 @@ function safeSelf() {
         'Math_random': Math.random,
         'Object': Object,
         'Object_defineProperty': Object.defineProperty.bind(Object),
+        'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
+        'String_fromCharCode': String.fromCharCode,
+        'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
         'addEventListener': self.EventTarget.prototype.addEventListener,
         'removeEventListener': self.EventTarget.prototype.removeEventListener,
@@ -121,7 +195,7 @@ function safeSelf() {
         },
         initPattern(pattern, options = {}) {
             if ( pattern === '' ) {
-                return { matchAll: true };
+                return { matchAll: true, expect: true };
             }
             const expect = (options.canNegate !== true || pattern.startsWith('!') === false);
             if ( expect === false ) {
@@ -164,7 +238,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -181,159 +255,156 @@ function safeSelf() {
             }, []);
             return this.Object_fromEntries(entries);
         },
+        onIdle(fn, options) {
+            if ( self.requestIdleCallback ) {
+                return self.requestIdleCallback(fn, options);
+            }
+            return self.requestAnimationFrame(fn);
+        },
+        offIdle(id) {
+            if ( self.requestIdleCallback ) {
+                return self.cancelIdleCallback(id);
+            }
+            return self.cancelAnimationFrame(id);
+        }
     };
     scriptletGlobals.safeSelf = safe;
     if ( scriptletGlobals.bcSecret === undefined ) { return safe; }
     // This is executed only when the logger is opened
-    const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
-    let bcBuffer = [];
     safe.logLevel = scriptletGlobals.logLevel || 1;
-    safe.sendToLogger = (type, ...args) => {
+    let lastLogType = '';
+    let lastLogText = '';
+    let lastLogTime = 0;
+    safe.toLogText = (type, ...args) => {
         if ( args.length === 0 ) { return; }
         const text = `[${document.location.hostname || document.location.href}]${args.join(' ')}`;
-        if ( bcBuffer === undefined ) {
-            return bc.postMessage({ what: 'messageToLogger', type, text });
+        if ( text === lastLogText && type === lastLogType ) {
+            if ( (Date.now() - lastLogTime) < 5000 ) { return; }
         }
-        bcBuffer.push({ type, text });
+        lastLogType = type;
+        lastLogText = text;
+        lastLogTime = Date.now();
+        return text;
     };
-    bc.onmessage = ev => {
-        const msg = ev.data;
-        switch ( msg ) {
-        case 'iamready!':
-            if ( bcBuffer === undefined ) { break; }
-            bcBuffer.forEach(({ type, text }) =>
-                bc.postMessage({ what: 'messageToLogger', type, text })
-            );
-            bcBuffer = undefined;
-            break;
-        case 'setScriptletLogLevelToOne':
-            safe.logLevel = 1;
-            break;
-        case 'setScriptletLogLevelToTwo':
-            safe.logLevel = 2;
-            break;
-        }
-    };
-    bc.postMessage('areyouready?');
+    try {
+        const bc = new self.BroadcastChannel(scriptletGlobals.bcSecret);
+        let bcBuffer = [];
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            if ( bcBuffer === undefined ) {
+                return bc.postMessage({ what: 'messageToLogger', type, text });
+            }
+            bcBuffer.push({ type, text });
+        };
+        bc.onmessage = ev => {
+            const msg = ev.data;
+            switch ( msg ) {
+            case 'iamready!':
+                if ( bcBuffer === undefined ) { break; }
+                bcBuffer.forEach(({ type, text }) =>
+                    bc.postMessage({ what: 'messageToLogger', type, text })
+                );
+                bcBuffer = undefined;
+                break;
+            case 'setScriptletLogLevelToOne':
+                safe.logLevel = 1;
+                break;
+            case 'setScriptletLogLevelToTwo':
+                safe.logLevel = 2;
+                break;
+            }
+        };
+        bc.postMessage('areyouready?');
+    } catch {
+        safe.sendToLogger = (type, ...args) => {
+            const text = safe.toLogText(type, ...args);
+            if ( text === undefined ) { return; }
+            safe.log(`uBO ${text}`);
+        };
+    }
     return safe;
 }
 
 /******************************************************************************/
 
-const hnParts = [];
-try { hnParts.push(...document.location.hostname.split('.')); }
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["window.open"]];
+const hostnamesMap = new Map([["turkanime.*",0]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { noEvalIf(...argsList[i]); }
-    catch(ex) {}
-}
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-// Inject code
-
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1736575
-//   'MAIN' world not yet supported in Firefox, so we inject the code into
-//   'MAIN' ourself when environment in Firefox.
-
-const targetWorld = 'MAIN';
-
-// Not Firefox
-if ( typeof wrappedJSObject !== 'object' || targetWorld === 'ISOLATED' ) {
-    return uBOL_noEvalIf();
-}
-
-// Firefox
-{
-    const page = self.wrappedJSObject;
-    let script, url;
-    try {
-        page.uBOL_noEvalIf = cloneInto([
-            [ '(', uBOL_noEvalIf.toString(), ')();' ],
-            { type: 'text/javascript; charset=utf-8' },
-        ], self);
-        const blob = new page.Blob(...page.uBOL_noEvalIf);
-        url = page.URL.createObjectURL(blob);
-        const doc = page.document;
-        script = doc.createElement('script');
-        script.async = false;
-        script.src = url;
-        (doc.head || doc.documentElement || doc).append(script);
-    } catch (ex) {
-        console.error(ex);
-    }
-    if ( url ) {
-        if ( script ) { script.remove(); }
-        page.URL.revokeObjectURL(url);
-    }
-    delete page.uBOL_noEvalIf;
+    catch { }
 }
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

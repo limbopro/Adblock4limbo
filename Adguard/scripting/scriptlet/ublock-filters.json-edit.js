@@ -788,8 +788,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["..sideFeed.nodes.*[?.__typename==\"AdsSideFeedUnit\"]"],["..__bbox.result.data.node[?@.*.__typename==\"SponsoredData\"]"],[".*[?.linkurl^=\"http\"]"]];
-const hostnamesMap = new Map([["web.facebook.com",[0,1]],["www.facebook.com",[0,1]],["x.ag2m2.cfd",2]]);
+const argsList = [["..sideFeed.nodes.*[?.__typename==\"AdsSideFeedUnit\"]"],["..__bbox.result.data.node[?@.*.__typename==\"SponsoredData\"]"],[".*[?.linkurl^=\"http\"]"],["..directLink"],["..props[?.children*=\"clicksCount\"].children"]];
+const hostnamesMap = new Map([["web.facebook.com",[0,1]],["www.facebook.com",[0,1]],["x.ag2m2.cfd",2],["ranoz.gg",[3,4]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

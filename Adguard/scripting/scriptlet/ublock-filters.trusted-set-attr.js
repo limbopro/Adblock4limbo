@@ -332,7 +332,7 @@ function runAt(fn, when) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["ins.adsbygoogle:has(> #aswift_0_host)","data-ad-status","unfilled"],["*:not(.main-wrap:has(~ [id^=\"nitro-sidebar\"] .nitro-side) #nitro-top,.main-wrap:has(~ [id^=\"nitro-sidebar\"] .nitro-side) #nitro-body-desktop,[id^=\"nitro-sidebar\"]:has(.nitro-side) ~ #nitro-header-mobile) > ins.adsbygoogle:not(:has(#aswift_0))","data-ad-status","filled"],["frameset[rows=\"95,30,*\"]","rows","0,30,*"]];
+const argsList = [["ins.adsbygoogle:has(> #aswift_0_host)","data-ad-status","unfilled"],["*:not(.main-wrap:has(~ [id^=\"nitro-sidebar\"] .nitro-side) #nitro-top,.main-wrap:has(~ [id^=\"nitro-sidebar\"] .nitro-side) #nitro-body-desktop,[id^=\"nitro-sidebar\"]:has(.nitro-side) ~ #nitro-header-mobile) > ins.adsbygoogle:not(:has(#aswift_0_host))","data-ad-status","filled"],["frameset[rows=\"95,30,*\"]","rows","0,30,*"]];
 const hostnamesMap = new Map([["pvpoke-re.com",[0,1]],["mt-soft.sakura.ne.jp",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;

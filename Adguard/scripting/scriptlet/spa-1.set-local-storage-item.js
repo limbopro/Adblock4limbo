@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["finalReloadDone","1"],["last_ads","yes"]];
-const hostnamesMap = new Map([["redecanaistv.*",0],["redecanais.*",0],["receitasdocheff.online",1],["maxvip.site",1],["guiavidaesaude.com",1],["saudeecomida.com",1],["comidaefamilia.food",1],["meufinanceiro.org",1],["investimentosfacil.online",1],["fomedereceitas.online",1],["blog.whatsappgb.top",1],["infoinvest.org",1],["receitastop.click",1],["gastroponto.com",1]]);
+const argsList = [["/^adblock/","$remove$"],["finalReloadDone","1"],["last_ads","yes"]];
+const hostnamesMap = new Map([["devilnovels.com",0],["redecanaistv.*",1],["redecanais.*",1],["receitasdocheff.online",2],["maxvip.site",2],["guiavidaesaude.com",2],["saudeecomida.com",2],["comidaefamilia.food",2],["meufinanceiro.org",2],["investimentosfacil.online",2],["fomedereceitas.online",2],["blog.whatsappgb.top",2],["infoinvest.org",2],["receitastop.click",2],["gastroponto.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

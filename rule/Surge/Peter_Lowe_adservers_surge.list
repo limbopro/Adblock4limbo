@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 04 Nov 2025 20:01:42 GMT
-# entries:        3463
+# last updated:   Thu, 06 Nov 2025 19:53:02 GMT
+# entries:        3467
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -69,6 +69,7 @@ DOMAIN-SUFFIX,ablink.info.wise.com
 DOMAIN-SUFFIX,ablink.news.emails-puregym.com
 DOMAIN-SUFFIX,ablinks.mail.hinge.co
 DOMAIN-SUFFIX,aboardlevel.com
+DOMAIN-SUFFIX,absolutering.com
 DOMAIN-SUFFIX,absorbingband.com
 DOMAIN-SUFFIX,abstractedauthority.com
 DOMAIN-SUFFIX,abtasty.com
@@ -177,7 +178,6 @@ DOMAIN-SUFFIX,adabra.com
 DOMAIN-SUFFIX,adaction.de
 DOMAIN-SUFFIX,adadvisor.net
 DOMAIN-SUFFIX,adalliance.io
-DOMAIN-SUFFIX,adanging.blog
 DOMAIN-SUFFIX,adap.tv
 DOMAIN-SUFFIX,adapt.tv
 DOMAIN-SUFFIX,adbilty.me
@@ -1229,6 +1229,7 @@ DOMAIN-SUFFIX,cl.turkishairlines.com
 DOMAIN-SUFFIX,cl0udh0st1ng.com
 DOMAIN-SUFFIX,clck.ru
 DOMAIN-SUFFIX,clevernt.com
+DOMAIN-SUFFIX,click-1.pl
 DOMAIN-SUFFIX,click.airmalta-mail.com
 DOMAIN-SUFFIX,click.aliexpress.com
 DOMAIN-SUFFIX,click.allkeyshop.com
@@ -1387,7 +1388,6 @@ DOMAIN-SUFFIX,cpalead.com
 DOMAIN-SUFFIX,cpays.com
 DOMAIN-SUFFIX,cpmstar.com
 DOMAIN-SUFFIX,cpu.samsungelectronics.com
-DOMAIN-SUFFIX,cpx-traffic.com
 DOMAIN-SUFFIX,cpx.to
 DOMAIN-SUFFIX,cpxinteractive.com
 DOMAIN-SUFFIX,cqcounter.com
@@ -1768,6 +1768,7 @@ DOMAIN-SUFFIX,growthrx.in
 DOMAIN-SUFFIX,gscontxt.net
 DOMAIN-SUFFIX,guardeddirection.com
 DOMAIN-SUFFIX,guardedschool.com
+DOMAIN-SUFFIX,gumyfui.com
 DOMAIN-SUFFIX,gunggo.com
 DOMAIN-SUFFIX,h-bid.com
 DOMAIN-SUFFIX,h-trck.com
@@ -1878,6 +1879,7 @@ DOMAIN-SUFFIX,imagecash.net
 DOMAIN-SUFFIX,images-pw.secureserver.net
 DOMAIN-SUFFIX,img.prohardver.hu
 DOMAIN-SUFFIX,imgpromo.easyrencontre.com
+DOMAIN-SUFFIX,immensehoney.com
 DOMAIN-SUFFIX,imonomy.com
 DOMAIN-SUFFIX,imp.i312864.net
 DOMAIN-SUFFIX,impossibleexpansion.com
@@ -2053,6 +2055,7 @@ DOMAIN-SUFFIX,links.housekeep.com
 DOMAIN-SUFFIX,links.prosservice.fr
 DOMAIN-SUFFIX,links.zoopla.co.uk
 DOMAIN-SUFFIX,linksoutside.com
+DOMAIN-SUFFIX,linkstable.com
 DOMAIN-SUFFIX,linkstorms.com
 DOMAIN-SUFFIX,linkswaper.com
 DOMAIN-SUFFIX,linksynergy.com
@@ -2609,6 +2612,7 @@ DOMAIN-SUFFIX,quantummetric.com
 DOMAIN-SUFFIX,quarterserver.de
 DOMAIN-SUFFIX,quickkoala.io
 DOMAIN-SUFFIX,quietknowledge.com
+DOMAIN-SUFFIX,quiltruler.com
 DOMAIN-SUFFIX,quinst.com
 DOMAIN-SUFFIX,quirkysugar.com
 DOMAIN-SUFFIX,quisma.com

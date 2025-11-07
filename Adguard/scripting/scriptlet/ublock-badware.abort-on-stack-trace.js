@@ -20,86 +20,125 @@
 
 */
 
-// ruleset: tur-0
+// ruleset: ublock-badware
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_removeCookie() {
+(function uBOL_abortOnStackTrace() {
 
 /******************************************************************************/
 
-function removeCookie(
+function abortOnStackTrace(
+    chain = '',
     needle = ''
 ) {
-    if ( typeof needle !== 'string' ) { return; }
+    if ( typeof chain !== 'string' ) { return; }
     const safe = safeSelf();
-    const reName = safe.patternToRegex(needle);
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 1);
-    const throttle = (fn, ms = 500) => {
-        if ( throttle.timer !== undefined ) { return; }
-        throttle.timer = setTimeout(( ) => {
-            throttle.timer = undefined;
-            fn();
-        }, ms);
-    };
-    const baseURL = new URL(document.baseURI);
-    let targetDomain = extraArgs.domain;
-    if ( targetDomain && /^\/.+\//.test(targetDomain) ) {
-        const reDomain = new RegExp(targetDomain.slice(1, -1));
-        const match = reDomain.exec(baseURL.hostname);
-        targetDomain = match ? match[0] : undefined;
-    }
-    const remove = ( ) => {
-        safe.String_split.call(document.cookie, ';').forEach(cookieStr => {
-            const pos = cookieStr.indexOf('=');
-            if ( pos === -1 ) { return; }
-            const cookieName = cookieStr.slice(0, pos).trim();
-            if ( reName.test(cookieName) === false ) { return; }
-            const part1 = cookieName + '=';
-            const part2a = `; domain=${baseURL.hostname}`;
-            const part2b = `; domain=.${baseURL.hostname}`;
-            let part2c, part2d;
-            if ( targetDomain ) {
-                part2c = `; domain=${targetDomain}`;
-                part2d = `; domain=.${targetDomain}`;
-            } else if ( document.domain ) {
-                const domain = document.domain;
-                if ( domain !== baseURL.hostname ) {
-                    part2c = `; domain=.${domain}`;
+    const needleDetails = safe.initPattern(needle, { canNegate: true });
+    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
+    if ( needle === '' ) { extraArgs.log = 'all'; }
+    const makeProxy = function(owner, chain) {
+        const pos = chain.indexOf('.');
+        if ( pos === -1 ) {
+            let v = owner[chain];
+            Object.defineProperty(owner, chain, {
+                get: function() {
+                    const log = safe.logLevel > 1 ? 'all' : 'match';
+                    if ( matchesStackTraceFn(needleDetails, log) ) {
+                        throw new ReferenceError(getExceptionTokenFn());
+                    }
+                    return v;
+                },
+                set: function(a) {
+                    const log = safe.logLevel > 1 ? 'all' : 'match';
+                    if ( matchesStackTraceFn(needleDetails, log) ) {
+                        throw new ReferenceError(getExceptionTokenFn());
+                    }
+                    v = a;
+                },
+            });
+            return;
+        }
+        const prop = chain.slice(0, pos);
+        let v = owner[prop];
+        chain = chain.slice(pos + 1);
+        if ( v ) {
+            makeProxy(v, chain);
+            return;
+        }
+        const desc = Object.getOwnPropertyDescriptor(owner, prop);
+        if ( desc && desc.set !== undefined ) { return; }
+        Object.defineProperty(owner, prop, {
+            get: function() { return v; },
+            set: function(a) {
+                v = a;
+                if ( a instanceof Object ) {
+                    makeProxy(a, chain);
                 }
-                if ( domain.startsWith('www.') ) {
-                    part2d = `; domain=${domain.replace('www', '')}`;
-                }
-            }
-            const part3 = '; path=/';
-            const part4 = '; Max-Age=-1000; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-            document.cookie = part1 + part4;
-            document.cookie = part1 + part2a + part4;
-            document.cookie = part1 + part2b + part4;
-            document.cookie = part1 + part3 + part4;
-            document.cookie = part1 + part2a + part3 + part4;
-            document.cookie = part1 + part2b + part3 + part4;
-            if ( part2c !== undefined ) {
-                document.cookie = part1 + part2c + part3 + part4;
-            }
-            if ( part2d !== undefined ) {
-                document.cookie = part1 + part2d + part3 + part4;
             }
         });
     };
-    remove();
-    window.addEventListener('beforeunload', remove);
-    if ( typeof extraArgs.when !== 'string' ) { return; }
-    const supportedEventTypes = [ 'scroll', 'keydown' ];
-    const eventTypes = safe.String_split.call(extraArgs.when, /\s/);
-    for ( const type of eventTypes ) {
-        if ( supportedEventTypes.includes(type) === false ) { continue; }
-        document.addEventListener(type, ( ) => {
-            throttle(remove);
-        }, { passive: true });
+    const owner = window;
+    makeProxy(owner, chain);
+}
+
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
+    const oe = self.onerror;
+    self.onerror = function(msg, ...args) {
+        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
+        if ( oe instanceof Function ) {
+            return oe.call(this, msg, ...args);
+        }
+    }.bind();
+    return token;
+}
+
+function matchesStackTraceFn(
+    needleDetails,
+    logLevel = ''
+) {
+    const safe = safeSelf();
+    const exceptionToken = getExceptionTokenFn();
+    const error = new safe.Error(exceptionToken);
+    const docURL = new URL(self.location.href);
+    docURL.hash = '';
+    // Normalize stack trace
+    const reLine = /(.*?@)?(\S+)(:\d+):\d+\)?$/;
+    const lines = [];
+    for ( let line of safe.String_split.call(error.stack, /[\n\r]+/) ) {
+        if ( line.includes(exceptionToken) ) { continue; }
+        line = line.trim();
+        const match = safe.RegExp_exec.call(reLine, line);
+        if ( match === null ) { continue; }
+        let url = match[2];
+        if ( url.startsWith('(') ) { url = url.slice(1); }
+        if ( url === docURL.href ) {
+            url = 'inlineScript';
+        } else if ( url.startsWith('<anonymous>') ) {
+            url = 'injectedScript';
+        }
+        let fn = match[1] !== undefined
+            ? match[1].slice(0, -1)
+            : line.slice(0, match.index).trim();
+        if ( fn.startsWith('at') ) { fn = fn.slice(2).trim(); }
+        let rowcol = match[3];
+        lines.push(' ' + `${fn} ${url}${rowcol}:1`.trim());
     }
+    lines[0] = `stackDepth:${lines.length-1}`;
+    const stack = lines.join('\t');
+    const r = needleDetails.matchAll !== true &&
+        safe.testPattern(needleDetails, stack);
+    if (
+        logLevel === 'all' ||
+        logLevel === 'match' && r ||
+        logLevel === 'nomatch' && !r
+    ) {
+        safe.uboLog(stack.replace(/\t/g, '\n'));
+    }
+    return r;
 }
 
 function safeSelf() {
@@ -292,11 +331,17 @@ function safeSelf() {
     return safe;
 }
 
+function getRandomTokenFn() {
+    const safe = safeSelf();
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+}
+
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["showAllDaFull"]];
-const hostnamesMap = new Map([["dizilla40.com",0],["yabancidiziio.com",0]]);
+const argsList = [["Array.prototype.indexOf","isWin"]];
+const hostnamesMap = new Map([["sport.elwatannews.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -364,7 +409,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { removeCookie(...argsList[i]); }
+    try { abortOnStackTrace(...argsList[i]); }
     catch { }
 }
 

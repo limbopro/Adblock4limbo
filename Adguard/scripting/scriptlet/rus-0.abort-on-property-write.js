@@ -266,10 +266,10 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["NiceScroll"],["adsBlocked"],["ai_front"],["disableSelection"],["disable_keystrokes"],["document.oncontextmenu"],["document.ondragstart"],["document.onselectstart"],["fetch"],["showHelpProjectModal"],["window.yaProxy"],["mailruEnabled"]];
-const hostnamesMap = new Map([["transkarpatia.net",0],["24pdd.ru",1],["doctorrouter.ru",2],["ranobe-novels.ru",2],["tests24.su",2],["newxboxone.ru",3],["ufchgu.ru",[3,4]],["fssp.gov.ru",[5,6,7]],["southpark.su",[5,6,7]],["turkcinema.org",[5,6,7]],["phys-kids.com",8],["searchfloor.org",9],["kakprosto.ru",10],["ok.ru",11]]);
+const argsList = [["NiceScroll"],["adsBlocked"],["ai_front"],["disableSelection"],["disable_keystrokes"],["document.oncontextmenu"],["document.ondragstart"],["document.onselectstart"],["fetch"],["window.yaProxy"],["HelpProjectPromo"],["mailruEnabled"]];
+const hostnamesMap = new Map([["transkarpatia.net",0],["24pdd.ru",1],["doctorrouter.ru",2],["ranobe-novels.ru",2],["tests24.su",2],["newxboxone.ru",3],["ufchgu.ru",[3,4]],["fssp.gov.ru",[5,6,7]],["southpark.su",[5,6,7]],["turkcinema.org",[5,6,7]],["phys-kids.com",8],["kakprosto.ru",9],["searchfloor.*",10],["ok.ru",11]]);
 const exceptionsMap = new Map([]);
-const hasEntities = false;
+const hasEntities = true;
 const hasAncestors = false;
 
 const collectArgIndices = (hn, map, out) => {

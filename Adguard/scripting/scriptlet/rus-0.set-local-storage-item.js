@@ -318,8 +318,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["pg_GPbackVideo","on"],["vipler.player.live.play","false"],["visits-count:plus-promotion","$remove$"]];
-const hostnamesMap = new Map([["playground.ru",0],["iz.ru",1],["dtf.ru",2],["vc.ru",2]]);
+const argsList = [["pg_GPbackVideo","on"],["vipler.player.live.play","false"],["visits-count:plus-promotion","$remove$"],["rwDemo","$remove$"],["rws","$remove$"]];
+const hostnamesMap = new Map([["playground.ru",0],["iz.ru",1],["dtf.ru",2],["vc.ru",2],["patephone.com",[3,4]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

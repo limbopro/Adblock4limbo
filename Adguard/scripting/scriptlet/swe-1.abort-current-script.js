@@ -371,8 +371,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["disableEnterKey"],["document.ondragstart"],["advads_passive_placements"],["document.oncontextmenu"],["chp_adblock_browser"],["monsterinsights_frontend"],["advads"],["advanced_ads"]];
-const hostnamesMap = new Map([["discoveringtheplanet.com",[0,1]],["kandisvarlden.com",[0,3]],["hejaolika.se",2],["spelhubben.se",3],["husbilsplats.se",3],["temadagar.se",4],["zeinaskitchen.se",5],["trafiksakerhet.se",5],["boktugg.se",5],["lakartidningen.se",5],["villalivet.se",[5,6,7]],["matsafari.nu",5],["fastighetsvarlden.se",5],["aktieskolan.se",5],["alekuriren.se",[6,7]],["rocknytt.net",[6,7]],["upphandling24.se",[6,7]],["datormagazin.se",[6,7]],["polistidningen.se",[6,7]],["densistavilan.se",[6,7]],["classicmotor.se",[6,7]],["tidningenhalsa.se",[6,7]],["husohem.se",[6,7]],["guiden.se",[6,7]],["nyadagbladet.se",[6,7]],["enkelteknik.se",[6,7]],["vadhanderisverige.se",[6,7]],["passioneffect.se",[6,7]],["livsmedelsnyheter.se",[6,7]],["modernpsykologi.se",[6,7]]]);
+const argsList = [["disableEnterKey"],["document.ondragstart"],["advads_passive_placements"],["document.oncontextmenu"],["monsterinsights_frontend"],["advads"],["advanced_ads"]];
+const hostnamesMap = new Map([["discoveringtheplanet.com",[0,1]],["kandisvarlden.com",[0,3]],["hejaolika.se",2],["spelhubben.se",3],["husbilsplats.se",3],["zeinaskitchen.se",4],["trafiksakerhet.se",4],["boktugg.se",4],["lakartidningen.se",4],["villalivet.se",[4,5,6]],["matsafari.nu",4],["fastighetsvarlden.se",4],["aktieskolan.se",4],["alekuriren.se",[5,6]],["rocknytt.net",[5,6]],["upphandling24.se",[5,6]],["datormagazin.se",[5,6]],["polistidningen.se",[5,6]],["densistavilan.se",[5,6]],["classicmotor.se",[5,6]],["tidningenhalsa.se",[5,6]],["husohem.se",[5,6]],["guiden.se",[5,6]],["nyadagbladet.se",[5,6]],["enkelteknik.se",[5,6]],["vadhanderisverige.se",[5,6]],["passioneffect.se",[5,6]],["livsmedelsnyheter.se",[5,6]],["modernpsykologi.se",[5,6]]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

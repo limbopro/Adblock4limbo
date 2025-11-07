@@ -20,86 +20,73 @@
 
 */
 
-// ruleset: tur-0
+// ruleset: rou-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_removeCookie() {
+(function uBOL_setCookie() {
 
 /******************************************************************************/
 
-function removeCookie(
-    needle = ''
+function setCookie(
+    name = '',
+    value = '',
+    path = ''
 ) {
-    if ( typeof needle !== 'string' ) { return; }
+    if ( name === '' ) { return; }
     const safe = safeSelf();
-    const reName = safe.patternToRegex(needle);
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 1);
-    const throttle = (fn, ms = 500) => {
-        if ( throttle.timer !== undefined ) { return; }
-        throttle.timer = setTimeout(( ) => {
-            throttle.timer = undefined;
-            fn();
-        }, ms);
-    };
-    const baseURL = new URL(document.baseURI);
-    let targetDomain = extraArgs.domain;
-    if ( targetDomain && /^\/.+\//.test(targetDomain) ) {
-        const reDomain = new RegExp(targetDomain.slice(1, -1));
-        const match = reDomain.exec(baseURL.hostname);
-        targetDomain = match ? match[0] : undefined;
+    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
+    const normalized = value.toLowerCase();
+    const match = /^("?)(.+)\1$/.exec(normalized);
+    const unquoted = match && match[2] || normalized;
+    const validValues = getSafeCookieValuesFn();
+    if ( validValues.includes(unquoted) === false ) {
+        if ( /^-?\d+$/.test(unquoted) === false ) { return; }
+        const n = parseInt(value, 10) || 0;
+        if ( n < -32767 || n > 32767 ) { return; }
     }
-    const remove = ( ) => {
-        safe.String_split.call(document.cookie, ';').forEach(cookieStr => {
-            const pos = cookieStr.indexOf('=');
-            if ( pos === -1 ) { return; }
-            const cookieName = cookieStr.slice(0, pos).trim();
-            if ( reName.test(cookieName) === false ) { return; }
-            const part1 = cookieName + '=';
-            const part2a = `; domain=${baseURL.hostname}`;
-            const part2b = `; domain=.${baseURL.hostname}`;
-            let part2c, part2d;
-            if ( targetDomain ) {
-                part2c = `; domain=${targetDomain}`;
-                part2d = `; domain=.${targetDomain}`;
-            } else if ( document.domain ) {
-                const domain = document.domain;
-                if ( domain !== baseURL.hostname ) {
-                    part2c = `; domain=.${domain}`;
-                }
-                if ( domain.startsWith('www.') ) {
-                    part2d = `; domain=${domain.replace('www', '')}`;
-                }
-            }
-            const part3 = '; path=/';
-            const part4 = '; Max-Age=-1000; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-            document.cookie = part1 + part4;
-            document.cookie = part1 + part2a + part4;
-            document.cookie = part1 + part2b + part4;
-            document.cookie = part1 + part3 + part4;
-            document.cookie = part1 + part2a + part3 + part4;
-            document.cookie = part1 + part2b + part3 + part4;
-            if ( part2c !== undefined ) {
-                document.cookie = part1 + part2c + part3 + part4;
-            }
-            if ( part2d !== undefined ) {
-                document.cookie = part1 + part2d + part3 + part4;
-            }
-        });
-    };
-    remove();
-    window.addEventListener('beforeunload', remove);
-    if ( typeof extraArgs.when !== 'string' ) { return; }
-    const supportedEventTypes = [ 'scroll', 'keydown' ];
-    const eventTypes = safe.String_split.call(extraArgs.when, /\s/);
-    for ( const type of eventTypes ) {
-        if ( supportedEventTypes.includes(type) === false ) { continue; }
-        document.addEventListener(type, ( ) => {
-            throttle(remove);
-        }, { passive: true });
+
+    const done = setCookieFn(
+        false,
+        name,
+        value,
+        '',
+        path,
+        safe.getExtraArgs(Array.from(arguments), 3)
+    );
+
+    if ( done ) {
+        safe.uboLog(logPrefix, 'Done');
     }
+}
+
+function getSafeCookieValuesFn() {
+    return [
+        'accept', 'reject',
+        'accepted', 'rejected', 'notaccepted',
+        'allow', 'disallow', 'deny',
+        'allowed', 'denied',
+        'approved', 'disapproved',
+        'checked', 'unchecked',
+        'dismiss', 'dismissed',
+        'enable', 'disable',
+        'enabled', 'disabled',
+        'essential', 'nonessential',
+        'forbidden', 'forever',
+        'hide', 'hidden',
+        'necessary', 'required',
+        'ok',
+        'on', 'off',
+        'true', 't', 'false', 'f',
+        'yes', 'y', 'no', 'n',
+        'all', 'none', 'functional',
+        'granted', 'done',
+        'decline', 'declined',
+        'closed', 'next', 'mandatory',
+        'disagree', 'agree',
+    ];
 }
 
 function safeSelf() {
@@ -292,11 +279,90 @@ function safeSelf() {
     return safe;
 }
 
+function setCookieFn(
+    trusted = false,
+    name = '',
+    value = '',
+    expires = '',
+    path = '',
+    options = {},
+) {
+    // https://datatracker.ietf.org/doc/html/rfc2616#section-2.2
+    // https://github.com/uBlockOrigin/uBlock-issues/issues/2777
+    if ( trusted === false && /[^!#$%&'*+\-.0-9A-Z[\]^_`a-z|~]/.test(name) ) {
+        name = encodeURIComponent(name);
+    }
+    // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
+    // The characters [",] are given a pass from the RFC requirements because
+    // apparently browsers do not follow the RFC to the letter.
+    if ( /[^ -:<-[\]-~]/.test(value) ) {
+        value = encodeURIComponent(value);
+    }
+
+    const cookieBefore = getCookieFn(name);
+    if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
+    if ( cookieBefore === value && options.reload ) { return; }
+
+    const cookieParts = [ name, '=', value ];
+    if ( expires !== '' ) {
+        cookieParts.push('; expires=', expires);
+    }
+
+    if ( path === '' ) { path = '/'; }
+    else if ( path === 'none' ) { path = ''; }
+    if ( path !== '' && path !== '/' ) { return; }
+    if ( path === '/' ) {
+        cookieParts.push('; path=/');
+    }
+
+    if ( trusted ) {
+        if ( options.domain ) {
+            let domain = options.domain;
+            if ( /^\/.+\//.test(domain) ) {
+                const baseURL = new URL(document.baseURI);
+                const reDomain = new RegExp(domain.slice(1, -1));
+                const match = reDomain.exec(baseURL.hostname);
+                domain = match ? match[0] : undefined;
+            }
+            if ( domain ) {
+                cookieParts.push(`; domain=${domain}`);
+            }
+        }
+        cookieParts.push('; Secure');
+    } else if ( /^__(Host|Secure)-/.test(name) ) {
+        cookieParts.push('; Secure');
+    }
+
+    try {
+        document.cookie = cookieParts.join('');
+    } catch {
+    }
+
+    const done = getCookieFn(name) === value;
+    if ( done && options.reload ) {
+        window.location.reload();
+    }
+
+    return done;
+}
+
+function getCookieFn(
+    name = ''
+) {
+    const safe = safeSelf();
+    for ( const s of safe.String_split.call(document.cookie, /\s*;\s*/) ) {
+        const pos = s.indexOf('=');
+        if ( pos === -1 ) { continue; }
+        if ( s.slice(0, pos) !== name ) { continue; }
+        return s.slice(pos+1).trim();
+    }
+}
+
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["showAllDaFull"]];
-const hostnamesMap = new Map([["dizilla40.com",0],["yabancidiziio.com",0]]);
+const argsList = [["fwp_wpm_","1"]];
+const hostnamesMap = new Map([["acasa.ro",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -364,7 +430,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { removeCookie(...argsList[i]); }
+    try { setCookie(...argsList[i]); }
     catch { }
 }
 

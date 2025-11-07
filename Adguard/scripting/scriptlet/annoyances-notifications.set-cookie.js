@@ -361,8 +361,8 @@ function getCookieFn(
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["modalDismissed","1"],["PromptLater","true"],["undefinedpopup-pdfpcouponoffer","1"],["navBasedDialogManager","true"],["hideMacDesktopDialog","true"],["map_new_features_new_flightradar24_com_label_options","1"],["fn_cookie_whatsapp_alert","1"],["ndtvfood_isSubscribed_elex_v1","no"],["ignore_language_guide","true"],["o-push-alert","1"]];
-const hostnamesMap = new Map([["ktoo.org",0],["gq.co.za",1],["mypenndentist.org",2],["tunein.com",[3,4]],["flightradar24.com",5],["fogaonet.com",6],["food.ndtv.com",7],["s.tabelog.com",8],["onedio.com",9]]);
+const argsList = [["pushNotifications_popup_displayed_v2","true"],["modalDismissed","1"],["PromptLater","true"],["undefinedpopup-pdfpcouponoffer","1"],["navBasedDialogManager","true"],["hideMacDesktopDialog","true"],["map_new_features_new_flightradar24_com_label_options","1"],["fn_cookie_whatsapp_alert","1"],["ndtvfood_isSubscribed_elex_v1","no"],["ignore_language_guide","true"],["o-push-alert","1"]];
+const hostnamesMap = new Map([["noovo.info",0],["ktoo.org",1],["gq.co.za",2],["mypenndentist.org",3],["tunein.com",[4,5]],["flightradar24.com",6],["fogaonet.com",7],["food.ndtv.com",8],["s.tabelog.com",9],["onedio.com",10]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

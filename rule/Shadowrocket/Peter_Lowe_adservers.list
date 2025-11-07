@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 04 Nov 2025 20:01:42 GMT
-# entries:        3463
+# last updated:   Thu, 06 Nov 2025 19:53:02 GMT
+# entries:        3467
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -69,6 +69,7 @@ DOMAIN-SUFFIX,ablink.info.wise.com, reject
 DOMAIN-SUFFIX,ablink.news.emails-puregym.com, reject
 DOMAIN-SUFFIX,ablinks.mail.hinge.co, reject
 DOMAIN-SUFFIX,aboardlevel.com, reject
+DOMAIN-SUFFIX,absolutering.com, reject
 DOMAIN-SUFFIX,absorbingband.com, reject
 DOMAIN-SUFFIX,abstractedauthority.com, reject
 DOMAIN-SUFFIX,abtasty.com, reject
@@ -177,7 +178,6 @@ DOMAIN-SUFFIX,adabra.com, reject
 DOMAIN-SUFFIX,adaction.de, reject
 DOMAIN-SUFFIX,adadvisor.net, reject
 DOMAIN-SUFFIX,adalliance.io, reject
-DOMAIN-SUFFIX,adanging.blog, reject
 DOMAIN-SUFFIX,adap.tv, reject
 DOMAIN-SUFFIX,adapt.tv, reject
 DOMAIN-SUFFIX,adbilty.me, reject
@@ -1229,6 +1229,7 @@ DOMAIN-SUFFIX,cl.turkishairlines.com, reject
 DOMAIN-SUFFIX,cl0udh0st1ng.com, reject
 DOMAIN-SUFFIX,clck.ru, reject
 DOMAIN-SUFFIX,clevernt.com, reject
+DOMAIN-SUFFIX,click-1.pl, reject
 DOMAIN-SUFFIX,click.airmalta-mail.com, reject
 DOMAIN-SUFFIX,click.aliexpress.com, reject
 DOMAIN-SUFFIX,click.allkeyshop.com, reject
@@ -1387,7 +1388,6 @@ DOMAIN-SUFFIX,cpalead.com, reject
 DOMAIN-SUFFIX,cpays.com, reject
 DOMAIN-SUFFIX,cpmstar.com, reject
 DOMAIN-SUFFIX,cpu.samsungelectronics.com, reject
-DOMAIN-SUFFIX,cpx-traffic.com, reject
 DOMAIN-SUFFIX,cpx.to, reject
 DOMAIN-SUFFIX,cpxinteractive.com, reject
 DOMAIN-SUFFIX,cqcounter.com, reject
@@ -1768,6 +1768,7 @@ DOMAIN-SUFFIX,growthrx.in, reject
 DOMAIN-SUFFIX,gscontxt.net, reject
 DOMAIN-SUFFIX,guardeddirection.com, reject
 DOMAIN-SUFFIX,guardedschool.com, reject
+DOMAIN-SUFFIX,gumyfui.com, reject
 DOMAIN-SUFFIX,gunggo.com, reject
 DOMAIN-SUFFIX,h-bid.com, reject
 DOMAIN-SUFFIX,h-trck.com, reject
@@ -1878,6 +1879,7 @@ DOMAIN-SUFFIX,imagecash.net, reject
 DOMAIN-SUFFIX,images-pw.secureserver.net, reject
 DOMAIN-SUFFIX,img.prohardver.hu, reject
 DOMAIN-SUFFIX,imgpromo.easyrencontre.com, reject
+DOMAIN-SUFFIX,immensehoney.com, reject
 DOMAIN-SUFFIX,imonomy.com, reject
 DOMAIN-SUFFIX,imp.i312864.net, reject
 DOMAIN-SUFFIX,impossibleexpansion.com, reject
@@ -2053,6 +2055,7 @@ DOMAIN-SUFFIX,links.housekeep.com, reject
 DOMAIN-SUFFIX,links.prosservice.fr, reject
 DOMAIN-SUFFIX,links.zoopla.co.uk, reject
 DOMAIN-SUFFIX,linksoutside.com, reject
+DOMAIN-SUFFIX,linkstable.com, reject
 DOMAIN-SUFFIX,linkstorms.com, reject
 DOMAIN-SUFFIX,linkswaper.com, reject
 DOMAIN-SUFFIX,linksynergy.com, reject
@@ -2609,6 +2612,7 @@ DOMAIN-SUFFIX,quantummetric.com, reject
 DOMAIN-SUFFIX,quarterserver.de, reject
 DOMAIN-SUFFIX,quickkoala.io, reject
 DOMAIN-SUFFIX,quietknowledge.com, reject
+DOMAIN-SUFFIX,quiltruler.com, reject
 DOMAIN-SUFFIX,quinst.com, reject
 DOMAIN-SUFFIX,quirkysugar.com, reject
 DOMAIN-SUFFIX,quisma.com, reject

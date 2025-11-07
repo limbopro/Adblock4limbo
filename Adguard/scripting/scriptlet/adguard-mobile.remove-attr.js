@@ -324,8 +324,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["id","#div-gpt-ad-header"],["style",".tadm_ad_unit"],["data-universal-link","body"],["style","div[class*=\"site-header__with-mobile-leaderboard\"]"]];
-const hostnamesMap = new Map([["rocketnews24.com",0],["youpouch.com",0],["soranews24.com",0],["saveur.com",1],["idaprikol.ru",2],["reuters.com",3]]);
+const argsList = [["id","#div-gpt-ad-header"],["style",".tadm_ad_unit"],["data-universal-link","body"],["height","iframe[src=\"https://dq.h1g.jp/img/ad/ad_heigu.html\"]"],["style","div[class*=\"site-header__with-mobile-leaderboard\"]"]];
+const hostnamesMap = new Map([["rocketnews24.com",0],["youpouch.com",0],["soranews24.com",0],["saveur.com",1],["idaprikol.ru",2],["h1g.jp",3],["reuters.com",4]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

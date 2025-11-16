@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 06 Nov 2025 19:53:02 GMT
-# entries:        3467
+# last updated:   Fri, 14 Nov 2025 13:42:01 GMT
+# entries:        3480
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -260,7 +260,6 @@ DOMAIN-SUFFIX,adjuggler.com, reject
 DOMAIN-SUFFIX,adjuggler.yourdictionary.com, reject
 DOMAIN-SUFFIX,adjust.com, reject
 DOMAIN-SUFFIX,adjustnetwork.com, reject
-DOMAIN-SUFFIX,adk2.co, reject
 DOMAIN-SUFFIX,adk2.com, reject
 DOMAIN-SUFFIX,adland.ru, reject
 DOMAIN-SUFFIX,adlegend.com, reject
@@ -404,6 +403,7 @@ DOMAIN-SUFFIX,ads.devmates.com, reject
 DOMAIN-SUFFIX,ads.digital-digest.com, reject
 DOMAIN-SUFFIX,ads.digitalmedianet.com, reject
 DOMAIN-SUFFIX,ads.digitalpoint.com, reject
+DOMAIN-SUFFIX,ads.directionsmag.com, reject
 DOMAIN-SUFFIX,ads.doit.com.cn, reject
 DOMAIN-SUFFIX,ads.domeus.com, reject
 DOMAIN-SUFFIX,ads.eagletribune.com, reject
@@ -727,6 +727,7 @@ DOMAIN-SUFFIX,adsiduous.com, reject
 DOMAIN-SUFFIX,adskeeper.co.uk, reject
 DOMAIN-SUFFIX,adskeeper.com, reject
 DOMAIN-SUFFIX,adsklick.de, reject
+DOMAIN-SUFFIX,adskpak.com, reject
 DOMAIN-SUFFIX,adsmart.net, reject
 DOMAIN-SUFFIX,adsmartracker.com, reject
 DOMAIN-SUFFIX,adsmetadata.startappservice.com, reject
@@ -1089,6 +1090,7 @@ DOMAIN-SUFFIX,bidvertiser.com, reject
 DOMAIN-SUFFIX,big-bang-ads.com, reject
 DOMAIN-SUFFIX,bigbangmedia.com, reject
 DOMAIN-SUFFIX,bigclicks.com, reject
+DOMAIN-SUFFIX,bigreal.org, reject
 DOMAIN-SUFFIX,bigworldfashion.com, reject
 DOMAIN-SUFFIX,billboard.cz, reject
 DOMAIN-SUFFIX,billtable.com, reject
@@ -1099,6 +1101,7 @@ DOMAIN-SUFFIX,bizographics.com, reject
 DOMAIN-SUFFIX,bizrate.com, reject
 DOMAIN-SUFFIX,bizzclick.com, reject
 DOMAIN-SUFFIX,bkrtx.com, reject
+DOMAIN-SUFFIX,bleachbubble.com, reject
 DOMAIN-SUFFIX,blingbucks.com, reject
 DOMAIN-SUFFIX,blis.com, reject
 DOMAIN-SUFFIX,blockadblock.com, reject
@@ -1333,6 +1336,7 @@ DOMAIN-SUFFIX,coldbalance.com, reject
 DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com, reject
 DOMAIN-SUFFIX,collector.cdp.cnn.com, reject
 DOMAIN-SUFFIX,colonize.com, reject
+DOMAIN-SUFFIX,colorfulpet.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
 DOMAIN-SUFFIX,commindo-media-ressourcen.de, reject
 DOMAIN-SUFFIX,commissionmonster.com, reject
@@ -1457,6 +1461,7 @@ DOMAIN-SUFFIX,deloplen.com, reject
 DOMAIN-SUFFIX,demandbase.com, reject
 DOMAIN-SUFFIX,demdex.net, reject
 DOMAIN-SUFFIX,deployads.com, reject
+DOMAIN-SUFFIX,desertgates.com, reject
 DOMAIN-SUFFIX,desiredirt.com, reject
 DOMAIN-SUFFIX,detailedgovernment.com, reject
 DOMAIN-SUFFIX,detectdiscovery.com, reject
@@ -1497,6 +1502,7 @@ DOMAIN-SUFFIX,doubleverify.com, reject
 DOMAIN-SUFFIX,dpbolvw.net, reject
 DOMAIN-SUFFIX,dpu.samsungelectronics.com, reject
 DOMAIN-SUFFIX,dq95d35.com, reject
+DOMAIN-SUFFIX,dragonbats.com, reject
 DOMAIN-SUFFIX,drumcash.com, reject
 DOMAIN-SUFFIX,dsp.colpirio.com, reject
 DOMAIN-SUFFIX,dsp.io, reject
@@ -1670,6 +1676,7 @@ DOMAIN-SUFFIX,forkcdn.com, reject
 DOMAIN-SUFFIX,fpctraffic.com, reject
 DOMAIN-SUFFIX,fpjs.io, reject
 DOMAIN-SUFFIX,fqtag.com, reject
+DOMAIN-SUFFIX,fraysystems.com, reject
 DOMAIN-SUFFIX,free-counter.co.uk, reject
 DOMAIN-SUFFIX,freebanner.com, reject
 DOMAIN-SUFFIX,freecounterstat.com, reject
@@ -1931,6 +1938,7 @@ DOMAIN-SUFFIX,ipstack.com, reject
 DOMAIN-SUFFIX,irchan.com, reject
 DOMAIN-SUFFIX,ireklama.cz, reject
 DOMAIN-SUFFIX,is-tracking-pixel-api-prod.appspot.com, reject
+DOMAIN-SUFFIX,islandwebhelp.com, reject
 DOMAIN-SUFFIX,itop.cz, reject
 DOMAIN-SUFFIX,its-that-easy.com, reject
 DOMAIN-SUFFIX,ivwbox.de, reject
@@ -1967,6 +1975,7 @@ DOMAIN-SUFFIX,k.iinfo.cz, reject
 DOMAIN-SUFFIX,kameleoon.eu, reject
 DOMAIN-SUFFIX,kanoodle.com, reject
 DOMAIN-SUFFIX,kargo.com, reject
+DOMAIN-SUFFIX,kernellife.com, reject
 DOMAIN-SUFFIX,kickoffo.site, reject
 DOMAIN-SUFFIX,kindads.com, reject
 DOMAIN-SUFFIX,kindlereunion.com, reject
@@ -2274,6 +2283,7 @@ DOMAIN-SUFFIX,mylead.global, reject
 DOMAIN-SUFFIX,mylink-today.com, reject
 DOMAIN-SUFFIX,mypagerank.net, reject
 DOMAIN-SUFFIX,mypowermall.com, reject
+DOMAIN-SUFFIX,mysketchpad.com, reject
 DOMAIN-SUFFIX,mystat-in.net, reject
 DOMAIN-SUFFIX,mystat.pl, reject
 DOMAIN-SUFFIX,mytop-in.net, reject
@@ -2724,6 +2734,7 @@ DOMAIN-SUFFIX,rlcdn.com, reject
 DOMAIN-SUFFIX,rle.ru, reject
 DOMAIN-SUFFIX,rmads.msn.com, reject
 DOMAIN-SUFFIX,rmedia.boston.com, reject
+DOMAIN-SUFFIX,roaddynamics.com, reject
 DOMAIN-SUFFIX,roar.com, reject
 DOMAIN-SUFFIX,robotreplay.com, reject
 DOMAIN-SUFFIX,rockabox.co, reject
@@ -2819,6 +2830,7 @@ DOMAIN-SUFFIX,sessioncam.com, reject
 DOMAIN-SUFFIX,sexcounter.com, reject
 DOMAIN-SUFFIX,sexlist.com, reject
 DOMAIN-SUFFIX,sextracker.com, reject
+DOMAIN-SUFFIX,shadowmade.com, reject
 DOMAIN-SUFFIX,shakegoldfish.com, reject
 DOMAIN-SUFFIX,shareasale.com, reject
 DOMAIN-SUFFIX,sharethrough.com, reject
@@ -2940,6 +2952,7 @@ DOMAIN-SUFFIX,stalesummer.com, reject
 DOMAIN-SUFFIX,starffa.com, reject
 DOMAIN-SUFFIX,starkscale.com, reject
 DOMAIN-SUFFIX,starrynets.com, reject
+DOMAIN-SUFFIX,starsmarter.com, reject
 DOMAIN-SUFFIX,startapp.com, reject
 DOMAIN-SUFFIX,stat-track.com, reject
 DOMAIN-SUFFIX,stat.cliche.se, reject
@@ -3127,7 +3140,6 @@ DOMAIN-SUFFIX,tlvmedia.com, reject
 DOMAIN-SUFFIX,tm.br.de, reject
 DOMAIN-SUFFIX,tnkexchange.com, reject
 DOMAIN-SUFFIX,tns-counter.ru, reject
-DOMAIN-SUFFIX,to-go1.eu, reject
 DOMAIN-SUFFIX,toolforthought.com, reject
 DOMAIN-SUFFIX,top-casting-termine.de, reject
 DOMAIN-SUFFIX,top-site-list.com, reject
@@ -3409,6 +3421,7 @@ DOMAIN-SUFFIX,wondoads.de, reject
 DOMAIN-SUFFIX,woopra.com, reject
 DOMAIN-SUFFIX,worldwide-cash.net, reject
 DOMAIN-SUFFIX,worriednumber.com, reject
+DOMAIN-SUFFIX,writerhubs.com, reject
 DOMAIN-SUFFIX,wt-eu02.net, reject
 DOMAIN-SUFFIX,wt.bankmillennium.pl, reject
 DOMAIN-SUFFIX,www-banner.chat.ru, reject

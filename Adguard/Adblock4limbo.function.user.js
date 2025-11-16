@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.11.07
+// @version      0.2025.11.16
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -312,10 +312,19 @@ function adblock4limbo(x, csp) {
     if (csp == 'nocsp') {
         console.log('创建不带CSP属性按钮...')
 
-        //_button.setAttribute('onclick', "body_build('true');")
-        //// var nocsp = 'padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;bottom:15%;right:0.5%;position:fixed;border:transparent;background-color:transparent;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/uploads/imgs/Adblock4limbo.svg") !important;background-size:100% !important;background-repeat:no-repeat;';
-        var nocsp = '/*border:1px solid blue !important; */ padding:0px;transition-duration:666ms;transition-property:height;z-index:114154;right:0;position:fixed;border:transparent;background-color:transparent;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.png") !important;background-size:100% !important;background-repeat:no-repeat;';
-        _button.style = nocsp;
+        const BUTTON_CSS = `
+  border-radius: 5px 0 0 5px;
+  padding: 0;
+  transition: height 666ms;
+  z-index: 114154;
+  position: fixed;
+  right: 0;
+  border: transparent;
+  background: transparent url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.png") no-repeat;
+  background-size: 100%;
+`.replace(/\s+/g, ' ').trim() + ';';
+
+        _button.style.cssText = BUTTON_CSS;
         document.getElementById('dh_buttonMain').appendChild(_button); // 在 dh_buttonMain 下添加按钮
 
     } else if (csp == 'csp') {
@@ -367,6 +376,8 @@ function _button_button_width() {
         return size;
     }
 }
+
+
 
 // 长时间不动则隐藏按钮
 function _button_button(x) { // 显示导航按钮
@@ -443,8 +454,6 @@ function _onclick_button() {
 
 var nsfw_regex = new RegExp(/\b(javlibrary|thisav|njav|missav|javlib|javbus|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|javbus|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
 var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
-var echo_ell_length = 21; // 总共导航类目数量
-var echo_ell_overlay_length = 1; // 带有滚动条的的导航类目数量
 
 // 判断是否需要在当前页面插入导航按钮
 let str_ua = navigator.userAgent.toLowerCase();
@@ -463,41 +472,6 @@ else {
     _onclick_button();
 }
 
-function csp_remove() {
-    // 删除CSP模式下不可点击的按钮
-    var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
-    if (csp_regex.test(window.location.href.toLowerCase())) {
-        if (document.querySelector("button#dh_button") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
-            // 如果引用了 Adblock4limbo.function.js 则什么也不做
-        } else {
-
-            document.querySelectorAll('.li_global').forEach((x) => { // 移除网页聊天的功能按钮 webchat
-                if (x.querySelector('#webChat') !== null) {
-                    x.remove()
-                }
-            })
-
-            document.getElementById('dh_pageContainer').style.background = 'black'; // 设置背景颜色
-            console.log('CSP-设置背景颜色！')
-
-        }
-    } else {
-        if (document.querySelector("button#dh_button") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
-            // 如果引用了 Adblock4limbo.function.js 则什么也不做
-        } else {
-
-            document.querySelectorAll('.li_global').forEach((x) => { // 移除网页聊天的功能按钮 webchat
-                if (x.querySelector('#webChat') !== null) {
-                    x.remove()
-                }
-            })
-
-            document.getElementById('dh_pageContainer').style.background = 'black'; // 设置背景颜色
-            console.log('CSP-设置背景颜色！')
-
-        }
-    }
-}
 
 
 // 初始化导航容器
@@ -512,7 +486,7 @@ function initNavigationContainer() { // 初始化导航容器
     // 1. 创建容器（只创建一次）
     const container = Object.assign(document.createElement('div'), {
         id: 'dh_pageContainer',
-        className: 'dh_pageContainer_css'
+        className: 'dh_pageContainer_css notranslate'
     });
 
     // 2. 使用模板字符串（保持可读性） + 文档片段（避免多次 innerHTML 导致的重排）
@@ -528,6 +502,9 @@ function initNavigationContainer() { // 初始化导航容器
     // 3. 插入到 <html> 末尾（保持页面原有结构不变）
     document.documentElement.appendChild(container);
 }
+
+
+
 
 /**
  * 导航所有 HTML（集中管理，便于后期修改）
@@ -545,9 +522,9 @@ function getNavigationHTML() {
         <button style="border-radius:50%;opacity:.5" id="xX"></button>
       </div>
     </div>
-    <div class="_header4tips" style="padding:10px 22px 5px 22px;color:black;text-align:center;width:100%;bottom:-6px;left:7px">
+    <div class="_header4tips" style="padding:10px 0px 5px 0px;color:black;text-align:center;width:100%;bottom:-6px;left:7px">
       本导航为<a style="background:black;color:white" href="https://limbopro.com/archives/12904.html" target="_blank">毒奶去网页广告计划</a>的一部分！持续维护更新中...<br>
-      <b>✨导航使用小Tips</b> -&gt; 1秒内，<b>电脑用户</b>(连续敲击<b>2次ESC键</b>)，<b>iOS用户</b>(<b>在页面空白处连续点击4次及以上</b>) 可<b>快速唤起本导航页面</b>!<br>
+      <b>✨导航使用小Tips</b> -&gt; 1秒内，<b>电脑用户</b>(连续敲击<b>2次ESC键</b>)，<b>iOS用户</b>(<b>在页面空白处连续点击4次及以上</b>) 可<b>快速唤起本导航页面；点击右上角关闭按钮或双击导航页的空白处可关闭导航页面！</b>!<br>
       <b>反馈/建议/功能设置</b>中的<b>ON代表该功能已开启</b>，可<b>点击切换至OFF</b>进行关闭!<br>
       P.S.有好的网站/建议或意见欢迎<a href="https://limbopro.com/6.html" target="_blank" style="background:black;color:aliceblue">联系博主!</a>（将为ta移除广告，并添加至本导航页面==...
     </div>
@@ -590,9 +567,10 @@ function getNavigationHTML() {
       <li class="li_global"><a class="a_global" id="itimer">计时器⏱️</a></li>
       <li class="li_global"><a class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" target="_blank" style="background:#5a4771;box-shadow:inset 0 0 15px 3px #16191f00">广告拦截大全</a></li>
       <li class="li_global"><a class="a_global" id="software_skills" href="https://limbopro.com/category/software-skills/" target="_blank">软件百科</a></li>
-      <li class="li_global"><a class="a_global special" id="index" href="https://limbopro.com/" target="_blank" style="background:#5a4771">毒奶博客</a></li>
-      <li class="li_global"><a class="a_global special" id="毒奶搜索" href="https://limbopro.com/search.html" target="_blank" style="border-radius:4px;background:#c53f3f">毒奶搜索</a></li>
-      <li class="li_global"><a class="a_global special" id="番号搜索" href="https://limbopro.com/btsearch.html" target="_blank" style="border-radius:4px;background:#c53f3f">番号搜索</a></li>
+      <li class="li_global"><a class="a_global special yellow" id="index" href="https://limbopro.com/" target="_blank" style="background:#5a4771">毒奶博客</a></li>
+      <li class="li_global"><a class="a_global special yellow" id="毒奶搜索" href="https://limbopro.com/search.html" target="_blank" style="border-radius:4px;background:#c53f3f">毒奶搜索</a></li>
+      <li class="li_global"><a class="a_global special yellow" id="番号搜索" href="https://limbopro.com/btsearch.html" target="_blank" style="border-radius:4px;background:#c53f3f">番号搜索</a></li>
+       <li class="li_global"><button class="a_global special yellow" id="zhixingjs"  style="border-radius:4px;background:#c53f3f">执行JS</a></li>
     </ul>
   </div>
 
@@ -610,7 +588,7 @@ function getNavigationHTML() {
   <div class="div_global ipcheck">
     <div class="title_global">网络连通及被墙检测//</div>
     <ul class="ul_global">
-      <li class="li_global"><a class="a_global special" id="Sukka" href="https://ip.skk.moe/" target="_blank">ip地址查询（当前代理节点/本地IP信息）</a></li>
+      <li class="li_global"><a class="a_global special yellow" id="Sukka" href="https://ip.skk.moe/" target="_blank">ip地址查询（当前代理节点/本地IP信息）</a></li>
       <li class="li_global"><a class="a_global" id="checkgfw" href="https://www.checkgfw.com/" target="_blank">域名被墙检测</a></li>
     </ul>
   </div>
@@ -665,12 +643,14 @@ window.dh_pageContainer_body_pre = initNavigationContainer;
 
 
 
+
+
 var file = {
     javlibrary: "td.advsearch {display:none}#rightcolumn{right:90px;width:auto;} .videothumblist .videos {min-width:auto}  table.about td {width:auto!important} table.about td.desc {width:auto !important;min-width:0px!important} .titlebox {width:auto !important}.videothumblist.videos {width:auto !important} #leftmenu{max-width:90px;} div.videothumblist{overflow:scroll !important; overflow-x:hidden !important}iframe{display:none} table.about td {min-width:0px;} body.main{min-width:0px !important}\
     \
     ",
     global_css: '\
-    .pointer-events-none {pointer-events:none !important;} .pointer-events-auto {pointer-events:auto;} .bottom-mobile {bottom:30%} .positiondh_buttonMain {position:static !important;} /*::-webkit-scrollbar {display: none;}*/ #dh_buttonContainer{top:20px; position:fixed;right:0px;z-index:114154;} .pc {bottom:0px;} .mobile {bottom:30%;} #dh_button {border-radius:0px; position:absolute!important;} div._header4tips > b {color:black;} ._header4tips{color:black;} #dh_buttonMain {height:520px;width:60px;position:relative; resize:vertical; overflow:scroll; opacity:1;} ._header {position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} .cmsnone {display:none; z-index:-114154; opacity:0 !important; pointer-events:none !important;} .crbhms {text-align:center;white-space:break-spaces;color:white !important; border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;/*font-size:100% !important;*/padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;} .a_global.moviesColor {font-weight:300;background:black;color:#01ff5f!important;box-shadow:inset 0px 0px 15px 3px black} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } img.nsfw {position:fixed;width:100%;} img.lockscreen {position:fixed;width:100%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo { color:white;width:100%;height:100%} #nsfw { opacity:0.7; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button_csp{font-size:xxx-large;transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .close_search_button_csp:hover {background-color:red;opacity:1 !important;}  .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{/*background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;*/} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.green{background:#688e4e !important; transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #688e4e;} a.a_global.special{background:#141d2f !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac} .onlinemovies a {color:#f09636!important;} .a_global.xOnline {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #dh_button{ bottom:32%; height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#ffffff;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#dh_pageContainer.dh_pageContainer_css{height:100% !important; width:100% !important;overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#dh_pageContainer.dh_pageContainer_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{display:contents; z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;} .echo{padding:0px 15px 0px 15px; display:flex;flex-wrap:wrap;justify-content:center;align-items:center;width:auto;font-size:15px;text-align:inherit;position:absolute;} ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{box-shadow:0 4px 12px rgba(0, 0, 0, 0.06); word-wrap:break-word;font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{display:flex; min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:258px;margin:0px;overflow:auto;width:auto;} .title_global{font-weight:bolder !important; padding-left:2px;display:table-cell;vertical-align:bottom;width:106px;height:50px;text-align:center;font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-bottom:4px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#dh_pageContainer{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;/*font-size:100% !important;*/padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
+    .pointer-events-none {pointer-events:none !important;} .pointer-events-auto {pointer-events:auto;} .bottom-mobile {bottom:30%} .positiondh_buttonMain {position:static !important;} /*::-webkit-scrollbar {display: none;}*/ #dh_buttonContainer{top:20px; position:fixed;right:0px;z-index:114154;} .pc {bottom:0px;} .mobile {bottom:30%;} #dh_button {border-radius:0px; position:absolute!important;} div._header4tips > b {color:black;} ._header4tips{color:black;} #dh_buttonMain {height:520px;width:60px;position:relative; resize:vertical; overflow:scroll; opacity:1;} ._header {position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} .cmsnone { zIndex:-111; display:none !important; z-index:-114154; opacity:0 !important; pointer-events:none !important;} .crbhms {text-align:center;white-space:break-spaces;color:white !important; border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;/*font-size:100% !important;*/padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;} .a_global.moviesColor {font-weight:300;background:black;color:#01ff5f!important;box-shadow:inset 0px 0px 15px 3px black} .active { z-index:114154 !important; pointer-events:auto !important; opacity:1 !important; } img.nsfw {position:fixed;width:100%;} img.lockscreen {position:fixed;width:100%;} #nsfw_echo span.nsfw {position:fixed;top:60%;} #nsfw_echo { color:white;width:100%;height:100%} #nsfw { opacity:0.7; filter:blur(0.5px);filter: grayscale(1);z-index:114154;background:black;position:fixed;width:100%;height:100%;} .new_div_search{padding:20px;position:fixed;bottom:0%;} .close_search_button:hover {background-color:red;opacity:1 !important;} .close_search_button_csp{font-size:xxx-large;transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .close_search_button_csp:hover {background-color:red;opacity:1 !important;}  .close_search_button {transition-property:opacity;transition-duration:666ms;right:2%;bottom:13%;position:fixed;width:108px;height:108px;background-image:url(https://limbopro.com/Adblock4limbo_google_close.png);background-size:100%;background-repeat:no-repeat;border-radius:50%;opacity:0.5;} .div_global.feedback{background:transparent;} .a_global.title_{background:blue !important;font-size:8px!important} a.a_global.better{/*background:#2e64bb !important;box-shadow:inset 0px 0px 15px 3px #10336d;*/} .boom {opacity:0.5;} a.a_global.red{background:#df0f0f !important;transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #E55B5B;} a.a_global.green{background:#688e4e !important; transition-property:opacity;transition-duration:2s;box-shadow:inset 0px 0px 15px 3px #688e4e;} a.a_global.special{background:#141d2f !important;transition-property:opacity;transition-duration:2s;},a .a_global#CloudflareSpeedtest{} a.a_global#jichangtuijian{background:#3d3843; opacity:0.8;box-shadow:inset 0px 0px 15px 3px #000000}.carousel-inner{z-index:0!important} a.a_global#common {background:#3764ac} .onlinemovies a {color:#f09636!important;} .del {text-decoration:line-through !important;} .yellow{color:#f09636!important} .a_global.yellow {background:black;color:#f09636!important;box-shadow:inset 0px 0px 15px 3px black}  .cms_opacity {pointer-events:none !important;opacity:0} .cms {pointer-events:auto} div.closeX_Z{position:relative;text-align:right;z-index:1} div.closeX_W{position:relative;text-align: right;right:0px;top:0px;z-index:1} .scroll{position:absolute;width:110px;font-size:smaller;font-weight:lighter;padding-top:6px;color:#00000070;}button #dh_button{ bottom:32%; height:100px;background:red;opacity:1 !important;}.a_global.comics{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146}.a_global.porn{background:#2a2146;box-shadow:inset 0px 0px 15px 3px #2a2146} div._footer a{color:#ffffff;font-weight:bolder;} div ._footer{position:absolute;text-align:left;margin-bottom:-30px;background:transparent;z-index:-1 !important;bottom:-41px;padding-bottom:20px;font-size:small;font-weight:lighter;} div#dh_pageContainer.dh_pageContainer_css{height:100% !important; width:100% !important;overscroll-behavior:none;top:0px;transition-property:opacity;transition-duration:999ms;margin:0px !important} div#dh_pageContainer.dh_pageContainer_css_0{transition-duration:0ms !important;margin:0px !important} div > button#xX{background-image:url("https://limbopro.com/Adblock4limbo_close.svg");transition-property:opacity;transition-duration:666ms;background-color:#542c3e;color:#ffffff;opacity:0.5 !important;border:0px;margin:0px;width:108px;height:108px;border-radius:0%;}div > button#xX:hover{background-color:red;opacity:1 !important;}div > button:active{background-color:red;}div .ellCloseX{display:contents; z-index:-1;margin:0px;position:initial;};span#nspan{margin:0px;font-weight:bolder !important;color:black !important;}div > div .fbt{color:#6064a2 !important;margin:0px;font-size:small;width:112px;padding-top:5px;padding-left:4px;padding-right:4px;} .echo{padding:0px 15px 0px 15px; display:flex;flex-wrap:wrap;justify-content:center;align-items:center;width:auto;font-size:15px;text-align:inherit;position:absolute;} ul > li > button{overflow:visible;width:106px !important;line-height:15px !important;} ul.ul_global > li > a{box-shadow:0 4px 12px rgba(0, 0, 0, 0.06); word-wrap:break-word;font-weight:lighter;overflow:visible;width:106px !important;font-size:15px !important;line-height:15px !important;}.li_global{display:flex; min-height:31px;font-size:medium;list-style:none;width:112px;}.ul_global{padding:0px;font-size:15px !important;height:258px;margin:0px;overflow:auto;width:auto;} .title_global{font-weight:bolder !important; padding-left:2px;display:table-cell;vertical-align:bottom;width:106px;height:50px;text-align:center;font-size:initial;margin-bottom:5px;font-weight:lighter;color:black !important;padding-bottom:4px;} .div_global{text-align:center;float:left;padding-top:31px;margin-bottom:29px;padding-left:0px;}.ellClose{text-align:center;float:left;padding-top:15px;margin-bottom:15px;padding-left:0px;}#dh_pageContainer{overflow-y:overlay;overflow-x:hidden;background-image:url("https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg");background-size:100% !important;background-repeat:round;margin:auto;width:200px;height:200px;z-index:-114154;opacity:0;background-color:transparent;position:fixed;top:50%;}.a_global{text-align:center;white-space:break-spaces;color:white !important;box-shadow:inset 0px 0px 15px 3px #23395e;background:linear-gradient(to bottom,#2e466e 5%,#415989 100% );background-color:#2e466e !important;border-radius:0px;margin:1px;border:1px solid #1f2f47 !important;display:inline-block;cursor:pointer;color:#ffffff;font-family:Arial;/*font-size:100% !important;*/padding-bottom:6px;padding-top:6px;text-decoration:none;text-shadow:0px 1px 0px #263666;}.a_global:hover{background:linear-gradient(to bottom,#415989 5%,#2e466e 100%);background-color:#415989;}.a_global:active{position:relative;top:1px;}\
     '
 }
 
@@ -740,101 +720,6 @@ function css_url_add(cssUrl, id = 'external-style') {
 css_add(file.global_css, 'dh_pageContainer_style'); // 在body后面插入 css
 
 
-// 新建一个独立的 div 元素 用作sample
-function div_sample(echo_selector, insertBefore_that_element, switchX, child_css_change) {
-    let target = document.querySelector(echo_selector);
-    let div_global_x = document.createElement('div');
-    div_global_x.className = "div_global " + child_css_change;
-    let div_title = document.createElement('div');
-    div_title.textContent = 'sample';
-    div_title.className = 'title_global'; // 全局
-    let ul_ul_global = document.createElement('ul');
-    ul_ul_global.className = 'ul_global';
-    let li_li_global = document.createElement('li');
-    li_li_global.className = 'li_global';
-    let a = document.createElement('a');
-    a.className = 'a_global';
-    a.href = 'https://limbopro.com/';
-    a.target = '_blank';
-    a.textContent = 'Sample';
-    //a.id = 'sample';
-    li_li_global.appendChild(a);
-    ul_ul_global.appendChild(li_li_global);
-    div_global_x.appendChild(div_title);
-    div_global_x.appendChild(ul_ul_global);
-    if (switchX == 1) {
-        let insertBefore_that_elementx = document.querySelector(insertBefore_that_element);
-        target.insertBefore(div_global_x, insertBefore_that_elementx); // 插入到现有 body 前
-    } else {
-        target.appendChild(div_global_x);
-    }
-}
-
-// 新建一个独立的 li 元素 用作sample
-function li_sample(div_global_selector, insertBefore_that_element, switchX) {
-    let target = document.querySelector(div_global_selector);
-    let li_global_x = document.createElement('li');
-    li_global_x.className = "li_global";
-    let a = document.createElement('a')
-    a.className = 'a_global';
-    //a.id = 'sample';
-    a.href = 'https://limbopro.com/';
-    a.target = '_blank';
-    a.textContent = 'Sample';
-    li_global_x.appendChild(a);
-
-    if (switchX == 1) {
-        let thatli = target.querySelectorAll('li');
-        // document.querySelector('.div_global.speedtest').querySelectorAll('li')
-        for (i = 0; i < thatli.length; i++) {
-            if (thatli[i].querySelector(insertBefore_that_element)) {
-                // document.querySelector('.div_global.speedtest').querySelectorAll('li').querySelector('#Speedtest')
-                target.insertBefore(li_global_x, thatli[i])
-            }
-        }
-    } else {
-        target.appendChild(li_global_x);
-    }
-}
-
-
-// 可向上滑动判断
-function scroll_switch() {
-    //let scroll_check = setInterval(() => {
-    var div_global = document.querySelectorAll('.div_global');
-    ////console.log("// scroll_switch() 查看子元素数量是否超出设定");
-
-    for (i = 0; i < div_global.length; i++) {
-
-        if (div_global[i].querySelector('div.fbt')) {
-            var fbt = div_global[i].querySelector('div.fbt').clientHeight
-        } else { var fbt = 0 }
-
-
-        var sum = 0;
-        let li = div_global[i].querySelectorAll('li')
-        //let li = document.querySelectorAll('.div_global')[20].querySelectorAll('li')
-        for (x = 0; x < li.length; x++) {
-            sum += li[x].clientHeight;
-        }
-
-        //console.log(sum)
-
-        if (div_global[i].querySelectorAll('li').length * 31 + fbt > 8 * 31 || sum + fbt > 8 * 31) {
-            // if (sum_scroll() + fbt > 8 * 31) {
-            let scroll_innerHTML = document.createElement('div');
-            scroll_innerHTML.textContent = '*可向上滑动查看更多';
-            scroll_innerHTML.className = "scroll";
-            document.querySelectorAll("div.div_global")[i].appendChild(scroll_innerHTML);
-            ////console.log("// scroll_switch() 正在执行插入 // 子元素较多");
-            ////clearInterval(scroll_check);
-        }
-    }
-
-    //}, 1000)
-}
-
-
 var selector = { // css 定义选择器
     body_css_real: ["div.dh_pageContainer_css", 'common'],
     body_css: ["div#dh_pageContainer.dh_pageContainer_css", 'common'],
@@ -849,8 +734,6 @@ function initFloatingNav(opacity, zIndex, switchX, pointevents = '') {
         parentElement.style.zIndex = zIndex;
         parentElement.style.opacity = opacity;
         parentElement.style.pointerEvents = pointevents;
-        //body_align("dh_pageContainer");// 初始化导航大小
-        //body_bgp_switch(); // 设置背景图片
         //boom();
     } else {
         //boom();
@@ -858,8 +741,6 @@ function initFloatingNav(opacity, zIndex, switchX, pointevents = '') {
         parentElement.style.zIndex = zIndex + 1;
         parentElement.style.opacity = opacity;
         parentElement.style.pointerEvents = pointevents;
-        //body_align("dh_pageContainer");// 初始化导航大小
-        //body_bgp_switch(); // 设置背景图片
     }
 }
 
@@ -899,32 +780,6 @@ function body_build(x) { // 判断导航显示与否
     }
 }
 
-// 设置导航初始大小 初始DaoHang 大小
-function body_align(parentElement) {
-    // 先居中 parentElement 全屏
-    var parentElement = document.getElementById(parentElement);
-    parentElement.style.height = window.innerHeight * 1 + "px";
-    parentElement.style.width = window.innerWidth * 1 + "px"
-    //}
-}
-
-// 替换背景图片
-function body_bgp_switch() {
-    if (!(csp_regex.test(window.location.href.toLowerCase()))) {
-        let url_w = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp_w.jpg";
-        let url_h = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg";
-        if (window.innerWidth * 0.65 >= window.innerHeight) {
-            document.querySelector("div#dh_pageContainer").style.backgroundImage = `url(${url_w})`;
-        } else {
-            document.querySelector("div#dh_pageContainer").style.backgroundImage = `url(${url_h})`;
-        }
-    } else {
-        document.querySelector("div#dh_pageContainer").style.backgroundColor = '#dfdfdf';
-        document.querySelector("div > button#xX").textContent = 'X';
-        document.querySelector("div > button#xX").style = 'font-size:-webkit-xxx-large;border-radius:50%;';
-    }
-}
-
 function _blank() {
     const url_now = window.location.href.toLowerCase();
     if (/\b(limbopro)\b/i.test(url_now)) {
@@ -941,174 +796,9 @@ function _blank() {
 // 超棒自动化
 // 在尾部追加子元素
 
-var parentNodeX = [['Cloudflare', 'https://speed.cloudflare.com/', '_blank', '0', 'better'], // 测速工具
-['SpeedTest', 'https://www.speedtest.net/', '_blank', '0', 'common'],
-['FANZA|R18成人站', 'https://www.dmm.co.jp/', '_blank', 'porn', 'better'],
-['溜池ゴロー', 'https://tameikegoro.jp/', '_blank', 'porn', 'better'],
-['s1s1s1 S1/エスワンー', 'https://s1s1s1.com/', '_blank', 'porn', 'better'],
-['VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー', 'https://venus-av.com/', '_blank', 'porn', 'special'],
-['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'porn', 'special'],
-['Glory Questー「禁断介護」や逆ショタ元祖', 'https://www.gloryquest.tv/', '_blank', 'porn', 'special'],
-['ながえSTYLE(NTR)', 'https://www.nagae-style.com/', '_blank', 'porn', 'common'],
-['Madonna（マドンナ）', 'https://www.madonna-av.com/top/', '_blank', 'porn', 'common'],
-['SOD（ソフトオンデマンド）', 'https://www.sod.co.jp/', '_blank', 'poxrn', 'common'],
-['ATTACKERS（アタッカーズ）', 'https://www.attackers.net/top/', '_blank', 'porn', 'common'],
-['PRESTIGE(プレステージ)', 'https://www.prestige-av.com/', '_blank', 'porn', 'common'],
-['PREMIUM（プレミアム', 'https://www.premium-beauty.com/top/', '_blank', 'porn', 'special'],
-['MOODYZー', 'https://www.moodyz.com/top/', '_blank', 'porn', 'common'],
-['IDEAPOCKET (アイデアポケット）', 'https://www.ideapocket.com/top/', '_blank', 'porn', 'porn', 'common'],
-['OPPAI（おっぱい）', 'https://www.oppai-av.com/', '_blank', 'porn', 'common'],
-['【kawaii*】公式サイト', 'https://www.kawaiikawaii.jp/top/', '_blank', 'porn', 'common'],
-['肉感あふれる女優', 'https://www.fitch-av.com/top/', '_blank', 'porn', 'common'],
-['タカラ映像 TAKARA', 'https://www.takara-tv.jp/', '_blank', 'porn', 'common'],
-['トップページ - AVメーカー【ダスッ！】公式サイト', 'https://www.dasdas.jp/top/', '_blank', 'porn', 'common'],
-['レズ・素人ナンパを中心', 'https://deeps.net/', '_blank', 'porn', 'common'],
-['変態紳士倶楽部】公式サイト', 'https://www.to-satsu.com/top/', '_blank', 'porn', 'common'],
-['wanzfactory（ワンズファクトリー）', 'https://www.wanz-factory.com/top/', '_blank', 'porn', 'common'],
-['【E-BODY（イーボディ）】公式サイト', 'https://www.av-e-body.com/top/', '_blank', 'porn', 'common'],
-['MGS動画は', 'https://www.mgstage.com/', '_blank', 'porn', 'common'],
-['ABC/妄想族(1302本)', 'https://www.mousouzoku-av.com/top/', '_blank', 'porn', 'common'],
-['JET「卍GROUP」のトップページです', 'https://manji-group.com/top/', '_blank', 'porn', 'common'],
-['!! ROCKET', 'https://www.rocket-inc.net/top.php', '_blank', 'porn', 'common'],
-['FANZA通販-アダルト通販ショッピング', 'https://www.dmm.co.jp/mono/', '_blank', 'porn', 'common'],
-['【無垢】公式サイトトーップページ | AVメーカ', 'https://www.muku.tv/top/', '_blank', 'porn', 'common'],
-['HHH(トリプルエイチ)| AVメーカ', 'https://hhh-av.com/top/', '_blank', 'porn', 'common'],
-['痴女ヘブンのトップページ| AVメーカ', 'https://bi-av.com/top', '_blank', 'porn', 'common'],
-['Github', "https://github.com/", "_blank", "Tech", 'common'],
-['Wikipedia', "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5", "_blank", "Tech", 'common'],
-["Reddit", "https://www.reddit.com/", "_blank", "Social", 'special'],
-["Quora", "https://www.quora.com/", "_blank", "Social", 'common'],
-["Twitter", "https://twitter.com/", "_blank", "Social", 'special'],
-["Instagram", "https://www.instagram.com/", "_blank", "Social", 'special'],
-["Tiktok", "https://www.tiktok.com/", "_blank", "Social", 'common'],
-["Youtube", "https://m.youtube.com/", "_blank", "Social", 'special'],
-["Netflix", "https://www.netflix.com/browse", "_blank", "Media", 'special'],
-["HBO", "https://www.hbo.com/", "_blank", "Media", 'common'],
-["Disney+", "https://www.disneyplus.com/en-hk", "_blank", "Media", 'common'],
-["Amazon Prime Video", "https://www.primevideo.com/", "_blank", "Media", 'common'],
-["Pexels", "https://www.pexels.com/", "_blank", "IMages", 'common'],
-["Pixbay", "https://pixabay.com/", "_blank", "IMages", 'common'],
-['Github', 'https://github.com/', '_blank', 'Developer', 'special'],
-['v2ex', 'https://www.v2ex.com/', '_blank', 'Developer'],
-['思否', 'https://segmentfault.com/', '_blank', 'Developer', 'special'],
-['infoq', 'https://www.infoq.cn/', '_blank', 'Developer', 'special'],
-['掘金', 'https://juejin.cn/', '_blank', 'Developer', 'special'],
-['MDN', 'https://developer.mozilla.org/zh-CN/', '_blank', 'Developer', 'common'],
-['w3schools', 'https://w3schools.cn/', '_blank', 'Developer', 'common'],
-['Stack Overflow', 'https://stackoverflow.com/', '_blank', 'Developer', 'common'],
-['Typecho', 'https://typecho.org/', '_blank', 'front-build', 'special'],
-['Vercel', 'https://vercel.com/new', '_blank', 'front-build', 'special'],
-['Cloudflare Pages', 'https://pages.cloudflare.com/', '_blank', 'front-build', 'special'],
-['Gitpages', 'https://pages.github.com/', '_blank', 'front-build', 'special'],
-['Fly.io', 'https://fly.io/', '_blank', 'front-build', 'common'],
-['NameSilo', 'https://www.namesilo.com/', '_blank', 'domain-buy', 'better'],
-['Cloudflare Domain', 'https://www.cloudflare.com/products/registrar/', '_blank', 'domain-buy', 'better'],
-['NameCheap', 'https://www.namecheap.com/', '_blank', 'domain-buy', 'common'],
-['freenom', 'https://www.freenom.com/zh/freeandpaiddomains.html', '_blank', 'domain-buy', 'common'],
-['今晚看什么？', 'https://limbopro.com/tools/jwksm/', '_blank', 'xOnline', 'special'],
-['Jable', 'https://jable.tv/', '_blank', 'xOnline', 'special'],
-['Missav', 'https://missav.ws/cn/', '_blank', 'xOnline', 'special'],
-['Supjav', 'https://supjav.com/zh/', '_blank', 'xOnline', 'special'],
-['Javbus', 'https://www.javbus.com/', '_blank', 'xOnline', 'special'],
-//['Jav.land', 'https://jav.land/', '_blank', 'xOnline', 'special'],
-['JavLibrary', 'https://www.javlibrary.com/cn/', '_blank', 'xOnline', 'better'],
-['Pornhub', 'https://cn.pornhub.com/', '_blank', 'xOnline', 'better'],
-['Xvideos', 'https://www.xvideos.com/', '_blank', 'xOnline', 'better'],
-['Javday', 'https://javday.tv/', '_blank', 'xOnline', 'better'],
-['Njav', 'https://24av.net/', '_blank', 'xOnline', 'better'],
-['hanime1', 'https://hanime1.me/comics', '_blank', 'xOnline', 'common'],
-['认知偏差手册', 'https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG', '_blank', 'knowledge', 'common'],
-['Bash 教程', 'https://wangdoc.com/bash/', '_blank', 'knowledge', 'common'],
-['SSH 教程', 'https://wangdoc.com/ssh/', '_blank', 'knowledge', 'common'],
-['Vim从入门到精通', 'https://limbopro.com/archives/31058.html', '_blank', 'knowledge', 'common'],
-['网站状态检测', 'https://check-host.net/check-http?host=https://limbopro.com', '_blank', 'ipcheck', 'special'],
-['IP.SB', 'https://ip.sb/', '_blank', 'ipcheck', 'common'],
-['BGP Toolkit ', 'https://bgp.he.net/', '_blank', 'ipcheck', 'common'],
-['Baidu', 'https://www.baidu.com/', '_blank', 'ipcheck', 'common'],
-['Google', 'https://www.google.com/', '_blank', 'search', 'special'],
-['Bing', 'https://www.bing.com/', '_blank', 'search', 'common'],
-['DuckDuckGo', 'https://duckduckgo.com/', '_blank', 'search', 'common'],
-['Yahoo!）', 'https://hk.yahoo.com/?p=us', '_blank', 'search', 'common'],
-['搜狗搜索', 'https://www.sogou.com/', '_blank', 'search', 'common'],
-['Baidu', 'https://www.baidu.com/', '_blank', 'search', 'common'],
-['Grok', 'https://grok.com/', '_blank', 'AICHAT', 'special'],
-['Google Bard', 'https://bard.google.com/?hl=en', '_blank', 'AICHAT', 'special'],
-['Github Copilot', 'https://github.com/copilot', '_blank', 'AICHAT', 'special'],
-['ChatGPT', 'https://chat.openai.com/auth/login', '_blank', 'AICHAT', 'better'],
-['Bing AI', 'https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx', '_blank', 'AICHAT', 'better'],
-['Claude.ai', 'https://claude.ai/', '_blank', 'AICHAT', 'better'],
-["在线正则表达式测试", 'https://tool.oschina.net/regex/', '_blanl', 'Tools', 'special'],
-['在线文件格式转换器', 'https://convertio.co/zh/', '_blank', 'Tools', 'common'],
-['PDF在线转换', 'https://www.ilovepdf.com/zh-cn', '_blank', 'Tools', 'common'],
-['iconfont', 'https://www.iconfont.cn/', '_blank', 'Tools', 'common'],
-['hitomi', 'https://hitomi.la/index-chinese.html', '_blank', 'comic18', 'special'],
-['jcomic', 'https://jcomic.net/', '_blank', 'comic18', 'special'],
-['绅士漫画', 'https://www.wnacg.com/', '_blank', 'comic18', 'common'],
-['嗶咔picacg免費網頁版', 'https://manhuapica.com/', '_blank', 'comic18', 'common'],
-['E-Hentai', 'https://e-hentai.org/', '_blank', 'comic18', 'common'],
-['禁漫天堂', 'https://18comic.vip/', '_blank', 'comic18', 'common'],
-['肉漫', 'https://www.rouman5.com/', '_blank', 'comic18', 'better'],
-['dlsite', 'https://www.dlsite.com/books/', '_blank', 'comic18', 'better'],
-['博客优化', 'https://limbopro.com/category/builder/', '_blank', 'seoandmore', 'special'],
-['博客防御', 'https://limbopro.com/tag/Cloudflare/', '_blank', 'seoandmore', 'common'],
-['苦瓜书盘', 'https://kgbook.com/', '_blank', 'bookreadanddownload', 'common'],
-['Library Genesis', 'https://www.libgen.is/', '_blank', 'bookreadanddownload', 'special'],
-['Z-library', 'https://limbopro.com/archives/30553.html', '_blank', 'bookreadanddownload', 'special'],
-['JavaScript高级程序设计', 'https://t.me/limboprossr/2812', '_blank', 'front-end', 'common'],
-['CSS教程', 'https://www.runoob.com/css/css-tutorial.html', '_blank', 'front-end', 'common'],
-['w3school 在线教程', 'https://www.w3school.com.cn/index.html', '_blank', 'front-end', 'common'],
-['M3U8下载?(Porn/Jable..)', 'https://limbopro.com/archives/M3U8-Downloader.html', '_blank', 'dload', 'common'],
-['Twitter 视频下载(油猴脚本)', 'https://limbopro.com/archives/27446.html#%E8%84%9A%E6%9C%AC%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8', '_blank', 'dload', 'common'],
-['Instagram 视频下载(电报🤖)', 'https://t.me/instasavegrambot', '_blank', 'dload', 'special'],
-['YouTube 视频下载(电报🤖)', 'https://t.me/yt_dbot', '_blank', 'dload', 'special'],
-['Instagram 视频下载(iOS捷径)', 'https://limbopro.com/archives/1053.html', '_blank', 'dload', 'special'],
-['Instagram 视频下载(PC网页版)', 'https://sssinstagram.com/', '_blank', 'dload'],
-['Youtube 视频下载(PC网页版)', 'https://ssyoutube.com/', '_blank', 'dload'],
-['Pornhub 视频下载(PC网页版)', 'https://www.saveporn.net/', '_blank', 'dload'],
-['More...', 'https://limbopro.com/category/downloader/', '_blank', 'dload'],
-['Stable Diffusion入门', 'https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html', '_blank', 'aigc', 'special'],
-['Civitai', 'https://civitai.com/', '_blank', 'aigc', 'better'],
-['Midjourney', 'https://midjourney.com/', '_blank', 'aigc', 'better'],
-['Notion AI', 'https://www.notion.so/product/ai', '_blank', 'aigc', 'better'],
-['网易新闻', 'https://news.163.com/', '_blank', 'currentnews', 'better'],
-['谷歌新闻', 'https://news.google.com/home?hl=zh-CN&gl=CN&ceid=CN:zh-Hans', '_blank', 'currentnews', 'common'],
-['纽约时报', 'https://cn.nytimes.com/zh-hant/', '_blank', 'currentnews', 'common'],
-['华尔街日报', 'https://cn.wsj.com/', '_blank', 'currentnews', 'common'],
-['BBC News', 'https://www.bbc.com/zhongwen/simp', '_blank', 'currentnews', 'common'],
-['顶尖文案TOPYS', 'https://www.topys.cn/', '_blank', 'writer', 'better'],
-['广告门', 'https://www.adquan.com/', '_blank', 'writer', 'special'],
-['梅花网', 'https://www.meihua.info/', '_blank', 'writer', 'common'],
-['数英网', 'https://www.digitaling.com/', '_blank', 'writer', 'special'],
-['运营派', 'https://www.yunyingpai.com/', '_blank', 'writer', 'common'],
-['少数派', 'https://sspai.com/', '_blank', 'technews', 'common'],
-['虎嗅', 'https://huxiu.com/', '_blank', 'technews', 'common'],
-['36Kr', 'https://36kr.com/', '_blank', 'technews', 'common'],
-['爱范儿', 'https://www.ifanr.com/', '_blank', 'technews', 'common'],
-['pingwest', 'https://www.pingwest.com/', '_blank', 'technews', 'common'],
-//['xb1', 'https://www.xb1.com/', '_blank', 'movies', 'better'],
-['iyf爱壹帆', 'https://www.iyf.tv/', '_blank', 'movies', 'better'],
-['🆕努努影院', 'https://nnyy.la/', '_blank', 'movies', 'better'],
-['欧乐影视', 'https://www.olevod.tv/', '_blank', 'movies', 'special'],
-//['CN影视', 'https://cnys.tv/', '_blank', 'movies', 'better'],
-//['影视TV', 'https://yingshi.tv/', '_blank', 'movies', 'better'],
-['剧迷网', 'https://gimy.com.tw/', '_blank', 'movies', 'better'],
-['Raining FM', 'https://raining.fm/', '_blank', 'imusic', 'better'],
-['SoundCloud', 'https://soundcloud.com/', '_blank', 'imusic', 'better'],
-['Spotify', 'https://open.spotify.com/', '_blank', 'imusic', 'special'],
-['YT Music', 'https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ', '_blank', 'imusic', 'special'],
-['网易云音乐', 'https://music.163.com/', '_blank', 'imusic', 'better'],
-['QQ音乐', 'https://y.qq.com/', '_blank', 'imusic', 'better'],
-['酷狗音乐', 'https://www.kugou.com/', '_blank', 'imusic', 'better'],
-['酷狗音乐', 'https://www.kugou.com/', '_blank', 'imusic', 'better'],
-['炼码', 'https://www.lintcode.com/', '_blank', 'cheeseispower', 'better'],
-['菜鸟教程', 'https://www.runoob.com/', '_blank', 'cheeseispower', 'better'],
-['w3cschool', 'https://www.w3school.com.cn/', '_blank', 'cheeseispower', 'better'],
-['Stackoverflow', 'https://stackoverflow.com/', '_blank', 'cheeseispower', 'better'],
-['Github', 'https://github.com/', '_blank', 'cheeseispower', 'better'],
-];
-
 var click_count = 0;
 
+// 监听键盘事件 ESC
 document.addEventListener("keydown", function (event) {
     if (event.code === "Escape") {
         click_count = ++click_count;
@@ -1126,7 +816,6 @@ document.addEventListener("keydown", function (event) {
         } else if (typeof body_build == 'function' && document.querySelector("#dh_pageContainer").style.zIndex < 0 && click_count == 2 && (document.querySelector('div#nsfw') == null || document.querySelector('div#nsfw').style.zIndex < 0)) {
             body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
         } else if (typeof body_build == 'function' && document.querySelector("#dh_pageContainer").style.zIndex > 0 && click_count == 3) {
-            //lock_screen_switch();
         }
     }
 
@@ -1157,7 +846,7 @@ function parentElement_add() {
     const pageContainer = document.getElementById('dh_pageContainer');
     if (!echoDiv || !pageContainer) return;
 
-    // --- 3. 新增状态变量和计时器 ---
+    // 3. 新增状态变量和计时器-- -
     let blankClickCount = 0; // 跟踪在空白区域的点击次数
     let clickTimeoutId = null; // 用于存储计时器的 ID
 
@@ -1203,70 +892,175 @@ function parentElement_add() {
         }
     });
 
-    // 4. 菜单数据配置（集中管理，保持原样）
-    const PARENT_MENU_ITEMS = [
-        ['imusic', 4, '在线音乐//', 'imusic'],
-        ['xOnline', 4, '午夜惊魂//', 'xOnline'],
-        ['PornMaker', 4, '著名片商//', 'porn'],
-        ['comic18', 4, '漫画//', 'comic18'],
-        ['Tools', 4, '多宝盒//', 'Tools'],
-        ['bookreadanddownload', '4', '电子书//', 'bookreadanddownload'],
-        ['dload', 4, '下载工具//', 'dload'],
-        ['Search', 4, '搜索引擎//', 'search'],
-        ['Social', 4, '社交媒体//', 'Social'],
-        ['Media', 4, '流媒体//', 'Media'],
-        ['AICHAT', 4, '智能AI//', 'AICHAT'],
-        ['aigc', 4, 'AIGC//', 'aigc'],
-        ['news', '10', '时事新闻//', 'currentnews'],
-        ['technews', '10', '科技新闻//', 'technews'],
-        ['writer', '10', '广告与写作//', 'writer'],
-        ['seoandmore', 4, '建站指北//', 'seoandmore'],
-        ['front-build', 4, '建站工具//', 'front-build'],
-        ['domain-buy', 4, '域名注册商//', 'domain-buy'],
-        ['DeverloperX', 4, '开发者社区//', 'Developer'],
-        ['Images', 4, '免费商用图片', 'IMages']
-    ];
+    // 4. 菜单生成函数 追加元素
+    setTimeout(() => {
 
-    const CHILD_MENU_ITEMS = [
-        ['.div_global.front > ul', '', '', 'front-end', 0, '', 'a_global'], // 前端开发
-        ['.div_global.boysshouldread > ul', '', '', 'knowledge', 0, '', 'a_global'], // 男孩子必读
-        ['.div_global.ipcheck > ul', '', '', 'ipcheck', 1, '', 'a_global'], // 网络检测
-        ['.div_global.onlinemovies > ul', '', '', 'movies', '#xbys', '', 'a_global moviesColor'], // 在线影视
-        ['.div_global.leetcode > ul', '', '', 'cheeseispower', 0, '', 'a_global']  // 保持原样
-    ];
+        // 定义一个数组来存储各个菜单的配置信息
+        const menuConfigs = [
+            { category: 'currentnews', title: '实时新闻//' },
+            { category: 'technews', title: '科技新闻//' },
+            { category: 'search', title: '综合搜索//' },
+            { category: 'AICHAT', title: 'AI聊天工具//' },
+            { category: 'bookreadanddownload', title: '电子书阅读及下载//' },
+            { category: 'Developer', title: '开发者工具//' },
+            { category: 'Tools', title: '实用工具//' },
+            { category: 'imusic', title: '在线音乐//' },
+            { category: 'xyellow', title: '成人影视//', optionalParam: 'onlinemovies' }, // 包含第三个参数
+            { category: 'PornMedia', title: '著名片商//' },
+            { category: 'comic18', title: '18禁漫画//' },
+            { category: 'downloading', title: '资源下载//' },
+            { category: 'SocialMedia', title: '社交媒体//' },
+            { category: 'Media', title: '媒体平台//' },
+            { category: 'aigc', title: 'AIGC生成工具//' },
+            { category: 'writer', title: '写作工具//' },
+            { category: 'seoandmore', title: 'SEO及更多//' },
+            { category: 'domain-buy', title: '域名购买//' }, // 使用方括号访问属性
+            { category: 'images', title: '图片处理//' }
+        ];
 
-    // 5. 菜单生成逻辑（仅执行一次）
-    const generateMenu = () => {
-        const container = document.querySelector('div#dh_pageContainer[style]');
-        if (!container) return false;
+        menuConfigs.forEach(config => {
+            // 关键更改：使用 config.category 访问 dataListbak 的属性
+            const data = dataListbak[config.category];
+            const title = config.title;
+            const optionalParam = config.optionalParam;
 
-        // 生成父级菜单
-        PARENT_MENU_ITEMS.forEach(([key, count, title, id]) => {
-            parent_push('.echo', key, count, title, id);
+            if (optionalParam) {
+                // 如果有可选参数，则以三个参数调用
+                createAndAppendMenus(data, title, optionalParam);
+            } else {
+                // 否则以两个参数调用
+                createAndAppendMenus(data, title);
+            }
         });
 
+        // 定义一个数组来存储各个链接列表的配置信息
+        const linkConfigs = [ // 2333 
+            { category: 'front-end', selector: '.div_global.front > ul', comment: '前端入门' }, // 注意属性名包含连字符
+            { category: 'knowledge', selector: '.div_global.boysshouldread > ul', comment: '男孩子读物' },
+            { category: 'ipcheck', selector: '.div_global.ipcheck > ul', comment: '网络连通及被墙检测' },
+            { category: 'movies', selector: '.div_global.onlinemovies > ul', comment: '在线影视' },
+            { category: 'cheeseispower', selector: '.div_global.leetcode > ul', comment: '技术成长平台' }
+        ];
 
-        // 生成子级菜单
-        CHILD_MENU_ITEMS.forEach(([sel, , , id, p5, , cls]) => {
-            child_push(sel, '', '', id, p5, '', cls);
+        linkConfigs.forEach(config => {
+            // 获取数据源，使用方括号处理如 "Front-build" 这样的属性名
+            const data = dataListbak[config.category];
+            const selector = config.selector;
+
+            // 调用函数
+            createAndAppendLinks(data, selector);
         });
 
-        // 执行后续初始化函数
         scroll_switch();
-        _footer_move();
-        csp_remove();
 
-        return true;
-    };
+    }, 1500);
 
-    // 6. 轮询等待容器就绪（500ms，命中即停）
-    const timer = setInterval(() => {
-        if (generateMenu()) {
-            clearInterval(timer);
-        }
-    }, 500);
+    // 执行后续初始化函数
+    scroll_switch();
+    _footer_move();
+    csp_remove();
+    ;
 }
 
+
+
+
+// 动态创建并插入元素的函数
+
+function createAndAppendMenus(websiteList, title, zidingyiClassName = '') { // zidingyiClassName 可选自定义类名
+
+    // 读取数据名称
+    // console.log(`// createAndAppendMenus() 正在创建标题为 "${title}" 的链接元素...`);
+
+    // 1. 创建最外层 div
+    const divGlobal = document.createElement('div');
+    divGlobal.className = 'div_global' + " " + zidingyiClassName; // 可选：添加自定义类名
+
+    // 2. 创建子元素 div.title_global
+    const divTitle = document.createElement('div');
+    divTitle.className = 'title_global';
+    divTitle.textContent = title; // 标题可以根据内容进行调整
+    divGlobal.appendChild(divTitle);
+
+    // 3. 创建 ul.ul_global
+    const ulGlobal = document.createElement('ul');
+    ulGlobal.className = 'ul_global';
+
+    // --- 核心改动：循环创建多个 li 和 a 元素 ---
+    websiteList.forEach(link => {
+        // 4. 创建 li.li_global
+        const liGlobal = document.createElement('li');
+        liGlobal.className = 'li_global';
+
+        // 5. 创建 a 元素
+        const aGlobal = document.createElement('a');
+
+        // 动态设置 class: 基础 class 'a_global' 加上 level 字段的值
+        aGlobal.className = `a_global ${link.level}`; // 例如: 'a_global better'
+
+        aGlobal.href = link.url;            // 使用 link.url 设置 href
+        aGlobal.target = link.target;       // 使用 link.target 设置 target
+        aGlobal.textContent = link.name;    // 使用 link.name 设置链接文本
+
+        // 注意：新结构中没有 id 字段，如果需要可以根据 name 生成一个
+        // aGlobal.id = link.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'); 
+
+        // 6. 组合子元素
+        liGlobal.appendChild(aGlobal);       // a 添加到 li
+        ulGlobal.appendChild(liGlobal);      // li 添加到 ul
+    });
+
+    // 将 ul 添加到 divGlobal
+    divGlobal.appendChild(ulGlobal);
+
+    // 7. 获取目标元素
+    const targetElement = document.querySelector('div.echo');
+
+    // 8. 插入元素
+    if (targetElement) {
+        targetElement.appendChild(divGlobal);
+        ////console.log('元素已成功插入。');
+    } else {
+        console.error('未找到目标元素 div.echo。');
+    }
+}
+
+// 创建并追加链接元素的函数
+function createAndAppendLinks(items, targetSelector) {
+    // 使用 forEach 遍历数组中的每一个对象
+    items.forEach(item => {
+        // 1. 创建 <li> 元素
+        const li = document.createElement('li');
+        li.className = 'li_global';
+
+        // 2. 创建 <a> 元素
+        const a = document.createElement('a');
+
+        // 3. 设置 <a> 的属性
+        // 确保 a_global 是基础 class，并追加 level 作为额外 class
+        a.className = `a_global ${item.level}`;
+        a.href = item.url;
+        a.target = item.target; // 使用数据中的 target 属性
+        a.textContent = item.name; // 使用数据中的 name 作为链接文本
+
+        // 4. 将 <a> 追加到 <li> 中
+        li.appendChild(a);
+
+        // 7. 获取目标元素
+        const targetElement = document.querySelector(targetSelector);
+
+        // 8. 插入元素
+        if (targetElement) {
+            targetElement.appendChild(li);
+            console.log('元素已成功插入。');
+        } else {
+            console.error('未找到目标元素 div.echo。');
+        }
+
+    });
+
+    // console.log(`成功创建并追加了 ${items.length} 个链接元素到 ${targetSelector}。`);
+}
 
 // 移动 echo div._footer 位置
 function _footer_move() {
@@ -1275,12 +1069,101 @@ function _footer_move() {
     target.appendChild(child)
 }
 
+// 可向上滑动判断
+function scroll_switch() {
+    //let scroll_check = setInterval(() => {
+    var div_global = document.querySelectorAll('.div_global');
+    ////console.log("// scroll_switch() 查看子元素数量是否超出设定");
+
+    for (i = 0; i < div_global.length; i++) {
+
+        if (div_global[i].querySelector('div.fbt')) {
+            var fbt = div_global[i].querySelector('div.fbt').clientHeight
+        } else { var fbt = 0 }
+
+
+        var sum = 0;
+        let li = div_global[i].querySelectorAll('li')
+        //let li = document.querySelectorAll('.div_global')[20].querySelectorAll('li')
+        for (x = 0; x < li.length; x++) {
+            sum += li[x].clientHeight;
+        }
+
+        //console.log(sum)
+
+        if (div_global[i].querySelectorAll('li').length * 31 + fbt > 8 * 31 || sum + fbt > 8 * 31) {
+            // if (sum_scroll() + fbt > 8 * 31) {
+            let scroll_innerHTML = document.createElement('div');
+            scroll_innerHTML.textContent = '*可向上滑动查看更多';
+            scroll_innerHTML.className = "scroll";
+            document.querySelectorAll("div.div_global")[i].appendChild(scroll_innerHTML);
+            ////console.log("// scroll_switch() 正在执行插入 // 子元素较多");
+            ////clearInterval(scroll_check);
+        }
+    }
+
+}
+
+
+function csp_remove() {
+    // 删除CSP模式下不可点击的按钮
+    var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
+    if (csp_regex.test(window.location.href.toLowerCase())) {
+        if (document.querySelector("button#dh_button") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
+            // 如果引用了 Adblock4limbo.function.js 则什么也不做
+        } else {
+
+            document.querySelectorAll('.li_global').forEach((x) => { // 移除网页聊天的功能按钮 webchat
+                if (x.querySelector('#webChat') !== null) {
+                    x.remove()
+                }
+            })
+
+            document.getElementById('dh_pageContainer').style.background = 'black'; // 设置背景颜色
+            console.log('CSP-设置背景颜色！')
+
+        }
+    } else {
+        if (document.querySelector("button#dh_button") !== null && document.querySelector("script[src*='Adblock4limbo.function.js']") !== null) {
+            // 如果引用了 Adblock4limbo.function.js 则什么也不做
+        } else {
+
+            document.querySelectorAll('.li_global').forEach((x) => { // 移除网页聊天的功能按钮 webchat
+                if (x.querySelector('#webChat') !== null) {
+                    x.remove()
+                }
+            })
+
+            document.getElementById('dh_pageContainer').style.background = 'black'; // 设置背景颜色
+            console.log('CSP-设置背景颜色！')
+
+        }
+    }
+}
+
+
+async function fetchCodes() { // 获取 JSON 文件内容
+    try {
+        const response = await fetch('https://limbopro.com/Adguard/Adblock4limbo.function.json');
+        if (!response.ok) throw new Error('无法加载 JSON 文件');
+        var dataList = await response.json();
+        // window.websiteList = dataList;
+        window.websiteList = dataListbak; // 使用备份数据
+        // console.log(dataList);
+    } catch (error) {
+        // console.error('错误:', error);
+        window.websiteList = dataListbak; // 使用备份数据
+        console.log('使用备份数据:', dataListbak);
+    }
+}
+
+fetchCodes();
+
 // 执行父容器初始化
 parentElement_add();
 
 
 // 监听事件
-
 window.addEventListener('load', function () {
     // 监听指定按钮的点击事件
     document.getElementById('nsfwmode_switch').addEventListener('click', function () {
@@ -1308,11 +1191,9 @@ function nsfwmode(x) { // 是否开启
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == 'true') {
         setCookie('nsfwmode', 'false', '400');
-        // visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     } else if (getCookie('nsfwmode') == '') {
         setCookie('nsfwmode', 'false', '400');
-        // visibility('false');
         setTimeout(() => { nsfwmode_check() }, 100)
     }
 }
@@ -1403,7 +1284,7 @@ function daohangMode_switch(x) {
         }
 
         setTimeout(() => {
-            body_build('false')
+            //// body_build('false')
         }, 1500)
 
     } else if (x == 'show') {
@@ -1428,46 +1309,91 @@ function daohangMode_switch(x) {
     }
 }
 
-
-// 判断当前 URL 是否为 Google
+// 如果 URL 不是 Google/Bing/Baidu 并且 URL 中不包含 "jwksm" 关键字，则执行 initLimoProSearch()
 if (!/^https?:\/\/(www\.)?(google|bing|baidu)\.(com|cn|hk|co\.[a-z]{2}|[a-z]{2})\/.*/i.test(location.href)) {
     initLimoProSearch();
 }
+
+// 检查 URL 并根据条件执行函数
+function checkUrlAndToggleSearch() {
+    // 1. 获取当前页面的完整 URL 字符串
+    const currentUrl = window.location.href;
+    const keyword = 'jwksm';
+
+    // 2. 使用 includes() 方法判断 URL 是否包含关键字
+    if (currentUrl.includes(keyword)) {
+        console.log(`URL 包含关键字 "${keyword}"。正在执行 toggleSearchState('false')...`);
+
+        // 3. 执行指定函数
+
+        // 注意：请确保在调用此函数之前，toggleSearchState 函数已被定义在全局作用域或当前作用域内。
+        if (typeof toggleSearchState === 'function') {
+            toggleSearchState('false');
+        } else {
+            console.error("错误：函数 toggleSearchState 未定义。");
+        }
+
+    } else {
+        console.log(`URL 不包含关键字 "${keyword}"。不执行操作。`);
+    }
+}
+
+// 立即运行检查
+setTimeout(() => {
+    checkUrlAndToggleSearch();
+}, 2000);
+//
 
 // 划词搜索状态切换
 // 获取按钮
 // Start of huacisousuo toggle code
 const btn = document.getElementById('huacisousuo'); // 划词切换按钮
 // 状态切换函数
-function toggleSearchState() {
+function toggleSearchState(x) {
     const searchPro = document.getElementById('limbopro-search-pro'); // 搜索框容器
     const isOn = btn.dataset.state === 'on';
 
-    if (isOn) {
+    if (x !== 'false') {
+        if (isOn) {
+            // 关闭：OFF + 红色 + false
+            btn.textContent = '划词搜索(OFF)';
+            btn.style.backgroundColor = 'red';
+            btn.dataset.state = 'off';
+            localStorage.setItem('huacisousuo', 'false');
+            searchPro.setAttribute("class", "cmsnone"); // 隐藏
+            setTimeout(() => {
+                //// body_build('false')
+            }, 1500)
+        } else {
+            // 开启：ON + 绿色 + true
+            btn.textContent = '划词搜索(ON)';
+            btn.style.backgroundColor = 'green';
+            btn.dataset.state = 'on';
+            localStorage.setItem('huacisousuo', 'true');
+            searchPro.setAttribute("class", "cms"); // 显示
+            setTimeout(() => {
+                //// body_build('false')
+            }, 1500)
+        }
+    } else if (x === 'false') {
         // 关闭：OFF + 红色 + false
         btn.textContent = '划词搜索(OFF)';
         btn.style.backgroundColor = 'red';
         btn.dataset.state = 'off';
-        localStorage.setItem('huacisousuo', 'false');
+        // localStorage.setItem('huacisousuo', 'false');
         searchPro.setAttribute("class", "cmsnone"); // 隐藏
         setTimeout(() => {
-            body_build('false')
-        }, 1500)
-    } else {
-        // 开启：ON + 绿色 + true
-        btn.textContent = '划词搜索(ON)';
-        btn.style.backgroundColor = 'green';
-        btn.dataset.state = 'on';
-        localStorage.setItem('huacisousuo', 'true');
-        searchPro.setAttribute("class", "cms"); // 显示
-        setTimeout(() => {
-            body_build('false')
+            //// body_build('false')
         }, 1500)
     }
+
 }
 
 // 点击事件
-btn.addEventListener('click', toggleSearchState);
+
+if (btn) {
+    btn.addEventListener('click', toggleSearchState);
+}
 
 // 页面加载时恢复状态
 
@@ -1510,7 +1436,7 @@ waitForElement('#limbopro-search-pro', (el) => {
 // End of huacisousuo toggle code
 
 
-// 隐藏按钮选项 1 一天
+// 隐藏按钮选项
 
 if (getCookie("daohangMode_yourChoice") == 'hidden' && document.querySelector('button#dh_button') !== null) {
     daohangMode_switch('hidden')
@@ -1523,119 +1449,6 @@ if (getCookie("daohangMode_yourChoice") == 'hidden' && document.querySelector('b
     daohangMode_switch('show')
     console.log(click_sum--)
 }
-
-// 替换父元素的内容
-function parentElement_inner(parentNode, Headline_css, Headreplace_str, child_css_change) {
-    //console.log("// parentElement_inner() 正在替换" + parentNode + "下的最后一个元素的标题及相关属性");
-    document.querySelector(".div_global." + child_css_change).querySelector(Headline_css).textContent = Headreplace_str;
-} // parentElement_inner('.echo','.title','社交媒体//','Social')
-
-// 在父元素下追加元素
-function parentElement_push(parentNode, category, child_css_change, insertBefore_that_element, switchX) {
-
-    // part1
-    var arrayXP = parentNodeX;
-    arrayXP.length
-    var valid = 0;
-    for (i = 0; i < arrayXP.length; i++) {
-        if (arrayXP[i][3] == category) {
-            var number = ++valid;
-            ////console.log("// parentElement_push() 匹配到的内容为" + arrayXP[i][0]);
-        }
-    }
-
-    // part 2
-    var real_length = document.querySelector(".div_global." + child_css_change + " > ul").querySelectorAll('li').length
-    //console.log("// 被复制子元素个数为" + real_length + category + "类目下符合要求的元素个数为" + number)
-    if (number > real_length) {
-        var lenth_now = number - real_length;
-        //console.log("// parentElement_push() 开始新建元素...")
-        for (i = 0; i < lenth_now; i++) {
-            li_sample(".div_global." + child_css_change + " > ul", insertBefore_that_element, switchX);
-            //child_build(".div_global." + child_css_change + " > ul")
-        }
-
-        // Part 3
-        var bb = 0;
-        for (i = 0; i < arrayXP.length; i++) {
-            if (arrayXP[i][3] == category) {
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].textContent = arrayXP[i][0];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].href = arrayXP[i][1];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].target = arrayXP[i][2];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].id = arrayXP[i][3];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][3]);
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
-                var bb = ++bb;
-                // 元素新建成功，开始执行元素重写
-                ////console.log('// 元素新建成功，开始执行元素重写');
-            }
-        }
-    }
-    else {
-        // Part 4
-        var bb = 0;
-        for (i = 0; i < arrayXP.length; i++) {
-            //console.log("// 无需新建元素，开始执行元素重写...")
-            if (arrayXP[i][3] == category) {
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].textContent = arrayXP[i][0];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].href = arrayXP[i][1];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].target = arrayXP[i][2];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].id = arrayXP[i][3];
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][3]);
-                document.querySelector(".div_global." + child_css_change).querySelectorAll('a')[bb].classList.add(arrayXP[i][4]);
-                var bb = ++bb;
-            }
-        }
-    }
-}
-
-
-function parent_push(parentNode, child_css_change, childPosition, title, category, insertBefore_that_element, switchX) {
-    div_sample(parentNode, insertBefore_that_element, switchX, child_css_change);
-    parentElement_inner(parentNode, '.title_global', title, child_css_change); // 该标题改属性
-    parentElement_push(parentNode, category, child_css_change, insertBefore_that_element, switchX)
-}
-
-/**
- * 举例//
- * parentElement_inner('.echo','.title','社交媒体//','SocialX');
- * parentElement_push('.echo','Social','SocialX')
- * parentElement('.echo','Social',4,'社交媒体//','Social')
- */
-
-
-function child_build(div_global_selector) { // 复制父元素下最后一个子元素
-    //console.log("// child_build() 正在复制 " + div_global_selector + " 下的元素并追加到自身身后...");
-    if (document.querySelector(div_global_selector)) {
-        let parentElement = document.querySelector(div_global_selector); // 抓住老番茄
-        let node = document.querySelector(div_global_selector).lastElementChild; // 取出
-        let clone = node.cloneNode(true); // 复制
-        parentElement.appendChild(clone);
-    }
-}
-
-// 替换子元素的内容
-function child_inner(div_global_selector, length, array, category, insertBefore_that_element, switchX, color) {
-    //let arrayX = parentNodeX;
-    if (parentNodeX[length][3] == category) { // 如果类目匹配则执行
-        //child_build(div_global_selector); // 開始复制子元素
-        li_sample(div_global_selector, insertBefore_that_element, switchX);
-        document.querySelector(div_global_selector).lastElementChild.querySelector('a').textContent = parentNodeX[length][0] // 開始修改其內容
-        document.querySelector(div_global_selector).lastElementChild.querySelector('a').href = parentNodeX[length][1] // 開始需改其鏈接
-        document.querySelector(div_global_selector).lastElementChild.querySelector('a').target = parentNodeX[length][2] // 開始修改其目標
-        document.querySelector(div_global_selector).lastElementChild.querySelector('a').classList.add("a_global") // 開始修改其类
-        document.querySelector(div_global_selector).lastElementChild.querySelector('a').classList.add(parentNodeX[length][4]) // 開始修改其类
-    }
-}
-
-function child_push(div_global_selector, length, array, category, insertBefore_that_element, switchX, color) {
-    for (i = 0; i < parentNodeX.length; i++) {
-        child_inner(div_global_selector, i, array, category, insertBefore_that_element, switchX, color); // 替换子元素内容
-    }
-
-
-}
-
 
 let ads_css = '.ad_img {display:none! important; pointer-events: none !important;}\
 '
@@ -1677,6 +1490,252 @@ function testx() {
         alert("元素不存在!")
     }
 }
+
+
+// Start
+
+// =========================================================
+// 核心函数定义
+// =========================================================
+
+
+
+/**
+ * [新增] 将返回值格式化为可读的文本。
+ * 特别是对于 Object 类型，使用 JSON.stringify 进行美化。
+ * @param {*} result 待格式化的返回值。
+ * @returns {string} 格式化后的 HTML 字符串。
+ */
+
+// 必须有这段逻辑来判断是否为对象
+function formatResult(result) {
+    if (typeof result === 'object' && result !== null) {
+        try {
+            // 使用 JSON.stringify 进行美化
+            const jsonString = JSON.stringify(result, null, 2);
+            // 必须使用 <pre> 标签包裹
+            return `<pre style="white-space: pre-wrap; word-break: break-all; margin: 0; padding: 5px; background: #eee;">${jsonString}</pre>`;
+        } catch (e) {
+            return `[对象 - 无法序列化: ${e.message}]`;
+        }
+    }
+    // ... (处理其他类型和 undefined 的逻辑)
+    return result;
+}
+
+/**
+ * 动态创建并注入 CSS 样式，用于悬浮窗。
+ */
+function injectFloatingWindowStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+                /* 按钮和基础样式 */
+                #body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                #runButton { padding: 12px 25px; font-size: 18px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+
+                /* --- 悬浮窗 (Modal) 样式 --- */
+                #floating-output-container {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 450px;
+                    max-width: 90vw;
+                    max-height: 80vh;
+                    background-color: white;
+                    border: 3px solid #007bff;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                    z-index: 9999999;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+
+                #floating-output-header {
+                    padding: 10px 15px;
+                    background-color: #007bff;
+                    color: white;
+                    font-size: 1.1em;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                #floating-output-content {
+                    padding: 15px;
+                    overflow-y: auto;
+                    flex-grow: 1;
+                    text-align: left;
+                }
+
+                .close-btn {
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 24px;
+                    cursor: pointer;
+                    line-height: 1;
+                    padding: 0 5px;
+                }
+
+                /* 输出内容样式 */
+                .success { color: green; font-weight: bold; }
+                .error { color: red; font-weight: bold; }
+                .result-item { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px dotted #ccc; }
+            `;
+    document.head.appendChild(style);
+}
+
+/**
+ * 动态创建悬浮窗的 DOM 结构，并将其添加到 body。
+ * @returns {HTMLElement} 悬浮窗的内容 DIV (用于输出)
+ */
+function createFloatingOutputDiv() {
+    const containerId = 'floating-output-container';
+    const contentId = 'floating-output-content';
+
+    let container = document.getElementById(containerId);
+    let contentDiv;
+
+    if (container) {
+        // 如果已存在，直接获取内容区域并清空
+        contentDiv = document.getElementById(contentId);
+        contentDiv.innerHTML = '';
+        container.style.display = 'flex'; // 确保显示
+        return contentDiv;
+    }
+
+    // --- 1. 创建容器 DIV ---
+    container = document.createElement('div');
+    container.id = containerId;
+
+    // --- 2. 创建头部和关闭按钮 ---
+    const header = document.createElement('div');
+    header.id = 'floating-output-header';
+    header.innerHTML = '执行结果与状态';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.onclick = () => {
+        // 在这里，直接绑定点击事件
+        container.remove(); // 移除容器，实现关闭
+    };
+
+    header.appendChild(closeBtn);
+    container.appendChild(header);
+
+    // --- 3. 创建内容 DIV (实际的输出区域) ---
+    contentDiv = document.createElement('div');
+    contentDiv.id = contentId;
+    container.appendChild(contentDiv);
+
+    // --- 4. 将容器添加到 body ---
+    document.body.appendChild(container);
+
+    return contentDiv;
+}
+
+/**
+ * 核心执行函数：如果参数是函数或可执行代码字符串，则执行。
+ * @param {string|Function} param 待执行的参数。
+ * @param {HTMLElement} outputDiv 用于显示输出结果的 DOM 元素。
+ */
+function attemptExecution(param, outputDiv) {
+    outputDiv.innerHTML += '<div class="result-item">--- **执行开始** ---</div>';
+
+    if (typeof param === 'function') {
+        // ... (函数执行逻辑与之前相同) ...
+        try {
+            const result = param();
+            outputDiv.innerHTML += `<p class="success">执行类型: [函数] 成功。</p>`;
+            // *** 修改这里：调用 formatResult ***
+            //  outputDiv.innerHTML += `<p><strong>函数返回值:</strong> ${result === undefined ? '无返回值 (undefined)' : result}</p>`;
+            outputDiv.innerHTML += `<p><strong>函数返回值:</strong> ${formatResult(result)}</p>`;
+        } catch (error) {
+            outputDiv.innerHTML += `<p class="error">执行类型: [函数] 失败！</p>`;
+            outputDiv.innerHTML += `<p><strong>错误信息:</strong> ${error.message}</p>`;
+            console.error("函数执行错误:", error);
+        }
+    }
+    else if (typeof param === 'string' && param.trim().length > 0) {
+        const code = param.trim();
+
+        try {
+            // *** 关键修改：为了访问全局变量 dataList，切换回 eval() ***
+            // ⚠️ 警告：这会允许代码访问全局作用域中的所有变量！
+            const result = eval(code);
+
+            outputDiv.innerHTML += `<p class="success">执行类型: [代码字符串] 成功。</p>`;
+            outputDiv.innerHTML += `<p><strong>代码返回值:</strong> ${formatResult(result)}</p>`;
+        } catch (error) {
+            outputDiv.innerHTML += `<p class="error">执行类型: [代码字符串] 失败！</p>`;
+            // 提示用户可能是因为全局变量 dataList 无法访问
+            outputDiv.innerHTML += `<p><strong>错误信息:</strong> ${error.message}</p>`;
+            outputDiv.innerHTML += `<p style="color:red;">💡 提示：此错误可能是因为代码无法访问全局变量（如 dataList）。</p>`;
+            console.error(`代码执行失败。错误信息: ${error.message}`);
+        }
+    } else {
+        outputDiv.innerHTML += `<p class="error">参数类型不可执行 (${typeof param}) 或为空。</p>`;
+    }
+
+    outputDiv.innerHTML += '<div class="result-item">--- **执行结束** ---</div>';
+}
+
+
+/**
+ * 引导用户输入并执行的主函数
+ */
+function promptAndExecute() {
+    // 1. 获取或创建悬浮窗输出容器
+    const outputDiv = createFloatingOutputDiv();
+    outputDiv.innerHTML = '<h3>正在等待用户输入...</h3>';
+
+    // 2. 提示用户输入代码
+    const codeInput = prompt(
+        "请输入您要执行的 JavaScript 代码或函数调用：",
+        "Math.random() > 0.5 ? '大于 0.5' : '小于等于 0.5';"
+    );
+
+    // 3. 检查输入是否有效
+    if (codeInput === null) {
+        outputDiv.innerHTML = '<p>用户已取消输入，执行中止。</p>';
+        return;
+    }
+    if (codeInput.trim() === "") {
+        outputDiv.innerHTML = '<p>输入内容为空，执行中止。</p>';
+        return;
+    }
+
+    // 4. 确认执行
+    const confirmation = confirm(`您输入了以下代码，确认执行吗？\n\n---\n${codeInput}\n---`);
+
+    if (confirmation) {
+        outputDiv.innerHTML = `<h3>准备执行</h3><p><strong>输入代码:</strong> ${codeInput}</p>`;
+
+        // 5. 判断并执行
+        attemptExecution(codeInput, outputDiv);
+    } else {
+        outputDiv.innerHTML = '<p>用户取消了执行。</p>';
+    }
+}
+
+
+
+// =========================================================
+// 1. 注入 CSS 样式
+injectFloatingWindowStyles();
+
+// 2. 获取按钮并绑定事件监听器
+const runButton = document.getElementById('zhixingjs');
+if (runButton) {
+    runButton.addEventListener('click', promptAndExecute);
+}
+// };
+
+
+// End
 
 
 // 复制 input 内容
@@ -1750,6 +1809,7 @@ function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag
         console.log("按钮已添加；")
     }
 }
+
 
 function testy() {
 
@@ -1850,6 +1910,7 @@ function initLimoProSearch() {
         console.log('划词搜索已存在');
         return;
     }
+
     window.limboproSearchPro = true;
 
     /* ---------- 配置区 ---------- */
@@ -1875,7 +1936,7 @@ function initLimoProSearch() {
         position: 'absolute',
         zIndex: '2147483647',
         display: 'none',
-        pointerEvents: 'none',
+        pointerEvents: 'none !inportant',
         fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
         flexDirection: 'column',
         gap: '8px',
@@ -2098,3 +2159,1015 @@ function initLimoProSearch() {
     console.log('划词搜索（终极优化版 + 设置按钮）已加载');
 }
 
+
+
+// 备份数据列表
+var dataListbak = {
+    "SpeedTest": [
+        {
+            "name": "Cloudflare",
+            "url": "https://speed.cloudflare.com/",
+            "target": "_blank",
+            "level": "better yellow"
+        },
+        {
+            "name": "SpeedTest",
+            "url": "https://www.speedtest.net/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "PornMedia": [
+        {
+            "name": "FANZA|R18成人站",
+            "url": "https://www.dmm.co.jp/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "溜池ゴロー",
+            "url": "https://tameikegoro.jp/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "s1s1s1 S1/エスワンー",
+            "url": "https://s1s1s1.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "VENUSーＳ級熟女メーカ|Ｓ級熟女メーカー",
+            "url": "https://venus-av.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "SOD（ソフトオンデマンド）",
+            "url": "https://www.sod.co.jp/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Glory Questー「禁断介護」や逆ショタ元祖",
+            "url": "https://www.gloryquest.tv/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "ながえSTYLE(NTR)",
+            "url": "https://www.nagae-style.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Madonna（マドンナ）",
+            "url": "https://www.madonna-av.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "ATTACKERS（アタッカーズ）",
+            "url": "https://www.attackers.net/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "PRESTIGE(プレステージ)",
+            "url": "https://www.prestige-av.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "PREMIUM（プレミアム",
+            "url": "https://www.premium-beauty.com/top/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "MOODYZー",
+            "url": "https://www.moodyz.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "IDEAPOCKET (アイデアポケット）",
+            "url": "https://www.ideapocket.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "OPPAI（おっぱい）",
+            "url": "https://www.oppai-av.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "【kawaii*】公式サイト",
+            "url": "https://www.kawaiikawaii.jp/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "肉感あふれる女優",
+            "url": "https://www.fitch-av.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "タカラ映像 TAKARA",
+            "url": "https://www.takara-tv.jp/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "トップページ - AVメーカー【ダスッ！】公式サイト",
+            "url": "https://www.dasdas.jp/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "レズ・素人ナンパを中心",
+            "url": "https://deeps.net/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "変態紳士倶楽部】公式サイト",
+            "url": "https://www.to-satsu.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "wanzfactory（ワンズファクトリー）",
+            "url": "https://www.wanz-factory.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "【E-BODY（イーボディ）】公式サイト",
+            "url": "https://www.av-e-body.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "MGS動画は",
+            "url": "https://www.mgstage.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "ABC/妄想族(1302本)",
+            "url": "https://www.mousouzoku-av.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "JET「卍GROUP」のトップページです",
+            "url": "https://manji-group.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "!! ROCKET",
+            "url": "https://www.rocket-inc.net/top.php",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "FANZA通販-アダルト通販ショッピング",
+            "url": "https://www.dmm.co.jp/mono/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "【無垢】公式サイトトーップページ | AVメーカ",
+            "url": "https://www.muku.tv/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "HHH(トリプルエイチ)| AVメーカ",
+            "url": "https://hhh-av.com/top/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "痴女ヘブンのトップページ| AVメーカ",
+            "url": "https://bi-av.com/top",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "poxrn": [
+        {
+            "name": "SOD（ソフトオンデマンド）",
+            "url": "https://www.sod.co.jp/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "Tech": [
+        {
+            "name": "Github",
+            "url": "https://github.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Wikipedia",
+            "url": "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "SocialMedia": [
+        {
+            "name": "Reddit",
+            "url": "https://www.reddit.com/",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "Quora",
+            "url": "https://www.quora.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Tiktok",
+            "url": "https://www.tiktok.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Youtube",
+            "url": "https://m.youtube.com/",
+            "target": "_blank",
+            "level": "special"
+        }
+    ],
+    "Media": [
+        {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/browse",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "HBO",
+            "url": "https://www.hbo.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Disney+",
+            "url": "https://www.disneyplus.com/en-hk",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Amazon Prime Video",
+            "url": "https://www.primevideo.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "images": [
+        {
+            "name": "Pexels",
+            "url": "https://www.pexels.com/",
+            "target": "_blank",
+            "level": "common yellow"
+        },
+        {
+            "name": "Pixbay",
+            "url": "https://pixabay.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "Developer": [
+        {
+            "name": "Github",
+            "url": "https://github.com/",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "v2ex",
+            "url": "https://www.v2ex.com/",
+            "target": "_blank",
+            "level": "yellow"
+        },
+        {
+            "name": "思否",
+            "url": "https://segmentfault.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "infoq",
+            "url": "https://www.infoq.cn/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "掘金",
+            "url": "https://juejin.cn/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "MDN",
+            "url": "https://developer.mozilla.org/zh-CN/",
+            "target": "_blank",
+            "level": "common yellow"
+        },
+        {
+            "name": "w3schools",
+            "url": "https://w3schools.cn/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Stack Overflow",
+            "url": "https://stackoverflow.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "Front-build": [
+        {
+            "name": "Typecho",
+            "url": "https://typecho.org/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Vercel",
+            "url": "https://vercel.com/new",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Cloudflare Pages",
+            "url": "https://pages.cloudflare.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Gitpages",
+            "url": "https://pages.github.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Fly.io",
+            "url": "https://fly.io/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "domain-buy": [
+        {
+            "name": "NameSilo",
+            "url": "https://www.namesilo.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Cloudflare Domain",
+            "url": "https://www.cloudflare.com/products/registrar/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "NameCheap",
+            "url": "https://www.namecheap.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "freenom",
+            "url": "https://www.freenom.com/zh/freeandpaiddomains.html",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "xyellow": [
+        {
+            "name": "今晚看什么？",
+            "url": "https://limbopro.com/tools/jwksm/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Jable",
+            "url": "https://jable.tv/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Missav",
+            "url": "https://missav.ws/cn/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Supjav",
+            "url": "https://supjav.com/zh/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Javbus",
+            "url": "https://www.javbus.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "JavLibrary",
+            "url": "https://www.javlibrary.com/cn/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Pornhub",
+            "url": "https://cn.pornhub.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Xvideos",
+            "url": "https://www.xvideos.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Javday",
+            "url": "https://javday.tv/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Njav",
+            "url": "https://24av.net/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "hanime1",
+            "url": "https://hanime1.me/comics",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "knowledge": [
+        {
+            "name": "认知偏差手册",
+            "url": "https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf#RirzLG",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Bash 教程",
+            "url": "https://wangdoc.com/bash/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "SSH 教程",
+            "url": "https://wangdoc.com/ssh/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Vim从入门到精通",
+            "url": "https://limbopro.com/archives/31058.html",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "ipcheck": [
+        {
+            "name": "网站状态检测",
+            "url": "https://check-host.net/check-http?host=https://limbopro.com",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "IP.SB",
+            "url": "https://ip.sb/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "BGP Toolkit ",
+            "url": "https://bgp.he.net/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Baidu",
+            "url": "https://www.baidu.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "search": [
+        {
+            "name": "Google",
+            "url": "https://www.google.com/",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "Bing",
+            "url": "https://www.bing.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "DuckDuckGo",
+            "url": "https://duckduckgo.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Yahoo!）",
+            "url": "https://hk.yahoo.com/?p=us",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "搜狗搜索",
+            "url": "https://www.sogou.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Baidu",
+            "url": "https://www.baidu.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "AICHAT": [
+        {
+            "name": "Grok",
+            "url": "https://grok.com/",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "Google Bard",
+            "url": "https://bard.google.com/?hl=en",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Github Copilot",
+            "url": "https://github.com/copilot",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "ChatGPT",
+            "url": "https://chat.openai.com/auth/login",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Bing AI",
+            "url": "https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Claude.ai",
+            "url": "https://claude.ai/",
+            "target": "_blank",
+            "level": "better"
+        }
+    ],
+    "Tools": [
+        {
+            "name": "在线正则表达式测试",
+            "url": "https://tool.oschina.net/regex/",
+            "target": "_blanl",
+            "level": "special yellow"
+        },
+        {
+            "name": "在线文件格式转换器",
+            "url": "https://convertio.co/zh/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "PDF在线转换",
+            "url": "https://www.ilovepdf.com/zh-cn",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "iconfont",
+            "url": "https://www.iconfont.cn/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "comic18": [
+        {
+            "name": "hitomi",
+            "url": "https://hitomi.la/index-chinese.html",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "jcomic",
+            "url": "https://jcomic.net/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "绅士漫画",
+            "url": "https://www.wnacg.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "嗶咔picacg免費網頁版",
+            "url": "https://manhuapica.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "E-Hentai",
+            "url": "https://e-hentai.org/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "禁漫天堂",
+            "url": "https://18comic.vip/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "肉漫",
+            "url": "https://www.rouman5.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "dlsite",
+            "url": "https://www.dlsite.com/books/",
+            "target": "_blank",
+            "level": "better"
+        }
+    ],
+    "seoandmore": [
+        {
+            "name": "博客优化",
+            "url": "https://limbopro.com/category/builder/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "博客防御",
+            "url": "https://limbopro.com/tag/Cloudflare/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "bookreadanddownload": [
+        {
+            "name": "苦瓜书盘",
+            "url": "https://kgbook.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Library Genesis",
+            "url": "https://www.libgen.is/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Z-library",
+            "url": "https://limbopro.com/archives/30553.html",
+            "target": "_blank",
+            "level": "special yellow"
+        }
+    ],
+    "front-end": [
+        {
+            "name": "JavaScript高级程序设计",
+            "url": "https://t.me/limboprossr/2812",
+            "target": "_blank",
+            "level": "common yellow"
+        },
+        {
+            "name": "CSS教程",
+            "url": "https://www.runoob.com/css/css-tutorial.html",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "w3school 在线教程",
+            "url": "https://www.w3school.com.cn/index.html",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "downloading": [
+        {
+            "name": "M3U8下载?(Porn/Jable..)",
+            "url": "https://limbopro.com/archives/M3U8-Downloader.html",
+            "target": "_blank",
+            "level": "common yellow"
+        },
+        {
+            "name": "Twitter 视频下载(油猴脚本)",
+            "url": "https://limbopro.com/archives/27446.html#%E8%84%9A%E6%9C%AC%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8",
+            "target": "_blank",
+            "level": "common yellow"
+        },
+        {
+            "name": "Instagram 视频下载(电报🤖)",
+            "url": "https://t.me/instasavegrambot",
+            "target": "_blank",
+            "level": "del"
+        },
+        {
+            "name": "YouTube 视频下载(电报🤖)",
+            "url": "https://t.me/yt_dbot",
+            "target": "_blank",
+            "level": "del"
+        },
+        {
+            "name": "Instagram 视频下载(iOS捷径)",
+            "url": "https://limbopro.com/archives/1053.html",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "Instagram 视频下载(PC网页版)",
+            "url": "https://sssinstagram.com/",
+            "target": "_blank",
+            'level': 'del'
+        },
+        {
+            "name": "Youtube 视频下载(PC网页版)",
+            "url": "https://ssyoutube.com/",
+            "target": "_blank"
+        },
+        {
+            "name": "Pornhub 视频下载(PC网页版)",
+            "url": "https://www.saveporn.net/",
+            "target": "_blank"
+        },
+        {
+            "name": "More...",
+            "url": "https://limbopro.com/category/downloader/",
+            "target": "_blank"
+        }
+    ],
+    "aigc": [
+        {
+            "name": "Stable Diffusion入门",
+            "url": "https://limbopro.com/archives/install_and_quickstart_Stable_Diffusion.html",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "Civitai",
+            "url": "https://civitai.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Midjourney",
+            "url": "https://midjourney.com/",
+            "target": "_blank",
+            "level": "better yellow"
+        },
+        {
+            "name": "Notion AI",
+            "url": "https://www.notion.so/product/ai",
+            "target": "_blank",
+            "level": "better"
+        }
+    ],
+    "currentnews": [
+        {
+            "name": "网易新闻",
+            "url": "https://news.163.com/",
+            "target": "_blank",
+            "level": "better yellow"
+        },
+        {
+            "name": "谷歌新闻",
+            "url": "https://news.google.com/home?hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "纽约时报",
+            "url": "https://cn.nytimes.com/zh-hant/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "华尔街日报",
+            "url": "https://cn.wsj.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "BBC News",
+            "url": "https://www.bbc.com/zhongwen/simp",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "writer": [
+        {
+            "name": "顶尖文案TOPYS",
+            "url": "https://www.topys.cn/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "广告门",
+            "url": "https://www.adquan.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "梅花网",
+            "url": "https://www.meihua.info/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "数英网",
+            "url": "https://www.digitaling.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "运营派",
+            "url": "https://www.yunyingpai.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "technews": [
+        {
+            "name": "少数派",
+            "url": "https://sspai.com/",
+            "target": "_blank",
+            "level": "common yellow"
+        },
+        {
+            "name": "虎嗅",
+            "url": "https://huxiu.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "36Kr",
+            "url": "https://36kr.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "爱范儿",
+            "url": "https://www.ifanr.com/",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "pingwest",
+            "url": "https://www.pingwest.com/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ],
+    "movies": [
+        {
+            "name": "iyf爱壹帆",
+            "url": "https://www.iyf.tv/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "🆕努努影院",
+            "url": "https://nnyy.la/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "欧乐影视",
+            "url": "https://www.olevod.tv/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "剧迷网",
+            "url": "https://gimy.com.tw/",
+            "target": "_blank",
+            "level": "better"
+        }
+    ],
+    "imusic": [
+        {
+            "name": "Raining FM",
+            "url": "https://raining.fm/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "SoundCloud",
+            "url": "https://soundcloud.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Spotify",
+            "url": "https://open.spotify.com/",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "YT Music",
+            "url": "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ",
+            "target": "_blank",
+            "level": "special"
+        },
+        {
+            "name": "网易云音乐",
+            "url": "https://music.163.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "QQ音乐",
+            "url": "https://y.qq.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "酷狗音乐",
+            "url": "https://www.kugou.com/",
+            "target": "_blank",
+            "level": "better"
+        }
+    ],
+    "cheeseispower": [
+        {
+            "name": "炼码",
+            "url": "https://www.lintcode.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "菜鸟教程",
+            "url": "https://www.runoob.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "w3cschool",
+            "url": "https://www.w3school.com.cn/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Stackoverflow",
+            "url": "https://stackoverflow.com/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "Github",
+            "url": "https://github.com/",
+            "target": "_blank",
+            "level": "better"
+        }
+    ]
+}

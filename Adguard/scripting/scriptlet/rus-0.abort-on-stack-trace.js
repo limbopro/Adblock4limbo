@@ -340,8 +340,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["HTMLVideoElement.prototype.play","/index-"],["Object.prototype.autoplay","assets"],["Object.prototype.dispatcher","/chunks/9635"],["Object.prototype.loadAdvertScriptMode","/yastatic\\.net/"],["document.createElement","checkAboba"],["document.getElementById","/723-|ai-2-/"],["fetch","eval"],["window.setTimeout","$3 "],["Object.prototype.parallax","window.onload"],["HTMLVideoElement.prototype.play","onCanPlay"],["Object.prototype.crossDomain","ecbrStart"]];
-const hostnamesMap = new Map([["dtf.ru",[0,7]],["vc.ru",0],["tvzvezda.ru",1],["vk.com",2],["vk.ru",2],["ya.ru",3],["shadowcore.ru",4],["ai-next.ru",5],["forums.rusmedserv.com",6],["porno365.*",8],["tass.ru",9],["www.ukr.net",10]]);
+const argsList = [["HTMLVideoElement.prototype.play","/index-"],["Object.prototype.autoplay","assets"],["Object.prototype.dispatcher","/chunks/9635"],["Object.prototype.loadAdvertScriptMode","/yastatic\\.net/"],["document.createElement","checkAboba"],["document.getElementById","/723-|ai-2-/"],["fetch","eval"],["window.setTimeout","R https://dtf.ru/assets/index-"],["Object.prototype.parallax","window.onload"],["HTMLVideoElement.prototype.play","manualAutoplay"],["HTMLVideoElement.prototype.play","onCanPlay"],["Object.prototype.crossDomain","ecbrStart"]];
+const hostnamesMap = new Map([["dtf.ru",[0,7]],["vc.ru",0],["tvzvezda.ru",1],["vk.com",2],["vk.ru",2],["ya.ru",3],["shadowcore.ru",4],["ai-next.ru",5],["forums.rusmedserv.com",6],["porno365.*",8],["ntv.ru",9],["tass.ru",10],["www.ukr.net",11]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

@@ -516,8 +516,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["adBreaks.[-].adSources.[].withRemindAd ads.[-].eventTracking.ackImpressions eventTracking.[-].ackImpressions","","propsToMatch","url:api.chzzk.naver.com/service/t/"],["layers.[-].metadata.name.{=}.POI_Ads","","propsToMatch","url:/PCWeb_Real.json"]];
-const hostnamesMap = new Map([["chzzk.naver.com",0],["map.naver.com",1]]);
+const argsList = [["ads.[-].eventTracking.ackImpressions.[].url","ads.[].adInfo.responseSize","propsToMatch","url:api.chzzk.naver.com/service/t/"],["adBreaks.[-].adSources.[].withRemindAd","videoAdScheduleId","propsToMatch","url:api.chzzk.naver.com/service/t/"],["layers.[-].metadata.name.{=}.POI_Ads","","propsToMatch","url:/PCWeb_Real.json"]];
+const hostnamesMap = new Map([["chzzk.naver.com",[0,1]],["map.naver.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

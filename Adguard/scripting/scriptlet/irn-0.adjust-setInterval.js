@@ -252,7 +252,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["timeLeft","*","0.02"],[],["countdown"],["","","0"]];
-const hostnamesMap = new Map([["animelist.tv",0],["gold-team.org",1],["iwo.ir",1],["uupload.ir",1],["subkade.ir",2],["up44.ir",3]]);
+const hostnamesMap = new Map([["animelist.tv",0],["iwo.ir",1],["uupload.ir",1],["gold-team.org",1],["subkade.ir",2],["up44.ir",3]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

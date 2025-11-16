@@ -296,7 +296,7 @@ function safeSelf() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["showAllDaFull"]];
-const hostnamesMap = new Map([["dizilla40.com",0],["yabancidiziio.com",0]]);
+const hostnamesMap = new Map([["flatscher.net",0],["dizilla40.com",0],["yabancidiziio.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

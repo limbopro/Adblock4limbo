@@ -26,18 +26,18 @@
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_trustedJsonEditXhrRequest() {
+(function uBOL_trustedJsonEditXhrResponse() {
 
 /******************************************************************************/
 
-function trustedJsonEditXhrRequest(jsonq = '', ...args) {
-    jsonEditXhrRequestFn(true, jsonq, ...args);
+function trustedJsonEditXhrResponse(jsonq = '', ...args) {
+    jsonEditXhrResponseFn(true, jsonq, ...args);
 }
 
-function jsonEditXhrRequestFn(trusted, jsonq = '') {
+function jsonEditXhrResponseFn(trusted, jsonq = '') {
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix(
-        `${trusted ? 'trusted-' : ''}json-edit-xhr-request`,
+        `${trusted ? 'trusted-' : ''}json-edit-xhr-response`,
         jsonq
     );
     const xhrInstances = new WeakMap();
@@ -60,27 +60,44 @@ function jsonEditXhrRequestFn(trusted, jsonq = '') {
             }
             return super.open(method, url, ...args);
         }
-        send(body) {
+        get response() {
+            const innerResponse = super.response;
             const xhrDetails = xhrInstances.get(this);
-            if ( xhrDetails ) {
-                body = this.#filterBody(body) || body;
+            if ( xhrDetails === undefined ) { return innerResponse; }
+            const responseLength = typeof innerResponse === 'string'
+                ? innerResponse.length
+                : undefined;
+            if ( xhrDetails.lastResponseLength !== responseLength ) {
+                xhrDetails.response = undefined;
+                xhrDetails.lastResponseLength = responseLength;
             }
-            super.send(body);
-        }
-        #filterBody(body) {
-            if ( typeof body !== 'string' ) { return; }
-            let data;
-            try { data = safe.JSON_parse(body); }
-            catch { }
-            if ( data instanceof Object === false ) { return; }
-            const objAfter = jsonp.apply(data);
-            if ( objAfter === undefined ) { return; }
-            body = safe.JSON_stringify(objAfter);
+            if ( xhrDetails.response !== undefined ) {
+                return xhrDetails.response;
+            }
+            let obj;
+            if ( typeof innerResponse === 'object' ) {
+                obj = innerResponse;
+            } else if ( typeof innerResponse === 'string' ) {
+                try { obj = safe.JSON_parse(innerResponse); } catch { }
+            }
+            if ( typeof obj !== 'object' || obj === null ) {
+                return (xhrDetails.response = innerResponse);
+            }
+            const objAfter = jsonp.apply(obj);
+            if ( objAfter === undefined ) {
+                return (xhrDetails.response = innerResponse);
+            }
             safe.uboLog(logPrefix, 'Edited');
-            if ( safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, `After edit:\n${body}`);
-            }
-            return body;
+            const outerResponse = typeof innerResponse === 'string'
+                ? JSONPath.toJSON(objAfter, safe.JSON_stringify)
+                : objAfter;
+            return (xhrDetails.response = outerResponse);
+        }
+        get responseText() {
+            const response = this.response;
+            return typeof response !== 'string'
+                ? super.responseText
+                : response;
         }
     };
 }
@@ -767,7 +784,7 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["..playbackContext[?.contentPlaybackContext]+={\"adPlaybackContext\":{\"adType\":\"AD_TYPE_INSTREAM\"}}","propsToMatch","/\\/(player|get_watch)/"]];
+const argsList = [["..playerConfig.granularVariableSpeedConfig+={\"minimumPlaybackRate\":25,\"maximumPlaybackRate\":200}","propsToMatch","/\\/(player|get_watch)/"]];
 const hostnamesMap = new Map([["www.youtube.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
@@ -836,7 +853,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { trustedJsonEditXhrRequest(...argsList[i]); }
+    try { trustedJsonEditXhrResponse(...argsList[i]); }
     catch { }
 }
 

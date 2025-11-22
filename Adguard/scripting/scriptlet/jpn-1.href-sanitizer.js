@@ -443,7 +443,7 @@ function urlSkip(url, blocked, steps, directive = {}) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["a[href^=\"https://app.adjust.com/\"]","?redirect"],["a[href*=\"a8ejpredirect\"]","?a8ejpredirect"],["a[href^=\"https://al.dmm.com/?lurl=\"]","?lurl"],["a[href^=\"https://affiliate.suruga-ya.jp/modules/af/af_jump.php?\"]","?goods_url"],["a[href*=\"hb.afl.rakuten.co.jp/hgc/\"][href*=\"/?pc=\"]","?pc"],["a[href*=\"ck.jp.ap.valuecommerce.com/servlet/referral?\"][href*=\"&vc_url=\"]","?vc_url"],["a[href^=\"https://al.fanza.co.jp/?lurl=\"]","?lurl"],["a[href^=\"https://adclick.g.doubleclick.net/\"][href*=\"adurl=\"]","?adurl"]];
-const hostnamesMap = new Map([["www.yahoo.co.jp",0],["figure-times.com",1],["figsoku.net",[2,3,4,5]],["ura-akiba.jp",6],["safeframe.googlesyndication.com",7]]);
+const hostnamesMap = new Map([["www.yahoo.co.jp",0],["figure-times.com",1],["figsoku.net",[2,3,4,5]],["ura-akiba.jp",6],["okazurand.net",6],["nihon-bijo-zukan.com",6],["safeframe.googlesyndication.com",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

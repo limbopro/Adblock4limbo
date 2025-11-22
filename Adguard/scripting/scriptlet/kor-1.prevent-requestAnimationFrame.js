@@ -20,151 +20,121 @@
 
 */
 
-// ruleset: ukr-0
+// ruleset: kor-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_abortCurrentScript() {
+(function uBOL_preventRequestAnimationFrame() {
 
 /******************************************************************************/
 
-function abortCurrentScript(...args) {
-    runAtHtmlElementFn(( ) => {
-        abortCurrentScriptFn(...args);
-    });
-}
-
-function abortCurrentScriptFn(
-    target = '',
-    needle = '',
-    context = ''
+function preventRequestAnimationFrame(
+    needleRaw = ''
 ) {
-    if ( typeof target !== 'string' ) { return; }
-    if ( target === '' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-current-script', target, needle, context);
-    const reNeedle = safe.patternToRegex(needle);
-    const reContext = safe.patternToRegex(context);
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const thisScript = document.currentScript;
-    const chain = safe.String_split.call(target, '.');
-    let owner = window;
-    let prop;
-    for (;;) {
-        prop = chain.shift();
-        if ( chain.length === 0 ) { break; }
-        if ( prop in owner === false ) { break; }
-        owner = owner[prop];
-        if ( owner instanceof Object === false ) { return; }
-    }
-    let value;
-    let desc = Object.getOwnPropertyDescriptor(owner, prop);
-    if (
-        desc instanceof Object === false ||
-        desc.get instanceof Function === false
-    ) {
-        value = owner[prop];
-        desc = undefined;
-    }
-    const debug = shouldDebug(extraArgs);
-    const exceptionToken = getExceptionTokenFn();
-    const scriptTexts = new WeakMap();
-    const textContentGetter = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent').get;
-    const getScriptText = elem => {
-        let text = textContentGetter.call(elem);
-        if ( text.trim() !== '' ) { return text; }
-        if ( scriptTexts.has(elem) ) { return scriptTexts.get(elem); }
-        const [ , mime, content ] =
-            /^data:([^,]*),(.+)$/.exec(elem.src.trim()) ||
-            [ '', '', '' ];
-        try {
-            switch ( true ) {
-            case mime.endsWith(';base64'):
-                text = self.atob(content);
-                break;
-            default:
-                text = self.decodeURIComponent(content);
-                break;
-            }
-        } catch {
+    const logPrefix = safe.makeLogPrefix('prevent-requestAnimationFrame', needleRaw);
+    const needleNot = needleRaw.charAt(0) === '!';
+    const reNeedle = safe.patternToRegex(needleNot ? needleRaw.slice(1) : needleRaw);
+    proxyApplyFn('requestAnimationFrame', function(context) {
+        const { callArgs } = context;
+        const a = callArgs[0] instanceof Function
+            ? safe.String(safe.Function_toString(callArgs[0]))
+            : safe.String(callArgs[0]);
+        if ( needleRaw === '' ) {
+            safe.uboLog(logPrefix, `Called:\n${a}`);
+        } else if ( reNeedle.test(a) !== needleNot ) {
+            callArgs[0] = function(){};
+            safe.uboLog(logPrefix, `Prevented:\n${a}`);
         }
-        scriptTexts.set(elem, text);
-        return text;
-    };
-    const validate = ( ) => {
-        const e = document.currentScript;
-        if ( e instanceof HTMLScriptElement === false ) { return; }
-        if ( e === thisScript ) { return; }
-        if ( context !== '' && reContext.test(e.src) === false ) {
-            // eslint-disable-next-line no-debugger
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
-            return;
-        }
-        if ( safe.logLevel > 1 && context !== '' ) {
-            safe.uboLog(logPrefix, `Matched src\n${e.src}`);
-        }
-        const scriptText = getScriptText(e);
-        if ( reNeedle.test(scriptText) === false ) {
-            // eslint-disable-next-line no-debugger
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
-            return;
-        }
-        if ( safe.logLevel > 1 ) {
-            safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
-        }
-        // eslint-disable-next-line no-debugger
-        if ( debug === 'match' || debug === 'all' ) { debugger; }
-        safe.uboLog(logPrefix, 'Aborted');
-        throw new ReferenceError(exceptionToken);
-    };
-    // eslint-disable-next-line no-debugger
-    if ( debug === 'install' ) { debugger; }
-    try {
-        Object.defineProperty(owner, prop, {
-            get: function() {
-                validate();
-                return desc instanceof Object
-                    ? desc.get.call(owner)
-                    : value;
-            },
-            set: function(a) {
-                validate();
-                if ( desc instanceof Object ) {
-                    desc.set.call(owner, a);
-                } else {
-                    value = a;
-                }
-            }
-        });
-    } catch(ex) {
-        safe.uboErr(logPrefix, `Error: ${ex}`);
-    }
-}
-
-function runAtHtmlElementFn(fn) {
-    if ( document.documentElement ) {
-        fn();
-        return;
-    }
-    const observer = new MutationObserver(( ) => {
-        observer.disconnect();
-        fn();
+        return context.reflect();
     });
-    observer.observe(document, { childList: true });
 }
 
-function getExceptionTokenFn() {
-    const token = getRandomTokenFn();
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
-        }
-    }.bind();
-    return token;
+function proxyApplyFn(
+    target = '',
+    handler = ''
+) {
+    let context = globalThis;
+    let prop = target;
+    for (;;) {
+        const pos = prop.indexOf('.');
+        if ( pos === -1 ) { break; }
+        context = context[prop.slice(0, pos)];
+        if ( context instanceof Object === false ) { return; }
+        prop = prop.slice(pos+1);
+    }
+    const fn = context[prop];
+    if ( typeof fn !== 'function' ) { return; }
+    if ( proxyApplyFn.CtorContext === undefined ) {
+        proxyApplyFn.ctorContexts = [];
+        proxyApplyFn.CtorContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, callArgs) {
+                this.callFn = callFn;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.construct(this.callFn, this.callArgs);
+                this.callFn = this.callArgs = this.private = undefined;
+                proxyApplyFn.ctorContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.ctorContexts.length !== 0
+                    ? proxyApplyFn.ctorContexts.pop().init(...args)
+                    : new proxyApplyFn.CtorContext(...args);
+            }
+        };
+        proxyApplyFn.applyContexts = [];
+        proxyApplyFn.ApplyContext = class {
+            constructor(...args) {
+                this.init(...args);
+            }
+            init(callFn, thisArg, callArgs) {
+                this.callFn = callFn;
+                this.thisArg = thisArg;
+                this.callArgs = callArgs;
+                return this;
+            }
+            reflect() {
+                const r = Reflect.apply(this.callFn, this.thisArg, this.callArgs);
+                this.callFn = this.thisArg = this.callArgs = this.private = undefined;
+                proxyApplyFn.applyContexts.push(this);
+                return r;
+            }
+            static factory(...args) {
+                return proxyApplyFn.applyContexts.length !== 0
+                    ? proxyApplyFn.applyContexts.pop().init(...args)
+                    : new proxyApplyFn.ApplyContext(...args);
+            }
+        };
+        proxyApplyFn.isCtor = new Map();
+    }
+    if ( proxyApplyFn.isCtor.has(target) === false ) {
+        proxyApplyFn.isCtor.set(target, fn.prototype?.constructor === fn);
+    }
+    const fnStr = fn.toString();
+    const toString = (function toString() { return fnStr; }).bind(null);
+    const proxyDetails = {
+        apply(target, thisArg, args) {
+            return handler(proxyApplyFn.ApplyContext.factory(target, thisArg, args));
+        },
+        get(target, prop) {
+            if ( prop === 'toString' ) { return toString; }
+            return Reflect.get(target, prop);
+        },
+    };
+    if ( proxyApplyFn.isCtor.get(target) ) {
+        proxyDetails.construct = function(target, args) {
+            return handler(proxyApplyFn.CtorContext.factory(target, args));
+        };
+    }
+    context[prop] = new Proxy(fn, proxyDetails);
 }
 
 function safeSelf() {
@@ -357,22 +327,11 @@ function safeSelf() {
     return safe;
 }
 
-function shouldDebug(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.canDebug && details.debug;
-}
-
-function getRandomTokenFn() {
-    const safe = safeSelf();
-    return safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
-}
-
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["String.fromCharCode","!function()"],["String.fromCharCode","/\\/\\*[0-9a-f]{40}\\*\\//"],["jQuery","link_br"],["u_global_data"],["document.createElement","/загрузка/"],["document.currentScript","admitad"],["String.fromCharCode","/Function\\('return/"],["decodeURIComponent","delete window"],["script.onerror","eval"],["document.getElementsByTagName","html_brain_link"],["MarketGidJSON"]];
-const hostnamesMap = new Map([["zaxid.net",0],["kurs.com.ru",0],["isport.ua",[0,7]],["24tv.ua",0],["ria-m.tv",0],["allboxing.ru",0],["dengi.ua",1],["kino-hd720.net",1],["mirknig.su",1],["kino-fs.ucoz.net",1],["ex-fs.net",1],["hvylya.net",1],["ain.ua",2],["narod.ru",3],["at.ua",3],["rivnepost.rv.ua",4],["telegraf.in.ua",4],["vlast.kz",4],["mignews.com.ua",4],["sibkray.ru",4],["kursiv.kz",4],["livekavkaz.ru",4],["times.km.ua",4],["grad.ua",4],["altyn-orda.kz",4],["viva.ua",4],["newsoneua.tv",4],["zikua.news",4],["cikavosti.com",4],["womo.ua",4],["4studio.com.ua",4],["tverigrad.ru",4],["kapital-rus.ru",4],["volyninfa.com.ua",4],["gorodkiev.com.ua",4],["vsviti.com.ua",4],["tenews.org.ua",4],["provce.ck.ua",4],["portal.lviv.ua",4],["rivnenews.com.ua",4],["teren.in.ua",4],["prichernomorie.com.ua",4],["marieclaire.ua",4],["politnavigator.net",4],["redpost.com.ua",4],["dv-gazeta.info",4],["elle.ua",4],["womanel.com",4],["nr2.com.ua",4],["plitkar.com.ua",4],["zik.ua",4],["molbuk.ua",4],["sud.ua",4],["newsua.one",4],["tele.ru",4],["pingvin.pro",4],["glavnoe.ua",4],["glavpost.com",4],["enovosty.com",4],["bagnet.org",4],["versii.if.ua",4],["comments.ua",[4,8,9]],["cbn.com.ua",4],["otvetnavse.com",4],["news.dks.com.ua",4],["golos.te.ua",4],["procherk.info",4],["cheline.com.ua",4],["4mama.ua",4],["ogo.ua",4],["rusjev.net",4],["fakty.ua",4],["fainaidea.com",4],["unn.com.ua",4],["kurs.com.ua",5],["www.i.ua",6],["freerutor.me",10]]);
+const argsList = [["window.__adsToken"]];
+const hostnamesMap = new Map([["chzzkban.xyz",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -440,7 +399,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { abortCurrentScript(...argsList[i]); }
+    try { preventRequestAnimationFrame(...argsList[i]); }
     catch { }
 }
 

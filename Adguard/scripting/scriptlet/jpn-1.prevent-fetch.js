@@ -488,8 +488,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["/adm\\.shinobi\\.jp\\/st\\/t\\.js/ method:HEAD mode:no-cors"],["adsbygoogle.js"],["pagead2.googlesyndication.com"],["adsbygoogle"],["tpc.googlesyndication.com"],["cdn.adschill.com"]];
-const hostnamesMap = new Map([["himachat.jp",0],["rkd3.dev",1],["video.tv-tokyo.co.jp",2],["gunauc.net",2],["success-corp.co.jp",2],["audio-sound-premium.com",2],["tojav.net",2],["kledgeb.blogspot.com",2],["rxlife.net",3],["rocketnews24.com",4],["youpouch.com",4],["manga1001.*",5]]);
+const argsList = [["pagead2.googlesyndication.com"],["/adm\\.shinobi\\.jp\\/st\\/t\\.js/ method:HEAD mode:no-cors"],["adsbygoogle.js"],["adsbygoogle"],["tpc.googlesyndication.com"],["cdn.adschill.com"]];
+const hostnamesMap = new Map([["shihiro.com",0],["video.tv-tokyo.co.jp",0],["gunauc.net",0],["success-corp.co.jp",0],["audio-sound-premium.com",0],["tojav.net",0],["kledgeb.blogspot.com",0],["himachat.jp",1],["rkd3.dev",2],["rxlife.net",3],["rocketnews24.com",4],["youpouch.com",4],["manga1001.*",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

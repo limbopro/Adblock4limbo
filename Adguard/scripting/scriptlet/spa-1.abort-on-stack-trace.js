@@ -340,8 +340,8 @@ function getRandomTokenFn() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["atob","wp-content/"],["alert","eval"],["history.go","eval"],["JSON.parse","showPopup"]];
-const hostnamesMap = new Map([["yomucomics.com",0],["netcine.*",[1,2]],["toonscrab.com",3]]);
+const argsList = [["document.getElementById","isAdBlocked"],["atob","wp-content/"],["alert","eval"],["history.go","eval"],["document.createElement","Popunder"],["JSON.parse","showPopup"]];
+const hostnamesMap = new Map([["panelacheia.top",0],["yomucomics.com",1],["netcine.*",[2,3]],["plplayer.com",4],["toonscrab.com",5]]);
 const exceptionsMap = new Map([]);
 const hasEntities = true;
 const hasAncestors = false;

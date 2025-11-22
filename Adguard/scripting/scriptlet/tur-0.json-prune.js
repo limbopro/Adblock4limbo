@@ -426,7 +426,7 @@ function getRandomTokenFn() {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["productAds"],["ads"],["style","maxActive"]];
-const hostnamesMap = new Map([["search.donanimhaber.com",0],["trstx.org",1],["ifsamerkezi.com",2]]);
+const hostnamesMap = new Map([["search.donanimhaber.com",0],["trstx.org",1],["vipifsa.com",1],["ifsamerkezi.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

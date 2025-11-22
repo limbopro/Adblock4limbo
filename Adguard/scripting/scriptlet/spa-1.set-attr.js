@@ -20,151 +20,36 @@
 
 */
 
-// ruleset: ukr-0
+// ruleset: spa-1
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_abortCurrentScript() {
+(function uBOL_setAttr() {
 
 /******************************************************************************/
 
-function abortCurrentScript(...args) {
-    runAtHtmlElementFn(( ) => {
-        abortCurrentScriptFn(...args);
-    });
-}
-
-function abortCurrentScriptFn(
-    target = '',
-    needle = '',
-    context = ''
+function setAttr(
+    selector = '',
+    attr = '',
+    value = ''
 ) {
-    if ( typeof target !== 'string' ) { return; }
-    if ( target === '' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('abort-current-script', target, needle, context);
-    const reNeedle = safe.patternToRegex(needle);
-    const reContext = safe.patternToRegex(context);
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 3);
-    const thisScript = document.currentScript;
-    const chain = safe.String_split.call(target, '.');
-    let owner = window;
-    let prop;
-    for (;;) {
-        prop = chain.shift();
-        if ( chain.length === 0 ) { break; }
-        if ( prop in owner === false ) { break; }
-        owner = owner[prop];
-        if ( owner instanceof Object === false ) { return; }
-    }
-    let value;
-    let desc = Object.getOwnPropertyDescriptor(owner, prop);
-    if (
-        desc instanceof Object === false ||
-        desc.get instanceof Function === false
-    ) {
-        value = owner[prop];
-        desc = undefined;
-    }
-    const debug = shouldDebug(extraArgs);
-    const exceptionToken = getExceptionTokenFn();
-    const scriptTexts = new WeakMap();
-    const textContentGetter = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent').get;
-    const getScriptText = elem => {
-        let text = textContentGetter.call(elem);
-        if ( text.trim() !== '' ) { return text; }
-        if ( scriptTexts.has(elem) ) { return scriptTexts.get(elem); }
-        const [ , mime, content ] =
-            /^data:([^,]*),(.+)$/.exec(elem.src.trim()) ||
-            [ '', '', '' ];
-        try {
-            switch ( true ) {
-            case mime.endsWith(';base64'):
-                text = self.atob(content);
-                break;
-            default:
-                text = self.decodeURIComponent(content);
-                break;
-            }
-        } catch {
-        }
-        scriptTexts.set(elem, text);
-        return text;
-    };
-    const validate = ( ) => {
-        const e = document.currentScript;
-        if ( e instanceof HTMLScriptElement === false ) { return; }
-        if ( e === thisScript ) { return; }
-        if ( context !== '' && reContext.test(e.src) === false ) {
-            // eslint-disable-next-line no-debugger
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
+    const logPrefix = safe.makeLogPrefix('set-attr', selector, attr, value);
+    const validValues = [ '', 'false', 'true' ];
+
+    if ( validValues.includes(value.toLowerCase()) === false ) {
+        if ( /^\d+$/.test(value) ) {
+            const n = parseInt(value, 10);
+            if ( n >= 32768 ) { return; }
+            value = `${n}`;
+        } else if ( /^\[.+\]$/.test(value) === false ) {
             return;
         }
-        if ( safe.logLevel > 1 && context !== '' ) {
-            safe.uboLog(logPrefix, `Matched src\n${e.src}`);
-        }
-        const scriptText = getScriptText(e);
-        if ( reNeedle.test(scriptText) === false ) {
-            // eslint-disable-next-line no-debugger
-            if ( debug === 'nomatch' || debug === 'all' ) { debugger; }
-            return;
-        }
-        if ( safe.logLevel > 1 ) {
-            safe.uboLog(logPrefix, `Matched text\n${scriptText}`);
-        }
-        // eslint-disable-next-line no-debugger
-        if ( debug === 'match' || debug === 'all' ) { debugger; }
-        safe.uboLog(logPrefix, 'Aborted');
-        throw new ReferenceError(exceptionToken);
-    };
-    // eslint-disable-next-line no-debugger
-    if ( debug === 'install' ) { debugger; }
-    try {
-        Object.defineProperty(owner, prop, {
-            get: function() {
-                validate();
-                return desc instanceof Object
-                    ? desc.get.call(owner)
-                    : value;
-            },
-            set: function(a) {
-                validate();
-                if ( desc instanceof Object ) {
-                    desc.set.call(owner, a);
-                } else {
-                    value = a;
-                }
-            }
-        });
-    } catch(ex) {
-        safe.uboErr(logPrefix, `Error: ${ex}`);
     }
-}
 
-function runAtHtmlElementFn(fn) {
-    if ( document.documentElement ) {
-        fn();
-        return;
-    }
-    const observer = new MutationObserver(( ) => {
-        observer.disconnect();
-        fn();
-    });
-    observer.observe(document, { childList: true });
-}
-
-function getExceptionTokenFn() {
-    const token = getRandomTokenFn();
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
-        }
-    }.bind();
-    return token;
+    setAttrFn(false, logPrefix, selector, attr, value);
 }
 
 function safeSelf() {
@@ -357,22 +242,110 @@ function safeSelf() {
     return safe;
 }
 
-function shouldDebug(details) {
-    if ( details instanceof Object === false ) { return false; }
-    return scriptletGlobals.canDebug && details.debug;
+function setAttrFn(
+    trusted = false,
+    logPrefix,
+    selector = '',
+    attr = '',
+    value = ''
+) {
+    if ( selector === '' ) { return; }
+    if ( attr === '' ) { return; }
+
+    const safe = safeSelf();
+    const copyFrom = trusted === false && /^\[.+\]$/.test(value)
+        ? value.slice(1, -1)
+        : '';
+
+    const extractValue = elem => copyFrom !== ''
+        ? elem.getAttribute(copyFrom) || ''
+        : value;
+
+    const applySetAttr = ( ) => {
+        let elems;
+        try {
+            elems = document.querySelectorAll(selector);
+        } catch {
+            return false;
+        }
+        for ( const elem of elems ) {
+            const before = elem.getAttribute(attr);
+            const after = extractValue(elem);
+            if ( after === before ) { continue; }
+            if ( after !== '' && /^on/i.test(attr) ) {
+                if ( attr.toLowerCase() in elem ) { continue; }
+            }
+            elem.setAttribute(attr, after);
+            safe.uboLog(logPrefix, `${attr}="${after}"`);
+        }
+        return true;
+    };
+
+    let observer, timer;
+    const onDomChanged = mutations => {
+        if ( timer !== undefined ) { return; }
+        let shouldWork = false;
+        for ( const mutation of mutations ) {
+            if ( mutation.addedNodes.length === 0 ) { continue; }
+            for ( const node of mutation.addedNodes ) {
+                if ( node.nodeType !== 1 ) { continue; }
+                shouldWork = true;
+                break;
+            }
+            if ( shouldWork ) { break; }
+        }
+        if ( shouldWork === false ) { return; }
+        timer = self.requestAnimationFrame(( ) => {
+            timer = undefined;
+            applySetAttr();
+        });
+    };
+
+    const start = ( ) => {
+        if ( applySetAttr() === false ) { return; }
+        observer = new MutationObserver(onDomChanged);
+        observer.observe(document.body, {
+            subtree: true,
+            childList: true,
+        });
+    };
+    runAt(( ) => { start(); }, 'idle');
 }
 
-function getRandomTokenFn() {
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1, 'asap': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
+            return targets[prop];
+        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
+    }
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
     const safe = safeSelf();
-    return safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["String.fromCharCode","!function()"],["String.fromCharCode","/\\/\\*[0-9a-f]{40}\\*\\//"],["jQuery","link_br"],["u_global_data"],["document.createElement","/загрузка/"],["document.currentScript","admitad"],["String.fromCharCode","/Function\\('return/"],["decodeURIComponent","delete window"],["script.onerror","eval"],["document.getElementsByTagName","html_brain_link"],["MarketGidJSON"]];
-const hostnamesMap = new Map([["zaxid.net",0],["kurs.com.ru",0],["isport.ua",[0,7]],["24tv.ua",0],["ria-m.tv",0],["allboxing.ru",0],["dengi.ua",1],["kino-hd720.net",1],["mirknig.su",1],["kino-fs.ucoz.net",1],["ex-fs.net",1],["hvylya.net",1],["ain.ua",2],["narod.ru",3],["at.ua",3],["rivnepost.rv.ua",4],["telegraf.in.ua",4],["vlast.kz",4],["mignews.com.ua",4],["sibkray.ru",4],["kursiv.kz",4],["livekavkaz.ru",4],["times.km.ua",4],["grad.ua",4],["altyn-orda.kz",4],["viva.ua",4],["newsoneua.tv",4],["zikua.news",4],["cikavosti.com",4],["womo.ua",4],["4studio.com.ua",4],["tverigrad.ru",4],["kapital-rus.ru",4],["volyninfa.com.ua",4],["gorodkiev.com.ua",4],["vsviti.com.ua",4],["tenews.org.ua",4],["provce.ck.ua",4],["portal.lviv.ua",4],["rivnenews.com.ua",4],["teren.in.ua",4],["prichernomorie.com.ua",4],["marieclaire.ua",4],["politnavigator.net",4],["redpost.com.ua",4],["dv-gazeta.info",4],["elle.ua",4],["womanel.com",4],["nr2.com.ua",4],["plitkar.com.ua",4],["zik.ua",4],["molbuk.ua",4],["sud.ua",4],["newsua.one",4],["tele.ru",4],["pingvin.pro",4],["glavnoe.ua",4],["glavpost.com",4],["enovosty.com",4],["bagnet.org",4],["versii.if.ua",4],["comments.ua",[4,8,9]],["cbn.com.ua",4],["otvetnavse.com",4],["news.dks.com.ua",4],["golos.te.ua",4],["procherk.info",4],["cheline.com.ua",4],["4mama.ua",4],["ogo.ua",4],["rusjev.net",4],["fakty.ua",4],["fainaidea.com",4],["unn.com.ua",4],["kurs.com.ua",5],["www.i.ua",6],["freerutor.me",10]]);
+const argsList = [["a[data-stream][target=\"_blank\"]","data-clicks","2"]];
+const hostnamesMap = new Map([["plplayer.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -440,7 +413,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { abortCurrentScript(...argsList[i]); }
+    try { setAttr(...argsList[i]); }
     catch { }
 }
 

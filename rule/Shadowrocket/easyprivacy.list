@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511161712
+## ! Version: 202511221500
 ## ! Title: EasyPrivacy
-## ! Last modified: 16 Nov 2025 17:12 UTC
+## ! Last modified: 22 Nov 2025 15:00 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 9f52d7b7a6eef06f7e3829796f9a502aa7dd436f
+## ! Commit: ea6eaa011236c03a728f6d26eace6db244ef44fd
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -542,6 +542,7 @@ DOMAIN-SUFFIX,3rdspacetech.com, reject
 DOMAIN-SUFFIX,4jnzhl0d0.com, reject
 DOMAIN-SUFFIX,82o9v830.com, reject
 DOMAIN-SUFFIX,abilityscale.com, reject
+DOMAIN-SUFFIX,abilitytoucan.com, reject
 DOMAIN-SUFFIX,abjectattempt.com, reject
 DOMAIN-SUFFIX,aboardamusement.com, reject
 DOMAIN-SUFFIX,aboardlevel.com, reject
@@ -684,6 +685,7 @@ DOMAIN-SUFFIX,billowybead.com, reject
 DOMAIN-SUFFIX,billowybelief.com, reject
 DOMAIN-SUFFIX,billtable.com, reject
 DOMAIN-SUFFIX,binarycrest.com, reject
+DOMAIN-SUFFIX,binarykite.com, reject
 DOMAIN-SUFFIX,binspiredtees.com, reject
 DOMAIN-SUFFIX,birthdaybelief.com, reject
 DOMAIN-SUFFIX,blackbrake.com, reject
@@ -715,6 +717,7 @@ DOMAIN-SUFFIX,boomboomcloud.com, reject
 DOMAIN-SUFFIX,boostbehavior.com, reject
 DOMAIN-SUFFIX,boredcrown.com, reject
 DOMAIN-SUFFIX,boringberry.com, reject
+DOMAIN-SUFFIX,boringpirate.com, reject
 DOMAIN-SUFFIX,bouncyproperty.com, reject
 DOMAIN-SUFFIX,boundarybusiness.com, reject
 DOMAIN-SUFFIX,boundlessbrake.com, reject
@@ -890,6 +893,7 @@ DOMAIN-SUFFIX,copycarpenter.com, reject
 DOMAIN-SUFFIX,copyfranchise.com, reject
 DOMAIN-SUFFIX,copyrightaccesscontrols.com, reject
 DOMAIN-SUFFIX,copyvibes.com, reject
+DOMAIN-SUFFIX,coralcranes.com, reject
 DOMAIN-SUFFIX,coralreverie.com, reject
 DOMAIN-SUFFIX,corgibeachday.com, reject
 DOMAIN-SUFFIX,cornershirts.com, reject
@@ -1039,6 +1043,7 @@ DOMAIN-SUFFIX,effervescentcoral.com, reject
 DOMAIN-SUFFIX,effervescentvista.com, reject
 DOMAIN-SUFFIX,effulgentnook.com, reject
 DOMAIN-SUFFIX,effulgenttempest.com, reject
+DOMAIN-SUFFIX,eightgreens.com, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
 DOMAIN-SUFFIX,elderlybean.com, reject
 DOMAIN-SUFFIX,elderlytown.com, reject
@@ -1154,6 +1159,7 @@ DOMAIN-SUFFIX,fleetbegin.com, reject
 DOMAIN-SUFFIX,flimsycircle.com, reject
 DOMAIN-SUFFIX,flimsythought.com, reject
 DOMAIN-SUFFIX,flippedfunnel.com, reject
+DOMAIN-SUFFIX,floodedpixel.com, reject
 DOMAIN-SUFFIX,floodprincipal.com, reject
 DOMAIN-SUFFIX,flourishingcollaboration.com, reject
 DOMAIN-SUFFIX,flourishingendeavor.com, reject
@@ -1169,6 +1175,7 @@ DOMAIN-SUFFIX,flushingbeast.com, reject
 DOMAIN-SUFFIX,flutteringfireman.com, reject
 DOMAIN-SUFFIX,foambench.com, reject
 DOMAIN-SUFFIX,followborder.com, reject
+DOMAIN-SUFFIX,fontserif.com, reject
 DOMAIN-SUFFIX,foodczar.com, reject
 DOMAIN-SUFFIX,foodfunfestivals.com, reject
 DOMAIN-SUFFIX,forecasttiger.com, reject
@@ -1331,6 +1338,7 @@ DOMAIN-SUFFIX,hocgeese.com, reject
 DOMAIN-SUFFIX,hollowafterthought.com, reject
 DOMAIN-SUFFIX,homebizplaza.com, reject
 DOMAIN-SUFFIX,homelycrown.com, reject
+DOMAIN-SUFFIX,homelyheater.com, reject
 DOMAIN-SUFFIX,homeslick.com, reject
 DOMAIN-SUFFIX,honestharbor.com, reject
 DOMAIN-SUFFIX,honeybulb.com, reject
@@ -1526,6 +1534,7 @@ DOMAIN-SUFFIX,materialmilk.com, reject
 DOMAIN-SUFFIX,materialparcel.com, reject
 DOMAIN-SUFFIX,materialplayground.com, reject
 DOMAIN-SUFFIX,maxcruisers.com, reject
+DOMAIN-SUFFIX,maybetony.com, reject
 DOMAIN-SUFFIX,meadowlullaby.com, reject
 DOMAIN-SUFFIX,measlymiddle.com, reject
 DOMAIN-SUFFIX,meatydime.com, reject
@@ -1642,6 +1651,7 @@ DOMAIN-SUFFIX,oafishchance.com, reject
 DOMAIN-SUFFIX,oafishobservation.com, reject
 DOMAIN-SUFFIX,objecthero.com, reject
 DOMAIN-SUFFIX,objectsnetwork.com, reject
+DOMAIN-SUFFIX,oblivionfleet.com, reject
 DOMAIN-SUFFIX,obscenesidewalk.com, reject
 DOMAIN-SUFFIX,octaneblood.com, reject
 DOMAIN-SUFFIX,offerniche.com, reject
@@ -1799,6 +1809,7 @@ DOMAIN-SUFFIX,quantumlagoon.com, reject
 DOMAIN-SUFFIX,quantumshine.com, reject
 DOMAIN-SUFFIX,queenjam.com, reject
 DOMAIN-SUFFIX,queenskart.com, reject
+DOMAIN-SUFFIX,questionate.com, reject
 DOMAIN-SUFFIX,quicklyedit.com, reject
 DOMAIN-SUFFIX,quicksandear.com, reject
 DOMAIN-SUFFIX,quietknowledge.com, reject
@@ -2748,6 +2759,7 @@ DOMAIN-SUFFIX,browser-intake-datadoghq.com, reject
 DOMAIN-SUFFIX,browser.covatic.io, reject
 DOMAIN-SUFFIX,browser.pipe.aria.microsoft.com, reject
 DOMAIN-SUFFIX,bs.yandex.ru, reject
+DOMAIN-SUFFIX,buffet.identityservices.io, reject
 DOMAIN-SUFFIX,bundle.9gtb.com, reject
 DOMAIN-SUFFIX,bundle.dyn-rev.app, reject
 DOMAIN-SUFFIX,bundle.ppas.monster, reject
@@ -2763,6 +2775,7 @@ DOMAIN-SUFFIX,cache2.delvenetworks.com, reject
 DOMAIN-SUFFIX,calltrack.co, reject
 DOMAIN-SUFFIX,calvera-telemetry.polaris.me, reject
 DOMAIN-SUFFIX,camel.headfarming.com, reject
+DOMAIN-SUFFIX,campaign.fbot.me, reject
 DOMAIN-SUFFIX,capture-api.ap3prod.com, reject
 DOMAIN-SUFFIX,capture.condenastdigital.com, reject
 DOMAIN-SUFFIX,caspionlog.appspot.com, reject
@@ -3476,6 +3489,7 @@ DOMAIN-SUFFIX,statsig.anthropic.com, reject
 DOMAIN-SUFFIX,statsjs.klevu.com, reject
 DOMAIN-SUFFIX,statt-collect.herokuapp.com, reject
 DOMAIN-SUFFIX,stg-data-collector.playbuzz.com, reject
+DOMAIN-SUFFIX,stormgate.production.raptive.com, reject
 DOMAIN-SUFFIX,stream-log.dditscdn.com, reject
 DOMAIN-SUFFIX,streams.cablecar.sph.com.sg, reject
 DOMAIN-SUFFIX,sts.eccmp.com, reject
@@ -4637,6 +4651,7 @@ DOMAIN-SUFFIX,analytics.mouthshut.com, reject
 DOMAIN-SUFFIX,analytics.nike.com, reject
 DOMAIN-SUFFIX,analytics.ovh.com, reject
 DOMAIN-SUFFIX,analytics.oyorooms.com, reject
+DOMAIN-SUFFIX,analytics.passes.com, reject
 DOMAIN-SUFFIX,analytics.pgncs.notion.so, reject
 DOMAIN-SUFFIX,analytics.plex.tv, reject
 DOMAIN-SUFFIX,analytics.productreview.com.au, reject
@@ -4777,6 +4792,7 @@ DOMAIN-SUFFIX,dc.banggood.com, reject
 DOMAIN-SUFFIX,dd.auspost.com.au, reject
 DOMAIN-SUFFIX,dd.g2.com, reject
 DOMAIN-SUFFIX,dd.nytimes.com, reject
+DOMAIN-SUFFIX,dd.viator.com, reject
 DOMAIN-SUFFIX,ddome-tag.blablacar.com, reject
 DOMAIN-SUFFIX,discover-metrics.cloud.seek.com.au, reject
 DOMAIN-SUFFIX,dls-account.di.atlas.samsung.com, reject

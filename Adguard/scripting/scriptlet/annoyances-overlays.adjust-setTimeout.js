@@ -251,8 +251,8 @@ function safeSelf() {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["count"],["viewClickAttributeId"]];
-const hostnamesMap = new Map([["appimagehub.com",0],["gnome-look.org",0],["store.kde.org",0],["linux-apps.com",0],["opendesktop.org",0],["pling.com",0],["xfce-look.org",0],["bbc.com",1]]);
+const argsList = [["t-1","1000","0.001"],["count"],["viewClickAttributeId"]];
+const hostnamesMap = new Map([["duneawakening.th.gl",0],["paxdei.th.gl",0],["appimagehub.com",1],["gnome-look.org",1],["store.kde.org",1],["linux-apps.com",1],["opendesktop.org",1],["pling.com",1],["xfce-look.org",1],["bbc.com",2]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

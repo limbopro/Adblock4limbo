@@ -442,8 +442,8 @@ function urlSkip(url, blocked, steps, directive = {}) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/click\"]","?url"],["a[href*=\"&cpdir\"]","?cpdir"],["a[href*=\"/idg.digidip.net/\"]","?url"]];
-const hostnamesMap = new Map([["aftonbladet.se",0],["godare.se",0],["byggahus.se",0],["expressen.se",[0,2]],["elle.se",[0,1,2]],["femina.se",[0,1]],["svenskdam.se",[0,1]],["galamagasin.se",0],["rodeo.net",0],["familjeliv.se",0],["vitaestilo.se",0],["golflivet.se",0],["inredningsvis.se",0],["allas.se",1],["hant.se",1],["mabra.com",1],["residencemagazine.se",1],["motherhood.se",1],["leta.se",3],["m3.se",4],["pcforalla.se",4],["macworld.se",4]]);
+const argsList = [["a[href*=\"/t?a=\"]","?url"],["a[href*=\".io/c/\"]","?u"],["a[href*=\"/click\"]","?url"],["a[href*=\"&amp;u\"]","?amp;u"],["a[href*=\"&ued=\"]","?ued"],["a[href*=\".sjv.io\"]","?u"],["a[href*=\"&cpdir\"]","?cpdir"],["a[href*=\"/idg.digidip.net/\"]","?url"]];
+const hostnamesMap = new Map([["aftonbladet.se",0],["godare.se",0],["byggahus.se",0],["expressen.se",[0,2,3,4,5]],["elle.se",[0,1,2]],["femina.se",[0,1]],["svenskdam.se",[0,1]],["galamagasin.se",0],["rodeo.net",0],["familjeliv.se",0],["vitaestilo.se",0],["golflivet.se",0],["inredningsvis.se",0],["allas.se",1],["hant.se",1],["mabra.com",1],["residencemagazine.se",1],["motherhood.se",1],["leta.se",6],["m3.se",7],["pcforalla.se",7],["macworld.se",7]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

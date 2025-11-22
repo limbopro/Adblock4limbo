@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 14 Nov 2025 13:42:01 GMT
-# entries:        3480
+# last updated:   Sun, 16 Nov 2025 20:29:58 GMT
+# entries:        3476
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -419,7 +419,6 @@ DOMAIN-SUFFIX,ads.epltalk.com, reject
 DOMAIN-SUFFIX,ads.eu.msn.com, reject
 DOMAIN-SUFFIX,ads.fairfax.com.au, reject
 DOMAIN-SUFFIX,ads.fastcomgroup.it, reject
-DOMAIN-SUFFIX,ads.fasttrack-ignite.com, reject
 DOMAIN-SUFFIX,ads.femmefab.nl, reject
 DOMAIN-SUFFIX,ads.ferianc.com, reject
 DOMAIN-SUFFIX,ads.filmup.com, reject
@@ -452,6 +451,7 @@ DOMAIN-SUFFIX,ads.hbv.de, reject
 DOMAIN-SUFFIX,ads.hearstmags.com, reject
 DOMAIN-SUFFIX,ads.heartlight.org, reject
 DOMAIN-SUFFIX,ads.hollywood.com, reject
+DOMAIN-SUFFIX,ads.horsehero.com, reject
 DOMAIN-SUFFIX,ads.hsoub.com, reject
 DOMAIN-SUFFIX,ads.ibest.com.br, reject
 DOMAIN-SUFFIX,ads.ibryte.com, reject
@@ -879,7 +879,6 @@ DOMAIN-SUFFIX,analytics.adpost.org, reject
 DOMAIN-SUFFIX,analytics.algoepico.net, reject
 DOMAIN-SUFFIX,analytics.bitrix.info, reject
 DOMAIN-SUFFIX,analytics.cloudron.io, reject
-DOMAIN-SUFFIX,analytics.emarketer.com, reject
 DOMAIN-SUFFIX,analytics.ext.go-tellm.com, reject
 DOMAIN-SUFFIX,analytics.google.com, reject
 DOMAIN-SUFFIX,analytics.htmedia.in, reject
@@ -1155,6 +1154,7 @@ DOMAIN-SUFFIX,bs.yandex.ru, reject
 DOMAIN-SUFFIX,btglss.net, reject
 DOMAIN-SUFFIX,btrll.com, reject
 DOMAIN-SUFFIX,bttrack.com, reject
+DOMAIN-SUFFIX,bubblyaction.com, reject
 DOMAIN-SUFFIX,buysellads.com, reject
 DOMAIN-SUFFIX,buzzonclick.com, reject
 DOMAIN-SUFFIX,bwp.download.com, reject
@@ -1253,7 +1253,6 @@ DOMAIN-SUFFIX,click.email.bbc.com, reject
 DOMAIN-SUFFIX,click.email.lhh.com, reject
 DOMAIN-SUFFIX,click.email.microsoftemail.com, reject
 DOMAIN-SUFFIX,click.email.sonos.com, reject
-DOMAIN-SUFFIX,click.email.strawberry.no, reject
 DOMAIN-SUFFIX,click.emails.argos.co.uk, reject
 DOMAIN-SUFFIX,click.emails.tuclothing.sainsburys.co.uk, reject
 DOMAIN-SUFFIX,click.fool.com, reject
@@ -1720,7 +1719,6 @@ DOMAIN-SUFFIX,gammamaximum.com, reject
 DOMAIN-SUFFIX,gaug.es, reject
 DOMAIN-SUFFIX,gavvia.com, reject
 DOMAIN-SUFFIX,gearwom.de, reject
-DOMAIN-SUFFIX,generateoffice.com, reject
 DOMAIN-SUFFIX,geo.digitalpoint.com, reject
 DOMAIN-SUFFIX,geobanner.adultfriendfinder.com, reject
 DOMAIN-SUFFIX,georiot.com, reject
@@ -2897,7 +2895,6 @@ DOMAIN-SUFFIX,snoobi.com, reject
 DOMAIN-SUFFIX,socialspark.com, reject
 DOMAIN-SUFFIX,softclick.com.br, reject
 DOMAIN-SUFFIX,soggysponge.com, reject
-DOMAIN-SUFFIX,soggyzoo.com, reject
 DOMAIN-SUFFIX,soicos.com, reject
 DOMAIN-SUFFIX,sombersea.com, reject
 DOMAIN-SUFFIX,sombersquirrel.com, reject
@@ -3208,7 +3205,6 @@ DOMAIN-SUFFIX,tracking.olx-st.com, reject
 DOMAIN-SUFFIX,tracking.orixa-media.com, reject
 DOMAIN-SUFFIX,tracking.shopstyle.com, reject
 DOMAIN-SUFFIX,tracking.thinkabt.com, reject
-DOMAIN-SUFFIX,tracking.utlservice.com, reject
 DOMAIN-SUFFIX,tracking.wetter.at, reject
 DOMAIN-SUFFIX,tracking01.walmart.com, reject
 DOMAIN-SUFFIX,tracking101.com, reject

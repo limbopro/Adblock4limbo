@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 14 Nov 2025 13:42:01 GMT
-# entries:        3480
+# last updated:   Sun, 16 Nov 2025 20:29:58 GMT
+# entries:        3476
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -419,7 +419,6 @@ DOMAIN-SUFFIX,ads.epltalk.com
 DOMAIN-SUFFIX,ads.eu.msn.com
 DOMAIN-SUFFIX,ads.fairfax.com.au
 DOMAIN-SUFFIX,ads.fastcomgroup.it
-DOMAIN-SUFFIX,ads.fasttrack-ignite.com
 DOMAIN-SUFFIX,ads.femmefab.nl
 DOMAIN-SUFFIX,ads.ferianc.com
 DOMAIN-SUFFIX,ads.filmup.com
@@ -452,6 +451,7 @@ DOMAIN-SUFFIX,ads.hbv.de
 DOMAIN-SUFFIX,ads.hearstmags.com
 DOMAIN-SUFFIX,ads.heartlight.org
 DOMAIN-SUFFIX,ads.hollywood.com
+DOMAIN-SUFFIX,ads.horsehero.com
 DOMAIN-SUFFIX,ads.hsoub.com
 DOMAIN-SUFFIX,ads.ibest.com.br
 DOMAIN-SUFFIX,ads.ibryte.com
@@ -879,7 +879,6 @@ DOMAIN-SUFFIX,analytics.adpost.org
 DOMAIN-SUFFIX,analytics.algoepico.net
 DOMAIN-SUFFIX,analytics.bitrix.info
 DOMAIN-SUFFIX,analytics.cloudron.io
-DOMAIN-SUFFIX,analytics.emarketer.com
 DOMAIN-SUFFIX,analytics.ext.go-tellm.com
 DOMAIN-SUFFIX,analytics.google.com
 DOMAIN-SUFFIX,analytics.htmedia.in
@@ -1155,6 +1154,7 @@ DOMAIN-SUFFIX,bs.yandex.ru
 DOMAIN-SUFFIX,btglss.net
 DOMAIN-SUFFIX,btrll.com
 DOMAIN-SUFFIX,bttrack.com
+DOMAIN-SUFFIX,bubblyaction.com
 DOMAIN-SUFFIX,buysellads.com
 DOMAIN-SUFFIX,buzzonclick.com
 DOMAIN-SUFFIX,bwp.download.com
@@ -1253,7 +1253,6 @@ DOMAIN-SUFFIX,click.email.bbc.com
 DOMAIN-SUFFIX,click.email.lhh.com
 DOMAIN-SUFFIX,click.email.microsoftemail.com
 DOMAIN-SUFFIX,click.email.sonos.com
-DOMAIN-SUFFIX,click.email.strawberry.no
 DOMAIN-SUFFIX,click.emails.argos.co.uk
 DOMAIN-SUFFIX,click.emails.tuclothing.sainsburys.co.uk
 DOMAIN-SUFFIX,click.fool.com
@@ -1720,7 +1719,6 @@ DOMAIN-SUFFIX,gammamaximum.com
 DOMAIN-SUFFIX,gaug.es
 DOMAIN-SUFFIX,gavvia.com
 DOMAIN-SUFFIX,gearwom.de
-DOMAIN-SUFFIX,generateoffice.com
 DOMAIN-SUFFIX,geo.digitalpoint.com
 DOMAIN-SUFFIX,geobanner.adultfriendfinder.com
 DOMAIN-SUFFIX,georiot.com
@@ -2897,7 +2895,6 @@ DOMAIN-SUFFIX,snoobi.com
 DOMAIN-SUFFIX,socialspark.com
 DOMAIN-SUFFIX,softclick.com.br
 DOMAIN-SUFFIX,soggysponge.com
-DOMAIN-SUFFIX,soggyzoo.com
 DOMAIN-SUFFIX,soicos.com
 DOMAIN-SUFFIX,sombersea.com
 DOMAIN-SUFFIX,sombersquirrel.com
@@ -3208,7 +3205,6 @@ DOMAIN-SUFFIX,tracking.olx-st.com
 DOMAIN-SUFFIX,tracking.orixa-media.com
 DOMAIN-SUFFIX,tracking.shopstyle.com
 DOMAIN-SUFFIX,tracking.thinkabt.com
-DOMAIN-SUFFIX,tracking.utlservice.com
 DOMAIN-SUFFIX,tracking.wetter.at
 DOMAIN-SUFFIX,tracking01.walmart.com
 DOMAIN-SUFFIX,tracking101.com

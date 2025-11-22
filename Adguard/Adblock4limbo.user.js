@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.11.17
+// @version      0.2025.11.22
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -14,32 +14,29 @@
  * 联系博主：https://t.me/limboprobot
  * 电报群组：https://t.me/Adblock4limbo
  * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
- * Github：https://github.com/limbopro/Adblock4limbo
+ * 提交 issue：https://github.com/limbopro/Adblock4limbo/issues 有问题 欢迎提 对于能提出好的建议或意见的用户，我们热烈欢迎，赞赏；
+ * 查看 Adblock4limbo.user.js 内容：https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js
+ * 安装 Adblock4limbo.user.js 脚本：https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.user.js
  * ---------------------------
  */
 
-/* 新增反馈&导航按钮&成人保护模式&页面锁（见页面右下角）
+/* 使用技巧最后更新于 11.17.2025；
+/* 新增反馈&导航按钮&划词搜索&执行JS&成人保护模式
+/* 移除特定网站目录（详见 https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js @match 部分）广告/弹窗/并新增额外特性（提取视频mp4&m3u8地址/在线下载/快进快退10s 1m 10m...）
 
 // **【导航】使用指南（PC/Mac）**
 /// 按教程安装好油猴脚本
-/// 访问任意网站（绝大多数网站）
-/// 1.1 当页面右下角【导航按钮】消失后，1秒内连续按2次 ESC键 可唤出【导航页面】；
-/// 1.2 当页面右下角出现【导航按钮】时，此时只需再按一次 ESC键 可唤出【导航页面】；
-/// 1.3 当处于导航页面时，按ESC键 或1秒内点击2次导航页的空白处 可退出【导航页面】；
-/// 1.4 当处于导航页面时，按G键 或 空格键 可快速唤出【搜索框】，可快速进行搜索操作（同时会退出导航页面）；
-/// 1.5 当处于导航页面时，按C键 可快速唤出【网页聊天】框，可快速提建议或反馈问题；
-/// 1.6 快速 【按3次ESC键】 可**快速开启页面锁🔒**（需设置锁屏密码🔑/仅对当前访问网站生效/如忘记密码可清除浏览器cookie）
+/// 访问特定网站（详见 Adblock4limbo.user.js @match 部分）
+/// 1.1 1秒内连续按2次 ESC键 可唤出【导航页面】；
+/// 1.2 当处于导航页面时，按ESC键 或1秒内点击2次导航页的空白处 可退出【导航页面】；
 
 // **【导航】使用指南（iOS）**
 /// 按教程配置好相应重写/去广告分流
 /// 访问【目前在维护的网站目录】里的（绝大多数）网站
-/// 1.1 ～～当页面右下角导航按钮消失后，点击页面右侧1/3空白处即可唤出【导航按钮】；～～
-/// 1.2 当页面右下角出现导航按钮时，点击按钮即可唤出【导航页面】；
-/// 1.3 页面空白处1秒内连续点击4次及以上亦可唤出【导航页面】；
-/// 1.4 上下滑动页面亦可唤出【导航按钮】；
+/// 1.1 页面空白处1秒内连续点击4次及以上亦可唤出【导航页面】；
 
 // **【导航】使用指南（PC/Mac/iOS）**
-/// **成人保护模式**
+/// **成人保护模式**[开启的情况下，见导航详情页左上角设置部分]
 /// 仅针对部分主要成人网站生效
 /// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
 /// 可在 导航 - **反馈/建议/功能设置//** 开启或关闭成人保护模式(ON/OFF)；
@@ -61,6 +58,11 @@
 /// ! 隐藏页面右下角导航🧭按钮🔘不影响PC/Mac端快捷键使用，移动端仍可1秒内连续点击页面空白处4次及以上唤出【导航页面】；
 
 */
+
+// 为避免不必要的麻烦，Adblock4limbo.user.js 只匹配以下网站；如需在所有网站应用本脚本及其自带“导航功能”，请在下方自行添加 // @match https://*/*
+// 或直接安装 https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.function.user.js （Adblock4limbo——导航及各类功能函数合集.[github]）
+// 博主建议安装 Adblock4limbo.function.user.js
+// 不要在下方 // @match https://*/*
 
 // @match        https://m.baidu.com/*
 // @match        https://www.baidu.com/*
@@ -376,7 +378,7 @@ var imax = {
         manhuapicanone: "li[class*=lindex],.row.alert,.my-insert-flag,[role=alert],img[src*=gif] {display:none !important; pointer-events: none !important;} ", // 嗶咔picacg免費網頁版
         manhuapicaheight: "/*li[class*=lindex],*/.row.alert,.my-insert-flag,[role=alert],img[src*=gif] {height:0px !important} ", // 嗶咔picacg免費網頁版
         dmm: "",
-        missav: "a[href^='https://theporndude.com'],a[href*='mycomic'],a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank], a[href*='/vip'],img[src*='.gif'], iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"] {display:none !important; pointer-events:none important;} body{overflow-x:hidden;}", //  MissAV
+        missav: "@media (min-width:640px){.sm\\:hidden{margin:6px 0 0;padding:0;display:flex !important}}a[href^='https://theporndude.com'],a[href*='mycomic'],a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank],a[href*='/vip'],img[src*='.gif'],iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"]{display:none !important;pointer-events:none !important}body{overflow-x:hidden}", //  MissAV
         bigirl: 'div#container + div, h4.adblock_title,div.adblock_subtitle,[class^=\'adblock\'],div[class^=\'ad_\'], .toppage_av {display:none !important; pointer-events: none !important;}', // https://bi-girl.net/
         opgg: ".AdSense,  div[data-ad], tr.ad, #banner-container, section[class*='md:hidden'] {display:none !important; pointer-events: none !important;}",
         btc760: ".ad_img,.ad_img,#ad_headerbanner {display:none !important; pointer-events: none !important;}", // btc760
@@ -385,7 +387,7 @@ var imax = {
         porna91: ".modal-backdrop.in,.dx-banner-item,.ad-dialog,a.checkNum[target='_blank']:not([href*='91porna.com']),li.flex.mr-6,div.text-mini.mb-3,a[href*='cloudfront'], div.filters, div.filters > div#videobox, div.row > div.col.col-24 { min-height: 0px !important; display:none !important;pointer-events:none important;}", // 91porna
         porn91: ".copysuccess {background:green !important;color:white !important;} br, .ad_img,.preroll-blocker, img[href*='.gif'] {display:none !important; pointer-events: none !important;}", // 91porn
         zhihuAds: "div.css-1izy64v,[class='Card AppBanner'],.Footer,.Banner-link,div.Pc-word {display:none !important; pointer-events: none !important;}",
-        pornhubx: ".topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
+        pornhubx: ".clearfix.watchpageAd,ins.adsbytrafficjunky,ins.adsbytrafficjunky~.tjLinksWrapper{display:none!important}  div.y20lkk9odsf6bxapqkvaa.clearfix > ins.adsbytrafficjunky[data-spot-id=\"981\"][data-site-id=\"23\"][data-height=\"99px\"][data-width=\"305px\"],.topAdContainter, a[href*='ads'], div.adContainer.clearfix.noBottom, .adContainer.clearfix.middleVideoAdContainer, div.adContainer.clearfix.noBottom, a[href*='fuck'][target='_blank'], [data-href][target='_blank'],iframe, a.ad#link, #header.hasAdAlert {grid-template-rows:60px 40px 0px !important} div.hd.clear, div > img[data-title][srcset], #js-networkBar,div#abAlert, .adsbytrafficjunky, #pb_template, .sponsor-text, #adsbox, .abAlertShown, .abAlertInner, #main-container > .abovePlayer, [rel*='noopener nofollow'],a[href^=\"http://ads.trafficjunky.net/\"], .topAdContainter,.adsbytrafficjunky,.ad-link  {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         t66y: "div.tips[style*='auto'],div[class*=ftad-item] {height:0px !important; display:none !important; pointer-events:none;}", // pornhub
         instagram: "div._aagw {display:none !important}", // 网页版Instagram不能复制图片的问题
         ttsp: "div#playad1,a[href*=\"8616.tech\"],.play_list_adbox,#adsbox,.ads_all > .ads_w,.ads_box,.right_ads {display:none !important}",
@@ -539,34 +541,50 @@ function values() {
 function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
-            pornhub_interstitialPass();
-            //tag_adsRemove("script", "ads_batch");
-            const custom_style_values_pb = "right: 0px !important; padding: 0 !important; position: relative !important;"
-            css_adsRemove(imax.css.pornhubx, 500, "pornhubX");
 
-            setTimeout(() => {
-                let ads_selector = [".topAdContainter", "a[href*='ads']", "a[href*='fuck']", "a[href*='ad']", "div.adContainer.clearfix.noBottom", ".adContainer.clearfix.middleVideoAdContainer"];
-                let ads = setInterval(() => {
-                    ads_selector.forEach((x) => { selector_one_by_one(x) })
-                    console.log("清理还在继续..." + x)
-                    if (document.querySelectorAll(ads_selector).length == 0) {
-                        clearInterval(ads)
-                        console.log("清理计时器，ads移除完毕...")
+            window.addEventListener('load', function () {
+
+                pornhub_interstitialPass();
+                //tag_adsRemove("script", "ads_batch");
+                const custom_style_values_pb = "right: 0px !important; padding: 0 !important; position: relative !important;"
+                css_adsRemove(imax.css.pornhubx, 500, "pornhubX");
+
+                // 页面加载完成后执行
+                // 精准选中所有 TJ 广告容器
+                document.querySelectorAll('ins.adsbytrafficjunky').forEach(ins => {
+                    // 移除整个外层 div（包含随机 class 的那个）
+                    const container = /*ins.closest('div.clearfix') ||*/ ins.parentElement;
+                    if (container) container.remove();
+                });
+
+
+                setTimeout(() => {
+                    let ads_selector = [".topAdContainter", "a[href*='ads']", "a[href*='fuck']", "a[href*='ad']", "div.adContainer.clearfix.noBottom", ".adContainer.clearfix.middleVideoAdContainer"];
+                    let ads = setInterval(() => {
+                        ads_selector.forEach((x) => { selector_one_by_one(x) })
+                        console.log("清理还在继续..." + x)
+                        if (document.querySelectorAll(ads_selector).length == 0) {
+                            clearInterval(ads)
+                            console.log("清理计时器，ads移除完毕...")
+                        }
+                    }, 1000)
+                }, 100)
+
+                let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
+                setTimeout(() => {
+
+                    if (document.getElementById('download_pornhub') == null) {
+                        ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
+                        if (document.getElementById("download_pornhub")) {
+                            document.getElementById("download_pornhub").style = "display: inline !important;";
+                            document.getElementById("download_pornhub").target = "_blank !important;";
+                        }
                     }
-                }, 1000)
-            }, 100)
-
-            let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-            setTimeout(() => {
-                ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
-                if (document.getElementById("download_pornhub")) {
-                    document.getElementById("download_pornhub").style = "display: inline !important;";
-                    document.getElementById("download_pornhub").target = "_blank !important;";
-                }
-            }, 3000)
+                }, 3000)
 
 
-            pornhub_sidebar_ads();
+                pornhub_sidebar_ads();
+            });
             break;
 
         case 't66y':
@@ -958,7 +976,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
       justify-content: center;
       gap: 2px;
       padding: 10px 0px 10px 0px;
-      background: var(--indigo);
+      /*background: var(--indigo);*/
       border-radius: 0px 0px 0px 0px;
       box-shadow: 0px 8px 14px var(--indigo)
       backdrop-filter: blur(14px);
@@ -971,15 +989,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     }
 
     .jable-skip-btn {
-      padding: 2px 0px;
-      font-size: 14.5px;
-      font-weight: bold;
+      /*padding: 2px 0px;*/
+      font-size: 12.5px;
+      font-weight: inherit;
       color: #fff;
-      border: 2px solid;
-      border-radius: 10px;
+      border: 1px solid;
+      border-radius: 4px;
       cursor: pointer;
       transition: all 0.22s ease;
-      min-width: 56px;
+      max-width: 65px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       flex: 0 0 auto;
@@ -1011,7 +1029,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     }
 
     .jable-skip-btn:active {
-      transform: translateY(0) scale(1.02);
+      /*transform: translateY(0) scale(1.02);*/
     }
   `;
                     document.head.appendChild(style);
@@ -1021,12 +1039,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     panel.id = 'jable-skip-panel';
 
                     const actions = [
-                        { sec: -600, label: '<<10m', key: 'PageDown', class: 'backward' },
-                        { sec: -60, label: '<1m', key: 'ArrowDown', class: 'backward' },
-                        { sec: -15, label: '<15s', key: 'ArrowLeft', class: 'backward' },
-                        { sec: 15, label: '15s>', key: 'ArrowRight', class: 'forward' },
-                        { sec: 60, label: '1m>', key: 'ArrowUp', class: 'forward' },
-                        { sec: 600, label: '10m>>', key: 'PageUp', class: 'forward' },
+                        { sec: -600, label: '<< 10m', key: 'PageDown', class: 'backward' },
+                        { sec: -60, label: '< 1m', key: 'ArrowDown', class: 'backward' },
+                        { sec: -15, label: '< 15s', key: 'ArrowLeft', class: 'backward' },
+                        { sec: 15, label: '15s >', key: 'ArrowRight', class: 'forward' },
+                        { sec: 60, label: '1m >', key: 'ArrowUp', class: 'forward' },
+                        { sec: 600, label: '10m >>', key: 'PageUp', class: 'forward' },
                     ];
 
                     actions.forEach(act => {
@@ -1061,7 +1079,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             }
 
                             const orig = btn.dataset.origText;
-                            btn.textContent = '✓';
+                            /*btn.textContent = '✓';*/
 
                             // 设置新的恢复定时器
                             btn._restoreTimer = setTimeout(() => {
@@ -2386,7 +2404,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 // 方法 1：使用 <style> 标签（推荐，兼容性好）
                 const styleSheet = document.createElement('style');
                 styleSheet.textContent = css;
-                document.head.appendChild(styleSheet);
+                //document.head.appendChild(styleSheet);
 
                 window.onload = function () {
                     if (document.location.href.search('search') !== -1) {

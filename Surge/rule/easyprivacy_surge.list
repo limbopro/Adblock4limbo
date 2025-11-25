@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511221500
+## ! Version: 202511250703
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Nov 2025 15:00 UTC
+## ! Last modified: 25 Nov 2025 07:03 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: ea6eaa011236c03a728f6d26eace6db244ef44fd
+## ! Commit: 01e496901df21a6b6efd2ae267a326c6853ab74d
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -184,6 +184,7 @@ DOMAIN-SUFFIX,funnelserv.systems
 DOMAIN-SUFFIX,fzlnk.com
 DOMAIN-SUFFIX,g10102301085.co
 DOMAIN-SUFFIX,g10300385420.co
+DOMAIN-SUFFIX,g10498469755.co
 DOMAIN-SUFFIX,g11686975765.co
 DOMAIN-SUFFIX,g1188506010.co
 DOMAIN-SUFFIX,g11885060100.co
@@ -191,11 +192,13 @@ DOMAIN-SUFFIX,g12083144435.co
 DOMAIN-SUFFIX,g12281228770.co
 DOMAIN-SUFFIX,g1386590346.co
 DOMAIN-SUFFIX,g1584674682.co
+DOMAIN-SUFFIX,g1584674683.co
 DOMAIN-SUFFIX,g1584674684.co
 DOMAIN-SUFFIX,g1782759015.co
 DOMAIN-SUFFIX,g1782759016.co
 DOMAIN-SUFFIX,g1980843350.co
 DOMAIN-SUFFIX,g2575096355.co
+DOMAIN-SUFFIX,g594253006.co
 DOMAIN-SUFFIX,g792337340.co
 DOMAIN-SUFFIX,g792337342.co
 DOMAIN-SUFFIX,g792337343.co
@@ -205,6 +208,7 @@ DOMAIN-SUFFIX,g9111879410.co
 DOMAIN-SUFFIX,g9508048080.co
 DOMAIN-SUFFIX,g9706132415.co
 DOMAIN-SUFFIX,g990421675.co
+DOMAIN-SUFFIX,g9904216750.co
 DOMAIN-SUFFIX,g990421676.co
 DOMAIN-SUFFIX,gbqofs.com
 DOMAIN-SUFFIX,gcprivacy.com
@@ -572,6 +576,7 @@ DOMAIN-SUFFIX,admissionaudit.com
 DOMAIN-SUFFIX,adorableanger.com
 DOMAIN-SUFFIX,adorableattention.com
 DOMAIN-SUFFIX,adventurousamount.com
+DOMAIN-SUFFIX,aerialapps.com
 DOMAIN-SUFFIX,afraidlanguage.com
 DOMAIN-SUFFIX,agileformer.com
 DOMAIN-SUFFIX,agonyshark.com
@@ -587,6 +592,7 @@ DOMAIN-SUFFIX,aliveachiever.com
 DOMAIN-SUFFIX,alloutdubstep.com
 DOMAIN-SUFFIX,alltypo.com
 DOMAIN-SUFFIX,alluringbucket.com
+DOMAIN-SUFFIX,almondbuns.com
 DOMAIN-SUFFIX,almostsugar.com
 DOMAIN-SUFFIX,alohamiles.com
 DOMAIN-SUFFIX,aloofmetal.com
@@ -1224,6 +1230,7 @@ DOMAIN-SUFFIX,gatejunction.com
 DOMAIN-SUFFIX,gaudyairplane.com
 DOMAIN-SUFFIX,gearbubbles.com
 DOMAIN-SUFFIX,geekbackyard.com
+DOMAIN-SUFFIX,gemorganic.com
 DOMAIN-SUFFIX,generalprose.com
 DOMAIN-SUFFIX,generateoffice.com
 DOMAIN-SUFFIX,getbendyyoga.com
@@ -1672,6 +1679,7 @@ DOMAIN-SUFFIX,optionsnomad.com
 DOMAIN-SUFFIX,opulentsylvan.com
 DOMAIN-SUFFIX,orangebirdie.com
 DOMAIN-SUFFIX,orientedargument.com
+DOMAIN-SUFFIX,originblocks.com
 DOMAIN-SUFFIX,orionember.com
 DOMAIN-SUFFIX,ourblogthing.com
 DOMAIN-SUFFIX,outdoorsoil.com
@@ -2023,6 +2031,7 @@ DOMAIN-SUFFIX,shiverscissors.com
 DOMAIN-SUFFIX,shockinggrass.com
 DOMAIN-SUFFIX,shockingship.com
 DOMAIN-SUFFIX,showsteel.com
+DOMAIN-SUFFIX,shredform.com
 DOMAIN-SUFFIX,shredquiz.com
 DOMAIN-SUFFIX,shrewsburyshow.com
 DOMAIN-SUFFIX,shrillspoon.com
@@ -2698,6 +2707,7 @@ DOMAIN-SUFFIX,analytics.yyggames.com
 DOMAIN-SUFFIX,analytics.ziftsolutions.com
 DOMAIN-SUFFIX,analytics1.vdo.ai
 DOMAIN-SUFFIX,analyticsehnwe.servicebus.windows.net
+DOMAIN-SUFFIX,analyticsplusdev.clientify.net
 DOMAIN-SUFFIX,analyticssec.overwolf.com
 DOMAIN-SUFFIX,ao-freegeoip.herokuapp.com
 DOMAIN-SUFFIX,ape-tagit.timeinc.net
@@ -3546,6 +3556,7 @@ DOMAIN-SUFFIX,tag.brandcdn.com
 DOMAIN-SUFFIX,tag.digops.sincro.io
 DOMAIN-SUFFIX,tag.elevaate.io
 DOMAIN-SUFFIX,tag.flagship.io
+DOMAIN-SUFFIX,tag.getamigo.io
 DOMAIN-SUFFIX,tag.imagino.com
 DOMAIN-SUFFIX,tag.lexer.io
 DOMAIN-SUFFIX,tag.mtrcs.samba.tv
@@ -5333,6 +5344,7 @@ DOMAIN-SUFFIX,wa.sugarandjade.com
 DOMAIN-SUFFIX,wal.wolfram.com
 DOMAIN-SUFFIX,wapn1.flosports.tv
 DOMAIN-SUFFIX,web-perf.booking.com
+DOMAIN-SUFFIX,web.analytics.metrobyt-mobile.com
 DOMAIN-SUFFIX,webapi.3cx.com
 DOMAIN-SUFFIX,weblog.flyasiana.com
 DOMAIN-SUFFIX,wh.ipaddress.com

@@ -1,68 +1,10 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.11.22
+// @version      0.2025.11.25
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
-
-/**
- * ---------------------------
- * 毒奶去网页广告计划
- * Author: limbopro
- * 使用教程：https://limbopro.com/archives/12904.html
- * 联系博主：https://t.me/limboprobot
- * 电报群组：https://t.me/Adblock4limbo
- * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
- * 提交 issue：https://github.com/limbopro/Adblock4limbo/issues 有问题 欢迎提 对于能提出好的建议或意见的用户，我们热烈欢迎，赞赏；
- * 查看 Adblock4limbo.user.js 内容：https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js
- * 安装 Adblock4limbo.user.js 脚本：https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.user.js
- * ---------------------------
- */
-
-/* 使用技巧最后更新于 11.17.2025；
-/* 新增反馈&导航按钮&划词搜索&执行JS&成人保护模式
-/* 移除特定网站目录（详见 https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js @match 部分）广告/弹窗/并新增额外特性（提取视频mp4&m3u8地址/在线下载/快进快退10s 1m 10m...）
-
-// **【导航】使用指南（PC/Mac）**
-/// 按教程安装好油猴脚本
-/// 访问特定网站（详见 Adblock4limbo.user.js @match 部分）
-/// 1.1 1秒内连续按2次 ESC键 可唤出【导航页面】；
-/// 1.2 当处于导航页面时，按ESC键 或1秒内点击2次导航页的空白处 可退出【导航页面】；
-
-// **【导航】使用指南（iOS）**
-/// 按教程配置好相应重写/去广告分流
-/// 访问【目前在维护的网站目录】里的（绝大多数）网站
-/// 1.1 页面空白处1秒内连续点击4次及以上亦可唤出【导航页面】；
-
-// **【导航】使用指南（PC/Mac/iOS）**
-/// **成人保护模式**[开启的情况下，见导航详情页左上角设置部分]
-/// 仅针对部分主要成人网站生效
-/// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
-/// 可在 导航 - **反馈/建议/功能设置//** 开启或关闭成人保护模式(ON/OFF)；
-
-// **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式（iOS）】**
-/// iOS QX/Stash/Surge/等用户
-/// 1.添加主机名， **limbopro.com**
-/// 2.添加重写， **匹配的url** 填写正则表达式 **Adblock4limbo.user.js** ，类型选择 **response-body/http-response**
-/// 3.**匹配的body**处 填写正则表达式 **daohangMode|adultMode** ，**替换**处 填写 **off**
-/// 4.daohangMode 代表导航，adultMode 代表成人保护模式，你可以都关闭或只关闭其一
-
-// **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式/使导航功能失效（PC/Mac）】**
-/// PC/Mac 油猴用户...
-/// 进入 Tampermonkey 管理面板 - 找到 **Adblock4limbo.[github]**
-/// 找到 daohang_build()  大概在 210 多行
-/// 然后将 daohangMode/adultMode 的值修改成 false 即可
-/// 或直接注释掉 daohang_build() 即可（注释后将无法快捷唤起导航详情页，导航功能失效）
-
-/// ! 隐藏页面右下角导航🧭按钮🔘不影响PC/Mac端快捷键使用，移动端仍可1秒内连续点击页面空白处4次及以上唤出【导航页面】；
-
-*/
-
-// 为避免不必要的麻烦，Adblock4limbo.user.js 只匹配以下网站；如需在所有网站应用本脚本及其自带“导航功能”，请在下方自行添加 // @match https://*/*
-// 或直接安装 https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.function.user.js （Adblock4limbo——导航及各类功能函数合集.[github]）
-// 博主建议安装 Adblock4limbo.function.user.js
-// 不要在下方 // @match https://*/*
 
 // @match        https://m.baidu.com/*
 // @match        https://www.baidu.com/*
@@ -235,6 +177,67 @@
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
+
+
+// 为避免不必要的麻烦，Adblock4limbo.user.js 只匹配以上 @match 部分网站；
+// 🤔如需在所有网站应用本脚本及其自带“导航功能”，
+// ✅建议直接安装导航功能脚本 https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.function.user.js （Adblock4limbo——导航及各类功能函数合集.[github]）
+// 🙅不要在上方 // @match https://*/*
+
+/**
+ * ---------------------------
+ * 毒奶去网页广告计划
+ * Author: limbopro
+ * 使用教程：https://limbopro.com/archives/12904.html
+ * 联系博主：https://t.me/limboprobot
+ * 电报群组：https://t.me/Adblock4limbo
+ * FAQ：https://t.me/Adblock4limbo/21 常见问题与回答
+ * 提交 issue：https://github.com/limbopro/Adblock4limbo/issues 有问题 欢迎提 对于能提出好的建议或意见的用户，我们热烈欢迎，赞赏；
+ * 查看 Adblock4limbo.user.js 内容：https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js
+ * 安装 Adblock4limbo.user.js 脚本：https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.user.js
+ * ---------------------------
+ */
+
+/* 使用技巧最后更新于 11.25.2025；
+/* 新增反馈&导航按钮&划词搜索&执行JS&成人保护模式
+/* 移除特定网站目录（详见 https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js @match 部分）广告/弹窗/
+/* 并新增额外特性（提取视频mp4&m3u8地址/在线下载/快进快退10s 1m 10m...）
+
+// **【导航】使用指南（PC/Mac）**
+/// 按教程安装好油猴脚本
+/// 访问特定网站（详见 Adblock4limbo.user.js @match 部分）
+/// 1.1 1秒内连续按2次 ESC键 可唤出【导航页面】；
+/// 1.2 当处于导航页面时，按ESC键 或1秒内点击2次导航页的空白处 可退出【导航页面】；
+
+// **【导航】使用指南（iOS）**
+/// 按教程配置好相应重写/去广告分流
+/// 访问【目前在维护的网站目录】里的（绝大多数）网站
+/// 1.1 页面空白处1秒内连续点击4次及以上亦可唤出【导航页面】；
+
+// **【导航】使用指南（PC/Mac/iOS）**
+/// **成人保护模式**[开启的情况下，见导航详情页左上角设置部分]
+/// 仅针对部分主要成人网站生效
+/// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
+/// 可在 导航 - **反馈/建议/功能设置//** 开启或关闭成人保护模式(ON/OFF)；
+
+// **如何【全局禁用右下角导航功能以及成人保护模式（iOS）】**
+/// iOS QX/Stash/Surge/等用户
+/// 1.添加主机名， **limbopro.com**
+/// 3.全局禁用右下角导航功能以及成人保护模式：添加重写，匹配URL直接填写 Adblock4limbo.function.js ，类型选 reject，即可禁用导航及其附带feature；
+
+// **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式/使导航功能失效（PC/Mac）】**
+/// PC/Mac 油猴用户...
+/// 进入 Tampermonkey 管理面板 - 找到 **Adblock4limbo.[github]**
+/// 1.1找到 daohang_build()  大概在 210 多行
+/// 1.2然后将 daohangMode/adultMode 的值修改成 false 即可
+/// 1.3或直接注释掉 daohang_build() 即可（注释后将无法快捷唤起导航详情页，导航功能及其附带feature失效）
+
+// **如何卸载毒奶去广告计划**
+/// 删除相关引用即可；
+
+/// ! 隐藏页面右下角导航🧭按钮🔘不影响PC/Mac端快捷键使用，移动端仍可1秒内连续点击页面空白处4次及以上唤出【导航页面】；
+*/
+
 
 function checkDOMLoaded() {
     if (document.readyState === 'complete' || document.readyState === 'interactive') {

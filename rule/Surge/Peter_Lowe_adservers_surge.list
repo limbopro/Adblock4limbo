@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 16 Nov 2025 20:29:58 GMT
-# entries:        3476
+# last updated:   Mon, 24 Nov 2025 13:43:39 GMT
+# entries:        3478
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1668,6 +1668,7 @@ DOMAIN-SUFFIX,floweryflavor.com
 DOMAIN-SUFFIX,flowgo.com
 DOMAIN-SUFFIX,flurry.com
 DOMAIN-SUFFIX,fly-analytics.com
+DOMAIN-SUFFIX,fontserif.com
 DOMAIN-SUFFIX,foo.cosmocode.de
 DOMAIN-SUFFIX,foresee.com
 DOMAIN-SUFFIX,forex-affiliate.net
@@ -2841,6 +2842,7 @@ DOMAIN-SUFFIX,shiverscissors.com
 DOMAIN-SUFFIX,shockinggrass.com
 DOMAIN-SUFFIX,shoppingads.com
 DOMAIN-SUFFIX,showads.pubmatic.com
+DOMAIN-SUFFIX,shredform.com
 DOMAIN-SUFFIX,shrillspoon.com
 DOMAIN-SUFFIX,shxtrk.com
 DOMAIN-SUFFIX,sicksmash.com

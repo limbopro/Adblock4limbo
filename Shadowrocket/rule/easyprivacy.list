@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511221500
+## ! Version: 202511250703
 ## ! Title: EasyPrivacy
-## ! Last modified: 22 Nov 2025 15:00 UTC
+## ! Last modified: 25 Nov 2025 07:03 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: ea6eaa011236c03a728f6d26eace6db244ef44fd
+## ! Commit: 01e496901df21a6b6efd2ae267a326c6853ab74d
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -184,6 +184,7 @@ DOMAIN-SUFFIX,funnelserv.systems, reject
 DOMAIN-SUFFIX,fzlnk.com, reject
 DOMAIN-SUFFIX,g10102301085.co, reject
 DOMAIN-SUFFIX,g10300385420.co, reject
+DOMAIN-SUFFIX,g10498469755.co, reject
 DOMAIN-SUFFIX,g11686975765.co, reject
 DOMAIN-SUFFIX,g1188506010.co, reject
 DOMAIN-SUFFIX,g11885060100.co, reject
@@ -191,11 +192,13 @@ DOMAIN-SUFFIX,g12083144435.co, reject
 DOMAIN-SUFFIX,g12281228770.co, reject
 DOMAIN-SUFFIX,g1386590346.co, reject
 DOMAIN-SUFFIX,g1584674682.co, reject
+DOMAIN-SUFFIX,g1584674683.co, reject
 DOMAIN-SUFFIX,g1584674684.co, reject
 DOMAIN-SUFFIX,g1782759015.co, reject
 DOMAIN-SUFFIX,g1782759016.co, reject
 DOMAIN-SUFFIX,g1980843350.co, reject
 DOMAIN-SUFFIX,g2575096355.co, reject
+DOMAIN-SUFFIX,g594253006.co, reject
 DOMAIN-SUFFIX,g792337340.co, reject
 DOMAIN-SUFFIX,g792337342.co, reject
 DOMAIN-SUFFIX,g792337343.co, reject
@@ -205,6 +208,7 @@ DOMAIN-SUFFIX,g9111879410.co, reject
 DOMAIN-SUFFIX,g9508048080.co, reject
 DOMAIN-SUFFIX,g9706132415.co, reject
 DOMAIN-SUFFIX,g990421675.co, reject
+DOMAIN-SUFFIX,g9904216750.co, reject
 DOMAIN-SUFFIX,g990421676.co, reject
 DOMAIN-SUFFIX,gbqofs.com, reject
 DOMAIN-SUFFIX,gcprivacy.com, reject
@@ -572,6 +576,7 @@ DOMAIN-SUFFIX,admissionaudit.com, reject
 DOMAIN-SUFFIX,adorableanger.com, reject
 DOMAIN-SUFFIX,adorableattention.com, reject
 DOMAIN-SUFFIX,adventurousamount.com, reject
+DOMAIN-SUFFIX,aerialapps.com, reject
 DOMAIN-SUFFIX,afraidlanguage.com, reject
 DOMAIN-SUFFIX,agileformer.com, reject
 DOMAIN-SUFFIX,agonyshark.com, reject
@@ -587,6 +592,7 @@ DOMAIN-SUFFIX,aliveachiever.com, reject
 DOMAIN-SUFFIX,alloutdubstep.com, reject
 DOMAIN-SUFFIX,alltypo.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
+DOMAIN-SUFFIX,almondbuns.com, reject
 DOMAIN-SUFFIX,almostsugar.com, reject
 DOMAIN-SUFFIX,alohamiles.com, reject
 DOMAIN-SUFFIX,aloofmetal.com, reject
@@ -1224,6 +1230,7 @@ DOMAIN-SUFFIX,gatejunction.com, reject
 DOMAIN-SUFFIX,gaudyairplane.com, reject
 DOMAIN-SUFFIX,gearbubbles.com, reject
 DOMAIN-SUFFIX,geekbackyard.com, reject
+DOMAIN-SUFFIX,gemorganic.com, reject
 DOMAIN-SUFFIX,generalprose.com, reject
 DOMAIN-SUFFIX,generateoffice.com, reject
 DOMAIN-SUFFIX,getbendyyoga.com, reject
@@ -1672,6 +1679,7 @@ DOMAIN-SUFFIX,optionsnomad.com, reject
 DOMAIN-SUFFIX,opulentsylvan.com, reject
 DOMAIN-SUFFIX,orangebirdie.com, reject
 DOMAIN-SUFFIX,orientedargument.com, reject
+DOMAIN-SUFFIX,originblocks.com, reject
 DOMAIN-SUFFIX,orionember.com, reject
 DOMAIN-SUFFIX,ourblogthing.com, reject
 DOMAIN-SUFFIX,outdoorsoil.com, reject
@@ -2023,6 +2031,7 @@ DOMAIN-SUFFIX,shiverscissors.com, reject
 DOMAIN-SUFFIX,shockinggrass.com, reject
 DOMAIN-SUFFIX,shockingship.com, reject
 DOMAIN-SUFFIX,showsteel.com, reject
+DOMAIN-SUFFIX,shredform.com, reject
 DOMAIN-SUFFIX,shredquiz.com, reject
 DOMAIN-SUFFIX,shrewsburyshow.com, reject
 DOMAIN-SUFFIX,shrillspoon.com, reject
@@ -2698,6 +2707,7 @@ DOMAIN-SUFFIX,analytics.yyggames.com, reject
 DOMAIN-SUFFIX,analytics.ziftsolutions.com, reject
 DOMAIN-SUFFIX,analytics1.vdo.ai, reject
 DOMAIN-SUFFIX,analyticsehnwe.servicebus.windows.net, reject
+DOMAIN-SUFFIX,analyticsplusdev.clientify.net, reject
 DOMAIN-SUFFIX,analyticssec.overwolf.com, reject
 DOMAIN-SUFFIX,ao-freegeoip.herokuapp.com, reject
 DOMAIN-SUFFIX,ape-tagit.timeinc.net, reject
@@ -3546,6 +3556,7 @@ DOMAIN-SUFFIX,tag.brandcdn.com, reject
 DOMAIN-SUFFIX,tag.digops.sincro.io, reject
 DOMAIN-SUFFIX,tag.elevaate.io, reject
 DOMAIN-SUFFIX,tag.flagship.io, reject
+DOMAIN-SUFFIX,tag.getamigo.io, reject
 DOMAIN-SUFFIX,tag.imagino.com, reject
 DOMAIN-SUFFIX,tag.lexer.io, reject
 DOMAIN-SUFFIX,tag.mtrcs.samba.tv, reject
@@ -5333,6 +5344,7 @@ DOMAIN-SUFFIX,wa.sugarandjade.com, reject
 DOMAIN-SUFFIX,wal.wolfram.com, reject
 DOMAIN-SUFFIX,wapn1.flosports.tv, reject
 DOMAIN-SUFFIX,web-perf.booking.com, reject
+DOMAIN-SUFFIX,web.analytics.metrobyt-mobile.com, reject
 DOMAIN-SUFFIX,webapi.3cx.com, reject
 DOMAIN-SUFFIX,weblog.flyasiana.com, reject
 DOMAIN-SUFFIX,wh.ipaddress.com, reject

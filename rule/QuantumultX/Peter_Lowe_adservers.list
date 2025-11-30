@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 24 Nov 2025 13:43:39 GMT
+# last updated:   Sat, 29 Nov 2025 17:46:28 GMT
 # entries:        3478
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -31,7 +31,6 @@ DOMAIN-SUFFIX,33across.com, reject
 DOMAIN-SUFFIX,360yield.com, reject
 DOMAIN-SUFFIX,3lift.com, reject
 DOMAIN-SUFFIX,3o9s.short.gy, reject
-DOMAIN-SUFFIX,4clicker.pro, reject
 DOMAIN-SUFFIX,4d5.net, reject
 DOMAIN-SUFFIX,4info.com, reject
 DOMAIN-SUFFIX,4jnzhl0d0.com, reject
@@ -215,7 +214,6 @@ DOMAIN-SUFFIX,adeimptrck.com, reject
 DOMAIN-SUFFIX,ademails.com, reject
 DOMAIN-SUFFIX,adengage.com, reject
 DOMAIN-SUFFIX,adetracking.com, reject
-DOMAIN-SUFFIX,adexc.net, reject
 DOMAIN-SUFFIX,adexchangegate.com, reject
 DOMAIN-SUFFIX,adexchangeprediction.com, reject
 DOMAIN-SUFFIX,adexpose.com, reject
@@ -232,7 +230,6 @@ DOMAIN-SUFFIX,adhaven.com, reject
 DOMAIN-SUFFIX,adhese.be, reject
 DOMAIN-SUFFIX,adhese.com, reject
 DOMAIN-SUFFIX,adhigh.net, reject
-DOMAIN-SUFFIX,adhoc4.net, reject
 DOMAIN-SUFFIX,adhub.media, reject
 DOMAIN-SUFFIX,adhunter.media, reject
 DOMAIN-SUFFIX,adimage.guardian.co.uk, reject
@@ -403,7 +400,6 @@ DOMAIN-SUFFIX,ads.devmates.com, reject
 DOMAIN-SUFFIX,ads.digital-digest.com, reject
 DOMAIN-SUFFIX,ads.digitalmedianet.com, reject
 DOMAIN-SUFFIX,ads.digitalpoint.com, reject
-DOMAIN-SUFFIX,ads.directionsmag.com, reject
 DOMAIN-SUFFIX,ads.doit.com.cn, reject
 DOMAIN-SUFFIX,ads.domeus.com, reject
 DOMAIN-SUFFIX,ads.eagletribune.com, reject
@@ -824,6 +820,7 @@ DOMAIN-SUFFIX,adzbazar.com, reject
 DOMAIN-SUFFIX,adzerk.net, reject
 DOMAIN-SUFFIX,adzerk.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,adzestocp.com, reject
+DOMAIN-SUFFIX,aerialapps.com, reject
 DOMAIN-SUFFIX,aerserv.com, reject
 DOMAIN-SUFFIX,af-ad.co.uk, reject
 DOMAIN-SUFFIX,affec.tv, reject
@@ -1644,6 +1641,7 @@ DOMAIN-SUFFIX,fc.webmasterpro.de, reject
 DOMAIN-SUFFIX,feedbackresearch.com, reject
 DOMAIN-SUFFIX,feedjit.com, reject
 DOMAIN-SUFFIX,feedmob.com, reject
+DOMAIN-SUFFIX,figsprotein.com, reject
 DOMAIN-SUFFIX,fillthemap.com, reject
 DOMAIN-SUFFIX,fimserve.com, reject
 DOMAIN-SUFFIX,findcommerce.com, reject
@@ -1873,7 +1871,6 @@ DOMAIN-SUFFIX,idtargeting.com, reject
 DOMAIN-SUFFIX,ientrymail.com, reject
 DOMAIN-SUFFIX,iesnare.com, reject
 DOMAIN-SUFFIX,ifa.tube8live.com, reject
-DOMAIN-SUFFIX,ignals.com, reject
 DOMAIN-SUFFIX,ilbanner.com, reject
 DOMAIN-SUFFIX,ilead.itrack.it, reject
 DOMAIN-SUFFIX,illustriousoatmeal.com, reject
@@ -2386,6 +2383,7 @@ DOMAIN-SUFFIX,online.miarroba.com, reject
 DOMAIN-SUFFIX,onlinecash.com, reject
 DOMAIN-SUFFIX,onlinecashmethod.com, reject
 DOMAIN-SUFFIX,onlinerewardcenter.com, reject
+DOMAIN-SUFFIX,onlinestarten.net, reject
 DOMAIN-SUFFIX,onscroll.com, reject
 DOMAIN-SUFFIX,onthe.io, reject
 DOMAIN-SUFFIX,opads.us, reject
@@ -2485,7 +2483,6 @@ DOMAIN-SUFFIX,pgpartner.com, reject
 DOMAIN-SUFFIX,pheedo.com, reject
 DOMAIN-SUFFIX,phoenix-adrunner.mycomputer.com, reject
 DOMAIN-SUFFIX,piano.io, reject
-DOMAIN-SUFFIX,piet2eix3l.com, reject
 DOMAIN-SUFFIX,pimproll.com, reject
 DOMAIN-SUFFIX,ping.ublock.org, reject
 DOMAIN-SUFFIX,pipedream.wistia.com, reject
@@ -2626,6 +2623,7 @@ DOMAIN-SUFFIX,quinst.com, reject
 DOMAIN-SUFFIX,quirkysugar.com, reject
 DOMAIN-SUFFIX,quisma.com, reject
 DOMAIN-SUFFIX,quizzicalzephyr.com, reject
+DOMAIN-SUFFIX,r.drinksdirect.net, reject
 DOMAIN-SUFFIX,r.logrocket.io, reject
 DOMAIN-SUFFIX,r.marketing.dubaisothebys.com, reject
 DOMAIN-SUFFIX,r.msn.com, reject
@@ -2868,6 +2866,7 @@ DOMAIN-SUFFIX,skimresources.com, reject
 DOMAIN-SUFFIX,skisofa.com, reject
 DOMAIN-SUFFIX,skroutza.skroutz.gr, reject
 DOMAIN-SUFFIX,skylink.vn, reject
+DOMAIN-SUFFIX,slimesupplies.net, reject
 DOMAIN-SUFFIX,slopeaota.com, reject
 DOMAIN-SUFFIX,smaato.com, reject
 DOMAIN-SUFFIX,smart-data-systems.com, reject
@@ -3419,6 +3418,7 @@ DOMAIN-SUFFIX,wondoads.de, reject
 DOMAIN-SUFFIX,woopra.com, reject
 DOMAIN-SUFFIX,worldwide-cash.net, reject
 DOMAIN-SUFFIX,worriednumber.com, reject
+DOMAIN-SUFFIX,wowfunnow.com, reject
 DOMAIN-SUFFIX,writerhubs.com, reject
 DOMAIN-SUFFIX,wt-eu02.net, reject
 DOMAIN-SUFFIX,wt.bankmillennium.pl, reject

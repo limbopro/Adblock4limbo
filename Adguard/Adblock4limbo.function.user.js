@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.11.20
+// @version      0.2025.11.29
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -1570,13 +1570,11 @@ const btn = document.getElementById('huacisousuo'); // 划词切换按钮
 
 // 状态切换函数
 function toggleSearchState(x) {
-
     const searchPro = document.getElementById('limbopro-search-pro'); // 搜索框容器
     if (!searchPro) {
         initLimoProSearch()// 如果不存在，则立即创建
         document.getElementById('limbopro-search-pro').className = 'cmsnone'
     }
-
     const isOn = btn.dataset.state === 'on';
     if (x !== 'false') {
         if (isOn) {
@@ -1623,8 +1621,6 @@ if (btn) {
 }
 
 // 页面加载时恢复状态
-
-
 function waitForElement(selector, callback) {
     function check() {
         const el = document.querySelector(selector);
@@ -1658,7 +1654,6 @@ waitForElement('#limbopro-search-pro', (el) => {
         console.log('划词搜索已关闭');
     }
 });
-
 
 // End of huacisousuo toggle code
 
@@ -3463,4 +3458,11 @@ var dataListbak = {
             "level": "better"
         }
     ]
+}
+
+
+
+if (localStorage.getItem('huacisousuo') == 'true') {
+    // toggleSearchState('true');
+    initLimoProSearch();
 }

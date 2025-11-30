@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.11.25
+// @version      0.2025.11.29
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -103,6 +103,8 @@
 // @include      https://m.nivod*.tv/*
 // @include      https://www.nivod*.tv/*
 // @match        https://www.javbus.com/*
+// @match        https://av.jkforum.net/*
+// @match        https://javdb.com/*
 // @match        https://jav.land/*
 // @match        https://cn1.91short.com/*
 // @match        https://xiaobaotv.net/*
@@ -381,7 +383,8 @@ var imax = {
         manhuapicanone: "li[class*=lindex],.row.alert,.my-insert-flag,[role=alert],img[src*=gif] {display:none !important; pointer-events: none !important;} ", // 嗶咔picacg免費網頁版
         manhuapicaheight: "/*li[class*=lindex],*/.row.alert,.my-insert-flag,[role=alert],img[src*=gif] {height:0px !important} ", // 嗶咔picacg免費網頁版
         dmm: "",
-        missav: "@media (min-width:640px){.sm\\:hidden{margin:6px 0 0;padding:0;display:flex !important}}a[href^='https://theporndude.com'],a[href*='mycomic'],a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank],a[href*='/vip'],img[src*='.gif'],iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"]{display:none !important;pointer-events:none !important}body{overflow-x:hidden}", //  MissAV
+        /* @media (min-width:640px){.sm\\:hidden{margin:6px 0 0;padding:0;display:flex !important}} */
+        missav: "a[href^='https://theporndude.com'],a[href*='mycomic'],a[href*=myavlive],[href*='bit.ly'],[href*='bit.ly'][target=_blank],a[href*='/vip'],img[src*='.gif'],iframe,#a[href*='//bit.ly/'],div[style*='z-index: 1001'],ul.space-y-2.mb-4.ml-4.list-disc.text-nord14,div.space-y-5.mb-5,div.under_player,div[style=\"width: 300px; height: 250px;\"]{display:none !important;pointer-events:none !important}body{overflow-x:hidden}", //  MissAV
         bigirl: 'div#container + div, h4.adblock_title,div.adblock_subtitle,[class^=\'adblock\'],div[class^=\'ad_\'], .toppage_av {display:none !important; pointer-events: none !important;}', // https://bi-girl.net/
         opgg: ".AdSense,  div[data-ad], tr.ad, #banner-container, section[class*='md:hidden'] {display:none !important; pointer-events: none !important;}",
         btc760: ".ad_img,.ad_img,#ad_headerbanner {display:none !important; pointer-events: none !important;}", // btc760
@@ -411,13 +414,15 @@ var imax = {
         javday: "p[style], p > a {display:none !important; pointer-events: none !important;} ",
         xvideos: ".remove-ads-link, .remove-ads, .adsbyexoclick, #ad-header-mobile, .video-ad, #video-right, #ad-footer {display:none !important; pointer-events: none !important;}", // xvideos
         javbus: "div.row iframe,.ad-item,.ad-box {display:none !important}",
+        javdb: "nav.app-desktop-banner,div.moj-content {display:none !important}",
+        jkforum: "",
         javland: "img[src*='.gif'], a[href^=\"https://go.rmhfrtnd.com/\"] {display:none !important; pointer-events: none !important;}",  // jav.land
         _4hu: ".couplet-left, body[ontouchstart] > div[id^='content_'][style='display: block;'], div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
         supjav: '.video-wrap > div.right,#pop, .div_pop, #pop.div_pop, .movv-ad, #adsbox, div.right, div.movv-ad.ad_3_3, div.movv-ad.ad_3_2, .movv-ad, .adsbyexoclick, #adsbox, .adsbyexoclick  {display:none !important; pointer-events: none !important;}',
         hitomi: ".container > div[class$=\"content\"] > div[class]:has(> script) {display:none !important; pointer-events: none !important;}",
-        hanime1: "span.scaled-exoclick, iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
+        hanime1: ".comics-banner-ads,span.scaled-exoclick, iframe, #close-mobile-ad-btn, #bottom-ads, div[style*=\"width: 310px; height: 282px;\"] {display:none !important; pointer-events: none !important;}",
         javlibrary: ".menutext.whenmobile {top:90px;z-index:114;} a[href*='redirect'] {display:none!important} #toplogo {height:64px} .videothumblist .videos {min-width:auto;}.titlebox.whenmobile{width:250px} #topmenu.whenmobile {height:70px;} .searchbar.whenmobile{right:2px}  div.videothumblist.whenmobile {overflow:scroll!important;overflow-x:hidden!important;} div#rightcolumn.whenmobile {width:300px} #rightcolumn {right:90px} #leftmenu {width:90px; position:fixed;} div#content {width:auto !important} body.main { min-width: auto; width:auto !important} iframe,img[src*='gif'] , td.advsearch {display:none!important;pointer-events: none !important;}",
         douban: "*{display:none!important}",
         olevod: "#adsbox, .ads-bg {display:none!important}",
@@ -489,6 +494,8 @@ function values() {
         "javday",
         "xvideos",
         "javbus",
+        "javdb",
+        "av.jkforum.net",
         "jav.land",
         "4hu",
         "netflav",
@@ -870,17 +877,19 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }, 1500)
             break;
         case 'www.baidu.com':
-            console.log('Got u! baidu.com')
-            let regex = /https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)/gi
-            window.location.href.search(regex) !== -1
-            if (window.location.href.search(regex) !== -1) {
-                css_adsRemove(imax.css.baidu_search);
-                console.log('移除搜索结果广告🪧...')
-            } else {
-                adsDomain_switch("zhidao")
-                css_adsRemove(imax.css.baidu_index);
-                console.log('移首页广告🪧...')
-            }
+            window.addEventListener('load', function () {
+                console.log('Got u! baidu.com')
+                let regex = /https?:\/\/(www|m)\.baidu\.com\/(from=|s\?)/gi
+                window.location.href.search(regex) !== -1
+                if (window.location.href.search(regex) !== -1) {
+                    css_adsRemove(imax.css.baidu_search);
+                    console.log('移除搜索结果广告🪧...')
+                } else {
+                    adsDomain_switch("zhidao")
+                    css_adsRemove(imax.css.baidu_index);
+                    console.log('移首页广告🪧...')
+                }
+            });
             break;
         case 'ddys':
             //css_adsRemove(imax.css.ddrk);
@@ -943,177 +952,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
                 // 新增快进快退
 
-                // ==UserScript==
-                // @name         Jable.tv 视频页：单行快进快退（样式分离注入）
-                // @namespace    http://tampermonkey.net/
-                // @version      1.8
-                // @description  样式完全抽离为 <style>，单行平铺面板，插入 section 后，修复连续点击按钮不恢复问题
-                // @author       @limboprossr
-                // @match        https://jable.tv/videos/*/
-                // @match        https://jable.hk/videos/*/
-                // @grant        none
-                // @run-at       document-idle
-                // ==/UserScript==
-
                 (function () {
-                    'use strict';
-
-                    const video = document.querySelector('#player');
-                    if (!video) return;
-
-                    if (document.getElementById('jable-skip-panel')) return;
-
-                    // === 1. 注入全局 CSS 样式 ===
-                    const style = document.createElement('style');
-                    style.id = 'jable-skip-panel-style';
-                    style.textContent = `
-    @media (min-width: 992px) {
-      .pb-e-lg-30 {
-        padding-bottom: 10px !important;
-      }
-    }
-
-    #jable-skip-panel {
-      display: flex;
-      flex-wrap: inherit;
-      justify-content: center;
-      gap: 2px;
-      padding: 10px 0px 10px 0px;
-      /*background: var(--indigo);*/
-      border-radius: 0px 0px 0px 0px;
-      box-shadow: 0px 8px 14px var(--indigo)
-      backdrop-filter: blur(14px);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      user-select: none;
-      max-width: 100%;
-      width: 100%;
-      margin: 0px 0px 10px 0px;
-      text-align: center;
-    }
-
-    .jable-skip-btn {
-      /*padding: 2px 0px;*/
-      font-size: 12.5px;
-      font-weight: inherit;
-      color: #fff;
-      border: 1px solid;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      max-width: 65px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      flex: 0 0 auto;
-    }
-
-    .jable-skip-btn.forward {
-      background: rgba(0, 255, 136, 0.28);
-      border-color: #00ff88;
-    }
-
-    .jable-skip-btn.backward {
-      background: rgba(255, 80, 80, 0.28);
-      border-color: #ff6666;
-    }
-
-    .jable-skip-btn:hover {
-      transform: translateY(-2px) scale(1.06);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-    }
-
-    .jable-skip-btn.forward:hover {
-      background: rgba(0, 255, 136, 0.42);
-      box-shadow: 0 6px 18px rgba(0, 255, 136, 0.5);
-    }
-
-    .jable-skip-btn.backward:hover {
-      background: rgba(255, 80, 80, 0.42);
-      box-shadow: 0 6px 18px rgba(255, 80, 80, 0.5);
-    }
-
-    .jable-skip-btn:active {
-      /*transform: translateY(0) scale(1.02);*/
-    }
-  `;
-                    document.head.appendChild(style);
-
-                    // === 2. 创建面板 HTML ===
-                    const panel = document.createElement('div');
-                    panel.id = 'jable-skip-panel';
-
-                    const actions = [
-                        { sec: -600, label: '<< 10m', key: 'PageDown', class: 'backward' },
-                        { sec: -60, label: '< 1m', key: 'ArrowDown', class: 'backward' },
-                        { sec: -15, label: '< 15s', key: 'ArrowLeft', class: 'backward' },
-                        { sec: 15, label: '15s >', key: 'ArrowRight', class: 'forward' },
-                        { sec: 60, label: '1m >', key: 'ArrowUp', class: 'forward' },
-                        { sec: 600, label: '10m >>', key: 'PageUp', class: 'forward' },
-                    ];
-
-                    actions.forEach(act => {
-                        const btn = document.createElement('button');
-                        btn.className = `jable-skip-btn ${act.class}`;
-                        btn.textContent = act.label;
-                        btn.dataset.sec = act.sec;
-                        btn.dataset.origText = act.label; // 预存原始文本
-                        btn._restoreTimer = null; // 存储恢复定时器
-
-                        // 快捷键提示
-                        if (act.key) {
-                            const keyName = {
-                                ArrowLeft: '←', ArrowRight: '→',
-                                ArrowUp: '↑', ArrowDown: '↓',
-                                PageUp: 'PageUp', PageDown: 'PageDown'
-                            }[act.key];
-                            btn.title = `${act.label}（${keyName}）`;
-                        } else {
-                            btn.title = act.label;
-                        }
-
-                        // 点击事件：带防抖恢复逻辑
-                        btn.onclick = () => {
-                            const delta = parseInt(btn.dataset.sec);
-                            const newTime = Math.max(0, Math.min(video.currentTime + delta, video.duration));
-                            video.currentTime = newTime;
-
-                            // 清除上一个定时器
-                            if (btn._restoreTimer) {
-                                clearTimeout(btn._restoreTimer);
-                            }
-
-                            const orig = btn.dataset.origText;
-                            /*btn.textContent = '✓';*/
-
-                            // 设置新的恢复定时器
-                            btn._restoreTimer = setTimeout(() => {
-                                btn.textContent = orig;
-                                btn._restoreTimer = null;
-                            }, 400);
-                        };
-
-                        // 键盘快捷键（复用 onclick 逻辑）
-                        if (act.key) {
-                            document.addEventListener('keydown', e => {
-                                if (e.key === act.key && !e.ctrlKey && !e.altKey && !e.shiftKey) {
-                                    e.preventDefault();
-                                    btn.click();
-                                }
-                            });
-                        }
-
-                        panel.appendChild(btn);
-                    });
-
-                    // === 3. 插入到目标 section 之后 ===
-                    const targetSection = document.querySelector('section.pb-3.pb-e-lg-30');
-                    if (targetSection && targetSection.parentNode) {
-                        targetSection.parentNode.insertBefore(panel, targetSection.nextSibling);
-                    } else {
-                        console.warn('未找到目标 section，插入 body 末尾');
-                        document.body.appendChild(panel);
-                    }
-
-                    console.log('Jable 单行快进快退面板（v1.8 修复连续点击）已加载');
+                    fastForward('#player', 'section.pb-3.pb-e-lg-30');
                 })();
 
                 // 快进快退结束
@@ -1451,17 +1291,22 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(imax.css.yhdmp);
             break;
         case 'google':
-            css_adsRemove(imax.css.google);
-            var userAgent = navigator.userAgent.toLowerCase();
-            if (/\b(mobile)\b/i.test(userAgent)) {
-                js_adsRemove(imax.js.contentFarm);
-                console.log("getYou") // 手机用户 特别是苹果用户会正常加载内容农场脚本
-            } else {
-                js_adsRemove(imax.js.contentFarm);
-                console.log("PC端") // 啥也不做
-            }
+
+            window.addEventListener('load', function () {
+                css_adsRemove(imax.css.google);
+                var userAgent = navigator.userAgent.toLowerCase();
+                if (/\b(mobile)\b/i.test(userAgent)) {
+                    js_adsRemove(imax.js.contentFarm);
+                    console.log("getYou") // 手机用户 特别是苹果用户会正常加载内容农场脚本
+                } else {
+                    js_adsRemove(imax.js.contentFarm);
+                    console.log("PC端") // 啥也不做
+                }
+            });
+
             //var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
             //setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
+
             break;
         case 'bing':
             js_adsRemove(imax.js.contentFarm);
@@ -1679,64 +1524,32 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             }
 
             javbus()
+            break;
+        case 'javdb':
+
+            css_adsRemove(imax.css.javdb, 0, "javdb");
+            setTimeout(() => {
+                const javCode = document.querySelector('.copy-to-clipboard')?.dataset.clipboardText
+                    || document.querySelector('.panel-block.first-block .value')?.textContent.trim();
+                console.log(javCode); // NTSU-156
+
+                if (javCode !== null) {
+                    tmd_land('h2.title', javCode, '在其他站点播放: ')
+                }
+            }, 1000)
 
             break;
+
+        case 'av.jkforum.net':
+            css_adsRemove(imax.css.jkforum, 0, "jkforum");
+            break;
+
         case 'jav.land': // 444
             css_adsRemove(imax.css.javland, 0, "javland");
 
             function jav() {
                 if (document.querySelectorAll('td[width="80%"]')[1] !== null) {
                     let code = document.querySelectorAll('td[width="80%"]')[1].textContent
-
-
-                    // 在番号详情页追加在线预览链接
-                    function tmd_land(parentsSelector, code, textContent) {
-
-                        function otherSearch() {
-                            // 试试其他搜索：
-
-                            let parentElement = document.querySelectorAll(parentsSelector)[0]
-
-                            let p1 = document.createElement('p')
-                            p1.id = 'p1'
-                            p1.style = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:  4px !important;box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; /*inset 0px 0px 15px 3px #979797;*/ background:#10141f; color:chocolate; padding:0px 0px 0px 0px;word-break:break-all;border-radius:0px 0px 0px 0px'
-
-                            let p2 = document.createElement('p')
-                            p2.style = 'background:black; padding-left:6px;font-weight:inherit; padding:6px; word-break:break-all;font-size:inherit;border-radius:0px'
-                            p2.id = 'p2'
-
-
-                            p1.appendChild(p2)
-                            parentElement.insertBefore(p1, parentElement.childNodes[2])
-
-                            let span = document.createElement('span')
-                            span.style = 'font-weight:bolder;font-size:medium;color:bisque;'
-                            span.textContent = textContent
-                            p2.appendChild(span)
-
-                            function aAdd2Parent(siteName, url, codeSlect) {
-                                let a = document.createElement('a')
-                                let lable = document.createElement('label')
-                                lable.style = 'font-weight:inherit;display:inline-block;max-width:100%;margin-right:10px;'
-                                a.href = url + codeSlect
-                                a.textContent = siteName
-                                a.target = '_blank'
-                                a.style = 'color:inherit;/*text-decoration:revert !important;*/ font-weight:inherit'
-                                lable.appendChild(a)
-                                p2.appendChild(lable)
-                            }
-
-                            aAdd2Parent('MissAV[720P]', 'https://missav.com/search', '/' + code)
-                            aAdd2Parent('Jable[HD]', 'https://jable.tv/search', '/' + code + '/')
-                            aAdd2Parent('Supjav[ultraHD]', 'https://supjav.com/?s=', code)
-                            aAdd2Parent('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + "&gsc.sort=")
-                            aAdd2Parent('谷歌搜索🔍', 'https://www.google.com/search?q=', code)
-                            aAdd2Parent('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce')
-                            console.log('已生成在线预览链接🔗')
-                        }
-                        otherSearch()
-                    }
-
                     setTimeout(() => {
                         tmd_land('.col-md-6.col-sm-12.col-xs-12', code, '在线预览: ');
                     }, 100)
@@ -1852,15 +1665,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     div[i].style = "display: none !important;";
                 }
             }
-
-            /*
-            let ads = document.querySelectorAll('div.hidden-sm.hidden-md');
-            for (i = 0; i < ads.length; i++) {
-                if (ads[i].querySelectorAll("a[href*='abs']")) {
-                    ads[i].remove();
-                }
-            }
-            */
 
             break;
 
@@ -2402,8 +2206,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         display: flex !important;
       }
     }
-  `;
-
+  `
                 // 方法 1：使用 <style> 标签（推荐，兼容性好）
                 const styleSheet = document.createElement('style');
                 styleSheet.textContent = css;
@@ -2462,6 +2265,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
                         }
 
+                        fastForward('[playsinline][data-poster]', 'div.flex-1.order-first > div[x-init]') // 快进快退
+
                     } else if (ua_missav.indexOf(mobile_missav) > -1 && document.querySelector('#missavFullScreen') === null) {
                         ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", cssText, "video_Play()", "missavX", 0, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", cssText, "fullscreen()", "missavFullScreen", 2, "button");
@@ -2479,6 +2284,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 }, 3000)
 
+
+                if (window.innerWidth > 640) {
+                    fastForward('[playsinline][data-poster]', 'div.flex-1.order-first > div[x-init]') // 快进快退
+                }
+
                 document.querySelectorAll('div.grid').forEach(
                     (x) => {
                         if (x.querySelector('img[src*="mio.jpg"]')) { // 移除 missav 播放页广告
@@ -2490,6 +2300,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             });
 
             break;
+
         default:
             // 修正 case 中 default 的匹配规则  10.25.203
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {
@@ -2505,6 +2316,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 }
 
 adsDomain_switch(values()) // 动手吧
+
 
 /* Start */
 /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
@@ -3132,6 +2944,249 @@ function missAv_playbutton() {
     }
 }
 
+// 快进快退 fastForward
+
+// ==UserScript==
+// @name         Jable.tv 视频页：单行快进快退（样式分离注入）
+// @namespace    http://tampermonkey.net/
+// @version      1.8
+// @description  样式完全抽离为 <style>，单行平铺面板，插入 section 后，修复连续点击按钮不恢复问题
+// @author       @limboprossr
+// @match        https://jable.tv/videos/*/
+// @match        https://jable.hk/videos/*/
+// @grant        none
+// @run-at       document-idle
+// ==/UserScript==
+
+function fastForward(videowrap, section) { // fastForward()
+
+    'use strict';
+
+    const video = document.querySelector(videowrap);
+    if (!video) return;
+
+    if (document.getElementById('jable-skip-panel')) return;
+
+    // === 1. 注入全局 CSS 样式 ===
+    const style = document.createElement('style');
+    style.id = 'jable-skip-panel-style';
+    style.textContent = `
+    @media (min-width: 992px) {
+      .pb-e-lg-30 {
+        padding-bottom: 10px !important;
+      }
+    }
+
+    #jable-skip-panel {
+    touch-action: pan-up pan-down pan-x pan-y manipulation;
+    /* 或者直接写死： */
+    touch-action: manipulation;     
+    /* 允许点击+滚动，但彻底禁用双击放大和双指缩放 */
+    -webkit-tap-highlight-color: transparent;
+      display: flex;
+      z-index:114154;
+      flex-wrap: inherit;
+      justify-content: center;
+      gap: 2px;
+      padding: 10px 0px 10px 0px;
+      /*background: var(--indigo);*/
+      border-radius: 0px 0px 0px 0px;
+      box-shadow: 0px 8px 14px var(--indigo)
+      backdrop-filter: blur(14px);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      user-select: none;
+      max-width: 100%;
+      width: 100%;
+      margin: 0px 0px 10px 0px;
+      text-align: center;
+    }
+
+    .jable-skip-btn {
+    padding:8px 8px 8px 12px;
+    font-size:0.75rem;
+      /*padding: 2px 0px;*/
+      /*font-size: 12.5px;*/
+      font-weight: inherit;
+      color: #fff;
+      border: 1px solid;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      /*width: 60px;*/
+      /*height: 25px;*/
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      flex: 0 0 auto;
+    }
+
+    .jable-skip-btn.forward {
+      background: rgba(0, 255, 136, 0.28);
+      border-color: #00ff88;
+    }
+
+    .jable-skip-btn.backward {
+      background: rgba(255, 80, 80, 0.28);
+      border-color: #ff6666;
+    }
+
+    .jable-skip-btn:hover {
+      transform: translateY(-2px) scale(1.06);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+
+    .jable-skip-btn.forward:hover {
+      background: rgba(0, 255, 136, 0.42);
+      box-shadow: 0 6px 18px rgba(0, 255, 136, 0.5);
+    }
+
+    .jable-skip-btn.backward:hover {
+      background: rgba(255, 80, 80, 0.42);
+      box-shadow: 0 6px 18px rgba(255, 80, 80, 0.5);
+    }
+
+    .jable-skip-btn:active {
+      /*transform: translateY(0) scale(1.02);*/
+    }
+  `;
+    document.head.appendChild(style);
+
+    // === 2. 创建面板 HTML ===
+    const panel = document.createElement('div');
+    panel.id = 'jable-skip-panel';
+
+    const actions = [
+        { sec: -600, label: '<< 10m', key: 'PageDown', class: 'backward' },
+        { sec: -60, label: '< 1m', key: 'ArrowDown', class: 'backward' },
+        { sec: -15, label: '< 15s', key: 'ArrowLeft', class: 'backward' },
+        { sec: 15, label: '15s >', key: 'ArrowRight', class: 'forward' },
+        { sec: 60, label: '1m >', key: 'ArrowUp', class: 'forward' },
+        { sec: 600, label: '10m >>', key: 'PageUp', class: 'forward' },
+    ];
+
+    actions.forEach(act => {
+        const btn = document.createElement('button');
+        btn.className = `jable-skip-btn ${act.class}`;
+        btn.textContent = act.label;
+        btn.dataset.sec = act.sec;
+        btn.dataset.origText = act.label; // 预存原始文本
+        btn._restoreTimer = null; // 存储恢复定时器
+
+        // 快捷键提示
+        if (act.key) {
+            const keyName = {
+                ArrowLeft: '←', ArrowRight: '→',
+                ArrowUp: '↑', ArrowDown: '↓',
+                PageUp: 'PageUp', PageDown: 'PageDown'
+            }[act.key];
+            btn.title = `${act.label}（${keyName}）`;
+        } else {
+            btn.title = act.label;
+        }
+
+        // 点击事件：带防抖恢复逻辑
+        btn.onclick = function (e) {
+            // 阻止任何可能的冒泡
+            e.stopPropagation();
+            const delta = parseInt(btn.dataset.sec);
+            const newTime = Math.max(0, Math.min(video.currentTime + delta, video.duration));
+            video.currentTime = newTime;
+
+            // 清除上一个定时器
+            if (btn._restoreTimer) {
+                clearTimeout(btn._restoreTimer);
+            }
+
+            const orig = btn.dataset.origText;
+            /*btn.textContent = '✓';*/
+
+            // 设置新的恢复定时器
+            btn._restoreTimer = setTimeout(() => {
+                btn.textContent = orig;
+                btn._restoreTimer = null;
+            }, 400);
+        };
+
+        // 键盘快捷键（复用 onclick 逻辑）
+        if (act.key) {
+            document.addEventListener('keydown', e => {
+                if (e.key === act.key && !e.ctrlKey && !e.altKey && !e.shiftKey) {
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
+        }
+
+        panel.appendChild(btn);
+    });
+
+    // === 3. 插入到目标 section 之后 ===
+    const targetSection = document.querySelector(section);
+    if (targetSection && targetSection.parentNode) {
+        targetSection.parentNode.insertBefore(panel, targetSection.nextSibling);
+    } else {
+        console.warn('未找到目标 section，插入 body 末尾');
+        document.body.appendChild(panel);
+    }
+
+    console.log('Jable 单行快进快退面板（v1.8 修复连续点击）已加载');
+
+}
+
+
+// 在番号详情页追加在线预览链接
+function tmd_land(parentSelector, code, titleText) {
+    const formattedCode = code.replace(/-/g, '00');
+
+    function createSearchLinks() {
+        // Creates search links for various platforms
+
+        const parentElement = document.querySelectorAll(parentSelector)[0];
+
+        const container = document.createElement('p'); // 创建容器
+        container.id = 'previewContainer';
+        container.style = 'margin:10px 0px 10px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius: 4px !important; box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; background:#10141f; color:chocolate; padding:0px 0px 0px 0px; word-break:break-all; border-radius:0px 0px 0px 0px';
+
+        const content = document.createElement('p'); // 创建内容包装器
+        content.style = 'gap:3px; margin-bottom: 0px;display: flex;flex-wrap: wrap;justify-content: flex-start;align-items: center;text-align: left;font-weight: inherit;padding: 6px;word-break: break-all;font-size: inherit;border-radius: 0px;';
+        content.id = 'contentWrapper';
+
+        container.appendChild(content); // 追加内容包装器到容器
+        parentElement.insertAdjacentElement('afterend', container);
+
+        const title = document.createElement('span'); // 创建标题
+        title.style = 'font-weight:bolder; font-size:medium; color:bisque;';
+        title.textContent = titleText;
+        content.appendChild(title);
+
+        function addLinkToContainer(siteName, baseUrl, searchCode) { // 添加链接到容器
+            const link = document.createElement('a');
+            const label = document.createElement('label');
+            label.style = 'font-weight:inherit; display:inline-block; max-width:100%; margin-right:10px;margin-bottom:0px;';
+            link.href = baseUrl + searchCode;
+            link.textContent = siteName;
+            link.target = '_blank';
+            link.style = 'color:inherit; font-weight:inherit';
+            label.appendChild(link);
+            content.appendChild(label);
+        }
+
+        addLinkToContainer('MissAV[720P]', 'https://missav.ws/search', '/' + code); // 添加各个搜索链接
+        addLinkToContainer('Jable[HD]', 'https://jable.tv/search', '/' + code + '/');
+        addLinkToContainer('Supjav[ultraHD]', 'https://supjav.com/?s=', code);
+        addLinkToContainer('番号搜索[聚合]', 'https://limbopro.com/btsearch.html#gsc.tab=0&gsc.q=', code + '&gsc.sort=');
+        addLinkToContainer('谷歌搜索🔍', 'https://www.google.com/search?q=', code);
+        addLinkToContainer('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce');
+        addLinkToContainer('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', formattedCode);
+        addLinkToContainer('🔞今晚看什么呢？', 'https://limbopro.com/tools/jwksm/', '');
+
+        console.log('Online preview links generated 🔗');
+    }
+
+    if (!document.querySelector('#previewContainer')) {
+        console.log('Generating online preview links...');
+        createSearchLinks(); // 调用函数创建搜索链接
+    }
+}
 
 /* 播放 */
 function window_play() {

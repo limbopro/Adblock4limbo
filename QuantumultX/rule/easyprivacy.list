@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202511301540
+## ! Version: 202512010226
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Nov 2025 15:40 UTC
+## ! Last modified: 01 Dec 2025 02:26 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: a6d3b506ee0d3bdecfa7b53c315322d616aff828
+## ! Commit: 9887e7b821a5c84dd00c30b70ef678d15f7d5fd2
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1280,6 +1280,7 @@ DOMAIN-SUFFIX,gravitygive.com, reject
 DOMAIN-SUFFIX,gravitykick.com, reject
 DOMAIN-SUFFIX,grayoranges.com, reject
 DOMAIN-SUFFIX,grayreceipt.com, reject
+DOMAIN-SUFFIX,grayscaleart.com, reject
 DOMAIN-SUFFIX,greasegarden.com, reject
 DOMAIN-SUFFIX,greasysquare.com, reject
 DOMAIN-SUFFIX,gridbelow.com, reject
@@ -1991,6 +1992,7 @@ DOMAIN-SUFFIX,scribblestring.com, reject
 DOMAIN-SUFFIX,scrollservice.com, reject
 DOMAIN-SUFFIX,scrubswim.com, reject
 DOMAIN-SUFFIX,sealtravels.com, reject
+DOMAIN-SUFFIX,seamlesssalon.com, reject
 DOMAIN-SUFFIX,seatsmoke.com, reject
 DOMAIN-SUFFIX,secondhandfall.com, reject
 DOMAIN-SUFFIX,secretivesheep.com, reject

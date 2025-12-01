@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sat, 29 Nov 2025 17:46:28 GMT
-# entries:        3478
+# last updated:   Sun, 30 Nov 2025 20:27:24 GMT
+# entries:        3479
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1569,6 +1569,7 @@ DOMAIN-SUFFIX,eqads.com
 DOMAIN-SUFFIX,eqy.link
 DOMAIN-SUFFIX,erne.co
 DOMAIN-SUFFIX,ero-advertising.com
+DOMAIN-SUFFIX,essaygiants.com
 DOMAIN-SUFFIX,estat.com
 DOMAIN-SUFFIX,esty.com
 DOMAIN-SUFFIX,et.educationdynamics.com

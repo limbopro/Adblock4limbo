@@ -3359,7 +3359,7 @@ var dataListbak = {
             "name": "低端影视",
             "url": "https://ddys.pro/",
             "target": "_blank",
-            "level": "special"
+            "level": "special del"
         },
         {
             "name": "小宝影视",

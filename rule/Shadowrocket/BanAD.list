@@ -320,7 +320,6 @@ DOMAIN-SUFFIX,sanya1.com, reject
 DOMAIN-SUFFIX,scupio.com, reject
 DOMAIN-SUFFIX,shuiguo.com, reject
 DOMAIN-SUFFIX,shuzilm.cn, reject
-DOMAIN-SUFFIX,similarweb.com, reject
 DOMAIN-SUFFIX,sitemeter.com, reject
 DOMAIN-SUFFIX,sitescout.com, reject
 DOMAIN-SUFFIX,sitetag.us, reject

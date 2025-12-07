@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512010226
+## ! Version: 202512070545
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Dec 2025 02:26 UTC
+## ! Last modified: 07 Dec 2025 05:45 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 9887e7b821a5c84dd00c30b70ef678d15f7d5fd2
+## ! Commit: 1308b3c8c0925afd8405fe755f57624591fc1ee7
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -621,6 +621,7 @@ DOMAIN-SUFFIX,applocus.com, reject
 DOMAIN-SUFFIX,applyless.com, reject
 DOMAIN-SUFFIX,aquaticowl.com, reject
 DOMAIN-SUFFIX,archswimming.com, reject
+DOMAIN-SUFFIX,arclet.net, reject
 DOMAIN-SUFFIX,aromamirror.com, reject
 DOMAIN-SUFFIX,arrivegrowth.com, reject
 DOMAIN-SUFFIX,arubahello.com, reject
@@ -780,6 +781,7 @@ DOMAIN-SUFFIX,cannonchange.com, reject
 DOMAIN-SUFFIX,canvasandsocks.com, reject
 DOMAIN-SUFFIX,capablecup.com, reject
 DOMAIN-SUFFIX,capriciouscorn.com, reject
+DOMAIN-SUFFIX,captainstick.com, reject
 DOMAIN-SUFFIX,captivatingcanyon.com, reject
 DOMAIN-SUFFIX,captivatingillusion.com, reject
 DOMAIN-SUFFIX,captivatingpanorama.com, reject
@@ -1007,6 +1009,7 @@ DOMAIN-SUFFIX,digithalo.com, reject
 DOMAIN-SUFFIX,dinnerquartz.com, reject
 DOMAIN-SUFFIX,direfuldesk.com, reject
 DOMAIN-SUFFIX,disagreeabledrop.com, reject
+DOMAIN-SUFFIX,discopond.com, reject
 DOMAIN-SUFFIX,discreetfield.com, reject
 DOMAIN-SUFFIX,discreetquarter.com, reject
 DOMAIN-SUFFIX,distributionpocket.com, reject
@@ -1164,6 +1167,7 @@ DOMAIN-SUFFIX,fivesidedsquare.com, reject
 DOMAIN-SUFFIX,fixedfold.com, reject
 DOMAIN-SUFFIX,flakyfeast.com, reject
 DOMAIN-SUFFIX,flameuncle.com, reject
+DOMAIN-SUFFIX,flashtexting.com, reject
 DOMAIN-SUFFIX,fleetbegin.com, reject
 DOMAIN-SUFFIX,flimsycircle.com, reject
 DOMAIN-SUFFIX,flimsythought.com, reject
@@ -1270,6 +1274,7 @@ DOMAIN-SUFFIX,gondolagnome.com, reject
 DOMAIN-SUFFIX,gorgeousedge.com, reject
 DOMAIN-SUFFIX,gorillapage.com, reject
 DOMAIN-SUFFIX,gossamerwing.com, reject
+DOMAIN-SUFFIX,gotlunched.com, reject
 DOMAIN-SUFFIX,gracefulmilk.com, reject
 DOMAIN-SUFFIX,grainmass.com, reject
 DOMAIN-SUFFIX,grandfatherguitar.com, reject
@@ -1394,6 +1399,7 @@ DOMAIN-SUFFIX,innocentlamp.com, reject
 DOMAIN-SUFFIX,inputicicle.com, reject
 DOMAIN-SUFFIX,inquisitiveice.com, reject
 DOMAIN-SUFFIX,inquisitiveinvention.com, reject
+DOMAIN-SUFFIX,insectmacros.com, reject
 DOMAIN-SUFFIX,inspirebees.com, reject
 DOMAIN-SUFFIX,insulatech.com, reject
 DOMAIN-SUFFIX,intelligentscissors.com, reject
@@ -1595,6 +1601,7 @@ DOMAIN-SUFFIX,mixedreading.com, reject
 DOMAIN-SUFFIX,modularmental.com, reject
 DOMAIN-SUFFIX,momentfilter.com, reject
 DOMAIN-SUFFIX,monacobeatles.com, reject
+DOMAIN-SUFFIX,monkeyapes.com, reject
 DOMAIN-SUFFIX,monkeystyping.com, reject
 DOMAIN-SUFFIX,monstermemes.com, reject
 DOMAIN-SUFFIX,monthlyhat.com, reject
@@ -1700,6 +1707,7 @@ DOMAIN-SUFFIX,overkick.com, reject
 DOMAIN-SUFFIX,overratedchalk.com, reject
 DOMAIN-SUFFIX,owlreporter.com, reject
 DOMAIN-SUFFIX,owlsr.us, reject
+DOMAIN-SUFFIX,owlstwo.com, reject
 DOMAIN-SUFFIX,oxygenfuse.com, reject
 DOMAIN-SUFFIX,pailcrime.com, reject
 DOMAIN-SUFFIX,pailpatch.com, reject
@@ -2213,6 +2221,7 @@ DOMAIN-SUFFIX,stockingsneeze.com, reject
 DOMAIN-SUFFIX,stocktheme.com, reject
 DOMAIN-SUFFIX,stomachscience.com, reject
 DOMAIN-SUFFIX,stonechin.com, reject
+DOMAIN-SUFFIX,stonepole.com, reject
 DOMAIN-SUFFIX,stopstomach.com, reject
 DOMAIN-SUFFIX,stormyflower.com, reject
 DOMAIN-SUFFIX,straightnest.com, reject
@@ -2968,6 +2977,7 @@ DOMAIN-SUFFIX,era.easyvoyage.com, reject
 DOMAIN-SUFFIX,error-analytics-production.shopifysvc.com, reject
 DOMAIN-SUFFIX,error-analytics-sessions-production.shopifysvc.com, reject
 DOMAIN-SUFFIX,errors.snackly.co, reject
+DOMAIN-SUFFIX,essential-apps-analytics.herokuapp.com, reject
 DOMAIN-SUFFIX,et.educationdynamics.com, reject
 DOMAIN-SUFFIX,etl.springbot.com, reject
 DOMAIN-SUFFIX,eu-mobile.events.data.microsoft.com, reject
@@ -3298,6 +3308,7 @@ DOMAIN-SUFFIX,pixel.locker2.com, reject
 DOMAIN-SUFFIX,pixel.mintigo.com, reject
 DOMAIN-SUFFIX,pixel.mtrcs.samba.tv, reject
 DOMAIN-SUFFIX,pixel.newscred.com, reject
+DOMAIN-SUFFIX,pixel.propublica.org, reject
 DOMAIN-SUFFIX,pixel.pub.lilyai.net, reject
 DOMAIN-SUFFIX,pixel.redgifs.com, reject
 DOMAIN-SUFFIX,pixel.roymorgan.com, reject
@@ -3419,6 +3430,7 @@ DOMAIN-SUFFIX,snowplow.swm.digital, reject
 DOMAIN-SUFFIX,snowplowjs.darwin.cx, reject
 DOMAIN-SUFFIX,solutions.invocacdn.com, reject
 DOMAIN-SUFFIX,sp-wukong-tracker.b-cdn.net, reject
+DOMAIN-SUFFIX,sp.pcid.ca, reject
 DOMAIN-SUFFIX,sp.tinymce.com, reject
 DOMAIN-SUFFIX,spa-tracker.spapi.io, reject
 DOMAIN-SUFFIX,speedtrap.shopdirect.com, reject

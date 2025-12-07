@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 30 Nov 2025 20:27:24 GMT
+# last updated:   Thu, 04 Dec 2025 09:33:21 GMT
 # entries:        3479
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -193,7 +193,6 @@ DOMAIN-SUFFIX,adcampo.com
 DOMAIN-SUFFIX,adcannyads.com
 DOMAIN-SUFFIX,adcash.com
 DOMAIN-SUFFIX,adcast.deviantart.com
-DOMAIN-SUFFIX,adcel.co
 DOMAIN-SUFFIX,adcell.de
 DOMAIN-SUFFIX,adcenter.net
 DOMAIN-SUFFIX,adclick.com
@@ -827,7 +826,6 @@ DOMAIN-SUFFIX,affec.tv
 DOMAIN-SUFFIX,affili.net
 DOMAIN-SUFFIX,affiliate.1800flowers.com
 DOMAIN-SUFFIX,affiliate.dtiserv.com
-DOMAIN-SUFFIX,affiliate.rusvpn.com
 DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
 DOMAIN-SUFFIX,affiliatefuture.com
@@ -910,7 +908,6 @@ DOMAIN-SUFFIX,annoyedairport.com
 DOMAIN-SUFFIX,annoyingacoustics.com
 DOMAIN-SUFFIX,anrdoezrs.net
 DOMAIN-SUFFIX,anstrex.com
-DOMAIN-SUFFIX,anuncios.edicaoms.com.br
 DOMAIN-SUFFIX,anxiousapples.com
 DOMAIN-SUFFIX,api.amplitude.com
 DOMAIN-SUFFIX,api.appmetrica.yandex.ru
@@ -1170,6 +1167,7 @@ DOMAIN-SUFFIX,campaign.bharatmatrimony.com
 DOMAIN-SUFFIX,caniamedia.com
 DOMAIN-SUFFIX,capriciouscorn.com
 DOMAIN-SUFFIX,captainbicycle.com
+DOMAIN-SUFFIX,captainstick.com
 DOMAIN-SUFFIX,carambo.la
 DOMAIN-SUFFIX,carbonads.com
 DOMAIN-SUFFIX,carbonads.net
@@ -1657,6 +1655,7 @@ DOMAIN-SUFFIX,fixedfold.com
 DOMAIN-SUFFIX,flairadscpc.com
 DOMAIN-SUFFIX,flakyfeast.com
 DOMAIN-SUFFIX,flashtalking.com
+DOMAIN-SUFFIX,flashtexting.com
 DOMAIN-SUFFIX,fleshlightcash.com
 DOMAIN-SUFFIX,flexbanner.com
 DOMAIN-SUFFIX,flimsycircle.com
@@ -2245,6 +2244,7 @@ DOMAIN-SUFFIX,mon.byteoversea.com
 DOMAIN-SUFFIX,monarchads.com
 DOMAIN-SUFFIX,monetate.net
 DOMAIN-SUFFIX,monetizer101.com
+DOMAIN-SUFFIX,monkeyapes.com
 DOMAIN-SUFFIX,monsterpops.com
 DOMAIN-SUFFIX,mookie1.com
 DOMAIN-SUFFIX,mopub.com
@@ -2547,7 +2547,6 @@ DOMAIN-SUFFIX,previousplayground.com
 DOMAIN-SUFFIX,prf.hn
 DOMAIN-SUFFIX,priceypies.com
 DOMAIN-SUFFIX,pricklydebt.com
-DOMAIN-SUFFIX,priefy.com
 DOMAIN-SUFFIX,primetime.net
 DOMAIN-SUFFIX,privatecash.com
 DOMAIN-SUFFIX,prmtracking.com
@@ -3178,6 +3177,7 @@ DOMAIN-SUFFIX,track.privacyatclearbit.com
 DOMAIN-SUFFIX,track.przejdzdostrony.pl
 DOMAIN-SUFFIX,track.pubmatic.com
 DOMAIN-SUFFIX,track.segmetrics.io
+DOMAIN-SUFFIX,track.smtpmessage.com
 DOMAIN-SUFFIX,track.software-codes.com
 DOMAIN-SUFFIX,track.spe.schoolmessenger.com
 DOMAIN-SUFFIX,track.ultravpn.com

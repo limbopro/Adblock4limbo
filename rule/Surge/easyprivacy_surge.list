@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512010226
+## ! Version: 202512070545
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Dec 2025 02:26 UTC
+## ! Last modified: 07 Dec 2025 05:45 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 9887e7b821a5c84dd00c30b70ef678d15f7d5fd2
+## ! Commit: 1308b3c8c0925afd8405fe755f57624591fc1ee7
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -621,6 +621,7 @@ DOMAIN-SUFFIX,applocus.com
 DOMAIN-SUFFIX,applyless.com
 DOMAIN-SUFFIX,aquaticowl.com
 DOMAIN-SUFFIX,archswimming.com
+DOMAIN-SUFFIX,arclet.net
 DOMAIN-SUFFIX,aromamirror.com
 DOMAIN-SUFFIX,arrivegrowth.com
 DOMAIN-SUFFIX,arubahello.com
@@ -780,6 +781,7 @@ DOMAIN-SUFFIX,cannonchange.com
 DOMAIN-SUFFIX,canvasandsocks.com
 DOMAIN-SUFFIX,capablecup.com
 DOMAIN-SUFFIX,capriciouscorn.com
+DOMAIN-SUFFIX,captainstick.com
 DOMAIN-SUFFIX,captivatingcanyon.com
 DOMAIN-SUFFIX,captivatingillusion.com
 DOMAIN-SUFFIX,captivatingpanorama.com
@@ -1007,6 +1009,7 @@ DOMAIN-SUFFIX,digithalo.com
 DOMAIN-SUFFIX,dinnerquartz.com
 DOMAIN-SUFFIX,direfuldesk.com
 DOMAIN-SUFFIX,disagreeabledrop.com
+DOMAIN-SUFFIX,discopond.com
 DOMAIN-SUFFIX,discreetfield.com
 DOMAIN-SUFFIX,discreetquarter.com
 DOMAIN-SUFFIX,distributionpocket.com
@@ -1164,6 +1167,7 @@ DOMAIN-SUFFIX,fivesidedsquare.com
 DOMAIN-SUFFIX,fixedfold.com
 DOMAIN-SUFFIX,flakyfeast.com
 DOMAIN-SUFFIX,flameuncle.com
+DOMAIN-SUFFIX,flashtexting.com
 DOMAIN-SUFFIX,fleetbegin.com
 DOMAIN-SUFFIX,flimsycircle.com
 DOMAIN-SUFFIX,flimsythought.com
@@ -1270,6 +1274,7 @@ DOMAIN-SUFFIX,gondolagnome.com
 DOMAIN-SUFFIX,gorgeousedge.com
 DOMAIN-SUFFIX,gorillapage.com
 DOMAIN-SUFFIX,gossamerwing.com
+DOMAIN-SUFFIX,gotlunched.com
 DOMAIN-SUFFIX,gracefulmilk.com
 DOMAIN-SUFFIX,grainmass.com
 DOMAIN-SUFFIX,grandfatherguitar.com
@@ -1394,6 +1399,7 @@ DOMAIN-SUFFIX,innocentlamp.com
 DOMAIN-SUFFIX,inputicicle.com
 DOMAIN-SUFFIX,inquisitiveice.com
 DOMAIN-SUFFIX,inquisitiveinvention.com
+DOMAIN-SUFFIX,insectmacros.com
 DOMAIN-SUFFIX,inspirebees.com
 DOMAIN-SUFFIX,insulatech.com
 DOMAIN-SUFFIX,intelligentscissors.com
@@ -1595,6 +1601,7 @@ DOMAIN-SUFFIX,mixedreading.com
 DOMAIN-SUFFIX,modularmental.com
 DOMAIN-SUFFIX,momentfilter.com
 DOMAIN-SUFFIX,monacobeatles.com
+DOMAIN-SUFFIX,monkeyapes.com
 DOMAIN-SUFFIX,monkeystyping.com
 DOMAIN-SUFFIX,monstermemes.com
 DOMAIN-SUFFIX,monthlyhat.com
@@ -1700,6 +1707,7 @@ DOMAIN-SUFFIX,overkick.com
 DOMAIN-SUFFIX,overratedchalk.com
 DOMAIN-SUFFIX,owlreporter.com
 DOMAIN-SUFFIX,owlsr.us
+DOMAIN-SUFFIX,owlstwo.com
 DOMAIN-SUFFIX,oxygenfuse.com
 DOMAIN-SUFFIX,pailcrime.com
 DOMAIN-SUFFIX,pailpatch.com
@@ -2213,6 +2221,7 @@ DOMAIN-SUFFIX,stockingsneeze.com
 DOMAIN-SUFFIX,stocktheme.com
 DOMAIN-SUFFIX,stomachscience.com
 DOMAIN-SUFFIX,stonechin.com
+DOMAIN-SUFFIX,stonepole.com
 DOMAIN-SUFFIX,stopstomach.com
 DOMAIN-SUFFIX,stormyflower.com
 DOMAIN-SUFFIX,straightnest.com
@@ -2968,6 +2977,7 @@ DOMAIN-SUFFIX,era.easyvoyage.com
 DOMAIN-SUFFIX,error-analytics-production.shopifysvc.com
 DOMAIN-SUFFIX,error-analytics-sessions-production.shopifysvc.com
 DOMAIN-SUFFIX,errors.snackly.co
+DOMAIN-SUFFIX,essential-apps-analytics.herokuapp.com
 DOMAIN-SUFFIX,et.educationdynamics.com
 DOMAIN-SUFFIX,etl.springbot.com
 DOMAIN-SUFFIX,eu-mobile.events.data.microsoft.com
@@ -3298,6 +3308,7 @@ DOMAIN-SUFFIX,pixel.locker2.com
 DOMAIN-SUFFIX,pixel.mintigo.com
 DOMAIN-SUFFIX,pixel.mtrcs.samba.tv
 DOMAIN-SUFFIX,pixel.newscred.com
+DOMAIN-SUFFIX,pixel.propublica.org
 DOMAIN-SUFFIX,pixel.pub.lilyai.net
 DOMAIN-SUFFIX,pixel.redgifs.com
 DOMAIN-SUFFIX,pixel.roymorgan.com
@@ -3419,6 +3430,7 @@ DOMAIN-SUFFIX,snowplow.swm.digital
 DOMAIN-SUFFIX,snowplowjs.darwin.cx
 DOMAIN-SUFFIX,solutions.invocacdn.com
 DOMAIN-SUFFIX,sp-wukong-tracker.b-cdn.net
+DOMAIN-SUFFIX,sp.pcid.ca
 DOMAIN-SUFFIX,sp.tinymce.com
 DOMAIN-SUFFIX,spa-tracker.spapi.io
 DOMAIN-SUFFIX,speedtrap.shopdirect.com

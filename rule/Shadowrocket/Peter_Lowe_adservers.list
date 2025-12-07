@@ -1,7 +1,7 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 30 Nov 2025 20:27:24 GMT
+# last updated:   Thu, 04 Dec 2025 09:33:21 GMT
 # entries:        3479
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
@@ -193,7 +193,6 @@ DOMAIN-SUFFIX,adcampo.com, reject
 DOMAIN-SUFFIX,adcannyads.com, reject
 DOMAIN-SUFFIX,adcash.com, reject
 DOMAIN-SUFFIX,adcast.deviantart.com, reject
-DOMAIN-SUFFIX,adcel.co, reject
 DOMAIN-SUFFIX,adcell.de, reject
 DOMAIN-SUFFIX,adcenter.net, reject
 DOMAIN-SUFFIX,adclick.com, reject
@@ -827,7 +826,6 @@ DOMAIN-SUFFIX,affec.tv, reject
 DOMAIN-SUFFIX,affili.net, reject
 DOMAIN-SUFFIX,affiliate.1800flowers.com, reject
 DOMAIN-SUFFIX,affiliate.dtiserv.com, reject
-DOMAIN-SUFFIX,affiliate.rusvpn.com, reject
 DOMAIN-SUFFIX,affiliate.travelnow.com, reject
 DOMAIN-SUFFIX,affiliate.treated.com, reject
 DOMAIN-SUFFIX,affiliatefuture.com, reject
@@ -910,7 +908,6 @@ DOMAIN-SUFFIX,annoyedairport.com, reject
 DOMAIN-SUFFIX,annoyingacoustics.com, reject
 DOMAIN-SUFFIX,anrdoezrs.net, reject
 DOMAIN-SUFFIX,anstrex.com, reject
-DOMAIN-SUFFIX,anuncios.edicaoms.com.br, reject
 DOMAIN-SUFFIX,anxiousapples.com, reject
 DOMAIN-SUFFIX,api.amplitude.com, reject
 DOMAIN-SUFFIX,api.appmetrica.yandex.ru, reject
@@ -1170,6 +1167,7 @@ DOMAIN-SUFFIX,campaign.bharatmatrimony.com, reject
 DOMAIN-SUFFIX,caniamedia.com, reject
 DOMAIN-SUFFIX,capriciouscorn.com, reject
 DOMAIN-SUFFIX,captainbicycle.com, reject
+DOMAIN-SUFFIX,captainstick.com, reject
 DOMAIN-SUFFIX,carambo.la, reject
 DOMAIN-SUFFIX,carbonads.com, reject
 DOMAIN-SUFFIX,carbonads.net, reject
@@ -1657,6 +1655,7 @@ DOMAIN-SUFFIX,fixedfold.com, reject
 DOMAIN-SUFFIX,flairadscpc.com, reject
 DOMAIN-SUFFIX,flakyfeast.com, reject
 DOMAIN-SUFFIX,flashtalking.com, reject
+DOMAIN-SUFFIX,flashtexting.com, reject
 DOMAIN-SUFFIX,fleshlightcash.com, reject
 DOMAIN-SUFFIX,flexbanner.com, reject
 DOMAIN-SUFFIX,flimsycircle.com, reject
@@ -2245,6 +2244,7 @@ DOMAIN-SUFFIX,mon.byteoversea.com, reject
 DOMAIN-SUFFIX,monarchads.com, reject
 DOMAIN-SUFFIX,monetate.net, reject
 DOMAIN-SUFFIX,monetizer101.com, reject
+DOMAIN-SUFFIX,monkeyapes.com, reject
 DOMAIN-SUFFIX,monsterpops.com, reject
 DOMAIN-SUFFIX,mookie1.com, reject
 DOMAIN-SUFFIX,mopub.com, reject
@@ -2547,7 +2547,6 @@ DOMAIN-SUFFIX,previousplayground.com, reject
 DOMAIN-SUFFIX,prf.hn, reject
 DOMAIN-SUFFIX,priceypies.com, reject
 DOMAIN-SUFFIX,pricklydebt.com, reject
-DOMAIN-SUFFIX,priefy.com, reject
 DOMAIN-SUFFIX,primetime.net, reject
 DOMAIN-SUFFIX,privatecash.com, reject
 DOMAIN-SUFFIX,prmtracking.com, reject
@@ -3178,6 +3177,7 @@ DOMAIN-SUFFIX,track.privacyatclearbit.com, reject
 DOMAIN-SUFFIX,track.przejdzdostrony.pl, reject
 DOMAIN-SUFFIX,track.pubmatic.com, reject
 DOMAIN-SUFFIX,track.segmetrics.io, reject
+DOMAIN-SUFFIX,track.smtpmessage.com, reject
 DOMAIN-SUFFIX,track.software-codes.com, reject
 DOMAIN-SUFFIX,track.spe.schoolmessenger.com, reject
 DOMAIN-SUFFIX,track.ultravpn.com, reject

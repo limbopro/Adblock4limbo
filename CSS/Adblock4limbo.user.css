@@ -1,3 +1,16 @@
+/* 该死的广告 */
+    [id*="ad-unit"], 
+    [class*="ad-unit"], 
+    [data*="ad-unit"], 
+    [data-name*="ad-unit"], 
+    [data-testid*="ad-unit"],
+    [class*='ads'],
+    [id*='ads'] {
+        display: none !important;
+        pointer-events: none !important;
+        opacity:0;
+}
+
 /* 遮罩层 */
 .confirm-mask {
     position: fixed;

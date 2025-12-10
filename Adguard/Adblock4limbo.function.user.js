@@ -2440,11 +2440,20 @@ function applyState(targetState) {
 
         // A. 运行您的翻译启动代码
         // 动态加载谷歌翻译脚本
-        const scriptUrl = '//limbopro.com/Adguard/Adblock4limbo.immersiveTranslation.user.js';
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = scriptUrl;
-        document.head.appendChild(script);
+
+        const wait = setInterval(() => [...document.scripts].some(s => s.src?.includes('limbopro.com/Adguard/Adblock4limbo.immersiveTranslation.user.js') || s.textContent?.includes('Adblock4limbo')) && (clearInterval(wait), startMyCode()), 200);
+        function startMyCode() { console.log('Adblock4limbo.immersiveTranslation.user.js已加载...'); /* ← 你的全部代码写这 */ }
+
+        if (document.getElementById('translation-button') == null) {
+            const scriptUrl = '//limbopro.com/Adguard/Adblock4limbo.immersiveTranslation.user.js';
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = scriptUrl;
+            document.head.appendChild(script);
+        } else {
+            document.getElementById('translation-button').classList.remove('translate-hidden')
+        }
+
         body_build('false');
 
         // B. 更新 UI
@@ -2462,7 +2471,6 @@ function applyState(targetState) {
             console.log('页面滚动中...')
             hiddencjsfy();
         });
-
     } else {
         // --- 去激活 (OFF) 逻辑 ---
 
@@ -2478,9 +2486,9 @@ function applyState(targetState) {
             body_build('false')
             const translationButton = document.getElementById('translation-button');
             if (translationButton) {
-                document.getElementById('translation-button').classList.add('translate-hidden')  // 23333
+                document.getElementById('translation-button').classList.add('translate-hidden')
             }
-        }, 1000)
+        }, 500)
 
     }
 
@@ -2490,6 +2498,15 @@ function applyState(targetState) {
 
 
 if (cjsfybtn) {
+    
+    if (localStorage.getItem('cjsfy_translation_state') == null && document.getElementById('translation-button') !== null) {
+        // 如果 translation-button 已经存在
+        // B.更新 UI
+        applyState('on');
+    } else if (localStorage.getItem('cjsfy_translation_state') == 'off') {
+        applyState('off');
+    }
+
     // ===========================================
     // 步骤 1: 页面加载时，从 localStorage 恢复状态
     // ===========================================

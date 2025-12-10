@@ -795,31 +795,25 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(adsMax.css.porn91);
 
             let url91 = document.location.href;
-            if (url91.indexOf('view_') !== -1) {
-                let play = setInterval(() => {
-                    if (document.querySelector('div.preroll-skip-button') !== null) {
-                        document.querySelector('div.preroll-skip-button').click();
-                    } else {
-                        clearInterval(play);
+            if (url91.includes('view_')) {  // 推荐用 includes，更简洁
+                const timer = setInterval(() => {
+                    const skipBtn = document.querySelector('div.preroll-skip-button');
+
+                    if (skipBtn) {
+                        skipBtn.click();
+                        clearInterval(timer);  // 点击成功后立即停止轮询
+                        console.log('广告已自动跳过');
                     }
-                }, 1000)
+                }, 500);  // 500ms 比 1000ms 更灵敏，用户体验更好
+
+                // 可选：设置最长等待时间（如15秒后自动停止，防止死循环）
+                setTimeout(() => clearInterval(timer), 15000);
             }
 
             setTimeout(() => {
                 _91porn_dl()
             }, 2500)
 
-            //css_adsRemove(adsMax.css.porna91);
-            //_91porn_videoplay_ads();
-
-            // 播放页空白
-            /*
-            document.querySelectorAll("br").forEach((x) => {
-                if (x.clientHeight = 0) {
-                    x.remove()
-                }
-            })
-            */
 
             break;
         case 'avple':
@@ -1658,12 +1652,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             }()
 
-            noWindowOpenIf('window.open')
-            noWindowOpenIf('touchend')
-            window_open_defuser(); 
-// 打断 window.open 施法
-
-addEventListener_defuser();
+            //noWindowOpenIf('window.open')
+            //noWindowOpenIf('touchend')
+            window_open_defuser(); // 打断 window.open 施法
 
             break;
         case "njav":
@@ -2281,7 +2272,7 @@ addEventListener_defuser();
                         for (let video of videos) {
                             if (video.src && video.src.includes('.m3u8')) {
                                 console.log('直接 src 是 m3u8:', video.src);
-                                //alert(video.src); 
+                                //alert(video.src);
 
                                 window.m3u8SRC = video.src // 获取src
                                 return video.src; //
@@ -2485,7 +2476,7 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
         //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
         if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {
             console.log('CSP + PC, SO DO NOTING.')
-        } else if (window.location.href.toLowerCase().indexOf('91porn.') !== -1) {
+        } else if (window.location.href.toLowerCase().indexOf('-9-1p-o-r-n') !== -1) { // 符合条件的不引入导航按钮
             console.log('SO DO NOTING.')
         } else {
             let daohang = setInterval(() => {
@@ -3221,7 +3212,7 @@ function fastForward(videowrap, section) { // fastForward()
     #jable-skip-panel {
     touch-action: pan-up pan-down pan-x pan-y manipulation;
     /* 或者直接写死： */
-    touch-action: manipulation;     
+    touch-action: manipulation;
     /* 允许点击+滚动，但彻底禁用双击放大和双指缩放 */
     -webkit-tap-highlight-color: transparent;
       display: flex;

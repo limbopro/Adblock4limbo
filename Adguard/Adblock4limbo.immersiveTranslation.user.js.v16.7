@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         沉浸式双语翻译 (Google Translate & Dual Wrapper) - 简洁滚动控制 - 纯JS版本
 // @namespace    http://tampermonkey.net/
-// @version      2025-12-11_Final_V16.8_ScrollSimple_CloseButton_Stable
-// @description  基于 Google Translate，采用双包裹结构实现沉浸式双语对照翻译。包含：Trusted Types兼容加载、SPA路由变化监控、滚动时自动隐藏 UI、以及浮动按钮切换“双语/原文”模式。
+// @version      2025-12-10_Final_V16.7_ScrollSimple_CloseButton_Stable
+// @description  基于 Google Translate，采用双包裹体结构实现沉浸式双语对照翻译。修复了点击“双语”按钮后关闭按钮丢失的问题，并在切换模式时加入了关闭按钮的防御性检查和重建。
 // @author       limbopro
 // @match        https://*/*
 // require       https://translate.google.com/translate_a/element.js?cb=google.translate.TranslateElementInit
@@ -152,7 +152,7 @@ function applyDualWrapperProtection() {
                     //const pureNumericOrSymbolic = /^[\d\s\W]+$/.test(text);
                     const pureNumericOrSymbolic = /^\s*[\d\s.,]+\s*$/.test(text)
                     if (!text) return NodeFilter.FILTER_REJECT;
-
+                    
 
                     if (pureNumericOrSymbolic) {
                         return NodeFilter.FILTER_REJECT;
@@ -179,7 +179,6 @@ function applyDualWrapperProtection() {
         );
 
         let textNode;
-
         while (textNode = walker.nextNode()) {
             const target = textNode.parentElement;
             target.dataset._textDuplicated = 'pending';
@@ -195,84 +194,38 @@ function applyDualWrapperProtection() {
         targetsToProcess.forEach(({ originalText, target }, i) => {
 
 
-            function wrapTarget() { // 打包函数开始
-                // 1. 创建 原文副本 (克隆：保留原结构和内容)
-                const originalWrapper = target.cloneNode(true);
-                originalWrapper.classList.add('notranslate', 'Original', 'ori');
+            // 1. 创建 原文副本 (克隆：保留原结构和内容)
+            const originalWrapper = target.cloneNode(true);
+            originalWrapper.classList.add('notranslate', 'Original', 'ori');
 
 
-                // 创建 分隔符
-                const separator = document.createElement('p');
-                separator.className = 'spacer';
+            // 创建 分隔符
+            const separator = document.createElement('p');
+            separator.className = 'spacer';
 
-                // 2. 创建 译文包裹层
-                //// const translatedWrapper = document.createElement('font');
-                const translatedWrapper = originalWrapper.cloneNode(true)
-                translatedWrapper.className = 'cjsfy-translated';
+            // 2. 创建 译文包裹层
+            //// const translatedWrapper = document.createElement('font');
+            const translatedWrapper = originalWrapper.cloneNode(true)
+            translatedWrapper.className = 'cjsfy-translated';
 
 
-                // 5. 清空 target 元素，并按顺序插入
-                target.innerText = ''
-                target.appendChild(originalWrapper);
-                target.appendChild(separator);
-                target.appendChild(translatedWrapper);
+            // 5. 清空 target 元素，并按顺序插入
+            target.innerText = ''
+            target.appendChild(originalWrapper);
+            target.appendChild(separator);
+            target.appendChild(translatedWrapper);
 
-                // 标记为已处理
-                target.dataset._textDuplicated = 'true';
+            // 标记为已处理
+            target.dataset._textDuplicated = 'true';
 
-                if (i === 0) {
-                    target.style.outline = '3px solid #00bcd4';
-                    target.scrollIntoView({ block: 'center', behavior: 'smooth' });
-                    setTimeout(() => target.style.outline = '', 3000);
-                }
-
-                results.push({ target });
-            } // 打包函数结束
-
-            // 克隆函数开始
-
-            window.cloneThat = function cloneAndModifyElements() {
-                const originalElements = document.querySelectorAll('.immersive.notranslate');
-                originalElements.forEach(originalElement => {
-                    const clonedElement = originalElement.cloneNode(true);
-                    clonedElement.classList.remove('notranslate');
-                    clonedElement.classList.add('cjsfy-translated');
-                    originalElement.insertAdjacentElement('afterend', clonedElement);
-                });
-                console.log(`成功处理了 ${originalElements.length} 个元素。`);
+            if (i === 0) {
+                target.style.outline = '3px solid #00bcd4';
+                target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+                setTimeout(() => target.style.outline = '', 3000);
             }
 
-            // 克隆函数结束
-
-            // 拆分函数开始
-
-            function brToParagraphs(target, innerHTMLString) {
-                let cleanedString = innerHTMLString.trim();
-                const newParaDelimiter = '___NEW_PARA___';
-                let processedString = cleanedString.replace(/(\s*<br\s*\/?>\s*)+/gi, newParaDelimiter);
-                processedString = processedString.replace(new RegExp(`^${newParaDelimiter}`), '').replace(new RegExp(`${newParaDelimiter}$`), '');
-                const paragraphs = processedString.split(newParaDelimiter);
-                const validParagraphs = paragraphs.filter(p => p.trim().length > 0);
-                const resultHTML = validParagraphs
-                    .map(p => `<p class='immersive notranslate frombrEL'>${p.trim()}</p>`)
-                    .join('');
-                target.innerHTML = resultHTML
-                console.log(target.querySelectorAll('.immersive.notranslate').length)
-
-            }
-
-            // 拆分br函数结束
-
-            // 判断是否存在 br 
-            if (target.querySelectorAll('br').length == 0) {
-                wrapTarget(target)
-            } else {
-                brToParagraphs(target, target.innerHTML)
-            }
-
+            results.push({ target });
         });
-
-        cloneThat();
 
         console.log(`%c 成功为 ${results.length} 个元素创建了双包裹结构`,
             'color:#fff;background:#00bcd4;padding:8px 16px;border-radius:8px;font-size:16px;');
@@ -357,7 +310,7 @@ function createFloatingButton() {
 
     .spacer {
         height:1px;
-        margin:0px !important;
+        margin:0px;
         padding:0px;
         border:0px;
     }
@@ -584,9 +537,8 @@ function createFloatingButton() {
 
     const handleScroll = () => {
 
-        if (document.getElementById('google_translate_element'))
-            if (document.querySelector('.cjsfy-translated').classList.value.includes('dual-wrapper-hidden') || document.querySelector('.cjsfy-translated') == null || document.querySelector('.cjsfy-translated').querySelector('font[dir]') !== null)
-                hideElements();
+        if (document.querySelector('.cjsfy-translated').classList.value.includes('dual-wrapper-hidden') || document.querySelector('.cjsfy-translated') == null || document.querySelector('.cjsfy-translated').querySelector('font[dir]') !== null)
+            hideElements();
         clearTimeout(scrollTimer);
 
         scrollTimer = setTimeout(() => {

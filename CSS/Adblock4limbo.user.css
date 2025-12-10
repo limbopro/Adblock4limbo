@@ -1,38 +1,10 @@
-#pop,
-.div_pop,
-#pop.div_pop,
-.movv-ad,
-#adsbox,
-/*div.right, 与 jable 评论模块冲突*/
-div.movv-ad.ad_3_3,
-div.movv-ad.ad_3_2,
-.movv-ad,
-.adsbyexoclick,
-#adsbox,
-.adsbyexoclick,
-/* supjav */
-
-.remove-ads-link,
-.remove-ads,
-.adsbyexoclick,
-#ad-header-mobile,
-.video-ad,
-#video-right,
-#ad-footer {
-    display: none !important;
-    pointer-events: none !important;
-}
-
-/* xvideos */
-
-
 /* 遮罩层 */
 .confirm-mask {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, .5);
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
     align-items: center;
     z-index: 9998;
     opacity: 0;

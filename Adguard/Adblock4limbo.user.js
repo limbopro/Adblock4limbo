@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.12.07
+// @version      0.2025.12.10
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -359,7 +359,7 @@ var adsMax = {
         baidu_search: "div[style*=fixed],.ec_ad_results {display:none !important;} ", // baidu
         baidu_index: "a[data-tclog] > img, #foot, .recordcode, .index-copyright, div[style*='overflow'], .rn-container, .s-loading-frame.bottom {display:none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
-        jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, iframe, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
+        jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
         test: "*, div,img {display: none !important}",
         tvn: "img[src*='gif'], iframe {display:none !important; pointer-events:none important;}",
         comic_18: "div.div2_sticky2, p > a[target=_blank], div.modal-body > a[target=_blank], li[class*='pop'] > a[target=_blank], li[class*='top'] > a[target=_blank], .modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important; pointer-events: none !important;}", // 555电影网
@@ -1250,18 +1250,20 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     function showModal() {
                         const overlay = document.getElementById('overlay');
                         const modal = document.getElementById('modal');
-
-                        overlay.style.display = 'block';
-                        modal.style.display = 'block';
+                        if (overlay !== null)
+                            overlay.style.display = 'block';
+                        if (modal !== null)
+                            modal.style.display = 'block';
                     }
 
                     // 关闭悬浮窗
                     function closeModal() {
                         const overlay = document.getElementById('overlay');
                         const modal = document.getElementById('modal');
-
-                        overlay.style.display = 'none';
-                        modal.style.display = 'none';
+                        if (overlay !== null)
+                            overlay.style.display = 'none';
+                        if (modal !== null)
+                            modal.style.display = 'none';
                     }
 
 
@@ -1656,9 +1658,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
 
             }()
 
-            //noWindowOpenIf('window.open')
-            //noWindowOpenIf('touchend')
-            window_open_defuser(); // 打断 window.open 施法
+            noWindowOpenIf('window.open')
+            noWindowOpenIf('touchend')
+            window_open_defuser(); 
+// 打断 window.open 施法
+
+addEventListener_defuser();
 
             break;
         case "njav":
@@ -1675,7 +1680,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             window_open_defuser();
             abort_on_property_read();
             js_adsRemove(uBlockOrigin.addEventListenerdefuser);
-            addEventListener_defuser();
+            //addEventListener_defuser();
             js_adsRemove(uBlockOrigin.noevalif);
             break;
 
@@ -2276,15 +2281,17 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         for (let video of videos) {
                             if (video.src && video.src.includes('.m3u8')) {
                                 console.log('直接 src 是 m3u8:', video.src);
-                                alert(video.src);
-                                return video.src;
+                                //alert(video.src); 
+
+                                window.m3u8SRC = video.src // 获取src
+                                return video.src; //
                             }
 
                             // hls.js / video.js / 大部分播放器都会把实例挂在 video.hls 或 video.player 上
                             if (video.hls && video.hls.url) {
                                 console.log('hls.js url:', video.hls.url);
-                                alert(video.hls.url);
-                                mp4URL = video.hls.url
+                                //alert(video.hls.url);
+                                //mp4URL = video.hls.url
                                 return video.hls.url;
                             }
                             if (video.hls && typeof video.hls.currentLevel === 'object') {
@@ -2302,22 +2309,27 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     })();
 
                     var button_download = document.createElement('button')
-                    button_download.style = "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
+                    button_download.style = "margin-left: 0px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
 
-                    if (hls.url.indexOf('.mp4') !== -1) {
+                    /*if (hls.url.indexOf('.mp4') !== -1) {
                         button_download.textContent = '复制视频下载地址'
                     } else {
                         button_download.textContent = '复制M3U8文件地址'
                     }
 
+*/
+                    button_download.textContent = '复制M3U8文件地址'
+
                     button_download.id = 'copyURL'
 
                     button_download.addEventListener('click', (() => {
-                        if (hls.url) {
+
+                        //alert('wtf')
+                        if (window.m3u8SRC) {
                             const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
                             textarea.id = 'fuck91porn'
                             document.querySelector('#copyURL').appendChild(textarea)
-                            textarea.value = hls.url
+                            textarea.value = window.m3u8SRC
                             textarea.select();
                             document.execCommand('copy', true); // 执行复制
                             document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
@@ -2337,6 +2349,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }))
 
                     let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
+
                     if (ua_missav.indexOf(mobile_missav) === -1) {
 
                         if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null && document.querySelector('#how') === null) {
@@ -2367,8 +2380,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", cssText, "video_Play()", "missavX", 0, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", cssText, "fullscreen()", "missavFullScreen", 2, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "video_pause()", "missavPause", 1, "button");
-                        ele_dynamicAppend("div.mt-4", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 3, "a");
-                        document.querySelector('div.mt-4').insertBefore(button_download, document.querySelector('div.mt-4').children[4])
+                        ele_dynamicAppend("div.mt-4", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
+                        document.querySelector('div.mt-4').insertBefore(button_download, document.querySelector('div.mt-4').children[3])
                         // 添加监听器
 
                         if (document.getElementById("how") !== null) {
@@ -2925,8 +2938,10 @@ function _91porny_dl() {
                 const overlay = document.getElementById('overlay');
                 const modal = document.getElementById('modal');
 
-                overlay.style.display = 'block';
-                modal.style.display = 'block';
+                if (overlay !== null)
+                    overlay.style.display = 'block';
+                if (modal !== null)
+                    modal.style.display = 'block';
             }
 
             // 关闭悬浮窗
@@ -2934,8 +2949,10 @@ function _91porny_dl() {
                 const overlay = document.getElementById('overlay');
                 const modal = document.getElementById('modal');
 
-                overlay.style.display = 'none';
-                modal.style.display = 'none';
+                if (overlay !== null)
+                    overlay.style.display = 'none';
+                if (modal !== null)
+                    modal.style.display = 'none';
             }
         }
 
@@ -3414,13 +3431,39 @@ function tmd_land(parentSelector, code, titleText) {
 
 /* 悬浮窗  Start*/
 
+// 1. 注入 CMSNONE 样式
+(function () {
+    const cmsNoneCSS = `
+    .cmsnone {
+      z-index: -111;
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  `;
+
+    const styleElement = document.createElement('style');
+    styleElement.type = 'text/css';
+
+    if (styleElement.styleSheet) {
+        styleElement.styleSheet.cssText = cmsNoneCSS;
+    } else {
+        styleElement.appendChild(document.createTextNode(cmsNoneCSS));
+    }
+
+    document.head.appendChild(styleElement);
+})();
+
+// 后续用于显示：mask_cre.classList.remove('cmsnone');
+// 后续用于隐藏：mask_cre.classList.add('cmsnone');
+
 const mask_cre = document.createElement('div');
 mask_cre.id = 'confirmMask';
-mask_cre.className = 'confirm-mask';
+mask_cre.className = 'confirm-mask cmsnone';
 mask_cre.innerHTML = `
     <div class="confirm-dialog">
       <div class="confirm-header">确认操作</div>
-      <div class="confirm-body">?</div>
+      <div class="confirm-body"></div>
       <div class="confirm-footer">
         <button class="cancel">取消</button>
         <button class="ok">确认</button>
@@ -3439,6 +3482,7 @@ const maskText = document.querySelector('div.confirm-body');
 let resolvePromise;   // 用于 await 方式（可选）
 
 function showConfirm() {
+    mask.classList.remove('cmsnone')
     mask.classList.add('show');
 
     return new Promise(resolve => {

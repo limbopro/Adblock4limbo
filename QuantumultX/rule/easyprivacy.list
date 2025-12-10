@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512071518
+## ! Version: 202512100056
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Dec 2025 15:18 UTC
+## ! Last modified: 10 Dec 2025 00:56 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 3023e48e30d7b9a845cb7d06411a9a33365c95ed
+## ! Commit: a4b52ab1747e8366f051bcdb166634f56d6912e3
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -2562,6 +2562,7 @@ DOMAIN-SUFFIX,a.getflowbox.com, reject
 DOMAIN-SUFFIX,a.hcaptcha.com, reject
 DOMAIN-SUFFIX,a.mobify.com, reject
 DOMAIN-SUFFIX,a.vturb.net, reject
+DOMAIN-SUFFIX,ab.dns-finder.com, reject
 DOMAIN-SUFFIX,activity-flow.vtex.com, reject
 DOMAIN-SUFFIX,activity.wisepops.com, reject
 DOMAIN-SUFFIX,ad.aloodo.com, reject
@@ -5060,6 +5061,7 @@ DOMAIN-SUFFIX,ophan.theguardian.com, reject
 DOMAIN-SUFFIX,optimizely.techtarget.com, reject
 DOMAIN-SUFFIX,otel-mobile.doordash.com, reject
 DOMAIN-SUFFIX,p.codio.com, reject
+DOMAIN-SUFFIX,p.controld.com, reject
 DOMAIN-SUFFIX,p.hentaiforce.net, reject
 DOMAIN-SUFFIX,p.minds.com, reject
 DOMAIN-SUFFIX,p.spotidownloader.com, reject
@@ -38257,7 +38259,6 @@ DOMAIN-SUFFIX,deeplink.tytod.com, reject
 DOMAIN-SUFFIX,deeplink.wagr.ai, reject
 DOMAIN-SUFFIX,deeplink.wbnc.99array.com, reject
 DOMAIN-SUFFIX,deeplink.winespectator.com, reject
-DOMAIN-SUFFIX,deeplink.xeropan.com, reject
 DOMAIN-SUFFIX,deeplinkdev.upoker.net, reject
 DOMAIN-SUFFIX,deeplinks.amex.dynamify.com, reject
 DOMAIN-SUFFIX,deeplinks.breaz.dynamify.com, reject

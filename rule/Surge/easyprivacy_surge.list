@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512071518
+## ! Version: 202512100056
 ## ! Title: EasyPrivacy
-## ! Last modified: 07 Dec 2025 15:18 UTC
+## ! Last modified: 10 Dec 2025 00:56 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 3023e48e30d7b9a845cb7d06411a9a33365c95ed
+## ! Commit: a4b52ab1747e8366f051bcdb166634f56d6912e3
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -2562,6 +2562,7 @@ DOMAIN-SUFFIX,a.getflowbox.com
 DOMAIN-SUFFIX,a.hcaptcha.com
 DOMAIN-SUFFIX,a.mobify.com
 DOMAIN-SUFFIX,a.vturb.net
+DOMAIN-SUFFIX,ab.dns-finder.com
 DOMAIN-SUFFIX,activity-flow.vtex.com
 DOMAIN-SUFFIX,activity.wisepops.com
 DOMAIN-SUFFIX,ad.aloodo.com
@@ -5060,6 +5061,7 @@ DOMAIN-SUFFIX,ophan.theguardian.com
 DOMAIN-SUFFIX,optimizely.techtarget.com
 DOMAIN-SUFFIX,otel-mobile.doordash.com
 DOMAIN-SUFFIX,p.codio.com
+DOMAIN-SUFFIX,p.controld.com
 DOMAIN-SUFFIX,p.hentaiforce.net
 DOMAIN-SUFFIX,p.minds.com
 DOMAIN-SUFFIX,p.spotidownloader.com
@@ -38257,7 +38259,6 @@ DOMAIN-SUFFIX,deeplink.tytod.com
 DOMAIN-SUFFIX,deeplink.wagr.ai
 DOMAIN-SUFFIX,deeplink.wbnc.99array.com
 DOMAIN-SUFFIX,deeplink.winespectator.com
-DOMAIN-SUFFIX,deeplink.xeropan.com
 DOMAIN-SUFFIX,deeplinkdev.upoker.net
 DOMAIN-SUFFIX,deeplinks.amex.dynamify.com
 DOMAIN-SUFFIX,deeplinks.breaz.dynamify.com

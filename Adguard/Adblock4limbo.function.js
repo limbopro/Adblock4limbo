@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.12.01
+// @version      0.2025.12.10
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -32,6 +32,8 @@
 // 各种 function 的集合
 
 // 获取M3U8文件资源链接
+
+
 
 var repeat_regex = ["https:?\/\/.*?hls.*?\.m3u8", "https:?\/\/.*?phncdn.*?hls.*?\.m3u8", "https:?\/\/.*?mushroomtrack.*?\.m3u8"]
 
@@ -113,15 +115,6 @@ function tripleClick() {
     var number = 0;
     const htmlbody = document.querySelectorAll('body')[0]
 
-    /*
-    htmlbody.addEventListener('touchstart', function () {
-        startTime = +new Date()
-        number += 1;
-        console.log(number)
-        tripleClick_check(number)
-    })
-    */
-
     htmlbody.addEventListener('click', function (e) {
         // 如果点击目标是 button 或 button 的后代元素，直接 return
         if (e.target.closest('button, a, [role="button"], .btn, label, input, select')) {
@@ -141,8 +134,11 @@ function tripleClick() {
                 body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
             } else {
                 number = 0;
-                console.log("number被重设为0")
+                console.log("number被重设为0");
+                //hiddencjsfy()
+                showcjsfy()
             }
+
         }, 850)
     }
 
@@ -502,7 +498,7 @@ function initNavigationContainer() { // 初始化导航容器
     // 1. 创建容器（只创建一次）
     const container = Object.assign(document.createElement('div'), {
         id: 'dh_pageContainer',
-        className: 'dh_pageContainer_css notranslate'
+        className: 'dh_pageContainer_css'
     });
 
     // 2. 使用模板字符串（保持可读性） + 文档片段（避免多次 innerHTML 导致的重排）
@@ -555,6 +551,7 @@ function getNavigationHTML() {
             <li class="li_global"><a class="a_global" id="ifeedback" href="https://limbopro.com/feedback/" target="_blank">匿名留言</a></li>
       <li class="li_global"><button class="crbhms" id="hidedaohang">导航按钮(OFF)</button></li>
       <li class="li_global"><button class="crbhms" id="huacisousuo" data-state="off" style="background-color:red">划词搜索(OFF)</button></li>
+      <li class="li_global"><button class="crbhms" id="cjsfy" data-state="off" style="background-color:red">沉浸式翻译(OFF)</button></li>
       <li class="li_global">
     <button style="background: black;"class="crbhms" id="resetSort">重置排序</button></li>
       <li class="li_global"><button class="crbhms" id="nsfwmode_switch">WTF!</button></li>
@@ -573,6 +570,7 @@ function getNavigationHTML() {
     <ul class="ul_global">
       <li class="li_global"><a class="a_global" id="Github" href="https://github.com/limbopro" target="_blank">Github</a></li>
       <li class="li_global"><a class="a_global" id="GreasyFork" href="https://sleazyfork.org/zh-CN/users/893587-limbopro" target="_blank">GreasyFork</a></li>
+            <li class="li_global"><a class="a_global special" id="limboprossr" href="https://t.me/limboprossr" target="_blank">毒奶博客</a></li>
       <li class="li_global"><a class="a_global special" id="limboprossr" href="https://t.me/limboprossr" target="_blank">资讯频道</a></li>
       <li class="li_global"><a class="a_global special" id="SecretGarden" href="https://t.me/+dQ-tZYqhSDEwNTk1" target="_blank">春潮频道</a></li>
       <li class="li_global"><a class="a_global better" id="limboprossr" href="https://twitter.com/limboprossr" target="_blank">Twitter</a></li>
@@ -587,11 +585,11 @@ function getNavigationHTML() {
       <li class="li_global"><a class="a_global" id="itimer">计时器⏱️</a></li>
       <li class="li_global"><a class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" target="_blank" style="background:#5a4771;box-shadow:inset 0 0 15px 3px #16191f00">广告拦截大全</a></li>
       <li class="li_global"><a class="a_global" id="software_skills" href="https://limbopro.com/category/software-skills/" target="_blank">软件百科</a></li>
-            <li class="li_global"><a class="a_global special yellow" id="websiteStatus" href="https://limbopro.com/status/" target="_blank" style="background:#5a4771">查看网站实时状态</a></li>
-      <li class="li_global"><a class="a_global special yellow" id="index" href="https://limbopro.com/" target="_blank" style="background:#5a4771">毒奶博客</a></li>
+      <li class="li_global"><a class="a_global special yellow" id="websiteStatus" href="https://limbopro.com/status/" target="_blank" style="background:#5a4771">查看网站实时状态</a></li>
       <li class="li_global"><a class="a_global special yellow" id="毒奶搜索" href="https://limbopro.com/search.html" target="_blank" style="border-radius:4px;background:#c53f3f">毒奶搜索</a></li>
       <li class="li_global"><a class="a_global special yellow" id="番号搜索" href="https://limbopro.com/btsearch.html" target="_blank" style="border-radius:4px;background:#c53f3f">番号搜索</a></li>
-      <li class="li_global"><button class="a_global special yellow" id="zhixingjs"  style="border-radius:4px;background:#c53f3f">执行JS</a></li>
+      <li class="li_global"><button class="a_global special yellow" id="mtzyczq"  style="border-radius:4px;background:#c53f3f" onclick="mtzyczq()">媒体资源查找器</button></li>
+      <li class="li_global"><button class="a_global special yellow" id="zhixingjs"  style="border-radius:4px;background:#c53f3f">执行JS</button></li>
     </ul>
   </div>
 
@@ -743,6 +741,9 @@ var file = {
         ".li_global {display:flex; min-height:31px; font-size:medium; list-style:none; width:112px;}",
         ".ul_global {padding:0px; font-size:15px !important; height:258px; margin:0px; overflow:auto; width:auto;}",
         ".title_global {font-weight:bolder !important; padding-left:2px; display:table-cell; vertical-align:bottom; width:106px; height:50px; text-align:center; font-size:initial; margin-bottom:5px; font-weight:lighter; color:black !important; padding-bottom:4px;}",
+
+        /* 隐藏谷歌翻译框 */
+        ".translate-hidden { height:0px; opacity: 0 !important; pointer-events: none !important;transition: opacity 0.3s ease !important;}",
 
         /* 主容器背景与动画 */
         "#dh_pageContainer {overflow-y:overlay; overflow-x:hidden; background-image:url('https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg'); background-size:100% !important; background-repeat:round; margin:auto; width:200px; height:200px; z-index:-114154; opacity:0; background-color:transparent; position:fixed; top:50%;}",
@@ -1625,9 +1626,6 @@ function toggleSearchState(x) {
             //// body_build('false')
         }, 1500)
     }
-
-
-
 }
 
 // 点击事件
@@ -2388,6 +2386,8 @@ function initLimoProSearch() {
         const now = Date.now();
         if (now - lastScroll > 300 && !window.getSelection().toString().trim()) hide();
         lastScroll = now;
+        // 沉浸式翻译隐藏起来 cjsfy
+        console.log('页面滚动中...')
     });
 
     document.addEventListener('keydown', e => {
@@ -2398,7 +2398,553 @@ function initLimoProSearch() {
     console.log('划词搜索（终极优化版 + 设置按钮）已加载');
 }
 
+// 划词搜索 End
 
+// 沉浸式翻译 Start
+
+
+function hiddencjsfy() {
+    const iframeEl = document.querySelector('div.skiptranslate')
+    const translateEl = document.getElementById('google_translate_element');
+    if (iframeEl && translateEl) {
+        translateEl.classList.add('translate-hidden');
+        iframeEl.classList.add('translate-hidden');
+    }
+}
+
+
+function showcjsfy() {
+    const iframeEl = document.querySelector('div.skiptranslate')
+    const translateEl = document.getElementById('google_translate_element');
+    if (iframeEl && translateEl) {
+        translateEl.classList.remove('translate-hidden');
+        iframeEl.classList.remove('translate-hidden');
+    }
+
+    setTimeout(() => { hiddencjsfy() }, 5000)
+
+}
+
+// 沉浸式翻译
+// 切换按钮
+const cjsfybtn = document.getElementById('cjsfy');
+const STORAGE_KEY = 'cjsfy_translation_state'; // 用于 localStorage 的键名
+
+// 这是一个统一的函数，用于根据目标状态更新 UI、执行功能并保存状态
+function applyState(targetState) {
+    if (!cjsfybtn) return;
+
+    // 1. 执行功能和 UI 逻辑
+    if (targetState === 'on') {
+        // --- 激活 (ON) 逻辑 ---
+
+        // A. 运行您的翻译启动代码
+        // 动态加载谷歌翻译脚本
+        const scriptUrl = '//limbopro.com/Adguard/Adblock4limbo.immersiveTranslation.user.js';
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = scriptUrl;
+        document.head.appendChild(script);
+        body_build('false');
+
+        // B. 更新 UI
+        cjsfybtn.textContent = '沉浸式翻译(ON)';
+        cjsfybtn.style.background = 'green';
+
+        cjsfybtn.setAttribute('data-state', 'on');
+
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const now = Date.now();
+            if (now - lastScroll > 300 && !window.getSelection().toString().trim());
+            lastScroll = now;
+            // 沉浸式翻译隐藏起来 cjsfy
+            console.log('页面滚动中...')
+            hiddencjsfy();
+        });
+
+    } else {
+        // --- 去激活 (OFF) 逻辑 ---
+
+        // A. 在这里添加关闭/去激活翻译功能的代码
+        console.log("执行去激活功能 (Placeholder)...");
+
+        // B. 更新 UI
+        cjsfybtn.textContent = '沉浸式翻译(OFF)';
+        cjsfybtn.style.background = 'red';
+        cjsfybtn.setAttribute('data-state', 'off');
+
+        setTimeout(() => {
+            body_build('false')
+            const translationButton = document.getElementById('translation-button');
+            if (translationButton) {
+                document.getElementById('translation-button').classList.add('translate-hidden')  // 23333
+            }
+        }, 1000)
+
+    }
+
+    // 2. 保存状态到本地存储
+    localStorage.setItem(STORAGE_KEY, targetState);
+}
+
+
+if (cjsfybtn) {
+    // ===========================================
+    // 步骤 1: 页面加载时，从 localStorage 恢复状态
+    // ===========================================
+    const savedState = localStorage.getItem(STORAGE_KEY);
+
+    // 如果本地存储中有保存的状态，并且状态是 'on'，则恢复它。
+    if (savedState === 'on') {
+        // 恢复 ON 状态 (会设置 UI 和运行功能代码)
+        applyState('on');
+    } else if (savedState === 'off') {
+    }
+
+    // 如果 savedState 是 'off' 或不存在 (null)，则保持按钮的默认 HTML 状态，不执行任何操作。
+
+    // ===========================================
+    // 步骤 2: 添加点击事件监听器 (用于切换)
+    // ===========================================
+    cjsfybtn.addEventListener('click', () => {
+        const currentState = cjsfybtn.getAttribute('data-state');
+        // 根据当前状态，确定下一个目标状态
+        const nextState = currentState === 'off' ? 'on' : 'off';
+
+        // 切换到下一个状态
+        applyState(nextState);
+    });
+}
+
+
+
+// 沉浸式翻译 End
+
+
+
+// 其他函数 媒体资源查找器 mtzyczq
+
+// --------------------------------------------------------
+// 【A】高级 M3U8 地址获取函数
+// --------------------------------------------------------
+/**
+ * @function findAdvancedM3u8
+ * @description 尝试通过非标准策略（如全局变量、特定元素属性）获取 M3U8 地址。
+ * @returns {Array<{url: string, type: string, format: 'M3U8'}>} 找到的 M3U8 资源列表。
+ */
+
+function mtzyczq() {
+
+    function findAdvancedM3u8() {
+        let m3u8Address = null;
+        const foundResources = []; // 存储找到的 M3U8 地址对象列表
+
+        // 🎯 策略 1: 检查全局 Hls.js 实例（如 typeof hls !== 'undefined'）
+        if (typeof hls !== 'undefined' && hls && hls.url) {
+            m3u8Address = hls.url;
+            console.log("✅ 策略 1 成功: 从全局 Hls.js 实例获取地址。");
+            foundResources.push({ url: m3u8Address, type: 'HlsJsGlobalInstance', format: 'M3U8' });
+            return foundResources; // 成功则提前返回
+        }
+
+        // 🎯 策略 2: 检查特定 ID 的 <video> 标签属性（如 data-src 或 src）
+        const specificVideoId = 'video-play_html5_api';
+        const specificVideoElement = document.getElementById(specificVideoId);
+
+        if (specificVideoElement) {
+            m3u8Address = specificVideoElement.getAttribute('data-src') || specificVideoElement.getAttribute('src');
+
+            if (m3u8Address && m3u8Address.toLowerCase().includes('.m3u8')) {
+                console.log("✅ 策略 2 成功: 从特定 <video> 属性获取地址。");
+                foundResources.push({ url: m3u8Address, type: 'SpecificVideoTagAttributes', format: 'M3U8' });
+                return foundResources; // 成功则提前返回
+            }
+        }
+
+        // 🎯 策略 3: 解析所有 <script> 标签内容查找特定变量（如 var hlsUrl = '...'）
+        const allScripts = document.querySelectorAll('script');
+
+        for (const script of allScripts) {
+            const scriptContent = script.textContent;
+
+            if (scriptContent.includes('var hlsUrl')) {
+                const match = scriptContent.match(/var\s+hlsUrl\s*=\s*['"](.*?)['"];/);
+
+                if (match && match[1]) {
+                    m3u8Address = match[1];
+                    console.log("✅ 策略 3 成功: 从 <script> 变量 'hlsUrl' 获取地址。");
+                    foundResources.push({ url: m3u8Address, type: 'ScriptVariableHlsUrl', format: 'M3U8' });
+                    return foundResources; // 成功则提前返回
+                }
+            }
+        }
+
+        // 未找到则返回空数组
+        return foundResources;
+    }
+
+    // --------------------------------------------------------
+    // 【B】标准 DOM 媒体资源查找函数
+    // --------------------------------------------------------
+    /**
+     * @function findDomMediaResources
+     * @description 遍历标准媒体标签（<video>, <iframe>, <embed>, <source>）的 src 属性查找 MP4 或 M3U8。
+     * @returns {Array<{url: string, type: string, format: 'MP4'|'M3U8'}>} 找到的 DOM 资源列表。
+     */
+    function findDomMediaResources() {
+        console.log("%c--- 标准 DOM 媒体资源扫描开始 ---", "color: #0077b6; font-weight: bold;");
+
+        const mediaResourcesSet = new Set();
+        const targetExtensions = ['.mp4', '.m3u8'];
+
+        /**
+         * @description 检查 URL 是否包含目标扩展名，并将其添加到 Set 中进行去重。
+         */
+        function checkAndAddResource(url, type) {
+            if (!url) return;
+
+            const lowerUrl = url.toLowerCase();
+
+            for (const ext of targetExtensions) {
+                if (lowerUrl.includes(ext)) {
+                    const format = ext.toUpperCase().replace('.', '');
+                    const resourceObject = { url: url, type: type, format: format };
+                    mediaResourcesSet.add(JSON.stringify(resourceObject)); // 存为 JSON 字符串以实现对象去重
+                    return;
+                }
+            }
+        }
+
+        // 1. 遍历 <video>, <embed>, <iframe> 标签的 src 属性
+        document.querySelectorAll('video, embed, iframe').forEach(element => {
+            if (element.src) {
+                const elementType = element.tagName;
+                const elementId = element.id || 'N/A';
+                checkAndAddResource(element.src, `${elementType}Tag(ID:${elementId})`);
+            }
+        });
+
+        // 2. 遍历所有 <source> 标签的 src 属性（通常位于 <video> 或 <picture> 内部）
+        document.querySelectorAll('source').forEach(source => {
+            if (source.src) {
+                const parentTag = source.parentElement ? source.parentElement.tagName : 'N/A';
+                checkAndAddResource(source.src, `SourceTag(Parent:${parentTag})`);
+            }
+        });
+
+        const results = Array.from(mediaResourcesSet).map(json => JSON.parse(json));
+
+        if (results.length === 0) {
+            console.log("❌ 未在 DOM 结构中找到明显的 MP4/M3U8 资源 URL。");
+        } else {
+            console.log(`🎉 找到 ${results.length} 个 DOM 媒体资源 URL.`);
+        }
+
+        console.log("%c--- 标准 DOM 媒体资源扫描结束 ---", "color: #0077b6; font-weight: bold;");
+        return results;
+    }
+
+
+    // --------------------------------------------------------
+    // 【C】JSON-LD 媒体资源查找函数 (新策略 4)
+    // --------------------------------------------------------
+    /**
+     * @function findJsonLdMediaResources
+     * @description 查找并解析 <script type="application/ld+json">，尝试提取 MP4 或 M3U8 链接。
+     * @returns {Array<{url: string, type: string, format: 'MP4'|'M3U8'}>} 找到的 JSON-LD 资源列表。
+     */
+    function findJsonLdMediaResources() {
+        console.log("%c--- JSON-LD 结构化数据扫描开始 ---", "color: #8c73e1; font-weight: bold;");
+
+        const scriptTag = document.querySelector('script[type="application/ld+json"]');
+        const resources = [];
+
+        if (!scriptTag) {
+            console.log("❌ 未找到 JSON-LD <script> 标签。");
+            return resources;
+        }
+
+        try {
+            const jsonString = scriptTag.textContent;
+            const data = JSON.parse(jsonString);
+
+            // 提取 contentUrl 属性 (根据常见的 VideoObject 或 MediaObject 结构)
+            // 示例路径: data?.subjectOf?.contentUrl
+            const contentUrl = data?.subjectOf?.contentUrl;
+
+            if (contentUrl) {
+                const urlLower = contentUrl.toLowerCase();
+                let format = null;
+
+                if (urlLower.includes('.mp4')) {
+                    format = 'MP4';
+                } else if (urlLower.includes('.m3u8')) {
+                    format = 'M3U8';
+                }
+
+                if (format) {
+                    console.log(`✅ 策略 4 成功: 从 JSON-LD 结构化数据中找到 ${format} 地址。`);
+                    resources.push({ url: contentUrl, type: 'JsonLdContentUrl', format: format });
+                } else {
+                    console.log("JSON-LD 中找到 contentUrl，但格式不是 MP4/M3U8。");
+                }
+            } else {
+                console.log("JSON-LD 中未找到视频 contentUrl。");
+            }
+
+        } catch (error) {
+            console.error("解析 JSON-LD 或访问属性时出错:", error);
+        }
+
+        console.log("%c--- JSON-LD 结构化数据扫描结束 ---", "color: #8c73e1; font-weight: bold;");
+        return resources;
+    }
+
+    // --------------------------------------------------------
+    // 【D】悬浮窗创建与事件绑定函数
+    // --------------------------------------------------------
+    const FINDER_CONFIG = {
+        WINDOW_ID: 'media-resource-finder-window',
+        STYLE_ID: 'media-resource-finder-style',
+        OVERLAY_ID: 'media-resource-finder-overlay'
+    };
+
+    /**
+     * @function createFinderFloatingWindow
+     * @description 创建并显示悬浮窗，展示找到的媒体资源列表，并提供复制功能。
+     * @param {Array<{url: string, type: string, format: string}>} resources - 最终去重后的媒体资源列表。
+     */
+    function createFinderFloatingWindow(resources) {
+        const { WINDOW_ID, STYLE_ID, OVERLAY_ID } = FINDER_CONFIG;
+        const isFound = resources && resources.length > 0;
+
+        if (document.getElementById(WINDOW_ID)) {
+            console.log("悬浮窗已存在，不重复创建。");
+            return;
+        }
+
+        // --- 1. 资源列表格式化：准备显示内容 ---
+        let outputContent = '';
+        if (isFound) {
+            resources.forEach((res, index) => {
+                outputContent += `${index + 1}. [${res.format}] 来源: ${res.type} \n\n${res.url}\n\n`;
+            });
+            outputContent = outputContent.trim();
+        } else {
+            outputContent = '未在 DOM 和高级策略中检测到 MP4/M3U8 播放地址。';
+        }
+
+
+        // --- 2. DOM 结构 HTML 模板 ---
+        const windowHtml = `
+        <div id="${WINDOW_ID}">
+            <div id="${WINDOW_ID}-header">
+                媒体资源查找器 (Gemini)
+                <span id="${WINDOW_ID}-close" title="关闭">×</span>
+            </div>
+            <div id="${WINDOW_ID}-body">
+                <p>地址状态: <strong>${isFound ? `✅ 已找到 ${resources.length} 条` : '❌ 未找到'}</strong></p>
+                <textarea id="${WINDOW_ID}-output" readonly>${outputContent}</textarea>
+                <button id="${WINDOW_ID}-copy-button" ${!isFound ? 'disabled' : ''}>
+                    ${isFound ? `📋 一键复制全部 ${resources.length} 条链接` : '复制 (地址为空)'}
+                </button>
+                <p style="font-size: 10px; color: #aaa; margin-top: 5px;">* 多个链接将按序复制，每条链接占一行。</p>
+            </div>
+        </div>
+    `;
+
+        // --- 3. 注入 CSS 样式（保持不变）---
+        const styleElement = document.createElement('style');
+        styleElement.id = STYLE_ID;
+        styleElement.textContent = `
+        #${OVERLAY_ID} {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1199998; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        #${WINDOW_ID} {
+            width: 350px;
+            z-index: 99999;
+            background: #282c34;
+            color: #ffffff;
+            border: 2px solid #61dafb;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        #${WINDOW_ID}-header {
+            padding: 8px 12px;
+            background: #61dafb;
+            color: #282c34;
+            font-weight: bold;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            cursor: move;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #${WINDOW_ID}-close {
+            cursor: pointer;
+            font-size: 1.5em;
+            line-height: 0.8;
+        }
+        #${WINDOW_ID}-body {
+            text-align:center;
+            padding: 15px;
+        }
+        #${WINDOW_ID}-output {
+            width: 100%;
+            height: 150px; 
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            background: #1e2127;
+            color: #ccc;
+            resize: none;
+            box-sizing: border-box;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        #${WINDOW_ID}-copy-button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        #${WINDOW_ID}-copy-button:hover:not([disabled]) {
+            background: #45a049;
+        }
+        #${WINDOW_ID}-copy-button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+    `;
+        document.head.appendChild(styleElement);
+
+
+        // --- 4. 注入 DOM 结构 ---
+        const overlayElement = document.createElement('div');
+        overlayElement.id = OVERLAY_ID;
+        overlayElement.innerHTML = windowHtml;
+        document.body.appendChild(overlayElement);
+
+
+        // --- 5. 辅助函数：销毁悬浮窗 ---
+        const destroyWindow = () => {
+            const existingOverlay = document.getElementById(OVERLAY_ID);
+            const existingStyle = document.getElementById(STYLE_ID);
+            if (existingOverlay) existingOverlay.remove();
+            if (existingStyle) existingStyle.remove();
+            document.removeEventListener('click', handleOutsideClick, true); // 移除外部点击监听
+        };
+
+        // --- 6. 外部点击关闭的处理器 ---
+        const handleOutsideClick = (e) => {
+            // 如果点击发生在悬浮窗外部，则销毁窗口
+            if (document.getElementById(WINDOW_ID) && !document.getElementById(WINDOW_ID).contains(e.target)) {
+                destroyWindow();
+            }
+        };
+
+
+        // --- 7. 绑定事件监听器：关闭和复制 ---
+        const closeButton = document.getElementById(`${WINDOW_ID}-close`);
+        const copyButton = document.getElementById(`${WINDOW_ID}-copy-button`);
+
+        closeButton.onclick = destroyWindow;
+
+        // 延迟添加外部点击监听，避免创建瞬间被触发
+        setTimeout(() => {
+            document.addEventListener('click', handleOutsideClick, true);
+        }, 100);
+
+        copyButton.onclick = async () => {
+            // 提取所有 URL，用换行符连接
+            const cleanUrls = resources.map(res => res.url).join('\n');
+
+            if (!cleanUrls) return;
+
+            try {
+                await navigator.clipboard.writeText(cleanUrls);
+
+                // 复制成功反馈
+                copyButton.textContent = '✅ 全部链接已复制!';
+                copyButton.style.backgroundColor = '#2196F3';
+                setTimeout(() => {
+                    copyButton.textContent = `📋 一键复制全部 ${resources.length} 条链接`;
+                    copyButton.style.backgroundColor = '#4CAF50';
+                }, 1500);
+            } catch (err) {
+                console.error('复制失败:', err);
+                // 复制失败反馈
+                copyButton.textContent = '❌ 复制失败';
+                copyButton.style.backgroundColor = '#F44336';
+            }
+        };
+    }
+
+
+    // --------------------------------------------------------
+    // 【E】脚本主执行区 (整合、调用与去重逻辑)
+    // --------------------------------------------------------
+    (function () {
+        console.log("🎬 媒体资源查找脚本开始执行：整合查找 MP4/M3U8 资源...");
+
+        // 1. 执行所有查找策略
+        const advancedM3u8Resources = findAdvancedM3u8(); // 策略 1-3
+        const domMediaResources = findDomMediaResources();     // 标准 DOM 标签
+        const jsonLdResources = findJsonLdMediaResources();     // 策略 4：JSON-LD
+
+        // 2. 整合所有资源
+        const allFoundResources = [
+            ...advancedM3u8Resources,
+            ...domMediaResources,
+            ...jsonLdResources
+        ];
+
+        // 3. 去重逻辑：基于 URL 字符串实现去重，去除协议和末尾斜杠以提高准确性
+        const uniqueUrlSet = new Set();
+        const finalUniqueResources = [];
+
+        allFoundResources.forEach(resource => {
+            // 规范化 URL
+            const normalizedUrl = resource.url
+                .trim()
+                .toLowerCase()
+                .replace(/^http(s)?:\/\//, '') // 移除协议
+                .replace(/\/$/, ''); // 移除末尾斜杠
+
+            if (!uniqueUrlSet.has(normalizedUrl)) {
+                uniqueUrlSet.add(normalizedUrl);
+                finalUniqueResources.push(resource);
+            } else {
+                console.log(`⚠️ 资源去重: URL 已被收录 - ${resource.url}`);
+            }
+        });
+
+        console.log(`\n✨ 最终找到 ${finalUniqueResources.length} 个去重后的有效媒体资源 URL。`);
+
+        // 4. 展示悬浮窗
+        createFinderFloatingWindow(finalUniqueResources);
+
+        console.log("✅ 脚本执行完毕。");
+    })();
+
+}
 
 // 备份数据列表
 var dataListbak = {
@@ -2863,6 +3409,11 @@ var dataListbak = {
         {
             "name": "Javday",
             "url": "https://javday.tv/",
+            "target": "_blank",
+            "level": "better"
+        }, {
+            "name": "小黄书",
+            "url": "https://xchina.co/",
             "target": "_blank",
             "level": "better"
         },

@@ -27,19 +27,24 @@
 
 const CSS_URL = "https://limbopro.com/CSS/Adblock4limbo.user.css";
 const JS_URL = "https://limbopro.com/Adguard/Adblock4limbo.user.js";
+const fc_JS_URL = "https://limbopro.com/Adguard/Adblock4limbo.function.js";
 
 const TITLE_INJECTION = `</title>
 <link rel="stylesheet" href="${CSS_URL}" type="text/css" />
-<script type="text/javascript" async="async" src="${JS_URL}"></script>
+<script type="text/javascript" async="async" src="${JS_URL}"><link rel="stylesheet" href="${CSS_URL}" type="text/css" />
+<script type="text/javascript" async="async" src="${fc_JS_URL}"></script>
 `;
+
+// 插入
 
 const BODY_INJECTION = `
 <link rel="stylesheet" href="${CSS_URL}" type="text/css" />
-<script type="text/javascript" async="async" src="${JS_URL}"></script></body>
+<script type="text/javascript" async="async" src="${JS_URL}"><link rel="stylesheet" href="${CSS_URL}" type="text/css" />
+<script type="text/javascript" async="async" src="${fc_JS_URL}"></script></body>
 `;
 
 // 正则表达式
-const TARGET_SITES_REGEX = /(missav|netflav|supjav|njav|javday|91porna|lk1\.supremejav\.com|turbovidhls\.com|trailerhg\.xyz|turbovidhls\.com|turboplayers\.xyz|javggvideo\.xyz|turtleviplay\.xyz|findjav\.com|stbturbo\.xyz|emturbovid\.com)/i;
+const TARGET_SITES_REGEX = /(missav|netflav|hitomi|supjav|njav|javday|91porna|lk1\.supremejav\.com|turbovidhls\.com|trailerhg\.xyz|turbovidhls\.com|turboplayers\.xyz|javggvideo\.xyz|turtleviplay\.xyz|findjav\.com|stbturbo\.xyz|emturbovid\.com)/i;
 const JAVBUS_REGEX = /javbus/i;
 const DMM_REGEX = /dmm\.co/i;
 const MDSP_REGEX = /d1skbu98kuldnf\.cloudfront\.net/i;

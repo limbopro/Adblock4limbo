@@ -1,0 +1,8 @@
+/* 91porn.com */
+div:has(> a > .ad_img),
+.preroll-blocker
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

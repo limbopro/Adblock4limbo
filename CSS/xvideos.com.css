@@ -1,0 +1,22 @@
+/* xvideos.com */
+#ad-footer,
+body > div[style*="background: rgb"][style*="text-align: center"],
+body > div[style^="display: flex; background: rgb"],
+#content > div.mobile-hide + div[class]:not([id*="video"]),
+#cookies-use-alert,
+[href*="base64"],
+[href*="data:"],
+img[src*="blob:" i]:not(video),
+.player-video.xv-cams-block,
+.share,
+tabShareAndEmbed > h4:has(> span.icf-share),
+.thumb-ad,
+.top-top,
+.video-ad,
+#video-right,
+#video-sponsor-links
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

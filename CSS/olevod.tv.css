@@ -1,0 +1,7 @@
+/* olevod.tv */
+a[href^="https://www.yywhale.com"]
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

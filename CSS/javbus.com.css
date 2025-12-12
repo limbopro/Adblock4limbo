@@ -1,0 +1,7 @@
+/* javbus.com */
+a[target="_blank"] > img[src^="/ads/"]
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

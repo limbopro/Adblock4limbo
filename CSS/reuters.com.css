@@ -1,0 +1,51 @@
+/* reuters.com */
+#bd_article,
+#bd_article2,
+#bd_article3,
+body > div > div[class$=" "][style^="width: 100%; border: none;"],
+body > div > div[class$=" "][style^="width: 100%; border: none;"] + #spacerElement[style^="height:"],
+button[aria-label^="Share"],
+.BylineBar_share-container,
+[class^="BylineBar_share-container"],
+[class^="GetTheAppBanner"],
+.core-share,
+[data-testid="CnxPlayer"],
+[data-testid="Leaderboard"],
+[data-testid="ResponsiveAdSlot"],
+div[class^="ArticleBody-read-time-and-social-"] > div[class^="SocialTools__container___"],
+div[class^="article-header__share__"],
+div[class^="article-prompt__container__"],
+div[class^="leaderboard"],
+div[class^="NewsletterCard__container___"],
+div[class^="NewsletterSignup-container-"],
+div[class^="OldSiteBanner_"],
+div[class^="registration-prompt"],
+div[class^="RegistrationPrompt__container"],
+div[class^="regular-article-layout__newsletter"],
+div[class^="regular-article-layout-v2__newsletter_"],
+div[class^="StickyContainer-container-"][style^="height: 1200px;"][style*="margin-bottom: 120px;"],
+div[class^="TwoColumnsLayout-leaderboard-"],
+div[class*="workspace-article-banner__banner-container__"],
+div[data-testid="SharingSymbols"],
+div[data-variant-id="workspace-banner"],
+div[style="flex-basis: 1200px; margin-bottom: 120px;"],
+p[data-testid="promo-box"],
+#rcs-articleContent > .column1 > .module-header:nth-last-child(2),
+#rcs-articleContent > .column1 > .module-header:nth-last-child(2) + .module,
+#rcs-articleContent > .column1 > section + section:nth-last-child(3) > .group > .column2.col-5,
+.reuters-share,
+section#hp-newsletters,
+.StandardArticleBody_body + div[id][class] > div[class*=" "],
+.StandardArticleBody_container + div > span ~ div,
+#toolbar-item-dropdown-share,
+#toolbar-item-parent-share,
+.TwoColumnLayout_container > .TwoColumnLayout_column + div[id] > div:not([class]):not([id]) + div[class$=" "]:last-child,
+.TwoColumnLayout_container > .TwoColumnLayout_column > .StandardArticleBody_container > .StandardArticleBody_body + div:not([class]):not([id]) + div[class$=" "],
+.TwoColumnLayout_container > .TwoColumnLayout_column > .StandardArticleBody_container > .StandardArticleBody_body + div:not([class]):not([id]) + div[id] > div[class$=" "] ~ *,
+ul[class^="ShareButtons__container___"],
+.workspace-article-banner-module__image__F14iP
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

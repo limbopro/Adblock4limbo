@@ -1,0 +1,7 @@
+/* javdb.com */
+.app-desktop-banner
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

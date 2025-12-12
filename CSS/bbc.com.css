@@ -1,0 +1,48 @@
+/* bbc.com */
+.app__domestic-disclaimer,
+.article-body-ad-slot,
+.article-share-tools,
+.article__side-mpu,
+.bbc-n7zdg2,
+button[aria-label="share"],
+button[data-testid="socialShareTriggerButton"],
+[class*="-ConsentBanner"],
+[data-component="ad-slot"],
+div[class*="DialogBackdrop"],
+div[class*="TagShareWrapper"],
+div[data-testid="share-tools-container"],
+div[id^="piano-inline"],
+header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="ltr"]:not([class*="-Banner"]),
+header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="rtl"]:not([class*="-Banner"]),
+header[role="banner"] > div[dir="ltr"][class^="Wrapper"]:not([class^="Banner"]),
+header[role="banner"] > div[dir="rtl"],
+#leaderboard-aside-content,
+li[class*="-ListItem"]:has(div.dotcom-ad),
+li:has(> div > a[href^="https://www.bbc.com/"][href*="/send/"]),
+.lx-share-tools,
+.lx-stream-post__footer-share,
+main > div[class^="bbc-"]:has(> p > a[href^="https://www.whatsapp.com/channel/"]),
+main > div > section[aria-label="Информация"],
+#mpu-side-aside-content,
+.nw-c-breaking-news-banner,
+.nw-c-leaderboard-ad,
+section[aria-labelledby="podcast-promo"],
+section[aria-labelledby="Подписывайтесь-на-наши-соцсети-и-рассылку"],
+section[aria-label="Уведомление"],
+section[class*="AdContainer"],
+section[class^="AdContainer-"],
+section[data-e2e="advertisement"],
+.share,
+#sign_in,
+#sign_in-bg,
+.social:not(body),
+#sticky-mpu:has(.dotcom-ad-inner),
+.tempShareToolsHolder,
+.twite__share-button,
+ul[role="list"] > li:has(> div[class] >  a[href^="https://www.bbc.com/russian/send/"]),
+#zephr-message
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

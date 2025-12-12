@@ -1,0 +1,18 @@
+/* iyf.tv */
+.guide_box,
+.player-right,
+.player-side > .block > *,
+.ss-ctn,
+vg-pause-ads,
+vg-player div.vg-bg,
+vg-player.ng-star-inserted > vg-pause-ads + div.caption.show > .inner,
+.video-player > app-gg-block.ng-star-inserted[style],
+.video-player > .dabc > .ng-star-inserted[style="position: relative;"],
+.video-player + div[class*=" "] > div.block,
+.video-player > div.ng-star-inserted > div#PB,
+.video-player + div.ps > div:has(> div.bb)
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

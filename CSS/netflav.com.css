@@ -1,0 +1,9 @@
+/* netflav.com */
+.ads_head_banner_container,
+.ads_video_overlay_mobile,
+.video_iframe_overlay_absolute_background_container
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

@@ -53,6 +53,7 @@
 // @match        https://jav.land/*
 // @match        https://cn1.91short.com/*
 // @match        https://javday.tv/*
+// @match        https://javday.app/*
 // @match        https://www.xvideos.com/*
 // @match        https://4hu.tv/*
 // @match        https://www.4hu.tv/*
@@ -348,6 +349,7 @@ var adsMax = {
     },
     css: {
         globalcss: "https://limbopro.com/CSS/Adblock4limbo.user.css", // 全局
+        weblistads: "https://limbopro.com/CSS/Adblock4limbo.weblist.user.css", // 全局
         othercss: ".jable_css { background: rgb(0, 172, 106) important; border-right:6px solid #28a745 !important;} .fontColor {color:green !important}", // 按钮输入框块等元素类
         libvio: ".container > .t-img-box:first-child, .hidden-log ,a[target=\"_blank\"] > .img-responsive ,.advertise ,#adsbox ,.t-img-box ,.inner-advertise ,.advertise  {display: none! important;}", // libvio
         goole: "#tvcap,[data-text-ad] {display:none !important}", // 谷歌搜索广告
@@ -427,9 +429,17 @@ var adsMax = {
     }
 }
 
+
 loadCSS(adsMax.css.globalcss, () => {
+    //console.log('CSS 已生效');
+})
+
+
+/*
+loadCSS(adsMax.css.weblistads, () => {
     console.log('CSS 已生效');
 })
+*/
 
 css_adsRemove(adsMax.css.othercss, 0, 'othercss') // 引用全局样式
 
@@ -5029,3 +5039,520 @@ function injectPreventSetTimeout() {
 
     console.log('%c[Scriptlet] prevent-setTimeout 已注入，保护当前站点', 'color: #2ecc71; font-weight: bold;');
 }
+
+
+
+/**
+ * 使用 Trusted Types 安全地加载 CSS 样式表。
+ * * @param {string} cssUrl - 要加载的 CSS 文件的完整 URL。
+ * @param {string} policyName - 创建 Trusted Type Policy 的名称（必须唯一）。
+ * @param {string} urlPrefix - 允许加载 CSS 文件的 URL 前缀。
+ */
+window.loadStylesheetWithTrustedTypes = function loadStylesheetWithTrustedTypes(cssUrl, policyName, urlPrefix) {
+    if (!cssUrl || !policyName || !urlPrefix) {
+        console.error("加载 CSS 失败：请提供 cssUrl, policyName 和 urlPrefix 三个参数。");
+        return;
+    }
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+
+    let finalLinkHref = cssUrl;
+
+    // 检查并应用 Trusted Types
+    if (window.trustedTypes && trustedTypes.createPolicy) {
+        try {
+            // 创建一个 Trusted Type 策略来验证 URL
+            const policy = trustedTypes.createPolicy(policyName, {
+                // 使用 createScriptURL 来验证源 URL
+                createScriptURL: (url) => {
+                    if (url.startsWith(urlPrefix)) {
+                        return url;
+                    }
+                    throw new Error(`Attempted to load untrusted CSS URL: ${url}. Does not start with ${urlPrefix}`);
+                }
+            });
+
+            // 将 URL 字符串转换为 TrustedScriptURL 对象
+            finalLinkHref = policy.createScriptURL(cssUrl);
+            console.log(`[Trusted Types] 成功使用策略 "${policyName}" 验证 CSS 链接。`);
+        } catch (e) {
+            console.warn(`[Trusted Types] 无法创建或应用策略 "${policyName}"，回退到普通字符串赋值。`, e);
+            finalLinkHref = cssUrl;
+        }
+    }
+
+    // 赋值并插入 DOM
+    link.href = finalLinkHref;
+    (document.head || document.body || document.documentElement).appendChild(link);
+
+    console.log(`CSS 加载请求已发送: ${cssUrl}`);
+}
+
+
+/**
+ * 尝试从完整主机名中提取主域名（Root Domain）。
+ * 此方法避免使用完整的 Public Suffix List (PSL)，仅包含常见规则，不保证 100% 准确。
+ * @param {string} hostname - 完整的主机名 (e.g., "www.news.bbc.co.uk")
+ * @returns {string} 主域名 (e.g., "bbc.co.uk")
+ */
+window.getRootDomain = function getRootDomain(hostname) {
+    if (!hostname) return '';
+
+    // 1. 预处理：移除 www. 前缀
+    let siteName = hostname.toLowerCase();
+    if (siteName.startsWith('www.')) {
+        siteName = siteName.substring(4);
+    }
+
+    // 2. 将域名分解成段 (Label)
+    let parts = siteName.split('.');
+
+    // 3. 定义常见的复杂公共后缀 (Public Suffix List - PSL 的简化版)
+    // 如果这些后缀存在，我们需要保留其前两个标签（主域名 + TLD/SLD）
+    const complexTLDs = [
+        'co.uk', 'com.cn', 'co.jp', 'com.au', 'com.hk', 'com.tw',
+        'nom.co', 'com.br', 'gov.cn', 'ac.jp'
+    ];
+
+    // 4. 检查是否匹配复杂的公共后缀
+    if (parts.length > 2) {
+        // 检查最后两段是否是一个复杂的 TLD (e.g., "co.uk")
+        const lastTwo = parts.slice(-2).join('.');
+
+        if (complexTLDs.includes(lastTwo)) {
+            // 如果是复杂的 TLD，我们取最后三段作为主域名
+            // e.g., ["news", "bbc", "co", "uk"] -> parts.length=4, slice(-3) -> "bbc.co.uk"
+            return parts.slice(-3).join('.');
+        }
+    }
+
+    // 5. 默认行为 (简单 TLD，如 .com)
+    // 取最后两段作为主域名
+    // e.g., ["news", "bbc", "com"] -> slice(-2) -> "bbc.com"
+    // e.g., ["google", "com"] -> slice(-2) -> "google.com"
+    return parts.slice(-2).join('.');
+}
+
+
+/**
+ * 初始化广告拦截 CSS 加载器。
+ */
+
+window.initAdblockLoader = function initAdblockLoader() {
+    // --- 配置 ---
+    const BASE_CSS_URL = 'https://limbopro.com/CSS/';
+    const TT_POLICY_NAME = 'adblock-css-loader'; // 确保策略名称唯一
+    const TT_URL_PREFIX = BASE_CSS_URL; // 信任的前缀就是 CSS 文件的基础路径
+    // --- 配置结束 ---
+
+    if (typeof window === 'undefined' || !document.head) {
+        return; // 非浏览器环境或 DOM 未就绪
+    }
+
+    // 1. 获取当前页面的主机名 (例如: "www.bbc.com", "news.reuters.com")
+    const hostname = window.location.hostname;
+
+    // **核心：获取主域名**
+    const siteName = getRootDomain(hostname);
+
+    // 3. 构建 CSS 文件名和完整的 URL
+    const cssFileName = siteName + '.css'; // // example reddit.com.css
+    const cssUrl = BASE_CSS_URL + cssFileName; // // example http://limbopro.com/CSS/reddit.com.css
+
+    // 3.1. 构建自定义 CSS 文件名和完整的 URL
+    const cssFileNameByhand = "limbopro" + siteName + '.css'; // // example limbopro.reddit.com.css
+    const cssUrlByhand = BASE_CSS_URL + cssFileNameByhand; // example http://limbopro.com/CSS/limbopro.reddit.com.css
+
+    // 4. 使用安全的函数加载样式表
+    loadStylesheetWithTrustedTypes(cssUrl, TT_POLICY_NAME, TT_URL_PREFIX); // example http://limbopro.com/CSS/reddit.com.css
+    loadStylesheetWithTrustedTypes(cssUrlByhand, TT_POLICY_NAME, TT_URL_PREFIX); // example http://limbopro.com/CSS/limbopro.reddit.com.css
+
+//alert(cssUrl)
+
+loadCSS(cssUrl, () => {
+    //console.log('CSS 已生效');
+})
+    console.log(`[Adblock Loader] 尝试根据域名 "${hostname}" 加载 "${cssFileName}"`);
+}
+
+// 启动加载器
+initAdblockLoader();
+
+
+/* 监控用户尝试唤起导航页 */
+
+
+/* 监控用户尝试唤起导航页 */
+
+/**
+ * 监听页面 Esc 键盘事件，实现以下逻辑：
+ * 1. 记录 120 秒内按 2 次 Esc 键的行为，记为一次“事件”。
+ * 2. 累加事件总次数 (badEventCount)。
+ * 3. 警告触发条件：累积次数恰好为 6 且 ID 为 'dh_button' 的元素不存在。
+ * 4. 每次事件发生时，在控制台输出当前次数。
+ * 5. 悬浮窗内容包含警告信息、联系链接、UA/OS 信息、关键脚本加载状态，以及“复制”按钮。
+ */
+
+// 设置时间间隔 (120000毫秒 = 2分钟)。判断“事件”的窗口时间。
+const TIME_WINDOW_MS = 120000;
+// 悬浮窗的自动移除时间
+const WARNING_TIMEOUT_MS = 120000;
+// 要检查的脚本文件名列表
+const TARGET_SCRIPTS = [
+    'Adblock4limbo.user.js',
+    'Adblock4limbo.function.js',
+    'Adblock4limbo.immersiveTranslation.user.js',
+    'isAgent.js'
+];
+
+// --- 悬浮窗函数 ---
+
+/**
+ * 检查并注入悬浮窗的基本 CSS 样式
+ */
+function injectWarningStyles() {
+    if (document.getElementById('floating-warning-style')) return;
+
+    const style = document.createElement('style');
+    style.id = 'floating-warning-style';
+    style.textContent = `
+        #floating-warning-box {
+            position: fixed;
+            top: 15%; 
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99999;
+            background-color: rgba(220, 50, 50, 0.95); 
+            color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            font-size: 16px;
+            max-width: 90%;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            line-height: 1.5;
+        }
+        #floating-warning-box.show {
+            opacity: 1;
+        }
+        .close-btn {
+            float: right;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 1;
+            padding-left: 10px;
+        }
+        .info-block {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            word-break: break-all;
+            /* 确保这个块内的文本可以被精确复制 */
+        }
+        .copy-btn {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #ffdd57;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #ffe88c;
+        }
+        .script-status-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 5px 0 0 0;
+        }
+        .script-status-list li {
+            margin-bottom: 3px;
+        }
+        .script-loaded {
+            color: lightgreen;
+        }
+        .script-missing {
+            color: #ffdd57; 
+        }
+        .contact-link {
+            color: #ffdd57; 
+            text-decoration: underline;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+/**
+ * 检查目标脚本是否存在于当前页面
+ * @returns {string} 返回包含两个脚本检查状态的 HTML 列表
+ */
+function checkTargetScriptExistence() {
+    const scripts = document.getElementsByTagName('script');
+    let statusHtml = '<ul class="script-status-list">';
+
+    TARGET_SCRIPTS.forEach(targetName => {
+        let found = false;
+
+        for (let i = 0; i < scripts.length; i++) {
+            const src = scripts[i].src;
+            if (src && src.includes(targetName)) {
+                found = true;
+                break;
+            }
+        }
+
+        const statusClass = found ? 'script-loaded' : 'script-missing';
+        const statusIcon = found ? '已挂载✅' : '未挂载❌';
+
+        statusHtml += `
+            <li>
+                <span class="${statusClass}">${statusIcon} ${targetName}</span>
+            </li>
+        `;
+    });
+
+    statusHtml += '</ul>';
+    return statusHtml;
+}
+
+
+/**
+ * 核心复制函数：将调试信息复制到剪贴板
+ */
+function copyDebugInfo(infoBlockId) {
+    const infoBlock = document.getElementById(infoBlockId);
+    if (!infoBlock) return;
+
+    // 提取纯文本信息，去除 HTML 标签，并格式化
+    const debugInfoText =
+        infoBlock.innerText.replace('系统信息 (用于调试):\n', '') // 移除标题
+            .trim()
+            //.replace(/[\n\s]+/g, '\n') // 简化连续的换行和空格
+            .split('\n')
+            .map(line => line.trim()) // 清理每行两端的空格
+            .filter(line => line.length > 0) // 移除空行
+            .join('\n');
+
+    // 使用 Clipboard API 复制文本
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(debugInfoText).then(() => {
+            // 复制成功后，临时改变按钮文本
+            const btn = document.querySelector('.copy-btn');
+            if (btn) {
+                btn.textContent = '已复制!';
+                setTimeout(() => {
+                    btn.textContent = '复制调试信息';
+                }, 1500);
+            }
+        }).catch(err => {
+            console.error('复制失败:', err);
+            // 失败时可使用 document.execCommand('copy') 作为备用，但现代浏览器推荐使用 Clipboard API
+            alert('复制失败，请手动选择复制。');
+        });
+    } else {
+        // 降级处理（针对旧版浏览器或非安全上下文）
+        console.warn('Clipboard API 不可用，使用旧方法复制。');
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = debugInfoText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+
+        const btn = document.querySelector('.copy-btn');
+        if (btn) {
+            btn.textContent = '已复制!';
+            setTimeout(() => {
+                btn.textContent = '复制调试信息';
+            }, 1500);
+        }
+    }
+}
+
+
+/**
+ * 显示悬浮警告框
+ */
+function showFloatingWarning() {
+    let existingBox = document.getElementById('floating-warning-box');
+    if (existingBox) {
+        existingBox.remove();
+    }
+
+    injectWarningStyles();
+
+    // --- 动态获取信息 ---
+    const currentURL = window.location.href;
+    const userAgent = navigator.userAgent;
+    const platform = navigator.platform || navigator.oscpu || '未知操作系统';
+    const scriptStatusHtml = checkTargetScriptExistence();
+
+    // 构建调试信息块的 ID，用于复制函数定位
+    const INFO_BLOCK_ID = 'debug-info-content';
+
+    // 构建包含所有信息的 HTML 内容 
+    const messageHTML = `
+        <span class="close-btn" onclick="this.parentElement.remove();">&times;</span>
+        
+        <p style="margin-bottom: 10px;">
+            <strong>Adblock4limbo:</strong> 你似乎在尝试打开导航详情页?[多次双击ESC键] 遗憾的是：当前网页似乎未能正常加载导航代码...
+        </p>
+        
+        <p style="margin-bottom: 0;">
+            可尝试联系博主：<a href="https://limbopro.com/6.html" target="_blank" class="contact-link">点此联系反馈</a>
+        </p>
+
+        <div class="info-block" id="${INFO_BLOCK_ID}">
+            <strong>系统信息 (用于调试):</strong>
+            <br>
+            <strong>当前页面URL:</strong> ${currentURL}
+            <br>
+            <strong>OS/平台:</strong> ${platform}
+            <br>
+            <strong>UA:</strong> ${userAgent}
+            <br>
+            <strong>关键脚本加载状态:</strong> 
+            ${scriptStatusHtml} 
+        </div>
+        
+        <button class="copy-btn" onclick="copyDebugInfo('${INFO_BLOCK_ID}')">复制调试信息</button>
+    `;
+
+    const box = document.createElement('div');
+    box.id = 'floating-warning-box';
+    box.innerHTML = messageHTML;
+
+    document.body.appendChild(box);
+
+    // 渐入效果
+    setTimeout(() => {
+        box.classList.add('show');
+    }, 10);
+
+    // 2 分钟后自动移除
+    setTimeout(() => {
+        if (box) {
+            box.classList.remove('show');
+            setTimeout(() => {
+                if (box && box.parentElement) {
+                    box.remove();
+                }
+            }, 500);
+        }
+    }, WARNING_TIMEOUT_MS);
+}
+
+// ⚠️ 将 copyDebugInfo 函数暴露到全局，以便 onclick 事件能够找到它
+window.copyDebugInfo = copyDebugInfo;
+
+// --- 键盘监听逻辑 ---
+
+function checkButtonExistence() {
+    return !!document.getElementById('dh_button');
+}
+
+let escPressTimestamps = [];
+let badEventCount = 0;
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' || event.keyCode === 27) {
+
+        const now = Date.now();
+
+        escPressTimestamps = escPressTimestamps.filter(timestamp => {
+            return now - timestamp < TIME_WINDOW_MS;
+        });
+
+        escPressTimestamps.push(now);
+
+        if (escPressTimestamps.length >= 2) {
+
+            badEventCount++;
+
+            console.log(`💥 事件已发生，累积次数: ${badEventCount}`);
+
+            const isButtonPresent = checkButtonExistence();
+
+            if (badEventCount > 3 && badEventCount < 5 && !isButtonPresent) {
+
+                showFloatingWarning(); // 显示悬浮窗
+
+                console.warn(`🚨 警告触发！累积次数为 ${badEventCount} 且 ID 为 'dh_button' 的元素不存在。`);
+            }
+
+            escPressTimestamps = [];
+        }
+    }
+});
+
+console.log(`脚本已运行，监听 Esc 键。`);
+console.log(`⚠️ 事件时间窗口和悬浮窗自动关闭时间均设置为 ${TIME_WINDOW_MS / 1000} 秒 (2 分钟)。`);
+console.log(`警告将在累积次数恰好为 6 且 dh_button 元素不存在时触发。`);
+
+
+
+
+/**
+ * ===========================================
+ * 综合脚本：自动诊断并尝试修复滚动问题
+ * ===========================================
+ */
+
+function attemptFixScrolling() {
+
+    const targets = [document.documentElement, document.body];
+    let fixedCount = 0;
+
+    targets.forEach(element => {
+        const name = element.tagName; // HTML 或 BODY
+        const style = window.getComputedStyle(element);
+
+        // --- 诊断阶段 ---
+        const isOverflowHidden =
+            style.overflow === 'hidden' ||
+            style.overflowX === 'hidden' ||
+            style.overflowY === 'hidden';
+
+        if (isOverflowHidden) {
+            console.warn(`[ScrollFixer] ⚠️ 发现问题：${name} 元素上的 Overflow 属性被设置为 hidden。`);
+
+            // --- 自动修复阶段 ---
+
+            // 1. 尝试覆盖内联样式，强制启用滚动
+            element.style.overflow = 'auto';
+            element.style.overflowX = 'auto';
+            element.style.overflowY = 'auto';
+
+            // 2. 移除常见的禁用滚动类名 (可根据需要添加更多)
+            element.classList.remove('modal-open', 'no-scroll');
+
+            console.log(`[ScrollFixer] ✅ 自动修复尝试完成：${name} 的 overflow 已设为 auto。`);
+            fixedCount++;
+        }
+    });
+
+    if (fixedCount > 0) {
+        console.log(`--- 总结：成功自动修复了 ${fixedCount} 个元素上的滚动禁用问题。 ---`);
+    } else {
+        console.log('--- 总结：HTML 和 BODY 上的常见滚动禁用问题未发现。 ---');
+    }
+}
+
+// 立即执行整个自动修复流程
+
+setInterval(() => {
+    if (document.querySelectorAll("div:has(a[href*='admiral'])").length >= 1) {
+        attemptFixScrolling();
+    }
+}, 5000)

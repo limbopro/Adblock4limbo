@@ -1,0 +1,11 @@
+/* t66y.com */
+a[href^="http://www.viidii.info/?https://po88_"],
+a[href^="http://www.viidii.info/?https://po88_"] ~ :nth-child(-n+115),
+.sptable_do_not_remove,
+.tips,
+.tpc_content.do_not_catch > span.f24
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

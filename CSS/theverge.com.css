@@ -1,0 +1,28 @@
+/* theverge.com */
+amp-iframe[src^="https://widgets.outbrain.com/hub/amp.html"],
+.article__share-buttons,
+body:not([style*="overflow: hidden;"]) div#zephr-footer-container,
+.c-newsletter_signup_box,
+.connatix-feature-desktop,
+.content-start > div.uppercase,
+.c-social-buttons__more,
+div[class^="adblock-allowlist-messaging"],
+div[class]:has(> div[data-concert]),
+div[data-concert],
+.duet--article--lede-share-tools-separator,
+.duet--article--share-buttons,
+.duet--cta--newsletter,
+.duet--layout--rail > div[class]:has(> div[class] > div[data-concert]),
+.duet--layout--rail > div[class]:has(> div > form > div.duet--cta--newsletter),
+.feature-photos-share-tool,
+iframe[src="https://www.platformer.news/embed"],
+.l-sidebar-fixed > div[data-analytics-placement],
+.m-ad__btf_leaderboard_variable,
+.newsletter-wrapper,
+.tab-bar-fixed,
+#zephr-anchor > .duet--article--block-placement:has(> div[class] > a.duet--cta--button)
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

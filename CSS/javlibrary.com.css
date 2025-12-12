@@ -1,0 +1,8 @@
+/* javlibrary.com */
+.bannerqq,
+.bottombanner2
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

@@ -1,0 +1,9 @@
+/* avple.tv */
+.jss13,
+.jss20,
+.MuiSkeleton-root
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

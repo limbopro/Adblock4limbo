@@ -1,0 +1,7 @@
+/* cnys.tv */
+#player_pause
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

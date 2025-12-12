@@ -1,0 +1,17 @@
+/* bi-girl.net */
+body > #container + div[id][class*=" "],
+div[class^="ad_"],
+#pc_text-10,
+[style*="cursor:"][style*="position: fixed;"][style*="z-index:"],
+[style*="cursor:"][style*="user-select: none;"][style*="z-index:"],
+[style*="cursor:"][style*="z-index:"][style*="position: fixed;"],
+[style*="cursor:"][style*="z-index:"][style*="transform"],
+.top_link,
+.top_link_text_sp,
+.top_link_title,
+.toppage_av
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

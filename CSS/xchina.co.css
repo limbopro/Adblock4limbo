@@ -1,0 +1,8 @@
+/* xchina.co */
+.block-overlay,
+.media
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

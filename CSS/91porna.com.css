@@ -1,0 +1,22 @@
+/* 91porna.com */
+a.checkNum[target="_blank"]:not([href*="91porna.com"]),
+.ad-dialog,
+#app-nav > ul > li:has(> a.app-nav-item[target="_blank"]:not([href*="91porna.com"])),
+.carousel-container-bottom,
+.carousel-container:has(#carouselExampleInterval),
+.checkNum[target="_blank"]:not([href*="91porna.com"]),
+div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+div[class^="col"] div.filters:has(a.checkNum),
+.dx-banner-item,
+.h-full.swiper,
+.modal-backdrop,
+.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
+.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.text-mini:has(> .dx-recommend-icons),
+#tip_modal,
+.video-items > li:has(> a.checkNum)
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

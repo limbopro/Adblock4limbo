@@ -1,0 +1,13 @@
+/* ted.com */
+aside[class^="css-"] > div[class^="pt-6"] > div > div.hidden,
+#banner-container,
+button.sb[data-service-name="facebook"],
+button.sb[data-service-name="linkedin"],
+button.sb[data-service-name="twitter"],
+div[class=" p-r:1 p-y:1 d:f a-i:c "],
+.share
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

@@ -1,0 +1,38 @@
+/* thehackernews.com */
+a.custom-link[rel*="sponsored"],
+.ad_two,
+.articlebody > div.cf.note-b:has(> a[href="https://twitter.com/thehackersnews"]),
+#articlebody > div[class]:has(> center > a:is([rel^="nofollow"], [target^="_blank"]) > img),
+.av-side-box,
+.banners,
+.blog-posts > .body-post:has(> a[target="_blank"]),
+body > [class]:has(> a[href][target="_blank"]),
+body > [class]:has(> center a[href][target="_blank"]),
+body > [class^="p"]:has(> center > script),
+body > .deals > .deal-box,
+body > .google.cf,
+body > section.rockstar:has(> center > a[href="https://thehackernews.uk/wiz-demo-d"]),
+center > a:is([rel^="nofollow"], [target^="_blank"]) > img,
+.custom-link,
+.deal-store,
+.dig_two,
+div.rocking,
+.dog_two,
+#email-outer,
+.float-share,
+:is(aside, section, [id*="-"], [class*="right"], [class*="side"]) a > img[target="_blank"],
+:is(aside, section, [id*="-"], [class*="right"], [class*="side"]) a[target="_blank"] > img,
+:is(aside, section, [id*="-"], [class*="right"], [class*="side"]):has(> div[class] + script),
+#mobile-share,
+.okfix,
+#ouibounce-modal,
+.right-box > .zoho-box,
+section.box-side:has(> div[class] > a[target="_blank"]),
+.sharebelow,
+.sidewalaad,
+.sub-button
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 04 Dec 2025 09:33:21 GMT
-# entries:        3479
+# last updated:   Fri, 12 Dec 2025 08:56:54 GMT
+# entries:        3478
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -193,6 +193,7 @@ DOMAIN-SUFFIX,adcampo.com, reject
 DOMAIN-SUFFIX,adcannyads.com, reject
 DOMAIN-SUFFIX,adcash.com, reject
 DOMAIN-SUFFIX,adcast.deviantart.com, reject
+DOMAIN-SUFFIX,adcel.co, reject
 DOMAIN-SUFFIX,adcell.de, reject
 DOMAIN-SUFFIX,adcenter.net, reject
 DOMAIN-SUFFIX,adclick.com, reject
@@ -371,7 +372,6 @@ DOMAIN-SUFFIX,ads.blog.com, reject
 DOMAIN-SUFFIX,ads.bluemountain.com, reject
 DOMAIN-SUFFIX,ads.boerding.com, reject
 DOMAIN-SUFFIX,ads.boylesports.com, reject
-DOMAIN-SUFFIX,ads.brabys.com, reject
 DOMAIN-SUFFIX,ads.canalblog.com, reject
 DOMAIN-SUFFIX,ads.casinocity.com, reject
 DOMAIN-SUFFIX,ads.casumoaffiliates.com, reject
@@ -714,7 +714,6 @@ DOMAIN-SUFFIX,adservrs.com.edgekey.net, reject
 DOMAIN-SUFFIX,adsfac.eu, reject
 DOMAIN-SUFFIX,adsfac.net, reject
 DOMAIN-SUFFIX,adsfac.us, reject
-DOMAIN-SUFFIX,adsfeed.brabys.com, reject
 DOMAIN-SUFFIX,adsflowprime.top, reject
 DOMAIN-SUFFIX,adshrink.it, reject
 DOMAIN-SUFFIX,adside.com, reject
@@ -1083,6 +1082,7 @@ DOMAIN-SUFFIX,bidvertiser.com, reject
 DOMAIN-SUFFIX,big-bang-ads.com, reject
 DOMAIN-SUFFIX,bigbangmedia.com, reject
 DOMAIN-SUFFIX,bigclicks.com, reject
+DOMAIN-SUFFIX,bigfishapparel.com, reject
 DOMAIN-SUFFIX,bigreal.org, reject
 DOMAIN-SUFFIX,bigworldfashion.com, reject
 DOMAIN-SUFFIX,billboard.cz, reject
@@ -1107,6 +1107,7 @@ DOMAIN-SUFFIX,blueconic.com, reject
 DOMAIN-SUFFIX,blueconic.net, reject
 DOMAIN-SUFFIX,bluekai.com, reject
 DOMAIN-SUFFIX,bluelithium.com, reject
+DOMAIN-SUFFIX,bluenest.net, reject
 DOMAIN-SUFFIX,bluewhaleweb.com, reject
 DOMAIN-SUFFIX,blushingbeast.com, reject
 DOMAIN-SUFFIX,blushingbread.com, reject
@@ -1337,6 +1338,7 @@ DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
 DOMAIN-SUFFIX,compactbanner.com, reject
 DOMAIN-SUFFIX,comparereaction.com, reject
+DOMAIN-SUFFIX,compilework.com, reject
 DOMAIN-SUFFIX,comprabanner.it, reject
 DOMAIN-SUFFIX,conditionchange.com, reject
 DOMAIN-SUFFIX,conductrics.com, reject
@@ -1451,7 +1453,6 @@ DOMAIN-SUFFIX,decknetwork.net, reject
 DOMAIN-SUFFIX,deepintent.com, reject
 DOMAIN-SUFFIX,delicatecascade.com, reject
 DOMAIN-SUFFIX,deloo.de, reject
-DOMAIN-SUFFIX,deloplen.com, reject
 DOMAIN-SUFFIX,demandbase.com, reject
 DOMAIN-SUFFIX,demdex.net, reject
 DOMAIN-SUFFIX,deployads.com, reject
@@ -1462,6 +1463,7 @@ DOMAIN-SUFFIX,detectdiscovery.com, reject
 DOMAIN-SUFFIX,dev.visualwebsiteoptimizer.com, reject
 DOMAIN-SUFFIX,dewdroplagoon.com, reject
 DOMAIN-SUFFIX,dianomi.com, reject
+DOMAIN-SUFFIX,dicecandies.com, reject
 DOMAIN-SUFFIX,didtheyreadit.com, reject
 DOMAIN-SUFFIX,digestiondrawer.com, reject
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com, reject
@@ -2198,7 +2200,6 @@ DOMAIN-SUFFIX,metrics-logger.spot.im, reject
 DOMAIN-SUFFIX,metrics.api.drift.com, reject
 DOMAIN-SUFFIX,metrics.articulate.com, reject
 DOMAIN-SUFFIX,metrics.cnn.com, reject
-DOMAIN-SUFFIX,metrics.consumerreports.org, reject
 DOMAIN-SUFFIX,metrics.foxnews.com, reject
 DOMAIN-SUFFIX,metrics.getrockerbox.com, reject
 DOMAIN-SUFFIX,metrics.gfycat.com, reject
@@ -2217,7 +2218,6 @@ DOMAIN-SUFFIX,minewhat.com, reject
 DOMAIN-SUFFIX,minibilling.com, reject
 DOMAIN-SUFFIX,mintegral.com, reject
 DOMAIN-SUFFIX,mittencattle.com, reject
-DOMAIN-SUFFIX,mix2ads.com, reject
 DOMAIN-SUFFIX,mixedreading.com, reject
 DOMAIN-SUFFIX,mixpanel.com, reject
 DOMAIN-SUFFIX,mkto-ab410147.com, reject
@@ -2468,7 +2468,6 @@ DOMAIN-SUFFIX,peep-auktion.de, reject
 DOMAIN-SUFFIX,peer39.com, reject
 DOMAIN-SUFFIX,pennyweb.com, reject
 DOMAIN-SUFFIX,pepperjamnetwork.com, reject
-DOMAIN-SUFFIX,perceivequarter.com, reject
 DOMAIN-SUFFIX,percentmobile.com, reject
 DOMAIN-SUFFIX,perfectaudience.com, reject
 DOMAIN-SUFFIX,perfiliate.com, reject

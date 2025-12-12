@@ -1,0 +1,9 @@
+/* rouman5.com */
+div[style^="display: flex;"],
+#headlessui-portal-root,
+ins
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

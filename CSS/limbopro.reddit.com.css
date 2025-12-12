@@ -1,0 +1,11 @@
+/* reddit.com */
+
+shreddit-ad-post,
+faceplate-bottom-sheet:has(a[href*='app.link']),
+shreddit-async-loader,
+shreddit-dynamic-ad-link /* reddit 特有*/
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

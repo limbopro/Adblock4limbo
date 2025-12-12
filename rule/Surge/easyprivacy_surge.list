@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512101626
+## ! Version: 202512121511
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Dec 2025 16:26 UTC
+## ! Last modified: 12 Dec 2025 15:11 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: d3f6f649247a2dcad0d614ceff8ebc030f67d2c2
+## ! Commit: d2cdb0f46a78e7721f7a6b4ba2016845b9497823
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -683,6 +683,7 @@ DOMAIN-SUFFIX,bewilderedbattle.com
 DOMAIN-SUFFIX,bewilderedblade.com
 DOMAIN-SUFFIX,bhcumsc.com
 DOMAIN-SUFFIX,bidpapers.com
+DOMAIN-SUFFIX,bigfishapparel.com
 DOMAIN-SUFFIX,bigworldfashion.com
 DOMAIN-SUFFIX,bikepaws.com
 DOMAIN-SUFFIX,bikesboard.com
@@ -706,6 +707,7 @@ DOMAIN-SUFFIX,blissfullagoon.com
 DOMAIN-SUFFIX,blitzcampaigns.com
 DOMAIN-SUFFIX,blockdial.com
 DOMAIN-SUFFIX,blueeyedblow.com
+DOMAIN-SUFFIX,bluenest.net
 DOMAIN-SUFFIX,bluevinebooks.com
 DOMAIN-SUFFIX,blushingbeast.com
 DOMAIN-SUFFIX,blushingbread.com
@@ -874,6 +876,7 @@ DOMAIN-SUFFIX,cometquote.com
 DOMAIN-SUFFIX,comfortablecheese.com
 DOMAIN-SUFFIX,commonalmanac.com
 DOMAIN-SUFFIX,comparereaction.com
+DOMAIN-SUFFIX,compilework.com
 DOMAIN-SUFFIX,complexpixel.com
 DOMAIN-SUFFIX,concretetom.com
 DOMAIN-SUFFIX,condemnedcomb.com
@@ -1002,6 +1005,7 @@ DOMAIN-SUFFIX,detectdiscovery.com
 DOMAIN-SUFFIX,detourgame.com
 DOMAIN-SUFFIX,devilishdinner.com
 DOMAIN-SUFFIX,dewdroplagoon.com
+DOMAIN-SUFFIX,dicecandies.com
 DOMAIN-SUFFIX,dicemoments.com
 DOMAIN-SUFFIX,difficultfog.com
 DOMAIN-SUFFIX,digestiondrawer.com
@@ -5015,6 +5019,7 @@ DOMAIN-SUFFIX,mcs.tiktokw.us
 DOMAIN-SUFFIX,mcs.us.tiktokv.com
 DOMAIN-SUFFIX,mdt.crateandbarrel.com
 DOMAIN-SUFFIX,megatron.igraal.com
+DOMAIN-SUFFIX,metis.truecaller.com
 DOMAIN-SUFFIX,metrics.audius.co
 DOMAIN-SUFFIX,metrics.bangbros.com
 DOMAIN-SUFFIX,metrics.camsoda.com

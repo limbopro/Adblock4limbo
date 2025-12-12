@@ -1,0 +1,64 @@
+/* pornhub.com */
+#abAlert,
+a[data-event="header_paid_tabs"],
+#adBlockAlert,
+.adContainer,
+.ad_title + div,
+.ad_title + iframe,
+.adWrapper,
+#ageVerificationOverlay,
+a[href*="?ats="],
+a[href^="http://ads.trafficjunky.net/"],
+a[href^="https://ads.trafficjunky.net/"],
+a[href^="https://weedmaps.com"],
+a[href^="https://www.uviu.com"],
+.becomePartnerWrapper,
+.bottomNav > a[rel="noopener nofollow"],
+.browse-ad-container + div[style*="float:right"],
+.cookiesBanner,
+#customSkin.backgroundImg,
+#customSkinCTA,
+div[class="video-wrapper"] > .clear.hd:has(.adsbytrafficjunky),
+div:has(> ins.adsbytrafficjunky),
+div[id^="age-verification"],
+div[onclick*="bp1.com"],
+#hd-rightColVideoPage > .clearfix:first-child,
+#hd-rightColVideoPage div[id^="f"],
+#hd-rightColVideoPage iframe,
+header .reportUrl:has(> a#headerUpgradePremiumBtn[target="_blank"]),
+[href*="base64"],
+[href*="data:"],
+iframe[style*="height: 60px;"],
+iframe[width="315"],
+iframe[width="950"],
+img[src*="blob:" i]:not(video),
+img[srcset],
+img[width="300"],
+.js_promoItem,
+#jsShare,
+#main-container > .abovePlayer,
+.ml-subscribe-form,
+.nonesuch,
+#pb_template,
+.playerFlvContainer > div#pb_template[style],
+.premiumPromoBannerWrapper,
+.realsex,
+#relatedVideosCenter > li[class^="related"],
+.sectionWrapper:has(> #bottomVideos > .wrapVideoBlock),
+.sectionWrapper > .videos[id] > li[class^="sniper"]:not(.videoblock):not(.videobox):not([id^="playlist_"]),
+.share,
+#shareButton,
+#shareModal,
+.share-sites-thumbs,
+#singleFeedSection > .emptyBlockSpace,
+.sniperModeEngaged,
+[srcset*="bloB:"],
+[style*="base64"],
+[style*="blob:"]:not(video),
+.videoPremiumBlock,
+.video-wrapper > div#player~div[class$=" hd clear"]
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

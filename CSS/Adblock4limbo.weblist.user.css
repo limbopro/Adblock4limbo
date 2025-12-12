@@ -1,0 +1,701 @@
+/* ==UserStyle==
+@name Adblock for WebList Injector
+@namespace userstyles.world
+@version 7.0
+@description Extracts element hiding rules from AdGuard filters.
+==/UserStyle== */
+/* removeAds by Adguard Filters */
+
+/* 18comic.vip */
+
+a[herf*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > div[style],
+a[href*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > img + [style],
+a[href*="//"]:not([href*="comic."]) > [style*="back"],
+#billboard-modal,
+.billboard-modal,
+body .bot-per,
+.container > div[style^="margin-bottom:"]:has(> div.col-lg-3 > div[data-exo]),
+.container > div[style^="padding:"]:has(> [data-group="content_page"]),
+.div-bf-pv,
+div[class="row"][style="display: flex;flex-wrap: wrap;"],
+div[data-group][data-width="300"],
+div[data-group^="photo_center_games_"],
+div[data-group^="skyscraper_"],
+div[data-height="250"][data-width="300"],
+div[data-height="90"][data-width="728"],
+.div_sticky2,
+div[style="position: absolute;bottom: 0px;z-index: 10;"],
+.float-right-daily,
+.float-right-image,
+#guide-modal,
+.modal-backdrop,
+.modal-body > ul.pop-list,
+.row[style="display: flex;flex-wrap: wrap;"],
+style + div[style="cursor: pointer; position: relative;"],
+.tab-content + .row:has(> div[class] > div[class] > .group-notice),
+.top-a2db,
+#wrapper > div.hidden-lg:has(> div[class*="sticky"]),
+
+/* 4hu.tv */
+
+.couplet-left,
+.wrap > div.mod > div.row > dl:has(> dt > a[target="_blank"]:not([href^="/html/"]) > img),
+
+/* 91porna.com */
+
+a.checkNum[target="_blank"]:not([href*="91porna.com"]),
+.ad-dialog,
+#app-nav > ul > li:has(> a.app-nav-item[target="_blank"]:not([href*="91porna.com"])),
+.carousel-container-bottom,
+.carousel-container:has(#carouselExampleInterval),
+.checkNum[target="_blank"]:not([href*="91porna.com"]),
+div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+div[class^="col"] div.filters:has(a.checkNum),
+.dx-banner-item,
+.h-full.swiper,
+.modal-backdrop,
+.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
+.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.text-mini:has(> .dx-recommend-icons),
+#tip_modal,
+.video-items > li:has(> a.checkNum),
+
+/* 91porn.com */
+
+div:has(> a > .ad_img),
+.preroll-blocker,
+
+/* 91porny.com */
+
+.container-fluid.p-0[class*="mb-"],
+.jsv-g1,
+
+/* 91short.com */
+
+
+/* alicesw.com */
+
+
+/* anime1.me */
+
+
+/* avple.tv */
+
+.jss13,
+.jss20,
+.MuiSkeleton-root,
+
+/* bbc.com */
+
+.app__domestic-disclaimer,
+.article-body-ad-slot,
+.article-share-tools,
+.article__side-mpu,
+.bbc-n7zdg2,
+button[aria-label="share"],
+button[data-testid="socialShareTriggerButton"],
+[class*="-ConsentBanner"],
+[data-component="ad-slot"],
+div[class*="DialogBackdrop"],
+div[class*="TagShareWrapper"],
+div[data-testid="share-tools-container"],
+div[id^="piano-inline"],
+header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="ltr"]:not([class*="-Banner"]),
+header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="rtl"]:not([class*="-Banner"]),
+header[role="banner"] > div[dir="ltr"][class^="Wrapper"]:not([class^="Banner"]),
+header[role="banner"] > div[dir="rtl"],
+#leaderboard-aside-content,
+li[class*="-ListItem"]:has(div.dotcom-ad),
+li:has(> div > a[href^="https://www.bbc.com/"][href*="/send/"]),
+.lx-share-tools,
+.lx-stream-post__footer-share,
+main > div[class^="bbc-"]:has(> p > a[href^="https://www.whatsapp.com/channel/"]),
+main > div > section[aria-label="Информация"],
+#mpu-side-aside-content,
+.nw-c-breaking-news-banner,
+.nw-c-leaderboard-ad,
+section[aria-labelledby="podcast-promo"],
+section[aria-labelledby="Подписывайтесь-на-наши-соцсети-и-рассылку"],
+section[aria-label="Уведомление"],
+section[class*="AdContainer"],
+section[class^="AdContainer-"],
+section[data-e2e="advertisement"],
+.share,
+#sign_in,
+#sign_in-bg,
+.social:not(body),
+#sticky-mpu:has(.dotcom-ad-inner),
+.tempShareToolsHolder,
+.twite__share-button,
+ul[role="list"] > li:has(> div[class] >  a[href^="https://www.bbc.com/russian/send/"]),
+#zephr-message,
+
+/* bfdm.xyz */
+
+
+/* bi-girl.net */
+
+body > #container + div[id][class*=" "],
+div[class^="ad_"],
+#pc_text-10,
+[style*="cursor:"][style*="position: fixed;"][style*="z-index:"],
+[style*="cursor:"][style*="user-select: none;"][style*="z-index:"],
+[style*="cursor:"][style*="z-index:"][style*="position: fixed;"],
+[style*="cursor:"][style*="z-index:"][style*="transform"],
+.top_link,
+.top_link_text_sp,
+.top_link_title,
+.toppage_av,
+
+/* cnys.tv */
+
+#player_pause,
+
+/* cupfoxapp.tv */
+
+
+/* d1skbu98kuldnf.cloudfront.net */
+
+
+/* diyibanzhu.me */
+
+
+/* dmmiku.com */
+
+
+/* dnt92ffcqr0xu.cloudfront.net */
+
+
+/* hanime1.me */
+
+div[style*="width: 310px; height: 282px;"],
+.search-rows-wrapper > .content-padding-new > .row > .multiple-link-wrapper:has(> a[href*=".labsda.com"]),
+.video-show-width > .single-show-list > .hidden-xs[style*="text-align:"],
+
+/* hitomi.la */
+
+
+/* hltv.org */
+
+.centered-placement,
+csmoney-skins-widget,
+.footer-app,
+.gen-firstcol-box,
+.hubspot-embed,
+.kgN8P9bvyb2EqDJR,
+.leftCol > aside > div.a-reset,
+.logoCon > div.center-container,
+.mid-container,
+.mid-container > div[class]:has(> div.featured-matches-top-next-slider),
+.mid-container + div[id]:has(> a[href] > img[alt][src]),
+.world-ranking-banner,
+
+/* howjsay.com */
+
+#home_banner_add,
+
+/* huaren.live */
+
+.action-ad,
+
+/* iyf.tv */
+
+.guide_box,
+.player-right,
+.player-side > .block > *,
+.ss-ctn,
+vg-pause-ads,
+vg-player div.vg-bg,
+vg-player.ng-star-inserted > vg-pause-ads + div.caption.show > .inner,
+.video-player > app-gg-block.ng-star-inserted[style],
+.video-player > .dabc > .ng-star-inserted[style="position: relative;"],
+.video-player + div[class*=" "] > div.block,
+.video-player > div.ng-star-inserted > div#PB,
+.video-player + div.ps > div:has(> div.bb),
+
+/* jable.tv */
+
+a[href*="?banner="],
+a[href="http://uus52.com/"],
+.badge,
+div[class^="root-"],
+.gutter-20 > .col-sm-4:has(> .video-img-box a[target="_blank"]),
+#jimds-slider,
+.nav-item > a[target="_blank"],
+.right-sidebar > .mb-e-30,
+#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,
+.text-center > a[target="_blank"] > img,
+.uu-ads,
+
+/* javbus.com */
+
+a[target="_blank"] > img[src^="/ads/"],
+
+/* javday.app */
+
+
+/* javday.tv */
+
+
+/* javdb.com */
+
+.app-desktop-banner,
+
+/* javlibrary.com */
+
+.bannerqq,
+.bottombanner2,
+
+/* javmost.xyz */
+
+
+/* manhuapica.com */
+
+a[href^="/ad/"],
+
+/* missav.ai */
+
+a[href*="//bit.ly/"],
+div[style="width: 300px; height: 250px;"],
+
+/* missav.ws */
+
+a[href*="//bit.ly/"],
+div[style="width: 300px; height: 250px;"],
+
+/* netflav.com */
+
+.ads_head_banner_container,
+.ads_video_overlay_mobile,
+.video_iframe_overlay_absolute_background_container,
+
+/* njav.com */
+
+#ad300250,
+
+/* novel543.com */
+
+
+/* ntdm9.com */
+
+
+/* olevod.tv */
+
+a[href^="https://www.yywhale.com"],
+
+/* op.gg */
+
+.ad-mobile-unit,
+a[href^="https://apps.apple.com/"][href*="/app/op-gg/id605722237"],
+a[href^="https://play.google.com/store/apps/details?id="],
+#banner-container,
+.banner-container,
+.block.text-center:has(> a[href^="https://itunes.apple.com/"]),
+body > div[style^="bottom: 0px; left: 0px; position: fixed;"],
+#content-container > div:not([class],[id]) > div[class]:empty,
+#content-container > *:not([class]) > div[class^="css-"]:has(> div[class] > div.vm-placement),
+#content-header ~ div[class^="css-"] > div.fixed,
+.css-1flley8,
+.css-1l7e8un,
+.css-7qtj63,
+.css-uz5vk3,
+.css-zpq3c5,
+div[class*="eylegve"],
+div[class^="Game Game--Result"] + div[result] + div[class^="css-"]:has(> div > div.vm-placement),
+div[class*="md:"]:has(> div[style^="min-width:"] > div[id^="div-gpt-ad"]),
+div:has(> div[data-ad]),
+div[id^="ad-container"],
+div[style*="padding:"]:has(> div[data-id]:empty),
+#duo-ad-box,
+.e17e77tq6,
+.e17e77tq8,
+.e6ayeey0,
+.flex-col:has(> div.flex > a[href^="https://member.op.gg/membership"][href*="&utm_campaign=banner_frame"]),
+.flex > div.text-center:has(> a[href^="https://itunes.apple.com/"]),
+.flex.h-fit.w-full.flex-col.gap-2 > div.justify-center.items-center:has( > div > div[style^="width: 100%; min-width:"]),
+.gnb-desktop-download,
+.h-\[287px\],
+header a[href^="https://itunes.apple.com/"],
+.items-center > div.flex:has(> div.text-center > a[href^="https://itunes.apple.com/"]),
+.items-center.gap-3.px-4:has(> .overflow-hidden ~ div a[href^="https://play.google.com/store/apps/details"]),
+.justify-between:has(> .title:first-child + a[href*="?utm_source="][href*="&utm_campaign=banner_frame"]:last-child),
+main >  div[style][class^="css-"]:has(> div:not([class]) > div.vm-placement),
+main > section[class*="md:"]:has(> .justify-between:first-child > strong:first-child + a[href*="?utm_source="][href*="&utm_campaign=banner_frame"]:last-child),
+main > span[style^="display: flex; justify-content: center; align-items: center;"],
+main > .text-center > a[href^="https://op.gg/desktop/download"][target="_blank"],
+.md\:max-w-\[1080px\],
+.min-h-\[100px\],
+.min-h-\[250px\],
+.min-h-\[50px\],
+.min-h-\[66px\],
+.mode-header-container ~ div[class^="css-"] > div[class^="css-"]:has(> div > div.vm-placement),
+#__next > div[class^="css-"] > div[class^="css-"] > a[href^="https://op.gg/desktop/?"],
+#__next > div[class^="css-"] > div[class*="css-"]:has(> div[id^="div-gpt-ad-"]),
+#__next > div[class^="css-"]:has(> div[id^="div-gpt-ad"]),
+#__next > div[class]:has(> div[class] > div[id^="leaderboards"]),
+#__next > div[class^="mobile--"]:has(> div.banner-container),
+#__next > header> div[class^="css-"] > a[href^="https://itunes.apple.com/"],
+#opgg-kit-house-image-banner,
+.premium-banner,
+#sash-banner-ad,
+section[class*="md:"]:has(> .items-center > div[data-id$="leaderboard"]),
+section + div[class]:has(> a[href^="https://op.gg/"] > img[alt="Download"]),
+section:has(> div.min-h-\[250px\]):not(:has(> *:not(div.min-h-\[250px\]))),
+.SideContent > div[id]:has(> div[id^="ad-container-"]),
+tr.ad,
+.w-full:has(> div.flex > div[data-ad]),
+.w-full > section.bg-gray-0.md\:overflow-hidden.md\:rounded.flex-col.p-2.w-full,
+.z-ads,
+
+/* pornhub.com */
+
+#abAlert,
+a[data-event="header_paid_tabs"],
+#adBlockAlert,
+.adContainer,
+.ad_title + div,
+.ad_title + iframe,
+.adWrapper,
+#ageVerificationOverlay,
+a[href*="?ats="],
+a[href^="http://ads.trafficjunky.net/"],
+a[href^="https://ads.trafficjunky.net/"],
+a[href^="https://weedmaps.com"],
+a[href^="https://www.uviu.com"],
+.becomePartnerWrapper,
+.bottomNav > a[rel="noopener nofollow"],
+.browse-ad-container + div[style*="float:right"],
+.cookiesBanner,
+#customSkin.backgroundImg,
+#customSkinCTA,
+div[class="video-wrapper"] > .clear.hd:has(.adsbytrafficjunky),
+div:has(> ins.adsbytrafficjunky),
+div[id^="age-verification"],
+div[onclick*="bp1.com"],
+#hd-rightColVideoPage > .clearfix:first-child,
+#hd-rightColVideoPage div[id^="f"],
+#hd-rightColVideoPage iframe,
+header .reportUrl:has(> a#headerUpgradePremiumBtn[target="_blank"]),
+[href*="base64"],
+[href*="data:"],
+iframe[style*="height: 60px;"],
+iframe[width="315"],
+iframe[width="950"],
+img[src*="blob:" i]:not(video),
+img[srcset],
+img[width="300"],
+.js_promoItem,
+#jsShare,
+#main-container > .abovePlayer,
+.ml-subscribe-form,
+.nonesuch,
+#pb_template,
+.playerFlvContainer > div#pb_template[style],
+.premiumPromoBannerWrapper,
+.realsex,
+#relatedVideosCenter > li[class^="related"],
+.sectionWrapper:has(> #bottomVideos > .wrapVideoBlock),
+.sectionWrapper > .videos[id] > li[class^="sniper"]:not(.videoblock):not(.videobox):not([id^="playlist_"]),
+.share,
+#shareButton,
+#shareModal,
+.share-sites-thumbs,
+#singleFeedSection > .emptyBlockSpace,
+.sniperModeEngaged,
+[srcset*="bloB:"],
+[style*="base64"],
+[style*="blob:"]:not(video),
+.videoPremiumBlock,
+.video-wrapper > div#player~div[class$=" hd clear"],
+
+/* reddit.com */
+
+.ad-container:not(#style_important),
+#ad_main_top,
+a[href^="https://PornGameFree.fun"],
+AppRouter-main-content > div[class] > div[class^="_"]:has(> div[class^="_"] > img[alt="QR Code to get the Reddit app"]),
+.content > section.newsletterbar,
+[data-faceplate-tracking-context*="\"promoted\":true"],
+div[class*="EUCookieNotice"],
+div[class^="subredditvars-"] > div[class^="_"] > div[class][style*="--Toaster-indicatorColor:"],
+div[data-before-content],
+div[data-before-content="advertisement"],
+div[id="2x-container"] div[tabindex] header[data-redditstyle] + div[aria-hidden="false"] + div[class] > form,
+div[id^="sidebar-btf"],
+div[style*="--Toaster-indicatorColor"],
+.EUCookieNotice,
+#eu-cookie-policy,
+.happening-now-wrap,
+[id^="xpromo-"],
+.ii4q9d-0.fePAzF > div.s1g6rpxu-1,
+.infobar-wrap,
+.mobile-web-redirect-bar,
+.mod-survey-intro,
+nsfw-qr-dialog:contains(Scan this QR code to download the app now),
+.premium-banner-outer,
+.promotedlink:not([style^="height: 1px;"]),
+#SHORTCUT_FOCUSABLE_DIV > div > div[class][aria-hidden] + div > div[class] > form,
+#SHORTCUT_FOCUSABLE_DIV > div > div:not([class]):not([id]):not([style]) > .hvdZkC,
+SHORTCUT_FOCUSABLE_DIV span > a[href$="/policies/cookie-notice"]:upward(section > div[style^="opacity"]),
+shreddit-async-loader[bundlename="bottom_bar_xpromo"],
+shreddit-async-loader[bundlename="feed_announcement"],
+shreddit-async-loader[bundlename="reddit_cookie_banner"],
+shreddit-comments-page-ad,
+shreddit-comment-tree-ad,
+shreddit-cookie-banner,
+span[data-part="get-app-btn"],
+#subreddit-right-rail__partial > aside > div.py-md > div.text-neutral-content-weak:has(> a[target="_blank"] > img),
+#uapp-banner,
+
+/* reuters.com */
+
+#bd_article,
+#bd_article2,
+#bd_article3,
+body > div > div[class$=" "][style^="width: 100%; border: none;"],
+body > div > div[class$=" "][style^="width: 100%; border: none;"] + #spacerElement[style^="height:"],
+button[aria-label^="Share"],
+.BylineBar_share-container,
+[class^="BylineBar_share-container"],
+[class^="GetTheAppBanner"],
+.core-share,
+[data-testid="CnxPlayer"],
+[data-testid="Leaderboard"],
+[data-testid="ResponsiveAdSlot"],
+div[class^="ArticleBody-read-time-and-social-"] > div[class^="SocialTools__container___"],
+div[class^="article-header__share__"],
+div[class^="article-prompt__container__"],
+div[class^="leaderboard"],
+div[class^="NewsletterCard__container___"],
+div[class^="NewsletterSignup-container-"],
+div[class^="OldSiteBanner_"],
+div[class^="registration-prompt"],
+div[class^="RegistrationPrompt__container"],
+div[class^="regular-article-layout__newsletter"],
+div[class^="regular-article-layout-v2__newsletter_"],
+div[class^="StickyContainer-container-"][style^="height: 1200px;"][style*="margin-bottom: 120px;"],
+div[class^="TwoColumnsLayout-leaderboard-"],
+div[class*="workspace-article-banner__banner-container__"],
+div[data-testid="SharingSymbols"],
+div[data-variant-id="workspace-banner"],
+div[style="flex-basis: 1200px; margin-bottom: 120px;"],
+p[data-testid="promo-box"],
+#rcs-articleContent > .column1 > .module-header:nth-last-child(2),
+#rcs-articleContent > .column1 > .module-header:nth-last-child(2) + .module,
+#rcs-articleContent > .column1 > section + section:nth-last-child(3) > .group > .column2.col-5,
+.reuters-share,
+section#hp-newsletters,
+.StandardArticleBody_body + div[id][class] > div[class*=" "],
+.StandardArticleBody_container + div > span ~ div,
+#toolbar-item-dropdown-share,
+#toolbar-item-parent-share,
+.TwoColumnLayout_container > .TwoColumnLayout_column + div[id] > div:not([class]):not([id]) + div[class$=" "]:last-child,
+.TwoColumnLayout_container > .TwoColumnLayout_column > .StandardArticleBody_container > .StandardArticleBody_body + div:not([class]):not([id]) + div[class$=" "],
+.TwoColumnLayout_container > .TwoColumnLayout_column > .StandardArticleBody_container > .StandardArticleBody_body + div:not([class]):not([id]) + div[id] > div[class$=" "] ~ *,
+ul[class^="ShareButtons__container___"],
+.workspace-article-banner-module__image__F14iP,
+
+/* rouman5.com */
+
+div[style^="display: flex;"],
+#headlessui-portal-root,
+ins,
+
+/* rou.video */
+
+.grid > div[class^="col-span"]:has(> div[class] > div[id^="ts_ad_native"]),
+.grid > div[class^="col-span"]:has(> div[class] > ins),
+
+/* supjav.com */
+
+.simpleToast,
+.video-wrap > div.right,
+
+/* t1229.btc760.com */
+
+
+/* t66y.com */
+
+a[href^="http://www.viidii.info/?https://po88_"],
+a[href^="http://www.viidii.info/?https://po88_"] ~ :nth-child(-n+115),
+.sptable_do_not_remove,
+.tips,
+.tpc_content.do_not_catch > span.f24,
+
+/* techcrunch.com */
+
+.announcement-banner[style="position: fixed;"],
+.article__social-share,
+.article__social-vertical-share,
+body div[data-testid="text-html"]:has(> div.showTemplate > div.pn-ribbon),
+#consent-gpc-popUp,
+div[class*="ad-unit"],
+div[class*="-newsletter-signup-compact"],
+.hbspt-form,
+.marfeel-experience-event-cta,
+.newsletter-signup-block,
+.newsletters-signup,
+.piano-ribbon-container iframe[id^="offer_"],
+.post-block + a[href="/events/tc-early-stage-2023/"],
+.rightrail--promo,
+.rightrail-promo,
+.surveymonkey-popup,
+.upcoming-events,
+.wp-block-group:has(> .newsletter-header),
+.wp-block-techcrunch-inline-cta,
+.wp-block-techcrunch-social-share,
+
+/* ted.com */
+
+aside[class^="css-"] > div[class^="pt-6"] > div > div.hidden,
+#banner-container,
+button.sb[data-service-name="facebook"],
+button.sb[data-service-name="linkedin"],
+button.sb[data-service-name="twitter"],
+div[class=" p-r:1 p-y:1 d:f a-i:c "],
+.share,
+
+/* thehackernews.com */
+
+a.custom-link[rel*="sponsored"],
+.ad_two,
+.articlebody > div.cf.note-b:has(> a[href="https://twitter.com/thehackersnews"]),
+#articlebody > div[class]:has(> center > a:is([rel^="nofollow"], [target^="_blank"]) > img),
+.av-side-box,
+.banners,
+.blog-posts > .body-post:has(> a[target="_blank"]),
+body > [class]:has(> a[href][target="_blank"]),
+body > [class]:has(> center a[href][target="_blank"]),
+body > [class^="p"]:has(> center > script),
+body > .deals > .deal-box,
+body > .google.cf,
+body > section.rockstar:has(> center > a[href="https://thehackernews.uk/wiz-demo-d"]),
+center > a:is([rel^="nofollow"], [target^="_blank"]) > img,
+.custom-link,
+.deal-store,
+.dig_two,
+div.rocking,
+.dog_two,
+#email-outer,
+.float-share,
+:is(aside, section, [id*="-"], [class*="right"], [class*="side"]) a > img[target="_blank"],
+:is(aside, section, [id*="-"], [class*="right"], [class*="side"]) a[target="_blank"] > img,
+:is(aside, section, [id*="-"], [class*="right"], [class*="side"]):has(> div[class] + script),
+#mobile-share,
+.okfix,
+#ouibounce-modal,
+.right-box > .zoho-box,
+section.box-side:has(> div[class] > a[target="_blank"]),
+.sharebelow,
+.sidewalaad,
+.sub-button,
+
+/* theverge.com */
+
+amp-iframe[src^="https://widgets.outbrain.com/hub/amp.html"],
+.article__share-buttons,
+body:not([style*="overflow: hidden;"]) div#zephr-footer-container,
+.c-newsletter_signup_box,
+.connatix-feature-desktop,
+.content-start > div.uppercase,
+.c-social-buttons__more,
+div[class^="adblock-allowlist-messaging"],
+div[class]:has(> div[data-concert]),
+div[data-concert],
+.duet--article--lede-share-tools-separator,
+.duet--article--share-buttons,
+.duet--cta--newsletter,
+.duet--layout--rail > div[class]:has(> div[class] > div[data-concert]),
+.duet--layout--rail > div[class]:has(> div > form > div.duet--cta--newsletter),
+.feature-photos-share-tool,
+iframe[src="https://www.platformer.news/embed"],
+.l-sidebar-fixed > div[data-analytics-placement],
+.m-ad__btf_leaderboard_variable,
+.newsletter-wrapper,
+.tab-bar-fixed,
+#zephr-anchor > .duet--article--block-placement:has(> div[class] > a.duet--cta--button),
+
+/* time.com */
+
+._2bnZiB_7,
+.ad,
+.ad-tech-placeholder,
+.ad-tech-skybox-container,
+.article-small-sidebar > .sticky-container:has(div[id^="ad-"]),
+.bg-warm-grey-ads,
+button[aria-label="Share this story"],
+.campaign-five_red-border,
+.campaign-four_red-border,
+.column > .row > div[data-reactid="137"],
+.column > .tWo0WoSf,
+div[id^="masonry_ad_"],
+#explore-menu .justify-center.gap-6.bg-warm-grey-3.px-6.py-4,
+header.contents > .sticky:has(button[aria-label="Close Banner"]),
+.header__share,
+.h-sidebar-sticky-container:has(> div > div.ad),
+.js-header__share,
+.jw-float-bar,
+#ketch-banner,
+#leaderboard-container,
+.mag-subs,
+.newsletter,
+.newsletter-inline-signup,
+.newsletter-signup,
+.newsletter-subscribe,
+.nextmove-email-capture,
+.roadblock,
+#scale-agent-overlay-container[aria-label="chat with time ai"],
+section[aria-labelledby="newsletter"],
+.social-share-hed,
+#sponsorshiplogo1,
+#time-in-content-widget.myFinance-widget,
+.topic-section__header-cta,
+.X9rgC5Js,
+
+/* turbovidhls.com */
+
+
+/* tz659.com */
+
+
+/* wnacg.com */
+
+a[href^="https://ent.ystwfucb.shop/"],
+a[href^="https://l.labsda.com/"],
+
+/* xchina.co */
+
+.block-overlay,
+.media,
+
+/* xiaobaotv.net */
+
+
+/* xvideos.com */
+
+#ad-footer,
+body > div[style*="background: rgb"][style*="text-align: center"],
+body > div[style^="display: flex; background: rgb"],
+#content > div.mobile-hide + div[class]:not([id*="video"]),
+#cookies-use-alert,
+[href*="base64"],
+[href*="data:"],
+img[src*="blob:" i]:not(video),
+.player-video.xv-cams-block,
+.share,
+tabShareAndEmbed > h4:has(> span.icf-share),
+.thumb-ad,
+.top-top,
+.video-ad,
+#video-right,
+#video-sponsor-links,
+
+/* yhdmp.com */
+
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

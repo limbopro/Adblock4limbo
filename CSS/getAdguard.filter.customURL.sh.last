@@ -1,0 +1,171 @@
+#!/bin/bash
+
+# ===============================================
+#              配置部分 (用户修改区域)
+# ===============================================
+
+# 【重要】请将工作目录设置为您希望保存文件的地方。
+WORK_DIR="/home/typecho/CSS"
+
+# 在这里添加或删除您想要提取规则的网站域名 (已去重)
+TARGET_SITES=("bbc.com" "reuters.com" "ted.com" "javbus.com" "missav.ws" "18comic.vip" "netflav.com" "missav.ai" "jable.tv" "xchina.co" "91porn.com" "91porny.com" "pornhub.com" "howjsay.com" "huaren.live" "rouman5.com" "rou.video" "wnacg.com" "manhuapica.com" "cnys.tv" "xiaobaotv.net" "iyf.tv" "olevod.tv" "cupfoxapp.tv" "dmmiku.com" "bfdm.xyz" "hitomi.la" "ntdm9.com" "novel543.com" "diyibanzhu.me" "alicesw.com" "hltv.org" "javdb.com" "javlibrary.com" "t66y.com" "bi-girl.net" "op.gg" "javday.tv" "javday.app" "xvideos.com" "njav.com" "turbovidhls.com" "t1229.btc760.com" "d1skbu98kuldnf.cloudfront.net" "dnt92ffcqr0xu.cloudfront.net" "91porna.com" "91short.com" "avple.tv" "4hu.tv" "supjav.com" "tz659.com" "anime1.me" "hanime1.me" "yhdmp.com" "javmost.xyz" "techcrunch.com" "thehackernews.com" "reddit.com" "time.com")
+
+# 过滤列表 URL 数组 (支持多个列表)
+FILTER_URLS=(
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_7_Japanese/filter.txt" #日语
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_10_Useful/filter.txt" #其他
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt" #恼人元素
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_4_Social/filter.txt" #社交平台
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt" #基本
+"https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_224_Chinese/filter.txt" #中文
+)
+
+# 文件名
+FILTER_FILE="merged_filter.txt" 
+# 总输出文件名
+OUTPUT_FILE="Adblock4limbo.weblist.user.css" 
+
+# 文件开头的描述性注释 (添加 UserCSS 头部以增强兼容性)
+HEADER_COMMENT="/* ==UserStyle==
+@name Adblock for WebList Injector
+@namespace userstyles.world
+@version 7.0
+@description Extracts element hiding rules from AdGuard filters.
+==/UserStyle== */
+/* removeAds by Adguard Filters */"
+
+# 最终要添加到文件末尾的 CSS 声明块
+FINAL_CSS_BLOCK=' {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}'
+
+# ===============================================
+#                脚本执行部分
+# ===============================================
+
+echo "--- 开始提取脚本 (V7.0 多源支持) ---"
+echo "工作目录: $WORK_DIR"
+
+# 0. 自动去重 TARGET_SITES 数组
+IFS=$'\n' TARGET_SITES=($(printf "%s\n" "${TARGET_SITES[@]}" | sort -u))
+unset IFS
+echo "去重后的目标网站: ${TARGET_SITES[@]}"
+
+# 1. 切换到工作目录并清理环境
+if [ ! -d "$WORK_DIR" ]; then
+    echo "警告: 目录 $WORK_DIR 不存在，正在创建..."
+    mkdir -p "$WORK_DIR"
+fi
+cd "$WORK_DIR"
+
+echo "清理旧的 $FILTER_FILE 文件..."
+rm -f "$FILTER_FILE" 
+
+# 2. 下载并合并最新的过滤文件
+echo "--- 开始下载和合并过滤列表 ---"
+for URL in "${FILTER_URLS[@]}"; do
+    echo "-> 下载: $URL"
+    # 使用 -O - 将输出重定向到标准输出，然后追加到 FILTER_FILE
+    wget -q -O - "$URL" >> "$FILTER_FILE"
+    if [ $? -ne 0 ]; then
+        echo "错误: 下载 $URL 失败。可能部分规则缺失。"
+    fi
+done
+
+if [ ! -s "$FILTER_FILE" ]; then
+    echo "致命错误: 未能下载任何过滤列表内容。脚本终止。"
+    exit 1
+fi
+
+# 3. 初始化总输出文件
+echo "初始化总输出文件: $OUTPUT_FILE 并添加头部注释..."
+echo "$HEADER_COMMENT" > "$OUTPUT_FILE"
+
+# 4. 遍历，生成独立文件，并追加到总文件
+echo "--- 开始遍历并生成文件 ---"
+
+for SITE in "${TARGET_SITES[@]}"; do
+    
+    echo "-> 提取 ${SITE} 的规则..."
+    
+    # 定义当前网站的独立文件名 (直接在工作目录下)
+    SITE_OUTPUT_FILE="${SITE}.css"
+    
+    # 4a. 初始化独立文件并写入注释
+    echo -e "\n/* ${SITE} */\n" >> "$OUTPUT_FILE"
+    echo "/* ${SITE} */" > "$SITE_OUTPUT_FILE" 
+    
+    # SITE_PATTERN 用于 sed/awk 匹配，需要转义点号
+    SITE_PATTERN=$(echo $SITE | sed 's/\./\\./g')
+    
+    # 使用 AWK 提取并写入到临时文件
+    TEMP_RULE_FILE="temp_rules_${SITE}.txt"
+    
+    # AWK 核心逻辑：提取选择器并输出到临时规则文件 (从合并的 FILTER_FILE 中提取)
+    awk -v site_pattern="$SITE_PATTERN" -v site_name="$SITE" '
+    {
+        # 寻找 ABP 元素隐藏的分隔符 "##"
+        idx = index($0, "##");
+        
+        # 确保规则不是例外规则 "#@#" 或其他网络规则 "||"
+        if (idx > 0 && $0 !~ /#@#/) {
+            domains = substr($0, 1, idx - 1);
+            selector = substr($0, idx + 2);
+            
+            # 检查 1: 确保目标域名匹配 (或域名列表为空, 即可用于全局规则)
+            # 仅提取针对该站点的规则
+            if (domains ~ "(^|,)" site_name "($|,)") {
+                
+                # 检查 2 (关键修复): 排除所有包含 CSS 声明块 ({...}) 或 AdGuard JS注入 ($$) 的非标准规则
+                if (selector !~ /\{.*\}|\$\$/) {
+                    # 最终输出选择器后跟逗号
+                    print selector ",";
+                }
+            }
+        }
+    }' "$FILTER_FILE" > "$TEMP_RULE_FILE"
+
+    
+    # 4b. 格式化和写入文件
+    
+    if [ -s "$TEMP_RULE_FILE" ]; then
+        # 读取规则内容
+        RULES_CONTENT=$(cat "$TEMP_RULE_FILE")
+        
+        # 将规则追加到总文件
+        echo "$RULES_CONTENT" >> "$OUTPUT_FILE"
+        
+        # 将规则写入独立文件
+        echo "$RULES_CONTENT" >> "$SITE_OUTPUT_FILE"
+
+        # 格式化独立文件：移除最后一个逗号并添加 CSS 声明块
+        sed -i '$ s/,$//' "$SITE_OUTPUT_FILE"
+        echo "$FINAL_CSS_BLOCK" >> "$SITE_OUTPUT_FILE"
+    else
+        echo "    [注意] ${SITE} 未提取到有效规则，不生成 ${SITE}.css"
+        rm "$SITE_OUTPUT_FILE"
+    fi
+    
+    # 清理临时规则文件
+    rm "$TEMP_RULE_FILE"
+
+done
+
+# 5. 完成总输出文件 (Adblock4limbo.weblist.user.css)
+echo "--- 完成总文件 $OUTPUT_FILE ---"
+
+# 必须对总文件也移除最后一个逗号，因为它现在位于最后一个网站的最后一个选择器后
+# 使用 sed '$!N;s/,\n\n/\n\n/;P;D' 更安全地处理可能的空行，但此处仅移除最后一行末尾的逗号
+sed -i '$ s/,$//' "$OUTPUT_FILE"
+
+# 追加最终的声明块
+echo "$FINAL_CSS_BLOCK" >> "$OUTPUT_FILE"
+
+# 6. 清理过滤列表
+rm "$FILTER_FILE"
+
+echo "--- 提取和构建完成 ---"
+echo "🎉 独立的 CSS 文件已生成在 $WORK_DIR/*.css"
+echo "🎉 总 CSS 样式表已保存到 $WORK_DIR/$OUTPUT_FILE"

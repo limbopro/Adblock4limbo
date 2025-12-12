@@ -1,0 +1,35 @@
+/* 18comic.vip */
+a[herf*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > div[style],
+a[href*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > img + [style],
+a[href*="//"]:not([href*="comic."]) > [style*="back"],
+#billboard-modal,
+.billboard-modal,
+body .bot-per,
+.container > div[style^="margin-bottom:"]:has(> div.col-lg-3 > div[data-exo]),
+.container > div[style^="padding:"]:has(> [data-group="content_page"]),
+.div-bf-pv,
+div[class="row"][style="display: flex;flex-wrap: wrap;"],
+div[data-group][data-width="300"],
+div[data-group^="photo_center_games_"],
+div[data-group^="skyscraper_"],
+div[data-height="250"][data-width="300"],
+div[data-height="90"][data-width="728"],
+.div_sticky2,
+div[style="position: absolute;bottom: 0px;z-index: 10;"],
+.float-right-daily,
+.float-right-image,
+#guide-modal,
+.modal-backdrop,
+.modal-body > ul.pop-list,
+.row[style="display: flex;flex-wrap: wrap;"],
+style + div[style="cursor: pointer; position: relative;"],
+.tab-content + .row:has(> div[class] > div[class] > .group-notice),
+.top-a2db,
+#wrapper > div.hidden-lg:has(> div[class*="sticky"])
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

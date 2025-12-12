@@ -1,0 +1,40 @@
+/* time.com */
+._2bnZiB_7,
+.ad,
+.ad-tech-placeholder,
+.ad-tech-skybox-container,
+.article-small-sidebar > .sticky-container:has(div[id^="ad-"]),
+.bg-warm-grey-ads,
+button[aria-label="Share this story"],
+.campaign-five_red-border,
+.campaign-four_red-border,
+.column > .row > div[data-reactid="137"],
+.column > .tWo0WoSf,
+div[id^="masonry_ad_"],
+#explore-menu .justify-center.gap-6.bg-warm-grey-3.px-6.py-4,
+header.contents > .sticky:has(button[aria-label="Close Banner"]),
+.header__share,
+.h-sidebar-sticky-container:has(> div > div.ad),
+.js-header__share,
+.jw-float-bar,
+#ketch-banner,
+#leaderboard-container,
+.mag-subs,
+.newsletter,
+.newsletter-inline-signup,
+.newsletter-signup,
+.newsletter-subscribe,
+.nextmove-email-capture,
+.roadblock,
+#scale-agent-overlay-container[aria-label="chat with time ai"],
+section[aria-labelledby="newsletter"],
+.social-share-hed,
+#sponsorshiplogo1,
+#time-in-content-widget.myFinance-widget,
+.topic-section__header-cta,
+.X9rgC5Js
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

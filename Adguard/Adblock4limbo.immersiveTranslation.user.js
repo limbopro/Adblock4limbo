@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         沉浸式双语翻译 (Google Translate & Dual Wrapper) - 简洁滚动控制 - 纯JS版本
 // @namespace    http://tampermonkey.net/
-// @version      2025-12-11_Final_V16.8_ScrollSimple_CloseButton_Stable
+// @version      2025-12-12_Final_V17_ScrollSimple_CloseButton_Stable
 // @description  基于 Google Translate，采用双包裹结构实现沉浸式双语对照翻译。包含：Trusted Types兼容加载、SPA路由变化监控、滚动时自动隐藏 UI、以及浮动按钮切换“双语/原文”模式。
 // @author       limbopro
 // @match        https://*/*
@@ -17,13 +17,18 @@
 
 document.cookie = "googtrans=/auto/zh-CN; path=/";
 
-function loadGoogleTranslateUI() {
+
+
+window.loadGoogleTranslateUI = function loadGoogleTranslateUI() {
 
     // 如果 UI 已存在，直接返回
     const uiContainerId = 'google_translate_element';
+    const googleWidget = document.querySelector('.skiptranslate.goog-te-gadget');
+    const ybyfyvalue = document.getElementById("translation-button")?.classList?.contains('translated')
 
     // 如果元素已存在，则直接返回
-    if (document.getElementById(uiContainerId)) return;
+    //if (!ybyfyvalue) return;
+    if (document.getElementById(uiContainerId) && googleWidget && ybyfyvalue) return;
 
     // --- 1. 谷歌翻译初始化函数配置 ---
 
@@ -102,39 +107,44 @@ function loadGoogleTranslateUI() {
 
     // --- 4. 超时检查和清理机制 ---
 
-    const checkDelay = 15000;
+    const checkDelay = 8000;
     const successSelector = '.skiptranslate.goog-te-gadget';
 
     setTimeout(() => {
+
         const isLoaded = document.querySelector(successSelector);
 
         if (!isLoaded) {
             console.warn(`%c[Google Translate] 警告：脚本可能加载失败或超时 (${checkDelay / 1000} 秒)。`,
                 'color: #FF9800; font-weight: bold; background: #fff3e0; padding: 4px 8px; border-radius: 4px;');
 
-            const userAction = confirm(
-                '⚠️ 提示：\n\n谷歌翻译组件在 15 秒内未加载成功，翻译功能可能无法正常使用。\n\n可能的原因：\n1.内容安全策略（Content Security Policy, CSP），刷新也没用；\n2.网络问题，稍后刷新页面再试试；\n\n以上。'
-            );
+            /* 不再提示
 
-            if (userAction) {
-                // 移除与翻译功能相关的自定义元素
-                // document.querySelectorAll('.cjsfy-original, .cjsfy-translated, .spacer').forEach((e) => { e.remove() });
-                // document.getElementById('translation-button')?.remove();
-                // document.getElementById(uiContainerId)?.remove();
-            } else {
-                console.log("[Google Translate] UI 容器保留在页面上。");
-            }
+        const userAction = confirm(
+            '⚠️ 提示：\n\n谷歌翻译组件在 8 秒内未加载成功，翻译功能可能无法正常使用。\n\n可能的原因：\n1.内容安全策略（Content Security Policy, CSP），刷新也没用；\n2.网络问题，稍后刷新页面再试试；\n\n以上。'
+        );
+
+        if (userAction) {
+            // 移除与翻译功能相关的自定义元素
+            // document.querySelectorAll('.cjsfy-original, .cjsfy-translated, .spacer').forEach((e) => { e.remove() });
+            // document.getElementById('translation-button')?.remove();
+            // document.getElementById(uiContainerId)?.remove();
+        } else {
+            console.log("[Google Translate] UI 容器保留在页面上。");
         }
+            */
+
+            //forceHardReload()
+        }
+
     }, checkDelay);
 }
 
-// 您需要调用此函数来启动加载过程
-// loadGoogleTranslateUI();
 
 
 // --- II. 双包裹体创建逻辑 ---
 
-function applyDualWrapperProtection() {
+window.applyDualWrapperProtection = function applyDualWrapperProtection() {
     (() => {
         console.clear();
 
@@ -149,12 +159,23 @@ function applyDualWrapperProtection() {
                 acceptNode: node => {
 
                     const text = node.nodeValue.trim();
-                    //const pureNumericOrSymbolic = /^[\d\s\W]+$/.test(text);
-                    const pureNumericOrSymbolic = /^\s*[\d\s.,]+\s*$/.test(text)
                     if (!text) return NodeFilter.FILTER_REJECT;
 
-
+                    // 1. 纯数字或符号 (例如 123.45)
+                    const pureNumericOrSymbolic = /^\s*[\d\s.,]+\s*$/.test(text)
                     if (pureNumericOrSymbolic) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    // 2. 日期格式 (例如 2025-12-12)
+                    const dateformat = /\b(\d{1,4}[-\/.]\d{1,2}[-\/.]\d{1,4})\b/.test(text)
+                    if (dateformat) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    // **【新增过滤规则：纯时间格式 (例如 45:00, 1:23:45)】**
+                    const timeFormat = /^\s*(\d{1,2}:\d{2}(:\d{2})?)\s*$/.test(text);
+                    if (timeFormat) {
                         return NodeFilter.FILTER_REJECT;
                     }
 
@@ -172,7 +193,7 @@ function applyDualWrapperProtection() {
                     }
 
                     if (parent.dataset._textDuplicated) return NodeFilter.FILTER_REJECT;
-                    if (text.length < 2) return NodeFilter.FILTER_REJECT; // 字符长度 
+                    if (text.length < 2) return NodeFilter.FILTER_REJECT; // 字符长度
                     return NodeFilter.FILTER_ACCEPT;
                 }
             }
@@ -183,7 +204,6 @@ function applyDualWrapperProtection() {
         while (textNode = walker.nextNode()) {
             const target = textNode.parentElement;
             target.dataset._textDuplicated = 'pending';
-
             targetsToProcess.push({
                 originalText: target.innerText,
                 target: target
@@ -195,11 +215,13 @@ function applyDualWrapperProtection() {
         targetsToProcess.forEach(({ originalText, target }, i) => {
 
 
-            function wrapTarget() { // 打包函数开始
+            function wrapTarget() { // 打包函数开始 包裹 对于普通节点
+
+                console.log(target.innerText)
+
                 // 1. 创建 原文副本 (克隆：保留原结构和内容)
                 const originalWrapper = target.cloneNode(true);
                 originalWrapper.classList.add('notranslate', 'Original', 'ori');
-
 
                 // 创建 分隔符
                 const separator = document.createElement('p');
@@ -229,10 +251,12 @@ function applyDualWrapperProtection() {
                 results.push({ target });
             } // 打包函数结束
 
+
+
+
             // 克隆函数开始
 
-            window.cloneThat = function cloneAndModifyElements() {
-                const originalElements = document.querySelectorAll('.immersive.notranslate');
+            window.cloneThat = function cloneAndModifyElements(originalElements) { // 对于含有 br 的节点
                 originalElements.forEach(originalElement => {
                     const clonedElement = originalElement.cloneNode(true);
                     clonedElement.classList.remove('notranslate');
@@ -242,9 +266,77 @@ function applyDualWrapperProtection() {
                 console.log(`成功处理了 ${originalElements.length} 个元素。`);
             }
 
+            window.cloneThats = function cloneAndModifyElements(originalElement) { // 对于含有 br 的节点
+                const clonedElement = originalElement.cloneNode(true);
+                clonedElement.classList.add('notranslate');
+                originalElement.parentElement.insertBefore(clonedElement, originalElement);
+                originalElement.classList.add('cjsfy-translated')
+            }
+
             // 克隆函数结束
 
-            // 拆分函数开始
+
+            // 删除冗余
+            window.redundancy = function redundancyRemove() {
+
+                document.querySelectorAll('.notranslate.ori').forEach(parentElement => {
+                    if (parentElement.querySelector('.cjsfy-translated')) {
+                        parentElement.querySelector('.cjsfy-translated').remove();
+                    }
+
+                    if (parentElement.querySelector('.spacer')) {
+                        parentElement.querySelector('.spacer').remove();
+                    }
+                });
+
+                document.querySelectorAll('.cjsfy-translated').forEach(parentElement => {
+                    if (parentElement.querySelector('.notranslate')) {
+                        parentElement.querySelector('.notranslate').remove();
+                    }
+
+                    if (parentElement.querySelector('.spacer')) {
+                        parentElement.querySelector('.spacer').remove();
+                    }
+                });
+
+            }
+
+            // 不要遗忘那个没被包裹的元素
+
+            window.last = function lastForgotten() {
+                if (document.querySelectorAll('[data-_text-duplicated=pending]').length > 0)
+                    document.querySelectorAll('[data-_text-duplicated=pending]').forEach((x) => {
+                        if (x.className.indexOf('notranslate') == -1 && x.className.indexOf('cjsfy-translated') == -1) {
+                            if (x.querySelectorAll('.notranslate').length == 0) {
+                                if (x.parentElement.className.indexOf('notranslate') == -1 && x.parentElement.className.indexOf('cjsfy-translated') == -1) {
+                                    if (x.parentElement.parentElement.className.indexOf('notranslate') == -1 && x.parentElement.parentElement.className.indexOf('cjsfy-translated') == -1) {
+                                        cloneThats(x)
+                                    }
+                                }
+
+                            }
+                        }
+                    })
+            }
+
+            // 删除重复的 br 标签
+            function removeDuplicateBr(target) {
+                const brElements = target.querySelectorAll('br');
+                for (let i = brElements.length - 1; i >= 0; i--) {
+                    const currentBr = brElements[i];
+
+                    const nextSibling = currentBr.nextSibling;
+                    if (nextSibling && nextSibling.tagName === 'BR') {
+
+                        currentBr.parentNode.removeChild(currentBr);
+                    }
+                }
+
+                (function () { const brs = target.querySelectorAll('br'); const lastBr = brs.length > 0 ? brs[brs.length - 1] : null; if (lastBr && !lastBr.nextSibling) { lastBr.remove(); } })();
+            }
+
+
+            // 拆分函数开始 拆分 含有 br 的节点 转为 p
 
             function brToParagraphs(target, innerHTMLString) {
                 let cleanedString = innerHTMLString.trim();
@@ -254,25 +346,31 @@ function applyDualWrapperProtection() {
                 const paragraphs = processedString.split(newParaDelimiter);
                 const validParagraphs = paragraphs.filter(p => p.trim().length > 0);
                 const resultHTML = validParagraphs
-                    .map(p => `<p class='immersive notranslate frombrEL'>${p.trim()}</p>`)
+                    .map(p => `<p class='immersive brToParagraphs cut notranslate'>${p.trim()}</p>`)
                     .join('');
                 target.innerHTML = resultHTML
-                console.log(target.querySelectorAll('.immersive.notranslate').length)
-
             }
 
             // 拆分br函数结束
 
-            // 判断是否存在 br 
+            // 判断是否存在 br 然后开始包裹
             if (target.querySelectorAll('br').length == 0) {
                 wrapTarget(target)
-            } else {
+            } else if (target.querySelectorAll('br').length > 0) {
+                removeDuplicateBr(target)
                 brToParagraphs(target, target.innerHTML)
+            } else {
+                wrapTarget(target)
+                console.log('wtf')
             }
 
         });
 
-        cloneThat();
+        cloneThat(document.querySelectorAll('.brToParagraphs.notranslate'));
+        redundancy()
+        setTimeout(() => {
+            last()
+        }, 500)
 
         console.log(`%c 成功为 ${results.length} 个元素创建了双包裹结构`,
             'color:#fff;background:#00bcd4;padding:8px 16px;border-radius:8px;font-size:16px;');
@@ -302,6 +400,24 @@ function applyDualWrapperProtection() {
         console.log('%c 如需撤销包裹，执行：REVERT_DUAL_WRAPPER()',
             'background:#ff9800;color:#fff;padding:6px 12px;border-radius:4px;');
 
+        console.log("[Immersive Translate] Google Translate UI 加载已触发。");
+
+        // **【修改点 A: 条件启动和存储 ID】**
+
+        loadGoogleTranslateUI()
+
+        setTimeout(() => {
+            if (wtfIntervalId === null) {
+                wtfIntervalId = setInterval(() => {
+                    skiptrs()
+                    loadGoogleTranslateUI()
+                }, 4000);
+                console.log(`[Immersive Translate] Google Translate UI 循环加载已启动 (ID: ${wtfIntervalId})。`);
+            } else {
+                console.log(`[Immersive Translate] Google Translate UI 循环加载已在运行中 (ID: ${wtfIntervalId})。`);
+            }
+        }, 4000)
+
     })();
 }
 
@@ -318,25 +434,44 @@ function initiateTranslationFlow() {
     // 所有资源（图片、css、js 等）都加载完毕
     console.log("[Immersive Translate] 翻译流程开始...");
     // 如果 按钮 已存在，直接返回
-    document.querySelectorAll("#translation-button")
-    //if (document.getElementById('translation-button')) return;
     protectPreTags();
     applyDualWrapperProtection();
-    loadGoogleTranslateUI();
+    //loadGoogleTranslateUI();
     console.log("[Immersive Translate] 翻译流程执行完毕。");
 }
+
+function loadExternalCss(cssUrl) {
+    // 1. 创建一个新的 <link> 元素
+    const link = document.createElement('link');
+
+    // 2. 设置 link 元素的属性
+    link.rel = 'stylesheet';  // 必须是 stylesheet
+    link.type = 'text/css';   // 设置 MIME 类型
+    link.href = cssUrl;       // 设置 CSS 文件的 URL
+
+    document.head.appendChild(link);
+    console.log(`外部 CSS 文件已加载: ${cssUrl}`);
+}
+
 
 
 function createFloatingButton() {
 
+    // 调用函数，传入您提供的 CSS 文件 URL
+    const cssFileUrl = 'https://limbopro.com/CSS/Adblock4limbo.user.css'; // 含 Adguard 通用广告元素选择器 看外网网页会非常干净
+    loadExternalCss(cssFileUrl);
     document.cookie = "googtrans=/auto/zh-CN; path=/";
     const css = `
 
     /* 该死的广告 */
-    [id*="ad-unit"], 
-    [class*="ad-unit"], 
-    [data*="ad-unit"], 
-    [data-name*="ad-unit"], 
+    .Ad-label,
+    .ad-label,
+    .widget.ad,
+    [class*="acm_ad"],
+    [id*="ad-unit"],
+    [class*="ad-unit"],
+    [data*="ad-unit"],
+    [data-name*="ad-unit"],
     [data-testid*="ad-unit"],
     [class*='ads'],
     [id*='ads'] {
@@ -346,7 +481,7 @@ function createFloatingButton() {
     }
 
     .Original {
-    margin: 0px;
+    /*margin: 0px;*/
     padding:0px;
     /*display: none !important;*/
     }
@@ -368,19 +503,21 @@ function createFloatingButton() {
         opacity: 0 !important;
         pointer-events: none !important;
     }
-    
+
     .cjsfy-original, .cjsfy-translated {
         pointer-events: none;
+        font-size:inherit;
+        margin: 0px !important;
         color: inherit;
         word-break: break-word;
         user-select: text;
         /*display: block !important;*/
     }
-    
+
     /* 滚动隐藏/显示所需的样式 */
     #translation-button, #google_translate_element {
         /* 添加过渡效果，让隐藏和显示更平滑 */
-        transition: opacity 0.5s ease-in-out !important, visibility 0.5s ease-in-out !important; 
+        transition: opacity 0.5s ease-in-out !important, visibility 0.5s ease-in-out !important;
         pointer-events: auto; /* 确保默认可点击 */
         visibility: visible;
     }
@@ -390,20 +527,21 @@ function createFloatingButton() {
         opacity: 0 !important;
         visibility: hidden !important; /* 新增 visibility 确保元素不占用空间或阻止交互 */
         /* 使用 pointer-events: none 确保隐藏时无法被点击 */
-        pointer-events: none !important; 
+        pointer-events: none !important;
     }
 
         #translation-button {
+        padding: 0px;
         border:1px solid #1a73e8;
         position: fixed;
         right: 0px;
         left: auto;
-        bottom: 35% !important;              
-        height: auto;                       
+        bottom: 35% !important;
+        height: auto;
         z-index: 10000;
         width: 45px;
         height: 36px;
-        line-height: 36px; 
+        line-height: 36px;
         border-radius: 5px 0px 0px 5px;
         background-color:#fff;
         color:#1a73e8;
@@ -419,7 +557,7 @@ function createFloatingButton() {
         #translation-button:hover {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
         }
-            
+
         #translation-button:active {  transform: scale(0.98); }
 
         #translation-button.translated {
@@ -460,11 +598,12 @@ function createFloatingButton() {
     style.textContent = css;
     document.head.appendChild(style);
 
-    const button = document.createElement('div');
+    const button = document.createElement('button');
     button.id = 'translation-button';
     button.className = 'notranslate cjsfy btx';
     button.textContent = '双语';
     document.body.appendChild(button);
+
 
     // 保护主按钮不被双包裹逻辑处理
     button.setAttribute('data-_textDuplicated', 'true');
@@ -525,7 +664,6 @@ function createFloatingButton() {
             button.textContent = '双语';
             localStorage.setItem('ybyfy', 'by')
             button.classList.remove('translated');
-
             translatedElements.forEach((e) => { e.classList.add('dual-wrapper-hidden') });
 
             ori.forEach((e) => {
@@ -535,12 +673,20 @@ function createFloatingButton() {
 
             console.log('切换成原文模式...')
 
+            // **【修改点 B: 停止循环】**
+            if (wtfIntervalId !== null) {
+                clearInterval(wtfIntervalId);
+                console.log(`[UI Control] Google Translate UI 循环加载已停止 (ID: ${wtfIntervalId})。`);
+                wtfIntervalId = null; // 重置 ID
+            }
+
+            hideElements(); // 隐藏样式
+
             // *** 增强：切换到原文模式时，检查并重建关闭按钮 ***
             if (!document.getElementById('translation-close-btn')) {
                 createCloseButton();
             }
 
-            showElements() // 显示谷歌翻译小工具组件
 
         } else {
 
@@ -563,7 +709,7 @@ function createFloatingButton() {
     // 5. 滚动隐藏与延时显示逻辑 (严格按需简化)
     // =======================================================
     let scrollTimer;
-    const hideDelay = 86400; // 10 秒 (使用超长延迟相当于关闭滚动隐藏功能)
+    const hideDelay = 1000000000000; // 10 秒 (使用超长延迟相当于关闭滚动隐藏功能)
 
     const hideElements = () => {
         const googleEl = document.getElementById('google_translate_element');
@@ -574,34 +720,49 @@ function createFloatingButton() {
     };
 
     const showElements = () => {
+
         const googleEl = document.getElementById('google_translate_element');
         if (googleEl) {
             googleEl.classList.remove('scroll-hidden');
         }
         document.getElementById('translation-button')?.classList.remove('scroll-hidden');
         document.querySelector('.skiptranslate')?.classList.remove('scroll-hidden');
+
     };
 
+    /*
     const handleScroll = () => {
-
         if (document.getElementById('google_translate_element'))
             if (document.querySelector('.cjsfy-translated').classList.value.includes('dual-wrapper-hidden') || document.querySelector('.cjsfy-translated') == null || document.querySelector('.cjsfy-translated').querySelector('font[dir]') !== null)
                 hideElements();
-        clearTimeout(scrollTimer);
+                clearTimeout(scrollTimer);
 
         scrollTimer = setTimeout(() => {
             console.log(`%c[UI Control] 停止滚动 ${hideDelay / 1000} 秒，重新显示 UI 元素。`, 'color: #17A2B8;');
             showElements();
         }, hideDelay);
     };
+    */
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 
 // --- IV. 脚本入口点与监控 ---
 
 createFloatingButton();
+
+// 判断谷歌翻译是否提前翻译
+
+window.skiptrs = function skiptrs() {
+    const googletraLength = document.querySelectorAll("font[dir] > font[dir]").length;
+    const cjsfytraLength = document.querySelectorAll(".notranslate.ori, .cjsfy-translated").length;
+    if (cjsfytraLength > 0 && googletraLength > 0 && (googletraLength / cjsfytraLength) > 0.8) {
+        forceHardReload()
+    }
+}
+
+
 function monitorClickAndUrlChange() {
     console.log("URL 变化监控已启动...");
 
@@ -614,6 +775,8 @@ function monitorClickAndUrlChange() {
 
             if (currentUrl !== originalUrl) {
                 setTimeout(() => {
+
+
                     const googletraLength = document.querySelectorAll("font[dir] > font[dir]").length;
                     const cjsfytraLength = document.querySelectorAll(".notranslate.ori, .cjsfy-translated").length;
 
@@ -621,13 +784,15 @@ function monitorClickAndUrlChange() {
 
                         console.warn('翻译元素数量可能不匹配，建议重新加载。');
                         const userAction = confirm(
-                            '⚠️ 提示：\n\n存在的问题：\n当前页面未按预期进行双语对照翻译；\n\n可能的原因：\n单页应用路由跳转导致（如网站使用了AJAX技术）\n\n是否需要重新加载页面以便正确执行翻译请求？'
+                            '⚠️ 提示：\n\n存在的问题：\n当前页面未按预期进行双语对照翻译；\n\n可能的原因：\n单页应用路由跳转导致（如网站使用了PJAX/AJAX技术）\n\n是否需要重新加载页面以便正确执行翻译请求？\n\n如仍不能按预期进行双语对照翻译，请手动刷新页面。更多问题请进入导航->设置-反馈/留言。'
                         );
 
                         if (userAction) {
-                            location.reload(true);
+                            forceHardReload()
                         }
                     }
+
+
                 }, 3000);
 
             }
@@ -636,11 +801,338 @@ function monitorClickAndUrlChange() {
     }, true);
 }
 
-monitorClickAndUrlChange();
+/**
+ * 使用 MutationObserver 监控 DOM 变化，以检测 SPA 导航加载新内容。
+ * 并在检测到 URL 变化和 DOM 变化时，提示用户进行操作。
+ */
+function monitorDomAndUrlChanges() {
+    let lastUrl = window.location.href;
+    console.log("[Observer] DOM 变动与 URL 监控已启动...");
 
-if (localStorage.getItem('ybyfy') == 'y') {
+    const observerConfig = {
+        childList: true, // 监控子节点的增减
+        subtree: true,   // 监控整个子树
+        attributes: false, // 不监控属性变化
+        characterData: false // 不监控文本内容变化
+    };
 
-    setTimeout(() => {
-        document.getElementById('translation-button')?.click()
-    }, 750)
+    const domObserver = new MutationObserver((mutationsList, observer) => {
+        // 仅在 URL 实际发生变化时采取行动 (这是 SPA 导航的关键判断)
+        if (window.location.href !== lastUrl) {
+            lastUrl = window.location.href;
+
+            // 暂停观察，防止递归调用
+            observer.disconnect();
+
+            console.log("检测到 SPA 路由变化和内容加载...");
+
+            // ----------------------------------------------------
+            // 替代原脚本中的 alert/confirm 逻辑
+            // ----------------------------------------------------
+            setTimeout(() => {
+
+                /*
+                                const userAction = confirm(
+                                    '⚠️ 提示：\n\n存在的问题：\n当前页面未按预期进行双语对照翻译；\n\n可能的原因：\n单页应用路由跳转导致（如网站使用了PJAX/AJAX技术）\n\n需要重新加载页面以便正确执行翻译请求？\n\n（如仍不能按预期进行双语对照翻译，请手动刷新页面。更多问题请进入导航->设置-反馈/留言。）\n\n'
+                                    //'⚠️ 提示：\n\n存在的问题：\n当前页面未按预期进行双语对照翻译；\n\n可能的原因：\n单页应用路由跳转导致（如网站使用了PJAX/AJAX技术）\n\n是否需要重新加载页面以便正确执行翻译请求？\n\n如仍不能按预期进行双语对照翻译，请手动刷新页面。更多问题请进入导航->设置-反馈/留言。\n\n'
+                                    //'⚠️ 提示：\n检测到单页应用 (SPA) 路由跳转导致内容刷新。\n\n是否需要**重新加载页面**以便正确执行翻译和包裹？\n'
+                                );
+                
+                                if (userAction) {
+                                    forceHardReload()
+                                } else {
+                                    // 如果用户选择不刷新，则尝试重新应用包裹和翻译流程 (如果需要)
+                                    // 注意: 强制重构 DOM 可能会导致用户体验不佳
+                                    // initiateTranslationFlow(); 
+                
+                                    // 重启观察者
+                                    observer.observe(document.body, observerConfig);
+                                }
+                */
+
+                forceHardReload()
+
+            }, 500); // 给浏览器一个短暂的时间来完成渲染新内容
+
+        }
+        // 如果 URL 未变，但 DOM 变动了 (例如，弹窗或懒加载内容)，通常不需要刷新。
+    });
+
+    // 开始观察 document.body
+    domObserver.observe(document.body, observerConfig);
 }
+
+/**
+ * 强制重新加载当前页面，通过附加时间戳参数来绕过浏览器缓存，
+ * 达到模拟用户“硬刷新”的效果。
+ */
+function forceHardReload() {
+    const currentUrl = new URL(window.location.href);
+    const timestamp = Date.now();
+
+    // 1. 移除可能已存在的随机参数
+    currentUrl.searchParams.delete('cachebuster');
+
+    // 2. 添加新的时间戳参数
+    currentUrl.searchParams.set('cachebuster', timestamp);
+
+    // 3. 导航到新的 URL
+    loadTranslateScriptWithTrustedTypes(SCRIPT_URL, POLICY_NAME, URL_PREFIX);
+    //loadGoogleTranslateUI()
+    window.location.href = currentUrl.toString();
+}
+
+// 替换或补充您原有的 monitorClickAndUrlChange(); 调用
+// monitorDomAndUrlChanges();
+
+// monitorClickAndUrlChange();
+monitorDomAndUrlChanges()
+
+// ==========================================================
+// 全局变量用于存储 setInterval ID
+// ==========================================================
+let wtfIntervalId = null;
+
+window.ybyfy = function ybyfy() {
+
+    // --- V. 脚本入口点与监控 (最终优化后的自动点击部分) ---
+
+    if (localStorage.getItem('ybyfy') == 'y') {
+        setTimeout(() => {
+            const button = document.getElementById('translation-button');
+            const googleWidget = document.querySelector('.skiptranslate.goog-te-gadget');
+            const isTranslatedMode = button && button.classList.contains('translated');
+
+            if (button && !isTranslatedMode) {
+                // 场景 1: 按钮存在，且处于原文/初始模式 (需要切换到双语)
+                console.log("[Auto-Translate] 检测到存储状态为 '双语'，且按钮未激活，触发模拟点击。");
+                button.click();
+
+            } else if (isTranslatedMode) {
+                // 场景 2: 按钮存在，且已处于 '双语' 模式 (translated)
+
+                if (!googleWidget) {
+                    // 进一步检查：处于双语模式，但谷歌翻译组件缺失
+                    console.warn("%c[Auto-Translate] 警告: 处于 '双语' 模式，但谷歌翻译组件 (.goog-te-gadget) 缺失。",
+                        'color: #FF5722; font-weight: bold;');
+
+                    // 强制重新执行初始化流程，这会重新触发 applyDualWrapperProtection 和 loadGoogleTranslateUI
+                    // 模拟点击按钮会安全地重新尝试初始化
+
+                    console.log("[Auto-Translate] 尝试通过模拟点击重新加载翻译组件...");
+                    loadGoogleTranslateUI()
+                    //button.click();
+                } else {
+                    // 状态正常：处于双语模式，且谷歌翻译组件已加载
+                    console.log("[Auto-Translate] 按钮已存在且已处于 '双语' 模式 (translated)，谷歌组件正常。跳过模拟点击。");
+                }
+            } else {
+                // 场景 3: 浮动按钮尚未渲染
+                console.log("[Auto-Translate] 浮动按钮尚未渲染，无法执行自动点击。");
+            }
+        }, 250);
+    }
+
+}
+
+
+setTimeout(() => { ybyfy() }, 1250)
+
+
+// 其他函数
+
+/**
+ * 动态加载谷歌翻译脚本，并尝试使用 Trusted Types 进行安全兼容处理。
+ *
+ * @param {string} scriptUrl 脚本的完整 URL，例如：//translate.google.com/translate_a/element.js?cb=...
+ * @param {string} policyName Trusted Types 策略的名称，例如：'google-translate-loader'
+ * @param {string} urlPrefix 脚本 URL 的安全前缀，用于 Trusted Types 策略内部验证。例如：'//translate.google.com/'
+ */
+function loadTranslateScriptWithTrustedTypes(scriptUrl, policyName, urlPrefix) {
+    // 检查参数是否有效
+    if (!scriptUrl || !policyName || !urlPrefix) {
+        console.error("加载脚本失败：请提供 scriptUrl, policyName 和 urlPrefix 三个参数。");
+        return;
+    }
+
+    // 1. 创建 script 元素
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+
+    let finalScriptSrc = scriptUrl;
+
+    // 2. 检查并应用 Trusted Types
+    if (window.trustedTypes && trustedTypes.createPolicy) {
+        try {
+            // 创建一个 Trusted Script URL Policy
+            const policy = trustedTypes.createPolicy(policyName, {
+                // 使用传入的 urlPrefix 进行验证
+                createScriptURL: (url) => {
+                    if (url.startsWith(urlPrefix)) {
+                        return url;
+                    }
+                    throw new Error(`Attempted to load untrusted script URL: ${url}. Does not start with ${urlPrefix}`);
+                }
+            });
+
+            // 将 URL 字符串转换为 TrustedScriptURL 对象
+            finalScriptSrc = policy.createScriptURL(scriptUrl);
+            console.log(`[Trusted Types] 成功使用策略 "${policyName}" 加载脚本。`);
+        } catch (e) {
+            console.warn(`[Trusted Types] 无法创建或应用 TrustedScriptURL 策略 "${policyName}"，回退到普通字符串赋值。`, e);
+            finalScriptSrc = scriptUrl;
+        }
+    }
+
+    // 3. 赋值并插入 DOM
+    // 无论是否成功使用 Trusted Types，都将最终的源赋值给 script 元素的 src 属性
+    script.src = finalScriptSrc;
+
+    // 插入到文档头部或尾部
+    // 检查 document.head 是否存在是最佳实践
+    (document.head || document.body || document.documentElement).appendChild(script);
+
+    console.log(`脚本加载请求已发送: ${scriptUrl}`);
+}
+
+// --- 调用示例 ---
+
+// 传入您要求的参数
+const SCRIPT_URL = '//limbopro.com/Adguard/Adblock4limbo.user.js';
+const POLICY_NAME = 'limboproNavigation';
+const URL_PREFIX = '//limbopro.com/';
+
+// 调用函数以加载脚本
+loadTranslateScriptWithTrustedTypes(SCRIPT_URL, POLICY_NAME, URL_PREFIX);
+
+
+/**
+ * 使用 Trusted Types 安全地加载 CSS 样式表。
+ * * @param {string} cssUrl - 要加载的 CSS 文件的完整 URL。
+ * @param {string} policyName - 创建 Trusted Type Policy 的名称（必须唯一）。
+ * @param {string} urlPrefix - 允许加载 CSS 文件的 URL 前缀。
+ */
+function loadStylesheetWithTrustedTypes(cssUrl, policyName, urlPrefix) {
+    if (!cssUrl || !policyName || !urlPrefix) {
+        console.error("加载 CSS 失败：请提供 cssUrl, policyName 和 urlPrefix 三个参数。");
+        return;
+    }
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+
+    let finalLinkHref = cssUrl;
+
+    // 检查并应用 Trusted Types
+    if (window.trustedTypes && trustedTypes.createPolicy) {
+        try {
+            // 创建一个 Trusted Type 策略来验证 URL
+            const policy = trustedTypes.createPolicy(policyName, {
+                // 使用 createScriptURL 来验证源 URL
+                createScriptURL: (url) => {
+                    if (url.startsWith(urlPrefix)) {
+                        return url;
+                    }
+                    throw new Error(`Attempted to load untrusted CSS URL: ${url}. Does not start with ${urlPrefix}`);
+                }
+            });
+
+            // 将 URL 字符串转换为 TrustedScriptURL 对象
+            finalLinkHref = policy.createScriptURL(cssUrl);
+            console.log(`[Trusted Types] 成功使用策略 "${policyName}" 验证 CSS 链接。`);
+        } catch (e) {
+            console.warn(`[Trusted Types] 无法创建或应用策略 "${policyName}"，回退到普通字符串赋值。`, e);
+            finalLinkHref = cssUrl;
+        }
+    }
+
+    // 赋值并插入 DOM
+    link.href = finalLinkHref;
+    (document.head || document.body || document.documentElement).appendChild(link);
+
+    console.log(`CSS 加载请求已发送: ${cssUrl}`);
+}
+
+/**
+ * 尝试从完整主机名中提取主域名（Root Domain）。
+ * 此方法避免使用完整的 Public Suffix List (PSL)，仅包含常见规则，不保证 100% 准确。
+ * @param {string} hostname - 完整的主机名 (e.g., "www.news.bbc.co.uk")
+ * @returns {string} 主域名 (e.g., "bbc.co.uk")
+ */
+window.getRootDomain = function getRootDomain(hostname) {
+    if (!hostname) return '';
+
+    // 1. 预处理：移除 www. 前缀
+    let siteName = hostname.toLowerCase();
+    if (siteName.startsWith('www.')) {
+        siteName = siteName.substring(4);
+    }
+
+    // 2. 将域名分解成段 (Label)
+    let parts = siteName.split('.');
+
+    // 3. 定义常见的复杂公共后缀 (Public Suffix List - PSL 的简化版)
+    // 如果这些后缀存在，我们需要保留其前两个标签（主域名 + TLD/SLD）
+    const complexTLDs = [
+        'co.uk', 'com.cn', 'co.jp', 'com.au', 'com.hk', 'com.tw',
+        'nom.co', 'com.br', 'gov.cn', 'ac.jp'
+    ];
+
+    // 4. 检查是否匹配复杂的公共后缀
+    if (parts.length > 2) {
+        // 检查最后两段是否是一个复杂的 TLD (e.g., "co.uk")
+        const lastTwo = parts.slice(-2).join('.');
+
+        if (complexTLDs.includes(lastTwo)) {
+            // 如果是复杂的 TLD，我们取最后三段作为主域名
+            // e.g., ["news", "bbc", "co", "uk"] -> parts.length=4, slice(-3) -> "bbc.co.uk"
+            return parts.slice(-3).join('.');
+        }
+    }
+
+    // 5. 默认行为 (简单 TLD，如 .com)
+    // 取最后两段作为主域名
+    // e.g., ["news", "bbc", "com"] -> slice(-2) -> "bbc.com"
+    // e.g., ["google", "com"] -> slice(-2) -> "google.com"
+    return parts.slice(-2).join('.');
+}
+
+/**
+ * 初始化广告拦截 CSS 加载器。
+ */
+window.initAdblockLoader = function initAdblockLoader() {
+    // --- 配置 ---
+    const BASE_CSS_URL = 'https://limbopro.com/CSS/';
+    const TT_POLICY_NAME = 'adblock-css-loader'; // 确保策略名称唯一
+    const TT_URL_PREFIX = BASE_CSS_URL; // 信任的前缀就是 CSS 文件的基础路径
+    // --- 配置结束 ---
+
+    if (typeof window === 'undefined' || !document.head) {
+        return; // 非浏览器环境或 DOM 未就绪
+    }
+
+    // 1. 获取当前页面的主机名 (例如: "www.bbc.com", "news.reuters.com")
+    const hostname = window.location.hostname;
+
+    // **核心：获取主域名**
+    const siteName = getRootDomain(hostname);
+
+
+    // 3. 构建 CSS 文件名和完整的 URL
+    const cssFileName = siteName + '.css'; // // example reddit.com.css
+    const cssUrl = BASE_CSS_URL + cssFileName; // // example http://limbopro.com/CSS/reddit.com.css
+
+    // 3.1. 构建自定义 CSS 文件名和完整的 URL
+    const cssFileNameByhand = "limbopro" + siteName + '.css'; // // example limbopro.reddit.com.css
+    const cssUrlByhand = BASE_CSS_URL + cssFileNameByhand; // example http://limbopro.com/CSS/limbopro.reddit.com.css
+
+    // 4. 使用安全的函数加载样式表
+    loadStylesheetWithTrustedTypes(cssUrl, TT_POLICY_NAME, TT_URL_PREFIX); // example http://limbopro.com/CSS/reddit.com.css
+    loadStylesheetWithTrustedTypes(cssUrlByhand, TT_POLICY_NAME, TT_URL_PREFIX); // example http://limbopro.com/CSS/limbopro.reddit.com.css
+
+    console.log(`[Adblock Loader] 尝试根据域名 "${hostname}" 加载 "${cssFileName}"`);
+}
+
+// 启动加载器
+initAdblockLoader();

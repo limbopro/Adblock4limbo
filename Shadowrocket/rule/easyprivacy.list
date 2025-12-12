@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512101626
+## ! Version: 202512121511
 ## ! Title: EasyPrivacy
-## ! Last modified: 10 Dec 2025 16:26 UTC
+## ! Last modified: 12 Dec 2025 15:11 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: d3f6f649247a2dcad0d614ceff8ebc030f67d2c2
+## ! Commit: d2cdb0f46a78e7721f7a6b4ba2016845b9497823
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -683,6 +683,7 @@ DOMAIN-SUFFIX,bewilderedbattle.com, reject
 DOMAIN-SUFFIX,bewilderedblade.com, reject
 DOMAIN-SUFFIX,bhcumsc.com, reject
 DOMAIN-SUFFIX,bidpapers.com, reject
+DOMAIN-SUFFIX,bigfishapparel.com, reject
 DOMAIN-SUFFIX,bigworldfashion.com, reject
 DOMAIN-SUFFIX,bikepaws.com, reject
 DOMAIN-SUFFIX,bikesboard.com, reject
@@ -706,6 +707,7 @@ DOMAIN-SUFFIX,blissfullagoon.com, reject
 DOMAIN-SUFFIX,blitzcampaigns.com, reject
 DOMAIN-SUFFIX,blockdial.com, reject
 DOMAIN-SUFFIX,blueeyedblow.com, reject
+DOMAIN-SUFFIX,bluenest.net, reject
 DOMAIN-SUFFIX,bluevinebooks.com, reject
 DOMAIN-SUFFIX,blushingbeast.com, reject
 DOMAIN-SUFFIX,blushingbread.com, reject
@@ -874,6 +876,7 @@ DOMAIN-SUFFIX,cometquote.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
 DOMAIN-SUFFIX,commonalmanac.com, reject
 DOMAIN-SUFFIX,comparereaction.com, reject
+DOMAIN-SUFFIX,compilework.com, reject
 DOMAIN-SUFFIX,complexpixel.com, reject
 DOMAIN-SUFFIX,concretetom.com, reject
 DOMAIN-SUFFIX,condemnedcomb.com, reject
@@ -1002,6 +1005,7 @@ DOMAIN-SUFFIX,detectdiscovery.com, reject
 DOMAIN-SUFFIX,detourgame.com, reject
 DOMAIN-SUFFIX,devilishdinner.com, reject
 DOMAIN-SUFFIX,dewdroplagoon.com, reject
+DOMAIN-SUFFIX,dicecandies.com, reject
 DOMAIN-SUFFIX,dicemoments.com, reject
 DOMAIN-SUFFIX,difficultfog.com, reject
 DOMAIN-SUFFIX,digestiondrawer.com, reject
@@ -5015,6 +5019,7 @@ DOMAIN-SUFFIX,mcs.tiktokw.us, reject
 DOMAIN-SUFFIX,mcs.us.tiktokv.com, reject
 DOMAIN-SUFFIX,mdt.crateandbarrel.com, reject
 DOMAIN-SUFFIX,megatron.igraal.com, reject
+DOMAIN-SUFFIX,metis.truecaller.com, reject
 DOMAIN-SUFFIX,metrics.audius.co, reject
 DOMAIN-SUFFIX,metrics.bangbros.com, reject
 DOMAIN-SUFFIX,metrics.camsoda.com, reject

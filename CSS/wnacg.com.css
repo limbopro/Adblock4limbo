@@ -1,0 +1,8 @@
+/* wnacg.com */
+a[href^="https://ent.ystwfucb.shop/"],
+a[href^="https://l.labsda.com/"]
+ {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0;
+}

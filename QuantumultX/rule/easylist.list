@@ -1,9 +1,9 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202512121602
+## ! Version: 202512121612
 ## ! Title: EasyList
-## ! Last modified: 12 Dec 2025 16:02 UTC
+## ! Last modified: 12 Dec 2025 16:12 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: c6e6d8721bee7c45459cdbcfb2b623cc52b3d17e
+## ! Commit: 0ccf26a1710342545f31df983e81c53ccd8bd0d5
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -6525,6 +6525,7 @@ DOMAIN-SUFFIX,cdnads.com, reject
 DOMAIN-SUFFIX,cdnako.com, reject
 DOMAIN-SUFFIX,cdnapi.net, reject
 DOMAIN-SUFFIX,cdnativ.com, reject
+DOMAIN-SUFFIX,cdnbanleksagq.online, reject
 DOMAIN-SUFFIX,cdnbit.com, reject
 DOMAIN-SUFFIX,cdnfimgs.com, reject
 DOMAIN-SUFFIX,cdnflex.me, reject

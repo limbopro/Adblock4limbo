@@ -1,15 +1,0 @@
-div[data-variant-id="workspace-banner"],
-div[class^="leaderboard"],
-div[class*="workspace-article-banner__banner-container__"],
-div[style="flex-basis: 1200px; margin-bottom: 120px;"],
-div[class^="StickyContainer-container-"][style^="height: 1200px;"][style*="margin-bottom: 120px;"],
-#rcs-articleContent > .column1 > section + section:nth-last-child(3) > .group > .column2.col-5,
-#rcs-articleContent > .column1 > .module-header:nth-last-child(2),
-#rcs-articleContent > .column1 > .module-header:nth-last-child(2) + .module,
-#bd_article,
-#bd_article2,
-#bd_article3,
-.workspace-article-banner-module__image__F14iP,
-[data-testid="CnxPlayer"],
-[data-testid="Leaderboard"],
-[data-testid="ResponsiveAdSlot"],

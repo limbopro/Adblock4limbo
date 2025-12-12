@@ -1,1 +1,0 @@
-document.cookie = "hitme=1";

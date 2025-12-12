@@ -1,9 +1,9 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202512121511
+## ! Version: 202512121602
 ## ! Title: EasyList
-## ! Last modified: 12 Dec 2025 15:11 UTC
+## ! Last modified: 12 Dec 2025 16:02 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: d2cdb0f46a78e7721f7a6b4ba2016845b9497823
+## ! Commit: c6e6d8721bee7c45459cdbcfb2b623cc52b3d17e
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -5717,6 +5717,7 @@ DOMAIN-SUFFIX,bsjwnqwrtbbfj.store, reject
 DOMAIN-SUFFIX,bsjxodcvrvgbe.online, reject
 DOMAIN-SUFFIX,bskakeiotyvge.online, reject
 DOMAIN-SUFFIX,bskilkkuooeyy.site, reject
+DOMAIN-SUFFIX,bskjsiozlkxmf.online, reject
 DOMAIN-SUFFIX,bsnwicychhpjy.website, reject
 DOMAIN-SUFFIX,bsrkglahwmnyp.online, reject
 DOMAIN-SUFFIX,bssaly.com, reject
@@ -8394,6 +8395,7 @@ DOMAIN-SUFFIX,cueweliqubbvh.space, reject
 DOMAIN-SUFFIX,cuffedpil.cfd, reject
 DOMAIN-SUFFIX,cughidroulrauno.net, reject
 DOMAIN-SUFFIX,cugnerteens.net, reject
+DOMAIN-SUFFIX,cuhkfxddpubbl.website, reject
 DOMAIN-SUFFIX,cuiejosparry.cyou, reject
 DOMAIN-SUFFIX,cuisineenvoyadvertise.com, reject
 DOMAIN-SUFFIX,cuizgelbtbdft.site, reject
@@ -14227,6 +14229,7 @@ DOMAIN-SUFFIX,ghyzimfjilvbt.online, reject
 DOMAIN-SUFFIX,ghzigitdvmsbb.site, reject
 DOMAIN-SUFFIX,ghzxqtvqjybuj.online, reject
 DOMAIN-SUFFIX,gialamebxneob.space, reject
+DOMAIN-SUFFIX,giant-league.pro, reject
 DOMAIN-SUFFIX,giant-orange.pro, reject
 DOMAIN-SUFFIX,giantaffiliates.com, reject
 DOMAIN-SUFFIX,giantlevel.pro, reject
@@ -28938,6 +28941,7 @@ DOMAIN-SUFFIX,qlixifytxlakqv.com, reject
 DOMAIN-SUFFIX,qljytcmigkfxc.website, reject
 DOMAIN-SUFFIX,qlkwfp11222wifeenq.cfd, reject
 DOMAIN-SUFFIX,qloekmmsuwjlq.website, reject
+DOMAIN-SUFFIX,qlpjlgky.com, reject
 DOMAIN-SUFFIX,qlpwodpqwzqcc.website, reject
 DOMAIN-SUFFIX,qlqdpobqnlrsd.store, reject
 DOMAIN-SUFFIX,qlqdtgamhhnfe.site, reject
@@ -33619,6 +33623,7 @@ DOMAIN-SUFFIX,stwdqkalzbqfg.online, reject
 DOMAIN-SUFFIX,stwwdyowpkzof.website, reject
 DOMAIN-SUFFIX,stxmumxjxbeud.store, reject
 DOMAIN-SUFFIX,stxtocrtgkwgb.website, reject
+DOMAIN-SUFFIX,styingriposte.com, reject
 DOMAIN-SUFFIX,stylish-airport.com, reject
 DOMAIN-SUFFIX,stylish-knife.com, reject
 DOMAIN-SUFFIX,stylusanswer.help, reject
@@ -38131,6 +38136,7 @@ DOMAIN-SUFFIX,wcouljzipqyua.site, reject
 DOMAIN-SUFFIX,wcpgtxpzhpdgy.website, reject
 DOMAIN-SUFFIX,wcrulddsnexjz.site, reject
 DOMAIN-SUFFIX,wcsdacenoyjgy.store, reject
+DOMAIN-SUFFIX,wcsrsrahctbah.space, reject
 DOMAIN-SUFFIX,wct.link, reject
 DOMAIN-SUFFIX,wcuggkuxfgutu.today, reject
 DOMAIN-SUFFIX,wcuxkyjwndqxj.top, reject

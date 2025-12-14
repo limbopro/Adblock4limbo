@@ -54,7 +54,7 @@ const TARGET_SITES_REGEX = /(missav|netflav|hitomi|supjav|njav|javday|91porna|lk
 const JAVBUS_REGEX = /javbus/i;
 const DMM_REGEX = /dmm\.co/i;
 const MDSP_REGEX = /d1skbu98kuldnf\.cloudfront\.net/i;
-const HUARENLIVE_REGEX = /huaren\.live\/player\/ec\.php/i;
+const HUARENLIVE_REGEX = /(huaren|huavod)\.(live|top)\/player\/ec\.php/i;
 
 const TITLE_REGEX = /<\/title>/i;
 const BODY_REGEX = /<\/body>/i;

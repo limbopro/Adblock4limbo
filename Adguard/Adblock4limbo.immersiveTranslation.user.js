@@ -1124,7 +1124,7 @@ window.initAdblockLoader = function initAdblockLoader() {
     const cssUrl = BASE_CSS_URL + cssFileName; // // example http://limbopro.com/CSS/reddit.com.css
 
     // 3.1. 构建自定义 CSS 文件名和完整的 URL
-    const cssFileNameByhand = "limbopro" + siteName + '.css'; // // example limbopro.reddit.com.css
+    const cssFileNameByhand = "limbopro." + siteName + '.css'; // // example limbopro.reddit.com.css
     const cssUrlByhand = BASE_CSS_URL + cssFileNameByhand; // example http://limbopro.com/CSS/limbopro.reddit.com.css
 
     // 4. 使用安全的函数加载样式表

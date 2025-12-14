@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512121612
+## ! Version: 202512140451
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Dec 2025 16:12 UTC
+## ! Last modified: 14 Dec 2025 04:51 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 0ccf26a1710342545f31df983e81c53ccd8bd0d5
+## ! Commit: a50bc52cd63361e6d676557f335025d74b792b0c
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1058,6 +1058,7 @@ DOMAIN-SUFFIX,effervescentvista.com
 DOMAIN-SUFFIX,effulgentnook.com
 DOMAIN-SUFFIX,effulgenttempest.com
 DOMAIN-SUFFIX,eightgreens.com
+DOMAIN-SUFFIX,eighthlayer.net
 DOMAIN-SUFFIX,elasticchange.com
 DOMAIN-SUFFIX,elderlybean.com
 DOMAIN-SUFFIX,elderlytown.com
@@ -1349,6 +1350,7 @@ DOMAIN-SUFFIX,helpcollar.com
 DOMAIN-SUFFIX,helpflame.com
 DOMAIN-SUFFIX,helpingbits.com
 DOMAIN-SUFFIX,hertechlife.com
+DOMAIN-SUFFIX,heycomputers.com
 DOMAIN-SUFFIX,hfc195b.com
 DOMAIN-SUFFIX,highfalutinbox.com
 DOMAIN-SUFFIX,highfalutinhoney.com
@@ -1382,6 +1384,7 @@ DOMAIN-SUFFIX,hyperlegend.com
 DOMAIN-SUFFIX,hypnoticwound.com
 DOMAIN-SUFFIX,hystericalcloth.com
 DOMAIN-SUFFIX,hystericalfinger.com
+DOMAIN-SUFFIX,icywinter.com
 DOMAIN-SUFFIX,idlecollect.com
 DOMAIN-SUFFIX,idyllicjazz.com
 DOMAIN-SUFFIX,illinvention.com
@@ -1532,6 +1535,7 @@ DOMAIN-SUFFIX,lyricshook.com
 DOMAIN-SUFFIX,maddeningpowder.com
 DOMAIN-SUFFIX,madebyintent.com
 DOMAIN-SUFFIX,madlysuccessful.com
+DOMAIN-SUFFIX,madoverrice.com
 DOMAIN-SUFFIX,magicaljoin.com
 DOMAIN-SUFFIX,magicminibox.com
 DOMAIN-SUFFIX,majesticwaterscape.com
@@ -2493,6 +2497,7 @@ DOMAIN-SUFFIX,whisperingcrib.com
 DOMAIN-SUFFIX,whisperingquasar.com
 DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whispermeeting.com
+DOMAIN-SUFFIX,wholepagecache.com
 DOMAIN-SUFFIX,whoogled.com
 DOMAIN-SUFFIX,whymaze.com
 DOMAIN-SUFFIX,wikiwhatwhere.com
@@ -2581,6 +2586,7 @@ DOMAIN-SUFFIX,affiliate-api.raptive.com
 DOMAIN-SUFFIX,affiliates.minglematch.com
 DOMAIN-SUFFIX,akatracking.esearchvision.com
 DOMAIN-SUFFIX,alexandria.marfeelcdn.com
+DOMAIN-SUFFIX,alib.nine.com.au
 DOMAIN-SUFFIX,amp-error-reporting.appspot.com
 DOMAIN-SUFFIX,amplifypixel.outbrain.com
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com
@@ -2969,6 +2975,7 @@ DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com
 DOMAIN-SUFFIX,dx.mountain.com
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com
 DOMAIN-SUFFIX,e.channelexco.com
+DOMAIN-SUFFIX,e.revenue.cat
 DOMAIN-SUFFIX,e045f561.b-cdn.net
 DOMAIN-SUFFIX,ea.youmaker.com
 DOMAIN-SUFFIX,ec.walkme.com
@@ -4329,6 +4336,7 @@ DOMAIN-SUFFIX,acclog001.shop-pro.jp
 DOMAIN-SUFFIX,acclog002.shop-pro.jp
 DOMAIN-SUFFIX,ad.daum.net
 DOMAIN-SUFFIX,analytics-beacon.p.uliza.jp
+DOMAIN-SUFFIX,analytics-collect.karakuri.ai
 DOMAIN-SUFFIX,analytics.contents.by-fw.jp
 DOMAIN-SUFFIX,analytics.liveact.cri-mw.jp
 DOMAIN-SUFFIX,analytics.livesense.marketing
@@ -8318,7 +8326,6 @@ DOMAIN-SUFFIX,aaat.2ndstreet.jp
 DOMAIN-SUFFIX,aadata.april-international.com
 DOMAIN-SUFFIX,aainfo.anz.co.nz
 DOMAIN-SUFFIX,aametrics.aktia.fi
-DOMAIN-SUFFIX,aamt.msnbc.com
 DOMAIN-SUFFIX,aamt.nbcnews.com
 DOMAIN-SUFFIX,aamt.newsapp.telemundo.com
 DOMAIN-SUFFIX,aamt.today.com

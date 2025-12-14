@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512121612
+## ! Version: 202512140451
 ## ! Title: EasyPrivacy
-## ! Last modified: 12 Dec 2025 16:12 UTC
+## ! Last modified: 14 Dec 2025 04:51 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 0ccf26a1710342545f31df983e81c53ccd8bd0d5
+## ! Commit: a50bc52cd63361e6d676557f335025d74b792b0c
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1058,6 +1058,7 @@ DOMAIN-SUFFIX,effervescentvista.com, reject
 DOMAIN-SUFFIX,effulgentnook.com, reject
 DOMAIN-SUFFIX,effulgenttempest.com, reject
 DOMAIN-SUFFIX,eightgreens.com, reject
+DOMAIN-SUFFIX,eighthlayer.net, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
 DOMAIN-SUFFIX,elderlybean.com, reject
 DOMAIN-SUFFIX,elderlytown.com, reject
@@ -1349,6 +1350,7 @@ DOMAIN-SUFFIX,helpcollar.com, reject
 DOMAIN-SUFFIX,helpflame.com, reject
 DOMAIN-SUFFIX,helpingbits.com, reject
 DOMAIN-SUFFIX,hertechlife.com, reject
+DOMAIN-SUFFIX,heycomputers.com, reject
 DOMAIN-SUFFIX,hfc195b.com, reject
 DOMAIN-SUFFIX,highfalutinbox.com, reject
 DOMAIN-SUFFIX,highfalutinhoney.com, reject
@@ -1382,6 +1384,7 @@ DOMAIN-SUFFIX,hyperlegend.com, reject
 DOMAIN-SUFFIX,hypnoticwound.com, reject
 DOMAIN-SUFFIX,hystericalcloth.com, reject
 DOMAIN-SUFFIX,hystericalfinger.com, reject
+DOMAIN-SUFFIX,icywinter.com, reject
 DOMAIN-SUFFIX,idlecollect.com, reject
 DOMAIN-SUFFIX,idyllicjazz.com, reject
 DOMAIN-SUFFIX,illinvention.com, reject
@@ -1532,6 +1535,7 @@ DOMAIN-SUFFIX,lyricshook.com, reject
 DOMAIN-SUFFIX,maddeningpowder.com, reject
 DOMAIN-SUFFIX,madebyintent.com, reject
 DOMAIN-SUFFIX,madlysuccessful.com, reject
+DOMAIN-SUFFIX,madoverrice.com, reject
 DOMAIN-SUFFIX,magicaljoin.com, reject
 DOMAIN-SUFFIX,magicminibox.com, reject
 DOMAIN-SUFFIX,majesticwaterscape.com, reject
@@ -2493,6 +2497,7 @@ DOMAIN-SUFFIX,whisperingcrib.com, reject
 DOMAIN-SUFFIX,whisperingquasar.com, reject
 DOMAIN-SUFFIX,whisperingsummit.com, reject
 DOMAIN-SUFFIX,whispermeeting.com, reject
+DOMAIN-SUFFIX,wholepagecache.com, reject
 DOMAIN-SUFFIX,whoogled.com, reject
 DOMAIN-SUFFIX,whymaze.com, reject
 DOMAIN-SUFFIX,wikiwhatwhere.com, reject
@@ -2581,6 +2586,7 @@ DOMAIN-SUFFIX,affiliate-api.raptive.com, reject
 DOMAIN-SUFFIX,affiliates.minglematch.com, reject
 DOMAIN-SUFFIX,akatracking.esearchvision.com, reject
 DOMAIN-SUFFIX,alexandria.marfeelcdn.com, reject
+DOMAIN-SUFFIX,alib.nine.com.au, reject
 DOMAIN-SUFFIX,amp-error-reporting.appspot.com, reject
 DOMAIN-SUFFIX,amplifypixel.outbrain.com, reject
 DOMAIN-SUFFIX,ams-pageview-public.s3.amazonaws.com, reject
@@ -2969,6 +2975,7 @@ DOMAIN-SUFFIX,doppler-reporting.cbsivideo.com, reject
 DOMAIN-SUFFIX,dx.mountain.com, reject
 DOMAIN-SUFFIX,dynamic.ziftsolutions.com, reject
 DOMAIN-SUFFIX,e.channelexco.com, reject
+DOMAIN-SUFFIX,e.revenue.cat, reject
 DOMAIN-SUFFIX,e045f561.b-cdn.net, reject
 DOMAIN-SUFFIX,ea.youmaker.com, reject
 DOMAIN-SUFFIX,ec.walkme.com, reject
@@ -4329,6 +4336,7 @@ DOMAIN-SUFFIX,acclog001.shop-pro.jp, reject
 DOMAIN-SUFFIX,acclog002.shop-pro.jp, reject
 DOMAIN-SUFFIX,ad.daum.net, reject
 DOMAIN-SUFFIX,analytics-beacon.p.uliza.jp, reject
+DOMAIN-SUFFIX,analytics-collect.karakuri.ai, reject
 DOMAIN-SUFFIX,analytics.contents.by-fw.jp, reject
 DOMAIN-SUFFIX,analytics.liveact.cri-mw.jp, reject
 DOMAIN-SUFFIX,analytics.livesense.marketing, reject
@@ -8318,7 +8326,6 @@ DOMAIN-SUFFIX,aaat.2ndstreet.jp, reject
 DOMAIN-SUFFIX,aadata.april-international.com, reject
 DOMAIN-SUFFIX,aainfo.anz.co.nz, reject
 DOMAIN-SUFFIX,aametrics.aktia.fi, reject
-DOMAIN-SUFFIX,aamt.msnbc.com, reject
 DOMAIN-SUFFIX,aamt.nbcnews.com, reject
 DOMAIN-SUFFIX,aamt.newsapp.telemundo.com, reject
 DOMAIN-SUFFIX,aamt.today.com, reject

@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512140451
+## ! Version: 202512141610
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Dec 2025 04:51 UTC
+## ! Last modified: 14 Dec 2025 16:10 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: a50bc52cd63361e6d676557f335025d74b792b0c
+## ! Commit: c4935bb7006c55593ad49331dbb6b67645e6ee44
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -3821,6 +3821,7 @@ DOMAIN-SUFFIX,usersegment.wpdigital.net
 DOMAIN-SUFFIX,usr.interactiveone.com
 DOMAIN-SUFFIX,utics.nodejibi.in
 DOMAIN-SUFFIX,v.shopify.com
+DOMAIN-SUFFIX,vault.gostatera.com
 DOMAIN-SUFFIX,vdrn.redplum.com
 DOMAIN-SUFFIX,vercel-vitals.axiom.co
 DOMAIN-SUFFIX,video-ad-stats.googlesyndication.com
@@ -42027,6 +42028,8 @@ DOMAIN-SUFFIX,track.buyma.com
 DOMAIN-SUFFIX,track.prod.smash.pet
 DOMAIN-SUFFIX,tracker.curama.jp
 DOMAIN-SUFFIX,tracking.ai.rakuten.co.jp
+DOMAIN-SUFFIX,tracking.cds.dmm.co.jp
+DOMAIN-SUFFIX,tracking.cds.dmm.com
 DOMAIN-SUFFIX,tracking.game8.jp
 DOMAIN-SUFFIX,tracking.gnavi.co.jp
 DOMAIN-SUFFIX,view.fujitv.co.jp

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 12 Dec 2025 08:56:54 GMT
-# entries:        3478
+# last updated:   Mon, 15 Dec 2025 07:21:01 GMT
+# entries:        3483
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1364,6 +1364,7 @@ DOMAIN-SUFFIX,convertingtraffic.com, reject
 DOMAIN-SUFFIX,convrse.media, reject
 DOMAIN-SUFFIX,cookies.cmpnet.com, reject
 DOMAIN-SUFFIX,cootlogix.com, reject
+DOMAIN-SUFFIX,copperstills.net, reject
 DOMAIN-SUFFIX,copycarpenter.com, reject
 DOMAIN-SUFFIX,copyrightaccesscontrols.com, reject
 DOMAIN-SUFFIX,coremetrics.com, reject
@@ -1382,6 +1383,7 @@ DOMAIN-SUFFIX,counter.search.bg, reject
 DOMAIN-SUFFIX,counter.snackly.co, reject
 DOMAIN-SUFFIX,counting.kmindex.ru, reject
 DOMAIN-SUFFIX,coupling-media.de, reject
+DOMAIN-SUFFIX,cowbelltime.com, reject
 DOMAIN-SUFFIX,coxmt.com, reject
 DOMAIN-SUFFIX,cozyhillside.com, reject
 DOMAIN-SUFFIX,cpalead.com, reject
@@ -1525,6 +1527,7 @@ DOMAIN-SUFFIX,eclkspbn.com, reject
 DOMAIN-SUFFIX,ecoupons.com, reject
 DOMAIN-SUFFIX,edaa.eu, reject
 DOMAIN-SUFFIX,edgexads.com, reject
+DOMAIN-SUFFIX,eighthlayer.net, reject
 DOMAIN-SUFFIX,eiv.baidu.com, reject
 DOMAIN-SUFFIX,elasticchange.com, reject
 DOMAIN-SUFFIX,elderlytown.com, reject
@@ -1866,6 +1869,7 @@ DOMAIN-SUFFIX,iad.anm.co.uk, reject
 DOMAIN-SUFFIX,iadnet.com, reject
 DOMAIN-SUFFIX,ibillboard.com, reject
 DOMAIN-SUFFIX,icptrack.com, reject
+DOMAIN-SUFFIX,icywinter.com, reject
 DOMAIN-SUFFIX,id5-sync.com, reject
 DOMAIN-SUFFIX,idealadvertising.net, reject
 DOMAIN-SUFFIX,idevaffiliate.com, reject
@@ -3399,6 +3403,7 @@ DOMAIN-SUFFIX,whisperingcascade.com, reject
 DOMAIN-SUFFIX,whisperingcrib.com, reject
 DOMAIN-SUFFIX,whisperingsummit.com, reject
 DOMAIN-SUFFIX,whoisonline.net, reject
+DOMAIN-SUFFIX,wholepagecache.com, reject
 DOMAIN-SUFFIX,wickedreports.com, reject
 DOMAIN-SUFFIX,widget.educationdynamics.com, reject
 DOMAIN-SUFFIX,widget.privy.com, reject

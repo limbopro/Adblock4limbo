@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512141610
+## ! Version: 202512151254
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Dec 2025 16:10 UTC
+## ! Last modified: 15 Dec 2025 12:54 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: c4935bb7006c55593ad49331dbb6b67645e6ee44
+## ! Commit: 4d0edd7014b9afeae9dedf57e07c9b186b6033b5
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -901,6 +901,7 @@ DOMAIN-SUFFIX,cooingcoal.com, reject
 DOMAIN-SUFFIX,coolestcatcare.com, reject
 DOMAIN-SUFFIX,coolguesthouse.com, reject
 DOMAIN-SUFFIX,coordinatedcoat.com, reject
+DOMAIN-SUFFIX,copperstills.net, reject
 DOMAIN-SUFFIX,copycarpenter.com, reject
 DOMAIN-SUFFIX,copyfranchise.com, reject
 DOMAIN-SUFFIX,copyrightaccesscontrols.com, reject
@@ -916,6 +917,7 @@ DOMAIN-SUFFIX,costumeoffers.com, reject
 DOMAIN-SUFFIX,costwinner.com, reject
 DOMAIN-SUFFIX,courageousbaby.com, reject
 DOMAIN-SUFFIX,coverlayer.com, reject
+DOMAIN-SUFFIX,cowbelltime.com, reject
 DOMAIN-SUFFIX,cozydusk.com, reject
 DOMAIN-SUFFIX,cozyhillside.com, reject
 DOMAIN-SUFFIX,cozytryst.com, reject
@@ -2652,6 +2654,7 @@ DOMAIN-SUFFIX,analytics.firespring.com, reject
 DOMAIN-SUFFIX,analytics.foresee.com, reject
 DOMAIN-SUFFIX,analytics.formstack.com, reject
 DOMAIN-SUFFIX,analytics.genial.ly, reject
+DOMAIN-SUFFIX,analytics.getsnworks.com, reject
 DOMAIN-SUFFIX,analytics.gokwik.co, reject
 DOMAIN-SUFFIX,analytics.gooogol.com, reject
 DOMAIN-SUFFIX,analytics.groupe-seb.com, reject

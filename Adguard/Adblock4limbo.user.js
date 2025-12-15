@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.12.14
+// @version      0.2025.12.15
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -2478,25 +2478,66 @@ window.uBlockOrigin_add = function uBlockOrigin_add() {
 /* End */
 
 function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建;
-    var ua = navigator.userAgent; // 如果浏览器UA为Bot 则不加载导航...
-    if (ua.indexOf("Chrome-Lighthouse") == -1
-        && ua.indexOf("Googlebot") == -1
-        && ua.indexOf("bot") == -1) {
-        var csp_regex = new RegExp(/\b(twitter|xvideos)\b/i);
-        //if (!(csp_regex.test(window.location.href.toLowerCase()))) {
-        if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) {
-            console.log('CSP + PC, SO DO NOTING.')
-        } else if (window.location.href.toLowerCase().indexOf('-9-1p-o-r-n') !== -1) { // 符合条件的不引入导航按钮
-            console.log('SO DO NOTING.')
+    /**
+  * 根据 User Agent (UA) 和 URL 条件，有条件地加载导航功能脚本。
+  * * 核心逻辑：
+  * 1. 排除 Bot（如 Googlebot, Chrome-Lighthouse）。
+  * 2. 排除特定内容页面（如包含 twitter/xvideos 的 PC 端非移动设备，或包含 '-9-1p-o-r-n' 的页面）。
+  * 3. 在符合加载条件的情况下，使用 setInterval 检查依赖项并加载外部脚本。
+  */
+    var ua = navigator.userAgent;
+    var isBot = (
+        ua.indexOf("Chrome-Lighthouse") !== -1 ||
+        ua.indexOf("Googlebot") !== -1 ||
+        ua.indexOf("bot") !== -1
+    );
+
+    // 如果是 Bot 则不加载导航
+    if (!isBot) {
+        var lowerHref = window.location.href.toLowerCase();
+        var lowerUA = ua.toLowerCase();
+
+        // 正则表达式用于匹配特定的内容提供商
+        var csp_regex = /\b(twitter|xvideos)\b/i;
+        // 检查是否为特定的CSP页面 且 为PC端 (非移动设备)
+        var isCspAndPc = (
+            csp_regex.test(lowerHref) &&
+            !(/\b(mobile)\b/i.test(lowerUA))
+        );
+
+        // 检查是否为另一个排除列表中的页面
+        var isExcludedUrl = (lowerHref.indexOf('-9-1p-o-r-n') !== -1);
+
+        if (isCspAndPc) {
+            // 条件: CSP + PC，不引入导航
+            console.log('CSP + PC, SO DO NOTING.');
+
+        } else if (isExcludedUrl) {
+            // 条件: 排除列表中的 URL，不引入导航
+            console.log('SO DO NOTING.');
+
         } else {
+            // 符合加载条件，引入导航脚本
             let daohang = setInterval(() => {
-                if (!((document.querySelector("button#x4Home")) && (document.querySelector("script[src*='Adblock4limbo.function.js']")))) {
+                // 检查外部文件是否已经引用成功（通过检查两个关键DOM元素是否存在）
+                var isFunctionxLoaded = (
+                    document.querySelector("div#dh_pageContainer") &&
+                    document.querySelector("script[src*='Adblock4limbo.function.js']")
+                );
+
+                // 检查是否已经存在导航容器 (dh_pageContainer)
+                var hasHomePage = document.querySelectorAll("div#dh_pageContainer").length >= 1; // *** 变量名已改为 hasHomePage ***
+
+                if (!isFunctionxLoaded) {
+                    // 首次尝试加载脚本
                     third_party_fileX("script", adsMax.js.functionx, "body"); // js 外部引用 标签 <script>
-                    console.log('functionx.js 首次引用成功，等待生效...')
+                    console.log('functionx.js 首次引用成功，等待生效...');
+                    clearInterval(daohang); // 首次加载后就停止检查
+
+                } else if (hasHomePage) { // *** 使用新的变量名 ***
+                    // 脚本已加载且导航容器已存在
                     clearInterval(daohang);
-                } else if (document.querySelectorAll("button#x4Home").length >= 1) {
-                    clearInterval(daohang);
-                    console.log('functionx.js 引用成功，等待生效...')
+                    console.log('functionx.js 引用成功，等待生效...');
                 }
             }, 500);
         }
@@ -5201,10 +5242,10 @@ const TIME_WINDOW_MS = 120000;
 const WARNING_TIMEOUT_MS = 120000;
 // 要检查的脚本文件名列表
 const TARGET_SCRIPTS = [
-    'Adblock4limbo.user.js',
-    'Adblock4limbo.function.js',
-    'Adblock4limbo.immersiveTranslation.user.js',
-    'isAgent.js'
+    'https://limbopro.com/Adguard/Adblock4limbo.user.js',
+    'https://limbopro.com/Adguard/Adblock4limbo.function.js',
+    'https://limbopro.com/Adguard/Adblock4limbo.immersiveTranslation.user.js',
+    'https://limbopro.com/Adguard/isAgent.js'
 ];
 
 // --- 悬浮窗函数 ---
@@ -5489,7 +5530,7 @@ document.addEventListener('keydown', (event) => {
             const isButtonPresent = checkButtonExistence();
 
             if (badEventCount > 3 && badEventCount < 5 && !isButtonPresent) {
-                
+
                 if (document.getElementById('dh_pageContainer') !== null && typeof (body_build) == 'function') {
                 } else {
                     showFloatingWarning(); // 显示悬浮窗

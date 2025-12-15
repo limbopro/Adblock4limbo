@@ -16,6 +16,7 @@
 ^https?:\/\/adc\.tamedia\.com\.tw\/rmadp/static/js/gm-sdk8-mobile\.js - reject
 ^https?:\/\/.*?.gliacloud.com.*?www\.novel543\..* - reject
 ^https?:\/\/cdn\.holmesmind\.com\/js\/init\.js - reject
+^https://m.diyibanzhu.me/js/js4.js - reject
 
 # api.iyf.tv
 \/api\/video\/getadsdatalist\? - reject

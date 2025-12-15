@@ -37,14 +37,14 @@ const agent_JS_URL = "https://limbopro.com/Adguard/isAgent.js"; // 无实意
 
 // 基础注入内容
 const TITLE_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
-<script type="text/javascript" async="async" src="${JS_URL}">
 <script type="text/javascript" async="async" src="${fc_JS_URL}"></script>
+<script type="text/javascript" async="async" src="${JS_URL}">
 <script type="text/javascript" async="async" src="${agent_JS_URL}"></script>
 `;
 
 const BODY_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
-<script type="text/javascript" async="async" src="${JS_URL}">
 <script type="text/javascript" async="async" src="${fc_JS_URL}">
+<script type="text/javascript" async="async" src="${JS_URL}">
 <script type="text/javascript" async="async" src="${agent_JS_URL}"></script>
 </body>
 `;

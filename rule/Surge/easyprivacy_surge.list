@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202512141610
+## ! Version: 202512151254
 ## ! Title: EasyPrivacy
-## ! Last modified: 14 Dec 2025 16:10 UTC
+## ! Last modified: 15 Dec 2025 12:54 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: c4935bb7006c55593ad49331dbb6b67645e6ee44
+## ! Commit: 4d0edd7014b9afeae9dedf57e07c9b186b6033b5
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -901,6 +901,7 @@ DOMAIN-SUFFIX,cooingcoal.com
 DOMAIN-SUFFIX,coolestcatcare.com
 DOMAIN-SUFFIX,coolguesthouse.com
 DOMAIN-SUFFIX,coordinatedcoat.com
+DOMAIN-SUFFIX,copperstills.net
 DOMAIN-SUFFIX,copycarpenter.com
 DOMAIN-SUFFIX,copyfranchise.com
 DOMAIN-SUFFIX,copyrightaccesscontrols.com
@@ -916,6 +917,7 @@ DOMAIN-SUFFIX,costumeoffers.com
 DOMAIN-SUFFIX,costwinner.com
 DOMAIN-SUFFIX,courageousbaby.com
 DOMAIN-SUFFIX,coverlayer.com
+DOMAIN-SUFFIX,cowbelltime.com
 DOMAIN-SUFFIX,cozydusk.com
 DOMAIN-SUFFIX,cozyhillside.com
 DOMAIN-SUFFIX,cozytryst.com
@@ -2652,6 +2654,7 @@ DOMAIN-SUFFIX,analytics.firespring.com
 DOMAIN-SUFFIX,analytics.foresee.com
 DOMAIN-SUFFIX,analytics.formstack.com
 DOMAIN-SUFFIX,analytics.genial.ly
+DOMAIN-SUFFIX,analytics.getsnworks.com
 DOMAIN-SUFFIX,analytics.gokwik.co
 DOMAIN-SUFFIX,analytics.gooogol.com
 DOMAIN-SUFFIX,analytics.groupe-seb.com

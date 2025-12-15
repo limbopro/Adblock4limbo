@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2025.12.14
+// @version      0.2025.12.15
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 免费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -134,7 +134,9 @@
 
         function tripleClick_check(x) {
             setTimeout(() => {
-                if (x >= 4) {
+                if (x >= 4 && /android|iphone|ipad|ipod|webos|iemobile/i.test(navigator.userAgent)) {
+                    // 逻辑成立时的代码
+                    console.log("条件成立：x >= 4 且为移动设备");
                     console.log('连续点击超过' + x + "次")
                     body_build('true')  // 如果按钮出现，且其他如搜索不存在则可唤出导航页面
                 } else {
@@ -143,7 +145,6 @@
                     //hiddencjsfy()
                     showcjsfy()
                 }
-
             }, 850)
         }
 
@@ -181,38 +182,82 @@
 
 
     // 重设导航/成人保护模式设置
+    // 定义一个正则表达式，用于匹配 URL 中是否包含特定的成人/视频/图片网站关键词
     var weblist_regex = new RegExp(/\b(xiaobaotv|iyf|gimy|ddrk|ddys|olevod|hitomi|hltv|javlibrary|thisav|njav|missav|javlib|javbus|attackers|18comic|javday|hamnime|takara|tameikegoro|deeps|moodyz|s1s1s1|nagae|ideapocket|dasdas|oppai|kawaii|satsu|mgstage|manji-group|rocket|muku|dmm|beauty|gloryquest|javbus|supjav|jable|xvideos|pornhub|porn|wnacg|av)\b/i);
+
+    // **逻辑块 1: 针对特定域名 (limbopro.com) 的设置**
     if (window.location.href.match('limbopro.com')) {
+        // 如果当前网址是 limbopro.com，强制设置导航模式为“显示/启用”
         setCookie('daohangMode_global', 'true', '400');
+        // 强制设置成人模式为“关闭/禁用”
         setCookie('adultMode', 'false', '400');
+
+        // **逻辑块 2: 匹配成人网站列表 且 全局导航设置为空**
     } else if (weblist_regex.test(window.location.href.toLowerCase()) && getCookie('daohangMode_global') == '') {
+        // 如果当前网址匹配到成人/视频列表，并且“全局导航模式”Cookie尚未设置
+        // 则将全局导航模式默认设置为“隐藏/禁用”
         setCookie('daohangMode_global', 'false', '400');
+
+        // **逻辑块 3: 匹配成人网站列表 (非首次加载，或 Cookie 已设置)**
     } else if (weblist_regex.test(window.location.href.toLowerCase())) {
+        // 如果当前网址匹配到成人/视频列表，但“全局导航模式”Cookie已经存在
+        // 此时不改变 Cookie 设置，而是按现有全局设置执行操作
         console.log('该网址被匹配，将按全局设置执行相关操作...！')
     }
 
+
+
+
+
+
+    /**
+ * function wtf()
+ * 这是一个定时执行的函数，主要职责是：
+ * 1. 每 2.5 秒将 dh_buttonMain 元素的高度存储到浏览器的 localStorage 中，实现状态持久化。
+ * 2. 根据本地存储的导航器类型（移动端/PC端），管理 dh_button 元素的垂直位置 (top) 的存储。
+ */
     function wtf() {
+        // 设置一个定时器，每 2500 毫秒（2.5 秒）执行一次内部的逻辑
         setInterval(() => {
 
-            // dh_buttonMain
-            if (document.getElementById('dh_buttonMain') !== null && document.getElementById('dh_buttonMain').style !== null && document.getElementById('dh_buttonMain').style.height !== null) {
-                localStorage.setItem('dh_buttonMain', document.getElementById('dh_buttonMain').style.height)
+            // --- 逻辑 1: dh_buttonMain 高度持久化 ---
+            // 检查 'dh_buttonMain' 元素是否存在，并且其 style.height 属性值不为空
+            if (document.getElementById('dh_buttonMain') !== null &&
+                document.getElementById('dh_buttonMain').style !== null &&
+                document.getElementById('dh_buttonMain').style.height !== null) {
+                // 将当前 dh_buttonMain 的高度值存储到 localStorage，键名为 'dh_buttonMain'
+                localStorage.setItem('dh_buttonMain', document.getElementById('dh_buttonMain').style.height);
                 // console.log("当前导航按钮高度[dh_buttonMain]" + localStorage.getItem('dh_buttonMain'))
             }
 
-            // _button
+            // --- 逻辑 2: dh_button 位置 (top) 管理 ---
 
-            if (localStorage.getItem('navigator_mobile') == 'mobile' && localStorage.getItem('navigator_pc') == '') { // 移动端top
-                //if (localStorage.getItem('dh_button') !== 'px') {
-                localStorage.setItem('dh_button', document.getElementById('dh_button').style.top)
-                //}
+            // 检查是否为移动端环境，且非 PC 端 (localStorage.getItem('navigator_pc') == '')
+            if (localStorage.getItem('navigator_mobile') == 'mobile' && localStorage.getItem('navigator_pc') == '') {
+                // 移动端top (记录垂直位置)
+
+                // 将当前 dh_button 的 top 样式值存储到 localStorage，键名为 'dh_button'
+                localStorage.setItem('dh_button', document.getElementById('dh_button').style.top);
+
+                // 原代码中有一个被注释掉的判断条件：
+                // //if (localStorage.getItem('dh_button') !== 'px') {
+
+                // 检查是否为移动端环境 (但上一条件未满足)
             } else if (localStorage.getItem('navigator_mobile') == 'mobile') {
-                localStorage.setItem('navigator_pc', '')
-                localStorage.setItem('dh_button', 'px')
-                wtf()
+                // 这可能是从 PC 切换到移动端时的清理/重置逻辑
+
+                // 清除 PC 标识
+                localStorage.setItem('navigator_pc', '');
+                // 重置 dh_button 的 top 位置为 'px' (一个无效值，可能是作为清除标识)
+                localStorage.setItem('dh_button', 'px');
+
+                // 递归调用 wtf()，但由于 wtf() 内部已经设置了 setInterval，
+                // 再次调用 wtf() 会创建一个新的定时器，可能导致重复执行和资源浪费。
+                // ⚠️ 建议：这个递归调用通常是不需要的，除非开发者有意让它在重置后立即启动一个新的定时器。
+                wtf();
             }
 
-        }, 2500)
+        }, 2500);
     }
 
     wtf()
@@ -294,7 +339,7 @@
 
 
     // 先新建一个按钮
-    function adblock4limbo(x, csp) {
+    function initializeFloatingNavigationButton(x, csp) {
 
         if (document.getElementById('dh_buttonContainer')) return;
 
@@ -380,35 +425,64 @@
 
     }
 
+
+
+
+
     // 定义按钮尺寸
-    function _button_button_width() {
-        //const userAgent = navigator.userAgent.toLowerCase();
+    /**
+ * getResponsiveButtonSize
+ * 根据浏览器窗口宽度返回按钮的尺寸（CSS值）。
+ * * @returns {string} - 按钮的尺寸（例如 '45px'）。
+ */
+    function getResponsiveButtonSize() {
         const window_innerWidth = window.innerWidth;
+        let size; // 使用 let 声明变量，避免在 if/else 块中重复声明 var
+
         if (window_innerWidth <= 920) {
-            //if (/\b(android|iphone|ipad|ipod)\b/i.test(userAgent)) {
-            var size = '45px'; // 40px
-            return size;
+            // 窗口宽度小于等于 920px (通常视为移动端/平板或小窗口)
+            size = '45px';
+            // 原始注释: 40px
         } else {
-            var size = '45px'; // 55px
-            return size;
+            // 窗口宽度大于 920px (通常视为 PC 端或大窗口)
+            size = '45px';
+            // 原始注释: 55px
         }
+
+        // 注意：尽管在 if 和 else 分支中返回的值都是 '45px'，
+        // 但保留 if/else 结构有助于未来根据注释 (40px 和 55px) 轻松调整响应式逻辑。
+        return size;
     }
 
 
 
-    // 长时间不动则隐藏按钮
-    function _button_button(x) { // 显示导航按钮
-        if (document.getElementById('dh_button') !== null) {
-            const _button = document.getElementById('dh_button');
-            const new_div = document.getElementById('dh_buttonMain');
 
-            if (x == 1 && !(document.getElementById('dh_button') === null)) {
-                _button.style.height = _button_button_width();
-                _button.style.width = _button_button_width();
-                new_div.style.zIndex = '114154';
-                console.log('显示导航按钮🔘')
-            } else {
+
+
+    /**
+     * updateNavigationButtonDisplay
+     * 根据传入的参数控制导航按钮的尺寸和 z-index。
+     * @param {number} x - 控制显示逻辑的参数 (1 表示执行显示/尺寸调整)。
+     */
+    function updateNavigationButtonDisplay(x) {
+        // 检查导航按钮主容器是否存在
+        const buttonContainer = document.getElementById('dh_button');
+        if (buttonContainer !== null) {
+            const buttonMain = document.getElementById('dh_buttonMain');
+
+            // 当 x 等于 1 并且导航按钮主容器存在时，执行尺寸和 z-index 的设置
+            if (x == 1) {
+                // 注意: 原代码中的 ! (document.getElementById('dh_button') === null) 已经通过外层的 if (buttonContainer !== null) 保证，因此可以简化。
+
+                buttonContainer.style.height = getResponsiveButtonSize();
+                buttonContainer.style.width = getResponsiveButtonSize();
+                // 确保按钮层级最高，处于“显示”状态
+                if (buttonMain) {
+                    buttonMain.style.zIndex = '114154';
+                }
+                console.log('显示导航按钮🔘');
             }
+            // else 分支为空，可以移除以简化代码
         }
     }
 
@@ -481,11 +555,11 @@
     var number_x = 0;
     if (/\b(google|bing)\b/i.test(window.location.href.toLowerCase())) { // 谷歌和必应均不插入导航按钮
     } else if (csp_regex.test(window.location.href.toLowerCase()) && !(/\b(mobile)\b/i.test(navigator.userAgent.toLowerCase()))) { // 如果是带有CSP的网站则带上参数 csp // 2333
-        adblock4limbo(_button_button_width(), 'csp');
+        initializeFloatingNavigationButton(getResponsiveButtonSize(), 'csp');
         _onclick_button();
     }
     else {
-        adblock4limbo(_button_button_width(), 'nocsp'); // 反之则不带
+        initializeFloatingNavigationButton(getResponsiveButtonSize(), 'nocsp'); // 反之则不带
         _onclick_button();
     }
 
@@ -606,6 +680,16 @@
         onclick="window.initWebDebugger()"> ⚙️ Web 存储调试器
     </button>
 </li>
+
+<li class="li_global">
+    <button 
+        class="a_global special yellow" 
+        id="jscodeView"  
+        style="border-radius:4px;background:#c53f3f"
+        onclick="window.showPageScriptsFloatWindow()"> 📟 页面脚本查看器
+    </button>
+</li>
+
       <li class="li_global"><button class="a_global special yellow" id="zhixingjs"  style="border-radius:4px;background:#c53f3f">🧑‍💻执行JS代码</button></li>
      <li class="li_global"><button id="adsSkip" class="a_global special yellow ads_skip_on" title="自动跳过广告已开启 (点击关闭)" style="
     width: 106px !important;
@@ -910,8 +994,29 @@
 
     /* Start 判断是否显示导航 可不删 */
     window.body_build = function body_build(x) { // 判断导航显示与否
+
+
+        const dhPageContainer = document.getElementById('dh_pageContainer');
+
+        // 判断 document.getElementById('dh_pageContainer') 存不存在
+        if (dhPageContainer) {
+            // 存在，则继续判断 .div_global 的数量
+            if (document.querySelectorAll('.div_global').length < 10) {
+                // 小于 10，执行 x()
+                loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/Adblock4limbo.function.js', 'head', 'iLoveYou') // 加载过滤脚本
+            } else {
+                console.log(".div_global 数量 >= 10，不执行 x()");
+            }
+        } else {
+            // 不存在，则直接执行 x()
+            loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/Adblock4limbo.function.js', 'head', 'iLoveYou') // 加载过滤脚本
+        }
+
+
+
         if (x == "true") {
             ////console.log("// body_build() 输入为 true，开始创建导航...")
+
             initFloatingNav(1, 114154, 1, 'auto')
 
         } else if (x == "false") {
@@ -919,6 +1024,7 @@
             setTimeout(() => {
             }, 750)
         }
+
     }
 
     function _blank() {
@@ -976,7 +1082,7 @@
      * 初始化父容器：隐藏导航 + 空白点击关闭 + 动态生成菜单
      */
 
-    function parentElement_add() {
+    window.parentElement_add = function parentElement_add() {
 
         // 1. 初始化状态 (保持不变)
         initFloatingNav(0, -114154, 1, 'none');
@@ -1303,7 +1409,6 @@
     // 执行父容器初始化
     parentElement_add();
 
-
     // ==================== 智能排序系统开始 ====================
 
     // 记录点击
@@ -1577,9 +1682,8 @@
             // document.querySelector('button#dh_button').classList.add('cms_opacity');
             document.querySelector('button#dh_button').setAttribute("class", "cmsnone " + bottom());
             document.querySelector('#dh_buttonContainer').setAttribute("class", "cmsnone");
-            _button_button('hidden'); // 隐藏按钮
+            updateNavigationButtonDisplay('hidden'); // 隐藏按钮
             document.querySelector('button#hidedaohang').textContent = "导航按钮(OFF)"
-            // document.querySelector('button#hidedaohang').textContent = "点击显示导航按钮"
             document.querySelector('button#hidedaohang').style.background = 'red'
 
             if (click_sum++ == -1) { // 引导用户使用快捷方式唤起导航🧭详情页
@@ -1592,13 +1696,11 @@
 
         } else if (x == 'show') {
             setCookie("daohangMode_yourChoice", 'show', 400);
-            // document.querySelector('button#dh_button').classList.remove('cms_opacity');
             document.querySelector('button#dh_button').setAttribute("class", "cms " + bottom());
             document.querySelector('#dh_buttonContainer').setAttribute("class", "cms pointer-events-none");
             document.querySelector('button#hidedaohang').textContent = "导航按钮(ON)"
-            // document.querySelector('button#hidedaohang').textContent = "点击隐藏导航按钮"
             document.querySelector('button#hidedaohang').style.background = 'green'
-            _button_button('1') // 显示按钮
+            updateNavigationButtonDisplay('1') // 显示按钮
 
             setTimeout(() => {
                 body_build('false')
@@ -1726,38 +1828,80 @@
     }
 
 
-    // 动态创建并引用外部资源 外部样式表 外部脚本
-    function thrd_party_file(tagname, url, where, id) {
-        const ele_New = document.createElement(tagname);
-        // script
-        if (tagname == "script") {
-            ele_New.type = "text/javascript";
-            ele_New.src = url;
-            ele_New.id = id;
-            ele_New.setAttribute('async', '')
-            // link
-        } else if (tagname == "link") {
-            ele_New.rel = "stylesheet";
-            ele_New.type = "text/css";
-            ele_New.href = url;
-            ele_New.id = id;
+
+    /**
+ * 动态创建并注入外部资源 (CSS 或 JavaScript) 到 HTML 文档中。
+ * 此版本用于最简调用，不依赖 Promise 或 Callback 返回结果，资源状态由浏览器在后台处理。
+ *
+ * @param {string} type - 资源类型，必须是 'script' 或 'style' (或 'link')。
+ * @param {string} url - 外部资源的 URL (src 或 href)。
+ * @param {string} targetParent - 资源要注入的目标父元素，必须是 'head' 或 'body'。
+ * @param {string} [id] - 可选，为创建的元素设置 ID。
+ * @returns {void} 函数立即返回，不等待加载结果。
+ */
+    window.loadExternalResourceFireAndForget = function loadExternalResourceFireAndForget(type, url, targetParent, id) {
+        // --- 1. 参数校验和规范化 ---
+        const normalizedType = type ? type.toLowerCase() : '';
+        const normalizedTargetParent = targetParent ? targetParent.toLowerCase() : '';
+
+        if (!url || (normalizedType !== "script" && normalizedType !== "link" && normalizedType !== "style")) {
+            console.error("loadExternalResourceFireAndForget 错误: 缺少有效的 URL 或资源类型 ('script', 'link', 'style')。");
+            return; // 直接退出
         }
-        if (where == "body") {
-            document.body.appendChild(ele_New);
-        } else if (where == "head") {
-            document.head.appendChild(ele_New);
+
+        // --- 2. 确定目标父元素和环境检查 ---
+        let parentElement;
+        if (normalizedTargetParent === "body") {
+            parentElement = document.body;
+        } else if (normalizedTargetParent === "head") {
+            parentElement = document.head;
         }
+
+        if (!parentElement) {
+            console.error(`loadExternalResourceFireAndForget 错误: targetParent '${targetParent}' 无效或文档环境不支持。`);
+            return; // 直接退出
+        }
+
+        // --- 3. 创建元素和属性设置 ---
+        let resourceElement = null;
+
+        if (normalizedType === "script") {
+            resourceElement = document.createElement('script');
+            resourceElement.type = "text/javascript";
+            resourceElement.src = url;
+            resourceElement.setAttribute('defer', '');
+
+            // 虽然不使用 callback 或 promise，但保留 onerror 机制以清理 DOM 并记录错误
+            resourceElement.onerror = () => {
+                console.error(`[后台错误] 脚本加载失败: ${url}。已从 DOM 移除。`);
+                resourceElement.remove();
+            };
+            // 注意：不设置 onload，加载成功后默默完成。
+
+        } else if (normalizedType === "link" || normalizedType === "style") {
+            resourceElement = document.createElement('link');
+            resourceElement.rel = "stylesheet";
+            resourceElement.type = "text/css";
+            resourceElement.href = url;
+
+            resourceElement.onerror = () => {
+                console.error(`[后台错误] 样式表加载失败: ${url}。已从 DOM 移除。`);
+                resourceElement.remove();
+            };
+        }
+
+        // --- 4. 设置可选 ID 并注入 DOM ---
+        if (id && resourceElement) {
+            resourceElement.id = id;
+        }
+
+        if (resourceElement) {
+            parentElement.appendChild(resourceElement);
+        }
+        // 函数在资源注入后立即返回。
     }
 
 
-    function testx() {
-        var selector = window.prompt("请输入你想要移除的元素对应的标签 e.g. div a li ul 或更具体的元素选择器 e.g. .ad #ad ");
-        if (document.querySelectorAll(selector)[0]) {
-            document.querySelectorAll(selector).forEach((x) => { x.remove() })
-        } else {
-            alert("元素不存在!")
-        }
-    }
 
 
     // Start 运行js代码 zhixingjs
@@ -2249,17 +2393,6 @@
     }
 
 
-    function testy() {
-
-        //alert('在做了(0%)')
-        var js_url = window.prompt("请输入第三方脚本（应以 .js 为后缀）");
-        var head_or_body = window.prompt("请输入脚本插入位置（e.g. body head）");
-        thrd_party_file('script', js_url, head_or_body)
-        if (!js_url == '') {
-            body_build('false');
-        }
-    }
-
     function closeP() {
         alert("部分页面可能无法正常关闭...!届时请手动关闭！请点击确定！");
         window.close()
@@ -2322,7 +2455,7 @@
 
 
     // start filter
-    thrd_party_file('script', 'https://limbopro.com/Adguard/filter.user.js', 'head', 'wtf') // 加载过滤脚本
+    loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/filter.user.js', 'head', 'wtf') // 加载过滤脚本
     // end filter
 
 
@@ -2602,9 +2735,11 @@
 
     // 划词搜索函数部分结束 End
 
+
+
+
+
     // 沉浸式翻译开始 Start
-
-
     function hiddencjsfy() {
         const iframeEl = document.querySelector('div.skiptranslate')
         const translateEl = document.getElementById('google_translate_element');
@@ -2615,7 +2750,7 @@
     }
 
 
-    function showcjsfy() {
+    window.showcjsfy = function showcjsfy() {
         const iframeEl = document.querySelector('div.skiptranslate')
         const translateEl = document.getElementById('google_translate_element');
         if (iframeEl && translateEl) {
@@ -2627,13 +2762,12 @@
 
     }
 
-    // 沉浸式翻译
-    // 切换按钮
+    // 沉浸式翻译切换按钮
     const cjsfybtn = document.getElementById('cjsfy');
     const isLimbopro_STORAGE_KEY = 'cjsfy_translation_state'; // 用于 localStorage 的键名
 
     // 这是一个统一的函数，用于根据目标状态更新 UI、执行功能并保存状态
-    function applyState(targetState) {
+    window.applyState = function applyState(targetState) {
         if (!cjsfybtn) return;
 
         // 1. 执行功能和 UI 逻辑
@@ -2699,6 +2833,7 @@
     }
 
 
+
     if (cjsfybtn) {
 
         if (localStorage.getItem('cjsfy_translation_state') == null && document.getElementById('translation-button') !== null) {
@@ -2730,13 +2865,10 @@
             const currentState = cjsfybtn.getAttribute('data-state');
             // 根据当前状态，确定下一个目标状态
             const nextState = currentState === 'off' ? 'on' : 'off';
-
             // 切换到下一个状态
             applyState(nextState);
         });
     }
-
-
 
     // 沉浸式翻译结束 End
 
@@ -3762,6 +3894,13 @@
             {
                 "name": "hanime1",
                 "url": "https://hanime1.me/comics",
+                "target": "_blank",
+                "level": "common"
+            }
+            ,
+            {
+                "name": "Porn Dude",
+                "url": "https://theporndude.com/zh",
                 "target": "_blank",
                 "level": "common"
             }
@@ -5439,7 +5578,7 @@
                 position: fixed; 
                 top: 20px; 
                 right: 20px; 
-                z-index: 2147483647; 
+                z-index: 114115; 
                 transition: transform 0.2s ease-out; 
                 border-radius: 12px; 
                 box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05); 
@@ -6279,6 +6418,46 @@
         }
 
 
+        /**
+ * 假设 element 是已经识别出的透明度小于 0.5 的元素
+ * @param {HTMLElement} element - 目标元素
+ */
+        window.removeListenersAndElement = function removeListenersAndElement(element) {
+            if (!element || !element.parentNode) {
+                console.error("元素无效或没有父节点，无法执行移除操作。");
+                return;
+            }
+
+            // 1. 移除事件监听器 (通过克隆元素实现)
+            // 克隆元素，设置为深层克隆 (true)，确保子节点也被复制
+            const elementClone = element.cloneNode(true);
+
+            // 替换原始元素：
+            // elementClone 替换了 DOM 中的 element 的位置。
+            // 这样做会清除所有通过 addEventListener 附加在 element 上的监听器。
+            // element 现在仍在内存中，但已脱离 DOM 树。
+            element.parentNode.replaceChild(elementClone, element);
+
+            // 2. 删除元素
+            // 移除 DOM 中当前存在的、不含监听器的克隆元素
+            if (elementClone.parentNode) {
+                elementClone.parentNode.removeChild(elementClone);
+                console.log('成功移除元素:', elementClone.tagName, '及其所有事件监听。');
+            }
+
+            // 注意：原始的 'element' 变量现在引用的是脱离 DOM 树的那个带监听器的旧元素，
+            // 它应该会在 JavaScript 垃圾回收机制下被清理掉。
+        }
+
+        // 示例用法（假设你已经找到了目标元素）：
+        /*
+        const lowOpacityElement = document.getElementById('my-transparent-div'); 
+        if (lowOpacityElement) {
+            removeListenersAndElement(lowOpacityElement);
+        }
+        */
+
+
         // =================================================================
         // 核心函数：渲染和事件绑定 (V26.39.6 更新 - 保持不变)
         // =================================================================
@@ -6510,7 +6689,7 @@
                 <button id="selector-toggle" style="background: #007bff; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; width: 100%; margin-bottom: 5px;">
                     🖱️ 启用选择并屏蔽模式
                 </button>
-                <div style="display: flex; gap: 5px;">
+                <div style="margin-bottom:5px; display: flex; gap: 5px;">
                     <button id="debug-click-toggle" style="background: ${isDebuggingElementClick ? '#00c853' : '#ffc107'}; color: ${isDebuggingElementClick ? 'white' : '#333'}; border: none; padding: 8px 5px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1; font-size: 12px;">
                         🛠️ 元素点击调试 (${isDebuggingElementClick ? '开' : '关'})
                     </button>
@@ -6518,6 +6697,21 @@
                         ⚙️ JS 重定向调试 (${isDebuggingLocationHooks ? '开' : '关'})
                     </button>
                 </div>
+
+                <button id="manual-xpath-add" onclick="window.showPageScriptsFloatWindow()" style="
+        background: #b532ccff; /* 使用紫色突出手动操作 */
+        color: white; border: none; padding: 8px 15px; margin-bottom:5px;
+        cursor: pointer; border-radius: 4px; font-weight: bold; width: 100%;
+    ">📟 页面脚本查看器</button>
+
+ <button id="manual-xpath-add" onclick="showXPathInputWindow()" style="
+        background: #6c1a7bff; /* 使用紫色突出手动操作 */
+        color: white; border: none; padding: 8px 15px; 
+        cursor: pointer; border-radius: 4px; font-weight: bold; width: 100%;
+    ">
+        ⌨️ 手动输入 XPath 永久屏蔽
+    </button>
+                
             </div>
 
             <div style="display: flex; border-bottom: 1px solid #ccc;">
@@ -6569,8 +6763,8 @@
             </div>
 
             <div class="gemini-tip-text">
-                **提示:** “选择模式”可屏蔽任何元素。取消移除后请**手动刷新**。
-                🛠️ 元素点击调试/选择并屏蔽模式禁止🙅同时开启。
+                🌟**提示:** “选择并屏蔽模式”可屏蔽任何元素。取消移除后请**手动刷新**。
+                🛠️ 元素点击调试/选择并屏蔽模式不要🙅同时开启。⛔标记为黑名单意味着对当前页面的iframe进行沙箱化处理。💡一切结束后记得关闭所有调试。
             </div>
         `;
 
@@ -7215,6 +7409,167 @@
         }
 
 
+
+
+        // =================================================================
+        // 核心函数：手动添加 XPath 到永久屏蔽列表
+        // =================================================================
+
+        /**
+         * 将用户输入的 XPath 添加到永久元素移除列表
+         * @param {string} xpath - 用户输入的 XPath 字符串
+         */
+        function handleManualXPathSubmission(xpath) {
+            if (!xpath || typeof xpath !== 'string' || xpath.trim() === '') {
+                alert('错误：请输入一个有效的 XPath。');
+                return;
+            }
+
+            const trimmedXPath = xpath.trim();
+            const REMOVAL_KEY = 'gemini_zero_opacity_removals'; // 保持与脚本中 ELEMENT_REMOVAL_KEY 一致
+
+            try {
+                // 1. 获取当前的列表
+                let removalListJSON = localStorage.getItem(REMOVAL_KEY);
+                let removalList = removalListJSON ? JSON.parse(removalListJSON) : [];
+
+                // 2. 检查并添加新的 XPath
+                if (removalList.indexOf(trimmedXPath) === -1) {
+                    removalList.push(trimmedXPath);
+
+                    // 3. 保存更新后的列表
+                    const updatedRemovalListJSON = JSON.stringify(removalList);
+                    localStorage.setItem(REMOVAL_KEY, updatedRemovalListJSON);
+
+                    console.log(`[Gemini屏蔽] 成功手动添加 XPath: ${trimmedXPath}`);
+                    alert(`✅ XPath 已成功保存！\n路径: ${trimmedXPath}\n请刷新页面生效。`);
+                } else {
+                    alert(`提示：该 XPath (${trimmedXPath}) 已存在于屏蔽列表中。`);
+                }
+            } catch (e) {
+                console.error('[Gemini屏蔽] 保存 XPath 时发生错误:', e);
+                alert('❌ 保存 XPath 失败。请检查控制台获取详细信息。');
+            }
+        }
+
+
+
+
+        // =================================================================
+        // UI 函数：显示 XPath 输入悬浮窗 (已增加粘贴和清空按钮)
+        // =================================================================
+
+        const XPATH_INPUT_WINDOW_ID = 'gemini-xpath-input-modal';
+
+        window.showXPathInputWindow = function showXPathInputWindow() {
+            let modal = document.getElementById(XPATH_INPUT_WINDOW_ID);
+            if (modal) {
+                modal.style.display = 'flex';
+                return;
+            }
+
+            // 1. 创建模态容器 (Z-index 已修复)
+            modal = document.createElement('div');
+            modal.id = XPATH_INPUT_WINDOW_ID;
+            modal.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); 
+        z-index: 100000000; /* 确保堆叠顺序最高 */
+        display: flex; justify-content: center; align-items: center;
+    `;
+
+            // 2. 创建内容面板
+            const content = document.createElement('div');
+            content.style.cssText = `
+        background-color: #fff; padding: 20px; border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); width: 90%; max-width: 400px;
+        color: #333; font-family: Arial, sans-serif;
+    `;
+
+            // 标题和说明
+            content.innerHTML = `
+        <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #555;">手动添加 XPath 屏蔽</h3>
+        <p style="margin-bottom: 10px; font-size: 14px;">请粘贴您从开发者工具中复制的 XPath 地址：</p>
+    `;
+
+            // 3. 创建粘贴/清空按钮容器
+            const utilityButtonContainer = document.createElement('div');
+            utilityButtonContainer.style.cssText = 'display: flex; gap: 10px; margin-bottom: 10px;';
+
+            const pasteButton = document.createElement('button');
+            pasteButton.textContent = '📋 粘贴 XPath';
+            pasteButton.style.cssText = 'padding: 8px 15px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer; flex: 1;';
+            pasteButton.id = 'paste-xpath-btn';
+
+            const clearButton = document.createElement('button');
+            clearButton.textContent = '🗑️ 清空';
+            clearButton.style.cssText = 'padding: 8px 15px; background-color: #9E9E9E; color: white; border: none; border-radius: 4px; cursor: pointer; flex: 1;';
+            clearButton.id = 'clear-xpath-btn';
+
+            utilityButtonContainer.appendChild(pasteButton);
+            utilityButtonContainer.appendChild(clearButton);
+            content.appendChild(utilityButtonContainer);
+
+            // 4. 创建输入框
+            const textarea = document.createElement('textarea');
+            textarea.id = 'xpath-input-field';
+            textarea.rows = 3;
+            textarea.style.cssText = 'width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; box-sizing: border-box; resize: vertical; font-family: monospace;';
+            content.appendChild(textarea);
+
+
+            // 5. 创建主操作按钮 (保存/取消)
+            const buttonContainer = document.createElement('div');
+            buttonContainer.style.cssText = 'display: flex; justify-content: flex-end; gap: 10px;';
+
+            const saveButton = document.createElement('button');
+            saveButton.textContent = '保存并屏蔽 (需刷新)';
+            saveButton.style.cssText = 'padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;';
+
+            const cancelButton = document.createElement('button');
+            cancelButton.textContent = '取消';
+            cancelButton.style.cssText = 'padding: 8px 15px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;';
+
+            buttonContainer.appendChild(cancelButton);
+            buttonContainer.appendChild(saveButton);
+            content.appendChild(buttonContainer);
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+
+            // 6. 绑定事件
+
+            // 绑定清空按钮事件
+            clearButton.onclick = () => {
+                textarea.value = '';
+                textarea.focus();
+            };
+
+            // 绑定粘贴按钮事件
+            pasteButton.onclick = () => {
+                // 使用 Clipboard API 读取剪贴板内容
+                navigator.clipboard.readText().then(text => {
+                    textarea.value = text;
+                    textarea.focus();
+                }).catch(err => {
+                    console.error('[Gemini屏蔽] 无法读取剪贴板，可能是权限问题:', err);
+                    alert('无法自动粘贴。请确保已授予浏览器剪贴板读取权限，或手动粘贴。');
+                });
+            };
+
+            // 绑定保存和取消事件 (与之前逻辑相同)
+            saveButton.onclick = () => {
+                const xpath = textarea.value;
+                handleManualXPathSubmission(xpath);
+                modal.remove();
+            };
+
+            cancelButton.onclick = () => {
+                modal.remove();
+            };
+        }
+
+
+
         // =================================================================
         // 核心启动函数 
         // =================================================================
@@ -7526,7 +7881,8 @@
 
 
 
-
+/* WebDebugger.js 开始 START
+*/
 
 
 
@@ -7540,51 +7896,39 @@
  * 2. 执行: window.initWebDebugger();
  */
 
+// --- 固定功能常量和状态管理 ---
+const PIN_KEY = 'webDebuggerPinned';
 
 /**
- * WebDebugger.js
- * * 独立函数：Web 存储调试器 (Cookies/Local/Session/Config)
- * * 描述: 创建一个悬浮可拖拽的面板，用于实时查看和编辑 Cookie, LocalStorage, SessionStorage，
- * 并提取内嵌的 JSON 配置数据。
- * * 调用方法: 
- * 1. 引入文件: <script src="path/to/WebDebugger.js"></script>
- * 2. 执行: window.initWebDebugger(); (手动显示)
- * * 修复: 自动检查 localStorage 中的固定状态，如果已固定则自动显示面板。
+ * 获取固定状态 (默认为 true，即显示)
+ */
+window.getPinState = function getPinState() {
+    // 在浏览器环境中，直接使用 localStorage
+    const state = localStorage.getItem(PIN_KEY);
+    // 默认首次加载为 true，即显示
+    return state === null ? true : state === 'true';
+}
+
+/**
+ * 核心渲染和面板创建函数
  */
 
-(function () {
-    'use strict';
 
-    // --- 固定功能常量和状态管理 ---
-    const PIN_KEY = 'webDebuggerPinned';
-
-    /**
-     * 获取固定状态 (默认为 true，即显示)
-     */
-    function getPinState() {
-        // 在浏览器环境中，直接使用 localStorage
-        const state = localStorage.getItem(PIN_KEY);
-        // 默认首次加载为 true，即显示
-        return state === null ? true : state === 'true';
+// 暴露初始化函数到全局
+window.initWebDebugger = function showDebuggerPanel() {
+    if (typeof body_build == 'function') {
+        body_build('false')
+    }
+    // 如果面板已存在，则刷新内容并退出
+    if (document.getElementById('storage-control-panel')) {
+        if (window.__debugRender) {
+            window.__debugRender();
+        }
+        return;
     }
 
-    /**
-     * 核心渲染和面板创建函数
-     */
-    function showDebuggerPanel() {
-        if (typeof body_build == 'function') {
-            body_build('false')
-        }
-        // 如果面板已存在，则刷新内容并退出
-        if (document.getElementById('storage-control-panel')) {
-            if (window.__debugRender) {
-                window.__debugRender();
-            }
-            return;
-        }
-
-        // --- 样式定义 ---
-        const panelStyle = `
+    // --- 样式定义 ---
+    const panelStyle = `
             #storage-control-panel {
                 position: fixed !important; 
                 top: 10px;    
@@ -7770,6 +8114,7 @@
             }
             #storage-control-panel button.delete-btn {
                 background-color: #dc3545 !important; 
+                pointer-events: none !important;
             }
             .key-tooltip {
                 position: fixed !important; 
@@ -7819,457 +8164,784 @@
             }
         `;
 
-        // --- DOM 结构创建 和 拖拽功能 ---
-        const panel = document.createElement('div');
-        panel.id = 'storage-control-panel';
+    // --- DOM 结构创建 和 拖拽功能 ---
+    const panel = document.createElement('div');
+    panel.id = 'storage-control-panel';
 
-        const header = document.createElement('h3');
-        header.innerHTML = '⚙️ Web 存储调试器 (Cookies/Local/Session/Config)';
+    const header = document.createElement('h3');
+    header.innerHTML = '⚙️ Web 存储调试器 (Cookies/Local/Session/Config)';
 
-        const controlsContainer = document.createElement('div');
-        controlsContainer.className = 'header-controls';
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'header-controls';
 
-        // 固定按钮逻辑
-        let isCurrentlyPinned = getPinState();
-        const pinBtn = document.createElement('button');
-        pinBtn.className = 'pin-btn';
+    // 固定按钮逻辑
+    let isCurrentlyPinned = getPinState();
+    const pinBtn = document.createElement('button');
+    pinBtn.className = 'pin-btn';
 
-        const updatePinButtonVisual = () => {
-            pinBtn.textContent = isCurrentlyPinned ? '📌' : '📍';
-            pinBtn.title = isCurrentlyPinned ? '点击取消固定 (关闭后隐藏)' : '点击固定 (下次刷新页面显示)';
-            if (isCurrentlyPinned) {
-                pinBtn.classList.add('pinned');
-            } else {
-                pinBtn.classList.remove('pinned');
-            }
-        };
-
-        updatePinButtonVisual();
-
-        pinBtn.onclick = () => {
-            isCurrentlyPinned = !isCurrentlyPinned;
-            localStorage.setItem(PIN_KEY, isCurrentlyPinned.toString());
-            updatePinButtonVisual();
-        };
-
-        // 关闭按钮逻辑
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'close-btn';
-        closeBtn.innerHTML = '×';
-        closeBtn.title = '关闭调试器';
-        closeBtn.onclick = () => {
-            if (!isCurrentlyPinned) {
-                // 只有在非固定状态下，关闭才意味着下次刷新时不显示
-                localStorage.setItem(PIN_KEY, 'false');
-            }
-            panel.remove();
-            document.getElementById('storage-control-style')?.remove();
-            document.getElementById('key-tooltip')?.remove();
-            document.removeEventListener('click', hideTooltipOutside);
-        };
-
-        controlsContainer.appendChild(pinBtn);
-        controlsContainer.appendChild(closeBtn);
-
-        header.appendChild(controlsContainer);
-        panel.appendChild(header);
-
-        const content = document.createElement('div');
-        content.className = 'content';
-        panel.appendChild(content);
-
-        // 样式注入
-        let style = document.getElementById('storage-control-style');
-        if (!style) {
-            style = document.createElement('style');
-            style.id = 'storage-control-style';
-            document.head.appendChild(style);
-        }
-        style.innerHTML = panelStyle;
-
-        // 确保 body 存在
-        if (document.body) {
-            document.body.appendChild(panel);
+    const updatePinButtonVisual = () => {
+        pinBtn.textContent = isCurrentlyPinned ? '📌' : '📍';
+        pinBtn.title = isCurrentlyPinned ? '点击取消固定 (关闭后隐藏)' : '点击固定 (下次刷新页面显示)';
+        if (isCurrentlyPinned) {
+            pinBtn.classList.add('pinned');
         } else {
-            console.error("无法找到 body 元素来插入调试器面板。请确保在 body 加载后调用 initWebDebugger()。");
+            pinBtn.classList.remove('pinned');
+        }
+    };
+
+    updatePinButtonVisual();
+
+    pinBtn.onclick = () => {
+        isCurrentlyPinned = !isCurrentlyPinned;
+        localStorage.setItem(PIN_KEY, isCurrentlyPinned.toString());
+        updatePinButtonVisual();
+    };
+
+    // 关闭按钮逻辑
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '×';
+    closeBtn.title = '关闭调试器';
+    closeBtn.onclick = () => {
+        if (!isCurrentlyPinned) {
+            // 只有在非固定状态下，关闭才意味着下次刷新时不显示
+            localStorage.setItem(PIN_KEY, 'false');
+        }
+        panel.remove();
+        document.getElementById('storage-control-style')?.remove();
+        document.getElementById('key-tooltip')?.remove();
+        document.removeEventListener('click', hideTooltipOutside);
+    };
+
+    controlsContainer.appendChild(pinBtn);
+    controlsContainer.appendChild(closeBtn);
+
+    header.appendChild(controlsContainer);
+    panel.appendChild(header);
+
+    const content = document.createElement('div');
+    content.className = 'content';
+    panel.appendChild(content);
+
+    // 样式注入
+    let style = document.getElementById('storage-control-style');
+    if (!style) {
+        style = document.createElement('style');
+        style.id = 'storage-control-style';
+        document.head.appendChild(style);
+    }
+    style.innerHTML = panelStyle;
+
+    // 确保 body 存在
+    if (document.body) {
+        document.body.appendChild(panel);
+    } else {
+        console.error("无法找到 body 元素来插入调试器面板。请确保在 body 加载后调用 initWebDebugger()。");
+        return;
+    }
+
+    // --- 拖拽功能实现 ---
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    header.addEventListener('mousedown', (e) => {
+        if (window.innerWidth <= 450) return;
+        isDragging = true;
+
+        const rect = panel.getBoundingClientRect();
+
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
+        panel.style.right = 'auto';
+        panel.style.bottom = 'auto';
+        panel.style.left = rect.left + 'px';
+        panel.style.top = rect.top + 'px';
+
+        panel.style.cursor = 'grabbing';
+        e.preventDefault();
+        e.stopPropagation();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        let newX = e.clientX - offsetX;
+        let newY = e.clientY - offsetY;
+
+        panel.style.left = Math.max(0, Math.min(window.innerWidth - panel.offsetWidth, newX)) + 'px';
+        panel.style.top = Math.max(0, Math.min(window.innerHeight - panel.offsetHeight, newY)) + 'px';
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        if (window.innerWidth > 450) {
+            panel.style.cursor = 'grab';
+        }
+    });
+
+    // --- 浮窗逻辑 (保持不变) ---
+    let tooltip = document.getElementById('key-tooltip');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.id = 'key-tooltip';
+        tooltip.className = 'key-tooltip';
+        document.body.appendChild(tooltip);
+    }
+
+    const hideTooltipOutside = (e) => {
+        if (tooltip.classList.contains('visible') &&
+            !tooltip.contains(e.target) &&
+            e.target.className !== 'key-label') {
+            tooltip.classList.remove('visible');
+        }
+    };
+
+    document.removeEventListener('click', hideTooltipOutside);
+    document.addEventListener('click', hideTooltipOutside);
+
+    window.showTooltip = function showTooltip(fullText, targetEl) {
+        tooltip.textContent = fullText;
+        const rect = targetEl.getBoundingClientRect();
+        let top = rect.top + rect.height / 2 - 10;
+        let left = rect.right + 10;
+
+        if (left + tooltip.offsetWidth > window.innerWidth - 10) {
+            left = rect.left;
+            top = rect.bottom + 5;
+        }
+
+        tooltip.style.top = `${top}px`;
+        tooltip.style.left = `${left}px`;
+        tooltip.classList.add('visible');
+    }
+
+    // --- 核心存储操作函数 (保持不变) ---
+    window.getCookieswebDebug = function getCookieswebDebug() {
+        const cookies = document.cookie.split('; ').filter(c => c);
+        return cookies.map(cookie => {
+            const [key, ...rest] = cookie.split('=');
+            return { key: decodeURIComponent(key), value: decodeURIComponent(rest.join('=')) };
+        });
+    }
+
+    window.setCookie = function setCookie(key, value) {
+        document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}; path=/`;
+    }
+
+    window.deleteCookie = function deleteCookie(key) {
+        document.cookie = `${encodeURIComponent(key)}=; Max-Age=0; path=/`;
+    }
+
+    window.getLocalStorage = function getLocalStorage() {
+        const items = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            items.push({ key: key, value: localStorage.getItem(key) });
+        }
+        return items;
+    }
+
+    window.setLocalStorage = function setLocalStorage(key, value) {
+        localStorage.setItem(key, value);
+    }
+
+    window.deleteLocalStorage = function deleteLocalStorage(key) {
+        localStorage.removeItem(key);
+    }
+
+    window.getSessionStorage = function getSessionStorage() {
+        const items = [];
+        for (let i = 0; i < sessionStorage.length; i++) {
+            const key = sessionStorage.key(i);
+            items.push({ key: key, value: sessionStorage.getItem(key) });
+        }
+        return items;
+    }
+
+    window.setSessionStorage = function setSessionStorage(key, value) {
+        sessionStorage.setItem(key, value);
+    }
+
+    window.deleteSessionStorage = function deleteSessionStorage(key) {
+        sessionStorage.removeItem(key);
+    }
+
+    window.getEmbeddedData = function getEmbeddedData() {
+        const scripts = document.querySelectorAll('script[type="application/json"]');
+        const data = [];
+
+        scripts.forEach((script, index) => {
+            const content = script.textContent.trim();
+            if (content) {
+                let parsedData;
+                let error = null;
+
+                try {
+                    parsedData = JSON.parse(content);
+                } catch (e) {
+                    error = '解析失败：不是有效的 JSON 格式';
+                }
+
+                const formattedJson = parsedData
+                    ? JSON.stringify(parsedData, null, 2)
+                    : content;
+
+                data.push({
+                    id: script.id || `(script-${index + 1})`,
+                    content: formattedJson,
+                    error: error
+                });
+            }
+        });
+        return data;
+    }
+
+    // --- 渲染存储项目列表 (保持不变) ---
+    window.renderStorage = function renderStorage(container, data, setter, deleter, renderer) {
+        container.innerHTML = '';
+
+        if (data.length === 0) {
+            container.innerHTML = '<p style="text-align:center; color:#999; padding: 10px 0;">(当前没有存储数据)</p>';
             return;
         }
 
-        // --- 拖拽功能实现 ---
-        let isDragging = false;
-        let offsetX, offsetY;
+        data.forEach(item => {
+            const row = document.createElement('div');
+            row.className = 'storage-item';
 
-        header.addEventListener('mousedown', (e) => {
-            if (window.innerWidth <= 450) return;
-            isDragging = true;
+            const keyLabel = document.createElement('div');
+            keyLabel.className = 'key-label';
+            keyLabel.title = item.key;
+            keyLabel.textContent = item.key;
 
-            const rect = panel.getBoundingClientRect();
-
-            offsetX = e.clientX - rect.left;
-            offsetY = e.clientY - rect.top;
-
-            panel.style.right = 'auto';
-            panel.style.bottom = 'auto';
-            panel.style.left = rect.left + 'px';
-            panel.style.top = rect.top + 'px';
-
-            panel.style.cursor = 'grabbing';
-            e.preventDefault();
-            e.stopPropagation();
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-
-            let newX = e.clientX - offsetX;
-            let newY = e.clientY - offsetY;
-
-            panel.style.left = Math.max(0, Math.min(window.innerWidth - panel.offsetWidth, newX)) + 'px';
-            panel.style.top = Math.max(0, Math.min(window.innerHeight - panel.offsetHeight, newY)) + 'px';
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            if (window.innerWidth > 450) {
-                panel.style.cursor = 'grab';
-            }
-        });
-
-        // --- 浮窗逻辑 (保持不变) ---
-        let tooltip = document.getElementById('key-tooltip');
-        if (!tooltip) {
-            tooltip = document.createElement('div');
-            tooltip.id = 'key-tooltip';
-            tooltip.className = 'key-tooltip';
-            document.body.appendChild(tooltip);
-        }
-
-        const hideTooltipOutside = (e) => {
-            if (tooltip.classList.contains('visible') &&
-                !tooltip.contains(e.target) &&
-                e.target.className !== 'key-label') {
-                tooltip.classList.remove('visible');
-            }
-        };
-
-        document.removeEventListener('click', hideTooltipOutside);
-        document.addEventListener('click', hideTooltipOutside);
-
-        function showTooltip(fullText, targetEl) {
-            tooltip.textContent = fullText;
-            const rect = targetEl.getBoundingClientRect();
-            let top = rect.top + rect.height / 2 - 10;
-            let left = rect.right + 10;
-
-            if (left + tooltip.offsetWidth > window.innerWidth - 10) {
-                left = rect.left;
-                top = rect.bottom + 5;
-            }
-
-            tooltip.style.top = `${top}px`;
-            tooltip.style.left = `${left}px`;
-            tooltip.classList.add('visible');
-        }
-
-        // --- 核心存储操作函数 (保持不变) ---
-        function getCookies() {
-            const cookies = document.cookie.split('; ').filter(c => c);
-            return cookies.map(cookie => {
-                const [key, ...rest] = cookie.split('=');
-                return { key: decodeURIComponent(key), value: decodeURIComponent(rest.join('=')) };
+            keyLabel.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showTooltip(item.key, keyLabel);
             });
-        }
 
-        function setCookie(key, value) {
-            document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}; path=/`;
-        }
+            const valueInput = document.createElement('input');
+            valueInput.type = 'text';
+            valueInput.value = item.value;
+            valueInput.title = item.value;
 
-        function deleteCookie(key) {
-            document.cookie = `${encodeURIComponent(key)}=; Max-Age=0; path=/`;
-        }
+            const buttonGroup = document.createElement('div');
+            buttonGroup.className = 'action-buttons';
 
-        function getLocalStorage() {
-            const items = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                items.push({ key: key, value: localStorage.getItem(key) });
-            }
-            return items;
-        }
+            const saveBtn = document.createElement('button');
+            saveBtn.className = 'action-btn save-btn';
+            saveBtn.innerHTML = '✔';
+            saveBtn.title = '修改/保存';
+            saveBtn.onclick = () => { setter(item.key, valueInput.value); renderer(); };
 
-        function setLocalStorage(key, value) {
-            localStorage.setItem(key, value);
-        }
-
-        function deleteLocalStorage(key) {
-            localStorage.removeItem(key);
-        }
-
-        function getSessionStorage() {
-            const items = [];
-            for (let i = 0; i < sessionStorage.length; i++) {
-                const key = sessionStorage.key(i);
-                items.push({ key: key, value: sessionStorage.getItem(key) });
-            }
-            return items;
-        }
-
-        function setSessionStorage(key, value) {
-            sessionStorage.setItem(key, value);
-        }
-
-        function deleteSessionStorage(key) {
-            sessionStorage.removeItem(key);
-        }
-
-        function getEmbeddedData() {
-            const scripts = document.querySelectorAll('script[type="application/json"]');
-            const data = [];
-
-            scripts.forEach((script, index) => {
-                const content = script.textContent.trim();
-                if (content) {
-                    let parsedData;
-                    let error = null;
-
-                    try {
-                        parsedData = JSON.parse(content);
-                    } catch (e) {
-                        error = '解析失败：不是有效的 JSON 格式';
-                    }
-
-                    const formattedJson = parsedData
-                        ? JSON.stringify(parsedData, null, 2)
-                        : content;
-
-                    data.push({
-                        id: script.id || `(script-${index + 1})`,
-                        content: formattedJson,
-                        error: error
-                    });
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'action-btn delete-btn';
+            deleteBtn.innerHTML = '🗑️';
+            deleteBtn.title = '删除';
+            deleteBtn.onclick = () => {
+                if (confirm(`确定要删除键名为 "${item.key}" 的项目吗?`)) {
+                    deleter(item.key);
+                    renderer();
                 }
-            });
-            return data;
+            };
+
+            buttonGroup.appendChild(saveBtn);
+            buttonGroup.appendChild(deleteBtn);
+
+            row.appendChild(keyLabel);
+            row.appendChild(valueInput);
+            row.appendChild(buttonGroup);
+            container.appendChild(row);
+        });
+    }
+
+    window.renderEmbeddedData = function renderEmbeddedData() {
+        const configData = getEmbeddedData();
+        const container = embeddedListWrapper;
+        container.innerHTML = '';
+
+        if (configData.length === 0) {
+            container.innerHTML = '<p style="text-align:center; color:#999; padding: 10px 0;">(未找到内嵌的 JSON 配置数据)</p>';
+            return;
         }
 
-        // --- 渲染存储项目列表 (保持不变) ---
-        function renderStorage(container, data, setter, deleter, renderer) {
-            container.innerHTML = '';
+        configData.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'json-item';
 
-            if (data.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#999; padding: 10px 0;">(当前没有存储数据)</p>';
-                return;
+            const title = document.createElement('span');
+            title.className = 'json-title';
+            title.textContent = `标签 ID: ${item.id}`;
+            itemDiv.appendChild(title);
+
+            const pre = document.createElement('pre');
+            pre.className = 'json-display';
+
+            if (item.error) {
+                pre.style.color = 'red';
+                pre.textContent = item.error + ':\n' + item.content;
+            } else {
+                pre.textContent = item.content;
             }
 
-            data.forEach(item => {
-                const row = document.createElement('div');
-                row.className = 'storage-item';
+            itemDiv.appendChild(pre);
+            container.appendChild(itemDiv);
+        });
+    }
 
-                const keyLabel = document.createElement('div');
-                keyLabel.className = 'key-label';
-                keyLabel.title = item.key;
-                keyLabel.textContent = item.key;
+    // --- DOM 渲染和初始化 ---
 
-                keyLabel.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    showTooltip(item.key, keyLabel);
-                });
+    // 1. Cookies Section
+    const cookieSection = document.createElement('div');
+    cookieSection.className = 'section';
+    cookieSection.innerHTML = '<h4>🍪 站点 Cookies</h4>';
+    content.appendChild(cookieSection);
 
-                const valueInput = document.createElement('input');
-                valueInput.type = 'text';
-                valueInput.value = item.value;
-                valueInput.title = item.value;
+    const cookieListWrapper = document.createElement('div');
+    cookieListWrapper.id = 'cookie-list';
+    cookieListWrapper.className = 'data-list-wrapper';
+    cookieSection.appendChild(cookieListWrapper);
 
-                const buttonGroup = document.createElement('div');
-                buttonGroup.className = 'action-buttons';
-
-                const saveBtn = document.createElement('button');
-                saveBtn.className = 'action-btn save-btn';
-                saveBtn.innerHTML = '✔';
-                saveBtn.title = '修改/保存';
-                saveBtn.onclick = () => { setter(item.key, valueInput.value); renderer(); };
-
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'action-btn delete-btn';
-                deleteBtn.innerHTML = '🗑️';
-                deleteBtn.title = '删除';
-                deleteBtn.onclick = () => {
-                    if (confirm(`确定要删除键名为 "${item.key}" 的项目吗?`)) {
-                        deleter(item.key);
-                        renderer();
-                    }
-                };
-
-                buttonGroup.appendChild(saveBtn);
-                buttonGroup.appendChild(deleteBtn);
-
-                row.appendChild(keyLabel);
-                row.appendChild(valueInput);
-                row.appendChild(buttonGroup);
-                container.appendChild(row);
-            });
+   window.renderCookies=  function renderCookies() {
+        try {
+            const cookies = getCookieswebDebug();
+            renderStorage(cookieListWrapper, cookies, setCookie, deleteCookie, renderCookies);
+        } catch (error) {
+            cookieListWrapper.innerHTML = '<p style="color:red;">读取 Cookie 失败。</p>';
         }
+    }
 
-        function renderEmbeddedData() {
-            const configData = getEmbeddedData();
-            const container = embeddedListWrapper;
-            container.innerHTML = '';
+    // 2. LocalStorage Section
+    const localSection = document.createElement('div');
+    localSection.className = 'section';
+    localSection.innerHTML = '<h4>💾 LocalStorage</h4>';
+    content.appendChild(localSection);
 
-            if (configData.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#999; padding: 10px 0;">(未找到内嵌的 JSON 配置数据)</p>';
-                return;
-            }
+    const localListWrapper = document.createElement('div');
+    localListWrapper.id = 'local-list';
+    localListWrapper.className = 'data-list-wrapper';
+    localSection.appendChild(localListWrapper);
 
-            configData.forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'json-item';
-
-                const title = document.createElement('span');
-                title.className = 'json-title';
-                title.textContent = `标签 ID: ${item.id}`;
-                itemDiv.appendChild(title);
-
-                const pre = document.createElement('pre');
-                pre.className = 'json-display';
-
-                if (item.error) {
-                    pre.style.color = 'red';
-                    pre.textContent = item.error + ':\n' + item.content;
-                } else {
-                    pre.textContent = item.content;
-                }
-
-                itemDiv.appendChild(pre);
-                container.appendChild(itemDiv);
-            });
+    window.renderLocalStorage = function renderLocalStorage() {
+        try {
+            const localStorageData = getLocalStorage();
+            renderStorage(localListWrapper, localStorageData, setLocalStorage, deleteLocalStorage, renderLocalStorage);
+        } catch (error) {
+            localListWrapper.innerHTML = '<p style="color:red;">读取 LocalStorage 失败。</p>';
         }
+    }
 
-        // --- DOM 渲染和初始化 ---
+    // 3. SessionStorage Section
+    const sessionSection = document.createElement('div');
+    sessionSection.className = 'section';
+    sessionSection.innerHTML = '<h4>⏱️ Session Storage</h4>';
+    content.appendChild(sessionSection);
 
-        // 1. Cookies Section
-        const cookieSection = document.createElement('div');
-        cookieSection.className = 'section';
-        cookieSection.innerHTML = '<h4>🍪 站点 Cookies</h4>';
-        content.appendChild(cookieSection);
+    const sessionListWrapper = document.createElement('div');
+    sessionListWrapper.id = 'session-list';
+    sessionListWrapper.className = 'data-list-wrapper';
+    sessionSection.appendChild(sessionListWrapper);
 
-        const cookieListWrapper = document.createElement('div');
-        cookieListWrapper.id = 'cookie-list';
-        cookieListWrapper.className = 'data-list-wrapper';
-        cookieSection.appendChild(cookieListWrapper);
-
-        function renderCookies() {
-            try {
-                const cookies = getCookies();
-                renderStorage(cookieListWrapper, cookies, setCookie, deleteCookie, renderCookies);
-            } catch (error) {
-                cookieListWrapper.innerHTML = '<p style="color:red;">读取 Cookie 失败。</p>';
-            }
+    window.renderSessionStorage= function renderSessionStorage() {
+        try {
+            const sessionStorageData = getSessionStorage();
+            renderStorage(sessionListWrapper, sessionStorageData, setSessionStorage, deleteSessionStorage, renderSessionStorage);
+        } catch (error) {
+            sessionListWrapper.innerHTML = '<p style="color:red;">读取 Session Storage 失败。</p>';
         }
+    }
 
-        // 2. LocalStorage Section
-        const localSection = document.createElement('div');
-        localSection.className = 'section';
-        localSection.innerHTML = '<h4>💾 LocalStorage</h4>';
-        content.appendChild(localSection);
+    // 4. Embedded Config Data Section
+    const embeddedSection = document.createElement('div');
+    embeddedSection.className = 'section';
+    embeddedSection.innerHTML = '<h4>⚙️ 内嵌配置数据 (JSON-Scripts)</h4>';
+    content.appendChild(embeddedSection);
 
-        const localListWrapper = document.createElement('div');
-        localListWrapper.id = 'local-list';
-        localListWrapper.className = 'data-list-wrapper';
-        localSection.appendChild(localListWrapper);
-
-        function renderLocalStorage() {
-            try {
-                const localStorageData = getLocalStorage();
-                renderStorage(localListWrapper, localStorageData, setLocalStorage, deleteLocalStorage, renderLocalStorage);
-            } catch (error) {
-                localListWrapper.innerHTML = '<p style="color:red;">读取 LocalStorage 失败。</p>';
-            }
-        }
-
-        // 3. SessionStorage Section
-        const sessionSection = document.createElement('div');
-        sessionSection.className = 'section';
-        sessionSection.innerHTML = '<h4>⏱️ Session Storage</h4>';
-        content.appendChild(sessionSection);
-
-        const sessionListWrapper = document.createElement('div');
-        sessionListWrapper.id = 'session-list';
-        sessionListWrapper.className = 'data-list-wrapper';
-        sessionSection.appendChild(sessionListWrapper);
-
-        function renderSessionStorage() {
-            try {
-                const sessionStorageData = getSessionStorage();
-                renderStorage(sessionListWrapper, sessionStorageData, setSessionStorage, deleteSessionStorage, renderSessionStorage);
-            } catch (error) {
-                sessionListWrapper.innerHTML = '<p style="color:red;">读取 Session Storage 失败。</p>';
-            }
-        }
-
-        // 4. Embedded Config Data Section
-        const embeddedSection = document.createElement('div');
-        embeddedSection.className = 'section';
-        embeddedSection.innerHTML = '<h4>⚙️ 内嵌配置数据 (JSON-Scripts)</h4>';
-        content.appendChild(embeddedSection);
-
-        const embeddedListWrapper = document.createElement('div');
-        embeddedListWrapper.id = 'embedded-list';
-        embeddedListWrapper.className = 'data-list-wrapper';
-        embeddedSection.appendChild(embeddedListWrapper);
+    const embeddedListWrapper = document.createElement('div');
+    embeddedListWrapper.id = 'embedded-list';
+    embeddedListWrapper.className = 'data-list-wrapper';
+    embeddedSection.appendChild(embeddedListWrapper);
 
 
-        // --- 核心渲染函数 ---
-        function globalRenderAll() {
-            renderCookies();
-            renderLocalStorage();
-            renderSessionStorage();
-            renderEmbeddedData();
-            console.log("Web Debugger 已刷新所有存储数据。");
-        }
+    // --- 核心渲染函数 ---
+    window.globalRenderAll = function globalRenderAll() {
+        renderCookies();
+        renderLocalStorage();
+        renderSessionStorage();
+        renderEmbeddedData();
+        console.log("Web Debugger 已刷新所有存储数据。");
+    }
 
-        // 首次初始化渲染
-        globalRenderAll();
+    // 首次初始化渲染
+    globalRenderAll();
 
-        // **将渲染函数暴露给宿主页面**
-        const script = document.createElement('script');
-        script.textContent = `
+    // **将渲染函数暴露给宿主页面**
+    const script = document.createElement('script');
+    script.textContent = `
             // 确保 window.__debugRender 存在，用于外部调用刷新
             window.__debugRender = () => {
                 document.dispatchEvent(new CustomEvent('GM_DEBUG_RENDER_ALL'));
             };
         `;
-        document.head.appendChild(script);
+    document.head.appendChild(script);
 
-        // **监听宿主页面事件，并在沙盒中执行渲染**
-        document.removeEventListener('GM_DEBUG_RENDER_ALL', globalRenderAll);
-        document.addEventListener('GM_DEBUG_RENDER_ALL', globalRenderAll);
-    }
-
-    // 暴露初始化函数到全局
-    window.initWebDebugger = showDebuggerPanel;
-
-    // --- 恢复固定功能的自执行逻辑 ---
-
-    // 等待 DOMContentLoaded 确保 body 存在，并检查固定状态
-    document.addEventListener('DOMContentLoaded', () => {
-        const isCurrentlyPinned = getPinState();
-
-        // 如果面板被固定，且当前没有显示，则自动显示面板
-        if (isCurrentlyPinned && !document.getElementById('storage-control-panel')) {
-            showDebuggerPanel();
-            console.log("Web Debugger: 检测到固定状态，自动显示面板。");
-        }
-    });
-
-})();
+    // **监听宿主页面事件，并在沙盒中执行渲染**
+    document.removeEventListener('GM_DEBUG_RENDER_ALL', globalRenderAll);
+    document.addEventListener('GM_DEBUG_RENDER_ALL', globalRenderAll);
+}
 
 
-setTimeout(() => {
-    if (localStorage.getItem('webDebuggerPinned') == 'true') {
-        window.initWebDebugger()
-    }
 
-}, 1000)
 
 /* WebDebugger.js 结束 END
 */
+
+
+
+// 查看页面上的脚本
+window.showPageScriptsFloatWindow = function showPageScriptsFloatWindow() {
+    if (typeof body_build == 'function') {
+        body_build('false')
+    } // 关闭导航页以便查看
+    const WINDOW_ID = 'script-viewer-float-window';
+    const STYLE_ID = 'script-viewer-style';
+    const floatWindow = document.getElementById(WINDOW_ID);
+
+    // 1. 检查并移除（如果已存在）
+    if (floatWindow) {
+        console.log("脚本查看悬浮窗已存在，现在将其移除。");
+        floatWindow.remove();
+        document.getElementById(STYLE_ID)?.remove();
+        return;
+    }
+
+    // === XPath 生成辅助函数 ===
+    function generateXPath(element) {
+        if (!element || element.nodeType !== 1) return ''; // 确保是元素节点
+
+        // 停止于 HTML 根节点
+        if (element.tagName.toLowerCase() === 'html') {
+            return '/html';
+        }
+
+        const parent = element.parentNode;
+        if (!parent) return '';
+
+        let index = 1;
+        // 计算当前元素在其父节点下的同类型兄弟节点中的位置索引
+        for (let sibling = parent.firstElementChild; sibling; sibling = sibling.nextElementSibling) {
+            if (sibling === element) {
+                // 递归调用生成父节点的 XPath，然后附加当前节点的标签和索引
+                const path = generateXPath(parent) + '/' + element.tagName.toLowerCase() + '[' + index + ']';
+                return path;
+            }
+            if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
+                index++;
+            }
+        }
+        return '';
+    }
+    // ===========================
+
+    // 2. 获取所有的 <script> 标签数据
+    const scripts = Array.from(document.querySelectorAll('script'));
+    const scriptData = scripts.map((script, index) => {
+        let src = script.getAttribute('src');
+        const content = script.innerHTML.trim();
+        const isInline = !src;
+
+        // 自动补全域名逻辑
+        if (src && src.startsWith('/')) {
+            src = window.location.origin + src;
+        }
+
+        const copyText = isInline ? content : src;
+
+        return {
+            index: index,
+            type: script.getAttribute('type') || 'text/javascript',
+            src: src || '内联脚本',
+            content: content,
+            copyText: copyText,
+            isInline: isInline,
+            // **新增：计算 XPath**
+            xpath: generateXPath(script)
+        };
+    });
+
+    // 3. 注入 CSS 样式 (新增 XPath 样式)
+    if (!document.getElementById(STYLE_ID)) {
+        const style = document.createElement('style');
+        style.id = STYLE_ID;
+        style.innerHTML = `
+            /* 桌面端/默认样式 */
+            #${WINDOW_ID} {
+                position: fixed; top: 50px; right: 50px; width: 400px; height: 600px; 
+                background-color: #fff; border: 1px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 115156; padding: 10px; font-family: Arial, sans-serif; font-size: 14px;
+                display: flex; flex-direction: column; resize: both; overflow: auto; 
+                min-width: 300px; min-height: 200px;
+            }
+            #script-viewer-header {
+                font-weight: bold; margin-bottom: 10px; cursor: move; padding: 5px;
+                background-color: #f4f4f4; border-bottom: 1px solid #eee; user-select: none;
+                touch-action: none; display: flex; justify-content: space-between; align-items: center;
+            }
+            #script-viewer-close-btn {
+                position: static; order: 2; cursor: pointer; font-size: 20px; color: #aaa;
+                padding: 0 5px; line-height: 1;
+            }
+            #script-viewer-close-btn:hover { color: #c00; }
+
+            /* 内容样式 */
+            #script-viewer-content { flex-grow: 1; overflow-y: auto; }
+            .script-item { border: 1px solid #ddd; padding: 8px; margin-bottom: 10px; background-color: #f9f9f9; border-radius: 4px; }
+            .script-item-info { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+            .script-item-header { font-weight: bold; color: #333; font-size: 13px; flex-grow: 1; }
+            
+            /* 外联 SRC 链接样式 */
+            .script-item-src a {
+                color: #007bff; word-break: break-all; font-size: 11px;
+                text-decoration: underline;
+            }
+            .script-item-src { margin-bottom: 5px; }
+
+            /* 新增 XPath 容器样式 */
+            .script-item-xpath {
+                font-size: 10px; 
+                color: #6a0dad; /* 紫色突出显示 XPath */
+                background-color: #f1e9f8;
+                padding: 3px 5px;
+                border-radius: 3px;
+                word-break: break-all;
+                display: block;
+                margin-top: 5px;
+            }
+
+            /* 脚本内容区容器 */
+            .script-content-container { position: relative; margin-top: 5px; }
+            .script-item-content {
+                background-color: #eee; padding: 5px; border: 1px solid #ccc;
+                max-height: 120px; overflow-y: auto; 
+                white-space: pre-wrap; font-family: monospace; font-size: 10px; color: #444;
+            }
+
+            /* 复制按钮样式 */
+            .copy-btn {
+                background-color: #007bff; color: white; border: none;
+                padding: 2px 5px; font-size: 10px; cursor: pointer;
+                border-radius: 4px; opacity: 0.8; transition: opacity 0.2s;
+                user-select: none; margin-left: 5px;
+            }
+            .copy-btn:hover { opacity: 1; }
+            .copy-btn:active { background-color: #0056b3; }
+            
+            /* 针对内联脚本内容区的复制按钮定位 */
+            .inline-content-copy-btn {
+                position: absolute;
+                top: 0px; right: 0px; 
+                border-radius: 0 4px 0 4px;
+            }
+
+
+            /* 移动端优化：屏幕宽度小于 600px 时应用 */
+            @media (max-width: 600px) {
+                #${WINDOW_ID} {
+                    top: 0; right: 0; bottom: 0; left: 0; width: 100vw; height: 100vh; 
+                    border: none; border-radius: 0; padding: 0; box-shadow: none; resize: none; cursor: default;
+                    /* 移动端底部留出 100px 空间 */
+                    padding-bottom: 100px; 
+                    box-sizing: border-box; 
+                }
+                
+                /* 移动端关闭按钮优化 (醒目) */
+                #script-viewer-close-btn {
+                    position: absolute; top: 5px; right: 5px;
+                    background-color: #dc3545; color: white; border-radius: 50%;
+                    width: 30px; height: 30px; line-height: 30px; text-align: center;
+                    font-size: 24px; z-index: 100000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                }
+                #script-viewer-header {
+                    padding: 15px 10px; margin-bottom: 0; cursor: default; justify-content: center;
+                }
+                #script-viewer-content { 
+                    padding: 10px; 
+                    height: 100%; 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // 通用复制功能函数
+    const handleCopy = async (textToCopy, buttonElement, originalText) => {
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+            buttonElement.textContent = '已复制!';
+            setTimeout(() => { buttonElement.textContent = originalText; }, 1500);
+        } catch (err) {
+            console.error('复制失败:', err);
+            buttonElement.textContent = '失败!';
+            setTimeout(() => { buttonElement.textContent = originalText; }, 1500);
+        }
+    };
+
+
+    // 4. 创建 DOM 结构 (省略重复代码...)
+    const newFloatWindow = document.createElement('div');
+    newFloatWindow.id = WINDOW_ID;
+
+    const header = document.createElement('div');
+    header.id = 'script-viewer-header';
+
+    const headerTitle = document.createElement('span');
+    headerTitle.textContent = `页面脚本查看器 (共 ${scripts.length} 个)`;
+    header.appendChild(headerTitle);
+
+    const closeBtn = document.createElement('span');
+    closeBtn.id = 'script-viewer-close-btn';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.onclick = function () {
+        newFloatWindow.remove();
+        document.getElementById(STYLE_ID)?.remove();
+    };
+    header.appendChild(closeBtn);
+
+    const contentArea = document.createElement('div');
+    contentArea.id = 'script-viewer-content';
+
+    // 5. 填充内容和添加复制按钮 (新增 XPath 显示)
+    scriptData.forEach(data => {
+        const item = document.createElement('div');
+        item.className = 'script-item';
+
+        // 头部信息（包含复制按钮）
+        const infoRow = document.createElement('div');
+        infoRow.className = 'script-item-info';
+
+        const headerText = document.createElement('div');
+        headerText.className = 'script-item-header';
+        headerText.textContent = `[${data.index}] Type: ${data.type}`;
+        infoRow.appendChild(headerText);
+
+        // 只对外部脚本显示复制 SRC 按钮
+        if (!data.isInline) {
+            const primaryCopyBtn = document.createElement('button');
+            const primaryCopyText = '复制 SRC';
+            primaryCopyBtn.className = 'copy-btn';
+            primaryCopyBtn.textContent = primaryCopyText;
+            primaryCopyBtn.onclick = () => handleCopy(data.copyText, primaryCopyBtn, primaryCopyText);
+            infoRow.appendChild(primaryCopyBtn);
+        }
+
+        item.appendChild(infoRow);
+
+        // 脚本来源展示
+        const srcDisplay = document.createElement('div');
+        srcDisplay.className = 'script-item-src';
+
+        if (data.isInline) {
+            srcDisplay.textContent = `Source: ${data.src}`;
+        } else {
+            const link = document.createElement('a');
+            link.href = data.src;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = data.src;
+
+            const label = document.createTextNode('Source: ');
+            srcDisplay.appendChild(label);
+            srcDisplay.appendChild(link);
+        }
+        item.appendChild(srcDisplay);
+
+        // **新增：XPath 显示和复制**
+        const xpathDisplay = document.createElement('span');
+        xpathDisplay.className = 'script-item-xpath';
+        xpathDisplay.title = '点击复制 XPath';
+        xpathDisplay.textContent = `XPath: ${data.xpath}`;
+
+        // 添加 XPath 复制事件 (使用 data.xpath 作为复制内容)
+        xpathDisplay.onclick = () => handleCopy(data.xpath, xpathDisplay, `XPath: ${data.xpath}`);
+
+        item.appendChild(xpathDisplay);
+
+
+        // 内联脚本内容
+        if (data.isInline && data.content) {
+            const contentContainer = document.createElement('div');
+            contentContainer.className = 'script-content-container';
+
+            const contentDisplay = document.createElement('div');
+            contentDisplay.className = 'script-item-content';
+            contentDisplay.textContent = data.content;
+            contentContainer.appendChild(contentDisplay);
+
+            // 内联脚本的内容框右上角复制按钮
+            const contentCopyBtn = document.createElement('button');
+            contentCopyBtn.className = 'copy-btn inline-content-copy-btn';
+            contentCopyBtn.textContent = '复制';
+            contentCopyBtn.onclick = () => handleCopy(data.content, contentCopyBtn, '复制');
+            contentContainer.appendChild(contentCopyBtn);
+
+            item.appendChild(contentContainer);
+        } else if (data.isInline && !data.content) {
+            const emptyContent = document.createElement('div');
+            emptyContent.className = 'script-item-content';
+            emptyContent.textContent = '(空内联脚本)';
+            item.appendChild(emptyContent);
+        }
+
+        contentArea.appendChild(item);
+    });
+
+    newFloatWindow.appendChild(header);
+    newFloatWindow.appendChild(contentArea);
+    document.body.appendChild(newFloatWindow);
+
+    // 6. 实现拖动功能 (保持不变)
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    const getClientCoords = (e) => (e.touches && e.touches.length) ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : { x: e.clientX, y: e.clientY };
+
+    const startDrag = (e) => {
+        if (window.innerWidth <= 600) return;
+        isDragging = true;
+        const coords = getClientCoords(e);
+        offsetX = coords.x - newFloatWindow.offsetLeft;
+        offsetY = coords.y - newFloatWindow.offsetTop;
+        newFloatWindow.style.cursor = 'grabbing';
+        e.preventDefault();
+    };
+
+    const onDrag = (e) => {
+        if (!isDragging) return;
+        const coords = getClientCoords(e);
+        let newX = coords.x - offsetX;
+        let newY = coords.y - offsetY;
+
+        const maxX = window.innerWidth - newFloatWindow.offsetWidth;
+        const maxY = window.innerHeight - newFloatWindow.offsetHeight;
+
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+
+        newFloatWindow.style.left = newX + 'px';
+        newFloatWindow.style.top = newY + 'px';
+    };
+
+    const endDrag = () => {
+        isDragging = false;
+        newFloatWindow.style.cursor = 'default';
+    };
+
+    header.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', onDrag);
+    document.addEventListener('mouseup', endDrag);
+    header.addEventListener('touchstart', startDrag);
+    document.addEventListener('touchmove', onDrag);
+    document.addEventListener('touchend', endDrag);
+
+    console.log(`脚本查看悬浮窗已创建，共发现 ${scripts.length} 个脚本。`);
+}

@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Fri, 12 Dec 2025 08:56:54 GMT
-# entries:        3478
+# last updated:   Mon, 15 Dec 2025 07:21:01 GMT
+# entries:        3483
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -1364,6 +1364,7 @@ DOMAIN-SUFFIX,convertingtraffic.com
 DOMAIN-SUFFIX,convrse.media
 DOMAIN-SUFFIX,cookies.cmpnet.com
 DOMAIN-SUFFIX,cootlogix.com
+DOMAIN-SUFFIX,copperstills.net
 DOMAIN-SUFFIX,copycarpenter.com
 DOMAIN-SUFFIX,copyrightaccesscontrols.com
 DOMAIN-SUFFIX,coremetrics.com
@@ -1382,6 +1383,7 @@ DOMAIN-SUFFIX,counter.search.bg
 DOMAIN-SUFFIX,counter.snackly.co
 DOMAIN-SUFFIX,counting.kmindex.ru
 DOMAIN-SUFFIX,coupling-media.de
+DOMAIN-SUFFIX,cowbelltime.com
 DOMAIN-SUFFIX,coxmt.com
 DOMAIN-SUFFIX,cozyhillside.com
 DOMAIN-SUFFIX,cpalead.com
@@ -1525,6 +1527,7 @@ DOMAIN-SUFFIX,eclkspbn.com
 DOMAIN-SUFFIX,ecoupons.com
 DOMAIN-SUFFIX,edaa.eu
 DOMAIN-SUFFIX,edgexads.com
+DOMAIN-SUFFIX,eighthlayer.net
 DOMAIN-SUFFIX,eiv.baidu.com
 DOMAIN-SUFFIX,elasticchange.com
 DOMAIN-SUFFIX,elderlytown.com
@@ -1866,6 +1869,7 @@ DOMAIN-SUFFIX,iad.anm.co.uk
 DOMAIN-SUFFIX,iadnet.com
 DOMAIN-SUFFIX,ibillboard.com
 DOMAIN-SUFFIX,icptrack.com
+DOMAIN-SUFFIX,icywinter.com
 DOMAIN-SUFFIX,id5-sync.com
 DOMAIN-SUFFIX,idealadvertising.net
 DOMAIN-SUFFIX,idevaffiliate.com
@@ -3399,6 +3403,7 @@ DOMAIN-SUFFIX,whisperingcascade.com
 DOMAIN-SUFFIX,whisperingcrib.com
 DOMAIN-SUFFIX,whisperingsummit.com
 DOMAIN-SUFFIX,whoisonline.net
+DOMAIN-SUFFIX,wholepagecache.com
 DOMAIN-SUFFIX,wickedreports.com
 DOMAIN-SUFFIX,widget.educationdynamics.com
 DOMAIN-SUFFIX,widget.privy.com

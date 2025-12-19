@@ -9,6 +9,38 @@
 
 ![Quantumult X 去网页广告效果][2]
 
+![毒奶去网页广告计划-导航-工具箱-元素屏蔽/追踪器](https://limbopro.com/usr/uploads/2025/12/3091316524.jpg)
+
+### 如何为任意网页引入导航
+
+> 除毒奶去网页广告计划的特定网站，**如何在任意网页引入导航页及其1.8万+通用去广告选择器**？以及使用导航自带**工具箱**参阅 https://t.me/limboprossr/3445 
+
+举例如下，具体操作参阅示例：https://t.me/limboprossr/3445 
+```
+# 配置主机名
+## 以BBC News 及 TED 举例，想在它们的网站上调用导航及沉浸式翻译功能（学英语）
+## 需配置 hostname 即主机名才可以对其域名进行解密 MITM
+hostname = www.bbc.com, www.ted.com
+
+#重写类型选择
+script-response-body
+
+#匹配的URL填写
+##你可以按需编写，比如要匹配哪些网页？不匹配哪些
+## 匹配网页链接中包含bbc或ted 的网络请求
+(bbc|ted)
+## 匹配网页链接中包含 bbc 或 ted 但 不包含 .css、.js、.mp4 或 .font 这四个扩展名中任意一个的网络请求
+^(?=.*(bbc|ted))(?!.*\.(css|js|mp4|font)).*$
+## 网页域名必须在 hostname 里
+
+#脚本路径填写
+## 这个脚本实现了如下几个功能
+## 在网页插入去毒奶去特定广告计划的去广告脚本及1.8万+通用去广告CSS选择器
+## 根据网站的域名加载对应的 独立去广告CSS选择器
+## 加载导航按钮及导航页及其附带的小工具
+https://limbopro.com/Adguard/Adblock4limbo.js
+```
+
 # Adblock4limbo
 
 ## 毒奶去广告计划介绍

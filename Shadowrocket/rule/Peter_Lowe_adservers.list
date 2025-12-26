@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Mon, 15 Dec 2025 07:21:01 GMT
-# entries:        3483
+# last updated:   Tue, 23 Dec 2025 11:11:03 GMT
+# entries:        3482
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -473,7 +473,6 @@ DOMAIN-SUFFIX,ads.lesbianpersonals.com, reject
 DOMAIN-SUFFIX,ads.liberte.pl, reject
 DOMAIN-SUFFIX,ads.linkedin.com, reject
 DOMAIN-SUFFIX,ads.livenation.com, reject
-DOMAIN-SUFFIX,ads.lordlucky.com, reject
 DOMAIN-SUFFIX,ads.ma7.tv, reject
 DOMAIN-SUFFIX,ads.mail.bg, reject
 DOMAIN-SUFFIX,ads.massinfra.nl, reject
@@ -721,7 +720,6 @@ DOMAIN-SUFFIX,adsiduous.com, reject
 DOMAIN-SUFFIX,adskeeper.co.uk, reject
 DOMAIN-SUFFIX,adskeeper.com, reject
 DOMAIN-SUFFIX,adsklick.de, reject
-DOMAIN-SUFFIX,adskpak.com, reject
 DOMAIN-SUFFIX,adsmart.net, reject
 DOMAIN-SUFFIX,adsmartracker.com, reject
 DOMAIN-SUFFIX,adsmetadata.startappservice.com, reject
@@ -858,7 +856,6 @@ DOMAIN-SUFFIX,algorix.co, reject
 DOMAIN-SUFFIX,aliasanvil.com, reject
 DOMAIN-SUFFIX,alikeaddition.com, reject
 DOMAIN-SUFFIX,alipromo.com, reject
-DOMAIN-SUFFIX,all4spy.com, reject
 DOMAIN-SUFFIX,alluringbucket.com, reject
 DOMAIN-SUFFIX,aloofmetal.com, reject
 DOMAIN-SUFFIX,aloofvest.com, reject
@@ -1333,7 +1330,6 @@ DOMAIN-SUFFIX,collector.cdp.cnn.com, reject
 DOMAIN-SUFFIX,colonize.com, reject
 DOMAIN-SUFFIX,colorfulpet.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
-DOMAIN-SUFFIX,commindo-media-ressourcen.de, reject
 DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
 DOMAIN-SUFFIX,compactbanner.com, reject
@@ -1794,6 +1790,7 @@ DOMAIN-SUFFIX,handyincrease.com, reject
 DOMAIN-SUFFIX,haplesshydrant.com, reject
 DOMAIN-SUFFIX,harrenmedia.com, reject
 DOMAIN-SUFFIX,harrenmedianetwork.com, reject
+DOMAIN-SUFFIX,hayweb.net, reject
 DOMAIN-SUFFIX,hb.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,hb.vntsm.com, reject
 DOMAIN-SUFFIX,hbb.afl.rakuten.co.jp, reject
@@ -1810,6 +1807,7 @@ DOMAIN-SUFFIX,heyos.com, reject
 DOMAIN-SUFFIX,hf5rbejvpwds.com, reject
 DOMAIN-SUFFIX,hfc195b.com, reject
 DOMAIN-SUFFIX,hgads.com, reject
+DOMAIN-SUFFIX,highnoongear.com, reject
 DOMAIN-SUFFIX,hightrafficads.com, reject
 DOMAIN-SUFFIX,hilariouszinc.com, reject
 DOMAIN-SUFFIX,histats.com, reject
@@ -3112,6 +3110,7 @@ DOMAIN-SUFFIX,tfag.de, reject
 DOMAIN-SUFFIX,the-ozone-project.com, reject
 DOMAIN-SUFFIX,theadex.com, reject
 DOMAIN-SUFFIX,theadhost.com, reject
+DOMAIN-SUFFIX,theadsparks.com, reject
 DOMAIN-SUFFIX,thebugs.ws, reject
 DOMAIN-SUFFIX,thecrazychili.com, reject
 DOMAIN-SUFFIX,themangotea.com, reject

@@ -1,7 +1,7 @@
 /* hanime1.me */
-div[style*="width: 310px; height: 282px;"],
 .search-rows-wrapper > .content-padding-new > .row > .multiple-link-wrapper:has(> a[href*=".labsda.com"]),
-.video-show-width > .single-show-list > .hidden-xs[style*="text-align:"]
+.video-show-width > .single-show-list > .hidden-xs[style*="text-align:"],
+div[style*="width: 310px; height: 282px;"]
  {
     display: none !important;
     pointer-events: none !important;

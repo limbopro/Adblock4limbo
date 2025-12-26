@@ -1,20 +1,44 @@
 /* 91porna.com */
-a.checkNum[target="_blank"]:not([href*="91porna.com"]),
+.modal-backdrop,
+#tip_modal,
+.modal-backdrop,
+#tip_modal,
+.modal-backdrop,
 .ad-dialog,
+.text-mini:has(> .dx-recommend-icons),
+a.checkNum[target="_blank"]:not([href*="91porna.com"]),
 #app-nav > ul > li:has(> a.app-nav-item[target="_blank"]:not([href*="91porna.com"])),
+div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+.video-items > li:has(> a.checkNum),
+.dx-banner-item,
 .carousel-container-bottom,
 .carousel-container:has(#carouselExampleInterval),
-.checkNum[target="_blank"]:not([href*="91porna.com"]),
-div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
 div[class^="col"] div.filters:has(a.checkNum),
 .dx-banner-item,
+.checkNum[target="_blank"]:not([href*="91porna.com"]),
 .h-full.swiper,
+.ad-dialog,
 .modal-backdrop,
-.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
-.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.modal-backdrop,
+.ad-dialog,
 .text-mini:has(> .dx-recommend-icons),
-#tip_modal,
-.video-items > li:has(> a.checkNum)
+a.checkNum[target="_blank"]:not([href*="91porna.com"]),
+#app-nav > ul > li:has(> a.app-nav-item[target="_blank"]:not([href*="91porna.com"])),
+div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+.video-items > li:has(> a.checkNum),
+.dx-banner-item,
+.carousel-container-bottom,
+.carousel-container:has(#carouselExampleInterval),
+.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
+div[class^="col"] div.filters:has(a.checkNum),
+.dx-banner-item,
+.checkNum[target="_blank"]:not([href*="91porna.com"]),
+.h-full.swiper,
+.ad-dialog,
+.modal-backdrop
  {
     display: none !important;
     pointer-events: none !important;

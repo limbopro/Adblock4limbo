@@ -1,40 +1,42 @@
 /* reddit.com */
-.ad-container:not(#style_important),
-#ad_main_top,
-a[href^="https://PornGameFree.fun"],
-AppRouter-main-content > div[class] > div[class^="_"]:has(> div[class^="_"] > img[alt="QR Code to get the Reddit app"]),
-.content > section.newsletterbar,
-[data-faceplate-tracking-context*="\"promoted\":true"],
-div[class*="EUCookieNotice"],
-div[class^="subredditvars-"] > div[class^="_"] > div[class][style*="--Toaster-indicatorColor:"],
-div[data-before-content],
-div[data-before-content="advertisement"],
-div[id="2x-container"] div[tabindex] header[data-redditstyle] + div[aria-hidden="false"] + div[class] > form,
-div[id^="sidebar-btf"],
-div[style*="--Toaster-indicatorColor"],
-.EUCookieNotice,
 #eu-cookie-policy,
-.happening-now-wrap,
-[id^="xpromo-"],
-.ii4q9d-0.fePAzF > div.s1g6rpxu-1,
-.infobar-wrap,
-.mobile-web-redirect-bar,
-.mod-survey-intro,
-nsfw-qr-dialog:contains(Scan this QR code to download the app now),
-.premium-banner-outer,
-.promotedlink:not([style^="height: 1px;"]),
-#SHORTCUT_FOCUSABLE_DIV > div > div[class][aria-hidden] + div > div[class] > form,
-#SHORTCUT_FOCUSABLE_DIV > div > div:not([class]):not([id]):not([style]) > .hvdZkC,
-SHORTCUT_FOCUSABLE_DIV span > a[href$="/policies/cookie-notice"]:upward(section > div[style^="opacity"]),
-shreddit-async-loader[bundlename="bottom_bar_xpromo"],
-shreddit-async-loader[bundlename="feed_announcement"],
 shreddit-async-loader[bundlename="reddit_cookie_banner"],
-shreddit-comments-page-ad,
-shreddit-comment-tree-ad,
+div[style*="--Toaster-indicatorColor"],
 shreddit-cookie-banner,
+SHORTCUT_FOCUSABLE_DIV span > a[href$="/policies/cookie-notice"]:upward(section > div[style^="opacity"]),
+#SHORTCUT_FOCUSABLE_DIV > div > div[class][aria-hidden] + div > div[class] > form,
+div[id="2x-container"] div[tabindex] header[data-redditstyle] + div[aria-hidden="false"] + div[class] > form,
+#SHORTCUT_FOCUSABLE_DIV > div > div:not([class]):not([id]):not([style]) > .hvdZkC,
+#uapp-banner,
+.EUCookieNotice,
+.infobar-wrap,
+div[class*="EUCookieNotice"],
+.happening-now-wrap,
+div[class^="subredditvars-"] > div[class^="_"] > div[class][style*="--Toaster-indicatorColor:"],
+.mod-survey-intro,
+[id^="xpromo-"],
+nsfw-qr-dialog:contains(Scan this QR code to download the app now),
+.mobile-web-redirect-bar,
+shreddit-async-loader[bundlename="bottom_bar_xpromo"],
+AppRouter-main-content > div[class] > div[class^="_"]:has(> div[class^="_"] > img[alt="QR Code to get the Reddit app"]),
 span[data-part="get-app-btn"],
+shreddit-async-loader[bundlename="feed_announcement"],
+.content > section.newsletterbar,
+.premium-banner-outer,
+adblock-test { display: block !important; },
+.ad-container:not(#style_important),
+shreddit-comment-tree-ad,
+.promotedlink:not([style^="height: 1px;"]),
+div[data-before-content],
+a[href^="https://PornGameFree.fun"],
+.ii4q9d-0.fePAzF > div.s1g6rpxu-1,
+div[id^="sidebar-btf"],
+#ad_main_top,
 #subreddit-right-rail__partial > aside > div.py-md > div.text-neutral-content-weak:has(> a[target="_blank"] > img),
-#uapp-banner
+.promotedlink:not([style^="height: 1px;"]),
+[data-faceplate-tracking-context*="\"promoted\":true"],
+div[data-before-content="advertisement"],
+shreddit-comments-page-ad
  {
     display: none !important;
     pointer-events: none !important;

@@ -1,16 +1,18 @@
 /* hltv.org */
-.centered-placement,
-csmoney-skins-widget,
-.footer-app,
-.gen-firstcol-box,
+CybotCookiebotDialog { display: none !important; },
+CybotCookiebotDialogBodyUnderlay { display: none !important; },
 .hubspot-embed,
-.kgN8P9bvyb2EqDJR,
+.footer-app,
 .leftCol > aside > div.a-reset,
-.logoCon > div.center-container,
-.mid-container,
 .mid-container > div[class]:has(> div.featured-matches-top-next-slider),
+.logoCon > div.center-container,
+.centered-placement,
+.world-ranking-banner,
 .mid-container + div[id]:has(> a[href] > img[alt][src]),
-.world-ranking-banner
+.gen-firstcol-box,
+.kgN8P9bvyb2EqDJR,
+.mid-container,
+csmoney-skins-widget
  {
     display: none !important;
     pointer-events: none !important;

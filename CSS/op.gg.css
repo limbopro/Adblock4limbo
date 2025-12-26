@@ -1,65 +1,67 @@
 /* op.gg */
-.ad-mobile-unit,
-a[href^="https://apps.apple.com/"][href*="/app/op-gg/id605722237"],
-a[href^="https://play.google.com/store/apps/details?id="],
-#banner-container,
-.banner-container,
-.block.text-center:has(> a[href^="https://itunes.apple.com/"]),
 body > div[style^="bottom: 0px; left: 0px; position: fixed;"],
-#content-container > div:not([class],[id]) > div[class]:empty,
-#content-container > *:not([class]) > div[class^="css-"]:has(> div[class] > div.vm-placement),
-#content-header ~ div[class^="css-"] > div.fixed,
-.css-1flley8,
-.css-1l7e8un,
-.css-7qtj63,
-.css-uz5vk3,
-.css-zpq3c5,
-div[class*="eylegve"],
-div[class^="Game Game--Result"] + div[result] + div[class^="css-"]:has(> div > div.vm-placement),
-div[class*="md:"]:has(> div[style^="min-width:"] > div[id^="div-gpt-ad"]),
-div:has(> div[data-ad]),
-div[id^="ad-container"],
-div[style*="padding:"]:has(> div[data-id]:empty),
-#duo-ad-box,
-.e17e77tq6,
-.e17e77tq8,
-.e6ayeey0,
-.flex-col:has(> div.flex > a[href^="https://member.op.gg/membership"][href*="&utm_campaign=banner_frame"]),
-.flex > div.text-center:has(> a[href^="https://itunes.apple.com/"]),
-.flex.h-fit.w-full.flex-col.gap-2 > div.justify-center.items-center:has( > div > div[style^="width: 100%; min-width:"]),
-.gnb-desktop-download,
-.h-\[287px\],
-header a[href^="https://itunes.apple.com/"],
 .items-center > div.flex:has(> div.text-center > a[href^="https://itunes.apple.com/"]),
 .items-center.gap-3.px-4:has(> .overflow-hidden ~ div a[href^="https://play.google.com/store/apps/details"]),
+main > .text-center > a[href^="https://op.gg/desktop/download"][target="_blank"],
+section + div[class]:has(> a[href^="https://op.gg/"] > img[alt="Download"]),
+.flex > div.text-center:has(> a[href^="https://itunes.apple.com/"]),
+#__next > div[class^="mobile--"]:has(> div.banner-container),
+header a[href^="https://itunes.apple.com/"],
+.gnb-desktop-download,
+.e6ayeey0,
+a[href^="https://play.google.com/store/apps/details?id="],
+.block.text-center:has(> a[href^="https://itunes.apple.com/"]),
+a[href^="https://apps.apple.com/"][href*="/app/op-gg/id605722237"],
+#__next > header> div[class^="css-"] > a[href^="https://itunes.apple.com/"],
+#__next > div[class^="css-"] > div[class^="css-"] > a[href^="https://op.gg/desktop/?"],
+#sash-banner-ad,
+.css-1l7e8un,
+#opgg-kit-house-image-banner,
+.premium-banner,
+.flex.h-fit.w-full.flex-col.gap-2 > div.justify-center.items-center:has( > div > div[style^="width: 100%; min-width:"]),
+.flex-col:has(> div.flex > a[href^="https://member.op.gg/membership"][href*="&utm_campaign=banner_frame"]),
+.w-full:has(> div.flex > div[data-ad]),
 .justify-between:has(> .title:first-child + a[href*="?utm_source="][href*="&utm_campaign=banner_frame"]:last-child),
-main >  div[style][class^="css-"]:has(> div:not([class]) > div.vm-placement),
+.z-ads,
+section[class*="md:"]:has(> .items-center > div[data-id$="leaderboard"]),
+div[class*="md:"]:has(> div[style^="min-width:"] > div[id^="div-gpt-ad"]),
+div[style*="padding:"]:has(> div[data-id]:empty),
+div[id^="ad-container"],
 main > section[class*="md:"]:has(> .justify-between:first-child > strong:first-child + a[href*="?utm_source="][href*="&utm_campaign=banner_frame"]:last-child),
 main > span[style^="display: flex; justify-content: center; align-items: center;"],
-main > .text-center > a[href^="https://op.gg/desktop/download"][target="_blank"],
+section:has(> div.min-h-\[250px\]):not(:has(> *:not(div.min-h-\[250px\]))),
+tr.ad,
+.css-uz5vk3,
+.w-full > section.bg-gray-0.md\:overflow-hidden.md\:rounded.flex-col.p-2.w-full,
+.banner-container,
+#content-container > div:not([class],[id]) > div[class]:empty,
+div:has(> div[data-ad]),
+.css-1flley8,
+.css-7qtj63,
+#__next > div[class]:has(> div[class] > div[id^="leaderboards"]),
+.SideContent > div[id]:has(> div[id^="ad-container-"]),
+#duo-ad-box,
+.mode-header-container ~ div[class^="css-"] > div[class^="css-"]:has(> div > div.vm-placement),
+#content-header ~ div[class^="css-"] > div.fixed,
+#banner-container,
+div[class*="eylegve"],
+main >  div[style][class^="css-"]:has(> div:not([class]) > div.vm-placement),
+#__next > div[class^="css-"]:has(> div[id^="div-gpt-ad"]),
+#__next > div[class^="css-"] > div[class*="css-"]:has(> div[id^="div-gpt-ad-"]),
+#content-container > *:not([class]) > div[class^="css-"]:has(> div[class] > div.vm-placement),
+div[class^="Game Game--Result"] + div[result] + div[class^="css-"]:has(> div > div.vm-placement),
+#opgg-kit-house-image-banner,
+.ad-mobile-unit,
+.banner-container,
+.css-zpq3c5,
+.e17e77tq6,
+.e17e77tq8,
+.h-\[287px\],
 .md\:max-w-\[1080px\],
 .min-h-\[100px\],
 .min-h-\[250px\],
 .min-h-\[50px\],
-.min-h-\[66px\],
-.mode-header-container ~ div[class^="css-"] > div[class^="css-"]:has(> div > div.vm-placement),
-#__next > div[class^="css-"] > div[class^="css-"] > a[href^="https://op.gg/desktop/?"],
-#__next > div[class^="css-"] > div[class*="css-"]:has(> div[id^="div-gpt-ad-"]),
-#__next > div[class^="css-"]:has(> div[id^="div-gpt-ad"]),
-#__next > div[class]:has(> div[class] > div[id^="leaderboards"]),
-#__next > div[class^="mobile--"]:has(> div.banner-container),
-#__next > header> div[class^="css-"] > a[href^="https://itunes.apple.com/"],
-#opgg-kit-house-image-banner,
-.premium-banner,
-#sash-banner-ad,
-section[class*="md:"]:has(> .items-center > div[data-id$="leaderboard"]),
-section + div[class]:has(> a[href^="https://op.gg/"] > img[alt="Download"]),
-section:has(> div.min-h-\[250px\]):not(:has(> *:not(div.min-h-\[250px\]))),
-.SideContent > div[id]:has(> div[id^="ad-container-"]),
-tr.ad,
-.w-full:has(> div.flex > div[data-ad]),
-.w-full > section.bg-gray-0.md\:overflow-hidden.md\:rounded.flex-col.p-2.w-full,
-.z-ads
+.min-h-\[66px\]
  {
     display: none !important;
     pointer-events: none !important;

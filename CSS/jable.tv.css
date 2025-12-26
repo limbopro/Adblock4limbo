@@ -1,15 +1,15 @@
 /* jable.tv */
-a[href*="?banner="],
-a[href="http://uus52.com/"],
-.badge,
-div[class^="root-"],
-.gutter-20 > .col-sm-4:has(> .video-img-box a[target="_blank"]),
-#jimds-slider,
 .nav-item > a[target="_blank"],
 .right-sidebar > .mb-e-30,
-#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,
+.gutter-20 > .col-sm-4:has(> .video-img-box a[target="_blank"]),
 .text-center > a[target="_blank"] > img,
-.uu-ads
+#site-content > div.container > section.pb-3.pb-e-lg-40.text-center,
+a[href="http://uus52.com/"],
+.badge,
+a[href*="?banner="],
+.uu-ads,
+#jimds-slider,
+div[class^="root-"]
  {
     display: none !important;
     pointer-events: none !important;

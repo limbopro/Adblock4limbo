@@ -1,6 +1,8 @@
 /* 4hu.tv */
+.wrap > div.mod > div.row > dl:has(> dt > a[target="_blank"]:not([href^="/html/"]) > img),
 .couplet-left,
-.wrap > div.mod > div.row > dl:has(> dt > a[target="_blank"]:not([href^="/html/"]) > img)
+.wrap > div.mod > div.row > dl:has(> dt > a[target="_blank"]:not([href^="/html/"]) > img),
+.couplet-left
  {
     display: none !important;
     pointer-events: none !important;

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.12.15
+// @version      0.2025.12.21
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -227,6 +227,12 @@
 */
 
 
+
+
+
+
+
+
 function checkDOMLoaded() {
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         console.log('DOM 已加载');
@@ -430,9 +436,12 @@ var adsMax = {
 }
 
 
+/*
 loadCSS(adsMax.css.globalcss, () => {
-    //console.log('CSS 已生效');
+    //   console.log('CSS 已生效');
+    //  自行去导航里的工具箱开启
 })
+*/
 
 
 /*
@@ -829,7 +838,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'avple':
             //cloudflare_captchaBypass();
             css_adsRemove(adsMax.css.avple);
-            third_party_fileX("script", adsMax.js.avple, "body")
+            if (typeof third_party_fileX == 'function') {
+            	            third_party_fileX("script", adsMax.js.avple, "body")
+}
             break;
         case '18comic':
             css_adsRemove(adsMax.css.comic_18);
@@ -1636,7 +1647,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case "supjav":
             css_adsRemove(adsMax.css.supjav, 0, "superjav");
-
+            //localStorage.setItem('asgsl', '222427=uuid:oCLIHmT61enl9i8kpCI2,noloop:true,shows_limit:0,keep_looping:false,tabunder:false,n:0,global_rr:11176591527659411,s:0,shows:0');
             window.onload = function () {
                 if (document.location.href.search('/?s\=') !== -1) {
                     let regex = /.*\/\?s=/;
@@ -2522,7 +2533,8 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
                 // 检查外部文件是否已经引用成功（通过检查两个关键DOM元素是否存在）
                 var isFunctionxLoaded = (
                     document.querySelector("div#dh_pageContainer") &&
-                    document.querySelector("script[src*='Adblock4limbo.function.js']")
+                    //document.querySelector("script[src*='Adblock4limbo.function.js']")
+                    typeof body_build == 'function'
                 );
 
                 // 检查是否已经存在导航容器 (dh_pageContainer)
@@ -2530,9 +2542,11 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
 
                 if (!isFunctionxLoaded) {
                     // 首次尝试加载脚本
+                    if (typeof third_party_fileX == 'function') {
                     third_party_fileX("script", adsMax.js.functionx, "body"); // js 外部引用 标签 <script>
                     console.log('functionx.js 首次引用成功，等待生效...');
                     clearInterval(daohang); // 首次加载后就停止检查
+                    }
 
                 } else if (hasHomePage) { // *** 使用新的变量名 ***
                     // 脚本已加载且导航容器已存在
@@ -3778,7 +3792,7 @@ loadCSS('https://limbopro.com/CSS/Adblock4limbo.user.css', () => {
 */
 
 // 动态创建并引用外部资源 外部样式表 外部脚本
-function third_party_fileX(tagname, url, where) {
+window.third_party_fileX = function third_party_fileX(tagname, url, where) {
     var ele_NewX = document.createElement(tagname);
     // script
     if (tagname == "script") {
@@ -5031,8 +5045,6 @@ function aopr() {
 // 设置 cookie 饼
 function settingCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
 
-
-
 // 注入 prevent-setTimeout scriptlet
 function injectPreventSetTimeout() {
     // 防止重复注入
@@ -5554,7 +5566,7 @@ console.log(`警告将在累积次数恰好为 6 且 dh_button 元素不存在�
  * ===========================================
  */
 
-function attemptFixScrolling() {
+window.attemptFixScrolling = function attemptFixScrolling() {
 
     const targets = [document.documentElement, document.body];
     let fixedCount = 0;
@@ -5601,3 +5613,9 @@ setInterval(() => {
         attemptFixScrolling();
     }
 }, 5000)
+
+
+
+
+
+// 动态移除鸟鸟韩漫透明弹窗

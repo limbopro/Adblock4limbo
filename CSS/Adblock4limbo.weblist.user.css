@@ -1,48 +1,117 @@
-/* ==UserStyle==
-@name Adblock for WebList Injector
-@namespace userstyles.world
-@version 7.0
-@description Extracts element hiding rules from AdGuard filters.
-==/UserStyle== */
-/* removeAds by Adguard Filters */
+/* removeAds by Adguard Base Filter and Chinese Filter */
 
 /* 18comic.vip */
 
-a[herf*="//"]:not([href*="comic."]) > img,
-a[href*="//"]:not([href*="comic."]) > div[style],
-a[href*="//"]:not([href*="comic."]) > img,
-a[href*="//"]:not([href*="comic."]) > img + [style],
-a[href*="//"]:not([href*="comic."]) > [style*="back"],
-#billboard-modal,
 .billboard-modal,
+#billboard-modal,
+.modal-backdrop,
+.float-right-daily,
+#wrapper > div.hidden-lg:has(> div[class*="sticky"]),
+.float-right-image,
+.billboard-modal,
+#billboard-modal,
+.modal-backdrop,
+.float-right-daily,
+#wrapper > div.hidden-lg:has(> div[class*="sticky"]),
+.float-right-image,
+.div-bf-pv,
+div[style="position: absolute;bottom: 0px;z-index: 10;"],
+div[data-height="90"][data-width="728"],
+.top-a2db,
+.modal-body > ul.pop-list,
 body .bot-per,
 .container > div[style^="margin-bottom:"]:has(> div.col-lg-3 > div[data-exo]),
 .container > div[style^="padding:"]:has(> [data-group="content_page"]),
-.div-bf-pv,
+.tab-content + .row:has(> div[class] > div[class] > .group-notice),
 div[class="row"][style="display: flex;flex-wrap: wrap;"],
-div[data-group][data-width="300"],
 div[data-group^="photo_center_games_"],
 div[data-group^="skyscraper_"],
 div[data-height="250"][data-width="300"],
-div[data-height="90"][data-width="728"],
-.div_sticky2,
-div[style="position: absolute;bottom: 0px;z-index: 10;"],
-.float-right-daily,
-.float-right-image,
 #guide-modal,
+.div_sticky2,
 .modal-backdrop,
-.modal-body > ul.pop-list,
 .row[style="display: flex;flex-wrap: wrap;"],
+a[href*="//"]:not([href*="comic."]) > [style*="back"],
+a[href*="//"]:not([href*="comic."]) > div[style],
+a[herf*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > img + [style],
+div[data-group][data-width="300"],
 style + div[style="cursor: pointer; position: relative;"],
-.tab-content + .row:has(> div[class] > div[class] > .group-notice),
+.div-bf-pv,
+div[style="position: absolute;bottom: 0px;z-index: 10;"],
+div[data-height="90"][data-width="728"],
 .top-a2db,
-#wrapper > div.hidden-lg:has(> div[class*="sticky"]),
+.modal-body > ul.pop-list,
+body .bot-per,
+.container > div[style^="margin-bottom:"]:has(> div.col-lg-3 > div[data-exo]),
+.container > div[style^="padding:"]:has(> [data-group="content_page"]),
+.tab-content + .row:has(> div[class] > div[class] > .group-notice),
+div[class="row"][style="display: flex;flex-wrap: wrap;"],
+div[data-group^="photo_center_games_"],
+div[data-group^="skyscraper_"],
+div[data-height="250"][data-width="300"],
+#guide-modal,
+.div_sticky2,
+.modal-backdrop,
+.row[style="display: flex;flex-wrap: wrap;"],
+a[href*="//"]:not([href*="comic."]) > [style*="back"],
+a[href*="//"]:not([href*="comic."]) > div[style],
+a[herf*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > img,
+a[href*="//"]:not([href*="comic."]) > img + [style],
+div[data-group][data-width="300"],
+style + div[style="cursor: pointer; position: relative;"],
 
 /* 4hu.tv */
 
+.wrap > div.mod > div.row > dl:has(> dt > a[target="_blank"]:not([href^="/html/"]) > img),
+.couplet-left,
+.wrap > div.mod > div.row > dl:has(> dt > a[target="_blank"]:not([href^="/html/"]) > img),
+.couplet-left,
 
 /* 91porna.com */
 
+.modal-backdrop,
+#tip_modal,
+.modal-backdrop,
+#tip_modal,
+.modal-backdrop,
+.ad-dialog,
+.text-mini:has(> .dx-recommend-icons),
+a.checkNum[target="_blank"]:not([href*="91porna.com"]),
+#app-nav > ul > li:has(> a.app-nav-item[target="_blank"]:not([href*="91porna.com"])),
+div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+.video-items > li:has(> a.checkNum),
+.dx-banner-item,
+.carousel-container-bottom,
+.carousel-container:has(#carouselExampleInterval),
+.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
+div[class^="col"] div.filters:has(a.checkNum),
+.dx-banner-item,
+.checkNum[target="_blank"]:not([href*="91porna.com"]),
+.h-full.swiper,
+.ad-dialog,
+.modal-backdrop,
+.modal-backdrop,
+.ad-dialog,
+.text-mini:has(> .dx-recommend-icons),
+a.checkNum[target="_blank"]:not([href*="91porna.com"]),
+#app-nav > ul > li:has(> a.app-nav-item[target="_blank"]:not([href*="91porna.com"])),
+div[class^="aspect-"]:has(> div > .swiper-backface-hidden),
+.video-items > li:has(> a.checkNum),
+.dx-banner-item,
+.carousel-container-bottom,
+.carousel-container:has(#carouselExampleInterval),
+.row > div.flex-container:has(> a[href][target="_blank"] > img),
+.row > div[class^="col"]:has(> .video-wrap > a.checkNum),
+div[class^="col"] div.filters:has(a.checkNum),
+.dx-banner-item,
+.checkNum[target="_blank"]:not([href*="91porna.com"]),
+.h-full.swiper,
+.ad-dialog,
+.modal-backdrop,
 
 /* 91porn.com */
 
@@ -74,9 +143,6 @@ style + div[style="cursor: pointer; position: relative;"],
 /* bi-girl.net */
 
 
-/* bing.com */
-
-
 /* cnys.tv */
 
 
@@ -95,9 +161,6 @@ style + div[style="cursor: pointer; position: relative;"],
 /* dnt92ffcqr0xu.cloudfront.net */
 
 
-/* google.com */
-
-
 /* hanime1.me */
 
 
@@ -111,9 +174,6 @@ style + div[style="cursor: pointer; position: relative;"],
 
 
 /* huaren.live */
-
-
-/* huavod.top */
 
 
 /* iyf.tv */
@@ -153,6 +213,9 @@ style + div[style="cursor: pointer; position: relative;"],
 
 
 /* njav.com */
+
+
+/* nnhanman.xyz */
 
 
 /* novel543.com */

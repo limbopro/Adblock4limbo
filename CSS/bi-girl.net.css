@@ -1,15 +1,15 @@
 /* bi-girl.net */
-body > #container + div[id][class*=" "],
-div[class^="ad_"],
 #pc_text-10,
-[style*="cursor:"][style*="position: fixed;"][style*="z-index:"],
-[style*="cursor:"][style*="user-select: none;"][style*="z-index:"],
-[style*="cursor:"][style*="z-index:"][style*="position: fixed;"],
-[style*="cursor:"][style*="z-index:"][style*="transform"],
+.toppage_av,
+div[class^="ad_"],
 .top_link,
-.top_link_text_sp,
 .top_link_title,
-.toppage_av
+.top_link_text_sp,
+[style*="cursor:"][style*="user-select: none;"][style*="z-index:"],
+[style*="cursor:"][style*="z-index:"][style*="transform"],
+[style*="cursor:"][style*="z-index:"][style*="position: fixed;"],
+body > #container + div[id][class*=" "],
+[style*="cursor:"][style*="position: fixed;"][style*="z-index:"]
  {
     display: none !important;
     pointer-events: none !important;

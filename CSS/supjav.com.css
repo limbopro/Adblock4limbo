@@ -1,6 +1,6 @@
 /* supjav.com */
-.simpleToast,
-.video-wrap > div.right
+.video-wrap > div.right,
+.simpleToast
  {
     display: none !important;
     pointer-events: none !important;

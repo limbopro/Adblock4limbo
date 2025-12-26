@@ -1,46 +1,46 @@
 /* bbc.com */
-.app__domestic-disclaimer,
-.article-body-ad-slot,
-.article-share-tools,
-.article__side-mpu,
 .bbc-n7zdg2,
-button[aria-label="share"],
-button[data-testid="socialShareTriggerButton"],
 [class*="-ConsentBanner"],
-[data-component="ad-slot"],
 div[class*="DialogBackdrop"],
-div[class*="TagShareWrapper"],
-div[data-testid="share-tools-container"],
-div[id^="piano-inline"],
-header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="ltr"]:not([class*="-Banner"]),
 header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="rtl"]:not([class*="-Banner"]),
-header[role="banner"] > div[dir="ltr"][class^="Wrapper"]:not([class^="Banner"]),
+header[role="banner"] > div[class^="bbc-"] > div[class^="bbc-"][dir="ltr"]:not([class*="-Banner"]),
 header[role="banner"] > div[dir="rtl"],
-#leaderboard-aside-content,
-li[class*="-ListItem"]:has(div.dotcom-ad),
-li:has(> div > a[href^="https://www.bbc.com/"][href*="/send/"]),
-.lx-share-tools,
-.lx-stream-post__footer-share,
-main > div[class^="bbc-"]:has(> p > a[href^="https://www.whatsapp.com/channel/"]),
-main > div > section[aria-label="Информация"],
-#mpu-side-aside-content,
-.nw-c-breaking-news-banner,
-.nw-c-leaderboard-ad,
-section[aria-labelledby="podcast-promo"],
-section[aria-labelledby="Подписывайтесь-на-наши-соцсети-и-рассылку"],
-section[aria-label="Уведомление"],
-section[class*="AdContainer"],
-section[class^="AdContainer-"],
-section[data-e2e="advertisement"],
-.share,
+header[role="banner"] > div[dir="ltr"][class^="Wrapper"]:not([class^="Banner"]),
 #sign_in,
 #sign_in-bg,
+.nw-c-breaking-news-banner,
+main > div[class^="bbc-"]:has(> p > a[href^="https://www.whatsapp.com/channel/"]),
+section[aria-labelledby="podcast-promo"],
+section[aria-labelledby="Подписывайтесь-на-наши-соцсети-и-рассылку"],
+ul[role="list"] > li:has(> div[class] >  a[href^="https://www.bbc.com/russian/send/"]),
+li:has(> div > a[href^="https://www.bbc.com/"][href*="/send/"]),
+#zephr-message,
+.app__domestic-disclaimer,
+div[id^="piano-inline"],
+main > div > section[aria-label="Информация"],
+section[aria-label="Уведомление"],
 .social:not(body),
-#sticky-mpu:has(.dotcom-ad-inner),
+.share,
+div[data-testid="share-tools-container"],
+button[data-testid="socialShareTriggerButton"],
+button[aria-label="share"],
+div[class*="TagShareWrapper"],
+.lx-stream-post__footer-share,
+.lx-share-tools,
+.article-share-tools,
 .tempShareToolsHolder,
 .twite__share-button,
-ul[role="list"] > li:has(> div[class] >  a[href^="https://www.bbc.com/russian/send/"]),
-#zephr-message
+.article__side-mpu,
+.article-body-ad-slot,
+.nw-c-leaderboard-ad,
+section[class^="AdContainer-"],
+#leaderboard-aside-content,
+#mpu-side-aside-content,
+[data-component="ad-slot"],
+section[data-e2e="advertisement"],
+#sticky-mpu:has(.dotcom-ad-inner),
+li[class*="-ListItem"]:has(div.dotcom-ad),
+section[class*="AdContainer"]
  {
     display: none !important;
     pointer-events: none !important;

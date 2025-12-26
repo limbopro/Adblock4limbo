@@ -1,24 +1,24 @@
 /* techcrunch.com */
-.announcement-banner[style="position: fixed;"],
-.article__social-share,
-.article__social-vertical-share,
-body div[data-testid="text-html"]:has(> div.showTemplate > div.pn-ribbon),
 #consent-gpc-popUp,
-div[class*="ad-unit"],
-div[class*="-newsletter-signup-compact"],
+body div[data-testid="text-html"]:has(> div.showTemplate > div.pn-ribbon),
+.rightrail--promo,
+.piano-ribbon-container iframe[id^="offer_"],
+.announcement-banner[style="position: fixed;"],
+.surveymonkey-popup,
+.wp-block-group:has(> .newsletter-header),
 .hbspt-form,
-.marfeel-experience-event-cta,
+div[class*="-newsletter-signup-compact"],
 .newsletter-signup-block,
 .newsletters-signup,
-.piano-ribbon-container iframe[id^="offer_"],
-.post-block + a[href="/events/tc-early-stage-2023/"],
-.rightrail--promo,
-.rightrail-promo,
-.surveymonkey-popup,
-.upcoming-events,
-.wp-block-group:has(> .newsletter-header),
 .wp-block-techcrunch-inline-cta,
-.wp-block-techcrunch-social-share
+.rightrail-promo,
+.upcoming-events,
+.post-block + a[href="/events/tc-early-stage-2023/"],
+.wp-block-techcrunch-social-share,
+.article__social-vertical-share,
+.article__social-share,
+.marfeel-experience-event-cta,
+div[class*="ad-unit"]
  {
     display: none !important;
     pointer-events: none !important;

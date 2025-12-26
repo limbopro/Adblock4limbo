@@ -30,35 +30,74 @@
  * ... (其他注释不变) ...
  */
 
-const CSS_URL = "https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/CSS/Adblock4limbo.user.css";
-const JS_URL = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.user.js";
-const fc_JS_URL = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo.function.js";
-const agent_JS_URL = "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/isAgent.js"; // 无实意
+//const CSS_URL = "https://limbopro.com/CSS/Adblock4limbo.user.css";
+const privacyGate_style = `
+<head>
+<style id="privacy-gate">
+    /* 初始强制黑屏 */
+    html.locked body { 
+        visibility: hidden !important; 
+        background: #000 !important;  
+    }
+</style>
+`
+
+const privacyGate_script = `
+<script>
+    (function() {
+        const isOn = localStorage.getItem('nsfw_status') === 'on';
+        const isLocked = localStorage.getItem('is_locked') === 'true';
+        const hasPwd = !!localStorage.getItem('privateProtect');
+
+        // 只有在“开启了保护”且“处于锁定状态或没设密码”时，才保持黑屏
+        if (isOn && (isLocked || !hasPwd)) {
+            document.documentElement.classList.add('locked');
+        } else {
+            // 否则立即移除样式，显示正常页面
+            var gate = document.getElementById('privacy-gate');
+            if (gate) gate.remove();
+        }
+    })();
+</script>
+</body>
+`
+
+
+const JS_URL = "https://limbopro.com/Adguard/Adblock4limbo.user.js";
+const fc_JS_URL = "https://limbopro.com/Adguard/Adblock4limbo.function.js";
+const fd_JS_URL = "https://limbopro.com/Adguard/elementBlocker.user.js";
+const agent_JS_URL = "https://limbopro.com/Adguard/isAgent.js"; // 无实意
 
 // 基础注入内容
-const TITLE_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
-<script type="text/javascript" async="async" src="${fc_JS_URL}"></script>
-<script type="text/javascript" async="async" src="${JS_URL}">
-<script type="text/javascript" async="async" src="${agent_JS_URL}"></script>
+// const TITLE_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
+// 不再默认加载全局 Adgurad基础过滤器（CSS） 如需去导航-工具箱开启
+const TITLE_INJECTION_BASE = `
+<script type="text/javascript" defer src="${JS_URL}"></script>
+<script type="text/javascript" defer src="${fc_JS_URL}"></script>
+<script type="text/javascript" defer src="${fd_JS_URL}"></script>
+<script type="text/javascript" defer src="${agent_JS_URL}"></script>
 `;
 
-const BODY_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
-<script type="text/javascript" async="async" src="${fc_JS_URL}">
-<script type="text/javascript" async="async" src="${JS_URL}">
-<script type="text/javascript" async="async" src="${agent_JS_URL}"></script>
+// const BODY_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
+// 不再默认加载全局 Adgurad基础过滤器（CSS） 如需去导航-工具箱开启
+const BODY_INJECTION_BASE = `
+<script type="text/javascript" defer src="${JS_URL}">
+<script type="text/javascript" defer src="${fc_JS_URL}"></script>
+<script type="text/javascript" defer src="${fd_JS_URL}"></script>
+<script type="text/javascript" defer src="${agent_JS_URL}"></script>
 </body>
 `;
 
 // 正则表达式 (不变)
 const TARGET_SITES_REGEX = /(missav|netflav|hitomi|supjav|njav|javday|91porna|lk1\.supremejav\.com|turbovidhls\.com|trailerhg\.xyz|turbovidhls\.com|turboplayers\.xyz|javggvideo\.xyz|turtleviplay\.xyz|findjav\.com|stbturbo\.xyz|emturbovid\.com)/i;
-const JAVBUS_REGEX = /javbus/i;
+const JAVBUS_REGEX = /(javbus)/i;
 const DMM_REGEX = /dmm\.co/i;
 const MDSP_REGEX = /d1skbu98kuldnf\.cloudfront\.net/i;
 const HUARENLIVE_REGEX = /(huaren|huavod)\.(live|top)\/player\/ec\.php/i;
 
-const TITLE_REGEX = /<\/title>/i;
+const TITLE_REGEX = /<head>/i;
 const BODY_REGEX = /<\/body>/i;
-const WINDOW_OPEN_REGEX = /window\.open\s*\(/g; 
+const WINDOW_OPEN_REGEX = /window\.open\s*\(/g;
 
 // ===========================================
 // 用户提供的 getRootDomain 函数
@@ -138,10 +177,11 @@ function main() {
 
         let modified = false;
         let newBody = body;
-        
+
+
         // --- 动态 CSS 注入逻辑 (使用纯字符串和正则提取 hostname) ---
         let hostname = '';
-        
+
         // 提取 hostname: 匹配 (http:// 或 https://) 之后，到第一个 / 或 : 之前的字符串
         // (?:https?:\/\/)? : 匹配可选的 http:// 或 https://
         // ([^:\/\n?]+) : 捕获组，匹配非 : / ? 字符
@@ -163,12 +203,12 @@ function main() {
             domainCSS_Injection_byHand = `<link rel="stylesheet" href="${domainCSS_URLbyHand}" type="text/css" />\n`;
             console.log(`[Adblock4limbo] Injecting domain-specific CSS: ${domainCSS_URL}`);
         } else if (hostname) {
-             console.log(`[Adblock4limbo] Ignored non-standard hostname or IP: ${hostname}`);
+            console.log(`[Adblock4limbo] Ignored non-standard hostname or IP: ${hostname}`);
         }
-        
+
         // 动态组合最终的注入内容
-        const FINAL_TITLE_INJECTION = `</title>\n${TITLE_INJECTION_BASE}${domainCSS_Injection}${domainCSS_Injection_byHand}`;
-        const FINAL_BODY_INJECTION = `\n${BODY_INJECTION_BASE}${domainCSS_Injection}${domainCSS_Injection_byHand}`;
+        const FINAL_TITLE_INJECTION = `<head>\n${TITLE_INJECTION_BASE}${domainCSS_Injection}${domainCSS_Injection_byHand}`;
+        const FINAL_BODY_INJECTION = `\n${domainCSS_Injection}${domainCSS_Injection_byHand}${BODY_INJECTION_BASE}`;
         // --- 动态 CSS 注入逻辑结束 ---
 
 
@@ -189,6 +229,10 @@ function main() {
 
         } else if (isJavbus || isDMM || isMDSP) {
             if (BODY_REGEX.test(newBody)) {
+
+                newBody = newBody.replace(TITLE_REGEX, privacyGate_style) // 插入样式
+                newBody = newBody.replace(BODY_REGEX, privacyGate_script) // 插入脚本
+
                 newBody = newBody.replace(BODY_REGEX, FINAL_BODY_INJECTION);
                 modified = true;
             }
@@ -201,6 +245,10 @@ function main() {
 
         } else {
             if (TITLE_REGEX.test(newBody)) {
+
+                newBody = newBody.replace(TITLE_REGEX, privacyGate_style) // 插入样式
+                newBody = newBody.replace(BODY_REGEX, privacyGate_script) // 插入脚本
+                
                 newBody = newBody.replace(TITLE_REGEX, FINAL_TITLE_INJECTION);
                 modified = true;
             }

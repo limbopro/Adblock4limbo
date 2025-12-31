@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2025.12.21
+// @version      0.2025.12.27
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -286,43 +286,43 @@ var uBlockOrigin = {
      这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
     */
 
-    chn0abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
-    chn0setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
-    abortcurrentscript: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
-    abortonpropertyread: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-read.js", // default.abort-on-property-read.js
-    abortonpropertywrite: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-property-write.js", // default.abort-on-property-write.js
-    abortonstacktrace: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.abort-on-stack-trace.js", // abort-on-stack-trace.js
-    addEventListenerdefuser: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.addEventListener-defuser.js", // default.addEventListener-defuser.js
-    alertbuster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.alert-buster.js", // default.alert-buster.js
-    cookieremover: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.cookie-remover.js", // default.cookie-remover.js
-    disablenewtablinks: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.disable-newtab-links.js", // default.disable-newtab-links.js
-    evaldataprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.evaldata-prune.js", // default.evaldata-prune.js
-    jsonprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.json-prune.js", // default.json-prune.js
-    m3uprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.m3u-prune.js", // default.m3u-prune.js
-    nanosetIntervalbooster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nano-setInterval-booster.js", // default.nano-setInterval-booster.js
-    nanosetTimeoutbooster: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nano-setTimeout-booster.js", // default.nano-setTimeout-booster.js
-    noevalif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.noeval-if.js", // default.noeval-if.js
-    nofetchif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-fetch-if.js", // default.no-fetch-if.js
-    norequestAnimationFrameif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-requestAnimationFrame-if.js", // default.no-requestAnimationFrame-if.js
-    nosetIntervalif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-setInterval-if.js", // default.no-setInterval-if.js
-    nosetTimeoutif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-setTimeout-if.js", // default.no-setTimeout-if.js
-    nowebrtc: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.nowebrtc.js", // default.nowebrtc.js
-    nowindowopenif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-window-open-if.js", // default.no-window-open-if.js
-    noxhrif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.no-xhr-if.js", // default.no-xhr-if.js
-    refreshdefuser: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.refresh-defuser.js", // default.refresh-defuser.js
-    removeattr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-attr.js", // default.remove-attr.js
-    removeclass: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-class.js", // default.remove-class.js
-    removenodetext: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.remove-node-text.js", // default.remove-node-text.js
-    replacenodetext: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.replace-node-text.js", // default.replace-node-text.js
-    setattr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-attr.js", // default.set-attr.js
-    setconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-constant.js", // default.set-constant.js
-    setcookie: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-cookie.js", // default.set-cookie.js
-    setlocalstorageitem: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.set-local-storage-item.js", // set-local-storage-item.js
-    spoofcss: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.spoof-css.js", // default.spoof-css.js
-    trustedsetconstant: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.trusted-set-constant.js", // default.trusted-set-constant.js
-    trustedsetcookie: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.trusted-set-cookie.js", // default.trusted-set-cookie.js
-    windowcloseif: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.window-close-if.js", // default.window-close-if.js
-    xmlprune: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/scripting/scriptlet/default.xml-prune.js", // default.xml-prune.js
+    chn0abortcurrentscript: "https://limbopro.com/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
+    chn0setconstant: "https://limbopro.com/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
+    abortcurrentscript: "https://limbopro.com/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
+    abortonpropertyread: "https://limbopro.com/Adguard/scripting/scriptlet/default.abort-on-property-read.js", // default.abort-on-property-read.js
+    abortonpropertywrite: "https://limbopro.com/Adguard/scripting/scriptlet/default.abort-on-property-write.js", // default.abort-on-property-write.js
+    abortonstacktrace: "https://limbopro.com/Adguard/scripting/scriptlet/default.abort-on-stack-trace.js", // abort-on-stack-trace.js
+    addEventListenerdefuser: "https://limbopro.com/Adguard/scripting/scriptlet/default.addEventListener-defuser.js", // default.addEventListener-defuser.js
+    alertbuster: "https://limbopro.com/Adguard/scripting/scriptlet/default.alert-buster.js", // default.alert-buster.js
+    cookieremover: "https://limbopro.com/Adguard/scripting/scriptlet/default.cookie-remover.js", // default.cookie-remover.js
+    disablenewtablinks: "https://limbopro.com/Adguard/scripting/scriptlet/default.disable-newtab-links.js", // default.disable-newtab-links.js
+    evaldataprune: "https://limbopro.com/Adguard/scripting/scriptlet/default.evaldata-prune.js", // default.evaldata-prune.js
+    jsonprune: "https://limbopro.com/Adguard/scripting/scriptlet/default.json-prune.js", // default.json-prune.js
+    m3uprune: "https://limbopro.com/Adguard/scripting/scriptlet/default.m3u-prune.js", // default.m3u-prune.js
+    nanosetIntervalbooster: "https://limbopro.com/Adguard/scripting/scriptlet/default.nano-setInterval-booster.js", // default.nano-setInterval-booster.js
+    nanosetTimeoutbooster: "https://limbopro.com/Adguard/scripting/scriptlet/default.nano-setTimeout-booster.js", // default.nano-setTimeout-booster.js
+    noevalif: "https://limbopro.com/Adguard/scripting/scriptlet/default.noeval-if.js", // default.noeval-if.js
+    nofetchif: "https://limbopro.com/Adguard/scripting/scriptlet/default.no-fetch-if.js", // default.no-fetch-if.js
+    norequestAnimationFrameif: "https://limbopro.com/Adguard/scripting/scriptlet/default.no-requestAnimationFrame-if.js", // default.no-requestAnimationFrame-if.js
+    nosetIntervalif: "https://limbopro.com/Adguard/scripting/scriptlet/default.no-setInterval-if.js", // default.no-setInterval-if.js
+    nosetTimeoutif: "https://limbopro.com/Adguard/scripting/scriptlet/default.no-setTimeout-if.js", // default.no-setTimeout-if.js
+    nowebrtc: "https://limbopro.com/Adguard/scripting/scriptlet/default.nowebrtc.js", // default.nowebrtc.js
+    nowindowopenif: "https://limbopro.com/Adguard/scripting/scriptlet/default.no-window-open-if.js", // default.no-window-open-if.js
+    noxhrif: "https://limbopro.com/Adguard/scripting/scriptlet/default.no-xhr-if.js", // default.no-xhr-if.js
+    refreshdefuser: "https://limbopro.com/Adguard/scripting/scriptlet/default.refresh-defuser.js", // default.refresh-defuser.js
+    removeattr: "https://limbopro.com/Adguard/scripting/scriptlet/default.remove-attr.js", // default.remove-attr.js
+    removeclass: "https://limbopro.com/Adguard/scripting/scriptlet/default.remove-class.js", // default.remove-class.js
+    removenodetext: "https://limbopro.com/Adguard/scripting/scriptlet/default.remove-node-text.js", // default.remove-node-text.js
+    replacenodetext: "https://limbopro.com/Adguard/scripting/scriptlet/default.replace-node-text.js", // default.replace-node-text.js
+    setattr: "https://limbopro.com/Adguard/scripting/scriptlet/default.set-attr.js", // default.set-attr.js
+    setconstant: "https://limbopro.com/Adguard/scripting/scriptlet/default.set-constant.js", // default.set-constant.js
+    setcookie: "https://limbopro.com/Adguard/scripting/scriptlet/default.set-cookie.js", // default.set-cookie.js
+    setlocalstorageitem: "https://limbopro.com/Adguard/scripting/scriptlet/default.set-local-storage-item.js", // set-local-storage-item.js
+    spoofcss: "https://limbopro.com/Adguard/scripting/scriptlet/default.spoof-css.js", // default.spoof-css.js
+    trustedsetconstant: "https://limbopro.com/Adguard/scripting/scriptlet/default.trusted-set-constant.js", // default.trusted-set-constant.js
+    trustedsetcookie: "https://limbopro.com/Adguard/scripting/scriptlet/default.trusted-set-cookie.js", // default.trusted-set-cookie.js
+    windowcloseif: "https://limbopro.com/Adguard/scripting/scriptlet/default.window-close-if.js", // default.window-close-if.js
+    xmlprune: "https://limbopro.com/Adguard/scripting/scriptlet/default.xml-prune.js", // default.xml-prune.js
 }
 
 var js_common = {
@@ -839,8 +839,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //cloudflare_captchaBypass();
             css_adsRemove(adsMax.css.avple);
             if (typeof third_party_fileX == 'function') {
-            	            third_party_fileX("script", adsMax.js.avple, "body")
-}
+                third_party_fileX("script", adsMax.js.avple, "body")
+            }
             break;
         case '18comic':
             css_adsRemove(adsMax.css.comic_18);
@@ -2445,45 +2445,47 @@ adsDomain_switch(values()) // 动手吧
 这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
 */
 
+
 // uBlock Origin 脚本添加
-window.uBlockOrigin_add = function uBlockOrigin_add() {
-    js_adsRemove(uBlockOrigin.chn0abortcurrentscript);
-    js_adsRemove(uBlockOrigin.chn0setconstant);
-    js_adsRemove(uBlockOrigin.abortcurrentscript);
-    js_adsRemove(uBlockOrigin.abortonpropertyread);
-    js_adsRemove(uBlockOrigin.abortonpropertywrite);
-    js_adsRemove(uBlockOrigin.abortonstacktrace);
-    js_adsRemove(uBlockOrigin.addEventListenerdefuser);
-    js_adsRemove(uBlockOrigin.alertbuster);
-    js_adsRemove(uBlockOrigin.cookieremover);
-    js_adsRemove(uBlockOrigin.disablenewtablinks);
-    js_adsRemove(uBlockOrigin.evaldataprune);
-    js_adsRemove(uBlockOrigin.jsonprune);
-    js_adsRemove(uBlockOrigin.m3uprune);
-    js_adsRemove(uBlockOrigin.nanosetIntervalbooster);
-    js_adsRemove(uBlockOrigin.nanosetTimeoutbooster);
-    js_adsRemove(uBlockOrigin.noevalif);
-    js_adsRemove(uBlockOrigin.nofetchif);
-    js_adsRemove(uBlockOrigin.norequestAnimationFrameif);
-    js_adsRemove(uBlockOrigin.nosetIntervalif);
-    js_adsRemove(uBlockOrigin.nosetTimeoutif);
-    js_adsRemove(uBlockOrigin.nowebrtc);
-    js_adsRemove(uBlockOrigin.nowindowopenif);
-    js_adsRemove(uBlockOrigin.noxhrif);
-    js_adsRemove(uBlockOrigin.refreshdefuser);
-    js_adsRemove(uBlockOrigin.removeattr);
-    js_adsRemove(uBlockOrigin.removeclass);
-    js_adsRemove(uBlockOrigin.removenodetext);
-    js_adsRemove(uBlockOrigin.replacenodetext);
-    js_adsRemove(uBlockOrigin.setattr);
-    js_adsRemove(uBlockOrigin.setconstant);
-    js_adsRemove(uBlockOrigin.setcookie);
-    js_adsRemove(uBlockOrigin.setlocalstorageitem);
-    js_adsRemove(uBlockOrigin.spoofcss);
-    js_adsRemove(uBlockOrigin.trustedsetconstant);
-    js_adsRemove(uBlockOrigin.trustedsetcookie);
-    js_adsRemove(uBlockOrigin.windowcloseif);
-    js_adsRemove(uBlockOrigin.xmlprune);
+window.uBlockOrigin_add = function () {
+    loadExternalResourceFireAndForget('script', uBlockOrigin.chn0abortcurrentscript, 'head', 'chn0abortcurrentscript');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.chn0setconstant, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.abortcurrentscript, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.abortonpropertyread, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.abortonpropertywrite, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.abortonstacktrace, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.addEventListenerdefuser, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.alertbuster, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.cookieremover, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.disablenewtablinks, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.evaldataprune, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.jsonprune, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.m3uprune, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nanosetIntervalbooster, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nanosetTimeoutbooster, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.noevalif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nofetchif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.norequestAnimationFrameif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nosetIntervalif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nosetTimeoutif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nowebrtc, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.nowindowopenif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.noxhrif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.refreshdefuser, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.removeattr, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.removeclass, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.removenodetext, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.replacenodetext, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.setattr, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.setconstant, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.setcookie, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.setlocalstorageitem, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.spoofcss, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.trustedsetconstant, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.trustedsetcookie, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.windowcloseif, 'head');
+    loadExternalResourceFireAndForget('script', uBlockOrigin.xmlprune, 'head');
+
 }
 
 /* End */
@@ -2543,9 +2545,9 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
                 if (!isFunctionxLoaded) {
                     // 首次尝试加载脚本
                     if (typeof third_party_fileX == 'function') {
-                    third_party_fileX("script", adsMax.js.functionx, "body"); // js 外部引用 标签 <script>
-                    console.log('functionx.js 首次引用成功，等待生效...');
-                    clearInterval(daohang); // 首次加载后就停止检查
+                        third_party_fileX("script", adsMax.js.functionx, "body"); // js 外部引用 标签 <script>
+                        console.log('functionx.js 首次引用成功，等待生效...');
+                        clearInterval(daohang); // 首次加载后就停止检查
                     }
 
                 } else if (hasHomePage) { // *** 使用新的变量名 ***
@@ -5613,9 +5615,5 @@ setInterval(() => {
         attemptFixScrolling();
     }
 }, 5000)
-
-
-
-
 
 // 动态移除鸟鸟韩漫透明弹窗

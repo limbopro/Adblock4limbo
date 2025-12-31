@@ -1,4 +1,3 @@
-
 /**
  * 状态管理、循环清理与计数器显示脚本 (支持动态切换模式)
  * 排除条件：不移除包含 'notranslate' 类名、ID 包含 'gemini' 或 Class 包含 'confirm' 的元素。
@@ -105,16 +104,17 @@
 
         const isLooping = intervalId !== null;
 
-        // ⭐️ 优化后的文本：强调“透明元素”
+        // ⭐️ 仅改动以下颜色和文本逻辑，保持权重优先
         if (isLooping) {
-            // 运行中状态：提示用户点击即可停止，并显示累计清理数
-            button.textContent = `⏸正在清理(已清${totalRemovedCount}个)🟢`;
-            button.style.backgroundColor = '#28a745'; // 绿色
+            button.textContent = `⏸正在清理(已清${totalRemovedCount}个)`;
+            // 开启：背景绿色，文字白色
+            button.style.setProperty('background-color', '#28a745', 'important');
+            button.style.setProperty('color', 'white', 'important');
         } else {
-            // 未运行状态：提示用户点击即可启动，并显示累计清理数
-            // button.textContent = `▶️启动清理透明元素(累计${totalRemovedCount}个)🔴`;
-            button.textContent = `▶️启动清理透明元素🔴`;
-            button.style.backgroundColor = 'rgb(52 57 50)'; // 原始紫色/红色
+            button.textContent = `▶️清理透明元素`;
+            // 关闭：背景 rgb(57 64 56)，文字 #9a9a9a
+            button.style.setProperty('background-color', 'rgb(57 64 56)', 'important');
+            button.style.setProperty('color', '#9a9a9a', 'important');
         }
     }
 
@@ -143,11 +143,12 @@
 
         button.addEventListener('click', toggleClearState);
 
-        updateButtonText(false);
-
+        // 初始化时也调用一次，确保颜色正确
         const initialRepeating = localStorage.getItem(KEY) === 'true';
         if (initialRepeating) {
             startLoop(false);
+        } else {
+            updateButtonText(false);
         }
     }
 

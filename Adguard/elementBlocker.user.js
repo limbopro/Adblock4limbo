@@ -916,6 +916,7 @@
     #manual-xpath-add,
     #manual-xpath-runCode,
     #manual-css-webdebug,
+    #crazyMode,
     #manual-css-switchClear {
      background: rgb(57 64 56);
         color: #9a9a9a;
@@ -2075,7 +2076,7 @@ border: white !important;
         // --- 1. UI 渲染 ---
         resultWin.innerHTML = `
 
-        <div id="sel-close-main" style="
+        <!--div id="sel-close-main" style="
         position: absolute;
         top: 8px;
         right: 12px;
@@ -2085,7 +2086,7 @@ border: white !important;
         font-weight: bold;
         line-height: 1;
         z-index: 10;
-    " onmouseover="this.style.color='#ff4d4f'" onmouseout="this.style.color='#999'">&times;</div>
+    " onmouseover="this.style.color='#ff4d4f'" onmouseout="this.style.color='#999'">&times;</div--!>
 
     <span class="sel-title">元素CSS选择器获取与调试 (测试中...)</span>
   <div class="warm-tips" style="box-shadow: inset 1px 1px 4px 4px rgba(0, 0, 0, 0.2);background: #f0f5ff !important;border: 1px solid #adc6ff;padding: 10px 12px;border-radius: 4px;margin: 5px 0 10px 0;font-size: 11px;color: #1d39c4;line-height: 1.6;">
@@ -2135,9 +2136,9 @@ border: white !important;
         document.body.appendChild(resultWin);
 
         // 绑定主窗口关闭事件
-        document.getElementById('sel-close-main').onclick = () => {
+        /*document.getElementById('sel-close-main').onclick = () => {
             resetMode()
-        };
+        };*/
 
         // 1. 获取刚刚生成的元素引用
         const editBtn = resultWin.querySelector('#sel-edit');
@@ -2601,7 +2602,11 @@ border: white !important;
             }
         };
 
-        resultWin.querySelector('#sel-reset').onclick = resetMode;
+/*
+resultWin.querySelector('sel-close-main').onclick = resetMode;
+*/
+
+resultWin.querySelector('#sel-reset').onclick = resetMode;
         //resultWin.querySelector('#sel-exit')?.onclick = destroyTool;
         document.addEventListener('mousemove', onMove, true);
         document.addEventListener('click', onClick, true);
@@ -3654,8 +3659,13 @@ border: white !important;
      ⚙️ Web 存储调试器
     </button>
 
+     <button id="crazyMode"     
+    onclick="window.crazyMode(this)">
+     🔴狂野模式(OFF) 
+    </button>
+
     <button id="manual-css-switchClear">
-    ▶️启动清理透明元素🔴
+    ▶️清理透明元素
     </button>
 </div>
 
@@ -4363,6 +4373,16 @@ border: white !important;
                 // 如果用户关闭元素屏蔽/追踪器面板
             }
         }
+
+
+
+if (e.target && e.target.id === 'sel-close-main') {
+            if (typeof resetMode== 'function') {
+                resetMode(); 
+            }
+}
+
+
 
         setTimeout(() => {
             // 1. 先定义好函数 (或确保函数已在 window 作用域)

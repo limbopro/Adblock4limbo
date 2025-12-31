@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 23 Dec 2025 11:11:03 GMT
-# entries:        3482
+# last updated:   Wed, 31 Dec 2025 14:43:39 GMT
+# entries:        3493
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -905,6 +905,7 @@ DOMAIN-SUFFIX,annoyingacoustics.com, reject
 DOMAIN-SUFFIX,anrdoezrs.net, reject
 DOMAIN-SUFFIX,anstrex.com, reject
 DOMAIN-SUFFIX,anxiousapples.com, reject
+DOMAIN-SUFFIX,api.affiliations.site, reject
 DOMAIN-SUFFIX,api.amplitude.com, reject
 DOMAIN-SUFFIX,api.appmetrica.yandex.ru, reject
 DOMAIN-SUFFIX,api.eu.amplitude.com, reject
@@ -1255,6 +1256,7 @@ DOMAIN-SUFFIX,click.i.southwesternrailway.com, reject
 DOMAIN-SUFFIX,click.infoblox.com, reject
 DOMAIN-SUFFIX,click.justwatch.com, reject
 DOMAIN-SUFFIX,click.kmindex.ru, reject
+DOMAIN-SUFFIX,click.liftoff.io, reject
 DOMAIN-SUFFIX,click.mail.hotels.com, reject
 DOMAIN-SUFFIX,click.mail.salesforce.com, reject
 DOMAIN-SUFFIX,click.mailing.ticketmaster.com, reject
@@ -1282,6 +1284,7 @@ DOMAIN-SUFFIX,clickedyclick.com, reject
 DOMAIN-SUFFIX,clickfuse.com, reject
 DOMAIN-SUFFIX,clickhereforcellphones.com, reject
 DOMAIN-SUFFIX,clickngo.pro, reject
+DOMAIN-SUFFIX,clickngo.top, reject
 DOMAIN-SUFFIX,clickonometrics.pl, reject
 DOMAIN-SUFFIX,clicks.checkatrade.com, reject
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk, reject
@@ -1329,6 +1332,7 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com, reject
 DOMAIN-SUFFIX,collector.cdp.cnn.com, reject
 DOMAIN-SUFFIX,colonize.com, reject
 DOMAIN-SUFFIX,colorfulpet.com, reject
+DOMAIN-SUFFIX,coloroptimizer.com, reject
 DOMAIN-SUFFIX,comfortablecheese.com, reject
 DOMAIN-SUFFIX,commissionmonster.com, reject
 DOMAIN-SUFFIX,communications.melitaltd.com, reject
@@ -1346,6 +1350,7 @@ DOMAIN-SUFFIX,consciouscheese.com, reject
 DOMAIN-SUFFIX,consensad.com, reject
 DOMAIN-SUFFIX,consensu.org, reject
 DOMAIN-SUFFIX,contadores.miarroba.com, reject
+DOMAIN-SUFFIX,content-loader.com, reject
 DOMAIN-SUFFIX,content.acc-hd.de, reject
 DOMAIN-SUFFIX,content.ad, reject
 DOMAIN-SUFFIX,content22.online.citi.com, reject
@@ -1466,6 +1471,7 @@ DOMAIN-SUFFIX,didtheyreadit.com, reject
 DOMAIN-SUFFIX,digestiondrawer.com, reject
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com, reject
 DOMAIN-SUFFIX,direct-events-collector.spot.im, reject
+DOMAIN-SUFFIX,direct-promo.pro, reject
 DOMAIN-SUFFIX,directaclick.com, reject
 DOMAIN-SUFFIX,directorym.com, reject
 DOMAIN-SUFFIX,discountclick.com, reject
@@ -1693,6 +1699,8 @@ DOMAIN-SUFFIX,freshrelevance.com, reject
 DOMAIN-SUFFIX,fronttoad.com, reject
 DOMAIN-SUFFIX,frtyj.com, reject
 DOMAIN-SUFFIX,frtyk.com, reject
+DOMAIN-SUFFIX,fudgegenie.com, reject
+DOMAIN-SUFFIX,fullrestore.net, reject
 DOMAIN-SUFFIX,fullstory.com, reject
 DOMAIN-SUFFIX,functionalcrown.com, reject
 DOMAIN-SUFFIX,functionalfeather.com, reject
@@ -2100,6 +2108,7 @@ DOMAIN-SUFFIX,look.opskln.com, reject
 DOMAIN-SUFFIX,look.ufinkln.com, reject
 DOMAIN-SUFFIX,loopme.com, reject
 DOMAIN-SUFFIX,loudlunch.com, reject
+DOMAIN-SUFFIX,lowest-prices.eu, reject
 DOMAIN-SUFFIX,lucidmedia.com, reject
 DOMAIN-SUFFIX,luckyorange.com, reject
 DOMAIN-SUFFIX,ludicrousarch.com, reject
@@ -2435,6 +2444,7 @@ DOMAIN-SUFFIX,oxcash.com, reject
 DOMAIN-SUFFIX,oxen.hillcountrytexas.com, reject
 DOMAIN-SUFFIX,p-n.io, reject
 DOMAIN-SUFFIX,paa-reporting-advertising.amazon, reject
+DOMAIN-SUFFIX,page-checker.eu, reject
 DOMAIN-SUFFIX,page-redirect.eu, reject
 DOMAIN-SUFFIX,pagead.l.google.com, reject
 DOMAIN-SUFFIX,pagefair.com, reject
@@ -2769,6 +2779,7 @@ DOMAIN-SUFFIX,s20dh7e9dh.com, reject
 DOMAIN-SUFFIX,s2d6.com, reject
 DOMAIN-SUFFIX,sabio.us, reject
 DOMAIN-SUFFIX,sadloaf.com, reject
+DOMAIN-SUFFIX,safeoffers.pro, reject
 DOMAIN-SUFFIX,sail-horizon.com, reject
 DOMAIN-SUFFIX,samplesamba.com, reject
 DOMAIN-SUFFIX,samsungacr.com, reject

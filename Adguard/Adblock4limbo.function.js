@@ -32,11 +32,6 @@
 // 各种 function 的集合
 
 
-
-
-
-
-
 (function () {
     const css = `
 /* 给到悬浮窗用 Adblock4limbo 4 function */
@@ -2649,6 +2644,12 @@ loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/pagePr
 loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/geminiScriptCheck.user.js', 'head', 'geminiScriptCheck') // 加载过滤脚本
 // 检查脚本是否已正常挂载 END
 
+
+
+// 狂野模式 START 会加载大量 ublock orgin 默认脚本
+loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/crazyMode.user.js', 'head', '1crazyMode') // 加载过滤脚本
+// 狂野模式 END
+
 //});
 
 // 这里存放导航页各类网站
@@ -3629,6 +3630,12 @@ var dataListbak = {
         {
             "name": "iyf爱壹帆",
             "url": "https://www.iyf.tv/",
+            "target": "_blank",
+            "level": "better"
+        },
+        {
+            "name": "华人直播",
+            "url": "https://huaren.live/",
             "target": "_blank",
             "level": "better"
         },

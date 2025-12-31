@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Tue, 23 Dec 2025 11:11:03 GMT
-# entries:        3482
+# last updated:   Wed, 31 Dec 2025 14:43:39 GMT
+# entries:        3493
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -905,6 +905,7 @@ DOMAIN-SUFFIX,annoyingacoustics.com
 DOMAIN-SUFFIX,anrdoezrs.net
 DOMAIN-SUFFIX,anstrex.com
 DOMAIN-SUFFIX,anxiousapples.com
+DOMAIN-SUFFIX,api.affiliations.site
 DOMAIN-SUFFIX,api.amplitude.com
 DOMAIN-SUFFIX,api.appmetrica.yandex.ru
 DOMAIN-SUFFIX,api.eu.amplitude.com
@@ -1255,6 +1256,7 @@ DOMAIN-SUFFIX,click.i.southwesternrailway.com
 DOMAIN-SUFFIX,click.infoblox.com
 DOMAIN-SUFFIX,click.justwatch.com
 DOMAIN-SUFFIX,click.kmindex.ru
+DOMAIN-SUFFIX,click.liftoff.io
 DOMAIN-SUFFIX,click.mail.hotels.com
 DOMAIN-SUFFIX,click.mail.salesforce.com
 DOMAIN-SUFFIX,click.mailing.ticketmaster.com
@@ -1282,6 +1284,7 @@ DOMAIN-SUFFIX,clickedyclick.com
 DOMAIN-SUFFIX,clickfuse.com
 DOMAIN-SUFFIX,clickhereforcellphones.com
 DOMAIN-SUFFIX,clickngo.pro
+DOMAIN-SUFFIX,clickngo.top
 DOMAIN-SUFFIX,clickonometrics.pl
 DOMAIN-SUFFIX,clicks.checkatrade.com
 DOMAIN-SUFFIX,clicks.deliveroo.co.uk
@@ -1329,6 +1332,7 @@ DOMAIN-SUFFIX,collector-dev.cdp-dev.cnn.com
 DOMAIN-SUFFIX,collector.cdp.cnn.com
 DOMAIN-SUFFIX,colonize.com
 DOMAIN-SUFFIX,colorfulpet.com
+DOMAIN-SUFFIX,coloroptimizer.com
 DOMAIN-SUFFIX,comfortablecheese.com
 DOMAIN-SUFFIX,commissionmonster.com
 DOMAIN-SUFFIX,communications.melitaltd.com
@@ -1346,6 +1350,7 @@ DOMAIN-SUFFIX,consciouscheese.com
 DOMAIN-SUFFIX,consensad.com
 DOMAIN-SUFFIX,consensu.org
 DOMAIN-SUFFIX,contadores.miarroba.com
+DOMAIN-SUFFIX,content-loader.com
 DOMAIN-SUFFIX,content.acc-hd.de
 DOMAIN-SUFFIX,content.ad
 DOMAIN-SUFFIX,content22.online.citi.com
@@ -1466,6 +1471,7 @@ DOMAIN-SUFFIX,didtheyreadit.com
 DOMAIN-SUFFIX,digestiondrawer.com
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com
 DOMAIN-SUFFIX,direct-events-collector.spot.im
+DOMAIN-SUFFIX,direct-promo.pro
 DOMAIN-SUFFIX,directaclick.com
 DOMAIN-SUFFIX,directorym.com
 DOMAIN-SUFFIX,discountclick.com
@@ -1693,6 +1699,8 @@ DOMAIN-SUFFIX,freshrelevance.com
 DOMAIN-SUFFIX,fronttoad.com
 DOMAIN-SUFFIX,frtyj.com
 DOMAIN-SUFFIX,frtyk.com
+DOMAIN-SUFFIX,fudgegenie.com
+DOMAIN-SUFFIX,fullrestore.net
 DOMAIN-SUFFIX,fullstory.com
 DOMAIN-SUFFIX,functionalcrown.com
 DOMAIN-SUFFIX,functionalfeather.com
@@ -2100,6 +2108,7 @@ DOMAIN-SUFFIX,look.opskln.com
 DOMAIN-SUFFIX,look.ufinkln.com
 DOMAIN-SUFFIX,loopme.com
 DOMAIN-SUFFIX,loudlunch.com
+DOMAIN-SUFFIX,lowest-prices.eu
 DOMAIN-SUFFIX,lucidmedia.com
 DOMAIN-SUFFIX,luckyorange.com
 DOMAIN-SUFFIX,ludicrousarch.com
@@ -2435,6 +2444,7 @@ DOMAIN-SUFFIX,oxcash.com
 DOMAIN-SUFFIX,oxen.hillcountrytexas.com
 DOMAIN-SUFFIX,p-n.io
 DOMAIN-SUFFIX,paa-reporting-advertising.amazon
+DOMAIN-SUFFIX,page-checker.eu
 DOMAIN-SUFFIX,page-redirect.eu
 DOMAIN-SUFFIX,pagead.l.google.com
 DOMAIN-SUFFIX,pagefair.com
@@ -2769,6 +2779,7 @@ DOMAIN-SUFFIX,s20dh7e9dh.com
 DOMAIN-SUFFIX,s2d6.com
 DOMAIN-SUFFIX,sabio.us
 DOMAIN-SUFFIX,sadloaf.com
+DOMAIN-SUFFIX,safeoffers.pro
 DOMAIN-SUFFIX,sail-horizon.com
 DOMAIN-SUFFIX,samplesamba.com
 DOMAIN-SUFFIX,samsungacr.com

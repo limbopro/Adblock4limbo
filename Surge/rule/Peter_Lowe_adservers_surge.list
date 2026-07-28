@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 16 Jul 2026 08:24:27 GMT
-# entries:        3517
+# last updated:   Sat, 25 Jul 2026 14:18:19 GMT
+# entries:        3513
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -28,6 +28,7 @@ DOMAIN-SUFFIX,2znp09oa.com
 DOMAIN-SUFFIX,30ads.com
 DOMAIN-SUFFIX,3337723.com
 DOMAIN-SUFFIX,33across.com
+DOMAIN-SUFFIX,360yield-basic.com
 DOMAIN-SUFFIX,360yield.com
 DOMAIN-SUFFIX,3lift.com
 DOMAIN-SUFFIX,3o9s.short.gy
@@ -774,7 +775,6 @@ DOMAIN-SUFFIX,advert.bayarea.com
 DOMAIN-SUFFIX,advert.dyna.ultraweb.hu
 DOMAIN-SUFFIX,adverticum.com
 DOMAIN-SUFFIX,adverticum.net
-DOMAIN-SUFFIX,advertipros.com
 DOMAIN-SUFFIX,advertise.com
 DOMAIN-SUFFIX,advertiseireland.com
 DOMAIN-SUFFIX,advertiserurl.com
@@ -820,7 +820,6 @@ DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
 DOMAIN-SUFFIX,affiliatefuture.com
 DOMAIN-SUFFIX,affiliates.allposters.com
-DOMAIN-SUFFIX,affiliates.babylon.com
 DOMAIN-SUFFIX,affiliates.streamray.com
 DOMAIN-SUFFIX,affiliates.thinkhost.net
 DOMAIN-SUFFIX,affiliates.thrixxx.com
@@ -1777,7 +1776,6 @@ DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,goqon.com
 DOMAIN-SUFFIX,gostats.com
 DOMAIN-SUFFIX,gothamads.com
-DOMAIN-SUFFIX,gotoyahoo.com
 DOMAIN-SUFFIX,gotraffic.net
 DOMAIN-SUFFIX,gp.dejanews.com
 DOMAIN-SUFFIX,grandfatherguitar.com
@@ -2974,7 +2972,6 @@ DOMAIN-SUFFIX,stackadapt.com
 DOMAIN-SUFFIX,stakingsmile.com
 DOMAIN-SUFFIX,stalesummer.com
 DOMAIN-SUFFIX,starffa.com
-DOMAIN-SUFFIX,starkscale.com
 DOMAIN-SUFFIX,starrynets.com
 DOMAIN-SUFFIX,starsmarter.com
 DOMAIN-SUFFIX,startapp.com
@@ -3341,7 +3338,6 @@ DOMAIN-SUFFIX,url9467.comms-2.zoopla.co.uk
 DOMAIN-SUFFIX,urlcash.net
 DOMAIN-SUFFIX,us.a1.yimg.com
 DOMAIN-SUFFIX,userreplay.com
-DOMAIN-SUFFIX,userreplay.net
 DOMAIN-SUFFIX,users.maxcluster.net
 DOMAIN-SUFFIX,utils.mediageneral.net
 DOMAIN-SUFFIX,utl-1.com
@@ -3375,7 +3371,6 @@ DOMAIN-SUFFIX,video-stats.video.google.com
 DOMAIN-SUFFIX,videoadex.com
 DOMAIN-SUFFIX,videoadstech.org
 DOMAIN-SUFFIX,videoegg.com
-DOMAIN-SUFFIX,videostats.kakao.com
 DOMAIN-SUFFIX,vidora.com
 DOMAIN-SUFFIX,view4cash.de
 DOMAIN-SUFFIX,viglink.com
@@ -3441,6 +3436,7 @@ DOMAIN-SUFFIX,wholepagecache.com
 DOMAIN-SUFFIX,wickedreports.com
 DOMAIN-SUFFIX,widget.educationdynamics.com
 DOMAIN-SUFFIX,widget.privy.com
+DOMAIN-SUFFIX,widgets.teads-xo.com
 DOMAIN-SUFFIX,wikia-ads.wikia.com
 DOMAIN-SUFFIX,wikiquotations.com
 DOMAIN-SUFFIX,win.iqm.com

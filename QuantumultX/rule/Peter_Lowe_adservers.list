@@ -1,8 +1,8 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 16 Jul 2026 08:24:27 GMT
-# entries:        3517
+# last updated:   Sat, 25 Jul 2026 14:18:19 GMT
+# entries:        3513
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -28,6 +28,7 @@ DOMAIN-SUFFIX,2znp09oa.com, reject
 DOMAIN-SUFFIX,30ads.com, reject
 DOMAIN-SUFFIX,3337723.com, reject
 DOMAIN-SUFFIX,33across.com, reject
+DOMAIN-SUFFIX,360yield-basic.com, reject
 DOMAIN-SUFFIX,360yield.com, reject
 DOMAIN-SUFFIX,3lift.com, reject
 DOMAIN-SUFFIX,3o9s.short.gy, reject
@@ -774,7 +775,6 @@ DOMAIN-SUFFIX,advert.bayarea.com, reject
 DOMAIN-SUFFIX,advert.dyna.ultraweb.hu, reject
 DOMAIN-SUFFIX,adverticum.com, reject
 DOMAIN-SUFFIX,adverticum.net, reject
-DOMAIN-SUFFIX,advertipros.com, reject
 DOMAIN-SUFFIX,advertise.com, reject
 DOMAIN-SUFFIX,advertiseireland.com, reject
 DOMAIN-SUFFIX,advertiserurl.com, reject
@@ -820,7 +820,6 @@ DOMAIN-SUFFIX,affiliate.travelnow.com, reject
 DOMAIN-SUFFIX,affiliate.treated.com, reject
 DOMAIN-SUFFIX,affiliatefuture.com, reject
 DOMAIN-SUFFIX,affiliates.allposters.com, reject
-DOMAIN-SUFFIX,affiliates.babylon.com, reject
 DOMAIN-SUFFIX,affiliates.streamray.com, reject
 DOMAIN-SUFFIX,affiliates.thinkhost.net, reject
 DOMAIN-SUFFIX,affiliates.thrixxx.com, reject
@@ -1777,7 +1776,6 @@ DOMAIN-SUFFIX,googletagservices.com, reject
 DOMAIN-SUFFIX,goqon.com, reject
 DOMAIN-SUFFIX,gostats.com, reject
 DOMAIN-SUFFIX,gothamads.com, reject
-DOMAIN-SUFFIX,gotoyahoo.com, reject
 DOMAIN-SUFFIX,gotraffic.net, reject
 DOMAIN-SUFFIX,gp.dejanews.com, reject
 DOMAIN-SUFFIX,grandfatherguitar.com, reject
@@ -2974,7 +2972,6 @@ DOMAIN-SUFFIX,stackadapt.com, reject
 DOMAIN-SUFFIX,stakingsmile.com, reject
 DOMAIN-SUFFIX,stalesummer.com, reject
 DOMAIN-SUFFIX,starffa.com, reject
-DOMAIN-SUFFIX,starkscale.com, reject
 DOMAIN-SUFFIX,starrynets.com, reject
 DOMAIN-SUFFIX,starsmarter.com, reject
 DOMAIN-SUFFIX,startapp.com, reject
@@ -3341,7 +3338,6 @@ DOMAIN-SUFFIX,url9467.comms-2.zoopla.co.uk, reject
 DOMAIN-SUFFIX,urlcash.net, reject
 DOMAIN-SUFFIX,us.a1.yimg.com, reject
 DOMAIN-SUFFIX,userreplay.com, reject
-DOMAIN-SUFFIX,userreplay.net, reject
 DOMAIN-SUFFIX,users.maxcluster.net, reject
 DOMAIN-SUFFIX,utils.mediageneral.net, reject
 DOMAIN-SUFFIX,utl-1.com, reject
@@ -3375,7 +3371,6 @@ DOMAIN-SUFFIX,video-stats.video.google.com, reject
 DOMAIN-SUFFIX,videoadex.com, reject
 DOMAIN-SUFFIX,videoadstech.org, reject
 DOMAIN-SUFFIX,videoegg.com, reject
-DOMAIN-SUFFIX,videostats.kakao.com, reject
 DOMAIN-SUFFIX,vidora.com, reject
 DOMAIN-SUFFIX,view4cash.de, reject
 DOMAIN-SUFFIX,viglink.com, reject
@@ -3441,6 +3436,7 @@ DOMAIN-SUFFIX,wholepagecache.com, reject
 DOMAIN-SUFFIX,wickedreports.com, reject
 DOMAIN-SUFFIX,widget.educationdynamics.com, reject
 DOMAIN-SUFFIX,widget.privy.com, reject
+DOMAIN-SUFFIX,widgets.teads-xo.com, reject
 DOMAIN-SUFFIX,wikia-ads.wikia.com, reject
 DOMAIN-SUFFIX,wikiquotations.com, reject
 DOMAIN-SUFFIX,win.iqm.com, reject

@@ -1290,6 +1290,7 @@ DOMAIN-SUFFIX,clicks.monzo.com, reject
 DOMAIN-SUFFIX,clicks.njuskalo.hr, reject
 DOMAIN-SUFFIX,clickserve.cc-dt.com, reject
 DOMAIN-SUFFIX,clicksinfo.thefork.co.uk, reject
+DOMAIN-SUFFIX,clicktag.de, reject
 DOMAIN-SUFFIX,clickthruserver.com, reject
 DOMAIN-SUFFIX,clickthrutraffic.com, reject
 DOMAIN-SUFFIX,clicktrack.pubmatic.com, reject
@@ -2544,7 +2545,6 @@ DOMAIN-SUFFIX,popmixradio.com, reject
 DOMAIN-SUFFIX,popmyads.com, reject
 DOMAIN-SUFFIX,popplantation.com, reject
 DOMAIN-SUFFIX,popub.com, reject
-DOMAIN-SUFFIX,popunder.ru, reject
 DOMAIN-SUFFIX,popunhot1.blogspot.com, reject
 DOMAIN-SUFFIX,popup.msn.com, reject
 DOMAIN-SUFFIX,popupmoney.com, reject
@@ -2710,6 +2710,7 @@ DOMAIN-SUFFIX,reklamcsere.hu, reject
 DOMAIN-SUFFIX,reklamdsp.com, reject
 DOMAIN-SUFFIX,relmaxtop.com, reject
 DOMAIN-SUFFIX,rememberdiscussion.com, reject
+DOMAIN-SUFFIX,remox.com, reject
 DOMAIN-SUFFIX,report-1.appmetrica.webvisor.com, reject
 DOMAIN-SUFFIX,report-2.appmetrica.webvisor.com, reject
 DOMAIN-SUFFIX,report-partners.appmetrica.yandex.net, reject
@@ -3354,7 +3355,6 @@ DOMAIN-SUFFIX,vanfireworks.com, reject
 DOMAIN-SUFFIX,vcommission.com, reject
 DOMAIN-SUFFIX,veille-referencement.com, reject
 DOMAIN-SUFFIX,velismedia.com, reject
-DOMAIN-SUFFIX,venetrigni.com, reject
 DOMAIN-SUFFIX,vengefulgrass.com, reject
 DOMAIN-SUFFIX,ventivmedia.com, reject
 DOMAIN-SUFFIX,venturead.com, reject

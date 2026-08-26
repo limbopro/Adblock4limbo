@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2026.07.18
+// @version      0.2026.08.26
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 沉浸式翻译纯JS版本；M3U8/MP4资源链接提取；广告元素屏蔽器；费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -3877,3 +3877,509 @@ var dataListbak = {
 }
 
 // 这里存放导航页各类网站
+
+
+function showLimboAdNotice() {
+    // 已经关闭过，不再显示
+    if (localStorage.getItem('limbo_ad_notice_closed') === '1') {
+        return;
+    }
+
+    // 防止重复创建
+    if (document.getElementById('limbo-ad-notice')) {
+        return;
+    }
+
+    // 创建全屏遮罩
+    const notice = document.createElement('div');
+    notice.id = 'limbo-ad-notice';
+
+    notice.innerHTML = `
+        <div class="limbo-ad-notice-box">
+
+            <button class="limbo-ad-notice-close" aria-label="关闭">
+                ×
+            </button>
+
+            <div class="limbo-ad-notice-icon">
+                🛡️
+            </div>
+
+            <div class="limbo-ad-notice-title">
+                毒奶去广告计划
+            </div>
+
+            <div class="limbo-ad-notice-text">
+                <strong>该网站已加入毒奶去广告计划</strong>
+                <br>
+                本站广告、弹窗等干扰内容已被移除，<br>
+                即刻享受更清爽的浏览体验。
+            </div>
+
+            <a class="limbo-ad-notice-link"
+               href="https://limbopro.com/archives/12904.html"
+               target="_blank"
+               rel="noopener noreferrer">
+                查看计划详情 →
+            </a>
+
+        </div>
+    `;
+
+    // CSS
+    const style = document.createElement('style');
+    style.id = 'limbo-ad-notice-style';
+
+    style.textContent = `
+        /* ================================
+           全屏遮罩
+        ================================= */
+
+        #limbo-ad-notice {
+            position: fixed;
+            inset: 0;
+            z-index: 2147483647;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+            box-sizing: border-box;
+
+            background: rgba(0, 0, 0, 0.45);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            animation: limboNoticeFadeIn .25s ease;
+        }
+
+
+        /* ================================
+           中间卡片
+        ================================= */
+
+        .limbo-ad-notice-box {
+            position: relative;
+
+            width: min(420px, 100%);
+            box-sizing: border-box;
+
+            padding: 42px 35px 36px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.30),
+                0 8px 30px rgba(0, 0, 0, 0.15);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            animation: limboNoticeScaleIn .25s ease;
+        }
+
+
+        /* ================================
+           图标
+        ================================= */
+
+        .limbo-ad-notice-icon {
+            margin-bottom: 15px;
+
+            font-size: 42px;
+            line-height: 1;
+        }
+
+
+        /* ================================
+           标题
+        ================================= */
+
+        .limbo-ad-notice-title {
+            margin-bottom: 12px;
+
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.4;
+
+            color: #222;
+        }
+
+
+        /* ================================
+           正文
+        ================================= */
+
+        .limbo-ad-notice-text {
+            margin-bottom: 22px;
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            color: #555;
+        }
+
+        .limbo-ad-notice-text strong {
+            color: #222;
+            font-weight: 600;
+        }
+
+
+        /* ================================
+           查看详情
+        ================================= */
+
+        .limbo-ad-notice-link {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border-radius: 10px;
+
+            background: #576bff;
+            color: #fff !important;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            text-decoration: none !important;
+
+            transition:
+                transform .2s ease,
+                opacity .2s ease;
+        }
+
+        .limbo-ad-notice-link:hover {
+            transform: translateY(-1px);
+            opacity: .9;
+        }
+
+
+        /* ================================
+           关闭按钮
+        ================================= */
+
+        .limbo-ad-notice-close {
+            position: absolute;
+
+            top: 12px;
+            right: 14px;
+
+            width: 36px;
+            height: 36px;
+
+            padding: 0;
+
+            border: 0;
+            border-radius: 50%;
+
+            background: rgba(0, 0, 0, 0.05);
+
+            color: #777;
+
+            font-size: 26px;
+            line-height: 36px;
+
+            cursor: pointer;
+
+            transition:
+                background .2s ease,
+                color .2s ease;
+        }
+
+        .limbo-ad-notice-close:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #222;
+        }
+
+
+        /* ================================
+           关闭后的中央提示
+        ================================= */
+
+        #limbo-ad-notice-toast {
+            position: fixed;
+
+            z-index: 2147483647;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: min(380px, calc(100vw - 40px));
+
+            box-sizing: border-box;
+
+            padding: 25px 25px 20px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            background: rgba(30, 30, 30, 0.94);
+
+            color: #fff;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            animation: limboToastIn .3s ease;
+        }
+
+        .limbo-ad-notice-toast-title {
+            margin-bottom: 8px;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .limbo-ad-notice-toast-text {
+            color: rgba(255, 255, 255, 0.78);
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .limbo-ad-notice-toast-highlight {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .limbo-ad-notice-toast-timer {
+            margin-top: 12px;
+
+            font-size: 12px;
+
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .limbo-ad-notice-toast-timer b {
+            color: #576bff;
+        }
+
+
+        /* ================================
+           动画定义
+        ================================= */
+
+        @keyframes limboToastIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @keyframes limboNoticeFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes limboNoticeFadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes limboNoticeScaleIn {
+            from {
+                opacity: 0;
+                transform: scale(.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        /* ================================
+           深色模式
+        ================================= */
+
+        @media (prefers-color-scheme: dark) {
+
+            #limbo-ad-notice {
+                background: rgba(0, 0, 0, 0.60);
+            }
+
+            .limbo-ad-notice-box {
+                background: rgba(30, 30, 30, 0.92);
+
+                border-color: rgba(255, 255, 255, 0.12);
+            }
+
+            .limbo-ad-notice-title {
+                color: #fff;
+            }
+
+            .limbo-ad-notice-text {
+                color: #bbb;
+            }
+
+            .limbo-ad-notice-text strong {
+                color: #fff;
+            }
+
+            .limbo-ad-notice-close {
+                background: rgba(255, 255, 255, 0.08);
+                color: #aaa;
+            }
+
+            .limbo-ad-notice-close:hover {
+                background: rgba(255, 255, 255, 0.15);
+                color: #fff;
+            }
+        }
+
+
+        /* ================================
+           手机端
+        ================================= */
+
+        @media (max-width: 480px) {
+
+            .limbo-ad-notice-box {
+                padding: 35px 25px 30px;
+                border-radius: 16px;
+            }
+
+            .limbo-ad-notice-title {
+                font-size: 21px;
+            }
+
+            .limbo-ad-notice-text {
+                font-size: 15px;
+            }
+
+            #limbo-ad-notice-toast {
+                width: calc(100vw - 40px);
+
+                padding: 23px 20px 18px;
+            }
+
+            .limbo-ad-notice-toast-title {
+                font-size: 17px;
+            }
+        }
+    `;
+
+    // 插入页面
+    document.head.appendChild(style);
+    document.body.appendChild(notice);
+
+
+    // ================================
+    // 关闭按钮及倒计时逻辑
+    // ================================
+
+    notice
+        .querySelector('.limbo-ad-notice-close')
+        .addEventListener('click', function () {
+
+            // 1. 记录已经关闭
+            localStorage.setItem(
+                'limbo_ad_notice_closed',
+                '1'
+            );
+
+            // 2. 移除主卡片
+            const box = notice.querySelector(
+                '.limbo-ad-notice-box'
+            );
+            if (box) box.remove();
+
+            // 3. 解除遮罩层对网页点击的拦截
+            notice.style.pointerEvents = 'none';
+
+            // 4. 初始化倒计时变量（8秒）
+            let countdown = 8;
+
+            // 5. 创建中央提示 Toast
+            const toast = document.createElement('div');
+            toast.id = 'limbo-ad-notice-toast';
+
+            // 渲染函数
+            function renderToast(sec) {
+                toast.innerHTML = `
+                    <div class="limbo-ad-notice-toast-title">
+                        ✓ 提示已关闭
+                    </div>
+
+                    <div class="limbo-ad-notice-toast-text">
+                        该提示仅在首次移除该网站广告时提示，<br>
+                        请确保右下角
+                        <span class="limbo-ad-notice-toast-highlight">
+                            「反馈/导航」
+                        </span>
+                        按钮存在。
+                    </div>
+
+                    <div class="limbo-ad-notice-toast-timer">
+                        提示框将在 <b id="limbo-ad-notice-sec">${sec}</b> 秒后自动消失
+                    </div>
+                `;
+            }
+
+            renderToast(countdown);
+            notice.appendChild(toast);
+
+            // 6. 每秒递减逻辑
+            const timer = setInterval(function () {
+                countdown--;
+                const secSpan = document.getElementById('limbo-ad-notice-sec');
+
+                if (secSpan && countdown > 0) {
+                    secSpan.textContent = countdown;
+                }
+
+                if (countdown <= 0) {
+                    clearInterval(timer);
+
+                    // 淡出并移除节点
+                    notice.style.animation =
+                        'limboNoticeFadeOut .4s ease forwards';
+
+                    setTimeout(function () {
+                        notice.remove();
+                        style.remove();
+                    }, 400);
+                }
+            }, 1000);
+        });
+}
+
+
+// 调用函数
+const hostname = window.location.hostname;
+const isIframe = window.self !== window.top;
+
+if (!hostname.includes('limbopro.com') && !hostname.includes('supjav') && !isIframe) {
+    showLimboAdNotice();
+}

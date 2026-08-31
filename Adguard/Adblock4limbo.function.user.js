@@ -1316,6 +1316,7 @@ window.parentElement_add = function parentElement_add() {
             { category: 'SpeedTest', title: '测速工具//' },
             { category: 'ipcheck', title: '网络连通及被墙检测//' },
             { category: 'movies', title: '在线影视//' },
+            { category: 'xyellow', title: '成人影视//', optionalParam: 'onlinemovies' }, // 包含第三个参数
             { category: 'front-end', title: '前端入门//' },
             { category: 'knowledge', title: '男孩子读物//' },
             { category: 'learnlingenglish', title: '我要学英语//' },
@@ -1328,7 +1329,6 @@ window.parentElement_add = function parentElement_add() {
             { category: 'cheeseispower', title: '技术成长平台//' },
             { category: 'Tools', title: '实用工具//' },
             { category: 'imusic', title: '在线音乐//' },
-            { category: 'xyellow', title: '成人影视//', optionalParam: 'onlinemovies' }, // 包含第三个参数
             { category: 'PornMedia', title: '著名片商//' },
             { category: 'comic18', title: '18禁漫画//' },
             { category: 'downloading', title: '资源下载//' },
@@ -2652,6 +2652,177 @@ loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/crazyM
 
 //});
 
+
+
+
+/**
+ * 基于 uBlock Origin 机制的通用属性读取中断函数
+ * @param {string} chain - 属性路径，例如 'Object.prototype.ShouldLoadAds' 或 'a.b.c'
+ * @param {Object} [owner=window] - 起始挂载对象，默认为 window
+ */
+function abortOnPropertyRead(chain, owner = window) {
+    // 1. 生成唯一魔术标记
+    const magic = String.fromCharCode(Date.now() % 26 + 97) +
+        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+
+    // 2. 中断函数
+    const abort = function () {
+        throw new ReferenceError(magic);
+    };
+
+    // 3. 递归构建拦截与延迟绑定
+    const makeProxy = function (currentOwner, pathChain) {
+        const pos = pathChain.indexOf('.');
+
+        // 到达路径终点
+        if (pos === -1) {
+            const desc = Object.getOwnPropertyDescriptor(currentOwner, pathChain);
+            if (!desc || desc.get !== abort) {
+                Object.defineProperty(currentOwner, pathChain, {
+                    get: abort,
+                    set: function () { },
+                    configurable: true
+                });
+            }
+            return;
+        }
+
+        // 处理嵌套路径（如 a.b.c）
+        const prop = pathChain.slice(0, pos);
+        let v = currentOwner[prop];
+        const nextChain = pathChain.slice(pos + 1);
+
+        if (v) {
+            makeProxy(v, nextChain);
+            return;
+        }
+
+        // 若中间节点未建立，监听其 setter，等待赋值时再挂载后续拦截
+        const desc = Object.getOwnPropertyDescriptor(currentOwner, prop);
+        if (desc && desc.set !== undefined) { return; }
+
+        Object.defineProperty(currentOwner, prop, {
+            get: function () { return v; },
+            set: function (a) {
+                v = a;
+                if (a instanceof Object) {
+                    makeProxy(a, nextChain);
+                }
+            },
+            configurable: true
+        });
+    };
+
+    makeProxy(owner, chain);
+
+    // 4. 拦截全局全局 onerror，静默被中断的异常
+    const oe = window.onerror;
+    window.onerror = function (msg, src, line, col, error) {
+        if (typeof msg === 'string' && msg.indexOf(magic) !== -1) {
+            return true; // 吞掉匹配 magic 的错误
+        }
+        if (oe instanceof Function) {
+            return oe(msg, src, line, col, error);
+        }
+    };
+}
+
+// ================= 调用示例 =================
+
+// 示例 1：拦截原型链上的属性
+//// abortOnPropertyRead('Object.prototype.ShouldLoadAds');
+
+// 示例 2：拦截 window 下的嵌套深层属性（支持延迟加载）
+// abortOnPropertyRead('someAdsSDK.config.enabled');
+
+
+/**
+ * 通用调用栈匹配拦截函数 (AOST)
+ * @param {string} path - 监控的属性路径（例如：'Object.prototype.pgmp'）
+ * @param {string|RegExp} stackNeedle - 调用栈需要包含的关键字或正则对象
+ */
+function abortOnStackTrace(path, stackNeedle) {
+    const magic = String.fromCharCode(Date.now() % 26 + 97) +
+        Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+
+    const abort = function () {
+        throw new ReferenceError(magic);
+    };
+
+    const stackRegexp = stackNeedle instanceof RegExp
+        ? stackNeedle
+        : new RegExp(stackNeedle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+
+    const checkStackAndAbort = function () {
+        const stack = (new Error()).stack;
+        if (typeof stack === 'string' && stackRegexp.test(stack)) {
+            console.warn(`[AOST] 匹配到调用栈特征 '${stackNeedle}'，拦截属性 '${path}' 的访问！`);
+            abort();
+        }
+    };
+
+    const makeProxy = function (owner, chain) {
+        const pos = chain.indexOf('.');
+        if (pos === -1) {
+            let currentValue;
+            const desc = Object.getOwnPropertyDescriptor(owner, chain);
+
+            Object.defineProperty(owner, chain, {
+                get: function () {
+                    checkStackAndAbort();
+                    return desc && desc.get ? desc.get.call(owner) : currentValue;
+                },
+                set: function (val) {
+                    checkStackAndAbort();
+                    if (desc && desc.set) {
+                        desc.set.call(owner, val);
+                    } else {
+                        currentValue = val;
+                    }
+                },
+                configurable: true
+            });
+            return;
+        }
+
+        const prop = chain.slice(0, pos);
+        let v = owner[prop];
+        chain = chain.slice(pos + 1);
+        if (v) {
+            makeProxy(v, chain);
+            return;
+        }
+
+        Object.defineProperty(owner, prop, {
+            get: function () { return v; },
+            set: function (a) {
+                v = a;
+                if (a instanceof Object) {
+                    makeProxy(a, chain);
+                }
+            },
+            configurable: true
+        });
+    };
+
+    makeProxy(window, path);
+
+    const oe = window.onerror;
+    window.onerror = function (msg, src, line, col, error) {
+        if (typeof msg === 'string' && msg.indexOf(magic) !== -1) {
+            return true;
+        }
+        if (oe instanceof Function) {
+            return oe(msg, src, line, col, error);
+        }
+    };
+}
+
+// ================= 使用示例 =================
+// 还原你日志里的 AdGuard 规则：
+//// abortOnStackTrace('Object.prototype.pgmp', 'invokeInterstitial');
+
+
 // 这里存放导航页各类网站
 
 // 备份数据列表
@@ -3879,6 +4050,10 @@ var dataListbak = {
 // 这里存放导航页各类网站
 
 
+
+
+
+
 function showLimboAdNotice() {
     // 已经关闭过，不再显示
     if (localStorage.getItem('limbo_ad_notice_closed') === '1') {
@@ -3934,6 +4109,52 @@ function showLimboAdNotice() {
         /* ================================
            全屏遮罩
         ================================= */
+
+
+        /* ================================
+   右下角导航指引箭头与提示框
+================================= */
+.limbo-dh-pointer-box {
+    position: fixed;
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: #576bff;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(87, 107, 255, 0.4);
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.limbo-dh-pointer-box.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 动态浮动动画（指示右下角） */
+@keyframes limboPointerBounce {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(6px, 6px); }
+}
+
+.limbo-dh-arrow-svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: limboPointerBounce 1.2s infinite ease-in-out;
+}
+
 
         #limbo-ad-notice {
             position: fixed;
@@ -4299,6 +4520,10 @@ function showLimboAdNotice() {
     // 关闭按钮及倒计时逻辑
     // ================================
 
+    // ================================
+    // 关闭按钮及倒计时逻辑
+    // ================================
+
     notice
         .querySelector('.limbo-ad-notice-close')
         .addEventListener('click', function () {
@@ -4318,40 +4543,112 @@ function showLimboAdNotice() {
             // 3. 解除遮罩层对网页点击的拦截
             notice.style.pointerEvents = 'none';
 
-            // 4. 初始化倒计时变量（8秒）
-            let countdown = 8;
+            // 4. 初始化倒计时变量（30秒）
+            let countdown = 30;
+            let timer = null; // 提升 timer 作用域
+
+            // 定义直接销毁节点的函数
+            function destroyNotice() {
+                if (timer) clearInterval(timer);
+                notice.style.animation = 'limboNoticeFadeOut .3s ease forwards';
+
+                setTimeout(function () {
+                    notice.remove();
+
+                    // 核心修改：定位 #dh_button 并显示指向箭头
+                    const dhBtn = document.getElementById('dh_button');
+                    if (dhBtn) {
+                        dhBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                        // 获取目标按钮的位置尺寸信息
+                        const rect = dhBtn.getBoundingClientRect();
+
+                        // 创建指引 Tooltip 容器
+                        const pointer = document.createElement('div');
+                        pointer.className = 'limbo-dh-pointer-box';
+
+                        // 内部 HTML：提示文字 + 指向右下方的 SVG 动态箭头
+                        pointer.innerHTML = `
+                <span>反馈/导航在右下角</span>
+                <svg class="limbo-dh-arrow-svg" viewBox="0 0 24 24">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <polyline points="10 19 19 19 19 10"></polyline>
+                </svg>
+            `;
+
+                        document.body.appendChild(pointer);
+
+                        // 计算相对位置：贴在按钮左侧偏上
+                        const pointerRect = pointer.getBoundingClientRect();
+                        const topPos = rect.top - (pointerRect.height / 2);
+                        const leftPos = rect.left - pointerRect.width - 12;
+
+                        pointer.style.top = `${Math.max(10, topPos)}px`;
+                        pointer.style.left = `${Math.max(10, leftPos)}px`;
+
+                        // 渐显显示
+                        requestAnimationFrame(() => {
+                            pointer.classList.add('show');
+                        });
+
+                        // 停留 3.5 秒后平滑淡出并销毁
+                        setTimeout(() => {
+                            pointer.classList.remove('show');
+                            setTimeout(() => {
+                                pointer.remove();
+                                if (style) style.remove(); // 最终移除全部临时注入的样式
+                            }, 300);
+                        }, 3500);
+
+                    } else {
+                        if (style) style.remove();
+                    }
+                }, 300);
+            }
 
             // 5. 创建中央提示 Toast
             const toast = document.createElement('div');
             toast.id = 'limbo-ad-notice-toast';
 
-            // 渲染函数
+            // 渲染函数（新增直接关闭按钮，并给按钮加上 pointer-events: auto 以保证可点击）
             function renderToast(sec) {
                 toast.innerHTML = `
                     <div class="limbo-ad-notice-toast-title">
-                        ✓ 提示已关闭
+                        ✓
                     </div>
 
                     <div class="limbo-ad-notice-toast-text">
-                        该提示仅在首次移除该网站广告时提示，<br>
-                        请确保右下角
-                        <span class="limbo-ad-notice-toast-highlight">
-                            「反馈/导航」
-                        </span>
-                        按钮存在。
-                    </div>
+    本次提醒仅在<span class="limbo-ad-notice-toast-highlight"> “首次移除该网站广告”时 </span>提示，<br>
+    请确保<span class="limbo-ad-notice-toast-highlight"> 页面右下角 </span>的 <span class="limbo-ad-notice-toast-highlight"> 「反馈/导航」按钮 </span>
+    存在。
+</div>
 
                     <div class="limbo-ad-notice-toast-timer">
-                        提示框将在 <b id="limbo-ad-notice-sec">${sec}</b> 秒后自动消失
+                        <b id="limbo-ad-notice-sec">${sec}</b> 秒后自动关闭
                     </div>
+
+                    <button id="limbo-ad-notice-skip" style="
+                        margin-top: 12px;
+                        padding: 4px 12px;
+                        background: rgba(255, 255, 255, 0.15);
+                        border: 0;
+                        border-radius: 6px;
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 12px;
+                        cursor: pointer;
+                        pointer-events: auto;
+                    ">知道了</button>
                 `;
             }
 
             renderToast(countdown);
             notice.appendChild(toast);
 
+            // 绑定直接关闭按钮事件
+            document.getElementById('limbo-ad-notice-skip').addEventListener('click', destroyNotice);
+
             // 6. 每秒递减逻辑
-            const timer = setInterval(function () {
+            timer = setInterval(function () {
                 countdown--;
                 const secSpan = document.getElementById('limbo-ad-notice-sec');
 
@@ -4360,16 +4657,7 @@ function showLimboAdNotice() {
                 }
 
                 if (countdown <= 0) {
-                    clearInterval(timer);
-
-                    // 淡出并移除节点
-                    notice.style.animation =
-                        'limboNoticeFadeOut .4s ease forwards';
-
-                    setTimeout(function () {
-                        notice.remove();
-                        style.remove();
-                    }, 400);
+                    destroyNotice();
                 }
             }, 1000);
         });
@@ -4383,3 +4671,4 @@ const isIframe = window.self !== window.top;
 if (!hostname.includes('limbopro.com') && !hostname.includes('supjav') && !isIframe) {
     showLimboAdNotice();
 }
+

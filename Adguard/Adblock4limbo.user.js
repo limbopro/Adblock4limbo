@@ -251,6 +251,12 @@ function checkDOMLoaded() {
 
 checkDOMLoaded();
 
+
+// 全局设置
+
+// 代理工具识别符
+/*ProxyTools*/
+
 /**
  * 为网页增加导航按钮，将位于页面右下角呈现；
  * 如需取消该按钮，请将如上调用代码注释；

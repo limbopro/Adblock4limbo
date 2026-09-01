@@ -1,11 +1,11 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Sun, 30 Aug 2026 12:24:12 GMT
-# entries:        3539
+# last updated:   Mon, 31 Aug 2026 16:25:19 GMT
+# entries:        3541
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&amp;mimetype=plaintext
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -45,6 +45,7 @@ DOMAIN-SUFFIX,7cnq.net, reject
 DOMAIN-SUFFIX,82o9v830.com, reject
 DOMAIN-SUFFIX,a-ads.com, reject
 DOMAIN-SUFFIX,a.mktw.net, reject
+DOMAIN-SUFFIX,a.pemsrv.com, reject
 DOMAIN-SUFFIX,a.sakh.com, reject
 DOMAIN-SUFFIX,a.ucoz.net, reject
 DOMAIN-SUFFIX,a.ucoz.ru, reject
@@ -3061,6 +3062,7 @@ DOMAIN-SUFFIX,sunsetcampfires.com, reject
 DOMAIN-SUFFIX,superawesome.tv, reject
 DOMAIN-SUFFIX,superchichair.com, reject
 DOMAIN-SUFFIX,superclix.de, reject
+DOMAIN-SUFFIX,supercounters.com, reject
 DOMAIN-SUFFIX,superficialsquare.com, reject
 DOMAIN-SUFFIX,supersonicads.com, reject
 DOMAIN-SUFFIX,superstats.com, reject

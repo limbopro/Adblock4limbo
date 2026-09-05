@@ -1,9 +1,9 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202609050446
+## ! Version: 202609050455
 ## ! Title: EasyList
-## ! Last modified: 05 Sep 2026 04:46 UTC
+## ! Last modified: 05 Sep 2026 04:55 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 60aeb939cd82bfb18e365abe5e926e13776dcc1e
+## ! Commit: 0fcb74e3a3957317829dfaef2c606264c02957b4
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -4038,6 +4038,7 @@ DOMAIN-SUFFIX,avdludlmpseoe.space, reject
 DOMAIN-SUFFIX,avebeentriflin.com, reject
 DOMAIN-SUFFIX,avelpwnzhdoyx.site, reject
 DOMAIN-SUFFIX,avenantoutspatloud.cfd, reject
+DOMAIN-SUFFIX,aventrebanate.cfd, reject
 DOMAIN-SUFFIX,avenuenineteenthendorsement.com, reject
 DOMAIN-SUFFIX,averilesopgi.qpon, reject
 DOMAIN-SUFFIX,aversepeachestargum.qpon, reject

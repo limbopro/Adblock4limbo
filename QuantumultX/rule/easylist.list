@@ -1,9 +1,9 @@
 ## [Adblock Plus 2.0]
-## ! Version: 202609050417
+## ! Version: 202609050446
 ## ! Title: EasyList
-## ! Last modified: 05 Sep 2026 04:17 UTC
+## ! Last modified: 05 Sep 2026 04:46 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 7925282034dfb3dbf194e062f7c386a9610f1cda
+## ! Commit: 60aeb939cd82bfb18e365abe5e926e13776dcc1e
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -6062,6 +6062,7 @@ DOMAIN-SUFFIX,brinnyyeta.qpon, reject
 DOMAIN-SUFFIX,brioletredeyes.com, reject
 DOMAIN-SUFFIX,brionyamanist.com, reject
 DOMAIN-SUFFIX,briquettwasome.qpon, reject
+DOMAIN-SUFFIX,brisecaba.com, reject
 DOMAIN-SUFFIX,brisk22001.net, reject
 DOMAIN-SUFFIX,briskbluffer.cfd, reject
 DOMAIN-SUFFIX,brisketleafboy.qpon, reject
@@ -19399,6 +19400,7 @@ DOMAIN-SUFFIX,iqzjdpmkzglge.online, reject
 DOMAIN-SUFFIX,iranianbayman.qpon, reject
 DOMAIN-SUFFIX,iraqoner.qpon, reject
 DOMAIN-SUFFIX,irbnydavspxxt.space, reject
+DOMAIN-SUFFIX,ircilzelwdxny.space, reject
 DOMAIN-SUFFIX,irdqtqawrvxeg.space, reject
 DOMAIN-SUFFIX,irduunijdrixi.site, reject
 DOMAIN-SUFFIX,iredirect.net, reject
@@ -30452,6 +30454,7 @@ DOMAIN-SUFFIX,prvc.io, reject
 DOMAIN-SUFFIX,prvgjobwcr.com, reject
 DOMAIN-SUFFIX,prvoevhums.com, reject
 DOMAIN-SUFFIX,prwrrkaerzzon.space, reject
+DOMAIN-SUFFIX,prwyqyjvimciu.site, reject
 DOMAIN-SUFFIX,pryckdnodwfsb.online, reject
 DOMAIN-SUFFIX,pryersiwearth.cfd, reject
 DOMAIN-SUFFIX,pryqzoejbfxro.store, reject

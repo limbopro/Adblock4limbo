@@ -22,7 +22,7 @@
 
         // 清理后立即重新植入标记，防止下次执行
         localStorage.setItem(FLAG, "true");
-        console.log("跨页面单次清理完成");
+        ////console.log("跨页面单次清理完成");
     }
 
     //permanentClearOnce()
@@ -72,7 +72,7 @@
             const list = JSON.parse(localStorage.getItem(DEBUG_WEBLIST_OVERRIDE_KEY) || '[]');
             return list.filter(item => item && typeof item === 'string');
         } catch (e) {
-            console.error('[覆盖列表] 读取失败:', e);
+            ////console.error('[覆盖列表] 读取失败:', e);
             return [];
         }
     }
@@ -92,14 +92,14 @@
             if (index === -1) {
                 list.push(host);
                 localStorage.setItem(DEBUG_WEBLIST_OVERRIDE_KEY, JSON.stringify(list));
-                console.log(`[V26.39.10] 🎯 ${host} 已添加到调试覆盖列表。`);
+                ////console.log(`[V26.39.10] 🎯 ${host} 已添加到调试覆盖列表。`);
                 return true;
             }
         } else {
             if (index > -1) {
                 list.splice(index, 1);
                 localStorage.setItem(DEBUG_WEBLIST_OVERRIDE_KEY, JSON.stringify(list));
-                console.log(`[V26.39.10] 🎯 ${host} 已从调试覆盖列表移除。`);
+                ////console.log(`[V26.39.10] 🎯 ${host} 已从调试覆盖列表移除。`);
                 return true;
             }
         }
@@ -124,7 +124,7 @@
             const list = JSON.parse(localStorage.getItem(PAGE_BLACKLIST_KEY) || '[]');
             return list.filter(item => item && typeof item === 'string');
         } catch (e) {
-            console.error('[黑名单] 读取失败:', e);
+            ////console.error('[黑名单] 读取失败:', e);
             return [];
         }
     }
@@ -174,7 +174,7 @@
                     const newValue = value || strictSandboxAttributes;
                     originalSetter.call(this, newValue);
 
-                    console.warn(`[Gemini屏蔽 V26.34] 🛡️ 黑名单页面：Iframe sandbox 被 Setter Hook 强制设置为严格沙箱。`);
+                    ////console.warn(`[Gemini屏蔽 V26.34] 🛡️ 黑名单页面：Iframe sandbox 被 Setter Hook 强制设置为严格沙箱。`);
                 },
                 get: function () {
                     return iframe.getAttribute('sandbox');
@@ -183,14 +183,14 @@
                 enumerable: true
             });
             iframe.__sandbox_hooked = true;
-            console.log(`[Gemini屏蔽 V26.34] 🌟 Iframe sandbox 属性 Setter Hook 成功启用 (仅对黑名单页面有效)。`);
+            ////console.log(`[Gemini屏蔽 V26.34] 🌟 Iframe sandbox 属性 Setter Hook 成功启用 (仅对黑名单页面有效)。`);
         }
     }
 
     function applyIframeSandbox(iframe) {
 
         if (!isCurrentPageBlacklisted()) {
-            console.log('[Gemini屏蔽 V26.34] 🚀 非黑名单页面：对 Iframe 不做任何操作，保持默认状态 (默认不沙箱)。');
+            ////console.log('[Gemini屏蔽 V26.34] 🚀 非黑名单页面：对 Iframe 不做任何操作，保持默认状态 (默认不沙箱)。');
             return;
         }
 
@@ -202,10 +202,10 @@
             const currentSandbox = iframe.getAttribute('sandbox');
             if (currentSandbox !== sandboxAttributes) {
                 iframe.setAttribute('sandbox', sandboxAttributes);
-                console.log(`[Gemini屏蔽 V26.34] 🛡️ 黑名单页面：Iframe 强制设置严格沙箱属性: ${sandboxAttributes}`);
+                ////console.log(`[Gemini屏蔽 V26.34] 🛡️ 黑名单页面：Iframe 强制设置严格沙箱属性: ${sandboxAttributes}`);
             }
         } catch (e) {
-            console.error('[Gemini屏蔽 V26.34] Iframe 沙箱设置失败:', e);
+            ////console.error('[Gemini屏蔽 V26.34] Iframe 沙箱设置失败:', e);
         }
     }
 
@@ -224,7 +224,7 @@
                 const iframe = element;
 
                 if (iframe.src && iframe.src.includes(AD_URL_PARTIAL_PERMANENT)) {
-                    console.warn(`[Gemini屏蔽 V26.24] 阻止 Iframe 初始加载广告: ${iframe.src.substring(0, 50)}...`);
+                    ////console.warn(`[Gemini屏蔽 V26.24] 阻止 Iframe 初始加载广告: ${iframe.src.substring(0, 50)}...`);
                     iframe.src = 'about:blank';
                 }
 
@@ -237,7 +237,7 @@
                 Object.defineProperty(iframe, 'src', {
                     set: function (url) {
                         if (url && url.includes(AD_URL_PARTIAL_PERMANENT)) {
-                            console.warn(`[Gemini屏蔽 V26.24] 阻止 Iframe.src 赋值广告 URL: ${url.substring(0, 50)}...`);
+                            ////console.warn(`[Gemini屏蔽 V26.24] 阻止 Iframe.src 赋值广告 URL: ${url.substring(0, 50)}...`);
                             iframe.setAttribute('src', 'about:blank');
                             return;
                         }
@@ -252,7 +252,7 @@
             }
             return element;
         };
-        console.log('[Gemini屏蔽] document.createElement Hook 已启用 (V26.34 强化)。');
+        ////console.log('[Gemini屏蔽] document.createElement Hook 已启用 (V26.34 强化)。');
     }
 
     // =================================================================
@@ -368,7 +368,7 @@
         try {
             return JSON.parse(localStorage.getItem(CSS_REMOVAL_KEY) || '[]');
         } catch (e) {
-            console.error('[持久化] CSS记录读取失败:', e);
+            ////console.error('[持久化] CSS记录读取失败:', e);
             return [];
         }
     }
@@ -380,7 +380,7 @@
         if (!removals.includes(trimmed)) {
             removals.push(trimmed);
             localStorage.setItem(CSS_REMOVAL_KEY, JSON.stringify(removals));
-            console.log(`[Gemini屏蔽 V27] 🎨 已保存 CSS 选择器: ${trimmed}`);
+            ////console.log(`[Gemini屏蔽 V27] 🎨 已保存 CSS 选择器: ${trimmed}`);
             confirmndExecuteFC(`[Gemini屏蔽 V27] 🎨 已保存 CSS 选择器: ${trimmed}`)
             return true;
         }
@@ -408,7 +408,7 @@
         try {
             return JSON.parse(localStorage.getItem(ELEMENT_REMOVAL_KEY) || '[]');
         } catch (e) {
-            console.error('[持久化] 元素记录读取失败:', e);
+            ////console.error('[持久化] 元素记录读取失败:', e);
             return [];
         }
     }
@@ -437,7 +437,7 @@
         try {
             return JSON.parse(localStorage.getItem(IFRAME_REMOVAL_KEY) || '[]');
         } catch (e) {
-            console.error('[持久化] Iframe 记录读取失败:', e);
+            ////console.error('[持久化] Iframe 记录读取失败:', e);
             return [];
         }
     }
@@ -540,14 +540,14 @@
                 try {
                     // 检查是否已经包含该类名，避免重复添加
                     if (!x.classList.contains('hiddenbylimbopro')) {
-                        console.log(selectors, ' 标记隐藏中...');
+                        ////console.log(selectors, ' 标记隐藏中...');
                         x.classList.add('hiddenbylimbopro');
                     } else {
                         // 如果已经包含，可以选择跳过或记录日志
-                        // console.log(x, ' 已在隐藏列表中，跳过');
+                        // ////console.log(x, ' 已在隐藏列表中，跳过');
                     }
                 } catch (e) {
-                    console.warn('标记元素隐藏失败:', e);
+                    ////console.warn('标记元素隐藏失败:', e);
                 }
             });
         };
@@ -578,7 +578,7 @@
         const docName = (isTopWindow && doc === document) ? '主页' :
             (!isTopWindow && doc === document) ? 'Iframe (自身)' :
                 'Iframe (同源)';
-        console.log(`[Gemini屏蔽] 已在 ${docName} 自动移除 ${removedCount} 个元素（含 CSS 选择器）。`);
+        ////console.log(`[Gemini屏蔽] 已在 ${docName} 自动移除 ${removedCount} 个元素（含 CSS 选择器）。`);
         return removedCount;
 
     }
@@ -1427,7 +1427,7 @@ border: white !important;
                     // 4. 如果目标元素不存在，则提示
                     //// clickedElement.textContent = '元素点击调试(未找到目标) 或已关闭';
                     closeAndResolve(false)
-                    console.warn("未找到 ID 为 'element-debug-click-toggle' 的目标元素。");
+                    ////console.warn("未找到 ID 为 'element-debug-click-toggle' 的目标元素。");
                 }
             }
 
@@ -1442,7 +1442,7 @@ border: white !important;
                     try {
                         stopSelectorTool();
                     } catch (e) {
-                        console.log('[Gemini] 清理选择器时跳过（可能尚未开启）');
+                        ////console.log('[Gemini] 清理选择器时跳过（可能尚未开启）');
                     }
                 }
                 // 执行你脚本里原本就有的关闭并解决 Promise 的逻辑
@@ -1451,7 +1451,7 @@ border: white !important;
                     try {
                         closeAndResolveInfor()
                     } catch (e) {
-                        console.log('[Gemini] 关闭悬浮窗失败（可能尚未开启）');
+                        ////console.log('[Gemini] 关闭悬浮窗失败（可能尚未开启）');
                     }
                 }
 
@@ -1470,7 +1470,7 @@ border: white !important;
                 modalOverlay.appendChild(modalBox);
                 document.body.appendChild(modalOverlay);
             } else {
-                console.error('[Gemini屏蔽] 模态框插入失败：document.body 不可用。');
+                ////console.error('[Gemini屏蔽] 模态框插入失败：document.body 不可用。');
                 resolve(false);
             }
         });
@@ -1856,7 +1856,7 @@ border: white !important;
 
         // 检查是否已经存在实例，防止重复启动
         if (document.getElementById('selector-tool-style-final')) {
-            console.log("工具已在运行中");
+            ////console.log("工具已在运行中");
             return;
         }
 
@@ -2161,7 +2161,7 @@ border: white !important;
                         const count = document.querySelectorAll(cleanedSelector).length;
                         updateCountUI(count, count > 1 ? "范围已扩大" : "");
                     } catch (e) {
-                        console.warn("泛化后语法错误");
+                        ////console.warn("泛化后语法错误");
                     }
                 } else {
                     let segments = currentSelector.split(/\s*>\s*/);
@@ -2477,7 +2477,7 @@ border: white !important;
         const resetMode = () => {
 
             if (document.getElementById('modalBox4targetInform')) {
-                console.log('当前处于元素点击调试模式，stopSelectorTool() 返回即关闭...')
+                ////console.log('当前处于元素点击调试模式，stopSelectorTool() 返回即关闭...')
                 stopSelectorTool();
                 return;
             }
@@ -2572,7 +2572,7 @@ border: white !important;
                         confirmndExecuteFC(`${sel} 已模拟屏蔽...`);
                     }
 
-                    console.log("拟屏蔽选择器:", sel);
+                    ////console.log("拟屏蔽选择器:", sel);
                 }
             } catch (e) {
                 confirmndExecuteFC('CSS语法错误，请检查修改内容。');
@@ -2635,7 +2635,7 @@ border: white !important;
         Object.defineProperty(targetWindow, 'open', {
             value: function (url, windowName, features) {
                 if (isDebuggingLocationHooks || document.getElementById(containerId) || (url && url.includes(AD_URL_PARTIAL_PERMANENT))) {
-                    console.warn(`[Gemini屏蔽] 成功拦截 ${targetWindow === window ? '当前窗口' : 'Iframe'} 的 window.open 调用:`, url);
+                    ////console.warn(`[Gemini屏蔽] 成功拦截 ${targetWindow === window ? '当前窗口' : 'Iframe'} 的 window.open 调用:`, url);
                     // V26.39.10: 即使是 window.open，在调试模式下也同步中断，以防止其被 try/catch 绕过。
                     if (isDebuggingLocationHooks) {
                         throw new Error('GeminiAdBlocker: Synchronous Window.open Intercepted');
@@ -2656,7 +2656,7 @@ border: white !important;
             try { interceptWindowOpen(doc.defaultView); } catch (e) { }
         });
         isWindowOpenHooked = true;
-        console.log('[Gemini屏蔽] window.open 强化 Hook 已启动。');
+        ////console.log('[Gemini屏蔽] window.open 强化 Hook 已启动。');
     }
 
     function interceptWindowLocation() {
@@ -2674,14 +2674,14 @@ border: white !important;
                         set: function (url) {
 
                             if (url && url.includes(AD_URL_PARTIAL_PERMANENT)) {
-                                console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截已知广告域名重定向: ${url}`);
+                                ////console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截已知广告域名重定向: ${url}`);
                                 // 即使不调试，遇到永久黑名单域名也直接中断
                                 throw new Error('GeminiAdBlocker: Known Ad Domain Location Intercepted');
                             }
 
                             if (isDebuggingLocationHooks) {
                                 // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                                console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：${scopeName}.href 尝试重定向。URL: ${safeTruncate(url, 50)}`);
+                                ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：${scopeName}.href 尝试重定向。URL: ${safeTruncate(url, 50)}`);
                                 throw new Error('GeminiAdBlocker: Synchronous Location Href Intercepted');
                             }
 
@@ -2699,13 +2699,13 @@ border: white !important;
                     locationObj[methodName] = function (url) {
 
                         if (url && url.includes(AD_URL_PARTIAL_PERMANENT)) {
-                            console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截已知广告域名重定向 (Method ${methodName}): ${url}`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截已知广告域名重定向 (Method ${methodName}): ${url}`);
                             throw new Error('GeminiAdBlocker: Known Ad Domain Location Intercepted');
                         }
 
                         if (isDebuggingLocationHooks) {
                             // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                            console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：${scopeName}.${methodName} 尝试重定向。URL: ${safeTruncate(url, 50)}`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：${scopeName}.${methodName} 尝试重定向。URL: ${safeTruncate(url, 50)}`);
                             throw new Error('GeminiAdBlocker: Synchronous Location Method Intercepted');
                         }
                         originalMethod.call(this, url);
@@ -2715,11 +2715,11 @@ border: white !important;
                 hookLocationMethod(originalAssign, 'assign');
                 hookLocationMethod(originalReplace, 'replace');
 
-                console.log(`[Gemini屏蔽] ${scopeName}.location 完整 Hook 已启用。`);
+                ////console.log(`[Gemini屏蔽] ${scopeName}.location 完整 Hook 已启用。`);
                 return true;
 
             } catch (e) {
-                console.log(`[Gemini屏蔽] 无法 Hook ${scopeName}.location (跨域或权限限制)。`);
+                ////console.log(`[Gemini屏蔽] 无法 Hook ${scopeName}.location (跨域或权限限制)。`);
                 return false;
             }
         }
@@ -2736,13 +2736,13 @@ border: white !important;
                     get: protoLocationDescriptor.get,
                     set: function (url) {
                         if (url && url.includes(AD_URL_PARTIAL_PERMANENT)) {
-                            console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截 Window.prototype.location 重定向: ${url}`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截 Window.prototype.location 重定向: ${url}`);
                             throw new Error('GeminiAdBlocker: Known Ad Domain Location Intercepted');
                         }
 
                         if (isDebuggingLocationHooks) {
                             // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                            console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：Window.location 赋值尝试重定向。URL: ${safeTruncate(url, 50)}`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：Window.location 赋值尝试重定向。URL: ${safeTruncate(url, 50)}`);
                             throw new Error('GeminiAdBlocker: Synchronous Window.location Intercepted');
                         }
                         originalProtoSetter.call(this, url);
@@ -2750,10 +2750,10 @@ border: white !important;
                     configurable: true,
                     enumerable: true
                 });
-                console.log('[Gemini屏蔽] 🌟 Window.prototype.location Setter Hook 已启用。');
+                ////console.log('[Gemini屏蔽] 🌟 Window.prototype.location Setter Hook 已启用。');
             }
         } catch (e) {
-            console.error('[Gemini屏蔽] 顶级 Hook Window.prototype.location 失败:', e);
+            ////console.error('[Gemini屏蔽] 顶级 Hook Window.prototype.location 失败:', e);
         }
 
         applyLocationHooks(window, 'window');
@@ -2803,20 +2803,20 @@ border: white !important;
                 if (isTargetLink && url && url !== '#' && isDebuggingLocationHooks) {
                     // 强制拦截已知广告域名
                     if (url.includes(AD_URL_PARTIAL_PERMANENT)) {
-                        console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截 Element.click() 已知广告域名重定向: ${url}`);
+                        ////console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截 Element.click() 已知广告域名重定向: ${url}`);
                         throw new Error('GeminiAdBlocker: Known Ad Domain Element Click Intercepted');
                     }
 
                     // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                    console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：Element.click() 尝试重定向。Tag: ${element.tagName} | URL: ${safeTruncate(url, 50)}`);
+                    ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：Element.click() 尝试重定向。Tag: ${element.tagName} | URL: ${safeTruncate(url, 50)}`);
                     throw new Error('GeminiAdBlocker: Synchronous Element Click Intercepted');
                 }
 
                 originalClick.apply(this, arguments);
             };
-            console.log(`[Gemini屏蔽] 🌟 Element.prototype.click Hook 已启用 (拦截程序化点击)。`);
+            ////console.log(`[Gemini屏蔽] 🌟 Element.prototype.click Hook 已启用 (拦截程序化点击)。`);
         } catch (e) {
-            console.error('[Gemini屏蔽] Element.prototype.click Hook 失败:', e);
+            ////console.error('[Gemini屏蔽] Element.prototype.click Hook 失败:', e);
         }
     }
 
@@ -2851,21 +2851,21 @@ border: white !important;
 
                         // 强制拦截已知广告域名
                         if (messageString.includes(AD_URL_PARTIAL_PERMANENT)) {
-                            console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截 postMessage 已知广告域名重定向: ${safeTruncate(messageString, 50)}`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🎯 强制拦截 postMessage 已知广告域名重定向: ${safeTruncate(messageString, 50)}`);
                             throw new Error('GeminiAdBlocker: Known Ad Domain PostMessage Intercepted');
                         }
 
                         // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                        console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：postMessage 尝试跨框架重定向。Message: ${safeTruncate(messageString, 50)}`);
+                        ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：postMessage 尝试跨框架重定向。Message: ${safeTruncate(messageString, 50)}`);
                         throw new Error('GeminiAdBlocker: Synchronous PostMessage Intercepted');
                     }
                 }
 
                 originalPostMessage.apply(this, arguments);
             };
-            console.log(`[Gemini屏蔽] 🌟 window.postMessage Hook 已启用 (拦截跨框架重定向)。`);
+            ////console.log(`[Gemini屏蔽] 🌟 window.postMessage Hook 已启用 (拦截跨框架重定向)。`);
         } catch (e) {
-            console.error('[Gemini屏蔽] window.postMessage Hook 失败:', e);
+            ////console.error('[Gemini屏蔽] window.postMessage Hook 失败:', e);
         }
     }
 
@@ -2886,7 +2886,7 @@ border: white !important;
 
                     if (isDebuggingLocationHooks && url) {
                         // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                        console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：${scopeName}.history.${methodName} 尝试重定向。URL: ${safeTruncate(url, 50)}`);
+                        ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：${scopeName}.history.${methodName} 尝试重定向。URL: ${safeTruncate(url, 50)}`);
                         throw new Error('GeminiAdBlocker: Synchronous History API Intercepted'); // Synchronous halt
                     }
 
@@ -2897,9 +2897,9 @@ border: white !important;
             hookHistoryMethod(originalPushState, 'pushState');
             hookHistoryMethod(originalReplaceState, 'replaceState');
 
-            console.log(`[Gemini屏蔽] ${scopeName}.history 完整 Hook 已启用 (V26.39.7)。`);
+            ////console.log(`[Gemini屏蔽] ${scopeName}.history 完整 Hook 已启用 (V26.39.7)。`);
         } catch (e) {
-            console.log(`[Gemini屏蔽] 无法 Hook ${scopeName}.history (权限限制)。`);
+            ////console.log(`[Gemini屏蔽] 无法 Hook ${scopeName}.history (权限限制)。`);
         }
     }
 
@@ -2913,7 +2913,7 @@ border: white !important;
         try {
             // 确保 HTMLFormElement 存在
             if (typeof HTMLFormElement === 'undefined' || !HTMLFormElement.prototype.submit) {
-                console.log('[Gemini屏蔽] HTMLFormElement.prototype.submit 不可用。');
+                ////console.log('[Gemini屏蔽] HTMLFormElement.prototype.submit 不可用。');
                 return;
             }
 
@@ -2926,15 +2926,15 @@ border: white !important;
                 if (isDebuggingLocationHooks && url && url !== '[无 Action]' && url !== window.location.href && url !== '#') {
 
                     // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                    console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：Form Submission 尝试重定向。URL: ${safeTruncate(url, 50)}`);
+                    ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 同步中断：Form Submission 尝试重定向。URL: ${safeTruncate(url, 50)}`);
                     throw new Error('GeminiAdBlocker: Synchronous Form Submit Intercepted'); // Synchronous halt
                 }
 
                 originalSubmit.call(this);
             };
-            console.log('[Gemini屏蔽] 🌟 Form Submission Hook 已启用 (V26.39.7)。');
+            ////console.log('[Gemini屏蔽] 🌟 Form Submission Hook 已启用 (V26.39.7)。');
         } catch (e) {
-            console.error('[Gemini屏蔽] Form Submission Hook 失败:', e);
+            ////console.error('[Gemini屏蔽] Form Submission Hook 失败:', e);
         }
     }
 
@@ -2946,7 +2946,7 @@ border: white !important;
 
         try {
             if (typeof Document === 'undefined' || !Document.prototype.write) {
-                console.log('[Gemini屏蔽] Document.prototype.write 不可用。');
+                ////console.log('[Gemini屏蔽] Document.prototype.write 不可用。');
                 return;
             }
 
@@ -2978,13 +2978,13 @@ border: white !important;
 
                         // 强制拦截已知广告域名
                         if (redirectUrl.includes(AD_URL_PARTIAL_PERMANENT)) {
-                            console.error(`[Gemini屏蔽 V26.39.10] 🚨 终极拦截：document.write 尝试注入已知广告域名。`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 终极拦截：document.write 尝试注入已知广告域名。`);
                             throw new Error('GeminiAdBlocker: Known Ad Domain Document Write Intercepted');
                         }
 
                         if (isDebuggingLocationHooks) {
                             // ⭐️ V26.39.10 核心：同步中断执行，阻止代码继续
-                            console.error(`[Gemini屏蔽 V26.39.10] 🚨 终极同步中断：document.write 尝试注入重定向代码。URL: ${safeTruncate(redirectUrl, 50)}`);
+                            ////console.error(`[Gemini屏蔽 V26.39.10] 🚨 终极同步中断：document.write 尝试注入重定向代码。URL: ${safeTruncate(redirectUrl, 50)}`);
                             throw new Error('GeminiAdBlocker: Synchronous Document Write Intercepted');
                         }
 
@@ -3012,9 +3012,9 @@ border: white !important;
                 hookedWrite.apply(this, arguments);
             };
 
-            console.log('[Gemini屏蔽 V26.39.10] 🌟 document.write/writeln Hook 已启用。');
+            ////console.log('[Gemini屏蔽 V26.39.10] 🌟 document.write/writeln Hook 已启用。');
         } catch (e) {
-            console.error('[Gemini屏蔽 V26.39.10] document.write Hook 失败:', e);
+            ////console.error('[Gemini屏蔽 V26.39.10] document.write Hook 失败:', e);
         }
     }
 
@@ -3039,7 +3039,7 @@ border: white !important;
                     const redirectUrl = urlMatch ? urlMatch[1] : '';
 
                     if (redirectUrl.includes(AD_URL_PARTIAL_PERMANENT)) {
-                        console.warn(`[Gemini屏蔽 V26.24] 🚨 终极拦截：发现并移除了 Meta Refresh 广告重定向标签: ${redirectUrl.substring(0, 50)}...`);
+                        ////console.warn(`[Gemini屏蔽 V26.24] 🚨 终极拦截：发现并移除了 Meta Refresh 广告重定向标签: ${redirectUrl.substring(0, 50)}...`);
                         node.remove();
                         return true;
                     }
@@ -3066,7 +3066,7 @@ border: white !important;
         observer.observe(head, { childList: true, subtree: true });
         // V26.37 修复日志
         const docName = (window === window.top && doc === document) ? '主页' : 'Iframe/同源';
-        console.log(`[Gemini屏蔽] Meta Refresh 监控已对 ${docName} 启用。`);
+        ////console.log(`[Gemini屏蔽] Meta Refresh 监控已对 ${docName} 启用。`);
     }
 
     function interceptIframeWindowTop(iframe) {
@@ -3109,7 +3109,7 @@ border: white !important;
                             documents.push(iframeDocument);
                         }
                     } catch (e) {
-                        console.warn('[Gemini屏蔽] 无法访问跨域 Iframe:', iframe.src);
+                        ////console.warn('[Gemini屏蔽] 无法访问跨域 Iframe:', iframe.src);
                     }
                 }
             });
@@ -3148,10 +3148,10 @@ border: white !important;
                                         blockMetaRefresh(iframeDoc);
 
                                         applyClickDebugFilter(iframeDoc);
-                                        console.log(`[MutationObserver] 动态同源 Iframe 初始化成功: ${newIframe.src}`);
+                                        ////console.log(`[MutationObserver] 动态同源 Iframe 初始化成功: ${newIframe.src}`);
                                     }
                                 } catch (e) {
-                                    console.warn('[MutationObserver] 无法访问跨域或加载失败的 Iframe。');
+                                    ////console.warn('[MutationObserver] 无法访问跨域或加载失败的 Iframe。');
                                 }
                                 newIframe.removeEventListener('load', handleIframeLoad);
                             };
@@ -3169,7 +3169,7 @@ border: white !important;
 
         if (document.body) {
             observer.observe(document.body, { childList: true, subtree: true });
-            console.log('[MutationObserver] 已启动，开始监听动态 Iframe。');
+            ////console.log('[MutationObserver] 已启动，开始监听动态 Iframe。');
         }
     }
 
@@ -3180,7 +3180,7 @@ border: white !important;
 */
     window.removeListenersAndElement = function removeListenersAndElement(element) {
         if (!element || !element.parentNode) {
-            console.error("元素无效或没有父节点，无法执行移除操作。");
+            ////console.error("元素无效或没有父节点，无法执行移除操作。");
             return;
         }
 
@@ -3198,7 +3198,7 @@ border: white !important;
         // 移除 DOM 中当前存在的、不含监听器的克隆元素
         if (elementClone.parentNode) {
             elementClone.parentNode.removeChild(elementClone);
-            console.log('成功移除元素:', elementClone.tagName, '及其所有事件监听。');
+            ////console.log('成功移除元素:', elementClone.tagName, '及其所有事件监听。');
         }
 
         // 注意：原始的 'element' 变量现在引用的是脱离 DOM 树的那个带监听器的旧元素，
@@ -3297,11 +3297,11 @@ border: white !important;
             if (index > -1) {
                 removals[index] = newVal.trim();
                 localStorage.setItem(storageKey, JSON.stringify(removals));
-                console.log(`[Gemini屏蔽] 记录已更新: ${oldVal} -> ${newVal}`);
+                ////console.log(`[Gemini屏蔽] 记录已更新: ${oldVal} -> ${newVal}`);
                 return true;
             }
         } catch (e) {
-            console.error('[持久化] 修改失败:', e);
+            ////console.error('[持久化] 修改失败:', e);
         }
         return false;
     }
@@ -3406,7 +3406,7 @@ border: white !important;
         windowBox.id = windowId;
 
         if (!document.body) {
-            console.error('[Gemini屏蔽] 无法渲染浮窗：document.body 不可用。');
+            ////console.error('[Gemini屏蔽] 无法渲染浮窗：document.body 不可用。');
             return;
         }
 
@@ -4291,7 +4291,7 @@ border: white !important;
                 // --- 3. 监控移除逻辑：监视 body 确保能抓到 inputEl 的消失 ---
                 activeObserver = new MutationObserver((mutations, obs) => {
                     if (!document.body.contains(inputEl)) {
-                        console.log('检测到元素已移除，清理资源');
+                        ////console.log('检测到元素已移除，清理资源');
                         inputEl.removeEventListener('input', activeInputHandler);
                         obs.disconnect();
                         activeObserver = null;
@@ -4571,7 +4571,7 @@ border: white !important;
                 setTimeout(() => adsTag.remove(), 3000);
 
                 if (e.type === 'click') {
-                    console.warn(`[Gemini屏蔽] 命中 isAdLink 独立拦截: ${href}`);
+                    ////console.warn(`[Gemini屏蔽] 命中 isAdLink 独立拦截: ${href}`);
                 }
                 return;
             }
@@ -4594,7 +4594,7 @@ border: white !important;
             // 3. 检查放行标记 (用于 Debug 模式下的二次放行)
             if (targetElement.hasAttribute(ALLOW_ONCE_ATTRIBUTE)) {
                 targetElement.removeAttribute(ALLOW_ONCE_ATTRIBUTE);
-                console.log(`[Gemini屏蔽] ➡️ 调试模式：临时放行标记生效。`);
+                ////console.log(`[Gemini屏蔽] ➡️ 调试模式：临时放行标记生效。`);
                 return;
             }
 
@@ -4624,7 +4624,7 @@ border: white !important;
 
                 // 只有在 Click 事件时才唤起调试模态框
                 if (e.type !== 'click') {
-                    console.log(`[Gemini屏蔽] 🛡️ ${e.type} 已阻止，等待 Click 唤起模态框...`);
+                    ////console.log(`[Gemini屏蔽] 🛡️ ${e.type} 已阻止，等待 Click 唤起模态框...`);
                     return;
                 }
 
@@ -4685,7 +4685,7 @@ border: white !important;
                 } else {
                     // 保持以前的原则：用户点取消后，设置标记，需要用户【再次点击】才放行
                     targetElement.setAttribute(ALLOW_ONCE_ATTRIBUTE, 'true');
-                    console.log("🚫 已取消永久屏蔽。请**再次点击**此元素，点击将在第二次被放行。");
+                    ////console.log("🚫 已取消永久屏蔽。请**再次点击**此元素，点击将在第二次被放行。");
                 }
                 return;
             }
@@ -4726,7 +4726,7 @@ border: white !important;
             logMessage += `Iframe 文档 (主页检测)。Src: ${displaySrc}`;
         }
 
-        console.log(logMessage);
+        ////console.log(logMessage);
     }
 
 
@@ -4829,7 +4829,7 @@ border: white !important;
         targetDocuments.forEach(doc => {
             applyClickDebugFilter(doc);
         });
-        console.log('[Gemini屏蔽] 元素点击过滤/调试功能已协调完成 (V26.39.7 Modified)。');
+        ////console.log('[Gemini屏蔽] 元素点击过滤/调试功能已协调完成 (V26.39.7 Modified)。');
     }
 
 
@@ -4864,14 +4864,14 @@ border: white !important;
                 const updatedRemovalListJSON = JSON.stringify(removalList);
                 localStorage.setItem(REMOVAL_KEY, updatedRemovalListJSON);
 
-                console.log(`[Gemini屏蔽] 成功手动添加 XPath: ${trimmedXPath}`);
+                ////console.log(`[Gemini屏蔽] 成功手动添加 XPath: ${trimmedXPath}`);
                 confirmndExecuteFC(`✅ XPath 已成功保存！\n路径: ${trimmedXPath}\n请刷新页面生效。`)
             } else {
                 //confirmndExecuteFC(`提示：该 XPath (${trimmedXPath}) 已存在于屏蔽列表中。`);
                 confirmndExecuteFC(`提示：该 XPath (${trimmedXPath}) 已存在于屏蔽列表中。`)
             }
         } catch (e) {
-            console.error('[Gemini屏蔽] 保存 XPath 时发生错误:', e);
+            ////console.error('[Gemini屏蔽] 保存 XPath 时发生错误:', e);
             //confirmndExecuteFC('❌ 保存 XPath 失败。请检查控制台获取详细信息。');
             confirmndExecuteFC('❌ 保存 XPath 失败。请检查控制台获取详细信息。')
         }
@@ -4974,7 +4974,7 @@ border: white !important;
                 textarea.value = text;
                 textarea.focus();
             }).catch(err => {
-                console.error('[Gemini屏蔽] 无法读取剪贴板，可能是权限问题:', err);
+                ////console.error('[Gemini屏蔽] 无法读取剪贴板，可能是权限问题:', err);
                 confirmndExecuteFC('无法自动粘贴。请确保已授予浏览器剪贴板读取权限，或手动粘贴。');
 
             });
@@ -5013,7 +5013,7 @@ border: white !important;
             }
         `;
             document.head.appendChild(style);
-            console.log('%c[Init]%c 隐藏样式表已注入', 'color: #673ab7; font-weight: bold;', 'color: default;');
+            ////console.log('%c[Init]%c 隐藏样式表已注入', 'color: #673ab7; font-weight: bold;', 'color: default;');
         }
 
         const currentHost = getCurrentHost();
@@ -5033,10 +5033,10 @@ border: white !important;
                 locationDebugState = true;
                 localStorage.setItem('gemini_debug_element_click_mode', 'true');
                 localStorage.setItem(DEBUG_LOCATION_KEY, 'true');
-                console.log(`[Gemini屏蔽 V26.39.10] 🎯 域名 ${currentHost} 匹配调试列表，强制开启调试模式。`);
+                ////console.log(`[Gemini屏蔽 V26.39.10] 🎯 域名 ${currentHost} 匹配调试列表，强制开启调试模式。`);
             } else {
                 // 存在覆盖记录，保留用户上次设置的状态（即 clickDebugState/locationDebugState 保持为从 localStorage 读取的值，可能是 false）
-                console.log(`[Gemini屏蔽 V26.39.10] ⚠️ 域名 ${currentHost} 匹配调试列表，但因存在用户覆盖记录，本次不自动开启。`);
+                ////console.log(`[Gemini屏蔽 V26.39.10] ⚠️ 域名 ${currentHost} 匹配调试列表，但因存在用户覆盖记录，本次不自动开启。`);
             }
         }
 
@@ -5096,7 +5096,7 @@ border: white !important;
             if (!document.getElementById(containerId)) {
 
                 const activationSource = isHostInDebugList && !isCurrentHostOverridden() ? '域名匹配（自动）' : '本地存储（手动开启）';
-                console.log(`[Gemini屏蔽 V26.39.10] 🎯 调试模式已开启 (${activationSource})，自动打开浮窗。`);
+                ////console.log(`[Gemini屏蔽 V26.39.10] 🎯 调试模式已开启 (${activationSource})，自动打开浮窗。`);
 
                 // 由于 targetDocuments 已经在前面获取，这里直接使用   
                 renderFloatWindow(targetDocuments);
@@ -5111,7 +5111,7 @@ border: white !important;
         }
 
 
-        console.log(`[Gemini屏蔽] 脚本已初始化 (V26.39.10)。当前页面在黑名单中: ${isCurrentPageBlacklisted() ? '是' : '否'}。`);
+        ////console.log(`[Gemini屏蔽] 脚本已初始化 (V26.39.10)。当前页面在黑名单中: ${isCurrentPageBlacklisted() ? '是' : '否'}。`);
     }
 
     if (document.readyState === 'loading') {
@@ -5157,7 +5157,7 @@ const bodyObserver = new MutationObserver((mutations) => {
 
         // 【核心逻辑】只有当导航项数量发生变化，才进行深度检查
         if (currentNavCount !== lastNavCount) {
-            console.log(`[Gemini监控] 检测到页面变化，导航项当前数量: ${currentNavCount}`);
+            ////console.log(`[Gemini监控] 检测到页面变化，导航项当前数量: ${currentNavCount}`);
 
             // 1. 面板保活
             const isPinned = localStorage.getItem('gemini-pin') === "pinned" ||
@@ -5171,7 +5171,7 @@ const bodyObserver = new MutationObserver((mutations) => {
             // 2. 导航内容破坏检测
             if (currentNavCount < 150) {
                 if (typeof parentElement_add == 'function') {
-                    console.warn('Gemini: 导航内容疑似被破坏或尚未加载，正在尝试复位...');
+                    ////console.warn('Gemini: 导航内容疑似被破坏或尚未加载，正在尝试复位...');
 
                     // 执行修复
                     parentElement_add();

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2026.09.15
+// @version      0.2026.09.30
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/Njav/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -44,6 +44,15 @@
 // @match        https://jable.tv/*
 // @match        https://en.jable.tv/*
 // @match        https://*.jable.tv/*
+// @match        *://*.91jable.top/*
+// @match        *://*.91jable.sbs/*
+// @match        *://*.jable.cfd/*
+// @match        *://*.jable1.com/*
+// @match        *://*.jable888.com/*
+// @match        *://*.jable888.net/*
+// @match        *://*.jable1.net/*
+// @match        *://*.jable1.art/*
+// @match        *://*.jable1.nl/*
 // @match        https://missav.com/*
 // @match        https://missav.ai/*
 // @match        https://missav.ws/*
@@ -390,7 +399,7 @@ var adsMax = {
         baidu_search: "div[style*=fixed],.ec_ad_results {display:none !important;} ", // baidu
         baidu_index: "a[data-tclog] > img, #foot, .recordcode, .index-copyright, div[style*='overflow'], .rn-container, .s-loading-frame.bottom {display:none !important;}",
         ddrk2: "body,div.post-content,a {overflow-x:hidden !important;}", // ddys
-        jable: "body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
+        jable: "#footer1,#btimgid1,body {overflow-x:hidden;} div.site-content {overflow-x:hidden!important;} div.text-center > a[target=_blank], li[class*='nav-item'] >  a[target=_blank], div.asg-interstitial, div.asg-interstitial__mask, div[class*=\"exo\"], .exo-native-widget-outer-container, a[href*=\"trwl1\"], div[data-width=\"300\"], div.text-center.mb-e-30, div[data-width*=\"300\"], div[style*=\"300px\"], section[class*=\"justify\"], iframe[width=\"728\"][height=\"90\"], #site-content > div.container > section.pb-3.pb-e-lg-40.text-center, a[href*=\"\?banner=\"],[class*=\"root--\"],.badge,a[href=\"http\:\/\/uus52\.com/\"] {display :none !important; pointer-events: none !important;}", // Jable.tv
         test: "*, div,img {display: none !important}",
         tvn: "img[src*='gif'], iframe {display:none !important; pointer-events:none important;}",
         comic_18: "div.div2_sticky2, p > a[target=_blank], div.modal-body > a[target=_blank], li[class*='pop'] > a[target=_blank], li[class*='top'] > a[target=_blank], .modal-backdrop,[data-height*='90'],div[data-height='250'][data-width='300'],a[href^='http']:not([href*='18comic.']) > img ,#adsbox ,a[target='_blank'][rel*='nofollow'] > img[src*='.gif'] ,#guide-modal ,iframe[width='300'][height='250'] ,.modal-body > ul.pop-list,.adsbyexoclick,div[data-group^='skyscraper_'],.bot-per,.top-a2db,a[href*='.taobao.com'],div[data-height='264'][data-width='956'],div[style^='position: fixed; top:'],.bot-per.visible-xs.visible-sm  {display: none !important; pointer-events: none !important;}", // 555电影网
@@ -436,7 +445,7 @@ var adsMax = {
         javdb: "nav.app-desktop-banner,div.moj-content {display:none !important}",
         jkforum: "",
         javland: "img[src*='.gif'], a[href^=\"https://go.rmhfrtnd.com/\"] {display:none !important; pointer-events: none !important;}",  // jav.land
-        _4hu: 'body > #__nuxt:first-child > div > .footer > .floatWindow + div[data-tag],body > #__nuxt:first-child > div > .container > .top-menu + div[class],a[href*="?invite_code="] > img[src*=".com"],.couplet-left, body[ontouchstart] > div[id^="content_"][style="display: block;"], div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}',
+        _4hu: '#__nuxt ~ div[data-tag],body > #__nuxt:first-child > div > .container > div[data-topmenu] + div + div[data-pg-wrap],body > #__nuxt:first-child > div > .footer > .floatWindow + div[data-tag],body > #__nuxt:first-child > div > .container > .top-menu + div[class],a[href*="?invite_code="] > img[src*=".com"],.couplet-left, body[ontouchstart] > div[id^="content_"][style="display: block;"], div.row.col2 > dl, #btmBox, img[src*=gif],.col5 > dl#randomBox, script[src$=\"/base.js\"] + #couplet, body[ontouchstart] > #topBox,.wrap + #btmBox,.search + #midBox {opacity:0% !important; pointer-events: none !important; height: 0px !important}',
         ziziflix: ".ad-desktop,.ad-mobile {display:none !important; pointer-events: none !important;}",
         // {opacity:0% !important; pointer-events: none !important; height: 0px !important}
         netflav: "iframe[src*=xlv],.ads_video_overlay_mobile, div.widget-container, a[href*=\"register\"][target=\"_blank\"],div.ads_video_close_button,div.ads_video_overlay_mobile,div.footer_root,div.ads_head_banner_container {display:none !important;}",
@@ -1002,8 +1011,41 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'jable': // 2333
             console.log("IT'S JABLE");
 
-            window.onload = function () {
+            // 父节点
 
+            function removeAllIframesAndParents() {
+                const iframes = document.querySelectorAll('iframe');
+                iframes.forEach(iframe => {
+                    // 防止误删 document.body 或 document.documentElement
+                    const parent = iframe.parentElement;
+                    if (parent && parent !== document.body && parent !== document.documentElement) {
+                        parent.remove();
+                    } else {
+                        iframe.remove();
+                    }
+                });
+            }
+
+            // 1. 立即执行一次清空现有 iframe
+            removeAllIframesAndParents();
+
+            // 2. 创建观察者，持续监听后续动态插入的 iframe
+            const observer = new MutationObserver((mutations) => {
+                removeAllIframesAndParents();
+            });
+
+            // 开始监听整个页面 DOM 树的变化
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            autoRemoveElements('iframe,footer#footer1,div#btimgid1,div[style*="position: fixed"][style*="bottom: 0px"]') // 给镜像站用
+
+            window_open_defuser(); // 打断 window.open 施法
+
+            /*
+            window.onload = function () {
 
                 // 移除广告
 
@@ -1051,7 +1093,51 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 3000)
                 }
 
-            }()
+            }() */
+
+            window.onload = function () {
+                // 1. 移除广告
+                const targetLink = document.querySelector('a[href*="9432b3b0-661c-4d05-9552-29757dafc4cb"]');
+                if (targetLink) {
+                    const container = targetLink.closest('.col-6.col-sm-4.col-lg-12');
+                    if (container) {
+                        container.remove();
+                        console.log('广告元素已移除');
+                    }
+                }
+
+                // 2. 新增快进快退
+                if (typeof fastForward === 'function') {
+                    fastForward('#player', 'section.pb-3.pb-e-lg-30');
+                }
+
+                // 3. 搜索页处理
+                if (document.location.href.search('search') !== -1) {
+                    let regex = /.*\/search\//;
+                    let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase();
+                    setTimeout(() => {
+                        if (typeof tmd === 'function') {
+                            tmd('#list_videos_videos_list_search_result > nav', code, '试试其他搜索：');
+                        }
+                    }, 2000);
+                    console.log("生成搜索链接🔗");
+                }
+
+                // 4. 视频播放页处理
+                if (document.querySelector('.plyr__poster') !== null) {
+                    let regex = /.*\/videos\//;
+                    let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase();
+                    setTimeout(() => {
+                        if (document.querySelector('#p1') === null) {
+                            console.log('开始生成在线预览链接...');
+                            if (typeof tmd === 'function') {
+                                tmd('h4', code, '在其他站点播放：');
+                            }
+                        }
+                        console.log("生成在其他站点播放链接🔗");
+                    }, 3000);
+                }
+            };
 
             // 子域名跳转至主域名 jable.tv
             if (/\b(.*\.)(jable\.tv.*)\b/i.test(window.location.href.toLowerCase())) {

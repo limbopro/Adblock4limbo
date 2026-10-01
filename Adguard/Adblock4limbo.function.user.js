@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2026.09.15
+// @version      0.2026.10.01
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 沉浸式翻译纯JS版本；M3U8/MP4资源链接提取；广告元素屏蔽器；费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -696,16 +696,17 @@ function getNavigationHTML() {
       </div>
     </div>
     <div class="_header4tips">
-      🚫本导航为<a href="https://limbopro.com/archives/12904.html" target="_blank">毒奶去网页广告计划</a>的一部分！持续维护更新中...<br>
-      <b>✨导航使用小Tips</b> -&gt; 1秒内，<b>电脑用户</b>(连续敲击<b>2次ESC键</b>)，<b>iOS用户</b>(<b>在页面空白处连续点击4次及以上</b>) 可<b>快速唤起本导航页面；<br>点击右上角关闭按钮或双击导航页的空白处可关闭导航页面！</b>!<br>
-      <b>🖐可拖拽&🤖智能分类排序：点击越多，排序越靠前！</b>（排序数据存储基于<a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage">localStorage</a>；默认置顶分类不加入点击统计排序；）<br>
+      🔔本导航为<a href="https://limbopro.com/archives/12904.html" target="_blank">毒奶去网页广告计划</a>的一部分！持续维护更新中...<br>
+      <b>✨导航使用小Tips</b> -&gt; 1. 1秒内，<b>电脑用户</b>(连续敲击<b>2次ESC键</b>)，<b>iOS用户</b>(<b>在页面空白处连续点击4次及以上</b>) 可<b>快速唤起本导航页面；<br>2. ❌点击右上角关闭按钮或按ESC键或在页面空白处连续点击4次及以上可关闭导航页面！</b>!<br>
+      <b>🖐可拖拽分类的名称进行排序&🤖智能分类排序：点击分类下的内容次数越多，该分类排序越靠前！</b>（排序数据存储基于<a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage">localStorage</a>；默认置顶分类不加入点击统计排序；）<br>
       <b>🙋‍♂️反馈/建议/功能设置</b>中的<b>ON代表该功能已开启</b>，可<b>点击切换至OFF</b>进行关闭!<br>
       👍P.S.有好的网站/建议或意见欢迎<a href="https://limbopro.com/6.html" target="_blank" style="background:black;color:aliceblue">联系博主!</a>（将为ta移除广告，并添加至本导航页面==...
     </div>
   </div>
 
+
   <!-- 反馈/建议/功能设置 -->
-  <div class="div_global feedback">
+  <div class="div_global feedback" style="cursor: default;">
     <div class="title_global">反馈/建议/功能设置//</div>
     <ul class="ul_global">
       <!-- <li class="li_global"><a class="a_global" id="admin" href="https://limbopro.com/6.html" target="_blank">联系博主</a></li> -->
@@ -731,7 +732,7 @@ function getNavigationHTML() {
   </div>
 
   <!-- 关注博主 -->
-  <div class="div_global gkd">
+  <div class="div_global gkd" style="cursor: default;">
     <div class="title_global">关注博主//</div>
     <ul class="ul_global">
       <li class="li_global"><a class="a_global" id="Github" href="https://github.com/limbopro" target="_blank">Github</a></li>
@@ -745,56 +746,59 @@ function getNavigationHTML() {
   </div>
 
   <!-- 工具箱 -->
-  <div class="div_global magicbox">
+<div class="div_global magicbox" style="cursor: default;">
     <div class="title_global">工具箱//</div>
     <ul class="ul_global">
-      <li class="li_global"><a class="a_global" id="itimer">计时器⏱️</a></li>
-      <li class="li_global"><a class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html" target="_blank" style="background:#5a4771;box-shadow:inset 0 0 15px 3px #16191f00">🚫广告拦截大全</a></li>
-      <li class="li_global"><a class="a_global" id="software_skills" href="https://limbopro.com/category/software-skills/" target="_blank">⚒️软件百科</a></li>
-      <li class="li_global"><a class="a_global special yellow" id="websiteStatus" href="https://limbopro.com/status/" target="_blank" style="background:#5a4771">✅网站实时状态</a></li>
-      <li class="li_global"><a class="a_global special yellow" id="毒奶搜索" href="https://limbopro.com/search.html" target="_blank" style="border-radius:4px;background:#c53f3f">🎬毒奶搜索</a></li>
-      <li class="li_global"><a class="a_global special yellow" id="番号搜索" href="https://limbopro.com/btsearch.html" target="_blank" style="border-radius:4px;background:#c53f3f">🔞番号搜索</a></li>
-      <li class="li_global"><button class="a_global special yellow" id="mtzyczq"  style="border-radius:4px;background:#c53f3f" onclick="mtzyczq()">🎦媒体资源查找器</button></li>
-      <li class="li_global"><button class="a_global special yellow" onclick="window.geminiElementBlockerOpenPanel()" id="gemini-element-blocker"  style="border-radius:4px;background:#c53f3f">🔍 元素屏蔽/追踪器</button></li>
-      <li class="li_global">
-    <button 
-        class="a_global special yellow" 
-        id="carolPanel"  
-        style="border-radius:4px;background:#c53f3f"
-        onclick="window.initWebDebugger()"> ⚙️ Web 存储调试器
-    </button>
-</li>
+        <li class="li_global"><a class="a_global" id="itimer">计时器⏱️</a></li>
+        <li class="li_global"><a class="a_global" id="Adblock4limbo" href="https://limbopro.com/archives/12904.html"
+                target="_blank" style="background:#5a4771;box-shadow:inset 0 0 15px 3px #16191f00">🚫广告拦截大全</a></li>
+        <li class="li_global"><a class="a_global" id="software_skills"
+                href="https://limbopro.com/category/software-skills/" target="_blank">⚒️软件百科</a></li>
+        <li class="li_global"><a class="a_global special yellow" id="websiteStatus" href="https://limbopro.com/status/"
+                target="_blank" style="background:#5a4771">✅网站实时状态</a></li>
+        <li class="li_global"><a class="a_global special yellow" id="毒奶搜索" href="https://limbopro.com/search.html"
+                target="_blank" style="border-radius:4px;background:#c53f3f">🎬毒奶搜索</a></li>
+        <li class="li_global"><a class="a_global special yellow" id="番号搜索" href="https://limbopro.com/btsearch.html"
+                target="_blank" style="border-radius:4px;background:#c53f3f">🔞番号搜索</a></li>
+        <li class="li_global"><button class="a_global special yellow" id="mtzyczq"
+                style="border-radius:4px;background:#c53f3f" onclick="mtzyczq()">🎦媒体资源查找器</button></li>
+        <li class="li_global"><button class="a_global special yellow" onclick="window.geminiElementBlockerOpenPanel()"
+                id="gemini-element-blocker" style="border-radius:4px;background:#c53f3f">🔍 元素屏蔽/追踪器</button></li>
+        <li class="li_global">
+            <button class="a_global special yellow" id="carolPanel" style="border-radius:4px;background:#c53f3f"
+                onclick="window.initWebDebugger()"> ⚙️ Web 存储调试器
+            </button>
+        </li>
 
-<li class="li_global">
-    <button 
-        class="a_global special yellow" 
-        id="jscodeView"  
-        style="border-radius:4px;background:#c53f3f"
-        onclick="window.showPageScriptsFloatWindow()"> 📟 页面脚本查看器
-    </button>
-</li>
+        <li class="li_global">
+            <button class="a_global special yellow" id="jscodeView" style="border-radius:4px;background:#c53f3f"
+                onclick="window.showPageScriptsFloatWindow()"> 📟 页面脚本查看器
+            </button>
+        </li>
 
-      <li class="li_global"><button class="a_global special yellow" id="zhixingjs" onclick='window.showJsManager()' style="border-radius:4px;background:#c53f3f">🧑‍💻执行JS代码</button></li>
-    <li class="li_global"><button class="a_global special yellow" id="loadjsStatus" onclick='window.geminiScriptCheck()' style="border-radius:4px;background:#c53f3f">🟢JS加载状态</button></li>
-      <li class="li_global">
-      <button id="adsSkip" class="a_global special yellow ads_skip_on" title="自动跳过广告已开启 (点击关闭)" style="
+        <li class="li_global"><button class="a_global special yellow" id="zhixingjs" onclick='window.showJsManager()'
+                style="border-radius:4px;background:#c53f3f">🧑‍💻执行JS代码</button></li>
+        <li class="li_global"><button class="a_global special yellow" id="loadjsStatus"
+                onclick='window.geminiScriptCheck()' style="border-radius:4px;background:#c53f3f">🟢JS加载状态</button></li>
+        <li class="li_global">
+            <button id="adsSkip" class="a_global special yellow ads_skip_on" title="自动跳过广告已开启 (点击关闭)" style="
     width: 106px !important;
     height: 50px !important;
     padding: 5px !important;
     align-items: center !important;
     display: grid!important;
-"><p style="
+">
+                <p style="
     padding: 2px 5px 2px 5px;
 "><span>视频广告自动跳过</span><span id="toggle_status_text">开启</span>
-</p></button></li>
+                </p>
+            </button>
+        </li>
 
 
-<li class="li_global">
-<button id="loadCSS" 
-    class="a_global special" 
-    title="🌈 加载 AdGuard 过滤器(CSS)" 
-    onclick="toggleAdGuardFilter()"
-    style="
+        <li class="li_global">
+            <button id="loadCSS" class="a_global special" title="🌈 加载 AdGuard 过滤器(CSS)" onclick="toggleAdGuardFilter()"
+                style="
         width: 106px !important;
         height: 50px !important;
         padding: 5px !important;
@@ -807,16 +811,17 @@ function getNavigationHTML() {
         line-height: 1.2 !important;
         background: #c53f3f !important; /* 默认红色 */
     ">
-    <p style="padding: 2px 5px !important; margin: 0 !important; pointer-events: none !important;">
-        <span style="font-size: 11px !important; display: block !important;">AdGuard 过滤器</span>
-        <span id="loadCSS_status_text" style="font-weight: bold !important; font-size: 12px !important;">默认关闭</span>
-    </p>
-</button>
-</li>
+                <p style="padding: 2px 5px !important; margin: 0 !important; pointer-events: none !important;">
+                    <span style="font-size: 11px !important; display: block !important;">AdGuard 过滤器</span>
+                    <span id="loadCSS_status_text"
+                        style="font-weight: bold !important; font-size: 12px !important;">默认关闭</span>
+                </p>
+            </button>
+        </li>
 
 
     </ul>
-  </div>
+</div>
 
   
 
@@ -975,7 +980,7 @@ var file = {
 
         /* 主容器背景与动画 */
         "#dh_pageContainer {overflow-y:overlay; overflow-x:hidden; background-image:url('https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/Adblock4limbo_bgp.jpg'); background-size:100% !important; background-repeat:round; margin:auto; width:200px; height:200px; z-index:-114154; opacity:0; background-color:transparent; position:fixed; top:50%;}",
-        "div#dh_pageContainer.dh_pageContainer_css {height:100% !important; width:100% !important; overscroll-behavior:none; top:0px; transition-property:opacity; transition-duration:999ms; margin:0px !important;}",
+        "div#dh_pageContainer.dh_pageContainer_css {height:100% !important; width:100% !important; overscroll-behavior:none; top:0px; /*transition-property:opacity;*/ transition-duration:999ms; margin:0px !important;}",
         "div#dh_pageContainer.dh_pageContainer_css_0 {transition-duration:0ms !important; margin:0px !important;}"
     ].join("\n")
 };
@@ -1269,7 +1274,7 @@ window.parentElement_add = function parentElement_add() {
     // 定义时间限制为 1000 毫秒 (1 秒)
     const DOUBLE_CLICK_TIME_LIMIT = 750;
 
-    // 4. 空白点击 (1秒内双击) → 关闭导航
+    // 4. 空白点击 (1秒内4击) → 关闭导航
     echoDiv.addEventListener('click', function (e) {
 
         // A. 导航未打开 或 点击了菜单按钮，重置并退出
@@ -1287,10 +1292,11 @@ window.parentElement_add = function parentElement_add() {
         // C. 增加计数
         blankClickCount++;
 
-        // D. 检查是否达到两次点击
-        if (blankClickCount === 2) {
-            // 双击成功，执行关闭操作
+        // D. 检查是否达到3次点击
+        if (blankClickCount >= 4) {
+            // 成功，执行关闭操作
             body_build('false');
+            console.info('4击关闭导航')
 
             // 关键：关闭后，必须重置计数器和计时器
             blankClickCount = 0;

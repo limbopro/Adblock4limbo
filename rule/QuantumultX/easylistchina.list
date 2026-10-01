@@ -23,6 +23,12 @@ DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,hash.trafficmanager.net, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,thresher30.com, reject
+DOMAIN-SUFFIX,gp2mi428s.com, reject
+DOMAIN-SUFFIX,tftwrvvavlpjjq.com, reject
+DOMAIN-SUFFIX,asrxwyud2.com, reject
+DOMAIN-SUFFIX,zbeh6v9jj.com, reject
+DOMAIN-SUFFIX,yrjxf61zb.com, reject
 DOMAIN-SUFFIX,gangway97.com, reject
 DOMAIN-SUFFIX,rwhyrlb8r2.com, reject
 DOMAIN-SUFFIX,o17kbwlq9p.com, reject

@@ -1,10 +1,10 @@
 payload:
 ## [Adblock Plus 1.1]
-## ! Version: 202609301553
+## ! Version: 202610010545
 ## ! Title: EasyPrivacy
-## ! Last modified: 30 Sep 2026 15:53 UTC
+## ! Last modified: 01 Oct 2026 05:45 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: f077825e1659c7ae06effe48fe5c3f6e7a18faf3
+## ! Commit: 84737d0cac6c9c8be25db8cb9efe084206987391
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -3735,6 +3735,7 @@ payload:
   - DOMAIN-SUFFIX,events.pickrr.com
   - DOMAIN-SUFFIX,events.plutus.ninja
   - DOMAIN-SUFFIX,events.realgravity.com
+  - DOMAIN-SUFFIX,events.searchtap.net
   - DOMAIN-SUFFIX,events.shareably.net
   - DOMAIN-SUFFIX,events.shoplift.ai
   - DOMAIN-SUFFIX,events.splash-screen.net
@@ -3798,6 +3799,7 @@ payload:
   - DOMAIN-SUFFIX,geoservice.curse.com
   - DOMAIN-SUFFIX,geotags.refinery89.com
   - DOMAIN-SUFFIX,gi-client-tracking.goodgamestudios.com
+  - DOMAIN-SUFFIX,gkx.gokwik.co
   - DOMAIN-SUFFIX,globale-analytics-sdk.global-e.com
   - DOMAIN-SUFFIX,go.activengage.com
   - DOMAIN-SUFFIX,gollum.monotote.com
@@ -4007,6 +4009,7 @@ payload:
   - DOMAIN-SUFFIX,p.jmlp.app
   - DOMAIN-SUFFIX,p.metrilo.com
   - DOMAIN-SUFFIX,p.placed.com
+  - DOMAIN-SUFFIX,p.sa7eer.com
   - DOMAIN-SUFFIX,p.skimresources.com
   - DOMAIN-SUFFIX,p.tryretool.com
   - DOMAIN-SUFFIX,p.typekit.net
@@ -4120,6 +4123,7 @@ payload:
   - DOMAIN-SUFFIX,raven.adeptmind.ai
   - DOMAIN-SUFFIX,reach-id.orbit.tm-awx.com
   - DOMAIN-SUFFIX,realm.hearst3pcc.com
+  - DOMAIN-SUFFIX,realtimeanalytics.yext.com
   - DOMAIN-SUFFIX,receive.wmcdp.io
   - DOMAIN-SUFFIX,reco.target2sell.com
   - DOMAIN-SUFFIX,recs-api.conde.digital
@@ -4423,6 +4427,7 @@ payload:
   - DOMAIN-SUFFIX,track.btdmp.com
   - DOMAIN-SUFFIX,track.coherentpath.com
   - DOMAIN-SUFFIX,track.contently.com
+  - DOMAIN-SUFFIX,track.convertfox.com
   - DOMAIN-SUFFIX,track.cordial.io
   - DOMAIN-SUFFIX,track.digitalriver.com
   - DOMAIN-SUFFIX,track.emerse.com
@@ -4970,6 +4975,7 @@ payload:
   - DOMAIN-SUFFIX,atom-log.3.cn
   - DOMAIN-SUFFIX,beacon.sina.com.cn
   - DOMAIN-SUFFIX,beaconcdn.qq.com
+  - DOMAIN-SUFFIX,browsertdidticket.m.qq.com
   - DOMAIN-SUFFIX,bzclk.baidu.com
   - DOMAIN-SUFFIX,c.holmesmind.com
   - DOMAIN-SUFFIX,cartx.cloud
@@ -4988,6 +4994,7 @@ payload:
   - DOMAIN-SUFFIX,fourier.alibaba.com
   - DOMAIN-SUFFIX,fourier.taobao.com
   - DOMAIN-SUFFIX,g.yccdn.com
+  - DOMAIN-SUFFIX,gatherer.m.qq.com
   - DOMAIN-SUFFIX,gdt.qq.com
   - DOMAIN-SUFFIX,hacx60.com
   - DOMAIN-SUFFIX,haostat.qihoo.com
@@ -5039,6 +5046,7 @@ payload:
   - DOMAIN-SUFFIX,videostats.kakao.com
   - DOMAIN-SUFFIX,web-trace.ksapisrv.com
   - DOMAIN-SUFFIX,webstat.qiumibao.com
+  - DOMAIN-SUFFIX,webstat.ws.126.net
   - DOMAIN-SUFFIX,webtrack.pospal.cn
   - DOMAIN-SUFFIX,wlog.kuaishou.com
   - DOMAIN-SUFFIX,tracking.vid4u.org
@@ -5457,6 +5465,7 @@ payload:
   - DOMAIN-SUFFIX,track.livasoft.com.tr
   - DOMAIN-SUFFIX,tracker.adcluster.com.tr
   - DOMAIN-SUFFIX,traffic.wdc.center
+  - DOMAIN-SUFFIX,trafik.koopit.ist
   - DOMAIN-SUFFIX,wa.wawlabs.com
   - DOMAIN-SUFFIX,informers.sinoptik.ua
   - DOMAIN-SUFFIX,tracker.multisearch.io
@@ -5671,6 +5680,7 @@ payload:
   - DOMAIN-SUFFIX,count.rin.ru
   - DOMAIN-SUFFIX,counter.darkreader.app
   - DOMAIN-SUFFIX,cpt.itv.com
+  - DOMAIN-SUFFIX,crta.dailymail.com
   - DOMAIN-SUFFIX,crta.metro.co.uk
   - DOMAIN-SUFFIX,crumbs.robinhood.com
   - DOMAIN-SUFFIX,cryo.socialblade.com
@@ -5763,6 +5773,7 @@ payload:
   - DOMAIN-SUFFIX,exr-mms.expertreviews.co.uk
   - DOMAIN-SUFFIX,f.pie.org
   - DOMAIN-SUFFIX,f362.nola.com
+  - DOMAIN-SUFFIX,faro-collector-*.grafana-ops.net
   - DOMAIN-SUFFIX,faro-collector-prod-*.grafana.net
   - DOMAIN-SUFFIX,fathom.app.silverbeak.com
   - DOMAIN-SUFFIX,fathom.tdvm.net
@@ -6016,6 +6027,7 @@ payload:
   - DOMAIN-SUFFIX,pulsar.ebay.com
   - DOMAIN-SUFFIX,pulse.delta.com
   - DOMAIN-SUFFIX,pulse.genki.world
+  - DOMAIN-SUFFIX,pulsepoint.ideal.house
   - DOMAIN-SUFFIX,pumpkin.abine.com
   - DOMAIN-SUFFIX,px.srvcs.tumblr.com
   - DOMAIN-SUFFIX,pxl.indeed.com
@@ -6192,6 +6204,7 @@ payload:
   - DOMAIN-SUFFIX,tc.geniusmonkey.com
   - DOMAIN-SUFFIX,td.airdroid.com
   - DOMAIN-SUFFIX,tealium-proxy.libertex.org
+  - DOMAIN-SUFFIX,ted.dailymail.co.uk
   - DOMAIN-SUFFIX,telegraph.prd.api.max.com
   - DOMAIN-SUFFIX,telem.sre.gopuff.com
   - DOMAIN-SUFFIX,telemetry.adobe.io
@@ -42735,6 +42748,7 @@ payload:
   - DOMAIN-SUFFIX,log.m.sm.cn
   - DOMAIN-SUFFIX,log.mgtv.com
   - DOMAIN-SUFFIX,log.mix.sina.com.cn
+  - DOMAIN-SUFFIX,log.news.baidu.com
   - DOMAIN-SUFFIX,log.sina.cn
   - DOMAIN-SUFFIX,log.zcool.com.cn
   - DOMAIN-SUFFIX,log.zongheng.com

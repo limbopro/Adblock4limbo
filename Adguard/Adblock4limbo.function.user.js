@@ -698,7 +698,7 @@ function getNavigationHTML() {
     <div class="_header4tips">
       🔔本导航为<a href="https://limbopro.com/archives/12904.html" target="_blank">毒奶去网页广告计划</a>的一部分！持续维护更新中...<br>
       <b>✨导航使用小Tips</b> -&gt; 1. 1秒内，<b>电脑用户</b>(连续敲击<b>2次ESC键</b>)，<b>iOS用户</b>(<b>在页面空白处连续点击4次及以上</b>) 可<b>快速唤起本导航页面；<br>2. ❌点击右上角关闭按钮或按ESC键或在页面空白处连续点击4次及以上可关闭导航页面！</b>!<br>
-      <b>🖐可拖拽分类的名称进行排序&🤖智能分类排序：点击分类下的内容次数越多，该分类排序越靠前！</b>（排序数据存储基于<a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage">localStorage</a>；默认置顶分类不加入点击统计排序；）<br>
+      <b>🖐可拖拽分类的名称进行排序或🤖按点击次数排序（默认）：点击分类下的内容次数越多，该分类排序越靠前！</b>（排序数据存储基于<a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage">localStorage</a>；默认置顶分类不加入点击统计排序；查看 反馈/建议/功能设置// 📊导航使用数据统计 了解）<br>
       <b>🙋‍♂️反馈/建议/功能设置</b>中的<b>ON代表该功能已开启</b>，可<b>点击切换至OFF</b>进行关闭!<br>
       👍P.S.有好的网站/建议或意见欢迎<a href="https://limbopro.com/6.html" target="_blank" style="background:black;color:aliceblue">联系博主!</a>（将为ta移除广告，并添加至本导航页面==...
     </div>
@@ -717,12 +717,13 @@ function getNavigationHTML() {
       <li class="li_global"><button class="crbhms" onclick='daohangMode_switch()' id="hidedaohang">导航按钮(OFF)</button></li>
       <li class="li_global"><button class="crbhms" id="cjsfy" onclick='window.initImmersiveTranslationManager()' data-state="off" style="background-color:red">沉浸式翻译(OFF)</button></li>
             <li class="li_global"><button class="crbhms" id="huacisousuo" onclick='window.toggleSearchState()' data-state="off" style="background-color:red">划词搜索(OFF)</button></li>
-      <li class="li_global">
-    <button style="background: black;"class="crbhms" id="resetSort">重置排序</button></li>
+      <!--li class="li_global">
+    <button style="background: black;"class="crbhms" id="resetSort">重置排序</button></li-->
       <li class="li_global"><button class="crbhms" id="nsfwmode_switch" onclick="toggleNSFWProtection()" style="background: green;">
     🔒页面保护模式(OFF)
 </button></li>
-      <li class="li_global"><button class="a_global red" id="resetting" style="background:#171212;box-shadow:inset 0 0 15px 3px #16191f00">重置导航设置</button></li>
+      <!--li class="li_global"><button class="a_global red" id="resetting" style="background:#171212;box-shadow:inset 0 0 15px 3px #16191f00">重置导航设置</button></li-->
+      <li class="li_global"><button class="nav-stats-trigger-btn a_global red" onclick="showNavigationStats()"> 📊 导航使用数据统计 </button></li>
       <li class="li_global"><a class="a_global" id="jiaocheng" href="https://github.com/limbopro/Adblock4limbo?tab=readme-ov-file#%E6%AF%92%E5%A5%B6%E5%8E%BB%E5%B9%BF%E5%91%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4" target="_blank">导航使用教程</a></li>
       <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo?tab=readme-ov-file#%E5%A6%82%E4%BD%95%E5%8F%8D%E9%A6%88%E9%97%AE%E9%A2%98%E6%8F%90%E4%BA%A4%E6%96%B0%E7%BD%91%E7%AB%99%E9%87%8D%E8%A6%81" target="_blank">提交issue</a></li>
       <li class="li_global"><a class="a_global" id="tgGroup" href="https://t.me/Adblock4limbo/21" target="_blank">电报群组</a></li>
@@ -754,12 +755,6 @@ function getNavigationHTML() {
                 target="_blank" style="background:#5a4771;box-shadow:inset 0 0 15px 3px #16191f00">🚫广告拦截大全</a></li>
         <li class="li_global"><a class="a_global" id="software_skills"
                 href="https://limbopro.com/category/software-skills/" target="_blank">⚒️软件百科</a></li>
-        <li class="li_global"><a class="a_global special yellow" id="websiteStatus" href="https://limbopro.com/status/"
-                target="_blank" style="background:#5a4771">✅网站实时状态</a></li>
-        <li class="li_global"><a class="a_global special yellow" id="毒奶搜索" href="https://limbopro.com/search.html"
-                target="_blank" style="border-radius:4px;background:#c53f3f">🎬毒奶搜索</a></li>
-        <li class="li_global"><a class="a_global special yellow" id="番号搜索" href="https://limbopro.com/btsearch.html"
-                target="_blank" style="border-radius:4px;background:#c53f3f">🔞番号搜索</a></li>
         <li class="li_global"><button class="a_global special yellow" id="mtzyczq"
                 style="border-radius:4px;background:#c53f3f" onclick="mtzyczq()">🎦媒体资源查找器</button></li>
         <li class="li_global"><button class="a_global special yellow" onclick="window.geminiElementBlockerOpenPanel()"
@@ -1319,10 +1314,11 @@ window.parentElement_add = function parentElement_add() {
 
         // 定义一个数组来存储各个菜单的配置信息
         const menuConfigs = [
+            { category: 'Toolset', title: '小工具//' },
             { category: 'SpeedTest', title: '测速工具//' },
             { category: 'ipcheck', title: '网络连通及被墙检测//' },
             { category: 'movies', title: '在线影视//' },
-            { category: 'xyellow', title: '成人影视//', optionalParam: 'onlinemovies' }, // 包含第三个参数
+            { category: 'adultVideo', title: '成人影视//', optionalParam: 'onlinemovies' }, // 包含第三个参数
             { category: 'front-end', title: '前端入门//' },
             { category: 'knowledge', title: '男孩子读物//' },
             { category: 'learnlingenglish', title: '我要学英语//' },
@@ -1406,6 +1402,15 @@ function createAndAppendMenus(websiteList, title, zidingyiClassName = '', catego
     if (categoryKey) {
         divGlobal.dataset.category = categoryKey;
     }
+
+
+    // 【新增】保存初始 DOM 结构顺序
+    const container = document.querySelector('div.echo');
+    if (container) {
+        const currentCount = container.querySelectorAll('.div_global').length;
+        divGlobal.dataset.initialIndex = currentCount;
+    }
+
 
     // 关键步骤 2: 设置 draggable="true" 启用拖拽功能
     divGlobal.setAttribute('draggable', 'true'); // <--- 确保添加了这行代码!
@@ -1597,50 +1602,57 @@ function incrementClickCount(category) {
     sortMenusByPopularity();
 }
 
-// 主排序函数
-// 主排序函数 (已更新以支持自定义拖拽顺序)
+// 主排序函数 (已更新：支持特定分类不参与排序 & 自定义拖拽顺序)
+// 2. 更新 sortMenusByPopularity 支持恢复初始顺序
 function sortMenusByPopularity() {
     const container = document.querySelector('.echo');
     if (!container) return;
 
-    // 1. 获取所有可排序的菜单元素
-    const menuDivs = Array.from(container.querySelectorAll('.div_global'))
-        .filter(div => div.dataset && div.dataset.category);
+    const excludedCategories = ['Toolset'];
 
-    // 2. 尝试读取自定义排序
+    container.querySelectorAll('.div_global').forEach(div => {
+        if (div.dataset && excludedCategories.includes(div.dataset.category)) {
+            div.removeAttribute('draggable');
+        }
+    });
+
+    const menuDivs = Array.from(container.querySelectorAll('.div_global'))
+        .filter(div => {
+            const cat = div.dataset ? div.dataset.category : null;
+            return cat && !excludedCategories.includes(cat);
+        });
+
     const customOrderJson = localStorage.getItem('customMenuOrder');
+    const stats = JSON.parse(localStorage.getItem('navClickStats') || '{}');
 
     if (customOrderJson) {
-        // --- 优先使用自定义排序 ---
+        // 优先使用自定义拖拽排序
         const customOrder = JSON.parse(customOrderJson);
-
-        // 使用自定义顺序来排序 menuDivs
         menuDivs.sort((a, b) => {
             const indexA = customOrder.indexOf(a.dataset.category);
             const indexB = customOrder.indexOf(b.dataset.category);
-
-            // 确保未在 customOrder 中的元素排在后面 (使用一个大数字)
             const orderA = indexA === -1 ? menuDivs.length : indexA;
             const orderB = indexB === -1 ? menuDivs.length : indexB;
-
             return orderA - orderB;
         });
-
-    } else {
-        // --- 退回到智能排序 (点击次数) ---
-        const stats = JSON.parse(localStorage.getItem('navClickStats') || '{}');
-
+    } else if (Object.keys(stats).length > 0) {
+        // 使用点击次数智能排序
         menuDivs.sort((a, b) => {
             const ca = a.dataset.category;
             const cb = b.dataset.category;
             const diff = (stats[cb] || 0) - (stats[ca] || 0);
             if (diff !== 0) return diff;
-            // 次数相同就按原始顺序（通过 DOM 顺序近似实现）
-            return 0;
+            // 点击次数相同，按初始索引排序
+            return (Number(a.dataset.initialIndex) || 0) - (Number(b.dataset.initialIndex) || 0);
+        });
+    } else {
+        // 【关键】数据均为空时，直接按照初始 index 恢复默认布局
+        menuDivs.sort((a, b) => {
+            return (Number(a.dataset.initialIndex) || 0) - (Number(b.dataset.initialIndex) || 0);
         });
     }
 
-    // 3. 重新插入元素以应用新顺序
+    // 重新 appendChild 实时应用新顺序
     menuDivs.forEach(div => container.appendChild(div));
 }
 
@@ -1668,7 +1680,6 @@ document.getElementById('resetSort')?.addEventListener('click', () => {
     confirmndExecuteFC('所有排序数据已重置，即将重新载入...');
     location.reload();
 });
-
 
 
 
@@ -3242,7 +3253,7 @@ var dataListbak = {
             "level": "common"
         }
     ],
-    "xyellow": [
+    "adultVideo": [
         {
             "name": "今晚看什么？",
             "url": "https://limbopro.com/tools/jwksm/",
@@ -3496,6 +3507,43 @@ var dataListbak = {
         {
             "name": "iconfont",
             "url": "https://www.iconfont.cn/",
+            "target": "_blank",
+            "level": "common"
+        }
+    ], "Toolset": [
+        {
+            "name": "✅网站实时状态",
+            "url": "https://limbopro.com/status/",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "🎬毒奶搜索",
+            "url": "https://limbopro.com/search.html",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "🔞番号搜索",
+            "url": "https://limbopro.com/btsearch.html",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "♻️订阅转换",
+            "url": "https://limbopro.com/tools/2yaml",
+            "target": "_blank",
+            "level": "special yellow"
+        },
+        {
+            "name": "🐧长图切割",
+            "url": "https://limbopro.com/tools/CropCraft",
+            "target": "_blank",
+            "level": "common"
+        },
+        {
+            "name": "🔞今晚看什么？",
+            "url": "https://limbopro.com/tools/jwksm/#gsc.tab=0",
             "target": "_blank",
             "level": "common"
         }
@@ -4678,3 +4726,166 @@ if (!hostname.includes('limbopro.com') && !hostname.includes('supjav') && !isIfr
     showLimboAdNotice();
 }
 
+
+/**
+ * 独立函数：渲染并展示导航点击统计与拖拽数据弹窗
+ */
+function showNavigationStats() {
+    const MODAL_ID = 'nav_stats_modal_container';
+    const STYLE_ID = 'nav_stats_modal_style';
+
+    // 1. 动态注入所需 CSS 样式（避免重复注入）
+    if (!document.getElementById(STYLE_ID)) {
+        const style = document.createElement('style');
+        style.id = STYLE_ID;
+        style.textContent = `
+            .ns-modal-mask {
+                position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+                background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center;
+                align-items: center; z-index: 114154; backdrop-filter: blur(3px);
+            }
+            .ns-modal-content {
+                background: #ffffff; width: 90%; max-width: 480px; max-height: 80vh;
+                border-radius: 12px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                display: flex; flex-direction: column; box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            }
+            .ns-modal-header {
+                display: flex; justify-content: space-between; align-items: center;
+                border-bottom: 1px solid #eee; padding-bottom: 12px; margin-bottom: 12px;
+            }
+            .ns-modal-header h3 { margin: 0; font-size: 18px; color: #333; }
+            .ns-modal-close {
+                background: none; border: none; font-size: 22px; cursor: pointer; color: #999;
+            }
+            .ns-modal-body { overflow-y: auto; flex: 1; margin-bottom: 15px; }
+            .ns-section-title { font-weight: bold; font-size: 13px; color: #666; margin: 10px 0 6px 0; }
+            .ns-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+            .ns-table th, .ns-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+            .ns-table th { background: #f8f9fa; color: #555; }
+            .ns-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; background: #e9ecef; color: #495057; }
+            .ns-tag.fixed { background: #ffe3e3; color: #c92a2a; }
+            .ns-modal-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 12px; }
+            .ns-btn-reset { background: #fff0f0; color: #e03131; border: 1px solid #ffc9c9; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+            .ns-btn-reset:hover { background: #ffe3e3; }
+            .ns-btn-close { padding: 6px 16px; cursor: pointer; background: #f1f3f5; border: 1px solid #ced4da; border-radius: 6px; }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // 2. 获取数据与黑名单列表
+    const clickStats = JSON.parse(localStorage.getItem('navClickStats') || '{}');
+    const customOrderJson = localStorage.getItem('customMenuOrder');
+    const customOrder = customOrderJson ? JSON.parse(customOrderJson) : null;
+
+    // 黑名单配置（请保持与 sortMenusByPopularity 一致）
+    const excludedCategories = ['Toolset'];
+
+    // 3. 收集并格式化 DOM 中的分类数据
+    const categoryRows = Array.from(document.querySelectorAll('.echo .div_global'))
+        .filter(div => div.dataset && div.dataset.category)
+        .map((div) => {
+            const cat = div.dataset.category;
+            const title = div.querySelector('.title_global')?.innerText.replace('//', '').trim() || cat;
+            const clicks = clickStats[cat] || 0;
+            const isExcluded = excludedCategories.includes(cat);
+            return { cat, title, clicks, isExcluded };
+        });
+
+    // 按点击量从高到低排序（用于表格展示排名）
+    categoryRows.sort((a, b) => b.clicks - a.clicks);
+
+    // 4. 构建表格 HTML 节点
+    const tableRowsHTML = categoryRows.map((item, index) => {
+        const statusTag = item.isExcluded
+            ? `<span class="ns-tag fixed">固定不排</span>`
+            : `<span class="ns-tag">正常</span>`;
+
+        return `
+            <tr>
+                <td><b>${index + 1}</b></td>
+                <td>${item.title} <small style="color:#888;">(${item.cat})</small></td>
+                <td><b>${item.clicks}</b> 次</td>
+                <td>${statusTag}</td>
+            </tr>
+        `;
+    }).join('');
+
+    const dragStatusHTML = customOrder
+        ? `<span style="color:#d9480f;">⚠️ 按手动拖拽排序中 (共 ${customOrder.length} 项)</span>`
+        : `<span style="color:#2b8a3e;">✅ 按点击热度排序中</span>`;
+
+    // 5. 构建弹窗 DOM
+    const modalHTML = `
+        <div class="ns-modal-mask" id="${MODAL_ID}">
+            <div class="ns-modal-content">
+                <div class="ns-modal-header">
+                    <h3>📊 导航数据与排序统计</h3>
+                    <button class="ns-modal-close" id="ns_close_x_btn">&times;</button>
+                </div>
+                <div class="ns-modal-body">
+                    <div class="ns-section-title">当前状态：${dragStatusHTML}</div>
+                    <div class="ns-section-title">分类点击热度排行榜：</div>
+                    <table class="ns-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>分类名称</th>
+                                <th>点击量</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRowsHTML || '<tr><td colspan="4" style="text-align:center;">暂无分类数据</td></tr>'}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ns-modal-footer">
+                    <button class="ns-btn-reset" id="ns_reset_btn">🗑️ 清空统计/重置排序</button>
+                    <button class="ns-btn-close" id="ns_close_footer_btn">关闭</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 6. 清理旧弹窗并渲染新弹窗
+    const existingModal = document.getElementById(MODAL_ID);
+    if (existingModal) existingModal.remove();
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // 7. 绑定内部交互事件
+    const closeModal = () => {
+        const m = document.getElementById(MODAL_ID);
+        if (m) m.remove();
+    };
+
+    document.getElementById('ns_close_x_btn').onclick = closeModal;
+    document.getElementById('ns_close_footer_btn').onclick = closeModal;
+
+    // 点击遮罩空白处关闭
+    document.getElementById(MODAL_ID).onclick = (e) => {
+        if (e.target.id === MODAL_ID) closeModal();
+    };
+
+    // 重置排序（实时无刷新更新版）
+    document.getElementById('ns_reset_btn')?.addEventListener('click', () => {
+        confirmndExecuteFC(
+            '确定要重置所有排序设置吗？包括智能排序数据和自定义拖拽顺序。',
+            () => {
+                // 1. 清空智能排序统计数据
+                localStorage.removeItem('navClickStats');
+                // 2. 清空自定义拖拽顺序数据
+                localStorage.removeItem('customMenuOrder');
+                showNavigationStats(); // 刷新弹窗
+
+                // 3. 实时重置 DOM 排序（无需刷新页面）
+                if (typeof sortMenusByPopularity === 'function') {
+                    sortMenusByPopularity();
+                } else {
+                    location.reload(); // 降级方案：若未实现无刷新函数则刷新页面
+                }
+            }
+        );
+    });
+
+}

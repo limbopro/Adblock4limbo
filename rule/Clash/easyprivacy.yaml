@@ -1,10 +1,10 @@
 payload:
 ## [Adblock Plus 1.1]
-## ! Version: 202610010545
+## ! Version: 202610011544
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Oct 2026 05:45 UTC
+## ! Last modified: 01 Oct 2026 15:44 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 84737d0cac6c9c8be25db8cb9efe084206987391
+## ! Commit: bed8dee5b26dcf6c32bdc5eb5458cb20955afcbc
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1877,6 +1877,7 @@ payload:
   - DOMAIN-SUFFIX,mapbasin.com
   - DOMAIN-SUFFIX,mapcommand.com
   - DOMAIN-SUFFIX,marblediscussion.com
+  - DOMAIN-SUFFIX,marbleseeds.com
   - DOMAIN-SUFFIX,marinechurch.com
   - DOMAIN-SUFFIX,markedmeasure.com
   - DOMAIN-SUFFIX,marketspiders.com

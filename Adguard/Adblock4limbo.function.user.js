@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo——导航及各类功能函数合集.[github]
 // @namespace    https://limbopro.com/Adguard/Adblock4limbo.function.js
-// @version      0.2026.10.01
+// @version      0.2026.10.02
 // @license      CC BY-NC-SA 4.0
 // @description  实用网站导航 —— 沉浸式翻译纯JS版本；M3U8/MP4资源链接提取；广告元素屏蔽器；费在线影视/前端学习/开发者社区/新闻/建站/下载工具/格式转换工具/电子书/新闻/写作/免费漫画等；
 // @author       limbopro
@@ -706,7 +706,7 @@ function getNavigationHTML() {
 
 
   <!-- 反馈/建议/功能设置 -->
-  <div class="div_global feedback" style="cursor: default;">
+  <div class="div_global feedback" data-category="feedback" style="cursor: default;">
     <div class="title_global">反馈/建议/功能设置//</div>
     <ul class="ul_global">
       <!-- <li class="li_global"><a class="a_global" id="admin" href="https://limbopro.com/6.html" target="_blank">联系博主</a></li> -->
@@ -717,14 +717,12 @@ function getNavigationHTML() {
       <li class="li_global"><button class="crbhms" onclick='daohangMode_switch()' id="hidedaohang">导航按钮(OFF)</button></li>
       <li class="li_global"><button class="crbhms" id="cjsfy" onclick='window.initImmersiveTranslationManager()' data-state="off" style="background-color:red">沉浸式翻译(OFF)</button></li>
             <li class="li_global"><button class="crbhms" id="huacisousuo" onclick='window.toggleSearchState()' data-state="off" style="background-color:red">划词搜索(OFF)</button></li>
-      <!--li class="li_global">
-    <button style="background: black;"class="crbhms" id="resetSort">重置排序</button></li-->
       <li class="li_global"><button class="crbhms" id="nsfwmode_switch" onclick="toggleNSFWProtection()" style="background: green;">
     🔒页面保护模式(OFF)
 </button></li>
       <!--li class="li_global"><button class="a_global red" id="resetting" style="background:#171212;box-shadow:inset 0 0 15px 3px #16191f00">重置导航设置</button></li-->
       <li class="li_global"><button class="nav-stats-trigger-btn a_global red" onclick="showNavigationStats()"> 📊 导航使用数据统计 </button></li>
-      <li class="li_global"><a class="a_global" id="jiaocheng" href="https://github.com/limbopro/Adblock4limbo?tab=readme-ov-file#%E6%AF%92%E5%A5%B6%E5%8E%BB%E5%B9%BF%E5%91%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4" target="_blank">导航使用教程</a></li>
+      <!--li class="li_global"><a class="a_global" id="jiaocheng" href="https://github.com/limbopro/Adblock4limbo?tab=readme-ov-file#%E6%AF%92%E5%A5%B6%E5%8E%BB%E5%B9%BF%E5%91%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4" target="_blank">导航使用教程</a></li-->
       <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo?tab=readme-ov-file#%E5%A6%82%E4%BD%95%E5%8F%8D%E9%A6%88%E9%97%AE%E9%A2%98%E6%8F%90%E4%BA%A4%E6%96%B0%E7%BD%91%E7%AB%99%E9%87%8D%E8%A6%81" target="_blank">提交issue</a></li>
       <li class="li_global"><a class="a_global" id="tgGroup" href="https://t.me/Adblock4limbo/21" target="_blank">电报群组</a></li>
       <li class="li_global"><a class="a_global" id="issue" href="https://github.com/limbopro/Adblock4limbo/tree/main?tab=readme-ov-file#%E5%8E%BB%E7%BD%91%E9%A1%B5%E5%B9%BF%E5%91%8A%E8%AE%A1%E5%88%92%E6%B6%89%E5%8F%8A%E8%84%9A%E6%9C%AC%E5%90%8D%E7%A7%B0%E5%8F%8A%E5%85%B6%E6%BA%90%E7%A0%81" target="_blank">查看源码</a></li>
@@ -733,7 +731,7 @@ function getNavigationHTML() {
   </div>
 
   <!-- 关注博主 -->
-  <div class="div_global gkd" style="cursor: default;">
+  <div class="div_global followMe" data-category="followMe" style="cursor: default;">
     <div class="title_global">关注博主//</div>
     <ul class="ul_global">
       <li class="li_global"><a class="a_global" id="Github" href="https://github.com/limbopro" target="_blank">Github</a></li>
@@ -747,7 +745,7 @@ function getNavigationHTML() {
   </div>
 
   <!-- 工具箱 -->
-<div class="div_global magicbox" style="cursor: default;">
+<div class="div_global magicbox" data-category="magicbox" style="cursor: default;">
     <div class="title_global">工具箱//</div>
     <ul class="ul_global">
         <li class="li_global"><a class="a_global" id="itimer">计时器⏱️</a></li>
@@ -758,7 +756,10 @@ function getNavigationHTML() {
         <li class="li_global"><button class="a_global special yellow" id="mtzyczq"
                 style="border-radius:4px;background:#c53f3f" onclick="mtzyczq()">🎦媒体资源查找器</button></li>
         <li class="li_global"><button class="a_global special yellow" onclick="window.geminiElementBlockerOpenPanel()"
-                id="gemini-element-blocker" style="border-radius:4px;background:#c53f3f">🔍 元素屏蔽/追踪器</button></li>
+                id="gemini-element-blocker" style="border-radius:4px;background:#c53f3f">⚡️元素调试与屏蔽</button></li>
+        
+        <li class="li_global"><button class="a_global special yellow" onclick="window.showAdDetectorUI();body_build('false');"
+                id="gemini-AdDetector" style="border-radius:4px;background:#c53f3f">🧑‍⚕️可疑广告元素扫描</button></li>
         <li class="li_global">
             <button class="a_global special yellow" id="carolPanel" style="border-radius:4px;background:#c53f3f"
                 onclick="window.initWebDebugger()"> ⚙️ Web 存储调试器
@@ -1608,11 +1609,12 @@ function sortMenusByPopularity() {
     const container = document.querySelector('.echo');
     if (!container) return;
 
-    const excludedCategories = ['Toolset'];
+    const excludedCategories = ['feedback', 'followMe', 'magicbox', 'Toolset'];
 
     container.querySelectorAll('.div_global').forEach(div => {
         if (div.dataset && excludedCategories.includes(div.dataset.category)) {
             div.removeAttribute('draggable');
+            div.style.cursor = 'default'; // 添加鼠标样式
         }
     });
 
@@ -1667,20 +1669,6 @@ document.addEventListener('click', function (e) {
         incrementClickCount(category);
     }
 });
-
-// 重置排序
-document.getElementById('resetSort')?.addEventListener('click', () => {
-    if (!confirm('确定要重置所有排序设置吗？包括智能排序数据和自定义拖拽顺序。')) return;
-
-    // 1. 清空智能排序统计数据
-    localStorage.removeItem('navClickStats');
-    // 2. 清空自定义拖拽顺序数据 (新增)
-    localStorage.removeItem('customMenuOrder');
-
-    confirmndExecuteFC('所有排序数据已重置，即将重新载入...');
-    location.reload();
-});
-
 
 
 
@@ -2607,6 +2595,10 @@ loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/little
 // 测试小脚本 END
 
 
+// 广告元素检测小脚本 Start
+loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/AdDetector.js', 'head', 'littleCode')
+// 广告元素检测小脚本 END
+
 /**
  * WebDebugger.js 开始 START
  * * 独立函数：Web 存储调试器 (Cookies/Local/Session/Config)
@@ -2668,7 +2660,6 @@ loadExternalResourceFireAndForget('script', 'https://limbopro.com/Adguard/crazyM
 // 狂野模式 END
 
 //});
-
 
 
 
@@ -4779,7 +4770,7 @@ function showNavigationStats() {
     const customOrder = customOrderJson ? JSON.parse(customOrderJson) : null;
 
     // 黑名单配置（请保持与 sortMenusByPopularity 一致）
-    const excludedCategories = ['Toolset'];
+    const excludedCategories = ['feedback', 'followMe', 'magicbox', 'Toolset'];
 
     // 3. 收集并格式化 DOM 中的分类数据
     const categoryRows = Array.from(document.querySelectorAll('.echo .div_global'))
@@ -4889,3 +4880,5 @@ function showNavigationStats() {
     });
 
 }
+
+

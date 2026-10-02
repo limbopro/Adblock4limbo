@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         元素屏蔽/追踪器 (V26.40 - 拦截程序化点击和 PostMessage)
+// @name         元素调试与屏蔽工具 (V26.40 - 拦截程序化点击和 PostMessage)
 // @namespace    http://tampermonkey.net/
 // @version      26.40
 // @description  V26.39.11：在 V26.39.9 同步中断的基础上，新增拦截 Element.prototype.click（用于程序化重定向）和 window.postMessage（用于跨框架侧信道重定向）。这是对高级绕过机制的最后防线。
@@ -3574,7 +3574,7 @@ border: white !important;
 
         windowDiv.innerHTML = `
             <div id="gemini-header">
-                <strong>🔍 元素屏蔽/追踪器 (V26.40)</strong>
+                <strong>🔍 元素调试与屏蔽工具 (V26.40)</strong>
                 <button id="gemini-pin-btn">📌</button>
                 <span id="gemini-close-btn">&times;</span>
             </div>
@@ -3590,7 +3590,7 @@ border: white !important;
 
                
 
-                   <button id="selector-toggle">
+                   <button id="selector-toggle" style="display: none;">
                     启用 🖱️选择并屏蔽模式 (xPath)
                     </button>
 
@@ -3605,7 +3605,7 @@ border: white !important;
 
                  
 
-                    <button id="debug-location-toggle" class='${isDebuggingLocationHooks ? 'greener' : 'open'}'>
+                    <button style="display: none;" id="debug-location-toggle" class='${isDebuggingLocationHooks ? 'greener' : 'open'}'>
                     ⚙️ JS 重定向调试 (${isDebuggingLocationHooks ? '开' : '关'})
                     </button>
                 </div>
@@ -3757,6 +3757,7 @@ border: white !important;
             // 1. 修改按钮文字，告知用户已开启
             btn.innerText = `❌退出${originalText}`;
             btn.classList.add('closer')
+            statusBar.textContent = `${originalText} -> 模式已启用，请点击任意元素进行调试...`;
 
             // 2. 启动工具
             startSelectorTool();
@@ -3769,6 +3770,7 @@ border: white !important;
                     localStorage.setItem(DEBUG_SELECTOR_CLICK_KEY, 'false')
                     btn.innerText = `启用 ${originalText}`;
                     btn.classList.remove('closer')
+                    statusBar.textContent = `${originalText} -> 模式已关闭...`;
                     clearInterval(checkExit);
                 }
             }, 500); // 每半秒检查一次工具是否还存在
@@ -3885,7 +3887,7 @@ border: white !important;
 
             // 检查事件是否发生在任一容器内部
             // 如果 target.closest 找到匹配元素，则条件为真
-            if (target.closest(`#${containerId}`)  || target.closest('[id*="script-viewer"],[class*="confirm]') || target.closest('#confirmMask')) {
+            if (target.closest(`#${containerId}`) || target.closest('[id*="script-viewer"],[class*="confirm]') || target.closest('#confirmMask')) {
                 // 事件发生在受保护的容器内部
                 e.stopPropagation(); // 阻止其冒泡到父元素
                 return;              // 退出函数，不执行后续的阻止默认行为
@@ -4347,7 +4349,7 @@ border: white !important;
         if (e.target && e.target.id === 'gemini-close-btn') {
             if (typeof stopSelectorTool == 'function') {
                 stopSelectorTool(); // 关闭 ⚓ 元素CSS选择器获取 
-                // 如果用户关闭元素屏蔽/追踪器面板
+                // 如果用户关闭元素调试与屏蔽工具面板
             }
         }
 
@@ -5122,7 +5124,7 @@ border: white !important;
 })();
 
 
-// 全局调出元素屏蔽/追踪器面板
+// 全局调出元素调试与屏蔽工具面板
 window.geminiElementBlockerOpenPanel = () => {
     const containerId = 'gemini-main-container'; // 确保能访问到这个 ID
     if (!document.getElementById(containerId)) {

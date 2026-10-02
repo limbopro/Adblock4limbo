@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 30 Sep 2026 11:38:16 GMT
-# entries:        3552
+# entries:        3551
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -36,6 +36,7 @@ DOMAIN-SUFFIX,4d5.net
 DOMAIN-SUFFIX,4dex.io
 DOMAIN-SUFFIX,4info.com
 DOMAIN-SUFFIX,4jnzhl0d0.com
+DOMAIN-SUFFIX,50websads.com
 DOMAIN-SUFFIX,51.la
 DOMAIN-SUFFIX,518ad.com
 DOMAIN-SUFFIX,6sc.co
@@ -761,6 +762,7 @@ DOMAIN-SUFFIX,adtrade.net
 DOMAIN-SUFFIX,adtrk1.com
 DOMAIN-SUFFIX,adultadvertising.com
 DOMAIN-SUFFIX,adv-adserver.com
+DOMAIN-SUFFIX,adv.donejty.pl
 DOMAIN-SUFFIX,adv.freeonline.it
 DOMAIN-SUFFIX,adv.hwupgrade.it
 DOMAIN-SUFFIX,adv.mpvc.it
@@ -818,7 +820,6 @@ DOMAIN-SUFFIX,affectionknit.com
 DOMAIN-SUFFIX,affili.net
 DOMAIN-SUFFIX,affiliate.1800flowers.com
 DOMAIN-SUFFIX,affiliate.dtiserv.com
-DOMAIN-SUFFIX,affiliate.travelnow.com
 DOMAIN-SUFFIX,affiliate.treated.com
 DOMAIN-SUFFIX,affiliatefuture.com
 DOMAIN-SUFFIX,affiliates.allposters.com
@@ -1397,7 +1398,6 @@ DOMAIN-SUFFIX,counter.snackly.co
 DOMAIN-SUFFIX,counter.yadro.ru
 DOMAIN-SUFFIX,counting.kmindex.ru
 DOMAIN-SUFFIX,coupling-media.de
-DOMAIN-SUFFIX,cowbelltime.com
 DOMAIN-SUFFIX,coxmt.com
 DOMAIN-SUFFIX,cozyhillside.com
 DOMAIN-SUFFIX,cpalead.com
@@ -1480,7 +1480,6 @@ DOMAIN-SUFFIX,detectdiscovery.com
 DOMAIN-SUFFIX,dev.visualwebsiteoptimizer.com
 DOMAIN-SUFFIX,dewdroplagoon.com
 DOMAIN-SUFFIX,dianomi.com
-DOMAIN-SUFFIX,dicecandies.com
 DOMAIN-SUFFIX,didtheyreadit.com
 DOMAIN-SUFFIX,digestiondrawer.com
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com
@@ -1914,7 +1913,6 @@ DOMAIN-SUFFIX,immensehoney.com
 DOMAIN-SUFFIX,imonomy.com
 DOMAIN-SUFFIX,imp.i312864.net
 DOMAIN-SUFFIX,impossibleexpansion.com
-DOMAIN-SUFFIX,imprese.cz
 DOMAIN-SUFFIX,impressionmedia.cz
 DOMAIN-SUFFIX,impressionmonster.com
 DOMAIN-SUFFIX,improvedigital.com
@@ -1967,6 +1965,7 @@ DOMAIN-SUFFIX,is-tracking-pixel-api-prod.appspot.com
 DOMAIN-SUFFIX,islandwebhelp.com
 DOMAIN-SUFFIX,itop.cz
 DOMAIN-SUFFIX,itrackly.com
+DOMAIN-SUFFIX,ivwbox.de
 DOMAIN-SUFFIX,ivykiosk.com
 DOMAIN-SUFFIX,iyfbodn.com
 DOMAIN-SUFFIX,iyfnzgb.com

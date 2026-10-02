@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202610010718
+## ! Version: 202610021341
 ## ! Title: EasyPrivacy
-## ! Last modified: 01 Oct 2026 07:18 UTC
+## ! Last modified: 02 Oct 2026 13:41 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 76640632f8bcad6d4e639f3d53885b6a7537f95a
+## ! Commit: 45de776a34c4b39fc9acdcdd52ddedd00b4df41f
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -1876,6 +1876,7 @@ DOMAIN-SUFFIX,manyfishes.com, reject
 DOMAIN-SUFFIX,mapbasin.com, reject
 DOMAIN-SUFFIX,mapcommand.com, reject
 DOMAIN-SUFFIX,marblediscussion.com, reject
+DOMAIN-SUFFIX,marbleseeds.com, reject
 DOMAIN-SUFFIX,marinechurch.com, reject
 DOMAIN-SUFFIX,markedmeasure.com, reject
 DOMAIN-SUFFIX,marketspiders.com, reject
@@ -3267,6 +3268,7 @@ DOMAIN-SUFFIX,analytics.algolia.com, reject
 DOMAIN-SUFFIX,analytics.amakings.com, reject
 DOMAIN-SUFFIX,analytics.api.justeattakeaway.com, reject
 DOMAIN-SUFFIX,analytics.apnewsregistry.com, reject
+DOMAIN-SUFFIX,analytics.app.funnelish.com, reject
 DOMAIN-SUFFIX,analytics.atlas5.co, reject
 DOMAIN-SUFFIX,analytics.audioeye.com, reject
 DOMAIN-SUFFIX,analytics.avanser.com.au, reject

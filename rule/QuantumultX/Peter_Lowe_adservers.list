@@ -2,7 +2,7 @@
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Wed, 30 Sep 2026 11:38:16 GMT
-# entries:        3552
+# entries:        3551
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -36,6 +36,7 @@ DOMAIN-SUFFIX,4d5.net, reject
 DOMAIN-SUFFIX,4dex.io, reject
 DOMAIN-SUFFIX,4info.com, reject
 DOMAIN-SUFFIX,4jnzhl0d0.com, reject
+DOMAIN-SUFFIX,50websads.com, reject
 DOMAIN-SUFFIX,51.la, reject
 DOMAIN-SUFFIX,518ad.com, reject
 DOMAIN-SUFFIX,6sc.co, reject
@@ -761,6 +762,7 @@ DOMAIN-SUFFIX,adtrade.net, reject
 DOMAIN-SUFFIX,adtrk1.com, reject
 DOMAIN-SUFFIX,adultadvertising.com, reject
 DOMAIN-SUFFIX,adv-adserver.com, reject
+DOMAIN-SUFFIX,adv.donejty.pl, reject
 DOMAIN-SUFFIX,adv.freeonline.it, reject
 DOMAIN-SUFFIX,adv.hwupgrade.it, reject
 DOMAIN-SUFFIX,adv.mpvc.it, reject
@@ -818,7 +820,6 @@ DOMAIN-SUFFIX,affectionknit.com, reject
 DOMAIN-SUFFIX,affili.net, reject
 DOMAIN-SUFFIX,affiliate.1800flowers.com, reject
 DOMAIN-SUFFIX,affiliate.dtiserv.com, reject
-DOMAIN-SUFFIX,affiliate.travelnow.com, reject
 DOMAIN-SUFFIX,affiliate.treated.com, reject
 DOMAIN-SUFFIX,affiliatefuture.com, reject
 DOMAIN-SUFFIX,affiliates.allposters.com, reject
@@ -1397,7 +1398,6 @@ DOMAIN-SUFFIX,counter.snackly.co, reject
 DOMAIN-SUFFIX,counter.yadro.ru, reject
 DOMAIN-SUFFIX,counting.kmindex.ru, reject
 DOMAIN-SUFFIX,coupling-media.de, reject
-DOMAIN-SUFFIX,cowbelltime.com, reject
 DOMAIN-SUFFIX,coxmt.com, reject
 DOMAIN-SUFFIX,cozyhillside.com, reject
 DOMAIN-SUFFIX,cpalead.com, reject
@@ -1480,7 +1480,6 @@ DOMAIN-SUFFIX,detectdiscovery.com, reject
 DOMAIN-SUFFIX,dev.visualwebsiteoptimizer.com, reject
 DOMAIN-SUFFIX,dewdroplagoon.com, reject
 DOMAIN-SUFFIX,dianomi.com, reject
-DOMAIN-SUFFIX,dicecandies.com, reject
 DOMAIN-SUFFIX,didtheyreadit.com, reject
 DOMAIN-SUFFIX,digestiondrawer.com, reject
 DOMAIN-SUFFIX,digital-ads.s3.amazonaws.com, reject
@@ -1914,7 +1913,6 @@ DOMAIN-SUFFIX,immensehoney.com, reject
 DOMAIN-SUFFIX,imonomy.com, reject
 DOMAIN-SUFFIX,imp.i312864.net, reject
 DOMAIN-SUFFIX,impossibleexpansion.com, reject
-DOMAIN-SUFFIX,imprese.cz, reject
 DOMAIN-SUFFIX,impressionmedia.cz, reject
 DOMAIN-SUFFIX,impressionmonster.com, reject
 DOMAIN-SUFFIX,improvedigital.com, reject
@@ -1967,6 +1965,7 @@ DOMAIN-SUFFIX,is-tracking-pixel-api-prod.appspot.com, reject
 DOMAIN-SUFFIX,islandwebhelp.com, reject
 DOMAIN-SUFFIX,itop.cz, reject
 DOMAIN-SUFFIX,itrackly.com, reject
+DOMAIN-SUFFIX,ivwbox.de, reject
 DOMAIN-SUFFIX,ivykiosk.com, reject
 DOMAIN-SUFFIX,iyfbodn.com, reject
 DOMAIN-SUFFIX,iyfnzgb.com, reject

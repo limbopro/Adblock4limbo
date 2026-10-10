@@ -11,10 +11,6 @@
 ## ! or via e-mail (easylist.china@gmail.com).
 
 
-DOMAIN-SUFFIX,asd8900.oss-*.aliyuncs.com, reject
-DOMAIN-SUFFIX,ky891.oss-*.aliyuncs.com, reject
-DOMAIN-SUFFIX,tupian888.*.bcebos.com, reject
-DOMAIN-SUFFIX,vns86.oss-*.aliyuncs.com, reject
 DOMAIN-SUFFIX,zhizhizhizhi.oss-*.aliyuncs.com, reject
 DOMAIN-SUFFIX,154.7.80.158, reject
 DOMAIN-SUFFIX,194.59.220.161, reject
@@ -23,6 +19,41 @@ DOMAIN-SUFFIX,23.231.151.252, reject
 DOMAIN-SUFFIX,hash.trafficmanager.net, reject
 DOMAIN-SUFFIX,51tongji.trafficmanager.net, reject
 DOMAIN-SUFFIX,cnzz.trafficmanager.net, reject
+DOMAIN-SUFFIX,1jlbewhnp5.com, reject
+DOMAIN-SUFFIX,42mu2c4akt.com, reject
+DOMAIN-SUFFIX,funambulist98.com, reject
+DOMAIN-SUFFIX,zttrpnhufhdxno.com, reject
+DOMAIN-SUFFIX,3wrv1uzotr.com, reject
+DOMAIN-SUFFIX,axkozwhiqah.in, reject
+DOMAIN-SUFFIX,0qry58i9es.com, reject
+DOMAIN-SUFFIX,t8yctltd8s.com, reject
+DOMAIN-SUFFIX,gb742ld0c.com, reject
+DOMAIN-SUFFIX,juggler36.com, reject
+DOMAIN-SUFFIX,bdxwfvlszerxbi.com, reject
+DOMAIN-SUFFIX,iemshbwfg.com, reject
+DOMAIN-SUFFIX,6cq8d7xyk.com, reject
+DOMAIN-SUFFIX,w19lu17a2.com, reject
+DOMAIN-SUFFIX,zwg5j61a8.com, reject
+DOMAIN-SUFFIX,6k1alauto.com, reject
+DOMAIN-SUFFIX,w8n97pkzn6.com, reject
+DOMAIN-SUFFIX,leotard54.com, reject
+DOMAIN-SUFFIX,dabetlewtbdppi.com, reject
+DOMAIN-SUFFIX,vfqhky3tos.com, reject
+DOMAIN-SUFFIX,w4b52osbr5.com, reject
+DOMAIN-SUFFIX,g86a0qbf1h.com, reject
+DOMAIN-SUFFIX,dn1pvim4v1.com, reject
+DOMAIN-SUFFIX,zr7f20uk8y.com, reject
+DOMAIN-SUFFIX,5bfjvunmrp.com, reject
+DOMAIN-SUFFIX,g2dgmgl9dy.com, reject
+DOMAIN-SUFFIX,trampoline12.com, reject
+DOMAIN-SUFFIX,0i2nax2di.com, reject
+DOMAIN-SUFFIX,ifnb6hfem.com, reject
+DOMAIN-SUFFIX,xxfjhbiuwyphdi.com, reject
+DOMAIN-SUFFIX,htazjxk.com, reject
+DOMAIN-SUFFIX,gfehmnq5e.com, reject
+DOMAIN-SUFFIX,g2afpbshj.com, reject
+DOMAIN-SUFFIX,mly5hvbae.com, reject
+DOMAIN-SUFFIX,ado35vj3i.com, reject
 DOMAIN-SUFFIX,6y10di5jko.com, reject
 DOMAIN-SUFFIX,tightrope23.com, reject
 DOMAIN-SUFFIX,zhzrvjmyqvdhrc.com, reject
@@ -31,6 +62,10 @@ DOMAIN-SUFFIX,wkduza2x10.com, reject
 DOMAIN-SUFFIX,j3ossmqgmc.com, reject
 DOMAIN-SUFFIX,xtorbk1g3f.com, reject
 DOMAIN-SUFFIX,3ylj411rdn.com, reject
+DOMAIN-SUFFIX,0cvo4ebbpk.com, reject
+DOMAIN-SUFFIX,bpucmkg.com, reject
+DOMAIN-SUFFIX,ehcecws.com, reject
+DOMAIN-SUFFIX,su4wxsrtku.com, reject
 DOMAIN-SUFFIX,dishwasher46.com, reject
 DOMAIN-SUFFIX,8hvq8jskh.com, reject
 DOMAIN-SUFFIX,bedwlzqwkxpzfc.com, reject
@@ -3853,7 +3888,6 @@ DOMAIN-SUFFIX,nfvp.cn, reject
 DOMAIN-SUFFIX,l9qxrmda6.com, reject
 DOMAIN-SUFFIX,xjx11231ts.com, reject
 DOMAIN-SUFFIX,coisj3nil.com, reject
-DOMAIN-SUFFIX,awjakpos.com, reject
 DOMAIN-SUFFIX,qhaelqata.com, reject
 DOMAIN-SUFFIX,3k2frl8r79.com, reject
 DOMAIN-SUFFIX,h4htfgrei0.com, reject
@@ -4676,7 +4710,6 @@ DOMAIN-SUFFIX,609999.xyz, reject
 DOMAIN-SUFFIX,7791.com.cn, reject
 DOMAIN-SUFFIX,apis301.com, reject
 DOMAIN-SUFFIX,cxsh.cn.com, reject
-DOMAIN-SUFFIX,dgaxrjj0jwpwp.cloudfront.net, reject
 DOMAIN-SUFFIX,dv4ku.icu, reject
 DOMAIN-SUFFIX,iyuedu.cn.com, reject
 DOMAIN-SUFFIX,jollyspring.com, reject
@@ -4756,7 +4789,6 @@ DOMAIN-SUFFIX,666aa777bb.com, reject
 DOMAIN-SUFFIX,222aa333bb.com, reject
 DOMAIN-SUFFIX,999aa666bb.com, reject
 DOMAIN-SUFFIX,888bb666cc.com, reject
-DOMAIN-SUFFIX,xn--w9q675dm1p7em.net, reject
 DOMAIN-SUFFIX,06789.xyz, reject
 DOMAIN-SUFFIX,3p8801.co, reject
 DOMAIN-SUFFIX,6651tp.com, reject
@@ -4770,8 +4802,6 @@ DOMAIN-SUFFIX,94lm.com, reject
 DOMAIN-SUFFIX,9831tb.com, reject
 DOMAIN-SUFFIX,a.youdao.com, reject
 DOMAIN-SUFFIX,adrs.sdo.com, reject
-DOMAIN-SUFFIX,ads-6686.top, reject
-DOMAIN-SUFFIX,aixuntupian.oss-cn-hongkong.aliyuncs.com, reject
 DOMAIN-SUFFIX,alimama.alicdn.com, reject
 DOMAIN-SUFFIX,alime-pic.oss-cn-hangzhou.aliyuncs.com, reject
 DOMAIN-SUFFIX,atanx.alicdn.com, reject
@@ -4783,16 +4813,11 @@ DOMAIN-SUFFIX,chushoushijian.cn, reject
 DOMAIN-SUFFIX,cpro.baidu.com, reject
 DOMAIN-SUFFIX,cpro.baidustatic.com, reject
 DOMAIN-SUFFIX,d15cjcet1djbmv.cloudfront.net, reject
-DOMAIN-SUFFIX,d1zoi2q7y0e4d.cloudfront.net, reject
-DOMAIN-SUFFIX,d3d7a0q05k6bvz.cloudfront.net, reject
-DOMAIN-SUFFIX,darren01.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,dingbu.bj.bcebos.com, reject
-DOMAIN-SUFFIX,dmg-dd.oss-accelerate.aliyuncs.com, reject
 DOMAIN-SUFFIX,drmcmm.baidu.com, reject
 DOMAIN-SUFFIX,duiwai.baidu.com, reject
 DOMAIN-SUFFIX,eduad.baidu.com, reject
 DOMAIN-SUFFIX,eiv.baidu.com, reject
-DOMAIN-SUFFIX,facai383.oss-cn-guangzhou.aliyuncs.com, reject
 DOMAIN-SUFFIX,farm-cn.plista.com, reject
 DOMAIN-SUFFIX,fijipic.xyz, reject
 DOMAIN-SUFFIX,first-hufu.oss-cn-shanghai.aliyuncs.com, reject
@@ -4830,10 +4855,8 @@ DOMAIN-SUFFIX,pos.baidu.com, reject
 DOMAIN-SUFFIX,re.taotaosou.com, reject
 DOMAIN-SUFFIX,show.kc.taotaosou.com, reject
 DOMAIN-SUFFIX,spcode.baidu.com, reject
-DOMAIN-SUFFIX,star-seo.oss-ap-northeast-1.aliyuncs.com, reject
 DOMAIN-SUFFIX,static-cn.plista.com, reject
 DOMAIN-SUFFIX,tad.suning.com, reject
-DOMAIN-SUFFIX,tttppp.oss-cn-guangzhou.aliyuncs.com, reject
 DOMAIN-SUFFIX,tx99y.net, reject
 DOMAIN-SUFFIX,u0056.com, reject
 DOMAIN-SUFFIX,u0062.com, reject
@@ -4860,7 +4883,6 @@ DOMAIN-SUFFIX,union-wifi.com, reject
 DOMAIN-SUFFIX,video231.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,xh33g.net, reject
 DOMAIN-SUFFIX,xiaoshuoyun.cn, reject
-DOMAIN-SUFFIX,xpj08.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,xwdsp.com, reject
 DOMAIN-SUFFIX,yellowjm.com, reject
 DOMAIN-SUFFIX,yhtpsy8888.cc, reject
@@ -4919,7 +4941,6 @@ DOMAIN-SUFFIX,ads-union.jd.com, reject
 DOMAIN-SUFFIX,ads.sohu.com, reject
 DOMAIN-SUFFIX,ads.yeeyi.com, reject
 DOMAIN-SUFFIX,adsc.wasu.tv, reject
-DOMAIN-SUFFIX,adsclick.yx.js.cn, reject
 DOMAIN-SUFFIX,adshows.21cn.com, reject
 DOMAIN-SUFFIX,adsmind.gdtimg.com, reject
 DOMAIN-SUFFIX,adt.xdrig.com, reject
@@ -4982,7 +5003,6 @@ DOMAIN-SUFFIX,ecmb.bdimg.com, reject
 DOMAIN-SUFFIX,emdcadvertise.eastmoney.com, reject
 DOMAIN-SUFFIX,erebor.douban.com, reject
 DOMAIN-SUFFIX,ff.meikanguo.com, reject
-DOMAIN-SUFFIX,fkesfg.com, reject
 DOMAIN-SUFFIX,free-cdn.oss-cn-shanghai.aliyuncs.com, reject
 DOMAIN-SUFFIX,g.hsw.cn, reject
 DOMAIN-SUFFIX,g.lznews.cn, reject
@@ -5034,7 +5054,6 @@ DOMAIN-SUFFIX,js.bju888.com, reject
 DOMAIN-SUFFIX,js.duotegame.com, reject
 DOMAIN-SUFFIX,jsyefc.com, reject
 DOMAIN-SUFFIX,jxad.jx163.com, reject
-DOMAIN-SUFFIX,kmmgoogle.oss-ap-southeast-1.aliyuncs.com, reject
 DOMAIN-SUFFIX,ll.gxsky.com, reject
 DOMAIN-SUFFIX,lxting.com, reject
 DOMAIN-SUFFIX,m.aty.sohu.com, reject
@@ -5709,7 +5728,6 @@ DOMAIN-SUFFIX,q1.yyxwzx.com, reject
 DOMAIN-SUFFIX,qc1.cheshipin.com, reject
 DOMAIN-SUFFIX,qdzyspjx.com, reject
 DOMAIN-SUFFIX,qifake.com, reject
-DOMAIN-SUFFIX,qiji1.jdwx.info, reject
 DOMAIN-SUFFIX,qiyeb.iaskbus.com, reject
 DOMAIN-SUFFIX,qiyegongqiu1.qiyegongqiu.com, reject
 DOMAIN-SUFFIX,ql.uzuzuz.com, reject
@@ -5850,7 +5868,6 @@ DOMAIN-SUFFIX,zq.lansedir.com, reject
 DOMAIN-SUFFIX,zsjxwj.com, reject
 DOMAIN-SUFFIX,zuowen.hydcd.com, reject
 DOMAIN-SUFFIX,zx.docin.com, reject
-DOMAIN-SUFFIX,d2un76zvb5mgzx.cloudfront.net, reject
 DOMAIN-SUFFIX,d3iih5w7xp5hdg.cloudfront.net, reject
 DOMAIN-SUFFIX,jpg1.oss-cn-beijing.aliyuncs.com, reject
 DOMAIN-SUFFIX,jun01.oss-cn-beijing.aliyuncs.com, reject
@@ -5858,6 +5875,3 @@ DOMAIN-SUFFIX,shaquevip.oss-cn-zhangjiakou.aliyuncs.com, reject
 DOMAIN-SUFFIX,wzjs1.oss-accelerate.aliyuncs.com, reject
 DOMAIN-SUFFIX,vqbmxyzda.icu, reject
 DOMAIN-SUFFIX,mihoutao1868.github.io, reject
-DOMAIN-SUFFIX,hdapp1003-a.akamaihd.net, reject
-DOMAIN-SUFFIX,hdapp1008-a.akamaihd.net, reject
-DOMAIN-SUFFIX,hdsrc-a.akamaihd.net, reject

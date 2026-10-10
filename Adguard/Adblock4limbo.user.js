@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2026.09.30
+// @version      0.2026.10.10
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/Njav/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
-
 // @match        https://m.baidu.com/*
 // @match        https://www.baidu.com/*
 // @match        https://zhidao.baidu.com/*
@@ -180,13 +179,10 @@
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
-
-
 // 为避免不必要的麻烦，Adblock4limbo.user.js 只匹配以上 @match 部分网站；
 // 🤔如需在所有网站应用本脚本及其自带“导航功能”，
 // ✅建议直接安装导航功能脚本 https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.function.user.js （Adblock4limbo——导航及各类功能函数合集.[github]）
 // 🙅不要在上方 // @match https://*/*
-
 /**
  * ---------------------------
  * 毒奶去网页广告计划
@@ -200,44 +196,36 @@
  * 安装 Adblock4limbo.user.js 脚本：https://github.com/limbopro/Adblock4limbo/raw/refs/heads/main/Adguard/Adblock4limbo.user.js
  * ---------------------------
  */
-
 /* 使用技巧最后更新于 11.25.2025；
 /* 新增反馈&导航按钮&划词搜索&执行JS&成人保护模式
 /* 移除特定网站目录（详见 https://github.com/limbopro/Adblock4limbo/blob/main/Adguard/Adblock4limbo.user.js @match 部分）广告/弹窗/
 /* 并新增额外特性（提取视频mp4&m3u8地址/在线下载/快进快退10s 1m 10m...）
-
 // **【导航】使用指南（PC/Mac）**
 /// 按教程安装好油猴脚本
 /// 访问特定网站（详见 Adblock4limbo.user.js @match 部分）
 /// 1.1 1秒内连续按2次 ESC键 可唤出【导航页面】；
 /// 1.2 当处于导航页面时，按ESC键 或1秒内点击2次导航页的空白处 可退出【导航页面】；
-
 // **【导航】使用指南（iOS）**
 /// 按教程配置好相应重写/去广告分流
 /// 访问【目前在维护的网站目录】里的（绝大多数）网站
 /// 1.1 页面空白处1秒内连续点击4次及以上亦可唤出【导航页面】；
-
 // **【导航】使用指南（PC/Mac/iOS）**
 /// **成人保护模式**[开启的情况下，见导航详情页左上角设置部分]
 /// 仅针对部分主要成人网站生效
 /// 当你浏览成人网站时，切换到别的应用或页面再返回时，网站页面将被模糊
 /// 可在 导航 - **反馈/建议/功能设置//** 开启或关闭成人保护模式(ON/OFF)；
-
 // **如何【全局禁用右下角导航功能以及成人保护模式（iOS）】**
 /// iOS QX/Stash/Surge/等用户
 /// 1.添加主机名， **limbopro.com**
 /// 3.全局禁用右下角导航功能以及成人保护模式：添加重写，匹配URL直接填写 Adblock4limbo.function.js ，类型选 reject，即可禁用导航及其附带feature；
-
 // **如何【全局隐藏/禁用右下角导航按钮以及成人保护模式/使导航功能失效（PC/Mac）】**
 /// PC/Mac 油猴用户...
 /// 进入 Tampermonkey 管理面板 - 找到 **Adblock4limbo.[github]**
 /// 1.1找到 daohang_build()  大概在 210 多行
 /// 1.2然后将 daohangMode/adultMode 的值修改成 false 即可
 /// 1.3或直接注释掉 daohang_build() 即可（注释后将无法快捷唤起导航详情页，导航功能及其附带feature失效）
-
 // **如何卸载毒奶去广告计划**
 /// 删除相关引用即可；
-
 /// ! 隐藏页面右下角导航🧭按钮🔘不影响PC/Mac端快捷键使用，移动端仍可1秒内连续点击页面空白处4次及以上唤出【导航页面】；
 */
 
@@ -261,63 +249,44 @@ function checkDOMLoaded() {
 }
 
 checkDOMLoaded();
-
-
 // 全局设置
-
 // 代理工具识别符
 /*ProxyTools*/
-
 /**
  * 为网页增加导航按钮，将位于页面右下角呈现；
  * 如需取消该按钮，请将如上调用代码注释；
 */
-
-
 // 是否（默认）显示导航🧭按钮🔘
 // 如【不需要显示导航🧭按钮🔘】 可将 cookie 的值从 true 改为 false
 
 settingCookie('daohangMode_global', 'true', '400');
 console.log('是否（默认）显示导航🧭按钮🔘：' + getCookie_('daohangMode'))
-
 // 是否（默认）开启成人🔞网站保护模式
 // 如【不需要开启成人网站保护模式】 可将 cookie 的值从 true 改为 false
 settingCookie('adultMode', 'false', '400');
 console.log('是否（默认）开启成人🔞网站保护模式：' + getCookie_('adultMode'))
-
 // 是否开启导航🧭按钮🔘 // 完全开启或禁用导航功能
 // 如【不需要开启导航🧭按钮🔘】可直接将 daohang_build() 进行注释
 // //daohang_build() 就像这样
 // 注释后将【无法快捷唤起导航详情页】且导航功能无法使用
-
-
-
 // 获取当前页面是否被嵌入在 iframe 中
 // const isIframe = window.self !== window.top;
-
 // 只要当前页面不是在 iframe 中运行，就执行函数
 //if (!isIframe) {
 daohang_build();
 //}
-
-
-
-
 // 一些常量
 /* Start */
 
 var uBlockOrigin = {
-
     // uBlockOrigin 默认脚本
     // https://github.com/uBlockOrigin/uBOL-home/tree/main/chromium/rulesets/scripting/scriptlet
     // uBO Lite (uBOL), a permission-less MV3 API-based content blocker.
     // uBOL is entirely declarative, meaning there is no need for a permanent uBOL process for the filtering to occur, and CSS/JS injection-based content filtering is performed reliably by the browser itself rather than by the extension. This means that uBOL itself does not consume CPU/memory resources while content blocking is ongoing -- uBOL's service worker process is required only when you interact with the popup panel or the option pages.
     // uBOL does not require broad "read/modify data" permission at install time, hence its limited capabilities out of the box compared to uBlock Origin or other content blockers requiring broad "read/modify data" permissions at install time.
-
     /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
      这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
     */
-
     chn0abortcurrentscript: "https://limbopro.com/Adguard/scripting/scriptlet/chn-0.abort-current-script.js", // chn-0.abort-current-script.js
     chn0setconstant: "https://limbopro.com/Adguard/scripting/scriptlet/chn-0.set-constant.js", // chn-0.set-constant.js
     abortcurrentscript: "https://limbopro.com/Adguard/scripting/scriptlet/default.abort-current-script.js", // abort-current-script
@@ -368,12 +337,10 @@ var css_common = {
     */
     gehr: "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/CSS/Adblock4limbo.user.css"
 }
-
 // 暂时 third_party_fileX('link', css_common.gehr, 'head'); // 动态引入 ublcok origin 通用去广告样式；
 // third_party_fileX("script", js_common.crisp, "head"); // 动态引入 crisp 聊天系统；
 // 油猴用户（桌面浏览器用户）可通过 // 注释上述代码来禁用Crisp；
 // Qx/Shadrowrocket/Surge/Loon 等代理软件用户可通过添加分流来禁用Crisp；（分流类型选择 host-keyword, crisp, reject）;
-
 /* End */
 
 var adsMax = {
@@ -469,16 +436,12 @@ var adsMax = {
     function: {
     }
 }
-
-
 /*
 loadCSS(adsMax.css.globalcss, () => {
     //   console.log('CSS 已生效');
     //  自行去导航里的工具箱开启
 })
 */
-
-
 /*
 loadCSS(adsMax.css.weblistads, () => {
     console.log('CSS 已生效');
@@ -587,7 +550,6 @@ function values() {
         'hltv',
         "zhihu"
     ]
-
     var url = document.location.href;
     console.log("URL : " + url); // 看看当前 URL
     var i;
@@ -605,14 +567,11 @@ function values() {
 function adsDomain_switch(x) { // 匹配参数值 执行相应函数
     switch (x) {
         case 'pornhub':
-
             window.addEventListener('load', function () {
-
                 pornhub_interstitialPass();
                 //tag_adsRemove("script", "ads_batch");
                 const custom_style_values_pb = "right: 0px !important; padding: 0 !important; position: relative !important;"
                 css_adsRemove(adsMax.css.pornhubx, 500, "pornhubX");
-
                 // 页面加载完成后执行
                 // 精准选中所有 TJ 广告容器
                 document.querySelectorAll('ins.adsbytrafficjunky').forEach(ins => {
@@ -620,8 +579,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     const container = /*ins.closest('div.clearfix') ||*/ ins.parentElement;
                     if (container) container.remove();
                 });
-
-
                 setTimeout(() => {
                     let ads_selector = [".topAdContainter", "a[href*='ads']", "a[href*='fuck']", "a[href*='ad']", "div.adContainer.clearfix.noBottom", ".adContainer.clearfix.middleVideoAdContainer"];
                     let ads = setInterval(() => {
@@ -633,10 +590,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }
                     }, 1000)
                 }, 100)
-
                 let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
                 setTimeout(() => {
-
                     if (document.getElementById('download_pornhub') == null) {
                         ele_dynamicAppend("div.ratingInfo, div.categoryRow.ratingDetails.sectionPadding", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "download_pornhub", 2, "a")
                         if (document.getElementById("download_pornhub")) {
@@ -645,21 +600,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }
                     }
                 }, 3000)
-
-
                 pornhub_sidebar_ads();
             });
             break;
-
         case 't66y':
             css_adsRemove(adsMax.css.t66y);
             break;
-
         case 'xchina.co':
             css_adsRemove(adsMax.css.xchina);
             window.addEventListener('load', function () {
                 // 小说页面广告
-
                 if (document.querySelectorAll('div.fiction-banner')) {
                     document.querySelectorAll('div.fiction-banner').forEach(box => {
                         if (box.querySelector('iframe[src*="magsrv.com"]')) {
@@ -667,7 +617,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }
                     })
                 }
-
                 // 包含 static-container-4 或包含 magsrv.com iframe 的 content-box 都删掉
                 if (document.querySelectorAll('.content-box')) {
                     document.querySelectorAll('.content-box').forEach(box => {
@@ -676,44 +625,30 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }
                     })
                 }
-
                 xchinadl();
-
             });
-
             break;
-
         case '91porna.com':
             //cloudflare_captchaBypass();
             css_adsRemove(adsMax.css.porna91);
             //_91porn_videoplay_ads();
-
             // 播放页空白
-
             document.querySelectorAll("br").forEach((x) => {
                 if (x.clientHeight = 0) {
                     x.remove()
                 }
             })
-
             break;
-
         case '91porny.com':
-
             //cloudflare_captchaBypass();
             css_adsRemove(adsMax.css.porny91);
             //_91porn_videoplay_ads();
-
-
             // 播放页空白
             document.querySelectorAll("br").forEach((x) => {
                 if (x.clientHeight = 0) {
                     x.remove()
                 }
             })
-
-
-
             /**
  * 关闭指定的 Bootstrap 模态框（仅使用官方 API：BS5 / BS4）
  *
@@ -727,24 +662,20 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
  */
             function closeBootstrapModal(selector) {
                 'use strict';
-
                 // 1. 参数校验
                 if (typeof selector !== 'string' || !selector.trim()) {
                     console.warn('closeBootstrapModal: 必须提供有效的选择器字符串');
                     return;
                 }
-
                 // 2. 解析多个选择器
                 const selectors = selector
                     .split(',')
                     .map(s => s.trim())
                     .filter(s => s);
-
                 if (!selectors.length) {
                     console.warn('closeBootstrapModal: 解析后无有效选择器');
                     return;
                 }
-
                 // 3. 获取所有匹配元素并去重
                 const elements = Array.from(
                     new Set(
@@ -753,16 +684,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         )
                     )
                 );
-
                 if (!elements.length) {
                     console.log('closeBootstrapModal: 未找到匹配的元素');
                     return;
                 }
-
                 // 4. 逐个尝试关闭（仅使用官方 API）
                 elements.forEach(modal => {
                     let closed = false;
-
                     // === Bootstrap 5 原生 API ===
                     if (!closed && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
                         const instance = bootstrap.Modal.getInstance(modal);
@@ -781,7 +709,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             }
                         }
                     }
-
                     // === Bootstrap 4 jQuery API ===
                     if (!closed && typeof $ !== 'undefined' && $.fn.modal) {
                         try {
@@ -792,17 +719,14 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             console.warn('jQuery modal("hide") 失败', e, modal);
                         }
                     }
-
                     // === 若都失败，仅记录警告 ===
                     if (!closed) {
                         console.warn('closeBootstrapModal: 无法关闭模态框（无可用 Bootstrap API）', modal);
                     }
                 });
             }
-
             // 或者绑定到某个事件
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBootstrapModal('.modal.show,div.skip-btn'); });
-
             setTimeout(() => {
                 closeBootstrapModal('.modal.show,div.skip-btn') // 关闭模态框
                 _91porny_dl() // 下载按钮
@@ -810,7 +734,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     document.querySelector('div.skip-btn.cursor-p').click()
                 }
             }, 2000);
-
             document.addEventListener('DOMContentLoaded', function () {
                 this.setTimeout(() => {
                     closeBootstrapModal('.modal.show,div.skip-btn') // 关闭模态框
@@ -820,7 +743,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 });
             });
-
             window.addEventListener('load', function () {
                 this.setTimeout(() => {
                     closeBootstrapModal('.modal.show,div.skip-btn') // 关闭模态框
@@ -830,50 +752,37 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 });
             }, 2000);
-
             break;
-
         case 't1229.btc760.com':
             css_adsRemove(adsMax.css.btc760);
             break;
-
-
         case 'd1skbu98kuldnf.cloudfront.net': //mdsp
         case 'dnt92ffcqr0xu.cloudfront.net': //mdsp
-
             window.addEventListener('load', function () {
                 this.setTimeout(() => {
                     css_adsRemove(adsMax.css.dnfcloudfront);
                 });
             }, 2000);
-
             break;
-
         case '91porn.com':
             //cloudflare_captchaBypass();
             css_adsRemove(adsMax.css.porn91);
-
             let url91 = document.location.href;
             if (url91.includes('view_')) {  // 推荐用 includes，更简洁
                 const timer = setInterval(() => {
                     const skipBtn = document.querySelector('div.preroll-skip-button');
-
                     if (skipBtn) {
                         skipBtn.click();
                         clearInterval(timer);  // 点击成功后立即停止轮询
                         console.log('广告已自动跳过');
                     }
                 }, 500);  // 500ms 比 1000ms 更灵敏，用户体验更好
-
                 // 可选：设置最长等待时间（如15秒后自动停止，防止死循环）
                 setTimeout(() => clearInterval(timer), 15000);
             }
-
             setTimeout(() => {
                 _91porn_dl()
             }, 2500)
-
-
             break;
         case 'avple':
             //cloudflare_captchaBypass();
@@ -897,8 +806,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             adsDomain_switch("555dyx")
             break;
         case "555dyx":
-
-
             let www = setInterval(() => {
                 if (document.querySelector('video')) {
                     document.querySelector('video').style = 'opacity: 1; filter: contrast(1.01) brightness(1.05) saturate(1.1);'
@@ -910,7 +817,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     clearInterval(www)
                 }
             }, 1000)
-
             document.querySelectorAll('div.module').forEach((x) => { x.style.zIndex = 1 });
             css_adsRemove(adsMax.css.dy555, 0, "555dy")
             document.querySelectorAll('.popup-btn.close-pop')[0].click(); //模拟点击
@@ -919,21 +825,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(adsMax.css.wnacg);
             break;
         case 'manhuapica':
-
-
             if (window.location.href.replace('https://manhuapica.com/') == 'undefined' || window.location.href.replace('https://manhuapica.com/#') == 'undefined' || window.location.href.replace('https://manhuapica.com/?vflush') !== window.location.href) {
                 css_adsRemove(adsMax.css.manhuapicanone);
-
                 setTimeout(() => {
                     if (document.querySelector('.btn.btn-outline-primary')) {
                         document.querySelector('.btn.btn-outline-primary').click()
                     }
                 }, 3000)
-
             } else {
                 css_adsRemove(adsMax.css.manhuapicaheight);
             }
-
             setTimeout(() => {
                 var divx = document.createElement('div');
                 divx.id = 'adblock4limbox';
@@ -945,7 +846,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     divx.appendChild(x);
                 })
             }, 1000)
-
             break;
         case 'zhidao.baidu.com':
             console.log('it\'s zhidao.baidu.com')
@@ -972,9 +872,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
         case 'ddys':
             //css_adsRemove(adsMax.css.ddrk);
             css_adsRemove(adsMax.css.ddrk2);
-
             //selector_adsRemove("#sajdhfbjwhe,#kasjbgih,#fkasjgf,img[src*='bcebos']", 0)
-
             var divx = document.createElement('div');
             divx.id = 'adblock4limbox';
             divx.style = 'display:none;'
@@ -984,7 +882,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             child.forEach((x) => {
                 divx.appendChild(x);
             })
-
             break;
         case 'duboku':
             third_party_fileX("script", adsMax.js.duboku, "body")
@@ -999,20 +896,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(adsMax.css.ntdm9);
             const a = document.getElementsByClassName("yammohxz_b");
             addEventListener_defuser("touchend"); // 打断监听器
-
             for (i = 0; i < a.length; i++) {
                 a[i].style = "display: none !important; z-index:-114154; display:block; width:0vw; height:0";
             }
-
             break;
         case 'tvn':
             css_adsRemove(adsMax.css.tvn)
             break;
         case 'jable': // 2333
             console.log("IT'S JABLE");
-
             // 父节点
-
             function removeAllIframesAndParents() {
                 const iframes = document.querySelectorAll('iframe');
                 iframes.forEach(iframe => {
@@ -1025,33 +918,24 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 });
             }
-
             // 1. 立即执行一次清空现有 iframe
             removeAllIframesAndParents();
-
             // 2. 创建观察者，持续监听后续动态插入的 iframe
             const observer = new MutationObserver((mutations) => {
                 removeAllIframesAndParents();
             });
-
             // 开始监听整个页面 DOM 树的变化
             observer.observe(document.documentElement, {
                 childList: true,
                 subtree: true
             });
-
             autoRemoveElements('iframe,footer#footer1,div#btimgid1,div[style*="position: fixed"][style*="bottom: 0px"]') // 给镜像站用
-
             window_open_defuser(); // 打断 window.open 施法
-
             /*
             window.onload = function () {
-
                 // 移除广告
-
                 // 找到包含特定跳转链接的 <a> 标签
                 const targetLink = document.querySelector('a[href*="9432b3b0-661c-4d05-9552-29757dafc4cb"]');
-
                 // 如果存在，则向上找到外层 col-6 容器并移除
                 if (targetLink) {
                     const container = targetLink.closest('.col-6.col-sm-4.col-lg-12');
@@ -1060,16 +944,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         console.log('广告元素已移除');
                     }
                 }
-
                 // 新增快进快退
-
                 (function () {
                     fastForward('#player', 'section.pb-3.pb-e-lg-30');
                 })();
-
                 // 快进快退结束
-
-
                 if (document.location.href.search('search') !== -1) {
                     let regex = /.*\/search\//;
                     let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase()
@@ -1078,23 +957,18 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 2000)
                     console.log("生成搜索链接🔗");
                 }
-
                 if (document.querySelector('.plyr__poster') !== null) { // 在其他站点播放
                     let regex = /.*\/videos\//;
                     let code = window.location.pathname.replace(regex, '').replace('/', '').toLowerCase();
                     setTimeout(() => {
-
                         if (document.querySelector('#p1') == null) {
                             console.log('开始生成在线预览链接...')
                             tmd('h4', code, '在其他站点播放：');
                         }
-
                         console.log("生成在其他站点播放链接🔗");
                     }, 3000)
                 }
-
             }() */
-
             window.onload = function () {
                 // 1. 移除广告
                 const targetLink = document.querySelector('a[href*="9432b3b0-661c-4d05-9552-29757dafc4cb"]');
@@ -1105,12 +979,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         console.log('广告元素已移除');
                     }
                 }
-
                 // 2. 新增快进快退
                 if (typeof fastForward === 'function') {
                     fastForward('#player', 'section.pb-3.pb-e-lg-30');
                 }
-
                 // 3. 搜索页处理
                 if (document.location.href.search('search') !== -1) {
                     let regex = /.*\/search\//;
@@ -1122,7 +994,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 2000);
                     console.log("生成搜索链接🔗");
                 }
-
                 // 4. 视频播放页处理
                 if (document.querySelector('.plyr__poster') !== null) {
                     let regex = /.*\/videos\//;
@@ -1138,7 +1009,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 3000);
                 }
             };
-
             // 子域名跳转至主域名 jable.tv
             if (/\b(.*\.)(jable\.tv.*)\b/i.test(window.location.href.toLowerCase())) {
                 console.log(window.location.href.toLowerCase())
@@ -1146,7 +1016,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 console.log(url_jable_rewrite)
                 window.location.replace(url_jable_rewrite)
             }
-
             // 去除首页广告
             if (document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').length > 0) {
                 document.querySelectorAll('div.col-6.col-sm-4.col-lg-3').forEach((x) => { // xxx
@@ -1155,17 +1024,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 })
             }
-
             //cloudflare_captchaBypass();
             css_adsRemove(adsMax.css.jable);
             jable_adsRemove();
             const url_jable = document.location.href;
             const reg_videos = /^https:\/\/jable\.tv.*\/videos/gi;
-
             url_jable.search(reg_videos) !== -1 && document.querySelector('#avCodeCopy') === null
-
             if (url_jable.search(reg_videos) !== -1 && document.querySelector('#avCodeCopy') === null) {
-
                 setTimeout(() => {
                     let cssText = "margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
                     let cssText2 = "width:72px; margin-left: 5px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
@@ -1184,19 +1049,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     addListenerById("jablex", () => { copyText("copy", "jablex", "复制M3U8文件地址") }, 0);
                     addListenerById("copyavCode", () => { avCodeCopy() }, 0);
                 }, 3000)
-
                 function avCodeCopy() {
                     // 复制工作开始
                     let civ = document.querySelector('#avCodeCopy')
                     civ.select()
                     document.execCommand('copy')
                     // 复制工作结束
-
                     // 取消文本选中
                     window.getSelection().removeAllRanges();
                     // 移除焦点，防止键盘弹出
                     document.activeElement.blur();
-
                     document.querySelector('#copyavCode').innerHTML = '复制成功!'
                     document.querySelector('#copyavCode').setAttribute('class', 'jable_css')
                     setTimeout(() => {
@@ -1205,17 +1067,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 1500)
                     //}, 0)
                 }
-
-
-
                 setTimeout(() => {
-
                     repeat_regex.forEach(m3u8_tempt)
-
                     // online download button script
                     // 获取按钮
                     const button = document.getElementById('onlinedl');
-
                     // 动态创建样式
                     function createStyles() {
                         const style = document.createElement('style');
@@ -1231,7 +1087,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         background: rgba(0, 0, 0, 0.5);
                         z-index: 999;
                 }
-
                         /* 悬浮窗样式 */
                         .modal {
                         height: 65%;
@@ -1252,7 +1107,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         width: 90%;
                         animation: modalFadeIn 0.3s ease-out;
                 }
-
                         /* 动画效果 */
                         @keyframes modalFadeIn {
                             from {
@@ -1264,19 +1118,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         transform: translate(-50%, -50%);
                     }
                 }
-
                         .modal h3 {
                             color: #007bff;
                         margin-top: 0;
                         font-size: 1.5em;
                 }
-
                         .modal p {
                             color: #333;
                         font-size: 1.1em;
                         margin: 15px 0;
                 }
-
                         .modal a {
                             display: inline-block;
                         background-color: #007bff;
@@ -1288,12 +1139,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         transition: background-color 0.3s;
                         margin-top: 15px;
                 }
-
                         .modal a:hover {
                             background - color: #0056b3;
                         transform: translateY(-2px);
                 }
-
                         .close-btn {
                             background-color: #dc3545;
                         color: white;
@@ -1304,7 +1153,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         margin-top: 10px;
                         font-size: 14px;
                 }
-
                         .close-btn:hover {
                             background-color: #c82333;
                 }
@@ -1312,14 +1160,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         document.head.appendChild(style);
                         return style;
                     }
-
                     // 动态创建DOM元素
                     function createModalElements() {
                         // 创建遮罩层
                         const overlay = document.createElement('div');
                         overlay.id = 'overlay';
                         overlay.className = 'overlay';
-
                         // 创建悬浮窗
                         const modal = document.createElement('div');
                         modal.id = 'modal';
@@ -1331,53 +1177,41 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         <a href="https://limbopro.com/archives/M3U8-Downloader.html" target="_blank">查看更多下载方法</a>
                         <!-- <br><button class="close-btn" onclick="closeModal()">关闭</button> --!>
                             `;
-
                         // 添加到页面
                         document.body.appendChild(overlay);
                         document.body.appendChild(modal);
-
                         return { overlay, modal };
                     }
-
-
-
                     // 执行函数
                     function executeFunction() {
                         document.getElementById('jablex').click()
                         console.log('函数已执行');
-
                         // 创建样式（只创建一次）
                         if (!document.querySelector('style[data-modal-styles]')) {
                             const style = createStyles();
                             style.setAttribute('data-modal-styles', 'true');
                         }
-
                         // 创建DOM元素（只创建一次）
                         if (!document.getElementById('modal')) {
                             createModalElements();
                         }
-
                         // 显示悬浮窗
                         showModal();
                     }
-
                     // 按钮点击事件
                     button.addEventListener('click', executeFunction);
-
                     // 点击遮罩层关闭悬浮窗
                     document.addEventListener('click', function (e) {
                         if (e.target.id === 'overlay') {
                             closeModal();
                         }
                     });
-
                     // ESC键关闭悬浮窗
                     document.addEventListener('keydown', function (e) {
                         if (e.key === 'Escape') {
                             closeModal();
                         }
                     });
-
                     // 显示悬浮窗
                     function showModal() {
                         const overlay = document.getElementById('overlay');
@@ -1387,7 +1221,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         if (modal !== null)
                             modal.style.display = 'block';
                     }
-
                     // 关闭悬浮窗
                     function closeModal() {
                         const overlay = document.getElementById('overlay');
@@ -1397,13 +1230,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         if (modal !== null)
                             modal.style.display = 'none';
                     }
-
-
                 }, 4000);
-
             }
-
-
             break;
         case 'bdys':
             css_adsRemove(adsMax.css.btbdys, 0, "siwtch_button");
@@ -1411,11 +1239,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //videoAds_accelerateSkip(0.1); // 视频广告加速
             //setConstant(); // 视频广告加速
             hrefAttribute_set();
-
             if (document.querySelectorAll('li[data-increase]')[1] !== null) {
                 document.querySelectorAll('li[data-increase]')[1].click()
             }
-
             var url = document.location.href;
             if (url == "https://www.bdys10.com/" || url == "https://www.bdys03.com/") {
                 if (!document.getElementById("bdys")) {
@@ -1448,7 +1274,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(adsMax.css.yhdmp);
             break;
         case 'google':
-
             window.addEventListener('load', function () {
                 css_adsRemove(adsMax.css.google);
                 var userAgent = navigator.userAgent.toLowerCase();
@@ -1460,20 +1285,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     console.log("PC端") // 啥也不做
                 }
             });
-
             //var goole_selector = "h3,#bres,[class*='AuVD wHYlTd mnr-c']";
             //setAttribute_after(goole_selector, "contentFarm_AdsRemove_Auto()");
-
             break;
         case 'bing':
             js_adsRemove(adsMax.js.contentFarm);
             break;
-
         case 'hltv':
             css_adsRemove(adsMax.css.hltv);
             noWindowOpenIf(); // no-window-open-if
             break;
-
         case 'nivod': // nbys 泥巴影视
             css_adsRemove(adsMax.css.nivod);
             hrefAttribute_set();
@@ -1490,7 +1311,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case '91short':
             css_adsRemove(adsMax.css._91short);
-
             // 播放页GIF动图广告
             const player_info = document.querySelectorAll("div.player-info,li.nav-menu-item")
             for (i = 0; i < player_info.length; i++) {
@@ -1499,12 +1319,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     player_info[i].style = "display: none !important;";
                 }
             }
-
             // 多余的高
             document.querySelector("div.highlight-box").style = "display: none !important;";
             addEventListener_defuser("touchend"); // 打断监听器
             break;
-
         case 'xiaobaotv':
             // nothing to do.
             break;
@@ -1520,7 +1338,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             css_adsRemove(adsMax.css.bfdm, 100, 'fuckdmmiku');
             break;
         case 'iyf':
-
             css_adsRemove(adsMax.css.iyf, 100, 'fuckiyf');
             function iyf_css() {
                 setTimeout(() => {
@@ -1530,17 +1347,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     })
                 }, 1500)
             }
-
             //iyf_css();
-
             aopr();
-
             window.onload = function iyf_hd_switch() {
-
                 if (document.querySelectorAll('li[data-v-7f52b4c5').length !== 0) {
                     document.querySelectorAll('span[data-v-7f52b4c5].leg.relative')[0].click()
                 }
-
                 setTimeout(() => {
                     let hd = document.querySelectorAll('li[data-v-7f52b4c5')
                     hd.forEach((x) => {
@@ -1559,11 +1371,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     })
                 }, 1500)
             }
-
             // .player-container .play_info
             function index(x, id) {
                 if (document.querySelector(x) !== null) {
-
                     if (document.querySelector('#' + id) == null) {
                         let a = document.createElement('a')
                         a.href = 'https://www.iyf.tv/'
@@ -1574,16 +1384,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         parentElement.appendChild(a)
                         console.log('生成首页按钮')
                     }
-
                     if (document.querySelector('#' + id)) {
                         console.log('Got u!')
                     } else {
                         newx();
                     }
-
                 }
             }
-
             function newx() {
                 setTimeout(() => {
                     index('.play_info', 'iyf_index')
@@ -1591,29 +1398,23 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }
                     , 1500)
             }
-
             newx();
-
             var currentUrl = window.location.href;
             setInterval(function () {
                 if (window.location.href !== currentUrl) {
                     console.log('URL发生变化');
                     newx();
                     currentUrl = window.location.href;
-
                 }
             }, 2000);
-
             ////videoAds_accelerateSkip(0.1); // 视频广告加速
             ////setConstant(); // 视频广告加速
             break;
-
         case 'cnys':
             // nothing to do.
             //videoAds_accelerateSkip(0.1); // 视频广告加速
             //setConstant(); // 视频广告加速
             css_adsRemove(adsMax.css.cnys, 0, 'cnys')
-
             if (document.querySelectorAll('iframe')[2] !== null && document.querySelectorAll('iframe')[2] !== undefined) {
                 document.querySelectorAll('iframe')[2].style = 'opacity:0% !important; pointer-events: none !important;';
                 setTimeout(() => {
@@ -1621,35 +1422,27 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     setTimeout(() => {
                         document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('div#player_pause')[0].style = 'display:none !important';
                         setTimeout(() => {
-
                             //document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('button.yzmplayer-icon.yzmplayer-play-icon')[0].click();
-
                             document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('button.yzmplayer-icon.yzmplayer-play-icon')[0].addEventListener('touchend', function () {
                                 setTimeout(() => {
                                     document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('div#player_pause')[0].style = 'display:none !important';
                                 }, 10);
                             });
-
                         }, 1000)
                     }, 3000)
                 }, 7500)
             }
-
             //document.querySelectorAll('iframe')[2].contentWindow.document.querySelectorAll('body')[0].querySelectorAll('#ADtip')[0].style = 'display:none';
-
             break;
-
         case 'xiaoxintv':
             // nothing to do.
             adsDomain_switch("xiaobaotv")
             break;
-
         case 'javday':
             // nothing to do.
             css_adsRemove(adsMax.css.javday, 0, 'javday')
             break;
         case 'xvideos':
-
             setInterval(() => {
                 if (!document.getElementById('xvideos_t')) {
                     css_adsRemove(adsMax.css.xvideos, 100, "xvideos_t");
@@ -1658,18 +1451,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     noWindowOpenIf();
                 }
             }, 1000)
-
             break;
         case 'javbus':
             css_adsRemove(adsMax.css.javbus, 0, "javbus");
-
             function javbus() { // 在番号详情页追加在线预览链接
                 setTimeout(() => {
                     let father = 'h3';
                     let code = window.location.pathname.replace('/', '')
                     let url = window.location.href
                     let regx = /[a-zA-Z]{2,6}\-\d{2,5}/i
-
                     if (url.search(regx) !== -1) {
                         setTimeout(() => {
                             tmd(father, code, '在其他站点播放: ')
@@ -1679,31 +1469,24 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 }, 2000)
             }
-
             javbus()
             break;
         case 'javdb':
-
             css_adsRemove(adsMax.css.javdb, 0, "javdb");
             setTimeout(() => {
                 const javCode = document.querySelector('.copy-to-clipboard')?.dataset.clipboardText
                     || document.querySelector('.panel-block.first-block .value')?.textContent.trim();
                 console.log(javCode); // NTSU-156
-
                 if (javCode !== null) {
                     tmd_land('h2.title', javCode, '在其他站点播放: ')
                 }
             }, 1000)
-
             break;
-
         case 'av.jkforum.net':
             css_adsRemove(adsMax.css.jkforum, 0, "jkforum");
             break;
-
         case 'jav.land': // 444
             css_adsRemove(adsMax.css.javland, 0, "javland");
-
             function jav() {
                 if (document.querySelectorAll('td[width="80%"]')[1] !== null) {
                     let code = document.querySelectorAll('td[width="80%"]')[1].textContent
@@ -1712,22 +1495,15 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 100)
                 }
             }
-
             jav();
-
             break;
         case "4hu":
             css_adsRemove(adsMax.css._4hu);
             hrefAttribute_set();
             break;
-
         case "play.ziziflix":
-
-
-
             (function () {
                 'use strict';
-
                 // 1. 劫持 window.open：从根源阻止弹出广告页面
                 const rawOpen = window.open;
                 window.open = function (url, name, specs) {
@@ -1737,7 +1513,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                     return rawOpen.apply(this, arguments);
                 };
-
                 // 2. 清空/劫持配置中的弹窗 URL 数组
                 Object.defineProperty(window, 'abyssConfig', {
                     set: function (config) {
@@ -1751,7 +1526,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     },
                     configurable: true
                 });
-
                 // 3. 动态监听 DOM：一旦发现 #overlay 节点出现，立即将其强行销毁
                 const killOverlay = () => {
                     const overlay = document.getElementById('overlay');
@@ -1760,7 +1534,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         console.log('[防护] 已成功移除广告遮罩节点');
                     }
                 };
-
                 // 页面还在加载时，开启监听器
                 const observer = new MutationObserver((mutations, obs) => {
                     const overlay = document.getElementById('overlay');
@@ -1769,23 +1542,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         obs.disconnect(); // 销毁遮罩后停止监听
                     }
                 });
-
                 if (document.documentElement) {
                     observer.observe(document.documentElement, { childList: true, subtree: true });
                 }
-
                 // 兜底机制：文档加载完成后再次确认清理
                 document.addEventListener('DOMContentLoaded', killOverlay);
             })();
-
             break;
-
         case "ziziflix":
             css_adsRemove(adsMax.css.ziziflix);
-
-
             // cookie setting
-
             (() => {
                 const getCookie2 = name => {
                     const match = document.cookie
@@ -1793,38 +1559,28 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         .find(row => row.startsWith(name + '='));
                     return match ? match.substring(name.length + 1) : null;
                 };
-
                 const now = Math.floor(Date.now() / 1000);
-
                 const ts = getCookie2('ts_cwpop');
                 const zone = getCookie2('zone-cap-5685590');
-
                 const created = [];
-
                 if (!ts) {
                     document.cookie = `ts_cwpop=${now}; path=/`;
                     created.push('ts_cwpop');
                 }
-
                 if (!zone) {
                     document.cookie = `zone-cap-5685590=1;${now}; path=/`;
                     created.push('zone-cap-5685590');
                 }
-
                 console.log('========== Cookie 状态 ==========');
                 console.log('当前时间戳:', now);
-
                 if (created.length) {
                     console.log('✅ 新创建:', created.join(', '));
                 } else {
                     console.log('ℹ️ Cookie 已存在，未修改');
                 }
-
                 console.log('ts_cwpop:', getCookie2('ts_cwpop'));
                 console.log('zone-cap-5685590:', getCookie2('zone-cap-5685590'));
             })();
-
-
             noWindowOpenIf('window.open')
             noWindowOpenIf('touchend')
             break;
@@ -1882,26 +1638,20 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 2000)
                     console.log("生成搜索链接🔗");
                 }
-
                 if (document.querySelector('#player-wrap') !== null) { // 在其他站点播放
                     var regex = /[a-zA-Z]{3,5}\-\d{3,5}/i
                     var code = document.querySelectorAll('title')[0].innerText.match(regex)[0]
                     setTimeout(() => {
-
                         if (document.querySelector('#p1') == null) {
                             console.log('开始生成在线预览链接...')
                             tmd('h1', code, '在其他站点播放：');
                         }
-
                     }, 2000)
                 }
-
             }()
-
             noWindowOpenIf('window.open')
             noWindowOpenIf('touchend')
             window_open_defuser(); // 打断 window.open 施法
-
             break;
         case "njav.com":
             css_adsRemove(adsMax.css.njav, 0, 'njav');
@@ -1911,7 +1661,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             noWindowOpenIf('touchend')
             window_open_defuser(); // 打断 window.open 施法
             break;
-
         case "hitomi":
             css_adsRemove(adsMax.css.hitomi);
             window_open_defuser();
@@ -1920,7 +1669,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             //addEventListener_defuser();
             js_adsRemove(uBlockOrigin.noevalif);
             break;
-
         case "hanime1":
             css_adsRemove(adsMax.css.hanime1);
             const div = document.querySelectorAll('div.hidden-xs.hidden-sm')
@@ -1930,37 +1678,28 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     div[i].style = "display: none !important;";
                 }
             }
-
             break;
-
         case "javlibrary":
-
             window.addEventListener('load', function () {
-
-
                 async function onPageLoad() {
                     await waitForPageLoad();
                     console.log('网页所有元素已加载完毕');
                     // 在此执行你的代码
-
                     css_adsRemove(adsMax.css.javlibrary)
                     window_open_defuser(); // 打断 window.open 施法
                     abort_on_property_read();
                     js_adsRemove(uBlockOrigin.addEventListenerdefuser);
                     js_adsRemove(uBlockOrigin.noevalif);
-
                     if (/\b(https:\/\/www.javlibrary.com\/.*?)(\/videoreviews.php)(\?.*)(&mode=2)\b/i.test(window.location.href.toLowerCase())) {
                         console.log(window.location.href.toLowerCase())
                         let url_jav_rewrite = window.location.href.toLowerCase().replace(/(videoreviews.php)/i, '').replace(/(&mode=2)/i, '')
                         console.log(url_jav_rewrite)
                         window.location.replace(url_jav_rewrite)
                     }
-
                     function javlibrary() {
                         // '#topmenu', 'div.menutext', '.searchbar',
                         css_adsRemove(adsMax.css.javlibrary);
                         var target_ = ['#rightcolumn', '.videothumblist', '.titlebox', '.menutext']
-
                         if (window.innerWidth < 650) {
                             console.log("现在执行缩小任务")
                             function ifAdd(target) {
@@ -1977,16 +1716,13 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                 if (document.querySelector('div.socialmedia')) {
                                     var insertBeforethisgay = document.querySelector('div.socialmedia');
                                 }
-
                                 if ((child) && (parentElement) && (insertBeforethisgay)) {
                                     parentElement.insertBefore(child, insertBeforethisgay)
                                 }
                                 document.querySelectorAll('td.t>div').forEach((x) => {
                                     x.style.width = 'auto';
-
                                 })
                             }
-
                             if (document.querySelector('div#video_title')) {
                                 document.querySelector('#rightcolumn').style.width = window.innerWidth - 90 + "px"
                                 document.querySelector('div#video_favorite_edit').style.width = '250px'
@@ -2005,9 +1741,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             target_.forEach(ifRemove);
                         }
                     }
-
                     javlibrary(); // 2333
-
                     zjpl()
                     function zjpl() {
                         setTimeout(() => { // 最佳评论页 调换位置
@@ -2019,7 +1753,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                         //     y.style.width = "60px"
                                     })
                                 })
-
                                 var ff = document.querySelectorAll("table.comment > tbody > tr");
                                 for (i = 0; i < ff.length; i++) {
                                     ff[i].insertBefore(ff[i].querySelectorAll('td')[1], ff[i].querySelectorAll('td')[0])
@@ -2027,18 +1760,14 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             }
                         }, 1500)
                     }
-
                     function javLibrary_links() { // 在番号详情页追加在线预览链接
-
                         setTimeout(() => {
                             let father = 'div#video_title'
                             //let code = window.location.pathname.replace('/', '')
                             let code = document.querySelectorAll('td.text')[0].textContent
-
                             let url = window.location.href
                             //let regx = /[a-zA-Z]{3,5}\-\d{3,5}/i
                             let regx = /www\.javlibrary\.com\/cn\/\?v\=jav/i
-
                             if (url.search(regx) !== -1) {
                                 tmd(father, code, '在线预览: ')
                             } else {
@@ -2046,12 +1775,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             }
                         }, 2000)
                     }
-
                     javLibrary_links()
-
                 }
-
-
                 function waitForPageLoad() {
                     return new Promise((resolve) => {
                         if (document.readyState === 'complete') {
@@ -2061,13 +1786,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }
                     });
                 }
-
                 onPageLoad();
-
             });
-
             break;
-
         case 'douban':
             if (document.querySelectorAll('a.Ims1t')[0]) {
                 alert("首页...")
@@ -2087,33 +1808,25 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 onAdsHide()
             }, 500)
             break;
-
         case 'play.huaren.live':
-
             //setConstant('ConFig.config.ads', '{}'); // huaren影视PC版播放页视频广告加速
             css_adsRemove(adsMax.css.huaren_live, 200, 'huaren');
             ConFig.config.ads = {};
-
             break;
-
         case 'huaren.live':
             css_adsRemove(adsMax.css.huaren_live, 200, 'huaren');
             //noWindowOpenIf();
             break;
-
         case 'rouman':
             css_adsRemove(adsMax.css.rouman, 100, 'roumanx');
-
             setTimeout(() => {
                 document.querySelectorAll("div[class*='modalCloseButton']")[0].click()
             }, 500)
             break;
-
         case 'rou.video':
             css_adsRemove(adsMax.css.rouvideo, 100, 'roumanx');
             css_adsRemove(adsMax.css.rouvideo, 500, 'roumanx');
             window_open_defuser(); // 打断 window.open 施法
-
             try {
                 // 可能会抛出异常的代码
                 setTimeout(() => {
@@ -2122,14 +1835,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                     console.log('模态窗口已关闭');
                 }, 1500)
-
                 setTimeout(() => {
                     if (document.querySelector('button.close-button--wsOv0') !== null) {
                         document.querySelector('button.close-button--wsOv0').click()
                     }
                     console.log('模态窗口已关闭');
                 }, 1500)
-
             } catch (error) {
                 // 发生异常时执行的代码
                 console.error('发生错误:', error);
@@ -2137,50 +1848,38 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 // 可选，无论是否发生异常都会执行
                 console.log('finally 块总会执行');
             }
-
             break;
-
         case 'novel543':
             css_adsRemove(adsMax.css.novel543, 100, 'novel543x');
             break;
-
         case 'diyibanzhu':
             css_adsRemove(adsMax.css.diyibanzhu, 100, 'diyibanzhu');
             window_open_defuser(); // 打断 window.open 施法
             break;
-
         case 'alicesw':
             css_adsRemove(adsMax.css.alicesw, 100, 'alicesw');
             break;
-
         case 'bi-girl': // bigirl
             css_adsRemove(adsMax.css.bigirl, 500, 'bigirl')
             js_adsRemove(uBlockOrigin.noevalif);
             break;
-
         case 'marketcap': // marketcap
             css_adsRemove(adsMax.css.marketcap, 500, 'bigirl')
             js_adsRemove(uBlockOrigin.noevalif);
             break;
-
         case 'op.gg': // op.gg
             css_adsRemove(adsMax.css.opgg, 500, 'bigirl')
             js_adsRemove(uBlockOrigin.noevalif);
             break;
-
         case 'dmm.co.jp':
-
             // 在番号详情页追加在线预览链接
             // https://video.dmm.co.jp/
             window.addEventListener('load', function () {
-
                 // 在番号详情页追加在线预览链接
                 // https://video.dmm.co.jp/
-
                 setTimeout(() => {
                     extractAndGenerateLinks() // 执行函数
                 }, 1500); // 等待页面加载完成
-
                 var currentUrl = location.href;
                 setInterval(function () {
                     if (currentUrl !== location.href) {
@@ -2192,22 +1891,18 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }, 1500); // 等待页面加载完成
                     }
                 }, 2000);  // 每 100ms 检查一次，频率可调整
-
                 function isMobile() {
                     // 判断是否为移动设备
                     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 }
-
                 function extractCodeFromUrl() {
                     const url = window.location.href;
                     console.log(`当前URL: ${url}`);
-
                     const match = url.match(/id=([^&#?]+)/);
                     if (!match || !match[1]) {
                         console.warn("URL 中未找到有效的 id 参数");
                         return null;
                     }
-
                     let idValue = match[1];
                     // 移除前缀（如 h_1100），提取字母和数字部分
                     let cid = idValue.replace(/^(h_\d+)?([a-zA-Z]+)(\d+)$/, '$2$3');
@@ -2215,42 +1910,32 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         console.warn("处理后的 cid 为空");
                         return null;
                     }
-
                     // 分离字母和数字
                     const parts = cid.match(/([a-zA-Z]+)(\d+)/);
                     if (!parts) {
                         console.warn("cid 格式不符合预期");
                         return null;
                     }
-
                     const prefix = parts[1]; // 字母部分
                     const number = parseInt(parts[2], 10); // 转换为整数
                     // 格式化为 3 位数字，补前导零
                     const formattedNumber = number.toString().padStart(3, '0');
                     let code_dmm = `${prefix}-${formattedNumber}`;
-
                     console.log(`cid: ${cid}`);
                     console.log(`code_dmm: ${code_dmm}`);
                     return code_dmm;
                 }
-
-
                 function extractAndGenerateLinks() { // 番号提取及链接生成
-
                     console.log("执行 extractAndGenerateLinks() 函数");
-
                     // 如果 extractCodeFromUrl() 返回 false，直接退出
                     const code = extractCodeFromUrl();
                     if (!code) return;
-
                     const url = window.location.href;
                     const isMobileDevice = isMobile();
                     const isContentPage = url.includes('/content/') || url.includes('dightal');
                     const isMonthlyPage = url.includes('/monthly/');
-
                     // 如果 #p1 存在，直接退出
                     if (document.querySelector('#p1')) return;
-
                     try {
                         let selector;
                         if (isMobileDevice) {
@@ -2259,7 +1944,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             selector = isContentPage ? 'h1' : isMonthlyPage ? 'div.bx-detail-player-sampleMovie' : null;
                             console.log(`${isContentPage ? '/content/' : '/monthly/'} ${selector}`);
                         }
-
                         if (selector) {
                             console.log('开始生成在线预览链接...');
                             tmd(selector, code, '在其他站点播放：');
@@ -2268,9 +1952,7 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         console.error(`Error in ${isMobileDevice ? 'mobile' : 'PC'}:`, e);
                     }
                 }
-
                 // 在 DMM 同人页面添加搜索链接
-
                 // 获取 h1 文本（排除 <span> 内容和限定/版本等字眼，增强鲁棒性）
                 function getH1Text(selector) {
                     try {
@@ -2279,7 +1961,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             console.warn('No element found with selector:', selector);
                             return '';
                         }
-
                         function extractText(node) {
                             let text = '';
                             node.childNodes.forEach(child => {
@@ -2291,13 +1972,11 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             });
                             return text;
                         }
-
                         let textContent = extractText(element);
                         if (!textContent) {
                             console.warn('No valid text content found in element with selector:', selector);
                             return '';
                         }
-
                         // 过滤包含“限定”“版本”等字眼的文本
                         const filterPatterns = [
                             /【[^】]*限定[^】]*】/g, // 匹配如【FANZA限定版】
@@ -2306,62 +1985,51 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             /特別版/g,                // 匹配特别版
                             /版/g                     // 匹配单独的“版”
                         ];
-
                         filterPatterns.forEach(pattern => {
                             textContent = textContent.replace(pattern, '').trim();
                         });
-
                         if (!textContent) {
                             console.warn('Text content is empty after filtering:', selector);
                             return '';
                         }
-
                         return textContent;
                     } catch (error) {
                         console.error('Error extracting text:', error);
                         return '';
                     }
                 }
-
                 // 添加搜索链接功能
                 function addDmmDoujinSearchLink(parentsSelector, h1Text, linkLabel) {
                     // 检查是否为 DMM 同人页面 URL
                     function isDmmDoujinUrl() {
                         return window.location.href.startsWith('https://www.dmm.co.jp/dc/doujin/');
                     }
-
                     // 创建并添加搜索链接
                     function createSearchLinks(parentElement, textContent, h1Text) {
                         if (!parentElement) {
                             console.warn(`Parent element not found with selector: ${parentsSelector}`);
                             return;
                         }
-
                         // 检查是否已存在 ID 为 p1 的元素
                         if (document.getElementById('p1')) {
                             console.log('Search links already exist, skipping.');
                             return;
                         }
-
                         // 创建 p1 容器
                         const p1 = document.createElement('p');
                         p1.id = 'p1';
                         p1.style.cssText = 'height:fit-content; margin:10px 0px 0px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius:4px !important; box-shadow:rgb(151, 151, 151) 0px 0px 0px 0px inset; background:#10141f; color:chocolate; padding:0px; word-break:break-all; border-radius:0px';
-
                         // 创建 p2 容器
                         const p2 = document.createElement('p');
                         p2.id = 'p2';
                         p2.style.cssText = 'background:black; padding-left:6px; font-weight:inherit; padding:6px; word-break:break-all; font-size:inherit; border-radius:0px';
-
                         p1.appendChild(p2);
                         parentElement.appendChild(p1);
-
                         // 添加标题
                         const span = document.createElement('span');
                         span.style.cssText = 'font-weight:bolder; font-size:medium; color:bisque;';
                         span.textContent = textContent;
                         p2.appendChild(span);
-
                         // 添加单个搜索链接
                         function appendSearchLink(siteName, url, query) {
                             const a = document.createElement('a');
@@ -2374,29 +2042,24 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             label.appendChild(a);
                             p2.appendChild(label);
                         }
-
                         const searchSites = [
                             { name: 'Hitomi[HD]', url: 'https://www.google.com/search?q=', query: `site:hitomi.la ${h1Text}` },
                             { name: '禁漫天堂[HD]', url: 'https://www.google.com/search?q=', query: `site:18comic.vip ${h1Text}` },
                             { name: '绅士漫画[HD]', url: 'https://www.google.com/search?q=', query: `site:www.wnacg.com ${h1Text}` },
                             { name: 'Google🔍', url: 'https://www.google.com/search?q=', query: `${h1Text}` }
                         ];
-
                         searchSites.forEach(site => appendSearchLink(site.name, site.url, site.query));
                         console.log('Search links generated successfully.');
                     }
-
                     // 主逻辑：执行搜索链接添加
                     function executeSearch() {
                         if (!isDmmDoujinUrl()) {
                             console.log('This function can only be executed on https://www.dmm.co.jp/dc/doujin/ and its subpages.');
                             return;
                         }
-
                         const parentElement = document.querySelector(parentsSelector);
                         createSearchLinks(parentElement, linkLabel, h1Text);
                     }
-
                     // 使用 MutationObserver 检测 DOM 加载
                     function observeDomLoad() {
                         const targetNode = document.body;
@@ -2404,7 +2067,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             console.warn('Document body not found.');
                             return;
                         }
-
                         const observer = new MutationObserver((mutations, obs) => {
                             const parentElement = document.querySelector(parentsSelector);
                             if (parentElement) {
@@ -2412,35 +2074,29 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                                 obs.disconnect();
                             }
                         });
-
                         observer.observe(targetNode, {
                             childList: true,
                             subtree: true
                         });
-
                         // 超时 5 秒后停止观察
                         setTimeout(() => {
                             observer.disconnect();
                             executeSearch();
                         }, 5000);
                     }
-
                     // 启动观察
                     observeDomLoad();
                 }
-
                 // 主逻辑：初始化脚本
                 function initDmmSearchLinks() {
                     if (!window.location.href.startsWith('https://www.dmm.co.jp/dc/doujin/')) {
                         console.log('Page is not under https://www.dmm.co.jp/dc/doujin/, script not executed.');
                         return;
                     }
-
                     // 尝试两种可能的 h1 选择器
                     const selectors = ['h1.productTitle__txt', 'header.detail_header'];
                     let h1Text = '';
                     let selectedSelector = '';
-
                     for (const selector of selectors) {
                         h1Text = getH1Text(selector);
                         if (h1Text) {
@@ -2448,68 +2104,46 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                             break;
                         }
                     }
-
                     if (!h1Text) {
                         console.warn('No valid h1 text found with selectors:', selectors.join(', '));
                         return;
                     }
-
                     addDmmDoujinSearchLink(selectedSelector, h1Text, '试试其他搜索：');
                 }
-
                 // 执行脚本
                 try {
                     initDmmSearchLinks();
                 } catch (error) {
                     console.error('Error initializing DMM search links:', error);
                 }
-
             });
-
             break;
-
         case 'javtiful':
-
             css_adsRemove(adsMax.css.javtiful, 100, 'missavx');
             window_open_defuser(); // 打断 window.open 施法
-
             // 新增快进快退
-
             (function () {
                 fastForward('#front-player', 'div > h1');
             })();
-
             // 快进快退结束
-
             break;
-
         case 'njavtv.com':
         case 'missav':
-
-
             document.body.style.setProperty('background-color', '#000000', 'important');
-
             // window.addEventListener('load', function () {
-
             // 将三个选择器用逗号连接传入（注意转义字符 lg\\:hidden）
-
             // 示例 1：移除所有 ID 包含 "model" 的元素
             autoRemoveElements('[id*="model"]');
-
             // 示例 2：同时移除多个选择器匹配的广告/弹窗元素
             autoRemoveElements('div[style*="300px"], a[href*="//bit.ly/"], .pop-up-banner');
             autoRemoveElements('div.lg\\:hidden, div.space-y-5 > div, ul.mb-4 > li > a');
-
             // 示例：仅移除包含外部跟踪链接，或者高度/宽度固定为特定广告尺寸的动态节点
             const safeSelector = [
                 'div.space-y-5 > div:has(a[href*="//bit.ly/"])', // 仅当子元素包含特定的推广链接时才删除
                 'div.space-y-5 > div:has(iframe)',                // 仅当内部包含广告 iframe 时删除
                 'div.lg\\:hidden:has(a[target="_blank"])'         // 结合点击行为特征匹配
             ].join(',');
-
             autoRemoveElements(safeSelector);
-
-
             // 你要追加的 CSS 内容
             const css = `
                 @media (min-width: 640px) {
@@ -2518,13 +2152,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
       }
     }
   `
-
-
             // 方法 1：使用 <style> 标签（推荐，兼容性好）
             const styleSheet = document.createElement('style');
             styleSheet.textContent = css;
             //document.head.appendChild(styleSheet);
-
             window.onload = function () {
                 if (document.location.href.search('search') !== -1) {
                     let regex = /.*\/search\//;
@@ -2534,8 +2165,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }, 2000)
                     console.log("生成搜索链接🔗");
                 }
-
-
                 setTimeout(() => {
                     if (document.querySelector('.plyr__poster') !== null) { // 播放页插入其他站点播放链接
                         let code = document.querySelectorAll('span.font-medium')[0].textContent;
@@ -2546,16 +2175,12 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         console.log("生成在其他站点播放链接🔗");
                     }
                 }, 2500)
-
             }()
-
             window_open_defuser(); // 打断 window.open 施法
             var ua_missav = navigator.userAgent.toLowerCase();
             var mobile_missav = "mobile";
             //cloudflare_captchaBypass();
-
             setTimeout(() => {
-
                 // 在浏览器控制台直接运行即可
                 (function () {
                     const videos = document.querySelectorAll('video');
@@ -2563,11 +2188,9 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         if (video.src && video.src.includes('.m3u8')) {
                             console.log('直接 src 是 m3u8:', video.src);
                             //alert(video.src);
-
                             window.m3u8SRC = video.src // 获取src
                             return video.src; //
                         }
-
                         // hls.js / video.js / 大部分播放器都会把实例挂在 video.hls 或 video.player 上
                         if (video.hls && video.hls.url) {
                             console.log('hls.js url:', video.hls.url);
@@ -2578,7 +2201,6 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         if (video.hls && typeof video.hls.currentLevel === 'object') {
                             console.log('hls.js url:', video.hls.config.loader.config.url || video.hls.levels[video.hls.currentLevel]?.url);
                         }
-
                         // 有些站点用的是 xgplayer、dplayer、ckplayer 等
                         if (window.player && player.currentSrc) {
                             console.log('player.currentSrc:', player.currentSrc());
@@ -2588,23 +2210,17 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         }
                     }
                 })();
-
                 var button_download = document.createElement('button')
                 button_download.style = "margin-left: 0px; margin-top: 5px; position: static; font-size: smaller !important; background: #2563eb !important; margin-right: 5px; padding: 6px 6px 6px 6px; display: inline-block; color: white; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-
                 /*if (hls.url.indexOf('.mp4') !== -1) {
                     button_download.textContent = '复制视频下载地址'
                 } else {
                     button_download.textContent = '复制M3U8文件地址'
                 }
-        
         */
                 button_download.textContent = '复制M3U8文件地址'
-
                 button_download.id = 'copyURL'
-
                 button_download.addEventListener('click', (() => {
-
                     //alert('wtf')
                     if (window.m3u8SRC) {
                         const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
@@ -2615,12 +2231,10 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         document.execCommand('copy', true); // 执行复制
                         document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
                         document.querySelector('#copyURL').textContent = '复制成功'
-
                         setTimeout(() => { // ↩️按钮恢复原状
                             document.querySelector('#copyURL').classList.remove('copysuccess')
                             document.querySelector('#copyURL').textContent = '复制M3U8文件地址'
                         }, 2500)
-
                         if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
                             document.getElementById('ffuck91porn').remove()
                         }
@@ -2628,61 +2242,45 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                         alert('未找到视频下载地址！')
                     }
                 }))
-
                 let cssText = "font-size: smaller !important; background: #2563eb !important; left: 0px; top: 110px; margin-right: 5px; margin-top: 5px;" + "padding: 6px 6px 6px 6px; display: inline-block; color: white;z-index: 114154 !important; border-right: 6px solid #38a3fd; border-left: #292f33 !important; border-top: #292f33 !important; border-bottom: #292f33 !important; background: #2563eb; border-radius: 0px 0px 0px 0px; font-weight: 800 !important; text-align: right !important;"
-
                 if (ua_missav.indexOf(mobile_missav) === -1) {
-
                     if (document.querySelector('div.mt-4') !== null && document.querySelector('div.mt-4').querySelector('h1') !== null && document.querySelector('#how') === null) {
                         ele_dynamicAppend("div.mt-4", "onclick", "离开页面视频继续播放", cssText, "", "missavX", 2, "button");
                         ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "", "missavP", 3, "button");
                         document.querySelector('div.mt-4').insertBefore(button_download, document.querySelector('div.mt-4').children[3])
                         ele_dynamicAppend("div.mt-4", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 5, "a");
                     }
-
                     if (document.getElementById("how") !== null) {
                         document.getElementById("how").target = "_blank";
                     }
-
                     // 添加监听器
                     if (document.getElementById("missavX")) {
                         addListenerById("missavX", () => { video_loopPlay('loop') }, 1000);
                     }
-
                     if (document.getElementById("missavP")) {
                         addListenerById("missavP", () => { video_loopPlay('pause') }, 1000);
                     }
-
-
-
                     fastForward('[playsinline][data-poster]', 'div.flex-1.order-first > div[x-init]') // 快进快退
-
                 } else if (ua_missav.indexOf(mobile_missav) > -1 && document.querySelector('#missavFullScreen') === null) {
                     ele_dynamicAppend("div.mt-4", "onclick", "免广告播放", cssText, "video_Play()", "missavX", 0, "button");
                     ele_dynamicAppend("div.mt-4", "onclick", "进入全屏", cssText, "fullscreen()", "missavFullScreen", 2, "button");
                     ele_dynamicAppend("div.mt-4", "onclick", "暂停", cssText, "video_pause()", "missavPause", 1, "button");
                     ele_dynamicAppend("div.mt-4", "href", "如何下载本视频？", cssText, "https://limbopro.com/archives/M3U8-Downloader.html", "how", 4, "a");
-
                     if (document.querySelector('div.mt-4') !== null) {
                         document.querySelector('div.mt-4').insertBefore(button_download, document.querySelector('div.mt-4').children[3])
                         // 添加监听器
                     }
-
                     if (document.getElementById("how") !== null) {
                         document.getElementById("how").target = "_blank";
                     }
-
                     addListenerById("missavX", () => { video_Play() }, 1000);
                     addListenerById("missavFullScreen", () => { fullscreen() }, 1000);
                     addListenerById("missavPause", () => { video_pause() }, 1000);
                 }
             }, 3000)
-
-
             if (window.innerWidth > 640) {
                 fastForward('[playsinline][data-poster]', 'div.flex-1.order-first > div[x-init]') // 快进快退
             }
-
             document.querySelectorAll('div.grid').forEach(
                 (x) => {
                     if (x.querySelector('img[src*="mio.jpg"]')) { // 移除 missav 播放页广告
@@ -2690,11 +2288,8 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     }
                 }
             )
-
             // });
-
             break;
-
         default:
             // 修正 case 中 default 的匹配规则  10.25.203
             if (/\b(netflav|missav|jable)\b/i.test(window.location.href.toLowerCase())) {
@@ -2703,21 +2298,16 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                     window_open_defuser(); // 打断 window.open 施法
                 }
             }
-
             console.log("Catch Nothing! DEFAULT!");
         //alert('DEFAULT!CATCH!')
     }
 }
 
 adsDomain_switch(values()) // 动手吧
-
-
 /* Start */
 /*如若需同步至 https://greasyfork.org/zh-CN 则需将本常量删除；
 这将导致审核不通过且脚本有被 GreasyFork 管理员 删除的风险；
 */
-
-
 // uBlock Origin 脚本添加
 window.uBlockOrigin_add = function () {
     loadExternalResourceFireAndForget('script', uBlockOrigin.chn0abortcurrentscript, 'head', 'chn0abortcurrentscript');
@@ -2757,9 +2347,7 @@ window.uBlockOrigin_add = function () {
     loadExternalResourceFireAndForget('script', uBlockOrigin.trustedsetcookie, 'head');
     loadExternalResourceFireAndForget('script', uBlockOrigin.windowcloseif, 'head');
     loadExternalResourceFireAndForget('script', uBlockOrigin.xmlprune, 'head');
-
 }
-
 /* End */
 
 function daohang_build() { // 如果导航按钮不存在，则引入外部脚本进行创建;
@@ -2776,12 +2364,10 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
         ua.indexOf("Googlebot") !== -1 ||
         ua.indexOf("bot") !== -1
     );
-
     // 如果是 Bot 则不加载导航
     if (!isBot) {
         var lowerHref = window.location.href.toLowerCase();
         var lowerUA = ua.toLowerCase();
-
         // 正则表达式用于匹配特定的内容提供商
         var csp_regex = /\b(twitter|xvideos)\b/i;
         // 检查是否为特定的CSP页面 且 为PC端 (非移动设备)
@@ -2789,18 +2375,14 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
             csp_regex.test(lowerHref) &&
             !(/\b(mobile)\b/i.test(lowerUA))
         );
-
         // 检查是否为另一个排除列表中的页面
         var isExcludedUrl = (lowerHref.indexOf('-9-1p-o-r-n') !== -1);
-
         if (isCspAndPc) {
             // 条件: CSP + PC，不引入导航
             console.log('CSP + PC, SO DO NOTING.');
-
         } else if (isExcludedUrl) {
             // 条件: 排除列表中的 URL，不引入导航
             console.log('SO DO NOTING.');
-
         } else {
             // 符合加载条件，引入导航脚本
             let daohang = setInterval(() => {
@@ -2810,10 +2392,8 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
                     //document.querySelector("script[src*='Adblock4limbo.function.js']")
                     typeof body_build == 'function'
                 );
-
                 // 检查是否已经存在导航容器 (dh_pageContainer)
                 var hasHomePage = document.querySelectorAll("div#dh_pageContainer").length >= 1; // *** 变量名已改为 hasHomePage ***
-
                 if (!isFunctionxLoaded) {
                     // 首次尝试加载脚本
                     if (typeof third_party_fileX == 'function') {
@@ -2821,7 +2401,6 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
                         console.log('functionx.js 首次引用成功，等待生效...');
                         clearInterval(daohang); // 首次加载后就停止检查
                     }
-
                 } else if (hasHomePage) { // *** 使用新的变量名 ***
                     // 脚本已加载且导航容器已存在
                     clearInterval(daohang);
@@ -2831,11 +2410,6 @@ function daohang_build() { // 如果导航按钮不存在，则引入外部脚�
         }
     }
 }
-
-
-
-
-
 // 按根据父元素是否包含子元素而删除父元素
 function remove_parentElement_by_child(parentElement, child) {
     let remove_parentElement_by_child_interval = setInterval(() => {
@@ -2849,7 +2423,6 @@ function remove_parentElement_by_child(parentElement, child) {
         }
     }, 1000)
 }
-
 // 无数函数及方法的组合使脚本更灵活
 // 自动跳过 pornhub interstitial 插页式广告
 function pornhub_interstitialPass() {
@@ -2860,24 +2433,20 @@ function pornhub_interstitialPass() {
         window.location = href;
     }
 }
-
 // 设置 cookie // 18comic Javascript
 function _18comic_adsRemove() {
     document.cookie = "cover=1";
     document.cookie = "shunt=1";
     document.cookie = "guide=1";
 }
-
 // 设置 cookie // missAv Javascript
 function missAv_adsRemove() {
     document.cookie = "_gat_UA-177787578-7; expires=Thu, 01 Jan 1970 00:00:00 GMT";
 }
-
 // 设置 Cookie // 任意
 function set_cookie(name, value) {
     document.cookie = name + '=' + value + '; Path=/;';
 }
-
 // 通过CSS选择器隐藏广告样式
 function selector_adsRemove(selector, time) {
     var i;
@@ -2889,9 +2458,6 @@ function selector_adsRemove(selector, time) {
         }
     }, time)
 }
-
-
-
 // 设置 cookie 并移除特定元素
 function jable_adsRemove() { // Cookie 设定及注入
     document.cookie = "ts_popunder=1";
@@ -2901,8 +2467,6 @@ function jable_adsRemove() { // Cookie 设定及注入
         'r.trwl1.com',
         'r.www.com'
     ];
-
-
     const div = document.querySelectorAll("div.col-6.col-sm-4.col-lg-3, div.col-6.col-sm-4.col-xl-3, div.col-6.col-sm-4.col-lg-12")
     for (x = 0; x < div.length; x++) {
         if (div[x].querySelectorAll("script, a[href*=trackwilltrk]").length >= 1) {
@@ -2910,7 +2474,6 @@ function jable_adsRemove() { // Cookie 设定及注入
         }
     }
 }
-
 // 移除 某个 tag标签
 function tag_adsRemove(tagname, keyword) {
     var i;
@@ -2924,7 +2487,6 @@ function tag_adsRemove(tagname, keyword) {
         }
     }
 }
-
 // 在页面动态插入元素并赋予相应元素
 
 function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag) {
@@ -2940,8 +2502,6 @@ function ele_dynamicAppend(selector, attribute, txt, style, func, id, array, tag
         console.log("按钮已添加")
     }
 }
-
-
 // Cloudflare recaptcha 绕过
 function cloudflare_captchaBypass() {
     var title = document.title;
@@ -2950,8 +2510,6 @@ function cloudflare_captchaBypass() {
         console.log("captchaBypass done;")
     };
 }
-
-
 // missav 广告移除后导致的空白
 function div_ad_missav() {
     let div_ad = document.querySelectorAll('div.mx-auto[style]')
@@ -2968,7 +2526,6 @@ function fileDownload(url, download = true) {
         const name = url.split('/');
         return name.pop();
     }
-
     const filename = getFileName(url);
     fetch(url)
         .then(response => {
@@ -2986,7 +2543,6 @@ function fileDownload(url, download = true) {
                 //预览
                 tempLink.setAttribute('target', '_blank');
             }
-
             document.body.appendChild(tempLink);
             tempLink.click();
             setTimeout(() => {
@@ -2999,20 +2555,15 @@ function fileDownload(url, download = true) {
 
 
 function _91porny_dl() {
-
     const element = document.querySelector('div.videoPlayContainer div[data-src]');
     if (element && element.dataset.src) {
         console.log(element.dataset.src);
         // 执行你的逻辑
-
-
         {
-
             var css = document.createElement('style')
             css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
             css.id = 'porn91'
             document.body.appendChild(css)
-
             if (document.getElementById('copyURL') == null) {
                 var mp4URL = document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src
                 var mp4Download = document.createElement('a')
@@ -3020,52 +2571,40 @@ function _91porny_dl() {
                 mp4Download.target = '_blank'
                 mp4Download.id = 'mp4Download'
                 mp4Download.href = mp4URL
-
                 if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
                     mp4Download.textContent = '无广播放'
                 } else {
                     mp4Download.textContent = '下载M3U8文件'
                 }
-
                 var button_download = document.createElement('button')
                 button_download.style = 'font-size:12px; padding:10px; position:static;right:0px;top:216px;border:0px; background:#3286cd;color:white;font-weight:bolder;height:38px;'
                 button_download.textContent = '复制本视频的M3U8文件地址'
                 button_download.id = 'copyURL'
-
                 var button_alert = document.createElement('button')
                 button_alert.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:yellowgreen;color:white;font-weight:bolder;height:38px;'
                 button_alert.textContent = '如何下载M3U8视频?'
                 button_alert.id = 'alertDownload'
-
                 var button_downloadOnline = document.createElement('button')
                 button_downloadOnline.style = 'font-size:12px; padding:10px; position:static;right:0px;top:337px;border:0px; background:rgb(34, 90, 137);color:white;font-weight:bolder;height:38px;'
                 button_downloadOnline.textContent = '在线下载本视频'
                 button_downloadOnline.id = 'downloadOnline'
-
-
                 var button_hidden = document.createElement('button')
                 button_hidden.style = 'font-size:12px; padding:10px; position:static;right:0px;top:482px;border:0px; background:black;color:white;font-weight:bolder;height:38px;'
                 button_hidden.textContent = '隐藏按钮'
                 button_hidden.id = 'hiddenButton'
-
                 button_alert.addEventListener('click', (() => {
                     window.open('https://limbopro.com/archives/M3U8-Downloader.html', '_blank')
                 }))
-
-
                 const downloadOnlineurl = 'https://anyconv.com/m3u8-to-mp4-converter/' + "#" + mp4URL
-
                 /* button_downloadOnline.addEventListener('click', (() => {
                     window.open(downloadOnlineurl, '_blank')
                 }))*/
-
                 button_hidden.addEventListener('click', (() => {
                     document.getElementById('mp4Download').style.display = 'none'
                     document.getElementById('copyURL').style.display = 'none'
                     document.getElementById('alertDownload').style.display = 'none'
                     document.getElementById('hiddenButton').style.display = 'none'
                 }))
-
                 button_download.addEventListener('click', (() => {
                     if (document.querySelector('div.videoPlayContainer  div[data-src]').dataset.src !== null) {
                         const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
@@ -3076,12 +2615,10 @@ function _91porny_dl() {
                         document.execCommand('copy', true); // 执行复制
                         document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
                         document.querySelector('#copyURL').textContent = '复制成功'
-
                         setTimeout(() => { // ↩️按钮恢复原状
                             document.querySelector('#copyURL').classList.remove('copysuccess')
                             document.querySelector('#copyURL').textContent = '复制本视频的M3U8文件地址'
                         }, 2500)
-
                         if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
                             document.getElementById('ffuck91porn').remove()
                         }
@@ -3089,18 +2626,14 @@ function _91porny_dl() {
                         alert('未找到视频下载地址！')
                     }
                 }))
-
                 const container_el = document.querySelectorAll('h4.container-title')[0]
                 container_el.parentNode.insertBefore(button_download, container_el)
                 container_el.parentNode.insertBefore(button_downloadOnline, container_el)
                 container_el.parentNode.insertBefore(button_alert, container_el)
             }
-
-
             // online download button script
             // 获取按钮
             const button = document.getElementById('downloadOnline');
-
             // 动态创建样式
             function createStyles() {
                 const style = document.createElement('style');
@@ -3116,7 +2649,6 @@ function _91porny_dl() {
                         background: rgba(0, 0, 0, 0.5);
                         z-index: 999;
                 }
-
                         /* 悬浮窗样式 */
                         .modal {
                         overflow: auto;
@@ -3138,7 +2670,6 @@ function _91porny_dl() {
                         width: 90%;
                         animation: modalFadeIn 0.3s ease-out;
                 }
-
                         /* 动画效果 */
                         @keyframes modalFadeIn {
                             from {
@@ -3150,19 +2681,16 @@ function _91porny_dl() {
                         transform: translate(-50%, -50%);
                     }
                 }
-
                         .modal h3 {
                             color: #007bff;
                         margin-top: 0;
                         font-size: 1.5em;
                 }
-
                         .modal p {
                             color: #333;
                         font-size: 1.1em;
                         margin: 15px 0;
                 }
-
                         .modal a {
                             display: inline-block;
                         background-color: #007bff;
@@ -3174,12 +2702,10 @@ function _91porny_dl() {
                         transition: background-color 0.3s;
                         margin-top: 15px;
                 }
-
                         .modal a:hover {
                             background - color: #0056b3;
                         transform: translateY(-2px);
                 }
-
                         .close-btn {
                             background-color: #dc3545;
                         color: white;
@@ -3190,7 +2716,6 @@ function _91porny_dl() {
                         margin-top: 10px;
                         font-size: 14px;
                 }
-
                         .close-btn:hover {
                             background-color: #c82333;
                 }
@@ -3198,14 +2723,12 @@ function _91porny_dl() {
                 document.head.appendChild(style);
                 return style;
             }
-
             // 动态创建DOM元素
             function createModalElements() {
                 // 创建遮罩层
                 const overlay = document.createElement('div');
                 overlay.id = 'overlay';
                 overlay.className = 'overlay';
-
                 // 创建悬浮窗
                 const modal = document.createElement('div');
                 modal.id = 'modal';
@@ -3217,75 +2740,60 @@ function _91porny_dl() {
                         <a href="https://limbopro.com/archives/M3U8-Downloader.html" target="_blank">查看更多下载方法</a>
                         <!-- <br><button class="close-btn" onclick="closeModal()">关闭</button> --!>
                             `;
-
                 // 添加到页面
                 document.body.appendChild(overlay);
                 document.body.appendChild(modal);
-
                 return { overlay, modal };
             }
-
-
             // 执行函数
             function executeFunction() {
                 document.getElementById('copyURL').click()
                 console.log('函数已执行');
-
                 // 创建样式（只创建一次）
                 if (!document.querySelector('style[data-modal-styles]')) {
                     const style = createStyles();
                     style.setAttribute('data-modal-styles', 'true');
                 }
-
                 // 创建DOM元素（只创建一次）
                 if (!document.getElementById('modal')) {
                     createModalElements();
                 }
-
                 // 显示悬浮窗
                 showModal();
             }
-
             // 按钮点击事件
             button.addEventListener('click', executeFunction);
-
             // 点击遮罩层关闭悬浮窗
             document.addEventListener('click', function (e) {
                 if (e.target.id === 'overlay') {
                     closeModal();
                 }
             });
-
             // ESC键关闭悬浮窗
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     closeModal();
                 }
             });
-
             // 显示悬浮窗
             function showModal() {
                 const overlay = document.getElementById('overlay');
                 const modal = document.getElementById('modal');
-
                 if (overlay !== null)
                     overlay.style.display = 'block';
                 if (modal !== null)
                     modal.style.display = 'block';
             }
-
             // 关闭悬浮窗
             function closeModal() {
                 const overlay = document.getElementById('overlay');
                 const modal = document.getElementById('modal');
-
                 if (overlay !== null)
                     overlay.style.display = 'none';
                 if (modal !== null)
                     modal.style.display = 'none';
             }
         }
-
     } else {
         console.log('未找到带有 data-src 的元素');
     }
@@ -3293,19 +2801,14 @@ function _91porny_dl() {
 
 
 function xchinadl() { // 小黄书下载m3u8视频
-
     if (window.location.href.match('video')) {
-
         var css = document.createElement('style')
         css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
         css.id = 'xchina'
         document.body.appendChild(css)
-
         if (document.getElementById('mp4Download') == null) {
-
             // 一键把 m3u8 地址保存到 mp4URL，绝不干扰后续代码
             window.mp4URL = null;
-
             (() => {
                 const patterns = [
                     /src\s*[:=]\s*['"](https?:\/\/[^'"]*\.m3u8[^'"]*)['"]/i,
@@ -3313,7 +2816,6 @@ function xchinadl() { // 小黄书下载m3u8视频
                     /loadSource\s*\(\s*['"](https?:\/\/[^'"]*\.m3u8[^'"]*)['"]/i,
                     /(https?:\/\/[^\s'"]*\.m3u8[^\s'"]*)/g
                 ];
-
                 for (const s of document.scripts) {
                     if (s.src) continue;
                     const text = s.textContent;
@@ -3329,7 +2831,6 @@ function xchinadl() { // 小黄书下载m3u8视频
                 }
                 console.log('未找到 m3u8，mp4URL 仍是 null');
             })();
-
             var mp4Download = document.createElement('button')
             mp4Download.download = document.title.toString()
             mp4Download.id = 'mp4Download'
@@ -3337,52 +2838,39 @@ function xchinadl() { // 小黄书下载m3u8视频
             mp4Download.onclick = function () {
                 window.open(mp4URL, '_blank');
             }
-
             if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
                 mp4Download.textContent = '无广播放'
             } else {
                 mp4Download.textContent = '无广播放'
             }
-
             // 创建 div 元素
             const myContainer = document.createElement('div');
-
             // 可选：给 div 添加 id、class、内容等
             myContainer.id = 'myContainer';
             myContainer.style = "position:fixed;right:0px;z-index:114154;display:grid;top:55%;"
-
             var button_download = document.createElement('button')
             button_download.style = 'padding:12px; border:0px; background:#22c55e;color:white;font-weight:bolder;width:60px;'
-
             if (mp4URL.indexOf('.mp4') !== -1) {
                 button_download.textContent = '复制视频下载地址'
             } else {
                 button_download.textContent = '复制M3U8文件地址'
             }
-
             button_download.id = 'copyURL'
-
             var button_alert = document.createElement('button')
             button_alert.style = 'padding:12px; border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
             button_alert.textContent = '如何下载本视频？'
             button_alert.id = 'alertDownload'
-
             if (mp4URL.indexOf('.mp4') !== -1) {
-
                 button_alert.addEventListener('click', (() => {
                     //alert(' 1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；桌面浏览器用户在新的标签页打开下载地址，然后右键另存为即可；')
                     confirmndExecute('1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；桌面浏览器用户在新的标签页打开下载地址，然后右键另存为即可；', (() => {
-
                     }));
                 }))
-
             } else {
                 button_alert.onclick = function () {
                     window.open('https://limbopro.com/archives/M3U8-Downloader.html', '_blank');
                 }
             }
-
-
             button_download.addEventListener('click', (() => {
                 if (document.querySelectorAll('source')[0].src.match('\.mp4') !== null) {
                     const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
@@ -3393,12 +2881,10 @@ function xchinadl() { // 小黄书下载m3u8视频
                     document.execCommand('copy', true); // 执行复制
                     document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
                     document.querySelector('#copyURL').textContent = '复制成功'
-
                     setTimeout(() => { // ↩️按钮恢复原状
                         document.querySelector('#copyURL').classList.remove('copysuccess')
                         document.querySelector('#copyURL').textContent = '复制M3U8文件地址'
                     }, 2500)
-
                     if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
                         document.getElementById('ffuck91porn').remove()
                     }
@@ -3406,7 +2892,6 @@ function xchinadl() { // 小黄书下载m3u8视频
                     alert('未找到视频下载地址！')
                 }
             }))
-
             const ele_parent = document.querySelectorAll('div.content-box.player-container')[0]
             myContainer.appendChild(mp4Download)
             myContainer.appendChild(button_download)
@@ -3417,14 +2902,11 @@ function xchinadl() { // 小黄书下载m3u8视频
 }
 
 function _91porn_dl() { // 下载视频
-
     if (window.location.href.match('view_video')) {
-
         var css = document.createElement('style')
         css.innerHTML = '.copysuccess {background:green !important;color:white !important;}'
         css.id = 'porn91'
         document.body.appendChild(css)
-
         if (document.getElementById('mp4Download') == null) {
             var mp4URL = document.querySelectorAll('source')[0].src
             var mp4Download = document.createElement('a')
@@ -3432,29 +2914,24 @@ function _91porn_dl() { // 下载视频
             mp4Download.target = '_blank'
             mp4Download.id = 'mp4Download'
             mp4Download.href = mp4URL
-
             if ((/\b(android|iphone|ipad|ipod)\b/i.test(navigator.userAgent.toLowerCase()))) {
                 mp4Download.textContent = '无广播放'
             } else {
                 mp4Download.textContent = '下载视频'
             }
-
             var button_download = document.createElement('button')
             button_download.style = 'padding:12px; position:fixed;right:0px;top:216px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
             button_download.textContent = '复制视频下载地址'
             button_download.id = 'copyURL'
-
             var button_alert = document.createElement('button')
             button_alert.style = 'padding:12px; position:fixed;right:0px;top:322px;border:0px; background:yellowgreen;color:white;font-weight:bolder;width:60px;'
             button_alert.textContent = '如何下载本视频？'
             button_alert.id = 'alertDownload'
-
             button_alert.addEventListener('click', (() => {
                 //alert(' 1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；桌面浏览器用户在新的标签页打开下载地址，然后右键另存为即可；')
                 confirmndExecute('1.复制视频下载地址；2.iOS用户推荐使用名叫 "Documents" 的 app 下载视频，打开 Documents app -> 浏览器 - 粘贴视频下载地址；Android 暂无建议；桌面浏览器用户在新的标签页打开下载地址，然后右键另存为即可；', (() => {
                 }));
             }))
-
             button_download.addEventListener('click', (() => {
                 if (document.querySelectorAll('source')[0].src.match('\.mp4') !== null) {
                     const textarea = document.createElement('textarea') // 创建 textarea 元素 并将选中内容填充进去
@@ -3465,12 +2942,10 @@ function _91porn_dl() { // 下载视频
                     document.execCommand('copy', true); // 执行复制
                     document.querySelector('#copyURL').classList.add('copysuccess')  // 复制成功提醒
                     document.querySelector('#copyURL').textContent = '复制成功'
-
                     setTimeout(() => { // ↩️按钮恢复原状
                         document.querySelector('#copyURL').classList.remove('copysuccess')
                         document.querySelector('#copyURL').textContent = '复制视频下载地址'
                     }, 2500)
-
                     if (document.getElementById('fuck91porn')) { // 删除刚刚创建的 textarea 元素
                         document.getElementById('ffuck91porn').remove()
                     }
@@ -3478,7 +2953,6 @@ function _91porn_dl() { // 下载视频
                     alert('未找到视频下载地址！')
                 }
             }))
-
             mp4Download.style = 'padding:12px; position:fixed;right:0px;top:150px;background:yellowgreen;color:white;font-weight:bolder;width:60px;'
             document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_alert, document.querySelectorAll('#useraction')[0])
             document.querySelectorAll('#useraction')[0].parentNode.insertBefore(button_download, document.querySelectorAll('#useraction')[0])
@@ -3486,7 +2960,6 @@ function _91porn_dl() { // 下载视频
         }
     }
 }
-
 /* 循环播放 missAV */
 
 var timer = null;
@@ -3514,9 +2987,7 @@ function missAv_playbutton() {
         //console.log("视频已开启循环播放；")
     }
 }
-
 // 快进快退 fastForward
-
 // ==UserScript==
 // @name         Jable.tv 视频页：单行快进快退（样式分离注入）
 // @namespace    http://tampermonkey.net/
@@ -3530,14 +3001,10 @@ function missAv_playbutton() {
 // ==/UserScript==
 
 function fastForward(videowrap, section) { // fastForward()
-
     'use strict';
-
     const video = document.querySelector(videowrap);
     if (!video) return;
-
     if (document.getElementById('jable-skip-panel')) return;
-
     // === 1. 注入全局 CSS 样式 ===
     const style = document.createElement('style');
     style.id = 'jable-skip-panel-style';
@@ -3547,7 +3014,6 @@ function fastForward(videowrap, section) { // fastForward()
         padding-bottom: 10px !important;
       }
     }
-
     #jable-skip-panel {
     touch-action: pan-up pan-down pan-x pan-y manipulation;
     /* 或者直接写死： */
@@ -3571,7 +3037,6 @@ function fastForward(videowrap, section) { // fastForward()
       margin: 0px 0px 10px 0px;
       text-align: center;
     }
-
     .jable-skip-btn {
     padding:8px 8px 8px 12px;
     font-size:0.75rem;
@@ -3589,42 +3054,34 @@ function fastForward(videowrap, section) { // fastForward()
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       flex: 0 0 auto;
     }
-
     .jable-skip-btn.forward {
       background: rgba(0, 255, 136, 0.28);
       border-color: #00ff88;
     }
-
     .jable-skip-btn.backward {
       background: rgba(255, 80, 80, 0.28);
       border-color: #ff6666;
     }
-
     .jable-skip-btn:hover {
       transform: translateY(-2px) scale(1.06);
       box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
-
     .jable-skip-btn.forward:hover {
       background: rgba(0, 255, 136, 0.42);
       box-shadow: 0 6px 18px rgba(0, 255, 136, 0.5);
     }
-
     .jable-skip-btn.backward:hover {
       background: rgba(255, 80, 80, 0.42);
       box-shadow: 0 6px 18px rgba(255, 80, 80, 0.5);
     }
-
     .jable-skip-btn:active {
       /*transform: translateY(0) scale(1.02);*/
     }
   `;
     document.head.appendChild(style);
-
     // === 2. 创建面板 HTML ===
     const panel = document.createElement('div');
     panel.id = 'jable-skip-panel';
-
     const actions = [
         { sec: -600, label: '<< 10m', key: 'PageDown', class: 'backward' },
         { sec: -60, label: '< 1m', key: 'ArrowDown', class: 'backward' },
@@ -3633,7 +3090,6 @@ function fastForward(videowrap, section) { // fastForward()
         { sec: 60, label: '1m >', key: 'ArrowUp', class: 'forward' },
         { sec: 600, label: '10m >>', key: 'PageUp', class: 'forward' },
     ];
-
     actions.forEach(act => {
         const btn = document.createElement('button');
         btn.className = `jable-skip-btn ${act.class}`;
@@ -3641,7 +3097,6 @@ function fastForward(videowrap, section) { // fastForward()
         btn.dataset.sec = act.sec;
         btn.dataset.origText = act.label; // 预存原始文本
         btn._restoreTimer = null; // 存储恢复定时器
-
         // 快捷键提示
         if (act.key) {
             const keyName = {
@@ -3653,7 +3108,6 @@ function fastForward(videowrap, section) { // fastForward()
         } else {
             btn.title = act.label;
         }
-
         // 点击事件：带防抖恢复逻辑
         btn.onclick = function (e) {
             // 阻止任何可能的冒泡
@@ -3661,22 +3115,18 @@ function fastForward(videowrap, section) { // fastForward()
             const delta = parseInt(btn.dataset.sec);
             const newTime = Math.max(0, Math.min(video.currentTime + delta, video.duration));
             video.currentTime = newTime;
-
             // 清除上一个定时器
             if (btn._restoreTimer) {
                 clearTimeout(btn._restoreTimer);
             }
-
             const orig = btn.dataset.origText;
             /*btn.textContent = '✓';*/
-
             // 设置新的恢复定时器
             btn._restoreTimer = setTimeout(() => {
                 btn.textContent = orig;
                 btn._restoreTimer = null;
             }, 400);
         };
-
         // 键盘快捷键（复用 onclick 逻辑）
         if (act.key) {
             document.addEventListener('keydown', e => {
@@ -3686,10 +3136,8 @@ function fastForward(videowrap, section) { // fastForward()
                 }
             });
         }
-
         panel.appendChild(btn);
     });
-
     // === 3. 插入到目标 section 之后 ===
     const targetSection = document.querySelector(section);
     if (targetSection && targetSection.parentNode) {
@@ -3698,37 +3146,26 @@ function fastForward(videowrap, section) { // fastForward()
         console.warn('未找到目标 section，插入 body 末尾');
         document.body.appendChild(panel);
     }
-
     console.log('Jable 单行快进快退面板（v1.8 修复连续点击）已加载');
-
 }
-
-
 // 在番号详情页追加在线预览链接
 function tmd_land(parentSelector, code, titleText) {
     const formattedCode = code.replace(/-/g, '00');
-
     function createSearchLinks() {
         // Creates search links for various platforms
-
         const parentElement = document.querySelectorAll(parentSelector)[0];
-
         const container = document.createElement('p'); // 创建容器
         container.id = 'previewContainer';
         container.style = 'margin:10px 0px 10px 0px; border-left:6px solid #38a3fd; font-size:14px; border-radius: 4px !important; box-shadow: rgb(151, 151, 151) 0px 0px 0px 0px inset; background:#10141f; color:chocolate; padding:0px 0px 0px 0px; word-break:break-all; border-radius:0px 0px 0px 0px';
-
         const content = document.createElement('p'); // 创建内容包装器
         content.style = 'gap:3px; margin-bottom: 0px;display: flex;flex-wrap: wrap;justify-content: flex-start;align-items: center;text-align: left;font-weight: inherit;padding: 6px;word-break: break-all;font-size: inherit;border-radius: 0px;';
         content.id = 'contentWrapper';
-
         container.appendChild(content); // 追加内容包装器到容器
         parentElement.insertAdjacentElement('afterend', container);
-
         const title = document.createElement('span'); // 创建标题
         title.style = 'font-weight:bolder; font-size:medium; color:bisque;';
         title.textContent = titleText;
         content.appendChild(title);
-
         function addLinkToContainer(siteName, baseUrl, searchCode) { // 添加链接到容器
             const link = document.createElement('a');
             const label = document.createElement('label');
@@ -3740,7 +3177,6 @@ function tmd_land(parentSelector, code, titleText) {
             label.appendChild(link);
             content.appendChild(label);
         }
-
         addLinkToContainer('MissAV[720P]', 'https://missav.ws/search', '/' + code); // 添加各个搜索链接
         addLinkToContainer('Jable[HD]', 'https://jable.tv/search', '/' + code + '/');
         addLinkToContainer('Supjav[ultraHD]', 'https://supjav.com/?s=', code);
@@ -3749,18 +3185,14 @@ function tmd_land(parentSelector, code, titleText) {
         addLinkToContainer('Javbus📖', 'https://www.javbus.com/search/', code + '&type=&parent=ce');
         addLinkToContainer('DMM🇯🇵', 'https://video.dmm.co.jp/av/list/?key=', formattedCode);
         addLinkToContainer('🔞今晚看什么呢？', 'https://limbopro.com/tools/jwksm/', '');
-
         console.log('Online preview links generated 🔗');
     }
-
     if (!document.querySelector('#previewContainer')) {
         console.log('Generating online preview links...');
         createSearchLinks(); // 调用函数创建搜索链接
     }
 }
-
 /* 悬浮窗  Start*/
-
 // 1. 注入 CMSNONE 样式
 (function () {
     const cmsNoneCSS = `
@@ -3771,19 +3203,15 @@ function tmd_land(parentSelector, code, titleText) {
       pointer-events: none !important;
     }
   `;
-
     const styleElement = document.createElement('style');
     styleElement.type = 'text/css';
-
     if (styleElement.styleSheet) {
         styleElement.styleSheet.cssText = cmsNoneCSS;
     } else {
         styleElement.appendChild(document.createTextNode(cmsNoneCSS));
     }
-
     document.head.appendChild(styleElement);
 })();
-
 // 后续用于显示：mask_cre.classList.remove('cmsnone');
 // 后续用于隐藏：mask_cre.classList.add('cmsnone');
 
@@ -3802,7 +3230,6 @@ mask_cre.innerHTML = `
   `;
 
 document.body.appendChild(mask_cre);
-
 /* ---------- 自定义弹窗逻辑 ---------- */
 const mask = document.getElementById('confirmMask');
 const cancel = mask.querySelector('.cancel');
@@ -3814,10 +3241,8 @@ let resolvePromise;   // 用于 await 方式（可选）
 function showConfirm() {
     mask.classList.remove('cmsnone')
     mask.classList.add('show');
-
     return new Promise(resolve => {
         resolvePromise = resolve;
-
         // 点击遮罩关闭（可选）
         mask.onclick = e => {
             if (e.target === mask) closeConfirm(false);
@@ -3832,18 +3257,15 @@ function closeConfirm(result) {
     mask.onclick = cancel.onclick = ok.onclick = null;
     resolvePromise(result);
 }
-
 /* ---------- 确认后执行原逻辑 ---------- */
 async function confirmndExecute(itext = '', fun) {
     // 更新提示文字
     if (itext !== '') {
         maskText.textContent = itext;
     }
-
     // 弹出确认框
     const confirmed = await showConfirm();
     if (!confirmed) return;   // 用户取消，直接退出
-
     // 执行传入的回调（若有）
     if (typeof fun === 'function') {
         try {
@@ -3853,14 +3275,11 @@ async function confirmndExecute(itext = '', fun) {
         }
     }
 }
-
 // End
-
 /* 播放 */
 function window_play() {
     window.player.play()
 }
-
 /* 播放 */
 function video_Play() {
     //setInterval(function () {
@@ -3873,7 +3292,6 @@ function video_Play() {
     }
     //}, 1000)
 }
-
 /* 全屏 */
 function fullscreen() {
     const fullScreen = document.querySelector('button[data-plyr=\'fullscreen\']');
@@ -3882,7 +3300,6 @@ function fullscreen() {
     //const fullScreen = document.querySelector('div.plyr__video-wrapper');
     //fullScreen.requestFullscreen();
 }
-
 /* 全屏 */
 function fullscreen_backup() {
     //setInterval(function () {
@@ -3895,12 +3312,10 @@ function fullscreen_backup() {
     }
     //}, 1000)
 }
-
 /* 暂停 */
 function window_pause() {
     window.player.pause()
 }
-
 /* 暂停 */
 function video_pause() {
     //setInterval(function () {
@@ -3913,7 +3328,6 @@ function video_pause() {
     }
     //}, 1000)
 }
-
 /* 延后播放 */
 function video_delayPlay(time) {
     setTimeout(function () {
@@ -3925,7 +3339,6 @@ function video_delayPlay(time) {
         }
     }, time)
 }
-
 /* 添加监听器 bySelector*/
 function addListener(selector, funx) {
     setTimeout(() => {
@@ -3935,7 +3348,6 @@ function addListener(selector, funx) {
         }
     }, 1000)
 }
-
 /* 添加监听器 byID */
 function addListenerById(id, funx, time) {
     setTimeout(() => {
@@ -3950,7 +3362,6 @@ function addListenerById(id, funx, time) {
 function loopq() {
     alert("Got it!")
 }
-
 /* 添加属性 */
 function setAttribute_after(x, y) {
     var index;
@@ -3960,7 +3371,6 @@ function setAttribute_after(x, y) {
         console.log("属性设置中...");
     }
 }
-
 /* 低端影视是否显示图像 */
 function cheat() {
     var ele = document.getElementById("holyx");
@@ -3970,7 +3380,6 @@ function cheat() {
         console.log("正在切换剧集；")
     }, 150);
 }
-
 // 禁止新页面跳转
 function hrefAttribute_set() {
     var href = document.querySelectorAll("a");
@@ -3982,7 +3391,6 @@ function hrefAttribute_set() {
         }
     }
 }
-
 // 禁止新页面跳转另一种实现 循环
 function href_attributeSet(time, id) {
     document.getElementById(id).style.background = "black";
@@ -4018,7 +3426,6 @@ function href_attributeSet(time, id) {
         }, time)
     }, time)
 }
-
 // 动态创建引用外部js JavaScript
 function js_adsRemove(url) {
     var script = document.createElement("script");
@@ -4035,36 +3442,29 @@ function loadCSS(url, callback) {
         callback && callback();
         return;
     }
-
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = url;
     link.type = 'text/css';
-
     // 可选：添加跨域属性（如果需要）
     // link.crossOrigin = 'anonymous';
-
     // 加载成功回调
     link.onload = () => {
         console.log('Adblock4limbo CSS 加载成功');
         callback && callback();
     };
-
     // 加载失败处理
     link.onerror = () => {
         console.error('Adblock4limbo CSS 加载失败:', url);
     };
-
     document.head.appendChild(link);
 }
-
 // 使用
 /*
 loadCSS('https://limbopro.com/CSS/Adblock4limbo.user.css', () => {
     console.log('CSS 已生效');
 });
 */
-
 // 动态创建并引用外部资源 外部样式表 外部脚本
 window.third_party_fileX = function third_party_fileX(tagname, url, where) {
     var ele_NewX = document.createElement(tagname);
@@ -4079,7 +3479,6 @@ window.third_party_fileX = function third_party_fileX(tagname, url, where) {
         ele_NewX.type = "text/css";
         ele_NewX.href = url;
     }
-
     setTimeout(() => {
         if (where == "body" && ele_NewX) {
             if (document.body) {
@@ -4092,8 +3491,6 @@ window.third_party_fileX = function third_party_fileX(tagname, url, where) {
         }
     }, 1000)
 }
-
-
 // 动态创建引用内部资源 内嵌式样式 内嵌式脚本
 function css_adsRemove(newstyle, delaytime, id) {
     setTimeout(() => {
@@ -4104,7 +3501,6 @@ function css_adsRemove(newstyle, delaytime, id) {
         console.log("CSS样式新增完毕！");
     }, delaytime);
 }
-
 // 循环模拟模拟点击
 function button_dynamicRemove(selector, times) {
     var initCount = 0;
@@ -4119,7 +3515,6 @@ function button_dynamicRemove(selector, times) {
         }
     }, 0)
 }
-
 // 知乎循环跳转绕过登录页
 function indexLogin() { // 跳转至热门话题 Explore 或 随机
     let url = document.location.href;
@@ -4129,7 +3524,6 @@ function indexLogin() { // 跳转至热门话题 Explore 或 随机
     if (url.search(reg) !== -1) {
         window.location = rewrite_url;
     }
-
     setTimeout(() => { // 延时执行函数优化
         var ele = document.querySelectorAll(cssSelector)
         if (ele.length > 0) {
@@ -4139,7 +3533,6 @@ function indexLogin() { // 跳转至热门话题 Explore 或 随机
             }
         }
     }, 300);
-
     /*
     var url = document.location.href;
     var url_list = [
@@ -4153,8 +3546,6 @@ function indexLogin() { // 跳转至热门话题 Explore 或 随机
     }
     */
 }
-
-
 /// abort-on-property-read.js
 /// alias aopr.js
 /// https://github.com/gorhill/uBlock/blob/a94df7f3b27080ae2dcb3b914ace39c0c294d2f6/assets/resources/scriptlets.js#L96
@@ -4208,7 +3599,6 @@ function abort_on_property_read() {
         }
     }.bind();
 };
-
 /* 视频页广告加速跳过 */
 window.videoAds_accelerateSkip = function videoAds_accelerateSkip(fasterx) {
     // https://github.com/gorhill/uBlock/wiki
@@ -4248,7 +3638,6 @@ window.videoAds_accelerateSkip = function videoAds_accelerateSkip(fasterx) {
         }
     });
 };
-
 // overridePropertyRead 覆盖属性读取
 /// https://github.com/AdguardTeam/Scriptlets/blob/master/wiki/about-scriptlets.md#set-constant
 
@@ -4261,11 +3650,9 @@ function overridePropertyRead(property, value) {
         throw new Error("[override-property-read snippet]: " +
             "No value to override with.");
     }
-
     let cValue;
     let debugLog = (debug ? log : () => { })
         .bind(null, "override-property-read");
-
     if (value === "false") {
         cValue = false;
     }
@@ -4294,14 +3681,11 @@ function overridePropertyRead(property, value) {
         throw new Error("[override-property-read snippet]: " +
             `Value "${value}" is not valid.`);
     }
-
     let newGetter = () => {
         debugLog(`${property} override done.`);
         return cValue;
     };
-
     debugLog(`Overriding ${property}.`);
-
     wrapPropertyAccess(window, property, { get: newGetter, set() { } });
 }
 
@@ -4325,9 +3709,7 @@ function pornhub_sidebar_ads() {
         var ele_children = ["img[data-title][title][srcset]"];
         var ele_attributes = ["class"];
         var i;
-
         const css_Selctors = document.querySelectorAll(ele_parent);
-
         for (i = 0; i < css_Selctors.length; i++) {
             if (css_Selctors[i].querySelectorAll(ele_children).length !== 0) {
                 if (css_Selctors[i].getAttribute(ele_attributes)) {
@@ -4348,7 +3730,6 @@ function tag_ads_traversal(selector, i) {
     const css_Selctors = document.querySelectorAll(selector)
     css_Selctors[i].style.display = "none";
 }
-
 // Get Cookies 获取指定命名的cookie 的值
 function getCookie_(cname) {
     var name = cname + "=";
@@ -4359,7 +3740,6 @@ function getCookie_(cname) {
     }
     return "";
 }
-
 // 哔滴影视隐藏公告广告
 function notice_hidden(selector) { // bdys
     document.querySelector(selector).classList.add("switch") // 隐藏公告
@@ -4367,7 +3747,6 @@ function notice_hidden(selector) { // bdys
     document.getElementById("bdys").innerHTML = "查看公告";
     addListenerById("bdys", () => { notice_show("div.col-12") }, 2000);
 }
-
 // 哔滴影视展示公告
 function notice_show(selector) {
     document.querySelector(selector).classList.remove("switch") // 展示公告
@@ -4378,103 +3757,6 @@ function notice_show(selector) {
 
 
 
-// window.open-defuser.js
-// https://github.com/gorhill/uBlock/wiki/Resources-Library#windowopen-defuserjs-
-
-function window_open_defuser() {
-    'use strict';
-    let arg1 = '{{1}}';
-    if (arg1 === '{{1}}') { arg1 = ''; }
-    let arg2 = '{{2}}';
-    if (arg2 === '{{2}}') { arg2 = ''; }
-    let arg3 = '{{3}}';
-    if (arg3 === '{{3}}') { arg3 = ''; }
-    const log = /\blog\b/.test(arg3)
-        ? console.log.bind(console)
-        : () => { };
-    const newSyntax = /^[01]?$/.test(arg1) === false;
-    let pattern = '';
-    let targetResult = true;
-    let autoRemoveAfter = -1;
-    if (newSyntax) {
-        pattern = arg1;
-        if (pattern.startsWith('!')) {
-            targetResult = false;
-            pattern = pattern.slice(1);
-        }
-        autoRemoveAfter = parseInt(arg2);
-        if (isNaN(autoRemoveAfter)) {
-            autoRemoveAfter = -1;
-        }
-    } else {
-        pattern = arg2;
-        if (arg1 === '0') {
-            targetResult = false;
-        }
-    }
-    if (pattern === '') {
-        pattern = '.?';
-    } else if (/^\/.+\/$/.test(pattern)) {
-        pattern = pattern.slice(1, -1);
-    } else {
-        pattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-    const rePattern = new RegExp(pattern);
-    const createDecoy = function (tag, urlProp, url) {
-        const decoy = document.createElement(tag);
-        decoy[urlProp] = url;
-        decoy.style.setProperty('height', '1px', 'important');
-        decoy.style.setProperty('position', 'fixed', 'important');
-        decoy.style.setProperty('top', '-1px', 'important');
-        decoy.style.setProperty('width', '1px', 'important');
-        document.body.appendChild(decoy);
-        setTimeout(() => decoy.remove(), autoRemoveAfter * 1000);
-        return decoy;
-    };
-    window.open = new Proxy(window.open, {
-        apply: function (target, thisArg, args) {
-            log('window.open:', ...args);
-            const url = args[0];
-            if (rePattern.test(url) !== targetResult) {
-                return target.apply(thisArg, args);
-            }
-            if (autoRemoveAfter < 0) { return null; }
-            const decoy = /\bobj\b/.test(arg3)
-                ? createDecoy('object', 'data', url)
-                : createDecoy('iframe', 'src', url);
-            let popup = decoy.contentWindow;
-            if (typeof popup === 'object' && popup !== null) {
-                Object.defineProperty(popup, 'closed', { value: false });
-            } else {
-                const noopFunc = (function () { }).bind(self);
-                popup = new Proxy(self, {
-                    get: function (target, prop) {
-                        if (prop === 'closed') { return false; }
-                        const r = Reflect.get(...arguments);
-                        if (typeof r === 'function') { return noopFunc; }
-                        return target[prop];
-                    },
-                    set: function () {
-                        return Reflect.set(...arguments);
-                    },
-                });
-            }
-            if (/\blog\b/.test(arg3)) {
-                popup = new Proxy(popup, {
-                    get: function (target, prop) {
-                        log('window.open / get', prop, '===', target[prop]);
-                        return Reflect.get(...arguments);
-                    },
-                    set: function (target, prop, value) {
-                        log('window.open / set', prop, '=', value);
-                        return Reflect.set(...arguments);
-                    },
-                });
-            }
-            return popup;
-        }
-    });
-};
 
 
 // abort-current-script.js 打断内连函数
@@ -4574,10 +3856,8 @@ function createAbortCurrentScript(target, needle, context) {
         }.bind();
     };
 }
-
 // 用法示例：
 // createAbortCurrentScript('window.foo', 'someKeyword', '/inline/')();
-
 /* 广告视频加速 */
 /**
  * 高阶函数：设置链式属性为常量，并进行属性劫持
@@ -4613,7 +3893,6 @@ function setconstantV2(chain, value) {
         if (Math.abs(cValue) > 0x7FFF) { return; }
     }
     // 其它类型直接通过
-
     let aborted = false;
     const mustAbort = function (v) {
         if (aborted) { return true; }
@@ -4623,7 +3902,6 @@ function setconstantV2(chain, value) {
             (typeof v !== typeof cValue);
         return aborted;
     };
-
     const trapProp = function (owner, prop, configurable, handler) {
         if (handler.init(owner[prop]) === false) { return; }
         const odesc = Object.getOwnPropertyDescriptor(owner, prop);
@@ -4653,7 +3931,6 @@ function setconstantV2(chain, value) {
             }
         });
     };
-
     const trapChain = function (owner, chain) {
         const pos = chain.indexOf('.');
         if (pos === -1) {
@@ -4700,24 +3977,16 @@ function setconstantV2(chain, value) {
             }
         });
     };
-
     trapChain(window, chain);
 }
-
-
 /*
-
 // 让所有 setInterval 的延时加速 20 倍（即 0.05 倍原时长）
 setIntervalBooster();
-
 // 让所有 setTimeout 的延时加速 5 倍
 setTimeoutBooster('.?', '*', 0.2);
-
 // 只加速包含 “ad” 关键字的定时器回调
 setIntervalBooster('ad', '*', 0.1);
-
 */
-
 /**
  * setTimeoutBooster - 高阶函数，加速/减速 setTimeout
  * @param {string|RegExp} needle - 代码匹配用正则或字符串（可选，默认匹配全部）
@@ -4756,11 +4025,6 @@ function setTimeoutBooster(needle = '.?', delayMatcher = 1000, boostRatio = 0.05
         }
     });
 }
-
-
-
-
-
 /**
  * setIntervalBooster - 高阶函数，加速/减速 setInterval
  * @param {string|RegExp} needle - 代码匹配用正则或字符串（可选，默认匹配全部）
@@ -4799,7 +4063,6 @@ function setIntervalBooster(needle = '.?', delayMatcher = 1000, boostRatio = 0.0
         }
     });
 }
-
 /* 广告视频加速 */
 function setConstant(
     chain = '',
@@ -4959,7 +4222,6 @@ function setConstant(
     };
     trapChain(window, chain);
 }
-
 // 泥巴影视手机版视频播放前20秒广告跳过 nbys nivod4
 // https://github.com/AdguardTeam/AdguardFilters/issues/146359
 
@@ -4971,7 +4233,6 @@ function evaldataPrune() {
         }
     })
 };
-
 /// abort-current-script.js
 /// alias acs.js
 /// alias abort-current-inline-script.js
@@ -4980,9 +4241,7 @@ function evaldataPrune() {
 function abortCurrentInlineScript(source, property, search) {
     const searchRegexp = toRegExp(search);
     const rid = randomId();
-
     const SRC_DATA_MARKER = 'data:text/javascript;base64,';
-
     const getCurrentScript = () => {
         if ('currentScript' in document) {
             return document.currentScript;
@@ -4990,26 +4249,21 @@ function abortCurrentInlineScript(source, property, search) {
         const scripts = document.getElementsByTagName('script');
         return scripts[scripts.length - 1];
     };
-
     const ourScript = getCurrentScript();
-
     const abort = () => {
         const scriptEl = getCurrentScript();
         if (!scriptEl) {
             return;
         }
         let content = scriptEl.textContent;
-
         // We are using Node.prototype.textContent property descriptor
         // to get the real script content
         // even when document.currentScript.textContent is replaced.
         // https://github.com/AdguardTeam/Scriptlets/issues/57#issuecomment-593638991
-
         try {
             const textContentGetter = Object.getOwnPropertyDescriptor(Node.prototype, 'textContent').get;
             content = textContentGetter.call(scriptEl);
         } catch (e) { } // eslint-disable-line no-empty
-
         // https://github.com/AdguardTeam/Scriptlets/issues/130
         if (content.length === 0
             && typeof scriptEl.src !== 'undefined'
@@ -5017,7 +4271,6 @@ function abortCurrentInlineScript(source, property, search) {
             const encodedContent = scriptEl.src.slice(SRC_DATA_MARKER.length);
             content = window.atob(encodedContent);
         }
-
         if (scriptEl instanceof HTMLScriptElement
             && content.length > 0
             && scriptEl !== ourScript
@@ -5026,28 +4279,23 @@ function abortCurrentInlineScript(source, property, search) {
             throw new ReferenceError(rid);
         }
     };
-
     const setChainPropAccess = (owner, property) => {
         const chainInfo = getPropertyInChain(owner, property);
         let { base } = chainInfo;
         const { prop, chain } = chainInfo;
-
         // The scriptlet might be executed before the chain property has been created
         // (for instance, document.body before the HTML body was loaded).
         // In this case we're checking whether the base element exists or not
         // and if not, we simply exit without overriding anything.
         // e.g. https://github.com/AdguardTeam/Scriptlets/issues/57#issuecomment-575841092
-
         if (base instanceof Object === false && base === null) {
             const props = property.split('.');
             const propIndex = props.indexOf(prop);
             const baseName = props[propIndex - 1];
-
             const message = `The scriptlet had been executed before the ${baseName} was loaded.`;
             logMessage(source, message);
             return;
         }
-
         if (chain) {
             const setter = (a) => {
                 base = a;
@@ -5061,7 +4309,6 @@ function abortCurrentInlineScript(source, property, search) {
             });
             return;
         }
-
         let currentValue = base[prop];
         let origDescriptor = Object.getOwnPropertyDescriptor(base, prop);
         if (origDescriptor instanceof Object === false
@@ -5069,7 +4316,6 @@ function abortCurrentInlineScript(source, property, search) {
             currentValue = base[prop];
             origDescriptor = undefined;
         }
-
         const descriptorWrapper = Object.assign(getDescriptorAddon(), {
             currentValue,
             get() {
@@ -5092,7 +4338,6 @@ function abortCurrentInlineScript(source, property, search) {
                 }
             },
         });
-
         setPropertyAccess(base, prop, {
             // Call wrapped getter and setter to keep isAbortingSuspended & isolateCallback values
             get() {
@@ -5103,12 +4348,9 @@ function abortCurrentInlineScript(source, property, search) {
             },
         });
     };
-
     setChainPropAccess(window, property);
-
     window.onerror = createOnErrorHandler(rid).bind();
 }
-
 // https://github.com/gorhill/uBlock/wiki/Resources-Library#addeventlistener-defuserjs-
 function addEventListener_defuser() {
     let needle1 = '{{1}}';
@@ -5149,6 +4391,275 @@ function addEventListener_defuser() {
         }
     );
 };
+/**
+* addEventListener 拦截器
+* @param {string} needle1 要匹配的事件类型
+* @param {string} needle2 要匹配的处理器源码
+*
+* 示例：
+* addEventListener_defuserV2('touchstart', 'window.open');
+* addEventListener_defuserV2('/^touchstart$/', '/\bwindow\s*\.\s*open\s*\(/');
+  */
+function addEventListener_defuserV2_original(needle1 = '', needle2 = '') {
+    // 将输入转换为正则表达式：
+    // 普通字符串按字面量匹配，/内容/ 则作为正则表达式
+    function toRegExp(value) {
+        value = String(value);
+        if (value === '') {
+            return /.?/;
+        }
+        // /正则表达式/ 格式
+        if (/^\/.+\/$/.test(value)) {
+            return new RegExp(value.slice(1, -1));
+        }
+        // 普通字符串：转义正则元字符
+        return new RegExp(
+            value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        );
+    }
+    const reType = toRegExp(needle1);
+    const reHandler = toRegExp(needle2);
+    const originalAddEventListener =
+        self.EventTarget.prototype.addEventListener;
+    self.EventTarget.prototype.addEventListener = new Proxy(
+        originalAddEventListener,
+        {
+            apply(target, thisArg, args) {
+                let type;
+                let handler;
+                try {
+                    type = String(args[0]);
+                    handler = String(args[1]);
+                } catch (ex) {
+                    return target.apply(thisArg, args);
+                }
+                // 只有事件类型和处理器源码同时匹配，才拦截
+                if (
+                    reType.test(type) &&
+                    reHandler.test(handler)
+                ) {
+                    return;
+                }
+                return target.apply(thisArg, args);
+            }
+        }
+    );
+}
+
+
+
+function addEventListener_defuserV2(needle1 = '', needle2 = '') {
+    // 将输入转换为正则表达式：
+    // 普通字符串按字面量匹配，/内容/ 则作为正则表达式
+    function toRegExp(value) {
+        value = String(value);
+        if (value === '') {
+            return /.?/;
+        }
+        // /正则表达式/ 格式
+        if (/^\/.+\/$/.test(value)) {
+            return new RegExp(value.slice(1, -1));
+        }
+        // 普通字符串：转义正则元字符
+        return new RegExp(
+            value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        );
+    }
+    const reType = toRegExp(needle1);
+    const reHandler = toRegExp(needle2);
+    const originalAddEventListener =
+        self.EventTarget.prototype.addEventListener;
+    // ===== 新增：LocalStorage 日志存储 =====
+    const storageKey = 'addEventListener_defuserV3_records';
+    const maxRecords = 200;
+    function saveLog(record) {
+        try {
+            let records = [];
+            try {
+                const stored = localStorage.getItem(storageKey);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed)) {
+                        records = parsed;
+                    }
+                }
+            } catch (ex) {
+                records = [];
+            }
+            records.push(record);
+            // 最多保留最近 200 条，新进旧出
+            if (records.length > maxRecords) {
+                records = records.slice(-maxRecords);
+            }
+            // 格式化 JSON 存储
+            localStorage.setItem(
+                storageKey,
+                JSON.stringify(records, null, 2)
+            );
+        } catch (ex) {
+            // 日志存储失败时，不影响原有逻辑
+        }
+    }
+    // ===== 原始 Proxy 逻辑 =====
+    self.EventTarget.prototype.addEventListener = new Proxy(
+        originalAddEventListener,
+        {
+            apply(target, thisArg, args) {
+                let type;
+                let handler;
+                try {
+                    type = String(args[0]);
+                    handler = String(args[1]);
+                } catch (ex) {
+                    return target.apply(thisArg, args);
+                }
+                // ===== 新增：记录监听器注册信息 =====
+                try {
+                    let elementInfo = '';
+                    let elementId = '';
+                    if (thisArg === window) {
+                        elementInfo = 'window';
+                    } else if (thisArg === document) {
+                        elementInfo = 'document';
+                    } else if (thisArg && thisArg.nodeType === 1) {
+                        elementInfo = {
+                            tagName: thisArg.tagName || '',
+                            id: thisArg.id || '',
+                            className:
+                                typeof thisArg.className === 'string'
+                                    ? thisArg.className
+                                    : ''
+                        };
+                        elementId = thisArg.id || '';
+                    } else {
+                        elementInfo = Object.prototype.toString.call(thisArg);
+                    }
+                    saveLog({
+                        type: type,
+                        handler: handler.substring(0, 3000),
+                        element: elementInfo,
+                        elementId: elementId,
+                        stack: new Error().stack || '',
+                        time: new Date().toLocaleTimeString()
+                    });
+                } catch (ex) {
+                    // 日志记录失败时，不影响原有逻辑
+                }
+                // 只有事件类型和处理器源码同时匹配，才拦截
+                if (
+                    reType.test(type) &&
+                    reHandler.test(handler)
+                ) {
+                    return;
+                }
+                return target.apply(thisArg, args);
+            }
+        }
+    );
+}
+
+window.addEventListener_defuserV2 = addEventListener_defuserV2;
+
+
+// window.open-defuser.js
+// https://github.com/gorhill/uBlock/wiki/Resources-Library#windowopen-defuserjs-
+
+function window_open_defuser() {
+    'use strict';
+    let arg1 = '{{1}}';
+    if (arg1 === '{{1}}') { arg1 = ''; }
+    let arg2 = '{{2}}';
+    if (arg2 === '{{2}}') { arg2 = ''; }
+    let arg3 = '{{3}}';
+    if (arg3 === '{{3}}') { arg3 = ''; }
+    const log = /\blog\b/.test(arg3)
+        ? console.log.bind(console)
+        : () => { };
+    const newSyntax = /^[01]?$/.test(arg1) === false;
+    let pattern = '';
+    let targetResult = true;
+    let autoRemoveAfter = -1;
+    if (newSyntax) {
+        pattern = arg1;
+        if (pattern.startsWith('!')) {
+            targetResult = false;
+            pattern = pattern.slice(1);
+        }
+        autoRemoveAfter = parseInt(arg2);
+        if (isNaN(autoRemoveAfter)) {
+            autoRemoveAfter = -1;
+        }
+    } else {
+        pattern = arg2;
+        if (arg1 === '0') {
+            targetResult = false;
+        }
+    }
+    if (pattern === '') {
+        pattern = '.?';
+    } else if (/^\/.+\/$/.test(pattern)) {
+        pattern = pattern.slice(1, -1);
+    } else {
+        pattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    const rePattern = new RegExp(pattern);
+    const createDecoy = function (tag, urlProp, url) {
+        const decoy = document.createElement(tag);
+        decoy[urlProp] = url;
+        decoy.style.setProperty('height', '1px', 'important');
+        decoy.style.setProperty('position', 'fixed', 'important');
+        decoy.style.setProperty('top', '-1px', 'important');
+        decoy.style.setProperty('width', '1px', 'important');
+        document.body.appendChild(decoy);
+        setTimeout(() => decoy.remove(), autoRemoveAfter * 1000);
+        return decoy;
+    };
+    window.open = new Proxy(window.open, {
+        apply: function (target, thisArg, args) {
+            log('window.open:', ...args);
+            const url = args[0];
+            if (rePattern.test(url) !== targetResult) {
+                return target.apply(thisArg, args);
+            }
+            if (autoRemoveAfter < 0) { return null; }
+            const decoy = /\bobj\b/.test(arg3)
+                ? createDecoy('object', 'data', url)
+                : createDecoy('iframe', 'src', url);
+            let popup = decoy.contentWindow;
+            if (typeof popup === 'object' && popup !== null) {
+                Object.defineProperty(popup, 'closed', { value: false });
+            } else {
+                const noopFunc = (function () { }).bind(self);
+                popup = new Proxy(self, {
+                    get: function (target, prop) {
+                        if (prop === 'closed') { return false; }
+                        const r = Reflect.get(...arguments);
+                        if (typeof r === 'function') { return noopFunc; }
+                        return target[prop];
+                    },
+                    set: function () {
+                        return Reflect.set(...arguments);
+                    },
+                });
+            }
+            if (/\blog\b/.test(arg3)) {
+                popup = new Proxy(popup, {
+                    get: function (target, prop) {
+                        log('window.open / get', prop, '===', target[prop]);
+                        return Reflect.get(...arguments);
+                    },
+                    set: function (target, prop, value) {
+                        log('window.open / set', prop, '=', value);
+                        return Reflect.set(...arguments);
+                    },
+                });
+            }
+            return popup;
+        }
+    });
+};
+
+window.window_open_defuser = window_open_defuser;
 
 document.querySelectorAll('a').forEach((x) => {
     x.innerHTML
@@ -5232,8 +4743,6 @@ function noWindowOpenIf(
         }
     });
 }
-
-
 /// noEvalIf
 /// https://github.com/gorhill/uBlock/blob/60ed584fc181b5d8dd935d60c32d2592d3674188/src/js/resources/scriptlets.js#L1611
 
@@ -5258,8 +4767,6 @@ function noEvalIf(
         }
     });
 }
-
-
 /// abort-on-property-read.js
 /// alias aopr.js
 /// 当脚本尝试读取指定属性时中止脚本
@@ -5315,19 +4822,15 @@ function aopr() {
         }
     }.bind();
 };
-
 // 设置 cookie 饼
 function settingCookie(cname, cvalue, exdays) { var d = new Date(); d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); var expires = "expires=" + d.toGMTString(); document.cookie = cname + "=" + cvalue + "; path=/;" + expires; }
-
 // 注入 prevent-setTimeout scriptlet
 function injectPreventSetTimeout() {
     // 防止重复注入
     if (window.__preventSetTimeoutInjected) return;
     window.__preventSetTimeoutInjected = true;
-
     const target = 'window.open';
     const hitLog = () => console.log(`%c[Blocked] ${target} via setTimeout`, 'color: #e74c3c; font-weight: bold;');
-
     // 匹配 window.open 各种写法
     const containsTarget = (str) => {
         if (typeof str !== 'string') return false;
@@ -5335,12 +4838,9 @@ function injectPreventSetTimeout() {
             /\bwindow\s*\[\s*["']open["']\s*\]\s*\(/.test(str) ||
             /\bwindow\s*\?\.\s*open\s*\(/.test(str);
     };
-
     const nativeSetTimeout = window.setTimeout;
-
     window.setTimeout = function (callback, delay, ...args) {
         let code = '';
-
         // 函数形式
         if (typeof callback === 'function') {
             code = callback.toString();
@@ -5353,22 +4853,16 @@ function injectPreventSetTimeout() {
         else {
             return nativeSetTimeout.apply(this, arguments);
         }
-
         // 检查是否包含 window.open
         if (containsTarget(code)) {
             hitLog();
             return; // 静默阻止
         }
-
         // 正常执行
         return nativeSetTimeout.call(this, callback, delay, ...args);
     };
-
     console.log('%c[Scriptlet] prevent-setTimeout 已注入，保护当前站点', 'color: #2ecc71; font-weight: bold;');
 }
-
-
-
 /**
  * 使用 Trusted Types 安全地加载 CSS 样式表。
  * * @param {string} cssUrl - 要加载的 CSS 文件的完整 URL。
@@ -5380,13 +4874,10 @@ window.loadStylesheetWithTrustedTypes = function loadStylesheetWithTrustedTypes(
         console.error("加载 CSS 失败：请提供 cssUrl, policyName 和 urlPrefix 三个参数。");
         return;
     }
-
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
-
     let finalLinkHref = cssUrl;
-
     // 检查并应用 Trusted Types
     if (window.trustedTypes && trustedTypes.createPolicy) {
         try {
@@ -5400,7 +4891,6 @@ window.loadStylesheetWithTrustedTypes = function loadStylesheetWithTrustedTypes(
                     throw new Error(`Attempted to load untrusted CSS URL: ${url}. Does not start with ${urlPrefix}`);
                 }
             });
-
             // 将 URL 字符串转换为 TrustedScriptURL 对象
             finalLinkHref = policy.createScriptURL(cssUrl);
             console.log(`[Trusted Types] 成功使用策略 "${policyName}" 验证 CSS 链接。`);
@@ -5409,15 +4899,11 @@ window.loadStylesheetWithTrustedTypes = function loadStylesheetWithTrustedTypes(
             finalLinkHref = cssUrl;
         }
     }
-
     // 赋值并插入 DOM
     link.href = finalLinkHref;
     (document.head || document.body || document.documentElement).appendChild(link);
-
     console.log(`CSS 加载请求已发送: ${cssUrl}`);
 }
-
-
 /**
  * 尝试从完整主机名中提取主域名（Root Domain）。
  * 此方法避免使用完整的 Public Suffix List (PSL)，仅包含常见规则，不保证 100% 准确。
@@ -5426,43 +4912,35 @@ window.loadStylesheetWithTrustedTypes = function loadStylesheetWithTrustedTypes(
  */
 window.getRootDomain = function getRootDomain(hostname) {
     if (!hostname) return '';
-
     // 1. 预处理：移除 www. 前缀
     let siteName = hostname.toLowerCase();
     if (siteName.startsWith('www.')) {
         siteName = siteName.substring(4);
     }
-
     // 2. 将域名分解成段 (Label)
     let parts = siteName.split('.');
-
     // 3. 定义常见的复杂公共后缀 (Public Suffix List - PSL 的简化版)
     // 如果这些后缀存在，我们需要保留其前两个标签（主域名 + TLD/SLD）
     const complexTLDs = [
         'co.uk', 'com.cn', 'co.jp', 'com.au', 'com.hk', 'com.tw',
         'nom.co', 'com.br', 'gov.cn', 'ac.jp'
     ];
-
     // 4. 检查是否匹配复杂的公共后缀
     if (parts.length > 2) {
         // 检查最后两段是否是一个复杂的 TLD (e.g., "co.uk")
         const lastTwo = parts.slice(-2).join('.');
-
         if (complexTLDs.includes(lastTwo)) {
             // 如果是复杂的 TLD，我们取最后三段作为主域名
             // e.g., ["news", "bbc", "co", "uk"] -> parts.length=4, slice(-3) -> "bbc.co.uk"
             return parts.slice(-3).join('.');
         }
     }
-
     // 5. 默认行为 (简单 TLD，如 .com)
     // 取最后两段作为主域名
     // e.g., ["news", "bbc", "com"] -> slice(-2) -> "bbc.com"
     // e.g., ["google", "com"] -> slice(-2) -> "google.com"
     return parts.slice(-2).join('.');
 }
-
-
 /**
  * 初始化广告拦截 CSS 加载器。
  */
@@ -5473,46 +4951,32 @@ window.initAdblockLoader = function initAdblockLoader() {
     const TT_POLICY_NAME = 'adblock-css-loader'; // 确保策略名称唯一
     const TT_URL_PREFIX = BASE_CSS_URL; // 信任的前缀就是 CSS 文件的基础路径
     // --- 配置结束 ---
-
     if (typeof window === 'undefined' || !document.head) {
         return; // 非浏览器环境或 DOM 未就绪
     }
-
     // 1. 获取当前页面的主机名 (例如: "www.bbc.com", "news.reuters.com")
     const hostname = window.location.hostname;
-
     // **核心：获取主域名**
     const siteName = getRootDomain(hostname);
-
     // 3. 构建 CSS 文件名和完整的 URL
     const cssFileName = siteName + '.css'; // // example reddit.com.css
     const cssUrl = BASE_CSS_URL + cssFileName; // // example http://limbopro.com/CSS/reddit.com.css
-
     // 3.1. 构建自定义 CSS 文件名和完整的 URL
     const cssFileNameByhand = "limbopro." + siteName + '.css'; // // example limbopro.reddit.com.css
     const cssUrlByhand = BASE_CSS_URL + cssFileNameByhand; // example http://limbopro.com/CSS/limbopro.reddit.com.css
-
     // 4. 使用安全的函数加载样式表
     loadStylesheetWithTrustedTypes(cssUrl, TT_POLICY_NAME, TT_URL_PREFIX); // example http://limbopro.com/CSS/reddit.com.css
     loadStylesheetWithTrustedTypes(cssUrlByhand, TT_POLICY_NAME, TT_URL_PREFIX); // example http://limbopro.com/CSS/limbopro.reddit.com.css
-
     //alert(cssUrl)
-
     loadCSS(cssUrl, () => {
         //console.log('CSS 已生效');
     })
     console.log(`[Adblock Loader] 尝试根据域名 "${hostname}" 加载 "${cssFileName}"`);
 }
-
 // 启动加载器
 initAdblockLoader();
-
-
 /* 监控用户尝试唤起导航页 */
-
-
 /* 监控用户尝试唤起导航页 */
-
 /**
  * 监听页面 Esc 键盘事件，实现以下逻辑：
  * 1. 记录 120 秒内按 2 次 Esc 键的行为，记为一次“事件”。
@@ -5521,7 +4985,6 @@ initAdblockLoader();
  * 4. 每次事件发生时，在控制台输出当前次数。
  * 5. 悬浮窗内容包含警告信息、联系链接、UA/OS 信息、关键脚本加载状态，以及“复制”按钮。
  */
-
 // 设置时间间隔 (120000毫秒 = 2分钟)。判断“事件”的窗口时间。
 const TIME_WINDOW_MS = 120000;
 // 悬浮窗的自动移除时间
@@ -5533,15 +4996,12 @@ const TARGET_SCRIPTS = [
     'https://limbopro.com/Adguard/Adblock4limbo.immersiveTranslation.user.js',
     'https://limbopro.com/Adguard/isAgent.js'
 ];
-
 // --- 悬浮窗函数 ---
-
 /**
  * 检查并注入悬浮窗的基本 CSS 样式
  */
 function injectWarningStyles() {
     if (document.getElementById('floating-warning-style')) return;
-
     const style = document.createElement('style');
     style.id = 'floating-warning-style';
     style.textContent = `
@@ -5619,7 +5079,6 @@ function injectWarningStyles() {
     `;
     document.head.appendChild(style);
 }
-
 /**
  * 检查目标脚本是否存在于当前页面
  * @returns {string} 返回包含两个脚本检查状态的 HTML 列表
@@ -5627,10 +5086,8 @@ function injectWarningStyles() {
 function checkTargetScriptExistence() {
     const scripts = document.getElementsByTagName('script');
     let statusHtml = '<ul class="script-status-list">';
-
     TARGET_SCRIPTS.forEach(targetName => {
         let found = false;
-
         for (let i = 0; i < scripts.length; i++) {
             const src = scripts[i].src;
             if (src && src.includes(targetName)) {
@@ -5638,29 +5095,23 @@ function checkTargetScriptExistence() {
                 break;
             }
         }
-
         const statusClass = found ? 'script-loaded' : 'script-missing';
         const statusIcon = found ? '已挂载✅' : '未挂载❌';
-
         statusHtml += `
             <li>
                 <span class="${statusClass}">${statusIcon} ${targetName}</span>
             </li>
         `;
     });
-
     statusHtml += '</ul>';
     return statusHtml;
 }
-
-
 /**
  * 核心复制函数：将调试信息复制到剪贴板
  */
 function copyDebugInfo(infoBlockId) {
     const infoBlock = document.getElementById(infoBlockId);
     if (!infoBlock) return;
-
     // 提取纯文本信息，去除 HTML 标签，并格式化
     const debugInfoText =
         infoBlock.innerText.replace('系统信息 (用于调试):\n', '') // 移除标题
@@ -5670,7 +5121,6 @@ function copyDebugInfo(infoBlockId) {
             .map(line => line.trim()) // 清理每行两端的空格
             .filter(line => line.length > 0) // 移除空行
             .join('\n');
-
     // 使用 Clipboard API 复制文本
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(debugInfoText).then(() => {
@@ -5696,7 +5146,6 @@ function copyDebugInfo(infoBlockId) {
         tempTextArea.select();
         document.execCommand('copy');
         document.body.removeChild(tempTextArea);
-
         const btn = document.querySelector('.copy-btn');
         if (btn) {
             btn.textContent = '已复制!';
@@ -5706,8 +5155,6 @@ function copyDebugInfo(infoBlockId) {
         }
     }
 }
-
-
 /**
  * 显示悬浮警告框
  */
@@ -5716,30 +5163,23 @@ function showFloatingWarning() {
     if (existingBox) {
         existingBox.remove();
     }
-
     injectWarningStyles();
-
     // --- 动态获取信息 ---
     const currentURL = window.location.href;
     const userAgent = navigator.userAgent;
     const platform = navigator.platform || navigator.oscpu || '未知操作系统';
     const scriptStatusHtml = checkTargetScriptExistence();
-
     // 构建调试信息块的 ID，用于复制函数定位
     const INFO_BLOCK_ID = 'debug-info-content';
-
     // 构建包含所有信息的 HTML 内容 
     const messageHTML = `
         <span class="close-btn" onclick="this.parentElement.remove();">&times;</span>
-        
         <p style="margin-bottom: 10px;">
             <strong>Adblock4limbo:</strong> 你似乎在尝试打开导航详情页?[多次双击ESC键] 遗憾的是：当前网页似乎未能正常加载导航代码...
         </p>
-        
         <p style="margin-bottom: 0;">
             可尝试联系博主：<a href="https://limbopro.com/6.html" target="_blank" class="contact-link">点此联系反馈</a>
         </p>
-
         <div class="info-block" id="${INFO_BLOCK_ID}">
             <strong>系统信息 (用于调试):</strong>
             <br>
@@ -5752,21 +5192,16 @@ function showFloatingWarning() {
             <strong>关键脚本加载状态:</strong> 
             ${scriptStatusHtml} 
         </div>
-        
         <button class="copy-btn" onclick="copyDebugInfo('${INFO_BLOCK_ID}')">复制调试信息</button>
     `;
-
     const box = document.createElement('div');
     box.id = 'floating-warning-box';
     box.innerHTML = messageHTML;
-
     document.body.appendChild(box);
-
     // 渐入效果
     setTimeout(() => {
         box.classList.add('show');
     }, 10);
-
     // 2 分钟后自动移除
     setTimeout(() => {
         if (box) {
@@ -5779,10 +5214,8 @@ function showFloatingWarning() {
         }
     }, WARNING_TIMEOUT_MS);
 }
-
 // ⚠️ 将 copyDebugInfo 函数暴露到全局，以便 onclick 事件能够找到它
 window.copyDebugInfo = copyDebugInfo;
-
 // --- 键盘监听逻辑 ---
 
 function checkButtonExistence() {
@@ -5794,36 +5227,25 @@ let badEventCount = 0;
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' || event.keyCode === 27) {
-
         const now = Date.now();
-
         escPressTimestamps = escPressTimestamps.filter(timestamp => {
             return now - timestamp < TIME_WINDOW_MS;
         });
-
         escPressTimestamps.push(now);
-
         if (escPressTimestamps.length >= 2) {
-
             if (document.getElementById('dh_pageContainer') !== null && typeof (body_build) == 'function') {
                 body_build('true');
             }
-
             badEventCount++;
-
             console.log(`💥 事件已发生，累积次数: ${badEventCount}`);
-
             const isButtonPresent = checkButtonExistence();
-
             if (badEventCount > 3 && badEventCount < 5 && !isButtonPresent) {
-
                 if (document.getElementById('dh_pageContainer') !== null && typeof (body_build) == 'function') {
                 } else {
                     showFloatingWarning(); // 显示悬浮窗
                     console.warn(`🚨 警告触发！累积次数为 ${badEventCount} 且 ID 为 'dh_button' 的元素不存在。`);
                 }
             }
-
             escPressTimestamps = [];
         }
     }
@@ -5832,8 +5254,6 @@ document.addEventListener('keydown', (event) => {
 console.log(`脚本已运行，监听 Esc 键。`);
 console.log(`⚠️ 事件时间窗口和悬浮窗自动关闭时间均设置为 ${TIME_WINDOW_MS / 1000} 秒 (2 分钟)。`);
 console.log(`警告将在累积次数恰好为 6 且 dh_button 元素不存在时触发。`);
-
-
 /**
  * ===========================================
  * 综合脚本：自动诊断并尝试修复滚动问题
@@ -5841,45 +5261,35 @@ console.log(`警告将在累积次数恰好为 6 且 dh_button 元素不存在�
  */
 
 window.attemptFixScrolling = function attemptFixScrolling() {
-
     const targets = [document.documentElement, document.body];
     let fixedCount = 0;
-
     targets.forEach(element => {
         const name = element.tagName; // HTML 或 BODY
         const style = window.getComputedStyle(element);
-
         // --- 诊断阶段 ---
         const isOverflowHidden =
             style.overflow === 'hidden' ||
             style.overflowX === 'hidden' ||
             style.overflowY === 'hidden';
-
         if (isOverflowHidden) {
             console.warn(`[ScrollFixer] ⚠️ 发现问题：${name} 元素上的 Overflow 属性被设置为 hidden。`);
-
             // --- 自动修复阶段 ---
-
             // 1. 尝试覆盖内联样式，强制启用滚动
             element.style.overflow = 'auto';
             element.style.overflowX = 'auto';
             element.style.overflowY = 'auto';
-
             // 2. 移除常见的禁用滚动类名 (可根据需要添加更多)
             element.classList.remove('modal-open', 'no-scroll');
-
             console.log(`[ScrollFixer] ✅ 自动修复尝试完成：${name} 的 overflow 已设为 auto。`);
             fixedCount++;
         }
     });
-
     if (fixedCount > 0) {
         console.log(`--- 总结：成功自动修复了 ${fixedCount} 个元素上的滚动禁用问题。 ---`);
     } else {
         console.log('--- 总结：HTML 和 BODY 上的常见滚动禁用问题未发现。 ---');
     }
 }
-
 // 立即执行整个自动修复流程
 
 setInterval(() => {
@@ -5887,12 +5297,8 @@ setInterval(() => {
         attemptFixScrolling();
     }
 }, 5000)
-
 // 动态移除鸟鸟韩漫透明弹窗
-
-
 // 动态移除符合选择器的任何元素
-
 /**
  * 动态监听并自动移除符合选择器的元素
  * @param {string} selector - CSS 选择器字符串（例如：'[id*="model"]' 或 '.ad-box'）
@@ -5903,18 +5309,15 @@ function autoRemoveElements(selector) {
         const targets = document.querySelectorAll(selector);
         targets.forEach(el => el.remove());
     };
-
     // 2. 页面加载完成后先立即执行一次清理（清理现有 DOM）
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', removeTargets);
     } else {
         removeTargets();
     }
-
     // 3. 创建 MutationObserver 实例监听后续动态插入的节点
     const observer = new MutationObserver((mutations) => {
         let shouldClean = false;
-
         for (const mutation of mutations) {
             // 检查是否有新节点被添加到 DOM 树中
             if (mutation.addedNodes.length > 0) {
@@ -5922,27 +5325,21 @@ function autoRemoveElements(selector) {
                 break;
             }
         }
-
         // 若有新节点生成，触发一次清理
         if (shouldClean) {
             removeTargets();
         }
     });
-
     // 4. 开启监听（配置监听 body 及其所有后代节点的变化）
     observer.observe(document.documentElement || document.body, {
         childList: true, // 监听子节点的添加和删除
         subtree: true    // 深度监听所有后代节点
     });
-
     // 返回观察者实例，方便需要时随时停止监听 (observer.disconnect())
     return observer;
 }
-
 // ==================== 使用示例 ====================
-
 // 示例 1：移除所有 ID 包含 "model" 的元素
 // autoRemoveElements('[id*="model"]');
-
 // 示例 2：同时移除多个选择器匹配的广告/弹窗元素
 // autoRemoveElements('div[style*="300px"], a[href*="//bit.ly/"], .pop-up-banner');

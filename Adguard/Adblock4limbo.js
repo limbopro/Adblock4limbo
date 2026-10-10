@@ -73,7 +73,7 @@ const autoAdDetector_JS_URL = "https://limbopro.com/Adguard/autoAdDetector.js"; 
 // const TITLE_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
 // 不再默认加载全局 Adgurad基础过滤器（CSS） 如需去导航-工具箱开启
 const TITLE_INJECTION_BASE = `
-<script type="text/javascript" src="${autoAdDetector_JS_URL}"></script>
+<script type="text/javascript" defer src="${autoAdDetector_JS_URL}"></script>
 <script type="text/javascript" defer src="${JS_URL}"></script>
 <script type="text/javascript" defer src="${fc_JS_URL}"></script>
 <script type="text/javascript" defer src="${fd_JS_URL}"></script>
@@ -83,7 +83,7 @@ const TITLE_INJECTION_BASE = `
 // const BODY_INJECTION_BASE = `<link rel="stylesheet" href="${CSS_URL}" type="text/css" />
 // 不再默认加载全局 Adgurad基础过滤器（CSS） 如需去导航-工具箱开启
 const BODY_INJECTION_BASE = `
-<script type="text/javascript" src="${autoAdDetector_JS_URL}"></script>
+<script type="text/javascript" defer src="${autoAdDetector_JS_URL}"></script>
 <script type="text/javascript" defer src="${JS_URL}">
 <script type="text/javascript" defer src="${fc_JS_URL}"></script>
 <script type="text/javascript" defer src="${fd_JS_URL}"></script>

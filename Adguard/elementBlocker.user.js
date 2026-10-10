@@ -747,27 +747,69 @@
         },
 
         _initDrag(el, handle) {
-            let offsetX = 0, offsetY = 0, isDragging = false;
+
+            let offsetX = 0;
+            let offsetY = 0;
+            let isDragging = false;
+
             const start = (e) => {
+
+                if (
+                    e.button !== undefined &&
+                    e.button !== 0
+                ) {
+                    return;
+                }
+
                 isDragging = true;
-                const event = e.type === 'touchstart' ? e.touches[0] : e;
-                offsetX = event.clientX - el.getBoundingClientRect().left;
-                offsetY = event.clientY - el.getBoundingClientRect().top;
+
+                const rect =
+                    el.getBoundingClientRect();
+
+                offsetX =
+                    e.clientX - rect.left;
+
+                offsetY =
+                    e.clientY - rect.top;
+
+                if (e.cancelable) {
+                    e.preventDefault();
+                }
             };
+
             const move = (e) => {
+
                 if (!isDragging) return;
-                const event = e.type === 'touchmove' ? e.touches[0] : e;
-                el.style.left = (event.clientX - offsetX) + 'px';
-                el.style.top = (event.clientY - offsetY) + 'px';
-                el.style.transform = "none";
+
+                if (e.cancelable) {
+                    e.preventDefault();
+                }
+
+                el.style.left =
+                    (e.clientX - offsetX) + 'px';
+
+                el.style.top =
+                    (e.clientY - offsetY) + 'px';
+
+                el.style.transform = 'none';
             };
-            const end = () => isDragging = false;
-            handle.addEventListener('mousedown', start);
-            window.addEventListener('mousemove', move);
-            window.addEventListener('mouseup', end);
-            handle.addEventListener('touchstart', start, { passive: true });
-            window.addEventListener('touchmove', move, { passive: false });
-            window.addEventListener('touchend', end);
+
+            const end = () => {
+                isDragging = false;
+            };
+
+            // 使用 Pointer Events，避免被 addEventListener_defuser() 拦截
+            handle.onpointerdown = start;
+
+            window.onpointermove = move;
+
+            window.onpointerup = end;
+
+            window.onpointercancel = end;
+
+            // 移动端拖拽时禁止页面跟随手指滚动
+            handle.style.touchAction = 'none';
+
         },
 
         save(selector, cssString) {
@@ -1547,109 +1589,285 @@
 */
 
     window.makeModalDraggable = function makeModalDraggable(elementId) {
+
         const el = document.getElementById(elementId);
+
         if (!el || el.dataset.dragInitialized) return;
 
-        // 确定拖拽主体（优先寻找实际的框体元素）
-        const target = el.classList.contains('sel-result-window') ? el : (el.firstElementChild || el);
+
+        // 确定拖拽主体
+        const target =
+            el.classList.contains('sel-result-window')
+                ? el
+                : (el.firstElementChild || el);
+
         if (!target) return;
 
+
         let isDragging = false;
-        let startX = 0, startY = 0;
-        let currentX = 0, currentY = 0;
+
+        let startX = 0;
+        let startY = 0;
+
+        let currentX = 0;
+        let currentY = 0;
+
         let rafId = null;
 
-        // 1. 持久化存储 Key
-        const storageKey = `drag_pos_${elementId}`;
 
-        // 2. 读取历史保存位置
+        // ==============================
+        // 持久化存储 Key
+        // ==============================
+
+        const storageKey =
+            `drag_pos_${elementId}`;
+
+
+        // ==============================
+        // 读取历史保存位置
+        // ==============================
+
         try {
+
             let savedPos = null;
+
+
             if (typeof GM_getValue !== 'undefined') {
-                savedPos = GM_getValue(storageKey, null);
+
+                savedPos =
+                    GM_getValue(
+                        storageKey,
+                        null
+                    );
+
             } else if (window.localStorage) {
-                savedPos = JSON.parse(localStorage.getItem(storageKey) || 'null');
+
+                savedPos =
+                    JSON.parse(
+                        localStorage.getItem(storageKey) || 'null'
+                    );
+
             }
 
-            if (savedPos && typeof savedPos.x === 'number' && typeof savedPos.y === 'number') {
+
+            if (
+                savedPos &&
+                typeof savedPos.x === 'number' &&
+                typeof savedPos.y === 'number'
+            ) {
+
                 currentX = savedPos.x;
                 currentY = savedPos.y;
+
             } else {
-                // 【默认初始位置】：计算原本 top: 20%, left: 50% 居中对应的绝对 translate 坐标
-                const rect = target.getBoundingClientRect();
-                const targetWidth = rect.width || 450; // 兜底宽度
-                currentX = (window.innerWidth - targetWidth) / 2;
-                currentY = window.innerHeight * 0.2;
+
+                // 默认位置
+                const rect =
+                    target.getBoundingClientRect();
+
+                const targetWidth =
+                    rect.width || 450;
+
+                currentX =
+                    (window.innerWidth - targetWidth) / 2;
+
+                currentY =
+                    window.innerHeight * 0.2;
+
             }
 
-            // 同步直接写入，不给页面任何绘制旧位置的机会
-            target.style.setProperty('transform', `translate3d(${currentX}px, ${currentY}px, 0)`, 'important');
+
+            // 直接恢复位置
+            target.style.setProperty(
+                'transform',
+                `translate3d(${currentX}px, ${currentY}px, 0)`,
+                'important'
+            );
+
 
         } catch (err) {
-            console.warn('[ModalDraggable] 读取/计算初始化位置失败:', err);
+
+            console.warn(
+                '[ModalDraggable] 读取/计算初始化位置失败:',
+                err
+            );
+
         }
 
-        const startAction = (e) => {
-            if (e.target.closest('button, input, textarea, code, #sel-output, #targetInform')) return;
 
-            const touch = e.touches ? e.touches[0] : e;
+        // ==============================
+        // 开始拖动
+        // ==============================
+
+        const startAction = (e) => {
+
+            // 不允许从这些元素开始拖动
+            if (
+                e.target.closest(
+                    'button, input, textarea, code, #sel-output, #targetInform'
+                )
+            ) {
+                return;
+            }
+
+
+            // 只接受鼠标左键
+            if (
+                e.button !== undefined &&
+                e.button !== 0
+            ) {
+                return;
+            }
+
+
             isDragging = true;
 
-            startX = touch.clientX - currentX;
-            startY = touch.clientY - currentY;
 
-            if (e.cancelable) e.preventDefault();
+            startX =
+                e.clientX - currentX;
+
+            startY =
+                e.clientY - currentY;
+
+
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+
         };
+
+
+        // ==============================
+        // 拖动
+        // ==============================
 
         const moveAction = (e) => {
+
             if (!isDragging) return;
-            if (e.cancelable) e.preventDefault();
 
-            const touch = e.touches ? e.touches[0] : e;
-            currentX = touch.clientX - startX;
-            currentY = touch.clientY - startY;
 
-            if (rafId) cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-                if (!isDragging) return;
-                // 使用 translate3d 开启 GPU 加速
-                target.style.setProperty('transform', `translate3d(${currentX}px, ${currentY}px, 0)`, 'important');
-            });
-        };
+            if (e.cancelable) {
+                e.preventDefault();
+            }
 
-        const endAction = () => {
-            if (!isDragging) return;
-            isDragging = false;
+
+            currentX =
+                e.clientX - startX;
+
+            currentY =
+                e.clientY - startY;
+
+
             if (rafId) {
                 cancelAnimationFrame(rafId);
-                rafId = null;
             }
 
-            const posData = { x: currentX, y: currentY };
-            try {
-                if (typeof GM_setValue !== 'undefined') {
-                    GM_setValue(storageKey, posData);
-                } else if (window.localStorage) {
-                    localStorage.setItem(storageKey, JSON.stringify(posData));
-                }
-            } catch (err) {
-                console.warn('[ModalDraggable] 保存拖拽位置失败:', err);
-            }
+
+            rafId =
+                requestAnimationFrame(() => {
+
+                    if (!isDragging) return;
+
+
+                    target.style.setProperty(
+                        'transform',
+                        `translate3d(
+                        ${currentX}px,
+                        ${currentY}px,
+                        0
+                    )`,
+                        'important'
+                    );
+
+                });
+
         };
 
-        // 绑定触摸与鼠标事件
-        target.style.setProperty('touch-action', 'none', 'important');
-        target.addEventListener('touchstart', startAction, { passive: false });
-        target.addEventListener('touchmove', moveAction, { passive: false });
-        target.addEventListener('touchend', endAction);
-        target.addEventListener('touchcancel', endAction);
 
-        target.addEventListener('mousedown', startAction);
-        document.addEventListener('mousemove', moveAction);
-        document.addEventListener('mouseup', endAction);
+        // ==============================
+        // 结束拖动
+        // ==============================
 
-        el.dataset.dragInitialized = "true";
-    };
+        const endAction = () => {
+
+            if (!isDragging) return;
+
+
+            isDragging = false;
+
+
+            if (rafId) {
+
+                cancelAnimationFrame(rafId);
+                rafId = null;
+
+            }
+
+
+            const posData = {
+                x: currentX,
+                y: currentY
+            };
+
+
+            try {
+
+                if (typeof GM_setValue !== 'undefined') {
+
+                    GM_setValue(
+                        storageKey,
+                        posData
+                    );
+
+                } else if (window.localStorage) {
+
+                    localStorage.setItem(
+                        storageKey,
+                        JSON.stringify(posData)
+                    );
+
+                }
+
+            } catch (err) {
+
+                console.warn(
+                    '[ModalDraggable] 保存拖拽位置失败:',
+                    err
+                );
+
+            }
+
+        };
+
+
+        // ==============================
+        // Pointer Events
+        // ==============================
+
+        target.style.setProperty(
+            'touch-action',
+            'none',
+            'important'
+        );
+
+
+        target.onpointerdown = startAction;
+
+        target.onpointermove = moveAction;
+
+        target.onpointerup = endAction;
+
+        target.onpointercancel = endAction;
+
+
+        // ==============================
+        // 初始化完成
+        // ==============================
+
+        el.dataset.dragInitialized = 'true';
+
+    }
+
 
 
 
@@ -1949,7 +2167,15 @@
 
         // 辅助函数：检查元素是否匹配排除列表
         const isExcluded = (el) => {
-            return EXCLUDED_SELECTORS.some(selector => el.matches(selector) || el.closest(selector));
+
+            if (!(el instanceof Element)) {
+                return false;
+            }
+
+            return EXCLUDED_SELECTORS.some(selector =>
+                el.matches(selector) ||
+                el.closest(selector)
+            );
         };
 
         // 检查是否已经存在实例，防止重复启动
@@ -2504,73 +2730,252 @@
         observer.observe(outputEl, { characterData: true, childList: true, subtree: true });
 
         // --- 拖拽实现 ---
+        // --- 拖拽实现 ---
         const dragHandle = resultWin.querySelector('.sel-title');
+
         let isDragging = false;
-        let startPos = { x: 0, y: 0 };
-        const getCoords = (e) => (e.touches ? e.touches[0] : e);
+
+        let startPos = {
+            x: 0,
+            y: 0
+        };
+
+
+        // ==============================
+        // 开始拖动
+        // ==============================
+
         const onDragStart = (e) => {
-            if (e.target !== dragHandle) return;
-            const coords = getCoords(e);
-            const rect = resultWin.getBoundingClientRect();
-            startPos.x = coords.x - rect.left;
-            startPos.y = coords.y - rect.top;
+
+            // 只允许从标题栏拖动
+            if (e.target !== dragHandle) {
+                return;
+            }
+
+
+            // 鼠标只允许左键
+            if (
+                e.button !== undefined &&
+                e.button !== 0
+            ) {
+                return;
+            }
+
+
+            const rect =
+                resultWin.getBoundingClientRect();
+
+
+            startPos.x =
+                e.clientX - rect.left;
+
+            startPos.y =
+                e.clientY - rect.top;
+
+
             Object.assign(resultWin.style, {
-                width: rect.width + 'px', height: rect.height + 'px',
-                left: rect.left + 'px', top: rect.top + 'px',
-                bottom: 'auto', right: 'auto', transform: 'none', margin: '0'
+
+                width: rect.width + 'px',
+
+                height: rect.height + 'px',
+
+                left: rect.left + 'px',
+
+                top: rect.top + 'px',
+
+                bottom: 'auto',
+
+                right: 'auto',
+
+                transform: 'none',
+
+                margin: '0'
+
             });
+
+
             isDragging = true;
-            if (e.cancelable) e.preventDefault();
+
+
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+
         };
+
+
+        // ==============================
+        // 拖动
+        // ==============================
+
         const onDragMove = (e) => {
-            if (!isDragging) return;
-            const coords = getCoords(e);
-            let newX = coords.x - startPos.x;
-            let newY = coords.y - startPos.y;
-            resultWin.style.left = Math.max(0, Math.min(newX, window.innerWidth - resultWin.offsetWidth)) + 'px';
-            resultWin.style.top = Math.max(0, Math.min(newY, window.innerHeight - resultWin.offsetHeight)) + 'px';
+
+            if (!isDragging) {
+                return;
+            }
+
+
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+
+
+            const newX =
+                e.clientX - startPos.x;
+
+            const newY =
+                e.clientY - startPos.y;
+
+
+            resultWin.style.left =
+                Math.max(
+                    0,
+                    Math.min(
+                        newX,
+                        window.innerWidth -
+                        resultWin.offsetWidth
+                    )
+                ) + 'px';
+
+
+            resultWin.style.top =
+                Math.max(
+                    0,
+                    Math.min(
+                        newY,
+                        window.innerHeight -
+                        resultWin.offsetHeight
+                    )
+                ) + 'px';
+
         };
-        const onDragEnd = () => { isDragging = false; };
-        dragHandle.addEventListener('mousedown', onDragStart);
-        dragHandle.addEventListener('touchstart', onDragStart, { passive: false });
-        window.addEventListener('mousemove', onDragMove);
-        window.addEventListener('touchmove', onDragMove, { passive: false });
-        window.addEventListener('mouseup', onDragEnd);
-        window.addEventListener('touchend', onDragEnd);
+
+
+        // ==============================
+        // 结束拖动
+        // ==============================
+
+        const onDragEnd = () => {
+
+            isDragging = false;
+
+        };
+
+
+        // ==============================
+        // Pointer Events
+        // ==============================
+
+        dragHandle.onpointerdown = onDragStart;
+
+        window.onpointermove = onDragMove;
+
+        window.onpointerup = onDragEnd;
+
+        window.onpointercancel = onDragEnd;
+
+
+        // 防止移动端拖动时页面滚动
+        dragHandle.style.touchAction = 'none';
 
         // --- 核心交互逻辑 ---
-        const onMove = (e) => {
-            if (resultWin.style.display === 'block' || isExcluded(e.target)) {
-                overlay.style.display = 'none'; // 如果是排除元素，隐藏遮罩
+        // --- 核心交互逻辑 ---
+
+        // 鼠标 / 触摸 / 手写笔移动时，显示当前元素
+        const onPointerMove = (e) => {
+
+            if (
+                resultWin.style.display === 'block' ||
+                isExcluded(e.target)
+            ) {
+                overlay.style.display = 'none';
                 return;
             }
+
             const rect = e.target.getBoundingClientRect();
+
             Object.assign(overlay.style, {
-                display: 'block', width: `${rect.width}px`, height: `${rect.height}px`,
-                top: `${rect.top}px`, left: `${rect.left}px`
+                display: 'block',
+                width: `${rect.width}px`,
+                height: `${rect.height}px`,
+                top: `${rect.top}px`,
+                left: `${rect.left}px`
             });
         };
 
-        const onClick = (e) => {
 
-            if (resultWin.style.display === 'block' || isExcluded(e.target)) {
+        // 用于判断移动端是“点击”还是“滑动”
+        let selectionPointerDown = false;
+        let selectionStartX = 0;
+        let selectionStartY = 0;
+
+
+        // Pointer 按下
+        const onPointerDown = (e) => {
+
+            if (
+                resultWin.style.display === 'block' ||
+                isExcluded(e.target)
+            ) {
+                return;
+            }
+
+            selectionPointerDown = true;
+
+            selectionStartX = e.clientX;
+            selectionStartY = e.clientY;
+        };
+
+
+        // Pointer 松开
+        const onPointerUp = (e) => {
+
+            if (!selectionPointerDown) {
+                return;
+            }
+
+            selectionPointerDown = false;
+
+
+            // 判断是否发生了明显移动
+            // 防止用户上下滑动页面时误选元素
+            const dx =
+                Math.abs(e.clientX - selectionStartX);
+
+            const dy =
+                Math.abs(e.clientY - selectionStartY);
+
+            if (dx > 10 || dy > 10) {
                 return;
             }
 
 
-            e.preventDefault(); e.stopPropagation();
+            if (
+                resultWin.style.display === 'block' ||
+                isExcluded(e.target)
+            ) {
+                return;
+            }
 
-            /** 新增 “所见即所得”（WYSIWYG） */
-            // 1. 使用工具处理点击：它会自动调用 getFinalSelector 并触发红框预览
-            const selector = SelectorBlockerTool.handleElementClick(e.target);
-            // 2. 更新你的悬浮窗 UI
-            outputEl.innerText = selector;
 
-            outputEl.innerText = getSmartSelector_selector_get(e.target);
-            //outputEl.innerText = getFinalSelector(e.target);
+            if (e.cancelable) {
+                e.preventDefault();
+            }
 
+            e.stopPropagation();
+
+
+            SelectorBlockerTool.handleElementClick(e.target);
+
+            outputEl.innerText =
+                getSmartSelector_selector_get(e.target);
+
+
+            // 选中状态
             overlay.style.borderStyle = 'solid';
+
             resultWin.style.display = 'block';
+
             document.body.style.cursor = 'default';
         };
 
@@ -2606,10 +3011,35 @@
             }
 
             // 原有的销毁逻辑
-            document.removeEventListener('mousemove', onMove, true);
-            document.removeEventListener('click', onClick, true);
-            overlay.remove(); resultWin.remove(); style.remove();
+            document.removeEventListener(
+                'pointermove',
+                onPointerMove,
+                true
+            );
+
+            document.removeEventListener(
+                'pointerdown',
+                onPointerDown,
+                true
+            );
+
+            document.removeEventListener(
+                'pointerup',
+                onPointerUp,
+                true
+            );
+
+            observer.disconnect();
+            dragHandle.onpointerdown = null;
+            window.onpointermove = null;
+            window.onpointerup = null;
+            window.onpointercancel = null;
+
+            overlay.remove();
+            resultWin.remove();
+            style.remove();
             document.body.style.cursor = 'default';
+
         };
 
         // --- 新增：暴露接口给外部 ---
@@ -2679,14 +3109,53 @@
             }
         };
 
-        /*
-        resultWin.querySelector('sel-close-main').onclick = resetMode;
-        */
 
         resultWin.querySelector('#sel-reset').onclick = resetMode;
         //resultWin.querySelector('#sel-exit')?.onclick = destroyTool;
-        document.addEventListener('mousemove', onMove, true);
-        document.addEventListener('click', onClick, true);
+
+
+
+
+
+        const nativeAddEventListener =
+            window.__selectorToolNativeAddEventListener;
+
+        if (typeof nativeAddEventListener === 'function') {
+            Reflect.apply(nativeAddEventListener, document, [
+                'pointermove',
+                onPointerMove,
+                true
+            ]);
+
+            Reflect.apply(nativeAddEventListener, document, [
+                'pointerdown',
+                onPointerDown,
+                true
+            ]);
+
+            Reflect.apply(nativeAddEventListener, document, [
+                'pointerup',
+                onPointerUp,
+                true
+            ]);
+        } else {
+            console.warn(
+                '[SelectorTool] 原始 addEventListener 未提前保存，无法绕过拦截器'
+            );
+
+            document.addEventListener('pointermove', onPointerMove, true);
+            document.addEventListener('pointerdown', onPointerDown, true);
+            document.addEventListener('pointerup', onPointerUp, true);
+        }
+
+
+        console.log(
+            '[SelectorTool] 原始监听方法状态:',
+            typeof nativeAddEventListener,
+            '当前方法是否已被代理:',
+            EventTarget.prototype.addEventListener !== nativeAddEventListener
+        );
+
         document.body.style.cursor = 'crosshair';
 
         // --- 方案二：检查是否有预留的选择器需要立即加载 ---
@@ -3855,26 +4324,46 @@
         };
 
 
-        // 3. 为Pin按钮绑定点击事件
-        document.getElementById('gemini-pin-btn').addEventListener('click', toggleGeminiPin);
-        if (localStorage.getItem('gemini-pin') == 'pinned') {
-            document.getElementById('gemini-pin-btn').textContent = '📍'
+        // 3. 为 Pin 按钮绑定点击事件
+
+        const pinBtn =
+            document.getElementById('gemini-pin-btn');
+
+        if (pinBtn) {
+
+            pinBtn.onclick = toggleGeminiPin;
+
+            if (
+                localStorage.getItem('gemini-pin') === 'pinned'
+            ) {
+
+                pinBtn.textContent = '📍';
+
+            }
+
         }
 
         // === 2. 绑定到你的 HTML 按钮上并切换文本 ===
-
         window.startSelectorTool_Click = function () {
             const btn = document.getElementById('selector-debug-click-toggle');
+
+            if (!btn) {
+                console.warn('[SelectorTool] 未找到按钮 #selector-debug-click-toggle');
+                return;
+            }
+
             const originalText = "⚓元素CSS选择器获取与调试"; // 你的原始按钮文字
 
             // 如果工具已经运行，则不重复执行逻辑
             if (document.getElementById('selector-tool-style-final')) {
                 stopSelectorTool()
+                localStorage.setItem(DEBUG_SELECTOR_CLICK_KEY, 'false');
                 return;
             }
 
             if (localStorage.getItem('gemini_debug_element_click_mode') == 'true') { // 如果元素点击调试模式已经开了，则无法开启 css 选择器获取
                 stopSelectorTool()
+                localStorage.setItem(DEBUG_SELECTOR_CLICK_KEY, 'false');
                 return;
             }
 
@@ -3886,6 +4375,7 @@
 
             // 2. 启动工具
             startSelectorTool();
+
             localStorage.setItem(DEBUG_SELECTOR_CLICK_KEY, 'true')
 
             // 3. 增强：拦截工具内的“退出”按钮，点击时恢复按钮文字
@@ -4112,7 +4602,7 @@
         selectorToggle.onclick = () => toggleSelectionMode();
 
 
-        debugClickToggle.onclick = () => {
+        debugClickToggle.onclick = () => { //元素点击与调试
             if (localStorage.getItem('gemini_debug_preciseSelector_click_mode') == 'true') {  // 如果元素CSS选择器获取与调试打开则不能打开元素点击调试
                 return;
             }
@@ -4351,58 +4841,125 @@
         }
 
         const dragStart = (e) => {
-            if (!isDragTarget(e.target)) { return; }
+
+            if (!isDragTarget(e.target)) {
+                return;
+            }
+
+
+            // 只接受鼠标左键
+            if (
+                e.button !== undefined &&
+                e.button !== 0
+            ) {
+                return;
+            }
+
 
             isDragging = true;
+
+
+
             e.preventDefault();
 
-            const { x, y } = getEventXY(e);
 
-            const currentTranslate = getTranslateXY(mainContainer);
-            containerOffsetX = currentTranslate.x;
-            containerOffsetY = currentTranslate.y;
+            const x = e.clientX;
+            const y = e.clientY;
+
+
+            const currentTranslate =
+                getTranslateXY(mainContainer);
+
+            containerOffsetX =
+                currentTranslate.x;
+
+            containerOffsetY =
+                currentTranslate.y;
+
 
             dragStartX = x;
             dragStartY = y;
+
         };
+
 
         const dragMove = (e) => {
+
             if (!isDragging) return;
+
             e.preventDefault();
 
-            const { x, y } = getEventXY(e);
 
-            const dx = x - dragStartX;
-            const dy = y - dragStartY;
+            const x = e.clientX;
+            const y = e.clientY;
 
-            const newX = containerOffsetX + dx;
-            const newY = containerOffsetY + dy;
 
-            mainContainer.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
+            const dx =
+                x - dragStartX;
+
+            const dy =
+                y - dragStartY;
+
+
+            const newX =
+                containerOffsetX + dx;
+
+            const newY =
+                containerOffsetY + dy;
+
+
+            mainContainer.style.transform =
+                `translate3d(${newX}px, ${newY}px, 0)`;
+
         };
 
+
         const dragEnd = () => {
+
+            if (!isDragging) return;
+
             isDragging = false;
 
-            // 拖拽结束时，读取当前真实的 translate 坐标并保存
-            const currentTranslate = getTranslateXY(mainContainer);
+
+            // 拖拽结束时读取真实位置
+            const currentTranslate =
+                getTranslateXY(mainContainer);
+
+
             try {
-                localStorage.setItem(WINDOW_POSITION_KEY1, JSON.stringify(currentTranslate));
+
+                localStorage.setItem(
+                    WINDOW_POSITION_KEY1,
+                    JSON.stringify(currentTranslate)
+                );
+
             } catch (e) {
-                console.warn('[Gemini] 无法保存浮窗位置信息:', e);
+
+                console.warn(
+                    '[Gemini] 无法保存浮窗位置信息:',
+                    e
+                );
+
             }
 
         };
 
 
+        // ==============================
+        // Pointer Events
+        // ==============================
 
-        mainContainer.addEventListener('mousedown', dragStart);
-        document.addEventListener('mousemove', dragMove);
-        document.addEventListener('mouseup', dragEnd);
+        mainContainer.onpointerdown = dragStart;
 
-        mainContainer.addEventListener('touchstart', dragStart);
-        document.addEventListener('touchmove', dragMove);
-        document.addEventListener('touchend', dragEnd);
+        document.onpointermove = dragMove;
+
+        document.onpointerup = dragEnd;
+
+        document.onpointercancel = dragEnd;
+
+
+        // 防止移动端拖动时页面滚动
+        mainContainer.style.touchAction = 'none';
 
 
 

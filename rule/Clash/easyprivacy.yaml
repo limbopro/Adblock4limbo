@@ -1,10 +1,10 @@
 payload:
 ## [Adblock Plus 1.1]
-## ! Version: 202610051558
+## ! Version: 202610091548
 ## ! Title: EasyPrivacy
-## ! Last modified: 05 Oct 2026 15:58 UTC
+## ! Last modified: 09 Oct 2026 15:48 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 8967d8ce63bc77543baf4e95cfb1fda6db836ba4
+## ! Commit: 9c77041c396d228fa3963df8a80a376a4e1aada7
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -171,7 +171,6 @@ payload:
   - DOMAIN-SUFFIX,ediemidnightzombies.com
   - DOMAIN-SUFFIX,efreecode.com
   - DOMAIN-SUFFIX,egoi.site
-  - DOMAIN-SUFFIX,emrld.cc
   - DOMAIN-SUFFIX,entail-insights.com
   - DOMAIN-SUFFIX,enterombacerick.com
   - DOMAIN-SUFFIX,enthusiastgaming.net
@@ -485,6 +484,7 @@ payload:
   - DOMAIN-SUFFIX,tjk-njk.com
   - DOMAIN-SUFFIX,tkrconnector.com
   - DOMAIN-SUFFIX,tncid.app
+  - DOMAIN-SUFFIX,tp-em.cc
   - DOMAIN-SUFFIX,trackclicks.info
   - DOMAIN-SUFFIX,trackier.com
   - DOMAIN-SUFFIX,tracking24.net
@@ -700,6 +700,7 @@ payload:
   - DOMAIN-SUFFIX,aquaticowl.com
   - DOMAIN-SUFFIX,archswimming.com
   - DOMAIN-SUFFIX,arclet.net
+  - DOMAIN-SUFFIX,ariaclean.com
   - DOMAIN-SUFFIX,aromamirror.com
   - DOMAIN-SUFFIX,arrivegrowth.com
   - DOMAIN-SUFFIX,artbranch.net
@@ -804,6 +805,7 @@ payload:
   - DOMAIN-SUFFIX,bikepaws.com
   - DOMAIN-SUFFIX,bikesboard.com
   - DOMAIN-SUFFIX,bilingualgeek.com
+  - DOMAIN-SUFFIX,billionpet.com
   - DOMAIN-SUFFIX,billowybead.com
   - DOMAIN-SUFFIX,billowybelief.com
   - DOMAIN-SUFFIX,billtable.com
@@ -816,6 +818,7 @@ payload:
   - DOMAIN-SUFFIX,biscuitbox.net
   - DOMAIN-SUFFIX,biztoolsbrief.com
   - DOMAIN-SUFFIX,blackbelted.com
+  - DOMAIN-SUFFIX,blackrednecks.com
   - DOMAIN-SUFFIX,bleachbubble.com
   - DOMAIN-SUFFIX,bleachscarecrow.com
   - DOMAIN-SUFFIX,bleedlight.com
@@ -852,6 +855,7 @@ payload:
   - DOMAIN-SUFFIX,boomboomcloud.com
   - DOMAIN-SUFFIX,boostbehavior.com
   - DOMAIN-SUFFIX,boredcrown.com
+  - DOMAIN-SUFFIX,borefee.com
   - DOMAIN-SUFFIX,boringberry.com
   - DOMAIN-SUFFIX,boringpirate.com
   - DOMAIN-SUFFIX,bouncyproperty.com
@@ -944,6 +948,7 @@ payload:
   - DOMAIN-SUFFIX,carpoolqueen.com
   - DOMAIN-SUFFIX,carsarace.com
   - DOMAIN-SUFFIX,cartelsalsa.com
+  - DOMAIN-SUFFIX,cartersci.com
   - DOMAIN-SUFFIX,cartjoint.com
   - DOMAIN-SUFFIX,cartlug.com
   - DOMAIN-SUFFIX,carvecakes.com
@@ -951,6 +956,7 @@ payload:
   - DOMAIN-SUFFIX,catalogcake.com
   - DOMAIN-SUFFIX,catlanguage.net
   - DOMAIN-SUFFIX,catschickens.com
+  - DOMAIN-SUFFIX,catsthumb.com
   - DOMAIN-SUFFIX,cattlecommittee.com
   - DOMAIN-SUFFIX,cauldronfest.com
   - DOMAIN-SUFFIX,causecherry.com
@@ -998,6 +1004,7 @@ payload:
   - DOMAIN-SUFFIX,cinemabonus.com
   - DOMAIN-SUFFIX,cinemafair.com
   - DOMAIN-SUFFIX,circlelevel.com
+  - DOMAIN-SUFFIX,citizensactive.com
   - DOMAIN-SUFFIX,citydeal.net
   - DOMAIN-SUFFIX,clammychicken.com
   - DOMAIN-SUFFIX,clarifyverse.com
@@ -1005,6 +1012,7 @@ payload:
   - DOMAIN-SUFFIX,claycandle.com
   - DOMAIN-SUFFIX,cleanhaircut.com
   - DOMAIN-SUFFIX,clearclips.com
+  - DOMAIN-SUFFIX,clickersdigest.com
   - DOMAIN-SUFFIX,climbingright.com
   - DOMAIN-SUFFIX,cloisteredcurve.com
   - DOMAIN-SUFFIX,clotheswringer.com
@@ -1016,6 +1024,7 @@ payload:
   - DOMAIN-SUFFIX,cloudninefresh.com
   - DOMAIN-SUFFIX,cloverkeys.com
   - DOMAIN-SUFFIX,clumsycar.com
+  - DOMAIN-SUFFIX,clutchcourses.com
   - DOMAIN-SUFFIX,coalkitchen.com
   - DOMAIN-SUFFIX,coastersim.com
   - DOMAIN-SUFFIX,coatfood.com
@@ -1982,6 +1991,7 @@ payload:
   - DOMAIN-SUFFIX,mundanenail.com
   - DOMAIN-SUFFIX,mushroomgods.com
   - DOMAIN-SUFFIX,mushywaste.com
+  - DOMAIN-SUFFIX,musicenforcer.com
   - DOMAIN-SUFFIX,musicflashcard.com
   - DOMAIN-SUFFIX,muteknife.com
   - DOMAIN-SUFFIX,mutemailbox.com
@@ -3810,7 +3820,6 @@ payload:
   - DOMAIN-SUFFIX,geoservice.curse.com
   - DOMAIN-SUFFIX,geotags.refinery89.com
   - DOMAIN-SUFFIX,gi-client-tracking.goodgamestudios.com
-  - DOMAIN-SUFFIX,gkx.gokwik.co
   - DOMAIN-SUFFIX,globale-analytics-sdk.global-e.com
   - DOMAIN-SUFFIX,go.activengage.com
   - DOMAIN-SUFFIX,gollum.monotote.com
@@ -4083,6 +4092,7 @@ payload:
   - DOMAIN-SUFFIX,pixel.wp.com
   - DOMAIN-SUFFIX,pixel.yabidos.com
   - DOMAIN-SUFFIX,pixel.yola.com
+  - DOMAIN-SUFFIX,pixel2.realclever.com
   - DOMAIN-SUFFIX,pixels.afcdn.com
   - DOMAIN-SUFFIX,pixels.zalify.com
   - DOMAIN-SUFFIX,pl.connatix.com
@@ -4299,6 +4309,7 @@ payload:
   - DOMAIN-SUFFIX,stats.wpmucdn.com
   - DOMAIN-SUFFIX,stats.zoogletools.net
   - DOMAIN-SUFFIX,stats.zotabox.com
+  - DOMAIN-SUFFIX,stats.zruvix.com
   - DOMAIN-SUFFIX,stats2.indianpornempire.com
   - DOMAIN-SUFFIX,statsapi.screen9.com
   - DOMAIN-SUFFIX,statscollector-1.agora.io
@@ -5471,6 +5482,7 @@ payload:
   - DOMAIN-SUFFIX,analytics.kkb.com.tr
   - DOMAIN-SUFFIX,analytics.qushad.com
   - DOMAIN-SUFFIX,analytics.ticimax.cloud
+  - DOMAIN-SUFFIX,analytics.tsoftapps.com
   - DOMAIN-SUFFIX,c.keltis.com
   - DOMAIN-SUFFIX,log.collectaction.com
   - DOMAIN-SUFFIX,sayac.kapital.com.tr
@@ -5903,6 +5915,7 @@ payload:
   - DOMAIN-SUFFIX,logx-experimentation.iherb.com
   - DOMAIN-SUFFIX,logx.optimizely.com
   - DOMAIN-SUFFIX,love.vidora.su
+  - DOMAIN-SUFFIX,ma.gamersnexus.net
   - DOMAIN-SUFFIX,ma.redhat.com
   - DOMAIN-SUFFIX,marketing.alibaba.com
   - DOMAIN-SUFFIX,marketing.dropbox.com
@@ -6139,12 +6152,14 @@ payload:
   - DOMAIN-SUFFIX,stats.codeur.com
   - DOMAIN-SUFFIX,stats.darkreader.app
   - DOMAIN-SUFFIX,stats.davidickedelivery.com
+  - DOMAIN-SUFFIX,stats.flixcloud.cc
   - DOMAIN-SUFFIX,stats.gateio.ch
   - DOMAIN-SUFFIX,stats.habr.com
   - DOMAIN-SUFFIX,stats.hexa.watch
   - DOMAIN-SUFFIX,stats.ibtimes.co.in
   - DOMAIN-SUFFIX,stats.ibtimes.sg
   - DOMAIN-SUFFIX,stats.justpaste.it
+  - DOMAIN-SUFFIX,stats.lrb.co.uk
   - DOMAIN-SUFFIX,stats.mempool.space
   - DOMAIN-SUFFIX,stats.newsweek.com
   - DOMAIN-SUFFIX,stats.qwant.com
@@ -42943,6 +42958,7 @@ payload:
   - DOMAIN-SUFFIX,tracker.stileo.it
   - DOMAIN-SUFFIX,tracking.gruppo.mps.it
   - DOMAIN-SUFFIX,ad-bls-tracking.lemino.docomo.ne.jp
+  - DOMAIN-SUFFIX,ad-manager.matsukiyococokara-online.com
   - DOMAIN-SUFFIX,ad-platform.jmty.jp
   - DOMAIN-SUFFIX,altema-log.com
   - DOMAIN-SUFFIX,ana.3751chat.com

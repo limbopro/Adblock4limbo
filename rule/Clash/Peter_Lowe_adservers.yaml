@@ -3,7 +3,7 @@ payload:
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
 # last updated:   Mon, 05 Oct 2026 09:17:03 GMT
-# entries:        3552
+# entries:        3547
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
 # this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts
@@ -135,7 +135,6 @@ payload:
   - DOMAIN-SUFFIX,ad.liveinternet.ru
   - DOMAIN-SUFFIX,ad.lupa.cz
   - DOMAIN-SUFFIX,ad.mediastorm.hu
-  - DOMAIN-SUFFIX,ad.mg
   - DOMAIN-SUFFIX,ad.missena.io
   - DOMAIN-SUFFIX,ad.musicmatch.com
   - DOMAIN-SUFFIX,ad.myapple.pl
@@ -193,7 +192,6 @@ payload:
   - DOMAIN-SUFFIX,adbrite.com
   - DOMAIN-SUFFIX,adbroker.de
   - DOMAIN-SUFFIX,adbutler.com
-  - DOMAIN-SUFFIX,adcampo.com
   - DOMAIN-SUFFIX,adcannyads.com
   - DOMAIN-SUFFIX,adcash.com
   - DOMAIN-SUFFIX,adcast.deviantart.com
@@ -702,7 +700,6 @@ payload:
   - DOMAIN-SUFFIX,adservrs.com.edgekey.net
   - DOMAIN-SUFFIX,adsfac.eu
   - DOMAIN-SUFFIX,adsfac.net
-  - DOMAIN-SUFFIX,adsfac.us
   - DOMAIN-SUFFIX,adsflowprime.top
   - DOMAIN-SUFFIX,adshrink.it
   - DOMAIN-SUFFIX,adside.com
@@ -763,7 +760,6 @@ payload:
   - DOMAIN-SUFFIX,adtrk1.com
   - DOMAIN-SUFFIX,adultadvertising.com
   - DOMAIN-SUFFIX,adv-adserver.com
-  - DOMAIN-SUFFIX,adv.donejty.pl
   - DOMAIN-SUFFIX,adv.freeonline.it
   - DOMAIN-SUFFIX,adv.hwupgrade.it
   - DOMAIN-SUFFIX,adv.mpvc.it
@@ -862,7 +858,6 @@ payload:
   - DOMAIN-SUFFIX,amazon-adsystem.com
   - DOMAIN-SUFFIX,americash.com
   - DOMAIN-SUFFIX,amidsttruly.com
-  - DOMAIN-SUFFIX,ampscamp.net
   - DOMAIN-SUFFIX,amung.us
   - DOMAIN-SUFFIX,analytics-fe.digital-cloud-prem.medallia.eu
   - DOMAIN-SUFFIX,analytics-production.hapyak.com
@@ -1518,6 +1513,7 @@ payload:
   - DOMAIN-SUFFIX,dpbolvw.net
   - DOMAIN-SUFFIX,dpu.samsungelectronics.com
   - DOMAIN-SUFFIX,dq95d35.com
+  - DOMAIN-SUFFIX,dragonbats.com
   - DOMAIN-SUFFIX,drumcash.com
   - DOMAIN-SUFFIX,dsp.colpirio.com
   - DOMAIN-SUFFIX,dsp.io
@@ -1549,7 +1545,6 @@ payload:
   - DOMAIN-SUFFIX,elasticchange.com
   - DOMAIN-SUFFIX,elderlytown.com
   - DOMAIN-SUFFIX,elitedollars.com
-  - DOMAIN-SUFFIX,em1.yoursantander.co.uk
   - DOMAIN-SUFFIX,email-link.adtidy.info
   - DOMAIN-SUFFIX,email-link.adtidy.net
   - DOMAIN-SUFFIX,email-link.adtidy.org
@@ -1612,6 +1607,7 @@ payload:
   - DOMAIN-SUFFIX,everestads.net
   - DOMAIN-SUFFIX,everesttech.net
   - DOMAIN-SUFFIX,evergage.com
+  - DOMAIN-SUFFIX,eversales.space
   - DOMAIN-SUFFIX,evs.sgmt.loom.com
   - DOMAIN-SUFFIX,evyy.net
   - DOMAIN-SUFFIX,exampleshake.com
@@ -1891,7 +1887,6 @@ payload:
   - DOMAIN-SUFFIX,iadnet.com
   - DOMAIN-SUFFIX,ibillboard.com
   - DOMAIN-SUFFIX,icptrack.com
-  - DOMAIN-SUFFIX,icywinter.com
   - DOMAIN-SUFFIX,id5-sync.com
   - DOMAIN-SUFFIX,idealadvertising.net
   - DOMAIN-SUFFIX,idevaffiliate.com
@@ -1914,6 +1909,7 @@ payload:
   - DOMAIN-SUFFIX,imonomy.com
   - DOMAIN-SUFFIX,imp.i312864.net
   - DOMAIN-SUFFIX,impossibleexpansion.com
+  - DOMAIN-SUFFIX,imprese.cz
   - DOMAIN-SUFFIX,impressionmedia.cz
   - DOMAIN-SUFFIX,impressionmonster.com
   - DOMAIN-SUFFIX,improvedigital.com
@@ -2885,6 +2881,7 @@ payload:
   - DOMAIN-SUFFIX,shockinggrass.com
   - DOMAIN-SUFFIX,shoppingads.com
   - DOMAIN-SUFFIX,showads.pubmatic.com
+  - DOMAIN-SUFFIX,shredform.com
   - DOMAIN-SUFFIX,shrillspoon.com
   - DOMAIN-SUFFIX,shxtrk.com
   - DOMAIN-SUFFIX,sicksmash.com
@@ -3272,7 +3269,6 @@ payload:
   - DOMAIN-SUFFIX,tracking.netalerts.io
   - DOMAIN-SUFFIX,tracking.olx-st.com
   - DOMAIN-SUFFIX,tracking.orixa-media.com
-  - DOMAIN-SUFFIX,tracking.p-l-m.com
   - DOMAIN-SUFFIX,tracking.wetter.at
   - DOMAIN-SUFFIX,tracking01.walmart.com
   - DOMAIN-SUFFIX,tracking101.com
@@ -3315,7 +3311,6 @@ payload:
   - DOMAIN-SUFFIX,trk.4ff.pro
   - DOMAIN-SUFFIX,trk.bc.shutterfly.com
   - DOMAIN-SUFFIX,trk.pinterest.com
-  - DOMAIN-SUFFIX,trk.sayerfinancial.com
   - DOMAIN-SUFFIX,trk.techtarget.com
   - DOMAIN-SUFFIX,trk1.avdlink.net
   - DOMAIN-SUFFIX,trk42.net

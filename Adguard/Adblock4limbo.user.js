@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2026.10.10
+// @version      0.2026.10.24
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/Njav/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -426,7 +426,7 @@ var adsMax = {
         njav: "div[style=\"position: absolute; inset: 0px; z-index: 999; display: block;\"],.ad-floating,[src*='.gif'],iframe[width='300px'] {display:none!important}",
         jav_common: ".jw-wrapper > div[style=\"opacity: 0; visibility: hidden; overflow: hidden; display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"],div[style^=\"position:fixed;inset:0px;z-index:2147483647;background:black;opacity:0.01\"] {height:0px; display:none !important; pointer-events: none !important;}",
         huaren_live: "[src*='0d463e36ddf0630.jpg'],.ad-tso,.ad-s,#dm-opacity,.ad-txt, .pause-ad, .ad-link:not(.adsbox), .action-ad, img[src*='ads.jpg'] {display:none !important; pointer-events: none !important;}",
-        rouman: "div[role='dialog'] {display:none !important; pointer-events: none !important;}",
+        rouman: 'iframe[src^="//tsyndicate.com/"],ins,a[href^="/api/jump/"] > img[src*=".xyz/m/"] {display:none !important; pointer-events: none !important;}',
         rouvideo: "div[style*='pointer-events: none'],.flex.items-center.justify-center.my-2,ins > iframe,a.vast-blocker,.p-2.rounded.text-center,.text-xl.mb-1,[class*='hover:underline'],[style*='overflow: hidden'],[data-advadstrackid] {display:none !important; pointer-events: none !important;}",
         diyibanzhu: "img, #adsbox, .slide-ad {height:0px; display:none !important; pointer-events: none !important;}",
         alicesw: "a[target='_zblank'] {height:0px; display:none !important; pointer-events: none !important;}",
@@ -1819,13 +1819,76 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
             break;
         case 'rouman':
             css_adsRemove(adsMax.css.rouman, 100, 'roumanx');
-            setTimeout(() => {
-                document.querySelectorAll("div[class*='modalCloseButton']")[0].click()
-            }, 500)
+
+
+            // 动态点击首页弹窗
+
+            (() => {
+                'use strict';
+
+                const DIALOG_SELECTOR = 'div[role="dialog"]';
+                const CLOSE_SELECTOR = 'button[aria-label="關閉廣告"]';
+
+                let lastClickedButton = null;
+                let scheduled = false;
+
+                function checkAndClose() {
+                    scheduled = false;
+
+                    const dialogs = document.querySelectorAll(
+                        `${DIALOG_SELECTOR}[data-state="open"]`
+                    );
+
+                    let currentButton = null;
+
+                    for (const dialog of dialogs) {
+                        const button = dialog.querySelector(CLOSE_SELECTOR);
+
+                        if (button && button.isConnected && !button.disabled) {
+                            currentButton = button;
+                            break;
+                        }
+                    }
+
+                    if (!currentButton) {
+                        lastClickedButton = null;
+                        return;
+                    }
+
+                    // 同一个按钮只点击一次，避免重复触发
+                    if (currentButton === lastClickedButton) return;
+
+                    lastClickedButton = currentButton;
+                    currentButton.click();
+                }
+
+                function scheduleCheck() {
+                    if (scheduled) return;
+
+                    scheduled = true;
+                    queueMicrotask(checkAndClose);
+                }
+
+                // 先处理已经存在的广告弹窗
+                checkAndClose();
+
+                // 监听弹窗的动态插入、移除和状态变化
+                const observer = new MutationObserver(scheduleCheck);
+
+                observer.observe(document.documentElement, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['data-state', 'aria-label', 'disabled']
+                });
+            })();
+
+
+
             break;
         case 'rou.video':
-            css_adsRemove(adsMax.css.rouvideo, 100, 'roumanx');
-            css_adsRemove(adsMax.css.rouvideo, 500, 'roumanx');
+            css_adsRemove(adsMax.css.rouvideo, 100, 'rouman_video');
+            css_adsRemove(adsMax.css.rouvideo, 500, 'rouman_video');
             window_open_defuser(); // 打断 window.open 施法
             try {
                 // 可能会抛出异常的代码

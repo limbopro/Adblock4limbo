@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Adblock4limbo.[github]
 // @namespace    https://github.com/limbopro/Adblock4limbo/raw/main/Adguard/Adblock4limbo.user.js
-// @version      0.2026.10.24
+// @version      0.2026.11.03
 // @license      CC BY-NC-SA 4.0
 // @description  毒奶去网页广告计划用户脚本 For Quantumult X & Surge & Shadowrocket & Loon & Stash & 油猴 ；1.新增页面右下角导航；2.通过 JavaScript 移除特定网站网页广告 —— 搜索引擎（Bing/Google）广告及内容农场结果清除/低端影视/欧乐影院/iyf爱壹帆/哔滴影视/Pornhub/Javbus/Supjav/Jable(支持抓取M3U8链接)/MissAv/Njav/91porn(支持视频下载)/hitomi/紳士漫畫/禁漫天堂/等视频&ACG&小说&漫画网站上的弹窗广告&视频广告&Gif图片广告等，保持网页清爽干净无打扰！ P.S. 欢迎提交issue
 // @author       limbopro
@@ -164,6 +164,7 @@
 // @exclude      https://www.javlibrary.com/en/
 // @exclude      https://www.javlibrary.com/
 // @match        https://t1229.btc760.com/*
+// @match        https://zoom.earth/*
 // @match        https://d1skbu98kuldnf.cloudfront.net/*
 // @match        https://dnt92ffcqr0xu.cloudfront.net/*
 // @exclude      https://x.com/*
@@ -495,6 +496,7 @@ function values() {
         "yhpdm",
         "yhdmp",
         "nivod",
+        'zoom.earth',
         "91short",
         "xiaobaotv",
         "xiaoxintv",
@@ -2352,6 +2354,50 @@ function adsDomain_switch(x) { // 匹配参数值 执行相应函数
                 }
             )
             // });
+            break;
+
+        case 'zoom.earth':
+
+            (function () {
+                const selectors = [
+                    'aside.notices .panel.id-app-link button.close',
+                    '.dialog.continue'
+                ];
+
+                const clicked = new Set();
+
+                function clickButtons() {
+                    selectors.forEach(selector => {
+                        if (clicked.has(selector)) return;
+
+                        const button = document.querySelector(selector);
+
+                        if (button) {
+                            button.click();
+                            clicked.add(selector);
+                        }
+                    });
+
+                    // 两个目标均已点击，停止监控
+                    if (clicked.size === selectors.length) {
+                        observer.disconnect();
+                    }
+                }
+
+                // 页面已有按钮则立即点击
+                clickButtons();
+
+                // 尚有目标未出现时，动态监控 DOM
+                const observer = new MutationObserver(clickButtons);
+
+                if (clicked.size < selectors.length) {
+                    observer.observe(document.documentElement, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+            })();
+
             break;
         default:
             // 修正 case 中 default 的匹配规则  10.25.203

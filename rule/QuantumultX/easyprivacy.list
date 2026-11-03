@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202610311546
+## ! Version: 202611030152
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Oct 2026 15:46 UTC
+## ! Last modified: 03 Nov 2026 01:52 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 2b886f881b0562413c3ac7c2b43bbf572918e991
+## ! Commit: a66fcf483369beaf6797322f4e03193860208f7a
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -747,6 +747,7 @@ DOMAIN-SUFFIX,baconbags.com, reject
 DOMAIN-SUFFIX,badgeboat.com, reject
 DOMAIN-SUFFIX,badgerabbit.com, reject
 DOMAIN-SUFFIX,badgevolcano.com, reject
+DOMAIN-SUFFIX,bagave.com, reject
 DOMAIN-SUFFIX,bagbeam.com, reject
 DOMAIN-SUFFIX,bagsurprise.com, reject
 DOMAIN-SUFFIX,bahamashello.com, reject
@@ -1027,6 +1028,7 @@ DOMAIN-SUFFIX,classicnotebook.com, reject
 DOMAIN-SUFFIX,claycandle.com, reject
 DOMAIN-SUFFIX,cleanhaircut.com, reject
 DOMAIN-SUFFIX,clearclips.com, reject
+DOMAIN-SUFFIX,cleargit.com, reject
 DOMAIN-SUFFIX,clickersdigest.com, reject
 DOMAIN-SUFFIX,climbingright.com, reject
 DOMAIN-SUFFIX,cloisteredcurve.com, reject
@@ -1082,6 +1084,7 @@ DOMAIN-SUFFIX,confirmglobal.com, reject
 DOMAIN-SUFFIX,confusedcart.com, reject
 DOMAIN-SUFFIX,consciouschairs.com, reject
 DOMAIN-SUFFIX,consciouscheese.com, reject
+DOMAIN-SUFFIX,consciousremnant.com, reject
 DOMAIN-SUFFIX,constructioncans.com, reject
 DOMAIN-SUFFIX,consumerdebtnegotiation.com, reject
 DOMAIN-SUFFIX,consumerknowhow.com, reject
@@ -1114,6 +1117,7 @@ DOMAIN-SUFFIX,cosmosjackson.com, reject
 DOMAIN-SUFFIX,cosplaygalaxy.com, reject
 DOMAIN-SUFFIX,costumeoffers.com, reject
 DOMAIN-SUFFIX,costwinner.com, reject
+DOMAIN-SUFFIX,couponbright.com, reject
 DOMAIN-SUFFIX,couponrail.com, reject
 DOMAIN-SUFFIX,courageousbaby.com, reject
 DOMAIN-SUFFIX,coverlayer.com, reject
@@ -1791,6 +1795,7 @@ DOMAIN-SUFFIX,ivykiosk.com, reject
 DOMAIN-SUFFIX,j93557g.com, reject
 DOMAIN-SUFFIX,jailbulb.com, reject
 DOMAIN-SUFFIX,jamexport.com, reject
+DOMAIN-SUFFIX,jazzdocumentary.com, reject
 DOMAIN-SUFFIX,jazzpianofast.com, reject
 DOMAIN-SUFFIX,jellyfinstream.com, reject
 DOMAIN-SUFFIX,jetskiscovers.com, reject
@@ -1898,6 +1903,7 @@ DOMAIN-SUFFIX,loadedhearts.com, reject
 DOMAIN-SUFFIX,loadsurprise.com, reject
 DOMAIN-SUFFIX,locateskill.com, reject
 DOMAIN-SUFFIX,locolava.com, reject
+DOMAIN-SUFFIX,locowater.com, reject
 DOMAIN-SUFFIX,logicalminds.net, reject
 DOMAIN-SUFFIX,lonelyflavor.com, reject
 DOMAIN-SUFFIX,longingtrees.com, reject
@@ -1945,10 +1951,13 @@ DOMAIN-SUFFIX,magnificentarticle.com, reject
 DOMAIN-SUFFIX,mailtinker.com, reject
 DOMAIN-SUFFIX,majesticwaterscape.com, reject
 DOMAIN-SUFFIX,majesticwilderness.com, reject
+DOMAIN-SUFFIX,majorcleanup.net, reject
 DOMAIN-SUFFIX,makesimpact.com, reject
 DOMAIN-SUFFIX,maliciousmusic.com, reject
 DOMAIN-SUFFIX,manamoment.com, reject
 DOMAIN-SUFFIX,manateemotors.com, reject
+DOMAIN-SUFFIX,mangamad.com, reject
+DOMAIN-SUFFIX,manilazoo.com, reject
 DOMAIN-SUFFIX,manydiamonds.com, reject
 DOMAIN-SUFFIX,manyfishes.com, reject
 DOMAIN-SUFFIX,mapbasin.com, reject
@@ -1973,6 +1982,7 @@ DOMAIN-SUFFIX,maybetony.com, reject
 DOMAIN-SUFFIX,meadowlullaby.com, reject
 DOMAIN-SUFFIX,measlymiddle.com, reject
 DOMAIN-SUFFIX,meatydime.com, reject
+DOMAIN-SUFFIX,medanysew.com, reject
 DOMAIN-SUFFIX,meddleplant.com, reject
 DOMAIN-SUFFIX,mediamaker.net, reject
 DOMAIN-SUFFIX,mediatescarf.com, reject
@@ -2063,6 +2073,7 @@ DOMAIN-SUFFIX,mutemailbox.com, reject
 DOMAIN-SUFFIX,mutualdocs.com, reject
 DOMAIN-SUFFIX,mysketchpad.com, reject
 DOMAIN-SUFFIX,mysticalagoon.com, reject
+DOMAIN-SUFFIX,nablounge.com, reject
 DOMAIN-SUFFIX,naillearn.com, reject
 DOMAIN-SUFFIX,naivestatement.com, reject
 DOMAIN-SUFFIX,nappyattack.com, reject

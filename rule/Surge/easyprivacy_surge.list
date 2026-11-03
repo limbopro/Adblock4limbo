@@ -1,9 +1,9 @@
 ## [Adblock Plus 1.1]
-## ! Version: 202610311546
+## ! Version: 202611030152
 ## ! Title: EasyPrivacy
-## ! Last modified: 31 Oct 2026 15:46 UTC
+## ! Last modified: 03 Nov 2026 01:52 UTC
 ## ! Expires: 4 days (update frequency)
-## ! Commit: 2b886f881b0562413c3ac7c2b43bbf572918e991
+## ! Commit: a66fcf483369beaf6797322f4e03193860208f7a
 ## ! *** easylist:template_header.txt ***
 ## ! 
 ## ! Please report any unblocked adverts or problems
@@ -747,6 +747,7 @@ DOMAIN-SUFFIX,baconbags.com
 DOMAIN-SUFFIX,badgeboat.com
 DOMAIN-SUFFIX,badgerabbit.com
 DOMAIN-SUFFIX,badgevolcano.com
+DOMAIN-SUFFIX,bagave.com
 DOMAIN-SUFFIX,bagbeam.com
 DOMAIN-SUFFIX,bagsurprise.com
 DOMAIN-SUFFIX,bahamashello.com
@@ -1027,6 +1028,7 @@ DOMAIN-SUFFIX,classicnotebook.com
 DOMAIN-SUFFIX,claycandle.com
 DOMAIN-SUFFIX,cleanhaircut.com
 DOMAIN-SUFFIX,clearclips.com
+DOMAIN-SUFFIX,cleargit.com
 DOMAIN-SUFFIX,clickersdigest.com
 DOMAIN-SUFFIX,climbingright.com
 DOMAIN-SUFFIX,cloisteredcurve.com
@@ -1082,6 +1084,7 @@ DOMAIN-SUFFIX,confirmglobal.com
 DOMAIN-SUFFIX,confusedcart.com
 DOMAIN-SUFFIX,consciouschairs.com
 DOMAIN-SUFFIX,consciouscheese.com
+DOMAIN-SUFFIX,consciousremnant.com
 DOMAIN-SUFFIX,constructioncans.com
 DOMAIN-SUFFIX,consumerdebtnegotiation.com
 DOMAIN-SUFFIX,consumerknowhow.com
@@ -1114,6 +1117,7 @@ DOMAIN-SUFFIX,cosmosjackson.com
 DOMAIN-SUFFIX,cosplaygalaxy.com
 DOMAIN-SUFFIX,costumeoffers.com
 DOMAIN-SUFFIX,costwinner.com
+DOMAIN-SUFFIX,couponbright.com
 DOMAIN-SUFFIX,couponrail.com
 DOMAIN-SUFFIX,courageousbaby.com
 DOMAIN-SUFFIX,coverlayer.com
@@ -1791,6 +1795,7 @@ DOMAIN-SUFFIX,ivykiosk.com
 DOMAIN-SUFFIX,j93557g.com
 DOMAIN-SUFFIX,jailbulb.com
 DOMAIN-SUFFIX,jamexport.com
+DOMAIN-SUFFIX,jazzdocumentary.com
 DOMAIN-SUFFIX,jazzpianofast.com
 DOMAIN-SUFFIX,jellyfinstream.com
 DOMAIN-SUFFIX,jetskiscovers.com
@@ -1898,6 +1903,7 @@ DOMAIN-SUFFIX,loadedhearts.com
 DOMAIN-SUFFIX,loadsurprise.com
 DOMAIN-SUFFIX,locateskill.com
 DOMAIN-SUFFIX,locolava.com
+DOMAIN-SUFFIX,locowater.com
 DOMAIN-SUFFIX,logicalminds.net
 DOMAIN-SUFFIX,lonelyflavor.com
 DOMAIN-SUFFIX,longingtrees.com
@@ -1945,10 +1951,13 @@ DOMAIN-SUFFIX,magnificentarticle.com
 DOMAIN-SUFFIX,mailtinker.com
 DOMAIN-SUFFIX,majesticwaterscape.com
 DOMAIN-SUFFIX,majesticwilderness.com
+DOMAIN-SUFFIX,majorcleanup.net
 DOMAIN-SUFFIX,makesimpact.com
 DOMAIN-SUFFIX,maliciousmusic.com
 DOMAIN-SUFFIX,manamoment.com
 DOMAIN-SUFFIX,manateemotors.com
+DOMAIN-SUFFIX,mangamad.com
+DOMAIN-SUFFIX,manilazoo.com
 DOMAIN-SUFFIX,manydiamonds.com
 DOMAIN-SUFFIX,manyfishes.com
 DOMAIN-SUFFIX,mapbasin.com
@@ -1973,6 +1982,7 @@ DOMAIN-SUFFIX,maybetony.com
 DOMAIN-SUFFIX,meadowlullaby.com
 DOMAIN-SUFFIX,measlymiddle.com
 DOMAIN-SUFFIX,meatydime.com
+DOMAIN-SUFFIX,medanysew.com
 DOMAIN-SUFFIX,meddleplant.com
 DOMAIN-SUFFIX,mediamaker.net
 DOMAIN-SUFFIX,mediatescarf.com
@@ -2063,6 +2073,7 @@ DOMAIN-SUFFIX,mutemailbox.com
 DOMAIN-SUFFIX,mutualdocs.com
 DOMAIN-SUFFIX,mysketchpad.com
 DOMAIN-SUFFIX,mysticalagoon.com
+DOMAIN-SUFFIX,nablounge.com
 DOMAIN-SUFFIX,naillearn.com
 DOMAIN-SUFFIX,naivestatement.com
 DOMAIN-SUFFIX,nappyattack.com

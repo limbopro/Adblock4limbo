@@ -1,11 +1,11 @@
 # Blocklist for use with hosts files to block ads, trackers, and other nasty things
 # For more information about this list, see: https://pgl.yoyo.org/adservers/
 # ----
-# last updated:   Thu, 29 Oct 2026 21:57:19 GMT
-# entries:        3562
+# last updated:   Mon, 02 Nov 2026 11:13:01 GMT
+# entries:        3563
 # format:         hosts (hosts -- in hosts file format)
 # credits:        Peter Lowe - pgl@yoyo.org - https://pgl.yoyo.org/ - https://twitter.com/pgl
-# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&amp;amp;amp;amp;showintro=0&amp;amp;amp;amp;mimetype=plaintext
+# this URL:       https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&amp;amp;amp;amp;amp;showintro=0&amp;amp;amp;amp;amp;mimetype=plaintext
 # Patreon:        https://patreon.com/blocklist
 # other formats:  https://pgl.yoyo.org/adservers/formats.php
 # policy:         https://pgl.yoyo.org/adservers/policy.php
@@ -982,6 +982,7 @@ DOMAIN-SUFFIX,b3.videoamp.com, reject
 DOMAIN-SUFFIX,ba.afl.rakuten.co.jp, reject
 DOMAIN-SUFFIX,backbeatmedia.com, reject
 DOMAIN-SUFFIX,backtension.com, reject
+DOMAIN-SUFFIX,bagave.com, reject
 DOMAIN-SUFFIX,bagsurprise.com, reject
 DOMAIN-SUFFIX,banik.redigy.cz, reject
 DOMAIN-SUFFIX,banner.ambercoastcasino.com, reject
